@@ -1,5 +1,7 @@
 # 노트 848 — 합동 적응 곡선 Δ(n) · KR 짝 (사전등록 '848' · 배경 6~7h · 체크포인트 재개)
 # Δ(n) = ρ_합동(전이+라벨 n) − ρ_릿지(n) · 같은 뽑기·같은 채점행 짝 · α=1 고정 전 격자.
+# 🔴 교란 병기(티처 #14): TRAINW 에 KR만화가 없어 클립 하한 0.2 가중 + TRAINR 감쇠 —
+#    합동 곡선을 눌러 교차를 앞당기는 방향. 챔피언 문면 유지 · 판정문에 기록 의무.
 import json
 import sys
 import time
@@ -17,7 +19,7 @@ from lab.harness import Data  # noqa: E402
 t0 = time.time()
 T = 2025.0
 SEEDS = list(range(12))
-GRID = (10, 20, 40, 80, 160)
+GRID = (15, 20, 40, 80, 160)   # 🔴 측정 전 수정(티처 #14): MIN_TRAIN=15 가 n=10 을 조용히 죽인다(harness.py:40)
 DRAWS = 6
 ROOT = Path("/Users/ax/world_model")
 CKPT = ROOT / "runners/out848_checkpoint.jsonl"
@@ -62,8 +64,8 @@ if CKPT.exists():
 def joint_rho(train_idx):
     """KR만화를 13번째 도메인으로 넣어 합동 적합 · 평가 322 ρ (씨앗 12 평균 순위)."""
     y13 = np.full(len(y), np.nan)
-    y13[train_idx] = y[train_idx]
-    y13[ev] = y[ev]                     # 평가 라벨은 채점용 — T 게이트(연도)가 적합에서 자동 제외
+    y13[train_idx] = y[train_idx]       # 🔴 평가 라벨은 안 넣는다(티처 #14 — 채점은 y[ev] 직접, 누출 표면 제거)
+    assert not (set(map(int, train_idx)) & set(map(int, ev))), "적합행∩평가행 ≠ ∅"
     dom13 = dict(data12.dom)
     nm13 = dict(data12.names)
     dom13["KR만화"] = (A, M, y13, t)
@@ -101,7 +103,8 @@ for dd in range(DRAWS):
             continue
         idx = perm[:n]
         rj, pj = joint_rho(idx)
-        m = Ridge(alpha=1.0).fit(Xr[idx], y[idx])               # α=1 고정 — 하이퍼 체제 혼합 차단
+        from scipy.stats import rankdata as _rk
+        m = Ridge(alpha=1.0).fit(Xr[idx], _rk(y[idx]) / len(idx))  # α=1 고정 · 🔴 순위 목표(티처 #14 — 합동과 대칭)
         pr_ = m.predict(Xr[ev])
         okr = np.isfinite(pr_) & np.isfinite(y[ev])
         rr = float(spearmanr(pr_[okr], y[ev][okr])[0])
