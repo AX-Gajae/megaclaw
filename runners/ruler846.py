@@ -97,7 +97,8 @@ for label, cols in (("venue만", (("venue_prominence", F_VP),)),
                     ("tb만(대조)", (("target_breadth", F_TB),))):
     vals = []
     for k in range(6):
-        r2 = np.random.default_rng(8460 + hash(label) % 1000 + k)
+        LBL = {"venue만": 0, "entry만": 100, "tb만(대조)": 200}
+        r2 = np.random.default_rng(8460 + LBL[label] + k)  # 🔴 hash() 는 프로세스별 랜덤이었다(티처 #13) — 고정 정수로 수리
         A2, M2, _ = masked(r2, cols)
         vals.append(rho(ens(A2, M2), yh))
     abl[label] = {"ρ": round(float(np.mean(vals)), 4), "Δ": round(float(np.mean(vals)) - rho_full, 4),
