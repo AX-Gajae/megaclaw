@@ -1,0 +1,220 @@
+\documentclass[10pt]{article}
+\usepackage{icmlko}
+
+\icmlmeta{IP 파운데이션 월드모델}{79}{같은 작품, 두 라벨, 0.52}{천장을 처음 쟀다 --- 그리고 아홉째 도메인의 3분의 1이 잡음이었다}
+
+\begin{document}
+
+\twocolumn[
+\icmlheader
+
+\begin{abstract}
+노트 78이 남긴 숙제를 풀다가 이 프로젝트에서 한 번도 못 잰 것을 쟀다.
+AniList가 한국 웹툰도 MANGA로 분류하므로 \textbf{같은 작품이 네이버 웹툰과
+AniList 양쪽에 있다}. 제목으로 맞추니 \textbf{327건}이 겹친다. 두 플랫폼이
+같은 작품에 매긴 반응 크기가 얼마나 맞을까. \textbf{$\rho=+$0.524}다.
+고전적 측정오차 모형에서 이는 각 라벨의 신뢰도가 0.524이고 \emph{어떤} 예측자도
+$\sqrt{0.524}=$ \textbf{0.724}를 못 넘는다는 뜻이다. 두 플랫폼이 다른 독자층을
+재므로 불일치의 일부는 잡음이 아니라 실제 차이이고, 그러면 상한은 0.724보다
+\emph{높다} --- \textbf{0.724는 천장의 하한이다.} 어느 쪽이든 웹툰 자기 $\rho$
+$+$0.480은 그 66\% 이하이고 \textbf{천장은 아직 위에 있다.} 숙제 자체의 답도
+분명했다 --- AniList의 한국 작품 556건은 축이 거의 설명하지 못한다(자기 $\rho$
+\textbf{$+$0.083}, 일본 작품은 $+$0.477). 라벨이 \emph{세계 독자}의 서재 등록
+수라 영어 번역 유무에 지배되는데 AniList 메타데이터가 그것을 안 담는다.
+일본 작품만 남기니 판정치가 $+$0.3915에서 \textbf{$+$0.4003}으로(씨앗 넷 전부
+채택) 처음 0.40을 넘고, 반폭이 0.0402에서 \textbf{0.0339}로 16\% 줄었다.
+겹치는 173건을 빼도 만화$\to$웹툰 이점이 그대로($+$0.482 vs $+$0.480)라
+노트 78의 ``닮은 것이 특별하지 않다''는 안 흔들린다.
+\end{abstract}
+]
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/ceil.pdf}
+\caption{왼쪽 --- 같은 작품 327건의 두 라벨. 오른쪽 --- 만화 국가 분해.}
+\end{figure*}
+
+\section{천장을 처음 쟀다}
+
+노트 13부터 일흔여덟까지 라벨을 \emph{주어진 것}으로 다뤘다. 일평균 방문자,
+초동 판매량, 리뷰 총계, 관심 등록 수 --- 전부 ``몇 명이 반응했나''의 측정이라고
+가정했고 그 측정이 얼마나 정확한지는 물은 적이 없다.
+
+\begin{quote}\fontsize{9.5}{11.5}\selectfont
+AniList가 한국 웹툰도 MANGA로 분류한다. 그래서 \textbf{같은 작품이 두 플랫폼에
+따로 기록돼 있다} --- 네이버는 한국 독자의 관심 등록 수, AniList는 세계 독자의
+서재 등록 수. 제목으로 맞춘 327건이 이 프로젝트에서 처음으로 \emph{같은 것을
+두 번 잰} 자료다.
+\end{quote}
+
+\begin{table}[t]
+\centering\tsize
+\caption{겹치는 작품의 두 라벨.}
+\begin{tabular}{lrr}
+\toprule
+작품 & 네이버 & AniList \\
+\midrule
+신의 탑 & 1,893,695 & 98,741 \\
+전지적 독자 시점 & 1,431,966 & 128,767 \\
+갓 오브 하이스쿨 & 1,388,375 & 54,063 \\
+입학용병 & 756,874 & 55,330 \\
+나 혼자 만렙 뉴비 & 730,219 & 48,972 \\
+\midrule
+\multicolumn{2}{l}{327건 순위 상관} & \textbf{$+$0.524} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\claimx{같은 작품에 대한 두 플랫폼의 반응 측정이 $\rho=+$0.524만 맞는다. 고전적
+측정오차 모형에서 이는 각 라벨의 신뢰도이며, 어떤 예측자도 $\sqrt{0.524}=0.724$를
+넘을 수 없다.}{두 플랫폼은 \emph{다른 독자층}을 잰다. 불일치의 일부는 잡음이
+아니라 실제 차이이고, 그러면 각 라벨의 신뢰도는 0.524보다 높고 상한도 0.724보다
+높다. \textbf{0.724는 천장의 하한이다.}}
+
+\begin{table}[t]
+\centering\tsize
+\caption{천장 대비 현재 위치. 상한은 최소 0.724.}
+\begin{tabular}{lrr}
+\toprule
+& $\rho$ & 상한 대비 \\
+\midrule
+팝업 제품 수치(한 건씩) & $+$0.527 & 73\% \\
+웹툰 앙상블 & $+$0.483 & 67\% \\
+웹툰 자기 $\rho$ & $+$0.480 & 66\% \\
+만화 자기 $\rho$(일본) & $+$0.477 & 66\% \\
+아홉 도메인 판정치 & $+$0.400 & 55\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+이것이 이 프로젝트의 첫 \textbf{외부} 기준점이다. 지금까지 모든 판정은 내부
+비교였다 --- 이 배선이 저 배선보다 나은가. 처음으로 ``얼마나 더 갈 수 있나''에
+숫자가 붙는다. \textbf{천장은 아직 위에 있다.}
+
+\section{아홉째 도메인의 3분의 1이 잡음이었다}
+
+\begin{table}[t]
+\centering\tsize
+\caption{만화를 국가로 가른다.}
+\begin{tabular}{lrrrr}
+\toprule
+& $n$ & 자기 $\rho$ & 앙상블 & 판정치 \\
+\midrule
+전체 & 1551 & $+$0.391 & $+$0.389 & $+$0.3915 \\
+\textbf{일본만} & 1214 & \textbf{$+$0.477} & $+$0.471 & \textbf{$+$0.4003} \\
+한국만 & 556 & \textbf{$+$0.083} & $+$0.235 & $+$0.3732 \\
+겹침 제외 & 1471 & $+$0.400 & $+$0.389 & $+$0.3919 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+한국 작품에서 자기 $\rho$가 $+$0.083이다. \textbf{축이 라벨을 거의 설명하지
+못한다.} 이유가 그럴듯하다 --- AniList 서재 등록 수는 \emph{세계} 독자의 것이고,
+한국 작품에서는 영어 번역이 됐는지가 지배한다. 태그 수 · 작가 이력 · 연재
+밀도는 그것을 안 담는다.
+
+\begin{table}[t]
+\centering\tsize
+\caption{일본 작품만 남기기. 씨앗 넷(노트 72 규약).}
+\begin{tabular}{lrl}
+\toprule
+씨앗 & $\Delta$ & 95\% 구간 \\
+\midrule
+20260729 & $+$0.0087 & $[+0.0029, +0.0140]$ \\
+19770101 & $+$0.0087 & $[+0.0023, +0.0137]$ \\
+20250315 & $+$0.0087 & $[+0.0017, +0.0137]$ \\
+20260101 & $+$0.0087 & $[+0.0028, +0.0140]$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+적용했다. 도메인 정의와도 맞는다 --- 이 도메인은 ``일본 만화''이고 한국 작품은
+웹툰 도메인과 시장이 겹친다.
+
+\begin{table}[t]
+\centering\tsize
+\caption{적용 결과. 아홉 도메인 9,960건 · 70셀.}
+\begin{tabular}{lrr}
+\toprule
+& 전 & 후 \\
+\midrule
+앙상블 판정치 & $+$0.3915 & \textbf{$+$0.4003} \\
+셀 평균 & $+$0.3653 & $+$0.3736 \\
+\textbf{구간 반폭} & 0.0402 & \textbf{0.0339} \\
+만화 자기 $\rho$ & $+$0.391 & $+$0.477 \\
+자기 $\rho$ vs 대상 & $+$0.989 & $+$0.988 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+판정치가 처음 0.40을 넘었고 반폭이 16\% 줄었다. \textbf{잡음 레코드를 빼는
+것이 도메인을 하나 더하는 것과 같은 값을 했다.}
+
+\claimx{표본에 잡음 부분집합이 섞여 있으면 평균과 구간을 동시에 해친다. 만화
+556건(3분의 1)을 빼니 판정치가 $+$0.0088 오르고 반폭이 0.0402에서 0.0339로
+줄었다 --- 노트 78에서 도메인 하나를 더해 얻은 것과 같은 크기다.}{국가로 갈랐지
+잡음 여부로 가른 것이 아니다. 다른 도메인에도 비슷한 부분집합이 있을 수 있고
+안 찾아봤다.}
+
+\section{겹침은 원인이 아니었다}
+
+만화 표본 1,551건 중 173건이 웹툰 표본과 같은 작품이다. 노트 78의
+``만화$\to$웹툰이 나머지보다 $+$0.030 낫다''가 그 겹침 때문일까.
+
+\begin{table}[t]
+\centering\tsize
+\caption{겹치는 173건을 빼도.}
+\begin{tabular}{lrr}
+\toprule
+& 전체 & 겹침 제외 \\
+\midrule
+만화 $\to$ 웹툰 & $+$0.482 & $+$0.480 \\
+웹툰 $\to$ 만화 & $+$0.394 & --- \\
+판정치 & $+$0.3915 & $+$0.3919 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+바뀌지 않는다. \textbf{노트 78의 ``표면 유사성은 전이를 안 만든다''는 안
+흔들린다.}
+
+\section{한계}
+
+\begin{itemize}[leftmargin=1.1em,itemsep=0.15em]
+\item 라벨 신뢰도를 \textbf{한 쌍}에서만 쟀다. 팝업 라벨(일평균 방문자)의
+      신뢰도는 여전히 모른다 --- 두 번 잰 자료가 없다.
+\item 제목 정규화로 맞췄다. 327건 중 오매칭이 있을 수 있고 못 맞춘 것도 많다.
+\item ``상한 0.724''는 두 라벨이 같은 것을 잰다는 가정 위에 있다. 실제로는
+      다른 독자층이라 가정이 느슨하다.
+\item 한국 작품을 뺀 근거가 검정이고, ``영어 번역이 지배한다''는 사후 해석이다.
+\item 만화 라벨 범위가 여전히 좁다($\log_{10}$ SD 0.31).
+\end{itemize}
+
+\section{다음}
+
+\begin{enumerate}[leftmargin=1.3em,itemsep=0.15em]
+\item \textbf{다른 도메인에도 잡음 부분집합이 있는지 찾는다.} 만화에서
+      $+$0.0088을 얻었다면 여덟 곳에도 있을 것이다 --- 부분집합별 자기 $\rho$를
+      전수로 훑는다.
+\item 팝업 라벨의 신뢰도를 잴 방법 --- 같은 팝업을 두 번 재는 자료가 있는가.
+\item 라벨 신뢰도를 다른 쌍에서 다시 잰다(게임 스팀/모바일, 애니 라프텔/AniList).
+\item 열째 도메인 --- 반폭 예상 0.0300.
+\end{enumerate}
+
+\vspace{0.6em}
+\hrule height 0.3pt
+\vspace{0.5em}
+{\footnotesize
+\textbf{참고문헌}\\[0.3em]
+Spearman, C. (1904). The proof and measurement of association between two things.
+\emph{American Journal of Psychology}, 15(1), 72--101.\\[0.15em]
+Lord, F. M., Novick, M. R. (1968). \emph{Statistical Theories of Mental Test
+Scores}. Addison-Wesley.\\[0.15em]
+Cronbach, L. J. (1951). Coefficient alpha and the internal structure of tests.
+\emph{Psychometrika}, 16(3), 297--334.\\[0.15em]
+Frankel, M. R. (1971). \emph{Inference from Survey Samples}. ISR.\\[0.15em]
+Efron, B., Tibshirani, R. J. (1993). \emph{An Introduction to the Bootstrap}.
+Chapman \& Hall.
+}
+
+\end{document}

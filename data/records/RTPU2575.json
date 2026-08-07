@@ -1,0 +1,169 @@
+{
+ "record_id": "RTPU2575",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:스틸카인드_저속노화",
+  "space_id": "unresolved:코엑스_스타필드_B1_잠바주스",
+  "client_party_id": "unresolved:스튜디오언볼트",
+  "brand_key": "스틸카인드",
+  "space_key": "스타필드_코엑스"
+ },
+ "intervention": {
+  "concept": "B급 시골풍 저속노화 마을을 체험하는 '들판식사존' 판매존 팝업. 저속노화 관련 식품 브랜드(마이노멀·매일유업·샘표·베이컨리얼리즘·맛있는책방·스튜디오언볼트) 제품과 저속노화 굿즈를 판매한다.",
+  "brand_name": "2025 저속노화대잔치",
+  "experience_elements": [
+   "제품 판매",
+   "시식(제로칩·저당라떼·무설탕 로스트햄 등)",
+   "저속노화 굿즈 판매(티셔츠·키링·스티커·플래너 등)",
+   "순차별 입장 및 동선 관리 이벤트존"
+  ],
+  "promotions": [
+   "샘표 2개 이상 구매 시 전제품 50% 할인",
+   "마이노멀 제로칩 2개+1",
+   "마이노멀 저당라떼 2개+1(50%)",
+   "제품별 소비자가 대비 10~50% DC"
+  ],
+  "staging_tags": [
+   "B급 시골풍",
+   "저속노화 마을",
+   "들판식사존",
+   "중앙 키오스크",
+   "브랜드별 매대 조닝"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "강남구",
+   "venue_name": "스타필드 코엑스",
+   "venue_type": "쇼핑몰(코엑스 B1)",
+   "foot_traffic_context": "코엑스 B1 잠바주스 일대"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-11-21",
+   "to": "2025-11-30",
+   "days": 10
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "계약 총액 ₩68,733,500(공급가액 62,485,000 + 세액 6,248,500, VAT 포함). 선금 50% 34,366,750원 / 잔금 50% 34,366,750원 2회 분할 지급. 견적서 3차 기준 ₩69,944,600(VAT 10% 포함, 공급가 63,586,000). 대행수수료는 소계의 10%(정가항목 제외)."
+  },
+  "brand_requirements": [
+   "행사운영·슈퍼바이저 상주 관리",
+   "전산 세팅·정산·매출관리",
+   "공간 기획 설계 및 운영",
+   "시공 및 제작, 철거 원복",
+   "방염 서류 제출 및 방염 처리",
+   "저작권 결과물 갑(스튜디오언볼트) 귀속"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "스타필드 코엑스 B1 잠바주스 일대"
+  },
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 43,
+    "holiday_until": 85,
+    "holiday_block_in": 0,
+    "nat_event_gap": 8,
+    "nat_event": "수능",
+    "doc_lag_days": 3,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 34363.0,
+    "pnl_pre_accounts": 2,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-10-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": 6419146,
+   "rev_mm_recognized": 67.3
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 내용 없음(빈 문서). 실측 방문/매출 데이터 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 67.3 ≈ 계약총액 62.485",
+   "contract_total_mm": 62.485,
+   "last_recognition_period": "2025-12"
+  },
+  "sales_basis": "PnL 상품매출 양수계정 합 × 1.1 (부가세 포함 기준)",
+  "label_history": [
+   {
+    "at": "pnl_sales (2026-07-28)",
+    "action": "mine",
+    "changes": [
+     "sales_krw 6,419,146 (PnL 총 결제액)"
+    ],
+    "evidence": "core.project_pnl_monthly 상품매출 양수계정 합 5,835,587(공급가) × 1.1, 인식 2개월"
+   }
+  ]
+ },
+ "docs": [
+  {
+   "doc_id": "1-1KUSdbRIHOdmb3I5dyON59jNX24C30L",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1-1KUSdbRIHOdmb3I5dyON59jNX24C30L/view",
+   "title": "(Sweetspot)저속노화 들판식사존 기획안_251114.pdf_제안서"
+  },
+  {
+   "doc_id": "1A1_QL2k_PIqxhGswfXdN45JMgp029ysI",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1A1_QL2k_PIqxhGswfXdN45JMgp029ysI/view",
+   "title": "스틸카인드 저속노화.txt"
+  },
+  {
+   "doc_id": "1Tkq5MFJptUB4XJVbGpCFRw4iTTZN2H1P",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Tkq5MFJptUB4XJVbGpCFRw4iTTZN2H1P/view",
+   "title": "(Sweetspot) 스틸카인드_스타필드 코엑스 팝업_견적서_3차_251118.pdf"
+  },
+  {
+   "doc_id": "1gWq0wxIHOfGirSzof5tD_gLEdqU1OdhL",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1gWq0wxIHOfGirSzof5tD_gLEdqU1OdhL/view",
+   "title": "저속노화대잔치-스윗스팟 행사 운영 대행 계약서 v2.pdf"
+  },
+  {
+   "doc_id": "1u4JL46XFP0A7c-l876rNS4Tc4Q28JyOgl5N1IBFRsi4",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1u4JL46XFP0A7c-l876rNS4Tc4Q28JyOgl5N1IBFRsi4/view",
+   "title": "결과보고서_내용없음"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 4건: 저속노화대잔치-스윗스팟 행사 운영 대행 계약서 v2.p, (Sweetspot)저속노화 들판식사존 기획안_2511, (Sweetspot) 스틸카인드_스타필드 코엑스 팝업_, 결과보고서_내용없음. 미확실: 결과보고서 내용 전무 - 방문객수·POS 매출 실측 없음; 면적(pyeong) 미기재 - 바닥 랩핑 36㎡, 공간 약 11020×8400mm만 확인; 예상 방문객수 미기재; client_name(발주처)이 계약서상 스튜디오언볼트, 견적서 수신은 스틸카인드로 상이; 도시/구는 코엑스 위치 기반 추정"
+ }
+}

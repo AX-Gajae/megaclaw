@@ -1,0 +1,199 @@
+{
+ "record_id": "RTPU2559",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:엔자임헬스",
+  "space_id": "unresolved:서울_중구_프레스센터_B구역",
+  "client_party_id": "unresolved:엔자임헬스_주식회사",
+  "brand_key": "엔자임헬스",
+  "space_key": "서울_프레스센터"
+ },
+ "intervention": {
+  "concept": "편두통 인식 개선을 위한 두통환우회 커피차 프로모션 '두통 Free Station'. 네이버 카페 가입 또는 인스타그램 인증샷 이벤트 참여 시 귀마개·수면안대 및 음료를 증정하는 원데이 부스 행사.",
+  "brand_name": "두통 Free Station",
+  "experience_elements": [
+   "환우회 네이버 카페 가입 인증 후 귀마개 증정",
+   "환우회 인스타그램 팔로우 및 컬러안경 착용 인증샷 후 수면안대 증정",
+   "커피차 음료 증정",
+   "편두통 질환 정보 소개 및 리플렛 배포",
+   "이젤 4종(#오해1 #오해2 #오해3 #결론) 전시"
+  ],
+  "promotions": [
+   "카페 가입 인증 시 귀마개(500개) 증정",
+   "인스타그램 해시태그 인증 시 수면안대(500개) 증정",
+   "두 이벤트 중 한 가지 참여 시 음료 증정"
+  ],
+  "staging_tags": [
+   "커피차",
+   "캐노피 텐트",
+   "X배너",
+   "이젤 폼보드",
+   "핸디배너",
+   "컵홀더 브랜딩",
+   "리플렛"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": 500,
+   "capacity_per_session": null,
+   "giveaway_qty": 1000,
+   "area_sqm": null,
+   "planned_operating_days": 1,
+   "throughput_units": 1,
+   "unit_minutes": null,
+   "operating_hours_per_day": 4,
+   "staff_count": 5,
+   "experience_density": 1,
+   "goods_scale": 0,
+   "photo_zones": 1,
+   "collab_strength": 1,
+   "ip_awareness": 0,
+   "target_breadth": 2,
+   "entry_friction": 1,
+   "media_push": 2,
+   "season_fit": 3,
+   "venue_prominence": 3
+  },
+  "attr_meta": {
+   "evidence": "견적서 '커피차 렌탈비 500잔 기준'(1대), '컵홀더 백색 500개 기준', 인건비 SV1+STAFF4; 기획서 '9/22(월) 오전10~14시(4시간)', 귀마개500+수면안대500개",
+   "confidence": "high",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "중구",
+   "venue_name": "프레스센터 B구역",
+   "venue_type": "옥외/광장 부스",
+   "foot_traffic_context": "보행자 통로 인접, B구역 33×17m"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-09-22",
+   "to": "2025-09-22",
+   "days": 1
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "최초 계약금액 6,540,000원(VAT별도), 선금 3,270,000원/잔금 3,270,000원. 2025-09-18 변경계약으로 총액 8,190,000원(VAT별도)으로 증액, 기지급 선금 3,270,000원 제외 잔금 4,920,000원. 견적서 기준 소계 7,725,000원 + 대행수수료(정가 항목 제외 소계의 10%) 472,500원 = 8,190,000원. 잔금은 최종승인일로부터 15일내 세금계산서 발행, 발행일로부터 30일이내 지급."
+  },
+  "brand_requirements": [
+   "지적재산권 전부 엔자임 귀속",
+   "안전관리 및 행사 보험 가입",
+   "엔자임헬스 파트너 규정(합리적 비용청구, 뇌물금지, 정보보안, 하도급금지 등) 준수",
+   "개인정보 처리제한 및 계약종료 시 파기/반납"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "프레스센터 B구역, 보행자 통로 인접 원데이 부스"
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 0.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 36,
+    "holiday_until": 11,
+    "holiday_block_in": 0,
+    "nat_event_gap": 39,
+    "nat_event": null,
+    "doc_lag_days": 4,
+    "doc_dates_found": 4
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 3000,
+   "popup_zone_pass_rate": 0.3,
+   "host_traffic_est": 900.0,
+   "venue_scale_tier": 5,
+   "confidence": "low",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2025-09-22",
+    "visitors": 386,
+    "sales_krw": null
+   }
+  ],
+  "totals": {
+   "visitors": 386,
+   "sales_krw": null,
+   "rev_mm_recognized": 8.2
+  },
+  "counting_method": "participation",
+  "counting_basis": "결과 통계 표 - 환우회 카페 가입 298명, 인스타그램 인증사진 93명, 리플렛 500장, 음료 386잔. 방문자 대표값으로 음료 배포 386잔(참여) 사용",
+  "plan_visitors_expected": 500,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(방문자 단일 지표 없음. 존별 참여인원(카페가입 298, 인스타 93, 리플렛 500, 음료 386잔) 별도 집계. 음료 386잔을 참여 대표값으로 채택. 기획서상 귀마개·수면안대 각 500개, 리플렛 500매 기준으로 500명 규모 예상.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 8.2 ≈ 계약총액 8.19",
+   "contract_total_mm": 8.19,
+   "last_recognition_period": "2025-09"
+  },
+  "label_trust": {
+   "grade": "A",
+   "flags": [],
+   "why": "일별 표가 기간의 100% 커버"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "14eyYbVh-80x4bZW5Fpwyf8mmjX1JCYyI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/14eyYbVh-80x4bZW5Fpwyf8mmjX1JCYyI/view",
+   "title": "(Sweetspot) 엔자임_두통 Free Station_견적서_5차_250822.pdf"
+  },
+  {
+   "doc_id": "18ZBRfwwiyDj9bClSzbl_nyEk6t2Y8Zg1",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/18ZBRfwwiyDj9bClSzbl_nyEk6t2Y8Zg1/view",
+   "title": "(Sweetspot) 엔자임_두통환우회_두통 Free Station_기획안 및 리플렛 디자인_250916(제안서).pdf"
+  },
+  {
+   "doc_id": "1VHSszZuLsQeREdsRx3yzOA43mj12E5_C",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1VHSszZuLsQeREdsRx3yzOA43mj12E5_C/view",
+   "title": "엔자임_스위트스팟_행사 대행 계약서_250814.pdf"
+  },
+  {
+   "doc_id": "1c8jg53-0kh-y1KAJwLGTywr_6QbcvcCQ",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1c8jg53-0kh-y1KAJwLGTywr_6QbcvcCQ/view",
+   "title": "(SWEETSPOT) 두통환우회_두통 Free Station_결과보고서.pdf"
+  },
+  {
+   "doc_id": "1cauNvHbKN-c7twYuav61OiUOeceCM4FH",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1cauNvHbKN-c7twYuav61OiUOeceCM4FH/view",
+   "title": "(수정)변경계약서_스위트스팟_커피차_20250918.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 5건: 엔자임_스위트스팟_행사 대행 계약서_250814.pdf, (수정)변경계약서_스위트스팟_커피차_20250918.p, (Sweetspot) 엔자임_두통환우회_두통 Free , (Sweetspot) 엔자임_두통 Free Statio, (SWEETSPOT) 두통환우회_두통 Free Stat. 미확실: 소비자 매출(POS) 정보 없음 - 무료 증정 행사; 방문자 통합 집계 없이 존별 참여인원만 존재하여 totals.visitors 대표값 선정에 판단 개입; 견적서 수신일자(2025-10-13)와 행사일 불일치; 프레스센터 정확한 행정구역(서울 중구 추정)"
+ }
+}

@@ -1,0 +1,235 @@
+{
+ "record_id": "RCPU2514",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:가나디",
+  "space_id": "unresolved:더현대서울",
+  "client_party_id": null,
+  "brand_key": "가나디",
+  "space_key": "더현대서울"
+ },
+ "intervention": {
+  "concept": "",
+  "brand_name": "가나디",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "영등포구",
+   "venue_name": "더현대서울",
+   "venue_type": "백화점",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-05-15",
+   "to": "2025-05-28",
+   "days": 14
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대서울"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 9,
+    "holiday_until": 22,
+    "holiday_block_in": 0,
+    "nat_event_gap": 19,
+    "nat_event": null,
+    "doc_lag_days": 43,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 11,
+    "comp_prior_at_venue": 299,
+    "comp_within_500m_open": 12,
+    "comp_within_1000m_open": 12,
+    "matched_address": "서울 영등포구 여의대로 108"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 4363719.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2025-03-01"
+   }
+  },
+  "demand_signals": {
+   "waiting_reported": "사전예약 오픈 동시 매진 + 운영 첫날 오전 11시 현장예약 마감 — 원문: \"지난 7일에 진행된 사전 예약은 오픈과 동시에 순식간에 매진되었고\", \"운영 첫날에는 오전 11시에 현장 예약이 마감되며\"",
+   "sold_out": null,
+   "source": "역검색 외부 보도(2026-07-27)"
+  },
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 140.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-05, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-05"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "10lcq8dp4315rh0ez13Idm2vPYXZTh79g",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/10lcq8dp4315rh0ez13Idm2vPYXZTh79g/view",
+   "title": "(미팅용)[스위트스팟] 더현대서울 X 가나디_운영계획안_0507.pptx"
+  },
+  {
+   "doc_id": "13hIFDqxX2IFCpb7SNYBYqxL9UMTi36lS",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/13hIFDqxX2IFCpb7SNYBYqxL9UMTi36lS/view",
+   "title": "스위트스팟_더현대 서울 가나디 팝업스토어 업무계약서 250402 .pdf"
+  },
+  {
+   "doc_id": "15bAXYJkwSYzRPwBCy-1u9K715H5bSTZN",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/15bAXYJkwSYzRPwBCy-1u9K715H5bSTZN/view",
+   "title": "가나디_조형물 견적서.xlsx"
+  },
+  {
+   "doc_id": "17MkYQ4Z4yAXYCfOusyCmculPRqtJGgb7",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17MkYQ4Z4yAXYCfOusyCmculPRqtJGgb7/view",
+   "title": "세금계산서.png"
+  },
+  {
+   "doc_id": "1CeZFDtFwVFjJ9EA6x-FUFkJLn4Vs-kJX",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CeZFDtFwVFjJ9EA6x-FUFkJLn4Vs-kJX/view",
+   "title": "세금계산서.jpg"
+  },
+  {
+   "doc_id": "1Hu6N2LNsxDEdbONJMKSugc745KujZRl1",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Hu6N2LNsxDEdbONJMKSugc745KujZRl1/view",
+   "title": "사업자등록증.jpg"
+  },
+  {
+   "doc_id": "1JyrqsyB4GvpHCscYl9yzhyyPfXwF7wZW",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1JyrqsyB4GvpHCscYl9yzhyyPfXwF7wZW/view",
+   "title": "통장사본.jpg"
+  },
+  {
+   "doc_id": "1QKnN-JgkFLNrQOtaQj25t3Yp6blU_u3s",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1QKnN-JgkFLNrQOtaQj25t3Yp6blU_u3s/view",
+   "title": "더현서가나디_견적서(현대드림).xls"
+  },
+  {
+   "doc_id": "1X9m9ch_t4zDfPFoBcvyK3nGPIcSJL8-U",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1X9m9ch_t4zDfPFoBcvyK3nGPIcSJL8-U/view",
+   "title": "스위트스팟_가나디 팝업 최종견적서.pdf"
+  },
+  {
+   "doc_id": "1_ddGPJk2-y4QrHIsT9gittYYGRNILqPs",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1_ddGPJk2-y4QrHIsT9gittYYGRNILqPs/view",
+   "title": "세금계산서.png"
+  },
+  {
+   "doc_id": "1aKVf7t1uMk7TDZFz_XNLQDZAFbt_zSeO",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1aKVf7t1uMk7TDZFz_XNLQDZAFbt_zSeO/view",
+   "title": "가나디 결과보고서.pdf"
+  },
+  {
+   "doc_id": "1eyMbfOYkWPnqciHt8PpxIBqwuhk_BCp0",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1eyMbfOYkWPnqciHt8PpxIBqwuhk_BCp0/view",
+   "title": "더현서가나디_세금계산서(현대드림).png"
+  },
+  {
+   "doc_id": "1f0WNnNwOxmsBQ5jMSicx_NxOPoHIZNOV",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1f0WNnNwOxmsBQ5jMSicx_NxOPoHIZNOV/view",
+   "title": "[스위트스팟]가나디 팝업_더현서_공간기획안_0402.pptx"
+  },
+  {
+   "doc_id": "1hHMJMrceWdJKJh7R5kg2yj-jbfpRUSDv",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1hHMJMrceWdJKJh7R5kg2yj-jbfpRUSDv/view",
+   "title": "세금계산서.png"
+  },
+  {
+   "doc_id": "1k7SsoWveV-EZhgv8PME7E3tDwnv9Y48E",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1k7SsoWveV-EZhgv8PME7E3tDwnv9Y48E/view",
+   "title": "가나디_치수 정리.pptx"
+  },
+  {
+   "doc_id": "1qqCJzPg0dMDWcrhqoy-MX41XcbKp6u9H",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1qqCJzPg0dMDWcrhqoy-MX41XcbKp6u9H/view",
+   "title": "통장사본.jpg"
+  },
+  {
+   "doc_id": "1qyrNxUbWE-yPPGabRwDJeNc0mBauj2Kq",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1qyrNxUbWE-yPPGabRwDJeNc0mBauj2Kq/view",
+   "title": "더현대 준공청소 견적서.pdf"
+  },
+  {
+   "doc_id": "1rDZ5RBRTONnueUhEBAAd-4JjfQGm-a_H",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1rDZ5RBRTONnueUhEBAAd-4JjfQGm-a_H/view",
+   "title": "[시공계약서-현대드림애드] 더현대서울_가나디_시공건_0507.pdf"
+  },
+  {
+   "doc_id": "1tWAQjY4JSj0SDK0iRrCvUJyU2l5sjtFc",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1tWAQjY4JSj0SDK0iRrCvUJyU2l5sjtFc/view",
+   "title": "공기조형물_가나디_견적서.pdf"
+  },
+  {
+   "doc_id": "1yVwuZ2U8gs24KkzRwtfXSdhFAaf1d6jx",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1yVwuZ2U8gs24KkzRwtfXSdhFAaf1d6jx/view",
+   "title": "견적서.jpg"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서 텍스트(계약서·기획서·견적서·결과보고서)가 제공되지 않음; 컨셉·체험요소·프로모션·연출태그 전체 누락; 면적·수수료구조·요구사항 누락; 방문자·매출 실측 데이터 누락; counting_method 판정 불가; client_name 미확인 | 외부 라벨 역검색(2026-07-27): 수요신호 적재"
+ }
+}

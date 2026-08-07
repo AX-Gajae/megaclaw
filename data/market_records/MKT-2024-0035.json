@@ -1,0 +1,90 @@
+{
+ "market_record_id": "MKT-2024-0035",
+ "event_name": "'짱구는 여행중' 팝업스토어 in 잠실",
+ "brand": "대원씨아이/롯데백화점",
+ "ip_or_collab": "짱구는 못말려",
+ "category": "character",
+ "intervention": {
+  "concept_description": "'짱구는 여행중' 테마 팝업스토어. 롯데월드몰에서 2024-06-05~06-16, 12일간 운영.",
+  "experience_elements": [
+   "캐릭터 굿즈 판매",
+   "포토존"
+  ],
+  "promotions": [
+   "일일 한정 상품"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "롯데월드몰(서울 송파구 잠실)",
+  "venue_type": "mall",
+  "neighborhood": "잠실",
+  "city": "서울",
+  "period_from": "2024-06-05",
+  "period_to": "2024-06-16",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 12,
+    "weekend_share": 0.33,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 7.3,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 100000,
+  "visitors_period_days": 12,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "팝업 운영사(스위트스팟) 사례집 집계",
+  "visitors_source_quote": "12일간, 약 10만 명이 다녀간 짱구 팝업스토어",
+  "visitors_source_url": "https://www.sweetspot.co.kr/blog/?bmode=view&idx=164611351",
+  "visitors_source_date": "2025-05-29",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "대기 2시간가량, 오픈 첫날 500여 명 웨이팅",
+   "sold_out": "일일 한정 상품 오전 소진",
+   "reservation_fill": null,
+   "signal_quotes": [
+    "오픈 첫날에만 500여 명이 웨이팅했으며, 일별 3,500여 명이 방문한 것으로 추산된다. 대기 시간은 2시간가량 소요됐다. (한국면세뉴스 2024-06-13)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "E"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "10만 명은 운영사(스위트스팟) 사례집 기준. 한국면세뉴스(handmk idxno=23065)는 일별 3,500여 명 추산 보도 — 총계 계산은 규칙상 금지 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

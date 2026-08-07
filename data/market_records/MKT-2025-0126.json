@@ -1,0 +1,100 @@
+{
+ "market_record_id": "MKT-2025-0126",
+ "event_name": "2025 청양 구기자 로컬드링크 팝업 in 성수",
+ "brand": "선문대학교 RISE사업단 X 청양군",
+ "ip_or_collab": "구기자 맥주·로컬드링크",
+ "category": "other",
+ "intervention": {
+  "concept_description": "청양 구기자 특산물 활용 로컬드링크(맥주 등) 시음 팝업. 지역 상생 콘셉트",
+  "experience_elements": [
+   "구기자 맥주 시음",
+   "로컬드링크 판매",
+   "굿즈 이벤트"
+  ],
+  "promotions": [
+   "기념품 제공"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "성수연방",
+  "venue_type": "other",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2025-12-13",
+  "period_to": "2025-12-14",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 2,
+    "weekend_share": 1.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 800,
+  "visitors_period_days": 2,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "주최(선문대 RISE사업단) 발표(성료 보도)",
+  "visitors_source_quote": "'2025 청양 구기자 로컬드링크 팝업 in 성수'가 방문객 약 800여 명의 참여 속에 성황리에 마무리됐다.",
+  "visitors_source_url": "http://www.newspago.com/116073",
+  "visitors_source_date": "2025-12-17",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": "준비된 시음 물량 대부분 소진",
+   "reservation_fill": null,
+   "signal_quotes": [
+    "준비된 시음 물량이 대부분 소진되는 등 뜨거운 관심을 받았다.",
+    "준비된 시음 물량이 대부분 소진될 만큼 현장 반응이 뜨거웠다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": true,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "단일 소스(지역 대학 사업단 보도). 소규모 팝업. | 병합 레코드: MKT-2025-0031 | [병합:MKT-2025-0031] 성수연방 팝업거리 사례.",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 800,
+   "basis": "organizer_claim",
+   "quote": "선문대학교(총장 문성제) RISE사업단 지역바이오융합원이 지난 13일부터 14일까지 서울 성수동 성수연방 팝업거리에서 개최한 '2025 청양 구기자 로컬드링크 팝업 in 성수'가 방문객 약 800여 명의 참여 속에 성황리에 마무리됐다.",
+   "url": "http://www.newspago.com/116073",
+   "date": "2025-12-17"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

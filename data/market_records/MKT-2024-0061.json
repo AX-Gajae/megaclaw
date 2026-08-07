@@ -1,0 +1,75 @@
+{
+  "market_record_id": "MKT-2024-0061",
+  "event_name": "NCT WISH 'LET'S GO STEADY' 팝업(언더스탠드 에비뉴)",
+  "brand": "SM엔터테인먼트",
+  "ip_or_collab": "NCT WISH 미니 1집 'Steady'",
+  "category": "entertainment",
+  "intervention": {
+    "concept_description": "미니 1집 발매 기념 팝업. 앨범 콘셉트 체험 공간과 MD 판매",
+    "experience_elements": [
+      "체험 공간",
+      "MD 판매"
+    ],
+    "promotions": [],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "언더스탠드 에비뉴(왕십리로 63)",
+    "venue_type": "other",
+    "neighborhood": "성수동",
+    "city": "서울",
+    "period_from": "2024-09-24",
+    "period_to": "2024-10-13",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(session)",
+      "access_type": "session"
+    },
+    "derived": {
+      "duration": {
+        "days": 20,
+        "weekend_share": 0.3,
+        "holiday_days": 3
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 20,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "SM 발표 인용. 총 방문객 수치 없이 대기 규모만 보도. 원문: '오프라인 현장 예약도 하루 평균 1천 명 이상의 대기줄이 생겨 예약 접수가 매일 조기 마감되는 등'",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "하루 평균 1000명 이상 대기줄, 예약 접수 매일 조기 마감",
+      "sold_out": null,
+      "reservation_fill": "사전 예약 전 회차 매진",
+      "signal_quotes": [
+        "온라인 사전 예약이 모두 매진을 기록한 데 이어 오프라인 현장 예약도 하루 평균 1천 명 이상의 대기줄이 생겨 예약 접수가 매일 조기 마감되는 등"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "수요 신호(대기 일평균 1000명+, 사전예약 전 회차 매진)만 확보. 총 방문객 미공개. | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

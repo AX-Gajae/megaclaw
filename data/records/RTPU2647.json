@@ -1,0 +1,171 @@
+{
+ "record_id": "RTPU2647",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:더블랙레이블_MEOVV",
+  "space_id": "unresolved:용산_한강대로21길17-13_아펙스",
+  "client_party_id": "unresolved:더블랙레이블_THEBLACKLABEL",
+  "brand_key": "MEOVV",
+  "space_key": "용산_아펙스"
+ },
+ "intervention": {
+  "concept": "MEOVV(미야오) 프로모션 팝업 'THE DDI RO RI COMMUNE'. YG 계열 걸그룹 MEOVV의 오프라인 프로모션 팝업으로 용산에서 3일간 운영. 스위트스팟은 인력 운영 대행을 수행.",
+  "brand_name": "MEOVV (미야오) / THEBLACKLABEL",
+  "experience_elements": [
+   "입구/1층 콘텐츠",
+   "2층 이동안내",
+   "고민쪽지",
+   "청음(리스닝)",
+   "리셉션"
+  ],
+  "promotions": [
+   "포춘쿠키 총 1,000개(금요일 150개, 주말 일별 400~450개 한정 배포)",
+   "포토카드 120장 한정 배포",
+   "안내문 1,500개"
+  ],
+  "staging_tags": [
+   "아티스트팝업",
+   "K-POP",
+   "커뮤니티컨셉",
+   "2층공간구성",
+   "청음존"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "용산구",
+   "venue_name": "아펙스",
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2026-05-29",
+   "to": "2026-05-31",
+   "days": 3
+  },
+  "season": "초여름",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총 계약금액 8,800,000원(VAT 별도). 인력 운영 대행비. 세금계산서는 행사 종료 후 상호 합의된 발행일에 발행, 지급은 세금계산서 발행일로부터 30일 이내. 실비는 대금에 포함되어 실행사 전액 부담. 입금계좌 KB국민은행 378801-01-088226(주식회사 스위트스팟). 견적서 기준 인건비 6,815,000(29일 STAFF 1,915,000 + 30/31일 STAFF 4,900,000), 총괄기획료 775,772, 진행비 200,000, 일반관리비 5% 389,539, 기업이윤 10% 701,500 → 만원단위 이하 절사 후 8,800,000."
+  },
+  "brand_requirements": [
+   "운영 스태프 섭외 및 배치",
+   "현장 스태프 운영 관리 및 지휘·감독",
+   "운영 일정 및 포지션별 역할 배정",
+   "행사장소 영업배상책임·화재보험 가입 등 제반업무",
+   "방문객 인솔, 동선 관리 및 안전사고 예방",
+   "안전보건관리 의무 준수",
+   "지식재산권 무단사용 금지, 비밀유지의무"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.67,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 4,
+    "holiday_until": 78,
+    "holiday_block_in": 0,
+    "nat_event_gap": 5,
+    "nat_event": "지방선거",
+    "doc_lag_days": 10,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": 800,
+   "sales_krw": null,
+   "rev_mm_recognized": 8.9
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서/POS 실측 방문객·현장매출 데이터 없음(팝가 spot 연동 및 성과지표 부재). 계획 물자(예상/기획): 포춘쿠키 1,000개(금 150개, 주말 일별 400~450개 한정), 포토카드 120장 한정, 안내문 1,500개. 견적서상 운영시간은 29일 8시간, 30·31일 12:00~22:00(앞뒤 리드타임 30분씩 총 11시간) 기준.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식액 8.9 ≈ 계약총액 8.8 (±10%)",
+   "contract_total_mm": 8.8,
+   "last_recognition_period": "2026-05"
+  },
+  "counting_method": "entry",
+  "counting_basis": null,
+  "counting_detail": "entry",
+  "label_trust": {
+   "grade": "E",
+   "why": "origin=unknown — 실측이 아니므로 평가 풀에서 제외"
+  },
+  "provenance": {
+   "source": "mine2 (2026-07-28)",
+   "evidence": "'결과보고서없음_팝업스토어 프로젝트 종료 보고서_RTPU2647_더블랙레이블 미야오 용산 오프라인 프로모션.docx' 판독. 제6장 '성과 / 결과'(알 수 있는 항목만 작성) 표에서 총 방문자 수 800, 일 평균 방문자 400, 최대 웨이팅 대기 시간 15분, SNS 주요 버즈 '모름', 클라이언트 제공 매출 데이터 '모름/없음', 언론 노출 '30건 이상/있음'. 출처 열에는 '팝가 / 클라이언트 / 추정'이라는 양식의 선택지 3개가 그대로 남아 있고 어느 것도 표시되지 않아 800이 앱 계측인지 클라이언트 통보인지 PM 추산인지 확정할 수 없다 → origin=unknown. 800 = 400×2일로 일평균과 정합한다. 제1장 기본정보의 팝업 시작일 2026년 5월 30일 / 종료일 5월 31일 / 총 운영일수 2일이 근거 기간이며, 이는 레코드의 period 2026-05-29~05-31(3일)과 어긋난다(레코드 쪽이 설치일을 포함한 것으로 보임). 계약금액·실행예산 각 8,800,000원, 공간 '아펙스'(용산, 15평, 클라이언트 직계약), 매출 데이터는 '모름'이라 sales_krw는 null.",
+   "column_quote": "지표 / 수치 / 출처 — '총 방문자 수' 800, 출처란 '팝가 / 클라이언트 / 추정'(선택 미표기) · '일 평균 방문자' 400",
+   "docs_opened": [
+    "결과보고서없음_팝업스토어 프로젝트 종료 보고서_RTPU2647_더블랙레이블 미야오 용산 오프라인 프로모션.docx — 우회성공 (MCP unsupported mime type)"
+   ]
+  },
+  "label_history": [
+   {
+    "at": "mine2 (2026-07-28)",
+    "action": "mine",
+    "changes": [
+     "visitors 800 (entry/unknown) 등급 E"
+    ],
+    "origin": "unknown",
+    "instrument": null,
+    "evidence": "'결과보고서없음_팝업스토어 프로젝트 종료 보고서_RTPU2647_더블랙레이블 미야오 용산 오프라인 프로모션.docx' 판독. 제6장 '성과 / 결과'(알 수 있는 항목만 작성) 표에서 총 방문자 수 800, 일 평균 방문자 400, 최대 웨이팅 대기 시간 15분, SNS 주요 버즈 '모름', 클라이언트 제공 매출 데이터 '모름/없음', 언론 노출 '30건 이상/있음'. 출처 열에는 '팝가 / 클라이언트 / 추정'이라는 양식의 선택지 3개가 그대로 남아 있고 어느 것도 표시되지 않아 800이 앱 계측인지 클라이언트 통보인지 PM 추산인지 확정할 수 없다 → origin=unknown. 800 = 400×2일로 일평균과 정합한다. 제1장 기본정보의 팝업 시작일 2026년 5월 30일 / 종료일 5월 31일 / "
+   }
+  ]
+ },
+ "docs": [
+  {
+   "doc_id": "11J6CwyXVCJ8s3XxSNoqrgSQu5dlQjmmm",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/11J6CwyXVCJ8s3XxSNoqrgSQu5dlQjmmm/view",
+   "title": "결과보고서없음_팝업스토어 프로젝트 종료 보고서_RTPU2647_더블랙레이블 미야오 용산 오프라인 프로모션.docx"
+  },
+  {
+   "doc_id": "1ZwUjKhBPY7PU5qc2XC1oHyINGpP7BmYJ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1ZwUjKhBPY7PU5qc2XC1oHyINGpP7BmYJ/view",
+   "title": "[스위트스팟] 미야오 용산 팝업스토어_계약서_0527 (TBL rev 20260604).pdf"
+  },
+  {
+   "doc_id": "1m8D49MHluTSEJVuYSLjo7tzzp2QFEnky",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1m8D49MHluTSEJVuYSLjo7tzzp2QFEnky/view",
+   "title": "Sweetspot_더블랙레이블 미야오 용산 프로모션 운영_견적서_260519.pdf"
+  },
+  {
+   "doc_id": "1tOm8Tjw8m8X2xR7MIEEGHXRruv9AGZOg",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1tOm8Tjw8m8X2xR7MIEEGHXRruv9AGZOg/view",
+   "title": "제안서 없음.txt"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: [스위트스팟] 미야오 용산 팝업스토어_계약서_0527 , Sweetspot_더블랙레이블 미야오 용산 프로모션 운. 미확실: 실제 방문객 수·현장매출(POS); 팝업 면적(평); venue_type 및 유동인구 맥락; 일자별 방문/매출 표(결과보고서 부재); 정산 확정 순이익(노션 formula 오류); 벤더/외주 제작처(포춘쿠키·포토카드); 클라이언트 담당자 상세(견적 수신 '김지은' 확인)"
+ }
+}

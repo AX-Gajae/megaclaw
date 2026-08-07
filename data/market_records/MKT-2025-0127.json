@@ -1,0 +1,90 @@
+{
+ "market_record_id": "MKT-2025-0127",
+ "event_name": "IPX X 지드래곤 '조앤프렌즈 2nd 팝업(ZOAful Winter)' @신세계 강남·센텀시티·스타필드 수원 등",
+ "brand": "IPX",
+ "ip_or_collab": "조앤프렌즈(ZO&FRIENDS)×지드래곤",
+ "category": "character",
+ "intervention": {
+  "concept_description": "겨울 시즌 콘셉트 '조아와 친구가 되어가는 겨울(ZOAful Winter)' 캐릭터 팝업",
+  "experience_elements": [
+   "조아 플러시 트리·겨울 연출 포토존"
+  ],
+  "promotions": [
+   "트래블 라인·겨울 라이프스타일 제품"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "케이팝스퀘어 홍대·신세계백화점 강남점·센텀시티점·스타필드 수원",
+  "venue_type": "department_store",
+  "neighborhood": "반포·센텀시티·수원",
+  "city": "서울·부산·수원",
+  "period_from": "2025-12-19",
+  "period_to": null,
+  "area_pyeong": null,
+  "multi_store": true,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 15000,
+  "visitors_period_days": 3,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "패션비즈 보도(IPX 발표 인용): '지난 19일부터 진행 중인 팝업스토어는 첫 주말(금·토·일) 동안 1만5000여 명이 방문하며' (전 지점 합산 첫 주말)",
+  "visitors_source_quote": "지난 19일부터 진행 중인 팝업스토어는 첫 주말(금·토·일) 동안 1만5000여 명이 방문하며 팝업의 시작부터 높은 관심을 체감하게 했다.",
+  "visitors_source_url": "https://fashionbiz.co.kr/article/222417",
+  "visitors_source_date": "2025-12-21",
+  "sales_krw": null,
+  "sales_source_quote": "",
+  "sales_source_url": "",
+  "sales_source_date": "",
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": true,
+   "reservation_fill": true,
+   "signal_quotes": [
+    "지난 15일 진행한 팝업 사전 예약 역시 케이팝스퀘어 홍대점을 포함 전국 주요 지역(신세계백화점 강남점·부산 센텀시티점·수원 스타필드)에서 오픈 5분 만에 전 회차 동시 마감됐다.",
+    "지난 11일 테크·라이프스타일 브랜드 '케이스티파이'를 통해 선공개한 한정판 조아(ZOA) 인형 키링 에디션과 트래블 라인 3종 등은 공개 직후 30분 만에 온라인 전량 품절됐다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "D",
+   "flags": [
+    "D"
+   ],
+   "why": "스코프 혼합(합산/총계) 표현"
+  },
+  "scope_class": {
+   "interim": true,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": false
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "1만5000명은 전 지점(홍대 포함) 합산 첫 주말 수치. 1차 팝업(2025-07)은 사전예약 3분 마감 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "집계형(통합/합산)",
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

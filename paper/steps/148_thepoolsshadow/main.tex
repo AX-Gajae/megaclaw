@@ -1,0 +1,184 @@
+\documentclass[10pt]{article}
+\usepackage{icmlko}
+
+\icmlmeta{IP 파운데이션 월드모델}{326}{풀의 그림자}{자료를 풀에 맞춰 모으면 자료가 풀의 모양을 갖는다 --- 아이돌 94행을 막은 것은 라벨 기준이 아니라 우리가 안 긁은 것이었다}
+
+\begin{document}
+
+\twocolumn[
+\icmlheader
+
+\begin{abstract}
+어제(노트 325) 아이돌 94행이 왜 안 쓰이는지 보고 \textbf{``라벨 기준이 섞이면
+기준이 곧 표지가 된다 --- 필터가 옳다''}로 끝냈다. 한터 $\log_{10}$ 초동
+중앙 5.115 대 나머지 4.281, 원값으로 일곱 배였다. \textbf{오늘 그것을 재
+보니 반이 틀렸다.} ① 그 차 0.835 는 \textbf{관측 축으로도 출처 종류로도 안
+없어진다}(통제 후 0.580 · $t{=}3.65$) --- 여기까지는 맞다. ② 그런데
+\textbf{판정치가 순위라서 수준 이동은 안 아프다}: 같은 유보 25행에
+94행을 원값 그대로 넣으면 $+$0.588(씨앗 20/20), 수준을 한터에 맞춰 올려도
+$+$0.538, \textbf{기준별 순위 정규화는 오히려 나쁘다}($+$0.428). 라벨을 어떻게
+다루든 상관이 없다 --- \textbf{행이 있느냐가 전부다.} 라벨을 섞은 위약은
+$+$0.179 라 이득의 70\%가 진짜 정보다. ③ \textbf{그러면 무엇이 막았나.}
+자료를 세어 보니 \textbf{위키 99\%$\to$0\% · 앨범 메타 100\%$\to$0\% ·
+검색 35\%$\to$17\%} 다. 우리는 \emph{한터 풀에만} 긁었다. 그래서
+\textbf{위키 표시자가 한터 여부와 99.4\% 같다} --- 표시자$\sim$라벨
+$\rho{=}0.363$($p{<}$1e-6), \texttt{marker} 가 곧장 ``볼 것''이다.
+\textbf{덫은 라벨에 있지 않고 우리 수집 경로에 있었다.} ④ 그리고 고치는 법이
+더하기가 아니라 \textbf{빼기}다: 한터에만 있는 축 둘(\texttt{entry\_friction} ·
+\texttt{goods\_scale})을 \emph{빼고} 94행을 넣으면 아이돌 유보 순위상관이
+\textbf{0.2199 $\to$ 0.4728}($+$0.2413 · 20/20)이다. 그 둘을 지키면 이득이
+$+$0.111 로 반이 된다. \textbf{그리고 그 둘은 한터만 쓸 때도 아무것도 안
+벌고 있었다}(0.2249 대 0.2199).
+\end{abstract}
+]
+
+\section{어제의 결론을 다시 잰다}
+
+노트 325가 아이돌 94행을 ``고칠 수 있는 종류로 막혀 있다''로 남겼고, 오늘
+그 하나를 재기로 미리 적었다(\texttt{preregister\_idolbasis.json}).
+\textbf{두 가설을 갈라 놓았다.}
+
+\begin{center}\footnotesize
+\begin{tabular}{ll}
+\hline
+가설 A 세는 법 & 기준마다 세는 법이 달라 같은 인기가 \\
+ & 다른 수로 찍힌다 $\to$ 정규화가 고친다 \\
+가설 B 뽑힌 것 & 비한터가 실제로 더 작은 그룹이다 \\
+ & $\to$ 정규화는 진짜 정보를 지운다 \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{차는 안 없어진다 --- 여기까지는 맞았다}
+
+\begin{center}\footnotesize
+\begin{tabular}{lrrr}
+\hline
+모형 & 한터 계수 & SE & $t$ \\
+\hline
+기준만 & 0.664 & 0.132 & 5.04 \\
+$+$연도 · 서바이벌 · 인원 & 0.620 & 0.120 & 5.15 \\
+$+$\textbf{출처 종류} & \textbf{0.580} & 0.159 & \textbf{3.65} \\
+\hline
+\end{tabular}
+\end{center}
+
+데뷔 연도 중앙은 양쪽 다 2023 이고($p{=}0.58$), 성비도 같다($p{=}1.00$).
+\textbf{관측 가능한 것으로는 못 지운다.} 분포 모양도 봤다 --- 비한터가
+\emph{좁은} 것이 아니라 \textbf{넓다}(SD 0.976 대 0.706 · 5분위 2.79 대 3.56).
+위가 잘린 것이 아니라 \textbf{아래를 더 덮는다.}
+
+\section{그런데 순위 지표는 수준 이동을 안 느낀다}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/pool.pdf}
+\caption{왼쪽 --- 재료별 관측률. 오른쪽 --- 같은 유보 25행에서의 순위상관.}
+\end{figure*}
+
+\textbf{모든 팔이 같은 유보를 쓴다} --- 한터 2025년 이후 25행. 학습만
+54행에서 122행으로 늘린다(분모 규칙, 노트 82 · 90). 씨앗 스물.
+
+\begin{center}\footnotesize
+\begin{tabular}{lrr}
+\hline
+라벨 처리 & 차 & 양수 \\
+\hline
+\textbf{원값 그대로} & \textbf{$+$0.588} & \textbf{20/20} \\
+수준만 한터에 맞춤($+$0.835) & $+$0.538 & 20/20 \\
+기준별 순위 정규화 & $+$0.428 & --- \\
+\hline
+\textbf{위약 --- 추가행 라벨 섞음} & \textbf{$+$0.179} & 16/20 \\
+연도 축을 뺀 원값 & $+$0.497 & 20/20 \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{셋이 거의 같다.} 일곱 배 수준 차를 지우든 두든 결과가 안 바뀐다 ---
+채점이 \emph{도메인 안 순위}이기 때문이다. \textbf{어제 내가 세운 논리는
+모형이 기준을 볼 수 있을 때만 성립한다.} 그리고 이 판에서 기준은 축이
+아니다. 오히려 \textbf{정규화가 제일 나쁘다} --- 두 기준의 모집단이 다른데
+(레빈 $p{=}0.0027$) 같은 분포로 억지로 맞춰서 아래쪽 정보를 지운다.
+
+위약이 $+$0.179 다 --- \textbf{이득의 30\%는 그냥 행이 늘어 부스팅이 덜
+과적합한 것}이고 나머지 70\%가 진짜 라벨 정보다.
+
+\section{그러면 무엇이 막았나 --- 우리 손이다}
+
+\begin{center}\footnotesize
+\begin{tabular}{lrrl}
+\hline
+재료 & 한터 79 & 추가 94 & \\
+\hline
+\texttt{target\_breadth} & 91\% & 84\% & \\
+\texttt{venue\_prominence} & 90\% & 84\% & \\
+\texttt{media\_push} & 96\% & 93\% & \\
+검색(트렌드) & 35\% & 17\% & \\
+\hline
+\texttt{entry\_friction} & 85\% & \textbf{0\%} & 앨범 메타 \\
+\texttt{goods\_scale} & 85\% & \textbf{0\%} & 앨범 메타 \\
+앨범 메타 & 100\% & \textbf{0\%} & \\
+위키 & 99\% & \textbf{0\%} & \\
+\hline
+\end{tabular}
+\end{center}
+
+\texttt{ingest/idol\_axes.py} 가 한터로 풀을 정했고, \textbf{그 뒤의 수집이
+전부 그 풀을 따라갔다.} 위키도 앨범 메타도 풀 안쪽만 긁혔다. 그래서
+
+\begin{center}\small
+\begin{tabular}{lr}
+\hline
+위키 표시자 $=$ 한터 여부 일치율 & \textbf{0.994} \\
+표시자$\sim$라벨 $\rho$ & 0.363 ($p{<}$1e-6) \\
+바닥 대조 결측 4.267 대 바닥 5.115 & $p{<}$1e-4 \\
+\texttt{marker} 판정 & \textbf{볼 것} \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{노트 306의 위키 마스크와 같은 자리인데 원인이 다르다.} 거기서는
+\emph{바깥 세계}가 결과에 따라 문서를 만들었고, 여기서는 \emph{우리}가
+풀에 따라 긁었다. \textbf{둘 다 표시자가 결과를 나른다.}
+
+\section{고치는 법은 더하기가 아니라 빼기다}
+
+\begin{center}\small
+\begin{tabular}{lrrr}
+\hline
+축 집합 & 한터만 & 섞음 & 차 \\
+\hline
+다섯 축 전부 & 0.2249 & 0.3142 & $+$0.111 (19/20) \\
+\textbf{공통 셋만} & \textbf{0.2199} & \textbf{0.4728} & \textbf{$+$0.241 (20/20)} \\
+\hline
+\end{tabular}
+\end{center}
+
+한터 전용 축 둘을 \emph{지키면} 이득이 반이 된다 --- 그 둘의 표시자가
+기준을 나르기 때문이다. \textbf{그리고 그 둘은 한터만 쓸 때도 벌고 있지
+않았다}(0.2249 대 0.2199 --- 0.005). \textbf{아무것도 안 버는 축 둘을
+지키느라 행 94개를 못 쓰고 있었다.}
+
+\section{남은 것}
+\begin{center}\footnotesize
+\begin{tabular}{ll}
+\hline
+갈래 & 왜 \\
+\hline
+\textbf{판에 태우기} & 여기까지는 손으로 만든 부스팅이다 \\
+94행 위키 · 앨범 긁기 & 축 둘을 되살리는 유일한 길 \\
+다른 도메인도 그런가 & 만화 611 · 팝업 305 도 같은 모양인가 \\
+검사 다섯째 & ``이 축이 풀을 표시하나'' \\
+\hline
+\end{tabular}
+\end{center}
+
+\paragraph{규약} \textbf{자료를 풀에 맞춰 모으면 자료가 풀의 모양을 갖는다.}
+필터는 라벨을 고르는 결정이었는데 \textbf{수집이 그 뒤를 따라가면서 필터가
+축에도 새겨졌다.} 그래서 나중에 필터를 풀려고 하면 라벨이 아니라
+\emph{축의 결측}이 막는다. \textbf{그리고 그 결측은 필터를 만든 날에는
+안 보인다.} 노트 306은 바깥 세계가 만든 사후 표시자였고 이것은 \textbf{우리가
+만든 사후 표시자}다 --- 더 조용하다. 풀을 좁힐 때마다 \textbf{그 풀 안에서만
+긁을 것인지}를 같이 적어야 한다.
+
+\end{document}

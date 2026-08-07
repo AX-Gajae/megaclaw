@@ -1,0 +1,80 @@
+{
+ "market_record_id": "MKT-2025-0155",
+ "event_name": "카스 월드(CASS World) 팝업스토어",
+ "brand": "오비맥주 (카스)",
+ "ip_or_collab": null,
+ "category": "liquor",
+ "intervention": {
+  "concept_description": "카스 브랜드 세계관 테마 체험 팝업. 브랜드 체험존·시음 공간",
+  "experience_elements": [
+   "브랜드 체험존",
+   "시음 공간",
+   "포토존"
+  ],
+  "promotions": [
+   "사전 예약 운영(400명 한정 매진 보도)"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "서울 성동구 성수동",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": null,
+  "period_to": null,
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  }
+ },
+ "outcome": {
+  "visitors_total": 17000,
+  "visitors_period_days": 10,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "오비맥주 활동 성과로 언론 보도(2025년 4월, 10일간 운영)",
+  "visitors_source_quote": "4월에는 서울 성수동에서 브랜드 팝업스토어 '카스 월드(CASS World)'를 운영하며 10일간 약 17,000명의 방문객을 유치했다.",
+  "visitors_source_url": "http://www.thefairnews.co.kr/news/articleView.html?idxno=46617",
+  "visitors_source_date": "2025-05-02",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "현장 대기 줄 보도(정성)",
+   "sold_out": null,
+   "reservation_fill": "사전 예약 400명 조기 매진(별도 보도)",
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "구체 개폐일(4/11~20로 보도된 매체 있음)은 주 출처에 미명시. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "기간 미상",
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

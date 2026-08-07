@@ -1,0 +1,89 @@
+{
+ "market_record_id": "MKT-2026-0038",
+ "event_name": "웰라쥬 '워터 스플래시' 팝업 @올리브영 강남타운",
+ "brand": "웰라쥬 (휴젤)",
+ "ip_or_collab": "워터 스플래시 라인 캠페인",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "여름 시즌 수분 라인 캠페인 팝업. 올리브영 강남타운 매장 연계 체험형 운영",
+  "experience_elements": [
+   "제품 체험존",
+   "포토존",
+   "워터 콘셉트 공간"
+  ],
+  "promotions": [
+   "현장 구매 혜택"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "올리브영 강남타운",
+  "venue_type": "mall",
+  "neighborhood": "강남",
+  "city": "서울",
+  "period_from": "2026-05-31",
+  "period_to": "2026-06-28",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 29,
+    "weekend_share": 0.31,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 8000,
+  "visitors_period_days": 29,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "브랜드 성료 보도 인용: 누적 8000여 명, 일평균 체험객 260명",
+  "visitors_source_quote": "누적 방문객 8000여 명, 일평균 체험객 260명을 기록했다",
+  "visitors_source_url": "https://www.newspim.com/news/view/20260630000180",
+  "visitors_source_date": "2026-06-30",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "일평균 체험객 260명"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": true,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "8000은 '8000여 명' 근사치로 기록. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

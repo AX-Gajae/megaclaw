@@ -1,0 +1,83 @@
+{
+  "market_record_id": "MKT-2025-0078",
+  "event_name": "몽벨 무신사 성수 팝업스토어",
+  "brand": "몽벨코리아(엠비케이코퍼레이션)",
+  "ip_or_collab": "무신사, 몬타베어 캐릭터",
+  "category": "fashion",
+  "intervention": {
+    "concept_description": "몬타베어가 제품을 생산하는 '오리지널 팩토리' 콘셉트. 제니 착용 트레킹 선글라스·버사라이트 백팩 등 주력 판매",
+    "experience_elements": [
+      "팩토리 콘셉트 공간 연출"
+    ],
+    "promotions": [],
+    "is_free_entry": true,
+    "reservation_required": false
+  },
+  "conditions": {
+    "venue": "무신사 성수@대림창고",
+    "venue_type": "street_standalone",
+    "neighborhood": "성수",
+    "city": "서울",
+    "period_from": "2025-08-21",
+    "period_to": "2025-09-03",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 14,
+        "weekend_share": 0.29,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 14,
+    "counting_basis": "unknown",
+    "counting_basis_note": "방문객 수치 비공개. 매출액만 확보",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": 100000000,
+    "sales_source_quote": "이번 행사는 오픈 첫날부터 오픈런 행렬이 이어지며 높은 관심을 끌었고, 약 1억 원의 매출을 기록하며 브랜드의 저력을 입증했다.",
+    "sales_source_url": "https://www.newstap.co.kr/news/articleView.html?idxno=312278",
+    "sales_source_date": "2025-09-07",
+    "demand_signals": {
+      "waiting_time_reported": "오픈 첫날 새벽 4시부터 대기행렬",
+      "sold_out": true,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "특히 최근 셀럽 착용으로 화제를 모은 트레킹 선글라스와 버사라이트 경량 백팩은 새벽부터 긴 대기줄이 형성될 정도로 폭발적인 인기를 얻었다. 두 제품은 행사 기간 내내 연일 매진을 기록하며 MZ세대를 중심으로 강력한 흡인력을 과시했다.",
+        "오픈 첫날 새벽 4시부터 대기행렬이 이어지는 등 젊은 층들의 높은 관심이 이어졌다.(어패럴뉴스)",
+        "오픈 첫날 새벽 4시부터 대기행렬이 이어지는 등 젊은 층들의 높은 관심이 이어졌다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "매출 전용 레코드. 어패럴뉴스·패션비즈 동일 보도. | 병합 레코드: MKT-2025-0002 | [병합:MKT-2025-0002] 서울일보(2025-09-08) 동일 수치 보도.",
+  "additional_sources": [
+    {
+      "metric": "sales",
+      "value": 100000000,
+      "basis": "organizer_claim",
+      "quote": "8월 21일부터 9월 3일까지 2주간 무신사 스토어 성수 대림창고에서 진행한 '몽벨 팝업스토어'가 1억 원의 매출을 기록하는 등 기대 이상의 성과를 거뒀다고 밝혔다.",
+      "url": "https://www.apparelnews.co.kr/news/news_view/?idx=219910",
+      "date": "2025-09-05"
+    }
+  ],
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {
+    "sales": "verified"
+  },
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

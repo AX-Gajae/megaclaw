@@ -1,0 +1,122 @@
+{
+ "record_id": "RCPU2436",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:정년이",
+  "space_id": "unresolved:더현대대구",
+  "client_party_id": "unresolved:아이노케이",
+  "brand_key": "정년이",
+  "space_key": "더현대대구"
+ },
+ "intervention": {
+  "concept": "드라마/웹툰 IP '정년이'를 활용한 팝업스토어 판매행사. 기존 더현대서울 운영안과 VMD를 재활용하여 더현대 대구에서 굿즈 판매 중심으로 진행. 투어형 프로젝트로 운영.",
+  "brand_name": "정년이",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [
+   "VMD존",
+   "그래픽 디자인 시공",
+   "기존 VMD 재활용"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "대구",
+   "district": null,
+   "venue_name": "더현대 대구",
+   "venue_type": "백화점",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-11-22",
+   "to": "2024-12-05",
+   "days": 14
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "견적 총계 41,400,000원(VAT 10% 별도). 구성: 기획료 2,500,000 + 인테리어(그래픽시공 20,000,000 등) 27,500,000 + 행사운영 판매인력 7,282,000 + 세팅/철수 900,000 + 기타(보험) 300,000, 소계 38,482,000 + 대행수수료 3,000,000. 견적서 지급조건: 선금 50%, 팝업 종료 후 잔금 50%. 계약서(제5조): 선금 40% 2024-12-30까지, 잔금 2025-01-31까지 지급. 판매 LOSS 총매출 4% 초과 시 제품 제조원가 100% 공제, 4% 이하는 통상LOSS로 갑 부담. 추가 인원 긴급요청 시 시급 3만원 공제. | 계약서 재독해(2026-07-27): 총액 일치 확인(41.4M)"
+  },
+  "brand_requirements": [
+   "행사 운영 시 항시 갑에게 사전보고 및 허가",
+   "위탁상품을 협의된 가격으로 판매 관리",
+   "판매 관련 데이터 및 장부 비치·보관",
+   "상품 사전승인 없이 전매·질권설정 금지",
+   "영업 종료 후 5일 이내 최종 재고 반품",
+   "운영시간 10:30-20:00(금토일 20:30 마감), 하루 출근인원 3명"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대 대구"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 0.5,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 65,
+    "holiday_until": 64,
+    "holiday_block_in": 0,
+    "nat_event_gap": 8,
+    "nat_event": "수능",
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 8,
+    "comp_prior_at_venue": 20,
+    "comp_within_500m_open": 8,
+    "comp_within_1000m_open": 8,
+    "matched_address": "대구 중구 달구벌대로 2077"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 41.4
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서가 제공되지 않아 실측 방문/매출 데이터 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 41.4 ≈ 계약총액 41.4",
+   "contract_total_mm": 41.4,
+   "last_recognition_period": "2024-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1OEMSfNuZTUzaTT9NXyAx7wBYv_6zw-A2",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1OEMSfNuZTUzaTT9NXyAx7wBYv_6zw-A2/view",
+   "title": "정년이_더현대대구_견적서 1차_1108.xlsx"
+  },
+  {
+   "doc_id": "1sMUzXcE0NuZbExrcmK0QB6kK7_fXm74B",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1sMUzXcE0NuZbExrcmK0QB6kK7_fXm74B/view",
+   "title": "정년이 더현대대구 위탁운영 계약서_스위트스팟_241127.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: 정년이 더현대대구 위탁운영 계약서_스위트스팟_24112, 정년이_더현대대구_견적서 1차_1108.xlsx. 미확실: 결과보고서 부재로 방문자수·POS매출 등 outcome 전부 없음; 면적(평) 정보 없음; client_name 원문상 아이노케이(갑)로 추정; 기획서/제안서 부재로 체험요소·프로모션·예상방문 정보 없음; 견적서 지급조건(선금50%)과 계약서 지급조건(선금40%)이 상이함 | fee 계약서화(2026-07-27)"
+ }
+}

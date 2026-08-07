@@ -1,0 +1,100 @@
+{
+ "market_record_id": "MKT-2025-0050",
+ "event_name": "세븐틴 캐릭터 미니틴 'MINITEEN HOUSE PARTY' 팝업(더현대 서울)",
+ "brand": "플레디스(하이브)",
+ "ip_or_collab": "세븐틴(SEVENTEEN) 캐릭터 '미니틴(MINITEEN)'",
+ "category": "entertainment",
+ "intervention": {
+  "concept_description": "세븐틴 공식 캐릭터 미니틴 하우스 파티 콘셉트 팝업. '머치 샵' MD 스토어(사전예약)·카페·포토존",
+  "experience_elements": [
+   "캐릭터 MD 판매",
+   "카페",
+   "포토존"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "더현대 서울",
+  "venue_type": "department_store",
+  "neighborhood": "여의도",
+  "city": "서울",
+  "period_from": "2025-06-24",
+  "period_to": "2025-07-06",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 13,
+    "weekend_share": 0.31,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 13000,
+  "visitors_period_days": 13,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "주최 측 집계 인용 보도. 원문: '13일간 이곳에 다녀간 방문객은 1만 3000명을 상회한다'",
+  "visitors_source_quote": "13일간 이곳에 다녀간 방문객은 1만 3000명을 상회한다. 특히 외국인 방문객은 약 48%를 차지할 정도로 해외 팬들의 방문이 많았다.",
+  "visitors_source_url": "https://www.slist.kr/news/articleView.html?idxno=657987",
+  "visitors_source_date": "2025-07-07",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": "머치 샵 사전예약 전 회차 매진",
+   "signal_quotes": [
+    "머치 샵은 팬들의 성원 속에서 일찌감치 전 회차가 매진됐다."
+   ]
+  },
+  "conflict": true,
+  "alt_figures": [
+   {
+    "value": 14000,
+    "source_quote": "세븐틴 캐릭터 미니틴, 더현대 서울 팝업 방문객 1만 4천명↑…외국인 약 48%(동일 기사 제목)",
+    "source_url": "https://www.slist.kr/news/articleView.html?idxno=657987",
+    "source_date": "2025-07-07",
+    "note": "기사 제목 수치(1만 4천명↑)가 본문 수치(1만 3000명 상회)와 상충. 본문 값을 대표값으로 사용"
+   }
+  ],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "외국인 방문객 비중 약 48%. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

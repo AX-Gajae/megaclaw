@@ -1,0 +1,150 @@
+{
+ "record_id": "RTPU2616",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:베리즈_Berry's_verries",
+  "space_id": "unresolved:롯데월드몰_1F_자라앞",
+  "client_party_id": "unresolved:서연컴퍼니_오수연",
+  "brand_key": "베리즈",
+  "space_key": "롯데월드몰"
+ },
+ "intervention": {
+  "concept": "잠실 롯데월드몰 1층 자라 앞에서 진행된 뷰티 브랜드 베리즈의 2차 팝업스토어. 립플럼퍼·쿠션·선베이스 제품 체험·판매와 가챠 이벤트, 대형 화장대 포토존을 결합한 버짓형 팝업.",
+  "brand_name": "베리즈(Verries)",
+  "experience_elements": [
+   "제품 체험 및 판매",
+   "가챠 이벤트",
+   "대형 화장대 포토존",
+   "DP테이블 충전식 LED 거울 체험",
+   "테스터 안내"
+  ],
+  "promotions": [
+   "전 제품 10% 할인",
+   "가챠 이벤트: 구매 영수증 지참 시 1회 제공",
+   "가챠 이벤트: 인스타그램 팔로우 or 네이버 스토어 알림받기 시 1회 제공",
+   "구매혜택1: 쿠션+선베이스 구매 시 벨벳플럼퍼 미니 증정",
+   "구매혜택2: 플럼퍼 4종 구매 시 플럼퍼 1종+벨벳플럼퍼 미니 1개 증정",
+   "가챠 1등 플럼퍼 전종(5종)/2등 보틀/3등 미니 립 플럼퍼/4등 핸드폰고리 참"
+  ],
+  "staging_tags": [
+   "대형 화장대(2000x850xh2000)",
+   "카펫 재료분리대 마감",
+   "충전식 LED 거울",
+   "가챠 기기",
+   "직사각/원형 전시대",
+   "3D 랜더링 부스",
+   "POP 아크릴 스탠드"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "송파구",
+   "venue_name": "롯데월드몰 1F 자라 앞",
+   "venue_type": "쇼핑몰 (롯데월드타워앤드롯데월드몰)",
+   "foot_traffic_context": null,
+   "venue_slot": "1F"
+  },
+  "area_pyeong": 9,
+  "period": {
+   "from": "2026-02-19",
+   "to": "2026-02-25",
+   "days": 7
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "계약서 총 계약금액 15,000,000원(VAT 별도). 지급: 선금 50%(7,500,000원, 계산서 2월6일, 지급 2월15일), 잔금 50%(7,500,000원, 계산서 2월27일, 행사종료 후 10일 이내). 견적서(2026-02-23) 총계 16,432,000원(VAT 10% 별도)=소계 15,120,000+대행수수료(일반관리비+대행수수료) 1,312,000(정가항목 제외 소계의 10%). 계약총액과 견적총액 상이."
+  },
+  "brand_requirements": [
+   "제작물 사용 전 의뢰사 감수 필수",
+   "POP·프로모션·경품 최종 내용 확인 요청",
+   "롯데월드몰 교환/환불 규정 확인 필요",
+   "스태프 명찰(롯데월드몰 출입용)",
+   "차단봉 롯데월드몰 지원 가능 여부 확인"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 0.9,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 1,
+    "holiday_until": 9,
+    "holiday_block_in": 0,
+    "nat_event_gap": 98,
+    "nat_event": null,
+    "doc_lag_days": 6,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 4,
+    "comp_prior_at_venue": 254,
+    "comp_within_500m_open": 4,
+    "comp_within_1000m_open": 12,
+    "matched_address": "서울 송파구 올림픽로 300"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 16.4
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 부재로 실제 방문객 수·POS 소비자 매출 데이터 없음. 제안서의 가챠 경품 일별 제공 수량(2/19~2/25: 1등 3·3·5·5·3·3·3, 2등 각40, 3등 각71, 4등 각235 등)은 기획 예상/KPI치이므로 outcome에서 제외. 아마란스 PnL 서비스매출 16,432,000원은 계약/견적 기반 대행 매출이며 소비자 POS 매출 아님.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식액 16.4 ≈ 계약총액 15.0 (±10%)",
+   "contract_total_mm": 15.0,
+   "last_recognition_period": "2026-02"
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "1Ur7-DXHzpG_SAYjz0yKC1B4ipexlpbLq",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Ur7-DXHzpG_SAYjz0yKC1B4ipexlpbLq/view",
+   "title": "RTPU2616_베리즈 팝업스토어 2차_견적서_최종_260223.pdf"
+  },
+  {
+   "doc_id": "1dFNXx6Ei21LnrwYIpxUwTKSlCxQXZPcP",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1dFNXx6Ei21LnrwYIpxUwTKSlCxQXZPcP/view",
+   "title": "[스위트스팟] 서연컴퍼니_베리즈 팝업스토어 2차_계약서_260206.pdf"
+  },
+  {
+   "doc_id": "1ftPkPJVK63maY1WbNWuu9svUPaGjAhv8",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ftPkPJVK63maY1WbNWuu9svUPaGjAhv8/view",
+   "title": "(Sweetspot) Verries 팝업스토어 운영계획안_260213_제안서.pdf"
+  },
+  {
+   "doc_id": "1qK9wTTrRvY7LSClE42hTv_9s7WCHroaI",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1qK9wTTrRvY7LSClE42hTv_9s7WCHroaI/view",
+   "title": "결과보고서 없음.txt"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 3건: [스위트스팟] 서연컴퍼니_베리즈 팝업스토어 2차_계약서, (Sweetspot) Verries 팝업스토어 운영계획, RTPU2616_베리즈 팝업스토어 2차_견적서_최종_2. 미확실: 실제 일자별 방문객 수 및 웨이팅 데이터 없음; 소비자 POS 실판매 매출 데이터 없음; 계약총액(15,000,000)과 견적총액(16,432,000) 불일치 - 최종 확정금액 불명확; 현장 벤더 상호(시공·물품대여·도급) 미상; foot_traffic_context 문서에 없음"
+ }
+}

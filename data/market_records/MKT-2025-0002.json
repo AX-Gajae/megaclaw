@@ -1,0 +1,75 @@
+{
+  "market_record_id": "MKT-2025-0002",
+  "event_name": "웨이크메이크×브링그린 '오징어게임 시즌2' 팝업",
+  "brand": "웨이크메이크·브링그린 (올리브영)",
+  "ip_or_collab": "넷플릭스 오징어게임 시즌2 콜라보",
+  "category": "beauty",
+  "intervention": {
+    "concept_description": "오징어게임 시즌2 콜라보 한정 컬렉션 팝업. 올리브영N 성수 트렌드팟과 홍대 트렌드팟 동시 운영",
+    "experience_elements": [
+      "콜라보 제품 체험",
+      "포토존",
+      "게임 콘셉트 공간"
+    ],
+    "promotions": [
+      "한정 컬렉션 판매",
+      "현장 구매 혜택"
+    ],
+    "is_free_entry": true,
+    "reservation_required": false
+  },
+  "conditions": {
+    "venue": "올리브영N 성수 1층 트렌드팟 외 홍대",
+    "venue_type": "mall",
+    "neighborhood": "성수동",
+    "city": "서울",
+    "period_from": "2025-01-05",
+    "period_to": "2025-01-20",
+    "area_pyeong": null,
+    "multi_store": true,
+    "derived": {
+      "duration": {
+        "days": 16,
+        "weekend_share": 0.31,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 16,
+    "counting_basis": "unknown",
+    "counting_basis_note": "총 방문객 미공개. 대기 규모는 방문 후기(브랜잇) 기반",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "평일 오후 기준 약 70팀 대기·약 1시간 웨이팅 (방문 후기)",
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "저는 평일 오후 2시 38분에 웨이팅을 신청했는데, 앞에 무려 약 70팀이 대기중이었어요",
+        "평일 기준 70팀 정도에 약 1시간 웨이팅이 있었습니다"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "후기(정성 신호) 기반 레코드. 홍대 트렌드팟은 ~1/26까지 운영(패션비즈 2025-01). | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,131 @@
+{
+ "market_record_id": "MKT-2025-0011",
+ "event_name": "해리포터×클리오 팝업 @올리브영N 성수",
+ "brand": "클리오 (클럽클리오)",
+ "ip_or_collab": "해리포터 IP 콜라보 컬렉션",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "해리포터 콜라보 컬렉션 론칭 팝업. 사전 예약제+현장 입장 병행, 포토존·체험존",
+  "experience_elements": [
+   "콜라보 컬렉션 체험",
+   "포토존",
+   "한정 굿즈"
+  ],
+  "promotions": [
+   "팝업 한정 세트",
+   "사전 예약 우대"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "올리브영N 성수",
+  "venue_type": "mall",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2025-03-06",
+  "period_to": "2025-03-16",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 11,
+    "weekend_share": 0.36,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 10000,
+  "visitors_period_days": 11,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "브랜드 성료 보도(뉴스와이어) 인용: 사전 예약 5000명 조기 마감+현장 방문 포함 누적 1만 명 이상",
+  "visitors_source_quote": "누적 방문객 1만 명 돌파",
+  "visitors_source_url": "https://www.newswire.co.kr/newsRead.php?no=1007649",
+  "visitors_source_date": "2025-03-18",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "현장 웨이팅 누적 발생",
+   "sold_out": "일부 품목 3일 만에 한 달 물량 소진",
+   "reservation_fill": "사전 예약 5000명 조기 마감",
+   "signal_quotes": [
+    "사전 예약 5000명이 조기 마감됐다",
+    "콜라보 제품 13만 개 판매, 일부 품목은 3일 만에 한 달 물량 소진",
+    "론칭 전부터 약 5,000명의 사전 예약이 매진되는가 하면 현장 웨이팅 인원까지 누적으로 1만 명이 넘는 방문객이 다녀갔다. (코스인코리아 2025-03-20)",
+    "컬래버 컬렉션은 출시 3일 만에 한 달동안 판매할 물량이 모두 소진됐고, 총 판매량은 13만 개를 돌파했다. (코스인코리아 2025-03-20)",
+    "론칭 전부터 약 5,000명의 사전 예약이 매진되는가 하면",
+    "해리포터 컬래버 제품은 출시 3일 만에 한 달동안 판매할 물량이 모두 소진되며",
+    "새롭게 선보인 해리포터 컬래버 제품은 출시 3일 만에 한 달동안 판매할 물량이 모두 소진되며 소비자들의 뜨거운 관심을 모았다.",
+    "현재까지 총 판매량 13만 개를 돌파하며 베이스, 아이, 립 전 카테고리에서 두 자릿수 성장을 기록해 더욱 의미를 더한다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "D",
+   "flags": [
+    "D",
+    "C"
+   ],
+   "why": "스코프 혼합(합산/총계) 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "source_quote는 기사 내 핵심 문구 발췌(전문: 사전예약 조기마감 및 누적 1만 명 돌파 내용 포함). | 병합 레코드: MKT-2025-0020, MKT-2025-0015, MKT-2025-0034 | [병합:MKT-2025-0020] 판매 수량(13만 개)은 금액이 아니므로 sales_krw 미기재 || [병합:MKT-2025-0015] 영화 IP×뷰티 컬래버 팝업. 누적 1만 명에 현장 웨이팅 인원 포함(counting_basis_note 참조). || [병합:MKT-2025-0034] 판매량 13만 개·완판은 올리브영 온라인 포함 채널 전체 기준.",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 10000,
+   "basis": "organizer_claim",
+   "quote": "실제 해리포터 팝업스토어는 3월 6일부터 16일까지 올리브영N 성수점에서 운영됐으며, 사전 예약 5,000명 마감과 함께 현장 방문객이 1만 명을 넘어서며 높은 관심을 입증했다.",
+   "url": "https://www.tournews21.com/news/articleView.html?idxno=96512",
+   "date": "2025-03-28"
+  },
+  {
+   "metric": "visitors",
+   "value": 10000,
+   "basis": "organizer_claim",
+   "quote": "올리브영N 성수점에서는 6일부터 16일까지 해리포터 테마 팝업을 선보였다. 론칭 전부터 약 5,000명의 사전 예약이 매진되는가 하면 현장 웨이팅 인원까지 누적으로 1만 명이 넘는 방문객이 다녀갔다.",
+   "url": "https://www.cosinkorea.com/news/article.html?no=54618",
+   "date": "2025-03-20"
+  },
+  {
+   "metric": "visitors",
+   "value": 10000,
+   "basis": "organizer_claim",
+   "quote": "올리브영N 성수점에서는 6일부터 16일까지 해리포터 테마 팝업을 선보였다. 론칭 전부터 약 5,000명의 사전 예약이 매진되는가 하면 현장 웨이팅 인원까지 누적으로 1만 명이 넘는 방문객이 다녀갔다.",
+   "url": "https://www.cosinkorea.com/news/article.html?no=54618",
+   "date": "2025-03-20"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

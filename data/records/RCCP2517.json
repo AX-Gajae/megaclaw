@@ -1,0 +1,305 @@
+{
+ "record_id": "RCCP2517",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:아모레퍼시픽_6월_마켓",
+  "space_id": "unresolved:아모레퍼시픽_세계본사_B1F_아모레애비뉴",
+  "client_party_id": "unresolved:아모레퍼시픽",
+  "brand_key": "아모레퍼시픽",
+  "space_key": "아모레퍼시픽_세계본사"
+ },
+ "intervention": {
+  "concept": "아모레퍼시픽 세계본사 B1F 아모레애비뉴에서 진행된 'Tropical summer Flea Market' 팝업. 벤시몽, 아메리칸니들, 유누서울, 플리티카, 핑거힐, 요거트월드, 고수의떡, 키즈망고 등 패션잡화·F&B·주얼리 브랜드가 참여한 플리마켓 형태.",
+  "brand_name": "Tropical summer Flea Market (아모레애비뉴 팝업)",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [
+   "플리마켓",
+   "트로피컬 서머"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": "아모레퍼시픽 세계본사 B1F 아모레애비뉴 복도 중앙",
+   "venue_type": "오피스 리테일 복도",
+   "foot_traffic_context": null,
+   "venue_slot": "B1F"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-06-09",
+   "to": "2025-06-20",
+   "days": 12
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 8,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "아모레퍼시픽 세계본사 B1F 아모레애비뉴 복도 중앙"
+  },
+  "derived": {
+   "duration": {
+    "days": 12,
+    "weekend_share": 0.17,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 6.0,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 1,
+    "holiday_until": 67,
+    "holiday_block_in": 0,
+    "nat_event_gap": 6,
+    "nat_event": "대통령 선거",
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 315836.0,
+    "pnl_pre_accounts": 2,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-05-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2025-06-08",
+    "visitors": 9,
+    "sales_krw": 209200
+   },
+   {
+    "date": "2025-06-09",
+    "visitors": 467,
+    "sales_krw": 9505885
+   },
+   {
+    "date": "2025-06-10",
+    "visitors": 622,
+    "sales_krw": 13169220
+   },
+   {
+    "date": "2025-06-11",
+    "visitors": 614,
+    "sales_krw": 12483050
+   },
+   {
+    "date": "2025-06-12",
+    "visitors": 602,
+    "sales_krw": 10910185
+   },
+   {
+    "date": "2025-06-13",
+    "visitors": null,
+    "sales_krw": 11390215
+   },
+   {
+    "date": "2025-06-14",
+    "visitors": 89,
+    "sales_krw": 3711800
+   },
+   {
+    "date": "2025-06-15",
+    "visitors": 60,
+    "sales_krw": 2296550
+   },
+   {
+    "date": "2025-06-16",
+    "visitors": 413,
+    "sales_krw": 7479235
+   },
+   {
+    "date": "2025-06-17",
+    "visitors": 452,
+    "sales_krw": 7912220
+   },
+   {
+    "date": "2025-06-18",
+    "visitors": 402,
+    "sales_krw": 8277230
+   },
+   {
+    "date": "2025-06-19",
+    "visitors": 471,
+    "sales_krw": 10540350
+   },
+   {
+    "date": "2025-06-20",
+    "visitors": 527,
+    "sales_krw": 14048965
+   }
+  ],
+  "totals": {
+   "visitors": null,
+   "sales_krw": 111934105,
+   "rev_mm_recognized": 24.4
+  },
+  "counting_method": "unknown",
+  "counting_basis": "결과보고서는 브랜드별 일별 매출(매출, 결제 건수, 목표 매출액, 누계 매출액, 목표 대비 달성율)을 다루며 방문자 계수 정의 없음",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(제공된 텍스트에 실제 일별 매출·방문 수치 값이 포함되어 있지 않음(표 헤더만 존재)). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-06, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-07"
+  },
+  "legs": [
+   {
+    "name": "벤시몽(패션잡화·신발)",
+    "from": "2025-06-08",
+    "to": "2025-06-20",
+    "visitors": null,
+    "sales_krw": 5416500
+   },
+   {
+    "name": "아메리칸니들(패션잡화·모자)",
+    "from": "2025-06-08",
+    "to": "2025-06-20",
+    "visitors": null,
+    "sales_krw": 5109540
+   },
+   {
+    "name": "유누서울(주얼리)",
+    "from": "2025-06-08",
+    "to": "2025-06-20",
+    "visitors": null,
+    "sales_krw": 31158300
+   },
+   {
+    "name": "플리티카(가방·지갑)",
+    "from": "2025-06-08",
+    "to": "2025-06-20",
+    "visitors": null,
+    "sales_krw": 12046810
+   },
+   {
+    "name": "핑거힐(네일팁)",
+    "from": "2025-06-08",
+    "to": "2025-06-20",
+    "visitors": null,
+    "sales_krw": 10419200
+   },
+   {
+    "name": "요거트월드(F&B)",
+    "from": "2025-06-08",
+    "to": "2025-06-20",
+    "visitors": null,
+    "sales_krw": 18404600
+   },
+   {
+    "name": "더나인몰(디지털 ACC)",
+    "from": "2025-06-08",
+    "to": "2025-06-20",
+    "visitors": null,
+    "sales_krw": 5604100
+   },
+   {
+    "name": "고수의떡(F&B)",
+    "from": "2025-06-08",
+    "to": "2025-06-20",
+    "visitors": null,
+    "sales_krw": 11766020
+   },
+   {
+    "name": "키즈망고(모래놀이용품)",
+    "from": "2025-06-08",
+    "to": "2025-06-20",
+    "visitors": null,
+    "sales_krw": 7610160
+   },
+   {
+    "name": "일과(F&B, 일련번호 1046640649)",
+    "from": "2025-06-08",
+    "to": "2025-06-20",
+    "visitors": null,
+    "sales_krw": 61500
+   },
+   {
+    "name": "일과(F&B, 일련번호 1046981469)",
+    "from": "2025-06-08",
+    "to": "2025-06-20",
+    "visitors": null,
+    "sales_krw": 4337375
+   }
+  ],
+  "provenance": {
+   "source": "mine2 (2026-07-28)",
+   "evidence": "'Sweetspot_아모레애비뉴 팝업 브랜드별 일별 매출_25.06.09~06.20 결과보고서.xlsx'(doc_id 1zm35v0aHqdSYdtgDngln2RJWxQl2CQ5V), 시트 '브랜드 별 매출' 단일. A1='Tropical summer Flea Market', A3 장소='아모레퍼시픽 세계본사 B1F 아모레애비뉴 복도 중앙', A4 일정='2025.06.09 ~ 06.20'. 11개 브랜드 행(10-1/10-2 '일과' 2개 일련번호) × 13일. 22행이 '소계'. 총 매출 111,934,105원 = 13일 소계 합과 정확히 일치(자체 검산 완료), 목표 120,000,000원 대비 93.3%. 방문객 계수는 없고, 측정된 트래픽 지표는 POS '결제 건 수'뿐이라 counting=purchase로 기록. 유효 12일 결제 건수 합 = 4,728건. **6/13(P/Q열)은 문서 오류**: 핑거힐 행 Q15에 결제건수 대신 매출값 950,400이 입력되어 소계 Q22가 950,925로 오염됨. 6/13 핑거힐 제외 브랜드 건수 합은 525건이므로 6/13 실제 건수는 525건 초과, 총 결제건수는 5,253건 이상(상한 미상). 문서 어디에도",
+   "column_quote": "A10~AE10 머리글 원문: \"번호 | 브랜드명 | 카테고리 | 일련번호 | 매출 합산 | 매출 | 결제 건 수 | 매출 | 결제 건 수 | …\" (날짜마다 '매출'/'결제 건 수' 2열 반복). 상단 A5=\"목표 매출액\" 120,000,000 / A6=\"누계 매출액\" 111,934,105 / A7=\"목표 대비 달성율\" 93%",
+   "docs_opened": [
+    "Sweetspot_아모레애비뉴 팝업 브랜드별 일별 매출_25.06.09~06.20 결과보고서.xlsx — MCP성공(원본 unzip 대조 일치, 셀 좌표까지 확인)"
+   ]
+  },
+  "label_history": [
+   {
+    "at": "mine2 (2026-07-28)",
+    "action": "mine",
+    "changes": [
+     "sales_krw 111,934,105",
+     "daily 13행",
+     "레그 11건 기록"
+    ],
+    "origin": "measured",
+    "instrument": "매장 POS(브랜드별 일련번호 1046981xxx 단위 결제 집계)",
+    "evidence": "'Sweetspot_아모레애비뉴 팝업 브랜드별 일별 매출_25.06.09~06.20 결과보고서.xlsx'(doc_id 1zm35v0aHqdSYdtgDngln2RJWxQl2CQ5V), 시트 '브랜드 별 매출' 단일. A1='Tropical summer Flea Market', A3 장소='아모레퍼시픽 세계본사 B1F 아모레애비뉴 복도 중앙', A4 일정='2025.06.09 ~ 06.20'. 11개 브랜드 행(10-1/10-2 '일과' 2개 일련번호) × 13일. 22행이 '소계'. 총 매출 111,934,105원 = 13일 소계 합과 정확히 일치(자체 검산 완료), 목표 120,000,000원 대비 93.3%. 방문객 계수는 없고, 측정된 트래픽 지표는 POS '결제 건 수'뿐이라 counting=purch"
+   },
+   {
+    "at": "mine2 (2026-07-28)",
+    "action": "mine",
+    "changes": [
+     "daily 13행",
+     "레그 11건 기록"
+    ],
+    "origin": "measured",
+    "instrument": "매장 POS(브랜드별 일련번호 1046981xxx 단위 결제 집계)",
+    "evidence": "'Sweetspot_아모레애비뉴 팝업 브랜드별 일별 매출_25.06.09~06.20 결과보고서.xlsx'(doc_id 1zm35v0aHqdSYdtgDngln2RJWxQl2CQ5V), 시트 '브랜드 별 매출' 단일. A1='Tropical summer Flea Market', A3 장소='아모레퍼시픽 세계본사 B1F 아모레애비뉴 복도 중앙', A4 일정='2025.06.09 ~ 06.20'. 11개 브랜드 행(10-1/10-2 '일과' 2개 일련번호) × 13일. 22행이 '소계'. 총 매출 111,934,105원 = 13일 소계 합과 정확히 일치(자체 검산 완료), 목표 120,000,000원 대비 93.3%. 방문객 계수는 없고, 측정된 트래픽 지표는 POS '결제 건 수'뿐이라 counting=purch"
+   }
+  ]
+ },
+ "docs": [
+  {
+   "doc_id": "1_k0PAPPuXDads5wlFW0q6rgJNwDHZ7C-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1_k0PAPPuXDads5wlFW0q6rgJNwDHZ7C-/view",
+   "title": "현대드림애드_아모레퍼시픽25.06마켓 견적서.xls"
+  },
+  {
+   "doc_id": "1s6Z3Ow0udyQiB2chd7K7vrN9Yvk8ufLE",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1s6Z3Ow0udyQiB2chd7K7vrN9Yvk8ufLE/view",
+   "title": "아모레퍼시픽 25.06 마켓 계약서.pdf"
+  },
+  {
+   "doc_id": "1zm35v0aHqdSYdtgDngln2RJWxQl2CQ5V",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1zm35v0aHqdSYdtgDngln2RJWxQl2CQ5V/view",
+   "title": "Sweetspot_아모레애비뉴 팝업 브랜드별 일별 매출_25.06.09~06.20 결과보고서.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 1건: Sweetspot_아모레애비뉴 팝업 브랜드별 일별 매출. 미확실: 일별/총 매출 실측값 부재(헤더만 존재); 방문자 수 데이터 없음; 수수료 구조/계약금액 정보 없음; 면적(평) 정보 없음; 도시·행정구 정보 없음; client_name 명시 없음(아모레퍼시픽 세계본사 언급으로 추정)"
+ }
+}

@@ -1,0 +1,70 @@
+{
+  "record_id": "RCPU2551",
+  "schema_version": "0.1",
+  "entities": {
+    "brand_id": "unresolved:쿠쿠",
+    "space_id": "unresolved:현대본점",
+    "client_party_id": null
+  },
+  "intervention": {
+    "concept": "",
+    "brand_name": "쿠쿠",
+    "experience_elements": [],
+    "promotions": [],
+    "staging_tags": []
+  },
+  "conditions": {
+    "location": {
+      "city": null,
+      "district": null,
+      "venue_name": "현대백화점 본점",
+      "venue_type": "department_store",
+      "foot_traffic_context": null
+    },
+    "area_pyeong": null,
+    "period": {
+      "from": "",
+      "to": "",
+      "days": null
+    },
+    "season": null,
+    "fee_structure": {
+      "type": "unknown",
+      "detail": ""
+    },
+    "brand_requirements": []
+  },
+  "outcome": {
+    "daily": [],
+    "totals": {
+      "visitors": null,
+      "sales_krw": null,
+      "rev_mm_recognized": 6.7
+    },
+    "counting_method": "unknown",
+    "counting_basis": null,
+    "plan_visitors_expected": null,
+    "retention": null,
+    "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조"
+  },
+  "docs": [
+    {
+      "doc_id": "1WvromEq9pXxyLm06SnFCEHsteIdw34wa",
+      "kind": "운영일지",
+      "uri": "https://drive.google.com/file/d/1WvromEq9pXxyLm06SnFCEHsteIdw34wa/view",
+      "title": "쿠쿠 현대본점_결과보고서.pdf"
+    },
+    {
+      "doc_id": "1uJnWvm07NSZWfLypYtxjkYr80oqm0Wpq",
+      "kind": "정산",
+      "uri": "https://drive.google.com/file/d/1uJnWvm07NSZWfLypYtxjkYr80oqm0Wpq/view",
+      "title": "에코웨일 현대본점 최종견적서_0811.pdf"
+    }
+  ],
+  "provenance": {
+    "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+    "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+    "extracted_at": "2026-07-23",
+    "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체 부재; 컨셉·체험요소·프로모션·연출태그 정보 없음; 입지 상세(도시·구·면적)·기간·수수료구조 정보 없음; 방문객수·매출 실측 데이터 없음; client_name 미확인; venue명은 프로젝트명 기반 추정(현대백화점 본점)"
+  }
+}

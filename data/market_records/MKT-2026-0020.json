@@ -1,0 +1,102 @@
+{
+ "market_record_id": "MKT-2026-0020",
+ "event_name": "블룸타이드 첫 론칭 팝업 @성수(도어투성수)",
+ "brand": "블룸타이드(Bloomtide)",
+ "ip_or_collab": "브랜드 론칭(스위트스팟 공간 기획)",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "신생 뷰티 브랜드 첫 오프라인 론칭 팝업. 'Draw your flower' 테마 핑크 콘셉트 공간, 립·블러셔·아이팔레트 전 라인 체험",
+  "experience_elements": [
+   "콘셉트 공간 연출",
+   "전 라인 체험",
+   "포토존"
+  ],
+  "promotions": [
+   "론칭 기념 혜택",
+   "체험 프로그램"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "도어투성수(성수동2가 310-65)",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2026-04-10",
+  "period_to": "2026-04-19",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 9403,
+  "visitors_period_days": 10,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "공간대행사(스위트스팟) 포트폴리오 실적 수치. 동일 페이지 소개 문구는 '1만 명 돌파'로 표기해 상충 → alt_figures 기록",
+  "visitors_source_quote": "10일간 총 9,403명이 방문하며 초기 KPI 대비 134%를 달성했습니다. 마지막 날 약 1,300명의 집객을 기록했습니다",
+  "visitors_source_url": "https://www.sweetspot.co.kr/portfolio_bloomtide",
+  "visitors_source_date": "2026-05-03",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "마지막 날 약 1300명 집객",
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "초기 KPI 대비 134%를 달성했습니다"
+   ]
+  },
+  "conflict": true,
+  "alt_figures": [
+   {
+    "value": 10000,
+    "basis": "organizer_claim",
+    "source_quote": "10일간 방문객 1만 명을 돌파한 뷰티 팝업스토어 성공 사례",
+    "source_url": "https://www.sweetspot.co.kr/portfolio_bloomtide",
+    "source_date": "2026-05-03",
+    "note": "동일 포트폴리오 소개 문구(마케팅 표현). 상세 결과 수치(9,403명)와 상충"
+   }
+  ],
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "E",
+    "C"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "포트폴리오 페이지 게시일은 페이지 미표기로 2026-05-03 전후로 추정(검색 인덱싱일 기준). 기간 4/10~4/19는 브랜드 보도(스마트투데이 2026-04-16) 정합. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

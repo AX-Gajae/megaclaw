@@ -1,0 +1,81 @@
+{
+  "market_record_id": "MKT-2023-0015",
+  "event_name": "롯데칠성음료 '밀키스 구름 하우스' 성수 팝업스토어",
+  "brand": "롯데칠성음료(밀키스)",
+  "ip_or_collab": "'밀키스 제로' 출시·브랜드 이미지 제고, 캐릭터 '시나모롤' 협업 굿즈",
+  "category": "fnb",
+  "intervention": {
+    "concept_description": "'일상 속 기분 좋은 설렘' 콘셉트의 포토존 중심 팝업 카페. 기존 카페 공간을 임시 전환해 한정 음료·디저트 제공",
+    "experience_elements": [
+      "밀키스 스페셜 음료·디저트(구름케이크·구름스무디 등)",
+      "밀키스 폭포·구름 그네 포토존",
+      "솜사탕 만들기 체험",
+      "시나모롤 협업 굿즈 판매",
+      "박문치 버스킹 공연(5/8)"
+    ],
+    "promotions": [
+      "SNS 인증 선착순 50명 구름 헬륨 풍선 증정",
+      "메뉴 주문 인증 행운추첨"
+    ],
+    "is_free_entry": null,
+    "reservation_required": false
+  },
+  "conditions": {
+    "venue": "서울 성동구 성수동 골목 카페(임시 전환)",
+    "venue_type": "street_standalone",
+    "neighborhood": "성수동",
+    "city": "서울",
+    "period_from": "2023-05-03",
+    "period_to": "2023-05-16",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(session)",
+      "access_type": "session"
+    },
+    "derived": {
+      "duration": {
+        "days": 14,
+        "weekend_share": 0.29,
+        "holiday_days": 1
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 14,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "현장 직원이 기자에게 밝힌 부분 기간 수치: '8일까지 4만명이 방문했고 9일 마감까지 700명 예상'. 전체 기간(16일까지) 총계 미공개 → visitors_total null. 오픈일은 원문 미명시('문 연지 5일 만에 4만명', 5/8 기준)",
+    "visitors_source_quote": "현장에 있는 직원에게 지금까지 방문객수를 묻자 \"8일까지 4만명이 방문했고, 9일 마감때까지 700명정도 방문할 것으로 예상된다\"고 말했다. 문을 연지 5일 만에 4만명이 방문한 것은 지난 8일 이 곳에서 열린 가수 박문치의 버스킹 공연이 한 몫을 한 것으로 보인다.",
+    "visitors_source_url": "https://www.news2day.co.kr/article/20230510500174",
+    "visitors_source_date": "2023-05-11",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "평일 낮시간에도 24팀 입장 대기",
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "평일 낮시간임에도 불구하고 24팀이 입장을 기다리고 있었다.(뉴스투데이 2023-05-11)"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "5일 누적 4만명은 버스킹 공연 특수가 반영된 부분 기간 수치로, 소규모 카페 공간 대비 과장 가능성 있으나 원문 그대로 기록. 기사 작성일 2023-05-11(수정 5-16), 팝업은 5/16까지 운영 | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

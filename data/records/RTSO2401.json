@@ -1,0 +1,151 @@
+{
+ "record_id": "RTSO2401",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:짱구_떡잎마을방범대_팝업",
+  "space_id": "unresolved:전주_대구_짱구팝업_venue_미상",
+  "client_party_id": "unresolved:대원미디어",
+  "brand_key": "짱구",
+  "space_key": "multi_짱구팝업"
+ },
+ "intervention": {
+  "concept": "짱구(크레용 신짱) '떡잎마을 방범대' 라이센시 팝업스토어. 대원미디어의 캐릭터 FRP 조형물을 전시·홍보용으로 활용하는 전주·대구 팝업.",
+  "brand_name": "짱구(떡잎마을 방범대)",
+  "experience_elements": [
+   "떡잎마을 방범대 FRP 조형물 5체 전시"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "FRP 캐릭터 조형물",
+   "전시 홍보"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-08-02",
+   "to": "2024-09-18",
+   "days": null
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "FRP 목적물(떡잎마을 방범대) 5체 대여료 금 1,000,000원(운반비 포함 전액). 대여기간 2024-06-15~2024-12-13. 세금계산서 2024-06-03 이내 발행, 수령 후 영업일 15일 이내 지급. 위약벌 10,000,000원."
+  },
+  "brand_requirements": [
+   "목적물 개조 금지",
+   "소유권·저작권·교정 표식 제거·훼손 금지",
+   "인도·반납은 을의 책임과 비용, 갑 지정 장소 반납",
+   "제3자 양도·대여 금지, 보관장소 무단 이동 금지",
+   "반납 시 인도받은 상태로 반환"
+  ],
+  "scale": {
+   "store_count": 2,
+   "venue_traffic_type": "multi_store",
+   "host_traffic_note": "전주·대구 팝업"
+  },
+  "derived": {
+   "duration": {
+    "days": 48,
+    "weekend_share": 0.29,
+    "holiday_days": 4
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 1.9,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 88,
+    "holiday_until": 43,
+    "holiday_block_in": 5,
+    "nat_event_gap": 104,
+    "nat_event": null,
+    "doc_lag_days": 74,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 32585001.0,
+    "pnl_pre_accounts": 11,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2024-07-01"
+   }
+  },
+  "demand_signals": {
+   "waiting_reported": true,
+   "sold_out": null,
+   "source": "역검색 외부 보도(2026-07-27)"
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 676.1
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-09, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": 1.0,
+   "last_recognition_period": "2024-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1HiyhSpgDgWjWtZUxp_t2LKYwawyDgm9r",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1HiyhSpgDgWjWtZUxp_t2LKYwawyDgm9r/view",
+   "title": "결과보고서_내용없음.txt"
+  },
+  {
+   "doc_id": "1azQgBV_xabakTdvyupsrYBL6FKlpiUo0",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1azQgBV_xabakTdvyupsrYBL6FKlpiUo0/view",
+   "title": "RTSO2401_라이센시-짱구 팝업스토어(전주,대구)_FRP 대여 약정서_최종.pdf"
+  },
+  {
+   "doc_id": "1dGKcVj9tMW3F7KKGfI2hSJ3pnUNbxb6U",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1dGKcVj9tMW3F7KKGfI2hSJ3pnUNbxb6U/view",
+   "title": "제안서_내용없음.txt"
+  },
+  {
+   "doc_id": "1h944DIlGCn5WsIkyg2XmOrxckPktN-VN",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1h944DIlGCn5WsIkyg2XmOrxckPktN-VN/view",
+   "title": "견적서_내용없음.txt"
+  },
+  {
+   "doc_id": "1mTXZoLH-hht4NQeI4y-66A3o9KvLCaKr",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1mTXZoLH-hht4NQeI4y-66A3o9KvLCaKr/view",
+   "title": "RTSO2401_라이센시-짱구 팝업스토어(전주,대구)_계약서_240520.doc"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 1건: RTSO2401_라이센시-짱구 팝업스토어(전주,대구)_. 미확실: 결과보고서 부재로 방문객·매출 실측 데이터 없음; 입지/venue/면적 정보 문서에 없음(프로젝트명상 전주·대구); 팝업 운영기간은 프로젝트 메타 기준, FRP 대여기간(2024-06-15~2024-12-13)과 다름; fee_structure는 FRP 대여료일 뿐 팝업 공간 임대료 아님; 기획서/제안서 부재로 컨셉·체험요소·예상방문 추정 | 외부 라벨 역검색(2026-07-27): 수요신호 적재"
+ }
+}

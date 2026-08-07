@@ -1,0 +1,97 @@
+{
+ "market_record_id": "MKT-2024-0060",
+ "event_name": "무신사 뷰티 페스타 인 성수 (2024년 첫 회)",
+ "brand": "무신사 뷰티",
+ "ip_or_collab": "41개 라이징 뷰티 브랜드 연합",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "무신사 뷰티 첫 오프라인 페스타. 럭키박스, 브랜드 체험 부스, 라이브 방송 특가 연계(온라인 3주 페스타 병행)",
+  "experience_elements": [
+   "브랜드 체험 부스",
+   "럭키박스",
+   "이벤트존"
+  ],
+  "promotions": [
+   "유료 티켓(얼리버드)",
+   "럭키박스 판매"
+  ],
+  "is_free_entry": false,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "무신사 스퀘어 성수 일대",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2024-09-06",
+  "period_to": "2024-09-08",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.67,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 18000,
+  "visitors_period_days": 3,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "무신사 발표 인용(아시아투데이 2024-09-10): '1만8000명 이상의 관람객'. 이벤트존 참여 1만1000명 별도",
+  "visitors_source_quote": "무신사 뷰티 페스타 인 성수에 1만8000명 이상의 관람객이 방문했다",
+  "visitors_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20240910010006068",
+  "visitors_source_date": "2024-09-10",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": "온라인 얼리버드 티켓 오픈과 동시에 평균 1분 만에 매진 (티켓 오픈 접속자 4만 명)",
+   "signal_quotes": [
+    "온라인 얼리버드 티켓이 오픈과 동시에 평균 1분 만에 매진됐다 (파이낸셜뉴스 2024-08-20, https://www.fnnews.com/news/202408201000141506)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "asiatoday URL은 검색 스니펫 기반 확보. 티켓 매진·접속자 4만 명은 fnnews 2024-08-20 보도. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

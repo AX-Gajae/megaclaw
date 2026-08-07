@@ -1,0 +1,189 @@
+{
+ "record_id": "RCPU2554",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:ATEEZ",
+  "space_id": "unresolved:더현대서울",
+  "client_party_id": null,
+  "brand_key": "ATEEZ",
+  "space_key": "더현대서울"
+ },
+ "intervention": {
+  "concept": "에이티즈(ATEEZ) 관련 팝업스토어로 더현대서울에서 대행사가 운영한 것으로 추정된다. 원문 문서가 제공되지 않아 컨셉 상세는 확인 불가.",
+  "brand_name": "에이티즈(ATEEZ)",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": null,
+   "venue_name": "더현대서울",
+   "venue_type": "백화점",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-10-14",
+   "to": "2025-10-26",
+   "days": 13
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대서울 백화점 입점"
+  },
+  "derived": {
+   "duration": {
+    "days": 13,
+    "weekend_share": 0.31,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 5,
+    "holiday_until": 123,
+    "holiday_block_in": 0,
+    "nat_event_gap": 17,
+    "nat_event": null,
+    "doc_lag_days": 12,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 15,
+    "comp_prior_at_venue": 460,
+    "comp_within_500m_open": 16,
+    "comp_within_1000m_open": 16,
+    "matched_address": "서울 영등포구 여의대로 108"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 84506093.0,
+    "pnl_pre_accounts": 8,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2025-08-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 322.2
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-10, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-10"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-ZFmEmk8-UIxmnRwJzOghnmPPp6Oay2E",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1-ZFmEmk8-UIxmnRwJzOghnmPPp6Oay2E/view",
+   "title": "플레이컴퍼니_에이티즈_최종견적서_1010.pdf"
+  },
+  {
+   "doc_id": "1-guLsd9ljX9Pv778O7wbUwx4QMMAQEpm",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1-guLsd9ljX9Pv778O7wbUwx4QMMAQEpm/view",
+   "title": "견적서_에이티즈_에이렌탈_10.13 스위트스팟(더현대B1) 님 251002.xlsx"
+  },
+  {
+   "doc_id": "1Ij3X-8Ke22e4KPucULnETa103HnLfbIe",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Ij3X-8Ke22e4KPucULnETa103HnLfbIe/view",
+   "title": "견적서_에이렌탈_ATEEZ팝업 냉장고 및 테이블 렌탈건.xlsx"
+  },
+  {
+   "doc_id": "1KVg7mX1I9tkmWup9a_l8qPQE_tKneBLc",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1KVg7mX1I9tkmWup9a_l8qPQE_tKneBLc/view",
+   "title": "1014증서(스위트스팟_에이티즈).pdf"
+  },
+  {
+   "doc_id": "1MdvzPBdFDdZm1IcJShaoLLAWgl6pvRXI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1MdvzPBdFDdZm1IcJShaoLLAWgl6pvRXI/view",
+   "title": "견적서_원더러스트_에이티즈 팝업 추가제작건.pdf"
+  },
+  {
+   "doc_id": "1VL9_s1sN-mo99MMoSBZlgL2MMW8c57xU",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1VL9_s1sN-mo99MMoSBZlgL2MMW8c57xU/view",
+   "title": "견적서_0925_ATEEZ팝업 입장팔찌 견적.pdf"
+  },
+  {
+   "doc_id": "1WD-_ODqmErHG4-RsZg9f4bGeRMf_jqEb",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1WD-_ODqmErHG4-RsZg9f4bGeRMf_jqEb/view",
+   "title": "에이티즈_결과보고서.pdf"
+  },
+  {
+   "doc_id": "1bwqaikFsotfLZf0SNgfb4Zhaceq_-NlV",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1bwqaikFsotfLZf0SNgfb4Zhaceq_-NlV/view",
+   "title": "플레이컴퍼니_에이티즈_추가최종견적서_1023.pdf"
+  },
+  {
+   "doc_id": "1guu1wcQWdeRGRtl4eH10ApCfdDtXGCLN",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1guu1wcQWdeRGRtl4eH10ApCfdDtXGCLN/view",
+   "title": "견적서_원더러스트_에이티즈 팝업 계약견적.pdf"
+  },
+  {
+   "doc_id": "1qEOu9Gu_nudSrGMyQVkEXevYkxt-j9Ao",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1qEOu9Gu_nudSrGMyQVkEXevYkxt-j9Ao/view",
+   "title": "업무표준계약서_원더러스트_ATEEZ팝업스토어 시공건_서면날인본.pdf"
+  },
+  {
+   "doc_id": "1qf7rOQIh46IAhHR3JlpcLLayd_s6bqag",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1qf7rOQIh46IAhHR3JlpcLLayd_s6bqag/view",
+   "title": "견적서_사운드오피니언 견적서(25.09.09)_에이티즈-스위트스팟-더현대.pdf"
+  },
+  {
+   "doc_id": "1qkw2gDMjj5C-jis_C4Pkv1e7I2ByC9LM",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1qkw2gDMjj5C-jis_C4Pkv1e7I2ByC9LM/view",
+   "title": "스위트스팟_더현대 서울 에이티즈 팝업스토어 대행 계약서 250828.pdf"
+  },
+  {
+   "doc_id": "1s5rWnu46DFbYu4yvEYAUaXFR4UBx0Qbm",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1s5rWnu46DFbYu4yvEYAUaXFR4UBx0Qbm/view",
+   "title": "견적서_펀앤토이_에이티즈 팝업 캡슐머신 렌탈건.png"
+  },
+  {
+   "doc_id": "1wu0RriehjURCJbtvqLs_7gCTXiD1FjEH",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1wu0RriehjURCJbtvqLs_7gCTXiD1FjEH/view",
+   "title": "견적서_핸드링몰_에이티즈팝업 입장팔찌 추가발주 251015.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서/기획서/견적서/결과보고서) 미제공; client_name; 면적; 수수료구조; 방문자수 실측; 매출; 체험요소 및 프로모션 정보; counting_method 판정 근거"
+ }
+}

@@ -1,0 +1,181 @@
+{
+ "record_id": "RCPU2431",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:와이랩_스터디그룹",
+  "space_id": "unresolved:성수_연무장15길11_에스팩토리D동",
+  "client_party_id": "unresolved:와이랩",
+  "brand_key": "와이랩_스터디그룹",
+  "space_key": "성수_에스팩토리"
+ },
+ "intervention": {
+  "concept": "2024 월드웹툰페스티벌(WEFE 2024)의 일환으로 와이랩이 운영한 웹툰 IP 팝업스토어 판매행사. 성수동 에스팩토리 D동에서 굿즈 판매(MD존), 게임존, 전시/포토존을 운영. 컨셉은 'Scroll Down Fun Up'.",
+  "brand_name": "와이랩 (스터디그룹 등)",
+  "experience_elements": [
+   "MD존 상품판매",
+   "게임존 이벤트",
+   "전시/포토존",
+   "AI 캐리커쳐 체험",
+   "AR 포토카드",
+   "웹툰 네컷(포토이즘)",
+   "등신대 포토존",
+   "인생네컷",
+   "응모 이벤트"
+  ],
+  "promotions": [
+   "응모함 및 응모권 이벤트",
+   "게임존 경품 이벤트"
+  ],
+  "staging_tags": [
+   "웹툰IP",
+   "굿즈판매",
+   "페스티벌",
+   "VMD존",
+   "포토존",
+   "게임존"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "성동구",
+   "venue_name": "성수동 에스팩토리 D동",
+   "venue_type": "복합문화공간/전시장",
+   "foot_traffic_context": "페스티벌 메인 행사장, 차도 인접 보행 주의 구간"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-09-26",
+   "to": "2024-09-29",
+   "days": 4
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "위탁운영 계약(와이랩=갑, 스위트스팟=을). 견적서 기준 총계 20,720,000원(VAT 10% 별도). 소계 17,720,800원 + 팝업스토어 대행 수수료 3,000,000원. VMD존 시공/집기/인건비/상품 제작·공급대금 모두 갑 부담. 운영비 지급: 행사 종료 해당월 말일(2024-09-30)까지 운영비 100% 지급. LOSS 공제: 총매출 3% 이상 발생 시 제조원가 100% 공제, 3% 이하는 통상 LOSS로 갑 부담. 카드단말기 제공사 정산은 카드수수료 1% 제외 후 2024-10-18 입금."
+  },
+  "brand_requirements": [
+   "월드웹툰페스티벌 키비주얼(행사명·주최·주관) 노출 포함",
+   "판매 제품 분야별 KC인증 취득",
+   "매일 매출 결과 금액 사무국 통보",
+   "POS/ERP 시스템 통한 매출·재고 관리",
+   "웨이팅 시스템 및 대기열 관리",
+   "행사장주최자배상책임보험 가입(의무)",
+   "전시품 도난·파손 관리 책임"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "성수동 에스팩토리 D동, 월드웹툰페스티벌 메인 행사장"
+  },
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.5,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 8,
+    "holiday_until": 121,
+    "holiday_block_in": 0,
+    "nat_event_gap": 49,
+    "nat_event": null,
+    "doc_lag_days": 17,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 2.2
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서가 제공되지 않아 실측 방문자수·매출 데이터 없음. 운영계획상 에스팩토리 입구/출구 센서 카운팅 및 전광판 현재인원 표시 방식 언급됨.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "partial",
+   "rule": "인식 2.2 < 총액 20.72의 90%",
+   "contract_total_mm": 20.72,
+   "last_recognition_period": "2024-11"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "10vXDXrKVQy30DyaMtGJeqYxZU0BIUqWm",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/10vXDXrKVQy30DyaMtGJeqYxZU0BIUqWm/view",
+   "title": "글로벌웹툰페스티벌 위탁운영 계약서_스위트스팟_240909.pdf"
+  },
+  {
+   "doc_id": "1SI-9yA1XasYgL2rvY__xE0ODyJyFw4rQ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1SI-9yA1XasYgL2rvY__xE0ODyJyFw4rQ/view",
+   "title": "2024 월드웹툰페스티벌 _메뉴얼_0903_v11_fin.pdf"
+  },
+  {
+   "doc_id": "1Y2cdSV3qPf-hkpBVFptoW1CEPNZ41w6n",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Y2cdSV3qPf-hkpBVFptoW1CEPNZ41w6n/view",
+   "title": "글로벌웬툰페스티벌견적서_와이랩_0906.pdf"
+  },
+  {
+   "doc_id": "1Y6kG0S_F0sp3wPIT1d3AkzEKqj32HZyo",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Y6kG0S_F0sp3wPIT1d3AkzEKqj32HZyo/view",
+   "title": "글로벌웬툰페스티벌_와이랩_0906_추가네고.pdf"
+  },
+  {
+   "doc_id": "1aP2yijKmlzP0RmzIUTGYCou1AFeUSDd3",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1aP2yijKmlzP0RmzIUTGYCou1AFeUSDd3/view",
+   "title": "글로벌웬툰페스티벌_와이랩_0827.pdf"
+  },
+  {
+   "doc_id": "1gFN_IrZAmu8MK1HcbHreaJKey0kr7JDE",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1gFN_IrZAmu8MK1HcbHreaJKey0kr7JDE/view",
+   "title": "글로벌웹툰페스티벌 위탁운영 계약서_스위트스팟_240909.pdf"
+  },
+  {
+   "doc_id": "1iDv9YiE72OYjO7LqGf6mQ-2esBHIKhkQ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1iDv9YiE72OYjO7LqGf6mQ-2esBHIKhkQ/view",
+   "title": "글로벌웬툰페스티벌_와이랩_0808.pdf"
+  },
+  {
+   "doc_id": "1suvDaO87-wU_pX-j_HJac91LNolo9AkJ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1suvDaO87-wU_pX-j_HJac91LNolo9AkJ/view",
+   "title": "글로벌웬툰페스티벌_와이랩_0906.pdf"
+  },
+  {
+   "doc_id": "1xWiE2EBrDtjRo15j6_7GL0-ECRCVw1mq",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1xWiE2EBrDtjRo15j6_7GL0-ECRCVw1mq/view",
+   "title": "글로벌웬툰페스티벌_와이랩_0906.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 4건: 2024 월드웹툰페스티벌 _메뉴얼_0903_v11_fi, 글로벌웹툰페스티벌 위탁운영 계약서_스위트스팟_24090, 글로벌웹툰페스티벌 위탁운영 계약서_스위트스팟_24090, 글로벌웬툰페스티벌견적서_와이랩_0906.pdf. 미확실: 결과보고서 부재로 실측 방문자수·POS 매출 전무; 별첨1 운영대행 조건안 세부 표 내용 미표기; 기획서상 예상 방문객수 명시 없음; 면적(평) 정보 없음; 독립 팝업스토어 3곳(더그림/레드아이스/KW북스)은 본 계약 대상 아님 - 본 레코드는 와이랩 팝업 중심"
+ }
+}

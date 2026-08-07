@@ -1,0 +1,102 @@
+{
+ "market_record_id": "MKT-2024-0010",
+ "event_name": "버추얼 아이돌 3팀 팝업스토어(더현대 서울)",
+ "brand": "현대백화점",
+ "ip_or_collab": "버추얼 아이돌(이세계아이돌·스텔라이브·플레이브)",
+ "category": "character",
+ "intervention": {
+  "concept_description": "현대백화점이 2024년 더현대 서울에서 버추얼 아이돌 3팀의 팝업스토어를 잇달아 연 합산 성과.",
+  "experience_elements": [
+   "버추얼 아이돌 굿즈 판매"
+  ],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "더현대 서울(서울 영등포구 여의도)",
+  "venue_type": "department_store",
+  "neighborhood": "여의도",
+  "city": "서울",
+  "period_from": "2024-02-15",
+  "period_to": "2024-03-17",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 32,
+    "weekend_share": 0.31,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 100000,
+  "visitors_period_days": null,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "현대백화점 발표(대한경제 보도 인용)",
+  "visitors_source_quote": "현대백화점은 올해 더현대 서울에서 버추얼 아이돌 3팀의 팝업스토어를 열어 총 70억원의 매출을 올렸다. 이 기간 팝업을 다녀간 고객만 10만명에 달한다.",
+  "visitors_source_url": "https://m.dnews.co.kr/m_home/view.jsp?idxno=202406291930580020377",
+  "visitors_source_date": "2024-07-02",
+  "sales_krw": 7000000000,
+  "sales_source_quote": "현대백화점은 올해 더현대 서울에서 버추얼 아이돌 3팀의 팝업스토어를 열어 총 70억원의 매출을 올렸다.",
+  "sales_source_url": "https://m.dnews.co.kr/m_home/view.jsp?idxno=202406291930580020377",
+  "sales_source_date": "2024-07-02",
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "3팀 팝업 합산 수치(개별 팝업 수치 미공개). 기간은 이세계아이돌(2.15~3.3)·스텔라이브·플레이브(3.17까지) 보도 기준 | 병합 레코드: MKT-2024-0003 | [병합:MKT-2024-0003] 3개 팝업 합산 시리즈 레코드(MKT-2024-0002 이세돌 34억과 중복 포함). 기간은 3개 팝업 전체 운영 범위(2024-02-15~03-17)로 미디어 정리 기준. 개별 기간이 다른 3개 이벤트 합산이므로 해석 주의.",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 100000,
+   "basis": "media_estimate",
+   "quote": "2024년 더현대 서울에서 열린 '이세계아이돌', '플레이브', '스텔라이브'의 팝업스토어는 한 달간 10만 명 이상의 발길을 끌어모았다. 매출은 70억 원에 달한다.",
+   "url": "https://m.newsen.com/news_view.php?uid=202603101345092610",
+   "date": "2026-03-10"
+  },
+  {
+   "metric": "sales",
+   "value": 7000000000,
+   "basis": "media_estimate",
+   "quote": "2024년 더현대 서울에서 열린 '이세계아이돌', '플레이브', '스텔라이브'의 팝업스토어는 한 달간 10만 명 이상의 발길을 끌어모았다. 매출은 70억 원에 달한다.",
+   "url": "https://m.newsen.com/news_view.php?uid=202603101345092610",
+   "date": "2026-03-10"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "집계형(통합/합산)",
+ "verification": {
+  "visitors": "verified",
+  "sales": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

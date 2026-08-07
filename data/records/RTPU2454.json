@@ -1,0 +1,251 @@
+{
+ "record_id": "RTPU2454",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:오리온",
+  "space_id": "unresolved:인천공항_제1여객터미널_공항철도_AREX",
+  "client_party_id": "unresolved:오리온",
+  "brand_key": "오리온",
+  "space_key": "인천공항"
+ },
+ "intervention": {
+  "concept": "오리온 x 인천공항 공항철도 크리스마스 샘플링 프로모션. 오방색 전통문양으로 한국적 크리스마스를 구현하고, 한국 전통놀이 딱지치기 이벤트와 SNS 인증 이벤트로 내·외국인에게 오리온 제품을 알리고 바이럴을 유도한다.",
+  "brand_name": "오리온",
+  "experience_elements": [
+   "딱지치기 이벤트존",
+   "SNS 인증 이벤트",
+   "포토존(한국적 크리스마스 컨셉)",
+   "샘플링존/샘플링 트리",
+   "에어볼 VMD",
+   "대형 목업/포토월"
+  ],
+  "promotions": [
+   "딱지치기 성공 시 오리온 제품 4종 낱개 세트 증정",
+   "딱지치기 참가상 오리온 제품 7종 중 택1 증정",
+   "SNS 인증(샤오홍슈/인스타그램 해시태그) 시 오리온 본품 증정"
+  ],
+  "staging_tags": [
+   "크리스마스",
+   "한국 전통문양/오방색",
+   "딱지치기",
+   "포토존",
+   "샘플링 트리",
+   "에어볼"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": 960,
+   "capacity_per_session": null,
+   "giveaway_qty": 7704,
+   "area_sqm": null,
+   "planned_operating_days": 8,
+   "throughput_units": 3,
+   "unit_minutes": 1.5,
+   "operating_hours_per_day": 8,
+   "staff_count": 3,
+   "experience_density": 3,
+   "goods_scale": 1,
+   "photo_zones": 3,
+   "collab_strength": 2,
+   "ip_awareness": 4,
+   "target_breadth": 4,
+   "entry_friction": 0,
+   "media_push": 1,
+   "season_fit": 4,
+   "venue_prominence": 3
+  },
+  "attr_meta": {
+   "evidence": "제안서 '이벤트 경품 수량' 표: '1.5분에 1명 참여', '40회*8시간*3명(스탭)=960회/1일', '8일간 총 수량 7,704명', SNS 800개 별도. 하단 '운영시간 10시-18시(8시간), 운영인원 3명'.",
+   "confidence": "high",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": "인천",
+   "district": null,
+   "venue_name": "인천공항 제1여객터미널 공항철도(AREX)",
+   "venue_type": "공항철도역",
+   "foot_traffic_context": "인천공항 여객터미널 공항철도 이용 내·외국인 유동인구"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-12-18",
+   "to": "2024-12-25",
+   "days": 8
+  },
+  "season": "겨울(크리스마스/연말)",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "견적 총계 20,000,000원(VAT 10% 별도, 만원단위 이하 절사). Sub Total1 기획료 1,500,000(기획료 500,000+아트워크 1,000,000), Sub Total2 포토존 15,500,000(크리스마스 트리·조경 8,000,000+렌탈집기 3,500,000+VMD 4,000,000), Sub Total3 운영 1,400,000(슈퍼바이저 300,000+진행요원 200,000x2+제경비 700,000). 소계 18,400,000, 일반관리비+대행수수료(소계의 10%) 1,690,000. 별도 계약서 없음."
+  },
+  "brand_requirements": [
+   "슈퍼바이저·진행요원 일본어/중국어 중 1개 이상 능통자",
+   "운영시간 10:00~18:00(견적, 리드타임 앞뒤 1시간)"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "인천공항 여객터미널 공항철도 이용 내·외국인 유동인구"
+  },
+  "derived": {
+   "duration": {
+    "days": 8,
+    "weekend_share": 0.25,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 0.4,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 91,
+    "holiday_until": 38,
+    "holiday_block_in": 0,
+    "nat_event_gap": 34,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 200000,
+   "popup_zone_pass_rate": 0.15,
+   "host_traffic_est": 30000.0,
+   "venue_scale_tier": 1,
+   "confidence": "high",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2024-12-18",
+    "visitors": 400,
+    "sales_krw": null
+   },
+   {
+    "date": "2024-12-19",
+    "visitors": 410,
+    "sales_krw": null
+   },
+   {
+    "date": "2024-12-20",
+    "visitors": 359,
+    "sales_krw": null
+   },
+   {
+    "date": "2024-12-21",
+    "visitors": 416,
+    "sales_krw": null
+   },
+   {
+    "date": "2024-12-22",
+    "visitors": 636,
+    "sales_krw": null
+   },
+   {
+    "date": "2024-12-23",
+    "visitors": 697,
+    "sales_krw": null
+   },
+   {
+    "date": "2024-12-24",
+    "visitors": 769,
+    "sales_krw": null
+   },
+   {
+    "date": "2024-12-25",
+    "visitors": 1107,
+    "sales_krw": null
+   }
+  ],
+  "totals": {
+   "visitors": 4794,
+   "sales_krw": null,
+   "rev_mm_recognized": 20.0
+  },
+  "counting_method": "participation",
+  "counting_basis": "결과보고서 KPI '딱지치기 이벤트' 표의 '총 참여 인원'(행사 일자별). 별도 SNS 인증 이벤트 참여자 수는 8일간 총 960명으로 집계됨. 게이트 입장 계수가 아닌 이벤트 참여 인원.",
+  "plan_visitors_expected": 7704,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(방문 숫자는 딱지치기 이벤트 참여 인원 기준(연인원). SNS 인증 이벤트 참여자는 별도 총 960명. 무료 샘플링 프로모션으로 POS 소비자 매출 없음(제품 소진 수량만 보고). 운영시간은 견적 10~18시이나 결과보고서 개요는 10~19시(9시간)로 상이.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 20.0 ≈ 계약총액 20.0",
+   "contract_total_mm": 20.0,
+   "last_recognition_period": "2024-12"
+  },
+  "label_trust": {
+   "grade": "A",
+   "flags": [],
+   "why": "일별 표가 기간의 100% 커버"
+  },
+  "label_scope": {
+   "label_from": "2024-12-18",
+   "label_to": "2024-12-25",
+   "label_active_days": 8,
+   "label_span_days": 8,
+   "label_contiguous": true,
+   "daily_sum": 4794,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  },
+  "label_history": [
+   {
+    "at": "relabel R1 (2026-07-28)",
+    "prev_visitors": 4384,
+    "prev_counting": "participation",
+    "action": "revise",
+    "changes": [
+     "visitors 4,384 → 4,794",
+     "집계 세분 미지정 → participation (뱅크 단위는 participation 유지)"
+    ],
+    "evidence": "출처는 [스위트스팟] 오리온_공항철도 프로모션_결과보고서 1227.pdf(Drive 17bfmjkXtJXL-iTdGb3d4twq1d3Ul3Wnp) '1. REVIEW / KPI 딱지치기 이벤트' 표 하나뿐이다. 열 머리글도 '총 참여 인원', 합계 행 이름도 '총 참여 인원'으로 같아 총계와 일별이 같은 물리량이며, 문서는 순방문/연방문 구분 표기를 두지 않는다 → 가설 (가)(총계=순방문, 일별=연방문)는 원문 근거가 없다. 행: 12/18 400, 12/19 410, 12/20 359, 12/21 416, 12/22 636, 12/23 697, 12/24 769, 12/25 1,107 → 합 4,794. 인쇄 총계는 4,384이고 차이 410은 12/19 행과 정확히 일치한다. 같은 문서의 다른 합계는 ",
+    "verdict": "단위 불일치가 아니라 원문 합산 오류 — 총계·일별이 같은 표의 같은 열('총 참여 인원')이고, 인쇄된 총계 4,384는 12/19(410명) 한 행을 빠뜨린 값이다. 라벨을 행 합계 4,794로 올리되 단위는 딱지치기 참여 연인원 그대로 둔다."
+   }
+  ],
+  "counting_detail": "participation"
+ },
+ "docs": [
+  {
+   "doc_id": "17bfmjkXtJXL-iTdGb3d4twq1d3Ul3Wnp",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/17bfmjkXtJXL-iTdGb3d4twq1d3Ul3Wnp/view",
+   "title": "[스위트스팟] 오리온_공항철도 프로모션_결과보고서 1227.pdf"
+  },
+  {
+   "doc_id": "1DX0rlLo9NBoGS6qsRZF-nRtt17zdpXHd",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1DX0rlLo9NBoGS6qsRZF-nRtt17zdpXHd/view",
+   "title": "오리온 공항철도_프로모션_제안서_1211-.pptx"
+  },
+  {
+   "doc_id": "1T_5EKm_P7jyb_F3sm8zUm4lycCo-N6bn",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1T_5EKm_P7jyb_F3sm8zUm4lycCo-N6bn/view",
+   "title": "오리온 공항철도 프로모션 계약서(별도 계약서 없음)_내용없음.docx"
+  },
+  {
+   "doc_id": "1Yk2EgmlBYIokY-FaEwFmFr9hBHrbaDIB",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Yk2EgmlBYIokY-FaEwFmFr9hBHrbaDIB/view",
+   "title": "SWEETSPOT_오리온_인천공항프로모션_견적서_1212.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 4건: 오리온 공항철도 프로모션 , 오리온 공항철도_프로모션_, SWEETSPOT_오리온_인천공항, [스위트스팟] 오리온_공항처. 미확실: 소비자 매출(POS) 없음 — 무료 샘플링 행사; 면적(평) 정보 없음; 별도 계약서 없음 — 계약 총액은 견적서 기준; 운영시간 견적(10~18시)과 결과보고서(10~19시) 불일치; 방문자 수는 입장 계수가 아닌 이벤트 참여 기준(딱지치기/SNS 중복 가능성)"
+ }
+}

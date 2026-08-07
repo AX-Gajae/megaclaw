@@ -1,0 +1,244 @@
+{
+ "record_id": "RIPU2608",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:YES24",
+  "space_id": "unresolved:코엑스_A홀_A1703",
+  "client_party_id": "unresolved:예스이십사",
+  "brand_key": "YES24",
+  "space_key": "코엑스"
+ },
+ "intervention": {
+  "concept": "'Ready to Run! Ready to Read!' - 독서를 러닝처럼 즐기는 몰입형 오프라인 경험 부스(YES24 BASE CAMP). 리딩런 캠페인을 러닝 게임처럼 구현해 독서 시간을 거리로 환산·시각화한다. YES24 블루 컬러 기반의 러닝 대회 무드 Playground 공간.",
+  "brand_name": "YES24",
+  "experience_elements": [
+   "ENTRY GATE(예스24 앱 로그인 후 아치형 게이트 통과, 스태프 하이파이브)",
+   "READY TIMER(리딩런 타이머 세팅, 스탬프지·부직포백·크레마클럽 30일 이용권 제공)",
+   "READING RUN(STT 음성인식 기반 리딩 인터랙션, 글자수→거리 환산 스코어)",
+   "FINISH RUN LOG(마케팅 수신동의 FC 보너스 스탬프)",
+   "REWARD(글자수 등급별 차등 리워드, 130자+ NFC 메달 키링)",
+   "FINALE WALL(응원 메시지 팔찌 작성)",
+   "SIBF 예스24 RECEIPT PHOTO(커스텀 영수증 포토존)",
+   "하이드레이션존(게토레이런 연계 음료 제공)",
+   "GOODS ZONE(예스24·리딩런 굿즈샵)",
+   "크레마맨을 찾아라(게릴라 QR 이벤트)"
+  ],
+  "promotions": [
+   "로그인·타이머 완료 시 부직포백+크레마클럽 30일 이용권 증정",
+   "스탬프 개수 차등 리워드 및 메달 NFC 키링",
+   "크레마맨 QR 스캔 리워드",
+   "영수증 포토존 SNS 인증 이벤트"
+  ],
+  "staging_tags": [
+   "러닝 대회 무드",
+   "YES24 블루",
+   "Playground",
+   "아치형 게이트",
+   "금속 메쉬/락커룸 굿즈존",
+   "하이드레이션(급수대) 테이블",
+   "LED 전광판",
+   "볼록거울 포토존"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": 540,
+   "capacity_per_session": 60,
+   "giveaway_qty": 15000,
+   "area_sqm": 108,
+   "planned_operating_days": 5,
+   "throughput_units": 1,
+   "unit_minutes": 1,
+   "operating_hours_per_day": 9,
+   "staff_count": null,
+   "experience_density": 4,
+   "goods_scale": 3,
+   "photo_zones": 3,
+   "collab_strength": 1,
+   "ip_awareness": 4,
+   "target_breadth": 3,
+   "entry_friction": 2,
+   "media_push": 2,
+   "season_fit": 4,
+   "venue_prominence": 3
+  },
+  "attr_meta": {
+   "evidence": "제안서 p2 'SIBF 방문객 약 15만명'은 도서전 5일 총량이라 host_daily=null(부스 방문 목표 42,000명도 총원). p30 KPI표: 시간대당 60명×9시간=540명/일(6/24~27), 6/28은 420명, 총 2,580명 — 1 Track 기준(2Track 5,160/3Track 7,740)이라 throughput_units=1. 동 p30 '1분 단위로 체험 가능'→unit_minutes=1, '전체 1인 체험 6분'은 여정 전체. p2 '06.24~06.28 10:00~19:00 / 5일간'→9h·5일(계약서 제2조 행사일 6/24~28 일치). p2 부스 '9*12'=108㎡(레코드 32.7평과 일치). p24 'RFID 팔찌 15,000개 제작 기준'. 스태프 수 미기재.",
+   "confidence": "high",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "강남구",
+   "venue_name": "코엑스 A홀 (A1703)",
+   "venue_type": "박람회 전시부스 (서울국제도서전)",
+   "foot_traffic_context": "서울국제도서전 방문객 약 15만명(2025년 기준), 12개 부스 규모",
+   "venue_slot": "A홀 A1703"
+  },
+  "area_pyeong": 32.7,
+  "period": {
+   "from": "2026-06-24",
+   "to": "2026-06-28",
+   "days": 5
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "총 계약금액 240,700,000원(VAT 별도) - 원계약 2026.3.11 200,000,000원(VAT별도)에서 2026.7.6 변경합의로 40,700,000원 증액. 선금 50% 100,000,000원(VAT별도) 지급완료, 잔금 140,700,000원(VAT별도) 행사종료·철거완료 후 세금계산서 발행일 기준 15일 이내 지급. 견적상 대행수수료 기획비 제외 15%(29,451,741원). 계약금액은 POS 소비자매출 아님."
+  },
+  "brand_requirements": [
+   "제작물 권리·지식재산권 의뢰사(YES24) 귀속",
+   "제작물 사용 전 의뢰사 서면 승인 필요",
+   "정치·사회·종교적 중립 유지",
+   "YES24 지식재산권 사용 가이드라인 준수",
+   "안전관리 및 사고방지, 보험 가입",
+   "보안유지 의무"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "서울국제도서전 방문객 약 15만명(2025년 기준) — '12개 부스 규모'는 부스 크기 표현이지 매장 수 아님"
+  },
+  "derived": {
+   "duration": {
+    "days": 5,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 30,
+    "holiday_until": 52,
+    "holiday_block_in": 0,
+    "nat_event_gap": 21,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 13000000.0,
+    "pnl_pre_accounts": 1,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2026-05-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 25000,
+   "popup_zone_pass_rate": 0.4,
+   "host_traffic_est": 10000.0,
+   "venue_scale_tier": 2,
+   "confidence": "medium",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2026-06-24",
+    "visitors": 8191,
+    "sales_krw": null
+   },
+   {
+    "date": "2026-06-25",
+    "visitors": 7637,
+    "sales_krw": null
+   },
+   {
+    "date": "2026-06-26",
+    "visitors": 8742,
+    "sales_krw": null
+   },
+   {
+    "date": "2026-06-27",
+    "visitors": 8875,
+    "sales_krw": null
+   },
+   {
+    "date": "2026-06-28",
+    "visitors": 7811,
+    "sales_krw": null
+   }
+  ],
+  "totals": {
+   "visitors": 41259,
+   "sales_krw": null,
+   "rev_mm_recognized": 100.0
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 실측: 총 방문인원 41,259명(단순 부스 주변 방문·체류 포함, 외부 거울 포토존 이용 미포함), 총 체험인원 11,248명(전 체험 완료 기준: 6/24 1,634 / 6/25 2,117 / 6/26 2,388 / 6/27 2,896 / 6/28 2,213). 리딩런 누적 체험거리 72,574.1, 누적 글자수 725,741. 존별 총 트래픽(굿즈샵 66,860, 중앙게이트 외부 56,145 등)은 중복 통행 포함. [예상/KPI] 제안서 목표: 부스 방문자 42,000명, 리딩런 신규참여 15,000명, SNS 콘텐츠 1,250건, 예상 체험인원 2,580명(2트랙 5,160/3트랙 7,740). POS 소비자매출 데이터 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "partial",
+   "rule": "인식액 100.0 < 계약총액 240.7의 90% — 잔금 미인식 추정",
+   "contract_total_mm": 240.7,
+   "last_recognition_period": "2026-04"
+  },
+  "counting_method": "exposure",
+  "counting_basis": "부스 주변 방문·체류 포함",
+  "label_trust": {
+   "grade": "A",
+   "flags": [],
+   "why": "일별 표가 기간의 100% 커버"
+  },
+  "label_scope": {
+   "label_from": "2026-06-24",
+   "label_to": "2026-06-28",
+   "label_active_days": 5,
+   "label_span_days": 5,
+   "label_contiguous": true,
+   "daily_sum": 41256,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "17anbssVDlklzERnhuYroe6XE2IdnXS_O",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/17anbssVDlklzERnhuYroe6XE2IdnXS_O/view",
+   "title": "YES24_Seoul International Book Fair_제안서_0325.pdf"
+  },
+  {
+   "doc_id": "1Hu8Z6cTloFHE9TDhNSsfFdjAmzQ0Vy0z",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Hu8Z6cTloFHE9TDhNSsfFdjAmzQ0Vy0z/view",
+   "title": "[스위트스팟] YES24_Seoul International Book Fair_결과보고서.pdf"
+  },
+  {
+   "doc_id": "1UzcvmtHvusgWB8F93SY4I2Q7c_EHslAv",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1UzcvmtHvusgWB8F93SY4I2Q7c_EHslAv/view",
+   "title": "YES24_SIBF 2026_최종 견적서_0702.pdf"
+  },
+  {
+   "doc_id": "1_XnyP2tPo02S-8kDFvkm5mXgDodv9qRm",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1_XnyP2tPo02S-8kDFvkm5mXgDodv9qRm/view",
+   "title": "[스위트스팟]  YES24 서울국제도서전 전시 부스 계약_(변경 합의서)_0706.pdf"
+  },
+  {
+   "doc_id": "1tVYq4XPFsmWkEI-HmI7uM-aaiM6YjG-K",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1tVYq4XPFsmWkEI-HmI7uM-aaiM6YjG-K/view",
+   "title": "[스위트스팟] YES24 서울 국제 도서전 전시 부스 계약서_0311.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 5건: [스위트스팟] YES24 서울 국제 도서전 전시 부스 , [스위트스팟]  YES24 서울국제도서전 전시 부스 계, YES24_Seoul International Book, YES24_SIBF 2026_최종 견적서_0702.pd, [스위트스팟] YES24_Seoul Internatio. 미확실: POS 소비자 매출(굿즈 판매 실적) 데이터 없음; 클라이언트 개인 담당자 성함/연락처 미상; 면적은 부스 도면 9,000*12,000mm(108㎡) 기준 환산치(약 32.7평); 부스 시공/디자인 외주 벤더 미상; district(강남구)는 코엑스 소재지 기반 추정; '예스24 라이브홀' 대관 검토 건과의 관계 불명"
+ }
+}

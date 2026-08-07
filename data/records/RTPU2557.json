@@ -1,0 +1,261 @@
+{
+ "record_id": "RTPU2557",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:Dplus_KIA",
+  "space_id": "unresolved:타임스퀘어_3층_스퀘어X",
+  "client_party_id": "unresolved:디플러스기아",
+  "brand_key": "Dplus_KIA",
+  "space_key": "타임스퀘어"
+ },
+ "intervention": {
+  "concept": "Dplus KIA의 '딮기 편의점' 컨셉 팝업스토어로, 편의점을 모티브로 한 공간에서 공식 MD 및 콜라보 제품을 판매한다. 체험·참여형 이벤트와 선수 팬미팅·일일 아르바이트 등 팬 친화 콘텐츠를 결합했다.",
+  "brand_name": "Dplus KIA (딮기 편의점)",
+  "experience_elements": [
+   "딮기 냉장고(의류·액세서리 착용 체험)",
+   "딮기 랜덤 영수증 키오스크(선수 랜덤 메시지 출력)",
+   "골라 담기 마켓(복조리 비닐백 굿즈 담기)",
+   "딮기 자율 포장대(DIY 포장 체험)",
+   "포토존",
+   "3회 방문 스탬프 출근증 이벤트",
+   "LCK 선수 팬미팅",
+   "딮기 편의점 일일 아르바이트(선수 방문)"
+  ],
+  "promotions": [
+   "13~16시 슈퍼부스트 제공 프로모션(평일 100개/주말·공휴일 200개)",
+   "구매금액별 굿즈 포장팩 제공(1만/3만/5만원)",
+   "구매 10만원당 팬미팅·경기 티켓 응모권 1장",
+   "크록스 구매자 응모권(추첨 20명 친필사인 릴 클래식 등)",
+   "구매자 제공 MD 핀버튼(2종 중 1종 랜덤)",
+   "패스트 트랙(디지털 티켓) 입장"
+  ],
+  "staging_tags": [
+   "편의점 컨셉",
+   "사이드 브랜딩",
+   "외부 유리면 랩핑",
+   "아이언배너",
+   "포토존",
+   "냉장고 VMD"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": 1500,
+   "area_sqm": null,
+   "planned_operating_days": 10,
+   "throughput_units": 2,
+   "unit_minutes": null,
+   "operating_hours_per_day": 11.5,
+   "staff_count": 8,
+   "experience_density": 4,
+   "goods_scale": 4,
+   "photo_zones": 1,
+   "collab_strength": 4,
+   "ip_awareness": 3,
+   "target_breadth": 1,
+   "entry_friction": 2,
+   "media_push": 2,
+   "season_fit": 3,
+   "venue_prominence": 2
+  },
+  "attr_meta": {
+   "evidence": "견적서 인건비 주말4+공휴일1+평일5=10일, '운영 10:30~22:00(11.5시간)', 주말SV1+STAFF7=8명/평일6명; 기획서 계산대 '포스기 2대', 증정 포장팩 400+600+500개",
+   "confidence": "high",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": "서울시",
+   "district": "영등포구",
+   "venue_name": "타임스퀘어 3층 스퀘어X",
+   "venue_type": "쇼핑몰",
+   "foot_traffic_context": "타임스퀘어 공간 특성상 주말 대비 평일 유동인구가 적음",
+   "venue_slot": "3층"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-08-15",
+   "to": "2025-08-24",
+   "days": 10
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 50,331,000원 (VAT 10% 별도). 기획료 5,000,000 / 제작비 16,220,000 / 진행비(인건비) 15,690,000 / 운영 9,300,000, 합계(Sub Total 1~4) 46,210,000, 대행수수료 소계의 10%(정가 항목 제외) 4,121,000. RS·분할 조건 미기재."
+  },
+  "brand_requirements": [
+   "포스기 2대 타임스퀘어 제공",
+   "타임스퀘어 사이니지 제작",
+   "타임스퀘어 지침에 따른 팬미팅 내부 진행"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "타임스퀘어 3층 스퀘어X, 평일 유동인구 적음"
+  },
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 0,
+    "holiday_until": 0,
+    "holiday_block_in": 3,
+    "nat_event_gap": 73,
+    "nat_event": null,
+    "doc_lag_days": 2,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 3,
+    "comp_prior_at_venue": 42,
+    "comp_within_500m_open": 3,
+    "comp_within_1000m_open": 3,
+    "matched_address": "서울 영등포구 영중로 15"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 50000.0,
+    "pnl_pre_accounts": 1,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-07-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 80000,
+   "popup_zone_pass_rate": 0.5,
+   "host_traffic_est": 40000.0,
+   "venue_scale_tier": 1,
+   "confidence": "medium",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2025-08-15",
+    "visitors": 843,
+    "sales_krw": 22139300
+   },
+   {
+    "date": "2025-08-16",
+    "visitors": 655,
+    "sales_krw": 11250900
+   },
+   {
+    "date": "2025-08-17",
+    "visitors": 610,
+    "sales_krw": 10718400
+   },
+   {
+    "date": "2025-08-18",
+    "visitors": 347,
+    "sales_krw": 8652500
+   },
+   {
+    "date": "2025-08-19",
+    "visitors": 221,
+    "sales_krw": 2182500
+   },
+   {
+    "date": "2025-08-20",
+    "visitors": 247,
+    "sales_krw": 2872800
+   },
+   {
+    "date": "2025-08-21",
+    "visitors": 210,
+    "sales_krw": 3106000
+   },
+   {
+    "date": "2025-08-22",
+    "visitors": 275,
+    "sales_krw": 4528100
+   },
+   {
+    "date": "2025-08-23",
+    "visitors": 646,
+    "sales_krw": 9394600
+   },
+   {
+    "date": "2025-08-24",
+    "visitors": 535,
+    "sales_krw": 7163800
+   }
+  ],
+  "totals": {
+   "visitors": 4589,
+   "sales_krw": 82008900,
+   "rev_mm_recognized": 50.3
+  },
+  "counting_method": "entry",
+  "counting_basis": "방문객 수 = 현장 예약(4,321) + 패스트패스(97) + 미등록(웨이팅 미입력자 171). 웨이팅 시스템 입력 및 계수기 기반 입장 집계.",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(총 4,589명(일평균 약 459명), 주말 방문객 약 78% 집중. 랜덤 영수증 출력 1,950건(참여율 42%), 객단가 17,871원.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 50.3 ≈ 계약총액 50.331",
+   "contract_total_mm": 50.331,
+   "last_recognition_period": "2025-08"
+  },
+  "label_trust": {
+   "grade": "A",
+   "flags": [
+    "A"
+   ],
+   "why": "정밀 집계 표현"
+  },
+  "label_scope": {
+   "label_from": "2025-08-15",
+   "label_to": "2025-08-24",
+   "label_active_days": 10,
+   "label_span_days": 10,
+   "label_contiguous": true,
+   "daily_sum": 4589,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1ZT5tPu9EAWzWKmes4cL3hbN5u8rm-dJK",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ZT5tPu9EAWzWKmes4cL3hbN5u8rm-dJK/view",
+   "title": "[Sweetspot] 디플러스기아 타임스퀘어 팝업스토어 운영계획안_250813_제안서.pdf"
+  },
+  {
+   "doc_id": "1mZpljyLEmDKdommaM4iGzXbZcQ4gm5ap",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1mZpljyLEmDKdommaM4iGzXbZcQ4gm5ap/view",
+   "title": "[Sweetspot] 디플러스기아 팝업스토어 결과보고서_250827.pdf"
+  },
+  {
+   "doc_id": "1sm-MWhkKuueyt_OyMcCODMi8g2V8ySY-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1sm-MWhkKuueyt_OyMcCODMi8g2V8ySY-/view",
+   "title": "(Sweetspot) 디플러스기아 팝업스토어_견적서_2차_250731.pdf"
+  },
+  {
+   "doc_id": "1x-tvw2IpHoce9ZNtFnwIJQmxNqjYMmfS",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1x-tvw2IpHoce9ZNtFnwIJQmxNqjYMmfS/view",
+   "title": "계약서.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 3건: [Sweetspot] 디플러스기아 타임스퀘어 팝업스토어, (Sweetspot) 디플러스기아 팝업스토어_견적서_2, [Sweetspot] 디플러스기아 팝업스토어 결과보고서. 미확실: area_pyeong(면적 미기재); plan_visitors_expected(기획서 예상 방문객 수 미기재); client_party_id 정확 법인명"
+ }
+}

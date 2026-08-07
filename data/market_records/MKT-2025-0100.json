@@ -1,0 +1,90 @@
+{
+ "market_record_id": "MKT-2025-0100",
+ "event_name": "플라워노즈 '스위티 베어' 팝업 @성수",
+ "brand": "플라워노즈",
+ "ip_or_collab": "스위티 베어 시리즈 론칭",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "중국발 코스메틱 브랜드 국내 첫 대형 팝업. 브랜드 월드관, 한정 컬렉션 판매",
+  "experience_elements": [
+   "브랜드 월드 전시",
+   "한정 컬렉션 체험",
+   "포토존"
+  ],
+  "promotions": [
+   "팝업 한정 제품",
+   "선착순 증정"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "성수동 팝업 공간",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2025-10-18",
+  "period_to": "2025-11-02",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 16,
+    "weekend_share": 0.38,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 27000,
+  "visitors_period_days": 16,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "브랜드/대행 성료 보도 인용: 총 2만7000명, 일평균 1700명",
+  "visitors_source_quote": "총 2만7000명의 방문객이 다녀갔으며 일평균 1700명이 방문했다",
+  "visitors_source_url": "https://magazine.hankyung.com/money/article/202511030270c",
+  "visitors_source_date": "2025-11-03",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": "일부 품목 조기 품절, 목표 매출 조기 달성으로 기간 연장",
+   "reservation_fill": null,
+   "signal_quotes": [
+    "일부 품목이 조기 품절됐고 목표 매출을 조기 달성해 팝업 기간을 연장했다"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": true,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "포브스코리아 동일 보도(2025-11-03) 존재. URL은 한경 머니 기사로 확정. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

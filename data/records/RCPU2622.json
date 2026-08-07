@@ -1,0 +1,142 @@
+{
+ "record_id": "RCPU2622",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:레봄카페_레진엔터테인먼트",
+  "space_id": "unresolved:성수_연무장11길8_키다리스튜디오사옥_레봄카페",
+  "client_party_id": "unresolved:주식회사_레진엔터테인먼트_LEZHIN",
+  "brand_key": "레봄카페",
+  "space_key": "성수_레봄카페"
+ },
+ "intervention": {
+  "concept": "레진 사옥 사내카페 '레봄카페'에서 진행된 정기 IP 팝업 시리즈 중 '해빙곡선' 테마. 식음료 및 MD상품 판매와 방문객 대상 체험 이벤트를 운영하는 버짓형 팝업스토어다. 앞뒤 테마(근하신년, 백야의꽃길)와 같은 공간에서 연속 운영되었다.",
+  "brand_name": "레봄카페 (레진엔터테인먼트)",
+  "experience_elements": [
+   "카페 식음료 제공",
+   "MD상품 판매",
+   "가챠",
+   "방문객 대상 체험 이벤트 컨텐츠",
+   "입장 특전/키트"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "IP 콜라보 카페",
+   "레봄 인테리어팀 시공",
+   "해빙곡선 테마 연출"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "성동구",
+   "venue_name": "키다리스튜디오 사옥 (레봄카페, 연무장11길 8)",
+   "venue_type": "사옥 내 사내카페 공간",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2026-04-11",
+   "to": "2026-05-17",
+   "days": null
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 53,400,000원 (VAT 10% 별도). 소계(운영비용) 44,565,000원 + 대행수수료 8,913,000원(운영비용 5천만원 미만이므로 총 운영비용의 20%). 계약구조: 견적금액을 행사 당월 50%(선금 약27.7백만) / 행사 종료월 50%(잔금 약25.7백만)로 분할 지급. 초기 55.4백만에서 3~5주차 인력 감축으로 -2백만 감액하여 53.4백만으로 5/13 최종견적 확정. LOSS율: 총매출 대비 3% 이상 발생 시 제조원가(판매가의 50%)의 100% 공제, 3% 이하는 의뢰사 부담. 운영수수료 상한: 운영비용 1억 이상 시 15,000,000원. | 계약구조 확인(2026-07-27): 위탁운영형 — 계약서가 총액 대신 견적서/조건안을 준거로 지정, 따라서 견적 총액이 계약상 확정액"
+  },
+  "brand_requirements": [
+   "의뢰사 제공 기본 가이드에 맞춰 운영",
+   "식음료 원재료는 의뢰사가 수급 제공",
+   "MD상품은 의뢰사가 공급, 실행사가 판매",
+   "운영 인력 투입계획 사전 서면 승인 필요",
+   "행사주최자배상책임보험 가입(대인/대물 각 1,000만원)",
+   "스태프 보건증 관리 및 CS·운영메뉴얼 사전교육",
+   "토/일 09:30~18:30 운영, 평일은 상호 협의",
+   "재위탁 금지",
+   "계약종료일로부터 14일 이내 원상회복 반환"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 37,
+    "weekend_share": 0.32,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 1.6,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 40,
+    "holiday_until": 42,
+    "holiday_block_in": 0,
+    "nat_event_gap": 53,
+    "nat_event": null,
+    "doc_lag_days": 61,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2026-04-11",
+    "visitors": 257,
+    "sales_krw": 121635600
+   }
+  ],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 53.4
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(오픈 첫날(4/11): 클라(레진) 카페·MD 총매출 121,635,600원(MD 116.3백만 + 음료/케이크 5.35백만) + 가챠 50,400원, 예약 270·방문 257·노쇼 13, 근무 18명. ※ 이 매출은 스위트스팟 매출이 아닌 레진(클라이언트) 귀속 소비자 POS 매출임. 시리즈 전 테마 중 '해빙곡선'이 총매출 1위(6/23 슬랙). 일 마감보고 일부: 5/23 104.8백만, 5/24 97.9백만(단, 운영종료일 5/17 이후 일자로 시리즈 공용 채널 캡처 추정, 검증 필요). 5주 클라 총매출·방문객·노쇼 누계는 미집계.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식액 53.4 ≈ 계약총액 53.4 (±10%)",
+   "contract_total_mm": 53.4,
+   "last_recognition_period": "2026-05"
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "12AHa4xXFO3wFg1oiI2-_UHbJV1BM6eec",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/12AHa4xXFO3wFg1oiI2-_UHbJV1BM6eec/view",
+   "title": "RCPU2622_레봄카페_해빙곡선 최종 견적서.pdf"
+  },
+  {
+   "doc_id": "1SkAJlx7rOX-fsZEZjijOIMw-TT5pppGFNGx3WcThsnA",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1SkAJlx7rOX-fsZEZjijOIMw-TT5pppGFNGx3WcThsnA/view",
+   "title": "■ RC본부 프로젝트 견적서(all)"
+  },
+  {
+   "doc_id": "1wmWmoCMTSFDxtIqoxLcAmNi_FfwDMAn1",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1wmWmoCMTSFDxtIqoxLcAmNi_FfwDMAn1/view",
+   "title": "[스위트스팟]26년+일반인대상+연간+카페영업 및 MD상품 판매 대행 계약서_20260209_법무 재검토_최종본 (1).pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: [스위트스팟]26년+일반인대상+연간+카페영업 및 MD상, RCPU2622_레봄카페_해빙곡선 최종 견적서.pdf. 미확실: 운영 종료일 상충: 최종견적서 4/11~5/10 vs 실운영 4/11~5/17; 운영 총 일수(days) 불명; 5주 총 방문객·매출·노쇼 누계 미확보; 5/23·5/24 매출이 해빙곡선 운영기간(5/17 종료) 이후 일자로 소속 테마 불확실; 면적(평) 정보 없음; 소비자 매출은 전부 레진 귀속으로 스위트스팟 매출 아님; 클라 담당 '선영님'/'이승희님' 식별정보 불완전; 실사용비용 29.5백만 원가 항목 분해 및 외주 벤더 실명 미상"
+ }
+}

@@ -1,0 +1,302 @@
+{
+ "record_id": "RCPU2610",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:딥퍼랑스_Deep;erence",
+  "space_id": "unresolved:성수_연무장길81_무신사뷰티스페이스1",
+  "client_party_id": "unresolved:티에스코스_TSCOS",
+  "brand_key": "딥퍼랑스",
+  "space_key": "성수_무신사뷰티스페이스1"
+ },
+ "intervention": {
+  "concept": "딥퍼랑스(프리미엄 퍼퓸 케어) 브랜드의 향기를 식재로 시각화한 뷰티 팝업. 브랜드 컬러 조닝과 데님 소재 연출을 활용해 키비주얼 포토존·시향존·디피존을 구성했다. 향 계열별(리페어 로지로즈, 바이탈 프레쉬모먼트, 릴렉싱 그리너리&바질) 시향 경험을 제공한다.",
+  "brand_name": "딥퍼랑스(Deep;erence)",
+  "experience_elements": [
+   "쇼윈도 키비주얼 포토존",
+   "시향존(액자 8~10개)",
+   "디피존/제품 박스·선물 박스 DP",
+   "가챠용 뽑기기계 이벤트",
+   "메인 제품 FRP 조형물(h950)",
+   "식재 연출",
+   "외부 포토존 그린 가벽"
+  ],
+  "promotions": [
+   "가챠(뽑기) 이벤트",
+   "선물 박스 증정"
+  ],
+  "staging_tags": [
+   "향기의_식재_시각화",
+   "브랜드컬러_조닝",
+   "데님_소재_연출",
+   "로고_스카시_조명",
+   "시향존",
+   "키비주얼_포토존"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "성동구",
+   "venue_name": "성수 무신사 뷰티스페이스1 (남경빌딩)",
+   "venue_type": "뷰티 편집·팝업 전용 공간",
+   "foot_traffic_context": "성수 연무장길, 오픈일 대기인원 다수"
+  },
+  "area_pyeong": 7,
+  "period": {
+   "from": "2026-01-14",
+   "to": "2026-01-25",
+   "days": 11
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "티에스코스-스위트스팟 대행 총 계약금액 46,100,000원(VAT별도). 선금 60% 27,660,000원(2025-12-30), 잔금 40% 18,440,000원(2026-01-30). 최종견적서(0116) 기준 43,600,000원(VAT별도)=소계 39,100,000+대행수수료(기업이윤) 4,500,000. 발주 60%/종료 후 잔금 40%. 시공 하도급(그리드): 24,700,000원(VAT별도) 일괄 100%, 2026-02-03 지급. 지연 시 1일당 시공총액 1%(247,000원) 배상."
+  },
+  "brand_requirements": [
+   "프로모터는 티에스코스 별도 채용·관리",
+   "카펫 시공은 티에스코스 직접 진행",
+   "제작물 사용 전 의뢰사 감수 필수",
+   "행사 종료 후 상품검수 주체는 의뢰사",
+   "공급 제품 판매 분실분(LOSS) 실행사 책임 없음"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 12,
+    "weekend_share": 0.33,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 97,
+    "holiday_until": 31,
+    "holiday_block_in": 0,
+    "nat_event_gap": 62,
+    "nat_event": null,
+    "doc_lag_days": 27,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 420253.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-12-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 52.4
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(제공된 문서(계약서·기획서·견적서)에는 실측 방문객 수·POS 매출 표가 없음. 리서치 요약상 오픈일(1/14) 대기인원 다수 언급은 정성 관찰. 팝가 spot_id 5267 별도 조회 필요. 운영 KPI·매출 미확보.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2026-01, 스냅샷 2026-05까지 2개월+ 경과 (계약총액 불명, 시간 규칙)",
+   "contract_total_mm": 46.1,
+   "last_recognition_period": "2026-01"
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "103w10qJ1kuBCHoibNQ-mwGZNrvGKsuOH",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/103w10qJ1kuBCHoibNQ-mwGZNrvGKsuOH/view",
+   "title": "[견적서-진성아크릴] 딥퍼랑스 아크릴 제작 건.jpg"
+  },
+  {
+   "doc_id": "18D23lKlUvrG4ah0e98erhiZbRelrO6AK",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/18D23lKlUvrG4ah0e98erhiZbRelrO6AK/view",
+   "title": "A night at Dubai Opera with Valentino Beauty for….jfif"
+  },
+  {
+   "doc_id": "18UF4_J0lVuSMENMohYxec3tgc4n0lXrM",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/18UF4_J0lVuSMENMohYxec3tgc4n0lXrM/view",
+   "title": "딥퍼랑스_무신사뷰티_최종견적서_0116.pdf"
+  },
+  {
+   "doc_id": "1C0xm-B2L8jTW2m9ye9eOhkfTcXJs2ola",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1C0xm-B2L8jTW2m9ye9eOhkfTcXJs2ola/view",
+   "title": "[스위트스팟] 딥퍼랑스 무신사뷰티 팝업 5차 공간기획안(0112).pptx"
+  },
+  {
+   "doc_id": "1DETNwzHFVZnB4jFzIQjLLzvtINXKbuES",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1DETNwzHFVZnB4jFzIQjLLzvtINXKbuES/view",
+   "title": "249796_126686_191.jpg"
+  },
+  {
+   "doc_id": "1FrXdRDSyU2ZMmK83B3y0Uh_fHT9RdomT",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1FrXdRDSyU2ZMmK83B3y0Uh_fHT9RdomT/view",
+   "title": "[견적서-그리드] 딥퍼랑스 무신사 뷰티 시공 건.xlsx"
+  },
+  {
+   "doc_id": "1GfMfwjj4Z-gUyQMIM6pHEizC6uP7GdwO",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1GfMfwjj4Z-gUyQMIM6pHEizC6uP7GdwO/view",
+   "title": "[티에스코스] 팝업대행 표준 계약서(수정)_251218.pdf"
+  },
+  {
+   "doc_id": "1LXeEWEPwq2fdln3dw6mr-CgtkY_ulWQK",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1LXeEWEPwq2fdln3dw6mr-CgtkY_ulWQK/view",
+   "title": "[견적서-디자인알파] 딥퍼랑스 FRP 제작 건.pdf"
+  },
+  {
+   "doc_id": "1Lg711qp6lCGcPhqb3DHDXXdGsXTsbBTM",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Lg711qp6lCGcPhqb3DHDXXdGsXTsbBTM/view",
+   "title": "티에스코스(딥퍼랑스) 사업자등록증.jpg"
+  },
+  {
+   "doc_id": "1SXWK00FCiqsCCxVCpFeSnI4FrPwozRaW",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1SXWK00FCiqsCCxVCpFeSnI4FrPwozRaW/view",
+   "title": "견적서_딥퍼랑스_JS렌탈_01.13~01.25 스위트스팟.xlsx"
+  },
+  {
+   "doc_id": "1Uil0vp2mbPQllAfIzQuBuH7BKs3WhVQy",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Uil0vp2mbPQllAfIzQuBuH7BKs3WhVQy/view",
+   "title": "[스위트스팟] 딥퍼랑스 무신사뷰티 팝업 1차 공간기획안(1224).pdf"
+  },
+  {
+   "doc_id": "1WFJwzORv2UVhc84Za014UHKBquBcZW1V",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1WFJwzORv2UVhc84Za014UHKBquBcZW1V/view",
+   "title": "[스위트스팟] 딥퍼랑스 무신사뷰티 팝업 2차 공간기획안(1229).pdf"
+  },
+  {
+   "doc_id": "1WQJfIkOXyBqxzf9fHDuIj6UjiUeiXPQY",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1WQJfIkOXyBqxzf9fHDuIj6UjiUeiXPQY/view",
+   "title": "B20230328105821397.jpg"
+  },
+  {
+   "doc_id": "1YKse0k8jtc_kmhvw-tQwoPfXlzh9Ue2k",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1YKse0k8jtc_kmhvw-tQwoPfXlzh9Ue2k/view",
+   "title": "[견적서-그리드] 퇴마록 인건비 지급 건.xlsx"
+  },
+  {
+   "doc_id": "1cNzPK5QPoNkDyLXPqY5ibIbkug4K4c1V",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1cNzPK5QPoNkDyLXPqY5ibIbkug4K4c1V/view",
+   "title": "[스위트스팟] 딥퍼랑스 무신사뷰티 팝업 4차 공간기획안(0106).pdf"
+  },
+  {
+   "doc_id": "1e2GsVK9r7mTCpYh7T1e12AUQyNAibAv_",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1e2GsVK9r7mTCpYh7T1e12AUQyNAibAv_/view",
+   "title": "[스위트스팟] 딥퍼랑스 무신사뷰티 팝업 3차 공간기획안(1231).pdf"
+  },
+  {
+   "doc_id": "1eTY2EQ6GeIBdFlhTp6qd47f7lB-6HA7m",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1eTY2EQ6GeIBdFlhTp6qd47f7lB-6HA7m/view",
+   "title": "[견적서-디자인알파] 딥퍼랑스 FRP 제작 건.xlsx"
+  },
+  {
+   "doc_id": "1eh7h3CZoQZPYGnlt-P0b6DyeP97SYhPU",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1eh7h3CZoQZPYGnlt-P0b6DyeP97SYhPU/view",
+   "title": "딥퍼랑스_26년도무신사뷰티스페이스1_비주얼기획안_1208 (1).pdf"
+  },
+  {
+   "doc_id": "1illQLQdIocOXsw2nTPS5ixRhxIIIl_ac",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1illQLQdIocOXsw2nTPS5ixRhxIIIl_ac/view",
+   "title": "공간기획안_2차_수정요청안.pptx"
+  },
+  {
+   "doc_id": "1izhodmsb5IsKIOleaGFiVCJIDnn2epVF",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1izhodmsb5IsKIOleaGFiVCJIDnn2epVF/view",
+   "title": "64dd6f7a9beaf90881a41504b965ff3b.jpg"
+  },
+  {
+   "doc_id": "1kTkW98hx4ZAMPn5GIWAO_l1HEcASE36q",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1kTkW98hx4ZAMPn5GIWAO_l1HEcASE36q/view",
+   "title": "[스위트스팟] 딥퍼랑스 무신사뷰티 팝업 5차 공간기획안(0112)_최종.pdf"
+  },
+  {
+   "doc_id": "1m119gFCRyZvHQcEGI3IDdnB3ZdDQd0be",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1m119gFCRyZvHQcEGI3IDdnB3ZdDQd0be/view",
+   "title": "0459d3f24a6e5adbad9bc58668755d17.jpg"
+  },
+  {
+   "doc_id": "1rCo6P9rqjwlw_4BmKbt5YEOdxtmzJ4oR",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1rCo6P9rqjwlw_4BmKbt5YEOdxtmzJ4oR/view",
+   "title": "[시공계약서_그리드] 딥퍼랑스 무신사 뷰티 팝업_0121.pdf"
+  },
+  {
+   "doc_id": "1rhrsnBrd2gnVWxx8WrszIgWajctGue-W",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1rhrsnBrd2gnVWxx8WrszIgWajctGue-W/view",
+   "title": "[스위트스팟] 딥퍼랑스 무신사뷰티 팝업 1차 공간기획안(1224).pptx"
+  },
+  {
+   "doc_id": "1sHTQ1WUFGRN7ckM3vx5HV2Qmkk_yBdLQ",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1sHTQ1WUFGRN7ckM3vx5HV2Qmkk_yBdLQ/view",
+   "title": "3a33ba2eef693e60d424c76346214be3.jpg"
+  },
+  {
+   "doc_id": "1sx8a96Tm4x87QUuqV_lJofs5qBcYi63n",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1sx8a96Tm4x87QUuqV_lJofs5qBcYi63n/view",
+   "title": "[시공계약서_그리드] 딥퍼랑스 무신사 뷰티 팝업_0121.docx"
+  },
+  {
+   "doc_id": "1uAAvj6tbllDZicyPvAcJk_gTnT4E1rdo",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1uAAvj6tbllDZicyPvAcJk_gTnT4E1rdo/view",
+   "title": "a6eceb9ad0cc76a882f452895343d434.jpg"
+  },
+  {
+   "doc_id": "1vkQuWXDhT3bUwNsSQmQfAsugdAx8n7mK",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1vkQuWXDhT3bUwNsSQmQfAsugdAx8n7mK/view",
+   "title": "[견적서-렌탈큐브] 딥퍼랑스 무신사 팝업 렌탈 건.xlsx"
+  },
+  {
+   "doc_id": "1wSp35r_b_-WakOeLcm0ALyXjPDCW6EdE",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1wSp35r_b_-WakOeLcm0ALyXjPDCW6EdE/view",
+   "title": "0106 딥퍼랑스 예상마감비용(실비).xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 5건: [티에스코스] 팝업대행 표준 계약서(수정)_251218, [시공계약서_그리드] 딥퍼랑스 무신사 뷰티 팝업_012, [스위트스팟] 딥퍼랑스 무신사뷰티 팝업 5차 공간기획안, [스위트스팟] 딥퍼랑스 무신사뷰티 팝업 5차 공간기획안, 딥퍼랑스_무신사뷰티_최종견적서_0116.pdf. 미확실: 일별/총 방문객 수 및 POS 소비자 매출(결과보고서 부재); 웨이팅/노쇼 등 운영 KPI; 굿즈(선물박스/가챠) 최종 제작·진행 수량; 입구 파사드 제거 최종 결정 여부; 기획서상 계약기간 오기(2025.01.14~01.25 → 실제 2026); 최종 계약금액과 견적서(43.6M) vs 계약서(46.1M) 차이 원인"
+ }
+}

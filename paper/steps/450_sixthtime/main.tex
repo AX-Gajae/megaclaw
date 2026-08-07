@@ -1,0 +1,144 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{여섯 번째로 같은 지뢰를 밟았는데, 그 지뢰가 다음 실험이었다}
+\author{월드모델 실험실}
+\date{노트 581 · 582 · 2026년 8월 5일}
+\maketitle
+
+\begin{abstract}
+노트 $579$ 가 ``\texttt{entry\_friction} 은 앱에서 신호이고 KR 에서
+잡음이다 --- \textbf{공유 축이 아니다}''를 냈다. 다섯 축을 전수로 재
+확인하려 했고, 확인됐다 --- 일치율 \textbf{$50\%$}, 다섯 중 유일하게.
+
+\textbf{그리고 \texttt{data/state/axis\_orient.json} 을 열었다.}
+
+\begin{center}
+\texttt{\{"entry\_friction": ["도서","모바일","애니","웹툰","펀딩"], \dots\}}
+\end{center}
+
+\textbf{하네스 열은 그 다섯 도메인에서 이미 \emph{값 $\to$ $1-$값} 으로
+뒤집혀 있다}(노트 $108$ 채택 $\cdot$ 노트 $160$ 기록). 원 방향으로 되돌려
+읽으면 일치율이 $50\% \to \mathbf{88\%}$ 다.
+
+\begin{quote}
+노트 $160$ 이 이렇게 적어 뒀다 --- ``\emph{노트 $155\!\sim\!159$ 가 이걸
+안 해서 입장 마찰을 다섯 노트에 걸쳐 `어느 통제로도 안 고쳐지는 축'으로
+적었다.}'' \textbf{여섯 번째다.}
+\end{quote}
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- $\circlearrowleft$ 는 하네스가 뒤집어 둔 곳.
+\textbf{나} --- 다섯 중 하나만 갈렸고 그것도 열 탓.
+\textbf{다} --- 사례 $40$ 건은 안 오른다.}
+\end{figure}
+
+\section{되돌려 읽으면}
+
+\begin{center}
+\begin{tabular}{lrrl}
+\hline
+ & 하네스 열 & 원 방향 & \\
+\hline
+모바일 $\circlearrowleft$ & $+0.6444$ & $\mathbf{-0.6444}$ & \\
+도서 $\circlearrowleft$ & $+0.2421$ & $-0.2421$ & \\
+애니 $\circlearrowleft$ & $-0.1514$ & $\mathbf{+0.1514}$ & \textbf{유일한 반대} \\
+펀딩 $\circlearrowleft$ & $+0.0051$ & $-0.0051$ & \\
+만화 & $-0.1559$ & $-0.1559$ & \\
+세계애니 & $-0.0331$ & $-0.0331$ & \\
+\hline
+KR 만화(집 밖) & \multicolumn{2}{c}{$-0.3202$} & \\
+비게임 앱(집 밖) & \multicolumn{2}{c}{$-0.6353$} & \\
+\hline
+\end{tabular}
+\end{center}
+
+원 방향에서 \textbf{여덟 중 일곱이 음수}이고, 설계된 사전 부호
+(\texttt{lever.PRIOR}$=-1$)와 맞는다. 나머지 넷은 하네스 열에서도 이미
+깨끗하다 --- \texttt{media\_push} $100\%$ $\cdot$ \texttt{goods\_scale}
+$100\%$ $\cdot$ \texttt{target\_breadth} $90\%$ $\cdot$
+\texttt{venue\_prominence} $89\%$.
+
+\section{바뀌는 진단}
+
+\begin{quote}
+``\textbf{ALL5 에 뜻이 갈리는 축이 있다}''가 아니라
+``\textbf{하네스 열이 그 축의 공유 뜻을 깨뜨렸다}''이다.
+\end{quote}
+
+그리고 이것이 처음으로 \texttt{OOC\_DROP} 을 \emph{설명}한다. 하네스 열의
+학습 행 가중 평균이 $\mathbf{-0.023}$ --- 사실상 $0$ 이다. 방향이 없는
+열이므로 모형은 도메인 지시자와 \emph{함께서만} 그 축을 쓸 수 있고,
+\textbf{안 본 도메인에는 쓸 근거가 없다.} 노트 $443$ 이 ``어느 쪽으로
+읽을지를 몰라서 가린다''고 적은 것이 맞았는데, \emph{왜} 모르는지가
+여기서 나온다 --- 우리가 그렇게 만들었다.
+
+\section{사례 40건은 아무것도 안 올린다}
+
+덱 다섯 곳에 ``새 카테고리 진입 비용 $=$ 사례 $40$ 건''이 걸려 있었다.
+짝 라벨 $k$ 건으로 부호를 정하고 나머지에서 채점했다(씨앗 $12$).
+
+\begin{center}
+\begin{tabular}{lrrrrr}
+\hline
+ & $k{=}0$ & $k{=}10$ & $k{=}20$ & $k{=}40$ & $k{=}80$ \\
+\hline
+KR 만화 & $0.6376$ & $0.6379$ & $0.6387$ & $0.6371$ & $0.6388$ \\
+비게임 앱 & $0.2860$ & $\mathbf{0.0950}$ & $0.2373$ & $0.2855$ & $0.2407$ \\
+CN 만화 & $0.3130$ & $\mathbf{0.1527}$ & $0.1505$ & $0.3124$ & $0.3035$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{$k{=}40$ 이 $k{=}0$ 과 같다.} $k{=}10$ 에서 \emph{떨어지는} 것은
+\textbf{적은 라벨로 전역 부호를 정하면 동전 던지기}이기 때문이다.
+\textbf{덱에서 뺐다} --- 재현 안 되는 숫자를 밖으로 나가는 문서에 두지
+않는다.
+
+\paragraph{곁가지 --- \texttt{OOC\_DROP} 을 걷으면.}
+$k{=}0$ 의 깨끗한 견줌에서 KR $+0.6376 \to \mathbf{+0.6524}$,
+앱 $+0.2860 \to \mathbf{+0.1238}$. \textbf{거울(노트 $426$)이 갈리므로
+지금은 그대로 둔다} --- 노트 $463$ 을 이 세대에서 재현했고 크기는 더 크다.
+
+\section*{지뢰가 곧 실험이다}
+
+방향이 깨진 것이 원인이라면 \textbf{되돌리면 된다.} 노트 $583$ 이 팔
+넷으로 잰다 --- A 챔피언 $\cdot$ B 되돌림 $\cdot$ C 되돌림 $+$
+\texttt{OOC\_DROP} 해제 $\cdot$ D 무작위 도메인 대조(노트 $562$).
+
+\begin{quote}
+\textbf{트리는 한 특성의 단조 변환에 불변인데, 여러 도메인이 한 열을
+나눠 쓰면 불변이 아니다.} 도메인 A 에서 $+$ 이고 B 에서 $-$ 이면 한
+문턱으로는 못 가르고 도메인과 함께 갈라야 한다 --- 깊이를 쓴다. 방향을
+맞추면 \textbf{주효과로 쓸 수 있다.} 그것이 B 가 노리는 것이고, C 는
+그 위에서 집 밖 짝까지 정렬시킨다.
+\end{quote}
+
+\section*{조항}
+
+\begin{quote}
+\textbf{하네스 열을 원 축으로 읽지 않는다.} \texttt{axis\_orient.json} 을
+먼저 본다. 이 조항은 노트 $160$ 이 이미 적어 뒀고 파일까지 만들어 뒀는데,
+그 파일이 \emph{진단 함수}(\texttt{lever.prior\_of})에서만 읽히고
+\textbf{감사에서는 안 읽힌다.} 노트 $549$ 의 ``장부와 코드가 따로 자란다''와
+같은 집안이다 --- \textbf{조항을 사람이 기억하게 두면 여섯 번을 못 간다.}
+\end{quote}
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{노트 $583$} --- 되돌림 팔 넷. 서면 \texttt{OOC\_DROP} 을
+걷을 수 있고 노트 $579$ 가 잰 \textbf{앱 아래 절반 천장의 $66\%$} 를
+되찾는 길이 열린다.
+\item \textbf{\texttt{media\_push} $\cdot$ 애니} --- \texttt{orient} 목록에
+그것도 있다. \texttt{media\_push} 는 일치율 $100\%$ 라 안 걸렸는데,
+\emph{되돌리면} 갈릴 수도 있다. 안 봤다.
+\item \textbf{감사에 \texttt{orient} 를 물린다} --- \texttt{sideaudit} 에
+넷째 검사로 붙이면 일곱 번째는 없다.
+\end{itemize}
+
+\end{document}

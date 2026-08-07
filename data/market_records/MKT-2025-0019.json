@@ -1,0 +1,93 @@
+{
+ "market_record_id": "MKT-2025-0019",
+ "event_name": "새로도원 팝업 (압구정)",
+ "brand": "롯데칠성음료 (새로)",
+ "ip_or_collab": "에잇디 카페 등 다이닝 협업",
+ "category": "liquor",
+ "intervention": {
+  "concept_description": "'설탕과 근심, 걱정을 제로화한다'는 콘셉트의 도원(桃源) 테마 팝업+다이닝 공간. 카페·다이닝존 운영",
+  "experience_elements": [
+   "도원 콘셉트 카페존",
+   "한식·술 페어링 다이닝존",
+   "포토존"
+  ],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "서울 강남구 도산대로51길 44 (압구정)",
+  "venue_type": "street_standalone",
+  "neighborhood": "압구정",
+  "city": "서울",
+  "period_from": "2025-03-29",
+  "period_to": "2025-08-31",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 156,
+    "weekend_share": 0.29,
+    "holiday_days": 5
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 40000,
+  "visitors_period_days": null,
+  "counting_basis": "participation",
+  "counting_basis_note": "롯데칠성음료가 밝힌 '누적 체험객' 기준(체험 프로그램 참여자 집계). 약 5개월 운영(3/29 오픈, 8월 말까지 연장)",
+  "visitors_source_quote": "지난해에는 서울 압구정에서 약 5개월간 '새로도원'을 선보였다. '설탕과 근심, 걱정을 제로화한다'는 콘셉트로 누적 체험객 4만명을 넘겼다.",
+  "visitors_source_url": "https://www.etnews.com/20260611000149",
+  "visitors_source_date": "2026-06-11",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": true,
+  "alt_figures": [
+   {
+    "metric": "visitors_total",
+    "figure": 30000,
+    "scope_note": "heypop(2026-03-23): '3개월간 팝업과 다이닝 누적 체험객은 3만 명을 넘겼고' — 8월 말 연장 운영 전 시점 수치",
+    "source_url": "https://heypop.kr/n/134994/",
+    "source_date": "2026-03-23"
+   }
+  ],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "3만(heypop, 연장 전 시점) vs 4만(etnews, 연장 포함) — 시점 차이로 보이나 상충 표기. 체험객 기준. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "기간 156일 > 90일(장기·집계 의심)",
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,102 @@
+{
+ "market_record_id": "MKT-2025-0111",
+ "event_name": "롯데타운 크리스마스 마켓 2025",
+ "brand": "롯데백화점",
+ "ip_or_collab": null,
+ "category": "other",
+ "intervention": {
+  "concept_description": "3회차 연말 대형 크리스마스 마켓, 예약 입장권제 운영",
+  "experience_elements": [
+   "크리스마스 마켓 부스",
+   "포토존"
+  ],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "롯데월드타워 월드파크 야외 광장(롯데타운 잠실)",
+  "venue_type": "mall",
+  "neighborhood": "잠실",
+  "city": "서울",
+  "period_from": "2025-11-01",
+  "period_to": "2025-12-31",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  },
+  "derived": {
+   "duration": {
+    "days": 61,
+    "weekend_share": 0.3,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 12.0,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 400000,
+  "visitors_period_days": null,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "대한경제(2026-06) 회고 수치: '연말 잔디광장에서 여는 롯데타운 크리스마스마켓은 지난해 행사 기간 외국인 방문객만 40만명을 끌어모았다' — 외국인만 40만이므로 총 방문객은 그 이상. 2025-12 롯데 발표 기사는 '40만 방문객 이상의 역대 최고 기록 경신이 예상된다'로 보도(집계 중 전망치)",
+  "visitors_source_quote": "연말 잔디광장에서 여는 롯데타운 크리스마스마켓은 지난해 행사 기간 외국인 방문객만 40만명을 끌어모았다.",
+  "visitors_source_url": "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202606081101267610424",
+  "visitors_source_date": "2026-06-09",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": "예약 입장권 연속 매진",
+   "signal_quotes": [
+    "현재 롯데월드타워 월드파크 야외 광장에서 진행 중인 ‘롯데타운 크리스마스 마켓’은 오픈 초기부터 예약 입장권 연속 매진 등 폭발적인 반응이 이어져, 40만 방문객 이상의 역대 최고 기록 경신이 예상된다."
+   ]
+  },
+  "conflict": true,
+  "alt_figures": [
+   {
+    "value": 400000,
+    "basis": "organizer_claim",
+    "quote": "롯데타운 크리스마스 마켓은 오픈 초기부터 예약 입장권 연속 매진 등 폭발적인 반응이 이어져, 40만 방문객 이상의 역대 최고 기록 경신이 예상된다.",
+    "url": "https://view.asiae.co.kr/article/2025120711581320568",
+    "date": "2025-12-07"
+   }
+  ],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C",
+    "A"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "두 수치 프레이밍 상이(외국인만 40만 vs 총 40만 이상 예상)로 conflict 처리. 정확한 운영 기간 미보도(11~12월 연말 시즌). | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

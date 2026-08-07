@@ -1,0 +1,145 @@
+{
+ "record_id": "RCCP2504",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:수아도_SUHADO",
+  "space_id": "unresolved:파르나스몰_센트럴라운지_아트리움3F_9F",
+  "client_party_id": null,
+  "brand_key": "수아도",
+  "space_key": "파르나스몰"
+ },
+ "intervention": {
+  "concept": "수아도(SUHADO) 브랜드의 팝업 전시로, 그리스·로마 예술과 조각·건축을 모티프로 한 아트 전시형 팝업. 우드·석고·석재·금속 소재를 배치하고 브랜드 리본·테이프로 심플하게 연출. Raw Cotton Fabric과 로프, 브랜드 아이덴티티 일러스트·타이포 그래픽을 활용.",
+  "brand_name": "수아도 (SUHADO®)",
+  "experience_elements": [
+   "전시(Exhibition) 디스플레이",
+   "석고/석재/금속/우드 소재 조형물 배치",
+   "그래픽 프린트(일러스트·타이포)",
+   "브랜드 리본 및 테이프 데코"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "Greek and Roman art",
+   "Sculpture in stone",
+   "Architecture",
+   "Raw Cotton Fabric + Rope",
+   "외곽 바닥 4면 시트지 부착 공간분리"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": null,
+   "venue_name": "파르나스몰 센트럴 라운지",
+   "venue_type": "몰 라운지/아트리움",
+   "foot_traffic_context": "아트리움 3F, 9F"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-02-13",
+   "to": "2025-02-26",
+   "days": 14
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "revenue_share",
+   "detail": "점포(업체) 수수료 및 카드 수수료가 매출에서 차감되는 구조로 기재됨. 구체적 수수료율·금액은 원문에 명시되지 않음. 리뷰 항목에 '점포 수수료를 낮추기'가 개선점으로 언급됨."
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "파르나스몰 센트럴 라운지"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 14,
+    "holiday_until": 16,
+    "holiday_block_in": 0,
+    "nat_event_gap": 91,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": 16734044,
+   "rev_mm_recognized": 5.3
+  },
+  "counting_method": "unknown",
+  "counting_basis": "결과보고서에 방문자 계수 표나 방문자 정의가 없음. 매출/수수료/수익률 중심의 재무 결과표만 존재.",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서가 매출·수익률 중심으로 구성되어 있으며 방문자 수 데이터는 확인되지 않음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-02, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-02"
+  },
+  "sales_basis": "PnL 상품매출 양수계정 합 × 1.1 (부가세 포함 기준)",
+  "label_history": [
+   {
+    "at": "pnl_sales (2026-07-28)",
+    "action": "mine",
+    "changes": [
+     "sales_krw 16,734,044 (PnL 총 결제액)"
+    ],
+    "evidence": "core.project_pnl_monthly 상품매출 양수계정 합 15,212,767(공급가) × 1.1, 인식 1개월"
+   }
+  ]
+ },
+ "docs": [
+  {
+   "doc_id": "10nF-W5iJTckq7g-ONdPeny3-MGuRmm6N",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/10nF-W5iJTckq7g-ONdPeny3-MGuRmm6N/view",
+   "title": "파르나스몰 센트럴 라운지 팝업 공간 사용계약서_수아도.pdf"
+  },
+  {
+   "doc_id": "1Djgd3PNRWH1EVCn_sjpsGQEPh628yoLm",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Djgd3PNRWH1EVCn_sjpsGQEPh628yoLm/view",
+   "title": "25.02 수아도 파르나스 센트럴라운지 행사 결과보고서.xlsx"
+  },
+  {
+   "doc_id": "1VyB6P2pTfxfbmSXJUL-ioB9kgX7MIglO",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1VyB6P2pTfxfbmSXJUL-ioB9kgX7MIglO/view",
+   "title": "[Sweetspot] 파르나스 센트럴 라운지 팝업 기획안_수아도.pdf"
+  },
+  {
+   "doc_id": "1lgzZHn-y8MIMz5jz6c1Syjd_XF5h5WEZ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1lgzZHn-y8MIMz5jz6c1Syjd_XF5h5WEZ/view",
+   "title": "현대드림애드 바닥 시트지 견적서.xls.xls"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 2건: [Sweetspot] 파르나스 센트럴 라운지 팝업 기획, 25.02 수아도 파르나스 센트럴라운지 행사 결과보고서. 미확실: client_name/client_party_id 미확인; 면적(평) 미확인; 수수료율 및 계약 총액 구체 수치 미확인; 일일 방문자·총 방문자 데이터 없음; 소비자 매출(POS) 실측 수치 원문에서 파싱 불가; 예상 방문자(기획서 KPI) 없음; venue 정확 위치(구) 미확인"
+ }
+}

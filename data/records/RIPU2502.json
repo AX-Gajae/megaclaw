@@ -1,0 +1,273 @@
+{
+ "record_id": "RIPU2502",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:RIPU2502",
+  "space_id": "unresolved:세종문화회관",
+  "client_party_id": null,
+  "brand_key": "미상",
+  "space_key": "더현대서울",
+  "space_key_source": "원문 확인 (제안서·운영안: '장소 더현대 서울 아이코닉존 / 주최·주관 세종문화회관'). 기존 '세종문화회관'은 발주처였다",
+  "client_key": "세종문화회관"
+ },
+ "intervention": {
+  "concept": "세종문화회관이 주최한 해리포터 필름콘서트 홍보 및 티켓 판매 팝업스토어. 포토존·기숙사 배정·나만의 티켓/필름 만들기·오케스트라(필름콘서트) 영상 관람·스탬프 이벤트 등 체험 후 현장 티켓 예매와 굿즈 판매로 이어지는 고객 여정을 구성.",
+  "brand_name": "해리포터 필름콘서트 팝업스토어",
+  "experience_elements": [
+   "입구 포토존(해리포터 망토/목도리 의상 4세트 착용 촬영)",
+   "호그와트/기숙사 배정 포토존",
+   "포도알을 잡아라(터치 게임, 점수 획득 시 스탬프)",
+   "나만의 티켓 만들기(스티커로 티켓 꾸미기)",
+   "나만의 필름/명장면 꾸미기(대안)",
+   "공연(오케스트라) 영상 관람존",
+   "스탬프 이벤트(4개 존별 스탬프+뽑기 리워드)",
+   "필름콘서트 티켓 판매존(세종문화회관 회원가입 후 현장 예매)",
+   "굿즈 전시 및 판매/결제"
+  ],
+  "promotions": [
+   "스탬프 완성 시 뽑기 리워드(스위트석/VIP석 무료 관람권, 팝업 사용 50/40/30% 할인 쿠폰, 위니비니 젤리, 해리포터 초콜렛)",
+   "현장 티켓 예매 기본 25% 할인(+이벤트 당첨 시 추가 할인)",
+   "현장 예매 인증 리워드(위니비니 젤리 또는 해리포터 초콜렛 택1)"
+  ],
+  "staging_tags": [
+   "해리포터 IP",
+   "호그와트 백월/벽난로 포토존",
+   "기숙사 배정 연출",
+   "필름콘서트 대극장 재현(PDP 매립+좌석)",
+   "Daily Prophet 티켓 박스"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": 5000,
+   "area_sqm": null,
+   "planned_operating_days": 7,
+   "throughput_units": 1,
+   "unit_minutes": null,
+   "operating_hours_per_day": 10,
+   "staff_count": 12,
+   "experience_density": 4,
+   "goods_scale": 4,
+   "photo_zones": 2,
+   "collab_strength": 4,
+   "ip_awareness": 4,
+   "target_breadth": 3,
+   "entry_friction": 2,
+   "media_push": 2,
+   "season_fit": 2,
+   "venue_prominence": 4
+  },
+  "attr_meta": {
+   "evidence": "제안서·운영안 행사 개요 모두 '2025년 4월 24일 ~ 4월 30일 (7일간)' → 운영 7일(휴무 문구 없음). 세종문화회관 발주 계약서 3건은 계약기간 2025.04.25~04.30으로 시공·정산 기간. operating_hours_per_day=10은 운영안 근무표 10:00~10:30 오픈준비 후 10:30~20:30. staff_count=12는 근무표 '총인원' 열 최대 12(19시 이후 9)이며 인력 계획표 합(관리1+입장2+굿즈1+필름1+동아리1+티켓2+결제2+스탬프1+포도알1)과 일치. throughput_units=1은 전 방문객이 스탬프 1번으로 통과하는 '포도알을 잡아라' 운영물품 '터치 바이 터치 기기 1'(뽑기 기기도 1대). giveaway_qty=5000은 나만의 티켓 만들기 '필름지 5000 / 해리포터 관련 스티커 5000'; 뽑기 리워드는 초콜렛 1000(하루 142)·연필세트 1000(하루 142)·쿠폰 100/300/500·VIP석 50+50으로 총량을 7로 나눈 일 배분치가 명시(합 약 425/일)이나 방문객 예상치는 아니어서 plan_visitors_per_day는 null. 영상 재생 시간 칸이 비어 unit_minutes null. 굿즈 35종+씨네콘서트 DP 5종 수량 명시로 goods_scale 4, 해리포터 IP×세종문화회관 필름콘서트×더현대 아이코닉존.",
+   "confidence": "medium",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "capacity": {
+   "access_type": "session",
+   "total_capacity": null,
+   "detail": "워크인 자유 입장 및 대기(웨이팅) 시스템 병행 운영. 총 수용 한도 근거 없음 | 키워드 승격(session)"
+  },
+  "location": {
+   "city": "서울",
+   "district": "영등포구",
+   "venue_name": "더현대 서울",
+   "venue_type": "백화점 팝업존(아이코닉존, 지하철 방면)",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-04-24",
+   "to": "2025-04-30",
+   "days": 7
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "세종문화회관 공연장/문화시설 내"
+  },
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 5,
+    "months_since_last": 11.8,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 52,
+    "holiday_until": 9,
+    "holiday_block_in": 0,
+    "nat_event_gap": 40,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 11,
+    "comp_prior_at_venue": 271,
+    "comp_within_500m_open": 12,
+    "comp_within_1000m_open": 12,
+    "matched_address": "서울 영등포구 여의대로 108"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 4000,
+   "popup_zone_pass_rate": 0.55,
+   "host_traffic_est": 2200.0,
+   "venue_scale_tier": 4,
+   "confidence": "medium",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2025-04-24",
+    "visitors": 1322,
+    "sales_krw": 1921700
+   },
+   {
+    "date": "2025-04-25",
+    "visitors": 1600,
+    "sales_krw": 1649200
+   },
+   {
+    "date": "2025-04-26",
+    "visitors": 1973,
+    "sales_krw": 3065600
+   },
+   {
+    "date": "2025-04-27",
+    "visitors": 1558,
+    "sales_krw": 3773900
+   },
+   {
+    "date": "2025-04-28",
+    "visitors": 1515,
+    "sales_krw": 2150700
+   },
+   {
+    "date": "2025-04-29",
+    "visitors": 1632,
+    "sales_krw": 1767900
+   },
+   {
+    "date": "2025-04-30",
+    "visitors": 1540,
+    "sales_krw": 2304200
+   }
+  ],
+  "totals": {
+   "visitors": 11140,
+   "sales_krw": 16633200,
+   "rev_mm_recognized": 124.2
+  },
+  "counting_method": "participation",
+  "counting_basis": "현장 참가 / 전체(명)",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-04, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-05"
+  },
+  "label_trust": {
+   "grade": "A",
+   "flags": [],
+   "why": "일별 표가 기간의 100% 커버"
+  },
+  "label_scope": {
+   "label_from": "2025-04-24",
+   "label_to": "2025-04-30",
+   "label_active_days": 7,
+   "label_span_days": 7,
+   "label_contiguous": true,
+   "daily_sum": 11140,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1BkpZW9oAIO65fN4TzsnraVk26VNcDayS",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1BkpZW9oAIO65fN4TzsnraVk26VNcDayS/view",
+   "title": "[sweetspot]세종문화회관 해리포터 필름콘서트 팝업 제안서_수정.pdf"
+  },
+  {
+   "doc_id": "1CONDTG39PVWBUAAvz2brH-Hoj0WpH-Kn",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1CONDTG39PVWBUAAvz2brH-Hoj0WpH-Kn/view",
+   "title": "플러스콤마 계약서류.pdf"
+  },
+  {
+   "doc_id": "1MJKhIhvm0qQebslZ_VmYEnEdkL9sYCEP",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1MJKhIhvm0qQebslZ_VmYEnEdkL9sYCEP/view",
+   "title": "스위트스팟_해리포터 필름콘서트 팝업스토어_계약서.pdf"
+  },
+  {
+   "doc_id": "1T3WPCYGLiNRwY-KgyLtPZgkjDA2wd_19",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1T3WPCYGLiNRwY-KgyLtPZgkjDA2wd_19/view",
+   "title": "비알피알 계약서류.pdf"
+  },
+  {
+   "doc_id": "1ZoNjqmjYF20QIHPXUlC93P_K_ctnkW69",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1ZoNjqmjYF20QIHPXUlC93P_K_ctnkW69/view",
+   "title": "[더현대]해리포터 필름콘서트 결과보고서.pdf"
+  },
+  {
+   "doc_id": "1pkUec3zgFWowxvkPJXaP970CPr0Iazn1",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1pkUec3zgFWowxvkPJXaP970CPr0Iazn1/view",
+   "title": "그리머_세종문화회관_수의계약_최종계약서.pdf"
+  },
+  {
+   "doc_id": "1qNLQ-npGlc1LkI91N65wvHcc1UzyT6lz",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1qNLQ-npGlc1LkI91N65wvHcc1UzyT6lz/view",
+   "title": "세종문화회관_잔금(네고3%) 및 추가금액.pdf"
+  },
+  {
+   "doc_id": "1r6DREW4o-U-yxmW6xdI6265ShmSHFFdn",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1r6DREW4o-U-yxmW6xdI6265ShmSHFFdn/view",
+   "title": "세종문화회관 견적서_최종 견적_계약금액과 상이.pdf"
+  },
+  {
+   "doc_id": "1v7qXwroLYswpCUn_1kEN0DlYvuOYPOOf",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1v7qXwroLYswpCUn_1kEN0DlYvuOYPOOf/view",
+   "title": "[sweetspot]세종문화회관 해리포터 필름콘서트 팝업 제안서.pdf"
+  },
+  {
+   "doc_id": "1uerxhympVM90SmuV69SN1uKMQ0ZKA49q",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1uerxhympVM90SmuV69SN1uKMQ0ZKA49q/view",
+   "title": "[더현대]해리포터 필름콘서트 운영안_0423.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체가 제공되지 않음; client_name/브랜드명 미상; 컨셉·체험요소·프로모션·연출태그 정보 없음; 면적·수수료구조·요구사항 정보 없음; 방문자수·매출 실측 데이터 없음; counting_method 판정 불가 | 라벨발굴(2026-07-24): 결과보고서 재추출 — Ⅰ.OVERVIEW 참가자 현황 표, Ⅳ.OPERATION 일별 매출 표 | 자극 보강(2026-07-24): 운영안·기획안·계약서 재인제스트로 intervention/conditions 교체 (564→1291자, capacity=open). outcome·entities·period 보존"
+ }
+}

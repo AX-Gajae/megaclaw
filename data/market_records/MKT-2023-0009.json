@@ -1,0 +1,71 @@
+{
+  "market_record_id": "MKT-2023-0009",
+  "event_name": "명탐정 코난: 시한장치의 마천루 팝업스토어",
+  "brand": "대원미디어×CGV×HDC아이파크몰",
+  "ip_or_collab": "명탐정 코난",
+  "category": "character",
+  "intervention": {
+    "concept_description": "극장판 개봉 시기 연계 CGV 입구 팝업스토어, 코난 굿즈 판매",
+    "experience_elements": [
+      "굿즈 판매"
+    ],
+    "promotions": [],
+    "is_free_entry": true,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "CGV 용산아이파크몰 입구(아이파크몰 용산점)",
+    "venue_type": "mall",
+    "neighborhood": "용산",
+    "city": "서울",
+    "period_from": "2023-04-01",
+    "period_to": "2023-04-30",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 30,
+        "weekend_share": 0.33,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 14,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "아이파크몰 제공 매출 수치(2025년 회고 기사): '또 명탐정 코난: 시한장치의 마천루 개봉 시기에 맞춰 CGV 입구에서 팝업스토어를 진행했는데, 오픈 전부터 대기 행렬이 이어졌고 2주간 2억2000만원의 매출을 기록했다'",
+    "visitors_source_quote": "또 ‘명탐정 코난: 시한장치의 마천루’ 개봉 시기에 맞춰 CGV 입구에서 팝업스토어를 진행했는데, 오픈 전부터 대기 행렬이 이어졌고 2주간 2억2000만원의 매출을 기록했다.",
+    "visitors_source_url": "https://fashionbiz.co.kr/article/212765",
+    "visitors_source_date": "2025-01-06",
+    "sales_krw": 220000000,
+    "sales_source_quote": "2주간 2억2000만원의 매출을 기록했다.",
+    "sales_source_url": "https://fashionbiz.co.kr/article/212765",
+    "sales_source_date": "2025-01-06",
+    "demand_signals": {
+      "waiting_time_reported": "오픈 전부터 대기 행렬",
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "오픈 전부터 대기 행렬이 이어졌고 2주간 2억2000만원의 매출을 기록했다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "정확한 개시일 미보도(영화 개봉 2023-04-05 전후 2주간). 2023년 2분기. | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {
+    "sales": "verified"
+  },
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

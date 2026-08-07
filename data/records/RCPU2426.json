@@ -1,0 +1,194 @@
+{
+ "record_id": "RCPU2426",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:던전밥_소미미디어",
+  "space_id": "unresolved:더현대대구_B2_팝업스테이지",
+  "client_party_id": "unresolved:소미미디어",
+  "brand_key": "던전밥",
+  "space_key": "더현대대구"
+ },
+ "intervention": {
+  "concept": "만화·애니메이션 '던전밥' IP를 활용한 투어형 판매 팝업스토어. 더현대 대구 B2 팝업스테이지 및 크리에이티브 라운지에서 캐릭터 소품 전시와 굿즈 판매를 진행한다. 현대 신촌 팝업의 제작물을 재사용한 순회 팝업이다.",
+  "brand_name": "던전밥",
+  "experience_elements": [
+   "캐릭터 소품 전시존",
+   "굿즈 쇼케이스",
+   "벽장 매대",
+   "아일랜드 매대",
+   "메인 캐릭터 등신대",
+   "대표 캐릭터 4인 소품 오브제",
+   "골렘/용/개구리/버섯/벽돌 구조물 그래픽 연출",
+   "크리에이티브 라운지 로고 사인/바닥 그래픽"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "캐릭터_소품전시",
+   "굿즈_쇼케이스",
+   "기둥그래픽",
+   "구조물_덧방그래픽",
+   "투어형_팝업",
+   "신촌제작물_재사용"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "대구",
+   "district": "중구",
+   "venue_name": "더현대 대구",
+   "venue_type": "백화점",
+   "foot_traffic_context": "현대백화점 대구점 B2"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-12-06",
+   "to": "2024-12-19",
+   "days": 14
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "운영 대행 총계 44,700,000원(VAT 제외, 만원단위 절삭). 세부: 기획료 2,500,000원, 인테리어 17,000,000원, 판매인력 16,598,000원, 세팅/철수 및 기타 6,200,000원, 대행수수료 2,500,000원. 결제: 최종 제작발주 전 선금 50%, 팝업 종료 후 잔금 50%. 정산 지급 기한 2024-12-31. LOSS 공제: 총매출 기준 3% 이상 발생 시 제조원가(판매가의 50%)의 100% 공제, 3% 이하는 통상LOSS로 갑 부담. VMD존 시공/집기/인건비/상품공급대금은 갑(소미미디어)이 부담."
+  },
+  "brand_requirements": [
+   "장내 행사 설치물 제작 및 설치",
+   "행사기간 인력 운용 및 제품 판매",
+   "고객 컴플레인 및 사고 수습",
+   "갑과 협의된 가격으로 판매",
+   "행사주최자배상책임보험 가입",
+   "웨이팅 시스템 운영"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대 대구 B2 팝업스테이지 및 크리에이티브 라운지"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 0.7,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 79,
+    "holiday_until": 50,
+    "holiday_block_in": 0,
+    "nat_event_gap": 22,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 3,
+    "comp_prior_at_venue": 29,
+    "comp_within_500m_open": 3,
+    "comp_within_1000m_open": 3,
+    "matched_address": "대구 중구 달구벌대로 2077"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 1445346.0,
+    "pnl_pre_accounts": 7,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2024-11-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 44.7
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서가 제공되지 않아 방문/매출 실측 데이터 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 44.7 ≈ 계약총액 44.7",
+   "contract_total_mm": 44.7,
+   "last_recognition_period": "2024-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "13gwY-z0t_U6L5GuzJDYEbV5aSUgwSwFz",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/13gwY-z0t_U6L5GuzJDYEbV5aSUgwSwFz/view",
+   "title": "(주)소미미디어 팝업스토어 대구 위탁운영계약서_1203.pdf"
+  },
+  {
+   "doc_id": "1AvYxeRD2j4Qh2PjPzSqOpVVoD8JY9IMN",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1AvYxeRD2j4Qh2PjPzSqOpVVoD8JY9IMN/view",
+   "title": "1120 던전밥 더현대 대구 견적취합.xlsx"
+  },
+  {
+   "doc_id": "1HYRSPvpGYgR7dI8fnFR5dv1nJC94DuRr",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1HYRSPvpGYgR7dI8fnFR5dv1nJC94DuRr/view",
+   "title": "1119 던전밥 팝업스토어_더현대 대구 견적요청(수정).pptx"
+  },
+  {
+   "doc_id": "1Jwc4vdc2xBr1Sn_rgwDrv5Z16AJR7MBv",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Jwc4vdc2xBr1Sn_rgwDrv5Z16AJR7MBv/view",
+   "title": "[견적서-형성물류] 더현대 대구 운송 건.pdf"
+  },
+  {
+   "doc_id": "1fD-vpMeuhfNiRxvYEd0oj5byGOriese4",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1fD-vpMeuhfNiRxvYEd0oj5byGOriese4/view",
+   "title": "(견적서-현대드림애드) 더현대 대구 던전밥 최종 견적서_1223.xls"
+  },
+  {
+   "doc_id": "1gYYQuvuB_srsaL21X_GNHTQ0jj6ZsvtL",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1gYYQuvuB_srsaL21X_GNHTQ0jj6ZsvtL/view",
+   "title": "(견적서-현대드림애드) 더현대 대구 던전밥 견적서 (가벽 X).xls"
+  },
+  {
+   "doc_id": "1n_lyGRGODtjqqSegL-3DrG21JfBwnOoX",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1n_lyGRGODtjqqSegL-3DrG21JfBwnOoX/view",
+   "title": "[세금계산서-현대드림애드] 더현대 대구 그래픽 시공 건.png"
+  },
+  {
+   "doc_id": "1oATqFMrwgJcO6ZAhfh7-D4bn_GXI5DPj",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1oATqFMrwgJcO6ZAhfh7-D4bn_GXI5DPj/view",
+   "title": "[스위트스팟] 던전밥 팝업스토어_더현대 대구 견적요청파일.pptx"
+  },
+  {
+   "doc_id": "1r9SS6eNTVx_e-_E63gM68FCk6QanbOl7",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1r9SS6eNTVx_e-_E63gM68FCk6QanbOl7/view",
+   "title": "[견적서-빌리마켓] 더현대 대구 집기 대여 건.png"
+  },
+  {
+   "doc_id": "1xMt3M7yk9XvMAhmh-zUZ_3kejRK_u_VQ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1xMt3M7yk9XvMAhmh-zUZ_3kejRK_u_VQ/view",
+   "title": "대구점B2_던전밥_운영견적서(수정).xlsx"
+  },
+  {
+   "doc_id": "1yC-veJDRf55Agm_8qxTA8sIruFbGvC_O",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1yC-veJDRf55Agm_8qxTA8sIruFbGvC_O/view",
+   "title": "[스위트스팟] 던전밥 팝업스토어_더현대 대구 견적요청파일.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: (주)소미미디어 팝업스토어 대구 위탁운영계약서_1203, [스위트스팟] 던전밥 팝업스토어_더현대 대구 견적요청파. 미확실: 결과보고서 부재로 outcome(일일 방문·매출) 전부 없음; 면적(평) 미기재 - 견적서에 mm 단위 치수만 존재; 예상 방문객 수치 없음; client_name 등 정확한 발주처 정보는 소미미디어로 추정"
+ }
+}

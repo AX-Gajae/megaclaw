@@ -1,0 +1,145 @@
+{
+ "record_id": "RCPU2619",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:퓨어스펙_오렌지_큐티_만다린",
+  "space_id": "unresolved:광화문_동아일보광장__뚝섬역_사거리",
+  "client_party_id": "unresolved:피에스케이_인터내셔널",
+  "brand_key": "퓨어스펙",
+  "space_key": "광화문_동아일보광장"
+ },
+ "intervention": {
+  "concept": "퓨어스펙 오렌지·큐티 만다린 감귤 브랜드의 게릴라 샘플링(트럭형) 행사로 광화문·뚝섬 2개 로케이션에서 순차 운영했다. 인형탈 캐릭터와 포토존, 게임 체험을 통해 원물/샘플을 배포하는 버짓형 팝업이다.",
+  "brand_name": "퓨어스펙 오렌지 / 큐티 만다린",
+  "experience_elements": [
+   "인형탈 3종(퓨어스펙·오렌지·만다린) 운영",
+   "포토존",
+   "벨크로 야구 게임기",
+   "데시벨 측정기 게임기",
+   "샘플링(원물 배포)",
+   "나레이션/헤드마이크 진행"
+  ],
+  "promotions": [
+   "게릴라 샘플링 무료 배포",
+   "게임 참여 이벤트"
+  ],
+  "staging_tags": [
+   "목공아치(3000x2800)",
+   "가벽(2400x2400)",
+   "몽골텐트",
+   "스탠딩 배너/POP스탠드",
+   "리플렛(5,000매)",
+   "트럭형/게릴라 샘플링"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "종로구 / 성동구",
+   "venue_name": "동아일보사 앞(광화문역 5번 출구) / 뚝섬역 사거리 서울숲 lay-by",
+   "venue_type": "야외 광장·공터(옥외 행사)",
+   "foot_traffic_context": "광화문역 5번 출구 동아일보 광장, 뚝섬역 사거리 유동인구"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2026-03-27",
+   "to": "2026-03-28",
+   "days": 2
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "총 계약금액 35,000,000원(VAT 별도). 선금 50% 17,500,000원(2026-03-20 지급, 실입금 3/21) + 잔금 50% 17,500,000원(2026-03-31 지급). 견적 소계 30,618,500원 + 대행수수료 4,400,000원 = 총합 35,000,000원(만원단위 절삭, VAT별도). 실사용비용 20,763,410원, 이윤 14,236,590원(수익률 40.68%). 입금계좌 KB국민은행 378801-01-088226 스위트스팟."
+  },
+  "brand_requirements": [
+   "제작물(아트워크·부스·포토존·영상 등) 사용 전 의뢰사 감수 필수",
+   "공간연출·컨셉기획·제작·세팅/철수·운영·인력 섭외/교육/관리 대행",
+   "참여자 및 임직원 안전보건관리 준수(대물/대인 보장보험 가입)",
+   "예산 초과 예상 시 사전 서면 합의",
+   "지식재산권 무단 사용/등록 금지, 비밀유지"
+  ],
+  "scale": {
+   "store_count": 2,
+   "venue_traffic_type": "multi_store",
+   "host_traffic_note": "광화문역 5번 출구 동아일보 광장, 뚝섬역 사거리 유동인구"
+  },
+  "derived": {
+   "duration": {
+    "days": 2,
+    "weekend_share": 0.5,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 11.5,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 25,
+    "holiday_until": 57,
+    "holiday_block_in": 0,
+    "nat_event_gap": 68,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 35.0
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 본문(방문객 계수기 실집계·NPS·샘플 배포수량) 미조회로 실측 outcome 확보 불가. 견적상 예상 운영인력/시간은 광화문 08:00~16:00, 뚝섬 10:00~19:00. 소비자 매출(POS)은 샘플링 무료 배포 행사 특성상 해당 없음(계약금액 35,000,000원은 매출이 아닌 계약금액). 현장 이슈: 종로구 점자보도블록 가림 민원으로 포토존 재세팅, 장애인 시위로 10:30까지 BGM/마이크 제한, 오렌지 인형탈 알바 중도이탈, 뚝섬 강풍 대응.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식액 35.0 ≈ 계약총액 35.0 (±10%)",
+   "contract_total_mm": 35.0,
+   "last_recognition_period": "2026-03"
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "1-0xjpQTKeGFGlvHvtz4SkAWUkjY4shBK",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1-0xjpQTKeGFGlvHvtz4SkAWUkjY4shBK/view",
+   "title": "RCPU2619_PSK 샘플링 행사 최종 견적서"
+  },
+  {
+   "doc_id": "11KLXNLmNZmy6QU6dPxZp7fOR0BDJPJ9w",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/11KLXNLmNZmy6QU6dPxZp7fOR0BDJPJ9w/view",
+   "title": "스위트스팟_PSK 샘플링 행사 업무 계약서.pdf"
+  },
+  {
+   "doc_id": "1BfJbG4KoFAjSMIVlUZVwX2fVSGhpUxC6",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1BfJbG4KoFAjSMIVlUZVwX2fVSGhpUxC6/view",
+   "title": "PSK 사업자등록증.pdf"
+  },
+  {
+   "doc_id": "1K8EMOlPh3tmwjC9kAbkLu9mfu-rfC99ZkE_RonBZo1I",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1K8EMOlPh3tmwjC9kAbkLu9mfu-rfC99ZkE_RonBZo1I/view",
+   "title": "■ RC본부 프로젝트 견적서(all)"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: 스위트스팟_PSK 샘플링 행사 업무 계약서.pdf, RCPU2619_PSK 샘플링 행사 최종 견적서. 미확실: 실제 방문객 집계 수치(계수기); NPS 점수; 샘플/원물 배포 수량; 일자별 방문 표(결과보고서 본문 미조회); 면적(평); PSK 인터내셔널 사업자등록번호; platform_spot_id 및 좌표"
+ }
+}

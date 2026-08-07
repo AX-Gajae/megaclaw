@@ -1,0 +1,151 @@
+{
+  "record_id": "RTPU2638",
+  "schema_version": "0.1",
+  "entities": {
+    "brand_id": "unresolved:칠성사이다",
+    "space_id": "unresolved:북촌_코너갤러리",
+    "client_party_id": "unresolved:애드리치_롯데칠성음료",
+    "brand_key": "칠성사이다",
+    "space_key": "북촌_코너갤러리"
+  },
+  "intervention": {
+    "concept": "칠성사이다 브랜드 체험 팝업 'Welcome K-Drink with Chilsung Cider'. 북촌 코너갤러리에서 진행된 식음료 시음·체험형 팝업으로, 칠성lab 시음경험과 오드칠성 향 체험 컨셉이 리드 단계에서 제안됨.",
+    "brand_name": "칠성사이다",
+    "experience_elements": [
+      "칠성lab 시음경험",
+      "오드칠성 향 체험"
+    ],
+    "promotions": [],
+    "staging_tags": [
+      "K-Drink",
+      "브랜드 콘텐츠"
+    ]
+  },
+  "conditions": {
+    "location": {
+      "city": "서울",
+      "district": "북촌",
+      "venue_name": "북촌 코너갤러리",
+      "venue_type": "갤러리",
+      "foot_traffic_context": null
+    },
+    "area_pyeong": null,
+    "period": {
+      "from": "2026-05-01",
+      "to": "2026-05-11",
+      "days": 11
+    },
+    "season": "봄",
+    "fee_structure": {
+      "type": "unknown",
+      "detail": "노션 확정 계약예산 152,000,000원(VAT 포함 여부 미확인). 시드 매출 160.6백만원, 순이익 41.7백만원. 선금/중도금/잔금 분할·수수료율·RS 조건 문서 미확인. 애드리치↔롯데칠성 계약구조(원청/재하청) 불명."
+    },
+    "brand_requirements": [],
+    "scale": {
+      "store_count": 1,
+      "venue_traffic_type": "standalone",
+      "host_traffic_note": null
+    }
+  },
+  "outcome": {
+    "daily": [
+      {
+        "date": "2026-05-01",
+        "visitors": 1182,
+        "sales_krw": null
+      },
+      {
+        "date": "2026-05-02",
+        "visitors": 918,
+        "sales_krw": null
+      },
+      {
+        "date": "2026-05-03",
+        "visitors": 749,
+        "sales_krw": null
+      },
+      {
+        "date": "2026-05-04",
+        "visitors": 948,
+        "sales_krw": null
+      },
+      {
+        "date": "2026-05-05",
+        "visitors": 918,
+        "sales_krw": null
+      },
+      {
+        "date": "2026-05-06",
+        "visitors": 620,
+        "sales_krw": null
+      },
+      {
+        "date": "2026-05-07",
+        "visitors": 504,
+        "sales_krw": null
+      },
+      {
+        "date": "2026-05-08",
+        "visitors": 724,
+        "sales_krw": null
+      },
+      {
+        "date": "2026-05-09",
+        "visitors": 1234,
+        "sales_krw": null
+      },
+      {
+        "date": "2026-05-10",
+        "visitors": 1048,
+        "sales_krw": null
+      }
+    ],
+    "totals": {
+      "visitors": 8845,
+      "sales_krw": null,
+      "rev_mm_recognized": 160.6
+    },
+    "retention": null,
+    "source": "visitors/sales: 결과보고서 LLM 추출(방문객 수·현장 매출·KPI 등 운영 성과 지표 소스에 없음(확인 불가).). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+    "rev_mm_completion": {
+      "status": "complete",
+      "rule": "인식액 160.6 ≈ 계약총액 152.0 (±10%)",
+      "contract_total_mm": 152.0,
+      "last_recognition_period": "2026-05"
+    },
+    "counting_method": "entry",
+    "counting_basis": "히스토리 존 방문객 피플 카운터 측정치"
+  },
+  "docs": [
+    {
+      "doc_id": "11ME7LDkrc6U6M_xp9GrHCiaGYKCRYI5M",
+      "kind": "계약서",
+      "uri": "https://drive.google.com/file/d/11ME7LDkrc6U6M_xp9GrHCiaGYKCRYI5M/view",
+      "title": "[스위트스팟] 애드리치 웰컴드링크 팝업스토어_계약서_0413.doc"
+    },
+    {
+      "doc_id": "1dTHefggZVQtbFwH4zPx6Cmwqny2oRG2n",
+      "kind": "운영일지",
+      "uri": "https://drive.google.com/file/d/1dTHefggZVQtbFwH4zPx6Cmwqny2oRG2n/view",
+      "title": "[Sweetspot] 롯데칠성사이다 웰컴드링크 팝업_결과보고서.pdf"
+    },
+    {
+      "doc_id": "1jjPVnyja4CdDx8VHv7ZWwCNkNqWPPT23",
+      "kind": "정산",
+      "uri": "https://drive.google.com/file/d/1jjPVnyja4CdDx8VHv7ZWwCNkNqWPPT23/view",
+      "title": "내부용_SWEETSPOT_애드리치_칠성사이다 웰컴드링크_견적서_0513 세금계산서발행용.pdf"
+    },
+    {
+      "doc_id": "1u5Hn3YyC6Watc01xmClUgjy992Wnvgf6",
+      "kind": "기획서",
+      "uri": "https://drive.google.com/file/d/1u5Hn3YyC6Watc01xmClUgjy992Wnvgf6/view",
+      "title": "[Sweetspot] 롯데칠성사이다 웰컴드링크 팝업_제안서 0429_Rev.1.pdf"
+    }
+  ],
+  "provenance": {
+    "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+    "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+    "extracted_at": "2026-07-23",
+    "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 면적(평); 일일/총 방문객 수; 현장 POS 매출; 수수료구조 상세(선금/중도금/잔금, 수수료율, RS); 애드리치↔롯데칠성 계약구조 및 정산주체; 프로모션 상세; 부스 시공/시음운영 벤더 정보; 계약금액 정합(152백만 vs 시드매출 160.6백만); foot_traffic_context | 라벨발굴(2026-07-24): 결과보고서 재추출 — PART.1 1-2. KPI 표 '히스토리 존 방문객 피플 카운터 측정치' 컬럼. 7일차부터 스탭 등 중복 "
+  }
+}

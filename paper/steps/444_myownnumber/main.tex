@@ -1,0 +1,110 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{어제 낸 숫자를 오늘 깎았다 --- 메타 분석의 표본을 정규식으로 모으면 부호가 한 단계 세진다}
+\author{월드모델 실험실}
+\date{노트 571 · 2026년 8월 5일}
+\maketitle
+
+\begin{abstract}
+노트 $570$ 이 ``모형 손잡이 $+0.591$ 대 자료 $-0.341$''을 내고 논문
+$443$ 까지 보냈다. 그 자료 쪽 $-0.341$ 은 \textbf{원장을 정규식으로 긁어
+모은 팔 $15$ 개}로 잰 것인데, 그 목록이 \textbf{이번 사이클 팔 여섯}
+(노트 $546 \cdot 547 \cdot 552 \cdot 559 \cdot 564 \cdot$ 검색 전역)을
+놓치고 노트 $502 \cdot 503$ 을 잡고 있었다.
+
+\begin{center}
+\begin{tabular}{lrr}
+\hline
+ & $n$ & 판 $\leftrightarrow$ 전이 \\
+\hline
+노트 $570$(정규식) & $15$ & $-0.341$ \\
+\textbf{정정}(손으로 합침) & $\mathbf{19}$ & $\mathbf{+0.099}$ \\
+정정 · 극단 둘 빼고 & $17$ & $-0.222$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{``자료 계열은 음수''가 아니라 ``거의 무관하고 표본에 민감''이
+정직하다.} 모형 계열 $+0.591$ 은 그대로다.
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 정정. \textbf{나} --- 넣기만 강하다.
+\textbf{다} --- 앱은 잘 안 오른다.}
+\end{figure}
+
+\section{살아남는 것과 아닌 것}
+
+\paragraph{살아남는다.}
+\begin{itemize}
+\item \textbf{모형 계열 $+0.591$} --- 팔 목록이 안정적이다(노트
+$456\!\sim\!518$ 의 손잡이 팔은 원장 표기가 일정하다).
+\item \textbf{모형과 자료의 부호 차이} --- $+0.59$ 대 $-0.22\!\sim\!+0.10$.
+방향은 그대로다.
+\item \textbf{비게임 앱은 거의 늘 음수} --- 넣기 $6/7$ · 빼기 $10/12$.
+\textbf{어떤 자료 변경이든 그 짝의 전이는 잘 안 오른다.}
+\end{itemize}
+
+\paragraph{안 살아남는다.}
+자료 계열 $-0.341$. 팔 목록을 바꾸면 $-0.222 \sim +0.099$ 로 움직인다.
+\textbf{한 자리 세게 적었다.}
+
+\section{그래도 남는 신호 하나}
+
+자료 팔을 \textbf{넣기}(정보를 더한다)와 \textbf{빼기}(가리거나 지운다)로
+가르면
+
+\begin{center}
+\begin{tabular}{lrrr}
+\hline
+ & $n$ & 순위상관 & 극단 빼고 \\
+\hline
+\textbf{넣기} & $7$ & $-0.144$ & $\mathbf{-0.841}$ ($n=6$) \\
+빼기 & $12$ & $+0.133$ & $-0.045$ ($n=11$) \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{넣기 팔만 강한 음수다} --- ``정보를 넣으면 판이 오르고 전이가
+내린다''는 읽기와 맞는다. 판이 제일 많이 오른 둘(노트 $539$ $+0.0048$ ·
+$543$ $+0.0058$)이 앱 전이가 제일 낮다($-0.0035$ · $-0.0012$).
+
+\begin{quote}
+\textbf{그런데 $n=6$ 이다.} 판정하지 않고 \textbf{사전 등록으로 남긴다} ---
+넣기 팔을 셋 더 모으면 판정할 수 있다. 노트 $540$(도메인 지시자) $\cdot$
+노트 $419\!\sim\!423$(표지는 하나만)이 같은 자리를 가리키므로 기제도 이미
+있다.
+\end{quote}
+
+\section*{조항}
+
+\begin{quote}
+\textbf{메타 분석의 표본은 손으로 확인한다.} 원장을 정규식으로 긁으면
+\emph{표기가 다른 팔}이 빠지고, 그 빠짐이 무작위가 아니다 --- 이번엔
+\textbf{같은 사이클의 팔이 통째로} 빠졌다. 표본이 스물 아래면 한 팔이
+부호를 바꾼다.
+\end{quote}
+
+\section*{덧 --- 왜 바로 잡았나}
+
+논문 $443$ 이 이미 나갔다. 그래도 \textbf{하루 안에 정정하는 편이} 그
+숫자가 원장에 굳는 것보다 낫다. 노트 $306 \cdot 547 \cdot 552$ 가 세운
+처분(``내려가도 되돌리지 않는다 --- 정정이다'')을 \emph{내 메타 분석}에도
+적용한다.
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{넣기 팔 셋 더} --- 시장팝업 category 여섯째 형태 $\cdot$
+셋째 집 밖 짝 $\cdot$ 아직 안 만든 축. 모이면 $-0.841$ 을 판정한다.
+\item \textbf{비게임 앱이 왜 안 오르나} --- $16/19$ 팔에서 음수다. 그 짝만
+다른 무엇이 있는지 안 봤다(KR 만화는 $6/19$ 만 음수).
+\item \textbf{모형 계열 팔을 더 긁는다} --- 지금 $17$ 개인데 노트 $456$
+이전은 안 봤다. 표기가 다를 수 있으므로 손으로 훑어야 한다.
+\end{itemize}
+
+\end{document}

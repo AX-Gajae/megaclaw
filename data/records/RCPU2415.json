@@ -1,0 +1,166 @@
+{
+ "record_id": "RCPU2415",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:신카이마코토_SHOP",
+  "space_id": "unresolved:현대신촌_유플렉스_B1",
+  "client_party_id": "unresolved:주식회사_미디어캐슬",
+  "brand_key": "신카이마코토",
+  "space_key": "현대백화점_신촌점"
+ },
+ "intervention": {
+  "concept": "신카이마코토 감독 애니메이션 세계관을 테마로 한 시네마 스토어 팝업. 대표작(너의 이름은, 날씨의 아이, 스즈메의 문단속) 포토부스와 굿즈 스토어, 영화 상영부스, 단편작 오브제 전시존으로 구성된 투어형 팝업(더현대 서울·대구·천호 순회 중 신촌점).",
+  "brand_name": "신카이마코토 SHOP (신카이마코토 시네마스토어)",
+  "experience_elements": [
+   "포토카드부스",
+   "굿즈 스토어",
+   "너의 이름은 포토부스",
+   "날씨의 아이 포토부스",
+   "스즈메의 문단속 포토부스",
+   "스즈메의 문단속 메가벌룬(다이진·사다이진) 포토존",
+   "영화 상영부스(빈백 7석, 레이저 빔프로젝트)",
+   "단편작 오브제 전시존(별의 목소리·구름의 저편·초속 5센티미터·별을 쫓는 아이·언어의 정원)",
+   "캐릭터 등신대"
+  ],
+  "promotions": [
+   "포토카드 이용권"
+  ],
+  "staging_tags": [
+   "명장면 연출",
+   "캐릭터 등신대",
+   "메가벌룬",
+   "가설 그래픽(외부 가로수 현수막·지하철 통로 행잉베너)",
+   "오브제 특수제작(수제구두·비행기·편지함·휴대폰·광석라디오)"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "서대문구 신촌",
+   "venue_name": "현대 신촌 유플렉스 B1",
+   "venue_type": "백화점",
+   "foot_traffic_context": "현대백화점 신촌점 유플렉스 지하 1층"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-07-09",
+   "to": "2024-07-21",
+   "days": 13
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "전체 투어(4개점) 컨설팅 용역 총액 330,500,000원(VAT별도). 계약금 165,250,000원(24.5.31 이전), 잔금 165,250,000원은 잔여 3개점(신촌·대구·천호) 행사 시작 월 분할납부. 신촌점 개별 견적서(0715 기준) 총계 55,660,000원(VAT10% 별도), 대행수수료 3,000,000원(소계의 10%). LOSS: 총매출 4% 이상 발생 시 제조원가로 공제, 4% 이하는 통상LOSS로 갑 부담. | 계약서 재독해(2026-07-27): 총액 일치 확인(330.5M)"
+  },
+  "brand_requirements": [
+   "팝업 매장 디자인·설계 및 인테리어 시공",
+   "집기 제작 및 시공",
+   "사인/그래픽 제작·시공(가격표, POP, ISP 디자인 파일 포함)",
+   "진열/연출 소도구 납품",
+   "팝업스토어 운영",
+   "용역 결과물 저작권 및 소유권 갑(미디어캐슬) 귀속",
+   "견적서 제출 및 진행사항 보고"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "현대백화점 신촌점 유플렉스 B1"
+  },
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  },
+  "derived": {
+   "duration": {
+    "days": 13,
+    "weekend_share": 0.31,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 1.4,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 64,
+    "holiday_until": 67,
+    "holiday_block_in": 0,
+    "nat_event_gap": 90,
+    "nat_event": null,
+    "doc_lag_days": 63,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 62.8
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 문서가 제공되지 않아 실측 방문자수 및 매출 데이터 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "partial",
+   "rule": "인식 62.8 < 총액 330.5의 90%",
+   "contract_total_mm": 330.5,
+   "last_recognition_period": "2024-07"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1F5nR6NA9ojmt6PTInUX9y3njPuE6VC7L",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1F5nR6NA9ojmt6PTInUX9y3njPuE6VC7L/view",
+   "title": "미디어캐슬 신카이마코토 팝업스토어 구축 컨설팅용역계약서_240507.pdf"
+  },
+  {
+   "doc_id": "1FTlf2wV0sBt9M-tD8KFtmXDBRjtfSx1-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1FTlf2wV0sBt9M-tD8KFtmXDBRjtfSx1-/view",
+   "title": "신카이마코토 신촌점견적서_0715.pdf"
+  },
+  {
+   "doc_id": "1Pgz3K3wyIVStf57Nl2H9LBUYp_-_P7k9",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Pgz3K3wyIVStf57Nl2H9LBUYp_-_P7k9/view",
+   "title": "0704 현대 신촌 신카이마코토샵 공간구성안.pptx"
+  },
+  {
+   "doc_id": "1oDvdVHbNQvJMqf6dyfCQKSZEbJ_MpwJ_",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1oDvdVHbNQvJMqf6dyfCQKSZEbJ_MpwJ_/view",
+   "title": "[스위트스팟]신카이마코토 시네마스토어 1차견적_0703.xlsx"
+  },
+  {
+   "doc_id": "1tIATKfYVWr47dzkYQ9axpPTOSPfcvRtx",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1tIATKfYVWr47dzkYQ9axpPTOSPfcvRtx/view",
+   "title": "[스위트스팟]신카이마코토 시네마스토어 1차견적_0705 (2).xlsx"
+  },
+  {
+   "doc_id": "1xESCDD9TBJsoCII383e2F8b0fs7fJqkF",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1xESCDD9TBJsoCII383e2F8b0fs7fJqkF/view",
+   "title": "[스위트스팟]신카이마코토 시네마스토어 1차견적_0703.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 5건: 0704 현대 신촌 신카이마코토샵 공간구성안.pptx, 미디어캐슬 신카이마코토 팝업스토어 구축 컨설팅용역계약서, [스위트스팟]신카이마코토 시네마스토어 1차견적_0705, 신카이마코토 신촌점견적서_0715.pdf, [스위트스팟]신카이마코토 시네마스토어 1차견적_0703. 미확실: 결과보고서 부재 - 일일/총 방문자수 및 POS 매출 데이터 없음; counting_method 판정 불가(집계 정의 문서 없음); plan_visitors_expected(기획 예상 방문) 명시 없음; 면적: mm 치수(9,685x26,557)만 제공, 평 환산 미기재; client 정식 party_id 미해결 | fee 계약서화(2026-07-27)"
+ }
+}

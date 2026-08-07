@@ -1,0 +1,69 @@
+{
+  "market_record_id": "MKT-2026-0014",
+  "event_name": "강릉 '길감자' 팝업스토어 (더현대서울)",
+  "brand": "길감자(강릉 로컬 베이커리)×현대백화점",
+  "ip_or_collab": "현대백화점 '넥스트 두쫀쿠' TF 발굴 지역 디저트(강릉 길에서 만드는 감자빵류 베이커리)",
+  "category": "fnb",
+  "intervention": {
+    "concept_description": "SNS 유행 초단기 대응 전략으로 발굴된 강릉 로컬 디저트 브랜드의 수도권 첫 백화점 팝업",
+    "experience_elements": [
+      "길감자 시그니처 베이커리 판매"
+    ],
+    "promotions": [],
+    "is_free_entry": true,
+    "reservation_required": false
+  },
+  "conditions": {
+    "venue": "더현대서울",
+    "venue_type": "department_store",
+    "neighborhood": "여의도",
+    "city": "서울",
+    "period_from": "2026-03-26",
+    "period_to": "2026-04-16",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 22,
+        "weekend_share": 0.27,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "현대백화점이 밝힌 개점 초기 대기 수치(30분 200명 이상). 방문객·매출 총계 미공개 → visitors_total null",
+    "visitors_source_quote": "이렇게 발굴한 ‘강릉 길감자’ 팝업스토어는 지난달 개점 30분 만에 대기 고객이 200명 이상 몰렸다.",
+    "visitors_source_url": "https://www.hankyung.com/article/2026040904531",
+    "visitors_source_date": "2026-04-09",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "개점 30분 만에 대기 고객 200명 이상, 개점 전부터 대기줄(현장 사진)",
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "지난 1일 더현대서울에서 열린 강릉 길감자 팝업스토어 앞에 대기 줄이 늘어섰다.(한국경제 사진 설명)"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "수요 신호(대기 수치)만 존재하는 레코드. 현대백화점이 F&B 팝업을 올해 전년비 30% 확대 계획인 트렌드 사례로 언급 | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

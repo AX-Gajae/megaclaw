@@ -1,0 +1,79 @@
+{
+ "market_record_id": "MKT-2025-0154",
+ "event_name": "짱구는 못말려 팝업스토어(용산 아이파크몰)",
+ "brand": "HDC아이파크몰",
+ "ip_or_collab": "짱구는 못말려(크레용 신짱)",
+ "category": "game_webtoon",
+ "intervention": {
+  "concept_description": "애니메이션 '짱구는 못말려' 테마 팝업. 온라인 예약 등 입장 인원 제한 운영",
+  "experience_elements": [
+   "캐릭터 굿즈·전시"
+  ],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "HDC아이파크몰 용산점",
+  "venue_type": "mall",
+  "neighborhood": "용산",
+  "city": "서울",
+  "period_from": null,
+  "period_to": null,
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  }
+ },
+ "outcome": {
+  "visitors_total": 5000,
+  "visitors_period_days": 14,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "아이파크몰 실적 보도 인용: '2주간 진행한 짱구는 못말려 팝업은 온라인 예약 등 입장인원을 제한했음에도 5000명이 넘는 인원이 방문했다'",
+  "visitors_source_quote": "2주간 진행한 '짱구는 못말려' 팝업은 온라인 예약 등 입장인원을 제한했음에도 5000명이 넘는 인원이 방문했다.",
+  "visitors_source_url": "https://fashionbiz.co.kr/article/221690",
+  "visitors_source_date": "2025-11-25",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": "온라인 예약제 입장 인원 제한 운영",
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "E",
+    "C"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "2025년 운영으로 추정되는 보도 맥락(기사 2025-11-25, 구체 운영 시기 미명시). '5000명이 넘는' 수치를 5000으로 기록. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "기간 미상",
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,239 @@
+{
+ "record_id": "RTPU2521",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:박카스맛젤리_x_원신",
+  "space_id": "unresolved:커피덕_홍대",
+  "client_party_id": "unresolved:엘리케이트",
+  "brand_key": "박카스맛젤리x원신",
+  "space_key": "커피덕_홍대"
+ },
+ "intervention": {
+  "concept": "박카스맛 젤리와 게임 원신의 컬래버레이션 팝업스토어 '박맛젤 살롱'. 대형 조형물, 미니게임, 뽑기, 포토존, 굿즈존, 카페존으로 구성된 체험형 공간. 별도로 서강대·광운대 캠퍼스어택 부스 프로모션도 진행됨.",
+  "brand_name": "박카스맛 젤리 x 원신",
+  "experience_elements": [
+   "대형 조형물",
+   "미니게임 3종",
+   "뽑기존",
+   "포토존",
+   "굿즈존",
+   "카페존",
+   "캠퍼스어택 홍보물 배포 및 샘플링",
+   "사격 미니게임(발포! 젤리긴 하지만~)",
+   "원신 ON! 응모권 이벤트",
+   "나비아 코스어 포토타임",
+   "럭키드로우"
+  ],
+  "promotions": [
+   "미니게임 성공 시 북마크 3종 중 랜덤 증정",
+   "원신 로그인 확인 응모권 이벤트",
+   "럭키드로우"
+  ],
+  "staging_tags": [
+   "등신대",
+   "X배너",
+   "현수막",
+   "캐노피 부스",
+   "온라인 굿즈 전시존",
+   "2차 창작물 전시존",
+   "포토존"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": null,
+   "area_sqm": null,
+   "planned_operating_days": 4,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": null,
+   "experience_density": 4,
+   "goods_scale": 3,
+   "photo_zones": 3,
+   "collab_strength": 4,
+   "ip_awareness": 3,
+   "target_breadth": 1,
+   "entry_friction": 2,
+   "media_push": 3,
+   "season_fit": 2,
+   "venue_prominence": 2
+  },
+  "attr_meta": {
+   "evidence": "업무계약서 제2조③ '행 사 일: 2025년 04월 24일(목)~04월 27일(일)'=4일(제2조④ 계약기간은 '체결일~잔금지급일'로 별개). 제3조 업무범위는 공간대관·인력섭외·메뉴판매 대행뿐, 인원·면적·운영시간 수치 없음(견적서 미첨부)",
+   "confidence": "medium",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "홍대",
+   "venue_name": "커피덕 홍대",
+   "venue_type": "카페",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-04-24",
+   "to": "2025-04-27",
+   "days": 4
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "계약 총액 52,228,000원(VAT 포함). 선금 60% 31,336,800원 2025.03.21 지급, 잔금 40% 20,891,200원 2025.04.30 지급. 입금계좌 KB 810101-04-316648."
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.5,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 52,
+    "holiday_until": 9,
+    "holiday_block_in": 0,
+    "nat_event_gap": 40,
+    "nat_event": null,
+    "doc_lag_days": 2,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 28260809.0,
+    "pnl_pre_accounts": 5,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2025-02-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 500,
+   "popup_zone_pass_rate": 0.8,
+   "host_traffic_est": 400.0,
+   "venue_scale_tier": 5,
+   "confidence": "low",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2025-04-24",
+    "visitors": 474,
+    "sales_krw": 21179500
+   },
+   {
+    "date": "2025-04-25",
+    "visitors": 375,
+    "sales_krw": 14414000
+   },
+   {
+    "date": "2025-04-26",
+    "visitors": 396,
+    "sales_krw": 15150000
+   },
+   {
+    "date": "2025-04-27",
+    "visitors": 439,
+    "sales_krw": 15884501
+   }
+  ],
+  "totals": {
+   "visitors": 1684,
+   "sales_krw": 66628001,
+   "rev_mm_recognized": 142.7
+  },
+  "counting_method": "entry",
+  "counting_basis": "입장객 표의 '입장 인원'(실제 입장객 1,684명). 예약 인원 2,052명 중 실제 입장. 매출 집계 기준: 이용권 결제 건수, 총 판매건수, 평균 객단가.",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(미니게임 참여 인원은 별도 집계(총 1,342명). 27일 13시 이후 예약 가능 인원을 65명으로 확대. 캠퍼스어택(서강대/광운대)은 별도 행사로 서강대 이벤트 참여자 미집계, 광운대 응모권 참여율로 추산됨.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-04, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": 47.48,
+   "last_recognition_period": "2025-06"
+  },
+  "label_trust": {
+   "grade": "A",
+   "flags": [
+    "A"
+   ],
+   "why": "정밀 집계 표현"
+  },
+  "label_scope": {
+   "label_from": "2025-04-24",
+   "label_to": "2025-04-27",
+   "label_active_days": 4,
+   "label_span_days": 4,
+   "label_contiguous": true,
+   "daily_sum": 1684,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-kN58oiNjZ1UfoodTN631yuH3X23UTer",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1-kN58oiNjZ1UfoodTN631yuH3X23UTer/view",
+   "title": "(Sweetspot) 박카스 x 원신 팝업스토어_예산안_8차(호요)_250430_견적서.pdf"
+  },
+  {
+   "doc_id": "15gu5IRTxHRG7nle9XkM1ytkDvgTFXpRG",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/15gu5IRTxHRG7nle9XkM1ytkDvgTFXpRG/view",
+   "title": "[Sweetspot] 원신 x 박카스맛 젤리 팝업스토어 결과보고서_20250520.pdf"
+  },
+  {
+   "doc_id": "1ERnL44MxBZPTlEBkWBt9SO8vCqYLBmjw",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ERnL44MxBZPTlEBkWBt9SO8vCqYLBmjw/view",
+   "title": "[Sweetspot] 원신 x 박카스 캠퍼스어택 기획안_250429..pdf"
+  },
+  {
+   "doc_id": "1eRhXij1uOct8FHxJyzUCAmfGEzI8rWYE",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1eRhXij1uOct8FHxJyzUCAmfGEzI8rWYE/view",
+   "title": "(Sweetspot) 박카스 x 원신 팝업스토어_예산안_8차(엘리)_250428_견적서.pdf"
+  },
+  {
+   "doc_id": "1gOmj9Tk5BVHUrxZqM39kjt-sGcOKQU6J",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1gOmj9Tk5BVHUrxZqM39kjt-sGcOKQU6J/view",
+   "title": "[Sweetspot] 원신 x 박카스맛 젤리 팝업스토어 실행안_250422.pdf"
+  },
+  {
+   "doc_id": "1xpK05BUhv58nbt85bkeeKJq_09HgIFyB",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1xpK05BUhv58nbt85bkeeKJq_09HgIFyB/view",
+   "title": "엘리케이트_박카스x원신 팝업스토어_업무계약서_법인날인.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 3건: 엘리케이트_박카스x원신 팝업스토어_업무계약서_법인날인., [Sweetspot] 원신 x 박카스 캠퍼스어택 기획안, [Sweetspot] 원신 x 박카스맛 젤리 팝업스토어. 미확실: client_name 및 client_party_id 원문 텍스트 손상으로 불명확; area_pyeong 정보 없음; 기획서상 예상 방문(총원) 명시 없음(캠퍼스어택 서강대 400명 예상은 별도 행사); 프로젝트 메타 운영기간(04-10~04-13)과 계약·보고서 실제 기간(04-24~04-27) 불일치"
+ }
+}

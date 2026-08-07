@@ -1,0 +1,159 @@
+{
+ "record_id": "RIPU2509",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:바이탈뷰티",
+  "space_id": "unresolved:미상",
+  "client_party_id": null,
+  "brand_key": "바이탈뷰티",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "바이탈 뷰티 무빙 팝업 행사. 세부 컨셉·체험요소 정보는 제공된 원문에 없음.",
+  "brand_name": "바이탈 뷰티",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [],
+  "attributes": {
+   "host_daily_traffic": 66000,
+   "plan_visitors_per_day": 400,
+   "capacity_per_session": null,
+   "giveaway_qty": 1300,
+   "area_sqm": null,
+   "planned_operating_days": 3,
+   "throughput_units": null,
+   "unit_minutes": 3,
+   "operating_hours_per_day": 6,
+   "staff_count": null,
+   "experience_density": 1,
+   "goods_scale": 0,
+   "photo_zones": 0,
+   "collab_strength": 1,
+   "ip_awareness": 2,
+   "target_breadth": 3,
+   "entry_friction": 0,
+   "media_push": 0,
+   "season_fit": 2,
+   "venue_prominence": 3
+  },
+  "attr_meta": {
+   "evidence": "운영계획안 1.Overview '행사 일정 8월 28일 - 8월 30일 3일간', '진행 시간 오후 1시 – 오후 7시 (6시간 진행)' → 운영 3일·6시간(계약서는 '2025년 9월 중 총 3일(변경 가능) 8월 3주차(3일간)'로 날짜만 상이, 일수는 동일 3일). host_daily_traffic=66000은 수량 산출 근거 '주말 기준 성수 지역 전체 2025 일평균 유동인구 약 6.6만명' — 무빙 팝업이 도는 성수 연무장길 일대의 일 단위 유동인구(지점이 아닌 상권 전체 수치임에 유의). plan_visitors_per_day=400은 '일 400명 도달 기준으로 총 2.5일간 1,000 SET 수량 산출' 및 '샘플링 목표 : 하루 최대 400명 이상 노출'(본품 Case1은 '1일 50명 내외 도달 가정', 접점 예상은 '일 평균 600~900명'). giveaway_qty=1300은 본품 300 SET(레티놀100+시카100+케라핏100) + 샘플 1,000 SET. unit_minutes=3은 '1인 체류 예상 시간 : 최대 3분'(본품은 평균 30초·최대 5분). 마차 1대 운영이나 대수 명시가 없어 throughput_units, 프로모터 인원 미기재로 staff_count는 null. 거리 게릴라 증정·퀴즈만 있고 판매 굿즈·포토존 없음.",
+   "confidence": "medium",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-08-28",
+   "to": "2025-08-30",
+   "days": 3
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.33,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 11,
+    "holiday_until": 36,
+    "holiday_block_in": 0,
+    "nat_event_gap": 64,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": 1000,
+   "sales_krw": null,
+   "rev_mm_recognized": 18.8
+  },
+  "counting_method": "unknown",
+  "counting_basis": "원문 표현 '3일간 1천 명 이상의 고객과 만나는 성과' — 부스에서 '만난 고객' 접점 기준이며 '이상'이 붙은 하한값. 입장 집계 아님.",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "방문: 역검색 외부 보도 — https://www.apgroup.com/int/ko/news/2025-09-02-3.html (2025-09-02) | 인용: 이동식 팝업이지만 3일간 1천 명 이상의 고객과 만나는 성과를 기록했다.",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-08, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-08"
+  },
+  "label_source": "external_press",
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "10V_2wzJhAUf_idkFKCssxMsDTAF6Webw",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/10V_2wzJhAUf_idkFKCssxMsDTAF6Webw/view",
+   "title": "[스위트스팟] 바이탈뷰티_무빙팝업_운영계획안_F_ 0827.pdf"
+  },
+  {
+   "doc_id": "158eiqWFChhQH1Nf1cWNrcdI4EwG9wiYC",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/158eiqWFChhQH1Nf1cWNrcdI4EwG9wiYC/view",
+   "title": "[스위트스팟] 피알원_바이탈뷰티 무빙팝업_최종 견적서_0903.pdf"
+  },
+  {
+   "doc_id": "16CUPAv7uLsQ5P-degHoBtcKwLbCtwrGc",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/16CUPAv7uLsQ5P-degHoBtcKwLbCtwrGc/view",
+   "title": "[스위트스팟] 바이탈뷰티_무빙팝업_결과보고서_0904.pdf"
+  },
+  {
+   "doc_id": "1FuGy5TlKfqAgN5ZKbHXXNzQr2786n8CQ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1FuGy5TlKfqAgN5ZKbHXXNzQr2786n8CQ/view",
+   "title": "스위트스팟 피알원 이동식 팝업스토어 계약서 _0721.doc"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서 텍스트(계약서/기획서/견적서/결과보고서) 전체 부재; 입지·면적·수수료구조·브랜드 요구사항 정보 없음; 컨셉·체험요소·프로모션·연출태그 정보 없음; 방문자수·매출 실측 데이터 없음; client_name 미상; 무빙 팝업의 구체적 운영 장소 미상 | 외부 라벨 역검색(2026-07-27): 방문 라벨 충전 1000"
+ }
+}

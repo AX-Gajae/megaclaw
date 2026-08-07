@@ -1,0 +1,172 @@
+{
+ "record_id": "RTPU2565",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:주술회전",
+  "space_id": "unresolved:서울스카이_롯데월드타워",
+  "client_party_id": "unresolved:롯데월드_서울스카이",
+  "brand_key": "주술회전",
+  "space_key": "서울스카이_롯데월드타워"
+ },
+ "intervention": {
+  "concept": "서울스카이를 배경으로 주술회전의 대표 에피소드 '회옥옥절'과 '시부야 사변'을 모티프로 대비감을 준 체험존. B1F 입구 등신대 포토존부터 B2F 존별 미디어월·전투씬·미디어아트존, 엘리베이터 미디어월, 120층 유리창/메인 포토존까지 원작 서사 흐름에 따라 구성했다.",
+  "brand_name": "주술회전",
+  "experience_elements": [
+   "회옥옥절 등신대",
+   "시부야 사변 등신대",
+   "원기둥 LED 영상",
+   "에스컬레이터 하행 벽면 그래픽",
+   "옥문강 포토존 미디어월",
+   "옥문강 FRP 큐브 구조물",
+   "분전실 옆 벽면 그래픽",
+   "디지털 윈도우 PV 송출",
+   "수호목 연출 포토존(전투씬 스틸컷 액자)",
+   "천장 텍스트 라인 조형물",
+   "미디어존(선인/악인 캐릭터 에셋 영상)",
+   "미디어 아트존 자개 문양 액자 52개",
+   "상행 엘리베이터 미디어월 영상",
+   "120층 유리창 포토존",
+   "120층 메인 포토존",
+   "스탬프랠리"
+  ],
+  "promotions": [
+   "스탬프랠리 집기 및 판촉물",
+   "온도 변화 머그컵 굿즈(제작 검토)"
+  ],
+  "staging_tags": [
+   "애니메이션 IP 콜라보",
+   "회옥옥절",
+   "시부야사변",
+   "미디어아트",
+   "LED 미디어월",
+   "한국 전통 자개 모티프",
+   "다국어 명대사(한/일/영/중)",
+   "포토존"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "송파구",
+   "venue_name": "롯데월드 서울스카이",
+   "venue_type": "전망대/관광명소",
+   "foot_traffic_context": "국내외 관광객이 몰리는 대표 명소로 하루 방문객 수가 많고 유동인구가 높음"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-12-12",
+   "to": "2026-02-27",
+   "days": 78
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 110,000,000원 (VAT 10% 별도). 소계 100,000,000원 = 기획료 13,000,000 + 아트워크 25,000,000 + B1F 4,500,000 + B2F 46,000,000 + 118층 1,500,000 + 120층 15,000,000 + 기타(스탬프랠리 8,000,000, 제경비 2,000,000). 합계 = 일반관리비 + 대행수수료(전체 소계의 10%, 10,000,000). 스탬프랠리 집기·판촉물은 1만명 상정 예상치."
+  },
+  "brand_requirements": [
+   "감수사(IP) 디자인·전시물·운영방향성·굿즈 일체 감수 소통",
+   "스카이 플랫폼 주술회전 영상 송출 사용료 미정"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "롯데월드 서울스카이, 국내외 관광객 몰리는 명소 유동 높음"
+  },
+  "derived": {
+   "duration": {
+    "days": 78,
+    "weekend_share": 0.28,
+    "holiday_days": 5
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 17.5,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 64,
+    "holiday_until": 64,
+    "holiday_block_in": 5,
+    "nat_event_gap": 29,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 23231193.0,
+    "pnl_pre_accounts": 8,
+    "pnl_pre_months": 3,
+    "pnl_pre_first": "2025-09-01"
+   }
+  },
+  "demand_signals": {
+   "waiting_reported": null,
+   "sold_out": true,
+   "source": "역검색 외부 보도(2026-07-27)"
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 123.8
+  },
+  "counting_method": "unknown",
+  "counting_basis": "결과보고서 텍스트가 인코딩 깨짐(판독 불가)으로 방문/매출 수치 확인 불가",
+  "plan_visitors_expected": 10000,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(견적서 스탬프랠리 항목에 '예상치(1만명 상정)' 기재. 결과보고서는 텍스트 손상으로 실측 방문/매출 추출 불가.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2026-02, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": 110.0,
+   "last_recognition_period": "2026-03"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "12W0L0tt7PXs-BmA4lWI179I_-C4Cxewu",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/12W0L0tt7PXs-BmA4lWI179I_-C4Cxewu/view",
+   "title": "내부용_Sweetspot_서울스카이 주술회전_체험존_견적서_0929.pdf"
+  },
+  {
+   "doc_id": "1D02F-i9uXRTWsdbQbQdbS4D9VYb7nxOv",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1D02F-i9uXRTWsdbQbQdbS4D9VYb7nxOv/view",
+   "title": "결과보고서 정보요약.txt"
+  },
+  {
+   "doc_id": "1_QXw-nWbspUUKkXbuSUUmNunYJIGS_ir",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1_QXw-nWbspUUKkXbuSUUmNunYJIGS_ir/view",
+   "title": "[서울스카이x주술회전] 공간 기획 및 컨셉_0904_제안서.pdf"
+  },
+  {
+   "doc_id": "1dQCfiSaKZos-VTs92x20cEppJMwopiPM",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1dQCfiSaKZos-VTs92x20cEppJMwopiPM/view",
+   "title": "서울스카이 겨울 연출 계약서_FN.pdf"
+  },
+  {
+   "doc_id": "1lB5P55u0oeBzSO0lPbSYgXT5UZy6LOZ_",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1lB5P55u0oeBzSO0lPbSYgXT5UZy6LOZ_/view",
+   "title": "[Sweetspot] 서울스카이x주술회전 결과보고서_0316.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: [서울스카이x주술회전] 공간 기획 및 컨셉_0904_제, 내부용_Sweetspot_서울스카이 주술회전_체험존_견, [Sweetspot] 서울스카이x주술회전 결과보고서_0. 미확실: client_name 명시 없음(롯데월드 서울스카이 담당자 수신); 결과보고서 본문 인코딩 깨짐으로 일일 방문객·매출 실측 불가; counting_method 판정 근거 없음; 면적(평) 정보 없음; 운영 요일수는 기간 기반 추정치 | 외부 라벨 역검색(2026-07-27): 수요신호 적재"
+ }
+}

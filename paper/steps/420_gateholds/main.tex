@@ -1,0 +1,125 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{관문을 두 번 흔들었는데 안 넘어졌다 --- 성적표는 폭에 크게 흔들리지만 채택 판정은 그렇지 않다}
+\author{월드모델 실험실}
+\date{노트 535 · 2026년 8월 4일}
+\maketitle
+
+\begin{abstract}
+노트 534 가 도메인 성적표를 성과 폭으로 표준화하니 순위가 크게 바뀌었다
+(만화 $+7$ 칸 $\cdot$ 모바일 $-4$ 칸). \textbf{순위 규약인 판도 같은 편의를
+타면 채택 이력 전체를 다시 봐야 한다.} 채택 넷을 되돌리며 한 실행 $\cdot$
+같은 씨앗(짝 $12$)에서 세 자를 함께 쟀다.
+
+\begin{center}
+\begin{tabular}{lrrr}
+\hline
+채택 & 날 판($\rho$) & 비표준화 쌍 & 표준화 쌍 \\
+\hline
+\texttt{DOMDROP} & $+0.0043$ & $+0.00149$ & $+0.00123$ \\
+\texttt{TRAINCAP} & $+0.0018$ & $+0.00080$ & $+0.00078$ \\
+\texttt{TRAINW} & $+0.0005$ & $+0.00029$ & $+0.00018$ \\
+\texttt{TRAINR} & $+0.0028$ & $+0.00120$ & $\mathbf{+0.00137}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{부호 뒤집힘 $0/4$.} 넷 다 표준화 뒤에도 양수이고,
+\texttt{TRAINR} 은 오히려 $12/12$ 로 더 단단해진다.
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 세 자. \textbf{나} --- 표준화가 한 일.
+\textbf{다} --- 읽기와 내 오류 둘.}
+\end{figure}
+
+\section{줄어 보인 것은 단위 탓이었다}
+
+처음 두 열만 보고 ``표준화하면 이득이 $1/3$ 로 줄어든다''고 읽을 뻔했다
+($0.0043 \to 0.0012$). \textbf{세 번째 열(비표준화 쌍 정확도)을 놓기
+전까지 그것을 진짜로 믿었다.}
+
+\begin{quote}
+\textbf{날 판($\rho$) $\leftrightarrow$ 비표준화 쌍 정확도의 순위상관은
+$\mathbf{+1.000}$ 이다.} 축소는 전부 $\rho \to$ 쌍 정확도 \emph{단위 변환}
+이고 표준화와 무관하다.
+\end{quote}
+
+\begin{quote}
+\textbf{조항} --- \textbf{두 지표를 견줄 때는 그 사이에 \emph{같은 단위의
+중간 열}을 놓는다.} 단위가 다른 두 열의 차를 ``효과''로 읽는 것은 흔한
+착시이고, 중간 열 하나가 그것을 즉시 가른다.
+\end{quote}
+
+\section{표준화가 실제로 한 일은 한 번의 자리바꿈}
+
+\begin{center}
+\begin{tabular}{lr}
+\hline
+채택 & 표준화 $\div$ 비표준화 \\
+\hline
+\texttt{DOMDROP} & $0.82$ 배 \\
+\texttt{TRAINCAP} & $0.96$ 배 \\
+\texttt{TRAINW} & $0.64$ 배 \\
+\texttt{TRAINR} & $\mathbf{1.14}$ 배 \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{\texttt{TRAINR} 이 $3$ 위에서 $1$ 위로, \texttt{DOMDROP} 이 $1$ 위에서
+$2$ 위로.} 비표준화 $\leftrightarrow$ 표준화 순위상관 $+0.800$ (한 번 뒤바뀜).
+
+\section{왜 안 넘어졌나 --- 상쇄된다}
+
+\begin{quote}
+도메인 \emph{성적표}는 폭에 크게 흔들린다(노트 534). 그런데 \emph{채택}은
+\textbf{전 도메인에 걸쳐 작동}하므로, 폭이 넓은 도메인에서 부풀고 좁은
+도메인에서 눌리는 것이 \textbf{서로 상쇄된다.} 그래서 도메인을 견주는
+자와 손잡이를 견주는 자는 같은 편의에 다르게 반응한다.
+\end{quote}
+
+\section{내 오류 둘을 이 노트에서 잡았다}
+
+\paragraph{① 부동소수점.} 사전 등록 ②의 기준은 ``순위상관 $\ge +0.8$''
+이었고 실측이 \emph{정확히} $+0.800$ 이다($n=4$ 라 $\sum d^2 = 2$,
+$1 - 12/60 = 0.8$). \texttt{>=0.8} 이 $0.7999\ldots$ 에 걸려 ``반증''이
+찍혔다. \textbf{기준은 충족한다.} 다만 $n=4$ 에서 순위상관은 $1.0 \cdot 0.8
+\cdot 0.6 \cdots$ 로 성긴 값만 가지므로 이 문턱 자체가 무딘 자다.
+
+\paragraph{② 단위 혼동.} 위 절. 세 번째 열이 없었으면 ``표준화하면 채택
+이득이 $1/3$''이라는 틀린 결론을 적었을 것이다.
+
+\section*{두 번의 흔들기가 끝났다}
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+ & 흔든 것 & 결과 \\
+\hline
+노트 526 & 판 \textbf{정의}(가중 대 단순) & 정의는 목표로 정했고 채택은 유효 \\
+노트 535 & 성과 \textbf{폭} 표준화 & 부호 뒤집힘 $0/4$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{quote}
+\textbf{관문이 생각보다 튼튼하다.} 서로 다른 두 축에서 판정을 뒤집으려
+했는데 둘 다 실패했다. 이것은 채택 넷을 믿을 근거가 하나 더 생겼다는 뜻이고,
+동시에 \textbf{관문을 흔드는 것으로는 더 나올 게 없다}는 뜻이기도 하다 ---
+다음 값은 관문이 아니라 자료에서 나온다(노트 $505 \cdot 506$).
+\end{quote}
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{\texttt{TRAINR} 이 표준화에서 $1$ 등인 이유} --- 학습 쪽 최근성이
+\emph{작은 배수 구간}에서 더 버는지 아직 안 쟀다.
+\item \textbf{$n=4$ 는 순위상관 문턱이 성기다} --- 채택이 늘면 다시 잰다.
+\item \textbf{챔피언 자체는 표준화로 거의 안 움직인다}($0.6721 \to 0.6770$).
+\end{itemize}
+
+\end{document}

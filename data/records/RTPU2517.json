@@ -1,0 +1,135 @@
+{
+ "record_id": "RTPU2517",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:원피스_대원미디어",
+  "space_id": "unresolved:인천공항_공항철도",
+  "client_party_id": "unresolved:대원미디어",
+  "brand_key": "원피스",
+  "space_key": "인천공항"
+ },
+ "intervention": {
+  "concept": "원피스 IP 등신대 아크릴 조형물을 제작하여 인천공항 공항철도에 설치·납품하는 프로젝트. 팝업 운영이 아닌 조형물 제작·설치 건이다.",
+  "brand_name": "원피스 (대원미디어)",
+  "experience_elements": [
+   "아크릴 등신대 2EA",
+   "키비주얼 아트워크"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "등신대",
+   "아크릴 조형물"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "인천",
+   "district": null,
+   "venue_name": "인천공항 공항철도",
+   "venue_type": "공항/공항철도",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-01-31",
+   "to": "2025-01-31",
+   "days": 1
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "총계 1,300,000원 (VAT 10% 별도, 만원단위 이하 절사). 제작비: 아크릴 등신대 2EA 1,000,000원. 운영제경비: 운송 및 공임비 300,000원. 아트워크 키비주얼 정가항목은 해당없음(0원). 선금/중도금/잔금 분할 정보 없음."
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "인천공항 공항철도 조형물 설치 건"
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 0.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 3,
+    "months_since_last": 6.2,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 1,
+    "holiday_until": 29,
+    "holiday_block_in": 0,
+    "nat_event_gap": 78,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 1.3
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 없음. 조형물 제작·설치 건으로 방문객 집계 대상이 아님.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 1.3 ≈ 계약총액 1.3",
+   "contract_total_mm": 1.3,
+   "last_recognition_period": "2025-02"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "11TDeSTX90vOTXLFU-3N_MOELR3pyUxWn",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/11TDeSTX90vOTXLFU-3N_MOELR3pyUxWn/view",
+   "title": "원피스공항철도 납품 계약서_없음.txt"
+  },
+  {
+   "doc_id": "1Nn4le6m44WpQBoWAQ0nOz5kyQEDkhBaN",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Nn4le6m44WpQBoWAQ0nOz5kyQEDkhBaN/view",
+   "title": "원피스공항철도 납품 결과보고서_없음.txt"
+  },
+  {
+   "doc_id": "1l0Kx0hxZLvqozP01Ang6Vmh6OhjQueMj",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1l0Kx0hxZLvqozP01Ang6Vmh6OhjQueMj/view",
+   "title": "유엠_신세계면세점(탑승동)_원피스 포토존 제안서.pptx"
+  },
+  {
+   "doc_id": "1u6pkLzx1RKKYEpSH7cvYdbPtgo8LIl4L",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1u6pkLzx1RKKYEpSH7cvYdbPtgo8LIl4L/view",
+   "title": "원피스공항철도 납품 결과보고서_없음.txt"
+  },
+  {
+   "doc_id": "1zwhI1B1Tg3x0hPLpfujMmSrGjwcwVV8o",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1zwhI1B1Tg3x0hPLpfujMmSrGjwcwVV8o/view",
+   "title": "SWEETSPOT_대원미디어_인천공항원피스 조형물 견적서_1128.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 1건: SWEETSPOT_대원미디어_인천공항원피스 조형물 견적. 미확실: client_name(견적 수신은 대원미디어 김종래 부장); 정확한 설치 위치/구역; 운영 기간(프로젝트 메타 기준 단일 날짜); 방문객·매출 데이터 전무(견적서만 존재); 선금/중도금/잔금 분할 조건"
+ }
+}

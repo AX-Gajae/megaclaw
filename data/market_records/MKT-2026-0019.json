@@ -1,0 +1,101 @@
+{
+ "market_record_id": "MKT-2026-0019",
+ "event_name": "우즈유니버스 팝업 @성수(LECT)",
+ "brand": "우즈유니버스 (앰플엔 계열)",
+ "ip_or_collab": "자체 캐릭터/세계관",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "신규 뷰티 브랜드 세계관 팝업. 일평균 3000명 수준 유입, 높은 구매 전환",
+  "experience_elements": [
+   "브랜드 월드 공간",
+   "제품 체험",
+   "포토존"
+  ],
+  "promotions": [
+   "현장 한정 구성"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "LECT 성수",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2026-04-03",
+  "period_to": "2026-04-11",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 9,
+    "weekend_share": 0.33,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 30000,
+  "visitors_period_days": 9,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "브랜드 성료 보도 인용: 누적 3만 명, 일평균 3000명",
+  "visitors_source_quote": "팝업 기간 누적 방문객 3만 명을 기록했고, 하루 평균 3000명이 방문했다",
+  "visitors_source_url": "https://www.edaily.co.kr/news/read?newsId=미확인",
+  "visitors_source_date": "2026-04-15",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "방문자 중 구매자 비중이 74%에 달했고 객단가는 5만 원 이상이었다"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": true,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "이데일리 기사 URL 세부 경로 미확정(검색 스니펫으로 문장·날짜·매체 확정). | 병합 레코드: MKT-2026-0010 | [병합:MKT-2026-0010] 기간 4/3~11(장업신문 2026-04-27). sales_krw는 금액 미공개로 null, 객단가 분포만 기록.",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 30000,
+   "basis": "organizer_claim",
+   "quote": "㈜우즈스튜디오가 기획한 '우즈유니버스 성수' 팝업스토어가 운영 기간 동안 누적 방문객 3만 명을 기록하며 성황리에 마무리됐다. 하루 평균 약 3000명이 방문하는 등 높은 현장 집객력을 입증했으며, 단순 체험을 넘어 실제 구매로 이어지는 성과도 함께 거뒀다.",
+   "url": "https://www.edaily.co.kr/News/Read?newsId=04424726645416448&mediaCodeNo=257",
+   "date": "2026-04-15"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "unreachable"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

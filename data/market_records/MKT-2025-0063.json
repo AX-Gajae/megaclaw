@@ -1,0 +1,100 @@
+{
+ "market_record_id": "MKT-2025-0063",
+ "event_name": "메디힐 X KBO 팝업스토어(올리브영N 성수)",
+ "brand": "메디힐/CJ올리브영",
+ "ip_or_collab": "KBO(프로야구) X 메디힐",
+ "category": "character",
+ "intervention": {
+  "concept_description": "메디힐과 KBO 컬래버 팝업. 올리브영N 성수에서 2025-07-30~08-10(블로그 기준), 약 2주간 운영. 구단 마스코트 굿즈 증정.",
+  "experience_elements": [
+   "콜라보 제품 판매",
+   "구단 굿즈 증정",
+   "슬롯머신 이벤트"
+  ],
+  "promotions": [
+   "4만원 이상 구매 할인",
+   "럭키드로우"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "올리브영N 성수(서울 성동구)",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수",
+  "city": "서울",
+  "period_from": "2025-07-30",
+  "period_to": "2025-08-10",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 12,
+    "weekend_share": 0.33,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 3.5,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 30000,
+  "visitors_period_days": 14,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "CJ올리브영 보도자료 집계(CJ뉴스룸 인용)",
+  "visitors_source_quote": "스킨케어 브랜드 '메디힐'이 지난 7월 선보인 '메디힐 X KBO' 팝업스토어는 약 2주간 K뷰티 팬과 프로야구 팬덤 3만명이 방문하며 인기를 끌었다.",
+  "visitors_source_url": "https://cjnews.cj.net/cj%EC%98%AC%EB%A6%AC%EB%B8%8C%EC%98%81-%ED%8C%9D%EB%A7%88%ED%8A%B8-%EC%86%90%EC%9E%A1%EA%B3%A0-%EC%98%AC%EB%A6%AC%EB%B8%8C%EC%98%81n-%EC%84%B1%EC%88%98%EC%84%9C-%ED%81%AC/",
+  "visitors_source_date": "2025-11-24",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": "일부 구단 굿즈 품절",
+   "reservation_fill": null,
+   "signal_quotes": [
+    "올리브영N 성수에서 진행한 팝업스토어는 역대 최고 방문객 수를 기록하기도 했다. (경향신문 2026-01-05)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "기간(7.30~8.10)은 블로그 후기 기준. '지난 7월 선보인'으로 보도돼 연도는 2025 확정 | 병합 레코드: MKT-2025-0005 | [병합:MKT-2025-0005] 기간은 팝업 안내 보도(7/30~8/10) 기준. 올리브영 보도는 '7월, 약 2주간'으로 표기.",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 30000,
+   "basis": "organizer_claim",
+   "quote": "메디힐 X KBO 팝업스토어에는 약 2주간 K뷰티 팬과 프로야구 팬덤 3만명이 방문했다",
+   "url": "https://corp.oliveyoung.com/ko/news/103",
+   "date": "2025-11-24"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

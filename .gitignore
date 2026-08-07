@@ -1,0 +1,24 @@
+# 비밀
+.env
+
+# 봉인 장부·실행 산출물 — 커밋당 ~2MB(조건화 매니페스트 내장), 총 400MB+ 라 git 제외.
+# 무결성은 각 커밋 파일 내부 sha256으로 자립 (docs/ARCHITECTURE.md 불변조건 참조)
+cycle_log/
+
+# 로컬 잡동사니
+__pycache__/
+*.pyc
+.DS_Store
+.claude/
+conversation-*.txt
+
+# 방문자 원본 캐시 — 69MB. 공공데이터포털 API 로 **140회 호출이면 재생성**된다
+# (`python3 -m ingest.visitors --pull 2020-01 2026-07`, 개발계정 한도 1,000회/일).
+# cycle_log/ 와 같은 이유로 제외한다. 코드표(_names.json)는 조인에 필요해 남긴다.
+data/state/visitors/[0-9]*.json
+
+# 판 데우기 캐시 --- 파생물이다(적합 약 340초). 지문이 다르면 스스로 다시 굽는다
+data/state/_boardsvc_warm*.npz
+
+# GitHub 100MB 한도 초과 — 원격에서 제외(로컬 유지 · 2026-08-07)
+data/state/funding_pool.json

@@ -1,0 +1,144 @@
+{
+ "record_id": "RCPU2416",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:깨댕이",
+  "space_id": "unresolved:더현대대구_B2_크리에이티브라운지",
+  "client_party_id": "unresolved:쿨기획그룹_Coolplanninggroup",
+  "brand_key": "깨댕이",
+  "space_key": "더현대대구"
+ },
+ "intervention": {
+  "concept": "더현대 대구점에서 진행된 '깨댕이' 캐릭터 브랜드의 팝업스토어 판매행사. 상품 판매 중심의 위탁운영 팝업으로 운영되었다.",
+  "brand_name": "깨댕이",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [
+   "VMD존",
+   "팝업존"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "대구",
+   "district": null,
+   "venue_name": "더현대 대구",
+   "venue_type": "백화점 팝업존",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-07-25",
+   "to": "2024-08-01",
+   "days": 8
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "견적서(2024.05.13 기준) 총계 13,090,000원(VAT 별도). 판매인력 소계(Sub Total 1) 4,892,000원(본사 슈퍼바이저 300,000원, 판매매니저 140,000원×8일=1,120,000원, 판매스태프 130,000원×3명×8일=3,120,000원, 운영비 식대 11,000원×4×8=352,000원), 세팅/철수 소계(Sub Total 2) 6,200,000원(세팅 인건비 100,000원×6=600,000원, 철수 인건비 100,000원×6=600,000원, ERP시스템 사용료 3,000,000원, 물류 2,000,000원), 소계 11,092,000원 + 대행수수료 2,000,000원 = 13,090,000원(만단위 이하 절사, VAT 별도). 정산: 행사 종료월 말일(2024-08-31)까지 운영비 전액 지급, 더현대 정산지연 시 익월 9월 30일까지. LOSS 공제: 총 매출 기준 4% 이상 발생 시 제품 제조원가의 100% 공제, 4% 이하는 통상LOSS로 갑이 부담. 추가 인원 긴급요청 시 시급 3만원 추가 공제. 수정본 견적(2024.07.10)은 더현대대구 4F 팝업존 기준. | 계약구조 확인(2026-07-27): 위탁운영형 — 계약서가 총액 대신 견적서/조건안을 준거로 지정, 따라서 견적 총액이 계약상 확정액"
+  },
+  "brand_requirements": [
+   "행사주최자배상책임보험(대인10백, 대물2백, 치료비1백)",
+   "판매인력 평일 10:00 출근 20:30 퇴근, 금토일 10:00 출근 21:00 퇴근",
+   "VMD존 시공·집기·운영인력 인건비·상품 제작 및 공급 대금은 갑(쿨기획그룹) 부담",
+   "POS 기준 판매관리 및 재고 데이터 기록 보관",
+   "협의된 가격으로 판매"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대 대구 팝업존"
+  },
+  "derived": {
+   "duration": {
+    "days": 8,
+    "weekend_share": 0.25,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 80,
+    "holiday_until": 51,
+    "holiday_block_in": 0,
+    "nat_event_gap": 106,
+    "nat_event": null,
+    "doc_lag_days": 10,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": "대구 중구 달구벌대로 2077"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 7.5
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서가 제공되지 않아 실측 방문자·매출 데이터 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "partial",
+   "rule": "인식 7.5 < 총액 13.09의 90%",
+   "contract_total_mm": 13.09,
+   "last_recognition_period": "2024-08"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "11D9KlJFC_FCXCnVIgaVAkm9bkoNiu-Vn",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/11D9KlJFC_FCXCnVIgaVAkm9bkoNiu-Vn/view",
+   "title": "깨댕이가견적_0710_수정본.xlsx"
+  },
+  {
+   "doc_id": "1BHDX_KtcH-8bknBSTpxRu-_lDPh7wbcQ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1BHDX_KtcH-8bknBSTpxRu-_lDPh7wbcQ/view",
+   "title": "더현대대구_깨댕이팝업_견적_0523(PDF).pdf"
+  },
+  {
+   "doc_id": "1Vg-5G9KQCG-rGRnWUX7MhAJG_XaS4EAq",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Vg-5G9KQCG-rGRnWUX7MhAJG_XaS4EAq/view",
+   "title": "깨댕이가견적서_0710_수정본.xlsx"
+  },
+  {
+   "doc_id": "1WTi85wLM0_sTs_S_Dx-GDvXIBzxbcvP3",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1WTi85wLM0_sTs_S_Dx-GDvXIBzxbcvP3/view",
+   "title": "깨댕이가견적_0513.xlsx"
+  },
+  {
+   "doc_id": "1drc_wo_i59ouhmkRSIi7TvlBEaURv6KC",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1drc_wo_i59ouhmkRSIi7TvlBEaURv6KC/view",
+   "title": "도면 (1).zip"
+  },
+  {
+   "doc_id": "1x-Cfi2EVK6MUdTRGZPPsx6tcGdWz5vyM",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1x-Cfi2EVK6MUdTRGZPPsx6tcGdWz5vyM/view",
+   "title": "깨댕이_대구팝업스토어 위탁운영 계약서_스위트스팟_240715.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: 깨댕이_대구팝업스토어 위탁운영 계약서_스위트스팟_240, 더현대대구_깨댕이팝업_견적_0523(PDF).pdf, 깨댕이가견적서_0710_수정본.xlsx. 미확실: 결과보고서 부재로 일일/총 방문자 및 POS 매출 데이터 없음; counting_method 판정 불가(정의 없음); plan_visitors_expected 예상 방문 정보 없음; client_name 명시적 확인 불가(계약서상 갑=쿨기획그룹, 브랜드=깨댕이); 면적(area_pyeong) 정보 없음; 견적서상 위치가 B2 크리에이티브라운지(0523)와 4F 팝업존(0710 수정본)으로 상이"
+ }
+}

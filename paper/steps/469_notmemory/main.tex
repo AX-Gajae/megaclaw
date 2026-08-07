@@ -1,0 +1,127 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{내가 잰 것은 기억이 아니었다 --- 스팟은 공간이 아니라 팝업 자신이다}
+\author{월드모델 실험실}
+\date{노트 624 · 625 · 2026년 8월 5일}
+\maketitle
+
+\begin{abstract}
+논문 $468$ 에서 \texttt{popga} 의 \texttt{spot\_id} $\times$ 월
+($63{,}826$ 관측)로 ``엔티티 기억 반감기 $13$ 일''을 냈고 로드맵 블록 $3$ 의
+\texttt{recency(0.995\^{}t)} 를 고쳤다. \textbf{한 시간 뒤 그 해석이 틀렸음이
+드러났다.}
+
+두 층을 이으려고 \texttt{record\_store\_link.json}($555$ 건 $\to$ 스팟
+$425$ 개)을 붙였더니 계수 계열 $75$ 건 중 \textbf{오픈 전 관측이 있는 것이
+$9$ 건}뿐이었다. 왜인지 보니
+
+\begin{center}
+링크된 레코드 $186$ 건 중 \textbf{$55\%$ 가 스팟 첫 관측월 $=$ 레코드
+오픈월}
+\end{center}
+
+\textbf{\texttt{spot\_id} 는 공간이 아니라 팝업 리스팅 그 자체다.} 그러니
+내가 잰 감쇠는 브랜드/공간의 \emph{기억}이 아니라 \textbf{리스팅 관심의
+붕괴}였다. \textbf{측정은 맞고 이름이 틀렸다.}
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 한 달에 $94\%$ 가 사라진다.
+\textbf{나} --- 스팟은 공간이 아니라 팝업이다.
+\textbf{다} --- 오픈 전 상태는 구조적으로 없다.}
+\end{figure}
+
+\section{그래서 실제로 잰 것 --- 팝업 리스팅 수명 곡선}
+
+\begin{center}
+\begin{tabular}{lrrrr}
+\hline
+오픈 대비 & $-1$ 달 & \textbf{$+0$ 달} & $+1$ 달 & $+2\!\sim\!8$ 달 \\
+\hline
+최고치 대비(중앙) & $0.29$ & $\mathbf{1.00}$ & $\mathbf{0.06}$ & $0.02$ \\
+$n$ & $47$ & $146$ & $149$ & $110\!\sim\!130$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{오픈 달이 정점이고 한 달 만에 $94\%$ 가 사라지며 최고치의 $2\%$
+바닥으로 눕는다.} 그리고 \textbf{사전 관심이 이미 정점의 $29\%$} 다.
+
+\begin{quote}
+이 곡선이 논문 $468$ 의 결과를 전부 설명한다 --- 엔티티 고정효과 $a(s)$ 가
+해로웠던 것은 \emph{생애 평균이 $2\%$ 바닥에 눌려 있어서}이고, lag$1$ 이
+지배한 것은 \emph{바닥 구간의 이웃 달이 서로 닮아서}이며, 간격 $1\!\to\!2$
+에서 이득이 $80\%$ 사라진 것은 \emph{정점에서 바닥으로 떨어지는 그
+계단}이다. \textbf{같은 숫자가 다른 이야기를 한다.}
+\end{quote}
+
+\section{왜 두 층이 안 이어지나}
+
+\begin{center}
+\begin{tabular}{lr}
+\hline
+ & 레코드 \\
+\hline
+계수 계열 & $75$ \\
+링크 있음 & $46$ \\
+패널에 있음 & $46$ \\
+\textbf{오픈 전 관측 있음} & $\mathbf{9}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{스팟이 팝업과 같이 태어나므로 ``그 전''이 구조적으로 없다.}
+$9$ 건은 재오픈이나 사전 등록이 일찍 된 예외다. \textbf{$25$ 건 미만이라
+검정을 안 돌렸다}(노트 $562$ 최소 크기).
+
+\section{로드맵을 두 번 고쳤다}
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+언제 & 무엇 \\
+\hline
+두 달 전 & \texttt{recency(0.995\^{}t)} --- \textbf{근거 없이} 적음 \\
+오늘 오전 & ``반감기 $13$ 일'' 로 고침 --- \textbf{대상을 잘못 봄} \\
+\textbf{오늘 오후} & \textbf{상수 미정으로 되돌림} \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{quote}
+\textbf{지금 말할 수 있는 것은 하나뿐이다} --- $0.995^t$ 에 근거가
+없다는 것. \textbf{대체할 상수는 못 정한다.} 엔티티 단위 반복 관측이
+없기 때문이다. \textbf{틀린 숫자를 다른 틀린 숫자로 바꾸는 것보다 미정으로
+두는 것이 낫다.}
+\end{quote}
+
+\section*{조항}
+
+\begin{quote}
+\textbf{식별자가 무엇을 세는지 먼저 확인한다.} \texttt{spot\_id} 를
+``공간''으로 읽은 것은 이름 때문이었고, \textbf{첫 관측월과 오픈월을
+견주는 한 줄}이면 한 시간 전에 알 수 있었다. 이 판이 하네스 열을 원 축으로
+읽어 다섯 노트를 버린 적이 있다(노트 $160 \cdot 581$). \textbf{같은 종류의
+실수이고, 이번에는 한 시간 만에 잡았다.}
+\end{quote}
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{사전 관심 $0.29$ 가 성과를 예측하나} --- 오픈 $-1$ 달 트래픽이
+있는 레코드가 $47$ 건이다. \textbf{선행 지표 후보}이고 아직 안 쟀다.
+$25$ 건은 넘으므로 \emph{돌릴 수는 있다.}
+\item \textbf{엔티티 해소가 진짜 병목이다.} 브랜드/공간 상태를 세우려면
+\texttt{entities} 의 \texttt{unresolved:} 를 걷어야 한다. 워크시트
+(\texttt{data/mapping/})가 $67$ 건 중 자동 수율 $4\!\sim\!15$ 건이다 ---
+\textbf{사람이 할 일 목록의 새 항목}이고, 팝업 $7$ 건 태깅보다 크다.
+\item \textbf{$2\%$ 바닥이 무엇인가} --- 팝업이 닫힌 뒤에도 리스팅에 사람이
+온다. 그것이 검색 유입인지 추천인지 안 봤다. \textbf{닫힌 뒤 트래픽은
+다음 팝업의 사전 관심과 이어질 수 있다.}
+\end{itemize}
+
+\end{document}

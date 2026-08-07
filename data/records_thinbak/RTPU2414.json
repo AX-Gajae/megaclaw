@@ -1,0 +1,166 @@
+{
+  "record_id": "RTPU2414",
+  "schema_version": "0.1",
+  "entities": {
+    "brand_id": "unresolved:오리온_알맹이",
+    "space_id": "unresolved:미상",
+    "client_party_id": "unresolved:오리온",
+    "brand_key": "오리온_알맹이",
+    "space_key": "미상"
+  },
+  "intervention": {
+    "concept": "오리온 알맹이 브랜드 팝업스토어. 세부 컨셉·체험요소는 원문 문서가 제공되지 않아 확인 불가.",
+    "brand_name": "오리온 알맹이",
+    "experience_elements": [],
+    "promotions": [],
+    "staging_tags": []
+  },
+  "conditions": {
+    "location": {
+      "city": null,
+      "district": null,
+      "venue_name": null,
+      "venue_type": null,
+      "foot_traffic_context": null
+    },
+    "area_pyeong": null,
+    "period": {
+      "from": "2024-08-23",
+      "to": "2024-09-06",
+      "days": 15
+    },
+    "season": "여름",
+    "fee_structure": {
+      "type": "unknown",
+      "detail": ""
+    },
+    "brand_requirements": [],
+    "scale": {
+      "store_count": 1,
+      "venue_traffic_type": "standalone",
+      "host_traffic_note": null
+    }
+  },
+  "outcome": {
+    "daily": [
+      {
+        "date": "2024-08-23",
+        "visitors": 1580,
+        "sales_krw": 1207400
+      },
+      {
+        "date": "2024-08-24",
+        "visitors": 1720,
+        "sales_krw": 951200
+      },
+      {
+        "date": "2024-08-26",
+        "visitors": 900,
+        "sales_krw": 462000
+      },
+      {
+        "date": "2024-08-27",
+        "visitors": 600,
+        "sales_krw": 620000
+      },
+      {
+        "date": "2024-08-28",
+        "visitors": 600,
+        "sales_krw": 707800
+      },
+      {
+        "date": "2024-08-29",
+        "visitors": 900,
+        "sales_krw": 1007400
+      },
+      {
+        "date": "2024-08-30",
+        "visitors": 800,
+        "sales_krw": 752000
+      },
+      {
+        "date": "2024-08-31",
+        "visitors": 900,
+        "sales_krw": 1306200
+      },
+      {
+        "date": "2024-09-01",
+        "visitors": 900,
+        "sales_krw": 1212400
+      },
+      {
+        "date": "2024-09-02",
+        "visitors": 800,
+        "sales_krw": 877000
+      },
+      {
+        "date": "2024-09-03",
+        "visitors": 800,
+        "sales_krw": 547800
+      },
+      {
+        "date": "2024-09-04",
+        "visitors": 800,
+        "sales_krw": 931800
+      },
+      {
+        "date": "2024-09-05",
+        "visitors": 900,
+        "sales_krw": 1029500
+      },
+      {
+        "date": "2024-09-06",
+        "visitors": 1100,
+        "sales_krw": 1826400
+      }
+    ],
+    "totals": {
+      "visitors": 13300,
+      "sales_krw": 13438900,
+      "rev_mm_recognized": 57.2
+    },
+    "counting_method": "unknown",
+    "counting_basis": "팝업 방문자(정의 근거 없음)",
+    "plan_visitors_expected": 9200,
+    "retention": null,
+    "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+    "rev_mm_completion": {
+      "status": "complete",
+      "rule": "운영종료 2024-09, 스냅샷까지 2개월+ (시간 규칙)",
+      "contract_total_mm": null,
+      "last_recognition_period": "2024-09"
+    }
+  },
+  "docs": [
+    {
+      "doc_id": "13v2bdVJAekERDJ3hJpUeSA3JU_Hncu7D",
+      "kind": "기획서",
+      "uri": "https://drive.google.com/file/d/13v2bdVJAekERDJ3hJpUeSA3JU_Hncu7D/view",
+      "title": "RTPU2414_오리온 알맹이 팝업스토어_제안서_240509.pptx"
+    },
+    {
+      "doc_id": "19hNfA6_F57qo-Cm90btruGD9qDthrwqd",
+      "kind": "정산",
+      "uri": "https://drive.google.com/file/d/19hNfA6_F57qo-Cm90btruGD9qDthrwqd/view",
+      "title": "RTPU2414_오리온 알맹이 팝업스토어_견적서_240828.pdf"
+    },
+    {
+      "doc_id": "1fQh_e7T8KQkDT43uxbZ_IZzyLho2M2ir",
+      "kind": "운영일지",
+      "uri": "https://drive.google.com/file/d/1fQh_e7T8KQkDT43uxbZ_IZzyLho2M2ir/view",
+      "title": "RTPU2414_오리온 알맹이 팝업스토어_결과보고서_240910.pptx"
+    },
+    {
+      "doc_id": "1t51HoD3LmO1lskjyd0B4Zb5nS2i-Ci0-",
+      "kind": "계약서",
+      "uri": "https://drive.google.com/file/d/1t51HoD3LmO1lskjyd0B4Zb5nS2i-Ci0-/view",
+      "title": "RTPU2414_오리온 알맹이 팝업스토어_계약서(특약)_최종.docx"
+    }
+  ],
+  "provenance": {
+    "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+    "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+    "extracted_at": "2026-07-23",
+    "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체 미제공; 입지/면적/수수료구조 등 conditions 전반 확인 불가; 컨셉·체험요소·프로모션 등 intervention 세부 미상; 방문자수·매출 등 outcome 실측 데이터 없음; client_name, venue 미기재 | 라벨발굴(2026-07-24): 결과보고서 재추출 — slide5 KPI 요약본 및 각 데일리 리포트(slide6~32)의 팝업 방문자·판매액 현황"
+  }
+}

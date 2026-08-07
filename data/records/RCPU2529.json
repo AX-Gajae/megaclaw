@@ -1,0 +1,129 @@
+{
+ "record_id": "RCPU2529",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:NCT_DREAM",
+  "space_id": "unresolved:미상",
+  "client_party_id": "unresolved:더블유젯",
+  "brand_key": "NCT_DREAM",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "NCT DREAM 팝업스토어. 원문 문서가 제공되지 않아 구체적 컨셉·체험요소 정보를 확인할 수 없음.",
+  "brand_name": "NCT DREAM",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-07-10",
+   "to": "2025-07-27",
+   "days": 18
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 18,
+    "weekend_share": 0.33,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 7.9,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 32,
+    "holiday_until": 36,
+    "holiday_block_in": 0,
+    "nat_event_gap": 37,
+    "nat_event": null,
+    "doc_lag_days": 2,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 49900.0,
+    "pnl_pre_accounts": 1,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-06-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 150.5
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-07, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-07"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1C1jUngpODTpS3WLorKnU4M9j_OcpvfVi",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1C1jUngpODTpS3WLorKnU4M9j_OcpvfVi/view",
+   "title": "최종수정)SMBM_NCT드림_최종견적서_0729.pdf"
+  },
+  {
+   "doc_id": "1VqvyH1sM-hW58zM5lNMmiii0x_ts-BL4",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1VqvyH1sM-hW58zM5lNMmiii0x_ts-BL4/view",
+   "title": "(SMBM) 상품판매용역계약서_주식회사스위트스팟_250708.pdf"
+  },
+  {
+   "doc_id": "1x3ig0FLeIFEcx6XbvkpM-tEmjXLc4vMV",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1x3ig0FLeIFEcx6XbvkpM-tEmjXLc4vMV/view",
+   "title": "엔시티 결과보고서.pdf"
+  },
+  {
+   "doc_id": "1x_iaNDrd3acLIybZLFIDIiI6igqkW7tp",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1x_iaNDrd3acLIybZLFIDIiI6igqkW7tp/view",
+   "title": "최종)SMBM_NCT드림_견적수정_0721.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체 미제공; client_name(더블유젯 추정); venue/입지 정보; 면적; 수수료구조; 컨셉·체험요소·프로모션; 방문자수 및 매출 실측 데이터; counting_method 판정 근거"
+ }
+}

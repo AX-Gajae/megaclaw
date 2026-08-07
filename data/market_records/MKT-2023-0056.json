@@ -1,0 +1,94 @@
+{
+ "market_record_id": "MKT-2023-0056",
+ "event_name": "어그 필하우스(FEEL HOUSE) 성수 팝업스토어",
+ "brand": "어그 UGG (신세계인터내셔날)",
+ "ip_or_collab": null,
+ "category": "fashion",
+ "intervention": {
+  "concept_description": "방한부츠 컬렉션 체험형 팝업 (제품 판매 없는 체험형 행사)",
+  "experience_elements": [
+   "체험형 전시"
+  ],
+  "promotions": [
+   "온라인 사전 예약제"
+  ],
+  "is_free_entry": null,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "성수동",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2023-11-23",
+  "period_to": "2023-11-26",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.5,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 10000,
+  "visitors_period_days": 4,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "신세계인터내셔날(유통사) 발표 인용. 원문: '어그는 지난 23일부터 26일까지 성수동에서 어그 필하우스 팝업을 운영했는데, 4일이라는 짧은 기간 동안 누적 방문객 1만 명을 돌파하며 큰 인기를 얻었다.'",
+  "visitors_source_quote": "어그는 지난 23일부터 26일까지 성수동에서 어그 필하우스 팝업을 운영했는데, 4일이라는 짧은 기간 동안 누적 방문객 1만 명을 돌파하며 큰 인기를 얻었다.",
+  "visitors_source_url": "https://www.newsis.com/view/NISX20231130_0002540539",
+  "visitors_source_date": "2023-11-30",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "오픈 1시간 전부터 100여명이 넘는 대기 줄",
+   "sold_out": null,
+   "reservation_fill": "온라인 사전 예약 오픈 30분 만에 전부 매진",
+   "signal_quotes": [
+    "제품 판매가 아닌 체험형 행사였음에도 온라인 사전 예약은 오픈 30분 만에 전부 매진됐으며, 오픈 1시간 전부터 100여명이 넘는 대기 줄이 형성되는 등 연일 오픈런 행렬이 이어졌다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "동시기 홍대 웍스아웃 팝업과 병행. 11월 전체 매출 전년비 2배(103.3%), 온라인 225.9% 증가는 월간 전체 수치로 별도 기록하지 않음. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

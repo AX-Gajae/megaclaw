@@ -1,0 +1,91 @@
+{
+ "market_record_id": "MKT-2025-0005",
+ "event_name": "갤럭시 스튜디오 (갤럭시 S25 시리즈)",
+ "brand": "삼성전자",
+ "ip_or_collab": null,
+ "category": "electronics",
+ "intervention": {
+  "concept_description": "갤럭시 S25 시리즈 및 갤럭시 AI 체험 공간. 지하철·학교 강의실 등 일상 장소 모티브 구성",
+  "experience_elements": [
+   "AI 쇼룸",
+   "나우 브리프 체험",
+   "비디오 체험존(오디오 지우개)",
+   "갤럭시 AI 클래스"
+  ],
+  "promotions": [
+   "갤럭시 AI 클래스(사전예약)"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "영등포 타임스퀘어, 코엑스, 삼성 스토어 홍대, 삼성 강남 (4곳)",
+  "venue_type": "mall",
+  "neighborhood": "영등포/삼성동/홍대/강남",
+  "city": "서울",
+  "period_from": "2025-01-23",
+  "period_to": null,
+  "area_pyeong": null,
+  "multi_store": true,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 0.1,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 300000,
+  "visitors_period_days": 21,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "삼성전자 발표. '약 3주만에 누적 방문객 30만 명 돌파'(4개 매장 합산)",
+  "visitors_source_quote": "삼성전자는 스마트폰 신제품 '갤럭시 S25 시리즈' 체험 공간인 '갤럭시 스튜디오'가 약 3주만에 누적 방문객 30만 명을 돌파했다고 17일 밝혔다.",
+  "visitors_source_url": "https://zdnet.co.kr/view/?no=20250217084241",
+  "visitors_source_date": "2025-02-17",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "D",
+   "flags": [
+    "D",
+    "C"
+   ],
+   "why": "스코프 혼합(합산/총계) 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "삼성전자 한국총괄 장소연 부사장: '전작보다 빠른 시점에 30만명 돌파'. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "기간 미상",
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

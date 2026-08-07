@@ -1,0 +1,101 @@
+{
+ "market_record_id": "MKT-2024-0050",
+ "event_name": "명조: 워더링 웨이브 팝업스토어 '띵조마켓 in 신촌 - 3일간의 썸머바캉스!'",
+ "brand": "쿠로게임즈",
+ "ip_or_collab": "명조: 워더링 웨이브",
+ "category": "game_webtoon",
+ "intervention": {
+  "concept_description": "출시 2개월 명조 첫 백화점 팝업. 지하 2층 굿즈 팝업스토어(장패드·포토카드·아크릴 키링/스탠드), 아케이드 존 미니게임, 포토존, 용의 등불 메시지 월, 명조 라운지, 커피차, 코스프레·인플루언서 방문",
+  "experience_elements": [
+   "굿즈 구매 팝업스토어(50명씩 순차 입장, 수량 제한)",
+   "명조 아케이드 존 미니게임",
+   "공명자 포토존",
+   "용의 등불 메시지 월",
+   "명조 라운지",
+   "커피차(게임 인증 시 무료 제공)"
+  ],
+  "promotions": [
+   "스탬프 수집 시 스크래치 복권(양양 피규어 등)",
+   "리딤코드 쿠폰"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "현대백화점 U-PLEX 신촌점 지하 2층",
+  "venue_type": "department_store",
+  "neighborhood": "신촌",
+  "city": "서울",
+  "period_from": "2024-07-19",
+  "period_to": "2024-07-21",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.67,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 20000,
+  "visitors_period_days": 3,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "쿠로게임즈 발표 인용: '3일간 총 방문자는 2만여 명으로 집계됐으며, 그 중 굿즈 판매 구매자만 6천여 명에 달하는 것으로 나타났다'",
+  "visitors_source_quote": "현장에서는 금요일 오전부터 많은 관람객으로 붐비는 진풍경이 연출됐다. 3일간 총 방문자는 2만여 명으로 집계됐으며, 그 중 굿즈 판매 구매자만 6천여 명에 달하는 것으로 나타났다.",
+  "visitors_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=170853",
+  "visitors_source_date": "2024-07-22",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "새벽부터 대기(첫날 7시 대기 등록 222번), 오전 8시 전 줄 선 방문자도 오후에야 입장, 예상 대기 2시간+",
+   "sold_out": "콜라보 굿즈 오후 2시 전 품절(첫날 180번대 입장 시점 이미 품절)",
+   "reservation_fill": "오후 1시경 당일 현장 예약 마감",
+   "signal_quotes": [
+    "그 결과 많은 유저들이 이른 새벽부터 현장을 방문해 줄을 서기 시작했다. 그리고 그 등록을 위한 줄은 건물 내부를 넘어 밖으로 이어졌다. (게임뷰 2024-07-19, https://www.gamevu.co.kr/news/articleView.html?idxno=34202)",
+    "오후 2시도 되지 않아 콜라보 굿즈가 품절 처리됐다. 현장을 방문한 유저의 증언에 의하면, 180번대 입장에서 이미 콜라보 굿즈가 품절됐다고 한다. (게임뷰 2024-07-19)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "현장 예약제(온라인 예약 미도입)로 대기 혼란 논란 보도 병존. 구매 전환 6천/2만=약 30%. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

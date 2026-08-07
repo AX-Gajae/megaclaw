@@ -1,0 +1,89 @@
+{
+ "market_record_id": "MKT-2023-0043",
+ "event_name": "종가 '김치 블라스트 서울 2023' 팝업",
+ "brand": "종가(대상)",
+ "ip_or_collab": "세븐틴 호시(앰버서더), 이산호 셰프 미식존",
+ "category": "fnb",
+ "intervention": {
+  "concept_description": "국내 최초 김치 팝업. '해체주의' 콘셉트 체험형 콘텐츠: 미식존, 브랜드존(LED·타이포그래피·원재료 레이어), 호시존",
+  "experience_elements": [
+   "미식존(셰프)",
+   "브랜드 전시존",
+   "포토존"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "수피하우스, 성수동",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수",
+  "city": "서울",
+  "period_from": "2023-10-04",
+  "period_to": "2023-10-15",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 12,
+    "weekend_share": 0.33,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 10000,
+  "visitors_period_days": 12,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "대상 제공 '누적 방문객 약 1만 명'",
+  "visitors_source_quote": "또 가족 단위 고객부터 종가 앰버서더 호시 팬덤, 외국인까지 다양한 방문객들의 발길이 이어지며 누적 방문객 수는 무려 약 1만 명에 달했다.",
+  "visitors_source_url": "https://www.lcnews.co.kr/news/articleView.html?idxno=61725",
+  "visitors_source_date": "2023-10-16",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "입장 1시간 전부터 대기줄, 오픈 30분 전 대기 예약 매일 200명 이상",
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "이번 팝업은 오픈 당일부터 입장 1시간 전부터 긴 대기줄이 늘어섰고 오픈 30분 전부터 시작되는 대기 예약만 매일 200명이 넘어서는 등 연일 '오픈런'이 이어졌다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "기간: 지난 15일까지 12일간(기사 10/16) → 10/4~15 환산. 한국증권신문 동일 보도. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

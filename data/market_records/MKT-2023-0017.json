@@ -1,0 +1,83 @@
+{
+ "market_record_id": "MKT-2023-0017",
+ "event_name": "후아유 한남 팝업스토어",
+ "brand": "후아유 WHO.A.U (이랜드월드)",
+ "ip_or_collab": null,
+ "category": "fashion",
+ "intervention": {
+  "concept_description": "캘리포니아 감성 SPA 브랜드 오프라인 팝업",
+  "experience_elements": [],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "한남 앤트러사이트 카페 2층",
+  "venue_type": "street_standalone",
+  "neighborhood": "한남동",
+  "city": "서울",
+  "period_from": "2023-05-10",
+  "period_to": "2023-05-13",
+  "area_pyeong": 50,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.25,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 3000,
+  "visitors_period_days": 4,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "기자 현장 취재+이랜드 발표. '3천명이 넘는'이므로 하한값 기록",
+  "visitors_source_quote": "후아유가 20년만에 처음으로 마련한 팝업스토어는 지난 10일부터 13일까지 운영되는 동안 3천명이 넘는 '패션 피플'의 발길을 끌어 모았다.",
+  "visitors_source_url": "https://www.fnnews.com/news/202305132039246063",
+  "visitors_source_date": "2023-05-14",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "URL은 fnnews 기준 재확인 필요시 대체 소스 사용. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

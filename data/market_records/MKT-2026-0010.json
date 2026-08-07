@@ -1,0 +1,90 @@
+{
+ "market_record_id": "MKT-2026-0010",
+ "event_name": "롯데웰푸드 '크런키 스트레스 타파 학원' 대치동 팝업스토어",
+ "brand": "롯데웰푸드(크런키)",
+ "ip_or_collab": "크런키 브랜드 모델 코미디언 이수지(1인 3역 일타강사 부캐), 신제품 '크런키 데빌' 연계",
+ "category": "fnb",
+ "intervention": {
+  "concept_description": "학원가 대치동에 '학원' 콘셉트 팝업. 크런키의 바삭한 식감을 스트레스 해소와 연결한 '스트레스 빠삭 공식' 체험",
+  "experience_elements": [
+   "스매쉬 클래스(망치 타격)",
+   "샤우팅 클래스(방음 부스)",
+   "원샷 클래스(신문 콘셉트 포토부스)",
+   "스트레스 레벨 진단·두들링 존·굿즈 존"
+  ],
+  "promotions": [
+   "3개 클래스 중 2개 완료 시 추첨 통해 크런키 제품·스트레스 타파 아이템 증정"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "서울 강남구 대치동(역삼로 466)",
+  "venue_type": "street_standalone",
+  "neighborhood": "대치동",
+  "city": "서울",
+  "period_from": "2026-02-24",
+  "period_to": "2026-03-09",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 12000,
+  "visitors_period_days": 14,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "롯데웰푸드 관계자가 뉴시스에 밝힌 2주간 총 방문객('약 1만2000명')",
+  "visitors_source_quote": "롯데웰푸드 관계자는 \"팝업스토어가 운영되는 2주 동안 약 1만2000명의 방문객이 왔을 정도로 반응이 좋았다\"고 말했다.",
+  "visitors_source_url": "https://nwww.newsis.com/view/NISX20260320_0003556942",
+  "visitors_source_date": "2026-03-21",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "학원 점심시간마다 학생들 발길, 샤우팅 클래스 앞 긴 줄(현장 르포)",
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "지난 26일까지 방문객은 1800명으로 다음달 9일까지 1만명의 방문을 목표로 하고 있다.(겟뉴스 2026-02-27, 오픈 초기 실적)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "개최일 2/24은 청년일보·데일리안(2026-02-24)·캠페인인사이트(2026-03-17) '24일부터 3월 9일까지' 확인. 목표 1만 대비 1.2만 달성 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

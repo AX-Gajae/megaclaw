@@ -1,0 +1,233 @@
+{
+ "record_id": "RXPU2410",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:포토이즘_최래성",
+  "space_id": "unresolved:Port_망원점",
+  "client_party_id": "unresolved:주식회사_서북",
+  "brand_key": "포토이즘",
+  "space_key": "Port_망원점"
+ },
+ "intervention": {
+  "concept": "아티스트 최래성과의 콜라보 전시형 팝업스토어로, 캐릭터 '지조니'를 중심으로 한 다양한 체험존과 MD 판매를 결합했다. 대형 애드벌룬, 격파존, 아케이드 기기 등 인터랙티브 체험 요소를 배치했다.",
+  "brand_name": "Port x 최래성 전시",
+  "experience_elements": [
+   "아케이드 기기존",
+   "격파존",
+   "황금알을 낳는 지조니존",
+   "지조니 대형 풍선(애드벌룬)존",
+   "VR존",
+   "청음존",
+   "미니 전시 체험존",
+   "냉장고 자석존",
+   "신디사이저 의자",
+   "매대 및 POS MD존"
+  ],
+  "promotions": [
+   "리플렛, 기프트박스, 액자, 스티커, 부채 등 기타 물품",
+   "QR코드 연동 랜딩페이지"
+  ],
+  "staging_tags": [
+   "외벽 랩핑",
+   "현수막",
+   "캐릭터 애드벌룬",
+   "캐릭터 폼보드",
+   "캡션",
+   "신디사이저 맵핑"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "마포구",
+   "venue_name": "Port 망원점",
+   "venue_type": "팝업스토어 공간",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-09-02",
+   "to": "2024-09-12",
+   "days": 11
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "계약금액 62,300,000원(VAT 별도). 1차 50% 31,150,000원(세금계산서 08월20일, 입금 08월21일), 2차 50% 31,150,000원(세금계산서 09월19일, 입금 09월20일). 견적 소계 55,010,000원 + 업체마진 10% 5,666,030원 + 여비(소계 3%) 1,650,300원. 모든 매출은 발주처에 귀속. 상품 로스율 5% 이내는 발주처 부담."
+  },
+  "brand_requirements": [
+   "팝업스토어 운영 및 관리",
+   "상품 판매 및 재고 관리(ERP 기재, 로스율 5% 이내 유지)",
+   "공간 시공 및 조형물 설치",
+   "MD존 판매·운영 및 POS/ERP 시스템 설치·인력·재고관리",
+   "매일 매출·재고 보고"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "Port 망원점 팝업 공간"
+  },
+  "derived": {
+   "duration": {
+    "days": 11,
+    "weekend_share": 0.18,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 119,
+    "holiday_until": 12,
+    "holiday_block_in": 0,
+    "nat_event_gap": 73,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 29749311.0,
+    "pnl_pre_accounts": 11,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2024-08-01"
+   }
+  },
+  "demand_signals": {
+   "waiting_reported": null,
+   "sold_out": true,
+   "source": "역검색 외부 보도(2026-07-27)"
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 64.8
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서가 제공되지 않아 방문객 및 매출 실측 데이터 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 64.8 ≈ 계약총액 62.3",
+   "contract_total_mm": 62.3,
+   "last_recognition_period": "2024-09"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-2FmIeKj-vOLwumeOIfFJyAwafSzcjrj",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1-2FmIeKj-vOLwumeOIfFJyAwafSzcjrj/view",
+   "title": "서북_스위트스팟 용역계약서.pdf"
+  },
+  {
+   "doc_id": "11PF-DGTMvQ3Q9Uq3_XAU8FYJZBfCphlk",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/11PF-DGTMvQ3Q9Uq3_XAU8FYJZBfCphlk/view",
+   "title": "2.견적서_(Sweetspot)Port_아티스트콜라보 전시 운영 견적서_0816.pdf"
+  },
+  {
+   "doc_id": "11RPVQlO9SAC_FFAacnddGhat3EAWoKs_",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/11RPVQlO9SAC_FFAacnddGhat3EAWoKs_/view",
+   "title": "1.계약서_서북_스위트스팟 용역계약서.pdf"
+  },
+  {
+   "doc_id": "1591RJjaNlrtmLz4gmA9YWG4Jv8v7oNdS",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1591RJjaNlrtmLz4gmA9YWG4Jv8v7oNdS/view",
+   "title": "(Sweetspot) Port 팝업스토어 철수 작업 내용_0910.pdf"
+  },
+  {
+   "doc_id": "15BhvG1z8dLCedDMyvXXpGs6ur_W5PG3v",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/15BhvG1z8dLCedDMyvXXpGs6ur_W5PG3v/view",
+   "title": "서북_스위트스팟 추가변경합의서.pdf"
+  },
+  {
+   "doc_id": "15ERyph-pH1wOOoPQ3dBAsxSvmmDA1lZd",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/15ERyph-pH1wOOoPQ3dBAsxSvmmDA1lZd/view",
+   "title": "(Sweetspot)Port_아티스트콜라보 전시 운영 견적서_0816.pdf"
+  },
+  {
+   "doc_id": "15F7p5Cbwjqpu1t7Qfys3jRaAaPNMk48r",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/15F7p5Cbwjqpu1t7Qfys3jRaAaPNMk48r/view",
+   "title": "0818_포트 팝업스토어 레퍼런스.pptx"
+  },
+  {
+   "doc_id": "16A_YmdKpLeJD5HRDDbFdQCLzrYhysmx5",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/16A_YmdKpLeJD5HRDDbFdQCLzrYhysmx5/view",
+   "title": "(Sweetspot)Port_아티스트콜라보 전시 운영 견적서_0809.pdf"
+  },
+  {
+   "doc_id": "16CTf4Cp4iykxwnqTGYPa7FUY9sXiakNL",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/16CTf4Cp4iykxwnqTGYPa7FUY9sXiakNL/view",
+   "title": "(Sweetspot)Port_아티스트콜라보 전시 운영 견적서_0816.xlsx"
+  },
+  {
+   "doc_id": "16Ckas5-DR37yb-K2QiVDz7uv0pq77Ccn",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/16Ckas5-DR37yb-K2QiVDz7uv0pq77Ccn/view",
+   "title": "(Sweetspot)Port_아티스트콜라보 전시 운영 견적서_0816.pdf"
+  },
+  {
+   "doc_id": "16IHxSSApJSgaCj1g8eXQ4LjuOR8E_eK2",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/16IHxSSApJSgaCj1g8eXQ4LjuOR8E_eK2/view",
+   "title": "서북_스위트스팟 용역계약서.docx"
+  },
+  {
+   "doc_id": "16KP1-N6TQCPrS3BxsfjD5anmvFlvTSkB",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/16KP1-N6TQCPrS3BxsfjD5anmvFlvTSkB/view",
+   "title": "서북_스위트스팟 용역계약서.pdf"
+  },
+  {
+   "doc_id": "1KInBc9svkpatLSCzuzU0OkF3KmY1Z7wR",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1KInBc9svkpatLSCzuzU0OkF3KmY1Z7wR/view",
+   "title": "견적서_우디터_지조니 목공 큐브.png"
+  },
+  {
+   "doc_id": "1dy7W0ubATVqKrgPJGtlSueRi8o3hLhs8",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1dy7W0ubATVqKrgPJGtlSueRi8o3hLhs8/view",
+   "title": "3.제안서_(Sweetspot) Port 팝업스토어_final 시안(0823).pdf"
+  },
+  {
+   "doc_id": "1e3VrZuHews1cBIo9O4yjmHAAdh7UNs_M",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1e3VrZuHews1cBIo9O4yjmHAAdh7UNs_M/view",
+   "title": "4.결과보고서_내용없음.txt"
+  },
+  {
+   "doc_id": "1qL5sSLlKzJu2nuMHDpTdRw5iEpU5xGT0",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1qL5sSLlKzJu2nuMHDpTdRw5iEpU5xGT0/view",
+   "title": "서북 사업자등록증.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 4건: 1.계약서_서북_스위트스팟 용역계약서.pdf, (Sweetspot) Port 팝업스토어 철수 작업 내, 3.제안서_(Sweetspot) Port 팝업스토어_f, 2.견적서_(Sweetspot)Port_아티스트콜라보 . 미확실: 결과보고서 부재 - 일일/총 방문객 및 POS 매출 데이터 없음; 면적(평) 미기재; client_name(발주처는 주식회사 서북); 계약서상 프로젝트 일정(09-02~09-12)과 프로젝트 메타(09-05~09-12) 불일치; foot_traffic_context 정보 없음 | 외부 라벨 역검색(2026-07-27): 수요신호 적재"
+ }
+}

@@ -1,0 +1,73 @@
+{
+  "market_record_id": "MKT-2026-0002",
+  "event_name": "GS25×플레이브 세미 팝업스토어(전국 8개 점포)",
+  "brand": "GS리테일/블래스트",
+  "ip_or_collab": "플레이브(PLAVE)",
+  "category": "entertainment",
+  "intervention": {
+    "concept_description": "버추얼 아이돌 플레이브 협업 상품 론칭 연계 세미 팝업스토어. 주요 거점 점포 8곳에서 콜라보 상품+캐릭터 굿즈(디오라마·아크릴스탠드·캔뱃지) 판매",
+    "experience_elements": [
+      "한정 굿즈 판매",
+      "테마 점포"
+    ],
+    "promotions": [
+      "콜라보 상품 랜덤 굿즈 동봉"
+    ],
+    "is_free_entry": true,
+    "reservation_required": false
+  },
+  "conditions": {
+    "venue": "GS25 전국 주요 거점 점포 8곳",
+    "venue_type": "other",
+    "neighborhood": null,
+    "city": null,
+    "period_from": "2026-01-16",
+    "period_to": "2026-01-31",
+    "area_pyeong": null,
+    "multi_store": true,
+    "derived": {
+      "duration": {
+        "days": 16,
+        "weekend_share": 0.31,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 2,
+        "months_since_last": 10.0,
+        "first_edition": false
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 16,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "GS리테일 발표(방문 고객 증가율). 원문: '오픈 당일 방문객 수는 전주 대비 500% 이상 폭증했으며'",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": "주요 굿즈 판매 시작 하루 만에 준비 물량 전량 소진",
+      "reservation_fill": null,
+      "signal_quotes": [
+        "오픈 당일 방문객 수는 전주 대비 500% 이상 폭증했으며, 디오라마 스탠드와 캔뱃지 등 주요 굿즈는 판매 시작 하루 만에 준비된 물량이 모두 소진되었다.",
+        "지난 15일 첫선을 보인 플레이브 빵 5종은 출시 열흘 만에 누적 판매량 55만 개를 넘어섰다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "편의점 거점 세미 팝업(전국 8개 점). 방문객 증가율(전주 대비 500%+)이 대표 수치. | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

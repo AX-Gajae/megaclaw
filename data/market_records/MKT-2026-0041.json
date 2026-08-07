@@ -1,0 +1,131 @@
+{
+ "market_record_id": "MKT-2026-0041",
+ "event_name": "타임스퀘어 X 브레드이발소 '2026 빵빵 페스티벌' 팝업스토어",
+ "brand": "경방 타임스퀘어",
+ "ip_or_collab": "브레드이발소(애니메이션) X 베이커리 6개 브랜드",
+ "category": "game_webtoon",
+ "intervention": {
+  "concept_description": "애니메이션 브레드이발소와 전국 유명 베이커리 6곳 결합 체험형 매장. 캐릭터 특별 베이커리, 굿즈 판매, 인형탈 포토 이벤트",
+  "experience_elements": [
+   "브레드이발소 인형탈 포토 이벤트(7일간)",
+   "캐릭터 굿즈 판매",
+   "시그니처 디저트 판매"
+  ],
+  "promotions": [
+   "베이커리 구매 고객 캐릭터 부채·핸드타월 증정"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "타임스퀘어 1층 아트리움",
+  "venue_type": "mall",
+  "neighborhood": "영등포",
+  "city": "서울",
+  "period_from": "2026-06-03",
+  "period_to": "2026-06-21",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 19,
+    "weekend_share": 0.32,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 500000,
+  "visitors_period_days": 19,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "타임스퀘어 발표 인용: '행사 기간 동안 약 50만 명이 방문했으며, 결제 건수는 6만3,000건으로 집계됐다' - 아트리움 통과 유동인구 포함 집계 가능성 있음",
+  "visitors_source_quote": "경방의 복합쇼핑몰 타임스퀘어가 인기 애니메이션 캐릭터 '브레드이발소'와 협업해 선보인 '2026 빵빵 페스티벌'에 약 50만명이 방문했다. 행사 기간 누적 판매액은 7억원을 돌파했다.",
+  "visitors_source_url": "https://www.newstap.co.kr/news/articleView.html?idxno=329128",
+  "visitors_source_date": "2026-06-24",
+  "sales_krw": 700000000,
+  "sales_source_quote": "타임스퀘어에 따르면 19일간 누적 판매액은 7억원을 넘어섰다. 낮은 객단가의 디저트 제품이 중심인 행사임에도 올해 상반기 타임스퀘어에서 열린 F&B 팝업스토어 가운데 높은 수준의 매출을 기록했다.",
+  "sales_source_url": "https://www.newstap.co.kr/news/articleView.html?idxno=329128",
+  "sales_source_date": "2026-06-24",
+  "demand_signals": {
+   "waiting_time_reported": "행사 기간 고객들의 오픈런 이어짐",
+   "sold_out": "일부 상품 행사 초반 빠르게 소진",
+   "reservation_fill": null,
+   "signal_quotes": [
+    "단순한 캐릭터 협업을 넘어 베이커리 브랜드의 제품 경쟁력과 캐릭터 콘텐츠를 결합하면서 행사 기간 고객들의 오픈런이 이어졌다.",
+    "굿즈 상품 판매와 디저트 판매가 동시에 이뤄졌으며, 일부 상품은 행사 초반에 빠르게 소진된 것으로 나타났다. (로이슈 2026-06-24)",
+    "행사 기간 동안 약 50만 명이 방문했으며, 결제 건수는 6만3,000건으로 집계됐다. (로이슈 2026-06-24, https://www.lawissue.co.kr/view.php?ud=202606241515463509204ead0791_12)",
+    "행사 기간 고객들의 오픈런이 이어졌다",
+    "캐릭터 굿즈는 팝업스토어 개장 직후부터 빠르게 판매됐다",
+    "결제 건수는 6만3000건이었다. (뉴스탭 2026-06-24)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "50만 방문객은 오픈 아트리움 공간 기준으로 실구매 전환(결제 6.3만 건)과 괴리. counting_basis organizer_claim 유지하되 집계 기준 주의. 매출 7억 원은 '돌파/약 7억 원 수준'. | 병합 레코드: MKT-2026-0004, MKT-2026-0045 | [병합:MKT-2026-0004] 더퍼스트미디어·공감신문 동일 수치(2026-06-24). 타임스퀘어 관계자: '누적 방문객 50만명, 누적 판매액 7억원' 직접 인용 존재. 2026년 상반기 타임스퀘어 F&B 팝업 중 높은 수준 매출로 자평",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 500000,
+   "basis": "organizer_claim",
+   "quote": "경방의 복합쇼핑몰 타임스퀘어가 인기 애니메이션 캐릭터 '브레드이발소'와 협업해 선보인 '2026 빵빵 페스티벌'에 약 50만명이 방문했다. 행사 기간 누적 판매액은 7억원을 돌파했다.",
+   "url": "https://www.newstap.co.kr/news/articleView.html?idxno=329128",
+   "date": "2026-06-24"
+  },
+  {
+   "metric": "sales",
+   "value": 700000000,
+   "basis": "organizer_claim",
+   "quote": "타임스퀘어에 따르면 19일간 누적 판매액은 7억원을 넘어섰다.",
+   "url": "https://www.newstap.co.kr/news/articleView.html?idxno=329128",
+   "date": "2026-06-24"
+  },
+  {
+   "metric": "visitors",
+   "value": 500000,
+   "basis": "organizer_claim",
+   "quote": "지난 3일부터 21일까지 19일간 타임스퀘어에서 열린 브레드이발소 '빵빵 페스티벌'에는 50만 명이 방문했다.",
+   "url": "https://www.newstap.co.kr/news/articleView.html?idxno=329128",
+   "date": "2026-06-24"
+  },
+  {
+   "metric": "sales",
+   "value": 700000000,
+   "basis": "organizer_claim",
+   "quote": "행사 기간 매출은 7억 원을 넘었고 결제 건수는 6만3000건이었다.",
+   "url": "https://www.newstap.co.kr/news/articleView.html?idxno=329128",
+   "date": "2026-06-24"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only",
+  "sales": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

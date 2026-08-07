@@ -1,0 +1,101 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{같은 해 안에서도 버는가 --- 두 해 된 거부권이 잡지 못한 것을 잡는 자를, 알려진 날짜 구멍으로 검증했다}
+\author{월드모델 실험실}
+\date{노트 541 · 2026년 8월 4일}
+\maketitle
+
+\begin{abstract}
+노트 446 거부권(\emph{판$\uparrow$ 인데 날짜 통제 판$\downarrow$ 이면 기각})은
+``그 이득은 날짜 구멍''이라는 \textbf{읽기} 위에 서 있다. 노트 539 가 반례를
+냈다 --- 시장팝업 \texttt{category} 는 연도를 안 실어 나르는데(크루스칼
+$p = 0.168$) 그 무늬가 났다. \textbf{더 나은 자를 세우고 알려진 날짜 구멍으로
+검증했다.}
+
+\begin{center}
+\begin{tabular}{lrr}
+\hline
+ & \textbf{같은 해 쌍} & 다른 해 쌍 \\
+\hline
+\textbf{TIMEAX}(알려진 날짜 구멍) & $\mathbf{-0.00189}$ & $+0.00125$ \\
+ & $[-0.0025, -0.0013]$ & $[+0.0005, +0.0020]$ \\
+\textbf{시장팝업 category} & $\mathbf{+0.00112}$ & $+0.00302$ \\
+ & $[+0.0007, +0.0015]$ & $[+0.0026, +0.0035]$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{새 자가 둘을 정확히 가른다} --- 날짜 구멍은 같은 해에서 \emph{잃고},
+진짜 정보는 같은 해에서도 \emph{번다}. 연도는 예보 시점에 아는 값이므로
+자로 쓸 수 있다.
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 두 팔. \textbf{나} --- 옛 자와 새 자.
+\textbf{다} --- 내 대조가 처음엔 안 섰다.}
+\end{figure}
+
+\section{내 양성 대조가 처음엔 안 섰다}
+
+먼저 현 챔피언 위에서 \texttt{TIMEAX} 를 켰다. 같은 해 $-0.0040$ $\cdot$
+다른 해 $-0.0018$ 로 \textbf{둘 다 음수}가 나왔다 --- 날짜 구멍의 무늬가
+아니다.
+
+\begin{quote}
+이유는 원장에 있었다. 노트 $524$ 가 확정한 대로 \textbf{\texttt{TRAINR}
+(학습 쪽 최근성)이 채택된 뒤로 \texttt{TIMEAX} 는 어디서도 안 번다} ---
+``최근성은 한 번만 팔린다''. \textbf{날짜 구멍의 무늬는 \texttt{TRAINR} 이
+없던 노트 $447$ 설정에서만 난다.}
+\end{quote}
+
+거기서 다시 재니 같은 해 $\mathbf{-0.00189}$ $\cdot$ 다른 해
+$\mathbf{+0.00125}$ --- \textbf{정확히 그 무늬}다.
+
+\begin{quote}
+\textbf{정직한 단서} --- 대조를 고친 것은 시장팝업 결과를 본 \emph{뒤}였다.
+고친 근거는 노트 $524$ 의 기존 사실이지 원하는 답이 아니었지만,
+\textbf{더 엄격했다면 대조 설정을 미리 못박았어야} 한다. 다음부터 양성
+대조는 \emph{어느 챔피언 위에서} 도는지까지 사전 등록에 적는다.
+\end{quote}
+
+\section{옛 자는 둘을 못 가르고 새 자는 가른다}
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+ & 노트 446 거부권 & \textbf{같은 해 이득} \\
+\hline
+TIMEAX($447$ 설정) & 기각 (맞다) & $-0.0019$ $\to$ 기각 (맞다) \\
+시장팝업 category & 기각 (\textbf{틀렸다}) & $\mathbf{+0.0011}$ $\to$ \textbf{통과} \\
+\hline
+\end{tabular}
+\end{center}
+
+거부권은 \emph{증상}(날짜 통제 판이 내려감)을 보고, 새 자는 \emph{원인}
+(연도가 다른 쌍에서만 버는가)을 직접 본다. 시장팝업의 경우 날짜 통제 하락은
+노트 539 가 보인 대로 \textbf{전부 이웃 도메인}이었고, 그 이웃 손해가
+거부권을 오작동시켰다.
+
+\section*{이 노트에서 규칙을 안 고친다}
+
+사전 등록에 그렇게 적었고 지킨다. \textbf{사후에 규칙을 고쳐 통과시키면
+그것이 점수 고르기다.} 규약 변경은 다음 노트에 따로 사전 등록한다 ---
+바꿀 문장, 소급 적용 여부, 그리고 \emph{새 자가 틀릴 수 있는 방식}까지 적고
+시작한다.
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{규약 변경 사전 등록}(노트 542) --- 거부권 446 을 ``판$\uparrow$
+이면서 \emph{같은 해 이득}이 $0$ 이하이면 기각''으로 바꿀지.
+\item \textbf{소급} --- 446 으로 기각된 과거 후보들을 새 자로 다시 볼지.
+지금 원장에 몇 건인지부터 세야 한다.
+\item \textbf{새 자의 한계} --- 유보가 $2025 \cdot 2026$ 두 해뿐이라 ``같은 해''가
+쌍의 $50\!\sim\!72\%$ 다. 해가 늘면 이 자의 힘도 바뀐다.
+\end{itemize}
+
+\end{document}

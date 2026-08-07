@@ -1,0 +1,341 @@
+{
+ "record_id": "RXPU2416",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:안테나_조규매_규현_팝업",
+  "space_id": "unresolved:서울_더현대",
+  "client_party_id": "unresolved:안테나",
+  "brand_key": "안테나_규현",
+  "space_key": "더현대서울"
+ },
+ "intervention": {
+  "concept": "'단짠단짠 규매의 일상'을 테마로, 규현(조규매 캐릭터)의 오피스라이프와 덕질생활이 공존하는 하루를 공간으로 재현한 팬 대상 팝업스토어. 출근길-오피스(Antenna)-퇴근길로 이어지는 동선과 대형 캐릭터 조형물, 포토존으로 구성했다.",
+  "brand_name": "조규매 (안테나/규현)",
+  "experience_elements": [
+   "출근길/오피스/퇴근길 테마존 동선",
+   "대형 캐릭터 조형물",
+   "포토존(조규매의 집, 오피스 세상 등)",
+   "현장 프로그램 '규매의 조그매 세상'",
+   "'패셔니스타 넷째 규매 자랑대회' 이벤트",
+   "MD 판매 매대(POS)"
+  ],
+  "promotions": [
+   "환영 선물 증정",
+   "일정 금액 이상 구매 시 프로모션 증정(구매 프로모션)"
+  ],
+  "staging_tags": [
+   "오피스 컨셉",
+   "캐릭터 조형물",
+   "포토존",
+   "어치 연출",
+   "실사 그래픽"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": null,
+   "venue_name": "더현대",
+   "venue_type": "백화점 팝업 공간",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-11-21",
+   "to": "2024-12-04",
+   "days": 14
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "견적 구성 총계 121,600,000원 (VAT 별도, 만단위 절삭). 소계(Sub Total 1~4) 115,380,000원, 대행수수료 소계의 10%(정가항목 제외) 10,038,000원, NEGO 할인 -3,800,000원. 항목별: 기획/디자인 15,000,000 / 공간연출 64,500,000 / 인건·운영 27,230,000 / 진행비 8,650,000. 선금·중도금·잔금 분할 및 RS 조건 문서에 명시 없음. | 계약서 미확인(2026-07-27 재독해 시도 — 대상 문서 부재/추출 실패): 총액은 견적 기준"
+  },
+  "brand_requirements": [
+   "ERP 판매·재고 관리 시스템 세팅 및 운영(노트북, 영수증출력기)",
+   "웨이팅 예약시스템(현장/네이버 예약)",
+   "행사 보험 가입",
+   "슈퍼바이저/캐셔/운영 스탭 운영(평일 10:00~20:30, 주말 10:00~21:00)"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대 백화점 팝업 공간"
+  },
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 64,
+    "holiday_until": 65,
+    "holiday_block_in": 0,
+    "nat_event_gap": 7,
+    "nat_event": "수능",
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 17,
+    "comp_prior_at_venue": 113,
+    "comp_within_500m_open": 17,
+    "comp_within_1000m_open": 17,
+    "matched_address": "서울 영등포구 여의대로 108"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 46000.0,
+    "pnl_pre_accounts": 1,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2024-10-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 119.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": 5045,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(제안서 네이버 예약 회차표상 예약 정원 합계 Total 5,045명(주간 2765+2280)이 계획 입장 정원으로 제시됨. 결과보고서 실측 데이터는 제공된 문서에 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 119.0 ≈ 계약총액 121.6",
+   "contract_total_mm": 121.6,
+   "last_recognition_period": "2024-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "12dZMCpNKru7PV9hyHp5ur902KkhuIUan",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/12dZMCpNKru7PV9hyHp5ur902KkhuIUan/view",
+   "title": "[규현] 스위트팟_팝업스토어 기획안_1023.pdf"
+  },
+  {
+   "doc_id": "15c23Cy4FWvi0EHdnRN3mqpadBaDBfGaQ",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/15c23Cy4FWvi0EHdnRN3mqpadBaDBfGaQ/view",
+   "title": "1029_조규매_컨셉제안.pptx"
+  },
+  {
+   "doc_id": "15eeAHy8DoUCwE2EhzUWYW4aSbYlK62GR",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/15eeAHy8DoUCwE2EhzUWYW4aSbYlK62GR/view",
+   "title": "1029_조규매_컨셉제안.pdf"
+  },
+  {
+   "doc_id": "1632jYbSL8cGmk3d3ghfpLMPCKYc1wzU7",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1632jYbSL8cGmk3d3ghfpLMPCKYc1wzU7/view",
+   "title": "[규현] 스위트팟_팝업스토어 기획안.pdf"
+  },
+  {
+   "doc_id": "16DcCiGuZrfWAffQ8jOidj67UsHoK2GAb",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/16DcCiGuZrfWAffQ8jOidj67UsHoK2GAb/view",
+   "title": "[규현] 스위트팟_팝업스토어 기획안.pptx"
+  },
+  {
+   "doc_id": "18IYcvcyXy6jxIK8ymEm0bUXr34CS-Vkd",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/18IYcvcyXy6jxIK8ymEm0bUXr34CS-Vkd/view",
+   "title": "[Sweetspot] 안테나 조규매 팝업 기획안_v2_1108.pdf"
+  },
+  {
+   "doc_id": "18sfjpbHNrd-9aTPOuq1tvXt_J7B4qULz",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/18sfjpbHNrd-9aTPOuq1tvXt_J7B4qULz/view",
+   "title": "(Sweetspot)안테나 조규매 팝업스토어 견적서_1127.pdf"
+  },
+  {
+   "doc_id": "18vCxGcfhk5wC5FqhJi8ayZfeaAJFzzvN",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/18vCxGcfhk5wC5FqhJi8ayZfeaAJFzzvN/view",
+   "title": "(Sweetspot)안테나 조규매 팝업스토어 견적서_1127.xlsx"
+  },
+  {
+   "doc_id": "1NM3xf2L0cXMTDvkfUJESqBkeIKnelAi5",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1NM3xf2L0cXMTDvkfUJESqBkeIKnelAi5/view",
+   "title": "[Sweetspot] 안테나 조규매 팝업 기획안_v1_1104.pdf"
+  },
+  {
+   "doc_id": "1Nb99OTWsnH5M9s7e9jn1YCPOVK-xR-UJ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Nb99OTWsnH5M9s7e9jn1YCPOVK-xR-UJ/view",
+   "title": "(Sweetspot)안테나 조규매 팝업스토어 견적서_1108.xlsx"
+  },
+  {
+   "doc_id": "1O5Fs7jqR-2dPc4E8W6tcfwJtP9OdCEj2",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1O5Fs7jqR-2dPc4E8W6tcfwJtP9OdCEj2/view",
+   "title": "(Sweetspot)안테나 조규매 팝업스토어 견적서_1111.pdf"
+  },
+  {
+   "doc_id": "1Of6B4jxD7sRh-c_l7YdAbu9qBRD8UzVJ",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Of6B4jxD7sRh-c_l7YdAbu9qBRD8UzVJ/view",
+   "title": "[Sweetspot] 안테나 조규매 팝업 기획안_v3.pptx"
+  },
+  {
+   "doc_id": "1OpIN7tYe10zMfLjRg00IW7hKvI_NaAej",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1OpIN7tYe10zMfLjRg00IW7hKvI_NaAej/view",
+   "title": "[Sweetspot] 안테나 조규매 팝업 기획안_v3.pdf"
+  },
+  {
+   "doc_id": "1Oqut13AqP-uyK4Hyk55l9oDBKdr4zhe2",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Oqut13AqP-uyK4Hyk55l9oDBKdr4zhe2/view",
+   "title": "(Sweetspot)안테나 조규매 팝업스토어 견적서_1118.pdf"
+  },
+  {
+   "doc_id": "1OrlKex9L-21XIdQ_64-aSvsFuL0LxbPG",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1OrlKex9L-21XIdQ_64-aSvsFuL0LxbPG/view",
+   "title": "(Sweetspot)안테나 조규매 팝업스토어 견적서_1118.xlsx"
+  },
+  {
+   "doc_id": "1PTlYBJO0hwcn0FCm3exiN1HeFRk9nFB7",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1PTlYBJO0hwcn0FCm3exiN1HeFRk9nFB7/view",
+   "title": "[Sweetspot] 안테나 조규매 팝업 기획안_v4_1121.pdf"
+  },
+  {
+   "doc_id": "1QRhAZ02HjE9A_FiL9SR3wsHIt0Rc0pKQ",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1QRhAZ02HjE9A_FiL9SR3wsHIt0Rc0pKQ/view",
+   "title": "[Sweetspot] 안테나 조규매 팝업 1차 기획안_1122.pptx"
+  },
+  {
+   "doc_id": "1QVfcFyaTa_fcBfJg0hHP7zAU205FdOP2",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1QVfcFyaTa_fcBfJg0hHP7zAU205FdOP2/view",
+   "title": "[Sweetspot] 안테나 조규매 팝업 1차 기획안_1122.pdf"
+  },
+  {
+   "doc_id": "1S7QwFFb-mEcWVleNIXPMUNPHryVqsD0s",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1S7QwFFb-mEcWVleNIXPMUNPHryVqsD0s/view",
+   "title": "[Sweetspot] 안테나 조규매 팝업 기획안_v4_1121.pptx"
+  },
+  {
+   "doc_id": "1VIdlXMVklJ2y_iea_alKyZC_elsCdjLA",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1VIdlXMVklJ2y_iea_alKyZC_elsCdjLA/view",
+   "title": "2. 에이렌탈_12.11 스위트스팟(더현대).xlsx"
+  },
+  {
+   "doc_id": "1WiGpDmr7S0U_jP_r9JvVwuaYvmmDJ3_v",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1WiGpDmr7S0U_jP_r9JvVwuaYvmmDJ3_v/view",
+   "title": "1. [art412] 조규매 팝업 견적서_최종.pdf"
+  },
+  {
+   "doc_id": "1cQrD2y-rCfjUdvciYFtkE0-OiwE2hk2G",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1cQrD2y-rCfjUdvciYFtkE0-OiwE2hk2G/view",
+   "title": "2.견적서_(Sweetspot)안테나 조규매 팝업스토어 견적서_1127.pdf"
+  },
+  {
+   "doc_id": "1cTXvKzJ-SP5IKw3IQixMk-2ZFGdXufAc",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1cTXvKzJ-SP5IKw3IQixMk-2ZFGdXufAc/view",
+   "title": "3.제안서_(Sweetspot)안테나_조규매 팝업스토어_최종운영안.pdf"
+  },
+  {
+   "doc_id": "1cVmNRXcg8gMEn6UvVJ1iNmOrGj35vKmD",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1cVmNRXcg8gMEn6UvVJ1iNmOrGj35vKmD/view",
+   "title": "1-1.계약서_(Sweetspot)아트412 공간디자인 용역계약서.pdf"
+  },
+  {
+   "doc_id": "1cWUJ_diIskdP0z1gThS9hs3ICjoVlMdd",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1cWUJ_diIskdP0z1gThS9hs3ICjoVlMdd/view",
+   "title": "1.계약서_(Sweetspot)주식회사 안테나 조규매 팝업스토어 업무계약서.pdf"
+  },
+  {
+   "doc_id": "1cXKUXIQ3-TkPAUG0QwBoOvXF_zBxkztu",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1cXKUXIQ3-TkPAUG0QwBoOvXF_zBxkztu/view",
+   "title": "1. [Sweetspot] 아트412 공간디자인 용역계약서.pdf"
+  },
+  {
+   "doc_id": "1cZt3wBennWwwZGqDTrHd1mNsScCsuwLE",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1cZt3wBennWwwZGqDTrHd1mNsScCsuwLE/view",
+   "title": "(Sweetspot)안테나 업무계약서.pdf"
+  },
+  {
+   "doc_id": "1c_ZJhAOAl6XHW8gBnY8Z0eeseqYoFQFr",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1c_ZJhAOAl6XHW8gBnY8Z0eeseqYoFQFr/view",
+   "title": "4.결과보고서_내용없음.txt"
+  },
+  {
+   "doc_id": "1g64a51Vx15P6-Y4D90xDb1-eNeRuZJ_4",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1g64a51Vx15P6-Y4D90xDb1-eNeRuZJ_4/view",
+   "title": "3. 스위트스팟 근로계약서_조규매 팝업스토어_매니저.xlsx"
+  },
+  {
+   "doc_id": "1gBS1YZ3i1XGGccVhKNkmkd0xcTXOMbJU",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1gBS1YZ3i1XGGccVhKNkmkd0xcTXOMbJU/view",
+   "title": "3. 스위트스팟 근로계약서_조규매 팝업스토어_근무자.xlsx"
+  },
+  {
+   "doc_id": "1gIpNOciNrnH_IdRjef1WByzPMd6ZeHoV",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1gIpNOciNrnH_IdRjef1WByzPMd6ZeHoV/view",
+   "title": "3. 스위트스팟 근로계약서_조규매 팝업스토어_단기.xlsx"
+  },
+  {
+   "doc_id": "1gkrORMw0QF14qBVF0-p86nvybBWIIM6A",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1gkrORMw0QF14qBVF0-p86nvybBWIIM6A/view",
+   "title": "(Sweetspot)주식회사 안테나_조규매팝업스토어 업무 계약서.doc"
+  },
+  {
+   "doc_id": "1goFWaADh05S7EcQTh5ESzmUclJxsLfNR",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1goFWaADh05S7EcQTh5ESzmUclJxsLfNR/view",
+   "title": "(Sweetspot)주식회사 안테나 조규매 팝업스토어 업무계약서.pdf"
+  },
+  {
+   "doc_id": "1nWNcxpMhM-HLR9mRcMNXZ8dBZeTxxaww",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1nWNcxpMhM-HLR9mRcMNXZ8dBZeTxxaww/view",
+   "title": "1. [Sweetspot] 아트412 공간디자인 용역계약서_1202.docx"
+  },
+  {
+   "doc_id": "1y8G2h5drtL9XOGsNnVR4Xs-Ao9vwDZCR",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1y8G2h5drtL9XOGsNnVR4Xs-Ao9vwDZCR/view",
+   "title": "[Sweetspot] 안테나 조규매 팝업 기획안_1115.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: 3.제안서_(Sweetspot)안테나_조규매 팝업스토어, 2.견적서_(Sweetspot)안테나 조규매 팝업스토어. 미확실: 결과보고서 부재로 실제 방문자수·POS 매출 없음; 입지 상세(구/venue 정확 명칭)-'더현대'는 세팅 스케줄 텍스트에서 추정; 면적(평) 정보 없음; 운영기간: 메타(11/21~12/04)와 제안서 세팅스케줄(12/11~)·예약표(12/12~18) 날짜 불일치; 계약금액 분할·수수료/RS 조건 명시 없음; client_name 메타 null, 안테나로 추정"
+ }
+}

@@ -1,0 +1,75 @@
+{
+  "market_record_id": "MKT-2023-0050",
+  "event_name": "GS25 도어투성수 위스키 브랜드 팝업 시리즈 (러셀리저브·조니워커 등)",
+  "brand": "GS리테일 (GS25 도어투성수)",
+  "ip_or_collab": "윌리엄그랜트앤선즈(러셀리저브), 디아지오(조니워커)",
+  "category": "liquor",
+  "intervention": {
+    "concept_description": "플래그십 스토어 '도어투성수' 내 기간한정 위스키 브랜드 팝업 시리즈. 브랜드 체험존·한정 상품 판매",
+    "experience_elements": [
+      "위스키 브랜드 체험존",
+      "팝업 한정 상품 판매"
+    ],
+    "promotions": [
+      "한정 상품 판매"
+    ],
+    "is_free_entry": null,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "GS25 도어투성수 플래그십 스토어 내",
+    "venue_type": "street_standalone",
+    "neighborhood": "성수동",
+    "city": "서울",
+    "period_from": "2023-11-01",
+    "period_to": "2025-04-30",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "GS리테일 발표. 여러 위스키 팝업 합산 '하루 최고' 매출 수치(기간 총매출 아님)",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": 50000000,
+    "sales_source_quote": "가장 높은 매출 효과를 끌어낸 것은 '러셀리저브', '조니워커' 등 위스키 브랜드 팝업이며, 팝업 상품으로만 하루 최고 5000만원의 추가 매출을 창출했다.",
+    "sales_source_url": "https://www.newswire.co.kr/newsRead.php?no=1010708",
+    "sales_source_date": "2025-05-08",
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": []
+    },
+    "conflict": false,
+    "alt_figures": [
+      {
+        "metric": "visitors_total",
+        "figure": 30000,
+        "scope_note": "2차수집 대안치: 원문 '총 3만명이 다녀갔다' — 도어투성수 단일 매장에서 2024-12-20~2025-01-12 운영한 1",
+        "source_url": "https://www.meconomynews.com/news/articleView.html?idxno=107457",
+        "source_date": "2025-01-20"
+      }
+    ]
+  },
+  "extraction_confidence": "medium",
+  "notes": "상설 플래그십 매장 내 기간한정 팝업 시리즈의 합산 성과. 매출은 '하루 최고' 추가 매출이며 개별 팝업별·기간 총액 아님. | 병합 레코드: ",
+  "_aggregate": true,
+  "tier": "market_claim",
+  "single_event": false,
+  "exclude_reason": "집계형(통합/합산)",
+  "verification": {
+    "sales": "num_only"
+  },
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

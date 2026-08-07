@@ -1,0 +1,165 @@
+{
+ "record_id": "RTPU2573",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:농심",
+  "space_id": "unresolved:SSG_셀렉티드_페스타_미지엄_부스",
+  "client_party_id": "unresolved:주식회사_농심",
+  "brand_key": "농심",
+  "space_key": "SSG_셀렉티드페스타"
+ },
+ "intervention": {
+  "concept": "케데헌(K-Pop Demon Hunters) IP를 활용한 농심 콜라보 부스로, 공연 전 백스테이지 대기실에 몰래 들어가는 콘셉트. 헌트릭스·사자보이즈 캐릭터 포토존과 신라면 툼바·새우깡 시식 경험을 제공하여 브랜드 인지도를 강화한다.",
+  "brand_name": "농심 X 케데헌",
+  "experience_elements": [
+   "케데헌 무기 포토존(포크/국자)",
+   "사자보이즈 등신대 포토존",
+   "라면 후루룩 포토존",
+   "시식존(새우깡·면 트레이 제공)",
+   "중앙 원형 VMD존 제품 디스플레이",
+   "카드 뒤집기 게임",
+   "스탭복 빨리 갈아입기 게임",
+   "마이크드롭 게임",
+   "신라면 골라 쏘기 과녁 게임"
+  ],
+  "promotions": [
+   "농심 SNS 팔로우 시 입장",
+   "해시태그(#농심케데헌 #농심신라면) SNS 인증샷 게재 시 선착순 굿즈 증정",
+   "제품 시식 제공"
+  ],
+  "staging_tags": [
+   "백스테이지 콘셉트",
+   "케데헌 IP 콜라보",
+   "포토존",
+   "VMD 제품 진열",
+   "시식 체험"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": null,
+   "venue_name": "SSG 셀렉티드 페스타 미지엄 부스",
+   "venue_type": "페스타/전시 부스",
+   "foot_traffic_context": "SSG 셀렉티드 페스타 푸드 파트, 일 3천명/5일간 15,000명 방문 예상(SSG 예상치)"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-10-15",
+   "to": "2025-10-19",
+   "days": 5
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 51,000,000원(VAT 10% 별도). 소계(Sub Total 1~5) 46,445,000원 + 대행수수료(소계의 10%) 4,644,500원. 기획료 1,000,000 / 디자인 1,000,000 / 시공비 35,000,000 / 운영인건비 8,645,000 / 기타 진행비 800,000. 만단위 이하 절사."
+  },
+  "brand_requirements": [
+   "부스 크기 8000*6000",
+   "방염 처리 필요",
+   "농심+케데헌 로고 및 캐릭터 포스터 부착",
+   "케데헌 포토존 재활용 용도 제작"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "SSG 셀렉티드 페스타, 5일간 15,000명 방문 예상"
+  },
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  },
+  "derived": {
+   "duration": {
+    "days": 5,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 14.3,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 6,
+    "holiday_until": 122,
+    "holiday_block_in": 0,
+    "nat_event_gap": 16,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 1120000.0,
+    "pnl_pre_accounts": 1,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-09-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 45.9
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": 15000,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(SSG 예상치로 일 3천명/5일간 15,000명 방문 예상. 결과보고서 미제공으로 실측 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-10, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": 51.0,
+   "last_recognition_period": "2025-10"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "17tvA-GhRn_RSE33zFECs7d_RYoHn0qin",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/17tvA-GhRn_RSE33zFECs7d_RYoHn0qin/view",
+   "title": "임시 결과보고서 (2).txt"
+  },
+  {
+   "doc_id": "1DCiuuF8DJvNYQggGfaNMFTpf4Hj-tWWA",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1DCiuuF8DJvNYQggGfaNMFTpf4Hj-tWWA/view",
+   "title": "계약서 없음.txt"
+  },
+  {
+   "doc_id": "1WJhwfHdFMDmPx7hwH9fLmZXSWPlMZ6i6",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1WJhwfHdFMDmPx7hwH9fLmZXSWPlMZ6i6/view",
+   "title": "Sweetspot_SSG 페스타 운영제안서_0904.pdf"
+  },
+  {
+   "doc_id": "1fynPkKi5uEbHwP73n_OlAU1Y5HzucALD",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1fynPkKi5uEbHwP73n_OlAU1Y5HzucALD/view",
+   "title": "결과보고서 없음.txt"
+  },
+  {
+   "doc_id": "1ne0C5Yrxu2RTKeKB2UHuzR-BuysvHG5M",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ne0C5Yrxu2RTKeKB2UHuzR-BuysvHG5M/view",
+   "title": "SweetSpot_농심 SSG 페스타 부스운영 가견적서_0917.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: Sweetspot_SSG 페스타 운영제안서_0904.p, SweetSpot_농심 SSG 페스타 부스운영 가견적서. 미확실: 결과보고서 부재로 실제 방문자수·매출 데이터 없음; 정확한 개최 장소(도시/구/venue) 미상; 부스 면적(평) 미기재; client_party_id 확정 불가"
+ }
+}

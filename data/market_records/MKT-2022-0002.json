@@ -1,0 +1,88 @@
+{
+ "market_record_id": "MKT-2022-0002",
+ "event_name": "시몬스 그로서리 스토어 청담 (종료)",
+ "brand": "시몬스 침대",
+ "ip_or_collab": "버거앤프라이즈 등 로컬 F&B 협업",
+ "category": "other",
+ "intervention": {
+  "concept_description": "침대 브랜드의 식료품점 콘셉트 이색 팝업. 로컬 F&B·굿즈 판매, 전시·체험 결합",
+  "experience_elements": [
+   "그로서리 콘셉트 매장",
+   "버거·커피 등 F&B존",
+   "굿즈 판매",
+   "브랜드 전시"
+  ],
+  "promotions": [
+   "한정 굿즈 판매"
+  ],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "서울 강남구 청담동",
+  "venue_type": "street_standalone",
+  "neighborhood": "청담동",
+  "city": "서울",
+  "period_from": "2022-02-01",
+  "period_to": "2023-09-17",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 200000,
+  "visitors_period_days": null,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "시몬스 발표. '전신인 시몬스 하드웨어 스토어까지 포함한' 통합 누적 수치(2022.2~2023.9.17, 약 1년 7개월)",
+  "visitors_source_quote": "시몬스는 '시몬스 그로서리 스토어'의 전신인 '시몬스 하드웨어 스토어'까지 포함해 총 누적 방문객 수 20만명을 훌쩍 넘겼다. 매출은 약 11억원에 달했다.",
+  "visitors_source_url": "https://www.newsis.com/view/NISX20230918_0002453927",
+  "visitors_source_date": "2023-09-18",
+  "sales_krw": 1100000000,
+  "sales_source_quote": "매출은 약 11억원에 달했다.",
+  "sales_source_url": "https://www.newsis.com/view/NISX20230918_0002453927",
+  "sales_source_date": "2023-09-18",
+  "demand_signals": {
+   "waiting_time_reported": "오픈런 보도",
+   "sold_out": "굿즈 완판·F&B 조기 매진 보도",
+   "reservation_fill": null,
+   "signal_quotes": [
+    "오픈런이 이어졌고, 굿즈는 연일 완판됐다. 햄버거는 조기에 매진됐고, 해시태그는 4만건을 돌파했다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "20만 명·11억 원 모두 '하드웨어 스토어(전신) 포함' 통합 수치임에 주의. 1년 7개월 장기 운영 팝업. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "기간 594일 > 90일(장기·집계 의심)",
+ "verification": {
+  "visitors": "verified",
+  "sales": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

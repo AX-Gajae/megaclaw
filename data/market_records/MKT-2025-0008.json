@@ -1,0 +1,92 @@
+{
+ "market_record_id": "MKT-2025-0008",
+ "event_name": "쿠팡 '베이비&키즈쇼' 팝업스토어(2회차)",
+ "brand": "쿠팡×HDC아이파크몰",
+ "ip_or_collab": "팸퍼스·일동후디스·하리보·푸디버디·제이미케이·미니메리온 등 육아 브랜드",
+ "category": "other",
+ "intervention": {
+  "concept_description": "육아용품 쇼핑 팝업, 쿠팡 직수입 해외 브랜드 상품관, 브랜드별 부스 이벤트, 로켓배송 연계",
+  "experience_elements": [
+   "브랜드 부스 이벤트",
+   "키즈 공간"
+  ],
+  "promotions": [
+   "2만원 이상 구매 시 15만원 상당 기프트박스 선착순 증정",
+   "할인 혜택"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "아이파크몰 용산점",
+  "venue_type": "mall",
+  "neighborhood": "용산",
+  "city": "서울",
+  "period_from": "2025-02-14",
+  "period_to": "2025-02-16",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.67,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 9300,
+  "visitors_period_days": 3,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "쿠팡 공식 집계: '쿠팡은 이번 베이비&키즈쇼 팝업스토어의 방문객 수가 9300명 이상으로 집계됐다고 밝혔다. 이는 지난 해 진행된 첫 행사(5천 여명) 대비 약 2배 늘어난 숫자다'",
+  "visitors_source_quote": "쿠팡은 이번 베이비&키즈쇼 팝업스토어의 방문객 수가 9300명 이상으로 집계됐다고 밝혔다. 이는 지난 해 진행된 첫 행사(5천 여명) 대비 약 2배 늘어난 숫자다. 2만 원 이상 구매 시 선착순으로 증정한 15만 원 상당의 기프트 박스도 모두 소진됐다.",
+  "visitors_source_url": "https://tnnews.co.kr/archives/223934",
+  "visitors_source_date": "2025-02-18",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": "15만원 상당 기프트박스 전량 소진",
+   "reservation_fill": null,
+   "signal_quotes": [
+    "2만 원 이상 구매 시 선착순으로 증정한 15만 원 상당의 기프트 박스도 모두 소진됐다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "E",
+    "C"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "기사 헤드라인 기준 '3일 간 9000여 명 방문'. 정확한 개시일 미보도(기사일 2/18 직전 3일로 추정). | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

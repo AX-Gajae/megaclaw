@@ -1,0 +1,88 @@
+{
+  "record_id": "RCSN2415",
+  "schema_version": "0.1",
+  "entities": {
+    "brand_id": "unresolved:디즈니픽사_인사이드아웃2",
+    "space_id": "unresolved:미상",
+    "client_party_id": null
+  },
+  "intervention": {
+    "concept": "디즈니픽사 인사이드아웃2 IP를 활용한 팝업스토어(위탁운영). 세부 컨셉은 원문 부재로 확인 불가.",
+    "brand_name": "디즈니픽사 인사이드아웃2",
+    "experience_elements": [],
+    "promotions": [],
+    "staging_tags": []
+  },
+  "conditions": {
+    "location": {
+      "city": null,
+      "district": null,
+      "venue_name": null,
+      "venue_type": null,
+      "foot_traffic_context": null
+    },
+    "area_pyeong": null,
+    "period": {
+      "from": "",
+      "to": "",
+      "days": null
+    },
+    "season": null,
+    "fee_structure": {
+      "type": "unknown",
+      "detail": ""
+    },
+    "brand_requirements": []
+  },
+  "outcome": {
+    "daily": [],
+    "totals": {
+      "visitors": null,
+      "sales_krw": null,
+      "rev_mm_recognized": -78.6
+    },
+    "counting_method": "unknown",
+    "counting_basis": null,
+    "plan_visitors_expected": null,
+    "retention": null,
+    "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조"
+  },
+  "docs": [
+    {
+      "doc_id": "1-IKRuDOu3TPi1Jtk0TK1ahcOOctLEZ_K",
+      "kind": "계약서",
+      "uri": "https://drive.google.com/file/d/1-IKRuDOu3TPi1Jtk0TK1ahcOOctLEZ_K/view",
+      "title": "① 자주MD 매장 판매 위수탁 거래계약서(더현대서울_스위트스팟).pdf"
+    },
+    {
+      "doc_id": "1Y6v4AuWESSIZEejWxciIrv1pf77B65Ft",
+      "kind": "정산",
+      "uri": "https://drive.google.com/file/d/1Y6v4AuWESSIZEejWxciIrv1pf77B65Ft/view",
+      "title": "더현서5F_디즈니팝업_견적서수정_0517.xlsx"
+    },
+    {
+      "doc_id": "1a-yMnMmoo2py6UznLAY0sLtJEg8JolaC",
+      "kind": "계약서",
+      "uri": "https://drive.google.com/file/d/1a-yMnMmoo2py6UznLAY0sLtJEg8JolaC/view",
+      "title": "③ 별첨 2. 관리비 비용 분담표(더현대서울_스위트스팟).pdf"
+    },
+    {
+      "doc_id": "1pNrvl1YZxKpAIDLgmiohr0YbeHaun1ES",
+      "kind": "계약서",
+      "uri": "https://drive.google.com/file/d/1pNrvl1YZxKpAIDLgmiohr0YbeHaun1ES/view",
+      "title": "2-2.시설 및 집기목록(무상임대차계약서 포함)(더현대서울_스위트스팟).pdf"
+    },
+    {
+      "doc_id": "1wwJ7u8zbBx4zbqVUl4Dqq0cTMJizqxeI",
+      "kind": "정산",
+      "uri": "https://drive.google.com/file/d/1wwJ7u8zbBx4zbqVUl4Dqq0cTMJizqxeI/view",
+      "title": "더현서5F_디즈니팝업_견적서수정_0517(pdf).pdf"
+    }
+  ],
+  "provenance": {
+    "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+    "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+    "extracted_at": "2026-07-23",
+    "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체 부재; 입지/면적/기간/수수료 정보 없음; 체험요소·프로모션·연출태그 없음; 방문자·매출 실측 없음; client_name·venue·category 미상"
+  }
+}

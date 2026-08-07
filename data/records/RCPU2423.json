@@ -1,0 +1,215 @@
+{
+ "record_id": "RCPU2423",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:무직백수_계백순",
+  "space_id": "unresolved:더현대서울_B2",
+  "client_party_id": "unresolved:주식회사_와이랩",
+  "brand_key": "무직백수계백순",
+  "space_key": "더현대서울"
+ },
+ "intervention": {
+  "concept": "웹툰 <무직백수 계백순> IP 기반 팝업스토어. 굿즈 판매와 포토존·프로모션 체험을 결합한 캐릭터 팝업으로 더현대 서울 B2에서 운영.",
+  "brand_name": "무직백수 계백순",
+  "experience_elements": [
+   "인생네컷/포토카드 인쇄기계",
+   "의류 커스텀 기계",
+   "포토존(등신대, 그래픽)",
+   "FRP 조형물",
+   "룰렛 프로모션",
+   "인형탈 캐릭터",
+   "가챠(캡슐) 기계"
+  ],
+  "promotions": [
+   "룰렛",
+   "인형뽑기/가챠 캡슐캔뱃지",
+   "비매품 굿즈(엽서·스티커) 증정"
+  ],
+  "staging_tags": [
+   "카운터 가벽",
+   "등신대",
+   "매대배너",
+   "바닥 그래픽",
+   "벽면 선반 집기",
+   "커튼 연출"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "영등포구",
+   "venue_name": "더현대 서울",
+   "venue_type": "백화점 팝업 공간(B2)",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-10-17",
+   "to": "2024-10-30",
+   "days": 14
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "견적서 총계 149,770,000원(VAT 별도). 기획료 10,000,000 / 제작물 63,000,000 / 세팅·철수 6,300,000 / 팝업 운영 인건비 45,478,000 / 물류·판매관리시스템 12,000,000, Sub Total 136,778,000, 대행수수료 10,000,000, 예비비(약3%) 3,000,000. 계약상 갑(와이랩)이 을(스위트스팟)에게 운영비 50%를 2024-09-30까지 선지급, 잔여 전액 2024-10-31까지 지급. VMD·집기·인건비·상품제작대금은 갑 부담. 판매 LOSS는 총매출 3% 초과 시 을 책임(제조원가=판매가 50% 기준 공제), 3% 이하는 갑 부담."
+  },
+  "brand_requirements": [
+   "갑에게 사전보고 및 허가",
+   "VMD존·설치물 제작 및 설치",
+   "현장 인력 운용 및 제품 판매",
+   "협의된 가격으로만 판매",
+   "판매 데이터·장부 비치 및 자료 공개",
+   "영업 종료 후 5일 이내 최종 재고 반품"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대 서울 B2"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 29,
+    "holiday_until": 100,
+    "holiday_block_in": 0,
+    "nat_event_gap": 28,
+    "nat_event": null,
+    "doc_lag_days": 44,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 11,
+    "comp_prior_at_venue": 80,
+    "comp_within_500m_open": 11,
+    "comp_within_1000m_open": 11,
+    "matched_address": "서울 영등포구 여의대로 108"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 7477476.0,
+    "pnl_pre_accounts": 10,
+    "pnl_pre_months": 3,
+    "pnl_pre_first": "2024-07-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 165.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 문서가 제공되지 않아 방문·매출 실측 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-10, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": 149.77,
+   "last_recognition_period": "2024-10"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "11dYf5Ck9GrCF_g7vrEoE08lFdXNluckF",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/11dYf5Ck9GrCF_g7vrEoE08lFdXNluckF/view",
+   "title": "Ylab(무직백수계백순)팝업스토어_대행견적서.xlsx"
+  },
+  {
+   "doc_id": "14Ldl15s4fivAhAC5mWiDapwrazyDTzdR",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14Ldl15s4fivAhAC5mWiDapwrazyDTzdR/view",
+   "title": "★내부자료_계백순 굿즈 제안_240903.xlsx"
+  },
+  {
+   "doc_id": "15zbvSYSZuPwwTpAbgmFbEVROYXMbdEsH",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/15zbvSYSZuPwwTpAbgmFbEVROYXMbdEsH/view",
+   "title": "Ylab(무직백수계백순)팝업스토어_견적서초안_0605.pdf"
+  },
+  {
+   "doc_id": "1GNHQxxeOE1uemKeQSAdeWgb8qSZFnhlF",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1GNHQxxeOE1uemKeQSAdeWgb8qSZFnhlF/view",
+   "title": "[무직백수 계백순] 팝업 스토어 기획안(0923).pdf"
+  },
+  {
+   "doc_id": "1IOnuoXQ2FAab75CArfo8vX7WntnOBlaQ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1IOnuoXQ2FAab75CArfo8vX7WntnOBlaQ/view",
+   "title": "무직백수계백순_팬시_상품 공급계약_1008.docx"
+  },
+  {
+   "doc_id": "1KXtHnajKvjj5qCCcI922byt4qV9tGX0L",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1KXtHnajKvjj5qCCcI922byt4qV9tGX0L/view",
+   "title": "계백순_더현서_위탁운영 계약서초안_스위트스팟_0906.doc"
+  },
+  {
+   "doc_id": "1VeUhh5DterT87-B7KBAUgmferRwZcdB7",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1VeUhh5DterT87-B7KBAUgmferRwZcdB7/view",
+   "title": "Ylab(무직백수계백순)팝업스토어_대행견적서_0828.pdf"
+  },
+  {
+   "doc_id": "1awTTkfVPrkaIYIt9DWUlpRVgmevEXmYl",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1awTTkfVPrkaIYIt9DWUlpRVgmevEXmYl/view",
+   "title": "계백순_더현서_위탁운영 계약서초안_스위트스팟_240703.doc"
+  },
+  {
+   "doc_id": "1cbDYIRLelgC-YofALH89lkTGwSy9gX9k",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1cbDYIRLelgC-YofALH89lkTGwSy9gX9k/view",
+   "title": "Ylab(무직백수계백순)팝업스토어_대행견적서_0828.xlsx"
+  },
+  {
+   "doc_id": "1dFcBCcjXRCnwUzIeoEhLWvJKw98OWQqE",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1dFcBCcjXRCnwUzIeoEhLWvJKw98OWQqE/view",
+   "title": "★내부자료_쿠쿠 굿즈_제작단가_0716.xlsx"
+  },
+  {
+   "doc_id": "1fGSen8vzu1T_Js9gagYNpsRdnkr0lvRn",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1fGSen8vzu1T_Js9gagYNpsRdnkr0lvRn/view",
+   "title": "계백순_더현서_위탁운영 계약서_스위트스팟_1015.pdf"
+  },
+  {
+   "doc_id": "1s-1aHbOgjKct2qxhgzJ2jmFXBxQYpCkM",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1s-1aHbOgjKct2qxhgzJ2jmFXBxQYpCkM/view",
+   "title": "[무직백수 계백순] 팝업 스토어 기획안(0923).pdf"
+  },
+  {
+   "doc_id": "1yHp8ccz_MaryxH7PSYln0HqRzyQrkRro",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1yHp8ccz_MaryxH7PSYln0HqRzyQrkRro/view",
+   "title": "무직백수계백순_팬시_상품 공급계약_1008.docx"
+  },
+  {
+   "doc_id": "1zqiX2h0BuUlaV-qrRltwByKLoUJUEJJf",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1zqiX2h0BuUlaV-qrRltwByKLoUJUEJJf/view",
+   "title": "Ylab(무직백수계백순)팝업스토어_견적서초안_0605 (1).pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 5건: [무직백수 계백순] 팝업 스토어 기획안(0923).pd, ★내부자료_계백순 굿즈 제안_240903.xlsx, 계백순_더현서_위탁운영 계약서_스위트스팟_1015.pd, [무직백수 계백순] 팝업 스토어 기획안(0923).pd, Ylab(무직백수계백순)팝업스토어_견적서초안_0605 . 미확실: 결과보고서 부재로 outcome(방문자·매출) 전부 없음; 코난팝업 관련 원문 없음(프로젝트명에만 존재); 기획서 본문이 비어 있어 concept·체험요소는 견적서/굿즈리스트에서 추론; 면적(평) 정보 없음; 견적서 기간(10/10~10/23)과 계약/메타 기간(10/17~10/30) 불일치"
+ }
+}

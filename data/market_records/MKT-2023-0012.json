@@ -1,0 +1,97 @@
+{
+ "market_record_id": "MKT-2023-0012",
+ "event_name": "2023 롯데타운 명동 페스티벌(1회차)",
+ "brand": "롯데백화점×서울시×중구청",
+ "ip_or_collab": "롯데그룹 계열사·글로벌 제휴처",
+ "category": "other",
+ "intervention": {
+  "concept_description": "내외국인 관광객 유입·명동 상권 활성화 목적 최초 기획 축제, 벌룬 퍼레이드·K-디저트·굿즈샵 팝업 운영",
+  "experience_elements": [
+   "벌룬 퍼레이드",
+   "K-디저트 팝업",
+   "굿즈샵 팝업",
+   "포토존"
+  ],
+  "promotions": [
+   "쇼핑 바우처 제공"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "롯데백화점 본점 및 명동 일대",
+  "venue_type": "department_store",
+  "neighborhood": "명동",
+  "city": "서울",
+  "period_from": "2023-04-28",
+  "period_to": "2023-05-07",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  },
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 400000,
+  "visitors_period_days": 10,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "롯데백화점 추산: '지난해 총 10일 간 진행된 행사에 롯데백화점 추산 총 40만명의 인원이 방문했다'",
+  "visitors_source_quote": "지난해 총 10일 간 진행된 행사에 롯데백화점 추산 총 40만명의 인원이 방문했다. 오프닝 세리머니의 ‘벌룬 퍼레이드’ 동시 관람 인원은 약 6000명에 육박했다.",
+  "visitors_source_url": "https://ceoscoredaily.com/page/view/2024042414583505214",
+  "visitors_source_date": "2024-04-24",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "행사 기간 중 롯데백화점 본점 외국인 매출은 전년 대비 약 800% 증가했다. 행사전인 1~3월 일평균 매출과 비교해도 약 30% 증가하는 등 집객을 통한 상권 활성화에 기여했다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "E"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "정확한 개최 일자는 2023년 4~5월 10일간으로 추정(기사 미명시). 2023~2025 누적 100만명(시리즈 레코드 MKT-2023-2001) 중 2023년 회차 수치. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

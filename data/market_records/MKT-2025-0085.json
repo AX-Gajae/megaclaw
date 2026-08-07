@@ -1,0 +1,68 @@
+{
+  "market_record_id": "MKT-2025-0085",
+  "event_name": "하겐다즈 '스틱바 팝업스토어' 성수 (럭셔리 특급 열차)",
+  "brand": "하겐다즈",
+  "ip_or_collab": "스틱바 단독 팝업(2016년 이후 9년 만), 글로벌 캠페인 '달콤한 럭셔리' 오프라인 확장",
+  "category": "fnb",
+  "intervention": {
+    "concept_description": "유럽 오리엔트 특급 열차 모티브의 몰입형 팝업. 티켓 발급→미션 4개→스탬프 완성 시 스틱바 무료 제공",
+    "experience_elements": [
+      "기차역 플랫폼·3D 철제 기차 포토존",
+      "스틱바 갤러리(5종 전시+AI 영상)",
+      "2층 '스틱 Bar' 라운지(스틱바 무료 시식)"
+    ],
+    "promotions": [
+      "미션 완료 시 하겐다즈 스틱바 1개 무료 제공"
+    ],
+    "is_free_entry": true,
+    "reservation_required": false
+  },
+  "conditions": {
+    "venue": "서울 성수동 연무장길(팝업 공간)",
+    "venue_type": "street_standalone",
+    "neighborhood": "성수동",
+    "city": "서울",
+    "period_from": "2025-09-04",
+    "period_to": null,
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "media_estimate",
+    "counting_basis_note": "컨슈머타임스 르포: 오픈 첫 주말(9/7~8) 이틀 방문자 1000여 명(집계 주체 미명시). 총계 미공개 → visitors_total null. 종료일 미확인",
+    "visitors_source_quote": "9년 만의 단독 팝업 소식에 소비자들의 반응도 후끈하다. 오픈 후 첫 주말(9월 7~8일) 이틀 간 방문자 수가 1000여명을 넘어섰고, 현장 웨이팅도 오전 일찍 마감될 정도다.",
+    "visitors_source_url": "https://www.cstimes.com/news/articleView.html?idxno=666098",
+    "visitors_source_date": "2025-09-09",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "현장 웨이팅 오전 일찍 마감",
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "현장 웨이팅도 오전 일찍 마감될 정도다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "첫 주말 부분 수치만 존재하는 약한 레코드(수요 신호 중심) | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": false,
+  "exclude_reason": "기간 미상",
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

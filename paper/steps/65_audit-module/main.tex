@@ -1,0 +1,138 @@
+\documentclass[10pt]{article}
+\usepackage{icmlko}
+
+\icmlmeta{IP 파운데이션 월드모델}{65}{판정하는 코드에 규약을 심었다}{규칙은 사람이 어기고 구조는 안 어긴다 --- 노트 64의 처방을 모듈로 만든다}
+
+\begin{document}
+
+\twocolumn[
+\icmlheader
+
+\begin{abstract}
+노트 64는 같은 종류의 오진을 셋 모으고 처방을 ``진단은 본 코드의 함수를 불러
+쓴다''는 \emph{규칙}으로 적었다. 규칙은 급할 때 어긴다 --- 세 번 어긴 것이
+바로 그 증거다. 구조로 옮겼다. \texttt{state/audit.py}에 판정에 필요한 것을
+모았고, 핵심 설계는 하나다. \textbf{설정을 함수로 표현한다.} 배선 변경 · 축
+끄기 · 대응 깨기를 전부 \texttt{(도메인, 축이름) $\to$ (도메인, 축이름)} 함수로
+두면, 짝지은 붓스트랩이 \textbf{복원추출을 먼저 하고 설정을 뒤에 적용}할 수
+있다. 노트 54의 버그 --- 복원추출 뒤에 고유 축을 붙여 레코드 대응이 깨지고
+구간 부호가 뒤집힌 것 --- 이 이 구조에서는 \emph{만들 방법이 없다}. 레코드
+색인도 여섯 디렉터리를 한꺼번에 훑게 해 노트 63의 미매칭 문제를 없앴다.
+자기 점검을 붙였다 --- 이미 꺼져 있는 축을 끄면 $\Delta$가 정확히 0이어야 한다.
+\textbf{0.0000이 나온다.} 나머지 둘도 앞선 노트의 값을 재현한다(팝업 매장축
+$-$0.0077 대 노트 52의 $-$0.0074, 웹툰 대응 깨기 $-$0.0341 대 노트 53의
+$-$0.0433). 앞으로 모든 판정이 이 모듈을 거친다.
+\end{abstract}
+]
+
+\section{규칙에서 구조로}
+
+노트 64의 처방은 규칙이었다. 그런데 그 노트가 모은 세 사례가 전부 ``급할 때
+규약을 안 지킨'' 것이므로, 규칙을 하나 더 얹는 것은 같은 실패를 반복하는 길이다.
+
+\begin{quote}\fontsize{9.5}{11.5}\selectfont
+\textbf{설정을 함수로 표현한다.} \texttt{(도메인, 축이름) $\to$ (도메인, 축이름)}
+꼴로 두면 짝지은 붓스트랩이 복원추출을 먼저 하고 설정을 뒤에 적용한다.
+순서를 틀릴 방법이 없다.
+\end{quote}
+
+\begin{table}[t]
+\centering\tsize
+\caption{모듈이 담은 것.}
+\begin{tabular}{ll}
+\toprule
+\texttt{domains()} & 정본 도메인 $+$ 축 이름 \\
+\texttt{rho()} & 정본 판정치(노트 43) \\
+\texttt{records()} & 여섯 디렉터리 레코드 색인 \\
+\texttt{paired()} & 짝지은 붓스트랩 구간 \\
+\texttt{cfg\_*()} & 설정 함수(끄기 · 섞기 · 배선) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\texttt{records()}는 여섯 디렉터리를 한꺼번에 훑는다 --- 노트 63이 한 곳만 봐서
+7건을 놓친 문제가 구조적으로 사라진다. 색인 1,316건이다.
+
+\section{자기 점검}
+
+도구를 새로 만들면 그 도구부터 검사해야 한다. 답을 아는 조건을 셋 넣었다.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/audit.pdf}
+\caption{자기 점검 셋. 첫 줄은 정확히 0이 나와야 한다.}
+\end{figure}
+
+\begin{table}[t]
+\centering\tsize
+\caption{자기 점검. 짝지은 붓스트랩 60회.}
+\begin{tabular}{lrl}
+\toprule
+조건 & $\Delta\rho$ & 기대 \\
+\midrule
+게임 매장축 끄기(이미 꺼짐) & \textbf{$+$0.0000} & 정확히 0 \\
+팝업 매장축 끄기 & $-$0.0077 & 노트 52: $-$0.0074 \\
+웹툰 매장축 대응 깨기 & $-$0.0341 & 노트 53: $-$0.0433 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+첫 줄이 요점이다. 게임 매장 노출도는 노트 43에서 꺼 두었으므로 다시 꺼도 아무
+일이 없어야 한다. 구간까지 $[+0.0000,\ +0.0000]$이다 --- 복제마다 두 설정이
+완전히 같은 값을 낸다는 뜻이고, \textbf{설정 적용이 복원추출 뒤에 일어난다는
+것의 직접 증거}다. 노트 54의 버그가 있었다면 여기서 0이 아닌 값이 나온다.
+
+나머지 둘은 앞선 노트의 값을 재현한다. 웹툰 쪽이 $-$0.0341 대 $-$0.0433으로
+조금 다른데, 노트 53은 씨앗 여럿의 평균이었고 여기서는 하나다.
+
+\claimx{판정 도구에 자기 점검을 붙이면 진단 코드의 결함을 즉시 잡을 수 있다.
+``이미 꺼진 축을 끄면 0''처럼 답을 아는 조건이 좋은 점검이다.}{점검 셋으로는
+모든 결함을 못 잡는다. 특히 축 이름 정규화 같은 것은 이 셋에 안 걸린다.}
+
+\section{앞으로}
+
+이 모듈이 없던 예순네 노트의 판정은 각자 다른 임시 코드로 냈다. 그중 셋이
+틀렸다는 것을 안다. 나머지는 모른다.
+
+\begin{quote}\fontsize{9.5}{11.5}\selectfont
+소급해서 전부 다시 재는 것은 하지 않는다 --- 계산이 크고, 틀린 것이 있다면
+어차피 다음 노트에서 재현이 안 될 것이다. 대신 \textbf{앞으로의 판정은 전부
+이 모듈을 거친다.}
+\end{quote}
+
+\section{한계}
+
+\begin{itemize}[leftmargin=1.1em,itemsep=0.15em]
+\item 자기 점검이 셋뿐이다. 답을 아는 조건을 더 만들어야 한다.
+\item 배선 변경 설정 함수를 아직 안 넣었다. 지금은 축 끄기와 대응 깨기만 있다.
+\item 앞선 노트의 판정을 소급 검증하지 않았다.
+\item 모듈을 쓰라고 강제하는 장치가 없다. 여전히 임시 코드를 짤 수 있다.
+\item 붓스트랩 회수를 60으로 낮춰 점검했다. 실제 판정은 200회 이상이어야 한다.
+\end{itemize}
+
+\section{다음}
+
+\begin{enumerate}[leftmargin=1.3em,itemsep=0.15em]
+\item 배선 변경 설정 함수를 모듈에 넣는다.
+\item 자기 점검을 늘린다 --- 축을 두 번 끄면 한 번 끈 것과 같아야 한다 같은 것.
+\item 웹툰 전체 수집 완료 후 전면 재측정(2,397/3,973 진행 중).
+\item 앞선 노트 중 재현이 필요한 판정을 골라 이 모듈로 다시 잰다.
+\end{enumerate}
+
+\vspace{0.6em}
+\hrule height 0.3pt
+\vspace{0.5em}
+{\footnotesize
+\textbf{참고문헌}\\[0.3em]
+Hoare, C. A. R. (1981). The emperor's old clothes. \emph{CACM}, 24(2), 75--83.\\[0.15em]
+Efron, B., Tibshirani, R. J. (1993). \emph{An Introduction to the Bootstrap}.
+Chapman \& Hall.\\[0.15em]
+Bouthillier, X. et al. (2021). Accounting for variance in machine learning
+benchmarks. \emph{MLSys}, 3, 747--769.\\[0.15em]
+Spearman, C. (1904). The proof and measurement of association between two things.
+\emph{American Journal of Psychology}, 15(1), 72--101.\\[0.15em]
+Ben-David, S. et al. (2010). A theory of learning from different domains.
+\emph{Machine Learning}, 79(1--2), 151--175.
+}
+
+\end{document}

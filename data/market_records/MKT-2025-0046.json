@@ -1,0 +1,89 @@
+{
+ "market_record_id": "MKT-2025-0046",
+ "event_name": "NS프로틴 'NS 하드코어 짐' 팝업스토어",
+ "brand": "NS프로틴(NS홈쇼핑)",
+ "ip_or_collab": null,
+ "category": "fnb",
+ "intervention": {
+  "concept_description": "헬스+브랜드 체험 결합 피트니스 콘셉트 팝업. 피트니스 체험존, 제품 시음, 이벤트",
+  "experience_elements": [
+   "피트니스 체험존",
+   "제품 시음",
+   "럭키드로우"
+  ],
+  "promotions": [
+   "2만명 돌파 기념 프로틴 100개 제공 이벤트"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "서울 성수동",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수",
+  "city": "서울",
+  "period_from": "2025-06-14",
+  "period_to": "2025-07-12",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 29,
+    "weekend_share": 0.31,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 20000,
+  "visitors_period_days": 29,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "NS프로틴 제공 '누적 방문자 수 2만 명을 넘김'",
+  "visitors_source_quote": "이번 팝업은 지난 6월 14일부터 7월 12일까지 서울 성수동에서 진행되었으며, 약 30일간 총 2만 명 이상의 방문객이 다녀가는 뜨거운 관심 속에서 종료됐다.",
+  "visitors_source_url": "https://www.fetv.co.kr/news/articleView.html?idxno=196725",
+  "visitors_source_date": "2025-07-15",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "성공 후 현대백화점 판교 팝업으로 확장(FETV 2025-08-20). | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

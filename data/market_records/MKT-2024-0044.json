@@ -1,0 +1,97 @@
+{
+ "market_record_id": "MKT-2024-0044",
+ "event_name": "하나은행 '성수 달달팩토리' 팝업스토어",
+ "brand": "하나은행(달달하나 통장)",
+ "ip_or_collab": "GS25 협업(도어투성수 연계), 모델 안유진",
+ "category": "other",
+ "intervention": {
+  "concept_description": "디저트 공장 콘셉트 급여통장 체험 팝업. 업무 체험 후 달달하나 통장으로 급여 수령 체험, GS25 협업 디저트 연계",
+  "experience_elements": [
+   "급여 체험",
+   "포토존",
+   "인생네컷"
+  ],
+  "promotions": [
+   "GS25 도어투성수 연계 협업 상품"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "엠엠성수(MM성수)",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수",
+  "city": "서울",
+  "period_from": "2024-07-05",
+  "period_to": "2024-07-14",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 2500,
+  "visitors_period_days": 4,
+  "counting_basis": "media_estimate",
+  "counting_basis_note": "뉴스웍스 르포 '궂은 날씨에도 지난 5일부터 나흘간 운영된 달달팩토리 팝업스토어를 약 2500명의 방문객이 찾았다'(7/8 기준 나흘간, 이후 운영 14일까지 지속). 하나은행 기획 예상 총 1만 명, 최대 1.5만 예상(관계자)",
+  "visitors_source_quote": "궂은 날씨에도 지난 5일부터 나흘간 운영된 달달팩토리 팝업스토어를 약 2500명의 방문객이 찾았다. 일평균 약 1000명의 방문객이 방문하고 있다. 이 중 70%가량이 2030세대다.",
+  "visitors_source_url": "https://www.newsworks.co.kr/news/articleView.html?idxno=758544",
+  "visitors_source_date": "2024-07-08",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "긴 대기줄, 오픈런 대기",
+   "sold_out": null,
+   "reservation_fill": "사전예약 접수 하루 만에 전체 마감",
+   "signal_quotes": [
+    "성수 달달팩토리는 지난달 28일 접수를 시작한 지 단 하루 만에 사전예약이 전체 마감된 데다 평일 기준 약 1000명의 인원이 방문했다.(더리브스 2024-07-15)",
+    "문을 연 첫 날 팝업스토어를 찾은 인원만 900명, 토요일인 지난 6일에는 1200명이 방문했다. 시간당 100명 가량의 손님이 달달팩토리를 찾는 셈이다.(파이낸셜뉴스 2024-07-07)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "E"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": true,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "나흘간 2500명(뉴스웍스)+첫날 900·둘째날 1200(fnnews)+사전예약 하루 마감. 하나은행 예상 총방문 1만~1.5만은 추정치로 visitors에 미반영. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

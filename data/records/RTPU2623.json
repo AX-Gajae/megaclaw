@@ -1,0 +1,150 @@
+{
+ "record_id": "RTPU2623",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:즛토마요_ZUTOMAYO",
+  "space_id": "unresolved:성수_아차산로5길24-14_동원아이피",
+  "client_party_id": "unresolved:벡터컴",
+  "brand_key": "즛토마요",
+  "space_key": "성수_동원아이피"
+ },
+ "intervention": {
+  "concept": "ZUTOMAYO(즛토마요) 코리아 팝업스토어. 암전 무드에 초록색 LED/파라이트 조명 연출로 메인 패브릭아트 오브제와 캐릭터를 부각한 IP 굿즈형 팝업. 마네킹 연출·가챠머신·피팅룸·빔프로젝터 영상/음원 송출로 몰입형 공간을 구성.",
+  "brand_name": "ZUTOMAYO KOREA POP-UP STORE",
+  "experience_elements": [
+   "가챠머신 6대(렌탈)",
+   "여자마네킹 3·남자마네킹 2 연출",
+   "피팅룸 2개",
+   "빔프로젝터 천정설치 및 스피커 2대(영상/음원 송출)",
+   "아크릴 오브제 11개 벽면 거치",
+   "슈퍼매대집기 11개·전신거울 3개",
+   "캐릭터/사각 등신대 2종",
+   "현장 웨이팅 시스템/사전 예약 시스템",
+   "결제 시스템·기기"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "암전_무드조명",
+   "초록색_LED",
+   "ParLight_레일등",
+   "패브릭아트_메인오브제",
+   "단상_검정포멕스마감",
+   "천정와이어_행잉"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울특별시",
+   "district": "성동구",
+   "venue_name": "동원아이피",
+   "venue_type": "팝업 전용공간(StageX 신규 제휴공간/임대공간)",
+   "foot_traffic_context": "성수 지역"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2026-03-12",
+   "to": "2026-03-29",
+   "days": 18
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "총 계약금액 43,400,000원(부가세 별도). 견적서에 따름. 선금 10% 4,340,000원(2026-04-10 지급), 잔금 90% 39,060,000원(2026-04-30 지급). 입금계좌 KB국민은행 378801-01-088226 (주)스위트스팟. 세팅 3/11 포함, 운영/철수 3/12~29.제 사고·안전관리 실행사 부담. 추가비용은 서면합의 후 잔금일 함께 지급."
+  },
+  "brand_requirements": [
+   "제작물/렌탈물자 사용 전 의뢰사 감수 필수, 수정요청 반영",
+   "의뢰사 지식재산권 유사 디자인/상표/심벌 사용·등록 금지",
+   "비밀유지의무",
+   "권리·의무 양도 금지",
+   "안전보건관리 준수"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 18,
+    "weekend_share": 0.33,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 10,
+    "holiday_until": 72,
+    "holiday_block_in": 0,
+    "nat_event_gap": 83,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 43.4
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서/일일 방문표 미확보. 팝가 spot 미연결로 방문객·POS 매출 데이터 없음(순수 제작·시공 성격). 아마란스 P&L상 서비스매출 43,400,000원은 계약금액(2026-04 인식)이며 소비자 POS 매출이 아님. 최종 약 970만원 순손실(시공 외주비 33M) — 재무 지표로 outcome 아님.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식액 43.4 ≈ 계약총액 43.4 (±10%)",
+   "contract_total_mm": 43.4,
+   "last_recognition_period": "2026-04"
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "138HalzjSZkokCGHnsjC3SocF8-U-ZZi2",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/138HalzjSZkokCGHnsjC3SocF8-U-ZZi2/view",
+   "title": "결과보고서 없음(정보는 기입).txt"
+  },
+  {
+   "doc_id": "1Mjsy13cIzEgTBIIcwmlZ6Gh6JmkQn24a",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Mjsy13cIzEgTBIIcwmlZ6Gh6JmkQn24a/view",
+   "title": "(Sweetspot) ZUTOMAYO POP UP_ 견적서(최종)_260330.pdf"
+  },
+  {
+   "doc_id": "1QjXx1vsU_dAhkP85hZuiWrWA9A5GnkRx",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1QjXx1vsU_dAhkP85hZuiWrWA9A5GnkRx/view",
+   "title": "[스위트스팟] 벡터컴_즛토마요팝업_시공계약서_0330(최종).pdf"
+  },
+  {
+   "doc_id": "1mf4VXA6CpwaPp6Nj6cF6V65KRyk242iW",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1mf4VXA6CpwaPp6Nj6cF6V65KRyk242iW/view",
+   "title": "[스위트스팟] 즛토마요 팝업_최종시안_제안서.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: [스위트스팟] 벡터컴_즛토마요팝업_시공계약서_0330(, [스위트스팟] 즛토마요 팝업_최종시안_제안서.pdf, (Sweetspot) ZUTOMAYO POP UP_ 견. 미확실: 견적서 원문 텍스트 깨짐(항목별 단가·소계 판독 불가); 실제 방문객 수·현장 POS 매출 데이터 없음; 공간 면적(평) 미기재; 즛토마요 IP 국내 라이선시/최종 발주 브랜드 신원(계약상 의뢰사=벡터컴); 시공 외주 벤더명 불명확(계약상 실행사=스위트스팟); 프로모션/이벤트 내용 문서 미기재"
+ }
+}

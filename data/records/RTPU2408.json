@@ -1,0 +1,129 @@
+{
+ "record_id": "RTPU2408",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:퓨어피크",
+  "space_id": "unresolved:미상",
+  "client_party_id": null,
+  "brand_key": "퓨어피크",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "퓨어피크 팝업스토어. 원문 문서가 제공되지 않아 컨셉 세부 내용을 확인할 수 없음.",
+  "brand_name": "퓨어피크",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-05-31",
+   "to": "2024-06-09",
+   "days": 10
+  },
+  "season": "초여름",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 25,
+    "holiday_until": 106,
+    "holiday_block_in": 0,
+    "nat_event_gap": 51,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": null,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1E0bl167Hh5L7eAGuNbRjaCC70EYTAyN5",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1E0bl167Hh5L7eAGuNbRjaCC70EYTAyN5/view",
+   "title": "결과보고서_내용없음.txt"
+  },
+  {
+   "doc_id": "1Wldc6VzLwHdM1PkPw9B0W9OaIewjHHOt",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Wldc6VzLwHdM1PkPw9B0W9OaIewjHHOt/view",
+   "title": "RTPU2408_퓨어피크 팝업스토어_계약서_0516.doc"
+  },
+  {
+   "doc_id": "1_HMAHFwqE1J-KuEACO3sDeuNii2ZqHl0",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1_HMAHFwqE1J-KuEACO3sDeuNii2ZqHl0/view",
+   "title": "견적서_내용없음.txt"
+  },
+  {
+   "doc_id": "1lnY8d25I8IMuRs-6KV2Nzx9mwcSb4R4t",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1lnY8d25I8IMuRs-6KV2Nzx9mwcSb4R4t/view",
+   "title": "RTPU2408_퓨어피크 팝업스토어_계약서_0516.doc"
+  },
+  {
+   "doc_id": "1uhOg0qLsZhrBcOC8UpjLGkn1qf1SXWKH",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1uhOg0qLsZhrBcOC8UpjLGkn1qf1SXWKH/view",
+   "title": "RTPU2408_퓨어피크 팝업스토어_제안서_0408.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서/기획서/견적서/결과보고서) 전체 미제공; client_name 미상; venue 및 입지 정보 미상; 면적 미상; 수수료 구조 미상; 컨셉/체험요소/프로모션 미상; 방문객 및 매출 실측치 미상; 예상 방문객 미상"
+ }
+}

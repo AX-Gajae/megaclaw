@@ -1,0 +1,136 @@
+{
+ "record_id": "RTPU2581",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:웨이든",
+  "space_id": "unresolved:미상",
+  "client_party_id": "unresolved:웨이든_황은비",
+  "brand_key": "웨이든",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "웨이든 앰버서더 팬사인회 및 콜라보 제품 판매를 위한 팝업 설치 시공. 입구 OOH와 벽돌/브라운관TV/캠코더 오브제로 브랜딩하고, 디스플레이존·팬사인회존·이벤트존을 구성했다.",
+  "brand_name": "웨이든",
+  "experience_elements": [
+   "앰버서더 팬사인회(아트월/테이블/의자/사인지/펜)",
+   "콜라보 제품 디스플레이 및 판매",
+   "방명록(백월/현수막/펜)",
+   "룰렛 이벤트",
+   "선착순 굿즈 증정"
+  ],
+  "promotions": [
+   "선착순 랜티큘러 키링 300개",
+   "쿠폰 제작/출력",
+   "QR 가격택",
+   "룰렛 이벤트"
+  ],
+  "staging_tags": [
+   "입구 전면 OOH",
+   "벽돌 오브제",
+   "브라운관TV 오브제",
+   "캠코더 오브제(영상루프)",
+   "아트월",
+   "마네킹 3set",
+   "VIP테이블/쇼파"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-11-07",
+   "to": "2025-11-08",
+   "days": 2
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "최종 합계 27,900,000원 (VAT 10% 별도, 만단위 이하 절사). 소계 26,851,600원 + 대행수수료(소계의 10%, 정가항목 제외) 2,219,000원 - 네고 1,409,000원. 기획료 2,000,000원, 디자인 2,000,000원, 카드결제수수료 2%(661,600원). 제작/구매/렌탈 15,430,000원, 인력 설치/철수 2,000,000원, 진행비 4,760,000원 포함. 분할조건 명시 없음."
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 2,
+    "weekend_share": 0.5,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 29,
+    "holiday_until": 99,
+    "holiday_block_in": 0,
+    "nat_event_gap": 6,
+    "nat_event": "수능",
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 2896159.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-10-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 27.9
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 27.9 ≈ 계약총액 27.9",
+   "contract_total_mm": 27.9,
+   "last_recognition_period": "2025-11"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1PPSZ60ixCJbpp4SlZJyoZVxoTD22apC-",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1PPSZ60ixCJbpp4SlZJyoZVxoTD22apC-/view",
+   "title": "결과보고서_없음.txt"
+  },
+  {
+   "doc_id": "1xg1r6hsAw4MEHsxLaH21w_pMl6tVg274",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1xg1r6hsAw4MEHsxLaH21w_pMl6tVg274/view",
+   "title": "(SWEETSPOT)웨이든_팬사인회_제작시공_견적서_1110(최종).pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 1건: (SWEETSPOT)웨이든_팬사인회_. 미확실: 결과보고서 부재로 방문자수·POS 매출 실측 없음; 입지(도시/구/장소/장소유형) 정보 문서에 없음; 면적(평) 정보 없음; 클라이언트 회사명 미상(담당자 황은비 대리만 확인); 기획서/제안서 부재로 예상 방문(plan_visitors) 없음"
+ }
+}

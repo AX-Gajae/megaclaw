@@ -1,0 +1,170 @@
+\documentclass[10pt]{article}
+\usepackage{icmlko}
+
+\icmlmeta{IP 파운데이션 월드모델}{61}{라벨을 빼자 절반이 돌아왔다}{신경망이 진 이유가 구조도 용량도 아니었다 --- 표현을 라벨로 학습한 것이 격차의 61퍼센트다}
+
+\begin{document}
+
+\twocolumn[
+\icmlheader
+
+\begin{abstract}
+노트 60은 공유 인코더가 현행 선형 파이프라인에 크게 진다고 보고하고
+($+$0.1702 대 $+$0.3506) 반증 조건을 적었다 --- ``잠재 차원을 둘로 묶은 것이
+불리했을 수 있다.'' 검정했다. \textbf{무관하다.} 잠재를 2에서 16까지 늘려도
+$+$0.108에서 $+$0.119 사이로 평평하고, 층을 하나 더 쌓으면 오히려 나빠진다
+($+$0.170$\to+$0.111). 용량이 문제가 아니다. 그러면 무엇인가. 도메인별 주성분
+분석과 공유 인코더의 결정적 차이가 하나 남는다 --- \textbf{주성분은 라벨을 안
+쓰고 인코더는 쓴다.} 그리고 노트 38 · 40이 이미 그 법칙을 찾아 두었다: 자기
+라벨에 잘 맞출수록 남에게 못 옮겨진다. 표현 학습 층위에서 같은 일이 벌어진다면,
+인코더를 \emph{비지도}로 학습하면 회복돼야 한다. 오토인코더로 잠재를 만들고
+같은 프로크루스테스 정렬을 붙였다. \textbf{$+$0.2004에서 $+$0.3099로 올랐다.}
+격차 0.180을 셋으로 쪼개면 --- 정렬을 되돌려 받은 몫 0.030(17\%), \textbf{라벨을
+뺀 몫 0.110(61\%)}, 남은 표현 차이 0.041(23\%). 신경망이 진 주된 이유는
+\textbf{표현을 라벨로 학습한 것}이다. 프론티어 모델이 자기지도로 사전학습하는
+이유가 여섯 도메인 2,181건에서 정량으로 재현된다.
+\end{abstract}
+]
+
+\section{용량이 아니었다}
+
+노트 60의 반증 조건부터 처리했다.
+
+\begin{table}[t]
+\centering\tsize
+\caption{잠재 차원과 폭을 늘릴 때. 씨앗 둘, 세 층 인코더.}
+\begin{tabular}{rrrr}
+\toprule
+잠재 & 폭 & 평균 $\rho$ & 씨앗 SD \\
+\midrule
+2 & 32 & $+$0.1106 & 0.0114 \\
+4 & 32 & $+$0.1127 & 0.0133 \\
+8 & 64 & $+$0.1187 & 0.0115 \\
+16 & 64 & $+$0.1081 & 0.0327 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+평평하다. 그리고 세 층으로 깊게 한 이 표가 노트 60의 두 층($+$0.1702)보다
+전반적으로 나쁘다 --- 표본이 작아 깊이가 해롭다.
+
+\textbf{용량을 늘리는 방향은 막혀 있다.} 반증 조건이 발동하지 않았으므로
+노트 60의 결론은 그대로 서 있고, 원인을 다른 데서 찾아야 한다.
+
+\section{남은 차이는 라벨이었다}
+
+도메인별 주성분 분석과 공유 인코더의 차이를 하나씩 지웠는데 아직 안 지운 것이
+있었다.
+
+\begin{quote}\fontsize{9.5}{11.5}\selectfont
+\textbf{주성분은 라벨을 쓰지 않는다.} 분산 구조만 본다. 인코더는 회귀 손실로
+학습하므로 학습 도메인들의 라벨에 맞춘 표현을 만든다.
+\end{quote}
+
+노트 38과 40이 그 상황의 법칙을 이미 찾아 두었다 --- 도메인의 인자 공간이 자기
+라벨에 잘 맞을수록 대상으로서 좋아지고 \emph{출처로서 나빠진다}($r=-0.85$에서
+$-0.99$). 인코더는 학습 도메인들의 라벨에 특수화되므로, 그 법칙이 표현 학습
+층위에서 반복된다면 비지도로 바꾸면 회복돼야 한다.
+
+오토인코더로 잠재를 만들었다 --- 같은 입력 10차원, 같은 잠재 2차원, 재구성
+손실만. 그리고 노트 60과 같은 프로크루스테스 정렬을 붙였다.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/ladder.pdf}
+\caption{왼쪽 --- 한 단계씩 되돌릴 때. 오른쪽 --- 격차의 분해.}
+\end{figure}
+
+\begin{table}[t]
+\centering\tsize
+\caption{격차를 단계로 되돌린다.}
+\begin{tabular}{lr}
+\toprule
+구성 & 평균 $\rho$ \\
+\midrule
+지도 인코더 헤드 직접 & $+$0.1702 \\
+\quad $+$ 프로크루스테스 정렬 & $+$0.2004 \\
+\quad $+$ 라벨 제거(오토인코더) & \textbf{$+$0.3099} \\
+도메인별 PCA(현행) & $+$0.3506 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering\tsize
+\caption{격차 0.180의 분해.}
+\begin{tabular}{lrr}
+\toprule
+원인 & 몫 & 비율 \\
+\midrule
+\textbf{라벨로 표현을 학습한 것} & \textbf{0.110} & \textbf{61\%} \\
+남은 표현 차이(PCA 대 오토인코더) & 0.041 & 23\% \\
+정렬을 학습으로 대체한 것 & 0.030 & 17\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\claimx{신경망이 진 주된 이유는 구조도 용량도 정렬도 아니고 \textbf{표현을
+라벨로 학습한 것}이다. 라벨을 빼면 격차의 61\%가 회복된다. 노트 38 · 40의
+상충 법칙이 표현 학습 층위에서 반복된다.}{오토인코더 잠재가 여전히 PCA에
+0.041 뒤진다. 그 몫이 비선형 때문인지 최적화 때문인지 안 봤다. 선형
+오토인코더로 재면 갈린다.}
+
+\section{프론티어가 왜 그렇게 하는가}
+
+큰 모델들이 자기지도로 사전학습하고 라벨은 마지막에 얇은 헤드로만 쓴다.
+그 설계의 근거가 여기서 정량으로 나온다 --- \textbf{라벨로 표현을 빚으면 그
+라벨이 나온 분포에 표현이 묶인다.}
+
+이 프로젝트에서는 그것이 특히 아프다. 도메인이 여섯인데 각자 다른 시장이고,
+한 시장의 라벨에 맞춘 표현은 다른 시장에서 쓸모가 준다. 반대로 축의 분산
+구조는 시장을 건너 비슷하다 --- 노트 33이 ``전이 상관 $=$ 대상 자기 상관''을
+얻은 것도 결국 대상의 \emph{비지도} 구조가 전이를 정한다는 뜻이었다.
+
+\begin{quote}\fontsize{9.5}{11.5}\selectfont
+현행 파이프라인은 우연히 옳은 설계였다. 도메인별 주성분(비지도) $+$ 프로크루스테스
+정렬(닫힌 해) $+$ 출처 회귀(얇은 헤드)는 \textbf{자기지도 사전학습 뒤 선형
+프로빙}과 같은 구조다. 다만 사전학습이 학습이 아니라 계산이다.
+\end{quote}
+
+\section{한계}
+
+\begin{itemize}[leftmargin=1.1em,itemsep=0.15em]
+\item 오토인코더 잠재도 PCA에 0.041 뒤진다. 비선형이 이 자료에서 얻을 것이
+      없다는 뜻일 수 있고, 학습이 덜 됐다는 뜻일 수도 있다.
+\item 재구성 손실 하나만 썼다. 대조 학습이나 마스킹 복원 같은 다른 자기지도
+      목적은 안 봤다.
+\item 씨앗 셋으로 쟀다. 오토인코더 씨앗 SD가 0.0039로 작아 충분해 보이지만
+      짝지은 구간은 안 붙였다.
+\item ``상충 법칙이 표현 층위에서 반복된다''는 해석이지 직접 검정이 아니다.
+      인코더 학습에 쓴 도메인 수를 바꿔 가며 재면 검정된다.
+\item 여전히 현행 선형이 최선이다. 신경망 쪽에서 얻은 것은 설명이지 성능이 아니다.
+\end{itemize}
+
+\section{다음}
+
+\begin{enumerate}[leftmargin=1.3em,itemsep=0.15em]
+\item 선형 오토인코더로 재 남은 0.041이 비선형 탓인지 가른다.
+\item 마스킹 복원 --- 축 하나를 가리고 맞히게 하는 자기지도. 결측이 많은 이
+      자료에 맞는다.
+\item 인코더 학습 도메인 수를 바꿔 상충 법칙 해석을 직접 검정한다.
+\item 웹툰 전체 수집 완료 후 전면 재측정(1,621/3,973 진행 중).
+\end{enumerate}
+
+\vspace{0.6em}
+\hrule height 0.3pt
+\vspace{0.5em}
+{\footnotesize
+\textbf{참고문헌}\\[0.3em]
+Caruana, R. (1997). Multitask learning. \emph{Machine Learning}, 28(1), 41--75.\\[0.15em]
+Grinsztajn, L., Oyallon, E., Varoquaux, G. (2022). Why do tree-based models still
+outperform deep learning on typical tabular data? \emph{NeurIPS D\&B}.\\[0.15em]
+Chen, T. et al. (2020). A simple framework for contrastive learning of visual
+representations. \emph{ICML}, 1597--1607.\\[0.15em]
+Ben-David, S. et al. (2010). A theory of learning from different domains.
+\emph{Machine Learning}, 79(1--2), 151--175.\\[0.15em]
+Schönemann, P. H. (1966). A generalized solution of the orthogonal Procrustes
+problem. \emph{Psychometrika}, 31(1), 1--10.
+}
+
+\end{document}

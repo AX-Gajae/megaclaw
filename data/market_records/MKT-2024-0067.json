@@ -1,0 +1,92 @@
+{
+ "market_record_id": "MKT-2024-0067",
+ "event_name": "뮤지컬 '알라딘' 팝업스토어(더현대 서울 에픽서울)",
+ "brand": "클립서비스/신시컴퍼니",
+ "ip_or_collab": "뮤지컬 '알라딘' 한국 초연",
+ "category": "entertainment",
+ "intervention": {
+  "concept_description": "뮤지컬 알라딘 한국 초연 기념 팝업. 배니피트 램프·포토존, MD 판매(약 100평)",
+  "experience_elements": [
+   "포토존",
+   "MD 판매",
+   "전시"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "더현대 서울 5층 에픽서울",
+  "venue_type": "department_store",
+  "neighborhood": "여의도",
+  "city": "서울",
+  "period_from": "2024-10-01",
+  "period_to": "2024-10-13",
+  "area_pyeong": 100,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 13,
+    "weekend_share": 0.31,
+    "holiday_days": 3
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 15000,
+  "visitors_period_days": 13,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "주최사(클립서비스) 집계 인용. 원문: '지난 13일까지 2주간 약 1만5000명의 관람객과 만났다'",
+  "visitors_source_quote": "이번 팝업스토어는 지난 13일까지 2주간 약 1만5000명의 관람객과 만났다. ‘알라딘’ 팝업스토어는 안전 문제로 하루에 1000명으로 입장객을 제한했는데도 인파가 몰린 것이다.",
+  "visitors_source_url": "https://biz.heraldcorp.com/article/3494891",
+  "visitors_source_date": "2024-10-16",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "하루 입장객 1000명 제한에도 인파 집중",
+   "sold_out": null,
+   "reservation_fill": "네이버 사전 예약 전 회차 매진",
+   "signal_quotes": [
+    "팝업 첫날인 1일부터 반응이 뜨거웠다. 현재 네이버 사전 예약은 전 회차가 매진된 상태다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "사전예약 매진 인용: 한경 매거진 2024-10-02. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

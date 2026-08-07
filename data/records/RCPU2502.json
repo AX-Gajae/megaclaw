@@ -1,0 +1,955 @@
+{
+ "record_id": "RCPU2502",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:보노보노_BONOBONO",
+  "space_id": "unresolved:더현대서울_B1_대행사장",
+  "client_party_id": "unresolved:호텔롯데_롯데월드_부스럭",
+  "brand_key": "보노보노",
+  "space_key": "더현대서울"
+ },
+ "intervention": {
+  "concept": "보노보노 IP의 두번째 팝업스토어 '안녕 보노보노 EP2. 소원의 숲'. 상상 속 소원을 이뤄주는 숲을 테마로, 방문객이 간단한 게임을 통해 새해 소원을 빌고 목표를 설정하는 체험형 팝업. 새해(2025년 1월) 시즌에 맞춘 기획.",
+  "brand_name": "보노보노",
+  "experience_elements": [
+   "보노보노 포토존",
+   "만화책 포토존",
+   "소원나무(소원적기/포스트잇)",
+   "소원열매(운세뽑기)",
+   "랜덤뽑기(종이 1~7등)",
+   "보노보노 템플릿 4컷 포토부스",
+   "공기조형물",
+   "등신대",
+   "일본 직수입 굿즈/신년 신제품/라이센스 굿즈 MD존"
+  ],
+  "promotions": [
+   "BEST 소망 선정 상품 증정 이벤트",
+   "작가님 포토이벤트",
+   "인형탈 게릴라 이벤트(가위바위보, 인스탁스 촬영)",
+   "보노보노 래핑버스 & 게릴라 이벤트",
+   "바이럴 마케팅(사전 바이럴, 방문체험단)",
+   "인스타 파워페이지",
+   "언론 보도자료",
+   "숏폼 영상 제작"
+  ],
+  "staging_tags": [
+   "소원의 숲",
+   "숲속 그래픽",
+   "소원나무",
+   "만화책 그래픽",
+   "캐릭터 등신대",
+   "공기조형물",
+   "목가벽+시트지",
+   "조명형 벽장매대"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": 30000,
+   "area_sqm": 264.46,
+   "planned_operating_days": 14,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": null,
+   "experience_density": 3,
+   "goods_scale": 3,
+   "photo_zones": 3,
+   "collab_strength": 1,
+   "ip_awareness": 3,
+   "target_breadth": 3,
+   "entry_friction": 0,
+   "media_push": 4,
+   "season_fit": 4,
+   "venue_prominence": 3
+  },
+  "attr_meta": {
+   "evidence": "위탁계약서 제3조 '행사기간 2025.01.02(목)~01.15(수) (14일)', '면적 약 80평 규모'(=264.46㎡, 원문 평 단위). 캡슐링 견적서(콘콘 241219) '인쇄 종이 130x60 수량3000×건수10 단가40 → 1,200,000'=30,000장, 캡슐 1,000개·캡슐포장 1,000개. 마케팅 견적서(241205) 5천만원: 래핑버스 2주·블로그 기자단 30명·인스타 파워페이지 9채널·보도자료 5채널 → media_push 4. 본 운영 견적서(250131, 149M)는 문서목록에 없어 인력·운영시간·병목 수치 확보 불가. '일평균 3천명'은 블로그 방문자로 팝업 방문객 아님.",
+   "confidence": "medium",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "영등포구 여의도",
+   "venue_name": "더현대 서울",
+   "venue_type": "백화점 지하1층 대행사장",
+   "foot_traffic_context": "현대백화점 더현대 서울 B1 대행사장"
+  },
+  "area_pyeong": 80,
+  "period": {
+   "from": "2025-01-02",
+   "to": "2025-01-15",
+   "days": 14
+  },
+  "season": "겨울/새해",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "위탁계약서 총 계약금액 2억원(VAT별도): 기획·운영영역 1.5억+마케팅영역 5천만. 선급금 50%(1억, 계약체결 후 10영업일 이내 현금), 잔금 50%(1억, 계약업무완료 후 다음달 15일 현금). 이행보증금 총계약금액 10%(2천만). 별도 견적서(250131) 총계 149,000,000원(VAT별도), 대행수수료 10% 포함, 발주시 50%·종료후 잔금 50%. POS/카드수수료는 위탁자 부담, 로스율 3% 이하 위탁자 부담·초과분 수탁자 부담. 위약벌 계약금액 30%."
+  },
+  "brand_requirements": [
+   "임대인 카드 단말기 및 포스 사용, 매일 행사 종료 후 판매 데이터 위탁자 제공",
+   "보수·대응 인원 상시 상주",
+   "이벤트 진행 인력은 관련 경력자로 선정",
+   "입고 물량 검수 후 거래명세서 수취 서명",
+   "종료 당일 내 부스·전시품 철거 및 원상복구",
+   "팝업스토어 기획 운영 경력 파트너사 및 종합광고대행사 자격"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대 서울 B1 대행사장"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 3.7,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 106,
+    "holiday_until": 23,
+    "holiday_block_in": 0,
+    "nat_event_gap": 49,
+    "nat_event": null,
+    "doc_lag_days": 7,
+    "doc_dates_found": 48
+   },
+   "competition": {
+    "comp_same_addr_open": 8,
+    "comp_prior_at_venue": 164,
+    "comp_within_500m_open": 8,
+    "comp_within_1000m_open": 8,
+    "matched_address": "서울 영등포구 여의대로 108"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 45000,
+   "popup_zone_pass_rate": 0.4,
+   "host_traffic_est": 18000.0,
+   "venue_scale_tier": 1,
+   "confidence": "medium",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2025-01-02",
+    "visitors": 2605,
+    "sales_krw": 10410700
+   },
+   {
+    "date": "2025-01-03",
+    "visitors": 2642,
+    "sales_krw": 10036400
+   },
+   {
+    "date": "2025-01-04",
+    "visitors": 3647,
+    "sales_krw": 16652500
+   },
+   {
+    "date": "2025-01-05",
+    "visitors": 2643,
+    "sales_krw": 11871700
+   },
+   {
+    "date": "2025-01-06",
+    "visitors": 1979,
+    "sales_krw": 6574500
+   },
+   {
+    "date": "2025-01-07",
+    "visitors": 1991,
+    "sales_krw": 6049300
+   },
+   {
+    "date": "2025-01-08",
+    "visitors": 2643,
+    "sales_krw": 8059800
+   },
+   {
+    "date": "2025-01-09",
+    "visitors": 2201,
+    "sales_krw": 7072700
+   },
+   {
+    "date": "2025-01-10",
+    "visitors": 2885,
+    "sales_krw": 11124800
+   },
+   {
+    "date": "2025-01-11",
+    "visitors": 4876,
+    "sales_krw": 17691500
+   },
+   {
+    "date": "2025-01-12",
+    "visitors": 3807,
+    "sales_krw": 13964500
+   },
+   {
+    "date": "2025-01-13",
+    "visitors": 2242,
+    "sales_krw": 8356100
+   },
+   {
+    "date": "2025-01-14",
+    "visitors": 2329,
+    "sales_krw": 10367300
+   }
+  ],
+  "totals": {
+   "visitors": 36490,
+   "sales_krw": 138231800,
+   "rev_mm_recognized": 199.0
+  },
+  "counting_method": "entry",
+  "counting_basis": "결과보고서 '방문객 및 구매 전환율' 표의 방문객수 컬럼. 일 결제건수는 영수증 발행수 기준이며 구매전환율(방문객 대비 결제건수)을 산출. 매출액은 MD존+뽑기+포토부스 POS 합계(합계 138,231,800원).",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(운영기간은 계약서상 1/2~1/15(14일)이나 결과보고서 매출·방문 집계는 1/2~1/14(13일간) 기준. 매출액 합계 138,231,800원은 MD존 119,163,800 + 뽑기 13,065,000 + 포토부스 6,000,000의 합. EP1(롯데월드몰)과 비교표 병기됨.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 199.0 ≈ 계약총액 200.0",
+   "contract_total_mm": 200.0,
+   "last_recognition_period": "2025-02"
+  },
+  "label_trust": {
+   "grade": "A",
+   "flags": [
+    "A"
+   ],
+   "why": "정밀 집계 표현"
+  },
+  "label_scope": {
+   "label_from": "2025-01-02",
+   "label_to": "2025-01-14",
+   "label_active_days": 13,
+   "label_span_days": 13,
+   "label_contiguous": true,
+   "daily_sum": 36490,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-cofk4YW07VlB8Zx-j31CODH4Hz60F8R",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1-cofk4YW07VlB8Zx-j31CODH4Hz60F8R/view",
+   "title": "보노보노 팝업스토어2_공간기획4차(241205).pptx"
+  },
+  {
+   "doc_id": "1-t8BcXvw9cbAafnku8wpIqz1UORM-QTV",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1-t8BcXvw9cbAafnku8wpIqz1UORM-QTV/view",
+   "title": "이벤툴_견적서.xls"
+  },
+  {
+   "doc_id": "10rp9NO4fBsHOuC1MALAnxDYrrKca49_s",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/10rp9NO4fBsHOuC1MALAnxDYrrKca49_s/view",
+   "title": "보노보노 팝업스토어2_버스외관그래픽(수정2).pdf"
+  },
+  {
+   "doc_id": "11C-uAERap8xUfo4jF1lhhW6-mentgPsX",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/11C-uAERap8xUfo4jF1lhhW6-mentgPsX/view",
+   "title": "현대드림애드_계산서.png"
+  },
+  {
+   "doc_id": "11NB4i7bAoThl3vEeuZiv3ew5lT5PhscM",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/11NB4i7bAoThl3vEeuZiv3ew5lT5PhscM/view",
+   "title": "이벤툴_계산서.jpg"
+  },
+  {
+   "doc_id": "11dXjsgD7Lilr5Im4vb2WBadCRoUm_WRZ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/11dXjsgD7Lilr5Im4vb2WBadCRoUm_WRZ/view",
+   "title": "그리드_견적서.pdf"
+  },
+  {
+   "doc_id": "11mJ2_bogPH0bzQR3V-FSB6gFT1g22R2M",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/11mJ2_bogPH0bzQR3V-FSB6gFT1g22R2M/view",
+   "title": "보노보노 팝업스토어2_공간기획6차(241213).pdf"
+  },
+  {
+   "doc_id": "12NbMwA9qvo75lnN3QL9TFEXkXK4DTh9E",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/12NbMwA9qvo75lnN3QL9TFEXkXK4DTh9E/view",
+   "title": "보노보노 팝업스토어2_공간기획(241216).pptx"
+  },
+  {
+   "doc_id": "12jHG-zvMekIzF5xkjeeMhGBll050vLF1",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/12jHG-zvMekIzF5xkjeeMhGBll050vLF1/view",
+   "title": "보노보노 팝업스토어2_공간기획(241218).pdf"
+  },
+  {
+   "doc_id": "144CdjtY06K5brXxVvpIzvJ5SVZ51weDH",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/144CdjtY06K5brXxVvpIzvJ5SVZ51weDH/view",
+   "title": "보노보노 팝업스토어2_공간기획+감수자료_최종(241220).pdf"
+  },
+  {
+   "doc_id": "14EgkawlRjddJgKiClB47-DkltbtI9XfX",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/14EgkawlRjddJgKiClB47-DkltbtI9XfX/view",
+   "title": "보노보노 팝업스토어2_공간기획4차(241205).pdf"
+  },
+  {
+   "doc_id": "14k9ZIfptB75oc-7TGelWYNjIsDmblzEx",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/14k9ZIfptB75oc-7TGelWYNjIsDmblzEx/view",
+   "title": "보노보노 팝업스토어2_최종기획안(1224)_롯데보고용(최종).pptx"
+  },
+  {
+   "doc_id": "14wTqKLdRsc_MNUHY1FGs9wZlG1y1Mghh",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/14wTqKLdRsc_MNUHY1FGs9wZlG1y1Mghh/view",
+   "title": "견적서_스위트스팟_241220_캡슐링 작업 [담당자 _ 박은정].xlsx - (주)콘콘 (2) (1).pdf"
+  },
+  {
+   "doc_id": "14wUu_FwdQOitQYxOVj55_z58xqz5Rz2k",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/14wUu_FwdQOitQYxOVj55_z58xqz5Rz2k/view",
+   "title": "보노보노 팝업스토어2_공간기획+감수자료(241219).pptx"
+  },
+  {
+   "doc_id": "15JDRVMVX5zVvKRaaS_vtWp3jYKhlsono",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/15JDRVMVX5zVvKRaaS_vtWp3jYKhlsono/view",
+   "title": "보노보노 팝업스토어2_버스외관그래픽(수정).pptx"
+  },
+  {
+   "doc_id": "16Wz7NOMJCJXpN9XxNote5Y3RKW0RSwN9",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/16Wz7NOMJCJXpN9XxNote5Y3RKW0RSwN9/view",
+   "title": "보노보노 팝업스토어2_버스외관그래픽 감수자료(1216).pdf"
+  },
+  {
+   "doc_id": "17-QHSvro_ffA3VAu3eaZ3U1z74vL5aOP",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/17-QHSvro_ffA3VAu3eaZ3U1z74vL5aOP/view",
+   "title": "보노보노 팝업스토어2_버스외관그래픽 감수자료.pptx"
+  },
+  {
+   "doc_id": "17wyYm9UVnO-B2S6fGgGV3lsHnwBh2OK7",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17wyYm9UVnO-B2S6fGgGV3lsHnwBh2OK7/view",
+   "title": "보노보노 팝업EP2 마케팅 견적서(스위트스팟_241203).xlsx"
+  },
+  {
+   "doc_id": "18OM8XK5DlOgmeXBWk5QfepPOiDh_tGBi",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/18OM8XK5DlOgmeXBWk5QfepPOiDh_tGBi/view",
+   "title": "보노보노 팝업EP2 마케팅 견적서(스위트스팟_241203).pdf"
+  },
+  {
+   "doc_id": "18k3TMY-5a2o-mtZerwVTViv1qCO3QFtV",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/18k3TMY-5a2o-mtZerwVTViv1qCO3QFtV/view",
+   "title": "보노보노 팝업EP2 마케팅 견적서(스위트스팟_241205).xlsx"
+  },
+  {
+   "doc_id": "18zfqDLog6JJpOcVj78hPxC2SNQga0Y2F",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/18zfqDLog6JJpOcVj78hPxC2SNQga0Y2F/view",
+   "title": "보노보노 팝업EP2 마케팅 견적서(스위트스팟_241205).pdf"
+  },
+  {
+   "doc_id": "191pU6Ns-x08izIbDcmCnSVr6B2e_lFMW",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/191pU6Ns-x08izIbDcmCnSVr6B2e_lFMW/view",
+   "title": "보노보노 팝업스토어2_공간기획3차(241128).pptx"
+  },
+  {
+   "doc_id": "19XbUNhOeumIpr0d6xgOP6DBx-J3BSmEK",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19XbUNhOeumIpr0d6xgOP6DBx-J3BSmEK/view",
+   "title": "보노보노 EP2 소원의숲_더현서 팝업스토어 견적서(스위트스팟_241209).xlsx"
+  },
+  {
+   "doc_id": "19YY5flEB7epswnTqOMevPDTljCEJ1gVl",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19YY5flEB7epswnTqOMevPDTljCEJ1gVl/view",
+   "title": "보노보노 EP2 소원의숲_더현서 팝업스토어 견적서(스위트스팟_241209).pdf"
+  },
+  {
+   "doc_id": "19i4a0DYxM1IxHfpxSOpp0FJzbfOoWDTA",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19i4a0DYxM1IxHfpxSOpp0FJzbfOoWDTA/view",
+   "title": "보노보노 팝업EP2 마케팅 최종견적서(스위트스팟_250122).pdf의 사본"
+  },
+  {
+   "doc_id": "1AZUFOBOcGYGqBNTLhER_MZbADHUaqFpv",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1AZUFOBOcGYGqBNTLhER_MZbADHUaqFpv/view",
+   "title": "그리드_견적서.pdf"
+  },
+  {
+   "doc_id": "1AZrdwskjM2gfxrCGnCDstnwMCaSNCSob",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1AZrdwskjM2gfxrCGnCDstnwMCaSNCSob/view",
+   "title": "보노보노 팝업스토어 기획 및 운영 위탁 계약서_최종_암호화해제.docx"
+  },
+  {
+   "doc_id": "1Acn9ne16n_4OqnSHjRmFxvDxHJaorshf",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Acn9ne16n_4OqnSHjRmFxvDxHJaorshf/view",
+   "title": "보노보노 팝업스토어2_운세종이.pptx"
+  },
+  {
+   "doc_id": "1AkcnYGNwkY7J3ckb1sZLe27mH-YtL3zU",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1AkcnYGNwkY7J3ckb1sZLe27mH-YtL3zU/view",
+   "title": "과업수행서(보노보노 팝업스토어 기획 및 운영 위탁 계약)_최종_암호화해제.docx"
+  },
+  {
+   "doc_id": "1Ame8sEUukZzGlPiW69cOFBSKZXoMG-NG",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Ame8sEUukZzGlPiW69cOFBSKZXoMG-NG/view",
+   "title": "진성아크릴_계산서.jpg"
+  },
+  {
+   "doc_id": "1Ax8vwiPcTWng9pTjGwKp8m7LTP-pIZ8b",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Ax8vwiPcTWng9pTjGwKp8m7LTP-pIZ8b/view",
+   "title": "보노보노 팝업스토어 블로그 기자단 예비 리스트_241213.xlsx"
+  },
+  {
+   "doc_id": "1Az7ksBXYbTpXvFrfjnnIo9Gmbp_VytPX",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Az7ksBXYbTpXvFrfjnnIo9Gmbp_VytPX/view",
+   "title": "보노보노 팝업EP2 마케팅 견적서(파워페이지 상세 스위트스팟_241215).xlsx"
+  },
+  {
+   "doc_id": "1B_aEVEm9sSXU_sa6k3O-dOXAnT4mpVm2",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1B_aEVEm9sSXU_sa6k3O-dOXAnT4mpVm2/view",
+   "title": "보노보노 팝업스토어2_버스외관그래픽(1211).pdf"
+  },
+  {
+   "doc_id": "1BfkAdiSYY5h1JPCOF6RtIhDZU4qBBQny",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1BfkAdiSYY5h1JPCOF6RtIhDZU4qBBQny/view",
+   "title": "Thumbs.db"
+  },
+  {
+   "doc_id": "1CGLk0BZBb7ubSEJ74wo7hy0bhDT_Z15x",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CGLk0BZBb7ubSEJ74wo7hy0bhDT_Z15x/view",
+   "title": "보노보노 팝업EP2 마케팅 견적서(파워페이지 상세 스위트스팟_241215).pdf"
+  },
+  {
+   "doc_id": "1CHOZ4iOejkv_7I_a80hNcCiGdS_yueyI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CHOZ4iOejkv_7I_a80hNcCiGdS_yueyI/view",
+   "title": "보노보노 마케팅 계획.xlsx"
+  },
+  {
+   "doc_id": "1CfAu5-tcJIOCfse48C7cGlCXNaW_EG6M",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1CfAu5-tcJIOCfse48C7cGlCXNaW_EG6M/view",
+   "title": "보노보노 팝업스토어2_공간기획(241216).pdf"
+  },
+  {
+   "doc_id": "1CpIRXJSwJeSTZ3RJT9wPgdFSPk8kmM-8",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1CpIRXJSwJeSTZ3RJT9wPgdFSPk8kmM-8/view",
+   "title": "롯데월드 계약보증보험증권(스위트스팟_241217).pdf"
+  },
+  {
+   "doc_id": "1D4BnOQEDDRfjiH_zMJEhJEz2g0l6o2Md",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1D4BnOQEDDRfjiH_zMJEhJEz2g0l6o2Md/view",
+   "title": "롯데월드 선금보증보험증권(스위트스팟_241217).pdf"
+  },
+  {
+   "doc_id": "1DAjPrppYv8ZINCS_QUxs_3OO9pd9Hzno",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DAjPrppYv8ZINCS_QUxs_3OO9pd9Hzno/view",
+   "title": "보노보노 EP2 소원의숲_더현서 팝업스토어 상세견적서(스위트스팟_241218)작성중.xlsx"
+  },
+  {
+   "doc_id": "1DCp8JE2pFOuyKBSwZTHZ1roy5nI42_jA",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DCp8JE2pFOuyKBSwZTHZ1roy5nI42_jA/view",
+   "title": "보노보노 EP2 소원의숲_더현서 팝업스토어 상세견적서(스위트스팟_241219)작성중.xlsx"
+  },
+  {
+   "doc_id": "1DdjmsNveb2a0XtVMBAlz9InGycKErgmm",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DdjmsNveb2a0XtVMBAlz9InGycKErgmm/view",
+   "title": "이벤툴_견적서.xls"
+  },
+  {
+   "doc_id": "1FYch5K38R8vwKljSkr92fGiN5t_EoZz3",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1FYch5K38R8vwKljSkr92fGiN5t_EoZz3/view",
+   "title": "조개큐션.xls"
+  },
+  {
+   "doc_id": "1Fvy5X-khJBT2yJ9DXwIRvkDnr_LRiElK",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Fvy5X-khJBT2yJ9DXwIRvkDnr_LRiElK/view",
+   "title": "보노보노 팝업EP2 마케팅 견적서(스위트스팟_241226).xlsx"
+  },
+  {
+   "doc_id": "1FzQaL497rPRrsRBqcJO6VdeGOgQFi2rq",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1FzQaL497rPRrsRBqcJO6VdeGOgQFi2rq/view",
+   "title": "보노보노 소원의 숲 팝업스토어_마케팅 결과보고서(250122).pptx"
+  },
+  {
+   "doc_id": "1G9s8e-W3UefWFsjtP_d0kGtBfKcaqYf1",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1G9s8e-W3UefWFsjtP_d0kGtBfKcaqYf1/view",
+   "title": "레퍼런스 별첨.png"
+  },
+  {
+   "doc_id": "1H_y3Jq4y43xOWrngmTtOkHv9C3mIdIgd",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1H_y3Jq4y43xOWrngmTtOkHv9C3mIdIgd/view",
+   "title": "보노보노 팝업EP2 마케팅 최종견적서(스위트스팟_250122)_비용 업데이트 완료.xlsx"
+  },
+  {
+   "doc_id": "1HdiV8EkpK3Aqu8GZDfeuTEdRiw_fUhFs",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1HdiV8EkpK3Aqu8GZDfeuTEdRiw_fUhFs/view",
+   "title": "보노보노 소원의 숲 팝업스토어_마케팅 결과보고서(250122).pdf"
+  },
+  {
+   "doc_id": "1Hs12WuZckd2umc8peRR-Toxg_UGU_7RS",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Hs12WuZckd2umc8peRR-Toxg_UGU_7RS/view",
+   "title": "보노보노 팝업스토어2_버스외관그래픽 감수자료(1216).pptx"
+  },
+  {
+   "doc_id": "1HuakplL9x-NjFcVu5rbEg7-qIYxTeZ6u",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1HuakplL9x-NjFcVu5rbEg7-qIYxTeZ6u/view",
+   "title": "보노보노 팝업EP2 마케팅 최종견적서(스위트스팟_250122).pdf"
+  },
+  {
+   "doc_id": "1I0qBIcuBpESBAVbiDXPKKc0jn_jteQoW",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1I0qBIcuBpESBAVbiDXPKKc0jn_jteQoW/view",
+   "title": "보노보노 소원의 숲 팝업스토어 결과보고서(250122).pptx"
+  },
+  {
+   "doc_id": "1I7mNi0-F_M30h_mHlXJ91CukFLZn-7nR",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1I7mNi0-F_M30h_mHlXJ91CukFLZn-7nR/view",
+   "title": "보노보노 소원의 숲 팝업스토어 결과보고서(250122).pdf"
+  },
+  {
+   "doc_id": "1IDWx8E8zPzVIQbMUpEUMkfMHE0FDBBoA",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1IDWx8E8zPzVIQbMUpEUMkfMHE0FDBBoA/view",
+   "title": "보노보노 서원의 숲 팝업스토어_공간분석 결과보고서_250122.pdf"
+  },
+  {
+   "doc_id": "1IP_qsay3hUojYrgM3xyx1iLOPCzuvNnW",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1IP_qsay3hUojYrgM3xyx1iLOPCzuvNnW/view",
+   "title": "보노보노 팝업스토어2_버스외관그래픽 감수자료(1217).pptx"
+  },
+  {
+   "doc_id": "1IqMaYRWcM1NXhl0McgkRNuu3UL4szUah",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1IqMaYRWcM1NXhl0McgkRNuu3UL4szUah/view",
+   "title": "보노보노 EP2 소원의숲_더현서 팝업스토어 최종견적서(스위트스팟_250131).pdf"
+  },
+  {
+   "doc_id": "1JLt4u77M6-QW7OzMozSyo4xXopsOGpPs",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1JLt4u77M6-QW7OzMozSyo4xXopsOGpPs/view",
+   "title": "보노보노 팝업스토어2_2차감수자료(241220).pdf"
+  },
+  {
+   "doc_id": "1JQfjXJ-ZZZJzWfOhCMJLSxTUm6Kxaavt",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1JQfjXJ-ZZZJzWfOhCMJLSxTUm6Kxaavt/view",
+   "title": "보노보노 팝업스토어2_공간기획(241218).pptx"
+  },
+  {
+   "doc_id": "1KslUwLXdeniQPvYl2TgxWxF5XEpOUClS",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1KslUwLXdeniQPvYl2TgxWxF5XEpOUClS/view",
+   "title": "보노보노 팝업스토어2_공간기획5차, 감수자료(241209).pdf"
+  },
+  {
+   "doc_id": "1KtWH_3UMrIlbW9vGGzS-40Cq7YsKPJdq",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1KtWH_3UMrIlbW9vGGzS-40Cq7YsKPJdq/view",
+   "title": "보노보노 팝업스토어2_버스외관그래픽 감수자료.pdf"
+  },
+  {
+   "doc_id": "1MDWdcrmnFlQRmjLIKiFautil9YMkLkO4",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1MDWdcrmnFlQRmjLIKiFautil9YMkLkO4/view",
+   "title": "보노보노 팝업스토어2_공간기획4차, 감수자료(241205).pptx"
+  },
+  {
+   "doc_id": "1NpJFt868VdKDHsXKJEbTtGuyYOMWgo3n",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1NpJFt868VdKDHsXKJEbTtGuyYOMWgo3n/view",
+   "title": "보노보노 팝업스토어2_공간기획6차(241213).pptx"
+  },
+  {
+   "doc_id": "1OIfM_Q_ygjkpWerP7pskzdq-3cpRpuUg",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1OIfM_Q_ygjkpWerP7pskzdq-3cpRpuUg/view",
+   "title": "보노보노 팝업스토어2_버스외관그래픽 감수자료(1213).pptx"
+  },
+  {
+   "doc_id": "1OmDqLR8OsiLhjsvQMVllILlJvMLcIgAG",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1OmDqLR8OsiLhjsvQMVllILlJvMLcIgAG/view",
+   "title": "보노보노 팝업스토어2_공간기획+감수자료_최종(241223).pptx"
+  },
+  {
+   "doc_id": "1QK9KmF6tuwRsQcYZd29ZdQJS33oXKOGa",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1QK9KmF6tuwRsQcYZd29ZdQJS33oXKOGa/view",
+   "title": "보노보노 팝업스토어2_운세종이.pdf"
+  },
+  {
+   "doc_id": "1RZ1r3UUoabYfgpMID0TjD4KzyizKmT-_",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1RZ1r3UUoabYfgpMID0TjD4KzyizKmT-_/view",
+   "title": "조개큐션.xls"
+  },
+  {
+   "doc_id": "1V6fUKIzD4dgIpWx25tyekdJ1o2Bl3cIW",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1V6fUKIzD4dgIpWx25tyekdJ1o2Bl3cIW/view",
+   "title": "보노보노 팝업스토어2_공간기획5차, 감수자료(241209).pptx"
+  },
+  {
+   "doc_id": "1VD-iMf0bdK461H_iQwNVKT25gV3ArCAw",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1VD-iMf0bdK461H_iQwNVKT25gV3ArCAw/view",
+   "title": "보노보노 팝업스토어2_공간기획(241210).pptx"
+  },
+  {
+   "doc_id": "1VFOK3zsh2dw7jjxI6H7jWoLKztOc-Set",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1VFOK3zsh2dw7jjxI6H7jWoLKztOc-Set/view",
+   "title": "보노보노 팝업스토어2_공간기획4차, 감수자료(241205).pdf"
+  },
+  {
+   "doc_id": "1WfpD8bho-dTYpOsodGbSiD8uY_UZsyWt",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1WfpD8bho-dTYpOsodGbSiD8uY_UZsyWt/view",
+   "title": "보노보노 팝업스토어2_부분 감수자료(241220).pptx"
+  },
+  {
+   "doc_id": "1XSk43TYj5byQsj_ftDxsea49Qe3DJ226",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1XSk43TYj5byQsj_ftDxsea49Qe3DJ226/view",
+   "title": "보노보노 팝업스토어2_2차감수자료(241220).pptx"
+  },
+  {
+   "doc_id": "1YDADMbuMshdgAo3EXxy5tgEj2K13Di9o",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1YDADMbuMshdgAo3EXxy5tgEj2K13Di9o/view",
+   "title": "보노보노 팝업스토어2_부분 감수자료(241224).pdf"
+  },
+  {
+   "doc_id": "1YaaDT-y3EjoDzJw87nThklnTZGFwAmnQ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1YaaDT-y3EjoDzJw87nThklnTZGFwAmnQ/view",
+   "title": "Thumbs.db"
+  },
+  {
+   "doc_id": "1ZqebZPsvBmCvpyqiuvxruzN0mrjDiA90",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ZqebZPsvBmCvpyqiuvxruzN0mrjDiA90/view",
+   "title": "그리드_계산서(잔금).jpg"
+  },
+  {
+   "doc_id": "1_-o64V58a9p8Gtz0fYDdg0x9h8Eg-Xt9",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1_-o64V58a9p8Gtz0fYDdg0x9h8Eg-Xt9/view",
+   "title": "보노보노 결과보고서.pdf"
+  },
+  {
+   "doc_id": "1_FmSgGLch8hjK5tpIiqzrAUlVOAOODAQ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1_FmSgGLch8hjK5tpIiqzrAUlVOAOODAQ/view",
+   "title": "현대드림애드_보노보노_견적서.xls"
+  },
+  {
+   "doc_id": "1_aZgvSP-j7pjBeNQ2HwRbzpvqbrxB6yM",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1_aZgvSP-j7pjBeNQ2HwRbzpvqbrxB6yM/view",
+   "title": "03_견적서_3차(추가견적제출)_보노보노 pop-up store _ 더현대서울_250107.pdf"
+  },
+  {
+   "doc_id": "1_x81DXAZ-XfGaCEi5moIhOAKi1QMHKvi",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1_x81DXAZ-XfGaCEi5moIhOAKi1QMHKvi/view",
+   "title": "[시공계약서_그리드] 더현대서울 보노보노 팝업.docx"
+  },
+  {
+   "doc_id": "1azmBULl-d--fqvoZ2GrU42_hMlaEtlPO",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1azmBULl-d--fqvoZ2GrU42_hMlaEtlPO/view",
+   "title": "이벤툴_계산서.jpg"
+  },
+  {
+   "doc_id": "1bRGMKyv6f-8gKPUKzkh1ss_O822DpJpu",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1bRGMKyv6f-8gKPUKzkh1ss_O822DpJpu/view",
+   "title": "현대드림애드_계산서.png"
+  },
+  {
+   "doc_id": "1ciVFMGSc2ts7TlxPE0lCuQYtQCxCbfUi",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ciVFMGSc2ts7TlxPE0lCuQYtQCxCbfUi/view",
+   "title": "진성아크릴_계산서.jpg"
+  },
+  {
+   "doc_id": "1ciWpvy5QHcdPVRvdjw9HZrsoZVlexZK3",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ciWpvy5QHcdPVRvdjw9HZrsoZVlexZK3/view",
+   "title": "보노보노 팝업스토어2_부분 감수자료(241220).pdf"
+  },
+  {
+   "doc_id": "1d0bvthyzlnyk12MESU7C8XJlAeMY8WET",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1d0bvthyzlnyk12MESU7C8XJlAeMY8WET/view",
+   "title": "진성아크릴_견적서.jpg"
+  },
+  {
+   "doc_id": "1ecds36f7u2JjfYpoXB5vcAuQZvrj3dEO",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ecds36f7u2JjfYpoXB5vcAuQZvrj3dEO/view",
+   "title": "보노보노 팝업스토어2_감수자료(241218).pdf"
+  },
+  {
+   "doc_id": "1ed39TdEBF3ZEfJFSkIsfMm9anZusctKT",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ed39TdEBF3ZEfJFSkIsfMm9anZusctKT/view",
+   "title": "보노보노 팝업스토어2_버스외관그래픽 감수자료(1216)_수정.pdf"
+  },
+  {
+   "doc_id": "1ej5vIN8mv05Pzv_wkqJBxVHquzQYwJLp",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ej5vIN8mv05Pzv_wkqJBxVHquzQYwJLp/view",
+   "title": "보노보노 팝업스토어2_버스외관그래픽(수정).pdf"
+  },
+  {
+   "doc_id": "1fsEuTIby4j6wmH4x2eWBW9QeSLyOdT80",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1fsEuTIby4j6wmH4x2eWBW9QeSLyOdT80/view",
+   "title": "그리드_계산서.jpg"
+  },
+  {
+   "doc_id": "1gdUb_C1RjQ9XgI_U1uLMWntdyHSokNnb",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1gdUb_C1RjQ9XgI_U1uLMWntdyHSokNnb/view",
+   "title": "보노보노_실사용견적(공간기획)_250106.xlsx"
+  },
+  {
+   "doc_id": "1gjFn3uVoqkWfn_nvgOSe58dA4K5vVS7p",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1gjFn3uVoqkWfn_nvgOSe58dA4K5vVS7p/view",
+   "title": "보노보노 팝업스토어2_버스외관그래픽 감수자료(1216)_수정.pptx"
+  },
+  {
+   "doc_id": "1h0kV_g_Va8uA5tPX_V7AEJjx-zSNXHns",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1h0kV_g_Va8uA5tPX_V7AEJjx-zSNXHns/view",
+   "title": "견적서_스위트스팟_241220_캡슐링 작업 [담당자 _ 박은정].xlsx - (주)콘콘 (2) (1).pdf"
+  },
+  {
+   "doc_id": "1h3Ifew1B4ZqKyVmb4Yh1yoQcxIaZKoD1",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1h3Ifew1B4ZqKyVmb4Yh1yoQcxIaZKoD1/view",
+   "title": "Thumbs.db"
+  },
+  {
+   "doc_id": "1hlCyHuQ-900fc8Y0uBhA3tQCNlWL0Lb0",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1hlCyHuQ-900fc8Y0uBhA3tQCNlWL0Lb0/view",
+   "title": "그리드_계산서.jpg"
+  },
+  {
+   "doc_id": "1i2_vVRa-bPQdBIY6IEykpBhOVhjLS4Rw",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1i2_vVRa-bPQdBIY6IEykpBhOVhjLS4Rw/view",
+   "title": "보노보노 팝업스토어2_버스외관그래픽.pptx"
+  },
+  {
+   "doc_id": "1ix3vWpXBp-SV-jjCVhCJ-6xJ9GOISAeS",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ix3vWpXBp-SV-jjCVhCJ-6xJ9GOISAeS/view",
+   "title": "보노보노 팝업스토어2_공간기획(241216).pdf"
+  },
+  {
+   "doc_id": "1j-60ddwyW2RgwSVfnGYs_4ESMx3deiX7",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1j-60ddwyW2RgwSVfnGYs_4ESMx3deiX7/view",
+   "title": "현대드림애드_보노보노_견적서.xls"
+  },
+  {
+   "doc_id": "1kb9ouSipVkQZRXINXhnHo0GcZmk3E9Az",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1kb9ouSipVkQZRXINXhnHo0GcZmk3E9Az/view",
+   "title": "보노보노 팝업스토어2_부분 감수자료(241224).pptx"
+  },
+  {
+   "doc_id": "1lkX87LhZTb5LTJzagjCCZWiJVMQpvnuW",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1lkX87LhZTb5LTJzagjCCZWiJVMQpvnuW/view",
+   "title": "보노보노 팝업스토어2_공간기획(241210).pdf"
+  },
+  {
+   "doc_id": "1m8Luh6tPWuyeNZvQRxDIZKiJ5kID0brj",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1m8Luh6tPWuyeNZvQRxDIZKiJ5kID0brj/view",
+   "title": "보노보노 팝업스토어2_감수자료(241218).pptx"
+  },
+  {
+   "doc_id": "1mHPNAubeNsNb_9DI4VxLJ57D6rNm3R-5",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1mHPNAubeNsNb_9DI4VxLJ57D6rNm3R-5/view",
+   "title": "진성아크릴_견적서.jpg"
+  },
+  {
+   "doc_id": "1oCDMuypcaK7l0mNQnFq2SGJFFR6RqJgf",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1oCDMuypcaK7l0mNQnFq2SGJFFR6RqJgf/view",
+   "title": "보노보노 팝업스토어2_공간기획+감수자료(241219).pdf"
+  },
+  {
+   "doc_id": "1qBrunTez5OEkkzmL-9nfndRNm1UDI2-G",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1qBrunTez5OEkkzmL-9nfndRNm1UDI2-G/view",
+   "title": "보노보노 팝업스토어2_버스외관그래픽.pdf"
+  },
+  {
+   "doc_id": "1qDx_Ds4wvAE35XV7m2OirQ8ZlMwYjUm3",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1qDx_Ds4wvAE35XV7m2OirQ8ZlMwYjUm3/view",
+   "title": "보노보노 팝업스토어2_공간기획3차(241128).pdf"
+  },
+  {
+   "doc_id": "1rHKun-utixZ8L9PxcQ1qaRpw_o4lI61x",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1rHKun-utixZ8L9PxcQ1qaRpw_o4lI61x/view",
+   "title": "더현서 보노보노 부스럭 계약변경 합의서.pdf"
+  },
+  {
+   "doc_id": "1sX4Z8Oe2FbuRy34RynwnyOGD2olboe9r",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1sX4Z8Oe2FbuRy34RynwnyOGD2olboe9r/view",
+   "title": "Thumbs.db"
+  },
+  {
+   "doc_id": "1tCgkY2am6jUCFiS9LkPSWlRGtHwGnfrW",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1tCgkY2am6jUCFiS9LkPSWlRGtHwGnfrW/view",
+   "title": "보노보노 팝업스토어2_최종기획안(1224).pdf"
+  },
+  {
+   "doc_id": "1tLzWnRpU2lIftFiIbpgw9d5NvR1jxAL1",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1tLzWnRpU2lIftFiIbpgw9d5NvR1jxAL1/view",
+   "title": "보노보노 팝업스토어2_최종기획안(1224)_롯데보고용(최종).pdf"
+  },
+  {
+   "doc_id": "1tawOUGVYlJgxljTIdvqJzHbU_2H7iRTY",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1tawOUGVYlJgxljTIdvqJzHbU_2H7iRTY/view",
+   "title": "보노보노 EP2 소원의숲_더현서 팝업스토어 최종견적서(스위트스팟_250131).pdf의 사본"
+  },
+  {
+   "doc_id": "1uPF3pqY-ZtX1baTw4kbG5R-w9Z4Ww3qp",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1uPF3pqY-ZtX1baTw4kbG5R-w9Z4Ww3qp/view",
+   "title": "그리드_3차견적서(추가견적).pdf"
+  },
+  {
+   "doc_id": "1wGQGifoWVk7l9H1X-PYKNaApvbtR3Zlp",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1wGQGifoWVk7l9H1X-PYKNaApvbtR3Zlp/view",
+   "title": "보노보노 팝업스토어2_공간기획+감수자료_최종(241223)_수정.pptx"
+  },
+  {
+   "doc_id": "1wHZ9Dkja9sHO9pbn5n77D3ePFrecJ0Pd",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1wHZ9Dkja9sHO9pbn5n77D3ePFrecJ0Pd/view",
+   "title": "그리드_보노보노팝업2_최종견적서.pdf"
+  },
+  {
+   "doc_id": "1wMlMBhR2fPq5XAb9lhHJiYKVOJj16sV0",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1wMlMBhR2fPq5XAb9lhHJiYKVOJj16sV0/view",
+   "title": "보노보노_실사용견적(공간기획)_250106.xlsx"
+  },
+  {
+   "doc_id": "1wUgOc15jKcGJleIsBZmUKh8N3G_thc-6",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1wUgOc15jKcGJleIsBZmUKh8N3G_thc-6/view",
+   "title": "보노보노 팝업스토어2_공간기획+감수자료_최종(241223)_수정.pdf"
+  },
+  {
+   "doc_id": "1xMnXNIpZ0y-W8h28Xin-XPA1-4fmBMhi",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1xMnXNIpZ0y-W8h28Xin-XPA1-4fmBMhi/view",
+   "title": "보노보노 팝업스토어2_버스외관그래픽 감수자료(1217).pdf"
+  },
+  {
+   "doc_id": "1y1Ymk10JwiyfP3JDlOsTniw1lAtbXthY",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1y1Ymk10JwiyfP3JDlOsTniw1lAtbXthY/view",
+   "title": "보노보노 팝업스토어2_버스외관그래픽(1211).pptx"
+  },
+  {
+   "doc_id": "1y9x1V2BQIt_AcHsNoYQDCbp4i35_Y-fq",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1y9x1V2BQIt_AcHsNoYQDCbp4i35_Y-fq/view",
+   "title": "보노보노 팝업스토어2_공간기획+감수자료_최종(241220).pptx"
+  },
+  {
+   "doc_id": "1yU353-SQz6JBYpA2ZRv9vi1L4tGNEHqU",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1yU353-SQz6JBYpA2ZRv9vi1L4tGNEHqU/view",
+   "title": "보노보노 팝업스토어2_버스외관그래픽(수정2).pptx"
+  },
+  {
+   "doc_id": "1yWicNGiCdevf-Xm9Izs4ZOVbSel3nwFr",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1yWicNGiCdevf-Xm9Izs4ZOVbSel3nwFr/view",
+   "title": "[시공계약서_그리드] 더현대서울 보노보노 팝업.docx"
+  },
+  {
+   "doc_id": "1zAU-k84yzQiN2cWjSBGcFz45_uLA1yt4",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1zAU-k84yzQiN2cWjSBGcFz45_uLA1yt4/view",
+   "title": "[롯데월드] 보노보노팝업스토어_더현대서울_공간기획안_회신.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 9건: 보노보노 팝업스토어 기획 및 운영 위탁 계약서_최종_암, 과업수행서(보노보노 팝업스토어 기획 및 운영 위탁 계약, 롯데월드 선금보증보험증권(스위트스팟_241217).pd, 보노보노 팝업스토어2_공간기획+감수자료_최종(24122, 보노보노 팝업스토어2_공간기획+감수자료_최종(24122, 그리드_보노보노팝업2_최종견적서.pdf. 미확실: 운영 최종일(1/15) 매출/방문 데이터는 보고서 집계 대상에서 제외됨(13일 기준); 기획서에 예상 방문객수(plan_visitors_expected) 명시 없음; client_party_id 및 space_id 정규화 미확정; 면적 80평은 계약서 기준, 기획안 존별 면적은 ㎡ 단위로 별도 표기"
+ }
+}

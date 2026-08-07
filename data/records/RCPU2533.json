@@ -1,0 +1,456 @@
+{
+ "record_id": "RCPU2533",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:KBL",
+  "space_id": "unresolved:unknown",
+  "client_party_id": null,
+  "brand_key": "KBL",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "문서 원문이 제공되지 않아 컨셉을 추출할 수 없음.",
+  "brand_name": "KBL",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": 400,
+   "area_sqm": 406.61,
+   "planned_operating_days": 5,
+   "throughput_units": 1,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": null,
+   "experience_density": 2,
+   "goods_scale": 4,
+   "photo_zones": 2,
+   "collab_strength": 4,
+   "ip_awareness": 3,
+   "target_breadth": 2,
+   "entry_friction": 1,
+   "media_push": 2,
+   "season_fit": 2,
+   "venue_prominence": 3
+  },
+  "attr_meta": {
+   "evidence": "시공계약서(그리드) 제1조 '면적 약 123평'(=406.61㎡), '세팅 7/29 07~22시, 철수 8/4'. 운영일은 견적서 기간 '2025.07.30(수)-2025.08.03(일)'과 스텝목걸이 시안 'POP-UP STORE 7.30-8.3'로 5일(레코드 period 7/29~8/4 7일은 세팅·철수 포함). 병목: 캡슐추첨기 가챠머신 임대 1대(정인 견적 250729, 7/30~8/4). 증정: '인스탁스 미니12(2대)/필름(400장) *수량확인필요'=400. 굿즈: 벽장매대 11+아일랜드 철제매대 36+아크릴진열대 20, 구단별 배너 47종. 운영 인력은 '캐셔 및 마킹 직원은 의뢰사 직접 고용'이라 견적서에 없음(현장 기술인력 8·보조 14는 세팅/철거분).",
+   "confidence": "medium",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-07-29",
+   "to": "2025-08-04",
+   "days": 7
+  },
+  "season": "summer",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 51,
+    "holiday_until": 17,
+    "holiday_block_in": 0,
+    "nat_event_gap": 56,
+    "nat_event": null,
+    "doc_lag_days": 0,
+    "doc_dates_found": 32
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  },
+  "demand_signals": {
+   "waiting_reported": true,
+   "sold_out": null,
+   "source": "역검색 외부 보도(2026-07-27)"
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": 1000,
+   "sales_krw": null,
+   "rev_mm_recognized": 98.2
+  },
+  "counting_method": "entry",
+  "counting_basis": "원문 표현은 \"약 1000명이 입장했다고 한다\" — '입장' 인원 기준. 단, 오픈 첫날(2025-07-30) 오후 2시~8시 6시간 부분집계이며 5일 운영 전체 누계가 아님. 또한 '~고 한다' 전언 형태로 공식 발표 집계는 아님.",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "방문: 역검색 외부 보도 — https://v.daum.net/v/20250730195242460 (2025-07-30) | 인용: 오후 8시에 문을 닫은 첫날 6시간 동안 무려 약 1000명이 입장했다고 한다.",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-08, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-08"
+  },
+  "label_source": "external_press",
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-xfmjWAs05Lnt30GSfDvYHHhqcrjgSxm",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1-xfmjWAs05Lnt30GSfDvYHHhqcrjgSxm/view",
+   "title": "이벤툴_세금계산서.jpg"
+  },
+  {
+   "doc_id": "10MhbJbYI-xBIsDvMwQG_Q25yhdexb0e-",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/10MhbJbYI-xBIsDvMwQG_Q25yhdexb0e-/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업_ 디자인검수 요청서(250721)_수정.pptx"
+  },
+  {
+   "doc_id": "12ta8Zl7dF5VMCU_TW05VujGDObv5FufP",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/12ta8Zl7dF5VMCU_TW05VujGDObv5FufP/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업_ 디자인검수 요청서(250714).pdf"
+  },
+  {
+   "doc_id": "137RpmnXQ7IJDI3L3G_l2cUw0FM6GUF1n",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/137RpmnXQ7IJDI3L3G_l2cUw0FM6GUF1n/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업 4차 제안서(250724).pdf"
+  },
+  {
+   "doc_id": "15jx9MLbYHH3ehJJ20k6_1ON3CeealSO-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/15jx9MLbYHH3ehJJ20k6_1ON3CeealSO-/view",
+   "title": "25.07.10 브라운, 샐리 벌룬 의상 제작 견적 요청서_OL.ai"
+  },
+  {
+   "doc_id": "16Kqvpqs32A4VC-1_CdXjPQg5reHYi5ei",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/16Kqvpqs32A4VC-1_CdXjPQg5reHYi5ei/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업 2차 제안서(250711).pdf"
+  },
+  {
+   "doc_id": "17S30uS0X39BMdROydRh8rItgVo96oqe6",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/17S30uS0X39BMdROydRh8rItgVo96oqe6/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업_스텝목걸이(250725).pdf"
+  },
+  {
+   "doc_id": "1973F8uBXIDE9oTOCE9vr6FuHBPryXaqN",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1973F8uBXIDE9oTOCE9vr6FuHBPryXaqN/view",
+   "title": "그리드_최종 견적서.pdf"
+  },
+  {
+   "doc_id": "1BYCONKtJURz7qbev-jWN0DCDcSsYYuJW",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1BYCONKtJURz7qbev-jWN0DCDcSsYYuJW/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업_디자인검수 요청서_스텝목걸이(250728).pdf"
+  },
+  {
+   "doc_id": "1DC4q1peqx0Yf6lrmYiIMrewC114iaVlG",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DC4q1peqx0Yf6lrmYiIMrewC114iaVlG/view",
+   "title": "이벤툴_세금계산서.jpg"
+  },
+  {
+   "doc_id": "1DCYRkLArNau9TovmZ6obiMwWWsEEDaBw",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DCYRkLArNau9TovmZ6obiMwWWsEEDaBw/view",
+   "title": "KBL 결과보고서.pdf"
+  },
+  {
+   "doc_id": "1EHwNZ7MgvzJizIMuSWWNamY9niGh3-Ty",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1EHwNZ7MgvzJizIMuSWWNamY9niGh3-Ty/view",
+   "title": "견적서_20250729_스위트스팟.xlsx"
+  },
+  {
+   "doc_id": "1IUV3dlv8CHuZu4QasKFhJJF5wXMZaBi3",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1IUV3dlv8CHuZu4QasKFhJJF5wXMZaBi3/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업_ 디자인검수 요청서(250717).pdf"
+  },
+  {
+   "doc_id": "1JH21-6NaLJvezDtZnxxMW5fkjBx1FBWF",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1JH21-6NaLJvezDtZnxxMW5fkjBx1FBWF/view",
+   "title": "(스위트스팟)KBL X LINE FRIENDS 팝업_최종 견적서.pdf"
+  },
+  {
+   "doc_id": "1JXdrns7G8-LaO1ltfr7IhIvrY02k7m5X",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1JXdrns7G8-LaO1ltfr7IhIvrY02k7m5X/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업_디자인검수 요청서_스텝목걸이(250728).pdf"
+  },
+  {
+   "doc_id": "1KIx91iz4duLatQT6APqyRCIQkScd1e-T",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1KIx91iz4duLatQT6APqyRCIQkScd1e-T/view",
+   "title": "01-KBL_라인프랜즈_성수팝업_무신사스퀘어_견적서_1차 _25714.xlsx"
+  },
+  {
+   "doc_id": "1KJlVCnrub_WGWTLEqszELzY29_wGelse",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1KJlVCnrub_WGWTLEqszELzY29_wGelse/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업_ 디자인검수 요청서(250715).pptx"
+  },
+  {
+   "doc_id": "1L2DCHppNS58w6w-TUZO-kDAEg79UtUmC",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1L2DCHppNS58w6w-TUZO-kDAEg79UtUmC/view",
+   "title": "[시공계약서_그리드] KBL x LINE FRIENDS 성수 팝업.docx"
+  },
+  {
+   "doc_id": "1LQ3-OA7tNIXRQKc_BLUHaYowsec5vgTK",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1LQ3-OA7tNIXRQKc_BLUHaYowsec5vgTK/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업_ 디자인검수 요청서(250721).pptx"
+  },
+  {
+   "doc_id": "1Lnb8mKZJ081VHu0Lf4_x2xblYO-Sn44i",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Lnb8mKZJ081VHu0Lf4_x2xblYO-Sn44i/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업_스텝목걸이(250724).pdf"
+  },
+  {
+   "doc_id": "1MaJPZnHEWVMmJsoYevZOOFVKwF7ubO5w",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1MaJPZnHEWVMmJsoYevZOOFVKwF7ubO5w/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업 4차 제안서(250724).pdf"
+  },
+  {
+   "doc_id": "1MgCwTJtJeX-Y3hkXqjjgJfsyqzGE7nB6",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1MgCwTJtJeX-Y3hkXqjjgJfsyqzGE7nB6/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업_ 디자인검수 요청서(250723).pptx"
+  },
+  {
+   "doc_id": "1OW7cY0SH2QETPh2vC2M07K0zZBxkLqHq",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1OW7cY0SH2QETPh2vC2M07K0zZBxkLqHq/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업 2차 제안서(250711).pptx"
+  },
+  {
+   "doc_id": "1PZ-cq-MF3sU3N_IxWZO-nxmxyWDDoItg",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1PZ-cq-MF3sU3N_IxWZO-nxmxyWDDoItg/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업_ 디자인검수 요청서(250715).pdf"
+  },
+  {
+   "doc_id": "1TQhWBfJEhCrPrY7e_KfmOFGHetWdE6Sl",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1TQhWBfJEhCrPrY7e_KfmOFGHetWdE6Sl/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업 4차 제안서(250724).pptx"
+  },
+  {
+   "doc_id": "1Tc5YT-U2PMzWvOmqV404fLkrtz3xtmIr",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Tc5YT-U2PMzWvOmqV404fLkrtz3xtmIr/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업 1차 제안서(250703).pptx"
+  },
+  {
+   "doc_id": "1V2QwtgkfVzlhR-k7ckqA1B2IDFsEnCfI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1V2QwtgkfVzlhR-k7ckqA1B2IDFsEnCfI/view",
+   "title": "01-KBL_라인프랜즈_성수팝업_무신사스퀘어_견적서_1차 _25714.xlsx"
+  },
+  {
+   "doc_id": "1W5EbXiL-t-SFBk4gmCqxSrFyt5P30atQ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1W5EbXiL-t-SFBk4gmCqxSrFyt5P30atQ/view",
+   "title": "이벤툴_견적서.xls"
+  },
+  {
+   "doc_id": "1X-_P_LOywZ8QKZSo-Ic0mbEggQT68QYM",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1X-_P_LOywZ8QKZSo-Ic0mbEggQT68QYM/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업 3차 제안서(250721).pdf"
+  },
+  {
+   "doc_id": "1Y3F49_cxjqmWbhAKKg5-y2V58NMBP-ps",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Y3F49_cxjqmWbhAKKg5-y2V58NMBP-ps/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업_ 디자인검수 요청서(250717).pptx"
+  },
+  {
+   "doc_id": "1YK-LCtokiSr3JtQTt7ltmK8xgGmL8HpC",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1YK-LCtokiSr3JtQTt7ltmK8xgGmL8HpC/view",
+   "title": "[스위트스팟]KBL X LINE FRIENDS 팝업_견적서_250714.xlsx"
+  },
+  {
+   "doc_id": "1Z0AwQwuXqC7KLvF68SjUppr3zQgS7Z-P",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Z0AwQwuXqC7KLvF68SjUppr3zQgS7Z-P/view",
+   "title": "7.29 스위트스팟(추가) 님.xlsx"
+  },
+  {
+   "doc_id": "1ZbDAXBaYCXqJ39O68u14N1l7zelLRMjM",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ZbDAXBaYCXqJ39O68u14N1l7zelLRMjM/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업_ 디자인검수 요청서(250721).pdf"
+  },
+  {
+   "doc_id": "1ZnIyjaI1sJXSCw0K3Md7e3_BAOMw9JGe",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ZnIyjaI1sJXSCw0K3Md7e3_BAOMw9JGe/view",
+   "title": "이벤툴_견적서.xls"
+  },
+  {
+   "doc_id": "1_DYEiUIGEW52bXp6j3QTORSAtiFrjb-D",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1_DYEiUIGEW52bXp6j3QTORSAtiFrjb-D/view",
+   "title": "견적서_20250729_스위트스팟.xlsx"
+  },
+  {
+   "doc_id": "1ap9_i0q-jAX8VJgQWfwJyyOQx3AcElOy",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ap9_i0q-jAX8VJgQWfwJyyOQx3AcElOy/view",
+   "title": "02-KBL_라인프랜즈_성수팝업_무신사스퀘어_견적서_2차 _25724.pdf"
+  },
+  {
+   "doc_id": "1az0PmF0d55YzG9zYaXN4ZfZpTW7Z-ZaH",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1az0PmF0d55YzG9zYaXN4ZfZpTW7Z-ZaH/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업 3차 제안서(250721).pptx"
+  },
+  {
+   "doc_id": "1dGWVtgzOSYjU_nPOq2Lqh_Xgk9-oqA0W",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1dGWVtgzOSYjU_nPOq2Lqh_Xgk9-oqA0W/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업_스텝목걸이(250724).pptx"
+  },
+  {
+   "doc_id": "1fVqpG6eneQPZ8djLE-kgyRkg-GETFPOn",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1fVqpG6eneQPZ8djLE-kgyRkg-GETFPOn/view",
+   "title": "02-KBL_라인프랜즈_성수팝업_무신사스퀘어_견적서_2차 _25724.xlsx"
+  },
+  {
+   "doc_id": "1jfeR_QSdo8bp7rXcCr6hVLVqFrd45qIz",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1jfeR_QSdo8bp7rXcCr6hVLVqFrd45qIz/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업_스텝목걸이(250725).pptx"
+  },
+  {
+   "doc_id": "1nUGkj271vEqr0TSWQGS_axZNb34oKpa3",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1nUGkj271vEqr0TSWQGS_axZNb34oKpa3/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업 1차 제안서(250703).pdf_피드백 내용 추가.pdf"
+  },
+  {
+   "doc_id": "1pZ9Z8fLZlTYlKf9rBRqzhh1AOI1eggTp",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1pZ9Z8fLZlTYlKf9rBRqzhh1AOI1eggTp/view",
+   "title": "그리드_최종 견적서.pdf"
+  },
+  {
+   "doc_id": "1qH7-Nb_cAQdXAA1ww4EQV8HvuBSZ7isI",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1qH7-Nb_cAQdXAA1ww4EQV8HvuBSZ7isI/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업_스텝목걸이(250728).pptx"
+  },
+  {
+   "doc_id": "1rErsea7gFbRHxAlrgZBmT9U8qf_E89W0",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1rErsea7gFbRHxAlrgZBmT9U8qf_E89W0/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업_ 디자인검수 요청서(250714).pptx"
+  },
+  {
+   "doc_id": "1rIT7PBFzuoW0mrw2bYqr4scIiHlcHGVk",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1rIT7PBFzuoW0mrw2bYqr4scIiHlcHGVk/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업_ 디자인검수 요청서(250723).pdf"
+  },
+  {
+   "doc_id": "1rT4Zzg14ZkaCDQxHUO_wOyUXmRctcTRF",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1rT4Zzg14ZkaCDQxHUO_wOyUXmRctcTRF/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업_ 디자인검수 요청서(250721)_수정.pdf"
+  },
+  {
+   "doc_id": "1s-N0-Ix18Vn7tWJDqZuQUGLE4wsP70vO",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1s-N0-Ix18Vn7tWJDqZuQUGLE4wsP70vO/view",
+   "title": "[스위트스팟] KBLㅣ라인프렌즈 팝업 1차 제안서(250703).pdf"
+  },
+  {
+   "doc_id": "1svZu7Pl9uF_HA6C1D71ox3Ug90H2l9WQ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1svZu7Pl9uF_HA6C1D71ox3Ug90H2l9WQ/view",
+   "title": "그리드_잔금(50%)계산서.jpg"
+  },
+  {
+   "doc_id": "1tmqNe8AmVrw8LfX-FkCzV1fzHV9hVtSq",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1tmqNe8AmVrw8LfX-FkCzV1fzHV9hVtSq/view",
+   "title": "02-KBL_라인프랜즈_성수팝업_무신사스퀘어_견적서_2차 _25724.pdf"
+  },
+  {
+   "doc_id": "1uo6RAJwcTqHc0Jx1uyuWhzzazi2qqkcD",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1uo6RAJwcTqHc0Jx1uyuWhzzazi2qqkcD/view",
+   "title": "[스위트스팟] 팝업대행 표준 계약서_케이엔_0721.pdf"
+  },
+  {
+   "doc_id": "1vJxrububWXUQc6lPMJkbJZcVB5je1cHw",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1vJxrububWXUQc6lPMJkbJZcVB5je1cHw/view",
+   "title": "02-KBL_라인프랜즈_성수팝업_무신사스퀘어_견적서_2차 _25724.xlsx"
+  },
+  {
+   "doc_id": "1yQVYtzXEl3y5v2UwU1yf04CFzfth5tA0",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1yQVYtzXEl3y5v2UwU1yf04CFzfth5tA0/view",
+   "title": "7.29 스위트스팟(유진주) 님.xlsx"
+  },
+  {
+   "doc_id": "1ylyflihaYCJaS0dIQSmyr6Kjm_uj4Nh2",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ylyflihaYCJaS0dIQSmyr6Kjm_uj4Nh2/view",
+   "title": "그리드_잔금(50%)계산서.jpg"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서/기획서/견적서/결과보고서) 미제공; client_name; venue; category; 면적; 수수료구조; 방문객 및 매출 실측치; 컨셉 및 체험요소 | 외부 라벨 역검색(2026-07-27): 방문 라벨 충전 1000; 수요신호 적재"
+ }
+}

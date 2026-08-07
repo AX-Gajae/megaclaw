@@ -1,0 +1,166 @@
+\documentclass[10pt]{article}
+\usepackage{icmlko}
+
+\icmlmeta{IP 파운데이션 월드모델}{211}{바닥이 나이와 함께 오른다}{게임의 라벨은 고쳤다. 도서도 같은 병인 줄 알고 열었더니 다른 병이었다 --- 라벨이 아니라 표본이고, 그건 못 고친다}
+
+\begin{document}
+
+\twocolumn[
+\icmlheader
+
+\begin{abstract}
+노트 210이 게임 라벨을 고정 창으로 고치고 ``도서도 같은 병인지 레코드부터
+볼 것''을 남겼다. 훑었다 --- \textbf{고정 창을 가진 도메인은 게임뿐이다.}
+나머지는 단일 누적 필드다(웹툰 즐겨찾기 · 애니 리뷰 · 세계애니/만화 인기도 ·
+모바일 평점 수 · 도서 판매지수). 그런데 도서를 열어 보니 \textbf{병이
+다르다.} 알라딘 판매지수는 애초에 \emph{최근} 판매 지표라 누적이 아니다.
+그럼 왜 출간 연도와 $-$0.364 인가. \textbf{표본이다} --- 알라딘
+\emph{베스트셀러} 목록에서 긁었고(노트 168), 396건 중 258건이 2025$\sim$26년
+이다. \textbf{옛 책은 아직도 팔리는 것만 목록에 남아 있다.} 표지가 하나
+있다: \textbf{연도 $\leftrightarrow$ 그 해 최소 판매지수가 $-$0.664}
+--- 옛 해의 \emph{바닥}이 높다. 바닥을 인위로 올리면 연도 상관이 $-$0.364
+에서 $-$0.133 으로 준다(바닥 2만, 138건). \textbf{3분의 2가 생존으로
+설명된다.} 전 도메인으로 넓혔다. \textbf{일곱 전부 바닥이 나이와 함께
+오른다}($-$0.21 $\sim$ $-$0.97). 웹툰이 \textbf{$-$0.969} 로 제일 심하고,
+노트 168이 인기순으로 적은 셋(도서 · 만화 · 세계애니)이 평균 $-$0.742 로
+나머지 넷($-$0.473)보다 심하다. \textbf{그리고 게임이 두 병을 가른다.}
+30일 창 라벨로 바꾸면 연도 $\leftrightarrow$ 라벨이 $-$0.635 에서
+\textbf{$+$0.071} 로 뒤집히는데 연도 $\leftrightarrow$ 최소는
+\textbf{$-$0.210} 이 남는다 --- \textbf{누적이 큰 몫이고 표본이 작은 몫이다.}
+결론은 두 층이다: \textbf{누적 라벨은 고칠 수 있고}(노트 210)
+\textbf{인기순 표본은 못 고친다} --- 수집 틀 자체를 바꿔야 한다.
+\end{abstract}
+]
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/floor.pdf}
+\caption{왼쪽 --- 옛 책의 바닥이 높다. 가운데 --- 바닥을 올리면 준다.
+오른쪽 --- 일곱 전부 바닥이 오른다.}
+\end{figure*}
+
+\section{고정 창은 게임뿐}
+
+\begin{table}[t]
+\centering\tsize
+\caption{도메인별 라벨 필드.}
+\begin{tabular}{lll}
+\toprule
+& 필드 & 창 \\
+\midrule
+\textbf{게임} & \texttt{y\_w30} & \textbf{30일} \\
+\textbf{펀딩} & \texttt{y\_backers} & \textbf{마감 시점} \\
+\midrule
+웹툰 & \texttt{y\_favorite} & 누적 \\
+애니 & \texttt{y\_review} & 누적 \\
+세계애니·만화 & \texttt{y\_popularity} & 누적 \\
+모바일 & \texttt{y\_rating\_count} & 누적 \\
+도서 & \texttt{sales\_point} & \emph{최근 가중} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\claimx{\textbf{펀딩은 자연히 고정 창이다} --- 캠페인이 끝나면 후원자 수가
+멈춘다. 노트 209에서 유보 안 연도 상관이 $+$0.012 로 유일하게 0 이었던
+것이 그것과 맞는다.}{\textbf{도서는 창 문제가 아니다} --- 알라딘 판매지수는
+최근 판매에 가중을 준 지표라 누적이 아니다. 그런데도 연도와 $-$0.364 다.}
+
+\section{도서는 표본이다}
+
+\begin{table}[t]
+\centering\tsize
+\caption{도서 396건. 출간 연도별 판매지수.}
+\begin{tabular}{lrrrr}
+\toprule
+연 & n & 최소 & 1분위 & 중앙 \\
+\midrule
+2019 & 10 & \textbf{4{,}798} & 10{,}540 & 20{,}211 \\
+2022 & 10 & 1{,}035 & 3{,}558 & 20{,}798 \\
+2025 & 49 & 1{,}058 & 7{,}417 & 17{,}721 \\
+\textbf{2026} & \textbf{209} & \textbf{10} & 1{,}575 & 4{,}923 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\claimx{\textbf{연도 $\leftrightarrow$ 그 해 최소가 $-$0.664 다.} 2019년
+책의 바닥이 4,798 이고 2026년은 10 이다 --- \textbf{옛 책은 아직도 팔리는
+것만 목록에 남아 있다.}}{표본이 알라딘 \emph{베스트셀러}다(노트 168의
+표에서 ``○''). 396건 중 258건이 2025$\sim$26년인 것도 그 때문이다 ---
+현재 목록은 최근 책이 채운다.}
+
+\claimx{\textbf{바닥을 인위로 올리면 연도 상관이 준다} --- 없음 $-$0.364,
+1천 $-$0.292, 1만 $-$0.178, 2만 $-$0.133. \textbf{3분의 2가 생존으로
+설명된다.}}{그렇다고 바닥을 올리는 것이 고침은 아니다 --- 2만이면 138건만
+남아 65\%를 버린다. \textbf{진단이지 처방이 아니다.}}
+
+\section{일곱 전부 바닥이 오른다}
+
+\begin{table}[t]
+\centering\tsize
+\caption{연도 $\leftrightarrow$ 그 해 라벨 최소.}
+\begin{tabular}{lrrl}
+\toprule
+& 최소와 & 라벨과 & 표본 \\
+\midrule
+\textbf{웹툰} & \textbf{$-$.969} & $-$.352 & ○ 부분 \\
+\textbf{만화} & \textbf{$-$.693} & $-$.158 & ○ \\
+애니 & $-$.685 & $-$.323 & 부분 \\
+세계애니 & $-$.563 & $+$.044 & ○ \\
+모바일 & $-$.542 & $-$.028 & ? \\
+펀딩 & $-$.456 & $-$.272 & × \\
+\textbf{게임} & \textbf{$-$.210} & \textbf{$+$.071} & ? \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\claimx{\textbf{일곱 전부 음수다.} 인기순으로 적힌 셋이 평균 $-$0.742 로
+나머지 넷($-$0.473)보다 심하다 --- \textbf{노트 168의 수집 문서가 라벨
+행동으로 확인된다.}}{다만 ``바닥이 오른다''는 누적 라벨에서도 기계적으로
+생긴다 --- 제일 못한 옛 작품도 제일 못한 새 작품보다 오래 모았다.
+\textbf{두 원인이 겹쳐 있다.}}
+
+\claimx{\textbf{게임이 둘을 가른다.} 30일 창으로 바꾸니 연도
+$\leftrightarrow$ 라벨이 $-$0.635 $\to$ $+$0.071 인데 연도 $\leftrightarrow$
+최소는 $-$0.210 이 남는다.}{\textbf{누적이 큰 몫이고 표본이 작은 몫이다.}
+게임은 두 라벨을 다 가진 유일한 도메인이라 이 분해가 거기서만 된다.}
+
+\section{두 층}
+
+\begin{table}[t]
+\centering\tsize
+\caption{달력 효과의 두 층.}
+\begin{tabular}{lll}
+\toprule
+& 원인 & 고칠 수 있나 \\
+\midrule
+\textbf{누적 라벨} & 오래 모을수록 크다 & \textbf{○} (노트 210) \\
+\textbf{인기순 표본} & 옛것은 살아남은 것만 & \textbf{×} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\claimx{\textbf{도서는 라벨을 고쳐도 안 낫는다} --- 판매지수는 이미 최근
+지표다. 수집 틀(베스트셀러 목록)을 바꿔야 하고 그건 새로 긁는 일이다.}{그
+전까지는 \textbf{판을 읽을 때 도서 몫을 할인해서 읽어야 한다} --- 노트
+209가 잰 대로 도서 유보 $\rho$ 의 $+$0.562 가 달력이다.}
+
+\begin{table}[t]
+\centering\tsize
+\caption{남은 것.}
+\begin{tabular}{ll}
+\toprule
+\textbf{웹툰} & 바닥 $-$0.969 --- 누적인가 표본인가 못 가른다 \\
+수집 틀 & 인기순이 아닌 표본을 만들 수 있나 \\
+\textbf{할인} & 도메인별 달력 몫을 판 옆에 적을 것 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+마지막 줄이 곧바로 할 수 있고 이 흐름에 남는다. 노트 209가 도메인별
+``$-$시작일만으로 얻는 $\rho$''를 이미 쟀다 --- 도서 $+$0.562 · 게임(옛 라벨)
+$+$0.494 · 웹툰 $+$0.350 · 모바일 $+$0.198 · 애니 $+$0.144 · 세계애니
+$+$0.099. \textbf{그 수를 판 옆에 상시로 적으면 판을 읽을 때마다 얼마를
+할인할지 보인다.} 지금은 노트 하나에만 있고 다음 사이클이면 잊힌다 ---
+모니터에 올릴 것.
+
+\end{document}

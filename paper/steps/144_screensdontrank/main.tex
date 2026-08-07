@@ -1,0 +1,185 @@
+\documentclass[10pt]{article}
+\usepackage{icmlko}
+
+\icmlmeta{IP 파운데이션 월드모델}{322}{검사는 거르지 줄 세우지 못한다}{전용 축이 값을 하는 조건을 예측했다가 반증됐다 --- 그리고 대신 나온 것도 표본 셋짜리다}
+
+\begin{document}
+
+\twocolumn[
+\icmlheader
+
+\begin{abstract}
+노트 321이 남긴 물음: \texttt{fund\_cat} 은 펀딩 $+$0.117 을 버는데
+\texttt{mkt\_cat} 은 시장팝업 $+$0.026 이다. 검사 ①②③④ 를 둘 다 통과하고
+\texttt{mkt\_cat} 은 \textbf{유보에서도 라벨을 가른다}($H{=}14.4$,
+$p{=}0.026$). 유일하게 다른 것이 \textbf{도메인 몫}으로 보였다 --- 펀딩
+3.08\% 대 시장팝업 0.97\%, 노트 318의 절벽을 사이에 두고. 가설을 세웠다:
+\textbf{전용 축은 그 도메인이 절벽 위에 있어야 값을 한다.} 노트 319 · 320의
+가중으로 시장팝업 몫을 0.97\% $\to$ 2.5\% $\to$ 9.09\% 로 올려 다시 쟀다.
+\textbf{반증됐다} --- \texttt{mkt\_cat} 이득이 $+$0.0259 $\to$ $-$0.0058
+$\to$ $-$0.0233 으로 \textbf{몫을 올릴수록 나빠진다}(예측은 $+$0.05$\sim$
+$+$0.20 이었다). \texttt{fund\_cat} 은 $+$0.117 $\to$ $+$0.131 $\to$
+$+$0.080 으로 버틴다. \textbf{그러면 무엇이 다른가} --- 다섯 성질을 재
+봤다. \textbf{유보 효과 크기는 오히려 거꾸로다}(\texttt{fund\_cat} $\epsilon^2
+{=}0.037$ 로 제일 낮은데 이득 최고, \texttt{anime\_medium} 0.112 로 제일
+높은데 음수). 세 축을 맞게 정렬하는 것은 \textbf{학습 구간 $\epsilon^2$}
+(0.148 $>$ 0.127 $>$ 0.005)와 \textbf{기준 $\rho$}(0.254 $<$ 0.410 $<$
+0.476, 거꾸로) 둘뿐이다. \textbf{그런데 $n{=}3$ 이다} --- 노트 315 · 316의
+잣대로 세 값의 순서는 주장할 수 없다. 그래서 \textbf{다음 축을 지을 때
+시험할 예측으로 등록만 한다.} \textbf{검사 넷은 거르기용이고, 무엇이 벌지는
+지어 봐야 안다.}
+\end{abstract}
+]
+
+\section{가설과 반증}
+
+노트 321이 끝나면서 남긴 자리 --- 검사 넷을 다 통과한 축 둘이 스무 배
+차이 난다.
+
+\begin{center}\footnotesize
+\begin{tabular}{lrrl}
+\hline
+& 도메인 몫 & 유보 이득 & \\
+\hline
+\texttt{fund\_cat} & 3.08\% & $+$0.1173 & 절벽 안쪽 \\
+\texttt{mkt\_cat} & 0.97\% & $+$0.0259 & 절벽 아래 \\
+\hline
+\end{tabular}
+\end{center}
+
+\texttt{mkt\_cat} 은 축이 나쁜 게 아니다 --- 학습 $H{=}18.4$($p{=}0.010$) ·
+\textbf{유보 $H{=}14.4$($p{=}0.026$)} 로 유보에서도 라벨을 가른다.
+\textbf{모형이 안 쓴다.} 노트 318의 논리를 전용 축에 옮기면 가설이 나온다:
+\textbf{0.97\% 짜리 도메인의 전용 축으로 가르는 분할은 탐욕 기준에서 안
+뽑힌다.}
+
+\paragraph{예측을 적고 쟀다} \texttt{preregister\_privateweight.json} 에
+``$\alpha{=}0$ 에서 \textbf{크게 오른다} --- $+$0.05$\sim$$+$0.20''을 적고,
+반증 조건도 함께 적었다: ``안 오르면 몫이 아니라 다른 것이다.''
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/rank.pdf}
+\caption{왼쪽 --- 가중으로 몫을 올리며 잰 전용 축의 이득. 오른쪽 --- 다섯
+성질 중 어느 것이 세 축을 정렬하나.}
+\end{figure*}
+
+\begin{center}\small
+\begin{tabular}{lrrr}
+\hline
+& $\alpha{=}1$ & $\alpha{=}0.75$ & $\alpha{=}0$ \\
+시장팝업 몫 & 0.97\% & 2.5\% & 9.09\% \\
+\hline
+\textbf{\texttt{mkt\_cat}} & $+$0.0259 & \textbf{$-$0.0058} & \textbf{$-$0.0233} \\
+\texttt{fund\_cat} & $+$0.1173 & $+$0.1311 & $+$0.0799 \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{몫을 올릴수록 나빠진다.} 예측과 방향이 반대다. \textbf{가설은
+죽는다.}
+
+\section{그러면 무엇이 다른가}
+
+다섯 성질을 재고 이득 순서(\texttt{fund} $>$ \texttt{mkt} $>$
+\texttt{anime})와 맞는지 봤다.
+
+\begin{center}\footnotesize
+\begin{tabular}{lrrrl}
+\hline
+& \texttt{fund} & \texttt{mkt} & \texttt{anime} & \\
+\hline
+\textbf{유보 이득} & $+$0.117 & $+$0.026 & $-$0.009 & --- \\
+\hline
+학습 $\epsilon^2$ & 0.148 & 0.127 & 0.005 & \textbf{맞음} \\
+기준 $\rho$ & 0.254 & 0.410 & 0.476 & \textbf{거꾸로} \\
+\hline
+유보 $\epsilon^2$ & 0.037 & 0.089 & 0.112 & 거꾸로(틀림) \\
+최빈 밖 & 77\% & 80\% & 6\% & 못 맞춤 \\
+도메인 몫 & 3.1\% & 1.0\% & 14.1\% & 못 맞춤 \\
+\hline
+\end{tabular}
+\end{center}
+
+\paragraph{유보 효과 크기는 거꾸로다} \texttt{fund\_cat} 이 유보에서
+제일 약하게 가르는데($\epsilon^2{=}0.037$, $p{=}0.24$) 이득이 제일 크고,
+\texttt{anime\_medium} 이 제일 세게 가르는데($\epsilon^2{=}0.112$,
+$H{=}69.6$) 음수다. \textbf{축이 유보를 잘 가른다고 모형이 잘 쓰는 게
+아니다.}
+
+\paragraph{맞는 둘} \textbf{학습 $\epsilon^2$}(효과 크기, $p$ 값이 아니다)와
+\textbf{기준 $\rho$}(낮을수록 벌 여지가 크다)가 세 축을 맞게 정렬한다.
+둘 다 \textbf{유보를 안 보고 계산된다} --- 쓸 수 있는 자리다.
+
+\section{그런데 $n{=}3$ 이다}
+
+\begin{center}\small
+\begin{tabular}{ll}
+\hline
+세 값의 순서가 우연히 맞을 확률 & $1/6$ \\
+뒤집혀 맞을 것까지 세면 & $1/3$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{노트 315 · 316이 정한 잣대로는 주장할 수 없다} --- 오늘 아침에
+``못 가르는 값들의 순서도 못 가른다''로 노트 하나를 물렀는데, 여기서 표본
+셋짜리 순서로 법칙을 세우면 같은 잘못이다.
+
+\paragraph{그래서 등록만 한다} 다음에 전용 축을 지을 때 \textbf{학습
+$\epsilon^2$ 와 기준 $\rho$ 를 먼저 재고 이득을 예측한 뒤} 짓는다. 맞으면
+검사 다섯째가 되고 틀리면 오늘의 셋이 우연이었던 것이다.
+
+\section{그리고 검사의 자리를 다시 적는다}
+
+\begin{center}\footnotesize
+\begin{tabular}{ll}
+\hline
+검사가 하는 것 & \\
+\hline
+① 정보가 없는 축 & 거른다 \\
+② 시기에 흔들리는 축 & 거른다 \\
+③ 이미 있는 축 & 거른다 \\
+④ 거의 상수인 축 & 거른다 \\
+\hline
+\textbf{무엇이 벌지} & \textbf{못 고른다} \\
+\hline
+\end{tabular}
+\end{center}
+
+넷을 다 통과한 축 셋이 $+$0.117 · $+$0.026 · $-$0.009 다. \textbf{검사는
+아래를 자르지 위를 세우지 못한다.} 오늘 지은 둘 중 하나가 벌고 하나가
+안 벌었는데, 그 차이를 \textbf{짓기 전에는 몰랐다.}
+
+\paragraph{덤 --- 열린 갈래 하나를 닫는다} ``과제 78 시장 레코드 20건 사람
+태깅''이 오래 열려 있었다. \texttt{media\_push} 가 시장팝업에서 마스크
+0\%인데 사람이 채워야 한다는 것이었다. 재 보니 \textbf{대응 필드가 이미
+있다} --- \texttt{intervention.promotions} 가 647건 \emph{전부}에 있다.
+그런데 \textbf{자유 텍스트}라 266건에 서로 다른 값이 356개이고, 개수를
+축으로 쓰면 \textbf{검사 ① 에서 떨어진다}($\rho{=}{+}0.137$, $p{=}0.17$).
+그리고 시장팝업 유보 104행의 검출 문턱이 0.06$\sim$0.08 인데
+\texttt{mkt\_cat}(검사 넷 통과 · 유보에서도 가름)이 $+$0.026 이다.
+\textbf{20건을 태깅해도 그 문턱을 넘길 자리가 아니다.} 갈래를 닫는다.
+
+\paragraph{남은 것}
+\begin{center}\small
+\begin{tabular}{ll}
+\hline
+갈래 & 왜 \\
+\hline
+다음 축에 예측을 걸어라 & 학습 $\epsilon^2$ · 기준 $\rho$ \\
+\texttt{anime\_medium} 은 뺄까 & 애니 $-$0.009 · 문턱 아래 \\
+기준 $\rho$ 가 낮은 도메인 & 펀딩 0.25 · 아이돌 0.10 \\
+왜 유보 $\epsilon^2$ 가 거꾸로인가 & 제일 이상한 수 \\
+\hline
+\end{tabular}
+\end{center}
+
+\paragraph{규약} \textbf{반증 조건을 미리 적으면 반증이 결과가 된다.}
+``몫이 원인''은 노트 318 · 319 · 320이 세 번 확인한 법칙에서 자연스럽게
+나온 가설이었고, 그래서 더 믿었다. 미리 ``안 오르면 몫이 아니다''를
+적어 두지 않았으면 $-$0.0233 을 보고 다른 설명을 찾았을 것이다.
+그리고 \textbf{자기 잣대를 자기에게 대라} --- 오늘 아침 순서 주장으로 노트를
+물렀으면, 저녁에 표본 셋짜리 순서를 법칙이라 부르면 안 된다.
+
+\end{document}

@@ -1,0 +1,97 @@
+{
+ "market_record_id": "MKT-2026-0045",
+ "event_name": "스파오 '스파오프렌즈 랩(Lab)' 더현대 서울 팝업스토어",
+ "brand": "스파오 SPAO (이랜드월드)",
+ "ip_or_collab": "하츠네 미쿠·나루토·한화생명e스포츠·마이페이브아카이브·토이스토리5·누룽쥐 등 6개 신규 콜라보 + 베스트 50종",
+ "category": "fashion",
+ "intervention": {
+  "concept_description": "스파오 역대 콜라보 베스트 50종 + 6개 신규 IP 협업 첫 공개, 팬덤 경험 공간",
+  "experience_elements": [
+   "방문 고객 전원 스티커·랜덤 포토카드 증정",
+   "더현대 한정 헬로키티 티셔츠",
+   "D.I.Y 티셔츠"
+  ],
+  "promotions": [
+   "현장 한정 상품"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "더현대 서울 지하 2층 팝업 아이코닉 존",
+  "venue_type": "department_store",
+  "neighborhood": "여의도",
+  "city": "서울",
+  "period_from": "2026-06-11",
+  "period_to": "2026-06-24",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 10000,
+  "visitors_period_days": 13,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "이랜드 자사 매거진(운영사 채널) 발표. '1만 명 이상'이므로 하한값 기록. 네이버 사전 예약자만 입장",
+  "visitors_source_quote": "네이버 사전 예약 고객만 입장 가능했는데, 팝업 사전 예약을 위해 온라인에 1만 5천 명 이상의 고객이 몰리며 1분 만에 마감됐어요. 팝업 첫날 오픈 시점인 10시 30분에 이미 현장 대기 500팀을 초과하는 오픈런이 발생했고, 13일 팝업 기간 동안 1만 명 이상이 방문하기도 했죠.",
+  "visitors_source_url": "https://www.eland.co.kr/mgzn/viewMgzn?mgznIdx=1556",
+  "visitors_source_date": "2026-07-06",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "첫날 오픈 시점 현장 대기 500팀 초과 오픈런, 대기순번 360번대 보도(청년일보)",
+   "sold_out": null,
+   "reservation_fill": "사전 예약 1만 5천 명 이상 몰려 1분 만에 마감, 현장 예약 885팀 조기 마감(서울경제)",
+   "signal_quotes": [
+    "팝업 사전 예약을 위해 온라인에 1만 5천 명 이상의 고객이 몰리며 1분 만에 마감됐어요.",
+    "팝업 첫날 오픈 시점인 10시 30분에 이미 현장 대기 500팀을 초과하는 오픈런이 발생했고"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "운영 13일(6/22 백화점 휴무). 팝업 상품은 7월부터 온라인 순차 판매. 출처는 운영사(이랜드) 자사 매거진 채널로 재검색 노출이 불안정하나, 예약 1만5천 명·오픈런 500팀·방문 1만 명 수치는 서울경제·청년일보 등 일반 언론 보도로도 확인됨. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

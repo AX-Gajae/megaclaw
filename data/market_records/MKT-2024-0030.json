@@ -1,0 +1,78 @@
+{
+  "market_record_id": "MKT-2024-0030",
+  "event_name": "침착맨 팝업스토어 '갓청자 침투부 스튜디오 초대석' @신세계 강남",
+  "brand": "신세계백화점×침착맨",
+  "ip_or_collab": "침착맨(이말년)",
+  "category": "entertainment",
+  "intervention": {
+    "concept_description": "침착맨 라이브 방송 스튜디오를 그대로 옮겨온 체험 공간(신세계 첫 유튜버 협업 팝업)",
+    "experience_elements": [
+      "스튜디오 재현 공간"
+    ],
+    "promotions": [
+      "팝업 전용 신제작 130여 종 상품 판매"
+    ],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "신세계백화점 강남점 지하 1층 행사장",
+    "venue_type": "department_store",
+    "neighborhood": "반포",
+    "city": "서울",
+    "period_from": "2024-05-10",
+    "period_to": "2024-05-23",
+    "area_pyeong": null,
+    "multi_store": null,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 14,
+        "weekend_share": 0.29,
+        "holiday_days": 1
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "머니투데이 보도(신세계 제공): '하루 평균 1500여명이 방문'. 일평균 수치이므로 총계 환산 금지 규칙에 따라 visitors_total은 null",
+    "visitors_source_quote": "지난 10일부터 오는 23일까지 신세계백화점 강남점에서 진행되는 침착맨 팝업스토어는 하루 평균 1500여명이 방문하는 등 큰 인기를 끌고 있다.",
+    "visitors_source_url": "https://www.mt.co.kr/living/2024/05/17/2024051609573785999",
+    "visitors_source_date": "2024-05-17",
+    "sales_krw": null,
+    "sales_source_quote": "",
+    "sales_source_url": "",
+    "sales_source_date": "",
+    "demand_signals": {
+      "waiting_time_reported": true,
+      "sold_out": true,
+      "reservation_fill": true,
+      "signal_quotes": [
+        "팝업스토어 방문 사전 예약 2만명분은 빠르게 매진 됐고, 매일 현장 예약을 하기 위해 12시간 가까이 밤샘 대기를 하는 고객들도 생겨나고 있다.",
+        "10일 팝업이 시작된 첫날 행사장에서 팝업스토어 오픈 전부터 300명 이상의 대기 줄이 생기며 '오픈런'이 펼쳐졌다.(뉴스핌 2024-05-13)",
+        "지난달 26과 지난 3일에 진행된 온라인 사전 예약 티켓이 오픈과 동시에 완판되기도 했다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "사전예약 2만명 매진·첫날 300명 대기·일평균 1500명 방문 | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,491 @@
+{
+ "record_id": "RCPU2429",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:정년이_tvN드라마",
+  "space_id": "unresolved:더현대서울_B2_아이코닉스퀘어",
+  "client_party_id": null,
+  "brand_key": "정년이",
+  "space_key": "더현대서울"
+ },
+ "intervention": {
+  "concept": "tvN 드라마 '정년이' IP를 활용한 팝업스토어. 드라마 소품·의상 전시, 굿즈 판매, 영수증(흑백) 사진관, 포토카드 키오스크로 구성. 국극/드라마 의상과 소품 연출 및 배우 등신대를 배치한 IP 체험형 팝업.",
+  "brand_name": "정년이",
+  "experience_elements": [
+   "정년이 드라마 소품 전시존(의상 3종, 소품 전시좌대 4종, 검거치대, 대본아크릴거치대)",
+   "굿즈 판매존",
+   "영수증(흑백) 사진관",
+   "포토카드 키오스크존",
+   "배우 등신대(정년/혜랑/옥경/영서/소복)",
+   "65인치 DID 영상",
+   "고가구·축음기 연출",
+   "정년이 우드사인"
+  ],
+  "promotions": [
+   "구매 시 흑백 사진관 촬영 1인 1회 참여 가능",
+   "3만원 이상 구매 시 엽서 랜덤 증정(일 200장)",
+   "5만원 이상 구매 시 L홀더 랜덤 증정(일 200장)"
+  ],
+  "staging_tags": [
+   "회색카페트 바닥",
+   "나왕합판 오일 가벽",
+   "전용벽지",
+   "벽면 커튼마감",
+   "생활한복 스타일 스태프 근무복"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "영등포구",
+   "venue_name": "더현대 서울 B2 아이코닉 스퀘어",
+   "venue_type": "백화점",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": 19.5,
+  "period": {
+   "from": "2024-11-07",
+   "to": "2024-11-20",
+   "days": 14
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": "계약서/견적 금액 정보 없음. 근무복 비용만 명시(1인 49,000원, 10인 490,000원 배송비 포함)."
+  },
+  "brand_requirements": [
+   "더현대서울 차단봉 13개 요청",
+   "PDA 2개 요청",
+   "현대포스 1개 및 여사님 지원 요청(현금 및 상품권 결제)",
+   "POP대 2개 요청",
+   "교환/환불 규정 운영(운영 종료 후 2주 이내)",
+   "쇼핑백/BGM(정년이 OST) 사용 여부 확인 필요"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대 서울 B2 아이코닉 스퀘어"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 1.2,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 50,
+    "holiday_until": 79,
+    "holiday_block_in": 0,
+    "nat_event_gap": 7,
+    "nat_event": "수능",
+    "doc_lag_days": 35,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 20,
+    "comp_prior_at_venue": 97,
+    "comp_within_500m_open": 20,
+    "comp_within_1000m_open": 20,
+    "matched_address": "서울 영등포구 여의대로 108"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 17863108.0,
+    "pnl_pre_accounts": 6,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2024-08-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 75.3
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서가 제공되지 않아 실측 방문객·매출 데이터 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-11, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2024-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-DGuQa3eVzRGGY-GThjsj-I3RmqVl4Gj",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1-DGuQa3eVzRGGY-GThjsj-I3RmqVl4Gj/view",
+   "title": "[스위트스팟] 더현대서울 정년이팝업 견적요청_1022.pptx"
+  },
+  {
+   "doc_id": "10orA_UA_uHYlJoN52ChVsVr90UTGVyj_",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/10orA_UA_uHYlJoN52ChVsVr90UTGVyj_/view",
+   "title": "64673_65582_4554.jpg"
+  },
+  {
+   "doc_id": "12OVd77-LfRL1AT04i6WbOTSvERvIfM0r",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/12OVd77-LfRL1AT04i6WbOTSvERvIfM0r/view",
+   "title": "SE-c34d2772-822c-11ef-8cfa-f9b151b195bf.jpg"
+  },
+  {
+   "doc_id": "130JMkyf9Xkma_f3D4rZaSRqDNqn28lKM",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/130JMkyf9Xkma_f3D4rZaSRqDNqn28lKM/view",
+   "title": "다운로드.jfif"
+  },
+  {
+   "doc_id": "13_hvRmKQwlkLY1MOhZT5ThZ6xDxVeXHt",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/13_hvRmKQwlkLY1MOhZT5ThZ6xDxVeXHt/view",
+   "title": "[스위트스팟] 더현대서울 정년이팝업 1차시안_1017.pdf"
+  },
+  {
+   "doc_id": "15MbIprt828liaHNDCr45woRFwVvWVA-s",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/15MbIprt828liaHNDCr45woRFwVvWVA-s/view",
+   "title": "정년이_PO_캐릭터_정년_FIN copy.png"
+  },
+  {
+   "doc_id": "15dj9SyLmB1hZP4U7RoHD9It8Zxd-NeVt",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/15dj9SyLmB1hZP4U7RoHD9It8Zxd-NeVt/view",
+   "title": "Enscape_2024-10-14-02-20-12.png"
+  },
+  {
+   "doc_id": "15uMyP271tkUX92fWLlPMxDojrPnMy2r6",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/15uMyP271tkUX92fWLlPMxDojrPnMy2r6/view",
+   "title": "ecn20230526000031.600x.0.jpg"
+  },
+  {
+   "doc_id": "16AyqyaE0OAKmaahAUV-IPXiRGE2LDYvm",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/16AyqyaE0OAKmaahAUV-IPXiRGE2LDYvm/view",
+   "title": "[스위트스팟] 더현대서울 정년이팝업 1차시안_1014.pdf"
+  },
+  {
+   "doc_id": "16mbaLj-cFXhS07C_d6W_gnfjNEHpINLk",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/16mbaLj-cFXhS07C_d6W_gnfjNEHpINLk/view",
+   "title": "정년이 더현대서울 위탁운영 계약서_스위트스팟_241121 최종.doc"
+  },
+  {
+   "doc_id": "16tvdtArZwPqMcxdYs4fpKUnx_vRtMozm",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/16tvdtArZwPqMcxdYs4fpKUnx_vRtMozm/view",
+   "title": "Enscape_2024-10-14-02-20-34.png"
+  },
+  {
+   "doc_id": "1760XuFnqYTSDWNKrd1CCRs1NuHDGgKlr",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1760XuFnqYTSDWNKrd1CCRs1NuHDGgKlr/view",
+   "title": "Enscape_2024-10-14-02-19-45.png"
+  },
+  {
+   "doc_id": "19sCdqjYVN-rCzTeds70slayq7CPiJNkF",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/19sCdqjYVN-rCzTeds70slayq7CPiJNkF/view",
+   "title": "Thumbs.db"
+  },
+  {
+   "doc_id": "1ADMu9SfYX3oNNAIv_kmjpb69ZvWmcwaC",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ADMu9SfYX3oNNAIv_kmjpb69ZvWmcwaC/view",
+   "title": "Thumbs.db"
+  },
+  {
+   "doc_id": "1AnWnzxugFbb7GSQKkulTDhmeqerv6jXt",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1AnWnzxugFbb7GSQKkulTDhmeqerv6jXt/view",
+   "title": "4w576j4wj6745j.png"
+  },
+  {
+   "doc_id": "1BLMowdYpqsj4HXjAPBzGgNXLHNSEJ7UE",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1BLMowdYpqsj4HXjAPBzGgNXLHNSEJ7UE/view",
+   "title": "Enscape_2024-10-21-17-55-27.png"
+  },
+  {
+   "doc_id": "1B_-iOHPSgxyI-cep6wjpiNMyjgJBafmg",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1B_-iOHPSgxyI-cep6wjpiNMyjgJBafmg/view",
+   "title": "Enscape_2024-10-14-02-19-33.png"
+  },
+  {
+   "doc_id": "1BfgUz9B-xCeO1HD_A6N0GtgPUxohPwFE",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1BfgUz9B-xCeO1HD_A6N0GtgPUxohPwFE/view",
+   "title": "Enscape_2024-10-14-02-19-13.png"
+  },
+  {
+   "doc_id": "1DweAnichH5C0ChtNOPiG4sOOK48guwyy",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1DweAnichH5C0ChtNOPiG4sOOK48guwyy/view",
+   "title": "Enscape_2024-10-22-13-28-50.png"
+  },
+  {
+   "doc_id": "1H03mZ4-XZLXh7CjovhpgTu07QM--UX0L",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1H03mZ4-XZLXh7CjovhpgTu07QM--UX0L/view",
+   "title": "e1b6e3cd6abf341f13c89662bd8d336b_1700186260_2205.jpg"
+  },
+  {
+   "doc_id": "1HsikDGyamMudoyI-y4bkEVSauiF0Nb4S",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1HsikDGyamMudoyI-y4bkEVSauiF0Nb4S/view",
+   "title": "Thumbs.db"
+  },
+  {
+   "doc_id": "1I2lSXTO7Um44uGEyyhpTruRXtHx4h6S3",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1I2lSXTO7Um44uGEyyhpTruRXtHx4h6S3/view",
+   "title": "Enscape_2024-10-22-13-29-30.png"
+  },
+  {
+   "doc_id": "1J8j6zQ38_TlTto23e27vQKsRNa6Ixc64",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1J8j6zQ38_TlTto23e27vQKsRNa6Ixc64/view",
+   "title": "다운로드 (5).jfif"
+  },
+  {
+   "doc_id": "1LyYqmzAHhBcwnIbWYXMtg4VMoF0eqyF7",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1LyYqmzAHhBcwnIbWYXMtg4VMoF0eqyF7/view",
+   "title": "[스위트스팟] 더현대서울 정년이팝업 2차시안_1022.pptx"
+  },
+  {
+   "doc_id": "1NMOc_wOhjGg9ZUn3wwvt4OhLEQpuw9ZU",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1NMOc_wOhjGg9ZUn3wwvt4OhLEQpuw9ZU/view",
+   "title": "[스위트스팟] 더현대서울 정년이팝업 1차시안_1017.pptx"
+  },
+  {
+   "doc_id": "1OzywNucrTxiNwnUr-ki8RLQ_MsmLdO1E",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1OzywNucrTxiNwnUr-ki8RLQ_MsmLdO1E/view",
+   "title": "Enscape_2024-10-22-13-29-40.png"
+  },
+  {
+   "doc_id": "1P6zVDOEUzD4VZn2nMA51pvREZKpfJUgO",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1P6zVDOEUzD4VZn2nMA51pvREZKpfJUgO/view",
+   "title": "20241003＿133537.jpg"
+  },
+  {
+   "doc_id": "1PgKBy2R9JF7z1m2wZO5scrS5cOyZQUZw",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1PgKBy2R9JF7z1m2wZO5scrS5cOyZQUZw/view",
+   "title": "20241003＿133743.jpg"
+  },
+  {
+   "doc_id": "1RHWdNwJ_ivNbZxaCpLQJuc_oV-CCG4Ne",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1RHWdNwJ_ivNbZxaCpLQJuc_oV-CCG4Ne/view",
+   "title": "Enscape_2024-10-21-17-55-12.png"
+  },
+  {
+   "doc_id": "1S-KLHgsLN6e-Gd57IQ53rOoX9NYQCStB",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1S-KLHgsLN6e-Gd57IQ53rOoX9NYQCStB/view",
+   "title": "Enscape_2024-10-21-17-56-17.png"
+  },
+  {
+   "doc_id": "1TBHgBn_kVNMQgsQkblxN8H3sLMjKsF_L",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1TBHgBn_kVNMQgsQkblxN8H3sLMjKsF_L/view",
+   "title": "Enscape_2024-10-14-02-20-00.png"
+  },
+  {
+   "doc_id": "1TcVHDgDUSI2StflYmrxMz70cAA6ebFq7",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1TcVHDgDUSI2StflYmrxMz70cAA6ebFq7/view",
+   "title": "[스위트스팟] 더현대서울 정년이팝업 1차시안_1014.pptx"
+  },
+  {
+   "doc_id": "1U-7xO2e7jaFHfVBPvHGdB7T-SGK-JiJw",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1U-7xO2e7jaFHfVBPvHGdB7T-SGK-JiJw/view",
+   "title": "정년이_PO_캐릭터_혜랑_FIN copy.png"
+  },
+  {
+   "doc_id": "1_BTUCNGf2tKHE6IaTtr_WpCncor1y6Vg",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1_BTUCNGf2tKHE6IaTtr_WpCncor1y6Vg/view",
+   "title": "정년이_더현서_견적서1차_1030.pdf"
+  },
+  {
+   "doc_id": "1cx3SSIldTU6Jk0nz4LsvdRcf5f3riXSc",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1cx3SSIldTU6Jk0nz4LsvdRcf5f3riXSc/view",
+   "title": "Enscape_2024-10-14-02-20-52.png"
+  },
+  {
+   "doc_id": "1dmY-cVmef9NQCLJ5NXqFmdyzGslvmJV-",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1dmY-cVmef9NQCLJ5NXqFmdyzGslvmJV-/view",
+   "title": "Enscape_2024-10-21-17-55-36.png"
+  },
+  {
+   "doc_id": "1fXjKYerRJYg5CdM91tuROK73Uo37K3O6",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1fXjKYerRJYg5CdM91tuROK73Uo37K3O6/view",
+   "title": "Enscape_2024-10-22-13-29-48.png"
+  },
+  {
+   "doc_id": "1fguh2b6fl1ZxJcEswmmcPOVmUL8a1uag",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1fguh2b6fl1ZxJcEswmmcPOVmUL8a1uag/view",
+   "title": "다운로드 (6).jfif"
+  },
+  {
+   "doc_id": "1kgtX0RxX-Qj7ifYj34-lQctOvP0o0UCE",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1kgtX0RxX-Qj7ifYj34-lQctOvP0o0UCE/view",
+   "title": "(근무복 추가) [스위트스팟] 더현대서울 정년이팝업 1차시안_1014.pptx"
+  },
+  {
+   "doc_id": "1lPnLVApSYcXhden68Ntm-pRvWUcjCpCf",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1lPnLVApSYcXhden68Ntm-pRvWUcjCpCf/view",
+   "title": "[스위트스팟] 더현대서울 정년이팝업 견적요청_1022.pptx"
+  },
+  {
+   "doc_id": "1ltAHDgc7uuizPOp7sVGOqVDnIoT8pq2L",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1ltAHDgc7uuizPOp7sVGOqVDnIoT8pq2L/view",
+   "title": "IMG_6607.jfif"
+  },
+  {
+   "doc_id": "1m4H-LLpQoHlf3g4iMhvAGBTu9rcGodbw",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1m4H-LLpQoHlf3g4iMhvAGBTu9rcGodbw/view",
+   "title": "[스위트스팟] 더현대서울 정년이팝업 2차시안_1022-1.pdf"
+  },
+  {
+   "doc_id": "1mAKwurqkdN0J7_tJGZCD-gK9j5p-Th5f",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1mAKwurqkdN0J7_tJGZCD-gK9j5p-Th5f/view",
+   "title": "다운로드 (7).jfif"
+  },
+  {
+   "doc_id": "1n-QVCmtQEpF7JvmkMPr6sACisivFKavo",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1n-QVCmtQEpF7JvmkMPr6sACisivFKavo/view",
+   "title": "IMG_6600.jfif"
+  },
+  {
+   "doc_id": "1pHSztSvgpjHRD_bra2rr1KsBrxeQinly",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1pHSztSvgpjHRD_bra2rr1KsBrxeQinly/view",
+   "title": "다운로드 (4).jfif"
+  },
+  {
+   "doc_id": "1prvNiFBKGNaP8vDQ8_Ea_NKuO209qb47",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1prvNiFBKGNaP8vDQ8_Ea_NKuO209qb47/view",
+   "title": "[스위트스팟] 더현대서울 정년이팝업 2차시안_1022.pdf"
+  },
+  {
+   "doc_id": "1qEKqKh-X5K_AaAd12NSuo3mFICcsdo4P",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1qEKqKh-X5K_AaAd12NSuo3mFICcsdo4P/view",
+   "title": "Enscape_2024-10-21-17-55-56.png"
+  },
+  {
+   "doc_id": "1qgLPurx8m9uuDt3fiW8pGzbs0cakETIY",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1qgLPurx8m9uuDt3fiW8pGzbs0cakETIY/view",
+   "title": "Enscape_2024-10-21-17-55-20.png"
+  },
+  {
+   "doc_id": "1rKhxhklOyzXVProWwVQ0kBTfWI6_Nwcf",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1rKhxhklOyzXVProWwVQ0kBTfWI6_Nwcf/view",
+   "title": "Enscape_2024-10-22-13-30-17.png"
+  },
+  {
+   "doc_id": "1rWinsycnba_i6a-WTSljNy3VPGkWNAb4",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1rWinsycnba_i6a-WTSljNy3VPGkWNAb4/view",
+   "title": "Enscape_2024-10-21-17-55-46.png"
+  },
+  {
+   "doc_id": "1tC7iUh9FQxUoJ3Ceke7uQm8EgxpIbbLz",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1tC7iUh9FQxUoJ3Ceke7uQm8EgxpIbbLz/view",
+   "title": "[스위트스팟] 더현대서울 정년이팝업 2차시안_1022-1.pptx"
+  },
+  {
+   "doc_id": "1tYRZlxtLT_eWO_uJ2kKWB_kWeyDIYCjG",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1tYRZlxtLT_eWO_uJ2kKWB_kWeyDIYCjG/view",
+   "title": "Enscape_2024-10-14-02-20-23.png"
+  },
+  {
+   "doc_id": "1ts7PHO3PhtqDj3iVn0pvpcRl4mqnOBXp",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ts7PHO3PhtqDj3iVn0pvpcRl4mqnOBXp/view",
+   "title": "Enscape_2024-10-14-02-57-36.png"
+  },
+  {
+   "doc_id": "1uZDpqRYgNpczxjiXjQxlUdedB0UEfjUH",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1uZDpqRYgNpczxjiXjQxlUdedB0UEfjUH/view",
+   "title": "Enscape_2024-10-21-17-56-06.png"
+  },
+  {
+   "doc_id": "1wW6S7qnLsm1q71O6oN5M_yKTdXC35zdg",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1wW6S7qnLsm1q71O6oN5M_yKTdXC35zdg/view",
+   "title": "39fb309101f5659666974a5f8384f639.jpg"
+  },
+  {
+   "doc_id": "1wbojV80inM-x1NX5HA3atjdVEAkMSuPF",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1wbojV80inM-x1NX5HA3atjdVEAkMSuPF/view",
+   "title": "다운로드 (3).jfif"
+  },
+  {
+   "doc_id": "1xpa-dwKBClJhIkQJc2Eo9gNFX7kJjbb-",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1xpa-dwKBClJhIkQJc2Eo9gNFX7kJjbb-/view",
+   "title": "Enscape_2024-10-22-13-30-03.png"
+  },
+  {
+   "doc_id": "1y-0ywVe8hhcWWfoanpEPe_lnzPMqpTGO",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1y-0ywVe8hhcWWfoanpEPe_lnzPMqpTGO/view",
+   "title": "다운로드 (1).jfif"
+  },
+  {
+   "doc_id": "1z7NLQu4FZD3kv7RQSCYDl3VIQY0Ogn38",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1z7NLQu4FZD3kv7RQSCYDl3VIQY0Ogn38/view",
+   "title": "(1차 수정본)더현대서울 정년이 팝업_운영기획안(1023).pdf"
+  },
+  {
+   "doc_id": "1zGG4XxGeCVNwdiQ5kN6bjUfhT06KFb53",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1zGG4XxGeCVNwdiQ5kN6bjUfhT06KFb53/view",
+   "title": "IMG_6606.jfif"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 5건: [스위트스팟] 더현대서울 정년이팝업 2차시안_1022., (근무복 추가) [스위트스팟] 더현대서울 정년이팝업 1, (1차 수정본)더현대서울 정년이 팝업_운영기획안(102, [스위트스팟] 더현대서울 정년이팝업 견적요청_1022., [스위트스팟] 더현대서울 정년이팝업 견적요청_1022.. 미확실: 결과보고서 부재로 방문객수/매출 실측 없음; 계약 총액·수수료 구조 정보 없음; client_name 미상; counting_method 판정 불가(보고서 없음); 예상 방문객 수치 문서에 없음"
+ }
+}

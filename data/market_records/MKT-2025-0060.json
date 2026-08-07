@@ -1,0 +1,110 @@
+{
+ "market_record_id": "MKT-2025-0060",
+ "event_name": "배스킨라빈스 '망빙고 가챠샵' 성수 팝업스토어",
+ "brand": "배스킨라빈스(SPC·BR코리아)",
+ "ip_or_collab": "7월 이달의 맛 '애망빙'(애플망고빙수 아이스크림) 출시 기념, MZ 인기 브랜드 협업 굿즈",
+ "category": "fnb",
+ "intervention": {
+  "concept_description": "'푸드코어' 트렌드 반영 체험형 팝업. 뽑기 기계를 진열한 '가챠삽' 콘셉트로 신제품 애망빙 체험 제공",
+  "experience_elements": [
+   "가챠삽(협업 한정 굿즈 뽑기)",
+   "트로피컬 카페테리아(애망빙 시식)",
+   "냉장고 콘셉트 셀피존",
+   "레슬리 에디션 시식(주말)"
+  ],
+  "promotions": [
+   "배라앱 사전예약 1000명 한정"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "서울 성수동(팝업 전용 공간)",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2025-07-17",
+  "period_to": "2025-07-20",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.5,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 5000,
+  "visitors_period_days": 4,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "주최사 보도자료 기반 '누적 방문자 약 5,000명'. 입장 기준(방문자) 집계로 추정되나 원문에 집계 방식 명시 없음",
+  "visitors_source_quote": "팝업스토어는 17일부터 20일까지 4일간 운영됐으며, 누적 방문자 약 5,000명을 기록하며 성황리에 마무리됐다.",
+  "visitors_source_url": "https://www.globalepic.co.kr/view.php?ud=202507211320366407ac3d53c8ec_29",
+  "visitors_source_date": "2025-07-21",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": "팝업 마지막 날 준비 제품 물량 전량 조기 소진",
+   "reservation_fill": "배라앱 사전예약 1000명, 약 반나절 만에 마감",
+   "signal_quotes": [
+    "배라앱에서 1,000명을 대상으로 한 사전 예약이 약 반나절 만에 마감되며 오픈 전부터 주목 받았고",
+    "팝업 스토어 운영 마지막날 준비한 제품 물량이 모두 조기 소진될 만큼 큰 호응을 얻었다.",
+    "배스킨라빈스 앱을 통한 사전 예약 1000명분은 반나절 만에 마감돼 높은 관심을 입증했다.",
+    "마지막 날에는 준비된 제품이 조기 소진되기도 했다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "E"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": true,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "배스킨라빈스 공식 보도자료 동일 내용(baskinrobbins.co.kr), 미래경제(2025-07-22) 등 다수 전재 | 병합 레코드: MKT-2025-0008 | [병합:MKT-2025-0008] EBN·글로벌에픽 등 다수 매체 동일 수치.",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 5000,
+   "basis": "organizer_claim",
+   "quote": "이번 팝업스토어는 7월 이달의 맛 '애망빙(애플망고빙수)' 출시를 기념해 기획된 행사로, 지난 17일부터 20일까지 4일간 운영됐다. 누적 방문자 수는 약 5000명에 달했으며, 배스킨라빈스 앱을 통한 사전 예약 1000명분은 반나절 만에 마감돼 높은 관심을 입증했다.",
+   "url": "https://www.kdfnews.com/news/articleView.html?idxno=161532",
+   "date": "2025-07-21"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

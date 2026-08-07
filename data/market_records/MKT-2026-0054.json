@@ -1,0 +1,81 @@
+{
+  "market_record_id": "MKT-2026-0054",
+  "event_name": "'정서불안 김햄찌' 첫 팝업 '오늘도 출근햄니다' @신세계 강남",
+  "brand": "신세계백화점×케이비젼",
+  "ip_or_collab": "정서불안 김햄찌(AI 크리에이터)",
+  "category": "character",
+  "intervention": {
+    "concept_description": "직장인 일상을 소재로 한 AI 캐릭터 첫 오프라인 팝업(사무실 콘셉트)",
+    "experience_elements": [
+      "직장인 유형 분석 키오스크",
+      "스트레스 해소 파쇄기",
+      "야근수당 이벤트존",
+      "퇴사햄니다 메시지존"
+    ],
+    "promotions": [
+      "굿즈 45종(다수 신상품) 팝업 한정 판매",
+      "웰컴 기프트 김햄찌 부채",
+      "구매 금액별 포토카드"
+    ],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "신세계백화점 강남점 1층 오픈스테이지",
+    "venue_type": "department_store",
+    "neighborhood": "반포",
+    "city": "서울",
+    "period_from": "2026-07-09",
+    "period_to": "2026-07-22",
+    "area_pyeong": null,
+    "multi_store": null,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 14,
+        "weekend_share": 0.29,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "unknown",
+    "counting_basis_note": "",
+    "visitors_source_quote": "신세계백화점은 이달 2일 팝업 사전예약을 시작했다. 4일간의 사전예약 물량은 오픈 10분 만에 마감됐다.",
+    "visitors_source_url": "https://www.4th.kr/news/articleView.html?idxno=2114522",
+    "visitors_source_date": "2026-07-10",
+    "sales_krw": null,
+    "sales_source_quote": "",
+    "sales_source_url": "",
+    "sales_source_date": "",
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": true,
+      "signal_quotes": [
+        "관심은 사전예약 단계에서 나타났다. 신세계백화점은 이달 2일 팝업 사전예약을 시작했다. 4일간의 사전예약 물량은 오픈 10분 만에 마감됐다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "사전예약 4일분 10분 마감(수량 미기재). 유튜브 구독자 71만 IP. 총 방문객 미기재 | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

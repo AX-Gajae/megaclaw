@@ -1,0 +1,172 @@
+{
+ "record_id": "RXST2502",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:삼성전자",
+  "space_id": "unresolved:기흥_shop_Atpisode",
+  "client_party_id": null,
+  "brand_key": "삼성전자",
+  "space_key": "기흥_shop_Atpisode"
+ },
+ "intervention": {
+  "concept": "삼성전자 기흥 관련 'shop Atpisode' 팝업/샵 프로젝트로 추정되나, 원문 문서 텍스트가 제공되지 않아 상세 컨셉을 확인할 수 없다.",
+  "brand_name": "삼성전자",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": "기흥",
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-07-21",
+   "to": "",
+   "days": null
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "ip_history": {
+    "prior_count": 3,
+    "months_since_last": 5.9,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 43,
+    "holiday_until": 25,
+    "holiday_block_in": 0,
+    "nat_event_gap": 48,
+    "nat_event": null,
+    "doc_lag_days": 17,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 965816.0,
+    "pnl_pre_accounts": 2,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-06-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 205.5
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "unknown",
+   "rule": "총액 불명·최근 종료",
+   "contract_total_mm": null,
+   "last_recognition_period": "2026-05"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-OOjC856jP1PSsq2nz8MJ0RPIWDB07Kn",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1-OOjC856jP1PSsq2nz8MJ0RPIWDB07Kn/view",
+   "title": "가람공조_삼성전자 기흥사업장SR3동 1층 팝업매장_EHP냉난방기 납품설치 견적서_250704.xls"
+  },
+  {
+   "doc_id": "11hzttXaShuy0NDPINtGuE3WDlPMtWGFt",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/11hzttXaShuy0NDPINtGuE3WDlPMtWGFt/view",
+   "title": "(주)가람공조시스템 사업자등록증.jpg"
+  },
+  {
+   "doc_id": "12GwWOxLR5eq6zMZlLyXm4hpylE_mecBo",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/12GwWOxLR5eq6zMZlLyXm4hpylE_mecBo/view",
+   "title": "가람공조_세금계산서.pdf"
+  },
+  {
+   "doc_id": "12s_0FyOoCCWi-vi-NzRSW4xA5MCfN5gM",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/12s_0FyOoCCWi-vi-NzRSW4xA5MCfN5gM/view",
+   "title": "(주)비오드_사업자등록증.pdf"
+  },
+  {
+   "doc_id": "1MenZ6oWeH90mA6GlyiSdmHy2y90C8zue",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1MenZ6oWeH90mA6GlyiSdmHy2y90C8zue/view",
+   "title": "(최종)250627_스위트스팟(삼성전자 기흥캠퍼스)-견적서.pdf"
+  },
+  {
+   "doc_id": "1j7Hd1PI84C12I9kaGx9qzIctJKusF8oI",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1j7Hd1PI84C12I9kaGx9qzIctJKusF8oI/view",
+   "title": "가람공조_통장사본.png"
+  },
+  {
+   "doc_id": "1mbA_gtk00vIdXkw0DhcdXVB60TyLORNE",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1mbA_gtk00vIdXkw0DhcdXVB60TyLORNE/view",
+   "title": "2025_삼성전자DS 기흥점_합의서.pdf"
+  },
+  {
+   "doc_id": "1p7Vu8DKR9ylYVKzfc3S1_qfV8T0-I-Iy",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1p7Vu8DKR9ylYVKzfc3S1_qfV8T0-I-Iy/view",
+   "title": "[RXST2505] KT 서비스신청서.pdf"
+  },
+  {
+   "doc_id": "1pE3EhAOF45f1QTn5LuJDf2OUCkbsx5Gg",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1pE3EhAOF45f1QTn5LuJDf2OUCkbsx5Gg/view",
+   "title": "[Sweetspot] 매장 인테리어 도급계약서_비오드_0630.pdf"
+  },
+  {
+   "doc_id": "1uHrnHMnG-g6Qphn6dtG75CjIQIbgx-ps",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1uHrnHMnG-g6Qphn6dtG75CjIQIbgx-ps/view",
+   "title": "(주)비오드_통장사본.jpg"
+  },
+  {
+   "doc_id": "1ugGcW31Z-ALtD5AfgN6F0pyN7TMq81GQ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1ugGcW31Z-ALtD5AfgN6F0pyN7TMq81GQ/view",
+   "title": "계좌확인서 (1) (1).pdf"
+  },
+  {
+   "doc_id": "1vyX7m6vG5XcXu6F8gur9ajKoG7y8Mn3x",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1vyX7m6vG5XcXu6F8gur9ajKoG7y8Mn3x/view",
+   "title": "2025_삼성전자DS 기흥_사용대차 계약서.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서 텍스트(계약서·기획서·견적서·결과보고서) 전체 미제공; client_name 미상; 정확한 venue명/venue_type 미상; 운영 종료일(operating_to) 미상; 컨셉·체험요소·프로모션·연출태그 확인 불가; 면적·수수료구조·브랜드 요구사항 확인 불가; 방문자수·매출 등 outcome 실측 데이터 없음; project_name의 'Atpisode'가 브랜드/컨셉명인지 불확실"
+ }
+}

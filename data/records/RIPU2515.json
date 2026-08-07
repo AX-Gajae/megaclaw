@@ -1,0 +1,135 @@
+{
+ "record_id": "RIPU2515",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:어노브",
+  "space_id": "unresolved:성수",
+  "client_party_id": null,
+  "brand_key": "어노브",
+  "space_key": "성수"
+ },
+ "intervention": {
+  "concept": "어노브(어노브) 브랜드의 성수 지역 F&B 프로모션 팝업. 원문 문서가 제공되지 않아 세부 컨셉은 확인 불가.",
+  "brand_name": "어노브",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": "성수",
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-10-01",
+   "to": "2025-11-09",
+   "days": 40
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": "원문 문서 미제공으로 계약 금액·수수료 구조 확인 불가"
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 40,
+    "weekend_share": 0.3,
+    "holiday_days": 6
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 45,
+    "holiday_until": 2,
+    "holiday_block_in": 7,
+    "nat_event_gap": 30,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 1,
+    "comp_prior_at_venue": 89,
+    "comp_within_500m_open": 18,
+    "comp_within_1000m_open": 24,
+    "matched_address": "서울 성동구 연무장15길 11"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 280389.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-09-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 14.5
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 등 원문 문서가 제공되지 않아 방문/매출 실측 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-11, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-11"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-VjWGQOMfKKpsnn42oep9qs6xsQ4rgCI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1-VjWGQOMfKKpsnn42oep9qs6xsQ4rgCI/view",
+   "title": "[SWEETSPOT]어노브 견적서_11.03.pdf"
+  },
+  {
+   "doc_id": "170DZNELxrQtBhZOa_KLTuwUE5CuADp52",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/170DZNELxrQtBhZOa_KLTuwUE5CuADp52/view",
+   "title": "[SWEETSPOT]어노브 카페 협업 결과보고서_11.11.pdf"
+  },
+  {
+   "doc_id": "1FsyKEuRnv7AcXNXl53yT0AWM98HGnD6e",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1FsyKEuRnv7AcXNXl53yT0AWM98HGnD6e/view",
+   "title": "[스위트스팟]어노브 카페 협업 프로젝트 계약서.doc"
+  },
+  {
+   "doc_id": "1bZUz2qQw0F472t1-Uotp4YZdw0d4CTYW",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1bZUz2qQw0F472t1-Uotp4YZdw0d4CTYW/view",
+   "title": "[스위트스팟] 어노브 아르바이트 계약서(2025).docx"
+  },
+  {
+   "doc_id": "1fQOPv6lnolDXvBvAYhl7BxZehlH5zXCZ",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1fQOPv6lnolDXvBvAYhl7BxZehlH5zXCZ/view",
+   "title": "어노브 카페 협업 제안서_1차_0827.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체 미제공; client_name/client_party_id 불명; 정확한 venue명 및 주소 불명; 면적(area_pyeong) 불명; 수수료 구조 및 계약금액 불명; 컨셉·체험요소·프로모션·연출 정보 없음; 방문자수/매출 실측 데이터 없음; 예상 방문자수(plan_visitors_expected) 없음"
+ }
+}

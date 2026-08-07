@@ -1,0 +1,79 @@
+{
+  "market_record_id": "MKT-2023-0049",
+  "event_name": "2023 더현대 서울 크리스마스 팝업 '해리의 꿈상점'(H-빌리지)",
+  "brand": "현대백화점(자체 기획)",
+  "ip_or_collab": "해리(더현대 서울 마스코트)",
+  "category": "other",
+  "intervention": {
+    "concept_description": "더현대 서울 크리스마스 시즌 대형 테마 팝업. 사운즈포레스트를 크리스마스 빌리지로 조성, 초대형 트리·마켓 운영",
+    "experience_elements": [
+      "크리스마스 빌리지 공간",
+      "초대형 트리",
+      "마켓"
+    ],
+    "promotions": [],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "더현대 서울 5층 사운즈포레스트",
+    "venue_type": "department_store",
+    "neighborhood": "여의도",
+    "city": "서울",
+    "period_from": "2023-11-01",
+    "period_to": "2023-12-25",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(invite)",
+      "access_type": "invite"
+    },
+    "derived": {
+      "duration": {
+        "days": 55,
+        "weekend_share": 0.29,
+        "holiday_days": 1
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "media_estimate",
+    "counting_basis_note": "매체 보도 '방문객은 평일 5000명, 주말 1만명에 달한다' — 일별 방문 수치이며 총계 미공개(규칙 5)",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": true,
+      "sold_out": null,
+      "reservation_fill": true,
+      "signal_quotes": [
+        "방문객은 평일 5000명, 주말 1만명에 달한다. 지난 주말 대기번호가 500번을 넘기도 했다.",
+        "더현대 서울의 크리스마스 팝업스토어는 매년 큰 인기를 끌며 올해도 사전 예약이 조기 마감됐다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "뉴스투데이(ntoday) 2023-12-15 보도. 시즌 테마 팝업(자체 기획). 일별 방문 수치만 존재 | 병합 레코드: ",
+  "outcome_source_url": "https://www.ntoday.co.kr/news/articleView.html?idxno=103742",
+  "outcome_source_date": "2023-12-15",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,86 @@
+{
+  "market_record_id": "MKT-2025-0017",
+  "event_name": "피크민 팝업스토어 in 더현대 서울",
+  "brand": "닌텐도(피크민)",
+  "ip_or_collab": "피크민(Pikmin)",
+  "category": "game_webtoon",
+  "intervention": {
+    "concept_description": "닌텐도 게임 IP 판매·체험형 팝업. AR 촬영존·게임 시연존, 더현대 서울 2·3·4·6층 순회 스탬프 랠리, 실생활 MD",
+    "experience_elements": [
+      "AR 촬영존",
+      "게임 시연존",
+      "스탬프 랠리(전 층 연계)",
+      "지우개 담기 체험"
+    ],
+    "promotions": [
+      "스탬프 완주 시 증정품",
+      "10만원당 자석 1개 증정",
+      "인기 굿즈 1인 구매 제한"
+    ],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "더현대 서울 지하 2층 아이코닉존",
+    "venue_type": "department_store",
+    "neighborhood": "여의도",
+    "city": "서울",
+    "period_from": "2025-03-27",
+    "period_to": "2025-04-09",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 14,
+        "weekend_share": 0.29,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 14,
+    "counting_basis": "media_estimate",
+    "counting_basis_note": "팝업 전문 매체(스위트스팟 트렌드 리포트) '높은 인기로 인해 현장 입장 대기 시간이 평균 3시간 이상으로 과도한 웨이팅이 발생' — 대기 시간 수치이며 총 방문 총계 미공개(규칙 5)",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": true,
+      "sold_out": true,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "3월 27일부터 4월 9일까지, 서울 여의도 더현대 서울 지하 2층 아이코닉존에서 진행된 '피크민 팝업스토어'는... 가족 단위 방문객부터 마니아층까지 폭넓은 관람층을 유도하며 연일 엄청난 웨이팅을 유발하는 등 이슈가 된 행사입니다.",
+        "높은 인기로 인해 현장 입장 대기 시간이 평균 3시간 이상으로 과도한 웨이팅이 발생, 예약 실패 시 접근성 낮아짐",
+        "일부 굿즈는 1인 구매 제한을 했음에도 빠르게 품절되며 한정판 전략이 잘 작동한 행사",
+        "인기 굿즈의 경우 오전 중 빠르게 품절되며 실망감을 유발하였고"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "스위트스팟 2025년 3월 팝업 트렌드 총결산(2025-05-16) 베스트 팝업 선정. 총 방문 총계 없음, 평균 대기 3시간+ 수치 확보 | 병합 레코드: MKT-2025-0019 | [병합:MKT-2025-0019] 스위트스팟 블로그 원문 웹오픈 실패(내부 오류), 검색 추출 전문 기반. 장소·기간(2025-03-27~04-09)은 스위트스팟 2025 상반기 결산 글 확인.",
+  "outcome_source_url": "https://www.sweetspot.co.kr/contents_blog/?bmode=view&idx=163927569",
+  "outcome_source_date": "2025-05-16",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

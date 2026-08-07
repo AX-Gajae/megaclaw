@@ -1,0 +1,416 @@
+{
+ "record_id": "RIPU2609",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:H&M",
+  "space_id": "unresolved:성수_플레이스",
+  "client_party_id": "unresolved:H&M_Tami",
+  "brand_key": "H&M",
+  "space_key": "성수_플레이스"
+ },
+ "intervention": {
+  "concept": "H&M 'After Hour' 컨셉의 단일일 팝업 이벤트. 성수 플레이스에서 2026-05-16 하루 진행. 구체적 컨셉·체험요소 원문 미확보.",
+  "brand_name": "H&M",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "성수",
+   "venue_name": "성수 플레이스",
+   "venue_type": "팝업 공간",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2026-05-16",
+   "to": "2026-05-16",
+   "days": 1
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": "확정 예산 105,000,000원 (Notion 확정 예산, VAT 포함 여부 불명). 아마란스 project_amount 공란. 분할·수수료율·RS 조건 원문 미확보. 계약 전환일 2026-04-02."
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 1.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 75,
+    "holiday_until": 7,
+    "holiday_block_in": 0,
+    "nat_event_gap": 18,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 18000000.0,
+    "pnl_pre_accounts": 1,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2026-04-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 109.8
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(방문객·현장매출(POS) 성과 지표 확인 가능한 소스에 기록 없음. 재무는 계약 예산(105M)·손익만 존재하며 소비자 매출 아님.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식액 109.8 ≈ 계약총액 105.0 (±10%)",
+   "contract_total_mm": 105.0,
+   "last_recognition_period": "2026-05"
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "10XcFd9T5dFO7LYrRzgSzZ3CRSx9Ln8SR",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/10XcFd9T5dFO7LYrRzgSzZ3CRSx9Ln8SR/view",
+   "title": "H&M (41).jpg"
+  },
+  {
+   "doc_id": "10dnWqGKoGg7cck5raEsBvlp2sqnQkZkn",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/10dnWqGKoGg7cck5raEsBvlp2sqnQkZkn/view",
+   "title": "H&M (31).jpg"
+  },
+  {
+   "doc_id": "134pnnW6BRo1uOzH7L7xpwRxPoXplbP-5",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/134pnnW6BRo1uOzH7L7xpwRxPoXplbP-5/view",
+   "title": "H&M (29).jpg"
+  },
+  {
+   "doc_id": "16JpMIa99T8khqE6gVFD8LoYqp0hwg3RW",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/16JpMIa99T8khqE6gVFD8LoYqp0hwg3RW/view",
+   "title": "H&M (18).jpg"
+  },
+  {
+   "doc_id": "18IfD9Yko3h96hVZPuYF0zbuqPj7b31ml",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/18IfD9Yko3h96hVZPuYF0zbuqPj7b31ml/view",
+   "title": "H&M (21).jpg"
+  },
+  {
+   "doc_id": "1BjNCVbhg9fynJsIRh5fOqT6SvZIDvyE6",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1BjNCVbhg9fynJsIRh5fOqT6SvZIDvyE6/view",
+   "title": "H&M (15).jpg"
+  },
+  {
+   "doc_id": "1CDT1SCyRb_EKaknrjwoGd5bDeSvoLISE",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1CDT1SCyRb_EKaknrjwoGd5bDeSvoLISE/view",
+   "title": "H&M (27).jpg"
+  },
+  {
+   "doc_id": "1CW4gN4ngDHeu5u1t3yh-j8ISGBU3GHkP",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1CW4gN4ngDHeu5u1t3yh-j8ISGBU3GHkP/view",
+   "title": "H&M (2).jpg"
+  },
+  {
+   "doc_id": "1Ccl53Q6c__JmjaJRrzunF19f0_YxnfLG",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Ccl53Q6c__JmjaJRrzunF19f0_YxnfLG/view",
+   "title": "H&M (20).jpg"
+  },
+  {
+   "doc_id": "1E3qnKTaXi38O41AJJVwBY4JdsBmlyu2o",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1E3qnKTaXi38O41AJJVwBY4JdsBmlyu2o/view",
+   "title": "H&M_성수 결과보고서.pdf"
+  },
+  {
+   "doc_id": "1EOjUnxquqxc8UF1oNlvx6W8CDO0P9ZH-",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1EOjUnxquqxc8UF1oNlvx6W8CDO0P9ZH-/view",
+   "title": "H&M (48).jpg"
+  },
+  {
+   "doc_id": "1F1m0hMlp8qmMAOmP8GiADuTHBD2_FXYh",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1F1m0hMlp8qmMAOmP8GiADuTHBD2_FXYh/view",
+   "title": "H&M (23).jpg"
+  },
+  {
+   "doc_id": "1JJVTXNeKvEOOlDSD-BjuH7bMWpr22Qn5",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1JJVTXNeKvEOOlDSD-BjuH7bMWpr22Qn5/view",
+   "title": "H&M_성수 제안서 및 운영 매뉴얼.pdf"
+  },
+  {
+   "doc_id": "1KXrxKH7sM9xPfchjVs6IMJ0KaO89cboz",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1KXrxKH7sM9xPfchjVs6IMJ0KaO89cboz/view",
+   "title": "H&M (46).jpg"
+  },
+  {
+   "doc_id": "1KnWBHvrDiCz4jiqguTggg_FDL_C78E1W",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1KnWBHvrDiCz4jiqguTggg_FDL_C78E1W/view",
+   "title": "H&M (6).jpg"
+  },
+  {
+   "doc_id": "1LyTNXpk6gyqgYpD1g6R875QGGp2umXCI",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1LyTNXpk6gyqgYpD1g6R875QGGp2umXCI/view",
+   "title": "H&M (35).jpg"
+  },
+  {
+   "doc_id": "1M60g18Wavk3jj8_BZq3Otp9qOyV8MtWv",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1M60g18Wavk3jj8_BZq3Otp9qOyV8MtWv/view",
+   "title": "H&M (8).jpg"
+  },
+  {
+   "doc_id": "1MJ_yGfg1rUGzV1sEY6GX4TzjOurxJCyv",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1MJ_yGfg1rUGzV1sEY6GX4TzjOurxJCyv/view",
+   "title": "H&M (42).jpg"
+  },
+  {
+   "doc_id": "1NcKsz2gYzMzujj9VqXcOb46DWgA6jjvW",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1NcKsz2gYzMzujj9VqXcOb46DWgA6jjvW/view",
+   "title": "H&M (13).jpg"
+  },
+  {
+   "doc_id": "1OSCFG4XhE4ENSK29OHMZHauWOttBAL95",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1OSCFG4XhE4ENSK29OHMZHauWOttBAL95/view",
+   "title": "H&M (36).jpg"
+  },
+  {
+   "doc_id": "1OyY8EzETQmmswqjV62rmR3hVefaBMZkl",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1OyY8EzETQmmswqjV62rmR3hVefaBMZkl/view",
+   "title": "H&M (4).jpg"
+  },
+  {
+   "doc_id": "1RpYFoTxO8R28Qs7r5BwMF3TVj6_QsO9E",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1RpYFoTxO8R28Qs7r5BwMF3TVj6_QsO9E/view",
+   "title": "H&M (40).jpg"
+  },
+  {
+   "doc_id": "1S-rti45gJDC9at41U5p818HUOOolyZn5",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1S-rti45gJDC9at41U5p818HUOOolyZn5/view",
+   "title": "H&M (19).jpg"
+  },
+  {
+   "doc_id": "1SJTWd5VrgLAdsCiROoMaKMHn1ppmq6_X",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1SJTWd5VrgLAdsCiROoMaKMHn1ppmq6_X/view",
+   "title": "H&M (43).jpg"
+  },
+  {
+   "doc_id": "1VYBgKcad8Vi7lY9Yv8HgdIcyg70ASRFz",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1VYBgKcad8Vi7lY9Yv8HgdIcyg70ASRFz/view",
+   "title": "H&M (11).jpg"
+  },
+  {
+   "doc_id": "1WFB0N9L1TcVOrRtCbiWgDMkR64Bx2C3q",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1WFB0N9L1TcVOrRtCbiWgDMkR64Bx2C3q/view",
+   "title": "H&M (30).jpg"
+  },
+  {
+   "doc_id": "1WbDgnc91omaSmhOeHZeM_gPs4fAUVG6H",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1WbDgnc91omaSmhOeHZeM_gPs4fAUVG6H/view",
+   "title": "H&M (17).jpg"
+  },
+  {
+   "doc_id": "1WgY0uEpuArFTS0v_5qDa5OnKLINuT451",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1WgY0uEpuArFTS0v_5qDa5OnKLINuT451/view",
+   "title": "H&M (44).jpg"
+  },
+  {
+   "doc_id": "1XQw6w-YLXh-tvmmAdt89zXtKjcp32kxR",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1XQw6w-YLXh-tvmmAdt89zXtKjcp32kxR/view",
+   "title": "H&M (9).jpg"
+  },
+  {
+   "doc_id": "1YEQO7GzNSKJ1oD0Hyb6uhA9tjcrmI7xQ",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1YEQO7GzNSKJ1oD0Hyb6uhA9tjcrmI7xQ/view",
+   "title": "H&M (3).jpg"
+  },
+  {
+   "doc_id": "1ZhXq7ExUMUTNa1H9Mxg_jBc76pZH-wv9",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1ZhXq7ExUMUTNa1H9Mxg_jBc76pZH-wv9/view",
+   "title": "H&M (14).jpg"
+  },
+  {
+   "doc_id": "1_YnMqMkjw8Q7iG8vmcZjXNdVSYQEkrAc",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1_YnMqMkjw8Q7iG8vmcZjXNdVSYQEkrAc/view",
+   "title": "H&M (34).jpg"
+  },
+  {
+   "doc_id": "1ctJaz153mMpWbcilX6xDXXz0Pz8175U5",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1ctJaz153mMpWbcilX6xDXXz0Pz8175U5/view",
+   "title": "H&M (7).jpg"
+  },
+  {
+   "doc_id": "1cuwcW5ZgRIpWi9roLA3jAJmdJ5oAdeMX",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1cuwcW5ZgRIpWi9roLA3jAJmdJ5oAdeMX/view",
+   "title": "H&M (25).jpg"
+  },
+  {
+   "doc_id": "1cxvq8LDVOFgiTuqG7n4NfUxPzL5iprl0",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1cxvq8LDVOFgiTuqG7n4NfUxPzL5iprl0/view",
+   "title": "H&M (32).jpg"
+  },
+  {
+   "doc_id": "1epFYXyuqT4QBrOXgUjNqThSMA0JKbAIV",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1epFYXyuqT4QBrOXgUjNqThSMA0JKbAIV/view",
+   "title": "H&M (38).jpg"
+  },
+  {
+   "doc_id": "1gfAF0R1WJJkcGUO6-ltpBssGlLVgwsxQ",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1gfAF0R1WJJkcGUO6-ltpBssGlLVgwsxQ/view",
+   "title": "H&M (16).jpg"
+  },
+  {
+   "doc_id": "1gt6_MkV8AzGPKbMEbfZUgBRYcuSAp0op",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1gt6_MkV8AzGPKbMEbfZUgBRYcuSAp0op/view",
+   "title": "H&M (1).jpg"
+  },
+  {
+   "doc_id": "1i0VcvRPbanrnYvZiReaMe-scPM8S0gHf",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1i0VcvRPbanrnYvZiReaMe-scPM8S0gHf/view",
+   "title": "H&M (45).jpg"
+  },
+  {
+   "doc_id": "1iOBSEW2aiiejpooodk4ynsxRhaD-H_jZ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1iOBSEW2aiiejpooodk4ynsxRhaD-H_jZ/view",
+   "title": "H&M_성수_AfterHour_계약서(변경합의서).pdf"
+  },
+  {
+   "doc_id": "1kyM5iW73B43eD7ovfG62RmH7sH_-o0SS",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1kyM5iW73B43eD7ovfG62RmH7sH_-o0SS/view",
+   "title": "H&M (33).jpg"
+  },
+  {
+   "doc_id": "1lNtzlxJasNT59c0tWyYpShFB67t-VRFU",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1lNtzlxJasNT59c0tWyYpShFB67t-VRFU/view",
+   "title": "H&M (10).jpg"
+  },
+  {
+   "doc_id": "1lr3lAUWaOHcm10pOBF12rNAs2xAXkZ-P",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1lr3lAUWaOHcm10pOBF12rNAs2xAXkZ-P/view",
+   "title": "H&M (39).jpg"
+  },
+  {
+   "doc_id": "1pkOMsGGTAZDfJWsKBfTqk0R2Joj3yhuV",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1pkOMsGGTAZDfJWsKBfTqk0R2Joj3yhuV/view",
+   "title": "H&M (26).jpg"
+  },
+  {
+   "doc_id": "1pmK5x4aI4ZZlgHx8BcKRadVFXRIwZ4k8",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1pmK5x4aI4ZZlgHx8BcKRadVFXRIwZ4k8/view",
+   "title": "H&M (24).jpg"
+  },
+  {
+   "doc_id": "1raF8TR48VzwYZUXcvr7Fxe4iI62QnTWL",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1raF8TR48VzwYZUXcvr7Fxe4iI62QnTWL/view",
+   "title": "H&M (37).jpg"
+  },
+  {
+   "doc_id": "1tV5s99_Kfd-jdLhLqLE4GXxIeTVsqE3k",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1tV5s99_Kfd-jdLhLqLE4GXxIeTVsqE3k/view",
+   "title": "H&M (5).jpg"
+  },
+  {
+   "doc_id": "1tceb3vWLQhreJ-T-_wPUYyC_K9XLsoDe",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1tceb3vWLQhreJ-T-_wPUYyC_K9XLsoDe/view",
+   "title": "H&M_성수_견적서.pdf"
+  },
+  {
+   "doc_id": "1uoRNBrFfoN9H0xNJXzrR8xQxBJVZogcx",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1uoRNBrFfoN9H0xNJXzrR8xQxBJVZogcx/view",
+   "title": "H&M (12).jpg"
+  },
+  {
+   "doc_id": "1vO78fUpFZrA3ccR6u75c6xGQ13Q0cnn-",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1vO78fUpFZrA3ccR6u75c6xGQ13Q0cnn-/view",
+   "title": "H&M (22).jpg"
+  },
+  {
+   "doc_id": "1wBAabFkWatSNdh-vC2rLSuohwZchmMxI",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1wBAabFkWatSNdh-vC2rLSuohwZchmMxI/view",
+   "title": "H&M (47).jpg"
+  },
+  {
+   "doc_id": "1xyUgqCssPJx04zu8Kb-7vS2k890Say9k",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1xyUgqCssPJx04zu8Kb-7vS2k890Say9k/view",
+   "title": "H&M (28).jpg"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: After Hour 컨셉/기획서 원문 미확보; 체험요소·프로모션·연출태그 없음; 성수 플레이스 정확 주소/좌표 미확보; 면적(평) 정보 없음; 수수료구조·계약 분할·RS 조건 불명; 방문객·현장매출(POS) 성과 지표 없음; 클라 담당자 Tami full name·연락처, 에이전시 경유 여부 불명; 예산 105M과 손익 지표 간 정합성(이윤 필드 오기 가능성)"
+ }
+}

@@ -1,0 +1,235 @@
+{
+ "record_id": "RIPU2402",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:엘소드",
+  "space_id": "unresolved:미상",
+  "client_party_id": null,
+  "brand_key": "엘소드",
+  "space_key": "CGV_영등포점_ScreenX관",
+  "space_key_source": "venue_key 정규화 (신규 키)"
+ },
+ "intervention": {
+  "concept": "넥슨 엘소드 '엘스타2' 애니메이션 개봉 연계 CGV 오프라인 팬 상영회. 11월 9일 프리뷰 상영회(RE:PLAY STAGE)와 11월 30일 개봉일 특별 상영회(Dreamy Stage) 2회 진행, 열성 유저 대상 분위기 조성 및 긍정적 바이럴 유도가 목적.",
+  "brand_name": "엘소드 엘스타2",
+  "experience_elements": [
+   "굿즈 판매존",
+   "굿즈 나눔존",
+   "굿즈 배포존",
+   "포토존",
+   "캐시 쿠폰 배포존",
+   "ScreenX관 콘서트/애니메이션 상영회",
+   "무대 인사",
+   "웨이팅 시스템"
+  ],
+  "promotions": [
+   "캐시 쿠폰 제공(티켓 좌석 확인 후, 중복 수령 방지)",
+   "굿즈 배포(포토카드 4개, A3 포스터, 티켓 - 좌석 구매분 만큼 제공)",
+   "굿즈 나눔"
+  ],
+  "staging_tags": [
+   "옥타부스",
+   "차단봉",
+   "현수막 브랜딩",
+   "포토존 현수막",
+   "하이테이블",
+   "굿즈 전시대(쇼케이스)",
+   "스크린 고지문"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": 880,
+   "capacity_per_session": null,
+   "giveaway_qty": null,
+   "area_sqm": null,
+   "planned_operating_days": 2,
+   "throughput_units": null,
+   "unit_minutes": 90,
+   "operating_hours_per_day": 6,
+   "staff_count": 12,
+   "experience_density": 2,
+   "goods_scale": 3,
+   "photo_zones": 2,
+   "collab_strength": 2,
+   "ip_awareness": 2,
+   "target_breadth": 0,
+   "entry_friction": 4,
+   "media_push": 1,
+   "season_fit": 3,
+   "venue_prominence": 2
+  },
+  "attr_meta": {
+   "evidence": "기획서(대홍기획 운영 계획안 241129) 행사 개요 2건 모두 '참가 인원 : 880명+@' → plan_visitors_per_day=880(각 행사일 기준). planned_operating_days=2는 비연속: 11월 9일(토) RE:PLAY STAGE, 11월 30일(토) Dreamy Stage 두 날만 운영(레코드 period 22일은 두 행사 사이 간격을 포함한 것). operating_hours_per_day=6은 11/30 타임테이블 로비 운영 12:00~18:00(11/9은 13:00~17:30=4.5h). unit_minutes=90은 11/30 1부 상영 13:00~14:30, 2부 15:30~17:00(11/9 회차는 60분). staff_count=12는 11/30 인력표 슈퍼바이저 2 + 선임매니저 1 + 운영 스태프 9(11/9은 슈퍼바이저 2+스태프 7=9). ScreenX관 좌석수·회차 정원은 기획서에 없어 capacity/throughput null. 굿즈 배포는 1인당 포토카드 4·A3 포스터 1·티켓 1로 총 준비수량 미기재. 좌석 유료 구매·티켓 확인 후 수령이라 entry_friction 4, 열성 유저 대상이라 target_breadth 0.",
+   "confidence": "medium",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "capacity": {
+   "access_type": "session",
+   "total_capacity": null,
+   "detail": "ScreenX관 좌석제 상영회, 회차별 상영(1회차/2회차) + 로비 자유 운영. 참가 인원 기획서 기준 각 행사 880명+@ 이나 좌석수·회차별 정확한 상한 명시 없음"
+  },
+  "location": {
+   "city": "서울",
+   "district": "영등포구",
+   "venue_name": "CGV 영등포점 6층 ScreenX관 및 6층 로비",
+   "venue_type": "영화관",
+   "foot_traffic_context": null,
+   "venue_slot": "6층 로비"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-11-09",
+   "to": "2024-11-30",
+   "days": 22
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "1차 계약 총액 19,475,960원(부가세 별도, 공급가액 동일), 선급금 0%, 잔금 100% 목적물 납기일 이후 60일 이내 현금. 변경합의서로 과업 추가되어 총 계약금액 50,792,670원으로 증액(선급금 19,475,960원 / 잔금 31,316,710원), 계약기간 2024.11.29~2025.01.15, 납기일 2024.12.31. 지연이자율 연 15.5%, 지체상금율 일당 계약금액의 1.25/1000. 시안 및 기획료는 견적서에 따름. 이는 계약금액이며 소비자 매출 아님"
+  },
+  "brand_requirements": [
+   "광고주 시사 및 승인",
+   "제작지시서 교부일 2024-11-29",
+   "CGV 요청사항: 차단봉 20개"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 22,
+    "weekend_share": 0.32,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 52,
+    "holiday_until": 77,
+    "holiday_block_in": 0,
+    "nat_event_gap": 5,
+    "nat_event": "수능",
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 131427.0,
+    "pnl_pre_accounts": 3,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2024-10-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 4000,
+   "popup_zone_pass_rate": 0.25,
+   "host_traffic_est": 1000.0,
+   "venue_scale_tier": 4,
+   "confidence": "medium",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2024-11-09",
+    "visitors": 495,
+    "sales_krw": null
+   },
+   {
+    "date": "2024-11-30",
+    "visitors": 579,
+    "sales_krw": null
+   }
+  ],
+  "totals": {
+   "visitors": 1074,
+   "sales_krw": null,
+   "rev_mm_recognized": 50.8
+  },
+  "counting_method": "participation",
+  "counting_basis": "좌석 수령/캐시쿠폰 제공 좌석수",
+  "plan_visitors_expected": 880,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-11, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2024-12"
+  },
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "label_scope": {
+   "label_from": "2024-11-09",
+   "label_to": "2024-11-30",
+   "label_active_days": 2,
+   "label_span_days": 22,
+   "label_contiguous": false,
+   "daily_sum": 1074,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "15IKHmIR8alaoA-e9bAX0PixI12eFvsIy",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/15IKHmIR8alaoA-e9bAX0PixI12eFvsIy/view",
+   "title": "엘소드 오프라인행사 계약서.pdf"
+  },
+  {
+   "doc_id": "1647vEHziplN2uerni4NyaitCiGQP-mzc",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1647vEHziplN2uerni4NyaitCiGQP-mzc/view",
+   "title": "[대홍기획] 엘소드 엘스타 CGV 오프라인 행사 _ 본상영회 결과보고서.pdf"
+  },
+  {
+   "doc_id": "1Gj8WV7fYEyXi0A5AqZ6Dbd6ekwdNbFAO",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Gj8WV7fYEyXi0A5AqZ6Dbd6ekwdNbFAO/view",
+   "title": "[대홍기획] 엘소드 엘스타 CGV 오프라인 행사 _ 사전상영회 결과보고서.pdf"
+  },
+  {
+   "doc_id": "1rZv4wCixKF8Hbx2RF6sxrEmT-xy3tR7R",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1rZv4wCixKF8Hbx2RF6sxrEmT-xy3tR7R/view",
+   "title": "RIPU2402_대홍기획 엘소드 계약서 1차.pdf"
+  },
+  {
+   "doc_id": "1vHXJ13ZAYFZ-0Pm1DrbzoC0KSLND2JEZ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1vHXJ13ZAYFZ-0Pm1DrbzoC0KSLND2JEZ/view",
+   "title": "2. 엘소드_견적서_대홍기획_241206_업체견적포함.pdf"
+  },
+  {
+   "doc_id": "1NFvNYIzTZDF9uEQLV_5EIYDERb7dOTRX",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1NFvNYIzTZDF9uEQLV_5EIYDERb7dOTRX/view",
+   "title": "[대홍기획] 엘소드 엘스타 CGV 오프라인 행사 운영 계획안_241129.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서 텍스트 전체 부재; 클라이언트명; 입지/장소 정보; 면적; 수수료구조 및 계약금액; 컨셉 및 체험요소; 프로모션; 방문객 실측 데이터; 매출 데이터; 예상 방문객수 | 라벨발굴(2026-07-24): 결과보고서 재추출 — 사전상영회 캐시쿠폰존: 14시 266좌석/532매, 16시 229좌석/458매(총990매); 본상영회 굿즈배 | 자극 보강(2026-07-24): 운영안·기획안·계약서 재인제스트로 intervention/conditions 교체 (546→1437자, capacity=session). outcome·entities·period 보존"
+ }
+}

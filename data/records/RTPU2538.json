@@ -1,0 +1,142 @@
+{
+ "record_id": "RTPU2538",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:오리온_알맹이",
+  "space_id": "unresolved:대전_현대프리미엄아울렛_대전점",
+  "client_party_id": "unresolved:오리온",
+  "brand_key": "오리온_알맹이",
+  "space_key": "현대프리미엄아울렛_대전점"
+ },
+ "intervention": {
+  "concept": "오리온 알맹이(알맹이네 과일가게) 브랜드의 대전 현대프리미엄아울렛 팝업스토어. 트럭 브랜딩과 매대 구성을 활용한 옥외형 프로모션 팝업.",
+  "brand_name": "오리온 알맹이",
+  "experience_elements": [
+   "탁상용 룰렛 이벤트",
+   "증정용 부채 또는 종이모자 증정"
+  ],
+  "promotions": [
+   "룰렛 이벤트",
+   "증정품(부채/종이모자) 증정"
+  ],
+  "staging_tags": [
+   "트럭 브랜딩",
+   "현수막",
+   "매대구성 VMD",
+   "POSM"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "대전",
+   "district": null,
+   "venue_name": "현대프리미엄아울렛 대전점",
+   "venue_type": "아울렛",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-05-03",
+   "to": "2025-05-06",
+   "days": 4
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 16,100,000원(VAT 10% 별도, 200만원 증액 반영). 정가항목 소계: 기획료 1,500,000(기획 500,000+아트워크 1,000,000), 제작/대여 3,316,000(공간구성/Display 2,000,000, 증정품 1,050,000, 룰렛 50,000, 스탭복 216,000), 인력 5,892,500, 진행비 2,300,000(제경비 800,000+설치/철수 1,500,000). 소계 13,008,500 + 일반관리비 및 대행수수료 1,150,850(소계의 10%, 정가항목/추가예산 진행비 제외) = 14,100,000(VAT 별도, 만원단위 이하 절사). 공휴일(5/5,6) 인건비 2.5배 적용."
+  },
+  "brand_requirements": [
+   "철수 물자 오리온 창고로 진행"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "현대프리미엄아울렛 대전점 옥외형 프로모션"
+  },
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.5,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 8.3,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 0,
+    "holiday_until": 0,
+    "holiday_block_in": 4,
+    "nat_event_gap": 31,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 1708579.0,
+    "pnl_pre_accounts": 6,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-04-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 13.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서가 이미지 기반으로 방문/매출 수치 텍스트를 확인할 수 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "partial",
+   "rule": "인식 13.0 < 총액 16.1의 90%",
+   "contract_total_mm": 16.1,
+   "last_recognition_period": "2025-04"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "13hIwpO5kc5L7JcVbUosxBGhNLDAuhAi7",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/13hIwpO5kc5L7JcVbUosxBGhNLDAuhAi7/view",
+   "title": "[스위트스팟] 알맹이네 과일가게 POP-UPx대전현대아울렛 결과보고서_0514.pdf"
+  },
+  {
+   "doc_id": "1ZejdCFRMbcnBSPZ0eLe6SqjTT_BRUIwJ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1ZejdCFRMbcnBSPZ0eLe6SqjTT_BRUIwJ/view",
+   "title": "[스스팟] 25.04 알맹이 3탄 팝업스토어 운영 대행 계약서.pdf"
+  },
+  {
+   "doc_id": "1mKBMlTUA6crGCJtMgYPCR-ZQdCTYixwC",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1mKBMlTUA6crGCJtMgYPCR-ZQdCTYixwC/view",
+   "title": "Sweetspot_알맹이x대전현대아울렛 견적서_0519 증액반영.pdf"
+  },
+  {
+   "doc_id": "1zk7PHl5C_gnMahiO8DulJwzCbl9fAZeD",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1zk7PHl5C_gnMahiO8DulJwzCbl9fAZeD/view",
+   "title": "[스위트스팟]오리온알맹이x대전현대아울렛 팝업 기획안_제안서_0430.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 3건: [스위트스팟]오리온알맹이x대전현대아울렛 팝업 기획안_제, Sweetspot_알맹이x대전현대아울렛 견적서_0519, [스위트스팟] 알맹이네 과일가게 POP-UPx대전현대아. 미확실: 결과보고서 방문자수 및 매출 데이터 판독 불가(이미지 기반); 기획안 컨셉 세부내용 판독 불가(이미지 기반); 면적(평) 정보 없음; 예상 방문자수 정보 없음; 견적서상 총계 16,100,000과 합계 14,100,000 불일치(증액분 반영 방식 불명확)"
+ }
+}

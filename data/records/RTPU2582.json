@@ -1,0 +1,381 @@
+{
+ "record_id": "RTPU2582",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:부드바르",
+  "space_id": "unresolved:서울_브루어리",
+  "client_party_id": "unresolved:벡터컴",
+  "brand_key": "부드바르",
+  "space_key": "서울_브루어리"
+ },
+ "intervention": {
+  "concept": "체코 라거 부드바르의 완벽한 제품 경험을 서울브루어리에서 전달하는 콜라보 팝업. '체코 라거를 마시는 즐거움'과 체코 문화를 생맥주 경험, 푸어링 퍼포먼스, 콜라보 메뉴로 전달한다.",
+  "brand_name": "부드바르(Budvar)",
+  "experience_elements": [
+   "부드바르 생맥주 2종 with 샘플러",
+   "서울브루어리 콜라보 샘플러",
+   "콜라보 메뉴 2종",
+   "3가지 푸어링 퍼포먼스(Original Czech Pour/MLIKO Pour/Half and Half Pour)",
+   "스탬프 랠리 이벤트",
+   "푸어링 체험 이벤트",
+   "룰렛 이벤트 굿즈 증정",
+   "영수증 사진기",
+   "포토존",
+   "굿즈 판매",
+   "체코식 피클 소시지 유토펜치",
+   "스마제니시르"
+  ],
+  "promotions": [
+   "스탬프 체험+생맥주 주문+SNS 팔로우/게시물 업로드 후 룰렛으로 굿즈 증정",
+   "부드바르 생맥주 2잔 이상/세트메뉴/체험메뉴 구매 시 푸어링 체험권 제공"
+  ],
+  "staging_tags": [
+   "체코 문화",
+   "브랜딩 시안",
+   "포토존",
+   "굿즈존",
+   "테라스 및 1~2층 식음공간"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": null,
+   "area_sqm": null,
+   "planned_operating_days": null,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": null,
+   "experience_density": 3,
+   "goods_scale": 2,
+   "photo_zones": 1,
+   "collab_strength": 3,
+   "ip_awareness": 2,
+   "target_breadth": 2,
+   "entry_friction": 1,
+   "media_push": 3,
+   "season_fit": 2,
+   "venue_prominence": 3
+  },
+  "attr_meta": {
+   "evidence": "기획안 행사요약 '일정: 11/1~12/31, 장소: 서울 브루어리 성수·합정, 예상 방문객: 12,000명, 판매 목표: 20L 케그 200개·캔 50 c/s' — 12,000명은 2개월 협업기간 총원이므로 plan_visitors_per_day·host_daily_traffic 모두 null. 브랜드 이벤트 '11~12월 콜라보 기간 내 … (11월 주말 엠즈 운영 / 그 외 서울브루어리 상시 운영)', 세부 운영 슬라이드 '*운영 기간: 11월 주말' — 실운영 일수를 날짜·일수로 명시한 표기가 없어 planned_operating_days null(비연속 주말 투입 구조). 계약서 제2조 행사기간은 '11월 1일(금)–11월 23일(일)'로 레코드 period(11/07~11/23)와 상이. 견적은 단가(슈퍼바이저 220,000/프로모터 320,000/운영스태프 160,000)만 있고 인원수·투입일수 미기재라 staff_count null. 영업시간·좌석수·굿즈 수량·면적 모두 문서에 없음.",
+   "confidence": "low",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "capacity": {
+   "access_type": "session",
+   "total_capacity": null,
+   "detail": "서울브루어리 식음공간 상시 운영(자유입장), 좌석/회차 정보 없음 | 키워드 승격(session)"
+  },
+  "location": {
+   "city": "서울",
+   "district": "성동구(성수)",
+   "venue_name": "서울브루어리 성수",
+   "venue_type": "브루어리/식음공간",
+   "foot_traffic_context": "성수, 합정 언급"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-11-01",
+   "to": "2025-11-23",
+   "days": null,
+   "source": "재발굴 판정 — 계획 문서로 교정"
+  },
+  "season": "가을/겨울",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 32,900,000원(VAT 10% 별도, 만원단위 이하 절사). 소계(Sub Total 1~3) 30,280,000원 + 대행수수료(소계의 10%, 정가항목 제외) 2,678,000원. 기획료 3,500,000원, 인건비(운영) Sub Total 1 23,625,000원, 제작비 3,155,000원. 슈퍼바이저 220,000원/인, 프로모터 320,000원/인, 운영스태프 160,000원/인."
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 17,
+    "weekend_share": 0.35,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 23,
+    "holiday_until": 105,
+    "holiday_block_in": 0,
+    "nat_event_gap": 0,
+    "nat_event": "APEC 경주 정상회의",
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 1543660.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-10-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 400,
+   "popup_zone_pass_rate": 0.75,
+   "host_traffic_est": 300.0,
+   "venue_scale_tier": 5,
+   "confidence": "low",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "11/1",
+    "visitors": 433,
+    "sales_krw": null
+   },
+   {
+    "date": "11/2",
+    "visitors": 341,
+    "sales_krw": null
+   },
+   {
+    "date": "11/3",
+    "visitors": 108,
+    "sales_krw": null
+   },
+   {
+    "date": "11/7",
+    "visitors": 273,
+    "sales_krw": null
+   },
+   {
+    "date": "11/8",
+    "visitors": 332,
+    "sales_krw": null
+   },
+   {
+    "date": "11/9",
+    "visitors": 287,
+    "sales_krw": null
+   },
+   {
+    "date": "11/14",
+    "visitors": 248,
+    "sales_krw": null
+   },
+   {
+    "date": "11/15",
+    "visitors": 271,
+    "sales_krw": null
+   },
+   {
+    "date": "11/16",
+    "visitors": 311,
+    "sales_krw": null
+   },
+   {
+    "date": "11/21",
+    "visitors": 233,
+    "sales_krw": null
+   },
+   {
+    "date": "11/22",
+    "visitors": 189,
+    "sales_krw": null
+   },
+   {
+    "date": "11/23",
+    "visitors": 172,
+    "sales_krw": null
+   }
+  ],
+  "totals": {
+   "visitors": 3198,
+   "sales_krw": null,
+   "rev_mm_recognized": 32.9
+  },
+  "counting_method": "entry",
+  "counting_basis": "리플렛 소진수량",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 32.9 ≈ 계약총액 32.9",
+   "contract_total_mm": 32.9,
+   "last_recognition_period": "2025-11"
+  },
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "label_scope": {
+   "label_from": "2025-11-01",
+   "label_to": "2025-11-23",
+   "label_active_days": 12,
+   "label_span_days": 23,
+   "label_contiguous": false,
+   "daily_sum": 3198,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  },
+  "label_history": [
+   {
+    "at": "relabel R1 (2026-07-28)",
+    "prev_visitors": 2837,
+    "prev_counting": "entry",
+    "action": "revise",
+    "changes": [
+     "visitors 2,837 → 3,198",
+     "집계 세분 미지정 → visits (뱅크 단위는 entry 유지)",
+     "period 교정 {'from': '2025-11-01'} (계획 문서 근거)"
+    ],
+    "evidence": "결과보고서 '부드바르 서울브루어리 팝업_결과보고서_1124.pdf' OVERVIEW: '행사일자 총12일 (11월1-3일, 7-9일, 14-16일, 21-23일)', '행사시간 14:00-19:00', '11/1(토) 인플루언서 초청 / 11/2(일) 현장 이벤트 / 11/3(월) 스틸컷 촬영' — 11/1 시작이 명시적이며 계약서 행사기간 11/1~11/23과도 일치(record의 period 11/07이 오류). 방문객 표: '팝업 방문객 | 리플렛 소진수량 | 433 341 108 273 332 287 248 271 311 233 189 172' → 12일 합 3,198. ETC '물품 소진수량' 표에서 리플렛 총입고 4,000 / 기본 DP 150 / 잔여수량 652 → 4,000-150-3,198=",
+    "verdict": "실제 운영은 11/1 시작(금~일만 가동, 총 12일)이므로 period 11/07은 오류이고, 총계 2,837은 11/21까지의 10일 부분합이라 틀렸으며 일별 합 3,198이 맞다 — 리플렛 잔여수량으로 독립 검증됨. visitors=3,198 / 2025-11-01~11-23(가동 12일) / counting=visits(입장 시 리플렛 배포)로 교정한다.",
+    "period_prev": {
+     "from": "2025-11-07",
+     "to": "2025-11-23",
+     "days": null
+    },
+    "adjudication": "계획 문서(OVERVIEW)가 '총12일 — 11월 1-3일, 7-9일, 14-16일, 21-23일'로 명시한다. period.from 11-07은 전사 오류다. 계획값을 계획 문서로 고치는 것이므로 실측 주입이 아니다. 총계 2,837은 11/21까지의 10일 부분합이었고 일별 합 3,198이 리플렛 재고(입고 4,000 − DP 150 − 잔여 652)로 독립 검증된다."
+   },
+   {
+    "at": "relabel R1 (2026-07-28)",
+    "prev_visitors": 3198,
+    "prev_counting": "entry",
+    "action": "revise",
+    "changes": [
+     "period 교정 {'from': '2025-11-01'} (계획 문서 근거)"
+    ],
+    "evidence": "결과보고서 '부드바르 서울브루어리 팝업_결과보고서_1124.pdf' OVERVIEW: '행사일자 총12일 (11월1-3일, 7-9일, 14-16일, 21-23일)', '행사시간 14:00-19:00', '11/1(토) 인플루언서 초청 / 11/2(일) 현장 이벤트 / 11/3(월) 스틸컷 촬영' — 11/1 시작이 명시적이며 계약서 행사기간 11/1~11/23과도 일치(record의 period 11/07이 오류). 방문객 표: '팝업 방문객 | 리플렛 소진수량 | 433 341 108 273 332 287 248 271 311 233 189 172' → 12일 합 3,198. ETC '물품 소진수량' 표에서 리플렛 총입고 4,000 / 기본 DP 150 / 잔여수량 652 → 4,000-150-3,198=",
+    "verdict": "실제 운영은 11/1 시작(금~일만 가동, 총 12일)이므로 period 11/07은 오류이고, 총계 2,837은 11/21까지의 10일 부분합이라 틀렸으며 일별 합 3,198이 맞다 — 리플렛 잔여수량으로 독립 검증됨. visitors=3,198 / 2025-11-01~11-23(가동 12일) / counting=visits(입장 시 리플렛 배포)로 교정한다.",
+    "period_prev": {
+     "from": "2025-11-01",
+     "to": "2025-11-23",
+     "days": null,
+     "source": "재발굴 판정 — 계획 문서로 교정"
+    },
+    "adjudication": "계획 문서(OVERVIEW)가 '총12일 — 11월 1-3일, 7-9일, 14-16일, 21-23일'로 명시한다. period.from 11-07은 전사 오류다. 계획값을 계획 문서로 고치는 것이므로 실측 주입이 아니다. 총계 2,837은 11/21까지의 10일 부분합이었고 일별 합 3,198이 리플렛 재고(입고 4,000 − DP 150 − 잔여 652)로 독립 검증된다."
+   },
+   {
+    "at": "relabel R1 (2026-07-28)",
+    "prev_visitors": 3198,
+    "prev_counting": "entry",
+    "action": "revise",
+    "changes": [
+     "period 교정 {'from': '2025-11-01'} (계획 문서 근거)"
+    ],
+    "evidence": "결과보고서 '부드바르 서울브루어리 팝업_결과보고서_1124.pdf' OVERVIEW: '행사일자 총12일 (11월1-3일, 7-9일, 14-16일, 21-23일)', '행사시간 14:00-19:00', '11/1(토) 인플루언서 초청 / 11/2(일) 현장 이벤트 / 11/3(월) 스틸컷 촬영' — 11/1 시작이 명시적이며 계약서 행사기간 11/1~11/23과도 일치(record의 period 11/07이 오류). 방문객 표: '팝업 방문객 | 리플렛 소진수량 | 433 341 108 273 332 287 248 271 311 233 189 172' → 12일 합 3,198. ETC '물품 소진수량' 표에서 리플렛 총입고 4,000 / 기본 DP 150 / 잔여수량 652 → 4,000-150-3,198=",
+    "verdict": "실제 운영은 11/1 시작(금~일만 가동, 총 12일)이므로 period 11/07은 오류이고, 총계 2,837은 11/21까지의 10일 부분합이라 틀렸으며 일별 합 3,198이 맞다 — 리플렛 잔여수량으로 독립 검증됨. visitors=3,198 / 2025-11-01~11-23(가동 12일) / counting=visits(입장 시 리플렛 배포)로 교정한다.",
+    "period_prev": {
+     "from": "2025-11-01",
+     "to": "2025-11-23",
+     "days": null,
+     "source": "재발굴 판정 — 계획 문서로 교정"
+    },
+    "adjudication": "계획 문서(OVERVIEW)가 '총12일 — 11월 1-3일, 7-9일, 14-16일, 21-23일'로 명시한다. period.from 11-07은 전사 오류다. 계획값을 계획 문서로 고치는 것이므로 실측 주입이 아니다. 총계 2,837은 11/21까지의 10일 부분합이었고 일별 합 3,198이 리플렛 재고(입고 4,000 − DP 150 − 잔여 652)로 독립 검증된다."
+   },
+   {
+    "at": "relabel R1 (2026-07-28)",
+    "prev_visitors": 3198,
+    "prev_counting": "entry",
+    "action": "revise",
+    "changes": [
+     "period 교정 {'from': '2025-11-01'} (계획 문서 근거)"
+    ],
+    "evidence": "결과보고서 '부드바르 서울브루어리 팝업_결과보고서_1124.pdf' OVERVIEW: '행사일자 총12일 (11월1-3일, 7-9일, 14-16일, 21-23일)', '행사시간 14:00-19:00', '11/1(토) 인플루언서 초청 / 11/2(일) 현장 이벤트 / 11/3(월) 스틸컷 촬영' — 11/1 시작이 명시적이며 계약서 행사기간 11/1~11/23과도 일치(record의 period 11/07이 오류). 방문객 표: '팝업 방문객 | 리플렛 소진수량 | 433 341 108 273 332 287 248 271 311 233 189 172' → 12일 합 3,198. ETC '물품 소진수량' 표에서 리플렛 총입고 4,000 / 기본 DP 150 / 잔여수량 652 → 4,000-150-3,198=",
+    "verdict": "실제 운영은 11/1 시작(금~일만 가동, 총 12일)이므로 period 11/07은 오류이고, 총계 2,837은 11/21까지의 10일 부분합이라 틀렸으며 일별 합 3,198이 맞다 — 리플렛 잔여수량으로 독립 검증됨. visitors=3,198 / 2025-11-01~11-23(가동 12일) / counting=visits(입장 시 리플렛 배포)로 교정한다.",
+    "period_prev": {
+     "from": "2025-11-01",
+     "to": "2025-11-23",
+     "days": null,
+     "source": "재발굴 판정 — 계획 문서로 교정"
+    },
+    "adjudication": "계획 문서(OVERVIEW)가 '총12일 — 11월 1-3일, 7-9일, 14-16일, 21-23일'로 명시한다. period.from 11-07은 전사 오류다. 계획값을 계획 문서로 고치는 것이므로 실측 주입이 아니다. 총계 2,837은 11/21까지의 10일 부분합이었고 일별 합 3,198이 리플렛 재고(입고 4,000 − DP 150 − 잔여 652)로 독립 검증된다."
+   },
+   {
+    "at": "relabel R1 (2026-07-28)",
+    "prev_visitors": 3198,
+    "prev_counting": "entry",
+    "action": "revise",
+    "changes": [
+     "period 교정 {'from': '2025-11-01'} (계획 문서 근거)"
+    ],
+    "evidence": "결과보고서 '부드바르 서울브루어리 팝업_결과보고서_1124.pdf' OVERVIEW: '행사일자 총12일 (11월1-3일, 7-9일, 14-16일, 21-23일)', '행사시간 14:00-19:00', '11/1(토) 인플루언서 초청 / 11/2(일) 현장 이벤트 / 11/3(월) 스틸컷 촬영' — 11/1 시작이 명시적이며 계약서 행사기간 11/1~11/23과도 일치(record의 period 11/07이 오류). 방문객 표: '팝업 방문객 | 리플렛 소진수량 | 433 341 108 273 332 287 248 271 311 233 189 172' → 12일 합 3,198. ETC '물품 소진수량' 표에서 리플렛 총입고 4,000 / 기본 DP 150 / 잔여수량 652 → 4,000-150-3,198=",
+    "verdict": "실제 운영은 11/1 시작(금~일만 가동, 총 12일)이므로 period 11/07은 오류이고, 총계 2,837은 11/21까지의 10일 부분합이라 틀렸으며 일별 합 3,198이 맞다 — 리플렛 잔여수량으로 독립 검증됨. visitors=3,198 / 2025-11-01~11-23(가동 12일) / counting=visits(입장 시 리플렛 배포)로 교정한다.",
+    "period_prev": {
+     "from": "2025-11-01",
+     "to": "2025-11-23",
+     "days": null,
+     "source": "재발굴 판정 — 계획 문서로 교정"
+    },
+    "adjudication": "계획 문서(OVERVIEW)가 '총12일 — 11월 1-3일, 7-9일, 14-16일, 21-23일'로 명시한다. period.from 11-07은 전사 오류다. 계획값을 계획 문서로 고치는 것이므로 실측 주입이 아니다. 총계 2,837은 11/21까지의 10일 부분합이었고 일별 합 3,198이 리플렛 재고(입고 4,000 − DP 150 − 잔여 652)로 독립 검증된다."
+   },
+   {
+    "at": "relabel R1 (2026-07-28)",
+    "prev_visitors": 3198,
+    "prev_counting": "entry",
+    "action": "revise",
+    "changes": [
+     "period 교정 {'from': '2025-11-01'} (계획 문서 근거)"
+    ],
+    "evidence": "결과보고서 '부드바르 서울브루어리 팝업_결과보고서_1124.pdf' OVERVIEW: '행사일자 총12일 (11월1-3일, 7-9일, 14-16일, 21-23일)', '행사시간 14:00-19:00', '11/1(토) 인플루언서 초청 / 11/2(일) 현장 이벤트 / 11/3(월) 스틸컷 촬영' — 11/1 시작이 명시적이며 계약서 행사기간 11/1~11/23과도 일치(record의 period 11/07이 오류). 방문객 표: '팝업 방문객 | 리플렛 소진수량 | 433 341 108 273 332 287 248 271 311 233 189 172' → 12일 합 3,198. ETC '물품 소진수량' 표에서 리플렛 총입고 4,000 / 기본 DP 150 / 잔여수량 652 → 4,000-150-3,198=",
+    "verdict": "실제 운영은 11/1 시작(금~일만 가동, 총 12일)이므로 period 11/07은 오류이고, 총계 2,837은 11/21까지의 10일 부분합이라 틀렸으며 일별 합 3,198이 맞다 — 리플렛 잔여수량으로 독립 검증됨. visitors=3,198 / 2025-11-01~11-23(가동 12일) / counting=visits(입장 시 리플렛 배포)로 교정한다.",
+    "period_prev": {
+     "from": "2025-11-01",
+     "to": "2025-11-23",
+     "days": null,
+     "source": "재발굴 판정 — 계획 문서로 교정"
+    },
+    "adjudication": "계획 문서(OVERVIEW)가 '총12일 — 11월 1-3일, 7-9일, 14-16일, 21-23일'로 명시한다. period.from 11-07은 전사 오류다. 계획값을 계획 문서로 고치는 것이므로 실측 주입이 아니다. 총계 2,837은 11/21까지의 10일 부분합이었고 일별 합 3,198이 리플렛 재고(입고 4,000 − DP 150 − 잔여 652)로 독립 검증된다."
+   }
+  ],
+  "counting_detail": "visits"
+ },
+ "docs": [
+  {
+   "doc_id": "15xej848clgpfBnB8fK_EP2r2S0DBufo8",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/15xej848clgpfBnB8fK_EP2r2S0DBufo8/view",
+   "title": "Sweetspot_부드바르X서울브루어리_견적서_1127.pdf"
+  },
+  {
+   "doc_id": "1R8_Q4flTAxbA5fzRQ96CawA23ZRHS46d",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1R8_Q4flTAxbA5fzRQ96CawA23ZRHS46d/view",
+   "title": "부드바르 서울브루어리 팝업_결과보고서_1124.pdf"
+  },
+  {
+   "doc_id": "1LAwI18tsBEEGe3auZibRfyOmq9dLkoFr",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1LAwI18tsBEEGe3auZibRfyOmq9dLkoFr/view",
+   "title": "[스위트스팟] 벡터컴_부드바르in서울브루어리_팝업운영대행_계약서_1202.doc"
+  },
+  {
+   "doc_id": "1rinbWxmYYcDuaa8q0C7-ObUkx0QAxDFx",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1rinbWxmYYcDuaa8q0C7-ObUkx0QAxDFx/view",
+   "title": "부드바르_서울브루어리_팝업_기획안_1013.pptx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 1건: Sweetspot_부드바르X서울브루어. 미확실: 입지/장소 정보 전체(견적서에 미기재); 면적(평); 일일 방문객 및 매출 실측(결과보고서 없음); 예상 방문객 수; 운영기간 일수 정확값; 클라이언트 정식 법인명 | 라벨발굴(2026-07-24): 결과보고서 재추출 — OVERVIEW '팝업 방문객 데이터' 표, 카운팅 기준: 리플렛 소진수량 | 자극 보강(2026-07-24): 운영안·기획안·계약서 재인제스트로 intervention/conditions 교체 (995→1342자, capacity=open). outcome·entities·period 보존"
+ }
+}

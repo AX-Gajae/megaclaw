@@ -1,0 +1,77 @@
+{
+  "market_record_id": "MKT-2026-0044",
+  "event_name": "스크럽 대디(Scrub Daddy) 팝업스토어 @잠실 롯데월드몰",
+  "brand": "스크럽 대디×롯데백화점",
+  "ip_or_collab": "디즈니코리아(곰돌이 푸·토이스토리5) 스페셜 에디션",
+  "category": "other",
+  "intervention": {
+    "concept_description": "한국 전용 에디션 '스크럽 베이비' 및 디즈니 협업 스페셜 에디션 30여종 공개, 사전 신청제 방문",
+    "experience_elements": [
+      "스페셜 에디션 전시"
+    ],
+    "promotions": [
+      "평일 특가 선착순(1000원)",
+      "럭키박스 이벤트(최대 20만원 상당)"
+    ],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "잠실 롯데월드몰 지하1층",
+    "venue_type": "mall",
+    "neighborhood": "잠실",
+    "city": "서울",
+    "period_from": "2026-06-10",
+    "period_to": "2026-06-23",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 14,
+        "weekend_share": 0.29,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "사전 신청 건수 수치(방문객 총계 미공개): '이번 롯데월드몰 팝업 방문을 위한 사전 신청도 접수 시작 일주일만에 1000여건을 돌파했다'",
+    "visitors_source_quote": "이번 롯데월드몰 팝업 방문을 위한 사전 신청도 접수 시작 일주일만에 1000여건을 돌파했다.",
+    "visitors_source_url": "https://www.mt.co.kr/living/2026/06/10/2026061014113283167",
+    "visitors_source_date": "2026-06-10",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": "사전 신청 접수 일주일 만에 1000여건 돌파",
+      "signal_quotes": [
+        "이번 롯데월드몰 팝업 방문을 위한 사전 신청도 접수 시작 일주일만에 1000여건을 돌파했다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "예약 수요 지표 기반 레코드. | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,171 @@
+{
+ "record_id": "RXPU2509",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:삼성물산_에버랜드",
+  "space_id": "unresolved:에버랜드",
+  "client_party_id": "unresolved:삼성물산_리조트부문",
+  "brand_key": "삼성물산_에버랜드",
+  "space_key": "에버랜드"
+ },
+ "intervention": {
+  "concept": "에버랜드 내 캡슐토이(캡슐뽑기) 기기 렌탈 운영. 랩핑 변경 및 운송·철수 포함, 팝업스토어 내 재고 관리시스템 구축.",
+  "brand_name": "에버랜드",
+  "experience_elements": [
+   "캡슐토이(캡슐뽑기) 기기"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "기기 랩핑"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": "에버랜드",
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-05-15",
+   "to": "2025-06-22",
+   "days": null
+  },
+  "season": null,
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "구성 총계 3,190,000원(VAT 별도). 캡슐기기 렌탈(랩핑 변경 및 운송·철수 포함) 단가 1,450,000원 x 수량 2 = 2,900,000원. 대행수수료 소계의 10% = 290,000원. 견적 총액 3,190,000원(VAT 별도). | 계약서 미확인(2026-07-27 재독해 시도 — 대상 문서 부재/추출 실패): 총액은 견적 기준"
+  },
+  "brand_requirements": [
+   "팝업스토어 내 재고 관리시스템 구축"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "에버랜드 내 캡슐토이 기기 운영"
+  },
+  "derived": {
+   "duration": {
+    "days": 39,
+    "weekend_share": 0.31,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 9,
+    "holiday_until": 22,
+    "holiday_block_in": 3,
+    "nat_event_gap": 19,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 8.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-06, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": 3.19,
+   "last_recognition_period": "2025-06"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "16cfotaBxdQRTV_ZykVsKzWxPdIFhwfCA",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/16cfotaBxdQRTV_ZykVsKzWxPdIFhwfCA/view",
+   "title": "삼성물산_에버랜드 캡슐토이 렌탈 연장 견적서_0620(최종).pdf"
+  },
+  {
+   "doc_id": "1CiJVGzNjEsWCP_8w84aAR5f9RMijC2IO",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CiJVGzNjEsWCP_8w84aAR5f9RMijC2IO/view",
+   "title": "삼성물산_에버랜드 캡슐토이 렌탈 연장 견적서_0619.pdf"
+  },
+  {
+   "doc_id": "1EdexKdNWhO9g7dtR8ixWx8ksWoXpTGyH",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1EdexKdNWhO9g7dtR8ixWx8ksWoXpTGyH/view",
+   "title": "임시결과보고서.txt"
+  },
+  {
+   "doc_id": "1KOaWIvCzsolLI82J9IWAgrKEJIDeZCNt",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1KOaWIvCzsolLI82J9IWAgrKEJIDeZCNt/view",
+   "title": "삼성물산_에버랜드 캡슐토이 렌탈 연장 견적서_0620.xlsx"
+  },
+  {
+   "doc_id": "1XnYHHL4S-t-EfsK7-sMo7hkl5502vHzE",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1XnYHHL4S-t-EfsK7-sMo7hkl5502vHzE/view",
+   "title": "다모아샵_캡슐뽑기 렌탈 견적서.png"
+  },
+  {
+   "doc_id": "1Xr8s-hPUHjCPoVRI6FsoDELPWAW6Yz2L",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Xr8s-hPUHjCPoVRI6FsoDELPWAW6Yz2L/view",
+   "title": "삼성물산_에버랜드 캡슐토이 렌탈_견적서.pdf"
+  },
+  {
+   "doc_id": "1Y2DOLQtgy5O7KcFwEw3V0jE-7j7-g6DW",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Y2DOLQtgy5O7KcFwEw3V0jE-7j7-g6DW/view",
+   "title": "계약서_내용없음.txt"
+  },
+  {
+   "doc_id": "1YEHQBMlhlwKM_4OYfeY7I_HFVLgZTAl2",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1YEHQBMlhlwKM_4OYfeY7I_HFVLgZTAl2/view",
+   "title": "제안서_내용없음.txt"
+  },
+  {
+   "doc_id": "1kTckG9qvxFOSSbdoVSw5VgJ14IwU52FM",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1kTckG9qvxFOSSbdoVSw5VgJ14IwU52FM/view",
+   "title": "삼성물산_에버랜드 캡슐토이 렌탈_견적서.xlsx"
+  },
+  {
+   "doc_id": "1l1IdKR3uZ1w4ESdsaKc3wXCK8tBgSPln",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1l1IdKR3uZ1w4ESdsaKc3wXCK8tBgSPln/view",
+   "title": "삼성물산_에버랜드 캡슐토이 렌탈 연장 견적서_0619.xlsx"
+  },
+  {
+   "doc_id": "1pHWI8udPTq064YEKLcWckABbJLE3drRg",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1pHWI8udPTq064YEKLcWckABbJLE3drRg/view",
+   "title": "삼성물산_에버랜드 캡슐토이 렌탈 연장 견적서_0620.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 1건: 삼성물산_에버랜드 캡슐토이 렌탈_견적서.pdf. 미확실: 결과보고서 부재로 방문자수·매출 실측 없음; 운영 위치(도시/구/장소 유형) 불명확; 면적 정보 없음; 예상 방문객 수 없음; 견적서 기준 기간과 프로젝트 메타 기간 일치 여부 미확인"
+ }
+}

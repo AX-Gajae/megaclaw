@@ -1,0 +1,261 @@
+{
+ "record_id": "RTPU2515",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:현대모비스",
+  "space_id": "unresolved:다산_현대프리미엄아울렛_스페이스원_메인게이트광장",
+  "client_party_id": "unresolved:엘리케이트",
+  "brand_key": "현대모비스",
+  "space_key": "다산_현대프리미엄아울렛"
+ },
+ "intervention": {
+  "concept": "현대모비스 '모비로드' 브랜드 팝업스토어로 정비·세차·와이퍼·에어컨필터 등 순정용품을 판매하고 체험 프로그램을 운영. 스탬프 투어, 브링앤티 시연, 소화기 게이지 충전 등 체험형 리테일테인먼트 구성. 현대프리미엄아울렛 다산 스페이스원 메인게이트광장에서 진행.",
+  "brand_name": "현대모비스 모비로드",
+  "experience_elements": [
+   "스마트스토어 찜하기",
+   "모비로드 체크리스트",
+   "소화기 게이지 충전",
+   "기프트샵",
+   "포토존 & 포토부스",
+   "브링앤티 시연",
+   "스탬프 투어/랠리",
+   "사격 게임",
+   "럭키드로우 룰렛",
+   "전시용 차량 전시"
+  ],
+  "promotions": [
+   "럭키드로우 룰렛 리워드(그립톡, 아크릴 자석)",
+   "이벤트 참여 스티커",
+   "포토부스 이용권"
+  ],
+  "staging_tags": [
+   "판매존",
+   "이벤트존",
+   "브링앤티 시연존",
+   "모비스토어 DP",
+   "이동형 DP부스",
+   "철제 X배너",
+   "VMD",
+   "포토부스"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": 2100,
+   "area_sqm": null,
+   "planned_operating_days": 10,
+   "throughput_units": 1,
+   "unit_minutes": null,
+   "operating_hours_per_day": 11,
+   "staff_count": 10,
+   "experience_density": 4,
+   "goods_scale": 2,
+   "photo_zones": 2,
+   "collab_strength": 0,
+   "ip_awareness": 2,
+   "target_breadth": 2,
+   "entry_friction": 0,
+   "media_push": 1,
+   "season_fit": 2,
+   "venue_prominence": 4
+  },
+  "attr_meta": {
+   "evidence": "견적서 인건비 평일4일(SV1+STAFF7)·주말6일(SV1+STAFF9)=10일, '10:00~21:00(11시간)'; '리워드 포토부스 렌탈비…10일 기준/2,100장(700장/1롤)'",
+   "confidence": "medium",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": "다산",
+   "venue_name": "현대프리미엄아울렛 다산 스페이스원 메인게이트광장",
+   "venue_type": "아울렛 광장",
+   "foot_traffic_context": "프리미엄아울렛 메인게이트 광장"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-05-30",
+   "to": "2025-06-08",
+   "days": 10
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총 계약금액 109,468,000원(VAT 10% 별도). 소계 99,880,000원 + 대행수수료 9,588,000원(정가 항목 제외 소계의 10%). 선금 50% 54,734,000원(5월 30일 지급), 잔금 50% 54,734,000원(행사종료 후 10일 이내). 대관비 10,000,000원, 제작비 48,000,000원, 이벤트 콘텐츠 9,500,000원, 인건비 22,880,000원 포함."
+  },
+  "brand_requirements": [
+   "제작물 사용 전 의뢰사 감수 필수",
+   "추가/변동 비용은 서면(부속합의서·이메일) 합의",
+   "안전보건관리 준수",
+   "지식재산권 무단 사용/등록 금지",
+   "비밀유지의무"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "현대프리미엄아울렛 다산 메인게이트광장"
+  },
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 24,
+    "holiday_until": 7,
+    "holiday_block_in": 3,
+    "nat_event_gap": 4,
+    "nat_event": "대통령 선거",
+    "doc_lag_days": 2,
+    "doc_dates_found": 3
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 276114.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 3,
+    "pnl_pre_first": "2025-02-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 15000,
+   "popup_zone_pass_rate": 0.35,
+   "host_traffic_est": 5250.0,
+   "venue_scale_tier": 3,
+   "confidence": "medium",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2025-05-30",
+    "visitors": 741,
+    "sales_krw": 931490
+   },
+   {
+    "date": "2025-05-31",
+    "visitors": 1227,
+    "sales_krw": 2118200
+   },
+   {
+    "date": "2025-06-01",
+    "visitors": 1536,
+    "sales_krw": 2025030
+   },
+   {
+    "date": "2025-06-02",
+    "visitors": 419,
+    "sales_krw": 680540
+   },
+   {
+    "date": "2025-06-03",
+    "visitors": 1227,
+    "sales_krw": 2348570
+   },
+   {
+    "date": "2025-06-04",
+    "visitors": 338,
+    "sales_krw": 919170
+   },
+   {
+    "date": "2025-06-05",
+    "visitors": 551,
+    "sales_krw": 987070
+   },
+   {
+    "date": "2025-06-06",
+    "visitors": 1252,
+    "sales_krw": 1512700
+   },
+   {
+    "date": "2025-06-07",
+    "visitors": 1239,
+    "sales_krw": 2134720
+   },
+   {
+    "date": "2025-06-08",
+    "visitors": 1094,
+    "sales_krw": 2423330
+   }
+  ],
+  "totals": {
+   "visitors": 9624,
+   "sales_krw": 16080820,
+   "rev_mm_recognized": 109.8
+  },
+  "counting_method": "participation",
+  "counting_basis": "KPI '방문자 수'는 '인원 수기 카운팅'으로 측정되며 일자별 표의 방문자 수치는 '스탬프 투어' 참여자 수(총 9,624명)와 동일. 별도로 '브링앤티 시연' 참여자 1,465명 집계.",
+  "plan_visitors_expected": 3200,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(KPI 목표 10일 기준 3,200명(주중 200명/주말 400명) 대비 9,624명으로 6,424명 초과 달성. 구매 고객 수 706명(전환율 약 7%). 공휴일은 모두 주말로 정의. 방문자 수치는 스탬프 투어 참여자 기준.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 109.8 ≈ 계약총액 109.468",
+   "contract_total_mm": 109.468,
+   "last_recognition_period": "2025-06"
+  },
+  "label_trust": {
+   "grade": "A",
+   "flags": [],
+   "why": "일별 표가 기간의 100% 커버"
+  },
+  "label_scope": {
+   "label_from": "2025-05-30",
+   "label_to": "2025-06-08",
+   "label_active_days": 10,
+   "label_span_days": 10,
+   "label_contiguous": true,
+   "daily_sum": 9624,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1DQPXiSHS5p51Rj_PfbpikdihZ83DVE5d",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1DQPXiSHS5p51Rj_PfbpikdihZ83DVE5d/view",
+   "title": "[스위트스팟] 현대모비스 팝업대행 계약서_250526.pdf"
+  },
+  {
+   "doc_id": "1FqP4mZQYHSodCHcjWJk8rdrXBsUotGR2",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1FqP4mZQYHSodCHcjWJk8rdrXBsUotGR2/view",
+   "title": "[Sweetspot] 현대모비스 모비로드 팝업 실행안_250528.pdf"
+  },
+  {
+   "doc_id": "1TTulJmQNjt-0ogAdrIFDA-POgFof2XhU",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1TTulJmQNjt-0ogAdrIFDA-POgFof2XhU/view",
+   "title": "(Sweetspot) 엘리케이트 현대모비스 팝업_견적서_8차_250523.pdf"
+  },
+  {
+   "doc_id": "1XJRubg0MOyYxRJfM6Inpsorx6V2Cpmd5",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1XJRubg0MOyYxRJfM6Inpsorx6V2Cpmd5/view",
+   "title": "[Sweetspot] 현대모비스 모비로드 팝업스토어 결과보고서_250610_FIN.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: [스위트스팟] 현대모비스 팝업대행 계약서_250526., (Sweetspot) 엘리케이트 현대모비스 팝업_견적서, [Sweetspot] 현대모비스 모비로드 팝업스토어 결. 미확실: 계약서·견적서 기준 행사기간(5/30~6/8)이 프로젝트 메타(5/16~5/25)와 상이; area_pyeong(면적) 정보 없음; 방문자 카운팅 방식이 수기 카운팅과 스탬프 투어 참여자 수가 동일하게 기재되어 순방문/연인원 여부 불명확; 도시(city) 명시 없음, 다산=경기 남양주 추정이나 문서 미기재; 고객 만족도 설문 결과값 미기재"
+ }
+}

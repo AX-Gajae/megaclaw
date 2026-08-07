@@ -1,0 +1,439 @@
+{
+ "record_id": "RXPI2401",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:NCT127",
+  "space_id": "unresolved:TGU_NCT127_전시",
+  "client_party_id": "unresolved:W.메이크스타",
+  "brand_key": "NCT127",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "NCT127 콘서트 영상과 멤버별 준비 영상을 활용한 미디어 전시. 관람객이 QR/웹(thegreatunity.co.kr)으로 30자 메시지를 작성하면 메시지 월 B면에 노출되고, 30개 초과 시 별이 되어 A면 은하수로 표현된다. 멤버별 영상 클립을 터치하면 하트 이모티콘 애니메이션이 팝업되는 인터랙션 연출.",
+  "brand_name": "NCT127",
+  "experience_elements": [
+   "메인 영상(콘서트 촬영 영상 활용)",
+   "멤버 준비 영상 및 코멘터리 영상",
+   "2D/3D 로고 플레이 영상",
+   "QR/웹 URL 메시지 작성 및 전송(30자 이내)",
+   "위치 수집 동의 기반 메시지 발송",
+   "메시지 월(A면 은하수 연출, B면 자필 메시지 9개+체험자 메시지 30개)",
+   "멤버별 영상 클립 6종(총 48개) 터치 인터랙션(하트 이모티콘 팝업)",
+   "시간에 따른 레이아웃 변환 시퀀스"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "미디어아트",
+   "인터랙티브",
+   "메시지월",
+   "은하수연출",
+   "QR체험",
+   "K-POP전시"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-03-01",
+   "to": "2024-04-14",
+   "days": 45
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 45,
+    "weekend_share": 0.31,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 0,
+    "holiday_until": 0,
+    "holiday_block_in": 3,
+    "nat_event_gap": 40,
+    "nat_event": null,
+    "doc_lag_days": 1,
+    "doc_dates_found": 10
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": null,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-6R7GenqyY3yIQdN2bIIoky5xDQDNyJl",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1-6R7GenqyY3yIQdN2bIIoky5xDQDNyJl/view",
+   "title": "RX_TGU-NCT127 전시 기획안 및 결과.pdf"
+  },
+  {
+   "doc_id": "1-9WkOYElGWwaqihtKHtlUNbMZ3Ep4afk",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1-9WkOYElGWwaqihtKHtlUNbMZ3Ep4afk/view",
+   "title": "DDP전시회계약서_SM엔터테인먼트.pdf"
+  },
+  {
+   "doc_id": "1-AQmUGbYkS2CaFu4sfkQAyYHiocFG7rY",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1-AQmUGbYkS2CaFu4sfkQAyYHiocFG7rY/view",
+   "title": "프로젝트협업 계약서_NCT 127_THE GREAT UNITY  전시회 (SME-메이크스타)_법무 검토 완료.docx"
+  },
+  {
+   "doc_id": "1-D3CLj1WZA-A3a2JOZdmh9PUNsqAQNMS",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1-D3CLj1WZA-A3a2JOZdmh9PUNsqAQNMS/view",
+   "title": "상품화 계약서_NCT 127_THE GREAT UNITY  전시회 (SME-메이크스타)_법무 검토 완료.docx"
+  },
+  {
+   "doc_id": "1268gFAnQe8pgEoaG08c8qEYpIV55uLRG",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1268gFAnQe8pgEoaG08c8qEYpIV55uLRG/view",
+   "title": "RX_TGU-NCT127 전시 기획안 및 결과.pdf"
+  },
+  {
+   "doc_id": "12jpwky6frk3O2e_GY46xuWVLz8rONyDt",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/12jpwky6frk3O2e_GY46xuWVLz8rONyDt/view",
+   "title": "프로젝트협업 계약서_NCT 127_THE GREAT UNITY  전시회 (SME-메이크스타)_법무 검토 완료.docx"
+  },
+  {
+   "doc_id": "12kaV3I9sVjCZ1ZJCcwdw5XQkmACv_xRE",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/12kaV3I9sVjCZ1ZJCcwdw5XQkmACv_xRE/view",
+   "title": "상품화 계약서_NCT 127_THE GREAT UNITY  전시회 (SME-메이크스타)_법무 검토 완료.docx"
+  },
+  {
+   "doc_id": "12nTDDevxbIMPesDv5u-KiXZFBzvaZACb",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/12nTDDevxbIMPesDv5u-KiXZFBzvaZACb/view",
+   "title": "DDP전시회계약서_SM엔터테인먼트 (1).pdf"
+  },
+  {
+   "doc_id": "16kHA5cWik2x8jNoe1H1nEJwXxxI8X5VO",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/16kHA5cWik2x8jNoe1H1nEJwXxxI8X5VO/view",
+   "title": "HL_240208_Kpop_Exhibition_견적서_v2(최종).xlsx"
+  },
+  {
+   "doc_id": "16l56NAGwUfvyetwzWv-ZjOwGEy1-tejC",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/16l56NAGwUfvyetwzWv-ZjOwGEy1-tejC/view",
+   "title": "프렌디_스위트스팟(NCT)최종견적서.xlsx"
+  },
+  {
+   "doc_id": "1Agri-urXGzdOS2INwtYg-81SUR7uVRws",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Agri-urXGzdOS2INwtYg-81SUR7uVRws/view",
+   "title": "3.THE Great Unity 전시 기획안_v3(시설 미팅용).pdf"
+  },
+  {
+   "doc_id": "1CzSfvVEoWPWhogBN0BgB9JblYxzxOp8k",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1CzSfvVEoWPWhogBN0BgB9JblYxzxOp8k/view",
+   "title": "[Sweetspot] 경력 증빙자료 pdf.pdf"
+  },
+  {
+   "doc_id": "1SfMM8OaNWyy0tPrcTZdsA3Qeb6qyDert",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1SfMM8OaNWyy0tPrcTZdsA3Qeb6qyDert/view",
+   "title": "20240222-수정견적서.xls"
+  },
+  {
+   "doc_id": "1SfrRwTE6bN3O-9GerJHdPmp0kwl69EPA",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1SfrRwTE6bN3O-9GerJHdPmp0kwl69EPA/view",
+   "title": "20240222-견적서.xls"
+  },
+  {
+   "doc_id": "1Sh39V_YtCVrCPuR_xgNQpBTPHEdmmxlx",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Sh39V_YtCVrCPuR_xgNQpBTPHEdmmxlx/view",
+   "title": "20240215-UV메쉬 견적서.xls"
+  },
+  {
+   "doc_id": "1Sr9-p2C8FfI1PrdDkW-_ZijQqBMGCoDr",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Sr9-p2C8FfI1PrdDkW-_ZijQqBMGCoDr/view",
+   "title": "(최종)20240226-수정견적서.xls"
+  },
+  {
+   "doc_id": "1SrB-vC2vaeY88X-BmrvnIc4NUJOXCrnV",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1SrB-vC2vaeY88X-BmrvnIc4NUJOXCrnV/view",
+   "title": "복사골현수막_세금계산서.pdf"
+  },
+  {
+   "doc_id": "1Sy0psIad4nYjTjitFx0T0tgSJuXOflz9",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Sy0psIad4nYjTjitFx0T0tgSJuXOflz9/view",
+   "title": "240229 DDP 디자인둘레길(2F) 견적서_현수막.pdf"
+  },
+  {
+   "doc_id": "1TIunpPLbaNd46De-oVF-fryYf0zLgeXr",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1TIunpPLbaNd46De-oVF-fryYf0zLgeXr/view",
+   "title": "이뉴어_세금계산서.jpg"
+  },
+  {
+   "doc_id": "1TKaBQTy1ySydEX1y40j4ZYpfhnPybEtu",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1TKaBQTy1ySydEX1y40j4ZYpfhnPybEtu/view",
+   "title": "KPOP 아티스트 집기 견적서 2024_02_19_최종.pdf"
+  },
+  {
+   "doc_id": "1TLHfIVOgtX9h4XSLDcTgYDgG6-ZBmMey",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1TLHfIVOgtX9h4XSLDcTgYDgG6-ZBmMey/view",
+   "title": "KPOP 아티스트 집기 견적서 2024_02_16.pdf"
+  },
+  {
+   "doc_id": "1TW9-2rYfXGtpP3tuhB1heE7QxGfrfT_X",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1TW9-2rYfXGtpP3tuhB1heE7QxGfrfT_X/view",
+   "title": "KPOP 아티스트 집기 견적서 2024_02_16-2.pdf"
+  },
+  {
+   "doc_id": "1TXQwTpS8wgMEwlEaU7uqimDH7HjWTbv0",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1TXQwTpS8wgMEwlEaU7uqimDH7HjWTbv0/view",
+   "title": "KPOP 아티스트 집기 견적서 2024_02_16-1.pdf"
+  },
+  {
+   "doc_id": "1TXwHh1K8IpFnafpL2Toc7aHz_WQgnQJO",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1TXwHh1K8IpFnafpL2Toc7aHz_WQgnQJO/view",
+   "title": "KPOP 아티스트 집기 견적서 2024_02_15.pdf"
+  },
+  {
+   "doc_id": "1TblIjyDbSJHLLmBnElgMKwoI848jf2fk",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1TblIjyDbSJHLLmBnElgMKwoI848jf2fk/view",
+   "title": "KPOP 아티스트 집기 견적서 2024_02_14.pdf"
+  },
+  {
+   "doc_id": "1Tq1-pip-K4KP-jTusFDLsLoJFoPULC0g",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Tq1-pip-K4KP-jTusFDLsLoJFoPULC0g/view",
+   "title": "해피크린_세금계산서.pdf"
+  },
+  {
+   "doc_id": "1U7jex74pw7YFI8ZS9W7ht6QbWXsEUiHD",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1U7jex74pw7YFI8ZS9W7ht6QbWXsEUiHD/view",
+   "title": "신용환경_세금계산서.jpg"
+  },
+  {
+   "doc_id": "1UA_azSVc2mA8yeAIyhZCyBcYxeTCq-w4",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1UA_azSVc2mA8yeAIyhZCyBcYxeTCq-w4/view",
+   "title": "신용환경_견적서 최종.jpg"
+  },
+  {
+   "doc_id": "1UR-HznODzBVKsSmlYLzyzacAYCQ6g5ot",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1UR-HznODzBVKsSmlYLzyzacAYCQ6g5ot/view",
+   "title": "바인디자인_세금계산서.pdf"
+  },
+  {
+   "doc_id": "1UWFjIDb1mLQQKjfEiv8y99lVnFEKHU5w",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1UWFjIDb1mLQQKjfEiv8y99lVnFEKHU5w/view",
+   "title": "바인디자인_세금계산서(실비).pdf"
+  },
+  {
+   "doc_id": "1UlnDylDK7SQC_peF-zZdm73x5LSh_Oe_",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1UlnDylDK7SQC_peF-zZdm73x5LSh_Oe_/view",
+   "title": "[Sweetspot] 경력 증빙자료.pptx"
+  },
+  {
+   "doc_id": "1Uo_hDQ944ZGOTLKt4CvxaPGfL0ZnAeuI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Uo_hDQ944ZGOTLKt4CvxaPGfL0ZnAeuI/view",
+   "title": "20240219_스위트스팟_DDP_구조물_바인디자인 견적서_최종.pdf"
+  },
+  {
+   "doc_id": "1Ut4q6ICsmyo2DuEDz2uQ0rwSlpWG9j4t",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Ut4q6ICsmyo2DuEDz2uQ0rwSlpWG9j4t/view",
+   "title": "20240219_스위트스팟_DDP_구조물_바인디자인 견적서.pdf"
+  },
+  {
+   "doc_id": "1V0jxrA07UkovEGrr6AqqrLEzNqSTU2Er",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1V0jxrA07UkovEGrr6AqqrLEzNqSTU2Er/view",
+   "title": "프렌디_세금계산서_선금.pdf"
+  },
+  {
+   "doc_id": "1VGdvjCuZJcQ5pbsCKBNnX3_YesGQamfg",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1VGdvjCuZJcQ5pbsCKBNnX3_YesGQamfg/view",
+   "title": "스위트스팟(NCT)최종견적.xlsx"
+  },
+  {
+   "doc_id": "1VIqwb-aFqND4tcTj7O3QHkkpEQ3keevz",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1VIqwb-aFqND4tcTj7O3QHkkpEQ3keevz/view",
+   "title": "NCT행사_ 프렌디(계약서).hwp"
+  },
+  {
+   "doc_id": "1Vcb9y20xD7d0Cj2ykShSfvOdFjjyySq9",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Vcb9y20xD7d0Cj2ykShSfvOdFjjyySq9/view",
+   "title": "선영디자인_견적서(0227).jpg"
+  },
+  {
+   "doc_id": "1VsiA4gzbVQ4V229W6jWnFkAqp3QtxCAk",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1VsiA4gzbVQ4V229W6jWnFkAqp3QtxCAk/view",
+   "title": "하이로우_세금계산서(중도금).pdf"
+  },
+  {
+   "doc_id": "1Vt5PBtjUAMOyCmIY9CuFteZAMfI2TqLF",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Vt5PBtjUAMOyCmIY9CuFteZAMfI2TqLF/view",
+   "title": "하이로우_세금계산서(잔금).pdf"
+  },
+  {
+   "doc_id": "1Vz1JhHiRcnCJOLTz91U4l17C5hJrxj5_",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Vz1JhHiRcnCJOLTz91U4l17C5hJrxj5_/view",
+   "title": "하이로우_세금계산서(계약금).pdf"
+  },
+  {
+   "doc_id": "1W2GVEb_-BdFOeo1VdVI1gNPl9Cx9914c",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1W2GVEb_-BdFOeo1VdVI1gNPl9Cx9914c/view",
+   "title": "HL_240208_Kpop_Exhibition_견적서_v2(최종).xlsx"
+  },
+  {
+   "doc_id": "1WGjtTxOVS499xcaa89lAgug1jvxA_N-c",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1WGjtTxOVS499xcaa89lAgug1jvxA_N-c/view",
+   "title": "HL_240208_Kpop_Exhibition_견적서_v1.xlsx"
+  },
+  {
+   "doc_id": "1YpTorZ_tw97CkQTbbmvjyUbTyrV7ibli",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1YpTorZ_tw97CkQTbbmvjyUbTyrV7ibli/view",
+   "title": "키오스크 단기렌탈 견적서0124(스위트스팟)_수정.pdf"
+  },
+  {
+   "doc_id": "1Ywx8xB5dqtkj0BPHS2nS9vCGICY5nc3V",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Ywx8xB5dqtkj0BPHS2nS9vCGICY5nc3V/view",
+   "title": "[스위트스팟] 오더퀸 키오스크 사용계약서.pdf"
+  },
+  {
+   "doc_id": "1Z-ea7BCzRTR4p15iPSMAN_-A4FdQMYyg",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Z-ea7BCzRTR4p15iPSMAN_-A4FdQMYyg/view",
+   "title": "[스위트스팟] 오더퀸 키오스크 렌탈 공급 계약서.pdf"
+  },
+  {
+   "doc_id": "1ZTVCq50WS5nyYUzz3vVW-bW18V1dRlO_",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1ZTVCq50WS5nyYUzz3vVW-bW18V1dRlO_/view",
+   "title": "스위트스팟 근로계약서_NCT127 전시회(일 근무 9시간)_수정.pdf"
+  },
+  {
+   "doc_id": "1ka7GcEVaFmnoWu04WdkSjXi6ulOIJMs2",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ka7GcEVaFmnoWu04WdkSjXi6ulOIJMs2/view",
+   "title": "원상복구비 정산 산출_NCT127 The Great Unity 하자검수.xlsx"
+  },
+  {
+   "doc_id": "1nl-1BfmjIIc88S0iFz74NH_rUpvsyhnm",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1nl-1BfmjIIc88S0iFz74NH_rUpvsyhnm/view",
+   "title": "[VX UNIT] NCT 127 'THE GREAT UNITY' 전시 현장 방문 기획안_1.pptx"
+  },
+  {
+   "doc_id": "1nxM5UTHKJGTtN-8QWy3y0ImUDaBncQuz",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1nxM5UTHKJGTtN-8QWy3y0ImUDaBncQuz/view",
+   "title": "24_TheGreatUnity_recap.mp4"
+  },
+  {
+   "doc_id": "1oMnev1ujkwoEKEkPeswE-N01QYJNJj18",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1oMnev1ujkwoEKEkPeswE-N01QYJNJj18/view",
+   "title": "NCT127 정산서_스위트스팟RX.xlsx"
+  },
+  {
+   "doc_id": "1oQh0lQBuZzK-CwQaEPbydSUOiD4Ueh06",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1oQh0lQBuZzK-CwQaEPbydSUOiD4Ueh06/view",
+   "title": "[Sweetspot] THE GREAT UNITY 초대권 결과.xlsx"
+  },
+  {
+   "doc_id": "1pTU2VXUpa4OSJvJfJk3_cf4sVLFYqxVE",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1pTU2VXUpa4OSJvJfJk3_cf4sVLFYqxVE/view",
+   "title": "7.THE Great Unity_방염성능검사 결과통보서.pdf"
+  },
+  {
+   "doc_id": "1t9Zgo4v8PVDDPBAkq_YxI4NvKmUekvJR",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1t9Zgo4v8PVDDPBAkq_YxI4NvKmUekvJR/view",
+   "title": "메이크스타X스위트스팟 계약서.pdf"
+  },
+  {
+   "doc_id": "1tFXO46PqFhBXRflhgx_sX1kBbEdWbXAN",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1tFXO46PqFhBXRflhgx_sX1kBbEdWbXAN/view",
+   "title": "메이크스타X스위트스팟 계약서.docx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 2건: RX_TGU-NCT127 전시 기획안 및 결과.pdf, RX_TGU-NCT127 전시 기획안 및 결과.pdf. 미확실: 입지/장소 정보 전무; 면적 미기재; 수수료 구조 및 계약금액 미기재; 일일 방문자·매출 실측 데이터 없음; 예상 방문객 수 미기재; 클라이언트명은 프로젝트 메타에서만 추정; 문서 텍스트가 기획 연출 설명 위주로 계약/결과 수치 부재"
+ }
+}

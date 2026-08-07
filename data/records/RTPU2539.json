@@ -1,0 +1,147 @@
+{
+ "record_id": "RTPU2539",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:농심_배홍동",
+  "space_id": "unresolved:천안_K컬처박람회",
+  "client_party_id": "unresolved:농심_면마케팅팀",
+  "brand_key": "농심_배홍동",
+  "space_key": "천안_K컬처박람회"
+ },
+ "intervention": {
+  "concept": "농심 배홍동 브랜드가 2025 천안 K컬처박람회에 참여한 부스형 팝업. 컬링 이벤트 참여 및 배홍동 제품 판매를 중심으로 운영되었다.",
+  "brand_name": "농심 배홍동",
+  "experience_elements": [
+   "컬링 이벤트 참여",
+   "배홍동 제품 구매",
+   "인형탈 캐릭터 운영"
+  ],
+  "promotions": [
+   "컬링 이용권 이벤트",
+   "제품 구매 연계 이벤트"
+  ],
+  "staging_tags": [
+   "백월 공간구성",
+   "전면 브랜딩",
+   "간판",
+   "전광판",
+   "등신대",
+   "브랜딩 스탭복"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "천안",
+   "district": null,
+   "venue_name": "천안 K컬처박람회",
+   "venue_type": "박람회 부스",
+   "foot_traffic_context": "K컬처박람회 행사장 내 부스"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-06-05",
+   "to": "2025-06-08",
+   "days": 4
+  },
+  "season": "초여름",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 45,664,250원 (VAT 10% 별도, 만원단위 이하 절사). 소계(Sub Total 1~4) 41,619,425원 + 일반관리비+대행수수료 4,119,250원(소계의 10%, 정가항목/추가예산 진행비 항목 제외). 카드 결제 수수료 5% 135,425원. 매출 컬링 이벤트 참여 및 제품 구매 -2,708,500원 차감 항목 포함. 6/6 공휴일 운영은 2.5배 산정.},"
+  },
+  "brand_requirements": [
+   "배홍동 브랜딩 스탭복 10장",
+   "비닐백 1만장 제작",
+   "전면 브랜딩/간판/전광판/등신대 설치"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "2025 천안 K컬처박람회 행사장 내 부스"
+  },
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.5,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 2.3,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 30,
+    "holiday_until": 1,
+    "holiday_block_in": 3,
+    "nat_event_gap": 2,
+    "nat_event": "대통령 선거",
+    "doc_lag_days": 9,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 1978599.0,
+    "pnl_pre_accounts": 2,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-05-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 48.3
+  },
+  "counting_method": "unknown",
+  "counting_basis": "결과보고서에 '날짜/컬링 이용권 매출액/배홍동 판매 매출액/총 매출액/컬링 이벤트 참여자 수/추정 방문객' 컬럼이 있으나 원문 표에 실측 데이터가 비어 있음",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 일자별 방문/매출 표가 원문에서 공란이라 실측값을 추출할 수 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 48.3 ≈ 계약총액 45.66425",
+   "contract_total_mm": 45.66425,
+   "last_recognition_period": "2025-07"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1CAVDZEv0G11RSdfi48WdmJu1No3mdWbR",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CAVDZEv0G11RSdfi48WdmJu1No3mdWbR/view",
+   "title": "Sweetspot_농심_2025_천안K컬처박람회_견적서_0613(최종).pdf"
+  },
+  {
+   "doc_id": "1MotDPYR2mxpDtADS2HyQv8A-axrxT8ot",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1MotDPYR2mxpDtADS2HyQv8A-axrxT8ot/view",
+   "title": "계약서_없음.txt"
+  },
+  {
+   "doc_id": "1PfvMvgvhKMaCHtkugykO3JF19zGENUcn",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1PfvMvgvhKMaCHtkugykO3JF19zGENUcn/view",
+   "title": "2025 농심 천안 K컬쳐박람회_결과보고서_스위트스팟_250611.pdf"
+  },
+  {
+   "doc_id": "1aOQ7PblaDC9ZGzu05I2cLRc6Btrl3LjB",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1aOQ7PblaDC9ZGzu05I2cLRc6Btrl3LjB/view",
+   "title": "농심_천안 K컬처박람회 부스_실행계획안_제안서_250527.pptx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: Sweetspot_농심_2025_천안K컬처박람회_견적서, 2025 농심 천안 K컬쳐박람회_결과보고서_스위트스팟_. 미확실: 결과보고서 일일 방문객/매출 실측 데이터 전체 공란; 면적(평); 정확한 개별 일자별 데이터; client_party_id 정식 법인명; venue 세부 위치"
+ }
+}

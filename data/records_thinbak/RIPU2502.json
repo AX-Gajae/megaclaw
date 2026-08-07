@@ -1,0 +1,161 @@
+{
+  "record_id": "RIPU2502",
+  "schema_version": "0.1",
+  "entities": {
+    "brand_id": "unresolved:RIPU2502",
+    "space_id": "unresolved:세종문화회관",
+    "client_party_id": null,
+    "brand_key": "미상",
+    "space_key": "세종문화회관"
+  },
+  "intervention": {
+    "concept": "세종문화회관 팝업스토어 프로젝트. 세부 컨셉 정보는 제공된 원문에 없음.",
+    "brand_name": "",
+    "experience_elements": [],
+    "promotions": [],
+    "staging_tags": []
+  },
+  "conditions": {
+    "location": {
+      "city": "서울",
+      "district": null,
+      "venue_name": "세종문화회관",
+      "venue_type": "공연장/문화시설",
+      "foot_traffic_context": null
+    },
+    "area_pyeong": null,
+    "period": {
+      "from": "2025-04-24",
+      "to": "2025-04-30",
+      "days": 7
+    },
+    "season": "봄",
+    "fee_structure": {
+      "type": "unknown",
+      "detail": ""
+    },
+    "brand_requirements": [],
+    "scale": {
+      "store_count": 1,
+      "venue_traffic_type": "host_venue",
+      "host_traffic_note": "세종문화회관 공연장/문화시설 내"
+    }
+  },
+  "outcome": {
+    "daily": [
+      {
+        "date": "2025-04-24",
+        "visitors": 1322,
+        "sales_krw": 1921700
+      },
+      {
+        "date": "2025-04-25",
+        "visitors": 1600,
+        "sales_krw": 1649200
+      },
+      {
+        "date": "2025-04-26",
+        "visitors": 1973,
+        "sales_krw": 3065600
+      },
+      {
+        "date": "2025-04-27",
+        "visitors": 1558,
+        "sales_krw": 3773900
+      },
+      {
+        "date": "2025-04-28",
+        "visitors": 1515,
+        "sales_krw": 2150700
+      },
+      {
+        "date": "2025-04-29",
+        "visitors": 1632,
+        "sales_krw": 1767900
+      },
+      {
+        "date": "2025-04-30",
+        "visitors": 1540,
+        "sales_krw": 2304200
+      }
+    ],
+    "totals": {
+      "visitors": 11140,
+      "sales_krw": 16633200,
+      "rev_mm_recognized": 124.2
+    },
+    "counting_method": "participation",
+    "counting_basis": "현장 참가 / 전체(명)",
+    "plan_visitors_expected": null,
+    "retention": null,
+    "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+    "rev_mm_completion": {
+      "status": "complete",
+      "rule": "운영종료 2025-04, 스냅샷까지 2개월+ (시간 규칙)",
+      "contract_total_mm": null,
+      "last_recognition_period": "2025-05"
+    }
+  },
+  "docs": [
+    {
+      "doc_id": "1BkpZW9oAIO65fN4TzsnraVk26VNcDayS",
+      "kind": "기획서",
+      "uri": "https://drive.google.com/file/d/1BkpZW9oAIO65fN4TzsnraVk26VNcDayS/view",
+      "title": "[sweetspot]세종문화회관 해리포터 필름콘서트 팝업 제안서_수정.pdf"
+    },
+    {
+      "doc_id": "1CONDTG39PVWBUAAvz2brH-Hoj0WpH-Kn",
+      "kind": "계약서",
+      "uri": "https://drive.google.com/file/d/1CONDTG39PVWBUAAvz2brH-Hoj0WpH-Kn/view",
+      "title": "플러스콤마 계약서류.pdf"
+    },
+    {
+      "doc_id": "1MJKhIhvm0qQebslZ_VmYEnEdkL9sYCEP",
+      "kind": "계약서",
+      "uri": "https://drive.google.com/file/d/1MJKhIhvm0qQebslZ_VmYEnEdkL9sYCEP/view",
+      "title": "스위트스팟_해리포터 필름콘서트 팝업스토어_계약서.pdf"
+    },
+    {
+      "doc_id": "1T3WPCYGLiNRwY-KgyLtPZgkjDA2wd_19",
+      "kind": "계약서",
+      "uri": "https://drive.google.com/file/d/1T3WPCYGLiNRwY-KgyLtPZgkjDA2wd_19/view",
+      "title": "비알피알 계약서류.pdf"
+    },
+    {
+      "doc_id": "1ZoNjqmjYF20QIHPXUlC93P_K_ctnkW69",
+      "kind": "운영일지",
+      "uri": "https://drive.google.com/file/d/1ZoNjqmjYF20QIHPXUlC93P_K_ctnkW69/view",
+      "title": "[더현대]해리포터 필름콘서트 결과보고서.pdf"
+    },
+    {
+      "doc_id": "1pkUec3zgFWowxvkPJXaP970CPr0Iazn1",
+      "kind": "계약서",
+      "uri": "https://drive.google.com/file/d/1pkUec3zgFWowxvkPJXaP970CPr0Iazn1/view",
+      "title": "그리머_세종문화회관_수의계약_최종계약서.pdf"
+    },
+    {
+      "doc_id": "1qNLQ-npGlc1LkI91N65wvHcc1UzyT6lz",
+      "kind": "정산",
+      "uri": "https://drive.google.com/file/d/1qNLQ-npGlc1LkI91N65wvHcc1UzyT6lz/view",
+      "title": "세종문화회관_잔금(네고3%) 및 추가금액.pdf"
+    },
+    {
+      "doc_id": "1r6DREW4o-U-yxmW6xdI6265ShmSHFFdn",
+      "kind": "계약서",
+      "uri": "https://drive.google.com/file/d/1r6DREW4o-U-yxmW6xdI6265ShmSHFFdn/view",
+      "title": "세종문화회관 견적서_최종 견적_계약금액과 상이.pdf"
+    },
+    {
+      "doc_id": "1v7qXwroLYswpCUn_1kEN0DlYvuOYPOOf",
+      "kind": "기획서",
+      "uri": "https://drive.google.com/file/d/1v7qXwroLYswpCUn_1kEN0DlYvuOYPOOf/view",
+      "title": "[sweetspot]세종문화회관 해리포터 필름콘서트 팝업 제안서.pdf"
+    }
+  ],
+  "provenance": {
+    "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+    "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+    "extracted_at": "2026-07-23",
+    "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체가 제공되지 않음; client_name/브랜드명 미상; 컨셉·체험요소·프로모션·연출태그 정보 없음; 면적·수수료구조·요구사항 정보 없음; 방문자수·매출 실측 데이터 없음; counting_method 판정 불가 | 라벨발굴(2026-07-24): 결과보고서 재추출 — Ⅰ.OVERVIEW 참가자 현황 표, Ⅳ.OPERATION 일별 매출 표"
+  }
+}

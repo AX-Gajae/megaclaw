@@ -1,0 +1,246 @@
+{
+ "record_id": "RIPU2522",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:유노윤호_I-KNOW",
+  "space_id": "unresolved:미상",
+  "client_party_id": null,
+  "brand_key": "유노윤호",
+  "space_key": "꼴라보하우스_도산",
+  "space_key_source": "venue_key 정규화 (신규 키)"
+ },
+ "intervention": {
+  "concept": "유노윤호 1집 'I-KNOW' 음원 발매를 기념하는 VIP 프라이빗 리스닝 파티(11/4)와 일반 관람용 사진전(11/5~11/9)을 꼴라보하우스 도산에서 진행. 리스닝 파티는 지인·셀럽 50인 초청으로 음감회 및 자유 파티, 사진전은 5개 존으로 구성된 전시와 무료 포토부스로 운영.",
+  "brand_name": "U-KNOW 'I-KNOW'",
+  "experience_elements": [
+   "VIP 음감회(2F 50인 착석, 10곡 송출)",
+   "케이터링 및 자유 파티",
+   "포토부스(1인 1회 무료)",
+   "포토월",
+   "5개 전시존(CROSS THE FRAME INSIDE/OUTSIDE, BECOMING, B.O.K SPIRIT, SHOW ROOM)",
+   "GWP 증정(향수+핸드크림+키링/헤드셋)",
+   "입장 팔찌",
+   "기념 지류티켓",
+   "웨이팅 프로그램",
+   "MC 진행"
+  ],
+  "promotions": [
+   "VIP GWP 증정",
+   "포토부스 무료 촬영",
+   "기념 지류티켓 제공"
+  ],
+  "staging_tags": [
+   "VIP 리스닝 파티",
+   "사진전",
+   "음감회",
+   "루프탑 흡연부스",
+   "케이터링",
+   "포토부스",
+   "초청제"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": 50,
+   "giveaway_qty": 50,
+   "area_sqm": null,
+   "planned_operating_days": 5,
+   "throughput_units": 1,
+   "unit_minutes": 60,
+   "operating_hours_per_day": 8,
+   "staff_count": 12,
+   "experience_density": 3,
+   "goods_scale": 1,
+   "photo_zones": 2,
+   "collab_strength": 1,
+   "ip_awareness": 4,
+   "target_breadth": 1,
+   "entry_friction": 3,
+   "media_push": 3,
+   "season_fit": 3,
+   "venue_prominence": 3
+  },
+  "attr_meta": {
+   "evidence": "운영안: 사진전 '11/5(수)~11/9(일), 5일간, 12:00~20:00 (8시간 운영/19:30 입장마감)', 인력 슈퍼바이저1+스태프11=12명, 포토부스 1대(1인1회), 리셉션 스크립트 '총 60분 동안 관람 가능'. 리스닝파티 11/4은 RSVP 50인 초청·GWP/팔찌 각 50개·인력 14명(별도). 부속합의서 '11/04~11/09 (총 5일간)'.",
+   "confidence": "high",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "capacity": {
+   "access_type": "invite",
+   "total_capacity": 50,
+   "detail": "VIP 리스닝 파티는 RSVP 50인 초청제(11/4). 사진전(11/5~9)은 워크인+웨이팅 시스템 자유입장으로 총 수용 한도 명시 없음. total_capacity 50은 리스닝 파티 초청 인원 기준."
+  },
+  "location": {
+   "city": "서울",
+   "district": "강남구",
+   "venue_name": "꼴라보하우스 도산",
+   "venue_type": "복합문화공간(1층 야외/1층/2층/루프탑)",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-11-04",
+   "to": "2025-11-09",
+   "days": 6
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "운영대행 용역 대가 총 18,000,000원(부가세 별도). 1차 2025-10-31까지 9,000,000원(부가세 별도), 2차 잔금 프로젝트 종료 후 15영업일 이내 9,000,000원(부가세 별도). 상품 판매 없음(판매 관련 조항 배제)."
+  },
+  "brand_requirements": [
+   "전시 작품 등 운영 물품 분실·손상 방지 관리",
+   "운영인력 지도",
+   "현장 경호 및 MC 운영",
+   "리스닝 파티와 전시회 동시 운영 인지"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 6,
+    "weekend_share": 0.33,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 26,
+    "holiday_until": 102,
+    "holiday_block_in": 0,
+    "nat_event_gap": 3,
+    "nat_event": "APEC 경주 정상회의",
+    "doc_lag_days": 33,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 1406826.0,
+    "pnl_pre_accounts": 5,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-10-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 800,
+   "popup_zone_pass_rate": 0.9,
+   "host_traffic_est": 720.0,
+   "venue_scale_tier": 5,
+   "confidence": "medium",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "11월 5일",
+    "visitors": 206,
+    "sales_krw": null
+   },
+   {
+    "date": "11월 6일",
+    "visitors": 166,
+    "sales_krw": null
+   },
+   {
+    "date": "11월 7일",
+    "visitors": 177,
+    "sales_krw": null
+   },
+   {
+    "date": "11월 8일",
+    "visitors": 219,
+    "sales_krw": null
+   },
+   {
+    "date": "11월 9일",
+    "visitors": 183,
+    "sales_krw": null
+   }
+  ],
+  "totals": {
+   "visitors": 951,
+   "sales_krw": null,
+   "rev_mm_recognized": 22.0
+  },
+  "counting_method": "entry",
+  "counting_basis": "입장 카운팅 진행/방문 인원",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-11, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-11"
+  },
+  "label_trust": {
+   "grade": "A",
+   "flags": [],
+   "why": "일별 표가 기간의 83% 커버"
+  },
+  "label_scope": {
+   "label_from": "2025-11-05",
+   "label_to": "2025-11-09",
+   "label_active_days": 5,
+   "label_span_days": 5,
+   "label_contiguous": true,
+   "daily_sum": 951,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "126owgdfSt19n47FFLPFc1DCJpL-UcRVs",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/126owgdfSt19n47FFLPFc1DCJpL-UcRVs/view",
+   "title": "(스위트스팟) 프라이빗 리스닝 및 사진전 견적서_추가금액 1118.pdf"
+  },
+  {
+   "doc_id": "19djONMi38b9G9Dwl5AyyCQ9ofuGtQn57",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19djONMi38b9G9Dwl5AyyCQ9ofuGtQn57/view",
+   "title": "(스위트스팟) 프라이빗 리스닝 및 사진전 견적서_1107.pdf"
+  },
+  {
+   "doc_id": "1LqOKaAR-l4uJDqAuh3wcoKG5DOg_0Hdw",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1LqOKaAR-l4uJDqAuh3wcoKG5DOg_0Hdw/view",
+   "title": "유노윤호_VIP 리스닝파티 및 전시회 결과보고서.pdf"
+  },
+  {
+   "doc_id": "1Nfwtis0eJQQBASnzQUGiNA0IS0NIV6zI",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Nfwtis0eJQQBASnzQUGiNA0IS0NIV6zI/view",
+   "title": "01. (검토완료)계약서 부속합의서_윤호_사진전 운영대행_251002.docx"
+  },
+  {
+   "doc_id": "1vXBNXi42bye-Q03VG9WS9ztjVoSMSBQx",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1vXBNXi42bye-Q03VG9WS9ztjVoSMSBQx/view",
+   "title": "유노윤호_VIP 리스닝파티 및 전시회 운영안_1103.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서/기획서/견적서/결과보고서) 텍스트가 제공되지 않음; client_name 미상; venue 및 입지 정보 없음; 면적 정보 없음; 수수료 구조 정보 없음; 방문자수·매출 실측 데이터 없음; 예상 방문 수치 없음; 체험요소·프로모션·연출태그 상세 없음 | 라벨발굴(2026-07-24): 결과보고서 재추출 — 사진전 '방문 인원' 슬라이드 일자별 표, Total 951명 | 자극 보강(2026-07-24): 운영안·기획안·계약서 재인제스트로 intervention/conditions 교체 (557→1425자, capacity=invite/50). outcome·entities·period 보존"
+ }
+}

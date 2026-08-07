@@ -1,0 +1,352 @@
+{
+ "record_id": "RXPU2408",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:허쉬_HERSHEY",
+  "space_id": "unresolved:미상",
+  "client_party_id": "unresolved:슬래시비슬래시_SLBS",
+  "brand_key": "허쉬",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "허쉬 x 슬래시비슬래시(SLBS, 삼성프렌즈) 협업 팝업. SLBS 스튜디오·리사이클존(폐플라스틱 재활용)·허쉬 드링크존·AR 포토존·퀴즈 콘테스트 등 존별 체험형 공간으로 구성. 미션 데스크 기반의 존별 운영 동선과 지속가능성 메시지를 결합했다.",
+  "brand_name": "HERSHEY (허쉬) x SLBS",
+  "experience_elements": [
+   "SLBS 스튜디오 (Samsung Friends & Custom Zone)",
+   "리사이클존 (Recycled & Collabo Zone, 폐플라스틱 연출)",
+   "허쉬 드링크존/카페",
+   "AR 포토존",
+   "퀴즈 콘테스트",
+   "미션 데스크",
+   "포토존",
+   "스티키몬스터 조형물",
+   "켈 그레이 실사 자판기 모형"
+  ],
+  "promotions": [
+   "AR Photo zone",
+   "Quiz contest",
+   "이벤트 프로모션",
+   "자체 홍보 채널 마케팅"
+  ],
+  "staging_tags": [
+   "카라반 매장 구성",
+   "조형물",
+   "폐플라스틱 리사이클 연출",
+   "실사 자판기 모형",
+   "조명 연출"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-07-26",
+   "to": "2024-08-11",
+   "days": 17
+  },
+  "season": "summer",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 150,520,000원 (VAT 10% 별도). 소계(Sub Total 1+2+3) 136,843,000원 + 대행수수료(정가항목 제외 소계의 10%) 13,684,300원 = 공급가 150,520,000원. 주요 항목: SLBS 매장 카라반 전체 구성 44,560,000원, 리사이클존 집기/연출 19,820,000원, CX기획 인원 19,180,000원, 카운팅 프로그램 개발비 및 1년 사용료 500,000원. 2주 기준 견적. 천단위 이하 절삭. | 계약서 미확인(2026-07-27 재독해 시도 — 대상 문서 부재/추출 실패): 총액은 견적 기준"
+  },
+  "brand_requirements": [
+   "프로젝트 보험 가입",
+   "카운팅 프로그램 개발 및 1년 사용",
+   "사진/영상 촬영 및 제작"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 17,
+    "weekend_share": 0.35,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 81,
+    "holiday_until": 50,
+    "holiday_block_in": 0,
+    "nat_event_gap": 107,
+    "nat_event": null,
+    "doc_lag_days": 2,
+    "doc_dates_found": 7
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 140.5
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 미제공. 견적서에 카운팅 프로그램 개발비 및 1년 사용료가 포함되어 있으나 실측 방문 데이터 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 140.5 ≈ 계약총액 150.52",
+   "contract_total_mm": 150.52,
+   "last_recognition_period": "2024-07"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "10axUISfTdMQPrQeXVFYr_-97WtVx7-MY",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/10axUISfTdMQPrQeXVFYr_-97WtVx7-MY/view",
+   "title": "SLBS_사업자등록증.pdf"
+  },
+  {
+   "doc_id": "119lJ0S_3muRo4SSL7KfnmBqpDgyQ_8FX",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/119lJ0S_3muRo4SSL7KfnmBqpDgyQ_8FX/view",
+   "title": "3.제안서_SWEETSPOT_[Future Gen. Lab] HERSHEY POP-UP PROPOSAL_240702.pdf"
+  },
+  {
+   "doc_id": "11B1q9gvvEUXP1JV_lakkLuRuGf8YYt8I",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/11B1q9gvvEUXP1JV_lakkLuRuGf8YYt8I/view",
+   "title": "추가견적요청서.pdf"
+  },
+  {
+   "doc_id": "11K2W3BxsmKZhewD-0OoQaY1vS1zN5Sfx",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/11K2W3BxsmKZhewD-0OoQaY1vS1zN5Sfx/view",
+   "title": "2.견적서_SLBS_최종견적서.pdf"
+  },
+  {
+   "doc_id": "11UQYSDGaLC7bfK7qATNAQHpqUUCnCgdn",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/11UQYSDGaLC7bfK7qATNAQHpqUUCnCgdn/view",
+   "title": "[SLBS] 스위트스팟 용역 계약서_240617 (clean).docx"
+  },
+  {
+   "doc_id": "13aHOx8hbGyTfGX9rKlGqw3DBqZ9XghC6",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/13aHOx8hbGyTfGX9rKlGqw3DBqZ9XghC6/view",
+   "title": "SWEETSPOT_[Future Gen. Lab] HERSHEY POP-UP PROPOSAL_240702.pdf"
+  },
+  {
+   "doc_id": "13jO-jiGRlBiFEXHMS1yl2upWcsPq8Yfq",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/13jO-jiGRlBiFEXHMS1yl2upWcsPq8Yfq/view",
+   "title": "SLBS_최종견적서.pdf"
+  },
+  {
+   "doc_id": "13uKqG1eo_aft_JjnbCxx1-F-m7QUOywa",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/13uKqG1eo_aft_JjnbCxx1-F-m7QUOywa/view",
+   "title": "SLBS_추가변경합의서.pdf"
+  },
+  {
+   "doc_id": "13wv08PFrCKH_lOqF5Tyv4WUZFjOg9sAs",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/13wv08PFrCKH_lOqF5Tyv4WUZFjOg9sAs/view",
+   "title": "계약연장 보험증권.jpg"
+  },
+  {
+   "doc_id": "143w1YjtMOWJRO0C5qythayiqGNTLTRf_",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/143w1YjtMOWJRO0C5qythayiqGNTLTRf_/view",
+   "title": "프로젝트 1팀 견적서 - slbs 추가실비.pdf"
+  },
+  {
+   "doc_id": "14BVBGf8K9ERv6TenhUyegGYzqJnCYqdq",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14BVBGf8K9ERv6TenhUyegGYzqJnCYqdq/view",
+   "title": "[SLBS] 스위트스팟 용역 계약서_240617.docx"
+  },
+  {
+   "doc_id": "14rvKiDY1SUaq3IzYb3tWT278LqKLvAj2",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14rvKiDY1SUaq3IzYb3tWT278LqKLvAj2/view",
+   "title": "슬래시비슬래시 추가변경합의서.docx"
+  },
+  {
+   "doc_id": "153ZFujRISkI7uiCuR_mNo9mYSdjQiKpC",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/153ZFujRISkI7uiCuR_mNo9mYSdjQiKpC/view",
+   "title": "슬래시비슬래시 추가변경합의서 (최종).pdf"
+  },
+  {
+   "doc_id": "15JxryB6Gz1IQYo9fwhavDu7knBNow6Nw",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/15JxryB6Gz1IQYo9fwhavDu7knBNow6Nw/view",
+   "title": "슬래시비슬래시 추가변경합의서 (최종).pdf"
+  },
+  {
+   "doc_id": "16HdcYEb8Rm7_DEmL2SBxq3Ny4tuERW9S",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/16HdcYEb8Rm7_DEmL2SBxq3Ny4tuERW9S/view",
+   "title": "(스캔본_스위트스팟보관)2D 디자인 용역계약서_이수연님(삼성X허쉬 팝업스토어).pdf"
+  },
+  {
+   "doc_id": "1GuTxuw42QZur0R6hpsTtQHsVKwom3GA_",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1GuTxuw42QZur0R6hpsTtQHsVKwom3GA_/view",
+   "title": "슬래시비슬래시x스위트스팟 계약서.pdf"
+  },
+  {
+   "doc_id": "1I2hvG1i7kJarCbjUf53bMZZdaHtQjavY",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1I2hvG1i7kJarCbjUf53bMZZdaHtQjavY/view",
+   "title": "(스캔본_스위트스팟보관)2D 디자인 용역계약서_윤송이님 (삼성X허쉬 팝업스토어).pdf"
+  },
+  {
+   "doc_id": "1OSwFEqA6cu-LOEzMF2yMYAfDWlSFvomE",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1OSwFEqA6cu-LOEzMF2yMYAfDWlSFvomE/view",
+   "title": "슬래시비슬래시x스위트스팟 계약서.pdf"
+  },
+  {
+   "doc_id": "1R03CqBvc3atbkY3lR85S-x-mGg4_Em5A",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1R03CqBvc3atbkY3lR85S-x-mGg4_Em5A/view",
+   "title": "(스캔본)SLBS X 허쉬 팝업스토어 (삼성전자 악세서리)_디자인엠유_시공설계용역계약서.pdf"
+  },
+  {
+   "doc_id": "1Vf5yrDIdqpchLNL5veWyHWDbUUxD8llH",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Vf5yrDIdqpchLNL5veWyHWDbUUxD8llH/view",
+   "title": "slash 행사보험.pdf"
+  },
+  {
+   "doc_id": "1WaDhezZer8A0uzYb6n0UEUgUmyxj_HX2",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1WaDhezZer8A0uzYb6n0UEUgUmyxj_HX2/view",
+   "title": "추가변경합의서.pdf"
+  },
+  {
+   "doc_id": "1_an6PUjB7x9q8aHzrHH9VyZG9SrlcToY",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1_an6PUjB7x9q8aHzrHH9VyZG9SrlcToY/view",
+   "title": "[Future Gen. Lab] SAMSUNG FRIENDS HERSHEY'S POP-UP_STORE_v.1-8_240724.pptx"
+  },
+  {
+   "doc_id": "1aCC5TYGkC6P7gvB7oDBpunaiXC-qFlx-",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1aCC5TYGkC6P7gvB7oDBpunaiXC-qFlx-/view",
+   "title": "[Future Gen. Lab] SAMSUNG FRIENDS HERSHEY'S POP-UP_STORE_v.1-8_240724.pdf"
+  },
+  {
+   "doc_id": "1a_ppCBMyHXuKx_5XsSdAjdddUp-fLt6X",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1a_ppCBMyHXuKx_5XsSdAjdddUp-fLt6X/view",
+   "title": "(스캔본)아스트로7_조형물시공용역계약서_240731.pdf"
+  },
+  {
+   "doc_id": "1e9q2X9QmJQoTn52LJP3SVXV6IJ7Zaa0q",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1e9q2X9QmJQoTn52LJP3SVXV6IJ7Zaa0q/view",
+   "title": "스위트스팟_삼성강남 작업계(설치).hwp"
+  },
+  {
+   "doc_id": "1ePYYCdd7jH4j7ZWoKXPtDINPijCAnrlB",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1ePYYCdd7jH4j7ZWoKXPtDINPijCAnrlB/view",
+   "title": "1.계약서_슬래시비슬래시x스위트스팟 계약서.pdf"
+  },
+  {
+   "doc_id": "1eVyHdIZ1FrrdsQ-pUPiFcd-XNCgnH0h3",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1eVyHdIZ1FrrdsQ-pUPiFcd-XNCgnH0h3/view",
+   "title": "4.결과보고서_내용없음.txt"
+  },
+  {
+   "doc_id": "1ekExeTgUyF39MdQeBnbAaht9OtGDx86g",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1ekExeTgUyF39MdQeBnbAaht9OtGDx86g/view",
+   "title": "데어워크 용역계약서.pdf"
+  },
+  {
+   "doc_id": "1fQ8kF0jn4HY6nCZQwZ5BJ5D1c89fi9QH",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1fQ8kF0jn4HY6nCZQwZ5BJ5D1c89fi9QH/view",
+   "title": "POP.zip"
+  },
+  {
+   "doc_id": "1swCZAihrqcEEDAes8o7nhXXNEzd-bhiz",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1swCZAihrqcEEDAes8o7nhXXNEzd-bhiz/view",
+   "title": "디자인엠유_시공용역계약서_240717.pdf"
+  },
+  {
+   "doc_id": "1t-xKdViIBwRTAJFFjTNQvfC3mwa_HD75",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1t-xKdViIBwRTAJFFjTNQvfC3mwa_HD75/view",
+   "title": "2D 디자인 용역계약서_이수연님(삼성X허쉬 팝업스토어).pdf"
+  },
+  {
+   "doc_id": "1t2Lsk_MRrUNUpysp1lZYpVVHPKH9bocB",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1t2Lsk_MRrUNUpysp1lZYpVVHPKH9bocB/view",
+   "title": "2D 디자인 용역계약서_윤송이님 (삼성X허쉬 팝업스토어).pdf"
+  },
+  {
+   "doc_id": "1t5wi_a6wDlcaPJIRakYPhMM_TC32LaW7",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1t5wi_a6wDlcaPJIRakYPhMM_TC32LaW7/view",
+   "title": "(스캔본_스위트스팟보관)2D 디자인 용역계약서_이수연님(삼성X허쉬 팝업스토어).pdf"
+  },
+  {
+   "doc_id": "1t65vjh4Ef8oCkoN-7JWeVNQ0Yh2XowKc",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1t65vjh4Ef8oCkoN-7JWeVNQ0Yh2XowKc/view",
+   "title": "(스캔본_스위트스팟보관)2D 디자인 용역계약서_윤송이님 (삼성X허쉬 팝업스토어).pdf"
+  },
+  {
+   "doc_id": "1t6VKVWsduXsFL-0hxjf-RAg057AkaoFq",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1t6VKVWsduXsFL-0hxjf-RAg057AkaoFq/view",
+   "title": "(스캔본)아스트로7_조형물시공용역계약서_240731.pdf"
+  },
+  {
+   "doc_id": "1t8_c6TSiw9-gZxq62m-UXjC6QaNT7mEX",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1t8_c6TSiw9-gZxq62m-UXjC6QaNT7mEX/view",
+   "title": "(스캔본)SLBS X 허쉬 팝업스토어 (삼성전자 악세서리)_디자인엠유_시공설계용역계약서.pdf"
+  },
+  {
+   "doc_id": "1xxD835IPCsgln0OsHISSRriyt7cijZMx",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1xxD835IPCsgln0OsHISSRriyt7cijZMx/view",
+   "title": "1-2.디자인 용역계약서_이수연.pdf"
+  },
+  {
+   "doc_id": "1xzYPvclNLRkCuAyYyEKphQo3JJy9gKFm",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1xzYPvclNLRkCuAyYyEKphQo3JJy9gKFm/view",
+   "title": "1-2.디자인 용역계약서_윤송이.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: SLBS_최종견적서.pdf, 3.제안서_SWEETSPOT_[Future Gen. L, 2.견적서_SLBS_최종견적서.pdf. 미확실: 결과보고서 부재로 방문자수·매출 등 outcome 전부 미상; 입지(도시/구/장소명/장소유형) 정보 없음; 면적(평) 정보 없음; 기획서 예상 방문자수(plan_visitors_expected) 명시 없음; client_name 프로젝트 메타에 null; 카운팅 방식 정의 없음"
+ }
+}

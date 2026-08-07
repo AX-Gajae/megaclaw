@@ -1,0 +1,128 @@
+{
+ "record_id": "RCCP2513",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:다비디퓨저",
+  "space_id": "unresolved:용산_아이파크몰_4층",
+  "client_party_id": null,
+  "brand_key": "다비디퓨저",
+  "space_key": "용산_아이파크몰"
+ },
+ "intervention": {
+  "concept": "용산 아이파크몰 4층에서 진행된 다비디퓨저 판매 행사.",
+  "brand_name": "다비디퓨저",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "용산",
+   "venue_name": "아이파크몰",
+   "venue_type": "쇼핑몰",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-04-18",
+   "to": "2025-04-24",
+   "days": 7
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "revenue_share",
+   "detail": "용산아이파크몰 특정매입 표준거래계약: 행사 판매수수료율 26%(제8조). 결과보고서 수수료 실적: 업체 수수료 35.0%(1,478,435원)·점포 26%(998,424원)·카드 0%. rev_mm 인식 1.4는 업체 수수료와 정합"
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "용산 아이파크몰 4층"
+  },
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 46,
+    "holiday_until": 15,
+    "holiday_block_in": 0,
+    "nat_event_gap": 46,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 3,
+    "comp_prior_at_venue": 50,
+    "comp_within_500m_open": 3,
+    "comp_within_1000m_open": 3,
+    "matched_address": "서울 용산구 한강대로23길 55"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": 1492305,
+   "rev_mm_recognized": 1.4
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 텍스트가 표 구조가 깨진 상태로 방문자수·매출 실측 수치를 확인할 수 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-04, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-04"
+  },
+  "sales_basis": "PnL 상품매출 양수계정 합 × 1.1 (부가세 포함 기준)",
+  "label_history": [
+   {
+    "at": "pnl_sales (2026-07-28)",
+    "action": "mine",
+    "changes": [
+     "sales_krw 1,492,305 (PnL 총 결제액)"
+    ],
+    "evidence": "core.project_pnl_monthly 상품매출 양수계정 합 1,356,641(공급가) × 1.1, 인식 1개월"
+   }
+  ]
+ },
+ "docs": [
+  {
+   "doc_id": "1MJTgkJJqcEFWlTBiKW04NR2b6xoNUmHn",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1MJTgkJJqcEFWlTBiKW04NR2b6xoNUmHn/view",
+   "title": "별도 견적서 없음.txt"
+  },
+  {
+   "doc_id": "1kI1vgLPPi5U7G5rUyicuPjdszBguKahS",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1kI1vgLPPi5U7G5rUyicuPjdszBguKahS/view",
+   "title": "용산아이파크몰 특정매입 표준거래계약서_04.18~04.24.pdf"
+  },
+  {
+   "doc_id": "1sYiYxwlg0Aumo5O8SCzudt4TJbBLG6Iz",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1sYiYxwlg0Aumo5O8SCzudt4TJbBLG6Iz/view",
+   "title": "용산아이파크몰 4층 다비디퓨저 행사 결과보고서.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 1건: 용산아이파크몰 4층 다비디퓨저 행사 결과보고서.xlsx. 미확실: 방문자수 및 매출 실측 데이터 없음(표 깨짐); 면적(평); 수수료 구조 상세 수치; 체험요소·프로모션·연출; 클라이언트명; 예상 방문자수 | rev_mm 정화(2026-07-27): 스팟 검수(7/24) 원문 대조 결과 반영 — 계약서 확정액>견적 우선순위 규칙"
+ }
+}

@@ -1,0 +1,103 @@
+{
+ "market_record_id": "MKT-2023-0038",
+ "event_name": "메디힐 '스퀘어(MEDIHEAL SQUARE)' 팝업 @Kiaf Seoul 2023",
+ "brand": "메디힐",
+ "ip_or_collab": "윤필현 작가 콜라보 아트워크",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "아트페어(Kiaf) 연계 첫 오프라인 팝업. 작가 콜라보 아트워크 공간에 슬롯머신 이벤트, 포토존, 한정 에디션 전시",
+  "experience_elements": [
+   "슬롯머신 이벤트",
+   "포토존",
+   "작가 콜라보 아트워크",
+   "한정 에디션"
+  ],
+  "promotions": [
+   "현장 이벤트 경품"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "코엑스 B홀 외부 광장",
+  "venue_type": "convention",
+  "neighborhood": "삼성동",
+  "city": "서울",
+  "period_from": "2023-09-06",
+  "period_to": "2023-09-10",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 5,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 10000,
+  "visitors_period_days": 5,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "브랜드 성료 보도 인용: '1만여명 이상의 부스 방문객' (별도로 '5천여명의 현장 이벤트 참여자')",
+  "visitors_source_quote": "다양한 즐길 거리를 선사해 1만여명 이상의 부스 방문객과, 5천여명의 현장 이벤트 참여자를 동원하며 뜨거운 열기 속에서 성공적으로 마쳤다",
+  "visitors_source_url": "https://www.newstap.co.kr/news/articleView.html?idxno=203355",
+  "visitors_source_date": "2023-09-17",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": true,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "1만여명 이상의 부스 방문객과, 5천여명의 현장 이벤트 참여자를 동원",
+    "3.5m 높이의 초대형 슬롯머신을 활용한 이벤트를 진행해 이에 참여하기 위한 줄이 길게 늘어서는 등 방문객들의 관심이 이어졌다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": true,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "키아프 티켓 미소지자도 자유롭게 방문 가능한 외부 광장 부스. 10000은 '1만여 명 이상'의 하한값으로 기록. | 병합 레코드: MKT-2023-0016 | [병합:MKT-2023-0016] 1만여 명 '이상' 표현 → 10000 보수 기록. 현장 이벤트 참여 5000여 명 별도",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 10000,
+   "basis": "organizer_claim",
+   "quote": "다양한 즐길 거리를 선사해 1만여 명 이상의 부스 방문객과, 5천여 명의 현장 이벤트 참여자를 동원하며 뜨거운 열기 속에서 성공적으로 마쳤다.",
+   "url": "https://www.appjournal.kr/news/articleView.html?idxno=3755",
+   "date": "2023-09-14"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

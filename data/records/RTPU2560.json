@@ -1,0 +1,163 @@
+{
+ "record_id": "RTPU2560",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:SEGA",
+  "space_id": "unresolved:JOSUN_PALACE",
+  "client_party_id": "unresolved:SEGA_CO",
+  "brand_key": "세가",
+  "space_key": "조선팰리스"
+ },
+ "intervention": {
+  "concept": "세가(SEGA)의 2025 한국 IP 라이선싱 미팅 행사. 조선팰리스 호텔 룸에서 진행된 초청형 비즈니스 미팅으로, IP 배너·경품 추첨(Lucky Draw)·호텔 케이터링·동시통역이 제공되었다. 캐릭터 코스튬 플레이어와 IP 이미지 전시가 포함된 브랜드 미팅 이벤트다.",
+  "brand_name": "SEGA",
+  "experience_elements": [
+   "IP 배너 전시(6종)",
+   "IP 이미지 아크릴 스탠드 전시",
+   "경품 추첨(Lucky Draw)",
+   "코스튬 플레이어",
+   "호텔 케이터링",
+   "동시통역 시스템"
+  ],
+  "promotions": [
+   "Lucky Draw 경품 추첨(1등/2등 상품)"
+  ],
+  "staging_tags": [
+   "IP배너",
+   "메인배너",
+   "포디움배너",
+   "등록데스크",
+   "X배너",
+   "추첨함",
+   "경품보드",
+   "방향표"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": null,
+   "venue_name": "JOSUN PALACE",
+   "venue_type": "호텔",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-09-15",
+   "to": "2025-09-15",
+   "days": 1
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총액 43,000,000 KRW (VAT 10% 별도). Sub Total 1~4 합계 39,096,135원 + Agency Fee 10% 3,909,614원 = 43,000,000원. 세부: Planning(Consulting&Operation 3,000,000 + Artwork 5,000,000=8,000,000), Venue(조선팰리스 대관 5,100,000 + 케이터링 13,100,000=18,200,000), Event Productions(POSM 3,200,000 + Costume 1,000,000 + System 1,900,000=6,100,000), Operation(Supervisor 270,000 + Staff 531,000 + 동시통역 3,000,000 + Switch 589,091 + DHL 906,044 + 일반경비 1,500,000=6,796,135)"
+  },
+  "brand_requirements": [
+   "동시통역 시스템 및 통역부스",
+   "코스튬 플레이어(어시스턴트 매니저 포함)",
+   "IP 라이선싱 미팅 초청 등록(명찰 100개)",
+   "국제 배송(DHL)"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "조선팰리스 호텔 룸 초청형 비즈니스 미팅"
+  },
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(invite)",
+   "access_type": "invite"
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 0.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 18.1,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 29,
+    "holiday_until": 18,
+    "holiday_block_in": 0,
+    "nat_event_gap": 46,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 10496589.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2025-07-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 41.9
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": 100,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서가 없어 실측 방문/매출 데이터 없음. 등록 명찰 100개 제작 기준으로 예상 참석 규모 약 100명 추정(초청형 B2B 미팅).). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 41.9 ≈ 계약총액 43.0",
+   "contract_total_mm": 43.0,
+   "last_recognition_period": "2025-10"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1SG-Wjy13c0BYTJRvptjHAVh_2qRfv6ig",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1SG-Wjy13c0BYTJRvptjHAVh_2qRfv6ig/view",
+   "title": "SweetSpot_SEGA IP Lisensing Meeting_Quotation_1001_견적서.pdf"
+  },
+  {
+   "doc_id": "1ZwQa4LI8dDTmGvMB8mvTRGSlo0S0iRMd",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1ZwQa4LI8dDTmGvMB8mvTRGSlo0S0iRMd/view",
+   "title": "임시 결과보고서 (2).txt"
+  },
+  {
+   "doc_id": "1iU6yJZAIJtjnCIHYRbhhbstRqaMkdBA8",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1iU6yJZAIJtjnCIHYRbhhbstRqaMkdBA8/view",
+   "title": "SEGA 운영기획안_0914.pdf"
+  },
+  {
+   "doc_id": "1nlUbtICWpTSAC2-JOOYIDj54l_d0MoQe",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1nlUbtICWpTSAC2-JOOYIDj54l_d0MoQe/view",
+   "title": "계약서 없음.txt"
+  },
+  {
+   "doc_id": "1uM_1116LNcsvAA93-WJjSjoSvHi1nykK",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1uM_1116LNcsvAA93-WJjSjoSvHi1nykK/view",
+   "title": "결과보고서 없음.txt"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: SEGA 운영기획안_0914.pdf, SweetSpot_SEGA IP Lisensing Me. 미확실: 결과보고서 부재로 실제 방문자수·매출 데이터 없음; client_name 미확정(SEGA CO. Ikegami Yohei로 추정); 면적(평) 정보 없음; plan_visitors_expected는 명찰 수량 기반 추정치; 입지 상세(구/유동인구) 정보 없음"
+ }
+}

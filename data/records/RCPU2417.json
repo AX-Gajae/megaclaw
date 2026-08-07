@@ -1,0 +1,1212 @@
+{
+ "record_id": "RCPU2417",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:던전밥_소미미디어",
+  "space_id": "unresolved:더현대서울_B2_아이코닉스존",
+  "client_party_id": "unresolved:주식회사_소미미디어",
+  "brand_key": "던전밥",
+  "space_key": "더현대서울"
+ },
+ "intervention": {
+  "concept": "일본 아마존 만화 랭킹 1위 '던전밥'의 IP 팝업스토어. 아르누보 스타일과 중세 성·문양을 무드로 한 먹방 던전 판타지 컨셉의 굿즈 판매 및 포토존 체험 공간.",
+  "brand_name": "던전밥",
+  "experience_elements": [
+   "FRP/음식 포토존",
+   "무기 포토존",
+   "캐릭터 등신대",
+   "포토부스",
+   "DP 쇼케이스",
+   "벽장 매대",
+   "아일랜드 매대·행거",
+   "오크통·보석함 소품",
+   "음식모형 DP"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "아르누보스타일",
+   "중세문양",
+   "중세 성",
+   "카펫 바닥시공",
+   "포맥스 가벽+그래픽",
+   "벨벳 커튼",
+   "미러벽면"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "영등포구",
+   "venue_name": "더현대 서울",
+   "venue_type": "백화점 지하 팝업존",
+   "foot_traffic_context": "B2 아이코닉스존, 지하철 방면 동선"
+  },
+  "area_pyeong": 47.3,
+  "period": {
+   "from": "2025-01-16",
+   "to": "2025-01-22",
+   "days": 7
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "운영 대행(위탁운영). 갑(소미미디어)이 을(스위트스팟)에게 운영비 지급: 선금 50%는 2025-01-31까지, 잔금은 2025-02-17까지. VMD 시공비는 별도 견적서로 갈음. 판매 LOSS는 총매출 대비 3% 이상 발생 시 제조원가(판매가의 50%) 100% 공제, 3% 이하는 통상 LOSS로 갑 부담. 운영비 구체 금액은 별첨1(이미지) 미판독. 참고 시공비: 카펫 바닥재 공급가 4,404,000원+VAT=4,844,400원(금성F&C→스위트스팟).VMD·집기·인건비·상품제작 비용은 갑 부담."
+  },
+  "brand_requirements": [
+   "설치물 제작 및 설치",
+   "행사 기간 내 인력 운용 및 제품 판매",
+   "고객 컴플레인 등 사고 수습",
+   "갑에 사전 보고 및 허가",
+   "판매 데이터·장부 비치 및 자료 공개",
+   "협의된 소비자 가격 준수",
+   "세팅 1/15(수) 21:00, 철수 1/22(수) 20:00",
+   "알바 6명 운용"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대 서울 B2 아이코닉스존, 지하철 방면 동선"
+  },
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 1.3,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 120,
+    "holiday_until": 9,
+    "holiday_block_in": 0,
+    "nat_event_gap": 63,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 12,
+    "comp_prior_at_venue": 176,
+    "comp_within_500m_open": 12,
+    "comp_within_1000m_open": 12,
+    "matched_address": "서울 영등포구 여의대로 108"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 5771200.0,
+    "pnl_pre_accounts": 6,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2024-11-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 65.7
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서가 제공되지 않아 방문자 및 매출 실측 데이터 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-01, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-02"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1--kd6ch8RiiKC8e-FgSjTqGPFWqULAmB",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1--kd6ch8RiiKC8e-FgSjTqGPFWqULAmB/view",
+   "title": "학생디자인-6.png"
+  },
+  {
+   "doc_id": "1-Bn5_Ouq3o0TPVMGkPLJwR-y-hukl05R",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1-Bn5_Ouq3o0TPVMGkPLJwR-y-hukl05R/view",
+   "title": "07.jpg"
+  },
+  {
+   "doc_id": "10-fn_m3NnwMH8JE29wsN9h72LySL5t49",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/10-fn_m3NnwMH8JE29wsN9h72LySL5t49/view",
+   "title": "프레임 템플릿(2x6inch)_상단4컷.png"
+  },
+  {
+   "doc_id": "10YJDdXpDqzb6TMLNgwyE9jHZ-YLoNguv",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/10YJDdXpDqzb6TMLNgwyE9jHZ-YLoNguv/view",
+   "title": "[견적서-디자인알파] 더현대서울 던전밥 3D 보수비용.pdf"
+  },
+  {
+   "doc_id": "10pq9aqvb6Kf1t8uRhDzTzVOSvgyI8GKH",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/10pq9aqvb6Kf1t8uRhDzTzVOSvgyI8GKH/view",
+   "title": "[세금계산서-디자인알파] 더현대서울 던전밥 3D 보수비용.png"
+  },
+  {
+   "doc_id": "11-iI2bjzAK_o4imrqGu0_Ub9bVaiFBTZ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/11-iI2bjzAK_o4imrqGu0_Ub9bVaiFBTZ/view",
+   "title": "학생디자인-3.png"
+  },
+  {
+   "doc_id": "11kHt0LJKbPM5CukxHaH0SD9Ug2GrQMyS",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/11kHt0LJKbPM5CukxHaH0SD9Ug2GrQMyS/view",
+   "title": "[견적서-디자인코코] 바코드 인쇄.pdf"
+  },
+  {
+   "doc_id": "11lXb9f5ro_Edb7UdmriChDCDD9zZegzL",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/11lXb9f5ro_Edb7UdmriChDCDD9zZegzL/view",
+   "title": "output_2669293875.jpg"
+  },
+  {
+   "doc_id": "11yqhjonhOwfdO0sTkOSpOOTisjiomdxd",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/11yqhjonhOwfdO0sTkOSpOOTisjiomdxd/view",
+   "title": "[견적서-나랑한컷] 더현대 서울 렌탈 건.pdf"
+  },
+  {
+   "doc_id": "12-6cGBYlRv2fCDnCQ9Ukxq4T3ooLYYx4",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/12-6cGBYlRv2fCDnCQ9Ukxq4T3ooLYYx4/view",
+   "title": "(주)소미미디어 팝업스토어 더현대서울 위탁운영계약서_0114.pdf의 사본"
+  },
+  {
+   "doc_id": "1293yy6EBDSxxiX7KRdO1SHfF44VrpL_n",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1293yy6EBDSxxiX7KRdO1SHfF44VrpL_n/view",
+   "title": "프레임 템플릿(4x6inch)_직사각형6컷.png"
+  },
+  {
+   "doc_id": "12A5WuUhQQhau8spgXCvPh00vhPYsHJYI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/12A5WuUhQQhau8spgXCvPh00vhPYsHJYI/view",
+   "title": "겨울디자인-5.png"
+  },
+  {
+   "doc_id": "12xb04gi3_L6DX2Dsb_LpLQh5CgwKf2Vi",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/12xb04gi3_L6DX2Dsb_LpLQh5CgwKf2Vi/view",
+   "title": "(주)비에스 나랑한컷렌탈견적서_부스형1대(랩핑,쿠폰,개발)_스위트스팟_6일이상.pdf"
+  },
+  {
+   "doc_id": "13nlmPZl3alreRdAzTuehyeKnPGwoOztp",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/13nlmPZl3alreRdAzTuehyeKnPGwoOztp/view",
+   "title": "겨울디자인-3.png"
+  },
+  {
+   "doc_id": "14AUc-a6iMco-QV0O7P-Z-5wSI3Qrpniz",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/14AUc-a6iMco-QV0O7P-Z-5wSI3Qrpniz/view",
+   "title": "부스형_프레임 템플릿(4x6inch).psd"
+  },
+  {
+   "doc_id": "14ON3x3rVUdfrZo6n0fYytAFsSj-2HNdt",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14ON3x3rVUdfrZo6n0fYytAFsSj-2HNdt/view",
+   "title": "(주)소미미디어 팝업스토어 더현대서울 위탁운영계약서_0114.pdf"
+  },
+  {
+   "doc_id": "14Q1cLl8rae-8z9XdHFBm-g2tDW2OhVLA",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/14Q1cLl8rae-8z9XdHFBm-g2tDW2OhVLA/view",
+   "title": "[스위트스팟] 던전밥 팝업스토어_더현대 서울 견적요청.pptx"
+  },
+  {
+   "doc_id": "14fwpNA8dK2oHBViiM4VPDyMa1OPz5T8n",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/14fwpNA8dK2oHBViiM4VPDyMa1OPz5T8n/view",
+   "title": "학생디자인-2.png"
+  },
+  {
+   "doc_id": "15DHw7_HhWdMT_NxjjmlUUxfkBPor9z8m",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/15DHw7_HhWdMT_NxjjmlUUxfkBPor9z8m/view",
+   "title": "겨울디자인-4.png"
+  },
+  {
+   "doc_id": "15WHCbvecbfmAET7XCHre_SqS2PsE9fFL",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/15WHCbvecbfmAET7XCHre_SqS2PsE9fFL/view",
+   "title": "[세금계산서-디자인알파] 더현대서울 던전밥 3D 보수비용.png"
+  },
+  {
+   "doc_id": "15o3yNPaIAfu5k4oBrEku8bmP3_cKtL3C",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/15o3yNPaIAfu5k4oBrEku8bmP3_cKtL3C/view",
+   "title": "가로3컷 작은사이즈.png"
+  },
+  {
+   "doc_id": "15y_FxvajG6d91FAbNoFaXXiGPBs1JN4w",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/15y_FxvajG6d91FAbNoFaXXiGPBs1JN4w/view",
+   "title": "프레임 템플릿(2x6inch)_하단3컷.png"
+  },
+  {
+   "doc_id": "16bZHMRkX1KrGagIoPNT52v1JEbx3KY9F",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/16bZHMRkX1KrGagIoPNT52v1JEbx3KY9F/view",
+   "title": "축제디자인-1.png"
+  },
+  {
+   "doc_id": "17AxcBx8ce-0yvChjts0PrFFHA5J-kLNJ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17AxcBx8ce-0yvChjts0PrFFHA5J-kLNJ/view",
+   "title": "가로1컷.png"
+  },
+  {
+   "doc_id": "17RfNShJjap-SbHaeNGw3Qe_kiqjTNhJW",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17RfNShJjap-SbHaeNGw3Qe_kiqjTNhJW/view",
+   "title": "교육디자인-2.png"
+  },
+  {
+   "doc_id": "18C9H9SADwfrWPJeTZTbffdq0OXbYK7M1",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/18C9H9SADwfrWPJeTZTbffdq0OXbYK7M1/view",
+   "title": "06.jpg"
+  },
+  {
+   "doc_id": "18GCpYV9BHYQHNRiBkP-6OOdD_RBcBFTI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/18GCpYV9BHYQHNRiBkP-6OOdD_RBcBFTI/view",
+   "title": "겨울디자인-1.png"
+  },
+  {
+   "doc_id": "18StwpkGmSdYbo0fiiL5jZ16J1jUrgh6X",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/18StwpkGmSdYbo0fiiL5jZ16J1jUrgh6X/view",
+   "title": "가로4컷 작은가이즈.png"
+  },
+  {
+   "doc_id": "18YLcu4XBhC8g6kycW3Zo3yNv7_gncFZ0",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/18YLcu4XBhC8g6kycW3Zo3yNv7_gncFZ0/view",
+   "title": "02.jpg"
+  },
+  {
+   "doc_id": "18pX77BFVA1MaHxs9w-aaoBwEd-QdSdNh",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/18pX77BFVA1MaHxs9w-aaoBwEd-QdSdNh/view",
+   "title": "축제디자인-2.png"
+  },
+  {
+   "doc_id": "19B64isFvkUKN_lPbYM9ilW3xs0I-2DG5",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19B64isFvkUKN_lPbYM9ilW3xs0I-2DG5/view",
+   "title": "일반디자인-2.png"
+  },
+  {
+   "doc_id": "19Jgf9oWzFpyVF-XNT4gHhl8uB4LroYwn",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19Jgf9oWzFpyVF-XNT4gHhl8uB4LroYwn/view",
+   "title": "[통장사본-바닥재닷컴].jpg"
+  },
+  {
+   "doc_id": "1ACEPTEeVtsHZmVfnXzBR8-tC8ClKXKFh",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ACEPTEeVtsHZmVfnXzBR8-tC8ClKXKFh/view",
+   "title": "프레임 템플릿(2x6inch).psd"
+  },
+  {
+   "doc_id": "1AHF87q7MPvIC5dF9uJb-m8BeqntmErCG",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1AHF87q7MPvIC5dF9uJb-m8BeqntmErCG/view",
+   "title": "일반디자인-2.png"
+  },
+  {
+   "doc_id": "1BveEt0-VUDXwOP-tG1qRrrMV6KWA-ABO",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1BveEt0-VUDXwOP-tG1qRrrMV6KWA-ABO/view",
+   "title": "[견적서-디자인알파] 3D보수비용.xlsx"
+  },
+  {
+   "doc_id": "1C2YW18jXMbRf-ApAECNU9fA01NUrMy7D",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1C2YW18jXMbRf-ApAECNU9fA01NUrMy7D/view",
+   "title": "더현서B2_던전밥_운영견적서_0110(수정).pdf"
+  },
+  {
+   "doc_id": "1C6kO2Z7rgnfCiAfE2Ekwnj1Myu5JK4_J",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1C6kO2Z7rgnfCiAfE2Ekwnj1Myu5JK4_J/view",
+   "title": "(견적서-현대드림애드) 더현대 서울 그래픽 시공 건.pdf"
+  },
+  {
+   "doc_id": "1CKTr4lV1cEiGxme3lMQrBTg9eKxu37bX",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CKTr4lV1cEiGxme3lMQrBTg9eKxu37bX/view",
+   "title": "부스랩핑규격.ai"
+  },
+  {
+   "doc_id": "1CSGg_ygPGMh3kaQnITVg3OsKLTgjrLWj",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CSGg_ygPGMh3kaQnITVg3OsKLTgjrLWj/view",
+   "title": "더현서B2_던전밥_운영견적서_1218(수정).xlsx의 사본"
+  },
+  {
+   "doc_id": "1DMdPloX1HknDQDJHlXiQKxhS4kds4Rzh",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DMdPloX1HknDQDJHlXiQKxhS4kds4Rzh/view",
+   "title": "[세금계산서-현대드림애드] 더현대 서울 던전밥 그래픽 시공 건.png"
+  },
+  {
+   "doc_id": "1DOmLeMkDgvKvreQrBuppnD1VGX8chx4t",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DOmLeMkDgvKvreQrBuppnD1VGX8chx4t/view",
+   "title": "[견적서-나랑한컷] 더현대 서울 렌탈 건.pdf"
+  },
+  {
+   "doc_id": "1DaBVnWtLTu3nWFjFjHwAAbUisiO1RBOB",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DaBVnWtLTu3nWFjFjHwAAbUisiO1RBOB/view",
+   "title": "[사업자등록증-바닥재닷컴].jpg"
+  },
+  {
+   "doc_id": "1E_RFSCBPEkWlfbqZLVtiyt_EgTcJ-gmA",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1E_RFSCBPEkWlfbqZLVtiyt_EgTcJ-gmA/view",
+   "title": "축제디자인-3.png"
+  },
+  {
+   "doc_id": "1EuvbrEpElgmRO3Kv9yUuagA1kWdnMMbz",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1EuvbrEpElgmRO3Kv9yUuagA1kWdnMMbz/view",
+   "title": "학생디자인-1.png"
+  },
+  {
+   "doc_id": "1FOqwM_emR_2HyxTUKcdHJ5M4jbnee80Q",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1FOqwM_emR_2HyxTUKcdHJ5M4jbnee80Q/view",
+   "title": "겨울디자인-1.png"
+  },
+  {
+   "doc_id": "1FUJdI0jYlAWS4TZlXf5Aog0vdKWKwr4g",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1FUJdI0jYlAWS4TZlXf5Aog0vdKWKwr4g/view",
+   "title": "[견적서-현대드림애드] 더현대 서울 그래픽 시공 건.xls"
+  },
+  {
+   "doc_id": "1G-VFayndEuzb3EXv4Xncg1gVIByZ1uCY",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1G-VFayndEuzb3EXv4Xncg1gVIByZ1uCY/view",
+   "title": "PS24040200336.jpg"
+  },
+  {
+   "doc_id": "1G9JT6d5h2RVpA-E5uoPmkPN1ny8a5w1j",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1G9JT6d5h2RVpA-E5uoPmkPN1ny8a5w1j/view",
+   "title": "가족디자인-1.png"
+  },
+  {
+   "doc_id": "1GAhYrnnRRvadumPuT3a87TKIT8rfOB43",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1GAhYrnnRRvadumPuT3a87TKIT8rfOB43/view",
+   "title": "교회디자인-3.png"
+  },
+  {
+   "doc_id": "1GmUMY6crlD7-OemmDJWtjZgUIvPJqId2",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1GmUMY6crlD7-OemmDJWtjZgUIvPJqId2/view",
+   "title": "일반디자인-5.png"
+  },
+  {
+   "doc_id": "1GvWL0di666j-oow-Y5LzNyvEHIc0s0YH",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1GvWL0di666j-oow-Y5LzNyvEHIc0s0YH/view",
+   "title": "프레임 템플릿(6x4inch).psd"
+  },
+  {
+   "doc_id": "1GwmOlFSQmxiJpNc8h504Ng0bDh5JqUGY",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1GwmOlFSQmxiJpNc8h504Ng0bDh5JqUGY/view",
+   "title": "[세금계산서-현대드림애드] 더현대 서울 던전밥 아크릴 등신대 보수 건.png"
+  },
+  {
+   "doc_id": "1H6sWJxj38M3SAKT9IB4WzWwET05xYft9",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1H6sWJxj38M3SAKT9IB4WzWwET05xYft9/view",
+   "title": "부스형_프레임 템플릿(4x6inch).psd"
+  },
+  {
+   "doc_id": "1HKRWCk5dsGJUhl4hGRqbJFOcYYIlrsKd",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1HKRWCk5dsGJUhl4hGRqbJFOcYYIlrsKd/view",
+   "title": "프레임 템플릿(2x6inch)_상단4컷.png"
+  },
+  {
+   "doc_id": "1HXRi0y3qpHHe1o_gFfeSROS4p37S7eVx",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1HXRi0y3qpHHe1o_gFfeSROS4p37S7eVx/view",
+   "title": "unnamed.jpg"
+  },
+  {
+   "doc_id": "1Hmau8lEEEK0QFxk5R66PSspb-_n_5CSH",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Hmau8lEEEK0QFxk5R66PSspb-_n_5CSH/view",
+   "title": "일반디자인-5.png"
+  },
+  {
+   "doc_id": "1I9M4yxdZIERCPFr5-G5e53kDL5bRezn0",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1I9M4yxdZIERCPFr5-G5e53kDL5bRezn0/view",
+   "title": "프레임 템플릿(2x6inch)_상단3컷.png"
+  },
+  {
+   "doc_id": "1ICJevVTAiFM1Jd3E0HLbaNJqnMSOicfb",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ICJevVTAiFM1Jd3E0HLbaNJqnMSOicfb/view",
+   "title": "일반디자인-1.png"
+  },
+  {
+   "doc_id": "1Ifk3IkNM2X_yhLXi6HY8jIcMBOFkwOtz",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Ifk3IkNM2X_yhLXi6HY8jIcMBOFkwOtz/view",
+   "title": "(견적서-현대드림애드) 더현대 서울 그래픽 시공 건.pdf"
+  },
+  {
+   "doc_id": "1JYwmeImPjUf_Uhk4fwCkwrLo1JCwYAgN",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1JYwmeImPjUf_Uhk4fwCkwrLo1JCwYAgN/view",
+   "title": "[세금계산서-디자인알파] 더현대 서울 던전밥 3D 보수 비용 건.png"
+  },
+  {
+   "doc_id": "1Jgs84JP2j6sWxjTSYV_FBRXvmGWljfng",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Jgs84JP2j6sWxjTSYV_FBRXvmGWljfng/view",
+   "title": "가을디자인-1.png"
+  },
+  {
+   "doc_id": "1KIZGI4WsYkCZHzes8B2IA4oRRwCEQQ55",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1KIZGI4WsYkCZHzes8B2IA4oRRwCEQQ55/view",
+   "title": "일반디자인-6.png"
+  },
+  {
+   "doc_id": "1KPhiJNqM-_XrJE5denjCKkt5Ulij7Qe9",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1KPhiJNqM-_XrJE5denjCKkt5Ulij7Qe9/view",
+   "title": "학생디자인-6.png"
+  },
+  {
+   "doc_id": "1KtOXlAXKbr0pIEue7CAW2ghVRadFBA3L",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1KtOXlAXKbr0pIEue7CAW2ghVRadFBA3L/view",
+   "title": "가로2컷.png"
+  },
+  {
+   "doc_id": "1L2NojDWs5cPysI6BmP_sLrTcsxVcJQeX",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1L2NojDWs5cPysI6BmP_sLrTcsxVcJQeX/view",
+   "title": "unnamed.jpg"
+  },
+  {
+   "doc_id": "1LD0DMPkjLxPxnBjfeC-48o7Yf89r-Kvy",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1LD0DMPkjLxPxnBjfeC-48o7Yf89r-Kvy/view",
+   "title": "유치원디자인-1.png"
+  },
+  {
+   "doc_id": "1L_jIhjh2acytcuzoshVkwRuTpnwaPvI4",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1L_jIhjh2acytcuzoshVkwRuTpnwaPvI4/view",
+   "title": "가로3컷.png"
+  },
+  {
+   "doc_id": "1MHZO14iawtrtXySEPA5QjxOlRyTwtKfx",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1MHZO14iawtrtXySEPA5QjxOlRyTwtKfx/view",
+   "title": "가족디자인-1.png"
+  },
+  {
+   "doc_id": "1MuMcPo4P-_qQ-rI-lEQcOVp177gGXSE8",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1MuMcPo4P-_qQ-rI-lEQcOVp177gGXSE8/view",
+   "title": "프레임 템플릿(4x6inch)_직사각형6컷.png"
+  },
+  {
+   "doc_id": "1N9hYtheFTX-GzYSDXL6igAzOCNqtNrzC",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1N9hYtheFTX-GzYSDXL6igAzOCNqtNrzC/view",
+   "title": "교육디자인-1.png"
+  },
+  {
+   "doc_id": "1No22NH3PQThToEsziPgwkI-6ZGvr77FC",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1No22NH3PQThToEsziPgwkI-6ZGvr77FC/view",
+   "title": "학생디자인-4.png"
+  },
+  {
+   "doc_id": "1NvioDJgTAuAaVBxD4ttEKgDy776_uUj-",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1NvioDJgTAuAaVBxD4ttEKgDy776_uUj-/view",
+   "title": "img.png"
+  },
+  {
+   "doc_id": "1OYU3xHgwBu0BiIX-XWb-rCBqIpPhqbrQ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1OYU3xHgwBu0BiIX-XWb-rCBqIpPhqbrQ/view",
+   "title": "겨울디자인-2.png"
+  },
+  {
+   "doc_id": "1PHzDoq5NJU9-gHjfa-ZaFJQ6aF3PoVmP",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1PHzDoq5NJU9-gHjfa-ZaFJQ6aF3PoVmP/view",
+   "title": "05.jpg"
+  },
+  {
+   "doc_id": "1PSykEbc9WrAEPZIaYFic6hGtao4kYQWI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1PSykEbc9WrAEPZIaYFic6hGtao4kYQWI/view",
+   "title": "(주)비에스 나랑한컷렌탈견적서_부스형1대(랩핑,쿠폰,개발)_스위트스팟_6일이상.pdf"
+  },
+  {
+   "doc_id": "1PUsnECQaAJ8gE2k1DxYoFlcacoNSN9Jd",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1PUsnECQaAJ8gE2k1DxYoFlcacoNSN9Jd/view",
+   "title": "부스랩핑규격.png"
+  },
+  {
+   "doc_id": "1PWA8YralTIVujL2UkaFXw6fTYDTQVmwA",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1PWA8YralTIVujL2UkaFXw6fTYDTQVmwA/view",
+   "title": "0322 던전밥 팝업스토어 1차 공간구성안_라이트버전.pdf"
+  },
+  {
+   "doc_id": "1QQmqL3VLUyTpzdEnBkKVD1JvHD4nqMl2",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1QQmqL3VLUyTpzdEnBkKVD1JvHD4nqMl2/view",
+   "title": "학생디자인-2.png"
+  },
+  {
+   "doc_id": "1QiDg5WRgOs83Peqgt3cogM6FEVM_5cfo",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1QiDg5WRgOs83Peqgt3cogM6FEVM_5cfo/view",
+   "title": "인화지디자인-작업-가이드.png"
+  },
+  {
+   "doc_id": "1QmC_UWjuWIMTNF0GbJRAyIV_yk8pTkMW",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1QmC_UWjuWIMTNF0GbJRAyIV_yk8pTkMW/view",
+   "title": "랩핑디자인전참고.jpg"
+  },
+  {
+   "doc_id": "1RAh9HOaayoYvPyMs69AugcwmiU92cd35",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1RAh9HOaayoYvPyMs69AugcwmiU92cd35/view",
+   "title": "학생디자인-1.png"
+  },
+  {
+   "doc_id": "1RCxeUpNAkxzOBrw_l8aSPBtG02nMf8dE",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1RCxeUpNAkxzOBrw_l8aSPBtG02nMf8dE/view",
+   "title": "[견적서-현대드림애드] 더현대 서울 던전밥 아크릴 보수 건.xls"
+  },
+  {
+   "doc_id": "1Rk-FyhrH-5_GyP4ClDaEc5JwDibPmxjG",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Rk-FyhrH-5_GyP4ClDaEc5JwDibPmxjG/view",
+   "title": "겨울디자인-5.png"
+  },
+  {
+   "doc_id": "1SLl_5QQfoWWkalgb5fkvc4bx_UYrbitT",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1SLl_5QQfoWWkalgb5fkvc4bx_UYrbitT/view",
+   "title": "학생디자인-5.png"
+  },
+  {
+   "doc_id": "1SQwIBr64SO5pHbpkGrPjh4J6SHmK8nTs",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1SQwIBr64SO5pHbpkGrPjh4J6SHmK8nTs/view",
+   "title": "(견적서-렌탈큐브) 카운터, 쇼케이스 렌탈 건.pdf"
+  },
+  {
+   "doc_id": "1SrhdnfvoP0ENNym8OmgbRQh5x-LbBXZA",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1SrhdnfvoP0ENNym8OmgbRQh5x-LbBXZA/view",
+   "title": "01.jpg"
+  },
+  {
+   "doc_id": "1TdWHf7YUvZUITj_6-4F92RYhqjMMUfvR",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1TdWHf7YUvZUITj_6-4F92RYhqjMMUfvR/view",
+   "title": "부스랩핑규격.ai"
+  },
+  {
+   "doc_id": "1UJNk8BIwRbNOSbOm0_xTLK9unoLWkWls",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1UJNk8BIwRbNOSbOm0_xTLK9unoLWkWls/view",
+   "title": "가로4컷.png"
+  },
+  {
+   "doc_id": "1UR9jWDy6wK1aoLHTGRwh8D73lf6zW6Wl",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1UR9jWDy6wK1aoLHTGRwh8D73lf6zW6Wl/view",
+   "title": "[세금계산서-현대드림애드] 더현대 서울 던전밥 아크릴 등신대 보수 건.png"
+  },
+  {
+   "doc_id": "1UZY24vptYoZMQCUaNcJ2AlyGSbyfHh4W",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1UZY24vptYoZMQCUaNcJ2AlyGSbyfHh4W/view",
+   "title": "유치원디자인-2.png"
+  },
+  {
+   "doc_id": "1V4ifR5mCgI6uyOKMDswGE56cUGI4XKyd",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1V4ifR5mCgI6uyOKMDswGE56cUGI4XKyd/view",
+   "title": "[견적서-현대드림애드] 더현대 서울 던전밥 아크릴 보수 건.xls"
+  },
+  {
+   "doc_id": "1VdN4X3GdIVWzGNa4uRW_pTLfPrOCMETm",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1VdN4X3GdIVWzGNa4uRW_pTLfPrOCMETm/view",
+   "title": "[견적서-렌탈큐브] 카운터, 쇼케이스 렌탈 건.xlsx"
+  },
+  {
+   "doc_id": "1VyYpBUMKaFlLJzuFaZMehJcUNC4oN5bf",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1VyYpBUMKaFlLJzuFaZMehJcUNC4oN5bf/view",
+   "title": "[통장사본-바닥재닷컴].jpg"
+  },
+  {
+   "doc_id": "1WLQFg1-AddPk4o2lnrucpakBCyimWSIg",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1WLQFg1-AddPk4o2lnrucpakBCyimWSIg/view",
+   "title": "던전밥 더현대 서울 견적서.pdf"
+  },
+  {
+   "doc_id": "1WpVoa4y1uc7g74zBg1lnbXO_b3EW97vX",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1WpVoa4y1uc7g74zBg1lnbXO_b3EW97vX/view",
+   "title": "가을디자인-2.png"
+  },
+  {
+   "doc_id": "1X4VxbQRome27D8mDRgi_dwihXnVpZl46",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1X4VxbQRome27D8mDRgi_dwihXnVpZl46/view",
+   "title": "여름디자인-1.png"
+  },
+  {
+   "doc_id": "1XC6AfNuKGHaIUQn00FtHHij47gF4RC43",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1XC6AfNuKGHaIUQn00FtHHij47gF4RC43/view",
+   "title": "[세금계산서-렌탈큐브] 더현대 서울 던전밥 렌탈 비용 건.png"
+  },
+  {
+   "doc_id": "1XcPYouYY2Hd8ML4ngPmLKRLCMkSVyDup",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1XcPYouYY2Hd8ML4ngPmLKRLCMkSVyDup/view",
+   "title": "가을디자인-1.png"
+  },
+  {
+   "doc_id": "1XdKt0nX7d0BvG5Q5OENXAqaA8dIqIj-_",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1XdKt0nX7d0BvG5Q5OENXAqaA8dIqIj-_/view",
+   "title": "06.jpg"
+  },
+  {
+   "doc_id": "1XoBp5teIap2k3sfjo4jHIlfcWXBROqfC",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1XoBp5teIap2k3sfjo4jHIlfcWXBROqfC/view",
+   "title": "07.jpg"
+  },
+  {
+   "doc_id": "1Xp1YB5ek5f_-VaBwGttT9LoQCavaNVbS",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Xp1YB5ek5f_-VaBwGttT9LoQCavaNVbS/view",
+   "title": "03.jpg"
+  },
+  {
+   "doc_id": "1Y8VXjgyK4UGzdSc9FxRKAIhnaOIR8i8I",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Y8VXjgyK4UGzdSc9FxRKAIhnaOIR8i8I/view",
+   "title": "[견적서-바닥재닷컴] 더현대 서울 바닥 카펫트 시공 건 기존 카펫트.jpg"
+  },
+  {
+   "doc_id": "1YE3PEP65USZJbcu_v7jqwGSESYG1hFfl",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1YE3PEP65USZJbcu_v7jqwGSESYG1hFfl/view",
+   "title": "인화지디자인-작업-가이드.png"
+  },
+  {
+   "doc_id": "1YKbH1pw_LkW1mqxTXZ6Y2S7iTYwhzZS5",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1YKbH1pw_LkW1mqxTXZ6Y2S7iTYwhzZS5/view",
+   "title": "04.jpg"
+  },
+  {
+   "doc_id": "1YLDsj_mdKWrphT3DiU7lyrIupDBK76vm",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1YLDsj_mdKWrphT3DiU7lyrIupDBK76vm/view",
+   "title": "[견적서-디자인코코] 바코드 인쇄.pdf"
+  },
+  {
+   "doc_id": "1YOXKUUML7ZjxRCYTlqk3moCjpRiFLjBL",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1YOXKUUML7ZjxRCYTlqk3moCjpRiFLjBL/view",
+   "title": "일반디자인-3.png"
+  },
+  {
+   "doc_id": "1YVpvbwASmn9jS0Hdwp2doFQOiI0QkasC",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1YVpvbwASmn9jS0Hdwp2doFQOiI0QkasC/view",
+   "title": "08.jpg"
+  },
+  {
+   "doc_id": "1YXhiWTIRtob8WmAd_5W-dUtRdUafErtK",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1YXhiWTIRtob8WmAd_5W-dUtRdUafErtK/view",
+   "title": "01.jpg"
+  },
+  {
+   "doc_id": "1Y_sPWVYS3uviiyQJV41n_nMSmu3hoNUm",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Y_sPWVYS3uviiyQJV41n_nMSmu3hoNUm/view",
+   "title": "프레임 템플릿(4x6inch)_2컷.png"
+  },
+  {
+   "doc_id": "1YyiIVWPExD21hc6uypvsm4bnnIyj5j0M",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1YyiIVWPExD21hc6uypvsm4bnnIyj5j0M/view",
+   "title": "02.jpg"
+  },
+  {
+   "doc_id": "1ZAmn9dfvX-5WEtqHbHvq8uuLJP7r6HHH",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ZAmn9dfvX-5WEtqHbHvq8uuLJP7r6HHH/view",
+   "title": "학생디자인-3.png"
+  },
+  {
+   "doc_id": "1ZAuusJlR5iUqqxa5TP4PsOFn5aXnGZJ7",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ZAuusJlR5iUqqxa5TP4PsOFn5aXnGZJ7/view",
+   "title": "(견적서-렌탈큐브) 카운터, 쇼케이스 렌탈 건.pdf"
+  },
+  {
+   "doc_id": "1ZQrrw7dQ68bUUFgxhkYweDBwh2w0Ts2O",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ZQrrw7dQ68bUUFgxhkYweDBwh2w0Ts2O/view",
+   "title": "학생디자인-4.png"
+  },
+  {
+   "doc_id": "1ZbU43q4W6RhVq-__nml2NH8_02NkZXPm",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ZbU43q4W6RhVq-__nml2NH8_02NkZXPm/view",
+   "title": "[견적서-렌탈큐브] 카운터, 쇼케이스 렌탈 건.xlsx"
+  },
+  {
+   "doc_id": "1Zmg5zpcbxklNuCCpnqX1XHiiW5HgAfaU",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Zmg5zpcbxklNuCCpnqX1XHiiW5HgAfaU/view",
+   "title": "여름디자인-1.png"
+  },
+  {
+   "doc_id": "1_7mg2R6kcX82A-vZOy-z7fBpS040hToR",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1_7mg2R6kcX82A-vZOy-z7fBpS040hToR/view",
+   "title": "유치원디자인-1.png"
+  },
+  {
+   "doc_id": "1_UWqDMufqM-wq7a-iA1lKwb5pHCaDWrP",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1_UWqDMufqM-wq7a-iA1lKwb5pHCaDWrP/view",
+   "title": "[스위트스팟] 던전밥 팝업스토어_더현대 서울 견적요청.pptx"
+  },
+  {
+   "doc_id": "1_iwY58slHT24rF3OdeHKIl4QmZqUe-0_",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1_iwY58slHT24rF3OdeHKIl4QmZqUe-0_/view",
+   "title": "프레임 템플릿(4x6inch)_2컷.png"
+  },
+  {
+   "doc_id": "1aBxfev9oHyzxZHKmJH89H1sCel-hM-Wb",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1aBxfev9oHyzxZHKmJH89H1sCel-hM-Wb/view",
+   "title": "GR8_YluakAAGn7i.jpg_large"
+  },
+  {
+   "doc_id": "1aCUSlhFkOI1lvPYFciFHQ-phAKXtBjeR",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1aCUSlhFkOI1lvPYFciFHQ-phAKXtBjeR/view",
+   "title": "프레임 템플릿(2x6inch)_상단2컷.png"
+  },
+  {
+   "doc_id": "1aEA8iZ1mk4ryXHKOKrJAMzDcE2Vo_b90",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1aEA8iZ1mk4ryXHKOKrJAMzDcE2Vo_b90/view",
+   "title": "축제디자인-3.png"
+  },
+  {
+   "doc_id": "1aY_hGhH_8yOClGW5-ku0_9uSHuq4vhVm",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1aY_hGhH_8yOClGW5-ku0_9uSHuq4vhVm/view",
+   "title": "가로3컷.png"
+  },
+  {
+   "doc_id": "1ccJe8rQYiXJidST_Gs5TS-x1Zgua4G-5",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ccJe8rQYiXJidST_Gs5TS-x1Zgua4G-5/view",
+   "title": "프레임 템플릿(2x6inch)_상단3컷.png"
+  },
+  {
+   "doc_id": "1dLp_WAu9ioYJ6j46tm-DNfREyb4W7vw_",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1dLp_WAu9ioYJ6j46tm-DNfREyb4W7vw_/view",
+   "title": "교육디자인-1.png"
+  },
+  {
+   "doc_id": "1dbCCEliUtjKscP59G8cBzb5uXBi79TG1",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1dbCCEliUtjKscP59G8cBzb5uXBi79TG1/view",
+   "title": "[견적서-디자인알파] 3D보수비용.xlsx"
+  },
+  {
+   "doc_id": "1dw4mcsyCQ6iYzNZURqYPwMma7_y0e1X6",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1dw4mcsyCQ6iYzNZURqYPwMma7_y0e1X6/view",
+   "title": "GR8_YluakAAGn7i.jpg_large"
+  },
+  {
+   "doc_id": "1dzIY5FSHL8XXd_mdbE-YnPL0ANIvwLKG",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1dzIY5FSHL8XXd_mdbE-YnPL0ANIvwLKG/view",
+   "title": "프레임 템플릿(2x6inch).psd"
+  },
+  {
+   "doc_id": "1e4EgUSU1YwzhVuHlPIcXyX1Z0w8QPziQ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1e4EgUSU1YwzhVuHlPIcXyX1Z0w8QPziQ/view",
+   "title": "교회디자인-1.png"
+  },
+  {
+   "doc_id": "1eSjJg3srJClAjpteX9Q0srI51-KR1A0y",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1eSjJg3srJClAjpteX9Q0srI51-KR1A0y/view",
+   "title": "[견적서-현대드림애드] 더현대 서울 그래픽 시공 건.xls"
+  },
+  {
+   "doc_id": "1fNa4wdP4H5zSqO001bv22oMHo5ePz8SE",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1fNa4wdP4H5zSqO001bv22oMHo5ePz8SE/view",
+   "title": "더현서B2_던전밥_운영견적(수정).xlsx"
+  },
+  {
+   "doc_id": "1fiCdc3JTjItiUH_ueckgKdNb45jnpgZh",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1fiCdc3JTjItiUH_ueckgKdNb45jnpgZh/view",
+   "title": "프레임 템플릿(2x6inch)_하단3컷.png"
+  },
+  {
+   "doc_id": "1g2FnoCYe30g3UpwCSf2kNNhUEpkCKzBA",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1g2FnoCYe30g3UpwCSf2kNNhUEpkCKzBA/view",
+   "title": "가로1컷.png"
+  },
+  {
+   "doc_id": "1gsU2NP5Ed6pFRZ1i0iTsOLBYl9V_maKj",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1gsU2NP5Ed6pFRZ1i0iTsOLBYl9V_maKj/view",
+   "title": "PS24040200336.jpg"
+  },
+  {
+   "doc_id": "1hHe1Nkh2aIHHJB5g5iu8PmVnpoJ_YNVL",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1hHe1Nkh2aIHHJB5g5iu8PmVnpoJ_YNVL/view",
+   "title": "축제디자인-1.png"
+  },
+  {
+   "doc_id": "1hUSY94pKWtzsM-VUPSqkkm-Bi5fqwc-1",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1hUSY94pKWtzsM-VUPSqkkm-Bi5fqwc-1/view",
+   "title": "던전밥 더현대 서울 견적서.pdf"
+  },
+  {
+   "doc_id": "1iBN0jW0nVFitictCq5Cp7Lqz3neE13iV",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1iBN0jW0nVFitictCq5Cp7Lqz3neE13iV/view",
+   "title": "교회디자인-2.png"
+  },
+  {
+   "doc_id": "1iFn5CSect3TZa4rtrtaaR7mWsDkwdz8E",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1iFn5CSect3TZa4rtrtaaR7mWsDkwdz8E/view",
+   "title": "03.jpg"
+  },
+  {
+   "doc_id": "1iW5D3TKwUMH1MsEy-Wz6YV1VusmhCHFL",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1iW5D3TKwUMH1MsEy-Wz6YV1VusmhCHFL/view",
+   "title": "[스위트스팟] 던전밥 팝업스토어_더현대 서울 견적요청.pdf"
+  },
+  {
+   "doc_id": "1kFKy5biYB7BbXLrO_Sf1cm3e79Un5bAZ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1kFKy5biYB7BbXLrO_Sf1cm3e79Un5bAZ/view",
+   "title": "가로1컷.png"
+  },
+  {
+   "doc_id": "1kIUGSyRXXu00xIHP36-z3SV7yxlKFOeO",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1kIUGSyRXXu00xIHP36-z3SV7yxlKFOeO/view",
+   "title": "가을디자인-2.png"
+  },
+  {
+   "doc_id": "1kiOOD5Ve3WtrpH11hUn28XK5IBK5xU1Q",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1kiOOD5Ve3WtrpH11hUn28XK5IBK5xU1Q/view",
+   "title": "던전밥 더현대 서울 견적서.xlsx"
+  },
+  {
+   "doc_id": "1l-u96Bc__yhLaYeRFjsJNJ6TSb1ZO5OL",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1l-u96Bc__yhLaYeRFjsJNJ6TSb1ZO5OL/view",
+   "title": "05.jpg"
+  },
+  {
+   "doc_id": "1l7hfx34ccNCAGiQfQXxmR9pWL3VOmqfJ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1l7hfx34ccNCAGiQfQXxmR9pWL3VOmqfJ/view",
+   "title": "교회디자인-1.png"
+  },
+  {
+   "doc_id": "1lEYt0Il_fVNK_1Xs9LkG5Si0su7yGhwR",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1lEYt0Il_fVNK_1Xs9LkG5Si0su7yGhwR/view",
+   "title": "교육디자인-2.png"
+  },
+  {
+   "doc_id": "1lw1pXJ--SRq7TJsoIPpO3WiXnL92P5eV",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1lw1pXJ--SRq7TJsoIPpO3WiXnL92P5eV/view",
+   "title": "[세금계산서-디자인알파] 더현대 서울 던전밥 3D 보수 비용 건.png"
+  },
+  {
+   "doc_id": "1m_AUY9IwhmT_Q0dkcnaKbhZYr2W4M8GD",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1m_AUY9IwhmT_Q0dkcnaKbhZYr2W4M8GD/view",
+   "title": "프레임 템플릿(6x4inch).psd"
+  },
+  {
+   "doc_id": "1mc7jXuCf8ii9CgQhjWF8zCwcIy3IU6XO",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1mc7jXuCf8ii9CgQhjWF8zCwcIy3IU6XO/view",
+   "title": "[스위트스팟] 던전밥 팝업스토어_더현대 서울 견적요청.pdf"
+  },
+  {
+   "doc_id": "1mlfZl44bs6jnuYK8qonQuRaQkbUTwTMY",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1mlfZl44bs6jnuYK8qonQuRaQkbUTwTMY/view",
+   "title": "유치원디자인-2.png"
+  },
+  {
+   "doc_id": "1mo6G3DAepPchxbhbs8UcQzR11l2dA_or",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1mo6G3DAepPchxbhbs8UcQzR11l2dA_or/view",
+   "title": "[세금계산서-바닥재닷컴] 더현대서울 던전밥 카펫트 시공 건.pdf"
+  },
+  {
+   "doc_id": "1nUjiPmyXxJQrrgsEG9V1Zk0xWN32tgSE",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1nUjiPmyXxJQrrgsEG9V1Zk0xWN32tgSE/view",
+   "title": "학생디자인-5.png"
+  },
+  {
+   "doc_id": "1nspvwuH5sYlkVPg8Otz7Pt8RiUz2dMml",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1nspvwuH5sYlkVPg8Otz7Pt8RiUz2dMml/view",
+   "title": "가로4컷.png"
+  },
+  {
+   "doc_id": "1ntOVoIbkNnfX1pO1mVAK5PnFwC4-Qm3D",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ntOVoIbkNnfX1pO1mVAK5PnFwC4-Qm3D/view",
+   "title": "[세금계산서-바닥재닷컴] 더현대서울 던전밥 카펫트 시공 건.pdf"
+  },
+  {
+   "doc_id": "1oRu_-Y1Y0ZQVSTw7Mi81fbvYV-3r9TOj",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1oRu_-Y1Y0ZQVSTw7Mi81fbvYV-3r9TOj/view",
+   "title": "던전밥 더현대 서울 견적서.xlsx"
+  },
+  {
+   "doc_id": "1pfETni6fmheLb3A7RP2kVbIgA7Zx-Hwx",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1pfETni6fmheLb3A7RP2kVbIgA7Zx-Hwx/view",
+   "title": "겨울디자인-2.png"
+  },
+  {
+   "doc_id": "1pwLN1AWNmQXGGNG4AT_y2sa1SS0hCb8L",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1pwLN1AWNmQXGGNG4AT_y2sa1SS0hCb8L/view",
+   "title": "[사업자등록증-바닥재닷컴].jpg"
+  },
+  {
+   "doc_id": "1qlvLtMcGEpSb1BAltrQM9302PB0497P1",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1qlvLtMcGEpSb1BAltrQM9302PB0497P1/view",
+   "title": "교회디자인-2.png"
+  },
+  {
+   "doc_id": "1r2IsZkUpb_pqOmloK-z16JjKVRbQWc1H",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1r2IsZkUpb_pqOmloK-z16JjKVRbQWc1H/view",
+   "title": "일반디자인-4.png"
+  },
+  {
+   "doc_id": "1r6nATLgbtFPXdv_7IfPlnTbJQ4mNrbxO",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1r6nATLgbtFPXdv_7IfPlnTbJQ4mNrbxO/view",
+   "title": "겨울디자인-4.png"
+  },
+  {
+   "doc_id": "1r9hbUZPOM8qamBpLNbyAe98C2XTg0ZL6",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1r9hbUZPOM8qamBpLNbyAe98C2XTg0ZL6/view",
+   "title": "[세금계산서-렌탈큐브] 더현대 서울 던전밥 렌탈 비용 건.png"
+  },
+  {
+   "doc_id": "1rhDS-sa3FNjJK6Cl7uq58nBxgXu3hcBb",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1rhDS-sa3FNjJK6Cl7uq58nBxgXu3hcBb/view",
+   "title": "일반디자인-3.png"
+  },
+  {
+   "doc_id": "1rqcY3WxuA1WsgVELfilzCTzUmJO8euYX",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1rqcY3WxuA1WsgVELfilzCTzUmJO8euYX/view",
+   "title": "일반디자인-4.png"
+  },
+  {
+   "doc_id": "1sH69NlVixu-QXcFLxU2DN9d3v6YA_46U",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1sH69NlVixu-QXcFLxU2DN9d3v6YA_46U/view",
+   "title": "output_2669293875.jpg"
+  },
+  {
+   "doc_id": "1sKT-7zQqjhd4-VI9yShdtmEYsg3f2as_",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1sKT-7zQqjhd4-VI9yShdtmEYsg3f2as_/view",
+   "title": "일반디자인-6.png"
+  },
+  {
+   "doc_id": "1sKn_yHoDt5OEUGCRAgHaLgc_--RTnoRI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1sKn_yHoDt5OEUGCRAgHaLgc_--RTnoRI/view",
+   "title": "프레임 템플릿(2x6inch)_상단2컷.png"
+  },
+  {
+   "doc_id": "1sN40g0vAo2e5hRjj9Ts_w6R6hyCey7Vu",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1sN40g0vAo2e5hRjj9Ts_w6R6hyCey7Vu/view",
+   "title": "가로1컷.png"
+  },
+  {
+   "doc_id": "1shouF05UsXgf0bL9QrqzMz1lrA540JZn",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1shouF05UsXgf0bL9QrqzMz1lrA540JZn/view",
+   "title": "08.jpg"
+  },
+  {
+   "doc_id": "1t3d94CgOj_uvZHNMITudmAfGm4-tg3Ud",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1t3d94CgOj_uvZHNMITudmAfGm4-tg3Ud/view",
+   "title": "가로2컷.png"
+  },
+  {
+   "doc_id": "1tISY8aXzSA394YXC_XkiStWBxesmbxUm",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1tISY8aXzSA394YXC_XkiStWBxesmbxUm/view",
+   "title": "[견적서-디자인알파] 더현대서울 던전밥 3D 보수비용.pdf"
+  },
+  {
+   "doc_id": "1tZIA8mX11V1JUa6xMqZtc046-haH_GDi",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1tZIA8mX11V1JUa6xMqZtc046-haH_GDi/view",
+   "title": "겨울디자인-3.png"
+  },
+  {
+   "doc_id": "1uSe8mrhMVDdogiwCg6_S9myZ3o3wNgKH",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1uSe8mrhMVDdogiwCg6_S9myZ3o3wNgKH/view",
+   "title": "랩핑디자인전참고.jpg"
+  },
+  {
+   "doc_id": "1uveCPSSyi0D0jxsGahEvmpyoD8Ks8qJO",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1uveCPSSyi0D0jxsGahEvmpyoD8Ks8qJO/view",
+   "title": "부스랩핑규격.png"
+  },
+  {
+   "doc_id": "1v-0SOuUzNWRIfh3411wsclKrSClX0D1J",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1v-0SOuUzNWRIfh3411wsclKrSClX0D1J/view",
+   "title": "[세금계산서-현대드림애드] 더현대 서울 던전밥 그래픽 시공 건.png"
+  },
+  {
+   "doc_id": "1vHHMR_P-zCKxPuZsuJJAenybFrjlDeD6",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1vHHMR_P-zCKxPuZsuJJAenybFrjlDeD6/view",
+   "title": "04.jpg"
+  },
+  {
+   "doc_id": "1v_VFSsWx9DH3FRXDERPwI0ORlEHGAuIy",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1v_VFSsWx9DH3FRXDERPwI0ORlEHGAuIy/view",
+   "title": "가로4컷 작은가이즈.png"
+  },
+  {
+   "doc_id": "1wyy5_mLMNHlXsDCa5MuswHDigppsDrGw",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1wyy5_mLMNHlXsDCa5MuswHDigppsDrGw/view",
+   "title": "축제디자인-2.png"
+  },
+  {
+   "doc_id": "1xl2jtj0ZEPtSiCAZy6Kt5Gh3_q9GAUfM",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1xl2jtj0ZEPtSiCAZy6Kt5Gh3_q9GAUfM/view",
+   "title": "[견적서-바닥재닷컴] 더현대 서울 바닥 카펫트 시공 건 기존 카펫트.jpg"
+  },
+  {
+   "doc_id": "1yMiqsa_Xs4RsY23njkO4iWxoUSxbTI0g",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1yMiqsa_Xs4RsY23njkO4iWxoUSxbTI0g/view",
+   "title": "일반디자인-1.png"
+  },
+  {
+   "doc_id": "1zMoHn-u0hnOoDv7_Q-f3ahMV5Ptjru7q",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1zMoHn-u0hnOoDv7_Q-f3ahMV5Ptjru7q/view",
+   "title": "교회디자인-3.png"
+  },
+  {
+   "doc_id": "1zY04Fwo7cynLUmb7MZtq1gOhlNZ-1b13",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1zY04Fwo7cynLUmb7MZtq1gOhlNZ-1b13/view",
+   "title": "가로3컷 작은사이즈.png"
+  },
+  {
+   "doc_id": "1zqk81YvU223UPpnwdmgaZ214iwViW-FM",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1zqk81YvU223UPpnwdmgaZ214iwViW-FM/view",
+   "title": "img.png"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 6건: 0322 던전밥 팝업스토어 1차 공간구성안_라이트버전., (주)소미미디어 팝업스토어 더현대서울 위탁운영계약서_0, (주)소미미디어 팝업스토어 더현대서울 위탁운영계약서_0, [스위트스팟] 던전밥 팝업스토어_더현대 서울 견적요청., [스위트스팟] 던전밥 팝업스토어_더현대 서울 견적요청., [세금계산서-바닥재닷컴] 더현대서울 던전밥 카펫트 시공. 미확실: 결과보고서 부재 - 방문자수·POS매출 전무; 운영비(대행 수수료) 금액은 별첨1이 이미지로 미판독; 프로젝트 메타 기간(2025-01-09~15)과 계약/견적 기간(2025-01-16~22) 불일치 - 계약 기준 채택; 면적: 라이트버전 19.5평(7700x9250) vs 최종 견적 9403x16615mm(약47평) 상충; 기획 예상 방문객수 미기재; client_name 메타 null이나 계약상 갑=소미미디어로 추정"
+ }
+}

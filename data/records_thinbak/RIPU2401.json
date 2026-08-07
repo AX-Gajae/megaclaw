@@ -1,0 +1,131 @@
+{
+  "record_id": "RIPU2401",
+  "schema_version": "0.1",
+  "entities": {
+    "brand_id": "unresolved:얼미부부",
+    "space_id": "unresolved:미상",
+    "client_party_id": null,
+    "brand_key": "얼미부부",
+    "space_key": "미상"
+  },
+  "intervention": {
+    "concept": "얼미부부 팝업스토어. 원문 문서가 제공되지 않아 세부 컨셉 확인 불가.",
+    "brand_name": "얼미부부",
+    "experience_elements": [],
+    "promotions": [],
+    "staging_tags": []
+  },
+  "conditions": {
+    "location": {
+      "city": null,
+      "district": null,
+      "venue_name": null,
+      "venue_type": null,
+      "foot_traffic_context": null
+    },
+    "area_pyeong": null,
+    "period": {
+      "from": "2024-12-12",
+      "to": "2024-12-18",
+      "days": 7
+    },
+    "season": "겨울",
+    "fee_structure": {
+      "type": "unknown",
+      "detail": ""
+    },
+    "brand_requirements": [],
+    "scale": {
+      "store_count": 1,
+      "venue_traffic_type": "standalone",
+      "host_traffic_note": null
+    }
+  },
+  "outcome": {
+    "daily": [
+      {
+        "date": "2024-12-12",
+        "visitors": 891,
+        "sales_krw": 7267800
+      },
+      {
+        "date": "2024-12-13",
+        "visitors": 952,
+        "sales_krw": 4638900
+      },
+      {
+        "date": "2024-12-14",
+        "visitors": 1192,
+        "sales_krw": 6310900
+      },
+      {
+        "date": "2024-12-15",
+        "visitors": 1347,
+        "sales_krw": 8070400
+      },
+      {
+        "date": "2024-12-16",
+        "visitors": 832,
+        "sales_krw": 3868000
+      },
+      {
+        "date": "2024-12-17",
+        "visitors": 695,
+        "sales_krw": 2896600
+      },
+      {
+        "date": "2024-12-18",
+        "visitors": 796,
+        "sales_krw": 4661900
+      }
+    ],
+    "totals": {
+      "visitors": 6705,
+      "sales_krw": 37714500,
+      "rev_mm_recognized": 127.0
+    },
+    "counting_method": "participation",
+    "counting_basis": "현장 참가자 수",
+    "plan_visitors_expected": null,
+    "retention": null,
+    "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+    "rev_mm_completion": {
+      "status": "complete",
+      "rule": "운영종료 2024-12, 스냅샷까지 2개월+ (시간 규칙)",
+      "contract_total_mm": null,
+      "last_recognition_period": "2025-01"
+    }
+  },
+  "docs": [
+    {
+      "doc_id": "1ECQaSytx-8nCZuI7oGcgZkRiRnvJVCv7",
+      "kind": "계약서",
+      "uri": "https://drive.google.com/file/d/1ECQaSytx-8nCZuI7oGcgZkRiRnvJVCv7/view",
+      "title": "RIPU2401_얼미부부 팝업스토어(싸이코 파라다이스)_계약서_2401011(최종).doc"
+    },
+    {
+      "doc_id": "1Rkb4mV0OXn4S6YIWF7WldjqIl7fi8mpw",
+      "kind": "기타",
+      "uri": "https://drive.google.com/file/d/1Rkb4mV0OXn4S6YIWF7WldjqIl7fi8mpw/view",
+      "title": "EMBB_운영계획안_1211.pdf"
+    },
+    {
+      "doc_id": "1mkZyOXvI20f8VXczUf3-aBSW4GJ2SOl-",
+      "kind": "운영일지",
+      "uri": "https://drive.google.com/file/d/1mkZyOXvI20f8VXczUf3-aBSW4GJ2SOl-/view",
+      "title": "EMBB 팝업스토어_결과보고서.pdf"
+    },
+    {
+      "doc_id": "1o7UHVvAVXuFZsYgzLvJ_ggE_wLCkyXGu",
+      "kind": "정산",
+      "uri": "https://drive.google.com/file/d/1o7UHVvAVXuFZsYgzLvJ_ggE_wLCkyXGu/view",
+      "title": "[스위트스팟]얼미부부 팝업스토어 견적서_1220.pdf"
+    }
+  ],
+  "provenance": {
+    "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+    "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+    "extracted_at": "2026-07-23",
+    "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체 미제공; client_name 미상; venue 및 입지 정보 미상; 면적 미상; 수수료구조 미상; 컨셉·체험요소·프로모션 미상; 방문객수 및 매출 실측 미상 | 라벨발굴(2026-07-24): 결과보고서 재추출 — 01.기본개요 3.실제 참가자 현황 표, 05.굿즈운영 1.일별 판매 매출"
+  }
+}

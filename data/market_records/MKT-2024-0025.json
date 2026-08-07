@@ -1,0 +1,88 @@
+{
+ "market_record_id": "MKT-2024-0025",
+ "event_name": "와인킹 술술마켓(시즌1) 팝업스토어",
+ "brand": "와인킹×HDC아이파크몰",
+ "ip_or_collab": "유튜버 와인킹×주류 수입사 17개·식품업체 10개",
+ "category": "liquor",
+ "intervention": {
+  "concept_description": "창고형 할인 매장+시식·시음 콘셉트 와인 팝업, 500여종 주류 무료 시음",
+  "experience_elements": [
+   "무료 시음",
+   "시식·시음 푸드코트"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "아이파크몰 용산점 리빙파크 3층 이벤트홀",
+  "venue_type": "mall",
+  "neighborhood": "용산",
+  "city": "서울",
+  "period_from": "2024-04-26",
+  "period_to": "2024-05-15",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 20,
+    "weekend_share": 0.3,
+    "holiday_days": 3
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 100000,
+  "visitors_period_days": 20,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "아이파크몰 발표 인용: '지난해 4월에 열렸던 와인킹 팝업스토어 시즌1 와인킹 술술마켓은 20일 동안 누적 방문객 수가 10만명을 돌파했다' — 10만명 '돌파'이므로 10만 이상. 운영 기간은 패션비즈(215702) 사진 캡션 '1차(작년 4/26~5/15) 아이파크몰 와인킹 술술 페스타 현장'으로 확정",
+  "visitors_source_quote": "아이파크몰에 따르면 지난해 4월에 열렸던 와인킹 팝업스토어 시즌1 '와인킹 술술마켓'은 20일 동안 누적 방문객 수가 10만명을 돌파했다.",
+  "visitors_source_url": "https://www.bizwnews.com/news/articleView.html?idxno=94433",
+  "visitors_source_date": "2025-01-26",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": "인기상품 조기 품절, 수입사별 준비 물량 전량 소진",
+   "reservation_fill": null,
+   "signal_quotes": [
+    "지난 4월 17개의 주류 수입사와 10개의 식품업체가 참여해 20일간 진행한 '와인킹 술술 페스타'가 10만여 명이 몰리며 인기상품 조기 품절과 수입사별 준비된 물량 전량 소진 등의 이슈와 함께 큰 인기를 얻었던 만큼"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "행사명 표기가 매체별로 '술술마켓'(비즈월드)/'술술 페스타'(시장경제)로 다름. 2024년 4월 20일간 운영(정확한 개시일 미확인, 기간은 4월로만 특정). 완판 보조 출처: https://www.meconomynews.com/news/articleView.html?idxno=105592 (2024-12-05). | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

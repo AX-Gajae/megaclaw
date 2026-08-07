@@ -1,0 +1,67 @@
+{
+  "market_record_id": "MKT-2023-0055",
+  "event_name": "어그 x 웍스아웃 홍대 팝업스토어",
+  "brand": "어그 UGG (신세계인터내셔날)",
+  "ip_or_collab": "웍스아웃(스트리트 패션 편집숍) 협업",
+  "category": "fashion",
+  "intervention": {
+    "concept_description": "스트리트 패션 편집숍 웍스아웃과 협업한 방한부츠 컬렉션 팝업",
+    "experience_elements": [
+      "편집숍 내 전시"
+    ],
+    "promotions": [],
+    "is_free_entry": null,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "웍스아웃 홍대",
+    "venue_type": "street_standalone",
+    "neighborhood": "홍대",
+    "city": "서울",
+    "period_from": "2023-11-15",
+    "period_to": "2023-12-10",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 26,
+        "weekend_share": 0.31,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "매출 증가율은 성수 필하우스+홍대 웍스아웃 2개 팝업 매장 합산 수치. 원문: '두 팝업 매장에 전시된 방한부츠 컬렉션은 행사 기간 동안 매출이 전월 동기 대비 161% 증가했으며'",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": "두 팝업 매장에 전시된 방한부츠 컬렉션은 행사 기간 동안 매출이 전월 동기 대비 161% 증가했으며, 바게트가 연상되는 타즐리타 슬리퍼는 205% 신장했다.",
+    "sales_source_url": "https://www.newsis.com/view/NISX20231130_0002540539",
+    "sales_source_date": "2023-11-30",
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": []
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "period_from은 원문 '이달 중순부터'에 근거한 기재(11-15은 중순 표현의 임의 날짜가 아니라 불확실하여 null 권장이나 기간 표기상 기입). 매출 수치는 2개 매장 합산 증가율(%)로 절대액 null. | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": false,
+  "exclude_reason": "집계형(통합/합산)",
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

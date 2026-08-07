@@ -1,0 +1,97 @@
+{
+ "market_record_id": "MKT-2026-0004",
+ "event_name": "명일방주 6주년 공식 팝업스토어 '겨울의 초대장'",
+ "brand": "요스타(YOSTAR)",
+ "ip_or_collab": "명일방주",
+ "category": "game_webtoon",
+ "intervention": {
+  "concept_description": "서비스 6주년 기념 첫 공식 팝업. 6년 히스토리 전시, 콜라보 카페(캐릭터 4종 테마 음료·디저트), 굿즈샵, 코스어 촬영 이벤트",
+  "experience_elements": [
+   "히스토리 전시 공간·포토존",
+   "콜라보 카페",
+   "네컷사진 부스",
+   "카드 커버·네임 스티커 제작",
+   "코스어 기념 촬영(1/24, 1/31)"
+  ],
+  "promotions": [
+   "카페 메뉴 구매 시 코스터 랜덤 증정",
+   "팝업 한정 굿즈"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "롯데시네마 건대입구점 3층 브이스퀘어",
+  "venue_type": "other",
+  "neighborhood": "건대입구(광진구)",
+  "city": "서울",
+  "period_from": "2026-01-23",
+  "period_to": "2026-02-08",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 17,
+    "weekend_share": 0.35,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 800,
+  "visitors_period_days": 3,
+  "counting_basis": "media_estimate",
+  "counting_basis_note": "겟뉴스 르포 기사 제목/요약 기준: '초반 3일 800명 방문…일부 한정 굿즈는 수량 소진' - 오픈 초반 3일 누적",
+  "visitors_source_quote": "전시·굿즈·체험까지…서비스 6년 일대기 한눈에 초반 3일 800명 방문…일부 한정 굿즈는 수량 소진",
+  "visitors_source_url": "https://www.getnews.co.kr/news/curationView.html?idxno=859445",
+  "visitors_source_date": "2026-01-30",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": "일부 한정 굿즈 수량 소진",
+   "reservation_fill": "1차 예약(1/23~25)·2차 예약(1/26~2/8) 분리 운영, 콜라보 카페 별도 예약",
+   "signal_quotes": [
+    "초반 3일 800명 방문…일부 한정 굿즈는 수량 소진 (겟뉴스 2026-01-30)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "E",
+   "flags": [],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "low",
+ "notes": "겟뉴스 원문 페이지 반복 열람 실패(감사 거부/내부 오류)로 검색 추출 제목·요약문 기반. 800명은 오픈 초반 3일 누적이며 전 기간(17일) 총계 미보도. 보강 검증 필요. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

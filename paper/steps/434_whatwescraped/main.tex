@@ -1,0 +1,158 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{축이 잰 것은 수요가 아니라 우리가 무엇을 긁었나였다 --- 레코드 파일이 인기순으로 정렬돼 있었고 수집기는 앞에서부터 자른다}
+\author{월드모델 실험실}
+\date{노트 554 · 2026년 8월 4일}
+\maketitle
+
+\begin{abstract}
+노트 $552$ 가 남긴 것 --- ``만화 검색 덮음이 원천 $0.8\%$ 인데 하네스
+$16.4\%$ 다''--- 를 갈랐다. \texttt{zero\_is\_data=True} 는 \emph{물어봤는데
+계열이 안 왔다}를 $0$ 으로 관측 처리하므로, \textbf{마스크는 사실상
+``긁혔나''}다.
+
+\begin{center}
+\begin{tabular}{lrrr}
+\hline
+ & 긁힘 & 값 있음 & \textbf{긁힘$\leftrightarrow$라벨} \\
+\hline
+\textbf{만화} & $15.3\%$ & $0.8\%$ & $\mathbf{+0.5121}$ \\
+\textbf{애니} & $49.3\%$ & $36.0\%$ & $\mathbf{+0.4584}$ \\
+\textbf{펀딩} & $13.8\%$ & $1.0\%$ & $\mathbf{+0.3475}$ \\
+모바일 & $78.5\%$ & $28.8\%$ & $+0.1762$ \\
+도서 & $84.8\%$ & $39.9\%$ & $+0.1286$ \\
+\hline
+\end{tabular}
+\end{center}
+
+만화에서 긁힌 것의 라벨 중앙은 $8{,}709$, 안 긁힌 것은 $541$ ---
+\textbf{$16.1$ 배}다. 그런데 \textbf{긁힌 것 안에서 값이 있고 없고는 차이가
+없다}($8{,}730$ 대 $8{,}675$). 그 축은 통째로 ``긁혔나''다.
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 앞자락만 긁었다. \textbf{나} --- 학습과 유보가 다르다.
+\textbf{다} --- 자가 알던 답을 맞힌다.}
+\end{figure}
+
+\section{수집기가 라벨 순서의 앞을 자른다}
+
+\texttt{ingest/trend\_all.targets()} 는 \textbf{레코드 파일 순서}대로 돌고
+\texttt{collect()} 는 \texttt{todo[:limit]} 로 앞에서 자른다. 그런데
+
+\begin{center}
+\begin{tabular}{lr}
+\hline
+ & 파일 순서 $\leftrightarrow$ 라벨 \\
+\hline
+\textbf{manga\_records.json} & $\mathbf{-1.0000}$ \\
+\textbf{wanime\_records.json} & $\mathbf{-1.0000}$ (완전 단조) \\
+도서 & $-0.3591$ \\
+애니 & $-0.3603$ \\
+\hline
+\end{tabular}
+\end{center}
+
+만화 파일은 \texttt{y\_popularity} 로 정렬돼 있다. 긁힌 $1{,}473$ 건의 파일
+위치는 중앙 \textbf{$16$ 분위} $\cdot$ $90\%$ 가 \textbf{$27$ 분위} ---
+\textbf{``긁혔나''} $\approx$ \textbf{``라벨 상위 $27\%$ 인가''}다.
+
+\begin{quote}
+\textbf{위키도 같다.} 레코드별 캐시 $10{,}960$ 개를 세니 전수 조회가
+아니었다 --- 만화 $16.6\%$ $\cdot$ \textbf{펀딩 $13.8\%$}(검색과 \emph{정확히}
+같은 비율) $\cdot$ 애니 $42.2\%$. 게임 $95.2\%$ $\cdot$ 아이돌 $96.3\%$
+$\cdot$ 시장팝업 $100\%$ 는 전수다.
+\end{quote}
+
+\section{그런데 기계는 더 단순한 데 있었다}
+
+\begin{center}
+\begin{tabular}{lrrr}
+\hline
+긁힌 비율 & 학습 & 유보 & 긁힘$\leftrightarrow$라벨(학습) \\
+\hline
+\textbf{만화} & $\mathbf{16\%}$ & $\mathbf{2\%}$ & $+0.5380$ \\
+애니 & $42\%$ & $83\%$ & $+0.5181$ \\
+웹툰 & $70\%$ & $99\%$ & $+0.1425$ \\
+모바일 & $73\%$ & $98\%$ & $+0.1038$ \\
+도서 & $57\%$ & $98\%$ & $+0.0788$ \\
+펀딩 & $13\%$ & $15\%$ & $+0.3452$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{대부분 올라간다} --- 수집에 날짜 필터가 있어 최근 작품만 질의
+가능하고, 유보는 $2025$ 년 이후다. \textbf{만화만 반대}($16\% \to 2\%$)인데,
+앞자락이 \emph{옛} 인기작이기 때문이다.
+
+\begin{quote}
+\textbf{그래서 모형은 학습 $16\%$ 에서 ``긁혔으면 인기''($+0.5380$)를 세게
+배우는데, 유보에서는 $98\%$ 가 안 긁혀 그 규칙이 거의 안 쓰이고 쓰이는
+$2\%$ 에서도 약하다($+0.2698$). 결측 갈래가 학습과 다른 혼합에 적용된다.}
+\end{quote}
+
+\section{새 진단자 --- 차 $\times$ 마스크 상관}
+
+\begin{center}
+\begin{tabular}{lrrr}
+\hline
+ & 결측률 차 & $|$마스크$\leftrightarrow$라벨$|$ & 곱 \\
+\hline
+\textbf{애니 trend} & $40$\%p & $0.4972$ & $\mathbf{0.199}$ \\
+\textbf{만화 trend} & $13$\%p & $0.5366$ & $\mathbf{0.070}$ \\
+웹툰 trend & $29$\%p & $0.1471$ & $0.043$ \\
+모바일 trend & $26$\%p & $0.1215$ & $0.032$ \\
+세계애니 wiki & $37$\%p & $0.0634$ & $0.023$ \\
+도서 trend & $30$\%p & $0.0106$ & $0.003$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{차 하나로는 안 된다} --- 도서는 차가 $30$\%p 인데 마스크가 라벨과
+무관해서 결측 갈래가 실어 나를 것이 없다.
+
+\begin{quote}
+\textbf{자가 알던 답을 맞힌다} --- $1$ 위가 \textbf{애니 trend} 이고
+그것은 노트 $498$ 에서 이미 \texttt{DOMDROP} 에 들어간 축이다. 그때는
+지도를 그려서 찾았고, 지금은 \emph{자료만 보고} 같은 자리를 짚는다.
+\end{quote}
+
+\section{집 밖 짝은 안 걸린다}
+
+KR 만화 $1{,}716$ 행의 \texttt{manga\_records} 파일 위치는
+\textbf{$10/37/87$ 분위}로 고르다 --- \texttt{country=="KR"} 거름망이 라벨과
+무관하기 때문이다. 비게임 앱도 $10/50/90$ 이다.
+
+\begin{quote}
+\textbf{전이 자가 깨끗하다는 것이 중요하다} --- 노트 $551$ 이 만화 검색
+가림을 판정할 때 쓴 자가 바로 그것이고($+0.0090$, $12/12$), 그 자가 같은
+결함에 걸려 있었다면 판정이 순환이었을 것이다.
+\end{quote}
+
+\section*{조항}
+
+\begin{quote}
+\textbf{수집 대상은 라벨과 무관한 순서로 뽑는다.} 파일이 성과순으로
+정렬돼 있는데 앞에서부터 자르면, 그 축의 \emph{표시자}가 성과의 이진화가
+된다. \textbf{그리고 가림 후보는 덮음이 아니라 $|$학습 결측률 $-$ 유보
+결측률$| \times |$마스크$\leftrightarrow$라벨$|$ 로 고른다.}
+\end{quote}
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{만화 검색 가림}(노트 $551 \cdot 553$) --- 씨앗 $40$ 과 정정된
+분모에서 다시 재는 중. 짝 씨앗 $12$ 에서는 판 $-0.0001$(문다) $\cdot$
+\textbf{KR $+0.0090$($12/12$)}였다.
+\item \textbf{웹툰 trend 가 곱 $0.043$ 에 무게 $19.3\%$} --- 그런데 웹툰은
+\texttt{SAME\_PLATFORM} 이고 노트 $548$ 에서 검색을 끄면 $-0.0326$ 으로 크게
+잃는 도메인이다. \emph{정정 전} 수치라 다시 재야 한다.
+\item \textbf{만화 $\cdot$ 펀딩의 \texttt{wiki\_} 도 같은 처방인가} ---
+검색 쪽 결과를 보고 정한다.
+\end{itemize}
+
+\end{document}

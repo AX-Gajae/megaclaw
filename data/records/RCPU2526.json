@@ -1,0 +1,387 @@
+{
+ "record_id": "RCPU2526",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:피그닉",
+  "space_id": "unresolved:홍대_AK",
+  "client_party_id": null,
+  "brand_key": "피그닉",
+  "space_key": "홍대_AK"
+ },
+ "intervention": {
+  "concept": "피그닉 팝업스토어. 세부 컨셉·체험요소 정보는 원문 문서가 제공되지 않아 확인 불가.",
+  "brand_name": "피그닉",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "홍대",
+   "venue_name": "홍대 AK",
+   "venue_type": "쇼핑몰",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-08-25",
+   "to": "2025-09-07",
+   "days": 14
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "홍대 AK 쇼핑몰"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 8,
+    "holiday_until": 39,
+    "holiday_block_in": 0,
+    "nat_event_gap": 67,
+    "nat_event": null,
+    "doc_lag_days": 104,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 3368007.0,
+    "pnl_pre_accounts": 6,
+    "pnl_pre_months": 3,
+    "pnl_pre_first": "2025-05-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 78.6
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-09, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-09"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-4rhWdQ72dAfv8BkcGo8iCV7EvFyrfga",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1-4rhWdQ72dAfv8BkcGo8iCV7EvFyrfga/view",
+   "title": "스크린샷 2025-05-20 160432.png"
+  },
+  {
+   "doc_id": "11E5oGUM_v0ya58zwuHY7TQb6tvzEMlcH",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/11E5oGUM_v0ya58zwuHY7TQb6tvzEMlcH/view",
+   "title": "[견적서-코코렌탈] 피그닉 팝업스토어 43인치 모니터 렌탈 건.pdf"
+  },
+  {
+   "doc_id": "12TpiGn55ftLJlwuWRvSL1RXcxFyZGuEd",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/12TpiGn55ftLJlwuWRvSL1RXcxFyZGuEd/view",
+   "title": "0609 피그닉 홍대 AK 팝업 공간기획안.pptx"
+  },
+  {
+   "doc_id": "12iP_C_JNz8w1K0O89avYQ0NbYx5KhZiD",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/12iP_C_JNz8w1K0O89avYQ0NbYx5KhZiD/view",
+   "title": "0825증서(스위트스팟) (1).pdf"
+  },
+  {
+   "doc_id": "12x-EOkD2qX4-SnlSgqsAPjkUmtnyvKAy",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/12x-EOkD2qX4-SnlSgqsAPjkUmtnyvKAy/view",
+   "title": "KakaoTalk_20210822_192223024_04.jpg"
+  },
+  {
+   "doc_id": "15wBnNBlGru9u0NamkFDipbUk9kodLnwa",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/15wBnNBlGru9u0NamkFDipbUk9kodLnwa/view",
+   "title": "0618 피그닉 홍대 AK 팝업 3차 공간 기획안.pdf"
+  },
+  {
+   "doc_id": "19K_Snk6szOO4a-eC6NOixBXr_EYA-O33",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19K_Snk6szOO4a-eC6NOixBXr_EYA-O33/view",
+   "title": "[통장사본-코코렌탈] 피그닉 팝업스토어 43인치 모니터 렌탈 건.pdf"
+  },
+  {
+   "doc_id": "1AGroMCJ2K11mHgv6DNU_AWQz2lI6ME49",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1AGroMCJ2K11mHgv6DNU_AWQz2lI6ME49/view",
+   "title": "0717 피그닉 예상견적.xlsx"
+  },
+  {
+   "doc_id": "1AJmPBfAwp359zQn3ya3TcXpi_nHr0vkC",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1AJmPBfAwp359zQn3ya3TcXpi_nHr0vkC/view",
+   "title": "(견적서-현대드림애드) 피그닉 AK 홍대견적 초안.xls"
+  },
+  {
+   "doc_id": "1B5YWdHkHAYWPv0VXdIoI6fkuEv12MpAz",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1B5YWdHkHAYWPv0VXdIoI6fkuEv12MpAz/view",
+   "title": "0609 피그닉 AK 홍대 타임라인.pdf"
+  },
+  {
+   "doc_id": "1BDZHLTHAkDXoo-FOY1JUqCfShQLQabXP",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1BDZHLTHAkDXoo-FOY1JUqCfShQLQabXP/view",
+   "title": "[견적서-웰리스하우스] W매대.pdf"
+  },
+  {
+   "doc_id": "1CsN35yDWNhlf0hMTYRsjww9FYeFYXNTa",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1CsN35yDWNhlf0hMTYRsjww9FYeFYXNTa/view",
+   "title": "_아카시아원목_특징과_가구_(15).jpg"
+  },
+  {
+   "doc_id": "1D3_Gl86Q1kNhUDsVt7QpfXvH4dnW8gTD",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1D3_Gl86Q1kNhUDsVt7QpfXvH4dnW8gTD/view",
+   "title": "(롯데월드)0717 피그닉 홍대 AK 팝업 5차 공간 기획안_피드백.pptx"
+  },
+  {
+   "doc_id": "1F8jRTRi-5fOPQQXh_Hpk_1E4o1DvSBr3",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1F8jRTRi-5fOPQQXh_Hpk_1E4o1DvSBr3/view",
+   "title": "0717 피그닉 홍대 AK 팝업 5차 공간 기획안.pdf"
+  },
+  {
+   "doc_id": "1MRYjQd2lvcxFxf9eH8pR9Na6f0mAAJb1",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1MRYjQd2lvcxFxf9eH8pR9Na6f0mAAJb1/view",
+   "title": "스위트스팟 피그닉 추가 비용견적서250909.pdf"
+  },
+  {
+   "doc_id": "1N5W0enL258lMRRd3v0SB95u874yczdNb",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1N5W0enL258lMRRd3v0SB95u874yczdNb/view",
+   "title": "[계약서-코코렌탈] 피그닉 팝업스토어 43인치 모니터 렌탈 건(날인).pdf"
+  },
+  {
+   "doc_id": "1Na0IR_-MNbFjC3qfw_bzcXS2VkHH1nCP",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Na0IR_-MNbFjC3qfw_bzcXS2VkHH1nCP/view",
+   "title": "(견적서-빌리마켓) 피그닉 AK 홍대 냉장고 렌탈건.png"
+  },
+  {
+   "doc_id": "1P7oKKg9qrskAWcGiJzLwcZ25TRsV3-fF",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1P7oKKg9qrskAWcGiJzLwcZ25TRsV3-fF/view",
+   "title": "[세금계산서-진성아크릴] 피그닉 홍대 AK 아크릴 소집기 제작.pdf"
+  },
+  {
+   "doc_id": "1PcQ0gn3MsF6GOggmwI_aFjOT3V2kVjKx",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1PcQ0gn3MsF6GOggmwI_aFjOT3V2kVjKx/view",
+   "title": "0703 피그닉 홍대 AK 팝업 4차 공간 기획안.pptx"
+  },
+  {
+   "doc_id": "1TqIl_ZuCSFagdajWDb0kjoWJo2YlA9wn",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1TqIl_ZuCSFagdajWDb0kjoWJo2YlA9wn/view",
+   "title": "0618 피그닉 홍대 AK 팝업 3차 공간 기획안.pptx"
+  },
+  {
+   "doc_id": "1UR3v5cnNW3kPYgy6vlUOE5fjzKishC3I",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1UR3v5cnNW3kPYgy6vlUOE5fjzKishC3I/view",
+   "title": "0724 피그닉 홍대 AK 팝업 6차 공간 기획안.pptx"
+  },
+  {
+   "doc_id": "1UkTPbMy-7506s6wxI6S0gUdOCrsu2SrU",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1UkTPbMy-7506s6wxI6S0gUdOCrsu2SrU/view",
+   "title": "designnarae_1515.jpg"
+  },
+  {
+   "doc_id": "1Vp3VeYr_k0S0hm4BCvyDiQqUjpt5cfoP",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Vp3VeYr_k0S0hm4BCvyDiQqUjpt5cfoP/view",
+   "title": "★ [롯데월드] 팝업 공간 제작, 운영 대행 제안서_250513.pdf"
+  },
+  {
+   "doc_id": "1XAjUhqFwSODczV8_vY1_RH_7hpoUKFe1",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1XAjUhqFwSODczV8_vY1_RH_7hpoUKFe1/view",
+   "title": "[사업자등록증-코코렌탈] 피그닉 팝업스토어 43인치 모니터 렌탈 건.pdf"
+  },
+  {
+   "doc_id": "1Xz47054A_AZNGDz6jfg233l36KtHfH3A",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Xz47054A_AZNGDz6jfg233l36KtHfH3A/view",
+   "title": "[통장사본-대한진열장] 피그닉 팝업스토어 집기 제작 건.jpg"
+  },
+  {
+   "doc_id": "1ZdY3lyO_kgxA0IbJMnF7AZ3rl7idaYIP",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ZdY3lyO_kgxA0IbJMnF7AZ3rl7idaYIP/view",
+   "title": "(롯데월드)0703 피그닉 홍대 AK 팝업 4차 공간 기획안_피드백.pdf"
+  },
+  {
+   "doc_id": "1bPjUDKAAmRCFfqxXBQ4R_RP_m8rS2del",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1bPjUDKAAmRCFfqxXBQ4R_RP_m8rS2del/view",
+   "title": "0717 피그닉 홍대 AK 팝업 5차 공간 기획안.pptx"
+  },
+  {
+   "doc_id": "1djHUsGgfbzPxiUw0MQfJ7DRTxFGWo5NT",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1djHUsGgfbzPxiUw0MQfJ7DRTxFGWo5NT/view",
+   "title": "0715 피그닉 홍대 AK 팝업 견적 요청 파일.pptx"
+  },
+  {
+   "doc_id": "1g0aPdywOyuPWMaYQdvuY0am7xk6Z-j7d",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1g0aPdywOyuPWMaYQdvuY0am7xk6Z-j7d/view",
+   "title": "[견적서-진성아크릴] 피그닉 홍대 AK 아크릴 소집기 제작.jpg"
+  },
+  {
+   "doc_id": "1gpVkRLZDG_BbF8JhahCSTeShXaScC16_",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1gpVkRLZDG_BbF8JhahCSTeShXaScC16_/view",
+   "title": "b9407759528624286a959cc27eb1b7a1ad778f06a841ea91c3ee9e0c8b05.jpg"
+  },
+  {
+   "doc_id": "1h8LCxj4JYMMwFj4Wva6deYFwkxEFIAZi",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1h8LCxj4JYMMwFj4Wva6deYFwkxEFIAZi/view",
+   "title": "[계약서-코코렌탈] 피그닉 팝업스토어 43인치 모니터 렌탈 건(날인).pdf"
+  },
+  {
+   "doc_id": "1iOoppVLQIyaRWJpfzwhBS0_0cdHOm6cl",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1iOoppVLQIyaRWJpfzwhBS0_0cdHOm6cl/view",
+   "title": "0521 피그닉 홍대 AK 팝업 공간기획안.pdf"
+  },
+  {
+   "doc_id": "1jblwDqVtSc0bIyP8n8kxM-L6Y5shwWgQ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1jblwDqVtSc0bIyP8n8kxM-L6Y5shwWgQ/view",
+   "title": "0717 스위트스팟 피그닉 견적서.pdf"
+  },
+  {
+   "doc_id": "1kIRud5vRsCzKh2KocH2z12QjBRJLNntI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1kIRud5vRsCzKh2KocH2z12QjBRJLNntI/view",
+   "title": "스위트스팟 피그닉 추가 비용견적서250909.xlsx"
+  },
+  {
+   "doc_id": "1kbXtGr6Kgz8taLvTVY82daXViva2PxOb",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1kbXtGr6Kgz8taLvTVY82daXViva2PxOb/view",
+   "title": "[세금계산서-진성아크릴] 피그닉 홍대 AK 아크릴 소집기 추가 물류비용.pdf"
+  },
+  {
+   "doc_id": "1l8VaVGa_Uiy4NzuqHMCHdu6bSzkrEq88",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1l8VaVGa_Uiy4NzuqHMCHdu6bSzkrEq88/view",
+   "title": "0619 피그닉 홍대 AK 팝업 3차 공간 기획안.pdf"
+  },
+  {
+   "doc_id": "1lLWzSo5w2-3kg5GyPPmonEabsfLHpSGZ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1lLWzSo5w2-3kg5GyPPmonEabsfLHpSGZ/view",
+   "title": "[세금계산서-코코렌탈] 피그닉 팝업스토어 43인치 모니터 렌탈 건.pdf"
+  },
+  {
+   "doc_id": "1lkjaebDswHsMU4ml_2DU693Kh56kx5CR",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1lkjaebDswHsMU4ml_2DU693Kh56kx5CR/view",
+   "title": "d09cf1fd-f727-4323-a5cd-2228a6d8f376.png"
+  },
+  {
+   "doc_id": "1m5-Gub_1Nc-uBJoo2TDJX27-eJRKXMxl",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1m5-Gub_1Nc-uBJoo2TDJX27-eJRKXMxl/view",
+   "title": "[사업자등록증-대한진열장] 피그닉 팝업스토어 집기 제작 건.jpg"
+  },
+  {
+   "doc_id": "1ogDf7oItDXcVgnbWmABSM0_luYiDb2_X",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1ogDf7oItDXcVgnbWmABSM0_luYiDb2_X/view",
+   "title": "피그닉 결과보고서.pdf"
+  },
+  {
+   "doc_id": "1olvLIofHgXVnpmrj4zgjF0PkYTO8w67A",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1olvLIofHgXVnpmrj4zgjF0PkYTO8w67A/view",
+   "title": "롯데월드_스위트스팟 날인 계약서 스캔본.pdf"
+  },
+  {
+   "doc_id": "1qsQRW_tlkPwbfpRSvXsVOj_Q8dJs1ctS",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1qsQRW_tlkPwbfpRSvXsVOj_Q8dJs1ctS/view",
+   "title": "0724 피그닉 홍대 AK 팝업 6차 공간 기획안.pdf"
+  },
+  {
+   "doc_id": "1rznPKPnkqlhC05gnlclJ2vsNlhJ_289k",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1rznPKPnkqlhC05gnlclJ2vsNlhJ_289k/view",
+   "title": "[세금계산서-대한진열장] 피그닉 팝업스토어 집기 제작 건.pdf"
+  },
+  {
+   "doc_id": "1tSp_d_4hrLj2a0NODj8NwhuY7RPLEhde",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1tSp_d_4hrLj2a0NODj8NwhuY7RPLEhde/view",
+   "title": "0703 피그닉 홍대 AK 팝업 4차 공간 기획안.pdf"
+  },
+  {
+   "doc_id": "1wCZMwL3ufSDTQ4mfopbyxGaMr2dP2smO",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1wCZMwL3ufSDTQ4mfopbyxGaMr2dP2smO/view",
+   "title": "[견적서-진성아크릴] 피그닉 홍대 AK 아크릴 소집기 추가 배송비용.jpg"
+  },
+  {
+   "doc_id": "1wTcoFjnzPvYQLquBd0rGOYM4YW956MYv",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1wTcoFjnzPvYQLquBd0rGOYM4YW956MYv/view",
+   "title": "0609 피그닉 홍대 AK 팝업 공간기획안.pdf"
+  },
+  {
+   "doc_id": "1xmcIu6nB_9DlWiFMgDiMWpv2QTFrB4PL",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1xmcIu6nB_9DlWiFMgDiMWpv2QTFrB4PL/view",
+   "title": "[견적서-대한진열장] 피그닉 팝업스토어 집기 제작 건.png"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서 텍스트(계약서·기획서·견적서·결과보고서)가 제공되지 않음; client_name 미상; 컨셉·체험요소·프로모션·연출태그 미상; 면적(평) 미상; 수수료구조·계약금액 미상; 방문자수·매출 실측 데이터 없음; 예상 방문자수 미상; venue_type 및 정확한 지점명 추정치"
+ }
+}

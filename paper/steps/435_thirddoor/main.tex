@@ -1,0 +1,129 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{같은 열이 세 번째 문으로 들어왔고, 내가 찾은 법칙은 두 해 전 노트의 특수 사례였다}
+\author{월드모델 실험실}
+\date{노트 553 · 555 · 2026년 8월 5일}
+\maketitle
+
+\begin{abstract}
+노트 $551$ 이 보류한 후보(만화 검색 가림)를 씨앗 $40$ 과 정정된 분모에서 다시
+쟀다. \textbf{채택}이다. 그리고 다음 후보(펀딩)를 돌리다 \textbf{이미 두 해
+전에 막혀 있는 것}을 발견했다.
+
+\begin{center}
+\begin{tabular}{lrrl}
+\hline
+자 (짝 씨앗 $40$) & 차 & 부호 & \\
+\hline
+판 & $-0.0001$ & $17/40$ & $0$ 을 문다 \\
+날짜 통제 판 & $+0.0006$ & $24/40$ & $0$ 을 문다 \\
+\textbf{무리 안 판} & $\mathbf{+0.0037}$ & $31/40$ & \textbf{$0$ 밖 양수} \\
+\textbf{KR 만화} & $\mathbf{+0.0082}$ & $\mathbf{39/40}$ & \textbf{$0$ 밖 양수} \\
+\textbf{비게임 앱} & $\mathbf{+0.0022}$ & $26/40$ & \textbf{$0$ 밖 양수} \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{다섯 자 중 셋이 $0$ 밖 양수이고 음수는 없다.} 씨앗 $12$ 에서 $0$ 을
+물던 앱과 무리 안 판이 $40$ 에서 올라섰다 --- \textbf{노트 $518$ 이 이번엔
+통과시키는 쪽으로 값을 했다.}
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 같은 열, 세 문. \textbf{나} --- 채택.
+\textbf{다} --- 내가 틀렸다.}
+\end{figure}
+
+\section{판은 안 움직인다 --- 전이를 사는 채택이다}
+
+판 $-0.0001$ 이다. \textbf{순위는 그대로인데 집 밖 전이가 $39/40$ 으로
+오른다.} 노트 $351$ 이 같은 모양(판 $+0.0002$, $7/12$ 인데 대표가
+$+0.0168$)으로 \texttt{TREND\_DROP} 을 채택한 선례가 있고, 이번은 자 셋이
+서서 그때보다 세다.
+
+\textbf{기계는 노트 $554 \cdot 558$ 에 있다} --- 만화 유보 관측이 $3\%$ 뿐이고
+\textbf{마스크$\leftrightarrow$라벨 $+0.2512$ 만 있으며 값은 잴 수조차 없다}.
+학습 긁힘 $16\%$ 대 유보 $3\%$ 라 결측 갈래가 학습과 다른 혼합에 적용된다.
+
+\section{펀딩을 돌리다 가드가 잡은 것}
+
+다음 후보는 펀딩이었다(무게 $15.4\%$ $\cdot$ 긁힘$\leftrightarrow$라벨
+$+0.3475$). 그런데 가드가 \textbf{``펀딩 검색 관측 $0.0\%$''} 를 찍었다
+--- \texttt{trendaxes} 는 $14.7\%$ 를 내는데 \texttt{\_idol} 을 거치면 $0$ 이다.
+
+\begin{quote}
+\textbf{결함이 아니라 의도된 차단이었다.} \texttt{lab/fixaxes.BLOCK} 에 펀딩
+\texttt{trend\_*} 셋이 \textbf{노트 $379$} 로 들어가 있고, 이유가 내가 오늘
+재발견한 것과 같다 --- ``\emph{표시자가 배치다 --- 옛 $400$ 의 $99.5\%$ 대 새
+$449$ 의 $0.00$. 옛 배치는 목록 상위 $19\%$ 라 배치가 라벨 수준과 통째로 붙어
+있다(\textbf{쪽수와 라벨이 $-0.6944$}). 그러면 관측됐나가 곧 후원자가 많은가가
+된다.}''
+\end{quote}
+
+내가 칸 감사에서 본 \texttt{\_page} $\leftrightarrow$ 라벨 $-0.6951$ 이
+\emph{정확히} 그 수치다. \textbf{노트 $554$ 는 노트 $379$ 가 펀딩 한
+도메인에서 찾은 것을 수집 순서 일반으로 넓힌 것이고, 공은 $379$ 에 있다.}
+
+\section{같은 열이 세 번째 문으로 들어왔다}
+
+\begin{center}
+\begin{tabular}{llll}
+\hline
+ & 축 & 들어온 문 & 처방 \\
+\hline
+노트 $379$ & \texttt{entry\_friction} & \textbf{daily\_pass 그 자체} & BLOCK \\
+노트 $546$ & \texttt{meta\_c3\_웹툰} & \texttt{days} $\to$ 월요일 & STALE \\
+노트 $552$ & \texttt{cal\_dow\_cos} & \texttt{start\_date} $\to$ 월요일 & 행 라벨 NaN \\
+\hline
+\end{tabular}
+\end{center}
+
+웹툰 \texttt{entry\_friction} 의 값$\leftrightarrow$\texttt{daily\_pass} 는
+\textbf{$-1.0000$} 이다 --- 그 축이 곧 그 열이다. 노트 $379$ 가 그것을 막았고,
+노트 $546$ 이 찾은 것은 \textbf{같은 열이 다른 필드를 통해 돌아온 것}이었다.
+\textbf{한 열을 세 번 막았다.}
+
+\section*{내가 틀린 것 하나}
+
+\texttt{BLOCK} 이 \texttt{M} 만 $0$ 으로 만들고 \texttt{A} 를 남기므로
+``\texttt{A}$\ne$$0.5$''가 표지로 남는다고 봤다. 실제로 원배열에서는 그렇다
+(펀딩 $+0.3350$ $\cdot$ 웹툰 \texttt{entry\_friction} 값$\leftrightarrow$
+\texttt{daily\_pass} $-1.0000$).
+
+\begin{quote}
+\textbf{틀렸다.} \texttt{DirectPool.\_feat} 이
+\texttt{np.where(ok, A, 0.5)} 로 \texttt{M}$=$$0$ 인 곳의 값을 눌러 넣는다.
+설계행렬에서 차단 축은 \textbf{값 열과 표시자 열이 둘 다 상수}다(네 사례
+전부 확인 --- 값 종류 $2 \cdot 346 \cdot 197 \cdot 3$ 이 전부 $1$ 이 된다).
+\textbf{차단은 먹는다.}
+\end{quote}
+
+\section*{조항}
+
+\begin{quote}
+\textbf{내가 찾은 것이 이미 원장에 있는지 먼저 본다.} 노트 $554$ 를 쓰기 전에
+\texttt{fixaxes.BLOCK} 을 읽었다면 하루를 아꼈다. \textbf{그리고 원배열이
+아니라 모형이 보는 설계행렬에서 확인한다} --- \texttt{d.dom} 의
+\texttt{A} 는 모형이 보는 것이 아니다.
+\end{quote}
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{손잡이가 셋이다} --- \texttt{fixaxes.BLOCK}(자료층 · 마스크 $0$)
+$\cdot$ \texttt{forms.DOMDROP}(모형층 · fit$+$predict) $\cdot$
+\texttt{lab/datehygiene}(행 라벨 NaN). 만화 가림은 \emph{잰 대로}
+\texttt{DOMDROP} 에 두었다(안 잰 기제로 바꾸지 않는다)지만 개념상 집은
+\texttt{BLOCK} 이다. 정리는 따로 사전 등록한다.
+\item \textbf{웹툰 $\cdot$ 모바일 trend} --- 노트 $554$ 의 자에서 곱이
+$0.043 \cdot 0.031$ 인데, 노트 $558$ 의 표는 \textbf{둘 다 값으로 번다}고
+말한다($+0.1809 \cdot +0.2366$). 가림 후보가 아니다.
+\item \textbf{덱의 숫자} --- 쌍 정확도 $67.4\%$ 와 분모 $3{,}430$ 이 정정 전
+것이다. 다시 재는 중(노트 $556$).
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,177 @@
+{
+ "record_id": "RXPU2512",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:업비트",
+  "space_id": "unresolved:미상",
+  "client_party_id": null,
+  "brand_key": "업비트",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "업비트 FCB 스폰서 부스 팝업. 원문 문서가 제공되지 않아 컨셉 세부 내용을 확인할 수 없음.",
+  "brand_name": "업비트",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-07-31",
+   "to": "2025-08-04",
+   "days": 5
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "업비트 FCB 스폰서 부스"
+  },
+  "derived": {
+   "duration": {
+    "days": 5,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 2.8,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 53,
+    "holiday_until": 15,
+    "holiday_block_in": 0,
+    "nat_event_gap": 58,
+    "nat_event": null,
+    "doc_lag_days": 21,
+    "doc_dates_found": 5
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": null,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "10raCl9oJlOVy1QspIXc-BSs-fkO4mMKc",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/10raCl9oJlOVy1QspIXc-BSs-fkO4mMKc/view",
+   "title": "누나기프트_팔토시_20250710.xlsx"
+  },
+  {
+   "doc_id": "16q7as7VrOxb3a4HePHddHsvFp3xI-kJO",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/16q7as7VrOxb3a4HePHddHsvFp3xI-kJO/view",
+   "title": "고려기프트_스파클 생수_20250710.pdf"
+  },
+  {
+   "doc_id": "18B1dG9avxYluco8WmrpLe203a406BWW_",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/18B1dG9avxYluco8WmrpLe203a406BWW_/view",
+   "title": "모드이벤트_(견적서) 스위트스팟 _ 김우연(10초를잡아라) 서울 _ 2025.07.10.xlsx"
+  },
+  {
+   "doc_id": "1ID36YgFTHpjuvWlMKzqGg9nv2TJ4-90O",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ID36YgFTHpjuvWlMKzqGg9nv2TJ4-90O/view",
+   "title": "모다기프트_견적서.jpg"
+  },
+  {
+   "doc_id": "1Jbo8TicwrSxUTF9zEsYWzbLvHI2Ea3tb",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Jbo8TicwrSxUTF9zEsYWzbLvHI2Ea3tb/view",
+   "title": "업비트 FC바셀 내한 프로모션_굿즈 추가 부문(짐색).pdf"
+  },
+  {
+   "doc_id": "1LPRuh9TQ1bHGLoCfz_HU3I3Oou9TueaD",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1LPRuh9TQ1bHGLoCfz_HU3I3Oou9TueaD/view",
+   "title": "이벤툴_스위트스팟_견적서_20250710.xls"
+  },
+  {
+   "doc_id": "1QbymMFFWMdyqNK1FpmA8BqVjnEkSL_Nw",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1QbymMFFWMdyqNK1FpmA8BqVjnEkSL_Nw/view",
+   "title": "업비트 브랜드 부스 제안 요청_250704.pdf"
+  },
+  {
+   "doc_id": "1Qt8Ch3yDpXpPD9X53oE5IpJ43cft7n8J",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Qt8Ch3yDpXpPD9X53oE5IpJ43cft7n8J/view",
+   "title": "[Sweetspot]두나무_브랜드 부스 프로모션_견적서(굿즈_미니게임].pdf"
+  },
+  {
+   "doc_id": "1bpS5zTRdzgZNmeQAylL60rI7k_IeXDZz",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1bpS5zTRdzgZNmeQAylL60rI7k_IeXDZz/view",
+   "title": "153포장_스위트스팟 2025.7.10.xlsx"
+  },
+  {
+   "doc_id": "1dzFcRVAAl5b2uZyw_hU1kd9h07qxd3vX",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1dzFcRVAAl5b2uZyw_hU1kd9h07qxd3vX/view",
+   "title": "모드이벤트_아이스카트 2종_ 2025.07.10.xlsx"
+  },
+  {
+   "doc_id": "1hF41_QBdeMXoQzWcKIeW3p2QP6FJYTwi",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1hF41_QBdeMXoQzWcKIeW3p2QP6FJYTwi/view",
+   "title": "업비트 FC바셀 내한 프로모션_최종_0707.pdf"
+  },
+  {
+   "doc_id": "1m5ENsoor2abnYlmJjmt8Oae6dshGCQrw",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1m5ENsoor2abnYlmJjmt8Oae6dshGCQrw/view",
+   "title": "모드이벤트_(견적서) 스위트스팟 _ 김우연(10초를잡아라) 대구 _ 2025.07.10.xlsx"
+  },
+  {
+   "doc_id": "1ygDaxfuA4QFgJ_tdF4r4cLhuYlAyMBD1",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ygDaxfuA4QFgJ_tdF4r4cLhuYlAyMBD1/view",
+   "title": "이벤트몰_스탑워치_20250710.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 미제공으로 프로젝트 메타데이터 외 모든 항목 추출 불가; client_name 미상; venue 및 입지 정보 미상; 면적·수수료구조·요구사항 미상; 컨셉·체험요소·프로모션·연출태그 미상; 방문자수·매출 등 실측 outcome 전체 미상; counting_method 판정 불가"
+ }
+}

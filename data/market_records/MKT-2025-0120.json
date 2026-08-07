@@ -1,0 +1,71 @@
+{
+  "market_record_id": "MKT-2025-0120",
+  "event_name": "한섬 스킴스(SKIMS) 홀리데이 팝업스토어 (톰지 성수·더현대 서울)",
+  "brand": "스킴스 SKIMS (한섬 톰그레이하운드)",
+  "ip_or_collab": "킴 카다시안 브랜드 국내 첫 팝업",
+  "category": "fashion",
+  "intervention": {
+    "concept_description": "미국 셀럽 킴 카다시안의 스킴스 국내 첫 팝업, 홀리데이 컬렉션 120여 종",
+    "experience_elements": [
+      "2개 매장 동시 운영(톰지 성수 1~2층 119㎡, 더현대 서울 2층)"
+    ],
+    "promotions": [],
+    "is_free_entry": true,
+    "reservation_required": false
+  },
+  "conditions": {
+    "venue": "톰그레이하운드 '톰지'(TOMG) 성수 + 더현대 서울 2층",
+    "venue_type": "street_standalone",
+    "neighborhood": "성수동·여의도",
+    "city": "서울",
+    "period_from": "2025-11-21",
+    "period_to": "2025-12-31",
+    "area_pyeong": 36,
+    "multi_store": true,
+    "derived": {
+      "duration": {
+        "days": 41,
+        "weekend_share": 0.29,
+        "holiday_days": 1
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "media_estimate",
+    "counting_basis_note": "방문객 총계 없음. 현장 취재 기준 대기시간 3시간 보도(방문객 전언). 출처: http://www.wikileaks-kr.org/news/articleView.html?idxno=178528 (위키리크스한국, 2025-11-21)",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "대기시간 약 3시간, 한 번에 최대 20명씩만 입장, 100% 현장 대기",
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "\"대기시간만 3시간이래. 다음에 더현대 서울로 가자.\"",
+        "팝업스토어는 한 번에 최대 20명씩만 입장할 수 있다. 웨이팅 기계는 따로 없고, 100% 현장 대기 방식으로 운영된다.",
+        "또 다른 방문객은 \"에르메스 매장보다 입장이 더 어렵다\"면서 \"너무 추워서 다음에 다시 와야 할 것 같다\"고 말했다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "위키리크스한국 2025-11-21 현장 르포. period_to는 '다음 달 말까지' 보도에 근거. | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

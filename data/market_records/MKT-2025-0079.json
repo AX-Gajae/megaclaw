@@ -1,0 +1,94 @@
+{
+ "market_record_id": "MKT-2025-0079",
+ "event_name": "동서식품 '맥심가옥' 경주 팝업스토어",
+ "brand": "동서식품(맥심)",
+ "ip_or_collab": "맥심 브랜드 체험 시리즈(모카다방→맥심골목→맥심가옥), 경주 한옥 카페 활용, '행복, 이리 오너라' 슬로건",
+ "category": "fnb",
+ "intervention": {
+  "concept_description": "경북 경주 오릉 인근 한옥을 전통과 현대가 공존하는 커피 체험 공간으로 조성. 한국적 '환대' 테마",
+  "experience_elements": [
+   "시음 공간 '맛있당'(가옥 스페셜 3종 등 스페셜 메뉴)",
+   "맷돌 그라인딩·화롯불 브루잉 체험",
+   "가배 기미상궁(블라인드 테스트)",
+   "생활한복 체험·포토존",
+   "윷놀이·보부상 미션·굿즈 판매"
+  ],
+  "promotions": [
+   "블라인드 테스트 정답 시 황남빵 증정"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "경북 경주시 포석로 924(한옥 카페)",
+  "venue_type": "street_standalone",
+  "neighborhood": "경주 탑동(오릉 인근)",
+  "city": "경북 경주",
+  "period_from": "2025-08-28",
+  "period_to": "2025-09-26",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 30,
+    "weekend_share": 0.27,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 70000,
+  "visitors_period_days": 30,
+  "counting_basis": "media_estimate",
+  "counting_basis_note": "뉴스테이션이 '약 7만여 명이 방문'으로 보도(집계 주체 원문 미명시, 주최사 제공 추정). 동서식품은 누적 시리즈 방문객 55만 돌파만 공식 발표",
+  "visitors_source_quote": "올해는 경주에서 한국적 정서를 담은 한옥 카페 '맥심가옥'을 선보여 약 7만여 명이 방문하며 큰 관심을 끌었다.",
+  "visitors_source_url": "http://www.newstation.co.kr/news/articleView.html?idxno=6828",
+  "visitors_source_date": "2025-12-24",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "오픈런 대기 약 1시간 30분(후기), 10시 전부터 대기",
+   "sold_out": "인기 메뉴 '가옥 스페셜' 3종은 방문객 많은 날 오픈 1~2시간 만에 품절(운영 블로그 후기)",
+   "reservation_fill": null,
+   "signal_quotes": [
+    "팝업 관계자는 “오픈은 10시 30분이지만 10시 전부터 관람객들이 기다리고 있는 상황”이라며 “주말엔 적어도 1,000명이 넘는 관람객들이 맥심가옥을 찾는다”라고 귀띔했다.(핸드메이커 2025-09-10)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "E",
+    "C"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "7만명은 미디어(뉴스테이션) 보도 수치. 동서식품 공식 발표는 2015년부터 누적 시리즈 팝업 방문객 기준(뉴시스 2025-09-17: 6차례 48만 / 지이코노미 2025-10-29: 누적 55만 돌파) | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

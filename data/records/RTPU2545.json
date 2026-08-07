@@ -1,0 +1,154 @@
+{
+ "record_id": "RTPU2545",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:에비스_YEBISU",
+  "space_id": "unresolved:파라다이스시티_야외수영장",
+  "client_party_id": "unresolved:벡터컴",
+  "brand_key": "에비스맥주",
+  "space_key": "파라다이스시티"
+ },
+ "intervention": {
+  "concept": "에비스 맥주의 프리미엄 이미지와 여름 시즈널리티, 수영장 공간을 고려한 시원하고 청량한 이미지를 전달하는 야외수영장 브랜딩존. 로고/아이덴티티 컬러/시즐컷을 활용한 디자인 컨셉으로 풀사이드바·야외부스·라운지바·카바나·포토존을 구성. 스탬프 랠리와 인증샷 이벤트로 브랜드-소비자 상호작용과 바이럴 확산을 유도.",
+  "brand_name": "에비스(YEBISU)",
+  "experience_elements": [
+   "풀사이드바(실내)",
+   "풀사이드바(야외부스)",
+   "야외 라운지 바",
+   "야외 수영장 브랜딩",
+   "폴딩도어 카바나",
+   "간이 시음 부스(검토)",
+   "포토존(대형 패키지 보드)"
+  ],
+  "promotions": [
+   "스탬프 랠리 이벤트(수영장+호텔 F&B 생맥주 주문 시 스탬프 적립, 완성 시 추첨 경품)",
+   "인증샷 이벤트(#에비스섬머페스티벌 @yebisu_kr @pcitykorea)",
+   "경품: 1등 파라다이스시티 숙박권(1팀), 2등 에비스 기프트세트(10팀), 3등 브랜드 굿즈",
+   "브랜드 굿즈: 비치타월, 라피아백, 호텔키링, 냉각선풍기"
+  ],
+  "staging_tags": [
+   "시즐컷",
+   "브랜드컬러",
+   "인스타그래머블",
+   "포토존",
+   "여름/수영장",
+   "프리미엄"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": "파라다이스시티",
+   "venue_type": "호텔 야외수영장",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-06-01",
+   "to": "2025-08-31",
+   "days": null
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 40,000,000원. 기획료 1,500,000 + 아트워크 3,000,000(Sub Total 1: 4,500,000). 제작/시공/야외 항목(내부 등) 합계 25,600,000. 굿즈(비치타올 200개 x 17,050=3,410,000, 배송 73,000; Sub Total 3: 3,483,000). 운영보수 1,000,000 + 추가집기 200,000 + 진행비 2,000,000(Sub Total 4: 3,200,000). Sub Total 1~4 = 36,783,000. 대행수수료 전체 소계의 10%(정가 항목 제외) = 3,228,300(반올림). 총 40,000,000원(VAT 명시 없음)."
+  },
+  "brand_requirements": [
+   "설치 현장 컨디션·일정·예산에 따라 디자인/부착위치 변동 가능",
+   "포토존 설치 위치 세부 협의",
+   "간이 시음 부스 현장 여유공간·동선 고려 설치 검토",
+   "굿즈 최소구매수량: 비치타월 50개, 라피아백 300개, 호텔키링 100개, 냉각선풍기 100개"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "파라다이스시티 호텔 야외수영장 브랜딩존"
+  },
+  "derived": {
+   "duration": {
+    "days": 92,
+    "weekend_share": 0.29,
+    "holiday_days": 3
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 0.3,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 26,
+    "holiday_until": 5,
+    "holiday_block_in": 6,
+    "nat_event_gap": 2,
+    "nat_event": "대통령 선거",
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 3515963.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-05-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 40.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 미제공 — 방문/매출 실측 데이터 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 40.0 ≈ 계약총액 40.0",
+   "contract_total_mm": 40.0,
+   "last_recognition_period": "2025-08"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-EYJHu4r__f71GH6Yho8sc1fuFFgEAnL",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1-EYJHu4r__f71GH6Yho8sc1fuFFgEAnL/view",
+   "title": "결과보고서_없음.txt"
+  },
+  {
+   "doc_id": "1GSjgG9n_IkSHdIH1kOqxq_Z5Tqv0V2pS",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1GSjgG9n_IkSHdIH1kOqxq_Z5Tqv0V2pS/view",
+   "title": "계약서 없음.txt"
+  },
+  {
+   "doc_id": "1oTy3_uVM4uJpBWhmBidaaIapCIA7aZV1",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1oTy3_uVM4uJpBWhmBidaaIapCIA7aZV1/view",
+   "title": "Sweetspot_벡터컴_에비스X파라다이스 야외수영장 브랜딩존 구성_최종견적서_0704.pdf"
+  },
+  {
+   "doc_id": "1oVEglGC-3_pkFZgsV5Z5bMJM53Z0CAVU",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1oVEglGC-3_pkFZgsV5Z5bMJM53Z0CAVU/view",
+   "title": "2025년 에비스X파라다이스시티 야외수영장 브랜딩존 구성 및 운영(안)_0404_기획안.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: 2025년 에비스X파라다이스시티 야외수영장 브랜딩존 구, Sweetspot_벡터컴_에비스X파라다이스 야외수영장 . 미확실: 결과보고서 부재로 방문자수·매출 전무; 정확한 운영 시작/종료일(기획서상 미명시, 프로젝트 메타 기준); VAT 포함 여부 불명확; 견적서 OCR 손상으로 일부 시공/제작 항목명 불확실; 위치 도시·구 정보 없음; 면적(평) 정보 없음"
+ }
+}

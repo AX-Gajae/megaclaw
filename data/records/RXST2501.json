@@ -1,0 +1,232 @@
+{
+ "record_id": "RXST2501",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:삼성전자_Samsung_Electronics",
+  "space_id": "unresolved:shop_Atpisode",
+  "client_party_id": null,
+  "brand_key": "삼성전자",
+  "space_key": "shop_Atpisode"
+ },
+ "intervention": {
+  "concept": "삼성전자 DSR 관련 프로젝트로 추정되나 원문 문서가 제공되지 않아 컨셉 상세를 확인할 수 없음.",
+  "brand_name": "삼성전자",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-01-20",
+   "to": "",
+   "days": null
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 6.3,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 124,
+    "holiday_until": 5,
+    "holiday_block_in": 0,
+    "nat_event_gap": 67,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 778.2
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "unknown",
+   "rule": "총액 불명·최근 종료",
+   "contract_total_mm": null,
+   "last_recognition_period": "2026-05"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-EvfYUjaiTCr6jH1G8WgqAmy0vH0bCFK",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1-EvfYUjaiTCr6jH1G8WgqAmy0vH0bCFK/view",
+   "title": "[RXST2501] 사내 입점매장 계약기간 합의서_250204.pdf"
+  },
+  {
+   "doc_id": "12j8t8WLFO2rWH1EprvUAVgkj2S15dGTk",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/12j8t8WLFO2rWH1EprvUAVgkj2S15dGTk/view",
+   "title": "[RXST2501] 삼성전자DSR_사용대차 계약서.pdf"
+  },
+  {
+   "doc_id": "14B-4F1kk1jGYsY9oB4rttjo6D-CIsefx",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14B-4F1kk1jGYsY9oB4rttjo6D-CIsefx/view",
+   "title": "[RXST2501] 한국캘러웨이골프유한회사(와인샵)_삼성 DSR 수수료 계약서.pdf"
+  },
+  {
+   "doc_id": "1843SmB_jPqwcz2xitYyF9T0xay2aIeKR",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1843SmB_jPqwcz2xitYyF9T0xay2aIeKR/view",
+   "title": "[RXST2501] 삼성전자 DSR_비즈니스파트너종합보험_매리츠화재.pdf"
+  },
+  {
+   "doc_id": "19Uaq7aCwTE_HC9BhPqe8fFtmMZIA7n4H",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/19Uaq7aCwTE_HC9BhPqe8fFtmMZIA7n4H/view",
+   "title": "[RXST2501] DSR CCTV 이용계약서_GIGAeyes_(3년 약정).pdf"
+  },
+  {
+   "doc_id": "1AucfQPq25drSOVleULGpoYdaPRPjyucJ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1AucfQPq25drSOVleULGpoYdaPRPjyucJ/view",
+   "title": "[RXST2501] 스미스앤레더_삼성DSR 수수료 계약서.pdf"
+  },
+  {
+   "doc_id": "1EPIplt8EVa__i63g3AzMj7RYMeFegdPk",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1EPIplt8EVa__i63g3AzMj7RYMeFegdPk/view",
+   "title": "링크POS 견적서 전달의 건_스위트스팟_250402(최종)_암호화해제.pdf"
+  },
+  {
+   "doc_id": "1EgG_BxvrEFV49h5GYoVcNNLY8I2rY43v",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1EgG_BxvrEFV49h5GYoVcNNLY8I2rY43v/view",
+   "title": "링크POS 견적서 전달의 건_스위트스팟_250307_암호화해제.pdf"
+  },
+  {
+   "doc_id": "1P8mS4w64kcNiPa9dER1v3c1IygAVfroP",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1P8mS4w64kcNiPa9dER1v3c1IygAVfroP/view",
+   "title": "01.계약서_[RXST2501] 삼성전자DSR_사용대차 계약서.pdf"
+  },
+  {
+   "doc_id": "1Y-Izq8AdcoAmPmmNr5dbUJCzKfURlsXb",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Y-Izq8AdcoAmPmmNr5dbUJCzKfURlsXb/view",
+   "title": "[RXST2501] 삼성전자DSR_사용대차 계약서.pdf"
+  },
+  {
+   "doc_id": "1YMYGScjMKajf1z7VrX9yz5mwKLRo7-_F",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1YMYGScjMKajf1z7VrX9yz5mwKLRo7-_F/view",
+   "title": "[RXST2501] 한국캘러웨이골프유한회사(라이프스타일)_삼성 DSR 수수료 계약서.pdf"
+  },
+  {
+   "doc_id": "1YkrbgHcTXbP6yXGIdX0gnN1iOY6fiQW8",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1YkrbgHcTXbP6yXGIdX0gnN1iOY6fiQW8/view",
+   "title": "[RXST2501] 여로디자인스튜디오_삼성DSR 공사계약서.pdf"
+  },
+  {
+   "doc_id": "1aSM4MNk4vYnKujuLdXjbMG_MwThru6fi",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1aSM4MNk4vYnKujuLdXjbMG_MwThru6fi/view",
+   "title": "[RXST2501] 삼성DSR 인테리어 견적서(최종)_여로디자인스튜디오.pdf"
+  },
+  {
+   "doc_id": "1af3-0lIFKxKiswDYiQHrXwt46J7u9DjO",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1af3-0lIFKxKiswDYiQHrXwt46J7u9DjO/view",
+   "title": "[RXST2501] 웰스토리_삼성 DSR 수수료 계약서.pdf"
+  },
+  {
+   "doc_id": "1cpoIph1V5nm1anULPFCrkgjw-a3OnNRw",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1cpoIph1V5nm1anULPFCrkgjw-a3OnNRw/view",
+   "title": "[RXST2501] 삼성DSR 공사계약서_여로디자인스튜디오.pdf"
+  },
+  {
+   "doc_id": "1epthDc_O9VAThSqJAEVuRPU-ZzMd4L2b",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1epthDc_O9VAThSqJAEVuRPU-ZzMd4L2b/view",
+   "title": "★삼성전자(주) 사업자등록증_250328.pdf"
+  },
+  {
+   "doc_id": "1gj-cZOqPzxiGkQmsZj5Qm-HuBR6AwqRO",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1gj-cZOqPzxiGkQmsZj5Qm-HuBR6AwqRO/view",
+   "title": "03.제안서_내용없음.txt"
+  },
+  {
+   "doc_id": "1itN6JB9a9qT6XTQKA5Zz2WbXBfCtNcLz",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1itN6JB9a9qT6XTQKA5Zz2WbXBfCtNcLz/view",
+   "title": "[RXST2501] 메리츠화재_삼성전자 DSR 보험증권.pdf"
+  },
+  {
+   "doc_id": "1o8BvWX05lpx5pE-Z0co5olrw7UsnW5DR",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1o8BvWX05lpx5pE-Z0co5olrw7UsnW5DR/view",
+   "title": "[RXST2501] 보난자 커피_삼성DSR 수수료 계약서.pdf"
+  },
+  {
+   "doc_id": "1oQa0SPBgAXDccIXx_FwteUJzEwpmB4Ci",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1oQa0SPBgAXDccIXx_FwteUJzEwpmB4Ci/view",
+   "title": "01.계약서_[RXST2501] 사내 입점매장 계약기간 합의서_250204.pdf"
+  },
+  {
+   "doc_id": "1vj9u_ZmzElrU-hgKXZQZzuHYiCdJIEYc",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1vj9u_ZmzElrU-hgKXZQZzuHYiCdJIEYc/view",
+   "title": "[RXST2501] 디저트플래넷_삼성DSR 수수료 계약서.pdf"
+  },
+  {
+   "doc_id": "1vytyQxv6R3UZkfYY0-zerY7yiAhT-3oa",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1vytyQxv6R3UZkfYY0-zerY7yiAhT-3oa/view",
+   "title": "02.견적서_내용없음.txt"
+  },
+  {
+   "doc_id": "1yOYgux5zBWAz8au_M6u0R_vpOe5HaRdG",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1yOYgux5zBWAz8au_M6u0R_vpOe5HaRdG/view",
+   "title": "[RXST2501] 삼성전자 DSR_비즈니스파트너종합보험.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서/기획서/견적서/결과보고서) 전체 미제공; client_name 미확인; venue 및 입지 정보 없음; 면적·기간(종료일)·수수료구조 정보 없음; 컨셉·체험요소·프로모션·연출태그 정보 없음; 방문객·매출 실측 데이터 없음; counting_method 판정 불가"
+ }
+}

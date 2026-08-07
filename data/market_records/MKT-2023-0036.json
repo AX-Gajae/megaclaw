@@ -1,0 +1,63 @@
+{
+  "market_record_id": "MKT-2023-0036",
+  "event_name": "롯데칠성 '새로' 팝업스토어 시리즈 (2023 성수~전국 4회)",
+  "brand": "롯데칠성음료 (새로)",
+  "ip_or_collab": null,
+  "category": "liquor",
+  "intervention": {
+    "concept_description": "제로 슈거 소주 '새로' 체험 팝업. 2023년 9월 성수 시작으로 대전·대구·부산 전국 투어",
+    "experience_elements": [
+      "팝업 공간 체험",
+      "시음·이벤트"
+    ],
+    "promotions": [],
+    "is_free_entry": null,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "성수(서울), 대전, 대구, 부산 (총 4회)",
+    "venue_type": "street_standalone",
+    "neighborhood": "성수동 등",
+    "city": "서울/대전/대구/부산",
+    "period_from": "2023-09-01",
+    "period_to": null,
+    "area_pyeong": null,
+    "multi_store": true,
+    "derived": {
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "롯데칠성음료 발표. '1일 평균 1천여 명 이상' 일별 수치(회차별 누적 미공개). 성수 첫 회차 2023년 9월 개시",
+    "visitors_source_quote": "2023년 9월 성수를 시작으로 총 4회에 걸쳐 대전, 대구, 부산에서 진행된 '새로 팝업스토어'는 1일 평균 1천여명 이상의 방문객을 기록하는 등 매회 많은 인파가 몰렸다.",
+    "visitors_source_url": "https://www.newstopkorea.com/news/articleView.html?idxno=27100",
+    "visitors_source_date": "2025-03-18",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": []
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "일평균 수치이므로 총계 환산 금지. 후속 '새로도원'(2025), '새로중앙박물관'(2026)은 별도 레코드. | 병합 레코드: ",
+  "_aggregate": true,
+  "tier": "market_claim",
+  "single_event": false,
+  "exclude_reason": "기간 미상",
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

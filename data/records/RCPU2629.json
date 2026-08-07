@@ -1,0 +1,185 @@
+{
+ "record_id": "RCPU2629",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:레봄카페_레진엔터테인먼트",
+  "space_id": "unresolved:성수_연무장11길8_CORNER50_레봄카페",
+  "client_party_id": "unresolved:주식회사_레진엔터테인먼트_LEZHIN_Ent",
+  "brand_key": "레봄카페",
+  "space_key": "성수_레봄카페"
+ },
+ "intervention": {
+  "concept": "레진엔터테인먼트 사내카페 '레봄카페'의 2026 봄/여름 시즌 테마 팝업 '백야의 꽃길'. IP 굿즈(픽앤팩 MD) 판매와 F&B 운영을 결합한 캐릭터 카페 시즌 테마 교체 운영.",
+  "brand_name": "레봄카페 (백야의 꽃길)",
+  "experience_elements": [
+   "픽앤팩 MD 판매",
+   "F&B(식음료) 제공",
+   "가챠(가챠매출 집계)",
+   "캐치테이블 예약 기반 입장",
+   "현장 픽업대 운영"
+  ],
+  "promotions": [
+   "시즌 테마 '백야의 꽃길' 한정 MD",
+   "알케이크 케이크 박스(블랙박스→크라프트박스 대체)"
+  ],
+  "staging_tags": [
+   "IP 캐릭터 카페",
+   "시즌 테마",
+   "픽앤팩 MD",
+   "F&B"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": null,
+   "area_sqm": null,
+   "planned_operating_days": null,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": 9,
+   "staff_count": null,
+   "experience_density": 2,
+   "goods_scale": 2,
+   "photo_zones": 1,
+   "collab_strength": 0,
+   "ip_awareness": 2,
+   "target_breadth": 1,
+   "entry_friction": 3,
+   "media_push": 1,
+   "season_fit": 3,
+   "venue_prominence": 1
+  },
+  "attr_meta": {
+   "evidence": "연간 대행계약 제4조② '토요일 및 일요일 오전 9시 30분부터 오후 6시 30분까지'→9h, '평일 운영은 상호 협의'. 제3조 카페 운영기간은 2026.2.21~12.31 연간이라 테마(5/23~6/21) 실운영일수 근거 없음 → null. 견적서가 문서 목록에 없어 인력·수량 수치 확보 불가.",
+   "confidence": "medium",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": "서울특별시",
+   "district": "성동구",
+   "venue_name": "성수 키다리스튜디오 사옥 내 레봄카페 (CORNER50)",
+   "venue_type": "사옥 내 상설 카페 공간",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2026-05-23",
+   "to": "2026-06-21",
+   "days": 30
+  },
+  "season": "봄/여름 (백야)",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "최종 견적 총계 55,500,000원(VAT 10% 별도). 노션 확정예산 59,900,000원(vat-)에서 4·5주차 운영스태프 감원(14→10, 13→10) 및 물류철수일 8h→4h 단축으로 감액. 인건비/물류 등 총 운영비용 46,330,000원, 대행수수료 9,266,000원(운영비용 5천만원 미만이므로 총 운영비용의 20%, 만원단위 절삭). 지급조건: 각 테마 행사 당월 50%, 종료월 50% 분할. 선금 50% 29,950,000원 6/10 입금완료, 잔금 6/12 진행. LOSS 총매출 3% 이상 발생시 제조원가(판매가의 50%) 100% 공제. 연간계약 계약기간 2026-02-21~2026-12-31. | 계약구조 확인(2026-07-27): 위탁운영형 — 계약서가 총액 대신 견적서/조건안을 준거로 지정, 따라서 견적 총액이 계약상 확정액"
+  },
+  "brand_requirements": [
+   "영업배상책임보험 가입(대인 1인/1사고당 1,000만원, 대물 1사고당 1,000만원)",
+   "보건증 관리",
+   "의뢰사 기본 가이드 준수 및 변경시 상호 협의",
+   "운영 인력 투입계획 사전 서면 승인",
+   "상품 인도후 10영업일 이내 검수 회신",
+   "비밀유지(무제한 세팅값 등 대외비)",
+   "최종 판매종료 후 재고수량 집계·반품",
+   "계약종료일로부터 14일 이내 시설물 양도 및 원상회복"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": null
+  },
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 30,
+    "weekend_share": 0.33,
+    "holiday_days": 3
+   },
+   "ip_history": {
+    "prior_count": 3,
+    "months_since_last": 1.4,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 0,
+    "holiday_until": 0,
+    "holiday_block_in": 3,
+    "nat_event_gap": 11,
+    "nat_event": "지방선거",
+    "doc_lag_days": 103,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 300,
+   "popup_zone_pass_rate": 0.9,
+   "host_traffic_est": 270.0,
+   "venue_scale_tier": 5,
+   "confidence": "low",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": 2669,
+   "sales_krw": 463696200,
+   "rev_mm_recognized": 29.9
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(6/21 마감보고 기준 테마 최종 판매실적(레진 귀속 총매출): 총매출 463,696,200원(F&B 55,720,300원 / MD 407,975,900원), 입장객 2,669명(전체 테마 중 1위), 노쇼 199명·노쇼율 7.46%. F&B 매출 5,572만원은 역대 최고. 일자별 방문 표 원문 미제공으로 daily 미기재. 시드 손익(2026 1~5월 회계월 기준) 매출 29.9백만원·net 14.4백만원은 월경계 grain으로 테마 전체 판매매출과 성격 다름. 계약금액(견적 55,500,000원)은 소비자 매출(POS)이 아님.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "partial",
+   "rule": "인식액 29.9 < 계약총액 55.5의 90% — 잔금 미인식 추정",
+   "contract_total_mm": 55.5,
+   "last_recognition_period": "2026-05"
+  },
+  "counting_method": "entry",
+  "counting_basis": "입장객 2,669명",
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "12Tp3b6W3WGqNDspfwRLyYCiaq2yxmU3s",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/12Tp3b6W3WGqNDspfwRLyYCiaq2yxmU3s/view",
+   "title": "[스위트스팟]26년 일반인대상 연간 카페영업 및 MD상품 판매 대행 계약서_20260209_법무 재검토_최종본_전자계약 날인본.pdf"
+  },
+  {
+   "doc_id": "18mWSSBKr2TMNw2G1zokgEn5FKrx76F9C4QPpzaEewWM",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/18mWSSBKr2TMNw2G1zokgEn5FKrx76F9C4QPpzaEewWM/view",
+   "title": "■ RC본부 프로젝트 견적서(all)"
+  },
+  {
+   "doc_id": "1X-Bfb6jTib4cjRHXSpGvDl-YwJmUUxuW",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1X-Bfb6jTib4cjRHXSpGvDl-YwJmUUxuW/view",
+   "title": "스위트스팟_레봄 카페 백야의 꽃길 최종 견적서_20260624.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: [스위트스팟]26년 일반인대상 연간 카페영업 및 MD상, 스위트스팟_레봄 카페 백야의 꽃길 최종 견적서_2026. 미확실: 일자별(daily) 방문자·매출 실측표 원문 미제공; area_pyeong(면적) 미상; 레진 담당자 실명/직함/연락처 미확보; 아마란스 계약금액·목적·계약자 null(원장 미반영); 스스 대행매출/이익 정산 최종본과 시드 월경계 손익 grain 정합 미확인; foot_traffic_context 정보 없음; 가챠매출·품절상품 등 세부 실적 수치 미제공"
+ }
+}

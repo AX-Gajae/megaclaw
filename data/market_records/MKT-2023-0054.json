@@ -1,0 +1,89 @@
+{
+ "market_record_id": "MKT-2023-0054",
+ "event_name": "코오롱호텔 베이커리 '옳온' 팝업스토어",
+ "brand": "경주 코오롱호텔",
+ "ip_or_collab": null,
+ "category": "fnb",
+ "intervention": {
+  "concept_description": "연말 파티 콘셉트 공간 재현, 슈톨렌·치타스 치즈 타르트·구운찰빵·소금빵·팡도르 등 시그니처 디저트 판매",
+  "experience_elements": [
+   "연말 파티 콘셉트 공간"
+  ],
+  "promotions": [
+   "구매 고객 한정판 굿즈·타르트 증정",
+   "인플루언서 방문 이벤트"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "롯데백화점 본점",
+  "venue_type": "department_store",
+  "neighborhood": "명동",
+  "city": "서울",
+  "period_from": "2023-11-10",
+  "period_to": "2023-11-23",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 10000,
+  "visitors_period_days": 14,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "코오롱호텔 공식 발표: '경주 코오롱호텔은 베이커리 옳온 팝업스토어가 2주간 누적 방문객 1만 명을 기록하며 성료했다고 밝혔다... 이에 일 평균 700명이 팝업을 방문했으며 슈톨렌 판매량 또한 지난해 동기 대비 20% 증가하는 등 유의미한 결과를 확인했다'",
+  "visitors_source_quote": "경주 코오롱호텔은 베이커리 ‘옳온’ 팝업스토어가 2주간 누적 방문객 1만 명을 기록하며 성료했다고 밝혔다.",
+  "visitors_source_url": "http://www.travelinfo.co.kr/cmm/index_news.html?MODE=view&BD_CD=NEWS&MSEQ=54226",
+  "visitors_source_date": "2023-11-24",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "이에 일 평균 700명이 팝업을 방문했으며 슈톨렌 판매량 또한 지난해 동기 대비 20% 증가하는 등 유의미한 결과를 확인했다.",
+    "특히 슈톨렌의 경우 방문객 8명 중 1명이 구입한 것으로 나타나며 인기를 입증했다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "2023년 4분기. 이후 현대 무역센터점 연장 운영(비대상 베뉴). | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

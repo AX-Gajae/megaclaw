@@ -1,0 +1,207 @@
+{
+ "record_id": "RCPU2536",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:ITZY",
+  "space_id": "unresolved:성수_HS공업사",
+  "client_party_id": null,
+  "brand_key": "ITZY",
+  "space_key": "성수_HS공업사"
+ },
+ "intervention": {
+  "concept": "ITZY 팝업스토어 (성수 HS공업사). 상세 문서 미제공으로 컨셉·체험요소 확인 불가.",
+  "brand_name": "ITZY",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": "성수",
+   "venue_name": "HS공업사",
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-09-18",
+   "to": "2025-09-25",
+   "days": 8
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "성수 HS공업사"
+  },
+  "derived": {
+   "duration": {
+    "days": 8,
+    "weekend_share": 0.25,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 32,
+    "holiday_until": 15,
+    "holiday_block_in": 0,
+    "nat_event_gap": 43,
+    "nat_event": null,
+    "doc_lag_days": 0,
+    "doc_dates_found": 5
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 39600000.0,
+    "pnl_pre_accounts": 2,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2025-07-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 86.6
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-09, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-09"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "149NyaZuSmiZkI2W53tmh6U33GpJ7XEiR",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/149NyaZuSmiZkI2W53tmh6U33GpJ7XEiR/view",
+   "title": "스위트스팟_9월 ITZY 팝업스토어_공간 대관 대행 계약서_250714_감사추적인증서.pdf"
+  },
+  {
+   "doc_id": "15GkDFHLC7i4IaUVwIlB34ftT34LuGDVn",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/15GkDFHLC7i4IaUVwIlB34ftT34LuGDVn/view",
+   "title": "견적서_유니폼_단체티샵 250911.png"
+  },
+  {
+   "doc_id": "15m98Ds9DraEEa9SFUNYXHYTAhaWjt1ZA",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/15m98Ds9DraEEa9SFUNYXHYTAhaWjt1ZA/view",
+   "title": "견적서_에이렌탈_잇지_9.18 스위트스팟(김률희) 님.xlsx"
+  },
+  {
+   "doc_id": "1CajjLI4Am1sj2TZBrZXl78K1UB5e6Xb9",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CajjLI4Am1sj2TZBrZXl78K1UB5e6Xb9/view",
+   "title": "견적서_POS_NICE VAN_있지.pdf"
+  },
+  {
+   "doc_id": "1DhAP458AkDYpst6DEee0EUhwBeMey2P6",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DhAP458AkDYpst6DEee0EUhwBeMey2P6/view",
+   "title": "견적서_[견적서-현대드림애드] 잇지 배너 3장.xls"
+  },
+  {
+   "doc_id": "1J5zVQVTNcv3ZjDkzWBMCQA8nI2rBwkAa",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1J5zVQVTNcv3ZjDkzWBMCQA8nI2rBwkAa/view",
+   "title": "ITZY HS성수공업사_결과보고서.pdf"
+  },
+  {
+   "doc_id": "1K6i0TItFSbzBtC2Cml0wCizCaPutgAqd",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1K6i0TItFSbzBtC2Cml0wCizCaPutgAqd/view",
+   "title": "견적서_KB손해보험_0919청약서(스위트스팟_ITZY_미날인).pdf"
+  },
+  {
+   "doc_id": "1TnAB3gcpgHr9hnpRREtMg86YR_kACp7Z",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1TnAB3gcpgHr9hnpRREtMg86YR_kACp7Z/view",
+   "title": "팝업공간 대관 대행 계약서_스위트스팟 JYP 팝업건 -송부.docx"
+  },
+  {
+   "doc_id": "1fm0sbNLXuIR50sox33cMypom7cudGws-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1fm0sbNLXuIR50sox33cMypom7cudGws-/view",
+   "title": "견적서_경호팀_2025년 9월 19-25일 아티스트 팝업스토어 경호 건 견적서(뉴파트너) 2차.xlsx"
+  },
+  {
+   "doc_id": "1iM8ZLFxuQ9o1lij5mWuUw3BkxzRdW45y",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1iM8ZLFxuQ9o1lij5mWuUw3BkxzRdW45y/view",
+   "title": "팝업공간 대관 대행 계약서_스위트스팟 JYP 팝업건.docx"
+  },
+  {
+   "doc_id": "1j5eU_gUfvfleaO5FRXatGv-dM4jzPGga",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1j5eU_gUfvfleaO5FRXatGv-dM4jzPGga/view",
+   "title": "[로폼전자서명]스위트스팟_9월 ITZY 팝업스토어_공간 대관 대행 계약서_250714.pdf"
+  },
+  {
+   "doc_id": "1qv1fJqB6Gx3WKMi8wf4ryT7JQUsp1P_k",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1qv1fJqB6Gx3WKMi8wf4ryT7JQUsp1P_k/view",
+   "title": "HS 공업사 대관 계약서_스위트스팟 JYP팝업건.pdf"
+  },
+  {
+   "doc_id": "1ri2-wCsZ4fetXH2W25bslN6Tidw9sfXf",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ri2-wCsZ4fetXH2W25bslN6Tidw9sfXf/view",
+   "title": "ITZY_팝업_최종견적서_0926.pdf"
+  },
+  {
+   "doc_id": "1sSZ3N18WaCgLSDlyAS6l-NpRTVOtbx1W",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1sSZ3N18WaCgLSDlyAS6l-NpRTVOtbx1W/view",
+   "title": "ITZY_팝업스토어 운영안_수정20250916.pdf"
+  },
+  {
+   "doc_id": "1srRM3vWGmv41oY5HAYEMX1JZJs2GoBus",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1srRM3vWGmv41oY5HAYEMX1JZJs2GoBus/view",
+   "title": "견적서_7.POS SYSTEM 견적서 NICE VAN_스위트스팟_itzy 성수_20250918.pdf"
+  },
+  {
+   "doc_id": "1xU4-KPjhT5_Cgo2S-jVNQ6x5MIm-F1Ip",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1xU4-KPjhT5_Cgo2S-jVNQ6x5MIm-F1Ip/view",
+   "title": "견적서_현대드림애드_배너_있지.xls"
+  },
+  {
+   "doc_id": "1zp4TQrX-GJ53YedO_zwEl-YoyRiEuKT-",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1zp4TQrX-GJ53YedO_zwEl-YoyRiEuKT-/view",
+   "title": "[로폼전자서명]ITZY x TWINZY POP-UP STORE _ON AIR_ 운영 대행계약서_주식회사 스위트스팟.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서/기획서/견적서/결과보고서) 전체 미제공; client_name 불명; 도시·정확한 주소 불명; 면적 불명; 수수료 구조 불명; 컨셉·체험요소·프로모션 불명; 방문객수·매출 실측 데이터 없음; 예상 방문객 수 불명"
+ }
+}

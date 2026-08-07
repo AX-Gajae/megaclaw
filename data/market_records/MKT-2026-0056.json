@@ -1,0 +1,92 @@
+{
+ "market_record_id": "MKT-2026-0056",
+ "event_name": "제6회 스타필드 벌룬 페스티벌(텔레토비·피너츠, 고양점)",
+ "brand": "스타필드",
+ "ip_or_collab": "텔레토비·피너츠(스누피)",
+ "category": "character",
+ "intervention": {
+  "concept_description": "대형 캐릭터 벌룬 전시·체험 행사. 스타필드 고양에서 2026-07-16~28 운영(하남·안성 릴레이).",
+  "experience_elements": [
+   "대형 벌룬 전시",
+   "체험존",
+   "굿즈 판매"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "스타필드 고양",
+  "venue_type": "mall",
+  "neighborhood": "고양",
+  "city": "고양(경기)",
+  "period_from": "2026-07-16",
+  "period_to": "2026-07-28",
+  "area_pyeong": null,
+  "multi_store": true,
+  "derived": {
+   "duration": {
+    "days": 13,
+    "weekend_share": 0.31,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 20000,
+  "visitors_period_days": 4,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "스타필드 측 집계, 개최 첫 주말(7.16~19) 4일 기준(포브스코리아 보도 인용)",
+  "visitors_source_quote": "지난 16일부터 19일까지 4일간 누적 방문객 2만 명 이상이 스타필드 고양을 찾았다.",
+  "visitors_source_url": "https://www.forbeskorea.co.kr/news/articleView.html?idxno=402307",
+  "visitors_source_date": "2026-07-20",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "체험존 최대 2시간 이상 대기",
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "인기 체험존은 최대 2시간 이상 대기해야 입장할 수 있었다. (포브스코리아 2026-07-20)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true,
+   "days_stated": 4,
+   "days_stored": 13,
+   "days_corrected": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "개초 4일 시점 수치(전체 기간 누적 미공개). 행사 진행 중(2026-07-24 기준) | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,240 @@
+{
+ "record_id": "RTPU2447",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:농심_안성탕면",
+  "space_id": "unresolved:킨텍스_제2전시장_7_8A홀",
+  "client_party_id": "unresolved:농심_면마케팅팀",
+  "brand_key": "농심_안성탕면",
+  "space_key": "킨텍스"
+ },
+ "intervention": {
+  "concept": "캠핑과 어울리는 라면 안성탕면 3종을 홍보하는 고카프(캠핑 페스티벌) 부스. 최강조합 캠핑라면 레시피 안내, 룰렛 이벤트 및 라면 증정, 포토존과 인스타그램 인증 이벤트를 운영했다.",
+  "brand_name": "농심 안성탕면",
+  "experience_elements": [
+   "캠핑 최강조합 라면 레시피 안내",
+   "룰렛 이벤트",
+   "라면 증정행사",
+   "캠핑 컨셉 포토존",
+   "인스타그램 인증 이벤트"
+  ],
+  "promotions": [
+   "룰렛 참여 시 순하군 안성탕면·핫팩·냄비받침대·스티커·메모지 증정",
+   "인스타그램 게시물 작성 고객 추첨 캠핑키트 10명 증정(좋아요순 5명+랜덤 5명)"
+  ],
+  "staging_tags": [
+   "캠핑 VMD",
+   "포토존",
+   "독립부스 2동",
+   "비조명 간판",
+   "벽면 브랜딩"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": 2400,
+   "area_sqm": null,
+   "planned_operating_days": 3,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": 8,
+   "staff_count": null,
+   "experience_density": 2,
+   "goods_scale": 1,
+   "photo_zones": 1,
+   "collab_strength": 1,
+   "ip_awareness": 4,
+   "target_breadth": 3,
+   "entry_friction": 1,
+   "media_push": 1,
+   "season_fit": 3,
+   "venue_prominence": 3
+  },
+  "attr_meta": {
+   "evidence": "문서 2건 모두 내용 공란. 조건 '부스 운영시간 10시~18시(총 8시간), 11/28 반나절 세팅'→운영 3일(11/29~12/1). 고카프 29,561명은 3일 총 방문객이라 일단위 아님→host null.",
+   "confidence": "low",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별",
+   "giveaway_note": "재검증 확정 — 순하군 안성탕면 520+1,200+680 = 2,400 전량 소진. 라벨(2,400)과 같은 값이므로 공급 상한에 걸린 하한 라벨이다."
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": "고양시",
+   "district": "일산서구",
+   "venue_name": "킨텍스 제2전시장 7,8A홀",
+   "venue_type": "전시장",
+   "foot_traffic_context": "고카프(캠핑 페스티벌) 전시회 내 부스, 행사 총 방문객 약 29,561명",
+   "venue_slot": "A홀"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-11-29",
+   "to": "2024-12-01",
+   "days": 3
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 24,300,000원(VAT 10% 별도). 실비정산액 소계 22,860,000원 + 대행수수료(정가항목 제외 소계의 10%) 1,727,000원 - 네고 230,000원(만단위 이하 절사). 부스비 3,090,000원은 조기신청 20% 할인 적용. 기획료 1,000,000원, 디자인 1,500,000원, 부스 브랜딩 제작물 10,000,000원 등."
+  },
+  "brand_requirements": [
+   "부스 운영시간 10시~18시(총 8시간)",
+   "11/28 반나절 세팅"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "고카프 캠핑 페스티벌 전시회 내 부스, 행사 총 방문객 약 29,561명"
+  },
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.67,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 1.9,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 72,
+    "holiday_until": 57,
+    "holiday_block_in": 0,
+    "nat_event_gap": 15,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 500000.0,
+    "pnl_pre_accounts": 1,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2024-10-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 30000,
+   "popup_zone_pass_rate": 0.5,
+   "host_traffic_est": 15000.0,
+   "venue_scale_tier": 2,
+   "confidence": "medium",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2024-11-29",
+    "visitors": 520,
+    "sales_krw": null
+   },
+   {
+    "date": "2024-11-30",
+    "visitors": 1200,
+    "sales_krw": null
+   },
+   {
+    "date": "2024-12-01",
+    "visitors": 680,
+    "sales_krw": null
+   }
+  ],
+  "totals": {
+   "visitors": 2400,
+   "sales_krw": null,
+   "rev_mm_recognized": 24.3
+  },
+  "counting_method": "participation",
+  "counting_basis": "'농심 부스 추정 방문객 수' 컬럼. 추정치이며 일자별 순하군 안성탕면 소진수량(520/1200/680)과 일치. 굿즈 증정·룰렛 이벤트 참여 기반 추정. 별도로 '고가프 최종 방문객 수'(29,561명)는 전시회 전체 방문객.",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(농심 부스 추정 방문객은 약 2,400명(전량 굿즈 소진). 전시회 전체 방문객은 3일 합계 약 29,561명(11/29 6,579, 11/30 11,002, 12/01 11,980).소비자 매출(POS)은 없음 — 모든 굿즈 무료 증정.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 24.3 ≈ 계약총액 24.3",
+   "contract_total_mm": 24.3,
+   "last_recognition_period": "2024-12"
+  },
+  "label_trust": {
+   "grade": "B",
+   "flags": [
+    "E"
+   ],
+   "why": "측정 확정 — 계측 증정물 소진량 계수 — 순하군 안성탕면 배부 수량('농심 굿즈 소진수량' 열, 합계 '전량 · 일별 완결",
+   "regraded_from": "E"
+  },
+  "label_scope": {
+   "label_from": "2024-11-29",
+   "label_to": "2024-12-01",
+   "label_active_days": 3,
+   "label_span_days": 3,
+   "label_contiguous": true,
+   "daily_sum": 2400,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  },
+  "label_history": [
+   {
+    "at": "regrade R1 (2026-07-28)",
+    "action": "regrade",
+    "changes": [
+     "등급 E → B"
+    ],
+    "verdict": "측정 확정 — 계측 증정물 소진량 계수 — 순하군 안성탕면 배부 수량('농심 굿즈 소진수량' 열, 합계 '전량 · 일별 완결",
+    "origin": "measured",
+    "instrument": "증정물 소진량 계수 — 순하군 안성탕면 배부 수량('농심 굿즈 소진수량' 열, 합계 '전량 소진')",
+    "column_quote": "결과보고서 '1. REVIEW [ KPI ]' 표 — 상단 열: '목록 | 고가프 | 농심 부스 | 농심 굿즈', 하단 열: '구분 | 최종 방문객 수 | 추정 방문객 수 | 소진수량'. 행: '11월 29일  6,579 명 | 520 명 | ·순하군 안성탕면 520개 ·핫팩 90개 ·냄비받침대 70개 ·포스트잇 200개 ·스티커 100개', '11월 30",
+    "evidence": "라벨 열 이름은 '추정 방문객 수'이고 총계에 '약'이 붙어 있어 표현만 보면 추산이지만, 값이 같은 행 '농심 굿즈 소진수량'의 순하군 안성탕면 배부 개수와 일자별로 정확히 일치한다(520 / 1,200 / 680, 합 2,400, '전량 소진'). 즉 추산이 아니라 증정물 실측 소진량을 방문객 열에 옮겨 적은 것이며, 배수 환산이 없다(×1). RTPU2528에서 라벨 2,000이 리플렛 실측 소진량이었던 것과 동일한 패턴이다. 세 값 모두 40의 배수(13·30·17박스)로 박스 단위 재고 소진 계수와 정합. 옆 열 '고가프 최종 방문객 수 약 29,561 명'(전시회 전체 3일 합계)이 E 사유 '추산 표현'의 실제 출처로 보이며 이는 우리 라벨이 아니다. 다만 (1) 열 이름이 '추정'이고 (2) "
+   }
+  ],
+  "measurement_instrument": "증정물 소진량 계수 — 순하군 안성탕면 배부 수량('농심 굿즈 소진수량' 열, 합계 '전량 소진')"
+ },
+ "docs": [
+  {
+   "doc_id": "1W8Tx8iLiLtQWOiLowfcevHlekLJREwH8",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1W8Tx8iLiLtQWOiLowfcevHlekLJREwH8/view",
+   "title": "계약서_내용없음.txt"
+  },
+  {
+   "doc_id": "1X55Ep-amP9nTzMYv93wnDwI_Q-BWrgCp",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1X55Ep-amP9nTzMYv93wnDwI_Q-BWrgCp/view",
+   "title": "RTPU2447_농심 안성탕면 고카프 프로모션_견적서_최종.pdf"
+  },
+  {
+   "doc_id": "1kf-RmOR_EALHUdN_LSxH9f2R1rLYFfQa",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1kf-RmOR_EALHUdN_LSxH9f2R1rLYFfQa/view",
+   "title": "RTPU2447_농심 안성탕면 고카프 프로모션_결과보고서_1205.pptx"
+  },
+  {
+   "doc_id": "1p5--BolU57pD7A3zgzv4qlteB_OOXy0J",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1p5--BolU57pD7A3zgzv4qlteB_OOXy0J/view",
+   "title": "RTPU2447_농심 안성탕면 고카프 프로모션_결과보고서_1205.pdf"
+  },
+  {
+   "doc_id": "1yddW1L5LXkotBQf8td-2xSgHFKbRadwW",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1yddW1L5LXkotBQf8td-2xSgHFKbRadwW/view",
+   "title": "제안서_내용없음.txt"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 3건: RTPU2447_농심 안성탕면 고카프 프로모션_견적서_, RTPU2447_농심 안성탕면 고카프 프로모션_결과보고, RTPU2447_농심 안성탕면 고카프 프로모션_결과보고. 미확실: area_pyeong(부스 면적 미기재); POS 소비자 매출 없음(무료 증정 행사); 기획서/제안서 부재로 예상 방문객수 미확인; 방문객 수치는 추정치"
+ }
+}

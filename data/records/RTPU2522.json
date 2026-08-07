@@ -1,0 +1,145 @@
+{
+ "record_id": "RTPU2522",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:문경시청",
+  "space_id": "unresolved:스타필드코엑스_B1F_ZARA앞",
+  "client_party_id": "unresolved:문경시청",
+  "brand_key": "문경시청",
+  "space_key": "스타필드_코엑스"
+ },
+ "intervention": {
+  "concept": "문경 찻사발축제를 홍보하는 부스로 스타필드 코엑스 B1F에서 진행. 전시, 발물레 시연, 전통주 시음 프로그램으로 구성.",
+  "brand_name": "문경시청 찻사발축제 홍보부스",
+  "experience_elements": [
+   "전시",
+   "발물레 시연",
+   "전통주 시음"
+  ],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": null,
+   "venue_name": "스타필드 코엑스",
+   "venue_type": "쇼핑몰",
+   "foot_traffic_context": "B1F ZARA 앞"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-04-11",
+   "to": "2025-04-12",
+   "days": 2
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 4,840,000원 (VAT 포함). 대관비 4,000,000원, 소계의 10% 대행수수료(정가 항목 제외), 일반관리비+대행수수료+VAT 합산. 기획료·디자인 0원. 십만단위 이하 절사."
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "스타필드 코엑스 B1F ZARA 앞 부스"
+  },
+  "derived": {
+   "duration": {
+    "days": 2,
+    "weekend_share": 0.5,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 39,
+    "holiday_until": 22,
+    "holiday_block_in": 0,
+    "nat_event_gap": 53,
+    "nat_event": null,
+    "doc_lag_days": 10,
+    "doc_dates_found": 3
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 220260.0,
+    "pnl_pre_accounts": 3,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-03-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 16.7
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-04, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": 4.4,
+   "last_recognition_period": "2025-04"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "18nZNyGt9Beqm3D58M4SZAIH0USIl7oVC",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/18nZNyGt9Beqm3D58M4SZAIH0USIl7oVC/view",
+   "title": "(Sweetspot) 문경시청_찻사발축제 홍보부스 제작_예산안_5차_250401.pdf"
+  },
+  {
+   "doc_id": "19joXo1y7rnNi_sisnCDByHTivakvkmOf",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/19joXo1y7rnNi_sisnCDByHTivakvkmOf/view",
+   "title": "문경관광공사 계약서.pdf"
+  },
+  {
+   "doc_id": "1D7zEoWGSOd3jz8m6BhBMLQoUXvCn917I",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1D7zEoWGSOd3jz8m6BhBMLQoUXvCn917I/view",
+   "title": "계약서_스위트스팟.pdf"
+  },
+  {
+   "doc_id": "1HW1KWLKAPyK00jpyExmhG2E2YTpLzRbT",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1HW1KWLKAPyK00jpyExmhG2E2YTpLzRbT/view",
+   "title": "(Sweetspot) 문경시청_찻사발축제 홍보부스 대관_견적서_250318.pdf"
+  },
+  {
+   "doc_id": "1WhLsCiA7zcwedloF0YaFg74QZC6O-C1o",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1WhLsCiA7zcwedloF0YaFg74QZC6O-C1o/view",
+   "title": "[Sweetspot] 문경시청_찻사발축제 홍보부스_제안서_250310.pdf"
+  },
+  {
+   "doc_id": "1gzMvQ1CT2PRi-bn86eVOa9k36FoUWFOr",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1gzMvQ1CT2PRi-bn86eVOa9k36FoUWFOr/view",
+   "title": "문경시청 찻사발 홍보부스.txt"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: [Sweetspot] 문경시청_찻사발축제 홍보부스_제안, (Sweetspot) 문경시청_찻사발축제 홍보부스 대관. 미확실: 결과보고서 없음 - 방문자수/매출 실측 불가; 면적(평) 정보 없음; 운영시간 10:00-22:00은 제안서에 있으나 별도 필드 없음; client_name 문서상 문경시청 이정후님으로 추정"
+ }
+}

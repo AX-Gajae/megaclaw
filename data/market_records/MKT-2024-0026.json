@@ -1,0 +1,88 @@
+{
+ "market_record_id": "MKT-2024-0026",
+ "event_name": "포켓몬타운 2024(롯데타운 잠실)",
+ "brand": "롯데백화점/포켓몬코리아",
+ "ip_or_collab": "포켓몬",
+ "category": "character",
+ "intervention": {
+  "concept_description": "잠실 롯데타운 일대를 포켓몬 테마로 꾸민 대규모 지역 행사. 2024-04-26~05-19, 24일간 운영. 팝업스토어·포토존·체험 부스 포함.",
+  "experience_elements": [
+   "팝업스토어",
+   "포토존",
+   "스탬프 랠리",
+   "체험 부스"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "롯데타운 잠실 일대(롯데월드몰·롯데백화점 잠실점)",
+  "venue_type": "mall",
+  "neighborhood": "잠실",
+  "city": "서울",
+  "period_from": "2024-04-26",
+  "period_to": "2024-05-19",
+  "area_pyeong": null,
+  "multi_store": true,
+  "derived": {
+   "duration": {
+    "days": 24,
+    "weekend_share": 0.33,
+    "holiday_days": 3
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 14.3,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 4000000,
+  "visitors_period_days": 24,
+  "counting_basis": "exposure",
+  "counting_basis_note": "잠실 롯데타운 행사 전체 방문객(유동 포함) — 롯데백화점 발표(서울경제 보도 인용)",
+  "visitors_source_quote": "지난해 4월 26일부터 5월 19일까지 24일간 진행된 '포켓몬타운 2024'에는 400만 명이 방문해 전년 동일 기간 대비 20% 신장했다.",
+  "visitors_source_url": "https://m.sedaily.com/article/14056222",
+  "visitors_source_date": "2025-04-21",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "D",
+   "flags": [
+    "D"
+   ],
+   "why": "스코프 혼합(합산/총계) 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "행사 전체 방문객 기준(팝업스토어 단독 입장 집계 아님) | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

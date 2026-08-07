@@ -1,0 +1,87 @@
+{
+ "market_record_id": "MKT-2024-0038",
+ "event_name": "라이즈 'RIIZING' 팝업스토어(스타필드 수원)",
+ "brand": "SM엔터테인먼트",
+ "ip_or_collab": "라이즈(RIIZE) 미니 1집 'RIIZING'",
+ "category": "entertainment",
+ "intervention": {
+  "concept_description": "미니 1집 발매 기념 팝업. 멤버 캐릭터 조형물, 포토존, MD 판매(약 100평 규모)",
+  "experience_elements": [
+   "캐릭터 조형물",
+   "포토존",
+   "MD 판매"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "스타필드 수원 1층 타워 아트리움·그랜드 아트리움",
+  "venue_type": "mall",
+  "neighborhood": "수원",
+  "city": "수원",
+  "period_from": "2024-06-14",
+  "period_to": "2024-06-23",
+  "area_pyeong": 100,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 2000,
+  "visitors_period_days": 10,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "일평균 방문객 수치(총계 아님). 원문: '팝업스토어 기간 동안 하루 평균 2000여 명이 현장을 방문해 웨이팅 리스트에 이름을 올렸으며' — 총 방문객 계산 금지 원칙에 따라 일평균 값만 기록",
+  "visitors_source_quote": "팝업스토어 기간 동안 하루 평균 2000여 명이 현장을 방문해 웨이팅 리스트에 이름을 올렸으며, 오픈과 동시에 주요 MD가 완판되는 등 현장 열기가 뜨거웠다.",
+  "visitors_source_url": "https://www.asiaartistawards.com/news/detail/93515/all",
+  "visitors_source_date": "2024-06-25",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "웨이팅 리스트 등록 필요한 수준의 대기",
+   "sold_out": "오픈과 동시에 주요 MD 완판",
+   "reservation_fill": null,
+   "signal_quotes": [
+    "오픈과 동시에 주요 MD가 완판되는 등 현장 열기가 뜨거웠다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": true,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "visitors_total 필드에 총계가 아닌 '일평균 2000명' 수치를 note와 함께 기록(원문에 총계 없음). | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

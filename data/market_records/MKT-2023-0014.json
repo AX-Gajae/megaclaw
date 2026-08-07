@@ -1,0 +1,97 @@
+{
+ "market_record_id": "MKT-2023-0014",
+ "event_name": "롯데타운 명동 페스티벌(2023~2025 누적 시리즈)",
+ "brand": "롯데백화점",
+ "ip_or_collab": "롯데그룹 계열사·글로벌 파트너 협업(2026년 회차: 키이스케이프·이미스·설화수·운빨존많겜·김밥대장)",
+ "category": "other",
+ "intervention": {
+  "concept_description": "2023년 시작된 롯데백화점 본점 중심 연례 봄 축제. 팝업스토어·체험 콘텐츠·계열사 마켓 결합, 2026년 회차는 K방탈출 게임·김밥 팝업·LTM 마켓 등",
+  "experience_elements": [
+   "팝업스토어",
+   "체험 이벤트",
+   "포토존"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "롯데백화점 본점(소공동) 일대",
+  "venue_type": "department_store",
+  "neighborhood": "명동",
+  "city": "서울",
+  "period_from": "2023-05-01",
+  "period_to": "2025-05-31",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  },
+  "derived": {
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 1000000,
+  "visitors_period_days": null,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "2023~2025년 누적(연례 행사 합산) 회사 측 수치: '지난해까지 누적 방문객은 100만명에 달한다' — 단일 회차 수치 아님",
+  "visitors_source_quote": "이어 2024년, 2025년에는 글로벌 파트너는 물론 롯데 그룹의 다양한 계열사와 협업을 통해 명동을 넘어 5월에 열리는 강북 최대 봄 축제로 입지를 키웠다. 지난해까지 누적 방문객은 100만명에 달한다.",
+  "visitors_source_url": "https://kpenews.com/View.aspx?No=4074025",
+  "visitors_source_date": "2026-05-12",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "지난해 본점은 외국인 매출은 40%가량 신장했다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [
+   {
+    "value": 400000,
+    "basis": "organizer_claim",
+    "quote": "지난해 총 10일 간 진행된 행사에 롯데백화점 추산 총 40만명의 인원이 방문했다.",
+    "url": "https://ceoscoredaily.com/page/view/2024042414583505214",
+    "date": "2024-04-24"
+   }
+  ],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": true,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": false
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "누적 수치는 2023·2024·2025년 세 회차 합산. 2023년 1회차는 10일간 40만명으로 별도 레코드(MKT-2023-2007) 분리 기록. 기간 필드는 첫 회차~마지막 회차 대략 범위로 표기. 2026 회차는 별도 결과 수치 미발표. | 병합 레코드: ",
+ "_aggregate": true,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "집계형(통합/합산)",
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

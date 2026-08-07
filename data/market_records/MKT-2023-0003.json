@@ -1,0 +1,90 @@
+{
+ "market_record_id": "MKT-2023-0003",
+ "event_name": "마크엠(MARKM) 팝업스토어(현대백화점 판교점)",
+ "brand": "마크엠(신원)",
+ "ip_or_collab": "오마이걸 미미(브랜드 뮤즈)",
+ "category": "fashion",
+ "intervention": {
+  "concept_description": "스트리트 캐주얼 브랜드 아이덴티티 공간. 체험 공간·포토존 구성, 뮤즈 미미 팬미팅(캡슐뽑기·포토부스), Z세대 타깃",
+  "experience_elements": [
+   "포토존",
+   "미미 팬미팅",
+   "캡슐뽑기",
+   "포토부스"
+  ],
+  "promotions": [
+   "할인 프로모션",
+   "사은품(캡슐뽑기)"
+  ],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "현대백화점 판교점 4층",
+  "venue_type": "department_store",
+  "neighborhood": "판교",
+  "city": "성남",
+  "period_from": "2023-01-27",
+  "period_to": "2023-02-02",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 3000,
+  "visitors_period_days": 7,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "마크엠 측 설명 인용 '약 3천여 명에 이르는 고객들이 매장을 방문했다'",
+  "visitors_source_quote": "마크엠 팝업스토어는 현대백화점 판교점 4층에서 지난 1월 27일부터 2월 2일까지 일주일간 성황리에 진행됐으며, 약 3천여 명에 이르는 고객들이 매장을 방문했다.",
+  "visitors_source_url": "https://www.fashionnet.or.kr/daily-news/112014/",
+  "visitors_source_date": "2023-02-12",
+  "sales_krw": 100000000,
+  "sales_source_quote": "신원(대표 박정주)이 전개하는 스트리트 캐주얼 브랜드 '마크엠(MARKM)'이 현대백화점 판교점에서 진행한 팝업스토어에서 일주일간 약 1억 원의 매출을 올리는 등 두드러지는 성과를 기록했다.",
+  "sales_source_url": "https://www.fashionnet.or.kr/daily-news/112014/",
+  "sales_source_date": "2023-02-12",
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "방문객·매출 모두 '약' 수치. K패션뉴스 기사(패션넷 재게재) | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified",
+  "sales": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

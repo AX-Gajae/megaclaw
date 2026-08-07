@@ -1,0 +1,1732 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <title>월드모델 실험실 — 기획안이 열리기 전에 결과를 압니다</title>
+    <style>
+      :root {
+        --black: #050505;
+        --ink: #101010;
+        --paper: #ffffff;
+        --card-light: #f2f5f6;
+        --white: #ffffff;
+        --line: rgba(255, 255, 255, 0.16);
+        --line-dark: #d8dddf;
+        --muted: rgba(255, 255, 255, 0.58);
+        --muted-dark: #4d5353;
+        --deck-scale: 1;
+        --sans: Pretendard, "Apple SD Gothic Neo", -apple-system, "Helvetica Neue", Arial, sans-serif;
+        --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; background: var(--black); }
+      body {
+        margin: 0; overflow: hidden; background: #171717; color: var(--white);
+        font-family: var(--sans); -webkit-font-smoothing: antialiased;
+      }
+      button, a { color: inherit; font: inherit; }
+
+      .deck { height: 100vh; overflow-y: auto; scroll-snap-type: y mandatory; scrollbar-width: none; }
+      .deck::-webkit-scrollbar { display: none; }
+      .slide-shell {
+        position: relative; width: 100vw; height: 100vh; overflow: hidden;
+        scroll-snap-align: start; scroll-snap-stop: always; background: #171717;
+      }
+      .slide {
+        position: absolute; left: 50%; top: 50%; width: 1600px; height: 900px;
+        overflow: hidden; isolation: isolate; background: var(--black); color: var(--white);
+        container-type: inline-size;
+        transform: translate(-50%, -50%) scale(var(--deck-scale)); transform-origin: center;
+      }
+      .slide.light { background: var(--paper); color: var(--black); }
+      .slide::before {
+        content: ""; position: absolute; inset: 0; pointer-events: none; z-index: -1;
+        background-image:
+          linear-gradient(to right, rgba(255,255,255,.035) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255,255,255,.035) 1px, transparent 1px);
+        background-size: 5cqw 5cqw;
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,.7), transparent 90%);
+      }
+      .slide.light::before {
+        background-image:
+          linear-gradient(to right, rgba(5,5,5,.045) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(5,5,5,.045) 1px, transparent 1px);
+      }
+
+      .pad { position: absolute; inset: 0; padding: 4.4% 5%; display: flex; flex-direction: column; }
+      h1, h2, h3, p { margin: 0; word-break: keep-all; }
+
+      .eyebrow {
+        display: flex; align-items: center; gap: .7rem; font-family: var(--mono);
+        font-size: 13px; letter-spacing: .16em; line-height: 1; text-transform: uppercase; color: var(--muted);
+      }
+      .light .eyebrow { color: var(--muted-dark); }
+      .eyebrow::before { content: ""; width: 1.7rem; height: 1px; background: currentColor; }
+
+      .page-mark {
+        position: absolute; right: 5%; top: 4.4%; font-family: var(--mono);
+        font-size: 13px; letter-spacing: .12em; color: var(--muted);
+      }
+      .light .page-mark { color: var(--muted-dark); }
+
+      .display { font-size: 126px; font-weight: 500; line-height: .88; letter-spacing: -.068em; }
+      .title { max-width: 20ch; margin-top: 3.2%; font-size: 52px; font-weight: 520; line-height: 1.04; letter-spacing: -.05em; }
+      .title.sm { font-size: 44px; }
+      .title.xs { font-size: 38px; }
+      .lead { max-width: 50ch; font-size: 20px; line-height: 1.52; letter-spacing: -.025em; color: var(--muted); }
+      .light .lead, .light .muted { color: var(--muted-dark); }
+      .mono { font-family: var(--mono); }
+      .muted { color: var(--muted); }
+      .rule { height: 1px; width: 100%; background: var(--line); }
+      .light .rule { background: var(--line-dark); }
+
+      .badge {
+        display: inline-flex; align-items: center; justify-content: center; min-height: 2rem;
+        padding: .1rem .72rem; border: 1px solid var(--line); border-radius: 100px;
+        font-family: var(--mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap;
+      }
+      .light .badge { border-color: var(--line-dark); }
+      .badge.fill { color: var(--black); background: var(--white); border-color: var(--white); }
+      .light .badge.fill { color: var(--white); background: var(--black); border-color: var(--black); }
+
+      .card { border: 1px solid var(--line); background: rgba(255,255,255,.025); }
+      .light .card { border-color: var(--line-dark); background: var(--card-light); }
+      .card-pad { padding: 1.35rem 1.45rem; }
+      .card-kicker {
+        margin-bottom: .8rem; font-family: var(--mono); font-size: 12px;
+        letter-spacing: .12em; text-transform: uppercase; color: var(--muted);
+      }
+      .light .card-kicker { color: var(--muted-dark); }
+      .card h3 { font-size: 25px; font-weight: 540; line-height: 1.16; letter-spacing: -.035em; }
+      .card p, .small { font-size: 15px; line-height: 1.5; }
+      .xsmall { font-size: 13px; line-height: 1.48; }
+
+      .metric { font-size: 60px; font-weight: 510; letter-spacing: -.055em; line-height: .95; }
+      .metric.sm { font-size: 42px; }
+      .big-quote { max-width: 20ch; font-size: 46px; line-height: 1.08; letter-spacing: -.05em; font-weight: 500; }
+
+      .split-heading { display: grid; grid-template-columns: 1.15fr .85fr; gap: 4%; align-items: end; margin: 2.6% 0; }
+      .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4%; flex: 1; min-height: 0; }
+      .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4%; flex: 1; min-height: 0; }
+      .four-col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2%; }
+
+      .step-number {
+        display: inline-block; min-width: 2.3rem; font-family: var(--mono);
+        font-size: 12px; letter-spacing: .1em; color: var(--muted);
+      }
+      .light .step-number { color: var(--muted-dark); }
+      .experience-card {
+        display: flex; gap: 1rem; align-items: flex-start;
+        padding: .85rem 0; border-top: 1px solid var(--line);
+      }
+      .light .experience-card { border-top-color: var(--line-dark); }
+      .experience-card strong { display: block; font-size: 17px; font-weight: 540; letter-spacing: -.02em; }
+      .experience-card .small { display: block; margin-top: .18rem; }
+
+      .footer-note {
+        display: flex; justify-content: space-between; margin-top: auto; padding-top: 1.4rem;
+        border-top: 1px solid var(--line); font-family: var(--mono); font-size: 12px;
+        letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
+      }
+      .light .footer-note { border-top-color: var(--line-dark); color: var(--muted-dark); }
+
+      .source-line { margin-top: 1rem; font-family: var(--mono); font-size: 12px; letter-spacing: .04em; color: var(--muted); }
+      .light .source-line { color: var(--muted-dark); }
+
+      .stat-band { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+      .light .stat-band { background: var(--line-dark); border-color: var(--line-dark); }
+      .stat-band > div { background: var(--black); padding: 1.15rem 1.25rem; }
+      .light .stat-band > div { background: var(--paper); }
+      .stat-band strong { display: block; font-size: 34px; font-weight: 520; letter-spacing: -.045em; }
+      .stat-band span { display: block; margin-top: .45rem; font-size: 13px; line-height: 1.42; color: var(--muted); }
+      .light .stat-band span { color: var(--muted-dark); }
+
+      table.grid { width: 100%; border-collapse: collapse; font-size: 15px; }
+      table.grid th, table.grid td { text-align: left; padding: .62rem .8rem; border-bottom: 1px solid var(--line); }
+      .light table.grid th, .light table.grid td { border-bottom-color: var(--line-dark); }
+      table.grid th { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 400; }
+      .light table.grid th { color: var(--muted-dark); }
+      table.grid td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+
+      .competition { display: grid; grid-template-columns: 1.25fr repeat(4, 1fr); border: 1px solid var(--line-dark); font-size: 15px; }
+      .competition > div { padding: .72rem .85rem; border-right: 1px solid var(--line-dark); border-bottom: 1px solid var(--line-dark); }
+      .competition > div:nth-child(5n) { border-right: 0; }
+      .competition .head { font-family: var(--mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted-dark); }
+      .competition .head.yes, .competition .yes { background: var(--black); color: #fff; }
+      .competition .head.yes { color: rgba(255,255,255,.72); }
+
+      .timeline { display: grid; grid-template-columns: repeat(6, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+      .light .timeline { border-color: var(--line-dark); }
+      .timeline > div { padding: 1.1rem .9rem; border-right: 1px solid var(--line); min-height: 12.5rem; }
+      .light .timeline > div { border-right-color: var(--line-dark); }
+      .timeline > div:last-child { border-right: 0; }
+      .timeline strong { display: block; margin: .9rem 0 .5rem; font-size: 19px; font-weight: 540; letter-spacing: -.03em; line-height: 1.15; }
+      .timeline p { font-size: 13.5px; line-height: 1.45; color: var(--muted); }
+      .light .timeline p { color: var(--muted-dark); }
+      .timeline .done { background: rgba(255,255,255,.05); }
+      .light .timeline .done { background: var(--card-light); }
+
+
+      .dense .card-pad { padding: 1.02rem 1.12rem; }
+      .dense .card h3 { font-size: 20px; line-height: 1.18; }
+      .dense .card p, .dense .small { font-size: 13.5px; line-height: 1.44; }
+      .dense .xsmall { font-size: 12.2px; line-height: 1.4; }
+      .dense .card-kicker { margin-bottom: .55rem; font-size: 11px; }
+      .dense .experience-card { padding: .58rem 0; }
+      .dense .experience-card strong { font-size: 15px; }
+      .dense .experience-card .small { font-size: 12.6px; }
+      .dense .rule { margin: .8rem 0; }
+
+      .cover-layout { display: grid; grid-template-columns: .92fr 1.08fr; height: 100%; }
+      .cover-copy { display: flex; flex-direction: column; justify-content: space-between; padding: 8% 6% 7% 5%; }
+      .cover-media { position: relative; display: flex; align-items: center; padding: 8% 5% 7% 2%; }
+      .cover-word {
+        position: absolute; top: 3%; right: 1%; z-index: -1; font-size: 300px; font-weight: 600;
+        letter-spacing: -.09em; line-height: .78; color: rgba(255,255,255,.035);
+      }
+
+      .kpi-hero { display: grid; grid-template-columns: .95fr 1.05fr; gap: 4%; align-items: center; flex: 1; min-height: 0; }
+      .bar-row { display: grid; grid-template-columns: 8.5rem 1fr 5rem; align-items: center; gap: .9rem; padding: .5rem 0; }
+      .bar-row .lab { font-size: 16px; }
+      .bar-track { height: .95rem; background: rgba(255,255,255,.09); position: relative; }
+      .light .bar-track { background: #e6eaeb; }
+      .bar-fill { position: absolute; inset: 0 auto 0 0; background: var(--white); }
+      .light .bar-fill { background: var(--black); }
+      .bar-fill.ghost { background: rgba(255,255,255,.34); }
+      .light .bar-fill.ghost { background: #9aa3a4; }
+      .bar-row .val { font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: 15px; text-align: right; }
+
+      .nav {
+        position: fixed; z-index: 100; left: 50%; bottom: 18px; transform: translateX(-50%);
+        display: flex; align-items: center; gap: .3rem; padding: .32rem;
+        border: 1px solid rgba(255,255,255,.18); border-radius: 100px;
+        background: rgba(10,10,10,.84); backdrop-filter: blur(18px); box-shadow: 0 .8rem 2rem rgba(0,0,0,.3);
+      }
+      .nav button {
+        height: 2.2rem; min-width: 2.2rem; padding: 0 .75rem; border: 0; border-radius: 100px;
+        background: transparent; color: rgba(255,255,255,.72); cursor: pointer;
+      }
+      .nav button:hover, .nav button:focus-visible { outline: none; background: rgba(255,255,255,.12); color: #fff; }
+      .counter { min-width: 5.2rem; text-align: center; font-family: var(--mono); font-size: .72rem; letter-spacing: .1em; color: rgba(255,255,255,.65); }
+      .progress { position: fixed; z-index: 101; top: 0; left: 0; width: 100%; height: 2px; background: rgba(255,255,255,.08); }
+      .progress span { display: block; height: 100%; width: 5%; background: #fff; transition: width 260ms ease; }
+
+      @media print {
+        .nav, .progress { display: none; }
+        .deck { height: auto; overflow: visible; }
+        .slide-shell { height: 900px; page-break-after: always; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="progress"><span id="progressBar"></span></div>
+
+        <main class="deck" id="deck">
+
+      <!-- 01 표지 -->
+      <section class="slide-shell" data-title="표지">
+        <article class="slide">
+          <div class="cover-word">67</div>
+          <div class="cover-layout">
+            <div class="cover-copy">
+              <div>
+                <div class="eyebrow">Sweetspot · 월드모델 실험실</div>
+                <h1 class="display" style="margin-top: 9%; font-size:104px">기획안이<br />열리기 전에<br />결과를 압니다</h1>
+                <p class="lead" style="margin-top: 7%; max-width: 33ch">
+                  사람이 <strong style="color:#fff">말로 설명하지 못하는</strong> 집단 행동의 규칙을,
+                  도메인을 가로질러 측정합니다.
+                </p>
+              </div>
+              <div>
+                <div class="rule" style="margin-bottom: 1.2rem"></div>
+                <p class="small muted" style="max-width: 44ch">
+                  IP · 공간 기획의 소비자 반응을 예측하는 파운데이션 모델.
+                  두 기획안 중 어느 쪽이 더 잘 될지 <strong style="color:#fff">100번 중 67번</strong> 맞히고,
+                  <strong style="color:#fff">한 번도 본 적 없는 시장으로 건너갑니다.</strong>
+                </p>
+                <div style="display:flex; gap:.45rem; flex-wrap:wrap; margin-top:1.3rem">
+                  <span class="badge">11개 시장</span><span class="badge">78만 건 채점</span>
+                  <span class="badge">사전 등록 308</span><span class="badge">실험 노트 525</span>
+                </div>
+              </div>
+            </div>
+            <div class="cover-media">
+              <div class="card" style="width:100%; padding:2.6rem 2.8rem">
+                <div class="card-kicker">아직 열리지 않은 기획 3,369건으로 채점</div>
+                <div class="metric" style="font-size:118px">66.4<span style="font-size:52px">%</span></div>
+                <p class="lead" style="margin-top:.9rem; max-width:34ch; font-size:18px">
+                  둘 중 어느 쪽이 더 잘 될지 맞히는 비율. 기준선은 <strong style="color:#fff">50%</strong>입니다.
+                </p>
+                <div class="rule" style="margin:1.8rem 0 1.4rem"></div>
+                <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem">
+                  <div><div class="card-kicker" style="margin-bottom:.35rem">채점한 비교</div><strong style="font-size:26px">742,735쌍</strong></div>
+                  <div><div class="card-kicker" style="margin-bottom:.35rem">학습 기획</div><strong style="font-size:26px">18,540건</strong></div>
+                  <div><div class="card-kicker" style="margin-bottom:.35rem">시장 수</div><strong style="font-size:26px">11개</strong></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-mark">01</div>
+        </article>
+      </section>
+
+      <!-- 02 왜 시작했나 -->
+      <section class="slide-shell" data-title="왜 시작했나">
+        <article class="slide light">
+          <div class="pad">
+            <div class="eyebrow">왜 시작했나 / 01</div>
+            <div class="split-heading">
+              <h2 class="title" style="margin:0; max-width:23ch">
+                우리는 매달 “이 브랜드를, 이 자리에, 이 컨셉으로” 를 결정합니다. 전부 감으로 합니다.
+              </h2>
+              <p class="lead">
+                Sweetspot은 팝업과 공간을 실제로 엽니다. 결정은 매달 내리고,
+                결과는 열고 나서 압니다. 그 사이를 메우는 도구가 업계에 없었습니다.
+              </p>
+            </div>
+            <div class="two-col">
+              <div class="card card-pad" style="display:flex; flex-direction:column">
+                <div class="card-kicker">지금 벌어지는 일</div>
+                <h3>결과를 알게 됐을 때는 이미 늦었고, 그 앎은 다음 기획으로 넘어가지 않습니다.</h3>
+                <div style="margin-top:1.4rem">
+                  <div class="experience-card"><span class="step-number">1월</span><div><strong>A 브랜드 팝업 — 잘 됐다</strong><span class="small muted">왜 잘 됐는지는 회의에서 세 가지 설명이 나왔고, 셋 다 그럴듯했습니다</span></div></div>
+                  <div class="experience-card"><span class="step-number">3월</span><div><strong>그 설명대로 B 를 열었다 — 안 됐다</strong><span class="small muted">그럼 설명이 틀린 건지, 이번이 운이 나빴던 건지 알 방법이 없습니다</span></div></div>
+                  <div class="experience-card"><span class="step-number">5월</span><div><strong>또 새 회의, 또 새 설명</strong><span class="small muted">사례집은 두꺼워지는데 다음을 맞히는 능력은 그대로입니다</span></div></div>
+                </div>
+                <div style="margin-top:auto; padding-top:1.4rem">
+                  <div class="rule" style="margin-bottom:1rem"></div>
+                  <p class="small"><strong>핵심 문제</strong> — 예측이 <em>채점되지 않으면</em> 경험은 쌓여도 실력은 안 쌓입니다.</p>
+                </div>
+              </div>
+              <div class="card card-pad" style="display:flex; flex-direction:column; background:#050505; color:#fff; border-color:#050505">
+                <div class="card-kicker" style="color:rgba(255,255,255,.55)">2년 전 우리가 던진 질문</div>
+                <p class="big-quote" style="margin-top:.6rem">
+                  “지금까지 연 것들을 전부 모아 보면, 다음에 열 것을 미리 맞힐 수 있을까?”
+                </p>
+                <div style="margin-top:auto">
+                  <div class="experience-card" style="border-top-color:rgba(255,255,255,.16)">
+                    <span class="step-number" style="color:rgba(255,255,255,.58)">그런데</span>
+                    <div><strong>막상 해 보니 더 어려운 문제가 앞에 있었습니다.</strong>
+                    <span class="small" style="color:rgba(255,255,255,.58)">맞히는 것보다 <strong style="color:#fff">맞혔는지 아는 것</strong>이 어려웠습니다. 다음 장.</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-note"><span>사례는 쌓이는데 실력은 안 쌓인다</span><span>02</span></div>
+          </div>
+          <div class="page-mark">02</div>
+        </article>
+      </section>
+
+      <!-- 03 소셜 월드모델이란 -->
+      <section class="slide-shell" data-title="우리가 찾는 것">
+        <article class="slide">
+          <div class="pad">
+            <div class="eyebrow">우리가 찾는 것 / 소셜 월드모델</div>
+            <div class="split-heading">
+              <h2 class="title" style="margin:0; max-width:26ch">
+                사람은 자기가 왜 그랬는지 말하지 못합니다. 그런데 집단으로는 규칙적으로 움직입니다.
+              </h2>
+              <p class="lead">
+                그 사이의 간극이 이 회사가 존재하는 이유입니다.
+                우리는 그 규칙을 <strong style="color:#fff">언어로 설명하려는 게 아니라 측정 가능하게</strong> 만듭니다.
+              </p>
+            </div>
+            <div class="three-col">
+              <div class="card card-pad">
+                <div class="card-kicker">01 · 텍스트에 없는 층</div>
+                <h3>“왜 줄을 섰나요?” 에 돌아오는 답은 원인이 아니라 사후 합리화입니다</h3>
+                <p class="small muted" style="margin-top:.9rem">
+                  사람들은 자기 선택의 진짜 이유에 접근하지 못합니다. 설문과 인터뷰가 얻는 것은
+                  <em>말할 수 있는 층</em>뿐입니다.
+                  <strong style="color:#fff">LLM 은 텍스트로 학습합니다 — 즉 사람들이 말한 것으로.</strong>
+                  말해지지 않은 층은 애초에 학습 데이터에 없고, 페르소나를 아무리 정교하게 튜닝해도
+                  없는 것을 꺼낼 수는 없습니다.
+                </p>
+              </div>
+              <div class="card card-pad">
+                <div class="card-kicker">02 · 숫자만으로도 안 됩니다</div>
+                <h3>도메인마다 따로 맞히면 곡선 맞추기지 법칙이 아닙니다</h3>
+                <p class="small muted" style="margin-top:.9rem">
+                  웹툰 데이터로 웹툰 모델, 게임 데이터로 게임 모델을 만들면 각각은 그럭저럭 맞습니다.
+                  그런데 그건 그 시장의 표면 규칙을 외운 것이고,
+                  <strong style="color:#fff">새 시장에서는 처음부터 다시</strong>입니다.
+                  변수는 수천 개고 사람의 심리는 정제되지 않습니다 —
+                  숫자를 더 넣는다고 그 아래층이 드러나지는 않습니다.
+                </p>
+              </div>
+              <div class="card card-pad" style="background:#fff; color:#050505; border-color:#fff">
+                <div class="card-kicker" style="color:var(--muted-dark)">03 · 우리가 하는 일</div>
+                <h3>설명하지 않고, 잽니다</h3>
+                <p class="small" style="margin-top:.9rem; color:var(--muted-dark)">
+                  기획의 조건과 실제 결과를 짝지어 쌓고, 그 짝을 <strong style="color:#050505">채점 가능한 형태</strong>로 만들고,
+                  도메인을 바꿔도 <strong style="color:#050505">살아남는 구조가 무엇인지</strong> 봅니다.
+                  언어로 옮겨 적을 수 없는 것도 <em>재는 것</em>은 가능합니다.
+                  그게 이 실험실이 2년간 만든 물건입니다.
+                </p>
+              </div>
+            </div>
+            <div class="card card-pad" style="margin-top:2%; background:#050505; border-color:rgba(255,255,255,.28)">
+              <div style="display:grid; grid-template-columns:1.05fr 1fr; gap:3rem; align-items:center">
+                <div>
+                  <div class="card-kicker">가설</div>
+                  <h3 style="font-size:29px; line-height:1.22; margin-top:.3rem">
+                    사람이 무엇에 끌리고 무엇을 지나치는지에는 <strong>도메인을 가로지르는 구조</strong>가 있다.
+                    웹툰과 팝업과 모바일 앱은 산업도 소비 방식도 다르지만, 그 아래는 같다.
+                  </h3>
+                </div>
+                <div>
+                  <div class="card-kicker">검증 방법은 하나뿐입니다</div>
+                  <p class="small muted" style="line-height:1.62">
+                    한 도메인에서 배운 것이 <strong style="color:#fff">한 번도 본 적 없는 도메인</strong>에서 통하는지 봅니다.
+                    <strong style="color:#fff">곡선 맞추기는 전이되지 않습니다. 구조는 전이됩니다.</strong>
+                    이건 말로 이길 수 있는 논쟁이 아니라 재야 하는 것이고, 우리는 쟀습니다.
+                  </p>
+                  <div style="display:flex; gap:.45rem; margin-top:1.2rem; flex-wrap:wrap">
+                    <span class="badge fill">결과는 08장</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-note"><span>설명할 수 없는 것을 잴 수는 있다</span><span>03</span></div>
+          </div>
+          <div class="page-mark">03</div>
+        </article>
+      </section>
+
+      <!-- 03 채점기부터 -->
+      <section class="slide-shell" data-title="채점기부터 만들었다">
+        <article class="slide">
+          <div class="pad">
+            <div class="eyebrow">왜 시작했나 / 02 — 우리가 다르게 한 것</div>
+            <div class="split-heading">
+              <h2 class="title" style="margin:0; max-width:24ch">
+                이 분야의 예측 도구가 다 그럴듯해 보이는 이유는, 아무도 채점을 안 하기 때문입니다.
+              </h2>
+              <p class="lead">
+                그래서 우리는 <strong style="color:#fff">예측기보다 채점기를 먼저</strong> 만들었습니다.
+                2년간 우리가 한 일의 절반은 “우리 자신을 못 속이게 만드는 일”이었습니다.
+              </p>
+            </div>
+            <div class="three-col">
+              <div class="card card-pad">
+                <div class="card-kicker">규칙 01 · 시험지를 미리 안 본다</div>
+                <h3>2024년까지만 보여주고, 2025년 이후를 맞히게 합니다</h3>
+                <p class="small muted" style="margin-top:.9rem">
+                  모델은 2025년에 무슨 일이 있었는지 한 글자도 모르는 상태로 예측합니다.
+                  시간으로 잘랐기 때문에 <strong style="color:#fff">정답을 미리 보는 일이 구조적으로 불가능</strong>합니다.
+                  “과거 데이터로 잘 맞히는 모델”은 흔하고, 대부분 이 규칙이 없어서 그렇습니다.
+                </p>
+              </div>
+              <div class="card card-pad">
+                <div class="card-kicker">규칙 02 · 답을 미리 적는다</div>
+                <h3>실험을 돌리기 전에 “이러면 성공, 저러면 실패”를 기록합니다</h3>
+                <p class="small muted" style="margin-top:.9rem">
+                  지금까지 <strong style="color:#fff">308건</strong>이 기록돼 있습니다.
+                  실패한 것도 지우지 않습니다 — 이번 사이클에도 8개 중 4개가 예측과 반대로 나왔고 그대로 남겼습니다.
+                  결과를 보고 기준을 고치는 일이 이 구조에서는 티가 납니다.
+                </p>
+              </div>
+              <div class="card card-pad">
+                <div class="card-kicker">규칙 03 · 자동 검사 19개</div>
+                <h3>모든 실행에 “속고 있지 않은지” 검사가 붙습니다</h3>
+                <p class="small muted" style="margin-top:.9rem">
+                  정답이 새어 들어갔는지, 우연히 잘 나온 건 아닌지, 특정 시장 하나가 무너지진 않았는지,
+                  예측 시점에 알 수 없는 정보를 쓰진 않았는지.
+                  <strong style="color:#fff">하나라도 걸리면 그 실행의 점수는 무효</strong>입니다.
+                </p>
+              </div>
+            </div>
+            <div class="card card-pad" style="margin-top:2%">
+              <div style="display:grid; grid-template-columns:.8fr 1.2fr; gap:2.5rem; align-items:center">
+                <div>
+                  <div class="card-kicker">왜 이게 투자 관점에서 중요한가</div>
+                  <h3 style="font-size:27px; line-height:1.2">이 세 규칙이 없으면, 아무리 좋은 숫자도 검증할 방법이 없습니다.</h3>
+                </div>
+                <p class="small muted">
+                  AI 예측 스타트업의 데모는 대부분 “과거를 잘 설명하는 모델”입니다.
+                  실사할 때 그걸 가려내기가 어렵습니다.
+                  우리는 반대로, <strong style="color:#fff">우리 주장이 틀리면 우리가 먼저 알게 되는 구조</strong>를 먼저 만들고
+                  그 위에서만 숫자를 냅니다. 이 자료의 모든 수치는 그 레일 위에서 나온 것이고,
+                  같은 명령을 다시 실행하면 같은 값이 나옵니다.
+                </p>
+              </div>
+            </div>
+            <div class="footer-note"><span>예측기보다 채점기가 먼저</span><span>03</span></div>
+          </div>
+          <div class="page-mark">03</div>
+        </article>
+      </section>
+
+      <!-- 05 무엇을 맞히는가 -->
+      <section class="slide-shell" data-title="무엇을 맞히는가">
+        <article class="slide light">
+          <div class="pad">
+            <div class="eyebrow">정의 / 정답이 무엇인가</div>
+            <div class="split-heading">
+              <h2 class="title sm" style="margin:0; max-width:25ch">
+                “더 잘 된다”가 무엇인지부터. <em>매출이 아니라 사람 수</em>입니다.
+              </h2>
+              <p class="lead">
+                11개 시장 어디에도 금액을 정답으로 쓰지 않습니다.
+                전부 <strong>“충분히 끌려서 실제로 행동한 사람”의 수</strong>입니다.
+              </p>
+            </div>
+            <div class="two-col dense">
+              <div class="card card-pad">
+                <div class="card-kicker">시장별 정답</div>
+                <table class="grid" style="margin-top:.3rem">
+                  <tr><th>시장</th><th>무엇을 세는가</th></tr>
+                  <tr><td>팝업 · 시장형 팝업</td><td><strong>일평균 방문자 수</strong></td></tr>
+                  <tr><td>펀딩</td><td><strong>후원자 수</strong></td></tr>
+                  <tr><td>웹툰</td><td><strong>관심 등록 수</strong></td></tr>
+                  <tr><td>게임</td><td><strong>리뷰 작성자 수</strong> (30일 창)</td></tr>
+                  <tr><td>모바일 앱 · 비게임 앱</td><td><strong>평가 참여자 수</strong></td></tr>
+                  <tr><td>만화 (한국 · 일본 · 중국)</td><td><strong>서재 등록 수</strong></td></tr>
+                  <tr><td>애니 · 세계 애니</td><td><strong>한줄평 수</strong></td></tr>
+                  <tr><td>아이돌</td><td><strong>초동</strong> (발매 첫 주 판매량)</td></tr>
+                  <tr><td>도서</td><td>판매지수 (판매량의 함수)</td></tr>
+                </table>
+                <div class="rule" style="margin:.8rem 0"></div>
+                <div class="card-kicker" style="margin-bottom:.4rem">중앙값이 어느 정도인지</div>
+                <p class="xsmall muted">
+                  아이돌 초동 <strong>20.7만장</strong> · 웹툰 관심 <strong>3.2만</strong> ·
+                  도서 판매지수 <strong>1.5만</strong> · 게임 리뷰 <strong>3,872</strong> ·
+                  시장형 팝업 일방문 <strong>1,310</strong> · 만화 서재 <strong>1,133</strong> ·
+                  팝업 일방문 <strong>459</strong> · 모바일 평가 <strong>169</strong> ·
+                  애니 한줄평 <strong>63</strong> · 펀딩 후원자 <strong>37</strong>
+                </p>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:1.4%">
+                <div class="card card-pad" style="background:#050505; color:#fff; border-color:#050505">
+                  <div class="card-kicker" style="color:rgba(255,255,255,.55)">왜 매출이 아닌가 — 이게 설계의 핵심입니다</div>
+                  <div style="margin-top:.4rem">
+                    <div class="experience-card" style="border-top:0; padding-top:.2rem; border-top-color:rgba(255,255,255,.16)">
+                      <span class="step-number" style="color:rgba(255,255,255,.58)">01</span>
+                      <div><strong>매출은 기획의 매력이 아니라 값매김에 좌우됩니다</strong>
+                      <span class="small" style="color:rgba(255,255,255,.58)">같은 수요라도 가격을 두 배로 하면 매출이 달라집니다</span></div>
+                    </div>
+                    <div class="experience-card" style="border-top-color:rgba(255,255,255,.16)">
+                      <span class="step-number" style="color:rgba(255,255,255,.58)">02</span>
+                      <div><strong>매출은 시장을 못 건너갑니다</strong>
+                      <span class="small" style="color:rgba(255,255,255,.58)">웹툰 정산과 팝업 정산은 다른 세계입니다</span></div>
+                    </div>
+                    <div class="experience-card" style="border-top-color:rgba(255,255,255,.16)">
+                      <span class="step-number" style="color:rgba(255,255,255,.58)">03</span>
+                      <div><strong>“행동한 사람 수”는 건너갑니다</strong>
+                      <span class="small" style="color:rgba(255,255,255,.58)">방문·후원·관심등록·리뷰는 전부 같은 것을 셉니다 — 끌려서 움직였다</span></div>
+                    </div>
+                  </div>
+                  <div class="rule" style="margin:1.1rem 0; background:rgba(255,255,255,.2)"></div>
+                  <p class="small" style="color:rgba(255,255,255,.58)">
+                    <strong style="color:#fff">전이가 되는 뿌리가 여기 있습니다.</strong>
+                    웹툰과 팝업이 같은 축 위에 놓이는 이유는 모델이 똑똑해서가 아니라
+                    <strong style="color:#fff">같은 것을 세고 있기 때문</strong>입니다.
+                  </p>
+                </div>
+                <div class="card card-pad" style="flex:1">
+                  <div class="card-kicker">그래서 지금 못 하는 것</div>
+                  <h3>“얼마나 많은 사람이 반응하나”는 맞히고 <strong>“얼마 버나”는 못 맞힙니다.</strong></h3>
+                  <p class="small muted" style="margin-top:.8rem">
+                    방문자가 많아도 객단가가 낮으면 매출은 낮습니다.
+                    매출을 맞히려면 POS·정산이 붙어야 하고, 그게 로드맵의
+                    <strong style="color:#050505">“방문·매출 집계 테이블 0행”</strong> 항목입니다. 우연이 아니라 같은 이야기입니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="footer-note"><span>돈이 아니라 사람 수 — 그래서 시장을 건너간다</span><span>05</span></div>
+          </div>
+          <div class="page-mark">05</div>
+        </article>
+      </section>
+
+      <!-- 04 숫자 읽는 법 -->
+      <section class="slide-shell" data-title="숫자 읽는 법">
+        <article class="slide light">
+          <div class="pad">
+            <div class="eyebrow">수확 / 숫자 하나를 제대로 읽기</div>
+            <div class="split-heading">
+              <h2 class="title" style="margin:0; max-width:22ch">
+                “100번 중 67번”이 정확히 무슨 뜻인가.
+              </h2>
+              <p class="lead">
+                아직 열리지 않은 기획 <strong>3,369건</strong>을 둘씩 짝지으면 <strong>74만 쌍</strong>이 나옵니다.
+                각 쌍마다 “어느 쪽이 더 잘 됐나”라는 정답이 있습니다. 그걸 다 채점했습니다.
+              </p>
+            </div>
+            <div class="two-col">
+              <div class="card card-pad">
+                <div class="card-kicker">눈금 위에 놓아 보면</div>
+                <svg viewBox="0 0 560 200" style="width:100%; height:auto; margin:1rem 0" role="img" aria-label="쌍 정확도 눈금">
+                  <line x1="40" y1="110" x2="520" y2="110" stroke="#d8dddf" stroke-width="10" stroke-linecap="round" />
+                  <line x1="40" y1="110" x2="374" y2="110" stroke="#050505" stroke-width="10" stroke-linecap="round" />
+                  <circle cx="40" cy="110" r="8" fill="#9aa3a4" />
+                  <circle cx="374" cy="110" r="13" fill="#050505" />
+                  <circle cx="520" cy="110" r="8" fill="#9aa3a4" />
+                  <g font-family="ui-monospace, Menlo, monospace" font-size="12" fill="#4d5353">
+                    <text x="40" y="145" text-anchor="middle">50%</text>
+                    <text x="40" y="163" text-anchor="middle">동전 던지기</text>
+                    <text x="520" y="145" text-anchor="middle">100%</text>
+                    <text x="520" y="163" text-anchor="middle">완벽한 예지력</text>
+                  </g>
+                  <g font-family="ui-monospace, Menlo, monospace" font-size="20" fill="#050505" font-weight="600">
+                    <text x="374" y="82" text-anchor="middle">66.4%</text>
+                  </g>
+                  <text x="374" y="60" text-anchor="middle" font-size="12" fill="#4d5353" font-family="ui-monospace, Menlo, monospace">지금 여기</text>
+                </svg>
+                <div class="rule" style="margin:.6rem 0 1.1rem"></div>
+                <p class="small">
+                  소비자 반응에는 누구도 미리 못 보는 우연이 섞여 있어 상한이 100%가 아닙니다.
+                  그래서 우리가 쫓는 값은 정확도의 절대치가 아니라 <strong>“이 시장의 한계 대비 얼마나 왔나”</strong>이고,
+                  이 자료의 모든 비교는 그 형태로 되어 있습니다.
+                </p>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:1.4%">
+                <div class="card card-pad">
+                  <div class="card-kicker">시장마다 다르게 나옵니다</div>
+                  <div class="bar-row"><span class="lab">게임</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="val">74.1%</span></div>
+                  <div class="bar-row"><span class="lab">모바일 앱</span><span class="bar-track"><span class="bar-fill" style="width:93%"></span></span><span class="val">72.3%</span></div>
+                  <div class="bar-row"><span class="lab">애니</span><span class="bar-track"><span class="bar-fill" style="width:89%"></span></span><span class="val">71.3%</span></div>
+                  <div class="bar-row"><span class="lab">펀딩</span><span class="bar-track"><span class="bar-fill" style="width:52%"></span></span><span class="val">62.6%</span></div>
+                  <div class="bar-row"><span class="lab">웹툰</span><span class="bar-track"><span class="bar-fill" style="width:51%"></span></span><span class="val">62.2%</span></div>
+                  <div class="bar-row"><span class="lab">팝업</span><span class="bar-track"><span class="bar-fill" style="width:44%"></span></span><span class="val">60.7%</span></div>
+                  <div class="bar-row"><span class="lab" style="opacity:.6">시장형 팝업</span><span class="bar-track"><span class="bar-fill ghost" style="width:19%"></span></span><span class="val" style="opacity:.6">54.6%</span></div>
+                  <p class="xsmall muted" style="margin-top:.8rem">데이터가 두껍고 오래된 시장일수록 잘 맞힙니다.</p>
+                </div>
+                <div class="card card-pad" style="flex:1">
+                  <div class="card-kicker">정직하게 · 가장 낮은 칸</div>
+                  <p class="small">
+                    시장형 팝업 58.0%는 우리 최약점입니다. 원인도 압니다 —
+                    그 시장은 <strong>기획 정보를 채워 넣는 태깅이 아직 부실</strong>합니다.
+                    모델을 더 만져서 오르는 칸이 아니라 데이터를 채워야 오르는 칸이고,
+                    그 구분을 우리가 측정으로 해 뒀다는 것이 요점입니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="footer-note"><span>순위 상관 ρ 0.4667 = 쌍 정확도 66.4% · 유보 3,369건 · 2026-08-05 측정</span><span>04</span></div>
+          </div>
+          <div class="page-mark">04</div>
+        </article>
+      </section>
+
+      <!-- 05 고르기 시늉 -->
+      <section class="slide-shell" data-title="실제 결정에 대입하면">
+        <article class="slide">
+          <div class="pad">
+            <div class="eyebrow">수확 / 실제 의사결정에 대입하면</div>
+            <div class="split-heading" style="margin:1.8% 0">
+              <h2 class="title sm" style="margin:0; max-width:26ch">
+                “후보 다섯 개 중 하나를 고른다.” 우리가 매달 하는 그 결정을 그대로 시뮬레이션했습니다.
+              </h2>
+              <p class="lead">
+                아직 열리지 않은 기획 중 다섯 개를 뽑아 모델이 1순위로 꼽은 것을 고르게 하고,
+                실제 등수를 봤습니다. <strong style="color:#fff">2만 번 반복</strong>했습니다.
+              </p>
+            </div>
+            <div class="kpi-hero dense">
+              <div class="card card-pad">
+                <div class="card-kicker">고른 것의 실제 성적 (100점 = 그 시장 1등)</div>
+                <svg viewBox="0 0 560 250" style="width:88%; height:auto; margin-top:.4rem" role="img" aria-label="후보 5개 중 고르기 결과">
+                  <g font-family="ui-monospace, Menlo, monospace" font-size="12" fill="rgba(255,255,255,.58)">
+                    <text x="12" y="46">아무거나</text><text x="12" y="126">우리 모델</text><text x="12" y="206">완벽한 예지력</text>
+                  </g>
+                  <rect x="118" y="22" width="235" height="34" fill="rgba(255,255,255,.18)" />
+                  <rect x="118" y="102" width="312" height="46" fill="#ffffff" />
+                  <rect x="118" y="182" width="392" height="34" fill="rgba(255,255,255,.34)" />
+                  <g font-family="ui-monospace, Menlo, monospace" font-weight="600" fill="#fff">
+                    <text x="365" y="46" font-size="19">50.0점</text>
+                    <text x="442" y="134" font-size="26">65.7점</text>
+                    <text x="522" y="206" font-size="19" text-anchor="end" fill="#050505">83.3점</text>
+                  </g>
+                </svg>
+                <div class="rule" style="margin:.9rem 0"></div>
+                <p class="small">
+                  다섯 중 진짜 최고를 매번 집으면 83.3점입니다. 우리는 65.7점 —
+                  <strong style="color:#fff">그 상한의 절반 지점</strong>입니다.
+                </p>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:1.4%">
+                <div class="card card-pad dense">
+                  <div class="card-kicker">후보 수를 바꿔도 절반</div>
+                  <table class="grid" style="margin-top:.3rem">
+                    <tr><th>후보 수</th><th>아무거나</th><th>우리 모델</th><th>완벽</th><th>회수율</th></tr>
+                    <tr><td>3개 중 1개</td><td class="num">50.0</td><td class="num"><strong>62.1</strong></td><td class="num">75.0</td><td class="num">48%</td></tr>
+                    <tr><td>5개 중 1개</td><td class="num">50.0</td><td class="num"><strong>65.7</strong></td><td class="num">83.3</td><td class="num">49%</td></tr>
+                    <tr><td>10개 중 1개</td><td class="num">50.0</td><td class="num"><strong>71.0</strong></td><td class="num">90.9</td><td class="num">51%</td></tr>
+                  </table>
+                  <div class="rule" style="margin:1.1rem 0"></div>
+                  <div class="card-kicker" style="margin-bottom:.6rem">고른 것이 실제 몇 등이었나 (후보 5개)</div>
+                  <table class="grid">
+                    <tr><th></th><th>모델</th><th>무작위</th><th>배수</th></tr>
+                    <tr><td>실제 1등을 집는다</td><td class="num">39.1%</td><td class="num">20.0%</td><td class="num">1.96배</td></tr>
+                    <tr><td><strong>실제 꼴찌를 집는다</strong></td><td class="num"><strong>6.9%</strong></td><td class="num">20.0%</td><td class="num"><strong>0.34배</strong></td></tr>
+                  </table>
+                  <p class="xsmall muted" style="margin-top:.8rem">
+                    <strong style="color:#fff">1등을 집는 일보다 꼴찌를 피하는 일을 더 잘합니다</strong> — 1.96배 대 2.91배.
+                    제품의 자리가 “최종 선택”이 아니라 <strong style="color:#fff">“후보 압축과 사고 방지”</strong>인 이유입니다.
+                  </p>
+                </div>
+                <div class="card card-pad dense" style="flex:1; background:#fff; color:#050505; border-color:#fff">
+                  <div class="card-kicker" style="color:var(--muted-dark)">다른 각도 · 상위와 하위를 갈라내는 힘</div>
+                  <h3 style="margin-top:.2rem">모델이 상위 20%로 꼽은 것들의 실제 평균은 <strong>69.2점</strong>, 하위 20%로 꼽은 것들은 <strong>30.2점</strong>입니다.</h3>
+                  <p class="small" style="margin-top:.9rem; color:var(--muted-dark)">
+                    <strong style="color:#050505">41점 차이</strong>로 갈라 냅니다.
+                    “될 것 같은 것”을 고르는 것보다 <strong style="color:#050505">“안 될 것을 미리 빼는 것”</strong>이 실무에서 더 값진 경우가 많은데,
+                    이 숫자가 그쪽 값어치입니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="footer-note"><span>2만 회 반복 · 씨앗 4개 평균 · 유보 표본만</span><span>05</span></div>
+          </div>
+          <div class="page-mark">05</div>
+        </article>
+      </section>
+
+      <!-- 07 그래서 사람보다 나은가 -->
+      <section class="slide-shell" data-title="사람보다 나은가">
+        <article class="slide light">
+          <div class="pad">
+            <div class="eyebrow">정직하게 / 기준선 — 이 숫자가 좋은 건가</div>
+            <div class="split-heading">
+              <h2 class="title sm" style="margin:0; max-width:26ch">
+                “67%”는 기준선이 없으면 아무 말도 하지 않습니다. 그래서 <em>판의 난이도</em>로 갈랐습니다.
+              </h2>
+              <p class="lead">
+                실제 성적이 크게 벌어진 쌍(<strong>명백</strong>)과 엎치락뒤치락한 쌍(<strong>접전</strong>)을
+                나눠서 채점했습니다. 이 둘은 완전히 다른 문제였습니다.
+              </p>
+            </div>
+            <div class="two-col dense">
+              <div class="card card-pad">
+                <div class="card-kicker">난이도별 · 실무자가 쓸 법한 규칙과 함께</div>
+                <table class="grid" style="margin-top:.4rem">
+                  <tr><th>기준</th><th>전체</th><th>접전<br /><span class="xsmall muted">2배 미만</span></th><th>가운데<br /><span class="xsmall muted">2~5배</span></th><th>명백<br /><span class="xsmall muted">5배 이상</span></th></tr>
+                  <tr><td><strong>우리 모델</strong></td><td class="num"><strong>66.5%</strong></td><td class="num"><strong>54.9%</strong></td><td class="num"><strong>63.7%</strong></td><td class="num"><strong>77.8%</strong></td></tr>
+                  <tr><td>그 시장 최고의 단일 지표</td><td class="num">57.6%</td><td class="num">52.1%</td><td class="num">55.2%</td><td class="num">63.7%</td></tr>
+                  <tr><td>모든 시장에 쓰는 규칙 하나</td><td class="num">55.7%</td><td class="num">51.9%</td><td class="num">54.7%</td><td class="num">59.3%</td></tr>
+                  <tr><td class="muted">동전 던지기</td><td class="num muted">50.0%</td><td class="num muted">50.0%</td><td class="num muted">50.0%</td><td class="num muted">50.0%</td></tr>
+                </table>
+                <div class="rule" style="margin:.75rem 0"></div>
+                <p class="small">
+                  <strong>단일 지표보다 8.9%p 낫습니다.</strong> 처음엔 3.0%p로 쟀는데,
+                  <strong style="color:#050505">단일 지표가 자기가 구별할 수 있는 문제만 채점받고 있었습니다</strong> —
+                  평균 37%의 문제가 채점에서 빠져 있었습니다.
+                </p>
+                <p class="xsmall muted" style="margin-top:.7rem">
+                  규칙은 <strong>학습 데이터에서만</strong> 골랐습니다. 유보를 보고 고르면 68.0%까지 오르는데
+                  그건 답을 보고 고른 것이라 기준선이 아닙니다.
+                  <strong>우리 모델은 예측이 연속이라 이 함정에서 유리한 쪽이었고 그래서 더 늦게 알아챘습니다.</strong>
+                </p>
+              </div>
+              <div class="dense" style="display:flex; flex-direction:column; gap:1.1%">
+                <div class="card card-pad" style="background:#050505; color:#fff; border-color:#050505">
+                  <div class="card-kicker" style="color:rgba(255,255,255,.55)">읽는 법 · 자기 홍보를 한 번 깎았습니다</div>
+                  <h3 style="margin-top:.2rem">“명백한 판 77.8%”는 자랑할 숫자가 아닙니다. <strong>실무의 판은 거기 없습니다.</strong></h3>
+                  <p class="small" style="margin-top:.9rem; color:rgba(255,255,255,.58)">
+                    후보 다섯 중 1등과 2등의 실제 성적 차를 재 보니 평균 <strong style="color:#fff">16.7점</strong>이었습니다.
+                    그 구간(2배 미만)의 정확도는 <strong style="color:#fff">54.9%</strong>입니다 — 77.8%가 아니라.
+                    <strong style="color:#fff">쓰이는 자리의 숫자를 봐야 합니다.</strong><br /><br />
+                    대신 실제로 잘하는 게 따로 있습니다 —
+                    <strong style="color:#fff">나쁜 것을 거르는 일</strong>입니다. 다음 장.
+                  </p>
+                </div>
+                <div class="card card-pad" style="flex:1">
+                  <div class="card-kicker">“지난번에 통한 규칙”이 배신하는 방식</div>
+                  <h3 style="font-size:19px">팝업 — 자기 데이터로는 규칙을 뽑을 수조차 없습니다</h3>
+                  <p class="small muted" style="margin-top:.6rem">
+                    학습 24건이라 어떤 지표도 기준선이 못 됩니다 — <strong style="color:#050505">동전(50.0%)</strong>입니다.
+                    그런데 <strong style="color:#050505">다른 시장들에서 뽑은 규칙 하나</strong>를 그대로 가져오면 61.1%,
+                    우리 통합 모델은 60.7%입니다. <strong style="color:#050505">남의 규칙이 자기 규칙보다 낫습니다.</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <p class="source-line">
+              <strong>아직 안 한 것</strong> — 사람을 직접 재지 않았습니다. 위의 “규칙”들은 대리일 뿐입니다.
+              실무자 5명 이상에게 <strong>모델과 같은 정보만 주고</strong> 층화 추출한 쌍 100개(접전 50·명백 50)를
+              물어보는 실험을 설계해 뒀고, 실무자가 접전에서 54.9%를 넘으면 그 사실을 그대로 적을 것입니다.
+            </p>
+            <div class="footer-note"><span>명백은 자동화, 접전은 미해결 · 쌍은 <strong>같은 시장·같은 유보</strong> 안에서만 · 난이도는 실제 성적의 배수 · 746,187쌍 · 씨앗 6(슬라이드 04 의 66.4%는 씨앗 4) · 2026-08-05 측정</span><span>07</span></div>
+          </div>
+          <div class="page-mark">07</div>
+        </article>
+      </section>
+
+      <!-- 08 지금 되는 것과 다음에 되는 것 -->
+      <section class="slide-shell" data-title="솔루션의 사다리">
+        <article class="slide">
+          <div class="pad">
+            <div class="eyebrow">제품 / 지금 되는 것과 다음에 되는 것</div>
+            <div class="split-heading">
+              <h2 class="title sm" style="margin:0; max-width:25ch">
+                접전을 못 가르는 이유가 곧 로드맵입니다.
+              </h2>
+              <p class="lead">
+                지금 모델이 보는 것은 <strong style="color:#fff">기획서에 적힌 속성</strong>뿐입니다.
+                접전을 가르는 것은 시점·경쟁작·운영·그때 그 사람들이고, 그건 아직 모델 안에 없습니다.
+              </p>
+            </div>
+            <div class="four-col" style="flex:1; min-height:0">
+              <div class="card card-pad dense" style="display:flex; flex-direction:column">
+                <span class="badge fill">지금 됩니다</span>
+                <h3 style="margin-top:.8rem">1차 선별</h3>
+                <p class="small muted" style="margin-top:.7rem">
+                  후보 다섯 중 하나를 고르게 하면 <strong style="color:#fff">실제 꼴찌를 집는 확률이 6.9%</strong>입니다
+                  (무작위 20%). 반대로 실제 1등을 집는 건 39.1%(무작위 20%).
+                </p>
+                <div class="rule" style="margin-top:auto"></div>
+                <p class="xsmall" style="margin-top:.8rem"><strong>근거</strong> — 사고 방지 2.91배 · 1등 적중 1.96배</p>
+              </div>
+              <div class="card card-pad dense" style="display:flex; flex-direction:column">
+                <span class="badge fill">지금 됩니다</span>
+                <h3 style="margin-top:.8rem">새 카테고리 진입 판단</h3>
+                <p class="small muted" style="margin-top:.7rem">
+                  한 번도 안 해 본 카테고리에 대해서도 그 시장 전문가의 82~95% 수준으로 답합니다.
+                  실제로 골라내야 할 상위 절반에서는 95~112%입니다.
+                </p>
+                <div class="rule" style="margin-top:auto"></div>
+                <p class="xsmall" style="margin-top:.8rem"><strong>정확도 근거</strong> — 전이/전용 0.82~0.95 · 상위 절반 0.95~1.12</p>
+              </div>
+              <div class="card card-pad dense" style="display:flex; flex-direction:column">
+                <span class="badge">3~9개월</span>
+                <h3 style="margin-top:.8rem">두 안 중 고르기</h3>
+                <p class="small muted" style="margin-top:.7rem">
+                  <strong style="color:#fff">접전 54.9%를 올려야 되는 일</strong>입니다.
+                  브랜드·공간마다 “무슨 일이 있었고 얼마나 최근인지”를 상태로 들고 가면
+                  같은 기획서라도 다른 답이 나옵니다.
+                </p>
+                <div class="rule" style="margin-top:auto"></div>
+                <p class="xsmall" style="margin-top:.8rem"><strong>필요한 것</strong> — 시간 층(3단계)</p>
+              </div>
+              <div class="card card-pad dense" style="display:flex; flex-direction:column; background:#fff; color:#050505; border-color:#fff">
+                <span class="badge">9~18개월</span>
+                <h3 style="margin-top:.8rem">“이렇게 바꾸면”</h3>
+                <p class="small" style="margin-top:.7rem; color:var(--muted-dark)">
+                  가격을, 채널을, 컨셉의 한 요소를 바꾸면 어떻게 되는지.
+                  <strong style="color:#050505">이건 맞히기와 다른 종류의 문제</strong>라
+                  봉인된 예측과 실측이 쌓여야 답할 수 있습니다.
+                </p>
+                <div class="rule" style="margin-top:auto"></div>
+                <p class="xsmall" style="margin-top:.8rem"><strong>필요한 것</strong> — 개입 층(2단계 누적)</p>
+              </div>
+            </div>
+            <div class="card card-pad" style="margin-top:1.6%; background:rgba(255,255,255,.03)">
+              <p class="small">
+                <strong style="color:#fff">이 사다리가 정직한 이유</strong> —
+                각 칸의 “지금 됩니다/아직 아닙니다”는 의견이 아니라 <strong style="color:#fff">유보 표본에서 잰 숫자</strong>입니다.
+                접전 54.9%라는 수치가 없었다면 우리도 “두 안 중 고르기”가 이미 되는 줄 알았을 겁니다.
+                <strong style="color:#fff">채점 레일은 남을 설득하는 도구가 아니라 우리 자신을 못 속이게 하는 도구입니다.</strong>
+              </p>
+            </div>
+            <div class="footer-note"><span>못 하는 것의 이유가 다음에 할 일을 정한다</span><span>08</span></div>
+          </div>
+          <div class="page-mark">08</div>
+        </article>
+      </section>
+
+      <!-- 06 놀라운 것 1 -->
+      <section class="slide-shell" data-title="남의 경험이 내 경험보다 낫다">
+        <article class="slide light">
+          <div class="pad">
+            <div class="eyebrow">왜 고무적인가 / 01</div>
+            <div class="split-heading">
+              <h2 class="title" style="margin:0; max-width:25ch">
+                웹툰을 맞히는 데 팝업 데이터가 도움이 됩니다. 이게 “파운데이션 모델”이라는 말의 뜻입니다.
+              </h2>
+              <p class="lead">
+                시장마다 전용 모델을 <strong>제대로</strong> 만들어(후보 28종에서 교차검증으로 선택) 같은 유보 표본에서 붙여 봤습니다.
+                <strong>10개 시장 중 8개에서 통합 모델이 낫고, 유보 가중 평균 1.23배입니다.</strong>
+              </p>
+            </div>
+            <div class="two-col">
+              <div class="card card-pad">
+                <div class="card-kicker">통합 모델 ÷ 그 시장 전용 모델 · 1.0 이면 동점</div>
+                <div class="bar-row" style="margin-top:.5rem"><span class="lab">도서 <span style="opacity:.5">80행</span></span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="val">3.80배</span></div>
+                <div class="bar-row"><span class="lab">웹툰 <span style="opacity:.5">2,938행</span></span><span class="bar-track"><span class="bar-fill" style="width:32%"></span></span><span class="val">1.22배</span></div>
+                <div class="bar-row"><span class="lab">게임 <span style="opacity:.5">259행</span></span><span class="bar-track"><span class="bar-fill" style="width:30%"></span></span><span class="val">1.14배</span></div>
+                <div class="bar-row"><span class="lab">애니 <span style="opacity:.5">2,779행</span></span><span class="bar-track"><span class="bar-fill" style="width:29%"></span></span><span class="val">1.10배</span></div>
+                <div class="bar-row"><span class="lab">세계 애니 · 펀딩 <span style="opacity:.5">2.4~2.6천행</span></span><span class="bar-track"><span class="bar-fill" style="width:28%"></span></span><span class="val">1.08배</span></div>
+                <div class="bar-row"><span class="lab">시장 팝업 <span style="opacity:.5">123행</span></span><span class="bar-track"><span class="bar-fill" style="width:28%"></span></span><span class="val">1.07배</span></div>
+                <div class="bar-row"><span class="lab">모바일 앱 <span style="opacity:.5">1,559행</span></span><span class="bar-track"><span class="bar-fill" style="width:26%"></span></span><span class="val">1.00배</span></div>
+                <div class="bar-row"><span class="lab" style="opacity:.6">만화 <span style="opacity:.5">5,647행</span></span><span class="bar-track"><span class="bar-fill ghost" style="width:26%"></span></span><span class="val" style="opacity:.6">0.99배</span></div>
+                <div class="bar-row"><span class="lab" style="opacity:.6">아이돌 <span style="opacity:.5">122행</span></span><span class="bar-track"><span class="bar-fill ghost" style="width:24%"></span></span><span class="val" style="opacity:.6">0.92배</span></div>
+                <p class="xsmall muted" style="margin-top:.9rem">
+                  행수 = 그 시장의 학습 데이터. 진 곳은 <strong>만화(0.99)와 아이돌(0.92)</strong> 둘이고,
+                  아이돌은 유보가 51건뿐이라 씨앗 잡음과 구별되지 않습니다.
+                  <strong>팝업은 아예 전용 모델을 만들 수 없습니다</strong> — 학습 데이터가 24건뿐이라 교차검증이 성립하지 않습니다.
+                  통합 모델은 그래도 0.30을 냅니다.
+                </p>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:1.4%">
+                <div class="card card-pad">
+                  <div class="card-kicker">읽는 법 · 유보 가중 평균 1.23배</div>
+                  <h3>대부분의 시장에서 조금씩 이기고, 데이터가 아주 적은 곳에서 크게 이깁니다.</h3>
+                  <p class="small muted" style="margin-top:.9rem">
+                    학습 데이터 122건 위로는 <strong style="color:#050505">0.92~1.22배로 고릅니다</strong> —
+                    시장 크기와 이득 사이에 관계가 없습니다(순위 상관 −0.03).
+                    이득이 큰 곳은 <strong style="color:#050505">데이터가 아주 적은 아래쪽</strong>입니다 —
+                    도서 80건에 3.80배, 팝업 24건은 전용 모델 자체가 성립하지 않습니다.
+                    <strong style="color:#050505">문턱이지 기울기가 아닙니다.</strong> 문턱 아래 시장이 둘뿐이라 아직 약한 증거입니다.
+                  </p>
+                </div>
+                <div class="card card-pad" style="flex:1; background:#050505; color:#fff; border-color:#050505">
+                  <div class="card-kicker" style="color:rgba(255,255,255,.55)">가설로 되돌리면</div>
+                  <p class="small" style="color:rgba(255,255,255,.58); line-height:1.62">
+                    도메인마다 규칙이 따로라면, 남의 도메인 데이터는 <strong style="color:#fff">잡음이어야 합니다.</strong>
+                    그런데 넣을수록 좋아지고, 데이터가 적은 시장일수록 더 크게 좋아집니다.<br /><br />
+                    <strong style="color:#fff">공유되는 무언가가 있다는 첫 신호</strong>가 여기서 나옵니다.
+                    다음 장은 더 센 시험입니다 — 학습에 아예 없던 시장으로 건너갈 수 있는가.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="footer-note"><span>전용 모델 = 그 시장의 2025년 이전 데이터 + 그 시장이 가진 지표 전부 · <strong>후보 28종</strong>(부스팅 24 · 랜덤포레스트 2 · 선형 2)에서 학습 안 5겹으로 선택 · <strong>같은 유보 표본에서 채점</strong> · 2026-08-05 측정</span><span>06</span></div>
+          </div>
+          <div class="page-mark">06</div>
+        </article>
+      </section>
+
+      <!-- 07 놀라운 것 2 전이 -->
+      <section class="slide-shell" data-title="처음 보는 시장으로 건너간다">
+        <article class="slide">
+          <div class="pad">
+            <div class="eyebrow">가설의 증거 / 03장에서 세운 것을 시험한다</div>
+            <div class="split-heading">
+              <h2 class="title" style="margin:0; max-width:24ch">
+                곡선 맞추기는 전이되지 않습니다. <em>전이됐습니다.</em>
+              </h2>
+              <p class="lead">
+                한국 만화, 중국 만화, 게임이 아닌 앱 — 학습 데이터에 <strong style="color:#fff">한 줄도 없던</strong> 세 시장에
+                재학습 없이 그대로 물었습니다. 그 시장 전문가의 <strong style="color:#fff">82~95%</strong>를 합니다.
+              </p>
+            </div>
+            <div class="two-col">
+              <div class="card card-pad">
+                <div class="card-kicker">그 시장 전용 모델을 100으로 놓았을 때 · 양쪽이 <strong>같은 지표</strong>를 보게 맞춤</div>
+                <div class="bar-row" style="margin-top:.6rem"><span class="lab">한국 만화<br /><span class="xsmall muted">1,716건</span></span><span class="bar-track"><span class="bar-fill" style="width:95%"></span></span><span class="val">95%</span></div>
+                <div class="bar-row"><span class="lab">중국 만화<br /><span class="xsmall muted">정보 항목 3개뿐 · 352건</span></span><span class="bar-track"><span class="bar-fill" style="width:88%"></span></span><span class="val">88%</span></div>
+                <div class="bar-row"><span class="lab">비게임 앱<br /><span class="xsmall muted">1,600건</span></span><span class="bar-track"><span class="bar-fill" style="width:82%"></span></span><span class="val">82%</span></div>
+                <div class="rule" style="margin:1.4rem 0 1.1rem"></div>
+                <div class="card-kicker" style="margin-bottom:.7rem">상위 절반만 보면 — 골라내야 할 곳</div>
+                <div class="bar-row"><span class="lab">한국 만화</span><span class="bar-track"><span class="bar-fill ghost" style="width:100%"></span></span><span class="val">112%</span></div>
+                <div class="bar-row"><span class="lab">중국 만화</span><span class="bar-track"><span class="bar-fill ghost" style="width:86%"></span></span><span class="val">96%</span></div>
+                <div class="bar-row"><span class="lab">비게임 앱</span><span class="bar-track"><span class="bar-fill ghost" style="width:85%"></span></span><span class="val">95%</span></div>
+                <p class="xsmall muted" style="margin-top:.8rem">
+                  실제로 고를 대상은 상위권입니다. 거기서는 <strong>세 시장 모두 95% 이상</strong>이고,
+                  한국 만화에서는 <strong>그 시장 전용 모델보다 우리가 낫습니다</strong>.
+                </p>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:1.4%">
+                <div class="card card-pad">
+                  <div class="card-kicker">사업으로 번역하면</div>
+                  <h3>새 카테고리 진입 비용이 “데이터 수집 프로젝트”에서 “질문 한 번, 또는 사례 40건”으로 내려갑니다.</h3>
+                  <p class="small muted" style="margin-top:.9rem">
+                    비게임 앱은 만화와 산업도, 소비 방식도, 데이터 출처도 완전히 다릅니다.
+                    그런데도 <strong style="color:#fff">아무것도 안 준 상태에서 82%</strong>이고,
+                    실제로 골라내야 할 상위 절반에서는 <strong style="color:#fff">95%</strong>입니다.
+                    그 시장 사례 <strong style="color:#fff">40건</strong>을 보여 주면 전체가 <strong style="color:#fff">91%</strong>까지 오릅니다.
+                    새 고객사, 새 카테고리, 새 국가를 붙이는 단가가 여기서 정해집니다.
+                  </p>
+                </div>
+                <div class="card card-pad" style="flex:1; background:#fff; color:#050505; border-color:#fff">
+                  <div class="card-kicker" style="color:var(--muted-dark)">이것이 무엇의 증거인가</div>
+                  <h3 style="margin-top:.2rem">도메인을 가로지르는 구조가 실재한다는 것.</h3>
+                  <p class="small" style="margin-top:.9rem; color:var(--muted-dark)">
+                    비게임 앱은 만화와 산업도, 소비 방식도, 데이터 출처도 공유하지 않습니다.
+                    표면 규칙을 외운 모델이라면 여기서 <strong style="color:#050505">0에 가까워야 합니다.</strong>
+                    그런데 82%가 남고, 상위 절반에서는 95%입니다.
+                    <strong style="color:#050505">남은 82%가 우리가 찾는 것입니다</strong> —
+                    도메인이 달라도 유지되는, 사람이 무엇에 끌리는지의 공통 구조.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <p class="source-line">
+              <strong>정직하게</strong> — 이건 <em>증거</em>이지 증명이 아닙니다. 전이 0.82~0.95 가 보이는 것은
+              “공통 구조가 있다”이지 “법칙을 손에 넣었다”가 아닙니다. 반증 조건도 명확합니다 —
+              충분히 먼 도메인에서 전이가 0으로 떨어지면 가설을 접습니다.
+              지금까지 가장 먼 도메인(비게임 앱)에서도 0.82가 남았습니다.
+              중국 만화 0.88은 모델이 아니라 <strong>데이터 준비의 한계</strong>였습니다(정보 항목이 셋뿐).
+              <strong>하위 절반에서는 셋 다 무너집니다</strong> — 그쪽은 그 시장 전용 모델도 못 세웁니다(천장 0 근처).
+              우리가 파는 것은 <strong>상위권을 골라내는 것</strong>이고, 그 한계를 여기 적어 둡니다.
+            </p>
+            <div class="footer-note"><span>재학습 없음 · 날짜 통제 후 · 전용 모델 = 그 시장 5겹 교차검증 · <strong>양쪽이 같은 지표를 보게 맞춤</strong> · 2026-08-05 측정</span><span>08</span></div>
+          </div>
+          <div class="page-mark">07</div>
+        </article>
+      </section>
+
+      <!-- 08 놀라운 것 3 성장 -->
+      <section class="slide-shell" data-title="아직 포화가 아니다">
+        <article class="slide light">
+          <div class="pad">
+            <div class="eyebrow">왜 고무적인가 / 03 — 돈을 쓰면 오른다</div>
+            <div class="split-heading">
+              <h2 class="title sm" style="margin:0; max-width:26ch">
+                2년치 실험의 결론 한 줄: <em>데이터가 알고리즘보다 다섯 배 일했습니다.</em>
+              </h2>
+              <p class="lead">
+                학습 데이터를 4분의 1로 줄였다 늘리며 곡선을 그렸습니다. 아직 꺾이지 않았습니다.
+                <strong>데이터를 두 배로 하면 성능이 한 단계 더 오릅니다.</strong>
+              </p>
+            </div>
+            <div class="two-col">
+              <div class="card card-pad">
+                <div class="card-kicker">학습 데이터 양에 따른 성능</div>
+                <svg viewBox="0 0 560 260" style="width:100%; height:auto; margin-top:.5rem" role="img" aria-label="학습 곡선">
+                  <line x1="60" y1="230" x2="530" y2="230" stroke="#d8dddf" stroke-width="1" />
+                  <line x1="60" y1="30" x2="60" y2="230" stroke="#d8dddf" stroke-width="1" />
+                  <g font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#4d5353">
+                    <text x="115" y="248" text-anchor="middle">4,645건</text>
+                    <text x="223" y="248" text-anchor="middle">13,904</text>
+                    <text x="278" y="248" text-anchor="middle">18,540</text>
+                    <text x="496" y="248" text-anchor="middle">37,080</text>
+                  </g>
+                  <polyline points="115,194 169,140 223,119 278,104" fill="none" stroke="#050505" stroke-width="2.4" />
+                  <polyline points="278,104 496,67" fill="none" stroke="#050505" stroke-width="1.6" stroke-dasharray="5 5" opacity=".45" />
+                  <g fill="#050505">
+                    <circle cx="115" cy="194" r="4.5" /><circle cx="169" cy="140" r="4.5" />
+                    <circle cx="223" cy="119" r="4.5" /><circle cx="278" cy="104" r="5.5" />
+                  </g>
+                  <circle cx="496" cy="67" r="5" fill="none" stroke="#050505" stroke-width="1.8" />
+                  <g font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#050505">
+                    <text x="292" y="99">지금</text>
+                    <text x="404" y="58">데이터 2배 시 예상</text>
+                  </g>
+                  <text x="300" y="200" font-size="11" fill="#4d5353" font-family="ui-monospace, Menlo, monospace">기울기가 아직 살아 있다 = 포화 아님</text>
+                </svg>
+                <p class="xsmall muted" style="margin-top:.6rem">
+                  <strong>정직한 단서</strong> — 곡선을 <em>줄여서</em> 그렸습니다.
+                  “데이터가 적으면 이만큼”이지 “더하면 반드시 이만큼”은 아닙니다. 위쪽 어림으로 보시면 됩니다.
+                </p>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:1.4%">
+                <div class="card card-pad">
+                  <div class="card-kicker">2년간 무엇이 성능을 만들었나</div>
+                  <table class="grid" style="margin-top:.3rem">
+                    <tr><th>투입</th><th>성능 기여</th></tr>
+                    <tr><td>알고리즘 개선 5건 누적</td><td class="num">+0.011</td></tr>
+                    <tr><td><strong>학습 데이터 4배 증가</strong></td><td class="num"><strong>+0.061</strong></td></tr>
+                    <tr><td>알고리즘 쪽 남은 여지</td><td class="num">+0.0009</td></tr>
+                  </table>
+                  <p class="xsmall muted" style="margin-top:.9rem">
+                    알고리즘으로 얻을 수 있는 건 이제 거의 없습니다.
+                    이건 우리 추측이 아니라 11개 시장 전부에서 잰 값입니다.
+                  </p>
+                </div>
+                <div class="card card-pad" style="flex:1; background:#050505; color:#fff; border-color:#050505">
+                  <div class="card-kicker" style="color:rgba(255,255,255,.55)">투자 관점에서의 함의</div>
+                  <h3 style="margin-top:.2rem">돈을 어디에 써야 하는지가 측정으로 정해져 있습니다.</h3>
+                  <p class="small" style="margin-top:.9rem; color:rgba(255,255,255,.58)">
+                    “AI 인재를 더 뽑겠습니다”가 아니라 <strong style="color:#fff">“이 데이터를 이 순서로 사겠습니다”</strong>입니다.
+                    그리고 어느 데이터가 얼마짜리인지도 이미 쟀습니다 — 다음 장.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="footer-note"><span>학습 데이터를 줄여 그린 곡선 · 유보 표본 고정</span><span>08</span></div>
+          </div>
+          <div class="page-mark">08</div>
+        </article>
+      </section>
+
+            <!-- 09 언제 잘 맞히나 -->
+      <section class="slide-shell" data-title="언제 잘 맞히나">
+        <article class="slide">
+          <div class="pad">
+            <div class="eyebrow">수확 / 언제 잘 맞히나</div>
+            <div class="split-heading">
+              <h2 class="title sm" style="margin:0; max-width:25ch">
+                실력은 <em>성과가 몇 배 차이인지</em>를 따라갑니다. 그리고 실무의 판은 두 배 차이입니다.
+              </h2>
+              <p class="lead">
+                방문자가 두 배 차이 나는 두 기획과 예순 배 차이 나는 두 기획은
+                <strong style="color:#fff">완전히 다른 문제</strong>였습니다.
+              </p>
+            </div>
+            <div class="two-col">
+              <div class="card card-pad">
+                <div class="card-kicker">실제 성과 배수별 정확도</div>
+                <div class="bar-row" style="margin-top:.6rem"><span class="lab">1.0~1.1배</span><span class="bar-track"><span class="bar-fill" style="width:4%"></span></span><span class="val">51.0%</span></div>
+                <div class="bar-row"><span class="lab">1.1~1.25배</span><span class="bar-track"><span class="bar-fill" style="width:9%"></span></span><span class="val">52.4%</span></div>
+                <div class="bar-row"><span class="lab">1.25~1.5배</span><span class="bar-track"><span class="bar-fill" style="width:15%"></span></span><span class="val">54.3%</span></div>
+                <div class="bar-row"><span class="lab">1.5~2배</span><span class="bar-track"><span class="bar-fill" style="width:26%"></span></span><span class="val">57.4%</span></div>
+                <div class="bar-row"><span class="lab">2~5배</span><span class="bar-track"><span class="bar-fill" style="width:51%"></span></span><span class="val">64.3%</span></div>
+                <div class="bar-row"><span class="lab">5배 이상</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="val">78.2%</span></div>
+                <p class="xsmall muted" style="margin-top:.9rem">막대는 50%를 뺀 값. 정확도가 배수에 따라 매끈하게 오릅니다.</p>
+                <div class="rule" style="margin:1.1rem 0"></div>
+                <div class="card-kicker" style="margin-bottom:.5rem">두 배 이상만 답한다면</div>
+                <p class="small">덮음 <strong style="color:#fff">68.1%</strong> 에 정확도 <strong style="color:#fff">73.1%</strong>.
+                다섯 배 이상만 보면 정확도 78.2%.</p>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:1.4%">
+                <div class="card card-pad" style="background:#fff; color:#050505; border-color:#fff">
+                  <div class="card-kicker" style="color:var(--muted-dark)">실무의 판이 어디 있나</div>
+                  <table class="grid" style="margin-top:.3rem">
+                    <tr><th></th><th>실제 배수</th><th>정확도</th></tr>
+                    <tr><td><strong>후보 5개 중 1등 대 2등</strong></td><td class="num"><strong>1.96배</strong></td><td class="num"><strong>57.4%</strong></td></tr>
+                    <tr><td>후보 5개 중 1등 대 5등</td><td class="num">61.2배</td><td class="num">78.2%</td></tr>
+                  </table>
+                  <p class="small" style="margin-top:.9rem; color:var(--muted-dark)">
+                    <strong style="color:#050505">“나쁜 것을 거르는 일”을 잘하는 이유가 이것입니다.</strong>
+                    거를 대상은 예순 배 차이라 쉽고, 최종 두 개를 가르는 일은 두 배 차이라 어렵습니다.
+                    서로 다른 세 가지 측정이 같은 답을 냈습니다.
+                  </p>
+                </div>
+                <div class="card card-pad" style="flex:1">
+                  <div class="card-kicker">시장마다 성과가 벌어지는 폭이 다릅니다</div>
+                  <p class="small muted" style="margin-top:.6rem">
+                    후보 다섯 중 1등과 5등의 실제 배수 — 모바일 앱 <strong style="color:#fff">296배</strong>,
+                    게임 117배, 아이돌 37배, 펀딩 26배인데
+                    <strong style="color:#fff">만화는 3.5배, 세계 애니는 3.7배</strong>입니다.
+                    그 둘은 성과 자체가 촘촘히 몰려 있어서 <strong style="color:#fff">어떤 모델도 가르기 어렵습니다</strong> —
+                    그 시장의 낮은 정확도는 모델 탓이 아닐 수 있습니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="footer-note"><span>실력은 배수를 따라간다</span><span>09</span></div>
+          </div>
+          <div class="page-mark">09</div>
+        </article>
+      </section>
+
+<!-- 09 자본 배분 -->
+      <section class="slide-shell" data-title="어느 데이터가 얼마짜리인가">
+        <article class="slide">
+          <div class="pad">
+            <div class="eyebrow">왜 고무적인가 / 04 — 자본 배분이 이미 계산돼 있다</div>
+            <div class="split-heading">
+              <h2 class="title sm" style="margin:0; max-width:25ch">
+                “데이터를 더 모으겠다”는 계획이 아닙니다. 어느 데이터가 얼마짜리인지 쟀습니다.
+              </h2>
+              <p class="lead">
+                시장별로 학습 데이터를 절반씩 빼 보고 성능 손해를 측정했습니다.
+                건당 값어치가 <strong style="color:#fff">6.7배까지 갈립니다.</strong>
+              </p>
+            </div>
+            <div class="two-col">
+              <div class="card card-pad">
+                <div class="card-kicker">데이터 1만 건당 성능 기여 · 클수록 먼저 산다</div>
+                <div class="bar-row" style="margin-top:.6rem"><span class="lab">모바일 앱</span><span class="bar-track"><span class="bar-fill" style="width:100%"></span></span><span class="val">1.00</span></div>
+                <div class="bar-row"><span class="lab">애니</span><span class="bar-track"><span class="bar-fill" style="width:56%"></span></span><span class="val">0.56</span></div>
+                <div class="bar-row"><span class="lab">세계 애니</span><span class="bar-track"><span class="bar-fill" style="width:44%"></span></span><span class="val">0.44</span></div>
+                <div class="bar-row"><span class="lab">펀딩</span><span class="bar-track"><span class="bar-fill" style="width:44%"></span></span><span class="val">0.44</span></div>
+                <div class="bar-row"><span class="lab">웹툰</span><span class="bar-track"><span class="bar-fill" style="width:42%"></span></span><span class="val">0.42</span></div>
+                <div class="bar-row"><span class="lab">게임</span><span class="bar-track"><span class="bar-fill" style="width:31%"></span></span><span class="val">0.31</span></div>
+                <div class="bar-row"><span class="lab" style="opacity:.6">만화</span><span class="bar-track"><span class="bar-fill ghost" style="width:15%"></span></span><span class="val" style="opacity:.6">−0.15</span></div>
+                <p class="xsmall muted" style="margin-top:.9rem">모바일 앱을 1.00 으로 정규화. 음수는 “빼면 오히려 좋아진다”는 뜻입니다.</p>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:1.4%">
+                <div class="card card-pad">
+                  <div class="card-kicker">가장 값비싼 발견</div>
+                  <h3>만화는 학습 데이터의 30%를 차지하면서, 빼면 성능이 오릅니다.</h3>
+                  <p class="small muted" style="margin-top:.9rem">
+                    5,647건 — 전체의 30% — 인데 절반을 덜어 내면 성능이 <strong style="color:#fff">오릅니다</strong>.
+                    그러면서 통합 모델에서 받아 가는 것도 <strong style="color:#fff">0.99배</strong> — 열 시장 중 유일하게
+                    “전용 모델이 더 나은” 축에 듭니다.
+                    <strong style="color:#fff">제일 많이 넣는데 주지도 받지도 않는 시장</strong>입니다.
+                    직관으로는 절대 안 나오는 결론이고, 실제로 이 발견 하나가 성능을 올렸습니다.
+                  </p>
+                </div>
+                <div class="card card-pad" style="flex:1">
+                  <div class="card-kicker">그래서 다음 자본 배분</div>
+                  <div class="experience-card" style="border-top:0; padding-top:0"><span class="step-number">1순위</span><div><strong>모바일 앱 데이터 2배</strong><span class="small muted">지금 가장 싼 개선. 목표 수치를 미리 적어 뒀습니다</span></div></div>
+                  <div class="experience-card"><span class="step-number">2순위</span><div><strong>검색 추이 데이터 재수집</strong><span class="small muted">현재 41.7%만 채워져 있고, 제목 언어 문제로 비어 있는 구간이 있습니다</span></div></div>
+                  <div class="experience-card"><span class="step-number">3순위</span><div><strong>태깅 2종 보강</strong><span class="small muted">시장형 팝업 · 중국 만화 — 모델이 아니라 태깅이 병목인 것이 확인된 두 곳</span></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-note"><span>시장별로 학습 데이터를 절반씩 빼서 측정</span><span>09</span></div>
+          </div>
+          <div class="page-mark">09</div>
+        </article>
+      </section>
+
+      <!-- 10 정직 -->
+      <section class="slide-shell" data-title="아직 못 하는 것">
+        <article class="slide light">
+          <div class="pad">
+            <div class="eyebrow">정직하게 / 아직 “월드모델”이 아닌 부분</div>
+            <div class="split-heading">
+              <h2 class="title sm" style="margin:0; max-width:27ch">
+                지금 있는 것은 <em>예측기</em>입니다. 월드모델이라 부르려면 세 가지가 더 필요하고, 셋 다 아직 없습니다.
+              </h2>
+              <span class="badge fill">이 장은 실사 자료입니다</span>
+            </div>
+            <div class="three-col">
+              <div class="card card-pad">
+                <div class="card-kicker">빠진 것 01 · 시간</div>
+                <h3>“3주차에 어떻게 될까”를 못 냅니다</h3>
+                <p class="small muted" style="margin-top:.9rem">
+                  지금은 기획서를 넣으면 <strong>점수 하나</strong>가 나옵니다.
+                  시간에 따라 굴러가는 상태가 없어서, 운영 중 곡선이나 6개월 뒤를 못 냅니다.
+                </p>
+                <div class="rule" style="margin:1.2rem 0"></div>
+                <p class="xsmall"><strong>메울 방법</strong> — 브랜드·공간마다 “기억”을 붙입니다.
+                무슨 일이 있었고 그게 얼마나 최근인지를 상태로 들고 갑니다.</p>
+              </div>
+              <div class="card card-pad">
+                <div class="card-kicker">빠진 것 02 · 사람</div>
+                <h3>“누가 왜 그랬는지”를 못 냅니다</h3>
+                <p class="small muted" style="margin-top:.9rem">
+                  전체 반응만 맞힙니다. “27세 직장인이라면 어떻게 반응할까”가 없습니다.
+                  Simile 같은 회사가 하는 일이 여기이고, 우리가 아직 안 한 부분입니다.
+                </p>
+                <div class="rule" style="margin:1.2rem 0"></div>
+                <p class="xsmall"><strong>메울 방법</strong> — 팝업 방문객 인터뷰를 요약 없이 원문으로 쌓고,
+                6개월 연속 활동한 1,222명의 행동 기록과 잇습니다.</p>
+              </div>
+              <div class="card card-pad">
+                <div class="card-kicker">빠진 것 03 · “만약”</div>
+                <h3>“가격을 바꾸면”을 못 냅니다</h3>
+                <p class="small muted" style="margin-top:.9rem">
+                  지금 맞히는 것은 “이 기획은 어떻게 될까”이지 “이 기획을 이렇게 바꾸면 어떻게 될까”가 아닙니다.
+                  둘은 통계적으로 완전히 다른 문제입니다.
+                </p>
+                <div class="rule" style="margin:1.2rem 0"></div>
+                <p class="xsmall"><strong>메울 방법</strong> — 예측을 봉인하고 실측으로 채점하는 사이클이 쌓이면
+                그 자체가 실험 데이터베이스가 됩니다.</p>
+              </div>
+            </div>
+            <div class="stat-band" style="margin-top:2%">
+              <div><strong>0건</strong><span>사내 방문·매출 집계 테이블이 아직 비어 있습니다. 온·오프라인 연결의 전제인데 파이프라인이 안 돌고 있습니다.</span></div>
+              <div><strong>1건</strong><span>지금까지 제대로 돌린 A/B 실험. “만약”을 재려면 실험을 정례화해야 합니다.</span></div>
+              <div><strong>58.0%</strong><span>가장 약한 시장(시장형 팝업)의 정확도. 여기 성능은 사실상 다른 시장에서 빌려 온 것입니다.</span></div>
+              <div><strong>생존 편향</strong><span>기록에는 실제로 열린 기획만 있습니다. 무산된 기획은 없습니다. 명시하고 안고 갑니다.</span></div>
+            </div>
+            <div class="footer-note"><span>예보는 되고 시뮬레이션은 아직 안 된다</span><span>10</span></div>
+          </div>
+          <div class="page-mark">10</div>
+        </article>
+      </section>
+
+      <!-- 11 해자 -->
+      <section class="slide-shell" data-title="해자">
+        <article class="slide">
+          <div class="pad">
+            <div class="eyebrow">해자 / 남이 못 사는 데이터</div>
+            <div class="split-heading">
+              <h2 class="title sm" style="margin:0; max-width:25ch">
+                한국에는 대규모 사회조사도, 한국인 심층 인터뷰 뱅크도 없습니다. 병목은 알고리즘이 아니라 수집 실행력입니다.
+              </h2>
+              <p class="lead">
+                우리는 오프라인 접점을 직접 운영합니다. 기획 → 운영 → 결과가 한 조직 안에서 닫힙니다.
+              </p>
+            </div>
+            <div class="two-col">
+              <div class="card card-pad">
+                <div class="card-kicker">이미 흐르고 있는 것</div>
+                <table class="grid">
+                  <tr><th>자산</th><th>규모</th></tr>
+                  <tr><td>앱 행동 기록 (2024-07~)</td><td class="num">4,726만 건</td></tr>
+                  <tr><td>월 사용자 / 로그인</td><td class="num">약 16만 / 2.2만</td></tr>
+                  <tr><td>대기열 등록</td><td class="num">월 16.6만</td></tr>
+                  <tr><td><strong>6개월 연속 활동</strong></td><td class="num"><strong>1,222명</strong></td></tr>
+                </table>
+                <div class="rule" style="margin:1.2rem 0"></div>
+                <p class="small">
+                  <strong>대기열 등록은 클릭이 아니라 “줄을 서겠다”는 결정</strong>입니다.
+                  광고 노출이나 좋아요보다 훨씬 강한 신호이고, 우리는 그걸 사람 단위로 오래 들고 있습니다.
+                </p>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:1.4%">
+                <div class="card card-pad">
+                  <div class="card-kicker">실증 · 실제 팝업 한 건</div>
+                  <h3>어느 팝업의 대기열 등록 921명 / 4,266건, 운영 7일간 하루 63명 → 190명</h3>
+                  <p class="small muted" style="margin-top:.9rem">
+                    앱 기록만으로 방문 규모를 실측했습니다.
+                    같은 방식이 안 통한 사례도 있습니다 — 현장 태블릿으로 웨이팅을 받은 팝업은 앱에 안 잡혀서
+                    관심 신호(610명)만 남았습니다. <strong style="color:#fff">그 한계도 기록해 뒀습니다.</strong>
+                  </p>
+                </div>
+                <div class="card card-pad" style="flex:1; background:#050505; color:#fff; border-color:#050505">
+                  <div class="card-kicker" style="color:rgba(255,255,255,.55)">왜 이 조합이 드문가</div>
+                  <p class="small" style="color:rgba(255,255,255,.58); line-height:1.66">
+                    <strong style="color:#fff">조사 회사</strong>는 “이 사람이 누구인가”는 아는데 “무엇을 했는가”를 모릅니다.<br /><br />
+                    <strong style="color:#fff">플랫폼</strong>은 “무엇을 했는가”는 아는데 그 사람을 만나서 물어볼 접점이 없습니다.<br /><br />
+                    <strong style="color:#fff">우리</strong>는 같은 사람의 행동 기록과 현장 인터뷰를 이을 수 있는 자리에 있습니다.
+                    이 결합이 세 번째 층(사람)을 만들 때 결정적입니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <p class="source-line">사람 단위 결합 시 동의·가명처리 필수. 기존 기록의 소급 사용은 처리방침 목적 범위를 확인한 뒤 진행합니다.</p>
+            <div class="footer-note"><span>오프라인 접점 보유가 경쟁 우위</span><span>11</span></div>
+          </div>
+          <div class="page-mark">11</div>
+        </article>
+      </section>
+
+      <!-- 12 로드맵 -->
+      <section class="slide-shell" data-title="로드맵">
+        <article class="slide light">
+          <div class="pad">
+            <div class="eyebrow">계획 / 예측기에서 월드모델까지</div>
+            <div class="split-heading">
+              <h2 class="title sm" style="margin:0; max-width:26ch">
+                순서가 이미 정해져 있고, 건너뛸 수 없게 만들어 뒀습니다.
+              </h2>
+              <p class="lead">
+                각 단계는 앞 단계의 결과물이 있어야 시작됩니다.
+                <strong>“집계 예측이 맞기 전에는 개인 시뮬레이션으로 못 넘어간다”</strong>가 코드에 박혀 있습니다.
+              </p>
+            </div>
+            <div class="timeline">
+              <div class="done">
+                <span class="badge">완료</span>
+                <strong>0 · 기록 정리</strong>
+                <p>기획서 · 계약 조건 · 결과를 한 형식으로. 원문 링크를 남기고 요약으로 대체하지 않습니다.</p>
+              </div>
+              <div class="done">
+                <span class="badge">가동 중</span>
+                <strong>1 · 채점 레일</strong>
+                <p>과거로 미래를 맞히고 실제와 대조. 이 자료의 모든 숫자가 여기서 나옵니다.</p>
+              </div>
+              <div>
+                <span class="badge fill">다음</span>
+                <strong>2 · 예측 봉인</strong>
+                <p>열기 전에 예측을 시각·해시로 봉인하고, 결과가 오면 자동 채점. 사후 수정이 불가능해집니다.</p>
+              </div>
+              <div>
+                <span class="badge">병행</span>
+                <strong>3 · 시간 층</strong>
+                <p>브랜드·공간마다 기억을 붙입니다. 여기서 처음으로 “굴러가는” 모델이 됩니다.</p>
+              </div>
+              <div>
+                <span class="badge">독립</span>
+                <strong>4 · 사람 층</strong>
+                <p>인터뷰 → 지식 검증 → 반응 분포 → 상호작용. 출력은 집계만, 접근은 동의 기반.</p>
+              </div>
+              <div>
+                <span class="badge">이후</span>
+                <strong>5 · 채점 규격 공개</strong>
+                <p>채점 도구만 오픈소스로. 데이터는 절대 공개하지 않고 방법과 숫자만 냅니다.</p>
+              </div>
+            </div>
+            <div class="two-col dense" style="margin-top:2%; flex:0 0 auto">
+              <div class="card card-pad">
+                <div class="card-kicker">이 순서를 지키는 이유</div>
+                <p class="small">
+                  2단계 없이 3단계를 만들면 시간 모델이 좋아졌는지 <strong>알 방법이 없습니다.</strong>
+                  4단계의 개인 시뮬레이션은 특히 위험합니다 — 그럴듯한 페르소나는 만들기 쉽고,
+                  <strong>틀렸다는 걸 알아채기가 어렵습니다.</strong> 그래서 집계 검증을 통과하기 전에는 넘어가지 않습니다.
+                </p>
+              </div>
+              <div class="card card-pad">
+                <div class="card-kicker">5단계를 마지막에 두는 이유</div>
+                <p class="small">
+                  채점 도구를 공개하면 이 분야의 평가 표준이 될 수 있습니다.
+                  다만 우리가 실전에서 한 바퀴 돌려 보기 전에 내면 “써 본 적 없는 표준”이 됩니다.
+                  <strong>표준은 열고 데이터는 닫습니다.</strong>
+                </p>
+              </div>
+            </div>
+            <div class="footer-note"><span>0~1단계 완료 · 2단계가 다음 관문</span><span>12</span></div>
+          </div>
+          <div class="page-mark">12</div>
+        </article>
+      </section>
+
+      <!-- 13 대안 비교 -->
+      <section class="slide-shell" data-title="대안 비교">
+        <article class="slide">
+          <div class="pad">
+            <div class="eyebrow">포지셔닝 / 대안과 비교</div>
+            <div class="split-heading">
+              <h2 class="title sm" style="margin:0; max-width:28ch">
+                우리가 지고 있는 칸도 그대로 적었습니다.
+              </h2>
+              <span class="badge fill">불리한 항목 포함</span>
+            </div>
+            <div class="competition" style="margin-top:1%">
+              <div class="head">비교 기준</div><div class="head">ChatGPT 등 범용 AI</div><div class="head">전통 조사 · FGI</div><div class="head">AI 페르소나 시뮬레이션</div><div class="head yes">월드모델 실험실</div>
+
+              <div>답이 맞았는지 채점됨</div><div>안 됨</div><div>안 됨</div><div>사후 대조 정도</div><div class="yes">78만 쌍 채점</div>
+              <div>처음 보는 시장</div><div>일반론만</div><div>매번 재조사</div><div>페르소나 재생성</div><div class="yes">전문가의 82~95%</div>
+              <div>새 시장 진입 비용</div><div>—</div><div>프로젝트 단위</div><div>—</div><div class="yes">재학습 없음</div>
+              <div>“이 사람이라면”</div><div>가능하나 검증 없음</div><div>가능하나 비쌈</div><div>가능</div><div class="yes">아직 없음 · 4단계</div>
+              <div>시간에 따른 변화</div><div>없음</div><div>없음</div><div>시뮬레이션 안에만</div><div class="yes">아직 없음 · 3단계</div>
+              <div>“바꾸면 어떻게 되나”</div><div>불가</div><div>가능하나 비쌈</div><div>불가</div><div class="yes">아직 없음 · 2단계</div>
+              <div>같은 결과 재현</div><div>낮음</div><div>표본마다 다름</div><div>편향 고착 위험</div><div class="yes">자동 검사 19개</div>
+            </div>
+            <div class="two-col dense" style="margin-top:2%; flex:0 0 auto">
+              <div class="card card-pad">
+                <div class="card-kicker">우리가 지금 지고 있는 세 칸</div>
+                <p class="small">
+                  “이 사람이라면” · “시간에 따라” · “바꾸면” — 이 셋은 <strong style="color:#fff">AI 페르소나 쪽이 지금 앞섭니다.</strong>
+                  다만 그쪽 숫자는 대체로 채점되지 않습니다.
+                  우리는 먼저 채점 레일을 깔고 그 위에서 세 칸을 채우는 순서를 택했습니다.
+                </p>
+              </div>
+              <div class="card card-pad">
+                <div class="card-kicker">그 선택이 옳았다는 증거</div>
+                <p class="small">
+                  이번 사이클에만 사전 등록 8건 중 4건이 반증됐고, 그중 셋은
+                  <strong style="color:#fff">우리 자신의 직전 결론</strong>을 뒤집은 것입니다.
+                  채점 레일이 없었다면 그 넷은 지금도 “개선”으로 남아 투자자에게 보고됐을 겁니다.
+                </p>
+              </div>
+            </div>
+            <div class="footer-note"><span>먼저 채점, 그다음 야심</span><span>13</span></div>
+          </div>
+          <div class="page-mark">13</div>
+        </article>
+      </section>
+
+      <!-- 14 왜 지금인가 -->
+      <section class="slide-shell" data-title="왜 지금인가">
+        <article class="slide">
+          <div class="pad">
+            <div class="eyebrow">시장 / 왜 지금인가</div>
+            <div class="split-heading">
+              <h2 class="title sm" style="margin:0; max-width:26ch">
+                이 일은 3년 전에는 불가능했고, 3년 뒤에는 이미 누가 하고 있을 겁니다.
+              </h2>
+              <p class="lead">
+                네 가지가 동시에 맞아떨어진 구간입니다. 그중 둘은 업계 전체에 온 변화이고,
+                둘은 우리에게만 갖춰진 조건입니다.
+              </p>
+            </div>
+            <div class="four-col" style="flex:1; min-height:0">
+              <div class="card card-pad dense" style="display:flex; flex-direction:column">
+                <div class="card-kicker">업계 · 01</div>
+                <h3>추적 쿠키가 사라졌습니다</h3>
+                <p class="small muted" style="margin-top:.8rem">
+                  서드파티 추적으로 소비자 행동을 추론하던 경로가 닫히는 중입니다.
+                  <strong style="color:#fff">동의 기반으로 직접 수집한 1차 행동 데이터</strong>의 값이 구조적으로 오릅니다.
+                  ESOMAR 2024 보고서가 이 변화를 별도 장으로 다룰 만큼 업계의 중심 사건입니다.
+                </p>
+                <div class="rule" style="margin:.9rem 0 .9rem; margin-top:auto"></div>
+                <p class="xsmall"><strong>우리에게</strong> — 앱 로그 4,726만 건이 전부 자사 1차 데이터입니다.</p>
+              </div>
+              <div class="card card-pad dense" style="display:flex; flex-direction:column">
+                <div class="card-kicker">업계 · 02</div>
+                <h3>AI 경쟁의 병목이 알고리즘에서 데이터로 넘어갔습니다</h3>
+                <p class="small muted" style="margin-top:.8rem">
+                  우리 실험에서도 그대로 나왔습니다 —
+                  <strong style="color:#fff">알고리즘 쪽에 남은 여지는 전체 개선분의 1.5%</strong>입니다.
+                  모델은 이제 누구나 만들고, <strong style="color:#fff">희소한 것은 사람이 실제로 무엇을 했는지의 기록</strong>입니다.
+                </p>
+                <div class="rule" style="margin:.9rem 0 .9rem; margin-top:auto"></div>
+                <p class="xsmall"><strong>우리에게</strong> — 남이 살 수 없는 오프라인 접점에서 나옵니다.</p>
+              </div>
+              <div class="card card-pad dense" style="display:flex; flex-direction:column">
+                <div class="card-kicker">우리 · 03</div>
+                <h3>세 가지가 이제야 동시에 갖춰졌습니다</h3>
+                <p class="small muted" style="margin-top:.8rem">
+                  ① 2년치 기획–결과 아카이브 ② 사람 단위로 이어지는 행동 로그
+                  ③ 그 둘을 채점하는 레일. <strong style="color:#fff">셋 중 하나만 없어도 이 실험은 시작조차 안 됩니다.</strong>
+                  2년 전에는 ③이 없었고, 그래서 우리도 못 했습니다.
+                </p>
+                <div class="rule" style="margin:.9rem 0 .9rem; margin-top:auto"></div>
+                <p class="xsmall"><strong>지금</strong> — 채점된 사이클이 525회 돌았습니다.</p>
+              </div>
+              <div class="card card-pad dense" style="display:flex; flex-direction:column; background:#fff; color:#050505; border-color:#fff">
+                <div class="card-kicker" style="color:var(--muted-dark)">우리 · 04</div>
+                <h3>한국에는 아직 아무도 안 만들었습니다</h3>
+                <p class="small" style="margin-top:.8rem; color:var(--muted-dark)">
+                  미국의 대규모 사회조사(GSS)에 해당하는 것도, 한국인 심층 인터뷰 뱅크도 없습니다.
+                  <strong style="color:#050505">미국산 모델을 수입해도 한국 분포의 데이터는 따로 필요합니다.</strong>
+                  병목은 알고리즘이 아니라 수집 실행력이고, 그건 오프라인 접점이 있어야 합니다.
+                </p>
+                <div class="rule" style="margin:.9rem 0 .9rem; margin-top:auto"></div>
+                <p class="xsmall"><strong>선점</strong> — 만들어 두면 복제가 어렵습니다.</p>
+              </div>
+            </div>
+            <div class="footer-note"><span>둘은 업계에 온 변화, 둘은 우리에게만 갖춰진 조건</span><span>14</span></div>
+          </div>
+          <div class="page-mark">14</div>
+        </article>
+      </section>
+
+      <!-- 15 시장 규모 -->
+      <section class="slide-shell" data-title="시장 규모">
+        <article class="slide light">
+          <div class="pad">
+            <div class="eyebrow">시장 규모 / TAM · SAM · SOM</div>
+            <div class="split-heading">
+              <h2 class="title sm" style="margin:0; max-width:27ch">
+                192조 원 인사이트 시장에서, 우리가 먼저 먹는 자리는 <em>출시 전 의사결정</em>입니다.
+              </h2>
+              <p class="lead">
+                출처가 있는 칸과 가정인 칸을 <strong>구분해서 표시</strong>했습니다.
+                가정 칸은 어떻게 확정할지도 함께 적었습니다.
+              </p>
+            </div>
+            <div class="three-col" style="flex:0 0 auto; margin-top:1%">
+              <div class="card card-pad">
+                <div class="card-kicker">TAM · 산업 전체 <span class="badge" style="min-height:1.5rem; margin-left:.4rem">출처 확인</span></div>
+                <div class="metric sm" style="margin:.5rem 0 .3rem">약 192조 원</div>
+                <p class="small"><strong>전 세계 인사이트 산업 US$142B</strong> (2023년 매출, 전년 약 US$130B 대비 +8%).
+                시장조사·데이터·분석·리서치 소프트웨어를 포함합니다.</p>
+                <div class="rule" style="margin:1rem 0"></div>
+                <p class="xsmall muted">기업이 “소비자가 어떻게 반응할까”를 알기 위해 이미 쓰고 있는 돈의 상한선입니다.</p>
+              </div>
+              <div class="card card-pad">
+                <div class="card-kicker">SAM · 우리가 답하는 질문 <span class="badge" style="min-height:1.5rem; margin-left:.4rem">가정</span></div>
+                <div class="metric sm" style="margin:.5rem 0 .3rem">19 ~ 38조 원</div>
+                <p class="small"><strong>출시 전 컨셉·소비자 반응 검증</strong>이 인사이트 지출에서 차지하는 몫을
+                <strong>10~20%</strong>로 가정한 범위입니다. 사후 분석·트래킹·패널 운영은 제외했습니다.</p>
+                <div class="rule" style="margin:1rem 0"></div>
+                <p class="xsmall muted"><strong>확정 방법</strong> — ESOMAR 보고서 6~9장이 방법론·프로젝트 유형별 매출을
+                분해합니다. 보고서를 사면 이 칸의 가정을 실측으로 바꿀 수 있습니다.</p>
+              </div>
+              <div class="card card-pad" style="background:#050505; color:#fff; border-color:#050505">
+                <div class="card-kicker" style="color:rgba(255,255,255,.55)">SOM · 3년 <span class="badge" style="min-height:1.5rem; margin-left:.4rem; border-color:rgba(255,255,255,.3)">내부 실측 필요</span></div>
+                <div class="metric sm" style="margin:.5rem 0 .3rem">= N × M × P</div>
+                <p class="small" style="color:rgba(255,255,255,.58)">
+                  <strong style="color:#fff">N</strong> 반복 기획을 내는 국내 조직 수 ·
+                  <strong style="color:#fff">M</strong> 조직당 연간 기획 건수 ·
+                  <strong style="color:#fff">P</strong> 건당 예측 리포트 단가.
+                </p>
+                <div class="rule" style="margin:1rem 0; background:rgba(255,255,255,.2)"></div>
+                <p class="xsmall" style="color:rgba(255,255,255,.58)">
+                  <strong style="color:#fff">숫자를 지금 넣지 않았습니다.</strong> N·M·P 는 우리 영업 파이프라인에서
+                  나오는 값이고, 유료 PoC 한 건이면 셋 다 실측됩니다. 지어낸 SOM 하나가 앞의 모든 실측을
+                  의심스럽게 만듭니다.
+                </p>
+              </div>
+            </div>
+            <div class="stat-band" style="margin-top:2%">
+              <div><strong>0.009%</strong><span>SAM 하한(19조) 대비 연 17억 원 매출이면 이 비율입니다. 침투율 가정이 공격적일 필요가 없습니다.</span></div>
+              <div><strong>11 → N</strong><span>모델이 이미 다루는 도메인 수. 전이가 되므로 도메인을 늘리는 데 재학습이 필요 없습니다.</span></div>
+              <div><strong>상위 절반 95%+</strong><span>학습에 없던 시장에서 상위권을 골라내는 힘. 이 숫자가 높을수록 SAM 안에서 접근 가능한 범위가 넓어집니다.</span></div>
+              <div><strong>1차 수익</strong><span>외부 판매 이전에 자사 기획 선별로 먼저 회수합니다. 매출이 아니라 마진으로 돌아옵니다.</span></div>
+            </div>
+            <p class="source-line">
+              출처: <a href="https://community.esomar.org/knowledge-center/library?publication=3019">ESOMAR Global Market Research 2024</a>
+              — 2023년 인사이트 산업 매출 US$142B. 원화 환산은 1,350원/USD 가정.
+              TAM 은 산업 대용치이며 매출 예측이 아닙니다. SAM 의 10~20% 는 <strong>가정</strong>이고 확정 방법을 위에 적었습니다.
+            </p>
+            <div class="footer-note"><span>출처 있는 칸과 가정인 칸을 구분한다</span><span>15</span></div>
+          </div>
+          <div class="page-mark">15</div>
+        </article>
+      </section>
+
+      <!-- 15 12개월 -->
+      <section class="slide-shell" data-title="12개월 계획">
+        <article class="slide">
+          <div class="pad">
+            <div class="eyebrow">계획 / 향후 12개월 — 판정 기준을 미리 적는다</div>
+            <div class="split-heading">
+              <h2 class="title sm" style="margin:0; max-width:27ch">
+                실험에 쓰는 규칙을 사업 계획에도 그대로 적용했습니다.
+              </h2>
+              <p class="lead">
+                마일스톤마다 “이러면 성공, 저러면 실패, 실패하면 무엇을 뜻하는지”를 미리 적었습니다.
+              </p>
+            </div>
+            <table class="grid" style="margin-top:1%">
+              <tr><th style="width:13%">시기</th><th style="width:25%">할 일</th><th style="width:28%">성공 판정</th><th>실패하면 무엇을 뜻하나</th></tr>
+              <tr>
+                <td class="num">0–3개월</td>
+                <td><strong>예측 봉인 사이클 가동</strong></td>
+                <td>봉인 → 실측 채점 <strong>1사이클 완주</strong></td>
+                <td class="muted">결과가 우리에게 돌아오는 경로가 사업 프로세스에 안 붙어 있다는 뜻. 예측기가 좋아도 채점이 안 됨</td>
+              </tr>
+              <tr>
+                <td class="num">0–6개월</td>
+                <td><strong>모바일 데이터 2배 · 검색 추이 재수집</strong></td>
+                <td>미리 적어 둔 목표치 <strong>도달</strong></td>
+                <td class="muted">학습 곡선의 외삽이 틀렸다는 뜻. 새로 모은 데이터가 기존과 성격이 다르다는 우려가 현실화</td>
+              </tr>
+              <tr>
+                <td class="num">3–9개월</td>
+                <td><strong>시간 층 프로토타입</strong></td>
+                <td>기억을 붙인 모델이 <strong>지금 모델을 이긴다</strong></td>
+                <td class="muted">브랜드당 관측 수가 너무 적다는 뜻. 카테고리 평균 + 개별 보정의 2층 구조로 후퇴</td>
+              </tr>
+              <tr>
+                <td class="num">6–12개월</td>
+                <td><strong>인터뷰 파이프라인 · 사람 층 1단계</strong></td>
+                <td>인터뷰 기반 시뮬레이션이 <strong>집계 반응을 맞힌다</strong></td>
+                <td class="muted">페르소나가 고정관념으로 수렴했다는 뜻. 상호작용 단계로 넘어가지 않고 여기서 멈춥니다</td>
+              </tr>
+              <tr>
+                <td class="num">9–12개월</td>
+                <td><strong>브랜드 유료 PoC</strong></td>
+                <td>봉인 예측이 <strong>실제 결정을 바꾼 사례 1건</strong></td>
+                <td class="muted">정확도는 있으나 쓸모가 없다는 뜻. 출력 형식과 의사결정 시점을 다시 설계</td>
+              </tr>
+            </table>
+            <div class="two-col dense" style="margin-top:2%; flex:0 0 auto">
+              <div class="card card-pad">
+                <div class="card-kicker">지금 사람이 정해야 하는 것</div>
+                <p class="small">
+                  분석으로 갈 수 있는 데까지 갔습니다. 남은 길은 수집입니다 —
+                  검색 추이 재수집 · 모바일 데이터 확대 · 태깅 2종.
+                  <strong style="color:#fff">넷 다 모델 문제가 아니라 사람이 결정할 문제</strong>라는 게 측정으로 확인됐습니다.
+                </p>
+              </div>
+              <div class="card card-pad">
+                <div class="card-kicker">우리가 틀렸다고 판명될 조건</div>
+                <p class="small">
+                  ① 데이터를 두 배로 늘렸는데 성능이 안 오른다 ②&nbsp;봉인 예측이 과거 채점보다 크게 나쁘다
+                  ③&nbsp;시간 층이 지금 모델을 못 이긴다. <strong style="color:#fff">셋 중 둘이면 접근을 바꿉니다.</strong>
+                </p>
+              </div>
+            </div>
+            <div class="footer-note"><span>실험 규칙을 사업 계획에도 적용한다</span><span>15</span></div>
+          </div>
+          <div class="page-mark">15</div>
+        </article>
+      </section>
+
+      <!-- 16 요청 -->
+      <section class="slide-shell" data-title="요청">
+        <article class="slide light">
+          <div class="pad">
+            <div class="eyebrow">Ask / 무엇이 필요한가</div>
+            <div class="split-heading">
+              <h2 class="title sm" style="margin:0; max-width:24ch">
+                구조를 더 넓게 보려면 더 많은 도메인이 필요합니다. 필요한 것은 AI 인재가 아니라 데이터입니다.
+              </h2>
+              <p class="lead">
+                알고리즘 쪽에 남은 여지는 전체 개선분의 <strong>1.5%</strong>입니다.
+                추측이 아니라 11개 시장 전부에서 잰 값입니다.
+              </p>
+            </div>
+            <div class="three-col dense">
+              <div class="card card-pad">
+                <div class="card-kicker">01 · 데이터</div>
+                <h3>측정된 우선순위대로 산다</h3>
+                <div style="margin-top:1.1rem">
+                  <div class="experience-card" style="border-top:0; padding-top:0"><span class="step-number">A</span><div><strong>모바일 앱 데이터 2배</strong><span class="small muted">건당 값어치 1위. 지금 가장 싼 개선</span></div></div>
+                  <div class="experience-card"><span class="step-number">B</span><div><strong>검색 추이 재수집</strong><span class="small muted">41.7%만 채워져 있음</span></div></div>
+                  <div class="experience-card"><span class="step-number">C</span><div><strong>태깅 2종</strong><span class="small muted">모델이 아니라 태깅이 병목인 곳</span></div></div>
+                </div>
+              </div>
+              <div class="card card-pad">
+                <div class="card-kicker">02 · 파이프라인</div>
+                <h3>비어 있는 결과 집계를 채운다</h3>
+                <p class="small muted" style="margin-top:.9rem">
+                  방문·매출 테이블이 형식만 있고 비어 있습니다.
+                  채우면 온라인 행동과 오프라인 결과가 <strong style="color:#050505">처음으로 이어집니다.</strong>
+                  시간 층의 전제이자 “만약” 실험의 전제입니다.
+                </p>
+                <div class="rule" style="margin:1.2rem 0"></div>
+                <p class="xsmall"><strong>함께 필요</strong> — A/B 실험 정례화. 지금 제대로 한 게 1건입니다.</p>
+              </div>
+              <div class="card card-pad">
+                <div class="card-kicker">03 · 인터뷰</div>
+                <h3>한국인 심층 인터뷰 뱅크를 만든다</h3>
+                <p class="small muted" style="margin-top:.9rem">
+                  6개월 연속 활동한 1,222명이 후보군입니다.
+                  전사문을 요약 없이 원문으로 쌓고, 동의와 목적 공개를 먼저 세웁니다.
+                  <strong style="color:#050505">한국에 아직 없는 자산</strong>이고, 만들어 두면 복제가 어렵습니다.
+                </p>
+              </div>
+            </div>
+            <div class="card card-pad dense" style="margin-top:1.4%; background:#050505; color:#fff; border-color:#050505">
+              <div style="display:grid; grid-template-columns:1.15fr 1fr; gap:3rem; align-items:center">
+                <div>
+                  <div class="card-kicker" style="color:rgba(255,255,255,.55)">한 줄 요약</div>
+                  <h3 style="font-size:26px; line-height:1.24">
+                    도메인을 가로지르는 구조가 있다면, 그걸 쥔 모델은
+                    <strong>웹툰 도구도 팝업 도구도 아닙니다.</strong>
+                    어떤 브랜드든, 어떤 전략이든, 어떤 결정이든 같은 것을 물어볼 수 있는 모델입니다.
+                  </h3>
+                  <p class="small" style="margin-top:1.1rem; color:rgba(255,255,255,.58)">
+                    지금은 그 구조가 <strong style="color:#fff">있다는 증거</strong>까지 왔습니다.
+                    남은 일은 폭을 넓히는 것이고, 무엇을 사야 넓어지는지는 이미 측정돼 있습니다.
+                  </p>
+                </div>
+                <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem">
+                  <div><div class="card-kicker" style="color:rgba(255,255,255,.55); margin-bottom:.3rem">둘 중 고르기</div><strong style="font-size:30px">66.4%</strong></div>
+                  <div><div class="card-kicker" style="color:rgba(255,255,255,.55); margin-bottom:.3rem">다섯 중 고르기</div><strong style="font-size:30px">65.7점</strong></div>
+                  <div><div class="card-kicker" style="color:rgba(255,255,255,.55); margin-bottom:.3rem">새 시장 전이</div><strong style="font-size:30px">75%</strong></div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-note"><span>Sweetspot · 월드모델 실험실</span><span>16</span></div>
+          </div>
+          <div class="page-mark">16</div>
+        </article>
+      </section>
+
+    </main>
+
+
+    <nav class="nav" aria-label="슬라이드 이동">
+      <button id="prevBtn" type="button" aria-label="이전 슬라이드">←</button>
+      <span class="counter" id="counter">01 / 15</span>
+      <button id="nextBtn" type="button" aria-label="다음 슬라이드">→</button>
+      <button id="printBtn" type="button" aria-label="인쇄">인쇄</button>
+    </nav>
+
+    <script>
+      const deck = document.getElementById('deck')
+      const slides = Array.from(document.querySelectorAll('.slide-shell'))
+      const counter = document.getElementById('counter')
+      const progressBar = document.getElementById('progressBar')
+      let activeIndex = 0
+
+      function fitDeck() {
+        const scale = Math.min(window.innerWidth / 1600, window.innerHeight / 900)
+        document.documentElement.style.setProperty('--deck-scale', String(scale))
+      }
+
+      slides.forEach((slide, index) => {
+        const number = String(index + 1).padStart(2, '0')
+        const total = String(slides.length).padStart(2, '0')
+        const pageMark = slide.querySelector('.page-mark')
+        if (pageMark) pageMark.textContent = `${number} / ${total}`
+        const footerPage = slide.querySelector('.footer-note span:last-child')
+        if (footerPage && /^\d+$/.test(footerPage.textContent.trim())) footerPage.textContent = number
+      })
+
+      function updateNavigation(index) {
+        activeIndex = Math.max(0, Math.min(slides.length - 1, index))
+        counter.textContent = `${String(activeIndex + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`
+        progressBar.style.width = `${((activeIndex + 1) / slides.length) * 100}%`
+        document.title = `월드모델 실험실 — ${slides[activeIndex].dataset.title}`
+      }
+
+      function goTo(index) {
+        const next = Math.max(0, Math.min(slides.length - 1, index))
+        slides[next].scrollIntoView({ behavior: 'smooth', block: 'start' })
+        updateNavigation(next)
+      }
+
+      document.getElementById('prevBtn').addEventListener('click', () => goTo(activeIndex - 1))
+      document.getElementById('nextBtn').addEventListener('click', () => goTo(activeIndex + 1))
+      document.getElementById('printBtn').addEventListener('click', () => window.print())
+
+      document.addEventListener('keydown', (event) => {
+        if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].includes(event.key)) { event.preventDefault(); goTo(activeIndex + 1) }
+        if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(event.key)) { event.preventDefault(); goTo(activeIndex - 1) }
+        if (event.key === 'Home') { event.preventDefault(); goTo(0) }
+        if (event.key === 'End') { event.preventDefault(); goTo(slides.length - 1) }
+      })
+
+      let touchStartY = null
+      document.addEventListener('touchstart', (e) => { touchStartY = e.changedTouches[0].clientY }, { passive: true })
+      document.addEventListener('touchend', (e) => {
+        if (touchStartY === null) return
+        const dy = touchStartY - e.changedTouches[0].clientY
+        if (Math.abs(dy) > 60) goTo(activeIndex + (dy > 0 ? 1 : -1))
+        touchStartY = null
+      }, { passive: true })
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const visible = entries.find((entry) => entry.isIntersecting && entry.intersectionRatio > 0.6)
+          if (visible) updateNavigation(slides.indexOf(visible.target))
+        },
+        { root: deck, threshold: [0.6] },
+      )
+
+      slides.forEach((slide) => observer.observe(slide))
+      window.addEventListener('resize', fitDeck)
+      fitDeck()
+      updateNavigation(0)
+    </script>
+  </body>
+</html>

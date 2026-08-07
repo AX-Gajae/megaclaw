@@ -1,0 +1,78 @@
+{
+ "market_record_id": "MKT-2024-0074",
+ "event_name": "딘트(DINT) 팝업스토어 @신세계 센텀시티",
+ "brand": "딘트",
+ "ip_or_collab": null,
+ "category": "fashion",
+ "intervention": {
+  "concept_description": "여성 패션 브랜드 딘트 팝업",
+  "experience_elements": [],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "신세계백화점 센텀시티점 4층",
+  "venue_type": "department_store",
+  "neighborhood": "센텀시티",
+  "city": "부산",
+  "period_from": "2024-10-08",
+  "period_to": null,
+  "area_pyeong": null,
+  "multi_store": null,
+  "derived": {
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 1000,
+  "visitors_period_days": null,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "한경비즈니스 보도(딘트 발표 인용): '지난 8일 오픈한 신세계백화점 센텀시티점 4층 팝업스토어가 누적 방문객 1000명을 돌파했다' (오픈 초기 누적)",
+  "visitors_source_quote": "23일 딘트는 지난 8일 오픈한 신세계백화점 센텀시티점 4층 팝업스토어가 누적 방문객 1000명을 돌파했다고 발표했다.",
+  "visitors_source_url": "https://magazine.hankyung.com/business/article/202410234915b",
+  "visitors_source_date": "2024-10-23",
+  "sales_krw": null,
+  "sales_source_quote": "",
+  "sales_source_url": "",
+  "sales_source_date": "",
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "오픈 약 2주 시점 누적 1000명 돌파 보도. 최종 총계 미기재 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "기간 미상",
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,163 @@
+{
+ "record_id": "RTPU2425",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:드래곤빌리지",
+  "space_id": "unresolved:서울_더현대서울_지하2층_아이코닉존",
+  "client_party_id": "unresolved:주식회사_하이브로",
+  "brand_key": "드래곤빌리지",
+  "space_key": "더현대서울"
+ },
+ "intervention": {
+  "concept": "드래곤빌리지 IP를 활용한 더현대서울 팝업스토어. 게이트/스토리보드 가벽, 포토존, 체험 게임존, 판매 매대 등으로 구성된 캐릭터 굿즈 판매형 팝업.",
+  "brand_name": "드래곤빌리지",
+  "experience_elements": [
+   "포토부스",
+   "포토존(입구 선반/거울/커튼)",
+   "룰렛 이벤트",
+   "게임존 태블릿 체험",
+   "등신대/천장 행잉 보드",
+   "웨이팅 라인 운영"
+  ],
+  "promotions": [
+   "룰렛 이벤트",
+   "포토부스(기본 800매 제공)"
+  ],
+  "staging_tags": [
+   "스토리보드 가벽",
+   "키비주얼 아트워크",
+   "인테리어 필름/실사 그래픽",
+   "입구 타이틀(고무 스카시)",
+   "FRP 조형물",
+   "편의점 컨셉 판매 매대"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": null,
+   "venue_name": "더현대서울",
+   "venue_type": "백화점 팝업존(지하 2층 아이코닉존)",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-07-25",
+   "to": "2024-07-31",
+   "days": 7
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "계약서 총 계약금액 115,000,000원(VAT 별도), 후지급 100% - 행사 종료 후 2024.08.31. 지급. 견적서 총계 122,352,250원(VAT 10% 별도, 대행수수료 10% 10,304,750원 포함). 입금계좌 KB국민은행 810101-04-316648 주식회사 스위트스팟."
+  },
+  "brand_requirements": [
+   "제작물 사용 전 의뢰사 감수 및 서면 승인 필요",
+   "모든 제작물 지식재산권 의뢰사 귀속",
+   "지식재산권 사용 가이드라인 준수",
+   "진행 보고서 및 결과보고 제출",
+   "안전관리 및 보안유지 의무"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대서울 지하2층 아이코닉존 팝업존"
+  },
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 80,
+    "holiday_until": 51,
+    "holiday_block_in": 0,
+    "nat_event_gap": 106,
+    "nat_event": null,
+    "doc_lag_days": 2,
+    "doc_dates_found": 3
+   },
+   "competition": {
+    "comp_same_addr_open": 6,
+    "comp_prior_at_venue": 2,
+    "comp_within_500m_open": 6,
+    "comp_within_1000m_open": 6,
+    "matched_address": "서울 영등포구 여의대로 108"
+   }
+  },
+  "demand_signals": {
+   "waiting_reported": true,
+   "sold_out": true,
+   "source": "역검색 외부 보도(2026-07-27)"
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 115.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 미제공. 방문자/매출 실측 데이터 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 115.0 ≈ 계약총액 115.0",
+   "contract_total_mm": 115.0,
+   "last_recognition_period": "2024-08"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "114uuKlkzswqu9w0SxOP1Y5VB1pO9wNcK",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/114uuKlkzswqu9w0SxOP1Y5VB1pO9wNcK/view",
+   "title": "[Sweetspot] 드래곤빌리지 팝업스토어_결과보고서.pdf"
+  },
+  {
+   "doc_id": "159i7GAn1xv1loF26cJ6FI7CA2A3d8BeX",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/159i7GAn1xv1loF26cJ6FI7CA2A3d8BeX/view",
+   "title": "240721_업무계약서_스위트스팟(더현대팝업스토어).pdf"
+  },
+  {
+   "doc_id": "1HffHYy1D0IztuIHkSExGKhWL-vbyv8kl",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1HffHYy1D0IztuIHkSExGKhWL-vbyv8kl/view",
+   "title": "Sweetspot_하이브로_드래곤빌리지 팝업스토어_견적서_240806.pdf"
+  },
+  {
+   "doc_id": "1XgOXcXOlRCbg-VOWR2VXiiQezxz0vP-y",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1XgOXcXOlRCbg-VOWR2VXiiQezxz0vP-y/view",
+   "title": "[Sweetspot] 드래곤빌리지 팝업스토어_기획안_240723.pdf"
+  },
+  {
+   "doc_id": "1Y9iTH_b5bc5-Ln0dxKx2vPwTGH3sUCd4",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Y9iTH_b5bc5-Ln0dxKx2vPwTGH3sUCd4/view",
+   "title": "RTPU2425_하이브로_드래곤빌리지 팝업스토어_계약서_240721.pdf"
+  },
+  {
+   "doc_id": "1bW3wiE8IV78pPKpLgrWFN8VNt3sJeU7L9_fZ3-AnmVU",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1bW3wiE8IV78pPKpLgrWFN8VNt3sJeU7L9_fZ3-AnmVU/view",
+   "title": "제안서_내용없음"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 5건: 240721_업무계약서_스위트스팟(더현대팝업스토어).p, RTPU2425_하이브로_드래곤빌리지 팝업스토어_계약서, 제안서_내용없음, [Sweetspot] 드래곤빌리지 팝업스토어_기획안_2, Sweetspot_하이브로_드래곤빌리지 팝업스토어_견적. 미확실: 결과보고서 부재로 방문자수·POS 매출 등 outcome 전체 확인 불가; 제안서 내용 없음; 팝업 면적(평) 미기재; 기획서상 예상 방문자수 미확인; 입지 세부(구/유동인구 맥락) 미기재 | 외부 라벨 역검색(2026-07-27): 수요신호 적재"
+ }
+}

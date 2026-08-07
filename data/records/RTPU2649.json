@@ -1,0 +1,144 @@
+{
+ "record_id": "RTPU2649",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:웨이든_WAYDN",
+  "space_id": "unresolved:스타필드_수원_4F",
+  "client_party_id": "unresolved:웨이든_Weiden",
+  "brand_key": "웨이든",
+  "space_key": "스타필드_수원"
+ },
+ "intervention": {
+  "concept": "웨이든(WAYDN)과 무하마드 알리(Muhammad Ali) 콜라보 팝업스토어를 스타필드 수원 4F에서 운영. 앰배서더 팬밋업·사인회, 제품 판매, 스톱워치 게임기 등 고객참여형 이벤트로 구성. 계단 단차를 활용한 레드 복싱글러브 포인트 배치와 제품 중심 쇼케이스형 VMD 연출.",
+  "brand_name": "WAYDN (웨이든) x Muhammad Ali",
+  "experience_elements": [
+   "앰버서더 팬밋업/사인회",
+   "제품 판매",
+   "고객참여형 이벤트(스톱워치 게임기 등)"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "3D 시안",
+   "계단 단차 전면 활용",
+   "레드 복싱글러브 포인트 배치",
+   "제품 중심 쇼케이스형 VMD",
+   "계단부 DP"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "수원",
+   "district": null,
+   "venue_name": "스타필드 수원",
+   "venue_type": "복합쇼핑몰",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2026-06-05",
+   "to": "2026-06-18",
+   "days": 14
+  },
+  "season": "초여름",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": "견적서 원문 대부분 판독 불가(문자 깨짐). 식별 가능한 금액 항목 4,617,600원 존재하나 항목 성격 불명. 계약 총액·VAT·분할·수수료율 확인 불가. 아마란스 project_amount null, POM 확정예산 20,000,000원(파이프라인 낙관치, 실집행 아님)."
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 3,
+    "months_since_last": 1.2,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 11,
+    "holiday_until": 71,
+    "holiday_block_in": 0,
+    "nat_event_gap": 2,
+    "nat_event": "지방선거",
+    "doc_lag_days": 14,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 1162245.0,
+    "pnl_pre_accounts": 3,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2026-05-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 부재. 방문객·실매출(POS) 실측 데이터 없음. 손익 시드상 매출 0원, 순이익 -1.2백만원(손실). POM '프로젝트 진행상황' Drop 표기(2026-06-11)로 실제 취소/미진행 가능성 있음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 미마감(스냅샷 2026-05 이전 인식 없음)",
+   "contract_total_mm": null,
+   "last_recognition_period": null
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "10U3VEEMZYRFP5uel73BGIdJpOGy0HGNU",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/10U3VEEMZYRFP5uel73BGIdJpOGy0HGNU/view",
+   "title": "결과보고서_없음.txt"
+  },
+  {
+   "doc_id": "1MvmvRqoUL5x5g-RShgr87MvaCVl_zX9k",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1MvmvRqoUL5x5g-RShgr87MvaCVl_zX9k/view",
+   "title": "제안서_웨이든_스타필드(수원점) 팝업스토어_0518.pdf"
+  },
+  {
+   "doc_id": "1OAUvoi_waRpctLD-foZcy3L7gBxilHBf",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1OAUvoi_waRpctLD-foZcy3L7gBxilHBf/view",
+   "title": "(양식)팝업스토어 프로젝트 종료 보고서_RTPU2649_웨이든 수원스타필드 팝업스토어_결과보고서 대체.docx"
+  },
+  {
+   "doc_id": "1Rs-ViY3VthJ3TnozUZ4RekCt5mjPe75V",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Rs-ViY3VthJ3TnozUZ4RekCt5mjPe75V/view",
+   "title": "260522_Sweetspot_웨이든_수원스타필드팝업_견적서.pdf"
+  },
+  {
+   "doc_id": "1UWV78YVMtX-I4Y38VtiRBEtapz_OwujB",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1UWV78YVMtX-I4Y38VtiRBEtapz_OwujB/view",
+   "title": "계약서_없음.txt"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 2건: 제안서_웨이든_스타필드(수워, 260522_Sweetspot_웨이든_수원. 미확실: 견적서 원문 문자 깨짐으로 계약금액/수수료구조/분할조건 판독 불가; 실계약금액(아마란스 amount null); 면적(평) 미기재; 방문객·실매출 성과지표 전무; Drop 여부 확정 불가(운영기간 등재 vs POM Drop); 클라이언트 담당자 신원·연락처 미확보; 제작물/반입 집기 리스트 문자 깨짐"
+ }
+}

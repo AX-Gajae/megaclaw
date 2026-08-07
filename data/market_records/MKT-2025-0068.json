@@ -1,0 +1,93 @@
+{
+ "market_record_id": "MKT-2025-0068",
+ "event_name": "2025 짱구 팝업스토어(떡잎마을 방범대와 숨바꼭질) 서울",
+ "brand": "대원미디어(짱구는 못말려)",
+ "ip_or_collab": "짱구는 못말려",
+ "category": "character",
+ "intervention": {
+  "concept_description": "숨바꼭질 콘셉트 짱구 팝업, 100cm 이상 대형 피규어 포토존, 서울 한정 피규어(한강공원·남산타워 배경) 등 지역 한정 굿즈",
+  "experience_elements": [
+   "대형 피규어 포토존",
+   "포토카드 프린터"
+  ],
+  "promotions": [
+   "IC카드 스티커 선착순 증정",
+   "5만원 이상 구매 시 아크릴 키링",
+   "10만원 이상 구매 시 가방 키링"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "아이파크몰 용산점 리빙파크 3층 도파민 스테이션 더 팝업",
+  "venue_type": "mall",
+  "neighborhood": "용산",
+  "city": "서울",
+  "period_from": "2025-08-06",
+  "period_to": "2025-08-20",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 15,
+    "weekend_share": 0.27,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 5,
+    "months_since_last": 8.7,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 5000,
+  "visitors_period_days": 14,
+  "counting_basis": "entry",
+  "counting_basis_note": "웨이팅 등록·입장인원 제한 기반 집계로 추정되는 보도: '2주간 진행한 짱구는 못말려 팝업은 온라인 예약 등 입장인원을 제한했음에도 5000명이 넘는 인원이 방문했다' — '넘는'이므로 5000명 이상",
+  "visitors_source_quote": "2주간 진행한 ‘짱구는 못말려’ 팝업은 온라인 예약 등 입장인원을 제한했음에도 5000명이 넘는 인원이 방문했다.",
+  "visitors_source_url": "https://fashionbiz.co.kr/article/221690",
+  "visitors_source_date": "2025-11-25",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "오전 9시부터 웨이팅 등록 운영",
+   "sold_out": null,
+   "reservation_fill": "입장인원 제한(예약제) 운영",
+   "signal_quotes": [
+    "온라인 예약 등 입장인원을 제한했음에도 5000명이 넘는 인원이 방문했다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "E",
+    "C"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "서울(용산) 이후 청주·대구·부산 순회. 잠실 '짱구는 여행중' 팝업(2024)과는 별개 행사. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

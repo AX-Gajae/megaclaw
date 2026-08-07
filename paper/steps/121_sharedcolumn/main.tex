@@ -1,0 +1,130 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{kotex}
+\setmainfont{Apple SD Gothic Neo}
+\setsansfont{Apple SD Gothic Neo}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,linkcolor=MidnightBlue,citecolor=MidnightBlue,
+            urlcolor=MidnightBlue]{hyperref}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.5em}{}
+\captionsetup{font=small,labelfont=bf}
+\setlength{\parskip}{0.35em}
+\setlength{\parindent}{0pt}
+
+% 주장 상자 — 모든 주장은 반증 조건을 함께 적는다
+\usepackage{mdframed}
+\newmdenv[linewidth=0.4pt,linecolor=gray!60,backgroundcolor=gray!5,
+          innertopmargin=6pt,innerbottommargin=6pt,skipabove=8pt,skipbelow=8pt]{claimbox}
+\newcommand{\claim}[2]{\begin{claimbox}\textbf{주장.} #1\par\smallskip
+  \textcolor{gray!70}{\textbf{반증 조건.} #2}\end{claimbox}}
+
+\title{\bfseries 열을 나눠 쓰면 한쪽이 벌고 한쪽이 낸다\\[2pt]
+\large 덮음이 정한다}
+\author{월드모델 실험실 · 노트 660}
+\date{2026-08-06}
+\begin{document}\maketitle
+
+\section{한 줄}
+
+축 하나를 도메인 둘이 나눠 쓰게 했다. 한 도메인은 이득이 \textbf{두 배}가 되고
+다른 도메인은 \textbf{손해}가 됐다. 판에서는 둘이 상쇄돼 아무 일도 없어 보인다.
+갈라놓은 것은 신호가 아니라 \textbf{덮음}이었다.
+
+\section{왜 이걸 했나}
+
+노트 641 이 지역 방문자 축을 재고 이 판에서 \emph{유일한 양수}를 얻었다 ---
+팝업 도메인 $+0.009$(8/12). 다만 72행이라 열값(도메인당 $\rho$ $0.02\sim0.025$)에
+묻혀 채택하지 못했다.
+
+그런데 그 축을 \textbf{팝업에만} 붙였다. \verb|visitoraxes.build()| 가
+\verb|_ids()['팝업']| 만 읽었기 때문이다. \textbf{시장팝업 249행도 장소가 있다} ---
+도로명주소로 시군구가 107건 붙고, 날짜는 레코드 파일이 아니라
+\verb|data/state/market_axes.json| 의 \verb|period_from| 에 249건 전부 있다.
+
+위치 보유 행이 $72 \to 179$ 로 2.5배가 된다.
+
+\section{쟀다}
+
+팔 넷, \textbf{열은 하나}(\verb|vis_out|). 배선을 먼저 확인했다 --- 팝업 72 ·
+시장팝업 107.
+
+\begin{center}\small
+\begin{tabular}{lrrr}\toprule
+팔 & 판 & 팝업 & 시장팝업 \\ \midrule
+팝업만 & $+0.0008$ (8/12) & $+0.009$ & $+0.002$ \\
+팝업$+$시장 & $-0.0005$ (5/12) & $\mathbf{+0.0201}$ & $\mathbf{-0.0227}$ \\
+위약(값만 섞음) & $-0.0006$ (4/12) & $-0.0679$ & $+0.0151$ \\ \bottomrule
+\end{tabular}\end{center}
+
+노트 641 이 소수점까지 재현됐다($+0.0008$ · $+0.009$ · 8/12).
+
+\claim{열을 나눠 쓰면 두 도메인이 같이 오르거나 같이 내린다.}{한쪽만 오르고
+다른 쪽이 내리면 그 차를 만드는 제3의 성질이 있다.}
+
+\section{위약이 판정을 뒤집는다}
+
+판만 보면 세 팔이 다 $\pm0.0008$ 안이라 ``아무 일도 없다''다. 도메인으로 갈라야
+보인다 --- \textbf{진짜와 위약의 부호가 정확히 반대}다.
+
+\begin{center}\small
+\begin{tabular}{lrrr}\toprule
+& 진짜 & 위약 & 차 \\ \midrule
+팝업 & $+0.0201$ & $-0.0679$ & $\mathbf{+0.088}$ \\
+시장팝업 & $-0.0227$ & $+0.0151$ & $-0.038$ \\ \bottomrule
+\end{tabular}\end{center}
+
+팝업에서는 \textbf{값이 정보}다(섞으면 무너진다). 시장팝업에서는 \textbf{값이
+해롭다}(섞으면 나아진다). 같은 열, 같은 자료, 반대 부호다.
+
+\section{갈라놓은 것은 덮음이다}
+
+\begin{center}\small
+\begin{tabular}{lrl}\toprule
+도메인 & 덮음 & 경로 \\ \midrule
+팝업 & $0.81$ & 도로명주소 43 · district 25 · city 4 \\
+시장팝업 & $\mathbf{0.43}$ & 도로명주소 107 \textbf{하나뿐} \\ \bottomrule
+\end{tabular}\end{center}
+
+시장팝업은 \verb|data/records| 에 파일이 없어 \verb|conditions.location| 을 못
+쓴다. 그래서 경로가 하나이고 \textbf{행의 57\%가 마스크 0} 이다. 그 결측 무리는
+정보가 아니라 \textbf{표시자}로 쓰인다 --- 노트 653 이 결측 덩어리가 순위 변환
+아래에서 유령 상관을 만든다는 것을 쟀고, 여기서는 그 덩어리가 아예
+\emph{예측에} 쓰인다.
+
+\textbf{위약이 그 증거다.} 값을 섞으면 시장팝업이 $-0.0227 \to +0.0151$ 로
+\emph{나아진다}. 값이 없어져도 마스크 무늬는 그대로이므로, 남은 것이 유용했다는
+뜻이다.
+
+\claim{덮음이 낮은 도메인에 열을 더하면 결측 무리가 표시자로 쓰인다.}{덮음을
+올렸을 때 그 도메인의 손해가 줄지 않으면 이 설명이 틀렸다.}
+
+\section{처분}
+
+\textbf{채택 안 한다} --- 판 $-0.0005$ 는 문턱 안이고 두 도메인이 상쇄한다.
+그런데 \textbf{처음으로 방향이 분명하다}. 사전 등록의 갈래 ①이 \emph{반만}
+맞았다: 팝업은 두 배 이상 올랐고(행을 늘린 것이 실제로 도왔다) 시장팝업은
+음수다(덮음이 낮아서).
+
+다음은 시장팝업 덮음을 올리는 것이다. 안 붙는 142건은 \verb|record_store_link|
+자체가 없으므로 BQ 나 드라이브에서 장소를 찾아야 한다. 덮음 $0.70$ 을 넘으면
+다시 잰다.
+
+그리고 하나 더 --- \textbf{판만 보면 이 사이클은 빈손이었다}. 세 팔이 다
+$\pm0.0008$ 안이다. 도메인으로 갈라야 $+0.088$ 짜리 차가 보였다. 노트 611 이
+``판이 다섯 자 중 제일 약하다''고 적은 자리가 이 세션에서 세 번째로 나온다.
+
+\begin{figure}[h]\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{(a) 열을 나눠 쓰니 팝업 이득이 두 배가 되고 시장팝업은 음수가 된다
+(회색 띠는 판 문턱 $\pm0.0045$). (b) 진짜와 위약의 부호가 정확히 반대다.
+(c) 갈라놓은 것은 덮음 $0.81$ 대 $0.43$ 이다.}
+\end{figure}
+
+\end{document}

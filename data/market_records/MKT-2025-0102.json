@@ -1,0 +1,71 @@
+{
+  "market_record_id": "MKT-2025-0102",
+  "event_name": "T1 X 골스튜디오 팝업스토어(아이파크몰 용산점, 2025 롤드컵 시즌)",
+  "brand": "HDC아이파크몰/T1/골스튜디오",
+  "ip_or_collab": "T1(리그 오브 레전드) X 골스튜디오",
+  "category": "game_webtoon",
+  "intervention": {
+    "concept_description": "2025 롤드컵 기간(결승전 당일까지) 연동 T1 팝업. 월드 챔피언십 유니폼·자켓 등 팀 공식 의류&용품 판매, T1 팬미팅 추첨 이벤트, CGV 단체 관람 연계",
+    "experience_elements": [
+      "T1 팬미팅 추첨 이벤트"
+    ],
+    "promotions": [
+      "월드 챔피언십 유니폼·자켓 판매"
+    ],
+    "is_free_entry": true,
+    "reservation_required": false
+  },
+  "conditions": {
+    "venue": "아이파크몰 용산점 패션파크 6층",
+    "venue_type": "mall",
+    "neighborhood": "용산",
+    "city": "서울",
+    "period_from": "2025-10-22",
+    "period_to": "2025-11-09",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 19,
+        "weekend_share": 0.32,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 19,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "아이파크몰 발표 인용(판매량 증가율): '팝업 마지막 주말에는 관련 유니폼 판매량이 3배 이상 급증하며' - 절대 방문객·매출 총계 미보도",
+    "visitors_source_quote": "특히 T1의 결승 진출이 확정된 순간부터 팬들의 관심이 폭발적으로 증가해 팝업스토어를 찾는 고객 수가 눈에 띄게 늘어나고 팝업 마지막 주말에는 관련 유니폼 판매량이 3배 이상 급증하며 '결승진출&우승 특수'를 입증했다.",
+    "visitors_source_url": "https://www.dailian.co.kr/news/view/1573395/T1-%EB%A1%A4%EB%93%9C%EC%BB%B5-%EC%9A%B0%EC%8A%B9-%ED%9A%A8%EA%B3%BC%EC%97%90%EC%95%84%EC%9D%B4%ED%8C%8C%ED%81%AC%EB%AA%B0-%ED%8C%9D-2025",
+    "visitors_source_date": "2025-11-14",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "팝업 마지막 주말에는 관련 유니폼 판매량이 3배 이상 급증하며 '결승진출&우승 특수'를 입증했다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "절대 수치 없이 증가율(3배)만 보도. CGV 영화 관람 연계 '스크린X체험' 전략 사례. | 병합 레코드: MKT-2025-2011 | [병합:MKT-2025-2011] 판매량 3배 이상 급증(기준 대비 배율) 수요 지표. 동 기사에 트와이스 팝업(10일간 10억원 이상)은 수집 제외 목록 이벤트.",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

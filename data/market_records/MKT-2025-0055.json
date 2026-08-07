@@ -1,0 +1,102 @@
+{
+ "market_record_id": "MKT-2025-0055",
+ "event_name": "GS25 X 돈키호테 팝업스토어 (더현대 서울)",
+ "brand": "GS리테일 (GS25)",
+ "ip_or_collab": "돈키호테(일본)",
+ "category": "other",
+ "intervention": {
+  "concept_description": "일본 돈키호테 국내 첫 팝업. '로컬라이즈드 돈키호테' 콘셉트로 PB 식품·한정 굿즈 판매(약 16평, 60여 종)",
+  "experience_elements": [
+   "돈키호테 PB 'JONETZ' 식품 50여 종",
+   "팝업 한정 굿즈",
+   "GS25 유어스·무무씨 굿즈"
+  ],
+  "promotions": [
+   "현지 수준 가격 책정"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "더현대 서울 지하 1층",
+  "venue_type": "department_store",
+  "neighborhood": "여의도",
+  "city": "서울",
+  "period_from": "2025-07-08",
+  "period_to": "2025-08-01",
+  "area_pyeong": 16,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 25,
+    "weekend_share": 0.24,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 11000,
+  "visitors_period_days": 9,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "GS리테일 발표(개장 9일차 시점 누적). 전체 25일 운영 기간 총계는 미공개",
+  "visitors_source_quote": "17일 GS리테일에 따르면 팝업을 연 지 9일간 누적 약 1만1,000명 이상이 방문했다. 하루평균 600팀, 1,300여명의 규모다.",
+  "visitors_source_url": "http://www.srtimes.kr/news/articleView.html?idxno=181315",
+  "visitors_source_date": "2025-07-17",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "첫날 웨이팅 1200명·조기 마감, 둘째날 600팀(약 1400명) 조기 마감",
+   "sold_out": "인기 PB 제품 진열 즉시 품절 반복",
+   "reservation_fill": "오픈 9일 연속 오후 2시 이전 웨이팅 예약 조기 마감",
+   "signal_quotes": [
+    "개장 첫날인 8일에는 오전 8시부터 대기가 시작돼 오전 10시에 200명을 넘어섰고, 오전 11시에는 웨이팅 인원이 1200명에 도달해 당일 마감됐다.",
+    "실제로 이들 제품은 매대에 진열되자마자 빠르게 품절되며 높은 인기를 입증했다.",
+    "GS리테일에 따르면 돈키호테 팝업 개점 첫날 1천200명의 인파가 몰리며 30분 만에 당일 선착순 입장이 마감됐다. 이후에도 하루 약 1천300명의 고객이 방문하고 있으며(ZDNet 2025-07-29)",
+    "GS25는 팝업스토어 전체 기간 약 3만 5000명 고객이 방문할 것으로 전망한다.(한스경제 2025-07-11, 전망치)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": true,
+   "final_marked": false,
+   "usable": true,
+   "days_stated": 9,
+   "days_stored": 25,
+   "days_corrected": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "소셜밸류(2025-07-14)·zdnet(2025-07-08) 대기/품절 보도. 헤럴드경제는 첫 주 9000명 보도. | 병합 레코드: MKT-2025-0009 | [병합:MKT-2025-0009] 편의점 콜라보 팝업(식품 비중 최대). 첫날 웨이팅·완판 수치는 실측, 총 방문객 3.5만은 주최사 '전망'치로 alt_figures에 분리 기록",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

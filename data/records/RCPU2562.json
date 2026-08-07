@@ -1,0 +1,135 @@
+{
+ "record_id": "RCPU2562",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:NCT_DREAM",
+  "space_id": "unresolved:카시나_한남",
+  "client_party_id": null,
+  "brand_key": "NCT_DREAM",
+  "space_key": "카시나_한남"
+ },
+ "intervention": {
+  "concept": "NCT DREAM과 카시나(KASINA) 한남의 협업 팝업스토어로 추정된다. 원문 문서가 제공되지 않아 상세 컨셉은 확인 불가.",
+  "brand_name": "NCT DREAM",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "한남",
+   "venue_name": "카시나 한남",
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-11-12",
+   "to": "2025-11-15",
+   "days": 4
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.25,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 4.1,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 34,
+    "holiday_until": 94,
+    "holiday_block_in": 0,
+    "nat_event_gap": 1,
+    "nat_event": "수능",
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 32700.0,
+    "pnl_pre_accounts": 1,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-10-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 15.9
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-11, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-11"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "17dE5mfUSJR-SekTNbsc4aK1btH7Bnzd5",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/17dE5mfUSJR-SekTNbsc4aK1btH7Bnzd5/view",
+   "title": "SME 연간 용역계약서_서면 날인본.pdf"
+  },
+  {
+   "doc_id": "17qs37wLpAi8zmo6u_A2tUNxfOr_2pnoa",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/17qs37wLpAi8zmo6u_A2tUNxfOr_2pnoa/view",
+   "title": "(SME) 사업자등록증.pdf"
+  },
+  {
+   "doc_id": "1YMjPEe-LFMZPJDRmu-FH0sNwn4k9cZLW",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1YMjPEe-LFMZPJDRmu-FH0sNwn4k9cZLW/view",
+   "title": "견적서_(작성완료) 렌탈계약서_주식회사 품_1104.pdf"
+  },
+  {
+   "doc_id": "1iV1BYY86qPrDqI6Clp13LnrcWRw1xpW2",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1iV1BYY86qPrDqI6Clp13LnrcWRw1xpW2/view",
+   "title": "NCT드림카시나_결과보고서.pdf"
+  },
+  {
+   "doc_id": "1s1Bcb69V--qAsuFRQ4SpJfcPfDFACdl2",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1s1Bcb69V--qAsuFRQ4SpJfcPfDFACdl2/view",
+   "title": "(스위트스팟) 2025 NCT DREAM 미니 6집_최종견적서_1117.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 미제공; 컨셉 및 체험요소·프로모션·연출태그 전체; 면적/수수료구조/브랜드 요구사항; 방문자수·매출 실측 데이터; client_name 및 venue_type 확인 불가"
+ }
+}

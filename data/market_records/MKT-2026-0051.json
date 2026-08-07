@@ -1,0 +1,101 @@
+{
+  "market_record_id": "MKT-2026-0051",
+  "event_name": "토이스토리 X 피스마이너스원 'THE FIRST FAN' 팝업(성수)",
+  "brand": "피스마이너스원(PEACEMINUSONE)/디즈니",
+  "ip_or_collab": "토이스토리 X 피스마이너스원(지드래곤)",
+  "category": "character",
+  "intervention": {
+    "concept_description": "지드래곤 브랜드 피스마이너스원과 토이스토리 콜라보 팝업 'THE FIRST FAN'. 성수동에서 2026-07-01부터 운영. 사전 예약제(하루 1300명 한정).",
+    "experience_elements": [
+      "콜라보 굿즈 판매",
+      "포토존"
+    ],
+    "promotions": [
+      "사전 예약(하루 1300명)"
+    ],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "성수동(서울 성동구)",
+    "venue_type": "street_standalone",
+    "neighborhood": "성수",
+    "city": "서울",
+    "period_from": "2026-07-01",
+    "period_to": "2026-07-08",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 8,
+        "weekend_share": 0.25,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "unknown",
+    "counting_basis_note": "방문객 총계 미공개(첫날 매출·예약 수치만 보도)",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": 1380000000,
+    "sales_source_quote": "오픈 첫날 현장 매출 7억8000만 원, 온라인 포함 총매출은 13억8000만 원을 기록했다.",
+    "sales_source_url": "https://fashionbiz.co.kr/article/227614",
+    "sales_source_date": "2026-07-03",
+    "demand_signals": {
+      "waiting_time_reported": "현장 대기 최대 4시간",
+      "sold_out": null,
+      "reservation_fill": "사전 예약 하루 1300명 한정 운영",
+      "signal_quotes": [
+        "객단가는 100만 원을 넘었고 1인 최고 구매액은 450만 원이었다. (패션비즈 2026-07-03)",
+        "사전 예약은 하루 1300명으로 제한해 운영했다. (패션비즈 2026-07-03)",
+        "현장 대기 시간은 최대 4시간에 달했다. (어패럴뉴스 2026-07-09)",
+        "사전예약도 하루 약 1300명 규모로 운영됐으며, 오픈 전부터 예약이 빠르게 마감됐다.",
+        "플레이인더박스에 따르면 팝업스토어 오픈 첫날 현장 매출은 약 7억8000만원을 기록했으며, 무신사 온라인 스토어 판매를 포함한 총매출은 13억8000만원에 달했다.",
+        "오픈 초반 방문객 1인당 평균 구매금액은 100만원 이상을 기록했으며, 최고 구매 고객은 약 450만원 상당의 제품을 구매한 것으로 집계됐다."
+      ]
+    },
+    "conflict": true,
+    "alt_figures": [
+      {
+        "metric": "sales",
+        "value": 780000000,
+        "basis": "unknown",
+        "quote": "팝업은 오픈 직후 최대 4시간의 대기줄 이 발생하며 화제를 모았다. 첫날 현장 매출은 7억 8,000만 원, 방문객 1인당 평균 구매액은 100만 원대를 기록했다.",
+        "url": "https://www.apparelnews.co.kr/news/news_view/?idx=226308",
+        "date": "2026-07-09"
+      },
+      {
+        "metric": "sales",
+        "value": 780000000,
+        "basis": "unknown",
+        "quote": "팝업은 오픈 직후 최대 4시간의 대기줄 이 발생하며 화제를 모았다. 첫날 현장 매출은 7억 8,000만 원, 방문객 1인당 평균 구매액은 100만 원대를 기록했다.",
+        "url": "https://www.apparelnews.co.kr/news/news_view/?idx=226308",
+        "date": "2026-07-09"
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "notes": "매출은 오픈 첫날 기준(현장 7.8억·온라인 포함 13.8억). 행사 종료일 미상(보도 시점 운영 중) | 병합 레코드: MKT-2026-0037 | [병합:MKT-2026-0037] sales_krw=첫날 현장 매출 7.8억(어패럴뉴스·패션비즈). 총매출 13.8억은 온라인 포함(alt로 기술). 기간: 7/1~8(어패럴뉴스 '이달 1일부터 8월까지'는 오기로 보임-패션비즈 등 8일 운영). 주의: '8월까지' 표기 출처 상이로 period_to 불확실성 있음.",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {
+    "sales": "num_only"
+  },
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

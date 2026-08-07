@@ -1,0 +1,92 @@
+{
+ "market_record_id": "MKT-2025-0101",
+ "event_name": "3CE '벨벳 케이크 샵' 팝업 @올리브영N 성수",
+ "brand": "3CE (스타일난다)",
+ "ip_or_collab": "벨벳 라인 론칭 캠페인",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "벨벳 케이크 콘셉트 매장 연출. 신제품 체험, 포토존, 한정 구성 판매",
+  "experience_elements": [
+   "콘셉트 매장 연출",
+   "신제품 체험",
+   "포토존"
+  ],
+  "promotions": [
+   "팝업 한정 구성",
+   "현장 구매 혜택"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "올리브영N 성수",
+  "venue_type": "mall",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2025-10-22",
+  "period_to": "2025-11-03",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 13,
+    "weekend_share": 0.31,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 12000,
+  "visitors_period_days": 13,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "브랜드 성료 보도 인용",
+  "visitors_source_quote": "이번 팝업스토어는 약 2주간 총 1만2천 명 이상의 고객이 방문하며 주목을 받았다",
+  "visitors_source_url": "https://www.cmn.co.kr/news/articleView.html?idxno=48443",
+  "visitors_source_date": "2025-11-05",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "기존 제품 대비 309%에 달하는 매출 신장세를 기록했다 (틴트 라인 팝업 기간)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "매출 지표는 금액이 아닌 증가율(%)이라 signal로 기록. 일평균 약 1000명은 환산 금지 원칙에 따라 미사용. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "unreachable"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

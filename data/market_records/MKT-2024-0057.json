@@ -1,0 +1,75 @@
+{
+  "market_record_id": "MKT-2024-0057",
+  "event_name": "나가노 마켓 서울 팝업(아이파크몰 용산점, 2024년 9월)",
+  "brand": "HDC아이파크몰/나가노(주스)",
+  "ip_or_collab": "나가노(치이카와 작가) 캐릭터",
+  "category": "game_webtoon",
+  "intervention": {
+    "concept_description": "일본 인기 캐릭터 작가 나가노(치이카와·먼작귀) 공식 팝업. 사전 예약제 운영",
+    "experience_elements": [
+      "캐릭터 굿즈 판매"
+    ],
+    "promotions": [],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "아이파크몰 용산점",
+    "venue_type": "mall",
+    "neighborhood": "용산",
+    "city": "서울",
+    "period_from": "2024-09-01",
+    "period_to": "2024-09-30",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 30,
+        "weekend_share": 0.3,
+        "holiday_days": 3
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "아이파크몰 실적 보도(예약 접속): '지난해 9월 진행한 일본 인기 캐릭터 작가의 나가노 마켓 서울 팝업은 입장 예약 사이트 오픈과 동시에 18만명이 동시 접속해 모든 시간대가 조기 마감될 정도로 큰 인기를 끌었다' - 실방문 총계 미보도",
+    "visitors_source_quote": "지난해 9월 진행한 일본 인기 캐릭터 작가의 '나가노 마켓 서울 팝업'은 입장 예약 사이트 오픈과 동시에 18만명이 동시 접속해 모든 시간대가 조기 마감될 정도로 큰 인기를 끌었다.",
+    "visitors_source_url": "https://fashionbiz.co.kr/article/212765",
+    "visitors_source_date": "2025-01-06",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "오픈런 행진(비즈워치)",
+      "sold_out": null,
+      "reservation_fill": "예약 오픈 동시 18만 명 동시 접속, 전 시간대 조기 마감",
+      "signal_quotes": [
+        "인기 캐릭터 '먼작귀'의 '나가노 마켓', '먼작귀 페스타' 등도 높은 관심을 받으며 오픈런 행진을 이어갔다. (비즈워치 2025-01-17, https://news.bizwatch.co.kr/article/consumer/2025/01/17/0030)",
+        "입장 예약 사이트 오픈과 동시에 18만명이 동시 접속해 모든 시간대가 조기 마감될 정도로 큰 인기를 끌었다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "패션비즈 원문은 웹오픈 감사 거부로 미열람, 검색 추출 전문 기반(비즈워치 기사로 인기 교차 확인). 18만 명은 예약 사이트 동시 접속자수로 방문객 아님. | 병합 레코드: MKT-2024-2009 | [병합:MKT-2024-2009] 정확한 운영 일자 미보도(2024년 9월). 예약 동시접속 18만은 수요 지표(방문객 아님).",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

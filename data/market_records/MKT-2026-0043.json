@@ -1,0 +1,67 @@
+{
+  "market_record_id": "MKT-2026-0043",
+  "event_name": "포켓몬 팝업스토어(아이파크몰 용산점, 2026년 6월)",
+  "brand": "포켓몬코리아/HDC아이파크몰",
+  "ip_or_collab": "포켓몬",
+  "category": "game_webtoon",
+  "intervention": {
+    "concept_description": "포켓몬 인형·피규어·카드 팝업스토어(아이파크몰 도파민 스테이션 상권 연계). 포켓몬 카드 신제품 출시 연동 오픈런",
+    "experience_elements": [
+      "포켓몬 카드 판매",
+      "인형·피규어 굿즈"
+    ],
+    "promotions": [],
+    "is_free_entry": true,
+    "reservation_required": false
+  },
+  "conditions": {
+    "venue": "아이파크몰 용산점",
+    "venue_type": "mall",
+    "neighborhood": "용산",
+    "city": "서울",
+    "period_from": "2026-06-05",
+    "period_to": null,
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "ip_history": {
+        "prior_count": 10,
+        "months_since_last": 5.5,
+        "first_edition": false
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "media_estimate",
+    "counting_basis_note": "한국경제 현장 취재: '대기 행렬은 팝업스토어를 지나 매장 밖으로 100m가량 이어졌다' - 총 방문객 미보도",
+    "visitors_source_quote": "5일 오후 1시 서울 용산 아이파크몰. 포켓몬 팝업스토어 앞이 방문객으로 붐볐다. 매장 안쪽에는 포켓몬 인형과 피규어를 고르는 20~30대 고객이 줄을 섰고, 대기 행렬은 팝업스토어를 지나 매장 밖으로 100m가량 이어졌다.",
+    "visitors_source_url": "https://www.hankyung.com/article/2026060501651",
+    "visitors_source_date": "2026-06-06",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "대기 행렬 매장 밖 100m, 포켓몬 카드 '닌자스피너' 출시 당일 700~800명 대기, 매일 아침 100~150명 오픈런",
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "지난 4월 포켓몬 카드 '닌자스피너' 출시 당일엔 700~800명이 줄을 섰고, 이후에도 매일 아침 100~150명이 오픈런을 뛰고 있다. (한국경제 2026-06-06)",
+        "인형뽑기 크레인은 하루 평균 3000만~4000만원, 가챠파크는 월평균 2억원 이상의 매출을 올린다. (도파민 스테이션 상설 시설, 한국경제 2026-06-06)",
+        "대기 행렬은 팝업스토어를 지나 매장 밖으로 100m가량 이어졌다. 입장을 포기한 채 휴대폰을 꺼내 사진을 찍는 방문객도 많았다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "2026-06-05 오픈(기사 보도 시점 진행 중). 종료일·총 방문객 미보도. 닌자스피너 출시 대기 700~800명은 2026년 4월 도파민 스테이션 카드숍 기준. | 병합 레코드: MKT-2026-2007 | [병합:MKT-2026-2007] 오픈일(6/5) 현장 르포 기반 수요 지표. 종료일 미확인.",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": false,
+  "exclude_reason": "기간 미상",
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

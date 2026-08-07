@@ -1,0 +1,762 @@
+{
+ "record_id": "RCPU2617",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:아로셀_Arocell",
+  "space_id": "unresolved:현대백화점_판교점",
+  "client_party_id": "unresolved:FICC_에프아이씨씨",
+  "brand_key": "아로셀",
+  "space_key": "현대백화점_판교점"
+ },
+ "intervention": {
+  "concept": "'잠든 동안 피부가 쉬고 있는 공간'을 콘셉트로 한 아로셀 뷰티/화장품 팝업스토어. 나이트케어·휴식·수면 키워드에 라벤더/아이보리/블루 계열 제품 컬러를 활용한 DAY/NIGHT 체험존 구성. 세면대·침대 포토존과 콜라겐 체험, 룰렛 이벤트를 결합.",
+  "brand_name": "아로셀(Arocell)",
+  "experience_elements": [
+   "NIGHT 체험존",
+   "DAY 체험존(욕실)",
+   "DAY 포토존(세면대/화장대)",
+   "침대 포토존(수면 마스크팩 연출)",
+   "세면대 포토존(버블 모형+제품)",
+   "콜라겐 체험존",
+   "룰렛 이벤트",
+   "피부 진단 키오스크(레퍼런스 제안)",
+   "갤럭시탭 S7 인터랙션",
+   "65' 모니터 영상"
+  ],
+  "promotions": [
+   "룰렛 이벤트",
+   "스쿱 이벤트(전용 봉투 2,000EA 제작)",
+   "DAY 체험존 체험 이벤트"
+  ],
+  "staging_tags": [
+   "FRP 3D 조형물(기포발생기/거품모형/제품모형)",
+   "로고 스카시/아크릴",
+   "방염 카페트 바닥",
+   "가벽+실제 침구 연출",
+   "욕조·세면대·PVC 투명 볼풀공",
+   "쉬폰 커튼",
+   "네온 간판(A안)",
+   "레이어드 조명",
+   "PANTONE 4080C/677C/2120C 컬러 적용"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "성남시",
+   "district": "분당구",
+   "venue_name": "현대백화점 판교점",
+   "venue_type": "백화점",
+   "foot_traffic_context": "판교역로 146번길 20, 백화점 팝업 공간"
+  },
+  "area_pyeong": 24.6,
+  "period": {
+   "from": "2026-04-09",
+   "to": "2026-04-23",
+   "days": 15
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "hybrid",
+   "detail": "최종 견적 총계 98,600,000원(VAT 10% 별도). 소계 89,665,000 + 대행수수료(기업이윤) 10% 8,966,500 = 98,600,000(만원단위 절삭). 인테리어 소계 60,550,000, 인건비 소계 25,615,000, 세팅/철수 1,400,000, 운영기타비용 2,100,000. 매출계약형(로스율 1%), POS(OKPOS)·현대 EDI 연동. 정산: 선금 51,300,000(2026-03-27 입금완료) + 잔금 47,300,000(2026-04-30 입금완료). 총합계에서 선금 제외 잔금만 청구. 그리드 시공 별도 견적(전문건설 1,500만원 이상, 로스적용).집합) 관정. 최초 97,200,000→주말 인력 2인×2일 추가 +1,400,000으로 증액. | 계약서 미확인(2026-07-27 재독해 시도 — 대상 문서 부재/추출 실패): 총액은 견적 기준"
+  },
+  "brand_requirements": [
+   "집기 전체 모서리 둥글게 가공(R가공)",
+   "방염필름/방염카페트 시공",
+   "FRP h1600(PANTONE 4080C)",
+   "룰렛 h1800",
+   "행사주최자배상책임보험 가입(대인·대물 1억, 치료비 1인당 2백만원)",
+   "04.20 점포 휴무일 근무 제외",
+   "야간 세팅(4/8)·야간 철수(4/23)",
+   "웹포스 재고관리 시스템 2대 세팅(클라 내부 시스템 사용시 미청구)"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "백화점 팝업 공간"
+  },
+  "derived": {
+   "duration": {
+    "days": 15,
+    "weekend_share": 0.27,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 38,
+    "holiday_until": 44,
+    "holiday_block_in": 0,
+    "nat_event_gap": 55,
+    "nat_event": null,
+    "doc_lag_days": 31,
+    "doc_dates_found": 3
+   },
+   "competition": {
+    "comp_same_addr_open": 1,
+    "comp_prior_at_venue": 124,
+    "comp_within_500m_open": 1,
+    "comp_within_1000m_open": 1,
+    "matched_address": "경기 성남시 분당구 판교역로146번길 20"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 4555367.0,
+    "pnl_pre_accounts": 8,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2026-02-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 98.6
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(실제 방문객 수 및 현장 판매 매출 총액(POS 실적) 미확보. 원문(기획서/견적서/레퍼런스)에는 실측 방문·매출 데이터 없음. 계약금액 98,600,000원은 매출이 아닌 대행 계약금액이므로 outcome에서 제외. 04-09 오픈 이벤트로 아로셀 본사·셀럽·매거진 기자 방문 스케치 영상 촬영 진행.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식액 98.6 ≈ 계약총액 98.6 (±10%)",
+   "contract_total_mm": 98.6,
+   "last_recognition_period": "2026-04"
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "1-IHx9kXPHJ3zkHHXpyTuoTvzWYCl_rcm",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1-IHx9kXPHJ3zkHHXpyTuoTvzWYCl_rcm/view",
+   "title": "스크린샷 2026-02-10 113035.png"
+  },
+  {
+   "doc_id": "1-ZvRDgDbKTCpZo9Y1IY2bsR-pbusMWlj",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1-ZvRDgDbKTCpZo9Y1IY2bsR-pbusMWlj/view",
+   "title": "49cec389fd856a3fbe14eb5dc6debfba.jpg"
+  },
+  {
+   "doc_id": "107RyXEZvq3HMtDgdPrVsM63UKhazlI4N",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/107RyXEZvq3HMtDgdPrVsM63UKhazlI4N/view",
+   "title": "스크린샷 2026-02-10 113329.png"
+  },
+  {
+   "doc_id": "10NK21wEOFnPnmi6-6w6fm7dVLuSTNj_b",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/10NK21wEOFnPnmi6-6w6fm7dVLuSTNj_b/view",
+   "title": "스크린샷 2026-02-10 111947.png"
+  },
+  {
+   "doc_id": "11-3NMsETycZ9lJ42TxkeoJ4ufZN4dngl",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/11-3NMsETycZ9lJ42TxkeoJ4ufZN4dngl/view",
+   "title": "[스위트스팟] 아로셀 레퍼런스안(0211).pptx"
+  },
+  {
+   "doc_id": "11aEJPp6mV-V1NBSF4jdybNXMXjvACGfM",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/11aEJPp6mV-V1NBSF4jdybNXMXjvACGfM/view",
+   "title": "FICC_팝업스토어_견적인테리어 추가_0408_summer수정.xlsx"
+  },
+  {
+   "doc_id": "12lLgpvUNTSGnl8sSnb5ZenHrBg2W_Rv8",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/12lLgpvUNTSGnl8sSnb5ZenHrBg2W_Rv8/view",
+   "title": "[스위트스팟] 아로셀 현대 판교 2차 공간기획안(0313).pptx"
+  },
+  {
+   "doc_id": "14N7mEbWbOZdDE7GGnqmCpX0LXw1NVtAU",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/14N7mEbWbOZdDE7GGnqmCpX0LXw1NVtAU/view",
+   "title": "IMG_1490.jpg"
+  },
+  {
+   "doc_id": "16NOTovbbKEqP0TDJL9wvNmPjTwfRzcno",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/16NOTovbbKEqP0TDJL9wvNmPjTwfRzcno/view",
+   "title": "IMG_1498.jpg"
+  },
+  {
+   "doc_id": "16aoOZnsHVdA5qvnnpJBBY2GqB1xCJOur",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/16aoOZnsHVdA5qvnnpJBBY2GqB1xCJOur/view",
+   "title": "673815_592014_358.jpg"
+  },
+  {
+   "doc_id": "17gephE6B3QcYsQ6UscaIRGrnIfkOnsS1",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/17gephE6B3QcYsQ6UscaIRGrnIfkOnsS1/view",
+   "title": "스크린샷 2026-02-10 111605.png"
+  },
+  {
+   "doc_id": "18ZY3xryppAN5uBcNe2BrL2x06JV9rxLg",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/18ZY3xryppAN5uBcNe2BrL2x06JV9rxLg/view",
+   "title": "IMG_1496.jpg"
+  },
+  {
+   "doc_id": "18qns0fiZfppfodd_WRppIxmjIsG8e6jC",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/18qns0fiZfppfodd_WRppIxmjIsG8e6jC/view",
+   "title": "IMG_1493.jpg"
+  },
+  {
+   "doc_id": "18sT5Mx5ZegxjS-T93lE1kZjPnFiiQ5L4",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/18sT5Mx5ZegxjS-T93lE1kZjPnFiiQ5L4/view",
+   "title": "아로셀_팝업 기획안_1차피드백_260309.pdf"
+  },
+  {
+   "doc_id": "1961m9SXWKmAfabrUY1ClcTAUN1Iu2uJC",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1961m9SXWKmAfabrUY1ClcTAUN1Iu2uJC/view",
+   "title": "스크린샷 2026-02-10 112022.png"
+  },
+  {
+   "doc_id": "1AHFtR55oJrYT7iUm4vpjSHRO6NUaLZ1c",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1AHFtR55oJrYT7iUm4vpjSHRO6NUaLZ1c/view",
+   "title": "[스위트스팟] 아로셀 현대 판교 3차 공간기획안(0318).pdf"
+  },
+  {
+   "doc_id": "1C68wzAKrECMDjwIODN5P-3Uwe7n6xvlF",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1C68wzAKrECMDjwIODN5P-3Uwe7n6xvlF/view",
+   "title": "IMG_1485.jpg"
+  },
+  {
+   "doc_id": "1CH71ymgZ2J1ZfBaipB1lx95ktrQeiIq8",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1CH71ymgZ2J1ZfBaipB1lx95ktrQeiIq8/view",
+   "title": "SAMHWA_0050_보정-768x514.png"
+  },
+  {
+   "doc_id": "1CIgw45VvLqMQtz1Xcn0YBGS1nSaJL6Vy",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1CIgw45VvLqMQtz1Xcn0YBGS1nSaJL6Vy/view",
+   "title": "스크린샷 2026-02-10 132551.png"
+  },
+  {
+   "doc_id": "1CZh1hzKwIFH_6x77rX4WVdybpBQ4zRWd",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1CZh1hzKwIFH_6x77rX4WVdybpBQ4zRWd/view",
+   "title": "스크린샷 2026-02-10 113056.png"
+  },
+  {
+   "doc_id": "1CgHF5W9V59K8sdRzzDUHLHZkpYvDMf2f",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CgHF5W9V59K8sdRzzDUHLHZkpYvDMf2f/view",
+   "title": "[견적서-엘리트렌탈] TV, 테블릿 대여 건.pdf"
+  },
+  {
+   "doc_id": "1DO9HI4VozoONx58T4EgPDHE6Vu4kbaFv",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1DO9HI4VozoONx58T4EgPDHE6Vu4kbaFv/view",
+   "title": "사업자등록증_에프아이씨씨.pdf"
+  },
+  {
+   "doc_id": "1E4faQPSxpQCFtsrRp4qHIV5VYpF1_pPY",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1E4faQPSxpQCFtsrRp4qHIV5VYpF1_pPY/view",
+   "title": "스위트스팟_현대백화점 판교점 아로셀 팝업스토어 위탁 운영 계약서.pdf"
+  },
+  {
+   "doc_id": "1EhJst6b82R2ZCon1bL2UxlQIEjJ5u3C7",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1EhJst6b82R2ZCon1bL2UxlQIEjJ5u3C7/view",
+   "title": "[견적서-이벤툴] 아로셀 룰렛 제작 건.xls"
+  },
+  {
+   "doc_id": "1I-KBFQuOTc1_AROB3JgHltFeEWjEsbrU",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1I-KBFQuOTc1_AROB3JgHltFeEWjEsbrU/view",
+   "title": "[스위트스팟] 아로셀 현대 판교 2차 공간기획안(0313).pdf"
+  },
+  {
+   "doc_id": "1ITIJ3vmSXce3pt815PfSYyW3lSd_rSpD",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ITIJ3vmSXce3pt815PfSYyW3lSd_rSpD/view",
+   "title": "[스위트스팟] 아로셀 현대 판교 4차 공간기획안(0323).pptx"
+  },
+  {
+   "doc_id": "1JXVSB52xRicS2MbhsiFtPfcbhDfC4VeU",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1JXVSB52xRicS2MbhsiFtPfcbhDfC4VeU/view",
+   "title": "스크린샷 2026-02-10 132604.png"
+  },
+  {
+   "doc_id": "1JepWJLka3HAn3PLR_vMKlA5_y_n0LbVL",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1JepWJLka3HAn3PLR_vMKlA5_y_n0LbVL/view",
+   "title": "6ce647f7574db2fff52d4839b1951f20.jpg"
+  },
+  {
+   "doc_id": "1KMDHexvHlhUO1lZtfbo58iCIvIri06Ex",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1KMDHexvHlhUO1lZtfbo58iCIvIri06Ex/view",
+   "title": "b46d2a5a7c6760871a621ab1d4a8fac4.jpg"
+  },
+  {
+   "doc_id": "1KPO5S2PD61PM9aqLNtYneC3EX94lQUFC",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1KPO5S2PD61PM9aqLNtYneC3EX94lQUFC/view",
+   "title": "e9c5f5151b0547a8f4b53c3dbd4d7c59.jpg"
+  },
+  {
+   "doc_id": "1KcpQFVVJRwf4m5JHU8xA2rDYk-adO1Cc",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1KcpQFVVJRwf4m5JHU8xA2rDYk-adO1Cc/view",
+   "title": "26f127faf06a0ae3b83590c0197ca943.jpg"
+  },
+  {
+   "doc_id": "1LKfvHzV6kowhR1uEl86h8htdxDM9UfqD",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1LKfvHzV6kowhR1uEl86h8htdxDM9UfqD/view",
+   "title": "KakaoTalk_20260210_153115733_01.png"
+  },
+  {
+   "doc_id": "1MZ3bsBu52uYbMhTRUkFfwukTum_6QrdC",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1MZ3bsBu52uYbMhTRUkFfwukTum_6QrdC/view",
+   "title": "b87cbf879da43c76ffc7a1396ce3ec9c.jpg"
+  },
+  {
+   "doc_id": "1Mwpm67qGMY7O_inISDEOby5nUftEZtXE",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Mwpm67qGMY7O_inISDEOby5nUftEZtXE/view",
+   "title": "IMG_1489.jpg"
+  },
+  {
+   "doc_id": "1OnUmJYdQngjXgpB-not_KrAg2GxLML81",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1OnUmJYdQngjXgpB-not_KrAg2GxLML81/view",
+   "title": "스크린샷 2026-02-10 132647.png"
+  },
+  {
+   "doc_id": "1Ozk_hzhHr_Zl_aAhBnek3Zdx9h802wsL",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Ozk_hzhHr_Zl_aAhBnek3Zdx9h802wsL/view",
+   "title": "[아로셀회신] 아로셀 현대 판교 3차 공간기획안(0318) 주석확인요망.pdf"
+  },
+  {
+   "doc_id": "1P4MlK1CfKb5oUgCSh0JreuDCpVAZPTUA",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1P4MlK1CfKb5oUgCSh0JreuDCpVAZPTUA/view",
+   "title": "0331 아로셀 실비 정리.xlsx"
+  },
+  {
+   "doc_id": "1QLYRJivy9IDT3teIoYERyIr-HUw9awZK",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1QLYRJivy9IDT3teIoYERyIr-HUw9awZK/view",
+   "title": "[스위트스팟] 아로셀 현대 판교 5차 최종 공간기획안 (0401).pdf"
+  },
+  {
+   "doc_id": "1S7LjuvbdE3DzDzVBjTtAa8HNwDTRPUOv",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1S7LjuvbdE3DzDzVBjTtAa8HNwDTRPUOv/view",
+   "title": "RCPU2617_아로셀_현대판교 팝업스토어 최종 견적서.pdf"
+  },
+  {
+   "doc_id": "1SE6ksqpViRTT8LnmbJdSYhXsIiwnd52A",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1SE6ksqpViRTT8LnmbJdSYhXsIiwnd52A/view",
+   "title": "스크린샷 2026-02-10 113151.png"
+  },
+  {
+   "doc_id": "1Sgvzvm1tkjcW136RB0xoF2-g8CXwnPjG",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Sgvzvm1tkjcW136RB0xoF2-g8CXwnPjG/view",
+   "title": "스크린샷 2026-02-10 113223.png"
+  },
+  {
+   "doc_id": "1SiG0rIhGk9AnIaNCWh5RCrdh69mi6L-F",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1SiG0rIhGk9AnIaNCWh5RCrdh69mi6L-F/view",
+   "title": "01-Arocell POPUP _ 현대백화점 판교점 5F_예상견적서_1차 _260309.xlsx"
+  },
+  {
+   "doc_id": "1T1KRzuKkaVlvNk7Volh14fjqW0EXGnIn",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1T1KRzuKkaVlvNk7Volh14fjqW0EXGnIn/view",
+   "title": "스크린샷 2026-02-10 113238.png"
+  },
+  {
+   "doc_id": "1TTf-1B_8UhsQ_6eRGnCn1eCVVrNvMmis",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1TTf-1B_8UhsQ_6eRGnCn1eCVVrNvMmis/view",
+   "title": "스크린샷 2026-03-05 213659.png"
+  },
+  {
+   "doc_id": "1URX9OfZzikjJydgt8BNIZxJS1X43yBER",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1URX9OfZzikjJydgt8BNIZxJS1X43yBER/view",
+   "title": "FICC_팝업스토어_추가 비용 견적서_0316.pdf"
+  },
+  {
+   "doc_id": "1UnMvBoLPPBvcewbFLsjDk2oQCqk6NOi8",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1UnMvBoLPPBvcewbFLsjDk2oQCqk6NOi8/view",
+   "title": "IMG_1488.jpg"
+  },
+  {
+   "doc_id": "1VMBYN5sM7xA9u5CbTQK5yIV0v4m-F6ii",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1VMBYN5sM7xA9u5CbTQK5yIV0v4m-F6ii/view",
+   "title": "[견적서-탑아트] 아로셀 소품 대여 건(화분).pdf"
+  },
+  {
+   "doc_id": "1VNyTpwJJM6P8ahshQUp9IP9r0qUaW-7R",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1VNyTpwJJM6P8ahshQUp9IP9r0qUaW-7R/view",
+   "title": "IMG_1486.jpg"
+  },
+  {
+   "doc_id": "1W343s-oen0i_2HpTLBCvAaauRk8-sWk-",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1W343s-oen0i_2HpTLBCvAaauRk8-sWk-/view",
+   "title": "[스위트스팟] 아로셀 현대 판교 4차 공간기획안(0323).pdf"
+  },
+  {
+   "doc_id": "1WWGiBGrvYr5p7WSI_Pt-eeUbfHtcOHJp",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1WWGiBGrvYr5p7WSI_Pt-eeUbfHtcOHJp/view",
+   "title": "08189173155bc92d84dfa2e301ce154b.jpg"
+  },
+  {
+   "doc_id": "1WtNvJQctFjwnOPX2XGC1SWiA53xJWmtkpwiLFrKxxRo",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1WtNvJQctFjwnOPX2XGC1SWiA53xJWmtkpwiLFrKxxRo/view",
+   "title": "■ RC본부 프로젝트 견적서(all)"
+  },
+  {
+   "doc_id": "1X0iJ2hO3GgpIaPxACtDULjBtkG62RyfW",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1X0iJ2hO3GgpIaPxACtDULjBtkG62RyfW/view",
+   "title": "472715967_18479498635010481_4963368258772899006_n.jpg"
+  },
+  {
+   "doc_id": "1XA-DhrOuG-QW0wnGJrDsuSzeb6BQoq7Q",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1XA-DhrOuG-QW0wnGJrDsuSzeb6BQoq7Q/view",
+   "title": "스크린샷 2026-02-10 112345.png"
+  },
+  {
+   "doc_id": "1XH1SARODQkN7dOywJiQYnv-eY6MfDhzV",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1XH1SARODQkN7dOywJiQYnv-eY6MfDhzV/view",
+   "title": "[견적서-디자인알파] 아로셀 제작 건.xlsx"
+  },
+  {
+   "doc_id": "1XZW82mzIEjMd6-86bE6LhkNQqCgU3lxP",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1XZW82mzIEjMd6-86bE6LhkNQqCgU3lxP/view",
+   "title": "afef463c350fe824579a85cd0141950b.jpg"
+  },
+  {
+   "doc_id": "1XeG54BnSbOuLT37pHfJUGar3kBE5OYJ3",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1XeG54BnSbOuLT37pHfJUGar3kBE5OYJ3/view",
+   "title": "IMG_1484.jpg"
+  },
+  {
+   "doc_id": "1Y1nXzq0x9pd4axkcNdprShgJMD_d4CzS",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Y1nXzq0x9pd4axkcNdprShgJMD_d4CzS/view",
+   "title": "IMG_1492.jpg"
+  },
+  {
+   "doc_id": "1ZELkHRpntS5Prud84Kf3mK4INfiPuWtG",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1ZELkHRpntS5Prud84Kf3mK4INfiPuWtG/view",
+   "title": "ChatGPT Image 2026년 2월 10일 오후 02_17_04.png"
+  },
+  {
+   "doc_id": "1ZFrBu60Ke0NnAjTYqyGgpNJzQU-okxNW",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ZFrBu60Ke0NnAjTYqyGgpNJzQU-okxNW/view",
+   "title": "[견적서-소프토이] 아로셀 쿠션 제작 건.png"
+  },
+  {
+   "doc_id": "1Zq4hTffMyFUsVSmi_ZDYkwpW426PP060",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Zq4hTffMyFUsVSmi_ZDYkwpW426PP060/view",
+   "title": "[스위트스팟] 아로셀 현대 판교 3차 공간기획안(0318).pptx"
+  },
+  {
+   "doc_id": "1_dCxdCJg_Ad0ekUeQUzRi_3aRVQHWI-6",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1_dCxdCJg_Ad0ekUeQUzRi_3aRVQHWI-6/view",
+   "title": "스크린샷 2026-02-10 111819.png"
+  },
+  {
+   "doc_id": "1_k37XWbUdlb6ybA3-R7z-K60Mwjjjcal",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1_k37XWbUdlb6ybA3-R7z-K60Mwjjjcal/view",
+   "title": "[스위트스팟] 아로셀 현대 판교 4차 공간기획안(0323).pdf"
+  },
+  {
+   "doc_id": "1aQ2w7_xsBAjQBOWJUQDEtU1F3WT1UIE3",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1aQ2w7_xsBAjQBOWJUQDEtU1F3WT1UIE3/view",
+   "title": "IMG_1487.jpg"
+  },
+  {
+   "doc_id": "1bU345qrAZ9dy-VlLOtUl8VhThxZTKWXb",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1bU345qrAZ9dy-VlLOtUl8VhThxZTKWXb/view",
+   "title": "스크린샷 2026-02-10 112800.png"
+  },
+  {
+   "doc_id": "1cAM7GCtzt7Tx_NHfPhZIH3dKuNwRqKcx",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1cAM7GCtzt7Tx_NHfPhZIH3dKuNwRqKcx/view",
+   "title": "스크린샷 2026-02-10 112403.png"
+  },
+  {
+   "doc_id": "1cevip-UMK-irmLhaKWXX5mH_PWd7wEVv",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1cevip-UMK-irmLhaKWXX5mH_PWd7wEVv/view",
+   "title": "0adc13f70b51853aabff379b75a129ce.jpg"
+  },
+  {
+   "doc_id": "1cjooYeLb-ZJcAsnHeIo7TyNTQh03LPbT",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1cjooYeLb-ZJcAsnHeIo7TyNTQh03LPbT/view",
+   "title": "스크린샷 2026-02-10 113559.png"
+  },
+  {
+   "doc_id": "1d4k37mS3DoFl8BZ-inpmDqKyz7Nb3xFH",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1d4k37mS3DoFl8BZ-inpmDqKyz7Nb3xFH/view",
+   "title": "b962970ea3916c9961c3ce615b003ef6.jpg"
+  },
+  {
+   "doc_id": "1d81zif1EHC0L5li7gULdPGH9A0k8zNrI",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1d81zif1EHC0L5li7gULdPGH9A0k8zNrI/view",
+   "title": "[스위트스팟] 아로셀 현대 판교 5차 최종 공간기획안 (0401).pptx"
+  },
+  {
+   "doc_id": "1eqydagAh7kmUI3HZ84D4rKTifvkJSnGi",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1eqydagAh7kmUI3HZ84D4rKTifvkJSnGi/view",
+   "title": "[견적서-디자인알파] 아로셀 제작 건 최종(0408).xlsx"
+  },
+  {
+   "doc_id": "1fcYqLTq407TaaiCl505Y_ZGU2OLnHTQO",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1fcYqLTq407TaaiCl505Y_ZGU2OLnHTQO/view",
+   "title": "[스위트스팟] 아로셀 레퍼런스안(0211)_수정.pdf"
+  },
+  {
+   "doc_id": "1fdBpycHINpbRQ9rKvXLqD0n9a_fnA2RD",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1fdBpycHINpbRQ9rKvXLqD0n9a_fnA2RD/view",
+   "title": "998922f333987ea3d202742dfbb3aa35.jpg"
+  },
+  {
+   "doc_id": "1fnOw3L2TvR4FVzgwFoT8p05EIDj_07Qf",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1fnOw3L2TvR4FVzgwFoT8p05EIDj_07Qf/view",
+   "title": "a7b9394834690713088acd397882f374.jpg"
+  },
+  {
+   "doc_id": "1fyjZcLdXZvbYTRqloBRAoUrXO0NFV2iD",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1fyjZcLdXZvbYTRqloBRAoUrXO0NFV2iD/view",
+   "title": "스크린샷 2026-02-10 140943.png"
+  },
+  {
+   "doc_id": "1g1v-YnK1BVhppVYCInx3UOFO4y9J1pMf",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1g1v-YnK1BVhppVYCInx3UOFO4y9J1pMf/view",
+   "title": "스크린샷 2026-02-10 111641.png"
+  },
+  {
+   "doc_id": "1gkcfO_96id0DPgNdnNcTyMtyhU9ObiHb",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1gkcfO_96id0DPgNdnNcTyMtyhU9ObiHb/view",
+   "title": "unnamed (2).jpg"
+  },
+  {
+   "doc_id": "1iguc4rKPg6qI7zt46wZUR79y7YLWBP2Q",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1iguc4rKPg6qI7zt46wZUR79y7YLWBP2Q/view",
+   "title": "스크린샷 2026-02-10 113533.png"
+  },
+  {
+   "doc_id": "1iljb7VndObw7Bob1dN3jf4jlzX1AcLGw",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1iljb7VndObw7Bob1dN3jf4jlzX1AcLGw/view",
+   "title": "IMG_1491.jpg"
+  },
+  {
+   "doc_id": "1izxEQtKVfxCGl_gAQABkSMrYPyp1GdfX",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1izxEQtKVfxCGl_gAQABkSMrYPyp1GdfX/view",
+   "title": "IMG_1497.jpg"
+  },
+  {
+   "doc_id": "1j-F_uCLsRpLXXqSJ6W4Dws2Cg2rthV0e",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1j-F_uCLsRpLXXqSJ6W4Dws2Cg2rthV0e/view",
+   "title": "[스위트스팟] 아로셀 현대 판교 5차 최종 공간기획안_전기 추가 (0406).pptx"
+  },
+  {
+   "doc_id": "1jMoMFn8Qi5F1AY9oh8UPr3ZJrExmnTPR",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1jMoMFn8Qi5F1AY9oh8UPr3ZJrExmnTPR/view",
+   "title": "57c5dc5f3321bc08ffd11b8733ba0974.jpg"
+  },
+  {
+   "doc_id": "1li46CO2wNMZuB9H0YgG5QYP_PcgiwMey",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1li46CO2wNMZuB9H0YgG5QYP_PcgiwMey/view",
+   "title": "스크린샷 2026-02-10 132043.png"
+  },
+  {
+   "doc_id": "1mH5KulTIshlE7nRLa1fFUwHoIk7sl1l1",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1mH5KulTIshlE7nRLa1fFUwHoIk7sl1l1/view",
+   "title": "스크린샷 2026-03-19 102814.png"
+  },
+  {
+   "doc_id": "1mwIpajYPAyJO0xDYHjTAW5Fk0Utb9hED",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1mwIpajYPAyJO0xDYHjTAW5Fk0Utb9hED/view",
+   "title": "d9d3ec9f-0c80-4bb2-a573-4ced6cd790c1.png"
+  },
+  {
+   "doc_id": "1nAmx8mU3Z70ax1DY80v6fB_5_rn3w2Gy",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1nAmx8mU3Z70ax1DY80v6fB_5_rn3w2Gy/view",
+   "title": "스위트스팟_현대백화점 판교점 아로셀 팝업스토어 위탁 운영 계약서.doc"
+  },
+  {
+   "doc_id": "1nmCI4CrVfDvxjEzLReJ1B78--2rTi8Ll",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1nmCI4CrVfDvxjEzLReJ1B78--2rTi8Ll/view",
+   "title": "스크린샷 2026-02-10 112006.png"
+  },
+  {
+   "doc_id": "1nxwheDfj5vGMVmQ5807DC62Wq7KTRxyr",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1nxwheDfj5vGMVmQ5807DC62Wq7KTRxyr/view",
+   "title": "[견적서-탑아트] 아로셀 소품 대여 건(욕조, 세면대).pdf"
+  },
+  {
+   "doc_id": "1oJcg4sv9m4oYOoSmI8N_WiEPyYnHN6Kg",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1oJcg4sv9m4oYOoSmI8N_WiEPyYnHN6Kg/view",
+   "title": "스크린샷 2026-02-10 111912.png"
+  },
+  {
+   "doc_id": "1pVIce7BIfGKhBA57-dnjE3vnRd_aI-OW",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1pVIce7BIfGKhBA57-dnjE3vnRd_aI-OW/view",
+   "title": "0017ac163bf277e7729a51ecc4c10d4b.jpg"
+  },
+  {
+   "doc_id": "1phjEoXRN3zt8d8bqLQB250GBhbdjw-X4",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1phjEoXRN3zt8d8bqLQB250GBhbdjw-X4/view",
+   "title": "[스위트스팟] 아로셀 현대 판교 1차 공간기획안(0306).pptx"
+  },
+  {
+   "doc_id": "1qGPnMhaCtfClsbHmIcEo39pV2jYp3Nnh",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1qGPnMhaCtfClsbHmIcEo39pV2jYp3Nnh/view",
+   "title": "10bdba92cb9ec2567cfd47303f817b2a.jpg"
+  },
+  {
+   "doc_id": "1qUlMAo2RuneGaWCQY5E3mGqZv4gzESak",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1qUlMAo2RuneGaWCQY5E3mGqZv4gzESak/view",
+   "title": "IMG_1494.jpg"
+  },
+  {
+   "doc_id": "1r3VpR-9vQDZBAOdes0ZKuuRnjPcfaCAa",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1r3VpR-9vQDZBAOdes0ZKuuRnjPcfaCAa/view",
+   "title": "8be26620273d8b1affc2aeda40299ddd.jpg"
+  },
+  {
+   "doc_id": "1rHwV6Wab9pNYQqsIygV3CmZI2GhYY8Sv",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1rHwV6Wab9pNYQqsIygV3CmZI2GhYY8Sv/view",
+   "title": "4e82104ad843994d5c640f806d6a7891.jpg"
+  },
+  {
+   "doc_id": "1rcBDKdx1CHwhnkI0ghS4vANOrHIESSCi",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1rcBDKdx1CHwhnkI0ghS4vANOrHIESSCi/view",
+   "title": "IMG_1495.jpg"
+  },
+  {
+   "doc_id": "1t5g9KY5s8WJ2b2FTmnZDZ-QCMl7yRnR0",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1t5g9KY5s8WJ2b2FTmnZDZ-QCMl7yRnR0/view",
+   "title": "66a0f8c80b8f288183858d54edf376e2.jpg"
+  },
+  {
+   "doc_id": "1tD8vagWIdrAr2RljU4tUrHeTo5TdPach",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1tD8vagWIdrAr2RljU4tUrHeTo5TdPach/view",
+   "title": "스크린샷 2026-02-10 132535.png"
+  },
+  {
+   "doc_id": "1tsF90phV2NsMIzy1djGrRa8evZudQgcX",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1tsF90phV2NsMIzy1djGrRa8evZudQgcX/view",
+   "title": "스크린샷 2026-02-10 112932.png"
+  },
+  {
+   "doc_id": "1u0IPNpu8PSn9bR97DctT29rXbNz0KVo_",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1u0IPNpu8PSn9bR97DctT29rXbNz0KVo_/view",
+   "title": "스크린샷 2026-02-10 112319.png"
+  },
+  {
+   "doc_id": "1wSIG4iJ837E2zaZZSKrZ-yZURtFsARok",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1wSIG4iJ837E2zaZZSKrZ-yZURtFsARok/view",
+   "title": "[견적서-진성아크릴] 아크릴 제작 건.jpg"
+  },
+  {
+   "doc_id": "1wpRM5gG4rT-wBiPqV3YsW4ez5IPwUuxg",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1wpRM5gG4rT-wBiPqV3YsW4ez5IPwUuxg/view",
+   "title": "[견적서-그리드] 아로셀 시공 건_최종.xlsx"
+  },
+  {
+   "doc_id": "1xyokEcf-jq8OcLy06f8mV_ANuFSE98XS",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1xyokEcf-jq8OcLy06f8mV_ANuFSE98XS/view",
+   "title": "[스위트스팟] 아로셀 현대 판교 1차 공간기획안(0306).pdf"
+  },
+  {
+   "doc_id": "1yBUJ0eTQKcVq0xd7iJ0xwE_A_LZWMUPF",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1yBUJ0eTQKcVq0xd7iJ0xwE_A_LZWMUPF/view",
+   "title": "a3a56cc8ca7a339586358bc5160e623b.jpg"
+  },
+  {
+   "doc_id": "1z-q-tFOeLvzFBKS0NiikY2AoxbIEk61P",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1z-q-tFOeLvzFBKS0NiikY2AoxbIEk61P/view",
+   "title": "스크린샷 2026-02-10 112918.png"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 5건: [스위트스팟] 아로셀 현대 판교 5차 최종 공간기획안_, [스위트스팟] 아로셀 현대 판교 5차 최종 공간기획안 , RCPU2617_아로셀_현대판교 팝업스토어 최종 견적서, [견적서-그리드] 아로셀 시공 건_최종.xlsx, [스위트스팟] 아로셀 레퍼런스안(0211).pptx. 미확실: outcome 일일/총 방문객 수 및 POS 소비자 매출 미확보(결과보고서 부재); venue 층수 불일치: 기획서 5F vs 프로젝트 메타 4층; fee_structure 매출계약형(로스율 1%)의 RS 조건 상세(수수료율/정산방식) 견적서에 명시 없음; area_pyeong은 기획서 치수(10,090*8,070mm)로 환산한 추정치; 발주처 FICC 법인 신원 및 아로셀 브랜드와의 관계; 백화점 현장 규칙 세부(h1500/3000k조명 등)는 리서치 요약 근거이며 원문 미기재"
+ }
+}

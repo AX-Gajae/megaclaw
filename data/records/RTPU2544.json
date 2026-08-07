@@ -1,0 +1,146 @@
+{
+ "record_id": "RTPU2544",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:에비스맥주_YEBISU",
+  "space_id": "unresolved:서울_사케페스티벌_2025_부스",
+  "client_party_id": "unresolved:벡터컴_VECTORCOM",
+  "brand_key": "에비스맥주",
+  "space_key": "서울_사케페스티벌"
+ },
+ "intervention": {
+  "concept": "에비스맥주가 2025 서울 사케페스티벌에서 운영한 브랜드 부스. 스탬프랠리와 테이블 룰렛 등 참여형 프로모션과 굿즈(스티커·미니쇼핑백) 증정으로 방문객을 유입한다.",
+  "brand_name": "에비스맥주(YEBISU)",
+  "experience_elements": [
+   "스탬프랠리(스탬프 도장 3종/6개, 랠리 용지)",
+   "소형 테이블 룰렛",
+   "스티커 증정",
+   "금박 미니쇼핑백 증정"
+  ],
+  "promotions": [
+   "스탬프랠리",
+   "테이블 룰렛"
+  ],
+  "staging_tags": [
+   "실내용 엑스배너",
+   "A4 POP 스탠드 거치대",
+   "차단봉 라인",
+   "의자·테이블 부스 구성"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": null,
+   "venue_name": null,
+   "venue_type": "페스티벌(사케페스티벌) 부스",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-05-23",
+   "to": "2025-05-25",
+   "days": 3
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 13,900,000원 (VAT 10% 별도, 만원단위 이하 절사). 기획/아트워크 2,500,000 + 제작/대여 3,780,000 + 운영인력 4,722,500 + 스탭 100,000 + 제경비/물류 1,800,000 = 소계 12,902,500. 일반관리비 + 대행수수료(정가 항목 제외 소계의 10%) 1,040,250 반영. 분할지급/RS 조건 명시 없음."
+  },
+  "brand_requirements": [
+   "프로모터 사전교육(5월 23일 13시, 2시간)",
+   "VIP 방문 대비 1.5시간 조기 출근",
+   "슈퍼바이저 1인, 프로모터 6인(3인 상주, 2교대) 8시간 기준 운영"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "2025 서울 사케페스티벌 부스"
+  },
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.67,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 17,
+    "holiday_until": 14,
+    "holiday_block_in": 0,
+    "nat_event_gap": 11,
+    "nat_event": "대통령 선거",
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 13.9
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(견적서만 제공되어 방문/매출 실측 데이터 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 13.9 ≈ 계약총액 13.9",
+   "contract_total_mm": 13.9,
+   "last_recognition_period": "2025-06"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "16qKEdcUdZN8nZ31ZANgx7MZwyzwZaROw",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/16qKEdcUdZN8nZ31ZANgx7MZwyzwZaROw/view",
+   "title": "계약서 없음.txt"
+  },
+  {
+   "doc_id": "19BvHCDKY6i5SayphoBNF482tpGabM7lP",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/19BvHCDKY6i5SayphoBNF482tpGabM7lP/view",
+   "title": "Sweetspot_에비스맥주 서울 사케페스티벌 기획안_0519.pdf"
+  },
+  {
+   "doc_id": "1BjuYZ4Hb79u4WQITRfAzS1PCMzkXY_0g",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1BjuYZ4Hb79u4WQITRfAzS1PCMzkXY_0g/view",
+   "title": "임시 결과보고서 (2).txt"
+  },
+  {
+   "doc_id": "1Hp3c5XdV97vfZb4J5eHUvzihfelopm3W",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Hp3c5XdV97vfZb4J5eHUvzihfelopm3W/view",
+   "title": "Sweetspot_에비스맥주 서울 사케페스티벌 견적서_0602.pdf"
+  },
+  {
+   "doc_id": "1vDXMdjrrT5xEfh79EpQ9drQ1ipORh5Iu",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1vDXMdjrrT5xEfh79EpQ9drQ1ipORh5Iu/view",
+   "title": "결과보고서 없음.txt"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 1건: Sweetspot_에비스맥주 서울 사케페스티벌 견적서_. 미확실: 결과보고서 부재로 방문자수·매출 실측 없음; 정확한 행사장 명칭 및 위치(구/동); 부스 면적(평); 클라이언트 정식 법인명(벡터컴으로 추정); 계약금액 분할지급/수수료 세부 조건"
+ }
+}

@@ -1,0 +1,179 @@
+{
+ "record_id": "RTPU2587",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:무직타이거",
+  "space_id": "unresolved:안성_중앙로412번길28_문화창작플랫폼",
+  "client_party_id": "unresolved:대유커뮤니케이션즈",
+  "brand_key": "무직타이거",
+  "space_key": "안성_문화창작플랫폼"
+ },
+ "intervention": {
+  "concept": "안성시 문화창작플랫폼에서 무직타이거 IP와 협업한 '匠虎之間(장호지간)' 팝업. 서당을 모티브로 '게으름 장인' 뚱냥이를 통해 느림의 미학을 체험하게 하는 공간. 주민·장인·청년을 아우르는 콘텐츠로 느린 컬러펜 그리기, 목판화, 커스텀 티셔츠 만들기 등 체험 진행.",
+  "brand_name": "안성 X 무직타이거",
+  "experience_elements": [
+   "느린 컬러펜으로 무직타이거 그리기(아동 미술체험)",
+   "목판화 공예 체험(이윤엽 작가 연계)",
+   "커스텀 티셔츠 만들기(스티커/메스프리펜)",
+   "IP 등신대 포맥스 배치",
+   "캐릭터 포토존",
+   "굿즈 판매 매대"
+  ],
+  "promotions": [
+   "굿즈 판매"
+  ],
+  "staging_tags": [
+   "서당 모티브",
+   "전통 기와 지붕",
+   "포맥스 IP 등신대",
+   "백월 캐릭터 포맥스",
+   "체험존 조닝"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "안성시",
+   "district": null,
+   "venue_name": "문화창작플랫폼",
+   "venue_type": "문화창작플랫폼(전시공간)",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-12-19",
+   "to": "2025-12-28",
+   "days": 10
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "대유커뮤니케이션즈(의뢰사)-스위트스팟(실행사) 계약 총액 47,500,000원(VAT 별도), 잔금 100%, 세금계산서 12월 31일 발행, 지급 1월 6일. 별도로 안성시-대유커뮤니케이션즈 용역계약(문화창작플랫폼 공간 활성화 팝업 전시 용역) 55,000,000원(부가세 포함), 계약보증금 2,750,000원(5%), 지체상금율 0.13%. 스위트스팟 견적: 최초 54,900,000원(VAT별도)/60,390,000원(VAT포함) - IP사용료 10,000,000원 포함, 최종 제작건 견적 5,000,000원(VAT별도)/5,500,000원(VAT포함)."
+  },
+  "brand_requirements": [
+   "제작물(아트워크·부스·포토존·영상 등) 사용 전 의뢰사 감수 필수",
+   "기존 무직타이거 에셋 활용(디자인 감수 일정)",
+   "지식재산권: 의뢰사 동의 없이 유사 디자인/상표 사용·등록 금지",
+   "비밀유지의무"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "안성시 문화창작플랫폼 전시공간"
+  },
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 6,
+    "months_since_last": 10.6,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 71,
+    "holiday_until": 57,
+    "holiday_block_in": 0,
+    "nat_event_gap": 36,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 10357600.0,
+    "pnl_pre_accounts": 3,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-11-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 52.5
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-12, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": 47.5,
+   "last_recognition_period": "2025-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-75vwuRvPNnZoqiswYqbtRW18O1OZWT5",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1-75vwuRvPNnZoqiswYqbtRW18O1OZWT5/view",
+   "title": "[스위트스팟] 팝업대행 표준 계약서_안성 X 무직타이거 팝업.pdf"
+  },
+  {
+   "doc_id": "13bDHHPIgO4Z_98-zq-p3G0xXtKCi0u0f",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/13bDHHPIgO4Z_98-zq-p3G0xXtKCi0u0f/view",
+   "title": "(Sweetspot) 안성 X 무직타이거 콜라보 팝업스토어_견적서_최초.pdf"
+  },
+  {
+   "doc_id": "1AMAADlsb14H4Xd1zVi946XHmnfJegnI_",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1AMAADlsb14H4Xd1zVi946XHmnfJegnI_/view",
+   "title": "외부_안성X무직타이거 콜라보 팝업전시_견적서.pdf"
+  },
+  {
+   "doc_id": "1IP6wLH6v5a-bHQx4o3WXMrvnPFW1bDHu",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1IP6wLH6v5a-bHQx4o3WXMrvnPFW1bDHu/view",
+   "title": "안성 X 무직타이거 콜라보 팝업스토어 결과보고서.pptx"
+  },
+  {
+   "doc_id": "1LSt7kVt22d7fZ5CgTKy0pITsvwUFK9Rx",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1LSt7kVt22d7fZ5CgTKy0pITsvwUFK9Rx/view",
+   "title": "[Sweetspot]안성시 문화창작플랫폼 x 무직타이거 콜라보 팝업 제안서.pptx"
+  },
+  {
+   "doc_id": "1S1jRiGuJpaEuODZr5PFzlC-sGYqOhQ2Y",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1S1jRiGuJpaEuODZr5PFzlC-sGYqOhQ2Y/view",
+   "title": "계약서 (안성, 대유 계약 5500만원).pdf"
+  },
+  {
+   "doc_id": "1g7OL5I4DWmOjOAHNfhYpQKMFrz79gTFW",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1g7OL5I4DWmOjOAHNfhYpQKMFrz79gTFW/view",
+   "title": "[Sweetspot]안성시 문화창작플랫폼 x 무직타이거 콜라보 팝업 제안서.pdf"
+  },
+  {
+   "doc_id": "1iWcH8VIdFXNKPnJAljWMPaEWzg-FOBMl",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1iWcH8VIdFXNKPnJAljWMPaEWzg-FOBMl/view",
+   "title": "RTPU2587_안성X무직타이거 내수 계산용_견적서_내수적용.pdf"
+  },
+  {
+   "doc_id": "1omm7k-KG2yiZdifAi46wZpm3_4ZA1tkm",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1omm7k-KG2yiZdifAi46wZpm3_4ZA1tkm/view",
+   "title": "RTPU2587_안성X무직타이거 콜라보 팝업스토어_견적서_최종.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 5건: [스위트스팟] 팝업대행 표준 계약서_안성 X 무직타이거, 계약서 (안성, 대유 계약 5500만원).pdf, [Sweetspot]안성시 문화창작플랫폼 x 무직타이거, RTPU2587_안성X무직타이거 콜라보 팝업스토어_견적, (Sweetspot) 안성 X 무직타이거 콜라보 팝업스. 미확실: 결과보고서 부재로 방문객 수·매출 등 outcome 전체 미상; 면적(평) 정보 없음; 기획서에 예상 방문객 수치 없음; 견적서 날짜(2026년)와 운영기간(2025년) 불일치 - 견적 일자 오기 가능성; 계약 상 의뢰사(대유)와 최종 클라이언트(안성시) 구분 필요"
+ }
+}

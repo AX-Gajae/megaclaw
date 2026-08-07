@@ -1,0 +1,90 @@
+{
+ "market_record_id": "MKT-2023-0057",
+ "event_name": "키뮤어(KIIMUIR) 팝업스토어(더현대 서울)",
+ "brand": "키뮤어(콘크리트웍스)",
+ "ip_or_collab": "유튜버 츠통령(스타일링 이벤트)",
+ "category": "fashion",
+ "intervention": {
+  "concept_description": "캐주얼 브랜드 23FW 컬렉션+인기 아이템 팝업. 니트·코트·패딩·액세서리 라인업, 츠통령 스타일링 이벤트",
+  "experience_elements": [
+   "23FW 컬렉션 판매",
+   "츠통령 스타일링 이벤트"
+  ],
+  "promotions": [
+   "매일 100만원 상당 래플 번들 1,000원 구매",
+   "30만원 이상 구매 시 그루밍 키트 증정"
+  ],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "더현대 서울",
+  "venue_type": "department_store",
+  "neighborhood": "여의도",
+  "city": "서울",
+  "period_from": "2023-11-23",
+  "period_to": "2023-11-29",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 10000,
+  "visitors_period_days": 7,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "브랜드 제공 성료 보도(어패럴뉴스) '더현대 서울에서 진행된 키뮤어 팝업스토어에는 1만명의 키뮤어 팬들과 고객들이 방문해 호황을 이뤘으며 목표 매출을 달성하며 주요 제품은 품절되는 쾌거를 이뤘다'",
+  "visitors_source_quote": "지난 11월 23일부터 11월 29일까지 더현대 서울에서 진행된 키뮤어 팝업스토어에는 1만명의 키뮤어 팬들과 고객들이 방문해 호황을 이뤘으며 목표 매출을 달성하며 주요 제품은 품절되는 쾌거를 이뤘다.",
+  "visitors_source_url": "http://www.apparelnews.co.kr/news/news_view/?idx=208851&cat=CAT100",
+  "visitors_source_date": "2023-12-04",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": true,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "목표 매출을 달성하며 주요 제품은 품절되는 쾌거를 이뤘다",
+    "크루넥 니트, 카라 니트, 집업 니트 가디건과 발마칸 코트, 더플 코트 등이 폭발적인 인기를 끌며 매출의 견인차 역할을 했다"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "매출 액수 미공개(목표 달성 정성). 방문객 1만명 3종 세트 확보 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

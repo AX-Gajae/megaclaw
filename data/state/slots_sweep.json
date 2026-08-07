@@ -1,0 +1,172 @@
+{
+ "n": 75,
+ "n_feat": 70,
+ "seeds": 10,
+ "const_mae": 0.4427,
+ "levels": [
+  {
+   "anchor": 0.0,
+   "mae": 0.438,
+   "vs_const": {
+    "diff": -0.0047,
+    "ci95": [
+     -0.1181,
+     0.1037
+    ],
+    "wins": false
+   },
+   "vs_noanchor": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "wins": false
+   }
+  },
+  {
+   "anchor": 0.5,
+   "mae": 0.4184,
+   "vs_const": {
+    "diff": -0.0244,
+    "ci95": [
+     -0.1342,
+     0.0867
+    ],
+    "wins": false
+   },
+   "vs_noanchor": {
+    "diff": -0.0196,
+    "ci95": [
+     -0.0497,
+     0.0108
+    ],
+    "wins": false
+   }
+  },
+  {
+   "anchor": 1.0,
+   "mae": 0.4218,
+   "vs_const": {
+    "diff": -0.0209,
+    "ci95": [
+     -0.1298,
+     0.0875
+    ],
+    "wins": false
+   },
+   "vs_noanchor": {
+    "diff": -0.0162,
+    "ci95": [
+     -0.0575,
+     0.0241
+    ],
+    "wins": false
+   }
+  },
+  {
+   "anchor": 2.0,
+   "mae": 0.4189,
+   "vs_const": {
+    "diff": -0.0239,
+    "ci95": [
+     -0.127,
+     0.0773
+    ],
+    "wins": false
+   },
+   "vs_noanchor": {
+    "diff": -0.0192,
+    "ci95": [
+     -0.0661,
+     0.0274
+    ],
+    "wins": false
+   }
+  },
+  {
+   "anchor": 4.0,
+   "mae": 0.416,
+   "vs_const": {
+    "diff": -0.0268,
+    "ci95": [
+     -0.127,
+     0.0698
+    ],
+    "wins": false
+   },
+   "vs_noanchor": {
+    "diff": -0.022,
+    "ci95": [
+     -0.0754,
+     0.0307
+    ],
+    "wins": false
+   }
+  },
+  {
+   "anchor": 8.0,
+   "mae": 0.4117,
+   "vs_const": {
+    "diff": -0.0311,
+    "ci95": [
+     -0.1223,
+     0.0542
+    ],
+    "wins": false
+   },
+   "vs_noanchor": {
+    "diff": -0.0263,
+    "ci95": [
+     -0.0881,
+     0.0354
+    ],
+    "wins": false
+   }
+  },
+  {
+   "anchor": 16.0,
+   "mae": 0.4103,
+   "vs_const": {
+    "diff": -0.0324,
+    "ci95": [
+     -0.1148,
+     0.0476
+    ],
+    "wins": false
+   },
+   "vs_noanchor": {
+    "diff": -0.0277,
+    "ci95": [
+     -0.1159,
+     0.0567
+    ],
+    "wins": false
+   }
+  },
+  {
+   "anchor": 32.0,
+   "mae": 0.4282,
+   "vs_const": {
+    "diff": -0.0146,
+    "ci95": [
+     -0.0936,
+     0.0612
+    ],
+    "wins": false
+   },
+   "vs_noanchor": {
+    "diff": -0.0098,
+    "ci95": [
+     -0.1124,
+     0.091
+    ],
+    "wins": false
+   }
+  }
+ ],
+ "monotonic": {
+  "spearman": -0.429,
+  "p": 0.2894
+ }
+}

@@ -1,0 +1,351 @@
+{
+ "record_id": "RCPU2425",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:마비노기_MABINOGI",
+  "space_id": "unresolved:올림픽공원_88광장",
+  "client_party_id": "unresolved:넥슨_NEXON",
+  "brand_key": "마비노기",
+  "space_key": "올림픽공원"
+ },
+ "intervention": {
+  "concept": "마비노기 20주년 기념 공식 팝업. 넥슨 IP 마비노기의 20주년을 기념해 타로카드·아크릴 굿즈·엽서·의류잡화 등 공식 상품을 선보이는 굿즈 중심 팝업.",
+  "brand_name": "마비노기",
+  "experience_elements": [
+   "공식 굿즈 판매(타로카드 덱, 소책자, 벨벳/소장용 커버, 싸바리 박스)",
+   "아크릴 키링·코롯토·스탠드·스마트톡",
+   "렌티큘러 엽서, 캔뱃지, 스티커, 파우치, 마우스 장패드, 쿠션, 랜덤 포토카드",
+   "콜드컵/마스킹테이프 등 SD 캐릭터 굿즈"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "20주년 기념",
+   "SD 캐릭터",
+   "메인 일러스트"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "송파구",
+   "venue_name": "올림픽공원 88광장",
+   "venue_type": "야외 광장/공원",
+   "foot_traffic_context": null,
+   "venue_slot": "광장"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-06-22",
+   "to": "2024-06-22",
+   "days": 1
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": "확보된 문서는 굿즈 제작 견적서로, 팝업 장소 임대/수수료 구조가 아님. 마플 타로카드 굿즈 견적: 공급가 62,590,000 + VAT 6,259,000 = 합계 68,849,000원. 스위트스팟 장패드 굿즈 견적: 공급가 10,820,000 + VAT 1,082,000 = 합계 11,902,000원. 스튜디오8 굿즈 1차견적(금액 미기재). NEXON BP는 라이선스 상품 MG/로열티 가이드로 구체 금액 미기재."
+  },
+  "brand_requirements": [
+   "정품인증 홀로그램 증지 사용(장당 4원)",
+   "넥슨 IP 라이선스 계약 및 MG/로열티 조건 준수"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 1.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 47,
+    "holiday_until": 84,
+    "holiday_block_in": 0,
+    "nat_event_gap": 73,
+    "nat_event": null,
+    "doc_lag_days": 25,
+    "doc_dates_found": 5
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  },
+  "demand_signals": {
+   "waiting_reported": "행사 시작 1시간 전부터 입장 대기 행렬 — 원문: '행사 시작 1시간 전부터 입장을 기다리는 밀레시안 행렬이 줄지어 이어졌다.' (https://m.ddaily.co.kr/page/view/2024062219040419366, 2024-06-22)",
+   "sold_out": "웰컴기프트 특별 입장권 7000장, 판매 2분여 만에 조기 마감 — 원문: '웰컴 기프트가 지급되는 특별 입장권은 판매 2분여 만에 7000장이 조기 마감되며 뜨거운 관심을 모았다.' (https://m.ddaily.co.kr/page/view/2024062219040419366, 2024-06-22)",
+   "source": "역검색 외부 보도(2026-07-27)"
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서가 제공되지 않아 방문자 수 및 소비자 매출(POS) 실측 데이터 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": null,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "11Pb1O3xke5jqC6_BTkvjQN1Not98Hfpy",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/11Pb1O3xke5jqC6_BTkvjQN1Not98Hfpy/view",
+   "title": "GmarketSansMedium.otf"
+  },
+  {
+   "doc_id": "176J972VieVl15xFESWGa_dJBX12gI_mA",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/176J972VieVl15xFESWGa_dJBX12gI_mA/view",
+   "title": "~$마비노기 20주년 오프라인 팝업 제품 리스트 전달용.pptx"
+  },
+  {
+   "doc_id": "18HAHndkhWFkx9JZTcHjnfVmcJ4Vt9Klg",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/18HAHndkhWFkx9JZTcHjnfVmcJ4Vt9Klg/view",
+   "title": "[마비노기] IP 상품화 사업 표준 계약서_스위트 스팟.docx"
+  },
+  {
+   "doc_id": "1BpFBo8-RSRUTS5UKsey9p_BbxS8gbkB-",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1BpFBo8-RSRUTS5UKsey9p_BbxS8gbkB-/view",
+   "title": "넥슨_계좌확인서_스위트스팟_수정.pdf"
+  },
+  {
+   "doc_id": "1DboU8fss_ELlghDWW4GiCO4Y8XMH37e1",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DboU8fss_ELlghDWW4GiCO4Y8XMH37e1/view",
+   "title": "스위트 스팟_장패드 마비노기 굿즈 견적서_20240528 (1).pdf"
+  },
+  {
+   "doc_id": "1F-N75JYjCpKs01Xal7YhxTjm70gX8sX7",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1F-N75JYjCpKs01Xal7YhxTjm70gX8sX7/view",
+   "title": "마플 BIZ견적서_마비노기 타로카드_0227.pdf"
+  },
+  {
+   "doc_id": "1FIf_CYacJlA7CT8Mp19FvhS3K3vYyhOE",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1FIf_CYacJlA7CT8Mp19FvhS3K3vYyhOE/view",
+   "title": "2-2.마비노기 20주년 굿즈 스튜디오8 발주서(스위트스팟_24.6.25).xlsx"
+  },
+  {
+   "doc_id": "1GvD04g0JuMW4t-35t3VzgMzEu3hMA2NI",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1GvD04g0JuMW4t-35t3VzgMzEu3hMA2NI/view",
+   "title": "Thumbs.db"
+  },
+  {
+   "doc_id": "1Hjp9l1ZASIF8n2_-3g_9G-zzjembcw_p",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Hjp9l1ZASIF8n2_-3g_9G-zzjembcw_p/view",
+   "title": "[넥슨] 마비노기 IP 상품화 사업 표준 계약서_스위트스팟(수정).docx"
+  },
+  {
+   "doc_id": "1HnrbQSdV4jf94KwRvPnuR2ZHKKUmfkU_",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1HnrbQSdV4jf94KwRvPnuR2ZHKKUmfkU_/view",
+   "title": "마플 BIZ견적서_마비노기 타로카드_0227.pdf"
+  },
+  {
+   "doc_id": "1JepgXQ9W4Hl5gkKGHYFDpZyQljc9A9zx",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1JepgXQ9W4Hl5gkKGHYFDpZyQljc9A9zx/view",
+   "title": "스위트 스팟_장패드 마비노기 굿즈 견적서_20240528 (1).pdf"
+  },
+  {
+   "doc_id": "1JmI1i2m5hPU4-RAcA3sssA1Ff56h1IQM",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1JmI1i2m5hPU4-RAcA3sssA1Ff56h1IQM/view",
+   "title": "마비노기 개발리스트_★금홍한테받은자료.xlsx"
+  },
+  {
+   "doc_id": "1K1_JuoHnHl3G6fm-2zvHIWBhYn0sbA-E",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1K1_JuoHnHl3G6fm-2zvHIWBhYn0sbA-E/view",
+   "title": "image (3).png"
+  },
+  {
+   "doc_id": "1KIo54tq2IioU-fq6UtX4k0y5ItbkGq-y",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1KIo54tq2IioU-fq6UtX4k0y5ItbkGq-y/view",
+   "title": "마비노기굿즈_금홍_발주서_0523.xlsx"
+  },
+  {
+   "doc_id": "1KtmOLA0zymni3dk3H9DgqNnTv5kR3XU0",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1KtmOLA0zymni3dk3H9DgqNnTv5kR3XU0/view",
+   "title": "넥슨_계좌확인서_스위트스팟_수정.pdf"
+  },
+  {
+   "doc_id": "1Nqv7wYY0TvPHaMvrzr2V1W0p9dL-NWGg",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Nqv7wYY0TvPHaMvrzr2V1W0p9dL-NWGg/view",
+   "title": "Jadyn Maria.otf"
+  },
+  {
+   "doc_id": "1SjrabewQIPWPjXUIchTvq5sFxgyPCmxe",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1SjrabewQIPWPjXUIchTvq5sFxgyPCmxe/view",
+   "title": "(주)스위트스팟-사업자등록증_20230818.pdf"
+  },
+  {
+   "doc_id": "1Te0AXocCNM4xKvNMVmTTc3IFAzZdsTAP",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Te0AXocCNM4xKvNMVmTTc3IFAzZdsTAP/view",
+   "title": "image (2).png"
+  },
+  {
+   "doc_id": "1UR9UmxA_tRzqPVDcsSlmAQIelswKgW0O",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1UR9UmxA_tRzqPVDcsSlmAQIelswKgW0O/view",
+   "title": "Thumbs.db"
+  },
+  {
+   "doc_id": "1VVPUE9F4Qwh1945qGUUgUEIiCptKm_Sf",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1VVPUE9F4Qwh1945qGUUgUEIiCptKm_Sf/view",
+   "title": "계좌확인서(NK) (1).docx"
+  },
+  {
+   "doc_id": "1VWvqSkiLMlIf0uaVBjzaxGBsrIDM3BUw",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1VWvqSkiLMlIf0uaVBjzaxGBsrIDM3BUw/view",
+   "title": "GmarketSansBold.otf"
+  },
+  {
+   "doc_id": "1VoM_85RJFJh-2ZAaRmTk4bnnvG9x0EnP",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1VoM_85RJFJh-2ZAaRmTk4bnnvG9x0EnP/view",
+   "title": "스위트스팟_주식회사 넥슨코리아 마비노기 상품화 사업 계약서 240401.pdf"
+  },
+  {
+   "doc_id": "1W_rnOPXCuA1SXEb9RK0rV3UfY1vCnxch",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1W_rnOPXCuA1SXEb9RK0rV3UfY1vCnxch/view",
+   "title": "image (1).png"
+  },
+  {
+   "doc_id": "1XLgbxO8mY6d-pQ1dJxC0-FX8B0wOKvuN",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1XLgbxO8mY6d-pQ1dJxC0-FX8B0wOKvuN/view",
+   "title": "[스위트스팟]법인인감증명서.pdf"
+  },
+  {
+   "doc_id": "1Xc3NVZMWyhS20V4uLDnChQZegLS5QK5J",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Xc3NVZMWyhS20V4uLDnChQZegLS5QK5J/view",
+   "title": "스위트스팟 통장사본(국민은행_팝업스토어팀_489).pdf"
+  },
+  {
+   "doc_id": "1aGfH_g_WaOnJRqmYv8m2JvqClQj-zhBE",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1aGfH_g_WaOnJRqmYv8m2JvqClQj-zhBE/view",
+   "title": "(NEXON)BP Guide_KR_스위트 스팟.xlsx"
+  },
+  {
+   "doc_id": "1eYubgoX_LzNtj-snvsQedcbK2kEUOWP7",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1eYubgoX_LzNtj-snvsQedcbK2kEUOWP7/view",
+   "title": "GmarketSansLight.otf"
+  },
+  {
+   "doc_id": "1f011VpyKm0i_lnNAeNH3YjsDiARaTK4F",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1f011VpyKm0i_lnNAeNH3YjsDiARaTK4F/view",
+   "title": "[스튜디오8]마비노기_1차견적_0416_★내부자료★.xlsx"
+  },
+  {
+   "doc_id": "1gIQgl7JAQHbqqSnKLGHbzEd6GD8B_Tr3",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1gIQgl7JAQHbqqSnKLGHbzEd6GD8B_Tr3/view",
+   "title": "스위트스팟 통장사본(국민은행_팝업스토어팀_489).pdf"
+  },
+  {
+   "doc_id": "1gIR3wi0NIsIeGOJuGnIIv9mKiKbkoPg_",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1gIR3wi0NIsIeGOJuGnIIv9mKiKbkoPg_/view",
+   "title": "마비노기 개발리스트_전달용.xlsx"
+  },
+  {
+   "doc_id": "1gk9sfhUkS2uJ3uSoV2wFpDle10f09xSt",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1gk9sfhUkS2uJ3uSoV2wFpDle10f09xSt/view",
+   "title": "마플BIZ_넥슨 견적서 - 마비노기 20주년_상품제작_0502.pdf"
+  },
+  {
+   "doc_id": "1jxPLw-OfVpxPz6BSvo97pEZtSik7BsW2",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1jxPLw-OfVpxPz6BSvo97pEZtSik7BsW2/view",
+   "title": "IMG_0152 (1).png"
+  },
+  {
+   "doc_id": "1lDd0hgUs-Lg253blHiqCjiWtDeI1Hzrm",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1lDd0hgUs-Lg253blHiqCjiWtDeI1Hzrm/view",
+   "title": "1-2.마비노기 20주년 굿즈 타로카드 리오더 발주서(스위트스팟_24.6.25).xlsx"
+  },
+  {
+   "doc_id": "1n7yFkoWnvazGsKZbIU-VTEyzN-bnSZ6X",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1n7yFkoWnvazGsKZbIU-VTEyzN-bnSZ6X/view",
+   "title": "[넥슨] 마비노기 IP 상품화 사업 표준 계약서_스위트스팟(수정).docx"
+  },
+  {
+   "doc_id": "1nMP38xjWbdUgyb-AGhtKVnynyJt5XwHc",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1nMP38xjWbdUgyb-AGhtKVnynyJt5XwHc/view",
+   "title": "계좌확인서(NK) (1).docx"
+  },
+  {
+   "doc_id": "1ppxyBvALU9XIPtOPYQpwRlXjr23UFi6G",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1ppxyBvALU9XIPtOPYQpwRlXjr23UFi6G/view",
+   "title": "[스위트스팟]법인인감증명서.pdf"
+  },
+  {
+   "doc_id": "1t9jIn56PxjsDJpcUULHiN8qNz9PnqJF7",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1t9jIn56PxjsDJpcUULHiN8qNz9PnqJF7/view",
+   "title": "복사본 마비노기 20주년 행사 오프라인 팝업 제품 리스트 및 일정_수정본.xlsx"
+  },
+  {
+   "doc_id": "1xs_nf6vYfd794Ex2uPS-LaNG_32zETXN",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1xs_nf6vYfd794Ex2uPS-LaNG_32zETXN/view",
+   "title": "MyriadPro-Regular.otf"
+  },
+  {
+   "doc_id": "1zX0wg7AAVDrN43HygjZiEMbRB1ZBwJXW",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1zX0wg7AAVDrN43HygjZiEMbRB1ZBwJXW/view",
+   "title": "(주)스위트스팟-사업자등록증_20230818.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 4건: (NEXON)BP Guide_KR_스위트 스팟.xlsx, [스튜디오8]마비노기_1차견적_0416_★내부자료★.x, 마플 BIZ견적서_마비노기 타로카드_0227.pdf, 스위트 스팟_장패드 마비노기 굿즈 견적서_2024052. 미확실: 결과보고서 부재 - 방문자수/매출 실측 없음; counting_method 판정 불가; 예상 방문자수(plan_visitors_expected) 정보 없음; 팝업 면적(area_pyeong) 미기재; 임대/수수료 구조 미확인 - 굿즈 제작 견적만 존재; 운영 기간이 단일일(2024-06-22)로 표기되어 있으나 실제 팝업 기간 불확실; client_party_id·space_id 정규화명 추정; 올림픽공원 소재지(송파구) 추정 | 외부 라벨 역검색(2026-07-27): 스코프 거부 — 보도치 7500 미채택; 수요신호 적재"
+ }
+}

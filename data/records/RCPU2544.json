@@ -1,0 +1,164 @@
+{
+ "record_id": "RCPU2544",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:삼성SDS",
+  "space_id": "unresolved:미상",
+  "client_party_id": "unresolved:삼성SDS",
+  "brand_key": "삼성SDS",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "삼성 SDS 굿즈 제작 프로젝트로, 세부 기획 문서가 제공되지 않아 컨셉을 특정할 수 없다.",
+  "brand_name": "삼성 SDS",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-07-01",
+   "to": "2025-09-30",
+   "days": null
+  },
+  "season": "summer",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 92,
+    "weekend_share": 0.28,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 23,
+    "holiday_until": 45,
+    "holiday_block_in": 3,
+    "nat_event_gap": 28,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": 12248895,
+   "rev_mm_recognized": 11.1
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-09, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-10"
+  },
+  "sales_basis": "PnL 상품매출 양수계정 합 × 1.1 (부가세 포함 기준)",
+  "label_history": [
+   {
+    "at": "pnl_sales (2026-07-28)",
+    "action": "mine",
+    "changes": [
+     "sales_krw 12,248,895 (PnL 총 결제액)"
+    ],
+    "evidence": "core.project_pnl_monthly 상품매출 양수계정 합 11,135,359(공급가) × 1.1, 인식 3개월"
+   }
+  ]
+ },
+ "docs": [
+  {
+   "doc_id": "12o40XQid1gJg30YptX1qkQVroYMlKJq9",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/12o40XQid1gJg30YptX1qkQVroYMlKJq9/view",
+   "title": "이든앤앨리스_삼성SDS 경품 추가 물품 공급계약서_서면 날인본.pdf"
+  },
+  {
+   "doc_id": "14exJaxkzdhp0QezrH_utzj-MwhtFyrIM",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/14exJaxkzdhp0QezrH_utzj-MwhtFyrIM/view",
+   "title": "삼성SDS_결과보고서.pdf"
+  },
+  {
+   "doc_id": "19Kh1KDrEf9kpK0B-NM-eB_0QcSkCoFnw",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19Kh1KDrEf9kpK0B-NM-eB_0QcSkCoFnw/view",
+   "title": "스위트스팟_이든앤앨리스 삼성SDS 굿즈제조 최종견적서.pdf"
+  },
+  {
+   "doc_id": "1C2EKdaYX3dRbSVfC9zXnykliWns93nQ5",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1C2EKdaYX3dRbSVfC9zXnykliWns93nQ5/view",
+   "title": "견적서_스위트스팟_250910_삼성 SDS - 본제작.xlsx - 최종.pdf"
+  },
+  {
+   "doc_id": "1PWXVOgwfW6kHNyyb9FFb0ubXioAyIJe7",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1PWXVOgwfW6kHNyyb9FFb0ubXioAyIJe7/view",
+   "title": "(EAM)물품공급(경품) 기본계약서_250923.docx"
+  },
+  {
+   "doc_id": "1_9BDcoZqsHC7XohCZWqCCvJzLD-cyqVM",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1_9BDcoZqsHC7XohCZWqCCvJzLD-cyqVM/view",
+   "title": "이든앤앨리스-스위트스팟 물품공급계약서 날인본.pdf"
+  },
+  {
+   "doc_id": "1sxHXFQ4t0JOGfZSsG78tjdJ5oyRKXFW-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1sxHXFQ4t0JOGfZSsG78tjdJ5oyRKXFW-/view",
+   "title": "최종)스위트스팟_삼성MD 제작건_아이노케이(0819).xlsx"
+  },
+  {
+   "doc_id": "1tQ6catFY2xtcDct8sUSM0e3fNfDJvQxH",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1tQ6catFY2xtcDct8sUSM0e3fNfDJvQxH/view",
+   "title": "삼성SDS_상품 공급계약_250814최종.docx"
+  },
+  {
+   "doc_id": "1ybGNZphLY-ytw6Zi4piq1rBbDex2qhJI",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1ybGNZphLY-ytw6Zi4piq1rBbDex2qhJI/view",
+   "title": "(콘콘_스위트스팟) 굿즈제작 계약서_250822날인본.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서 텍스트 전체 미제공; client_name; venue; category; 면적; 수수료구조; 계약금액; 방문/매출 실측 데이터; 컨셉 및 체험요소 상세"
+ }
+}

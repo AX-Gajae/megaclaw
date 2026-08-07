@@ -1,0 +1,69 @@
+{
+  "market_record_id": "MKT-2023-0066",
+  "event_name": "더 퍼스트 슬램덩크 팝업스토어 더현대 서울",
+  "brand": "더현대 서울/슬램덩크",
+  "ip_or_collab": "슬램덩크(더 퍼스트 슬램덩크)",
+  "category": "game_webtoon",
+  "intervention": {
+    "concept_description": "애니메이션 영화 '더 퍼스트 슬램덩크' 흥행 기념 한정판 상품 판매 팝업",
+    "experience_elements": [
+      "한정판 굿즈 판매"
+    ],
+    "promotions": [
+      "한정판 상품 판매"
+    ],
+    "is_free_entry": null,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "더현대 서울",
+    "venue_type": "department_store",
+    "neighborhood": "여의도",
+    "city": "서울",
+    "period_from": null,
+    "period_to": null,
+    "area_pyeong": null,
+    "multi_store": false
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "media_estimate",
+    "counting_basis_note": "매체 보도: '특히 슬램덩크 팝업 스토어엔 첫날 대기자가 400~500명에 달했다'",
+    "visitors_source_quote": "더현대 서울에서 열린 슬램덩크 팝업 스토어의 경우 한정판 상품 판매로 방문객을 끌어모았다. 특히 슬램덩크 팝업 스토어엔 첫날 대기자가 400~500명에 달했다.",
+    "visitors_source_url": "https://www.womansense.co.kr/news/articleView.html?idxno=54756",
+    "visitors_source_date": "2023-10-28",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "첫날 대기자 400~500명, 오픈런 약 800명(매체 간 상충)",
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "특히 슬램덩크 팝업 스토어엔 첫날 대기자가 400~500명에 달했다. 희소성은 곧 화제성으로 연결됐다.",
+        "슬램덩크 팝업스토어 때에는 일주일간 방문객이 5000~6000명 정도였다고 현대백화점은 전했다. (헤럴드경제 2023-05-22, https://biz.heraldcorp.com/article/3131505)",
+        "역대급 규모를 자랑했던 슬램덩크 팝업 오픈런 당시 몰린 800여명의 두 배를 넘는 수치다. (한국경제 2025-07-13, https://www.hankyung.com/article/202507113156g)"
+      ]
+    },
+    "conflict": true,
+    "alt_figures": [
+      {
+        "value": 800,
+        "basis": "media_estimate",
+        "quote": "이는 더현대 팝업스토어 중에서도 역대급 규모를 자랑했던 슬램덩크 팝업 오픈런 당시 몰린 800여명의 두 배를 넘는 수치다.",
+        "url": "https://www.hankyung.com/article/202507113156g",
+        "date": "2025-07-13"
+      }
+    ]
+  },
+  "extraction_confidence": "medium",
+  "notes": "2023년 1월 더현대 서울 '더 퍼스트 슬램덩크' 팝업. 첫날 대기 400~500명(우먼센스) vs 오픈런 800여명(한국경제) 상충. 일주일 방문객 5000~6000명(현대백화점, 헤럴드 인용). | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": false,
+  "exclude_reason": "기간 미상",
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

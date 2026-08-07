@@ -1,0 +1,184 @@
+{
+ "record_id": "RCPU2432",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:정년이_평화다방",
+  "space_id": "unresolved:강남역_평화다방",
+  "client_party_id": "unresolved:아이노케이",
+  "brand_key": "정년이",
+  "space_key": "강남역_평화다방"
+ },
+ "intervention": {
+  "concept": "드라마 '정년이' IP를 활용한 평화다방 팝업스토어 MD샵. 강남역 평화다방 내부 및 고객동선에 벨벳커튼(레드) 연출과 쇼케이스장, 촬영소품(춘향전 세트) 전시를 구성하고 굿즈를 판매한다.",
+  "brand_name": "정년이 평화다방 팝업스토어",
+  "experience_elements": [
+   "춘향전 촬영소품 세트 전시",
+   "타워형/가로형 쇼케이스장 상품 전시",
+   "우드카빙 로고사인",
+   "엘리베이터 앞 VP존(X배너+촬영소품전시대)",
+   "후면 복도 유리면 그래픽",
+   "드라마 포스터 외부노출(엘리베이터 내부 A2, 창문 A1)"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "벨벳커튼_레드",
+   "레드톤",
+   "IP콜라보",
+   "MD샵",
+   "촬영소품전시",
+   "포스터배너해잉"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "강남구",
+   "venue_name": "평화다방",
+   "venue_type": "다방/카페",
+   "foot_traffic_context": "강남역 인근, 평화다방 내부 및 고객동선(엘리베이터·카운터 방향)"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-10-03",
+   "to": "2024-11-02",
+   "days": 31
+  },
+  "season": "autumn",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "견적서 총계 21,030,000원(VAT 10% 별도). 공간기획/구성 소계 8,400,000원(현장 그래픽 연출 및 보수 6,000,000, 세팅/철수 인건비 1,400,000, TV모니터 거치대 300,000, 추가 쇼케이스 300,000, 폐기물 처리비 400,000), 운영 소계 6,030,000원(판매매니저 190,000×15=2,850,000, 판매사원 190,000×15=2,850,000, 식비 330,000), 세팅/철수 소계 3,600,000원(행사세팅비 300,000, 철수비 300,000, 단품검수 3PL 이용료 2,000,000, ERP시스템 및 결제기기 대여료 1,000,000), Sub Total 18,030,000원, 대행수수료 3,000,000원. 계약서상 정산: 갑(아이노케이)이 정산주체, 판매수익금 배분. 카드수수료 3% 제외 후 11월 30일까지 갑 계좌 입금. LOSS는 총매출 4% 이상 발생 시 제조원가 100% 공제, 4% 이하는 통상LOSS로 갑 부담. | 계약구조 확인(2026-07-27): 위탁운영형 — 계약서가 총액 대신 견적서/조건안을 준거로 지정, 따라서 견적 총액이 계약상 확정액"
+  },
+  "brand_requirements": [
+   "VMD존 시공비·집기비·운영인력 인건비·상품 제작 및 공급대금은 갑(아이노케이) 부담",
+   "스위트스팟 결제단말기(POS) 사용, 카드수수료 3% 제외",
+   "상품은 갑과 협의된 가격으로 판매",
+   "영업 종료 후 5일 이내 최종 재고 및 상품 반품",
+   "관련 데이터 및 장부 비치·보관"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "강남역 인근 평화다방 내부 및 고객동선"
+  },
+  "derived": {
+   "duration": {
+    "days": 31,
+    "weekend_share": 0.29,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 15,
+    "holiday_until": 114,
+    "holiday_block_in": 0,
+    "nat_event_gap": 42,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 3025100.0,
+    "pnl_pre_accounts": 2,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2024-09-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": 4490413,
+   "rev_mm_recognized": 17.3
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "partial",
+   "rule": "인식 17.3 < 총액 21.03의 90%",
+   "contract_total_mm": 21.03,
+   "last_recognition_period": "2024-11"
+  },
+  "sales_basis": "PnL 상품매출 양수계정 합 × 1.1 (부가세 포함 기준)",
+  "label_history": [
+   {
+    "at": "pnl_sales (2026-07-28)",
+    "action": "mine",
+    "changes": [
+     "sales_krw 4,490,413 (PnL 총 결제액)"
+    ],
+    "evidence": "core.project_pnl_monthly 상품매출 양수계정 합 4,082,194(공급가) × 1.1, 인식 2개월"
+   }
+  ]
+ },
+ "docs": [
+  {
+   "doc_id": "11HTlUZMKAPajBBxM3hIBOKnRor8zLI3b",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/11HTlUZMKAPajBBxM3hIBOKnRor8zLI3b/view",
+   "title": "정년이 평화다방 위탁운영 계약서_스위트스팟_241011.pdf"
+  },
+  {
+   "doc_id": "1H9x1yfoY1xGOTWDBiYtm4hmAYeb-Kbjj",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1H9x1yfoY1xGOTWDBiYtm4hmAYeb-Kbjj/view",
+   "title": "정년이_평화다방_1011_운영+인테리어견적서.pdf"
+  },
+  {
+   "doc_id": "1KADynnc5vWaItl8y2PMCUnRJfiqBnDKP",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1KADynnc5vWaItl8y2PMCUnRJfiqBnDKP/view",
+   "title": "정년이_평화다방견적_0919.xlsx"
+  },
+  {
+   "doc_id": "1VorlDq0x9qVtC6PLriVUaXZ8P2LFqcQR",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1VorlDq0x9qVtC6PLriVUaXZ8P2LFqcQR/view",
+   "title": "정년이_중국생산 일정 정리_1010.xlsx"
+  },
+  {
+   "doc_id": "1WyLNLbnBkqX5IzPAyg_-v8HvUANAa7CR",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1WyLNLbnBkqX5IzPAyg_-v8HvUANAa7CR/view",
+   "title": "정년이 평화다방 위탁운영 계약서_스위트스팟_241028.pdf"
+  },
+  {
+   "doc_id": "1lK4M4sSLWBv3vXo7mX3zoOqD5u5Y5g9x",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1lK4M4sSLWBv3vXo7mX3zoOqD5u5Y5g9x/view",
+   "title": "정년이 평화다방 위탁운영 계약서_스위트스팟_241017.pdf"
+  },
+  {
+   "doc_id": "1qUfRFtMv0e7ON161HD1NFbOq7EKW7WnE",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1qUfRFtMv0e7ON161HD1NFbOq7EKW7WnE/view",
+   "title": "[스위트스팟] 평화다방 정년이팝업 2차시안_0923.pdf"
+  },
+  {
+   "doc_id": "1uqxfWXQ5MebVT4VSumvHQ_ydZN6iYeKs",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1uqxfWXQ5MebVT4VSumvHQ_ydZN6iYeKs/view",
+   "title": "정년이_평화다방_0919.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 4건: 정년이_중국생산 일정 정리_1010.xlsx, [스위트스팟] 평화다방 정년이팝업 2차시안_0923.p, 정년이 평화다방 위탁운영 계약서_스위트스팟_241011, 정년이_평화다방_1011_운영+인테리어견적서.pdf. 미확실: 결과보고서 부재로 방문자수·매출(POS) 실측 없음; 운영기간 불일치: 계약서 10/03~11/02(31일) vs 견적서 10/19~11/02(15일); 기획서상 예상 방문객수 정보 없음; 면적은 벽 사이즈(W9000×D1000×H3000)만 기재, 평수 환산 불가; client_name(아이노케이) IP 라이선스 CJ ENM 관계 명시되나 세부 미확인"
+ }
+}

@@ -1,0 +1,91 @@
+{
+ "market_record_id": "MKT-2025-0090",
+ "event_name": "롯데 자이언츠 팝업스토어 (서울 잠실·부산)",
+ "brand": "롯데 자이언츠",
+ "ip_or_collab": "롯데 자이언츠(KBO)×포켓몬 굿즈 등",
+ "category": "entertainment",
+ "intervention": {
+  "concept_description": "2025시즌 인기 상품(유니폼·포켓몬 굿즈·폴리테루 유니폼/자켓)과 2차 레트로 상품 판매, 포토 부스 운영",
+  "experience_elements": [
+   "포토 부스",
+   "SNS 인증 이벤트"
+  ],
+  "promotions": [
+   "선착순 핀 버튼 증정",
+   "10만원 이상 구매 시 럭키드로우"
+  ],
+  "is_free_entry": null,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "잠실 롯데월드몰 / 롯데백화점 부산본점",
+  "venue_type": "mall",
+  "neighborhood": "잠실/부산",
+  "city": "서울/부산",
+  "period_from": "2025-09-18",
+  "period_to": "2025-10-04",
+  "area_pyeong": null,
+  "multi_store": true,
+  "derived": {
+   "duration": {
+    "days": 17,
+    "weekend_share": 0.29,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 1000,
+  "visitors_period_days": 1,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "구단 제공 보도 기준, 오픈 첫날(9/18) 잠실 롯데월드몰 하루 방문객 수치: '오픈 첫날인 지난 18일 서울 잠실 롯데월드몰에 사전 대기 인원 300여명을 포함해 약 1천명 이상이 방문했다'",
+  "visitors_source_quote": "오픈 첫날인 지난 18일 서울 잠실 롯데월드몰에 사전 대기 인원 300여명을 포함해 약 1천명 이상이 방문했다.",
+  "visitors_source_url": "https://www.starnewskorea.com/sports/2025/09/19/2025091914372085943",
+  "visitors_source_date": "2025-09-19",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "오픈 첫날 사전 대기 인원 300여명",
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "오픈 첫날인 지난 18일 서울 잠실 롯데월드몰에 사전 대기 인원 300여명을 포함해 약 1천명 이상이 방문했다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "서울 잠실 롯데월드몰 9/18~28, 부산 롯데백화점 본점 9/22~10/4 순차 운영. 방문객 수치는 서울 첫날 기준. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

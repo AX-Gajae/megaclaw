@@ -1,0 +1,150 @@
+{
+ "record_id": "RXPU2502",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:스몰브랜더_브랜드빌더리퍼블릭",
+  "space_id": "unresolved:성수_스위트스팟스테이지_성수",
+  "client_party_id": "unresolved:스위트스팟",
+  "brand_key": "스몰브랜더",
+  "space_key": "성수_스위트스팟스테이지"
+ },
+ "intervention": {
+  "concept": "스몰 브랜드들이 참여하는 플리마켓 형태의 브랜드 페어. '브랜더스 홀리데이 : 2025 서울 스몰 브랜드 페어'로 다수의 소규모 브랜드가 참가.",
+  "brand_name": "브랜더스 홀리데이 : 2025 서울 스몰 브랜드 페어",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [
+   "플리마켓",
+   "부스",
+   "인테리어 연출물"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "성동구",
+   "venue_name": "스위트스팟스테이지 성수",
+   "venue_type": "팝업/이벤트 공간",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-04-04",
+   "to": "2025-04-05",
+   "days": 2
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "hybrid",
+   "detail": "부스·인테리어 연출물 등 행사 운영 물품 기획·구성 비용 15,000,000원(VAT 별도). 선금 50% 7,500,000원(VAT별도, 지급기한 25.03.24), 잔금 50% 7,500,000원(VAT별도, 행사 시작 전일 25.04.03). 추가로 전체 매출의 18%를 공간 대여 및 운영 관리 수수료로 스위트스팟에 지급(RS 18%). 포스기 매출 관리는 스위트스팟 담당."
+  },
+  "brand_requirements": [
+   "스몰브랜더가 참가 브랜드 모집·관리 및 커뮤니케이션 담당",
+   "스몰브랜더가 홍보·마케팅 주도",
+   "스몰브랜더가 현장 인력 배치 및 운영 매뉴얼 사전 공유",
+   "스위트스팟이 공간 제공 및 결제 단말기(포스기) 제공",
+   "운영시간 양일 오전 11시~오후 7시"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "스위트스팟스테이지 성수 플리마켓 브랜드 페어"
+  },
+  "derived": {
+   "duration": {
+    "days": 2,
+    "weekend_share": 0.5,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 32,
+    "holiday_until": 29,
+    "holiday_block_in": 0,
+    "nat_event_gap": 60,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 1255656.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-03-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": 30623343,
+   "rev_mm_recognized": 23.7
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-04, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": 15.0,
+   "last_recognition_period": "2025-04"
+  },
+  "sales_basis": "PnL 상품매출 양수계정 합 × 1.1 (부가세 포함 기준)",
+  "label_history": [
+   {
+    "at": "pnl_sales (2026-07-28)",
+    "action": "mine",
+    "changes": [
+     "sales_krw 30,623,343 (PnL 총 결제액)"
+    ],
+    "evidence": "core.project_pnl_monthly 상품매출 양수계정 합 27,839,403(공급가) × 1.1, 인식 1개월"
+   }
+  ]
+ },
+ "docs": [
+  {
+   "doc_id": "14XRYmOLyLf0O8lcC8ksCxdbhfoKsyfI0",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14XRYmOLyLf0O8lcC8ksCxdbhfoKsyfI0/view",
+   "title": "01.계약서_[sweetspot] 스몰브랜더_플리마켓_공동주최계약서_25.03.20.pdf"
+  },
+  {
+   "doc_id": "1Mw2Rlqvf1oEdym6-TQo31P9N6e68yW7a",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Mw2Rlqvf1oEdym6-TQo31P9N6e68yW7a/view",
+   "title": "03.제안서_내용없음.txt"
+  },
+  {
+   "doc_id": "1varkopWaJVsy_yKvj7BGzqZmVIm0fnuN",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1varkopWaJVsy_yKvj7BGzqZmVIm0fnuN/view",
+   "title": "임시결과보고서.txt"
+  },
+  {
+   "doc_id": "1zAF-8T8BzAkZWfTQAbFrvnGvEnHa0FKV",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1zAF-8T8BzAkZWfTQAbFrvnGvEnHa0FKV/view",
+   "title": "02.견적서_내용없음.txt"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 1건: 01.계약서_[sweetspot] 스몰브랜더_플리마켓_. 미확실: 결과보고서 부재로 실측 방문자수·매출(POS) 데이터 없음; 기획서 부재로 예상 방문자수·체험요소·프로모션 정보 없음; 면적(평) 정보 없음; 계약서상 행사기간은 4/4~4/5(양일)이나 project_meta는 4/4~4/6로 불일치; client_name 명시 없음"
+ }
+}

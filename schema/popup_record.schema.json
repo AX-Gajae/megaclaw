@@ -1,0 +1,376 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "popup_record.schema.json",
+  "title": "popup_record",
+  "description": "팝업 1건의 정규화 레코드. 조건화 시점에는 docs.uri의 원문을 사용한다 — 이 레코드는 인덱스이지 요약본이 아니다.",
+  "type": "object",
+  "required": [
+    "record_id",
+    "schema_version",
+    "entities",
+    "intervention",
+    "conditions",
+    "docs",
+    "provenance"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string",
+      "description": "engagement_code (예: RCPU2602)"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "entities": {
+      "type": "object",
+      "description": "스트림 조인 키. 블록 3 재작업 방지를 위해 처음부터 필수.",
+      "required": [
+        "brand_id",
+        "space_id"
+      ],
+      "properties": {
+        "brand_id": {
+          "type": "string",
+          "description": "core.brand 키. 미해소 시 'unresolved:<brand_name_norm>'"
+        },
+        "space_id": {
+          "type": "string",
+          "description": "core.venue 키. 미해소 시 'unresolved:<venue_name_norm>'"
+        },
+        "client_party_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "발주처 (브랜드와 다를 수 있음 — 에이전시 발주 등)"
+        }
+      }
+    },
+    "intervention": {
+      "type": "object",
+      "description": "기획서에서 추출 — 우리가 설계한 자극",
+      "required": [
+        "concept"
+      ],
+      "properties": {
+        "concept": {
+          "type": "string",
+          "description": "한 문단 이내. 상세는 원문으로."
+        },
+        "brand_name": {
+          "type": "string"
+        },
+        "experience_elements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "체험 요소 (포토존, 시식, 커스터마이징, 이벤트 등)"
+        },
+        "promotions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "프로모션 (쿠폰, 굿즈 증정, 추첨 등)"
+        },
+        "staging_tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "연출 태그 (IP콜라보, 카페형, 시상식컨셉, 스포츠중계존 등)"
+        }
+      }
+    },
+    "conditions": {
+      "type": "object",
+      "description": "계약서에서 추출 — 우리가 통제하지 않은(또는 못한) 조건",
+      "required": [
+        "period"
+      ],
+      "properties": {
+        "location": {
+          "type": "object",
+          "properties": {
+            "city": {
+              "type": "string"
+            },
+            "district": {
+              "type": "string"
+            },
+            "venue_name": {
+              "type": "string"
+            },
+            "venue_type": {
+              "type": "string",
+              "description": "로드샵/백화점/복합몰/사옥내 등"
+            },
+            "foot_traffic_context": {
+              "type": "string",
+              "description": "유동인구 맥락 (연무장길 메인, 몰 팝업존 등)"
+            }
+          }
+        },
+        "area_pyeong": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "period": {
+          "type": "object",
+          "required": [
+            "from",
+            "to"
+          ],
+          "properties": {
+            "from": {
+              "type": "string",
+              "format": "date"
+            },
+            "to": {
+              "type": "string",
+              "format": "date"
+            },
+            "days": {
+              "type": "integer"
+            }
+          }
+        },
+        "season": {
+          "type": "string",
+          "description": "계절/시즌 맥락 (연말, 월드컵 기간 등)"
+        },
+        "fee_structure": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "fixed",
+                "revenue_share",
+                "hybrid",
+                "agency_fee",
+                "unknown"
+              ]
+            },
+            "detail": {
+              "type": "string"
+            }
+          }
+        },
+        "brand_requirements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "브랜드 측 요구사항/제약"
+        },
+        "scale": {
+          "type": "object",
+          "description": "방문 스케일 구조 — 예측기의 스케일 산식 입력 (2026-07-23 추가, rolling-v1 대형 미스 교정)",
+          "properties": {
+            "store_count": {
+              "type": "integer",
+              "description": "동시 운영 매장/부스 수"
+            },
+            "venue_traffic_type": {
+              "type": "string",
+              "enum": [
+                "standalone",
+                "host_venue",
+                "multi_store",
+                "hybrid"
+              ],
+              "description": "standalone=자체집객 / host_venue=숙주 트래픽 지배(박람회·몰·유통 입점) / multi_store=2개점+ / hybrid=혼합"
+            },
+            "host_traffic_note": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "숙주(모행사·몰) 트래픽 근거 인용"
+            }
+          }
+        },
+        "capacity": {
+          "type": "object",
+          "description": "수용 한도 구조 — 캐파 구속형 행사(좌석·회차·초청·예약)의 예측 상한 (2026-07-24 추가, rolling-v5 캐파 구속 3폴드 교훈)",
+          "properties": {
+            "access_type": {
+              "type": "string",
+              "enum": [
+                "open",
+                "session",
+                "invite",
+                "reservation",
+                "unknown"
+              ],
+              "description": "open=자유입장, session=회차·좌석제, invite=초청제, reservation=사전예약제"
+            },
+            "total_capacity": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "description": "기간 총 수용 한도(좌석×회차, 초청 인원, 예약 슬롯 합)"
+            },
+            "detail": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "산출 근거 (예: 2회차×300석×4일)"
+            }
+          }
+        }
+      }
+    },
+    "outcome": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "description": "실측. 홀드아웃 예측 대상. null이면 미수집.",
+      "properties": {
+        "daily": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "date"
+            ],
+            "properties": {
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "visitors": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "sales_krw": {
+                "type": [
+                  "number",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "totals": {
+          "type": "object",
+          "properties": {
+            "visitors": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "sales_krw": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "rev_mm_recognized": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "인식 매출 (백만원, PnL 기준 — 소비자 매출과 다름)"
+            }
+          }
+        },
+        "retention": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "dwell_minutes": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "revisit_rate": {
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          }
+        },
+        "source": {
+          "type": "string",
+          "description": "출처 (정산서, POS, 운영일지 등)"
+        }
+      }
+    },
+    "docs": {
+      "type": "array",
+      "description": "원문 링크. 조건화 시점엔 반드시 이 원문을 사용 (요약 금지 원칙).",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "uri"
+        ],
+        "properties": {
+          "doc_id": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "기획서",
+              "계약서",
+              "정산",
+              "운영일지",
+              "리뷰",
+              "기타"
+            ]
+          },
+          "uri": {
+            "type": "string",
+            "description": "Notion/Drive URI"
+          },
+          "title": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "extracted_by",
+        "extracted_at"
+      ],
+      "properties": {
+        "extracted_by": {
+          "type": "string",
+          "description": "manual | llm:<model_id>"
+        },
+        "reviewed_by": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "수기 검수자. LLM 추출은 검수 전까지 미완성 취급."
+        },
+        "extracted_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

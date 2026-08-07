@@ -1,0 +1,311 @@
+{
+ "record_id": "RXPI2405",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:CIDER_샵사이다",
+  "space_id": "unresolved:잠실_롯데월드몰_팝업스토어",
+  "client_party_id": null,
+  "brand_key": "샵사이다",
+  "space_key": "잠실_롯데월드몰"
+ },
+ "intervention": {
+  "concept": "CIDER(샵사이다) 온라인 패션 브랜드의 잠실 롯데월드몰 팝업스토어. 블랙/핑크/레드/블루 컬러존 집기와 구름·사과·별 모양 오브제로 구성된 의류 판매형 매장. 파사드 채널사인, 쇼윈도, 피팅룸 4실을 갖춘 리테일 팝업.",
+  "brand_name": "CIDER",
+  "experience_elements": [
+   "의류 진열 및 판매",
+   "피팅룸 4실",
+   "진열부스",
+   "픽업매대",
+   "마네킨 디스플레이",
+   "구름모양 판넬",
+   "별모양 등신대"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "파사드 에폭시 채널사인",
+   "쇼윈도",
+   "블루존 가벽",
+   "컬러 도장 집기(블랙/핑크/레드/블루)",
+   "방염 필름 그래픽",
+   "바닥 러그"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "잠실",
+   "venue_name": "롯데월드몰(롯데백화점 잠실점)",
+   "venue_type": "쇼핑몰",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-05-10",
+   "to": "2024-08-08",
+   "days": 91
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "공사비(시공) 견적 총액 117,700,000원, VAT 별도. 직접공사비 107,096,740원 + 간접공사비 10,634,706원(공과잡비 및 기업이윤 7% 7,496,772원, 안전관리비 2.93% 3,137,934원). 스튜디오시즈닝 견적(2024-05-07 조정). 선금/중도금/잔금 분할 정보 없음. | 계약서 미확인(2026-07-27 재독해 시도 — 대상 문서 부재/추출 실패): 총액은 견적 기준"
+  },
+  "brand_requirements": [
+   "소방서 방염 처리",
+   "가설 방염현수막·필름",
+   "야간공사(외부 파사드·철거)",
+   "POP-UP 철수 시 기존 필름 일부 보수"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "롯데월드몰(롯데백화점 잠실점)"
+  },
+  "derived": {
+   "duration": {
+    "days": 91,
+    "weekend_share": 0.29,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 0.5,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 4,
+    "holiday_until": 127,
+    "holiday_block_in": 0,
+    "nat_event_gap": 30,
+    "nat_event": null,
+    "doc_lag_days": 2,
+    "doc_dates_found": 8
+   },
+   "competition": {
+    "comp_same_addr_open": 1,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 1,
+    "comp_within_1000m_open": 1,
+    "matched_address": "서울 송파구 올림픽로 300"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 110.1
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 미제공 — 방문/매출 실측 데이터 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 110.1 ≈ 계약총액 117.7",
+   "contract_total_mm": 117.7,
+   "last_recognition_period": "2024-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "10bhEaeSwkWTI5sDs0uQc__wCECEA5uLb",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/10bhEaeSwkWTI5sDs0uQc__wCECEA5uLb/view",
+   "title": "샵사이다_롯데월드타워_24년 05월 도급청구서_240617.xlsx"
+  },
+  {
+   "doc_id": "10bwZGVcSrcH-du99_CXk2jz6jsehT451",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/10bwZGVcSrcH-du99_CXk2jz6jsehT451/view",
+   "title": "샵사이다_롯데월드타워_24년 05월 도급청구서_240617(수정).xlsx"
+  },
+  {
+   "doc_id": "10r_0b-gopwtwrc9b7kq8sC6ye8y9S6eB",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/10r_0b-gopwtwrc9b7kq8sC6ye8y9S6eB/view",
+   "title": "(Tom)_CIDER_Sales Report (by Inventory Amount).xlsx"
+  },
+  {
+   "doc_id": "11oRE01nW-Q3kLxCqbR2Ehk7gJywtl8fg",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/11oRE01nW-Q3kLxCqbR2Ehk7gJywtl8fg/view",
+   "title": "240508_스위트스팟_ CIDER 롯데월드몰_중앙 M&H 계약서.pdf"
+  },
+  {
+   "doc_id": "13-zCmIpoyI0k3Lx4ttwqmFkjRP0niscv",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/13-zCmIpoyI0k3Lx4ttwqmFkjRP0niscv/view",
+   "title": "할인_추가발주 제안_ 사이다 답변 없음3.png"
+  },
+  {
+   "doc_id": "132WS-uQQ5cyOU8oNkC2kgAkB_ipmZPjD",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/132WS-uQQ5cyOU8oNkC2kgAkB_ipmZPjD/view",
+   "title": "할인_추가발주 제안_ 사이다 답변 없음2.jpg"
+  },
+  {
+   "doc_id": "136lDCSdbdK_mtSqfVK382zcdSz3lETrs",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/136lDCSdbdK_mtSqfVK382zcdSz3lETrs/view",
+   "title": "스위트스팟_롯데물산_B2B_240502.pdf"
+  },
+  {
+   "doc_id": "136qvc1jdMcTgx4guZrIPlwvnE-ZtYlAX",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/136qvc1jdMcTgx4guZrIPlwvnE-ZtYlAX/view",
+   "title": "할인 제안_사이다 답변 없음1.png"
+  },
+  {
+   "doc_id": "136xaA0hTblspCr9epK5EzrGEh6sJqssr",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/136xaA0hTblspCr9epK5EzrGEh6sJqssr/view",
+   "title": "[Sweetspot] 샵사이다 롯데월드몰_최종컨셉시안_240502.pdf"
+  },
+  {
+   "doc_id": "1399qzLFs5ePF-FqBryNCtVbN-kod-dps",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1399qzLFs5ePF-FqBryNCtVbN-kod-dps/view",
+   "title": "할인 제안 거절.png"
+  },
+  {
+   "doc_id": "13IWl6ZhVh4WCU1T0VMHbhqHL1o4Q0nBE",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/13IWl6ZhVh4WCU1T0VMHbhqHL1o4Q0nBE/view",
+   "title": "할인 제안 _ 사이다 답변없음4.png"
+  },
+  {
+   "doc_id": "13Kth754tIxI2UuE_wYXA063LbeNmdcrx",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/13Kth754tIxI2UuE_wYXA063LbeNmdcrx/view",
+   "title": "Thumbs.db"
+  },
+  {
+   "doc_id": "15OytNnSZTrZiTH8N2Z8Brvle-uPvm4dX",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/15OytNnSZTrZiTH8N2Z8Brvle-uPvm4dX/view",
+   "title": "(Sweetspot)_CIDER_Sales Report (by Inventory Amount).xlsx"
+  },
+  {
+   "doc_id": "15Rb8Fsks5gmDjk6xl079sFunuJduHezP",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/15Rb8Fsks5gmDjk6xl079sFunuJduHezP/view",
+   "title": "(Sweetspot)_CIDER_Sales Report.xlsx"
+  },
+  {
+   "doc_id": "16dudkoVluB5r9KMThciyvkwdCwYWqdH2",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/16dudkoVluB5r9KMThciyvkwdCwYWqdH2/view",
+   "title": "20240523_시더코리아홀딩주식회사_2_국문계약서(특약매입 거래계약서_CIDER_SWEETSPOT_v.5)_(국문).docx"
+  },
+  {
+   "doc_id": "16fkLD7r1Hds3iAvyd3uvMGs8TdcQpTaS",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/16fkLD7r1Hds3iAvyd3uvMGs8TdcQpTaS/view",
+   "title": "20240523_시더코리아홀딩주식회사_2_국문계약서(특약매입 거래계약서_CIDER_SWEETSPOT_v.5)_(번역본_영문) (1).docx"
+  },
+  {
+   "doc_id": "16xoF5apq7PlesRgg89eZLbyUluMS1AKz",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/16xoF5apq7PlesRgg89eZLbyUluMS1AKz/view",
+   "title": "특약매입 거래계약서_CIDER_SWEETSPOT_v.5.docx"
+  },
+  {
+   "doc_id": "171UY8zB7VSb5sB4ZAYA5xHoDl7CfFEu1",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/171UY8zB7VSb5sB4ZAYA5xHoDl7CfFEu1/view",
+   "title": "샵사이다_롯데월드몰_팝업스토어_견적서_240507(스튜디오시즈닝)_조정.pdf"
+  },
+  {
+   "doc_id": "174ft9LmROIIsRv5PPat1xffjnjMjYv2R",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/174ft9LmROIIsRv5PPat1xffjnjMjYv2R/view",
+   "title": "샵사이다_롯데월드몰_팝업스토어_견적서_240507(스튜디오시즈닝).pdf"
+  },
+  {
+   "doc_id": "17Ajhu00QyfQaPcNEjYlk-TbPftnVo_YI",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/17Ajhu00QyfQaPcNEjYlk-TbPftnVo_YI/view",
+   "title": "[스캔본]디자인용역계약서_잠실월드몰 팝업스토어(스튜디오시즈닝)_240517.pdf"
+  },
+  {
+   "doc_id": "19Vpnfd6GCrpjpR2zdz_dkBUh3_z49jLX",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19Vpnfd6GCrpjpR2zdz_dkBUh3_z49jLX/view",
+   "title": "INVOICE.pdf"
+  },
+  {
+   "doc_id": "1Lo9FfIwBzZfDSWSo3Hp-BjWsv8Nx_N_j",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Lo9FfIwBzZfDSWSo3Hp-BjWsv8Nx_N_j/view",
+   "title": "샵사이다_롯데월드타워_24년 06월 도급청구서_240705(수정).xlsx"
+  },
+  {
+   "doc_id": "1Lten8eNXXNeisBFD6T889iEp35hbiEzr",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Lten8eNXXNeisBFD6T889iEp35hbiEzr/view",
+   "title": "샵사이다_롯데월드타워_24년 05월 도급청구서_240617(수정).xlsx"
+  },
+  {
+   "doc_id": "1QYqRjodtsTJhktl60VqLrokSy0iq_7LF",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1QYqRjodtsTJhktl60VqLrokSy0iq_7LF/view",
+   "title": "(견적서)사이다_롯데월드타워_스토어_도급운영_20240502.xlsx"
+  },
+  {
+   "doc_id": "1QiYLm1QadVjCOeTmRbRL1KbuqVDBB1h8",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1QiYLm1QadVjCOeTmRbRL1KbuqVDBB1h8/view",
+   "title": "샵사이다_롯데월드타워_24년 07월 도급청구서_240806.xlsx"
+  },
+  {
+   "doc_id": "1ouxZH9HbRQOecjnY2j2HHjDNggwhy4gZ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1ouxZH9HbRQOecjnY2j2HHjDNggwhy4gZ/view",
+   "title": "[스캔본]디자인용역계약서_잠실월드몰 팝업스토어(스튜디오시즈닝)_240517.pdf"
+  },
+  {
+   "doc_id": "1oyCxivwoQvRVPK-GGalHn2Z20-9weMgJ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1oyCxivwoQvRVPK-GGalHn2Z20-9weMgJ/view",
+   "title": "디자인용역계약서_스위트스팟_팝업스토어(스튜디오시즈닝)_0328(최종).docx"
+  },
+  {
+   "doc_id": "1p2asmCAL2dHIOh9TFj4HQnjdEmtgSXOl",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1p2asmCAL2dHIOh9TFj4HQnjdEmtgSXOl/view",
+   "title": "샵사이다_롯데월드몰_팝업스토어_견적서_240507(스튜디오시즈닝)_조정.pdf"
+  },
+  {
+   "doc_id": "1qqq2DBaf9gN0sKzoDO5tPx93N3fweSUj",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1qqq2DBaf9gN0sKzoDO5tPx93N3fweSUj/view",
+   "title": "샵사이다_롯데월드타워_24년 08월 도급청구서_240821.xlsx"
+  },
+  {
+   "doc_id": "1r5gElK-sQ0mBaqMyrB5KmuvV8qc0FsLr",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1r5gElK-sQ0mBaqMyrB5KmuvV8qc0FsLr/view",
+   "title": "CIDER_팝업스토어_견적서_24.02.01.xlsx"
+  },
+  {
+   "doc_id": "1r7UGVe11-g6ZWAPaYxXcrKT1nvq0-E8j",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1r7UGVe11-g6ZWAPaYxXcrKT1nvq0-E8j/view",
+   "title": "CIDER_팝업스토어_견적서_24.02.01.pdf"
+  },
+  {
+   "doc_id": "1rBC0MnofFa9gfLr6PeQxF8jXaCjMxb_z",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1rBC0MnofFa9gfLr6PeQxF8jXaCjMxb_z/view",
+   "title": "shopcider_popup_designproposal_240419.pptx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: [Sweetspot] 샵사이다 롯데월드몰_최종컨셉시안_, 샵사이다_롯데월드몰_팝업스토어_견적서_240507(스튜. 미확실: 결과보고서 부재로 방문자수·매출 등 outcome 전부 없음; client_name/브랜드 운영사 미상; 정확한 면적(평) 미상 — 견적서 보양 M2 265.49는 시공면적 근거로 불확실; 기획서 예상 방문 수치 없음; 수수료 분할(선금/중도금/잔금) 정보 없음; 입지 유동인구 맥락 정보 없음; 계약 문서는 디자인 시안 위주로 상세 계약조건 부족"
+ }
+}

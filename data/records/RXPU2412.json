@@ -1,0 +1,417 @@
+{
+ "record_id": "RXPU2412",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:보노보노_에피소드2",
+  "space_id": "unresolved:미상",
+  "client_party_id": null,
+  "brand_key": "보노보노",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "보노보노 에피소드2 팝업스토어. 세부 컨셉·체험요소는 원문 문서 부재로 확인 불가.",
+  "brand_name": "보노보노",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-01-02",
+   "to": "2025-01-15",
+   "days": 14
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 3.7,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 106,
+    "holiday_until": 23,
+    "holiday_block_in": 0,
+    "nat_event_gap": 49,
+    "nat_event": null,
+    "doc_lag_days": 43,
+    "doc_dates_found": 42
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 1900150.0,
+    "pnl_pre_accounts": 6,
+    "pnl_pre_months": 3,
+    "pnl_pre_first": "2024-10-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": null,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-DXVje7OatvsNPFlhb437hGV_-OBT3Ft",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1-DXVje7OatvsNPFlhb437hGV_-OBT3Ft/view",
+   "title": "[스위트스팟] 보노보노팝업스토어_1차기획안_241101.pdf"
+  },
+  {
+   "doc_id": "1-GvDJ4CxUtfz2wBYRPuKtPYvL5V5UJxt",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1-GvDJ4CxUtfz2wBYRPuKtPYvL5V5UJxt/view",
+   "title": "보노보노_rose.pdf"
+  },
+  {
+   "doc_id": "1-q_kYGmBfhZf6h6QuMuldtEVGy8qY_-5",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1-q_kYGmBfhZf6h6QuMuldtEVGy8qY_-5/view",
+   "title": "KakaoTalk_20241120_102745831_06.jpg"
+  },
+  {
+   "doc_id": "12aHofEcAAQm-Wd4Fn7pL8EZRUTuaI8Ae",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/12aHofEcAAQm-Wd4Fn7pL8EZRUTuaI8Ae/view",
+   "title": "1113 1차 수정 과업수행서(보노보노 팝업스토어 기획 및 운영 위탁 계약).docx"
+  },
+  {
+   "doc_id": "12ah5Mp78u_1ap0XL3jiK1eTK6vmlpk7p",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/12ah5Mp78u_1ap0XL3jiK1eTK6vmlpk7p/view",
+   "title": "1113 수정1차 보노보노 팝업스토어 기획 및 운영 위탁 계약서.docx"
+  },
+  {
+   "doc_id": "13GMJAwh-wBab4cfLMglTG7t03hIh1E5E",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/13GMJAwh-wBab4cfLMglTG7t03hIh1E5E/view",
+   "title": "모앤유_보노보노팝업_1차견적서.pdf"
+  },
+  {
+   "doc_id": "13hbnZudS7SwQsW7X926-XYv7eGG8iEVG",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/13hbnZudS7SwQsW7X926-XYv7eGG8iEVG/view",
+   "title": "KakaoTalk_20241113_161645435_01.jpg"
+  },
+  {
+   "doc_id": "13wkVO9jn83k4SHU9ILz3sL9PYDDR7K0i",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/13wkVO9jn83k4SHU9ILz3sL9PYDDR7K0i/view",
+   "title": "KakaoTalk_20241120_091130688_13.jpg"
+  },
+  {
+   "doc_id": "16nAvOqRg_oXVEIlB5PZPzFjLLtb_6t7w",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/16nAvOqRg_oXVEIlB5PZPzFjLLtb_6t7w/view",
+   "title": "KakaoTalk_20241113_164139759.jpg"
+  },
+  {
+   "doc_id": "17xcss9XAf8kNTh3SorYyWMUrvY3IQg_D",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/17xcss9XAf8kNTh3SorYyWMUrvY3IQg_D/view",
+   "title": "보노보노_rose.pptx"
+  },
+  {
+   "doc_id": "1ByMfpVQzH2E3QkrTOeQMK36lEuQbG7iw",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ByMfpVQzH2E3QkrTOeQMK36lEuQbG7iw/view",
+   "title": "KakaoTalk_20241120_091130688_12.jpg"
+  },
+  {
+   "doc_id": "1DnMFTbKmKCinW9grjaO78lSxFwKvg_cY",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1DnMFTbKmKCinW9grjaO78lSxFwKvg_cY/view",
+   "title": "KakaoTalk_20241120_102745831_03.jpg"
+  },
+  {
+   "doc_id": "1GCrAhKj4samHdT7SrXWXpHcr_q96HxT7",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1GCrAhKj4samHdT7SrXWXpHcr_q96HxT7/view",
+   "title": "모앤유_보노보노 팝업_2차견적서.pdf"
+  },
+  {
+   "doc_id": "1GslzhcoN1Q_YYkUNgbqJaK44nsgknQEx",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1GslzhcoN1Q_YYkUNgbqJaK44nsgknQEx/view",
+   "title": "스위트스팟_보노보노팝업스토어_더현대서울_공간기획안_241113.pdf"
+  },
+  {
+   "doc_id": "1HdKx5cNQ77w2bfC3-mpHJ2ZWE4BWaLD0",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1HdKx5cNQ77w2bfC3-mpHJ2ZWE4BWaLD0/view",
+   "title": "스위트스팟_보노보노팝업스토어_더현대서울_기획안_241107.pptx"
+  },
+  {
+   "doc_id": "1MMUsCuShLgRNkCDVjKAw8l46H0kKaphT",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1MMUsCuShLgRNkCDVjKAw8l46H0kKaphT/view",
+   "title": "KakaoTalk_20241120_102745831_05.jpg"
+  },
+  {
+   "doc_id": "1NHcEyNI3z35yDVDCXxtQYAs3cZVvLAN_",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1NHcEyNI3z35yDVDCXxtQYAs3cZVvLAN_/view",
+   "title": "KakaoTalk_20241112_154019431_01.png"
+  },
+  {
+   "doc_id": "1ODEhky089koX2Et_YDlqeOhLy51_jSnT",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ODEhky089koX2Et_YDlqeOhLy51_jSnT/view",
+   "title": "KakaoTalk_20241113_164139759_01.jpg"
+  },
+  {
+   "doc_id": "1QPWs2isjCwJpYfgLZP9WMJxQtoIaEIGk",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1QPWs2isjCwJpYfgLZP9WMJxQtoIaEIGk/view",
+   "title": "[스위트스팟] 보노보노팝업스토어_1차기획안_241101.pptx"
+  },
+  {
+   "doc_id": "1Rn1o6VkufakOFW2zpjUtBsYhzi7gwwTD",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Rn1o6VkufakOFW2zpjUtBsYhzi7gwwTD/view",
+   "title": "KakaoTalk_20241120_102745831.jpg"
+  },
+  {
+   "doc_id": "1SXqz3iGiLbN7BW0sTuV6_NWWIibgKJvl",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1SXqz3iGiLbN7BW0sTuV6_NWWIibgKJvl/view",
+   "title": "KakaoTalk_20241112_154019431_02.png"
+  },
+  {
+   "doc_id": "1Sj1SlVyIipBGu1aTF1ZdakHxwEigXxjf",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Sj1SlVyIipBGu1aTF1ZdakHxwEigXxjf/view",
+   "title": "KakaoTalk_20241113_155344892_02.jpg"
+  },
+  {
+   "doc_id": "1U-TeYO3z3gHIq8ixrIPiZuhuNGL596em",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1U-TeYO3z3gHIq8ixrIPiZuhuNGL596em/view",
+   "title": "KakaoTalk_20241113_170759845.jpg"
+  },
+  {
+   "doc_id": "1V5pxJgI5ZV6KHAtyJnBq9hVuxd3zXAmn",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1V5pxJgI5ZV6KHAtyJnBq9hVuxd3zXAmn/view",
+   "title": "보노보노_episode2 (수정중) [자동 저장].pptx"
+  },
+  {
+   "doc_id": "1VAIUXmM04QtXhhgxhFsBvW11knqk0EjU",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1VAIUXmM04QtXhhgxhFsBvW11knqk0EjU/view",
+   "title": "KakaoTalk_20241120_091130688_14.jpg"
+  },
+  {
+   "doc_id": "1VVCtInQOFM4f1jWKawwYgaKsx9MM3Vfw",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1VVCtInQOFM4f1jWKawwYgaKsx9MM3Vfw/view",
+   "title": "스위트스팟_보노보노팝업스토어_더현대서울_공간기획안_2411120.pptx"
+  },
+  {
+   "doc_id": "1Vm5KQWX7r59ECp2v-5hbbhe84eCYjimh",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Vm5KQWX7r59ECp2v-5hbbhe84eCYjimh/view",
+   "title": "KakaoTalk_20241120_102745831_04.jpg"
+  },
+  {
+   "doc_id": "1W-3crkBJevnIDWRB25SwHMSJsO7M78lE",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1W-3crkBJevnIDWRB25SwHMSJsO7M78lE/view",
+   "title": "보노보노 2차 팝업스토어 견적서 초안(스위트스팟241002).pdf"
+  },
+  {
+   "doc_id": "1XHY4uS9_Eefkbn9oY7YRtnTF9B1n40wf",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1XHY4uS9_Eefkbn9oY7YRtnTF9B1n40wf/view",
+   "title": "KakaoTalk_20241120_093132732.png"
+  },
+  {
+   "doc_id": "1XXZVfkZVmwqApiRsUMAxdImZ-T061Yxq",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1XXZVfkZVmwqApiRsUMAxdImZ-T061Yxq/view",
+   "title": "KakaoTalk_20241120_091130688_05.jpg"
+  },
+  {
+   "doc_id": "1bl1NFQxeqEWPBoIbM6Zc8214vyiKLmkG",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1bl1NFQxeqEWPBoIbM6Zc8214vyiKLmkG/view",
+   "title": "KakaoTalk_20241119_160058796.jpg"
+  },
+  {
+   "doc_id": "1cnEvouO0lgom8wjP06VJwoSLXMUMsyLr",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1cnEvouO0lgom8wjP06VJwoSLXMUMsyLr/view",
+   "title": "KakaoTalk_20241113_165826936.jpg"
+  },
+  {
+   "doc_id": "1ctSoX6uJTsLVkgdb5gTj3fQUDLoiiMOs",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ctSoX6uJTsLVkgdb5gTj3fQUDLoiiMOs/view",
+   "title": "KakaoTalk_20241120_091130688_01.jpg"
+  },
+  {
+   "doc_id": "1fcDOBTFxBwMA8SgyiHCaFxyqnpc3o7th",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1fcDOBTFxBwMA8SgyiHCaFxyqnpc3o7th/view",
+   "title": "스위트스팟_보노보노팝업스토어_더현대서울_기획안_241107.pdf"
+  },
+  {
+   "doc_id": "1fm0CWU2vhbSntJk2sBmlkqfySMxe4AGJ",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1fm0CWU2vhbSntJk2sBmlkqfySMxe4AGJ/view",
+   "title": "KakaoTalk_20241112_154019431.png"
+  },
+  {
+   "doc_id": "1fwciDEQS7InRbCZ68ZBfjIpQ4-IHf5ZB",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1fwciDEQS7InRbCZ68ZBfjIpQ4-IHf5ZB/view",
+   "title": "KakaoTalk_20241113_155344892_03.jpg"
+  },
+  {
+   "doc_id": "1i3fNJFf95zkWKNsNXgMV5UuM8TMI5R6n",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1i3fNJFf95zkWKNsNXgMV5UuM8TMI5R6n/view",
+   "title": "스위트스팟_보노보노팝업스토어_더현대서울_공간기획안_2411120.pdf"
+  },
+  {
+   "doc_id": "1j3WnjI_ORDawQtR_skKxY_YGJ5RblNEE",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1j3WnjI_ORDawQtR_skKxY_YGJ5RblNEE/view",
+   "title": "KakaoTalk_20241120_102745831_08.jpg"
+  },
+  {
+   "doc_id": "1jr8SPbFSl0ZwH4h3oZ--YvXJctp2r3Rs",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1jr8SPbFSl0ZwH4h3oZ--YvXJctp2r3Rs/view",
+   "title": "KakaoTalk_20241113_155329182_02.jpg"
+  },
+  {
+   "doc_id": "1q1xGcfVVh7jrsEVw_dA4dEfrYqp5O0od",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1q1xGcfVVh7jrsEVw_dA4dEfrYqp5O0od/view",
+   "title": "KakaoTalk_20241113_161645435_02.jpg"
+  },
+  {
+   "doc_id": "1qAUKEgMwSUCukWq0Z0GLnLLdWxuk0EZD",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1qAUKEgMwSUCukWq0Z0GLnLLdWxuk0EZD/view",
+   "title": "KakaoTalk_20241120_091130688_06.jpg"
+  },
+  {
+   "doc_id": "1riHB-mr8YBBJpblBLthRqG-OuKnIK5-m",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1riHB-mr8YBBJpblBLthRqG-OuKnIK5-m/view",
+   "title": "KakaoTalk_20241113_164902238.jpg"
+  },
+  {
+   "doc_id": "1riaLIVhsi1dahRTUIjGTawsYk8SPjszP",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1riaLIVhsi1dahRTUIjGTawsYk8SPjszP/view",
+   "title": "스위트스팟_보노보노팝업스토어_더현대서울_공간기획안_241113.pptx"
+  },
+  {
+   "doc_id": "1sSI5wPD8R-yq4Qw-IW0A902PEZPQhIji",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1sSI5wPD8R-yq4Qw-IW0A902PEZPQhIji/view",
+   "title": "KakaoTalk_20241113_161645435.jpg"
+  },
+  {
+   "doc_id": "1svieVuHRn5WyyJl2TO_wsXeADDKYBEp1",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1svieVuHRn5WyyJl2TO_wsXeADDKYBEp1/view",
+   "title": "KakaoTalk_20241120_102745831_02.jpg"
+  },
+  {
+   "doc_id": "1t5PKWRUaLjhZIDU5fCzNM1ctvk3u22ew",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1t5PKWRUaLjhZIDU5fCzNM1ctvk3u22ew/view",
+   "title": "PRO-STAFF (보노보노 팝업).xlsx"
+  },
+  {
+   "doc_id": "1uPe52ajfeW_31RJonC0RPC3dbTXPwhR7",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1uPe52ajfeW_31RJonC0RPC3dbTXPwhR7/view",
+   "title": "KakaoTalk_20241120_102745831_01.jpg"
+  },
+  {
+   "doc_id": "1wHfbh8W4nT-VEXuHH48-ecG0_c60hLzw",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1wHfbh8W4nT-VEXuHH48-ecG0_c60hLzw/view",
+   "title": "KakaoTalk_20241120_102745831_07.jpg"
+  },
+  {
+   "doc_id": "1x14OKrGAfbLDrnaltN9LrLCyabj0Kpbb",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1x14OKrGAfbLDrnaltN9LrLCyabj0Kpbb/view",
+   "title": "KakaoTalk_20241113_155344892_01.jpg"
+  },
+  {
+   "doc_id": "1x51ShY9FuDgMmYyDD_Vgew6NQVN0K-p9",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1x51ShY9FuDgMmYyDD_Vgew6NQVN0K-p9/view",
+   "title": "KakaoTalk_20241120_091130688_16.jpg"
+  },
+  {
+   "doc_id": "1xIVBHqUH9bHuYFltLpVUUL7JtVWnMdzN",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1xIVBHqUH9bHuYFltLpVUUL7JtVWnMdzN/view",
+   "title": "KakaoTalk_20241120_091130688_15.jpg"
+  },
+  {
+   "doc_id": "1zIg_gl4yl8PcoELDYXYkO_YRhjNysbJY",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1zIg_gl4yl8PcoELDYXYkO_YRhjNysbJY/view",
+   "title": "KakaoTalk_20241113_155329182_01.jpg"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 미제공; client_name 미상; venue 및 입지 정보 없음; 면적 정보 없음; 수수료 구조 없음; 컨셉·체험요소·프로모션·연출태그 없음; 방문객 및 매출 실측 데이터 없음; 예상 방문객 수 없음"
+ }
+}

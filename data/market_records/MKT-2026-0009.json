@@ -1,0 +1,105 @@
+{
+ "market_record_id": "MKT-2026-0009",
+ "event_name": "젠레스 존 제로 X 애플 앱스토어 팝업스토어 'Team Angel POP SHOW'",
+ "brand": "호요버스 코리아/애플 앱스토어",
+ "ip_or_collab": "젠레스 존 제로 (AOD)",
+ "category": "game_webtoon",
+ "intervention": {
+  "concept_description": "젠레스 존 제로 2.6 버전 아이돌 그룹 AOD 테마 팝업. 아이폰17 프로·애플워치 시리즈11 스페셜 에디션, 아이돌 콘셉트 굿즈(응원봉·타월·티셔츠)",
+  "experience_elements": [
+   "App Store 스페셜 스토리 퀴즈",
+   "AOD 멤버 1:1 영상통화",
+   "AirPods Max 청음존(Apple Music AOD 플레이리스트)"
+  ],
+  "promotions": [
+   "AOD 스페셜 에디션 패키지 한정 판매"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "더현대 서울 5층 에픽서울",
+  "venue_type": "department_store",
+  "neighborhood": "여의도",
+  "city": "서울",
+  "period_from": "2026-02-21",
+  "period_to": "2026-03-01",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  },
+  "derived": {
+   "duration": {
+    "days": 9,
+    "weekend_share": 0.44,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 14.1,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 7000,
+  "visitors_period_days": 9,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "호요버스 코리아 발표 인용: '팝업스토어는 안전하고 쾌적한 관람을 위해 예약제로 운영됐으며, 9일간 총 7000여 명이 방문했다'",
+  "visitors_source_quote": "팝업스토어는 안전하고 쾌적한 관람을 위해 예약제로 운영됐으며, 9일간 총 7000여 명이 방문했다.",
+  "visitors_source_url": "http://www.seoulwire.com/news/articleView.html?idxno=709175",
+  "visitors_source_date": "2026-03-03",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": true,
+   "reservation_fill": "전 과정 예약제 운영",
+   "signal_quotes": [
+    "9일간 총 7000여명이 현장을 찾아 AOD의 인기를 실감케 했다. (전자신문 2026-03-03)",
+    "현장 관계자에 따르면 캔뱃지와 아크릴스탠드 등 일부 인기 품목은 팝업스토어 오픈날마다 빠르게 품절되는 경우가 많다.(스포츠한국 2026-02-23)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "전자신문(2026-03-03) 동일 수치 확인: https://www.etnews.com/20260303000515 | 병합 레코드: MKT-2026-0002 | [병합:MKT-2026-0002] 전자신문·아이뉴스24·서울와이어·한스경제 등 다수 매체 동일 수치 보도. 예약제(시간대별 14~15회차)",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 7000,
+   "basis": "organizer_claim",
+   "quote": "팝업스토어는 안전하고 쾌적한 관람 및 체험을 위해 예약제로 운영됐으며, 9일간 총 7000여명이 현장을 찾았다.",
+   "url": "http://www.inews24.com/view/1944575",
+   "date": "2026-03-03"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,135 @@
+{
+ "record_id": "RTPU2643",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:SME_에스엠엔터테인먼트",
+  "space_id": "unresolved:동묘_서울_종로_동대문_노상게릴라",
+  "client_party_id": "unresolved:에스엠엔터테인먼트_114-81-63109",
+  "brand_key": "SME",
+  "space_key": "multi_노상게릴라"
+ },
+ "intervention": {
+  "concept": "SME 소속 아티스트를 활용한 노상 이동형(게릴라) 오프라인 프로모션. 동묘를 포함한 서울 일대에서 진행된 게릴라 성격의 팝업/프로모션이다. 자매 캠페인 A(RTPU2644)와 함께 기획되었다.",
+  "brand_name": "SM Entertainment",
+  "experience_elements": [],
+  "promotions": [
+   "게릴라 증정용 플라워 추정"
+  ],
+  "staging_tags": [
+   "게릴라",
+   "노상 이동형",
+   "사인물",
+   "플라워 연출"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "종로/동대문 (동묘)",
+   "venue_name": "동묘",
+   "venue_type": "노상 게릴라 프로모션",
+   "foot_traffic_context": "게릴라(노상 이동형) 성격, 자매 캠페인 기준 활동범위 마포·영등포·성동·강남 일대 서울 전역"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2026-05-15",
+   "to": "2026-05-16",
+   "days": 2
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "매출계약(서비스매출_팝업스토어) 14,400,000원(계약 증액 반영, Notion 확정예산). 아마란스 project_amount 12,200,000원. VAT 포함여부 미확인. 벤더 디바인 선지급(05-07)+잔금(06-05), 06-10 벤더 일괄정산. 06-10 계약 '증액' 발생. 판관비 11,866,318원(물품대여 7,120,000/제작비 2,822,682/도급인건비 800,000/공간수수료 272,728/기타 850,908), 당기순손익 -2,533,682원 적자"
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 2,
+    "weekend_share": 0.5,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 13.7,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 74,
+    "holiday_until": 8,
+    "holiday_block_in": 0,
+    "nat_event_gap": 19,
+    "nat_event": null,
+    "doc_lag_days": 7,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 344154.0,
+    "pnl_pre_accounts": 3,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2026-04-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 14.4
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(방문객·현장성과 데이터 없음 — 노상 게릴라 특성상 팝가/웨이팅 미연동, 슬랙 운영보고 0건. 소비자 매출(POS) 실측 없음. 참고: 회계상 서비스매출 14,400,000원은 계약금액이며 POS 소비자매출 아님.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식액 14.4 ≈ 계약총액 14.4 (±10%)",
+   "contract_total_mm": 14.4,
+   "last_recognition_period": "2026-05"
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "14sxQSRbRB0gs-PAgcOEW0wRdoEjfrEnh",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/14sxQSRbRB0gs-PAgcOEW0wRdoEjfrEnh/view",
+   "title": "결과보고서_없음.txt"
+  },
+  {
+   "doc_id": "18uAn2F6Lg9xe-4fyRfjkyPujye36xSSb",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/18uAn2F6Lg9xe-4fyRfjkyPujye36xSSb/view",
+   "title": "[공유용_SME] 태용 솔로앨범 SNS 프로모션_제안서.pdf"
+  },
+  {
+   "doc_id": "1C4DrZZK3bWSPJLRI5OTjnp9P4-2OQs2V",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1C4DrZZK3bWSPJLRI5OTjnp9P4-2OQs2V/view",
+   "title": "계약서_NCT 태용 SNS 프로모션 관련 오프라인 대행 업무_260508.pdf"
+  },
+  {
+   "doc_id": "1UmfpBzwaz_oiyfQUtNaLkqijTf5ESAQ_",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1UmfpBzwaz_oiyfQUtNaLkqijTf5ESAQ_/view",
+   "title": "(Sweetspot) SME_NCT 태용 솔로 컴백 프로모션_견적서_260526.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 0건: . 미확실: SME측 실무 담당자(이름/이메일/연락처); 구체 아티스트/앨범명; 방문객·현장 성과 지표(전무); 동묘 정확 주소/좌표; 운영일 하루 오프셋(노션 05-14~15 vs 아마란스 05-15~16); 06-10 증액의 최종 계약금액 반영 여부; VAT 포함 여부 및 선금/중도금/잔금 분할 상세; 벤더별 정확 지급액 분해; 면적(평) 정보 없음; POS 소비자 매출 데이터 없음"
+ }
+}

@@ -1,0 +1,83 @@
+{
+ "market_record_id": "MKT-2026-0063",
+ "event_name": "쥬비스다이어트 '다이어트 랩(DIET LAB)' 체험형 팝업스토어(현대백화점 목동점)",
+ "brand": "쥬비스다이어트",
+ "ip_or_collab": null,
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "헬스케어 체험형 팝업. 인바디 측정·생활 패턴 분석 기반 1:1 데이터 상담(15분 집중 상담소), AI 포토 부스(감량 후 모습 시각화), 게임형 프로그램",
+  "experience_elements": [
+   "15분 집중 상담소(인바디 측정)",
+   "AI 포토 부스",
+   "게임형 프로그램"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "현대백화점 목동점",
+  "venue_type": "department_store",
+  "neighborhood": "목동",
+  "city": "서울",
+  "period_from": null,
+  "period_to": null,
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  }
+ },
+ "outcome": {
+  "visitors_total": 9000,
+  "visitors_period_days": 14,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "쥬비스 제공 보도(뷰티한국) '국내 헬스케어 기업 쥬비스다이어트가 현대백화점 목동점에서 운영한 체험형 팝업 ‘다이어트 랩’에는 약 2주간 9,000여 명이 방문했다'",
+  "visitors_source_quote": "국내 헬스케어 기업 쥬비스다이어트가 현대백화점 목동점에서 운영한 체험형 팝업 ‘다이어트 랩’에는 약 2주간 9,000여 명이 방문했다.",
+  "visitors_source_url": "http://www.beautyhankook.com/news/articleView.html?idxno=79293",
+  "visitors_source_date": "2026-03-23",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": true,
+   "signal_quotes": [
+    "예약제로 운영된 1:1 상담은 전 타임이 마감되며 높은 관심을 보였다.",
+    "현장에서 가장 높은 참여를 보인 프로그램은 ‘15분 집중 상담소’였다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "E"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "2026년 3월 초 진행 추정(보도일 2026-03-23, '약 2주간'). 정확한 날짜 미기재. 9000명은 '약/여' 표현 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "기간 미상",
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

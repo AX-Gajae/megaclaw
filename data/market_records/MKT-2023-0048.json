@@ -1,0 +1,83 @@
+{
+  "market_record_id": "MKT-2023-0048",
+  "event_name": "2023 짱구는 못말려 시네마퍼레이드 투어 팝업스토어 신촌 회차(현대백화점 신촌점)",
+  "brand": "대원미디어×스위트스팟",
+  "ip_or_collab": "짱구는 못말려",
+  "category": "character",
+  "intervention": {
+    "concept_description": "짱구 극장판 명장면 재현 '시네마퍼레이드' 테마 전국 릴레이 팝업의 서울 신촌 회차. '짱구의 편의점' 콘셉트, 한정판 디오라마, 포토카드 인쇄 체험",
+    "experience_elements": [
+      "포토존",
+      "굿즈존",
+      "짱구 편의점 코너",
+      "포토카드 인쇄 체험존"
+    ],
+    "promotions": [
+      "지역 한정 디오라마"
+    ],
+    "is_free_entry": true,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "현대백화점 신촌점",
+    "venue_type": "department_store",
+    "neighborhood": "신촌",
+    "city": "서울",
+    "period_from": "2023-10-27",
+    "period_to": "2023-11-05",
+    "area_pyeong": null,
+    "multi_store": true,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(session)",
+      "access_type": "session"
+    },
+    "derived": {
+      "duration": {
+        "days": 10,
+        "weekend_share": 0.4,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 1,
+        "months_since_last": 1.2,
+        "first_edition": false
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 10,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "스위트스팟 발표 '현재까지 판교, 대구, 부산에서 진행된 짱구 팝업스토어는 누적 방문객 15만명을 기록했다' — 판교·대구·부산 3개 회차 합산이며 신촌 회차 단독 총계 미공개(규칙 5)",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": true,
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "현재까지 판교, 대구, 부산에서 진행된 짱구 팝업스토어는 누적 방문객 15만명을 기록했다. 첫 시작이었던 판교 팝업스토어에서는 오픈 첫날 오전에만 500명이 넘는 대기자가 발생해 화제를 모았다.(패션비즈 2023-10-27)",
+        "27일 오전 10시 신촌 현대백화점에서 열린 팝업 스토어 앞은 대기자들로 북적였다. 팝업 오픈 30분 전임에도 대기인원이 400명을 넘어서기도 했다.(시사저널e 2023-10-27)",
+        "신촌 팝업스토어까지 마무리하면 총 누적 방문객이 20만명을 훌쩍 넘을 것으로 예상한다(스위트스팟 정인용 본부장)"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "제외 목록의 판교·대구·부산 회차와 별개인 신촌 회차 기록. 15만은 3개 회차 합산(신호). 신촌 첫날 대기 400명+(시사저널e) 숫자 3종 세트 확보 | 병합 레코드: ",
+  "outcome_source_url": "https://www.sisajournal-e.com/news/articleView.html?idxno=304612",
+  "outcome_source_date": "2023-10-27",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": false,
+  "exclude_reason": "집계형(통합/합산)",
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

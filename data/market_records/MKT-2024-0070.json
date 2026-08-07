@@ -1,0 +1,90 @@
+{
+  "market_record_id": "MKT-2024-0070",
+  "event_name": "롯데리아 '리아's 버거 아트 뮤지엄' 성수 팝업스토어",
+  "brand": "롯데리아(롯데GRS)",
+  "ip_or_collab": "롯데리아 창립 45주년 기념, 아트 콘셉트+AI 체험",
+  "category": "fnb",
+  "intervention": {
+    "concept_description": "햄버거 소재 아트 작품과 AI 체험을 결합한 브랜드 헤리티지 팝업(3층 구성)",
+    "experience_elements": [
+      "리아 아트존·브레인 아트존·45주년 존",
+      "뇌파 측정 AI 그림 생성(브레인 아트)",
+      "AI 미러 타임머신 포토존",
+      "업사이클링 키링 만들기",
+      "팝업 한정 메뉴(김치 불고기 버거·통살 가득 새우버거)"
+    ],
+    "promotions": [
+      "미션 스탬프 투어 완료 시 키링·엽서·미니 간식 증정"
+    ],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "서울 성수동(팝업 공간, 3층)",
+    "venue_type": "street_standalone",
+    "neighborhood": "성수동",
+    "city": "서울",
+    "period_from": "2024-10-03",
+    "period_to": "2024-10-20",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 18,
+        "weekend_share": 0.33,
+        "holiday_days": 2
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 18,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "롯데GRS가 17일 밝힌 10/16까지 14일간 누적 체험객 2만명 돌파(행사는 10/20까지)는 중간 집계 → visitors_total null. '체험객' 기준(입장 체험 인원)",
+    "visitors_source_quote": "롯데GRS가 운영하는 버거 프랜차이즈 브랜드 롯데리아가 지난 3일부터 성수동에서 운영 중인 팝업스토어 '리아's 버거 아트 뮤지엄'이 누적 체험객 2만명을 돌파했다고 17일 밝혔다.",
+    "visitors_source_url": "https://www.newsis.com/view/NISX20241017_0002923333",
+    "visitors_source_date": "2024-10-17",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": "뇌파 AI 체험 네이버 사전 예약 오픈 5시간 만에 마감(총 1500명 체험)",
+      "signal_quotes": [
+        "오픈 이후 지난 16일까지 14일간 25만명에 달하는 인원이 팝업스토어 사진 촬영 및 문의, 방문, 언급 등의 다양한 방식으로 팝업스토어를 직·간접 체험했다.(노출·언급 포함 직간접 체험 지표)",
+        "리아불고기와 리아새우를 먹고 나오는 뇌파를 측정해 AI가 그림을 그려주는 프로그램은 네이버 사전 예약 오픈 5시간 만에 모두 마감됐고 총 1500명이 체험했다.",
+        "타임 머신 포토존은 1만명 이상 체험해 가장 높은 인기를 보였다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": [
+      {
+        "value": 250000,
+        "basis": "exposure",
+        "quote": "오픈 이후 지난 16일까지 14일간 25만명에 달하는 인원이 팝업스토어 사진 촬영 및 문의, 방문, 언급 등의 다양한 방식으로 팝업스토어를 직·간접 체험했다.",
+        "url": "https://www.newsis.com/view/NISX20241017_0002923333",
+        "date": "2024-10-17"
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "notes": "방문 체험객 2만(entry/participation)과 직간접 체험 25만(exposure)을 구분 기록. 뉴시스·천지일보·폴리뉴스 동일(2024-10-17) | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,1280 @@
+{
+ "record_id": "RXPU2409",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:더불어민주당_블루페",
+  "space_id": "unresolved:올림픽공원",
+  "client_party_id": "unresolved:더불어민주당",
+  "brand_key": "더불어민주당",
+  "space_key": "올림픽공원"
+ },
+ "intervention": {
+  "concept": "정당 최초 당원대회(블루페스타) 연계 대규모 팝업 체험 공간. 민주역사관 전시·대통령 포토존·굿즈판매·민주청년페스타 등 존별 체험 프로그램으로 구성. 당원 대상 브랜드 경험 및 굿즈 판매 행사.",
+  "brand_name": "블루페(블루페스타)",
+  "experience_elements": [
+   "더불어ZONE 민주역사관(당 역사·대통령존·당원기증물품 전시)",
+   "성평등관/미디어룸(DJ 다큐, 김대중의 성평등)",
+   "헤드셋 대통령존 영상 체험",
+   "거울 로고 포토존/셀카",
+   "최고위원회의 포토존·세 분 대통령 포토존",
+   "키오스크 전대고사(4대)·만족도조사(1대)",
+   "굿즈존(POS 5대, 27종 굿즈 판매)",
+   "민주청년페스타(청년정책제안 QR·LED 실시간 상영)",
+   "설문조사 키오스크(정책공약 영수증 출력)",
+   "포토카드(명예청년증/대통령 청년시절)",
+   "메시지월",
+   "블루네컷(인생네컷)",
+   "100일 우체통",
+   "푸드트럭존",
+   "MD창고",
+   "뱃지 뽑기",
+   "생수&클래퍼(종이부채) 지급"
+  ],
+  "promotions": [
+   "만족도조사 참여 시 리워드(팔찌) 증정",
+   "전대고사 완료 시 점수표 발부",
+   "프로그램 참가자 생수·클래퍼 1인 1개 지급",
+   "포토카드 유료 판매(카드결제)"
+  ],
+  "staging_tags": [
+   "존별_구성",
+   "전시관",
+   "포토존",
+   "굿즈판매",
+   "키오스크",
+   "청년부스",
+   "메시지월"
+  ],
+  "attributes": {
+   "host_daily_traffic": 15000,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": null,
+   "area_sqm": null,
+   "planned_operating_days": 1,
+   "throughput_units": 2,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": null,
+   "experience_density": 4,
+   "goods_scale": 4,
+   "photo_zones": 4,
+   "collab_strength": 1,
+   "ip_awareness": 4,
+   "target_breadth": 1,
+   "entry_friction": 3,
+   "media_push": 2,
+   "season_fit": 4,
+   "venue_prominence": 3
+  },
+  "attr_meta": {
+   "evidence": "보험청약서(240805) 목적물 산출기초 '참가인원/15,000/명' — 1일 행사(보험기간 8/17~8/18) 총 참가 계획인원. 견적서 파일명 '[짤칵]…(2대,1일)' → 포토부스 2대·1일. 렌탈부스 견적서 '일정: 2024년 08월 18일', 장소 올림픽경기장 한얼광장. 부스 W10000*D5000 / W5000*D2400(면적 표기 없어 null). 기획서·버니컴 견적서는 Drive 접근 불가.",
+   "confidence": "medium",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": null,
+   "venue_name": "올림픽공원",
+   "venue_type": "공원/대규모 행사장",
+   "foot_traffic_context": "당원대회(블루페스타) 연계, 사전행사 12-13시 진행"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-08-18",
+   "to": "2024-08-18",
+   "days": 1
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": "계약금액·수수료 정보 없음. 매출 로우데이터에 카드/현금 매출, KICC/KOBAN/BIZ FASHION/인생네컷 부스, POS 기기, 수수료 제외/수수료금액 컬럼 헤더만 존재하고 수치 미제공."
+  },
+  "brand_requirements": [
+   "큐레이터 실무자 사전 교육(8/13 17시 당사 4층)",
+   "8/17 저녁 전시장 세팅 후 리허설",
+   "동선·혼잡도 관리",
+   "도난·훼손 방지",
+   "교육자료 암기 및 시나리오 카드 활용"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "올림픽공원 당원대회(블루페스타) 연계 대규모 행사"
+  },
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 1.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 104,
+    "holiday_until": 27,
+    "holiday_block_in": 0,
+    "nat_event_gap": 88,
+    "nat_event": null,
+    "doc_lag_days": 0,
+    "doc_dates_found": 11
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 724775.0,
+    "pnl_pre_accounts": 5,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2024-07-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 30000,
+   "popup_zone_pass_rate": 0.2,
+   "host_traffic_est": 6000.0,
+   "venue_scale_tier": 2,
+   "confidence": "medium",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2024-08-18",
+    "visitors": 23,
+    "sales_krw": null
+   }
+  ],
+  "totals": {
+   "visitors": 23,
+   "sales_krw": null,
+   "rev_mm_recognized": 535.6
+  },
+  "counting_method": "participation",
+  "counting_basis": "메시지월 결과보고서: '총 제출된 메시지 수 30, 중복 제출여부를 제거한 순 참여자 수 23명'. 이는 메시지월 프로그램 참여자 수이며 전체 행사 방문자 수가 아님.",
+  "plan_visitors_expected": 20000,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(제안서상 당원 참여 20,000명 추정(온라인 신청 및 지역위 15,000명 확보). 결과보고서는 메시지월 참여(순 참여자 23명, 메시지 30건)만 계측. 매출 로우데이터는 컬럼 헤더만 있고 실측 수치 미기재.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-08, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2024-08"
+  },
+  "label_trust": {
+   "grade": "A",
+   "flags": [],
+   "why": "일별 표가 기간의 100% 커버"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-4jdcqfSLn8KwO_RaGKEdvQLeUvP2Yy3",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1-4jdcqfSLn8KwO_RaGKEdvQLeUvP2Yy3/view",
+   "title": "sweetspot_민주당 전당 대회 팝업_0715.pptx"
+  },
+  {
+   "doc_id": "1-6_veqCJoPe9nXB9T3qRmO2NRmkMIHwc",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1-6_veqCJoPe9nXB9T3qRmO2NRmkMIHwc/view",
+   "title": "시공설계용역계약_버니컴&스위트스팟 스캔본.pdf"
+  },
+  {
+   "doc_id": "1-79wPH3C3LQF5yvePTxu-8CFPBwDybLy",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1-79wPH3C3LQF5yvePTxu-8CFPBwDybLy/view",
+   "title": "시공설계용역계약_버니컴&스위트스팟 스캔본.pdf"
+  },
+  {
+   "doc_id": "1-D3uPjWRXeyS_AemqIUZyk5hRjuFgySn",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1-D3uPjWRXeyS_AemqIUZyk5hRjuFgySn/view",
+   "title": "sweetspot_민주당 전당 대회 팝업 컨셉 기획안_0715.pdf"
+  },
+  {
+   "doc_id": "1-LIEBHwYSAfTFkikRItQc0IVW6x-0FTh",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1-LIEBHwYSAfTFkikRItQc0IVW6x-0FTh/view",
+   "title": "241002_더불어민주당굿즈정산요청공문_스위트스팟 공문.pdf"
+  },
+  {
+   "doc_id": "10Xv4RFPwrrW_1G8orw77n6AHtcXLHVoP",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/10Xv4RFPwrrW_1G8orw77n6AHtcXLHVoP/view",
+   "title": "더불어민주당_사업자등록증_박찬대.pdf"
+  },
+  {
+   "doc_id": "10oIU9CIOOgKqL9cHX6vRxrh_rEsuVEg9",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/10oIU9CIOOgKqL9cHX6vRxrh_rEsuVEg9/view",
+   "title": "더불어민주당 계약서 _ 1차 (0719).docx"
+  },
+  {
+   "doc_id": "11AjOcdxbla9S3NPN2g_vSZCISnNnBKHE",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/11AjOcdxbla9S3NPN2g_vSZCISnNnBKHE/view",
+   "title": "블루페 - 홍보국.pdf"
+  },
+  {
+   "doc_id": "11FD3_YuTYUg4iJ14ZAhEy5ss5NUONUUw",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/11FD3_YuTYUg4iJ14ZAhEy5ss5NUONUUw/view",
+   "title": "스윗스팟_더불어민주당 계약서 _ 2차 (0722).docx"
+  },
+  {
+   "doc_id": "11N6rVjQKg2I-IJgBmsqbwNUeOpOWvKkj",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/11N6rVjQKg2I-IJgBmsqbwNUeOpOWvKkj/view",
+   "title": "스윗스팟_더불어민주당 계약서 _ 3차 (0723).docx"
+  },
+  {
+   "doc_id": "11_cIKzlTTrJwUQwyVGOq62ESixykve-Q",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/11_cIKzlTTrJwUQwyVGOq62ESixykve-Q/view",
+   "title": "블루페 - 청년페스타 최종계약서.pdf"
+  },
+  {
+   "doc_id": "11hJ2mXfgOAAuKkhtfsFPZIwXS90-IHTk",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/11hJ2mXfgOAAuKkhtfsFPZIwXS90-IHTk/view",
+   "title": "블루페 - 성평등관.pdf"
+  },
+  {
+   "doc_id": "11ksYnNjyodcy66cmSEe2-q65jikkTk6O",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/11ksYnNjyodcy66cmSEe2-q65jikkTk6O/view",
+   "title": "추가금액합의서 최종.pdf"
+  },
+  {
+   "doc_id": "13zBjs50fB7b9dZED-Dv4GWqPZX4J2Uu0",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/13zBjs50fB7b9dZED-Dv4GWqPZX4J2Uu0/view",
+   "title": "스윗스팟_더불어민주당 계약서 _ 3차 (0723).pdf"
+  },
+  {
+   "doc_id": "14-mmEGswZC_ZsUws4vtZ951VvmrhCe65",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14-mmEGswZC_ZsUws4vtZ951VvmrhCe65/view",
+   "title": "통장사본 (농협, 301-0003-0056-91).pdf"
+  },
+  {
+   "doc_id": "149BBgx24BLtDL1557tVMVlQFIbOCtI5j",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/149BBgx24BLtDL1557tVMVlQFIbOCtI5j/view",
+   "title": "운영_렌탈 상품 발생 비용.xlsx"
+  },
+  {
+   "doc_id": "14FbyJeHaYzs5Y0_jpe8Qzc5nTcJBDHwf",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14FbyJeHaYzs5Y0_jpe8Qzc5nTcJBDHwf/view",
+   "title": "KakaoTalk_20240801_112628737_01.png"
+  },
+  {
+   "doc_id": "14G26NYLThdY1u7XMnCKRRQKaoBDZh8ey",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/14G26NYLThdY1u7XMnCKRRQKaoBDZh8ey/view",
+   "title": "240730_최난영님_5m_공기조형물_견적서.pdf"
+  },
+  {
+   "doc_id": "14HBcU-yaV6oz57Pw8rJiwcsLA7l4tejn",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14HBcU-yaV6oz57Pw8rJiwcsLA7l4tejn/view",
+   "title": "스윗스팟_더불어민주당 계약서 _ 4차.docx"
+  },
+  {
+   "doc_id": "14Tx1Who_Fa4gC-MkndA3R3-yfvQX8lyl",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14Tx1Who_Fa4gC-MkndA3R3-yfvQX8lyl/view",
+   "title": "sweetspot_민주당 전당 대회 팝업 컨셉 기획안_0715.pdf"
+  },
+  {
+   "doc_id": "14eBR948Zyijr9NwfKYphE-8RT7KQkKAa",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14eBR948Zyijr9NwfKYphE-8RT7KQkKAa/view",
+   "title": "블루페 - 성평등관.pdf"
+  },
+  {
+   "doc_id": "14mwW-ZvMI5Yi1gbIkTrhivLbnRDcpggM",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14mwW-ZvMI5Yi1gbIkTrhivLbnRDcpggM/view",
+   "title": "블루페 - 청년페스타 최종계약서.pdf"
+  },
+  {
+   "doc_id": "14pxJ-kL9Ke23mUJUX8cTM-082Vkgjreg",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14pxJ-kL9Ke23mUJUX8cTM-082Vkgjreg/view",
+   "title": "추가금액합의서 최종.pdf"
+  },
+  {
+   "doc_id": "14r3Idv0wLMjXXHJ7oOZbwMPD_PMJ8r9w",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14r3Idv0wLMjXXHJ7oOZbwMPD_PMJ8r9w/view",
+   "title": "블루페 - 홍보국.pdf"
+  },
+  {
+   "doc_id": "14zBOYJ071vLmj-mDIUr4y0TGEXUIiz9o",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14zBOYJ071vLmj-mDIUr4y0TGEXUIiz9o/view",
+   "title": "스윗스팟_더불어민주당 계약서 _ 최종 1.5억원_m.docx"
+  },
+  {
+   "doc_id": "14z_8w4nqD4VHx7C45jXyYCUN8jvpEALP",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14z_8w4nqD4VHx7C45jXyYCUN8jvpEALP/view",
+   "title": "스윗스팟_더불어민주당 계약서 _ 최종 2. 5억원_m.docx"
+  },
+  {
+   "doc_id": "150v7kaUtNzUnvjKaoApMk5sJfVMsZPqW",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/150v7kaUtNzUnvjKaoApMk5sJfVMsZPqW/view",
+   "title": "스윗스팟_더불어민주당 계약서 _ 최종 1억원_m.docx"
+  },
+  {
+   "doc_id": "156oV0cZJO_EGBbUDmX2EJhSwwc1W1r1s",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/156oV0cZJO_EGBbUDmX2EJhSwwc1W1r1s/view",
+   "title": "(최종)실견적서 be the blue.xlsx"
+  },
+  {
+   "doc_id": "15B79RFWrIkE-eoisriI-G2MVF4t8s3lz",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/15B79RFWrIkE-eoisriI-G2MVF4t8s3lz/view",
+   "title": "더불어민주당_블루페_렌더링 0805 (2).pdf"
+  },
+  {
+   "doc_id": "15I8MiWx_M1BE1zJfwn8SmNpBPDReoAN3",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/15I8MiWx_M1BE1zJfwn8SmNpBPDReoAN3/view",
+   "title": "버니컴 견적서 - 더불어민주당 전시&팝업 연출제작 240806.xlsx"
+  },
+  {
+   "doc_id": "15Kc-y1Hk0jSNLfs8Q7qJNrsQ23K3ctmY",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/15Kc-y1Hk0jSNLfs8Q7qJNrsQ23K3ctmY/view",
+   "title": "블루페 홍보국 계약서.pdf"
+  },
+  {
+   "doc_id": "15LJnSsqa0KRonKMf9vAnn9fpBGKHfQ4J",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/15LJnSsqa0KRonKMf9vAnn9fpBGKHfQ4J/view",
+   "title": "블루페 청년정책부 계약서.pdf"
+  },
+  {
+   "doc_id": "15LUPEHIaI7xXWYOV0ETspVdDJLVZtg6E",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/15LUPEHIaI7xXWYOV0ETspVdDJLVZtg6E/view",
+   "title": "블루페 성평등 정책부 계약서.pdf"
+  },
+  {
+   "doc_id": "15N8mv5FZ624EqZHLCTGnSljr0IEgxCEN",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/15N8mv5FZ624EqZHLCTGnSljr0IEgxCEN/view",
+   "title": "수정 견적서 (청년페스타).pdf"
+  },
+  {
+   "doc_id": "15NxShD7g6EWukBZkB00zrC6GbCaK-TFO",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/15NxShD7g6EWukBZkB00zrC6GbCaK-TFO/view",
+   "title": "비더블루_ 버니&시공용역계약서_240808.docx"
+  },
+  {
+   "doc_id": "15Rfiz69SFMZA8hIvN6ilLub_SyBt7vjw",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/15Rfiz69SFMZA8hIvN6ilLub_SyBt7vjw/view",
+   "title": "(최종)버니컴 견적서 - 더불어민주당 전시&팝업 연출제작 240809.xlsx"
+  },
+  {
+   "doc_id": "15ZRYeTXrTr4QrEUX5OHIyQ8ooohrpvOc",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/15ZRYeTXrTr4QrEUX5OHIyQ8ooohrpvOc/view",
+   "title": "0813 비더블루_ 버니&시공용역계약서.docx"
+  },
+  {
+   "doc_id": "15e2XPd7UBru_jcsbJSzpeTWxqVqOuY4-",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/15e2XPd7UBru_jcsbJSzpeTWxqVqOuY4-/view",
+   "title": "블루페 - 청년페스타 최종계약서.pdf"
+  },
+  {
+   "doc_id": "15hutmvV3JT_Sk3fnFHpHnKxoTFwzBoi0",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/15hutmvV3JT_Sk3fnFHpHnKxoTFwzBoi0/view",
+   "title": "블루페 - 성평등관.pdf"
+  },
+  {
+   "doc_id": "15okpwNGNjiMEIqaXI5ycTFuORlKZitJb",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/15okpwNGNjiMEIqaXI5ycTFuORlKZitJb/view",
+   "title": "블루페 - 홍보국.pdf"
+  },
+  {
+   "doc_id": "15tBf-99lYSidcGqBAZIXftBDhd9CzIvj",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/15tBf-99lYSidcGqBAZIXftBDhd9CzIvj/view",
+   "title": "08 18 블루페 청년부스 메세지 내용보고서.pdf"
+  },
+  {
+   "doc_id": "15w_lX-87TSuqHodyOuIfS3oXOv0f8hhL",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/15w_lX-87TSuqHodyOuIfS3oXOv0f8hhL/view",
+   "title": "블루페 8.18 재고파일 (draft).xlsx"
+  },
+  {
+   "doc_id": "16l-XBWUKlBY4GqjDGoihHTeClxemJA6b",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/16l-XBWUKlBY4GqjDGoihHTeClxemJA6b/view",
+   "title": "블루페 매출 로우데이터.xlsx"
+  },
+  {
+   "doc_id": "16ltmXUvWkNFaE5qDccpBvKvWNxWlKRrn",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/16ltmXUvWkNFaE5qDccpBvKvWNxWlKRrn/view",
+   "title": "블루페 8.22 재고파일 (최종검수).xlsx"
+  },
+  {
+   "doc_id": "16w6y_YTb3Hy9r44rjeoFXiziIGqyw9Ht",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/16w6y_YTb3Hy9r44rjeoFXiziIGqyw9Ht/view",
+   "title": "AR포토기기_민주청년 페스타 카드판매내역_24.08.18.pdf"
+  },
+  {
+   "doc_id": "170UfUfOMvafQ6wYToFknAojTvUgJYvnJ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/170UfUfOMvafQ6wYToFknAojTvUgJYvnJ/view",
+   "title": "피키픽포토부스 견적서_스위트스팟_모던1,아웃도어4 (1).pdf"
+  },
+  {
+   "doc_id": "1744Lw4NCeyCjMBY6KFwOfrSoA_iPCrjJ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1744Lw4NCeyCjMBY6KFwOfrSoA_iPCrjJ/view",
+   "title": "AVK_REN_G_2024_0807_2 스위트 스팟 올림피공원.pdf"
+  },
+  {
+   "doc_id": "179kQCtwi94HzF6I-7wx1tNfEk3Dq5oMk",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/179kQCtwi94HzF6I-7wx1tNfEk3Dq5oMk/view",
+   "title": "KICC_포스_견적서_스위트스팟.pdf"
+  },
+  {
+   "doc_id": "179w2Fft_RRZZCEu2Gc68eAaP2vnNZNoN",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/179w2Fft_RRZZCEu2Gc68eAaP2vnNZNoN/view",
+   "title": "블루페_만족도조사_로우데이터.csv"
+  },
+  {
+   "doc_id": "17E5WwJoNP2jZcC3a3mp42A95TB_bL7rT",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17E5WwJoNP2jZcC3a3mp42A95TB_bL7rT/view",
+   "title": "스위트스팟_주차비정산내역.xlsx"
+  },
+  {
+   "doc_id": "17EzXKAf8pzhPLecDqPYR5oG9M7q8vcIi",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17EzXKAf8pzhPLecDqPYR5oG9M7q8vcIi/view",
+   "title": "Picky Pic_정산_스위트스팟.pdf"
+  },
+  {
+   "doc_id": "17OEp8ZaBpZlXQNAXc1ugvRUU5wRyFiSJ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17OEp8ZaBpZlXQNAXc1ugvRUU5wRyFiSJ/view",
+   "title": "[빌리마켓] 미스팅에어쿨러_견적서.png"
+  },
+  {
+   "doc_id": "17OnpeS_pMjeUvJ7krqmgCl_bAJp7Ikug",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17OnpeS_pMjeUvJ7krqmgCl_bAJp7Ikug/view",
+   "title": "데어워크_메세지월 프로그램 개발.pdf"
+  },
+  {
+   "doc_id": "17Q0gbqLAZ4Kp1efVFf8to8m0QQ9AatDT",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17Q0gbqLAZ4Kp1efVFf8to8m0QQ9AatDT/view",
+   "title": "[짤칵] 240818_견적서_(AR+챌린지카드)_스위트스팟_올림픽로_(2대,1일)_240808_랩핑추가.pdf"
+  },
+  {
+   "doc_id": "17aCH_s8Zfelh73ie4ovD6fuooP8rW5Vs",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/17aCH_s8Zfelh73ie4ovD6fuooP8rW5Vs/view",
+   "title": "피키픽포토부스_블루페 렌탈 계약서.pdf"
+  },
+  {
+   "doc_id": "17jvIXm1MYZrSIh20RR9bBo5gtnl7N2Ke",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/17jvIXm1MYZrSIh20RR9bBo5gtnl7N2Ke/view",
+   "title": "추가금액합의서 최종.pdf"
+  },
+  {
+   "doc_id": "17lTFfGckohzDHXat--PBWcEicyAo6s5G",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17lTFfGckohzDHXat--PBWcEicyAo6s5G/view",
+   "title": "브이아이소프트_선금_전자세금계산서.pdf"
+  },
+  {
+   "doc_id": "17q5GN9tGrknE6HrQmG1z6e1NdVAN3Tk7",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17q5GN9tGrknE6HrQmG1z6e1NdVAN3Tk7/view",
+   "title": "빌리마켓_전자세금계산서(선금,잔금 통합 본).pdf"
+  },
+  {
+   "doc_id": "17qJSYSpxKh7A5d7ajeNIWXLCixsjful9",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17qJSYSpxKh7A5d7ajeNIWXLCixsjful9/view",
+   "title": "피키픽포토부스_선금_전자세금계산서.pdf"
+  },
+  {
+   "doc_id": "17vXPq1Leoz7zhfbI84CfamJOqcIhBYyC",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17vXPq1Leoz7zhfbI84CfamJOqcIhBYyC/view",
+   "title": "티아이디_선금_전자세금계산서.pdf"
+  },
+  {
+   "doc_id": "17xK5oia1pkBAPWcXaRnYDamnv_CxmU8U",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17xK5oia1pkBAPWcXaRnYDamnv_CxmU8U/view",
+   "title": "(내부)실견적서 be the blue.xlsx"
+  },
+  {
+   "doc_id": "182ja-vDrkyUpwq-7hbKwc6RqTLYuurGs",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/182ja-vDrkyUpwq-7hbKwc6RqTLYuurGs/view",
+   "title": "티아이디_잔금_전자세금계산서.pdf"
+  },
+  {
+   "doc_id": "18DBCICGlWHBKJV7lHmL-En6YiX6rRp-i",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/18DBCICGlWHBKJV7lHmL-En6YiX6rRp-i/view",
+   "title": "[스톰프] 2024.08.12- 주식회사스위트스팟 음향장비렌탈 견적서.pdf"
+  },
+  {
+   "doc_id": "18KeJNnYvlANHgGd-zkgcmF9Le7jmdSn0",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/18KeJNnYvlANHgGd-zkgcmF9Le7jmdSn0/view",
+   "title": "(주)엘피오 파트너스 비더블루 견적서.pdf"
+  },
+  {
+   "doc_id": "18Lyp4TkiJCLSkblvZegEp55u23JDO4tM",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/18Lyp4TkiJCLSkblvZegEp55u23JDO4tM/view",
+   "title": "[그린렌탈] 16,17일 렌탈상품 견적서.pdf"
+  },
+  {
+   "doc_id": "18OB-Ra4cYs41lnKCHX_Y8GB18M4pB2yV",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/18OB-Ra4cYs41lnKCHX_Y8GB18M4pB2yV/view",
+   "title": "그린렌탈_선금_전자세금계산서.png"
+  },
+  {
+   "doc_id": "18OOb80JGbjl2rkYXcAZGZNUfeypeEQiQ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/18OOb80JGbjl2rkYXcAZGZNUfeypeEQiQ/view",
+   "title": "더파랑(장바구니)_전자세금계산서.pdf"
+  },
+  {
+   "doc_id": "18OhPgLZuGGMlkg6_Vl34X23FXqcTmmc0",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/18OhPgLZuGGMlkg6_Vl34X23FXqcTmmc0/view",
+   "title": "브이아이소프트_블루페 렌탈 계약서.pdf"
+  },
+  {
+   "doc_id": "18OwlLeVLy6mhOJgFEF7xCIOx-ZrUFY4E",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/18OwlLeVLy6mhOJgFEF7xCIOx-ZrUFY4E/view",
+   "title": "데어워크_블루페 프로그램 개발 계약서.pdf"
+  },
+  {
+   "doc_id": "18PBuREBEJI1CXVgyYEFSp0SDOiT74N5y",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/18PBuREBEJI1CXVgyYEFSp0SDOiT74N5y/view",
+   "title": "티아이디_블루페 프로그램 개발 및 렌탈 계약서.pdf"
+  },
+  {
+   "doc_id": "18uLNAOWgeOoEfJ9SEU--Rh7RJqmf-MT_",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/18uLNAOWgeOoEfJ9SEU--Rh7RJqmf-MT_/view",
+   "title": "그림10.jpg"
+  },
+  {
+   "doc_id": "18vJm7DsTl4Nl0MzJ9Fd3XvOvZEMaK-fU",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/18vJm7DsTl4Nl0MzJ9Fd3XvOvZEMaK-fU/view",
+   "title": "그림1.jpg"
+  },
+  {
+   "doc_id": "18y-a_daKMJLubgW5vsSdesfPacRScCpP",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/18y-a_daKMJLubgW5vsSdesfPacRScCpP/view",
+   "title": "피키픽포토부스_잔금_전자세금계산서.pdf"
+  },
+  {
+   "doc_id": "19-mxsVnIXbziLA2-tBq0uUmAhZ0HzjjA",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19-mxsVnIXbziLA2-tBq0uUmAhZ0HzjjA/view",
+   "title": "브이아이소프트_잔금_전자세금계산서.pdf"
+  },
+  {
+   "doc_id": "19-y-IBMOiCeuh-12NBVWRVFNdtPov8Vk",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19-y-IBMOiCeuh-12NBVWRVFNdtPov8Vk/view",
+   "title": "(버니컴) 더불어민주당 주차비 정산 협조공문 0903.pdf"
+  },
+  {
+   "doc_id": "190koIqOJVAXuFh7Bm4NwrQ4tKy7co6cI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/190koIqOJVAXuFh7Bm4NwrQ4tKy7co6cI/view",
+   "title": "KICC(신용에스엠_전자세금계산서.pdf"
+  },
+  {
+   "doc_id": "1919NR6femL4AsA78fPVlzfxoQ8T8jesN",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1919NR6femL4AsA78fPVlzfxoQ8T8jesN/view",
+   "title": "한국에이브이_전자세금계산서.pdf"
+  },
+  {
+   "doc_id": "191h80RcxXe_kj6UW6ScEYdk5npcTVUud",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/191h80RcxXe_kj6UW6ScEYdk5npcTVUud/view",
+   "title": "(스캔본)비더블루_보험계약서_240805.pdf"
+  },
+  {
+   "doc_id": "194ypnX98xNDGDU9B4CmomckjoJPe-Ap4",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/194ypnX98xNDGDU9B4CmomckjoJPe-Ap4/view",
+   "title": "올림픽공원주차비(8월18일).jpg"
+  },
+  {
+   "doc_id": "198SEqD_avLYVXo4rBZ7dLNBnpoAVd6Xe",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/198SEqD_avLYVXo4rBZ7dLNBnpoAVd6Xe/view",
+   "title": "올림픽공원주차비(8월18일 추가2).jpg"
+  },
+  {
+   "doc_id": "198iIj0YzmN8YhwfeipHqotE_6qY8sgbq",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/198iIj0YzmN8YhwfeipHqotE_6qY8sgbq/view",
+   "title": "그린렌탈_잔금_전자세금계산서.pdf"
+  },
+  {
+   "doc_id": "19AE-VB-fEJyrfezE2DKvZVYE0SMw6xdc",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19AE-VB-fEJyrfezE2DKvZVYE0SMw6xdc/view",
+   "title": "개인용달(이재균)_전자세금계산서.pdf"
+  },
+  {
+   "doc_id": "19CaniSAcldqzgmPFXGND1VNiZQQ51bMT",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19CaniSAcldqzgmPFXGND1VNiZQQ51bMT/view",
+   "title": "리드디벨롭먼트_전자세금계산서.pdf"
+  },
+  {
+   "doc_id": "19GWA6go9NGSL8QVWO9HwVm4VBiRy3j2J",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19GWA6go9NGSL8QVWO9HwVm4VBiRy3j2J/view",
+   "title": "스톰프_전자세금계산서.pdf"
+  },
+  {
+   "doc_id": "19Gf4uGOnlWHQP8b_DhZSdNw2SMgcnEGa",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/19Gf4uGOnlWHQP8b_DhZSdNw2SMgcnEGa/view",
+   "title": "티아디이_블루페 프로그램 개발 및 렌탈 계약서.pdf"
+  },
+  {
+   "doc_id": "19KfdKgiJ40yVjyD9584W9zKuCj-ASszl",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/19KfdKgiJ40yVjyD9584W9zKuCj-ASszl/view",
+   "title": "브이아이소프트_블루페 렌탈 계약서.pdf"
+  },
+  {
+   "doc_id": "19MNWSa9pZzhgCOHsAwK7jjqi1P3JoV5z",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/19MNWSa9pZzhgCOHsAwK7jjqi1P3JoV5z/view",
+   "title": "데어워크_블루페 프로그램 개발 계약서.pdf"
+  },
+  {
+   "doc_id": "19NP3ePbYajw37LuYHkcBpfM0b9ZZHQG5",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19NP3ePbYajw37LuYHkcBpfM0b9ZZHQG5/view",
+   "title": "올림픽공원주차비(8월16일).jpg"
+  },
+  {
+   "doc_id": "19O8O3FDk4PeK1gPVgXqJhbgMhU5sKffG",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19O8O3FDk4PeK1gPVgXqJhbgMhU5sKffG/view",
+   "title": "올림픽공원 주차비 (8월17일).jpg"
+  },
+  {
+   "doc_id": "19PLbXWbr_ZIkADyg_VpXBbZN5gxigxiS",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/19PLbXWbr_ZIkADyg_VpXBbZN5gxigxiS/view",
+   "title": "피키픽포토부스_블루페 렌탈 계약서.pdf"
+  },
+  {
+   "doc_id": "19Qr8OLjRZ5FhbrCSfX2CIVWt8s9B0qFD",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19Qr8OLjRZ5FhbrCSfX2CIVWt8s9B0qFD/view",
+   "title": "올림공원주자비(8월18일 추가 1).jpg"
+  },
+  {
+   "doc_id": "19SJtXf683kRF2pIW9gA8aAXU1LA0Ww_n",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19SJtXf683kRF2pIW9gA8aAXU1LA0Ww_n/view",
+   "title": "그린렌탈_통장사본.jpg"
+  },
+  {
+   "doc_id": "19WAOewa5QVuGb8jGm80OmYOo7xcZsQu0",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19WAOewa5QVuGb8jGm80OmYOo7xcZsQu0/view",
+   "title": "엘피오파트너스_전자세금계산서.pdf"
+  },
+  {
+   "doc_id": "19_8phrUi1PvhsyBgfoJ-IZNAdCb49URP",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19_8phrUi1PvhsyBgfoJ-IZNAdCb49URP/view",
+   "title": "그린렌탈_블루페행사 주차비정산 요청 공문_2024.pdf"
+  },
+  {
+   "doc_id": "19dyt3NWSGpXvcYkxtIzuzDa182Uo6Xh4",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19dyt3NWSGpXvcYkxtIzuzDa182Uo6Xh4/view",
+   "title": "엘피오파트너스 공문.pdf"
+  },
+  {
+   "doc_id": "19gLIa8F1FpI4XmTdu4d8XnGAeil0fzAO",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19gLIa8F1FpI4XmTdu4d8XnGAeil0fzAO/view",
+   "title": "(주)엘피오파트너스 통장사본.png"
+  },
+  {
+   "doc_id": "19xGJCG57jIuN1oMhXuhIVmywdC8ZFSuP",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19xGJCG57jIuN1oMhXuhIVmywdC8ZFSuP/view",
+   "title": "(주)엘피오파트너스 48주 2567 8.18.jpg"
+  },
+  {
+   "doc_id": "1A4Z45rWG0DiZkSpYDphEt59s2oCiE7wC",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1A4Z45rWG0DiZkSpYDphEt59s2oCiE7wC/view",
+   "title": "(주)엘피오파트너스 48주 2567 8.17.jpg"
+  },
+  {
+   "doc_id": "1AWJPqEutxDUNInLvZZDoDdYSpHka18sU",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1AWJPqEutxDUNInLvZZDoDdYSpHka18sU/view",
+   "title": "(주)엘피오파트너스 48주 2567 8.16.jpg"
+  },
+  {
+   "doc_id": "1AzHtjOgq2GhmGIBNo534SamucaWtx2iv",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1AzHtjOgq2GhmGIBNo534SamucaWtx2iv/view",
+   "title": "통장사본.jpg"
+  },
+  {
+   "doc_id": "1B-VSk9InteXCU62Ed-8m93mQR6IuCUgQ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1B-VSk9InteXCU62Ed-8m93mQR6IuCUgQ/view",
+   "title": "그림9.jpg"
+  },
+  {
+   "doc_id": "1B0QulFimQoRtpy5yfZIXekU4aUgEOle1",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1B0QulFimQoRtpy5yfZIXekU4aUgEOle1/view",
+   "title": "그림8.jpg"
+  },
+  {
+   "doc_id": "1BBVTn2vsEU6st-ImrRtX9tjuPv1l8GVk",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1BBVTn2vsEU6st-ImrRtX9tjuPv1l8GVk/view",
+   "title": "그림7.jpg"
+  },
+  {
+   "doc_id": "1BDoiSTpCMIYef08DL9-jAObuX3A2yAEo",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1BDoiSTpCMIYef08DL9-jAObuX3A2yAEo/view",
+   "title": "그림6.jpg"
+  },
+  {
+   "doc_id": "1BJBALYaFVESdavT8ytYdLipYFsOIRMWp",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1BJBALYaFVESdavT8ytYdLipYFsOIRMWp/view",
+   "title": "그림5.png"
+  },
+  {
+   "doc_id": "1BOk02wEv-1VqgiHgTMv7FB8bNhlfkhj6",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1BOk02wEv-1VqgiHgTMv7FB8bNhlfkhj6/view",
+   "title": "그림4.jpg"
+  },
+  {
+   "doc_id": "1BQ_pi1pxr1wVLJewr_MrKC45_g64t-Cs",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1BQ_pi1pxr1wVLJewr_MrKC45_g64t-Cs/view",
+   "title": "그림3.jpg"
+  },
+  {
+   "doc_id": "1BR3Bl9H4rsqTs9ArWxiUkheLu9x0r2gH",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1BR3Bl9H4rsqTs9ArWxiUkheLu9x0r2gH/view",
+   "title": "그림2.jpg"
+  },
+  {
+   "doc_id": "1BZiZOZlH8s-bwbtde6GtTQEm_gngn8jb",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1BZiZOZlH8s-bwbtde6GtTQEm_gngn8jb/view",
+   "title": "그림16.png"
+  },
+  {
+   "doc_id": "1Bc5blAkMRGz5GJN1TiYgGoNOFmvzqEiN",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Bc5blAkMRGz5GJN1TiYgGoNOFmvzqEiN/view",
+   "title": "그림15.png"
+  },
+  {
+   "doc_id": "1BerSYhIZBCUD9cHxWn-B6ACe1gzh55Fn",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1BerSYhIZBCUD9cHxWn-B6ACe1gzh55Fn/view",
+   "title": "그림14.png"
+  },
+  {
+   "doc_id": "1BhtcF2NMriHT9eK7jFWiz9YyIBQP1ecn",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1BhtcF2NMriHT9eK7jFWiz9YyIBQP1ecn/view",
+   "title": "그림13.png"
+  },
+  {
+   "doc_id": "1Bnv_G-wdHStjCFdqfEHFZ_4SaMXbDIB7",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Bnv_G-wdHStjCFdqfEHFZ_4SaMXbDIB7/view",
+   "title": "그림12.jpg"
+  },
+  {
+   "doc_id": "1Bnyy_1gb1GHKomeAL9Qa3uziWKQbqqIs",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Bnyy_1gb1GHKomeAL9Qa3uziWKQbqqIs/view",
+   "title": "그림11.jpg"
+  },
+  {
+   "doc_id": "1C2qIbTxZYbDShE6UUCNhu7XMqD215dL_",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1C2qIbTxZYbDShE6UUCNhu7XMqD215dL_/view",
+   "title": "이준엽 통장사본.jpg"
+  },
+  {
+   "doc_id": "1C5ga3QtcEUMUjsBjVXZ9KDkXY-sEXhGR",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1C5ga3QtcEUMUjsBjVXZ9KDkXY-sEXhGR/view",
+   "title": "이준엽 사업소득 이체확인증.pdf"
+  },
+  {
+   "doc_id": "1C6tNfwLIZ1LU2_yHWxyTEfUlq0bVGXPr",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1C6tNfwLIZ1LU2_yHWxyTEfUlq0bVGXPr/view",
+   "title": "이준엽 11조 1743 8.17.jpg"
+  },
+  {
+   "doc_id": "1CRCzO8MkYUPbilwScfv-IRjtUZApd9kW",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CRCzO8MkYUPbilwScfv-IRjtUZApd9kW/view",
+   "title": "이준엽 11조 1743 8.16.jpg"
+  },
+  {
+   "doc_id": "1CVMEh5P7Np5QgOHd-ziMYdD-y7NCsIQV",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CVMEh5P7Np5QgOHd-ziMYdD-y7NCsIQV/view",
+   "title": "신분증.jpg"
+  },
+  {
+   "doc_id": "1CpxO34lcCNIhGrHog0gsd_T-3KbqGWmo",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CpxO34lcCNIhGrHog0gsd_T-3KbqGWmo/view",
+   "title": "위너아트_주차정산 _통장사본.jpg"
+  },
+  {
+   "doc_id": "1D8Cnu9wXwBZnMWiMuYh-CwYMf272stem",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1D8Cnu9wXwBZnMWiMuYh-CwYMf272stem/view",
+   "title": "위너아트_주차정산 (3).jpg"
+  },
+  {
+   "doc_id": "1D9zhY-9eaov-BWN7Hn6NaUpN_Ll6bheL",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1D9zhY-9eaov-BWN7Hn6NaUpN_Ll6bheL/view",
+   "title": "위너아트_주차정산 (2).jpg"
+  },
+  {
+   "doc_id": "1DIutnLZWxGYmDKqHDH5wQsuqjIYQFnzQ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DIutnLZWxGYmDKqHDH5wQsuqjIYQFnzQ/view",
+   "title": "위너아트_주차정산 (1).jpg"
+  },
+  {
+   "doc_id": "1DS0ZsvUGPd5ryqsUGPbJR65UBledoJC9",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DS0ZsvUGPd5ryqsUGPbJR65UBledoJC9/view",
+   "title": "위너아트 공문.pdf"
+  },
+  {
+   "doc_id": "1DS2vzzwu9H8CuIR-jT_q0IRqqfFtJaT8",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DS2vzzwu9H8CuIR-jT_q0IRqqfFtJaT8/view",
+   "title": "브이아이소프트_주차비.png"
+  },
+  {
+   "doc_id": "1DSpo5ZaSfzjooMrqYIBN-YJ_o4oxeYFU",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DSpo5ZaSfzjooMrqYIBN-YJ_o4oxeYFU/view",
+   "title": "[VISOFT]통장사본.pdf"
+  },
+  {
+   "doc_id": "1DU1zjJ4y5tDdmO1Sz3bJ9eIEuoaJ5Cv5",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DU1zjJ4y5tDdmO1Sz3bJ9eIEuoaJ5Cv5/view",
+   "title": "VISOFT_블루페행사 주차비정산 요청 공문_2024.pdf"
+  },
+  {
+   "doc_id": "1DW8xxay4XrsxCqf5qM9oquGKOW4wQQUG",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DW8xxay4XrsxCqf5qM9oquGKOW4wQQUG/view",
+   "title": "그림7.jpg"
+  },
+  {
+   "doc_id": "1Db2h_QFMwlNHz7BIIvN9fNrMcMqooIUF",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Db2h_QFMwlNHz7BIIvN9fNrMcMqooIUF/view",
+   "title": "그림6.jpg"
+  },
+  {
+   "doc_id": "1DcHtOUZhOY2vuiMFpdbJAOtXlfpMfvtA",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DcHtOUZhOY2vuiMFpdbJAOtXlfpMfvtA/view",
+   "title": "그림5.png"
+  },
+  {
+   "doc_id": "1Dj8-yzosSNsDL--khBHXM1fK2odpMUef",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Dj8-yzosSNsDL--khBHXM1fK2odpMUef/view",
+   "title": "그림4.jpg"
+  },
+  {
+   "doc_id": "1Dt6I7AiEIC4TD5GjehW2bAosqdYT8nHi",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Dt6I7AiEIC4TD5GjehW2bAosqdYT8nHi/view",
+   "title": "그림3.jpg"
+  },
+  {
+   "doc_id": "1DuDzP42om-_NUUeSDhbfuv0w9AoRJ2bc",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DuDzP42om-_NUUeSDhbfuv0w9AoRJ2bc/view",
+   "title": "그림2.jpg"
+  },
+  {
+   "doc_id": "1EC7Xe4TUiXKd0XoBIYPfkMPjpv4oQf4x",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1EC7Xe4TUiXKd0XoBIYPfkMPjpv4oQf4x/view",
+   "title": "그림16.png"
+  },
+  {
+   "doc_id": "1EEv-8OgdUEVSNrD8GuceqURVhZNgO_uu",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1EEv-8OgdUEVSNrD8GuceqURVhZNgO_uu/view",
+   "title": "그림15.png"
+  },
+  {
+   "doc_id": "1EGNwBTT_EjgH4acXAuvn289VTem5X1li",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1EGNwBTT_EjgH4acXAuvn289VTem5X1li/view",
+   "title": "그림14.png"
+  },
+  {
+   "doc_id": "1ENb6mQ1-yqJcSL879H1ignECc-5nLvt2",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ENb6mQ1-yqJcSL879H1ignECc-5nLvt2/view",
+   "title": "그림13.png"
+  },
+  {
+   "doc_id": "1ENqE4kwg5uC8S9LFU3s1PMdcHY9oSphL",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ENqE4kwg5uC8S9LFU3s1PMdcHY9oSphL/view",
+   "title": "그림12.jpg"
+  },
+  {
+   "doc_id": "1EPYp7nMNK2wm_bcpeM8I8Lk91r-liUB2",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1EPYp7nMNK2wm_bcpeM8I8Lk91r-liUB2/view",
+   "title": "그림11.jpg"
+  },
+  {
+   "doc_id": "1EQdh5G7OWLXF071p9FYLajX9g6LHIPy0",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1EQdh5G7OWLXF071p9FYLajX9g6LHIPy0/view",
+   "title": "그림10.jpg"
+  },
+  {
+   "doc_id": "1EgcEanGhu8OXBO-nXTG2OFQF6ZZJ0BpY",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1EgcEanGhu8OXBO-nXTG2OFQF6ZZJ0BpY/view",
+   "title": "그림1.jpg"
+  },
+  {
+   "doc_id": "1Eh27XJfcTPtW2ukv1Jrz8xEr_5wVbI8J",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Eh27XJfcTPtW2ukv1Jrz8xEr_5wVbI8J/view",
+   "title": "(버니컴) 더불어민주당 주차비 정산 협조공문 0903.pdf"
+  },
+  {
+   "doc_id": "1Ek7aHSD5-H6VSOZ8mc0qEcWorUSN01Oq",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Ek7aHSD5-H6VSOZ8mc0qEcWorUSN01Oq/view",
+   "title": "이준엽 통장사본.jpg"
+  },
+  {
+   "doc_id": "1ElkaKuVbGFgXrvr2ZbNrvXL5waGf5XFE",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ElkaKuVbGFgXrvr2ZbNrvXL5waGf5XFE/view",
+   "title": "이준엽 사업소득 이체확인증.pdf"
+  },
+  {
+   "doc_id": "1EmjgzaUBqCku2F4vkM4nLBsj22N7Hwrb",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1EmjgzaUBqCku2F4vkM4nLBsj22N7Hwrb/view",
+   "title": "이준엽 11조 1743 8.17.jpg"
+  },
+  {
+   "doc_id": "1EzAW26on1fuvOx_Bi6LRRB0SKr0482L4",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1EzAW26on1fuvOx_Bi6LRRB0SKr0482L4/view",
+   "title": "이준엽 11조 1743 8.16.jpg"
+  },
+  {
+   "doc_id": "1F0vDZPm6vvckiVlnYH2Yii99iRJc7vri",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1F0vDZPm6vvckiVlnYH2Yii99iRJc7vri/view",
+   "title": "신분증.jpg"
+  },
+  {
+   "doc_id": "1F38uzqPDOT-pb1yz_0lIzuFeDkpUtSMA",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1F38uzqPDOT-pb1yz_0lIzuFeDkpUtSMA/view",
+   "title": "위너아트_주차정산 _통장사본.jpg"
+  },
+  {
+   "doc_id": "1F4AJFZspi6vxGFAtM23C-n0-qR_5UOP0",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1F4AJFZspi6vxGFAtM23C-n0-qR_5UOP0/view",
+   "title": "위너아트_주차정산 (3).jpg"
+  },
+  {
+   "doc_id": "1FARl8uuUNqW7G0YqJ-OFNXp-iwjhwV6a",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1FARl8uuUNqW7G0YqJ-OFNXp-iwjhwV6a/view",
+   "title": "위너아트_주차정산 (2).jpg"
+  },
+  {
+   "doc_id": "1FFF85zhcJnRU-4TfuK8NoN85RL-ZyLJE",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1FFF85zhcJnRU-4TfuK8NoN85RL-ZyLJE/view",
+   "title": "위너아트_주차정산 (1).jpg"
+  },
+  {
+   "doc_id": "1FGOFs5gjR9AK7UG0EpzU-VxcN2Vjb5re",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1FGOFs5gjR9AK7UG0EpzU-VxcN2Vjb5re/view",
+   "title": "위너아트 공문.pdf"
+  },
+  {
+   "doc_id": "1FJzYhF1g_i0jFWC3RZLZhOq6XUe3zZiT",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1FJzYhF1g_i0jFWC3RZLZhOq6XUe3zZiT/view",
+   "title": "브이아이소프트_주차비.png"
+  },
+  {
+   "doc_id": "1FNJV5J3IzVZmWujWuKYrFwIP94pPoK9u",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1FNJV5J3IzVZmWujWuKYrFwIP94pPoK9u/view",
+   "title": "[VISOFT]통장사본.pdf"
+  },
+  {
+   "doc_id": "1FaubQrkcMh26dUkAllP8--DVLxlSBuKH",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1FaubQrkcMh26dUkAllP8--DVLxlSBuKH/view",
+   "title": "VISOFT_블루페행사 주차비정산 요청 공문_2024.pdf"
+  },
+  {
+   "doc_id": "1Fcv7QmR1GqZHUo7y21J8J96lnL6Z92yb",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Fcv7QmR1GqZHUo7y21J8J96lnL6Z92yb/view",
+   "title": "통장사본.jpg"
+  },
+  {
+   "doc_id": "1FmSGFXdYvaI1tV6PBcpo4g9m7MbeF6Lq",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1FmSGFXdYvaI1tV6PBcpo4g9m7MbeF6Lq/view",
+   "title": "그림9.jpg"
+  },
+  {
+   "doc_id": "1Fy_o76fVhc_FRX6PvuPMUhjGo4-z5uCJ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Fy_o76fVhc_FRX6PvuPMUhjGo4-z5uCJ/view",
+   "title": "그림8.jpg"
+  },
+  {
+   "doc_id": "1FzohWe_EDFZZ4s3C9bY7oE60bN7LRUsz",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1FzohWe_EDFZZ4s3C9bY7oE60bN7LRUsz/view",
+   "title": "스위트스팟_주차비정산내역_0903_최종.xlsx"
+  },
+  {
+   "doc_id": "1G66SXRX0GpRrfpjHVacRCKoxQRuWb5iu",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1G66SXRX0GpRrfpjHVacRCKoxQRuWb5iu/view",
+   "title": "올림픽공원주차비(8월18일).jpg"
+  },
+  {
+   "doc_id": "1G9aLZjmATbDPUUhMb88pGfpecnibo9ym",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1G9aLZjmATbDPUUhMb88pGfpecnibo9ym/view",
+   "title": "올림픽공원주차비(8월18일 추가2).jpg"
+  },
+  {
+   "doc_id": "1GDLZ2gV5yadr0k-dcjNt35Vkw_ZYen1W",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1GDLZ2gV5yadr0k-dcjNt35Vkw_ZYen1W/view",
+   "title": "올림픽공원주차비(8월16일).jpg"
+  },
+  {
+   "doc_id": "1GEsAR6Ls8_2VT6tyoCCxR7YgL_Wnesi2",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1GEsAR6Ls8_2VT6tyoCCxR7YgL_Wnesi2/view",
+   "title": "올림픽공원 주차비 (8월17일).jpg"
+  },
+  {
+   "doc_id": "1GKrvikPDO9qs1n_3UqaIRbbzzKyZ7Wsh",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1GKrvikPDO9qs1n_3UqaIRbbzzKyZ7Wsh/view",
+   "title": "올림공원주자비(8월18일 추가 1).jpg"
+  },
+  {
+   "doc_id": "1GNMIgi_SpTITtqC7uk0ug23yw6qCEoWa",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1GNMIgi_SpTITtqC7uk0ug23yw6qCEoWa/view",
+   "title": "그린렌탈_통장사본.jpg"
+  },
+  {
+   "doc_id": "1GPXYQHo2MB6Aub3nbuilWV2cO7DcGDof",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1GPXYQHo2MB6Aub3nbuilWV2cO7DcGDof/view",
+   "title": "그린렌탈_블루페행사 주차비정산 요청 공문_2024.pdf"
+  },
+  {
+   "doc_id": "1GSIjeZHvvqlXahL-ZfCNCBGG-6Jg1LXb",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1GSIjeZHvvqlXahL-ZfCNCBGG-6Jg1LXb/view",
+   "title": "엘피오파트너스 공문.pdf"
+  },
+  {
+   "doc_id": "1GTieAUSO_2l0SEQYo0Rb7ngIy1nIxVUl",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1GTieAUSO_2l0SEQYo0Rb7ngIy1nIxVUl/view",
+   "title": "(주)엘피오파트너스 통장사본.png"
+  },
+  {
+   "doc_id": "1GWYthg-jriuTXcearPwKZoWlYKj9xpLr",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1GWYthg-jriuTXcearPwKZoWlYKj9xpLr/view",
+   "title": "(주)엘피오파트너스 48주 2567 8.18.jpg"
+  },
+  {
+   "doc_id": "1GX6k-DeNigrEM45z80vqxgXf1rDZOSg2",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1GX6k-DeNigrEM45z80vqxgXf1rDZOSg2/view",
+   "title": "(주)엘피오파트너스 48주 2567 8.17.jpg"
+  },
+  {
+   "doc_id": "1GYmwYJgEvQQOoXN3Oup-HL3P1BDd94TI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1GYmwYJgEvQQOoXN3Oup-HL3P1BDd94TI/view",
+   "title": "(주)엘피오파트너스 48주 2567 8.16.jpg"
+  },
+  {
+   "doc_id": "1W4SGD1PNRSUeLOuYWHE8NO6pPmGYeFmE",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1W4SGD1PNRSUeLOuYWHE8NO6pPmGYeFmE/view",
+   "title": "(스캔본)비더블루_보험계약서_240805.pdf"
+  },
+  {
+   "doc_id": "1e1Zf3VGykZ84gi2-JjXDotTycmRviXXk",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1e1Zf3VGykZ84gi2-JjXDotTycmRviXXk/view",
+   "title": "sweetspot_민주당 전당 대회 팝업 컨셉 기획안_0715.pdf"
+  },
+  {
+   "doc_id": "1e5qqHNbL1Axixmnd_hiuF0Eka_4D8I8a",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1e5qqHNbL1Axixmnd_hiuF0Eka_4D8I8a/view",
+   "title": "3.제안서_블루페교육자료_FN.pdf"
+  },
+  {
+   "doc_id": "1eHq4tjR8hGbUKbAdeec315Khsv2d-XVU",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1eHq4tjR8hGbUKbAdeec315Khsv2d-XVU/view",
+   "title": "블루페_만족도조사_로우데이터.csv"
+  },
+  {
+   "doc_id": "1eLsiz5w2A9ns3oQLcpwZIsb4vfrREpki",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1eLsiz5w2A9ns3oQLcpwZIsb4vfrREpki/view",
+   "title": "블루페 매출 로우데이터.xlsx"
+  },
+  {
+   "doc_id": "1eMBZpwtZu-YhFvwKmg8C33a_GrpDQSIX",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1eMBZpwtZu-YhFvwKmg8C33a_GrpDQSIX/view",
+   "title": "08 18 블루페 청년부스 메세지 내용보고서.pdf"
+  },
+  {
+   "doc_id": "1f5lO0vpgjXQL5Lq9nVsoiRkGM-NSb95r",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1f5lO0vpgjXQL5Lq9nVsoiRkGM-NSb95r/view",
+   "title": "렌탈부스_240808_이지영(스위트스팟)님 최종 견적서.pdf"
+  },
+  {
+   "doc_id": "1s0xkadel6g2DVafcJfGM_6rYRSSGS9io",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1s0xkadel6g2DVafcJfGM_6rYRSSGS9io/view",
+   "title": "2.견적서_블루페 견적서.xlsx"
+  },
+  {
+   "doc_id": "1sagicPUl8six1yMYO_qQz4SVXkB6o0eW",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1sagicPUl8six1yMYO_qQz4SVXkB6o0eW/view",
+   "title": "비더블루 (주)엘피오파트너스 계약서.pdf"
+  },
+  {
+   "doc_id": "1scBKjzn6AxkULc7CIOUuZWtJW11GKMVq",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1scBKjzn6AxkULc7CIOUuZWtJW11GKMVq/view",
+   "title": "(스캔본)비더블루_보험계약서_240805.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: 3.제안서_블루페교육자료_FN.pdf, 08 18 블루페 청년부스 메세지 내용보고서.pdf, 블루페 매출 로우데이터.xlsx. 미확실: 전체 행사 실제 방문자 수(메시지월 참여 23명만 확인); 소비자 매출(POS) 실측치 - 로우데이터 헤더만 존재; 계약금액·수수료구조·RS 조건; 면적(평); 정확한 개최 지역구 및 venue 세부"
+ }
+}

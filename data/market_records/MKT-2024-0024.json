@@ -1,0 +1,93 @@
+{
+ "market_record_id": "MKT-2024-0024",
+ "event_name": "슈퍼셀 브롤스타즈 '쇼다운 인 스타필드' 팝업 (제4회 스타필드 벌룬 페스티벌)",
+ "brand": "슈퍼셀",
+ "ip_or_collab": "브롤스타즈×라인프렌즈",
+ "category": "game_webtoon",
+ "intervention": {
+  "concept_description": "브롤러 에드거·팽의 쇼다운 테마 대규모 IP 체험존+굿즈샵",
+  "experience_elements": [
+   "미니게임 체험존",
+   "굿즈샵",
+   "크리에이터 팬밋업"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "스타필드 하남(4/25~5/6)·고양(5/8~5/21)·안성(5/23~6/6)",
+  "venue_type": "mall",
+  "neighborhood": "하남·고양·안성",
+  "city": "경기",
+  "period_from": "2024-04-25",
+  "period_to": "2024-06-06",
+  "area_pyeong": null,
+  "multi_store": true,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 43,
+    "weekend_share": 0.28,
+    "holiday_days": 4
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 1850000,
+  "visitors_period_days": 40,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "슈퍼셀 발표: '40일간 약 185만명의 방문객을 맞이했다'. 벌룬 페스티벌 기간 몰 전체 유동·행사장 방문 혼합 가능성 있어 절대 규모 해석 주의",
+  "visitors_source_quote": "슈퍼셀은 이번 제 4회 벌룬 페스티벌을 통해 대규모 IP 체험존과 굿즈샵, 현장 이벤트까지 선보이며 40일간 약 185만명의 방문객을 맞이했다.",
+  "visitors_source_url": "https://www.inews24.com/view/1727949",
+  "visitors_source_date": "2024-06-07",
+  "sales_krw": null,
+  "sales_source_quote": "",
+  "sales_source_url": "",
+  "sales_source_date": "",
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": true,
+   "reservation_fill": true,
+   "signal_quotes": [
+    "6회에 걸친 사전 예약은 모두 오픈 직후 모든 일자 및 시간이 매진됐고",
+    "굿즈샵에서 준비된 브롤스타즈X라인프렌즈 굿즈가 담긴 '파워 큐브 랜덤 박스'는 행사 내내 인기를 끌며 첫 날부터 마지막 날까지 오픈런을 동반하며 약 9500개의 수량이 모두 완판됐다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "하남·고양·안성 3개 점포 순차, 40일 합산 185만 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "집계형(통합/합산)",
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

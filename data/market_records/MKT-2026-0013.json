@@ -1,0 +1,68 @@
+{
+  "market_record_id": "MKT-2026-0013",
+  "event_name": "새로중앙박물관 팝업스토어",
+  "brand": "롯데칠성음료 (새로)",
+  "ip_or_collab": null,
+  "category": "liquor",
+  "intervention": {
+    "concept_description": "새로의 '처음 만난 순간'을 테마로 한 박물관 콘셉트 체험 팝업",
+    "experience_elements": [
+      "박물관 콘셉트 전시",
+      "시음·체험"
+    ],
+    "promotions": [],
+    "is_free_entry": null,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "서울 성동구 성수동",
+    "venue_type": "street_standalone",
+    "neighborhood": "성수동",
+    "city": "서울",
+    "period_from": "2026-03-21",
+    "period_to": "2026-04-05",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 16,
+        "weekend_share": 0.38,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 1,
+        "months_since_last": 30.7,
+        "first_edition": false
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "롯데칠성음료 발표. '일일 최대 1000명 이상' 수치만 공개(총 누적 미공개)",
+    "visitors_source_quote": "3월 21일부터 4월 5일까지 서울 성수동에서 '새로중앙박물관'이라는 팝업 스토어를 운영, 일일 최대 1000명이 넘는 방문객을 기록하는 등 큰 인기를 끌었다.",
+    "visitors_source_url": "https://www.kookje.co.kr/news2011/asp/newsbody.asp?code=0200&key=20260609.22012002161",
+    "visitors_source_date": "2026-06-08",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": []
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "일일 최대 수치이므로 총계 환산 금지. | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

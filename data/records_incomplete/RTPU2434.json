@@ -1,0 +1,104 @@
+{
+  "record_id": "RTPU2434",
+  "schema_version": "0.1",
+  "entities": {
+    "brand_id": "unresolved:CGV",
+    "space_id": "unresolved:CGV_야구장_홍보부스",
+    "client_party_id": "unresolved:CGV"
+  },
+  "intervention": {
+    "concept": "CGV가 KBO 올스타전 야구장에서 운영한 홍보부스 프로모션. 벨크로 야구게임 등 이벤트 체험과 부채·팝콘모자 등 굿즈 배포를 통한 브랜드 노출 프로모션.",
+    "brand_name": "CGV",
+    "experience_elements": [
+      "벨크로 야구게임",
+      "인형탈 운영",
+      "몽골텐트 홍보부스"
+    ],
+    "promotions": [
+      "부채 1만개 제작 배포",
+      "팝콘모자&쿠션 굿즈"
+    ],
+    "staging_tags": [
+      "몽골텐트",
+      "현수막/피켓",
+      "POSM",
+      "스텝복 30장"
+    ]
+  },
+  "conditions": {
+    "location": {
+      "city": null,
+      "district": null,
+      "venue_name": null,
+      "venue_type": "야구장(장외 홍보부스)",
+      "foot_traffic_context": "KBO 올스타전 야구장 관중"
+    },
+    "area_pyeong": null,
+    "period": {
+      "from": "",
+      "to": "",
+      "days": null
+    },
+    "season": "여름",
+    "fee_structure": {
+      "type": "agency_fee",
+      "detail": "최종 합계 10,000,000원(VAT 10% 별도). 소계 10,380,000 + 대행수수료(정가 항목 제외 소계의 10%) 788,000 = 11,100,000, 만단위 이하 절사 및 NEGO 후 10,000,000. 항목: 기획료 1,000,000/디자인 1,500,000/제작(몽골텐트 2,500,000·스텝복 680,000·벨크로야구게임 700,000·부채 1,500,000·렌탈&폐기물 620,000)/운영STAFF(슈퍼바이저 280,000·세팅운영 STAFF 5인 720,000·인형탈 280,000)/예비비 600,000."
+    },
+    "brand_requirements": [
+      "12시-20시 준비 및 운영(8시간 기준, 세팅 철수 포함)",
+      "인형탈 운영 인력 16시-20시 근무",
+      "부채 1만개 제작"
+    ]
+  },
+  "outcome": {
+    "daily": [],
+    "totals": {
+      "visitors": null,
+      "sales_krw": null,
+      "rev_mm_recognized": 10.0
+    },
+    "counting_method": "unknown",
+    "counting_basis": null,
+    "plan_visitors_expected": null,
+    "retention": null,
+    "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조"
+  },
+  "docs": [
+    {
+      "doc_id": "1F7SC-es9d6inOKls8ehhWwFteop1Wozi",
+      "kind": "정산",
+      "uri": "https://drive.google.com/file/d/1F7SC-es9d6inOKls8ehhWwFteop1Wozi/view",
+      "title": "RTPU2434_CGV KBO 올스타전 프로모션_견적서_0708(최종).pdf"
+    },
+    {
+      "doc_id": "1ddUwdmHRqt1An37b7kbaXGY1WiwQAiaZ",
+      "kind": "기획서",
+      "uri": "https://drive.google.com/file/d/1ddUwdmHRqt1An37b7kbaXGY1WiwQAiaZ/view",
+      "title": "제안서_내용없음.txt"
+    },
+    {
+      "doc_id": "1gIk9hp5iJxMTD3_hSWTIyf22fyjsruml",
+      "kind": "계약서",
+      "uri": "https://drive.google.com/file/d/1gIk9hp5iJxMTD3_hSWTIyf22fyjsruml/view",
+      "title": "RTPU2434_CGV KBO 올스타전 프로모션_계약서_240716.doc"
+    },
+    {
+      "doc_id": "1pj97vVrNxGz8Tbnk6Lvj13lHgYMDrgiK",
+      "kind": "계약서",
+      "uri": "https://drive.google.com/file/d/1pj97vVrNxGz8Tbnk6Lvj13lHgYMDrgiK/view",
+      "title": "RTPU2434_CGV KBO 올스타전 프로모션_계약서_240716.doc"
+    },
+    {
+      "doc_id": "1zafCbI2ULfdPGvIiWdkr90uPjVpwWnud",
+      "kind": "운영일지",
+      "uri": "https://drive.google.com/file/d/1zafCbI2ULfdPGvIiWdkr90uPjVpwWnud/view",
+      "title": "결과보고서_내용없음.txt"
+    }
+  ],
+  "provenance": {
+    "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+    "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+    "extracted_at": "2026-07-23",
+    "notes": "일괄 정규화. confidence=medium. 완독 문서 1건: RTPU2434_CGV KBO 올스타전 프로모션_견적서. 미확실: 운영 기간/일자 문서에 없음; 입지(도시/구/구장명) 미기재; 면적 미기재; 결과보고서 없음 - 방문객/매출 실측 없음; 예상 방문객 수 없음"
+  }
+}

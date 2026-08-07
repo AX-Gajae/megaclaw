@@ -1,0 +1,137 @@
+\documentclass[10pt]{article}
+\usepackage{icmlko}
+
+\icmlmeta{IP 파운데이션 월드모델}{315}{이 순서를 주장해도 되나}{노트 314가 무른 것을 그때 잡을 수 있었다 --- 짝짝이 확률을 세면 스물여덟 쌍 중 다섯만 선다}
+
+\begin{document}
+
+\twocolumn[
+\icmlheader
+
+\begin{abstract}
+노트 314가 노트 310을 물렀다 --- 여덟 도메인의 leave-one-out 차를 크기 순으로
+늘어놓고 그 순서 위에 결론을 세웠는데, 잡음이 작은 자로 다시 재니 두 순서의
+상관이 $-$0.048($p{=}0.91$)이었다. \textbf{그런데 그것을 그때 알 수 있었다.}
+차와 짝SE 가 다 있었으므로 \textbf{짝짝이 확률}을 셀 수 있다 ---
+$P(i{>}j) = \Phi\!\big((d_i{-}d_j)/\sqrt{se_i^2{+}se_j^2}\big)$. 셌다.
+노트 310의 여덟에서 \textbf{스물여덟 쌍 중 다섯만 서고(18\%) 이웃 쌍은
+0/7 이다.} 판정 \textbf{``순서 못 읽는다''}. 노트 310의 근거였던 ``예측한
+상위 넷이 그대로''도 --- 웹툰 대 애니 $P{=}0.66$ · 애니 대 만화 $P{=}0.60$ ·
+만화 대 모바일 $P{=}0.68$ --- \textbf{셋 다 동전 던지기}다. 도구로 만들어
+(\texttt{lab/ordering.py}) \texttt{rank.spread} 에 붙였다. 짝 비교를 내는
+자리마다 ``몇 쌍이 섰나''가 자동으로 적힌다. \textbf{거부권이 아니라
+이름표다} --- 순서를 주장하지 말라는 게 아니라 주장하기 전에 몇 쌍이 동전
+던지기인지 적어 둔다. \textbf{근사는 보수적이다}: 차들이 같은 기준선을
+나눠 써서 양의 상관이 있으므로 실제 차의 차는 이 식보다 덜 흔들린다 ---
+이 검사가 ``섰다''면 진짜 섰고, ``흔들린다''면 더 봐야 한다.
+\end{abstract}
+]
+
+\section{그때 알 수 있었다}
+
+노트 310이 마지막 절에 이렇게 적었다.
+
+\begin{center}\small
+``$|t|$ 가 하나도 2.77 을 못 넘으므로 \textbf{개별 도메인은 못 가른다}\\
+--- 갈린 것은 \emph{순서}이고 그것이 이 노트가 주장하는 전부다.''
+\end{center}
+
+첫 문장은 맞고 둘째 문장이 틀렸다. \textbf{못 가르는 값들의 순서도 못
+가른다.} 그리고 그 판정에 필요한 것은 노트 310의 표에 이미 다 있었다 ---
+차와 짝SE.
+
+\begin{center}\small
+$P(i \text{가 } j \text{보다 크다}) \;=\;
+\Phi\!\left(\dfrac{d_i - d_j}{\sqrt{se_i^2 + se_j^2}}\right)$
+\end{center}
+
+\section{스물여덟 쌍 중 다섯}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/rank.pdf}
+\caption{왼쪽 --- 노트 310의 여덟 도메인에 대한 짝짝이 확률(초록이 선 쌍).
+오른쪽 --- 두 노트의 판정.}
+\end{figure*}
+
+\begin{center}\small
+\begin{tabular}{lrr}
+\hline
+& 노트 310 (F18) & 노트 314 (F6) \\
+\hline
+선 쌍 & \textbf{5 / 28} (18\%) & 1 / 28 (4\%) \\
+선 이웃 쌍 & \textbf{0 / 7} & 0 / 7 \\
+판정 & \textbf{순서 못 읽는다} & 순서 못 읽는다 \\
+\hline
+\end{tabular}
+\end{center}
+
+\paragraph{노트 310의 근거가 바로 그 자리다} 노트 310은 ``예측한 상위 넷이
+그대로 나왔다''를 근거로 삼았다. 그 넷의 이웃 쌍을 보면
+
+\begin{center}\footnotesize
+\begin{tabular}{lr}
+\hline
+쌍 & $P$ \\
+\hline
+웹툰 $>$ 애니 & \textbf{0.66} \\
+애니 $>$ 만화 & \textbf{0.60} \\
+만화 $>$ 모바일 & \textbf{0.68} \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{셋 다 동전 던지기다.} 넷의 순서가 예측과 맞을 확률은 우연만으로도
+낮지 않다. 그리고 하루 뒤 F6 에서 그 순서가 사라졌다.
+
+\paragraph{선 다섯 쌍은 무엇인가} 웹툰이 세계애니 · 아이돌 · 시장팝업 ·
+게임보다 크다는 것($P{=}0.92 \sim 0.95$)과 애니가 세계애니보다 크다는 것
+($P{=}0.90$)이다. \textbf{양 끝만 선다} --- 가운데는 전부 흔들린다.
+
+\section{도구로 만들었다}
+
+\texttt{lab/ordering.py}. \texttt{report(\{이름: (차, 짝SE)\})} 가 순서 ·
+선 쌍 수 · 이웃 쌍 · 동전 던지기 목록 · 판정을 낸다. 문턱은 $P{\ge}0.90$
+이고 선 쌍이 80\% 이상이면 ``순서 선다''다.
+
+\texttt{rank.spread} 에 붙였다 --- 짝 비교를 내는 자리마다 자동으로 적힌다.
+방금 \texttt{fund\_cat} 비교(노트 309)에 걸어 보니
+
+\begin{center}\footnotesize
+\texttt{순위 --- 14/45 쌍이 섰다(31\%) · 이웃 2/9 · 순서 못 읽는다}
+\end{center}
+
+\paragraph{이름표지 거부권이 아니다} \texttt{hearing} · \texttt{overlap} ·
+\texttt{marker} 와 같은 규약이다. 순서를 주장하지 말라고 막는 게 아니라
+\textbf{주장하기 전에 몇 쌍이 동전 던지기인지 적어 둔다.} 노트 310은 그
+숫자를 봤으면 다른 노트를 썼을 것이다.
+
+\paragraph{근사는 보수적이다} 이 식은 두 차가 독립이라고 본다. 실제로는
+차들이 \emph{같은 기준선}을 나눠 쓰므로 양의 상관이 있고, 그러면 차의 차는
+이 식보다 \textbf{덜} 흔들린다. 그래서 \textbf{``섰다''는 믿을 수 있고
+``흔들린다''는 더 봐야 한다.} 부트스트랩 표본을 그대로 갖고 있으면
+\texttt{pairs\_from\_draws} 로 정확히 센다.
+
+\paragraph{남은 것}
+\begin{center}\small
+\begin{tabular}{ll}
+\hline
+갈래 & 왜 \\
+\hline
+옛 노트의 순서 주장 & 이 검사를 소급해 돌린다 \\
+정확 셈으로 바꾸기 & 재추출을 저장하면 된다 \\
+``상위 $k$'' 주장 & 순서보다 약한 주장의 문턱 \\
+펀딩도 검색인가 & 노트 313 · 314의 갈래 \\
+\hline
+\end{tabular}
+\end{center}
+
+\paragraph{규약} \textbf{순서를 주장할 때 짝짝이 확률을 같이 적어라.}
+이 실험실은 값 하나를 주장할 때 짝SE 를 붙이는 규약을 노트 248에서 세웠다.
+\textbf{순서는 값 여럿을 한꺼번에 주장하는 것}인데 거기에는 아무 규약이
+없었다 --- 그래서 노트 310이 스물여덟 쌍 중 다섯만 선 순서를 근거로 삼았다.
+그리고 \textbf{무른 노트에서 도구를 만들어라} --- 노트 306이 손으로 잡은
+누출을 노트 307이 자동화했고, 노트 314가 무른 것을 이 노트가 자동화한다.
+\textbf{같은 실수를 두 번 하지 않는 방법은 그것뿐이다.}
+
+\end{document}

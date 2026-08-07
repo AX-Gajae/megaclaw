@@ -1,0 +1,72 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{kotex}
+\setmainfont{Apple SD Gothic Neo}
+\setsansfont{Apple SD Gothic Neo}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,linkcolor=MidnightBlue,citecolor=MidnightBlue,
+            urlcolor=MidnightBlue]{hyperref}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\captionsetup{font=small,labelfont=bf}
+\setlength{\parskip}{0.35em}
+\setlength{\parindent}{0pt}
+
+\usepackage{mdframed}
+\newmdenv[linewidth=0.4pt,linecolor=gray!60,backgroundcolor=gray!5,
+          innertopmargin=6pt,innerbottommargin=6pt,skipabove=8pt,skipbelow=8pt]{claimbox}
+\newcommand{\claim}[2]{\begin{claimbox}\textbf{주장.} #1\par\smallskip
+  \textcolor{gray!70}{\textbf{반증 조건.} #2}\end{claimbox}}
+
+\title{\bfseries 간발의 불확인\\[2pt]
+\large $0.0014$ 가 모자랐다 --- 그리고 병기한 부트스트랩이 자를 또 부러뜨렸다}
+\author{월드모델 실험실 · 노트 $826$}
+\date{2026-08-07}
+\begin{document}\maketitle
+
+\section{한 줄}
+
+티처 \#$2$ 의 ``게이트 도전 실험 $0$건 --- 회피의 통계적 서명'' 지적을 받아
+$20$노트 만의 채택-가능 실험을 발동했다: T$1$ 미결에 등록돼 있던 \textbf{아이돌
+라우팅 확인 사이클}. 결과는 \textbf{간발의 불확인}이다 --- 챔피언 씨앗 $1{\sim}4$
+의 $\Delta$(합동$-$릿지)가 \textbf{$4/4$ 음수}인데 평균 $-0.0720$ 이 등록 문턱
+$-0.0734$ 를 $0.0014$ 차로 못 넘었다. 등록 규칙 그대로: 합동 유지 · 아이돌
+재측정 금지 $3$사이클.
+
+\begin{figure}[t]\centering
+\includegraphics[width=0.97\textwidth]{figs/hair.pdf}
+\caption{왼쪽: 씨앗별 $\Delta$ 와 문턱. 오른쪽: 상수 $2\sigma$ 띠 대 짝
+부트스트랩 $95\%$ --- 폭이 $3$배이고 $0$ 을 문다.}
+\end{figure}
+
+\section{병기가 본론을 삼켰다}
+
+\claim{\textbf{상수 자($2\sigma = 2{\times}0.262/\sqrt{n}$)가 실측으로
+반증됐다.} 사전등록이 병기로 걸어 둔 짝 행 부트스트랩 $1{,}000$회의 $\Delta$
+$95\%$ 구간은 $[-0.293, +0.137]$ --- 폭이 상수 띠($\pm 0.0734$)의 약 $3$배이고
+$0$ 을 여유 있게 문다. 즉 논문 $182$ 의 ``아이돌 릿지승($-0.086$)''은
+\textbf{부러진 자 위의 판정}이었다. $n{=}51$ 순위상관 차이의 분산을 상수가
+크게 과소평가한다 --- 순위상관은 정규 근사보다 무겁고 두 모형의 짝 상관도
+무시된다. 티처 \#$2$ 가 지목한 약점 $1$ 의 즉석 실측 확인이다.}
+{두꺼운 도메인의 살찐 마진(도서 $7\times$ · 펀딩 $10\times$ · 애니 $7\times$)은
+살아남을 것이다. 다음 사전등록: \textbf{짝 부트스트랩으로 $822$(b) $10$도메인
+전부 재채점} --- 예상은 아이돌 릿지승 $\to$ 동점 강등 · 합동승 $5$ 유지이고,
+그러면 지도의 문장이 \emph{``합동은 어디서도 유의하게 해롭지 않고 $5$곳에서
+유의하게 이롭다''} 로 오히려 단순해지고 강해진다. 규약 후보(재채점 후):
+모델 대 모델 짝 비교에 상수 자 금지.}
+
+\section{부록 --- 티처의 값과 한계}
+
+티처 \#$2$ 의 유효 지적 넷을 반영했다($825$ 매처 조건부 · 사후 서사 경고 ·
+상수 자 · 게이트 도전). 동시에 \textbf{티처의 한계도 실측}됐다: 제안 B(웹툰
+후보 열)는 노트 $777/787/799$ 가 이미 닫은 갈래였다 --- 프레시 눈은 아카이브
+깊이가 없으므로, \textbf{티처 제안은 대장 교차검증 후 채택}이 절차가 된다.
+곁 배선: 유튜브 전향 폴러(\texttt{ingest/yt\_poll.py} · RSS$+$워치 · 키 불요)
+완성 --- 남은 것은 사람 게이트(대상 목록)뿐. 판 $\rho$ $0.4689$ 그대로.
+
+\end{document}

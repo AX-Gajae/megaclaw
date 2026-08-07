@@ -1,0 +1,84 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{스물다섯 개가 움직이고 있었다 --- 그리고 내 규칙은 그중 하나만 맞혔다}
+\author{월드모델 실험실}
+\date{노트 494 · 2026년 8월 3일}
+\maketitle
+
+\begin{abstract}
+노트 493 이 애니에서 ``덮음이 뛰면 그 칸에서 축이 약해진다''를 두 사례로
+말했다. 전 도메인 $\cdot$ 전 축에서 세 봤다.
+
+\textbf{덮음이 학습과 유보 사이에 $15\%$p 넘게 움직이는 (도메인, 축) 짝이
+$\mathbf{25}$ 개다} --- 세계애니 $7$ · 애니 $4$ · 웹툰 $4$ · 모바일 $4$
+· 도서 $3$ · 아이돌 $2$ · 만화 $1$. 두 해 동안 아무도 안 세어 봤다.
+
+\textbf{그리고 내 규칙은 반증됐다.} 덮음 차와 $|rho|$ 차의 스피어만이
+$\mathbf{+0.092}$ 로 관계가 없다. 방향은 오히려 반대다 --- 덮음이 오른
+$19$ 짝은 $|rho|$ 가 평균 $+0.0556$ \emph{오르고}, 내린 $5$ 짝이
+$-0.0901$ 로 나쁘다.
+
+\textbf{애니에서 잰 것은 그대로 선다} --- 거기서는 제목 길이로 같은 덮음을
+맞춰 짝을 지었고, 늘 붙던 행은 $0.1914 \to 0.1773$ 으로 안 늙었다. 틀린
+것은 \emph{측정}이 아니라 \emph{일반화}다. 두 사례로 규칙을 만들었다.
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 덮음 이동과 축 세기 변화. \textbf{나} --- 제일
+많이 무너진 여덟.}
+\end{figure}
+
+\section{애니보다 큰 게 둘 있다}
+
+무너짐 순위를 매기니 애니 트렌드는 $3$ 등이다.
+
+\begin{center}
+\begin{tabular}{llrrr}
+\hline
+도메인 & 축 & 덮음 차 & 학습 $|rho|$ & 유보 $|rho|$ \\
+\hline
+아이돌 & \texttt{target\_breadth} & $-29.2$\%p & $0.3703$ & $\mathbf{0.0428}$ \\
+만화 & \texttt{goods\_scale} & $-58.7$\%p & $0.3932$ & $\mathbf{0.1107}$ \\
+애니 & \texttt{trend\_level} & $+40.1$\%p & $0.1019$ & $0.0133$ \\
+세계애니 & \texttt{goods\_scale} & $-20.6$\%p & $0.2156$ & $0.0927$ \\
+\hline
+\end{tabular}
+\end{center}
+
+앞의 둘은 \textbf{속성 표지}이고 \textbf{덮음이 내려간} 쪽이다. 노트 489
+가 속성 표지에 ``격차 몫 $27\%$ 아래''를 매겼는데, 그건 \emph{붙은 행과
+안 붙은 행의 차}에 대한 이야기였고 여기는 \emph{붙은 행 안에서 축이 얼마나
+듣나}다. \textbf{다른 물음이고 답도 다르다.}
+
+\section{가드는 방향을 주장하지 않는다}
+
+\texttt{lab/loop.py} 에 \texttt{\_coverage\_shift} 를 배선했다(cfg
+``덮음 이동''). 이동이 있는 짝을 \textbf{찍기만} 한다 --- 그 짝에서 학습
+$|rho|$ 와 유보 $|rho|$ 를 견주려면 \emph{먼저 같은 덮음으로 짝을 맞춰야
+한다}는 표시다.
+
+\begin{quote}
+\textbf{조항} --- 두 사례로 규칙을 만들었으면 \textbf{전수로 세기 전까지
+규칙이라 부르지 않는다.} 노트 133 의 사촌 --- 거기서는 첫 양수를
+의심했고, 여기서는 \emph{두 번째 같은 방향}을 의심한다. 두 번째가 첫
+번째보다 위험하다. 하나는 우연으로 보이지만 둘은 규칙으로 보인다.
+\end{quote}
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{아이돌 \texttt{target\_breadth} $0.3703 \to 0.0428$} ---
+$25$ 짝 중 제일 크다. 덮음이 $95.9\% \to 66.7\%$ 로 내려갔다.
+\item \textbf{만화 \texttt{goods\_scale} $0.3932 \to 0.1107$} --- 덮음
+$80.0\% \to 21.3\%$. 만화는 판 무게가 작지 않다.
+\item \textbf{덮음이 \emph{내려가는} 쪽이 더 나쁜가} --- $5$ 짝뿐이라
+못 말한다. 세는 문턱을 $10\%$p 로 낮추면 짝이 는다.
+\item \textbf{애니 덮음이 왜 $2025$ 에 뛰었나} --- 노트 493 부터 두
+노트째 못 댔다.
+\end{itemize}
+
+\end{document}

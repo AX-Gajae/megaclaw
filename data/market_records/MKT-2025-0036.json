@@ -1,0 +1,87 @@
+{
+ "market_record_id": "MKT-2025-0036",
+ "event_name": "바디프랜드 '건강수명 충전소' 팝업 @신세계 강남 (4회차 누적)",
+ "brand": "바디프랜드",
+ "ip_or_collab": null,
+ "category": "electronics",
+ "intervention": {
+  "concept_description": "헬스케어 로봇·마사지 체험형 '찾아가는 라운지' 팝업",
+  "experience_elements": [
+   "헬스케어 로봇 체험",
+   "마사지 소파·모션베드 체험",
+   "즉석 상담·판매"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "신세계백화점 강남점",
+  "venue_type": "department_store",
+  "neighborhood": "반포",
+  "city": "서울",
+  "period_from": "2025-05-01",
+  "period_to": null,
+  "area_pyeong": null,
+  "multi_store": null,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  },
+  "derived": {
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 8000,
+  "visitors_period_days": null,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "뉴스와이어 보도자료: '특히 신세계백화점 강남점 건충소는 고객의 폭발적인 호응에 힘입어 4회차에 걸쳐 운영, 총 8000명 가까이 다녀가 최다 체험객 수를 기록했다.' (강남점 4회차 누적 체험객)",
+  "visitors_source_quote": "특히 신세계백화점 강남점 건충소는 고객의 폭발적인 호응에 힘입어 4회차에 걸쳐 운영, 총 8000명 가까이 다녀가 최다 체험객 수를 기록했다.",
+  "visitors_source_url": "https://www.newswire.co.kr/newsRead.php?no=1034837",
+  "visitors_source_date": "2026-05-20",
+  "sales_krw": null,
+  "sales_source_quote": "",
+  "sales_source_url": "",
+  "sales_source_date": "",
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "1년간 진행된 건충소에서 약 1100대의 제품이 판매됐다.(전국 51회 합산)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "전국 40여 곳 51회 중 강남점 4회차 누적 8000명(회차별 기간 미기재). '8000명 가까이' 근사치 | 병합 레코드: ",
+ "_aggregate": true,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "기간 미상",
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

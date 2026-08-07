@@ -1,0 +1,138 @@
+{
+ "record_id": "RCPU2513",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:넥스지_NEXGE",
+  "space_id": "unresolved:성수_EQL",
+  "client_party_id": "unresolved:블루개러지_BlueGarage",
+  "brand_key": "넥스지",
+  "space_key": "성수_EQL"
+ },
+ "intervention": {
+  "concept": "성수 EQL에서 진행된 넥스지(NEXGE) 팝업스토어. 상품 판매형 팝업으로 IP/캐릭터 카테고리에 해당한다. 로드(성수) 입지의 상품 판매 중심 운영형 팝업.",
+  "brand_name": "넥스지",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [
+   "상품판매형",
+   "IP/캐릭터",
+   "로드입지"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "성동구",
+   "venue_name": "성수 EQL",
+   "venue_type": "팝업스토어",
+   "foot_traffic_context": "로드(성수) 지역"
+  },
+  "area_pyeong": 20,
+  "period": {
+   "from": "2025-04-30",
+   "to": "2025-05-11",
+   "days": 12
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 54,200,000원 (VAT 10% 별도). 소계 49,250,000원 + 대행수수료 5,000,000원(채용/교육/정산/CS처리 등 행사 전반 업무대행 수수료). 만원단위 절삭. 인력비 38,160,000원, 세팅/철수 4,500,000원, 운영물품 3,590,000원, 기타(보험/물류/POS) 3,000,000원. 추가비용은 실비청구. 최종견적서 상 총계 54,200,000원.배상책상책임보험 의무.행사주최자배상책임보험 포함."
+  },
+  "brand_requirements": [
+   "행사주최자배상책임보험(의무사항)",
+   "Web POS 및 결제 시스템(4대 기준)",
+   "외국어 안내 스태프 2명",
+   "경호원 2명"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "로드(성수) 입지"
+  },
+  "derived": {
+   "duration": {
+    "days": 12,
+    "weekend_share": 0.33,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 58,
+    "holiday_until": 3,
+    "holiday_block_in": 4,
+    "nat_event_gap": 34,
+    "nat_event": null,
+    "doc_lag_days": 7,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 54.2
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서에 일일/누적 방문자 수 및 매출 실측 데이터가 포함되어 있지 않음(공간규모·콘텐츠·카테고리·기간·입지·대행범위 분류 정보만 존재).). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 54.2 ≈ 계약총액 54.2",
+   "contract_total_mm": 54.2,
+   "last_recognition_period": "2025-05"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1Y7EQxkXiuwNvYZqfEaqZXygSTl3qx7o_",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Y7EQxkXiuwNvYZqfEaqZXygSTl3qx7o_/view",
+   "title": "[로폼전자서명][Blue Garage] 넥스지 팝업 운영 대행계약서_주식회사 스위트스팟_20250423.pdf"
+  },
+  {
+   "doc_id": "1bWg0d-MjVjhcK1eSJ-Fg-ukA3jhhe-3n",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1bWg0d-MjVjhcK1eSJ-Fg-ukA3jhhe-3n/view",
+   "title": "블루개러지_성수EQL_넥스지 팝업스토어 운영견적서_(스위트스팟_0516최종).pdf"
+  },
+  {
+   "doc_id": "1m5E_FHkC66wDHmut-lvEx9i6FI6oojkl",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1m5E_FHkC66wDHmut-lvEx9i6FI6oojkl/view",
+   "title": "넥스지 최종견적서.pdf"
+  },
+  {
+   "doc_id": "1uH-Gnl_kteo9KppyCDxPlUC_6wmuGM1V",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1uH-Gnl_kteo9KppyCDxPlUC_6wmuGM1V/view",
+   "title": "[Blue Garage] 넥스지 팝업 운영 대행계약서_주식회사 스위트스팟_20250423_감사추적인증서.pdf"
+  },
+  {
+   "doc_id": "1yUmBCM1pdR7-e-gE8kkBM3aSoKmY2XZk",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1yUmBCM1pdR7-e-gE8kkBM3aSoKmY2XZk/view",
+   "title": "넥스지 결과보고서.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 4건: [Blue Garage] 넥스지 팝업 운영 대행계약서_, 블루개러지_성수EQL_넥스지 팝업스토어 운영견적서_(스, 넥스지 최종견적서.pdf, 넥스지 결과보고서.pdf. 미확실: 결과보고서에 방문자 수·매출 실측 없음; 정확한 면적(평)은 '20평대'로만 명시; client_name 미상(블루개러지/JYPE로 추정); fee_structure는 대행 운영비 견적으로 소비자 매출과 무관"
+ }
+}

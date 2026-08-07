@@ -1,0 +1,91 @@
+{
+ "market_record_id": "MKT-2026-0005",
+ "event_name": "비그룸 팝업 @더현대 서울",
+ "brand": "비그룸 (남성 뷰티 브랜드)",
+ "ip_or_collab": "더현대 서울 뷰티 팝업 큐레이션",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "남성 타깃 그루밍/뷰티 브랜드 백화점 팝업. 남성 방문객 비중 90%로 보도",
+  "experience_elements": [
+   "제품 체험",
+   "그루밍 상담",
+   "포토존"
+  ],
+  "promotions": [
+   "현장 구매 혜택"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "더현대 서울",
+  "venue_type": "department_store",
+  "neighborhood": "여의도",
+  "city": "서울",
+  "period_from": "2026-02-05",
+  "period_to": "2026-02-15",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 11,
+    "weekend_share": 0.36,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 10000,
+  "visitors_period_days": 11,
+  "counting_basis": "media_estimate",
+  "counting_basis_note": "기자가 분당 유입(1.3명)과 운영 시간을 기준으로 환산한 추정치('약 1만 명에 달할 것으로 환산'). 주최 측 공식 집계 아님",
+  "visitors_source_quote": "분당 1.3명꼴로 방문한 셈이며, 이를 운영 기간으로 환산하면 약 1만 명에 달할 것으로 추정된다",
+  "visitors_source_url": "https://www.mhns.co.kr/news/articleView.html?idxno=741216",
+  "visitors_source_date": "2026-03-16",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "방문객의 90%가 남성이었다"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "E"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": true,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": false
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "매체 환산 추정치라 counting_basis=media_estimate. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

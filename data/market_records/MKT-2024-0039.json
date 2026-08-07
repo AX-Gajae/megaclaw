@@ -1,0 +1,75 @@
+{
+  "market_record_id": "MKT-2024-0039",
+  "event_name": "원피스 25주년 팝업스토어 더현대 서울",
+  "brand": "현대백화점/원피스",
+  "ip_or_collab": "원피스 25주년 X 스미스앤레더·코드그라피",
+  "category": "game_webtoon",
+  "intervention": {
+    "concept_description": "원피스 25주년 기념 팝업. 의류·인형·메탈 굿즈, 스미스앤레더 가죽 콜라보, 코드그라피 에코백 콜라보, 웨이팅 등록제 운영",
+    "experience_elements": [
+      "포토존",
+      "25주년 기념 굿즈"
+    ],
+    "promotions": [
+      "스미스앤레더 가죽 상품 콜라보"
+    ],
+    "is_free_entry": true,
+    "reservation_required": false
+  },
+  "conditions": {
+    "venue": "더현대 서울 지하 2층 아이코닉존",
+    "venue_type": "department_store",
+    "neighborhood": "여의도",
+    "city": "서울",
+    "period_from": "2024-06-20",
+    "period_to": "2024-06-26",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 7,
+        "weekend_share": 0.29,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 7,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "현대백화점 집계 인용(일평균 현장 대기): '원피스 팝업엔 일평균 3000명 넘는 현장 대기 고객이 몰렸다' - 총계 미보도로 visitors_total=null(규칙 5)",
+    "visitors_source_quote": "하이큐는 네이버 사전 예약 오픈첫날 대기인원이 5000명 넘게 발생해 조기 마감됐고, 원피스 팝업엔 일평균 3000명 넘는 현장 대기 고객이 몰렸다.",
+    "visitors_source_url": "https://www.m-i.kr/news/articleView.html?idxno=1134946",
+    "visitors_source_date": "2024-06-30",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "일평균 3000명 이상 현장 대기, 평일 오후 기준 앞에 약 80팀 웨이팅(후기)",
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "현대백화점에서 원피스 팝업을 오픈한 후 3일간 전체 구매 고객의 90% 이상이 현대백화점에서 처음 상품을 구매한 고객이었다. 10명 중 9명이 신규고객인 셈이다. (매일일보 2024-06-30)",
+        "원피스 팝업스토어 오픈 3일간 전체 구매 고객 중 약 90% 이상이 현대백화점에서 처음 상품을 구매한 고객 (현대백화점 관계자, 비즈워치 2024-06-27)",
+        "원피스 팝업스토어에는 일평균 3000명 이상의 현장 대기 고객이 몰렸다.",
+        "원피스 팝업스토어 오픈 3일간 전체 구매 고객 중 약 90% 이상이 현대백화점에서 처음 상품을 구매한 고객으로, 10명 중 9명이 신규고객인 셈(현대백화점 관계자)"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "기간 2024-06-20~26은 현장 후기(티스토리) 및 보도 맥락 기반. 신규 고객 유치 효과 90%는 유통사 집계. | 병합 레코드: MKT-2024-0003 | [병합:MKT-2024-0003] 일평균 대기 3000명+은 규칙 5에 따라 신호로만 기록. 비즈워치 2024-06-27 / 오늘경제 2024-06-20(기간 확인)",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

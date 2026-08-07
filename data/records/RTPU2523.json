@@ -1,0 +1,144 @@
+{
+ "record_id": "RTPU2523",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:클리오_CLIO",
+  "space_id": "unresolved:도쿄_시부야_로프트_10F",
+  "client_party_id": "unresolved:주식회사_클리오",
+  "brand_key": "클리오",
+  "space_key": "도쿄_시부야_로프트"
+ },
+ "intervention": {
+  "concept": "클리오 브랜드의 일본 로프트(시부야, 요코하마) 팝업스토어. 제품 시연과 판매를 중심으로 운영되는 리테일 팝업이다.",
+  "brand_name": "클리오(CLIO)",
+  "experience_elements": [
+   "제품 시연",
+   "판매"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "공간 Display",
+   "집기 제작",
+   "바닥 시트",
+   "포토존"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "도쿄/요코하마",
+   "district": "시부야",
+   "venue_name": "로프트 시부야 10F, 로프트 요코하마",
+   "venue_type": "리테일 백화점/생활잡화점 내 팝업",
+   "foot_traffic_context": null,
+   "venue_slot": "10F"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-04-19",
+   "to": "2025-05-31",
+   "days": null
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "총 계약금액 66,540,000원(부가세 별도). 선금 50% 33,270,000원(계산서 2025-05-30, 지급 2025-04-10), 잔금 50% 33,270,000원(지급 2025-06-10). 견적 기준 소계 61,400,000원 + 대행수수료(정가 항목 제외 소계의 10%) 5,140,000원. 지체상금 지체 1일당 총 계약금액의 3/1000."
+  },
+  "brand_requirements": [
+   "제작물 사용 전 의뢰사 감수 및 서면 승인",
+   "의뢰사 지식재산권 귀속",
+   "정치·사회·종교적 중립 유지",
+   "안전관리 준수",
+   "보안 유지(계약 종료 후 1년)"
+  ],
+  "scale": {
+   "store_count": 2,
+   "venue_traffic_type": "multi_store",
+   "host_traffic_note": "로프트 시부야·요코하마 팝업"
+  },
+  "derived": {
+   "duration": {
+    "days": 43,
+    "weekend_share": 0.3,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 0.7,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 47,
+    "holiday_until": 14,
+    "holiday_block_in": 4,
+    "nat_event_gap": 45,
+    "nat_event": null,
+    "doc_lag_days": 23,
+    "doc_dates_found": 3
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 24087951.0,
+    "pnl_pre_accounts": 6,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2025-02-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 66.5
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 문서가 제공되지 않아 실측 방문/매출 데이터 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 66.5 ≈ 계약총액 66.54",
+   "contract_total_mm": 66.54,
+   "last_recognition_period": "2025-05"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "11cck5EE-gLal91qgwxzrts8T8zGAYcqB",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/11cck5EE-gLal91qgwxzrts8T8zGAYcqB/view",
+   "title": "클리오로프트 결과.txt"
+  },
+  {
+   "doc_id": "17Spty9PtIT3tfkm_ZDvrJMuz-Mv2vcqk",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17Spty9PtIT3tfkm_ZDvrJMuz-Mv2vcqk/view",
+   "title": "(Sweetspot) 클리오_로프트 팝업스토어_견적서_7차_250324.pdf"
+  },
+  {
+   "doc_id": "1QRS3KjvDcg37t-_-KXs634z-CI46vK3Z",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1QRS3KjvDcg37t-_-KXs634z-CI46vK3Z/view",
+   "title": "120250326064812_Sweetspot 클리오_로프트 팝업스토어_업무 계약서_250325(최종).pdf"
+  },
+  {
+   "doc_id": "1SVYi9Ob14LUu3uIJYIXJNACP9QSdVYTB",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1SVYi9Ob14LUu3uIJYIXJNACP9QSdVYTB/view",
+   "title": "[Sweetspot] 클리오_로프트 팝업스토어_기획안_250327.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: 120250326064812_Sweetspot 클리오_, [Sweetspot] 클리오_로프트 팝업스토어_기획안_, (Sweetspot) 클리오_로프트 팝업스토어_견적서_. 미확실: 결과보고서 부재로 outcome 전체(방문자·매출) 미확보; 기획서와 계약서·프로젝트메타 간 기간 불일치(기획 4/18~5/1, 계약 4/19~5/31, 메타 4/19~5/25); 면적(평) 정보 없음; 예상 방문객 수치 없음; client_party_id 정규화 ID 미확정"
+ }
+}

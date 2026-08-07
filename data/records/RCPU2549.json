@@ -1,0 +1,134 @@
+{
+ "record_id": "RCPU2549",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:아이유",
+  "space_id": "unresolved:더현대서울_에픽서울",
+  "client_party_id": null,
+  "brand_key": "아이유",
+  "space_key": "더현대서울"
+ },
+ "intervention": {
+  "concept": "아이유 관련 팝업스토어(더현대서울 에픽서울). 원문 문서가 제공되지 않아 컨셉 상세 확인 불가.",
+  "brand_name": "아이유",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": null,
+   "venue_name": "더현대서울 에픽서울",
+   "venue_type": "백화점",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-09-11",
+   "to": "2025-09-21",
+   "days": 11
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대서울 에픽서울"
+  },
+  "derived": {
+   "duration": {
+    "days": 11,
+    "weekend_share": 0.36,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 3.9,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 25,
+    "holiday_until": 22,
+    "holiday_block_in": 0,
+    "nat_event_gap": 50,
+    "nat_event": null,
+    "doc_lag_days": 2,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 13,
+    "comp_prior_at_venue": 420,
+    "comp_within_500m_open": 14,
+    "comp_within_1000m_open": 14,
+    "matched_address": "서울 영등포구 여의대로 108"
+   }
+  },
+  "demand_signals": {
+   "waiting_reported": null,
+   "sold_out": true,
+   "source": "역검색 외부 보도(2026-07-27)"
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 127.5
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-09, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-09"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "19JR1F7F0TTM_UoM1Bh0OZ9IWO0uBNMA_",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/19JR1F7F0TTM_UoM1Bh0OZ9IWO0uBNMA_/view",
+   "title": "(SMBM) 상품판매용역계약서_주식회사스위트스팟_250708_연간계약_모두싸인 날인본.pdf"
+  },
+  {
+   "doc_id": "1ueJ1-yjNDwjBOnqHGRGtvpDsu0OWsp_s",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ueJ1-yjNDwjBOnqHGRGtvpDsu0OWsp_s/view",
+   "title": "(스위트스팟) SMBM_IU 팝업_최종견적서_0929.pdf"
+  },
+  {
+   "doc_id": "1vCURjow4msUBcUIQRAPXUx-LJmjPw6NV",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1vCURjow4msUBcUIQRAPXUx-LJmjPw6NV/view",
+   "title": "아이유 에픽서울_결과보고서.pdf"
+  },
+  {
+   "doc_id": "1yIMHbemeaMBSz0xIfMGvXzriOngqTy6G",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1yIMHbemeaMBSz0xIfMGvXzriOngqTy6G/view",
+   "title": "견적서_5.POS SYSTEM 견적서 NICE VAN_스위트스팟_아이유 여의도_20250909.pdf"
+  },
+  {
+   "doc_id": "1yS5EJEHbscE_DiO7STNHPNTyCOOIM_xH",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1yS5EJEHbscE_DiO7STNHPNTyCOOIM_xH/view",
+   "title": "견적서_에이렌탈_아이유_9.9 스위트스팟(유진주) 님.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체 미제공; client_name 미상; 면적·수수료구조·요구사항 확인 불가; 방문객수·매출 실측 데이터 없음; 컨셉·체험요소·프로모션·연출 상세 없음 | 외부 라벨 역검색(2026-07-27): 수요신호 적재"
+ }
+}

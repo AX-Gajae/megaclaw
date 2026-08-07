@@ -1,0 +1,193 @@
+\documentclass[10pt]{article}
+\usepackage{icmlko}
+
+\icmlmeta{IP 파운데이션 월드모델}{93}{남은 3분의 1은 축에 없다}{안 건드린 자리 일곱을 전부 열어 보고 격차를 셋으로 갈랐다}
+
+\begin{document}
+
+\twocolumn[
+\icmlheader
+
+\begin{abstract}
+노트 92가 물었다 --- 도구가 라벨 천장(0.72$\sim$0.75)의 3분의 2에 머무는데
+표본도 배선도 도메인도 구조도 축도 다 닫혔다면 남은 것은 어디인가. 닫힌 목록을
+훑어 \textbf{손 안 댄 자리 일곱}을 찾아 전부 열었다. \textbf{회귀 벌점}
+($\alpha$를 0.03에서 100까지) --- $\pm$0.0005, \emph{완전히} 무감각하다.
+\textbf{축 순위 변환}(손으로 고른 눈금을 백분위로) $+$0.0048. \textbf{라벨 순위
+변환} $-$0.0007. \textbf{합치기}를 중앙값 $-$0.0011 · 절사평균 $+$0.0017.
+\textbf{일곱 중 하나도 구간 반폭(0.033)의 6분의 1을 못 넘는다.} 그래서 반대로
+물었다 --- \emph{축이 담은 것을 다 쓰고 있나}. 도메인 안에서 주성분 둘 대신
+원 축을 그대로 쓰고 부스팅 나무를 얹으면 $+$0.3849에서 \textbf{$+$0.4778}로
+간다($+$0.093). \textbf{축은 안 비었다.} 그런데 그 이득이 도메인을 건너면
+사라진다 --- 정렬 없이 공통 축 위에서 바로 전이하면 $-$0.032(능형) ·
+\textbf{$-$0.064}(부스팅)다. \textbf{비선형은 도메인 안에서만 산다.} 이것으로
+남은 격차가 셋으로 갈린다: 전이 $+$0.404 $\to$ 도메인 안 상한 $+$0.478
+(\textbf{전이의 값 0.074}) $\to$ 라벨 천장 0.734 (\textbf{축에 없는 것 0.256}).
+\textbf{남은 3분의 1의 대부분은 축에 없다.}
+\end{abstract}
+]
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/gap.pdf}
+\caption{왼쪽 --- 안 건드린 자리 일곱. 오른쪽 --- 남은 격차의 분해.}
+\end{figure*}
+
+\section{안 건드린 자리 일곱}
+
+\begin{table}[t]
+\centering\tsize
+\caption{$\Delta$판정치. 구간 반폭은 0.033.}
+\begin{tabular}{lrr}
+\toprule
+& $\Delta$ & 팝업 \\
+\midrule
+벌점 $\alpha$ 0.03 & $-$0.0000 & $+$0.4501 \\
+벌점 $\alpha$ 100 & $+$0.0005 & $+$0.4514 \\
+축 순위 변환 & $+$0.0048 & $+$0.4472 \\
+라벨 순위 변환 & $-$0.0007 & $+$0.4448 \\
+합치기 중앙값 & $-$0.0011 & $+$0.4549 \\
+합치기 절사평균 & $+$0.0017 & \textbf{$+$0.4620} \\
+직접 전이(정렬 없음) & $-$0.0322 & $+$0.3941 \\
+직접 전이 GBM & $-$0.0644 & $+$0.3785 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\claimx{회귀 벌점은 판정치에 \emph{전혀} 영향이 없다 --- $\alpha$를 3,000배
+바꿔도 $\pm$0.0005다. 인자 공간이 2차원이고 표준화돼 있어 정규화할 것이 없기
+때문이다.}{성분 수를 늘리면 벌점이 살아날 것이다. 노트 90이 $k{=}3$을 봤는데
+그때는 벌점을 안 바꿨다.}
+
+\section{축은 안 비었다}
+
+반대로 물었다 --- 축이 담은 것을 다 쓰고 있나. 주성분 둘 대신 \textbf{원 축을
+그대로} 쓰고 부스팅 나무를 얹었다(도메인 안 5폴드 교차검증).
+
+\begin{table}[t]
+\centering\tsize
+\caption{도메인 안 자기 $\rho$. 표본 80건 이상인 여덟.}
+\begin{tabular}{lrrr}
+\toprule
+& 주성분 2 & 원 축 능형 & \textbf{원 축 GBM} \\
+\midrule
+\textbf{애니} & $+$0.291 & $+$0.349 & \textbf{$+$0.506} \\
+게임 & $+$0.365 & $+$0.367 & $+$0.486 \\
+웹툰 & $+$0.480 & $+$0.478 & $+$0.598 \\
+도서 & $+$0.202 & $+$0.216 & $+$0.317 \\
+세계애니 & $+$0.418 & $+$0.493 & $+$0.530 \\
+모바일 & $+$0.656 & $+$0.690 & $+$0.696 \\
+만화 & $+$0.477 & $+$0.505 & $+$0.464 \\
+펀딩 & $+$0.190 & $+$0.213 & $+$0.225 \\
+\midrule
+\textbf{평균} & $+$0.3849 & $+$0.4136 & \textbf{$+$0.4778} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\claimx{2차원 선형 병목이 축에서 $+$0.093을 버리고 있다. 원 축에 부스팅 나무를
+얹으면 도메인 안 자기 상관이 $+$0.3849에서 $+$0.4778로 간다.}{도메인 안
+성적이지 전이 성적이 아니다. 다음 절이 그 구분을 만든다.}
+
+\section{그런데 건너가면 사라진다}
+
+프로크루스테스 정렬은 \emph{주성분의 회전이 임의}라서 필요했다. 그런데 공통 축
+자체는 회전이 없다 --- 슬롯 $j$는 어느 도메인에서나 슬롯 $j$다. 그러면 정렬
+없이 바로 전이할 수 있다.
+
+\begin{table}[t]
+\centering\tsize
+\caption{정렬 없이 공통 3축 위에서 바로 전이.}
+\begin{tabular}{lrr}
+\toprule
+& 판정치 & 팝업 \\
+\midrule
+\textbf{현행(주성분 2 $+$ 프로크루스테스)} & \textbf{$+$0.4038} & $+$0.4501 \\
+직접 · 능형 & $+$0.3716 & $+$0.3941 \\
+직접 · GBM & $+$0.3394 & $+$0.3785 \\
+직접 · GBM(얕게) & $+$0.3545 & $+$0.3989 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\claimx{비선형은 도메인 안에서만 산다. 원 축 부스팅이 도메인 안에서 $+$0.093을
+얻는데 도메인을 건너면 $-$0.064를 잃는다. 출처에서 배운 비선형 모양이 대상에
+안 맞기 때문이며, 프로크루스테스의 선형 회전은 그 불일치를 흡수한다.}
+{직접 전이는 대상이 여덟뿐이다(공통 3축을 다 관측하는 도메인만). 현행은 열이다.
+분모가 다르므로 $-$0.032가 과장됐을 수 있다.}
+
+노트 40이 전역 정렬을 버리고 쌍별 정렬로 간 이유, 노트 85 · 86의 공유 인코더가
+진 이유, 그리고 여기서 부스팅이 진 이유가 전부 같다 --- \textbf{도메인마다
+축과 라벨의 관계가 다르고, 그 차이를 흡수할 자유도가 필요하다.}
+
+\section{격차를 셋으로 가른다}
+
+\begin{table}[t]
+\centering\tsize
+\caption{남은 격차의 분해.}
+\begin{tabular}{lrl}
+\toprule
+& $\rho$ & \\
+\midrule
+전이(현행) & $+$0.404 & \\
+& & $\downarrow$ \textbf{전이의 값 0.074} \\
+도메인 안 상한(원 축 GBM) & $+$0.478 & \\
+& & $\downarrow$ \textbf{축에 없는 것 0.256} \\
+라벨 천장(노트 83) & $+$0.734 & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{quote}\fontsize{9.5}{11.5}\selectfont
+\textbf{남은 3분의 1의 대부분은 축에 없다.} 라벨 천장까지 0.330이 남았는데
+그중 0.256이 ``축이 안 담은 정보''이고 0.074만 ``전이가 치르는 값''이다.
+그리고 전이의 값을 줄이려는 시도(직접 전이 · 공유 인코더 · 게이트)는 지금까지
+전부 더 나빴다.
+\end{quote}
+
+\claimx{모형을 더 좋게 만드는 길은 \textbf{새 축}뿐이다. 지금 축으로는 도메인
+안에서도 $+$0.478이 상한이고, 전이는 그보다 0.074 아래다.}{``축에 없는
+0.256''에는 라벨 잡음도 섞여 있다 --- 노트 83의 천장은 두 플랫폼 라벨의 상관에서
+왔고 그 자체가 추정이다.}
+
+\section{한계}
+
+\begin{itemize}[leftmargin=1.1em,itemsep=0.15em]
+\item 도메인 안 GBM 상한을 5폴드로 냈다. 하이퍼파라미터를 안 훑었으므로
+      $+$0.478도 상한이 아니라 한 설정의 값이다.
+\item 직접 전이의 대상이 여덟이라 분모가 다르다(노트 82의 함정).
+\item 팝업 · 아이돌은 표본이 작아 GBM 상한을 못 냈다(80건 문턱).
+\item ``축에 없는 0.256''을 라벨 잡음과 못 갈랐다.
+\item 절사평균이 팝업에서 $+$0.4620으로 현행보다 낫다($+$0.0119). 채택 검정을
+      안 했다.
+\end{itemize}
+
+\section{다음}
+
+\begin{enumerate}[leftmargin=1.3em,itemsep=0.15em]
+\item \textbf{새 축을 수집한다} --- 이제 근거가 분명하다. 노트 84 · 89 · 90이
+      기존 데이터에서 만들 수 있는 축을 다 시도했으므로, \textbf{새로 긁어야
+      한다}. 후보: 리뷰 텍스트, 이미지, 가격 이력, 검색량.
+\item 절사평균을 씨앗 넷 규약으로 판정한다.
+\item 도메인 안 GBM 상한을 제대로 훑는다 --- 진짜 상한이 얼마인지.
+\item 팝업 · 아이돌의 GBM 상한을 표본이 작은 채로 재는 법.
+\end{enumerate}
+
+\vspace{0.6em}
+\hrule height 0.3pt
+\vspace{0.5em}
+{\footnotesize
+\textbf{참고문헌}\\[0.3em]
+Grinsztajn, L. et al. (2022). Why do tree-based models still outperform deep
+learning on typical tabular data? \emph{NeurIPS}.\\[0.15em]
+Ke, G. et al. (2017). LightGBM: a highly efficient gradient boosting decision
+tree. \emph{NIPS}, 3146--3154.\\[0.15em]
+Schoenemann, P. H. (1966). A generalized solution of the orthogonal Procrustes
+problem. \emph{Psychometrika}, 31(1), 1--10.\\[0.15em]
+Ben-David, S. et al. (2010). A theory of learning from different domains.
+\emph{Machine Learning}, 79(1--2), 151--175.\\[0.15em]
+Lord, F. M., Novick, M. R. (1968). \emph{Statistical Theories of Mental Test
+Scores}. Addison-Wesley.
+}
+
+\end{document}

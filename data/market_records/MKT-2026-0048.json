@@ -1,0 +1,90 @@
+{
+ "market_record_id": "MKT-2026-0048",
+ "event_name": "파파존스 X 토이스토리5 '피자 플래닛' 팝업(성수)",
+ "brand": "파파존스/디즈니·픽사",
+ "ip_or_collab": "토이스토리5 X 파파존스",
+ "category": "character",
+ "intervention": {
+  "concept_description": "'토이스토리5' 개봉 연계 파파존스 콜라보 팝업 '피자 플래닛'. 성수동에서 2026-06-12~14 운영.",
+  "experience_elements": [
+   "테마 팝업",
+   "시식·굿즈"
+  ],
+  "promotions": [
+   "한정 메뉴"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "성수동(서울 성동구)",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수",
+  "city": "서울",
+  "period_from": "2026-06-12",
+  "period_to": "2026-06-14",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.67,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 4000,
+  "visitors_period_days": 3,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "파파존스 측 집계(전자신문 계열 jjcnews 보도 인용)",
+  "visitors_source_quote": "지난 12일부터 14일까지 성수동에서 열린 파파존스 X 토이스토리5 '피자 플래닛' 팝업에는 4,000여 명이 방문했다.",
+  "visitors_source_url": "https://www.jjcnews.co.kr/news/articleView.html?idxno=60421",
+  "visitors_source_date": "2026-06-15",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "첫날 개장 전 300명 이상 대기",
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "첫날 개장 전부터 300명 이상이 대기했다. (스포츠한국 2026-06-15)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "병합 레코드:  | 검증 실패(2026-07-27): visitors 출처 기사에서 수치 미확인/무관 — anchor 사용 금지",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "failed"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

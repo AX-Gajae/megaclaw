@@ -1,0 +1,96 @@
+{
+ "market_record_id": "MKT-2024-0065",
+ "event_name": "2024 한돈데이 팝업스토어",
+ "brand": "한돈자조금관리위원회",
+ "ip_or_collab": null,
+ "category": "other",
+ "intervention": {
+  "concept_description": "한돈데이(10.01) 기념 체험형 팝업. 미로형 체험존·미식 공간·굿즈 이벤트",
+  "experience_elements": [
+   "미로형 체험 공간",
+   "한돈 시식·야장",
+   "굿즈 이벤트"
+  ],
+  "promotions": [
+   "사전 예약 운영"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "성수 XYZ SEOUL",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2024-10-01",
+  "period_to": "2024-10-09",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 9,
+    "weekend_share": 0.22,
+    "holiday_days": 3
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 15000,
+  "visitors_period_days": 9,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "한돈자조금 발표(성료 보도)",
+  "visitors_source_quote": "이번 2024 한돈데이 팝업스토어에는 9일간 약 1만 5천여 명의 방문객이 몰리며 한돈에 대한 뜨거운 관심을 입증했다.",
+  "visitors_source_url": "https://www.amnews.co.kr/news/articleView.html?idxno=61791",
+  "visitors_source_date": "2024-10-10",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "오픈 전 약 400명 이상 대기 행렬",
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "특히 오픈 시간 전부터 약 400여 명 이상의 대기 행렬이 이어지는 등"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "같은 행사장 내 도드람 'Falling in CANPING' 부스(8천여 명)는 별도 레코드(전체 1.5만 중 도드람존 수치, 중복 주의). | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

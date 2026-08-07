@@ -1,0 +1,97 @@
+{
+ "market_record_id": "MKT-2025-0096",
+ "event_name": "SSG닷컴 '미지엄(美지엄)' 페스타 @성수",
+ "brand": "SSG닷컴",
+ "ip_or_collab": "SSG 브랜드 큐레이션(뷰티·식품 통합)",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "SSG닷컴 첫 오프라인 페스타. '뷰티 오브 쓱' 존 포함 뷰티+푸드 통합 체험(겔랑 등 뷰티 브랜드 참여)",
+  "experience_elements": [
+   "뷰티 오브 쓱 존",
+   "브랜드 체험 부스",
+   "포토존"
+  ],
+  "promotions": [
+   "유료 티켓(얼리버드)",
+   "현장 한정 혜택"
+  ],
+  "is_free_entry": false,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "성수동 행사장(레이어57 등)",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2025-10-15",
+  "period_to": "2025-10-19",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 5,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 12000,
+  "visitors_period_days": 5,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "SSG닷컴 발표 인용(매체 보도)",
+  "visitors_source_quote": "미지엄에 총 1만2000명이 방문했다",
+  "visitors_source_url": "https://www.newspim.com/news/view/20251024000295",
+  "visitors_source_date": "2025-10-24",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": "얼리버드 티켓 1600매 오픈 당일 완판",
+   "signal_quotes": [
+    "얼리버드 티켓 1600매가 오픈 당일 완판됐다 (이코노미스트 2025-10-16, https://n.news.naver.com/article/243/0000086404)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "D",
+   "flags": [
+    "D"
+   ],
+   "why": "스코프 혼합(합산/총계) 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "뷰티+식품 통합 페스타로 순수 뷰티 단독 행사는 아님(뷰티 존 포함). 카테고리 해석 주의. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

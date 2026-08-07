@@ -1,0 +1,70 @@
+{
+ "market_record_id": "MKT-2025-0142",
+ "event_name": "몽벨 나인원 한남 단독 팝업스토어",
+ "brand": "몽벨 mont-bell (엠비케이코퍼레이션)",
+ "ip_or_collab": null,
+ "category": "fashion",
+ "intervention": {
+  "concept_description": "하이엔드 상권 나인원 한남 단독 팝업, 시즌 핵심 다운 라인업 중심",
+  "experience_elements": [],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "나인원 한남",
+  "venue_type": "other",
+  "neighborhood": "한남동",
+  "city": "서울",
+  "period_from": null,
+  "period_to": null,
+  "area_pyeong": null,
+  "multi_store": false
+ },
+ "outcome": {
+  "visitors_total": 4000,
+  "visitors_period_days": 10,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "몽벨코리아 발표 인용",
+  "visitors_source_quote": "10일간 누적 매출 약 8000만원, 방문객 4000명을 기록하며 하이엔드 상권에서 브랜드 경쟁력을 확인했다.",
+  "visitors_source_url": "https://fashionbiz.co.kr/article/222282",
+  "visitors_source_date": "2025-12-16",
+  "sales_krw": 80000000,
+  "sales_source_quote": "몽벨은 이번 팝업스토어를 통해 10일 동안 누적 매출 약 8000만원, 방문객 4000명을 기록했다.",
+  "sales_source_url": "https://www.bizwnews.com/news/articleView.html?idxno=118570",
+  "sales_source_date": "2025-12-16",
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "10일간 운영(정확한 시작·종료일 미공개, 2025-12-16 종료 보도). 나인원 한남은 고급 주거단지 내 상업공간으로 venue_type other 처리. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "기간 미상",
+ "verification": {
+  "visitors": "verified",
+  "sales": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

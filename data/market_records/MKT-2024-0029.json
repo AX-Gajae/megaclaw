@@ -1,0 +1,97 @@
+{
+ "market_record_id": "MKT-2024-0029",
+ "event_name": "메디힐 '솔루션북' 팝업스토어 @스타필드 수원",
+ "brand": "메디힐",
+ "ip_or_collab": "TWS(투어스) 브랜드 뮤즈, 스타필드×SSG 협업",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "별마당 도서관에서 영감받은 초대형 책('메디힐 솔루션 북') 콘셉트. 초대형 슬롯머신 이벤트, 체험존, 100% 당첨 게임존, TWS 포토존",
+  "experience_elements": [
+   "초대형 책 슬롯머신",
+   "체험존",
+   "100% 당첨 게임존",
+   "TWS 포토존",
+   "강유미 이벤트"
+  ],
+  "promotions": [
+   "대표 제품 최대 51% 할인",
+   "SSG닷컴 온라인 기획전 연계"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "스타필드 수원",
+  "venue_type": "mall",
+  "neighborhood": "장안구",
+  "city": "수원",
+  "period_from": "2024-05-08",
+  "period_to": "2024-05-21",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(invite)",
+   "access_type": "invite"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 20000,
+  "visitors_period_days": 14,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "브랜드 성료 보도(2024-05-27) 인용",
+  "visitors_source_quote": "메디힐이 수원 스타필드에서 '메디힐, 피부 고민에 대한 답을 펼치다'라는 메시지와 함께 초대형 책을 모티브로 선보인 팝업스토어가 누적 방문객 2만여명을 동원하며 성공적으로 마무리됐다고 27일 밝혔다",
+  "visitors_source_url": "https://www.meconomynews.com/news/articleView.html?idxno=94215",
+  "visitors_source_date": "2024-05-27",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "팝업에서만 제품 24종 판매를 달성"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": true,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "20000은 '2만여 명' 근사치로 기록. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

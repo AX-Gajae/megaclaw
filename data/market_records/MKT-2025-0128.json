@@ -1,0 +1,72 @@
+{
+  "market_record_id": "MKT-2025-0128",
+  "event_name": "교촌그룹 크리스마스 팝업 @신세계백화점 대구점",
+  "brand": "교촌에프앤비(교촌그룹)",
+  "ip_or_collab": "교촌치킨·문베어·발효공방1991",
+  "category": "fnb",
+  "intervention": {
+    "concept_description": "치킨 중심 수제맥주·전통주·소스까지 경험하는 복합 미식 팝업",
+    "experience_elements": [
+      "현장 시식·시음",
+      "페어링 체험"
+    ],
+    "promotions": [
+      "싱글윙 세트·치룽지 판매"
+    ],
+    "is_free_entry": true,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "신세계백화점 대구점 지하 1층 푸드마켓",
+    "venue_type": "department_store",
+    "neighborhood": "동대구",
+    "city": "대구",
+    "period_from": "2025-12-19",
+    "period_to": "2025-12-25",
+    "area_pyeong": null,
+    "multi_store": null,
+    "derived": {
+      "duration": {
+        "days": 7,
+        "weekend_share": 0.29,
+        "holiday_days": 1
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 7,
+    "counting_basis": "purchase",
+    "counting_basis_note": "교촌에프앤비 발표(뉴시스): '일주일간 진행된 이번 팝업 행사는 약 5300건의 판매 건수를 기록했다.' (판매 건수 기준, 방문객 수 미기재)",
+    "visitors_source_quote": "일주일간 진행된 이번 팝업행사는 약 5,300건의 판매 건수를 기록했는데, 이는 1분당 1.3건 판매한 수치로 교촌그룹의 브랜드 파워를 현장에서 입증했다.",
+    "visitors_source_url": "https://www.dailian.co.kr/news/view/1592047/",
+    "visitors_source_date": "2025-12-30",
+    "sales_krw": null,
+    "sales_source_quote": "",
+    "sales_source_url": "",
+    "sales_source_date": "",
+    "demand_signals": {
+      "waiting_time_reported": true,
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "행사 기간 동안 교촌 팝업 부스에는 연일 대기 행렬이 이어졌다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "판매 건수 5,300건(1분당 1.3건). 방문객 수 미기재 | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

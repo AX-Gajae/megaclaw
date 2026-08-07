@@ -1,0 +1,94 @@
+{
+ "market_record_id": "MKT-2025-0028",
+ "event_name": "무신사 플레이어×KBO '고 팀 무신사 KBO 팬 페스타' 팝업스토어",
+ "brand": "무신사 플레이어",
+ "ip_or_collab": "KBO(10개 구단)",
+ "category": "fashion",
+ "intervention": {
+  "concept_description": "'성수동 속 야구장' 콘셉트. 구단 유니폼·볼파크 에디션 판매, 야구 미니게임, 럭키드로우, F&B 부스",
+  "experience_elements": [
+   "야구 미니게임(배팅·도루·피칭)",
+   "럭키드로우",
+   "포토존",
+   "F&B"
+  ],
+  "promotions": [
+   "볼파크 에디션 단독 발매",
+   "구매 고객 짐색 선착순 증정"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "무신사 스퀘어 성수 4",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수",
+  "city": "서울",
+  "period_from": "2025-04-16",
+  "period_to": "2025-04-20",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 5,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 14000,
+  "visitors_period_days": 5,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "무신사 제공 수치. 행사기간 수억원대 매출(itnk) 언급 있으나 정확액 미공개",
+  "visitors_source_quote": "지난 16일부터 20일까지 닷새간 무신사 스퀘어 성수 4에서 개최한 팝업에는 1만4000명의 이상의 야구팬들이 다녀갔다.",
+  "visitors_source_url": "https://fashionbiz.co.kr/article/215636",
+  "visitors_source_date": "2025-04-22",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": true,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "'볼파크 에디션' 반소매 티셔츠는 6개 구단 제품이 완판될 만큼 인기를 얻었다.",
+    "볼파크 에디션은 첫 발매된 지난 14일부터 일주일간 온·오프라인에서 5000개 이상 판매되며 뜨거운 반응을 얻었다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "itnk(2025-04-22)는 '행사기간 수억원대의 매출' 보도(정확액 없어 sales null). | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

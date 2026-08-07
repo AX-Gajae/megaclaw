@@ -1,0 +1,147 @@
+{
+ "record_id": "RTPU2603",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:덴티스테_Dentiste",
+  "space_id": "unresolved:올리브영N성수",
+  "client_party_id": "unresolved:실란트로_주식회사",
+  "brand_key": "덴티스테",
+  "space_key": "올리브영N성수"
+ },
+ "intervention": {
+  "concept": "덴티스테의 데일리 오랄케어 루틴을 시간대별 존으로 구성한 버짓형 팝업스토어. Morning·Day·Night 루틴존과 원픽존, 마이 리프레시 루틴존을 통해 브랜드 제품 체험 동선을 연출. 올리브영N성수 외부벽면 랩핑으로 유동인구 유입 유도.",
+  "brand_name": "덴티스테 (Dentiste)",
+  "experience_elements": [
+   "루틴존 Morning (세면대·선반·거울 등 공간구성, 룰렛 800*800)",
+   "루틴존 Day (선반·테이블·아크릴·서랍장 등)",
+   "루틴존 Night (침대·선반·테이블 등)",
+   "원픽존 (게임 도구 고깔던지기)",
+   "마이 리프레시 루틴존 (선반 및 매대·조명, 이동식 매대, 이벤트 테이블)",
+   "입구월 스카시 간접등",
+   "포토/체험 VMD 소품"
+  ],
+  "promotions": [
+   "룰렛 이벤트",
+   "고깔던지기 게임"
+  ],
+  "staging_tags": [
+   "외부벽면 유리 랩핑",
+   "외벽랩핑",
+   "스카시 간접등",
+   "켈지 시공",
+   "VMD 소품 연출",
+   "이벤트 테이블"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "성동구",
+   "venue_name": "올리브영N성수 (Olive Young N 성수)",
+   "venue_type": "올리브영 매장 내 팝업",
+   "foot_traffic_context": "성수 상권 올리브영 대형 매장, 외부벽면 랩핑으로 유동인구 유입 유도"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2026-01-03",
+   "to": "2026-01-11",
+   "days": 9
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "계약서 총 계약금액 35,000,000원(VAT별도). 선금 50% 17,500,000원(계산서 발행 25.12.19, 지급 25.12.24까지) / 잔금 50% 17,500,000원(계산서 발행 26.1.12, 지급 26.1.23까지). 입금계좌 KB국민 378801-01-088226 (주)스위트스팟. ※견적서 총계는 36,600,000원(VAT10% 별도): 제작비 32,890,000원+기획료 4,000,000원+진행비 1,000,000원 합계 37,890,000원에 대행수수료(소계의10%) 3,389,000원 가산 후 NEGO -4,629,000원 조정. 예산 35M(계약) vs 36.6M(견적) 불일치."
+  },
+  "brand_requirements": [
+   "아트워크·부스·포토존·영상 등 제작물 사용 전 의뢰사 감수 필수",
+   "공간연출 및 컨셉 기획, 장치장식물 제작, 세팅 및 철수 포함",
+   "사전 방염 및 폐기물 처리",
+   "안전보건관리 준수",
+   "지식재산권 무단 사용/등록 금지",
+   "비밀유지"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "성수 상권 올리브영 대형 매장, 외부벽면 랩핑으로 유동인구 유입 유도"
+  },
+  "derived": {
+   "duration": {
+    "days": 9,
+    "weekend_share": 0.44,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 18.1,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 86,
+    "holiday_until": 42,
+    "holiday_block_in": 0,
+    "nat_event_gap": 51,
+    "nat_event": null,
+    "doc_lag_days": 12,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 8475200.0,
+    "pnl_pre_accounts": 3,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-12-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 36.6
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(제공된 계약서·견적서에는 방문객수 및 POS 소비자매출 실적 데이터 없음. 리서치 요약상 운영 성과 수치 미확보(갭). P&L 시드는 매출 19.1백만원/순손익 -2.0백만원(적자)이나 이는 회사 손익 추정치로 POS 소비자매출 아님.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식액 36.6 ≈ 계약총액 35.0 (±10%)",
+   "contract_total_mm": 35.0,
+   "last_recognition_period": "2026-01"
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "1QBETti1DoMpJGEjKLfa7UrTEqoGzirEc",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1QBETti1DoMpJGEjKLfa7UrTEqoGzirEc/view",
+   "title": "RTPU2603_덴티스테 OY 팝업스토어_견적서_최종본.pdf"
+  },
+  {
+   "doc_id": "1p8OvuXrWyvwXSrLE0cNaAtk6MazrHUp8",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1p8OvuXrWyvwXSrLE0cNaAtk6MazrHUp8/view",
+   "title": "임시결과보고서.txt"
+  },
+  {
+   "doc_id": "1zeY-DHMdF5l_1lyZxYfMCqTETsqsQ4Ad",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1zeY-DHMdF5l_1lyZxYfMCqTETsqsQ4Ad/view",
+   "title": "2026 올리브영 N성수 덴티스테 팝업스토어_스위트스팟_계약서_20251222.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: 2026 올리브영 N성수 덴티스테 팝업스토어_스위트스팟, RTPU2603_덴티스테 OY 팝업스토어_견적서_최종본. 미확실: 의뢰사 법인 불일치: 계약서는 '기와 주식회사'(대표 박주원, 경기 용인), 견적서 수신은 '실란트로 권수연 매니저', 리서치는 실란트로㈜ 이효정 팀장 — 발주 법인/담당자 확정 필요; 계약서 제2조 행사기간이 '2025.01.02~2025.01.11'로 기재(오기 추정), 실제 운영은 2026-01-03~01-11로 프로젝트 메타와 정합; 면적(평) 미기재 — 견적서에 유리랩핑 50㎡, 켈지 11㎡ 등 부분 수치만 존재; 방문객수·POS 매출 등 운영 성과 수치 문서 미포함; 계약금액 35,000,000원 vs 견적 총계 36,600,000원 불일치; 실제 성수 공간 좌표·정확한 매장 위치 미확보(Sophy platform_spot 오매핑)"
+ }
+}

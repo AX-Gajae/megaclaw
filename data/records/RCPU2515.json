@@ -1,0 +1,123 @@
+{
+ "record_id": "RCPU2515",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:벤츠_Mercedes_Benz",
+  "space_id": "unresolved:킨텍스_KINTEX",
+  "client_party_id": null,
+  "brand_key": "메르세데스벤츠",
+  "space_key": "킨텍스"
+ },
+ "intervention": {
+  "concept": "2025 서울모빌리티쇼 벤츠 굿즈존 팝업.",
+  "brand_name": "Mercedes-Benz",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": "고양",
+   "district": null,
+   "venue_name": "킨텍스",
+   "venue_type": "전시장",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-04-03",
+   "to": "2025-04-13",
+   "days": 11
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "킨텍스 2025 서울모빌리티쇼"
+  },
+  "derived": {
+   "duration": {
+    "days": 11,
+    "weekend_share": 0.36,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 31,
+    "holiday_until": 30,
+    "holiday_block_in": 0,
+    "nat_event_gap": 61,
+    "nat_event": null,
+    "doc_lag_days": 10,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 83117.0,
+    "pnl_pre_accounts": 1,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-03-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 14.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-04, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-04"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1H_1QTp6nydS75OJKP_P-0bnLRstkvG5n",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1H_1QTp6nydS75OJKP_P-0bnLRstkvG5n/view",
+   "title": "2025 서울 모빌리티쇼 메르세데스-벤츠 부스 운영 대행 견적서 250314(보험 수정).pdf"
+  },
+  {
+   "doc_id": "1X7BjPjokORGnZ3tGzAScibMtgZFR339I",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1X7BjPjokORGnZ3tGzAScibMtgZFR339I/view",
+   "title": "벤츠 결과보고서.pdf"
+  },
+  {
+   "doc_id": "1gEfUD8a8CryIFsWh9PSBtRqk0AjfycSw",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1gEfUD8a8CryIFsWh9PSBtRqk0AjfycSw/view",
+   "title": "250324_SMS 2025_Collection 운영 대행 계약서_스위트스팟.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서 텍스트 없음 - 프로젝트 메타데이터만 제공됨; client_name; 면적; 수수료구조; 방문/매출 실측 데이터; 컨셉/체험요소/프로모션 세부사항"
+ }
+}

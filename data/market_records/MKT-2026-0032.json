@@ -1,0 +1,92 @@
+{
+ "market_record_id": "MKT-2026-0032",
+ "event_name": "노티드×와일드 리프트 '카이사의 피트스톱' 팝업스토어",
+ "brand": "노티드(Knotted)",
+ "ip_or_collab": "라이엇 게임즈 '리그 오브 레전드: 와일드 리프트' IP(스킨 테마 '네온 레이서') 협업",
+ "category": "fnb",
+ "intervention": {
+  "concept_description": "게임 IP를 디저트로 재해석한 협업 팝업. 매장 전체를 네온 레이싱 콘셉트로 꾸미고 캐릭터 모티브 한정 메뉴 6종 판매",
+  "experience_elements": [
+   "한정 메뉴 6종(카이사의 공허맛 도넛 등)",
+   "와일드 리프트 체험존·아이템 정비소·네온 서킷 탈출·포로의 간식 시간 미션",
+   "커스텀 키링 리워드",
+   "포토이즘 부스"
+  ],
+  "promotions": [
+   "협업 메뉴 구매 시 포토카드·스킨 쿠폰 한정 굿즈 제공"
+  ],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "잠실 롯데월드몰 노티드 매장",
+  "venue_type": "mall",
+  "neighborhood": "잠실",
+  "city": "서울",
+  "period_from": "2026-05-08",
+  "period_to": "2026-05-17",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 4500,
+  "visitors_period_days": 10,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "노티드가 20일 밝힌 팝업 기간 총 방문객 수를 언론 전재",
+  "visitors_source_quote": "20일 노티드에 따르면 지난 5월 8일부터 17일까지 잠실 롯데월드몰 노티드 매장에서 열린 이번 팝업에는 총 4500여명이 방문했다.",
+  "visitors_source_url": "https://www.newspim.com/news/view/20260520000927",
+  "visitors_source_date": "2026-05-20",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "팝업 기간 노티드 매출은 전주 대비 65% 이상 증가한 것으로 나타났다.(뉴스핌 2026-05-20)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "뉴스핌·뉴스탭·비욘드포스트·엠투데이 등 동일 수치(2026-05-20). 매출은 절대액 미공개, 전주 대비 +65% 증가율만 공개 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

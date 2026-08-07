@@ -1,0 +1,85 @@
+{
+ "market_record_id": "MKT-2024-0053",
+ "event_name": "넷마블 쿵야 레스토랑즈 팝업스토어 '용기상점'(신세계백화점 부산 센텀시티)",
+ "brand": "넷마블",
+ "ip_or_collab": "쿵야 레스토랑즈(넷마블 캐릭터 IP)",
+ "category": "game_webtoon",
+ "intervention": {
+  "concept_description": "넷마블 쿵야 브랜드 IP 팝업(부산 신세계백화점, 2024년 8월 16일부터 열흘간). 한정수량 시그니처 굿즈 '용기박스' 판매",
+  "experience_elements": [
+   "캐릭터 굿즈 판매"
+  ],
+  "promotions": [
+   "한정수량 용기박스"
+  ],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "신세계백화점 센텀시티점",
+  "venue_type": "department_store",
+  "neighborhood": "센텀",
+  "city": "부산",
+  "period_from": "2024-08-16",
+  "period_to": "2024-08-25",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 40000,
+  "visitors_period_days": 10,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "넷마블 발표 인용: '최근 넷마블이 쿵야 브랜드를 이용한 IP 쿵야 레스토랑즈의 팝업스토어를 열어 열흘간 4만여 명이 방문해 큰 호응을 얻었다고 밝혔다'",
+  "visitors_source_quote": "최근 넷마블이 '쿵야' 브랜드를 이용한 IP '쿵야 레스토랑즈'의 팝업스토어를 열어 열흘간 4만여 명이 방문해 큰 호응을 얻었다고 밝혔다. 넷마블이 지난 8월 16일부터 열흘간 부산 신세계백화점에서 운영한 팝업스토어 '쿵야 레스토랑즈 용기상점'에서는 한정수량 판매되는 시그니처 굿즈 '용기박스'가 매일 매진되는 등 큰 인기를 얻기도 했다.",
+  "visitors_source_url": "http://www.ilovepcbang.com/news/articleView.html?idxno=108310",
+  "visitors_source_date": "2024-08-30",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": "한정수량 시그니처 굿즈 '용기박스' 매일 매진",
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "아이러브PC방 원문 웹오픈 실패(내부 오류), 검색 추출 전문 기반. '4만여 명'을 40000으로 기록. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

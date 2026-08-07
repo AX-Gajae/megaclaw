@@ -1,0 +1,129 @@
+{
+ "record_id": "RIPU2504",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:TAMS",
+  "space_id": "unresolved:unknown",
+  "client_party_id": null,
+  "brand_key": "TAMS",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "TAMS 팝업스토어. 원문 문서가 제공되지 않아 상세 컨셉을 확인할 수 없음.",
+  "brand_name": "TAMS",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-05-16",
+   "to": "2025-06-01",
+   "days": 17
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 17,
+    "weekend_share": 0.35,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 10,
+    "holiday_until": 21,
+    "holiday_block_in": 0,
+    "nat_event_gap": 18,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 16466172.0,
+    "pnl_pre_accounts": 5,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-04-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 243.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-06, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-06"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "12WmxVv0qURWFcXRqvT2xQjIyEqPmhYry",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/12WmxVv0qURWFcXRqvT2xQjIyEqPmhYry/view",
+   "title": "1_탐스 팝업스토어_계약서(변경 합의서).pdf"
+  },
+  {
+   "doc_id": "17byMnW1jYCWyXhKIBiBCnnUogEQGPZPo",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/17byMnW1jYCWyXhKIBiBCnnUogEQGPZPo/view",
+   "title": "4_[스위트스팟] 탐스싱싱마켓 팝업스토어 결과보고서.pdf"
+  },
+  {
+   "doc_id": "1bi7s1nf6eEi_qKUodOYd3w4Y8O9uH_W0",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1bi7s1nf6eEi_qKUodOYd3w4Y8O9uH_W0/view",
+   "title": "3_탐스싱싱마켓_견적서_250528.pdf"
+  },
+  {
+   "doc_id": "1pN9IwYr-dCB1grZBvhne7hoWUAz0iOov",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1pN9IwYr-dCB1grZBvhne7hoWUAz0iOov/view",
+   "title": "2_[스위트스팟] 탐스싱싱마켓 팝업스토어 실행운영안.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체 미제공; client_name 불명; venue 및 입지 정보 없음; 면적 정보 없음; 수수료 구조 없음; 컨셉·체험요소·프로모션 없음; 방문자수·매출 실측 없음; 예상 방문자 없음"
+ }
+}

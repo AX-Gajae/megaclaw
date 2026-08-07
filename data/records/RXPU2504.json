@@ -1,0 +1,373 @@
+{
+ "record_id": "RXPU2504",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:바오패밀리_x_삼성라이온즈",
+  "space_id": "unresolved:더현대대구_9F_더포럼_B2F_크리에이티브라운지",
+  "client_party_id": null,
+  "brand_key": "바오패밀리",
+  "space_key": "더현대대구"
+ },
+ "intervention": {
+  "concept": "삼성 라이온즈 x 바오패밀리 협업 팝업스토어. 더현대 대구에서 상품 판매와 함께 스탬프 투어 이벤트, 캡슐토이 머신, 포토카드, 포토존 등 체험 콘텐츠를 운영했다. 야구 사인 유니폼·야구공, 에버랜드 기프트카드 등 경품 이벤트를 병행했다.",
+  "brand_name": "바오패밀리 x 삼성라이온즈",
+  "experience_elements": [
+   "상품 판매",
+   "스탬프 투어 이벤트",
+   "캡슐토이 머신",
+   "포토카드",
+   "포토존"
+  ],
+  "promotions": [
+   "라이온즈x바오패밀리 피규어 캡슐토이 경품",
+   "에버랜드 기프트카드 경품",
+   "야구 사인 유니폼(구자욱/원태인/강민호) 경품",
+   "야구 사인 야구공(구자욱/원태인/강민호) 경품",
+   "사전 예약",
+   "현장 웨이팅 및 워크인"
+  ],
+  "staging_tags": [
+   "캡슐토이머신",
+   "포토존",
+   "포토카드"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": 1400,
+   "capacity_per_session": 35,
+   "giveaway_qty": 1000,
+   "area_sqm": null,
+   "planned_operating_days": 16,
+   "throughput_units": 3,
+   "unit_minutes": 30,
+   "operating_hours_per_day": 9.5,
+   "staff_count": 31,
+   "experience_density": 4,
+   "goods_scale": 4,
+   "photo_zones": 3,
+   "collab_strength": 4,
+   "ip_awareness": 4,
+   "target_breadth": 3,
+   "entry_friction": 4,
+   "media_push": 2,
+   "season_fit": 4,
+   "venue_prominence": 3
+  },
+  "attr_meta": {
+   "evidence": "운영가이드(0420): '4.22~5.7 / 16일간', 예약시스템 '사전예약 2일 + 현장예약 14일'(회차표 16열). '입장인원 약 1,400명/일, 35팀/회차'(사전예약기 약 900명/일·40~55명/회차). '회차별 30분 단위 운영', 운영시간 월-목 10:30~20:00(19회차)·금-일 10:30~20:30(20회차). 인력 '1주차 34명 / 2주차 이후 31명'. 병목: '포스기 3대용 계산대 신규 설치'(결제대기 이슈 대응). '바오 스틱 풍선 일수량 1,000개 소진 후 리워드 스탬프만 지급' — 일 수량 기준. '예상 이용객 약 2만명'은 기간 총원이라 plan_visitors_per_day에 미사용.",
+   "confidence": "high",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": "대구",
+   "district": null,
+   "venue_name": "더현대 대구",
+   "venue_type": "백화점",
+   "foot_traffic_context": "9F 더 포럼, B2F 크리에이티브 라운지"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-04-22",
+   "to": "2025-05-07",
+   "days": 16
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": "계약 총액 및 수수료 구조 관련 문서(계약서/견적서) 미제공"
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대 대구 백화점 9F/B2F"
+  },
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 16,
+    "weekend_share": 0.25,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 10.1,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 50,
+    "holiday_until": 11,
+    "holiday_block_in": 4,
+    "nat_event_gap": 42,
+    "nat_event": null,
+    "doc_lag_days": 13,
+    "doc_dates_found": 3
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 73,
+    "comp_within_500m_open": 1,
+    "comp_within_1000m_open": 1,
+    "matched_address": "대구 중구 달구벌대로 2077"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 543373.0,
+    "pnl_pre_accounts": 5,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2025-02-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 20000,
+   "popup_zone_pass_rate": 0.4,
+   "host_traffic_est": 8000.0,
+   "venue_scale_tier": 3,
+   "confidence": "medium",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": 10000,
+   "sales_krw": null,
+   "rev_mm_recognized": 128.3
+  },
+  "counting_method": "unknown",
+  "counting_basis": "원문 표현 '7일만에 1만 여명이 방문' — 개막일(4/22)부터 7일간 누적 방문객이며 전체 기간(4/22~5/7) 최종 집계가 아님. 운영사(삼성물산 리조트부문) 발표 인용.",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "방문: 역검색 외부 보도 — https://zdnet.co.kr/view/?no=20250430092451 (2025-04-30) | 인용: 지난 22일부터 '삼성 라이온즈X바오패밀리' 팝업 스토어도 더현대 대구에서 성황리 운영중으로 최근 삼성 라이온즈의 선전에 힘입어 7일만에 1만 여명이 방문해 지난해 더현대 서울에서 열린 팝업 스토어보다 더 많은 방문객과 판매 건수를 기록 중이다.",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-05, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-05"
+  },
+  "label_source": "external_press",
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "10DNHNWNOIA78G_9BeH0zrsu3xHRjm1Ye",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/10DNHNWNOIA78G_9BeH0zrsu3xHRjm1Ye/view",
+   "title": "기프트 한국_중형, 대형 사이즈, 하늘색, 프린팅 가능.png"
+  },
+  {
+   "doc_id": "10yzsZggJ66tV5PKEG91GoIYM9BbqU4CS",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/10yzsZggJ66tV5PKEG91GoIYM9BbqU4CS/view",
+   "title": "더현대대구 팝업 제안서_0717.pdf"
+  },
+  {
+   "doc_id": "10zvG-C0Q9kS3y6-FibB2uWwFXX9jCk0F",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/10zvG-C0Q9kS3y6-FibB2uWwFXX9jCk0F/view",
+   "title": "더현대대구 공간제안서.pptx"
+  },
+  {
+   "doc_id": "14bONJFZDgQRBL3lDUzC3sgICk4RbAwBj",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/14bONJFZDgQRBL3lDUzC3sgICk4RbAwBj/view",
+   "title": "코스트몰_중형, 대형 사이즈, 검은색 단일, 기성품.png"
+  },
+  {
+   "doc_id": "1C5uYq5LrVItTK1c5kjtjm5QdQqYuQEwq",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1C5uYq5LrVItTK1c5kjtjm5QdQqYuQEwq/view",
+   "title": "푸바오 팝업스토어_더현대서울_운영견적서.xlsx"
+  },
+  {
+   "doc_id": "1CCXogHCDKaizvEMqU8PaCaPkuYR1Xkqi",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CCXogHCDKaizvEMqU8PaCaPkuYR1Xkqi/view",
+   "title": "레드프린팅 앤 프레스_56*44 잉크 미포함.png"
+  },
+  {
+   "doc_id": "1DhIQojXD3u_7PXaJxmhubFViyy1vpFmW",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1DhIQojXD3u_7PXaJxmhubFViyy1vpFmW/view",
+   "title": "(Sweetspot)바오패밀리x삼성라이온즈 더현대 대구 운영 견적서_0407.xlsx"
+  },
+  {
+   "doc_id": "1Dj-vesGE63H-FG-HBLAyD76VtlJ_hByV",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Dj-vesGE63H-FG-HBLAyD76VtlJ_hByV/view",
+   "title": "(Sweetspot)바오패밀리x삼성라이온즈 더현대 대구 운영 견적서_0407.pdf"
+  },
+  {
+   "doc_id": "1Dml0yH2hwzT4AYBRT4G1jOaruIVf3tnO",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Dml0yH2hwzT4AYBRT4G1jOaruIVf3tnO/view",
+   "title": "(더탑-250402)바오패밀리 x 삼성라이온즈 더현대 대구 팝업스토어 운영비 사전 견적서_V1.xlsx"
+  },
+  {
+   "doc_id": "1Dn30EryH_YrtMEhs-fRTfPUujXVgin1g",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Dn30EryH_YrtMEhs-fRTfPUujXVgin1g/view",
+   "title": "(더탑-250406)바오패밀리 x 삼성라이온즈 더현대 대구 팝업스토어 운영비 사전 견적서_V2.xlsx"
+  },
+  {
+   "doc_id": "1HKYRXZpXikUbNfLeLZULi1h1d3AZkiBN",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1HKYRXZpXikUbNfLeLZULi1h1d3AZkiBN/view",
+   "title": "견적서_리드벨롭먼트(더현대대구)_250409.pdf"
+  },
+  {
+   "doc_id": "1IdjSJ0bLag7g9gWhhCUGUk0HAJzr2gjM",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1IdjSJ0bLag7g9gWhhCUGUk0HAJzr2gjM/view",
+   "title": "23년 삼성물산(주)에버랜드리조트_135-85-04288.pdf"
+  },
+  {
+   "doc_id": "1J5hL2U0zxyAj3NsUqXFoL6YVZsnvSnRd",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1J5hL2U0zxyAj3NsUqXFoL6YVZsnvSnRd/view",
+   "title": "다모아샵_7CM 캡슐.png"
+  },
+  {
+   "doc_id": "1JljQjdWm5iQ15E-J4CjGHyBQgoWXxB7v",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1JljQjdWm5iQ15E-J4CjGHyBQgoWXxB7v/view",
+   "title": "게임탑_9CM 캡슐.png"
+  },
+  {
+   "doc_id": "1KWfVgwepf2b3iAp2sRzoEr_3PzE2YnUT",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1KWfVgwepf2b3iAp2sRzoEr_3PzE2YnUT/view",
+   "title": "바오패밀리 더 현대 대구 팝업 용역계약서_스위트스팟_RE_LC.docx"
+  },
+  {
+   "doc_id": "1KZnmQlhnz9Foou8B6T9kvfz8i_LK7ksI",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1KZnmQlhnz9Foou8B6T9kvfz8i_LK7ksI/view",
+   "title": "바오패밀리 더 현대 대구 팝업 용역계약서_스위트스팟_RE_LC.pdf"
+  },
+  {
+   "doc_id": "1Kn30eV6K6zmBhflpcVTM582MI8jNdB7G",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Kn30eV6K6zmBhflpcVTM582MI8jNdB7G/view",
+   "title": "호텔에이유_스위트스팟_견적서.jpg"
+  },
+  {
+   "doc_id": "1LAf4ZfjdOJC-cnRI_QvMq8vwFx8F4O6E",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1LAf4ZfjdOJC-cnRI_QvMq8vwFx8F4O6E/view",
+   "title": "바오패밀리 운영 스터디 결과.xlsx"
+  },
+  {
+   "doc_id": "1LHMxARfBhq1imu3eu5s7IWv3b0zR_9js",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1LHMxARfBhq1imu3eu5s7IWv3b0zR_9js/view",
+   "title": "바오패밀리 팝업스토어_더현대서울_운영견적서.24.06.04.pdf"
+  },
+  {
+   "doc_id": "1QeUOgJrLZk6jckYF8VOhCVtLI4S6WVKm",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1QeUOgJrLZk6jckYF8VOhCVtLI4S6WVKm/view",
+   "title": "스위트스팟 근로계약서_삼성 라이온즈x바오패밀리_더현대대구(기본).pdf"
+  },
+  {
+   "doc_id": "1Qgb3MQe84EiciPCAAYcCRNutskp4BMkW",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Qgb3MQe84EiciPCAAYcCRNutskp4BMkW/view",
+   "title": "스위트스팟 근로계약서_삼성 라이온즈x바오패밀리_더현대대구(SV).pdf"
+  },
+  {
+   "doc_id": "1QkotlDWnLyRB6lAUJ36mufxRXtsb-XIa",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1QkotlDWnLyRB6lAUJ36mufxRXtsb-XIa/view",
+   "title": "스위트스팟 근로계약서_삼성 라이온즈x바오패밀리 팝업스토어_staff.xlsx"
+  },
+  {
+   "doc_id": "1SPCEvCTNkLj0kQNVR30XKDd8wZcR2Uou",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1SPCEvCTNkLj0kQNVR30XKDd8wZcR2Uou/view",
+   "title": "이벤트몰_7CM 캡슐_가챠머신.png"
+  },
+  {
+   "doc_id": "1W2-68-uLcmxDyiTErfuJDhT6NEyU0w3y",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1W2-68-uLcmxDyiTErfuJDhT6NEyU0w3y/view",
+   "title": "SC-RENTAL 게임탑_종류별 견적.png"
+  },
+  {
+   "doc_id": "1YEJrNfEgfxYz_K4C7L9x9mwqx5tGjugX",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1YEJrNfEgfxYz_K4C7L9x9mwqx5tGjugX/view",
+   "title": "계약서_삼성물산_바오패밀리 더현대 대구 팝업스토어_용역계약서.pdf"
+  },
+  {
+   "doc_id": "1YJFIJD_pKTpO4h6wVyx0Pb_YgSB1f75k",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1YJFIJD_pKTpO4h6wVyx0Pb_YgSB1f75k/view",
+   "title": "결과보고서_스위트스팟_바오패밀리x삼성라이온즈 운영리포트.pdf"
+  },
+  {
+   "doc_id": "1YKq1jvb5bdU_ucwkcWXsPjV0d5J1byfw",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1YKq1jvb5bdU_ucwkcWXsPjV0d5J1byfw/view",
+   "title": "견적서_(Sweetspot)바오패밀리x삼성라이온즈 더현대 대구 운영 견적서_0407.pdf"
+  },
+  {
+   "doc_id": "1YWIAkeMvDjPzTF_zmMKncoP9X0JmSwd3",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1YWIAkeMvDjPzTF_zmMKncoP9X0JmSwd3/view",
+   "title": "제안서_(Sweetspot)바오패밀리x삼성라이온즈 운영 가이드_0420.pdf"
+  },
+  {
+   "doc_id": "1YZ1b_i5q3WDqnz1mtVWH2-L5AyoxqHCz",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1YZ1b_i5q3WDqnz1mtVWH2-L5AyoxqHCz/view",
+   "title": "스위트스팟_바오패밀리x삼성라이온즈 운영리포트.pdf"
+  },
+  {
+   "doc_id": "1ZDoQjXHwbvm-LhNyT_syqUMms2NSSZ2o",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1ZDoQjXHwbvm-LhNyT_syqUMms2NSSZ2o/view",
+   "title": "[RXPU2504] 한국패션협회_키비주얼 용역계약서.pdf"
+  },
+  {
+   "doc_id": "1jHZ-ih71vzpVGZh4VkPU7_Spfhqx2n4P",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1jHZ-ih71vzpVGZh4VkPU7_Spfhqx2n4P/view",
+   "title": "스위트스팟_바오패밀리x삼성라이온즈 운영리포트.pptx"
+  },
+  {
+   "doc_id": "1mWyw_jZB4KfPFr8Pu2WShJYJgth2vD_S",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1mWyw_jZB4KfPFr8Pu2WShJYJgth2vD_S/view",
+   "title": "(Sweetspot)바오패밀리x삼성라이온즈 운영 결과보고서_작성중(내부).pptx"
+  },
+  {
+   "doc_id": "1pWpTXr20quIReidOui3tPiq9owIgnu_M",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1pWpTXr20quIReidOui3tPiq9owIgnu_M/view",
+   "title": "굿즈 컨설팅_단일사이즈, 파란색, 프린팅 가능.PDF"
+  },
+  {
+   "doc_id": "1x8EHyjCczsDfQDH6UjP3YKGaZF4-Re1K",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1x8EHyjCczsDfQDH6UjP3YKGaZF4-Re1K/view",
+   "title": "에스엠 프린팅_50*50 잉크 포함.png"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 2건: 제안서_(Sweetspot)바오패밀리x삼성라이온즈 운영, 결과보고서_스위트스팟_바오패밀리x삼성라이온즈 운영리포트. 미확실: 일별 방문자 수 및 매출 실측치(결과보고서 표 미추출); 총 방문자 및 총 매출; 면적(평); 수수료 구조 및 계약 총액; counting_method 판정 근거; plan_visitors_expected(예상 방문 총원); 운영종료일 불일치(메타 05-08 vs 보고서 05-07) | 외부 라벨 역검색(2026-07-27): 방문 라벨 충전 10000"
+ }
+}

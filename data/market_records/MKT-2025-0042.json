@@ -1,0 +1,96 @@
+{
+ "market_record_id": "MKT-2025-0042",
+ "event_name": "힙한 불교 팝업스토어 1차(해탈컴퍼니·아미울)",
+ "brand": "HDC아이파크몰×해탈컴퍼니×아미울",
+ "ip_or_collab": "불교 콘텐츠 브랜드 해탈컴퍼니·아미울",
+ "category": "other",
+ "intervention": {
+  "concept_description": "전통 종교 콘텐츠를 위트있게 재해석한 '힙불' 팝업, 약 10평 소형 공간",
+  "experience_elements": [
+   "굿즈 판매",
+   "체험 콘텐츠"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "아이파크몰 용산점 리빙파크 3층 도파민 스테이션 더 팝업",
+  "venue_type": "mall",
+  "neighborhood": "용산",
+  "city": "서울",
+  "period_from": "2025-06-01",
+  "period_to": "2025-06-30",
+  "area_pyeong": 10,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 30,
+    "weekend_share": 0.3,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 12000,
+  "visitors_period_days": 8,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "아이파크몰 제공 수치: '당시 1차 팝업은 약 10평 규모의 소형 공간임에도 8일간 누적 방문객 1만2000명, 누적 매출 8000만원을 기록했다. 일평균 매출은 약 1000만원에 달했으며'",
+  "visitors_source_quote": "당시 1차 팝업은 약 10평 규모의 소형 공간임에도 8일간 누적 방문객 1만2000명, 누적 매출 8000만원을 기록했다. 일평균 매출은 약 1000만원에 달했으며, 같은 기간 인접 공간에서 진행된 글로벌 대형 IP 팝업과 비교해도 방문객 수가 대등한 수준을 보였다.",
+  "visitors_source_url": "https://www.m-i.kr/news/articleView.html?idxno=1320839",
+  "visitors_source_date": "2025-12-31",
+  "sales_krw": 80000000,
+  "sales_source_quote": "8일간 누적 방문객 1만2000명, 누적 매출 8000만원을 기록했다. 일평균 매출은 약 1000만원에 달했으며",
+  "sales_source_url": "https://www.m-i.kr/news/articleView.html?idxno=1320839",
+  "sales_source_date": "2025-12-31",
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": true,
+  "alt_figures": [
+   {
+    "value": 1000,
+    "basis": "organizer_claim",
+    "quote": "지난해 6월 첫 팝업 당시 일 평균 1000여 명이 방문하는 등 큰 인기를 끌면서 현재 2차 팝업스토어를 진행 중이다.",
+    "url": "https://news.bizwatch.co.kr/article/consumer/2026/01/06/0041",
+    "date": "2026-01-07"
+   }
+  ],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": true,
+   "final_marked": false,
+   "usable": true,
+   "days_stated": 8,
+   "days_stored": 30,
+   "days_corrected": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "운영 시기는 '지난 6월 진행'으로만 보도(8일간, 정확한 일자 미확인). 비즈워치는 '일 평균 1000여 명' 보도로 매일일보(8일간 1.2만→일평균 1500)와 일평균 기준 상충하여 conflict 처리. 후속 신년 팝업(2025-12-31~2026-01-07)의 전작 성과로 소개된 수치. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified",
+  "sales": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

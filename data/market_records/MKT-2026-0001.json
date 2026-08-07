@@ -1,0 +1,67 @@
+{
+  "market_record_id": "MKT-2026-0001",
+  "event_name": "롯데백화점 '두바이쫀득쿠키(두쫀쿠)' 팝업스토어 시리즈",
+  "brand": "롯데백화점(두쫀쿠 입점 베이커리 브랜드군)",
+  "ip_or_collab": "SNS 발 디저트 트렌드(두바이쫀득쿠키) 백화점 팝업 유치, '두쫀쿠 지도' 안내 페이지 운영",
+  "category": "fnb",
+  "intervention": {
+    "concept_description": "두쫀쿠 열풍에 대응해 주요 점포 푸드코트·팝업 매장에 두쫀쿠 판매 브랜드를 릴레이 유치한 다점포 팝업 시리즈",
+    "experience_elements": [
+      "두쫀쿠 및 두바이 스타일 디저트 판매(점포별 브랜드 상이)",
+      "두쫀쿠 지도(판매 매장 안내 페이지) 운영"
+    ],
+    "promotions": [
+      "1인당 구매 수량 제한 운영"
+    ],
+    "is_free_entry": true,
+    "reservation_required": false
+  },
+  "conditions": {
+    "venue": "롯데백화점 주요 점포(푸드코트·팝업 매장)",
+    "venue_type": "department_store",
+    "neighborhood": null,
+    "city": "전국(다점포)",
+    "period_from": "2026-01-01",
+    "period_to": null,
+    "area_pyeong": null,
+    "multi_store": true,
+    "derived": {
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "롯데백화점 관계자가 밝힌 운영 현황(평균 대기 1시간 초과·반나절 완판). 방문객·매출 총계 미공개 → visitors_total null. 시작 시점은 '1월부터 주요 점포 팝업 운영'(i-boss 2026-01-21)으로만 확인돼 1월 1일을 보수적 표기",
+    "visitors_source_quote": "롯데백화점 관계자는 “1인당 구매 수량이 제한되고 평균 대기 시간이 1시간을 훌쩍 넘는 상황임에도, 대부분의 매장에서 당일 준비 물량이 반나절 만에 조기 완판되는 등 높은 인기를 이어가고 있다”고 전했다.",
+    "visitors_source_url": "https://biz.heraldcorp.com/article/10657224",
+    "visitors_source_date": "2026-01-17",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "평균 대기 시간 1시간 초과, 개점 시간 맞춘 오픈런 일상화, 연일 긴 대기줄",
+      "sold_out": "대부분 매장 당일 준비 물량 반나절 만에 조기 완판",
+      "reservation_fill": null,
+      "signal_quotes": [
+        "두쫀쿠를 구매하기 위한 수요가 몰리면서 백화점 푸드코트와 팝업 매장에는 연일 긴 대기줄이 이어지고 있다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "단일 이벤트가 아닌 점포별 팝업 시리즈(트렌드 대응 프로그램)로 분류상 주의 필요. 수요 신호 수치만 존재 | 병합 레코드: ",
+  "_aggregate": true,
+  "tier": "market_claim",
+  "single_event": false,
+  "exclude_reason": "기간 미상",
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

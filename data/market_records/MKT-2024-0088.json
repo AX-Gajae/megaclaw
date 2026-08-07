@@ -1,0 +1,95 @@
+{
+ "market_record_id": "MKT-2024-0088",
+ "event_name": "선유로운 팝업스토어(더현대 서울 지하 1층 이벤트 플라자)",
+ "brand": "서울시·영등포구(슈필렌 수행)",
+ "ip_or_collab": "선유로운 상권 캐릭터(선이·운이·로이)",
+ "category": "other",
+ "intervention": {
+  "concept_description": "서울시 로컬브랜드 상권 육성사업. 영등포 '선유로운 상권' 홍보 목적, '신선들의 마을' 테마 몰입형 공간, 6개 미션 체험",
+  "experience_elements": [
+   "초성퀴즈",
+   "숨은 신선찾기 등 6개 미션",
+   "신선놀음(체험 이벤트)",
+   "엽전 던지기",
+   "신선점"
+  ],
+  "promotions": [
+   "신선증 3,000장",
+   "선유페이 800장",
+   "쿠폰 3,000장",
+   "상인 VIP 쿠폰 4,000장"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "더현대 서울 지하 1층 이벤트 플라자",
+  "venue_type": "department_store",
+  "neighborhood": "여의도",
+  "city": "서울",
+  "period_from": "2024-11-01",
+  "period_to": "2024-11-03",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.67,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 3000,
+  "visitors_period_days": 3,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "주최 측 성료 보도(이넷뉴스) '지난 11월 1일부터 3일까지 더현대 서울 지하 1층 이벤트 플라자에서 총 3,000여 명의 방문객을 맞이하며 성공적으로 마무리됐다'",
+  "visitors_source_quote": "서울시·영등포구가 후원 및 주관하고 ㈜슈필렌이 수행하는 '선유로운 팝업스토어'가 지난 11월 1일부터 3일까지 더현대 서울 지하 1층 이벤트 플라자에서 총 3,000여 명의 방문객을 맞이하며 성공적으로 마무리됐다.",
+  "visitors_source_url": "https://www.enetnews.co.kr/news/articleView.html?idxno=31330",
+  "visitors_source_date": "2024-11-12",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": true,
+   "signal_quotes": [
+    "체험형 이벤트 '신선놀음'은 사전 예약과 현장 예약으로 운영되며 모든 시간대가 매진되는 등 높은 관심을 받았다.",
+    "팝업 스토어를 통해 선유로운 상권에 대해 흥미가 생겼다 89.2%(그렇다 21.1%+매우 그렇다 68.1%)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": true,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "지역 상권 활성화 공공 팝업→other. 3000명은 '여' 표현 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

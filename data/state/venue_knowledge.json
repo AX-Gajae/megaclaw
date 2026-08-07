@@ -1,0 +1,578 @@
+{
+ "더현대서울": {
+  "venue_daily_footfall": 45000,
+  "popup_zone_pass_rate": 0.4,
+  "venue_scale_tier": 1,
+  "seasonality_note": "주말 방문객이 평일의 2배 이상으로 10만에 근접. 연말·봄 시즌 피크. 여의도 오피스 배후라 평일 점심대 유입도 안정적.",
+  "reasoning": "여의도 파크원 내 도심 대형 백화점, 일평균 4~5만대. 층 정보가 없어 통상 팝업 운영 위치인 지하 이벤트존 기준으로 통과율 산정.",
+  "confidence": "medium"
+ },
+ "코엑스": {
+  "venue_daily_footfall": 25000,
+  "popup_zone_pass_rate": 0.4,
+  "venue_scale_tier": 2,
+  "seasonality_note": "행사 개최 여부가 유동을 전적으로 결정한다. 비개최일은 전시홀 유동이 사실상 0이며, 봄·가을 전시 성수기에 대형 행사가 몰린다.",
+  "reasoning": "전시장 기준이라 지시대로 '행사 개최 시'를 전제로 추정. 코엑스 홀 규모의 중·대형 전시회 일 관람객 2~5만의 중앙값 적용. 인접 스타필드 코엑스몰 유동과는 별개.",
+  "confidence": "medium"
+ },
+ "잠실_롯데월드몰": {
+  "venue_daily_footfall": 100000,
+  "popup_zone_pass_rate": 0.5,
+  "venue_scale_tier": 1,
+  "seasonality_note": "주말이 평일의 1.7~2배. 방학·연말이 피크이며 여름 혹서기에는 실내 수요로 오히려 증가.",
+  "confidence": "high",
+  "reasoning": "국내 최대급 복합몰로 잠실역과 직결. 연 방문 4~5천만 규모라 일평균 10만 수준. 팝업은 1층 아트리움과 지하 1층 역 연결 광장 중심이라 통행률이 높은 편."
+ },
+ "성수": {
+  "venue_daily_footfall": 60000,
+  "popup_zone_pass_rate": 0.05,
+  "venue_scale_tier": 2,
+  "seasonality_note": "주말 집중이 뚜렷하고 봄·가을이 피크. 야외 도보 상권이라 혹서·혹한기와 우천 시 급감.",
+  "confidence": "low",
+  "reasoning": "건물명이 없어 성수동 카페거리·연무장길 상권 전체의 일 유동(수만 명대)으로 해석. 다만 상권 내 단일 팝업 건물 앞을 지나는 비율은 밴드 하한보다도 낮아 0.05로 적용."
+ },
+ "multi_더현대": {
+  "venue_daily_footfall": 55000,
+  "popup_zone_pass_rate": 0.5,
+  "venue_scale_tier": 1,
+  "seasonality_note": "주말이 평일의 2~2.5배. 여의도 상권 특성상 봄·연말이 피크이고 8월 휴가철에 소폭 둔화. 방학기 가족 방문 증가.",
+  "confidence": "medium",
+  "reasoning": "multi 접두는 더현대 복수 점포(서울·대구) 동시 전개로 해석. 더현대 서울 일 4만대 + 대구 1.5만대 합산 기준. 팝업 상설존은 지하 고통행 구역이라 통행률 높음."
+ },
+ "성수52": {
+  "venue_daily_footfall": 900,
+  "popup_zone_pass_rate": 0.85,
+  "venue_scale_tier": 4,
+  "seasonality_note": "성수 상권 특성상 주말·공휴일이 평일의 2~3배이며 봄가을 피크. 상시 유동이 아니라 콘텐츠 유인에 의존하므로 SNS 노출량에 따라 편차가 큼.",
+  "confidence": "low",
+  "reasoning": "성수동 소재 단독 건물형 팝업·리테일 공간으로 판단. 몰과 달리 배후 상시 유동이 없는 스트리트 건물이므로 수백~2천 명대. 건물 자체가 목적지라 방문객 대부분이 존을 통과."
+ },
+ "하남_스타필드": {
+  "venue_daily_footfall": 70000,
+  "popup_zone_pass_rate": 0.4,
+  "venue_scale_tier": 1,
+  "seasonality_note": "교외형 복합몰로 주말이 평일의 2배 이상이며 연말·명절 연휴에 정점. 혹서기·혹한기에도 실내 체류 수요로 방어력이 높다.",
+  "confidence": "high",
+  "reasoning": "연 방문객 2500만명 이상으로 보도된 국내 최대급 복합몰이라 일평균 7만 수준. 팝업은 통상 1층 중앙 아트리움 주동선에 서므로 통과율 0.4로 설정."
+ },
+ "킨텍스": {
+  "venue_daily_footfall": 30000,
+  "popup_zone_pass_rate": 0.5,
+  "venue_scale_tier": 2,
+  "seasonality_note": "전시 일정에 전적으로 종속. 행사 없는 날은 사실상 0이며 행사 주말은 평일의 2~3배. 봄·가을에 대형 전시 집중.",
+  "confidence": "medium",
+  "reasoning": "전제: 행사 없는 평상시가 아니라 대형 전시 개최일 기준. 국내 최대 전시장으로 대형 전시 1일 관람객 2~4만대, 중앙값 3만 적용. 부스는 홀 내부라 관람 동선상 절반가량 통과."
+ },
+ "스타필드_코엑스": {
+  "venue_daily_footfall": 100000,
+  "popup_zone_pass_rate": 0.45,
+  "venue_scale_tier": 1,
+  "seasonality_note": "지하몰이라 날씨 영향이 적고 유동이 연중 안정적. 코엑스 전시·행사 개최 시 추가 유입이 겹치며 주말에 15만 수준까지 상승.",
+  "reasoning": "국내 최대 지하 복합몰로 일평균 10만 내외의 전국 최상위 유동. 다만 몰 면적이 넓고 동선이 분산돼 개별 팝업존 통과율은 절반 이하로 봄.",
+  "confidence": "medium"
+ },
+ "성수_LECT": {
+  "venue_daily_footfall": 1000,
+  "popup_zone_pass_rate": 0.7,
+  "venue_scale_tier": 4,
+  "seasonality_note": "성수 상권 공통으로 주말 집중(평일의 3~4배), 봄·가을 도보 유동 우호, 혹서·혹한·우천 시 급감.",
+  "confidence": "low",
+  "reasoning": "성수 스트리트 상권 단일 건물로 판단. 몰과 자릿수가 달라 수백~수천 밴드. 개별 건물 규모 미상이라 중앙값."
+ },
+ "에버랜드": {
+  "venue_daily_footfall": 16000,
+  "popup_zone_pass_rate": 0.65,
+  "venue_scale_tier": 2,
+  "seasonality_note": "계절 편차 극단적. 봄 튤립축제·여름방학·핼러윈·크리스마스 피크, 평일 비수기 대비 성수기 주말 3~5배, 우천 시 급감.",
+  "confidence": "medium",
+  "reasoning": "연 방문객 500만~600만 명대를 365로 나눈 일평균. 팝업은 통상 정문 광장·글로벌페어 메인 동선이라 통과율 높음."
+ },
+ "타임스퀘어": {
+  "venue_daily_footfall": 80000,
+  "popup_zone_pass_rate": 0.5,
+  "venue_scale_tier": 1,
+  "seasonality_note": "주말이 평일의 1.5~2배이고 영화관·대형마트 연계로 저녁 시간대 피크. 실내 몰이라 우천·혹서기에는 오히려 유입이 늘고, 방학·연말 시즌이 최성수기.",
+  "confidence": "medium",
+  "reasoning": "영등포역 직결 국내 최대급 복합쇼핑몰로 일 8만 명 안팎의 전국 최상위 유동. 대형 중앙 아트리움이 몰 동선의 결절점이라 팝업존 통과율이 0.5 수준으로 높음."
+ },
+ "삼성 코엑스 A홀/B홀 S133 & L108": {
+  "venue_daily_footfall": 30000,
+  "popup_zone_pass_rate": 0.4,
+  "venue_scale_tier": 2,
+  "seasonality_note": "행사 캘린더에 전적으로 종속. 행사 없는 날은 0에 수렴, 대형 전시 개최 주말은 평일의 2배. 봄·가을 전시 성수기.",
+  "confidence": "medium",
+  "reasoning": "전제: 행사 개최 시 기준. 코엑스 A/B홀 동시 사용 대형 전시 일 2~4만 밴드의 중앙값. S133/L108은 몰 유닛 병행으로 해석."
+ },
+ "한국캘러웨이본사": {
+  "venue_daily_footfall": 400,
+  "popup_zone_pass_rate": 0.7,
+  "venue_scale_tier": 5,
+  "seasonality_note": "리테일 계절성이 아닌 근무일 캘린더에 종속되어 주말·공휴일 유동은 0에 수렴. 골프 브랜드 특성상 시즌 오픈(3~4월)·신제품 출시기에 방문 협력사·미팅 트래픽이 다소 늘어난다.",
+  "confidence": "low",
+  "reasoning": "골프 브랜드 국내법인 본사 사옥. 중견 규모 법인의 상주 임직원 수백 명에 방문 협력사를 더해 일 400명대로 봤다. 일반 소비자 유입이 없는 폐쇄 오피스 유동이라 비전형(5)."
+ },
+ "서울_브루어리": {
+  "venue_daily_footfall": 400,
+  "popup_zone_pass_rate": 0.75,
+  "venue_scale_tier": 5,
+  "seasonality_note": "저녁·주말에 집중되는 F&B 수요. 여름 성수기와 연말에 강세, 평일 낮에는 유동이 거의 없다.",
+  "reasoning": "수제맥주 브루펍 단일 매장. 목적 방문형 F&B로 일 수백 명 규모이며, 매장 내 설치물은 체류 동선상 대부분 노출되어 통과율은 높게 잡음.",
+  "confidence": "low"
+ },
+ "무신사탑스_커넥트샵": {
+  "venue_daily_footfall": null,
+  "popup_zone_pass_rate": 0.8,
+  "venue_scale_tier": 5,
+  "seasonality_note": "패션 편집숍 특성상 환절기(3~4월, 9~10월) 구매 수요와 주말 유동이 높으나, 지점 위치 미상이라 계절 변동 폭은 단정하기 어려움.",
+  "confidence": "low",
+  "reasoning": "무신사 계열 오프라인 연계 편집 매장이라는 성격 외에 소재지·매장 면적을 특정할 수 없어 유동 규모는 null. 다만 단일 매장 내부 존이므로 입장객 대부분이 통과하는 구조는 확실."
+ },
+ "종로_삼익아트홀": {
+  "venue_daily_footfall": 400,
+  "popup_zone_pass_rate": 0.7,
+  "venue_scale_tier": 5,
+  "seasonality_note": "상시 유동이 없고 공연·대관 일정에만 유동이 발생하는 구조. 공연 없는 날은 사실상 0에 수렴하며, 공연일 회차 수에 따라 수백 명 단위로 계단식 변동.",
+  "confidence": "low",
+  "reasoning": "종로 도심의 중소 규모 공연장으로 판단되며 좌석·연간 가동률 정보는 없음. 공연 개최일 기준 회차당 수백 명 수준으로 추정. 로비가 단일 진출입 동선이라 방문객 상당수가 통과."
+ },
+ "꼴라보하우스 도산": {
+  "venue_daily_footfall": 800,
+  "popup_zone_pass_rate": 0.9,
+  "venue_scale_tier": 5,
+  "seasonality_note": "자체 상시 유동이 거의 없어 입점 콘텐츠와 SNS 노출에 전적으로 의존. 도산공원 상권 특성상 주말·봄가을 방문이 몰리고 혹서기·혹한기에는 목적 방문만 남음.",
+  "confidence": "medium",
+  "reasoning": "압구정 도산공원 인근 팝업 전용 단독 건물. 몰 내 입점이 아니라 목적 방문 100%인 비전형 공간이라 일 수백~1,500명대. 건물 전체가 팝업 공간이므로 방문객 대부분이 존을 통과."
+ },
+ "커피덕_홍대": {
+  "venue_daily_footfall": 500,
+  "popup_zone_pass_rate": 0.8,
+  "venue_scale_tier": 5,
+  "seasonality_note": "홍대 상권 특성상 주말·야간 집중, 방학·연말 유동 증가. 카페 단위라 우천 시 오히려 방어적.",
+  "confidence": "low",
+  "reasoning": "홍대 상권 내 개별 카페 매장으로 판단. 상권 유동은 크지만 매장 진입객 기준이라 수백 단위. 내부 팝업이면 대부분 접촉."
+ },
+ "SEF2024": {
+  "venue_daily_footfall": null,
+  "popup_zone_pass_rate": null,
+  "venue_scale_tier": 5,
+  "seasonality_note": "상설 리테일 공간이 아니라 특정 연도에 한시 개최된 행사로 보이며 상시 유동 개념이 적용되지 않는다.",
+  "confidence": "low",
+  "reasoning": "SEF2024가 어떤 행사·어느 장소인지 특정 불가. 명칭상 2024년 기간한정 포럼/페스티벌로 보이나 규모 근거가 없어 null 처리. tier 5는 비전형 표기이지 규모 판단이 아님."
+ },
+ "성수포털 (한서빌딩)": {
+  "venue_daily_footfall": 1000,
+  "popup_zone_pass_rate": 0.6,
+  "venue_scale_tier": 4,
+  "seasonality_note": "성수 스트리트 상권 공통으로 주말이 평일의 2~3배이며 날씨 민감도가 높다.",
+  "confidence": "low",
+  "reasoning": "성수역 인근 한서빌딩 내 팝업 운영 공간으로 이해했으나 특정도 낮음. 스트리트 건물 통상 범위 내 중앙값을 잡고 팝업 목적 방문 비중을 반영해 통과율 0.6."
+ },
+ "세종문화회관": {
+  "venue_daily_footfall": 4000,
+  "popup_zone_pass_rate": 0.55,
+  "venue_scale_tier": 4,
+  "seasonality_note": "공연 편성에 전적으로 종속되어 공연 없는 날은 유동이 급감한다. 가을~연말 공연 성수기와 방학 가족 공연 시즌이 피크. 광화문광장 행사·집회 일정에 따른 접근성 변동도 크다.",
+  "confidence": "medium",
+  "reasoning": "대극장 3천석급을 포함한 광화문 복합 공연장. 연 관람객 100만명대를 365일로 환산하면 일 3~4천 수준이고 미술관·광장 연계 유동을 더해 4천으로 봤다. 로비가 필수 동선이라 통과율은 중상."
+ },
+ "더현대대구": {
+  "venue_daily_footfall": 20000,
+  "popup_zone_pass_rate": 0.4,
+  "venue_scale_tier": 3,
+  "seasonality_note": "백화점 정기세일(4월·10월)과 연말 크리스마스 시즌에 피크, 명절 선물 수요기에 상승. 주말이 평일의 2배 안팎이며 대구 혹서기(7~8월)에는 실내 체류 수요로 방어된다.",
+  "confidence": "medium",
+  "reasoning": "현대백화점 대구점을 2021년 더현대 대구로 리뉴얼한 도심 점포. 지역 상위권이나 신세계 대구보다 작아 일 2만 안팎으로 봤다. 지역 대형 백화점 구간(1~3만) 상단."
+ },
+ "현대백화점_신촌점": {
+  "venue_daily_footfall": 18000,
+  "popup_zone_pass_rate": 0.35,
+  "venue_scale_tier": 3,
+  "seasonality_note": "대학가 상권이라 방학기 감소·신학기 회복. 연말 세일기와 주말 피크, 지하철 2호선 연결로 평일 바닥 유동 유지.",
+  "confidence": "medium",
+  "reasoning": "지역 중형 백화점 밴드. 본관+유플렉스 합산 일 1~3만의 중간대. 팝업은 통상 유플렉스 지하·저층 에스컬레이터 인접 존."
+ },
+ "광장시장 365일장": {
+  "venue_daily_footfall": 40000,
+  "popup_zone_pass_rate": 0.15,
+  "venue_scale_tier": 2,
+  "seasonality_note": "주말·공휴일 약 2배. 외국인 관광 성수기(봄·가을) 피크, 한파·폭염기에는 반노천 구조상 통행 급감.",
+  "confidence": "medium",
+  "reasoning": "광장시장 전체 일 유동 4~5만대(외국인 관광 비중 큼)를 기준값으로 사용. 365일장은 먹자골목 본류에서 벗어난 상가동 구역이라 전체 방문객 중 통과 비율은 낮게 적용."
+ },
+ "일민미술관": {
+  "venue_daily_footfall": 300,
+  "popup_zone_pass_rate": 0.75,
+  "venue_scale_tier": 5,
+  "seasonality_note": "전시 라인업에 따라 편차가 크다. 전시 교체기에는 휴관으로 유동 0, 인기 전시 주말에는 수 배로 상승.",
+  "reasoning": "광화문 소재 소규모 사립미술관. 유료 관람 목적 방문형으로 전시 기간 중 일 수백 명 규모. 관람객이 전 층을 순회하므로 내부 통과율은 높다.",
+  "confidence": "low"
+ },
+ "성동구_왕십리로10길": {
+  "venue_daily_footfall": 1000,
+  "popup_zone_pass_rate": 0.7,
+  "venue_scale_tier": 4,
+  "seasonality_note": "성수 상권 공통으로 주말이 평일의 2~3배, 봄·가을 피크에 한여름·한겨울 급감. 골목 단위 도보 상권이라 우천 시 유동이 크게 꺾이고, 인근 대형 팝업 개최 여부에 따라 낙수 유동이 출렁인다.",
+  "confidence": "low",
+  "reasoning": "건물명이 아닌 성수동1가 도로명 주소. 연무장길 배후의 팝업 밀집 골목에 면한 단독 건물로 보고 스트리트 개별 건물 구간(수백~수천)의 하단~중앙을 잡았다. 단독 동이면 진입자 대부분 노출."
+ },
+ "더현대서울 B2F ICONIC ZONE": {
+  "venue_daily_footfall": 50000,
+  "popup_zone_pass_rate": 0.45,
+  "venue_scale_tier": 1,
+  "seasonality_note": "주말이 평일의 2배 내외. 연말·시즌 세일기 최고, 혹서기·혹한기에도 실내라 방어적. 여의도 특성상 평일 직장인 점심대 피크.",
+  "confidence": "high",
+  "reasoning": "도심 대형 백화점 밴드 상단. B2F는 식품관·지하철 연결 동선이라 통과율 높으나 1층 아트리움보다는 낮은 0.4~0.5대."
+ },
+ "청담_에이스스퀘어": {
+  "venue_daily_footfall": 600,
+  "popup_zone_pass_rate": 0.5,
+  "venue_scale_tier": 4,
+  "seasonality_note": "청담 상권은 차량·목적 방문 중심이라 성수·홍대 대비 주말 도보 유동 증폭이 작고 계절 진폭도 완만하다.",
+  "confidence": "low",
+  "reasoning": "청담동 소재 개별 빌딩으로 판단. 명품거리 일대는 보행 유동이 낮고 목적 방문 비중이 높아 스트리트 건물 범위 하단으로 설정. 건물 특정도는 낮음."
+ },
+ "multi_SK멤버사": {
+  "venue_daily_footfall": 5000,
+  "popup_zone_pass_rate": 0.5,
+  "venue_scale_tier": 5,
+  "seasonality_note": "리테일 계절성이 아니라 근무 캘린더에 종속. 평일만 유동이 발생하고 주말·공휴일·하계휴가(7~8월)·연말 연차 기간에는 사실상 0에 수렴. 사업장별 순회 운영이면 각 사이트 노출은 수일 단위로 짧다.",
+  "confidence": "low",
+  "reasoning": "SK 서린빌딩 등 그룹 멤버사 사옥을 순회하는 사내형 다중 사이트. 사옥당 상주 임직원 수천 명 규모를 복수 합산해 일 5천 명대로 봤다. 외부 유입이 없는 폐쇄 유동이라 비전형(5)."
+ },
+ "multi_게릴라샘플링": {
+  "venue_daily_footfall": null,
+  "popup_zone_pass_rate": null,
+  "venue_scale_tier": 5,
+  "seasonality_note": "고정 장소가 아니라 계절성을 정의할 수 없음. 실행 일정·날씨·투입 인력 수에 좌우됨.",
+  "confidence": "low",
+  "reasoning": "고정 공간이 아닌 다지점 게릴라 샘플링 활동. 특정 건물 유동으로 환산 불가하여 null 처리."
+ },
+ "성수_슈매니아": {
+  "venue_daily_footfall": 700,
+  "popup_zone_pass_rate": 0.8,
+  "venue_scale_tier": 5,
+  "seasonality_note": "성수 스트리트 상권 공통으로 주말 편중이 크고 봄가을 보행 유동이 최고. 슈즈·패션 카테고리는 환절기 수요가 겹쳐 3~4월, 9~10월이 상대적 성수기.",
+  "confidence": "low",
+  "reasoning": "성수동 스트리트 상권의 개별 매장·건물 단위로 판단되며 정확한 규모 정보는 없음. 해당 유형의 일 유동 범위(수백~수천)의 하단 중앙값 적용. 매장 내부 존이라 입장객 대부분이 통과."
+ },
+ "성수_피치스도원": {
+  "venue_daily_footfall": 1200,
+  "popup_zone_pass_rate": 0.7,
+  "venue_scale_tier": 4,
+  "seasonality_note": "야외 마당 비중이 커 날씨·계절 민감도가 매우 높다. 주말 쏠림이 크고 우천·혹한기에는 급감.",
+  "reasoning": "성수동 복합문화공간 단일 건물. 카페·숍·야외 마당 결합형 목적 방문지로 일 1천 명대. 마당이 진입 동선 정면이라 통과율은 높은 편.",
+  "confidence": "low"
+ },
+ "성수_XYZ서울": {
+  "venue_daily_footfall": 1000,
+  "popup_zone_pass_rate": 0.85,
+  "venue_scale_tier": 4,
+  "seasonality_note": "성수 스트리트 상권은 주말이 평일의 2~3배이고 봄가을에 집중. 실내 공간이라 우천에는 오히려 반사이익이 있으나 혹서기·혹한기 보행 유동은 감소.",
+  "confidence": "low",
+  "reasoning": "성수 연무장길 권역의 단독 팝업·전시 공간으로 판단. 몰이 아닌 스트리트 건물이라 자릿수가 수백~수천이며 중앙값 1,000명대. 건물 전체가 콘텐츠 공간이라 입장객 대부분이 존을 통과."
+ },
+ "안성맞춤랜드": {
+  "venue_daily_footfall": 1500,
+  "popup_zone_pass_rate": 0.4,
+  "venue_scale_tier": 4,
+  "seasonality_note": "12개 항목 중 계절성이 가장 극단적. 가을 바우덕이 축제와 봄·가을 나들이철에 일 수만까지 튀고 평상시 평일은 수백 수준, 동절기에는 거의 비어 있다. 축제 개최 여부가 유동의 지배 변수.",
+  "confidence": "low",
+  "reasoning": "안성 보개면의 시립 야외 복합 레저단지(캠핑장·천문과학관·남사당 공연장). 평상시 기준 일 1~2천 중앙값을 잡았다. 야외 개방형이라 동선 강제가 약해 통과율은 중간."
+ },
+ "신세계백화점_강남점": {
+  "venue_daily_footfall": 50000,
+  "popup_zone_pass_rate": 0.45,
+  "venue_scale_tier": 1,
+  "seasonality_note": "주말이 평일의 1.8~2배. 명절 선물 시즌과 연말 정기세일이 피크, 1~2월 비수기.",
+  "confidence": "high",
+  "reasoning": "국내 매출 1위 백화점이자 고속터미널 환승역 직결이라 상시 유동이 전국 최상위권. 도심 대형 백화점 밴드 상단인 5만 적용. 팝업은 1층·지하 연결 동선 중심이라 통행률이 높음."
+ },
+ "multi_대학교": {
+  "venue_daily_footfall": 12000,
+  "popup_zone_pass_rate": 0.25,
+  "venue_scale_tier": 3,
+  "seasonality_note": "학기 중(3~6월·9~12월)에만 유효한 유동. 방학·시험기간에는 캠퍼스 유동이 절반 이하로 급감하고, 축제 기간에는 수 배로 튄다.",
+  "confidence": "low",
+  "reasoning": "서울권 종합대 캠퍼스 1곳 기준. 재학생 2~3만 중 실제 등교 50~70% + 교직원·방문객으로 일 1~1.5만. 복수 캠퍼스 순회형이라 집계 단위가 모호해 1곳 기준 중앙값 사용."
+ },
+ "인천공항": {
+  "venue_daily_footfall": 200000,
+  "popup_zone_pass_rate": 0.15,
+  "venue_scale_tier": 1,
+  "seasonality_note": "여름 성수기(7~8월)·설·추석·연말 피크. 리테일 대비 계절 진폭은 작으나 연중 상시 유동으로 바닥이 높음.",
+  "confidence": "high",
+  "reasoning": "연 여객 7,000만 명대 기준 일 19~21만. 다만 T1/T2·출입국·환승으로 동선이 분산돼 특정 존 통과율은 낮게 잡음."
+ },
+ "북촌_코너갤러리": {
+  "venue_daily_footfall": 300,
+  "popup_zone_pass_rate": 0.85,
+  "venue_scale_tier": 5,
+  "seasonality_note": "북촌 관광 상권 특성상 봄(4~5월)·가을(9~11월)이 피크이고 한겨울·장마철에 급감. 주말이 평일의 3배 수준. 인근 주민 소음 민원에 따른 관광 시간 통제 영향도 받는다.",
+  "confidence": "low",
+  "reasoning": "북촌 소규모 갤러리형 단독 공간. 거리 통행객은 일 수만이나 실제 건물 진입은 수백 단위. 단일 층 소공간이라 진입자 대부분이 전시존을 통과해 pass rate는 높게 잡았다."
+ },
+ "성수_토로토로스튜디오": {
+  "venue_daily_footfall": 400,
+  "popup_zone_pass_rate": 0.75,
+  "venue_scale_tier": 5,
+  "seasonality_note": "성수 상권 주말 집중. 스튜디오 단위라 절대 규모가 작아 날씨·요일 변동 폭이 상대적으로 큼.",
+  "confidence": "low",
+  "reasoning": "명칭상 스튜디오 단위 소형 단독 공간. 성수 건물 밴드 하단으로 배치. 실제 면적·운영 형태 미상."
+ },
+ "성수_비데이카페": {
+  "venue_daily_footfall": 400,
+  "popup_zone_pass_rate": 0.9,
+  "venue_scale_tier": 5,
+  "seasonality_note": "주말 편중이 크고 봄·가을 피크. 개별 카페 단위라 날씨 영향을 직접 받음.",
+  "confidence": "low",
+  "reasoning": "성수 소재 개별 카페(대관형 팝업 공간)로 추정되며 구체 정보는 없음. 단독 매장 규모라 일 방문 수백 명대. 매장 전체를 팝업으로 쓰면 방문자 대부분이 노출됨."
+ },
+ "서울소재 2개 대학교": {
+  "venue_daily_footfall": 15000,
+  "popup_zone_pass_rate": 0.25,
+  "venue_scale_tier": 3,
+  "seasonality_note": "학기 중(3~6월, 9~12월)과 방학(7~8월, 1~2월)의 격차가 극단적이어서 방학 중 캠퍼스 유동은 학기 중의 30% 이하. 축제 기간과 신학기 초에 일시 급증.",
+  "confidence": "low",
+  "reasoning": "서울 주요 대학 캠퍼스는 재학생·교직원·방문객 합쳐 학기 중 일 1~2만 명 통행. 어느 대학인지 특정되지 않아 2곳 평균 대표값으로 1.5만을 사용. 중앙광장·학생회관 앞 부스는 통행자 1/4 정도만 접촉."
+ },
+ "연남_아벡쉐리": {
+  "venue_daily_footfall": 500,
+  "popup_zone_pass_rate": 0.85,
+  "venue_scale_tier": 5,
+  "seasonality_note": "주말·저녁 편중. 연남 골목 상권 특성상 봄·가을 피크이고 우천·혹한기 급감.",
+  "confidence": "low",
+  "reasoning": "연남동 소재 개별 매장(카페 또는 셀렉트숍)으로 보이나 확인 가능한 정보 없음. 연남 골목 단일 점포 규모라 일 수백 명대. 단독 매장이라 입장객 대부분이 팝업 공간을 통과."
+ },
+ "부산_벡스코": {
+  "venue_daily_footfall": 20000,
+  "popup_zone_pass_rate": 0.4,
+  "venue_scale_tier": 2,
+  "seasonality_note": "행사 개최 시에만 유동이 발생하고 비개최일은 사실상 0. 지스타(11월)·모터쇼 등 대형 행사기에는 일 5만명 이상까지 치솟는다.",
+  "confidence": "medium",
+  "reasoning": "지시대로 행사 개최 시 기준. 국내 2~3위 전시장이나 행사별 편차가 커 중형 전시회 기준 일 2만으로 잡음. 홀 내 부스는 주동선상이라 통과율 0.4."
+ },
+ "올림픽공원": {
+  "venue_daily_footfall": 30000,
+  "popup_zone_pass_rate": 0.2,
+  "venue_scale_tier": 2,
+  "seasonality_note": "야외 공원이라 계절 편차가 가장 큰 유형. 봄가을 주말이 겨울 평일의 5배 이상이며 우천 시 급감. 88잔디마당·KSPO돔 공연 개최일에는 수만 명이 일시에 유입.",
+  "confidence": "medium",
+  "reasoning": "체육시설·공연장·산책 수요가 겹친 서울 동남권 대표 공원으로 연 1천만 명대, 일평균 3만 명 규모. 다만 부지가 넓어 유동이 분산되므로 평화의광장 등 특정 지점 통과율은 0.2 내외."
+ },
+ "성수_도어투성수": {
+  "venue_daily_footfall": 1200,
+  "popup_zone_pass_rate": 0.7,
+  "venue_scale_tier": 4,
+  "seasonality_note": "주말 집중형 스트리트 상권으로 금~일 유동이 평일의 2~3배. 우천·혹한기에는 도보 유동이 크게 준다.",
+  "confidence": "low",
+  "reasoning": "성수역 인근 팝업 운영형 공간으로 이해했으나 건물 특정도가 낮음. 팝업 전용 성격상 방문객 대부분이 존을 통과한다고 보아 통과율은 높게 설정."
+ },
+ "신세계파주프리미엄아울렛": {
+  "venue_daily_footfall": 16000,
+  "popup_zone_pass_rate": 0.45,
+  "venue_scale_tier": 3,
+  "seasonality_note": "주말·연휴 편중이 극심해 주말이 평일의 3~4배. 야외 빌리지형이라 혹서기·혹한기와 우천 시 유동이 크게 꺾이고, 봄가을·연말 세일 기간이 최성수기.",
+  "confidence": "medium",
+  "reasoning": "신세계사이먼 파주점은 연 수백만 명대 방문의 수도권 대표 아울렛으로 일평균 1.5~2만 명 수준. 광역 상권 목적 방문형이라 도심 대형몰보다 한 단계 아래. 중앙 광장 팝업은 동선 특성상 절반 가까이 통과."
+ },
+ "성동구_베델플레이스": {
+  "venue_daily_footfall": 800,
+  "popup_zone_pass_rate": 0.5,
+  "venue_scale_tier": 4,
+  "seasonality_note": "성수 스트리트 상권 공통으로 주말 유동이 평일의 2~3배이며, 봄·가을 및 우천 여부에 따른 진폭이 크다.",
+  "confidence": "low",
+  "reasoning": "개별 건물 자체를 특정하지 못해 성수동 스트리트 상권 건물의 통상 범위(수백~수천) 중앙값으로 잡음. 1층 가로면 노출 가정으로 통과율 0.5."
+ },
+ "성수_레봄카페": {
+  "venue_daily_footfall": 300,
+  "popup_zone_pass_rate": 0.9,
+  "venue_scale_tier": 5,
+  "seasonality_note": "성수 카페 상권 특성상 주말 집중도가 높고 봄·가을이 피크. 좌석 회전율이 상한을 만들어 유동 자체가 물리적으로 캡되며, 우천·혹한기에는 워크인이 급감한다.",
+  "confidence": "low",
+  "reasoning": "성수동 개별 카페 단독 매장. 성수권 중형 카페의 통상 일 이용객이 수백 명대라 300명으로 봤다. 매장 내부 공간에 연출되므로 입장객 거의 전원이 노출되는 구조."
+ },
+ "고양_스타필드": {
+  "venue_daily_footfall": 70000,
+  "popup_zone_pass_rate": 0.5,
+  "venue_scale_tier": 2,
+  "seasonality_note": "주말이 평일의 2~3배. 혹서·혹한기에 실내 체류 수요로 상승하고 명절·연휴에 피크. 교외 대형몰이라 차량 접근 날씨에 민감.",
+  "reasoning": "스타필드 계열 교외 대형 복합몰로 연 2,500만~3,000만 방문 규모, 일평균 6~8만대. 하남과 동급 티어로 보고 7만 적용.",
+  "confidence": "medium"
+ },
+ "성수_레이어41": {
+  "venue_daily_footfall": 900,
+  "popup_zone_pass_rate": 0.7,
+  "venue_scale_tier": 4,
+  "seasonality_note": "성수 상권 공통 주말 집중형. 봄·가을 피크, 우천·혹한기 도보 유동 급감.",
+  "confidence": "low",
+  "reasoning": "성수 연무장길 권역 단일 건물급 공간으로 추정. 스트리트 상권 건물 단위 밴드 적용, 구체 규모 미상."
+ },
+ "CGV 영등포점 6층 ScreenX관 및 6층 로비": {
+  "venue_daily_footfall": 4000,
+  "popup_zone_pass_rate": 0.25,
+  "venue_scale_tier": 4,
+  "seasonality_note": "극장 유동은 개봉작 라인업에 종속. 여름 성수기(7~8월)·겨울 성수기(12~1월)와 주말 저녁 피크가 평일 낮의 3~4배. 비수기 평일은 수백 명대까지 하락.",
+  "confidence": "medium",
+  "reasoning": "타임스퀘어 내 20여 개관 규모 상위권 멀티플렉스. 코로나 이후 연 관객 130만 내외로 보면 일평균 3~4천 명대. 6층은 ScreenX 등 일부 상영관만 있는 층이라 전체 관객 중 1/4 정도만 통과."
+ },
+ "성수_TheA": {
+  "venue_daily_footfall": 900,
+  "popup_zone_pass_rate": 0.8,
+  "venue_scale_tier": 4,
+  "seasonality_note": "주말이 평일의 3~4배. 성수 상권 특성상 봄·가을 피크이며 혹한·혹서기 도보 유동 급감.",
+  "confidence": "low",
+  "reasoning": "성수 연무장길 일대의 대관형 팝업 건물로 보이나 개별 정보는 확인되지 않음. 스트리트 상권 단일 건물 밴드(수백~수천)의 중앙값 적용. 건물 전체 대관 시 입장객 대부분 노출."
+ },
+ "성수_무신사메가스토어": {
+  "venue_daily_footfall": 3000,
+  "popup_zone_pass_rate": 0.5,
+  "venue_scale_tier": 4,
+  "seasonality_note": "주말 집중형. 성수 상권 전체 방문 트렌드와 연동되며 환절기 의류 시즌에 강세.",
+  "reasoning": "성수 상권의 대형 패션 플래그십. 스트리트 단일 건물이라 몰과 자릿수가 다르며 일 수천 명대. 복층 매장이라 특정 층 팝업존 통과율은 절반 수준.",
+  "confidence": "low"
+ },
+ "용산_아이파크몰": {
+  "venue_daily_footfall": 60000,
+  "popup_zone_pass_rate": 0.3,
+  "venue_scale_tier": 2,
+  "seasonality_note": "용산역 연계 유동으로 평일 기반이 탄탄하고 주말 진폭이 교외형 몰보다 작다. 혹서·혹한기에는 실내몰 특성상 오히려 유동이 늘어난다.",
+  "confidence": "medium",
+  "reasoning": "용산역 직결 대형 복합몰로 역 환승객 유입 포함 일평균 6만 수준 추정. 리빙파크·CGV 등 층별 목적지가 분산돼 특정 팝업존 통과율은 낮게 잡음."
+ },
+ "여의도_IFC몰": {
+  "venue_daily_footfall": 35000,
+  "popup_zone_pass_rate": 0.4,
+  "venue_scale_tier": 2,
+  "seasonality_note": "오피스 배후 상권이라 평일 점심·퇴근 시간대 피크, 주말은 상대적 약세로 일반 몰과 패턴이 반대. 휴가철·연휴에 하락.",
+  "reasoning": "여의도 지하 3개 층 몰로 일평균 3~4만대. 인근 대형 백화점 개장 이후 유동이 다소 분산된 것을 반영해 하단값 적용. 중앙 아트리움 기준 통과율.",
+  "confidence": "medium"
+ },
+ "스마일게이트캠퍼스": {
+  "venue_daily_footfall": 2000,
+  "popup_zone_pass_rate": 0.6,
+  "venue_scale_tier": 5,
+  "seasonality_note": "리테일이 아닌 사옥 캠퍼스라 주중 상시·주말 급감. 휴가철·연말 연차 시즌에 상주 인원 감소.",
+  "confidence": "low",
+  "reasoning": "게임사 사옥 캠퍼스로 판단. 임직원 상주 규모 기반의 비전형 공간이며 일반 소비자 유동이 아님. 인원 규모 미상."
+ },
+ "경주_이스트1779": {
+  "venue_daily_footfall": 1200,
+  "popup_zone_pass_rate": 0.6,
+  "venue_scale_tier": 4,
+  "seasonality_note": "경주 관광 상권 특성상 봄 벚꽃(4월)·가을 단풍·연휴에 집중, 주말이 평일의 3배 이상, 한겨울 비수기.",
+  "confidence": "low",
+  "reasoning": "경주 관광 상권 내 단일 복합공간으로 추정. 몰이 아닌 건물 단위라 수백~수천 대. 정확한 규모 미상이라 밴드 중앙값 사용."
+ },
+ "마포_도토리캐리커쳐": {
+  "venue_daily_footfall": null,
+  "popup_zone_pass_rate": 0.9,
+  "venue_scale_tier": 5,
+  "seasonality_note": "주말·저녁 시간대 편중이 클 것으로 보이나 근거 자료 없음.",
+  "confidence": "low",
+  "reasoning": "마포 소재 개인 캐리커처 공방·스튜디오로 보이나 규모를 뒷받침할 정보가 없어 유동 수치는 null. 단독 소형 매장 구조상 입장객 대부분이 팝업 공간을 통과한다는 점만 반영."
+ },
+ "DDP": {
+  "venue_daily_footfall": 25000,
+  "popup_zone_pass_rate": 0.25,
+  "venue_scale_tier": 2,
+  "seasonality_note": "서울패션위크(3·10월)·서울라이트(겨울) 등 대형 행사기에 유동이 급증하고 한여름·한겨울 평일은 크게 저조하다. 야외 광장 비중이 커 날씨 민감도가 높다.",
+  "confidence": "medium",
+  "reasoning": "공개 발표 기준 연 방문객 800만~1000만 규모로 일평균 2.5만 수준. 알림터·배움터·광장으로 동선이 분산돼 팝업존 통과율은 낮게 잡음. 수치는 기억 기반 추정."
+ },
+ "커넥트현대_부산": {
+  "venue_daily_footfall": 15000,
+  "popup_zone_pass_rate": 0.4,
+  "venue_scale_tier": 3,
+  "seasonality_note": "리뉴얼 오픈 특수가 걷힌 뒤의 정상 유동 기준. 주말이 평일의 2배 안팎이며 연말·정기세일기 피크. 부산 원도심(범일동) 입지라 서면·센텀 상권 대비 광역 흡인력은 약한 편.",
+  "confidence": "medium",
+  "reasoning": "현대백화점 부산점을 2024년 커넥트현대로 전환한 원도심 도심형 점포. 지역 백화점·중형몰 구간(1~3만) 중하단으로 봤다. 전환 후 저층 이벤트존 운영이 통상이라 통과율 중간."
+ },
+ "성수_스위트스팟스테이지": {
+  "venue_daily_footfall": 700,
+  "popup_zone_pass_rate": 0.75,
+  "venue_scale_tier": 5,
+  "seasonality_note": "주말 편중이 뚜렷한 성수 스트리트 상권. 단일 공간이라 입점 콘텐츠의 화제성에 따라 유동 진폭이 장소 자체 요인보다 크다.",
+  "confidence": "low",
+  "reasoning": "성수 소재 단독 팝업 전용 공간으로 판단해 비전형(5)으로 분류. 단일 공간 방문객 대부분이 팝업존을 통과하므로 통과율 높게 설정, 절대 규모는 수백 단위."
+ },
+ "현대백화점 판교점 7F": {
+  "venue_daily_footfall": 30000,
+  "popup_zone_pass_rate": 0.2,
+  "venue_scale_tier": 2,
+  "seasonality_note": "판교 테크노밸리 배후라 평일 저녁·주말 강세. 7층 식당가 특성상 식사 시간대에 유동이 몰리는 이중 피크.",
+  "reasoning": "수도권 최대급 교외 백화점으로 일평균 3만대. 다만 명시된 7F는 식당가·문화홀이 있는 상층부라 관 전체 방문객 대비 통과율은 낮게 산정.",
+  "confidence": "medium"
+ },
+ "서울_프레스센터": {
+  "venue_daily_footfall": 3000,
+  "popup_zone_pass_rate": 0.3,
+  "venue_scale_tier": 5,
+  "seasonality_note": "평일 업무일에 유동이 집중되고 주말·공휴일에는 사실상 유동이 없음. 행사 일정에 종속적.",
+  "confidence": "low",
+  "reasoning": "중구 태평로 한국프레스센터. 언론사·유관기관이 입주한 오피스 빌딩에 기자회견장·국제회의장이 붙은 비리테일 공간. 상주 인원과 행사 방문객 합산 수천 명대로 추정."
+ },
+ "multi_롯데월드몰_부산센텀": {
+  "venue_daily_footfall": 80000,
+  "popup_zone_pass_rate": 0.4,
+  "venue_scale_tier": 1,
+  "seasonality_note": "두 곳 모두 주말이 평일의 1.5~2배. 롯데월드몰은 잠실 야구·콘서트 일정과 방학·연휴에 급증, 부산 센텀은 여름 휴가철·불꽃축제 시즌에 유동 상승.",
+  "confidence": "medium",
+  "reasoning": "롯데월드몰 일 10만 내외, 신세계 센텀시티 일 5~6만 수준의 두 전국 최상위 거점. 순회 운영이라 지점당 대표값으로 8만을 잡음. 통상 지하 1층·1층 아트리움 팝업존 기준 통과율 0.4."
+ },
+ "다산_현대프리미엄아울렛": {
+  "venue_daily_footfall": 15000,
+  "popup_zone_pass_rate": 0.35,
+  "venue_scale_tier": 3,
+  "seasonality_note": "교외형 아울렛 특성상 주말이 평일의 2~3배. 봄·가을 나들이철과 연말 시즌오프에 집중되고 혹서기·혹한기 평일은 저조하다.",
+  "confidence": "medium",
+  "reasoning": "남양주 다산 현대프리미엄아울렛(스페이스원)은 영업면적 4만㎡대 교외형 아울렛으로 일평균 1.5만 수준 추정. 팝업은 1층 중앙광장 운영이 통상이라 통과율 중간."
+ },
+ "아모레성수": {
+  "venue_daily_footfall": 500,
+  "popup_zone_pass_rate": 0.8,
+  "venue_scale_tier": 5,
+  "seasonality_note": "사전예약·회차 운영으로 일 수용량 상한이 존재해 성수기에도 유동이 선형 증가하지 않는다. 주말 예약이 먼저 소진된다.",
+  "confidence": "medium",
+  "reasoning": "아모레퍼시픽 성수 뷰티 체험 공간. 누적 방문객 수십만명 규모 보도를 영업일로 나누면 일 수백명대. 예약제 단독 공간이라 방문객 대부분이 내부 존을 통과."
+ },
+ "워커힐": {
+  "venue_daily_footfall": 4000,
+  "popup_zone_pass_rate": 0.4,
+  "venue_scale_tier": 4,
+  "seasonality_note": "봄·가을 웨딩·연회 성수기와 여름 리버파크 시즌에 피크, 늦겨울 비수기. 아차산 자락 폐쇄 부지라 워크인 유입이 거의 없고 투숙·연회·F&B 예약 수요가 유동의 전부다.",
+  "confidence": "low",
+  "reasoning": "그랜드·비스타 합산 800실대 호텔 복합단지에 컨벤션·연회·야외 정원 포함. 투숙 및 연회 회전에 F&B 방문을 더해 일 4천대로 봤다. 단지 분산 배치라 특정 존 통과율은 제한적."
+ },
+ "성수_아이언빌딩": {
+  "venue_daily_footfall": 800,
+  "popup_zone_pass_rate": 0.75,
+  "venue_scale_tier": 4,
+  "seasonality_note": "성수 팝업 전용 임대 건물 특성상 자체 상시 유동은 거의 없고 입주 콘텐츠 유무가 유동을 좌우한다. 주말 집중, 봄·가을 피크, 한여름·한겨울 비수기 패턴은 성수 상권 공통.",
+  "confidence": "low",
+  "reasoning": "성수동 팝업 임대용 개별 건물. 스트리트 상권 건물 단위(수백~수천)의 중앙값. 전용 건물이라 진입 자체가 목적 방문이며 층 전체가 연출 동선이라 통과율은 높다."
+ },
+ "강동_더리버몰": {
+  "venue_daily_footfall": 12000,
+  "popup_zone_pass_rate": 0.4,
+  "venue_scale_tier": 3,
+  "seasonality_note": "배후 주거지 기반 생활형 몰이라 주말·방학기 가족 단위 집중이 뚜렷하고 평일 낮은 저조. 혹서·혹한기에 실내몰 프리미엄이 붙고, 신규 개장 몰이면 오픈 특수가 걷힌 뒤 유동이 하향 안정된다.",
+  "confidence": "low",
+  "reasoning": "강동구 성내·천호권 복합몰(아이파크 더리버 계열)로 가정. 서울 동부 배후 주거 수요 기반 지역 복합몰이면 일 1~2만 구간이 통상이라 중앙값을 잡았다. 장소 식별 자체가 불확실해 low."
+ },
+ "현대프리미엄아울렛_김포점": {
+  "venue_daily_footfall": 18000,
+  "popup_zone_pass_rate": 0.4,
+  "venue_scale_tier": 3,
+  "seasonality_note": "주말·공휴일 편중이 극심해 평일의 약 3배. 봄·가을 나들이 시즌과 연말 세일이 피크.",
+  "confidence": "medium",
+  "reasoning": "수도권 서부 대형 프리미엄 아울렛. 주말 3~4만, 평일 1만 내외로 일평균 2만 미만 추정. 팝업은 중앙광장·1층 이벤트존에서 운영되어 중간 수준 통행률."
+ },
+ "성수_STAGEX": {
+  "venue_daily_footfall": 1000,
+  "popup_zone_pass_rate": 0.9,
+  "venue_scale_tier": 4,
+  "seasonality_note": "대관 콘텐츠에 전적으로 의존해 편차가 크다. 주말 집중형이며 공실 기간에는 유동이 사실상 0.",
+  "reasoning": "성수동 대관형 복합 공간. 자연 유동이 아니라 목적 방문객이 유동의 거의 전부라 규모는 일 1천 내외, 통과율은 사실상 전원에 가깝다.",
+  "confidence": "low"
+ }
+}

@@ -1,0 +1,90 @@
+{
+ "market_record_id": "MKT-2024-0032",
+ "event_name": "tvN '선재 업고 튀어' 팝업스토어(더현대 서울)",
+ "brand": "CJ ENM(tvN)",
+ "ip_or_collab": "드라마 '선재 업고 튀어'",
+ "category": "entertainment",
+ "intervention": {
+  "concept_description": "드라마 종영 기념 팝업. '솔선재' 부채·열쇠고리·부적 세트·수영복 포토카드 등 MD, 포토존, 드라마 장소 재현(솔이네 아파트, 공차방)",
+  "experience_elements": [
+   "포토존",
+   "세트 재현",
+   "MD 판매"
+  ],
+  "promotions": [
+   "1인당 품목별 2개 구매 제한"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "더현대 서울 지하 2층 아이코닉 팝업존",
+  "venue_type": "department_store",
+  "neighborhood": "여의도",
+  "city": "서울",
+  "period_from": "2024-05-23",
+  "period_to": "2024-05-29",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 1500,
+  "visitors_period_days": 7,
+  "counting_basis": "entry",
+  "counting_basis_note": "첫날(5/23) 입장 인원 1500명 마감(현장 취재 보도). 전체 기간 누적 방문객 아님. 원문: '1500명 입장 인원이 이날 마감됐다'",
+  "visitors_source_quote": "23일 여의도역에서 더현대로 연결되는 통로가 오픈되는 5시부터 사전 입장 대기 등록을 위해 줄을 서는 사람들이 몰렸고 1500명 입장 인원이 이날 마감됐다.",
+  "visitors_source_url": "https://magazine.hankyung.com/business/article/202405239140b",
+  "visitors_source_date": "2024-05-23",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "새벽 5시부터 대기, 오픈 1시간 반 전에 입장 마감",
+   "sold_out": "인기 MD 당일 완판",
+   "reservation_fill": null,
+   "signal_quotes": [
+    "팝업이 오픈하는 10시 30분이 되기도 전인 9시 10분께 이날 입장 인원이 마감됐다.",
+    "부채와 열쇠고리, 부적 세트, 선재 수영복 포토카드 세트 등 인기 MD는 이날 완판됐다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "visitors_total=1500은 첫날 입장 인원(일일 입장 정원 마감치)이며 기간 누적 아님. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

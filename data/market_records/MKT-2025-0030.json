@@ -1,0 +1,110 @@
+{
+ "market_record_id": "MKT-2025-0030",
+ "event_name": "샤클라라 '프라이빗 뱅크(SHACLARA PRIVATE BANK)' 첫 팝업스토어",
+ "brand": "샤클라라(Shaclara)",
+ "ip_or_collab": null,
+ "category": "fashion",
+ "intervention": {
+  "concept_description": "'당신의 금고를 열어보세요' 프라이빗 뱅크 콘셉트. 25SS 신제품 선공개, 스탬프 미션, 시크릿 금고 이벤트",
+  "experience_elements": [
+   "스탬프 미션",
+   "시크릿 금고 열기",
+   "럭키드로우"
+  ],
+  "promotions": [
+   "전 제품 20~50% 할인",
+   "금액대별 선물",
+   "한정 더스트백"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "스토리칸 성수(연무장길 17)",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수",
+  "city": "서울",
+  "period_from": "2025-04-23",
+  "period_to": "2025-04-28",
+  "area_pyeong": null,
+  "multi_store": true,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 6,
+    "weekend_share": 0.33,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 0.0,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 3500,
+  "visitors_period_days": 6,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "성수+압구정 2개 팝업 총방문객 약 3,500명. 성수점 주말 3일간 1,000여 명, 성수 사전예약 1,637명(성수 개별 지표 존재)",
+  "visitors_source_quote": "총 방문객은 약 3500명에 달했으며, 특히 성수점은 주말 3일간 1000여 명이 다녀가며 성황을 이뤘다.",
+  "visitors_source_url": "https://www.sentv.co.kr/article/view/sentv202506120059",
+  "visitors_source_date": "2025-06-12",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": "성수점 사전예약 1,637명 모집",
+   "signal_quotes": [
+    "특히 압구정점은 사전 예약만 698명, 성수점은 1,637명을 모집하며 샤클라라에 대한 시장의 관심을 방증했다.",
+    "압구정점은 사전 예약만 698명, 성수점은 1637명을 모집하며 샤클라라에 대한 시장의 관심을 방증했다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true,
+   "days_stated": 3,
+   "days_stored": 6,
+   "days_corrected": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "multi_store: 성수(4/23~28)+현대 압구정(5/23~29) 연속 개최, 총방문객은 합산. | 병합 레코드: MKT-2025-0005 | [병합:MKT-2025-0005] 3500명은 성수+압구정 합산. 압구정본점 기간(5/23~29) 기준 기록, 사전예약 698명 별도 신호",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 3500,
+   "basis": "organizer_claim",
+   "quote": "이번 팝업은 4월 23일부터 28일까지 성수동 '스토리칸'에서, 5월 23일부터 29일까지 현대백화점 압구정본점에서 각각 진행됐다. 총 방문객은 약 3500명에 달했으며, 특히 성수점은 주말 3일간 1000여 명이 다녀가며 성황을 이뤘다.",
+   "url": "https://www.sentv.co.kr/article/view/sentv202506120059",
+   "date": "2025-06-12"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "집계형(통합/합산)",
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

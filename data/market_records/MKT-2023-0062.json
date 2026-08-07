@@ -1,0 +1,72 @@
+{
+ "market_record_id": "MKT-2023-0062",
+ "event_name": "'짱구는 못말려' 팝업스토어 시네마 퍼레이드 투어(판교·대구·부산)",
+ "brand": "대원씨아이/현대백화점·신세계백화점",
+ "ip_or_collab": "짱구는 못말려",
+ "category": "character",
+ "intervention": {
+  "concept_description": "'짱구는 못말려' 극장판 연계 릴레이 팝업스토어. 2023년 판교·대구·부산에서 진행됐고 이후 신촌 팝업(10.27~11.5 예정 보도)이 이어졌다.",
+  "experience_elements": [
+   "캐릭터 굿즈 판매",
+   "포토존"
+  ],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "현대백화점 판교점·더현대 대구·신세계 센텀시티(보도상 판교·대구·부산)",
+  "venue_type": "department_store",
+  "neighborhood": "판교·중구·해운대",
+  "city": "성남·대구·부산",
+  "period_from": null,
+  "period_to": null,
+  "area_pyeong": null,
+  "multi_store": true
+ },
+ "outcome": {
+  "visitors_total": 150000,
+  "visitors_period_days": null,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "주최측 집계(베타뉴스 보도 인용)",
+  "visitors_source_quote": "현재까지 판교, 대구, 부산에서 진행된 짱구 팝업스토어는 누적 방문객 15만을 기록하며 마쳤다.",
+  "visitors_source_url": "https://www.betanews.net/article/view/beta202310260071",
+  "visitors_source_date": "2023-10-26",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": true,
+   "forecast": false,
+   "multi_run": true,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": true,
+   "usable": false
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "3개 지역 합산 누적. 스위트스팟(2025-05-29)도 '23년 릴레이 팝업 누적 15만 명' 확인 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "집계형(통합/합산)",
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

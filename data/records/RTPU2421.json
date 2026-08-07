@@ -1,0 +1,283 @@
+{
+ "record_id": "RTPU2421",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:원피스_ONE_PIECE",
+  "space_id": "unresolved:더현대서울_더현대대구",
+  "client_party_id": null,
+  "brand_key": "원피스",
+  "space_key": "multi_더현대"
+ },
+ "intervention": {
+  "concept": "애니메이션 '원피스' IP 팝업스토어. 더현대 서울과 더현대 대구에서 진행.",
+  "brand_name": "원피스(ONE PIECE)",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": "더현대 서울, 더현대 대구",
+   "venue_type": "백화점",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-06-20",
+   "to": "2024-06-26",
+   "days": 7
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 2,
+   "venue_traffic_type": "multi_store",
+   "host_traffic_note": "더현대 서울, 더현대 대구 백화점 2개점"
+  },
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 45,
+    "holiday_until": 86,
+    "holiday_block_in": 0,
+    "nat_event_gap": 71,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2024-06-20",
+    "visitors": 2556,
+    "sales_krw": 53406000
+   },
+   {
+    "date": "2024-06-21",
+    "visitors": 2514,
+    "sales_krw": 46009800
+   },
+   {
+    "date": "2024-06-22",
+    "visitors": 2547,
+    "sales_krw": 67217200
+   },
+   {
+    "date": "2024-06-23",
+    "visitors": 2706,
+    "sales_krw": 68275900
+   },
+   {
+    "date": "2024-06-24",
+    "visitors": 2388,
+    "sales_krw": 47207100
+   },
+   {
+    "date": "2024-06-25",
+    "visitors": 2295,
+    "sales_krw": 43948700
+   },
+   {
+    "date": "2024-06-26",
+    "visitors": 2100,
+    "sales_krw": 37111200
+   },
+   {
+    "date": "2024-07-26",
+    "visitors": 1106,
+    "sales_krw": 40636800
+   },
+   {
+    "date": "2024-07-27",
+    "visitors": 1428,
+    "sales_krw": 41301600
+   },
+   {
+    "date": "2024-07-28",
+    "visitors": 1436,
+    "sales_krw": 34091900
+   },
+   {
+    "date": "2024-07-29",
+    "visitors": 1122,
+    "sales_krw": 24152700
+   },
+   {
+    "date": "2024-07-30",
+    "visitors": 1196,
+    "sales_krw": 19114100
+   },
+   {
+    "date": "2024-07-31",
+    "visitors": 1402,
+    "sales_krw": 20720900
+   },
+   {
+    "date": "2024-08-01",
+    "visitors": 1366,
+    "sales_krw": 20484200
+   },
+   {
+    "date": "2024-08-02",
+    "visitors": 1333,
+    "sales_krw": 21000500
+   },
+   {
+    "date": "2024-08-03",
+    "visitors": 1593,
+    "sales_krw": 27564800
+   },
+   {
+    "date": "2024-08-04",
+    "visitors": 2042,
+    "sales_krw": 25393900
+   }
+  ],
+  "totals": {
+   "visitors": 31130,
+   "sales_krw": 642586700,
+   "rev_mm_recognized": 198.9
+  },
+  "counting_method": "entry",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-06, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2024-08"
+  },
+  "counting_detail": "entry",
+  "label_trust": {
+   "grade": "E",
+   "why": "origin=derived — 실측이 아니므로 평가 풀에서 제외"
+  },
+  "measurement_instrument": "현장/사전 웨이팅 등록 시스템(알람톡 대기열 호출) — 등록 건수를 기준으로 방문객 산출",
+  "legs": [
+   {
+    "name": "더현대 서울(여의도) B2 아이코닉존",
+    "from": "2024-06-20",
+    "to": "2024-06-26",
+    "visitors": 17106
+   },
+   {
+    "name": "더현대 대구 B2 팝업스테이지",
+    "from": "2024-07-26",
+    "to": "2024-08-04",
+    "visitors": 14024
+   }
+  ],
+  "provenance": {
+   "source": "mine2 (2026-07-28)",
+   "evidence": "양 지점 결과보고서 각각의 슬라이드4 '매출액 및 방문객 추이' 표를 판독했다(둘 다 한컴 저장본 pptx, 106MB/182MB). 두 지점의 방문객 열 이름이 다르다: 여의도는 '추정 방문객 수(명)'이고 일자별 값이 '웨이팅 등록 수'의 정확히 3배(852→2556, 838→2514, 700→2100 …)로 웨이팅 등록에 계수 3을 곱한 파생값이다. 여의도의 실측은 '웨이팅 등록 수' 총계 5,702명(일평균 815)이며 17,106은 그로부터 유도된 추정치다. 대구는 '웨이팅 등록 건수 / 미입장 건수 / 방문객 수(명)' 3열 구성으로 방문객 수가 등록수의 배수가 아니고(708→1106, 916→1428, 1048→2042) 미입장을 별도로 계상하므로 현장 집계 성격이 강하다. 총계 여의도 17,106 + 대구 14,024 = 31,130. origin은 절반 이상(여의도)이 명시적 '추정'이므로 derived로 판정했다 — 이 값은 실측이 아니다. 매출: 여의도 상품 363,175,900원(결제건수 6,421), 대구 총매출 279,410,800원(상품 261,021,400 + 쿠지 13,440,000 + 포토카드 4,788,000; 보고서 합계 ",
+   "column_quote": "[여의도] 일자 / 웨이팅 등록 수(명) / 추정 방문객 수(명) — 총계 5,702 / 17,106, 일평균 815 / 2444 || [대구] 일자 / 웨이팅 등록 건수 / 미입장 건수 / 방문객 수(명) — 총계 8,238 / 1,241 / 14,024, 일평균 823 / 124 / 1,400",
+   "docs_opened": [
+    "결과보고서_원피스_여의도더현대.pptx — 우회성공 (MCP unsupported mime type)",
+    "결과보고서_원피스_대구더현대.pptx — 우회성공 (MCP unsupported mime type, 182MB라 HTTP Range zip 판독)",
+    "결과보고서_원피스_여의도더현대.pdf — 우회시도했으나 이미지 스캔본으로 39자만 추출(열람실패)",
+    "결과보고서_원피스_대구더현대.pdf — 우회시도했으나 이미지 스캔본으로 521자(도면 라벨)만 추출(열람실패)"
+   ]
+  },
+  "label_history": [
+   {
+    "at": "mine2 (2026-07-28)",
+    "action": "mine",
+    "changes": [
+     "visitors 31,130 (entry/derived) 등급 E",
+     "sales_krw 642,586,700",
+     "daily 17행 (합 31,130 — 총계와 일치)",
+     "레그 2건 기록"
+    ],
+    "origin": "derived",
+    "instrument": "현장/사전 웨이팅 등록 시스템(알람톡 대기열 호출) — 등록 건수를 기준으로 방문객 산출",
+    "evidence": "양 지점 결과보고서 각각의 슬라이드4 '매출액 및 방문객 추이' 표를 판독했다(둘 다 한컴 저장본 pptx, 106MB/182MB). 두 지점의 방문객 열 이름이 다르다: 여의도는 '추정 방문객 수(명)'이고 일자별 값이 '웨이팅 등록 수'의 정확히 3배(852→2556, 838→2514, 700→2100 …)로 웨이팅 등록에 계수 3을 곱한 파생값이다. 여의도의 실측은 '웨이팅 등록 수' 총계 5,702명(일평균 815)이며 17,106은 그로부터 유도된 추정치다. 대구는 '웨이팅 등록 건수 / 미입장 건수 / 방문객 수(명)' 3열 구성으로 방문객 수가 등록수의 배수가 아니고(708→1106, 916→1428, 1048→2042) 미입장을 별도로 계상하므로 현장 집계 성격이 강하다. 총계 여의도 17,1"
+   }
+  ],
+  "label_scope": {
+   "label_from": "2024-06-20",
+   "label_to": "2024-08-04",
+   "label_active_days": 17,
+   "label_span_days": 46,
+   "label_contiguous": false,
+   "daily_sum": 31130,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "18tUi1dDbuuSktuXseslbq9u6FzijLnHn",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/18tUi1dDbuuSktuXseslbq9u6FzijLnHn/view",
+   "title": "결과보고서_원피스_대구더현대.pptx"
+  },
+  {
+   "doc_id": "1E-42FoPbSgQ8ozLZJaoAfH2_8DCyS9bw",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1E-42FoPbSgQ8ozLZJaoAfH2_8DCyS9bw/view",
+   "title": "결과보고서_원피스_여의도더현대.pptx"
+  },
+  {
+   "doc_id": "1ExsPCeIc9vUrtFU0a6KQ3qhk0192d8fq",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1ExsPCeIc9vUrtFU0a6KQ3qhk0192d8fq/view",
+   "title": "결과보고서_원피스_대구더현대.pdf"
+  },
+  {
+   "doc_id": "1Hk4CMMwhbe_Dx8V33v1_euqrVpdpYShI",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Hk4CMMwhbe_Dx8V33v1_euqrVpdpYShI/view",
+   "title": "계약서_내용없음.txt"
+  },
+  {
+   "doc_id": "1JPSqCJ5LxlQdNnhklw9oYvED-jxvVLVn",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1JPSqCJ5LxlQdNnhklw9oYvED-jxvVLVn/view",
+   "title": "RTPU2421_더현대 원피스팝업스토어_대구_견적서_0904.pdf"
+  },
+  {
+   "doc_id": "1abk_GXSeEDXmAJiYc7vzbJR1xJ5cIyw6",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1abk_GXSeEDXmAJiYc7vzbJR1xJ5cIyw6/view",
+   "title": "RTPU2421_더현대 원피스팝업스토어_서울_견적서_0813.xlsx"
+  },
+  {
+   "doc_id": "1q8G277Wdq_foTQIAzeOS1au0wEwmgFXe",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1q8G277Wdq_foTQIAzeOS1au0wEwmgFXe/view",
+   "title": "결과보고서_원피스_여의도더현대.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 미제공; client_name 미상; 컨셉·체험요소·프로모션·연출태그 정보 없음; 면적·수수료구조·요구사항 정보 없음; 방문자수·매출 실측 데이터 없음; counting_method 판정 불가"
+ }
+}

@@ -1,0 +1,80 @@
+{
+  "market_record_id": "MKT-2024-0034",
+  "event_name": "인사이드 아웃2 팝업스토어(더현대 서울)",
+  "brand": "디즈니·픽사(디즈니 코리아)",
+  "ip_or_collab": "인사이드 아웃2",
+  "category": "entertainment",
+  "intervention": {
+    "concept_description": "영화 개봉 기념 체험형 팝업. 생각 기차 체험, 신규 감정(불안·당황·따분·부럽이) 체험존, 감정 컨트롤 본부 콘솔 체험, 굿즈 판매",
+    "experience_elements": [
+      "생각 기차 체험",
+      "감정 체험존",
+      "콘솔 체험",
+      "굿즈 판매"
+    ],
+    "promotions": [],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "더현대 서울",
+    "venue_type": "department_store",
+    "neighborhood": "여의도",
+    "city": "서울",
+    "period_from": "2024-05-25",
+    "period_to": "2024-06-16",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 23,
+        "weekend_share": 0.35,
+        "holiday_days": 1
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 23,
+    "counting_basis": "media_estimate",
+    "counting_basis_note": "매체 보도 '25일 시작한 팝업이 현재까지 일주일가량 진행된 가운데, 벌써 1만 명에 가까운 관람객이 다녀갔다' — 첫 주 카운트이며 총계 미공개(규칙 5)",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": true,
+      "sold_out": null,
+      "reservation_fill": true,
+      "signal_quotes": [
+        "여의도 더현대 서울 백화점에서 운영되는 '인사이드 아웃2' 팝업스토어가 20일 1차 사전 예약, 24일 2차 사전 예약 모두 오픈 직후 매진됐다. 30일 진행된 3차 사전 예약에도 실패했다는 후기가 잇따르고 있으며 현장 대기에도 관람객들이 몰리고 있는 상황이다.",
+        "25일 시작한 팝업이 현재까지 일주일가량 진행된 가운데, 벌써 1만 명에 가까운 관람객이 다녀갔다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "첫 일주일 1만명(매체 보도) + 사전예약 3회 연속 매진. 총 방문 총계 없음 | 병합 레코드: ",
+  "outcome_source_url": "https://www.koreaes.com/news/articleView.html?idxno=364080",
+  "outcome_source_date": "2024-06-03",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,162 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{자를 전 축에 걸었더니 고칠 자리가 하나뿐이었고, 그 자가 이름표를 등급으로 읽고 있었다}
+\author{월드모델 실험실}
+\date{노트 588 · 589 · 2026년 8월 5일}
+\maketitle
+
+\begin{abstract}
+노트 $583$ 이 \texttt{entry\_friction} 의 방향을 세워 안 본 시장 성적을
+$+0.2860 \to +0.5038$ 로 올렸다. 그러면 물음은 하나다 ---
+\textbf{그런 축이 더 있나, 아니면 골라낸 것인가.}
+
+축 \textbf{$40$ 개 전부}에 \texttt{sideaudit.shared\_sign} 을 걸었다
+(학습 $\cdot$ 날짜 통제). 일치율과 $|$가중평균$|$ 을 한 판에 놓으면
+\textbf{왼쪽 위가 비어 있다.}
+
+\begin{center}
+\begin{tabular}{lrr}
+\hline
+ & 일치율 $\geq 70\%$ & 일치율 $< 70\%$ \\
+\hline
+$|$가중$| \geq 0.15$ & \textbf{넷} (90$\sim$100\%) & \textbf{없음} \\
+$|$가중$| < 0.15$ & 열 & 넷(전부 $|$가중$| < 0.07$) \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{세다고 할 만한 축은 전부 부호가 서 있고, 갈린 축은 전부 약하다.}
+\texttt{entry\_friction} 은 \emph{하네스 열에서만} 약해 보였다 --- 원
+방향에서 $-0.1051$, 짝에서 $-0.6353$ 이다. \textbf{고칠 자리는 하나였고
+그것을 고쳤다.}
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 왼쪽 위가 비어 있다.
+\textbf{나} --- 달력은 부호가 아니라 크기다.
+\textbf{다} --- 자가 이름표를 등급으로 읽었다.}
+\end{figure}
+
+\section{달력 --- 다섯째 설명 (노트 588)}
+
+``달력이 왜 트리 안에서만 되는지''는 이 판의 상시 갈래였다. 설명 넷이
+실패해 \textbf{관측으로 둔} 자리다(노트 $385$). 새 자를 걸었다.
+
+\begin{center}
+\begin{tabular}{lrr}
+\hline
+축 & 일치율 & 가중평균 \\
+\hline
+\texttt{cal\_weekend} & $100\%$ & $+0.0702$ \\
+\texttt{cal\_dow\_cos} & $67\%$ & $-0.0602$ \\
+\texttt{cal\_dow\_sin} & $100\%$ & $-0.0497$ \\
+\texttt{cal\_month\_sin} & $67\%$ & $+0.0399$ \\
+\texttt{cal\_month\_cos} & $100\%$ & $-0.0320$ \\
+\texttt{cal\_holiday\_gap} & $100\%$ & $-0.0095$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{여섯 중 넷이 $100\%$ 다 --- 부호는 대체로 선다.} 그런데
+$|$가중$|$ 이 $0.0095 \sim 0.0702$ 로 \texttt{target\_breadth}$(+0.4163)$
+$\cdot$ \texttt{media\_push}$(+0.3688)$ $\cdot$
+\texttt{goods\_scale}$(+0.3097)$ 의 \textbf{$6\!\sim\!40$ 분의 $1$} 이다.
+
+\begin{quote}
+\textbf{공유 층에서 애초에 약하다 --- 전이할 것이 없다.} 노트 $439$ 가
+잰 전이 $+0.0005$ 대 판 $+0.0205$($41$ 배)와 정확히 맞는다.
+\end{quote}
+
+그리고 ``왜 트리 안에서만''도 따라 나온다. \texttt{cal\_dow\_cos} 가
+\textbf{웹툰 $-0.1192$ 대 아이돌 $+0.1855$} 로 반대인데, 웹툰의 연재 요일은
+\emph{그 도메인 안에서만} 뜻이 있다. 트리는 도메인 지시자와 함께 갈라
+그것을 쓰지만 안 본 도메인에는 쓸 것이 없다.
+
+\begin{quote}
+\textbf{\texttt{entry\_friction} 과 대비된다} --- 그 축은 \emph{강한데
+부호가 갈렸다}(짝에서 $-0.6353$). 달력은 \emph{부호는 맞는데 약하다}.
+\textbf{갈린 강한 축은 고칠 수 있고 약한 축은 고칠 게 없다.}
+\end{quote}
+
+\textbf{설명 다섯째이고, 앞의 넷과 달리 측정에 근거한다.} 챔피언은 그대로
+둔다 --- 달력이 전이를 해치지 않으므로 뺄 이유가 없다(노트 $439$).
+
+\section{자가 이름표를 등급으로 읽었다 (노트 589)}
+
+처음 돌렸을 때 \texttt{grp} 이 \textbf{일치율 $71\%$ $\cdot$ 가중
+$-0.1625$} 로 나왔다 --- 갈린 축 중 제일 세다. \emph{강한데 갈린} 둘째
+사례처럼 보였다.
+
+그런데 \texttt{grp} 이 담는 것은 도메인마다 다르다.
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+웹툰 & 연령등급 \\
+모바일 & 무료 여부 \\
+애니 & 매체 \\
+만화 & 국가 \\
+펀딩 & 카테고리 \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{공유 눈금이 아니라 행을 집단으로 묶는 통로다}(노트 $138$ 의
+바닥선). \textbf{도메인 사이에서 부호가 같아야 할 이유가 없다.}
+\texttt{sideaudit.NOMINAL} 로 채점에서 뺐다.
+
+\texttt{gen} 은 반대다 --- 노트 $419$ 가 \textbf{도메인 사이에서 눈금을
+공유하는} 범주로 설계했고, 실제로 일치율 $100\%$($5/5$ 음수)다. 그래서
+채점한다.
+
+\begin{quote}
+\textbf{설계 의도가 자에 반영돼야 한다.} 같은 ``범주형 열''인데 하나는
+채점 대상이고 하나는 아니다 --- 그 차이는 \emph{자료에 안 적혀 있고}
+\textbf{설계 노트에만 있다.}
+\end{quote}
+
+\section*{그래서 노트 583 은 골라낸 것이 아니다}
+
+이것이 이 감사의 값이다. \texttt{entry\_friction} 하나를 고쳐
+$+0.2178$ 을 벌었을 때 물어야 할 것은 ``\textbf{운이 좋았나}''인데,
+전 축을 걸어 보니
+
+\begin{itemize}
+\item $|$가중$| \geq 0.28$ 인 축 넷(\texttt{target\_breadth} $\cdot$
+\texttt{media\_push} $\cdot$ \texttt{goods\_scale} $\cdot$
+\texttt{wiki\_level})은 \textbf{일치율 $90\!\sim\!100\%$}
+\item 갈린 축 넷(\texttt{cal\_dow\_cos} $\cdot$ \texttt{cal\_month\_sin}
+$\cdot$ \texttt{wiki\_momentum} $\cdot$ \texttt{entry\_friction})은
+\textbf{전부 $|$가중$| < 0.07$}
+\end{itemize}
+
+\textbf{고칠 자리는 하나였다.} 그리고 남은 셋은 되돌려도 원래 약하다.
+
+\section*{조항}
+
+\begin{quote}
+\textbf{자를 만들면 전 축에 한 번 걸어 본다.} 하나를 고쳐 값을 벌었을 때
+``더 있나''와 ``운이었나''는 같은 물음이고, 전수로 걸면 한 번에 답한다.
+\textbf{그리고 자가 채점하면 안 되는 열이 무엇인지도 그때 드러난다.}
+\end{quote}
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{\texttt{wiki\_level}} --- $|$가중$| +0.2883$ 에 일치율
+$100\%$ 인데 \textbf{도메인 넷}뿐이다. 덮음을 넓히면 ALL5 급이 되나.
+\texttt{WIKI\_DROP} 이 다섯 도메인을 막고 있고, 남은 곳도 덮음이 낮다
+(만화 $16.6\%$ $\cdot$ 펀딩 $13.8\%$, 노트 $554$).
+\item \textbf{걸린 넷을 되돌리는 대조 팔} --- 안 돌렸다. 노트 $588$ 이
+``약해서 세울 게 없다''로 답했고 \texttt{wiki\_momentum} 도 같은 급이다.
+\item \textbf{$70\%$ 문턱은 도메인 수에 안 맞춰져 있다} --- 달력은 도메인이
+셋뿐이라 $67\%$ 가 $2$ 대 $1$ 이다. 노트 $439$ 가 ``문턱 통과 도메인이
+여섯 미만이면 다수결이 아니다''를 세웠는데, \textbf{이 자에도 같은 조항이
+필요하다.}
+\end{itemize}
+
+\end{document}

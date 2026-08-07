@@ -1,0 +1,129 @@
+{
+ "record_id": "RTPU2405",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:unknown",
+  "space_id": "unresolved:unknown",
+  "client_party_id": null,
+  "brand_key": "미상",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "",
+  "brand_name": "",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-03-01",
+   "to": "2024-04-30",
+   "days": null
+  },
+  "season": null,
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 61,
+    "weekend_share": 0.3,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 0,
+    "holiday_until": 0,
+    "holiday_block_in": 3,
+    "nat_event_gap": 40,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": null,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-Oo10s3G1iFGGNgVGsyoDCpgdYYBW-4A",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1-Oo10s3G1iFGGNgVGsyoDCpgdYYBW-4A/view",
+   "title": "제안서_내용없음.txt"
+  },
+  {
+   "doc_id": "1CDHl6qX3bV2lOeJA2vpiF2aQJCE4s-lz",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1CDHl6qX3bV2lOeJA2vpiF2aQJCE4s-lz/view",
+   "title": "RTPU2405_팀프레시 SNS 대행_계약서_0205.docx"
+  },
+  {
+   "doc_id": "1D1fE1TO4v0VlfOd8wzf9FELEf9PDsDnI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1D1fE1TO4v0VlfOd8wzf9FELEf9PDsDnI/view",
+   "title": "견적서_내용없음.txt"
+  },
+  {
+   "doc_id": "1w6j_kAN5Rrwnn15d4mqr745V3xgc5ZLM",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1w6j_kAN5Rrwnn15d4mqr745V3xgc5ZLM/view",
+   "title": "결과보고서_내용없음.txt"
+  },
+  {
+   "doc_id": "1wLeQaXmC7fnVEWT6lcEYRLwMZ4AlPwJi",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1wLeQaXmC7fnVEWT6lcEYRLwMZ4AlPwJi/view",
+   "title": "RTPU2405_팀프레시 SNS 대행_계약서_0205.docx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서 텍스트가 제공되지 않음 (기획서/계약서/견적서/결과보고서 없음); brand_id, space_id, client_party_id 미상; concept 및 intervention 전체 정보 없음; location 전체 정보 없음; area_pyeong 미상; fee_structure 미상; outcome daily/totals/counting_method 전체 정보 없음; plan_visitors_expected 미상"
+ }
+}

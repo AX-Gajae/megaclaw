@@ -1,0 +1,333 @@
+{
+ "record_id": "RCPU2524",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:핑크퐁",
+  "space_id": "unresolved:에버랜드",
+  "client_party_id": null,
+  "brand_key": "핑크퐁",
+  "space_key": "에버랜드"
+ },
+ "intervention": {
+  "concept": "핑크퐁 브랜드와 에버랜드가 협업한 팝업. 원문 문서가 제공되지 않아 세부 컨셉을 확인할 수 없다.",
+  "brand_name": "핑크퐁",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": "에버랜드",
+   "venue_type": "테마파크",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-07-04",
+   "to": "2025-08-03",
+   "days": 31
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "에버랜드 테마파크"
+  },
+  "derived": {
+   "duration": {
+    "days": 31,
+    "weekend_share": 0.32,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 26,
+    "holiday_until": 42,
+    "holiday_block_in": 0,
+    "nat_event_gap": 31,
+    "nat_event": null,
+    "doc_lag_days": 14,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 116656417.0,
+    "pnl_pre_accounts": 12,
+    "pnl_pre_months": 3,
+    "pnl_pre_first": "2025-04-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 280.8
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-08, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-08"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "10fYe7xPHeDbhKqhcs9_j7wbhi2z7dpwX",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/10fYe7xPHeDbhKqhcs9_j7wbhi2z7dpwX/view",
+   "title": "견적서_태림스튜디오_핑크퐁 써머캠프 AR포토부스 개발건.pdf"
+  },
+  {
+   "doc_id": "14N28x5Hug47WJyJdC-lKW08JxgGmjNu5",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/14N28x5Hug47WJyJdC-lKW08JxgGmjNu5/view",
+   "title": "주식회사 필터테크_통장사본.pdf"
+  },
+  {
+   "doc_id": "14XZ19vEJhUT9gSAb6rDyPQqaUCyxAx9J",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/14XZ19vEJhUT9gSAb6rDyPQqaUCyxAx9J/view",
+   "title": "스위트스팟_PFC 띠부씰 제작 견적서 250620 (2).pdf"
+  },
+  {
+   "doc_id": "19iGyboUPny7RClzVsqk1XkoEou3Xvk_q",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19iGyboUPny7RClzVsqk1XkoEou3Xvk_q/view",
+   "title": "견적서_그리드_에버랜드 써머캠프 인테리어시공비.xlsx"
+  },
+  {
+   "doc_id": "19lFZW04voSiG6duqMiXXrn-SbXzXRVYW",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19lFZW04voSiG6duqMiXXrn-SbXzXRVYW/view",
+   "title": "세금계산서_그리드_핑크퐁 써머캠프 추가시공건.JPG"
+  },
+  {
+   "doc_id": "19ycqO2II9Kj0ezGj_GVZgYp5UM8KuJyy",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19ycqO2II9Kj0ezGj_GVZgYp5UM8KuJyy/view",
+   "title": "세금계산서_필터테크_핑크퐁 써머캠프 외부 포그캐논설치건.PDF"
+  },
+  {
+   "doc_id": "1Axla0Bhnnl5WK1-M2RrVJfM6cyyHhZ0p",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Axla0Bhnnl5WK1-M2RrVJfM6cyyHhZ0p/view",
+   "title": "★시공계약서_애드마스터_핑크퐁 썸머캠프 벌룬제작 및 시공건(날인문서).pdf"
+  },
+  {
+   "doc_id": "1CAb7iOFaPaD0aOa4XB85n608ahkdQBV4",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1CAb7iOFaPaD0aOa4XB85n608ahkdQBV4/view",
+   "title": "시공계약서_태림_핑크퐁 썸머캠프 컨텐츠개발 및 시공건.docx"
+  },
+  {
+   "doc_id": "1CzelQKGEWaV0wWy2A2355eK07aQYsVGD",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1CzelQKGEWaV0wWy2A2355eK07aQYsVGD/view",
+   "title": "시공계약서_그리드_핑크퐁 썸머캠프 인테리어 시공건(날인완료).pdf"
+  },
+  {
+   "doc_id": "1HTdDlu52tm4o-Pve7p8U-Oqjcyod44cZ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1HTdDlu52tm4o-Pve7p8U-Oqjcyod44cZ/view",
+   "title": "견적서_그리드 에버랜드 써머캠프 추가비용.xlsx"
+  },
+  {
+   "doc_id": "1J1gvB-m4uj1PkS29BGcWKt3OSmQNYGJH",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1J1gvB-m4uj1PkS29BGcWKt3OSmQNYGJH/view",
+   "title": "0627 에버랜드 핑크퐁 유니버스 써머캠프 공간기획안(최종기획안).pptx"
+  },
+  {
+   "doc_id": "1JEOOLTYXqjc8LibvCmai2cgpC24MNki3",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1JEOOLTYXqjc8LibvCmai2cgpC24MNki3/view",
+   "title": "핀벌룬 2차 문의.pptx"
+  },
+  {
+   "doc_id": "1KEUwfUskm6BcERF1p5qcQ2m9I3j4cDlW",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1KEUwfUskm6BcERF1p5qcQ2m9I3j4cDlW/view",
+   "title": "세금계산서_태림스튜디오_핑크퐁 써머캠프 인터렉티브월 개발건(선금).JPG"
+  },
+  {
+   "doc_id": "1LTLfMQYWTpmIcSYYNX0tG69p9qT2O8d1",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1LTLfMQYWTpmIcSYYNX0tG69p9qT2O8d1/view",
+   "title": "추가비용_에버랜드 핑크퐁 여름캠프 견적_0729 (1).pdf"
+  },
+  {
+   "doc_id": "1Oo_ILa1ryOBgTU1fTJBshJbopQxrToEg",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Oo_ILa1ryOBgTU1fTJBshJbopQxrToEg/view",
+   "title": "견적서_필터테크_핑크퐁 써머캠프 외부 포그캐논설치건.PDF"
+  },
+  {
+   "doc_id": "1PZEdHVCCev_8ChUDdLSopO1BN4vXIszW",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1PZEdHVCCev_8ChUDdLSopO1BN4vXIszW/view",
+   "title": "세금계산서_위드엔지니어링_핑크퐁크퐁 공기구조물 구조검토.JPG"
+  },
+  {
+   "doc_id": "1PiehnSoFJHN6SzCdKg56Nnnu-jWNSTIE",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1PiehnSoFJHN6SzCdKg56Nnnu-jWNSTIE/view",
+   "title": "핑크퐁 결과보고서.pdf"
+  },
+  {
+   "doc_id": "1RNXLlwpevdHyYQzdevbFtc4APjsoXak5",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1RNXLlwpevdHyYQzdevbFtc4APjsoXak5/view",
+   "title": "주식회사 필터테크_사업자등록증.pdf"
+  },
+  {
+   "doc_id": "1SMYenQ6Ts_iR7-Q9ZKYGs3jzpKjPF8mQ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1SMYenQ6Ts_iR7-Q9ZKYGs3jzpKjPF8mQ/view",
+   "title": "시공계약서_태림_핑크퐁 썸머캠프 컨텐츠개발 및 시공건(날인완료).pdf"
+  },
+  {
+   "doc_id": "1U3LtyYhNcS793t13VM2ZavN64idrBX7l",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1U3LtyYhNcS793t13VM2ZavN64idrBX7l/view",
+   "title": "시공계약서_그리드_핑크퐁 썸머캠프 인테리어 시공건.docx"
+  },
+  {
+   "doc_id": "1UADcDHODNWJFlzf9BnHbbbMxwAK-ml6U",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1UADcDHODNWJFlzf9BnHbbbMxwAK-ml6U/view",
+   "title": "태림 통장사본.pdf"
+  },
+  {
+   "doc_id": "1VbK814FqCa96UkT2NF2GQ6Cyq91m_Ufb",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1VbK814FqCa96UkT2NF2GQ6Cyq91m_Ufb/view",
+   "title": "견적서_위드엔지니어링_핑크퐁크퐁 공기구조물 구조검토.pdf"
+  },
+  {
+   "doc_id": "1WFcEiSLVoIhbEGWfkOPCQ2_qgVB1NvND",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1WFcEiSLVoIhbEGWfkOPCQ2_qgVB1NvND/view",
+   "title": "세금계산서_애드마스터_에버랜드 핑크퐁 써머캠프 벌룬제작건(잔금30%).JPG"
+  },
+  {
+   "doc_id": "1ZZbTdRigLcMv-gIIhorLYnr77pLhv-LT",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ZZbTdRigLcMv-gIIhorLYnr77pLhv-LT/view",
+   "title": "견적서_태림스튜디오_핑크퐁 써머캠프 인터렉티브월 개발건.pdf"
+  },
+  {
+   "doc_id": "1Zo2kq4cIQiVAoOi7-uw5UzvBli7s-7MO",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Zo2kq4cIQiVAoOi7-uw5UzvBli7s-7MO/view",
+   "title": "세금계산서_태림스튜디오_핑크퐁 써머캠프 AR포토부스 개발건.JPG"
+  },
+  {
+   "doc_id": "1ezj8dmtzC1-ciivI-WpA44AXmY5ASRZ-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ezj8dmtzC1-ciivI-WpA44AXmY5ASRZ-/view",
+   "title": "태림 사업자등록증.pdf"
+  },
+  {
+   "doc_id": "1fHZ7ZnC5C_15d1Ylvv-M8Y4B_Zyd_ms1",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1fHZ7ZnC5C_15d1Ylvv-M8Y4B_Zyd_ms1/view",
+   "title": "위드엔지니어링 통장사본.jpg"
+  },
+  {
+   "doc_id": "1gv_D-N4Vel8D139c3nXyAlJDDNM61aVw",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1gv_D-N4Vel8D139c3nXyAlJDDNM61aVw/view",
+   "title": "견적서_그리드 에버랜드 써머캠프 추가비용.xlsx"
+  },
+  {
+   "doc_id": "1iLPwwnaVqLasUSE-QUSOGggEoIwKcx0S",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1iLPwwnaVqLasUSE-QUSOGggEoIwKcx0S/view",
+   "title": "시공계약서_애드마스터_핑크퐁 썸머캠프 벌룬제작 및 시공건.docx"
+  },
+  {
+   "doc_id": "1jPq5wt-NEVIxmx8v8_kJ1TNFEQbL0k-L",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1jPq5wt-NEVIxmx8v8_kJ1TNFEQbL0k-L/view",
+   "title": "세금계산서_그리그_핑크퐁 써머캠프 인테리어 시공건(잔금50%).JPG"
+  },
+  {
+   "doc_id": "1nBHDWdXNQ85v0ui1fujTGkperxpEKRls",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1nBHDWdXNQ85v0ui1fujTGkperxpEKRls/view",
+   "title": "견적서_애드벌룬마스터_핑크퐁 써머캠프 벌룬설치건.pdf"
+  },
+  {
+   "doc_id": "1nEX699l7tOxzgbKxdGl4FFIn9Vd8KLdI",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1nEX699l7tOxzgbKxdGl4FFIn9Vd8KLdI/view",
+   "title": "[P250528-0009]핑크퐁 에버랜드_스위트스팟_업무계약서_0523(최종).docx.pdf"
+  },
+  {
+   "doc_id": "1nGuhUg8R7C5lGTiJq-QSbsp6XsQpFj0u",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1nGuhUg8R7C5lGTiJq-QSbsp6XsQpFj0u/view",
+   "title": "세금계산서_애드마스터_에버랜드 핑크퐁 써머캠프 벌룬제작건(선금70%).JPG"
+  },
+  {
+   "doc_id": "1o-lvgJrvhUKueEydY1pJYuBF9KcvnJMn",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1o-lvgJrvhUKueEydY1pJYuBF9KcvnJMn/view",
+   "title": "위드엔지니어링 사업자등록증.pdf"
+  },
+  {
+   "doc_id": "1oaaece0gHZg2hVwsmNJhOzLcy53UPv0-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1oaaece0gHZg2hVwsmNJhOzLcy53UPv0-/view",
+   "title": "세금계산서_그리드_핑크퐁 써머캠프 인테리어시공건(선금50%).JPG"
+  },
+  {
+   "doc_id": "1pFl3aSUijs7VuL1UqqmKmzUbnlRFsqOy",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1pFl3aSUijs7VuL1UqqmKmzUbnlRFsqOy/view",
+   "title": "세금계산서_태림스튜디오_핑크퐁 써머캠프 인터렉티브월 개발건(잔금).pdf"
+  },
+  {
+   "doc_id": "1tA-bf0Ukq4tcY5xN4PCOfgv_lVLGXK0R",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1tA-bf0Ukq4tcY5xN4PCOfgv_lVLGXK0R/view",
+   "title": "★핑크퐁 써머캠프 실비정리(수정중).xlsx"
+  },
+  {
+   "doc_id": "1xARtJg2CVhsRdDuF0_pwQxTBaHWXo9zx",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1xARtJg2CVhsRdDuF0_pwQxTBaHWXo9zx/view",
+   "title": "그리드 사업자등록증_주소변경.jpg"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서 텍스트 전체 미제공; client_name; venue 상세; category; 컨셉/체험요소/프로모션; 면적; 수수료구조; 방문/매출 실측치"
+ }
+}

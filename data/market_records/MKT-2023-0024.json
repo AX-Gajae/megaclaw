@@ -1,0 +1,86 @@
+{
+ "market_record_id": "MKT-2023-0024",
+ "event_name": "후아유 강원 고성 팝업스토어 'WHO.A.U SUMMER CAMP'",
+ "brand": "후아유 WHO.A.U (이랜드월드)",
+ "ip_or_collab": null,
+ "category": "fashion",
+ "intervention": {
+  "concept_description": "여름 휴가 시즌 맞이 강원도 고성 해변 팝업, 서핑·캠핑 콘셉트",
+  "experience_elements": [
+   "포토존",
+   "이벤트"
+  ],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "고성",
+  "venue_type": "other",
+  "neighborhood": "고성",
+  "city": "강원",
+  "period_from": "2023-06-16",
+  "period_to": "2023-07-16",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 31,
+    "weekend_share": 0.32,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 1.2,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 10000,
+  "visitors_period_days": 31,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "이랜드 발표 인용. 일평균 600명. '1만명 돌파'. 동일 수치(한 달 1만 명 돌파·일평균 600여 명, 장소 이스트 사이드 바이브 클럽)가 fetimes·청년일보·일요신문 등 다수 매체 2023-07-17 보도로 교차 확인됨",
+  "visitors_source_quote": "지난달 16일부터 이달 16일까지 한 달간 강원도 고성에서 진행된 후아유 팝업스토어에는 1만명이 넘는 고객이 다녀갔다. 하루 평균 600명꼴이다.",
+  "visitors_source_url": "https://www.fetimes.co.kr/news/articleView.html?idxno=109152",
+  "visitors_source_date": "2023-07-17",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": true,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "기간은 원문 '지난달 16일부터 이달 16일까지 한 달간' 근거. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

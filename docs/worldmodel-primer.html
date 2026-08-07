@@ -1,0 +1,980 @@
+<title>IP 파운데이션 월드모델 — 정의, 원리, 현주소</title>
+
+<style>
+:root{
+  --ground:#F7F8FA; --surface:#FFFFFF; --surface-2:#F1F4F7;
+  --ink:#131A22; --ink-2:#46525F; --ink-3:#717E8C;
+  --rule:#DCE2E9; --rule-2:#EAEEF2;
+  --measured:#0E7C86; --unmeasurable:#9C6C15; --refuted:#A93A4A; --absent:#8A94A0;
+  --wash:#E7F1F2; --wash-2:#F3F1E7; --wash-3:#F6EAEC;
+  --sans:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --ground:#0B1015; --surface:#111921; --surface-2:#16202A;
+    --ink:#E2E9F0; --ink-2:#A2AFBB; --ink-3:#75828F;
+    --rule:#22303B; --rule-2:#1A252E;
+    --measured:#42B8C1; --unmeasurable:#D6A445; --refuted:#E0808F; --absent:#7C8996;
+    --wash:#153840; --wash-2:#2E2814; --wash-3:#38181E;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0B1015; --surface:#111921; --surface-2:#16202A;
+  --ink:#E2E9F0; --ink-2:#A2AFBB; --ink-3:#75828F;
+  --rule:#22303B; --rule-2:#1A252E;
+  --measured:#42B8C1; --unmeasurable:#D6A445; --refuted:#E0808F; --absent:#7C8996;
+  --wash:#153840; --wash-2:#2E2814; --wash-3:#38181E;
+}
+:root[data-theme="light"]{
+  --ground:#F7F8FA; --surface:#FFFFFF; --surface-2:#F1F4F7;
+  --ink:#131A22; --ink-2:#46525F; --ink-3:#717E8C;
+  --rule:#DCE2E9; --rule-2:#EAEEF2;
+  --measured:#0E7C86; --unmeasurable:#9C6C15; --refuted:#A93A4A; --absent:#8A94A0;
+  --wash:#E7F1F2; --wash-2:#F3F1E7; --wash-3:#F6EAEC;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--sans); font-size:16.5px; line-height:1.78;
+  -webkit-font-smoothing:antialiased;
+}
+.n{font-family:var(--mono); font-variant-numeric:tabular-nums; font-size:.94em; letter-spacing:-.01em}
+code{font-family:var(--mono); font-size:.9em; background:var(--surface-2);
+  padding:.1em .34em; border-radius:3px; color:var(--ink-2)}
+
+.page{max-width:1140px; margin:0 auto; padding:0 clamp(18px,4vw,44px)}
+.measure{max-width:69ch}
+h1,h2,h3,h4{text-wrap:balance; line-height:1.28; letter-spacing:-.022em}
+h1{font-size:clamp(2.05rem,5.2vw,3.35rem); font-weight:800; margin:0 0 .5em}
+h2{font-size:clamp(1.42rem,3.1vw,2.02rem); font-weight:750; margin:0 0 .35em}
+h3{font-size:1.11rem; font-weight:700; margin:2.4em 0 .5em}
+h4{font-size:.97rem; font-weight:700; margin:1.8em 0 .35em; color:var(--ink-2)}
+p{margin:0 0 1.15em}
+strong{font-weight:700}
+em{font-style:normal; background:linear-gradient(transparent 62%,var(--wash) 62%)}
+
+/* ── 머리 ───────────────────────────────── */
+.hero{padding:clamp(56px,9vw,110px) 0 clamp(38px,5vw,56px); border-bottom:1px solid var(--rule)}
+.eyebrow{font-family:var(--mono); font-size:.74rem; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--ink-3); margin:0 0 1.5em}
+.lede{font-size:clamp(1.02rem,1.9vw,1.2rem); color:var(--ink-2); max-width:64ch}
+.headnums{display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:1px; background:var(--rule); border:1px solid var(--rule); margin-top:clamp(34px,5vw,52px)}
+.hn{background:var(--surface); padding:20px 22px 18px}
+.hn .v{font-family:var(--mono); font-variant-numeric:tabular-nums;
+  font-size:1.85rem; font-weight:600; letter-spacing:-.03em; display:block; line-height:1.1}
+.hn .k{font-size:.83rem; color:var(--ink-3); margin-top:.5em; display:block}
+.hn .s{font-size:.78rem; margin-top:.65em; display:inline-block}
+
+/* ── 인식 상태 ─────────────────────────── */
+.st{font-family:var(--mono); font-size:.72rem; letter-spacing:.02em; padding:.2em .55em;
+  border-radius:2px; white-space:nowrap; border:1px solid; font-weight:500}
+.st-m{color:var(--measured); border-color:var(--measured); background:var(--wash)}
+.st-u{color:var(--unmeasurable); border-color:var(--unmeasurable); background:var(--wash-2)}
+.st-r{color:var(--refuted); border-color:var(--refuted); background:var(--wash-3)}
+.st-a{color:var(--absent); border-color:var(--absent); background:transparent}
+
+/* ── 본문 ──────────────────────────────── */
+main{padding:clamp(40px,6vw,72px) 0 40px}
+section{margin:0 0 clamp(56px,8vw,96px); scroll-margin-top:64px}
+.sechead{display:grid; grid-template-columns:auto 1fr; gap:0 18px; align-items:baseline;
+  margin:0 0 1.6em; padding-bottom:.7em; border-bottom:1px solid var(--rule)}
+.secno{font-family:var(--mono); font-size:.82rem; color:var(--ink-3); font-weight:500;
+  padding-top:.4em}
+.sechead p{margin:.5em 0 0; color:var(--ink-3); font-size:.93rem; max-width:60ch}
+
+/* ── 수식 ──────────────────────────────── */
+.eq{font-family:var(--mono); font-size:.95rem; line-height:1.65; background:var(--surface);
+  border:1px solid var(--rule); border-left:2px solid var(--ink-3);
+  padding:16px 20px; margin:1.5em 0; overflow-x:auto; color:var(--ink)}
+.eq .cm{color:var(--ink-3)}
+.eq b{font-weight:600; color:var(--measured)}
+
+/* ── 표 ────────────────────────────────── */
+.tw{overflow-x:auto; margin:1.6em 0; border:1px solid var(--rule); background:var(--surface)}
+table{border-collapse:collapse; width:100%; font-size:.9rem; min-width:520px}
+th,td{padding:9px 14px; text-align:left; border-bottom:1px solid var(--rule-2)}
+thead th{background:var(--surface-2); font-weight:600; font-size:.79rem; color:var(--ink-2);
+  letter-spacing:.01em; border-bottom:1px solid var(--rule); white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right; font-family:var(--mono); font-variant-numeric:tabular-nums;
+  font-size:.87rem; white-space:nowrap}
+tr.hl td{background:var(--wash)}
+
+/* ── 구간 그림 ─────────────────────────── */
+.plot{border:1px solid var(--rule); background:var(--surface); margin:1.8em 0; overflow:hidden}
+.plot-h{padding:14px 18px 10px; border-bottom:1px solid var(--rule-2)}
+.plot-h .t{font-weight:700; font-size:.95rem}
+.plot-h .d{font-size:.82rem; color:var(--ink-3); margin-top:.2em}
+.plot-b{padding:16px 18px 8px}
+.ivrow{display:grid; grid-template-columns:minmax(96px,132px) 1fr 62px;
+  gap:0 14px; align-items:center; margin-bottom:11px}
+.ivlab{font-size:.83rem; line-height:1.35}
+.ivlab .sub{display:block; font-family:var(--mono); font-size:.71rem; color:var(--ink-3)}
+.ivtrack{position:relative; height:22px}
+.ivtrack::before{content:""; position:absolute; left:0; right:0; top:50%; height:1px;
+  background:var(--rule); transform:translateY(-50%)}
+.ivzero{position:absolute; top:0; bottom:0; width:1px; background:var(--ink-3); opacity:.85}
+.ivband{position:absolute; top:50%; height:7px; transform:translateY(-50%); border-radius:1px; opacity:.34}
+.ivdot{position:absolute; top:50%; width:9px; height:9px; margin-left:-4.5px;
+  transform:translateY(-50%); border-radius:50%}
+.iv-m .ivband{background:var(--measured)} .iv-m .ivdot{background:var(--measured)}
+.iv-u .ivband{background:var(--unmeasurable)} .iv-u .ivdot{background:var(--unmeasurable)}
+.ivnum{font-family:var(--mono); font-variant-numeric:tabular-nums; font-size:.79rem;
+  text-align:right; color:var(--ink-2)}
+.plot-f{padding:6px 18px 14px; font-size:.78rem; color:var(--ink-3); border-top:1px solid var(--rule-2);
+  margin-top:6px; padding-top:10px}
+.axis{display:grid; grid-template-columns:minmax(96px,132px) 1fr 62px; gap:0 14px;
+  font-family:var(--mono); font-size:.7rem; color:var(--ink-3); margin-top:2px}
+.axis .ticks{position:relative; height:14px}
+.axis .ticks span{position:absolute; transform:translateX(-50%)}
+
+/* ── 막대 ──────────────────────────────── */
+.bars{display:flex; align-items:flex-end; gap:clamp(8px,2vw,22px); height:180px;
+  padding:18px 18px 0; border-bottom:1px solid var(--rule)}
+.bar{flex:1; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; height:100%}
+.bar .col{width:100%; max-width:76px; background:var(--measured); border-radius:2px 2px 0 0; position:relative}
+.bar.peak .col{background:var(--refuted)}
+.bar .v{font-family:var(--mono); font-size:.78rem; font-weight:600; margin-bottom:5px}
+.barlabs{display:flex; gap:clamp(8px,2vw,22px); padding:8px 18px 16px}
+.barlabs div{flex:1; text-align:center; font-size:.77rem; color:var(--ink-3); line-height:1.35}
+
+/* ── 사다리 ────────────────────────────── */
+.ladder{border:1px solid var(--rule); background:var(--surface); margin:1.8em 0}
+.rung{display:grid; grid-template-columns:54px 1fr auto; gap:0 16px; padding:15px 18px;
+  border-bottom:1px solid var(--rule-2); align-items:start}
+.rung:last-child{border-bottom:none}
+.rung .lv{font-family:var(--mono); font-size:.8rem; font-weight:600; color:var(--ink-3); padding-top:2px}
+.rung .nm{font-weight:700; font-size:.97rem; margin-bottom:.15em}
+.rung .ds{font-size:.855rem; color:var(--ink-2); line-height:1.6}
+.rung .ds .eqi{font-family:var(--mono); font-size:.87em; color:var(--ink)}
+.rung.on{background:var(--wash)}
+.rung.part{background:var(--wash-2)}
+
+/* ── 강조 상자 ─────────────────────────── */
+.call{border:1px solid var(--rule); border-left:2px solid var(--measured);
+  background:var(--surface); padding:16px 20px; margin:1.6em 0}
+.call.warn{border-left-color:var(--unmeasurable)}
+.call.bad{border-left-color:var(--refuted)}
+.call .h{font-size:.76rem; font-family:var(--mono); letter-spacing:.06em; text-transform:uppercase;
+  color:var(--ink-3); margin-bottom:.55em}
+.call p:last-child{margin-bottom:0}
+
+/* ── 목록 ──────────────────────────────── */
+ul,ol{padding-left:1.3em; margin:0 0 1.2em}
+li{margin-bottom:.55em}
+li::marker{color:var(--ink-3)}
+
+/* ── 목차 ──────────────────────────────── */
+.toc{border:1px solid var(--rule); background:var(--surface); padding:18px 22px; margin:2.4em 0 0}
+.toc ol{list-style:none; padding:0; margin:0; columns:2; column-gap:32px}
+.toc li{margin-bottom:.4em; break-inside:avoid; font-size:.88rem}
+.toc a{color:var(--ink-2); text-decoration:none; border-bottom:1px solid transparent}
+.toc a:hover,.toc a:focus-visible{color:var(--measured); border-bottom-color:var(--measured)}
+.toc .no{font-family:var(--mono); font-size:.78rem; color:var(--ink-3); margin-right:.5em}
+@media (max-width:640px){.toc ol{columns:1}}
+
+footer{border-top:1px solid var(--rule); padding:34px 0 60px; color:var(--ink-3); font-size:.85rem}
+a{color:var(--measured)}
+:focus-visible{outline:2px solid var(--measured); outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}}
+</style>
+
+<div class="page">
+
+<header class="hero">
+  <p class="eyebrow">월드모델 실험실 · 2026-08-05 · 노트 629 · 원장 426 항목</p>
+  <h1>IP 파운데이션 월드모델<br>— 정의, 원리, 현주소</h1>
+  <p class="lede measure">
+    이 문서는 프로젝트를 처음 보는 사람을 위한 것이다. <strong>월드모델이 정확히 무엇인지</strong>
+    정의하고, <strong>그 정의가 요구하는 수학적 조건</strong>을 적고, <strong>지금 어디까지
+    측정됐고 무엇이 아직 없는지</strong>를 하나씩 대조한다. 숫자에는 전부 잰 방법과 불확실성을
+    붙였다 — 이 프로젝트의 지난 사이클 대부분이 <em>자기 자를 다시 재는 데</em> 쓰였기 때문이다.
+  </p>
+
+  <div class="headnums">
+    <div class="hn">
+      <span class="v">0.4697</span>
+      <span class="k">판 ρ — 11개 도메인 3,369행 유보 순위상관</span>
+      <span class="s"><span class="st st-u">차이는 잴 수 있으나 개선은 못 잰다</span></span>
+    </div>
+    <div class="hn">
+      <span class="v">82–95%</span>
+      <span class="k">안 본 시장에서 그 시장 전용 모형 대비</span>
+      <span class="s"><span class="st st-m">측정됨 · 구간이 0 밖</span></span>
+    </div>
+    <div class="hn">
+      <span class="v">0</span>
+      <span class="k">개입(do-연산)을 추정한 실험의 수</span>
+      <span class="s"><span class="st st-a">미착수</span></span>
+    </div>
+  </div>
+
+  <nav class="toc" aria-label="목차">
+    <ol>
+      <li><span class="no">0</span><a href="#s0">이 문서를 읽는 법</a></li>
+      <li><span class="no">1</span><a href="#s1">월드모델이란 무엇인가</a></li>
+      <li><span class="no">2</span><a href="#s2">사다리 — L0에서 L4까지</a></li>
+      <li><span class="no">3</span><a href="#s3">수학적 원리 ① 전이</a></li>
+      <li><span class="no">4</span><a href="#s4">수학적 원리 ② 방향</a></li>
+      <li><span class="no">5</span><a href="#s5">수학적 원리 ③ 두 잡음</a></li>
+      <li><span class="no">6</span><a href="#s6">현주소 — 무엇이 측정됐나</a></li>
+      <li><span class="no">7</span><a href="#s7">상태와 시간 — 대부분 음성</a></li>
+      <li><span class="no">8</span><a href="#s8">무엇이 없는가</a></li>
+      <li><span class="no">9</span><a href="#s9">무엇을 더 해야 하는가</a></li>
+      <li><span class="no">10</span><a href="#s10">숫자를 검증하는 법</a></li>
+    </ol>
+  </nav>
+</header>
+
+<main>
+
+<!-- ══════════════ 0 ══════════════ -->
+<section id="s0">
+  <div class="sechead">
+    <span class="secno">00</span>
+    <div><h2>이 문서를 읽는 법</h2>
+    <p>색이 주장의 강도를 나타낸다. 이것은 장식이 아니라 이 문서의 뼈대다.</p></div>
+  </div>
+
+  <div class="measure">
+    <p>이 프로젝트에는 주장이 네 종류밖에 없다. 문서 전체에서 같은 색을 쓴다.</p>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th style="width:150px">표시</th><th>뜻</th><th>판정 기준</th></tr></thead>
+      <tbody>
+        <tr><td><span class="st st-m">측정됨</span></td>
+          <td>유보 표본을 다시 뽑아도 같은 부호가 나온다</td>
+          <td>부트스트랩 95% 구간이 0을 포함하지 않는다</td></tr>
+        <tr><td><span class="st st-u">못 잼</span></td>
+          <td>효과가 있을 수도 없을 수도 있다. <strong>지금 표본으로는 모른다</strong></td>
+          <td>구간이 0을 문다 — 효과가 0이라는 뜻이 <strong>아니다</strong></td></tr>
+        <tr><td><span class="st st-r">반증됨</span></td>
+          <td>전에 주장했고 다시 재서 틀렸음이 드러났다</td>
+          <td>이 프로젝트는 자기 논문을 자주 깎는다</td></tr>
+        <tr><td><span class="st st-a">미착수</span></td>
+          <td>재려고 시도한 적이 없다</td>
+          <td>가장 정직한 항목이자 가장 위험한 항목</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="call warn">
+    <div class="h">가장 자주 오해되는 것</div>
+    <p><strong>“못 잼”은 “효과가 없다”가 아니다.</strong> 표본이 작으면 진짜 큰 효과도 구간이
+    0을 문다. 반대로 표본이 크면 아무 쓸모없이 작은 효과도 0 밖으로 나간다. 그래서 이 문서는
+    구간과 표본 크기를 항상 같이 적는다.</p>
+  </div>
+</section>
+
+<!-- ══════════════ 1 ══════════════ -->
+<section id="s1">
+  <div class="sechead">
+    <span class="secno">01</span>
+    <div><h2>월드모델이란 무엇인가</h2>
+    <p>예측 모형과 월드모델은 다르다. 그 차이가 이 프로젝트의 전부다.</p></div>
+  </div>
+
+  <div class="measure">
+    <p><strong>예측 모형</strong>은 관측된 조건 <span class="n">x</span> 로부터 결과
+    <span class="n">y</span> 의 조건부 분포를 낸다. <strong>월드모델</strong>은 그보다 강한 것을
+    요구한다 — 세계가 <em>어떻게 굴러가는지</em>의 근사를 갖고 있어서, 관측한 적 없는 상황을
+    굴려 볼 수 있어야 한다.</p>
+
+    <p>형식으로 적으면 월드모델은 세 조각이다.</p>
+  </div>
+
+  <div class="eq">
+<span class="cm">관측 모형</span>   p(o | s)              <span class="cm">← 상태 s 가 어떤 관측 o 를 낳나</span>
+<span class="cm">전이 모형</span>   p(s' | s, a)          <span class="cm">← 상태가 개입 a 아래 어떻게 옮겨 가나</span>
+<span class="cm">개입 분포</span>   p(y | do(a), c)       <span class="cm">← a 를 <b>바꿨을 때</b> 결과가 어떻게 되나</span>
+  </div>
+
+  <div class="measure">
+    <p>세 번째의 <span class="n">do(·)</span> 가 핵심이다. <span class="n">p(y | a)</span> 는
+    “<span class="n">a</span> 인 경우들을 보니 <span class="n">y</span> 가 이랬다”이고,
+    <span class="n">p(y | do(a))</span> 는 “<span class="n">a</span> 로
+    <strong>바꾸면</strong> <span class="n">y</span> 가 이렇게 된다”이다. 둘은 일반적으로
+    같지 않다. 좋은 브랜드가 좋은 자리를 잡는다면, 관측에서 “좋은 자리 → 높은 성과”가 보여도
+    자리를 바꿔 준다고 성과가 오르지는 않는다.</p>
+
+    <p><strong>기획서와 계약서를 주고 결과를 예보한다</strong>는 이 프로젝트의 목표는 사실
+    세 번째 조각을 요구한다. 왜냐하면 그 예보는 <em>기획을 고르기 위해</em> 쓰이기 때문이다 —
+    고르는 순간 그것은 개입이 된다.</p>
+  </div>
+
+  <div class="call">
+    <div class="h">이 문서가 반복해서 쓰는 기호</div>
+    <p class="n" style="font-size:.87rem; line-height:2">
+      x — 관측 조건(기획서·계약서)  ·  y — 결과(일평균 방문자 등)  ·  d — 도메인(팝업·웹툰·게임…)<br>
+      φ(x) — 공유 축으로 옮긴 표현  ·  s — 엔티티의 상태  ·  t — 시간(달)<br>
+      ρ — 순위상관(스피어만)  ·  Δ — 두 팔의 차이  ·  σ — 표준편차
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════ 2 ══════════════ -->
+<section id="s2">
+  <div class="sechead">
+    <span class="secno">02</span>
+    <div><h2>사다리 — L0에서 L4까지</h2>
+    <p>“월드모델인가 아닌가”는 예/아니오가 아니라 층이다. 각 층은 앞 층을 전제한다.</p></div>
+  </div>
+
+  <div class="ladder">
+    <div class="rung on">
+      <span class="lv">L0</span>
+      <div><div class="nm">주변 분포 — 상수</div>
+        <div class="ds"><span class="eqi">ŷ = argmin<sub>c</sub> 𝔼|y − c|</span> ·
+          아무것도 안 보고 중앙값을 찍는다. <strong>모든 모형이 넘어야 하는 바닥</strong>이고,
+          놀랍게도 이 판에서 여러 번 못 넘었다.</div></div>
+      <span class="st st-m">기준선</span>
+    </div>
+    <div class="rung on">
+      <span class="lv">L1</span>
+      <div><div class="nm">조건부 — 예측</div>
+        <div class="ds"><span class="eqi">ŷ = f(x)</span> ·
+          조건을 보고 결과를 찍는다. 팝업 갈래에서 상수를 <span class="n">0.058</span> 이겼다.</div></div>
+      <span class="st st-m">측정됨</span>
+    </div>
+    <div class="rung on">
+      <span class="lv">L2</span>
+      <div><div class="nm">도메인 전이 — 안 본 시장</div>
+        <div class="ds"><span class="eqi">f</span> 를 도메인 집합 <span class="eqi">D</span> 에서 배우고
+          <span class="eqi">d′ ∉ D</span> 에서 채점한다. <strong>이 프로젝트의 가장 강한 증거</strong>이고,
+          “파운데이션”이라는 말이 정당해지는 지점이다.</div></div>
+      <span class="st st-m">측정됨</span>
+    </div>
+    <div class="rung part">
+      <span class="lv">L3</span>
+      <div><div class="nm">동역학 — 상태가 시간에 따라 옮겨 간다</div>
+        <div class="ds"><span class="eqi">ŝ<sub>t+1</sub> = g(s<sub>t</sub>)</span> ·
+          엔티티가 지속하는 상태를 갖고 그것이 굴러가야 한다.
+          <strong>재 봤고 대부분 음성</strong>이다 — 7절.</div></div>
+      <span class="st st-u">대부분 음성</span>
+    </div>
+    <div class="rung">
+      <span class="lv">L4</span>
+      <div><div class="nm">개입 — 바꾸면 어떻게 되나</div>
+        <div class="ds"><span class="eqi">p(y | do(a), c)</span> ·
+          무작위 배정이나 식별 전략(백도어·도구변수)이 있어야 추정된다.
+          <strong>저장소에 이것을 추정하는 실험이 하나도 없다.</strong></div></div>
+      <span class="st st-a">미착수</span>
+    </div>
+  </div>
+
+  <div class="measure">
+    <p>현재 위치를 한 줄로 적으면 이렇다.</p>
+  </div>
+
+  <div class="call">
+    <div class="h">현주소</div>
+    <p><strong>L1과 L2는 섰고, L3은 재 봤더니 대부분 음성이며, L4는 시작도 안 했다.</strong>
+    엄밀히 말해 지금 있는 것은 <em>전이되는 조건부 예측기</em>이지 월드모델이 아니다.
+    다만 L2가 선다는 것은 표현 <span class="n">φ</span> 가 도메인을 넘어 같은 뜻을 갖는다는
+    뜻이고, 그것은 월드모델의 <strong>필요조건</strong>이다.</p>
+  </div>
+</section>
+
+<!-- ══════════════ 3 ══════════════ -->
+<section id="s3">
+  <div class="sechead">
+    <span class="secno">03</span>
+    <div><h2>수학적 원리 ① — 전이가 성립하는 조건</h2>
+    <p>왜 한 모형이 한 번도 안 본 시장에서 작동할 수 있는가.</p></div>
+  </div>
+
+  <div class="measure">
+    <p>도메인마다 자료를 따로 모으고 모형을 따로 만드는 것이 보통이다. 이 프로젝트는 열한 개
+    도메인을 <strong>하나의 축 집합 <span class="n">φ</span></strong> 로 옮겨 한 모형에 넣는다.
+    그것이 안 본 도메인에서도 작동하려면 다음이 필요하다.</p>
+  </div>
+
+  <div class="eq">
+<span class="cm">전이 조건 (개념 이동 없음)</span>
+
+    𝔼[ y | φ(x) = v , d ]  =  𝔼[ y | φ(x) = v ]     <b>모든 도메인 d 에 대해</b>
+
+<span class="cm">즉 축의 값이 같으면 도메인이 달라도 결과의 기대가 같아야 한다.</span>
+<span class="cm">도메인마다 φ 의 분포가 다른 것(공변량 이동)은 괜찮다.</span>
+<span class="cm">도메인마다 φ→y 의 관계가 다르면(개념 이동) 전이는 원리상 불가능하다.</span>
+  </div>
+
+  <div class="measure">
+    <p>이 조건은 <strong>직접 검사할 수 있다.</strong> 어떤 도메인을 학습에서 통째로 빼고,
+    그 도메인 전용 모형이 자기 자료로 교차검증해 낼 수 있는 최고점(<em>천장</em>)과 견주면 된다.
+    비율이 1에 가까우면 개념 이동이 거의 없다는 뜻이다.</p>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>안 본 시장</th><th class="num">행수</th><th class="num">전이 ρ</th>
+        <th class="num">전용 모형 천장 대비</th><th class="num">상위 절반</th><th>상태</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td>KR 만화</td><td class="num">1,716</td><td class="num">+0.684</td>
+          <td class="num">95%</td><td class="num">112%</td><td><span class="st st-m">측정됨</span></td></tr>
+        <tr><td>비게임 앱</td><td class="num">1,600</td><td class="num">+0.505</td>
+          <td class="num">82%</td><td class="num">95%</td><td><span class="st st-m">측정됨</span></td></tr>
+        <tr><td>CN 만화</td><td class="num">352</td><td class="num">+0.32</td>
+          <td class="num">88%</td><td class="num">96%</td><td><span class="st st-u">관문 불가</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="measure">
+    <p><strong>KR 만화 상위 절반에서 비율이 <span class="n">112%</span></strong> 라는 것은,
+    그 시장의 행을 <em>한 줄도 안 보고</em> 만든 통합 모형이 그 시장 전용 모형보다 잘 가려낸다는
+    뜻이다. 전용 모형은 자기 시장 자료가 적어 과적합하고, 통합 모형은 다른 열 개 도메인에서
+    빌려 온다.</p>
+
+    <p>같은 얘기를 집안에서도 확인했다 — 도메인별 전용 모형을 스물여덟 개 후보로 넉넉히
+    만들어 견줘도 <strong>통합÷전용 가중 평균 <span class="n">1.23배</span>, 10개 중 8개
+    승리</strong>다.</p>
+  </div>
+
+  <div class="call bad">
+    <div class="h">여기서 한 번 크게 틀렸다</div>
+    <p>이 비율은 처음에 <span class="n">1.67배</span> 로 발표됐다. 전용 모형 후보를 넷만 준
+    상태의 숫자였다. 스물여덟으로 넓히자 <span class="n">1.23</span> 이 됐고, 같이 주장했던
+    “작은 시장일수록 크게 이긴다”(<span class="n">−0.697</span>)는 <strong>완전히
+    무너졌다</strong>(<span class="n">−0.030</span>). <strong>비는 기준선에 준 노력이
+    정한다.</strong></p>
+  </div>
+</section>
+
+<!-- ══════════════ 4 ══════════════ -->
+<section id="s4">
+  <div class="sechead">
+    <span class="secno">04</span>
+    <div><h2>수학적 원리 ② — 방향이 없으면 전이도 없다</h2>
+    <p>이 프로젝트에서 가장 깨끗하게 확인된 기제. 축 하나의 부호가 두 해 동안 거꾸로 꽂혀 있었다.</p></div>
+  </div>
+
+  <div class="measure">
+    <p>축 <span class="n">j</span> 가 도메인마다 뒤집힌 부호로 기록돼 있다고 하자.</p>
+  </div>
+
+  <div class="eq">
+    φ̃<sub>j</sub><sup>(d)</sup> = σ<sub>d</sub> · φ<sub>j</sub>        σ<sub>d</sub> ∈ { +1, −1 }
+
+<span class="cm">그러면 도메인을 합친 회귀 기울기는</span>
+
+    β · Σ<sub>d</sub> w<sub>d</sub> σ<sub>d</sub>   ≈  <b>0</b>      <span class="cm">(부호가 반반이면 상쇄된다)</span>
+
+<span class="cm">실측: 학습 가중 상관 −0.023 — 사실상 방향이 없다.</span>
+  </div>
+
+  <div class="measure">
+    <p>그런데 트리 모형은 그래도 학습한다. 먼저 도메인으로 가르고, 그 안에서
+    <span class="n">φ̃<sub>j</sub></span> 로 다시 가르면 되기 때문이다. 즉 모형이 배우는 것은
+    주효과가 아니라 <strong>도메인 지시자와의 상호작용</strong>이다.</p>
+  </div>
+
+  <div class="eq">
+    f(φ̃<sub>j</sub>, d)  =  Σ<sub>d</sub>  <b>1</b>[ 도메인 = d ] · h<sub>d</sub>( φ̃<sub>j</sub> )
+
+<span class="cm">안 본 도메인 d′ 에는 지시자 1[·] 가 없다.</span>
+<span class="cm">→ 그 축을 쓸 근거가 <b>원리상</b> 없다. 쓰면 해롭다.</span>
+  </div>
+
+  <div class="measure">
+    <p>이것이 왜 중요하냐면, 이 판은 두 해 동안 그 축을 <strong>안 본 도메인에서 통째로
+    가려 왔다</strong>(<code>OOC_DROP</code>). 가림은 처방이었고 진단은 방향이었다. 방향을 바로
+    세우고 가림을 걷자 안 본 시장의 성적이 뛰었다.</p>
+  </div>
+
+  <div class="plot">
+    <div class="plot-h">
+      <div class="t">비게임 앱 — 같은 손잡이를 어떻게 조합하느냐로 부호가 뒤집힌다</div>
+      <div class="d">전이 ρ(날짜 통제 부분상관) · 씨앗 6 · 구간은 스팟 군집 부트스트랩 95%</div>
+    </div>
+    <div class="bars" style="height:200px">
+      <div class="bar"><span class="v">+0.290</span><div class="col" style="height:57%"></div></div>
+      <div class="bar peak"><span class="v">+0.140</span><div class="col" style="height:28%"></div></div>
+      <div class="bar"><span class="v">+0.508</span><div class="col" style="height:100%"></div></div>
+    </div>
+    <div class="barlabs">
+      <div>A — 옛 챔피언<br><span class="n" style="font-size:.72rem">방향 그대로 · 축 가림</span></div>
+      <div>E — 가림만 걷음<br><span class="n" style="font-size:.72rem">−0.1495 [−0.183, −0.117]</span></div>
+      <div>C — 방향까지 세움<br><span class="n" style="font-size:.72rem">+0.2187 [+0.192, +0.245]</span></div>
+    </div>
+    <div class="plot-f"><strong>방향 되돌림의 순 효과 = +0.368.</strong>
+      가림만 걷으면 <span class="n">−0.15</span> 로 무너지고, 방향을 세운 뒤 걷으면
+      <span class="n">+0.22</span> 다. 두 손잡이를 함께 채택했던 탓에 이 칸(E)이 두 달 동안
+      비어 있었고, 채우고 나서야 인과가 확정됐다.</div>
+  </div>
+
+  <div class="call">
+    <div class="h">조항</div>
+    <p><strong>모형이 보는 열의 방향이 도메인 사이에서 같은지 잰다.</strong> 부호가 갈리면
+    그 축은 안 본 도메인에 못 쓴다. 그리고 <strong>두 손잡이를 함께 채택했으면 각각만 돌린 팔이
+    있어야 한다</strong> — 2×2의 빈 칸이 하필 인과를 정하는 칸이었다.</p>
+  </div>
+</section>
+
+<!-- ══════════════ 5 ══════════════ -->
+<section id="s5">
+  <div class="sechead">
+    <span class="secno">05</span>
+    <div><h2>수학적 원리 ③ — 두 잡음, 그리고 무엇을 잴 수 있는가</h2>
+    <p>이 프로젝트의 최근 사이클 대부분이 여기 쓰였다. 결론이 불편하다.</p></div>
+  </div>
+
+  <div class="measure">
+    <p>두 설정 A·B를 견줄 때 우리가 보는 것은 추정치의 차
+    <span class="n">Δ̂ = θ̂<sub>A</sub> − θ̂<sub>B</sub></span> 다. 그 흔들림에는 <strong>독립적인
+    두 원천</strong>이 있다.</p>
+  </div>
+
+  <div class="eq">
+    Var( Δ̂ )  ≈  σ²<sub>적합</sub>  +  σ²<sub>표본</sub>
+
+    σ²<sub>적합</sub>   <span class="cm">모형을 다시 적합하면 답이 얼마나 바뀌나  → <b>재현성</b></span>
+    σ²<sub>표본</sub>   <span class="cm">유보를 다시 뽑았으면 답이 얼마나 달랐나  → <b>일반화</b></span>
+
+<span class="cm">씨앗을 바꿔 재면 앞엣것만 잡힌다. 행을 부트스트랩해야 뒤엣것이 잡힌다.</span>
+  </div>
+
+  <div class="measure">
+    <p>이 판은 <strong>460개 노트 동안 앞엣것만 재고 그것을 신뢰구간처럼 읽어 왔다.</strong>
+    실제로 재 보니 차이가 컸다.</p>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>수준</th><th class="num">σ<sub>표본</sub> / σ<sub>적합</sub></th><th>뜻</th></tr></thead>
+      <tbody>
+        <tr><td>도메인(중앙, 축–도메인 42짝)</td><td class="num">12.6배</td>
+          <td>씨앗 기준 0을 무는 짝 <span class="n">2/42</span> → 표본 기준 <span class="n">31/42</span></td></tr>
+        <tr><td>판 · 가림 팔(같은 적합)</td><td class="num">5.0배</td><td>두 팔이 한 모형을 공유</td></tr>
+        <tr><td>판 · 재적합 팔</td><td class="num">1.4배</td><td>두 팔을 따로 적합 — <strong>채택은 언제나 이쪽</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>왜 팔에 따라 다른가 — 짝지어짐</h3>
+  <div class="measure">
+    <p>두 팔이 <em>같은 적합</em>을 쓰고 예측 때만 열을 가리면, 두 추정치가 씨앗마다 같이 움직인다.
+    상관이 높으면 차의 분산이 무너진다.</p>
+  </div>
+
+  <div class="eq">
+    Var( θ̂<sub>A</sub> − θ̂<sub>B</sub> )  =  σ²<sub>A</sub> + σ²<sub>B</sub> − 2 ρ σ<sub>A</sub> σ<sub>B</sub>
+
+<span class="cm">가림 팔  ρ 높음  → 씨앗 SD 0.00047</span>
+<span class="cm">재적합 팔 ρ 낮음  → 씨앗 SD 0.00235   (<b>다섯 배</b>)</span>
+
+<span class="cm">→ 씨앗 구간이 좁다는 것은 <b>효과가 확실하다는 뜻이 아니라</b></span>
+<span class="cm">   <b>팔이 짝지어져 있다는 뜻</b>이다.</span>
+  </div>
+
+  <h3>줄지 않는 성분과 검출 바닥</h3>
+  <div class="measure">
+    <p>씨앗을 <span class="n">S</span> 개로 늘리면 <span class="n">σ²<sub>적합</sub>/S</span> 로
+    줄지만 <span class="n">σ²<sub>표본</sub></span> 은 그대로다. 그리고 표본 성분은 유보의 성질이라
+    <strong>팔이 바뀌어도 안 바뀐다</strong> — 완전히 다른 두 팔에서
+    <span class="n">0.00227</span> 과 <span class="n">0.00229</span> 로 잤다. 그래서 판에서는
+    이것을 상수로 쓸 수 있다.</p>
+  </div>
+
+  <div class="eq">
+<span class="cm">판의 표본 표준편차</span>        σ<sub>표본</sub> ≈ <b>0.0023</b>
+<span class="cm">검출 바닥(2σ)</span>            |Δ| ≥ <b>0.0045</b>
+
+<span class="cm">원장에 판 차가 적힌 채택 항목 83건 중</span>
+<span class="cm">  2σ 아래  <b>60건</b>   ·   1σ 아래  38건</span>
+  </div>
+
+  <div class="call bad">
+    <div class="h">불편한 결론</div>
+    <p><strong>이 판이 기록해 온 “개선” 대부분은 판에서 잡음과 구별되지 않는다.</strong>
+    다만 <span class="n">2σ</span> 위 23건은 대체로 <em>자료</em> 쪽이다 — 누수·오염·수집.
+    모형 손잡이는 거의 다 바닥 아래에 있다. <strong>자료를 고치면 판이 크게 움직이고,
+    모형을 고치면 잡음 안에서 움직인다.</strong></p>
+  </div>
+
+  <h3>자가 여섯인데 물음은 넷 반</h3>
+  <div class="measure">
+    <p>이 판은 채택 관문에 자를 여섯 둔다. 그것들의 표본 오차가 서로 독립인지 재면
+    <strong>유효 독립 자 수</strong>가 나온다.</p>
+  </div>
+
+  <div class="eq">
+    m<sub>eff</sub> = ( Σ λ<sub>i</sub> )² / Σ λ<sub>i</sub>²  =  <b>4.73</b>  / 6
+
+<span class="cm">고윳값  1.91  1.08  1.02  0.99  0.88  <b>0.12</b></span>
+<span class="cm">→ 붕괴한 방향은 정확히 하나 (판 ↔ 날짜 통제 판, 상관 +0.88)</span>
+<span class="cm">→ 집 밖 세 짝은 서로 완전 독립 (2.99/3)</span>
+<span class="cm">→ 무리 안 판은 판과 <b>같은 3,369행</b>인데 상관 +0.11</span>
+<span class="cm">   ── 독립성은 자료가 아니라 <b>물음</b>이 정한다</span>
+  </div>
+
+  <div class="call warn">
+    <div class="h">그러나 자 수가 곧 힘은 아니다</div>
+    <p><strong>관문의 힘 = 독립 × 감도.</strong> 다음 절의 표가 보여 주듯, 최근 채택에서
+    판 계열 세 자는 셋 다 침묵했고 실제로 결정한 자는 둘이었다. 셋째 짝 CN 만화는
+    <strong>독립성이 완벽한데 감도가 없어</strong> 관문에서 빠졌다 — 차
+    <span class="n">+0.0105</span> 가 자기 잡음 <span class="n">0.0109</span> 와 같은 크기다.</p>
+  </div>
+</section>
+
+<!-- ══════════════ 6 ══════════════ -->
+<section id="s6">
+  <div class="sechead">
+    <span class="secno">06</span>
+    <div><h2>현주소 — 무엇이 측정됐나</h2>
+    <p>가장 최근 채택(축 방향 되돌림)을 여섯 자로 전수 채점한 결과. 이 표가 이 프로젝트의 상태를 가장 정직하게 보여 준다.</p></div>
+  </div>
+
+  <div class="plot">
+    <div class="plot-h">
+      <div class="t">여섯 자 중 둘만 0 밖이다</div>
+      <div class="d">가로축 = 표본 표준편차 단위(t = Δ / σ<sub>표본</sub>) · 띠 = 부트스트랩 95% 구간</div>
+    </div>
+    <div class="plot-b">
+      <div class="ivrow iv-u"><div class="ivlab">판<span class="sub">3,369행</span></div>
+        <div class="ivtrack"><div class="ivzero" style="left:15.38%"></div>
+          <div class="ivband" style="left:6.18%;width:23.5%"></div>
+          <div class="ivdot" style="left:18.08%"></div></div>
+        <div class="ivnum">t 0.7</div></div>
+      <div class="ivrow iv-u"><div class="ivlab">날짜 통제 판<span class="sub">3,369행</span></div>
+        <div class="ivtrack"><div class="ivzero" style="left:15.38%"></div>
+          <div class="ivband" style="left:11.51%;width:18.9%"></div>
+          <div class="ivdot" style="left:20.42%"></div></div>
+        <div class="ivnum">t 1.3</div></div>
+      <div class="ivrow iv-u"><div class="ivlab">무리 안 판<span class="sub">3,369행</span></div>
+        <div class="ivtrack"><div class="ivzero" style="left:15.38%"></div>
+          <div class="ivband" style="left:7.54%;width:18.8%"></div>
+          <div class="ivdot" style="left:16.19%"></div></div>
+        <div class="ivnum">t 0.2</div></div>
+      <div class="ivrow iv-m"><div class="ivlab">KR 만화<span class="sub">1,716행 · 집 밖</span></div>
+        <div class="ivtrack"><div class="ivzero" style="left:15.38%"></div>
+          <div class="ivband" style="left:17.91%;width:18.8%"></div>
+          <div class="ivdot" style="left:26.92%"></div></div>
+        <div class="ivnum">t 3.0</div></div>
+      <div class="ivrow iv-m"><div class="ivlab">비게임 앱<span class="sub">1,600행 · 집 밖</span></div>
+        <div class="ivtrack"><div class="ivzero" style="left:15.38%"></div>
+          <div class="ivband" style="left:75.81%;width:16.9%"></div>
+          <div class="ivdot" style="left:84.23%"></div></div>
+        <div class="ivnum">t 17.9</div></div>
+      <div class="ivrow iv-u"><div class="ivlab">CN 만화<span class="sub">352행 · 집 밖</span></div>
+        <div class="ivtrack"><div class="ivzero" style="left:15.38%"></div>
+          <div class="ivband" style="left:8.66%;width:19.7%"></div>
+          <div class="ivdot" style="left:19.23%"></div></div>
+        <div class="ivnum">t 1.0</div></div>
+      <div class="axis"><div></div><div class="ticks">
+        <span style="left:0%">−4</span><span style="left:15.38%">0</span>
+        <span style="left:34.6%">+5</span><span style="left:53.8%">+10</span>
+        <span style="left:73.1%">+15</span><span style="left:92.3%">+20</span>
+      </div><div></div></div>
+    </div>
+    <div class="plot-f">
+      판 계열 셋은 <strong>같은 3,369행</strong>을 쓰는데도 셋 다 0을 문다.
+      집 밖 두 짝만 0 밖이다 — <strong>이 채택은 그 둘 위에 서 있다.</strong>
+      (무리 안 판의 표본 SD는 이후 무리 문턱을 <span class="n">8→30</span> 으로 바꿔
+      <span class="n">0.0114→0.0049</span> 로 좁혔다. 그래도 이 크기는 못 잰다.)
+    </div>
+  </div>
+
+  <h3>왜 판은 못 보고 집 밖은 보나</h3>
+  <div class="measure">
+    <p>잡음이 작은 자가 좋은 자가 아니다. 판은 열한 도메인을 평균해서 잡음을 눌렀는데,
+    같은 평균이 <strong>효과도 눌렀다.</strong> 그 채택의 판 이득을 도메인별로 갈라 보면 이유가 보인다.</p>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>이득이 어디서 왔나</th><th class="num">판 기여</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td><strong>실제로 축 방향을 고친 넷</strong><br>
+          <span class="n" style="font-size:.78rem">도서 · 모바일 · 애니 · 펀딩</span></td>
+          <td class="num" style="color:var(--refuted)">−0.00094</td>
+          <td>고친 도메인들이 <strong>합쳐서 잃는다</strong></td></tr>
+        <tr><td>팝업 <span class="n">(65행)</span></td><td class="num">+0.00156</td>
+          <td>축을 안 건드렸다</td></tr>
+        <tr><td>웹툰 <span class="n">(650행)</span></td><td class="num">+0.00155</td>
+          <td>축을 안 건드렸다</td></tr>
+        <tr class="hl"><td><strong>판 전체</strong></td><td class="num">+0.00182</td>
+          <td><strong>이득 전부가 이웃 효과다</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="call bad">
+    <div class="h">옳은 진단이 옳은 인과를 보장하지 않는다</div>
+    <p>진단(“축이 거꾸로 꽂혀 있다”)은 옳았고 집 밖 성적은 크게 올랐다. 그런데
+    <strong>판이 오른 이유는 발표했던 것과 달랐다.</strong> 고친 도메인은 잃고, 축을 건드리지도
+    않은 두 도메인이 <em>공유 모형을 통해</em> 벌었다. 이 판이 이웃 효과를 만난 일곱 번째다.</p>
+  </div>
+</section>
+
+<!-- ══════════════ 7 ══════════════ -->
+<section id="s7">
+  <div class="sechead">
+    <span class="secno">07</span>
+    <div><h2>상태와 시간 — 재 봤고 대부분 음성이다</h2>
+    <p>L3의 현주소. 로드맵이 두 달 동안 “엔티티 메모리 스트림”을 계획으로 갖고 있었는데, 그 전제를 처음으로 쟀다.</p></div>
+  </div>
+
+  <div class="measure">
+    <p>상태 층을 세우려면 <strong>같은 엔티티를 여러 번 관측</strong>해야 한다. 팝업 레코드
+    380건에서 그 구조를 세어 봤다.</p>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>엔티티</th><th class="num">종</th><th class="num">2회 이상</th>
+        <th class="num">그 행수</th><th>판정</th></tr></thead>
+      <tbody>
+        <tr><td>공간(정규화)</td><td class="num">147</td><td class="num">36</td><td class="num">197</td>
+          <td><span class="st st-u">라벨·링크 걸면 40행</span></td></tr>
+        <tr><td>브랜드</td><td class="num">334</td><td class="num">29</td><td class="num">70</td>
+          <td><span class="st st-u">못 잼</span></td></tr>
+        <tr><td>IP</td><td class="num">330</td><td class="num">33</td><td class="num">79</td>
+          <td><span class="st st-u">못 잼</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="call warn">
+    <div class="h">구조적 사실</div>
+    <p><strong>이 회사는 IP 당 팝업을 대체로 한 번 한다.</strong> 그래서 브랜드/IP 상태는
+    표본이 원리상 얇다. 그리고 붙일 마스터도 없다 — <code>core.engagement</code> 578건은 우리
+    레코드 ID와 정확히 같은 형식이고 <strong>380 중 379가 붙는데</strong>,
+    <code>primary_brand_id</code> 가 <strong>578건 전부 NULL</strong> 이고
+    <code>core.brand</code> 188개는 F&amp;B·Lifestyle(자사 스토어 입점 브랜드)이라 팝업
+    IP를 아예 안 담는다. 자동 매칭 수율 <span class="n">1%</span> — 알고리즘 문제가 아니라
+    <strong>대상이 다른 세계</strong>다.</p>
+  </div>
+
+  <h3>그래서 다른 자료로 갔다 — 그리고 이름을 잘못 붙였다</h3>
+  <div class="measure">
+    <p>플랫폼 이벤트에는 <span class="n">63,826</span> 개의 (스팟 × 월) 관측이 있다
+    (<span class="n">7,701</span> 스팟 · 26개월). 여기서 “엔티티 기억 반감기
+    <span class="n">13일</span>”을 냈고 로드맵의 상수를 고쳤다. <strong>한 시간 뒤 그 해석이
+    틀렸음이 드러났다.</strong></p>
+
+    <p>링크된 레코드 186건 중 <strong>55%가 스팟의 첫 관측월 = 팝업 오픈월</strong>이었다.
+    <span class="n">spot_id</span> 는 공간이 아니라 <strong>팝업 리스팅 그 자체</strong>다.
+    스팟이 팝업과 같이 태어나므로 “그 전”이 구조적으로 없다.</p>
+  </div>
+
+  <div class="plot">
+    <div class="plot-h">
+      <div class="t">실제로 잰 것 — 팝업 리스팅 수명 곡선</div>
+      <div class="d">최고치 대비 중앙값 · n = 47 / 146 / 149 / 110–130</div>
+    </div>
+    <div class="bars">
+      <div class="bar"><span class="v">0.29</span><div class="col" style="height:29%;background:var(--unmeasurable)"></div></div>
+      <div class="bar peak"><span class="v">1.00</span><div class="col" style="height:100%"></div></div>
+      <div class="bar"><span class="v">0.06</span><div class="col" style="height:6%"></div></div>
+      <div class="bar"><span class="v">0.02</span><div class="col" style="height:2%"></div></div>
+    </div>
+    <div class="barlabs">
+      <div>−1달<br><span class="n" style="font-size:.72rem">사전 관심</span></div>
+      <div>오픈<br><span class="n" style="font-size:.72rem">정점</span></div>
+      <div>+1달<br><span class="n" style="font-size:.72rem">94% 소실</span></div>
+      <div>+2~8달<br><span class="n" style="font-size:.72rem">바닥</span></div>
+    </div>
+    <div class="plot-f"><strong>한 달에 94%가 사라지고 최고치의 2% 바닥으로 눕는다.</strong>
+      그리고 사전 관심이 이미 정점의 <span class="n">29%</span> 다 — 오픈 전에 관측되므로
+      선행 지표 후보다(아직 못 쟀다 · 표본 26건).</div>
+  </div>
+
+  <h3>세 가지 음성 결과</h3>
+  <div class="measure">
+    <p>이름을 바로잡아도 <strong>측정 자체는 유효하다.</strong> 세 가지가 나왔다.</p>
+  </div>
+
+  <div class="eq">
+<span class="cm">① 엔티티 고정효과가 없다.  y(s,t) = m(t) + a(s) + e(s,t) 로 갈라</span>
+<span class="cm">   추정한 a(s) 를 더하면 MAE 가 0.351 → 0.483 으로 <b>나빠진다</b></span>
+<span class="cm">   (군집 95% [+0.126, +0.138]).  a 를 0 쪽으로 축소하면 거의 회복 —</span>
+<span class="cm">   <b>a 는 정보가 아니라 잡음이다.</b></span>
+
+<span class="cm">② 사실상 1차 마르코프.  시차를 더할 때의 이득</span>
+<span class="cm">     lag1 −0.0599   lag2 −0.0030   lag3 −0.0005     (20배·120배씩 준다)</span>
+<span class="cm">   능형 계수  lag1 <b>0.607</b>  lag2 0.032  lag3 0.018</span>
+
+<span class="cm">③ 감쇠.  마지막 관측과의 간격 g 별 이득</span>
+<span class="cm">     g=1 <b>0.0724</b>   g=2 0.0147   g=3 0.0105   g=7~9 <b>0.0000</b></span>
+<span class="cm">   비 0.203/달  →  λ = 1.594 /달  →  반감기 ln2/λ ≈ <b>13.2일</b></span>
+  </div>
+
+  <div class="call bad">
+    <div class="h">로드맵을 두 번 고쳤다</div>
+    <p>계획 문서는 두 달 전 <code>recency(0.995^t)</code>(반감기 <span class="n">139일</span>)를
+    <strong>근거 없이</strong> 적어 뒀다. 오전에 “<span class="n">13일</span>”로 고쳤고,
+    오후에 대상을 잘못 봤음을 알고 <strong>“미정”으로 되돌렸다.</strong> 지금 확정된 것은
+    하나다 — <strong><span class="n">0.995^t</span> 에 근거가 없다.</strong> 엔티티 단위 반복
+    관측이 없으니 대체 상수를 정할 수 없고, 틀린 숫자를 다른 틀린 숫자로 바꾸는 것보다 미정이 낫다.</p>
+  </div>
+</section>
+
+<!-- ══════════════ 8 ══════════════ -->
+<section id="s8">
+  <div class="sechead">
+    <span class="secno">08</span>
+    <div><h2>무엇이 없는가 — 엄밀하게</h2>
+    <p>가장 중요한 절. 없는 것을 정확히 아는 것이 이 프로젝트의 자산이다.</p></div>
+  </div>
+
+  <h3>① 지속하는 상태가 없다 <span class="st st-u" style="margin-left:.5em">측정된 음성</span></h3>
+  <div class="measure">
+    <p>추측이 아니라 쟀다. 엔티티 고정효과를 넣으면 나빠지고(<span class="n">+0.132</span>),
+    축소하면 회복된다. 그리고 반복 관측 자체가 얇다 — 가장 느슨한 설정
+    (공간을 거칠게 묶고 라벨 등급 A~E를 다 씀)에서도 <strong>40행 · 공간 10종</strong>이라
+    시간순 폴드가 만들어지지 않는다. <strong>도구 문제가 아니라 표본 문제다.</strong></p>
+  </div>
+
+  <h3>② 개입 층이 통째로 없다 <span class="st st-a" style="margin-left:.5em">미착수</span></h3>
+  <div class="measure">
+    <p>저장소의 모든 결과는 <strong>관측적</strong>이다. <span class="n">p(y | do(a))</span> 를
+    추정하려면 셋 중 하나가 필요하다.</p>
+    <ul>
+      <li><strong>무작위 배정</strong> — 로드맵 블록 2(전향 사이클)가 가장 가깝다.
+        예측을 타임스탬프·해시로 봉인하고 실측으로 채점하면 <em>자생 RCT 뱅크</em>가 쌓인다.
+        아직 한 사이클도 안 돌았다.</li>
+      <li><strong>백도어 조정</strong> — 교란 변수 집합을 특정하고 그것을 다 관측해야 한다.
+        지금 축 다섯은 교란 집합으로 지정된 적이 없다.</li>
+      <li><strong>도구변수</strong> — 결과에는 직접 영향이 없고 개입에만 영향을 주는 변수.
+        후보를 찾은 적이 없다.</li>
+    </ul>
+    <p><strong>이것이 “예측기”와 “월드모델” 사이의 진짜 간격이다.</strong> 지금 성적표를
+    아무리 올려도 이 층은 저절로 생기지 않는다.</p>
+  </div>
+
+  <h3>③ 표본이 병목이고, 그것도 쟀다 <span class="st st-m" style="margin-left:.5em">측정됨</span></h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>층</th><th class="num">쓸 수 있는 행</th><th>막힌 자리</th></tr></thead>
+      <tbody>
+        <tr><td>L1 팝업 조건→결과 (계수 계열)</td><td class="num">75 → 채점 40</td>
+          <td>rolling-origin 최초 학습 구간이 35행을 먹는다</td></tr>
+        <tr><td>L2 집 밖 전이</td><td class="num">1,716 / 1,600 / 352</td>
+          <td>셋째 짝은 감도가 없어 관문 불가</td></tr>
+        <tr><td>L3 엔티티 상태</td><td class="num">40</td>
+          <td>IP당 팝업 1회 · 브랜드 마스터 부재</td></tr>
+        <tr><td>L4 개입</td><td class="num">0</td><td>식별 전략 없음</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="call warn">
+    <div class="h">방문객 원장이 비어 있다</div>
+    <p><code>core.popup_visitor_daily</code> 는 파티션·클러스터까지 설계된 채
+    <strong>0행</strong>이다. 조직이 테이블을 만들어 놓고 채우지 않았다. 이것이 채워지면
+    L1의 라벨 품질과 L3의 표본이 <em>동시에</em> 풀린다 — 지금 목록에서 가장 값이 큰 한 칸이다.</p>
+  </div>
+</section>
+
+<!-- ══════════════ 9 ══════════════ -->
+<section id="s9">
+  <div class="sechead">
+    <span class="secno">09</span>
+    <div><h2>무엇을 더 해야 하는가</h2>
+    <p>각 항목에 “왜 지금 이것인가”와 “무엇이 있어야 되는가”를 붙였다.</p></div>
+  </div>
+
+  <h3>지금 당장 결론이 나는 것</h3>
+  <div class="measure">
+    <ul>
+      <li><strong>시장 수준 예측.</strong> 플랫폼 전체 <span class="n">63,826</span> 관측에서
+        <span class="n">m(t)</span> 는 이미 가장 강한 단일 예측자다(MAE
+        <span class="n">0.3513</span>). 그런데 그것은 그 달이 끝나야 아는 값이다. 배포 가능한
+        <span class="n">m(t−1)</span> 는 <span class="n">0.3638</span> —
+        <strong>그 갭이 바로 잡을 것</strong>이고 표본은 충분하다.</li>
+      <li><strong>경쟁 밀도 상태.</strong> 플랫폼이 시장 전체 팝업을 담으므로 “같은 시기·지역에
+        몇 개가 열려 있나”가 관측 가능한 상태가 된다. 표본은 레코드 쪽(193)에 걸린다.</li>
+    </ul>
+  </div>
+
+  <h3>표본이 생겨야 열리는 것</h3>
+  <div class="measure">
+    <ul>
+      <li><strong>엔티티 해소</strong>(브랜드·공간 ID). L3 전체가 여기 걸려 있다. 자동 매칭은
+        <span class="n">1%</span> 이므로 새 마스터를 만들거나 수기로 해야 한다.
+        <strong>사람이 할 일 목록에서 가장 크다.</strong></li>
+      <li><strong>사전 관심 검정.</strong> 오픈 −1달 트래픽이 있는 레코드가 A·B 등급에서
+        <span class="n">26건</span> 이라 폴드가 안 만들어진다. 문턱을 낮춰 통과시키지 않는다.</li>
+      <li><strong>방문객 원장 적재.</strong> 위 8절 참조.</li>
+    </ul>
+  </div>
+
+  <h3>월드모델이 되려면 반드시 해야 하는 것</h3>
+  <div class="call">
+    <div class="h">L4로 가는 유일한 길</div>
+    <p><strong>전향 사이클을 한 번이라도 돌리는 것.</strong> 예측을 봉인하고, 실측으로 채점하고,
+    (자극, 조건, 예측, 실측) 튜플을 쌓는다. 그것이 쌓이면 관측 자료로는 원리상 못 하는
+    개입 추정이 가능해진다. <strong>이것은 모형 문제가 아니라 운영 문제이고, 지금 시작할 수 있다.</strong></p>
+  </div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>로드맵 블록</th><th>상태</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td>0 · 아카이브 정규화</td><td><span class="st st-m">대체로 완료</span></td>
+          <td>레코드 380건</td></tr>
+        <tr><td>1 · 백테스트 하네스</td><td><span class="st st-m">완료</span></td>
+          <td>IP∩시간순 폴드 · 짝지은 CI · 위약 팔 둘</td></tr>
+        <tr><td>2 · 전향 사이클</td><td><span class="st st-a">골격만</span></td>
+          <td><strong>L4로 가는 유일한 길</strong></td></tr>
+        <tr><td>3 · 엔티티 메모리 스트림</td><td><span class="st st-r">전제가 깨짐</span></td>
+          <td>고정효과 없음 · 상수 미정 · 표본 없음</td></tr>
+        <tr><td>4 · 사내 스테이징</td><td><span class="st st-a">미착수</span></td>
+          <td>인터뷰 옵트인 초안만</td></tr>
+        <tr><td>5 · OSS 하네스</td><td><span class="st st-a">미착수</span></td>
+          <td>블록 2가 한 사이클 돈 뒤</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ══════════════ 10 ══════════════ -->
+<section id="s10">
+  <div class="sechead">
+    <span class="secno">10</span>
+    <div><h2>이 문서의 숫자를 검증하는 법</h2>
+    <p>이 프로젝트는 자기 숫자를 자주 깎는다. 그래서 모든 주장에 출처가 붙어 있다.</p></div>
+  </div>
+
+  <div class="measure">
+    <ul>
+      <li><strong>원장</strong> <code>data/lab/denominator.json</code> — <span class="n">426</span>개
+        항목. 사전 등록, 결과, 판정, 남은 것이 사이클마다 적혀 있다. 사전 등록이 결과보다
+        <em>먼저</em> 적혀 있는지 확인할 수 있다.</li>
+      <li><strong>논문</strong> <code>paper/steps/</code> — <span class="n">579</span> 스텝.
+        각 편에 그림과 “남은 것”이 있다. 자기 정정도 논문으로 낸다(예: 468을 469가 뒤집는다).</li>
+      <li><strong>가드</strong> <code>lab/guards.py</code> · <code>lab/sideaudit.py</code> —
+        분모 불변, 배선 확인, 잡음 지배, 감도 문턱을 코드가 검사한다.</li>
+      <li><strong>재현</strong> — 실험 스크립트는 사전 등록 문단을 첫 출력으로 찍고 돈다.
+        같은 씨앗으로 다시 돌리면 같은 수가 나온다.</li>
+    </ul>
+  </div>
+
+  <div class="call bad">
+    <div class="h">이 문서를 읽을 때의 마지막 주의</div>
+    <p>이 프로젝트에서 아홉 번 반복된 실수 유형이 있다 — <strong>“적어는 뒀는데 거기까지만”.</strong>
+    조항을 한 함수에만 넣거나, 가드를 한 도메인에만 걸거나, 파일을 진단에서만 읽는다.
+    가장 최근에는 논문 아홉 편의 전송 메시지에 LaTeX 원문이 그대로 나갔는데
+    <strong>보낸 쪽 출력은 “성공”이었기 때문에</strong> 아무도 못 봤다.
+    <strong>여기 있는 숫자들도 같은 방식으로 틀릴 수 있다.</strong> 그것이 이 문서가
+    구간과 표본 크기를 집요하게 적는 이유다.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="page" style="padding-left:0;padding-right:0">
+  <p style="margin:0">
+    월드모델 실험실 · 저장소 <code>/Users/ax/world_model</code> · 노트 629 · 원장 426 항목 ·
+    논문 579 스텝<br>
+    이 문서의 모든 구간은 부트스트랩이며, 씨앗 스프레드는 신뢰구간으로 쓰지 않는다.
+  </p>
+</footer>
+
+</div>

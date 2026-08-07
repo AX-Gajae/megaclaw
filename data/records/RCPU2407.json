@@ -1,0 +1,342 @@
+{
+ "record_id": "RCPU2407",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:잔망루피",
+  "space_id": "unresolved:현대백화점_중동점_1층_팝업공간",
+  "client_party_id": null,
+  "brand_key": "잔망루피",
+  "space_key": "현대백화점_중동점"
+ },
+ "intervention": {
+  "concept": "현대백화점 중동점 1층 팝업 공간에서 진행한 잔망루피 캐릭터 팝업스토어. 파사드 아치·로고 스카시, 포토존 2개소, 등신대·FRP 조형물, W매대·마트 매대 상품 판매존으로 구성. 백화점 입구에는 잔망루피 인형뽑기존을 별도 배치.",
+  "brand_name": "잔망루피",
+  "experience_elements": [
+   "포토존_1",
+   "포토존_2",
+   "입구 파사드 아치",
+   "루피 등신대",
+   "FRP 조형물",
+   "인형뽑기존",
+   "패브릭 천 걸이 액자존"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "외벽그래픽",
+   "로고스카시",
+   "유리면 그래픽",
+   "바닥시트",
+   "현수막",
+   "입구 파사드",
+   "마트 매대",
+   "W매대"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "부천",
+   "district": "중동",
+   "venue_name": "현대백화점 중동점",
+   "venue_type": "백화점",
+   "foot_traffic_context": "1층 팝업 공간, 백화점 입구 인접"
+  },
+  "area_pyeong": 28.7,
+  "period": {
+   "from": "2024-05-01",
+   "to": "2024-05-15",
+   "days": 15
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "hybrid",
+   "detail": "운영대행 인건비 수수료(부가세 제외 매출 기준). 순매출 목표 120,000,000원(순매출 109,090,909원)까지는 고정액 19,500,000원(환산 수수료율 17.9%). 목표 초과분에 대해 기본 15.0% + 초과 순매출 5.0% 적용. 예: 순매출 136,363,636원→수수료 총액 20,863,636원(15.3%), 181,818,182원→23,136,364원(12.7%), 363,636,364원→32,227,273원(8.9%). 현장운영인원: 평일 7명, 주말 8명. 세팅일 4/30(화).\n※ 계약 총액/선금·중도금·잔금 분할 정보는 문서에 없음.바 착 실리콘 고정 시공."
+  },
+  "brand_requirements": [
+   "가벽 바닥면 실리콘 고정",
+   "파사드 바닥면 실리콘 고정",
+   "기성가벽 랩핑 사용"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "현대백화점 중동점 1층 팝업 공간, 백화점 입구 인접"
+  },
+  "derived": {
+   "duration": {
+    "days": 15,
+    "weekend_share": 0.27,
+    "holiday_days": 3
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 2.2,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 59,
+    "holiday_until": 3,
+    "holiday_block_in": 3,
+    "nat_event_gap": 21,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서가 제공되지 않아 방문/매출 실측 데이터 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": 19.5,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-Z0IB2CcSPwfpcEOBLmkQG3u7tmbMwv8",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1-Z0IB2CcSPwfpcEOBLmkQG3u7tmbMwv8/view",
+   "title": "포토존 레퍼런스 2.png"
+  },
+  {
+   "doc_id": "10fAR6T4arne23_ZDLj8wEFh41h7Qy4oi",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/10fAR6T4arne23_ZDLj8wEFh41h7Qy4oi/view",
+   "title": "잔망루피_중동점_운영인건비견적.pdf"
+  },
+  {
+   "doc_id": "12-qFVR17eIWboG4PM4DQvAzDBmYFDgXl",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/12-qFVR17eIWboG4PM4DQvAzDBmYFDgXl/view",
+   "title": "기차 레퍼런스 2.jpg"
+  },
+  {
+   "doc_id": "14BArwWSw4-k1_n4rZ4zolxr4W3vc9LcB",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/14BArwWSw4-k1_n4rZ4zolxr4W3vc9LcB/view",
+   "title": "포토존 썬베드 2.jpg"
+  },
+  {
+   "doc_id": "17E50u8J6U_zsZsnAHcz1E95t8wgjZp3S",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/17E50u8J6U_zsZsnAHcz1E95t8wgjZp3S/view",
+   "title": "벽면 창문 그래픽 2.jpg"
+  },
+  {
+   "doc_id": "1BZII3tltbperG7rSORL8Nn76nn2CEuSp",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1BZII3tltbperG7rSORL8Nn76nn2CEuSp/view",
+   "title": "잔망루피_중동점_운영인건비견적서_수정안.pdf"
+  },
+  {
+   "doc_id": "1D5qgDLeXQI_hy2cBIW4Iy6ZXiATSuYgw",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1D5qgDLeXQI_hy2cBIW4Iy6ZXiATSuYgw/view",
+   "title": "중동점잔망루피합의서_0508.doc"
+  },
+  {
+   "doc_id": "1DXTjkfwsx1LOHcz5wI9yR9Ct9o9Pwa1Q",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1DXTjkfwsx1LOHcz5wI9yR9Ct9o9Pwa1Q/view",
+   "title": "월 그래픽.jpg"
+  },
+  {
+   "doc_id": "1GvUFqnYfG8XQ7aGQ3_O5Ji6Z-KHkSe5r",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1GvUFqnYfG8XQ7aGQ3_O5Ji6Z-KHkSe5r/view",
+   "title": "거울 레퍼런스 1.jpg"
+  },
+  {
+   "doc_id": "1Hf-XqPUu3l4Zt-KHNP8OU324ilgKtL2c",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Hf-XqPUu3l4Zt-KHNP8OU324ilgKtL2c/view",
+   "title": "거울 레퍼런스.jfif"
+  },
+  {
+   "doc_id": "1I6x8orNWp4_me6dOSzlGYikj5pWCnxxZ",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1I6x8orNWp4_me6dOSzlGYikj5pWCnxxZ/view",
+   "title": "포토존 썬베드 1.jpg"
+  },
+  {
+   "doc_id": "1Idx1BnophH3YfEPYpRCtESevkDb-T-P8",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Idx1BnophH3YfEPYpRCtESevkDb-T-P8/view",
+   "title": "프로모션.jpg"
+  },
+  {
+   "doc_id": "1KAiWJFcGnjFhlQj_mfOuOEH-qe7GoXdw",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1KAiWJFcGnjFhlQj_mfOuOEH-qe7GoXdw/view",
+   "title": "기차 레퍼런스 4.jpg"
+  },
+  {
+   "doc_id": "1PsuDdCqrnIHofBx9ZxLHYdHLztVGmV9u",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1PsuDdCqrnIHofBx9ZxLHYdHLztVGmV9u/view",
+   "title": "bbfaec0ced1ba212bebe94360a85269e.jpg"
+  },
+  {
+   "doc_id": "1QGS3GRrHCTOtmqm8_IF25krQ6SPH0WCF",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1QGS3GRrHCTOtmqm8_IF25krQ6SPH0WCF/view",
+   "title": "입구 레퍼런스.jpg"
+  },
+  {
+   "doc_id": "1RsNI2vOQmQLAGRrnW8R1tTPFsIOa4_Mk",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1RsNI2vOQmQLAGRrnW8R1tTPFsIOa4_Mk/view",
+   "title": "잔망루피 현대중동 3차견적요청.pdf"
+  },
+  {
+   "doc_id": "1Rt5glG0kGz2MNWLqZI1wqnK0cROnnlFm",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Rt5glG0kGz2MNWLqZI1wqnK0cROnnlFm/view",
+   "title": "52adde98ade1b66a48c649b25ac6b754.jpg"
+  },
+  {
+   "doc_id": "1SSDKRmPsRqc4_qjHqUyb-M0K0GC_YPPx",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1SSDKRmPsRqc4_qjHqUyb-M0K0GC_YPPx/view",
+   "title": "썬베드 포토존.jfif"
+  },
+  {
+   "doc_id": "1Tr5MEeX2JJSbtVMoAW_uKtizulnUUt1z",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Tr5MEeX2JJSbtVMoAW_uKtizulnUUt1z/view",
+   "title": "bd310d06a0470945fb1a18183ade07b3.jpg"
+  },
+  {
+   "doc_id": "1VVOIf5r1AGxgRzFhiO8eHPllioD-hMwE",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1VVOIf5r1AGxgRzFhiO8eHPllioD-hMwE/view",
+   "title": "기차 레퍼런스 3.jpg"
+  },
+  {
+   "doc_id": "1WBN5d8Nze60t1HBtHttw7dlW0UlP5VnB",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1WBN5d8Nze60t1HBtHttw7dlW0UlP5VnB/view",
+   "title": "거울 레퍼런스 2.jpg"
+  },
+  {
+   "doc_id": "1_cSqnjHB1Nqv9CttXalk2J_cru4R5_RT",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1_cSqnjHB1Nqv9CttXalk2J_cru4R5_RT/view",
+   "title": "VP 레퍼런스.jpg"
+  },
+  {
+   "doc_id": "1c8vwm_SQfKlK1EhpVx8abDOkvhNjuB8c",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1c8vwm_SQfKlK1EhpVx8abDOkvhNjuB8c/view",
+   "title": "0404 현대 중동 잔망루피 팝업 공간구성안 -1.pdf"
+  },
+  {
+   "doc_id": "1cQHbuAgoglpdyi0nTri_OvH1yKBInSFd",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1cQHbuAgoglpdyi0nTri_OvH1yKBInSFd/view",
+   "title": "잔망루피_중동점_운영인건비견적.xlsx"
+  },
+  {
+   "doc_id": "1eKwHSiPONWbdSls0raqVKTfQPOQIvPwV",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1eKwHSiPONWbdSls0raqVKTfQPOQIvPwV/view",
+   "title": "인센티브기준안 축약본-re.xlsx"
+  },
+  {
+   "doc_id": "1gD7sP0-g2Vpn_bKDTksnHzpsti6N7oZw",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1gD7sP0-g2Vpn_bKDTksnHzpsti6N7oZw/view",
+   "title": "기차 레퍼런스.jpg"
+  },
+  {
+   "doc_id": "1iLZpo5MG1aIJ7Nz6BVh3jyYDXF7s3PCX",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1iLZpo5MG1aIJ7Nz6BVh3jyYDXF7s3PCX/view",
+   "title": "7091ed181cd619fd1902a888ed1afe47.jpg"
+  },
+  {
+   "doc_id": "1iaKLCp-wcodnuid_11sCs-kD4SCUQUx8",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1iaKLCp-wcodnuid_11sCs-kD4SCUQUx8/view",
+   "title": "거울 레퍼런스.jpg"
+  },
+  {
+   "doc_id": "1krhFCmxZZZ6tv3yGn0y3ATRBZ7XNB_53",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1krhFCmxZZZ6tv3yGn0y3ATRBZ7XNB_53/view",
+   "title": "9601c4333785161bf607fe00e14da918.jpg"
+  },
+  {
+   "doc_id": "1la_EOxWEyY8iEpwV31qF0V8VCKK4_-RM",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1la_EOxWEyY8iEpwV31qF0V8VCKK4_-RM/view",
+   "title": "중동점잔망루피합의계약서_0508.doc"
+  },
+  {
+   "doc_id": "1mL_uv7tgsQUVd-Y_GbYDw-wbS_rd5woL",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1mL_uv7tgsQUVd-Y_GbYDw-wbS_rd5woL/view",
+   "title": "잔망루피_중동점_운영인건비견적_수정안.pdf"
+  },
+  {
+   "doc_id": "1qicjcky0qm3Gxi0vIswYC74X-MLdPD0Q",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1qicjcky0qm3Gxi0vIswYC74X-MLdPD0Q/view",
+   "title": "포토존 레퍼런스.jpg"
+  },
+  {
+   "doc_id": "1sqQ10Ha6J-XR3VjaXCz726Ob6mlIOrQl",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1sqQ10Ha6J-XR3VjaXCz726Ob6mlIOrQl/view",
+   "title": "aeeb7e65943228d9ebcdf85155273d32.jpg"
+  },
+  {
+   "doc_id": "1t7VhJp_zVUv8fFZeGQ8asCs2N97NIArM",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1t7VhJp_zVUv8fFZeGQ8asCs2N97NIArM/view",
+   "title": "c3ff7df11ab7e684131d95f94b9e8c7e.jpg"
+  },
+  {
+   "doc_id": "1tb3ps7PpYY1owuFcka5zDcb36PQlWyFw",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1tb3ps7PpYY1owuFcka5zDcb36PQlWyFw/view",
+   "title": "벽면 창문 그래픽.jpg"
+  },
+  {
+   "doc_id": "1vg4GR40-7GJL-4FkyUmWWMWKSHP0yhMp",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1vg4GR40-7GJL-4FkyUmWWMWKSHP0yhMp/view",
+   "title": "미확인 957741.crdownload"
+  },
+  {
+   "doc_id": "1wAYnbKeNlAVY7uw_i1HVm7CFSd1UNFah",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1wAYnbKeNlAVY7uw_i1HVm7CFSd1UNFah/view",
+   "title": "기차 포토존 레퍼런스.png"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: 0404 현대 중동 잔망루피 팝업 공간구성안 -1.pd, 잔망루피 현대중동 3차견적요청.pdf, 잔망루피_중동점_운영인건비견적서_수정안.pdf. 미확실: 결과보고서 부재로 방문자·POS 매출 실측 없음; 팝업 종료일이 공간구성안(5/15)과 3차견적요청(5/14) 간 불일치, 메타데이터 기준 5/15 채택; 계약 총액 및 선금/중도금/잔금 분할 정보 없음; client_name(주최/브랜드사) 미확인; area_pyeong은 15,820×6,000mm 도면 치수로 환산한 추정치; 도시/구는 현대백화점 중동점 위치 기반 추정"
+ }
+}

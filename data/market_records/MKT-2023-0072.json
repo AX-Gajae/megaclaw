@@ -1,0 +1,77 @@
+{
+ "market_record_id": "MKT-2023-0072",
+ "event_name": "제주맥주 '시장-바' 팝업 (광장시장)",
+ "brand": "제주맥주",
+ "ip_or_collab": "광장시장 9개 식당 협업",
+ "category": "liquor",
+ "intervention": {
+  "concept_description": "재래시장 재생 프로젝트. 광장시장 식당들과 협업해 시장 전체를 테마 펍 공간으로 활용",
+  "experience_elements": [
+   "협업 식당 특별 메뉴",
+   "시장 골목 펍 콘셉트",
+   "SNS 인증 이벤트"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "광장시장 (9개 식당)",
+  "venue_type": "street_standalone",
+  "neighborhood": "종로",
+  "city": "서울",
+  "period_from": null,
+  "period_to": null,
+  "area_pyeong": null,
+  "multi_store": true
+ },
+ "outcome": {
+  "visitors_total": 50000,
+  "visitors_period_days": 21,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "제주맥주 발표. '5월부터 약 3주간' 운영 명시(구체 개폐일 미공개)",
+  "visitors_source_quote": "행사 운영 기간 동안 5만명이 방문하였고 SNS 방문 인증이 이어지면서 인스타그램 내 관련 해시태그 또한 1만건 이상 노출되는 등 뜨거운 관심을 받았다.",
+  "visitors_source_url": "https://www.newstap.co.kr/news/articleView.html?idxno=195117",
+  "visitors_source_date": "2023-05-31",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "인스타그램 내 관련 해시태그 또한 1만건 이상 노출"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": true,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "2023년 5월 약 3주간 운영(원문 기준). 2023 대한민국 광고대상 수상 이력 보도. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "기간 미상",
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

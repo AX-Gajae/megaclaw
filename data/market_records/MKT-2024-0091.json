@@ -1,0 +1,89 @@
+{
+ "market_record_id": "MKT-2024-0091",
+ "event_name": "치이카와(ちいかわ) 팝업스토어 @아이파크몰(2024년 12월)",
+ "brand": "치이카와×HDC아이파크몰",
+ "ip_or_collab": "치이카와(나가노)",
+ "category": "character",
+ "intervention": {
+  "concept_description": "일본 인기 캐릭터 치이카와 굿즈 팝업(이후 흥행 검증으로 2026년 국내 첫 정규 매장 전환)",
+  "experience_elements": [
+   "굿즈 판매",
+   "포토존"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "아이파크몰 용산점",
+  "venue_type": "mall",
+  "neighborhood": "용산",
+  "city": "서울",
+  "period_from": "2024-12-01",
+  "period_to": "2024-12-31",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 31,
+    "weekend_share": 0.29,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 2.8,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 30000,
+  "visitors_period_days": 10,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "아이파크몰 제공 수치(2026년 정규 입점 기사에서 회고): '치이카와 역시 2024년 12월 팝업스토어 진행 당시 오픈 2시간 만에 입장 대기 번호가 1000번대를 훌쩍 넘기고, 10일간 누적 방문객 3만여명을 기록하며 폭발적인 집객력을 입증한 바 있다'",
+  "visitors_source_quote": "치이카와 역시 2024년 12월 팝업스토어 진행 당시 오픈 2시간 만에 입장 대기 번호가 1000번대를 훌쩍 넘기고, 10일간 누적 방문객 3만여명을 기록하며 폭발적인 집객력을 입증한 바 있다.",
+  "visitors_source_url": "https://m.segyebiz.com/newsView/20260223515661",
+  "visitors_source_date": "2026-02-23",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "오픈 2시간 만에 입장 대기 번호 1000번대 돌파",
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "오픈 2시간 만에 입장 대기 번호가 1000번대를 훌쩍 넘기고, 10일간 누적 방문객 3만여명을 기록하며 폭발적인 집객력을 입증한 바 있다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true,
+   "days_stated": 10,
+   "days_stored": 31,
+   "days_corrected": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "정확한 개시·종료일 미보도(2024년 12월 중 10일간). | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

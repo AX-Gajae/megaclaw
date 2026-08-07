@@ -1,0 +1,81 @@
+{
+  "market_record_id": "MKT-2023-0039",
+  "event_name": "삼성 강남 X 넥슨 메이플스토리 몬스터하우스 팝업스토어",
+  "brand": "삼성전자/넥슨",
+  "ip_or_collab": "메이플스토리",
+  "category": "game_webtoon",
+  "intervention": {
+    "concept_description": "삼성 강남 오픈 플레이그라운드 첫 브랜드 콜라보. 메이플스토리 레트로 도트 감성 공간, 갤럭시 기기 체험 플레이존, Z 플립5 포토존 '인투 더 메이플스토리'",
+    "experience_elements": [
+      "플레이존(갤럭시 Z 플립5·폴드5·탭 S9·오디세이 네오 G9 체험)",
+      "높이높이 계단쌓기·포토부스(네온 시티)",
+      "인투 더 메이플스토리 포토존",
+      "몬스터 포토존"
+    ],
+    "promotions": [
+      "센터커피 몬스터 아인슈페너·엘릭서 에이드 한정 메뉴",
+      "SLBS 메이플 굿즈+NFC 카드 제공"
+    ],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "삼성 강남(체험형 플래그십 스토어)",
+    "venue_type": "street_standalone",
+    "neighborhood": "강남(서초구 강남대로)",
+    "city": "서울",
+    "period_from": "2023-09-09",
+    "period_to": "2023-09-22",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 14,
+        "weekend_share": 0.29,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 14,
+    "counting_basis": "unknown",
+    "counting_basis_note": "총 방문객 미보도. 체험 참여 수치만 보도: '높이높이 계단쌓기, 포토부스 등 게임을 5671명이 즐겼다', '포토존에 8425명이 참여했다'",
+    "visitors_source_quote": "이 중 삼성 강남-네온 시티에서는 팝업스토어 기간 동안 높이높이 계단쌓기, 포토부스 등 게임을 5671명이 즐겼다.",
+    "visitors_source_url": "https://www.m-i.kr/news/articleView.html?idxno=1053689",
+    "visitors_source_date": "2023-09-28",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": "사전 참가 예약 1분 만에 1,600명 마감, 접속자 1만1,000여 명, 예약자 80% 20대",
+      "signal_quotes": [
+        "오픈 초기 이틀동안 사전 참가 예약을 접수한 결과 1분만에 1600명 예약이 마감됐다. 접속자는 1만1000여명에 달했고, 예약자의 80%는 20대로 집계됐다.",
+        "도트 그래픽 의상과 소품을 착용한 후 갤럭시 Z 플립5를 활용해 원하는 각도와 방향으로 기념사진을 촬영할 수 있는 포토존에 8425명이 참여했다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "총 방문객 수치 없음. 예약 마감 속도·체험 참여 인원만 확보. 엑스포츠뉴스(2023-10-26)는 강남+여의도 팝업 합산 '누적 방문자 2만 명 이상' 보도. | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": false,
+  "exclude_reason": "집계형(통합/합산)",
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

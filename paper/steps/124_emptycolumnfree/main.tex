@@ -1,0 +1,111 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{kotex}
+\setmainfont{Apple SD Gothic Neo}
+\setsansfont{Apple SD Gothic Neo}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,linkcolor=MidnightBlue,citecolor=MidnightBlue,
+            urlcolor=MidnightBlue]{hyperref}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.5em}{}
+\captionsetup{font=small,labelfont=bf}
+\setlength{\parskip}{0.35em}
+\setlength{\parindent}{0pt}
+
+% 주장 상자 — 모든 주장은 반증 조건을 함께 적는다
+\usepackage{mdframed}
+\newmdenv[linewidth=0.4pt,linecolor=gray!60,backgroundcolor=gray!5,
+          innertopmargin=6pt,innerbottommargin=6pt,skipabove=8pt,skipbelow=8pt]{claimbox}
+\newcommand{\claim}[2]{\begin{claimbox}\textbf{주장.} #1\par\smallskip
+  \textcolor{gray!70}{\textbf{반증 조건.} #2}\end{claimbox}}
+
+\title{\bfseries 빈 열은 공짜다\\[2pt]
+\large 차원 비용은 열 수가 아니라 \emph{갈릴 값}의 수다}
+\author{월드모델 실험실 · 노트 663}
+\date{2026-08-06}
+\begin{document}\maketitle
+
+\section{한 줄}
+
+값이 아예 없는 열을 하나 넣었다. 판 차가 \textbf{정확히 $0.0000$}, 씨앗 SE
+$0.0$, 열한 도메인 전부 $0.0$ 이다. 둘 넣어도 같다. \textbf{내 예측이 틀렸고,
+그 덕에 차원 비용의 정의가 좁아졌다.}
+
+\section{왜 쟀나}
+
+노트 662 가 지역 방문자 축으로 \textbf{신호 몫 $+0.0064$}(문턱 $0.0045$ 초과)를
+얻었는데 \textbf{순효과는 $+0.0016$} 이었다. 위약이 $-0.0048$ 이므로 열값이 신호의
+3/4 를 먹는다. 그 열값이 어디서 오나.
+
+단서가 있었다 --- \verb|_idol| 은 추가 축을 \textbf{열한 도메인 전부}의
+설계행렬에 붙이고, 자료가 없는 도메인에는 \verb|0.5| 상수와 마스크 $0$ 을 준다.
+방문자 축은 자료가 둘에만 있으므로 \textbf{아홉 도메인이 아무것도 안 담은 열을
+하나씩 받는다}.
+
+\claim{그 아홉 개의 빈 열이 열값의 대부분이다.}{빈 열만 넣었을 때 판이 안
+움직이면 이 주장이 틀렸다.}
+
+\section{쟀다 --- 정확히 0.0000}
+
+\begin{center}\small
+\begin{tabular}{lrrr}\toprule
+열 & 판 차 & 씨앗 SE & 양수 \\ \midrule
+빈 열 1개 & $\mathbf{0.0000}$ & $0.0$ & 0/12 \\
+빈 열 2개 & $\mathbf{0.0000}$ & $0.0$ & 0/12 \\ \bottomrule
+\end{tabular}\end{center}
+
+배선을 먼저 확인했다 --- \textbf{11개 도메인에 붙었고 마스크${>}0$ 합이 $0$}
+이다. 열이 \emph{있으면서} 비었다. 노트 652 에서 무효한 대조가 정확히 $0.0000$ 을
+냈고 그것이 ``뺀 축이 애초에 없었다''의 서명이었으므로, 이번엔 그 확인을 먼저
+했다. \textbf{그러므로 이 $0.0000$ 은 무효가 아니라 참값이다.}
+
+\section{무엇이 확정됐나}
+
+\verb|0.5| 상수 · 마스크 $0$ 열은 나무가 \textbf{쪼갤 값이 없어} 후보 분할에서
+아예 빠진다. 그래서 열 수가 늘어도 비용이 $0$ 이다.
+
+\claim{차원 비용은 ``열이 많다''가 아니라 ``갈릴 수 있는 값이 많다''에서 온다.}
+{값이 있는 행 수를 고정한 채 열 수만 늘렸을 때 판이 내려가면 이 주장이 틀렸다.}
+
+노트 641 이 ``얇은 도메인에서 열 하나당 $\rho$ $0.02\sim0.025$''라고 적었다.
+그것은 \textbf{값을 담은 열}에 대한 것이었고, 이 측정이 그 조항을 좁힌다.
+
+\begin{center}\small
+\begin{tabular}{lrl}\toprule
+열의 종류 & 판 차 & \\ \midrule
+빈 열(어디에도 값 없음) & $0.0000$ & 나무가 무시한다 \\
+섞은 열(310행에 값) & $-0.0048$ & 잡음을 학습한다 \\
+진짜 열(310행에 값) & $+0.0016$ & 신호가 잡음을 넘는다 \\ \bottomrule
+\end{tabular}\end{center}
+
+\section{그래서 고칠 것이 없다 --- 그것도 결과다}
+
+예측이 맞았으면 다음 수는 ``자료 있는 도메인에만 열을 붙이게 하네스를 고친다''
+였다. \textbf{고칠 것이 없다.} 하네스는 이미 최적이고, 노트 662 의 ``행을
+늘리는 것이 유일한 길''이 \emph{소극적 추론}에서 \textbf{측정된 결론}이 됐다 ---
+열값은 값이 있는 행 수에만 달렸고 그 행이 $310$ 뿐이다.
+
+\section{덤 --- 상수 하나를 얻었다}
+
+앞으로 \textbf{부분 덮음 축을 넣을 때 ``덮이지 않은 도메인 때문에''를 비용으로
+계산하지 않는다.} 계산할 것은 오직 \emph{값이 있는 행 수}다.
+
+이것이 노트 646 의 관측도 정리해 준다 --- 전국 축이 \textbf{덮음 $0$ 인 아이돌에서
+$+0.0567$ 을 벌었다}. 빈 열의 값이 $0$ 이므로 그 이득은 \emph{빈 열 때문이 아니고},
+그 축이 다른 도메인의 분산을 흡수한 결과다(노트 413 기제). \textbf{두 기제가
+이 측정으로 갈렸다.}
+
+\begin{figure}[h]\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{(a) 빈 열을 하나·둘 넣어도 판 차가 정확히 $0$ 이다($\times$ 는 내
+예측). (b) 비용은 열이 \emph{갈릴 값}을 담을 때만 생긴다. (c) 그래서 노트 641 의
+조항이 좁아진다.}
+\end{figure}
+
+\end{document}

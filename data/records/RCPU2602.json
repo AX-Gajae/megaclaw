@@ -1,0 +1,146 @@
+{
+ "record_id": "RCPU2602",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:조개소년_레진코믹스IP",
+  "space_id": "unresolved:성수_연무장11길8_CORNER50_레봄카페",
+  "client_party_id": "unresolved:키다리스튜디오+레진엔터테인먼트(공동의뢰)",
+  "brand_key": "조개소년",
+  "space_key": "성수_레봄카페"
+ },
+ "intervention": {
+  "concept": "웹툰 IP '조개소년' 콜라보 카페 팝업 (테마명 '조개소년 IN 레봄'). 레진 사옥 1층 사내카페 '레봄'을 주말 한정 IP 테마 카페로 전환, 일반인 대상 식음료 판매 + 의뢰사 공급 MD 상품 위탁 판매.",
+  "brand_name": "조개소년 (레진코믹스 IP)",
+  "experience_elements": [
+   "IP 테마 F&B 메뉴 (콘셉트별 식음료 개발 포함)",
+   "방문객 대상 체험 이벤트 콘텐츠 제작·현장 운영 (계약 제2조E)",
+   "MD 굿즈 판매존"
+  ],
+  "promotions": [
+   "집객·재방문 유도 마케팅 (계약 제2조G — 세부 프로모션은 Notion 원문 확인 필요)"
+  ],
+  "staging_tags": [
+   "IP콜라보",
+   "카페형",
+   "버짓형",
+   "주말한정운영"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "성동구 성수동2가",
+   "venue_name": "CORNER50 (키다리스튜디오 사옥) 1층 레봄카페 — 연무장11길 8",
+   "venue_type": "사옥 내 카페",
+   "foot_traffic_context": "연무장길 인접 사옥 1층. 사옥 상주 인원 + 성수 외부 유입. 주말(토·일)만 운영이라 상주 인원 효과는 제한적",
+   "venue_slot": "1층"
+  },
+  "area_pyeong": 40,
+  "period": {
+   "from": "2025-12-13",
+   "to": "2026-01-18",
+   "days": 37
+  },
+  "season": "연말연시",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "3각 대조 정정(2026-07-27): 계약서 제5조 61.4M은 최초 견적 인용, 최종 조정 58.0M이 확정(인식 일치) | [계약서 확정(2026-07-27 재독해)] 총액 61,400,000원 (VAT 별도), 분할: 선금 50% 30,700,000원 12월 19일, 잔금 50% 30,700,000원 행사종료 후 10일 이내 | 기존(견적 기반): 운영 대행 계약. 최초 견적 61.4M → 최종 58.0M(VAT별도) = 운영원가 소계 48.38M + 대행수수료 20%(9.68M, 운영비 5천만원 미만 구간 요율). 선금 50%(12/19) + 잔금 50%(종료 후 10일 내). 운영비용(인건비·원자재·시설·소모품)은 의뢰사 부담, MD 상품 의뢰사 공급. LOSS 3% 초과분만 실행사 책임(제조원가=판매가 50% 기준)"
+  },
+  "brand_requirements": [
+   "의뢰사 기본 운영 가이드 준수, 변경 시 상호 협의",
+   "운영시간 토·일 09:30~18:30 고정 (평일 운영은 협의)",
+   "식음료 원재료는 의뢰사가 수급",
+   "인력 계획(정규/파트) 사전 공유 의무, 보건증 관리",
+   "행사주최자배상책임보험 가입 의무"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "사옥 상주 인원 + 성수 외부 유입"
+  },
+  "derived": {
+   "duration": {
+    "days": 37,
+    "weekend_share": 0.32,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 65,
+    "holiday_until": 63,
+    "holiday_block_in": 0,
+    "nat_event_gap": 30,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 58.0
+  },
+  "retention": null,
+  "source": "ods.amaranth_project_pnl (2026-05 마감 기준 매출액 58.0M 인식 완료 — 계약 최종 견적과 일치, 완결). 주의: curated.pu26_project_research.rev_mm=27.3은 과소값이었음. 소비자 매출(카페 POS)·방문객 수는 의뢰사(레진) 소유 데이터로 미확보",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 58.0 = 최종 조정액과 일치 — 계약서의 61.4는 계약 시점 최초 견적 인용, 완결",
+   "contract_total_mm": 58.0,
+   "last_recognition_period": "2026-01"
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "1Ro1TVLjU14zXdj6dz_EBHz9fhU7q3HPs",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Ro1TVLjU14zXdj6dz_EBHz9fhU7q3HPs/view",
+   "title": "조개소년 일반인 대상 카페 영업 및 MD 상품 판매 위탁 계약서 (1210 최종 날인본)"
+  },
+  {
+   "doc_id": "19QZlSrcV9TH4CjxVzVoSPG5Eumir2Ohd",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19QZlSrcV9TH4CjxVzVoSPG5Eumir2Ohd/view",
+   "title": "레봄 카페 조개소년 최종견적서 260119 (인력 주차별 상세 포함)"
+  },
+  {
+   "doc_id": "190ppp4lhyWSxMMQlsU6NA36ov403lKtz",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/190ppp4lhyWSxMMQlsU6NA36ov403lKtz/view",
+   "title": "레봄카페_조개소년 결과보고서 (분류 폼: 30-50평/상품판매형/IP캐릭터/1개월+/로드)"
+  },
+  {
+   "doc_id": "notion-29a8",
+   "kind": "기획서",
+   "uri": "https://app.notion.com/p/_-29a8e34fcdb280808fe7c59a0d294b5d",
+   "title": "레봄까페_조개소년 (Notion — 프로모션 상세 추출 대기)"
+  },
+  {
+   "doc_id": "notion-2aa8",
+   "kind": "기타",
+   "uri": "https://app.notion.com/p/_-2aa8e34fcdb280b09827db7b64e02c87",
+   "title": "레봄카페_조개소년 (Notion)"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-fable-5(session-2026-07-23, Drive 원문 3건 + P&L 대조)",
+  "reviewed_by": "ax (사용자 승인, 2026-07-23)",
+  "extracted_at": "2026-07-23",
+  "notes": "레봄 3연작 1탄 (2탄 RCPU2614 근하신년, 3탄 RCPU2622 해빙곡선 — 같은 공간·같은 클라이언트, 블록 3 스트림 씨앗). area_pyeong=40은 결과보고서의 '30-50평' 구간 중앙값. 잔여 TODO: Notion에서 프로모션/메뉴 상세, 소비자 POS 데이터(의뢰사 요청 필요). | fee 계약서화(2026-07-27) | 3각 대조 정정: 최종 조정액 58.0 복원"
+ }
+}

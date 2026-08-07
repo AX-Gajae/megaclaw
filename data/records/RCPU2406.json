@@ -1,0 +1,295 @@
+{
+ "record_id": "RCPU2406",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:디즈니_Disney",
+  "space_id": "unresolved:익산_문화예술공간_익산시문화도시지원센터",
+  "client_party_id": "unresolved:익산시문화도시지원센터",
+  "brand_key": "디즈니",
+  "space_key": "익산_문화예술공간"
+ },
+ "intervention": {
+  "concept": "익산시 문화도시지원센터 문화예술공간에서 진행된 디즈니 IP 팝업스토어. 스위트스팟이 미디어캐슬 디즈니 상품을 활용해 굿즈 판매 중심으로 기획·운영한 IP 콘텐츠 팝업이다.",
+  "brand_name": "디즈니",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [
+   "IP팝업스토어",
+   "디즈니",
+   "굿즈판매"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "익산시",
+   "district": null,
+   "venue_name": "익산 문화예술공간(익산시 문화도시지원센터)",
+   "venue_type": "문화공간",
+   "foot_traffic_context": "대학로청년문화거리 인근 문화공간"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-04-30",
+   "to": "2024-05-07",
+   "days": 8
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": "견적서에 기획료, 팝업스토어 기획·디자인(3D), 시공/철수, 판매관리 시스템(ERP/POS), 판매인력, 물류·운영비, 대행수수료(소계의 10%) 등 항목 구성. 구체 금액은 원문에서 추출 불가(VAT 10% 별도 명시)."
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "익산시 문화도시지원센터 문화예술공간, 대학로청년문화거리 인근"
+  },
+  "derived": {
+   "duration": {
+    "days": 8,
+    "weekend_share": 0.25,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 0.2,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 58,
+    "holiday_until": 4,
+    "holiday_block_in": 3,
+    "nat_event_gap": 20,
+    "nat_event": null,
+    "doc_lag_days": 40,
+    "doc_dates_found": 8
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": -7.9
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 본문에 일별 방문/매출 표가 텍스트로 추출되지 않음. 표지 기간 표기는 2024.04.01-05.06로 프로젝트 메타(04-30~05-07)와 상이함.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-05, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2024-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "10-hnBwkU1ED7gmInGgOxf1prYydRbVVD",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/10-hnBwkU1ED7gmInGgOxf1prYydRbVVD/view",
+   "title": "익산시문화센터_디즈니팝업_견적서.xlsx"
+  },
+  {
+   "doc_id": "10If1APXEKtOnUL7nHhl5kTtkDBPOnTlA",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/10If1APXEKtOnUL7nHhl5kTtkDBPOnTlA/view",
+   "title": "KakaoTalk_20240321_102242868_03.jpg"
+  },
+  {
+   "doc_id": "11UzfBknLocGeMFogfAcU8itS4thvuS0h",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/11UzfBknLocGeMFogfAcU8itS4thvuS0h/view",
+   "title": "익산시문화센터_디즈니팝업_견적서.xlsx"
+  },
+  {
+   "doc_id": "13p_7fQNwl-sXpTFQX2FEVWEssk2lPi3_",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/13p_7fQNwl-sXpTFQX2FEVWEssk2lPi3_/view",
+   "title": "KakaoTalk_20240321_102242868.jpg"
+  },
+  {
+   "doc_id": "19ZyRfEmxRyDRJpominpHopivSZF0jjJ1",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/19ZyRfEmxRyDRJpominpHopivSZF0jjJ1/view",
+   "title": "[대학로청년문화거리] 문화예술공간 오늘 4월 팝업프로그램 운영 과업지시서.pdf"
+  },
+  {
+   "doc_id": "1A8-DD3KbMAxPvdS_YdIvIxp_iBCfnD8u",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1A8-DD3KbMAxPvdS_YdIvIxp_iBCfnD8u/view",
+   "title": "익산 디즈니 팝업스토어 집행 비용.xlsx"
+  },
+  {
+   "doc_id": "1BZTCoVZX1wbxX-iHo4hW_TpbE31sotbt",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1BZTCoVZX1wbxX-iHo4hW_TpbE31sotbt/view",
+   "title": "익산시 전달서류.zip"
+  },
+  {
+   "doc_id": "1CROnRVeYZBz6LhVnhZXaz10xOA3lgurw",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1CROnRVeYZBz6LhVnhZXaz10xOA3lgurw/view",
+   "title": "[스위트스팟]법인인감증명서_231215.pdf"
+  },
+  {
+   "doc_id": "1D2Y64H02Ib7lceyiHE72c49LXtatGge_",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1D2Y64H02Ib7lceyiHE72c49LXtatGge_/view",
+   "title": "용역 합의서.pdf"
+  },
+  {
+   "doc_id": "1EO5gxisxwt36fLl7Ju-H_NweKOpHz94L",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1EO5gxisxwt36fLl7Ju-H_NweKOpHz94L/view",
+   "title": "KakaoTalk_20240321_102242868_02.jpg"
+  },
+  {
+   "doc_id": "1JeVoWyQr_5ds_cmlWwZOVRio7fquYDem",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1JeVoWyQr_5ds_cmlWwZOVRio7fquYDem/view",
+   "title": "[대학로청년문화거리] 문화예술공간 오늘 팝업 제안서.jpg"
+  },
+  {
+   "doc_id": "1Jr1rlZR56ThbzxWTx2CnSiZtgcm-Sy-N",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Jr1rlZR56ThbzxWTx2CnSiZtgcm-Sy-N/view",
+   "title": "(더탑-240229)_익산시디즈니스토어_견적.xlsx"
+  },
+  {
+   "doc_id": "1OAyLDJVdQcPm85ChyjGP3yHLrUGA9wft",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1OAyLDJVdQcPm85ChyjGP3yHLrUGA9wft/view",
+   "title": "익산시 디즈니 팝업스토어 집행비용.pdf"
+  },
+  {
+   "doc_id": "1SXjsh7J-52hf84CQMnkp7R7lmbqurPlc",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1SXjsh7J-52hf84CQMnkp7R7lmbqurPlc/view",
+   "title": "~$익산시문화센터_디즈니팝업_견적서.xlsx"
+  },
+  {
+   "doc_id": "1T7u4DWh7v4FJKHYsjHnWoF5FKvBNJSDl",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1T7u4DWh7v4FJKHYsjHnWoF5FKvBNJSDl/view",
+   "title": "(더탑-240229)_익산시디즈니스토어_견적.pdf"
+  },
+  {
+   "doc_id": "1TsJQDpA71DilM35p2TofBhtBvtcRKUvA",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1TsJQDpA71DilM35p2TofBhtBvtcRKUvA/view",
+   "title": "스위트스팟 리테일공간디자인 레퍼런스.pdf"
+  },
+  {
+   "doc_id": "1VNtBtI3lHEYY9Lr5T-9XevupPDu63Pxv",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1VNtBtI3lHEYY9Lr5T-9XevupPDu63Pxv/view",
+   "title": "[대학로청년문화거리] 문화예술공간 오늘 팝업 제안서 (2).pdf"
+  },
+  {
+   "doc_id": "1We0an_UbpadFl_oTqOe255XapcOdVPaZ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1We0an_UbpadFl_oTqOe255XapcOdVPaZ/view",
+   "title": "익산 디즈니 POP.pptx"
+  },
+  {
+   "doc_id": "1YmUHjkauw21WNUJYwvdpkSYprHi5nSCn",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1YmUHjkauw21WNUJYwvdpkSYprHi5nSCn/view",
+   "title": "0321_익산 문화예술공간 오늘 디즈니 팝업.pdf"
+  },
+  {
+   "doc_id": "1ZaYPhqOr66hqh1CfPWRVJgIZiXwJ-E1F",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1ZaYPhqOr66hqh1CfPWRVJgIZiXwJ-E1F/view",
+   "title": "스위트스팟 통장사본(국민은행_팝업스토어팀_489).pdf"
+  },
+  {
+   "doc_id": "1aAMTE5lashgi6vzyd3rkoBFjYoxknUdF",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1aAMTE5lashgi6vzyd3rkoBFjYoxknUdF/view",
+   "title": "스위트스팟 회사브로슈어_저용량 (2).pdf"
+  },
+  {
+   "doc_id": "1bvH5jzr1jWU3Y7Cb2I7_fIKNEHBfhfk6",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1bvH5jzr1jWU3Y7Cb2I7_fIKNEHBfhfk6/view",
+   "title": "[스위트스팟] 익산 문화예술공간 디즈니 팝업스토어_결과보고서.pdf"
+  },
+  {
+   "doc_id": "1fAjlZgXSK4RYClXWA0yLtBUu1o1JuWps",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1fAjlZgXSK4RYClXWA0yLtBUu1o1JuWps/view",
+   "title": "[대학로청년문화거리] 문화예술공간 오늘 팝업 제안서.pdf"
+  },
+  {
+   "doc_id": "1g0TMT6dYQ_Bv80sqZH5GEwxM27NkEe1f",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1g0TMT6dYQ_Bv80sqZH5GEwxM27NkEe1f/view",
+   "title": "KakaoTalk_20240321_102242868_01.jpg"
+  },
+  {
+   "doc_id": "1hDzcFB_JmGbFjSnTPXdmcNG9tvWBiBCh",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1hDzcFB_JmGbFjSnTPXdmcNG9tvWBiBCh/view",
+   "title": "Thumbs.db"
+  },
+  {
+   "doc_id": "1hib4V7xd97zNwZoM2aYvGqpYqxO8Q09d",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1hib4V7xd97zNwZoM2aYvGqpYqxO8Q09d/view",
+   "title": "[견적서-현대드림애드] 익산 디즈니 팝업스토어 그래픽 제작 건.xls"
+  },
+  {
+   "doc_id": "1nfCgq2mAipdYH1lbJBQ90H0Gb4XP8r5Y",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1nfCgq2mAipdYH1lbJBQ90H0Gb4XP8r5Y/view",
+   "title": "용역 변경계약서.pdf"
+  },
+  {
+   "doc_id": "1nqReFcwlZtqdbK9lfnho7hpkwJN4W4G-",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1nqReFcwlZtqdbK9lfnho7hpkwJN4W4G-/view",
+   "title": "용역 변경계약서.pdf"
+  },
+  {
+   "doc_id": "1tyfyY9vbFCry75fcABmEcli5fHBYun3G",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1tyfyY9vbFCry75fcABmEcli5fHBYun3G/view",
+   "title": "스위트스팟_익산시문화센터_디즈니팝업_견적서.pdf"
+  },
+  {
+   "doc_id": "1wGcEgF1Xyv5Sta6BPtH7P1C_QAAyrjJu",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1wGcEgF1Xyv5Sta6BPtH7P1C_QAAyrjJu/view",
+   "title": "0313_익산 문화예술공간 오늘 디즈니 팝업.pdf"
+  },
+  {
+   "doc_id": "1y3FlzdpIQ40lvoesI1JgBJvkMUDWwj34",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1y3FlzdpIQ40lvoesI1JgBJvkMUDWwj34/view",
+   "title": "(주)스위트스팟-사업자등록증_20230818.pdf"
+  },
+  {
+   "doc_id": "1zXMZVn9sYL4wJfc85_Mia8Jrp37oPpO-",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1zXMZVn9sYL4wJfc85_Mia8Jrp37oPpO-/view",
+   "title": "익산시문화센터_디즈니팝업_거래명세서.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 5건: 스위트스팟 리테일공간디자인 레퍼런스.pdf, 스위트스팟 회사브로슈어_저용량 (2).pdf, [대학로청년문화거리] 문화예술공간 오늘 팝업 제안서.p, 익산시문화센터_디즈니팝업_견적서.xlsx, [스위트스팟] 익산 문화예술공간 디즈니 팝업스토어_결과. 미확실: 결과보고서 방문자·매출 실측 데이터 없음; counting_method 판정 근거 없음; 견적서 총액·수수료율·분할 금액 추출 불가; 면적(평) 정보 없음; 운영 기간이 문서마다 상이(메타 04-30~05-07 vs 결과보고서 표지 04-01~05-06); 제안서/기획서 체험요소·프로모션 상세 없음; client_party_id 정확 명칭 미확정"
+ }
+}

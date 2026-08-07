@@ -1,0 +1,123 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{손으로 고른 문턱과 원리적인 축이 서로를 대체하지 않는다 --- 그리고 $\tau$ 는 여덟이다}
+\author{월드모델 실험실}
+\date{노트 517 · 2026년 8월 4일}
+\maketitle
+
+\begin{abstract}
+노트 516 이 \texttt{TRAINR}(연도 반감기 $8$ 년)을 채택하면서 물음을 남겼다
+--- \emph{연도 가중이 만화(제일 옛날인 도메인)를 이미 크게 줄이는데
+\texttt{TRAINCAP}\{만화$:0.5$\} 이 아직 필요한가.} 필요 없다면 손으로 고른
+도메인 문턱을 빼고 원리적인 축 하나로 갈 수 있다.
+
+\textbf{반증 --- 안 겹친다.}
+
+\begin{center}
+\begin{tabular}{lrrrrr}
+\hline
+현 챔피언 대비 & 판 & 날짜 통제 & 무리 안 & KR 만화 & 비게임 앱 \\
+\hline
+\texttt{TRAINCAP} 끔 & $\mathbf{-0.0020}$ & $\mathbf{-0.0015}$ & $\mathbf{-0.0021}$ & $-0.0023$ & $-0.0035$ \\
+$\tau{=}12$ & $-0.0001$ & $+0.0002$ & $-0.0008$ & $-0.0006$ & $-0.0018$ \\
+$\tau{=}16$ & $\mathbf{-0.0011}$ & $-0.0005$ & $\mathbf{-0.0017}$ & $\mathbf{-0.0042}$ & $\mathbf{-0.0041}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\texttt{TRAINCAP} 을 끄면 \textbf{집안 자 셋이 전부 $0$ 밖 음수}다.
+$\tau$ 는 $12$ 가 동점이고 $16$ 은 확실히 나쁘다 --- \textbf{$8$ 이 봉우리
+근처다.}
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 세 팔. \textbf{나} --- $\tau$ 훑기.
+\textbf{다} --- 셋이 사는 것.}
+\end{figure}
+
+\section{셋이 서로 다른 것을 산다}
+
+이 사이클에서 채택한 학습 쪽 손잡이 셋을 하나씩 빼 보면 각자 다른 자를
+떨어뜨린다.
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+손잡이 & 빼면 제일 아픈 곳 & 크기 \\
+\hline
+\texttt{TRAINCAP}(만화 절반) & 집안 셋이 고르게 & 판 $-0.0020$ · 무리 안 $-0.0021$ \\
+\texttt{TRAINW}(유보 무게) & \textbf{KR 만화} & $-0.0139$ (노트 516) \\
+\texttt{TRAINR}(연도 $\tau{=}8$) & \textbf{판 $\cdot$ 날짜 통제} & 판 $-0.0025$ (노트 516) \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{셋이 다 ``옛 행을 덜 본다''인데 떨어뜨리는 자가 다르다.} 겹치는
+일을 한다면 하나를 빼도 다른 둘이 메워야 하는데 안 메운다.
+
+읽으면 --- \textbf{옛 행을 줄이는 방법마다 ``어느 옛 행''이 다르다.}
+\texttt{TRAINCAP} 은 만화의 \emph{무작위} 절반, \texttt{TRAINW} 는
+\emph{도메인 통째로} 비례해서, \texttt{TRAINR} 은 \emph{연도순으로}.
+세 방식이 남기는 표본이 서로 달라서 각자 다른 자를 산다.
+
+\begin{quote}
+\textbf{조항} --- \textbf{두 손잡이가 같은 방향으로 움직인다고 겹친다고
+보지 않는다.} 겹침은 \emph{하나를 뺐을 때 다른 것이 메우는가}로만 잰다.
+\end{quote}
+
+\section{$\tau$ 는 여덟}
+
+\begin{center}
+\begin{tabular}{lrr}
+\hline
+$\tau$ & 판 & KR 만화 \\
+\hline
+없음 & $-0.0025$ & $-0.0139$ \\
+$\mathbf{8}$ & --- & --- \\
+$12$ & $-0.0001$ & $-0.0006$ \\
+$16$ & $-0.0011$ & $-0.0042$ \\
+\hline
+\end{tabular}
+\end{center}
+
+$\tau{=}4$ 는 노트 516 에서 $\tau{=}8$ 보다 나빴다($\tau{=}8$ 판
+$+0.0025$ 대 $\tau{=}4$ $+0.0021$, KR $-0.0018$ 대 $-0.0009$ --- 둘 다
+\texttt{TRAINW} 없이 잰 값이라 직접 비교는 아니다). \textbf{$8 \sim 12$
+사이에 평평한 봉우리가 있고 그 밖은 내려간다.}
+
+\textbf{정직하게} --- $\tau{=}12$ 는 다섯 자가 다 $0$ 을 물어 ``$8$ 보다
+나쁘다''고 못 말한다. \textbf{동점이다.} $8$ 을 유지하는 이유는 먼저
+채택했기 때문이지 더 낫다고 보였기 때문이 아니다(노트 432 의 되돌림 조항과
+같은 정신).
+
+\section*{이 사이클의 챔피언 --- 확정}
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+\texttt{DOMDROP} & \texttt{\{"애니": ("trend\_",)\}} \\
+\texttt{TRAINCAP} & \texttt{\{"만화": 0.5\}} \\
+\texttt{TRAINW} & 유보 무게 · clip $(0.2, 1.0)$ \\
+\texttt{TRAINR} & $8.0$ \\
+\hline
+판 & $0.4812 \to \mathbf{0.4932}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{\texttt{TRAINCAP} 의 만화 $0.5$ 는 손으로 골랐다} --- $0.25
+\cdot 0.75$ 는 아직 안 재 봤다. 이제 \texttt{TRAINR} 위에서 재야 한다.
+\item \textbf{다른 도메인에도 \texttt{TRAINCAP}} --- 세계애니는
+\texttt{TRAINW} 가 $0.61$ 로 이미 줄이는데 그 위에 문턱을 더 걸면?
+\item \textbf{노트 446 거부권을 다시 읽기}(노트 516) --- 학습 쪽 후보가
+그 거부권에 걸려 죽은 적이 있나.
+\end{itemize}
+
+\end{document}

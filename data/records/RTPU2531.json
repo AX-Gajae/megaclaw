@@ -1,0 +1,302 @@
+{
+ "record_id": "RTPU2531",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:원피스_ONE_PIECE_대원미디어",
+  "space_id": "unresolved:더현대서울_B2F_아이코닉존__더현대대구_B2F_팝업스테이지",
+  "client_party_id": "unresolved:대원미디어_주식회사",
+  "brand_key": "원피스",
+  "space_key": "multi_더현대"
+ },
+ "intervention": {
+  "concept": "원피스(ONE PIECE) IP 팝업스토어로 서울(더현대서울)과 대구(더현대대구)에서 순차 운영. 밀짚모자해적단·에그헤드 세력을 활용한 판매존과 캐릭터별 포토존, 전시존으로 구성. 2025년 신규 굿즈 및 일본 수입 제품을 판매.",
+  "brand_name": "2025 원피스 팝업스토어",
+  "experience_elements": [
+   "판매존(밀짚모자해적단/에그헤드 외벽)",
+   "전시존(크리에이티브 라운지)",
+   "포토존(골드로저·나미·니카그림자·로빈·상디·우솝·조로&쿠이나·징베&브룩·프랑키 등)",
+   "포토카드 증정",
+   "웨이팅 등록/호출 시스템"
+  ],
+  "promotions": [
+   "오픈일 한정판 제품 선착순 판매",
+   "구매 특전(포토카드 증정)"
+  ],
+  "staging_tags": [
+   "판매존 트러스 구조물",
+   "포토존 가벽/트러스",
+   "등신대·소품 VMD",
+   "기둥 랩핑",
+   "레고 포토존 백월(대구)"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": null,
+   "area_sqm": 214.88,
+   "planned_operating_days": 7,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": null,
+   "experience_density": 2,
+   "goods_scale": 4,
+   "photo_zones": 4,
+   "collab_strength": 3,
+   "ip_awareness": 4,
+   "target_breadth": 3,
+   "entry_friction": 2,
+   "media_push": 2,
+   "season_fit": 3,
+   "venue_prominence": 3
+  },
+  "attr_meta": {
+   "evidence": "계약서 제2조③ 행사기간: 서울 7/24~7/30(7일)+대구 8/22~8/31(10일) 2개 레그. 운영일수=서울 레그 7일(period 17일은 두 레그 합산). 면적 65평→214.88㎡. 기획안 2건은 평면도 OCR뿐이라 입객·인원 수치 없음",
+   "confidence": "medium",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": "서울/대구",
+   "district": "영등포구/대구 중구",
+   "venue_name": "더현대서울 B2F 아이코닉존 / 더현대대구 B2F 팝업스테이지+크리에이티브라운지",
+   "venue_type": "백화점 팝업존",
+   "foot_traffic_context": "여의도 상권 특징 활용(서울), 백화점 방문객 유입",
+   "venue_slot": "B2F 아이코닉존"
+  },
+  "area_pyeong": 65,
+  "period": {
+   "from": "2025-07-24",
+   "to": "2025-08-31",
+   "days": 17
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총 계약금액 281,600,000원(VAT 별도). 1차 팝업(서울) 162,000,000원, 2차 팝업(대구) 119,600,000원. 각 행사종료 후 30일 이내 지급(대원미디어→스위트스팟). 견적서 기준: 서울 136,700,000원(VAT 포함, 대행수수료 소계의 10%), 대구 122,500,000원(VAT 포함, 대행수수료 소계의 10%). 입금계좌 KB국민은행 378801-01-088226."
+  },
+  "brand_requirements": [
+   "제작물 사용 전 의뢰사 감수 및 서면 승인",
+   "제작물 지식재산권 의뢰사 귀속",
+   "보안유지 의무",
+   "안전관리 및 사고방지",
+   "법령준수(청탁금지법·개인정보보호법)"
+  ],
+  "scale": {
+   "store_count": 2,
+   "venue_traffic_type": "multi_store",
+   "host_traffic_note": "더현대서울·더현대대구 백화점 방문객 유입"
+  },
+  "derived": {
+   "duration": {
+    "days": 39,
+    "weekend_share": 0.31,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 4,
+    "months_since_last": 5.7,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 46,
+    "holiday_until": 22,
+    "holiday_block_in": 3,
+    "nat_event_gap": 51,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 11,
+    "comp_prior_at_venue": 358,
+    "comp_within_500m_open": 12,
+    "comp_within_1000m_open": 12,
+    "matched_address": "서울 영등포구 여의대로 108"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 5156399.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 3,
+    "pnl_pre_first": "2025-03-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 55000,
+   "popup_zone_pass_rate": 0.5,
+   "host_traffic_est": 27500.0,
+   "venue_scale_tier": 1,
+   "confidence": "medium",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2025-07-24",
+    "visitors": 1458,
+    "sales_krw": 75079900
+   },
+   {
+    "date": "2025-07-25",
+    "visitors": 1778,
+    "sales_krw": 57341000
+   },
+   {
+    "date": "2025-07-26",
+    "visitors": 2596,
+    "sales_krw": 76698900
+   },
+   {
+    "date": "2025-07-27",
+    "visitors": 2703,
+    "sales_krw": 72235000
+   },
+   {
+    "date": "2025-07-28",
+    "visitors": 2034,
+    "sales_krw": 49777700
+   },
+   {
+    "date": "2025-07-29",
+    "visitors": 2091,
+    "sales_krw": 47468400
+   },
+   {
+    "date": "2025-07-30",
+    "visitors": 2031,
+    "sales_krw": 40996200
+   },
+   {
+    "date": "2025-08-22",
+    "visitors": 1429,
+    "sales_krw": 31348100
+   },
+   {
+    "date": "2025-08-23",
+    "visitors": 2159,
+    "sales_krw": 47351000
+   },
+   {
+    "date": "2025-08-24",
+    "visitors": 1632,
+    "sales_krw": 35801000
+   },
+   {
+    "date": "2025-08-25",
+    "visitors": 747,
+    "sales_krw": 16382000
+   },
+   {
+    "date": "2025-08-26",
+    "visitors": 490,
+    "sales_krw": 10756400
+   },
+   {
+    "date": "2025-08-27",
+    "visitors": 614,
+    "sales_krw": 13465300
+   },
+   {
+    "date": "2025-08-28",
+    "visitors": 448,
+    "sales_krw": 9819200
+   },
+   {
+    "date": "2025-08-29",
+    "visitors": 480,
+    "sales_krw": 10533700
+   },
+   {
+    "date": "2025-08-30",
+    "visitors": 968,
+    "sales_krw": 21233600
+   },
+   {
+    "date": "2025-08-31",
+    "visitors": 728,
+    "sales_krw": 15960400
+   }
+  ],
+  "totals": {
+   "visitors": 24387,
+   "sales_krw": 632247800,
+   "rev_mm_recognized": 244.0
+  },
+  "counting_method": "entry",
+  "counting_basis": "'실제 입장(명)' 컬럼 = 웨이팅 등록 후 실제 입장한 인원(노쇼 제외). 서울 총 14,691명, 대구 총 9,696명. 대구는 08.24 이후 웨이팅 없이 바로 입장분은 현장 방문 예상치로 기재.",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(서울 매출 419,597,100원(전년比 약 115%), 대구 매출 212,650,700원(전년比 약 18% 감소, 개강/개학 영향). 서울 노쇼비율 평균 25%. sales_krw는 POS 소비자 매출액 기준.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "partial",
+   "rule": "인식 244.0 < 총액 281.6의 90%",
+   "contract_total_mm": 281.6,
+   "last_recognition_period": "2025-08"
+  },
+  "label_trust": {
+   "grade": "A",
+   "flags": [
+    "A"
+   ],
+   "why": "정밀 집계 표현"
+  },
+  "label_scope": {
+   "label_from": "2025-07-24",
+   "label_to": "2025-08-31",
+   "label_active_days": 17,
+   "label_span_days": 39,
+   "label_contiguous": false,
+   "daily_sum": 24386,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "15moJQX6jDLuml3JZEDNDpIuxhtFJ6REE",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/15moJQX6jDLuml3JZEDNDpIuxhtFJ6REE/view",
+   "title": "SWEETSPOT_대원미디어_더현대서울원피스팝업스토어_견적서_0428_통합.pdf"
+  },
+  {
+   "doc_id": "17X1FhLQkcYejneUFTq1fBUPfQ4Xlmw8R",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17X1FhLQkcYejneUFTq1fBUPfQ4Xlmw8R/view",
+   "title": "SWEETSPOT_대원미디어_더현대대구 원피스팝업스토어_견적서_0428_통합.pdf"
+  },
+  {
+   "doc_id": "1ZwkvOU1n9O0utNkHRNzsmpDCzDSnB0g1",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1ZwkvOU1n9O0utNkHRNzsmpDCzDSnB0g1/view",
+   "title": "2025 팝업스토어 업무계약서_원피스_대원_스위트스팟.pdf"
+  },
+  {
+   "doc_id": "1oJ0nMmoprd3IeagY8mDCsQ7qfLNTtbvW",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1oJ0nMmoprd3IeagY8mDCsQ7qfLNTtbvW/view",
+   "title": "Sweetspot_2025 원피스 결과보고서_0909.pdf"
+  },
+  {
+   "doc_id": "1qczLhaTp1p9TMjx8LZWJL53VoVq2sz0W",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1qczLhaTp1p9TMjx8LZWJL53VoVq2sz0W/view",
+   "title": "원피스_대구_v4_0731_기획안.pdf"
+  },
+  {
+   "doc_id": "1tSJQ-JGxDdEIJaxvgfTGg-une9Q1gW6q",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1tSJQ-JGxDdEIJaxvgfTGg-une9Q1gW6q/view",
+   "title": "원피스_서울_기획안.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 6건: 2025 팝업스토어 업무계약서_원피스_대원_스위트스팟., 원피스_서울_기획안.pdf, 원피스_대구_v4_0731_기획안.pdf, SWEETSPOT_대원미디어_더현대서울원피스팝업스토어_, SWEETSPOT_대원미디어_더현대대구 원피스팝업스토어, Sweetspot_2025 원피스 결과보고서_0909.. 미확실: 대구 면적(평) 미기재; client_party_id/space_id/brand_id 정규화 필요; 대구 08.24 이후 방문객 수는 현장 예상치; 계약서 본문은 '짱구'로 오기되어 있으나 실제 행사명은 '2025 원피스 팝업스토어'"
+ }
+}

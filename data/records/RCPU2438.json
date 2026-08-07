@@ -1,0 +1,135 @@
+{
+ "record_id": "RCPU2438",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:JYP_스트레이키즈_StrayKids",
+  "space_id": "unresolved:휘겸재_Hwigyeomjae",
+  "client_party_id": "unresolved:JYP360",
+  "brand_key": "스트레이키즈",
+  "space_key": "휘겸재"
+ },
+ "intervention": {
+  "concept": "JYP 소속 그룹 스트레이키즈(Stray Kids)의 팝업스토어를 휘겸재에서 운영. 견적서 기반으로 컨셉 상세는 확인 불가.",
+  "brand_name": "스트레이키즈 팝업스토어",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [
+   "몽골텐트",
+   "캐노피 천막",
+   "외부 난방기구",
+   "POP대",
+   "X배너"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": "휘겸재",
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-12-14",
+   "to": "2024-12-22",
+   "days": 9
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 135,800,000원 (VAT 10% 별도, 만원단위 절삭). 소계 123,500,000원 + 대행수수료(소계의 10%) 12,350,000원. 세부: 공통/운영물품 10,960,000, 운영인력 99,340,000, 세팅및철수 9,000,000, 기타 4,200,000. 추가비용은 실비청구. 행사주최자배상책임보험 포함(대인 1인당 최대 10백만/사고당 최대 20백만 등, 건물파손 최대 10억원)."
+  },
+  "brand_requirements": [
+   "행사주최자배상책임보험(의무사항) 가입",
+   "Web POS 및 결제/재고관리 시스템",
+   "안전 경호인력 배치(아티스트 방문일 별도)",
+   "외국어 안내 스태프 배치",
+   "운영스태프 사전교육 및 현장 리허설(휘겸재)"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 9,
+    "weekend_share": 0.44,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 87,
+    "holiday_until": 42,
+    "holiday_block_in": 0,
+    "nat_event_gap": 30,
+    "nat_event": null,
+    "doc_lag_days": 4,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 457993.0,
+    "pnl_pre_accounts": 3,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2024-11-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 138.8
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 138.8 ≈ 계약총액 135.8",
+   "contract_total_mm": 135.8,
+   "last_recognition_period": "2024-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "11QqD19AJZS63tchvRJC3A0CpRxs1YRJj",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/11QqD19AJZS63tchvRJC3A0CpRxs1YRJj/view",
+   "title": "jyp360 스키즈 계약서.pdf"
+  },
+  {
+   "doc_id": "1EefL2BJX_jdcIawvy_mM3-KqAXGAPBc4",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1EefL2BJX_jdcIawvy_mM3-KqAXGAPBc4/view",
+   "title": "JYP 스키즈 팝업스토어 운영 대행 계약서.pdf"
+  },
+  {
+   "doc_id": "1EfByLHNdSsE1pWjmDoJLENIgefphlLKY",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1EfByLHNdSsE1pWjmDoJLENIgefphlLKY/view",
+   "title": "JYP 스키즈 팝업스토어 운영 견적서(스위트스팟송부_241210).pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 1건: JYP 스키즈 팝업스토어 운영 견적서(스위트스팟송부_2. 미확실: 결과보고서 부재로 실측 방문자수·매출 없음; 입지 도시/구 정보 미기재(venue명 휘겸재만 존재); 면적(평) 정보 없음; 컨셉·체험요소·프로모션 상세 없음(견적서만 제공); 예상 방문자수(plan_visitors_expected) 없음"
+ }
+}

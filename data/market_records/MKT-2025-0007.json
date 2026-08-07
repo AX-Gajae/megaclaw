@@ -1,0 +1,77 @@
+{
+  "market_record_id": "MKT-2025-0007",
+  "event_name": "JUMP SHOP in SEOUL 제1탄(기간한정 점프샵 팝업스토어 더현대 서울)",
+  "brand": "현대백화점/슈에이샤 점프샵",
+  "ip_or_collab": "주간소년점프(원피스·드래곤볼·나루토·블리치·주술회전·하이큐!!·히로아카·헌터x헌터·괴수8호 등)",
+  "category": "game_webtoon",
+  "intervention": {
+    "concept_description": "일본 점프샵 한국 첫 팝업. 12개 작품 공식 굿즈 판매, 네이버 사전 예약제",
+    "experience_elements": [
+      "작품별 굿즈존"
+    ],
+    "promotions": [
+      "한정 MD"
+    ],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "더현대 서울 지하 2층 아이코닉",
+    "venue_type": "department_store",
+    "neighborhood": "여의도",
+    "city": "서울",
+    "period_from": "2025-02-13",
+    "period_to": "2025-02-26",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 14,
+        "weekend_share": 0.29,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 14,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "현대백화점 집계 인용(하루 최대 인파): '지난 2월 열린 점프샵 팝업은 네이버 사전 예약이 조기 마감됐고, 하루 4000명에 달하는 인파가 몰리며 큰 호응을 얻었다' - 총계 미보도(규칙 5)",
+    "visitors_source_quote": "지난 2월 열린 '점프샵' 팝업은 네이버 사전 예약이 조기 마감됐고, 하루 4000명에 달하는 인파가 몰리며 큰 호응을 얻었다.",
+    "visitors_source_url": "https://www.asiatoday.co.kr/kn/view.php?key=20250703010002315",
+    "visitors_source_date": "2025-07-03",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "하루 4000명에 달하는 인파",
+      "sold_out": null,
+      "reservation_fill": "네이버 사전 예약 조기 마감",
+      "signal_quotes": [
+        "지난 2월 열린 '점프샵' 팝업은 네이버 사전 예약이 조기 마감됐고, 하루 4000명에 달하는 인파가 몰리며 큰 호응을 얻었다. (아시아투데이 2025-07-03)",
+        "지난 2월 더현대 서울에서 열린 점프샵 팝업은 오픈 당일에만 2000명 이상이 몰리며 큰 화제를 모았다. (패션비즈 2025-05-27)"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "기간 2025-02-13~26은 예약 안내 페이지(벨류드림 2025-02-04) 기반. 아시아투데이 원문은 웹오픈 반복 실패(내부 오류), 검색 엔진 추출 전문 2회 교차 확인. | 병합 레코드: MKT-2025-0034",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

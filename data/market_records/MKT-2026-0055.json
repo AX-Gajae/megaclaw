@@ -1,0 +1,86 @@
+{
+  "market_record_id": "MKT-2026-0055",
+  "event_name": "할리데이비슨컬렉션스 '1903 티셔츠 개러지' 성수 팝업스토어",
+  "brand": "할리데이비슨컬렉션스 (신세계인터내셔날)",
+  "ip_or_collab": "바이크 문화·개러지 콘셉트, 서울 익스클루시브 한정 제품",
+  "category": "fashion",
+  "intervention": {
+    "concept_description": "1903년 브랜드 탄생 연도와 바이크 차고(Garage)에서 영감받은 헤리티지 팝업",
+    "experience_elements": [
+      "빈티지 가구·자연 소재 공간 연출"
+    ],
+    "promotions": [
+      "서울 익스클루시브(그래픽 티셔츠 3종+볼캡 1종) 팝업 단독 판매",
+      "라이더 라이트다운 재킷 선공개"
+    ],
+    "is_free_entry": true,
+    "reservation_required": false
+  },
+  "conditions": {
+    "venue": "성수동",
+    "venue_type": "street_standalone",
+    "neighborhood": "성수동",
+    "city": "서울",
+    "period_from": "2026-07-10",
+    "period_to": "2026-08-02",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 24,
+        "weekend_share": 0.33,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "신세계인터내셔날 발표 인용. 일평균 600명 이상(총계 환산 금지 규칙으로 visitors_total null). 2030세대가 구매 고객의 80%, 외국인 약 30%",
+    "visitors_source_quote": "팝업스토어의 성과는 기대 이상이다. 일평균 600명 이상 방문객이 몰리고 있으며, 2030세대가 전체 구매 고객의 80%를 차지했다.",
+    "visitors_source_url": "https://fashionbiz.co.kr/article/228080",
+    "visitors_source_date": "2026-07-23",
+    "sales_krw": 100000000,
+    "sales_source_quote": "신세계인터내셔날(대표 김덕주)의 패션 브랜드 '할리데이비슨컬렉션스'가 이달 10일 서울 성수동에 오픈한 팝업스토어가 흥행몰이에 성공했다. 팝업 오픈 열흘 만에 매출 1억원을 돌파한 데 이어 2030세대를 중심으로 입소문이 확산되며 새로운 스트리트 패션 브랜드로 존재감을 키우고 있다.",
+    "sales_source_url": "https://fashionbiz.co.kr/article/228080",
+    "sales_source_date": "2026-07-23",
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "특히 성수 팝업에서만 선보인 서울 익스클루시브 제품이 외국인들에게 큰 관심을 받았다. 그래픽 티셔츠 3종과 볼캡 1종으로 구성된 한정판 제품들은 전체 팝업 매출의 18%를 차지하며 높은 인기를 보였다.",
+        "일평균 600명 이상 방문객이 몰리고 있으며, 2030세대가 전체 구매 고객의 80%를 차지했다.",
+        "구매 고객 중 외국인이 약 30%를 차지해 국내 고객뿐 아니라 외국인 관광객들에게도 새로운 쇼핑 명소로 자리 잡고 있다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "당초 7/26 종료에서 8/2로 연장. 매출 1억은 열흘(7/10~19) 누적. 서울 익스클루시브 제품이 전체 팝업 매출의 18%. | 병합 레코드: MKT-2026-0014 | [병합:MKT-2026-0014] 열흘 매출 1억 돌파 시점 보도(7/23). 운영 8/2까지 연장. 성수 익스클루시브 제품이 팝업 매출의 18%.",
+  "additional_sources": [
+    {
+      "metric": "sales",
+      "value": 100000000,
+      "basis": "organizer_claim",
+      "quote": "팝업 오픈 열흘 만에 매출 1억원을 돌파한 데 이어 2030세대를 중심으로 입소문이 확산되며 새로운 스트리트 패션 브랜드로 존재감을 키우고 있다.",
+      "url": "https://fashionbiz.co.kr/article/228080",
+      "date": "2026-07-23"
+    }
+  ],
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {
+    "sales": "verified"
+  },
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

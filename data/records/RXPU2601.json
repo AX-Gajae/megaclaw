@@ -1,0 +1,631 @@
+{
+ "record_id": "RXPU2601",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:나이키_NTK_파트너마케팅",
+  "space_id": "unresolved:CAPO_5F_SSAKA_2F",
+  "client_party_id": "unresolved:나이키코리아",
+  "brand_key": "나이키",
+  "space_key": "CAPO_SSAKA"
+ },
+ "intervention": {
+  "concept": "FIFA WC26 기간 국가대표팀 키트(NTK)를 소재로 한 'Scene Stealers United' 파트너 마케팅 팝업. 'Steal the Show' 비주얼 컨셉 아래 '발톱의 역습(claws out)'을 영화적 앵글·심도로 오프라인 비주얼라이징. 파트너사 매장 두 곳(CAPO 5F=Episode 1 Injury Time, SSAKA 2F=Episode 2 Last-gasp)에 시네마틱 공간을 연출한다.",
+  "brand_name": "Nike Football / National Team Kit (NTK)",
+  "experience_elements": [
+   "Scene Stealers Tunnel 메인 엔트런스",
+   "NTK 착의 플레이어(3D) + 상대 더미(2D) 1:1 스케일 연출 씬",
+   "Aero fit technology 레이어드 세트(디지털 모니터+아크릴 판넬+3D 플레이어)",
+   "Claws-action wall / Scratch wall (스크래퍼 claws로 긁어 대형 KV 노출)",
+   "Jersey still cut - KNT Jersey Showcase(Home & Away), 호랑이 손+발톱 조형",
+   "KV display & Mirror shot(현장 셀피/모니터 송출)",
+   "Jersey 마킹 구역",
+   "건물 외벽 대형 발톱 축구공 돌출형 설치(추가 제안)"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "cinematic",
+   "close-up shot",
+   "backlight",
+   "color contrast",
+   "1:1 scale",
+   "layered set",
+   "ceiling wire 고정",
+   "black carpet floor",
+   "조도 연출 Scene Focusing",
+   "claws out"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": "CAPO 5F / SSAKA 2F",
+   "venue_type": "파트너사 리테일 매장(온드 아님)",
+   "foot_traffic_context": null,
+   "venue_slot": "5F 2F"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2026-02-01",
+   "to": "2026-03-24",
+   "days": null
+  },
+  "season": "봄 / FIFA WC26 시즌",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "총액 KRW 200,000,000 한정(계약서 2.1, VAT 포함 여부 명시 없음). 지급일정: 목업 최종승인 기준 요금의 70% 인보이스 2026-02-28까지 제출, 나머지 30%는 결과물 제출 후 2026-03-24 제출. 대금은 다툼 없는 인보이스 나이키 수령 후 60일 이내 지급. ※ 손익원장상 서비스매출 212,000,000원으로 계약 캡(200M)과 불일치."
+  },
+  "brand_requirements": [
+   "파트너사 매장 상설 운영 방식·기간 고려, 별도 전문인력/오퍼레이터 필요 장치 지양",
+   "공간 내 제작배치 구조·소재·안정성 고려",
+   "CAPO/SSAKA 공간 연결·확장 연출",
+   "Jersey 마킹 구역 등 개조불가 구역 준수",
+   "방문객 동선·관람 시야 시뮬레이션 적용",
+   "결과물·개발품목 지식재산권 나이키 소유(업무상 저작물)",
+   "제3자 콘텐츠 사용 시 계약자가 허가 책임"
+  ],
+  "scale": {
+   "store_count": 2,
+   "venue_traffic_type": "multi_store",
+   "host_traffic_note": "파트너사 매장 두 곳(CAPO 5F, SSAKA 2F) 입점"
+  },
+  "derived": {
+   "duration": {
+    "days": 52,
+    "weekend_share": 0.29,
+    "holiday_days": 5
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 115,
+    "holiday_until": 13,
+    "holiday_block_in": 8,
+    "nat_event_gap": 80,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 212.0
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 부재. 방문객수·현장매출(POS) 등 실측 성과지표 문서 없음(팝가 미연동). 소비자 매출 확인 불가.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식액 212.0 ≈ 계약총액 200.0 (±10%)",
+   "contract_total_mm": 200.0,
+   "last_recognition_period": "2026-03"
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "10hrKV-knFEWOFu3qN9g9JQYEAh1u2tkC",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/10hrKV-knFEWOFu3qN9g9JQYEAh1u2tkC/view",
+   "title": "2N0A4571.jpg"
+  },
+  {
+   "doc_id": "13KhTb4mU7oWAIVcIm-TOh6JC3TOvKO_l",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/13KhTb4mU7oWAIVcIm-TOh6JC3TOvKO_l/view",
+   "title": "2N0A5140.jpg"
+  },
+  {
+   "doc_id": "13fHYcG6Vgs-ZlLi6qFfl6fmG3O7QVLsw",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/13fHYcG6Vgs-ZlLi6qFfl6fmG3O7QVLsw/view",
+   "title": "NTK Marketing_Estimate_SweetSpot _잔금_0319.pdf"
+  },
+  {
+   "doc_id": "13vKaTDlpDY7jw_2_d_YMIKWLIOmGirVx",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/13vKaTDlpDY7jw_2_d_YMIKWLIOmGirVx/view",
+   "title": "임시결과보고서.txt"
+  },
+  {
+   "doc_id": "15QB5-1ncIaulotN1hyabY0b3ySfPYzof",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/15QB5-1ncIaulotN1hyabY0b3ySfPYzof/view",
+   "title": "2N0A4973.jpg"
+  },
+  {
+   "doc_id": "16RsxTMmolKm0OxXll7Seo72YYh35lkXq",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/16RsxTMmolKm0OxXll7Seo72YYh35lkXq/view",
+   "title": "2N0A4742.jpg"
+  },
+  {
+   "doc_id": "16mBFEMp8zh_Gj4OHzZRzHQTi9bTgTnh2",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/16mBFEMp8zh_Gj4OHzZRzHQTi9bTgTnh2/view",
+   "title": "2N0A4578.jpg"
+  },
+  {
+   "doc_id": "18Invjel5ACc-Y467ZRsugsEQXxs5NYe2",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/18Invjel5ACc-Y467ZRsugsEQXxs5NYe2/view",
+   "title": "2N0A4779.jpg"
+  },
+  {
+   "doc_id": "1AMRzBdRdvgtD_IrCanyyBfxAPtOxfTuB",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1AMRzBdRdvgtD_IrCanyyBfxAPtOxfTuB/view",
+   "title": "2N0A4614.jpg"
+  },
+  {
+   "doc_id": "1B1ULv5Ta6jax1VG5pxTRFlaCCQ_SV0HE",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1B1ULv5Ta6jax1VG5pxTRFlaCCQ_SV0HE/view",
+   "title": "2N0A4695.jpg"
+  },
+  {
+   "doc_id": "1BqLJERRrwp9OdtR3R7mzNubn1O7LPB1f",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1BqLJERRrwp9OdtR3R7mzNubn1O7LPB1f/view",
+   "title": "2N0A4796.jpg"
+  },
+  {
+   "doc_id": "1CgexErz2GiOAb7xMoz5CVHKWDw6E4_Iu",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1CgexErz2GiOAb7xMoz5CVHKWDw6E4_Iu/view",
+   "title": "2N0A4899.jpg"
+  },
+  {
+   "doc_id": "1CyY87lfDv7jJF2WtsEQGRs-ImOV8xhHC",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1CyY87lfDv7jJF2WtsEQGRs-ImOV8xhHC/view",
+   "title": "2N0A5088.jpg"
+  },
+  {
+   "doc_id": "1DWYZ0kCrRtN5zE3gxw7i8WdU-Bq8wP25",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1DWYZ0kCrRtN5zE3gxw7i8WdU-Bq8wP25/view",
+   "title": "2N0A5078.jpg"
+  },
+  {
+   "doc_id": "1FT5Rym5HpFbO3Q_9bR-50bpKczOiNja8",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1FT5Rym5HpFbO3Q_9bR-50bpKczOiNja8/view",
+   "title": "2N0A4899.jpg"
+  },
+  {
+   "doc_id": "1GF-9W_9TKmeZ-uLU3qVss84tfZ2BsfwP",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1GF-9W_9TKmeZ-uLU3qVss84tfZ2BsfwP/view",
+   "title": "2N0A5078.jpg"
+  },
+  {
+   "doc_id": "1Gdiqk5e5yvZjdNzisyq7p0ytAViszRHI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Gdiqk5e5yvZjdNzisyq7p0ytAViszRHI/view",
+   "title": "NTK Marketing_Estimate_SweetSpot _선금_0317.pdf"
+  },
+  {
+   "doc_id": "1HgOfC5qWm1mA373gihqyVnHsKOxx86VU",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1HgOfC5qWm1mA373gihqyVnHsKOxx86VU/view",
+   "title": "2N0A4916.jpg"
+  },
+  {
+   "doc_id": "1JgSlwtp7GLdcnGn4EqiOm5M6gQ_dtjer",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1JgSlwtp7GLdcnGn4EqiOm5M6gQ_dtjer/view",
+   "title": "NTK Marketing Proposal_SweetSpot.pdf"
+  },
+  {
+   "doc_id": "1KDRCOF56lFkNlkZDAX75d2IEzu7C4J7h",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1KDRCOF56lFkNlkZDAX75d2IEzu7C4J7h/view",
+   "title": "2N0A4926.jpg"
+  },
+  {
+   "doc_id": "1LP7rL_OzX9zzOwxBaCU9tn9OKUMR4o4v",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1LP7rL_OzX9zzOwxBaCU9tn9OKUMR4o4v/view",
+   "title": "2N0A4722.jpg"
+  },
+  {
+   "doc_id": "1LPUmHlilw10X2PEF_49MpX1qjsxmeqJx",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1LPUmHlilw10X2PEF_49MpX1qjsxmeqJx/view",
+   "title": "2N0A4532.jpg"
+  },
+  {
+   "doc_id": "1LsUa_9GBs0R6YnSzHIlVSOkcT7brZHUF",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1LsUa_9GBs0R6YnSzHIlVSOkcT7brZHUF/view",
+   "title": "(주)파이넬로_나이키 SP26_카포&싸카_제작시공_견적서_260312.pdf"
+  },
+  {
+   "doc_id": "1Mz_Vcwacz4a1zkCM2--TBRwrDOcx9ia1",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Mz_Vcwacz4a1zkCM2--TBRwrDOcx9ia1/view",
+   "title": "2N0A4832.jpg"
+  },
+  {
+   "doc_id": "1NPJpaW6UxQhg-42mzUrifSZ1I9Wv45TW",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1NPJpaW6UxQhg-42mzUrifSZ1I9Wv45TW/view",
+   "title": "2N0A4625.jpg"
+  },
+  {
+   "doc_id": "1NWEDu0wavyPnlEwdOs5WxB2XaXNh2u_y",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1NWEDu0wavyPnlEwdOs5WxB2XaXNh2u_y/view",
+   "title": "2N0A4779.jpg"
+  },
+  {
+   "doc_id": "1O2tI-Pej1luW_lr9x3rKFNSv7v1ifiW7",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1O2tI-Pej1luW_lr9x3rKFNSv7v1ifiW7/view",
+   "title": "2N0A5068.jpg"
+  },
+  {
+   "doc_id": "1PIOCtMtVsM-9MqslhYsMkZcq03zcYepb",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1PIOCtMtVsM-9MqslhYsMkZcq03zcYepb/view",
+   "title": "2N0A4625.jpg"
+  },
+  {
+   "doc_id": "1PQfrJiEoxQjeSlpgXWEkDVjSgyV22uiD",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1PQfrJiEoxQjeSlpgXWEkDVjSgyV22uiD/view",
+   "title": "2N0A4926.jpg"
+  },
+  {
+   "doc_id": "1QD7rBaa0aJXvehUWCV8bp9InkbJIKbPK",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1QD7rBaa0aJXvehUWCV8bp9InkbJIKbPK/view",
+   "title": "2N0A4532.jpg"
+  },
+  {
+   "doc_id": "1QT_ZuVDU_jHWbSflsVkp7ePxsQXNF4SY",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1QT_ZuVDU_jHWbSflsVkp7ePxsQXNF4SY/view",
+   "title": "2N0A5140.jpg"
+  },
+  {
+   "doc_id": "1QlduEzwUm717jEplpOT1HzFGVP-qtU27",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1QlduEzwUm717jEplpOT1HzFGVP-qtU27/view",
+   "title": "2N0A4742.jpg"
+  },
+  {
+   "doc_id": "1SY7nmfsBJcdJYUuza6x9DghhCD0_wqGy",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1SY7nmfsBJcdJYUuza6x9DghhCD0_wqGy/view",
+   "title": "2N0A5093.jpg"
+  },
+  {
+   "doc_id": "1SshlZzN6J1h3IkrNLVX4WAjXqkdkP9uX",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1SshlZzN6J1h3IkrNLVX4WAjXqkdkP9uX/view",
+   "title": "2N0A4695.jpg"
+  },
+  {
+   "doc_id": "1T-9dTu03wfXKf_1Mtq0req_TjO1tppu_",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1T-9dTu03wfXKf_1Mtq0req_TjO1tppu_/view",
+   "title": "2N0A4689.jpg"
+  },
+  {
+   "doc_id": "1UKHxOTifJXWu9fQSDAG7yI9zOFQDGyaL",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1UKHxOTifJXWu9fQSDAG7yI9zOFQDGyaL/view",
+   "title": "견적서_NTK Marketing Proposal_Estimate_SweetSpot _f.pdf"
+  },
+  {
+   "doc_id": "1Ua0sP8v6S71bx93teKCKYCzC6WuAHvW2",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Ua0sP8v6S71bx93teKCKYCzC6WuAHvW2/view",
+   "title": "2N0A5068.jpg"
+  },
+  {
+   "doc_id": "1VBfHE7Xt1TDXbESaTjyMtQvlbAZlbMVw",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1VBfHE7Xt1TDXbESaTjyMtQvlbAZlbMVw/view",
+   "title": "견적서_NTK Marketing Proposal_Estimate_SweetSpot _f.pdf"
+  },
+  {
+   "doc_id": "1VaHdn3KvEmNkBVktZHCgwEV7y9vNfNAd",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1VaHdn3KvEmNkBVktZHCgwEV7y9vNfNAd/view",
+   "title": "2N0A4762.jpg"
+  },
+  {
+   "doc_id": "1XDn_ngcV0SJKNKo5v62s8Zm-SYiime2U",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1XDn_ngcV0SJKNKo5v62s8Zm-SYiime2U/view",
+   "title": "NTK Marketing Proposal_SweetSpot.pdf"
+  },
+  {
+   "doc_id": "1XgzW7EfjIcWsac1iY0KcqJN7nGRjvt-i",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1XgzW7EfjIcWsac1iY0KcqJN7nGRjvt-i/view",
+   "title": "2N0A4863.jpg"
+  },
+  {
+   "doc_id": "1Xt7ZjydP_Un__Oqx6M_CfJg-QvYaaLM2",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Xt7ZjydP_Un__Oqx6M_CfJg-QvYaaLM2/view",
+   "title": "2N0A4583.jpg"
+  },
+  {
+   "doc_id": "1Y1eX_xJboi0SpDGAusTnffTRzP6ZPuQG",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Y1eX_xJboi0SpDGAusTnffTRzP6ZPuQG/view",
+   "title": "결과보고서.txt"
+  },
+  {
+   "doc_id": "1YikIW1-P13N_EQV8a9FiIdhgpfLVxSvq",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1YikIW1-P13N_EQV8a9FiIdhgpfLVxSvq/view",
+   "title": "2N0A4796.jpg"
+  },
+  {
+   "doc_id": "1Zg8MENojD54X4bYIoKQ1VK4WLiPreLnY",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Zg8MENojD54X4bYIoKQ1VK4WLiPreLnY/view",
+   "title": "2N0A4583.jpg"
+  },
+  {
+   "doc_id": "1Zkw1PtXaqpOsD1cgIFXbVo-WJGpsvaB3",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Zkw1PtXaqpOsD1cgIFXbVo-WJGpsvaB3/view",
+   "title": "2N0A4671.jpg"
+  },
+  {
+   "doc_id": "1ZliA5dU9KMw3OX0uuPi6gmh5dIsdr_L9",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1ZliA5dU9KMw3OX0uuPi6gmh5dIsdr_L9/view",
+   "title": "2N0A5050.jpg"
+  },
+  {
+   "doc_id": "1_bcsnaS4Kgwa_AQHgeuQDDXaRKpXVhIG",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1_bcsnaS4Kgwa_AQHgeuQDDXaRKpXVhIG/view",
+   "title": "2N0A5054.jpg"
+  },
+  {
+   "doc_id": "1_qt0xZruDALjICvmhPHXmvAroZeIMl9I",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1_qt0xZruDALjICvmhPHXmvAroZeIMl9I/view",
+   "title": "2N0A4762.jpg"
+  },
+  {
+   "doc_id": "1_sbZvSxbIcIv1NUDilwSIBNauuL723KW",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1_sbZvSxbIcIv1NUDilwSIBNauuL723KW/view",
+   "title": "2N0A5088.jpg"
+  },
+  {
+   "doc_id": "1aD1ZwAtGnGbJnz6S48b4hJnigpvoCwjr",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1aD1ZwAtGnGbJnz6S48b4hJnigpvoCwjr/view",
+   "title": "2N0A4817.jpg"
+  },
+  {
+   "doc_id": "1d6UCv_1WTSeaFqywJSgLEfbTK9nrcPN1",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1d6UCv_1WTSeaFqywJSgLEfbTK9nrcPN1/view",
+   "title": "2N0A4556.jpg"
+  },
+  {
+   "doc_id": "1dCPdiI1pCIJGsgi9v_SXNCC1XJMPb0nC",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1dCPdiI1pCIJGsgi9v_SXNCC1XJMPb0nC/view",
+   "title": "2N0A4827.jpg"
+  },
+  {
+   "doc_id": "1dddUVRyR87UNgGM4jwkunP5uO63mNu19",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1dddUVRyR87UNgGM4jwkunP5uO63mNu19/view",
+   "title": "2N0A4671.jpg"
+  },
+  {
+   "doc_id": "1deLH1MuvAeirqwJ19-v3Yz9QQ5BSHYFn",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1deLH1MuvAeirqwJ19-v3Yz9QQ5BSHYFn/view",
+   "title": "2N0A5059.jpg"
+  },
+  {
+   "doc_id": "1dzJ09-mYT9BaGIa0DfgNYrtPy6H9NCbx",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1dzJ09-mYT9BaGIa0DfgNYrtPy6H9NCbx/view",
+   "title": "2N0A5093.jpg"
+  },
+  {
+   "doc_id": "1i2AoCGzuQmkIwelZ1Pxx8fLixRQ0GdT-",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1i2AoCGzuQmkIwelZ1Pxx8fLixRQ0GdT-/view",
+   "title": "2N0A5037.jpg"
+  },
+  {
+   "doc_id": "1ih7_JhryeVF3oHGd4A71YMaNNfha3av4",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1ih7_JhryeVF3oHGd4A71YMaNNfha3av4/view",
+   "title": "2N0A5050.jpg"
+  },
+  {
+   "doc_id": "1ircq57BYyJe1BkCjFbUvPXS46QLTDhl5",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1ircq57BYyJe1BkCjFbUvPXS46QLTDhl5/view",
+   "title": "2N0A4916.jpg"
+  },
+  {
+   "doc_id": "1j7xVXE7Z5k4qvuvMCc1HearJ8_SUHWpi",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1j7xVXE7Z5k4qvuvMCc1HearJ8_SUHWpi/view",
+   "title": "2N0A4832.jpg"
+  },
+  {
+   "doc_id": "1jWcA3Q6sj-G6FiShKEzfzB96Dj9FUupH",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1jWcA3Q6sj-G6FiShKEzfzB96Dj9FUupH/view",
+   "title": "2N0A4614.jpg"
+  },
+  {
+   "doc_id": "1jcZeJjYgkh_7xnrPgFDT7RA-95yInlcR",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1jcZeJjYgkh_7xnrPgFDT7RA-95yInlcR/view",
+   "title": "2N0A5027.jpg"
+  },
+  {
+   "doc_id": "1kp9EuxqRNeuF_dxTuAeMafo_cTFmRFEl",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1kp9EuxqRNeuF_dxTuAeMafo_cTFmRFEl/view",
+   "title": "2N0A4863.jpg"
+  },
+  {
+   "doc_id": "1lTD01fGK95R1EBFct5y2Hv8lUa94uqjb",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1lTD01fGK95R1EBFct5y2Hv8lUa94uqjb/view",
+   "title": "2N0A4556.jpg"
+  },
+  {
+   "doc_id": "1nQ0ciZ47-DnN46eFgYQSfCfXyASBSQ2u",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1nQ0ciZ47-DnN46eFgYQSfCfXyASBSQ2u/view",
+   "title": "2N0A4827.jpg"
+  },
+  {
+   "doc_id": "1ontvVaLFPkDcTvhQm_t-dIhV7VKucAoG",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1ontvVaLFPkDcTvhQm_t-dIhV7VKucAoG/view",
+   "title": "2N0A4578.jpg"
+  },
+  {
+   "doc_id": "1q9KTx5tpi4qeUDVCc_k13ZQ0IsiM-ABN",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1q9KTx5tpi4qeUDVCc_k13ZQ0IsiM-ABN/view",
+   "title": "2N0A5037.jpg"
+  },
+  {
+   "doc_id": "1qNIBWIithOnZwgo2FYx-9AcUmCW_-512",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1qNIBWIithOnZwgo2FYx-9AcUmCW_-512/view",
+   "title": "Sweet Spot Co., Ltd. - SESA - 2026-FEB-01_encrypted.pdf"
+  },
+  {
+   "doc_id": "1qqlMuKMQeA5YhNqZfQHMr_Bw8XxLXaXa",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1qqlMuKMQeA5YhNqZfQHMr_Bw8XxLXaXa/view",
+   "title": "2N0A5119.jpg"
+  },
+  {
+   "doc_id": "1rHK2bLO7E8XFaoVesh29Tel2AUO7eJGO",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1rHK2bLO7E8XFaoVesh29Tel2AUO7eJGO/view",
+   "title": "2N0A5004.jpg"
+  },
+  {
+   "doc_id": "1rc04pK6cn_VfUy44xbkzV363VmIfSRBO",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1rc04pK6cn_VfUy44xbkzV363VmIfSRBO/view",
+   "title": "2N0A4689.jpg"
+  },
+  {
+   "doc_id": "1rfwrRfmf4Sj-0F--6TAHrdQSQKVxKKxT",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1rfwrRfmf4Sj-0F--6TAHrdQSQKVxKKxT/view",
+   "title": "계약서_NTK partner marketing.pdf"
+  },
+  {
+   "doc_id": "1rgkibperGC2G_c6vTh8hGhJUAJrzueTD",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1rgkibperGC2G_c6vTh8hGhJUAJrzueTD/view",
+   "title": "2N0A4571.jpg"
+  },
+  {
+   "doc_id": "1sZ1qWUw0eZ1FMfT0QwyxnsIR7QLaOrBU",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1sZ1qWUw0eZ1FMfT0QwyxnsIR7QLaOrBU/view",
+   "title": "2N0A5027.jpg"
+  },
+  {
+   "doc_id": "1soLIbz7v4dDiEU9o7Gu7CW2cXst5mURT",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1soLIbz7v4dDiEU9o7Gu7CW2cXst5mURT/view",
+   "title": "2N0A4817.jpg"
+  },
+  {
+   "doc_id": "1sxfMp6JnnhL1LHQcWP6sERcLFbZ0G9fH",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1sxfMp6JnnhL1LHQcWP6sERcLFbZ0G9fH/view",
+   "title": "2N0A5004.jpg"
+  },
+  {
+   "doc_id": "1uLM7k0Old2CPAOJGyPQTK0dW9bn16G-r",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1uLM7k0Old2CPAOJGyPQTK0dW9bn16G-r/view",
+   "title": "2N0A4973.jpg"
+  },
+  {
+   "doc_id": "1vLJA22etvTZrE_IEl5Cns5rKBo8vXz3f",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1vLJA22etvTZrE_IEl5Cns5rKBo8vXz3f/view",
+   "title": "2N0A5119.jpg"
+  },
+  {
+   "doc_id": "1vTofVwlcmVcfisRS5JCQBQWwZUYwbXbS",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1vTofVwlcmVcfisRS5JCQBQWwZUYwbXbS/view",
+   "title": "2N0A4705.jpg"
+  },
+  {
+   "doc_id": "1wKhe2Yt_Y8c2mQbTz6YY7RAwTa9E7vO3",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1wKhe2Yt_Y8c2mQbTz6YY7RAwTa9E7vO3/view",
+   "title": "2N0A4722.jpg"
+  },
+  {
+   "doc_id": "1xQD00Y5MGa3llRbZzLVHgUPsuZ7l658U",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1xQD00Y5MGa3llRbZzLVHgUPsuZ7l658U/view",
+   "title": "2N0A4705.jpg"
+  },
+  {
+   "doc_id": "1yD_8GtD1wexACalnbZdr5zg4Mh-6ZYTT",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1yD_8GtD1wexACalnbZdr5zg4Mh-6ZYTT/view",
+   "title": "2N0A5059.jpg"
+  },
+  {
+   "doc_id": "1zjYOt7bb91qSmzKIGLeAEkF3N3SRxpK4",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1zjYOt7bb91qSmzKIGLeAEkF3N3SRxpK4/view",
+   "title": "[Sweetspot]NTK_공간 연출 및 시공 계약서_파이넬로_0227 (1).pdf"
+  },
+  {
+   "doc_id": "1zo3lms3L_R58zHh6hn1uRoOvoBp-BQ3r",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1zo3lms3L_R58zHh6hn1uRoOvoBp-BQ3r/view",
+   "title": "2N0A5054.jpg"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: 계약서_NTK partner marketing.pdf, NTK Marketing Proposal_SweetSp. 미확실: 팝업 장소의 도시/구/정확한 주소(CAPO·SSAKA 위치 미상); 면적(평); 구체 오픈/클로즈일 및 운영일수(회계기간 2026-02-01~03-24만 존재); 계약 효력발생일 불일치(영문 Feb 24 vs 국문 Feb 1); 계약 캡 200M vs 실제 매출 212M 불일치 사유; VAT 포함 여부; 방문객·현장매출 등 성과지표 전무; 클라이언트 담당자 성명(김지은 vs 이지은) 및 연락처; 시공 외주사 실명(판관비 177M 지급처)"
+ }
+}

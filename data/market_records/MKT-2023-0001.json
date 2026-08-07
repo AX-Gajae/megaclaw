@@ -1,0 +1,72 @@
+{
+  "market_record_id": "MKT-2023-0001",
+  "event_name": "T1(티원) 팝업스토어 잠실 롯데월드몰",
+  "brand": "T1/롯데백화점",
+  "ip_or_collab": "리그 오브 레전드 프로게임단 T1",
+  "category": "game_webtoon",
+  "intervention": {
+    "concept_description": "LoL 프로게임단 T1 팝업스토어. 잠실 롯데월드몰 지하 1층 운영",
+    "experience_elements": [
+      "T1 굿즈 판매"
+    ],
+    "promotions": [
+      "주차별 신규 굿즈 공개"
+    ],
+    "is_free_entry": true,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "롯데월드몰 지하 1층",
+    "venue_type": "mall",
+    "neighborhood": "잠실",
+    "city": "서울",
+    "period_from": "2023-01-01",
+    "period_to": "2023-02-15",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 46,
+        "weekend_share": 0.28,
+        "holiday_days": 5
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "media_estimate",
+    "counting_basis_note": "매체 보도: '실제로 첫날 개장 전부터 500여 명의 1020세대 팬이 몰려 화제가 됐다' - 개장 전 대기 인원",
+    "visitors_source_quote": "지난 1월 잠실 롯데월드몰 지하 1층에선 'T1(티원)' 팝업이 열렸다. 'T1'은 전 세계적으로 큰 인기를 끄는 <리그 오브 레전드(LoL)>의 유명 프로 게임단이다. 실제로 첫날 개장 전부터 500여 명의 1020세대 팬이 몰려 화제가 됐다.",
+    "visitors_source_url": "https://www.womansense.co.kr/news/articleView.html?idxno=54756",
+    "visitors_source_date": "2023-10-28",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "첫날 개장 전부터 500여 명 대기",
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "실제로 첫날 개장 전부터 500여 명의 1020세대 팬이 몰려 화제가 됐다.",
+        "실제로 팝업 첫째 날에는 오픈 전부터 500여 명의 1020세대 팬들이 몰렸으며, 그 후로도 매주 새로운 굿즈가 공개되는 날이면 오픈런과 긴 웨이팅이 발생해 화제가 됐다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "2023년 1월 운영(정확한 기간 미기재). 총 방문객 수치 없이 첫날 개장 전 대기 500여 명만 보도. | 병합 레코드: MKT-2023-2002 | [병합:MKT-2023-2002] 롯데백화점 라이프스타일부문장 코멘트 기사에 포함된 회고 수치. 2023년 1분기.",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

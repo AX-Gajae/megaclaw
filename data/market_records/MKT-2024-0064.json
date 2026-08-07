@@ -1,0 +1,88 @@
+{
+ "market_record_id": "MKT-2024-0064",
+ "event_name": "2024 서울뷰티위크",
+ "brand": "서울특별시",
+ "ip_or_collab": "서울시 주최 K-뷰티 산업 행사(전시·팝업·수출상담)",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "서울시 주최 뷰티 산업 종합 행사. 트렌드존/브랜드존 전시, 팝업 체험, 바이어 상담, 시민 체험 프로그램",
+  "experience_elements": [
+   "브랜드 전시 부스",
+   "팝업 체험존",
+   "바이어 상담회",
+   "시민 체험"
+  ],
+  "promotions": [
+   "무료/사전등록"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "동대문디자인플라자(DDP)",
+  "venue_type": "convention",
+  "neighborhood": "동대문",
+  "city": "서울",
+  "period_from": "2024-10-01",
+  "period_to": "2024-10-03",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.0,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 50000,
+  "visitors_period_days": 3,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "서울시 공식 성과 발표(관람객 집계)",
+  "visitors_source_quote": "3일간 총 5만여 명의 관람객이 방문했다",
+  "visitors_source_url": "https://scpm.seoul.go.kr/seoul-policy/evt0085",
+  "visitors_source_date": "2024-11-05",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "전시+팝업+상담회 복합 행사로 단일 브랜드 팝업은 아니나 서울시 공인 뷰티 이벤트 실측치로 수집. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

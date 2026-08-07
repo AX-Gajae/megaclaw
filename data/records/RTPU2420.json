@@ -1,0 +1,209 @@
+{
+ "record_id": "RTPU2420",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:인터브랜드",
+  "space_id": "unresolved:미상",
+  "client_party_id": null,
+  "brand_key": "인터브랜드",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "인터브랜드 브랜드부스 설치 프로젝트.",
+  "brand_name": "인터브랜드",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [
+   "브랜드부스"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-06-14",
+   "to": "2024-06-14",
+   "days": 1
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 0.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 39,
+    "holiday_until": 92,
+    "holiday_block_in": 0,
+    "nat_event_gap": 65,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 22.7
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-06, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2024-07"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "14oPJv5HuLuqEzxVn18e2Azha1oWJcARm",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/14oPJv5HuLuqEzxVn18e2Azha1oWJcARm/view",
+   "title": "RTPU2420_인터브랜드 브랜드부스 설치_견적서_0603_최종.xlsx"
+  },
+  {
+   "doc_id": "17AlP1vswOiOdO3lVlnUvmA3WRxtGlzFb",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/17AlP1vswOiOdO3lVlnUvmA3WRxtGlzFb/view",
+   "title": "KakaoTalk_20251021_110659360_11.jpg"
+  },
+  {
+   "doc_id": "1GlDh6YTuUK3G_cK-NleCrUr_45eUPWR2",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1GlDh6YTuUK3G_cK-NleCrUr_45eUPWR2/view",
+   "title": "KakaoTalk_20251021_110659360_06.jpg"
+  },
+  {
+   "doc_id": "1I2NeSh6IJf3aXzOty_8E2dRWv-uJ-Juf",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1I2NeSh6IJf3aXzOty_8E2dRWv-uJ-Juf/view",
+   "title": "KakaoTalk_20251021_110659360_09.jpg"
+  },
+  {
+   "doc_id": "1IZqSATMnc9vQ1NiB279aQ2W9OI3gUbJl",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1IZqSATMnc9vQ1NiB279aQ2W9OI3gUbJl/view",
+   "title": "KakaoTalk_20251021_110659360_02.jpg"
+  },
+  {
+   "doc_id": "1MtD-XNoY79xQcXmqmBVHTBP4aSBUSiTt",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1MtD-XNoY79xQcXmqmBVHTBP4aSBUSiTt/view",
+   "title": "KakaoTalk_20251021_110659360_08.jpg"
+  },
+  {
+   "doc_id": "1R6nUOlN8cF6URVx90Tn5mAFxFlKa1tdL",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1R6nUOlN8cF6URVx90Tn5mAFxFlKa1tdL/view",
+   "title": "KakaoTalk_20251021_110659360_10.jpg"
+  },
+  {
+   "doc_id": "1Vj8IQE7S2bsIQFIXFDfkRfkLnCR38tVo",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Vj8IQE7S2bsIQFIXFDfkRfkLnCR38tVo/view",
+   "title": "KakaoTalk_20251021_110659360_05.jpg"
+  },
+  {
+   "doc_id": "1YalTlwjO1VJLhYpocH6XR4VTxu1DSA-P",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1YalTlwjO1VJLhYpocH6XR4VTxu1DSA-P/view",
+   "title": "결과보고서_내용없음.txt"
+  },
+  {
+   "doc_id": "1YuVMgYUF8mVk9_qhzi_8q9Oc9MWSJuW0",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1YuVMgYUF8mVk9_qhzi_8q9Oc9MWSJuW0/view",
+   "title": "KakaoTalk_20251021_110659360_07.jpg"
+  },
+  {
+   "doc_id": "1_HYZJ74adWFgDb3uiwyqM52Z7r5j__H1",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1_HYZJ74adWFgDb3uiwyqM52Z7r5j__H1/view",
+   "title": "RTPU2420_인터브랜드 브랜드부스 설치_계약서_0604_fin.doc"
+  },
+  {
+   "doc_id": "1aR10lxksIvqZM32iKQTjY_-e_c8K_eSI",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1aR10lxksIvqZM32iKQTjY_-e_c8K_eSI/view",
+   "title": "RTPU2420_인터브랜드 브랜드부스 설치_계약서_0604_fin.doc"
+  },
+  {
+   "doc_id": "1rew-TVKN6rSuCSgBrmLgyV_aHQ83eAou",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1rew-TVKN6rSuCSgBrmLgyV_aHQ83eAou/view",
+   "title": "KakaoTalk_20251021_110659360_01.jpg"
+  },
+  {
+   "doc_id": "1tiHM88iVglh80L41WaFiXeHu3Gf4rWdK",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1tiHM88iVglh80L41WaFiXeHu3Gf4rWdK/view",
+   "title": "제안서_내용없음.txt"
+  },
+  {
+   "doc_id": "1uyHv1I-wHpRCk3cp79yFY_5RoC_z27v8",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1uyHv1I-wHpRCk3cp79yFY_5RoC_z27v8/view",
+   "title": "KakaoTalk_20251021_110659360_12.jpg"
+  },
+  {
+   "doc_id": "1yyQKXNYlHoW_hFxG4kocohJfBCWXJu9X",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1yyQKXNYlHoW_hFxG4kocohJfBCWXJu9X/view",
+   "title": "KakaoTalk_20251021_110659360_04.jpg"
+  },
+  {
+   "doc_id": "1z6j1OsCMyU9UDkDy5QM4wv1aGX8o3xsc",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1z6j1OsCMyU9UDkDy5QM4wv1aGX8o3xsc/view",
+   "title": "KakaoTalk_20251021_110659360.jpg"
+  },
+  {
+   "doc_id": "1zHUZdcUYMl63zCJAcalszWq-yxzn5XS7",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1zHUZdcUYMl63zCJAcalszWq-yxzn5XS7/view",
+   "title": "KakaoTalk_20251021_110659360_03.jpg"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서 텍스트가 제공되지 않음; 입지/면적/수수료 정보 없음; 결과보고서 방문/매출 데이터 없음; 컨셉·체험요소·프로모션 상세 없음; client_name null"
+ }
+}

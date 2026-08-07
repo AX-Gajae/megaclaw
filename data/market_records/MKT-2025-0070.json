@@ -1,0 +1,98 @@
+{
+ "market_record_id": "MKT-2025-0070",
+ "event_name": "흔한남매 팝업스토어 '흔한남매 : 우리집에 놀러와!'(더현대 서울)",
+ "brand": "흔한남매(샌드박스네트워크)",
+ "ip_or_collab": "흔한남매(키즈 크리에이터)",
+ "category": "entertainment",
+ "intervention": {
+  "concept_description": "흔한남매의 집으로 초대하는 콘셉트. 포토존·굿즈존·가챠존·4컷사진존·F&B존 복합멀티공간, 이무기 등 체험 요소",
+  "experience_elements": [
+   "포토존",
+   "굿즈존",
+   "가챠존",
+   "4컷사진존",
+   "F&B존",
+   "출연진 깜짝 방문"
+  ],
+  "promotions": [
+   "품절 굿즈 예약 주문"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "더현대 서울 지하 1층 대행사장",
+  "venue_type": "department_store",
+  "neighborhood": "여의도",
+  "city": "서울",
+  "period_from": "2025-08-07",
+  "period_to": "2025-08-20",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(invite)",
+   "access_type": "invite"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 0.2,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 40000,
+  "visitors_period_days": 14,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "주최 측(흔한남매) 제공 보도자료 기반 '약 4만여명의 방문객을 기록'",
+  "visitors_source_quote": "지난 8월 더현대 서울에서 진행된 흔한남매 팝업스토어가 약 4만여명의 방문객을 기록하며 성황리에 마무리된 가운데, 올겨울 흔한남매 팬들을 위한 새로운 팝업스토어가 다시 한번 문을 연다.",
+  "visitors_source_url": "https://www.sentv.co.kr/article/view/sentv202512220063",
+  "visitors_source_date": "2025-12-22",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": true,
+   "reservation_fill": true,
+   "signal_quotes": [
+    "사전 예약제로 운영 중인 팝업은 오픈 당일부터 전회 매진을 기록했고 넉넉히 준비한 굿즈도 속속 품절되는 등 대성황을 이루고 있다.(아이러브캐릭터 2025-08-13)",
+    "충분히 준비했다고 판단했던 굿즈들이 조기에 품절됐고, 팝업 후반부까지 사전 예약 취소가 거의 발생하지 않은 가운데 현장 예약까지 전 회차 매진을 기록하며 열기가 끝까지 이어졌습니다.(디지털조선일보 인터뷰 2025-12-30)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": true,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "4만여 명은 '약' 수치. 방문객 수치 보도 시점(2025-12-22)이 행사(2025-08) 이후 후속 보도 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

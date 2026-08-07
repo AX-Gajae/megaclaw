@@ -1,0 +1,90 @@
+{
+ "market_record_id": "MKT-2024-0047",
+ "event_name": "갤럭시 스튜디오 (갤럭시 Z 폴드6·플립6)",
+ "brand": "삼성전자",
+ "ip_or_collab": null,
+ "category": "electronics",
+ "intervention": {
+  "concept_description": "최초의 AI 폴더블폰 갤럭시 Z 폴드6·플립6 및 워치·링·버즈 신제품 체험 공간. 여름 휴가철 공항 콘셉트",
+  "experience_elements": [
+   "공항 체크인 카운터(듀얼 스크린 통역)",
+   "퍼스트 클래스존",
+   "보딩 브릿지 포토존(자동 줌)"
+  ],
+  "promotions": [
+   "SNS 후기 추첨 경품(폴드6/플립6/워치7)"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "더현대 서울, 삼성스토어 홍대 (롯데 에비뉴엘 잠실점은 7/30 조기 종료)",
+  "venue_type": "department_store",
+  "neighborhood": "여의도/홍대/잠실",
+  "city": "서울",
+  "period_from": "2024-07-11",
+  "period_to": "2024-08-11",
+  "area_pyeong": null,
+  "multi_store": true,
+  "derived": {
+   "duration": {
+    "days": 32,
+    "weekend_share": 0.31,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 300000,
+  "visitors_period_days": 24,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "삼성전자 보도자료. 7/11 오픈~8/4 발표 시점 누적 30만 돌파(복수 매장 합산)",
+  "visitors_source_quote": "삼성전자가 7월 11일부터 운영 중인 '갤럭시 스튜디오'의 누적 방문객이 30만명을 돌파했다.",
+  "visitors_source_url": "https://www.newswire.co.kr/newsRead.php?no=994526",
+  "visitors_source_date": "2024-08-04",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "D",
+   "flags": [
+    "D",
+    "C"
+   ],
+   "why": "스코프 혼합(합산/총계) 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "더현대 서울·삼성스토어 홍대는 8월 11일까지 운영. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

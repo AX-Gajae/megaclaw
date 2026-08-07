@@ -1,0 +1,218 @@
+{
+ "record_id": "RCPU2434",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:잔망루피",
+  "space_id": "unresolved:부산_센텀시티_신세계센텀시티점_B1이벤트홀",
+  "client_party_id": "unresolved:스위트스팟",
+  "brand_key": "잔망루피",
+  "space_key": "신세계백화점_센텀시티점"
+ },
+ "intervention": {
+  "concept": "크리스마스 배달원 뤂돌프를 도와주는 스토리의 잔망루피 크리스마스 팝업스토어. 포장-잡기-배달 3단계 미션 체험과 판매공간, 포토존으로 구성. 입장 고객은 뤂돌프 자격증을 받아 컨텐츠 체험 시 스탬프 인증.",
+  "brand_name": "잔망루피",
+  "experience_elements": [
+   "뤂돌프 자격증(입장권) 발급 후 스탬프 인증",
+   "컨텐츠1 포장: 핸드스텝퍼 스탠딩형 게임",
+   "컨텐츠2 잡기: 캐치캐치 선물 받기 게임(스탬프 획득)",
+   "컨텐츠3 배달: 굴뚝 선물 던지기 게임(성공 시 상품 증정)",
+   "이벤트1 메세지월: 포스트잇 작성 후 트리 장식",
+   "포토존1 크리스마스트리+뤂돌프 FRP",
+   "포토존2 뤂돌프 공기조형물"
+  ],
+  "promotions": [
+   "3만원 이상 구매 고객 대상 에어볼 추첨 이벤트(100% 증정경품): 원통형티슈18%, 오너먼트 수세미42%, 가랜더/데코픽16%, 마스크팩12%, 핫팩12%",
+   "컨텐츠3 미션 성공자 상품 증정"
+  ],
+  "staging_tags": [
+   "크리스마스",
+   "포맥스 가벽+시트지",
+   "등신대",
+   "FRP H180",
+   "공기조형물",
+   "방염커튼"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "부산",
+   "district": "해운대구",
+   "venue_name": "신세계 센텀시티점 B1 이벤트홀",
+   "venue_type": "백화점 이벤트홀",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": 86,
+  "period": {
+   "from": "2024-12-13",
+   "to": "2024-12-26",
+   "days": 14
+  },
+  "season": "겨울/크리스마스",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "인테리어 시공계약 총액 26,840,000원(VAT포함). 선금 0%, 잔금 100% 26,840,000원 2025-02-06 지급(주식회사 그리드). ※이는 시공비이며 부스/공간 임대료가 아님."
+  },
+  "brand_requirements": [
+   "설계도서(도면·시방서·견적서) 사전 제출 및 발주자 승인",
+   "IP 관련 지식재산권은 롯데월드에 귀속, 프로젝트 외 사용/유출 금지",
+   "하도급 금지(발주자 동의 시 예외)",
+   "신세계백화점 센텀시티점 환경구조물 파손 시 협의 후 별도 정산"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "신세계 센텀시티점 B1 이벤트홀"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 5,
+    "months_since_last": 0.1,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 86,
+    "holiday_until": 43,
+    "holiday_block_in": 0,
+    "nat_event_gap": 29,
+    "nat_event": null,
+    "doc_lag_days": 23,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 394709.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2024-10-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 29.4
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-12, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2024-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "13tUin4Gl2_649YQDvwVZ3U3HKuUd-ech",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/13tUin4Gl2_649YQDvwVZ3U3HKuUd-ech/view",
+   "title": "계산서_그리드.jpg"
+  },
+  {
+   "doc_id": "15leHF746iEEYSHV_-kzAX1mPafwPv6c8",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/15leHF746iEEYSHV_-kzAX1mPafwPv6c8/view",
+   "title": "렌트119_세금계산서.jpg"
+  },
+  {
+   "doc_id": "15u5cYfEYt-Dbg00hE189beDDPKX4MTZx",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/15u5cYfEYt-Dbg00hE189beDDPKX4MTZx/view",
+   "title": "잔망루피_부산센텀_견적서_인테리어.pdf"
+  },
+  {
+   "doc_id": "1B3SvM0PlvKSgniaR3rCkwfQBxSxgVSLt",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1B3SvM0PlvKSgniaR3rCkwfQBxSxgVSLt/view",
+   "title": "렌트119_통장사본.jpg"
+  },
+  {
+   "doc_id": "1HW3ss-mNHeRlL_9XtdXmSqiE0Spy9_0M",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1HW3ss-mNHeRlL_9XtdXmSqiE0Spy9_0M/view",
+   "title": "신세계센텀_잔망루피_공간 구성 비용.xlsx"
+  },
+  {
+   "doc_id": "1LbRK_4v2NFm-WEIReeAnV5tc0yB2e3qT",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1LbRK_4v2NFm-WEIReeAnV5tc0yB2e3qT/view",
+   "title": "잔망루피 팝업스토어계약서_신세계 부산센텀점_1210(수정본).doc"
+  },
+  {
+   "doc_id": "1PekOvXzf7-UTlZ4-Haf-6NUD7w9LMF0l",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1PekOvXzf7-UTlZ4-Haf-6NUD7w9LMF0l/view",
+   "title": "이벤툴_스위트스팟 견적서 _ 241112.xlsx"
+  },
+  {
+   "doc_id": "1Wy7HCIJ6hKbE6q4ZLFaLjEYxEJbI8e3K",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Wy7HCIJ6hKbE6q4ZLFaLjEYxEJbI8e3K/view",
+   "title": "렌트119_사업자등록증.pdf"
+  },
+  {
+   "doc_id": "1ZqGBSHgbRDvXwYhv4XqvAdjewk-bdRYR",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1ZqGBSHgbRDvXwYhv4XqvAdjewk-bdRYR/view",
+   "title": "[시공계약서_그리드] 신세계센텀 잔망루피 팝업.docx"
+  },
+  {
+   "doc_id": "1b7H191xvO5iF7qj5U6K2zVsxqATfNxnp",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1b7H191xvO5iF7qj5U6K2zVsxqATfNxnp/view",
+   "title": "견적서_그리드.pdf"
+  },
+  {
+   "doc_id": "1g_eSBvhdemGLsxSi4zk_5RRUbPnDO1Xb",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1g_eSBvhdemGLsxSi4zk_5RRUbPnDO1Xb/view",
+   "title": "프렉스_견적서.png"
+  },
+  {
+   "doc_id": "1jPdt5rglJoVua8b4clPAFNv65O7YmJmd",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1jPdt5rglJoVua8b4clPAFNv65O7YmJmd/view",
+   "title": "신세계센텀_잔망루피_공간기획안_1129.pdf"
+  },
+  {
+   "doc_id": "1n6bcg4j3KbuCFfor01sDfSv68wsAgzWk",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1n6bcg4j3KbuCFfor01sDfSv68wsAgzWk/view",
+   "title": "렌트119_견적서.pdf"
+  },
+  {
+   "doc_id": "1sYvGZ3N4iOOUtQjK2Pya871fTgnVpfq4",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1sYvGZ3N4iOOUtQjK2Pya871fTgnVpfq4/view",
+   "title": "이벤툴_세금계산서.jpg"
+  },
+  {
+   "doc_id": "1tkTkBuYcjSf4g9fiTWY9A_f9bDrua3WV",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1tkTkBuYcjSf4g9fiTWY9A_f9bDrua3WV/view",
+   "title": "이벤툴_스위트스팟 견적서 _ 241120.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: [시공계약서_그리드] 신세계센텀 잔망루피 팝업.docx, 신세계센텀_잔망루피_공간기획안_1129.pdf. 미확실: 프로젝트 메타(스타필드 코엑스몰)와 문서 내용(부산 신세계 센텀시티점) 불일치; 결과보고서 부재로 방문객/매출 실측 없음; client_name 명시 없음(발주자 스위트스팟, 수급자 그리드); 기획서상 예상 방문객 수치 없음; 계약서 기간(시공)과 기획서 운영기간, 메타 기간 간 차이 존재"
+ }
+}

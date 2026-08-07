@@ -1,0 +1,86 @@
+{
+ "market_record_id": "MKT-2025-0048",
+ "event_name": "부산시 캐릭터 팝업 '언박싱 부산' (부기)",
+ "brand": "부산시/현대백화점",
+ "ip_or_collab": "부기(부산시 캐릭터)",
+ "category": "character",
+ "intervention": {
+  "concept_description": "부산시 소통 캐릭터 '부기' 팝업스토어. 더현대 서울 5층 에픽서울에서 2025-06-19~22, 나흘간 운영.",
+  "experience_elements": [
+   "캐릭터 굿즈 판매",
+   "포토존"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "더현대 서울 5층 에픽서울(서울 영등포구)",
+  "venue_type": "department_store",
+  "neighborhood": "여의도",
+  "city": "서울",
+  "period_from": "2025-06-19",
+  "period_to": "2025-06-22",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.5,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 7700,
+  "visitors_period_days": 4,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "부산시 집계(파이낸셜뉴스·부산일보 보도 인용)",
+  "visitors_source_quote": "지난 19일부터 22일까지 나흘간 더현대 서울에서 열린 부산시 캐릭터 팝업 '언박싱 부산'에 7,700명이 넘는 시민과 관광객이 방문했다.",
+  "visitors_source_url": "https://www.fnnews.com/news/202506231125301670",
+  "visitors_source_date": "2025-06-23",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,65 @@
+{
+  "market_record_id": "MKT-2024-0101",
+  "event_name": "'천생곰분! 망곰이의 베어스 탐방기' 팝업스토어",
+  "brand": "두산베어스/망곰이",
+  "ip_or_collab": "망곰이 X 두산베어스",
+  "category": "character",
+  "intervention": {
+    "concept_description": "두산베어스와 캐릭터 '망곰이' 콜라보 팝업. 2024년 9월 일주일간 운영됐다.",
+    "experience_elements": [
+      "콜라보 굿즈 판매"
+    ],
+    "promotions": [],
+    "is_free_entry": null,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": null,
+    "venue_type": null,
+    "neighborhood": null,
+    "city": null,
+    "period_from": null,
+    "period_to": null,
+    "area_pyeong": null,
+    "multi_store": null
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 7,
+    "counting_basis": "unknown",
+    "counting_basis_note": "방문객 집계 원문 없음",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": 700000000,
+    "sales_source_quote": "같은 해 9월 두산베어스와 캐릭터 '망곰이'가 손잡고 운영한 '천생곰분! 망곰이의 베어스 탐방기'는 일주일 동안 7억원을 올리며",
+    "sales_source_url": "https://fashionbiz.co.kr/article/213191",
+    "sales_source_date": "2025-01-23",
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": []
+    },
+    "conflict": true,
+    "alt_figures": [
+      {
+        "value": 730000000,
+        "basis": "media_estimate",
+        "quote": "일주일 매출 7억3000만원",
+        "url": "https://fashionbiz.co.kr/article/213268",
+        "date": "2025-01-23"
+      }
+    ]
+  },
+  "extraction_confidence": "medium",
+  "notes": "장소·정확한 일자 원문 미기재(2024년 9월, 1주일 운영). 매출 7억 vs 7.3억 보도 차이로 conflict 처리 | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": false,
+  "exclude_reason": "기간 미상",
+  "verification": {
+    "sales": "num_only"
+  },
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

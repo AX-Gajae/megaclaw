@@ -1,0 +1,104 @@
+{
+ "market_record_id": "MKT-2024-0076",
+ "event_name": "레오제이 셀렉트스토어",
+ "brand": "레페리(크리에이터 레오제이)",
+ "ip_or_collab": "더샘 등 국내외 21개 브랜드 38개 제품",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "138만 구독 뷰티 크리에이터 레오제이가 큐레이션한 뷰티 리테일 실험. 크리에이터 대면 소통·체험 프로그램, 할인 최소화 정가 판매",
+  "experience_elements": [
+   "크리에이터 대면 이벤트",
+   "제품 체험",
+   "셀럽 방문"
+  ],
+  "promotions": [
+   "현장 한정 구성",
+   "구매 전환 프로모션"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "베이직스튜디오, 연무장길 성수동",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수",
+  "city": "서울",
+  "period_from": "2024-10-12",
+  "period_to": "2024-10-27",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 16,
+    "weekend_share": 0.38,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 46400,
+  "visitors_period_days": 16,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "레페리 제공. 일 최대 5,100명, 외국인 일 최대 매출 비율 30%+(더샘 보도 31%)",
+  "visitors_source_quote": "레페리는 지난 12일부터 27일까지 약 3주간 서울 성동구 성수동 연무장길 베이직스튜디오에서 레페리 대표 유튜브 크리에이터인 '레오제이'를 중심으로 최초로 진행한 뷰티 리테일 실험 '레오제이 셀렉트스토어'의 누적 방문객 수가 4만 6400명을 돌파했고, 이 중 외국인 일 최대 매출 비율은 30%를 넘어선 것으로 집계됐다고 밝혔다.",
+  "visitors_source_url": "https://www.etnews.com/20241028000284",
+  "visitors_source_date": "2024-10-28",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": true,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "방문객 중 5명 중 1명꼴로 제품을 구매해 일 최대 구매 전환율이 18%에 이르렀다.",
+    "레오제이 셀렉트스트어 방문객이 급증하면서 더샘은 행사 기간 동안 인기 컬러 품절로 인해 제품 추가 입고를 진행하기도 했다.",
+    "일 최대 구매 전환율이 18%를 기록했다"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "구매전환율 18%, SNS 후기 콘텐츠 약 520건. | 병합 레코드: MKT-2024-0009 | [병합:MKT-2024-0009] 기간은 보도(10/12~27) 기준. 일 최대 5100명·전환율 18%는 demand signal로 기록.",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 46400,
+   "basis": "organizer_claim",
+   "quote": "레오제이 셀렉트스토어'의 누적 방문객 수가 4만 6400명을 돌파했고, 일 최대 방문객 수는 5100여 명에 달한다",
+   "url": "https://www.etnews.com/20241028000284",
+   "date": "2024-10-28"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,122 @@
+{
+  "record_id": "RTPU2415",
+  "schema_version": "0.1",
+  "entities": {
+    "brand_id": "unresolved:unknown",
+    "space_id": "unresolved:unknown",
+    "client_party_id": null,
+    "brand_key": "미상",
+    "space_key": "미상"
+  },
+  "intervention": {
+    "concept": "",
+    "brand_name": "",
+    "experience_elements": [],
+    "promotions": [],
+    "staging_tags": []
+  },
+  "conditions": {
+    "location": {
+      "city": null,
+      "district": null,
+      "venue_name": null,
+      "venue_type": null,
+      "foot_traffic_context": null
+    },
+    "area_pyeong": null,
+    "period": {
+      "from": "2024-04-19",
+      "to": "2024-05-09",
+      "days": 21
+    },
+    "season": "봄",
+    "fee_structure": {
+      "type": "unknown",
+      "detail": ""
+    },
+    "brand_requirements": [],
+    "scale": {
+      "store_count": 1,
+      "venue_traffic_type": "standalone",
+      "host_traffic_note": null
+    }
+  },
+  "outcome": {
+    "daily": [
+      {
+        "date": "2024-04-15",
+        "visitors": 297,
+        "sales_krw": null
+      },
+      {
+        "date": "2024-04-16",
+        "visitors": 398,
+        "sales_krw": null
+      },
+      {
+        "date": "2024-04-17",
+        "visitors": 372,
+        "sales_krw": null
+      },
+      {
+        "date": "2024-04-18",
+        "visitors": 607,
+        "sales_krw": null
+      }
+    ],
+    "totals": {
+      "visitors": 1674,
+      "sales_krw": null,
+      "rev_mm_recognized": null
+    },
+    "counting_method": "participation",
+    "counting_basis": "총 방문객 & 바이브 테스트 참여",
+    "plan_visitors_expected": null,
+    "retention": null,
+    "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+    "rev_mm_completion": {
+      "status": "no_label",
+      "rule": "P&L 인식 없음(2026-05 스냅샷)",
+      "contract_total_mm": null,
+      "last_recognition_period": null
+    }
+  },
+  "docs": [
+    {
+      "doc_id": "11RFQ96-XmXXF-WNY1EcxWpVDNBhUW9i_",
+      "kind": "운영일지",
+      "uri": "https://drive.google.com/file/d/11RFQ96-XmXXF-WNY1EcxWpVDNBhUW9i_/view",
+      "title": "(sweetspot)올리브영_캠퍼스어택_결과보고서_240425.pptx"
+    },
+    {
+      "doc_id": "1IjGU5EgIbDt43EauWUK1kjSPU2pTlwpm",
+      "kind": "계약서",
+      "uri": "https://drive.google.com/file/d/1IjGU5EgIbDt43EauWUK1kjSPU2pTlwpm/view",
+      "title": "RTPU2415_올리브영 팝업스토어_계약서.docx"
+    },
+    {
+      "doc_id": "1cFlzB9z1BbaliCjlpzMhXAxPWXQkqSlH",
+      "kind": "기획서",
+      "uri": "https://drive.google.com/file/d/1cFlzB9z1BbaliCjlpzMhXAxPWXQkqSlH/view",
+      "title": "제안서_내용없음.txt"
+    },
+    {
+      "doc_id": "1gocFaMAZGcy626F0PZoMrwgyDnMx5CDu",
+      "kind": "계약서",
+      "uri": "https://drive.google.com/file/d/1gocFaMAZGcy626F0PZoMrwgyDnMx5CDu/view",
+      "title": "RTPU2415_올리브영 팝업스토어_계약서.docx"
+    },
+    {
+      "doc_id": "1lWB2Xy4aPoo4Rb1VDHf1zga5uQ9yuJDc",
+      "kind": "정산",
+      "uri": "https://drive.google.com/file/d/1lWB2Xy4aPoo4Rb1VDHf1zga5uQ9yuJDc/view",
+      "title": "RTPU2415_올리브영 팝업스토어_견적서_240417.xlsx"
+    }
+  ],
+  "provenance": {
+    "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+    "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+    "extracted_at": "2026-07-23",
+    "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서 텍스트(계약서/기획서/견적서/결과보고서)가 전혀 제공되지 않음; 프로젝트명, 클라이언트명, 장소, 카테고리 모두 null; 컨셉/체험요소/프로모션/연출태그 추출 불가; 입지/면적/수수료구조/브랜드요구사항 추출 불가; 방문자수/매출 등 결과 데이터 없음; 기간(2024-04-19~2024-05-09)만 메타데이터에서 확인 가능 | 라벨발굴(2026-07-24): 결과보고서 재추출 — slide8 1-3. 결과 통계 방문객&이벤트 참여 표"
+  }
+}

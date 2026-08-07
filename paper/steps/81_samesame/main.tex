@@ -1,0 +1,203 @@
+\documentclass[10pt]{article}
+\usepackage{icmlko}
+
+\icmlmeta{IP 파운데이션 월드모델}{81}{같은 애니가 꼴찌 출처에서 2위 출처가 됐다}{열째 도메인은 아홉째와 같은 작품을 다른 플랫폼이 잰 것이다 --- 매체가 아니라 라벨이 전이를 정한다}
+
+\begin{document}
+
+\twocolumn[
+\icmlheader
+
+\begin{abstract}
+열째 도메인을 넣었다 --- \textbf{세계 애니 2,853건}(AniList, 키 불필요). 아홉째
+애니(라프텔)와 \emph{같은 작품}을 다른 플랫폼이 잰 것이다: 한국 구독자의 한줄평
+수 대 세계 이용자의 서재 등록 수. 결과가 하나 튄다. \textbf{애니는 팝업 출처
+아홉 중 꼴찌($+$0.124)인데 세계애니는 2위($+$0.474)다.} 같은 작품, 같은 매체,
+같은 축인데 라벨만 바꾸니 출처 성적이 \textbf{네 배}가 된다. \textbf{전이를
+정하는 것은 매체가 아니라 라벨이다.} 노트 79의 라벨 신뢰도도 한 번 더 쟀다 ---
+제목이 겹치는 32건에서 두 플랫폼의 반응 측정이 $\rho=+$0.784 {[}$+$0.625,
+$+$0.870{]}로 맞는다. 웹툰$\leftrightarrow$만화의 $+$0.524(327건)보다 훨씬
+높다. \textbf{천장 추정이 0.72와 0.89 사이}이며, 차이는 두 플랫폼이 \emph{같은
+유통 경로}를 공유하느냐로 갈린다 --- 일본 애니는 한국과 세계에 같이 풀리지만
+한국 웹툰의 세계 독자는 영어 번역이 있어야 생긴다. 판정치는 $+$0.4003에서
+\textbf{$+$0.4038}, 반폭은 짝지어 재니 0.0388에서 \textbf{0.0334}로 셀 수
+법칙이 예측한 0.0342와 맞는다. \textbf{반폭 비교는 짝지어 300회로 재야 한다}는
+것도 배웠다 --- 150회 따로 재면 0.0339 대 0.0340으로 법칙이 깨진 것처럼 보인다.
+\end{abstract}
+]
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/same.pdf}
+\caption{왼쪽 --- 팝업을 맞히는 아홉 출처. 오른쪽 --- 같은 애니 32건의 두 라벨.}
+\end{figure*}
+
+\section{같은 작품, 다른 라벨}
+
+\begin{table}[t]
+\centering\tsize
+\caption{팝업을 맞히는 아홉 출처.}
+\begin{tabular}{lrlr}
+\toprule
+아이돌 & $+$0.4762 & 게임 & $+$0.4451 \\
+\textbf{세계애니} & \textbf{$+$0.4738} & 만화 & $+$0.4250 \\
+펀딩 & $+$0.4729 & 웹툰 & $+$0.3240 \\
+도서 & $+$0.4497 & 모바일 & $+$0.2225 \\
+& & \textbf{애니} & \textbf{$+$0.1239} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+두 도메인은 \textbf{같은 작품}이다. 축도 같은 자리에 같은 물리량이 들어가 있다
+(태그 수 · 제작사 이력 · 성인 여부). 다른 것은 라벨뿐이다 --- 한국 구독 서비스의
+한줄평 수와 세계 이용자의 서재 등록 수.
+
+\claimx{전이를 정하는 것은 매체가 아니라 라벨이다. 같은 작품 · 같은 축에서
+라벨만 바꾸니 팝업 출처 성적이 $+$0.124에서 $+$0.474로 \textbf{네 배}가 됐다.}
+{두 도메인의 표본이 완전히 같지는 않다 --- 라프텔 1,420건 대 AniList 2,853건이고
+겹치는 것은 일부다. 표본 구성 차이가 섞여 있다.}
+
+노트 79 · 78 · 74가 세 번 확인한 ``닮은 것이 특별하지 않다''도 여기서 네 번째
+사례를 얻는다 --- 애니$\to$세계애니가 나머지보다 $-$0.029, 세계애니$\to$애니가
+$+$0.007이다. \textbf{같은 작품끼리도 서로에게 특별하지 않다.}
+
+\section{천장을 한 번 더 쟀다}
+
+\begin{table}[t]
+\centering\tsize
+\caption{같은 작품을 두 플랫폼이 잰 두 쌍.}
+\begin{tabular}{lrrr}
+\toprule
+쌍 & $n$ & $\rho$ & $\sqrt{\rho}$ \\
+\midrule
+웹툰 $\leftrightarrow$ 만화(노트 79) & 327 & $+$0.524 & 0.724 \\
+\textbf{애니 $\leftrightarrow$ 세계애니} & 32 & \textbf{$+$0.784} & \textbf{0.885} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+$+$0.784의 구간이 $[+$0.625, $+$0.870$]$이라 $+$0.524와 겹치지 않는다.
+\textbf{두 쌍의 신뢰도가 실제로 다르다.}
+
+\claimx{라벨 신뢰도는 두 측정이 \emph{같은 유통 경로}를 공유하느냐에 달렸다.
+일본 애니는 한국과 세계에 같이 풀리므로 두 플랫폼의 반응이 $+$0.784로 붙지만,
+한국 웹툰의 세계 독자는 영어 번역이 있어야 생기므로 $+$0.524로 벌어진다.}
+{애니 쌍은 32건이다. 제목이 정확히 맞는 것만 걸렸으므로 유명작에 쏠려 있고,
+유명작끼리는 더 잘 맞을 수 있다.}
+
+\begin{table}[t]
+\centering\tsize
+\caption{천장 대비 현재 위치. 천장 추정이 0.72$\sim$0.89.}
+\begin{tabular}{lrrr}
+\toprule
+& $\rho$ & 0.72 대비 & 0.89 대비 \\
+\midrule
+팝업 제품(한 건씩) & $+$0.527 & 73\% & 59\% \\
+웹툰 자기 $\rho$ & $+$0.480 & 66\% & 54\% \\
+판정치 & $+$0.404 & 56\% & 46\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+노트 79는 ``0.724는 천장의 하한''이라고 적었다. 두 번째 측정이 그것을 지지한다
+--- 잘 맞는 쌍에서는 0.885다. \textbf{천장이 더 위에 있고, 갈 길이 더 남았다.}
+
+\section{열째 도메인}
+
+\begin{table}[t]
+\centering\tsize
+\caption{열 도메인 12,908건 · 88셀.}
+\begin{tabular}{lrrrr}
+\toprule
+도메인 & $n$ & 자기 $\rho$ & 대상 & 출처 \\
+\midrule
+모바일 & 1991 & $+$0.656 & $+$0.577 & $+$0.336 \\
+웹툰 & 2817 & $+$0.480 & $+$0.457 & $+$0.383 \\
+만화 & 1214 & $+$0.477 & $+$0.451 & $+$0.386 \\
+아이돌 & 62 & $+$0.472 & $+$0.448 & $+$0.390 \\
+\textbf{세계애니} & 2853 & $+$0.418 & $+$0.412 & $+$0.403 \\
+팝업 & 75 & $+$0.368 & $+$0.379 & $+$0.328 \\
+게임 & 472 & $+$0.364 & $+$0.383 & $+$0.416 \\
+애니 & 1420 & $+$0.291 & $+$0.259 & $+$0.340 \\
+도서 & 242 & $+$0.202 & $+$0.229 & $+$0.419 \\
+펀딩 & 400 & $+$0.190 & $+$0.197 & $+$0.405 \\
+\midrule
+\multicolumn{2}{l}{앙상블 판정치} & \multicolumn{2}{r}{\textbf{$+$0.4038}} &
+$[+0.367, +0.433]$ \\
+\multicolumn{2}{l}{자기 $\rho$와의 상관} & & $+$0.987 & $-$0.409 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+세계애니가 대상 $+$0.412, 출처 $+$0.403으로 만화보다도 더 정확히 \textbf{교차점}에
+있다(노트 78).
+
+\section{반폭은 짝지어 재야 한다}
+
+\begin{table}[t]
+\centering\tsize
+\caption{같은 씨앗 · 300회로 짝지어 잰 반폭.}
+\begin{tabular}{lrr}
+\toprule
+& $\rho$ & 반폭 \\
+\midrule
+9도메인(70셀) & $+$0.4003 & 0.0388 \\
+\textbf{10도메인(90셀)} & \textbf{$+$0.4038} & \textbf{0.0334} \\
+\midrule
+\multicolumn{2}{l}{셀 수 법칙 예측} & 0.0342 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\claimx{반폭 비교는 같은 씨앗으로 짝지어 300회 이상 재야 한다. 150회로 따로
+재면 9도메인 0.0339, 10도메인 0.0340이 나와 셀 수 법칙이 깨진 것처럼 보이는데,
+짝지어 300회로 재면 0.0388$\to$0.0334로 예측(0.0342)과 맞는다.}{300회도
+임의의 수다. 반폭 추정의 잡음이 얼마인지 따로 재지 않았다.}
+
+이것이 노트 68 이후 반폭 이력을 읽을 때의 규약이 된다 --- \textbf{서로 다른
+실행의 반폭을 비교하면 안 된다.}
+
+\section{한계}
+
+\begin{itemize}[leftmargin=1.1em,itemsep=0.15em]
+\item 애니 쌍이 32건이다. 라프텔 제목은 한국어이고 AniList 원제는 일본어라
+      정확히 맞는 것만 걸렸다.
+\item 두 애니 도메인의 표본이 다르다(1,420 대 2,853). ``라벨만 다르다''는
+      말은 느슨하다.
+\item 세계애니를 넣어 판정치가 $+$0.0035 올랐는데 짝지은 채택 검정은 안 했다
+      --- 도메인 추가는 배선 변경과 달리 ``되돌리기'' 검정이 자연스럽지 않다.
+\item 천장 추정 둘이 0.72와 0.89로 크게 벌어진다. 어느 쪽이 팝업 라벨에 가까운지
+      모른다.
+\item 세계애니 라벨 범위가 좁다($\log_{10}$ SD 0.36).
+\end{itemize}
+
+\section{다음}
+
+\begin{enumerate}[leftmargin=1.3em,itemsep=0.15em]
+\item \textbf{애니(라프텔)를 뺄지 정한다.} 팝업 출처로 $+$0.124이고 세계애니가
+      같은 작품을 $+$0.474로 맞힌다. 씨앗 넷 규약으로 판정한다.
+\item 애니 쌍의 매칭을 늘린다 --- AniList 검색 API로 라프텔 한국어 제목을 직접
+      조회하면 수백 건이 될 것이다.
+\item 팝업 라벨의 신뢰도. 두 쌍이 0.72와 0.89로 갈리므로 팝업이 어느 쪽인지가
+      제품 목표를 정한다.
+\item 열한째 도메인 --- 셀 90$\to$110, 반폭 예상 0.0302.
+\end{enumerate}
+
+\vspace{0.6em}
+\hrule height 0.3pt
+\vspace{0.5em}
+{\footnotesize
+\textbf{참고문헌}\\[0.3em]
+Lord, F. M., Novick, M. R. (1968). \emph{Statistical Theories of Mental Test
+Scores}. Addison-Wesley.\\[0.15em]
+Spearman, C. (1904). The proof and measurement of association between two things.
+\emph{American Journal of Psychology}, 15(1), 72--101.\\[0.15em]
+Bouthillier, X. et al. (2021). Accounting for variance in machine learning
+benchmarks. \emph{MLSys}, 3, 747--769.\\[0.15em]
+Ben-David, S. et al. (2010). A theory of learning from different domains.
+\emph{Machine Learning}, 79(1--2), 151--175.\\[0.15em]
+Efron, B., Tibshirani, R. J. (1993). \emph{An Introduction to the Bootstrap}.
+Chapman \& Hall.
+}
+
+\end{document}

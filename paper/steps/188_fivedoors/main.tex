@@ -1,0 +1,64 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{kotex}
+\setmainfont{Apple SD Gothic Neo}
+\setsansfont{Apple SD Gothic Neo}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,linkcolor=MidnightBlue,citecolor=MidnightBlue,
+            urlcolor=MidnightBlue]{hyperref}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\captionsetup{font=small,labelfont=bf}
+\setlength{\parskip}{0.35em}
+\setlength{\parindent}{0pt}
+
+\usepackage{mdframed}
+\newmdenv[linewidth=0.4pt,linecolor=gray!60,backgroundcolor=gray!5,
+          innertopmargin=6pt,innerbottommargin=6pt,skipabove=8pt,skipbelow=8pt]{claimbox}
+\newcommand{\claim}[2]{\begin{claimbox}\textbf{주장.} #1\par\smallskip
+  \textcolor{gray!70}{\textbf{반증 조건.} #2}\end{claimbox}}
+
+\title{\bfseries 다섯 개의 문패, 첫 노크\\[2pt]
+\large 문은 열려 있었다 --- KOBIS 는 키 없이 실데이터를 준다}
+\author{월드모델 실험실 · 노트 $829$}
+\date{2026-08-07}
+\begin{document}\maketitle
+
+\section{한 줄}
+
+티처 \#$5$ 의 정정이 이 사이클을 만들었다: \emph{``KOBIS 는 언급이 없는 게
+아니라, 다섯 노트($808 \cdot 813 \cdot 814 \cdot 818 \cdot 819 \cdot 822$)가
+`합류 시 재개'를 문패로 걸고 \textbf{한 번도 안 두드렸다}.''} 두드렸다 ---
+robots 전체 허용, 공개 통계 페이지가 \textbf{키 없이 실데이터}를 준다
+($2026$-$08$-$01$ 일별 박스오피스 $114$편 · 제목 · 개봉일 · 일 관객 · 누적 ·
+\texttt{ingest/kobis.py} 배선 완료). \textbf{사람 게이트(API 키)는 `차단'에서
+`편의 옵션'으로 강등됐다.}
+
+\begin{figure}[t]\centering
+\includegraphics[width=0.99\textwidth]{figs/doors.pdf}
+\caption{왼쪽: 키 없이 파싱한 $8$월 $1$일 박스오피스. 오른쪽: 사이클 요약.}
+\end{figure}
+
+\section{게이트 셋이 한 사이클에 움직였다}
+
+\claim{\textbf{사람 게이트를 검토 게이트로.} ① KOBIS --- 노크 A(공개 페이지)
+성공 기준을 사전 규정하고 두드려 실데이터 확보. $12$번째 도메인 합류
+사전등록(라벨 $=$ 개봉 후 $K$일 누적 · 축 $=$ 개봉일 이전 정보만)이 다음 문이고,
+문패 $5$개 미결이 재무장됐다. ② 유튜브 --- 데뷔 완료 $23$팀의 channel\_id 를
+발굴하고 RSS 실검까지 기계 검증($22/23$ 확신 높음) $\to$ 사람이 할 일은
+\emph{``승인, N 번 제외''} 한 마디. ③ pairboot --- 티처 \#$5$ 의 버그 $4$
+전부 수리(`아파트 $404$' 절단 · `AKB$48$' 보존 · solo\_clusters 내장 · NaN 은
+판정이 아니라 예외) $+$ 결정적 자기시험.}
+{정직 조항: $23$팀이 주는 것은 리드타임이 아니라 \textbf{데뷔 후 곡선}이다
+(티처 \#$5$ 정정 --- 전부 $2026$H$1$ 데뷔 완료). H$2$ 미데뷔 후보 발굴(절 B)은
+미착수로 등록. 티처 \#$5$ 의 위치 평가도 대장에 남겼다: \emph{``재판 대 새
+세계의 비율을 다음 $5$노트에서 뒤집지 못하면 완벽하게 측정된 정지 화면의
+전문가로 수렴한다''} --- $829$ 가 그 뒤집기의 $1$보다. 판 $\rho$ $0.4689$
+그대로.}
+
+\end{document}

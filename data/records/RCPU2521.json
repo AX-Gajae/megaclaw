@@ -1,0 +1,141 @@
+{
+ "record_id": "RCPU2521",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:EVSIS",
+  "space_id": "unresolved:unknown",
+  "client_party_id": null,
+  "brand_key": "EVSIS",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "EVSIS EV TREND 팝업/전시 프로젝트로 추정되나 원문 문서(기획서·제안서·결과보고서)가 제공되지 않아 컨셉 세부 내용을 확인할 수 없다.",
+  "brand_name": "EVSIS",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-06-03",
+   "to": "2025-06-05",
+   "days": 3
+  },
+  "season": "초여름",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.0,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 28,
+    "holiday_until": 3,
+    "holiday_block_in": 0,
+    "nat_event_gap": 0,
+    "nat_event": "대통령 선거",
+    "doc_lag_days": 8,
+    "doc_dates_found": 3
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 70391118.0,
+    "pnl_pre_accounts": 6,
+    "pnl_pre_months": 3,
+    "pnl_pre_first": "2025-03-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 91.8
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-06, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-06"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "16Xvkavnr3L9pMAGFtTZ1_nweGgTsu4aD",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/16Xvkavnr3L9pMAGFtTZ1_nweGgTsu4aD/view",
+   "title": "시공계약서.pdf"
+  },
+  {
+   "doc_id": "1F-YdYNH6bo6YxuyQYnKMrWNgQ1bdG5Xa",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1F-YdYNH6bo6YxuyQYnKMrWNgQ1bdG5Xa/view",
+   "title": "스위트스팟 EVSIS 최종견적서_250526.pdf"
+  },
+  {
+   "doc_id": "1HlPeIvX_MxPsxQvHWoyxBnaR7nApnzl-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1HlPeIvX_MxPsxQvHWoyxBnaR7nApnzl-/view",
+   "title": "EVSIS 최종견적서.pdf"
+  },
+  {
+   "doc_id": "1SReLru26cGEvyYBdGTxD5oXy_UhLZ0AM",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1SReLru26cGEvyYBdGTxD5oXy_UhLZ0AM/view",
+   "title": "이브이시스 날인 계약서250512.pdf"
+  },
+  {
+   "doc_id": "1iYVP_OeXxhX5Q20Y9I_K9PNoO1ZJ4lKJ",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1iYVP_OeXxhX5Q20Y9I_K9PNoO1ZJ4lKJ/view",
+   "title": "이브이시스 결과보고서.pdf"
+  },
+  {
+   "doc_id": "1wfV0Sme4gThDJdiuvVLGJwDgqcc5LbeG",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1wfV0Sme4gThDJdiuvVLGJwDgqcc5LbeG/view",
+   "title": "스위트스팟_EVSIS 최종견적서_250428 (1).pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체 미제공; client_name 미상; venue(입지·면적·주소) 미상; fee_structure 상세 미상; outcome 실측 방문/매출 데이터 없음; intervention 컨셉·체험요소·프로모션 정보 없음; counting_method 판정 불가"
+ }
+}

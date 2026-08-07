@@ -1,0 +1,134 @@
+{
+ "record_id": "RCCP2514",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:키즈망고",
+  "space_id": "unresolved:트레이더스_하남점_아트리움",
+  "client_party_id": null,
+  "brand_key": "키즈망고",
+  "space_key": "multi_트레이더스"
+ },
+ "intervention": {
+  "concept": "트레이더스 하남점에서 진행된 키즈망고 행사(키즈 관련 팝업/입점 행사).",
+  "brand_name": "키즈망고",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": "하남",
+   "district": null,
+   "venue_name": "트레이더스 하남점",
+   "venue_type": "대형마트",
+   "foot_traffic_context": "아트리움 3F, 9F"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-05-05",
+   "to": "2025-05-18",
+   "days": 14
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": "보고서에 업체 수수료·카드 수수료·트레이더스 수수료 항목이 언급되나 구체 수치·수수료율은 원문에서 확인 불가"
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "트레이더스 하남점"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 0.1,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 0,
+    "holiday_until": 0,
+    "holiday_block_in": 2,
+    "nat_event_gap": 29,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 34800.0,
+    "pnl_pre_accounts": 1,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-04-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": 13728529,
+   "rev_mm_recognized": 12.5
+  },
+  "counting_method": "unknown",
+  "counting_basis": "결과보고서 텍스트가 손상되어 방문 집계 컬럼·방식 정의를 확인할 수 없음",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(원문 결과보고서가 셀 파편 형태로 방문자수·매출 수치를 판독할 수 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-05, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-05"
+  },
+  "sales_basis": "PnL 상품매출 양수계정 합 × 1.1 (부가세 포함 기준)",
+  "label_history": [
+   {
+    "at": "pnl_sales (2026-07-28)",
+    "action": "mine",
+    "changes": [
+     "sales_krw 13,728,529 (PnL 총 결제액)"
+    ],
+    "evidence": "core.project_pnl_monthly 상품매출 양수계정 합 12,480,481(공급가) × 1.1, 인식 1개월"
+   }
+  ]
+ },
+ "docs": [
+  {
+   "doc_id": "1DBRyMlGH0WKMm_bym1vIFoKYrCUxVbu_",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1DBRyMlGH0WKMm_bym1vIFoKYrCUxVbu_/view",
+   "title": "트레이더스 계약서 귀속.txt"
+  },
+  {
+   "doc_id": "1RkesdxnP5oU3lFZ3zozOYWUzfWwhTgA3",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1RkesdxnP5oU3lFZ3zozOYWUzfWwhTgA3/view",
+   "title": "별도 견적서 없음.txt"
+  },
+  {
+   "doc_id": "1aogap2LDim-D9f0yi00_bXMhEmeQ9yrn",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1aogap2LDim-D9f0yi00_bXMhEmeQ9yrn/view",
+   "title": "트레이더스 하남점 키즈망고 행사 결과보고서.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 1건: 트레이더스 하남점 키즈망고 행사 결과보고서.xlsx. 미확실: 방문자수 실측 데이터 판독 불가; POS 매출 수치 판독 불가; 수수료율·계약 총액 미확인; 면적(평) 미확인; 참여업체수·목표매출 수치 미확인; client_name 미확인"
+ }
+}

@@ -1,0 +1,98 @@
+{
+ "market_record_id": "MKT-2024-0018",
+ "event_name": "붕괴: 스타레일 '다음역, 삼성 강남 – 페나코니 꿈의 상점' 팝업 이벤트",
+ "brand": "호요버스/삼성전자",
+ "ip_or_collab": "붕괴: 스타레일 (은랑)",
+ "category": "game_webtoon",
+ "intervention": {
+  "concept_description": "붕괴: 스타레일 정식 출시 1주년 기념, 은랑 캐릭터 테마로 삼성 강남 4개 층에 만렙 체험존·포토존·굿즈샵 구성",
+  "experience_elements": [
+   "만렙 체험존",
+   "포토존",
+   "굿즈샵",
+   "4층 사전예약제 체험 공간"
+  ],
+  "promotions": [
+   "갤럭시 S24+ 전용 액세서리 '붕괴: 스타레일 - 은랑 에디션' 1,000대 현장 판매"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "삼성 강남(체험형 플래그십 스토어)",
+  "venue_type": "street_standalone",
+  "neighborhood": "강남",
+  "city": "서울",
+  "period_from": "2024-03-28",
+  "period_to": "2024-04-10",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 8000,
+  "visitors_period_days": 14,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "호요버스 보도자료 인용: '약 8천 명이 넘는 방문자가 다녀간 것은 물론'",
+  "visitors_source_quote": "행사장은 만렙 체험존, 포토존, 굿즈샵 등이 총 4개 층에 걸쳐 마련됐으며, 약 8천 명이 넘는 방문자가 다녀간 것은 물론 사전예약제로 운영된 4층은 2주간 모두 매진되며 뜨거운 인기를 과시했다.",
+  "visitors_source_url": "https://www.khgames.co.kr/news/articleView.html?idxno=226817",
+  "visitors_source_date": "2024-04-16",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": "은랑 에디션 1,000대 1차 사전예약 3분 마감, 2차 1,000대 당일 조기 매진",
+   "reservation_fill": "사전예약제 4층 2주간 모두 매진",
+   "signal_quotes": [
+    "갤럭시 S24+ 전용 액세서리 '붕괴: 스타레일 - 은랑 에디션' 1,000대 역시 1차 현장 구매 사전예약이 3분 만에 마감되며 이용자들의 높은 애정을 입증했다.",
+    "지난 12일 인터파크를 통해 2차로 특별 에디션 1,000대를 추가 판매했으며, 이 또한 당일 조기 매진됐다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "방문자 8천 명은 '약/이상' 표현. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

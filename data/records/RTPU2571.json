@@ -1,0 +1,133 @@
+{
+ "record_id": "RTPU2571",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:aespa",
+  "space_id": "unresolved:미상_야외포토존",
+  "client_party_id": "unresolved:SME_SM엔터테인먼트",
+  "brand_key": "aespa",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "aespa 미니 6집 'Rich Man' 발매 기념 오프라인 프로모션. 야외에 스티커·아크릴 포토존 등을 조성한 투 존(Zone1 스티커 포토존, Zone2 포토존) 형태의 포토존 이벤트.",
+  "brand_name": "aespa (미니 6집 'Rich Man')",
+  "experience_elements": [
+   "스티커 포토존(Zone 1)",
+   "포토존(Zone 2)",
+   "아크릴 포토존"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "야외 이벤트월(목공)",
+   "스티커 5종",
+   "아크릴 포토존"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": "야외",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-08-28",
+   "to": "2025-08-31",
+   "days": 4
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 25,400,000원 (VAT 10% 별도). 제작 Sub Total 1: 16,900,000원(이벤트월 목공 2,800,000 / 스티커 5종 1,300,000 각 700장 이상 / 아크릴 포토존 3,200,000×4=12,800,000). 진행비 Sub Total 2: 5,200,000원(시공인건비 400,000×8=3,200,000 / 철거·폐기물 2,000,000). Sub Total 3: 1,000,000원(구매물자 200,000 / 물류비 800,000). 소계 23,100,000원, 대행수수료 소계의 10% 2,310,000원, 합계 25,400,000원(만원단위 이하 절사)."
+  },
+  "brand_requirements": [
+   "스티커 각 5종 700장 이상 제작"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "야외 투 존 포토존 이벤트"
+  },
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.5,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 11,
+    "holiday_until": 36,
+    "holiday_block_in": 0,
+    "nat_event_gap": 64,
+    "nat_event": null,
+    "doc_lag_days": 9,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 25.4
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 25.4 ≈ 계약총액 25.4",
+   "contract_total_mm": 25.4,
+   "last_recognition_period": "2025-09"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "10KcKBLEe8jYN3ZLXsRKhCNpEcD6vUJt8",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/10KcKBLEe8jYN3ZLXsRKhCNpEcD6vUJt8/view",
+   "title": "결과보고서_없음.txt"
+  },
+  {
+   "doc_id": "1bo0tq0le2khFlpERnnuq7PGNiOt1YRpA",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1bo0tq0le2khFlpERnnuq7PGNiOt1YRpA/view",
+   "title": "Sweetspot_SME_오프라인 프로모션_야외포토존_견적서_0903.pdf"
+  },
+  {
+   "doc_id": "1fZf2Tby6KduxRoZxvXbtof0jn2IU84Fi",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1fZf2Tby6KduxRoZxvXbtof0jn2IU84Fi/view",
+   "title": "[외부용] aespa 미니 6집 오프라인 프로모션 기획안_20250819.pdf"
+  },
+  {
+   "doc_id": "1uDNAE25I57W7LtuCEU0oI_MLwRoo30DN",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1uDNAE25I57W7LtuCEU0oI_MLwRoo30DN/view",
+   "title": "SM 합의서_SME_계약서.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: [외부용] aespa 미니 6집 오프라인 프로모션 기획, Sweetspot_SME_오프라인 프로모션_야외포토존_. 미확실: 결과보고서 부재로 방문객·매출 실측 없음; 입지(도시/구/venue명) 정보 없음; 면적(평) 정보 없음; 기획서 예상 방문객 수 없음; client_name 원문 표기는 SME 정나연 담당자, 정식 법인명 불명"
+ }
+}

@@ -1,0 +1,251 @@
+{
+ "record_id": "RTPU2507",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:산리오_한교동",
+  "space_id": "unresolved:성수_비데이카페_성수점",
+  "client_party_id": "unresolved:산리오_코리아",
+  "brand_key": "산리오",
+  "space_key": "성수_비데이카페"
+ },
+ "intervention": {
+  "concept": "교동이(한교동) 캐릭터 생일카페 '한교동의 러브레터'. 로맨스와 킹받음이 공존하는, 교동이를 향한 팬심과 주접으로 가득한 공간 컨셉. 화이트데이/생일 시즌 연계 팬 이벤트.",
+  "brand_name": "산리오 한교동",
+  "experience_elements": [
+   "F&B 커스텀 메뉴+특전 판매",
+   "한교동 굿즈 판매",
+   "럭키드로우",
+   "생일카페 포토부스(커스텀 템플릿, 유료)",
+   "토이 머신/가챠(유료)",
+   "방명록 이벤트",
+   "전화 음성 메시지 이벤트",
+   "프래그런스 태그",
+   "막대사탕 증정",
+   "DIY 지퍼백 키링 만들기",
+   "3월 14일 생일 인형탈 포토 그리팅(총 4타임)"
+  ],
+  "promotions": [
+   "2만원 이상 제품 구매 시 럭키드로우 1회 참여",
+   "굿즈 구매 특전(캔뱃지/마그넷/떡메모지/아크릴스탠드)",
+   "화이트데이 막대사탕 협찬 증정"
+  ],
+  "staging_tags": [
+   "외부 포토존",
+   "윈도우 래핑",
+   "한교동의 방 포토존",
+   "인형 포토존",
+   "메세지월/우체통",
+   "FRP 구조물",
+   "판매존"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": null,
+   "area_sqm": null,
+   "planned_operating_days": null,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": null,
+   "experience_density": 4,
+   "goods_scale": 3,
+   "photo_zones": 4,
+   "collab_strength": 2,
+   "ip_awareness": 3,
+   "target_breadth": 1,
+   "entry_friction": 1,
+   "media_push": 1,
+   "season_fit": 4,
+   "venue_prominence": 3
+  },
+  "attr_meta": {
+   "evidence": "도급계약서 전문 재독해: '계약기간 2025.3.4~3.14(11일)'는 설치일 포함 계약기간이라 운영일수 근거 아님(period 10일과 불일치). 수행장소 '비데이 성수점'. 별첨3 특약사항은 금액란 공란, 견적서 미첨부 — 인원·면적·운영시간 수치 전무",
+   "confidence": "low",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "성동구 성수",
+   "venue_name": "비데이 카페 성수점",
+   "venue_type": "카페",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-03-05",
+   "to": "2025-03-14",
+   "days": 10
+  },
+  "season": "화이트데이/봄",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 70,000,000원 (VAT 10% 별도, 만원단위 이하 절사). 소계 69,468,700원 + 대행수수료 6,246,870원(정가 항목 제외 소계의 10%) - 협의할인 및 감가 5,700,000원. 공간사용료(카페 대관료 B-day 기준) 7,500,000원. 기획료 7,000,000원. 시공 14,400,000원. 운영 STAFF 인건비 16,110,000원. 견적일 2025-03-26 사후견적. | 계약서 미확인(2026-07-27 재독해 시도 — 대상 문서 부재/추출 실패): 총액은 견적 기준"
+  },
+  "brand_requirements": [
+   "라이선시 협찬 예정 항목(프래그런스 태그, 막대사탕)"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.2,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 2,
+    "holiday_until": 59,
+    "holiday_block_in": 0,
+    "nat_event_gap": 90,
+    "nat_event": null,
+    "doc_lag_days": 48,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 14754229.0,
+    "pnl_pre_accounts": 13,
+    "pnl_pre_months": 3,
+    "pnl_pre_first": "2024-12-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 400,
+   "popup_zone_pass_rate": 0.9,
+   "host_traffic_est": 360.0,
+   "venue_scale_tier": 5,
+   "confidence": "low",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2025-03-05",
+    "visitors": 394,
+    "sales_krw": 9481000
+   },
+   {
+    "date": "2025-03-06",
+    "visitors": 547,
+    "sales_krw": 10156300
+   },
+   {
+    "date": "2025-03-07",
+    "visitors": 664,
+    "sales_krw": 13396500
+   },
+   {
+    "date": "2025-03-08",
+    "visitors": 691,
+    "sales_krw": 12957810
+   },
+   {
+    "date": "2025-03-09",
+    "visitors": 688,
+    "sales_krw": 11755290
+   },
+   {
+    "date": "2025-03-10",
+    "visitors": 587,
+    "sales_krw": 14066400
+   },
+   {
+    "date": "2025-03-11",
+    "visitors": 706,
+    "sales_krw": 12846000
+   },
+   {
+    "date": "2025-03-12",
+    "visitors": 731,
+    "sales_krw": 12162890
+   },
+   {
+    "date": "2025-03-13",
+    "visitors": 701,
+    "sales_krw": 10976700
+   },
+   {
+    "date": "2025-03-14",
+    "visitors": 607,
+    "sales_krw": 7189390
+   }
+  ],
+  "totals": {
+   "visitors": 6316,
+   "sales_krw": 114988280,
+   "rev_mm_recognized": 84.0
+  },
+  "counting_method": "entry",
+  "counting_basis": "결과 통계 표의 '입장객 (명)' 컬럼 기준, 일별 합산 총 6,316명. sales_krw는 '상품 판매' 일별 금액(DIY키링+F&B+가챠캡슐 포함 총 매출).",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(입장객은 예약 방문객 기준 운영(11-20시, 9시간). 상품 판매 총액 114,988,280원은 DIY키링 23,167,900 + F&B 57,476,000 + 가챠캡슐 11,224,000 등 세부 매출 포함.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-03, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": 70.0,
+   "last_recognition_period": "2025-03"
+  },
+  "label_trust": {
+   "grade": "A",
+   "flags": [],
+   "why": "일별 표가 기간의 100% 커버"
+  },
+  "label_scope": {
+   "label_from": "2025-03-05",
+   "label_to": "2025-03-14",
+   "label_active_days": 10,
+   "label_span_days": 10,
+   "label_contiguous": true,
+   "daily_sum": 6316,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1IVIy7_PauceJPYYvUHIFar9yxPmzAc02",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1IVIy7_PauceJPYYvUHIFar9yxPmzAc02/view",
+   "title": "한교동생일_도급계약서_20250116.doc"
+  },
+  {
+   "doc_id": "1NSFvwg0ZpeAbJ6RFJKNBWjCCyu8HmJ29",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1NSFvwg0ZpeAbJ6RFJKNBWjCCyu8HmJ29/view",
+   "title": "Sweetspot_한교동 생일카페_사후견적서.pdf"
+  },
+  {
+   "doc_id": "1dMqqHrvGwjHxlR6kHpw6cpkEjrpWGU1V",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1dMqqHrvGwjHxlR6kHpw6cpkEjrpWGU1V/view",
+   "title": "한교동 생일카페_결과보고서_250325.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 2건: Sweetspot_한교동 생일카페_사후견적서.pdf, 한교동 생일카페_결과보고서_250325.pdf. 미확실: 면적(평); 예상 방문객(기획서 부재); client_party_id 정확한 법인명; 입장객 집계 방식(게이트/예약카운트 여부 명시 없음)"
+ }
+}

@@ -1,0 +1,78 @@
+{
+ "market_record_id": "MKT-2024-0107",
+ "event_name": "쿠팡 '베이비&키즈쇼' 팝업스토어(1회차, 2024)",
+ "brand": "쿠팡×HDC아이파크몰",
+ "ip_or_collab": "육아 브랜드 연합",
+ "category": "other",
+ "intervention": {
+  "concept_description": "쿠팡 첫 오프라인 베이비&키즈쇼 팝업",
+  "experience_elements": [
+   "브랜드 부스"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "아이파크몰 용산점(추정)",
+  "venue_type": "mall",
+  "neighborhood": "용산",
+  "city": "서울",
+  "period_from": null,
+  "period_to": null,
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  }
+ },
+ "outcome": {
+  "visitors_total": 5000,
+  "visitors_period_days": null,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "2회차 성료 기사 내 전작 수치 인용: '이는 지난 해 진행된 첫 행사(5천 여명) 대비 약 2배 늘어난 숫자다'",
+  "visitors_source_quote": "이는 지난 해 진행된 첫 행사(5천 여명) 대비 약 2배 늘어난 숫자다.",
+  "visitors_source_url": "https://tnnews.co.kr/archives/223934",
+  "visitors_source_date": "2025-02-18",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "E"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "low",
+ "notes": "1회차(2024년) 방문객 5천여 명. 개최 장소·기간은 기사에 명시 없음(2회차와 동일하게 아이파크몰 용산점으로 추정). | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "기간 미상",
+ "verification": {
+  "visitors": "quote_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

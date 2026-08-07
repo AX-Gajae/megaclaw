@@ -1,0 +1,183 @@
+{
+ "record_id": "RCPU2634",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:메디큐브_APR",
+  "space_id": "unresolved:잠실_롯데월드몰_에비뉴엘_월드타워점",
+  "client_party_id": "unresolved:APR_에이피알",
+  "brand_key": "메디큐브",
+  "space_key": "잠실_롯데월드몰"
+ },
+ "intervention": {
+  "concept": "메디큐브(APR) 스킨케어·홈뷰티 디바이스 리테일 팝업으로, 스위트스팟은 인력 섭외·교육·현장운영·판매·재고관리 등 순수 인력운영 대행을 수행. 인테리어(SOUBJECT), POS(APR 앳포스)·재고는 APR/도급사 몫. APR/메디큐브 동시 4개 팝업 패키지 중 잠실 월드타워 건.",
+  "brand_name": "메디큐브",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [
+   "부스",
+   "포토존",
+   "아트워크",
+   "영상",
+   "POP스탠드"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": null,
+   "area_sqm": null,
+   "planned_operating_days": 12,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": null,
+   "experience_density": 2,
+   "goods_scale": 2,
+   "photo_zones": 1,
+   "collab_strength": 0,
+   "ip_awareness": 3,
+   "target_breadth": 3,
+   "entry_friction": 0,
+   "media_push": 1,
+   "season_fit": 2,
+   "venue_prominence": 2
+  },
+  "attr_meta": {
+   "evidence": "목록 문서는 계약서 1건뿐(견적서·기획서 없음). 계약서 제2조② '행사기간 : 2026.06.03~2026.06.14 * 세팅일 : 2026.06.02 * 철수일 : 2026.06.14(행사 종료 후)' — 세팅일이 운영기간에서 분리 표기되고 철수가 종료 후이므로 실운영 12일(6/3~6/14). 휴무 제외 문구 없음. 롯데백화점 에비뉴엘 월드타워점의 일 입객·예상 방문객·면적·인력·운영시간 수치는 계약서에 일절 없어 전부 null. 연출태그(부스/포토존/아트워크/영상)는 제3조④의 물품 예시 상용문구라 포토존 실재 근거로 보기 어려워 photo_zones=1. 업무범위가 인력섭외·판매·재고관리 중심의 리테일 운영 대행이고 로스율 2% 배상 조항이 있어 판매 SKU 규모는 있으나 굿즈성 상품 근거는 없음. 메디큐브/APR는 전국 인지 브랜드, 백화점 무료 워크인.",
+   "confidence": "low",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "송파구",
+   "venue_name": "롯데백화점 에비뉴엘 월드타워점(잠실 롯데월드몰)",
+   "venue_type": "백화점 팝업(리테일)",
+   "foot_traffic_context": "롯데월드타워 인접, APR 본사 임직원 방문 잦음, 6/3 오픈 20명 웨이팅"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2026-06-03",
+   "to": "2026-06-14",
+   "days": 12
+  },
+  "season": "초여름",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "총 계약금액 40,400,000원(VAT 별도). 지급: 전액 100%(40,400,000원) 2026-06-30 지급, 지급처 주식회사 에이피알. 견적 소계 35,457,500 + 예비비/대행수수료 5,000,000 = 40,400,000. 추가견적 4,900,000원(VAT별도, 대행수수료 10%: 채용·교육·정산·운영기획안 작업료) 별도 협의(6/30 기준 정산 필요). 로스율: 총 입고수량 대비 2% 초과 시 초과분 제조원가 상당액 실행사 배상, 2% 이하는 의뢰사 부담."
+  },
+  "brand_requirements": [
+   "행사주최자배상책임보험(의무) 가입",
+   "로스율 2% 초과분 제조원가 배상",
+   "섭외 인력 지휘·감독 및 복무관리는 실행사 책임",
+   "물품 제작 시 사전 의뢰사 감수",
+   "재고 입출고·실사 및 차이 즉시 통지",
+   "비밀유지의무",
+   "안전사고 초동 조치 및 즉시 보고"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "롯데월드타워 인접, 6/3 오픈 20명 웨이팅"
+  },
+  "derived": {
+   "duration": {
+    "days": 12,
+    "weekend_share": 0.33,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 1.1,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 9,
+    "holiday_until": 73,
+    "holiday_block_in": 0,
+    "nat_event_gap": 0,
+    "nat_event": "지방선거",
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 1,
+    "comp_prior_at_venue": 273,
+    "comp_within_500m_open": 1,
+    "comp_within_1000m_open": 1,
+    "matched_address": "서울 송파구 올림픽로 300"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 212800.0,
+    "pnl_pre_accounts": 2,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2026-05-01"
+   }
+  },
+  "demand_signals": {
+   "waiting_reported": true,
+   "sold_out": null,
+   "source": "역검색 외부 보도(2026-07-27)"
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 100000,
+   "popup_zone_pass_rate": 0.5,
+   "host_traffic_est": 50000.0,
+   "venue_scale_tier": 1,
+   "confidence": "high",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": 25000,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "retention": null,
+  "source": "방문: 역검색 외부 보도 — http://v.daum.net/v/20260616100203325 (2026-06-16) | 인용: 에이피알의 대표 뷰티 브랜드 메디큐브가 3~14일 롯데백화점 에비뉴엘 잠실점에서 운영한 팝업 스토어에 2만5000여 명이 찾았다",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 미마감(스냅샷 2026-05 이전 인식 없음)",
+   "contract_total_mm": 40.4,
+   "last_recognition_period": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": "원문 표현 '2만5000여 명이 찾았다' / 헤드라인 '열흘간 2만5000명 방문', '누적 2만5000명 방문' — 방문객 누적 기준, 에이피알 발표 인용.",
+  "label_source": "external_press",
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "17beoO0ktlHZneYAr1EdCMEQ1s_gc8cD90UebybHY5AA",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17beoO0ktlHZneYAr1EdCMEQ1s_gc8cD90UebybHY5AA/view",
+   "title": "■ RC본부 프로젝트 견적서(all)"
+  },
+  {
+   "doc_id": "1UjgkwgqwJ8fZRWNT6Wk1GOLn-V_rmzOU",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1UjgkwgqwJ8fZRWNT6Wk1GOLn-V_rmzOU/view",
+   "title": "RCPU2634_메디큐브_월드타워 최종 견적서.pdf"
+  },
+  {
+   "doc_id": "1WL_dUH-UyfiPdlSR7sgwCZ_8npY801UA",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1WL_dUH-UyfiPdlSR7sgwCZ_8npY801UA/view",
+   "title": "롯데백화점 에비뉴엘 잠실 팝업스토어 위탁 운영 계약서 _스위트스팟 _메디큐브 홈쇼핑팀-2026-00291.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 2건: 롯데백화점 에비뉴엘 잠실 팝업스토어 위탁 운영 계약서 , RCPU2634_메디큐브_월드타워 최종 견적서.pdf. 미확실: 실제 방문객 수(미보유); 소비자 판매매출/sell-out(APR POS 집계, 미보유); 부스 층·면적·규격(pyeong); 추가견적 4.9M 최종 정산·입금 여부; 아마란스 project_amount 미입력; 견적서 일부 현장교육 날짜(05.01/06.19) 문서 내 불일치 | 외부 라벨 역검색(2026-07-27): 방문 라벨 충전 25000; 수요신호 적재"
+ }
+}

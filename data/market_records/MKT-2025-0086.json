@@ -1,0 +1,99 @@
+{
+ "market_record_id": "MKT-2025-0086",
+ "event_name": "화해 '뷰티 트래블' 팝업 @더현대 서울",
+ "brand": "화해 (버드뷰)",
+ "ip_or_collab": "화해 어워즈/랭킹 연계 여행 콘셉트",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "여행 콘셉트 화해 랭킹 브랜드 체험 팝업. 입국 심사 콘셉트 입장, 랭킹 상품 체험, 스탬프 투어",
+  "experience_elements": [
+   "랭킹 제품 체험",
+   "스탬프 투어",
+   "포토존"
+  ],
+  "promotions": [
+   "현장 한정 키트",
+   "스탬프 경품"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "더현대 서울 B1",
+  "venue_type": "department_store",
+  "neighborhood": "여의도",
+  "city": "서울",
+  "period_from": "2025-09-08",
+  "period_to": "2025-09-18",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 11,
+    "weekend_share": 0.18,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 13000,
+  "visitors_period_days": 10,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "화해 자체 블로그 성료 콘텐츠: '10일간 약 1만 3천 명'. 화해 비즈니스 인사이트 페이지는 '약 12,000명' 표기 → 상충 기록",
+  "visitors_source_quote": "10일간 약 1만 3천 명이 화해 뷰티 트래블 팝업을 방문했다",
+  "visitors_source_url": "https://blog.hwahae.co.kr/15154",
+  "visitors_source_date": "2025-11-05",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "첫날 약 1000명 방문 (소셜밸류 보도)",
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "첫날 1000명이 방문하며 오픈부터 인기를 끌었다"
+   ]
+  },
+  "conflict": true,
+  "alt_figures": [
+   {
+    "value": 12000,
+    "basis": "organizer_claim",
+    "source_quote": "11일간 약 12,000명이 방문",
+    "source_url": "https://business.hwahae.co.kr/ (화해 비즈니스 인사이트, 구체 경로 미확인)",
+    "source_date": "2025-10-27",
+    "note": "기간 표기(10일/11일)와 방문객 수(13,000/12,000)가 화해 자체 채널 간 상이"
+   }
+  ],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "같은 회사 내 두 채널의 수치가 달라 conflict 처리. 기간도 10일/11일 표기 상이. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

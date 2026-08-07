@@ -1,0 +1,127 @@
+{
+ "record_id": "RTPU2431",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:해링턴카",
+  "space_id": "unresolved:미상",
+  "client_party_id": "unresolved:피치스",
+  "brand_key": "해링턴카",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "해링턴카 프로모션. 해링턴카 시승 운영을 중심으로 한 브랜드 프로모션.",
+  "brand_name": "해링턴카",
+  "experience_elements": [
+   "해링턴카 시승"
+  ],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-06-16",
+   "to": "2024-06-30",
+   "days": 15
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 2,112,000원(VAT 10% 별도). 인건비: 해링턴카 시승 운영 STAFF 160,000원×12일=1,920,000원(식대 포함). 기획료·아트워크·진행비는 0원. 소계 1,920,000원, 대행수수료 소계의 10%(정가 항목 제외) 192,000원, 합계 2,112,000원(VAT 별도)."
+  },
+  "brand_requirements": [
+   "해링턴카 시승 운영 STAFF 배치"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 15,
+    "weekend_share": 0.33,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 41,
+    "holiday_until": 90,
+    "holiday_block_in": 0,
+    "nat_event_gap": 67,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 1.9
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 내용 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "partial",
+   "rule": "인식 1.9 < 총액 2.112의 90%",
+   "contract_total_mm": 2.112,
+   "last_recognition_period": "2024-07"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "16uJwIlhen_g5TcHGIkOSXySuiX9UOzG3",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/16uJwIlhen_g5TcHGIkOSXySuiX9UOzG3/view",
+   "title": "계약서_내용없음.txt"
+  },
+  {
+   "doc_id": "19pysHHKlv2AUIZVRSLr-oWPzDLy7Q0fh",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19pysHHKlv2AUIZVRSLr-oWPzDLy7Q0fh/view",
+   "title": "Sweetspot_피치스_해링턴카 프로모션_견적서_240701.pdf"
+  },
+  {
+   "doc_id": "1Qxsb_yF8vBrEERkjYhEsmWVjg7aDxaqFhv0KgvLZdu4",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Qxsb_yF8vBrEERkjYhEsmWVjg7aDxaqFhv0KgvLZdu4/view",
+   "title": "제안서_내용없음"
+  },
+  {
+   "doc_id": "1UnF_LWbiwHVTfWNJby3mcZOjBl-PV5Te3vIjNIHFXag",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1UnF_LWbiwHVTfWNJby3mcZOjBl-PV5Te3vIjNIHFXag/view",
+   "title": "결과보고서_내용없음"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 3건: 제안서_내용없음, Sweetspot_피치스_해링턴카 프로모션_견적서_24, 결과보고서_내용없음. 미확실: 제안서 내용 없음; 결과보고서 내용 없음(방문/매출 실측 없음); 입지/장소 정보 없음; 면적 없음; 클라이언트 정식 명칭(피치스) 외 상세 미상; 일자별 방문자 및 매출 데이터 없음"
+ }
+}

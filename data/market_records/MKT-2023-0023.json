@@ -1,0 +1,81 @@
+{
+  "market_record_id": "MKT-2023-0023",
+  "event_name": "COS 퀼티드백(구름백) 팝업스토어 익선",
+  "brand": "코스 COS (H&M그룹)",
+  "ip_or_collab": "제니 착용 '제니 가방' 퀼티드백",
+  "category": "fashion",
+  "intervention": {
+    "concept_description": "브랜드 론칭 이래 전 세계 최초의 퀼티드백 단독 팝업, 대형 퀼티드백 조형물 포토존·한정 컬러 세계 최초 공개",
+    "experience_elements": [
+      "대형 퀼티드백 조형물 포토존",
+      "전시",
+      "한정 컬러 세계 최초 공개",
+      "셀럽 프리뷰(샤이니 키·채수빈·설아·낸시)"
+    ],
+    "promotions": [
+      "카카오톡 사전예약제"
+    ],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "루프스테이션 익선",
+    "venue_type": "street_standalone",
+    "neighborhood": "익선동",
+    "city": "서울",
+    "period_from": "2023-05-26",
+    "period_to": "2023-06-10",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 16,
+        "weekend_share": 0.31,
+        "holiday_days": 3
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 16,
+    "counting_basis": "media_estimate",
+    "counting_basis_note": "방문객 총계 없음. 기자 직접 방문 르포 기준 대기시간 보도. 출처: https://magazine.hankyung.com/business/article/202306026758b (한경매거진 '강은영의 팝업밋업', 2023-06-02)",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "평일 저녁 1시간 대기에도 입장 못함, 오후 7시 예약자가 8시 10분 입장 통보(약 70분)",
+      "sold_out": "품귀 현상·중고 플랫폼 정가 초과 리셀",
+      "reservation_fill": "100% 사전예약제, 카카오톡 배너 광고 예약",
+      "signal_quotes": [
+        "구름같이 몰린 인파…평일 저녁 1시간 기다려도 입장 못해",
+        "사전에 오후 7시에 예약을 했음에도 불구하고 입장 가능하다는 연락을 받은 것은 오후 8시 10분이었습니다.",
+        "중고거래 플랫폼에 등록된 코스 구름백은 모두 정가보다 높은 금액에 판매 중이다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "출처: 한경매거진 강은영의 팝업밋업 르포(2023-06-02). 기간은 패션비즈(2023-05-26) 확인. | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

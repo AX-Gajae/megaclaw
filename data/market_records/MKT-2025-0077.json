@@ -1,0 +1,98 @@
+{
+ "market_record_id": "MKT-2025-0077",
+ "event_name": "귀멸의 칼날 무한성편 공식 팝업스토어(신세계백화점 강남점)",
+ "brand": "신세계백화점/귀멸의 칼날",
+ "ip_or_collab": "귀멸의 칼날 무한성편 X UFC(의류 콜라보)",
+ "category": "game_webtoon",
+ "intervention": {
+  "concept_description": "국내 최초 귀멸의 칼날 메가 팝업. 450여 종 공식 굿즈, 무한성편 신규 일러스트, 작품 세계관 공간연출·코스튬 인증샷 스팟, 사전예약+현장 대기 병행",
+  "experience_elements": [
+   "세계관 테마 공간연출",
+   "캐릭터 일러스트 존",
+   "코스튬 인증샷 스팟"
+  ],
+  "promotions": [
+   "사전예약자 은총 부대증·현장 선착순 특전",
+   "5만원 이상 엽서 2종·10만원 이상 L홀더 증정"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "신세계백화점 강남점 센트럴 1층 오픈스테이지",
+  "venue_type": "department_store",
+  "neighborhood": "반포(서초구)",
+  "city": "서울",
+  "period_from": "2025-08-16",
+  "period_to": "2025-08-31",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 16,
+    "weekend_share": 0.38,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 50000,
+  "visitors_period_days": 16,
+  "counting_basis": "media_estimate",
+  "counting_basis_note": "이데일리 추산 보도: '신세계백화점이 지난 8월 16~31일 강남점에서 운영한 유명 애니메이션 귀멸의 칼날 팝업스토어 방문객 수는 대략 5만여 명으로 추산된다' - 매체 추정치",
+  "visitors_source_quote": "신세계백화점이 지난 8월 16~31일 강남점에서 운영한 유명 애니메이션 '귀멸의 칼날' 팝업스토어 방문객 수는 대략 5만여 명으로 추산된다.",
+  "visitors_source_url": "https://www.edaily.co.kr/News/Read?newsId=03735926642332920&mediaCodeNo=257",
+  "visitors_source_date": "2025-10-14",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "오픈과 동시에 대기줄, 아침 7시 이전부터 현장예약 줄(후기)",
+   "sold_out": "선착순 특전 하루 만에 조기 소진, 아크릴 블록·미니 피규어 개봉 즉시 소진",
+   "reservation_fill": "현장 예약 오픈 전(9시 이전) 마감, 현장예약 약 40명 미만 소수 운영(후기)",
+   "signal_quotes": [
+    "사전예약 입장객에게는 '은총 부대증'이, 현장 대기 입장자에겐 선착순 특전이 지급돼 하루 만에 조기 소진되는 상황도 벌어지고 있다. (더트립픽 2025-08-19)",
+    "10시 오픈이고 9시 40분 도착했는데, 현장 예약은 이미 9시 이전에 끝났다고 한다. 생각했던것보다 현장예약은 진짜 쪼금 받는다. 거의 40명?도 안돼보였음. (티스토리 후기 2025-08-16)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "E"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "방문객 5만 명은 이데일리 추산(media_estimate). 부산 삼정타워(9/11~24) 팝업은 별도 개최. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

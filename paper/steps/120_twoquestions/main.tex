@@ -1,0 +1,135 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{kotex}
+\setmainfont{Apple SD Gothic Neo}
+\setsansfont{Apple SD Gothic Neo}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,linkcolor=MidnightBlue,citecolor=MidnightBlue,
+            urlcolor=MidnightBlue]{hyperref}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.5em}{}
+\captionsetup{font=small,labelfont=bf}
+\setlength{\parskip}{0.35em}
+\setlength{\parindent}{0pt}
+
+% 주장 상자 — 모든 주장은 반증 조건을 함께 적는다
+\usepackage{mdframed}
+\newmdenv[linewidth=0.4pt,linecolor=gray!60,backgroundcolor=gray!5,
+          innertopmargin=6pt,innerbottommargin=6pt,skipabove=8pt,skipbelow=8pt]{claimbox}
+\newcommand{\claim}[2]{\begin{claimbox}\textbf{주장.} #1\par\smallskip
+  \textcolor{gray!70}{\textbf{반증 조건.} #2}\end{claimbox}}
+
+\title{\bfseries 새 정보인가와 법칙인가는 다른 물음이다\\[2pt]
+\large 출시 전 램프와 출시 후 감쇠}
+\author{월드모델 실험실 · 노트 655--656}
+\date{2026-08-06}
+\begin{document}\maketitle
+
+\section{한 줄}
+
+소셜 법칙 트랙에서 특성 둘을 쟀다. 하나는 \textbf{판에 이미 있었고}(재인코딩)
+도메인 부호가 6:3 이었다. 다른 하나는 \textbf{판에 없던 새 정보인데} 도메인
+부호가 정확히 4:4 다. \textbf{관문을 통과한 것이 법칙임을 뜻하지 않는다.}
+
+\section{자료}
+
+\verb|ingest/wiki_views| 가 노트 149 규약대로 \textbf{오픈 이전 90일}만 긁어
+뒀다. 그래서 사용자가 지목한 ``조회수가 올라간다''를 한 번도 못 봤다 --- 성장은
+출시 \emph{후}에 있다. 오픈 이후 90일 창을 새로 긁었다(2,330건 중 2,329건이
+30일 이상).
+
+\textbf{제목을 다시 안 풀었다.} 기존 캐시에 \verb|page| 가 있고 오픈일은
+\emph{이전 창의 마지막 날 $+$ 1} 로 복원된다(창이 $d_0{-}90 \sim d_0{-}1$).
+
+\textbf{이 자료는 축이 될 수 없다.} 오픈 이후 값은 정의상 오픈 시점에 관측
+불가다. 그래서 캐시를 다른 디렉토리에 두고, \verb|LAW_ONLY| 상수를 두고,
+\textbf{감사가 \texttt{lab/*axes.py} 의 참조를 잡게} 했다 --- 주석으로 적은
+금지는 다음 사람이 안 읽는다(노트 598 $\cdot$ 546 $\cdot$ 549).
+
+\section{실행 전에 결함 하나를 잡았다}
+
+캐시 파일에 \verb|lang| 필드가 \textbf{없다}. 그런데 \verb|wiki_views| 는
+애니 $\cdot$ 웹툰 $\cdot$ 팝업 $\cdot$ 도서 $\cdot$ 펀딩 $\cdot$ 아이돌을
+\textbf{한국어 위키}에서 긁는다. \verb|j.get("lang") or "en"| 으로 뒀으면 그
+여섯 도메인이 한국어 제목을 영문 위키에 물어 \textbf{전부 빈 응답}이 된다 ---
+``출시 후 자료가 절반뿐이다''로 읽었을 것이다. 레코드 접두로 복원하게 고쳤고,
+수집 428건에서 \textbf{빈 응답 0}, 그중 애니 397건이 정상 수집됐다.
+
+\section{두 물음이 갈렸다}
+
+\begin{center}\small
+\begin{tabular}{lrr}\toprule
+특성 & 기존 축과 최대 $|\rho|$ & 도메인 부호 일치 \\ \midrule
+출시 전 램프 & $\mathbf{0.94}$ (재인코딩) & 6:3 \\
+출시 후 감쇠율 & $0.62$ \textbf{(새 정보)} & $\mathbf{4:4}$ \\
+출시 후 꼬리 두께 & $0.60$ (새 정보) & 4:4 \\
+출시 후 반감기 & $0.52$ (새 정보) & 4:4 \\ \bottomrule
+\end{tabular}\end{center}
+
+\claim{관문 ③(기존 축과의 상관)을 통과하면 쓸 만한 특성이다.}{통과했는데 도메인
+부호가 동전이면 그 특성은 새롭지만 \emph{옮겨 가지 않는다} --- 두 성질은 독립이다.}
+
+출시 전 램프는 \verb|wiki_momentum| 과 $0.89\sim0.94$ 였다. momentum 이 곧
+램프이므로 당연하다 --- 그것은 \textbf{판에 이미 있던 것}이었다. 출시 후 감쇠는
+최대 $0.62$(게임에서만)로 문턱 $0.85$ 아래다. \textbf{판에 없던 것}이다.
+
+그런데 부호가 도메인마다 뒤집힌다. 감쇠율 $\rho$: 세계애니 $+0.233$ $\cdot$
+시장팝업 $+0.220$ $\cdot$ 애니 $+0.137$ $\cdot$ 모바일 $+0.032$ 대
+게임 $\mathbf{-0.217}$ $\cdot$ 팝업 $-0.162$ $\cdot$ 만화 $-0.096$ $\cdot$
+웹툰 $-0.030$. \textbf{정확히 4:4 다.}
+
+\section{한 자료에서 두 이야기가 나온다}
+
+노트 655 가 조항을 하나 세웠다 --- \emph{일치율은 행 가중과 도메인 수를 같이
+적는다}. 이번에 그것이 값을 했다.
+
+\begin{center}\small
+\begin{tabular}{lrr}\toprule
+모수 & 행 가중 일치 & 도메인 일치 \\ \midrule
+감쇠율 & 0.811 & 4/8 \\
+꼬리 두께 & 0.811 & 4/8 \\
+반감기 & \textbf{0.201} & 4/8 \\ \bottomrule
+\end{tabular}\end{center}
+
+세계애니가 2,160행 중 \textbf{1,128행}이다. 행으로 세면 ``0.811 --- 대체로
+맞는다''이고 도메인으로 세면 ``동전''이다. 반감기는 더 극단이라 행 가중이
+\textbf{0.201} --- 가장 큰 도메인에서 다수 부호가 \emph{틀렸다}. 하나만 적으면
+어느 쪽으로든 오해한다.
+
+\section{내 예측이 틀렸다}
+
+사전 등록에 ``출시 후가 더 잘 넘어갈 것''이라 적었다. 근거는 출시 전 램프가
+\emph{위키 문서가 언제 서는지}라는 \textbf{우리 관측 절차}의 성질을 섞고 있고
+(세계애니 $+0.856$ 대 웹툰 $-0.021$), 출시 후 감쇠는 \emph{사람들이 잊는 속도}
+라 세상의 성질에 가까울 것이라는 것이었다.
+
+결과는 $6{:}3 \to 4{:}4$ 로 \textbf{나빠졌다}. 그런데 관문 ③ 은 통과했다.
+그러므로 ``절차가 아니라 세상''이라는 진단의 \emph{절반}은 맞았다 --- 새 정보인
+것은 맞고, 그것이 옮겨 간다는 것은 틀렸다.
+
+\section{남는 물음}
+
+감쇠율 양수는 \emph{출시 후에도 조회가 는다}는 뜻이다. 애니 $\cdot$ 세계애니
+에서는 흥행과 같이 가고 게임 $\cdot$ 팝업에서는 반대다. 게임의 상승하는 위키
+곡선이 \textbf{문제 있는 출시가 만든 검색}일 수 있다 --- 그렇다면 같은 모수가
+도메인마다 \emph{다른 것을 뜻하는} 것이고, 그건 법칙이 아니라 해석의 문제다.
+\textbf{안 쟀다.}
+
+\textbf{처분}: 축으로 안 쓴다(시간 게이트 밖). 법칙 후보로도 채택 안 한다(4/8).
+자료는 남긴다 --- 부호가 뒤집히는 이유를 가르면 \textbf{어느 도메인들이 같은
+기제인가}의 근거가 된다.
+
+\begin{figure}[h]\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{(a) 두 물음의 평면. 오른쪽 아래 녹색이 법칙 후보 구역이고 둘 다
+거기 없다 --- 하나는 위(재인코딩), 하나는 왼쪽(전이 없음). (b) 감쇠율의 부호가
+4:4 로 갈린다. (c) 같은 자료에서 행 가중과 도메인 수가 반대 이야기를 한다.}
+\end{figure}
+
+\end{document}

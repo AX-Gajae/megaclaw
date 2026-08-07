@@ -1,0 +1,93 @@
+{
+ "market_record_id": "MKT-2024-0016",
+ "event_name": "Stray Kids X SKZOO 팝업카페 'SKZOO'S MAGIC SCHOOL'",
+ "brand": "JYP엔터테인먼트",
+ "ip_or_collab": "SKZOO(스트레이 키즈 캐릭터)",
+ "category": "character",
+ "intervention": {
+  "concept_description": "스트레이 키즈 캐릭터 SKZOO 팝업 카페. 성수 AP AGAIN과 합정 사운드웨이브에서 2024-03-14~31 운영.",
+  "experience_elements": [
+   "팝업 카페",
+   "굿즈 판매"
+  ],
+  "promotions": [
+   "사전 예약제"
+  ],
+  "is_free_entry": null,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "AP AGAIN(성수)·사운드웨이브 합정",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수·합정",
+  "city": "서울",
+  "period_from": "2024-03-14",
+  "period_to": "2024-03-31",
+  "area_pyeong": null,
+  "multi_store": true,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 18,
+    "weekend_share": 0.33,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 14000,
+  "visitors_period_days": 18,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "운영사(AP AGAIN) 포트폴리오 및 MTN 보도",
+  "visitors_source_quote": "앞서 지난달 14일부터 31일까지 서울 성수동 AP AGAIN과 합정동 사운드웨이브에서 진행된 스키주 팝업 카페 'SKZOO'S MAGIC SCHOOL'은 사전 예약 오픈 15분 만에 전 일정 매진, 약 1만 4천 명의 누적 방문객을 기록했다.",
+  "visitors_source_url": "https://news.mtn.co.kr/news-detail/2024040211162787188",
+  "visitors_source_date": "2024-04-02",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": "사전 예약 오픈 15분 만에 전 일정 매진",
+   "signal_quotes": [
+    "사전 예약 오픈 15분 만에 전 일정 매진, 약 1만 4천 명의 누적 방문객을 기록했다. (MTN 2024-04-02)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

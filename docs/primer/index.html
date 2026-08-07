@@ -1,0 +1,262 @@
+<title>IP 파운데이션 월드모델 — 정의, 원리, 현주소</title>
+<style>
+:root{
+  --ground:#F7F8FA; --surface:#FFFFFF; --surface-2:#F1F4F7;
+  --ink:#131A22; --ink-2:#46525F; --ink-3:#717E8C;
+  --rule:#DCE2E9; --rule-2:#EAEEF2;
+  --measured:#0E7C86; --unmeasurable:#9C6C15; --refuted:#A93A4A; --absent:#8A94A0;
+  --wash:#E7F1F2; --wash-2:#F3F1E7; --wash-3:#F6EAEC;
+  --sans:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --ground:#0B1015; --surface:#111921; --surface-2:#16202A;
+    --ink:#E2E9F0; --ink-2:#A2AFBB; --ink-3:#75828F;
+    --rule:#22303B; --rule-2:#1A252E;
+    --measured:#42B8C1; --unmeasurable:#D6A445; --refuted:#E0808F; --absent:#7C8996;
+    --wash:#153840; --wash-2:#2E2814; --wash-3:#38181E;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0B1015; --surface:#111921; --surface-2:#16202A;
+  --ink:#E2E9F0; --ink-2:#A2AFBB; --ink-3:#75828F;
+  --rule:#22303B; --rule-2:#1A252E;
+  --measured:#42B8C1; --unmeasurable:#D6A445; --refuted:#E0808F; --absent:#7C8996;
+  --wash:#153840; --wash-2:#2E2814; --wash-3:#38181E;
+}
+:root[data-theme="light"]{
+  --ground:#F7F8FA; --surface:#FFFFFF; --surface-2:#F1F4F7;
+  --ink:#131A22; --ink-2:#46525F; --ink-3:#717E8C;
+  --rule:#DCE2E9; --rule-2:#EAEEF2;
+  --measured:#0E7C86; --unmeasurable:#9C6C15; --refuted:#A93A4A; --absent:#8A94A0;
+  --wash:#E7F1F2; --wash-2:#F3F1E7; --wash-3:#F6EAEC;
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--sans); font-size:16.5px; line-height:1.78; -webkit-font-smoothing:antialiased}
+.n{font-family:var(--mono); font-variant-numeric:tabular-nums; font-size:.94em; letter-spacing:-.01em}
+code{font-family:var(--mono); font-size:.9em; background:var(--surface-2);
+  padding:.1em .34em; border-radius:3px; color:var(--ink-2)}
+.sheet{max-width:960px; margin:0 auto; padding:0 clamp(18px,4vw,40px);
+  min-height:100vh; display:flex; flex-direction:column}
+.measure{max-width:69ch}
+h1,h2,h3,h4{text-wrap:balance; line-height:1.28; letter-spacing:-.022em}
+h1{font-size:clamp(1.75rem,4vw,2.6rem); font-weight:800; margin:0 0 .4em}
+h2{font-size:clamp(1.42rem,3.1vw,2.02rem); font-weight:750; margin:0 0 .3em}
+h3{font-size:1.11rem; font-weight:700; margin:2.2em 0 .5em}
+p{margin:0 0 1.15em}
+strong{font-weight:700}
+em{font-style:normal; background:linear-gradient(transparent 62%,var(--wash) 62%)}
+ul,ol{padding-left:1.3em; margin:0 0 1.2em}
+li{margin-bottom:.55em} li::marker{color:var(--ink-3)}
+a{color:var(--measured)}
+:focus-visible{outline:2px solid var(--measured); outline-offset:2px}
+
+/* 머리 — 자(ruler) 눈금 */
+.top{padding:20px 0 0; position:sticky; top:0; background:var(--ground); z-index:5}
+.topbar{display:flex; align-items:baseline; justify-content:space-between; gap:16px;
+  padding-bottom:10px; border-bottom:1px solid var(--rule)}
+.docname{font-family:var(--mono); font-size:.72rem; letter-spacing:.11em; text-transform:uppercase;
+  color:var(--ink-3); text-decoration:none}
+.docname:hover{color:var(--measured)}
+.pageno{font-family:var(--mono); font-size:.72rem; color:var(--ink-3); white-space:nowrap}
+.ticks{display:flex; gap:3px; padding:9px 0 0}
+.ticks i{flex:1; height:3px; background:var(--rule); border-radius:1px}
+.ticks i.on{background:var(--measured)}
+.ticks i.past{background:var(--ink-3); opacity:.42}
+
+main{flex:1; padding:clamp(30px,5vw,54px) 0 clamp(28px,4vw,44px)}
+.sechead{margin:0 0 1.5em; padding-bottom:.7em; border-bottom:1px solid var(--rule)}
+.secno{font-family:var(--mono); font-size:.8rem; color:var(--ink-3); display:block; margin-bottom:.5em}
+.sechead p{margin:.5em 0 0; color:var(--ink-3); font-size:.93rem; max-width:60ch}
+
+/* 인식 상태 */
+.st{font-family:var(--mono); font-size:.72rem; letter-spacing:.02em; padding:.2em .55em;
+  border-radius:2px; white-space:nowrap; border:1px solid; font-weight:500}
+.st-m{color:var(--measured); border-color:var(--measured); background:var(--wash)}
+.st-u{color:var(--unmeasurable); border-color:var(--unmeasurable); background:var(--wash-2)}
+.st-r{color:var(--refuted); border-color:var(--refuted); background:var(--wash-3)}
+.st-a{color:var(--absent); border-color:var(--absent); background:transparent}
+
+/* 수식 */
+.eq{font-family:var(--mono); font-size:.93rem; line-height:1.65; background:var(--surface);
+  border:1px solid var(--rule); border-left:2px solid var(--ink-3);
+  padding:16px 20px; margin:1.5em 0; overflow-x:auto; color:var(--ink)}
+.eq .cm{color:var(--ink-3)} .eq b{font-weight:600; color:var(--measured)}
+
+/* 표 */
+.tw{overflow-x:auto; margin:1.6em 0; border:1px solid var(--rule); background:var(--surface)}
+table{border-collapse:collapse; width:100%; font-size:.9rem; min-width:520px}
+th,td{padding:9px 14px; text-align:left; border-bottom:1px solid var(--rule-2)}
+thead th{background:var(--surface-2); font-weight:600; font-size:.79rem; color:var(--ink-2);
+  border-bottom:1px solid var(--rule); white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right; font-family:var(--mono); font-variant-numeric:tabular-nums;
+  font-size:.87rem; white-space:nowrap}
+tr.hl td{background:var(--wash)}
+
+/* 구간 그림 */
+.plot{border:1px solid var(--rule); background:var(--surface); margin:1.8em 0; overflow:hidden}
+.plot-h{padding:14px 18px 10px; border-bottom:1px solid var(--rule-2)}
+.plot-h .t{font-weight:700; font-size:.95rem}
+.plot-h .d{font-size:.82rem; color:var(--ink-3); margin-top:.2em}
+.plot-b{padding:16px 18px 8px}
+.ivrow{display:grid; grid-template-columns:minmax(96px,132px) 1fr 62px; gap:0 14px;
+  align-items:center; margin-bottom:11px}
+.ivlab{font-size:.83rem; line-height:1.35}
+.ivlab .sub{display:block; font-family:var(--mono); font-size:.71rem; color:var(--ink-3)}
+.ivtrack{position:relative; height:22px}
+.ivtrack::before{content:""; position:absolute; left:0; right:0; top:50%; height:1px;
+  background:var(--rule); transform:translateY(-50%)}
+.ivzero{position:absolute; top:0; bottom:0; width:1px; background:var(--ink-3); opacity:.85}
+.ivband{position:absolute; top:50%; height:7px; transform:translateY(-50%); border-radius:1px; opacity:.34}
+.ivdot{position:absolute; top:50%; width:9px; height:9px; margin-left:-4.5px;
+  transform:translateY(-50%); border-radius:50%}
+.iv-m .ivband{background:var(--measured)} .iv-m .ivdot{background:var(--measured)}
+.iv-u .ivband{background:var(--unmeasurable)} .iv-u .ivdot{background:var(--unmeasurable)}
+.ivnum{font-family:var(--mono); font-variant-numeric:tabular-nums; font-size:.79rem;
+  text-align:right; color:var(--ink-2)}
+.plot-f{padding:10px 18px 14px; font-size:.78rem; color:var(--ink-3);
+  border-top:1px solid var(--rule-2); margin-top:6px}
+.axis{display:grid; grid-template-columns:minmax(96px,132px) 1fr 62px; gap:0 14px;
+  font-family:var(--mono); font-size:.7rem; color:var(--ink-3); margin-top:2px}
+.axis .ticks2{position:relative; height:14px}
+.axis .ticks2 span{position:absolute; transform:translateX(-50%)}
+
+/* 막대 */
+.bars{display:flex; align-items:flex-end; gap:clamp(8px,2vw,22px); height:180px;
+  padding:18px 18px 0; border-bottom:1px solid var(--rule)}
+.bar{flex:1; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; height:100%}
+.bar .col{width:100%; max-width:76px; background:var(--measured); border-radius:2px 2px 0 0}
+.bar.peak .col{background:var(--refuted)}
+.bar .v{font-family:var(--mono); font-size:.78rem; font-weight:600; margin-bottom:5px}
+.barlabs{display:flex; gap:clamp(8px,2vw,22px); padding:8px 18px 16px}
+.barlabs div{flex:1; text-align:center; font-size:.77rem; color:var(--ink-3); line-height:1.35}
+
+/* 사다리 */
+.ladder{border:1px solid var(--rule); background:var(--surface); margin:1.8em 0}
+.rung{display:grid; grid-template-columns:54px 1fr auto; gap:0 16px; padding:15px 18px;
+  border-bottom:1px solid var(--rule-2); align-items:start}
+.rung:last-child{border-bottom:none}
+.rung .lv{font-family:var(--mono); font-size:.8rem; font-weight:600; color:var(--ink-3); padding-top:2px}
+.rung .nm{font-weight:700; font-size:.97rem; margin-bottom:.15em}
+.rung .ds{font-size:.855rem; color:var(--ink-2); line-height:1.6}
+.rung .ds .eqi{font-family:var(--mono); font-size:.87em; color:var(--ink)}
+.rung.on{background:var(--wash)} .rung.part{background:var(--wash-2)}
+
+/* 강조 */
+.call{border:1px solid var(--rule); border-left:2px solid var(--measured);
+  background:var(--surface); padding:16px 20px; margin:1.6em 0}
+.call.warn{border-left-color:var(--unmeasurable)}
+.call.bad{border-left-color:var(--refuted)}
+.call .h{font-size:.76rem; font-family:var(--mono); letter-spacing:.06em; text-transform:uppercase;
+  color:var(--ink-3); margin-bottom:.55em}
+.call p:last-child{margin-bottom:0}
+
+/* 표지 */
+.cover{padding:clamp(40px,7vw,80px) 0 0}
+.eyebrow{font-family:var(--mono); font-size:.74rem; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--ink-3); margin:0 0 1.5em}
+.lede{font-size:clamp(1rem,1.8vw,1.16rem); color:var(--ink-2); max-width:64ch}
+.headnums{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:1px; background:var(--rule); border:1px solid var(--rule); margin-top:clamp(30px,5vw,46px)}
+.hn{background:var(--surface); padding:18px 20px 16px}
+.hn .v{font-family:var(--mono); font-variant-numeric:tabular-nums; font-size:1.7rem;
+  font-weight:600; letter-spacing:-.03em; display:block; line-height:1.1}
+.hn .k{font-size:.82rem; color:var(--ink-3); margin-top:.5em; display:block}
+.hn .s{font-size:.78rem; margin-top:.6em; display:inline-block}
+.idx{border:1px solid var(--rule); background:var(--surface); margin:2.2em 0 0}
+.idx a{display:grid; grid-template-columns:44px 1fr auto; gap:0 14px; padding:12px 18px;
+  border-bottom:1px solid var(--rule-2); text-decoration:none; color:var(--ink); align-items:baseline}
+.idx a:last-child{border-bottom:none}
+.idx a:hover,.idx a:focus-visible{background:var(--surface-2)}
+.idx .no{font-family:var(--mono); font-size:.78rem; color:var(--ink-3)}
+.idx .ti{font-weight:600; font-size:.95rem}
+.idx .sub{display:block; font-weight:400; font-size:.82rem; color:var(--ink-3); margin-top:.1em}
+
+/* 발 — 앞뒤 */
+.nav{border-top:1px solid var(--rule); display:grid; grid-template-columns:1fr auto 1fr;
+  gap:12px; padding:18px 0 40px; align-items:center}
+.nav a{text-decoration:none; color:var(--ink-2); font-size:.87rem; display:block}
+.nav a:hover,.nav a:focus-visible{color:var(--measured)}
+.nav .arrow{font-family:var(--mono); font-size:.74rem; color:var(--ink-3); display:block}
+.nav .r{text-align:right}
+.nav .home{font-family:var(--mono); font-size:.74rem; color:var(--ink-3); text-decoration:none}
+.nav .home:hover{color:var(--measured)}
+.nav .dis{opacity:.32; pointer-events:none}
+
+@media print{
+  .top,.nav{display:none} body{background:#fff; color:#000; font-size:11pt}
+  .sheet{min-height:0} main{padding:0}
+  .plot,.tw,.call,.eq,.ladder{break-inside:avoid}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+  /* ── 읽기 보조 (2026-08-06 추가) ─────────────────────────────
+     읽는 사람이 팔·씨앗·유보를 안다고 가정하고 있었다. 그리고 숫자에
+     방향(클수록 좋은가)이 없어서 해석이 안 됐다. 그 둘을 고치는 장치다. */
+  .tldr{background:var(--wash);border-left:3px solid var(--measured);
+    border-radius:0 6px 6px 0;padding:12px 16px;margin:0 0 20px}
+  .tldr .h{font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--measured);font-weight:700;margin-bottom:5px}
+  .tldr p{margin:0;font-size:15px;line-height:1.65;color:var(--ink)}
+  .terms{border:1px solid var(--rule);border-radius:8px;padding:12px 16px;
+    margin:0 0 22px;background:var(--surface)}
+  .terms .h{font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--ink-3);font-weight:700;margin-bottom:8px}
+  .terms dl{margin:0;display:grid;grid-template-columns:auto 1fr;
+    gap:5px 14px;align-items:baseline}
+  .terms dt{font-family:var(--mono);font-size:12.5px;color:var(--ink);
+    font-weight:600;white-space:nowrap}
+  .terms dd{margin:0;font-size:13.5px;line-height:1.6;color:var(--ink-2)}
+  .read{font-size:13px;line-height:1.6;color:var(--ink-2);margin:8px 0 0;
+    padding-left:12px;border-left:2px solid var(--rule)}
+  .read b{color:var(--ink)}
+  .dir{display:inline-block;font-family:var(--sans);font-size:10.5px;
+    font-weight:700;letter-spacing:.02em;padding:1px 5px;border-radius:4px;
+    margin-left:5px;vertical-align:1px;white-space:nowrap}
+  .dir.up{background:var(--wash);color:var(--measured)}
+  .dir.dn{background:var(--wash-2);color:var(--unmeasurable)}
+  .dir.base{background:var(--surface-2);color:var(--ink-3)}
+  .why{display:block;font-size:13.5px;line-height:1.65;color:var(--ink-2);
+    margin:10px 0 0;padding:10px 14px;background:var(--surface-2);
+    border-radius:6px}
+  .why b{color:var(--ink)}
+</style>
+<div class="sheet"><main>
+<div class="cover">
+<p class="eyebrow">월드모델 실험실 · 2026-08-06 · 노트 706 · 원장 502 항목</p>
+<h1>IP 파운데이션 월드모델<br>— 정의, 원리, 현주소</h1>
+<p class="lede measure">이 문서는 프로젝트를 처음 보는 사람을 위한 것이다.
+<strong>월드모델이 정확히 무엇인지</strong> 정의하고, <strong>그 정의가 요구하는 수학적 조건</strong>을 적고,
+<strong>지금 어디까지 측정됐고 무엇이 아직 없는지</strong>를 하나씩 대조한다. 숫자에는 전부 잰 방법과
+불확실성을 붙였다 — 이 프로젝트의 지난 사이클 대부분이 <em>자기 자를 다시 재는 데</em> 쓰였기 때문이다.</p>
+<div class="tldr"><div class="h">읽는 법 — 2026-08-06 추가</div>
+<p>각 면 맨 위에 <b>한 줄 요약</b>과 <b>먼저 알아야 할 말</b>이 붙어 있다. 이 문서는 원래
+“팔 · 씨앗 · 유보 · 위약”을 안다고 가정하고 쓰였는데 <b>그 가정이 틀렸다</b>. 이제 각 면이
+그 면에서 쓰는 말만 풀어 주고, <b>숫자마다 클수록 좋은지 작을수록 좋은지</b>를 붙인다.
+수식에는 <b>“읽는 법”</b>이 한 문단씩 달려 있어 기호를 몰라도 뜻을 따라갈 수 있다.</p></div>
+<div class="headnums">
+<div class="hn"><span class="v">0.4697</span><span class="k">판 ρ — 11개 도메인 3,369행 유보 순위상관 · <b>클수록 좋음</b>(−1~+1)</span>
+<span class="s"><span class="st st-u">차이는 잴 수 있으나 개선은 못 잰다</span></span></div>
+<div class="hn"><span class="v">82–95%</span><span class="k">안 본 시장에서 그 시장 전용 모형 대비</span>
+<span class="s"><span class="st st-m">측정됨 · 구간이 0 밖</span></span></div>
+<div class="hn"><span class="v">+0.1200</span><span class="k">정보 전이장의 <b>유보</b> R² — 위약은 −0.0027 · 짝 차 5.6σ</span>
+<span class="s"><span class="st st-m">측정됨 · 안 본 미래에서 베끼기와 잡음을 둘 다 이긴다</span></span></div>
+<div class="hn"><span class="v">0</span><span class="k">개입(do-연산)을 추정한 실험의 수</span>
+<span class="s"><span class="st st-a">미착수</span></span></div>
+</div>
+<div class="idx"><a href="00.html"><span class="no">00</span><span class="ti">이 문서를 읽는 법<span class="sub">색이 주장의 강도를 나타낸다. 이것은 장식이 아니라 이 문서의 뼈대다.</span></span></a><a href="01.html"><span class="no">01</span><span class="ti">월드모델이란 무엇인가<span class="sub">예측 모형과 월드모델은 다르다. 그 차이가 이 프로젝트의 전부다.</span></span></a><a href="02.html"><span class="no">02</span><span class="ti">사다리 — L0에서 L4까지<span class="sub">“월드모델인가 아닌가”는 예/아니오가 아니라 층이다. 각 층은 앞 층을 전제한다.</span></span></a><a href="03.html"><span class="no">03</span><span class="ti">수학적 원리 ① — 전이가 성립하는 조건<span class="sub">왜 한 모형이 한 번도 안 본 시장에서 작동할 수 있는가.</span></span></a><a href="04.html"><span class="no">04</span><span class="ti">수학적 원리 ② — 방향이 없으면 전이도 없다<span class="sub">이 프로젝트에서 가장 깨끗하게 확인된 기제. 축 하나의 부호가 두 해 동안 거꾸로 꽂혀 있었다.</span></span></a><a href="05.html"><span class="no">05</span><span class="ti">수학적 원리 ③ — 두 잡음, 그리고 무엇을 잴 수 있는가<span class="sub">이 프로젝트의 최근 사이클 대부분이 여기 쓰였다. 결론이 불편하다.</span></span></a><a href="06.html"><span class="no">06</span><span class="ti">현주소 — 무엇이 측정됐나<span class="sub">가장 최근 채택(축 방향 되돌림)을 여섯 자로 전수 채점한 결과. 이 표가 이 프로젝트의 상태를 가장 정직하게 보여 준다.</span></span></a><a href="07.html"><span class="no">07</span><span class="ti">상태와 시간 — 재 봤고 대부분 음성이다<span class="sub">L3의 현주소. 로드맵이 두 달 동안 “엔티티 메모리 스트림”을 계획으로 갖고 있었는데, 그 전제를 처음으로 쟀다.</span></span></a><a href="08.html"><span class="no">08</span><span class="ti">무엇이 없는가 — 엄밀하게<span class="sub">가장 중요한 면. 없는 것을 정확히 아는 것이 이 프로젝트의 자산이다.</span></span></a><a href="09.html"><span class="no">09</span><span class="ti">무엇을 더 해야 하는가<span class="sub">각 항목에 “왜 지금 이것인가”와 “무엇이 있어야 되는가”를 붙였다.</span></span></a><a href="10.html"><span class="no">10</span><span class="ti">이 문서의 숫자를 검증하는 법<span class="sub">이 프로젝트는 자기 숫자를 자주 깎는다. 그래서 모든 주장에 출처가 붙어 있다.</span></span></a><a href="11.html"><span class="no">11</span><span class="ti">정보 전이장은 학습되고 있나<span class="sub">7면이 엔티티 상태를 재서 음성을 얻었다. 이 면은 공간 상태를 재고 양성을 얻는다 — 유보 R² +0.1200 대 위약 −0.0027. 그리고 이 면의 첫 판을 두 번 고쳤다.</span></span></a></div>
+<p style="margin-top:2em; font-size:.83rem; color:var(--ink-3)">
+열두 면. 좌우 화살표 키로도 넘길 수 있다. 각 면은 독립 파일이라 따로 인쇄하거나 전달할 수 있다.</p>
+</div>
+</main><nav class="nav"><span class="dis"></span><span class="home">열두 면</span><a data-next class="r" href="00.html"><span class="arrow">시작 →</span>이 문서를 읽는 법</a></nav></div>
+<script>
+document.addEventListener('keydown',function(e){
+  if(e.metaKey||e.ctrlKey||e.altKey) return;
+  var p=document.querySelector('[data-prev]'), n=document.querySelector('[data-next]');
+  if(e.key==='ArrowLeft'&&p&&p.getAttribute('href')) location.href=p.getAttribute('href');
+  if(e.key==='ArrowRight'&&n&&n.getAttribute('href')) location.href=n.getAttribute('href');
+});
+</script>

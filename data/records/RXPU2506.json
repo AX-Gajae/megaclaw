@@ -1,0 +1,332 @@
+{
+ "record_id": "RXPU2506",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:하감자_수퍼마켙",
+  "space_id": "unresolved:더현대서울_3F_이비엠매장앞",
+  "client_party_id": "unresolved:주식회사_디테일즈",
+  "brand_key": "하감자_수퍼마켙",
+  "space_key": "더현대서울"
+ },
+ "intervention": {
+  "concept": "하정우와 감자를 결합한 '하감자 수퍼마켙' 컨셉의 팝업스토어. 더현대 서울에서 진행된 굿즈 판매 및 체험형 팝업으로, 포토존·가챠머신·부채 증정 등 참여형 이벤트를 운영했다.",
+  "brand_name": "하감자 수퍼마켙",
+  "experience_elements": [
+   "감자 포토존/포토월",
+   "등신대",
+   "굿즈 가챠머신(랜덤 키링/부적/스티커)",
+   "하정우의 윤택한 별명 공모전"
+  ],
+  "promotions": [
+   "선착순 150명 하감자 부채 증정(소진 시 조기 종료)",
+   "SNS 인증 시 굿즈 가챠머신 참여 기회",
+   "1만원 이상 구매 시 투명 포토카드 1종 랜덤 증정",
+   "3만원 이상 구매 시 포토카드 2종+L홀더 증정",
+   "한정상품 감자빵(오프라인)/인형키링(온라인)"
+  ],
+  "staging_tags": [
+   "수퍼마켙 컨셉",
+   "포토존",
+   "가챠머신",
+   "등신대",
+   "VMD 연출"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울특별시",
+   "district": "영등포구",
+   "venue_name": "더현대 서울 3층 이비엠 매장 앞",
+   "venue_type": "백화점",
+   "foot_traffic_context": "더현대 서울 3층 이비엠(EBM) 매장 앞",
+   "venue_slot": "3층"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-05-01",
+   "to": "2025-05-07",
+   "days": 7
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총 계약금액 68,200,000원(VAT 별도). 대행수수료는 소계(정가 항목 제외)의 8%. 선금 50% 34,100,000원(4월 25일 지급), 잔금 50% 34,100,000원(행사종료 후 10일 이내). 견적 소계 63,935,000원 + 대행수수료 4,266,800원 = 68,200,000원(VAT 별도, 만단위 절삭)."
+  },
+  "brand_requirements": [
+   "제작물은 사용 전 의뢰사(디테일즈)의 감수 필수",
+   "안전보건관리 및 사고방지",
+   "행사 안전보험 가입",
+   "지식재산권 보호 및 비밀유지"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대 서울 3층 이비엠 매장 앞"
+  },
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 59,
+    "holiday_until": 2,
+    "holiday_block_in": 4,
+    "nat_event_gap": 33,
+    "nat_event": null,
+    "doc_lag_days": 13,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 11,
+    "comp_prior_at_venue": 283,
+    "comp_within_500m_open": 12,
+    "comp_within_1000m_open": 12,
+    "matched_address": "서울 영등포구 여의대로 108"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 22626746.0,
+    "pnl_pre_accounts": 5,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-04-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 68.2
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서에 일자별 방문자수 및 매출 실측 표가 확인되지 않음. 운영시간: 월-목 10:30~20:00, 금-일·공휴일 10:30~20:30.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 68.2 ≈ 계약총액 68.2",
+   "contract_total_mm": 68.2,
+   "last_recognition_period": "2025-05"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "11lvi8Bmhe7ZBYRTvJOgRWOKB1ijJQcEO",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/11lvi8Bmhe7ZBYRTvJOgRWOKB1ijJQcEO/view",
+   "title": "하감자 팝업스토어 컨텐츠 제안.pdf"
+  },
+  {
+   "doc_id": "11lzDCxsMgdKpBPVnOjRz_NKp_wysYOmD",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/11lzDCxsMgdKpBPVnOjRz_NKp_wysYOmD/view",
+   "title": "[실행]하감자_1.KV(최종)_A2_3.jpg"
+  },
+  {
+   "doc_id": "11o8CzI_JiS8oDwfRVVROyPZZRBX6sU2b",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/11o8CzI_JiS8oDwfRVVROyPZZRBX6sU2b/view",
+   "title": "[실행]하감자_1.KV(최종)_A2_1.jpg"
+  },
+  {
+   "doc_id": "11os19PtoM79RrL6yU9c_fw97KHbNQOjP",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/11os19PtoM79RrL6yU9c_fw97KHbNQOjP/view",
+   "title": "[실행]하감자_1.KV(최종)_A2_outlined.ai"
+  },
+  {
+   "doc_id": "11t3vViZGhFjATciLS-hf3s8YlHaBniC2",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/11t3vViZGhFjATciLS-hf3s8YlHaBniC2/view",
+   "title": "[실행]하감자_1.KV(최종)_A2_3.jpg"
+  },
+  {
+   "doc_id": "11uYI6qmpr-sT7qYW49LRgX6aL7hP8dkX",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/11uYI6qmpr-sT7qYW49LRgX6aL7hP8dkX/view",
+   "title": "[실행]하감자_1.KV(최종)_A2_1.jpg"
+  },
+  {
+   "doc_id": "1202WStK7RRF7EBPVnrsAO-khTS5bm_K2",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1202WStK7RRF7EBPVnrsAO-khTS5bm_K2/view",
+   "title": "[실행]하감자_1.KV(최종)_A2_outlined.ai"
+  },
+  {
+   "doc_id": "157r3D6bcQYGOnuUCvHejNP2ayTQtv9gM",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/157r3D6bcQYGOnuUCvHejNP2ayTQtv9gM/view",
+   "title": "(Sweetspot)디테일즈 하감자 팝업스토어 견적서.xlsx"
+  },
+  {
+   "doc_id": "15GZK9FXgAeMXcRBAziSIgarNjA1OwxRd",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/15GZK9FXgAeMXcRBAziSIgarNjA1OwxRd/view",
+   "title": "[Sweetspot]디테일즈_하정우X하감자 팝업스토어_계약서_v3_0422.pdf"
+  },
+  {
+   "doc_id": "15IdBKR4DHwAKMFzuQ2DO2CM9yAUjDJTg",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/15IdBKR4DHwAKMFzuQ2DO2CM9yAUjDJTg/view",
+   "title": "[Sweetspot]디테일즈_하정우X하감자 팝업스토어_계약서_v3_0422.doc"
+  },
+  {
+   "doc_id": "15OgXNp_GEr0gU8z618-BdcoV0YshGTiu",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/15OgXNp_GEr0gU8z618-BdcoV0YshGTiu/view",
+   "title": "(Sweetspot)디테일즈 하감자 팝업스토어 견적서_v2_0417.pdf"
+  },
+  {
+   "doc_id": "15PxjWlrS4GyN34JDZY0H6yu9b8d7sSqH",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/15PxjWlrS4GyN34JDZY0H6yu9b8d7sSqH/view",
+   "title": "[Sweetspot_날인본]디테일즈_하정우X하감자 팝업스토어_계약서_v3_0422.pdf"
+  },
+  {
+   "doc_id": "15RW-whqFM6N1hxmrFpTK2VbBTJ3sPt9U",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/15RW-whqFM6N1hxmrFpTK2VbBTJ3sPt9U/view",
+   "title": "(CLAY) 하감자 수퍼마켙_Estimate_250418.xlsx"
+  },
+  {
+   "doc_id": "15TGKF5hQ0NU7qCBMFmcw6cvA64CAwxz0",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/15TGKF5hQ0NU7qCBMFmcw6cvA64CAwxz0/view",
+   "title": "[Sweetspot]클레이엠엔이_하정우X하감자 팝업스토어_계약서_v3_0422.doc"
+  },
+  {
+   "doc_id": "15UnLy1774cGR49DxoOeHylW53Z07QELg",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/15UnLy1774cGR49DxoOeHylW53Z07QELg/view",
+   "title": "[Sweetspot]클레이엠엔이_하정우X하감자 팝업스토어_계약서_v3_0422.pdf"
+  },
+  {
+   "doc_id": "15Y3l2htDxAhxcCC-tjG1HaushKZatJTv",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/15Y3l2htDxAhxcCC-tjG1HaushKZatJTv/view",
+   "title": "[Sweetspot_날인본]클레이엠엔이_하정우X하감자 팝업스토어_계약서_v3_0422.pdf"
+  },
+  {
+   "doc_id": "1BbdHXQqvHkam2KhjCP79u1XdN1C-aWq9",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1BbdHXQqvHkam2KhjCP79u1XdN1C-aWq9/view",
+   "title": "[실행]하감자_1.KV(최종)_A2_1.jpg"
+  },
+  {
+   "doc_id": "1CspNED4bITdGtRFTC6xSz8HJ9nZaTK1S",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1CspNED4bITdGtRFTC6xSz8HJ9nZaTK1S/view",
+   "title": "[실행]하감자_1.KV(최종)_A2_1.jpg"
+  },
+  {
+   "doc_id": "1DJ4K872MMJDQ1Xu8LJj2DGBwfeqmaN2l",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1DJ4K872MMJDQ1Xu8LJj2DGBwfeqmaN2l/view",
+   "title": "[실행]하감자_1.KV(최종)_A2_3.jpg"
+  },
+  {
+   "doc_id": "1DJyqw-ry3hQfAhew_w2PTLOIdRH-WhpD",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1DJyqw-ry3hQfAhew_w2PTLOIdRH-WhpD/view",
+   "title": "[실행]하감자_1.KV(최종)_A2_outlined.ai"
+  },
+  {
+   "doc_id": "1I-PHoef77QiAAA_5qWddEQ8YeFEDkZFJ",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1I-PHoef77QiAAA_5qWddEQ8YeFEDkZFJ/view",
+   "title": "[실행]하감자_1.KV(최종)_A2_1.jpg"
+  },
+  {
+   "doc_id": "1IIIJITDrBwgob9-vXM_2M3UTgv0AUP2-",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1IIIJITDrBwgob9-vXM_2M3UTgv0AUP2-/view",
+   "title": "[실행]하감자_1.KV(최종)_A2_3.jpg"
+  },
+  {
+   "doc_id": "1IOWzeGaTrzB27BUU-_5I7bnBZsE1UY0m",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1IOWzeGaTrzB27BUU-_5I7bnBZsE1UY0m/view",
+   "title": "[실행]하감자_1.KV(최종)_A2_outlined.ai"
+  },
+  {
+   "doc_id": "1QYbYC0s3QydmPuWv8lUh0un1zjQ3MuFZ",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1QYbYC0s3QydmPuWv8lUh0un1zjQ3MuFZ/view",
+   "title": "[실행]하감자_1.KV(최종)_A2_1.jpg"
+  },
+  {
+   "doc_id": "1QeCxr3qFDsh2sERX53MLSmJvVzh7rsy0",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1QeCxr3qFDsh2sERX53MLSmJvVzh7rsy0/view",
+   "title": "[실행]하감자_1.KV(최종)_A2_3.jpg"
+  },
+  {
+   "doc_id": "1QhaALFlYfE3pih4RwMfmKUK8jzacJ6kt",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1QhaALFlYfE3pih4RwMfmKUK8jzacJ6kt/view",
+   "title": "[실행]하감자_1.KV(최종)_A2_outlined.ai"
+  },
+  {
+   "doc_id": "1S6-uSl6gHDiynupylElQFvPwy1Ejz15Z",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1S6-uSl6gHDiynupylElQFvPwy1Ejz15Z/view",
+   "title": "(Sweetspot)하감자 수퍼마켙_결과보고서_ver.1_0514.pdf"
+  },
+  {
+   "doc_id": "1SBjQdhZ7kOX2JX4trueBIUZH5Q6Wrrd6",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1SBjQdhZ7kOX2JX4trueBIUZH5Q6Wrrd6/view",
+   "title": "(Sweetspot)하감자 팝업스토어vol.2 견적서_v1_0512.pdf"
+  },
+  {
+   "doc_id": "1SmTdLOL1aHHUfy115Z47pd5URkIKz-R9",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1SmTdLOL1aHHUfy115Z47pd5URkIKz-R9/view",
+   "title": "250507 롯데백화점 팝업 제안서(하감자슈퍼마켙).pdf"
+  },
+  {
+   "doc_id": "1TJPutvRAlevZQp7cgIuQvw3P_-VLUmmZ",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1TJPutvRAlevZQp7cgIuQvw3P_-VLUmmZ/view",
+   "title": "(Sweetspot)하감자 수퍼마켙_운영안.pdf"
+  },
+  {
+   "doc_id": "1TQm48l9zcBOWG7xciR1W6AqlL052jE0d",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1TQm48l9zcBOWG7xciR1W6AqlL052jE0d/view",
+   "title": "(Sweetspot)하감자 수퍼마켙_결과보고서.pdf"
+  },
+  {
+   "doc_id": "1TVyln_lFdOsrqC0vpQULL7z1pQJKkESh",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1TVyln_lFdOsrqC0vpQULL7z1pQJKkESh/view",
+   "title": "[Sweetspot_날인본]디테일즈_하정우X하감자 팝업스토어_계약서.pdf"
+  },
+  {
+   "doc_id": "1TZGYk438qhLlMc83VyuPI0jqy00M3hJd",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1TZGYk438qhLlMc83VyuPI0jqy00M3hJd/view",
+   "title": "(Sweetspot)디테일즈 하감자 팝업스토어 견적서.pdf"
+  },
+  {
+   "doc_id": "1Tf-D0tPKwFdBZLeQiYYqhh7iWCoy041_",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Tf-D0tPKwFdBZLeQiYYqhh7iWCoy041_/view",
+   "title": "하정우 하감자 팝업 컨셉 제안서.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 4건: [Sweetspot_날인본]디테일즈_하정우X하감자 팝업, (Sweetspot)하감자 수퍼마켙_운영안.pdf, (Sweetspot)디테일즈 하감자 팝업스토어 견적서., (Sweetspot)하감자 수퍼마켙_결과보고서.pdf. 미확실: 결과보고서에 방문자수/매출(POS) 실측 데이터 없음; 면적(평) 정보 없음; 계약서상 장소는 더현대서울 3F 이비엠 매장 앞이나 결과보고서는 3층으로 표기, 구역은 동일; 기획서(운영안) 텍스트 파편화로 예상 방문자수 추출 불가"
+ }
+}

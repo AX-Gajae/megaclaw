@@ -1,0 +1,172 @@
+{
+ "record_id": "RCPU2404",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:잔망루피",
+  "space_id": "unresolved:수원_스타필드_4F_팝업존",
+  "client_party_id": null,
+  "brand_key": "잔망루피",
+  "space_key": "수원_스타필드"
+ },
+ "intervention": {
+  "concept": "잔망루피 IP를 활용한 스타필드 수원 4층 팝업스토어. 포토존, 루피 신상 FRP 조형물, 인피니티 월 그래픽, 나무 오브제와 네온사인, 잔디 카페트 바닥, 토끼루피 등신대 등으로 연출한 캐릭터 굿즈 판매 매장.",
+  "brand_name": "잔망루피",
+  "experience_elements": [
+   "포토존 벽면 그래픽",
+   "루피 신상 FRP 조형물",
+   "인피니티 월 그래픽",
+   "나무 오브제+네온사인",
+   "잔디 카페트 바닥",
+   "토끼루피 등신대",
+   "랜덤피규어",
+   "SNS 인증존"
+  ],
+  "promotions": [
+   "SNS 인증 프로모션",
+   "GWP 증정품(L자 파일/손거울/아크릴 컵 코스터/쿨피스 에이드) - 1만원/2만원/5만원 금액 허들",
+   "한정 상품"
+  ],
+  "staging_tags": [
+   "네온사인",
+   "그래픽시트",
+   "FRP조형물",
+   "잔디카페트",
+   "등신대",
+   "포토존"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "수원",
+   "district": null,
+   "venue_name": "스타필드 수원",
+   "venue_type": "쇼핑몰 팝업존",
+   "foot_traffic_context": "스타필드 수원 4층 팝업공간"
+  },
+  "area_pyeong": 48,
+  "period": {
+   "from": "2024-02-23",
+   "to": "2024-03-21",
+   "days": 28
+  },
+  "season": "겨울-봄",
+  "fee_structure": {
+   "type": "hybrid",
+   "detail": "인력 운영대행 조건안(매출액 부가세 제외 기준): 고정액 + 목표대비 초과 순매출 수수료율 구조로 기재되어 있으나 견적서 원문에 구체 숫자값 미표기. 투입규모: 평일 8명/주말 10명 + 본사 슈퍼바이저 1명."
+  },
+  "brand_requirements": [
+   "평일 8명/주말 10명 운영 인력",
+   "본사 슈퍼바이저 1명",
+   "포스 3대+노트북 3대",
+   "네온사인 30W"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "스타필드 수원 4층 팝업공간"
+  },
+  "derived": {
+   "duration": {
+    "days": 28,
+    "weekend_share": 0.29,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 11,
+    "holiday_until": 7,
+    "holiday_block_in": 3,
+    "nat_event_gap": 47,
+    "nat_event": null,
+    "doc_lag_days": 11,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": 236054700,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "entry",
+  "counting_basis": "'나우웨이팅 기반 웨이팅 등록 팀수' / '일 평균 입장 웨이팅 수(명)' - 나우웨이팅 대기 등록 기반 집계이며 주차별 평일·주말 평균치만 제공(일자별 실측 표 없음)",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(주차별 나우웨이팅 일 평균 입장 웨이팅 수: 1주차 평일 1,808명/주말·공휴일 3,079명, 2주차 워크인 2,866명, 3주차 워크인 2,681명, 4주차 워크인 2,478명. 주차별 누적매출: 1주차 79,896,200원, 2주차 61,670,100원, 3주차 49,221,100원, 4주차 45,267,300원. 목표매출 400,000,000원 대비 누적매출 236,054,700원, 달성률 59.0%.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": null,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-2opOQuzg6NCOCRELLwYbUcBFFaPpmiV",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1-2opOQuzg6NCOCRELLwYbUcBFFaPpmiV/view",
+   "title": "(최종)[스위트스팟] 수원스타필드 잔망루피 팝업스토어 결과보고서 (1).pptx"
+  },
+  {
+   "doc_id": "11F8tthX6_ZplMHocZz1AmbBYfjjhqmbN",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/11F8tthX6_ZplMHocZz1AmbBYfjjhqmbN/view",
+   "title": "잔망루피 팝업스토어 위탁운영 계약서_스위트스팟_240212 (2).doc"
+  },
+  {
+   "doc_id": "1CW1EvASZUs59yuy0JQ8OWwi6xIeXeHaW",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CW1EvASZUs59yuy0JQ8OWwi6xIeXeHaW/view",
+   "title": "잔망루피_스타필드수원_운영인건비견적서.xlsx"
+  },
+  {
+   "doc_id": "1KnYVg48urLsepBqbomD93toeQ8QxQL1v",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1KnYVg48urLsepBqbomD93toeQ8QxQL1v/view",
+   "title": "(최종)[스위트스팟] 수원스타필드 잔망루피 팝업스토어 결과보고서 (1).pdf"
+  },
+  {
+   "doc_id": "1_oeTzbF61fetyQ_w2qAzVzfW-F59Xcy1",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1_oeTzbF61fetyQ_w2qAzVzfW-F59Xcy1/view",
+   "title": "0216 스타필드수원 잔망루피 팝업 3차 공간구성안 (1).pdf"
+  },
+  {
+   "doc_id": "1eqkiV__nXHQ7x6PCfmMYrVhuQNqzp_Yp",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1eqkiV__nXHQ7x6PCfmMYrVhuQNqzp_Yp/view",
+   "title": "(최종)[스위트스팟] 수원스타필드 잔망루피 팝업스토어 결과보고서 (1).pdf"
+  },
+  {
+   "doc_id": "1gbks0WLwK2xj69dkHSnjbkJSRzFdtR7D",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1gbks0WLwK2xj69dkHSnjbkJSRzFdtR7D/view",
+   "title": "스타필드수원점 4F 특화 팝업_자점가이드.pdf"
+  },
+  {
+   "doc_id": "1w86VUsnWTJTu93eAWeO26emXO8lsgEDS",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1w86VUsnWTJTu93eAWeO26emXO8lsgEDS/view",
+   "title": "잔망루피_스타필드수원_운영인건비견적.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 5건: (최종)[스위트스팟] 수원스타필드 잔망루피 팝업스토어 , (최종)[스위트스팟] 수원스타필드 잔망루피 팝업스토어 , 0216 스타필드수원 잔망루피 팝업 3차 공간구성안 (, 잔망루피_스타필드수원_운영인건비견적서.xlsx, (최종)[스위트스팟] 수원스타필드 잔망루피 팝업스토어 . 미확실: 일자별 방문객·매출 실측 없음(주차별 집계만 존재); 총 방문객수 미상(웨이팅 등록 팀수/평균치만 제공, 실입장 총원 불명); 수수료율·고정액 등 구체 계약 숫자값 견적서 원문 미표기; 계약 총액/VAT/선금·잔금 분할 정보 없음; 기획 예상 방문객수(plan) 미표기; 면적은 도면 mm 치수(16,500x9,630)로부터 환산한 추정치"
+ }
+}

@@ -1,0 +1,148 @@
+{
+ "record_id": "RTPU2443",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:먼작귀_Chiikawa",
+  "space_id": "unresolved:용산_아이파크몰",
+  "client_party_id": "unresolved:대원미디어",
+  "brand_key": "치이카와",
+  "space_key": "용산_아이파크몰"
+ },
+ "intervention": {
+  "concept": "먼작귀(치이카와) 캐릭터 IP 팝업스토어. 키비주얼 아트워크 기반 공간 연출과 굿즈 판매 중심 구성.",
+  "brand_name": "먼작귀 팝업스토어",
+  "experience_elements": [
+   "스탬프랠리",
+   "굿즈 판매",
+   "VMD 조닝"
+  ],
+  "promotions": [
+   "스탬프랠리 도장"
+  ],
+  "staging_tags": [
+   "가벽 시공",
+   "벽면 래핑",
+   "포맥스 제작",
+   "평매/매대 VMD"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "용산",
+   "venue_name": "아이파크몰",
+   "venue_type": "쇼핑몰",
+   "foot_traffic_context": "아이파크몰 운영시간 10:00~21:00 기준 운영"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-12-12",
+   "to": "2024-12-22",
+   "days": 11
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 155,000,000원 (VAT 10% 별도, 십만원단위 이하 절사). 소계 141,300,000원 + 일반관리비/대행수수료 13,930,000원(소계의 10%, 정가항목/추가예산 진행비 제외). 정가항목 2,000,000, 제작/대여 65,000,000, 인력 62,800,000, 제경비 11,500,000, 네고항목 2,240,000."
+  },
+  "brand_requirements": [
+   "운영시간 10:00~21:00 (아이파크몰 운영시간)",
+   "설치/철수 스태프 심야 8시간 기준"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "아이파크몰 운영시간 10:00~21:00 기준 운영"
+  },
+  "derived": {
+   "duration": {
+    "days": 11,
+    "weekend_share": 0.36,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 0.4,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 85,
+    "holiday_until": 44,
+    "holiday_block_in": 0,
+    "nat_event_gap": 28,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 11,
+    "comp_prior_at_venue": 21,
+    "comp_within_500m_open": 12,
+    "comp_within_1000m_open": 12,
+    "matched_address": "서울 용산구 한강대로23길 55"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 12862800.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2024-09-01"
+   }
+  },
+  "demand_signals": {
+   "waiting_reported": true,
+   "sold_out": null,
+   "source": "역검색 외부 보도(2026-07-27)"
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 155.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 155.0 ≈ 계약총액 155.0",
+   "contract_total_mm": 155.0,
+   "last_recognition_period": "2024-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "13sBW7yr15o-sYjkPUhnKsmiT0TQDTNxa",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/13sBW7yr15o-sYjkPUhnKsmiT0TQDTNxa/view",
+   "title": "SWEETSPOT_대원미디어_먼작귀팝업견적서_0103_revised.pdf"
+  },
+  {
+   "doc_id": "1Fj7pwr5VIlGyA4Od-8OTKsxfHazk_bjK",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Fj7pwr5VIlGyA4Od-8OTKsxfHazk_bjK/view",
+   "title": "계약서 없음.txt"
+  },
+  {
+   "doc_id": "1KR3AA2jKPtmcc-vZtbcY-I_RkPJLqxtL",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1KR3AA2jKPtmcc-vZtbcY-I_RkPJLqxtL/view",
+   "title": "결과보고서 없음.txt"
+  },
+  {
+   "doc_id": "1ToE4k1ujrGgk4__TRWuszYeuuLAb_HXg",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ToE4k1ujrGgk4__TRWuszYeuuLAb_HXg/view",
+   "title": "먼작귀_팝업_제안서_v3.1_1108.pptx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 1건: SWEETSPOT_대원미디어_먼작귀팝업견적서_0103_. 미확실: 결과보고서 부재로 방문객/매출 실측 없음; venue는 견적서 내 '아이파크몰' 언급으로 추정; 면적(평) 미기재; 정확한 컨셉/체험요소는 기획서 부재로 견적 항목 기반 추정 | 외부 라벨 역검색(2026-07-27): 스코프 거부 — 보도치 30000 미채택; 수요신호 적재"
+ }
+}

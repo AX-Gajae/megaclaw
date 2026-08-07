@@ -1,0 +1,139 @@
+{
+ "record_id": "RCPU2501",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:던전밥_팝업스토어",
+  "space_id": "unresolved:여의도_더현대서울_B2",
+  "client_party_id": "unresolved:소미미디어",
+  "brand_key": "던전밥",
+  "space_key": "더현대서울"
+ },
+ "intervention": {
+  "concept": "만화·애니메이션 IP '던전밥' 기반 상품 판매형 팝업스토어. 더현대서울 지하 2층에서 7일간 운영. 포토부스 체험과 캐릭터 굿즈 판매 중심의 투어형 팝업.",
+  "brand_name": "던전밥",
+  "experience_elements": [
+   "포토부스(필름 2천장)",
+   "VMD존 전시",
+   "상품 매대 진열"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "IP/캐릭터",
+   "상품판매형",
+   "포토부스",
+   "VMD연출",
+   "신촌 제작물 재사용"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "영등포구",
+   "venue_name": "더현대서울 B2",
+   "venue_type": "백화점(유통사)",
+   "foot_traffic_context": "유통사 백화점 내 팝업 공간"
+  },
+  "area_pyeong": 40,
+  "period": {
+   "from": "2025-01-16",
+   "to": "2025-01-22",
+   "days": 7
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "견적 총계 64,200,000원(VAT 제외, 만원단위 절삭). 구성: 기획료 2,500,000 + 인테리어 44,700,000 + 판매인력 6,245,000 + 기타 7,800,000 = 소계 61,245,000, 대행수수료 4,000,000, 더현대대구점 차감 인건비 -1,000,000. 대행수수료(채용·교육·정산·CS 등 전반 업무대행) 4,000,000원. 추가비용 견적 1,746,000원(긴급채용 판매스태프·철수인건비·식음료). 지급: 선금 50%(2025-01-31까지), 잔금 50%(2025-02-17까지). LOSS 공제: 총매출 3% 이상 발생 시 제조원가(판매가의 50%) 100% 공제, 3% 이하는 통상 LOSS로 갑 부담."
+  },
+  "brand_requirements": [
+   "설치물 제작 및 설치 의무(행사 개시 전)",
+   "갑 협의 가격으로 판매 관리",
+   "판매 데이터 및 장부 비치·보관",
+   "행사주최자배상책임보험 가입",
+   "영업 종료 후 5일 이내 재고 반품"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대서울 B2"
+  },
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 1.3,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 120,
+    "holiday_until": 9,
+    "holiday_block_in": 0,
+    "nat_event_gap": 63,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 12,
+    "comp_prior_at_venue": 176,
+    "comp_within_500m_open": 12,
+    "comp_within_1000m_open": 12,
+    "matched_address": "서울 영등포구 여의대로 108"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": "결과보고서에 일자별 방문/매출 표 없음. 공간규모·콘텐츠·카테고리·기간·입지·대행범위 분류 정보만 기재됨.",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서에 실측 방문객·POS 매출 데이터가 포함되어 있지 않음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": 64.2,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1K2P6siOt2OjBpRGpO2Rk-CV-o-8sm_pY",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1K2P6siOt2OjBpRGpO2Rk-CV-o-8sm_pY/view",
+   "title": "(주)소미미디어 팝업스토어 더현대서울 위탁운영계약서_0114.pdf"
+  },
+  {
+   "doc_id": "1OGJ1MNUbobvEa26W_346JiLveXuYvUYX",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1OGJ1MNUbobvEa26W_346JiLveXuYvUYX/view",
+   "title": "더현서B2_던전밥_추가비용_0122.pdf"
+  },
+  {
+   "doc_id": "1U3cOyhhWj1xhfv-VBny5gVQM6mr8axkp",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1U3cOyhhWj1xhfv-VBny5gVQM6mr8axkp/view",
+   "title": "던전밥 결과보고서.pdf"
+  },
+  {
+   "doc_id": "1xvoJnu0xco-3BIodmLP73FqsyRdZE_4q",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1xvoJnu0xco-3BIodmLP73FqsyRdZE_4q/view",
+   "title": "더현서B2_던전밥_운영견적_1219(수정).pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 4건: (주)소미미디어 팝업스토어 더현대서울 위탁운영계약서_0, 더현서B2_던전밥_운영견적_1219(수정).pdf, 더현서B2_던전밥_추가비용_0122.pdf, 던전밥 결과보고서.pdf. 미확실: outcome.daily 및 totals(방문객·매출) 데이터 없음; 결과보고서가 분류 요약만 담고 있어 실적 미확인; 계약서(01/22)와 견적서(01/23) 종료일 불일치 — 계약서 기준 채택; 도시/구 정보는 더현대서울 위치 기반 추정; area_pyeong는 보고서의 30-50평 구간 중간값 추정"
+ }
+}

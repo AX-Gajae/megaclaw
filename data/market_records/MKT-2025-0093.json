@@ -1,0 +1,89 @@
+{
+ "market_record_id": "MKT-2025-0093",
+ "event_name": "페리페라 '핑크하구마' 이동식 팝업",
+ "brand": "페리페라 (클럽클리오)",
+ "ip_or_collab": "자체 캐릭터 '핑크하구마'",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "핑크하구마 캐릭터 콘셉트 이동식(차량) 팝업. 성수 일대 순회 1일 운영, 한정 굿즈 배포",
+  "experience_elements": [
+   "이동식 팝업 차량",
+   "캐릭터 포토존",
+   "한정 굿즈"
+  ],
+  "promotions": [
+   "선착순 한정 수량 증정"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "성동구 성수 일대(이동식)",
+  "venue_type": "other",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2025-10-03",
+  "period_to": "2025-10-03",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 0.0,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 1000,
+  "visitors_period_days": 1,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "브랜드 성료 보도 인용: 1일 약 1000명",
+  "visitors_source_quote": "첫날 약 1000명의 고객이 방문하며 뜨거운 반응을 얻었다",
+  "visitors_source_url": "https://www.meconomynews.com/news/articleView.html?idxno=121679",
+  "visitors_source_date": "2025-10-27",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": "준비한 한정 수량 조기 소진",
+   "reservation_fill": null,
+   "signal_quotes": [
+    "준비한 한정 수량이 조기 소진됐다"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "이동식 1일 팝업. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,222 @@
+{
+ "record_id": "RXPU2402",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:PPO_플라워원더랜드_플리마켓",
+  "space_id": "unresolved:평택_프리미엄아울렛_1F야외광장",
+  "client_party_id": "unresolved:평택_프리미엄아울렛_PPO",
+  "brand_key": "PPO_플라워원더랜드",
+  "space_key": "평택_프리미엄아울렛"
+ },
+ "intervention": {
+  "concept": "평택 프리미엄 아울렛 1F 야외광장에서 진행된 'FLOWER WONDERLAND' 플리마켓 팝업. 리빙·패션잡화·아동잡화·여성의류·제화·F&B 등으로 구성된 41개 매대와 2개 VP존, 조화 기반 포토존을 갖춤. 버스킹·마술·타로·달고나 등 공연 및 체험 프로그램을 양일간 운영.",
+  "brand_name": "PPO 플라워원더랜드 플리마켓",
+  "experience_elements": [
+   "MAIN VP (조화, 트럼프 카드, 토끼 꽃 토피어리, 러브 다이스 주사위 조형물, 잔디 카페트)",
+   "SUB VP (꽃 아치 조형물, 토끼 의자, 잔디 카페트)",
+   "버스킹 공연 (더웜스/기바노바)",
+   "마술쇼 (엄태민 마술사)",
+   "타로",
+   "달고나 뽑기 체험",
+   "캐릭터 솜사탕",
+   "아이와 함께하는 게임 (공던지기/풍선 다트/오리잡기)",
+   "스마트톡 만들기, 캔들/레진공예 체험, 역사지도체험, 풍선 만들기"
+  ],
+  "promotions": [
+   "타로 무료 마감 (양일 15:30~16:00)",
+   "게임 참가비 5천원 선물증정",
+   "달고나 뽑기 유료체험 선물증정"
+  ],
+  "staging_tags": [
+   "플라워원더랜드",
+   "FLOWER_WONDERLAND",
+   "조화연출",
+   "토끼조형물",
+   "트럼프카드",
+   "잔디카페트",
+   "포토존",
+   "플리마켓"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "평택",
+   "district": null,
+   "venue_name": "Pyeongtaek Premium Outlet",
+   "venue_type": "프리미엄 아울렛 1F 야외 광장",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-03-16",
+   "to": "2024-03-17",
+   "days": 2
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "구성 총계 17,000,000원 (VAT별도). 기획료 1,000,000원, 공간디자인/연출 7,650,000원(SYSTEM&SET 1,500,000 / 조명배선 250,000 / 그래픽 800,000 / 집기제작 500,000 / 진열소도구 400,000 / 포토존및연출물 2,100,000×2일=4,200,000), 시공철수 1,750,000원(양중인력 150,000×4×2=1,200,000 / 세팅운송 250,000 / 철수운송폐기 300,000), 공연 5,000,000원(마술 600,000×1×2=1,200,000 / 버스킹 500,000×2×2=2,000,000 / 타로 400,000×1×2=800,000 / 시스템셋업 500,000×1×2=1,000,000). 대행수수료 및 기업이윤은 소계의 10%, 만단위 이하 절삭. 계좌: 국민은행 378801-01-088226 주식회사 스위트스팟"
+  },
+  "brand_requirements": [
+   "PPO 입점 브랜드",
+   "VP존 2개 (3m×3m)",
+   "매대 41개 (1500×750)",
+   "부스 1개동 3m×3m(높이 4m)"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "평택 프리미엄 아울렛 1F 야외광장 플리마켓"
+  },
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  },
+  "derived": {
+   "duration": {
+    "days": 2,
+    "weekend_share": 1.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 13,
+    "holiday_until": 49,
+    "holiday_block_in": 0,
+    "nat_event_gap": 25,
+    "nat_event": null,
+    "doc_lag_days": 8,
+    "doc_dates_found": 6
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서가 제공되지 않아 실측 방문/매출 데이터 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": 17.0,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1oj7E-qpmywpihFft7t4AXEIqj3-5J1QS",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1oj7E-qpmywpihFft7t4AXEIqj3-5J1QS/view",
+   "title": "[sweetspot] 평택피피오_플리마켓_용역계약서_2024.pdf"
+  },
+  {
+   "doc_id": "1orhHcDurbBu7dfHfCXDth4NWzNqCWrcc",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1orhHcDurbBu7dfHfCXDth4NWzNqCWrcc/view",
+   "title": "[sweetspot] 평택피피오_플리마켓_용역계약서_2024.docx"
+  },
+  {
+   "doc_id": "1owbPVeat4zeWWRhWgKyCrDTXLnlECiRu",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1owbPVeat4zeWWRhWgKyCrDTXLnlECiRu/view",
+   "title": "[Sweetspot] 평택 PPO 플리마켓 행사 기획안 최종_240308.pdf"
+  },
+  {
+   "doc_id": "1owlnWZSjfTCuaN8B845XvVSBpAsO62uP",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1owlnWZSjfTCuaN8B845XvVSBpAsO62uP/view",
+   "title": "[Sweetspot] PPO_플리마켓 최종 견적서_240207.pdf"
+  },
+  {
+   "doc_id": "1pJM9Fu2At2yRqn3HekGnnvXsg_cYuCbI",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1pJM9Fu2At2yRqn3HekGnnvXsg_cYuCbI/view",
+   "title": "평택 PPO 플리마켓 행사 기획안 최종_.pptx"
+  },
+  {
+   "doc_id": "1pj9jCgCJ89_W1qzooKrhPr1ZSNlIFYby",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1pj9jCgCJ89_W1qzooKrhPr1ZSNlIFYby/view",
+   "title": "평택PPO_플라워 인 원더랜드 행사 집행 비용.xlsx"
+  },
+  {
+   "doc_id": "1qXusLyyt5EIZi27gI4rgTj0ZTpu_Y9zQ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1qXusLyyt5EIZi27gI4rgTj0ZTpu_Y9zQ/view",
+   "title": "공연업체_PPO 2024 최종 견적서_기록용_세라 작성.pdf"
+  },
+  {
+   "doc_id": "1qm3xIHIFdkWDsBZpmi9NjS4pdZ5iYnDe",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1qm3xIHIFdkWDsBZpmi9NjS4pdZ5iYnDe/view",
+   "title": "PPO 공연 대금 세금계산서.pdf"
+  },
+  {
+   "doc_id": "1roOJYVeUkW_Qo4RX8CjHRyZeqedeSAyW",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1roOJYVeUkW_Qo4RX8CjHRyZeqedeSAyW/view",
+   "title": "[베스트원] 스위트스팟 플리마켓 용역 계약서.pdf"
+  },
+  {
+   "doc_id": "1rrvxgdAf6zA1hUGVzck-441TxCGrfY8x",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1rrvxgdAf6zA1hUGVzck-441TxCGrfY8x/view",
+   "title": "[베스트원] 스위트스팟 플리마켓 용역 계약서.pdf"
+  },
+  {
+   "doc_id": "1rteds1sjtex1sNbmqnWgNM56KbZygsSQ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1rteds1sjtex1sNbmqnWgNM56KbZygsSQ/view",
+   "title": "[Sweetspot] PPO_플리마켓 최종 견적서_240207.pdf"
+  },
+  {
+   "doc_id": "1ruLtdTdoyMuEos_cZ5akCK6CZt5UHO4l",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1ruLtdTdoyMuEos_cZ5akCK6CZt5UHO4l/view",
+   "title": "[Sweetspot] 평택 PPO 플리마켓 행사 기획안 최종_240308.pdf"
+  },
+  {
+   "doc_id": "1rv-JOnEOmQuD9cvflQwS4v0a30km2wfc",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1rv-JOnEOmQuD9cvflQwS4v0a30km2wfc/view",
+   "title": "[Sweetspot] 평택 PPO 플리마켓 행사 기획안 최종_240308.pdf"
+  },
+  {
+   "doc_id": "1rwidEpElXzf_TMVlu-RBrOuyUpcdwLM7",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1rwidEpElXzf_TMVlu-RBrOuyUpcdwLM7/view",
+   "title": "[Sweetspot] PPO_플리마켓 최종 견적서_240207.pdf"
+  },
+  {
+   "doc_id": "1tKjPDUiKitB3H6bHzSq6Snk_WmPe-niR",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1tKjPDUiKitB3H6bHzSq6Snk_WmPe-niR/view",
+   "title": "[sweetspot] 평택피피오_플리마켓_용역계약서_2024.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: [Sweetspot] 평택 PPO 플리마켓 행사 기획안, [Sweetspot] PPO_플리마켓 최종 견적서_24, [Sweetspot] PPO_플리마켓 최종 견적서_24. 미확실: 결과보고서 부재로 outcome 전체(일일 방문자·매출·집계방식) 확인 불가; 기획서에 예상 방문자 수 미기재; 면적(평) 미기재; 입지 상권/유동인구 컨텍스트 미기재; 계약 분할(선금/중도금/잔금) 정보 없음"
+ }
+}

@@ -1,0 +1,85 @@
+{
+ "market_record_id": "MKT-2025-0114",
+ "event_name": "신세계백화점 크리스마스 마켓 '신세계 원더랜드' @강남점",
+ "brand": "신세계백화점",
+ "ip_or_collab": null,
+ "category": "other",
+ "intervention": {
+  "concept_description": "유럽 감성 크리스마스 마켓(리빙 편집숍·어드벤트 캘린더 등 소품 팝업)",
+  "experience_elements": [
+   "트리로드 크리스마스 숲길·포토존"
+  ],
+  "promotions": [
+   "MZ 감성 리빙 편집숍·독일 어드벤트 캘린더 판매"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "신세계백화점 강남점 지하 1층 '트리로드'",
+  "venue_type": "department_store",
+  "neighborhood": "반포",
+  "city": "서울",
+  "period_from": "2025-11-07",
+  "period_to": "2025-12-30",
+  "area_pyeong": null,
+  "multi_store": null,
+  "derived": {
+   "duration": {
+    "days": 54,
+    "weekend_share": 0.3,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 12000,
+  "visitors_period_days": 3,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "파이낸셜뉴스 보도(신세계 제공): '신세계백화점이 강남점에 선보인 신세계 원더랜드에는 지난 주말(7~9일)에만 1만2000여명이 다녀가는' (개장 첫 주말 3일, 최종 총계 아님)",
+  "visitors_source_quote": "신세계백화점이 강남점에 선보인 '신세계 원더랜드'에는 지난 주말(7~9일)에만 1만2000여명이 다녀가는 등 높은 관심을 이끌어내고 있다.",
+  "visitors_source_url": "https://www.fnnews.com/news/202511101519468688",
+  "visitors_source_date": "2025-11-10",
+  "sales_krw": null,
+  "sales_source_quote": "",
+  "sales_source_url": "",
+  "sales_source_date": "",
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "시즌성 크리스마스 마켓(팝업 부스형). 11/7~9 첫 주말 1만2000명. 11/14부터 본점 '더 헤리티지 4층'에서도 운영 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

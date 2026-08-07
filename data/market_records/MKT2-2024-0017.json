@@ -1,0 +1,81 @@
+{
+ "market_record_id": "MKT2-2024-0017",
+ "event_name": "나가노마켓 팝업스토어 (국내 최초)",
+ "brand": "아이파크몰",
+ "ip_or_collab": "치이카와(먼작귀)/나가노마켓",
+ "category": "character",
+ "intervention": {
+  "concept_description": "매출 총액 미보도 — 1인 최고 구입액 200만원만 보도되어 sales_krw 미기재. 예약 폭주 원문: '예약사이트 오픈 직후 접속자 수가 최대 18만명이 몰릴 정도로 인기가 대단했다', '현재 사전 예약은 전 시간대 마감됐다'(매일경제 2024-09-10, 원문 https://www.mk.co.kr/news/economy/11114257 직접 fetch",
+  "experience_elements": [],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "아이파크몰 용산점 리빙파크 3층",
+  "venue_type": "other",
+  "neighborhood": null,
+  "city": "서울",
+  "period_from": "2024-09-06",
+  "period_to": "2024-09-20",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 15,
+    "weekend_share": 0.27,
+    "holiday_days": 3
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 7500,
+  "visitors_period_days": null,
+  "counting_basis": "media_estimate",
+  "counting_basis_note": "원문 표현 '이날도 하루 10타임, 타임당 150명의 고객이 팝업 행사장을 찾았다. 하루 1500명, 이날까지 7500명이 행사를 방문한 셈이다' — 예약 타임 정원(10타임x150명)으로 매체가 환산한 5일차 누계, 최종 총계 아님",
+  "visitors_source_quote": "하루 1500명, 이날까지 7500명이 행사를 방문한 셈이다.",
+  "visitors_source_url": "https://v.daum.net/v/20240910162100230",
+  "visitors_source_date": "2024-09-10",
+  "sales_krw": null,
+  "sales_source_quote": "이번 행사에서 1인 최고 구입액은 9일(전날) 기준 200만원이었다고 한다.",
+  "sales_source_url": "https://v.daum.net/v/20240910162100230",
+  "sales_source_date": "2024-09-10",
+  "demand_signals": {
+   "waiting_time_reported": "사전예약 사이트 오픈 직후 접속자 최대 18만명, 전 시간대 마감",
+   "sold_out": "사전예약 전 시간대 조기 마감",
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "E",
+   "flags": [],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "매출 총액 미보도 — 1인 최고 구입액 200만원만 보도되어 sales_krw 미기재. 예약 폭주 원문: '예약사이트 오픈 직후 접속자 수가 최대 18만명이 몰릴 정도로 인기가 대단했다', '현재 사전 예약은 전 시간대 마감됐다'(매일경제 2024-09-10, 원문 https://www.mk.co.kr/news/economy/11114257 직접 fetch 차단 → 다음 미러). 교차 보도: 뉴시스 2024-10-25 '사전 예약 사이트 오픈 당일 18만명의 접속자가 몰리면서', '예약 가능한 모든 시간대가 조기 마감 됐다' https://www.newsis.com/view/NISX20241024_0002933352 . 9/6~9/13 사전예약, 9/14~9/20 현장 대기. | 2차 수집(2026-07-27)",
+ "verification": {
+  "visitors": "verified"
+ }
+}

@@ -1,0 +1,112 @@
+{
+ "market_record_id": "MKT-2024-0096",
+ "event_name": "티르티르 'FIND YOUR TIRTIR' 팝업스토어",
+ "brand": "티르티르",
+ "ip_or_collab": "자체 브랜드 월드관",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "브랜드 월드관 콘셉트 대형 팝업. AI 퍼스널 컬러 진단, 포토 부스, 제품 체험존",
+  "experience_elements": [
+   "AI 컬러 진단",
+   "포토 부스",
+   "제품 체험존"
+  ],
+  "promotions": [
+   "현장 구매 혜택",
+   "선착순 증정"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "MM성수",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2024-12-12",
+  "period_to": "2025-01-12",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 32,
+    "weekend_share": 0.31,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 43000,
+  "visitors_period_days": 32,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "브랜드 성료 보도 인용: 약 한 달간 누적 4만3000명",
+  "visitors_source_quote": "누적 방문객 4만3000명을 기록했다",
+  "visitors_source_url": "https://www.epnc.co.kr/news/articleView.html?idxno=312780",
+  "visitors_source_date": "2025-01-13",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "평일에도 2시간 이상 대기 발생",
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "하루 평균 1000명 이상이 방문했고, 평일에도 2시간 이상 대기하는 진풍경이 펼쳐졌다",
+    "특히 팝업스토어에 입장하기 위해 2시간 이상 대기 줄이 발생하는 등 문전성시를 이루었고 내국인은 물론, 외국인 관광객의 발길이 끊이지 않아 글로벌 브랜드로서의 인지도와 'Be You, Be Confident'라는 새로운 슬로건을 명확하게 알리는 계기가 되었다는 것이 티르티르 측의 설명이다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [
+   {
+    "value": 40000,
+    "basis": "organizer_claim(초기 성료 보도)",
+    "source_quote": "약 4만 명의 방문객",
+    "source_url": "https://www.tnnews.co.kr/news/articleView.html?idxno=미확인",
+    "source_date": "2025-01-13",
+    "note": "초기 보도 일부는 '약 4만 명'으로 반올림 표기. conflict 아닌 표기 차이로 판단"
+   }
+  ],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "연도 구분은 개시일(2024-12-12) 기준. alt_figures의 tnnews URL 미확정으로 표기. | 병합 레코드: MKT-2024-0016 | [병합:MKT-2024-0016] 4만3천(시장경제·뉴스탭 등) vs 약 4만(글로벌에픽·문화뉴스·티엔뉴스) 반올림 차이로 상충 표기.",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 43000,
+   "basis": "organizer_claim",
+   "quote": "발표에 따르면 MZ들의 핫플레이스 성수동에서 진행된 이번 티르티르 팝업스토어에는 일 평균 1,000명 이상 방문, 약 한 달간 총 누적 방문자 수 4만 3,000명을 기록하며 뜨거운 호응을 얻었다.",
+   "url": "https://www.meconomynews.com/news/articleView.html?idxno=107231",
+   "date": "2025-01-13"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

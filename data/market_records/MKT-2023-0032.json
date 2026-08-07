@@ -1,0 +1,87 @@
+{
+ "market_record_id": "MKT-2023-0032",
+ "event_name": "SKT 'A.(에이닷) 프렌즈' 팝업스토어",
+ "brand": "SK텔레콤",
+ "ip_or_collab": "에이닷 캐릭터",
+ "category": "electronics",
+ "intervention": {
+  "concept_description": "AI 서비스 '에이닷' 캐릭터 테마 체험 팝업. AI 체험존과 캐릭터 굿즈",
+  "experience_elements": [
+   "에이닷 AI 체험",
+   "캐릭터 포토존",
+   "굿즈 판매"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "잠실 롯데월드 어드벤처 내 광장",
+  "venue_type": "other",
+  "neighborhood": "잠실",
+  "city": "서울",
+  "period_from": "2023-08-11",
+  "period_to": "2023-08-20",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 6000,
+  "visitors_period_days": 2,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "SKT 발표(개장 이틀 만의 누적 수치, 전체 기간 누적 미공개). 본문: '이틀 만에 일 평균 3천 명'",
+  "visitors_source_quote": "SK텔레콤의 인공지능(AI) 서비스 '에이닷' 캐릭터 팝업스토어에 이틀 만에 6000명이 다녀갔다.",
+  "visitors_source_url": "https://www.newsis.com/view/NISX20230813_0002412140",
+  "visitors_source_date": "2023-08-13",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "팝업스토어에는 개장 이후 이틀 만에 일 평균 3천 명이 방문하는 등 관심이 모이고 있다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "6000명은 이틀치 누적(기사 발표 시점). 전체 운영 기간 총계 환산 금지. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

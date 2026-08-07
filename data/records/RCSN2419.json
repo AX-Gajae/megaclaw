@@ -1,0 +1,146 @@
+{
+ "record_id": "RCSN2419",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:아모레퍼시픽",
+  "space_id": "unresolved:미상",
+  "client_party_id": null,
+  "brand_key": "아모레퍼시픽",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "아모레퍼시픽 크리스마스 마켓 팝업. 원문 문서가 제공되지 않아 상세 컨셉 확인 불가.",
+  "brand_name": "아모레퍼시픽",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-12-09",
+   "to": "2024-12-22",
+   "days": 14
+  },
+  "season": "겨울/크리스마스",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 82,
+    "holiday_until": 47,
+    "holiday_block_in": 0,
+    "nat_event_gap": 25,
+    "nat_event": null,
+    "doc_lag_days": 0,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 410345.0,
+    "pnl_pre_accounts": 2,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2024-10-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": 327148730,
+   "rev_mm_recognized": 71.8
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-12, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-01"
+  },
+  "sales_basis": "PnL 상품매출 양수계정 합 × 1.1 (부가세 포함 기준)",
+  "label_history": [
+   {
+    "at": "pnl_sales (2026-07-28)",
+    "action": "mine",
+    "changes": [
+     "sales_krw 327,148,730 (PnL 총 결제액)"
+    ],
+    "evidence": "core.project_pnl_monthly 상품매출 양수계정 합 297,407,936(공급가) × 1.1, 인식 2개월"
+   }
+  ]
+ },
+ "docs": [
+  {
+   "doc_id": "1-4xTc5USejrIJBr0TOHDhpsudxhfBiwg",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1-4xTc5USejrIJBr0TOHDhpsudxhfBiwg/view",
+   "title": "견적서_내용없음.txt"
+  },
+  {
+   "doc_id": "19YMv18tsURmjYf3_ZB-3TgL5HgBhT_rZ",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/19YMv18tsURmjYf3_ZB-3TgL5HgBhT_rZ/view",
+   "title": "24.12 아모레퍼시픽 크리스마스 팝업 수익 예산 및 결과 (feedback) (1).xlsx"
+  },
+  {
+   "doc_id": "1EoAOd-3harlbNQ4Pn8QgoH75SbHb4gle",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1EoAOd-3harlbNQ4Pn8QgoH75SbHb4gle/view",
+   "title": "아모레퍼시픽 공간사용협약서(계약서) 20241209-20241224.pdf"
+  },
+  {
+   "doc_id": "1X8TVRCT1gzMlyhU_tpey4s8OHAqHbJmu",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1X8TVRCT1gzMlyhU_tpey4s8OHAqHbJmu/view",
+   "title": "[Sweetspot] 아모레에비뉴 12월 팝업 진행 계획안 제안서_최종본.pdf"
+  },
+  {
+   "doc_id": "1p0sZbZYDsPyFjq5dOpT35Mjy1QZy8FJT",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1p0sZbZYDsPyFjq5dOpT35Mjy1QZy8FJT/view",
+   "title": "[Sweetspot] 아모레퍼시픽 Whispers of Winter gift 행사 결과보고서.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 미제공; client_name; venue; 위치정보; 면적; 수수료구조; 체험요소·프로모션·연출태그; 방문객수 및 매출 실측치; counting_method 판정근거"
+ }
+}

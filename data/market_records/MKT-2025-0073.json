@@ -1,0 +1,73 @@
+{
+  "market_record_id": "MKT-2025-0073",
+  "event_name": "로라로라(rolarola) 더현대 서울 팝업스토어",
+  "brand": "로라로라 (바이와이제이)",
+  "ip_or_collab": null,
+  "category": "fashion",
+  "intervention": {
+    "concept_description": "프렌치 감성 영 클래식 브랜드 팝업, 매장 무드 연출·익스클루시브 아이템",
+    "experience_elements": [
+      "브랜드 무드 매장 연출"
+    ],
+    "promotions": [
+      "스페셜 기프트 증정"
+    ],
+    "is_free_entry": null,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "더현대 서울",
+    "venue_type": "department_store",
+    "neighborhood": "여의도",
+    "city": "서울",
+    "period_from": "2025-08-12",
+    "period_to": "2025-09-14",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 34,
+        "weekend_share": 0.29,
+        "holiday_days": 1
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 34,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "브랜드 발표 인용",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": 500000000,
+    "sales_source_quote": "또한 로라로라의 기존 팬들은 물론 제품을 구매한 고객들의 재방문이 이어지며 한 달여간 약 5억여원의 매출을 달성 하며, 브랜드의 높은 충성도와 인기를 보여주는 유의미한 성과를 남겼다.",
+    "sales_source_url": "https://www.apparelnews.co.kr/news/news_view/?idx=220349",
+    "sales_source_date": "2025-09-23",
+    "demand_signals": {
+      "waiting_time_reported": "오픈 첫 주부터 긴 대기 행렬",
+      "sold_out": "메종 드 로라 티셔츠·가을 신상품 일부 빠르게 품절",
+      "reservation_fill": null,
+      "signal_quotes": [
+        "팝업스토어 오픈 첫 주부터 긴 대기 행렬이 이어지고, 브랜드의 시그니처 티셔츠인 '메종 드 로라' 티셔츠와 가을 신상품 중 일부가 빠르게 품절됐다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "동 기사에 도쿄 신주쿠 루미네 팝업(해외)은 수집 제외. | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {
+    "sales": "num_only"
+  },
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

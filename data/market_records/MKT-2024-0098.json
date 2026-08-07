@@ -1,0 +1,95 @@
+{
+ "market_record_id": "MKT-2024-0098",
+ "event_name": "젠레스 존 제로 겨울 팝업스토어(애플 앱스토어 협업)",
+ "brand": "호요버스/애플 앱스토어",
+ "ip_or_collab": "젠레스 존 제로 (호시미 미야비)",
+ "category": "game_webtoon",
+ "intervention": {
+  "concept_description": "1.4 버전 '쏟아지는 별의 폭풍' 업데이트 기념, 신규 에이전트 호시미 미야비 테마. 아이폰16 프로 스페셜 에디션, 시연존, Bangboo 틱택토, COFF CAFE 구현",
+  "experience_elements": [
+   "아이폰16 프로/맥스 시연존",
+   "Bangboo 틱택토 게임",
+   "신입 조사원증 발급 이벤트",
+   "게임 속 COFF CAFE 구현"
+  ],
+  "promotions": [
+   "스페셜 에디션 아이폰 16 프로 패키지 한정 판매(29CM 사전 판매 2회)"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "성수동(팝업 공간)",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수",
+  "city": "서울",
+  "period_from": "2024-12-19",
+  "period_to": "2024-12-23",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 5,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 6000,
+  "visitors_period_days": 5,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "호요버스 발표 인용: '팝업스토어 현장은 안전하고 쾌적한 관람 및 체험을 위해 사전 예약제로 운영됐으며, 5일간 총 6000여명이 방문하며 북새통을 이뤘다'",
+  "visitors_source_quote": "팝업스토어 현장은 안전하고 쾌적한 관람 및 체험을 위해 사전 예약제로 운영됐으며, 5일간 총 6000여명이 방문하며 북새통을 이뤘다.",
+  "visitors_source_url": "https://www.tgdaily.co.kr/news/articleView.html?idxno=337188",
+  "visitors_source_date": "2024-12-24",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": "스페셜 에디션 아이폰 16 프로 패키지 29CM 사전 판매 2차례 모두 오픈 직후 초고속 매진",
+   "reservation_fill": "사전 예약제 운영",
+   "signal_quotes": [
+    "특히 두 차례에 걸쳐 한정 수량 사전 판매된 스페셜 에디션 아이폰 16 프로 패키지는 오픈 직후 초고속 매진을 기록하며 이번 협업에 대한 팬들의 뜨거운 관심을 증명했다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "주간한국·엑스포츠뉴스 등 다수 매체 동일 수치(6000여 명/5일). | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

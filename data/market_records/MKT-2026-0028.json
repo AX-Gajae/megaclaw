@@ -1,0 +1,79 @@
+{
+  "market_record_id": "MKT-2026-0028",
+  "event_name": "Perfumer H(퍼퓨머 에이치) 팝업스토어(현대백화점 압구정본점)",
+  "brand": "Perfumer H(SIMPAC그룹)",
+  "ip_or_collab": null,
+  "category": "beauty",
+  "intervention": {
+    "concept_description": "영국 향수 브랜드, 도산 플래그십 티룸 세계관을 백화점으로 확장. 향·티·배스 리추얼 라이프스타일 제안, VIP 도슨트 프로그램",
+    "experience_elements": [
+      "향수·배스 리추얼 판매",
+      "도슨트 프로그램(VIP)",
+      "시그니처 기프트 래핑"
+    ],
+    "promotions": [
+      "구매 금액대별 혜택",
+      "럭키 드로우"
+    ],
+    "is_free_entry": null,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "현대백화점 압구정본점 3층 팝업존",
+    "venue_type": "department_store",
+    "neighborhood": "압구정",
+    "city": "서울",
+    "period_from": "2026-05-01",
+    "period_to": "2026-05-21",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 21,
+        "weekend_share": 0.29,
+        "holiday_days": 1
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 21,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "SIMPAC그룹 사보(SIMPAC Magazine Vol.61) '팝업 행사 기간 동안 총매출 1억 1,483만 원을 기록하며 목표 대비 143.5%를 달성했다'",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": 114830000,
+    "sales_source_quote": "팝업 행사 기간 동안 총매출 1억 1,483만 원을 기록하며 목표 대비 143.5%를 달성했다. 전체 구매 고객 중 신규 고객 비중은 64.2%로, 기존 팬층을 넘어 새로운 고객과 만나는 접점을 넓히는 계기가 됐다.",
+    "sales_source_url": "https://simpacstory.com/webzine/vol61/article-now-news.html",
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "전체 구매 고객 중 신규 고객 비중은 64.2%",
+        "내국인 고객 비중도 86.7%에 달해",
+        "제품 카테고리별로는 베이딩 컬렉션의 성과가 두드러졌다. 전체 판매 수량의 45.2%를 차지하며 큰 호응을 얻었다"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "팝업 기간 2026-05-01~21은 Y노블레스(2026-05-01) 오픈 기사로 확정. 성료 보도(SIMPAC 사보 Vol.61)는 발행일 미표기(2026년 6월 중순 이후 발행)로 source_date null 처리 | 병합 레코드: ",
+  "sales_source_date_note": "SIMPAC Magazine Vol.61 발행일 미표기(내용상 2026-06-16 이후)",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {
+    "sales": "quote_only"
+  },
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

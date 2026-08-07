@@ -1,0 +1,59 @@
+{
+  "record_id": "RTPU2621",
+  "schema_version": "0.1",
+  "entities": {
+    "brand_id": "unresolved:BMW",
+    "space_id": "unresolved:성수_차봇",
+    "client_party_id": null
+  },
+  "intervention": {
+    "concept": "BMW YIDP 2026 프로그램 관련 사회공헌 버짓형 팝업스토어. 세부 컨셉·MD 구성 기획서 본문은 미확보.",
+    "brand_name": "BMW",
+    "experience_elements": [],
+    "promotions": [],
+    "staging_tags": []
+  },
+  "conditions": {
+    "location": {
+      "city": "서울",
+      "district": "성수",
+      "venue_name": "성수 차봇",
+      "venue_type": "자사 관리 공간",
+      "foot_traffic_context": null
+    },
+    "area_pyeong": null,
+    "period": {
+      "from": "2026-07-10",
+      "to": "2026-07-12",
+      "days": 3
+    },
+    "season": "여름",
+    "fee_structure": {
+      "type": "agency_fee",
+      "detail": "확정예산 144,000,000원(Notion 확정 행사 예산, VAT 포함 여부 불명). 수익률 1.0·이윤 144,000,000원으로 버짓형/대행 구조상 예산=이윤 처리. Sophy budget_won은 150,000,000원(초기/반올림 추정). 시드 손익 2026 1~5월 rev 15백만/net 15백만(선금 성격 추정). 선금/중도금/잔금 분할·수수료율·RS 조건 미기재."
+    },
+    "brand_requirements": [
+      "주류판매 불가",
+      "취사 불가",
+      "급배수·수도 가능",
+      "유리벽 래핑 가능"
+    ]
+  },
+  "outcome": {
+    "daily": [],
+    "totals": {
+      "visitors": null,
+      "sales_krw": null,
+      "rev_mm_recognized": 15.0
+    },
+    "retention": null,
+    "source": "visitors/sales: 결과보고서 LLM 추출(운영 시작 직전(조사 시점) 상태로 방문객·매출 실측 데이터 없음. 아마란스 운영·정산 미개시.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조"
+  },
+  "docs": [],
+  "provenance": {
+    "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+    "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+    "extracted_at": "2026-07-23",
+    "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 발주처/계약주체·담당자 컨택(BMW 코리아 vs 대행사) 미확정; 계약서·견적서 원문 미확보로 수수료 분할·수수료율·RS 조건 불명; VAT 포함 여부 불명; 면적(pyeong) 미상; 행사 컨셉·YIDP 프로그램 정의·MD 구성·체험요소·프로모션·연출태그 미확보; 시공사/벤더 미상; 방문객·판매 실적 없음(운영 전); 실 매출·순손익 확정치 미상"
+  }
+}

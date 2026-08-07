@@ -1,0 +1,379 @@
+{
+ "record_id": "RIPU2501",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:힘펠",
+  "space_id": "unresolved:미상",
+  "client_party_id": null,
+  "brand_key": "힘펠",
+  "space_key": "현대백화점_판교점",
+  "space_key_source": "venue_key 정규화 (venue_name 매칭)"
+ },
+ "intervention": {
+  "concept": "'숨쉬는 욕실'(REST ROOM PLANTERIOR)을 콘셉트로 한 힘펠 브랜드 및 휴젠뜨(욕실 환기·건조 제품) 팝업스토어. 브랜드와 제품이 지향하는 이미지를 인식시키는 디자인 공간과 콘텐츠를 제안하고, '구경→체험→상담→구매' 프로세스로 연결한다. 현대백화점 판교점과 신촌점 두 지점에서 운영.",
+  "brand_name": "힘펠(휴젠뜨)",
+  "experience_elements": [
+   "중앙 전시월",
+   "휴젠뜨 제품 시연 부스존",
+   "정압 비교존",
+   "전동 댐퍼 전시",
+   "인포데스크",
+   "키오스크 밸런스 게임(나에게 필요한 휴젠뜨 기능)",
+   "10초를 잡아라 게임존",
+   "팜플렛(A4 3단접지) 배포",
+   "구매 상담 공간"
+  ],
+  "promotions": [
+   "상담 이벤트: 상담 시 힘펠 디퓨저(100ml, Aesop Parsley seed 향) 증정, 판교 선착순 600명/신촌 선착순 500명",
+   "구매 시 현대백화점 상품권/H.POINT 증정(40만원↑2만·60만원↑3만·80만원↑4만·100만원↑5만)",
+   "키오스크 밸런스 게임 완료 시 에코백 증정(1000개)",
+   "10초를 잡아라 성공 시 휴젠뜨 제품 무상 증정",
+   "뽑기 이벤트(신촌): 1등 휴젠뜨3·2등 팔레트·3등 노바·4등 에어모니터 397개, 캡슐 총 400개",
+   "SNS 팔로우 이벤트(신촌): 인스타 팔로우 시 에코백 증정"
+  ],
+  "staging_tags": [
+   "플랜테리어",
+   "숨쉬는 욕실",
+   "백화점 팝업",
+   "제품 시연",
+   "키오스크 게임"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": 1000,
+   "area_sqm": 99.5,
+   "planned_operating_days": 13,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": 9.5,
+   "staff_count": 2,
+   "experience_density": 3,
+   "goods_scale": 1,
+   "photo_zones": 1,
+   "collab_strength": 0,
+   "ip_awareness": 1,
+   "target_breadth": 2,
+   "entry_friction": 0,
+   "media_push": 1,
+   "season_fit": 2,
+   "venue_prominence": 1
+  },
+  "attr_meta": {
+   "evidence": "판교 운영안(최종) 행사 개요 '2025년 3월 10일 ~ 3월 23일'(14일) + 근무 스케줄 각주 '* 17일 (월) 백화점 휴점으로 휴무' → 실운영 13일. 계약서 제2조③은 '2025년 3월 3일(월)~ (2주간 운영, 상황에 따라 일정 변경)'로 시작일이 다름(레코드 period.from 3/3은 계약서 기준). operating_hours_per_day=9.5는 평일 근무표 10:00~10:30 오픈준비 후 10:30~20:00 운영(주말은 20:30까지). staff_count=2는 스태프 업무표 '키오스크 이벤트 운영 1 / 10초를 잡아라 이벤트 운영 1', 주말만 '팜플렛 배포 1' 추가되어 3명. giveaway_qty=1000은 키오스크 밸런스 게임 증정 '에코백 1000개'(별도로 상담 이벤트 디퓨저 선착순 600명, 투명봉투 650장 구매 — 총 방문 예상치가 아니라 선착순 상한이라 plan_visitors_per_day는 null). area_sqm=99.5는 레코드 30.1평×3.3058이며 운영안 도면 '전체사이즈 : 12,600 x 7,900 mm'(=99.54㎡)와 일치. 시연부스존·정압비교존·키오스크 게임·10초를 잡아라 등 체험 있으나 기기 대수·소요시간 미기재로 throughput/unit_minutes null. 굿즈 없이 휴젠뜨 제품 판매만, 현대백화점 판교점 7F 상층.",
+   "confidence": "medium",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "capacity": {
+   "access_type": "open",
+   "total_capacity": null,
+   "detail": ""
+  },
+  "location": {
+   "city": "성남시",
+   "district": "분당구",
+   "venue_name": "현대백화점 판교점 7F",
+   "venue_type": "백화점",
+   "foot_traffic_context": "백화점 내 매장(판교점 7F, 신촌점 1F)",
+   "venue_slot": "7F"
+  },
+  "area_pyeong": 30.1,
+  "period": {
+   "from": "2025-03-03",
+   "to": "",
+   "days": null
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [
+   "스태프 의상: 초록색 가디건+흰 바지+운동화+힘펠 로고 가슴 명찰",
+   "3월 17일(월) 백화점 휴점으로 휴무"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 0,
+    "holiday_until": 0,
+    "holiday_block_in": 1,
+    "nat_event_gap": 92,
+    "nat_event": null,
+    "doc_lag_days": 53,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 10,
+    "comp_prior_at_venue": 54,
+    "comp_within_500m_open": 10,
+    "comp_within_1000m_open": 10,
+    "matched_address": "경기 성남시 분당구 판교역로146번길 20"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 10692526.0,
+    "pnl_pre_accounts": 6,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-02-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 30000,
+   "popup_zone_pass_rate": 0.2,
+   "host_traffic_est": 6000.0,
+   "venue_scale_tier": 2,
+   "confidence": "medium",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2025-03-10",
+    "visitors": 157,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-03-11",
+    "visitors": 168,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-03-12",
+    "visitors": 172,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-03-13",
+    "visitors": 161,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-03-14",
+    "visitors": 185,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-03-15",
+    "visitors": 549,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-03-16",
+    "visitors": 688,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-03-17",
+    "visitors": null,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-03-18",
+    "visitors": 179,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-03-19",
+    "visitors": 184,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-03-20",
+    "visitors": 153,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-03-21",
+    "visitors": 182,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-03-22",
+    "visitors": 618,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-03-23",
+    "visitors": 539,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-04-25",
+    "visitors": 137,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-04-26",
+    "visitors": 139,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-04-27",
+    "visitors": 150,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-04-28",
+    "visitors": 59,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-04-29",
+    "visitors": 58,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-04-30",
+    "visitors": 47,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-05-01",
+    "visitors": 104,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-05-02",
+    "visitors": 81,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-05-03",
+    "visitors": 68,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-05-04",
+    "visitors": 59,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-05-05",
+    "visitors": 64,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-05-06",
+    "visitors": 77,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-05-07",
+    "visitors": 61,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-05-08",
+    "visitors": 52,
+    "sales_krw": null
+   }
+  ],
+  "totals": {
+   "visitors": 5091,
+   "sales_krw": null,
+   "rev_mm_recognized": 534.6
+  },
+  "counting_method": "participation",
+  "counting_basis": "현장 참가자 수",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "unknown",
+   "rule": "총액 불명·최근 종료",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-11"
+  },
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "label_scope": {
+   "label_from": "2025-03-10",
+   "label_to": "2025-05-08",
+   "label_active_days": 28,
+   "label_span_days": 60,
+   "label_contiguous": false,
+   "daily_sum": 5091,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1P6h8_WHpA2kgjnaNKKbw6RsjjCXcz8FN",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1P6h8_WHpA2kgjnaNKKbw6RsjjCXcz8FN/view",
+   "title": "[스위트스팟] 힘펠_팝업(판교점) 결과보고서.pdf"
+  },
+  {
+   "doc_id": "1W0HWmk3O2Es8SGap2jp2RvFLkrDzQAtv",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1W0HWmk3O2Es8SGap2jp2RvFLkrDzQAtv/view",
+   "title": "(스위트스팟)_신촌점 견적서_0512.pdf"
+  },
+  {
+   "doc_id": "1YVv-1ODKWrVSNom0Lw_TYNGmzhROUBmM",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1YVv-1ODKWrVSNom0Lw_TYNGmzhROUBmM/view",
+   "title": "힘펠 견적서_0312.pdf"
+  },
+  {
+   "doc_id": "1qLe-wyB8H0WJkCwX0p2maAGX0YHRZxjW",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1qLe-wyB8H0WJkCwX0p2maAGX0YHRZxjW/view",
+   "title": "힘펠 견적서_보관 견적 0312.pdf"
+  },
+  {
+   "doc_id": "1qg7NIh58o4DJCofgZmXqoxhpnREWsfw1",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1qg7NIh58o4DJCofgZmXqoxhpnREWsfw1/view",
+   "title": "[스위트스팟] 힘펠_신촌점 팝업 결과보고서.pdf"
+  },
+  {
+   "doc_id": "1w4IdHN9OGDEIh3SALWdG5ZJtGC1ZILwq",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1w4IdHN9OGDEIh3SALWdG5ZJtGC1ZILwq/view",
+   "title": "[스위트스팟] 힘펠 팝업 제안서_250109.pdf"
+  },
+  {
+   "doc_id": "1zPhXrOvoiVRkcfLnpklDy_jc0sRDSlUb",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1zPhXrOvoiVRkcfLnpklDy_jc0sRDSlUb/view",
+   "title": "[스위트스팟]힘펠 팝업스토어 계약서 날인본.pdf"
+  },
+  {
+   "doc_id": "1xD2FhaC1ji_wk-E5JTnmcVgmz7zm8wFe",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1xD2FhaC1ji_wk-E5JTnmcVgmz7zm8wFe/view",
+   "title": "[스위트스팟] 힘펠_팝업 운영안_최종.pdf"
+  },
+  {
+   "doc_id": "1O3ITL4WR_fhwCIS1uym0Z9k2WA4NGBFs",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1O3ITL4WR_fhwCIS1uym0Z9k2WA4NGBFs/view",
+   "title": "[스위트스팟] 힘펠_신촌점 팝업 운영안_0423.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서 텍스트가 전혀 제공되지 않음(연구 요약 비어있음); client_name 미상; venue 정보 없음; 운영 종료일(operating_to) 없음; 면적/수수료구조/계약금액 미상; 체험요소·프로모션·연출 미상; 실측 방문/매출 데이터 없음; counting_method 판정 불가 | 라벨발굴(2026-07-24): 결과보고서 재추출 — 두 보고서 '1.행사 개요 - 방문자 현황' 표(판교점 총 3,935명, 신촌점 총 1,156명). 판매현황 | 자극 보강(2026-07-24): 운영안·기획안·계약서 재인제스트로 intervention/conditions 교체 (558→1323자, capacity=open). outcome·entities·period 보존"
+ }
+}

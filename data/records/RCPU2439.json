@@ -1,0 +1,137 @@
+{
+ "record_id": "RCPU2439",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:포켓몬_PCG_아시아컵",
+  "space_id": "unresolved:코엑스",
+  "client_party_id": "unresolved:빅픽처인터렉티브",
+  "brand_key": "포켓몬",
+  "space_key": "코엑스"
+ },
+ "intervention": {
+  "concept": "2026 PCG(포켓몬 카드 게임) 아시아컵 대회 및 포켓몬 30주년 기념 행사를 위한 제안 디자인 제작 프로젝트. 대회·이벤트 로고, 키비주얼, 대회·이벤트 공간 3D 디자인을 스위트스팟이 빅픽처인터렉티브로부터 위탁받아 수행. 비딩 선정 시 후속 공간 구성 및 제작물 제작 업무 분배 협의 예정.",
+  "brand_name": "2026 PCG 아시아컵",
+  "experience_elements": [
+   "대회 로고 디자인 1종",
+   "이벤트 로고 디자인 1종 (30주년 기념 행사)",
+   "대회 키비주얼",
+   "대회 공간 3D 디자인",
+   "이벤트 공간 3D 디자인"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "3D 공간 디자인",
+   "로고 디자인",
+   "키비주얼"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": "코엑스",
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-11-26",
+   "to": "2025-01-31",
+   "days": null
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "디자인 용역비 총 5,000,000원 (VAT 별도). 대금 100% (5,000,000원)를 2025년 1월 31일까지 현금 지급. 계약기간: 계약체결일~2025.01.31, 착수기간 2024.11.29~2024.12.16."
+  },
+  "brand_requirements": [
+   "비밀유지계약 체결 (2024-12-02, 정보제공자 스위트스팟/정보수령자 빅피처인터렉티브)",
+   "비밀정보 사용 제한 및 프로젝트 종료 후 1년 비밀유지",
+   "기획·스토리·연출 방향 소유권은 갑(빅픽처)에 귀속, 디자인 작업물 소유권은 을(스위트스팟)에 귀속"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "코엑스 대회·이벤트"
+  },
+  "derived": {
+   "duration": {
+    "days": 67,
+    "weekend_share": 0.27,
+    "holiday_days": 6
+   },
+   "ip_history": {
+    "prior_count": 4,
+    "months_since_last": 0.1,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 69,
+    "holiday_until": 60,
+    "holiday_block_in": 6,
+    "nat_event_gap": 12,
+    "nat_event": "수능",
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 5.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(제공된 문서는 디자인 용역계약서와 비밀유지계약서로, 결과보고서·방문객 실측 데이터가 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 5.0 ≈ 계약총액 5.0",
+   "contract_total_mm": 5.0,
+   "last_recognition_period": "2025-01"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1EpKj2untVqzSbnCBWoR49TFsvViuAQN0",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1EpKj2untVqzSbnCBWoR49TFsvViuAQN0/view",
+   "title": "비밀유지계약서_빅피처_241202 (1).docx"
+  },
+  {
+   "doc_id": "1UAzVO5YwV02CDuTeRkbK1kXqsX7AZ9kA",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1UAzVO5YwV02CDuTeRkbK1kXqsX7AZ9kA/view",
+   "title": "2026PCG아시아컵_제안디자인_스위트스팟_용역계약서 (250117) (수정).pdf"
+  },
+  {
+   "doc_id": "1_AfC9zIp3HJb64FvKSHYCXBOsl8GtULacjgNY3Lu9po",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1_AfC9zIp3HJb64FvKSHYCXBOsl8GtULacjgNY3Lu9po/view",
+   "title": "견적서 없음"
+  },
+  {
+   "doc_id": "1_ItQhBERRAiu1vfItioQMQIdZwmme9Ag",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1_ItQhBERRAiu1vfItioQMQIdZwmme9Ag/view",
+   "title": "250107_스위트스팟_2026PCG아시아컵_제안디자인_용역계약서견적서.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 4건: 2026PCG아시아컵_제안디자인_스위트스팟_용역계약서 , 250107_스위트스팟_2026PCG아시아컵_제안디자인, 비밀유지계약서_빅피처_241202 (1).docx, 견적서 없음. 미확실: 결과보고서 부재로 방문객 수·매출·counting_method 확인 불가; 견적서 내용 없음(빈 문서); 클라이언트/최종 발주처 정확한 정보 불명확(빅픽처인터렉티브가 계약 상대); 면적·정확한 입지(코엑스 세부 위치)·운영 기간 일수 미확인; 이 프로젝트는 팝업 운영이 아닌 제안 디자인 용역 성격으로 popup outcome 데이터 없음"
+ }
+}

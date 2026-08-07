@@ -1,0 +1,92 @@
+{
+ "market_record_id": "MKT-2025-0049",
+ "event_name": "지구오락실3 '우주 떡집' 팝업(성수)",
+ "brand": "CJ ENM(tvN)/에그이즈커밍",
+ "ip_or_collab": "예능 '지구오락실3'×떡집 콘셉트",
+ "category": "entertainment",
+ "intervention": {
+  "concept_description": "예능 지구오락실3 콘텐츠 연계 '우주 떡집' 콘셉트 팝업. 떡 디저트 판매·포토존, 사전예약제",
+  "experience_elements": [
+   "F&B(떡) 판매",
+   "포토존",
+   "MD 판매"
+  ],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "성수동 팝업 공간",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2025-06-20",
+  "period_to": "2025-06-29",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 700,
+  "visitors_period_days": 10,
+  "counting_basis": "media_estimate",
+  "counting_basis_note": "일평균 방문객 수치(총계 아님). 원문: '일평균 700여 명이 방문하며' — 총계 계산 금지 원칙에 따라 일평균 값만 기록",
+  "visitors_source_quote": "'우주 떡집'은 예약 오픈 30분 만에 7,200명이 마감됐다. 지난 20일(금)부터 오는 29일(일)까지 운영되는 ‘우주 떡집’은 일평균 700여 명이 방문하며 인기를 끌고 있다.",
+  "visitors_source_url": "https://www.slist.kr/news/articleView.html?idxno=655286",
+  "visitors_source_date": "2025-06-27",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": "예약 오픈 30분 만에 7200명 마감",
+   "signal_quotes": [
+    "'우주 떡집'은 예약 오픈 30분 만에 7,200명이 마감됐다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "E",
+   "flags": [],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": true,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "운영 중간 보도(6/27). visitors_total 필드는 '일평균 700명' 값(note 명시). | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

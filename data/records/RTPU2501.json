@@ -1,0 +1,143 @@
+{
+ "record_id": "RTPU2501",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:오리온",
+  "space_id": "unresolved:광장시장_365일장",
+  "client_party_id": "unresolved:오리온",
+  "brand_key": "오리온",
+  "space_key": "광장시장"
+ },
+ "intervention": {
+  "concept": "오리온 '알맹이네 과일가게' 브랜드 팝업스토어 시즌2. 과일가게 컨셉으로 시식 및 굿즈 증정, 타임어택 '덤' 이벤트를 운영한 체험형 팝업.",
+  "brand_name": "오리온 알맹이",
+  "experience_elements": [
+   "시식 (7온스 컵)",
+   "시식/투표 스티커 이벤트",
+   "타임어택 '덤' 과일 증정",
+   "인형 키링 등 굿즈 증정",
+   "부채 등 증정품",
+   "과일 세트 포장/판매"
+  ],
+  "promotions": [
+   "시식 후 투표",
+   "타임어택 덤 이벤트",
+   "알맹이 로고 비닐봉투 증정"
+  ],
+  "staging_tags": [
+   "과일가게 컨셉",
+   "VMD",
+   "키비주얼"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "종로구",
+   "venue_name": "광장시장 365일장",
+   "venue_type": "전통시장",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-01-24",
+   "to": "2025-02-23",
+   "days": 28
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "hybrid",
+   "detail": "총계 99,100,000원 (VAT 10% 별도, 만원단위 이하 절사). 대관료 40,000,000원(2025년 1월 16일부터 4주(28일) 대관) + 매출수수료 16.5%. 소계 94,073,000원, 대행수수료 5,107,300원(소계의 10%). 견적 항목: 아트워크 3,000,000, 공간구성/제작 18,793,000, 인력 27,720,000, 진행비 4,560,000. | 계약서 미확인(2026-07-27 재독해 시도 — 대상 문서 부재/추출 실패): 총액은 견적 기준"
+  },
+  "brand_requirements": [
+   "운영시간 09:30~20:30 (11시간 기준)",
+   "운영 스태프 6인(4인 상주, 3교대) + 슈퍼바이저 1인",
+   "시식용 컵 일 450개 예상",
+   "타임어택 덤용 과일 일 20,000원 상당 구입"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "광장시장 365일장 전통시장 내"
+  },
+  "derived": {
+   "duration": {
+    "days": 31,
+    "weekend_share": 0.32,
+    "holiday_days": 4
+   },
+   "ip_history": {
+    "prior_count": 3,
+    "months_since_last": 1.2,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 128,
+    "holiday_until": 1,
+    "holiday_block_in": 6,
+    "nat_event_gap": 71,
+    "nat_event": null,
+    "doc_lag_days": 42,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 105.8
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 원문 텍스트가 추출되지 않아 방문자·매출 실측 데이터를 확인할 수 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 105.8 ≈ 계약총액 99.1",
+   "contract_total_mm": 99.1,
+   "last_recognition_period": "2025-05"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "123SFqxUSXFKRqHAJW1_Uk36ovPJhShe_",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/123SFqxUSXFKRqHAJW1_Uk36ovPJhShe_/view",
+   "title": "[스위트스팟] 2025 오리온 알맹이 팝업 3차 아이디에이션_241213_제안서.pptx"
+  },
+  {
+   "doc_id": "1MmQrPTx_kGNNtxJoipaBMJtxoVwrd-a4",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1MmQrPTx_kGNNtxJoipaBMJtxoVwrd-a4/view",
+   "title": "[스위트스팟] 오리온 알맹이네 과일가게 시즌2 결과보고서_250226.pdf"
+  },
+  {
+   "doc_id": "1o1kSw7O2W8_YZif82N0U0qkTNKrGOrWQ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1o1kSw7O2W8_YZif82N0U0qkTNKrGOrWQ/view",
+   "title": "SWEETSPOT_오리온_알맹이팝업스토어견적서_0919.pdf"
+  },
+  {
+   "doc_id": "1sHkhekwdPQlq7Qo6LtzKz56MTyfYl9JO",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1sHkhekwdPQlq7Qo6LtzKz56MTyfYl9JO/view",
+   "title": "[스위트스팟] 알맹이 팝업스토어 2탄_계약서(특약)_241205.docx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 2건: SWEETSPOT_오리온_알맹이팝업스토어견적서_0919, [스위트스팟] 오리온 알맹이네 과일가게 시즌2 결과보고. 미확실: 결과보고서 본문 텍스트 미추출로 방문자수·매출 실측 없음; counting_method 판정 불가; 면적(평) 정보 없음; 기획서/제안서 부재로 예상 방문자수 없음; 정확한 대관 기간과 운영 기간 불일치(견적 1/16~4주 vs 메타 1/24~2/23); venue 상세 위치·행정구역 견적서에 명시 없음(광장시장 기준 추정)"
+ }
+}

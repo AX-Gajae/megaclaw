@@ -1,0 +1,79 @@
+{
+  "market_record_id": "MKT-2025-0061",
+  "event_name": "CU 'K리그-주토피아' 팝업스토어",
+  "brand": "CU(BGF리테일)",
+  "ip_or_collab": "한국프로축구연맹(K리그 전 구단)×디즈니 '주토피아' IP 협업",
+  "category": "fnb",
+  "intervention": {
+    "concept_description": "편의점 브랜드 체험형 팝업. K리그 구단×주토피아 캐릭터 협업 한정판 굿즈 30종 판매",
+    "experience_elements": [
+      "한정판 굿즈 약 30종(티셔츠·파우치·키링 등)",
+      "프린팅 박스(나만의 굿즈 제작)",
+      "캡슐토이(가챠) 기계",
+      "캐릭터 피규어·유니폼 전시존"
+    ],
+    "promotions": [
+      "사전 예약자 정원 5000명 운영"
+    ],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "더현대 서울 지하 1층",
+    "venue_type": "department_store",
+    "neighborhood": "여의도",
+    "city": "서울",
+    "period_from": "2025-07-25",
+    "period_to": "2025-08-06",
+    "area_pyeong": 100,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 13,
+        "weekend_share": 0.31,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 13,
+    "counting_basis": "unknown",
+    "counting_basis_note": "총 방문객 수치 미공개. 사전 예약 정원 5000명 조기 마감(집계 주체 미명시)만 보도",
+    "visitors_source_quote": "입장은 사전 예약자와 현장 대기자로 나뉘어 진행됐는데 사전 예약자 정원 5000명은 조기 마감됐으며 현장 예약도 200팀 이상 몰리며 높은 관심을 입증했다.",
+    "visitors_source_url": "https://www.hankyung.com/article/202507251906g",
+    "visitors_source_date": "2025-07-26",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "정식 오픈(낮 12시) 이전부터 유니폼 입은 팬들로 북적, 개장 전부터 수백 명 대기줄",
+      "sold_out": null,
+      "reservation_fill": "사전 예약자 정원 5000명 조기 마감, 현장 예약 200팀 이상",
+      "signal_quotes": [
+        "CU 팝업 역시 사전 예약 5천명이 조기 마감됐고 개장 전부터 수백 명의 인파가 몰려 대기 줄이 늘어선 것으로 알려졌다.(ZDNet 2025-07-29)"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "편의점 콜라보 팝업이나 상품은 굿즈 중심(식품 비중 낮음). 방문객 총계 없이 예약 수치만 존재. 기간 종료일 8월 6일은 ZDNet(2025-07-29) '다음 달 6일까지' 확인 | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

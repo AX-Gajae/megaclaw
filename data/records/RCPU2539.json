@@ -1,0 +1,177 @@
+{
+ "record_id": "RCPU2539",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:더보이즈",
+  "space_id": "unresolved:미상",
+  "client_party_id": null,
+  "brand_key": "더보이즈",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "더보이즈 관련 팝업스토어로 추정되나 원문 문서가 제공되지 않아 컨셉을 확인할 수 없다.",
+  "brand_name": "더보이즈",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-08-20",
+   "to": "2025-09-10",
+   "days": 22
+  },
+  "season": "summer",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 22,
+    "weekend_share": 0.27,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 3,
+    "holiday_until": 44,
+    "holiday_block_in": 0,
+    "nat_event_gap": 72,
+    "nat_event": null,
+    "doc_lag_days": 0,
+    "doc_dates_found": 5
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 165626.0,
+    "pnl_pre_accounts": 2,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-07-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 161.7
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-09, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-09"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "13NG1nWIwgOvgC2w268KFTAx9QHgBTlTg",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/13NG1nWIwgOvgC2w268KFTAx9QHgBTlTg/view",
+   "title": "[견적서_그리드]더보이즈 성수 팝업.xlsx"
+  },
+  {
+   "doc_id": "13rr5XnJPH_FeYHrMY6ZBeJaH_kxgT8_9",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/13rr5XnJPH_FeYHrMY6ZBeJaH_kxgT8_9/view",
+   "title": "스위트스팟_더보이즈 팝업스토어 최종견적서 250910.pdf"
+  },
+  {
+   "doc_id": "13sEaM_yY6wtd08nlNprG_ApypOtXzl8G",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/13sEaM_yY6wtd08nlNprG_ApypOtXzl8G/view",
+   "title": "(주)비에스 나랑한컷렌탈견적서_부스형1대(랩핑3면)_스위트스팟_6일이상.pdf"
+  },
+  {
+   "doc_id": "1AWnulVKjsruLwMb3ioGV5wKpIu8vkcSP",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1AWnulVKjsruLwMb3ioGV5wKpIu8vkcSP/view",
+   "title": "250812 더보이즈 성수 팝업스토어_도면.pdf"
+  },
+  {
+   "doc_id": "1Dag3QY0MHEQKhR3VxgSS5b6hBTBjmBP2",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Dag3QY0MHEQKhR3VxgSS5b6hBTBjmBP2/view",
+   "title": "아이돌 사진전 레퍼런스 자료 (1).pptx"
+  },
+  {
+   "doc_id": "1F92B5Ezow1TzTEDsqjbj1cJbU8lyr9Ql",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1F92B5Ezow1TzTEDsqjbj1cJbU8lyr9Ql/view",
+   "title": "[스위트스팟]더보이즈팝업_그래픽 추가 검수내용(250820)_수정.pdf"
+  },
+  {
+   "doc_id": "1RuDC7-qkML7tsWkhTtutjQdcHnRxGUsQ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1RuDC7-qkML7tsWkhTtutjQdcHnRxGUsQ/view",
+   "title": "0820증서(스위트스팟_더포이즈팝업).pdf"
+  },
+  {
+   "doc_id": "1SXY-KH-WInidVyOupOGs1_lZ4WmwB1kE",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1SXY-KH-WInidVyOupOGs1_lZ4WmwB1kE/view",
+   "title": "스위트스팟_더보이즈 사진전 팝업스토어 업무계약서 250808.pdf"
+  },
+  {
+   "doc_id": "1YsXlCB4FMUh911sFLAx-FIxjGcAT4t1y",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1YsXlCB4FMUh911sFLAx-FIxjGcAT4t1y/view",
+   "title": "[TBZ] 팝업 스토어 제안서_20250701.pdf"
+  },
+  {
+   "doc_id": "1b1wQFA8s2eGFOaxyHeh9G1lj2KHqF6l0",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1b1wQFA8s2eGFOaxyHeh9G1lj2KHqF6l0/view",
+   "title": "[스위트스팟]더보이즈팝업_공간및운영 기획안(250816)_수정.pdf"
+  },
+  {
+   "doc_id": "1d8NzaQefnW5kAMpzTSpotc6-vFt-dJpy",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1d8NzaQefnW5kAMpzTSpotc6-vFt-dJpy/view",
+   "title": "더보이즈_결과보고서.pdf"
+  },
+  {
+   "doc_id": "1lTkHWXLllPVcoF_2KqyZZYryH5y-W3vi",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1lTkHWXLllPVcoF_2KqyZZYryH5y-W3vi/view",
+   "title": "타라_견적서_더보이즈 신청서&동의서(8월17일).pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체 미제공; client_name; venue 정보 전체; 면적; 수수료 구조; 컨셉 및 체험요소; 방문객 및 매출 실측 데이터"
+ }
+}

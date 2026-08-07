@@ -1,0 +1,88 @@
+{
+ "market_record_id": "MKT-2025-0040",
+ "event_name": "여주곤충박물관 팝업스토어 '신비한 곤충랜드' @스타필드 고양",
+ "brand": "여주곤충박물관·여주시",
+ "ip_or_collab": null,
+ "category": "other",
+ "intervention": {
+  "concept_description": "살아있는 곤충 관찰·만지기 체험+생태 특강(교육형 팝업)",
+  "experience_elements": [
+   "살아있는 곤충체험(장수풍뎅이·사슴벌레)",
+   "김건우 관장 생태 특강(평일 4회·주말 6회)"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "스타필드 고양",
+  "venue_type": "mall",
+  "neighborhood": "덕양구",
+  "city": "고양",
+  "period_from": "2025-05-23",
+  "period_to": "2025-06-08",
+  "area_pyeong": null,
+  "multi_store": null,
+  "derived": {
+   "duration": {
+    "days": 17,
+    "weekend_share": 0.35,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 10000,
+  "visitors_period_days": null,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "여주곤충박물관 발표(세종신문·지이코노미): '주말 동안 약 1만여 명의 관람객이 방문하는 기록' (오픈 첫 주말 기준, 전체 기간 총계 아님)",
+  "visitors_source_quote": "여주곤충박물관이 경기도 고양시 스타필드 고양점에서 운영 중인 팝업스토어가 주말 동안 약 1만여 명의 관람객이 방문하는 기록을 세우며 큰 인기를 끌고 있다.",
+  "visitors_source_url": "https://www.geconomy.co.kr/news/article.html?no=300090",
+  "visitors_source_date": "2025-05-29",
+  "sales_krw": null,
+  "sales_source_quote": "",
+  "sales_source_url": "",
+  "sales_source_date": "",
+  "demand_signals": {
+   "waiting_time_reported": true,
+   "sold_out": null,
+   "reservation_fill": true,
+   "signal_quotes": [
+    "평일 4회, 주말 6회 진행되는 강연은 사전 예약이 조기에 마감되거나 현장 대기 인원이 몰려 추가 인원을 수용하는 상황까지 벌어졌다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "D",
+   "flags": [
+    "D"
+   ],
+   "why": "스코프 혼합(합산/총계) 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "주말 1만여 명(첫 주말). 5/23~6/8 운영 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

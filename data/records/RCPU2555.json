@@ -1,0 +1,207 @@
+{
+ "record_id": "RCPU2555",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:스트레이키즈",
+  "space_id": "unresolved:마포인트",
+  "client_party_id": null,
+  "brand_key": "스트레이키즈",
+  "space_key": "마포인트"
+ },
+ "intervention": {
+  "concept": "스트레이키즈 관련 팝업스토어(마포인트).",
+  "brand_name": "스트레이키즈",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": "마포인트",
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-10-11",
+   "to": "2025-10-26",
+   "days": 16
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 16,
+    "weekend_share": 0.38,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 9.9,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 2,
+    "holiday_until": 126,
+    "holiday_block_in": 0,
+    "nat_event_gap": 20,
+    "nat_event": null,
+    "doc_lag_days": 9,
+    "doc_dates_found": 7
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 26066497.0,
+    "pnl_pre_accounts": 7,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-09-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 283.9
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-10, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-10"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "10d9Y6WB9g2Ygs_znIZiJ2FAG13ngxPoM",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/10d9Y6WB9g2Ygs_znIZiJ2FAG13ngxPoM/view",
+   "title": "Stray Kids World Tour 〈dominATE  celebrATE〉 POP-UP STORE 운영 대행계약서_주식회사 스위트스팟_감사추적인증서.pdf"
+  },
+  {
+   "doc_id": "16yivGkq8j-PGjUXh_N5RPWVYo0oNzxuM",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/16yivGkq8j-PGjUXh_N5RPWVYo0oNzxuM/view",
+   "title": "견적서_성원애드피아-법인카드_SKZ 오더시트지 _ 발주 비용.pdf"
+  },
+  {
+   "doc_id": "1CnRL-8s5k20gJc5GTTnCcgw49YJTm6fQ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1CnRL-8s5k20gJc5GTTnCcgw49YJTm6fQ/view",
+   "title": "[로폼전자서명]Stray Kids World Tour 〈dominATE  celebrATE〉 POP-UP STORE 운영 대행계약서_주식회사 스위트스팟.pdf"
+  },
+  {
+   "doc_id": "1EegJvhtMBYM0-2uxzM_KoicNj-ABpm3f",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1EegJvhtMBYM0-2uxzM_KoicNj-ABpm3f/view",
+   "title": "2025년 10월 SKZ 팝업_외부 공유.xlsx"
+  },
+  {
+   "doc_id": "1H9oinFTQHGZL1TdmyB5UfUot0z_ECTr5",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1H9oinFTQHGZL1TdmyB5UfUot0z_ECTr5/view",
+   "title": "견적_법인카드주문_컬러타투 세트 렌탈 250925.png"
+  },
+  {
+   "doc_id": "1Jwyf3mtYJVA9ZnvyS9p0rDuLXxMtiLqn",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Jwyf3mtYJVA9ZnvyS9p0rDuLXxMtiLqn/view",
+   "title": "견적서_스위트스팟-아크릴 뚜껑없는 박스제작 20250923.xls"
+  },
+  {
+   "doc_id": "1L3mF4LTLlKhUEwQwwaRbST-peQDAQC2A",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1L3mF4LTLlKhUEwQwwaRbST-peQDAQC2A/view",
+   "title": "견적서_스트레이키즈 마포인트_뉴파트너 견적서 251002.xlsx"
+  },
+  {
+   "doc_id": "1Nk_tDqEQxklezUMlnzMBVLzslFie_c9e",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Nk_tDqEQxklezUMlnzMBVLzslFie_c9e/view",
+   "title": "견적서_스키즈마포인트_에이렌탈_10.10 스위트스팟(마포포인트) 님 251002.xlsx"
+  },
+  {
+   "doc_id": "1OOYOeu3p2GpDGqPlVEEYTbt-WUGmUDRV",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1OOYOeu3p2GpDGqPlVEEYTbt-WUGmUDRV/view",
+   "title": "(스위트스팟) Stray Kids World Tour 〈dominATE celebrATE〉 POP-UP STORE_운영기획안_251001.pdf"
+  },
+  {
+   "doc_id": "1OYMSoKjeUoYroz9xALgM_DdpLFBnxF6K",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1OYMSoKjeUoYroz9xALgM_DdpLFBnxF6K/view",
+   "title": "견적서_스위트스팟_ 같은그림맞추기제작 및 기본형가챠머신 임대견적_ 유진주 님 _ 임대 견적 _ 20250923.xls"
+  },
+  {
+   "doc_id": "1XGvCNep0a1o2EnOuq9c28m-jRn_M78D9",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1XGvCNep0a1o2EnOuq9c28m-jRn_M78D9/view",
+   "title": "에이블랩 시스템 임대 계약서_Sweetspot_모두싸인 날인본.pdf"
+  },
+  {
+   "doc_id": "1c7BGaifmKXcP4KS43wjBa44NkDG1viQf",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1c7BGaifmKXcP4KS43wjBa44NkDG1viQf/view",
+   "title": "견적서_스키즈마포인트_KB손해보험 1011증서(스위트스팟).pdf"
+  },
+  {
+   "doc_id": "1h1t5uMxZkY3o7Y2STlEn28ONojYwlJy-",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1h1t5uMxZkY3o7Y2STlEn28ONojYwlJy-/view",
+   "title": "스트레이키즈 마포인트_결과보고서.pdf"
+  },
+  {
+   "doc_id": "1rTRRWNvYF8Tz-zyKOS8GM3UNIrfXOqBI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1rTRRWNvYF8Tz-zyKOS8GM3UNIrfXOqBI/view",
+   "title": "견적서_스위트스팟_ 같은그림맞추기제작 및 기본형가챠머신 임대_추가 캡슐 구매_견적_ 유진주 님 _ 임대(수정)견적 _ 20250929 (1).xls"
+  },
+  {
+   "doc_id": "1uq-IkaB17rxB2aq1ubwsQotcjBVCytSe",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1uq-IkaB17rxB2aq1ubwsQotcjBVCytSe/view",
+   "title": "견적서_SKZ 오더시트지 _ 발주 비용.pdf"
+  },
+  {
+   "doc_id": "1ygO-jG-rbJiViiDBcpi8F8mMgJpWfvvz",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ygO-jG-rbJiViiDBcpi8F8mMgJpWfvvz/view",
+   "title": "SKZ 팝업스토어 검수확인서_스위트스팟 회신 251103.pdf"
+  },
+  {
+   "doc_id": "1z_RQS2mQQnpTwrHZEGsQy67MdbxxpBLd",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1z_RQS2mQQnpTwrHZEGsQy67MdbxxpBLd/view",
+   "title": "스트레이키즈_마포인트_최종견적서_1031.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서 텍스트가 제공되지 않음; client_name; venue 상세; category; 면적; 수수료구조; 방문/매출 실측 데이터; 컨셉·체험요소·프로모션 세부"
+ }
+}

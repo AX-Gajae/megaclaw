@@ -1,0 +1,167 @@
+{
+ "record_id": "RTPU2423",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:디즈니코리아_디즈니_벌룬_페스티벌",
+  "space_id": "unresolved:스타필드_하남_고양_안성",
+  "client_party_id": "unresolved:디즈니코리아",
+  "brand_key": "디즈니",
+  "space_key": "multi_스타필드"
+ },
+ "intervention": {
+  "concept": "스타필드 벌룬 페스티벌(제4회)의 디즈니 키즈 페스티벌 버전으로, 대형 에어(벌룬) 조형물을 활용한 캐릭터 체험형 팝업. 스파이디(높이 5M), 올라프(가로 5.5M) 등 디즈니 캐릭터 에어조형물과 판매 집기, 체험 테이블을 스타필드 3개점(하남/고양/안성) 로테이션 운영.",
+  "brand_name": "디즈니 벌룬 페스티벌",
+  "experience_elements": [
+   "대형 벌룬(에어) 연출",
+   "스파이디 5M 에어조형물",
+   "올라프 5.5M 에어조형물",
+   "공중 행잉/에어바운스",
+   "바닥 랩핑",
+   "체험 테이블 및 판매 집기"
+  ],
+  "promotions": [
+   "점내 광고매체 지원",
+   "내부 온라인 채널/EDM",
+   "인플루언서 초청 바이럴"
+  ],
+  "staging_tags": [
+   "대형벌룬연출",
+   "키네틱연출",
+   "3개점_로테이션",
+   "보이드_확장",
+   "공중행잉"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": "스타필드 하남/고양/안성",
+   "venue_type": "복합쇼핑몰(아트리움/보이드)",
+   "foot_traffic_context": "스타필드 3개점 로테이션, 어린이날 시즌 전국 티맵 목적지 1위 실적(전회차 기준) 언급"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-04-25",
+   "to": "2024-06-06",
+   "days": null
+  },
+  "season": "봄~초여름(어린이날/석가탄신일/현충일 포함)",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "견적서에 대행수수료·기획료·아트워크·인건비·제작비(에어조형물·판매집기·VMD·바닥랩핑)·설치철수비·운영비·물류비 항목 구성. 소계의 10% 일반관리비, VAT 10% 별도(만단위 이하 절사). 구체 금액 수치는 문서 텍스트에 노출되지 않음."
+  },
+  "brand_requirements": [
+   "1회 제작으로 3개점 로테이션 이동(비용절감)",
+   "주말/공휴일(토·일, 어린이날 대체·석가탄신일·현충일) 운영 및 법정공휴일 추가 수당",
+   "STAFF 12시간 기준, 8시간 이하 1식/초과 2식 제공"
+  ],
+  "scale": {
+   "store_count": 3,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "스타필드 3개점 로테이션, 어린이날 시즌 전국 티맵 목적지 1위 실적 언급"
+  },
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  },
+  "derived": {
+   "duration": {
+    "days": 43,
+    "weekend_share": 0.28,
+    "holiday_days": 4
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 53,
+    "holiday_until": 9,
+    "holiday_block_in": 3,
+    "nat_event_gap": 15,
+    "nat_event": null,
+    "doc_lag_days": 70,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 파일에 실제 데이터 텍스트가 없어(페이지 번호만 추출) 방문/매출 실측을 확인할 수 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": null,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "12qHGZrenmTcGQwYfuj0V-HCNmulB9Z-5",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/12qHGZrenmTcGQwYfuj0V-HCNmulB9Z-5/view",
+   "title": "Sweetspot_디즈니 벌룬 페스티벌_견적서(공유용)_240523.xlsx"
+  },
+  {
+   "doc_id": "13RmwgINuZrQp91hVtQPUjSOw6RrhbZHNGNtxXNygyqs",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/13RmwgINuZrQp91hVtQPUjSOw6RrhbZHNGNtxXNygyqs/view",
+   "title": "제안서_내용없음"
+  },
+  {
+   "doc_id": "16vsnI9ZhW2Zfu7RigSD1UUwzSklJy_sH",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/16vsnI9ZhW2Zfu7RigSD1UUwzSklJy_sH/view",
+   "title": "제4회벌룬페스티벌제안_스타필드.pdf"
+  },
+  {
+   "doc_id": "18ev39MOncHLEcVyX7cXpZ5Hx92oHzi5r",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/18ev39MOncHLEcVyX7cXpZ5Hx92oHzi5r/view",
+   "title": "[Sweetspot] 디즈니 키즈페스티벌_기획안_240518.pdf"
+  },
+  {
+   "doc_id": "1CRwd7n8dgZYl9wxAr5xHMWvfkLtvoUnm",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1CRwd7n8dgZYl9wxAr5xHMWvfkLtvoUnm/view",
+   "title": "스위트스팟_Services Agreement_20240215_Execution_계약서.pdf"
+  },
+  {
+   "doc_id": "1Gtv_pFG2d1n-TdV3mZTeZJfSE3RO56KP",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Gtv_pFG2d1n-TdV3mZTeZJfSE3RO56KP/view",
+   "title": "RTPU2423_디즈니_디즈니 벌룬 페스티벌_계약서_20240215.pdf"
+  },
+  {
+   "doc_id": "1JQLb6n9cULAJz4mkgMC1nECV_B9wGTMy",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1JQLb6n9cULAJz4mkgMC1nECV_B9wGTMy/view",
+   "title": "[Sweetspot] 디즈니 키즈페스티벌_결과보고서_240613.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 5건: 제4회벌룬페스티벌제안_스타필드.pdf, 제안서_내용없음, [Sweetspot] 디즈니 키즈페스티벌_기획안_240, Sweetspot_디즈니 벌룬 페스티벌_견적서(공유용), [Sweetspot] 디즈니 키즈페스티벌_결과보고서_2. 미확실: 결과보고서 본문 미추출로 실측 방문자/매출 없음; 견적서 금액 수치 미노출(계약 총액/분할/수수료율 불명); 기획안 본문 미추출로 예상 방문자수 및 상세 컨셉 불명; 면적(평), 정확한 운영 일수, 도시/구 정보 없음; 클라이언트 정식 party_id 미확정"
+ }
+}

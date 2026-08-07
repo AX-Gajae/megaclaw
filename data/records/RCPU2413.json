@@ -1,0 +1,138 @@
+{
+ "record_id": "RCPU2413",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:삐뚤이",
+  "space_id": "unresolved:더현대대구",
+  "client_party_id": "unresolved:에이엔앰_A&M",
+  "brand_key": "입삐뚤오리",
+  "space_key": "더현대대구"
+ },
+ "intervention": {
+  "concept": "삐뚤이 작가의 IP를 활용한 팝업스토어로 더현대 대구에서 진행된 판매행사. 사인회 및 캐릭터 굿즈(바디필로우 등) 판매를 포함한다.",
+  "brand_name": "삐뚤이",
+  "experience_elements": [
+   "사인회",
+   "포스트잇 가벽(접착 메모지)",
+   "FRP 조형물",
+   "대형 벌룬(공기조형물)",
+   "해모양 입간판구조물",
+   "바디필로우"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "FRP조형물",
+   "대형벌룬",
+   "포스트잇가벽",
+   "바닥그래픽",
+   "등신대",
+   "해모양입간판"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "대구",
+   "district": null,
+   "venue_name": "더현대 대구(현대백화점 대구점)",
+   "venue_type": "백화점",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-06-28",
+   "to": "2024-07-11",
+   "days": 14
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "VMD존 시공비·집기비·운영인력 인건비·상품 제작 및 공급대금은 모두 '갑'(A&M) 부담. 시공비는 을이 제공하는 견적서로 갈음. 운영비(대행수수료)는 별첨1 조건안 기준(원문 수치 미표기). 지급: 시공 종료월 말일(2024-06-30)까지 운영비 50% 선지급, 행사 종료월 말일(2024-07-31)까지 잔여금 전액 지급. 제작발주 전 선금 50%, 팝업 종료 후 잔금 50%. 로스: 총매출 기준 2% 초과 발생 시 제품 제조원가 100% 공제, 2% 이하는 통상LOSS로 갑 부담. (견적서 총계 및 대행수수료 구체 금액은 원문에 수치 미기재, VAT 별도)"
+  },
+  "brand_requirements": [
+   "장내 행사 관련 설치물 제작 및 설치",
+   "행사 기간 내 인력 운용 및 제품 판매 등 현장 운영",
+   "고객 컴플레인 포함 사고 수습 및 해결",
+   "위탁상품을 갑과 협의된 가격으로 판매",
+   "판매 데이터 및 장부 비치·보관 및 요구 시 공개",
+   "영업 종료 후 5일 이내 최종 재고 및 상품 반품"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대 대구"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 0.9,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 53,
+    "holiday_until": 78,
+    "holiday_block_in": 0,
+    "nat_event_gap": 79,
+    "nat_event": null,
+    "doc_lag_days": 1,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": "대구 중구 달구벌대로 2077"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 16.1
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서가 제공되지 않아 방문객/매출 실측 데이터 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-07, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2024-07"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1dCJC3m7JitBWH2g5j2Zsr_6_eUoJDh6y",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1dCJC3m7JitBWH2g5j2Zsr_6_eUoJDh6y/view",
+   "title": "삐뚤이_대구팝업스토어 위탁운영 계약서_스위트스팟_240627.pdf"
+  },
+  {
+   "doc_id": "1rEj3BVnAIttPa0zD_MjxBZRUEfTSuyEt",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1rEj3BVnAIttPa0zD_MjxBZRUEfTSuyEt/view",
+   "title": "[견적서] 더현대대구 삐뚤이팝업_스위트스팟_0621.xlsx"
+  },
+  {
+   "doc_id": "1zOxYp8u6f-1HvZxZ9q6oVQqzck0zq_HY",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1zOxYp8u6f-1HvZxZ9q6oVQqzck0zq_HY/view",
+   "title": "[견적서] 더현대대구 삐뚤이팝업_스위트스팟_0621.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: 삐뚤이_대구팝업스토어 위탁운영 계약서_스위트스팟_240, [견적서] 더현대대구 삐뚤이팝업_스위트스팟_0621.x, [견적서] 더현대대구 삐뚤이팝업_스위트스팟_0621.x. 미확실: 결과보고서 부재로 daily/totals visitors 및 sales_krw 전부 없음; counting_method 판정 불가(unknown); 견적서 총계·대행수수료 등 금액 수치 원문에 미기재; 면적(평) 정보 없음; plan_visitors_expected 기획서 부재로 없음; client_name은 A&M(에이엔앰)으로 계약서에 명시되나 정규화 미확정"
+ }
+}

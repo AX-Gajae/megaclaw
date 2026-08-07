@@ -1,0 +1,84 @@
+{
+ "market_record_id": "MKT-2025-0066",
+ "event_name": "팝마트 로보샵 미니 팝업(신세계백화점 강남점, 라부부 등)",
+ "brand": "팝마트 코리아/신세계백화점",
+ "ip_or_collab": "팝마트(라부부 등)",
+ "category": "character",
+ "intervention": {
+  "concept_description": "팝마트 로보샵 미니 팝업행사. 신세계백화점 강남점에서 2025-08-01~08-15, 15일간 운영.",
+  "experience_elements": [
+   "피규어·캐릭터 상품 판매"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "신세계백화점 강남점",
+  "venue_type": "department_store",
+  "neighborhood": "반포",
+  "city": "서울",
+  "period_from": "2025-08-01",
+  "period_to": "2025-08-15",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 15,
+    "weekend_share": 0.27,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 5000,
+  "visitors_period_days": 15,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "팝마트 코리아 발표(베이비타임즈 보도 인용)",
+  "visitors_source_quote": "팝마트 코리아는 지난 8월 1일부터 15일까지 신세계백화점 강남점에서 진행된 로보샵 미니 팝업행사가 방문객 약 5000명, 매출 약 8500만원을 기록하며 성황리에 마무리했다고 밝혔다.",
+  "visitors_source_url": "https://www.babytimes.co.kr/news/articleView.html?idxno=70909",
+  "visitors_source_date": "2025-08-21",
+  "sales_krw": 85000000,
+  "sales_source_quote": "방문객 약 5000명, 매출 약 8500만원을 기록하며 성황리에 마무리했다",
+  "sales_source_url": "https://www.babytimes.co.kr/news/articleView.html?idxno=70909",
+  "sales_source_date": "2025-08-21",
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": true,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified",
+  "sales": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

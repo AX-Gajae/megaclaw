@@ -1,0 +1,105 @@
+{
+ "market_record_id": "MKT-2025-0122",
+ "event_name": "삼양식품 '삼양1963 팝업스토어' 성수",
+ "brand": "삼양식품(삼양1963)",
+ "ip_or_collab": "신제품 '삼양1963'(우지 유탕 프리미엄 라면) 출시 기념",
+ "category": "fnb",
+ "intervention": {
+  "concept_description": "'프리미엄 라면 바' 콘셉트로 면·국물·우지 풍미에 집중한 시식 중심 팝업. 조리된 라면을 전용 텀블러에 담아 제공",
+  "experience_elements": [
+   "삼양1963 라면 시식(전용 텀블러 제공)",
+   "텀블러 무료 세척 서비스(성수 일대 방문 후 재방문 시)"
+  ],
+  "promotions": [
+   "네이버 사전예약제 운영"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "서울 성수동(팝업 공간)",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2025-11-28",
+  "period_to": "2025-12-04",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 10000,
+  "visitors_period_days": 7,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "주최사(삼양식품)가 12월 5일 밝힌 총 방문객 수를 언론 전재('총 방문객이 1만명을 넘을 정도로')",
+  "visitors_source_quote": "삼양식품은 지난달 28일부터 이달 4일까지 서울 성수동에서 운영한 '삼양1963 팝업스토어'에 총 1만명이 방문했다고 5일 밝혔다.",
+  "visitors_source_url": "https://www.edaily.co.kr/News/Read?newsId=02571526642395568&mediaCodeNo=257",
+  "visitors_source_date": "2025-12-05",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "현장 웨이팅 등록 일평균 1500여 건, 매일 오픈 전부터 대기줄 형성",
+   "sold_out": "당일 예약분 대부분 저녁 시간 전에 소진",
+   "reservation_fill": "네이버 사전예약 7일분 전체 5분 만에 마감",
+   "signal_quotes": [
+    "팝업스토어 운영 기간의 네이버 사전예약이 7일분 모두 5분 만에 마감됐고",
+    "현장 웨이팅 등록은 일 평균 1,500여 건을 기록했다. 당일 예약도 저녁 시간 전에 대부분 소진되는 등 열기가 이어졌다.",
+    "현장 대기 역시 매일 오픈 전부터 줄이 형성됐으며 일평균 현장 웨이팅 등록 건수는 약 1500건을 기록했다. 당일 예약도 대부분 저녁 시간 이전에 소진되는 등 수요가 이어졌다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "이데일리·ZDNet·SR타임스·경향신문 등 다수(2025-12-05~08). 신제품 자체는 출시 한 달 700만개 판매(경향신문 2025-12-08) | 병합 레코드: MKT-2025-0035 | [병합:MKT-2025-0035] 뉴시스·ZDNet·SRT 등 다수 매체 동일 수치.",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 10000,
+   "basis": "organizer_claim",
+   "quote": "사전 예약은 7일치 일정이 네이버 예약 개시 5분 만에 모두 마감됐고 팝업 기간 총 방문객 수는 1만명을 넘어섰다.",
+   "url": "https://m.ddaily.co.kr/page/view/2025120514282112304",
+   "date": "2025-12-05"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

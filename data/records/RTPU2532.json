@@ -1,0 +1,147 @@
+{
+ "record_id": "RTPU2532",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:초이스바이반트_CHOICE_BY_VANTT",
+  "space_id": "unresolved:강동_더리버몰_초이스바이반트_4F",
+  "client_party_id": "unresolved:주식회사_티유피",
+  "brand_key": "초이스바이반트",
+  "space_key": "강동_더리버몰"
+ },
+ "intervention": {
+  "concept": "피트니스 브랜드 '반트'의 종합 스포츠센터 '초이스바이반트(CHOICE BY VANTT)' 강동 더리버몰 오픈을 위한 온·오프라인 마케팅 프로모션. 인스타그램/메타 광고, 유튜브 PPL(한혜진TV)과 구독자 이벤트, 리버몰 내 프로모터 리플렛 배포·에스코트로 구성. 팝업 매장이 아닌 시설 오픈 마케팅 캠페인이다.",
+  "brand_name": "CHOICE BY VANTT (초이스바이반트)",
+  "experience_elements": [
+   "피트니스 센터(테크노짐 장비)",
+   "실내외 수영장(인피니티풀)",
+   "건강 트래킹/신체유형 분석 맞춤 프로그램",
+   "골프 시설",
+   "스파/사우나",
+   "한강뷰",
+   "필라테스룸/GX 프로그램"
+  ],
+  "promotions": [
+   "프리오픈 얼리버드 혜택(선착순 500명 한정, 오픈 프로모션 가격+최대 30% 추가혜택+최대 50만원 상당 Gift)",
+   "타임딜/얼리버드/럭키드로우",
+   "유튜브 한혜진TV 구독자 이벤트(전시설 1개월 무료이용권 2명, 원데이 프리패스 20명 1인 2매)"
+  ],
+  "staging_tags": [
+   "인스타그램 이미지/슬라이드/영상 콘텐츠",
+   "메타 타겟팅 광고",
+   "유튜브 PPL",
+   "오프라인 프로모터(화이트 셔츠/검정 슬랙스)",
+   "리플렛 배포 및 에스코트"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "강동구",
+   "venue_name": "강동 아이파크 더리버몰(초이스바이반트 4F)",
+   "venue_type": "복합쇼핑몰 내 종합 스포츠센터",
+   "foot_traffic_context": "리버몰 방문자 대상, 일자별/시간대별 유동인구 확인하여 스팟 이동 및 인력 집중 투입",
+   "venue_slot": "4F"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-04-14",
+   "to": "2025-05-11",
+   "days": 28
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "계약서 총 계약금액 95,000,000원(부가세 별도). 선금 50% 47,500,000원(계산서 2025.04.16, 지급 2025.05.10), 잔금 50% 47,500,000원(계산서 2025.05.16, 지급 2025.06.10). 지체상금율 1000분의3. 7차 견적서 총계 86,968,000원(VAT 10% 별도): 기획료 3,000,000원, 인스타 콘텐츠/META 광고, 유튜브 PPL 75,000,000원(한혜진 모델섭외/거마비 포함), 대행수수료 소계의 10%(정가 항목 제외) 7,633,544원."
+  },
+  "brand_requirements": [
+   "행사 물품(아트워크/부스/포토존/영상 등) 제작 전 의뢰사 감수 및 서면 승인 필수",
+   "진행 보고서 제출",
+   "보안유지 의무",
+   "참여자 및 임직원 안전관리"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "강동 더리버몰 방문자 대상"
+  },
+  "derived": {
+   "duration": {
+    "days": 28,
+    "weekend_share": 0.29,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 42,
+    "holiday_until": 19,
+    "holiday_block_in": 4,
+    "nat_event_gap": 50,
+    "nat_event": null,
+    "doc_lag_days": 13,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 87.0
+  },
+  "counting_method": "exposure",
+  "counting_basis": "결과보고서는 팝업 방문자 계수가 아닌 온라인 마케팅 지표만 포함: 유튜브 조회수 10만회, 좋아요 1.7천, 댓글 77개, 구독자 이벤트 참여자 269명(5/28 14시 기준), 메타광고 노출수 269,751/CTR 0.54%. 오프라인 방문자 실측 표 없음.",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(온라인 마케팅 캠페인 결과보고서로 팝업 매장 방문자/POS 매출 실측 데이터 없음. 유튜브 조회수 10만회, 구독자 이벤트 설문 참여 269명, 인스타 메타광고 노출 269,751회(소진금액 685,435원, 소진율 13.7%). 얼리버드 프리오픈 기간 4/30~5/10 선착순 500명 한정.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 87.0 ≈ 계약총액 95.0",
+   "contract_total_mm": 95.0,
+   "last_recognition_period": "2025-05"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "11itmVSejuSeAZ22wDE5eI9V2QHXgSjsk",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/11itmVSejuSeAZ22wDE5eI9V2QHXgSjsk/view",
+   "title": "[Sweetspot] CHOICE BY VANTT_MKT 기획안_250401.pdf"
+  },
+  {
+   "doc_id": "1Uf_VXvbP3iQoB4K4DSoiDt_KldTAPuQE",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Uf_VXvbP3iQoB4K4DSoiDt_KldTAPuQE/view",
+   "title": "[Sweetspot] CHOICE BY VANTT MKT 결과보고서_20250528.pdf"
+  },
+  {
+   "doc_id": "1cxci-ZxaJCMZbHBOBF0Nl4YJjqICA12e",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1cxci-ZxaJCMZbHBOBF0Nl4YJjqICA12e/view",
+   "title": "[Sweetspot] 반트_프르모션 업무 계약서_최종.pdf"
+  },
+  {
+   "doc_id": "1wQ-XDEGaD-4NKjKSZau4Q0rnZUpp-Zb0",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1wQ-XDEGaD-4NKjKSZau4Q0rnZUpp-Zb0/view",
+   "title": "(Sweetspot) CHOICE BY VANTT_MKT 견적서_7차_250528.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 4건: [Sweetspot] 반트_프르모션 업무 계약서_최종., [Sweetspot] CHOICE BY VANTT_MK, (Sweetspot) CHOICE BY VANTT_MK, [Sweetspot] CHOICE BY VANTT MK. 미확실: 팝업/시설 오프라인 방문자 실측 수치 없음; 소비자 매출(POS) 데이터 없음; 면적(평) 정보 없음; 일자별 방문 표 부재 - 마케팅 캠페인 성격; 예상 방문 총원(plan) 명시 없음(얼리버드 500명은 프로모션 한정 인원)"
+ }
+}

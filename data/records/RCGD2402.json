@@ -1,0 +1,135 @@
+{
+ "record_id": "RCGD2402",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:메이플스토리_넥슨",
+  "space_id": "unresolved:더현대서울_굿즈",
+  "client_party_id": "unresolved:에프엠커뮤니케이션즈",
+  "brand_key": "메이플스토리",
+  "space_key": "더현대서울"
+ },
+ "intervention": {
+  "concept": "메이플스토리 넥슨재팬 굿즈 수출 프로젝트. 20주년 기념 굿즈(전시굿즈·몬스터굿즈) 및 넥슨재팬 상품(뱃지, 키링, 파우치 등)을 제작·납품하는 상품 공급 건. 팝업스토어 운영이 아닌 굿즈 상품 공급/수출 계약.",
+  "brand_name": "메이플스토리",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [
+   "굿즈",
+   "뱃지",
+   "키링",
+   "파우치",
+   "마우스패드",
+   "포토카드",
+   "캐릭터굿즈"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "동대문구",
+   "venue_name": "DDP(동대문디자인플라자)",
+   "venue_type": "굿즈 납품장소",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-01-01",
+   "to": "2024-01-31",
+   "days": 31
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "넥슨재팬 상품 납품 견적 총계 21,340,000원(VAT 10% 별도). 1차 굿즈 국제운송료 900,000원 포함, 발주수량 3,400개. 별도 20주년 기념굿즈 공급계약: 전시굿즈 소계 195,590,000원 + 몬스터굿즈 소계 58,230,000원 = 총합계 253,820,000원(VAT별도). 물품대금은 물품 공급 전 2023-04-19까지 전액 현금 지급. | 계약서 재독해(2026-07-27): 총액 일치 확인(253.8M)"
+  },
+  "brand_requirements": [
+   "별첨 단가표 규격 또는 구매자 지정 규격/KS 규격품",
+   "물품 공급받은 날로부터 10영업일 이내 검사",
+   "납품기일 준수(2023-04-27까지, 2차 굿즈 2024년 3월말 납품 예정)",
+   "운송비용 공급자 부담(국제운송료 별도)"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "DDP 굿즈 납품"
+  },
+  "derived": {
+   "duration": {
+    "days": 31,
+    "weekend_share": 0.26,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 2.9,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 0,
+    "holiday_until": 0,
+    "holiday_block_in": 1,
+    "nat_event_gap": 46,
+    "nat_event": null,
+    "doc_lag_days": 266,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": "서울 영등포구 여의대로 108"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": 2062456,
+   "rev_mm_recognized": 1.9
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(본 건은 굿즈 상품 공급/수출 계약으로 결과보고서 및 방문객 데이터가 존재하지 않음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "partial",
+   "rule": "인식 1.9 < 총액 253.82의 90%",
+   "contract_total_mm": 253.82,
+   "last_recognition_period": "2024-07"
+  },
+  "sales_basis": "PnL 상품매출 양수계정 합 × 1.1 (부가세 포함 기준)",
+  "label_history": [
+   {
+    "at": "pnl_sales (2026-07-28)",
+    "action": "mine",
+    "changes": [
+     "sales_krw 2,062,456 (PnL 총 결제액)"
+    ],
+    "evidence": "core.project_pnl_monthly 상품매출 양수계정 합 1,874,960(공급가) × 1.1, 인식 1개월"
+   }
+  ]
+ },
+ "docs": [
+  {
+   "doc_id": "15RUv0T1U4vIUgzSaXG_dGoBDTI_MBoZZ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/15RUv0T1U4vIUgzSaXG_dGoBDTI_MBoZZ/view",
+   "title": "넥슨 메이플 20주년 기념 팝업스토어 상품 공급계약서(스위트스팟_230410).pdf"
+  },
+  {
+   "doc_id": "1igud909dXhPE3NmZXn2SoOzaECDxug4T",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1igud909dXhPE3NmZXn2SoOzaECDxug4T/view",
+   "title": "메이플스토리 넥슨재팬 상품 납품 견적서(스위트스팟_24.01.31) (1).pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: 넥슨 메이플 20주년 기념 팝업스토어 상품 공급계약서(, 메이플스토리 넥슨재팬 상품 납품 견적서(스위트스팟_24. 미확실: 방문객 및 매출 실측 데이터 없음(결과보고서 부재); 클라이언트명 미확정(에프엠커뮤니케이션즈가 구매자); 면적 정보 없음; 프로젝트 기간과 계약서 기간 불일치(계약서 2023년, 프로젝트 메타 2024년); 팝업 운영 여부 불명확 - 굿즈 공급 계약 성격 | fee 계약서화(2026-07-27)"
+ }
+}

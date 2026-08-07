@@ -1,0 +1,92 @@
+{
+ "market_record_id": "MKT-2026-0031",
+ "event_name": "쿠키런 디저트 팝업스토어 '쿠키앤모어'",
+ "brand": "데브시스터즈",
+ "ip_or_collab": "쿠키런",
+ "category": "game_webtoon",
+ "intervention": {
+  "concept_description": "쿠키런 캐릭터를 디저트로 확장한 팝업. 르뱅 쿠키 15종·캐러멜·수제 캔디 등 디저트 상품 + 키링·피규어 굿즈",
+  "experience_elements": [
+   "용감한 쿠키 포토타임(어린이날)",
+   "디저트 매장 공간 연출"
+  ],
+  "promotions": [
+   "어린이날 띠부씰 증정 이벤트"
+  ],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "롯데월드몰",
+  "venue_type": "mall",
+  "neighborhood": "잠실",
+  "city": "서울",
+  "period_from": "2026-05-02",
+  "period_to": "2026-05-14",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 13,
+    "weekend_share": 0.31,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 3,
+    "months_since_last": 0.5,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 18000,
+  "visitors_period_days": 13,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "데브시스터즈 발표 인용: '쿠키런 디저트 팝업스토어 쿠키앤모어가 총 1만8000여명의 방문객을 기록하며 운영을 마쳤다고 19일 밝혔다'",
+  "visitors_source_quote": "데브시스터즈는 쿠키런 디저트 팝업스토어 '쿠키앤모어'가 총 1만8000여명의 방문객을 기록하며 운영을 마쳤다고 19일 밝혔다.",
+  "visitors_source_url": "https://www.smedaily.co.kr/news/articleView.html?idxno=357291",
+  "visitors_source_date": "2026-05-19",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": "퓨어바닐라 쿠키 아크릴 에폭시 키링·봉제인형 키링 일부 상품 준비 수량 전량 소진",
+   "reservation_fill": null,
+   "signal_quotes": [
+    "어린이날인 5일에는 용감한 쿠키 포토타임과 띠부씰 증정 이벤트가 진행되며 2200명 이상이 현장을 찾았다.",
+    "이번 팝업에서 처음 선보인 쿠키, 사탕, 캐러멜 등 디저트 상품은 전체 매출의 40%를 차지했다.",
+    "캐릭터를 모티브로 한 르뱅 쿠키 15종은 1만개 이상 판매됐다. 캐러멜도 3000여개가 판매됐다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": true,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "매출 총액 미공개, 디저트 매출 비중 40%만 보도. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

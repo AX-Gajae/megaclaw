@@ -1,0 +1,60 @@
+{
+  "market_record_id": "MKT-2025-0141",
+  "event_name": "마이림(MYLIM) 첫 시즌 팝업스토어(현대백화점 압구정본점·판교점)",
+  "brand": "마이림(MYLIM)",
+  "ip_or_collab": null,
+  "category": "fashion",
+  "intervention": {
+    "concept_description": "플리츠 라인 중심 여성복 브랜드 첫 오프라인 팝업",
+    "experience_elements": [
+      "플리츠 라인 판매"
+    ],
+    "promotions": [],
+    "is_free_entry": null,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "현대백화점 압구정본점·판교점",
+    "venue_type": "department_store",
+    "neighborhood": "압구정·판교",
+    "city": "서울",
+    "period_from": null,
+    "period_to": null,
+    "area_pyeong": null,
+    "multi_store": true
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 7,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "브랜드 측 설명 인용 '각각 일주일간 운영된 팝업은 하루 평균 5000만원 이상의 매출, 3시간 이상 대기 줄, 일부 품목 완판 등의 기록을 남기며...' '초도 물량 기준 약 20억원 규모의 매출'",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": 2000000000,
+    "sales_source_quote": "이번 시즌을 첫 런칭으로 삼은 신생 브랜드임에도 불구하고, 초도 물량 기준 약 20억원 규모의 매출을 기록하며 업계의 관심을 받고 있다.",
+    "sales_source_url": "https://www.bizwnews.com/news/articleView.html?idxno=108886",
+    "sales_source_date": "2025-08-07",
+    "demand_signals": {
+      "waiting_time_reported": true,
+      "sold_out": true,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "각각 일주일간 운영된 팝업은 하루 평균 5000만원 이상의 매출, 3시간 이상 대기 줄, 일부 품목 완판 등의 기록을 남기며 신생 브랜드로서는 이례적인 현장 반응을 끌어냈다고 업체 측은 설명했다.",
+        "팝업스토어 운영 기간 플리츠 라인 중심의 주요 제품은 오픈 당일 대부분 소진됐고"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "정확한 팝업 기간(날짜) 원문 미기재. 20억은 '초도 물량 기준' 표현으로 팝업 전체 매출 해석 주의. 일평균 5천만원은 총계 환산 금지(규칙 5) | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": false,
+  "exclude_reason": "기간 미상",
+  "verification": {
+    "sales": "verified"
+  },
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

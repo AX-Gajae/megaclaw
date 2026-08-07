@@ -1,0 +1,163 @@
+{
+ "record_id": "RCPU2422",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:명탐정코난",
+  "space_id": "unresolved:현대백화점_신촌점",
+  "client_party_id": "unresolved:참돌",
+  "brand_key": "명탐정코난",
+  "space_key": "현대백화점_신촌점"
+ },
+ "intervention": {
+  "concept": "명탐정코난 IP 팝업스토어로 현대 신촌점에서 진행된 판매행사(굿즈 판매 중심). VMD존 설치물 및 집기를 활용한 상품 판매 위탁운영 형태.",
+  "brand_name": "명탐정코난 팝업스토어",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [
+   "VMD존",
+   "현대백화점 팝업",
+   "IP 굿즈 판매"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "마포구(신촌)",
+   "venue_name": "현대백화점 신촌점",
+   "venue_type": "백화점",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-07-12",
+   "to": "2024-07-18",
+   "days": 7
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "운영대행 견적 총계 17,130,000원(VAT 별도, 2024-07-15 수정본): 소계 15,132,000원 + 대행수수료 2,000,000원. 초기 견적(2024-06-20) 총계 12,670,000원(소계 10,678,000 + 대행수수료 2,000,000, VAT 별도). 정산은 행사 종료 일주일 후 2024-07-25까지 갑이 을에게 운영비 전액 지급. 판매 LOSS는 총매출 4% 이상 발생 시 제품 제조원가 100% 공제, 4% 이하는 통상LOSS로 갑 부담. 로스율은 POS 총매출 대비 판매가 기준 과재고·과부족 재고 상계 산정. VMD존 시공비·집기·운영인력 인건비·상품 제작 및 공급대금은 갑 부담. | 계약구조 확인(2026-07-27): 위탁운영형 — 계약서가 총액 대신 견적서/조건안을 준거로 지정, 따라서 견적 총액이 계약상 확정액"
+  },
+  "brand_requirements": [
+   "갑 협의 가격으로만 판매",
+   "판매 데이터 및 장부 비치·보관",
+   "위탁상품 전매·질권·담보 금지",
+   "영업 종료 후 5일 이내 최종 재고 반품",
+   "행사주최자배상책임보험 가입"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "현대백화점 신촌점"
+  },
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 67,
+    "holiday_until": 64,
+    "holiday_block_in": 0,
+    "nat_event_gap": 93,
+    "nat_event": null,
+    "doc_lag_days": 22,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 문서가 제공되지 않아 방문객 및 매출 실측 데이터 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": 17.13,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "19VIgQtbkO8dpReOurbcZEA90B9tjy11N",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/19VIgQtbkO8dpReOurbcZEA90B9tjy11N/view",
+   "title": "참돌_명탐정코난팝업_가견적(수정)_0520.xlsx"
+  },
+  {
+   "doc_id": "1KtZBSboEsu_kF3ou1J71JlvK4lnpCfKb",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1KtZBSboEsu_kF3ou1J71JlvK4lnpCfKb/view",
+   "title": "참돌_명탐정코난팝업_가견적(수정)_0520.pdf"
+  },
+  {
+   "doc_id": "1PM201N2Z4DiSWaoYWkizz6ch2s0cdn5z",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1PM201N2Z4DiSWaoYWkizz6ch2s0cdn5z/view",
+   "title": "참돌_명탐정코난팝업_가견적_0517.xlsx"
+  },
+  {
+   "doc_id": "1Q5POFfgjcNAgVX4Tc_sPcERDmLYG37DB",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Q5POFfgjcNAgVX4Tc_sPcERDmLYG37DB/view",
+   "title": "참돌_명탐정코난팝업_가견적_0530(PDF).pdf"
+  },
+  {
+   "doc_id": "1XMMnT00nLamL5g3ldeCJDLxVKET7PXd0",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1XMMnT00nLamL5g3ldeCJDLxVKET7PXd0/view",
+   "title": "명탐정코난 현대신촌 팝업스토어 위탁운영 계약서_스위트스팟_240718.pdf"
+  },
+  {
+   "doc_id": "1bgLUEVWb8ThtWoBO25VdlwBIETeg39Lp",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1bgLUEVWb8ThtWoBO25VdlwBIETeg39Lp/view",
+   "title": "명탐정코난 현대신촌 팝업스토어 위탁운영 계약서_스위트스팟_240620.doc"
+  },
+  {
+   "doc_id": "1d-RG1CpQM0NJ0GAstI9ve_yMM9CbO6uB",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1d-RG1CpQM0NJ0GAstI9ve_yMM9CbO6uB/view",
+   "title": "참돌_명탐정코난팝업_견적서(수정)_0520.pdf"
+  },
+  {
+   "doc_id": "1eBwCf2blUI3v5kDmBtRaUhAeXjbNMeXN",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1eBwCf2blUI3v5kDmBtRaUhAeXjbNMeXN/view",
+   "title": "참돌_명탐정코난팝업_견적수정_0715.xlsx"
+  },
+  {
+   "doc_id": "1siPQOGVaaw1MgLlEm38YWhw1p0_mVpEV",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1siPQOGVaaw1MgLlEm38YWhw1p0_mVpEV/view",
+   "title": "참돌_명탐정코난팝업_견적수정_0715.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: 명탐정코난 현대신촌 팝업스토어 위탁운영 계약서_스위트스, 참돌_명탐정코난팝업_견적수정_0715.pdf, 참돌_명탐정코난팝업_견적서(수정)_0520.pdf. 미확실: 결과보고서 부재로 outcome(일일/총 방문자, POS 매출) 전부 없음; 면적(평) 정보 없음; 기획서 부재로 예상 방문자·체험요소·프로모션 정보 없음; 계약서 기간(07-12~07-18)과 프로젝트 메타(07-13~07-18) 불일치; fee_structure.detail 별첨1 인력 운영대행 조건 수치 원문 미표시"
+ }
+}

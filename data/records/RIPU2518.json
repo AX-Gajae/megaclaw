@@ -1,0 +1,129 @@
+{
+ "record_id": "RIPU2518",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:LIFEPLUS_한화",
+  "space_id": "unresolved:한화불꽃축제_LIFEPLUS_TV_홍보부스",
+  "client_party_id": null,
+  "brand_key": "한화_라이프플러스",
+  "space_key": "한화불꽃축제"
+ },
+ "intervention": {
+  "concept": "한화불꽃축제와 연계한 LIFEPLUS TV 홍보부스. 원문 문서가 제공되지 않아 세부 컨셉·체험요소를 확인할 수 없음.",
+  "brand_name": "LIFEPLUS",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-08-05",
+   "to": "2025-09-27",
+   "days": 54
+  },
+  "season": "summer",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "한화불꽃축제 연계 홍보부스"
+  },
+  "derived": {
+   "duration": {
+    "days": 54,
+    "weekend_share": 0.28,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 58,
+    "holiday_until": 10,
+    "holiday_block_in": 3,
+    "nat_event_gap": 63,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 28.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-09, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-09"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-8Mh8U98cQDzeJxyJk_1xxR2Q9073NIm",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1-8Mh8U98cQDzeJxyJk_1xxR2Q9073NIm/view",
+   "title": "[스위트스팟]한화 라이프플러스TV 결과보고서_10.14.pdf"
+  },
+  {
+   "doc_id": "15WpEnm3lYparurDV7e95LUdhGec5S2Md",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/15WpEnm3lYparurDV7e95LUdhGec5S2Md/view",
+   "title": "[한화생명-기업PR]라이프 플러스 TV_디지털 제작_라플TV 홍보 부스 제작 운영 계약서.pdf"
+  },
+  {
+   "doc_id": "1Czgk21OsUYEfsBJkRbxR4n_3yLNPHk2w",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Czgk21OsUYEfsBJkRbxR4n_3yLNPHk2w/view",
+   "title": "[스위트스팟]한화 라이프플러스TV 결과보고서_09.30.pptx"
+  },
+  {
+   "doc_id": "1Dza5ZSgDuI4_zG8144BC2Cd7KaIGMTtN",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Dza5ZSgDuI4_zG8144BC2Cd7KaIGMTtN/view",
+   "title": "한화 라이프플러스 TV부스_견적서_09.09.pdf"
+  },
+  {
+   "doc_id": "1idldwd1VorcbKgZxXC-1c4RQfLvIIwlx",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1idldwd1VorcbKgZxXC-1c4RQfLvIIwlx/view",
+   "title": "[스위트스팟]한화 라이프플러스TV 부스 제안서(운영안)_09.23.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서/기획서/견적서/결과보고서) 미제공; 입지(도시·구·venue) 정보 없음; 면적 정보 없음; 수수료 구조 및 계약금액 없음; 브랜드 요구사항 없음; 컨셉·체험요소·프로모션·연출태그 없음; 일일/총 방문자 및 매출 실측 없음; counting_method 판정 근거 없음; 예상 방문 수치 없음; client_name 없음 | 라벨발굴(2026-07-24): 결과보고서 재추출 — OVERVIEW KPI 결과보고 슬라이드 - QR코드 통계 방문자수 241명, 구독이벤트 854명, 댓글참여 | 라벨 철회(2026-07-24): 발굴값 241은 'QR코드 통계 방문자수'(디지털 스캔) — 한화불꽃축제 54일 홍보부스의 물리 방문 아님(GA4 대기열=실방문 16% 프록시 교훈과 동일 유형). 참고치: QR 241, 구독이벤트 854, 댓글 593"
+ }
+}

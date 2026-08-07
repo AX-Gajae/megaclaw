@@ -1,0 +1,132 @@
+{
+ "record_id": "RCPU2624",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:메디큐브_MEDICUBE",
+  "space_id": "unresolved:롯데백화점_부산본점",
+  "client_party_id": "unresolved:APR_에이피알_apr-in",
+  "brand_key": "메디큐브",
+  "space_key": "롯데백화점_부산본점"
+ },
+ "intervention": {
+  "concept": "메디큐브(APR) 뷰티 브랜드의 롯데백화점 부산본점 팝업스토어. 인테리어·백화점계약·POS는 APR이 직접 수행하고 스위트스팟은 채용·교육·현장운영·정산을 대행하는 인력운영 대행형.",
+  "brand_name": "메디큐브",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [
+   "백화점_팝업",
+   "뷰티_스킨케어",
+   "다국어_안내물(영·일·중)"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "부산",
+   "district": "부산진구",
+   "venue_name": "롯데백화점 부산본점",
+   "venue_type": "백화점",
+   "foot_traffic_context": "일평균 입객 4~5만 명 규모, 웨이팅 발생 → 입구관리 스태프 주말 증배치"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2026-05-01",
+   "to": "2026-05-14",
+   "days": 14
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "확정 예산 46,800,000원(VAT-) (Sophy budget_won 45,600,000으로 소액 차이). 부산 본점 청구·입금 확인분 29,900,000원(VAT-) — 예산 전액 단일청구 아닌 분할청구 정황. 추가비용 4,900,000원 06-30 별도 정산 중. 이윤 15,899,829원 / 수익률 33.97%, 실 사용 비용 30,900,171원. 05-18 세금계산서 발행, 05-28 전체 대금 입금완료. 로스율(입고수량 2% 초과분 제조원가 보상) 조항 별도처리 수정, 제6조 안전사고 귀책 문구 보강."
+  },
+  "brand_requirements": [
+   "APR 자체 POS(앳포스) 사용, 스위트스팟 코드 미사용",
+   "롯데 파트너스 EDI 운영",
+   "명찰(루아샵) 제작",
+   "근로자의 날(05-01) 오픈으로 인건비 2.5배 가산",
+   "사전교육 04-28~04-30 부산 부산진구 디오피스 라온제나 A회의실"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "일평균 입객 4~5만 명 규모, 웨이팅 발생"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 60,
+    "holiday_until": 22,
+    "holiday_block_in": 0,
+    "nat_event_gap": 33,
+    "nat_event": null,
+    "doc_lag_days": 46,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 3874053.0,
+    "pnl_pre_accounts": 8,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2026-03-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 46.8
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(실제 방문객 수·팝업 매출은 APR 자체 POS 사용으로 스위트스팟 미집계, 슬랙에도 수치 없음. 예상/KPI 수치 문서 미확인.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식액 46.8 ≈ 계약총액 46.8 (±10%)",
+   "contract_total_mm": 46.8,
+   "last_recognition_period": "2026-05"
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "1_3CdCDWzFAj8rAN8QMqyJDBunKvjrQUX",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1_3CdCDWzFAj8rAN8QMqyJDBunKvjrQUX/view",
+   "title": "RCPU2624_메디큐브_롯데 부산 최종 견적서.pdf"
+  },
+  {
+   "doc_id": "1oedd-hsjGKVkpDmGnfcXkvAgCF-A7now",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1oedd-hsjGKVkpDmGnfcXkvAgCF-A7now/view",
+   "title": "스위트스팟_롯데백화점 부산본점 메디큐브 팝업스토어 위탁 운영 계약서 260316_최종_메디큐브 홈쇼핑팀-2026-00125.pdf"
+  },
+  {
+   "doc_id": "1vF5ruTZXmFseHsNOKm880KPMuBsAApsxlYTEYtJRnhU",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1vF5ruTZXmFseHsNOKm880KPMuBsAApsxlYTEYtJRnhU/view",
+   "title": "■ RC본부 프로젝트 견적서(all)"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 0건: . 미확실: 실제 방문객 수·팝업 매출(POS) 데이터 없음 — APR 자체 POS 사용으로 미집계; 면적(area_pyeong) 미확인; 확정 계약서 원문·서명일 미확인(전자/모두싸인만 확인); 체험요소·프로모션 세부 미확인; 철수 사고(재고 혼재·로고 아크릴 파손) 최종 변상 결과 미확인; fee_structure 예산 소스간 차이(46,800,000 vs 45,600,000)"
+ }
+}

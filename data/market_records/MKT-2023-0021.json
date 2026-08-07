@@ -1,0 +1,90 @@
+{
+ "market_record_id": "MKT-2023-0021",
+ "event_name": "이에이에(YIEYIE) 팝업스토어(더현대서울 크리에이티브 그라운드)",
+ "brand": "이에이에(YIEYIE)",
+ "ip_or_collab": "유튜버 이사배(방문 이벤트)",
+ "category": "fashion",
+ "intervention": {
+  "concept_description": "영타깃 패션 브랜드, 주얼리 프린트 붉은 벽·기둥의 포토제닉 인테리어. 유튜버 이사배 방문 포토타임",
+  "experience_elements": [
+   "포토존 인테리어",
+   "이사배 포토타임"
+  ],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "더현대서울 지하 2층 크리에이티브 그라운드",
+  "venue_type": "department_store",
+  "neighborhood": "여의도",
+  "city": "서울",
+  "period_from": "2023-05-18",
+  "period_to": "2023-05-21",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.5,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 1500,
+  "visitors_period_days": 4,
+  "counting_basis": "media_estimate",
+  "counting_basis_note": "한국섬유신문 현장 취재 기사 '이에이에 팝업스토어에는 18~21일까지 4일간 1500명 이상이 방문했으며 매출 약 5500만 원을 기록했다' — 산정 주체 명시 없음",
+  "visitors_source_quote": "이에이에 팝업스토어에는 18~21일까지 4일간 1500명 이상이 방문했으며 매출 약 5500만 원을 기록했다.",
+  "visitors_source_url": "https://ktnews.com/news/articleView.html?idxno=128662",
+  "visitors_source_date": "2023-05-25",
+  "sales_krw": 55000000,
+  "sales_source_quote": "이에이에 팝업스토어에는 18~21일까지 4일간 1500명 이상이 방문했으며 매출 약 5500만 원을 기록했다.",
+  "sales_source_url": "https://ktnews.com/news/articleView.html?idxno=128662",
+  "sales_source_date": "2023-05-25",
+  "demand_signals": {
+   "waiting_time_reported": true,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "이에이에 팝업스토어에는 유튜버 이사배가 방문했고, 그와 포토 타임을 가지려는 사람들이 줄을 섰다.",
+    "매장 안은 구경하는 사람들로 가득 찼고, 연신 카메라 셔터가 터지며 이곳이 사진 맛집임을 증명했다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "C"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "1500명은 '이상' 하한, 매출 '약' 5500만원. ktnews 현장 취재 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified",
+  "sales": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,194 @@
+{
+ "record_id": "RCPU2424",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:신카이마코토_SHOP",
+  "space_id": "unresolved:천호_현대백화점_천호점",
+  "client_party_id": "unresolved:미디어캐슬",
+  "brand_key": "신카이마코토",
+  "space_key": "현대백화점_천호점"
+ },
+ "intervention": {
+  "concept": "신카이마코토 애니메이션 IP를 활용한 '시네마 스토어' 컨셉의 팝업스토어로, 현대백화점 투어팝업(더현대서울/신촌/대구/천호)의 천호점 회차다. 영화관 공간 연출과 포토존, 작품 히스토리월 및 단편선 소품 전시를 통한 IP 체험형 굿즈 판매 매장이다.",
+  "brand_name": "신카이마코토#Shop (신카이마코토 시네마스토어)",
+  "experience_elements": [
+   "포토존 5종",
+   "식재연출물·지하철의자·벤치의자·우산·구름·등신대 등 연출물",
+   "메가벌룬 2종",
+   "영화관 공간구성(빈백,헤드셋,협탁,레이저 빔프로젝트,가벽,커튼)",
+   "전시좌대 및 포스터월",
+   "단편선 소품 특수제작 5종(수제구두,비행기,편지함,휴대폰,광석라디오+목걸이)",
+   "작품 히스토리 월",
+   "포토카드 기기",
+   "VP 쇼케이스(아크릴전시대)"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "시네마/영화관 컨셉",
+   "IP 팝업",
+   "현장 그래픽 연출",
+   "채널사인 입구",
+   "바닥카페트"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "송파구(천호는 강동구 소재 백화점명)",
+   "venue_name": "현대백화점 천호점",
+   "venue_type": "백화점",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-08-23",
+   "to": "2024-09-05",
+   "days": 14
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "전체 컨설팅 용역계약(더현대서울/대구/신촌/천호 4개점) 총액 330,500,000원 VAT별도. 계약금 165,250,000원(24.5.31 이전 입금), 잔금 165,250,000원(잔여 3개점 신촌·대구·천호 행사시작 월 분할납부). 대행수수료 소계의 10%, 예비비 소계의 3%. 판매 LOSS는 총매출 대비 4% 이상 발생 시 제조원가로 을이 부담, 4% 이하는 갑 부담. 천호점 VP 쇼케이스(아크릴전시대) 렌탈 440,000원(VAT포함, 렌탈큐브, 08.22~09.05).프현디 인테리어/그래픽 별도 견적(계약시 50%, 납품시 잔액)."
+  },
+  "brand_requirements": [
+   "매장 디자인·설계 및 인테리어 시공",
+   "집기 제작·시공",
+   "사인/그래픽 제작(가격표,POP,ISP 포함)",
+   "진열/연출 소도구 납품",
+   "팝업스토어 운영",
+   "POS/ERP 및 현장 웨이팅 시스템 사용",
+   "주요 진행사항 갑에게 보고"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "현대백화점 천호점"
+  },
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 4,
+    "months_since_last": 0.9,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 109,
+    "holiday_until": 22,
+    "holiday_block_in": 0,
+    "nat_event_gap": 83,
+    "nat_event": null,
+    "doc_lag_days": 108,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 27272.0,
+    "pnl_pre_accounts": 1,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2024-07-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 59.9
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 문서가 제공되지 않아 방문객수·매출 실측값을 확인할 수 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "partial",
+   "rule": "인식 59.9 < 총액 330.5의 90%",
+   "contract_total_mm": 330.5,
+   "last_recognition_period": "2024-10"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "12xkVoaW_D1UUViMnNnxIF1GxifZv2h3e",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/12xkVoaW_D1UUViMnNnxIF1GxifZv2h3e/view",
+   "title": "[견적서-렌탈큐브] 현대 천호 신카이마코토샵 VP 쇼케이스 렌탈 건.xlsx"
+  },
+  {
+   "doc_id": "14S1t2mH6qC_DlOa1sQgw1WxSWboP_cq9",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14S1t2mH6qC_DlOa1sQgw1WxSWboP_cq9/view",
+   "title": "[견적서-솔루션포커스] 현대천호 신카이마코토샵 포토키오스크 렌탈건.pdf"
+  },
+  {
+   "doc_id": "18_8jxVvaaHtgl_-zYPzzKdTnXxkRRWcI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/18_8jxVvaaHtgl_-zYPzzKdTnXxkRRWcI/view",
+   "title": "(스위트스팟)신카이마코토 시네마스토어 최종 견적서(24.09.26).xlsx"
+  },
+  {
+   "doc_id": "1CMPqUUxgvjHu75aEidTh5q-O34WqglhJ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CMPqUUxgvjHu75aEidTh5q-O34WqglhJ/view",
+   "title": "(견적서-렌탈큐브) 현대 천호 신카이마코토샵 VP 쇼케이스 렌탈 건.pdf"
+  },
+  {
+   "doc_id": "1FkeZNj8c3wYiaAIWOkqkEQ_iSmB7KUUK",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1FkeZNj8c3wYiaAIWOkqkEQ_iSmB7KUUK/view",
+   "title": "(스위트스팟)신카이마코토 시네마스토어 최종 견적서(24.09.26).xlsx"
+  },
+  {
+   "doc_id": "1JVm7VrxitWvHoWuje6VF3-dW1v_Marj2",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1JVm7VrxitWvHoWuje6VF3-dW1v_Marj2/view",
+   "title": "[견적서-프렌디] 현대천호 신카이마코토샵 시공건.xlsx"
+  },
+  {
+   "doc_id": "1VP0-k8TUhoudXp6Q-z1SvHnMnn4Ezpyg",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1VP0-k8TUhoudXp6Q-z1SvHnMnn4Ezpyg/view",
+   "title": "미디어캐슬 신카이마코토 팝업스토어 구축 컨설팅용역계약서_240507.pdf"
+  },
+  {
+   "doc_id": "1eIyZn38v4kRC4I-p5KioIx10Rod2pPMO",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1eIyZn38v4kRC4I-p5KioIx10Rod2pPMO/view",
+   "title": "신카이마코토_천호점_견적_0909_하울확인.pdf"
+  },
+  {
+   "doc_id": "1sHXtXi07jx3nhXlhuioefOVeoAmEmeyb",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1sHXtXi07jx3nhXlhuioefOVeoAmEmeyb/view",
+   "title": "신카이마코토_천호점_견적_0909_하울확인.xlsx"
+  },
+  {
+   "doc_id": "1uTSLBkPkJvxJpL7dYLRn_f9CvqYf_kKG",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1uTSLBkPkJvxJpL7dYLRn_f9CvqYf_kKG/view",
+   "title": "[세금계산서-렌탈큐브] 현대 천호 신카이마코토샵 VP 렌탈 건.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 6건: (스위트스팟)신카이마코토 시네마스토어 최종 견적서(24, 미디어캐슬 신카이마코토 팝업스토어 구축 컨설팅용역계약서, 신카이마코토_천호점_견적_0909_하울확인.xlsx, (스위트스팟)신카이마코토 시네마스토어 최종 견적서(24, (견적서-렌탈큐브) 현대 천호 신카이마코토샵 VP 쇼케, [세금계산서-렌탈큐브] 현대 천호 신카이마코토샵 VP . 미확실: 결과보고서 부재로 outcome.daily/totals/counting_method 전부 미상; 천호점 개별 견적 금액(견적서 텍스트에 숫자 미표기); 팝업 면적(평); 정확한 venue 소재지(현대백화점 천호점=서울 강동구); 기획서/제안서 부재로 예상 방문객 수 미상; client_party_id 정규화 불확실"
+ }
+}

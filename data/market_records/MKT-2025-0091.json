@@ -1,0 +1,89 @@
+{
+ "market_record_id": "MKT-2025-0091",
+ "event_name": "명조: 워더링 웨이브 팝업 트럭 '두 유노 명조?'(서울 홍대·부산 광안)",
+ "brand": "쿠로게임즈",
+ "ip_or_collab": "명조: 워더링 웨이브 (유노)",
+ "category": "game_webtoon",
+ "intervention": {
+  "concept_description": "가을 시즌 유저 생활권 찾아가는 팝업 트럭(서울 홍대·부산 광안 동시). 캐릭터 테마 메뉴, 인형탈·코스프레 상호작용, 띵조 고수의 전당 게임 랭킹, 캔뱃지 제작소",
+  "experience_elements": [
+   "띵조 고수의 전당(게임 랭킹)",
+   "캔뱃지 제작소(커스텀 캔뱃지)",
+   "인형탈 포토 이벤트",
+   "조수 촬영 창작 공모전"
+  ],
+  "promotions": [
+   "리딤코드·갤럭시스토어 10% 쿠폰",
+   "상위 랭킹 3명 갤럭시 Z 플립7·워치8 클래식·버즈3 프로 경품"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "홍대 2번 출구 앞(서울)·광안역 5번 출구 써드하우스(부산)",
+  "venue_type": "street_standalone",
+  "neighborhood": "홍대/광안",
+  "city": "서울·부산",
+  "period_from": "2025-09-20",
+  "period_to": "2025-09-21",
+  "area_pyeong": null,
+  "multi_store": true,
+  "derived": {
+   "duration": {
+    "days": 2,
+    "weekend_share": 1.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 11.6,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 6000,
+  "visitors_period_days": 2,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "쿠로게임즈 발표 인용(서울·부산 합산): '양일간 6,000여 명의 방문객이 현장을 찾으며 뜨거운 호응을 이끌어 냈다'",
+  "visitors_source_quote": "이번 행사는 이용자들이 생활하는 공간 속으로 직접 찾아가 교류한다는 취지로 마련되었으며, 양일간 6,000여 명의 방문객이 현장을 찾으며 뜨거운 호응을 이끌어 냈다.",
+  "visitors_source_url": "https://www.thisisgame.com/articles/403189",
+  "visitors_source_date": "2025-09-22",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "서울 홍대+부산 광안 합산 6천여 명. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "집계형(통합/합산)",
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,76 @@
+{
+  "market_record_id": "MKT-2026-0046",
+  "event_name": "다이닛(DEINET) 현대백화점 판교점 팝업스토어",
+  "brand": "다이닛 DEINET (다니, 김다인)",
+  "ip_or_collab": "비비(BB) 일러스트레이터 협업 공간 연출, DEINET X G-PARK(박명수) 컬래버 선발매",
+  "category": "fashion",
+  "intervention": {
+    "concept_description": "마뗑킴 창립자 김다인의 신규 브랜드 팝업, 2000년대 아바타 문화 재해석 공간, 젤리백 컬렉션",
+    "experience_elements": [
+      "아바타 비주얼·오브제 공간",
+      "박명수 현장 방문"
+    ],
+    "promotions": [
+      "오프라인 팝업 한정 발매 상품",
+      "컬래버 상품 팝업 선발매"
+    ],
+    "is_free_entry": null,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "현대백화점 판교점",
+    "venue_type": "department_store",
+    "neighborhood": "판교",
+    "city": "성남",
+    "period_from": "2026-06-12",
+    "period_to": "2026-06-25",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 14,
+        "weekend_share": 0.29,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 14,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "브랜드 발표 인용. 오픈 3일 만에 약 1억4천만원 → 2주 누적 약 4억원(최종)",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": 400000000,
+    "sales_source_quote": "다니(대표 김다인)의 패션 브랜드 '다이닛(DEINET)'이 현대백화점 판교점에서 진행한 팝업스토어에서 2주간 누적 매출 4억원을 기록했다.",
+    "sales_source_url": "https://fashionbiz.co.kr/article/227403",
+    "sales_source_date": "2026-06-26",
+    "demand_signals": {
+      "waiting_time_reported": "오픈 첫날부터 방문객 발길 이어짐",
+      "sold_out": "협업 한정 아이템(레오파드·데님 팬츠) 빠르게 판매",
+      "reservation_fill": null,
+      "signal_quotes": [
+        "지난 6월 12일부터 25일까지 현대백화점 판교점에서 운영된 다이닛 팝업스토어는 오픈 첫날부터 방문객들의 발길이 이어지며 뜨거운 반응을 얻었다.",
+        "오픈 3일 만에 약 1억4000만원의 매출을 기록한 데 이어 2주간 누적 매출 약 4억원을 달성하며 성공적으로 마무리됐다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "매출은 오픈 후 3일 누적(6/12~14). 기사 시점(6/15) 기준 팝업 진행 중(6/25 종료 예정). | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {
+    "sales": "verified"
+  },
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

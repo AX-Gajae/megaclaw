@@ -1,0 +1,142 @@
+{
+ "record_id": "RTPU2540",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:삼양식품",
+  "space_id": "unresolved:아워홈_급식",
+  "client_party_id": "unresolved:삼양식품",
+  "brand_key": "삼양식품",
+  "space_key": "아워홈"
+ },
+ "intervention": {
+  "concept": "삼양식품과 아워홈이 협업한 F&B 급식 메뉴 프로모션 부스. 파스타 신메뉴를 급식 메뉴로 선보이는 홍보 부스 디자인 및 운영.",
+  "brand_name": "삼양식품 X 아워홈",
+  "experience_elements": [
+   "청크토마토 파스타 시식/홍보",
+   "갈릭오일 파스타 시식/홍보",
+   "머쉬룸크림 파스타 시식/홍보"
+  ],
+  "promotions": [
+   "급식 메뉴 파스타 프로모션"
+  ],
+  "staging_tags": [
+   "홍보부스",
+   "급식",
+   "F&B프로모션"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": "급식 시설",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-06-04",
+   "to": "2025-06-18",
+   "days": null
+  },
+  "season": "초여름",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 9,800,000원(VAT 별도 추정, 부가세 710,000 표기). 기획료 500,000 + 아트워크 1,500,000(정가항목 소계 2,000,000), 제작부스(운영 2,800,000/ 2,000,000/ 1,200,000 소계 6,000,000), 운영STAFF 6/9 2명 300,000·6/10 1명 150,000·6/17 2명 300,000·6/18 1명 150,000(소계 900,000), 진행비 제경비 200,000. 대행수수료 전체 소계의 10%(정가 항목 제외). Sub Total 1~4 합계 9,100,000 + 일반관리비/대행수수료 710,000 = 9,800,000.,"
+  },
+  "brand_requirements": [
+   "운영 STAFF 배치(6/9,6/10,6/17,6/18)",
+   "부스 제작 및 아트워크"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "급식 시설 내 홍보 부스"
+  },
+  "derived": {
+   "duration": {
+    "days": 15,
+    "weekend_share": 0.27,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 1.1,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 29,
+    "holiday_until": 2,
+    "holiday_block_in": 3,
+    "nat_event_gap": 1,
+    "nat_event": "대통령 선거",
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 580000.0,
+    "pnl_pre_accounts": 2,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-05-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 9.8
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 9.8 ≈ 계약총액 9.8",
+   "contract_total_mm": 9.8,
+   "last_recognition_period": "2025-06"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1ESqbuzy1fPtHwBkt4XkXqWWgMQeozUyG",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1ESqbuzy1fPtHwBkt4XkXqWWgMQeozUyG/view",
+   "title": "계약서_없음.txt"
+  },
+  {
+   "doc_id": "1Mxv2MQY2DCSZOKooehM8Px0SY69Y8vxo",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Mxv2MQY2DCSZOKooehM8Px0SY69Y8vxo/view",
+   "title": "삼양식품 X 아워홈 부스기획안_전달용.pdf"
+  },
+  {
+   "doc_id": "1YYCp-8RgVIMLtIpfeEPgzVrR_VDp8MTA",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1YYCp-8RgVIMLtIpfeEPgzVrR_VDp8MTA/view",
+   "title": "결과보고서_없음.txt"
+  },
+  {
+   "doc_id": "1dgfVG1e099anl3OcV8QVI4sTtDwyEEm1",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1dgfVG1e099anl3OcV8QVI4sTtDwyEEm1/view",
+   "title": "Sweetspot_삼양x아워홈_홍보부스_제작_견적서_0624.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 2건: 삼양식품 X 아워홈 부스기획안_전달용.pdf, Sweetspot_삼양x아워홈_홍보부스_제작_견적서_0. 미확실: 결과보고서 없음 - 방문자수/매출 데이터 전무; 입지(도시/구/장소명) 정보 없음; 면적 정보 없음; 운영 일수 불명확 (STAFF 배치일은 6/9,6/10,6/17,6/18만 표기); fee_structure VAT 포함 여부 불명확; 예상 방문자수 없음"
+ }
+}

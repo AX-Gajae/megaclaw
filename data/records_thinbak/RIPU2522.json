@@ -1,0 +1,124 @@
+{
+  "record_id": "RIPU2522",
+  "schema_version": "0.1",
+  "entities": {
+    "brand_id": "unresolved:유노윤호_I-KNOW",
+    "space_id": "unresolved:미상",
+    "client_party_id": null,
+    "brand_key": "유노윤호",
+    "space_key": "미상"
+  },
+  "intervention": {
+    "concept": "유노윤호 'I-KNOW' VIP 리스닝 파티 및 사진전.",
+    "brand_name": "유노윤호 I-KNOW",
+    "experience_elements": [
+      "리스닝 파티",
+      "사진전"
+    ],
+    "promotions": [],
+    "staging_tags": []
+  },
+  "conditions": {
+    "location": {
+      "city": null,
+      "district": null,
+      "venue_name": null,
+      "venue_type": null,
+      "foot_traffic_context": null
+    },
+    "area_pyeong": null,
+    "period": {
+      "from": "2025-11-04",
+      "to": "2025-11-09",
+      "days": 6
+    },
+    "season": "가을",
+    "fee_structure": {
+      "type": "unknown",
+      "detail": ""
+    },
+    "brand_requirements": [],
+    "scale": {
+      "store_count": 1,
+      "venue_traffic_type": "standalone",
+      "host_traffic_note": null
+    }
+  },
+  "outcome": {
+    "daily": [
+      {
+        "date": "11월 5일",
+        "visitors": 206,
+        "sales_krw": null
+      },
+      {
+        "date": "11월 6일",
+        "visitors": 166,
+        "sales_krw": null
+      },
+      {
+        "date": "11월 7일",
+        "visitors": 177,
+        "sales_krw": null
+      },
+      {
+        "date": "11월 8일",
+        "visitors": 219,
+        "sales_krw": null
+      },
+      {
+        "date": "11월 9일",
+        "visitors": 183,
+        "sales_krw": null
+      }
+    ],
+    "totals": {
+      "visitors": 951,
+      "sales_krw": null,
+      "rev_mm_recognized": 22.0
+    },
+    "counting_method": "entry",
+    "counting_basis": "입장 카운팅 진행/방문 인원",
+    "plan_visitors_expected": null,
+    "retention": null,
+    "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+    "rev_mm_completion": {
+      "status": "complete",
+      "rule": "운영종료 2025-11, 스냅샷까지 2개월+ (시간 규칙)",
+      "contract_total_mm": null,
+      "last_recognition_period": "2025-11"
+    }
+  },
+  "docs": [
+    {
+      "doc_id": "126owgdfSt19n47FFLPFc1DCJpL-UcRVs",
+      "kind": "정산",
+      "uri": "https://drive.google.com/file/d/126owgdfSt19n47FFLPFc1DCJpL-UcRVs/view",
+      "title": "(스위트스팟) 프라이빗 리스닝 및 사진전 견적서_추가금액 1118.pdf"
+    },
+    {
+      "doc_id": "19djONMi38b9G9Dwl5AyyCQ9ofuGtQn57",
+      "kind": "정산",
+      "uri": "https://drive.google.com/file/d/19djONMi38b9G9Dwl5AyyCQ9ofuGtQn57/view",
+      "title": "(스위트스팟) 프라이빗 리스닝 및 사진전 견적서_1107.pdf"
+    },
+    {
+      "doc_id": "1LqOKaAR-l4uJDqAuh3wcoKG5DOg_0Hdw",
+      "kind": "운영일지",
+      "uri": "https://drive.google.com/file/d/1LqOKaAR-l4uJDqAuh3wcoKG5DOg_0Hdw/view",
+      "title": "유노윤호_VIP 리스닝파티 및 전시회 결과보고서.pdf"
+    },
+    {
+      "doc_id": "1Nfwtis0eJQQBASnzQUGiNA0IS0NIV6zI",
+      "kind": "계약서",
+      "uri": "https://drive.google.com/file/d/1Nfwtis0eJQQBASnzQUGiNA0IS0NIV6zI/view",
+      "title": "01. (검토완료)계약서 부속합의서_윤호_사진전 운영대행_251002.docx"
+    }
+  ],
+  "provenance": {
+    "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+    "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+    "extracted_at": "2026-07-23",
+    "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서/기획서/견적서/결과보고서) 텍스트가 제공되지 않음; client_name 미상; venue 및 입지 정보 없음; 면적 정보 없음; 수수료 구조 정보 없음; 방문자수·매출 실측 데이터 없음; 예상 방문 수치 없음; 체험요소·프로모션·연출태그 상세 없음 | 라벨발굴(2026-07-24): 결과보고서 재추출 — 사진전 '방문 인원' 슬라이드 일자별 표, Total 951명"
+  }
+}

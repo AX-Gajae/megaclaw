@@ -1,0 +1,151 @@
+{
+ "record_id": "RCPU2412",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:비에꼴",
+  "space_id": "unresolved:더현대서울_B2_WEST팝업존",
+  "client_party_id": "unresolved:비디에스",
+  "brand_key": "비에꼴",
+  "space_key": "더현대서울"
+ },
+ "intervention": {
+  "concept": "비에꼴(에이프릴폴로) 브랜드의 판매형 팝업스토어를 더현대 서울 B2 WEST 팝업존에서 7일간 운영. 스위트스팟이 위탁 운영(설치·인력·판매)을 대행한 판매행사.",
+  "brand_name": "비에꼴",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [
+   "VMD존",
+   "판매매장"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": null,
+   "venue_name": "더현대 서울",
+   "venue_type": "백화점",
+   "foot_traffic_context": "B2 WEST 팝업존"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-06-20",
+   "to": "2024-06-26",
+   "days": 7
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "운영 대행 조건안(별첨1) 기준 운영비, VAT 별도. VMD존 시공비/집기/운영인력 인건비/상품 제작·공급대금은 '갑'(비디에스) 부담. 정산: 행사 종료 월말(2024-06-30)까지 운영비 전액 지급. LOSS 공제: 총 매출 기준 4% 이상 발생 시 제품 제조원가 100% 공제, 4% 이하는 통상 LOSS로 '갑' 부담. 견적서 총액·수수료율 등 구체 숫자는 원문에 명시 없음."
+  },
+  "brand_requirements": [
+   "설치물 제작 및 설치",
+   "행사 기간 인력 운용 및 제품 판매",
+   "",
+   "고객 컴플레인·사고 수습",
+   "단품관리·POS 결제·재고 관리 시스템 운용",
+   "최종 재고 반품(영업 종료 후 5일 이내)"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대 서울 B2 WEST 팝업존"
+  },
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 45,
+    "holiday_until": 86,
+    "holiday_block_in": 0,
+    "nat_event_gap": 71,
+    "nat_event": null,
+    "doc_lag_days": 15,
+    "doc_dates_found": 3
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": "서울 영등포구 여의대로 108"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서가 제공되지 않아 실측 방문·매출 데이터 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": null,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1DMvzgpzkouYmpoOO_dBzjNNfYKg0wDnS",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1DMvzgpzkouYmpoOO_dBzjNNfYKg0wDnS/view",
+   "title": "비에꼴_견적초안_0528(PDF).pdf"
+  },
+  {
+   "doc_id": "1Ld8_8dRUz1DMF4YtAaDBWszHZ1-ymmxI",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Ld8_8dRUz1DMF4YtAaDBWszHZ1-ymmxI/view",
+   "title": "KakaoTalk_20240604_165345941.jpg"
+  },
+  {
+   "doc_id": "1Sdn30F3W2adkxPmj4EFan_gwsun5chHj",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Sdn30F3W2adkxPmj4EFan_gwsun5chHj/view",
+   "title": "비에꼴_견적서 초안_0620.xlsx"
+  },
+  {
+   "doc_id": "1gvLj7gOVvwdjEkcE39-II8iqzcNrmmYL",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1gvLj7gOVvwdjEkcE39-II8iqzcNrmmYL/view",
+   "title": "비에꼴_견적초안_0620.xlsx"
+  },
+  {
+   "doc_id": "1lF7PVyyfsIxZukAWRJK6hbJgZxcUNbkd",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1lF7PVyyfsIxZukAWRJK6hbJgZxcUNbkd/view",
+   "title": "비에꼴_서울팝업스토어 위탁운영 계약서_스위트스팟_240605.pdf"
+  },
+  {
+   "doc_id": "1n-RwLc1--zPr7xzkVAQraiOJqjcim595",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1n-RwLc1--zPr7xzkVAQraiOJqjcim595/view",
+   "title": "비에꼴_서울팝업스토어 위탁운영 계약서_스위트스팟_240605.pdf"
+  },
+  {
+   "doc_id": "1vR-x8vBfazcQnzDzsbAnFkioLfbFiqMC",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1vR-x8vBfazcQnzDzsbAnFkioLfbFiqMC/view",
+   "title": "Thumbs.db"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: 비에꼴_서울팝업스토어 위탁운영 계약서_스위트스팟_240, 비에꼴_서울팝업스토어 위탁운영 계약서_스위트스팟_240, 비에꼴_견적서 초안_0620.xlsx. 미확실: 결과보고서 미제공 - 일일/총 방문자수 및 POS 매출 없음; 계약 총액 및 대행수수료율 구체 숫자(별첨1·견적서 금액표) 원문 미표기; 면적(평) 정보 없음; 기획서/제안서 부재로 체험요소·프로모션·예상 방문 미확인; 견적서상 운영기간이 8일로 기재된 부분과 계약서 7일 간 불일치"
+ }
+}

@@ -1,0 +1,117 @@
+{
+ "record_id": "RIPU2510",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:한화",
+  "space_id": "unresolved:미상",
+  "client_party_id": null,
+  "brand_key": "한화",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "한화불꽃축제 및 LPGA 골프대회 홍보를 위한 부스 운영으로 추정된다. 구체적 컨셉·체험요소 정보는 원문에 없다.",
+  "brand_name": "한화",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-08-05",
+   "to": "2025-09-27",
+   "days": 54
+  },
+  "season": "여름-가을",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "한화불꽃축제/LPGA 대회 연계 홍보부스"
+  },
+  "derived": {
+   "duration": {
+    "days": 54,
+    "weekend_share": 0.28,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 58,
+    "holiday_until": 10,
+    "holiday_block_in": 3,
+    "nat_event_gap": 63,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 158.5
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-09, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-09"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "19zKn8Vr8VrdHQwf4-sL50ITfr_NMmlyi",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19zKn8Vr8VrdHQwf4-sL50ITfr_NMmlyi/view",
+   "title": "견적서 0924_한화 라이프플러스 인터네셔널 크라운 부스_통합본_최종.pdf"
+  },
+  {
+   "doc_id": "1QJQ0FMKX0DwFP6lgUZMII9zPfwbvGCBQ",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1QJQ0FMKX0DwFP6lgUZMII9zPfwbvGCBQ/view",
+   "title": "[스위트스팟]한화 라이프플러스 인터네셔널 크라운 결과보고서.pdf"
+  },
+  {
+   "doc_id": "1l5JT47BGZz1pcCv076N-BoTsFciVbFTG",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1l5JT47BGZz1pcCv076N-BoTsFciVbFTG/view",
+   "title": "[계약서] 20250805000801.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 연구요약 및 원문 문서 텍스트 전체 부재; 클라이언트명; 입지/장소 정보; 면적; 수수료 구조 및 계약 금액; 컨셉 및 체험요소 상세; 프로모션; 방문자/매출 실측 데이터; 방문 집계 방식; 예상 방문자 수"
+ }
+}

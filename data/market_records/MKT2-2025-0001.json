@@ -1,0 +1,79 @@
+{
+ "market_record_id": "MKT2-2025-0001",
+ "event_name": "정원워케이션 × 잔망루피 팝업스토어 (순천만국가정원)",
+ "brand": "순천시 정원워케이션",
+ "ip_or_collab": "잔망루피",
+ "category": "character",
+ "intervention": {
+  "concept_description": "완판 근거: '굿즈 완판, 팝업스토어 방문객 1만 명 돌파'. 매출 1100만원은 2025-08-19 보도 시점 기준이며 기사에 집계 구간 명시가 없어 8/15~8/17 오픈이벤트 구간일 가능성 있음. [권역집계] 같은 기사의 '3일간 2만 1000여 명이 잔망루피를 보러 순천만국가정원을 다녀갔으며, 이는 작년 광복절 연휴 대비 2배 가까이 증가했다'는 국",
+  "experience_elements": [],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "순천만국가정원 정원워케이션센터",
+  "venue_type": "other",
+  "neighborhood": null,
+  "city": "순천",
+  "period_from": "2025-08-15",
+  "period_to": "2025-09-14",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 31,
+    "weekend_share": 0.32,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 6,
+    "months_since_last": 8.1,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 10000,
+  "visitors_period_days": null,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "'팝업스토어 방문객 1만 명 돌파' — 팝업스토어 방문객 기준. '돌파' 표현이므로 하한선 수치.",
+  "visitors_source_quote": "굿즈 완판, 팝업스토어 방문객 1만 명 돌파, SNS 인증 열풍 등 화제를 모았다",
+  "visitors_source_url": "https://www.newscj.com/news/articleView.html?idxno=3319187",
+  "visitors_source_date": "2025-09-17",
+  "sales_krw": 11000000,
+  "sales_source_quote": "팝업스토어 역시 1100만 원의 굿즈 매출을 달성했다.",
+  "sales_source_url": "http://v.daum.net/v/20250819144914575",
+  "sales_source_date": "2025-08-19",
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": true,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "완판 근거: '굿즈 완판, 팝업스토어 방문객 1만 명 돌파'. 매출 1100만원은 2025-08-19 보도 시점 기준이며 기사에 집계 구간 명시가 없어 8/15~8/17 오픈이벤트 구간일 가능성 있음. [권역집계] 같은 기사의 '3일간 2만 1000여 명이 잔망루피를 보러 순천만국가정원을 다녀갔으며, 이는 작년 광복절 연휴 대비 2배 가까이 증가했다'는 국가정원 전체 입장객이므로 본 행 visitors_total에 반영하지 않음. 아래 '오픈 이벤트(2400명)' 행과 기간이 겹치므로 합산 금지. | 2차 수집(2026-07-27)",
+ "verification": {
+  "visitors": "verified",
+  "sales": "verified"
+ }
+}

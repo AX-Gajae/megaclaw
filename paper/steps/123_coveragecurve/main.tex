@@ -1,0 +1,114 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{kotex}
+\setmainfont{Apple SD Gothic Neo}
+\setsansfont{Apple SD Gothic Neo}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,linkcolor=MidnightBlue,citecolor=MidnightBlue,
+            urlcolor=MidnightBlue]{hyperref}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.5em}{}
+\captionsetup{font=small,labelfont=bf}
+\setlength{\parskip}{0.35em}
+\setlength{\parindent}{0pt}
+
+% 주장 상자 — 모든 주장은 반증 조건을 함께 적는다
+\usepackage{mdframed}
+\newmdenv[linewidth=0.4pt,linecolor=gray!60,backgroundcolor=gray!5,
+          innertopmargin=6pt,innerbottommargin=6pt,skipabove=8pt,skipbelow=8pt]{claimbox}
+\newcommand{\claim}[2]{\begin{claimbox}\textbf{주장.} #1\par\smallskip
+  \textcolor{gray!70}{\textbf{반증 조건.} #2}\end{claimbox}}
+
+\title{\bfseries 덮음 세 지점\\[2pt]
+\large 상태 축이 처음으로 문턱을 넘었다 --- 신호 몫으로만}
+\author{월드모델 실험실 · 노트 660--662}
+\date{2026-08-06}
+\begin{document}\maketitle
+
+\section{한 줄}
+
+같은 축, 같은 열, 같은 네 팔이다. 시장팝업 덮음만 $0.43 \to 0.82 \to 0.96$ 으로
+올렸다. 판이 $-0.0005 \to +0.0002 \to +0.0016$, 그 도메인이
+$-0.0227 \to +0.0058 \to +0.0435$, 양수 비율이 $5/12 \to 9/12 \to 11/12$ 다.
+\textbf{세 지점이 다 같은 방향으로 움직인다.}
+
+\section{쟀다}
+
+지역 방문자 축 하나(\verb|vis_out|)를 팝업과 시장팝업이 나눠 쓰게 했다. 기준선과
+팝업만 팔이 \textbf{네 번 다} 정확히 재현됐다($0.4689$ · $+0.0008$ · 팝업
+$+0.009$ · 8/12) --- 자료만 바뀌었다는 증거다.
+
+\begin{center}\small
+\begin{tabular}{lrrrr}\toprule
+시장 덮음 & 판 & 양수 & 팝업 & 시장팝업 \\ \midrule
+$0.43$ ($n{=}107$) & $-0.0005$ & 5/12 & $+0.0201$ & $\mathbf{-0.0227}$ \\
+$0.82$ ($n{=}205$) & $+0.0002$ & 9/12 & $+0.0064$ & $+0.0058$ \\
+$\mathbf{0.96}$ ($n{=}238$) & $\mathbf{+0.0016}$ & $\mathbf{11/12}$ & $+0.019$ & $\mathbf{+0.0435}$ \\
+위약 ($0.96$) & $-0.0048$ & 0/12 & $-0.0707$ & $-0.0776$ \\ \bottomrule
+\end{tabular}\end{center}
+
+\textbf{신호 몫} $= +0.0016 - (-0.0048) = \mathbf{+0.0064} > 0.0045$.
+이 판에서 상태 축이 \textbf{처음으로 문턱을 넘었다}.
+
+\section{덮음을 올린 방법 --- 지리다, 라벨을 안 본다}
+
+시장 레코드는 기사에서 만들어 도로명주소가 없다. 대신 원천
+(\verb|data/market_records/*.json|)에 \verb|venue| $\cdot$ \verb|neighborhood|
+$\cdot$ \verb|city| 가 있다. 경로를 넷 쌓았다.
+
+\begin{center}\small
+\begin{tabular}{lr}\toprule
+경로 & 건수 \\ \midrule
+도로명주소(기존) & 107 \\
+동 이름 $\to$ 구 (\texttt{HOOD} 135항목) & 89 \\
+시군구 이름이 텍스트에 직접 & 17 \\
+\texttt{city} 만으로 결정 (\texttt{CITY\_ONLY} 48항목) & 13 \\
+\texttt{venue} 의 동·시 단서 & 12 \\ \midrule
+\textbf{위치없음(남김)} & \textbf{11} \\ \bottomrule
+\end{tabular}\end{center}
+
+\claim{덮음을 올리려고 값을 틀리게 하지 않는다.}{광역시에 대표 구를 넣어
+덮음을 $1.0$ 으로 만들었는데 신호 몫이 오르면 이 조항이 과했다.}
+
+\textbf{광역시는 \texttt{city} 만으로 안 붙였다} --- 부산 $\cdot$ 대구 $\cdot$
+광주 $\cdot$ 인천은 구가 여러 개라 대표 구를 넣으면 방문자 값이 \emph{틀린 구}
+에서 온다. 그건 근사가 아니라 오류이고, 이 노트가 재고 있는 것(덮음이 부호를
+뒤집는다)의 반대를 자기 손으로 만드는 일이다. 그래서 11건을 남겼다.
+
+배선을 두 겹으로 확인했다 --- 붙인 코드가 방문자 자료에 없는 것 \textbf{0건},
+시 단위 코드(수원시 41110 $\cdot$ 하남시 41450 $\cdot$ 밀양시 48270 …)가 자료에
+\textbf{전부 존재}, 매칭 표본 10건 눈 확인 \textbf{10/10}.
+
+\section{그래도 채택은 아직이다}
+
+신호 몫은 넘었지만 \textbf{판 순효과는 $+0.0016$} 으로 문턱 아래다. 즉
+\textbf{신호는 실재하는데 열값이 그 대부분을 먹는다} --- 위약이 $-0.0048$ 이라는
+것이 열 하나의 값이고, 신호 $+0.0064$ 가 그것을 겨우 넘어 $+0.0016$ 이 남는다.
+
+남은 길 둘. ① 덮음 $0.96 \to 1.0$ --- 11건이라 효과가 작다. ② \textbf{행 늘리기}
+--- 두 도메인 310행을 KOPIS 공연(장소 $\cdot$ 기간 $\cdot$ 관객이 다 있다)으로
+늘린다. ②가 본선이다.
+
+\section{두 사이클 전의 결론을 정정한다}
+
+노트 660 이 ``열을 나눠 쓰니 팝업 이득이 두 배''($+0.009 \to +0.0201$)라고
+적었다. 덮음 $0.82$ 에서 팝업이 $+0.0064$ 로 내려갔으므로 그 두 배는
+\textbf{시장팝업의 결측 표시자가 만든 것}이었다 --- 이웃 효과 여덟 번째.
+그런데 덮음 $0.96$ 에서 팝업이 다시 $+0.019$ 로 올라간다. \textbf{처음의 두 배는
+결측이 만든 가짜였고, 지금의 두 배는 자료가 만든 것}이다. 같은 숫자가 두 번
+나왔는데 원인이 다르다 --- 그래서 위약과 덮음을 같이 봐야 갈린다.
+
+\begin{figure}[h]\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{(a) 덮음 세 지점에서 판이 단조롭게 오른다(회색 띠는 문턱 $\pm0.0045$).
+(b) 시장팝업의 부호가 뒤집힌 뒤 자란다. (c) 신호 몫 $+0.0064$ 는 문턱을 넘고
+순효과 $+0.0016$ 은 못 넘는다 --- 열값이 대부분을 먹는다.}
+\end{figure}
+
+\end{document}

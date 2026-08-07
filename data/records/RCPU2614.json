@@ -1,0 +1,169 @@
+{
+ "record_id": "RCPU2614",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:레진엔터테인먼트_레봄카페",
+  "space_id": "unresolved:성수_연무장11길8_레봄",
+  "client_party_id": "unresolved:레진엔터테인먼트",
+  "brand_key": "레봄카페",
+  "space_key": "성수_레봄카페"
+ },
+ "intervention": {
+  "concept": "레진엔터테인먼트 성수 사옥 내 사내카페 '레봄'을 시즌 IP테마로 리브랜딩하는 반복 팝업 시리즈 중 '근하신년' 시즌이다. F&B와 IP캐릭터 MD, 가챠, 블라인드팩 특전 등을 판매하는 IP콜라보 카페 팝업이다.",
+  "brand_name": "레봄 카페 (LEZHIN Ent.)",
+  "experience_elements": [
+   "방문객 대상 체험 이벤트",
+   "가챠",
+   "블라인드팩 특전 포카"
+  ],
+  "promotions": [
+   "블라인드팩 특전 포카(A/B)",
+   "인기제품 일 한정수량 판매"
+  ],
+  "staging_tags": [
+   "근하신년",
+   "IP캐릭터 F&B 카페",
+   "시즌 리브랜딩"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "성동구",
+   "venue_name": "성수 키다리스튜디오 사옥(레봄 카페)",
+   "venue_type": "사내카페/IP콜라보 카페 팝업",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2026-02-21",
+   "to": "2026-03-22",
+   "days": null
+  },
+  "season": "겨울~봄(근하신년)",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "최종 견적 총계 52,500,000원(VAT 10% 별도). 소계 43,760,000원 + 대행수수료 8,752,000원(운영비용 5천만원 미만 구간, 총 운영비용의 20%). 지급조건: 계약 체결 후 각 테마 행사 당월 50%·행사 종료월 50% 분할. 선/잔금 각 27,950,000원(VAT 별도), 선금 3/20 입금완료. 예산 변동: 최초 5천만원대→55,900,000원→근무인원 감축으로 최종 52,500,000원. 운영수수료 구간: 5천만원 미만 20%, 5천만~1억 정액 10,000,000원, 1억 이상 별도협의(상한 15,000,000원). LOSS 공제: 총매출 3% 이상 발생 시 제조원가(판매가 50%) 100% 공제.배  추가/변경 비용은 사전 승인 필요. | 계약구조 확인(2026-07-27): 위탁운영형 — 계약서가 총액 대신 견적서/조건안을 준거로 지정, 따라서 견적 총액이 계약상 확정액"
+  },
+  "brand_requirements": [
+   "행사주최자배상책임보험 가입(대인/대물 각 1,000만원 한도, 의무사항)",
+   "보건증 관리 및 식품위생법 준수",
+   "운영 인력 투입계획 사전 서면 승인(초과·무단변경분 정산 제외)",
+   "MD 상품·식음료 종류·가격 사전 상호 협의",
+   "의뢰사 제시 기본 가이드 준수",
+   "재위탁 금지",
+   "비밀유지",
+   "POS 데이터 기준 재고·매출 정산"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 30,
+    "weekend_share": 0.33,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 4.1,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 3,
+    "holiday_until": 7,
+    "holiday_block_in": 3,
+    "nat_event_gap": 100,
+    "nat_event": null,
+    "doc_lag_days": 12,
+    "doc_dates_found": 3
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2026-02-21",
+    "visitors": 249,
+    "sales_krw": 65622800
+   },
+   {
+    "date": "2026-02-22",
+    "visitors": null,
+    "sales_krw": 47000000
+   },
+   {
+    "date": "2026-02-28",
+    "visitors": null,
+    "sales_krw": 35600000
+   },
+   {
+    "date": "2026-03-01",
+    "visitors": null,
+    "sales_krw": 35500000
+   }
+  ],
+  "totals": {
+   "visitors": null,
+   "sales_krw": 183844400,
+   "rev_mm_recognized": 52.5
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(오픈일(2/21) 상세: 총 소비자매출 65,622,800원(F&B 5,610,800 / MD 60,012,000 / 가챠 130,200), 예약 270·방문 249·노쇼 21. 4개일(2/21·2/22·2/28·3/1) 누적 고객매출 183,844,400원이며 전 기간 총계는 미확보. sales_krw는 POS 소비자 매출 기준(계약금액 아님). 회차당 정원 45명·약 40명 입장. 이슈: 대량구매 결제·픽업 병목(3회차부터 동선·인력 재조정 안정화), 블라인드팩 특전 포카 A/B 혼재로 고객 공론화 후 전수조사, 인기제품 조기 소진으로 일 한정수량 판매 적용. KPI/예상치 관련 별도 명시 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식액 52.5 ≈ 계약총액 52.5 (±10%)",
+   "contract_total_mm": 52.5,
+   "last_recognition_period": "2026-03"
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "1CpWCONvLetv4eHZW1e8XZPQjinEtW1rY",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CpWCONvLetv4eHZW1e8XZPQjinEtW1rY/view",
+   "title": "RCPU2614_레봄카페_근하신년 최종 견적서"
+  },
+  {
+   "doc_id": "1K3mmhkKHYVth59B6FQDQYNtVoqsaoHa3",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1K3mmhkKHYVth59B6FQDQYNtVoqsaoHa3/view",
+   "title": "[스위트스팟]26년+일반인대상+연간+카페영업 및 MD상품 판매 대행 계약서_20260204_법무 재검토 (1).docx"
+  },
+  {
+   "doc_id": "1PZfVR0FxNxNF6b9gy6PUnWpAnevlUi1M",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1PZfVR0FxNxNF6b9gy6PUnWpAnevlUi1M/view",
+   "title": "(주)레진엔터테인먼트_사업자등록증_250930.pdf"
+  },
+  {
+   "doc_id": "1ZHmLl1PFt-8gggEgGA3B8Bt3rzNqByXPdRqOc9BOSCA",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ZHmLl1PFt-8gggEgGA3B8Bt3rzNqByXPdRqOc9BOSCA/view",
+   "title": "■ RC본부 프로젝트 견적서(all)"
+  },
+  {
+   "doc_id": "1wZ3jYKC1Fn7z1RP-1MQcw5eFsxV8CNH_",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1wZ3jYKC1Fn7z1RP-1MQcw5eFsxV8CNH_/view",
+   "title": "[스위트스팟]26년+일반인대상+연간+카페영업 및 MD상품 판매 대행 계약서_20260209_법무 재검토_최종본 (1).pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: [스위트스팟]26년+일반인대상+연간+카페영업 및 MD상, [스위트스팟]26년+일반인대상+연간+카페영업 및 MD상, RCPU2614_레봄카페_근하신년 최종 견적서. 미확실: 근하신년 시즌 전 기간 총 고객매출·총 방문/노쇼 누계(4개일까지만 확보); 일별 방문자수(오픈일 제외); 운영 실제 일수(주말·공휴일 중심, 정확 일수 불명); 면적(평); 레진 측 담당자 실명/이메일(견적서 수신 '레진 이승희님' 외); IP테마 근하신년 구체 원작 라인업; platform_spot_id 미연결"
+ }
+}

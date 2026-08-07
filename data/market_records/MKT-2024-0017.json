@@ -1,0 +1,89 @@
+{
+ "market_record_id": "MKT-2024-0017",
+ "event_name": "로터스자동차코리아 팝업 스토어 이벤트 @스타필드 수원",
+ "brand": "로터스자동차코리아(코오롱모빌리티그룹)",
+ "ip_or_collab": null,
+ "category": "other",
+ "intervention": {
+  "concept_description": "로터스 신차(엘레트라·에미라) 전시 팝업",
+  "experience_elements": [
+   "신차 2종 전시",
+   "SNS 팔로우 이벤트",
+   "경품 증정"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "스타필드 수원",
+  "venue_type": "mall",
+  "neighborhood": "장안구",
+  "city": "수원",
+  "period_from": "2024-03-21",
+  "period_to": "2024-03-27",
+  "area_pyeong": null,
+  "multi_store": null,
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 10000,
+  "visitors_period_days": 7,
+  "counting_basis": "participation",
+  "counting_basis_note": "로터스자동차코리아 발표(모토야 등): '행사 기간 동안 1만 명 이상의 관람객이 SNS 행사에 참여하는 등' (SNS 이벤트 참여 인원 기준)",
+  "visitors_source_quote": "행사 기간 동안 1만 명 이상의 관람객이 SNS 행사에 참여하는 등 폭발적인 관심을 보였고, 실제 차량 관람 및 계약도 상당수 확보하면서 팝업 이벤트를 성공적으로 마무리했다.",
+  "visitors_source_url": "https://motoya.co.kr/news/articleView.html?idxno=40069",
+  "visitors_source_date": "2024-03-28",
+  "sales_krw": null,
+  "sales_source_quote": "",
+  "sales_source_url": "",
+  "sales_source_date": "",
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": true,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "에미라 V6 퍼스트 에디션의 경우 이미 올해 국내 배정 물량이 전량 판매되며 로터스에 대한 한국 시장의 관심을 증명했다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": true,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "'1만 명 이상' SNS 행사 참여자 수(총 관람객 아님). 지난해(2023) 쓱데이 스타필드 하남 전시에 이은 두 번째 스타필드 전시 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

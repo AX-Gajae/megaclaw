@@ -1,0 +1,174 @@
+{
+  "record_id": "RTPU2410",
+  "schema_version": "0.1",
+  "entities": {
+    "brand_id": "unresolved:짱구",
+    "space_id": "unresolved:롯데월드몰_부산센텀",
+    "client_party_id": null,
+    "brand_key": "짱구",
+    "space_key": "multi_롯데월드몰_부산센텀"
+  },
+  "intervention": {
+    "concept": "짱구(크레용 신짱) 캐릭터 IP를 활용한 팝업스토어로 추정되나, 기획서·제안서 등 원문 문서가 제공되지 않아 세부 컨셉을 확인할 수 없음.",
+    "brand_name": "짱구",
+    "experience_elements": [],
+    "promotions": [],
+    "staging_tags": []
+  },
+  "conditions": {
+    "location": {
+      "city": null,
+      "district": null,
+      "venue_name": "롯데월드몰, 부산센텀",
+      "venue_type": "쇼핑몰",
+      "foot_traffic_context": null
+    },
+    "area_pyeong": null,
+    "period": {
+      "from": "2024-06-05",
+      "to": "2024-06-16",
+      "days": 12
+    },
+    "season": "여름",
+    "fee_structure": {
+      "type": "unknown",
+      "detail": ""
+    },
+    "brand_requirements": [],
+    "scale": {
+      "store_count": 2,
+      "venue_traffic_type": "multi_store",
+      "host_traffic_note": "롯데월드몰, 부산센텀 2개 쇼핑몰"
+    }
+  },
+  "outcome": {
+    "daily": [
+      {
+        "date": "2024-06-05",
+        "visitors": 7458,
+        "sales_krw": 97332000
+      },
+      {
+        "date": "2024-06-06",
+        "visitors": 11154,
+        "sales_krw": 114269000
+      },
+      {
+        "date": "2024-06-07",
+        "visitors": 9888,
+        "sales_krw": 104959000
+      },
+      {
+        "date": "2024-06-08",
+        "visitors": 12123,
+        "sales_krw": 112434000
+      },
+      {
+        "date": "2024-06-09",
+        "visitors": 10563,
+        "sales_krw": 117732000
+      },
+      {
+        "date": "2024-06-10",
+        "visitors": 7383,
+        "sales_krw": 91971000
+      },
+      {
+        "date": "2024-06-11",
+        "visitors": 7773,
+        "sales_krw": 95603000
+      },
+      {
+        "date": "2024-06-12",
+        "visitors": 7845,
+        "sales_krw": 101749000
+      },
+      {
+        "date": "2024-06-13",
+        "visitors": 7968,
+        "sales_krw": 86494700
+      },
+      {
+        "date": "2024-06-14",
+        "visitors": 9036,
+        "sales_krw": 98848600
+      },
+      {
+        "date": "2024-06-15",
+        "visitors": 11007,
+        "sales_krw": 124933000
+      },
+      {
+        "date": "2024-06-16",
+        "visitors": 9528,
+        "sales_krw": 118640000
+      }
+    ],
+    "totals": {
+      "visitors": 111726,
+      "sales_krw": 1264965300,
+      "rev_mm_recognized": 249.0
+    },
+    "counting_method": "exposure",
+    "counting_basis": "추정 방문객 수(웨이팅 등록 수 기반)",
+    "plan_visitors_expected": null,
+    "retention": null,
+    "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+    "rev_mm_completion": {
+      "status": "complete",
+      "rule": "운영종료 2024-06, 스냅샷까지 2개월+ (시간 규칙)",
+      "contract_total_mm": null,
+      "last_recognition_period": "2025-01"
+    }
+  },
+  "docs": [
+    {
+      "doc_id": "1-6DLukU6c-GKx59yU7TnfLIiHQiXCXiY",
+      "kind": "정산",
+      "uri": "https://drive.google.com/file/d/1-6DLukU6c-GKx59yU7TnfLIiHQiXCXiY/view",
+      "title": "RTPU2410_짱구 팝업스토어(롯데월드몰, 부산센텀)_잠실_견적서_0708.pdf"
+    },
+    {
+      "doc_id": "1NbmbWGiDSPxmY-kOHRajlZpYsXBZ9CL0",
+      "kind": "기획서",
+      "uri": "https://drive.google.com/file/d/1NbmbWGiDSPxmY-kOHRajlZpYsXBZ9CL0/view",
+      "title": "제안서_내용없음.txt"
+    },
+    {
+      "doc_id": "1Y370zxgyussl3hxL_P4n_s7P4ZukpS8p",
+      "kind": "운영일지",
+      "uri": "https://drive.google.com/file/d/1Y370zxgyussl3hxL_P4n_s7P4ZukpS8p/view",
+      "title": "RTPU2410_짱구 팝업스토어(롯데월드몰, 부산센텀)_잠실_결과보고서_240625.pptx"
+    },
+    {
+      "doc_id": "1edeWwR9oNPr5rH0OMBboETw6r1-uJyOj",
+      "kind": "계약서",
+      "uri": "https://drive.google.com/file/d/1edeWwR9oNPr5rH0OMBboETw6r1-uJyOj/view",
+      "title": "계약서_내용없음.txt"
+    },
+    {
+      "doc_id": "1fwMaeVl97N3QH2CCWNAJ-NyCks_qjXTO",
+      "kind": "정산",
+      "uri": "https://drive.google.com/file/d/1fwMaeVl97N3QH2CCWNAJ-NyCks_qjXTO/view",
+      "title": "RTPU2410_짱구 팝업스토어(롯데월드몰, 부산센텀)_부산_견적서_1004.pdf"
+    },
+    {
+      "doc_id": "1gttiZ2njns6gdngMJ1pFetVinCuoc1icW36LhU6OBp4",
+      "kind": "계약서",
+      "uri": "https://drive.google.com/file/d/1gttiZ2njns6gdngMJ1pFetVinCuoc1icW36LhU6OBp4/view",
+      "title": "계약서_내용없음"
+    },
+    {
+      "doc_id": "1mhCJg-gMd0kDqURQIkAk6_TXt0Iqzy6P",
+      "kind": "운영일지",
+      "uri": "https://drive.google.com/file/d/1mhCJg-gMd0kDqURQIkAk6_TXt0Iqzy6P/view",
+      "title": "RTPU2410_짱구 팝업스토어(롯데월드몰, 부산센텀)_잠실_결과보고서_240625.pptx"
+    }
+  ],
+  "provenance": {
+    "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+    "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+    "extracted_at": "2026-07-23",
+    "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체 미제공; client_name 미확인; 컨셉·체험요소·프로모션·연출태그 정보 없음; 입지 상세(도시·구·정확한 매장명) 미확인; 면적(평) 정보 없음; 수수료 구조·계약금액 정보 없음; 방문객·매출 실측 데이터 없음; counting_method 판정 근거 없음; 롯데월드몰과 부산센텀 두 장소의 개별 정보 구분 불가 | 라벨발굴(2026-07-24): 결과보고서 재추출 — slide4 방문객 추이 표(추정 방문객 수), 매출액 추이 표(상품+포토카드)"
+  }
+}

@@ -1,0 +1,146 @@
+{
+ "record_id": "RTPU2583",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:롯데_타임빌라스_수원",
+  "space_id": "unresolved:타임빌라스_수원_중앙홀",
+  "client_party_id": null,
+  "brand_key": "롯데_타임빌라스_수원",
+  "space_key": "롯데_타임빌라스_수원"
+ },
+ "intervention": {
+  "concept": "타임빌라스 수원 중앙홀에 크리스마스 마켓을 조성하는 시즌 팝업. 우드하우스, 꽃마차, 키오스크, 게이트, 다양한 크리스마스 트리와 조명 연출로 구성된 마켓형 공간이다.",
+  "brand_name": "타임빌라스 수원 크리스마스 마켓",
+  "experience_elements": [
+   "게이트",
+   "키오스크",
+   "우드하우스 마켓 부스",
+   "꽃마차",
+   "A형매대",
+   "선물박스 포토존",
+   "크리스마스 트리 연출",
+   "오크통 소품"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "크리스마스 마켓",
+   "조명 연출",
+   "우드하우스",
+   "트리",
+   "꽃마차",
+   "게이트",
+   "포토존"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "수원",
+   "district": null,
+   "venue_name": "타임빌라스 수원",
+   "venue_type": "쇼핑몰 중앙홀",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-11-20",
+   "to": "2025-12-28",
+   "days": 39
+  },
+  "season": "겨울/크리스마스",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 199,000,000원 (VAT 10% 별도). 소계(Sub Total 1~3) 181,543,000원 + 대행수수료 소계의 10% 18,154,300원 = 199,000,000원(십만단위 이하 절사). 자재비 등 소계 169,543,000원, 기획료 7,500,000원, 기타진행비 4,500,000원. 렌탈품은 39일 렌탈 기준."
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "타임빌라스 수원 중앙홀 크리스마스 마켓"
+  },
+  "derived": {
+   "duration": {
+    "days": 39,
+    "weekend_share": 0.31,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 3.9,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 42,
+    "holiday_until": 86,
+    "holiday_block_in": 0,
+    "nat_event_gap": 7,
+    "nat_event": "수능",
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 199.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 199.0 ≈ 계약총액 199.0",
+   "contract_total_mm": 199.0,
+   "last_recognition_period": "2025-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "19hBreTi_P9dc8h3yEpkyJft129-v_hvS",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/19hBreTi_P9dc8h3yEpkyJft129-v_hvS/view",
+   "title": "[행사 대행 계약서] 2025 타임빌라스수원 크리스마스 마켓.docx"
+  },
+  {
+   "doc_id": "1KW_mL9CSjTO6_gpuI0L6hjBrxF1Rc2q5",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1KW_mL9CSjTO6_gpuI0L6hjBrxF1Rc2q5/view",
+   "title": "SweetSpot_롯데 타임빌라스 크리스마스 마켓 견적서_1125_revised.pdf"
+  },
+  {
+   "doc_id": "1cZY8PXhvEboVuYKLDfp2Y7-9YH9jS2sh",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1cZY8PXhvEboVuYKLDfp2Y7-9YH9jS2sh/view",
+   "title": "임시 결과보고서 (2).txt"
+  },
+  {
+   "doc_id": "1gmgc8TnYZYSLv7NwGGWl2BosVltm4C1i",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1gmgc8TnYZYSLv7NwGGWl2BosVltm4C1i/view",
+   "title": "결과보고서 없음.txt"
+  },
+  {
+   "doc_id": "1rIviXWDftFDwntj9UFDda1Imkl5Zfjsm",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1rIviXWDftFDwntj9UFDda1Imkl5Zfjsm/view",
+   "title": "2025크리스마스마켓_수원디자인최종1010_제안서.pptx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 1건: SweetSpot_롯데 타임빌라스 크리스마스 마켓 견적. 미확실: 결과보고서 없음 - 방문객/매출 실측 데이터 없음; client_name/발주처 party_id 미확인; 면적(평) 정보 없음; 입지 상세(구/foot traffic) 없음; 프로모션 정보 없음"
+ }
+}

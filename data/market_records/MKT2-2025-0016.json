@@ -1,0 +1,73 @@
+{
+ "market_record_id": "MKT2-2025-0016",
+ "event_name": "포켓몬 캡슐 스테이션 인 부산",
+ "brand": "롯데백화점 부산본점",
+ "ip_or_collab": "포켓몬",
+ "category": "character",
+ "intervention": {
+  "concept_description": "매출은 '역대 최대 팝업 매출을 기록할 것으로 보인다'는 전망 표현만 있고 금액 미보도 → sales_krw 미기재. 동일 수치 매일경제 https://www.mk.co.kr/news/society/11397262 (직접 fetch 차단, 색인 스니펫으로 교차확인). 같은 기사의 '롯데백화점 부산 지역 점포는 해당 기간 매출이 전년보다 10% 이상 늘었다'",
+  "experience_elements": [],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "롯데백화점 부산본점",
+  "venue_type": "other",
+  "neighborhood": null,
+  "city": "부산",
+  "period_from": "2025-07-25",
+  "period_to": "",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "ip_history": {
+    "prior_count": 7,
+    "months_since_last": 3.0,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 70000,
+  "visitors_period_days": null,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "원문 표현 '7월 25일 개장 이후 현재까지 7만 명 이상이 찾으며' — 개장일부터 보도 시점(8/12)까지의 누계 방문객, 종료 시점 총계 아님",
+  "visitors_source_quote": "'포켓몬 캡슐 스테이션 인 부산' 팝업스토어는 7월 25일 개장 이후 현재까지 7만 명 이상이 찾으며 역대 최대 팝업 매출을 기록할 것으로 보인다.",
+  "visitors_source_url": "https://www.busan.com/view/busan/view.php?code=2025081218253359678",
+  "visitors_source_date": "2025-08-12",
+  "sales_krw": null,
+  "sales_source_quote": "'포켓몬 캡슐 스테이션 인 부산' 팝업스토어는 7월 25일 개장 이후 현재까지 7만 명 이상이 찾으며 역대 최대 팝업 매출을 기록할 것으로 보인다.",
+  "sales_source_url": "https://www.busan.com/view/busan/view.php?code=2025081218253359678",
+  "sales_source_date": "2025-08-12",
+  "demand_signals": {
+   "waiting_time_reported": "unknown",
+   "sold_out": "unknown",
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": true,
+   "forecast": true,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": false
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "매출은 '역대 최대 팝업 매출을 기록할 것으로 보인다'는 전망 표현만 있고 금액 미보도 → sales_krw 미기재. 동일 수치 매일경제 https://www.mk.co.kr/news/society/11397262 (직접 fetch 차단, 색인 스니펫으로 교차확인). 같은 기사의 '롯데백화점 부산 지역 점포는 해당 기간 매출이 전년보다 10% 이상 늘었다'는 [권역집계]이므로 본 행 수치에서 제외. | 2차 수집(2026-07-27)",
+ "verification": {
+  "visitors": "num_only"
+ }
+}

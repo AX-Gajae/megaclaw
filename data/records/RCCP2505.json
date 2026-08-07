@@ -1,0 +1,139 @@
+{
+ "record_id": "RCCP2505",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:브레스오브아프리카",
+  "space_id": "unresolved:파르나스몰_B1_센트럴라운지",
+  "client_party_id": "unresolved:현대드림애드",
+  "brand_key": "브레스오브아프리카",
+  "space_key": "파르나스몰"
+ },
+ "intervention": {
+  "concept": "파르나스몰 B1 센트럴라운지에서 진행된 뷰티/홈리빙 편집 팝업. 아프리카 케냐 유기농 100% 비정제 쉐어버터 멀티밤 브랜드 '브레스오브아프리카'와 인센스 전문 브랜드 '헤븐센스'가 함께 입점했다.",
+  "brand_name": "르플랑에떼(브레스오브아프리카 & 헤븐센스)",
+  "experience_elements": [
+   "상품 매대",
+   "포스 매대",
+   "기타 연출 집기",
+   "야자수 식재 연출"
+  ],
+  "promotions": [
+   "브레스오브아프리카: 카톡 플친/인스타그램 팔로우 인증 시 쉐어버터 샘플 증정",
+   "헤븐센스: 인센스 스틱/콘 3개 구매 시 26% 추가 할인"
+  ],
+  "staging_tags": [
+   "아프리카 컨셉",
+   "야자수 식재",
+   "인센스"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": null,
+   "venue_name": "파르나스몰 B1 센트럴라운지",
+   "venue_type": "몰 내 라운지 팝업 공간",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-02-27",
+   "to": "2025-03-09",
+   "days": 11
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "revenue_share",
+   "detail": "파르나스호텔 공간 계약: 사용료 = 매출액의 25%(VAT 별도, 순매출 기준, 전기료 포함) + 선납금 1,000,000원. 결과보고서 실적: 점포 수수료 25%=3,702,205원, 카드 2%=296,176원, VMD 704,000, 물류 520,000, 업체 수수료 35%"
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 2,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "파르나스몰 B1 센트럴라운지"
+  },
+  "derived": {
+   "duration": {
+    "days": 11,
+    "weekend_share": 0.36,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 28,
+    "holiday_until": 2,
+    "holiday_block_in": 3,
+    "nat_event_gap": 96,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": 16289700,
+   "rev_mm_recognized": 13.2
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 텍스트가 손상/미완성 상태로 일자별 방문 및 실측 POS 매출 데이터를 추출할 수 없음. 기획서상 목표 매출은 브레스오브아프리카 1,000만원, 헤븐센스 2,000만원(기간 중).). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-03, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-03"
+  },
+  "label_trust_sales": {
+   "grade": "E",
+   "why": "결과보고서 시트 제목이 '행사 수익 예상'이라 예상치 가능성 — 세제외 14,808,818 병기"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "11rrOfxC7Zg9GRrHhqyahj43NFGfE6Jl2",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/11rrOfxC7Zg9GRrHhqyahj43NFGfE6Jl2/view",
+   "title": "파르나스 센트럴라운지 공간 계약서_르플랑에떼,브레스오브아프리카.pdf"
+  },
+  {
+   "doc_id": "11u8szTyeg1vroU_LX_1DAUMbvFMV8Ira",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/11u8szTyeg1vroU_LX_1DAUMbvFMV8Ira/view",
+   "title": "[Sweetspot] 파르나스몰 B1 센트럴라운지 브레스오브아프리카&헤븐센스 팝업 기획안.pdf"
+  },
+  {
+   "doc_id": "11y1MX-I9BV8iyIEaF_6Fx3ngR2CzxLE_",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/11y1MX-I9BV8iyIEaF_6Fx3ngR2CzxLE_/view",
+   "title": "견적서_내용 없음.txt"
+  },
+  {
+   "doc_id": "1uKkbhtoHR9xnWGAy1D5I2yHQM0-X5eBV",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1uKkbhtoHR9xnWGAy1D5I2yHQM0-X5eBV/view",
+   "title": "25.03 르플랑,브오카 파르나스 센트럴라운지 행사 결과보고서.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 2건: [Sweetspot] 파르나스몰 B1 센트럴라운지 브레, 25.03 르플랑,브오카 파르나스 센트럴라운지 행사 결. 미확실: 실측 방문자 수(방문 집계 데이터 없음); 실측 POS 매출(결과보고서 수치 판독 불가); 계약 총액 및 수수료율/RS 조건; 면적(평); 예상 방문자 수(기획서에 방문 예상치 없이 목표 매출만 존재); 레이아웃 문서에 2/27~3/29 표기 혼재(오기 가능성) | rev_mm 정화(2026-07-27): 스팟 검수(7/24) 원문 대조 결과 반영 — 계약서 확정액>견적 우선순위 규칙"
+ }
+}

@@ -1,0 +1,1029 @@
+{
+ "record_id": "RCPU2609",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:쿠키런_CookieRun_데브시스터즈",
+  "space_id": "unresolved:원주_오크밸리2길40_오크밸리리조트",
+  "client_party_id": "unresolved:스미스컴퍼니",
+  "brand_key": "쿠키런",
+  "space_key": "원주_오크밸리리조트"
+ },
+ "intervention": {
+  "concept": "겨울 리조트 옥외에 조성한 쿠키런 IP 테마 '스위트랜드' 시즌 팝업. 눈썰매장 인근 A(플레이그라운드)·B(산책로 시즌포토존)·C(입장동선 매표소·파사드·MD컨테이너) 3개 구역으로 구성. 기획·디자인·시공·운영·철수 턴키 대행.",
+  "brand_name": "쿠키런 스위트랜드 with 오크밸리",
+  "experience_elements": [
+   "에어돔 플레이그라운드",
+   "코코아맛쿠키 마시멜로 던지기 게임",
+   "양면 포토존",
+   "레스팅존 태블릿 게임존",
+   "눈썰매장 펜스 그래픽·윈드베너",
+   "쿠키커터 포토존(줄네온)",
+   "회전썰매",
+   "B구역 산책로 트리로드 및 캐릭터 등신대 시즌포토존",
+   "입구 대형 파사드",
+   "매표소 컨테이너(매표창구 4개소)",
+   "MD 컨테이너(내부 포토존·진열장·MD샵)",
+   "스탬프투어(인쇄물 4만장·도장 4종)",
+   "벽난로 조형물",
+   "곰젤리 FRP 조형물"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "겨울시즌",
+   "눈뿌림 연출",
+   "트리로드",
+   "캐릭터 등신대",
+   "발광 사인",
+   "포토존",
+   "에어돔",
+   "옥외 리조트"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "원주시",
+   "district": "지정면",
+   "venue_name": "오크밸리 리조트",
+   "venue_type": "리조트 옥외(눈썰매장 인근)",
+   "foot_traffic_context": "겨울 리조트 이용객 대상, 눈썰매장 인근 옥외 3개 영역"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-12-20",
+   "to": "2026-02-18",
+   "days": 61
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "확정 예산 321,800,000원(Sophy budget·노션 확정예산 일치). 1차 견적 286,500,000원(VAT별도), 실비 220,387,650원, 마진 66,112,350원(23.08%). 지급조건 발주 60%/중도금 30%/잔금 10%. 세금계산서 257,850,000원 2025-12-05 1차 발행. 하도급: 버니컴 113,568,180원(선금 56.78백만·서울보증 선금보증보험), 금강컨테이너 21,500,000원, 디자인알파 17,000,000원. 전도사고 보상+고객합의금 5천만원 별도 반영."
+  },
+  "brand_requirements": [
+   "IP 데이터 및 자료 수급(데브시스터즈)",
+   "최종 IP 홀더 데브시스터즈→스미스→스위트스팟 구조로 소통(스미스 경유)",
+   "추가 발주는 비용 사전합의 후 진행 원칙",
+   "구조검토 및 안전기준(SS275 6T 철판, M8볼트 8개소, 파사드 와이어+말뚝 추가고정)",
+   "계약서 보험·안전사고·하자조항 보강",
+   "우천·적설 대비 물빠짐 및 하부 모래주머니 고정"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "겨울 리조트 이용객 대상, 눈썰매장 인근 옥외 3개 영역"
+  },
+  "derived": {
+   "duration": {
+    "days": 61,
+    "weekend_share": 0.3,
+    "holiday_days": 5
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 72,
+    "holiday_until": 56,
+    "holiday_block_in": 5,
+    "nat_event_gap": 37,
+    "nat_event": null,
+    "doc_lag_days": 5,
+    "doc_dates_found": 13
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 21906434.0,
+    "pnl_pre_accounts": 6,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-11-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 322.6
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(방문객 수·티켓 판매·현장 매출(POS) 수치 부재. 티켓 매출 주체가 스위트스팟이 아닐 가능성. 2025-12-20 오픈일 우천으로 초기 입장객 없었음(정성 기록). 2026-01-10 강풍으로 회전썰매 상단 FRP 조형물 전도 사고 발생.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식액 322.6 ≈ 계약총액 321.8 (±10%)",
+   "contract_total_mm": 321.8,
+   "last_recognition_period": "2026-02"
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "1-UlTS0JW5qcqhz6VwEMLv1lWcw9qv5lx",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1-UlTS0JW5qcqhz6VwEMLv1lWcw9qv5lx/view",
+   "title": "견적서_금강컨테이너_쿠키런 스위트랜드 컨테이너 설치건.xlsx"
+  },
+  {
+   "doc_id": "1-XTkdyrZHiird6zrgcCfsVEyLSNiix1P",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1-XTkdyrZHiird6zrgcCfsVEyLSNiix1P/view",
+   "title": "애드24 사업자등록증.jpg"
+  },
+  {
+   "doc_id": "1-rB_1Sc9u5SV-20QodE6zhSymmK7-lr-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1-rB_1Sc9u5SV-20QodE6zhSymmK7-lr-/view",
+   "title": "[별도견적요청] 쿠키런 스위트랜드_게임기2종.pptx"
+  },
+  {
+   "doc_id": "10dgpf9r7i8xnPFg9WVcGy7UXuOm30U_f",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/10dgpf9r7i8xnPFg9WVcGy7UXuOm30U_f/view",
+   "title": "★업무계약서_버니커뮤니케이션즈_쿠키런 스위트랜드 오크밸리 시공건 날인본.pdf"
+  },
+  {
+   "doc_id": "11qJyUWXY-aov5Sf6zuzPxizvTMKqRox_",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/11qJyUWXY-aov5Sf6zuzPxizvTMKqRox_/view",
+   "title": "견적서_디자인알파_쿠키런 조형물제작_1118.xlsx"
+  },
+  {
+   "doc_id": "126WiCMvcIjjOxUKJuEOa817SlrO54zmR",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/126WiCMvcIjjOxUKJuEOa817SlrO54zmR/view",
+   "title": "1118_쿠키런x오크밸리 트리설치건 견적요청.pptx"
+  },
+  {
+   "doc_id": "127z989V2pK_8JsS_DqTfXcb21FntsmD2",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/127z989V2pK_8JsS_DqTfXcb21FntsmD2/view",
+   "title": "1112_쿠키런스위트랜드 트리연출 견적문의.pptx"
+  },
+  {
+   "doc_id": "12c-Kj8CwVSWduv3BRKxUd8eiUI4WPEH7",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/12c-Kj8CwVSWduv3BRKxUd8eiUI4WPEH7/view",
+   "title": "견적서_원더러스트_쿠키런스위트랜드 1차안_1125.pdf"
+  },
+  {
+   "doc_id": "12h6BGJr9zyauZCyUsIsgFJAMFdjm_1M4",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/12h6BGJr9zyauZCyUsIsgFJAMFdjm_1M4/view",
+   "title": "1118_푸딩맛쿠키 게임개발건 견적요청.pptx"
+  },
+  {
+   "doc_id": "12n6FwyvguHC_K5elmmkoRNtkJUbcF8BU",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/12n6FwyvguHC_K5elmmkoRNtkJUbcF8BU/view",
+   "title": "삼원기업 사업자등록증.jpg"
+  },
+  {
+   "doc_id": "13CFa-aNf28f_updOHMq3dFSU1H9_B1pB",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/13CFa-aNf28f_updOHMq3dFSU1H9_B1pB/view",
+   "title": "견적서_디자인알파_쿠키런 조형물제작_1112.xlsx"
+  },
+  {
+   "doc_id": "13LFlQ9ZQD8QJt5M3aI3OR3o51tGyD4jG",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/13LFlQ9ZQD8QJt5M3aI3OR3o51tGyD4jG/view",
+   "title": "★업무계약서_버니커뮤니케이션즈_쿠키런 스위트랜드 오크밸리 시공건_1127.docx"
+  },
+  {
+   "doc_id": "14YfRfR0dbp3GsbdyvCcAVDr1zMSxyw8Q",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/14YfRfR0dbp3GsbdyvCcAVDr1zMSxyw8Q/view",
+   "title": "세금계산서_화연당_쿠키런 스위트랜드 오크밸리 트리설치건(선금50%).JPG"
+  },
+  {
+   "doc_id": "15CNMMwUx5r_YPlGNjxznFz2ZxZgnzDFH",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/15CNMMwUx5r_YPlGNjxznFz2ZxZgnzDFH/view",
+   "title": "스위트스팟_쿠키런 스위트랜드with오크밸리 게임기 추가견적서_1205.pdf"
+  },
+  {
+   "doc_id": "15WCgK0Ipfac1U4MwFI07R0rsq8oSMYHQ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/15WCgK0Ipfac1U4MwFI07R0rsq8oSMYHQ/view",
+   "title": "★쿠키런_스위트랜드with오크밸리 실비정리.xlsx"
+  },
+  {
+   "doc_id": "15bgAcU2XqYXhpHRF2dN8lUprIb5dtcyz",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/15bgAcU2XqYXhpHRF2dN8lUprIb5dtcyz/view",
+   "title": "견적서_디자인알파_쿠키런 조형물제작_1127.xlsx"
+  },
+  {
+   "doc_id": "15nO4ykie44Epj1vzbCX_T7lQzLpPUd4A",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/15nO4ykie44Epj1vzbCX_T7lQzLpPUd4A/view",
+   "title": "스위트스팟_쿠키런 스위트랜드with오크밸리 시공견적서_1119.xlsx"
+  },
+  {
+   "doc_id": "15pOs-KR7S-qE11_kG2aH89vP8DGonG9Z",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/15pOs-KR7S-qE11_kG2aH89vP8DGonG9Z/view",
+   "title": "세금계산서_삼원기업_쿠키런스위트랜드 철제펜스 제작건.JPG"
+  },
+  {
+   "doc_id": "167MibqgzW4L35OeqwjlFLp9DVFeUzSXJ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/167MibqgzW4L35OeqwjlFLp9DVFeUzSXJ/view",
+   "title": "1126_쿠키런 스위트랜드 게임기 2종 추가견적요청.skb"
+  },
+  {
+   "doc_id": "17D6AP3akI6wwtGovf1BOg-zvJkyx3U2F",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17D6AP3akI6wwtGovf1BOg-zvJkyx3U2F/view",
+   "title": "Thumbs.db"
+  },
+  {
+   "doc_id": "19sduJtyeL_aL6bFtzpJFUfcHc5nqqZns",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19sduJtyeL_aL6bFtzpJFUfcHc5nqqZns/view",
+   "title": "[별도견적요청] 쿠키런 스위트랜드_게임기2종.pptx"
+  },
+  {
+   "doc_id": "19t2W3Ui_0PYxMSzW8okqsRobf27TpA8I",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19t2W3Ui_0PYxMSzW8okqsRobf27TpA8I/view",
+   "title": "1118_쿠키런 스위트랜드_오크밸리 시공견적요청.pptx"
+  },
+  {
+   "doc_id": "1A2mQB8EKHf9mqVYdpUso0TOLjabScL4K",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1A2mQB8EKHf9mqVYdpUso0TOLjabScL4K/view",
+   "title": "견적서_애드24_쿠키런 스위트랜드 윈드베너 제작건.pdf"
+  },
+  {
+   "doc_id": "1Ab7yN8B7TcYNpVCBnwptpMq5sbdaPycn",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Ab7yN8B7TcYNpVCBnwptpMq5sbdaPycn/view",
+   "title": "Thumbs.db"
+  },
+  {
+   "doc_id": "1AvBgDl_vMNC2LoCGsBL3e2j-EhZvIGwa",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1AvBgDl_vMNC2LoCGsBL3e2j-EhZvIGwa/view",
+   "title": "스위트스팟_파사드_견적문의_(CR오크밸리)_251118.skp"
+  },
+  {
+   "doc_id": "1B940d5saWUzycCsnX3zjl6RzOV5erFwc",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1B940d5saWUzycCsnX3zjl6RzOV5erFwc/view",
+   "title": "스위트스팟_매표소_견적문의_(CR오크밸리)_251118.skp"
+  },
+  {
+   "doc_id": "1Bzva9oSpMNQbFFSVb25eY5NE3tH3kEMA",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Bzva9oSpMNQbFFSVb25eY5NE3tH3kEMA/view",
+   "title": "251215_견적서_스위트스팟 쿠키런_스탬프용지_현대드림애드.xls"
+  },
+  {
+   "doc_id": "1C9whdolhQHSrfyiSokmOAll_Oumr4cP9",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1C9whdolhQHSrfyiSokmOAll_Oumr4cP9/view",
+   "title": "1118_쿠키런 스위트랜드 모바일게임 체험존.skp"
+  },
+  {
+   "doc_id": "1DEtQbpgurKT9HjL8ePEknW26KiaKr_UY",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DEtQbpgurKT9HjL8ePEknW26KiaKr_UY/view",
+   "title": "견적서_버니컴_쿠키런 A구역 게임기2종 추가제작건.xlsx"
+  },
+  {
+   "doc_id": "1E5oSpEq40oSt5-9tVIhyFrLJt1aTY-AM",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1E5oSpEq40oSt5-9tVIhyFrLJt1aTY-AM/view",
+   "title": "견적서_버니컴_쿠키런스위트랜드 1차안_1121.xlsx"
+  },
+  {
+   "doc_id": "1Ew2x3UKLPR1EftvkOEj2zh5YwzU2_XWo",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Ew2x3UKLPR1EftvkOEj2zh5YwzU2_XWo/view",
+   "title": "견적서_버니컴_쿠키런 스위트랜드 추가항목_1212.xlsx"
+  },
+  {
+   "doc_id": "1Exmw8mtniRmcKkYpuQxAnxrECe93j6_e",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Exmw8mtniRmcKkYpuQxAnxrECe93j6_e/view",
+   "title": "1118_쿠키런 스위트랜드 모바일게임 체험존.skp"
+  },
+  {
+   "doc_id": "1F1fvMle3U0nPPyWF1bSR0zWErFdqimaZ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1F1fvMle3U0nPPyWF1bSR0zWErFdqimaZ/view",
+   "title": "애드24 통장사본.jpg"
+  },
+  {
+   "doc_id": "1FNlAq69IhinbwoOJM9Yk_mTJTnmrMWGf",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1FNlAq69IhinbwoOJM9Yk_mTJTnmrMWGf/view",
+   "title": "세금계산서_화연당_쿠키런 스위트랜드 오크밸리 트리설치건(선금50%).JPG"
+  },
+  {
+   "doc_id": "1G33gpzEUIpf02BVdbNdw4xOdNQeglNWq",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1G33gpzEUIpf02BVdbNdw4xOdNQeglNWq/view",
+   "title": "1126_쿠키런 스위트랜드_오크밸리 C구역 최종안.pptx"
+  },
+  {
+   "doc_id": "1GXV_rn5FxtHJHrnLIFO-K75Q6VvsbLku",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1GXV_rn5FxtHJHrnLIFO-K75Q6VvsbLku/view",
+   "title": "2025forrestbyHYD_PORTFOLIO_winter.pdf"
+  },
+  {
+   "doc_id": "1GrKju2CiocA8Im4RTxiS9cUsyIGGd9rO",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1GrKju2CiocA8Im4RTxiS9cUsyIGGd9rO/view",
+   "title": "KakaoTalk_20251203_200102405_02.jpg"
+  },
+  {
+   "doc_id": "1JAE0HmK9m7eH2rBkAhLQ8TpP2DfnNCRr",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1JAE0HmK9m7eH2rBkAhLQ8TpP2DfnNCRr/view",
+   "title": "1117_쿠키런 스위트랜드 코코아맛쿠키 게임.skb"
+  },
+  {
+   "doc_id": "1JMssGl9zzd_xzGTdL9HSKEOlw3hU9LLy",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1JMssGl9zzd_xzGTdL9HSKEOlw3hU9LLy/view",
+   "title": "세금계산서_삼원기업_쿠키런스위트랜드 철제펜스 제작건.JPG"
+  },
+  {
+   "doc_id": "1JOVQpb98MYjcz_I0AAl3TfNOucpIVEe8",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1JOVQpb98MYjcz_I0AAl3TfNOucpIVEe8/view",
+   "title": "2025 스미스 사업자등록증.pdf"
+  },
+  {
+   "doc_id": "1JdafCwndx06lMG2N_ZUzx5dYgvPToapC",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1JdafCwndx06lMG2N_ZUzx5dYgvPToapC/view",
+   "title": "견적서_화연당_쿠키런 스위트랜드_트리설치건_계약견적.xlsx"
+  },
+  {
+   "doc_id": "1KH6jE3nmc19Ozbj8FogyyX8xpgTG6iid",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1KH6jE3nmc19Ozbj8FogyyX8xpgTG6iid/view",
+   "title": "세금계산서_이벤툴_푸딩맛쿠키 게임개발건.pdf"
+  },
+  {
+   "doc_id": "1KkwqxfQ_sm5TD8NtAxejlZ84exc0-cjS",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1KkwqxfQ_sm5TD8NtAxejlZ84exc0-cjS/view",
+   "title": "견적서_디자인알파_쿠키런 조형물제작_1118.xlsx"
+  },
+  {
+   "doc_id": "1LbEBVMfPSBWjmacP9S-ydooRl20hOwEp",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1LbEBVMfPSBWjmacP9S-ydooRl20hOwEp/view",
+   "title": "견적서_스튜디오루보_쿠키런스위트랜드 1차안_1121.pdf"
+  },
+  {
+   "doc_id": "1LqOLevYCtfvWvGCMMVKYUTfHY_wf0yhL",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1LqOLevYCtfvWvGCMMVKYUTfHY_wf0yhL/view",
+   "title": "KakaoTalk_20251203_200102405_01.jpg"
+  },
+  {
+   "doc_id": "1M2zoFxRrIPXv6l3uhao0UGXMAzy6eArU",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1M2zoFxRrIPXv6l3uhao0UGXMAzy6eArU/view",
+   "title": "1203_쿠키런 스위트랜드_오크밸리 A구역.pptx"
+  },
+  {
+   "doc_id": "1MK4Glg7FKeT92dOpfQ9KpvuiWhZsNnqU",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1MK4Glg7FKeT92dOpfQ9KpvuiWhZsNnqU/view",
+   "title": "업무계약서_버니커뮤니케이션즈_쿠키런 스위트랜드 오크밸리 시공건_1127.pdf"
+  },
+  {
+   "doc_id": "1MZY-Ay80lAab6vxHKyykENCq5h2hoA2s",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1MZY-Ay80lAab6vxHKyykENCq5h2hoA2s/view",
+   "title": "★업무계약서_화연당_쿠키런 스위트랜드 오크밸리 트리시공건.docx"
+  },
+  {
+   "doc_id": "1NHPMeqWRx4P5mmrP48ub5H96VLvkkAUK",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1NHPMeqWRx4P5mmrP48ub5H96VLvkkAUK/view",
+   "title": "1112_쿠키런스위트랜드 트리연출 견적문의.pptx"
+  },
+  {
+   "doc_id": "1NKqp01G2Zb7XIax6r8Zg6YRDqHKRy6Zr",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1NKqp01G2Zb7XIax6r8Zg6YRDqHKRy6Zr/view",
+   "title": "견적서_버니컴_쿠키런스위트랜드 1차안_1121.pdf"
+  },
+  {
+   "doc_id": "1OdxtOspaLt2XEHlA5pg1KC2dXYONYKLi",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1OdxtOspaLt2XEHlA5pg1KC2dXYONYKLi/view",
+   "title": "스위트스팟_쿠키런 스위트랜드with오크밸리 시공견적서_1031.pdf"
+  },
+  {
+   "doc_id": "1OePVa5zK-b8UEY0wUzmSDUef2isTslzS",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1OePVa5zK-b8UEY0wUzmSDUef2isTslzS/view",
+   "title": "[별도견적요청] 쿠키런 스위트랜드_게임기2종.pdf"
+  },
+  {
+   "doc_id": "1PGr8Gq4Zb4uNBr-O8ZqzFkLpk3c8jzq8",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1PGr8Gq4Zb4uNBr-O8ZqzFkLpk3c8jzq8/view",
+   "title": "견적서_버니컴_쿠키런스위트랜드 1차안_1121.xlsx"
+  },
+  {
+   "doc_id": "1PrjpFjFg94O9WBE00fSLPD3ATyNKab2x",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1PrjpFjFg94O9WBE00fSLPD3ATyNKab2x/view",
+   "title": "견적서_삼원기업_쿠키런스위트랜드 철제펜스 제작건.xlsx"
+  },
+  {
+   "doc_id": "1QT4c7Axy1qL-tGgtwlR5Xa2DVAV7AjZV",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1QT4c7Axy1qL-tGgtwlR5Xa2DVAV7AjZV/view",
+   "title": "견적서_디자인알파_쿠키런 조형물제작_1112.xlsx"
+  },
+  {
+   "doc_id": "1QZo0SRErTEqjHtA99rQh5O7PG3Y7amdd",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1QZo0SRErTEqjHtA99rQh5O7PG3Y7amdd/view",
+   "title": "버니컴_사업자등록증(2023.04).jpg"
+  },
+  {
+   "doc_id": "1QwlGQVIp-A6jPN7uo64dMagIgS4hOWN4",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1QwlGQVIp-A6jPN7uo64dMagIgS4hOWN4/view",
+   "title": "금강컨테이너_부스 임대계약서_(주)스위트스팟 1127.pdf"
+  },
+  {
+   "doc_id": "1RY77FwIYdy97Hb1cIPO0wXdmGSpv8jfp",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1RY77FwIYdy97Hb1cIPO0wXdmGSpv8jfp/view",
+   "title": "견적서_버니컴_쿠키런스위트랜드 1차안_1121.xlsx"
+  },
+  {
+   "doc_id": "1Rd263uzAS9inzamHv_yNJWse2K1X0w1O",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Rd263uzAS9inzamHv_yNJWse2K1X0w1O/view",
+   "title": "★업무계약서_디자인알파_쿠키런 스위트랜드 오크밸리 날인본.pdf"
+  },
+  {
+   "doc_id": "1S8q8ujyhKk3_m9EVulymMCk24CvhWnx7",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1S8q8ujyhKk3_m9EVulymMCk24CvhWnx7/view",
+   "title": "화연당_선금 보증보험.pdf"
+  },
+  {
+   "doc_id": "1SBvdGI9lJfr0CBCApq6UW3KNfNIzsJ6c",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1SBvdGI9lJfr0CBCApq6UW3KNfNIzsJ6c/view",
+   "title": "1117_쿠키런 스위트랜드 코코아맛쿠키 게임.skb"
+  },
+  {
+   "doc_id": "1SEBrfZQ2bW4DRjLdOVKnIe-2Rc_sRoYU",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1SEBrfZQ2bW4DRjLdOVKnIe-2Rc_sRoYU/view",
+   "title": "견적서_버니컴_쿠키런스위트랜드 발주완료_1215.xlsx"
+  },
+  {
+   "doc_id": "1SVdN8RCGLwbXDxp8TitS7mzy7YOwHAVc",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1SVdN8RCGLwbXDxp8TitS7mzy7YOwHAVc/view",
+   "title": "견적서_프렌디_쿠키런스위트랜드 1차안_1121.pdf"
+  },
+  {
+   "doc_id": "1Sj7mf1fttM_Vt0_MAiE7GyWHejVgMT9L",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Sj7mf1fttM_Vt0_MAiE7GyWHejVgMT9L/view",
+   "title": "00.사업자등록증_버니커뮤니케이션즈.jpg"
+  },
+  {
+   "doc_id": "1SuyJ-wmksdlUJt701t76F3rRDWOwMV3y",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1SuyJ-wmksdlUJt701t76F3rRDWOwMV3y/view",
+   "title": "★업무계약서_버니커뮤니케이션즈_쿠키런 스위트랜드 오크밸리 시공건 날인본.pdf"
+  },
+  {
+   "doc_id": "1T5ZjpB8PTAjBf614xikJeH1VHd1ivQ78",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1T5ZjpB8PTAjBf614xikJeH1VHd1ivQ78/view",
+   "title": "세금계산서_애드24_쿠키런 눈썰매장 윈드베너제작건.pdf"
+  },
+  {
+   "doc_id": "1TslTzbCtz_aQr5XUTka_WYYzOaKdYbxj",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1TslTzbCtz_aQr5XUTka_WYYzOaKdYbxj/view",
+   "title": "1118_쿠키런x오크밸리 트리설치건 견적요청.pdf"
+  },
+  {
+   "doc_id": "1TyUF8uR1i6N4jLcxmb2qvjz6pVIE6oUx",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1TyUF8uR1i6N4jLcxmb2qvjz6pVIE6oUx/view",
+   "title": "(수정용)견적서_스위트스팟오크밸리트리.xlsx"
+  },
+  {
+   "doc_id": "1UL3oz6m6AkjYDwXyHJuvXe0WbJvAnbX4",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1UL3oz6m6AkjYDwXyHJuvXe0WbJvAnbX4/view",
+   "title": "(수정용)견적서_스위트스팟오크밸리트리.xlsx"
+  },
+  {
+   "doc_id": "1UfpU7lh_u10tYx9JAQI-s2H-xFGMpDhg",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1UfpU7lh_u10tYx9JAQI-s2H-xFGMpDhg/view",
+   "title": "부스 임대계약서_(주)스위트스팟.pdf"
+  },
+  {
+   "doc_id": "1UtZWRiBynDqQhk60LYEaX2XfAk-lzQPn",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1UtZWRiBynDqQhk60LYEaX2XfAk-lzQPn/view",
+   "title": "★업무계약서_버니커뮤니케이션즈_쿠키런 스위트랜드 오크밸리 시공건_1127.docx"
+  },
+  {
+   "doc_id": "1UybQ-zWGWH_AtZNsfjIjbJMS3Iy_M8V6",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1UybQ-zWGWH_AtZNsfjIjbJMS3Iy_M8V6/view",
+   "title": "1210_쿠키런 스위트랜드_오크밸리 공간연출안.pptx"
+  },
+  {
+   "doc_id": "1V8N69volMi2FJeuUx28PRLNwMnyIut2t",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1V8N69volMi2FJeuUx28PRLNwMnyIut2t/view",
+   "title": "세금계산서_이벤툴_푸딩맛쿠키 게임개발건.pdf"
+  },
+  {
+   "doc_id": "1VtC0qX-sT11U3KILRgua5LAK1fKA31zN",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1VtC0qX-sT11U3KILRgua5LAK1fKA31zN/view",
+   "title": "01.통장사본_버니커뮤니케이션즈.jpg"
+  },
+  {
+   "doc_id": "1W6jaFvSAErTSbA8KSFs1Uk-UjIvh11pH",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1W6jaFvSAErTSbA8KSFs1Uk-UjIvh11pH/view",
+   "title": "견적서_버니컴_쿠키런스위트랜드 1차안_1121.pdf"
+  },
+  {
+   "doc_id": "1WAKPii2prN_kbs2JM_5cmXdyDk-H7qei",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1WAKPii2prN_kbs2JM_5cmXdyDk-H7qei/view",
+   "title": "견적서_삼원기업_쿠키런스위트랜드 철제펜스 제작건.xlsx"
+  },
+  {
+   "doc_id": "1WXja6pA6BHkuylFsCt6zsFIgVs5rooPs",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1WXja6pA6BHkuylFsCt6zsFIgVs5rooPs/view",
+   "title": "세금계산서_애드24_쿠키런 눈썰매장 윈드베너제작건.pdf"
+  },
+  {
+   "doc_id": "1XDLNV2M5IrnpbHTgUNcTBYoZCM-ZEEJt",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1XDLNV2M5IrnpbHTgUNcTBYoZCM-ZEEJt/view",
+   "title": "세금계산서_화연당_쿠키런스위트랜드 트리설치건(중도금40%).png"
+  },
+  {
+   "doc_id": "1XEvyPIs2OARlgSsR_Y0252fWwmFyAfea",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1XEvyPIs2OARlgSsR_Y0252fWwmFyAfea/view",
+   "title": "비교견적(업체별비용정리).xlsx"
+  },
+  {
+   "doc_id": "1XJnz-E9yvnoxMYXYo1Nih_uiDDqOtgPt",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1XJnz-E9yvnoxMYXYo1Nih_uiDDqOtgPt/view",
+   "title": "★업무계약서_디자인알파_쿠키런 스위트랜드 오크밸리 날인본.pdf"
+  },
+  {
+   "doc_id": "1XVybGWcUOWEDyN22SGh1IfPSpTeaPORw",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1XVybGWcUOWEDyN22SGh1IfPSpTeaPORw/view",
+   "title": "1118_쿠키런x오크밸리 트리설치건 견적요청.pptx"
+  },
+  {
+   "doc_id": "1Xh58oeVDZoL25yd-s1kZbGK_LW5mSSOr",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Xh58oeVDZoL25yd-s1kZbGK_LW5mSSOr/view",
+   "title": "★업무계약서_화연당_쿠키런 스위트랜드 오크밸리 트리시공건_날인본.pdf"
+  },
+  {
+   "doc_id": "1XwRVjnZiIbP7ON1jJm_7f_ICxhSsgqow",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1XwRVjnZiIbP7ON1jJm_7f_ICxhSsgqow/view",
+   "title": "3D파일 취합본.zip"
+  },
+  {
+   "doc_id": "1YMCT9gfUmQw9qPeqgTaYxOmceYseHpd1",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1YMCT9gfUmQw9qPeqgTaYxOmceYseHpd1/view",
+   "title": "견적서_이벤툴_푸딩맛쿠키 게임개발건.xls"
+  },
+  {
+   "doc_id": "1Yn9n5U0KJyF7zV8_6rGPK1VEWhu7Tj-d",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Yn9n5U0KJyF7zV8_6rGPK1VEWhu7Tj-d/view",
+   "title": "★업무계약서_버니커뮤니케이션즈_쿠키런 스위트랜드 오크밸리 시공건_1127.docx"
+  },
+  {
+   "doc_id": "1Z4X8nt4LBd7ESdtZByOU6lIOlqFcv2S7",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Z4X8nt4LBd7ESdtZByOU6lIOlqFcv2S7/view",
+   "title": "1126_쿠키런 스위트랜드 게임기 2종 추가견적요청.skb"
+  },
+  {
+   "doc_id": "1ZPdgvLwh_YYAds0hwKGCVvQp0_vTy1fs",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ZPdgvLwh_YYAds0hwKGCVvQp0_vTy1fs/view",
+   "title": "05_현장사진.zip"
+  },
+  {
+   "doc_id": "1ZtllHm8DfxiA3MogToFHnqub9DuwoF71",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ZtllHm8DfxiA3MogToFHnqub9DuwoF71/view",
+   "title": "견적서_버니컴_쿠키런스위트랜드_1121.pdf"
+  },
+  {
+   "doc_id": "1ZvmMR5wlffj-uuXiy8F6LG4mcryjRT8R",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ZvmMR5wlffj-uuXiy8F6LG4mcryjRT8R/view",
+   "title": "견적서_애드24_쿠키런 스위트랜드 윈드베너 제작건.pdf"
+  },
+  {
+   "doc_id": "1_0lgFpTZ2Uc6h--tPLxpFbwsDerkVg1p",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1_0lgFpTZ2Uc6h--tPLxpFbwsDerkVg1p/view",
+   "title": "스위트스팟_MD존_견적문의_(CR오크밸리)_251118.skp"
+  },
+  {
+   "doc_id": "1_AmI8I5ZEBqZXoOMHSNVIORfI7UYjVlN",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1_AmI8I5ZEBqZXoOMHSNVIORfI7UYjVlN/view",
+   "title": "1202_쿠키런 스위트랜드_오크밸리 B구역 산책로 최종안.pptx"
+  },
+  {
+   "doc_id": "1_QwAIdjAW0t9303VM0-CbBzWQK-0ENR_",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1_QwAIdjAW0t9303VM0-CbBzWQK-0ENR_/view",
+   "title": "Thumbs.db"
+  },
+  {
+   "doc_id": "1_kerxBaY0medIYmeYtud0KtprcpZllAn",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1_kerxBaY0medIYmeYtud0KtprcpZllAn/view",
+   "title": "[스미스(주)] 팝업대행 표준 계약서_sweetspot_날인본.pdf"
+  },
+  {
+   "doc_id": "1_n9XWCwDUAoH-jbcIqkRcV9wItBUpfaz",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1_n9XWCwDUAoH-jbcIqkRcV9wItBUpfaz/view",
+   "title": "스위트스팟_파사드_견적문의_(CR오크밸리)_251118.skp"
+  },
+  {
+   "doc_id": "1aPHB7WpmBKn3XQni-9DivjwkPUD4YKau",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1aPHB7WpmBKn3XQni-9DivjwkPUD4YKau/view",
+   "title": "견적서_버니컴_쿠키런스위트랜드 1차안_1121.pdf"
+  },
+  {
+   "doc_id": "1apFDh0h6vypszA1EJfyyRKG899To26EG",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1apFDh0h6vypszA1EJfyyRKG899To26EG/view",
+   "title": "견적서_이벤툴_푸딩맛쿠키 게임개발건.xls"
+  },
+  {
+   "doc_id": "1axoa42bLMS6-eonxUv3hukgZut7E2zQC",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1axoa42bLMS6-eonxUv3hukgZut7E2zQC/view",
+   "title": "스위트스팟_쿠키런 스위트랜드with오크밸리 시공견적서_1031.xlsx"
+  },
+  {
+   "doc_id": "1bGGe-UO5MvIm-Gn-TIaW1MOgyb4GW4UB",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1bGGe-UO5MvIm-Gn-TIaW1MOgyb4GW4UB/view",
+   "title": "버니컴_통장사본.jpg"
+  },
+  {
+   "doc_id": "1bSh-URYF9mqN5-3HaRAA55_xrtnDw10G",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1bSh-URYF9mqN5-3HaRAA55_xrtnDw10G/view",
+   "title": "버니컴_서울보증_선금보험증권_20251202.pdf"
+  },
+  {
+   "doc_id": "1bcQXEOtrtXmyTeD9ocFQcyXabzipf3pr",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1bcQXEOtrtXmyTeD9ocFQcyXabzipf3pr/view",
+   "title": "화연당_선금 보증보험 영수증.pdf"
+  },
+  {
+   "doc_id": "1c8M3Lvdl29C76gUhW9zLm6F7ms3HLI3k",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1c8M3Lvdl29C76gUhW9zLm6F7ms3HLI3k/view",
+   "title": "[SMiTH] 쿠키런 스위트랜드 with 오크밸리 기획안.pdf"
+  },
+  {
+   "doc_id": "1cajPri4ufgclfekUKyN33QdvIeYpCvbP",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1cajPri4ufgclfekUKyN33QdvIeYpCvbP/view",
+   "title": "05_현장사진.zip"
+  },
+  {
+   "doc_id": "1cqLaha9LVyYEB4oyA8wtDN5HcSnk5yaI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1cqLaha9LVyYEB4oyA8wtDN5HcSnk5yaI/view",
+   "title": "견적서_디자인알파_쿠키런 조형물제작_1119.xlsx"
+  },
+  {
+   "doc_id": "1dMwiWKRKxFsnzueGXpR5vYJ_12lh1XgJ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1dMwiWKRKxFsnzueGXpR5vYJ_12lh1XgJ/view",
+   "title": "견적서_디자인알파_쿠키런 조형물제작_1127.xlsx"
+  },
+  {
+   "doc_id": "1dYd7c4_gM1FCTrFXkiwNwYOTk1u6hnNW",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1dYd7c4_gM1FCTrFXkiwNwYOTk1u6hnNW/view",
+   "title": "스위트스팟_쿠키런 스위트랜드with오크밸리 시공견적서_1121.pdf"
+  },
+  {
+   "doc_id": "1e4rXilnR6ds_FDaMFq-JYsfQsVlw9Qg-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1e4rXilnR6ds_FDaMFq-JYsfQsVlw9Qg-/view",
+   "title": "견적서_버니컴_쿠키런스위트랜드 발주완료_1215.xlsx"
+  },
+  {
+   "doc_id": "1e_f-uD8s_mAFRzioAV3BSIak3ERoljG3",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1e_f-uD8s_mAFRzioAV3BSIak3ERoljG3/view",
+   "title": "KakaoTalk_20251203_200102405.jpg"
+  },
+  {
+   "doc_id": "1eisIbCpL-256vURMjL1_5Zlq1JK5vbwL",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1eisIbCpL-256vURMjL1_5Zlq1JK5vbwL/view",
+   "title": "1118_쿠키런 스위트랜드_오크밸리 시공견적요청.pptx"
+  },
+  {
+   "doc_id": "1f2vlcmy6DgMka0e8-yS5O_i7cbLYqr96",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1f2vlcmy6DgMka0e8-yS5O_i7cbLYqr96/view",
+   "title": "매출전표.pdf"
+  },
+  {
+   "doc_id": "1fAfK4ow-onrZ98ff9pWMfKnIoJ1UNzsL",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1fAfK4ow-onrZ98ff9pWMfKnIoJ1UNzsL/view",
+   "title": "날인본)업무계약서_버니커뮤니케이션즈_쿠키런 스위트랜드 오크밸리 시공건_1127.pdf"
+  },
+  {
+   "doc_id": "1fLCdHpgGa9pPzcFSUpTSCYl6-HF919dz",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1fLCdHpgGa9pPzcFSUpTSCYl6-HF919dz/view",
+   "title": "버니커뮤니케이션즈_세금계산서(선금).png"
+  },
+  {
+   "doc_id": "1fYSAyhW1e7RFylmJfLceZky4DZek2QbQ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1fYSAyhW1e7RFylmJfLceZky4DZek2QbQ/view",
+   "title": "1118_썰매존 쿠키커터 포토존.skp"
+  },
+  {
+   "doc_id": "1gJyrr9fViTcarkXOqsgCm1DHwEC6v-0f",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1gJyrr9fViTcarkXOqsgCm1DHwEC6v-0f/view",
+   "title": "화연당 사업자등록증.pdf"
+  },
+  {
+   "doc_id": "1gT4oFt3ttTe9XfJ4wc2G2pWHLp-Udv2W",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1gT4oFt3ttTe9XfJ4wc2G2pWHLp-Udv2W/view",
+   "title": "금강컨테이너_부스 임대계약서_(주)스위트스팟 1127.pdf"
+  },
+  {
+   "doc_id": "1gjf6AvqVzB5ALWwMVU0HPiW7oyMdh1aB",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1gjf6AvqVzB5ALWwMVU0HPiW7oyMdh1aB/view",
+   "title": "★업무계약서_화연당_쿠키런 스위트랜드 오크밸리 트리시공건_날인본.pdf"
+  },
+  {
+   "doc_id": "1hEw_DpZB6Pc7cwodmOmuxdMu09T8DfKp",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1hEw_DpZB6Pc7cwodmOmuxdMu09T8DfKp/view",
+   "title": "★업무계약서_화연당_쿠키런 스위트랜드 오크밸리 트리시공건.docx"
+  },
+  {
+   "doc_id": "1hZ5kEbMCwFzx6bUqxovIsHDkXWQwsw9M",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1hZ5kEbMCwFzx6bUqxovIsHDkXWQwsw9M/view",
+   "title": "1120_쿠키런 재견적요청.pptx"
+  },
+  {
+   "doc_id": "1i29xD4Nm3zPbywOlk9IoovDjn2X8xfK8",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1i29xD4Nm3zPbywOlk9IoovDjn2X8xfK8/view",
+   "title": "1118_푸딩맛쿠키 게임개발건 견적요청.pptx"
+  },
+  {
+   "doc_id": "1iAonCfkLnCdzf1v5mWBRDSW2UX4k1Ilu",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1iAonCfkLnCdzf1v5mWBRDSW2UX4k1Ilu/view",
+   "title": "견적서_화연당_쿠키런 스위트랜드_트리설치건_계약견적.xlsx"
+  },
+  {
+   "doc_id": "1jPviGpnvSK6kow7yHWPTlXkXKvxC2cQk",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1jPviGpnvSK6kow7yHWPTlXkXKvxC2cQk/view",
+   "title": "1118_썰매존 쿠키커터 포토존.skp"
+  },
+  {
+   "doc_id": "1jouRAot7jUtS8RtbiM6is8FnyG0-wtpM",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1jouRAot7jUtS8RtbiM6is8FnyG0-wtpM/view",
+   "title": "1118_쿠키런x오크밸리 트리설치건 견적요청.pdf"
+  },
+  {
+   "doc_id": "1kejOvy80rgsf3u_4jKq55HfyJPs5Ghi1",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1kejOvy80rgsf3u_4jKq55HfyJPs5Ghi1/view",
+   "title": "견적서_버니컴_쿠키런스위트랜드 1차안_1121.pdf"
+  },
+  {
+   "doc_id": "1l6EHRBURFsEIfWEVXzQtXtrmh5h7JC5A",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1l6EHRBURFsEIfWEVXzQtXtrmh5h7JC5A/view",
+   "title": "Thumbs.db"
+  },
+  {
+   "doc_id": "1lHV5Hkk_Mz2VdSHKosn4lhTBrR_n5mV-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1lHV5Hkk_Mz2VdSHKosn4lhTBrR_n5mV-/view",
+   "title": "스위트스팟_매표소_견적문의_(CR오크밸리)_251118.skp"
+  },
+  {
+   "doc_id": "1mHVUcw9HZdpdA0c0IkJ200GECD7HYfGB",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1mHVUcw9HZdpdA0c0IkJ200GECD7HYfGB/view",
+   "title": "1120_쿠키런 재견적요청.pptx"
+  },
+  {
+   "doc_id": "1n-ukmEgz8BA4x54zd2gmbYiep3xz2tfG",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1n-ukmEgz8BA4x54zd2gmbYiep3xz2tfG/view",
+   "title": "삼원기업 통장사본.png"
+  },
+  {
+   "doc_id": "1nicjza4wr_DVlBqIoyxdrgKwtznYTlZ9",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1nicjza4wr_DVlBqIoyxdrgKwtznYTlZ9/view",
+   "title": "221121 스위트스팟 견적서_스노우볼.xlsx"
+  },
+  {
+   "doc_id": "1oSk0Vgfe5ApSUNmNU_tAM1Qu6v5lwToI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1oSk0Vgfe5ApSUNmNU_tAM1Qu6v5lwToI/view",
+   "title": "견적서_프렌디_쿠키런스위트랜드 1차안_1121.pdf"
+  },
+  {
+   "doc_id": "1quzeMz3FWsdDahtN35nPTgnXlC2zClJH",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1quzeMz3FWsdDahtN35nPTgnXlC2zClJH/view",
+   "title": "샘플결제.pdf"
+  },
+  {
+   "doc_id": "1rn8CCrKKRONmgwm5FV9BOyQLpvn3Zx0-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1rn8CCrKKRONmgwm5FV9BOyQLpvn3Zx0-/view",
+   "title": "스위트스팟_쿠키런 스위트랜드with오크밸리 게임기 추가견적_1202.xlsx"
+  },
+  {
+   "doc_id": "1sSWkg07aEjVXIjy_ndVA5_dh7driEhMR",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1sSWkg07aEjVXIjy_ndVA5_dh7driEhMR/view",
+   "title": "화연당 통장사본.jpg"
+  },
+  {
+   "doc_id": "1skeCDqfsvk56KzQeDwz8db56Wtv8aj1Z",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1skeCDqfsvk56KzQeDwz8db56Wtv8aj1Z/view",
+   "title": "[별도견적요청] 쿠키런 스위트랜드_게임기2종.pdf"
+  },
+  {
+   "doc_id": "1t04PFeDBefyRnNA0mFBeogToyWbQelkQ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1t04PFeDBefyRnNA0mFBeogToyWbQelkQ/view",
+   "title": "[스미스(주)] 팝업대행 표준 계약서_sweetspot_모두싸인 날인본.pdf"
+  },
+  {
+   "doc_id": "1t7RdIFdbykAZTQZDQDYCXqfSDlBm9CX3",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1t7RdIFdbykAZTQZDQDYCXqfSDlBm9CX3/view",
+   "title": "3D파일 취합본.zip"
+  },
+  {
+   "doc_id": "1tCsuMlIixO1kTPCfP_-6hDayKc8pRrBr",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1tCsuMlIixO1kTPCfP_-6hDayKc8pRrBr/view",
+   "title": "견적서_디자인알파_쿠키런 조형물제작_1119.xlsx"
+  },
+  {
+   "doc_id": "1tyE-pEo2tBvVTZZOv9K4g1uGpqevLTcW",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1tyE-pEo2tBvVTZZOv9K4g1uGpqevLTcW/view",
+   "title": "버니컴_서울보증_영수증_20251202.pdf"
+  },
+  {
+   "doc_id": "1uT1SWv0b6hXgsC8lxt7hFvGHmmNnd14z",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1uT1SWv0b6hXgsC8lxt7hFvGHmmNnd14z/view",
+   "title": "[Sweetspot] 스미스_사고 보상 및 잔금 상계 정산 합의서_0309 (1) (1).pdf"
+  },
+  {
+   "doc_id": "1uesylaOBpNVj8T6fL5x-wBJVCDX8aKvp",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1uesylaOBpNVj8T6fL5x-wBJVCDX8aKvp/view",
+   "title": "견적서_스튜디오루보_쿠키런스위트랜드 1차안_1121.pdf"
+  },
+  {
+   "doc_id": "1uhmoNuf3SdnU-zzCjLCtGEgVTSX8-rxM",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1uhmoNuf3SdnU-zzCjLCtGEgVTSX8-rxM/view",
+   "title": "스위트스팟_쿠키런 스위트랜드with오크밸리 시공견적서_1121.xlsx"
+  },
+  {
+   "doc_id": "1uiFocEaXiODbvXH_q-CK-lpko79EL4uJ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1uiFocEaXiODbvXH_q-CK-lpko79EL4uJ/view",
+   "title": "스위트스팟_쿠키런 스위트랜드with오크밸리 추가제작견적_1212.xlsx"
+  },
+  {
+   "doc_id": "1uoGDpzz8pBfCDVCk7jpRB7bNGFkfn4Rd",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1uoGDpzz8pBfCDVCk7jpRB7bNGFkfn4Rd/view",
+   "title": "견적서_금강컨테이너_쿠키런 스위트랜드 컨테이너 설치건.xlsx"
+  },
+  {
+   "doc_id": "1vtnVo-4ZWqIf2fegTAqbOaTScWzdriti",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1vtnVo-4ZWqIf2fegTAqbOaTScWzdriti/view",
+   "title": "Thumbs.db"
+  },
+  {
+   "doc_id": "1wBtiLYQTSo4p3KunFoOm-_79Rhlzxp-V",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1wBtiLYQTSo4p3KunFoOm-_79Rhlzxp-V/view",
+   "title": "견적서_버니컴_쿠키런 A구역 게임기2종 추가제작건.xlsx"
+  },
+  {
+   "doc_id": "1wa11rmdT6U0UxkVugeSTO_udQnMeysvZ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1wa11rmdT6U0UxkVugeSTO_udQnMeysvZ/view",
+   "title": "견적서_버니컴_쿠키런 스위트랜드 추가항목_1212.xlsx"
+  },
+  {
+   "doc_id": "1x2zZduzkIjlAp1lldYALd8KVV-K4nrTm",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1x2zZduzkIjlAp1lldYALd8KVV-K4nrTm/view",
+   "title": "견적서_버니컴_쿠키런스위트랜드 1차안_1121.xlsx"
+  },
+  {
+   "doc_id": "1xQL0ohxbK0muBWJQhr_zTXjADtACFlV0",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1xQL0ohxbK0muBWJQhr_zTXjADtACFlV0/view",
+   "title": "스위트스팟_MD존_견적문의_(CR오크밸리)_251118.skp"
+  },
+  {
+   "doc_id": "1xTNEUgvcmR082ecfqdJRssWHu-Iphafr",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1xTNEUgvcmR082ecfqdJRssWHu-Iphafr/view",
+   "title": "견적항목.xlsx"
+  },
+  {
+   "doc_id": "1xrp8OZ73oGKzsZU1-OcT5xeYyL7eLCDI",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1xrp8OZ73oGKzsZU1-OcT5xeYyL7eLCDI/view",
+   "title": "[SMiTH] 쿠키런 스위트랜드 with 오크밸리 기획안.pdf"
+  },
+  {
+   "doc_id": "1zmV2t4RBakT1skusfkP1aZaVXaUyzWvo",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1zmV2t4RBakT1skusfkP1aZaVXaUyzWvo/view",
+   "title": "견적서_원더러스트_쿠키런스위트랜드 1차안_1125.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 7건: 2025 스미스 사업자등록증.pdf, ★업무계약서_디자인알파_쿠키런 스위트랜드 오크밸리 날인, ★업무계약서_디자인알파_쿠키런 스위트랜드 오크밸리 날인, 1126_쿠키런 스위트랜드_오크밸리 C구역 최종안.pp, 1202_쿠키런 스위트랜드_오크밸리 B구역 산책로 최종, 1118_쿠키런 스위트랜드_오크밸리 시공견적요청.ppt. 미확실: 방문객 수·티켓 판매·현장 매출(POS) 실측 데이터 전무; 면적(평) 정보 없음; 계약서 원문(디자인알파 날인본)에 금액·조항 텍스트 미포함(Modusign ID만 확인); 주소 표기 불일치(오크밸리1길 66 vs 오크밸리2길 40); 최종 확정 순손익(합의금 반영 후) 미확정, 시드 net -74.3백만 vs 노션 이윤 +59.2백만 괴리; client_party_id 등 엔티티 미해소"
+ }
+}

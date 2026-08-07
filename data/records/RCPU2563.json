@@ -1,0 +1,189 @@
+{
+ "record_id": "RCPU2563",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:RISE",
+  "space_id": "unresolved:일민미술관",
+  "client_party_id": null,
+  "brand_key": "RIISE",
+  "space_key": "일민미술관"
+ },
+ "intervention": {
+  "concept": "라이즈 전시 관련 팝업/전시 프로젝트로 추정되나 원문 문서가 제공되지 않아 상세 컨셉을 확인할 수 없다.",
+  "brand_name": "라이즈",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": null,
+   "area_sqm": null,
+   "planned_operating_days": null,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": null,
+   "experience_density": 2,
+   "goods_scale": 2,
+   "photo_zones": 2,
+   "collab_strength": 2,
+   "ip_awareness": 3,
+   "target_breadth": 1,
+   "entry_friction": 2,
+   "media_push": 2,
+   "season_fit": 2,
+   "venue_prominence": 2
+  },
+  "attr_meta": {
+   "evidence": "제공 문서는 SMBM 상품판매용역 연간 기본계약서(계약기간 2025.7.1~2026.6.30) 1건뿐. 일민미술관 건의 일정·면적·인원·회차·입객 수치가 전혀 없어 모든 수치 null, 순서형은 레코드 기술 기반 보수적 판단.",
+   "confidence": "low",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": "일민미술관",
+   "venue_type": "미술관",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-11-16",
+   "to": "2025-11-30",
+   "days": 15
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "일민미술관 내 전시/입점"
+  },
+  "derived": {
+   "duration": {
+    "days": 15,
+    "weekend_share": 0.33,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 38,
+    "holiday_until": 90,
+    "holiday_block_in": 0,
+    "nat_event_gap": 3,
+    "nat_event": "수능",
+    "doc_lag_days": 131,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 145800.0,
+    "pnl_pre_accounts": 2,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-10-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 300,
+   "popup_zone_pass_rate": 0.75,
+   "host_traffic_est": 225.0,
+   "venue_scale_tier": 5,
+   "confidence": "low",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": 14000,
+   "sales_krw": null,
+   "rev_mm_recognized": 127.3
+  },
+  "counting_method": "unknown",
+  "counting_basis": "원문 표현 '약 1만4000명의 관람객들이 다녀갔다' — 전시 관람객(방문) 기준",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "방문: 역검색 외부 보도 — https://www.newsis.com/view/NISX20251204_0003428317 (2025-12-04) | 인용: 라이즈 싱글 '페임(Fame)' 발매를 기념해 지난달 16~30일 서울 종로구 일민미술관에서 펼친 특별 전시회 '사일런스: 인사이드 더 페임 고요와 파동(Silence: Inside the Fame)'에 약 1만4000명의 관람객들이 다녀갔다.",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-11, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-11"
+  },
+  "label_source": "external_press",
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1CIoj2vLZYv_1pmriujJKOZ3osp3PjOrh",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CIoj2vLZYv_1pmriujJKOZ3osp3PjOrh/view",
+   "title": "(스위트스팟) 2025 RIIZE EXHIBITION_라이즈 최종견적서_1202.pdf"
+  },
+  {
+   "doc_id": "1DpB2AFbovdmqM4I1lVSLH7nuoAi5mIdO",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DpB2AFbovdmqM4I1lVSLH7nuoAi5mIdO/view",
+   "title": "견적서_라이즈_JS렌탈 견적서.xlsx"
+  },
+  {
+   "doc_id": "1LLSe6j-aOKMpCA_XPFv4YzOwlcwefBbm",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1LLSe6j-aOKMpCA_XPFv4YzOwlcwefBbm/view",
+   "title": "견적서_POS SYSTEM 견적서 NICE VAN_스위트스팟_라이즈 일민미술관_20251130.pdf"
+  },
+  {
+   "doc_id": "1NMUaOGfrzUX7oejWXCSJ6V_oOS_GIBD1",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1NMUaOGfrzUX7oejWXCSJ6V_oOS_GIBD1/view",
+   "title": "견적서_라이즈무전기_거성통신 렌탈견적서.pdf"
+  },
+  {
+   "doc_id": "1PY5gJOyKtxJq_g3d9cg9Ir2y62QWqjtH",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1PY5gJOyKtxJq_g3d9cg9Ir2y62QWqjtH/view",
+   "title": "라이즈_결과보고서.pdf"
+  },
+  {
+   "doc_id": "1oTAtjv8t-6PUEZy0kHshAEudKXeGKIgk",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1oTAtjv8t-6PUEZy0kHshAEudKXeGKIgk/view",
+   "title": "(SMBM) 상품판매용역계약서_주식회사스위트스팟_250708_연간계약_모두싸인 날인본.pdf"
+  },
+  {
+   "doc_id": "1pmRvQ7EsO4GuyPCsKpnhS2bnB4Wj4d8a",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1pmRvQ7EsO4GuyPCsKpnhS2bnB4Wj4d8a/view",
+   "title": "견적서_미사용_11.14 에이렌탈 견적서.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체가 제공되지 않음; client_name 미상; 컨셉·체험요소·프로모션·연출태그 확인 불가; 입지 상세(도시·구·면적) 확인 불가; 수수료 구조·계약 총액 확인 불가; 방문객·매출 실측 데이터 없음; 예상 방문 수치 없음 | 외부 라벨 역검색(2026-07-27): 방문 라벨 충전 14000"
+ }
+}

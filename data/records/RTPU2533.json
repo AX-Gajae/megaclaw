@@ -1,0 +1,165 @@
+{
+ "record_id": "RTPU2533",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:짱구_크레용신짱",
+  "space_id": "unresolved:김포현대프리미엄아울렛",
+  "client_party_id": "unresolved:현대백화점",
+  "brand_key": "짱구",
+  "space_key": "현대프리미엄아울렛_김포점"
+ },
+ "intervention": {
+  "concept": "짱구 테마 & 짱구스토어(가제) — '짱구와 함께 현대아울렛에서 놀아요!' 콘셉트로 현대프리미엄아울렛 5개 지점(김포/송도/대전/스페이스원/시티커넥트)에서 진행하는 캐릭터 테마 팝업. 공용/특화 포토존, 짱구 굿즈 판매 스토어, 방문객 참여 이벤트로 구성.",
+  "brand_name": "짱구",
+  "experience_elements": [
+   "공용포토존 1(쇼핑백 피켓)",
+   "공용포토존 2(캐릭터별 소품: 골프채·헤드셋·책·응원봉·메론쥬스)",
+   "공용포토존 3(벌룬)",
+   "지점별 특화포토존",
+   "팝업 외관/내부 연출(테이블스커트·상단 모빌)",
+   "등신대",
+   "가로등배너",
+   "윈도우 시트",
+   "한정 증정 상품(키링 2종, 수건 1종)",
+   "김포점 인형뽑기 이벤트(성공 시 인형 증정)",
+   "송도점 미니축구 골대 이벤트(성공 시 도무송 스티커)",
+   "대전점 링 던지기 이벤트",
+   "SPACE1 점수 달성 이벤트"
+  ],
+  "promotions": [
+   "한정 증정 상품(키링 2종, 수건)",
+   "방문객 대상 게임 이벤트 성공 시 인형/도무송 스티커 증정"
+  ],
+  "staging_tags": [
+   "캐릭터IP",
+   "포토존",
+   "벌룬",
+   "굿즈스토어",
+   "가벽랩핑",
+   "포맥스",
+   "VMD조닝"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": "김포현대프리미엄아울렛 / 송도현대프리미엄아울렛 (외 대전·SPACE1·시티커넥트)",
+   "venue_type": "프리미엄아울렛",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-06-06",
+   "to": "2025-06-26",
+   "days": 21
+  },
+  "season": "초여름",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "김포 짱구스토어(2025.6.6~6.15, 10일) 총계 84,000,000원(VAT 10% 별도). 구성: 기획료 3,000,000+아트워크 3,000,000, 제작 공간구성/Display 20,000,000, 설치/철수·운영 STAFF 35,935,000, 진행비 15,000,000, 소계 76,935,000, 대행수수료 소계의 10%(정가항목/실비정산 진행비 제외) 7,093,500, 합계 만원단위 이하 절사. 송도 짱구스토어(2025.6.20~6.29, 10일) 총계 78,900,000원(VAT 10% 별도): 소계 72,220,000, 대행수수료 10% 6,722,000. 대행수수료율 10%."
+  },
+  "brand_requirements": [
+   "현대백화점 디자인 컨펌 및 감수 완료",
+   "포스기(POS) 운영",
+   "야간 보관용 물품 및 운영 물품 준비",
+   "제품 수령→하남창고 이동→각 지점 이동 물류"
+  ],
+  "scale": {
+   "store_count": 5,
+   "venue_traffic_type": "multi_store",
+   "host_traffic_note": "현대프리미엄아울렛 5개 지점"
+  },
+  "derived": {
+   "duration": {
+    "days": 21,
+    "weekend_share": 0.29,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 10.1,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 0,
+    "holiday_until": 0,
+    "holiday_block_in": 3,
+    "nat_event_gap": 3,
+    "nat_event": "대통령 선거",
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 미제공 — 방문/매출 실측 데이터 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": 162.9,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "184r_tVajWZ2vX5p8gR2ENjE165U_J5rT",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/184r_tVajWZ2vX5p8gR2ENjE165U_J5rT/view",
+   "title": "[스위트스팟] 현대백화점_김포_송도_짱구스토어운영대행 계약서_0515.doc"
+  },
+  {
+   "doc_id": "19jGaG87i4pKLMG6Sb_K7c5n6aHdi76Ao",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19jGaG87i4pKLMG6Sb_K7c5n6aHdi76Ao/view",
+   "title": "★2025_김포+송도현대아울렛짱구_통합정산리스트 0709 대원검수반영_결과보고서.xlsx"
+  },
+  {
+   "doc_id": "1BRjKo46bHUo0LQlKO0ZtLywjYNpxG2RV",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1BRjKo46bHUo0LQlKO0ZtLywjYNpxG2RV/view",
+   "title": "0418_스위트스팟_짱구X현대프리미엄아울렛_공간정리제안서_기획안.pdf"
+  },
+  {
+   "doc_id": "1Md-o3Km5M9CwBH-UQ93SEfA5uRwaNRrB",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Md-o3Km5M9CwBH-UQ93SEfA5uRwaNRrB/view",
+   "title": "임시 결과보고서 (2).txt"
+  },
+  {
+   "doc_id": "1lMfFlSRdbHwZpF3A8XyNsCr92EVgtGKc",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1lMfFlSRdbHwZpF3A8XyNsCr92EVgtGKc/view",
+   "title": "SWEETSPOT_현대백화점_김포_짱구팝업견적서_0515_revised.pdf"
+  },
+  {
+   "doc_id": "1y-qXYWR77GuDdA70hmVb8zBDhIc86x7w",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1y-qXYWR77GuDdA70hmVb8zBDhIc86x7w/view",
+   "title": "SWEETSPOT_현대백화점_송도_짱구팝업견적서_0515_revised.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: 0418_스위트스팟_짱구X현대프리미엄아울렛_공간정리제안, SWEETSPOT_현대백화점_김포_짱구팝업견적서_051, SWEETSPOT_현대백화점_송도_짱구팝업견적서_051. 미확실: 결과보고서 부재로 방문자수·매출 실측 전무; 정확한 지점 도시/구/주소 미기재; 면적(평) 정보 없음; 전체 운영기간과 지점별 일정 불일치(제안서 김포 6.6~6.15, 송도 견적서 6.20~6.29 vs 프로젝트 메타 6.6~6.26); client_party_id/space_id 정규화 미확정; 예상 방문객(plan_visitors_expected) 기재 없음"
+ }
+}

@@ -1,0 +1,149 @@
+{
+ "판": {
+  "F6_directpool": 0.4288,
+  "F6_directpool_tuned": 0.4286,
+  "F21_recentpick": 0.4395,
+  "F18_bagboost": 0.4396,
+  "F8_boost": 0.4291,
+  "F9_ranklik": 0.428
+ },
+ "짝": {
+  "F6_directpool|F6_directpool_tuned": {
+   "차": 0.0001,
+   "t": 0.82
+  },
+  "F6_directpool|F21_recentpick": {
+   "차": -0.0109,
+   "t": -2.77
+  },
+  "F6_directpool|F18_bagboost": {
+   "차": -0.0116,
+   "t": -1.03
+  },
+  "F6_directpool|F8_boost": {
+   "차": -0.0009,
+   "t": -0.08
+  },
+  "F6_directpool|F9_ranklik": {
+   "차": 0.0007,
+   "t": 0.66
+  },
+  "F6_directpool_tuned|F6_directpool": {
+   "차": -0.0001,
+   "t": -0.82
+  },
+  "F6_directpool_tuned|F21_recentpick": {
+   "차": -0.011,
+   "t": -2.79
+  },
+  "F6_directpool_tuned|F18_bagboost": {
+   "차": -0.0117,
+   "t": -1.04
+  },
+  "F6_directpool_tuned|F8_boost": {
+   "차": -0.0011,
+   "t": -0.09
+  },
+  "F6_directpool_tuned|F9_ranklik": {
+   "차": 0.0006,
+   "t": 0.54
+  },
+  "F21_recentpick|F6_directpool": {
+   "차": 0.0109,
+   "t": 2.77
+  },
+  "F21_recentpick|F6_directpool_tuned": {
+   "차": 0.011,
+   "t": 2.79
+  },
+  "F21_recentpick|F18_bagboost": {
+   "차": -0.0007,
+   "t": -0.06
+  },
+  "F21_recentpick|F8_boost": {
+   "차": 0.01,
+   "t": 0.88
+  },
+  "F21_recentpick|F9_ranklik": {
+   "차": 0.0116,
+   "t": 2.83
+  },
+  "F18_bagboost|F6_directpool": {
+   "차": 0.0116,
+   "t": 1.03
+  },
+  "F18_bagboost|F6_directpool_tuned": {
+   "차": 0.0117,
+   "t": 1.04
+  },
+  "F18_bagboost|F21_recentpick": {
+   "차": 0.0007,
+   "t": 0.06
+  },
+  "F18_bagboost|F8_boost": {
+   "차": 0.0107,
+   "t": 2.74
+  },
+  "F18_bagboost|F9_ranklik": {
+   "차": 0.0123,
+   "t": 1.08
+  },
+  "F8_boost|F6_directpool": {
+   "차": 0.0009,
+   "t": 0.08
+  },
+  "F8_boost|F6_directpool_tuned": {
+   "차": 0.0011,
+   "t": 0.09
+  },
+  "F8_boost|F21_recentpick": {
+   "차": -0.01,
+   "t": -0.88
+  },
+  "F8_boost|F18_bagboost": {
+   "차": -0.0107,
+   "t": -2.74
+  },
+  "F8_boost|F9_ranklik": {
+   "차": 0.0016,
+   "t": 0.14
+  },
+  "F9_ranklik|F6_directpool": {
+   "차": -0.0007,
+   "t": -0.66
+  },
+  "F9_ranklik|F6_directpool_tuned": {
+   "차": -0.0006,
+   "t": -0.54
+  },
+  "F9_ranklik|F21_recentpick": {
+   "차": -0.0116,
+   "t": -2.83
+  },
+  "F9_ranklik|F18_bagboost": {
+   "차": -0.0123,
+   "t": -1.08
+  },
+  "F9_ranklik|F8_boost": {
+   "차": -0.0016,
+   "t": -0.14
+  }
+ },
+ "최고": "F18_bagboost",
+ "1SE동률": [
+  "F6_directpool",
+  "F6_directpool_tuned",
+  "F21_recentpick",
+  "F18_bagboost",
+  "F8_boost",
+  "F9_ranklik"
+ ],
+ "SE": {
+  "F6_directpool": 0.0172,
+  "F6_directpool_tuned": 0.0172,
+  "F21_recentpick": 0.0169,
+  "F18_bagboost": 0.0174,
+  "F8_boost": 0.0175,
+  "F9_ranklik": 0.0172
+ }
+}

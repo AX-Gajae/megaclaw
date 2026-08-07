@@ -1,0 +1,72 @@
+{
+  "market_record_id": "MKT-2025-0097",
+  "event_name": "'마루의 숲속 베이커리에 놀러와' 팝업스토어(롯데월드몰)",
+  "brand": "네이버웹툰/롯데백화점",
+  "ip_or_collab": "마루는 강쥐",
+  "category": "character",
+  "intervention": {
+    "concept_description": "네이버웹툰 '마루는 강쥐' 베이커리 콘셉트 팝업. 롯데월드몰에서 2025-10-16부터 운영. 2025 월드 웹툰 페스티벌 연계.",
+    "experience_elements": [
+      "캐릭터 굿즈 판매",
+      "베이커리 콘셉트"
+    ],
+    "promotions": [
+      "사전 예약"
+    ],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "롯데월드몰(서울 송파구 잠실)",
+    "venue_type": "mall",
+    "neighborhood": "잠실",
+    "city": "서울",
+    "period_from": "2025-10-16",
+    "period_to": null,
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "ip_history": {
+        "prior_count": 1,
+        "months_since_last": 23.2,
+        "first_edition": false
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "unknown",
+    "counting_basis_note": "방문객 총계 미공개(결제 금액 수치만 보도)",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "오픈런 수십 명",
+      "sold_out": null,
+      "reservation_fill": "사전 예약 조기 마감",
+      "signal_quotes": [
+        "마루는 강쥐 팝업스토어 첫날부터 나흘간 누적된 1인당 결제 금액 중 최고 금액은 110만 원으로 파악됐다. (아시아투데이 2025-10-24)"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "수요 신호 수치: 1인 최고 결제 110만 원(나흘 누적 기준) | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": false,
+  "exclude_reason": "기간 미상",
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

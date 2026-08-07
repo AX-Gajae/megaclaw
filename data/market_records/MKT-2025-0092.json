@@ -1,0 +1,101 @@
+{
+ "market_record_id": "MKT-2025-0092",
+ "event_name": "BE@RBRICK WORLD WIDE TOUR 3 in Seoul(더현대 서울 ALT.1)",
+ "brand": "메디콤·토이×무브인터렉티브",
+ "ip_or_collab": "베어브릭(BE@RBRICK)×120여 명 글로벌 아티스트",
+ "category": "entertainment",
+ "intervention": {
+  "concept_description": "글로벌 아트토이 공식 전시의 한국 첫 개최. 'GARDEN' 테마 한국 전통 정원 재해석 공간, 70cm(1000%) 베어브릭 작품 120여 점, 11팀 신작 최초 공개, 서울 한정 굿즈·MD숍, 게임 체험존. 사전 프리뷰 팝업(B2 아이코닉존) 병행",
+  "experience_elements": [
+   "히스토리존",
+   "익시비션존",
+   "커넥트존",
+   "MD숍",
+   "게임 체험존",
+   "프리뷰 팝업"
+  ],
+  "promotions": [
+   "서울 한정판 베어브릭·전시 한정 굿즈",
+   "VIP 티켓 단독 입장·전용 굿즈"
+  ],
+  "is_free_entry": false,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "더현대 서울 6층 ALT.1",
+  "venue_type": "department_store",
+  "neighborhood": "여의도",
+  "city": "서울",
+  "period_from": "2025-10-01",
+  "period_to": "2025-10-21",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 21,
+    "weekend_share": 0.29,
+    "holiday_days": 6
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 50000,
+  "visitors_period_days": 21,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "전시 관계자 인용(비즈월드) '전시 시작 이후 현재까지 누적 관람객은 5만명을 넘어섰으며, 종료까지 관람객 수는 더욱 증가할 것으로 예상된다' — 2025-10-16 시점 누적(행사 진행 중, 종료 시점 총계 미공개)",
+  "visitors_source_quote": "전시 관계자는 “전시 시작 이후 현재까지 누적 관람객은 5만명을 넘어섰으며, 종료까지 관람객 수는 더욱 증가할 것으로 예상된다”며 “짧은 기간 동안 기대 이상으로 뜨거운 반응을 체감하고 있다”고 말했다.",
+  "visitors_source_url": "https://www.bizwnews.com/news/articleView.html?idxno=113717",
+  "visitors_source_date": "2025-10-16",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": true,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "대한민국 1호 나전칠기 명장인 손대현씨의 베어브릭 작품은 개막 하루 만에 전량 매진되기도 했다.",
+    "디자인된 베어브릭 실물의 가격은 적게는 수백만원에서 수천만원을 호가하지만, 방문객들 사이에서 인기가 높은 것으로 알려졌다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": true,
+   "forecast": true,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": true,
+   "usable": false
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "유료 전시(일반·VIP 티켓). 5만명은 10/16 기준 중간 누적이며 '넘어섰다' 하한 표현 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

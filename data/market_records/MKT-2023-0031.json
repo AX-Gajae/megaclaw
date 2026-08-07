@@ -1,0 +1,71 @@
+{
+  "market_record_id": "MKT-2023-0031",
+  "event_name": "제로베이스원 'THE MOVING SEOUL' 팝업스토어(더현대 서울)",
+  "brand": "웨이크원",
+  "ip_or_collab": "제로베이스원(ZEROBASEONE)",
+  "category": "entertainment",
+  "intervention": {
+    "concept_description": "더현대 서울 'K-컬처 릴레이 팝업'의 일환으로 진행된 ZB1 팝업. 현장 판매만 진행",
+    "experience_elements": [
+      "MD 판매"
+    ],
+    "promotions": [],
+    "is_free_entry": true,
+    "reservation_required": false
+  },
+  "conditions": {
+    "venue": "현대백화점 더현대 서울",
+    "venue_type": "department_store",
+    "neighborhood": "여의도",
+    "city": "서울",
+    "period_from": "2023-08-10",
+    "period_to": "2023-08-23",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 14,
+        "weekend_share": 0.29,
+        "holiday_days": 1
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 14,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "현대백화점 발표 매출. 원문: '매출 약 13억 5000만 원을 달성했다…현대백화점 유스팀의 2023년 팝업 매출 중 최고 기록'",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": 1350000000,
+    "sales_source_quote": "지난해 8월 10일부터 23일까지 서울 영등포구 소재 현대백화점 더현대 서울에서 진행된 팝업스토어에서 매출 약 13억 5000만 원을 달성했다. 이는 현대백화점 유스팀의 2023년 팝업 매출 중 최고 기록에 달하는 수치다.",
+    "sales_source_url": "https://www.asiaartistawards.com/news/detail/74461/all",
+    "sales_source_date": "2024-01-05",
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": "준비된 굿즈 물량 빠르게 매진",
+      "reservation_fill": null,
+      "signal_quotes": [
+        "오픈 전부터 많은 팬들로 인산인해를 이룬 것은 물론 준비된 굿즈 물량이 빠르게 매진되며 뜨거운 인기를 실감케 했다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "현대백화점 유스팀 2023년 팝업 매출 1위(2위 빵빵이 12.8억, 3위 슬램덩크 9.8억). | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {
+    "sales": "verified"
+  },
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

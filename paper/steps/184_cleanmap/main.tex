@@ -1,0 +1,73 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{kotex}
+\setmainfont{Apple SD Gothic Neo}
+\setsansfont{Apple SD Gothic Neo}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,linkcolor=MidnightBlue,citecolor=MidnightBlue,
+            urlcolor=MidnightBlue]{hyperref}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\captionsetup{font=small,labelfont=bf}
+\setlength{\parskip}{0.35em}
+\setlength{\parindent}{0pt}
+
+\usepackage{mdframed}
+\newmdenv[linewidth=0.4pt,linecolor=gray!60,backgroundcolor=gray!5,
+          innertopmargin=6pt,innerbottommargin=6pt,skipabove=8pt,skipbelow=8pt]{claimbox}
+\newcommand{\claim}[2]{\begin{claimbox}\textbf{주장.} #1\par\smallskip
+  \textcolor{gray!70}{\textbf{반증 조건.} #2}\end{claimbox}}
+
+\title{\bfseries 오염되지 않은 지도\\[2pt]
+\large 합동승은 같은-IP 조회가 아니다 --- 그리고 겹침행은 반대 방향을 가리켰다}
+\author{월드모델 실험실 · 노트 $825$}
+\date{2026-08-07}
+\begin{document}\maketitle
+
+\section{한 줄}
+
+티처 세션의 최우선 지적을 이행했다 --- \emph{``$822$(b)의 합동승 도메인이
+정확히 겹침 큰 쪽이다. 같은-IP 교차 노출이 가장 유력한 제$3$ 변수이고 지금
+검사 가능하다. 통과 전엔 고객 덱에 넣지 마라.''} 세계애니 유보 $300$ 을
+겹침(만화 학습과 같은 제목 $86$행)/비겹침($214$행)으로 갈라 합동$-$릿지 차를
+재채점했다.
+
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+세계애니 & $n$ & 합동 & 릿지 & $\Delta$ \\
+\midrule
+전체($822$) & $300$ & $0.5935$ & $0.4508$ & $+0.1427$ \\
+\textbf{비겹침} & $214$ & $0.5751$ & $0.4288$ & $\mathbf{+0.1464}$ ($2\sigma$ 의 $4.1$배) \\
+겹침(만화 원작) & $86$ & $0.5972$ & $0.5383$ & $+0.0590$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{판정: 통과 --- 오염 가설 기각.} 합동의 우위는 같은-IP 노출 없이
+성립한다. 게임(겹침 $4$행) · 애니($12$행 · 한글$\leftrightarrow$로마자 하한)는
+검정 불능으로 각주 병기.
+
+\begin{figure}[t]\centering
+\includegraphics[width=0.97\textwidth]{figs/map.pdf}
+\caption{왼쪽: 세 부분집합의 합동 대 릿지. 오른쪽: 가설 재판의 요약.}
+\end{figure}
+
+\section{부 예측이 정반대로 틀렸고, 그것이 더 배웠다}
+
+\claim{\textbf{오염 기제라면 겹침행에서 $\Delta$ 가 커야 했다}(내 부 예측
+$60\%$). 실측은 \textbf{절반}($+0.059$)이다 --- 같은-IP 행(만화 원작이 있는
+애니화)은 자기-도메인 정보만으로도 맞힐 수 있는 쉬운 행이라 \textbf{릿지가
+따라잡는 곳}이었다(릿지 $0.5383$ 대 비겹침 $0.4288$). 깊이 $12$ 트리의 퍼지
+IP 조회 가설과 반대 방향. 따라서 $822$ 의 `합동 수혜 도메인의 지도'는
+살아 있던 유일한 오염 가설을 통과했고 \textbf{판권/고객 대화에 들고 갈 자격}을
+얻었다 --- 표본 공유 실증(합동승 $5$)도 유지된다.}
+{애니는 언어-정합 매칭(로마자$\leftrightarrow$한글)이 생겨 겹침행 $\geq 20$
+이 확보되면 $1$회 재검한다(결정 규칙). 판 $\rho$ $0.4689$ 그대로.}
+
+\end{document}

@@ -1,0 +1,603 @@
+{
+ "record_id": "RCPU2543",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:라프텔_Laftel",
+  "space_id": "unresolved:신촌현대백화점",
+  "client_party_id": null,
+  "brand_key": "라프텔",
+  "space_key": "현대백화점_신촌점"
+ },
+ "intervention": {
+  "concept": "라프텔의 '용한소녀' IP를 활용한 팝업스토어로 추정되나, 원문 문서가 제공되지 않아 상세 컨셉을 확인할 수 없다.",
+  "brand_name": "라프텔(Laftel)",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "서대문구",
+   "venue_name": "신촌 현대백화점",
+   "venue_type": "백화점",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-10-31",
+   "to": "2025-11-09",
+   "days": 10
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "신촌 현대백화점"
+  },
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 22,
+    "holiday_until": 106,
+    "holiday_block_in": 0,
+    "nat_event_gap": 0,
+    "nat_event": "APEC 경주 정상회의",
+    "doc_lag_days": 39,
+    "doc_dates_found": 57
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 2381525.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2025-08-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 51.8
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-11, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-11"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-ZT4E6oeYb_5LVfqHlgwbT1_aAZ8LuGj",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1-ZT4E6oeYb_5LVfqHlgwbT1_aAZ8LuGj/view",
+   "title": "1111 용한소녀 예상마감비용(실비).pdf"
+  },
+  {
+   "doc_id": "1-p8bbVK3_-_MlCv-oHxinP44MsHgGUIK",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1-p8bbVK3_-_MlCv-oHxinP44MsHgGUIK/view",
+   "title": "[견적서-현대드림애드] 용한소녀 그래픽 시공 비용.xls"
+  },
+  {
+   "doc_id": "1-s2TXijlALjEMZLeKKvuDAIo2xeLqScX",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1-s2TXijlALjEMZLeKKvuDAIo2xeLqScX/view",
+   "title": "KakaoTalk_20250806_103423705_25.jpg"
+  },
+  {
+   "doc_id": "107cRDdb2pDGxT7jlccuFwurLPjBPoIcN",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/107cRDdb2pDGxT7jlccuFwurLPjBPoIcN/view",
+   "title": "KakaoTalk_20250806_103423705_11.jpg"
+  },
+  {
+   "doc_id": "11ey3NsnpiGirXRm0DuTvzPphHUrzk9_G",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/11ey3NsnpiGirXRm0DuTvzPphHUrzk9_G/view",
+   "title": "KakaoTalk_20250806_103423705_10.jpg"
+  },
+  {
+   "doc_id": "11oroTZDac3uvuLtfupaZnYC-T12s-2vc",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/11oroTZDac3uvuLtfupaZnYC-T12s-2vc/view",
+   "title": "KakaoTalk_20250806_103426142_04.png"
+  },
+  {
+   "doc_id": "124NUkhesamMZxq4e49mRuK7pGJigG-9J",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/124NUkhesamMZxq4e49mRuK7pGJigG-9J/view",
+   "title": "KakaoTalk_20250806_103426142_07.png"
+  },
+  {
+   "doc_id": "136xFV-6SrOecFwXlE60qFOiIVeZMYSxR",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/136xFV-6SrOecFwXlE60qFOiIVeZMYSxR/view",
+   "title": "KakaoTalk_20250806_103423705_13.png"
+  },
+  {
+   "doc_id": "158n0EswkNe_z30z-06xn31Zx99ObhgCS",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/158n0EswkNe_z30z-06xn31Zx99ObhgCS/view",
+   "title": "KakaoTalk_20250806_103426142_13.png"
+  },
+  {
+   "doc_id": "15rm4dayLfdMOSAuFFA4Z3yi4dUxkAa7Q",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/15rm4dayLfdMOSAuFFA4Z3yi4dUxkAa7Q/view",
+   "title": "KakaoTalk_20250806_103426142_20.png"
+  },
+  {
+   "doc_id": "171HmBbW7tpJ6nybJcdWwqKyTTswCpra5",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/171HmBbW7tpJ6nybJcdWwqKyTTswCpra5/view",
+   "title": "스크린샷 2025-08-06 104421.png"
+  },
+  {
+   "doc_id": "17z-fhi2wfkulIuQiyxOliZR7TOOZ_zOr",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/17z-fhi2wfkulIuQiyxOliZR7TOOZ_zOr/view",
+   "title": "KakaoTalk_20250806_103423705_04.png"
+  },
+  {
+   "doc_id": "181M7VPqw8INgyZzd-Z1fwtiA9wtE6HyK",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/181M7VPqw8INgyZzd-Z1fwtiA9wtE6HyK/view",
+   "title": "KakaoTalk_20250806_103426142_10.png"
+  },
+  {
+   "doc_id": "18ngCB_VQHVL2m2NMYKWpZkOsOp2qOBpc",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/18ngCB_VQHVL2m2NMYKWpZkOsOp2qOBpc/view",
+   "title": "KakaoTalk_20250806_103426142_01.png"
+  },
+  {
+   "doc_id": "19qfsV_Ou2cctiZTq1oNpMHIevLQANFzi",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/19qfsV_Ou2cctiZTq1oNpMHIevLQANFzi/view",
+   "title": "KakaoTalk_20250806_103426142_06.png"
+  },
+  {
+   "doc_id": "1AkrTOrvFYG-4vnLo5sfF0agVKXS3S4cc",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1AkrTOrvFYG-4vnLo5sfF0agVKXS3S4cc/view",
+   "title": "KakaoTalk_20250806_103423705_05.png"
+  },
+  {
+   "doc_id": "1BSrmE3jlKwCoRB832tJt0aOyNjTefcwQ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1BSrmE3jlKwCoRB832tJt0aOyNjTefcwQ/view",
+   "title": "라프텔_부속합의서_용한 소녀_V2_20251112_전자계약 날인본.pdf"
+  },
+  {
+   "doc_id": "1ECOdoAV8ecwORQWYUunZzEnvWb4JRiSY",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1ECOdoAV8ecwORQWYUunZzEnvWb4JRiSY/view",
+   "title": "KakaoTalk_20250806_103423705_20.png"
+  },
+  {
+   "doc_id": "1F4Gs73VWsGHZro0mDWRAamNhcGuoYGTB",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1F4Gs73VWsGHZro0mDWRAamNhcGuoYGTB/view",
+   "title": "KakaoTalk_20250806_103423705_14.png"
+  },
+  {
+   "doc_id": "1GqIEArFytnGuGaq_bbhm1BdDHYsCPg4E",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1GqIEArFytnGuGaq_bbhm1BdDHYsCPg4E/view",
+   "title": "KakaoTalk_20250806_103423705_02.png"
+  },
+  {
+   "doc_id": "1GxhPa1gXoeaMK7tA9PMBsggbnj2hAnyo",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1GxhPa1gXoeaMK7tA9PMBsggbnj2hAnyo/view",
+   "title": "견적서-빌리마켓] 용한소녀 1900마트매대 렌탈.jpg"
+  },
+  {
+   "doc_id": "1HRJFCDi_3L3WTM4hNGo3DR3VLd_ELq87",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1HRJFCDi_3L3WTM4hNGo3DR3VLd_ELq87/view",
+   "title": "KakaoTalk_20250806_103426142_05.png"
+  },
+  {
+   "doc_id": "1Hzh8tzVhraU1UMqIZ1sFSCnYKd-gRlyz",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Hzh8tzVhraU1UMqIZ1sFSCnYKd-gRlyz/view",
+   "title": "KakaoTalk_20250806_103426142_09.png"
+  },
+  {
+   "doc_id": "1JbDYnicA0gUtGhFtHP6VtnA-acFxerAK",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1JbDYnicA0gUtGhFtHP6VtnA-acFxerAK/view",
+   "title": "KakaoTalk_20250806_103426142_15.png"
+  },
+  {
+   "doc_id": "1KEr0FAL6oBedENhClmSQBlFoxJmnEJb-",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1KEr0FAL6oBedENhClmSQBlFoxJmnEJb-/view",
+   "title": "KakaoTalk_20250806_103423705_23.png"
+  },
+  {
+   "doc_id": "1KM1W0091TKRROsNeU_WN1rTnyg40mHQ9",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1KM1W0091TKRROsNeU_WN1rTnyg40mHQ9/view",
+   "title": "KakaoTalk_20250806_103423705_06.png"
+  },
+  {
+   "doc_id": "1Lm8gF7w-bE3AHEDxQLDSdQ7nINk7KZJU",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Lm8gF7w-bE3AHEDxQLDSdQ7nINk7KZJU/view",
+   "title": "KakaoTalk_20250806_103426142.jpg"
+  },
+  {
+   "doc_id": "1MQcrDFQpvuVDjV8MoQ6TRlQ40Rs5a_gW",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1MQcrDFQpvuVDjV8MoQ6TRlQ40Rs5a_gW/view",
+   "title": "KakaoTalk_20250806_103423705_08.png"
+  },
+  {
+   "doc_id": "1MZkV_EBTea3oZdQ7-Nr2TuLUT3vCwDuG",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1MZkV_EBTea3oZdQ7-Nr2TuLUT3vCwDuG/view",
+   "title": "[스위트스팟] 라프텔 용한소녀 팝업스토어 업무 대행 계약서_전자계약_날인본.pdf"
+  },
+  {
+   "doc_id": "1N82vsnldFNgVxV9X_f0h03KFpHOw7S49",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1N82vsnldFNgVxV9X_f0h03KFpHOw7S49/view",
+   "title": "KakaoTalk_20250806_103423705_18.png"
+  },
+  {
+   "doc_id": "1NpDg8CkzdtjkV5TzyT3Ig7M0el2w7F-2",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1NpDg8CkzdtjkV5TzyT3Ig7M0el2w7F-2/view",
+   "title": "KakaoTalk_20250806_103426142_19.png"
+  },
+  {
+   "doc_id": "1NuxEP07BvR9fZbkz2ovEK10owItNi1cm",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1NuxEP07BvR9fZbkz2ovEK10owItNi1cm/view",
+   "title": "[세금계산서-렌탈큐브] 용한소녀 신촌현대 카운터 및 전시대 렌탈.png"
+  },
+  {
+   "doc_id": "1OOyiW7MzZEZrgWQgqQzeI8jBVH7OTM5u",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1OOyiW7MzZEZrgWQgqQzeI8jBVH7OTM5u/view",
+   "title": "용한소녀_결과보고서.pdf"
+  },
+  {
+   "doc_id": "1OrruEGbpF0-xLC8fW5Ma6Q-0rPuIrQQk",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1OrruEGbpF0-xLC8fW5Ma6Q-0rPuIrQQk/view",
+   "title": "KakaoTalk_20250806_103426142_16.png"
+  },
+  {
+   "doc_id": "1PLE-tO6EVeWcLtMjS4VVg349FwnapvbX",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1PLE-tO6EVeWcLtMjS4VVg349FwnapvbX/view",
+   "title": "KakaoTalk_20250806_103426142_21.png"
+  },
+  {
+   "doc_id": "1PuZBiIOdpvhJGnLBt5dGZ6u1ElAn3laA",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1PuZBiIOdpvhJGnLBt5dGZ6u1ElAn3laA/view",
+   "title": "KakaoTalk_20250806_103423705_09.png"
+  },
+  {
+   "doc_id": "1S3MRMV4C7zkEAEaLoo4GbvF4OjxIoE7g",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1S3MRMV4C7zkEAEaLoo4GbvF4OjxIoE7g/view",
+   "title": "KakaoTalk_20250806_103423705_26.jpg"
+  },
+  {
+   "doc_id": "1Sx9iBT7sUT8sRoW4xW8LbBEJlGJ_kPGk",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Sx9iBT7sUT8sRoW4xW8LbBEJlGJ_kPGk/view",
+   "title": "제목 없음-1.png"
+  },
+  {
+   "doc_id": "1TZmm095nRm3qrwYuiF73Tf1dBvLlX8o-",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1TZmm095nRm3qrwYuiF73Tf1dBvLlX8o-/view",
+   "title": "제목 없음-2.png"
+  },
+  {
+   "doc_id": "1UknssQb10YwR1k1ltN1bAY_C1DsAxa4g",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1UknssQb10YwR1k1ltN1bAY_C1DsAxa4g/view",
+   "title": "0916 [용한소녀] 현대 신촌 팝업_2차 공간 기획안.pdf"
+  },
+  {
+   "doc_id": "1Uu2GZzem88xoNVigEdAdwrzrN5ncnc9A",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Uu2GZzem88xoNVigEdAdwrzrN5ncnc9A/view",
+   "title": "보험증권_1031증서(스위트스팟-용한소녀).pdf"
+  },
+  {
+   "doc_id": "1WXT4r2IzteFfFJ1PNZnU7QE5ZCRLtlb5",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1WXT4r2IzteFfFJ1PNZnU7QE5ZCRLtlb5/view",
+   "title": "용한소녀_수정견적_1001 (추가 비용 포함).xlsx"
+  },
+  {
+   "doc_id": "1WmA-BHFAx6HfR-nHuBG2Ihe7XzdP27Cy",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1WmA-BHFAx6HfR-nHuBG2Ihe7XzdP27Cy/view",
+   "title": "KakaoTalk_20250806_103426142_18.png"
+  },
+  {
+   "doc_id": "1YcgDq6Qiy03YMzruACr2NyWr_e85h_Uh",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1YcgDq6Qiy03YMzruACr2NyWr_e85h_Uh/view",
+   "title": "KakaoTalk_20250806_103423705_17.png"
+  },
+  {
+   "doc_id": "1_7OBpdsqm5if2MuGKXBSvAg7oir-X8q1",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1_7OBpdsqm5if2MuGKXBSvAg7oir-X8q1/view",
+   "title": "KakaoTalk_20250806_103423705_27.jpg"
+  },
+  {
+   "doc_id": "1a0MbmGvUAr1YNprEjU89Gs5zUjeFtfkW",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1a0MbmGvUAr1YNprEjU89Gs5zUjeFtfkW/view",
+   "title": "용한소녀_최종견적서_1112.pdf"
+  },
+  {
+   "doc_id": "1bZVmgiwpOY3PdirIV48gsubkpcTlHlgb",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1bZVmgiwpOY3PdirIV48gsubkpcTlHlgb/view",
+   "title": "KakaoTalk_20250806_103426142_11.png"
+  },
+  {
+   "doc_id": "1bp3UQL12ZFkxeoXygsBPnFT6vDdRpnRu",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1bp3UQL12ZFkxeoXygsBPnFT6vDdRpnRu/view",
+   "title": "0905 [용한소녀] 현대 신촌 팝업_1차 공간 기획안(수정).pdf"
+  },
+  {
+   "doc_id": "1c9FcCzsP_wHnZ6-ij5xnk4N2oubV7Kve",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1c9FcCzsP_wHnZ6-ij5xnk4N2oubV7Kve/view",
+   "title": "KakaoTalk_20250806_103426142_02.jpg"
+  },
+  {
+   "doc_id": "1dBtmTuEQO--Ce7wjFN8OpYiASEoKjmRh",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1dBtmTuEQO--Ce7wjFN8OpYiASEoKjmRh/view",
+   "title": "견적서_올댓벌룬_용한소녀 인쇄 풍선 최종 견적서 250922.pdf"
+  },
+  {
+   "doc_id": "1dwCS1na-9G_Nv74jg67_nMLps4d6nNcu",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1dwCS1na-9G_Nv74jg67_nMLps4d6nNcu/view",
+   "title": "견적서_엘리트렌탈 용한소녀 43인치 TV 렌탈.pdf"
+  },
+  {
+   "doc_id": "1edFYr374zpvYUUDw5KARNZpSjHDSSNkE",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1edFYr374zpvYUUDw5KARNZpSjHDSSNkE/view",
+   "title": "[엘리트렌탈-견적서] 용한소녀 43인치 TV 렌탈.pdf"
+  },
+  {
+   "doc_id": "1g8HM6ew1cGZnvJ39cHsTtfbUWKH8R5cj",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1g8HM6ew1cGZnvJ39cHsTtfbUWKH8R5cj/view",
+   "title": "[견적서-렌탈큐브] 용한소녀 신촌현대 카운터 및 전시대 렌탈.pdf"
+  },
+  {
+   "doc_id": "1ggiroHSfzQrU1yOFv8_WKZAHSv6_hvbA",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ggiroHSfzQrU1yOFv8_WKZAHSv6_hvbA/view",
+   "title": "1001 [용한소녀] 현대 신촌 팝업_3차 공간 기획안.pptx"
+  },
+  {
+   "doc_id": "1gjsLSIPbwrTcV_oD4rcasP9foyQ41nlc",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1gjsLSIPbwrTcV_oD4rcasP9foyQ41nlc/view",
+   "title": "KakaoTalk_20250806_103426142_03.png"
+  },
+  {
+   "doc_id": "1h48WDPVjbEUjsyTGAa_JUkEwi1HheJm8",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1h48WDPVjbEUjsyTGAa_JUkEwi1HheJm8/view",
+   "title": "1001 [용한소녀] 현대 신촌 팝업_3차 공간 기획안.pdf"
+  },
+  {
+   "doc_id": "1hL3FNyuQJ9tefkn9KW7jT4bf-uXddVtK",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1hL3FNyuQJ9tefkn9KW7jT4bf-uXddVtK/view",
+   "title": "KakaoTalk_20250806_103426142.png"
+  },
+  {
+   "doc_id": "1i6Ns91aYluuQQP9KiuSsHkzTXTrRonKs",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1i6Ns91aYluuQQP9KiuSsHkzTXTrRonKs/view",
+   "title": "KakaoTalk_20250806_103423705_03.png"
+  },
+  {
+   "doc_id": "1ju8h_9KUI0oEvAuDeZoT4n0Va8xB-Qie",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1ju8h_9KUI0oEvAuDeZoT4n0Va8xB-Qie/view",
+   "title": "KakaoTalk_20250806_1034261426.png"
+  },
+  {
+   "doc_id": "1l9tdYqjOdvIRwju77aodnGzz7SIcoMnC",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1l9tdYqjOdvIRwju77aodnGzz7SIcoMnC/view",
+   "title": "KakaoTalk_20250806_103423705_01.jpg"
+  },
+  {
+   "doc_id": "1lRhQKeo1hjKpofJQetpOyrtj3ZHd-RMX",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1lRhQKeo1hjKpofJQetpOyrtj3ZHd-RMX/view",
+   "title": "KakaoTalk_20250806_103423705_22.png"
+  },
+  {
+   "doc_id": "1mjfIpnQyN3SI6rJbWIOKqpZ_Vh1qocG9",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1mjfIpnQyN3SI6rJbWIOKqpZ_Vh1qocG9/view",
+   "title": "KakaoTalk_20250806_103423705_19.png"
+  },
+  {
+   "doc_id": "1mzpytIfBl9MnyDmYxbr9hcA1PVQLrVvX",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1mzpytIfBl9MnyDmYxbr9hcA1PVQLrVvX/view",
+   "title": "[견적서-빌리마켓] 용한소녀 1900마트매대 렌탈.jpg"
+  },
+  {
+   "doc_id": "1nPPMi6ZnQoBAP0ORwS6YJHm9YQV7ANPU",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1nPPMi6ZnQoBAP0ORwS6YJHm9YQV7ANPU/view",
+   "title": "KakaoTalk_20250806_103423705.jpg"
+  },
+  {
+   "doc_id": "1nkgOUOnrFPE8ET6b9zPdMd9qdJmPQ509",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1nkgOUOnrFPE8ET6b9zPdMd9qdJmPQ509/view",
+   "title": "KakaoTalk_20250806_103426142_17.png"
+  },
+  {
+   "doc_id": "1nlXxcO808HC3g5oLSkxv-Tgba5riehNl",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1nlXxcO808HC3g5oLSkxv-Tgba5riehNl/view",
+   "title": "KakaoTalk_20250806_103426142_08.png"
+  },
+  {
+   "doc_id": "1nrjtNAHd92fum77p15PL8rNhAsAqP4cy",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1nrjtNAHd92fum77p15PL8rNhAsAqP4cy/view",
+   "title": "1111 용한소녀 예상마감비용(실비).xlsx"
+  },
+  {
+   "doc_id": "1ok9f6bsa3Ter7pup7Vn4dLSV0LgN18cm",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ok9f6bsa3Ter7pup7Vn4dLSV0LgN18cm/view",
+   "title": "0905 [용한소녀] 현대 신촌 팝업_1차 공간 기획안.pptx"
+  },
+  {
+   "doc_id": "1pTO_ESpIWKKt1RweUejGvo9A6fgVYZdQ",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1pTO_ESpIWKKt1RweUejGvo9A6fgVYZdQ/view",
+   "title": "KakaoTalk_20250806_103423705_07.png"
+  },
+  {
+   "doc_id": "1qh4qSve0C3ZL_DEmWarWdWp1fAxP4VpY",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1qh4qSve0C3ZL_DEmWarWdWp1fAxP4VpY/view",
+   "title": "[견적서-렌탈큐브] 용한소녀 신촌현대 카운터 및 전시대 렌탈.xlsx"
+  },
+  {
+   "doc_id": "1quqMSbpgeYxrc-PrQr5dPe0Z_GXO7tzp",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1quqMSbpgeYxrc-PrQr5dPe0Z_GXO7tzp/view",
+   "title": "KakaoTalk_20250806_103426142_12.png"
+  },
+  {
+   "doc_id": "1sCmgN0UBZCJPA1KZIIvhMv2PeouMLZfy",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1sCmgN0UBZCJPA1KZIIvhMv2PeouMLZfy/view",
+   "title": "KakaoTalk_20250806_1034261425.png"
+  },
+  {
+   "doc_id": "1sJxi8fspBtU0Ni8c-VJThbYtOF1307kY",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1sJxi8fspBtU0Ni8c-VJThbYtOF1307kY/view",
+   "title": "KakaoTalk_20250806_103423705_16.png"
+  },
+  {
+   "doc_id": "1sY7akgTAL87bt5yLOa5u5wJE99aqjx1I",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1sY7akgTAL87bt5yLOa5u5wJE99aqjx1I/view",
+   "title": "KakaoTalk_20250806_103423705_15.png"
+  },
+  {
+   "doc_id": "1v0AiTb248seU69erXLX9TXj45M4pijo0",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1v0AiTb248seU69erXLX9TXj45M4pijo0/view",
+   "title": "KakaoTalk_20250806_103423705_21.png"
+  },
+  {
+   "doc_id": "1vF35jPG2pvn2i5E2mGuWq5Lh3Qka6dtv",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1vF35jPG2pvn2i5E2mGuWq5Lh3Qka6dtv/view",
+   "title": "KakaoTalk_20250806_103423705_29.png"
+  },
+  {
+   "doc_id": "1vFCQYv1K4EI6cO76GHPHak3fvVUl2MyA",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1vFCQYv1K4EI6cO76GHPHak3fvVUl2MyA/view",
+   "title": "KakaoTalk_20250806_103423705_24.png"
+  },
+  {
+   "doc_id": "1vNAVTrilMvhhXK-BaIFLnG7H0kC4Fn5U",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1vNAVTrilMvhhXK-BaIFLnG7H0kC4Fn5U/view",
+   "title": "KakaoTalk_20250806_103423705_10.png"
+  },
+  {
+   "doc_id": "1vyJZkuE8XC3PXU58tjQUIF-_XzxIoakU",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1vyJZkuE8XC3PXU58tjQUIF-_XzxIoakU/view",
+   "title": "KakaoTalk_20250806_103423705_12.png"
+  },
+  {
+   "doc_id": "1w6-VRZvpMj2GpSgrxjAdxK5vXxEhc_TS",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1w6-VRZvpMj2GpSgrxjAdxK5vXxEhc_TS/view",
+   "title": "[견적서-현대드림애드] 용한소녀 그래픽 시공 비용.pdf"
+  },
+  {
+   "doc_id": "1xG7sVkjVMwG4H2-jXFEZdHm5HnBBV6ov",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1xG7sVkjVMwG4H2-jXFEZdHm5HnBBV6ov/view",
+   "title": "1001 [용한소녀] 현대 신촌 팝업_3차 공간 기획안.pdf"
+  },
+  {
+   "doc_id": "1yKv-dllH_CQU0caJOtz5NVvteJKCkOrU",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1yKv-dllH_CQU0caJOtz5NVvteJKCkOrU/view",
+   "title": "KakaoTalk_20250806_103426142_14.png"
+  },
+  {
+   "doc_id": "1yR2Mx0eUp-IxzM3ih-zUpeQiz-LWdvuX",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1yR2Mx0eUp-IxzM3ih-zUpeQiz-LWdvuX/view",
+   "title": "KakaoTalk_20250806_103423705_28.jpg"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서/기획서/견적서/결과보고서) 미제공; client_name 미확인; venue 정확한 명칭/지점 미확인(신촌현대 추정); 면적/수수료구조/브랜드 요구사항 없음; 방문자수 및 매출 실측치 없음; 컨셉 및 체험요소/프로모션/연출 정보 없음; 용한소녀 IP 성격 미확인"
+ }
+}

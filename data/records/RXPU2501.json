@@ -1,0 +1,135 @@
+{
+ "record_id": "RXPU2501",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:서울패션허브",
+  "space_id": "unresolved:미상",
+  "client_party_id": "unresolved:서울패션허브",
+  "brand_key": "서울패션허브",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "서울패션허브 서울패션페스타(서울 빅세일 페스타)를 위한 2D 키비주얼 디자인 및 그래픽 에셋 납품 프로젝트. 배경 그래픽 실사 이미지 일러스트화, 2D 그래픽 에셋, 로고 폰트 타이포그래피 제작 포함.",
+  "brand_name": "서울패션페스타",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [
+   "키비주얼",
+   "2D 디자인",
+   "일러스트 그래픽",
+   "배경 그래픽 실사 일러스트화",
+   "타이포그래피 폰트"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-03-04",
+   "to": "2025-03-04",
+   "days": 1
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "견적금액 총 5,940,000원(VAT 포함). 소계 5,450,000원, 합계(만원단위 이하 삭제) 5,400,000원, 부가세 540,000원. 세부: 2D 디자인 기획/제작 900,000(투입율30%), 일러스트 그래픽 디자인/제작 750,000(투입율30%), 배경 그래픽 실사 일러스트화 1,500,000, 2D 그래픽 에셋 1,000,000, 색보정/수정/편집 300,000, 로고 폰트 타이포그래피 1,000,000. 선금/중도금/잔금 분할 및 RS 조건 명시 없음. | 계약서 미확인(2026-07-27 재독해 시도 — 대상 문서 부재/추출 실패): 총액은 견적 기준"
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "키비주얼 디자인 납품 건"
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 0.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 1,
+    "holiday_until": 60,
+    "holiday_block_in": 0,
+    "nat_event_gap": 91,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 8500.0,
+    "pnl_pre_accounts": 1,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-02-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 5.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(본 문서는 디자인 납품 견적서로 방문/매출 실측 데이터가 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 5.0 ≈ 계약총액 5.4",
+   "contract_total_mm": 5.4,
+   "last_recognition_period": "2025-04"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1GmFgXSy2XW-1TIys6F6UqZ0gNgxVLgIc",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1GmFgXSy2XW-1TIys6F6UqZ0gNgxVLgIc/view",
+   "title": "04.결과보고서_내용없음.txt"
+  },
+  {
+   "doc_id": "1Ihr-Vc1Nr9xFc3LOwdHRUuU_9i4JZjai",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Ihr-Vc1Nr9xFc3LOwdHRUuU_9i4JZjai/view",
+   "title": "RXPU2501_서울패션허브 서울패션페스타 KV 납품_견적서.pdf"
+  },
+  {
+   "doc_id": "1Il3DDqOIkaMMkhyimUXJEipV0uW-aFps",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Il3DDqOIkaMMkhyimUXJEipV0uW-aFps/view",
+   "title": "01.계약서_서울패션페스타.pdf"
+  },
+  {
+   "doc_id": "1ZfuuI2vzJHWh22_XxALJj3DS1y4pdRBs",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ZfuuI2vzJHWh22_XxALJj3DS1y4pdRBs/view",
+   "title": "03.제안서_내용없음.txt"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 1건: RXPU2501_서울패션허브 서울패션페스타 KV 납품_. 미확실: client_name 미상(수신 서울패션허브 등록번호 공란); venue/location 정보 전무; area_pyeong 없음; 실제 운영기간(견적일 2025-03-07 vs 프로젝트 운영일 2025-03-04) 불일치; outcome 방문/매출 데이터 없음(결과보고서 부재); plan_visitors_expected 없음; 이 프로젝트는 팝업 운영이 아닌 KV 디자인 납품 성격"
+ }
+}

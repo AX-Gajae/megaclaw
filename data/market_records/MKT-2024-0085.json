@@ -1,0 +1,83 @@
+{
+ "market_record_id": "MKT-2024-0085",
+ "event_name": "'쓱데이 빌리지' 팝업 @스타필드 고양 (2024 쓱데이)",
+ "brand": "신세계그룹",
+ "ip_or_collab": "쓱데이",
+ "category": "other",
+ "intervention": {
+  "concept_description": "신세계 계열사 3곳 포함 총 6개 회사 오프라인 체험 부스(쓱데이 프로모션)",
+  "experience_elements": [
+   "오프라인 체험 부스"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "스타필드 고양",
+  "venue_type": "mall",
+  "neighborhood": "덕양구",
+  "city": "고양",
+  "period_from": "2024-11-01",
+  "period_to": "2024-11-10",
+  "area_pyeong": null,
+  "multi_store": null,
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 21000,
+  "visitors_period_days": 10,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "신세계그룹 발표(녹색경제신문): '쓱데이 열흘간 쓱데이빌리지를 찾은 고객 수는 2만1000명에 달한다. 이는 스타필드에서 열린 모든 팝업스토어 중 최다 방문 기록으로 기존 목표로 했던 방문객 5000명을 훌쩍 뛰어넘은 수치다.'",
+  "visitors_source_quote": "쓱데이 열흘간 쓱데이빌리지를 찾은 고객 수는 2만1000명에 달한다. 이는 스타필드에서 열린 모든 팝업스토어 중 최다 방문 기록으로 기존 목표로 했던 방문객 5000명을 훌쩍 뛰어넘은 수치다.",
+  "visitors_source_url": "https://www.greened.kr/news/articleView.html?idxno=320189",
+  "visitors_source_date": "2024-11-11",
+  "sales_krw": null,
+  "sales_source_quote": "",
+  "sales_source_url": "",
+  "sales_source_date": "",
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": true,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": false
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "스타필드 팝업 최다 방문 기록으로 보도 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,95 @@
+{
+ "market_record_id": "MKT-2024-0075",
+ "event_name": "컬리뷰티페스타 2024",
+ "brand": "컬리(뷰티컬리)",
+ "ip_or_collab": "뷰티 브랜드 연합 페스타",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "컬리 첫 오프라인 뷰티 페스타. 브랜드 부스, 체험 콘텐츠, 온라인 뷰티페스타 연계",
+  "experience_elements": [
+   "브랜드 부스",
+   "체험 콘텐츠",
+   "메이크업쇼/클래스"
+  ],
+  "promotions": [
+   "유료 티켓",
+   "온라인 기획전 연계"
+  ],
+  "is_free_entry": false,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "동대문디자인플라자(DDP)",
+  "venue_type": "convention",
+  "neighborhood": "동대문",
+  "city": "서울",
+  "period_from": "2024-10-10",
+  "period_to": "2024-10-13",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.5,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 20000,
+  "visitors_period_days": 4,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "2025년 행사 르포 기사 내 2024년 회고 수치(컬리 발표 인용)",
+  "visitors_source_quote": "지난해 10월 10일부터 13일까지 DDP에서 처음으로 개최된 '컬리뷰티페스타 2024'는 오픈 1시간 만에 2000여 명이 입장하고, 4일간 약 2만 명이 방문하며 성황리에 마무리됐다",
+  "visitors_source_url": "https://www.news2day.co.kr/article/20251030500202",
+  "visitors_source_date": "2025-10-30",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "첫날 오픈 1시간 만에 2000여 명 입장",
+   "sold_out": null,
+   "reservation_fill": "티켓 전량 매진 (동 기사)",
+   "signal_quotes": [
+    "오픈 1시간 만에 2000여 명이 입장하고, 4일간 약 2만 명이 방문"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": true,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "온라인 뷰티컬리 매출도 전 주 동기 대비 크게 증가했다고 동 기사에 언급(수치는 회사별 상이). | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

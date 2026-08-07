@@ -1,0 +1,97 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{같은 함정에 두 번 걸렸고 한 번은 못 잡았다 --- 확인은 흔들 곳을 골라야 한다}
+\author{월드모델 실험실}
+\date{노트 513 · 2026년 8월 3일}
+\maketitle
+
+\begin{abstract}
+노트 509 가 배선 버그를 하나 잡았다 --- \texttt{str.replace(old, new, 1)}
+이 부모 클래스 \texttt{Boost.fit} 을 맞춰서 \texttt{TRAINCAP} 이 챔피언에
+안 걸렸고, ``두 설정의 차가 \emph{정확히} $0$''이 그것을 잡았다.
+
+\textbf{같은 함정에 한 번 더 걸려 있었다.} 노트 498 의 \texttt{DOMDROP}
+패치도 \texttt{Boost.fit} 으로 갔다. 그래서 챔피언은 애니 트렌드를
+\textbf{예보 때만} 가리고 있었다 --- 관문이 잰 것은 \textbf{학습과 예보
+양쪽}이었는데.
+
+\textbf{그리고 이번엔 못 잡았다.} 예보 전용 배선도 예보를 바꾸기 때문에
+``차가 정확히 $0$''이 안 나온다. 노트 498 이 쓴 확인(\emph{예보} 자료에서
+애니 트렌드를 난수로 바꿔도 예보가 안 변한다)은 \textbf{두 배선을 구별
+못 한다.}
+
+고쳤다. \textbf{학습} 자료에서 애니 트렌드를 난수로 바꿔도 예보 최대 차가
+$0.00\mathrm{e}{+}00$ 이고(웹툰 대조는 $4.40\mathrm{e}{+}01$), 앙상블 판이
+$0.4885 \to \mathbf{0.4908}$ 로 오른다.
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 두 번의 같은 버그. \textbf{나} --- 고친 뒤.
+\textbf{다} --- 확인 방법의 분해능.}
+\end{figure}
+
+\section{관문은 안 흔들린다}
+
+노트 $498 \cdot 509$ 의 관문 수치는 그대로 선다. 그 실험들은 \emph{스크립트
+안에서} 학습과 예보 양쪽 자료를 직접 가리고 모형을 돌렸다 --- 챔피언 코드의
+배선과 무관하다. \textbf{틀린 것은 측정이 아니라 구현이고, 이제 구현이
+측정과 같아졌다.}
+
+그 증거가 판이다 --- 잘못된 배선(예보 전용)에서 $0.4885$, 고친 배선
+(학습$+$예보)에서 $\mathbf{0.4908}$. 관문이 잰 이득이 구현에 다 안 들어와
+있었다.
+
+\section{확인은 흔들 곳을 골라야 한다}
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+확인 방법 & 예보 전용 배선 & 학습$+$예보 배선 \\
+\hline
+\textbf{예보} 자료를 흔든다(노트 498) & 통과 & 통과 \\
+\textbf{학습} 자료를 흔든다(이 노트) & \textbf{실패} & 통과 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{quote}
+\textbf{조항} --- \textbf{배선 확인은 그 변경이 걸려야 하는 \emph{모든}
+자리에서 따로 흔든다.} 학습에 거는 변경은 \emph{학습} 자료를 흔들어
+확인하고, 예보에 거는 변경은 \emph{예보} 자료를 흔들어 확인한다. 한쪽만
+흔들면 반쪽 배선이 통과한다.
+\end{quote}
+
+부수 --- \textbf{상속 계층에서 문자열 패치는 클래스 범위를 먼저 자른다.}
+노트 509 가 이미 적었는데 그 다음 패치에서 또 같은 실수를 했다. 조항을
+적는 것과 지키는 것은 다르다.
+
+\section{지금 챔피언}
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+\texttt{DOMDROP} & \texttt{\{"애니": ("trend\_",)\}} --- 학습$+$예보(고침) \\
+\texttt{TRAINCAP} & \texttt{\{"만화": 0.5\}} \\
+\texttt{TRAINW} & \texttt{None}(노트 511 보류) \\
+\hline
+판 & $\mathbf{0.4908}$ (씨앗 $6$ 앙상블) \\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{나머지 채택도 같은 검사를} --- 계절 축 $\cdot$ 특기 칸 $\cdot$
+\texttt{OOC\_DROP} 은 학습 쪽 흔들기로 확인한 적이 없다.
+\item \textbf{노트 511 씨앗 $80$ 은 잘못된 배선에서 돌고 있다} --- 기준이
+$0.4885$ 짜리였다. 다시 돌려야 한다.
+\item \textbf{연도 고정 가중}(노트 512 사전 등록) --- 구현 중이었고 이
+버그를 만나 멈췄다.
+\end{itemize}
+
+\end{document}

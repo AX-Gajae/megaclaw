@@ -1,0 +1,176 @@
+{
+ "record_id": "ROPU2501",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:노더럽_NODERUP",
+  "space_id": "unresolved:신세계_천안점",
+  "client_party_id": "unresolved:무신사뷰티",
+  "brand_key": "노더럽",
+  "space_key": "신세계백화점_천안점"
+ },
+ "intervention": {
+  "concept": "무신사뷰티가 전개하는 뷰티 브랜드 '노더럽'의 신세계 천안점 팝업스토어. 세부 컨셉·체험요소는 원문 문서가 제공되지 않아 확인 불가.",
+  "brand_name": "노더럽",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": "천안",
+   "district": null,
+   "venue_name": "신세계 천안점",
+   "venue_type": "백화점",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-12-19",
+   "to": "2025-12-28",
+   "days": 10
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "신세계 천안점 백화점 입점"
+  },
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 71,
+    "holiday_until": 57,
+    "holiday_block_in": 0,
+    "nat_event_gap": 36,
+    "nat_event": null,
+    "doc_lag_days": 2,
+    "doc_dates_found": 4
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 47000.0,
+    "pnl_pre_accounts": 1,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-11-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": 10338220,
+   "rev_mm_recognized": 48.8
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-12, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2026-01"
+  },
+  "sales_basis": "PnL 상품매출 양수계정 합 × 1.1 (부가세 포함 기준)",
+  "label_history": [
+   {
+    "at": "pnl_sales (2026-07-28)",
+    "action": "mine",
+    "changes": [
+     "sales_krw 10,338,220 (PnL 총 결제액)"
+    ],
+    "evidence": "core.project_pnl_monthly 상품매출 양수계정 합 9,398,382(공급가) × 1.1, 인식 2개월"
+   }
+  ]
+ },
+ "docs": [
+  {
+   "doc_id": "16KMlkEi6I5qwHrMbMJ-_cfACw--emSbY",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/16KMlkEi6I5qwHrMbMJ-_cfACw--emSbY/view",
+   "title": "ROPU2501_무신사뷰티_노더럽_[SweetSpot] NO THE LOVE POP-UP Store_EXECUTION PLAN_20251217.pptx"
+  },
+  {
+   "doc_id": "1AzneTxLZ7fQfyjT7hquiqUkA2lKZeZBQ",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1AzneTxLZ7fQfyjT7hquiqUkA2lKZeZBQ/view",
+   "title": "ROPU2501_무신사뷰티_노더럽_[SweetSpot] NO THE LOVE POP-UP Store_EXECUTION PLAN_20251217.pdf"
+  },
+  {
+   "doc_id": "1BIaMmutrlH5t4KJXfO5Tj45Ip2sWbU_B",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1BIaMmutrlH5t4KJXfO5Tj45Ip2sWbU_B/view",
+   "title": "ROPU2501_무신사뷰티_노더럽_[SweetSpot] NO THE LOVE POP-UP Store_MKT PLAN_v3_20251217.pdf"
+  },
+  {
+   "doc_id": "1CxhxvMvSshKzbqag5i81FK-CK_Cjnvcl",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CxhxvMvSshKzbqag5i81FK-CK_Cjnvcl/view",
+   "title": "ROPU2501_무신사뷰티_노더럽_신세계천안점팝업스토어_판매매출정산(내부용)_260115.xlsx"
+  },
+  {
+   "doc_id": "1TZThYE9WtfkzLR_ZPhLWak6JG-FBVr8G",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1TZThYE9WtfkzLR_ZPhLWak6JG-FBVr8G/view",
+   "title": "ROPU2501_무신사뷰티_노더럽_신세계천안점팝업스토어_무신사뷰티PB사업팀_ 노더럽 팝업 물품 공급 계약서_전자계약날인본 확인必.pdf"
+  },
+  {
+   "doc_id": "1dhgmFaYzEXR_dtfKYnW3PGkE8PRn2u0T",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1dhgmFaYzEXR_dtfKYnW3PGkE8PRn2u0T/view",
+   "title": "ROPU2501_무신사뷰티_노더럽_신세계천안점팝업스토어_견적서 통합 시트_260126.xlsx"
+  },
+  {
+   "doc_id": "1flxfDxarLCVW_lvL115-CJKzIc-bd8Hn",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1flxfDxarLCVW_lvL115-CJKzIc-bd8Hn/view",
+   "title": "ROPU2501_무신사뷰티_노더럽_신세계천안점팝업스토어_[SweetSpot] NO THE LOVE POP-UP Store_Report_20260106.pdf"
+  },
+  {
+   "doc_id": "1kgxUWAYvewO7ZveawzkyEYPskMyfW_K3",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1kgxUWAYvewO7ZveawzkyEYPskMyfW_K3/view",
+   "title": "ROPU2501_무신사뷰티_노더럽_신세계천안점팝업스토어_운영 계약서_날인본.pdf"
+  },
+  {
+   "doc_id": "1po8l4WuRzaVl4IP-6ZvMBVDjptU3uGGA",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1po8l4WuRzaVl4IP-6ZvMBVDjptU3uGGA/view",
+   "title": "ROPU2501_무신사뷰티_노더럽_[SweetSpot] NO THE LOVE POP-UP Store_MKT PLAN_v3_20251217.pptx"
+  },
+  {
+   "doc_id": "1ujfCi3Rje013-_U_Gzm20xdKF3d0LQmZ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ujfCi3Rje013-_U_Gzm20xdKF3d0LQmZ/view",
+   "title": "ROPU2501_무신사뷰티_노더럽_신세계천안점팝업스토어_판매매출정산(무신사 보고용)_260115.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 텍스트가 전혀 제공되지 않음; 컨셉/체험요소/프로모션/연출태그 확인 불가; 면적·수수료구조·브랜드 요구사항 확인 불가; 방문객수·매출 등 실측 결과 확인 불가; 예상 방문객수 확인 불가; 클라이언트 정식 party_id 확인 불가"
+ }
+}

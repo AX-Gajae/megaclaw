@@ -1,0 +1,91 @@
+{
+ "market_record_id": "MKT-2024-0046",
+ "event_name": "라이프집 집들이 팝업스토어 (1회)",
+ "brand": "LG전자 라이프집(Lifezip)",
+ "ip_or_collab": null,
+ "category": "electronics",
+ "intervention": {
+  "concept_description": "홈 라이프스타일 커뮤니티 '라이프집'의 온라인 경험을 오프라인으로 확장한 '집들이' 콘셉트 체험 공간. 총 6층 규모, 홈카페·홈가드닝·홈스튜디오 구성",
+  "experience_elements": [
+   "홈카페",
+   "홈가드닝",
+   "홈스튜디오",
+   "인플루언서 협업 체험 프로그램"
+  ],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "서울 성동구 성수동 (단독 건물)",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2024-07-06",
+  "period_to": "2024-07-14",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  },
+  "derived": {
+   "duration": {
+    "days": 9,
+    "weekend_share": 0.44,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 7500,
+  "visitors_period_days": 9,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "LG전자가 발표한 수치를 언론이 인용. 원문: 'LG전자는 지난 6일부터 14일까지... 9일간 열린 팝업스토어는 누적 7500여명이 방문'",
+  "visitors_source_quote": "9일간 열린 팝업스토어는 누적 7500여명이 방문하는 등 많은 호응을 이끌어냈다.",
+  "visitors_source_url": "https://www.news2day.co.kr/article/20240718500036",
+  "visitors_source_date": "2024-07-18",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "후속 보도(paxetv 2025-07-14)에서는 '열흘만에 7500여명'으로 표기. 2025년 7월 '라이프집 집들2'로 확장 재개최(해당 회차 방문객 수치 미공개). | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

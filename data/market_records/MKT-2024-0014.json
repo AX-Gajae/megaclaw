@@ -1,0 +1,106 @@
+{
+ "market_record_id": "MKT-2024-0014",
+ "event_name": "롯데웰푸드 '가나 초콜릿 하우스 시즌3' 성수 팝업스토어",
+ "brand": "롯데웰푸드(가나초콜릿)",
+ "ip_or_collab": "가나 50주년 헤리티지, 도레도레·가루하루·로우키커피·오니버스커피 등 셰프·바리스타 협업",
+ "category": "fnb",
+ "intervention": {
+  "concept_description": "18세기 런던 초콜릿 하우스를 재해석한 프리미엄 디저트 하우스. 사계절(봄·여름·가을·겨울) 주차별 테마로 공간·메뉴 변주",
+  "experience_elements": [
+   "가나 디저트 플레이트(예약제, 일 20팀 한정)",
+   "나만의 가나 만들기 클래스",
+   "가나 50주년 헤리티지 전시존",
+   "대형 조형물 포토존·디저트 테이블·굿즈존"
+  ],
+  "promotions": [
+   "쁘띠 가나 디저트 플레이트·클래스 캐치테이블 예약제"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "스위트스팟 스테이지 성수 403",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2024-03-09",
+  "period_to": "2024-04-07",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 30,
+    "weekend_share": 0.33,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 30000,
+  "visitors_period_days": 30,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "롯데웰푸드 브랜드 매거진(BemyB) 및 팝업 공간 운영사(스위트스팟)가 밝힌 누적 방문객. '총 한 달간' 운영 확인(스위트스팟)",
+  "visitors_source_quote": "시즌3도 대성공이었습니다. 방문객수는 3만 명을 돌파했고, 2024 한국광고주대회에서는 올해의 마케터 상을 받으며 그 가치를 다시 한번 인정받았어요.",
+  "visitors_source_url": "https://bemyb.kr/contents/?bmode=view&idx=150559958",
+  "visitors_source_date": "2025-02-12",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "오픈 첫 주말(9·10일) 약 2500명, 오픈 9일 누적 9000명 육박(미래경제 2024-03-22)",
+   "sold_out": null,
+   "reservation_fill": "디저트 플레이트·클래스 예약 오픈 1분 이내 마감, 예약 대기인원 2000명 초과",
+   "signal_quotes": [
+    "예약 오픈 1분 이내에 마감되고 예약 대기인원이 2천명이 훌쩍 넘을 정도였다.(미래경제 2024-03-22)",
+    "오픈 9일이 지난 가나 초콜릿 하우스의 누적 방문객은 9000명에 육박할 정도다.(미래경제 2024-03-22)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [
+   {
+    "metric": "visitors_total",
+    "figure": 20000,
+    "scope_note": "2차수집 대안치: 원문 표현 '시즌1은 누적 방문객 수 2만 명이 방문하며' — 시즌1 단일 운영분의 누적 방문객 수(시즌2 ",
+    "source_url": "https://heypop.kr/cabinet/94129/",
+    "source_date": "2024-03-28"
+   }
+  ],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "스위트스팟(2025-05-07)도 '누적 방문객 약 3만명' 동일 확인. 시즌1(2022, 범위 외) 2만명 대비 확대. 종료일 4/7은 겨울 주차 운영 기간(4/2~7)으로 확인 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,123 @@
+{
+ "record_id": "RIPU2525",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:MUSINSA",
+  "space_id": "unresolved:미상",
+  "client_party_id": null,
+  "brand_key": "무신사",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "MUSINSA 소담상회 팝업스토어. 세부 컨셉·체험요소 관련 원문 문서가 제공되지 않아 확인 불가.",
+  "brand_name": "MUSINSA",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-12-26",
+   "to": "2025-12-28",
+   "days": 3
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.67,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 0.5,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 78,
+    "holiday_until": 50,
+    "holiday_block_in": 0,
+    "nat_event_gap": 43,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 147.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-12, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1891SKTTLrmbDnkup7yUihM4Pw97o7Z5_tCTzl0UC8mw",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1891SKTTLrmbDnkup7yUihM4Pw97o7Z5_tCTzl0UC8mw/view",
+   "title": "무신사 소담상회 견적서"
+  },
+  {
+   "doc_id": "1D1d8zDinjRFbZ8f9BafoS0AUMxdu2Ofw",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1D1d8zDinjRFbZ8f9BafoS0AUMxdu2Ofw/view",
+   "title": "무신사 소담상회 견적서.pdf"
+  },
+  {
+   "doc_id": "1EmpSkpJsbnfkDKjj-D4ID-vI3Bjv3gr4",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1EmpSkpJsbnfkDKjj-D4ID-vI3Bjv3gr4/view",
+   "title": "계약서.hwp"
+  },
+  {
+   "doc_id": "1xestd2fLT9QKd0Xre-b-IrFribE1WNl1",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1xestd2fLT9QKd0Xre-b-IrFribE1WNl1/view",
+   "title": "[스위트스팟] 무신사 소담상회 결과보고서.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 미제공; 클라이언트명 미상; 입지·면적·수수료구조 정보 없음; 컨셉·체험요소·프로모션·연출태그 정보 없음; 방문객·매출 실측 데이터 없음; 예상 방문 수치 없음"
+ }
+}

@@ -1,0 +1,253 @@
+{
+ "record_id": "RTPU2524",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:셀퓨전씨",
+  "space_id": "unresolved:성수역_일대",
+  "client_party_id": "unresolved:언오피셜오피스",
+  "brand_key": "셀퓨전씨",
+  "space_key": "성수"
+ },
+ "intervention": {
+  "concept": "셀퓨전씨 썬케어 브랜드의 오프라인 샘플링 캠페인. 성수역 일대 유명 화장품 스토어 및 유동인구 밀집지역에서 이동형 마차와 판넬형 LED로 브랜드를 노출하며 선케어 샘플을 배포하고 QR 스캔으로 참여를 유도했다.",
+  "brand_name": "셀퓨전씨",
+  "experience_elements": [
+   "오프라인 샘플링(선케어 샘플 배포)",
+   "QR 코드 스캔",
+   "이동형 마차(3면 브랜딩)",
+   "조명형 LED 판넬(제품별 메시지)",
+   "투명 접착 봉투 샘플 포장"
+  ],
+  "promotions": [
+   "샘플 무료 배포",
+   "QR 스캔 시 인스타그램 '셀퓨전씨' 연동"
+  ],
+  "staging_tags": [
+   "이동형마차",
+   "LED판넬",
+   "스탭복브랜딩",
+   "성수역"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": null,
+   "area_sqm": null,
+   "planned_operating_days": 1,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": null,
+   "experience_density": 1,
+   "goods_scale": 0,
+   "photo_zones": 0,
+   "collab_strength": 0,
+   "ip_awareness": 2,
+   "target_breadth": 3,
+   "entry_friction": 0,
+   "media_push": 1,
+   "season_fit": 3,
+   "venue_prominence": 3
+  },
+  "attr_meta": {
+   "evidence": "계약서 제2조 ③ '행 사 일: 2025년 04월 19일(토)' 단일 1일(우천취소로 실제 4/20 1일 운영). 문서는 계약서 1건뿐이며 샘플 수량·마차 대수·인력·시간 수치 전무",
+   "confidence": "low",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "성동구",
+   "venue_name": "성수역 일대",
+   "venue_type": "street_sampling",
+   "foot_traffic_context": "쿠팡 메가뷰티쇼 및 XYZ seoul 등 유명 화장품 브랜드 스토어와 유동인구 밀집 지역 인근"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-04-20",
+   "to": "2025-04-20",
+   "days": 1,
+   "source": "재발굴 판정 — 계획 문서로 교정"
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "총 계약금액 14,000,000원(VAT 별도). 선금 21% 3,000,000원(2025-03-20 지급), 중도금 21% 3,000,000원(2025-04-04 지급), 잔금 58% 8,000,000원(2025-04-25 지급). 입금계좌 KB국민은행 810101-04-316648 주식회사 스위트스팟"
+  },
+  "brand_requirements": [
+   "제작물 사용 전 의뢰사 서면 승인",
+   "의뢰사 지식재산권 사용 가이드라인 준수",
+   "정치·사회·종교적 중립 유지",
+   "결과보고서 제출",
+   "안전관리 및 사고방지"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "성수역 일대 유동인구 밀집지역 이동형 샘플링"
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 1.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 48,
+    "holiday_until": 13,
+    "holiday_block_in": 0,
+    "nat_event_gap": 44,
+    "nat_event": null,
+    "doc_lag_days": 20,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 6,
+    "comp_prior_at_venue": 46,
+    "comp_within_500m_open": 28,
+    "comp_within_1000m_open": 44,
+    "matched_address": "서울 성동구 연무장15길 11"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 619090.0,
+    "pnl_pre_accounts": 1,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-03-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 60000,
+   "popup_zone_pass_rate": 0.05,
+   "host_traffic_est": 3000.0,
+   "venue_scale_tier": 2,
+   "confidence": "low",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2025-04-20",
+    "visitors": 1448,
+    "sales_krw": null
+   }
+  ],
+  "totals": {
+   "visitors": 1448,
+   "sales_krw": null,
+   "rev_mm_recognized": 13.7
+  },
+  "counting_method": "unknown",
+  "counting_basis": "'QR 코드 스캔 인원' 시간대별 합산 1,448명. 샘플 배부 수량 1,500(인플루언서 배부 포함), 이용객 집중 시 인스타그램 '셀퓨전씨' 직접 입력으로 대체",
+  "plan_visitors_expected": 1500,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(당초 행사일 4/19 우천으로 4/20(일)로 변경 진행. 예상 KPI는 1일 참여자 1,500명 내외 및 샘플 1,500개 배포. QR 스캔 인원 실측 1,448명.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 13.7 ≈ 계약총액 14.0",
+   "contract_total_mm": 14.0,
+   "last_recognition_period": "2025-04"
+  },
+  "label_trust": {
+   "grade": "A",
+   "flags": [
+    "A"
+   ],
+   "why": "정밀 집계 표현"
+  },
+  "label_history": [
+   {
+    "at": "relabel R1 (2026-07-28)",
+    "prev_visitors": 1448,
+    "prev_counting": "participation",
+    "action": "revise",
+    "changes": [
+     "counting_method participation → unknown (세분: digital_proxy)",
+     "운영일수 None → 1"
+    ],
+    "evidence": "① 결과보고서([언오피셜오피스] 셀퓨전씨 선케어 캠페인 결과보고서_250427.pdf, 1IOPC-m6fVKjKiMcrKijX6Ond5d_9zv4O) 개요: '기간 2025.04.20 (일) / 시간 11:00~19:00 *현장 스탭 스케줄 10:30~19:30 / 장소 성수역 인근 / 프로그램 오프라인 샘플링 / 예상 KPI ① 참여자 1일 기준 1,500명 내외 ② 샘플 배포 1일 1,500개 내외'. ② 같은 문서 이슈·개선표 첫 행: '기존 행사일(4/19) 우천 예정 → 4/20 행사일 변경 진행' — 4/19는 실행되지 않았다. ③ 실적표: '구분 샘플 배부 수량(*인플루언서 배부 수량 포함) / QR 코드 스캔 인원 → 수치 1,500 / 1,448'. 시간대별 표 'QR 스캔 인원 23·157",
+    "verdict": "daily의 2025-04-20이 맞고 period의 4/19는 우천으로 취소된 당초 계약일이므로 period를 4/20 하루로 교체하라 — 1,448은 시간대별 QR 코드 스캔 인원의 합(단일 이동형 샘플링 운영 1일치)이다."
+   },
+   {
+    "at": "relabel R1 (2026-07-28)",
+    "prev_visitors": 1448,
+    "prev_counting": "unknown",
+    "action": "revise",
+    "changes": [
+     "period 교정 {'from': '2025-04-20', 'to': '2025-04-20'} (계획 문서 근거)"
+    ],
+    "evidence": "① 결과보고서([언오피셜오피스] 셀퓨전씨 선케어 캠페인 결과보고서_250427.pdf, 1IOPC-m6fVKjKiMcrKijX6Ond5d_9zv4O) 개요: '기간 2025.04.20 (일) / 시간 11:00~19:00 *현장 스탭 스케줄 10:30~19:30 / 장소 성수역 인근 / 프로그램 오프라인 샘플링 / 예상 KPI ① 참여자 1일 기준 1,500명 내외 ② 샘플 배포 1일 1,500개 내외'. ② 같은 문서 이슈·개선표 첫 행: '기존 행사일(4/19) 우천 예정 → 4/20 행사일 변경 진행' — 4/19는 실행되지 않았다. ③ 실적표: '구분 샘플 배부 수량(*인플루언서 배부 수량 포함) / QR 코드 스캔 인원 → 수치 1,500 / 1,448'. 시간대별 표 'QR 스캔 인원 23·157",
+    "verdict": "daily의 2025-04-20이 맞고 period의 4/19는 우천으로 취소된 당초 계약일이므로 period를 4/20 하루로 교체하라 — 1,448은 시간대별 QR 코드 스캔 인원의 합(단일 이동형 샘플링 운영 1일치)이다.",
+    "period_prev": {
+     "from": "2025-04-19",
+     "to": "2025-04-19",
+     "days": 1
+    },
+    "adjudication": "period 4/19는 우천으로 취소된 당초 계약일이고 실제 운영은 4/20 하루다. 1,448은 시간대별 QR 스캔 인원의 합이라 물리 발자국이 아니다 — 디지털 프록시로 표시해 채점 풀에서 분리한다."
+   },
+   {
+    "at": "relabel R1 (2026-07-28)",
+    "prev_visitors": 1448,
+    "prev_counting": "unknown",
+    "action": "revise",
+    "changes": [
+     "period 교정 {'from': '2025-04-20', 'to': '2025-04-20'} (계획 문서 근거)"
+    ],
+    "evidence": "① 결과보고서([언오피셜오피스] 셀퓨전씨 선케어 캠페인 결과보고서_250427.pdf, 1IOPC-m6fVKjKiMcrKijX6Ond5d_9zv4O) 개요: '기간 2025.04.20 (일) / 시간 11:00~19:00 *현장 스탭 스케줄 10:30~19:30 / 장소 성수역 인근 / 프로그램 오프라인 샘플링 / 예상 KPI ① 참여자 1일 기준 1,500명 내외 ② 샘플 배포 1일 1,500개 내외'. ② 같은 문서 이슈·개선표 첫 행: '기존 행사일(4/19) 우천 예정 → 4/20 행사일 변경 진행' — 4/19는 실행되지 않았다. ③ 실적표: '구분 샘플 배부 수량(*인플루언서 배부 수량 포함) / QR 코드 스캔 인원 → 수치 1,500 / 1,448'. 시간대별 표 'QR 스캔 인원 23·157",
+    "verdict": "daily의 2025-04-20이 맞고 period의 4/19는 우천으로 취소된 당초 계약일이므로 period를 4/20 하루로 교체하라 — 1,448은 시간대별 QR 코드 스캔 인원의 합(단일 이동형 샘플링 운영 1일치)이다.",
+    "period_prev": {
+     "from": "2025-04-20",
+     "to": "2025-04-20",
+     "days": 1,
+     "source": "재발굴 판정 — 계획 문서로 교정"
+    },
+    "adjudication": "period 4/19는 우천으로 취소된 당초 계약일이고 실제 운영은 4/20 하루다. 1,448은 시간대별 QR 스캔 인원의 합이라 물리 발자국이 아니다 — 디지털 프록시로 표시해 채점 풀에서 분리한다."
+   }
+  ],
+  "counting_detail": "digital_proxy",
+  "label_scope": {
+   "label_active_days": 1,
+   "source": "재발굴 확정 (relabel R1 (2026-07-28))"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1IOPC-m6fVKjKiMcrKijX6Ond5d_9zv4O",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1IOPC-m6fVKjKiMcrKijX6Ond5d_9zv4O/view",
+   "title": "[언오피셜오피스] 셀퓨전씨 선케어 캠페인 결과보고서_250427.pdf"
+  },
+  {
+   "doc_id": "1RSMmk2GdDNIuBWf6WMcBbSi31PJU0Umv",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1RSMmk2GdDNIuBWf6WMcBbSi31PJU0Umv/view",
+   "title": "(Sweetspot) 언오피셜오피스_셀퓨전씨 썬케어 샘플링_예산안_6차_250422_견적서.pdf"
+  },
+  {
+   "doc_id": "1bU7343fJQt5gyhadhlqofExFM2orMEhs",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1bU7343fJQt5gyhadhlqofExFM2orMEhs/view",
+   "title": "[Sweetspot] 언오피셜오피스_셀퓨전씨 캠페인_업무 계약서_최종_250331.pdf"
+  },
+  {
+   "doc_id": "1rifX8kqRvgeXcejFcrtpd8ya-Pnnv_VY",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1rifX8kqRvgeXcejFcrtpd8ya-Pnnv_VY/view",
+   "title": "[Sweetspot] 셀퓨전씨 선케어 캠페인 실행안_250314.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 2건: [Sweetspot] 언오피셜오피스_셀퓨전씨 캠페인_업, [언오피셜오피스] 셀퓨전씨 선케어 캠페인 결과보고서_2. 미확실: 계약서상 행사일(2025-04-19)과 결과보고서 실제 행사일(2025-04-20) 불일치; 면적 정보 없음; 소비자 매출(POS) 데이터 없음(샘플링 캠페인); 계약금액 표기 오류('14,000,000만원(천이백만원)') 존재"
+ }
+}

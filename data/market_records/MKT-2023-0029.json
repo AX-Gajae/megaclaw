@@ -1,0 +1,99 @@
+{
+ "market_record_id": "MKT-2023-0029",
+ "event_name": "뉴진스 팝업스토어 '버니랜드(Bunny Land)' X 스포티파이",
+ "brand": "어도어/스포티파이",
+ "ip_or_collab": "뉴진스(NewJeans)",
+ "category": "character",
+ "intervention": {
+  "concept_description": "뉴진스 2집 발매 연계 스포티파이 협업 팝업. 낙원악기상가에서 2023-07-28~08-06 운영.",
+  "experience_elements": [
+   "팝업스토어",
+   "사은품 증정"
+  ],
+  "promotions": [
+   "사은품"
+  ],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "낙원악기상가(서울 종로구)",
+  "venue_type": "other",
+  "neighborhood": "종로",
+  "city": "서울",
+  "period_from": "2023-07-28",
+  "period_to": "2023-08-06",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 27000,
+  "visitors_period_days": 10,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "어도어 측 집계(뉴시스 보도 인용)",
+  "visitors_source_quote": "앞서 스포티파이와 함께 지난 7월28일부터 이달 6일까지 낙원악기상가에서 연 팝업 스토어 '버니랜드'에도 약 2만7000명이 다녀갔다. 준비한 사은품 3만2000개가 모두 소진됐다.",
+  "visitors_source_url": "https://www.newsis.com/view/NISX20230904_0002436913",
+  "visitors_source_date": "2023-09-04",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": "사은품 3만2000개 전량 소진",
+   "reservation_fill": null,
+   "signal_quotes": [
+    "준비한 사은품 3만2000개가 모두 소진됐다. (뉴시스 2023-09-04)",
+    "방문객들에게 총 3만2000 여개의 사은품이 제공됐다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "자카르타·시카고 등 해외 팝업은 제외, 서울(낙원악기상가)만 기록 | 병합 레코드: MKT-2023-0002 | [병합:MKT-2023-0002] 동일 뉴시스 기사에 뉴진스×라인프렌즈 팝업(5.5만)과 버니랜드(2.7만) 수치가 함께 보도됨.",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 27000,
+   "basis": "organizer_claim",
+   "quote": "7월28일부터 지난달 6일까지 서울 종로구 낙원악기상가에서 운영된 ‘버니랜드’ 팝업스토어에는 약 2만7000명이 방문했다.",
+   "url": "https://www.newsis.com/view/NISX20230904_0002436913",
+   "date": "2023-09-04"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

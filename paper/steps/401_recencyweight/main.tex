@@ -1,0 +1,127 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{수단을 목적으로 바꿨더니 다섯이 다 올랐다 --- 학습 쪽 최근성은 날짜 구멍이 아니다}
+\author{월드모델 실험실}
+\date{노트 516 · 2026년 8월 4일}
+\maketitle
+
+\begin{abstract}
+노트 515 가 \texttt{TRAINW} 이득의 $80\%$ 가 \textbf{최근성}임을 보였다 ---
+도메인 무게는 학습 행을 $+1.4$ 년 최근으로 미는 \emph{수단}이었다. 그러면
+목적을 직접 걸면 된다 --- 행 무게 $\times{=}\ 0.5^{(2025-\text{연도})/\tau}$.
+
+\begin{center}
+\begin{tabular}{lrrl}
+\hline
+자 (기준 $=$ 현 챔피언) & 차 & 부호 & $95\%$ 구간 \\
+\hline
+판 & $+0.0025$ & $34/40$ & $[+0.0019, +0.0031]$ \\
+\textbf{날짜 통제 판} & $\mathbf{+0.0013}$ & $30/40$ & $[+0.0006, +0.0020]$ \\
+무리 안 판 & $+0.0041$ & $39/40$ & $[+0.0034, +0.0049]$ \\
+KR 만화 & $+0.0139$ & $\mathbf{40/40}$ & $[+0.0117, +0.0161]$ \\
+비게임 앱 & $+0.0066$ & $34/40$ & $[+0.0048, +0.0085]$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{자 다섯이 전부 $0$ 밖 양수다.} 앙상블도 $+0.0020$($6/6$,
+$[+0.0012, +0.0028]$). 판 $0.4909 \to \mathbf{0.4932}$. \textbf{채택}
+--- \texttt{TRAINR = 8.0}.
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 자 다섯. \textbf{나} --- 단독 대 함께.
+\textbf{다} --- 이 사이클.}
+\end{figure}
+
+\section{두 최근성은 다른 기계다}
+
+노트 $446 \cdot 447$ 이 \textbf{최근순 축}을 죽였다 --- 날 판 $+0.0186$
+인데 \textbf{날짜 통제 판 $-0.0294$}. 거기서 만든 거부권이 두 해 동안
+이 실험실의 가장 센 조항이었다.
+
+그런데 여기서는 \textbf{날짜 통제 판이 $+0.0013$ 로 오른다.} 정반대다.
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+& 노트 $446 \cdot 447$ & 이 노트 \\
+\hline
+어디에 걸리나 & \textbf{예보} 쪽(축) & \textbf{학습} 쪽(행 무게) \\
+무엇을 하나 & 최근 것을 높게 찍는다 & 최근 행에서 더 배운다 \\
+날짜 통제 판 & $-0.0294$ & $\mathbf{+0.0013}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{같은 단어(최근성)가 두 자리에서 정반대로 움직인다.} 예보 쪽
+최근성은 날짜 구멍을 \emph{판다}. 학습 쪽 최근성은 \emph{안 판다} --- 라벨이
+쌓이는 구조를 흉내 내는 게 아니라, \emph{요즘 세계}를 더 많이 보는 것이기
+때문이다.
+
+\begin{quote}
+\textbf{조항} --- \textbf{``최근성''이라고 부르기 전에 예보 쪽인지 학습
+쪽인지 적는다.} 두 해 동안 노트 446 거부권이 학습 쪽 후보까지 막고 있었을
+수 있다(노트 500 의 최근순 축 계열 실험 넷이 전부 예보 쪽이었다).
+\end{quote}
+
+\section{보완재다}
+
+연도 가중을 \textbf{단독으로} 걸면(\texttt{TRAINW} 끄고) 집안은 사지만
+집 밖은 못 산다.
+
+\begin{center}
+\begin{tabular}{lrr}
+\hline
+& 판 & KR 만화 \\
+\hline
+연도 $\tau{=}8$ 단독 & $+0.0025$ & $-0.0018$ ($0$ 을 문다) \\
+연도 $\tau{=}4$ 단독 & $+0.0021$ & $-0.0009$ ($0$ 을 문다) \\
+\textbf{TRAINW $+$ 연도} & $+0.0029$ & $\mathbf{+0.0130}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{TRAINW 는 KR 을 사고 연도는 판을 산다.} 노트 515 가 ``KR 의
+$80\%$ 가 최근성''이라 했는데, 최근성 \emph{단독}으로는 KR 이 안 온다 ---
+\textbf{KR 은 둘의 상호작용에서 나온다.} 도메인 무게가 만화 $\cdot$
+세계애니(제일 옛날인 둘)를 줄이고, 연도 가중이 그 위에서 남은 옛 행까지
+더 줄인다.
+
+\section*{이 사이클의 챔피언}
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+\texttt{DOMDROP} & \texttt{\{"애니": ("trend\_",)\}} \\
+\texttt{TRAINCAP} & \texttt{\{"만화": 0.5\}} \\
+\texttt{TRAINW} & 유보 무게 · clip $(0.2, 1.0)$ \\
+\texttt{TRAINR} & $8.0$ (반감기 $8$ 년) \\
+\hline
+판 & $0.4812 \to \mathbf{0.4932}$ ($+0.0120$) \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{네 채택이 전부 ``어떤 행으로 배울까''이지 ``어떤 모형을 쓸까''가
+아니다.} 노트 $505 \cdot 506$ 이 모형 갈래를 닫은 뒤 이 실험실이 번
+$+0.0120$ 은 전부 자료를 쓰는 방식에서 나왔다 --- 그리고 그것은 노트 506 이
+잰 ``행 두 배 $= +0.0245$''의 절반에 해당한다. \textbf{새 행을 안 모으고
+있던 행을 다시 쓴 것만으로.}
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{$\tau$ 를 더 훑기} --- $4 \cdot 8$ 만 봤다. $12 \cdot 16$
+쪽은 안 봤다.
+\item \textbf{\texttt{TRAINCAP} 이 아직 필요한가} --- 연도 가중이 만화를
+이미 많이 줄인다. 겹칠 수 있다.
+\item \textbf{노트 446 거부권을 다시 읽기} --- 학습 쪽 후보에는 안 걸려야
+한다면, 두 해 동안 그 거부권에 걸려 죽은 것 중 학습 쪽이 있었나.
+\end{itemize}
+
+\end{document}

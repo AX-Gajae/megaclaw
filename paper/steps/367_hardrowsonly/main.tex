@@ -1,0 +1,116 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{어려운 행에만 있는 축 --- 있는 쪽이 낮다고 축을 탓하면 정반대다}
+\author{월드모델 실험실}
+\date{노트 482 · 2026년 8월 3일}
+\maketitle
+
+\begin{abstract}
+노트 $480 \cdot 481$ 이 두 번 남긴 미해결 --- \emph{애니만 축이 적은 행이
+더 잘 맞고($-0.1004$), 대조에서 더 벌어진다($-0.1678$).} 축 수는 여러
+축의 합이니 \textbf{어느 축이 그 부호를 만드는지} 갈랐다.
+
+\textbf{애니는 존재 여부가 변하는 축이 둘뿐이었다.}
+
+\begin{center}
+\begin{tabular}{lrrrr}
+\hline
+축 & 덮음 & 있는 행 & 없는 행 & 차 \\
+\hline
+\textbf{\texttt{venue\_prominence}} & $20\%$ & $+0.4894$ & $+0.5877$ & $\mathbf{-0.0982}$ \\
+\texttt{gen} & $93\%$ & $+0.5655$ & $+0.3697$ & $+0.1958$ \\
+\hline
+\end{tabular}
+\end{center}
+
+한 축이 도메인 격차($-0.1004$)를 거의 전부 설명한다. (견줌으로 본 게임은
+변하는 축이 \emph{일곱}이고 \textbf{전부 양수}였다 --- 그래서 노트 481 의
+몫이 $98\%$ 였다. \emph{``축 수''가 아니라 ``어느 축이냐''였다.})
+
+그래서 다음은 뻔해 보였다 --- \textbf{가려 보자}. 노트 441 이
+\texttt{entry\_friction} 에 한 그대로.
+
+\textbf{정반대였다.}
+
+\begin{center}
+\begin{tabular}{lrr}
+\hline
+가림 $-$ 켬 & 값 & 95\% 구간 \\
+\hline
+축이 있는 $119$행 & $\mathbf{-0.0509}$ & $[-0.0556, -0.0462]$ \\
+축이 없는 $487$행 & $+0.0001$ & $[-0.0001, +0.0003]$ \\
+애니 전체 & $-0.0129$ & $[-0.0137, -0.0122]$ \\
+판 & $-0.0023$ & $[-0.0024, -0.0021]$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{그 축은 그 행들을 돕고 있었다.}
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 축을 빼면 그 $119$행이 더 나빠진다. \textbf{나} ---
+격차의 분해.}
+\end{figure}
+
+\section{그러면 격차는 무엇이었나}
+
+노트 480 이 배운 것이 여기서 다시 걸린다. \textbf{축의 존재가 무리를
+표시하고 있었다.}
+
+\begin{quote}
+\texttt{venue\_prominence} 가 있는 $119$행은 \textbf{원래 어려운 행}이다.
+축 없이 재면 그 행들은 $+0.4377$, 없는 $487$행은 $+0.5863$ --- 격차
+$\mathbf{-0.148}$. 축이 그 행들을 $+0.051$ 끌어올려 격차가 $-0.098$ 로
+줄어든 것이다. \textbf{축은 격차의 $3$분의 $1$을 메우고 있었다.}
+\end{quote}
+
+노트 481 이 ``맞춘 대조에서 애니가 $-0.1678$ 로 더 벌어진다''고 적은 것도
+이제 설명된다 --- \textbf{대조는 축을 뺀 상태이고, 축을 빼면 어려운 행이
+더 뒤처진다.} 그때는 그것을 ``축의 몫이 음수''라고 읽었는데, 정확히는
+\textbf{축이 돕고 있었고 대조가 그 도움을 없앤 것}이다.
+
+\section*{조항 --- 있는 쪽이 낮으면 빼 보고 말한다}
+
+\begin{quote}
+\textbf{조항} --- 어떤 축이 \emph{있는} 무리가 \emph{없는} 무리보다 점수가
+낮을 때, 그것을 \textbf{그 축의 해로움으로 읽지 않는다.} 축은 어려운
+무리를 \emph{표시}하고 있을 수 있다. \textbf{빼 보고 말한다} --- 빼서
+더 나빠지면 축은 돕고 있던 것이다.
+\end{quote}
+
+이것은 노트 480 의 조항(\emph{행 난이도를 먼저 뺀다})의 짝이다. 그때는
+\emph{많은 쪽이 높은} 경우였고 이번은 \emph{있는 쪽이 낮은} 경우인데,
+둘 다 \textbf{축과 행을 헷갈린} 것이다.
+
+\section{노트 441 과 무엇이 다른가}
+
+\texttt{entry\_friction} 은 가려서 좋아졌고 \texttt{venue\_prominence} 는
+가려서 나빠졌다. 차이는 \textbf{부호}다.
+
+\begin{itemize}
+\item \texttt{entry\_friction} --- 도메인 간 부호가 안 맞는다(양수 $3/7$).
+안 배운 수집에 \emph{거꾸로} 쓴다.
+\item \texttt{venue\_prominence} --- 도메인 간 부호가 맞는다(양수
+$9/10$). 애니 안 부호 $+0.111$ 도 학습 평균 $+0.128$ 과 같은 쪽이다.
+\end{itemize}
+
+\textbf{덮음이 낮다고 가릴 이유가 되지는 않는다.} 가릴 근거는 덮음이
+아니라 부호다.
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{그 $119$행이 왜 어려운가} --- ``\texttt{venue\_prominence}
+가 붙는 애니''가 어떤 무리인지 안 봤다. 자료 갈래다.
+\item \textbf{모바일 이상}(노트 481)은 아직 남았다 --- 대조 팔이
+재학습한다는 설계 탓으로 의심 중.
+\item \textbf{게임의 일곱 축이 다 양수인 것}도 우연은 아닐 것이다 ---
+게임 전용 축들(가격 · 램 · 연령등급)은 있는 행에서만 뜻이 있다.
+\end{itemize}
+
+\end{document}

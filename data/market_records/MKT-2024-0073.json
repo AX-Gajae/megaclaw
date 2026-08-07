@@ -1,0 +1,98 @@
+{
+ "market_record_id": "MKT-2024-0073",
+ "event_name": "하림 '용가리가 사라졌다' 성수 팝업스토어",
+ "brand": "하림(용가리 치킨)",
+ "ip_or_collab": "용가리 치킨 출시 25주년(1999년 감성 레트로), 신제품 불용가리 치킨·용가리 불 볶음면",
+ "category": "fnb",
+ "intervention": {
+  "concept_description": "1999년 출시 감성의 레트로 콘셉트 '어른들의 놀이터' 팝업. 치킨+맥주와 게임을 결합",
+  "experience_elements": [
+   "다트 게임(용가리 인형 경품)",
+   "90년대 히트곡·대형 공룡알 포토존",
+   "용가리 치킨+맥주 시식",
+   "반려견 동반 야외공간"
+  ],
+  "promotions": [
+   "용가리 치킨 모양 인형 경품(중고거래 화제)"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "서울 성수동(팝업 공간)",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2024-10-07",
+  "period_to": "2024-11-03",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 28,
+    "weekend_share": 0.29,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 30000,
+  "visitors_period_days": 28,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "하림 보도자료(뉴스와이어) 기반 '마지막 날까지 약 3만 명이 방문'. '3만 명 가까이' 표현으로 근사치",
+  "visitors_source_quote": "'용가리가 사라졌다' 팝업스토어는 이처럼 먹고 마시고 즐기기 좋은 어른들의 놀이터로 입소문이 나면서 마지막 날까지 약 3만 명이 방문했다.",
+  "visitors_source_url": "https://www.newswire.co.kr/newsRead.php?no=1000365",
+  "visitors_source_date": "2024-11-08",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "마지막 날까지 현장 대기 행렬 지속, 팝업 마지막 날(11/3) 오픈 이후 최다 1700명 이상",
+   "sold_out": null,
+   "reservation_fill": "네이버 사전 예약 일찌감치 마감",
+   "signal_quotes": [
+    "10월 7일 오픈해 2주 만에 방문객 1만 명을 돌파한 데 이어, 나날이 방문객이 늘면서 후반 2주 동안 2만 명 가까이 다녀갔다.",
+    "특히 팝업 마지막 날인 11월 3일은 오픈 이후 가장 많은 인원인 1700명 이상이 방문하기도 했다. 네이버 사전 예약은 일찌감치 마감돼 마지막 날까지 현장 대기 행렬이 이어졌다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "뉴스와이어(보도자료)·글로벌에픽·청년일보·아카이브뉴스 동일(2024-11-08). 맥주 동반 제공되는 식음료 팝업 성격 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,114 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{이 사이클의 절반은 두 달 전에 산 것이었다 --- 그리고 집 밖은 깊이를 안 탄다}
+\author{월드모델 실험실}
+\date{노트 523 · 2026년 8월 4일}
+\maketitle
+
+\begin{abstract}
+노트 522 가 \texttt{TRAINR} 의 깊이 문턱을 찾고 남겼다 --- \emph{다른 자료
+후보도 깊이 감응인가. 그렇다면 이 사이클 전체가 노트 457 의 자식이다.}
+네 손잡이를 깊이 $6$ 과 $12$ 에서 누적으로 쟀다.
+
+\begin{center}
+\begin{tabular}{lrr}
+\hline
+누적 & 깊이 $6$ & 깊이 $12$ \\
+\hline
+$+$\texttt{DOMDROP} & $+0.0023$ & $+0.0046$ \\
+$+$\texttt{TRAINCAP} & $+0.0039$ & $+0.0064$ \\
+$+$\texttt{TRAINW} & $+0.0046$ & $+0.0069$ \\
+$+$\texttt{TRAINR} & $\mathbf{+0.0045}$ & $\mathbf{+0.0097}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{비 $0.47$ --- 사전 등록 통과.} 이 사이클이 번 판 이득의
+\textbf{절반 이상을 깊이 $12$ 가 만들었다.}
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 누적. \textbf{나} --- 손잡이별 증분.
+\textbf{다} --- 판과 집 밖.}
+\end{figure}
+
+\section{그러나 손잡이마다 다르다}
+
+\begin{center}
+\begin{tabular}{lrrl}
+\hline
+손잡이 & 깊이 $6$ 증분 & 깊이 $12$ 증분 & \\
+\hline
+\texttt{DOMDROP} & $+0.0023$ & $+0.0046$ & \textbf{두 배} \\
+\texttt{TRAINCAP} & $+0.0016$ & $+0.0018$ & 같음 \\
+\texttt{TRAINW} & $+0.0007$ & $+0.0005$ & 같음 \\
+\textbf{\texttt{TRAINR}} & $\mathbf{-0.0001}$ & $\mathbf{+0.0028}$ & \textbf{$0 \to$ 전부} \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{깊이 감응은 손잡이마다 다르다.} \texttt{TRAINR} 은 깊이 없이는
+아예 없고, \texttt{DOMDROP} 은 깊이가 두 배로 키우고, 나머지 둘은 깊이와
+무관하다.
+
+읽으면 --- \texttt{TRAINCAP} 과 \texttt{TRAINW} 는 \emph{어느 도메인을
+얼마나} 보느냐를 바꾼다(거친 조정). \texttt{DOMDROP} 과 \texttt{TRAINR} 은
+\emph{어느 축을 / 어느 시기를} 보느냐를 바꾼다(고운 조정). \textbf{고운
+조정만 깊은 상호작용을 필요로 한다.}
+
+\section{집 밖은 깊이를 안 탄다}
+
+\begin{center}
+\begin{tabular}{lrr}
+\hline
+& 깊이 $6$ & 깊이 $12$ \\
+\hline
+판 & $+0.0045$ & $+0.0097$ ($2.2$ 배) \\
+KR 만화 & $+0.0684$ & $+0.0747$ ($1.1$ 배) \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{네 손잡이가 사는 집 밖 이득은 깊이가 거의 안 바꾼다.} 판은 두 배
+넘게 벌어지는데 KR 은 $10\%$ 만 는다.
+
+이것이 노트 457 의 거래를 세 번째로 다시 읽게 한다. 그때 ``깊이 $12$ 가
+집 밖을 산다''고 적었는데, 지금 보면 \textbf{집 밖은 자료 손잡이가 사고
+깊이는 집안을 산다.} 깊이 $12$ 의 집 밖 이득($+0.029$)도 실은 그때
+챔피언에 자료 손잡이가 하나도 없었기 때문에 깊이가 대신 하던 일일 수 있다.
+
+\section*{노트 457 을 세 번 다시 읽었다}
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+노트 457 & ``판 $-0.0032$ 를 주고 집 밖 $+0.029$ 를 산다'' \\
+노트 522 & 그 손해는 \texttt{TRAINR} $+0.0028$ 로 갚혔다 \\
+\textbf{이 노트} & \textbf{게다가 이 사이클 이득의 절반을 만들었다} \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{quote}
+\textbf{조항} --- \textbf{용량 채택의 값은 그 뒤 사이클들이 정한다.} 채택
+시점의 환율은 \emph{그때 아는 것}의 함수이고, 그 용량이 여는 갈래를 다
+재기 전에는 손해도 이득도 확정이 아니다. \textbf{원장에 ``이 채택이 여는
+갈래'' 칸을 만든다} --- 세 노트째 제안이고 이제 근거가 셋이다.
+\end{quote}
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{깊이 $16 \cdot 24$ 를 자료 손잡이 위에서 다시} --- 노트 520
+이 지금 챔피언에서 재서 동점이었다. 이미 했다.
+\item \textbf{고운/거친 조정 가르기} --- 이 노트의 읽기를 시험하려면
+\emph{새} 자료 손잡이를 하나 만들어 어느 쪽인지 예보하고 재야 한다.
+\item \textbf{집 밖을 사는 것은 자료다} --- 이 사이클 KR $+0.075$ 중 깊이
+몫은 $10\%$ 다. \textbf{집 밖을 늘리려면 자료 쪽을 더 파야 한다.}
+\end{itemize}
+
+\end{document}

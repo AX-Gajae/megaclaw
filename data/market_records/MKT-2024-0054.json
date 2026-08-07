@@ -1,0 +1,88 @@
+{
+ "market_record_id": "MKT-2024-0054",
+ "event_name": "시몬스 뷰티레스트 100주년 팝업스토어",
+ "brand": "시몬스 침대",
+ "ip_or_collab": "뷰티레스트 100주년",
+ "category": "other",
+ "intervention": {
+  "concept_description": "뷰티레스트 탄생 100주년 기념 전시형 팝업. 헤리티지 아카이브·매트리스 체험",
+  "experience_elements": [
+   "100주년 헤리티지 전시",
+   "매트리스 체험",
+   "포토존"
+  ],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "신세계백화점 대구점(8/27~9/14)·센텀시티점(9/25~10/3)·강남점(10/11~10/23)",
+  "venue_type": "department_store",
+  "neighborhood": null,
+  "city": "대구/부산/서울",
+  "period_from": "2024-08-27",
+  "period_to": "2024-10-23",
+  "area_pyeong": null,
+  "multi_store": true,
+  "derived": {
+   "duration": {
+    "days": 58,
+    "weekend_share": 0.28,
+    "holiday_days": 6
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 15000,
+  "visitors_period_days": null,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "시몬스 발표. 앞선 대구·센텀시티 2개 점포 합산 수치(강남점 수치는 미포함 시점)",
+  "visitors_source_quote": "앞서 신세계 대구점(8월 27일~9월 14일)과 센텀시티점(9월 25일~10월 3일) 팝업스토어에는 1만 5000명이 넘는 방문객이 다녀가며 큰 인기를 끌었다.",
+  "visitors_source_url": "https://www.sedaily.com/article/13963120",
+  "visitors_source_date": "2024-10-11",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "D",
+   "flags": [
+    "D",
+    "C"
+   ],
+   "why": "스코프 혼합(합산/총계) 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "강남점 진행 중 보도(2024-10-11)로 1.5만은 대구+센텀 합산. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "집계형(통합/합산)",
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

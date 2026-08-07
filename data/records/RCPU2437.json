@@ -1,0 +1,131 @@
+{
+ "record_id": "RCPU2437",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:BNK_피어엑스",
+  "space_id": "unresolved:성수_성덕정길151_캔디성수",
+  "client_party_id": "unresolved:스위트스팟",
+  "brand_key": "BNK_피어엑스",
+  "space_key": "성수_캔디성수"
+ },
+ "intervention": {
+  "concept": "BNK 피어엑스 리그오브레전드 이벤트 기업행사. 캔디 성수 1층 대관을 통한 e스포츠 관련 행사.",
+  "brand_name": "BNK 피어엑스",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [
+   "리그오브레전드",
+   "e스포츠",
+   "기업행사"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울특별시",
+   "district": "성동구",
+   "venue_name": "캔디 성수",
+   "venue_type": "대관 시설물(1층)",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-12-12",
+   "to": "2024-12-14",
+   "days": null
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "대관료 26,400,000원(VAT 포함), 2024-12-05까지 전액 지급. 별도 예치금 7,000,000원(2024-12-05 입금, 하자 없을 시 2024-12-26까지 반환). 시간 초과 시 하루당 대관료 13,000,000원 및 지연배상금 6,500,000원(VAT 별도). 쓰레기 수거 거부 시 환경미화금 200,000원(VAT 별도)."
+  },
+  "brand_requirements": [
+   "행사 종료 즉시 원상회복 의무",
+   "시설/집기 훼손 시 현물가격 배상",
+   "계약 외 시설물 사용 시 사전 승인 필요",
+   "특별 설비 반입/설치 시 사전 승인 필요",
+   "쓰레기 분리수거 및 외부 반출",
+   "현장담당자 1명 이상 선임",
+   "행사 전일 18:00까지 진행 사항 협의",
+   "홍보물에 대관시설물 공식 명칭 및 BI/CI 사용",
+   "광고/홍보물은 쉐어잇 지정 장소에 게시"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.33,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 85,
+    "holiday_until": 44,
+    "holiday_block_in": 0,
+    "nat_event_gap": 28,
+    "nat_event": null,
+    "doc_lag_days": 28,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 24065700.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2024-11-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 83.7
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-12, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-03"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "12UxYq3RKk88h_xfX5EhIPlMzOi7fnxH9",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/12UxYq3RKk88h_xfX5EhIPlMzOi7fnxH9/view",
+   "title": "업무 계약서_2024년 bnk피어엑스 페스타_241114.doc"
+  },
+  {
+   "doc_id": "1YfJiTuPKsv_uiJuNFrNCMrb9lTcC1ZuX",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1YfJiTuPKsv_uiJuNFrNCMrb9lTcC1ZuX/view",
+   "title": "쉐어잇_스위트스팟_캔디 성수_대관계약서 및 견적서.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 1건: 쉐어잇_스위트스팟_캔디 성수_대관계약서 및 견적서.pd. 미확실: 결과보고서 부재로 방문자수·매출 실측 없음; 면적(평) 정보 없음; 기획서/제안서 부재로 체험요소·프로모션 상세 없음; 예상 방문자수 정보 없음; client_name 프로젝트 메타에 null이나 계약서상 대관자는 스위트스팟(쉐어잇은 중개자)"
+ }
+}

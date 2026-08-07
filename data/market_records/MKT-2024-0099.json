@@ -1,0 +1,99 @@
+{
+ "market_record_id": "MKT-2024-0099",
+ "event_name": "GS25×넷플릭스 '오징어 게임' 시즌2 팝업(도어투성수)",
+ "brand": "GS리테일/넷플릭스",
+ "ip_or_collab": "넷플릭스 '오징어 게임' 시즌2",
+ "category": "entertainment",
+ "intervention": {
+  "concept_description": "오징어 게임 시즌2 공개 기념 플래그십 팝업. 영희·철수 포토존, 협업 상품·한정 굿즈 판매",
+  "experience_elements": [
+   "포토존",
+   "한정 굿즈 판매",
+   "테마 매장"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "GS25 도어투성수점",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2024-12-20",
+  "period_to": "2025-01-12",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 24,
+    "weekend_share": 0.33,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 30000,
+  "visitors_period_days": 24,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "GS25 발표. 원문: '총 3만 명이 방문했다…가장 많은 2,047명이 찾았다'",
+  "visitors_source_quote": "GS25가 성수동 ‘도어투성수’ 매장에서 12월 20일부터 1월 12일까지 운영한 '오징어 게임' 팝업스토어에 총 3만 명이 방문했다. 특히 12월 31일에는 1일 방문객 기준으로 가장 많은 2,047명이 찾았다.",
+  "visitors_source_url": "https://ibabynews.com/news/articleView.html?idxno=125636",
+  "visitors_source_date": "2025-01-20",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "협업 상품은 누적 판매량 250만 개를 돌파하며 완판 행렬을 이어갔다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "기간이 연도를 걸침(2024-12-20~2025-01-12). 결과 보도·종료 시점 기준 2025년 이벤트로 분류. | 병합 레코드: MKT-2024-0027 | [병합:MKT-2024-0027] 팝업 기간 기사 미명시(오징어게임 시즌2 공개 2024-12 기준 전후 운영). 상설 플래그십 내 기간 한정 팝업으로 수집. 참고: 위스키 팝업은 팝업 상품만 하루 최고 5000만원 추가 매출(동일 기사).",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 30000,
+   "basis": "organizer_claim",
+   "quote": "방문 고객 수 정점을 찍은 콘텐츠는 오징어게임 팝업이었다. 이 팝업에는 하루 최고 2047명이 몰려들었으며 누적 3만명 이상의 고객이 방문한 것으로 집계됐다.",
+   "url": "https://www.insightkorea.co.kr/news/articleView.html?idxno=223848",
+   "date": "2025-05-08"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

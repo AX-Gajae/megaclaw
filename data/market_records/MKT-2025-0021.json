@@ -1,0 +1,87 @@
+{
+ "market_record_id": "MKT-2025-0021",
+ "event_name": "'2025 랜쇼페 베이스볼 필드' 팝업 @신세계 강남 (랜더스 쇼핑페스타)",
+ "brand": "신세계백화점×컴투스",
+ "ip_or_collab": "SSG랜더스×컴투스프로야구",
+ "category": "entertainment",
+ "intervention": {
+  "concept_description": "랜더스 쇼핑페스타 연계 야구 테마 체험 팝업",
+  "experience_elements": [
+   "스윙 체험존",
+   "게임 체험존",
+   "경품 이벤트"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "신세계백화점 강남점",
+  "venue_type": "department_store",
+  "neighborhood": "반포",
+  "city": "서울",
+  "period_from": "2025-04-04",
+  "period_to": "2025-04-13",
+  "area_pyeong": null,
+  "multi_store": null,
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 20000,
+  "visitors_period_days": 10,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "신세계그룹 발표 인용: '2만 명 이상의 관람객을 끌어모았다' (관람·체험 방문 기준)",
+  "visitors_source_quote": "신세계백화점 강남점에 마련된 '2025 랜쇼페 베이스볼 필드'는 인기 모바일 게임 '컴투스프로야구'와의 협업을 통해 스윙 체험존, 게임 체험존, 경품 이벤트 등을 선보였고 2만 명 이상의 관람객을 끌어모았다.",
+  "visitors_source_url": "http://www.popcornnews.net/news/articleView.html?idxno=77271",
+  "visitors_source_date": "2025-04-14",
+  "sales_krw": null,
+  "sales_source_quote": "",
+  "sales_source_url": "",
+  "sales_source_date": "",
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "'2만 명 이상' → 20000 보수 기록. 파이낸셜리뷰 동일 보도 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,138 @@
+{
+ "record_id": "RTPU2529",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:ORION",
+  "space_id": "unresolved:해외전시_Sweet_and_Snack_전시회",
+  "client_party_id": "unresolved:ORION",
+  "brand_key": "오리온",
+  "space_key": "해외전시_스위트앤스낵"
+ },
+ "intervention": {
+  "concept": "오리온 Sweet & Snack B2B 바이어 전시회 부스 디자인. 꼬북칩(Turtle Chip, 초코츄러스맛 메인)과 알맹이(O'Jelly Real) 두 브랜드를 위한 부스로, ORION 브랜드 컬러를 활용한 깔끔한 디자인안과 '알맹이네 과일가게' 콘셉트 변형안을 제안.",
+  "brand_name": "ORION (Turtle Chip / O'Jelly Real)",
+  "experience_elements": [
+   "과일가게 콘셉트 부스",
+   "브랜드별 구역 분리 전시"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "B2B 바이어 전시회",
+   "ORION 브랜드 컬러",
+   "과일가게 콘셉트",
+   "판촉물"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": "해외 전시회",
+   "foot_traffic_context": "B2B 바이어 전시회"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-03-12",
+   "to": "2025-03-27",
+   "days": 16
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": "디자인/판촉물/제작 비용 총합 기준 7-8천만원 이내 (예산 상한, 제작은 현지 업체 통해 진행)"
+  },
+  "brand_requirements": [
+   "부스 크기 10*20ft",
+   "2개 디자인 안 제안",
+   "꼬북칩은 초코츄러스맛 메인 디자인",
+   "ORION 브랜드 컬러 활용",
+   "알맹이네 과일가게 콘셉트 변형(1개 가게 내 2브랜드 구역 분리 또는 2개 가게 디자인)",
+   "기존 콘셉트 유지하되 깔끔하게"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "Sweet & Snack B2B 바이어 전시회 부스"
+  },
+  "derived": {
+   "duration": {
+    "days": 16,
+    "weekend_share": 0.25,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 4,
+    "months_since_last": 1.5,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 9,
+    "holiday_until": 52,
+    "holiday_block_in": 0,
+    "nat_event_gap": 83,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 5.5
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-03, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-03"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1BlyLU3u9l0smns9migLK0HzKi4JKdy3Y",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1BlyLU3u9l0smns9migLK0HzKi4JKdy3Y/view",
+   "title": "[오리온]_Sweetspot_Snack_전시회_디자인_제안서.pptx"
+  },
+  {
+   "doc_id": "1am-8dZ6dl9VzH2PLFf0MQW1s1hD7H8pO",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1am-8dZ6dl9VzH2PLFf0MQW1s1hD7H8pO/view",
+   "title": "견적서_파일없음.txt"
+  },
+  {
+   "doc_id": "1o20sNvudhvGlmFLBj2yiioarhnqSSufJ",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1o20sNvudhvGlmFLBj2yiioarhnqSSufJ/view",
+   "title": "결과보고서_파일없음.txt"
+  },
+  {
+   "doc_id": "1zlKC1IVviW5IZrHZi1aj414GE98HY1ay",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1zlKC1IVviW5IZrHZi1aj414GE98HY1ay/view",
+   "title": "계약서_파일없음.txt"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 1건: [오리온]_Sweetspot_Snack_전ᄉ. 미확실: 개최 도시/전시회명/venue 미상; 면적(평) 미상, 부스는 10*20ft; 정확한 계약금액/수수료 구조 미상; 결과보고서 없음 - 방문자/매출 데이터 전무; 전시 기간은 프로젝트 메타데이터 기준(문서 내 명시 없음)"
+ }
+}

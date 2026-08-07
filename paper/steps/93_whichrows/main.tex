@@ -1,0 +1,136 @@
+\documentclass[10pt]{article}
+\usepackage{icmlko}
+
+\icmlmeta{IP 파운데이션 월드모델}{271}{어느 행이 진짜 있는 행인가}{같은 자리에서 세 번 조용히 틀렸다 --- 셋 다 예외가 안 나고 숫자만 이상했다}
+
+\begin{document}
+
+\twocolumn[
+\icmlheader
+
+\begin{abstract}
+노트 270이 ``행 잡기 --- 세 번 틀렸다. 공통 도구로 뺄까''를 남겼다. 세 번을
+모아 보니 원인이 하나다. 이 판에는 서로 다른 행 집합이 \textbf{셋} 있는데
+이름이 없어서 매번 손으로 만들었고, 매번 다른 것을 만들었다.
+\textbf{유보 행}(\texttt{rank.predictions} 가 돌려주는 길이) ·
+\textbf{라벨이 있는 행}(\texttt{rank.pooled} 이 채점하는 것) ·
+\textbf{그 축이 관측된 행}(모형이 실제로 그 축을 보는 것). 게임에서 앞의
+둘이 223 과 180 이고(30일 창이 안 찬 43건), 모바일 \texttt{media\_push} 는
+유보 441 행 중 관측이 \textbf{5}다. 틀린 자리 셋 --- 노트 264는 새 가드가
+축 마스크를 안 보고 원본 필드를 전 행에서 읽어 모바일 \texttt{n\_shot}
+(86\%가 이미 마스크 0)을 잘못 물었고, 노트 266은 후보 SVD 에 토큰 없는 행을
+넣어 \textbf{``기록됐나'' 성분}을 만들었고(그 성분이 검사 셋을 다 통과했다),
+노트 270은 유보 행 수와 라벨 있는 행 수를 같게 보고 길이를 견줘 \textbf{게임이
+표에서 조용히 빠졌다}. \textbf{셋 다 예외가 안 났다} --- 하나는 판이
+$+$0.0000 이라서, 하나는 수치가 너무 좋아서, 하나는 도메인이 하나 없어서
+알아챘다. \texttt{Data.rows(d, post=, labeled=, axis=)} 를 넣어 이름으로 묻게
+했고, 노트 264 · 270의 두 자리를 그것으로 갈아 끼웠다(결과 동일). 판 0.4845
+그대로.
+\end{abstract}
+]
+
+\section{세 번을 모아 놓으니 하나였다}
+
+\begin{center}\small
+\begin{tabular}{lll}
+\hline
+노트 & 무엇을 잘못 잡았나 & 어떻게 알아챘나 \\
+\hline
+264 & 축 마스크를 안 보고 & 고치니 판이 \\
+ & 원본 필드를 전 행에서 & $+$0.0000 \\
+266 & 토큰 없는 행까지 SVD 에 & 수치가 너무 좋아서 \\
+ & 넣어 ``기록됐나'' 성분 & ($+$0.285) \\
+270 & 유보 행 수 $=$ 라벨 있는 & 게임이 표에서 \\
+ & 행 수로 보고 길이 비교 & 사라져서 \\
+\hline
+\end{tabular}
+\end{center}
+
+셋 다 \textbf{새로 쓴 \emph{재는} 코드}에서 났다. 오래된 코드는 안 틀린다 ---
+\texttt{forms.\_feat} 은 마스크로 중립 대입을 하고, \texttt{rank.pooled} 은
+유한한 것만 센다. 규칙을 몰라서가 아니라 \textbf{매번 손으로 다시 만들어서}
+틀렸다.
+
+\section{셋이 정말 다르다}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figs/rows.pdf}
+\caption{왼쪽 --- 도메인마다 세 행 집합. 오른쪽 --- 세 번 틀린 자리.}
+\end{figure}
+
+\begin{center}\small
+\begin{tabular}{lrrr}
+\hline
+ & 유보 행 & 라벨 있는 & \texttt{media\_push} 관측 \\
+\hline
+게임 & \textbf{223} & \textbf{180} & 96 \\
+모바일 & 441 & 441 & \textbf{5} \\
+웹툰 & 711 & 711 & \textbf{0} \\
+\hline
+\end{tabular}
+\end{center}
+
+게임에서 앞의 둘이 갈리는 것은 노트 210의 고정 30일 창 때문이다 --- 출시
+30일이 안 찬 43건은 \texttt{y\_w30} 이 뜻이 없어 라벨을 결측으로 둔다.
+그 43이 정확히 223과 180의 차다.
+
+축 관측은 또 다르다. 모바일 \texttt{media\_push} 는 스크린샷 수인데 그것이
+0 이면 축 빌더가 마스크를 내린다 --- 유보 441 행 중 \textbf{5 행}에서만 산다.
+웹툰은 아예 0 이다(대응 필드가 없다).
+
+\section{이름을 붙였다}
+
+\begin{center}\small
+\begin{verbatim}
+data.rows(d, post=True)                # 유보 행
+data.rows(d, post=True, labeled=True)  # 채점하는 행
+data.rows(d, axis="media_push")        # 그 축을 보는 행
+\end{verbatim}
+\end{center}
+
+\texttt{Data} 에 붙였으므로 \texttt{yr} · \texttt{names} · 마스크를 다시
+꺼낼 필요가 없다. 노트 264의 가드와 노트 270의 \texttt{rank.clock} 을
+이것으로 갈아 끼웠다 --- \textbf{결과가 넷째 자리까지 같다}(쌓임은 원본
+필드 18개 검사 통과, 시계 몫은 도서 하나만 1 초과, 판 0.4845).
+
+\section{왜 예외가 안 나나}
+
+이 병의 특징은 \textbf{조용하다}는 것이다. 셋 다 배열 길이가 맞거나(전 행을
+쓰면 당연히 맞는다) 조건이 그냥 거짓이 되어 넘어간다. 파이썬이 도와줄
+자리가 없다.
+
+그래서 알아챈 경로도 셋 다 우연에 가깝다.
+
+\begin{itemize}
+\item 노트 264 --- 고쳤는데 판이 \textbf{정확히} $+$0.0000 이었다. 노트 187이
+``넷째 자리까지 안 움직이면 모형에 안 닿은 것''이라고 규약으로 박아 두지
+않았으면 ``효과 없음''으로 적고 넘어갔을 것이다.
+\item 노트 266 --- 후보가 \textbf{너무 잘 통과했다}. 웹툰 태그보다 센
+$+$0.285 가 나와서 노트 133(첫 양수를 그대로 채택하지 않는다)에 걸려 갈랐다.
+\item 노트 270 --- 표에 도메인이 여덟인데 게임이 없었다. \textbf{세어 봐서}
+알았다.
+\end{itemize}
+
+세 규약(노트 187 · 133 · 세어 보기)이 각각 한 번씩 잡았다. \textbf{규약이
+없었으면 셋 다 통과했을 것이고, 셋 다 논문으로 나갔을 것이다.}
+
+\paragraph{남은 것}
+\begin{center}\small
+\begin{tabular}{ll}
+\hline
+갈래 & 왜 \\
+\hline
+남은 손 코드 & \texttt{rows} 안 쓰는 곳이 아직 많다 \\
+웹툰 시계 몫 0.77 & 몫 27\% 라 판에 제일 크게 실린다 \\
+\texttt{SOURCE} & 34/45 쌍 \\
+만화 · 아이돌 & 표본이 작아 여러 검사를 못 한다 \\
+\hline
+\end{tabular}
+\end{center}
+
+\paragraph{규약} 재는 코드를 새로 쓸 때 \textbf{어느 행을 보고 있는지 이름으로
+적는다.} 손으로 만든 불리언은 세 번 다 틀렸다. 그리고 새 코드가 처음 낸
+수치는 --- 좋든 나쁘든 --- \textbf{행 수를 세어 본다.}
+
+\end{document}

@@ -1,0 +1,86 @@
+{
+ "market_record_id": "MKT-2022-0003",
+ "event_name": "지누스(ZINUS) 현대백화점 릴레이 팝업스토어 시리즈",
+ "brand": "지누스(현대백화점그룹 계열)",
+ "ip_or_collab": null,
+ "category": "other",
+ "intervention": {
+  "concept_description": "매트리스 브랜드 오프라인 체험 강화 목적 현대백화점 순회 팝업(더현대서울·천호점·킨텍스점·울산점 등 7개 점포+미아점)",
+  "experience_elements": [
+   "매트리스 체험·판매"
+  ],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "현대백화점 7개 점포(더현대서울·천호점·킨텍스점·울산점 등)+미아점",
+  "venue_type": "department_store",
+  "neighborhood": "여의도·천호·일산·울산 등",
+  "city": "서울 외 다수",
+  "period_from": "2022-09-01",
+  "period_to": "2023-03-13",
+  "area_pyeong": null,
+  "multi_store": true,
+  "derived": {
+   "duration": {
+    "days": 194,
+    "weekend_share": 0.29,
+    "holiday_days": 6
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 400000,
+  "visitors_period_days": null,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "지누스 집계 인용 '지난해 9월부터 그동안 지누스의 팝업스토어를 찾은 고객은 40여 만 명에 이르는 것으로 집계됐다' — 전 점포 합산 누적",
+  "visitors_source_quote": "지난해 9월부터 그동안 지누스의 팝업스토어를 찾은 고객은 40여 만 명에 이르는 것으로 집계됐다.",
+  "visitors_source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=308818",
+  "visitors_source_date": "2023-03-13",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": true,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "한국형 제품은 초도물량 2만여 개가 두 달 만에 완판되는 등 높은 성장세를 보이고 있다.",
+    "올해 1~2월 지누스 국내사업 매출은 지난해 같은 기간보다 56% 늘어났다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "기간은 2022-09~2023-03(보도일 기준 '그동안'). 40만명은 전 점포 합산 누적이며 '여' 표현. 리빙 카테고리→other | 병합 레코드: ",
+ "_aggregate": true,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "집계형(통합/합산)",
+ "verification": {
+  "visitors": "quote_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

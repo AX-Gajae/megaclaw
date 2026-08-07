@@ -1,0 +1,73 @@
+{
+  "market_record_id": "MKT-2023-0005",
+  "event_name": "아카이브 볼드 팝업스토어(현대백화점 판교점)",
+  "brand": "아카이브 볼드(핸드허그)",
+  "ip_or_collab": null,
+  "category": "fashion",
+  "intervention": {
+    "concept_description": "스트리트 캐주얼 브랜드, 23SS 신상품 오프라인 첫 공개. 시그니처 939 로고 스웻팬츠 등 인기상품 세일로 오픈런 대기열",
+    "experience_elements": [
+      "신상품 선공개"
+    ],
+    "promotions": [
+      "이전 시즌 인기상품 세일"
+    ],
+    "is_free_entry": null,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "현대백화점 판교점",
+    "venue_type": "department_store",
+    "neighborhood": "판교",
+    "city": "성남",
+    "period_from": "2023-02-24",
+    "period_to": "2023-03-02",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 7,
+        "weekend_share": 0.29,
+        "holiday_days": 1
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 7,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "브랜드 측 성료 보도 '현대백화점 판교점에서 2월 24일부터 일주일간 팝업스토어를 진행하고 매출 1억을 달성하며 성황리에 종료'",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": 100000000,
+    "sales_source_quote": "핸드허그(대표 박준홍)의 스트리트 캐주얼 브랜드 '아카이브 볼드'가 현대백화점 판교점에서 2월 24일부터 일주일간 팝업스토어를 진행하고 매출 1억을 달성하며 성황리에 종료했다.",
+    "sales_source_url": "http://www.apparelnews.co.kr/news/news_view/?idx=204302&cat=CAT100",
+    "sales_source_date": "2023-03-08",
+    "demand_signals": {
+      "waiting_time_reported": true,
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "시그니처 제품인 939 로고 스웻팬츠를 비롯해 후드, 재킷, 티셔츠, 모자 등 아카이브볼드의 이전 시즌 인기상품 세일 소식에 길게 줄을 서는 등 반응이 뜨거웠다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "어패럴뉴스 2023-03-08 보도 | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {
+    "sales": "verified"
+  },
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

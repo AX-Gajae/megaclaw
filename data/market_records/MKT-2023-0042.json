@@ -1,0 +1,104 @@
+{
+ "market_record_id": "MKT-2023-0042",
+ "event_name": "SEVENTEEN STREET in Seongsu (세븐틴 스트리트 인 성수)",
+ "brand": "플레디스엔터테인먼트",
+ "ip_or_collab": "세븐틴(SEVENTEEN)",
+ "category": "character",
+ "intervention": {
+  "concept_description": "세븐틴 미니 11집 'SEVENTEENTH HEAVEN' 발매 연계 성수동 일대 팝업 이벤트. 팝업 '17th HEAVEN', 아트월, 컬래버레이션 매장으로 구성.",
+  "experience_elements": [
+   "팝업스토어",
+   "아트월",
+   "컬래버 매장"
+  ],
+  "promotions": [
+   "협업 매장 연계"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "성수동 일대(서울 성동구)",
+  "venue_type": "other",
+  "neighborhood": "성수",
+  "city": "서울",
+  "period_from": "2023-10-04",
+  "period_to": "2023-10-09",
+  "area_pyeong": null,
+  "multi_store": true,
+  "derived": {
+   "duration": {
+    "days": 6,
+    "weekend_share": 0.33,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 100000,
+  "visitors_period_days": 6,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "플레디스 발표(싱글리스트 보도 인용)",
+  "visitors_source_quote": "팝업 '17th HEAVEN', 아트월, 컬래버레이션 매장으로 구성된 'SEVENTEEN STREET in Seongsu'에는 엿새 동안 약 10만 명이 다녀갔다.",
+  "visitors_source_url": "https://slist.kr/news/articleView.html?idxno=489330",
+  "visitors_source_date": "2023-10-11",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": "체험 프로그램 사전예약 시작과 동시에 매진",
+   "signal_quotes": [
+    "방문자 4명 중 1명이 외국인이었다. (싱글리스트 2023-10-11)",
+    "협업 매장 매출이 평소 대비 3배가량 증가했다. (싱글리스트 2023-10-11)",
+    "커스텀 키링 만들기 체험과 콘셉트 포토존인 ‘FESTIVAL HOUSE’…우주공장 배경의 포토존 ‘우주공장 LISTENING ROOM’은 사전예약 시작과 동시에 매진되는 등 폭발적인 반응을 얻었다.",
+    "이번 ‘세븐틴 스트리트’와 협업한 매장들은 “좋은 입지의 매장이 아님에도 ‘세븐틴 스트리트’와의 협업을 통해 매출이 약 3배 증가하는 등"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "D",
+   "flags": [
+    "D"
+   ],
+   "why": "스코프 혼합(합산/총계) 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "성수동 일대 유동 포함 가능성(행사 전체 집계) | 병합 레코드: MKT-2023-0005 | [병합:MKT-2023-0005] 외국인 비중 약 25%(4명 중 1명). 협업 상점 매출 약 3배 증가.",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 100000,
+   "basis": "organizer_claim",
+   "quote": "팝업 ‘17th HEAVEN’, 아트월, 컬래버레이션 매장으로 구성된 ‘SEVENTEEN STREET in Seongsu’에는 엿새 동안 약 10만 명이 다녀갔다. 방문자 4명 중 1명이 외국인일 정도로 전 세계에서 방문객이 몰렸고",
+   "url": "https://www.slist.kr/news/articleView.html?idxno=489330",
+   "date": "2023-10-11"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

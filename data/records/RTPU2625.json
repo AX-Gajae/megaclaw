@@ -1,0 +1,122 @@
+{
+ "record_id": "RTPU2625",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:웨이든_SEEC",
+  "space_id": "unresolved:상해_전시장소미상",
+  "client_party_id": "unresolved:웨이든_황은비_대리",
+  "brand_key": "웨이든",
+  "space_key": "상해"
+ },
+ "intervention": {
+  "concept": "중국 상해에서 열린 시크(SEEC) 브랜드 전시회 내 웨이든 부스 시공·설치 프로젝트다. 일반 소비자 대상 팝업이 아니라 전시회 부스 용역(B2B 시공) 성격이다. 방화/방염 자재 등을 활용한 부스 구조물 설치·연출 중심이다.",
+  "brand_name": "웨이든(Weiden) / 시크(SEEC)",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [
+   "전시부스시공",
+   "방화방염자재",
+   "상해전시회"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "상해",
+   "district": null,
+   "venue_name": null,
+   "venue_type": "전시회장",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2026-03-11",
+   "to": "2026-03-13",
+   "days": 3
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "견적 총계 12,800,000원 (VAT 10% 별도). 항목: 상하이 시크 전시회 웨이든 부스 용역(부스제작·설치·물류 등). 선금/중도금/잔금 분할 및 수수료율 정보는 견적서에 명시되지 않음. 참고: 계약예산 15,000,000원이었으나 실현매출 12,800,000원으로 하향."
+  },
+  "brand_requirements": [
+   "방화/방염(防火阻燃) 자재 사용"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 4.1,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 9,
+    "holiday_until": 73,
+    "holiday_block_in": 0,
+    "nat_event_gap": 84,
+    "nat_event": null,
+    "doc_lag_days": 14,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 30000.0,
+    "pnl_pre_accounts": 1,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2026-02-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 12.8
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(전시 부스 시공 프로젝트로 방문객/현장 정량 성과 데이터 없음. 12,800,000원은 소비자 POS 매출이 아니라 서비스매출(용역 계약금액)이므로 outcome.sales_krw에 포함하지 않음. 예산/기대이윤 15,000,000원(KPI), 판관비 누적 9,386,067원, 누적 순손실 약 -3,449,733원(국제 물류비 4.22M 부담이 마진 잠식).). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식액 12.8 ≈ 계약총액 12.8 (±10%)",
+   "contract_total_mm": 12.8,
+   "last_recognition_period": "2026-03"
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "1AQL86eSSZnKNH-I2iRZWGlZ83K0sf77e",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1AQL86eSSZnKNH-I2iRZWGlZ83K0sf77e/view",
+   "title": "결과보고서_없음(운영자체진행).txt"
+  },
+  {
+   "doc_id": "1brAeJC5xCgSvLK8NH3QrQY6NyJnOXIUq",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1brAeJC5xCgSvLK8NH3QrQY6NyJnOXIUq/view",
+   "title": "260225_Sweetspot_웨이든_상해시크전시_견적서(최종).pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 1건: 260225_Sweetspot_웨이든_상해. 미확실: 상해 현지 정확한 전시 장소·주소·공간명; 부스 면적(평); 견적서 세부 항목별 단가(원문 텍스트 깨짐); 선금/중도금/잔금 분할 및 수수료율/RS 조건; 웨이든과 시크(SEEC)의 계약/브랜드 관계; 시공/물류 외주 업체 실명; 방문객 등 현장 정량 성과 지표 부재(전시 특성); 예산 15M→매출 12.8M 하향 및 적자 공식 사유"
+ }
+}

@@ -1,0 +1,78 @@
+{
+ "선형성": {
+  "n": 75,
+  "reps": 40,
+  "확장": [
+   {
+    "확장": "선형만",
+    "차원": 5,
+    "median": -0.0354,
+    "mean": -0.0331,
+    "sd": 0.0105,
+    "win_rate": 1.0
+   },
+   {
+    "확장": "+제곱",
+    "차원": 10,
+    "median": -0.0267,
+    "mean": -0.0259,
+    "sd": 0.013,
+    "win_rate": 0.95
+   },
+   {
+    "확장": "+상호작용",
+    "차원": 15,
+    "median": 0.0071,
+    "mean": 0.0076,
+    "sd": 0.0178,
+    "win_rate": 0.325
+   },
+   {
+    "확장": "전부",
+    "차원": 20,
+    "median": -0.0061,
+    "mean": -0.0052,
+    "sd": 0.0196,
+    "win_rate": 0.575
+   }
+  ]
+ },
+ "선택_ridge": {
+  "lane": "ridge",
+  "folds_selected": 40,
+  "속성별_선택률": {
+   "target_breadth": 0.875,
+   "goods_scale": 0.85,
+   "venue_prominence": 0.825,
+   "entry_friction": 0.675,
+   "photo_zones": 0.525,
+   "media_push": 0.5,
+   "collab_strength": 0.375,
+   "season_fit": 0.2,
+   "ip_awareness": 0.1,
+   "experience_density": 0.075
+  },
+  "자카드_평균": 0.52,
+  "중첩선택_vs_상수": {
+   "median": 0.0019,
+   "win_rate": 0.5
+  }
+ },
+ "선택_gbdt": {
+  "lane": "gbdt",
+  "folds_selected": 4,
+  "출처": "노트5 시간순 4폴드",
+  "속성별_선택률": {
+   "goods_scale": 1.0,
+   "collab_strength": 1.0,
+   "target_breadth": 0.75,
+   "venue_prominence": 0.75,
+   "media_push": 0.5,
+   "entry_friction": 0.25,
+   "ip_awareness": 0.25,
+   "experience_density": 0.25,
+   "photo_zones": 0.25,
+   "season_fit": 0.0
+  }
+ }
+}

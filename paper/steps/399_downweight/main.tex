@@ -1,0 +1,114 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{배선을 고치니 거부권이 사라졌다 --- 줄이는 쪽 가중 채택, 그리고 앙상블 하나에 속을 뻔한 이야기}
+\author{월드모델 실험실}
+\date{노트 514 · 2026년 8월 3일}
+\maketitle
+
+\begin{abstract}
+노트 511 이 \textbf{줄이는 쪽 가중}($\min(w,1)$: 만화 $0.25$ · 세계애니
+$0.61$)을 노트 446 거부권으로 보류했다 --- 판이 오르는데 날짜 통제 판이
+$-0.0005$($14/40$) 내려간다고.
+
+노트 513 이 그 실험의 기준이 \textbf{잘못된 배선}(\texttt{DOMDROP} 이 예보
+전용)이었음을 찾았다. 고친 배선에서 다시 쟀다.
+
+\begin{center}
+\begin{tabular}{lrrl}
+\hline
+자 & 차 & 부호 & $95\%$ 구간 \\
+\hline
+판 & $+0.0010$ & $28/40$ & $[+0.0004, +0.0016]$ \\
+\textbf{날짜 통제 판} & $\mathbf{-0.0000}$ & $18/40$ & $[-0.0007, +0.0006]$ \\
+무리 안 판 & $+0.0019$ & $33/40$ & $[+0.0012, +0.0026]$ \\
+\textbf{KR 만화} & $\mathbf{+0.0155}$ & $\mathbf{40/40}$ & $[+0.0129, +0.0181]$ \\
+비게임 앱 & $+0.0026$ & $23/40$ & $[+0.0004, +0.0047]$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{날짜 통제 판이 안 움직인다}($-0.0005 \to -0.0000$, $14/40 \to
+18/40$). \textbf{거부권의 전제가 사라졌다.} 나머지 넷은 전부 $0$ 밖
+양수이고 \textbf{KR $40/40$ 은 부호 일치로 이 실험실 최고}다.
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 자 다섯. \textbf{나} --- 앙상블 여섯 블록.
+\textbf{다} --- 집 밖을 사는 채택들.}
+\end{figure}
+
+\section{앙상블 하나에 속을 뻔했다}
+
+노트 509 가 만든 조항대로 배포 모양에서 다시 쟀다. \textbf{$6$-앙상블을
+한 번 돌리니 판이 $-0.0012$ 였다.} 채택을 접고 보류로 되돌렸다.
+
+그런데 그것은 \emph{짝 없는 한 번}이었다. 블록 여섯을 짝지어 다시 재니 ---
+
+\begin{center}
+\begin{tabular}{lrrrrrr}
+\hline
+블록 & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ \\
+\hline
+판 차 & $\mathbf{-0.0012}$ & $+0.0017$ & $+0.0010$ & $+0.0002$ & $+0.0004$ & $+0.0018$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{처음 잰 그 하나가 여섯 중 유일한 음수였다.} 평균 $+0.0006$ ·
+$5/6$.
+
+\begin{quote}
+\textbf{조항} --- \textbf{앙상블로 확인할 때도 짝지어 여러 블록을 잰다.}
+앙상블은 씨앗 잡음을 줄이지 \emph{없애지} 않는다. 앙상블 한 번은 씨앗
+하나와 같은 지위다 --- 노트 476 이 단일 모형에 대해 적은 것이 앙상블에도
+그대로 적용된다.
+\end{quote}
+
+\section{채택과 되돌림 조건}
+
+\texttt{TRAINW}(유보 행 수 표) $+$ \texttt{TRAINW\_CLIP = (0.2, 1.0)}.
+\textbf{유보 행 수만 쓰고 라벨은 안 본다} --- 채점 목적함수의 정의다.
+다만 \textbf{채점 집합이 바뀌면 이 표도 바뀌어야 한다.}
+
+앙상블 날짜 통제 판이 $-0.0004$($2/6$)로 조금 내려간다. 힘이 센 자
+(짝 씨앗 $40$)에서는 $-0.0000$($18/40$)이라 거부권이 안 서지만, 표본이
+작은 쪽이 반대를 가리킨다.
+
+\begin{quote}
+\textbf{미리 적는 되돌림 조건} --- \textbf{앙상블 블록 $12$ 로 날짜 통제
+판을 다시 재서 확실한 음수면 되돌린다.} 되돌린 상태의 이름은
+``\texttt{TRAINW} 가 \texttt{None} 인 F18''.
+\end{quote}
+
+\section*{이 사이클의 챔피언}
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+\texttt{DOMDROP} & \texttt{\{"애니": ("trend\_",)\}} (노트 $498 \cdot 513$) \\
+\texttt{TRAINCAP} & \texttt{\{"만화": 0.5\}} (노트 509) \\
+\texttt{TRAINW} & 유보 무게 · clip $(0.2, 1.0)$ (이 노트) \\
+\hline
+판 & $0.4812 \to \mathbf{0.4909}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{세 채택이 전부 ``자료를 어떻게 쓸까''이지 ``모형을 어떻게 만들까''가
+아니다.} 노트 $505 \cdot 506$ 이 모형 갈래를 닫은 뒤로 이 실험실이 번 것은
+전부 자료 쪽에서 나왔다.
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{앙상블 블록 $12$ 확인} --- 되돌림 조건.
+\item \textbf{연도 고정 가중}(노트 512 사전 등록) --- 아직 안 잼.
+\item \textbf{clip 하한 $0.2$} --- 만화가 $0.25$ 라 안 걸리지만 하한을
+더 내리면 어떤지 안 봤다.
+\end{itemize}
+
+\end{document}

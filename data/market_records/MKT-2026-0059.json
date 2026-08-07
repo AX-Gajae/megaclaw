@@ -1,0 +1,97 @@
+{
+ "market_record_id": "MKT-2026-0059",
+ "event_name": "토니모리 '언커먼 팩토리' 팝업(성수)×아이브 리즈",
+ "brand": "토니모리",
+ "ip_or_collab": "토니모리×아이브 리즈(브랜드 앰배서더)",
+ "category": "entertainment",
+ "intervention": {
+  "concept_description": "브랜드 앰배서더 아이브 리즈와 협업한 토니모리 팝업. 제품 체험·포토존·한정 키트, 사전예약제",
+  "experience_elements": [
+   "제품 체험",
+   "포토존",
+   "한정 키트 판매"
+  ],
+  "promotions": [
+   "사전 예약 한정 혜택"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "성수 연무장길 99",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2026-07-17",
+  "period_to": "2026-07-26",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 900,
+  "visitors_period_days": 10,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "일평균 방문객 수치(총계 아님). 원문: '하루 평균 900여 명이 넘는 방문객들이 팝업스토어를 찾고 있다' — 총계 계산 금지 원칙에 따라 일평균 값만 기록",
+  "visitors_source_quote": "토니모리 측은 사전예약 오픈 후 약 1시간 만에 주요 회차가 매진된 지난 주말과 주일을 비롯, 하루 평균 900여 명이 넘는 방문객들이 팝업스토어를 찾고 있다고 공개했다.",
+  "visitors_source_url": "https://www.newscj.com/news/articleView.html?idxno=3418895",
+  "visitors_source_date": "2026-07-22",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": "사전예약 오픈 약 1시간 만에 주요 회차 매진",
+   "signal_quotes": [
+    "사전예약 오픈 후 약 1시간 만에 주요 회차가 매진된",
+    "토니모리는 지난 주말 사전예약 오픈 약 1시간 만에 주요 회차가 마감된 데 이어 현재까지 하루 평균 900여 명이 팝업스토어를 찾고 있다고 22일 밝혔다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": true,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": true,
+   "final_marked": false,
+   "usable": false
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "브랜드 팝업(아이돌 앰배서더 협업). 운영 중간 보도(7/22). 기간 2026-07-17~26. | 병합 레코드: MKT-2026-0013 | [병합:MKT-2026-0013] 출처: 패션비즈 https://fashionbiz.co.kr/article/228051 (2026-07-22). 수집 시점(7/24) 기준 운영 진행 중.",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

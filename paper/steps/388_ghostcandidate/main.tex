@@ -1,0 +1,113 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{유령 후보 --- 제일 커 보이던 짝은 그 도메인에 그 축이 없었다}
+\author{월드모델 실험실}
+\date{노트 503 · 2026년 8월 3일}
+\maketitle
+
+\begin{abstract}
+노트 502 가 ``집 밖 짝이 안 갖는 축만 도메인별 가림이 안전하다''는 조항을
+냈다. 그 조항이 지목한 안전한 사냥터(위키 $\cdot$ 태그 $\cdot$ gen
+$\cdot$ grp)를 인구조사하고 제일 큰 후보들을 관문에 태웠다.
+
+\textbf{두 가지가 한꺼번에 반증됐다 --- 하나는 바로 앞 노트의 조항이다.}
+
+\begin{enumerate}
+\item \textbf{\texttt{grp} 은 집 밖 짝에 $0\%$ 인데도 전이를 판다} ---
+웹툰 \texttt{grp} 을 빼면 KR 만화 $-0.0106$($0/10$) · 비게임 앱
+$-0.0100$($0/10$). \textbf{노트 502 조항은 하루도 못 갔다.}
+\item \textbf{인구조사 후보 $22$ 짝 중 $10$ 짝은 그 도메인에 그 축이
+아예 없다.} $1$ 등이던 팝업 \texttt{gen}($+0.0475$)은 팝업의
+\texttt{gen} 덮음이 $\mathbf{0\%}$ 다. 실제로 팝업 \texttt{gen} 만 빼면
+자 다섯이 \textbf{전부 정확히 $+0.0000$} --- 모형이 비트 단위로 같다.
+\end{enumerate}
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 사냥터 크기. \textbf{나} --- 관문.
+\textbf{다} --- 유령 후보.}
+\end{figure}
+
+\section{인구조사가 무엇을 재고 있었나}
+
+인구조사는 축 하나를 \textbf{전 도메인에서} 빼고 도메인별 점수 차를
+읽는다. 그러면 그 도메인에 그 축이 \emph{없어도} 수가 나온다 --- 다른
+도메인에서 빠진 것이 공유 열을 바꾸기 때문이다(노트 498 조항: 한 칸을
+바꾸면 모든 칸이 바뀐다).
+
+$0\%$ 덮음인데 인구조사에 값이 실린 짝: 팝업 gen $+0.0475$ · 아이돌 grp
+$+0.0094$ · 팝업 grp $-0.0152$ · 아이돌 gen $-0.0128$ · 도서 gen
+$+0.0020$ · 시장팝업 gen $\cdot$ grp · 웹툰 gen · 펀딩 gen · 만화 grp.
+
+\begin{quote}
+\textbf{조항} --- \textbf{인구조사에서 후보를 뽑기 전에 그 도메인의 그 축
+덮음을 본다.} $0\%$ 면 그 수는 \emph{이웃 효과}이고 후보가 아니다.
+그 도메인에서 그 축을 빼는 일은 \textbf{정의상 아무 일도 안 한다.}
+\end{quote}
+
+이 조항은 노트 497 에도 소급된다 --- 거기 \texttt{target\_breadth} 표는
+덮음이 다 $83 \sim 100\%$ 라 무사하지만, \emph{확인하고} 무사한 것이 아니라
+\emph{운좋게} 무사했다.
+
+\section{집 밖은 미리 못 짚는다}
+
+노트 502 의 기계 설명은 그럴듯했다 --- 집 밖이 갖는 축을 줄이면 집 밖이
+무너지고, 안 갖는 축을 줄이면 안 무너진다. 그런데 \texttt{grp}(집 밖
+$0\%$)이 집 밖을 판다. 정리하면 이렇다.
+
+\begin{center}
+\begin{tabular}{lllr}
+\hline
+가림 & 집 밖 덮음 & 집 밖 결과 & \\
+\hline
+애니 트렌드 & $0\%$ & \textbf{산다} & KR $+0.0152$ \\
+웹툰 \texttt{grp} & $0\%$ & \textbf{판다} & KR $-0.0106$ \\
+세계애니 \texttt{grp} & $0\%$ & 비긴다 & KR $+0.0073$ · 앱 $-0.0017$ \\
+웹툰 \texttt{tb} & $100\%$ & 판다 & KR $-0.0303$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{덮음으로는 부호가 안 정해진다.} 집 밖 행은 그 축이 없어도 그 축의
+\emph{갈래}를 지나가고(결측 쪽으로 떨어진다), 그 갈래 너머에 무엇이 있는지는
+학습이 정한다.
+
+\begin{quote}
+\textbf{조항} --- \textbf{집 밖 효과는 미리 못 짚는다. 재야 안다.}
+노트 502 의 사전 거르개는 폐기한다. 남는 것은 관문뿐이다.
+\end{quote}
+
+\section{그래도 하나 남았다}
+
+\begin{center}
+\begin{tabular}{lrrrrr}
+\hline
+팔 & 판 & 날짜 통제 & 무리 안 & KR & 앱 \\
+\hline
+$+$세계애니 \texttt{grp} & $+0.0018$ $8/10$ & $+0.0011$ $8/10$ & $+0.0011$ $6/10$ & $+0.0073$ $7/10$ & $-0.0017$ $4/10$ \\
+\hline
+\end{tabular}
+\end{center}
+
+자 다섯 중 넷이 양수고 앱만 $-0.0017$ 인데 부호가 $4/10$ 이라 방향이
+없다. \textbf{통과도 기각도 아니다} --- 씨앗을 늘려 다시 보아야 하는
+유일한 후보다.
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{세계애니 \texttt{grp} 을 씨앗 $20$ 으로} --- 앱 $-0.0017$
+$4/10$ 이 잡음인지 아닌지가 전부다.
+\item \textbf{덮음 $\geq 1\%$ 인 (도메인, 축) 짝만으로 인구조사를 다시
+읽기} --- 이번 표의 절반이 유령이었으니 노트 497 $\cdot$ 503 의 후보
+목록을 다시 세워야 한다.
+\item \textbf{두 노트 연속으로 조항을 냈다가 다음 노트에서 죽였다}(노트
+$493 \to 494$, $502 \to 503$). \textbf{기계 설명이 그럴듯할수록 빨리
+쓰고 있다.} 조항을 낼 때 \emph{반증 예측}을 같이 적어야 한다.
+\end{itemize}
+
+\end{document}

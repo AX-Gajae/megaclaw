@@ -1,0 +1,92 @@
+{
+ "market_record_id": "MKT-2025-0062",
+ "event_name": "포켓몬 지하철 스탬프 랠리(부산)",
+ "brand": "부산교통공사/포켓몬코리아",
+ "ip_or_collab": "포켓몬",
+ "category": "character",
+ "intervention": {
+  "concept_description": "포켓몬 테마로 꾸민 부산 도시철도 6개 역사를 순회하는 스탬프 랠리. 2025-07-25~08-17 운영.",
+  "experience_elements": [
+   "스탬프 랠리",
+   "포켓몬 랩핑 역사",
+   "굿즈 판매"
+  ],
+  "promotions": [
+   "QR 승차권 연계"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "부산 도시철도 6개 역사 일대",
+  "venue_type": "other",
+  "neighborhood": "부산 전역",
+  "city": "부산",
+  "period_from": "2025-07-25",
+  "period_to": "2025-08-17",
+  "area_pyeong": null,
+  "multi_store": true,
+  "derived": {
+   "duration": {
+    "days": 24,
+    "weekend_share": 0.33,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 7,
+    "months_since_last": 3.0,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 400000,
+  "visitors_period_days": 24,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "부산교통공사 추산치(참가자 추산, 부산일보 보도 인용)",
+  "visitors_source_quote": "부산교통공사(이하 공사)는 지난달 25일부터 지난 17일까지 실시한 스탬프 랠리 참가자가 40만 명으로 추산된다고 18일 밝혔다.",
+  "visitors_source_url": "https://www.busan.com/view/busan/view.php?code=2025081818312504838",
+  "visitors_source_date": "2025-08-18",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "포켓몬 디자인의 QR 승차권은 약 21만 장, 3억 원 상당이 판매됐다. (부산일보 2025-08-18)",
+    "행사 기간 도시철도 승객이 전년 같은 기간보다 104만 8000명(4.2%) 늘어난 수치다. (부산일보 2025-08-18)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "E"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "참가자 '추산' 수치(주최측 추정). 상점가 연계 팝업 부스 포함된 도시형 캐릭터 이벤트 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

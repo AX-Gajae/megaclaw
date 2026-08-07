@@ -1,0 +1,93 @@
+{
+ "market_record_id": "MKT-2023-0047",
+ "event_name": "아비에무아(Àvie Muah) 더현대 서울 팝업스토어",
+ "brand": "아비에무아 (강민경)",
+ "ip_or_collab": "하트 폰 놉(Phone Knob) 팝업 단독 판매",
+ "category": "fashion",
+ "intervention": {
+  "concept_description": "인플루언서 강민경 패션 브랜드 팝업, 2023 겨울 컬렉션 일부 단독 선공개, 대형 폰 놉 오브제",
+  "experience_elements": [
+   "대형 오브제 전시",
+   "럭키드로우(카카오 친구 추가 시 100% 당첨)"
+  ],
+  "promotions": [
+   "전 품목 10% 할인",
+   "폰 놉 일 200개 한정 판매"
+  ],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "더현대 서울",
+  "venue_type": "department_store",
+  "neighborhood": "여의도",
+  "city": "서울",
+  "period_from": "2023-10-26",
+  "period_to": "2023-11-08",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 30000,
+  "visitors_period_days": 14,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "아비에무아 측 발표 인용. 일 최대 방문자 3500명",
+  "visitors_source_quote": "아비에무아 측에 따르면 이번 팝업스토어 누적 방문자 수는 3만 명, 일 최대 방문자 수는 3천 5백명에 이르러 2주간 진행된 팝업스토어에서 총 5억원의 매출을 달성했다고 밝혔다.",
+  "visitors_source_url": "https://tnnews.co.kr/archives/156791",
+  "visitors_source_date": "2023-11-09",
+  "sales_krw": 500000000,
+  "sales_source_quote": "아비에무아(대표 강민경)의 패션 브랜드 '아비에무아'가 지난 2주간 진행된 더현대서울 팝업스토어에서 매출 총 5억원을 달성, 누적 방문자수는 3만명이 넘었다.",
+  "sales_source_url": "https://fashionbiz.co.kr/article/203900",
+  "sales_source_date": "2023-11-17",
+  "demand_signals": {
+   "waiting_time_reported": "오픈런 행렬",
+   "sold_out": "하트 폰 놉 일 한정 200개 오전 중 판매 마감, 겨울 컬렉션 선공개 품목 빠르게 소진",
+   "reservation_fill": null,
+   "signal_quotes": [
+    "특히, 아비에무아의 시그니처 품목이자 이번 팝업스토어에서만 단독으로 판매된 하트 폰 놉(Phone Knob)은 일 한정 판매 수량인 200개가 오전 중 판매 마감될 정도로 방문객으로부터 뜨거운 호응을 얻었다.",
+    "하루 방문객은 3500명이 넘었고, 오픈런 행렬이 이어지기도 했다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "일 최대 방문자: tnnews '3천 5백명', fashionbiz '하루 방문객 3500명이 넘었고'. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified",
+  "sales": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

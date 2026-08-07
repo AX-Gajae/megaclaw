@@ -1,0 +1,92 @@
+{
+ "market_record_id": "MKT-2026-0023",
+ "event_name": "NCT WISH 'Ode to Love' 팝업(더현대 서울)",
+ "brand": "SM엔터테인먼트",
+ "ip_or_collab": "NCT WISH",
+ "category": "entertainment",
+ "intervention": {
+  "concept_description": "NCT WISH 팝업스토어. 사운즈 포레스트 전시존(자유입장)+에픽서울 MD존(사전예약)",
+  "experience_elements": [
+   "전시존",
+   "MD존",
+   "포토존"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "더현대 서울",
+  "venue_type": "department_store",
+  "neighborhood": "여의도",
+  "city": "서울",
+  "period_from": "2026-04-21",
+  "period_to": "2026-05-03",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 13,
+    "weekend_share": 0.31,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 2.4,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 13000,
+  "visitors_period_days": 13,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "SM 발표. 원문: '13일간 약 1만 3천 명이 방문'",
+  "visitors_source_quote": "지난달 21일부터 이달 3일까지 13일간 진행된 이번 팝업스토어에는 약 1만 3천 명이 방문했다.",
+  "visitors_source_url": "https://www.spotvnews.co.kr/news/articleView.html?idxno=787981",
+  "visitors_source_date": "2026-05-05",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": "MD존 사전 예약 전 회차 매진",
+   "signal_quotes": [
+    "에픽서울에서 운영된 MD존은 사전 예약 전 회차 매진을 기록했다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "SM 공식 성료 보도. | 병합 레코드:  | 검증 실패(2026-07-27): visitors 출처 기사에서 수치 미확인/무관 — anchor 사용 금지",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "failed"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,97 @@
+{
+ "market_record_id": "MKT-2024-0041",
+ "event_name": "포지타노의 태양(더현대 서울 사운즈포레스트 여름 행사)",
+ "brand": "현대백화점(자체 기획)",
+ "ip_or_collab": "포지타노(이탈리아 휴양지) 테마",
+ "category": "other",
+ "intervention": {
+  "concept_description": "초대형 해외 휴양지 콘셉트 여름 시즌 행사. 3300㎡ 실내정원을 이탈리아 포지타노처럼 조성, 상품 판매 코너 '태양 마켓'(와인·발사믹·젤라토 등 50여종) 운영",
+  "experience_elements": [
+   "포지타노 테마 정원 공간",
+   "태양 마켓(상품 50여종)"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "더현대 서울 5층 사운즈포레스트",
+  "venue_type": "department_store",
+  "neighborhood": "여의도",
+  "city": "서울",
+  "period_from": "2024-06-28",
+  "period_to": "2024-07-17",
+  "area_pyeong": null,
+  "multi_store": true,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(invite)",
+   "access_type": "invite"
+  },
+  "derived": {
+   "duration": {
+    "days": 20,
+    "weekend_share": 0.3,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 100000,
+  "visitors_period_days": 10,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "현대백화점 관계자 인용 '더현대 서울은 최근 초대형 해외 휴양지 콘셉트 포지타노의 태양 행사를 선보이며 열흘간 10만명의 방문객을 모았다. 행사 첫날인 지난달 28일부터 이달 7일까지 10일간 하루 평균 1만명이 방문한 것이다'",
+  "visitors_source_quote": "더현대 서울은 최근 초대형 해외 휴양지 콘셉트 '포지타노의 태양' 행사를 선보이며 열흘간 10만명의 방문객을 모았다. 행사 첫날인 지난달 28일부터 이달 7일까지 10일간 하루 평균 1만명이 방문한 것이다.",
+  "visitors_source_url": "https://www.smedaily.co.kr/news/articleView.html?idxno=297508",
+  "visitors_source_date": "2024-07-16",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "공간 내 마련된 상품 판매 코너 '태양 마켓'도 큰 관심을 모았다. 이곳에선 와인과 프리미엄 발사믹 식초, 젤라토 등 이탈리아 대표 기념품으로 꼽히는 상품 50여종을 판매하는데, 하루 평균 매출이 지난해 크리스마스 마켓보다 70% 높은 것으로 나타났다.",
+    "보통 6∼8월 사운즈포레스트에 하루 3000명 안팎의 고객이 다녀가는 걸 고려하면 3배 이상 방문했다(현대백화점 관계자)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": true,
+   "final_marked": false,
+   "usable": true,
+   "days_stated": 10,
+   "days_stored": 20,
+   "days_corrected": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "시즌 테마 행사(마켓 포함) 성격. 열흘간 10만명은 원문 총계이며 하루평균은 보조. 전국 16개 점포 동시 테마 중 더현대 서울 수치 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

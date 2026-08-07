@@ -1,0 +1,112 @@
+{
+ "market_record_id": "MKT-2025-0037",
+ "event_name": "듀 가나디 팝업스토어 '가나디의 쿠킹클래스'(더현대 서울)",
+ "brand": "듀 가나디(짤쓸사람 작가)×스위트스팟",
+ "ip_or_collab": "가나디(카카오 이모티콘 캐릭터)",
+ "category": "character",
+ "intervention": {
+  "concept_description": "쿠킹클래스 테마. '나 안아' 대형 풍선·메인 포토존·메시지 월·굿즈존·포토부스 구성, 약 250여 종 굿즈, 팝업 한정 '가나디 셰프' 최초 공개",
+  "experience_elements": [
+   "메인 포토존",
+   "메시지 월",
+   "굿즈존(250여종)",
+   "포토부스",
+   "외벽 대형 풍선"
+  ],
+  "promotions": [
+   "방문객 전원 스티커 증정",
+   "사전예약자 한정 스티커",
+   "구매 금액대별 부채·쇼핑백 증정",
+   "온라인몰 10% 할인쿠폰"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "더현대 서울 지하 2층 아이코닉존",
+  "venue_type": "department_store",
+  "neighborhood": "여의도",
+  "city": "서울",
+  "period_from": "2025-05-15",
+  "period_to": "2025-05-28",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 10000,
+  "visitors_period_days": 13,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "팝업 운영사 스위트스팟이 자사 아티클에서 밝힌 수치 '2주간 운영된 팝업에는 무려 1만명이 넘는 팬들이 다녀갔고 사전 예약 7,000석은 오픈 18분 만에 마감'",
+  "visitors_source_quote": "2주간 운영된 팝업에는 무려 1만명이 넘는 팬들이 다녀갔고 사전 예약 7,000석은 오픈 18분 만에 마감 되며 뜨거운 관심을 입증했어요.",
+  "visitors_source_url": "https://www.sweetspot.co.kr/contents_blog/?bmode=view&idx=169384227",
+  "visitors_source_date": "2026-01-09",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": true,
+   "sold_out": "콜라보 제품 출시마다 완판(누적 표현)",
+   "reservation_fill": true,
+   "signal_quotes": [
+    "지난 7일에 진행된 사전 예약은 오픈과 동시에 순식간에 매진되었고 운영 첫날에는 오전 11시에 현장 예약이 마감되며 가나디 팝업스토어에 대한 뜨거운 관심을 실감할 수 있었어요.(스위트스팟 2025-05-15)",
+    "사전 예약 7,000석은 오픈 18분 만에 마감"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "운영사 스위트스팟 발표 수치(organizer_claim). 1만명은 '넘는' 하한 표현. 5월 19일 휴무로 실제 운영일 13일 | 병합 레코드: MKT-2025-0020 | [병합:MKT-2025-0020] 스위트스팟 블로그 원문 웹오픈 실패, 검색 추출 전문 기반. 2025년 5월 2주간 운영(정확한 시작·종료일 미기재). 인디 캐릭터(이모티콘) IP로 웹툰 인접 카테고리로 수집.",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 10000,
+   "basis": "organizer_claim",
+   "quote": "가나디는 지난 5월 더현대 서울에서 쿠킹 클래스 콘셉트로 팝업스토어를 선보였어요. 2주간 운영된 팝업에는 무려 1만명이 넘는 팬들이 다녀갔고 사전 예약 7,000석은 오픈 18분 만에 마감되며 뜨거운 관심을 입증했어요.",
+   "url": "https://www.sweetspot.co.kr/contents_blog/?bmode=view&idx=169384227",
+   "date": "2026-01-09"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

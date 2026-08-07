@@ -1,0 +1,123 @@
+{
+ "record_id": "RCGD2401",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:신카이마코토_시네마스토어",
+  "space_id": "unresolved:더현대서울",
+  "client_party_id": null,
+  "brand_key": "신카이마코토",
+  "space_key": "더현대서울"
+ },
+ "intervention": {
+  "concept": "신카이 마코토 감독 작품(스즈메의 문단속, 너의 이름은, 날씨의 아이, 언어의 정원 등) 및 영화 스미코구라시 관련 캐릭터 굿즈를 더현대서울 '신카이마코토 시네마 스토어'에 납품하는 상품 공급 프로젝트.",
+  "brand_name": "신카이마코토 시네마 스토어",
+  "experience_elements": [],
+  "promotions": [
+   "스즈메 증정 부채",
+   "스즈메 쇼핑백 증정",
+   "지역한정 키링(서울/대구)"
+  ],
+  "staging_tags": [
+   "애니메이션 IP 굿즈",
+   "시네마 스토어",
+   "캐릭터 머천다이즈"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "영등포구",
+   "venue_name": "더현대서울",
+   "venue_type": "백화점",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-02-08",
+   "to": "2024-02-08",
+   "days": 1
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": "납품단가는 판매가의 55% 기준. 세금계산서 발행: 발주시점 50% 금액 발행, 납품 후 30일 이내 50% 발행. 지불 예정일: 계산서 발행 후 15일 이내 입금 완료. 발주일 2024-02-06, 제조사 ㈜아이노케이. 총 계약금액 수치는 원문에 명시되지 않음(견적 표 공란)."
+  },
+  "brand_requirements": [
+   "MOQ 1,000개(일부 품목 300개 제작으로 단가 상승)",
+   "납기일 2024-05-24(금)",
+   "바코드(SKU) 부여"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대서울 신카이마코토 시네마 스토어"
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 0.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 38,
+    "holiday_until": 1,
+    "holiday_block_in": 0,
+    "nat_event_gap": 62,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": "서울 영등포구 여의대로 108"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": -10.5
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(본 문서는 상품 리스트/견적/발주 자료로 방문객 및 POS 매출 실측 데이터가 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-02, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-08"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1N-Mqgn0bDNgMdAW5lLpBoHbJh-jViHpx",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1N-Mqgn0bDNgMdAW5lLpBoHbJh-jViHpx/view",
+   "title": "더현대서울 상품 리스트 견적서_240307★내부자료★.xlsx"
+  },
+  {
+   "doc_id": "1Uhd1M0JZTtolBjDJr_GVsxhkWyYaTQj_",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Uhd1M0JZTtolBjDJr_GVsxhkWyYaTQj_/view",
+   "title": "미디어캐슬_상품화권 계약서_날인.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 1건: 더현대서울 상품 리스트 견적서_240307★내부자료★.. 미확실: 방문객 수 및 counting_method 데이터 없음; POS 소비자 매출 실측 없음; 계약 총액 수치 공란; 면적(평) 미기재; 운영 기간이 프로젝트 메타상 단일일(2024-02-08)로 표기되나 실제 스토어 운영 기간 불명확; client_name 미상; fee_structure 유형 판정 불가(납품 단가만 존재)"
+ }
+}

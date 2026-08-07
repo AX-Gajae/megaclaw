@@ -1,0 +1,372 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>11 · 정보 전이장은 학습되고 있나</title>
+<style>
+:root{
+  --ground:#F7F8FA; --surface:#FFFFFF; --surface-2:#F1F4F7;
+  --ink:#131A22; --ink-2:#46525F; --ink-3:#717E8C;
+  --rule:#DCE2E9; --rule-2:#EAEEF2;
+  --measured:#0E7C86; --unmeasurable:#9C6C15; --refuted:#A93A4A; --absent:#8A94A0;
+  --wash:#E7F1F2; --wash-2:#F3F1E7; --wash-3:#F6EAEC;
+  --sans:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --ground:#0B1015; --surface:#111921; --surface-2:#16202A;
+    --ink:#E2E9F0; --ink-2:#A2AFBB; --ink-3:#75828F;
+    --rule:#22303B; --rule-2:#1A252E;
+    --measured:#42B8C1; --unmeasurable:#D6A445; --refuted:#E0808F; --absent:#7C8996;
+    --wash:#153840; --wash-2:#2E2814; --wash-3:#38181E;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0B1015; --surface:#111921; --surface-2:#16202A;
+  --ink:#E2E9F0; --ink-2:#A2AFBB; --ink-3:#75828F;
+  --rule:#22303B; --rule-2:#1A252E;
+  --measured:#42B8C1; --unmeasurable:#D6A445; --refuted:#E0808F; --absent:#7C8996;
+  --wash:#153840; --wash-2:#2E2814; --wash-3:#38181E;
+}
+:root[data-theme="light"]{
+  --ground:#F7F8FA; --surface:#FFFFFF; --surface-2:#F1F4F7;
+  --ink:#131A22; --ink-2:#46525F; --ink-3:#717E8C;
+  --rule:#DCE2E9; --rule-2:#EAEEF2;
+  --measured:#0E7C86; --unmeasurable:#9C6C15; --refuted:#A93A4A; --absent:#8A94A0;
+  --wash:#E7F1F2; --wash-2:#F3F1E7; --wash-3:#F6EAEC;
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--sans); font-size:16.5px; line-height:1.78; -webkit-font-smoothing:antialiased}
+.n{font-family:var(--mono); font-variant-numeric:tabular-nums; font-size:.94em; letter-spacing:-.01em}
+code{font-family:var(--mono); font-size:.9em; background:var(--surface-2);
+  padding:.1em .34em; border-radius:3px; color:var(--ink-2)}
+.sheet{max-width:960px; margin:0 auto; padding:0 clamp(18px,4vw,40px);
+  min-height:100vh; display:flex; flex-direction:column}
+.measure{max-width:69ch}
+h1,h2,h3,h4{text-wrap:balance; line-height:1.28; letter-spacing:-.022em}
+h1{font-size:clamp(1.75rem,4vw,2.6rem); font-weight:800; margin:0 0 .4em}
+h2{font-size:clamp(1.42rem,3.1vw,2.02rem); font-weight:750; margin:0 0 .3em}
+h3{font-size:1.11rem; font-weight:700; margin:2.2em 0 .5em}
+p{margin:0 0 1.15em}
+strong{font-weight:700}
+em{font-style:normal; background:linear-gradient(transparent 62%,var(--wash) 62%)}
+ul,ol{padding-left:1.3em; margin:0 0 1.2em}
+li{margin-bottom:.55em} li::marker{color:var(--ink-3)}
+a{color:var(--measured)}
+:focus-visible{outline:2px solid var(--measured); outline-offset:2px}
+
+/* 머리 — 자(ruler) 눈금 */
+.top{padding:20px 0 0; position:sticky; top:0; background:var(--ground); z-index:5}
+.topbar{display:flex; align-items:baseline; justify-content:space-between; gap:16px;
+  padding-bottom:10px; border-bottom:1px solid var(--rule)}
+.docname{font-family:var(--mono); font-size:.72rem; letter-spacing:.11em; text-transform:uppercase;
+  color:var(--ink-3); text-decoration:none}
+.docname:hover{color:var(--measured)}
+.pageno{font-family:var(--mono); font-size:.72rem; color:var(--ink-3); white-space:nowrap}
+.ticks{display:flex; gap:3px; padding:9px 0 0}
+.ticks i{flex:1; height:3px; background:var(--rule); border-radius:1px}
+.ticks i.on{background:var(--measured)}
+.ticks i.past{background:var(--ink-3); opacity:.42}
+
+main{flex:1; padding:clamp(30px,5vw,54px) 0 clamp(28px,4vw,44px)}
+.sechead{margin:0 0 1.5em; padding-bottom:.7em; border-bottom:1px solid var(--rule)}
+.secno{font-family:var(--mono); font-size:.8rem; color:var(--ink-3); display:block; margin-bottom:.5em}
+.sechead p{margin:.5em 0 0; color:var(--ink-3); font-size:.93rem; max-width:60ch}
+
+/* 인식 상태 */
+.st{font-family:var(--mono); font-size:.72rem; letter-spacing:.02em; padding:.2em .55em;
+  border-radius:2px; white-space:nowrap; border:1px solid; font-weight:500}
+.st-m{color:var(--measured); border-color:var(--measured); background:var(--wash)}
+.st-u{color:var(--unmeasurable); border-color:var(--unmeasurable); background:var(--wash-2)}
+.st-r{color:var(--refuted); border-color:var(--refuted); background:var(--wash-3)}
+.st-a{color:var(--absent); border-color:var(--absent); background:transparent}
+
+/* 수식 */
+.eq{font-family:var(--mono); font-size:.93rem; line-height:1.65; background:var(--surface);
+  border:1px solid var(--rule); border-left:2px solid var(--ink-3);
+  padding:16px 20px; margin:1.5em 0; overflow-x:auto; color:var(--ink)}
+.eq .cm{color:var(--ink-3)} .eq b{font-weight:600; color:var(--measured)}
+
+/* 표 */
+.tw{overflow-x:auto; margin:1.6em 0; border:1px solid var(--rule); background:var(--surface)}
+table{border-collapse:collapse; width:100%; font-size:.9rem; min-width:520px}
+th,td{padding:9px 14px; text-align:left; border-bottom:1px solid var(--rule-2)}
+thead th{background:var(--surface-2); font-weight:600; font-size:.79rem; color:var(--ink-2);
+  border-bottom:1px solid var(--rule); white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right; font-family:var(--mono); font-variant-numeric:tabular-nums;
+  font-size:.87rem; white-space:nowrap}
+tr.hl td{background:var(--wash)}
+
+/* 구간 그림 */
+.plot{border:1px solid var(--rule); background:var(--surface); margin:1.8em 0; overflow:hidden}
+.plot-h{padding:14px 18px 10px; border-bottom:1px solid var(--rule-2)}
+.plot-h .t{font-weight:700; font-size:.95rem}
+.plot-h .d{font-size:.82rem; color:var(--ink-3); margin-top:.2em}
+.plot-b{padding:16px 18px 8px}
+.ivrow{display:grid; grid-template-columns:minmax(96px,132px) 1fr 62px; gap:0 14px;
+  align-items:center; margin-bottom:11px}
+.ivlab{font-size:.83rem; line-height:1.35}
+.ivlab .sub{display:block; font-family:var(--mono); font-size:.71rem; color:var(--ink-3)}
+.ivtrack{position:relative; height:22px}
+.ivtrack::before{content:""; position:absolute; left:0; right:0; top:50%; height:1px;
+  background:var(--rule); transform:translateY(-50%)}
+.ivzero{position:absolute; top:0; bottom:0; width:1px; background:var(--ink-3); opacity:.85}
+.ivband{position:absolute; top:50%; height:7px; transform:translateY(-50%); border-radius:1px; opacity:.34}
+.ivdot{position:absolute; top:50%; width:9px; height:9px; margin-left:-4.5px;
+  transform:translateY(-50%); border-radius:50%}
+.iv-m .ivband{background:var(--measured)} .iv-m .ivdot{background:var(--measured)}
+.iv-u .ivband{background:var(--unmeasurable)} .iv-u .ivdot{background:var(--unmeasurable)}
+.ivnum{font-family:var(--mono); font-variant-numeric:tabular-nums; font-size:.79rem;
+  text-align:right; color:var(--ink-2)}
+.plot-f{padding:10px 18px 14px; font-size:.78rem; color:var(--ink-3);
+  border-top:1px solid var(--rule-2); margin-top:6px}
+.axis{display:grid; grid-template-columns:minmax(96px,132px) 1fr 62px; gap:0 14px;
+  font-family:var(--mono); font-size:.7rem; color:var(--ink-3); margin-top:2px}
+.axis .ticks2{position:relative; height:14px}
+.axis .ticks2 span{position:absolute; transform:translateX(-50%)}
+
+/* 막대 */
+.bars{display:flex; align-items:flex-end; gap:clamp(8px,2vw,22px); height:180px;
+  padding:18px 18px 0; border-bottom:1px solid var(--rule)}
+.bar{flex:1; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; height:100%}
+.bar .col{width:100%; max-width:76px; background:var(--measured); border-radius:2px 2px 0 0}
+.bar.peak .col{background:var(--refuted)}
+.bar .v{font-family:var(--mono); font-size:.78rem; font-weight:600; margin-bottom:5px}
+.barlabs{display:flex; gap:clamp(8px,2vw,22px); padding:8px 18px 16px}
+.barlabs div{flex:1; text-align:center; font-size:.77rem; color:var(--ink-3); line-height:1.35}
+
+/* 사다리 */
+.ladder{border:1px solid var(--rule); background:var(--surface); margin:1.8em 0}
+.rung{display:grid; grid-template-columns:54px 1fr auto; gap:0 16px; padding:15px 18px;
+  border-bottom:1px solid var(--rule-2); align-items:start}
+.rung:last-child{border-bottom:none}
+.rung .lv{font-family:var(--mono); font-size:.8rem; font-weight:600; color:var(--ink-3); padding-top:2px}
+.rung .nm{font-weight:700; font-size:.97rem; margin-bottom:.15em}
+.rung .ds{font-size:.855rem; color:var(--ink-2); line-height:1.6}
+.rung .ds .eqi{font-family:var(--mono); font-size:.87em; color:var(--ink)}
+.rung.on{background:var(--wash)} .rung.part{background:var(--wash-2)}
+
+/* 강조 */
+.call{border:1px solid var(--rule); border-left:2px solid var(--measured);
+  background:var(--surface); padding:16px 20px; margin:1.6em 0}
+.call.warn{border-left-color:var(--unmeasurable)}
+.call.bad{border-left-color:var(--refuted)}
+.call .h{font-size:.76rem; font-family:var(--mono); letter-spacing:.06em; text-transform:uppercase;
+  color:var(--ink-3); margin-bottom:.55em}
+.call p:last-child{margin-bottom:0}
+
+/* 표지 */
+.cover{padding:clamp(40px,7vw,80px) 0 0}
+.eyebrow{font-family:var(--mono); font-size:.74rem; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--ink-3); margin:0 0 1.5em}
+.lede{font-size:clamp(1rem,1.8vw,1.16rem); color:var(--ink-2); max-width:64ch}
+.headnums{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:1px; background:var(--rule); border:1px solid var(--rule); margin-top:clamp(30px,5vw,46px)}
+.hn{background:var(--surface); padding:18px 20px 16px}
+.hn .v{font-family:var(--mono); font-variant-numeric:tabular-nums; font-size:1.7rem;
+  font-weight:600; letter-spacing:-.03em; display:block; line-height:1.1}
+.hn .k{font-size:.82rem; color:var(--ink-3); margin-top:.5em; display:block}
+.hn .s{font-size:.78rem; margin-top:.6em; display:inline-block}
+.idx{border:1px solid var(--rule); background:var(--surface); margin:2.2em 0 0}
+.idx a{display:grid; grid-template-columns:44px 1fr auto; gap:0 14px; padding:12px 18px;
+  border-bottom:1px solid var(--rule-2); text-decoration:none; color:var(--ink); align-items:baseline}
+.idx a:last-child{border-bottom:none}
+.idx a:hover,.idx a:focus-visible{background:var(--surface-2)}
+.idx .no{font-family:var(--mono); font-size:.78rem; color:var(--ink-3)}
+.idx .ti{font-weight:600; font-size:.95rem}
+.idx .sub{display:block; font-weight:400; font-size:.82rem; color:var(--ink-3); margin-top:.1em}
+
+/* 발 — 앞뒤 */
+.nav{border-top:1px solid var(--rule); display:grid; grid-template-columns:1fr auto 1fr;
+  gap:12px; padding:18px 0 40px; align-items:center}
+.nav a{text-decoration:none; color:var(--ink-2); font-size:.87rem; display:block}
+.nav a:hover,.nav a:focus-visible{color:var(--measured)}
+.nav .arrow{font-family:var(--mono); font-size:.74rem; color:var(--ink-3); display:block}
+.nav .r{text-align:right}
+.nav .home{font-family:var(--mono); font-size:.74rem; color:var(--ink-3); text-decoration:none}
+.nav .home:hover{color:var(--measured)}
+.nav .dis{opacity:.32; pointer-events:none}
+
+@media print{
+  .top,.nav{display:none} body{background:#fff; color:#000; font-size:11pt}
+  .sheet{min-height:0} main{padding:0}
+  .plot,.tw,.call,.eq,.ladder{break-inside:avoid}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+  /* ── 읽기 보조 (2026-08-06 추가) ─────────────────────────────
+     읽는 사람이 팔·씨앗·유보를 안다고 가정하고 있었다. 그리고 숫자에
+     방향(클수록 좋은가)이 없어서 해석이 안 됐다. 그 둘을 고치는 장치다. */
+  .tldr{background:var(--wash);border-left:3px solid var(--measured);
+    border-radius:0 6px 6px 0;padding:12px 16px;margin:0 0 20px}
+  .tldr .h{font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--measured);font-weight:700;margin-bottom:5px}
+  .tldr p{margin:0;font-size:15px;line-height:1.65;color:var(--ink)}
+  .terms{border:1px solid var(--rule);border-radius:8px;padding:12px 16px;
+    margin:0 0 22px;background:var(--surface)}
+  .terms .h{font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--ink-3);font-weight:700;margin-bottom:8px}
+  .terms dl{margin:0;display:grid;grid-template-columns:auto 1fr;
+    gap:5px 14px;align-items:baseline}
+  .terms dt{font-family:var(--mono);font-size:12.5px;color:var(--ink);
+    font-weight:600;white-space:nowrap}
+  .terms dd{margin:0;font-size:13.5px;line-height:1.6;color:var(--ink-2)}
+  .read{font-size:13px;line-height:1.6;color:var(--ink-2);margin:8px 0 0;
+    padding-left:12px;border-left:2px solid var(--rule)}
+  .read b{color:var(--ink)}
+  .dir{display:inline-block;font-family:var(--sans);font-size:10.5px;
+    font-weight:700;letter-spacing:.02em;padding:1px 5px;border-radius:4px;
+    margin-left:5px;vertical-align:1px;white-space:nowrap}
+  .dir.up{background:var(--wash);color:var(--measured)}
+  .dir.dn{background:var(--wash-2);color:var(--unmeasurable)}
+  .dir.base{background:var(--surface-2);color:var(--ink-3)}
+  .why{display:block;font-size:13.5px;line-height:1.65;color:var(--ink-2);
+    margin:10px 0 0;padding:10px 14px;background:var(--surface-2);
+    border-radius:6px}
+  .why b{color:var(--ink)}
+</style>
+</head><body>
+<div class="sheet"><div class="top"><div class="topbar"><a class="docname" href="index.html">IP 파운데이션 월드모델</a><span class="pageno">11 / 11</span></div><div class="ticks"><i class="past"></i><i class="past"></i><i class="past"></i><i class="past"></i><i class="past"></i><i class="past"></i><i class="past"></i><i class="past"></i><i class="past"></i><i class="past"></i><i class="past"></i><i class="on"></i></div></div><main><div class="sechead"><span class="secno">11</span><h2>정보 전이장은 학습되고 있나</h2><p>7면이 <b>엔티티</b> 상태를 재서 음성을 얻었다. 이 면은 <b>공간</b> 상태를 재고 양성을 얻는다. 2026-08-06 · 노트 690 · 702 · 703 · <b>732~736(이 면을 두 번 고쳤다)</b>.</p></div>
+
+<div class="tldr"><div class="h">한 줄 요약</div>
+<p><b>그렇다, 학습된다 — 그리고 이번엔 진짜 유보에서도.</b> 261개 시군구 × 2,349일의 잔차 장
+g(x,t)에서 “30일 뒤 − 오늘”을 맞히는 과제를 걸었다. <b>학습 구간 끝(2024-12-31) 이후만</b>으로
+채점한 R²가 <b>+0.1200</b>이고 값만 뒤섞은 대조군은 <b>−0.0027</b>이다 — 씨앗 넷이 다 양수이고
+차이가 그 차의 <b>5.6σ</b> 밖이다. 즉 <b>그냥 베끼기(지속성)도 이기고 잡음도 이긴다.</b></p>
+<p><b>그런데 이 면을 두 번 고쳤다 — 아래 두 숫자는 죽었다(정정됨).</b> 처음 판은 검증 R² <b>0.134</b>를
+적고 공휴일 항이 학습에도 <b>+0.024</b> 도움이라 적었다. <b>둘 다 씨앗 하나의 값이었다</b> — 이 면이 스스로 “씨앗이 하나다”를
+한계로 적었고, 씨앗을 넷으로 늘리니 그 자리의 흔들림(SD <b>0.2735</b>)이 <b>보고한 효과의 두 배</b>였다.
+고쳐 재니 <b>장은 더 좋고</b>(유보 +0.1200) <b>공휴일 이득은 부호가 반대다</b>(−0.0648).</p></div>
+
+<div class="terms"><div class="h">먼저 알아야 할 말</div>
+<dl>
+<dt>정보 전이장 g(x,t)</dt><dd>동네마다 날마다의 <b>잔차</b>. 동네 평균 · 요일 평균 · 전국 일평균 ·
+  공휴일을 다 빼고 남은 것이다. <b>큰 값이 “사람이 많다”가 아니라 “그 동네의 그 요일 기준에서
+  벗어났다”</b>는 뜻이다.</dd>
+<dt>지속성(베끼기)</dt><dd>오늘 값을 그대로 30일 뒤 값으로 쓰는 것. <b>가장 게으른 예측</b>이고,
+  이 과제는 그것을 <b>이미 뺀 뒤</b> 채점한다.</dd>
+<dt>검증 R²</dt><dd>베끼기보다 얼마나 나은가 <span class="dir up">클수록 좋음</span>.
+  <b>0이면 베끼기와 같고</b>, 음수면 베끼기보다 못하다.</dd>
+<dt>위약(대조군)</dt><dd>맞혀야 할 값만 동네 안에서 <b>시간 순서를 뒤섞은</b> 팔.
+  비어 있는 자리(결측)는 그대로 둔다. <b>위약이 진짜보다 나쁘지 않으면 신호가 아니다.</b></dd>
+<dt>신호 몫</dt><dd>진짜 − 위약. 이 값만이 “실제로 정보가 있었나”를 말한다.</dd>
+<dt>유보(holdout)</dt><dd>학습에 <b>한 번도 안 쓴 미래</b>. 여기서는 맞혀야 할 날짜가
+  2025-01-01 이후인 것만 골랐다(552개 창 · 관측 143,892). <b>“검증”과 다르다</b> — 검증은
+  학습 구간 안에서 뒤쪽을 떼어 쓴 것이라 여전히 2024년까지다.</dd>
+<dt>씨앗(seed)</dt><dd>모형 가중을 처음에 어떤 난수로 채우나. <b>답이 씨앗에 따라 달라지면
+  그 답은 자료가 아니라 운이다.</b> 그래서 씨앗을 여러 개 돌려 <b>흔들림 폭(SD)</b>을 같이 잰다.</dd>
+<dt>걸음 수(epoch)</dt><dd>모형이 자료를 몇 번 보고 가중을 고치나.
+  <b>적으면 덜 배우고 많으면 외운다</b>(과적합). 이 면의 결론이 뒤집힌 원인이 이것이다.</dd>
+</dl></div>
+
+<div class="measure"><p>과제를 이렇게 만들었다 — <strong>베끼기가 0점이 되도록.</strong>
+맞혀야 할 값을 <span class="n">X[t+30]</span> 이 아니라
+<span class="n">X[t+30] − X[t]</span> 로 두면, 오늘 값을 그대로 쓰는 전략은 아무 점수도 못 받는다.
+그러면 모형이 이길 수 있는 길은 하나뿐이다 — <strong>다른 동네와 과거 무늬에서 정보를 얻는 것.</strong></p></div>
+
+<div class="tw"><table>
+<thead><tr><th>팔 (씨앗 4 평균)</th><th class="num">유보 R²<span class="dir up">클수록 좋음</span></th>
+<th class="num">씨앗 SD<span class="dir dn">작을수록 좋음</span></th><th>뜻</th></tr></thead>
+<tbody>
+<tr class="hl"><td>공휴일 뺀 g · <b>진짜</b></td><td class="num">+0.1200</td><td class="num">0.0197</td>
+  <td><span class="st st-m">베끼기와 잡음을 둘 다 이긴다 — 씨앗 넷이 다 양수</span></td></tr>
+<tr><td>공휴일 뺀 g · 위약</td><td class="num">−0.0027</td><td class="num">—</td>
+  <td>값을 섞으면 베끼기와 같아진다(0에 붙는다)</td></tr>
+<tr><td><b>짝지은 차</b>(진짜 − 위약)</td><td class="num">+0.1227</td><td class="num">0.0219</td>
+  <td><span class="st st-m">그 차의 2σ = 0.0438 → <b>5.6σ 밖</b></span></td></tr>
+<tr><td>옛 g(공휴일 안 뺌) · 진짜</td><td class="num">+0.1848</td><td class="num">—</td>
+  <td>더 좋다 — <b>그런데 이것을 쓰면 안 된다</b>(아래 참조)</td></tr>
+</tbody></table></div>
+<p class="read"><b>이 표를 읽는 법.</b> 위약이 <b>0에 붙는다</b>는 것이 핵심이다 — 맞혀야 할 값을 섞으면
+정보가 사라지고 베끼기와 같아진다. 진짜가 +0.1200이니 둘이 0.12만큼 벌어져 있다.
+<b>그리고 “차의 씨앗 SD”로 읽어야 한다</b> — 씨앗이 나쁘면 진짜와 위약이 <b>같이</b> 무너지기
+때문이다(어떤 씨앗에서는 진짜 −0.50 · 위약 −0.59). 팔마다 따로 재면 흔들림이 0.27로 커져
+아무 결론도 안 나오고, <b>짝지어 재면 0.022</b>다. 같은 씨앗을 두 팔에 쓰는 이유가 이것이다.</p>
+
+<h3>왜 +0.12가 뜻이 있나 — 지속성 표</h3>
+<div class="measure"><p>장이 자기를 얼마나 오래 기억하나. <strong>기억이 짧을수록 이 과제가 어렵다.</strong></p></div>
+<div class="eq"><span class="cm">g(t) 가 g(t+h) 를 설명하는 정도 (R²)</span>
+
+    h = 1일     <b>0.678</b>    <span class="cm">내일은 오늘과 거의 같다</span>
+    h = 7일      0.261
+    h = 30일    <b>0.070</b>    <span class="cm">← 우리 과제가 여기다</span>
+    h = 90일     0.009
+    h = 180일    0.004</div>
+<p class="read"><b>읽는 법.</b> 한 달 뒤에는 오늘의 정보가 <b>7%밖에 안 남는다</b>. 거의 아무것도 없는
+자리에서 R² +0.12를 낸 것이라, 같은 숫자를 h = 1일에서 냈다면 아무 뜻이 없었을 것이다.
+<b>과제의 난이도를 같이 봐야 점수가 해석된다.</b></p>
+
+<div class="call warn"><div class="h">🔴 손잡이 하나가 두 목표를 맞바꾼다 — 이 면에서 가장 중요한 대목</div>
+<p>노트 690이 g에서 <b>공휴일</b>을 빼는 항을 넣었다 — 명절은 전국이 균일하지 않고 귀성 방향에 따라
+지역 부호가 반대라(경북 +6.2 · 서울 −6.0) 전국 평균을 빼도 남기 때문이다.
+넣은 이유는 <b>이상치의 87%가 달력이었기 때문</b>이고, 넣은 뒤 그 비율이 <b>48%</b>로 떨어졌다
+<span class="dir dn">작을수록 좋음</span>.</p>
+<p><b>처음 이 면은 “학습에도 도움이 됐다(+0.024)”고 적었다. 그것을 철회한다.</b> 유보에서 재니
+공휴일 항을 <b>빼는</b> 쪽이 <b>+0.0648 더 좋다</b>(2σ 밖 · 두 번의 독립 측정에서 씨앗 8/8이 같은 방향).</p>
+<div class="tw"><table>
+<thead><tr><th>&nbsp;</th><th class="num">공휴일 항 <b>없음</b></th><th class="num">공휴일 항 <b>있음</b></th></tr></thead>
+<tbody>
+<tr><td>유보 R² <span class="dir up">클수록 좋음</span></td>
+  <td class="num"><b>+0.1848</b></td><td class="num">+0.1200</td></tr>
+<tr><td>g 큰 이상치의 <b>달력 귀속률</b> <span class="dir dn">작을수록 좋음</span></td>
+  <td class="num">86.7%</td><td class="num"><b>48.3%</b></td></tr>
+</tbody></table></div>
+<p><b>그런데 항을 빼지 않는다.</b> 그 +0.065는 <b>명절을 다시 먹어서</b> 나온다 — 그러면 g가
+“그 동네에서 벗어난 정도”가 아니라 <b>거의 달력</b>이 되고, 이미 판에 들어 있는 달력 축(<code>cal_*</code>)의
+재발견이 된다. <b>예보 점수가 오르는 것이 “무엇을 재고 있나”를 깨면 개선이 아니다.</b></p>
+<p class="why"><b>그래서 규칙이 하나 생겼다.</b> 이 장의 자는 <b>유보 R² 하나가 아니라
+(유보 R², 달력 귀속률) 짝</b>이다. <b>자를 하나만 두면 그 자가 오르는 방향으로 설계가 끌려간다</b> —
+처음 판이 R²만 보고 공휴일 항을 칭찬한 것이 정확히 그것이었다.</p></div>
+
+<div class="call bad"><div class="h">여기서 한 번 크게 틀렸다 — 재구현이 잴 대상을 지웠다</div>
+<p>위약 팔을 만들려고 <b>학습 코드를 스크래치에 다시 옮겨 적었다.</b> 그 옮김에서
+<b>저계수 이웃 혼합</b>(261개 동네를 8개 축으로 모았다 되돌리는 층)을 빠뜨렸다 —
+그것이 바로 <b>“다른 동네에서 정보를 얻는”</b> 자리이고 이 과제의 전부다.
+잴 대상을 지운 채로 재서 <b>R² −0.4604</b>가 나왔다(실제 +0.134 — 그 숫자도 뒤에 정정됐다).</p>
+<p><b>왜 재구현했나.</b> 위약 설계가 <b>글로만</b> 적혀 있고 코드에 손잡이가 없었다.
+그래서 다음 사람(나)이 모형을 다시 지었다. 고침은 <b>손잡이를 원래 코드에 붙인 것</b>이다 —
+<b>위약은 같은 코드에서 나와야 한다.</b></p></div>
+
+<div class="call bad"><div class="h">🔴 이 면이 적어 둔 한계가 그대로 일어났다 — 그리고 결론을 고쳤다</div>
+<p>처음 판이 <b>“① 씨앗이 하나다 — +0.024가 씨앗 흔들림 안일 수 있다”</b>와
+<b>“② 검증이 진짜 유보가 아니다”</b>를 한계로 적었다. <b>둘을 재니 둘 다 실제 문제였다</b>
+(그래서 +0.024는 <b>−0.0648</b>로 <b>정정</b>됐다).</p>
+<p><b>원인은 걸음 수 하나였다.</b> 그때 코드는 <b>60걸음</b> 고정이었다. 그 자리는
+<b>덜 배운 자리</b>여서 답이 초기 난수로 정해진다 — 씨앗 넷의 유보 R²가
+<b>+0.0791 · −0.5041 · −0.0613 · +0.0661</b>이고 흔들림(SD 0.2735)이
+<b>처음 판이 보고한 효과(0.134 — <b>정정</b>돼 죽은 숫자다)의 두 배</b>다.
+<b>처음 판이 본 것은 넷 중 가장 좋은 씨앗이었다.</b></p>
+<div class="eq"><span class="cm">걸음 수를 갈라 보니 (씨앗 4 평균)</span>
+
+    걸음 60      유보 <b>−0.105</b>   씨앗 SD <b>0.274</b>   <span class="cm">덜 배웠다 — 초기값이 답을 정한다</span>
+    걸음 200     유보 <b>+0.115</b>   씨앗 SD <b>0.012</b>   <span class="cm">← 여기서 넷이 모인다</span>
+    걸음 600     유보  −0.363    씨앗 SD  0.672    <span class="cm">외우기 시작한다</span>
+    걸음 1500    유보  −1.768    씨앗 SD  2.150    <span class="cm">학습 손실은 내내 내려간다</span></div>
+<p class="read"><b>읽는 법.</b> <b>학습 손실은 걸음이 늘수록 계속 내려간다</b>(0.00504 → 0.00220).
+그런데 유보는 200에서 정점을 찍고 무너진다 — <b>이것이 “외운다”의 정의다.</b>
+그래서 걸음 수를 고정값으로 두면 안 된다. 지금 코드는 <b>학습 구간 검증으로 최선 지점을 찾아
+그 가중으로 되돌린다</b> — <b>유보를 보고 고르면 그 순간 유보가 아니기 때문에</b> 반드시
+학습 구간 안에서만 고른다.</p>
+<p class="why"><b>정정 방향이 결론을 강화했다.</b> 고쳐 재니 장은 처음 판이 말한 것보다
+<b>잘</b> 배운다 — 학습 구간 검증 <b>+0.28</b> · <b>진짜 유보 +0.1200</b>. 즉 “학습 구간 안에서
+배운다”가 <b>“한 번도 안 본 미래에서도 베끼기를 이긴다”</b>로 올라갔다.</p></div>
+
+<div class="call warn"><div class="h">그래도 아직 채택은 아니다 — 시험대가 다르다</div>
+<p>여기서 잰 것은 <b>장 자신의 과제</b>(30일 뒤 잔차 맞히기)다. 이 실험실의 시험대는
+<b>판</b>(라벨 예측 모형)이고, <b>장이 실재한다는 것과 판이 움직인다는 것은 다른 문장이다.</b>
+채택 시험은 이 인코더의 출력을 판의 한 열로 넣어 <b>신호 몫</b>을 재고
+<b>집안 1곳 이상 · 집 밖 2곳 이상</b>에서 문턱을 넘는 것이다(규약 12). <b>그것은 아직 안 했다.</b></p>
+<p>그 앞에 값싼 것 둘이 있다 — <b>①</b> 공휴일 항의 두 목표(유보 R² · 달력 귀속률)를
+<b>한 팔에서 같이 찍어</b> 맞바꿈 곡선을 만드는 것, <b>②</b> 걸음 상한을 올리는 것(씨앗 하나가
+상한 600에 걸렸다). 그 다음이 “동네의 상태가 이벤트와 어떻게 반응하나”(L(g, event))의
+첫 식별 시험이다.</p></div>
+</main><nav class="nav"><a data-prev href="10.html"><span class="arrow">← 앞</span>이 문서의 숫자를 검증하는 법</a><a class="home" href="index.html">목차</a><a data-next class="r" href="index.html"><span class="arrow">뒤 →</span>목차로</a></nav></div>
+<script>
+document.addEventListener('keydown',function(e){
+  if(e.metaKey||e.ctrlKey||e.altKey) return;
+  var p=document.querySelector('[data-prev]'), n=document.querySelector('[data-next]');
+  if(e.key==='ArrowLeft'&&p&&p.getAttribute('href')) location.href=p.getAttribute('href');
+  if(e.key==='ArrowRight'&&n&&n.getAttribute('href')) location.href=n.getAttribute('href');
+});
+</script></body></html>

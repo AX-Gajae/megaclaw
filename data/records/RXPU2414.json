@@ -1,0 +1,381 @@
+{
+ "record_id": "RXPU2414",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:로얄캐닌",
+  "space_id": "unresolved:하남_스타필드",
+  "client_party_id": "unresolved:로얄캐닌",
+  "brand_key": "로얄캐닌",
+  "space_key": "하남_스타필드"
+ },
+ "intervention": {
+  "concept": "로얄캐닌 브랜드 팝업스토어로 하남 스타필드에서 운영. 반려동물 맞춤사료 찾기 체험과 커스텀 에코백, 그래피티 월, 포토존 등 참여형 체험을 제공. 반려동물 동반 방문객 대상 공간 구성.",
+  "brand_name": "로얄캐닌",
+  "experience_elements": [
+   "현장 에코백 커스텀 및 배송접수",
+   "자유 참여 그래피티 월",
+   "로얄캐닌 클럽 홈페이지 맞춤사료 찾기 체험(RC팀 상주)",
+   "반려동물 유모차 파킹구역",
+   "반려동물 동반 촬영 포토존",
+   "사진 전시존"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "ENTRANCE",
+   "유모차파킹ZONE",
+   "사진전시ZONE",
+   "커스텀에코백ZONE",
+   "맞춤사료ZONE",
+   "그래피티월"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": null,
+   "area_sqm": null,
+   "planned_operating_days": null,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": 12,
+   "staff_count": 11,
+   "experience_density": 3,
+   "goods_scale": 1,
+   "photo_zones": 3,
+   "collab_strength": 0,
+   "ip_awareness": 3,
+   "target_breadth": 2,
+   "entry_friction": 2,
+   "media_push": 1,
+   "season_fit": 2,
+   "venue_prominence": 3
+  },
+  "attr_meta": {
+   "evidence": "운영계획안 인력계획 '운영시간 10:00~22:00(오픈 전 30분 운영준비)'=12h, '최소 투입인력 11명(현장 고정 인원, 현장총괄매니저 제외)'. '인원 계획 ... 공간 트래픽 대비 최적 인원(1H)' 표는 추출 시 숫자 유실로 capacity 판정 불가. 여로디자인스튜디오 공간디자인 용역 계약서 3건은 모두 열람 실패(Requested entity was not found). 운영일수 근거 없음 → null(등록기간 11/23~12/08은 미차용).",
+   "confidence": "medium",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": "하남",
+   "district": null,
+   "venue_name": "스타필드 하남",
+   "venue_type": "쇼핑몰",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-11-23",
+   "to": "2024-12-08",
+   "days": 16
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [
+   "운영시간 10:00~22:00(오픈 전 30분 운영준비)",
+   "최소 투입인력 11명(현장 고정 인원, 현장총괄매니저 제외)",
+   "예약 시스템(태블릿 등록/알림톡) 운영"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "스타필드 하남 쇼핑몰"
+  },
+  "derived": {
+   "duration": {
+    "days": 16,
+    "weekend_share": 0.38,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 66,
+    "holiday_until": 63,
+    "holiday_block_in": 0,
+    "nat_event_gap": 9,
+    "nat_event": "수능",
+    "doc_lag_days": 18,
+    "doc_dates_found": 3
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 1686817.0,
+    "pnl_pre_accounts": 6,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2024-10-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 70000,
+   "popup_zone_pass_rate": 0.4,
+   "host_traffic_est": 28000.0,
+   "venue_scale_tier": 1,
+   "confidence": "high",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": 7000,
+   "sales_krw": null,
+   "rev_mm_recognized": 276.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": "원문 표현 '약 7천여 명에 이르는 누적 방문객을 기록했다' — '누적 방문객' 기준. 입장 게이트 계수 여부 등 집계 방식은 기사에 명시되지 않음. 로얄캐닌코리아 발표를 인용한 성료 기사",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "방문: 역검색 외부 보도 — https://www.pharmnews.com/news/articleView.html?idxno=255599 (2024-12-10) | 인용: 반려동물과 함께 스타필드 하남을 찾은 반려동물 동반 고객들의 호응을 얻으며 약 7천여 명에 이르는 누적 방문객을 기록했다.",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-12, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2024-12"
+  },
+  "label_source": "external_press",
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-0ZJjd9u11iJQ1RT1SHWrEPUpkykjvvu",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1-0ZJjd9u11iJQ1RT1SHWrEPUpkykjvvu/view",
+   "title": "로얄캐닌 - 1차 레퍼런스 기획안.pptx"
+  },
+  {
+   "doc_id": "1-PzyXuaUOUPHMHuY4ivQYUvB3sdbIXHp",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1-PzyXuaUOUPHMHuY4ivQYUvB3sdbIXHp/view",
+   "title": "10.14 1차 이노레드x스위트스팟 계약서.docx"
+  },
+  {
+   "doc_id": "1-WP4ZvFEuP73jNaCciyO-yvh6h71bAFR",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1-WP4ZvFEuP73jNaCciyO-yvh6h71bAFR/view",
+   "title": "로얄캐닌팝업스토어(이노레드) 견적서.pdf"
+  },
+  {
+   "doc_id": "1-eykMs__1QsZGc6NUCDqkjW0ed666has",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1-eykMs__1QsZGc6NUCDqkjW0ed666has/view",
+   "title": "[Sweetspot] 용역 계약서_댕잡았다 (에코백 오프라인).pdf"
+  },
+  {
+   "doc_id": "1-i6xaXt9Kq-mHCa17YcWMyjDe9gwqxjW",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1-i6xaXt9Kq-mHCa17YcWMyjDe9gwqxjW/view",
+   "title": "[Sweetspot] 용역 계약서_(주)아유디인터네셔널 (에코백 온라인).pdf"
+  },
+  {
+   "doc_id": "1-jSKD3-f56n7TqCwGR8gS7oQtD0_72KW",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1-jSKD3-f56n7TqCwGR8gS7oQtD0_72KW/view",
+   "title": "로얄캐닌팝업스토어(이노레드) 견적서.xlsx"
+  },
+  {
+   "doc_id": "1-klC1qmEGXUlPZ1E6OlX7c3nGFjUZLTT",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1-klC1qmEGXUlPZ1E6OlX7c3nGFjUZLTT/view",
+   "title": "[Sweetspot] 용역 계약서_댕잡았다 (에코백 오프라인).pdf"
+  },
+  {
+   "doc_id": "1-m1E1eaWdKcKc4TP9cE7Hrc7XTQJzIHb",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1-m1E1eaWdKcKc4TP9cE7Hrc7XTQJzIHb/view",
+   "title": "[Sweetspot] 용역 계약서_(주)아유디인터네셔널 (에코백 온라인).pdf"
+  },
+  {
+   "doc_id": "112vccrer8J1hCi-QbxUJBk8ZOeRJM711",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/112vccrer8J1hCi-QbxUJBk8ZOeRJM711/view",
+   "title": "[Sweetspot] 2024 로얄캐닌 하남 스타필드 운영계획안 3-2차.pdf"
+  },
+  {
+   "doc_id": "119zzETrXQOUSMFaGKmzXiJt3PoYDtk_r",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/119zzETrXQOUSMFaGKmzXiJt3PoYDtk_r/view",
+   "title": "[Sweetspot] 2024 로얄캐닌 하남 스타필드 운영계획안 3-2차.pptx"
+  },
+  {
+   "doc_id": "120Pz4c-eO-bPEpehsdh4_tKwNKZD1dQr",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/120Pz4c-eO-bPEpehsdh4_tKwNKZD1dQr/view",
+   "title": "이노레드 x 스위트스팟 계약서.pdf"
+  },
+  {
+   "doc_id": "125Jing5x6ytWRdrd4JA207c4mhxVNFFl",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/125Jing5x6ytWRdrd4JA207c4mhxVNFFl/view",
+   "title": "이노레드 x 스위트스팟 계약서.pdf"
+  },
+  {
+   "doc_id": "12JOKAN39Oua2N1Es_vyruUdQeOvqxTih",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/12JOKAN39Oua2N1Es_vyruUdQeOvqxTih/view",
+   "title": "1.계약서_이노레드 x 스위트스팟 계약서.pdf"
+  },
+  {
+   "doc_id": "12Uv5rrG4AqFuVTmbgYuq5l9kCG7NqxY6",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/12Uv5rrG4AqFuVTmbgYuq5l9kCG7NqxY6/view",
+   "title": "이노레드 x 스위트스팟 계약서.pdf"
+  },
+  {
+   "doc_id": "12b2iWP8SnuMMyQSAQqzHUj3fTsfL8hv3",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/12b2iWP8SnuMMyQSAQqzHUj3fTsfL8hv3/view",
+   "title": "이노레드 추가변경합의서 1차.pdf"
+  },
+  {
+   "doc_id": "12eNpM5OTmTV2SY0XW_4ShV7J49llg3z5",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/12eNpM5OTmTV2SY0XW_4ShV7J49llg3z5/view",
+   "title": "이노레드 추가변경합의서 1차.pdf"
+  },
+  {
+   "doc_id": "12ej5h4q5tJrQUpQKS5n_3IXj1WKcSONF",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/12ej5h4q5tJrQUpQKS5n_3IXj1WKcSONF/view",
+   "title": "이노레드x스위트스팟 2차 추가변경합의서.pdf"
+  },
+  {
+   "doc_id": "12fSS5QCBhm5J43_hGbWcrHDnFn0AOvZE",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/12fSS5QCBhm5J43_hGbWcrHDnFn0AOvZE/view",
+   "title": "이노레드x스위트스팟 2차 추가변경합의서.docx"
+  },
+  {
+   "doc_id": "12ix6l6W0SrmkGr3WjqvQL3S3wL_POQTY",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/12ix6l6W0SrmkGr3WjqvQL3S3wL_POQTY/view",
+   "title": "로얄캐닌팝업스토어 최종 견적서.pdf"
+  },
+  {
+   "doc_id": "12joL5r7TQNyGMtvHOCbOjhlRLEb5cWD3",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/12joL5r7TQNyGMtvHOCbOjhlRLEb5cWD3/view",
+   "title": "로얄캐닌팝업스토어 최종 견적서.pdf"
+  },
+  {
+   "doc_id": "137ql2p7PMWsrtJXeNK4vLRXXyV08do99",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/137ql2p7PMWsrtJXeNK4vLRXXyV08do99/view",
+   "title": "스위트스팟 근로계약서_로얄캐닌.docx"
+  },
+  {
+   "doc_id": "13ETiGBOCks6ikQjaf2oce4JOPyvy33qv",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/13ETiGBOCks6ikQjaf2oce4JOPyvy33qv/view",
+   "title": "스위트스팟 근로계약서_로얄캐닌 스태프_대량 전송 양식.xlsx"
+  },
+  {
+   "doc_id": "13PXjRNxbBFXV323_mMk1vshfOimfwBv5",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/13PXjRNxbBFXV323_mMk1vshfOimfwBv5/view",
+   "title": "스위트스팟 근로계약서_로얄캐닌 165,000.docx"
+  },
+  {
+   "doc_id": "13RQxpNT_inoQd6tyxDDBZiAX8_JbB1dL",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/13RQxpNT_inoQd6tyxDDBZiAX8_JbB1dL/view",
+   "title": "스위트스팟 근로계약서SV_로얄캐닌.docx"
+  },
+  {
+   "doc_id": "1Nw58DT4iB34PMOXJwkG0NSRzX6JWsVeC",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Nw58DT4iB34PMOXJwkG0NSRzX6JWsVeC/view",
+   "title": "이노레드x스위트스팟 계약추가변경합의서 (1).pdf"
+  },
+  {
+   "doc_id": "1O71e0RI-IQGHm88eCEfu7JV2E6tXKJvk",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1O71e0RI-IQGHm88eCEfu7JV2E6tXKJvk/view",
+   "title": "[Sweetspot] 로얄캐닌_하남 스타필드_결과보고서_241212.pptx"
+  },
+  {
+   "doc_id": "1TTJtCAy7XGt5_ZyxrtWKyedqv5OwFFmh",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1TTJtCAy7XGt5_ZyxrtWKyedqv5OwFFmh/view",
+   "title": "[Sweetspot] 공간디자인 용역 계약서_여로디자인스튜디오_241105_날인 스캔본.pdf"
+  },
+  {
+   "doc_id": "1Yiu9lCZAk3tO-IZcC4stj_e6QE_VV4lH",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Yiu9lCZAk3tO-IZcC4stj_e6QE_VV4lH/view",
+   "title": "여로디자인스튜디오 놀랍도록특별한 전시전 견적서 .pdf"
+  },
+  {
+   "doc_id": "1coGtqBXAXOlzqZVzu_v2nyiohXJmR9TL",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1coGtqBXAXOlzqZVzu_v2nyiohXJmR9TL/view",
+   "title": "2.견적서_로얄캐닌팝업스토어 최종 견적서.pdf"
+  },
+  {
+   "doc_id": "1cuX8Muj0VoX6J6kK3GjwTHnnaEHA8f_u",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1cuX8Muj0VoX6J6kK3GjwTHnnaEHA8f_u/view",
+   "title": "4.결과보고서_[Sweetspot] 로얄캐닌_하남 스타필드_결과보고서_241212.pdf"
+  },
+  {
+   "doc_id": "1d8toQdR42xtEHUs6JHGnjO1XMPxc9X3n",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1d8toQdR42xtEHUs6JHGnjO1XMPxc9X3n/view",
+   "title": "3.제안서_[Sweetspot] 2024 로얄캐닌 하남 스타필드 운영계획안 3-2차.pdf"
+  },
+  {
+   "doc_id": "1ivbDZauY-ulgL_ND5yTS003A9l1n1cUN",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1ivbDZauY-ulgL_ND5yTS003A9l1n1cUN/view",
+   "title": "[Sweetspot] 공간디자인 용역 계약서_여로디자인스튜디오_241105_날인 스캔본.pdf"
+  },
+  {
+   "doc_id": "1jhfr7okxiCTQVN6cSGcG9hRLR7Xzy-qN",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1jhfr7okxiCTQVN6cSGcG9hRLR7Xzy-qN/view",
+   "title": "[Sweetspot] 로얄캐닌_하남 스타필드_결과보고서_241212.pdf"
+  },
+  {
+   "doc_id": "1ndhioUjFGl6UhGrBxjOMYSPLTCeM7q1h",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1ndhioUjFGl6UhGrBxjOMYSPLTCeM7q1h/view",
+   "title": "[Sweetspot] 공간디자인 용역 계약서_여로디자인스튜디오_241105.pdf"
+  },
+  {
+   "doc_id": "1oe1BRxY03hOU-lEB7bFErcQON_lSx3su",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1oe1BRxY03hOU-lEB7bFErcQON_lSx3su/view",
+   "title": "이노레드x스위트스팟 계약추가변경합의서 (1).pdf"
+  },
+  {
+   "doc_id": "1x2YGhE6WzEpHmcI-8C2AkAavS_5Vogei",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1x2YGhE6WzEpHmcI-8C2AkAavS_5Vogei/view",
+   "title": "1217 최종 이노레드x스위트스팟 로얄캐닌 팝업스토어 2차 추가변경합의서.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 2건: 3.제안서_[Sweetspot] 2024 로얄캐닌 하남, 4.결과보고서_[Sweetspot] 로얄캐닌_하남 스타. 미확실: 결과보고서 방문자 수 및 매출 데이터 판독 불가; 수수료구조/계약금액 정보 없음(계약서·견적서 미포함); 면적(평) 정보 없음; 예상 방문자 수치 없음; client_party_id 미확정 | 외부 라벨 역검색(2026-07-27): 방문 라벨 충전 7000"
+ }
+}

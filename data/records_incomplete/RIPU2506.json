@@ -1,0 +1,76 @@
+{
+  "record_id": "RIPU2506",
+  "schema_version": "0.1",
+  "entities": {
+    "brand_id": "unresolved:엑시스와이_AXIS-Y",
+    "space_id": "unresolved:무신사_뷰티스페이스",
+    "client_party_id": null
+  },
+  "intervention": {
+    "concept": "엑시스와이 브랜드가 무신사 뷰티스페이스에서 진행한 팝업스토어. 원문 문서가 제공되지 않아 구체적 컨셉을 확인할 수 없음.",
+    "brand_name": "엑시스와이",
+    "experience_elements": [],
+    "promotions": [],
+    "staging_tags": []
+  },
+  "conditions": {
+    "location": {
+      "city": null,
+      "district": null,
+      "venue_name": "무신사 뷰티스페이스",
+      "venue_type": null,
+      "foot_traffic_context": null
+    },
+    "area_pyeong": null,
+    "period": {
+      "from": "",
+      "to": "",
+      "days": null
+    },
+    "season": null,
+    "fee_structure": {
+      "type": "unknown",
+      "detail": ""
+    },
+    "brand_requirements": []
+  },
+  "outcome": {
+    "daily": [],
+    "totals": {
+      "visitors": null,
+      "sales_krw": null,
+      "rev_mm_recognized": 35.0
+    },
+    "counting_method": "unknown",
+    "counting_basis": null,
+    "plan_visitors_expected": null,
+    "retention": null,
+    "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조"
+  },
+  "docs": [
+    {
+      "doc_id": "1cp2Rt--_OYIlq95uP54SHIZLNGCyiwor",
+      "kind": "정산",
+      "uri": "https://drive.google.com/file/d/1cp2Rt--_OYIlq95uP54SHIZLNGCyiwor/view",
+      "title": "(스위트스팟) 엑시스와이_공간 제작_견적서_250522.pdf"
+    },
+    {
+      "doc_id": "1euzQOluFLoD3zSUyXfisUeD1xkLNppEQ",
+      "kind": "운영일지",
+      "uri": "https://drive.google.com/file/d/1euzQOluFLoD3zSUyXfisUeD1xkLNppEQ/view",
+      "title": "[스위트스팟] AXIS-Y_무신사 뷰티스페이스 팝업스토어_결과보고서_250618.pdf"
+    },
+    {
+      "doc_id": "1i4tbD2zsLbNMuUc08dMuT7VKqeV_OC0x",
+      "kind": "계약서",
+      "uri": "https://drive.google.com/file/d/1i4tbD2zsLbNMuUc08dMuT7VKqeV_OC0x/view",
+      "title": "② [스위트스팟] 엑시스와이_팝업스토어_계약서_250519-날인 완료.pdf"
+    }
+  ],
+  "provenance": {
+    "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+    "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+    "extracted_at": "2026-07-23",
+    "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서/기획서/견적서/결과보고서) 전체 미제공; client_name 불명; 입지(도시/구/venue_type/유동인구) 불명; 운영 기간 및 일수 불명; 면적 불명; 수수료 구조 불명; 컨셉·체험요소·프로모션·연출 정보 없음; 방문객 및 매출 실측 데이터 없음; counting_method 판정 불가"
+  }
+}

@@ -1,0 +1,86 @@
+{
+ "market_record_id": "MKT-2023-0051",
+ "event_name": "롯데 크리스마스 마켓 2023",
+ "brand": "롯데백화점",
+ "ip_or_collab": null,
+ "category": "other",
+ "intervention": {
+  "concept_description": "유럽 크리스마스 마켓 문화를 전한 연말 대형 이벤트(첫 회)",
+  "experience_elements": [
+   "크리스마스 마켓 부스",
+   "포토존"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "롯데타운 잠실(롯데월드타워·몰 일대)",
+  "venue_type": "mall",
+  "neighborhood": "잠실",
+  "city": "서울",
+  "period_from": "2023-11-01",
+  "period_to": "2023-12-31",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 61,
+    "weekend_share": 0.3,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 240000,
+  "visitors_period_days": null,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "롯데백화점 제공 수치: '지난해 첫 선을 보인 롯데 크리스마스 마켓은 우리나라 고객들에게 연말 유럽의 마켓 문화를 전하기 위해 기획된 이벤트다. 지난해 24만명을 동원하며 유통업계 최고의 연말 행사로 자리매김한데 이어'",
+  "visitors_source_quote": "지난해 24만명을 동원하며 유통업계 최고의 연말 행사로 자리매김한데 이어, 올해는 규모를 700평대로 확대하면서 오픈 4주만에 입장객 25만명을 돌파하는 기록을 세웠다.",
+  "visitors_source_url": "https://tnnews.co.kr/archives/218180",
+  "visitors_source_date": "2024-12-26",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "정확한 운영 기간 미보도(2023년 11~12월 연말 시즌). 한경 기사(2025-01-06)도 동일 수치 확인. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

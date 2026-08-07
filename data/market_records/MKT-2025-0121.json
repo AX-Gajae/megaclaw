@@ -1,0 +1,97 @@
+{
+ "market_record_id": "MKT-2025-0121",
+ "event_name": "29CM '29 스위트 하우스(29 SWEET HOUSE)' 디저트 팝업스토어",
+ "brand": "29CM(무신사)",
+ "ip_or_collab": "전국 유명 빵집 6곳 큐레이션(귤메달·봄날엔·슬지제빵소·정남미명과·페퍼그라인더·할머니 학화호도과자)",
+ "category": "fnb",
+ "intervention": {
+  "concept_description": "패션 플랫폼 29CM의 첫 디저트 큐레이션 팝업. 전국 유명 디저트 브랜드를 한자리에 모으고 팝업 단독 메뉴 공개",
+  "experience_elements": [
+   "6개 디저트 브랜드 부스·팝업 단독 메뉴",
+   "사전 예약제(290원 티켓, 평일권·주말권 분리)"
+  ],
+  "promotions": [
+   "얼리버드 주말 입장권 판매",
+   "사전 예약자 일별 선착순 100명 기프트(LMS)"
+  ],
+  "is_free_entry": false,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "서울 성동구 연무장길 97, 1층",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2025-11-26",
+  "period_to": "2025-11-30",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 5,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 13000,
+  "visitors_period_days": 5,
+  "counting_basis": "unknown",
+  "counting_basis_note": "한국경제 기사가 '1만3000여명의 고객이 방문'으로 보도(집계 주체·방식 원문 미명시)",
+  "visitors_source_quote": "패션 플랫폼 29CM는 최근 서울 성수동에서 인기 디저트 브랜드를 모은 팝업스토어(팝업)를 운영했다. 행사가 진행된 5일 동안 1만3000여명의 고객이 방문했으며 팝업 마지막 날인 지난달 30일에는 3000명 이상 몰리며 문전성시를 이뤘다.",
+  "visitors_source_url": "https://www.hankyung.com/article/2025121662737",
+  "visitors_source_date": "2025-12-17",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "마지막 날(11/30) 3000명 이상 몰림",
+   "sold_out": "얼리버드 주말 입장권 판매 개시 1분 만에 물량 소진",
+   "reservation_fill": "사전 예약제(290원), 얼리버드 1분 소진",
+   "signal_quotes": [
+    "앞서 얼리버드 프로모션으로 판매한 주말 입장권은 개시 1분 만에 준비된 물량이 모두 소진됐다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C",
+    "A"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "유료(290원) 예약제 디저트 팝업. 29CM 공식 페이지·팝가에서 기간(11/26~30)·참여 브랜드 확인 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

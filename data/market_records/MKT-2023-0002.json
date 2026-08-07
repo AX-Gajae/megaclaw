@@ -1,0 +1,84 @@
+{
+  "market_record_id": "MKT-2023-0002",
+  "event_name": "애니메이션 '슬램덩크' 팝업스토어 (더현대 서울·더현대 대구)",
+  "brand": "현대백화점",
+  "ip_or_collab": "슬램덩크(더 퍼스트 슬램덩크)",
+  "category": "character",
+  "intervention": {
+    "concept_description": "영화 '더 퍼스트 슬램덩크' 흥행에 맞춰 현대백화점이 서울(1.26~2.7)과 대구(2.10~22)에서 릴레이로 연 슬램덩크 팝업스토어. 총 25일간 운영됐다.",
+    "experience_elements": [
+      "캐릭터 굿즈 판매"
+    ],
+    "promotions": [],
+    "is_free_entry": null,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "더현대 서울·더현대 대구",
+    "venue_type": "department_store",
+    "neighborhood": "여의도·중구(대구)",
+    "city": "서울·대구",
+    "period_from": "2023-01-26",
+    "period_to": "2023-02-22",
+    "area_pyeong": null,
+    "multi_store": true,
+    "derived": {
+      "duration": {
+        "days": 28,
+        "weekend_share": 0.29,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 25,
+    "counting_basis": "unknown",
+    "counting_basis_note": "방문객 집계 원문 없음",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": 1700000000,
+    "sales_source_quote": "올해 1월26~2월7일 기간 진행한 애니메이션 슬램덩크 팝업스토어도 2월10~22일 연 더현대 대구 팝업스토어까지 포함해 매출 17억 원을 올렸다.",
+    "sales_source_url": "https://www.businesspost.co.kr/BP?command=article_view&num=319488",
+    "sales_source_date": "2023-06-28",
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": []
+    },
+    "conflict": false,
+    "alt_figures": [
+      {
+        "metric": "visitors_total",
+        "figure": 7000,
+        "scope_note": "2차수집 대안치: 원문 표현 '7000명 이상의 고객이 몰리고' — 더현대 대구 팝업 기간 전체 방문 고객. 집계 방식(입장 ",
+        "source_url": "https://www.newsway.co.kr/news/view?ud=2024043015244934959",
+        "source_date": "2024-04-30"
+      },
+      {
+        "metric": "visitors_total",
+        "figure": "5000~6000",
+        "scope_note": "2차수집 대안치: 원문 표현 '일주일간 방문객이 5000~6000명 정도였다고 현대백화점은 전했다' — 현대백화점이 전한 '일",
+        "source_url": "https://v.daum.net/v/20230522112055040",
+        "source_date": "2023-05-22"
+      }
+    ]
+  },
+  "extraction_confidence": "high",
+  "notes": "패션비즈(2024-02-27)도 동일 수치 확인: '작년 1~2월 더현대서울과 더현대대구에서 총 25일간 팝업스토어를 진행해 17억원의 매출을 올렸다' (https://fashionbiz.co.kr/article/205967) | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {
+    "sales": "verified"
+  },
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

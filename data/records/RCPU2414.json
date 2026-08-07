@@ -1,0 +1,145 @@
+{
+ "record_id": "RCPU2414",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:덴티스테",
+  "space_id": "unresolved:올리브영_강남타운점",
+  "client_party_id": "unresolved:실란트로_주식회사",
+  "brand_key": "덴티스테",
+  "space_key": "올리브영_강남타운점"
+ },
+ "intervention": {
+  "concept": "덴티스테 치약 브랜드의 올리브영 강남타운점 내 팝업스토어. 조명형 치약 등신대, 화단, 계단, 양문도어 등 정면 연출과 캐비닛 이벤트·민트볼 이벤트 프로모션을 진행한다.",
+  "brand_name": "덴티스테",
+  "experience_elements": [
+   "프로모터 캐비닛 이벤트",
+   "프로모터 민트볼 이벤트",
+   "치약 거치용 아크릴 소도구",
+   "홀로그램 아크릴 박스"
+  ],
+  "promotions": [
+   "캐비닛 이벤트",
+   "민트볼 이벤트"
+  ],
+  "staging_tags": [
+   "전신거울",
+   "의자",
+   "테이블",
+   "야자수나무",
+   "사물함(3*3)",
+   "입구 양면그래픽",
+   "바닥그래픽 및 측면 시트",
+   "정면연출(화단,계단,양문도어,조명형 치약등신대,벽면)",
+   "기와"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": "강남",
+   "venue_name": "올리브영 강남타운점",
+   "venue_type": "올리브영 매장 내 팝업",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-07-01",
+   "to": "2024-07-31",
+   "days": 31
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "VAT 10% 별도. 비용지급방법 - 시공전 선금(50%) / 프로젝트 종료 후 잔금(50%). 대행수수료는 소계의 10%(정가 항목 제외), 예비비 소계의 5%. 계약 총액 금액 수치는 원문에 표기되지 않음."
+  },
+  "brand_requirements": [
+   "운영시간 16:00~21:00(5시간)",
+   "지정컬러 도장/아크릴 사용",
+   "로고 및 팝업 비주얼 작업"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "올리브영 강남타운점 매장 내 팝업"
+  },
+  "derived": {
+   "duration": {
+    "days": 31,
+    "weekend_share": 0.26,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 56,
+    "holiday_until": 75,
+    "holiday_block_in": 0,
+    "nat_event_gap": 82,
+    "nat_event": null,
+    "doc_lag_days": 12,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 15.7
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-07, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2024-07"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-sKapI6Msaei1g3f45VJxblR2r6BTa2G",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1-sKapI6Msaei1g3f45VJxblR2r6BTa2G/view",
+   "title": "덴티스테_프로모터_0530.xlsx"
+  },
+  {
+   "doc_id": "17hmLQMUu7C-W1F_lt5g1Iu90jUxS6Ww8",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/17hmLQMUu7C-W1F_lt5g1Iu90jUxS6Ww8/view",
+   "title": "[스위트스팟] 덴티스테 팝업스토어 대행견적서_240619.xlsx"
+  },
+  {
+   "doc_id": "1BPOC_B0c9PuKvo96hfVt4bX6x-lGVAIZ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1BPOC_B0c9PuKvo96hfVt4bX6x-lGVAIZ/view",
+   "title": "덴티스테 팝업스토어 계약서.pdf"
+  },
+  {
+   "doc_id": "1IRxWZIleAWVVBoJcKPO_ScDDsNYKYeCC",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1IRxWZIleAWVVBoJcKPO_ScDDsNYKYeCC/view",
+   "title": "[스위트스팟] 덴티스테 팝업스토어 대행견적서 (계약서 별도 작성x)_240619.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 2건: [스위트스팟] 덴티스테 팝업스토어 대행견적서_24061, [스위트스팟] 덴티스테 팝업스토어 대행견적서 (계약서 . 미확실: 계약 총액 금액 수치 없음(견적서에 숫자 미표기); client_name 미확정(실란트로 주식회사 추정); 면적(평) 정보 없음; 결과보고서 없음 - 방문자·매출 실측 데이터 전무; 도시명 명시 없음(강남타운점으로 서울 추정)"
+ }
+}

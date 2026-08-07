@@ -1,0 +1,142 @@
+{
+ "record_id": "RCPU2430",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:덴티스테",
+  "space_id": "unresolved:올리브영_강남타운점",
+  "client_party_id": "unresolved:실란트로_주식회사",
+  "brand_key": "덴티스테",
+  "space_key": "올리브영_강남타운점"
+ },
+ "intervention": {
+  "concept": "올리브영 강남타운점에서 진행된 덴티스테 치약 브랜드 팝업스토어. 조명형 치약 등신대, 화단·계단·양문도어 연출과 캐비닛(사물함) 이벤트, 민트볼(폴라로이드) 이벤트를 운영했다.",
+  "brand_name": "덴티스테",
+  "experience_elements": [
+   "캐비닛(사물함) 이벤트",
+   "민트볼 이벤트",
+   "폴라로이드 이벤트",
+   "조명형 치약 등신대",
+   "치약 거치용 아크릴 소도구",
+   "홀로그램 아크릴 박스"
+  ],
+  "promotions": [
+   "캐비닛 이벤트",
+   "민트볼 이벤트",
+   "폴라로이드 이벤트"
+  ],
+  "staging_tags": [
+   "전신거울",
+   "의자",
+   "테이블",
+   "야자수나무",
+   "사물함(3*3)",
+   "입구 양면그래픽",
+   "바닥그래픽",
+   "측면 시트",
+   "화단",
+   "계단",
+   "양문도어",
+   "벽면 연출",
+   "지정컬러 도장"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "강남",
+   "venue_name": "올리브영 강남타운점",
+   "venue_type": "올리브영 매장 내 팝업",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-07-01",
+   "to": "2024-07-30",
+   "days": 8
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "프로모터 대행수수료 10%, 시공 대행수수료 소계의 10%(정가항목 제외), 예비비 소계의 5%, 모두 VAT 10% 별도. 비용지급: 시공전 선금 50% / 프로젝트 종료 후 잔금 50%. 프로모터 운영 8일 기준(금/토 운영), 근무 16:00~21:00 5시간."
+  },
+  "brand_requirements": [
+   "프로모터 금/토 운영",
+   "운영시간 16:00~21:00(5시간)",
+   "1식 제공(식사+생수)",
+   "지정컬러 아크릴/도장 사용",
+   "로고 및 팝업 비주얼 작업"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "올리브영 강남타운점 매장 내 팝업"
+  },
+  "derived": {
+   "duration": {
+    "days": 30,
+    "weekend_share": 0.27,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 56,
+    "holiday_until": 75,
+    "holiday_block_in": 0,
+    "nat_event_gap": 82,
+    "nat_event": null,
+    "doc_lag_days": 12,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": null,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1WK1pvUZndHhDGn-ZSbdpB3ezn8ryPYX9",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1WK1pvUZndHhDGn-ZSbdpB3ezn8ryPYX9/view",
+   "title": "[스위트스팟] 덴티스테 팝업스토어 대행견적서_240619.xlsx"
+  },
+  {
+   "doc_id": "1_VUt7M9o4Xc7UU_y8nhroXfy-5cZYoYN",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1_VUt7M9o4Xc7UU_y8nhroXfy-5cZYoYN/view",
+   "title": "덴티스테_프로모터견적서(계약서 작성 x)_0530.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: 덴티스테_프로모터견적서(계약서 작성 x)_0530.xl, [스위트스팟] 덴티스테 팝업스토어 대행견적서_24061. 미확실: 계약 총액 금액 미기재(견적서 텍스트에 수치 없음); 면적(평) 정보 없음; 결과보고서 부재로 방문자수/매출 실측 없음; 예상 방문자 수 없음; 도시/구는 강남타운점 명칭 기반 추정"
+ }
+}

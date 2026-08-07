@@ -1,0 +1,103 @@
+{
+ "market_record_id": "MKT-2023-0028",
+ "event_name": "도드람 팝업스토어 (2023 한돈페스타, 코엑스)",
+ "brand": "도드람양돈농협",
+ "ip_or_collab": null,
+ "category": "other",
+ "intervention": {
+  "concept_description": "2023 한돈페스타 내 도드람 브랜드 팝업. 식료품 마켓 콘셉트 판매존+시식존+이벤트존",
+  "experience_elements": [
+   "판매존(신선육·가공식품 할인)",
+   "시식존(레시피별 시식)",
+   "뽑기 이벤트존",
+   "포토존"
+  ],
+  "promotions": [
+   "삼겹살 1kg 1만원 할인",
+   "추억의 뽑기 경품(에어팟 등)"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "삼성동 코엑스 (2023 한돈페스타 행사장 내)",
+  "venue_type": "convention",
+  "neighborhood": "삼성동",
+  "city": "서울",
+  "period_from": "2023-07-17",
+  "period_to": "2023-07-18",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 2,
+    "weekend_share": 0.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 5000,
+  "visitors_period_days": 2,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "도드람 발표. 팝업스토어 양일간 방문객 수(행사 전체 2만5천 명과 구분). 만족도 설문 1200명 이상 응답",
+  "visitors_source_quote": "양일간 방문객 5,000명 넘어 … 고객 참여 이벤트 인기",
+  "visitors_source_url": "https://www.amnews.co.kr/news/articleView.html?idxno=54534",
+  "visitors_source_date": "2023-07-24",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": "준비한 물량 전량 판매",
+   "reservation_fill": null,
+   "signal_quotes": [
+    "삼겹살 외에 다양한 부위의 신선육과 간편식을 파격적인 할인가로 판매해 준비한 물량이 모두 판매되는 성과를 얻었다.",
+    "뽑기 이벤트 참여를 위한 도드람 팝업스토어 만족도 설문조사에서는 1,200명 이상이 응답하며 높은 참여율을 보였다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [
+   {
+    "metric": "visitors_total",
+    "figure": 25000,
+    "scope_note": "2023 한돈페스타(축제 전체, 코엑스) 방문객 수 — 도드람 팝업스토어 단독 수치 아님",
+    "source_url": "https://www.amnews.co.kr/news/articleView.html?idxno=54534",
+    "source_date": "2023-07-24"
+   }
+  ],
+  "label_trust": {
+   "grade": "D",
+   "flags": [
+    "D",
+    "C"
+   ],
+   "why": "스코프 혼합(합산/총계) 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "축제 내 브랜드 부스형 팝업. 5000명=도드람 팝업 방문객(부제목), 25000명=행사 전체. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

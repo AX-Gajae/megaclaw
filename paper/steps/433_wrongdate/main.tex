@@ -1,0 +1,156 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{유보에 미래에서 온 옛날 작품이 섞여 있었다 --- 회차 수가 흐른 시간보다 많다는 것만으로 예순한 행을 찾아냈다}
+\author{월드모델 실험실}
+\date{노트 552 · 2026년 8월 4일}
+\maketitle
+
+\begin{abstract}
+노트 $546$ 이 웹툰 \texttt{days} 가 매일$+$ 전환으로 오염된 것을 찾았고
+노트 $547$ 이 고쳤다. 그 뒤 \textbf{달력 축을 감사했더니 같은 무늬가 또}
+있었다 --- \texttt{cal\_dow\_cos} 가 완결과 $+0.3297$ $\cdot$ 매일$+$ 와
+$+0.3471$ 이다(\texttt{meta\_c3} 는 $+0.3303$/$+0.3610$ 이었다).
+
+\begin{center}
+\begin{tabular}{lrr}
+\hline
+조각 & 연재 요일 \texttt{days} & \textbf{시작일 요일} \\
+\hline
+연재중 · 매일$+$ 아님 & $14.5\%$ & $\mathbf{13.9\%}$ \\
+완결 · 매일$+$ 아님 & $14.5\%$ & $17.1\%$ \\
+\textbf{완결 · 매일$+$} & $\mathbf{27.5\%}$ & $\mathbf{25.8\%}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{전환이 \texttt{start\_date} 도 옮긴다.} 그리고 \texttt{start\_date}
+는 축 하나가 아니라 \emph{학습과 유보를 가르는 기준}이다.
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 문턱과 지문. \textbf{나} --- 두 칸이 같이 오염된다.
+\textbf{다} --- 정정의 대가.}
+\end{figure}
+
+\section{라벨을 한 번도 안 보고 확정했다}
+
+주당 회차 $=$ \texttt{n\_episode} $/$ (오늘 $-$ \texttt{start\_date}) 주수는
+연재 요일 수를 넘을 수 없다. \textbf{주 $1$ 회 연재작이 주당 두 편씩 나올
+수는 없다.}
+
+\begin{center}
+\begin{tabular}{lrrrr}
+\hline
+문턱 & 걸린 행 & 유보에 & 월요일 시작 & 매일$+$ \\
+\hline
+$>1.0 \times$ n\_day & $543$ & $447$ & $27.6\%$ & $20\%$ \\
+$>1.5 \times$ n\_day & $108$ & $101$ & $62.0\%$ & $64\%$ \\
+\textbf{$>2.0 \times$ n\_day} & $\mathbf{64}$ & $\mathbf{61}$ & $\mathbf{84.4\%}$ & $\mathbf{95\%}$ \\
+$>3.0 \times$ n\_day & $48$ & $47$ & $95.8\%$ & $100\%$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{문턱을 올릴수록 월요일 시작이 짙어진다} --- 재설정의 지문이다.
+$2.0$ 을 쓴다(보너스 회차와 몰아보기를 넉넉히 봐준 자리).
+
+\begin{quote}
+\textbf{걸린 $64$ 행 중 $61$ 행이 유보에 있다} --- 웹툰 유보 $711$ 의
+$8.6\%$ 다. 그 행들의 라벨 중앙은 $2{,}589$ 로 나머지 유보 $35{,}697$ 의
+\textbf{$1/13.8$} 이다. \textbf{오래된 비인기 완결작이 매일$+$ 로 넘어가면서
+시작일이 최근 월요일로 재설정돼, 신작인 척 유보에 들어와 있었다.}
+\end{quote}
+
+\section{그래서 모형이 무엇을 배웠나}
+
+월요일 지시자가 그 $61$ 행 중 \textbf{$53$ 개($87\%$)를 잡는다.} 노트 $546$
+의 \texttt{meta\_c3} 와 여기의 \texttt{cal\_dow\_cos} 는 둘 다
+``월요일이냐''이고, \textbf{유보에서 월요일은 곧 ``재설정된 행''}이었다.
+$\rho$ 의 일부는 예보가 아니라 \emph{자료 사고 골라내기}였다.
+
+\section{정정의 대가}
+
+\begin{center}
+\begin{tabular}{lrrl}
+\hline
+자 & 전 & 후 & 차 \\
+\hline
+\textbf{판} & $+0.4812$ & $\mathbf{+0.4663}$ & $-0.0149$ ($0/12$) \\
+날짜 통제 판 & $+0.5143$ & $+0.5030$ & $-0.0114$ \\
+무리 안 판 & $+0.3961$ & $+0.3841$ & $-0.0120$ \\
+웹툰 & $+0.4334$ & $+0.3528$ & $-0.0806$ \\
+\textbf{웹툰 연재중만} & $+0.3304$ & $+0.3225$ & $\mathbf{-0.0079}$ \\
+웹툰 완결만 & $+0.5362$ & $+0.4307$ & $-0.1055$ \\
+KR 만화 & $+0.6297$ & $+0.6315$ & $+0.0018$ (문다) \\
+비게임 앱 & $+0.2874$ & $+0.2881$ & $+0.0006$ (문다) \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{$61$ 행(전체 채점의 $1.8\%$)이 판의 $0.0149$ 를 지고 있었다.}
+그런데 \textbf{연재중만은 $-0.0079$ 뿐}이다 --- 그 행들은 원래 그 조각에
+없었으니 당연하고, 그것이 이 정정이 맞다는 증거다.
+
+\section{넷째 누수 층}
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+층 & 묻는 것 \\
+\hline
+노트 $117$ ① & 라벨과 너무 붙나 \\
+노트 $117$ ② & 라벨을 만든 계수기에서 왔나 \\
+노트 $141$ & \emph{언제} 알 수 있나 \\
+\textbf{노트 $552$} & \textbf{그 날짜가 맞나} \\
+\hline
+\end{tabular}
+\end{center}
+
+시간으로 가르는 유보에서 \textbf{``언제 나왔는지 모르는 행''은 채점 대상이
+아니다.} 다시 매길 수도 없다 --- 웹툰 레코드의 날짜 칸은
+\texttt{start\_date} 하나뿐이다.
+
+\section*{어떻게 뺐나}
+
+\textbf{행을 지우지 않고 라벨만 \texttt{NaN} 으로 둔다}
+(\texttt{lab/datehygiene}). 하네스는 \texttt{np.isfinite(y)} 로 학습과 채점을
+둘 다 가르므로 그것으로 충분하고, \textbf{행 수가 그대로라 축 결합이 안
+깨진다}(노트 $133$ 의 조용한 중립 대체를 피한다). 몇 행을 뺐는지는
+\texttt{LOAD\_HYGIENE} 에 남고, 행 수가 안 맞으면 \textbf{예외를 던진다}.
+
+\begin{quote}
+분모 $3{,}430 \to \mathbf{3{,}369}$ (웹툰 유보 $711 \to 650$ · 학습
+$2{,}941 \to 2{,}938$). \textbf{새 기준선 $0.4663$} --- 이 시점 이전 실행의
+판과 견주면 안 된다. \textbf{노트 $547$ 의 $0.0097$ 과 합쳐 이번 사이클
+정정이 $0.0246$} 이고, 이는 오늘 잰 \emph{검색 축 전체}의 값($0.0204$)보다
+크다.
+\end{quote}
+
+\section*{조항}
+
+\begin{quote}
+\textbf{그 날짜가 맞는지 묻는다.} 시간으로 가르는 판에서 날짜는 축 하나가
+아니라 \emph{자를 만드는 것}이다. 판정은 \textbf{라벨을 안 보는 물리
+규칙}으로 한다 --- 회차 수와 흐른 시간처럼 자료 안에서 서로를 반증할 수
+있는 짝을 찾는다.
+\end{quote}
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{다른 도메인엔 못 건다} --- \texttt{n\_episode} 처럼 경과 기간과
+대조할 칸이 웹툰에만 있다. 게임의 업데이트 수 $\cdot$ 펀딩의 마감일이
+후보인데 안 봤다.
+\item \textbf{$>1.0 \times$ n\_day 인 $543$ 행} --- 월요일 시작이 $27.6\%$ 로
+아직 균등 위다. 문턱 $2.0$ 과 $1.0$ 사이에 더 있을 수 있는데, 보수적으로
+남겼다.
+\item \textbf{\texttt{TODAY} 가 하드코딩} --- 시간이 흐르면 분모가 커져
+문턱이 \emph{느슨해진다}. 보수적인 방향이지만 스냅샷을 갱신할 때 같이
+봐야 한다.
+\end{itemize}
+
+\end{document}

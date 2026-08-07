@@ -1,0 +1,135 @@
+{
+ "record_id": "RTPU2416",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:포켓몬고",
+  "space_id": "unresolved:미상",
+  "client_party_id": null,
+  "brand_key": "포켓몬고",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "포켓몬고 팝업스토어. 상세 문서가 제공되지 않아 컨셉·체험요소를 확인할 수 없음.",
+  "brand_name": "포켓몬고",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-04-26",
+   "to": "2024-05-15",
+   "days": 20
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 20,
+    "weekend_share": 0.3,
+    "holiday_days": 3
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 54,
+    "holiday_until": 8,
+    "holiday_block_in": 3,
+    "nat_event_gap": 16,
+    "nat_event": null,
+    "doc_lag_days": 19,
+    "doc_dates_found": 4
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": null,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "14Zn191HirHQFaIUYCROb3VFhAG4AjRjQ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14Zn191HirHQFaIUYCROb3VFhAG4AjRjQ/view",
+   "title": "RTPU2416_포켓몬고 팝업스토어_계약서_240405.docx"
+  },
+  {
+   "doc_id": "1AHfqOfPMPF_bvazTzZaGMIwQM-YvMl4W",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1AHfqOfPMPF_bvazTzZaGMIwQM-YvMl4W/view",
+   "title": "RTPU2416_포켓몬고 팝업스토어_계약서_240405.docx"
+  },
+  {
+   "doc_id": "1L11YCzH67pntTbBPf5VSXk3zw2E9EF-J",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1L11YCzH67pntTbBPf5VSXk3zw2E9EF-J/view",
+   "title": "RTPU2416_포켓몬고 팝업스토어_견적서_서울__240407.pdf"
+  },
+  {
+   "doc_id": "1k6pR5W0wlmxy2YkjZ6QvpI7dL9JTt7cH",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1k6pR5W0wlmxy2YkjZ6QvpI7dL9JTt7cH/view",
+   "title": "(sweetspot)포켓몬고_결과보고서.pptx"
+  },
+  {
+   "doc_id": "1qa8TLiUqqQSMHbwIXy8dR4DenNagZj0p",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1qa8TLiUqqQSMHbwIXy8dR4DenNagZj0p/view",
+   "title": "RTPU2416_포켓몬고 팝업스토어_견적서_부산__240407.pdf"
+  },
+  {
+   "doc_id": "1tw425RpKvtESSgi1OB8drUaHvWYuK0KG",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1tw425RpKvtESSgi1OB8drUaHvWYuK0KG/view",
+   "title": "제안서_내용없음.txt"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서)가 제공되지 않음; client_name 미상; venue/입지 정보 없음; 면적 정보 없음; 수수료 구조 없음; 컨셉·체험요소·프로모션 상세 없음; 방문객/매출 실측 데이터 없음; 예상 방문객 없음"
+ }
+}

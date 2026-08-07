@@ -1,0 +1,122 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{갈래는 국경을 안 넘는다 --- 두 해 전 축을 만들며 ``시험하려는 것''이라 적어 둔 명제를 처음 시험했고, 반증됐다}
+\author{월드모델 실험실}
+\date{노트 545 · 2026년 8월 4일}
+\maketitle
+
+\begin{abstract}
+노트 419 는 \texttt{gen}(갈래 축)을 만들며 이렇게 적었다 --- \emph{``안 본
+도메인도 제 갈래만 알면 같은 자리에 선다. \textbf{이것이 시험하려는
+것이다.}''} 그런데 \textbf{집 밖 짝에 갈래가 안 붙어 있어서 그 시험이 두 해
+동안 안 됐다.} KR 만화 $1{,}716$ 건 전부에 \texttt{genres} 가 있는 것을 찾아
+붙였다.
+
+\begin{center}
+\begin{tabular}{lrrr}
+\hline
+집 밖 짝 & 기존(ALL5) & 갈래 붙임 & 차 \\
+\hline
+\textbf{KR 만화}(덮음 $100\%$) & $+0.6290$ & $+0.6212$ & $\mathbf{-0.0078}$ ($1/12$) \\
+비게임 앱(덮음 $16\%$) & $+0.2880$ & $+0.2886$ & $+0.0006$ ($9/12$) \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{덮음 $100\%$ 인 쪽에서 전이가 내려간다.} \texttt{grp} 은 같은 자리에서
+$-0.0822 \to +0.2128$ 을 샀는데(노트 $417 \cdot 418$) \textbf{\texttt{gen} 은
+판다.} 같은 취지로 만든 축 둘이 반대로 행동한다.
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- grp 대 gen. \textbf{나} --- 분포 차이로 설명 안 됨.
+\textbf{다} --- 또 같은 함정.}
+\end{figure}
+
+\section{또 같은 함정에 걸렸다}
+
+첫 실행은 \textbf{차가 정확히 $+0.0000$($0/12$)} 이었다. \texttt{predict} 는
+\texttt{self.names.get(d)} 로 축 이름표를 얻는데 \textbf{집 밖은 학습 도메인이
+아니라 \texttt{None} $\to$ ALL5 로 떨어지고}, 내가 $34$ 번 자리에 채운
+\texttt{gen} 은 \textbf{한 번도 안 닿았다}.
+
+\begin{quote}
+\texttt{DirectPool.\_feat} 의 독스트링이 \textbf{같은 사고를 이미 기록하고
+있었다} --- ``처음엔 ALL5 를 그대로 돌려서, 축을 여덟 개 덧붙여도 모형에 한
+칸도 안 닿았다. \textbf{차이가 정확히 $+0.0000$ 으로 나온 게 단서였다}.''
+\end{quote}
+
+집 밖에 이름표를 주고 다시 재니 기준이 $+0.6290$ 으로 \emph{정확히} 재현됐다
+(관측 안 된 축은 $0.5$/$0$ 이라 특징이 같다) --- 그것이 배선 가드다.
+
+\section{노트 419 의 전제가 반증됐다}
+
+\texttt{grp} 과 \texttt{gen} 은 같은 취지로 만들어졌다 --- ``안 본 작품에도
+있는 성질''. 그런데
+
+\begin{center}
+\begin{tabular}{lr}
+\hline
+ & KR 만화 전이 변화 \\
+\hline
+\texttt{grp}(노트 $417 \cdot 418$) & $-0.0822 \to +0.2128$ \quad $\mathbf{+0.295}$ \\
+\textbf{\texttt{gen}}(여기) & $+0.6290 \to +0.6212$ \quad $\mathbf{-0.008}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{설명 후보 둘이 다 안 맞는다}
+
+\paragraph{① 부호 뒤집힘(노트 441 무늬) --- 아니다.} \texttt{gen} $\leftrightarrow$
+라벨 순위상관은 \textbf{전 도메인에서 음수}다(만화 $-0.099$ $\cdot$ 모바일
+$-0.104$ $\cdot$ 게임 $-0.169$ $\cdot$ 애니 $-0.015$). KR 도 음수이고 오히려
+\emph{더 세다}($-0.281$). 방향이 어긋난 것이 아니다.
+
+\paragraph{② 갈래 분포 차이 --- 아니다.} 학습 전체와의 총변동거리가 KR 은
+$0.362$ 인데 \textbf{모바일 $0.673$ $\cdot$ 게임 $0.661$ 로 더 먼 학습
+도메인들이 있다.} 거리로는 순서가 안 맞는다.
+
+\begin{quote}
+\textbf{왜 내려가는지 모른다 --- 관측으로 둔다.} 노트 385(달력) $\cdot$
+노트 422(표지)와 같은 처분이다. 남은 짐작은 하나 --- \texttt{gen} 의 쓸모가
+\emph{도메인 맥락 안에서만} 학습되고, 원핫이 전부 $0$ 인 집 밖에서는 그
+맥락 없이 갈래만 남아 잘못된 자리에 선다.
+\end{quote}
+
+\section*{시장팝업 다섯째 길도 닫혔다}
+
+이 실험은 원래 노트 $543$ 의 남은 길이었다 --- 집 밖 짝에 \texttt{gen} 을
+붙이면 앱이 \texttt{gen} 결측 갈래에서 나와 시장팝업 category(gen 형태)의
+유일한 실격($-0.0012$)이 사라질 것이라 봤다.
+
+\begin{quote}
+\textbf{그런데 앱은 $+0.0006$ 오르는 대신 KR 이 $-0.0078$ 내린다} ---
+$13$ 배 큰 손해다. \textbf{다섯 형태가 다 닫혔다.}
+\end{quote}
+
+\section*{조항}
+
+\begin{quote}
+\textbf{집 밖 짝에 축을 붙일 때는 이름표부터 확인한다.} 학습 도메인이 아닌
+곳은 \texttt{names} 가 없어 ALL5 로 떨어지고, 새 칸은 조용히 무시된다.
+\textbf{차가 정확히 $0$ 이면 배선을 의심한다}(노트 509)는 조항이 세 번째로
+값을 했다.
+\end{quote}
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{\texttt{grp} 은 되고 \texttt{gen} 은 안 되는 이유} --- 두 축의
+차이는 ``도메인마다 따로 눈금''(grp) 대 ``눈금을 공유''(gen)다. \textbf{공유
+눈금이 오히려 해로운} 것일 수 있다.
+\item \textbf{시장팝업 category 는 다섯 형태가 다 닫혔다} --- 노트 542 의
+재검토 문턱($1/3$)이 채워지기를 기다리거나, 여섯째 형태를 찾아야 한다.
+\item \textbf{비게임 앱 갈래 덮음이 $16\%$} --- App Store 범주가 공유 어휘에
+거의 안 맞는다. 어휘를 넓히면 그 짝에서 다시 잴 수 있다.
+\end{itemize}
+
+\end{document}

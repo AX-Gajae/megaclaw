@@ -1,0 +1,75 @@
+{
+  "market_record_id": "MKT-2024-0001",
+  "event_name": "에비뉴엘 잠실 더크라운 럭셔리 주얼리 팝업 시리즈(2024년 초 3개)",
+  "brand": "롯데 에비뉴엘 잠실(럭셔리 주얼리 브랜드)",
+  "ip_or_collab": null,
+  "category": "fashion",
+  "intervention": {
+    "concept_description": "국내 명품관 최초 연매출 1조 달성 에비뉴엘 잠실 지하1층 '더 크라운' 팝업존에서 진행된 럭셔리 주얼리 팝업 3건(신상품 선공개·단독 프로모션·체험 요소)",
+    "experience_elements": [
+      "신상품 사전 공개",
+      "단독 프로모션",
+      "체험 요소"
+    ],
+    "promotions": [
+      "단독 프로모션"
+    ],
+    "is_free_entry": null,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "롯데 에비뉴엘 잠실 지하1층 더 크라운",
+    "venue_type": "department_store",
+    "neighborhood": "잠실",
+    "city": "서울",
+    "period_from": "2024-01-01",
+    "period_to": "2024-06-30",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 182,
+        "weekend_share": 0.29,
+        "holiday_days": 11
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "롯데백화점 제공 매출 수치(3개 팝업 합산): '올 초 진행한 3개의 럭셔리 주얼리 팝업 경우, 약 100억원에 가까운 매출을 기록하기도 했다'",
+    "visitors_source_quote": "올 초 진행한 3개의 럭셔리 주얼리 팝업 경우, 약 100억원에 가까운 매출을 기록하기도 했다.",
+    "visitors_source_url": "https://tnnews.co.kr/archives/210685",
+    "visitors_source_date": "2024-11-01",
+    "sales_krw": 10000000000,
+    "sales_source_quote": "올 초 진행한 3개의 럭셔리 주얼리 팝업 경우, 약 100억원에 가까운 매출을 기록하기도 했다.",
+    "sales_source_url": "https://tnnews.co.kr/archives/210685",
+    "sales_source_date": "2024-11-01",
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "평균적으로 팝업 구매 고객의 30%가, 이전에 롯데백화점을 이용하지 않았던 고객일만큼 신규 고객 유입 효과도 큰 것으로 분석된다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "3개 팝업 합산 매출(브랜드별 수치 미공개). '약 100억원에 가까운'이므로 sales_krw는 100억 근사치로 표기. 기간은 '올 초'로만 보도. | 병합 레코드: ",
+  "_aggregate": true,
+  "tier": "market_claim",
+  "single_event": false,
+  "exclude_reason": "집계형(통합/합산)",
+  "verification": {
+    "sales": "verified"
+  },
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,90 @@
+{
+ "market_record_id": "MKT-2024-0008",
+ "event_name": "(여자)아이들 'Super Lady POP-UP'(라인프렌즈 스퀘어 신사)",
+ "brand": "큐브엔터테인먼트/IPX",
+ "ip_or_collab": "(여자)아이들((G)I-DLE) 정규 2집 '2'",
+ "category": "entertainment",
+ "intervention": {
+  "concept_description": "정규 2집 발매 기념 팝업. 앨범 재킷 의상 전시, 포토존, MD 판매",
+  "experience_elements": [
+   "의상 전시",
+   "포토존",
+   "MD 판매"
+  ],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "라인프렌즈 스퀘어 신사 2층 팝 스퀘어",
+  "venue_type": "street_standalone",
+  "neighborhood": "신사동",
+  "city": "서울",
+  "period_from": "2024-02-02",
+  "period_to": "2024-02-19",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 18,
+    "weekend_share": 0.33,
+    "holiday_days": 4
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 5000,
+  "visitors_period_days": 18,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "오픈 후 5일 누적 방문 5000명(전체 운영 기간 18일 중 초기 5일 수치). 소속사/주최 집계 인용. 원문: '오픈 5일 만에 5,000명이 방문했고'",
+  "visitors_source_quote": "연일 수많은 인파가 몰린 가운데 오픈 5일 만에 5,000명이 방문했고, 일부 제품은 조기 소진되며 팬들의 폭발적인 관심이 입증됐다.",
+  "visitors_source_url": "https://www.asiaartistawards.com/news/detail/79311/all",
+  "visitors_source_date": "2024-02-19",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": "일부 제품 조기 소진",
+   "reservation_fill": null,
+   "signal_quotes": [
+    "일부 제품은 조기 소진되며 팬들의 폭발적인 관심이 입증됐다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": true,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": false,
+   "days_stated": 5,
+   "days_stored": 18,
+   "days_corrected": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "visitors_total=5000은 오픈 후 5일 누적(총 18일 운영 중 초기 수치). MTN은 '약 5000명'으로 보도. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

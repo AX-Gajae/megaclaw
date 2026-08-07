@@ -1,0 +1,121 @@
+{
+ "record_id": "RCGD2407",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:아이퀴지트",
+  "space_id": "unresolved:unknown",
+  "client_party_id": "unresolved:주식회사_아이퀴지트",
+  "brand_key": "아이퀴지트",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "팝업 관련 굿즈(기모 후드티, 핫팩) 물품 공급 계약. 구매자 아이퀴지트가 공급자 스위트스팟에 후드티 및 핫팩 굿즈 납품을 의뢰한 건으로, 팝업 체험 컨셉 자체는 문서에 없음.",
+  "brand_name": "",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [
+   "굿즈_후드티",
+   "핫팩",
+   "입장팔찌",
+   "스태프명찰"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-11-19",
+   "to": "2024-12-31",
+   "days": 43
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "후드티 발주 총액 3,101,000원(기모 후드티 M/L/XL 39,000원×49=1,911,000원, 2XL 42,500원×28=1,190,000원, 총 77개). 핫팩 별도 견적(공급가 73,645 vat포함 항목 언급, 작업비/배송비/포장비 미포함). 지급: 2024년 12월 31일까지 전액 현금 지급(국민은행 378801-01-088226, 스위트스팟).납품기일 12월 11일까지 굿즈 총 77개.계약기간 2024-10-08~2024-12-31. | 계약서 재독해(2026-07-27): 총액 일치 확인(3.1M)"
+  },
+  "brand_requirements": [
+   "납품기일 12월 11일까지 굿즈 총 77개 물류입고",
+   "운송비용 공급자 부담, 하역작업 구매자 진행",
+   "물품 수령 후 10영업일 이내 검사",
+   "규격은 별첨 단가표 또는 K.S 규격품"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 43,
+    "weekend_share": 0.28,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 62,
+    "holiday_until": 67,
+    "holiday_block_in": 0,
+    "nat_event_gap": 5,
+    "nat_event": "수능",
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서가 없어 방문/매출 실측 데이터 없음. 본 문서는 물품 공급 계약서와 견적서로 방문자 집계 정보 부재.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": 3.1,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1T9t79KioyS9mlUadIByKsbH43BasPthq",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1T9t79KioyS9mlUadIByKsbH43BasPthq/view",
+   "title": "스위트스팟_물품 공급 계약서(후드티)_241127.docx"
+  },
+  {
+   "doc_id": "1evrFCtGPV1dER4NRXwUFpNwDJoNHL0Z8",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1evrFCtGPV1dER4NRXwUFpNwDJoNHL0Z8/view",
+   "title": "✔스위트스팟 _기모후드티, 핫팩 견적서 241126.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 2건: 스위트스팟_물품 공급 계약서(후드티)_241127.do, ✔스위트스팟 _기모후드티, 핫팩 견적서 241126.x. 미확실: 팝업 컨셉/브랜드명/체험요소 정보 없음; 입지(도시/구/venue) 정보 없음; 면적(평) 정보 없음; 방문자수·매출 실측 데이터 없음(결과보고서 부재); 예상 방문객수 정보 없음; 핫팩 견적 금액 불명확(견적서 데이터 파편적) | fee 계약서화(2026-07-27)"
+ }
+}

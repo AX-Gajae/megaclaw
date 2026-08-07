@@ -1,0 +1,122 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{집 밖이 가진 것을 도메인 안에서 빼면 집 밖이 무너진다 --- 상한 $+0.0161$ 중 쓸 수 있던 것은 이미 다 썼다}
+\author{월드모델 실험실}
+\date{노트 502 · 2026년 8월 3일}
+\maketitle
+
+\begin{abstract}
+노트 501 이 고르개 갈래를 닫고 ``후보를 하나씩 관문에''로 갔다. 노트 497
+이 잰 도메인별 값에 판 무게를 곱한 순서로 \texttt{target\_breadth} 후보
+넷을 태웠다 --- 자 다섯을 전부 걸어서.
+
+\begin{center}
+\begin{tabular}{lrrrrr}
+\hline
+팔 & 판 & 날짜 통제 & 무리 안 & KR 만화 & 비게임 앱 \\
+\hline
+애니 트렌드(채택) & $+0.0045$ & $+0.0045$ & $+0.0088$ & $\mathbf{+0.0152}$ & $\mathbf{+0.0039}$ \\
+\hline
+$+$웹툰 tb & $+0.0035$ & $+0.0075$ & $+0.0036$ & $\mathbf{-0.0303}$ & $\mathbf{-0.0240}$ \\
+$+$게임 tb & $+0.0034$ & $+0.0045$ & $+0.0027$ & $-0.0031$ & $-0.0022$ \\
+$+$모바일 tb & $+0.0004$ & $+0.0020$ & $+0.0018$ & $-0.0231$ & $-0.0243$ \\
+$+$시장팝업 tb & $-0.0008$ & $+0.0008$ & $+0.0004$ & $+0.0003$ & $-0.0031$ \\
+\hline
+\end{tabular}
+\end{center}
+
+웹툰 \texttt{tb} 는 \textbf{집안 자 셋이 전부 $10/10$ 로 오른다.} 그리고
+\textbf{집 밖 두 짝이 전부 $0/10$ 로 내려간다} --- KR $-0.0303$ 은 판
+이득 $+0.0035$ 의 \textbf{여덟 배}다. 노트 420 조항(전이를 확실히 잃는
+변경은 판이 통과해도 안 넣는다)으로 \textbf{넷 다 기각.}
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 다섯 팔 $\times$ 자 다섯. \textbf{나} --- 집 밖
+짝의 축 덮음. \textbf{다} --- 상한의 분해.}
+\end{figure}
+
+\section{기계 --- 코드에 그대로 있었다}
+
+집 밖 두 짝의 축 행렬은 \texttt{ALL5} 다섯 개만 채운다.
+
+\begin{center}
+\begin{tabular}{lrr}
+\hline
+축 & KR 만화 & 비게임 앱 \\
+\hline
+\texttt{target\_breadth} & $100\%$ & $100\%$ \\
+\texttt{venue\_prominence} & $100\%$ & $100\%$ \\
+\texttt{entry\_friction} & $100\%$ & $100\%$ \\
+\texttt{goods\_scale} & $62\%$ & $100\%$ \\
+\texttt{media\_push} & $0\%$ & $67\%$ \\
+\hline
+트렌드 $\cdot$ 위키 $\cdot$ 태그 $\cdot$ gen $\cdot$ grp & $\mathbf{0\%}$ & $\mathbf{0\%}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+그러면 두 채택 후보의 운명이 갈리는 이유가 한 줄이다.
+
+\begin{quote}
+\textbf{애니 트렌드를 가리는 것}은 집 밖이 \emph{안 갖는} 축에 대한
+모형의 의존을 줄인다 --- 집 밖은 오히려 좋아진다(KR $+0.0152$).
+
+\textbf{웹툰 \texttt{target\_breadth} 를 가리는 것}은 집 밖이 $100\%$
+\emph{의지하는} 축에 대한 모형의 의존을 줄인다 --- 집 밖이 무너진다
+(KR $-0.0303$).
+\end{quote}
+
+크기도 맞는다. 판 무게가 큰 도메인에서 뺄수록 심하다 --- 웹툰($20.7\%$)
+$-0.0303$ · 모바일($12.9\%$) $-0.0231$ · 게임($5.2\%$) $-0.0031$ ·
+시장팝업($3.7\%$) $+0.0003$.
+
+\begin{quote}
+\textbf{조항} --- \textbf{도메인별 가림 후보는 그 축이 집 밖 짝에
+있는지 먼저 본다.} 있으면 집 밖을 판다. 이 한 줄이면 이번 사이클의
+관문 넷을 안 돌려도 됐다.
+\end{quote}
+
+\section{상한이 소진됐다}
+
+노트 497 의 $+0.0161$ 은 세 조각이었다.
+
+\begin{center}
+\begin{tabular}{lrl}
+\hline
+조각 & 몫 & 지위 \\
+\hline
+시계열(트렌드) & $+0.0066$ & \textbf{가져왔다}(애니 채택 $+0.0045$) \\
+\texttt{target\_breadth} & $+0.0078$ & 집 밖을 팔아야 산다 --- \textbf{기각} \\
+\texttt{venue\_prominence} & $+0.0017$ & 같음(\texttt{ALL5}) --- \textbf{기각} \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{시계열 몫은 거의 전부 애니 하나였고 그것은 이미 채택했다.} 남은
+$+0.0095$ 는 \texttt{ALL5} 축이라 원리상 집 밖을 판다.
+
+그러니 노트 497 의 ``축 셋만으로 두 해 채택 총합의 서너 배''라는 문장은
+\textbf{집안만 볼 때의 이야기였다.} 집 밖까지 세면 \textbf{가져올 수
+있던 것은 $+0.0045$ 하나뿐}이고 그것을 가져왔다.
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{남은 시계열 후보} --- 위키 $\cdot$ 태그 $\cdot$ gen $\cdot$
+grp 도 집 밖에 없다. 도메인별로 아직 안 쟀다. \textbf{여기만 안전한
+사냥터다.}
+\item \textbf{집 밖 짝을 늘리면 규칙이 바뀐다} --- 지금 두 짝이 ALL5 만
+갖는 것은 \emph{태깅을 그것만 했기} 때문이다. 집 밖 짝에 트렌드를 붙이면
+이 조항이 무효가 된다.
+\item \textbf{게임 tb 는 경계에 있다}(판 $+0.0034$ $10/10$ 대 집 밖
+$-0.0031 \cdot -0.0022$, $3/10$) --- 환율 $\approx 1$ 이라 노트 459
+조건 ④를 겨우 넘는다. \textbf{안 넣는다} --- 부호가 $3/10$ 이라 노트 426
+조건 ②(집 밖이 확실히)를 못 넘는다.
+\end{itemize}
+
+\end{document}

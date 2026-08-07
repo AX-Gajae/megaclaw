@@ -1,0 +1,94 @@
+{
+ "market_record_id": "MKT-2025-0010",
+ "event_name": "미래엔 '디지털초코' 팝업스토어 '초코랜드' @스타필드 고양",
+ "brand": "미래엔",
+ "ip_or_collab": "디지털초코",
+ "category": "other",
+ "intervention": {
+  "concept_description": "초등 디지털 학습 플랫폼 디지털초코를 놀이동산 콘셉트로 체험하는 공간",
+  "experience_elements": [
+   "초코팝 어드벤처 테마존",
+   "N토피아 도서관",
+   "달달 SHOP",
+   "학습 상담관"
+  ],
+  "promotions": [
+   "디지털초코 첫 달 100원 구독",
+   "구매 금액대별 사은품"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "스타필드 고양 센트럴 아트리움",
+  "venue_type": "mall",
+  "neighborhood": "덕양구",
+  "city": "고양",
+  "period_from": "2025-02-21",
+  "period_to": "2025-02-23",
+  "area_pyeong": null,
+  "multi_store": null,
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.67,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 3500,
+  "visitors_period_days": 3,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "미래엔 보도자료: '3일간 약 3500여 명의 누적 방문객을 기록했다.'",
+  "visitors_source_quote": "개학을 앞두고 자녀에게 맞는 디지털 학습 프로그램과 도서를 알아보려는 초등 학부모와 어린이들의 적극적인 참여가 이어졌으며, 3일간 약 3500여 명의 누적 방문객을 기록했다.",
+  "visitors_source_url": "https://www.newswire.co.kr/newsRead.php?no=1006452",
+  "visitors_source_date": "2025-02-26",
+  "sales_krw": null,
+  "sales_source_quote": "",
+  "sales_source_url": "",
+  "sales_source_date": "",
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": true,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "체험 이벤트에는 주말 하루 최대 1200명 이상이 참여하는 등 연일 북적였다.",
+    "어드벤처 게임 완료자에게 제공된 랜덤 선물은 일부 품목이 조기 소진될 정도로 뜨거운 반응을 얻었다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "뉴스와이어 보도자료 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

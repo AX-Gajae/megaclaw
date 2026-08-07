@@ -1,0 +1,82 @@
+{
+  "market_record_id": "MKT-2024-0023",
+  "event_name": "빙그레 '투게더 50주년 팝업스토어' 성수",
+  "brand": "빙그레(투게더)",
+  "ip_or_collab": "투게더 출시 50주년(1974년), '투게더 세상으로의 초대' 콘셉트",
+  "category": "fnb",
+  "intervention": {
+    "concept_description": "아이스크림 투게더 세계관을 입체적으로 구현한 체험 팝업. 20분 회전제·10명 입장 제한 운영",
+    "experience_elements": [
+      "3면 스크린 스토리텔링·바닐라강 다리",
+      "블록·퍼즐·스푼 게임(협업 프로그램)",
+      "디저트 존(투게더+토핑 7종 시식)",
+      "인생네컷 포토부스",
+      "에코백 DIY·굿즈"
+    ],
+    "promotions": [
+      "미션 도장 3개 수집 시 굿즈 증정",
+      "SNS 해시태그 이벤트 토핑 추가"
+    ],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "서울 성동구 성수이로18길 6-1(성수역 카페거리 인근)",
+    "venue_type": "street_standalone",
+    "neighborhood": "성수동",
+    "city": "서울",
+    "period_from": "2024-04-25",
+    "period_to": "2024-05-08",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 14,
+        "weekend_share": 0.29,
+        "holiday_days": 2
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 14,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "현장 직원 인용 '지난 주말에만 5000명이 넘는 방문객'(주말 부분 수치) 및 빙그레 관계자 '하루 천여 명 방문'. 전체 기간 총계 미공개 → visitors_total null",
+    "visitors_source_quote": "현장 직원은 “이나마도 월요일 오후 시간대라 짧은 편”이라며 “지난 주말에만 5000명이 넘는 방문객이 다녀갔다”고 귀띔했다.",
+    "visitors_source_url": "https://theviewers.co.kr/View.aspx?No=3213254",
+    "visitors_source_date": "2024-04-29",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "외부 대기열+내부 게임 대기열, 게임 3종 통과에 30분 이상 소요(기자 체험)",
+      "sold_out": null,
+      "reservation_fill": "사전예약 전 회차 마감",
+      "signal_quotes": [
+        "이미 사전예약은 전 회차 모두 마감됐으며, 현장에서 대기를 한 후에야 입장할 수 있을 만큼 '투게더'에 대한 사람들의 관심은 뜨거웠다.(팝콘뉴스 2024-04-30)",
+        "빙그레 관계자는 “20분 간격으로 회전되는 팝업스토어에는 10명씩 입장을 제한해 쾌적한 관람을 제공하고 있음에도 하루 천여 명이 방문하고 있다”고 설명했다.(팝콘뉴스)"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "주말 이틀 5000명+(더뷰어스, 현장 직원) / 하루 약 1000명(팝콘뉴스, 빙그레 관계자) 모두 부분 수치 | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

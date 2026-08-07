@@ -1,0 +1,597 @@
+{
+ "record_id": "RXPI2403",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:샵사이다_CIDER",
+  "space_id": "unresolved:여의도_더현대서울",
+  "client_party_id": "unresolved:웨이크메이크_WAKE_MAKE",
+  "brand_key": "샵사이다",
+  "space_key": "더현대서울"
+ },
+ "intervention": {
+  "concept": "샵사이다(CIDER) X 웨이크메이크 콜라보 팝업스토어. 파스텔톤 그라데이션 그래픽을 활용한 사이다 브랜드 무드로 연출하며, 컬러별(Blue/Beige/Pink/Lime) 의류존과 피팅룸, 웨이크메이크 테스트존, 이벤트월로 구성. 여성 고객 타깃에 맞춰 1600H 헹거 통일 및 다양한 룩 디스플레이 중심 연출.",
+  "brand_name": "샵사이다(CIDER)",
+  "experience_elements": [
+   "컬러존별 의류 디스플레이(Blue/Beige/Pink/Lime)",
+   "피팅룸(스팀다리미)",
+   "WAKE MAKE 테스트존",
+   "이벤트월(스쿱 비주얼)",
+   "마네킹 6개 연출",
+   "단차형/일자형/하부수납형 헹거"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "파스텔톤 그라데이션",
+   "실사 출력 기둥 부착",
+   "비조명 스카시 로고",
+   "메탈 시트",
+   "폴리카보네이트+컬러시트",
+   "1600H 헹거 통일"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "여의도",
+   "venue_name": "더현대서울",
+   "venue_type": "백화점",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": 5,
+  "period": {
+   "from": "2024-04-25",
+   "to": "2024-05-01",
+   "days": 7
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "인테리어 공사 총계 120,000,000원 (VAT 별도). 세부: 디자인/설계비 10,100,000 + 인테리어공사 103,000,000 + 간접비(기업이윤 8%) 8,240,000, NEGO -1,340,000. 결제조건: 계약금 40%/중도금 30%/잔금 30%. 공사기간 2024-03-14~2024-05-02."
+  },
+  "brand_requirements": [
+   "더현대 지정 보양",
+   "헹거 전체 높이 1600H 통일",
+   "일자형 헹거 ALT.B 진행",
+   "수납형 헹거는 베이지존만 사용"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대서울 백화점"
+  },
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 53,
+    "holiday_until": 9,
+    "holiday_block_in": 0,
+    "nat_event_gap": 15,
+    "nat_event": null,
+    "doc_lag_days": 7,
+    "doc_dates_found": 30
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": "서울 영등포구 여의대로 108"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": 22909732,
+   "rev_mm_recognized": -70.5
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "partial",
+   "rule": "인식 -70.5 < 총액 120.0의 90%",
+   "contract_total_mm": 120.0,
+   "last_recognition_period": "2024-12"
+  },
+  "sales_basis": "PnL 상품매출 양수계정 합 × 1.1 (부가세 포함 기준)",
+  "label_history": [
+   {
+    "at": "pnl_sales (2026-07-28)",
+    "action": "mine",
+    "changes": [
+     "sales_krw 22,909,732 (PnL 총 결제액)"
+    ],
+    "evidence": "core.project_pnl_monthly 상품매출 양수계정 합 20,827,029(공급가) × 1.1, 인식 2개월"
+   }
+  ]
+ },
+ "docs": [
+  {
+   "doc_id": "1-eYow9BUy0yV9oYJ1Ht72KtdaYG4ksKs",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1-eYow9BUy0yV9oYJ1Ht72KtdaYG4ksKs/view",
+   "title": "[스위트스팟]240418_샵사이다 더현대 팝업 기획안(최종).pdf"
+  },
+  {
+   "doc_id": "1-fACyrsIDixVSbxZVC_JIxXO52shBo2A",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1-fACyrsIDixVSbxZVC_JIxXO52shBo2A/view",
+   "title": "특약매입 거래계약서_CIDER_SWEETSPOT_v.5.docx"
+  },
+  {
+   "doc_id": "1-myGyFBGGVHp7_joLX1S_LtUA40nfp-S",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1-myGyFBGGVHp7_joLX1S_LtUA40nfp-S/view",
+   "title": "240305_[Sweetspot]더현대서울 샵사이다X웨이크메이크 팝업 기획안_v4.pdf"
+  },
+  {
+   "doc_id": "1-u_pzz6L24G59YdNYvUFaUPXty_vNrUN",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1-u_pzz6L24G59YdNYvUFaUPXty_vNrUN/view",
+   "title": "240311_[Sweetspot]더현대서울 샵사이다X웨이크메이크 팝업 기획안_v5.pptx"
+  },
+  {
+   "doc_id": "10CtwYXiJHvT9M2p8LUjuRUkmVmk4HTwd",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/10CtwYXiJHvT9M2p8LUjuRUkmVmk4HTwd/view",
+   "title": "shopcider_popup_designproposal_final3(수정).pdf"
+  },
+  {
+   "doc_id": "10H1-V9AN8kNRXyr-rz-9Cut9Xj1GEXx_",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/10H1-V9AN8kNRXyr-rz-9Cut9Xj1GEXx_/view",
+   "title": "스위트스팟_shopcider더현대_popup_design_proposal_final3(수정).pdf"
+  },
+  {
+   "doc_id": "11VvXGH_xcYIz2bTeivTOvArQXsdVpUMb",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/11VvXGH_xcYIz2bTeivTOvArQXsdVpUMb/view",
+   "title": "슬라이드6.JPG"
+  },
+  {
+   "doc_id": "130aFQ4ctIvqIlsRog1bDIltr88tj1xih",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/130aFQ4ctIvqIlsRog1bDIltr88tj1xih/view",
+   "title": "~$240312_[Sweetspot]더현대서울 샵사이다X웨이크메이크 팝업 기획안_v5.pptx"
+  },
+  {
+   "doc_id": "138DM2-8LT5E0yHl5lhMEzVs77t9q5BY3",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/138DM2-8LT5E0yHl5lhMEzVs77t9q5BY3/view",
+   "title": "특약매입 거래계약서_CIDER_SWEETSPOT_v.5 (1).docx"
+  },
+  {
+   "doc_id": "13A3UyQQL8T_jTuXQOIUbFgpEp1S5k3ua",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/13A3UyQQL8T_jTuXQOIUbFgpEp1S5k3ua/view",
+   "title": "[스위트스팟]240418_샵사이다 더현대 팝업 기획안(최종).pdf"
+  },
+  {
+   "doc_id": "13QCiHXt9a3XGXlhcO2Hes7PhwuN_BGLl",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/13QCiHXt9a3XGXlhcO2Hes7PhwuN_BGLl/view",
+   "title": "[SweetSpot] 샵사X웨이크메이크 레퍼런스(240222).pptx"
+  },
+  {
+   "doc_id": "13pFDV8lKynRt1i-PjbeoW5Uai3HUJMhj",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/13pFDV8lKynRt1i-PjbeoW5Uai3HUJMhj/view",
+   "title": "0220_[Sweetspot] Shop Cider 2nd POP-UP 기획안_v2 (SOY수정보완).pptx"
+  },
+  {
+   "doc_id": "13vGiU6lU18OLpAg4jAYaHpH4BGISzPZR",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/13vGiU6lU18OLpAg4jAYaHpH4BGISzPZR/view",
+   "title": "~$240307_[Sweetspot]더현대서울 샵사이다X웨이크메이크 팝업 기획안_v5.pptx"
+  },
+  {
+   "doc_id": "14M_wFmbeI7BkJkIOJlMh1b5WIiGI1ZK0",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/14M_wFmbeI7BkJkIOJlMh1b5WIiGI1ZK0/view",
+   "title": "240305_[Sweetspot]더현대서울 샵사이다 팝업 기획안_v3.pdf"
+  },
+  {
+   "doc_id": "14wdOu6f-p3sHUifOaIf5Wm9rRCmUWsOD",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/14wdOu6f-p3sHUifOaIf5Wm9rRCmUWsOD/view",
+   "title": "240306_[Sweetspot]더현대서울 샵사이다X웨이크메이크 팝업 기획안_v4.pptx"
+  },
+  {
+   "doc_id": "16sGVgfapOVdQNdrb0hqVRAxmD0bz_-TR",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/16sGVgfapOVdQNdrb0hqVRAxmD0bz_-TR/view",
+   "title": "디자인용역계약서_스위트스팟_팝업스토어(스튜디오시즈닝)_0328(최종).docx"
+  },
+  {
+   "doc_id": "16tjffYQLdlRhRvqEV7kOIWcEiZrPRfs0",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/16tjffYQLdlRhRvqEV7kOIWcEiZrPRfs0/view",
+   "title": "240314_샵사이다X웨이크메이크_POPUP_견적서(스튜디오시즈닝).pdf"
+  },
+  {
+   "doc_id": "18jZdnZ2CEqTi0MLwkbjCcD1eP9w9_xnm",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/18jZdnZ2CEqTi0MLwkbjCcD1eP9w9_xnm/view",
+   "title": "240305_[Sweetspot]더현대서울 샵사이다X웨이크메이크 팝업 기획안_v4.pptx"
+  },
+  {
+   "doc_id": "19qT4LF0E6PCaitNVewa3K58BIax7jdx9",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/19qT4LF0E6PCaitNVewa3K58BIax7jdx9/view",
+   "title": "슬라이드4.JPG"
+  },
+  {
+   "doc_id": "1AGx8OJd5Z8AskCYo1GwCnJf7bZDoUKU_",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1AGx8OJd5Z8AskCYo1GwCnJf7bZDoUKU_/view",
+   "title": "240305_번역용[Sweetspot]더현대서울 샵사이다 팝업 기획안_v3.pptx"
+  },
+  {
+   "doc_id": "1BGIYRyd1q_SezzPGdlykMr9Q-MjG2kDP",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1BGIYRyd1q_SezzPGdlykMr9Q-MjG2kDP/view",
+   "title": "240305_[Sweetspot]더현대서울 샵사이다X웨이크메이크 팝업 기획안_v4.pptx"
+  },
+  {
+   "doc_id": "1CYdH_DBHfEoyvOAN4x96JB9QoG6_sPu8",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1CYdH_DBHfEoyvOAN4x96JB9QoG6_sPu8/view",
+   "title": "240304_[Sweetspot] Shop Cider 2nd POP-UP 이벤트 기획안(soy).pptx"
+  },
+  {
+   "doc_id": "1DaBUeZBBSofs47QjlEbbV2MBp3a-zV2i",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1DaBUeZBBSofs47QjlEbbV2MBp3a-zV2i/view",
+   "title": "[스위트스팟]240418_샵사이다 더현대 팝업 기획안(최종).pptx"
+  },
+  {
+   "doc_id": "1EqGALSjWXRp94rj8SD3ql_4RVL7r2tPP",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1EqGALSjWXRp94rj8SD3ql_4RVL7r2tPP/view",
+   "title": "슬라이드2.JPG"
+  },
+  {
+   "doc_id": "1G1dpQqwu4nx-5cXm6Cd3h_NIFiE0iET9",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1G1dpQqwu4nx-5cXm6Cd3h_NIFiE0iET9/view",
+   "title": "shopcider_popup_designproposal_final3(수정).pptx"
+  },
+  {
+   "doc_id": "1IDaT2K4jokFRXQHRYjbQTkvts1fmuJ4b",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1IDaT2K4jokFRXQHRYjbQTkvts1fmuJ4b/view",
+   "title": "240313_[Sweetspot]더현대서울 샵사이다X웨이크메이크 팝업 기획안_v5.pptx"
+  },
+  {
+   "doc_id": "1LBzhIV7fZKN_s55OAwKl1cCQHFO4IRzG",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1LBzhIV7fZKN_s55OAwKl1cCQHFO4IRzG/view",
+   "title": "shopcider_popup_designproposal3rd.pdf"
+  },
+  {
+   "doc_id": "1ML5A6n4W1hluk9Tpf3sBJdeLPkB0sbxt",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ML5A6n4W1hluk9Tpf3sBJdeLPkB0sbxt/view",
+   "title": "240307_[Sweetspot]더현대서울 샵사이다X웨이크메이크 팝업 기획안_v5.pptx"
+  },
+  {
+   "doc_id": "1NN2Qb4vSrBgj5f73ao65-XlgfsDuhlBu",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1NN2Qb4vSrBgj5f73ao65-XlgfsDuhlBu/view",
+   "title": "shopcider_popup_designproposal_final2.pptx"
+  },
+  {
+   "doc_id": "1OQCJv6-Xj2CPXjbM69At85qWFRBjJfQY",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1OQCJv6-Xj2CPXjbM69At85qWFRBjJfQY/view",
+   "title": "240312_[Sweetspot]더현대서울 샵사이다X웨이크메이크 팝업 기획안_v5.pptx"
+  },
+  {
+   "doc_id": "1UvUik-R-Ppc8lof5TKymPdL5OkQ4d2UK",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1UvUik-R-Ppc8lof5TKymPdL5OkQ4d2UK/view",
+   "title": "0226_[Sweetspot] Shop Cider 2nd POP-UP 기획안_v3.pptx"
+  },
+  {
+   "doc_id": "1W7Z4Rbie8yQARIFFJRyjoZbodBtrfMSh",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1W7Z4Rbie8yQARIFFJRyjoZbodBtrfMSh/view",
+   "title": "shopcider_popup_designproposal_final3(수정).pdf"
+  },
+  {
+   "doc_id": "1X5tRdXU9oUc15lrcaPRfyg1vS0gIclpu",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1X5tRdXU9oUc15lrcaPRfyg1vS0gIclpu/view",
+   "title": "shopcider_popup_designproposal_hanger design.pptx"
+  },
+  {
+   "doc_id": "1Xao7q_80ZZgqpotzqon7o65XRVSljScA",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Xao7q_80ZZgqpotzqon7o65XRVSljScA/view",
+   "title": "~$240311_[Sweetspot]더현대서울 샵사이다X웨이크메이크 팝업 기획안_v5.pptx"
+  },
+  {
+   "doc_id": "1Y_2FvLf-8_prGFmHi9M7wZshgy472DSc",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Y_2FvLf-8_prGFmHi9M7wZshgy472DSc/view",
+   "title": "240307_[Sweetspot]더현대서울 샵사이다X웨이크메이크 팝업 기획안_v4.pptx"
+  },
+  {
+   "doc_id": "1_A_PzaTO6I_sioJ7l84bjLOdvwR0cCT6",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1_A_PzaTO6I_sioJ7l84bjLOdvwR0cCT6/view",
+   "title": "팝업스토어가자_매체소개서 수정 기획안.pptx"
+  },
+  {
+   "doc_id": "1aEveyLOLm0zp_xoqiyMc_Jsm6mCQPjmR",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1aEveyLOLm0zp_xoqiyMc_Jsm6mCQPjmR/view",
+   "title": "240307_[Sweetspot]더현대서울 샵사이다X웨이크메이크 팝업 기획안_v4.pdf"
+  },
+  {
+   "doc_id": "1akBhoR2fszYN6q0hHpiD6JtmXM3lnI_L",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1akBhoR2fszYN6q0hHpiD6JtmXM3lnI_L/view",
+   "title": "[스위트스팟]240418_샵사이다 더현대 팝업 기획안(최종).pdf"
+  },
+  {
+   "doc_id": "1ePmaa82mXEdy6RA1ayDQrKS3csR_moBr",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ePmaa82mXEdy6RA1ayDQrKS3csR_moBr/view",
+   "title": "~$240307_[Sweetspot]더현대서울 샵사이다X웨이크메이크 팝업 기획안_v4.pptx"
+  },
+  {
+   "doc_id": "1fnupNa6i8qprMbWXDhh56BmYY1f5Rgdw",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1fnupNa6i8qprMbWXDhh56BmYY1f5Rgdw/view",
+   "title": "스위트스팟_shopcider더현대_popup_design_proposal_final3(수정).pdf"
+  },
+  {
+   "doc_id": "1hEN_5HwJygTwzGbmJeqJXn9fXFe1P5if",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1hEN_5HwJygTwzGbmJeqJXn9fXFe1P5if/view",
+   "title": "240415_shopcider_popup_designproposal_hanger design.pptx"
+  },
+  {
+   "doc_id": "1hF8G4HXvaeCazzlfTgQQQRqnxHcbV8oh",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1hF8G4HXvaeCazzlfTgQQQRqnxHcbV8oh/view",
+   "title": "240305_[Sweetspot]더현대서울 샵사이다X웨이크메이크 팝업 기획안_v4.pdf"
+  },
+  {
+   "doc_id": "1iU1idJVc05BzJ1I4cX1jK4jhEqJvgeKi",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1iU1idJVc05BzJ1I4cX1jK4jhEqJvgeKi/view",
+   "title": "240305_[Sweetspot]더현대서울 샵사이다 팝업 기획안_v3.pptx"
+  },
+  {
+   "doc_id": "1isf1TvZIqi842RK3yx3xSEKp1NRb0pD4",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1isf1TvZIqi842RK3yx3xSEKp1NRb0pD4/view",
+   "title": "슬라이드1.JPG"
+  },
+  {
+   "doc_id": "1jHTlH1frRNILX17hY6VmonfbWvxBLijB",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1jHTlH1frRNILX17hY6VmonfbWvxBLijB/view",
+   "title": "0220_[Sweetspot] Shop Cider 2nd POP-UP 기획안_v2 (멘트_레퍼 보완).pptx"
+  },
+  {
+   "doc_id": "1jrbLZxwXaszrbM0W6FjrurTaDu9-IR5R",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1jrbLZxwXaszrbM0W6FjrurTaDu9-IR5R/view",
+   "title": "240415_shopcider_popup_designproposal_hanger design.pdf"
+  },
+  {
+   "doc_id": "1kw8C2vsgbr1F5Hm_5jvZ5rlN4U-RbkfL",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1kw8C2vsgbr1F5Hm_5jvZ5rlN4U-RbkfL/view",
+   "title": "특약매입 거래계약서 (샵사이다 CLEAN본).docx"
+  },
+  {
+   "doc_id": "1kzfz_cggQ3ix7T6PzoPlJcdNHr7gnjbM",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1kzfz_cggQ3ix7T6PzoPlJcdNHr7gnjbM/view",
+   "title": "특약매입 거래계약서 (샵사이다).docx"
+  },
+  {
+   "doc_id": "1l2j76DVVZY99dTuNcvOzYnQcCjSIJ9tl",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1l2j76DVVZY99dTuNcvOzYnQcCjSIJ9tl/view",
+   "title": "240314_샵사이다X웨이크메이크_POPUP_견적서(스튜디오시즈닝).pdf"
+  },
+  {
+   "doc_id": "1lA-_rG-NRcAnFkN1Ai7V-jAEsufg0B2i",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1lA-_rG-NRcAnFkN1Ai7V-jAEsufg0B2i/view",
+   "title": "shopcider_popup_designproposal_240319.pptx"
+  },
+  {
+   "doc_id": "1lITK_TEexL954YDrfJwwvgAMjb4jacDY",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1lITK_TEexL954YDrfJwwvgAMjb4jacDY/view",
+   "title": "shopcider_popup_designproposal2nd.pptx"
+  },
+  {
+   "doc_id": "1lJ4B3vhz_-Si4j4DdaJljMduOCzwci0j",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1lJ4B3vhz_-Si4j4DdaJljMduOCzwci0j/view",
+   "title": "shopcider_popup_designproposal_2.pdf"
+  },
+  {
+   "doc_id": "1lTLAeQXtNc4_9Z-SLn4sKNI2tnqDS72r",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1lTLAeQXtNc4_9Z-SLn4sKNI2tnqDS72r/view",
+   "title": "shopcider_popup_designproposal.pdf"
+  },
+  {
+   "doc_id": "1lViYTahuO2LkRyVHqzXlSkztrMlaomY5",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1lViYTahuO2LkRyVHqzXlSkztrMlaomY5/view",
+   "title": "shopcider_popup_designproposal_final2.pptx"
+  },
+  {
+   "doc_id": "1lbfZZFkzzU3aHeEqlqeA5sgR0xJueySh",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1lbfZZFkzzU3aHeEqlqeA5sgR0xJueySh/view",
+   "title": "shopcider_popup_designproposal3rd.pdf"
+  },
+  {
+   "doc_id": "1lscQdgpkTUngHm7wjM5SuPCYPlGTzoGT",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1lscQdgpkTUngHm7wjM5SuPCYPlGTzoGT/view",
+   "title": "디자인용역계약서_스위트스팟_팝업스토어(스튜디오시즈닝)_0328.docx"
+  },
+  {
+   "doc_id": "1lwVNtZ9oJ7FZ03dCiLWU0Yh8utBq2PcA",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1lwVNtZ9oJ7FZ03dCiLWU0Yh8utBq2PcA/view",
+   "title": "웨이크메이크x스위트스팟 계약서 0401.docx"
+  },
+  {
+   "doc_id": "1mGePL8PtjOSSJe3lqogRBfA-_4tntNS_",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1mGePL8PtjOSSJe3lqogRBfA-_4tntNS_/view",
+   "title": "shopcider_popup_designproposal_final.pptx"
+  },
+  {
+   "doc_id": "1mGkOA0KQYD3Gvvs_Hln23FtoV7lhugbo",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1mGkOA0KQYD3Gvvs_Hln23FtoV7lhugbo/view",
+   "title": "shopcider_popup_designproposal3rd.pptx"
+  },
+  {
+   "doc_id": "1mRdlMXVQey-YF66wan0fb5o9pPoR0u6F",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1mRdlMXVQey-YF66wan0fb5o9pPoR0u6F/view",
+   "title": "shopcider_popup_designproposal_final3(수정) (1).pptx"
+  },
+  {
+   "doc_id": "1mU_6nkaOeGJDPwQgt3F4Na9_fdFUNSOx",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1mU_6nkaOeGJDPwQgt3F4Na9_fdFUNSOx/view",
+   "title": "shopcider_popup_designproposal_final3(수정).pptx"
+  },
+  {
+   "doc_id": "1mXPsLTIcuZ28DSldbZ2qbw5Anax9-voh",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1mXPsLTIcuZ28DSldbZ2qbw5Anax9-voh/view",
+   "title": "shopcider_popup_designproposal_final3_그래픽_수정.pptx"
+  },
+  {
+   "doc_id": "1mcGe-jcgICCDC2OFjhxVYrrqs2YdxgdP",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1mcGe-jcgICCDC2OFjhxVYrrqs2YdxgdP/view",
+   "title": "shopcider_popup_designproposal_final3_그래픽.pptx"
+  },
+  {
+   "doc_id": "1mmIALJvb_Wk-lbOZAZOEcIzOk9tLZ5vB",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1mmIALJvb_Wk-lbOZAZOEcIzOk9tLZ5vB/view",
+   "title": "shopcider_popup_designproposal_final3_미팅용.pptx"
+  },
+  {
+   "doc_id": "1mogG5OPonPDIsiD0ifHX3GKH45VxhKTU",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1mogG5OPonPDIsiD0ifHX3GKH45VxhKTU/view",
+   "title": "슬라이드5.JPG"
+  },
+  {
+   "doc_id": "1n6Peg1vDmOto6dubVhd1NI54EXwRnQiW",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1n6Peg1vDmOto6dubVhd1NI54EXwRnQiW/view",
+   "title": "shopcider_popup_designproposal_hanger design_0416.pptx"
+  },
+  {
+   "doc_id": "1n9_DmkxnSo5g7VoR9KL-iHU-wHeMb9_M",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1n9_DmkxnSo5g7VoR9KL-iHU-wHeMb9_M/view",
+   "title": "shopcider_popup_designproposal_hanger design.pptx"
+  },
+  {
+   "doc_id": "1o7owlRaol4LwY5zUrFiumOPXieF0wkXU",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1o7owlRaol4LwY5zUrFiumOPXieF0wkXU/view",
+   "title": "240305_[Sweetspot]더현대서울 샵사이다 팝업 기획안_v4.pptx"
+  },
+  {
+   "doc_id": "1oh4-d38-Cuud49a8kK7VRB_n6T-5jcW9",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1oh4-d38-Cuud49a8kK7VRB_n6T-5jcW9/view",
+   "title": "shopcider_popup_designproposal_hanger design_0416.pptx"
+  },
+  {
+   "doc_id": "1pC4YBlmNVptganCHQJTzsnvPn8-kN3G5",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1pC4YBlmNVptganCHQJTzsnvPn8-kN3G5/view",
+   "title": "shopcider_popup_designproposal3rd.pptx"
+  },
+  {
+   "doc_id": "1qMhRb4b3QBYX52J9_F5aBDlbEW1rMgwG",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1qMhRb4b3QBYX52J9_F5aBDlbEW1rMgwG/view",
+   "title": "스튜디오시즈닝_디자인 용역 계약서.pdf"
+  },
+  {
+   "doc_id": "1qQF1ULoPSOSVur3vUX6s209piKGzxsJ2",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1qQF1ULoPSOSVur3vUX6s209piKGzxsJ2/view",
+   "title": "슬라이드3.JPG"
+  },
+  {
+   "doc_id": "1xJEBThqs5fq-Dk3mL0ZQnxvbON3pr3Jv",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1xJEBThqs5fq-Dk3mL0ZQnxvbON3pr3Jv/view",
+   "title": "[스캔본]디자인용역계약서_잠실월드몰 팝업스토어(스튜디오시즈닝)_240517.pdf"
+  },
+  {
+   "doc_id": "1xLiLpE6o1cuWWAyaqZDkfnprloVlYVg-",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1xLiLpE6o1cuWWAyaqZDkfnprloVlYVg-/view",
+   "title": "더현대 시즈닝 디자인 용역 계약서.pdf"
+  },
+  {
+   "doc_id": "1xR7uMlIhkpwd8QCclpSLMLRMe1-XYNBO",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1xR7uMlIhkpwd8QCclpSLMLRMe1-XYNBO/view",
+   "title": "특약매입 거래계약서_CIDER_SWEETSPOT_v.5 (최종수정).pdf"
+  },
+  {
+   "doc_id": "1xTNvYvcH3h9mmblhwBOAKGG_Z7s9LzVl",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1xTNvYvcH3h9mmblhwBOAKGG_Z7s9LzVl/view",
+   "title": "특약매입 거래계약서_CIDER_SWEETSPOT_v.5 (최종수정).docx"
+  },
+  {
+   "doc_id": "1xdES4Ws8hE3i8-cNzD7ezPlDQIdPCvSi",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1xdES4Ws8hE3i8-cNzD7ezPlDQIdPCvSi/view",
+   "title": "0411 특약매입 거래계약서 _스위트스팟_CIDER 매입계약서_v3.docx"
+  },
+  {
+   "doc_id": "1xh7AImUxKSEHJo_W7DYTxDDAUl37yzCs",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1xh7AImUxKSEHJo_W7DYTxDDAUl37yzCs/view",
+   "title": "24.4 더현대x스위트스팟 유통사 계약서 [샵사이다].pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: [스위트스팟]240418_샵사이다 더현대 팝업 기획안(, 240314_샵사이다X웨이크메이크_POPUP_견적서(스. 미확실: 결과보고서 부재로 방문자수·매출 실측 없음; client_name 미확정(웨이크메이크/샵사이다 관계 불명확); 기획서상 예상 방문자수 없음; 도시/입지 정보는 더현대서울 기준 추론"
+ }
+}

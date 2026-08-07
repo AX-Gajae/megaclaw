@@ -1,0 +1,82 @@
+{
+  "market_record_id": "MKT-2026-0058",
+  "event_name": "승리의 여신: 니케 2026 여름 팝업스토어",
+  "brand": "레벨 인피니트/시프트업/모펀",
+  "ip_or_collab": "승리의 여신: 니케 (여름 시즌 WAVE TO YOU)",
+  "category": "game_webtoon",
+  "intervention": {
+    "concept_description": "게임 속 여름 시즌 세계관(해변·정글·등대) 구현. LED 파도 연출 메인 포토존, 신데렐라의 정글 피팅룸, 미니게임, 여름 한정 굿즈(레드 후드 키보드·알트아이젠 블록·도로롱 인형)",
+    "experience_elements": [
+      "LED 파도 메인 포토존",
+      "신데렐라의 정글 피팅룸",
+      "무료 포토부스",
+      "코스어 포토타임(주말)",
+      "NIKKE 등대 점등 작전 미니게임"
+    ],
+    "promotions": [
+      "방문객 전원 도로롱 부채·캔배지·기념 티켓 증정",
+      "구매 금액별 쇼핑백·홀로그램 포토카드·포스터 선착순"
+    ],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "더현대 서울 지하 1층 아이코닉",
+    "venue_type": "department_store",
+    "neighborhood": "여의도",
+    "city": "서울",
+    "period_from": "2026-07-17",
+    "period_to": "2026-07-30",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 14,
+        "weekend_share": 0.29,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 14,
+    "counting_basis": "unknown",
+    "counting_basis_note": "행사 진행 중(수집 시점 2026-07-24)으로 총 방문객 미보도. 품절 공지만 확보",
+    "visitors_source_quote": "행사 첫 3일은 사전 예약자만 입장할 수 있으며, 20일부터는 사전 예약과 함께 현장 대기 접수도 운영된다.",
+    "visitors_source_url": "https://kbench.com/?q=node/280297",
+    "visitors_source_date": "2026-07-10",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": "도로롱 컵뚜껑 일시 품절(오픈 첫날 공지), 레드 후드 키보드 커버·2026 팝업 리미티드 에디션 패키지 사흘 만에 매진",
+      "reservation_fill": "첫 3일 사전 예약자 전용 입장",
+      "signal_quotes": [
+        "상품 일시 품절 안내: 도로롱 컵뚜껑. 해당 품목은 2주차에 재입고가 예정되어 있으며, 재입고 일정 확정 시 모펀 팝업 공식 X계정을 통해 공지 예정입니다. (모펀 팝업 공식 공지, 아카라이브 니케 채널 2026-07-17, https://arca.live/b/nikketgv/177169454?p=1)",
+        "레드 후드 키보드 커버, 2026 팝업 리미티드 에디션 패키지 등이 행사 진행 사흘 만에 매진됐다. (신아일보 2026-07-20, https://www.shinailbo.co.kr/news/articleView.html?idxno=5042535)"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "진행 중 이벤트. 신아일보 원문은 감사 거부로 미열람(검색 추출 본문 기반). 종료 후 방문객 집계 보도 나오면 보강 필요. | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,87 @@
+{
+ "market_record_id": "MKT-2025-0146",
+ "event_name": "블루 아카이브 X 무신사 에디션 홍대 팝업스토어",
+ "brand": "넥슨/무신사",
+ "ip_or_collab": "블루 아카이브 X 무신사(크리틱, 디스커스 애슬레틱)",
+ "category": "game_webtoon",
+ "intervention": {
+  "concept_description": "블루 아카이브 IP와 무신사 브랜드 컬래버. 오프라인 한정 굿즈(아크릴 스탠드·키링·캔뱃지)와 컬래버 의류 전시·판매, 사전 예약제 시간대별 입장",
+  "experience_elements": [
+   "컬래버 의류 전시·판매",
+   "오프라인 한정 굿즈 판매"
+  ],
+  "promotions": [
+   "무신사 온라인 예약 판매(신규 상품 인기 1위 등 5개 제품 10위 내)"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "무신사 홍대 스토어",
+  "venue_type": "street_standalone",
+  "neighborhood": "홍대",
+  "city": "서울",
+  "period_from": null,
+  "period_to": null,
+  "area_pyeong": null,
+  "multi_store": true,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  }
+ },
+ "outcome": {
+  "visitors_total": 3000,
+  "visitors_period_days": 7,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "넥슨 보도자료: '오프라인 한정 굿즈가 판매된 홍대 팝업스토어는 1주 운영 간 총 3,000명 이상의 이용자가 방문했으며'",
+  "visitors_source_quote": "오프라인 한정 굿즈가 판매된 홍대 팝업스토어는 1주 운영 간 총 3,000명 이상의 이용자가 방문했으며, 일부 인기 굿즈는 3일만에 품절되는 등 높은 열기를 보였다.",
+  "visitors_source_url": "http://www.worktoday.co.kr/news/articleView.html?idxno=70128",
+  "visitors_source_date": "2025-06-26",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": "일부 인기 굿즈 3일 만에 품절",
+   "reservation_fill": "사전 예약 오픈 직후 첫 3일간 모든 시간대 예약 마감",
+   "signal_quotes": [
+    "사전 예약은 오픈 직후 첫 3일간 모든 시간대의 예약이 마감되었다.",
+    "일부 인기 굿즈는 3일만에 품절되는 등 높은 열기를 보였다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": true,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": false,
+   "days_stated": 3,
+   "days_stored": 7,
+   "days_corrected": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "2025년 6월 운영(컬래버 온라인 판매 6월 6일~23일). 홍대 팝업은 1주간 운영, 정확한 시작·종료일 미기재. 성수 체험존은 별도 레코드. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "기간 미상",
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

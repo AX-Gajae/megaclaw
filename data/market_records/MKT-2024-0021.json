@@ -1,0 +1,92 @@
+{
+ "market_record_id": "MKT-2024-0021",
+ "event_name": "진로골드 판타지아 팝업스토어",
+ "brand": "하이트진로 (진로골드)",
+ "ip_or_collab": null,
+ "category": "liquor",
+ "intervention": {
+  "concept_description": "진로골드 재출시 기념 동화적 공간 콘셉트 팝업. 황금 캡슐 뽑기·기념품 증정 체험 이벤트",
+  "experience_elements": [
+   "포토존",
+   "황금 캡슐 뽑기",
+   "기념품 증정 이벤트"
+  ],
+  "promotions": [
+   "캡슐 이벤트 경품"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "서울 성동구 성수동 + 부산 서면 (2곳)",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동/서면",
+  "city": "서울/부산",
+  "period_from": "2024-04-05",
+  "period_to": "2024-05-04",
+  "area_pyeong": null,
+  "multi_store": true,
+  "derived": {
+   "duration": {
+    "days": 30,
+    "weekend_share": 0.3,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 150000,
+  "visitors_period_days": 30,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "하이트진로 발표(서울 성수·부산 서면 2개 매장 30일 합산, 하루 평균 4800여 명)",
+  "visitors_source_quote": "진로골드 팝업스토어가 4월 5일부터 30일간 누적방문객 15만여명을 돌파하는 흥행을 끝으로 성공적으로 마무리됐다고 16일 밝혔다.",
+  "visitors_source_url": "https://www.etnews.com/20240516000248",
+  "visitors_source_date": "2024-05-16",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "하루 평균 4800여명이 방문한 진로골드 팝업스토어는 '사회관계망서비스(SNS)에서도 화제가 됐다. 총 조회수는 약 180만회를 기록했다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "D",
+   "flags": [
+    "D",
+    "C"
+   ],
+   "why": "스코프 혼합(합산/총계) 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": true,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "lkp 등 다수 매체 동일 보도. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,57 @@
+{
+  "market_record_id": "MKT-2025-0160",
+  "event_name": "트와이스 팝업스토어(아이파크몰 도파민 스테이션)",
+  "brand": "JYP엔터테인먼트/아이파크몰",
+  "ip_or_collab": "트와이스(TWICE)",
+  "category": "character",
+  "intervention": {
+    "concept_description": "트와이스 팝업스토어. 용산 아이파크몰에서 10일간 운영됐다.",
+    "experience_elements": [
+      "아티스트 굿즈 판매"
+    ],
+    "promotions": [],
+    "is_free_entry": null,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "아이파크몰(서울 용산구)",
+    "venue_type": "mall",
+    "neighborhood": "용산",
+    "city": "서울",
+    "period_from": null,
+    "period_to": null,
+    "area_pyeong": null,
+    "multi_store": false
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 10,
+    "counting_basis": "unknown",
+    "counting_basis_note": "방문객 집계 원문 없음",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": 1000000000,
+    "sales_source_quote": "트와이스 팝업스토어는 10일간 10억원 이상, 보이넥스트도어 팝업스토어는 13일간 16억원의 매출을 올렸다.",
+    "sales_source_url": "https://www.inews24.com/view/1952894",
+    "sales_source_date": "2026-03-24",
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": []
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "보도(비즈워치 2026-01-07 등) 맥락상 2025년 운영 팝업. 한국경제 플러스(2026-06-06)도 동일 수치 확인 | 병합 레코드:  | 검증 실패(2026-07-27): sales 출처 기사에서 수치 미확인/무관 — anchor 사용 금지",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": false,
+  "exclude_reason": "기간 미상",
+  "verification": {
+    "sales": "failed"
+  },
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

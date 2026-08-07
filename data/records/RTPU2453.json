@@ -1,0 +1,132 @@
+{
+ "record_id": "RTPU2453",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:세가퍼블리싱코리아",
+  "space_id": "unresolved:롯데_김포_백화점",
+  "client_party_id": "unresolved:세가퍼블리싱코리아",
+  "brand_key": "세가퍼블리싱코리아",
+  "space_key": "롯데백화점_김포점"
+ },
+ "intervention": {
+  "concept": "세가 벌룬(대형 풍선) 설치 프로젝트. 롯데 김포 백화점 내 세가 브랜드 벌룬 구조물을 설치·철수하는 작업.",
+  "brand_name": "세가",
+  "experience_elements": [
+   "벌룬(대형 풍선) 설치물"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "벌룬",
+   "대형 풍선 구조물"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": "롯데 김포 백화점",
+   "venue_type": "백화점",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-12-06",
+   "to": "2024-12-06",
+   "days": 1
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 7,150,000원 (VAT 10% 별도, 만원단위 이하 절사). Sub Total 1: 구조계산(벌룬 및 현장 하중 강도 시뮬레이션) 1,000,000. Sub Total 2: 벌룬 고정 및 설치/철수 1,500,000 + 설치/철수 인건비 400,000×4×2=3,200,000(야간작업), 소계 4,700,000. Sub Total 3(운송): 제경비 400,000 + 물류비(서초<->김포 왕복 지연발송) 400,000, 소계 800,000. 소계(Sub Total 1~3) 6,500,000 + 일반관리비+대행수수료(소계의 10%, 정가항목/추가예산 진행비 제외) 650,000 = 7,150,000."
+  },
+  "brand_requirements": [
+   "벌룬 및 현장 하중 강도 시뮬레이션(구조계산) 필요",
+   "야간 작업",
+   "사다리 등 설치용품 대여, 설치 차량 3대 사용"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "롯데 김포 백화점 내 벌룬 설치"
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 0.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 3.6,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 79,
+    "holiday_until": 50,
+    "holiday_block_in": 0,
+    "nat_event_gap": 22,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 7.2
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 7.2 ≈ 계약총액 7.15",
+   "contract_total_mm": 7.15,
+   "last_recognition_period": "2025-01"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1KDsd9QaoiUrj5EcNk69b9jlaEu8iZBh2",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1KDsd9QaoiUrj5EcNk69b9jlaEu8iZBh2/view",
+   "title": "RTPU2453_세가 벌룬 설치_견적서_1210.pdf"
+  },
+  {
+   "doc_id": "1Xwkwyt1oxfinp94FSogtTeCsZLKpmSVN",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Xwkwyt1oxfinp94FSogtTeCsZLKpmSVN/view",
+   "title": "결과보고서_내용없음.txt"
+  },
+  {
+   "doc_id": "1etuvjjIyQvNoISOvGO62GJ7WBBEnZOxY",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1etuvjjIyQvNoISOvGO62GJ7WBBEnZOxY/view",
+   "title": "계약서_내용없음.txt"
+  },
+  {
+   "doc_id": "1fWNgFOlLrLS6xZH1aBNg074bgaLN3z2c",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1fWNgFOlLrLS6xZH1aBNg074bgaLN3z2c/view",
+   "title": "제안서_내용없음.txt"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 1건: RTPU2453_세가 벌룬 설치_견적서_1210.pdf. 미확실: 결과보고서 없음 - 방문자/매출 실측 데이터 없음; 도시/구 정보 명시 없음(롯데 김포 백화점으로 추정); 면적 정보 없음; 고객사 정식 party id 미해결; 기획서/제안서 없음 - 컨셉/체험요소는 견적서 기반 추정"
+ }
+}

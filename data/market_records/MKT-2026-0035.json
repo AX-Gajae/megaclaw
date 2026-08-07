@@ -1,0 +1,86 @@
+{
+ "market_record_id": "MKT-2026-0035",
+ "event_name": "메리어트 본보이 '로열-티(Loyal-Tea)' 팝업스토어 @스타필드 하남",
+ "brand": "메리어트 인터내셔널",
+ "ip_or_collab": "메리어트 본보이×딜마×글렌리벳",
+ "category": "other",
+ "intervention": {
+  "concept_description": "로열티 프로그램 가치를 티(tea) 경험으로 전달하는 캠페인 팝업",
+  "experience_elements": [
+   "여행 테마 미션",
+   "리워드 이벤트(스크래치 카드)"
+  ],
+  "promotions": [
+   "로열-티 기프트 박스·숙박권 등 리워드"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "스타필드 하남 1층 센트럴 아트리움",
+  "venue_type": "mall",
+  "neighborhood": "하남",
+  "city": "하남",
+  "period_from": "2026-05-28",
+  "period_to": "2026-05-31",
+  "area_pyeong": null,
+  "multi_store": null,
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.5,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 5000,
+  "visitors_period_days": 4,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "뉴스와이어 보도자료: '총 4일간 스타필드 하남에서 진행된 메리어트 본보이 팝업스토어에는 약 5000명이 방문했으며, 이 중 절반 이상인 3241명이 기존 멤버 인증 또는 현장 신규 가입을 완료했다.'",
+  "visitors_source_quote": "이에 앞서 총 4일간 스타필드 하남에서 진행된 메리어트 본보이 팝업스토어에는 약 5000명이 방문했으며, 이 중 절반 이상인 3241명이 기존 멤버 인증 또는 현장 신규 가입을 완료했다.",
+  "visitors_source_url": "https://www.newswire.co.kr/newsRead.php?no=1036031",
+  "visitors_source_date": "2026-06-08",
+  "sales_krw": null,
+  "sales_source_quote": "",
+  "sales_source_url": "",
+  "sales_source_date": "",
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": true,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "방문 5000명 중 멤버 인증·신규가입 3241명 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

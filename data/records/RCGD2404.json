@@ -1,0 +1,137 @@
+{
+ "record_id": "RCGD2404",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:쿠쿠프렌즈",
+  "space_id": "unresolved:미상",
+  "client_party_id": "unresolved:스위트스팟",
+  "brand_key": "쿠쿠프렌즈",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "쿠쿠프렌즈 캐릭터 IP를 활용한 팝업스토어용 굿즈(MD) 제작 프로젝트. L홀더, 캔뱃지, 아크릴 키링·자석·볼펜, 떡메모지, 앞치마, 티셔츠, 포토카드 등 다양한 팬시 굿즈를 기획·생산·공급. 결과보고서 없이 계약·견적 문서만 존재.",
+  "brand_name": "쿠쿠프렌즈",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [
+   "캐릭터굿즈",
+   "팬시MD",
+   "쿠쿠프렌즈"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-10-01",
+   "to": "2024-11-30",
+   "days": null
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "콘콘 굿즈 제작계약: 총 7,166,500원(VAT 포함), 세금계산서 발행일 기준 10일 이내 현금 지급. 와이랩-스위트스팟 물품공급계약: 굿즈 총 4,700개, 발주금액 소계 11,290,000원(L홀더_쿠쿠 700개 1,050,000원, 캔뱃지 1,000개 790,000원, 아크릴 키링B 500개 2,450,000원, 아크릴 자석 500개 2,100,000원, 아크릴 볼펜 1,000개 3,500,000원, 떡메모지A 500개 700,000원, 떡메모지B 500개 700,000원), 패키지작업 500,000원(VAT 미포함), 2024-10-31까지 전액 현금 지급."
+  },
+  "brand_requirements": [
+   "납품기일: 2024-10-25까지 물류입고 또는 지정 장소 기준",
+   "지적재산권 일체는 고객사 소유",
+   "제작물 7일간 하자보수 책임",
+   "물품 검사 10영업일 이내 시행"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 61,
+    "weekend_share": 0.28,
+    "holiday_days": 3
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 13,
+    "holiday_until": 116,
+    "holiday_block_in": 0,
+    "nat_event_gap": 44,
+    "nat_event": null,
+    "doc_lag_days": 29,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": 13464000,
+   "rev_mm_recognized": 12.2
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 없음. 본 프로젝트는 굿즈 제작·공급 계약으로 방문자·매출 실측 데이터가 문서에 존재하지 않음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 12.2 ≈ 계약총액 11.29",
+   "contract_total_mm": 11.29,
+   "last_recognition_period": "2024-11"
+  },
+  "sales_basis": "PnL 상품매출 양수계정 합 × 1.1 (부가세 포함 기준)",
+  "label_history": [
+   {
+    "at": "pnl_sales (2026-07-28)",
+    "action": "mine",
+    "changes": [
+     "sales_krw 13,464,000 (PnL 총 결제액)"
+    ],
+    "evidence": "core.project_pnl_monthly 상품매출 양수계정 합 12,240,000(공급가) × 1.1, 인식 2개월"
+   }
+  ]
+ },
+ "docs": [
+  {
+   "doc_id": "10YKYmapKW9IpcoXuteMXdLKCWKE-Gy-D",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/10YKYmapKW9IpcoXuteMXdLKCWKE-Gy-D/view",
+   "title": "쿠쿠스페이스_팬시_상품 공급계약_1025.pdf"
+  },
+  {
+   "doc_id": "16oBK1bPY9bguN0hb7YaXv4WwcKVPbJaV",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/16oBK1bPY9bguN0hb7YaXv4WwcKVPbJaV/view",
+   "title": "[스위트스팟]쿠쿠프렌즈_굿즈제작계약서_241008_수정.docx"
+  },
+  {
+   "doc_id": "1WKEyuoGKeAbG-c0hvwFDCERfVU52HPYc",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1WKEyuoGKeAbG-c0hvwFDCERfVU52HPYc/view",
+   "title": "스위트스팟 _쿠쿠프렌즈 굿즈 견적서 240902.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: [스위트스팟]쿠쿠프렌즈_굿즈제작계약서_241008_수정, 쿠쿠스페이스_팬시_상품 공급계약_1025.pdf, 스위트스팟 _쿠쿠프렌즈 굿즈 견적서 240902.xls. 미확실: 결과보고서 부재로 방문자·POS매출 데이터 없음; 팝업 개최 장소·입지·면적 정보 없음; counting_method 판정 불가(방문 데이터 없음); client_name 원문에 명시 없음(스위트스팟/와이랩/콘콘 간 제작·공급 계약); 기획서 부재로 예상 방문객·체험요소·프로모션 정보 없음"
+ }
+}

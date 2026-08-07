@@ -1,0 +1,368 @@
+{
+ "record_id": "RCPU2411",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:입삐뚤오리_삐뚤이",
+  "space_id": "unresolved:현대백화점_신촌점_유플렉스_B2_득템샵",
+  "client_party_id": null,
+  "brand_key": "입삐뚤오리",
+  "space_key": "현대백화점_신촌점"
+ },
+ "intervention": {
+  "concept": "캐릭터 '삐뚤이'와 말풍선을 키워드로 한 '입삐뚤오리의 삐뚤이네' 캐릭터 굿즈 팝업스토어. 봉제류·바디필로우 등 상품 판매와 함께 5개 포토존, 메세지월, 사인회 이벤트를 운영한다. 현대백화점 신촌점 유플렉스 B2 득템샵에 조성된다.",
+  "brand_name": "입삐뚤오리의 삐뚤이네",
+  "experience_elements": [
+   "B2 포토존 5개소(A~E)",
+   "아크릴 거울 포토존",
+   "메세지월(포스트잇 부착)",
+   "사인회",
+   "등신대 촬영",
+   "FRP 모형(H1,000mm)",
+   "캐릭터 천장 걸이형 연출",
+   "VP존 주력상품 연출"
+  ],
+  "promotions": [
+   "사인회",
+   "메세지월 이벤트"
+  ],
+  "staging_tags": [
+   "삐뚤이",
+   "말풍선",
+   "에어벌룬 2M",
+   "등신대",
+   "현수막",
+   "시트지 시공",
+   "FRP 모형",
+   "경량랙 매대",
+   "타원형 금속 중앙매대",
+   "걸이형 연출"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "서대문구",
+   "venue_name": "현대백화점 신촌점 유플렉스 B2 득템샵",
+   "venue_type": "백화점",
+   "foot_traffic_context": "지하철 방향 출입구 및 에스컬레이터 연결 동선"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-05-31",
+   "to": "2024-06-09",
+   "days": 10
+  },
+  "season": "초여름",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "현대백화점 신촌점 유플렉스 B2 득템샵, 지하철 방향 출입구 및 에스컬레이터 연결 동선"
+  },
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 25,
+    "holiday_until": 106,
+    "holiday_block_in": 0,
+    "nat_event_gap": 51,
+    "nat_event": null,
+    "doc_lag_days": 8,
+    "doc_dates_found": 7
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": null,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-HrhEyg7Ar-Tfq3NLvt-VbCiv20enDg8",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1-HrhEyg7Ar-Tfq3NLvt-VbCiv20enDg8/view",
+   "title": "삐뚤이_제작 수량 및 판매가_수정 중.xlsx"
+  },
+  {
+   "doc_id": "10-DAdjvvK9Gz7lv3i6J246IqxKO3JF1u",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/10-DAdjvvK9Gz7lv3i6J246IqxKO3JF1u/view",
+   "title": "현대신촌 삐뚤이 팝업스토어_공간기획안 1차(240509).pdf"
+  },
+  {
+   "doc_id": "10ieosyJkd6V8EaZclUgl7RTw-oA3eqwj",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/10ieosyJkd6V8EaZclUgl7RTw-oA3eqwj/view",
+   "title": "[[견적서-디자인알파] 삐뚤이 캐릭터 조형물제작건.xlsx"
+  },
+  {
+   "doc_id": "117TVM2RVdScuLUQ6dpXzgkb8zfVxUGYS",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/117TVM2RVdScuLUQ6dpXzgkb8zfVxUGYS/view",
+   "title": "현대신촌 삐뚤이 팝업스토어_공간기획안 1차(240509).pdf"
+  },
+  {
+   "doc_id": "12h1inZfEGhceiae7btUPqZnkV8ytWGwd",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/12h1inZfEGhceiae7btUPqZnkV8ytWGwd/view",
+   "title": "현대드림애드_견적서(최종).xls"
+  },
+  {
+   "doc_id": "13l_9EV3l0TACTXC6q7kZ7oenkZWkVCkU",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/13l_9EV3l0TACTXC6q7kZ7oenkZWkVCkU/view",
+   "title": "삐둘이 팝업스토어 그래픽 견적 요청 자료(현대드림애드)-01.jpg"
+  },
+  {
+   "doc_id": "14A61lGIk-3Y6HWPrgTHSpyab4K3m35J6",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14A61lGIk-3Y6HWPrgTHSpyab4K3m35J6/view",
+   "title": "삐뚤이견적_0514_신촌.xlsx"
+  },
+  {
+   "doc_id": "197e2utk7dgANqeQCPEZeyCNEOQU0Rk-0",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/197e2utk7dgANqeQCPEZeyCNEOQU0Rk-0/view",
+   "title": "삐뚤이 자료.pptx"
+  },
+  {
+   "doc_id": "1B46KmP_dggetHpcxm4Cd1eflUYY43oP-",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1B46KmP_dggetHpcxm4Cd1eflUYY43oP-/view",
+   "title": "현대신촌 삐뚤이 팝업스토어_공간기획안 1차.pptx"
+  },
+  {
+   "doc_id": "1CYVzd6AV8ajkVbf6KimGSIxgdgKXlilF",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CYVzd6AV8ajkVbf6KimGSIxgdgKXlilF/view",
+   "title": "견적요청자료.pdf"
+  },
+  {
+   "doc_id": "1F-k6Gkc4Ix17yMStufjNr8ioni5Gh7Vl",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1F-k6Gkc4Ix17yMStufjNr8ioni5Gh7Vl/view",
+   "title": "삐뚤이(신촌현백)공간 구성 비용(240520).xlsx"
+  },
+  {
+   "doc_id": "1H-8Xttsy4JBmFG3qvutvY8ms6uqf_Rog",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1H-8Xttsy4JBmFG3qvutvY8ms6uqf_Rog/view",
+   "title": "삐둘이 팝업스토어 그래픽 견적 요청 자료(현대드림애드)-02.jpg"
+  },
+  {
+   "doc_id": "1KMz6d46fXpIjf4GRbQ-eM3Ni_JXQZwHC",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1KMz6d46fXpIjf4GRbQ-eM3Ni_JXQZwHC/view",
+   "title": "삐뚤이_전체 컨셉 계획안.pdf"
+  },
+  {
+   "doc_id": "1LA7AXsunVmo6GVH-O7XGb9rumDKyYxFZ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1LA7AXsunVmo6GVH-O7XGb9rumDKyYxFZ/view",
+   "title": "삐뚤이견적_0514_신촌.xlsx"
+  },
+  {
+   "doc_id": "1NhdtSnv3iK3nvvrKpP5CSAJtzdC3UJgO",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1NhdtSnv3iK3nvvrKpP5CSAJtzdC3UJgO/view",
+   "title": "삐뚤이_상품 사진.pdf"
+  },
+  {
+   "doc_id": "1O7ExevhCZw7h3AkHkz041m8hJ620ZYs1",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1O7ExevhCZw7h3AkHkz041m8hJ620ZYs1/view",
+   "title": "현대신촌 삐뚤이 팝업스토어_공간기획안 2차.pptx"
+  },
+  {
+   "doc_id": "1OW5C-9X0OZD_on5Nxy-VEryWOaEeickM",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1OW5C-9X0OZD_on5Nxy-VEryWOaEeickM/view",
+   "title": "삐뚤이 현대백화점 신촌점(미팅자료).pdf"
+  },
+  {
+   "doc_id": "1Ode6CuCWvrJpx0x1DBvu2RbpcjyXeCTH",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Ode6CuCWvrJpx0x1DBvu2RbpcjyXeCTH/view",
+   "title": "삐둘이 팝업스토어 그래픽 견적 요청 자료(현대드림애드).ai"
+  },
+  {
+   "doc_id": "1P49BQgC5qMPashAZrlCJMP8Tiqe0N153",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1P49BQgC5qMPashAZrlCJMP8Tiqe0N153/view",
+   "title": "삐뚤이_신촌팝업스토어 위탁운영 계약서_스위트스팟_240523.doc"
+  },
+  {
+   "doc_id": "1RapDS3SxjexN7qsO6g66Y4qXxHjv2IpF",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1RapDS3SxjexN7qsO6g66Y4qXxHjv2IpF/view",
+   "title": "데이데이_견적서.PDF"
+  },
+  {
+   "doc_id": "1TKFlj1hqJ-TDZaJaDiqMp6Wn8CEEecPs",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1TKFlj1hqJ-TDZaJaDiqMp6Wn8CEEecPs/view",
+   "title": "세금계산서.jpg"
+  },
+  {
+   "doc_id": "1V8O4RftygBDzu8YvF2RBkgNZJjeFgc7Q",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1V8O4RftygBDzu8YvF2RBkgNZJjeFgc7Q/view",
+   "title": "삐뚤이 사업자등록증.jpg"
+  },
+  {
+   "doc_id": "1ZIjgonrOyzl0HnYTfMG6yifqc0Dy350v",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ZIjgonrOyzl0HnYTfMG6yifqc0Dy350v/view",
+   "title": "견적요청자료.ai"
+  },
+  {
+   "doc_id": "1ZWQJPCZ2VbMBKQxlQK2K0BCQKdmm365C",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ZWQJPCZ2VbMBKQxlQK2K0BCQKdmm365C/view",
+   "title": "삐둘이 팝업스토어 그래픽 견적 요청 자료.ai"
+  },
+  {
+   "doc_id": "1bKroTeALjrY8ltIEn9fhFskFU446DxUi",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1bKroTeALjrY8ltIEn9fhFskFU446DxUi/view",
+   "title": "삐뚤이견적서_0514_신촌(pdf).pdf"
+  },
+  {
+   "doc_id": "1fQ4XiBL5sQccEcVkVaP1XU__ycg0pie1",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1fQ4XiBL5sQccEcVkVaP1XU__ycg0pie1/view",
+   "title": "삐뚤이_신촌팝업스토어 위탁운영 계약서_스위트스팟_240523.doc"
+  },
+  {
+   "doc_id": "1hwdyf2Nin3-mxRedSnMdwI2AzRmgATN1",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1hwdyf2Nin3-mxRedSnMdwI2AzRmgATN1/view",
+   "title": "삐뚤이견적_0514_신촌(pdf).pdf"
+  },
+  {
+   "doc_id": "1jIbJSznf1sqFMnp7vP1bcZCTvDsakvmW",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1jIbJSznf1sqFMnp7vP1bcZCTvDsakvmW/view",
+   "title": "현대드림애드_계산서(최종).png"
+  },
+  {
+   "doc_id": "1kmc12BP1DD1aAvF0MKKo5IZT3Ep0Kq3I",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1kmc12BP1DD1aAvF0MKKo5IZT3Ep0Kq3I/view",
+   "title": "에어바이블_세금계산서(계약금).png"
+  },
+  {
+   "doc_id": "1lIrYfYDWfKnSfXr3DWcFT9Y58n2wnn0f",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1lIrYfYDWfKnSfXr3DWcFT9Y58n2wnn0f/view",
+   "title": "에어바이블_사업자등록증.jpg"
+  },
+  {
+   "doc_id": "1mY3nGvWM5pqbCTgEnDEStTnwD21Y1_ak",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1mY3nGvWM5pqbCTgEnDEStTnwD21Y1_ak/view",
+   "title": "현대신촌 삐뚤이 팝업스토어_공간기획안 2차(240514).pdf"
+  },
+  {
+   "doc_id": "1mfMzzU-k5k5H01qnGFo7yo8sxXAa7K13",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1mfMzzU-k5k5H01qnGFo7yo8sxXAa7K13/view",
+   "title": "에어바이블_견적서.png"
+  },
+  {
+   "doc_id": "1n91mQfTpuYSBMiimC5TT2S-3kQeU14Z3",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1n91mQfTpuYSBMiimC5TT2S-3kQeU14Z3/view",
+   "title": "에어바이블_통장사본.jpg"
+  },
+  {
+   "doc_id": "1onkOJ6sxmtlN-lk1fCL66SyyMwTsH7ZR",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1onkOJ6sxmtlN-lk1fCL66SyyMwTsH7ZR/view",
+   "title": "현대신촌 삐뚤이 팝업스토어_공간기획안 1차(240509).pdf"
+  },
+  {
+   "doc_id": "1so0omSPvIkwj58ZpFKYem2-GbqK1GaJ_",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1so0omSPvIkwj58ZpFKYem2-GbqK1GaJ_/view",
+   "title": "디자인알파_견적서.png"
+  },
+  {
+   "doc_id": "1t5g4ycaX3xN8pqADZkp0l8w9-5nCOIyN",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1t5g4ycaX3xN8pqADZkp0l8w9-5nCOIyN/view",
+   "title": "견적서.jpg"
+  },
+  {
+   "doc_id": "1tr7Zzg9W2_1M_2mheXFJ3cfjL9KCUXLl",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1tr7Zzg9W2_1M_2mheXFJ3cfjL9KCUXLl/view",
+   "title": "디자인알파_계산서.png"
+  },
+  {
+   "doc_id": "1vA_eALVqldvhhknQqcete_aqsvd2eRY0",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1vA_eALVqldvhhknQqcete_aqsvd2eRY0/view",
+   "title": "01-스위트스팟 삐뚤이.xls"
+  },
+  {
+   "doc_id": "1wyAIGXJnljfJNppQnFSifqmvEH9hhafR",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1wyAIGXJnljfJNppQnFSifqmvEH9hhafR/view",
+   "title": "세금계산서(잔금).jpg"
+  },
+  {
+   "doc_id": "1wzUIWdxDf702USiTfbFS1TSkygIk0fYT",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1wzUIWdxDf702USiTfbFS1TSkygIk0fYT/view",
+   "title": "에어바이블_세금계산서(잔금).png"
+  },
+  {
+   "doc_id": "1zo5tpOQmaZ1HfCjkoJx9UL5mrz1ag8dZ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1zo5tpOQmaZ1HfCjkoJx9UL5mrz1ag8dZ/view",
+   "title": "현대 신촌 삐뚤이 팝업스토어 _ 공간 기획, 연출 견적서.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 4건: 현대신촌 삐뚤이 팝업스토어_공간기획안 1차(240509, 현대신촌 삐뚤이 팝업스토어_공간기획안 1차.pptx, 현대신촌 삐뚤이 팝업스토어_공간기획안 2차.pptx, 현대신촌 삐뚤이 팝업스토어_공간기획안 1차(240509. 미확실: 결과보고서 부재로 방문자수·매출 실측 없음; 수수료 구조/계약금액 정보 없음(공간기획안만 제공); 면적(평) 정보 없음; 클라이언트명 미상; 기획서상 예상 방문자수 없음"
+ }
+}

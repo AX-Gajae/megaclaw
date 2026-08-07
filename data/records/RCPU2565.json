@@ -1,0 +1,333 @@
+{
+ "record_id": "RCPU2565",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:안경만두",
+  "space_id": "unresolved:미상",
+  "client_party_id": null,
+  "brand_key": "안경만두",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "문서 원문이 제공되지 않아 컨셉을 확인할 수 없음. 프로젝트명 '안경만두_서일페'와 운영기간만 확인됨.",
+  "brand_name": "안경만두",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-12-25",
+   "to": "2025-12-28",
+   "days": 4
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.5,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 77,
+    "holiday_until": 51,
+    "holiday_block_in": 0,
+    "nat_event_gap": 42,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 20.1
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-12, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "10m7vMTUoVvLa9sioKP6Y8jYz6gzW1mC_",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/10m7vMTUoVvLa9sioKP6Y8jYz6gzW1mC_/view",
+   "title": "65383.png"
+  },
+  {
+   "doc_id": "14FhksN4RwS7xk9OIJ9I06qndBOAMVHO4",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/14FhksN4RwS7xk9OIJ9I06qndBOAMVHO4/view",
+   "title": "1208 [안경만두] 코엑스 서울일러스트페어 4차 기획안.pptx"
+  },
+  {
+   "doc_id": "15XL8FvLv7ej5FpKTzp0kFT4AkDLQB_hc",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/15XL8FvLv7ej5FpKTzp0kFT4AkDLQB_hc/view",
+   "title": "1124 안경만두 서울일러스트페어 타임라인(수정).pdf"
+  },
+  {
+   "doc_id": "16jIC5df__ZBKvXhM-Cg3WFTA4Lcj6FBX",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/16jIC5df__ZBKvXhM-Cg3WFTA4Lcj6FBX/view",
+   "title": "1023 안경만두 서울일러스트페어 타임라인.xlsx"
+  },
+  {
+   "doc_id": "16zWLEqH0ABW2oLVIO3zzQezqBLBX2N8z",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/16zWLEqH0ABW2oLVIO3zzQezqBLBX2N8z/view",
+   "title": "22000121787f_83.jpg"
+  },
+  {
+   "doc_id": "17XXixG4XajK40ymXdqjIux7zUwwxlO4v",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/17XXixG4XajK40ymXdqjIux7zUwwxlO4v/view",
+   "title": "안경만두_결과보고서.pdf"
+  },
+  {
+   "doc_id": "189mPApzgRPZnZJyJaTAOfMIv1YwLHI_o",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/189mPApzgRPZnZJyJaTAOfMIv1YwLHI_o/view",
+   "title": "1023 안경만두 서울일러스트페어 타임라인.pdf"
+  },
+  {
+   "doc_id": "19XDZHAjDauk8XmdrZsW4rgx4Vkk5zDda",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/19XDZHAjDauk8XmdrZsW4rgx4Vkk5zDda/view",
+   "title": "1119 [안경만두] 코엑스 서울일러스트페어 2차 기획안.pptx"
+  },
+  {
+   "doc_id": "1AeFEKttcg4cSFCPFzQ4FDydt1egLAROj",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1AeFEKttcg4cSFCPFzQ4FDydt1egLAROj/view",
+   "title": "1119 [안경만두] 코엑스 서울일러스트페어 2차 기획안.pdf"
+  },
+  {
+   "doc_id": "1BDenobt04SKI7wyw90gGAf8PwT3o4bam",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1BDenobt04SKI7wyw90gGAf8PwT3o4bam/view",
+   "title": "[통장사본-밸류포인트] 안경만두 시공 건.pdf"
+  },
+  {
+   "doc_id": "1BaPkBichaIsXM9sk6J5lJQafY4Or274C",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1BaPkBichaIsXM9sk6J5lJQafY4Or274C/view",
+   "title": "1105 [안경만두] 코엑스 서울일러스트페어 1차 기획안.pdf"
+  },
+  {
+   "doc_id": "1ExFJUeMREiy173scf0jw3PGlBmox_FnI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ExFJUeMREiy173scf0jw3PGlBmox_FnI/view",
+   "title": "1203 [안경만두] 코엑스 서울일러스트페어 견적 요청.pptx"
+  },
+  {
+   "doc_id": "1FGVMJxrgpCwuhpaDRMAfihoqD0hgQjHt",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1FGVMJxrgpCwuhpaDRMAfihoqD0hgQjHt/view",
+   "title": "unnamed.jpg"
+  },
+  {
+   "doc_id": "1HcSJMKzbQQy14dojEDwECThGr8wQmnx8",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1HcSJMKzbQQy14dojEDwECThGr8wQmnx8/view",
+   "title": "GYD44_Zb0AEP49f.jfif"
+  },
+  {
+   "doc_id": "1KFFwtpDQ9_IwP62ncZsFPGOSmr7_xUuW",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1KFFwtpDQ9_IwP62ncZsFPGOSmr7_xUuW/view",
+   "title": "750_750_20240220233053_menu1_12c04828da70.webp"
+  },
+  {
+   "doc_id": "1Qc1rbSSrnU0ELaGu8gYyl5W-GfvdBLlj",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Qc1rbSSrnU0ELaGu8gYyl5W-GfvdBLlj/view",
+   "title": "(스위트스팟) 서일페_안경만두_최종견적서_1211.pdf"
+  },
+  {
+   "doc_id": "1QeA2dXIGr0Wg7h8YSfW56S804-4ZZFLg",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1QeA2dXIGr0Wg7h8YSfW56S804-4ZZFLg/view",
+   "title": "1203 [안경만두] 코엑스 서울일러스트페어 견적 요청.pdf"
+  },
+  {
+   "doc_id": "1Rtq5WNfl2fmWiHJe4hzAC4mlJM92TSnm",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Rtq5WNfl2fmWiHJe4hzAC4mlJM92TSnm/view",
+   "title": "1203 [안경만두] 코엑스 서울일러스트페어 3차 기획안.pdf"
+  },
+  {
+   "doc_id": "1S0Aznga1TihspmO68T86AUc3_OOVEpwm",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1S0Aznga1TihspmO68T86AUc3_OOVEpwm/view",
+   "title": "1124 안경만두 서울일러스트페어 타임라인(수정).xlsx"
+  },
+  {
+   "doc_id": "1XWeGVWl6LbNrZCUfjIk_V5VgauCaLGOR",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1XWeGVWl6LbNrZCUfjIk_V5VgauCaLGOR/view",
+   "title": "170bb5b6-57c2-4bb3-8e9c-f2ad235b4a65.jpg"
+  },
+  {
+   "doc_id": "1XyI5dILJc1Mb-j_4r4mTYWrvrfp2A0e-",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1XyI5dILJc1Mb-j_4r4mTYWrvrfp2A0e-/view",
+   "title": "생활의달인5.jpg"
+  },
+  {
+   "doc_id": "1ZtJd5Zg99NB6W9COzoBoyieAzZXFsQQr",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ZtJd5Zg99NB6W9COzoBoyieAzZXFsQQr/view",
+   "title": "1203 [안경만두] 코엑스 서울일러스트페어 3차 기획안.pptx"
+  },
+  {
+   "doc_id": "1bl30M1X5Va80rcoqPEG4PV2ymisgne2c",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1bl30M1X5Va80rcoqPEG4PV2ymisgne2c/view",
+   "title": "[견적서-밸류포인트] 안경만두 시공 건.pdf"
+  },
+  {
+   "doc_id": "1cRjrzACvdP-7KtU2wwDxe3uLp-X9t6bz",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1cRjrzACvdP-7KtU2wwDxe3uLp-X9t6bz/view",
+   "title": "1209 안경만두 예상견적.xlsx"
+  },
+  {
+   "doc_id": "1dIGYkc9CHVTWBscjpzmm_fVUTXeEMwN0",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1dIGYkc9CHVTWBscjpzmm_fVUTXeEMwN0/view",
+   "title": "1208 [안경만두] 코엑스 서울일러스트페어 4차 기획안.pdf"
+  },
+  {
+   "doc_id": "1eFDA30pNE40ggkmTcOhHq54PBWrAkHM8",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1eFDA30pNE40ggkmTcOhHq54PBWrAkHM8/view",
+   "title": "images.jfif"
+  },
+  {
+   "doc_id": "1f3V4GK11txuZA8AONGSUai431CN-o3cj",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1f3V4GK11txuZA8AONGSUai431CN-o3cj/view",
+   "title": "1215 [안경만두] 코엑스 서울일러스트페어.pptx"
+  },
+  {
+   "doc_id": "1f7A-7tyEFQFIYBFNPga9t4DJemXiXN1Y",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1f7A-7tyEFQFIYBFNPga9t4DJemXiXN1Y/view",
+   "title": "1105 [안경만두] 코엑스 서울일러스트페어 1차 기획안.pptx"
+  },
+  {
+   "doc_id": "1fYmF-LWFFKNH4FemcxqwFsL0XbDhiyQv",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1fYmF-LWFFKNH4FemcxqwFsL0XbDhiyQv/view",
+   "title": "3598.jpg_wh860.jpg"
+  },
+  {
+   "doc_id": "1g69-LxFYFWFmMo1MOWPceJsrBHHzi4CC",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1g69-LxFYFWFmMo1MOWPceJsrBHHzi4CC/view",
+   "title": "1211 [안경만두] 코엑스 서울일러스트페어 5차 기획안.pdf"
+  },
+  {
+   "doc_id": "1hhB0kM7HZV0WRio63I1UH85WHkgp_gTa",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1hhB0kM7HZV0WRio63I1UH85WHkgp_gTa/view",
+   "title": "[안경만두] 팝업대행 표준 계약서_1217_v2_전자계약 날인본.pdf"
+  },
+  {
+   "doc_id": "1iKso5cAI2HbyCZrnoJex0UePalyBe1HE",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1iKso5cAI2HbyCZrnoJex0UePalyBe1HE/view",
+   "title": "image__2018_800814_15456359253580730.jpg"
+  },
+  {
+   "doc_id": "1jFr9BeUddAuewJnj7shHnHyb7sAtQQVt",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1jFr9BeUddAuewJnj7shHnHyb7sAtQQVt/view",
+   "title": "1215 [안경만두] 코엑스 서울일러스트페어 6차 기획안.pdf"
+  },
+  {
+   "doc_id": "1jcqTNSlV4uYIALCKWx4UG-s6R5VcXsdX",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1jcqTNSlV4uYIALCKWx4UG-s6R5VcXsdX/view",
+   "title": "1215 [안경만두] 코엑스 서울일러스트페어 6차 기획안.pptx"
+  },
+  {
+   "doc_id": "1mD2GPgdn1X7V1tCu8aFxv4T65mudfTtx",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1mD2GPgdn1X7V1tCu8aFxv4T65mudfTtx/view",
+   "title": "thumb_d_4A76FE41D8B2676758447B241BCB58DA.jpg"
+  },
+  {
+   "doc_id": "1nStiy9DtPHdIXAi8OjWRsLftTtlZgEB0",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1nStiy9DtPHdIXAi8OjWRsLftTtlZgEB0/view",
+   "title": "images (1).jfif"
+  },
+  {
+   "doc_id": "1s37PE6gXLUKN_rZdQU-VvyXKJNqFycwe",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1s37PE6gXLUKN_rZdQU-VvyXKJNqFycwe/view",
+   "title": "[사업자등록증-밸류포인트] 안경만두 시공 건.pdf"
+  },
+  {
+   "doc_id": "1y4UdQkB1TeLFYmQ_xFUUTFznLiIqTMiF",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1y4UdQkB1TeLFYmQ_xFUUTFznLiIqTMiF/view",
+   "title": "안경만두_1209 견적서_서머수정.xlsx"
+  },
+  {
+   "doc_id": "1ykppBVoOrjZvKmmKOQMz7-lyYMyExKKQ",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1ykppBVoOrjZvKmmKOQMz7-lyYMyExKKQ/view",
+   "title": "cMG_0861.jpg"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서/기획서/견적서/결과보고서) 전체 부재; 입지 정보 전체; 면적; 수수료 구조; 컨셉 및 체험요소; 방문객 및 매출 실측 데이터; 클라이언트명; 서일페 정확한 의미(행사명 추정)"
+ }
+}

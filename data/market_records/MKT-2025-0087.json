@@ -1,0 +1,78 @@
+{
+  "market_record_id": "MKT-2025-0087",
+  "event_name": "라부부 '수상한 편의점' 팝업스토어(성수)",
+  "brand": "팝마트 코리아",
+  "ip_or_collab": "라부부(LABUBU)",
+  "category": "character",
+  "intervention": {
+    "concept_description": "라부부 테마 체험형 팝업. 성수동에서 2025-09-12~25 운영. 100% 사전 예약제, 회차당 50명 입장.",
+    "experience_elements": [
+      "체험형 전시",
+      "한정 굿즈 판매"
+    ],
+    "promotions": [
+      "사전 예약제"
+    ],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "성수동(서울 성동구)",
+    "venue_type": "street_standalone",
+    "neighborhood": "성수",
+    "city": "서울",
+    "period_from": "2025-09-12",
+    "period_to": "2025-09-25",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(session)",
+      "access_type": "session"
+    },
+    "derived": {
+      "duration": {
+        "days": 14,
+        "weekend_share": 0.29,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 2,
+        "months_since_last": 7.8,
+        "first_edition": false
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 14,
+    "counting_basis": "unknown",
+    "counting_basis_note": "실제 방문 총계 미공개(예약 대기·예상 수치만 보도)",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "예약 대기 최대 3만 명, 대기 순번 1만2000번대 사례",
+      "sold_out": null,
+      "reservation_fill": "사전 예약 오픈 10분 만에 전 회차 매진",
+      "signal_quotes": [
+        "사전 예약은 오픈 10분 만에 전 회차가 매진됐고 예약 대기만 3만 명에 달했다. (이코노미스트 2025-09-13)",
+        "예약 대기 순번이 1만2000번을 넘긴 사례도 있었다. (이코노미스트 2025-09-13)"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "비즈니스워치(2025-09-12)는 운영 구조상 하루 450명·누적 약 6300명 예상 보도(실측 아님, 기록만 참고) | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

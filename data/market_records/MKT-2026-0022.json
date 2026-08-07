@@ -1,0 +1,103 @@
+{
+ "market_record_id": "MKT-2026-0022",
+ "event_name": "피지오겔 '붉은기 추적본부' 팝업 @앤더슨씨 성수",
+ "brand": "피지오겔 (LG생활건강)",
+ "ip_or_collab": "쿠팡 메가뷰티쇼 버추얼 스토어 참여 브랜드",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "붉은기 케어 라인 캠페인 팝업. '추적본부' 콘셉트 체험형 공간, 쿠팡 메가뷰티쇼 버추얼 스토어의 일환",
+  "experience_elements": [
+   "콘셉트 체험존",
+   "제품 테스팅",
+   "포토존"
+  ],
+  "promotions": [
+   "현장 구매 혜택",
+   "쿠팡 연계"
+  ],
+  "is_free_entry": false,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "앤더슨씨 성수",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2026-04-17",
+  "period_to": "2026-04-19",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.67,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 3000,
+  "visitors_period_days": 3,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "LG생활건강 보도 인용: 사흘간 약 3천여 명. 쿠팡 메가뷰티쇼 버추얼 스토어(동일 장소·기간) 집계와 일부 중첩 가능성 있음(노트 참조)",
+  "visitors_source_quote": "지난 17일부터 19일까지 사흘간 약 3천여 명의 방문객이 다녀갔다",
+  "visitors_source_url": "https://www.news2day.co.kr/article/20260421500147",
+  "visitors_source_date": "2026-04-21",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "쿠팡 버추얼 스토어(MKT-2026-0005)와 동 장소·동 기간 행사의 일환. 쿠팡 측 예상치(3000명)와 피지오겔 실적(3000여 명)이 유사해 집계 중첩 가능성 주석. | 병합 레코드: MKT-2026-0012 | [병합:MKT-2026-0012] 기사 입력일 2026-04-21 명시(뉴스투데이).",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 3000,
+   "basis": "organizer_claim",
+   "quote": "LG생활건강의 더마톨로지컬 뷰티 브랜드 피지오겔(PHYSIOGEL)은 서울 성수동에서 운영한 팝업스토어 'The Red Trace - 붉은기 추적본부'를 성황리에 마쳤다고 21일 밝혔다. ... 피지오겔, 팝업스토어 '붉은기 추적본부' 사흘간 3000여명 방문 성료",
+   "url": "https://www.news2day.co.kr/article/20260421500147",
+   "date": "2026-04-21"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

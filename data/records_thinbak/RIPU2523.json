@@ -1,0 +1,117 @@
+{
+  "record_id": "RIPU2523",
+  "schema_version": "0.1",
+  "entities": {
+    "brand_id": "unresolved:MUSINSA_TOPS",
+    "space_id": "unresolved:MUSINSA_TOPS_Connect_Shop",
+    "client_party_id": null,
+    "brand_key": "무신사",
+    "space_key": "무신사탑스_커넥트샵"
+  },
+  "intervention": {
+    "concept": "MUSINSA TOPS Connect Shop 팝업. 원문 문서가 제공되지 않아 구체적 컨셉을 확인할 수 없음.",
+    "brand_name": "MUSINSA TOPS",
+    "experience_elements": [],
+    "promotions": [],
+    "staging_tags": []
+  },
+  "conditions": {
+    "location": {
+      "city": null,
+      "district": null,
+      "venue_name": null,
+      "venue_type": null,
+      "foot_traffic_context": null
+    },
+    "area_pyeong": null,
+    "period": {
+      "from": "2025-12-12",
+      "to": "2025-12-14",
+      "days": 3
+    },
+    "season": "winter",
+    "fee_structure": {
+      "type": "unknown",
+      "detail": ""
+    },
+    "brand_requirements": [],
+    "scale": {
+      "store_count": 1,
+      "venue_traffic_type": "standalone",
+      "host_traffic_note": null
+    }
+  },
+  "outcome": {
+    "daily": [
+      {
+        "date": "2025-12-12",
+        "visitors": 1189,
+        "sales_krw": null
+      },
+      {
+        "date": "2025-12-13",
+        "visitors": 1289,
+        "sales_krw": null
+      },
+      {
+        "date": "2025-12-14",
+        "visitors": 1643,
+        "sales_krw": null
+      }
+    ],
+    "totals": {
+      "visitors": 4121,
+      "sales_krw": null,
+      "rev_mm_recognized": 162.0
+    },
+    "counting_method": "unknown",
+    "counting_basis": "방문객 (집계 정의 없음)",
+    "plan_visitors_expected": 4500,
+    "retention": null,
+    "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+    "rev_mm_completion": {
+      "status": "complete",
+      "rule": "운영종료 2025-12, 스냅샷까지 2개월+ (시간 규칙)",
+      "contract_total_mm": null,
+      "last_recognition_period": "2025-12"
+    }
+  },
+  "docs": [
+    {
+      "doc_id": "11KSIvW080upTdvhzq495K10dntgTO1FO",
+      "kind": "운영일지",
+      "uri": "https://drive.google.com/file/d/11KSIvW080upTdvhzq495K10dntgTO1FO/view",
+      "title": "[스위트스팟] MUSINSA TOPS CONNECT 결과보고서.pdf"
+    },
+    {
+      "doc_id": "1Cn9hQO9fAMqp5FfYNLaU-WzRyCccurdT",
+      "kind": "정산",
+      "uri": "https://drive.google.com/file/d/1Cn9hQO9fAMqp5FfYNLaU-WzRyCccurdT/view",
+      "title": "MUSINSA TOPS CONNECT_견적서(최종)_251218.pdf"
+    },
+    {
+      "doc_id": "1L1szsYH4YfRCULASfR8FlCopr2OK69vPsmaCKKNhr6k",
+      "kind": "계약서",
+      "uri": "https://drive.google.com/file/d/1L1szsYH4YfRCULASfR8FlCopr2OK69vPsmaCKKNhr6k/view",
+      "title": "계약서"
+    },
+    {
+      "doc_id": "1TsMt-Maj0R-Z0R57oM8GQUBYpUn_NjHU",
+      "kind": "기타",
+      "uri": "https://drive.google.com/file/d/1TsMt-Maj0R-Z0R57oM8GQUBYpUn_NjHU/view",
+      "title": "[스위트스팟] 온라인 브랜드 소상공인 육성사업 운영계획안_250207.pdf"
+    },
+    {
+      "doc_id": "1tl18IQ1YlpS1WVkl9z_yOwnoxJ9TjDnF",
+      "kind": "운영일지",
+      "uri": "https://drive.google.com/file/d/1tl18IQ1YlpS1WVkl9z_yOwnoxJ9TjDnF/view",
+      "title": "[스위트스팟] MUSINSA TOPS CONNECT 결과보고서.pdf"
+    }
+  ],
+  "provenance": {
+    "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+    "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+    "extracted_at": "2026-07-23",
+    "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 미제공; client_name 미확인; venue 및 입지 정보 미확인; 면적·수수료구조·요구사항 미확인; 컨셉·체험요소·프로모션·연출태그 미확인; 방문자수·매출 실측 데이터 미확인; 예상 방문객 수 미확인 | 라벨발굴(2026-07-24): 결과보고서 재추출 — OVERVIEW 참가자 현황 - 일자별 방문객 표"
+  }
+}

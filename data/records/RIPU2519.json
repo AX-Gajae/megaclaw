@@ -1,0 +1,251 @@
+{
+ "record_id": "RIPU2519",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:네이버페이",
+  "space_id": "unresolved:미상",
+  "client_party_id": null,
+  "brand_key": "네이버페이",
+  "space_key": "코엑스",
+  "space_key_source": "venue_key 정규화 (venue_name 매칭)"
+ },
+ "intervention": {
+  "concept": "네이버페이 커넥트 결제 기술을 일상 경험으로 확장하는 미래형 쇼룸 'Npay Connect Cafe'. 온라인과 오프라인, 고객과 매장을 자연스럽게 연결하는 Seamless Experience를 직관적으로 체험하는 공간. 2025 서울 카페쇼 내 네이버페이 부스로 운영.",
+  "brand_name": "네이버페이 커넥트",
+  "experience_elements": [
+   "N Pay Connect 제품 체험(커넥트존)",
+   "커넥트 결제 체험(QR/카드/삼성페이)",
+   "페이스 사인 체험 & Display",
+   "N Pay Biz 사업자 통장 & 카드 발급",
+   "키워드 리뷰 참여 포인트 페이백",
+   "B2B 쿠폰 체험존"
+  ],
+  "promotions": [
+   "제품 체험 시 새턴버드 커피 리워드 증정",
+   "네이버페이 에코백 + 렌티큘러 키링 제공",
+   "SNS 팔로우 & 좋아요 이벤트",
+   "스탬프 이벤트",
+   "레드백 배포(매일 11시/15시 타임 이벤트)",
+   "N Pay Biz 발급 고객 100% 당첨 드로우",
+   "키워드 리뷰 100원 포인트 페이백"
+  ],
+  "staging_tags": [
+   "미래지향적 카페",
+   "Metal Silver/Grey",
+   "네이버페이 그린",
+   "폴리카보네이트+메탈",
+   "스틸그레이팅",
+   "LED 영상",
+   "라이팅 테이블",
+   "터프팅 카펫(그린)",
+   "모던 인더스트리얼"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": 960,
+   "capacity_per_session": null,
+   "giveaway_qty": 20000,
+   "area_sqm": 108,
+   "planned_operating_days": 4,
+   "throughput_units": 6,
+   "unit_minutes": 3,
+   "operating_hours_per_day": 8,
+   "staff_count": 36,
+   "experience_density": 4,
+   "goods_scale": 1,
+   "photo_zones": 0,
+   "collab_strength": 2,
+   "ip_awareness": 4,
+   "target_breadth": 2,
+   "entry_friction": 2,
+   "media_push": 2,
+   "season_fit": 3,
+   "venue_prominence": 3
+  },
+  "attr_meta": {
+   "evidence": "운영매뉴얼 경품배포계획: 커넥트체험존 커넥트 6대·'1인 체험 3분(180\")기준'·일자별 960세트(페이스사인존 별도 640/일). 운영 11/19~21 10:00-18:00(8h)+11/22 6h=4일. 견적서 유니폼 내부22+로비14=36명, 식대 4일. 면적 S133 6×9m + L108 3×18m. 에코백 20,000개. 카페쇼 참관객 수치 없음→host null.",
+   "confidence": "medium",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "capacity": {
+   "access_type": "open",
+   "total_capacity": null,
+   "detail": ""
+  },
+  "location": {
+   "city": "서울",
+   "district": "강남구 삼성동",
+   "venue_name": "삼성 코엑스 A홀/B홀 S133 & L108",
+   "venue_type": "전시장 부스(카페쇼)",
+   "foot_traffic_context": "2025 서울 카페쇼 참관객, 유동인구",
+   "venue_slot": "A홀 B홀 S133 L108"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-11-19",
+   "to": "2025-11-22",
+   "days": 4
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "운영매뉴얼 시점 미확정. 제안서(0918) 기준 Alt.1 내부부스: 합계 335,580,000원, 대행수수료 15%(기획/디자인 제외) 48,912,000원, 총합계 384,000,000원. Alt.2 내부부스: 총합계 391,000,000원. 외부부스: 총합계 210,000,000원. 굿즈 에코백 20,000개 제작 포함. VAT 명시 없음"
+  },
+  "brand_requirements": [
+   "코엑스 A홀 세미기업 뒤 R-A6 창고 21㎡(3mx7m) 사용",
+   "POS 설치/타공 일정 준수(내부 18일 11:00, 로비 18일 18:00)",
+   "다이렉트 LAN 15회선(주최사 제공)",
+   "커넥트 제품/포스기 포스사 현장 수령",
+   "설치 11/17-18, 철거 11/23"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "전시(박람회) 부스"
+  },
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.25,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 41,
+    "holiday_until": 87,
+    "holiday_block_in": 0,
+    "nat_event_gap": 6,
+    "nat_event": "수능",
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 30000,
+   "popup_zone_pass_rate": 0.4,
+   "host_traffic_est": 12000.0,
+   "venue_scale_tier": 2,
+   "confidence": "medium",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": 5754,
+   "sales_krw": null,
+   "rev_mm_recognized": 474.0
+  },
+  "counting_method": "entry",
+  "counting_basis": "합산 방문객(각 존 체험 합산)",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-11, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-12"
+  },
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "D"
+   ],
+   "why": "스코프 혼합(합산/총계) 표현",
+   "note": "재발굴 판정으로 조정 — 에이전트가 확정한 28,701은 메인·로비 8개 존 카운터의 합이라 1인이 존마다 중복 계수된다. 다른 레코드의 participation 라벨(한 접점 1회)과 물리량이 달라 같은 풀에서 채점할 수 없다. 에이전트 자신의 판정문도 '방문객 단위가 필요하면 부스 방문 5,754명을 써야 "
+  },
+  "label_history": [
+   {
+    "at": "relabel R1 (2026-07-28)",
+    "prev_visitors": 28701,
+    "prev_counting": "participation",
+    "action": "revise",
+    "changes": [
+     "visitors 28,701 → 5,754",
+     "counting_method participation → entry (세분: unique_entry)"
+    ],
+    "evidence": "결과보고서 '[SweetSpot] N페이 커넥트_결과보고서_1203.pdf' 슬라이드8 '행사 결과 > 결과 KPI(입장객)' 표: 메인부스는 부스 방문 955/1309/1817/1673(합 5,754), 커넥트 체험 5,691, 페이스사인 체험 447, 디스플레이 체험 2,560의 네 행을 더한 값이 '합산 방문객' 2081/3905/4840/3626(합 14,452)과 정확히 일치(5754+5691+447+2560=14452). 로비부스도 커넥트존 4,033 + 비즈존 87 + SNS존 5,137 + 인포메이션 4,992 = '합산 방문객' 14,249와 일치. 슬라이드11 '결과 KPI : 전체 누적 합계 — 메인 + 로비 부스 총 누적 체험 및 방문객 합계 / 총 28,701 명' = 14,452+1",
+    "verdict": "28,701은 방문객 수가 아니라 메인·로비 두 부스의 8개 존 카운터를 단순 합산한 체험 터치포인트 총합(1인이 존마다 중복 계수)이므로 counting=participation·scope=this_booth로 재라벨해야 하며, 방문객 단위가 필요하면 메인부스 '부스 방문' 5,754명(4일, 일평균 1,439명)을 써야 한다 — 행사 전체 참관객(event_wide) 의심은 기각.",
+    "adjudication": "에이전트가 확정한 28,701은 메인·로비 8개 존 카운터의 합이라 1인이 존마다 중복 계수된다. 다른 레코드의 participation 라벨(한 접점 1회)과 물리량이 달라 같은 풀에서 채점할 수 없다. 에이전트 자신의 판정문도 '방문객 단위가 필요하면 부스 방문 5,754명을 써야 한다'고 적었다. 다만 로비부스에 단일 입장 카운터가 없어 5,754는 메인부스만의 값이므로 **하한**이다 — 신뢰등급 C(하한)로 낮춘다."
+   }
+  ],
+  "label_alternates": {
+   "participation_touchpoints": 28701
+  },
+  "counting_detail": "unique_entry",
+  "daily_alt": {
+   "series": "zone_touchpoints",
+   "unit": "participation",
+   "note": "메인·로비 8개 존 카운터 합. 1인이 존마다 중복 계수되므로 부스 입장(총계 5,754)과 물리량이 다르다. 일별 부스 입장은 원문에 없다.",
+   "rows": [
+    {
+     "date": "2025-11-19",
+     "visitors": 4468,
+     "sales_krw": null
+    },
+    {
+     "date": "2025-11-20",
+     "visitors": 7462,
+     "sales_krw": null
+    },
+    {
+     "date": "2025-11-21",
+     "visitors": 9461,
+     "sales_krw": null
+    },
+    {
+     "date": "2025-11-22",
+     "visitors": 7310,
+     "sales_krw": null
+    }
+   ]
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "11koufHQYTuugEzJXRXfAI4Lvw2aJiV2N",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/11koufHQYTuugEzJXRXfAI4Lvw2aJiV2N/view",
+   "title": "네이버페이 커넥트 개별계약서&견적서.pdf"
+  },
+  {
+   "doc_id": "1eN_Bc8b0vJIjpY-F5YX80nDK1QZ9DhhC",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1eN_Bc8b0vJIjpY-F5YX80nDK1QZ9DhhC/view",
+   "title": "[SweetSpot] N페이 커넥트_결과보고서_1203.pdf"
+  },
+  {
+   "doc_id": "1y2Fhs6Q_tjBhnp4AqaRA2ukJljsTyQrz",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1y2Fhs6Q_tjBhnp4AqaRA2ukJljsTyQrz/view",
+   "title": "[SweetSpot] N페이 커넥트_Proposal_0918.pdf"
+  },
+  {
+   "doc_id": "1VBsIQFTPi_ROR2EjV2LgcUKIM9DE0bmG",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1VBsIQFTPi_ROR2EjV2LgcUKIM9DE0bmG/view",
+   "title": "[SweetSpot] N페이 커넥트_운영매뉴얼_1115.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체 부재; 입지/면적/수수료구조/요구사항 정보 없음; 방문객·매출 실측 데이터 없음; 컨셉·체험요소·프로모션 상세 없음; 전시부스 성격(팝업스토어 여부 불명확) | 라벨발굴(2026-07-24): 결과보고서 재추출 — 슬라이드8 '결과 KPI' 일자별 합산 방문객 표, 슬라이드11 총 누적 28,701명 | 자극 보강(2026-07-24): 운영안·기획안·계약서 재인제스트로 intervention/conditions 교체 (569→1570자, capacity=open). outcome·entities·period 보존"
+ }
+}

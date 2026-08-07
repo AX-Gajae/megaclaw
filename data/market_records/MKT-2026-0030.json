@@ -1,0 +1,83 @@
+{
+  "market_record_id": "MKT-2026-0030",
+  "event_name": "포켓몬 30주년 파티 팝업스토어",
+  "brand": "포켓몬코리아",
+  "ip_or_collab": "포켓몬 30주년",
+  "category": "character",
+  "intervention": {
+    "concept_description": "30주년 생일 파티 콘셉트. Birthday Party Edition 한정 굿즈, 30주년 기념 피카츄 인형(1인 1개 한정), 그림 체험, 포토 공간",
+    "experience_elements": [
+      "한정 굿즈 판매",
+      "체험존",
+      "포토존"
+    ],
+    "promotions": [
+      "30주년 인형 1인 1개 구매 제한"
+    ],
+    "is_free_entry": true,
+    "reservation_required": false
+  },
+  "conditions": {
+    "venue": "트렌드팟 바이 올리브영N 성수",
+    "venue_type": "mall",
+    "neighborhood": "성수",
+    "city": "서울",
+    "period_from": "2026-05-01",
+    "period_to": "2026-05-31",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 31,
+        "weekend_share": 0.32,
+        "holiday_days": 3
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 31,
+    "counting_basis": "unknown",
+    "counting_basis_note": "방문객 총수 비공개. 대기 시간 실측 르포만 확보",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "평일 오후 등록 후 입장까지 2~2.5시간, 대기 등록 줄에도 대기 발생",
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "\"웨이팅 등록하는 줄도 대기하셔야 돼요. 지금 등록하면 2시간에서 2시간30분 정도 걸립니다.\"",
+        "입장 가능 호출을 위한 대기 번호를 받는 줄에도 대기가 있었다. '대기를 위한 대기 줄'까지 생긴 것이다.",
+        "굿즈를 양손에 가득 들고 팝업스토어를 빠져나온 대학생 김아무개씨(21·여)는 \"대기 시간이 길긴 해도 이때만 구매 가능한 굿즈도 있어서 기다릴 가치가 있는 것 같다\"며"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": [
+      {
+        "metric": "visitors_total",
+        "figure": 37000,
+        "scope_note": "2차수집 대안치: 원문 표현 '3만 7000여 명이 방문했다' — 올리브영이 발표한 팝업 방문객 수",
+        "source_url": "https://www.news1.kr/industry/distribution/6185215",
+        "source_date": "2026-06-03"
+      }
+    ]
+  },
+  "extraction_confidence": "medium",
+  "notes": "수요신호 출처: 시사저널 르포 https://www.sisajournal.com/news/articleView.html?idxno=372614 (2026-05-13, 5/12 현장 실측). 기간 5/1~31(더트립픽 2026-04-16). | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

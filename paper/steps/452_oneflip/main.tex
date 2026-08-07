@@ -1,0 +1,202 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{두 해 동안 거꾸로 꽂혀 있던 축 하나 --- 바로 세우니 안 본 시장 성적이 76\% 올랐다}
+\author{월드모델 실험실}
+\date{노트 583 · 586 · 2026년 8월 5일}
+\maketitle
+
+\begin{abstract}
+노트 $581$ 이 \texttt{data/state/axis\_orient.json} 을 찾아냈다 --- 하네스
+열이 \textbf{도서 $\cdot$ 모바일 $\cdot$ 애니 $\cdot$ 웹툰 $\cdot$ 펀딩}에서
+\emph{값 $\to$ $1-$값} 으로 뒤집혀 있다(노트 $108$ 채택 $\cdot$ 노트 $160$
+기록). 그 파일은 두 해 동안 \textbf{진단 함수에서만} 읽혔고 모형이 보는
+열은 뒤집힌 채였다.
+
+\texttt{entry\_friction} 에서 그것이 공유 뜻을 깨뜨린다 --- 학습 행 가중
+평균이 하네스 열에서 $\mathbf{-0.023}$(사실상 $0$)이라 \textbf{방향이 없는
+열}이고, 그래서 안 본 도메인에는 통째로 버려 왔다(\texttt{OOC\_DROP}).
+
+바로 세우고 그 가림을 걷었다.
+
+\begin{center}
+\begin{tabular}{lrrrl}
+\hline
+자 & 챔피언 & 이 팔 & 차 & 부호 \\
+\hline
+판 & $+0.4679$ & $+0.4699$ & $+0.0020$ & $9/12$ \\
+날짜 통제 판 & $+0.5051$ & $+0.5086$ & $+0.0035$ & $\mathbf{12/12}$ \\
+무리 안 판 & $+0.3877$ & $+0.3903$ & $+0.0026$ & $8/12$ \\
+\textbf{KR 만화} & $+0.6376$ & $\mathbf{+0.6824}$ & $\mathbf{+0.0448}$ & $\mathbf{12/12}$ \\
+\textbf{비게임 앱} & $+0.2860$ & $\mathbf{+0.5038}$ & $\mathbf{+0.2178}$ & $\mathbf{12/12}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{다섯 자가 다 양수}이고 \textbf{무작위로 같은 개수를 뒤집는 대조
+팔은 집 밖을 무너뜨린다}(KR $-0.0114$ $\cdot$ 앱 $-0.0195$, 둘 다 $0/12$).
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 맞게 뒤집으면 오르고 무작위로는 무너진다.
+\textbf{나} --- 같은 축 $\cdot$ 같은 부호 $\cdot$ 다른 무게.
+\textbf{다} --- 조합인가 방향인가.}
+\end{figure}
+
+\section{왜 가림을 같이 걷어야 하나}
+
+되돌리기만 하고 \texttt{OOC\_DROP} 을 유지한 팔(B)은 \textbf{집 밖을 오히려
+깎는다} --- KR $-0.0111$, 앱 $-0.0176$($0/12$). 판은 오르는데(+0.0020)
+집 밖은 내려간다.
+
+\begin{quote}
+\textbf{모형이 이제 그 축을 주효과로 쓰기 때문이다.} 뒤집혀 있을 때는
+도메인 지시자와 함께 갈라야 썼으므로 버려도 손해가 작았다. 바로 세우면
+\emph{쓸모가 커지고}, 그래서 \textbf{버리는 값도 커진다.} 걷어야 한다.
+\end{quote}
+
+트리는 \textbf{한} 특성의 단조 변환에 불변이지만 여러 도메인이 한 열을
+나눠 쓰면 불변이 아니다. A 에서 $+$ 이고 B 에서 $-$ 이면 한 문턱으로 못
+가르고 도메인과 함께 갈라야 한다 --- \textbf{깊이를 쓴다.}
+
+\section{그런데 조합이 전이된 것은 아니다}
+
+노트 $133$ 은 첫 양수를 그대로 채택하지 말라고 한다. 갈라 봤다.
+
+\begin{center}
+\begin{tabular}{lrrrr}
+\hline
+짝 & 최고 단일 축 & 그 값 & 자기 자료 천장 & 챔피언 \\
+\hline
+KR 만화 & \texttt{goods\_scale} & $0.5028$ & $0.7152$ & $\mathbf{0.6824}$ \\
+비게임 앱 & \texttt{entry\_friction} & $\mathbf{0.6353}$ & $0.6177$ & $0.5038$ \\
+CN 만화 & \texttt{target\_breadth} & $0.3127$ & $0.3619$ & $0.3094$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{quote}
+\textbf{KR 에는 조합이 전이되고, 앱 $\cdot$ CN 에는 방향만 전이된다.}
+KR 에서 모형은 어떤 단일 축보다 $+0.18$ 낫다 --- 축 넷을 합친다.
+앱 $\cdot$ CN 에서는 최고 단일 축과 같거나 못하다.
+\textbf{이번에 산 $+0.2178$ 은 버리던 축의 부호를 되찾은 것이지 조합을
+배운 것이 아니다.}
+\end{quote}
+
+왜 그런지는 축 무게를 나란히 놓으면 보인다.
+
+\begin{center}
+\begin{tabular}{lrrr}
+\hline
+축 $\leftrightarrow$ 라벨 & 학습(가중) & KR 만화 & 비게임 앱 \\
+\hline
+\texttt{target\_breadth} & $\mathbf{+0.4163}$ & $+0.4831$ & $+0.2141$ \\
+\texttt{media\_push} & $+0.3688$ & --- & $+0.0834$ \\
+\texttt{goods\_scale} & $+0.3097$ & $\mathbf{+0.5028}$ & $+0.3968$ \\
+\texttt{venue\_prominence} & $+0.0775$ & $+0.1661$ & $+0.0102$ \\
+\texttt{entry\_friction} & $-0.1051$ & $-0.3202$ & $\mathbf{-0.6353}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{학습의 꼴찌가 앱의 일등이다.} 같은 축, 같은 부호, \emph{다른
+무게}. KR 은 학습과 무게 순서가 거의 같아서 조합이 그대로 통하고, 앱은
+순서가 뒤집혀 있어서 방향만 통한다.
+
+\paragraph{경고를 같이 적는다(노트 $568$).}
+짝의 유보에서 잰 단일 축 $\rho$ 는 \textbf{모형의 상한이 아니다} ---
+``앱에서는 \texttt{entry\_friction} 만 크게 쓰라''를 알려면 \emph{그 짝의
+라벨}을 봐야 한다. ``모형이 축 하나보다 못하다''는 \textbf{서술이지
+탓이 아니다.}
+
+\section{씨앗 마흔으로 확인했다}
+
+판 차 $+0.0020$ 은 노트 $507$ 문턱에 딱 걸리고 무리 안 판이 $0$ 을 문다.
+씨앗 $40$ 으로 다시 쟀다.
+
+\begin{center}
+\begin{tabular}{lrrrl}
+\hline
+자 & 챔피언 & 이 팔 & 차 & 부호 \\
+\hline
+판 & $+0.4678$ & $+0.4697$ & $+0.0020$ & $34/40$ \\
+날짜 통제 판 & $+0.5054$ & $+0.5086$ & $+0.0032$ & $\mathbf{40/40}$ \\
+무리 안 판 & $+0.3869$ & $+0.3881$ & $+0.0013$ & $24/40$ \\
+\textbf{KR 만화} & $+0.6380$ & $\mathbf{+0.6841}$ & $\mathbf{+0.0461}$ & $\mathbf{40/40}$ \\
+\textbf{비게임 앱} & $+0.2895$ & $\mathbf{+0.5053}$ & $\mathbf{+0.2157}$ & $\mathbf{40/40}$ \\
+모바일 & $+0.6279$ & $+0.6276$ & $-0.0003$ & $19/40$ \\
+만화 & $+0.3391$ & $+0.3390$ & $-0.0001$ & $21/40$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{씨앗 열둘의 값이 그대로 선다.} 구간이 좁아졌을 뿐이다 ---
+앱 $[+0.2131,+0.2183]$ 은 씨앗 잡음의 \textbf{$80$ 배}다.
+학습 도메인 둘(모바일 $\cdot$ 만화)은 움직이지 않는다.
+
+\textbf{채택했다} --- \texttt{fixaxes.orient()} 를 \texttt{\_idol} 에
+물리고 \texttt{OOC\_DROP} 을 비웠다.
+
+\begin{center}
+\begin{tabular}{lrr}
+\hline
+ & 전 & 후 \\
+\hline
+판 $\rho$ & $0.4678$ & $\mathbf{0.4697}$ \\
+KR 만화 & $0.6380$ & $\mathbf{0.6841}$ \\
+비게임 앱 & $0.2895$ & $\mathbf{0.5053}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\section*{두 해 동안 왜 안 보였나}
+
+\texttt{axis\_orient.json} 은 노트 $160$ 이 만들었고 노트 $155\!\sim\!159$
+가 다섯 노트를 태운 뒤였다. 그런데 그 파일은 \texttt{lever.prior\_of} 라는
+\textbf{진단 함수}에서만 읽힌다. 모형이 보는 열에는 아무도 안 물렸다.
+
+\begin{quote}
+\textbf{장부와 코드가 따로 자란다}(노트 $549$). 이 판이 같은 뿌리를
+세 번째로 만난다 --- 빈 축 감사(노트 $546$) $\cdot$ provenance 미등록
+(노트 $549$) $\cdot$ \textbf{방향 목록}(여기). 셋 다 ``적어는 뒀는데
+쓰이지 않는다''다.
+\end{quote}
+
+그래서 이번엔 감사에 물렸다 --- \texttt{sideaudit.shared\_sign} 이 축마다
+\textbf{하네스 열과 원 방향 두 줄을 다 낸다.} 되돌린 뒤 두 줄이 자리를
+바꾸는 것이 배선 가드다($50\% / -0.023 \leftrightarrow 83\% / -0.105$).
+
+\section*{조항}
+
+\begin{quote}
+\textbf{모형이 보는 열의 방향이 도메인 사이에서 같은지 잰다.} 부호가
+갈리면 트리는 그 축을 도메인과 \emph{함께서만} 쓸 수 있고, 안 본
+도메인에는 못 쓴다. \textbf{공유 축의 값은 부호가 서 있을 때만 나온다.}
+\end{quote}
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{짝마다 다른 무게} --- 앱의 남은 $0.13$($0.504$ 대 $0.635$)은
+부호가 아니라 무게 문제다. 노트 $463$ 이 반증한 것은
+\texttt{calibrate\_ooc} 의 \emph{부호 뒤집기}였고 \textbf{무게는 아무도
+안 재 봤다.}
+\item \textbf{\texttt{axis\_orient.json}} --- 채택 커밋에서
+\texttt{\_applied} 를 적었고, \texttt{shared\_sign} 이 그것을 읽어 줄
+이름을 \textbf{``하네스 열($=$원 방향)''} 과 ``뒤집힌 원자료''로 바꾼다.
+안 했으면 \textbf{일곱 번째}로 같은 자리를 밟았을 것이다. \emph{닫음.}
+\item \textbf{나머지 넷} --- 노트 $589$ 가 전수로 쟀다.
+\texttt{target\_breadth} 는 펀딩 하나만($-0.059$),
+\texttt{venue\_prominence} 는 웹툰 하나만($-0.096$) 반대이고
+\textbf{둘 다 \texttt{orient} 목록에 없다} --- 열 탓이 아니라 진짜
+불일치인데 크기가 $0$ 근처라 가중을 안 흔든다. \emph{닫음.}
+\item \textbf{되돌리는 변환은 멱등이 아니다} --- \texttt{orient} 는
+$1-x$ 라 두 번 걸면 제자리다. 채택 뒤 \texttt{\_idol} 이 이미 거는데
+옛 대본이 또 걸면 \textbf{가드도 분모도 안 바뀌므로 아무도 못 본다.}
+대기 중인 대본 둘에 막이를 넣었다.
+\end{itemize}
+
+\end{document}

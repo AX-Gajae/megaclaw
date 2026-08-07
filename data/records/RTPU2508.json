@@ -1,0 +1,143 @@
+{
+ "record_id": "RTPU2508",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:밴티브",
+  "space_id": "unresolved:종로_관철동10-2_삼일빌딩_밴티브사무실",
+  "client_party_id": "unresolved:엔자임헬스",
+  "brand_key": "밴티브",
+  "space_key": "종로_삼일빌딩"
+ },
+ "intervention": {
+  "concept": "밴티브 브랜드 런칭을 기념하는 엔자임헬스 사내 이벤트. 밴티브 사무실 내 메인 스테이지와 포토존을 연출하고, 미션 모먼트·폴라로이드 포토부스·럭키드로우(뽑기) 체험과 케이터링을 제공하는 임직원 대상 행사.",
+  "brand_name": "밴티브",
+  "experience_elements": [
+   "밴티브 미션 모먼트(메인 스테이지)",
+   "폴라로이드 포토부스",
+   "럭키드로우(캡슐 뽑기 기기)",
+   "케이터링",
+   "VMD 행잉 배너 및 가벽/등신대 연출"
+  ],
+  "promotions": [
+   "럭키드로우 경품(금속 뱃지, 그립톡, 아크릴 키링)"
+  ],
+  "staging_tags": [
+   "메인 스테이지",
+   "포토존",
+   "가벽 및 등신대",
+   "VMD 행잉 배너",
+   "말풍선 테이블 스티커"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울시",
+   "district": "종로구",
+   "venue_name": "삼일빌딩 밴티브 사무실",
+   "venue_type": "사무실(사내 행사장)",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-02-04",
+   "to": "2025-02-04",
+   "days": 1
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "계약서 기준 총 계약금액 13,300,000원(VAT 별도). 선금 50% 6,650,000원(계산서 2025-01-10, 지급 2025-01-24), 잔금 50% 6,650,000원(계산서 2025-02-07, 지급 2025-02-14). 견적서 4차 기준 총계 13,800,000원(VAT 10% 별도), 대행수수료는 정가 항목 제외 소계의 10%. 케이터링 52,000원×80."
+  },
+  "brand_requirements": [
+   "모든 제작물 사용 전 의뢰사 서면 감수·승인 필요",
+   "제작물 지식재산권 의뢰사 귀속",
+   "보안유지 의무",
+   "엔자임헬스 파트너 규정(부패방지·정보보안·하도급 금지 등) 준수",
+   "정치·사회·종교적 중립 유지"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "밴티브 사무실 내 임직원 대상 사내 행사"
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 0.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 5,
+    "holiday_until": 25,
+    "holiday_block_in": 0,
+    "nat_event_gap": 82,
+    "nat_event": null,
+    "doc_lag_days": 15,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 5560056.0,
+    "pnl_pre_accounts": 6,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-01-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 14.3
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서가 제공되지 않아 실측 방문/매출 데이터 없음. 케이터링 견적 수량이 80인분으로 참석 규모 추정 단서이나 실측 아님.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 14.3 ≈ 계약총액 13.3",
+   "contract_total_mm": 13.3,
+   "last_recognition_period": "2025-02"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1VgoGQp83iTWHBCBWL8ywMwAwo5Nr7Xbg",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1VgoGQp83iTWHBCBWL8ywMwAwo5Nr7Xbg/view",
+   "title": "(Sweetspot) 벤티브 런칭 사내 이벤트_견적서_4차_250120.pdf"
+  },
+  {
+   "doc_id": "1aoNF9Xr6WnWYflVMfab3TYp4r7-SfcC8BYzfFpsnUnI",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1aoNF9Xr6WnWYflVMfab3TYp4r7-SfcC8BYzfFpsnUnI/view",
+   "title": "제안서_내용없음"
+  },
+  {
+   "doc_id": "1qx4YgAsOxS17ZeywdIInL0Fxme5JaYNO",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1qx4YgAsOxS17ZeywdIInL0Fxme5JaYNO/view",
+   "title": "[Sweetspot] 엔자임_밴티브 런칭 사내 이벤트_업무 계약서_250109.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: [Sweetspot] 엔자임_밴티브 런칭 사내 이벤트_, 제안서_내용없음, (Sweetspot) 벤티브 런칭 사내 이벤트_견적서_. 미확실: 결과보고서 부재로 방문자수·매출 실측 없음; 제안서 내용 없음(빈 문서); 면적(평) 정보 없음; 예상 방문 인원 명시 없음(케이터링 80인분은 참고치); 계약서 총액 13,300,000원과 견적서 4차 13,800,000원 간 차이 존재"
+ }
+}

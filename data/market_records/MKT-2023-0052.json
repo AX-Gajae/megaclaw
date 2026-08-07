@@ -1,0 +1,99 @@
+{
+ "market_record_id": "MKT-2023-0052",
+ "event_name": "푸바오 팝업스토어(더현대 서울)",
+ "brand": "에버랜드(삼성물산 리조트부문)×에잇세컨즈",
+ "ip_or_collab": "푸바오(자이언트 판다)",
+ "category": "character",
+ "intervention": {
+  "concept_description": "에버랜드 푸바오 첫 단독 팝업스토어. 푸바오 출생 몸무게 197g 기념 한정 가죽 키링 197개, 에잇세컨즈 협업 패션 소품, '전지적 푸바오 시점' 사인회",
+  "experience_elements": [
+   "굿즈 판매(총 11만여개)",
+   "사인회(송영관 사육사)"
+  ],
+  "promotions": [
+   "한정판 가죽 키링 197개",
+   "에잇세컨즈 협업 패션 소품"
+  ],
+  "is_free_entry": null,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "더현대 서울",
+  "venue_type": "department_store",
+  "neighborhood": "여의도",
+  "city": "서울",
+  "period_from": "2023-11-09",
+  "period_to": "2023-11-22",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 20000,
+  "visitors_period_days": 13,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "에버랜드 발표 인용 '9일부터 13일간(1일 휴무) 서울 여의도 더현대 서울에서 진행한 푸바오 팝업 스토어가 판다 팬의 높은 관심 속에서 종료' '방문객 2만여 명이 몰렸다'",
+  "visitors_source_quote": "더현대 서울에서 처음으로 열린 푸바오 팝업 스토어에 방문객 2만여 명이 몰렸다.",
+  "visitors_source_url": "http://www.nbnnews.co.kr/news/articleView.html?idxno=812534",
+  "visitors_source_date": "2023-11-24",
+  "sales_krw": 1000000000,
+  "sales_source_quote": "총 판매 굿즈는 11만여개로 매출 10억원을 돌파했다.",
+  "sales_source_url": "http://www.nbnnews.co.kr/news/articleView.html?idxno=812534",
+  "sales_source_date": "2023-11-24",
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": true,
+   "reservation_fill": true,
+   "signal_quotes": [
+    "푸바오 팝업스토어는 사전 예약이 5분 만에 매진될 정도로 오픈 전부터 큰 화제였다.",
+    "푸바오가 태어났을 때 몸무게인 197g을 기념해 푸바오 사진이 담긴 한정판 고급 가죽 키링 197개는 오픈 당일 바로 완판됐다.",
+    "에잇세컨즈와 협업해 제작한 패션 소품은 오픈 3일 만에 전량 매진됐다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "매출은 '10억원 돌파' 하한 표현. 기간 2023-11-09~22(13일, 1일 휴무) | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified",
+  "sales": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

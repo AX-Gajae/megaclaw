@@ -1,0 +1,108 @@
+{
+ "market_record_id": "MKT-2025-0006",
+ "event_name": "아이파크몰 키보드 페스티벌(아키페)",
+ "brand": "HDC아이파크몰(앱코·큐센·엠스톤·키네틱스·펀키스 등 20여개 브랜드)",
+ "ip_or_collab": "커스텀 키보드 브랜드 연합",
+ "category": "electronics",
+ "intervention": {
+  "concept_description": "국내 유통업계 최초 대규모 키보드 행사, 커스텀 키보드·스페셜 에디션·신제품 100여종 전시판매, 1년여 준비한 초대형 팝업",
+  "experience_elements": [
+   "키보드 전시·체험",
+   "스페셜 에디션 판매"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "아이파크몰 용산점 리빙파크 3층 이벤트홀",
+  "venue_type": "mall",
+  "neighborhood": "용산",
+  "city": "서울",
+  "period_from": "2025-02-06",
+  "period_to": "2025-02-09",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(invite)",
+   "access_type": "invite"
+  },
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.5,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 13000,
+  "visitors_period_days": 4,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "아이파크몰 측 집계 인용 보도: '커스텀 키보드 마니아층을 겨냥한 키보드 페스티벌은 4일간 누적 1만3000명이 다녀가며 예상을 뛰어넘는 흥행을 기록했다'",
+  "visitors_source_quote": "커스텀 키보드 마니아층을 겨냥한 ‘키보드 페스티벌’은 4일간 누적 1만3000명이 다녀가며 예상을 뛰어넘는 흥행을 기록했다.",
+  "visitors_source_url": "https://fashionbiz.co.kr/article/221690",
+  "visitors_source_date": "2025-11-25",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": "사전 예약 8000명 전량 마감(한경)",
+   "signal_quotes": [
+    "사전 예약 8000명은 모두 마감됐고, 4일간 1만5000명이 방문했다."
+   ]
+  },
+  "conflict": true,
+  "alt_figures": [
+   {
+    "value": 12000,
+    "basis": "organizer_claim",
+    "quote": "앱코가 이달 용산 아이파크몰에서 4일간 진행된 ‘아이파크몰 키보드 페스티벌(이하 아키페)’에 참여하여 약 12,000명의 소비자가 방문한 가운데 성황리에 행사를 마무리했다고 밝혔다.",
+    "url": "https://www.betanews.net/article/view/beta202502170053",
+    "date": "2025-02-17"
+   },
+   {
+    "value": 15000,
+    "basis": "organizer_claim",
+    "quote": "사전 예약 8000명은 모두 마감됐고, 4일간 1만5000명이 방문했다.",
+    "url": "https://www.hankyung.com/article/202606221397i",
+    "date": "2026-06-25"
+   }
+  ],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "방문객 수치가 출처별로 상이(1만3000명/1만2000명/1만5000명)하여 conflict 처리. 사전 예약 8000명 마감(한경, 2026-06-25). | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

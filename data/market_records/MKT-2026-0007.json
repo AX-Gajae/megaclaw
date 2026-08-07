@@ -1,0 +1,90 @@
+{
+ "market_record_id": "MKT-2026-0007",
+ "event_name": "네오위즈 '피망 뉴맞고' 팝업 '뉴맞고 오광(光)정원'",
+ "brand": "네오위즈",
+ "ip_or_collab": "피망 뉴맞고",
+ "category": "game_webtoon",
+ "intervention": {
+  "concept_description": "민화로 재해석한 화투를 담아낸 현대적 공간",
+  "experience_elements": [
+   "화투패 짝 맞추기",
+   "숨은 뉴맞고 찾기",
+   "화투점 운세",
+   "도전 화투 데시벨"
+  ],
+  "promotions": [
+   "체험 완료 시 민화 오광 화투 스티커·캐릭터 화투 키링 등 경품 증정"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "스타필드 코엑스몰 지하 1층",
+  "venue_type": "mall",
+  "neighborhood": "삼성동",
+  "city": "서울",
+  "period_from": "2026-02-13",
+  "period_to": "2026-02-18",
+  "area_pyeong": null,
+  "multi_store": null,
+  "derived": {
+   "duration": {
+    "days": 6,
+    "weekend_share": 0.33,
+    "holiday_days": 3
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 8000,
+  "visitors_period_days": 6,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "네오위즈 보도자료: '행사 기간 동안 누적 방문객 약 8천여 명이 현장을 찾고'",
+  "visitors_source_quote": "행사 기간 동안 누적 방문객 약 8천여 명이 현장을 찾고 일부 굿즈가 조기 품절되는 등 큰 인기를 끌었다.",
+  "visitors_source_url": "https://www.neowiz.com/kr/media/press-release-detail/3418",
+  "visitors_source_date": "2026-02-20",
+  "sales_krw": null,
+  "sales_source_quote": "",
+  "sales_source_url": "",
+  "sales_source_date": "",
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": true,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "일부 굿즈가 조기 품절되는 등 큰 인기를 끌었다"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "스타필드 코엑스몰과 협업 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "quote_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

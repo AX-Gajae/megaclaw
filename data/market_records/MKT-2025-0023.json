@@ -1,0 +1,88 @@
+{
+ "market_record_id": "MKT-2025-0023",
+ "event_name": "CJ온스타일 '성수 쇼케이스 팝업스토어'",
+ "brand": "CJ온스타일",
+ "ip_or_collab": "최화정·안재현·소이현·이준혁 등 셀럽",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "슬로우 에이징 트렌드 콘셉트. 셀럽·인플루언서 추천 상품 체험, 스탬프 획득 경품, 현장 한정 특가",
+  "experience_elements": [
+   "제품 체험",
+   "스탬프 이벤트",
+   "셀럽 라운딩"
+  ],
+  "promotions": [
+   "컴온뷰티박스 등 최대 20만원 경품",
+   "현장 한정 특가"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "XYZ SEOUL, 성수동",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수",
+  "city": "서울",
+  "period_from": "2025-04-04",
+  "period_to": "2025-04-08",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 5,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 10000,
+  "visitors_period_days": 5,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "CJ온스타일 제공 '5일간 1만명 이상'",
+  "visitors_source_quote": "CJ온스타일이 지난 4월 4일부터 8일까지 서울 성수동 XYZ SEOUL에서 운영한 '성수 쇼케이스 팝업스토어'가 누적 방문객 1만 명 이상을 기록하며 성황리에 마무리됐다.",
+  "visitors_source_url": "https://www.newstap.co.kr/news/articleView.html?idxno=301478",
+  "visitors_source_date": "2025-04-10",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": true,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "온라인 연계 '컴온스타일' 프로모션(~4/13). | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,86 @@
+{
+ "n": 75,
+ "reps": 20,
+ "축": {
+  "target_breadth": {
+   "const_mae": 0.21,
+   "ridge": {
+    "mae": 0.2769,
+    "diff": 0.0669,
+    "win_rate": 0.0
+   },
+   "gbdt": {
+    "mae": 0.2008,
+    "diff": -0.0092,
+    "win_rate": 0.9
+   },
+   "best": "gbdt"
+  },
+  "venue_prominence": {
+   "const_mae": 0.1633,
+   "ridge": {
+    "mae": 0.1882,
+    "diff": 0.0249,
+    "win_rate": 0.0
+   },
+   "gbdt": {
+    "mae": 0.1644,
+    "diff": 0.0011,
+    "win_rate": 0.35
+   },
+   "best": "gbdt"
+  },
+  "entry_friction": {
+   "const_mae": 0.2533,
+   "ridge": {
+    "mae": 0.3008,
+    "diff": 0.0457,
+    "win_rate": 0.0
+   },
+   "gbdt": {
+    "mae": 0.219,
+    "diff": -0.0344,
+    "win_rate": 1.0
+   },
+   "best": "gbdt"
+  },
+  "media_push": {
+   "const_mae": 0.19,
+   "ridge": {
+    "mae": 0.2956,
+    "diff": 0.1056,
+    "win_rate": 0.0
+   },
+   "gbdt": {
+    "mae": 0.2243,
+    "diff": 0.0343,
+    "win_rate": 0.0
+   },
+   "best": "gbdt"
+  },
+  "goods_scale": {
+   "const_mae": 0.2333,
+   "ridge": {
+    "mae": 0.2604,
+    "diff": 0.0271,
+    "win_rate": 0.0
+   },
+   "gbdt": {
+    "mae": 0.2193,
+    "diff": -0.014,
+    "win_rate": 0.85
+   },
+   "best": "gbdt"
+  }
+ },
+ "2단": {
+  "복원축": {
+   "median": 0.0254,
+   "win_rate": 0.05
+  },
+  "참축": {
+   "median": -0.0313,
+   "win_rate": 1.0
+  }
+ }
+}

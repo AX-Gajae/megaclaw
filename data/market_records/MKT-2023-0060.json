@@ -1,0 +1,86 @@
+{
+ "market_record_id": "MKT-2023-0060",
+ "event_name": "'빵빵이의 일상' 팝업스토어",
+ "brand": "미상(유통사 팝업)",
+ "ip_or_collab": "빵빵이의 일상(유튜브 애니메이션)",
+ "category": "character",
+ "intervention": {
+  "concept_description": "유튜브 애니메이션 '빵빵이의 일상' 팝업스토어. 2023년 12월 14일부터 2주간 운영(서울경제).",
+  "experience_elements": [
+   "캐릭터 굿즈 판매"
+  ],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": null,
+  "venue_type": null,
+  "neighborhood": null,
+  "city": null,
+  "period_from": "2023-12-14",
+  "period_to": "2023-12-27",
+  "area_pyeong": null,
+  "multi_store": null,
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 4.6,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 40000,
+  "visitors_period_days": 14,
+  "counting_basis": "unknown",
+  "counting_basis_note": "집계 방식 원문 없음(서울경제 보도)",
+  "visitors_source_quote": "지난달 14일부터 2주 간 열린 인기 유튜브 애니메이션 '빵빵이의 일상' 팝업스토어에는 4만 명이 몰려 호황을 이뤘다. 1인 최대 구매액은 170만 원, 최다 구매수는 80개에 달했다.",
+  "visitors_source_url": "https://www.sedaily.com/article/13820813",
+  "visitors_source_date": "2024-01-02",
+  "sales_krw": 1280000000,
+  "sales_source_quote": "14일 만에 13억5000만원, 12일 만에 12억8000만원, 11일 만에 11억원, 2주 동안 10억원…. 듣기만 해도 아찔한 이 매출의 주인공, 바로 K-POP 아이돌 제로베이스원, 개그 웹툰 '빵빵이의 일상', 캐릭터 '헬로키티', 귀여운 용인 판다 '푸바오'다.",
+  "sales_source_url": "https://fashionbiz.co.kr/article/205967",
+  "sales_source_date": "2024-02-27",
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "1인 최대 구매액은 170만 원, 최다 구매수는 80개에 달했다. (서울경제 2024-01-02)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "장소는 원문에 '주요 유통(더현대서울·신세계 강남 등)' 수준으로만 언급돼 미기재. 기간 12일(패션비즈)과 2주(서울경제) 보도 차이 있음 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only",
+  "sales": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

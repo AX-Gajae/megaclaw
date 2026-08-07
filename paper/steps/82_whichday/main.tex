@@ -1,0 +1,197 @@
+\documentclass[10pt]{article}
+\usepackage{icmlko}
+
+\icmlmeta{IP 파운데이션 월드모델}{260}{어느 요일인가}{판 0.4687 $\to$ 0.4916 --- 그리고 새는 열을 빼니 오히려 세졌다}
+
+\begin{document}
+
+\twocolumn[
+\icmlheader
+
+\begin{abstract}
+노트 259가 남긴 첫 줄은 ``21축 천장을 다시 재라''였다. 쟀다 --- 노트 252의
+방법 그대로 유보 안 5겹 CV 에 섞음 귀무를 붙이니 \textbf{0.4808}(17축일 때
+0.4697)이고 지금이 0.4688 이라 여지가 $+$0.0121 이다. \textbf{천장이 우리와
+같이 움직인다} --- 축을 더하면 판도 오르고 천장도 그만큼 오른다(각각
+$+$0.0119 · $+$0.0111). 여지는 계속 $+$0.012 다. 그 여지의 대부분이 웹툰이라
+(몫 27.3\% $\times$ $+$0.055) 웹툰을 다시 팠다. 노트 255의 교훈 ---
+\textbf{수가 아니라 무엇인지} --- 를 태그 말고 나머지 메타에 적용했다. 웹툰의
+``\texttt{venue\_prominence}''는 연재 \textbf{요일 수}(\texttt{n\_day})다.
+\emph{어느} 요일인지는 안 쓰고 있었다. 요일 · 연령 등급 · 작가 수 ·
+데일리패스를 토큰으로 놓으니 성분 하나가 통과하고 판이 0.4687 $\to$
+\textbf{0.4831} 이 됐다. \textbf{여기서 멈추지 않은 것이 이 노트의 요점이다.}
+\texttt{daily\_pass} 를 의심해서 쟀더니 \texttt{finished} 와
+\textbf{$+$0.841} · 연도와 $-$0.437 --- 완결 표지의 다른 이름이고,
+\texttt{finished} 는 \texttt{provenance} 에 이미 POST 로 적혀 있다. 노트
+255의 완결 태그와 똑같은 함정에 두 번째로 걸린 것이다. \textbf{빼니 판이
+0.4916 으로 더 올라갔다}(웹툰 $+$0.0826, $t{=}5.35$). 새는 열이 신호를
+\emph{흐리고} 있었다 --- 걸러 내면 잃는 줄 알았는데 얻었다. 남은 토큰은
+완결과 최대 $|0.178|$ · 연도와 최대 $|0.189|$ 로 깨끗하고, \texttt{level} 은
+2,817건 전부 같은 값이라 상수다. 가드 여덟 통과. \textbf{웹툰이 0.3805에서
+0.4768로 왔다.}
+\end{abstract}
+]
+
+\section{천장이 같이 움직인다}
+
+노트 252가 17축의 천장을 0.4697 로 쟀고 노트 259가 ``그건 17축 것''이라고
+숙제로 남겼다. 21축에서 같은 방법으로 다시 쟀다.
+
+\begin{center}\small
+\begin{tabular}{lrrr}
+\hline
+ & 판 & 천장(CV) & 여지 \\
+\hline
+17축 & 0.4569 & 0.4697 & $+$0.0128 \\
+21축 & 0.4688 & \textbf{0.4808} & $+$0.0121 \\
+\hline
+움직임 & $+$0.0119 & $+$0.0111 & \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{천장이 우리와 같이 올라간다.} 축을 더해 판이 $+$0.0119 오르는 동안
+천장도 $+$0.0111 올랐다. 여지는 $+$0.012 로 거의 그대로다.
+
+당연한 것 같지만 아니다. 천장이 고정이라면 여지가 줄어들며 수렴하는 그림인데,
+실제로는 \textbf{여지가 안 줄어든다.} 새 축이 배포 모형에게 주는 만큼
+도메인 전용 모형에게도 주기 때문이다. ``얼마나 남았나''는 자료를 더 넣는
+한 계속 $+$0.012 근처일 수 있다.
+
+여지의 자리는 분명하다 --- 웹툰이 $+$0.055(몫 27.3\%)로 도달 가능한 것 중
+제일 크다(도서 $+$0.180 은 노트 253이 닫았다).
+
+\section{수가 아니라 무엇인지, 두 번째}
+
+노트 255가 태그에서 배운 것을 웹툰의 \emph{나머지} 메타에 적용했다.
+
+\begin{quote}\small
+\texttt{webtoon\_axes.py:} \\
+\texttt{\ a["venue\_prominence"] = scale01(n\_day, 1, 3)}
+\end{quote}
+
+주당 연재 \textbf{요일 수}다. \emph{어느} 요일인지는 안 쓴다. 네이버 웹툰에서
+월요일 슬롯과 토요일 슬롯은 다른 자리인데 판은 ``며칠''만 안다.
+
+요일(7) · 연령 등급(3) · 레벨(1) · 작가 수(4) · 데일리패스(2)를 토큰으로
+놓고 같은 SVD 를 돌렸다. 성분 하나가 통과했고(연도 통제 $-$0.230, 조각 5/5,
+겹침 0.193) 판이 0.4687 $\to$ \textbf{0.4831}, 웹툰이 0.3943 $\to$ 0.4461
+($t{=}4.02$)이 됐다.
+
+\textbf{여기서 멈췄으면 노트가 틀렸을 것이다.}
+
+\section{두 번째로 같은 함정에 걸렸다}
+
+\texttt{daily\_pass} 가 마음에 걸렸다 --- 데일리패스는 \emph{나중에} 붙일 수
+있는 과금 방식이다. 쟀다.
+
+\begin{center}\small
+\begin{tabular}{lr}
+\hline
+\texttt{daily\_pass} 와 & $\rho$ \\
+\hline
+\texttt{finished} & $\mathbf{+0.841}$ \\
+연도 & $-$0.437 \\
+회차 수 & $+$0.221 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}\small
+\begin{tabular}{lrr}
+\hline
+연재 시작 & 데일리패스 & 완결 \\
+\hline
+2018--2021 & 79.8\% & 88.0\% \\
+2022--2024 & 64.4\% & 73.6\% \\
+2025--2027 & \textbf{22.4\%} & \textbf{28.7\%} \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{완결 표지의 다른 이름이다.} 그리고 \texttt{finished} 는
+\texttt{provenance.GROUP\_WHEN} 에 ``\textbf{완결 여부는 끝나야 안다}''로
+이미 POST 등록돼 있다. 노트 255가 태그에서 거른 것과 똑같은 물건에
+\textbf{두 번째로} 걸렸다 --- 이름만 달랐다.
+
+\section{빼니 세졌다}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figs/board.pdf}
+\caption{왼쪽 --- 판과 웹툰의 걸음. 오른쪽 --- 새는 열을 뺀 전후.}
+\end{figure}
+
+\begin{center}\small
+\begin{tabular}{lrrr}
+\hline
+ & 통과 성분 & 판 & 웹툰 \\
+\hline
+데일리패스 넣음 & 1개 & 0.4831 & 0.4461 \\
+\textbf{데일리패스 뺌} & \textbf{2개} & \textbf{0.4916} & \textbf{0.4768} \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{새는 열을 빼니 판이 더 올라갔다.} 보통 누출을 제거하면 점수가
+내려간다(노트 213의 공휴일이 그랬다 --- 0.4603 $\to$ 0.4396). 여기서는
+반대다. 까닭은 SVD 에 있다: \texttt{daily\_pass} 는 분산이 큰 이항 열이라
+성분 앞자리를 차지하고, 요일 구조를 뒤로 밀어냈다. 빼니 통과 성분이 하나에서
+\textbf{둘}로 늘었다.
+
+\textbf{누출은 점수를 부풀리기만 하는 게 아니라 진짜 신호를 가리기도 한다.}
+이 실험실에서 처음 보는 방향이다.
+
+남은 토큰이 깨끗한지도 확인했다.
+
+\begin{center}\small
+\begin{tabular}{lrr}
+\hline
+토큰 & 완결과 & 연도와 \\
+\hline
+\texttt{a:RATE\_15} & $-$0.178 & $+$0.189 \\
+\texttt{a:ALL} & $+$0.174 & $-$0.129 \\
+\texttt{d:MONDAY} & $+$0.136 & $+$0.036 \\
+나머지 요일 여섯 & $|{\cdot}| \le 0.049$ & $|{\cdot}| \le 0.011$ \\
+\texttt{l:WEBTOON} & \multicolumn{2}{c}{2,817건 전부 --- 상수} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{판}
+
+\begin{center}\small
+\begin{tabular}{lrrrr}
+\hline
+ & 축 & F21 & F18 & \textbf{F23} \\
+\hline
+노트 242 & 17 & 0.4381 & 0.4480 & 0.4569 \\
+\textbf{지금} & \textbf{23} & 0.4626 & 0.4875 & \textbf{0.4916} \\
+\hline
+\end{tabular}
+\end{center}
+
+웹툰이 0.3805 $\to$ \textbf{0.4768} 이다. 가드 여덟이 다 통과하고
+(시점 27축 전부 사전, 겹말 3쌍 그대로) \texttt{rank.spread} 로 진짜 총량
+0.0225 에 순 $+$0.0224 --- \textbf{상쇄가 없다.} 노트 258이 걱정한 ``전용
+축이 남을 깎는다''도 이번엔 안 일어난다(웹툰 축이 웹툰을 올렸으므로).
+
+\paragraph{남은 것}
+\begin{center}\small
+\begin{tabular}{ll}
+\hline
+갈래 & 왜 \\
+\hline
+23축 천장 & 또 올라갔을 것이다. 여지가 계속 $+$0.012 인가 \\
+애니 · 모바일 메타 & 같은 것을 나머지 도메인에 \\
+사후 표지 훑기 & 완결 표지가 두 번 다른 이름으로 나왔다. 더 있나 \\
+게임 259건 & 조각 검사가 못 돈다 \\
+\hline
+\end{tabular}
+\end{center}
+
+\paragraph{규약} 사후 의심 열은 \textbf{빼 보고 정한다.} 넣은 채로 ``조금
+새지만 이득이 크다''고 넘기면 두 가지를 놓친다 --- 점수의 정직성과,
+\textbf{그 열이 가리고 있던 진짜 신호}.
+
+\end{document}

@@ -1,0 +1,80 @@
+{
+  "market_record_id": "MKT-2024-0037",
+  "event_name": "잠뜰 TV 10주년 기념 팝업스토어(더현대 서울)",
+  "brand": "잠뜰 TV(CJ ENM 다이아 TV)",
+  "ip_or_collab": "잠뜰 TV(마인크래프트 유튜버)",
+  "category": "game_webtoon",
+  "intervention": {
+    "concept_description": "'달려온 10년, 또 다음 10년을 위한 캐릭터' 콘셉트. 픽셀 캐릭터 굿즈 100여종 판매, 체험존 운영",
+    "experience_elements": [
+      "굿즈 100여종 판매",
+      "10주년 기념 엽서 증정",
+      "구매 금액별 포스터·캔뱃지 증정"
+    ],
+    "promotions": [
+      "방문객 전원 엽서 증정",
+      "구매금액별 사은품"
+    ],
+    "is_free_entry": null,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "더현대 서울",
+    "venue_type": "department_store",
+    "neighborhood": "여의도",
+    "city": "서울",
+    "period_from": "2024-06-10",
+    "period_to": "2024-06-23",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 14,
+        "weekend_share": 0.29,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 14,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "CJ ENM이 밝힌 오픈 첫날 방문객 수치이며 누적 총계는 미공개",
+    "visitors_source_quote": "잠뜰TV 팝업스토어 오픈 첫날인 지난 10일 2000여명의 고객이 방문했다. 앞서 총 2차례 진행된 사전 예약은 모두 당일 매진됐다.",
+    "visitors_source_url": "https://www.mt.co.kr/tech/2024/06/11/2024061110470994157",
+    "visitors_source_date": "2024-06-11",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": true,
+      "signal_quotes": [
+        "잠뜰TV 팝업스토어 오픈 첫날인 지난 10일 2000여명의 고객이 방문했다.",
+        "앞서 총 2차례 진행된 사전 예약은 모두 당일 매진됐다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "원문 총 방문객 총계 없음. 오픈 첫날 2000여명은 신호로만 기록(규칙 5). 사전예약 2차례 당일 매진 | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

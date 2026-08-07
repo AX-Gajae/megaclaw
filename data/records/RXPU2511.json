@@ -1,0 +1,358 @@
+{
+ "record_id": "RXPU2511",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:시크_SEEC",
+  "space_id": "unresolved:성수_연무장3길9_스위트스팟스테이지성수도원",
+  "client_party_id": "unresolved:끄레델_CREDERE",
+  "brand_key": "SEEC",
+  "space_key": "성수_스위트스팟스테이지"
+ },
+ "intervention": {
+  "concept": "시크 10주년과 신제품 라인 <맥스 아이리스> 런칭을 기념하는 팝업스토어. 브랜드 히스토리·제품 라인업 전시와 맥스 아이리스 전시·체험, 발표·시연회, 스탬프 릴레이 이벤트로 구성. 수·목은 초청 인원만 입장, 금~일은 일반 오픈.",
+  "brand_name": "시크(Seec)",
+  "experience_elements": [
+   "Seec 브랜드 히스토리 & 제품 라인업 전시",
+   "<맥스 아이리스> 제품 전시 및 체험",
+   "<맥스 아이리스> 발표 및 시연회",
+   "스탬프 릴레이(스탬프 투어) 이벤트",
+   "거울 포토존",
+   "10주년 메시지월",
+   "PT 공간"
+  ],
+  "promotions": [
+   "스탬프 투어 이벤트",
+   "네이버 카페 이벤트"
+  ],
+  "staging_tags": [
+   "파사드",
+   "리셉션",
+   "브랜드 히스토리월",
+   "제품전시",
+   "포토존",
+   "체험존",
+   "메시지월",
+   "무대(PT공간)"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": null,
+   "area_sqm": null,
+   "planned_operating_days": 5,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": null,
+   "experience_density": 3,
+   "goods_scale": 0,
+   "photo_zones": 2,
+   "collab_strength": 0,
+   "ip_awareness": 2,
+   "target_breadth": 1,
+   "entry_friction": 3,
+   "media_push": 1,
+   "season_fit": 2,
+   "venue_prominence": 3
+  },
+  "attr_meta": {
+   "evidence": "운영대행 계약서 제2조 ③ '행사기간 8월 27일~8월 31일', ④ '세팅기간 8월 25일~8월 26일 양일간' → 실운영 5일(등록기간 8/25~8/31 7일과 상이). 일시사용계약 '세팅2일+운영5일 총7일'과 일치. 사용시간 08:00~24:00은 공간 사용 허용시간이라 운영시간 아님. 제안서는 '내용없음.txt', 일시사용계약서 원본 2건은 열람 실패.",
+   "confidence": "medium",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": "서울특별시",
+   "district": "성동구",
+   "venue_name": "스위트스팟 스테이지 성수 도원 메인동",
+   "venue_type": "팝업스토어 임대공간",
+   "foot_traffic_context": "성수 연무장길 일대"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-08-25",
+   "to": "2025-08-31",
+   "days": 7
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "hybrid",
+   "detail": "공간 일시사용계약: 총 사용료 60,000,000원(VAT별도), 세팅2일+운영5일 총7일. 선금 10%(6,000,000원, VAT별도) 계약체결일로부터 5영업일 이내, 잔액 90%(54,000,000원, VAT별도) 계약시작일 전 30일 이내 납부. 별도 운영대행 업무계약: 총 계약금액 134,300,000원(VAT별도), 선금 50%(67,150,000원) 7월31일, 잔금 50%(67,150,000원) 행사종료 후 10일 이내. 위약금: 귀책 해지시 사용료 50%, 시작일 전 30일 이내 해지시 100%."
+  },
+  "brand_requirements": [
+   "계획서를 사용개시 전 사전 제출",
+   "명시된 행사 내용 및 업종 외 영업 금지",
+   "목적물 구조 변경·권리 양도·전대 금지",
+   "보험 가입 및 유지(을 비용)",
+   "사용시간 사용개시일 08:00~사용종료일 24:00, 초과 시 별도 위약금",
+   "제작물(아트워크·부스·포토존·영상 등) 사용 전 의뢰사 감수 필수"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "스위트스팟 스테이지 성수 도원, 성수 연무장길 일대"
+  },
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(invite)",
+   "access_type": "invite"
+  },
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 8,
+    "holiday_until": 39,
+    "holiday_block_in": 0,
+    "nat_event_gap": 67,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 36487644.0,
+    "pnl_pre_accounts": 3,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-07-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 700,
+   "popup_zone_pass_rate": 0.75,
+   "host_traffic_est": 525.0,
+   "venue_scale_tier": 5,
+   "confidence": "low",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2025-08-27",
+    "visitors": 59,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-08-28",
+    "visitors": 77,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-08-29",
+    "visitors": 55,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-08-30",
+    "visitors": 135,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-08-31",
+    "visitors": 162,
+    "sales_krw": null
+   }
+  ],
+  "totals": {
+   "visitors": 488,
+   "sales_krw": null,
+   "rev_mm_recognized": 161.0
+  },
+  "counting_method": "entry",
+  "counting_basis": "결과보고서 '일자별 방문객' 표: 시간대별(11:00~19:00) 초청고객/사전예약/워크인 방문자 수 집계. 8/27·28은 초청고객만(합계 136명), 8/29~31 방문 TOTAL 352명.",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(보고서상 8/27(초청 59명)·8/28(초청 77명) 합계 136명, 8/29~31 방문 TOTAL 352명. 합산 488명. 유아동반 및 이벤트 참여자(스탬프투어 256명, 네이버카페 6명, 총 262명)는 별도 집계.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "partial",
+   "rule": "인식 161.0 < 총액 194.3의 90%",
+   "contract_total_mm": 194.3,
+   "last_recognition_period": "2025-09"
+  },
+  "label_trust": {
+   "grade": "A",
+   "flags": [],
+   "why": "일별 표가 기간의 71% 커버"
+  },
+  "label_scope": {
+   "label_from": "2025-08-27",
+   "label_to": "2025-08-31",
+   "label_active_days": 5,
+   "label_span_days": 5,
+   "label_contiguous": true,
+   "daily_sum": 488,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "11iGK2zrRGkCReNUMhknIiqog0urN7C1G",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/11iGK2zrRGkCReNUMhknIiqog0urN7C1G/view",
+   "title": "IMG_3275.png"
+  },
+  {
+   "doc_id": "18DpPlH2egGHkfj29VZ0GnWaA0GlRPMlQ",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/18DpPlH2egGHkfj29VZ0GnWaA0GlRPMlQ/view",
+   "title": "(sweetspot)시크 팝업스토어_결과보고서_0901.pdf"
+  },
+  {
+   "doc_id": "19sVl6qOSxe_z3aInD9meNIfNJEZAr7Ee",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19sVl6qOSxe_z3aInD9meNIfNJEZAr7Ee/view",
+   "title": "에이모빌리티_사업자등록증.png"
+  },
+  {
+   "doc_id": "1E-ZrFmQAzm0zhtov08jFBxyrJrmPhz0r",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1E-ZrFmQAzm0zhtov08jFBxyrJrmPhz0r/view",
+   "title": "(sweetspot)시크 팝업스토어_결과보고서_0901.pptx"
+  },
+  {
+   "doc_id": "1ECQ1kAT9Z59hvaZF_15Nkh1MRa-qZtZp",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ECQ1kAT9Z59hvaZF_15Nkh1MRa-qZtZp/view",
+   "title": "SWEETSPOT_NP_더갈마-레스틸렌_사후견적서_0428_Fin.xlsx"
+  },
+  {
+   "doc_id": "1JbxAI8U1OWSRxktyUSy2YTb44pyURkHg",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1JbxAI8U1OWSRxktyUSy2YTb44pyURkHg/view",
+   "title": "제안서_내용없음.txt"
+  },
+  {
+   "doc_id": "1JzvAqWRJvUB0YG6raCyR5LmZZ-iGuut6",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1JzvAqWRJvUB0YG6raCyR5LmZZ-iGuut6/view",
+   "title": "2025.07.29 - 스위트스팟 음향렌탈 견적서.pdf"
+  },
+  {
+   "doc_id": "1KZh4mY0fzuseLjLmgTY69-Vl1wbaByTz",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1KZh4mY0fzuseLjLmgTY69-Vl1wbaByTz/view",
+   "title": "(sweetspot)시크 팝업스토어_결과보고서_0901.pdf"
+  },
+  {
+   "doc_id": "1NZsqymt3uzrBFctqdaU9PkOLrXlk8iNG",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1NZsqymt3uzrBFctqdaU9PkOLrXlk8iNG/view",
+   "title": "IMG_3276.png"
+  },
+  {
+   "doc_id": "1PJI86u-S_LHRaMX6GzqMDLhtitDAC2y1",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1PJI86u-S_LHRaMX6GzqMDLhtitDAC2y1/view",
+   "title": "[Sweetspot]시크 10주년& 맥스 아이리스 런칭 팝업스토어_계약서_0723.pdf"
+  },
+  {
+   "doc_id": "1PuXWysxufhnVxy8vmioENGd94TWJGIUK",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1PuXWysxufhnVxy8vmioENGd94TWJGIUK/view",
+   "title": "인포매드_시크팝업_견적서.pdf"
+  },
+  {
+   "doc_id": "1QAT6GpP9TVSnlyJ4_RS5NqOHjHK_ur1B",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1QAT6GpP9TVSnlyJ4_RS5NqOHjHK_ur1B/view",
+   "title": "(sweetspot)시크 팝업스토어_결과보고서_0901.pptx"
+  },
+  {
+   "doc_id": "1SjnxFxx9QgaWzK0-UyTGBFxzv387KQ1n",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1SjnxFxx9QgaWzK0-UyTGBFxzv387KQ1n/view",
+   "title": "(Sweetspot)시크 팝업스토어_사후 견적서_0901.pdf"
+  },
+  {
+   "doc_id": "1djRgeFj1dekODbsDdMpWD4HYZXczc3oG",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1djRgeFj1dekODbsDdMpWD4HYZXczc3oG/view",
+   "title": "(Sweetspot)시크 팝업스토어_사후 견적서_0901.pdf"
+  },
+  {
+   "doc_id": "1h590RoNdQixm37ntFcSvHWigQeqgXoOm",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1h590RoNdQixm37ntFcSvHWigQeqgXoOm/view",
+   "title": "2025_08_스윗스팟_커피및다과_수정3.xlsx"
+  },
+  {
+   "doc_id": "1hH-fbw1WEIu-5VgVRDb1TEfBdVoKBI16",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1hH-fbw1WEIu-5VgVRDb1TEfBdVoKBI16/view",
+   "title": "로그컴_스위트스팟_견적서.pdf"
+  },
+  {
+   "doc_id": "1iHlB2qjHoXGS-htie5WTiH2wT7LhSdYA",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1iHlB2qjHoXGS-htie5WTiH2wT7LhSdYA/view",
+   "title": "(더탑-250901)시크 카시트 10주년 팝업스토어 운영비 사후 견적서_V1.xlsx"
+  },
+  {
+   "doc_id": "1icPPJc6XUxoKMbUhThWTAU3oYWnqQo0p",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1icPPJc6XUxoKMbUhThWTAU3oYWnqQo0p/view",
+   "title": "[SweetSpot]스킨갤러리 결과 보고서.pdf"
+  },
+  {
+   "doc_id": "1krWJwrcE-ngezE-h89-2zkHy6w8GYxN_",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1krWJwrcE-ngezE-h89-2zkHy6w8GYxN_/view",
+   "title": "스위트스팟스테이지 성수 도원_일시사용계약서_시크 팝업스토어_특약수정 (2).pdf"
+  },
+  {
+   "doc_id": "1lr1S_PaTsen-m2Ko0YQt6jgOsI_TmCU0",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1lr1S_PaTsen-m2Ko0YQt6jgOsI_TmCU0/view",
+   "title": "폼가구렌탈_견적서.png"
+  },
+  {
+   "doc_id": "1n0lSwlvbpHDtigTbyCo49w7tMboxwpTF",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1n0lSwlvbpHDtigTbyCo49w7tMboxwpTF/view",
+   "title": "스위트스팟스테이지 성수 도원_일시사용계약서_시크 팝업스토어_특약수정 (2).pdf"
+  },
+  {
+   "doc_id": "1q4hzCk4Rd3ta_ibF4cHcgsgflerCNNPP",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1q4hzCk4Rd3ta_ibF4cHcgsgflerCNNPP/view",
+   "title": "에이모빌리티_통장사본.jpg"
+  },
+  {
+   "doc_id": "1yyFGnbTzYozxabvjOKf_W1EgFpRZNCsQ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1yyFGnbTzYozxabvjOKf_W1EgFpRZNCsQ/view",
+   "title": "[Sweetspot]시크 10주년& 맥스 아이리스 런칭 팝업스토어_계약서_0723.pdf"
+  },
+  {
+   "doc_id": "1zH37YCNoktGChy-boXxbch4QRAnLHOti",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1zH37YCNoktGChy-boXxbch4QRAnLHOti/view",
+   "title": "스톰프 스튜디오 가산점 사업자등록증(세금계산서).jpg"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 3건: 스위트스팟스테이지 성수 도원_일시사용계약서_시크 팝업스, [Sweetspot]시크 10주년& 맥스 아이리스 런칭, (sweetspot)시크 팝업스토어_결과보고서_0901. 미확실: 면적(평) 미기재; POS 소비자 매출 데이터 없음; totals.visitors는 초청(136)+일반방문(352) 합산 추정치(보고서 표는 각각 별도 TOTAL 표기)"
+ }
+}

@@ -1,0 +1,214 @@
+{
+ "record_id": "RIPU2514",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:티엘스",
+  "space_id": "unresolved:미상",
+  "client_party_id": null,
+  "brand_key": "티엘스",
+  "space_key": "성수포털",
+  "space_key_source": "venue_key 정규화 (신규 키)"
+ },
+ "intervention": {
+  "concept": "티엘스(TL:s) 무빙 팝업스토어. 성수포털(한서빌딩)에서 3일간 진행된 브랜드 팝업스토어.",
+  "brand_name": "티엘스 (TL:s)",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": null,
+   "area_sqm": null,
+   "planned_operating_days": 3,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": null,
+   "experience_density": 2,
+   "goods_scale": 2,
+   "photo_zones": 2,
+   "collab_strength": 0,
+   "ip_awareness": 2,
+   "target_breadth": 2,
+   "entry_friction": 2,
+   "media_push": 2,
+   "season_fit": 2,
+   "venue_prominence": 2
+  },
+  "attr_meta": {
+   "evidence": "목록의 [기획서] '제안서' 파일은 본문이 '별도 제안서 없음' 한 줄이라 추출 가능한 내용 없음. 남은 근거는 계약서 1건: 제2조③ '행 사 일: 2025년 11월 14일(금) ~ 11월 16일(일)' → 운영 3일(레코드 period와 일치, 휴무 문구 없음). 제2조② 행사장소 '성수포털(한서빌딩)', 제5조 총 계약금액 40,000,000원(VAT별도, 선금50/잔금50). 업무범위는 기획·대관·2D/3D 디자인·설치철거·현장 운영으로 인원·면적·운영시간·입객·증정 수량이 일절 없어 모든 숫자 null. 마인드매그넛의 자사 브랜드 티엘스 단독 팝업이라 collab_strength 0, 나머지 순서형은 근거 부재로 기본값 2.",
+   "confidence": "low",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "capacity": {
+   "access_type": "unknown",
+   "total_capacity": null,
+   "detail": ""
+  },
+  "location": {
+   "city": "서울",
+   "district": "성동구",
+   "venue_name": "성수포털 (한서빌딩)",
+   "venue_type": "팝업 대관 공간",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-11-14",
+   "to": "2025-11-16",
+   "days": 3
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "총 계약금액 40,000,000원(사천만원 / VAT별도). 선금 50% 계약일 기준 익월 15일 이내, 잔금 50% 행사 종료일 기준 당월 말 혹은 익월 15일 이내 지급. 입금계좌 KB국민은행 378801-01-088226 (주식회사 스위트스팟)."
+  },
+  "brand_requirements": [
+   "제작물 관련 지식재산권은 의뢰사(마인드매그넛)에 귀속",
+   "물품 제작 후 사용 전 의뢰사 감수 및 서면 승인 필요",
+   "정치·사회·종교적 중립 유지",
+   "보안 유지 의무",
+   "안전관리 및 사고방지 책임"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.67,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 36,
+    "holiday_until": 92,
+    "holiday_block_in": 0,
+    "nat_event_gap": 1,
+    "nat_event": "수능",
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 2434909.0,
+    "pnl_pre_accounts": 2,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-10-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 1000,
+   "popup_zone_pass_rate": 0.6,
+   "host_traffic_est": 600.0,
+   "venue_scale_tier": 4,
+   "confidence": "low",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2025-11-14",
+    "visitors": 948,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-11-15",
+    "visitors": 1085,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-11-16",
+    "visitors": 1118,
+    "sales_krw": null
+   }
+  ],
+  "totals": {
+   "visitors": 3151,
+   "sales_krw": null,
+   "rev_mm_recognized": 25.1
+  },
+  "counting_method": "unknown",
+  "counting_basis": "일일 방문객 인원",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-11, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-11"
+  },
+  "label_trust": {
+   "grade": "A",
+   "flags": [],
+   "why": "일별 표가 기간의 100% 커버"
+  },
+  "label_scope": {
+   "label_from": "2025-11-14",
+   "label_to": "2025-11-16",
+   "label_active_days": 3,
+   "label_span_days": 3,
+   "label_contiguous": true,
+   "daily_sum": 3151,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "116j3zLqiqCFmR7hqzK_JfihDZQQt4Jt5",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/116j3zLqiqCFmR7hqzK_JfihDZQQt4Jt5/view",
+   "title": "[스위트스팟] 티엘스 젤리팟 무빙 팝업_운영계획안 및 교육자료.pdf"
+  },
+  {
+   "doc_id": "124XbOQLcnatyGAJNfLBNk60hel_LhY5W",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/124XbOQLcnatyGAJNfLBNk60hel_LhY5W/view",
+   "title": "{스위트스팟]티엘스 플럼핑 젤리 트럭 팝업_견적서_최종_1118.pdf"
+  },
+  {
+   "doc_id": "14cb6_ZxrGWzzeCM0TaPzSOxaEfp8iIW-mq2PRbbPDpo",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/14cb6_ZxrGWzzeCM0TaPzSOxaEfp8iIW-mq2PRbbPDpo/view",
+   "title": "제안서"
+  },
+  {
+   "doc_id": "19NGO_pqwWIU2sczNba78almKq0-OM5kF",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/19NGO_pqwWIU2sczNba78almKq0-OM5kF/view",
+   "title": "[스위트스팟] 마인드매그넛 팝업스토어 계약서 최종.pdf"
+  },
+  {
+   "doc_id": "1dUc1sgJ_G5PEaUEv9S1Q1WoBxH8i7bVF",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1dUc1sgJ_G5PEaUEv9S1Q1WoBxH8i7bVF/view",
+   "title": "[스위트스팟] 티엘스 플럼핑 젤리 트럭 팝업_결과보고서 1118.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서 텍스트(계약서·기획서·견적서·결과보고서)가 전혀 제공되지 않음; 클라이언트명 미상; 입지/장소 정보 없음; 면적 정보 없음; 수수료 구조 정보 없음; 방문객/매출 실측 데이터 없음; 컨셉·체험요소·프로모션·연출 정보 없음 | 라벨발굴(2026-07-24): 결과보고서 재추출 — 01. OVERVIEW '방문객 수 및 제품 소진 수량' 슬라이드 | 자극 보강(2026-07-24): 운영안·기획안·계약서 재인제스트로 intervention/conditions 교체 (545→907자, capacity=unknown). outcome·entities·period 보존"
+ }
+}

@@ -1,0 +1,73 @@
+{
+  "market_record_id": "MKT-2025-0018",
+  "event_name": "나이스고스트클럽X이스트쿤스트 팝업스토어",
+  "brand": "나이스고스트클럽×이스트쿤스트×롯데백화점",
+  "ip_or_collab": "K-패션 두 브랜드 콜라보(개러지 세일 형식)",
+  "category": "fashion",
+  "intervention": {
+    "concept_description": "Z세대 주목 K-패션 두 브랜드 첫 공동 팝업, 개러지 세일 형식, 최대 70% 할인",
+    "experience_elements": [
+      "개러지 세일"
+    ],
+    "promotions": [
+      "최대 70% 할인"
+    ],
+    "is_free_entry": true,
+    "reservation_required": false
+  },
+  "conditions": {
+    "venue": "잠실 롯데월드몰",
+    "venue_type": "mall",
+    "neighborhood": "잠실",
+    "city": "서울",
+    "period_from": "2025-03-28",
+    "period_to": "2025-04-30",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 34,
+        "weekend_share": 0.29,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "롯데백화점 발표(오픈 10일 기준): '롯데백화점은 나이스코스트클럽X이스트쿤스트 팝업스토어가 오픈 10일 만에 매출 2억원을 달성했다고 8일 밝혔다. 롯데백화점에 따르면 잠실 롯데월드몰에서 진행 중인 팝업스토어는 하루 평균 2000만원 판매액을 기록하고 있다'",
+    "visitors_source_quote": "롯데백화점은 ‘나이스코스트클럽X이스트쿤스트’ 팝업스토어가 오픈 10일 만에 매출 2억원을 달성했다고 8일 밝혔다. 롯데백화점에 따르면 잠실 롯데월드몰에서 진행 중인 팝업스토어는 하루 평균 2000만원 판매액을 기록하고 있다.",
+    "visitors_source_url": "https://biz.heraldcorp.com/article/10460689",
+    "visitors_source_date": "2025-04-08",
+    "sales_krw": 200000000,
+    "sales_source_quote": "팝업스토어가 오픈 10일 만에 매출 2억원을 달성했다고 8일 밝혔다. 잠실 롯데월드몰에서 진행 중인 팝업스토어는 하루 평균 2000만원 판매액을 기록하고 있다.",
+    "sales_source_url": "https://biz.heraldcorp.com/article/10460689",
+    "sales_source_date": "2025-04-08",
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "팝업스토어 구매액 중 60%가 30대 미만 고객에게서 나왔다고 롯데백화점은 설명했다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "매출 수치는 오픈 10일(기사 시점 4/8) 누적. 개시일은 기사 기준 역산 3/29 전후(정확한 오픈일 미확인), 종료일 미보도. | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {
+    "sales": "num_only"
+  },
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

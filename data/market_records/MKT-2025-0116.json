@@ -1,0 +1,81 @@
+{
+  "market_record_id": "MKT-2025-0116",
+  "event_name": "마비노기 모바일 첫 팝업스토어 '더 퍼스트 크리스마스 인 스타필드'(던바튼 크리스마스 마켓)",
+  "brand": "넥슨(데브캣)",
+  "ip_or_collab": "마비노기 모바일",
+  "category": "game_webtoon",
+  "intervention": {
+    "concept_description": "게임 속 마을 던바튼 재현 크리스마스 팝업. 타워 아트리움(나오 포토존·사연 전광판·로나의 포토부스·던바튼 분수대·굿즈 스토어)+그랜드 아트리움(대형 크리스마스 트리 포토존), 던바튼 크리스마스 연주회 연계",
+    "experience_elements": [
+      "대형 크리스마스 트리 포토존",
+      "로나의 포토부스",
+      "던바튼 크리스마스 연주회(별마당 도서관)"
+    ],
+    "promotions": [
+      "나오·몰리 쿠션, 엠블럼 메탈 뱃지, 키캡 세트 등 굿즈 판매",
+      "고양이 가방 사전 예약"
+    ],
+    "is_free_entry": true,
+    "reservation_required": false
+  },
+  "conditions": {
+    "venue": "스타필드 수원 1층(타워 아트리움·그랜드 아트리움)",
+    "venue_type": "mall",
+    "neighborhood": "수원",
+    "city": "경기 수원",
+    "period_from": "2025-11-14",
+    "period_to": "2026-01-01",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 49,
+        "weekend_share": 0.29,
+        "holiday_days": 2
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 49,
+    "counting_basis": "unknown",
+    "counting_basis_note": "총 방문객 미보도('방문객들로 인산인해' 정성 표현만). 굿즈 품절 정황만 보도",
+    "visitors_source_quote": "현장에서는 나오와 몰리 캐릭터가 새겨진 쿠션, 엠블럼 메탈 뱃지, 키캡 세트 등 주요 인기 굿즈들이 오픈 직후 빠르게 품절되며 이용자들의 높은 관심을 입증했다.",
+    "visitors_source_url": "https://zdnet.co.kr/view/?no=20251227003809",
+    "visitors_source_date": "2025-12-28",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "현장 대기열 꾸준히 형성",
+      "sold_out": "나오·몰리 쿠션 오픈 30분 만에 품절, 엠블럼 메탈 뱃지·키캡 오후 3시경 전량 품절",
+      "reservation_fill": null,
+      "signal_quotes": [
+        "행사 관계자는 \"상품들은 날마다 일정량 보충되는데 나오, 몰리 쿠션은 팝업스토어 오픈 30분 만에 다 팔린다\"고 설명했다. (게임톡 2025-12-22, https://www.gametoc.co.kr/news/articleView.html?idxno=104957)",
+        "굿즈 스토어에서 1순위 인기 상품은 나오, 몰리 쿠션이었다. 그 뒤로 엠블럼 메탈 뱃지 시리즈, 키캡이 높은 구매율을 자랑하면서 오후 3시경에는 모두 품절됐다. (게임톡 2025-12-22)",
+        "현장에서는 나오와 몰리 캐릭터가 새겨진 쿠션, 엠블럼 메탈 뱃지, 키캡 세트 등 주요 인기 굿즈들이 오픈 직후 빠르게 품절되며 이용자들의 높은 관심을 입증했다.(ZDNet 2025-12-28)"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "12월 17일 굿즈 스토어(던바튼 크리스마스 마켓) 오픈 이후 방문객 급증. 게임톡 원문은 열람 실패로 검색 추출 본문 기반. | 병합 레코드: MKT-2025-0036 | [병합:MKT-2025-0036] 인기 굿즈 오픈 30분 만에 품절(수량 미기재). 총 방문객 미기재",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

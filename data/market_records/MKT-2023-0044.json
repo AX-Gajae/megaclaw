@@ -1,0 +1,89 @@
+{
+ "market_record_id": "MKT-2023-0044",
+ "event_name": "메이플스토리 월드 투어 팝업스토어 더현대 서울",
+ "brand": "넥슨",
+ "ip_or_collab": "메이플스토리",
+ "category": "game_webtoon",
+ "intervention": {
+  "concept_description": "'메이플스토리 세계로 떠나는 여행' 콘셉트. 공항 입국장형 입장 게이트, 리스항구 갑판·헤네시스 장로의 집·루디브리엄 인형 공장·레헬른 시계탑 구현, 250여 개 공식 굿즈",
+  "experience_elements": [
+   "게임 속 마을 구현 체험 공간",
+   "스탬프 랠리(여권 도장)"
+  ],
+  "promotions": [
+   "250여 개 공식 굿즈"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "더현대 서울",
+  "venue_type": "department_store",
+  "neighborhood": "여의도",
+  "city": "서울",
+  "period_from": "2023-10-05",
+  "period_to": "2023-10-15",
+  "area_pyeong": null,
+  "multi_store": true,
+  "derived": {
+   "duration": {
+    "days": 11,
+    "weekend_share": 0.36,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 0.9,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 20000,
+  "visitors_period_days": 11,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "넥슨 발표 인용(강남 몬스터하우스+여의도 월드투어 2개 팝업 합산): '서울의 중심인 강남, 여의도에서 진행된 공식 팝업 스토어의 누적 방문자 수는 2만여 명에 달했으며' - 개별 팝업 수치 미분리",
+  "visitors_source_quote": "넥슨은 올해 서비스 20주년을 맞은 '메이플스토리'가 일상생활 속 지식재산권(IP) 확장에 나섰다고 24일 밝혔다. 서울의 중심인 강남, 여의도에서 진행된 공식 팝업 스토어의 누적 방문자 수는 2만여 명에 달했으며, 전국 각지에서 열린 재즈 음악 공연 역시 누적 5000 명이 넘는 관객을 맞이했다.",
+  "visitors_source_url": "http://www.popcornnews.net/news/articleView.html?idxno=45832",
+  "visitors_source_date": "2023-10-24",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "D",
+   "flags": [
+    "D",
+    "C"
+   ],
+   "why": "스코프 혼합(합산/총계) 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "2만여 명은 몬스터하우스(삼성 강남, 9/9~22)+월드 투어(더현대 서울, 10/5~15) 합산 누적. 개별 수치 미공개. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "집계형(통합/합산)",
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

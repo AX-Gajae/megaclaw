@@ -1,0 +1,133 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{일곱 줄이 두 해치 모형 개선보다 크다 --- 가드가 문 것을 값으로 환산하니 사람이 할 일이 나왔다}
+\author{월드모델 실험실}
+\date{노트 602 · 2026년 8월 5일}
+\maketitle
+
+\begin{abstract}
+채택 뒤 가드 전수(노트 $597$)에서 \texttt{맨몸} 가드가 물었다 ---
+``\textbf{팝업 유보 $65$ 건 중 손 축 $0$ 개가 $10.8\%$}''. 팝업은
+\texttt{TREND\_DROP} 이고 위키도 $0\%$ 라 그 \textbf{$7$ 행은 축이 하나도
+없다} $\Rightarrow$ 예보가 도메인 상수 $\Rightarrow$ 채점에서 \textbf{서로
+동점}이다.
+
+태깅 없이 값을 환산했다 --- 그 $7$ 행에 \emph{라벨 순위를 그대로} 예보로
+넣으면 태깅이 절대 못 넘는 천장이다.
+
+\begin{center}
+\begin{tabular}{lr}
+\hline
+ & 팝업 $\rho$ \\
+\hline
+① 지금($7$ 행 포함) & $+0.3831$ \\
+② 그 $7$ 행 빼고 & $+0.4347$ \\
+③ 완벽 예보 주면 & $\mathbf{+0.5274}$ \\
+\hline
+\textbf{태깅 상한} & $\mathbf{+0.1443}$ \\
+\textbf{판 환산} & $\mathbf{+0.00278}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{이번 세션의 채택(노트 $586$ --- 두 해 동안 거꾸로 꽂혀 있던 축을
+바로 세운 것)이 판 $+0.0020$ 이었다.} $7$ 줄 태깅의 상한이 그보다 크다.
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- $7$ 행이 동점이라 $\rho$ 가 깎여 있다.
+\textbf{나} --- 건당으로는 비교가 안 된다.
+\textbf{다} --- 사람이 할 일 일곱 건.}
+\end{figure}
+
+\section{건당으로 보면 순서가 뒤집힌다}
+
+\begin{center}
+\begin{tabular}{lrl}
+\hline
+ & 판 환산 & 규모 \\
+\hline
+검색 재수집 상한(노트 $548$) & $0.0204$ & 수만 건 --- \textbf{닫음} \\
+위키 재수집 상한(노트 $596$) & $0.0086$ & 수천 건 --- \textbf{닫음} \\
+\textbf{팝업 $7$ 건 태깅 상한} & $\mathbf{0.00278}$ & \textbf{일곱 건} \\
+노트 $586$ 채택(실측) & $0.0020$ & 코드 두 줄 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{quote}
+검색 $\cdot$ 위키를 닫은 것은 \textbf{상한이 작아서가 아니라 상한 대비
+비용이 커서}였다. $7$ 건은 상한이 그 $1/7$ 인데 \textbf{비용이
+$1/10{,}000$} 이다.
+\end{quote}
+
+\section{누락이지 결측이 아니다}
+
+그 $7$ 행이 왜 축이 없는지 찾았다. \texttt{popupset.build} 가 노트 $124$
+규칙을 쓴다 --- \textbf{열 축이 전부 같은 값이면 사람이 안 매긴 것}으로
+보고 마스크를 내린다(\texttt{V.std(1) < 1e-9}).
+
+\textbf{일곱 전부 그 조건에 걸린다.} 태거가 못 채운 것이 아니라
+\textbf{아무도 안 매겼다.} 그래서 \emph{매기면 채워진다.}
+
+\section{일곱 건}
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+id & ip & date \\
+\hline
+\texttt{RTPU2647} & MEOVV & $2026$-$05$-$29$ \\
+\textbf{\texttt{MKT-2025-0068}} & 짱구는 못말려 & $2025$-$08$-$06$ \\
+\textbf{\texttt{MKT-2025-0084}} & 정관장 레드스파크스 & $2025$-$09$-$02$ \\
+\textbf{\texttt{MKT-2025-0094}} & 원신 $\cdot$ 붕괴 스타레일 등 & $2025$-$10$-$09$ \\
+\textbf{\texttt{MKT-2025-0123}} & 블루 아카이브 & $2025$-$11$-$29$ \\
+\textbf{\texttt{MKT-2026-0025}} & 글로벌 캠페인 퍼피서머 & $2026$-$04$-$29$ \\
+\textbf{\texttt{MKT2-2026-0048}} & 포가튼 사가 등 $10$ 종 & $2026$-$05$-$21$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{일곱 중 여섯이 \texttt{MKT} 계열이다} --- 이 판의 상시 갈래에
+두 해 동안 걸려 있던 ``\textbf{과제 $78$ 시장 레코드 $20$ 건 사람 태깅}''과
+\emph{같은 자료}다. \textbf{두 과제가 사실 하나일 수 있다.}
+
+\paragraph{찾은 방법.}
+\texttt{popupset.build} 가 id 를 안 돌려주므로 (라벨, 시간)으로 유보 $7$
+행을 \texttt{popupset} $89$ 행에 역매칭하고($7/7$ 유일), \texttt{keep}
+규칙(\texttt{trust\_*} $\cdot$ \texttt{scope\_usable} $\cdot$
+\texttt{counting})을 재현해 meta $376$ 행으로 내렸다. 재현한
+\texttt{keep} 이 $89$ 행으로 \textbf{정확히 일치}한다.
+
+\section*{미리 적은 한계는 그대로 산다}
+
+③ 은 \textbf{라벨을 보고 만든 완벽 예보}라 절대 못 닿는다. 실제 태깅의
+기대치는 \emph{다른 $58$ 행에서 손 축 다섯이 내는 만큼}이고 그것은 상한보다
+한참 아래다. \textbf{그래도 순서를 정하는 데는 충분하다} --- 상한이 이번
+채택보다 크고 비용이 $7$ 건이다.
+
+\section*{조항}
+
+\begin{quote}
+\textbf{가드가 문 것은 값으로 환산해야 순서가 정해진다.} 노트 $597$ 은
+``$10.8\%$ 가 손 축 $0$ 개''라고만 적었고 그것은 \emph{관측}이었다.
+$+0.00278$ 로 환산하니 \textbf{두 해치 모형 개선과 견줄 수 있는 것}이
+됐다. \textbf{환산 없이는 사람 일 목록의 순서를 못 정한다.}
+\end{quote}
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{실제 태깅 기대치} --- $58$ 행에서 손 축 다섯이 내는 $\rho$ 를
+재면 상한이 아니라 \emph{기대값}이 나온다. 안 쟀다.
+\item \textbf{시장 $20$ 건도 같은 자로} --- 값을 안 쟀다. 재야 $7$ 건과
+견줄 수 있다. \textbf{여섯이 겹칠 수도 있다.}
+\item \textbf{같은 검사를 다른 도메인에} --- \texttt{맨몸} 가드는 팝업만
+물었지만, 손 축 $0$ 행이 다른 도메인에도 있는지는 안 봤다.
+\end{itemize}
+
+\end{document}

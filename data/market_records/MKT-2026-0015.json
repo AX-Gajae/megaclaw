@@ -1,0 +1,73 @@
+{
+  "market_record_id": "MKT-2026-0015",
+  "event_name": "부창제과×저스피스재단 '데이지 밤 호두과자(LOVE & PEACE)' 팝업스토어",
+  "brand": "부창제과",
+  "ip_or_collab": "지드래곤(GD) 명예이사장 공익재단 저스피스재단 협업, 데이지 로고 IP, 수익 일부 기부 구조",
+  "category": "fnb",
+  "intervention": {
+    "concept_description": "전통 간식 호두과자에 아티스트 IP를 결합한 디저트+굿즈 팝업. 구매 금액 일부 기부 연계",
+    "experience_elements": [
+      "데이지 밤 호두과자(호두과자 10구 기프트팩) 판매",
+      "클릭커 키링 포함 키링 세트 한정 판매"
+    ],
+    "promotions": [
+      "매일 한정 수량 판매",
+      "판매 수익 일부 저스피스재단 기부"
+    ],
+    "is_free_entry": true,
+    "reservation_required": false
+  },
+  "conditions": {
+    "venue": "신세계백화점 강남점 1층(스위트파크)",
+    "venue_type": "department_store",
+    "neighborhood": "반포(강남)",
+    "city": "서울",
+    "period_from": "2026-03-26",
+    "period_to": "2026-04-05",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 11,
+        "weekend_share": 0.36,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 11,
+    "counting_basis": "unknown",
+    "counting_basis_note": "방문객·매출 총계 미공개. 완판 소요 시간(1차 물량 2시간 내 소진)만 르포 보도",
+    "visitors_source_quote": "‘데이지 밤 호두과자’와 ‘클릭커 키링’이 포함된 세트 상품은 진열되자마자 빠르게 빠져나갔다. 준비된 1차 물량은 2시간도 채 되지 않아 모두 소진됐다.",
+    "visitors_source_url": "https://m.sedaily.com/amparticle/20024572",
+    "visitors_source_date": "2026-03-26",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "매장 오픈 전부터 입구 앞 긴 대기줄, 오픈런",
+      "sold_out": "1차 물량 2시간 내 전량 소진, 부창제과 긴급 추가 물량 투입분도 오래 버티지 못함(조기 소진)",
+      "reservation_fill": null,
+      "signal_quotes": [
+        "예상보다 빠른 품절에 현장 분위기는 더욱 달아올랐다. 일부 고객들은 추가 입고 여부를 묻기 위해 직원들을 찾았고(서울경제 르포)"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "수요 신호(완판 시간)만 존재. 신세계 단독 팝업(티엔뉴스 2026-03-26에서 기간 3/26~4/5 확인) | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

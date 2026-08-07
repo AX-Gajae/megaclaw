@@ -1,0 +1,99 @@
+{
+ "market_record_id": "MKT-2026-0057",
+ "event_name": "페퍼앤솔트 텔레토비 'ICE CREAM LAND' @제6회 스타필드 벌룬 페스티벌(고양)",
+ "brand": "페퍼앤솔트",
+ "ip_or_collab": "텔레토비(Teletubbies)",
+ "category": "character",
+ "intervention": {
+  "concept_description": "여름 시즌 아이스크림 테마 텔레토비 체험 공간(초대형 벌룬 전시)",
+  "experience_elements": [
+   "아이스크림 쌓기·캐치·만들기 체험",
+   "텔레토비 캐릭터 퍼레이드·포토타임"
+  ],
+  "promotions": [
+   "스타필드 한정 신규 MD 약 150여 종",
+   "구매 금액별 사은품·풍선 증정"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "스타필드 고양",
+  "venue_type": "mall",
+  "neighborhood": "덕양구",
+  "city": "고양",
+  "period_from": "2026-07-16",
+  "period_to": "2026-07-28",
+  "area_pyeong": null,
+  "multi_store": true,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(invite)",
+   "access_type": "invite"
+  },
+  "derived": {
+   "duration": {
+    "days": 13,
+    "weekend_share": 0.31,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 20000,
+  "visitors_period_days": 4,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "페퍼앤솔트 발표(포브스코리아): '행사 개막 이후 7월 16일부터 19일까지 4일간 누적 방문객 2만 명 이상이 찾았다' (고양 개초 첫 4일, 최종 총계 아님)",
+  "visitors_source_quote": "이번 행사는 스타필드 고양(7월 16일~28일)을 시작으로 하남(7월 30일~8월 11일), 안성(8월 13일~25일)에서 릴레이로 진행된다. ... 행사 개막 이후 7월 16일부터 19일까지 4일간 누적 방문객 2만 명 이상이 찾았다.",
+  "visitors_source_url": "https://www.forbeskorea.co.kr/news/articleView.html?idxno=402307",
+  "visitors_source_date": "2026-07-20",
+  "sales_krw": null,
+  "sales_source_quote": "",
+  "sales_source_url": "",
+  "sales_source_date": "",
+  "demand_signals": {
+   "waiting_time_reported": true,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "특히 체험존 입장을 위해 최대 2시간 이상 대기하는 등 높은 관심을 받고 있다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true,
+   "days_stated": 4,
+   "days_stored": 13,
+   "days_corrected": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "고양 첫 4일 2만 명 이상(2만 보수 기록). 하남·안성 릴레이 진행 예정(기사 시점 7/20) | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

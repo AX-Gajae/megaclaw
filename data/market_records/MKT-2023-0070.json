@@ -1,0 +1,80 @@
+{
+ "market_record_id": "MKT-2023-0070",
+ "event_name": "스탠드오일 '홀리데이 기프트숍' 성수 팝업스토어",
+ "brand": "스탠드오일 Stand Oil (코자)",
+ "ip_or_collab": null,
+ "category": "fashion",
+ "intervention": {
+  "concept_description": "선물 가게 콘셉트 멀티 쇼룸(기프트숍+미디어 전시+카페)",
+  "experience_elements": [
+   "미디어 전시 포토존",
+   "카페"
+  ],
+  "promotions": [
+   "홀리데이 패키지·윈터 컬렉션·소형 굿즈 판매"
+  ],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "성수동",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": null,
+  "period_to": null,
+  "area_pyeong": null,
+  "multi_store": false
+ },
+ "outcome": {
+  "visitors_total": 16000,
+  "visitors_period_days": 14,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "브랜드 발표 인용. '1만6000명을 돌파'이므로 하한값 기록. 오픈 첫날 1000명 이상, 크리스마스 기간 약 3000명 이상, 평일 일평균 약 900명 이상",
+  "visitors_source_quote": "이 팝업은 2주간 누적 방문객이 1만6000명을 돌파하는 등 흥행했다. 오픈 첫날은 1000명 이상이 방문했으며 크리스마스 기간엔 한파 특보에도 불구하고 약 3000명 이상이 찾은 것으로 집계됐다.",
+  "visitors_source_url": "https://fashionbiz.co.kr/article/197541",
+  "visitors_source_date": "2023-01-05",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "일부 시간대 포토존 대기줄 형성",
+   "sold_out": "일부 윈터 컬렉션 품목 운영 기간 중 모두 소진",
+   "reservation_fill": null,
+   "signal_quotes": [
+    "평일에도 하루 평균 약 900명 이상 방문해 일부 윈터 컬렉션 품목이 운영 기간 중 모두 소진됐다.",
+    "일부 시간대에는 그 포토존을 이용하기 위한 대기줄까지 형성되기도 했다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "E",
+    "C"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "기간 미상: 2023-01-05 성료 보도, 2주간+크리스마스 포함으로 보아 2022년 12월 중후반~연말/초 운영 추정. 2023-01 기간 포함 여부 불확실하여 참고용 기록. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "기간 미상",
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

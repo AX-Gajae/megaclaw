@@ -1,0 +1,104 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{축마다 자기 손님이 다르다 --- 공유 축의 그늘에 $+0.0161$ 이 놓여 있다}
+\author{월드모델 실험실}
+\date{노트 497 · 2026년 8월 3일}
+\maketitle
+
+\begin{abstract}
+노트 495 가 애니의 $+0.0328$ 을 ``짝 설계로 다시 재라''로 남겼다. 넷째
+팔까지 붙여 짝 씨앗 $12$ 로 돌렸다.
+
+\begin{center}
+\begin{tabular}{lrrr}
+\hline
+설정 & 애니 점수 차 & 판 차 & 부호 \\
+\hline
+애니만 트렌드 가림 & $+0.0372$ & $\mathbf{+0.0046}$ & $12/12$ \\
+애니 빼고 트렌드 가림 & $+0.0257$ & $-0.0203$ & $12/12$ \\
+전부 트렌드 가림 & $+0.0377$ & $-0.0190$ & $12/12$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{애니만 가려도 전부 가린 것과 같다}($+0.0372$ 대 $+0.0377$) ---
+해는 애니 자기 행에 있다(사전 등록 통과). 그리고 \textbf{판이 $+0.0046$
+오른다}($12/12$ · 날짜 통제 $+0.0047$). 두 해 동안 채택한 계절
+축($+0.0041$) $\cdot$ 특기 칸($+0.0049$)과 같은 크기다.
+
+\textbf{그래서 같은 검사를 다른 축에도 했다. 무늬가 있다.}
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 애니 네 팔. \textbf{나} $\cdot$ \textbf{다} ---
+축을 빼면 도메인마다 얼마.}
+\end{figure}
+
+\section{공유 축은 모두의 것이 아니다}
+
+\texttt{target\_breadth}(제일 비싼 축, 노트 496)를 빼면 일곱 도메인이
+잃고 \textbf{넷이 번다} --- 시장팝업 $+0.0553$ · 게임 $+0.0208$ · 모바일
+$+0.0157$ · 웹툰 $+0.0130$, \textbf{전부 부호 $8/8$}.
+\texttt{venue\_prominence} 는 아이돌 하나가 손해의 $55\%$ 인데
+(\;$-0.2374$\;) 애니 $+0.0058$ · 도서 $+0.0133$ 은 번다.
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+축 & 잃는 곳 & \textbf{버는 곳} \\
+\hline
+트렌드 셋 & 아홉 & \textbf{애니} \\
+\texttt{target\_breadth} & 일곱 & \textbf{시장팝업 · 게임 · 모바일 · 웹툰} \\
+\texttt{venue\_prominence} & 아홉 & \textbf{도서 · 애니} \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{버는 곳이 축마다 다르다.} 애니는 트렌드와
+\texttt{venue\_prominence} 를 싫어하고 \texttt{target\_breadth} 는
+좋아한다. 웹툰은 정반대다. \textbf{부호가 $8/8 \cdot 12/12$ 로 일관되니
+잡음이 아니다.}
+
+\section{순진한 상한}
+
+버는 곳만 골라 가리면 얼마인가. 판 무게로 더하면 \textbf{$+0.0161$}
+이다(트렌드 $+0.0066$ · \texttt{target\_breadth} $+0.0078$ ·
+\texttt{venue\_prominence} $+0.0017$). 챔피언 $0.4812 \to 0.4973$.
+
+\textbf{축 셋만으로 두 해 채택 총합의 서너 배다.}
+
+\begin{quote}
+\textbf{그런데 이 수는 결과가 아니라 상한이다.} 어느 도메인이 버는지를
+\emph{유보 점수로} 골랐다 --- 노트 $82 \cdot 90$ 의 분모 규칙에 정면으로
+걸린다. 애니를 고른 근거도 유보였다. \textbf{판 $+0.0046$ 조차 그 점에서
+깨끗하지 않다.}
+\end{quote}
+
+\section{그럼 무엇을 해야 하나}
+
+노트 449 가 이미 답의 모양을 만들어 뒀다. \texttt{\_spec\_pick} 은
+\textbf{학습 라벨만 보고} 도메인마다 다른 축을 한 칸에 넣는다. 여기서
+필요한 것은 그 거울상이다 --- \textbf{학습 라벨만 보고 도메인마다 어떤
+공유 축을 \emph{빼야} 하는지 고르는 규칙}.
+
+그러면 유보를 안 보고 이 $+0.0161$ 의 일부를 가져올 수 있다. 못 가져오면
+그것도 답이다 --- \emph{그 정보가 학습에 없다}는 뜻이니까.
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{학습 라벨만으로 고르는 규칙} --- 다음 사이클의 본 과제.
+관문은 판 $\cdot$ 날짜 통제 판 $\cdot$ 무리 안 판 $\cdot$ 집 밖 두 짝.
+\item \textbf{남은 여덟 축} --- 태그 $\cdot$ 위키 $\cdot$
+\texttt{goods\_scale} $\cdot$ \texttt{gen} $\cdot$ \texttt{grp} 등은
+아직 도메인별로 안 쟀다. 상한이 더 클 수 있다.
+\item \textbf{왜 애니가 트렌드를 싫어하나} --- 노트 $492 \cdot 493 \cdot
+495$ 가 세 번 시도했고 아직 없다. \textbf{다만 이제 그것을 몰라도 쓸 수는
+있다.}
+\end{itemize}
+
+\end{document}

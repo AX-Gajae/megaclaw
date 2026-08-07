@@ -1,0 +1,146 @@
+{
+ "record_id": "RTPU2526",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:농심_배홍동",
+  "space_id": "unresolved:농심_본사_새싹동산앞_구내식당",
+  "client_party_id": "unresolved:농심_면마케팅팀",
+  "brand_key": "농심_배홍동",
+  "space_key": "농심본사"
+ },
+ "intervention": {
+  "concept": "신메뉴 '배홍동 칼빔면' 출시 기념 농심 사내 출정식. '배홍동으로 이사가자'라는 전입·입주 컨셉의 스토리텔링으로 브랜드 아이덴티티를 강화하고 내부 직원 결속·사기진작을 도모한다. 청약·전입신고·이삿짐센터 컨셉을 활용한 브랜드 체험 행사.",
+  "brand_name": "배홍동",
+  "experience_elements": [
+   "배홍동 주민증 발급 포토존 인증샷",
+   "최강 토핑 스티커 투표",
+   "VIP 떡케이크 커팅식",
+   "입주민카드(주민증) 배부 및 도장",
+   "외부 커피차 배홍동 이삿짐센터",
+   "주민증 PASS 도장",
+   "배홍동 신메뉴 칼빔면 식사 제공"
+  ],
+  "promotions": [
+   "배홍동 1번지 청약 이벤트",
+   "럭키드로우 입주선물 랜덤박스",
+   "1~5번지 당첨 차등 입주선물",
+   "SNS 업로드 시 청약 응모권 증정",
+   "WOW 경품 럭키드로우(마샬 스피커/LG 로봇청소기/다이슨/갤럭시워치/에어팟 등)"
+  ],
+  "staging_tags": [
+   "전입신고 컨셉",
+   "이사·입주 테마",
+   "현수막·테이블스커트 키비주얼",
+   "이사박스 시트지 연출",
+   "커피차",
+   "포토존"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울특별시",
+   "district": "동작구",
+   "venue_name": "농심 본사 새싹동산 앞·구내식당 앞",
+   "venue_type": "기업 사옥(사내 행사장)",
+   "foot_traffic_context": "농심 내부 직원 대상 사내 행사"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-03-28",
+   "to": "2025-03-28",
+   "days": 1
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 17,300,000원. 정가항목(기획료 1,000,000+아트워크 2,000,000=3,000,000). Sub Total 2 제작·공간연출 12,250,000. 운영STAFF 300,000(150,000×2). 진행비(제경비 200,000+폐기물 300,000)=500,000. Sub Total 1~4 합계 16,050,000. 대행수수료 전체 소계의 10%(정가항목 제외) 1,305,000. VAT 포함 여부 불명확."
+  },
+  "brand_requirements": [
+   "#농심신메뉴 #배홍동 #칼빔면 해시태그 필수(SNS 업로드 시)"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "농심 본사 사내 직원 대상 행사"
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 0.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 25,
+    "holiday_until": 36,
+    "holiday_block_in": 0,
+    "nat_event_gap": 67,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 17.3
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서에 방문객 수 및 매출 실측 데이터가 포함되어 있지 않음(디자인·제작물 및 현장 리뷰 이미지 중심).). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 17.3 ≈ 계약총액 17.3",
+   "contract_total_mm": 17.3,
+   "last_recognition_period": "2025-03"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "13dFr4d5cRWVhPbls9YF3G1qQOQVqPiuK",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/13dFr4d5cRWVhPbls9YF3G1qQOQVqPiuK/view",
+   "title": "농심 배홍동 결과보고서_스위트스팟 0402.pdf"
+  },
+  {
+   "doc_id": "1HWDUnt22YnDBsIXr_EEm7E75GJ6vXvNB",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1HWDUnt22YnDBsIXr_EEm7E75GJ6vXvNB/view",
+   "title": "농심_배홍동출정식(사내행사)_별도 계약서 없음.docx"
+  },
+  {
+   "doc_id": "1Mg04QAyG87rOS11IqnqDid_hq1fLJAkn",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Mg04QAyG87rOS11IqnqDid_hq1fLJAkn/view",
+   "title": "2025 배홍동 출정식 기획안_스위트스팟 0313_제안서.pptx"
+  },
+  {
+   "doc_id": "1PVieBqp1fy-7gEKbxIcjgXmZB4E3FXul",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1PVieBqp1fy-7gEKbxIcjgXmZB4E3FXul/view",
+   "title": "Sweetspot_농심_배홍동(사내행사)_견적서_0328.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: 2025 배홍동 출정식 기획ᄋ, Sweetspot_농심_배홍동(사내, 농심 배홍동 결과보고서_스. 미확실: 결과보고서에 방문객 수·매출 실측 데이터 없음; counting_method 판정 불가(집계 정의 없음); 기획서 예상 방문 인원 수치 미기재; 행사 날짜 불일치: 기획서 2025-03-26 vs 견적서/프로젝트메타 2025-03-28; 면적(평) 정보 없음; VAT 포함 여부 불명확; client_party_id/브랜드 정규화 미확정"
+ }
+}

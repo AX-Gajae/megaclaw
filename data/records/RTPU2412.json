@@ -1,0 +1,353 @@
+{
+ "record_id": "RTPU2412",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:주술회전",
+  "space_id": "unresolved:더현대서울_더현대대구",
+  "client_party_id": null,
+  "brand_key": "주술회전",
+  "space_key": "multi_더현대"
+ },
+ "intervention": {
+  "concept": "주술회전 애니메이션 IP를 활용한 팝업스토어로 더현대 서울과 더현대 대구에서 운영되었다.",
+  "brand_name": "주술회전",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": null,
+   "area_sqm": null,
+   "planned_operating_days": null,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": null,
+   "experience_density": 2,
+   "goods_scale": 2,
+   "photo_zones": 2,
+   "collab_strength": 2,
+   "ip_awareness": 3,
+   "target_breadth": 1,
+   "entry_friction": 2,
+   "media_push": 2,
+   "season_fit": 2,
+   "venue_prominence": 2
+  },
+  "attr_meta": {
+   "evidence": "★투어형(더현대 서울·더현대 대구 2개점)이나 원문 근거 0. 목록의 2개 문서 모두 열었으나 본문이 빈 파일 — '제안서_내용없음.txt'(1QmQWIY3…), '계약서_내용없음.txt'(1tkaK1yf…). 따라서 레그별 운영일수·회차·수용인원·수량·면적·인력 전부 근거 없음 → 숫자 전 항목 null(레코드 period 6/27~7/3, 7일은 계약·운영 조항 근거가 아니므로 베끼지 않음). 순서형은 IP 성격(주술회전 애니 팬덤 중심)만 반영해 ip_awareness 3 / target_breadth 1, 나머지는 근거 부재 기본값 2.",
+   "confidence": "low",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "capacity": {
+   "access_type": "unknown",
+   "total_capacity": null,
+   "detail": ""
+  },
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": "더현대 서울, 더현대 대구",
+   "venue_type": "백화점",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-08-05",
+   "to": "2024-08-11",
+   "days": 7,
+   "source": "재발굴 판정 — 계획 문서로 교정"
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 2,
+   "venue_traffic_type": "multi_store",
+   "host_traffic_note": "더현대 서울, 더현대 대구 백화점 2개점"
+  },
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 91,
+    "holiday_until": 40,
+    "holiday_block_in": 0,
+    "nat_event_gap": 101,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 2809265.0,
+    "pnl_pre_accounts": 6,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2024-07-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 55000,
+   "popup_zone_pass_rate": 0.5,
+   "host_traffic_est": 27500.0,
+   "venue_scale_tier": 1,
+   "confidence": "medium",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2024-08-05",
+    "visitors": 3426,
+    "sales_krw": 78322300
+   },
+   {
+    "date": "2024-08-06",
+    "visitors": 2631,
+    "sales_krw": 41222800
+   },
+   {
+    "date": "2024-08-07",
+    "visitors": 2223,
+    "sales_krw": 36627300
+   },
+   {
+    "date": "2024-08-08",
+    "visitors": 2229,
+    "sales_krw": 27822600
+   },
+   {
+    "date": "2024-08-09",
+    "visitors": 1734,
+    "sales_krw": 29541600
+   },
+   {
+    "date": "2024-08-10",
+    "visitors": 3333,
+    "sales_krw": 44504100
+   },
+   {
+    "date": "2024-08-11",
+    "visitors": 3009,
+    "sales_krw": 38124000
+   }
+  ],
+  "totals": {
+   "visitors": 18585,
+   "sales_krw": 296164700,
+   "rev_mm_recognized": 104.0
+  },
+  "counting_method": "entry",
+  "counting_basis": "추정 방문객 수(명), 웨이팅등록 기반",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-07, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2024-09"
+  },
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "E"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "label_scope": {
+   "label_from": "2024-08-05",
+   "label_to": "2024-08-11",
+   "label_active_days": 7,
+   "label_span_days": 7,
+   "label_contiguous": true,
+   "daily_sum": 18585,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  },
+  "label_history": [
+   {
+    "at": "relabel R1 (2026-07-28)",
+    "prev_visitors": 18585,
+    "prev_counting": "participation",
+    "action": "revise",
+    "changes": [
+     "counting_method participation → entry (세분: visits)",
+     "범위 표시: one_leg"
+    ],
+    "evidence": "① 대구 결과보고서(18Y3PShY7CEX0hMv4uNjYJ41bQH4AVve0, '2024 주술회전 팝업스토어 결과보고서 2024.08.28') 개요: '행사일정 : 2024.08.05(월)~2024.08.11(일) / 행사장소 : 대구 중구 달구벌대로 2077 더현대 대구 B2 팝업스테이지'. 같은 문서 '매출액 및 방문객 추이' 표에 '일자 / 웨이팅 등록 수(명) / 추정 방문객 수(명)' 컬럼으로 8월5일 1142→3426 … 8월11일 1003→3009, '총계 6195명 / 18585명', '일평균 885명 / 2655명'. 레코드의 daily 7행·총계 18,585·매출 296,164,700원(상품 결제액, 쿠지 26,950,000원 제외)이 이 표와 완전 일치 → outcome 블록 전체가 ",
+    "verdict": "라벨 18,585는 투어 2개 레그 중 '더현대 대구' 레그(2024-08-05~08-11) 단독 실적이므로 period를 대구 창으로 교체하고 scope=one_leg로 고정하되, 값 자체는 실측이 아니라 웨이팅 등록 6,195건에 정확히 3을 곱한 추정치이므로 신뢰등급 E를 유지하고 서울 레그(6/27~7/3, 22,164명)는 별도 라벨로 분리해야 한다."
+   },
+   {
+    "at": "relabel R1 (2026-07-28)",
+    "prev_visitors": 18585,
+    "prev_counting": "entry",
+    "action": "revise",
+    "changes": [
+     "period 교정 {'from': '2024-08-05', 'to': '2024-08-11'} (계획 문서 근거)",
+     "범위 표시: one_leg"
+    ],
+    "evidence": "① 대구 결과보고서(18Y3PShY7CEX0hMv4uNjYJ41bQH4AVve0, '2024 주술회전 팝업스토어 결과보고서 2024.08.28') 개요: '행사일정 : 2024.08.05(월)~2024.08.11(일) / 행사장소 : 대구 중구 달구벌대로 2077 더현대 대구 B2 팝업스테이지'. 같은 문서 '매출액 및 방문객 추이' 표에 '일자 / 웨이팅 등록 수(명) / 추정 방문객 수(명)' 컬럼으로 8월5일 1142→3426 … 8월11일 1003→3009, '총계 6195명 / 18585명', '일평균 885명 / 2655명'. 레코드의 daily 7행·총계 18,585·매출 296,164,700원(상품 결제액, 쿠지 26,950,000원 제외)이 이 표와 완전 일치 → outcome 블록 전체가 ",
+    "verdict": "라벨 18,585는 투어 2개 레그 중 '더현대 대구' 레그(2024-08-05~08-11) 단독 실적이므로 period를 대구 창으로 교체하고 scope=one_leg로 고정하되, 값 자체는 실측이 아니라 웨이팅 등록 6,195건에 정확히 3을 곱한 추정치이므로 신뢰등급 E를 유지하고 서울 레그(6/27~7/3, 22,164명)는 별도 라벨로 분리해야 한다.",
+    "period_prev": {
+     "from": "2024-06-27",
+     "to": "2024-07-03",
+     "days": 7
+    },
+    "adjudication": "outcome 블록 전체(daily 7행·총계·매출)가 대구 레그 결과보고서와 완전 일치하므로 이 라벨은 대구 레그 단독이다. period 6/27~7/3은 ERP frDt/toDt가 서울 레그만 담아 생긴 값이고, 대구 레그는 비고 필드에만 남아 있었다. 값 18,585는 실측이 아니다 — 웨이팅 등록 6,195건에 일행 3인을 곱한 파생치이고(서울도 7,388×3=22,164로 같은 산식), 측정된 물리량은 등록 수뿐이다. 등급 E 유지가 맞다."
+   },
+   {
+    "at": "relabel R1 (2026-07-28)",
+    "prev_visitors": 18585,
+    "prev_counting": "entry",
+    "action": "revise",
+    "changes": [
+     "period 교정 {'from': '2024-08-05', 'to': '2024-08-11'} (계획 문서 근거)",
+     "범위 표시: one_leg"
+    ],
+    "evidence": "① 대구 결과보고서(18Y3PShY7CEX0hMv4uNjYJ41bQH4AVve0, '2024 주술회전 팝업스토어 결과보고서 2024.08.28') 개요: '행사일정 : 2024.08.05(월)~2024.08.11(일) / 행사장소 : 대구 중구 달구벌대로 2077 더현대 대구 B2 팝업스테이지'. 같은 문서 '매출액 및 방문객 추이' 표에 '일자 / 웨이팅 등록 수(명) / 추정 방문객 수(명)' 컬럼으로 8월5일 1142→3426 … 8월11일 1003→3009, '총계 6195명 / 18585명', '일평균 885명 / 2655명'. 레코드의 daily 7행·총계 18,585·매출 296,164,700원(상품 결제액, 쿠지 26,950,000원 제외)이 이 표와 완전 일치 → outcome 블록 전체가 ",
+    "verdict": "라벨 18,585는 투어 2개 레그 중 '더현대 대구' 레그(2024-08-05~08-11) 단독 실적이므로 period를 대구 창으로 교체하고 scope=one_leg로 고정하되, 값 자체는 실측이 아니라 웨이팅 등록 6,195건에 정확히 3을 곱한 추정치이므로 신뢰등급 E를 유지하고 서울 레그(6/27~7/3, 22,164명)는 별도 라벨로 분리해야 한다.",
+    "period_prev": {
+     "from": "2024-08-05",
+     "to": "2024-08-11",
+     "days": 7,
+     "source": "재발굴 판정 — 계획 문서로 교정"
+    },
+    "adjudication": "outcome 블록 전체(daily 7행·총계·매출)가 대구 레그 결과보고서와 완전 일치하므로 이 라벨은 대구 레그 단독이다. period 6/27~7/3은 ERP frDt/toDt가 서울 레그만 담아 생긴 값이고, 대구 레그는 비고 필드에만 남아 있었다. 값 18,585는 실측이 아니다 — 웨이팅 등록 6,195건에 일행 3인을 곱한 파생치이고(서울도 7,388×3=22,164로 같은 산식), 측정된 물리량은 등록 수뿐이다. 등급 E 유지가 맞다."
+   },
+   {
+    "at": "relabel R1 (2026-07-28)",
+    "prev_visitors": 18585,
+    "prev_counting": "entry",
+    "action": "revise",
+    "changes": [
+     "period 교정 {'from': '2024-08-05', 'to': '2024-08-11'} (계획 문서 근거)",
+     "범위 표시: one_leg"
+    ],
+    "evidence": "① 대구 결과보고서(18Y3PShY7CEX0hMv4uNjYJ41bQH4AVve0, '2024 주술회전 팝업스토어 결과보고서 2024.08.28') 개요: '행사일정 : 2024.08.05(월)~2024.08.11(일) / 행사장소 : 대구 중구 달구벌대로 2077 더현대 대구 B2 팝업스테이지'. 같은 문서 '매출액 및 방문객 추이' 표에 '일자 / 웨이팅 등록 수(명) / 추정 방문객 수(명)' 컬럼으로 8월5일 1142→3426 … 8월11일 1003→3009, '총계 6195명 / 18585명', '일평균 885명 / 2655명'. 레코드의 daily 7행·총계 18,585·매출 296,164,700원(상품 결제액, 쿠지 26,950,000원 제외)이 이 표와 완전 일치 → outcome 블록 전체가 ",
+    "verdict": "라벨 18,585는 투어 2개 레그 중 '더현대 대구' 레그(2024-08-05~08-11) 단독 실적이므로 period를 대구 창으로 교체하고 scope=one_leg로 고정하되, 값 자체는 실측이 아니라 웨이팅 등록 6,195건에 정확히 3을 곱한 추정치이므로 신뢰등급 E를 유지하고 서울 레그(6/27~7/3, 22,164명)는 별도 라벨로 분리해야 한다.",
+    "period_prev": {
+     "from": "2024-08-05",
+     "to": "2024-08-11",
+     "days": 7,
+     "source": "재발굴 판정 — 계획 문서로 교정"
+    },
+    "adjudication": "outcome 블록 전체(daily 7행·총계·매출)가 대구 레그 결과보고서와 완전 일치하므로 이 라벨은 대구 레그 단독이다. period 6/27~7/3은 ERP frDt/toDt가 서울 레그만 담아 생긴 값이고, 대구 레그는 비고 필드에만 남아 있었다. 값 18,585는 실측이 아니다 — 웨이팅 등록 6,195건에 일행 3인을 곱한 파생치이고(서울도 7,388×3=22,164로 같은 산식), 측정된 물리량은 등록 수뿐이다. 등급 E 유지가 맞다."
+   },
+   {
+    "at": "relabel R1 (2026-07-28)",
+    "prev_visitors": 18585,
+    "prev_counting": "entry",
+    "action": "revise",
+    "changes": [
+     "period 교정 {'from': '2024-08-05', 'to': '2024-08-11'} (계획 문서 근거)",
+     "범위 표시: one_leg"
+    ],
+    "evidence": "① 대구 결과보고서(18Y3PShY7CEX0hMv4uNjYJ41bQH4AVve0, '2024 주술회전 팝업스토어 결과보고서 2024.08.28') 개요: '행사일정 : 2024.08.05(월)~2024.08.11(일) / 행사장소 : 대구 중구 달구벌대로 2077 더현대 대구 B2 팝업스테이지'. 같은 문서 '매출액 및 방문객 추이' 표에 '일자 / 웨이팅 등록 수(명) / 추정 방문객 수(명)' 컬럼으로 8월5일 1142→3426 … 8월11일 1003→3009, '총계 6195명 / 18585명', '일평균 885명 / 2655명'. 레코드의 daily 7행·총계 18,585·매출 296,164,700원(상품 결제액, 쿠지 26,950,000원 제외)이 이 표와 완전 일치 → outcome 블록 전체가 ",
+    "verdict": "라벨 18,585는 투어 2개 레그 중 '더현대 대구' 레그(2024-08-05~08-11) 단독 실적이므로 period를 대구 창으로 교체하고 scope=one_leg로 고정하되, 값 자체는 실측이 아니라 웨이팅 등록 6,195건에 정확히 3을 곱한 추정치이므로 신뢰등급 E를 유지하고 서울 레그(6/27~7/3, 22,164명)는 별도 라벨로 분리해야 한다.",
+    "period_prev": {
+     "from": "2024-08-05",
+     "to": "2024-08-11",
+     "days": 7,
+     "source": "재발굴 판정 — 계획 문서로 교정"
+    },
+    "adjudication": "outcome 블록 전체(daily 7행·총계·매출)가 대구 레그 결과보고서와 완전 일치하므로 이 라벨은 대구 레그 단독이다. period 6/27~7/3은 ERP frDt/toDt가 서울 레그만 담아 생긴 값이고, 대구 레그는 비고 필드에만 남아 있었다. 값 18,585는 실측이 아니다 — 웨이팅 등록 6,195건에 일행 3인을 곱한 파생치이고(서울도 7,388×3=22,164로 같은 산식), 측정된 물리량은 등록 수뿐이다. 등급 E 유지가 맞다."
+   },
+   {
+    "at": "relabel R1 (2026-07-28)",
+    "prev_visitors": 18585,
+    "prev_counting": "entry",
+    "action": "revise",
+    "changes": [
+     "period 교정 {'from': '2024-08-05', 'to': '2024-08-11'} (계획 문서 근거)",
+     "범위 표시: one_leg"
+    ],
+    "evidence": "① 대구 결과보고서(18Y3PShY7CEX0hMv4uNjYJ41bQH4AVve0, '2024 주술회전 팝업스토어 결과보고서 2024.08.28') 개요: '행사일정 : 2024.08.05(월)~2024.08.11(일) / 행사장소 : 대구 중구 달구벌대로 2077 더현대 대구 B2 팝업스테이지'. 같은 문서 '매출액 및 방문객 추이' 표에 '일자 / 웨이팅 등록 수(명) / 추정 방문객 수(명)' 컬럼으로 8월5일 1142→3426 … 8월11일 1003→3009, '총계 6195명 / 18585명', '일평균 885명 / 2655명'. 레코드의 daily 7행·총계 18,585·매출 296,164,700원(상품 결제액, 쿠지 26,950,000원 제외)이 이 표와 완전 일치 → outcome 블록 전체가 ",
+    "verdict": "라벨 18,585는 투어 2개 레그 중 '더현대 대구' 레그(2024-08-05~08-11) 단독 실적이므로 period를 대구 창으로 교체하고 scope=one_leg로 고정하되, 값 자체는 실측이 아니라 웨이팅 등록 6,195건에 정확히 3을 곱한 추정치이므로 신뢰등급 E를 유지하고 서울 레그(6/27~7/3, 22,164명)는 별도 라벨로 분리해야 한다.",
+    "period_prev": {
+     "from": "2024-08-05",
+     "to": "2024-08-11",
+     "days": 7,
+     "source": "재발굴 판정 — 계획 문서로 교정"
+    },
+    "adjudication": "outcome 블록 전체(daily 7행·총계·매출)가 대구 레그 결과보고서와 완전 일치하므로 이 라벨은 대구 레그 단독이다. period 6/27~7/3은 ERP frDt/toDt가 서울 레그만 담아 생긴 값이고, 대구 레그는 비고 필드에만 남아 있었다. 값 18,585는 실측이 아니다 — 웨이팅 등록 6,195건에 일행 3인을 곱한 파생치이고(서울도 7,388×3=22,164로 같은 산식), 측정된 물리량은 등록 수뿐이다. 등급 E 유지가 맞다."
+   }
+  ],
+  "counting_detail": "estimated_from_registrations",
+  "label_scope_kind": "one_leg",
+  "uncaptured_sibling": "서울 레그(2024-06-27~07-03, 더현대서울 B2 아이코닉존, 등록 7,388 → 추정 22,164, 상품매출 491,395,310원)는 별도 레코드로 미포착 상태다."
+ },
+ "docs": [
+  {
+   "doc_id": "18Y3PShY7CEX0hMv4uNjYJ41bQH4AVve0",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/18Y3PShY7CEX0hMv4uNjYJ41bQH4AVve0/view",
+   "title": "RTPU2412_주술회전 팝업스토어(더현대 서울,대구)_대구_결과보고서_0828.pdf"
+  },
+  {
+   "doc_id": "1CzRfPKQfzRwcGS4SJj2KGWOMCY8CZgwI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CzRfPKQfzRwcGS4SJj2KGWOMCY8CZgwI/view",
+   "title": "RTPU2412_주술회전 팝업스토어(더현대 서울,대구)_대구_견적서_0905.pdf"
+  },
+  {
+   "doc_id": "1QmQWIY30UJydtk8Z42KQQvLg67O30SD1",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1QmQWIY30UJydtk8Z42KQQvLg67O30SD1/view",
+   "title": "제안서_내용없음.txt"
+  },
+  {
+   "doc_id": "1WLe27WRi32zXCvC0xu1DtlSGO0z5AJ5N",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1WLe27WRi32zXCvC0xu1DtlSGO0z5AJ5N/view",
+   "title": "RTPU2412_주술회전 팝업스토어(더현대 서울,대구)_서울_실행계획안_0624.pdf"
+  },
+  {
+   "doc_id": "1lonvvDlIRyE9-M95lRup0_J-KjqID2pj",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1lonvvDlIRyE9-M95lRup0_J-KjqID2pj/view",
+   "title": "RTPU2412_주술회전 팝업스토어(더현대 서울,대구)_서울_결과보고서_0710.pptx"
+  },
+  {
+   "doc_id": "1tkaK1yfqlCEgFCmvX-KhQu47DV2tFWP_",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1tkaK1yfqlCEgFCmvX-KhQu47DV2tFWP_/view",
+   "title": "계약서_내용없음.txt"
+  },
+  {
+   "doc_id": "1ygFeCWZ8wcNvilhT_dd9Nwekaw9cW3yS",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ygFeCWZ8wcNvilhT_dd9Nwekaw9cW3yS/view",
+   "title": "RTPU2412_주술회전 팝업스토어(더현대 서울,대구)_서울_견적서_0715.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서 텍스트(계약서/기획서/견적서/결과보고서) 전부 미제공; client_name/client_party_id 미상; 체험요소·프로모션·연출태그 정보 없음; 입지 상세(도시/구/유동인구) 미상; 면적 미상; 수수료 구조·계약금액 미상; 일일 방문객 및 매출 실측 데이터 없음; 방문 집계 방식(counting_method) 판정 불가; 예상 방문객 수 정보 없음 | 라벨발굴(2026-07-24): 결과보고서 재추출 — 대구 결과보고서 '매출액 및 방문객 추이' 표(웨이팅 등록수/추정 방문객수, 상품 결제액). 매출은 쿠지 제 | 자극 보강(2026-07-24): 운영안·기획안·계약서 재인제스트로 intervention/conditions 교체 (592→665자, capacity=unknown). outcome·entities·period 보존"
+ }
+}

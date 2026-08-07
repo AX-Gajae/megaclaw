@@ -1,0 +1,228 @@
+\documentclass[10pt]{article}
+\usepackage{icmlko}
+
+\icmlmeta{IP 파운데이션 월드모델}{33}{전이는 이미 최적이다}{전이 상관이 대상의 자기 상관과 같다 --- 출처를 바꿔도 소용없고 대상의 측정만이 지렛대다}
+
+\begin{document}
+
+\twocolumn[
+\icmlheader
+
+\begin{abstract}
+노트 32는 순위 상관을 라벨 없이 대리 추정하는 방법을 유일한 출구로 지목했다.
+후보를 찾다가 그보다 큰 것을 발견했다. 여섯 개 전이 셀에서 무엇이 전이 상관을
+설명하는지 재보니 \textbf{대상 도메인의 자기 상관이 $+$0.988}로 사실상 완전히
+설명한다. 출처 자기 상관은 $-$0.436, 출처 표본 수는 $+$0.360, 출처 축 수는
+$-$0.243이다. 비율로 보면 더 분명하다 --- 전이 상관을 대상 자기 상관으로 나누면
+\textbf{여섯 셀 모두 1.03$\pm$0.07}이다. 즉 \textbf{전이는 대상 도메인의 예측 가능
+상한에 이미 도달해 있다.} 대상 도메인의 라벨을 전부 보고 교차검증한 모델과 같은
+수준을 \emph{그 도메인 라벨을 한 번도 보지 않고} 낸다. 이것은 두 가지를 뜻한다.
+첫째, \textbf{출처 선택은 무의미하다} --- 어느 도메인에서 배우든 결과가 같다.
+둘째, \textbf{개선 여지는 전적으로 대상 도메인의 측정에 있다} --- 축을 더 재거나
+더 잘 재는 것 외에 방법이 없다. 노트 24의 ``대상이 출처보다 네 배 중요''와
+노트 27의 ``게임은 덜 관측된 학생''이 하나의 메커니즘으로 합쳐진다.
+\end{abstract}
+]
+
+\section{대리 후보를 찾다가}
+
+노트 32의 결론은 이랬다 --- 문턱 판정에 50건이 필요하고 눈금 보정에는 8건이면
+되므로, 판정이 실행보다 비싸다. 유일한 출구는 라벨 없이 순위 상관을 대리
+추정하는 것이다.
+
+세 후보를 세웠다.
+
+\begin{itemize}[leftmargin=1.1em,itemsep=0.15em]
+\item \textbf{출처 간 일치도} --- 두 출처의 예측이 대상에서 서로 얼마나 맞나.
+      대상 라벨이 필요 없다.
+\item \textbf{정렬 잔차} --- 프로크루스테스가 공통 축 적재를 얼마나 잘 맞췄나.
+\item \textbf{예측 분산} --- 예측이 얼마나 퍼져 있나.
+\end{itemize}
+
+\begin{table}[t]
+\centering\tsize
+\caption{라벨 없는 대리 후보(세 도메인).}
+\begin{tabular}{lrrr}
+\toprule
+대상 & 참 r & 출처 간 일치 & 정렬 잔차 \\
+\midrule
+팝업 & $+$0.445 & $+$0.989 & 0.000 \\
+아이돌 & $+$0.681 & $+$0.946 & 0.428 \\
+게임 & $+$0.344 & $+$0.965 & 0.221 \\
+\midrule
+\multicolumn{2}{l}{참 r과의 상관} & $-$0.643 & $+$0.669 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+둘 다 부호가 직관과 반대다 --- 출처끼리 일치할수록 나쁘고, 정렬이 안 맞을수록
+좋다. 그리고 점이 셋뿐이며 팝업의 정렬 잔차 0.000은 기준 도메인이라 자기 자신과
+비교한 값이다. 아무것도 말할 수 없다.
+
+셀을 여섯으로 늘렸다. 각 (출처, 대상) 쌍마다 그 출처 단독 예측의 상관을 잰다.
+
+\section{대상의 자기 상관이 전부다}
+
+여기에 후보를 하나 더 넣었다 --- \textbf{자기 상관}. 도메인이 자기 축으로 자기
+라벨을 얼마나 맞히는가(교차검증). 출처 쪽과 대상 쪽을 각각 본다.
+
+\begin{table}[t]
+\centering\tsize
+\caption{여섯 전이 셀.}
+\begin{tabular}{lrrr}
+\toprule
+출처 $\to$ 대상 & 전이 r & 출처 자기 r & 대상 자기 r \\
+\midrule
+게임 $\to$ 아이돌 & $+$0.675 & $+$0.349 & $+$0.654 \\
+팝업 $\to$ 아이돌 & $+$0.668 & $+$0.404 & $+$0.654 \\
+아이돌 $\to$ 팝업 & $+$0.452 & $+$0.654 & $+$0.404 \\
+게임 $\to$ 팝업 & $+$0.433 & $+$0.349 & $+$0.404 \\
+아이돌 $\to$ 게임 & $+$0.354 & $+$0.654 & $+$0.349 \\
+팝업 $\to$ 게임 & $+$0.324 & $+$0.404 & $+$0.349 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figs/ceil.pdf}
+\caption{전이 상관과 대상 자기 상관. 점선이 완전 일치선이다.}
+\end{figure}
+
+\begin{table}[t]
+\centering\tsize
+\caption{전이 상관을 무엇이 설명하나.}
+\begin{tabular}{lr}
+\toprule
+후보 & 전이 r과의 상관 \\
+\midrule
+\textbf{대상 자기 상관} & \textbf{$+$0.988} \\
+출처 표본 수 & $+$0.360 \\
+출처 축 수 & $-$0.243 \\
+출처 자기 상관 & $-$0.436 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figs/cmp.pdf}
+\caption{후보별 설명력. 하나만 압도적이다.}
+\end{figure}
+
+대상 자기 상관이 $+$0.988이다. 나머지는 잡음 수준이거나 부호가 반대다.
+
+\section{비율이 1이다}
+
+더 직접적인 표현은 비율이다.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figs/ratio.pdf}
+\caption{전이 상관을 대상 자기 상관으로 나눈 값. 여섯 셀이 1 근처에 모인다.}
+\end{figure}
+
+\begin{table}[t]
+\centering\tsize
+\caption{전이 상관 $\div$ 대상 자기 상관.}
+\begin{tabular}{lr}
+\toprule
+출처 $\to$ 대상 & 비율 \\
+\midrule
+게임 $\to$ 아이돌 & 1.032 \\
+팝업 $\to$ 아이돌 & 1.021 \\
+아이돌 $\to$ 팝업 & 1.118 \\
+게임 $\to$ 팝업 & 1.072 \\
+아이돌 $\to$ 게임 & 1.014 \\
+팝업 $\to$ 게임 & 0.931 \\
+\midrule
+평균 & \textbf{1.031} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+여섯 셀 모두 1에서 $\pm$0.09 안에 있다. 평균 1.031이다.
+
+\claimx{전이 상관은 대상 도메인의 자기 상관과 같다(설명 상관 $+$0.988, 비율
+1.03$\pm$0.07). 전이는 대상의 예측 가능 상한에 이미 도달해 있다.}{네 번째 도메인에서
+비율이 1에서 크게 벗어나면 이 등식은 세 도메인의 우연이다. 특히 1보다 뚜렷이
+작으면 전이에 개선 여지가 남아 있다는 뜻이다.}
+
+\paragraph{무슨 뜻인가}
+대상 도메인의 자기 상관은 그 도메인 라벨을 \emph{전부 보고} 교차검증한 값이다.
+전이는 그 도메인 라벨을 \emph{한 번도 보지 않고} 같은 수준을 낸다.
+
+\section{두 가지 귀결}
+
+\paragraph{출처 선택은 무의미하다}
+출처 자기 상관이 $-$0.436, 출처 표본 수가 $+$0.360, 출처 축 수가 $-$0.243이다.
+어느 것도 전이 성능을 설명하지 못한다. 게임(n=482, 자기 상관 0.349)에서 배우든
+아이돌(n=62, 0.654)에서 배우든 결과가 대상에 의해 정해진다.
+
+이것은 노트 24가 가법 모형으로 얻은 결과 --- 대상 난이도의 분산이 출처 강도의
+3.8배 --- 의 극단 형태다. 실은 출처 강도가 사실상 0이었다.
+
+\paragraph{지렛대는 대상의 측정뿐이다}
+개선하려면 대상 도메인이 자기 라벨을 더 잘 설명하게 만들어야 한다. 축을 더 재거나
+더 잘 재는 것 외에 방법이 없다.
+
+노트 27이 반사실로 보인 것 --- 팝업에서 축 둘을 빼면 게임보다 어려워진다 ---
+과 정확히 맞물린다. 축을 빼면 자기 상관이 떨어지고, 자기 상관이 떨어지면 전이도
+그만큼 떨어진다.
+
+\begin{quote}\fontsize{9.5}{11.5}\selectfont
+전이 알고리즘을 더 손볼 이유가 없다. 정렬 방법(노트 19, 29, 30)도, 출처 선택도,
+공동 학습도 상한에 붙어 있는 값을 바꾸지 못한다. \textbf{남은 일은 각 도메인에서
+무엇을 어떻게 재느냐뿐이다.}
+\end{quote}
+
+\section{그리고 노트 32의 문제는 어떻게 되나}
+
+라벨 없는 대리 추정은 여전히 못 찾았다. 다만 문제의 무게가 달라졌다.
+
+전이 상관 $\approx$ 대상 자기 상관이므로, 물어야 할 것은 ``이 전이가 잘 될까''가
+아니라 ``이 도메인이 자기 라벨을 설명할 수 있을까''다. 후자는 도메인을 설계할 때
+--- 어떤 축을 어떻게 잴지 정할 때 --- 판단할 수 있는 질문이고, 라벨을 모으기
+전에도 부분적으로 답할 수 있다.
+
+\claimx{순위 상관을 사전에 알고 싶으면 전이가 아니라 대상 도메인의 측정 설계를
+봐야 한다.}{측정 설계에서 자기 상관을 예측하는 규칙이 만들어지지 않으면, 이
+재구성은 문제를 옮겼을 뿐 풀지 않은 것이다.}
+
+\section{한계}
+
+\begin{itemize}[leftmargin=1.1em,itemsep=0.15em]
+\item 여섯 셀에 대상이 셋뿐이므로 $+$0.988은 세 점의 상관을 여섯 번 센 것에 가깝다.
+      네 번째 도메인이 반드시 필요하다.
+\item 자기 상관을 5폴드 교차검증으로 쟀다. 폴드 수나 분할 방식에 따라 값이 흔들린다.
+\item 비율이 1을 조금 넘는다(평균 1.031). 전이가 자기 상관을 \emph{넘는} 것은
+      이상하며, 자기 상관 추정이 교차검증 때문에 보수적이어서일 수 있다.
+\item 팝업 $\to$ 게임만 비율이 1 아래다(0.931). 여섯 중 유일한 예외의 원인을
+      보지 않았다.
+\end{itemize}
+
+\section{다음}
+
+\begin{enumerate}[leftmargin=1.3em,itemsep=0.15em]
+\item 네 번째 도메인 --- 이 노트의 모든 결론이 그것 하나에 달려 있다.
+\item 측정 설계에서 자기 상관을 예측하는 규칙 --- 축 수, 축의 품질, 표본 크기의 함수.
+\item 팝업 $\to$ 게임 비율 0.931의 원인.
+\item 자기 상관 추정의 폴드 민감도.
+\end{enumerate}
+
+\vspace{0.6em}
+\hrule height 0.3pt
+\vspace{0.5em}
+{\footnotesize
+\textbf{참고문헌}\\[0.3em]
+Ben-David, S. et al. (2010). A theory of learning from different domains.
+\emph{Machine Learning}, 79(1--2), 151--175.\\[0.15em]
+Schoppe, O. et al. (2016). Measuring the performance of neural models.
+\emph{Frontiers in Computational Neuroscience}, 10, 10.\\[0.15em]
+Maurer, A., Pontil, M., Romera-Paredes, B. (2016). The benefit of multitask
+representation learning. \emph{JMLR}, 17(81), 1--32.\\[0.15em]
+Cohen, J. (1988). \emph{Statistical Power Analysis for the Behavioral Sciences},
+2nd ed. Lawrence Erlbaum.
+}
+
+\end{document}

@@ -1,0 +1,80 @@
+{
+  "market_record_id": "MKT-2025-0071",
+  "event_name": "빌리프 '믿음꽁꽁마켓' 팝업 @성수포탈",
+  "brand": "빌리프 (LG생활건강)",
+  "ip_or_collab": "자체 브랜드 캠페인(꽁꽁 시리즈)",
+  "category": "beauty",
+  "intervention": {
+    "concept_description": "빌리프 수분크림 캠페인 팝업. 마켓 콘셉트 체험 공간, 사전 예약제 운영",
+    "experience_elements": [
+      "브랜드 체험존",
+      "포토존",
+      "한정 굿즈"
+    ],
+    "promotions": [
+      "현장 구매 혜택",
+      "사전 예약제"
+    ],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "성수포탈",
+    "venue_type": "street_standalone",
+    "neighborhood": "성수동",
+    "city": "서울",
+    "period_from": "2025-08-09",
+    "period_to": "2025-08-17",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 9,
+        "weekend_share": 0.44,
+        "holiday_days": 1
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 9,
+    "counting_basis": "unknown",
+    "counting_basis_note": "총 방문객 미공개. 예약 마감 속도·일평균 방문객만 보도",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": "사전 예약 오픈 40초 만에 전량 마감",
+      "signal_quotes": [
+        "사전 예약은 오픈 40초 만에 마감됐다 (LG생활건강 보도자료 2025-08-07)",
+        "일평균 1000여 명이 방문했다 (유스데일리 2025-08-12, https://www.youthdaily.co.kr/news/article.html?no=192378)"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "일평균 1000명은 총계 환산 금지 원칙에 따라 시그널로만 기록. | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

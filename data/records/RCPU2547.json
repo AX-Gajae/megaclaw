@@ -1,0 +1,135 @@
+{
+ "record_id": "RCPU2547",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:NCT_WISH",
+  "space_id": "unresolved:성수_LECT",
+  "client_party_id": null,
+  "brand_key": "NCT_WISH",
+  "space_key": "성수_LECT"
+ },
+ "intervention": {
+  "concept": "NCT WISH 팝업스토어(성수 렉트). 상세 문서가 제공되지 않아 컨셉·체험요소를 확인할 수 없음.",
+  "brand_name": "NCT WISH",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "성동구",
+   "venue_name": "성수 렉트(LECT)",
+   "venue_type": "팝업스토어",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-09-02",
+   "to": "2025-09-09",
+   "days": 8
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "성수 렉트"
+  },
+  "derived": {
+   "duration": {
+    "days": 8,
+    "weekend_share": 0.25,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 16,
+    "holiday_until": 31,
+    "holiday_block_in": 0,
+    "nat_event_gap": 59,
+    "nat_event": null,
+    "doc_lag_days": 1,
+    "doc_dates_found": 3
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 2570408.0,
+    "pnl_pre_accounts": 5,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-08-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 79.5
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-09, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-09"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "16dOEwFreBL6CAsTnVckonMR-i_7alwCD",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/16dOEwFreBL6CAsTnVckonMR-i_7alwCD/view",
+   "title": "NCTwish렉트_결과보고서.pdf"
+  },
+  {
+   "doc_id": "1HWymWOx-2y74W9envguduAN9QIETpE59",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1HWymWOx-2y74W9envguduAN9QIETpE59/view",
+   "title": "(스위트스팟) NCT_WISH_팝업 최종견적서_0918.pdf"
+  },
+  {
+   "doc_id": "1JLHNm-Q4wxrVINlIHwTHayrskNEEdxE8",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1JLHNm-Q4wxrVINlIHwTHayrskNEEdxE8/view",
+   "title": "견적서_3.POS SYSTEM 견적서 NICE VAN_스위트스팟_NCT WISH_20250901.pdf"
+  },
+  {
+   "doc_id": "1OgzyYCdiqszBPP_fu9NZRUFNZQsbqX3C",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1OgzyYCdiqszBPP_fu9NZRUFNZQsbqX3C/view",
+   "title": "(SMBM) 상품판매용역계약서_주식회사스위트스팟_250708_모두싸인 날인본.pdf"
+  },
+  {
+   "doc_id": "1aQiCknM3AHc6YvCppLjXE3h-2aelwECv",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1aQiCknM3AHc6YvCppLjXE3h-2aelwECv/view",
+   "title": "(스위트스팟) 2025 NCT WISH POP-UP STORE_운영기획안_250827.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 미제공; client_name 불명; 면적/수수료구조/브랜드 요구사항 정보 없음; 방문객수·매출 실측 데이터 없음; 컨셉·체험요소·프로모션·연출태그 정보 없음"
+ }
+}

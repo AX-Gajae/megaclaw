@@ -1,0 +1,195 @@
+\documentclass[10pt]{article}
+\usepackage{icmlko}
+
+\icmlmeta{IP 파운데이션 월드모델}{325}{안 쓴 행 천칠백오십이}{축을 열둘 지어도 판이 안 올라서 행을 셌다 --- 여섯 자리가 막혀 있고 다섯은 이미 이유가 재어져 있다}
+
+\begin{document}
+
+\twocolumn[
+\icmlheader
+
+\begin{abstract}
+오늘 축을 열둘 지었고(\texttt{fund\_cat} · \texttt{anime\_medium} $+$ 원천
+열) 판은 안 올랐다. 노트 274의 법칙은 검출 문턱을 \textbf{유보 행 수}가
+정한다고 한다. \textbf{행을 셌다.} 원천에 있는데 판이 안 쓰는 행이
+\textbf{1,752개}다 --- 만화 611 · 시장팝업 442 · 팝업 305 · 아이돌 201 ·
+도서 153 · 세계애니 40. \textbf{그중 다섯 자리는 이미 이유가 재어져 있다}:
+만화 KR 은 웹툰과 \emph{같은 작품}이라 중복 누출이고(노트 293) · 팝업의
+등급·세는 법은 넓히면 가드 19에 걸리며(노트 297) · 나머지는 라벨이 없다.
+\textbf{안 재 본 자리는 아이돌 하나였다.} 그리고 아이돌은 판에서 검출
+문턱이 제일 나쁜 도메인이다(유보 25행 · 짝SE 0.05$\sim$0.08). 봤다 ---
+201 중 \textbf{94건이 초동과 데뷔일을 둘 다 갖고 있고 그중 26건이 2025년
+이후}다. 쓰면 \textbf{유보가 25에서 51로 두 배}가 되고 문턱이 1.41배
+낮아진다. 왜 빠졌나 --- \texttt{ingest/idol\_axes.py} 가
+\texttt{chodong\_basis\_resolved == "hanteo"} 로 거른다. \textbf{라벨 기준
+동질성 필터}이고 노트 297의 팝업 세는 법과 같은 구조다. \textbf{그리고 그
+필터가 옳다} --- 한터 기준 $\log_{10}$ 초동 중앙이 \textbf{5.115}, 나머지가
+\textbf{4.281} 로 $p{<}$1e-4 이고 원값으로 \textbf{일곱 배}다. 섞으면
+\textbf{기준이 곧 표지}가 된다(노트 266 · 283 · 288 · 297의 덫).
+\textbf{그래서 1,752행이 전부 막혀 있다} --- 다만 아이돌은 \emph{고칠 수
+있는} 종류로 막혀 있다.
+\end{abstract}
+]
+
+\section{축이 안 되면 행을 센다}
+
+오늘 지은 축이 열둘이다 --- \texttt{fund\_cat}(노트 309) ·
+\texttt{anime\_medium}(321) · 원천에서 캔 열(324). \textbf{판이 안 올랐다}
+(각각 $+$0.0023 · $+$0.0000 · $-$0.0096). 노트 274가 검출 문턱을
+$2\times$짝SE 로 놓았고 짝SE 는 \textbf{유보 행 수}가 정한다. 그래서 행을
+셌다.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/rows.pdf}
+\caption{왼쪽 --- 도메인별 안 쓴 행과 막은 이유. 오른쪽 --- 아이돌 라벨
+기준별 초동 분포(모수로 그린 것).}
+\end{figure*}
+
+\begin{center}\footnotesize
+\begin{tabular}{lrrl}
+\hline
+도메인 & 판 & 원천 & 안 쓴 행 \\
+\hline
+만화 & 1,789 & 2,400 & \textbf{611} \\
+시장팝업 & 205 & 647 & \textbf{442} \\
+팝업 & 75 & 380 & \textbf{305} \\
+아이돌 & 81 & 282 & \textbf{201} \\
+도서 & 243 & 396 & 153 \\
+세계애니 & 2,948 & 2,988 & 40 \\
+\hline
+\multicolumn{3}{l}{나머지 다섯(게임 · 모바일 · 애니 · 웹툰 · 펀딩)} & \textbf{0} \\
+\hline
+\textbf{합} & & & \textbf{1,752} \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{다섯은 이미 재어 놓았다}
+
+\begin{center}\footnotesize
+\begin{tabular}{lll}
+\hline
+자리 & 막은 것 & 잰 노트 \\
+\hline
+만화 611 & KR 이 웹툰과 \emph{같은 작품} & \textbf{293} \\
+팝업 305 & 등급 C$\sim$E · \texttt{organizer\_claim} & \textbf{297} \\
+시장팝업 442 & 단일 이벤트 아님 · 라벨 없음 & 283 \\
+도서 153 & 라벨 없음 & --- \\
+세계애니 40 & 라벨 없음 & --- \\
+\hline
+\end{tabular}
+\end{center}
+
+만화는 노트 293이 ``만나는 것은 같은 작품이다''로 끝났다 --- KR 556건을
+넣으면 웹툰과 중복이라 누출이다. 팝업은 노트 297이 ``문턱을 넘었는데
+조용하다''로 --- 넓히면 학습이 16$\to$73 이 되지만 가드 19(출처)에 걸린다.
+\textbf{둘 다 넣으면 안 되는 이유가 측정으로 서 있다.}
+
+\section{안 재 본 자리는 아이돌 하나였다}
+
+그리고 아이돌은 \textbf{판에서 제일 아픈 자리}다 --- 유보 25행, 짝SE
+0.05$\sim$0.08, 오늘 잰 것 중 $|t|$ 가 문턱을 못 넘은 대부분이 여기서
+막혔다(노트 303의 ``두 배'' · 노트 317의 $-$0.50 · 노트 319의 $+$0.24).
+
+\begin{center}\footnotesize
+\begin{tabular}{lr}
+\hline
+아이돌 레코드 & 282 \\
+\quad 초동 없음 & 107 \\
+\quad \textbf{초동$+$데뷔일 있음} & \textbf{173} \\
+\quad\quad 판이 쓰는 것(한터) & 79 \\
+\quad\quad \textbf{안 쓰는 것} & \textbf{94} \\
+\quad\quad\quad 그중 2025년 이후 & \textbf{26} \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{94건을 쓰면 유보가 25 $\to$ 51 로 두 배}가 되고 짝SE 가 $\sqrt2$ 배
+줄어 문턱이 0.11 에서 0.078 로 내려간다.
+
+\paragraph{왜 빠졌나} \texttt{ingest/idol\_axes.py} 의 한 줄이다.
+
+\begin{center}\small
+\texttt{pool = [r for r in recs if r["chodong\_basis\_resolved"] == "hanteo"]}
+\end{center}
+
+\textbf{라벨 기준 동질성 필터}다. 노트 297이 팝업에서 본 것과 같은 구조 ---
+거기서는 \texttt{entry}/\texttt{participation} 대 \texttt{organizer\_claim}
+이었고 여기서는 한터 대 나머지다.
+
+\section{그 필터가 옳다}
+
+\begin{center}\small
+\begin{tabular}{lrrr}
+\hline
+기준 & $n$ & $\log_{10}$ 중앙 & 2025$+$ \\
+\hline
+\textbf{hanteo} & 79 & \textbf{5.115} & 25 \\
+unknown & 77 & 4.233 & 20 \\
+ambiguous & 12 & 4.687 & 6 \\
+oricon & 4 & 5.485 & 0 \\
+circle & 1 & 5.070 & 0 \\
+\hline
+\multicolumn{4}{l}{한터 5.115 대 나머지 4.281 · $p{<}$1e-4} \\
+\multicolumn{4}{l}{차 0.83 = 원값으로 \textbf{일곱 배}} \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{섞으면 기준이 곧 표지가 된다.} 노트 266이 처음 잡고 노트 283이 시장
+팝업을 따로 연 이유이고 노트 288이 가드 19를 만든 까닭이며 노트 297이
+넓힌 팝업 판을 막은 자리다. \textbf{같은 덫이 다섯 번째다.}
+
+\paragraph{그런데 고칠 수 있는 종류다} 다른 넷과 다르다 --- 만화 KR 은
+\emph{같은 작품}이라 어떻게 해도 안 되고, 라벨 없는 것은 없는 것이다.
+\textbf{기준 차이는 수준 차이}이고 판정치가 \emph{도메인 안 순위}를 쓰므로
+(\texttt{rank.pooled}), \textbf{기준별로 라벨을 순위 정규화하면} 수준이
+사라진다.
+
+\begin{center}\footnotesize
+\begin{tabular}{ll}
+\hline
+다음에 잴 것 & \\
+\hline
+① 기준별 순위 정규화 & 수준 표지가 사라지나 \\
+② 94건의 축 다섯 & 태깅이 되나(지금 85$\sim$96\%) \\
+③ 아이돌 유보 51행 & 문턱 0.11 $\to$ 0.078 \\
+④ 가드 19 · 표시자 & 기준이 여전히 표지인가 \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{미리 적는다} --- ①이 되면 아이돌은 오늘 잰 것 중 제일 큰 수들
+(노트 317의 $-$0.4964 · 노트 319의 $+$0.2420)을 \emph{처음으로 문턱에
+걸어 볼} 수 있다. 안 되면 1,752행이 전부 막힌 것이고, 그러면
+\textbf{행을 늘리는 길은 새로 모으는 것뿐}이다.
+
+\paragraph{덤 --- 유보를 늘리는 다른 길} $T$ 를 2025 에서 2024 로 내리면
+유보가 2,675 $\to$ 3,882(1.45배)가 된다. \textbf{그런데 과제가 바뀐다}
+--- 노트 284의 규약대로 앞뒤 판 수를 못 견준다. 그리고 학습이 줄어 얇은
+도메인이 더 얇아진다(도서 학습 80 $\to$ 더 적게).
+
+\paragraph{남은 것}
+\begin{center}\small
+\begin{tabular}{ll}
+\hline
+갈래 & 왜 \\
+\hline
+아이돌 기준 정규화 & 유보 두 배 · 제일 아픈 자리 \\
+$T$ 를 내릴까 & 1.45배지만 과제가 바뀐다 \\
+새로 모으기 & 1,752 가 다 막히면 남는 길 \\
+애니는 왜 축을 싫어하나 & 노트 324의 갈래 \\
+\hline
+\end{tabular}
+\end{center}
+
+\paragraph{규약} \textbf{축이 안 되면 행을 세라.} 오늘 축을 열둘 짓고 판을
+못 올렸는데, 행을 세니 1,752개가 놀고 있고 \textbf{그 대부분이 이미 잰
+이유로 막혀 있었다.} \textbf{막힌 이유가 적혀 있는 것과 안 세어 본 것은
+다르다} --- 여섯 중 다섯은 노트가 있었고 하나(아이돌)만 없었다.
+그리고 \textbf{같은 덫이 다섯 번째다} --- 라벨 기준이 섞이면 기준이 표지가
+된다. 노트 266 · 283 · 288 · 297 · 325. \textbf{이쯤이면 자료를 새로 열
+때마다 제일 먼저 물어야 하는 것이다.}
+
+\end{document}

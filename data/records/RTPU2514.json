@@ -1,0 +1,146 @@
+{
+ "record_id": "RTPU2514",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:클리오_CLIO",
+  "space_id": "unresolved:도쿄_시부야_Bellesalle_Shibuya_First_2F",
+  "client_party_id": "unresolved:주식회사_클리오",
+  "brand_key": "클리오",
+  "space_key": "도쿄_시부야_벨레살레"
+ },
+ "intervention": {
+  "concept": "2025 레버브 K뷰티 페스티벌에 참가하는 클리오 브랜드 부스의 공간 연출 및 전시 집기 제작 프로젝트. 아크릴 디스플레이 집기와 테이블 아일랜드 매대 등 제작물 디자인·제작 및 행사 운영 대행을 포함한다.",
+  "brand_name": "클리오(CLIO)",
+  "experience_elements": [
+   "아크릴 Display 집기",
+   "테이블 아일랜드 매대",
+   "부스 공간 연출",
+   "포토존/아트워크/영상 제작물"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "공간연출",
+   "전시집기",
+   "2D&3D디자인",
+   "K뷰티페스티벌"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "도쿄",
+   "district": "시부야",
+   "venue_name": "Bellesalle Shibuya First 2층",
+   "venue_type": "페스티벌/이벤트홀",
+   "foot_traffic_context": null,
+   "venue_slot": "2층"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-03-28",
+   "to": "2025-03-30",
+   "days": 3
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "총 계약금액 2,000만원(부가세 별도). 선금 50%(10,000,000원, 계산서 2025-03-04, 지급 2025-03-10), 잔금 50%(10,000,000원, 계산서 2025-04-01, 지급 2025-04-10). 견적서 기준 소계 22,000,000원, 대행수수료 소계의 10% 1,800,000원, NEGO -3,800,000원 적용해 최종 20,000,000원. 물류비(한국→일본) 5,000,000원 포함. 지체상금 지체 1일당 총 계약금액의 3/1000."
+  },
+  "brand_requirements": [
+   "제작물 사용 전 의뢰사 감수 및 서면 승인 필수",
+   "모든 제작물 지식재산권 의뢰사 귀속",
+   "정치·사회·종교적 중립 유지",
+   "진행 보고서 및 결과보고 제출",
+   "안전관리 및 사고방지"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "2025 레버브 K뷰티 페스티벌 참가 부스"
+  },
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.67,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 25,
+    "holiday_until": 36,
+    "holiday_block_in": 0,
+    "nat_event_gap": 67,
+    "nat_event": null,
+    "doc_lag_days": 46,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 501400.0,
+    "pnl_pre_accounts": 3,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2025-01-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 20.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서가 제공되지 않아 방문/매출 실측 데이터 없음. 본 프로젝트는 집기 제작 및 운영 대행 중심.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 20.0 ≈ 계약총액 20.0",
+   "contract_total_mm": 20.0,
+   "last_recognition_period": "2025-04"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "17sveoUNqDIsiNKwnviqXufIwkY4UZLI1",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/17sveoUNqDIsiNKwnviqXufIwkY4UZLI1/view",
+   "title": "결과보고서_파일없음.txt"
+  },
+  {
+   "doc_id": "1Do44PDmjEhIlkVxSCBJU3vhIA9EG9DGM",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Do44PDmjEhIlkVxSCBJU3vhIA9EG9DGM/view",
+   "title": "120250212020148_Sweetspot 클리오_프로모션 대행_업무 계약서_250210.pdf"
+  },
+  {
+   "doc_id": "1PPIqaN6Nvg9NJUxp373EgOIjkoQxD0_7",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1PPIqaN6Nvg9NJUxp373EgOIjkoQxD0_7/view",
+   "title": "제안서_파일없음.txt"
+  },
+  {
+   "doc_id": "1j7YV2zxMAyd1GfR0RuMnRD85o6MSIw6b",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1j7YV2zxMAyd1GfR0RuMnRD85o6MSIw6b/view",
+   "title": "(Sweetspot) 클리오_2025 레버브 K뷰티 페스티벌_견적서_1차_250122.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 2건: 120250212020148_Sweetspot 클리오_, (Sweetspot) 클리오_2025 레버브 K뷰티 페. 미확실: 결과보고서 부재로 outcome(방문자/매출) 전부 없음; 면적(area_pyeong) 문서에 없음; 기획서/제안서 부재로 예상 방문(plan_visitors_expected) 없음; 도쿄/시부야는 Bellesalle Shibuya First 명칭으로 추정"
+ }
+}

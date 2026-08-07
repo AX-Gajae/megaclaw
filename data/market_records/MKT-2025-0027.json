@@ -1,0 +1,108 @@
+{
+ "market_record_id": "MKT-2025-0027",
+ "event_name": "지그재그 '직잭뷰티' 팝업 @XYZ SEOUL",
+ "brand": "지그재그 (카카오스타일)",
+ "ip_or_collab": "직잭뷰티 입점 브랜드 연합",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "지그재그 뷰티 전문관 '직잭뷰티' 론칭 기념 오프라인 팝업. 인디/신진 뷰티 브랜드 큐레이션",
+  "experience_elements": [
+   "브랜드 체험 부스",
+   "포토존",
+   "굿즈 이벤트"
+  ],
+  "promotions": [
+   "사전 신청자 한정 혜택",
+   "현장 구매 할인"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "XYZ SEOUL",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2025-04-11",
+  "period_to": "2025-04-13",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.67,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 15000,
+  "visitors_period_days": 3,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "지그재그 성료 발표 인용",
+  "visitors_source_quote": "3일간 1만5000명의 방문객이 다녀갔다",
+  "visitors_source_url": "https://www.dailian.co.kr/news/view/1486744",
+  "visitors_source_date": "2025-04-17",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "현장 긴 대기열",
+   "sold_out": null,
+   "reservation_fill": "사전 신청 하루 만에 조기 마감",
+   "signal_quotes": [
+    "사전 신청이 하루 만에 조기 마감됐다",
+    "'비유티풀(BE-YOU-TIFUL)'이라는 주제로 운영된 이번 팝업스토어는 하루 만에 사전 신청이 마감됐으며, 행사 기간 동안 현장에는 긴 대기열이 이어지는 등 1030세대 여성 고객들의 뜨거운 관심을 받았다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "E"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "데일리안 기사 작성일(2025-04-17 추정). 직잭뷰티 온라인 거래액 전년 동기 대비 2배 이상(129%) 언급은 온라인 지표라 별도 미기재. | 병합 레코드: MKT-2025-0026 | [병합:MKT-2025-0026] 앱 연계 성과: 뷰티 카테고리 거래액 전월 동기비 +129%, 투에이엔 +2090% 등(비율이라 sales_krw null).",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 15000,
+   "basis": "organizer_claim",
+   "quote": "카카오스타일은 지난 11일부터 13일까지 서울 성수 'XYZ SEOUL'에서 진행한 지그재그 뷰티 브랜드 '직잭뷰티'의 첫 오프라인 팝업스토어가 누적 방문객 1만5000명을 기록하며 성황리에 종료됐다고 17일 밝혔다.",
+   "url": "https://www.pinpointnews.co.kr/news/articleView.html?idxno=337149",
+   "date": "2025-04-17"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

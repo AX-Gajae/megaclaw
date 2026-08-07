@@ -1,0 +1,78 @@
+{
+  "market_record_id": "MKT-2024-0011",
+  "event_name": "이세계아이돌 '이세돌 팝업 봤?'(더현대 서울)",
+  "brand": "이세계아이돌(왁타버스)",
+  "ip_or_collab": "이세계아이돌(ISEGYE IDOL)",
+  "category": "entertainment",
+  "intervention": {
+    "concept_description": "버추얼 아이돌 이세계아이돌 오프라인 팝업. 한정 MD, 포토존, 입장 티켓제",
+    "experience_elements": [
+      "MD 판매",
+      "포토존"
+    ],
+    "promotions": [],
+    "is_free_entry": null,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "현대백화점 더현대 서울(약 330㎡ 규모)",
+    "venue_type": "department_store",
+    "neighborhood": "여의도",
+    "city": "서울",
+    "period_from": "2024-02-16",
+    "period_to": "2024-02-29",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 14,
+        "weekend_share": 0.29,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 14,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "현대백화점 팝업 실적 보도. 원문: '매출이 약 34억원에 이른다…역대 팝업스토어 매출 1위'",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": 3400000000,
+    "sales_source_quote": "역대 팝업스토어 매출 1위는 지난 2월 열린 버추얼 아이돌 ‘이세계아이돌’의 팝업스토어다. 매출이 약 34억원에 이른다.",
+    "sales_source_url": "https://www.seoul.co.kr/news/economy/distribution/2024/06/25/20240625020004",
+    "sales_source_date": "2024-06-25",
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": "입장 티켓 15분 만에 완판",
+      "reservation_fill": "입장 티켓 15분 만에 완판",
+      "signal_quotes": [
+        "올해 2월 16일부터 29일까지 2주간 더현대 서울에서 열린 이세계아이돌 팝업은 오픈 후, 15분 만에 입장 티켓이 완판되었고",
+        "팝업 기간 동안 총 34억 원의 매출"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "매출 34억: 서울신문 2024-06-25. 기간·티켓 15분 완판·34억 재확인: 스위트스팟 블로그 2025-05-29. (참고: 일부 매체는 38억으로 보도하나 해당 URL 미확보로 미기재) | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {
+    "sales": "verified"
+  },
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

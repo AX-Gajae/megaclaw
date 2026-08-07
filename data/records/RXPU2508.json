@@ -1,0 +1,133 @@
+{
+ "record_id": "RXPU2508",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:로로티",
+  "space_id": "unresolved:현대백화점_판교",
+  "client_party_id": "unresolved:삼성물산_리조트부문",
+  "brand_key": "로로티",
+  "space_key": "현대백화점_판교점"
+ },
+ "intervention": {
+  "concept": "로로티 팝업스토어 운영을 위한 판매·재고관리 전산시스템(POS/ERP) 구축 프로젝트로, 견적서 기준 문서에는 판매 및 재고 관리 시스템 세팅 내용만 확인된다.",
+  "brand_name": "로로티",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": "현대백화점 판교",
+   "venue_type": "백화점",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-05-13",
+   "to": "2025-05-26",
+   "days": 14
+  },
+  "season": null,
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "구성 총계 2,255,000원(VAT 별도). 인건비(세팅/철수 400,000) + 운영시스템(ERP세팅 250,000, 기기렌탈 노트북·바코드리더기·영수증출력기 50,000×2×14일=1,400,000) 소계 2,050,000원, 대행수수료 소계의 10% 205,000원, 견적 총액 2,255,000원(VAT 별도). | 계약서 미확인(2026-07-27 재독해 시도 — 대상 문서 부재/추출 실패): 총액은 견적 기준"
+  },
+  "brand_requirements": [
+   "ERP프로그램 세팅(계정생성, 상품 입력 등 판매 및 재고 관리 시스템)",
+   "운영기기 렌탈: 노트북, 바코드 리더기, 영수증 출력기 및 롤지",
+   "현장 세팅&철수, 물자 이동"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "현대백화점 판교"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 7,
+    "holiday_until": 24,
+    "holiday_block_in": 0,
+    "nat_event_gap": 21,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 3,
+    "comp_prior_at_venue": 74,
+    "comp_within_500m_open": 3,
+    "comp_within_1000m_open": 3,
+    "matched_address": "경기 성남시 분당구 판교역로146번길 20"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 2.3
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 2.3 ≈ 계약총액 2.255",
+   "contract_total_mm": 2.255,
+   "last_recognition_period": "2025-05"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1Q3Va1UNc4SI2zBTBIHCf26-xO83o8HMk",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Q3Va1UNc4SI2zBTBIHCf26-xO83o8HMk/view",
+   "title": "임시결과보고서.txt"
+  },
+  {
+   "doc_id": "1XloipZgGEmh4T_ajNulfhXGYRYLci1Bm",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1XloipZgGEmh4T_ajNulfhXGYRYLci1Bm/view",
+   "title": "삼성물산_현대백화점 판교 팝업스토어 재고관리시스템 셋업_견적서.pdf"
+  },
+  {
+   "doc_id": "1XuHo4CgkE9a02LmhTuD41HBr6ZGXaul9",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1XuHo4CgkE9a02LmhTuD41HBr6ZGXaul9/view",
+   "title": "계약서_내용없음.txt"
+  },
+  {
+   "doc_id": "1XyHOYJEJyNN0alLl252HUDctj6x3arMq",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1XyHOYJEJyNN0alLl252HUDctj6x3arMq/view",
+   "title": "제안서_내용없음.txt"
+  },
+  {
+   "doc_id": "1d3Xav5Ly-rqWAb92uq3POk_Ze1aSF2vu",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1d3Xav5Ly-rqWAb92uq3POk_Ze1aSF2vu/view",
+   "title": "삼성물산_현대백화점 판교 팝업스토어 재고관리시스템 셋업_견적서.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 1건: 삼성물산_현대백화점 판교 팝업스토어 재고관리시스템 셋업. 미확실: 결과보고서 부재로 방문자·매출 실측 없음; 입지 도시/구/면적 정보 없음; 고객사명은 견적서 수신처(삼성물산 리조트부문) 기준; 현대백화점 판교는 파일명에서만 확인; 컨셉·체험요소·프로모션 정보 없음(전산시스템 견적서만 존재)"
+ }
+}

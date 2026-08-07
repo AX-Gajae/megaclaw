@@ -1,0 +1,153 @@
+{
+ "record_id": "RCPU2556",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:트와이스",
+  "space_id": "unresolved:용산_아이파크몰",
+  "client_party_id": null,
+  "brand_key": "트와이스",
+  "space_key": "용산_아이파크몰"
+ },
+ "intervention": {
+  "concept": "트와이스 팝업스토어 (용산 아이파크몰). 세부 컨셉·체험요소 정보는 원문 문서 없음.",
+  "brand_name": "트와이스",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "용산구",
+   "venue_name": "용산 아이파크몰",
+   "venue_type": "쇼핑몰",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-10-17",
+   "to": "2025-10-26",
+   "days": 10
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": "원문 문서 없음"
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "용산 아이파크몰 쇼핑몰 입점"
+  },
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 8,
+    "holiday_until": 120,
+    "holiday_block_in": 0,
+    "nat_event_gap": 14,
+    "nat_event": "APEC 경주 정상회의",
+    "doc_lag_days": 7,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 6,
+    "comp_prior_at_venue": 87,
+    "comp_within_500m_open": 7,
+    "comp_within_1000m_open": 7,
+    "matched_address": "서울 용산구 한강대로23길 55"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 92.5
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-10, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-10"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1DIOkuI2fCh20GbYcQbdvr8bWCmF7SYeZ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DIOkuI2fCh20GbYcQbdvr8bWCmF7SYeZ/view",
+   "title": "견적서_아스틴_유니폼_트와이스 251001.png"
+  },
+  {
+   "doc_id": "1NLcNsPkme3wbNNyGVvkCgyaaNwOh_NZy",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1NLcNsPkme3wbNNyGVvkCgyaaNwOh_NZy/view",
+   "title": "견적서_트와이스_에이렌탈10.16 스위트스팟(김률희) 님.xlsx"
+  },
+  {
+   "doc_id": "1ShTBnZCPYeBMwuLgKbq6gSXy8nxVtNN4",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ShTBnZCPYeBMwuLgKbq6gSXy8nxVtNN4/view",
+   "title": "스위트스팟_트와이스_운영기획안_251010.pdf"
+  },
+  {
+   "doc_id": "1WHfKejzgjv4Kd0076Ja-lFhyggqSI5Jw",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1WHfKejzgjv4Kd0076Ja-lFhyggqSI5Jw/view",
+   "title": "[로폼전자서명]2025 TWICE FANMEETING 10VE UNIVERSE POP-UP STORE 운영 대행계약서_주식회사 스위트스팟.pdf"
+  },
+  {
+   "doc_id": "1_sq1VfQkqeeeDtd5dNgwHJ2Oa_Q9lSfO",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1_sq1VfQkqeeeDtd5dNgwHJ2Oa_Q9lSfO/view",
+   "title": "견적서_트와이스_보험 1017청약서(스위트스팟_미날인).pdf"
+  },
+  {
+   "doc_id": "1kGbf05e0Hl5-qBCPI1sbkWX9EMdSdWCt",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1kGbf05e0Hl5-qBCPI1sbkWX9EMdSdWCt/view",
+   "title": "트와이스팝업_최종견적서_1103.pdf"
+  },
+  {
+   "doc_id": "1sRjGMcBUS7xl6CSpHe3adI-U3bjjHh6p",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1sRjGMcBUS7xl6CSpHe3adI-U3bjjHh6p/view",
+   "title": "트와이스_결과보고서.pdf"
+  },
+  {
+   "doc_id": "1wnJdf-AMrYD-M8yTyUGtzMWMoyagrAPR",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1wnJdf-AMrYD-M8yTyUGtzMWMoyagrAPR/view",
+   "title": "견적서_이벤툴_스탭퍼_트와이스.xlsx"
+  },
+  {
+   "doc_id": "1z4ssawOCmJWklhw3moUMxfBe6JgWhi5R",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1z4ssawOCmJWklhw3moUMxfBe6JgWhi5R/view",
+   "title": "2025년 10월 TWICE 팝업_외부 공유.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서/기획서/견적서/결과보고서) 미제공; client_name; 면적; 수수료구조; 방문객 실측; 매출; 컨셉·체험요소·프로모션 상세"
+ }
+}

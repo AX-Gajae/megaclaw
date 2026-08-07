@@ -1,0 +1,1555 @@
+{
+ "record_id": "RCPU2507",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:비클린_BeClean",
+  "space_id": "unresolved:나이키우먼스레이스_야외부스",
+  "client_party_id": "unresolved:스위트스팟_레테일컨텐츠본부_IP컨텐츠팀",
+  "brand_key": "비클린",
+  "space_key": "나이키우먼스레이스"
+ },
+ "intervention": {
+  "concept": "나이키 우먼스 레이스 현장에 설치한 비클린(뷰티/코스메틱) 브랜드의 체험형 야외부스. '클린 스테이션' 컨셉으로 게임·미션 체험을 통해 샘플을 증정하는 원데이 이벤트.",
+  "brand_name": "비클린(Be CLEAN)",
+  "experience_elements": [
+   "데시벨 게임(‘비클린’ 외쳐 120Db 이상 시 스티커 획득)",
+   "클린샷 비클린 1:1 농구게임 승리 시 스티커 획득",
+   "농구게임기 2대 운영(렌탈)",
+   "스티커 획득 수에 따라 비클린 샘플 증정(1개-1종, 2개-2종)",
+   "제품 8set 진열 선반"
+  ],
+  "promotions": [
+   "스티커 1개 획득 시 비클린 샘플 1종 증정",
+   "스티커 2개 획득 시 비클린 샘플 2종 증정"
+  ],
+  "staging_tags": [
+   "조명형 로고사인(앞면 유광스틸/후면 초록 LED 반사등)",
+   "상단 초록색 LED 바",
+   "목가구 제작 및 브랜드컬러 우레탄도장",
+   "측면 그래픽 돌출스카시",
+   "아메리칸 레트로/클린 스테이션 컨셉",
+   "LED 조명 선반장"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": "야외 공간(길거리/공원 등)",
+   "foot_traffic_context": "나이키 우먼스 레이스 현장 야외부스"
+  },
+  "area_pyeong": 10,
+  "period": {
+   "from": "2025-05-10",
+   "to": "2025-05-10",
+   "days": 1
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "[계약서 확정(2026-07-27 재독해)] 총액 2,000,000원 (불명), 분할: 잔금 2,000,000원을 4월30일 지급(4월24일 작업완료 후) | 기존(견적 기반): 디자인 외주계약(비클린 브랜딩 그래픽 개발건, 스튜디오 비티에프): 총 3,000,000원 / 선금 500,000원(4월17일 지급), 잔금 2,500,000원(5월29일 지급). 용역기간 2025-04-08~2025-05-08. 수정본 계약서상 총 2,000,000원(잔금 2,000,000원, 4월30일 지급) 버전도 존재. 팝업 전체 운영비/시공비는 별도 견적 요청 단계로 금액 미확정.셋업 5월9일, 철수 5월11일."
+  },
+  "brand_requirements": [
+   "나이키우먼스 관련 작업물 4월23일까지 제출",
+   "현대백화점 청주점 관련 작업물 4월30일까지 제출",
+   "최종 결과물 권한은 스위트스팟에 귀속",
+   "용역기간 이후 3개월 유지보수",
+   "기밀 유지 의무"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "나이키 우먼스 레이스 현장 야외부스"
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 1.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 4,
+    "holiday_until": 27,
+    "holiday_block_in": 0,
+    "nat_event_gap": 24,
+    "nat_event": null,
+    "doc_lag_days": 33,
+    "doc_dates_found": 20
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 6563948.0,
+    "pnl_pre_accounts": 8,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2025-03-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 64.6
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서에 방문자 수·매출 등 실측 수치가 포함되어 있지 않음(분류 정보만 기재).). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "총액 신뢰불가(2026-07-27): 재독해 2.0M은 부속 콘텐츠 계약 추정, 기존 3.0M도 인식 64.6M과 괴리 — 수기 확인 대상. 인식 기준 완결 유지",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-04"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-3BeeharYPXBsveD8v7MJxnBFvmTCES_",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1-3BeeharYPXBsveD8v7MJxnBFvmTCES_/view",
+   "title": "036ac8366df35e9cd7e654ec64fc0e59.jpg"
+  },
+  {
+   "doc_id": "1-L1iGnJyAQ6ZMXlg-hbhbYmMEm5hmAhd",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1-L1iGnJyAQ6ZMXlg-hbhbYmMEm5hmAhd/view",
+   "title": "비클린 컨셉레퍼런스 모음.pptx"
+  },
+  {
+   "doc_id": "1-k4r3rVqc2843jXNV8tWMq72sijJKHKD",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1-k4r3rVqc2843jXNV8tWMq72sijJKHKD/view",
+   "title": "Image (4).jfif"
+  },
+  {
+   "doc_id": "1-qdz0noV0Ph6gEJPxHYSRge3AvFOE18R",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1-qdz0noV0Ph6gEJPxHYSRge3AvFOE18R/view",
+   "title": "727b429c4c46cf87ce7116fe11b39692.jpg"
+  },
+  {
+   "doc_id": "1-t6dGc1ogoowirc7mRRAP5mk1_OHZWEd",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1-t6dGc1ogoowirc7mRRAP5mk1_OHZWEd/view",
+   "title": "e1fefbfebf1e0c9474043dc27c405b04.jpg"
+  },
+  {
+   "doc_id": "1-y4UHq65O3Y8h738dWfB_NRNdlZrYdOU",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1-y4UHq65O3Y8h738dWfB_NRNdlZrYdOU/view",
+   "title": "3518da42016ddef8340e1359a7d874e2.jpg"
+  },
+  {
+   "doc_id": "107KtQrBKepNDggYG3l2kqdKh-DaVKfgx",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/107KtQrBKepNDggYG3l2kqdKh-DaVKfgx/view",
+   "title": "Enscape_2025-04-14-21-59-45.png"
+  },
+  {
+   "doc_id": "10eJOeIvL2etpt9TBnDAylENKULcC5xAs",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/10eJOeIvL2etpt9TBnDAylENKULcC5xAs/view",
+   "title": "다운로드 (11).jpg"
+  },
+  {
+   "doc_id": "10uCdAXde1M9KB8c97RxN07kKN7rD29N5",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/10uCdAXde1M9KB8c97RxN07kKN7rD29N5/view",
+   "title": "KakaoTalk_20230501_104334900_07.jpg"
+  },
+  {
+   "doc_id": "1220ItHYZCPu6m_8oCmjcRV1RHTaNcTlB",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1220ItHYZCPu6m_8oCmjcRV1RHTaNcTlB/view",
+   "title": "0414 나이키우먼스레이스 비클린 야외부스안.pptx"
+  },
+  {
+   "doc_id": "12aFm9rcLm3dw1gnL2l2kYBnL4_iqqJDU",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/12aFm9rcLm3dw1gnL2l2kYBnL4_iqqJDU/view",
+   "title": "4ws567jsr7km.JPG"
+  },
+  {
+   "doc_id": "13G4X8BfA_eXqe-9DYfu3NzvHVzhlSS_7",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/13G4X8BfA_eXqe-9DYfu3NzvHVzhlSS_7/view",
+   "title": "[디자인외주계약서] 비클린 브랜드 그래픽개발.xlsx"
+  },
+  {
+   "doc_id": "13dTykzmxLZq_e6riZ4o4ZTZYZ9k2LRfx",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/13dTykzmxLZq_e6riZ4o4ZTZYZ9k2LRfx/view",
+   "title": "0423 나이키우먼스레이스 비클린 야외부스안.pdf"
+  },
+  {
+   "doc_id": "142JDaCXXSjWxsWyCCSZ3rcajlJrcs5zD",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/142JDaCXXSjWxsWyCCSZ3rcajlJrcs5zD/view",
+   "title": "다운로드 (9).jpg"
+  },
+  {
+   "doc_id": "149YrCXvpiyiv_m-t0Va8SaVlATWGZ_nD",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/149YrCXvpiyiv_m-t0Va8SaVlATWGZ_nD/view",
+   "title": "720250123140956.jpg"
+  },
+  {
+   "doc_id": "14H-EANIXDc0jR9b-yMmY1PW9V2aR6rsH",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/14H-EANIXDc0jR9b-yMmY1PW9V2aR6rsH/view",
+   "title": "B.jpg"
+  },
+  {
+   "doc_id": "14SFOiPZbExdtP9qiNQBu3u7IXYAmt_SX",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/14SFOiPZbExdtP9qiNQBu3u7IXYAmt_SX/view",
+   "title": "미래주유소 (4).jpg"
+  },
+  {
+   "doc_id": "14hYqCjFZt1dU6yq-MYi500GOGkurKRfv",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14hYqCjFZt1dU6yq-MYi500GOGkurKRfv/view",
+   "title": "디자인외주계약서[] 비클린 그래픽개발건_스튜디오btf.pdf"
+  },
+  {
+   "doc_id": "15Gj9tTwXTKqwbbd2H48fb1rKlSQvR2F1",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/15Gj9tTwXTKqwbbd2H48fb1rKlSQvR2F1/view",
+   "title": "다운로드 (4).jpg"
+  },
+  {
+   "doc_id": "15QP1ah_zHj1V7yNkTZsm1Ib3924a3TaN",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/15QP1ah_zHj1V7yNkTZsm1Ib3924a3TaN/view",
+   "title": "Image (7).jfif"
+  },
+  {
+   "doc_id": "15VJsG0RbNj7I0-6DXy6fL4d3_6CC9XA_",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/15VJsG0RbNj7I0-6DXy6fL4d3_6CC9XA_/view",
+   "title": "다운로드 (6).jpg"
+  },
+  {
+   "doc_id": "15cAmYCCTcDmxYb5e9wzow2ji6zSVtcyo",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/15cAmYCCTcDmxYb5e9wzow2ji6zSVtcyo/view",
+   "title": "대지 8.png"
+  },
+  {
+   "doc_id": "16BKsrepYNLETPXqB0f1tunmxDaQrERpm",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/16BKsrepYNLETPXqB0f1tunmxDaQrERpm/view",
+   "title": "SNOW＿20230924＿115328＿576.jpg"
+  },
+  {
+   "doc_id": "16NK1SSE310TsM7NazP3kX1ZJOcaqEwtq",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/16NK1SSE310TsM7NazP3kX1ZJOcaqEwtq/view",
+   "title": "다운로드 (8).jpg"
+  },
+  {
+   "doc_id": "16NrwvEuM3oslXXkVKXKD5J9GHZo77XUj",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/16NrwvEuM3oslXXkVKXKD5J9GHZo77XUj/view",
+   "title": "8d2bf877c5d0f70c602a54aa09623565.jpg"
+  },
+  {
+   "doc_id": "16O_q3diRP09w4cPOo_VM_vKuBXVCdRko",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/16O_q3diRP09w4cPOo_VM_vKuBXVCdRko/view",
+   "title": "89743415fvlm.jpg"
+  },
+  {
+   "doc_id": "16oODWlli1L8yT0PH1mXBw_GQHIiKAycG",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/16oODWlli1L8yT0PH1mXBw_GQHIiKAycG/view",
+   "title": "ab8a12191e7fe7b1dc3705d5b0b29796.jpg"
+  },
+  {
+   "doc_id": "16shmorD5o-rGOvIjCfw8uuHqqNKDyckO",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/16shmorD5o-rGOvIjCfw8uuHqqNKDyckO/view",
+   "title": "image-01-nike-house-of-innovation-shanghai-frame-awards-pop-up-store-design-shop-2_hires.jpg"
+  },
+  {
+   "doc_id": "16t-qIhXYIWYNx9AyrjEcDdk0Z4GMi7GY",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/16t-qIhXYIWYNx9AyrjEcDdk0Z4GMi7GY/view",
+   "title": "ee21df8c3a0d278178ccac51d52780c7.jpg"
+  },
+  {
+   "doc_id": "16yYi_RsTNzFG-u_q9el2RzO9C9VIz--P",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/16yYi_RsTNzFG-u_q9el2RzO9C9VIz--P/view",
+   "title": "12afdd5e6a4b02d8f212288fcbc93cf6.jpg"
+  },
+  {
+   "doc_id": "170uGooTEPDZ12JCuTEnI91CUGZtPyvx8",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/170uGooTEPDZ12JCuTEnI91CUGZtPyvx8/view",
+   "title": "1695619486623.jpg"
+  },
+  {
+   "doc_id": "171ZeX5fPcz2drSOFxYjO-Nt44_SfqBLT",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/171ZeX5fPcz2drSOFxYjO-Nt44_SfqBLT/view",
+   "title": "KakaoTalk_20230501_104334900_01.jpg"
+  },
+  {
+   "doc_id": "17F8sr7QyBYSUivwb4Xr0zt_Y6fDVRSva",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/17F8sr7QyBYSUivwb4Xr0zt_Y6fDVRSva/view",
+   "title": "디자인외주계약서[] 비클린 그래픽개발건_스튜디오btf_수정.pdf"
+  },
+  {
+   "doc_id": "17I60aE9dwE6I1eENwHFDP-9YDXfZP3HI",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/17I60aE9dwE6I1eENwHFDP-9YDXfZP3HI/view",
+   "title": "ulsan-namgu_223180791321_23.webp"
+  },
+  {
+   "doc_id": "17asq3bJDp6uwvXcbHB5gcp7KsNzD8esi",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/17asq3bJDp6uwvXcbHB5gcp7KsNzD8esi/view",
+   "title": "대지 10.png"
+  },
+  {
+   "doc_id": "17lobSOwehBne3zXN6HTt1NhqjBzGZb38",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/17lobSOwehBne3zXN6HTt1NhqjBzGZb38/view",
+   "title": "미래주유소 (3).jpg"
+  },
+  {
+   "doc_id": "17xOVW7K8Q-lJos1T1B-wN1dmcr2rYleM",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/17xOVW7K8Q-lJos1T1B-wN1dmcr2rYleM/view",
+   "title": "09.jpg"
+  },
+  {
+   "doc_id": "188ObECLbn4N6THWpc-lSsWu6M1dEXSkg",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/188ObECLbn4N6THWpc-lSsWu6M1dEXSkg/view",
+   "title": "f58792c54499454e4c908603f75134e7.jpg"
+  },
+  {
+   "doc_id": "18FwF-szQ6Xzw9WpmFPzZbGZ_wD5m22G1",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/18FwF-szQ6Xzw9WpmFPzZbGZ_wD5m22G1/view",
+   "title": "다운로드 (1).jpg"
+  },
+  {
+   "doc_id": "18WeTfbtSt35ENmfk0ZXn4O_D_pS1UQHq",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/18WeTfbtSt35ENmfk0ZXn4O_D_pS1UQHq/view",
+   "title": "05118fc7f0d30d8d4e8d09f73a8ed3a2.jpg"
+  },
+  {
+   "doc_id": "19Dm2F-yeVmqeIwIwTOMTq2m1c1nXQgQy",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/19Dm2F-yeVmqeIwIwTOMTq2m1c1nXQgQy/view",
+   "title": "디자인외주계약서[] 비클린 그래픽개발건_스튜디오btf.docx"
+  },
+  {
+   "doc_id": "19dohP4mDebOdCptww5WJSvfjZ6OJ1bzY",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19dohP4mDebOdCptww5WJSvfjZ6OJ1bzY/view",
+   "title": "btf스튜디오.jpg"
+  },
+  {
+   "doc_id": "1A-ctof0vXQsjPghT3H36L9rP3RCa3B5F",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1A-ctof0vXQsjPghT3H36L9rP3RCa3B5F/view",
+   "title": "다운로드.jpg"
+  },
+  {
+   "doc_id": "1AMSUzlZtym1r4eN4xAW_tSGs9Fi5TIRR",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1AMSUzlZtym1r4eN4xAW_tSGs9Fi5TIRR/view",
+   "title": "다운로드 (5).jpg"
+  },
+  {
+   "doc_id": "1AXsueasLVD3H-5XOPzmE6QIFHu-op_8l",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1AXsueasLVD3H-5XOPzmE6QIFHu-op_8l/view",
+   "title": "ff9a5b1f6650a28145792dec3d9dddd6.jpg"
+  },
+  {
+   "doc_id": "1Ae_s0WjnFJoBy2Ydu--agRC-AWYFlIsb",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Ae_s0WjnFJoBy2Ydu--agRC-AWYFlIsb/view",
+   "title": "Enscape_2025-04-23-15-49-04.png"
+  },
+  {
+   "doc_id": "1BDZRCEFp13ZkUMWSd2Sm247bFXLHecX0",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1BDZRCEFp13ZkUMWSd2Sm247bFXLHecX0/view",
+   "title": "제자리달리기 게임 (1).JPG"
+  },
+  {
+   "doc_id": "1BcUJ5EetfaFX52glID1qzgIACy8t9Mdp",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1BcUJ5EetfaFX52glID1qzgIACy8t9Mdp/view",
+   "title": "0407 비클린 나이키부스 실비정리(수정중).xlsx"
+  },
+  {
+   "doc_id": "1Bws6LabsEHeyuXz6T93AZ5bp2OWvfA54",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Bws6LabsEHeyuXz6T93AZ5bp2OWvfA54/view",
+   "title": "1647195_703300_2827.jpg"
+  },
+  {
+   "doc_id": "1C2ZJDrXhk4hxCEYqFNMbJtqd1Bpc2ade",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1C2ZJDrXhk4hxCEYqFNMbJtqd1Bpc2ade/view",
+   "title": "다운로드 (6).jpg"
+  },
+  {
+   "doc_id": "1CAp-xWDMltFjRC5D46f1Ty4ZjkJiizbl",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1CAp-xWDMltFjRC5D46f1Ty4ZjkJiizbl/view",
+   "title": "KakaoTalk_20240914_122333438.jpg"
+  },
+  {
+   "doc_id": "1Co6koHgkjNstHPAengfOoyLf_kfwjFTB",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Co6koHgkjNstHPAengfOoyLf_kfwjFTB/view",
+   "title": "4w5s645sekjm.JPG"
+  },
+  {
+   "doc_id": "1D17MKcob2zCOO0bzfLMMHXB3DJzYEBw0",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1D17MKcob2zCOO0bzfLMMHXB3DJzYEBw0/view",
+   "title": "Enscape_2025-04-23-13-44-51.png"
+  },
+  {
+   "doc_id": "1DEPWNNfjhMJitPMtdbboSwYkLyyfoSg7",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1DEPWNNfjhMJitPMtdbboSwYkLyyfoSg7/view",
+   "title": "42392_78629_1155.jpg"
+  },
+  {
+   "doc_id": "1DYMLWOLON8ceYxy8MuQn96GDlK-Gv8SF",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1DYMLWOLON8ceYxy8MuQn96GDlK-Gv8SF/view",
+   "title": "image-03-nike-house-of-innovation-shanghai-frame-awards-pop-up-store-design-shop-1_hires.jpg"
+  },
+  {
+   "doc_id": "1DgmfHKfH90W5du5VF5JQoXREm1lBRCD1",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1DgmfHKfH90W5du5VF5JQoXREm1lBRCD1/view",
+   "title": "미래주유소 (2).jpg"
+  },
+  {
+   "doc_id": "1DyBL5EpZmRbtvysLcP1ssAnrhzc_K5Vq",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1DyBL5EpZmRbtvysLcP1ssAnrhzc_K5Vq/view",
+   "title": "SNOW＿20230924＿115223＿540.jpg"
+  },
+  {
+   "doc_id": "1E-FvBFjLGsxtleaRBzF4lSkBGanV1-p-",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1E-FvBFjLGsxtleaRBzF4lSkBGanV1-p-/view",
+   "title": "520231019095410.jpg"
+  },
+  {
+   "doc_id": "1EacxVgmQf_wjePcGIuFAiEMB2ATPf6qp",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1EacxVgmQf_wjePcGIuFAiEMB2ATPf6qp/view",
+   "title": "SNOW＿20230924＿115113＿271.jpg"
+  },
+  {
+   "doc_id": "1EazHBOIzPywq5Rj8L8t9N6z72LHqZ3Gu",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1EazHBOIzPywq5Rj8L8t9N6z72LHqZ3Gu/view",
+   "title": "[현금계산서-btf] 비클린 그래픽개발건.pdf"
+  },
+  {
+   "doc_id": "1F245HUcY6j2n-t0EU5VPuwY2n-rBMe0N",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1F245HUcY6j2n-t0EU5VPuwY2n-rBMe0N/view",
+   "title": "2e728cb34850c4abe072c704fac6cddb.jpg"
+  },
+  {
+   "doc_id": "1F3KvV5yM12OSL7qw7ujipuypjfJBZ6JM",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1F3KvV5yM12OSL7qw7ujipuypjfJBZ6JM/view",
+   "title": "790f578814f5ef15ad5e24dde1cfc129.jpg"
+  },
+  {
+   "doc_id": "1FRIixegdGwMJJMwmfW7PFxevLri1WVBB",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1FRIixegdGwMJJMwmfW7PFxevLri1WVBB/view",
+   "title": "다운로드 (7).jpg"
+  },
+  {
+   "doc_id": "1G2PN7UC12rfyrKJ_MjWLyo-PfzZS-qi5",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1G2PN7UC12rfyrKJ_MjWLyo-PfzZS-qi5/view",
+   "title": "Image (10).jfif"
+  },
+  {
+   "doc_id": "1G9yPxWf6qiDETYhUnWt30A3EmZCHGXiv",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1G9yPxWf6qiDETYhUnWt30A3EmZCHGXiv/view",
+   "title": "[견적서-콘콘] 비클린 농구공 제작건.pdf"
+  },
+  {
+   "doc_id": "1GeXlUnXXpRKvL7OAvdWCLU2o3NKwUGob",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1GeXlUnXXpRKvL7OAvdWCLU2o3NKwUGob/view",
+   "title": "대지 9.png"
+  },
+  {
+   "doc_id": "1Gs8iSuBjT-W-Pz-WQPP-HoSJSUkun7Jr",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Gs8iSuBjT-W-Pz-WQPP-HoSJSUkun7Jr/view",
+   "title": "Enscape_2025-04-23-13-45-13.png"
+  },
+  {
+   "doc_id": "1H0phVwZOQBFfcfMpPKBmQW3JQryhRgy0",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1H0phVwZOQBFfcfMpPKBmQW3JQryhRgy0/view",
+   "title": "73b9aec7c968f752e5bab9be4ac4c06b.jpg"
+  },
+  {
+   "doc_id": "1HA5dtOzi4e9v9BdI1ilYE5TSMPKEfM67",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1HA5dtOzi4e9v9BdI1ilYE5TSMPKEfM67/view",
+   "title": "최종계약서 스캔본.pdf"
+  },
+  {
+   "doc_id": "1Hm5Pwvnk6I9lsBOT8suKlHlV9-ESYP6T",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Hm5Pwvnk6I9lsBOT8suKlHlV9-ESYP6T/view",
+   "title": "KakaoTalk_20250407_145221594.jpg"
+  },
+  {
+   "doc_id": "1Hwajs_LZajZwc7krr1gWin4l1_YZ1oKr",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Hwajs_LZajZwc7krr1gWin4l1_YZ1oKr/view",
+   "title": "Image (5).jfif"
+  },
+  {
+   "doc_id": "1I3IWaIEdUPmmeKbnIddAjg6LysCEf773",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1I3IWaIEdUPmmeKbnIddAjg6LysCEf773/view",
+   "title": "SNOW＿20230924＿115249＿799.jpg"
+  },
+  {
+   "doc_id": "1IBwTVDHoEGgPKinuungF-CsoVhn2tJrF",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1IBwTVDHoEGgPKinuungF-CsoVhn2tJrF/view",
+   "title": "다운로드 (10).jpg"
+  },
+  {
+   "doc_id": "1IEsHE3A-BLyNzBGsoea4UT9fZ1JlbtGE",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1IEsHE3A-BLyNzBGsoea4UT9fZ1JlbtGE/view",
+   "title": "b48665993caf78414289bd6ddb8124ba.jpg"
+  },
+  {
+   "doc_id": "1Ib0wtNQkU57bwieIufOS2CMVT9jjOJc9",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Ib0wtNQkU57bwieIufOS2CMVT9jjOJc9/view",
+   "title": "1695616332378.jpg"
+  },
+  {
+   "doc_id": "1IkPdpTu3yU2FdA0FHwNUw6BGTe50OYat",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1IkPdpTu3yU2FdA0FHwNUw6BGTe50OYat/view",
+   "title": "Br_xaAG9fb9Fnkbs5scjcso67oyjuFSpCDXoYXjHzN_FS26IwJw4U6r-nL_Wq9U1axBvGZmSHJmeanefob7MaOyyjyr_UNin3bn3oDZiY5maKlFGKwfzTUBpZoMtyeZrlOcIMHp_jHooAfU2M9Z_0A.webp"
+  },
+  {
+   "doc_id": "1Iowq1DYJxTLF_2HE9sST6jmSkkEY5ygX",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Iowq1DYJxTLF_2HE9sST6jmSkkEY5ygX/view",
+   "title": "41a4bdf7fcc8e304786e1c59e529486b.jpg"
+  },
+  {
+   "doc_id": "1Ipd6_5dWxvJaa8QUozBCniy1sHnsx4ip",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Ipd6_5dWxvJaa8QUozBCniy1sHnsx4ip/view",
+   "title": "image-06-nike-house-of-innovation-shanghai-frame-awards-pop-up-store-design-shop-6_hires.jpg"
+  },
+  {
+   "doc_id": "1JjERoFNfuxduPAWpIBzk6U2gfFVzd4w1",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1JjERoFNfuxduPAWpIBzk6U2gfFVzd4w1/view",
+   "title": "대지 7.png"
+  },
+  {
+   "doc_id": "1JkntCrB1anx3xi8EVJ1yMiCc0iTR-n-A",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1JkntCrB1anx3xi8EVJ1yMiCc0iTR-n-A/view",
+   "title": "Image (6).jfif"
+  },
+  {
+   "doc_id": "1K73k6r3BBhEunWTSaUqNx0vvjBhAiYB8",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1K73k6r3BBhEunWTSaUqNx0vvjBhAiYB8/view",
+   "title": "SNOW＿20230924＿115106＿196.jpg"
+  },
+  {
+   "doc_id": "1KD5Ngry7C1r2rTKHA8JVSc5afYtsIA2o",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1KD5Ngry7C1r2rTKHA8JVSc5afYtsIA2o/view",
+   "title": "9730187a4cdad.webp"
+  },
+  {
+   "doc_id": "1KUX40VsqgOfSQM0g7fpsKJ1BgR2ptoKZ",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1KUX40VsqgOfSQM0g7fpsKJ1BgR2ptoKZ/view",
+   "title": "dbf5ca74cf9df72211a5e1a8af6f88db.jpg"
+  },
+  {
+   "doc_id": "1KgGTTHTBJJ_vlAQDTeCeMq04e1YAa0vk",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1KgGTTHTBJJ_vlAQDTeCeMq04e1YAa0vk/view",
+   "title": "다운로드 (1).jpg"
+  },
+  {
+   "doc_id": "1KxSJ6AhVL-m5WXS2DI9JMnDil6qPnjzz",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1KxSJ6AhVL-m5WXS2DI9JMnDil6qPnjzz/view",
+   "title": "34437_94355_217.jpg"
+  },
+  {
+   "doc_id": "1LfJvEg2EW6-cWGbtpwSbFvCBciwis9C0",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1LfJvEg2EW6-cWGbtpwSbFvCBciwis9C0/view",
+   "title": "비클린 나이키부스 시공 1차견적_그리드.xlsx"
+  },
+  {
+   "doc_id": "1LogrUmI6e__fbx44iaMonicp5A5WVTGB",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1LogrUmI6e__fbx44iaMonicp5A5WVTGB/view",
+   "title": "0e70226cc5d648438c0a9fc102edf1cb.jpg"
+  },
+  {
+   "doc_id": "1LwoQjFLeo_g_7Ry6XiaBXBOYfhovPt5T",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1LwoQjFLeo_g_7Ry6XiaBXBOYfhovPt5T/view",
+   "title": "[세금계산서-게임탑] 비트앤덩크 기기렌탈건(선금50%).JPG"
+  },
+  {
+   "doc_id": "1M1BLdnBiPE5ijA7Hm-vrKpCLhulZHo-b",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1M1BLdnBiPE5ijA7Hm-vrKpCLhulZHo-b/view",
+   "title": "520250123141232.jpg"
+  },
+  {
+   "doc_id": "1M2UOaXKgRfKv4jY38DUc2vc0oDBh1ZRX",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1M2UOaXKgRfKv4jY38DUc2vc0oDBh1ZRX/view",
+   "title": "8ea0b942a501db91f42f3c6fa96fca94.jpg"
+  },
+  {
+   "doc_id": "1MSE0E3uozKoVS4-e-51580vG_27Df2l1",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1MSE0E3uozKoVS4-e-51580vG_27Df2l1/view",
+   "title": "1695619517472.jpg"
+  },
+  {
+   "doc_id": "1MVwA5uzWJCYAkUMWbjfBdPexa8aCNRus",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1MVwA5uzWJCYAkUMWbjfBdPexa8aCNRus/view",
+   "title": "다운로드 (2).jpg"
+  },
+  {
+   "doc_id": "1MnD9Gif1pjlH5BWE37-t14qiK7ly5JoM",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1MnD9Gif1pjlH5BWE37-t14qiK7ly5JoM/view",
+   "title": "btf스튜디오 간이사업자.jpg"
+  },
+  {
+   "doc_id": "1NXLdpjUjvQgw89qh_KDCi1cycokobY2L",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1NXLdpjUjvQgw89qh_KDCi1cycokobY2L/view",
+   "title": "420250123140956.jpg"
+  },
+  {
+   "doc_id": "1NkktC5r41JbF7yarw-dAdUkEj7rVtSov",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1NkktC5r41JbF7yarw-dAdUkEj7rVtSov/view",
+   "title": "4w56j45aj.JPG"
+  },
+  {
+   "doc_id": "1NshYnQVVa0weYUnjCqHyhBKLUI2BCjrJ",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1NshYnQVVa0weYUnjCqHyhBKLUI2BCjrJ/view",
+   "title": "988417c43b2f6ae64e6309ed7edc417f.jpg"
+  },
+  {
+   "doc_id": "1O2WHc2I4LVJK49HitRhbEWi-vxxW1gPp",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1O2WHc2I4LVJK49HitRhbEWi-vxxW1gPp/view",
+   "title": "KakaoTalk_20240914_122333233.jpg"
+  },
+  {
+   "doc_id": "1OCTA1IrA6GHLzJZRuJuGE6IaCeyXCQIM",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1OCTA1IrA6GHLzJZRuJuGE6IaCeyXCQIM/view",
+   "title": "029aa2235b0920a794866d066e59a7c2.jpg"
+  },
+  {
+   "doc_id": "1ONcotnYUkys6SB9Ov6LbmxsrIM6hBjAA",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1ONcotnYUkys6SB9Ov6LbmxsrIM6hBjAA/view",
+   "title": "66cb257f5477e3588f94f8e61d6f80d2.jpg"
+  },
+  {
+   "doc_id": "1Oiit04QxmpmkoMeqwwzKzhnp2jRICG3g",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Oiit04QxmpmkoMeqwwzKzhnp2jRICG3g/view",
+   "title": "0414 나이키우먼스레이스 비클린 야외부스안.pdf"
+  },
+  {
+   "doc_id": "1P7h0f2UYQSfy4l3qSyPCjI-UpMJT-ph-",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1P7h0f2UYQSfy4l3qSyPCjI-UpMJT-ph-/view",
+   "title": "청주 판촉물 레퍼런스.PNG"
+  },
+  {
+   "doc_id": "1PqKFafGDhUgwyr5kHInYtHEFdEqnh8Um",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1PqKFafGDhUgwyr5kHInYtHEFdEqnh8Um/view",
+   "title": "a5e7sj5675s4js4.JPG"
+  },
+  {
+   "doc_id": "1PvcUbac_n9SFGEToXqa2emkq8BlVdGYu",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1PvcUbac_n9SFGEToXqa2emkq8BlVdGYu/view",
+   "title": "다운로드 (3).jpg"
+  },
+  {
+   "doc_id": "1QIow000VinxlEe-Ye5JwNb-i7GexJtqR",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1QIow000VinxlEe-Ye5JwNb-i7GexJtqR/view",
+   "title": "Enscape_2025-04-23-13-44-15.png"
+  },
+  {
+   "doc_id": "1QcdPLziy5gI55qlWWg82tHjXHcXshs2l",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1QcdPLziy5gI55qlWWg82tHjXHcXshs2l/view",
+   "title": "961fb02631218945fdfa24c2346c3226.jpg"
+  },
+  {
+   "doc_id": "1QitAS_gSuL2w2izrt9esI-1KEnMGK74B",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1QitAS_gSuL2w2izrt9esI-1KEnMGK74B/view",
+   "title": "다운로드 (3).jpg"
+  },
+  {
+   "doc_id": "1Qjp-jtKQCFBAIMvqsU3GRO9pFth7qVEW",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Qjp-jtKQCFBAIMvqsU3GRO9pFth7qVEW/view",
+   "title": "다운로드.jpg"
+  },
+  {
+   "doc_id": "1QmZlLYgvw9_G_OlSWKSjkY_m84qdZgC6",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1QmZlLYgvw9_G_OlSWKSjkY_m84qdZgC6/view",
+   "title": "0414 비클린 나이키부스 시공견적요청.pptx"
+  },
+  {
+   "doc_id": "1QyIASMeGBE9haeArgKemI330s1GcnSHr",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1QyIASMeGBE9haeArgKemI330s1GcnSHr/view",
+   "title": "f245d7c9d80d20c241fea2c05b0a81be.jpg"
+  },
+  {
+   "doc_id": "1RSpm_vcPVVQoKxar99pWewW2SuXtu1l1",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1RSpm_vcPVVQoKxar99pWewW2SuXtu1l1/view",
+   "title": "[견적서-btf] 비클린 그래픽개발건.jpg"
+  },
+  {
+   "doc_id": "1RW2y12wAmh8RFSem5Rav4fo7Z5891YNZ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1RW2y12wAmh8RFSem5Rav4fo7Z5891YNZ/view",
+   "title": "비트앤덩크 랩핑 사이즈 예시.ai"
+  },
+  {
+   "doc_id": "1RtpJRorrh4b_VJElptA75fvbXEfZJ4LP",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1RtpJRorrh4b_VJElptA75fvbXEfZJ4LP/view",
+   "title": "df575e461d88a61bed7d1ba5034435c4.jpg"
+  },
+  {
+   "doc_id": "1RugwEX3GfjA3chRi6NOO_ibXOdIfppG5",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1RugwEX3GfjA3chRi6NOO_ibXOdIfppG5/view",
+   "title": "비클린-소개글.png"
+  },
+  {
+   "doc_id": "1Sylbn9fTwQuVINEFCsNKd2chmffRpo8P",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Sylbn9fTwQuVINEFCsNKd2chmffRpo8P/view",
+   "title": "32b9a8d08a9050ad53e9d3c831ba4fee.jpg"
+  },
+  {
+   "doc_id": "1T2TE_gHqb2aEfyHZwYUH5rZ7BBGAAx5g",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1T2TE_gHqb2aEfyHZwYUH5rZ7BBGAAx5g/view",
+   "title": "3462f06055fb25a31099ec97cc15dc24.jpg"
+  },
+  {
+   "doc_id": "1TgcEArPLtKlv-CXRlNFK8RoihccB6U_i",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1TgcEArPLtKlv-CXRlNFK8RoihccB6U_i/view",
+   "title": "미래주유소 (5).jpg"
+  },
+  {
+   "doc_id": "1Ua7nimi6j8BrruI0wF8tH3RoCQrmyLv1",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Ua7nimi6j8BrruI0wF8tH3RoCQrmyLv1/view",
+   "title": "f7ac56b9d710b4704070f9a4d5716c03.jpg"
+  },
+  {
+   "doc_id": "1VC6qwJGx1qA6jVF_RyasJh3-U2Z6q32T",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1VC6qwJGx1qA6jVF_RyasJh3-U2Z6q32T/view",
+   "title": "04b5df119bfa8e36f8d14b1d3ba0b5dc.jpg"
+  },
+  {
+   "doc_id": "1VJKjhGp0WualczR4lx0q2PqdFTLnAa9J",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1VJKjhGp0WualczR4lx0q2PqdFTLnAa9J/view",
+   "title": "c88757696fae51e2e0ea8e65b70b16cf.jpg"
+  },
+  {
+   "doc_id": "1VfHkYDvc83aIHWf9ys-M9dtAoI8c9RIu",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1VfHkYDvc83aIHWf9ys-M9dtAoI8c9RIu/view",
+   "title": "image-07-nike-house-of-innovation-shanghai-frame-awards-pop-up-store-design-shop-4_hires.jpg"
+  },
+  {
+   "doc_id": "1W-YSkTDPPKibwMT_-iZmmp6ge9caV_J1",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1W-YSkTDPPKibwMT_-iZmmp6ge9caV_J1/view",
+   "title": "image-02-nike-house-of-innovation-shanghai-frame-awards-pop-up-store-design-shop-3_hires.jpg"
+  },
+  {
+   "doc_id": "1WSRboYTnu-LuvRNc_A3HXQnvYOfNQ1Gl",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1WSRboYTnu-LuvRNc_A3HXQnvYOfNQ1Gl/view",
+   "title": "비트앤덩크 사용 순서.pptx"
+  },
+  {
+   "doc_id": "1WVV4obhpF1UYKYLTmTW6DPfUecIJVB00",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1WVV4obhpF1UYKYLTmTW6DPfUecIJVB00/view",
+   "title": "대지 4.png"
+  },
+  {
+   "doc_id": "1WYiITh-0jtptccVjw6TQ1m9iJbnO2kbV",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1WYiITh-0jtptccVjw6TQ1m9iJbnO2kbV/view",
+   "title": "20240905＿183034.jpg"
+  },
+  {
+   "doc_id": "1Wab3t7-jinU3BrxHvp9orsMqAkc26-cn",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Wab3t7-jinU3BrxHvp9orsMqAkc26-cn/view",
+   "title": "image.png"
+  },
+  {
+   "doc_id": "1Wm_i0jttYe8qo34vPxNZhX-1IlZ7xlXt",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Wm_i0jttYe8qo34vPxNZhX-1IlZ7xlXt/view",
+   "title": "KakaoTalk_20211106_024726069.jpg"
+  },
+  {
+   "doc_id": "1WmcmnhLN4NuMnSYBBiygoZUxzvMBkq2j",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1WmcmnhLN4NuMnSYBBiygoZUxzvMBkq2j/view",
+   "title": "e7b2c2e3702334d5d3bc7c633f4d7406.jpg"
+  },
+  {
+   "doc_id": "1X4JazBh1i837jjvbNHinkOr2QsY3TPAY",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1X4JazBh1i837jjvbNHinkOr2QsY3TPAY/view",
+   "title": "KakaoTalk_20230501_104334900_06.jpg"
+  },
+  {
+   "doc_id": "1XIDmO6D489dbzHAmo-iRX9GiNTwUz7en",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1XIDmO6D489dbzHAmo-iRX9GiNTwUz7en/view",
+   "title": "3qa46a34ejhn64e.JPG"
+  },
+  {
+   "doc_id": "1XS358ZmySpCaWEI5L6R0L6_B3E7jY2p5",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1XS358ZmySpCaWEI5L6R0L6_B3E7jY2p5/view",
+   "title": "e95bc70fa1ec483819558c19caffe2b2.jpg"
+  },
+  {
+   "doc_id": "1X_lZXUM8ZBhBJmQYM00uj7-zdxKb6M_6",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1X_lZXUM8ZBhBJmQYM00uj7-zdxKb6M_6/view",
+   "title": "다운로드 (1).jpg"
+  },
+  {
+   "doc_id": "1XkWNBbHPweItYsYbjHwIm0n-aI95aBJq",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1XkWNBbHPweItYsYbjHwIm0n-aI95aBJq/view",
+   "title": "Image (12).jfif"
+  },
+  {
+   "doc_id": "1Xol_q9RmAYnfHQo5D5SLmB59CtVSAmfT",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Xol_q9RmAYnfHQo5D5SLmB59CtVSAmfT/view",
+   "title": "be9d81641dd8f0eb876701cde3ce8a12.jpg"
+  },
+  {
+   "doc_id": "1Xpk4ZuhexABtML_4QSH5OGWc4brHCd7B",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Xpk4ZuhexABtML_4QSH5OGWc4brHCd7B/view",
+   "title": "img_20221206180422_exr7ssse.webp"
+  },
+  {
+   "doc_id": "1YWho1JRQFCaKjmzd2zJQXqK_ZORj5Lvh",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1YWho1JRQFCaKjmzd2zJQXqK_ZORj5Lvh/view",
+   "title": "df6895b9601bde044d3051da56c23bad.jpg"
+  },
+  {
+   "doc_id": "1Yo1JJ8Xk_y5KzYcss_uX3EB28ZgWW1Ft",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Yo1JJ8Xk_y5KzYcss_uX3EB28ZgWW1Ft/view",
+   "title": "10.jpg"
+  },
+  {
+   "doc_id": "1YpFiPyucG4jIjeKgbQhVMY3F1xv_v85Z",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1YpFiPyucG4jIjeKgbQhVMY3F1xv_v85Z/view",
+   "title": "대지 6.png"
+  },
+  {
+   "doc_id": "1ZbyLEHQs9JclUrTthKToh_fNrCLWstE3",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1ZbyLEHQs9JclUrTthKToh_fNrCLWstE3/view",
+   "title": "993ff372109813.5bee8ee0c2a01.jpg"
+  },
+  {
+   "doc_id": "1_CmdEirfTkLPqw-vxr6lJ6H6DP8WEK6L",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1_CmdEirfTkLPqw-vxr6lJ6H6DP8WEK6L/view",
+   "title": "SNOW＿20230924＿115325＿373.jpg"
+  },
+  {
+   "doc_id": "1_Of5NE3GV66M6xTrYKVd-wVI4dbC1F0a",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1_Of5NE3GV66M6xTrYKVd-wVI4dbC1F0a/view",
+   "title": "1.jpg"
+  },
+  {
+   "doc_id": "1_W-isYxkIHW7MISPrlAaWKJ5dAMMWl2k",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1_W-isYxkIHW7MISPrlAaWKJ5dAMMWl2k/view",
+   "title": "90ffe6e2757420dc3d9760436fd7acde.jpg"
+  },
+  {
+   "doc_id": "1_hj5eWSDziJhscQNPy-qKqxqVI9Whu47",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1_hj5eWSDziJhscQNPy-qKqxqVI9Whu47/view",
+   "title": "Image (13).jfif"
+  },
+  {
+   "doc_id": "1_rNxdTm-dZ2HYImYC_ZkOzK5GkrlIC_6",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1_rNxdTm-dZ2HYImYC_ZkOzK5GkrlIC_6/view",
+   "title": "a14005143897885a7e3ddb1b2117a75f.jpg"
+  },
+  {
+   "doc_id": "1_wDYBLFnag94h6O0cPMbwyfIcWr6476d",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1_wDYBLFnag94h6O0cPMbwyfIcWr6476d/view",
+   "title": "images.jpg"
+  },
+  {
+   "doc_id": "1aIodQNUQHlWHorWWqEz9R_XUk8SIn1lF",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1aIodQNUQHlWHorWWqEz9R_XUk8SIn1lF/view",
+   "title": "d4df9ab1008800f1e8250a44a1d80a18.jpg"
+  },
+  {
+   "doc_id": "1ah14lt6NtPdN9s3DV39WUOtXxa_k-dkw",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1ah14lt6NtPdN9s3DV39WUOtXxa_k-dkw/view",
+   "title": "06c5ee4fe0edce1eec5b8dddc8a5aaf0.jpg"
+  },
+  {
+   "doc_id": "1bRU6rbmFkjxCV52bXWDb7bfa4DC5ceSC",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1bRU6rbmFkjxCV52bXWDb7bfa4DC5ceSC/view",
+   "title": "9b3c3e94a2417fed0ef30d1fc2f2e062.jpg"
+  },
+  {
+   "doc_id": "1bdX7vjjVGnnSQa6KUGuS0gzOlf7JcKHr",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1bdX7vjjVGnnSQa6KUGuS0gzOlf7JcKHr/view",
+   "title": "a18d24d771676264b6c588043e10bca0.jpg"
+  },
+  {
+   "doc_id": "1cOZiW6VcmSrXrIxxl568zu8HguNoxLw6",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1cOZiW6VcmSrXrIxxl568zu8HguNoxLw6/view",
+   "title": "89743403jipb.jpg"
+  },
+  {
+   "doc_id": "1cra_6-CLKxVztcjUcD90JWq5JbS6modW",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1cra_6-CLKxVztcjUcD90JWq5JbS6modW/view",
+   "title": "1725717691095－0.jpg"
+  },
+  {
+   "doc_id": "1d0SY_-WAUTwyyb_Zw09MWazC96Y05erF",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1d0SY_-WAUTwyyb_Zw09MWazC96Y05erF/view",
+   "title": "Enscape_2025-04-14-21-59-53.png"
+  },
+  {
+   "doc_id": "1d8MngI1NEQSDSQSjUO0CJHbMvvL27_Os",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1d8MngI1NEQSDSQSjUO0CJHbMvvL27_Os/view",
+   "title": "image-04-nike-house-of-innovation-shanghai-frame-awards-pop-up-store-design-shop-5_hires.jpg"
+  },
+  {
+   "doc_id": "1dFLXTRa6U_Z_MIBwmRJQIC9qLbBEWXUg",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1dFLXTRa6U_Z_MIBwmRJQIC9qLbBEWXUg/view",
+   "title": "dd19e28b6e4c226f1d9f884dc4e3ae82.jpg"
+  },
+  {
+   "doc_id": "1dZOXYs9TMyeZZtwLOvoektffbgCUHMlP",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1dZOXYs9TMyeZZtwLOvoektffbgCUHMlP/view",
+   "title": "다운로드.jpg"
+  },
+  {
+   "doc_id": "1dZfVqFsWiIty9d6Bjg7Is8bKIOEG7sHx",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1dZfVqFsWiIty9d6Bjg7Is8bKIOEG7sHx/view",
+   "title": "뉴발란스_포토부스_6대동시진행.jpg"
+  },
+  {
+   "doc_id": "1dfgw-sAVrGBacQODOlL9Pt7UtuAQKxE0",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1dfgw-sAVrGBacQODOlL9Pt7UtuAQKxE0/view",
+   "title": "SNOW＿20230924＿114919＿625.jpg"
+  },
+  {
+   "doc_id": "1dhFXF8S_XGLPm4vTpmufmQJrkPfO3LCO",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1dhFXF8S_XGLPm4vTpmufmQJrkPfO3LCO/view",
+   "title": "38ed769bc9325bb797be19bf60e40d17.jpg"
+  },
+  {
+   "doc_id": "1eroIgvZvaQoKwlp0czSC4XAPAwsd2nWJ",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1eroIgvZvaQoKwlp0czSC4XAPAwsd2nWJ/view",
+   "title": "de50fbeae9c480092e6e06813609f8c8.jpg"
+  },
+  {
+   "doc_id": "1fCc8SM1unyOHnCDi8zNUsKupWYwnYW7y",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1fCc8SM1unyOHnCDi8zNUsKupWYwnYW7y/view",
+   "title": "04.jpg"
+  },
+  {
+   "doc_id": "1fJXhYVQk7bDXRH2WjUllfnHTMPqyBM0g",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1fJXhYVQk7bDXRH2WjUllfnHTMPqyBM0g/view",
+   "title": "Image (8).jfif"
+  },
+  {
+   "doc_id": "1g14Tv4_Oaoiu3XZZx2xtyALYtNUat8lg",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1g14Tv4_Oaoiu3XZZx2xtyALYtNUat8lg/view",
+   "title": "abbac7f404c9fb38e49ea3c0934a61de.jpg"
+  },
+  {
+   "doc_id": "1g16j4YmWCeoOwHYCvcQjK-I15NjgM6JU",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1g16j4YmWCeoOwHYCvcQjK-I15NjgM6JU/view",
+   "title": "2.jpg"
+  },
+  {
+   "doc_id": "1g2muCeK5LGiwXbPdQRdG1Zk8-AXlp6Nj",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1g2muCeK5LGiwXbPdQRdG1Zk8-AXlp6Nj/view",
+   "title": "63ca86e4945ba7612f6583d7_무신사_1056x720_우W.jpg"
+  },
+  {
+   "doc_id": "1g4XP6t9zStMhMn7JUfswFU3oMQFKrqwg",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1g4XP6t9zStMhMn7JUfswFU3oMQFKrqwg/view",
+   "title": "64d4055a52d6035f2b67a53807e4e8a8.jpg"
+  },
+  {
+   "doc_id": "1g8k26ziwaVNJkaYWoJka7QnE_xfk2yxE",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1g8k26ziwaVNJkaYWoJka7QnE_xfk2yxE/view",
+   "title": "SNOW＿20230924＿115058＿248.jpg"
+  },
+  {
+   "doc_id": "1gZM-_CwUzNiK-XsMSipX3UqlTgV4a34K",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1gZM-_CwUzNiK-XsMSipX3UqlTgV4a34K/view",
+   "title": "KakaoTalk_20250407_145238257.png"
+  },
+  {
+   "doc_id": "1ganfVWNuyvoA30ExvZENoOUCBrdzVL-G",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1ganfVWNuyvoA30ExvZENoOUCBrdzVL-G/view",
+   "title": "업로드_SAM_0519.jpg"
+  },
+  {
+   "doc_id": "1h04N8JgL2IZWRBsCYNlGNhgenL7N51mM",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1h04N8JgL2IZWRBsCYNlGNhgenL7N51mM/view",
+   "title": "0417 나이키우먼스레이스 비클린 야외부스안.pptx"
+  },
+  {
+   "doc_id": "1h7Byx2uhDmraCQ7J39-d2CxNDGdHOzEo",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1h7Byx2uhDmraCQ7J39-d2CxNDGdHOzEo/view",
+   "title": "1695619473747.jpg"
+  },
+  {
+   "doc_id": "1hKj068aJCfax0Z4MZi8IAz8ohvHJnBR_",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1hKj068aJCfax0Z4MZi8IAz8ohvHJnBR_/view",
+   "title": "e7e9a0cfd486f85bcb278564254555fd.jpg"
+  },
+  {
+   "doc_id": "1hQ21hJm-y-eBFSy2AxoLzxYRtm2GsmS-",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1hQ21hJm-y-eBFSy2AxoLzxYRtm2GsmS-/view",
+   "title": "클린스테이션-2D.png"
+  },
+  {
+   "doc_id": "1haJX76manfhFvqLBv7ztT2ACrH-lEO_O",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1haJX76manfhFvqLBv7ztT2ACrH-lEO_O/view",
+   "title": "0417 비클린 나이키부스 인테리어 견적서_현백공유(수정).pdf"
+  },
+  {
+   "doc_id": "1hjHiesLhm_hAj5jkBJRaDbySndWtmHy1",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1hjHiesLhm_hAj5jkBJRaDbySndWtmHy1/view",
+   "title": "d4e5b09419460c3f817f699f8486c526.jpg"
+  },
+  {
+   "doc_id": "1hxLew-6_a0wzoabUTDmP5Cpyd5A3bOHC",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1hxLew-6_a0wzoabUTDmP5Cpyd5A3bOHC/view",
+   "title": "f6a0ad735c4ac4ab1870abc5d4909ad5.jpg"
+  },
+  {
+   "doc_id": "1hxljFUS0RuP5wxOaeI8h-eo6AlUus-I9",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1hxljFUS0RuP5wxOaeI8h-eo6AlUus-I9/view",
+   "title": "btf스튜디오 통장사본.jpg"
+  },
+  {
+   "doc_id": "1i-RAYwQ2IXyB0t8PFnIARSnKxgTzHUab",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1i-RAYwQ2IXyB0t8PFnIARSnKxgTzHUab/view",
+   "title": "29040b92741448daf3977ccd83e31928.jpg"
+  },
+  {
+   "doc_id": "1iDeXuMu3SRIusnDiyIeE2Jo2fNsQlaiN",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1iDeXuMu3SRIusnDiyIeE2Jo2fNsQlaiN/view",
+   "title": "image-05-nike-house-of-innovation-shanghai-frame-awards-pop-up-store-design-shop-7_hires.jpg"
+  },
+  {
+   "doc_id": "1iYLaj03m2e_zC-GZrZdlaUs5ljoEArlD",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1iYLaj03m2e_zC-GZrZdlaUs5ljoEArlD/view",
+   "title": "다운로드 (13).jpg"
+  },
+  {
+   "doc_id": "1jFyrZJaeXmxcqajwiEHa9QKZAom2tkxU",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1jFyrZJaeXmxcqajwiEHa9QKZAom2tkxU/view",
+   "title": "1725717691095－2.jpg"
+  },
+  {
+   "doc_id": "1jMqYWdK_dXccWhOuHvj3X3HFSRJh1wGJ",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1jMqYWdK_dXccWhOuHvj3X3HFSRJh1wGJ/view",
+   "title": "물총게임.JPG"
+  },
+  {
+   "doc_id": "1jQTnugueQPcLyERv6zMSMWIc7XEgSSMr",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1jQTnugueQPcLyERv6zMSMWIc7XEgSSMr/view",
+   "title": "20230924＿114821.jpg"
+  },
+  {
+   "doc_id": "1jS98Sq17X-uZOFFJiDJzH7KFGzFXgsvy",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1jS98Sq17X-uZOFFJiDJzH7KFGzFXgsvy/view",
+   "title": "Image (9).jfif"
+  },
+  {
+   "doc_id": "1jaF-EmRrlCcdvnb03o4XphfdFfpZTL_z",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1jaF-EmRrlCcdvnb03o4XphfdFfpZTL_z/view",
+   "title": "다운로드 (2).jpg"
+  },
+  {
+   "doc_id": "1jbQ0DxWbhCZLukce7n1GedSLTzCZisl5",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1jbQ0DxWbhCZLukce7n1GedSLTzCZisl5/view",
+   "title": "주유뽑기기계.JPG"
+  },
+  {
+   "doc_id": "1k3v-SELtKPKVGohMSv3Xw1AJGm7JiM0j",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1k3v-SELtKPKVGohMSv3Xw1AJGm7JiM0j/view",
+   "title": "0325 나이키우먼스레이스 비클린 야외부스 컨세안.pdf"
+  },
+  {
+   "doc_id": "1kU1FmYrNhC7pgy7tu0MPse7CBzwZ3qK6",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1kU1FmYrNhC7pgy7tu0MPse7CBzwZ3qK6/view",
+   "title": "0423 나이키우먼스레이스 비클린 야외부스안.pptx"
+  },
+  {
+   "doc_id": "1ktRotmNa3BwMT2YtE6FnshU-T_JljVfn",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ktRotmNa3BwMT2YtE6FnshU-T_JljVfn/view",
+   "title": "클린스테이션 2D.ai"
+  },
+  {
+   "doc_id": "1lCvNsJvO6oMCB3oIR_lM5bw7Cnd_hqyx",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1lCvNsJvO6oMCB3oIR_lM5bw7Cnd_hqyx/view",
+   "title": "대지 5.png"
+  },
+  {
+   "doc_id": "1lUzH3WzfIbhN3v8AIHDiPnDoroespx1O",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1lUzH3WzfIbhN3v8AIHDiPnDoroespx1O/view",
+   "title": "546qa45j6aw45j.JPG"
+  },
+  {
+   "doc_id": "1lk5meUkfb003KmrHHld2bf0Ca5Zi70Di",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1lk5meUkfb003KmrHHld2bf0Ca5Zi70Di/view",
+   "title": "high.jpeg"
+  },
+  {
+   "doc_id": "1m1LbUCavGz-VsZtgdGHUd6tK6PeBTwcp",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1m1LbUCavGz-VsZtgdGHUd6tK6PeBTwcp/view",
+   "title": "Enscape_2025-04-23-13-44-30.png"
+  },
+  {
+   "doc_id": "1mNRjCgSWKbS5OdbZwq5vftZqVnUyKqUh",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1mNRjCgSWKbS5OdbZwq5vftZqVnUyKqUh/view",
+   "title": "다운로드 (5).jpg"
+  },
+  {
+   "doc_id": "1mWgip7FnZ8dvvQEu8Hl9VxH5-wtZHIlh",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1mWgip7FnZ8dvvQEu8Hl9VxH5-wtZHIlh/view",
+   "title": "0325 나이키우먼스레이스 비클린 야외부스 컨세안.pptx"
+  },
+  {
+   "doc_id": "1mZxNX8qYa4GbiaHn6YlmP1rYehxVT8k-",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1mZxNX8qYa4GbiaHn6YlmP1rYehxVT8k-/view",
+   "title": "ea01a6d5998665dbdea9051e0b47b596.jpg"
+  },
+  {
+   "doc_id": "1n6G2jV_mRCuRbu4JkCYzdZw6KXfTdOnS",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1n6G2jV_mRCuRbu4JkCYzdZw6KXfTdOnS/view",
+   "title": "da936e50448daef74b3f0ef6dd2b8569.jpg"
+  },
+  {
+   "doc_id": "1nO28UVo2fUyIQ09ItlTfMkZH4GSf3EWM",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1nO28UVo2fUyIQ09ItlTfMkZH4GSf3EWM/view",
+   "title": "395774ab79889aedb4802d6f792092a1.jpg"
+  },
+  {
+   "doc_id": "1nVAOocsWP37Vof5NwYdgbGww4kWTqDLx",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1nVAOocsWP37Vof5NwYdgbGww4kWTqDLx/view",
+   "title": "대지 1.png"
+  },
+  {
+   "doc_id": "1nVnouFv32DFfYXjpZfyo4Kduq6OjZjka",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1nVnouFv32DFfYXjpZfyo4Kduq6OjZjka/view",
+   "title": "5fe3f4ca619429773ea47fade070a82c.jpg"
+  },
+  {
+   "doc_id": "1nVywc6j8OfW1q_VTSICnB7aox7tk4bVs",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1nVywc6j8OfW1q_VTSICnB7aox7tk4bVs/view",
+   "title": "SNOW＿20230924＿115154＿772.jpg"
+  },
+  {
+   "doc_id": "1nfpSuizwqknBxuYBUQfLxX3CfqyjCfGf",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1nfpSuizwqknBxuYBUQfLxX3CfqyjCfGf/view",
+   "title": "0411 비클린 농구골대 렌탈건(2대).xlsx"
+  },
+  {
+   "doc_id": "1notJfmDOqa0mvoqBN6TsBbkiA29CdI3T",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1notJfmDOqa0mvoqBN6TsBbkiA29CdI3T/view",
+   "title": "fd73c3f43a2102209ffd633765488cbc.jpg"
+  },
+  {
+   "doc_id": "1o178Z0g7vObN3DTfKF4qSFSEnxwgJ51l",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1o178Z0g7vObN3DTfKF4qSFSEnxwgJ51l/view",
+   "title": "fba351182f03d9806d9bcb9432b2a07f.jpg"
+  },
+  {
+   "doc_id": "1oNyyK87ZZhWrhXY8tQ8uJhws3rZrppoK",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1oNyyK87ZZhWrhXY8tQ8uJhws3rZrppoK/view",
+   "title": "f73dfdf211b8489cdfee38e9446201ef.jpg"
+  },
+  {
+   "doc_id": "1pGD7dx8ciMA26JmCxgUEKUNjvKp8QldF",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1pGD7dx8ciMA26JmCxgUEKUNjvKp8QldF/view",
+   "title": "비트앤덩크 랩핑 사이즈 최신.pptx"
+  },
+  {
+   "doc_id": "1powIoyO3N5u-v5roGqvi_uzusSnnv-NN",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1powIoyO3N5u-v5roGqvi_uzusSnnv-NN/view",
+   "title": "제자리달리기 게임 (2).JPG"
+  },
+  {
+   "doc_id": "1pt5Evh6OgDQBaKV5hRB_a3AV8vugRw0j",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1pt5Evh6OgDQBaKV5hRB_a3AV8vugRw0j/view",
+   "title": "1695351555921.jpg"
+  },
+  {
+   "doc_id": "1pvQHG4v_t0t9dh9qKMcVAYhQdg-bn5Wf",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1pvQHG4v_t0t9dh9qKMcVAYhQdg-bn5Wf/view",
+   "title": "Image (14).jfif"
+  },
+  {
+   "doc_id": "1q8i_BmArdCnUoXhcS2B9r4b5sIRTc8oM",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1q8i_BmArdCnUoXhcS2B9r4b5sIRTc8oM/view",
+   "title": "KakaoTalk_20240914_122333334.jpg"
+  },
+  {
+   "doc_id": "1qHXM3x-gzT9T-3d0DiuQuV-IobZsxN6R",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1qHXM3x-gzT9T-3d0DiuQuV-IobZsxN6R/view",
+   "title": "AKR20230504041100003_01_i_P4.jpg"
+  },
+  {
+   "doc_id": "1qKvalWvbr7a9E8DnysxEYI8blMvDdAUz",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1qKvalWvbr7a9E8DnysxEYI8blMvDdAUz/view",
+   "title": "k169810p1n2.jpg"
+  },
+  {
+   "doc_id": "1qLRfi__WHsONPtyLRsRn1Z2CxH_CHvwE",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1qLRfi__WHsONPtyLRsRn1Z2CxH_CHvwE/view",
+   "title": "Enscape_2025-04-23-15-50-05.png"
+  },
+  {
+   "doc_id": "1qa9j9o76IJLLbQPk_OqrMxpTHX5lq1qN",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1qa9j9o76IJLLbQPk_OqrMxpTHX5lq1qN/view",
+   "title": "다운로드 (12).jpg"
+  },
+  {
+   "doc_id": "1qarbN4WrUeFxIjVkf2iTBQL5p2bCHf8L",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1qarbN4WrUeFxIjVkf2iTBQL5p2bCHf8L/view",
+   "title": "c40ade476d6b57b2de3cd1eec5936a7e.jpg"
+  },
+  {
+   "doc_id": "1qaubaU1v6_pEcub2xzBUZrn1-2cwG3Yu",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1qaubaU1v6_pEcub2xzBUZrn1-2cwG3Yu/view",
+   "title": "비트앤덩크 사용 설명서.png"
+  },
+  {
+   "doc_id": "1qc_Y49tlGG1MC7seIZW0jg1q2ovQqmtz",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1qc_Y49tlGG1MC7seIZW0jg1q2ovQqmtz/view",
+   "title": "320241202165713.jpg"
+  },
+  {
+   "doc_id": "1rA9CnDVnpVkFVEffTLmhGYaFLTrU67RY",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1rA9CnDVnpVkFVEffTLmhGYaFLTrU67RY/view",
+   "title": "7e4bb36bc7ff036f1888a926be34cc0a.jpg"
+  },
+  {
+   "doc_id": "1rpWyO3Sn5k_Rm0LX2pR-v9MH81GfSGWt",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1rpWyO3Sn5k_Rm0LX2pR-v9MH81GfSGWt/view",
+   "title": "데시벨.jpg"
+  },
+  {
+   "doc_id": "1sIDV6NLrxaiBr3wq1VwJiQhc_1ANG1mZ",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1sIDV6NLrxaiBr3wq1VwJiQhc_1ANG1mZ/view",
+   "title": "T6NyWwRiQjCZfyAurdYn24fSIJBNRqWtqIR-lEYVma1Qo5GNqygzM6Wbl3QSQYQ4VfDrRDWrjLILYOJxHSCdRSH3OkGdz5myFWrKPmdr6EivhXwkDxJ63_r8pictfwbWDDb12shfmIMdJQwRfI1sbw.webp"
+  },
+  {
+   "doc_id": "1sds1RW9kpPNdwtWZQmU1q92LyPyfmTzR",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1sds1RW9kpPNdwtWZQmU1q92LyPyfmTzR/view",
+   "title": "11c046851a7da0fad89638a02748da26.jpg"
+  },
+  {
+   "doc_id": "1uL12DdOccLXMdwy-08Pt8BQZsRj-MrqN",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1uL12DdOccLXMdwy-08Pt8BQZsRj-MrqN/view",
+   "title": "7d6547f37da2aafe2c5d64ffce283812.jpg"
+  },
+  {
+   "doc_id": "1uXKalCnJJrLIL67FvHEzEzsnpkhYzg2O",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1uXKalCnJJrLIL67FvHEzEzsnpkhYzg2O/view",
+   "title": "미래주유소 (1).jpg"
+  },
+  {
+   "doc_id": "1utVh4CWz2IqgamqEzsltbLBd6JUTs4-e",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1utVh4CWz2IqgamqEzsltbLBd6JUTs4-e/view",
+   "title": "다운로드 (2).jpg"
+  },
+  {
+   "doc_id": "1v38cCgkQm8dGPSLnF-mIsCvfJE2KCvVX",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1v38cCgkQm8dGPSLnF-mIsCvfJE2KCvVX/view",
+   "title": "d173be09f22ea8204eb38c07c024650f.jpg"
+  },
+  {
+   "doc_id": "1v9S9pPVeGkFdauRyNMMFceul8TxHmU1f",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1v9S9pPVeGkFdauRyNMMFceul8TxHmU1f/view",
+   "title": "02.jpg"
+  },
+  {
+   "doc_id": "1vQ6BeB7ArA2gDtCJxL6ut0Dbi9w7KRn7",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1vQ6BeB7ArA2gDtCJxL6ut0Dbi9w7KRn7/view",
+   "title": "다운로드 (1).jpg"
+  },
+  {
+   "doc_id": "1vvPIhI2xOUaENgcgiH0tTExnPRttZ-ZN",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1vvPIhI2xOUaENgcgiH0tTExnPRttZ-ZN/view",
+   "title": "78;.JPG"
+  },
+  {
+   "doc_id": "1vvd05-RkU9BKY1jqoxW8SjMwB3Nc8AT6",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1vvd05-RkU9BKY1jqoxW8SjMwB3Nc8AT6/view",
+   "title": "w35g3wag.png"
+  },
+  {
+   "doc_id": "1x1R5gW55kI6ca98pRz0UMlaSXwXPxEut",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1x1R5gW55kI6ca98pRz0UMlaSXwXPxEut/view",
+   "title": "0417 나이키우먼스레이스 비클린 야외부스안.pdf"
+  },
+  {
+   "doc_id": "1x5sxvsR8TR8kGIuPSNZDXLLoPgAfMzyX",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1x5sxvsR8TR8kGIuPSNZDXLLoPgAfMzyX/view",
+   "title": "beab960a189362448ba5891239d613ec.jpg"
+  },
+  {
+   "doc_id": "1xC3tkWgHSmMl5sEcN0ISjBB5tjIYk9q2",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1xC3tkWgHSmMl5sEcN0ISjBB5tjIYk9q2/view",
+   "title": "405735df479f21316baef10a302ba025.jpg"
+  },
+  {
+   "doc_id": "1xDr_Jj95k8LnQtelE0aklEPWTPl0RMi5",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1xDr_Jj95k8LnQtelE0aklEPWTPl0RMi5/view",
+   "title": "2728294118_uZ4BUC1K_f5b0971509d321b112b884e566f6e7ceac8ca7a3.jpg"
+  },
+  {
+   "doc_id": "1xj7_Br49E6IcLjqWAEEpDsY-PfPVio3y",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1xj7_Br49E6IcLjqWAEEpDsY-PfPVio3y/view",
+   "title": "1ec0dca42c7cc6fd211f4b1ffe4b6d50.jpg"
+  },
+  {
+   "doc_id": "1yHgtP4UUZM9cMuSjoQbmEjBXRLEX3Crn",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1yHgtP4UUZM9cMuSjoQbmEjBXRLEX3Crn/view",
+   "title": "Image (11).jfif"
+  },
+  {
+   "doc_id": "1yRADWiVvr60MwgzlaPEYoRbk7LUGNHFI",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1yRADWiVvr60MwgzlaPEYoRbk7LUGNHFI/view",
+   "title": "17194390b60f7da4ee414b0cb28dc640.jpg"
+  },
+  {
+   "doc_id": "1yfmfW7ofooWVXYILTLjOeCiXfv4ZEsMG",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1yfmfW7ofooWVXYILTLjOeCiXfv4ZEsMG/view",
+   "title": "dr67jd5r6j7.JPG"
+  },
+  {
+   "doc_id": "1ygAds8EKYkVA6xXbhFQX6ng5lByzQvpE",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1ygAds8EKYkVA6xXbhFQX6ng5lByzQvpE/view",
+   "title": "다운로드 (4).jpg"
+  },
+  {
+   "doc_id": "1yo0_-Y-o6XRY1quoTWBTD9Xq0H3MZp5N",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1yo0_-Y-o6XRY1quoTWBTD9Xq0H3MZp5N/view",
+   "title": "비클린 결과보고서.pdf"
+  },
+  {
+   "doc_id": "1zrPkmK5VzQ4q8AdOs6EP8GxyJEpQuWO9",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1zrPkmK5VzQ4q8AdOs6EP8GxyJEpQuWO9/view",
+   "title": "659f6a31ae56824d4b6e202e147a3ba8.jpg"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 6건: 디자인외주계약서[] 비클린 그래픽개발건_스튜디오btf_, 디자인외주계약서[] 비클린 그래픽개발건_스튜디오btf., 0325 나이키우먼스레이스 비클린 야외부스 컨세안.pp, 0423 나이키우먼스레이스 비클린 야외부스안.pptx, 0414 비클린 나이키부스 시공견적요청.pptx, 비클린 결과보고서.pdf. 미확실: 정확한 개최 도시/지역/venue명(나이키 우먼스 레이스 개최지 미명시); 팝업 운영 총액 및 수수료 구조(계약서는 디자인 외주 건만 존재); 방문자 수 및 소비자 매출 실측치 없음; counting_method 판정 불가(보고서에 집계 정의 없음); 예상 방문자 수(plan_visitors_expected) 미기재; 면적(10평대로만 표기, 정확한 평수 불명확) | fee 계약서화(2026-07-27) | 계약총액 신뢰불가 플래그 — 수기 확인 필요"
+ }
+}

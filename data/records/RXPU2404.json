@@ -1,0 +1,141 @@
+{
+ "record_id": "RXPU2404",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:포켓몬_pokemon",
+  "space_id": "unresolved:롯데호텔월드_라운지",
+  "client_party_id": "unresolved:롯데호텔",
+  "brand_key": "포켓몬",
+  "space_key": "롯데호텔월드"
+ },
+ "intervention": {
+  "concept": "롯데호텔 월드 라운지의 망고 에프터눈티 디스플레이에 피카츄 3가지 모습의 아크릴 스탠드와 포맥스 전면부를 활용한 포켓몬 포토존 연출. 높낮이가 다른 입체적 레이어 연출을 적용.",
+  "brand_name": "포켓몬 x 롯데호텔",
+  "experience_elements": [
+   "피카츄 캐릭터 아크릴 스탠드(3종)",
+   "포맥스 전면부 포켓볼&로고",
+   "망고 에프터눈티 디스플레이",
+   "포토존"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "피카츄",
+   "몬스터볼",
+   "아크릴 스탠드",
+   "포맥스",
+   "입체 레이어 연출",
+   "롯데호텔 메인컬러"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": null,
+   "venue_name": "롯데호텔 월드",
+   "venue_type": "호텔 라운지",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-04-30",
+   "to": "2024-04-30",
+   "days": 1
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "구성 총계 1,990,000원(VAT 10% 별도). 디자인 기본설계 500,000원, 제작(아크릴 8T 3중인쇄+스탠드 235,000원x3=705,000원, 포맥스 10T 인쇄 450,000원), 운송비(세팅 운송비 150,000원, 퀵 50,000원), 대행수수료 정가항목 제외 소계의 10% 135,500원. 소계 1,855,000원. 철거 운송비/폐기물비 0원."
+  },
+  "brand_requirements": [
+   "몬스터볼로 변경 및 사이즈 변경",
+   "권리표기 변경, 위치 1곳으로 변경",
+   "롯데호텔 메인컬러로 색상 변경",
+   "전달받은 파일로 로고 변경",
+   "포켓몬 로고 마크 독립성 확보(상단 글자와 간격 확보)"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "롯데호텔 월드 라운지 포토존 연출"
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 0.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 0.1,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 58,
+    "holiday_until": 4,
+    "holiday_block_in": 0,
+    "nat_event_gap": 20,
+    "nat_event": null,
+    "doc_lag_days": 0,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": 1.99,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "12x5MlLM4FH0YVWHMq7FEGRDuUS4vw2S2",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/12x5MlLM4FH0YVWHMq7FEGRDuUS4vw2S2/view",
+   "title": "[스위트스팟] 롯데호텔X포켓몬 포토존 최종컨셉시안_2.pdf"
+  },
+  {
+   "doc_id": "17VnqjQ0Y6xBMJN-As67YEtz-t2E68jdm",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17VnqjQ0Y6xBMJN-As67YEtz-t2E68jdm/view",
+   "title": "[스위트스팟]롯데호텔x포켓몬 포토존 구성_견적서_240430.pdf"
+  },
+  {
+   "doc_id": "1bUsWAGRwVDuiTGVHC-lFinbzbQsLUlC8",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1bUsWAGRwVDuiTGVHC-lFinbzbQsLUlC8/view",
+   "title": "[스위트스팟]롯데호텔x포켓몬 포토존 구성_견적서_240430.pdf"
+  },
+  {
+   "doc_id": "1cnpHfbs_za0gOqSZp8Vi58Bin-ss745j",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1cnpHfbs_za0gOqSZp8Vi58Bin-ss745j/view",
+   "title": "계약서_내용없음.txt"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: [스위트스팟] 롯데호텔X포켓몬 포토존 최종컨셉시안_2., [스위트스팟]롯데호텔x포켓몬 포토존 구성_견적서_240. 미확실: 결과보고서 없음 - 방문자/매출 실측 데이터 전무; 정확한 운영 기간(디스플레이 설치 기간) 불명확, 견적일자만 존재; 면적(평) 정보 없음; 도시 외 상세 주소/구 정보 없음; 기획서상 예상 방문자 수 없음"
+ }
+}

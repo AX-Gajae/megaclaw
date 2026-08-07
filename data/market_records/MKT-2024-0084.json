@@ -1,0 +1,102 @@
+{
+ "market_record_id": "MKT-2024-0084",
+ "event_name": "스파오 '푸퍼 랜드(PUFFER LAND)' 성수 팝업스토어",
+ "brand": "스파오 SPAO (이랜드월드)",
+ "ip_or_collab": null,
+ "category": "fashion",
+ "intervention": {
+  "concept_description": "대표 상품 '푸퍼' 주제 체험형 팝업",
+  "experience_elements": [
+   "짚꾸존(패딩 지퍼 꾸미기)",
+   "포토부스",
+   "6.99초 맞추기 드로우 이벤트",
+   "24FW 푸퍼 컬렉션 쇼룸"
+  ],
+  "promotions": [
+   "6.99초 스톱워치 이벤트"
+  ],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "성수동",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2024-10-30",
+  "period_to": "2024-11-10",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 12,
+    "weekend_share": 0.33,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 20000,
+  "visitors_period_days": 12,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "이랜드 스파오 발표 인용. 주말 일평균 1500명 이상",
+  "visitors_source_quote": "지난 10월 30일부터 11월 10일까지 12일간 누적 방문객 2만명을 기록하며 뜨거운 호응을 얻었다. 특히 주말에는 일평균 1500명 이상의 방문객이 몰리기도 했다.",
+  "visitors_source_url": "https://fashionbiz.co.kr/article/211718",
+  "visitors_source_date": "2024-11-11",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "포토부스 대기행렬",
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "푸퍼의 폭신한 디자인을 형상화한 포토부스 역시 대기행렬이 이어지며 큰 인기를 끌었다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": true,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "병합 레코드: MKT-2024-0003 | [병합:MKT-2024-0003] 한국면세뉴스(2024-11-11)는 기간 10/30~11/10 명시.",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 20000,
+   "basis": "organizer_claim",
+   "quote": "지난달 30일부터 12일간 성수동에서 진행된 '푸퍼 랜드' 팝업스토어는 누적 방문객 2만 명을 기록하며 뜨거운 호응을 얻었다. 특히 주말에는 일 평균 1,500명 이상의 방문객이 몰려 성황을 이뤘다.",
+   "url": "http://www.fi.co.kr/main/view.asp?idx=84138",
+   "date": "2024-11-12"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

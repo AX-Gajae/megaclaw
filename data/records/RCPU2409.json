@@ -1,0 +1,195 @@
+{
+ "record_id": "RCPU2409",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:디즈니픽사_인사이드아웃2",
+  "space_id": "unresolved:더현대서울_5F_에픽서울_인사이드아웃2팝업MD존",
+  "client_party_id": "unresolved:주식회사현대백화점",
+  "brand_key": "인사이드아웃2",
+  "space_key": "더현대서울"
+ },
+ "intervention": {
+  "concept": "디즈니·픽사 인사이드아웃2 IP 팝업스토어로 더현대서울 5층 에픽서울 존에서 캐릭터 MD 상품을 판매하는 리테일 중심 팝업. 감정 캐릭터(기쁨·슬픔·버럭·까칠·소심·불안·따분·부럽·당황) 굿즈를 다품목 위탁 판매.",
+  "brand_name": "디즈니픽사 인사이드아웃2 팝업스토어",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [
+   "IP팝업",
+   "캐릭터MD",
+   "백화점팝업"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "영등포구",
+   "venue_name": "더현대 서울",
+   "venue_type": "백화점(5층 에픽서울 인사이드아웃2 팝업 MD존)",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": 7.59,
+  "period": {
+   "from": "2024-05-24",
+   "to": "2024-06-16",
+   "days": 24
+  },
+  "season": "초여름",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "위탁수수료: 고정 인건비 지급 + 고정 운영비 300만원(VAT 별도). 판매목표 200,000,000원(수탁자 운영 매출 기준). 수수료는 익월 5일까지 세금계산서 발행, 매월 25일 지급. 견적서 총계 24,660,000원(VAT 별도): 판매인력 소계 19,860,000원(본사 슈퍼바이저 300,000원×3일, 판매매니저 130,000원×24일, 판매스태프 120,000원×5명×24일, 식대 10,000원×6명×24일), 상품검수/세팅/철수 1,800,000원, 대행수수료 3,000,000원. 재고부족 시 최초판매가 60% 배상. 기준 T/O 6명. 담보 해당없음. | 계약구조 확인(2026-07-27): 위탁운영형 — 계약서가 총액 대신 견적서/조건안을 준거로 지정, 따라서 견적 총액이 계약상 확정액"
+  },
+  "brand_requirements": [
+   "위탁자 지정 가격으로 판매가격 표시 및 판매",
+   "위탁자 사전 협의 없이 단독 판촉·홍보활동 및 사은품 증정 금지",
+   "위탁자 지정 유니폼·쇼핑백·포장용품 사용",
+   "월급 명세서 제출 필수",
+   "고객 개인정보 수집 시 위탁자 지정 양식 사용",
+   "월 1회 정기 재고조사 및 연 2회 정기 재고조사 협조",
+   "기준 T/O 6명 운영"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대서울 5층 에픽서울 존"
+  },
+  "derived": {
+   "duration": {
+    "days": 24,
+    "weekend_share": 0.33,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 18,
+    "holiday_until": 113,
+    "holiday_block_in": 0,
+    "nat_event_gap": 44,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": "서울 영등포구 여의대로 108"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서가 제공되지 않아 실측 방문자 및 POS 매출 데이터 없음. 계약상 판매목표 200,000,000원은 목표치이며 실측 매출 아님.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": 24.66,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "10RsBZndEPZkf2i3hl7JVYloaiLYUyLhk",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/10RsBZndEPZkf2i3hl7JVYloaiLYUyLhk/view",
+   "title": "[스위트스팟] 더현대서울_인사이드아웃2 팝업스토어_인력운영안.pdf"
+  },
+  {
+   "doc_id": "11ctSEgnko7x2rDajGcX9U22meTz8qR_W",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/11ctSEgnko7x2rDajGcX9U22meTz8qR_W/view",
+   "title": "더현서5F_디즈니팝업_견적서수정_0517(pdf).pdf"
+  },
+  {
+   "doc_id": "12iXPkH2P70BDc3Rzi7RS_3vIrynxauep",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/12iXPkH2P70BDc3Rzi7RS_3vIrynxauep/view",
+   "title": "③ 별첨 2. 관리비 비용 분담표(더현대서울_스위트스팟).pdf"
+  },
+  {
+   "doc_id": "13SsSEyPbh6W2xTGNeIDWOFxHYhs27e-j",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/13SsSEyPbh6W2xTGNeIDWOFxHYhs27e-j/view",
+   "title": "① 자주MD 매장 판매 위수탁 거래계약서(더현대서울_스위트스팟).pdf"
+  },
+  {
+   "doc_id": "19v-aTxTyA09ooALuBtQALVN98t2XeYlW",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/19v-aTxTyA09ooALuBtQALVN98t2XeYlW/view",
+   "title": "2-2.시설 및 집기목록(무상임대차계약서 포함)(더현대서울_스위트스팟).pdf"
+  },
+  {
+   "doc_id": "1Hzevxe1NtlRDF-76k3qJmQmMJHrjRqx-",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Hzevxe1NtlRDF-76k3qJmQmMJHrjRqx-/view",
+   "title": "Thumbs.db"
+  },
+  {
+   "doc_id": "1JceCrE6HSe8zNznkQN7mZRhWyIpFFI4l",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1JceCrE6HSe8zNznkQN7mZRhWyIpFFI4l/view",
+   "title": "① 자주MD 매장 판매 위수탁 거래계약서(더현대서울_스위트스팟).pdf"
+  },
+  {
+   "doc_id": "1X_BqoVObCXqYKJ6i5S4mTJ413_qh0cF7",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1X_BqoVObCXqYKJ6i5S4mTJ413_qh0cF7/view",
+   "title": "~$더현서5F_디즈니팝업_견적서.xlsx"
+  },
+  {
+   "doc_id": "1fZ96V0rbCNLjGs5WmdjtBpY1P3FGTt-J",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1fZ96V0rbCNLjGs5WmdjtBpY1P3FGTt-J/view",
+   "title": "더현서5F_디즈니팝업_견적서수정_0517(pdf).pdf"
+  },
+  {
+   "doc_id": "1j7XkhO7AYRCuonop-6OOrsoPon_Y12oX",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1j7XkhO7AYRCuonop-6OOrsoPon_Y12oX/view",
+   "title": "더현서5F_디즈니팝업_견적서수정_0517.xlsx"
+  },
+  {
+   "doc_id": "1n0z0v-s6FNbTycCw1Ca9qK6NanCYQ8ur",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1n0z0v-s6FNbTycCw1Ca9qK6NanCYQ8ur/view",
+   "title": "현대백화점 인사이드아웃 매장판매 운영위탁계약서.pdf"
+  },
+  {
+   "doc_id": "1p5LV6muG5Ve6st7XDqOjdXkei8unwBlU",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1p5LV6muG5Ve6st7XDqOjdXkei8unwBlU/view",
+   "title": "더현서 인사이드아웃 무상임대차 계약서.pdf"
+  },
+  {
+   "doc_id": "1tgoqJaIvpljVYPG0NVrVsAq-bbm_IsCC",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1tgoqJaIvpljVYPG0NVrVsAq-bbm_IsCC/view",
+   "title": "2-2.시설 및 집기목록(무상임대차계약서 포함)(더현대서울_스위트스팟).pdf"
+  },
+  {
+   "doc_id": "1z5D413K1KFOWqYfDaRzHCQ7MjZon26GC",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1z5D413K1KFOWqYfDaRzHCQ7MjZon26GC/view",
+   "title": "스위트스팟_더현대 서울 인사이드아웃2 상품리스트(더현대 송부용).xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 4건: 스위트스팟_더현대 서울 인사이드아웃2 상품리스트(더현대, [스위트스팟] 더현대서울_인사이드아웃2 팝업스토어_인력, ① 자주MD 매장 판매 위수탁 거래계약서(더현대서울_스, 더현서5F_디즈니팝업_견적서수정_0517(pdf).pd. 미확실: 결과보고서 부재로 일일/총 방문자·매출 실측 없음; counting_method 판정 근거 없음(unknown); 기획서 예상 방문자 수 없음; client_name(현대백화점) 정식 party_id 미해결; venue 소재 district는 통상 더현대서울 위치 기준으로 추정; area_pyeong는 전용면적 25.1㎡ 환산치; 체험요소·프로모션·연출 상세 문서 부재"
+ }
+}

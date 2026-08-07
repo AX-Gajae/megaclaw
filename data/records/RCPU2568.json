@@ -1,0 +1,160 @@
+{
+ "record_id": "RCPU2568",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:스카이랩스",
+  "space_id": "unresolved:미상",
+  "client_party_id": null,
+  "brand_key": "스카이랩스",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "스카이랩스 팝업스토어. 세부 컨셉 정보는 제공된 문서에 없음.",
+  "brand_name": "스카이랩스",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-12-01",
+   "to": "",
+   "days": null
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 53,
+    "holiday_until": 75,
+    "holiday_block_in": 0,
+    "nat_event_gap": 18,
+    "nat_event": null,
+    "doc_lag_days": 0,
+    "doc_dates_found": 3
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 7800.0,
+    "pnl_pre_accounts": 1,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-11-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 2.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "unknown",
+   "rule": "총액 불명·최근 종료",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "16FWXD9FCxQH5H5bBF_Az59Q9c9HedYde",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/16FWXD9FCxQH5H5bBF_Az59Q9c9HedYde/view",
+   "title": "[스위트스팟] 카트비피 팝업 컨셉 제안서_251201.pdf"
+  },
+  {
+   "doc_id": "16i6Ric04kc2iSY0w1Qi15TgdLoOUVcnB",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/16i6Ric04kc2iSY0w1Qi15TgdLoOUVcnB/view",
+   "title": "[스위트스팟] 카트비피 팝업 컨셉 제안서 2차_251210.pdf"
+  },
+  {
+   "doc_id": "19tXOfV1dAizaP01n_9zM6hN-2Jm2mJeP",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/19tXOfV1dAizaP01n_9zM6hN-2Jm2mJeP/view",
+   "title": "Sky Labs_팝업스토어 무드 레퍼런스용_참조용.F.pdf"
+  },
+  {
+   "doc_id": "1K0RZrkd8F2N9FKZCOWUSqSAz76kEpbhC",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1K0RZrkd8F2N9FKZCOWUSqSAz76kEpbhC/view",
+   "title": "[스위트스팟] 카트비피 팝업 컨셉 제안서 2차_251210.pptx"
+  },
+  {
+   "doc_id": "1MNxGbG5t8gCcqlUdn_JUoaHo2EesjaEE",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1MNxGbG5t8gCcqlUdn_JUoaHo2EesjaEE/view",
+   "title": "[스위트스팟] 카트비피 팝업 컨셉 제안서_251201.pptx"
+  },
+  {
+   "doc_id": "1Px0IAGDm6Ap3IFUpQGBVzAbXyPlGZfKy",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Px0IAGDm6Ap3IFUpQGBVzAbXyPlGZfKy/view",
+   "title": "[스위트스팟] 카트비피 팝업 이벤트 제안서_260120.pptx"
+  },
+  {
+   "doc_id": "1Q93JsBBNY3eKwf4YS23X-F9FjlJeqBWJ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Q93JsBBNY3eKwf4YS23X-F9FjlJeqBWJ/view",
+   "title": "스카이랩스_디자인 작업_계약서 없음 견적서 갈음.txt"
+  },
+  {
+   "doc_id": "1Sys-sAJYqH4DPaRzW1apgwVRgQ8c1BqM",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Sys-sAJYqH4DPaRzW1apgwVRgQ8c1BqM/view",
+   "title": "스카이랩스_최종견적서_디자인선금 251125.pdf"
+  },
+  {
+   "doc_id": "1crutJ1K3zFUq_cJLqyuwwMYuo_1eVCrA",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1crutJ1K3zFUq_cJLqyuwwMYuo_1eVCrA/view",
+   "title": "[스위트스팟] 카트비피 팝업 이벤트 제안서_260120.pdf"
+  },
+  {
+   "doc_id": "1juJ2glzNiApHkJW2DpCUUbA_vRKQi0G9",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1juJ2glzNiApHkJW2DpCUUbA_vRKQi0G9/view",
+   "title": "스카이랩스_결과보고서.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체 부재; 클라이언트명; 입지/venue 정보; 면적; 운영 종료일; 수수료구조; 컨셉 및 체험요소; 프로모션; 방문객 및 매출 실측치; 예상 방문객"
+ }
+}

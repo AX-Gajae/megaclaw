@@ -1,0 +1,159 @@
+{
+ "record_id": "RTPU2520",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:Vantive_밴티브",
+  "space_id": "unresolved:서울_중구_세종대로124_서울신문사빌딩_한국프레스센터_전면광장",
+  "client_party_id": "unresolved:엔자임헬스_주식회사",
+  "brand_key": "밴티브",
+  "space_key": "서울_한국프레스센터"
+ },
+ "intervention": {
+  "concept": "세계 콩팥의 날을 맞아 일반인 대상으로 신장질환 관리의 중요성을 알리는 브랜드 외부 행사. 서울신문사(한국프레스센터) 전면 광장에서 포토부스와 리플렛·생수 배분을 통해 참여를 유도하고, 촬영 사진을 해시태그와 함께 SNS 업로드하면 미니화분 굿즈를 증정하는 방식으로 운영.",
+  "brand_name": "Vantive",
+  "experience_elements": [
+   "리플렛 및 생수 배분",
+   "트러스 배경 포토기기 사진 촬영",
+   "해시태그와 함께 SNS 업로드",
+   "굿즈(미니화분) 수령",
+   "우천 시 폴라로이드 사진 촬영 대체"
+  ],
+  "promotions": [
+   "미니화분 선착순 100명 한정 증정",
+   "SNS 업로드 확인 후 굿즈 수령"
+  ],
+  "staging_tags": [
+   "몽골텐트",
+   "트러스",
+   "포토존",
+   "X배너",
+   "핸드배너",
+   "네컷사진 프레임"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "중구",
+   "venue_name": "서울신문사 빌딩 (한국프레스센터) 전면 광장",
+   "venue_type": "빌딩 전면 광장",
+   "foot_traffic_context": "인도 인접 광장, 일반인 대상 외부 행사",
+   "venue_slot": "광장"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-03-12",
+   "to": "2025-03-12",
+   "days": 1
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "계약 총액 9,000,000원(VAT 별도). 선금 50% 4,500,000원(계산서 2025-03-06, 지급 2025-03-07), 잔금 50% 4,500,000원(계산서 2025-03-14, 지급 2025-03-21). 견적서(5차)상 총계 8,748,500원(VAT 별도): 소계 8,135,000원 + 일반관리비/대행수수료 613,500원(정가 항목 제외 소계의 10%)."
+  },
+  "brand_requirements": [
+   "제작물 사용 전 의뢰사 감수 및 서면 승인 필요",
+   "정치·사회·종교적 중립 유지",
+   "제작물 관련 지식재산권 의뢰사 귀속",
+   "보안 유지 의무",
+   "안전관리 준수",
+   "의뢰사 지식재산권 사용 가이드라인 준수"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "인도 인접 광장, 일반인 대상 외부 행사"
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 0.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 1.2,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 9,
+    "holiday_until": 52,
+    "holiday_block_in": 0,
+    "nat_event_gap": 83,
+    "nat_event": null,
+    "doc_lag_days": 6,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 26073.0,
+    "pnl_pre_accounts": 2,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-02-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2025-03-12",
+    "visitors": null,
+    "sales_krw": null
+   }
+  ],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 8.7
+  },
+  "counting_method": "unknown",
+  "counting_basis": "결과보고서에 방문/참여 인원 집계 표가 없음. 현장 사진과 SNS 참여 이미지만 수록됨.",
+  "plan_visitors_expected": 200,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(기획서상 리플렛·생수 200개, 미니화분 100개(선착순) 준비 기준. 결과보고서에는 실측 방문자 수치가 제시되지 않음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 8.7 ≈ 계약총액 9.0",
+   "contract_total_mm": 9.0,
+   "last_recognition_period": "2025-03"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1KJ3Lj0BK8Zcg5kUc1Rn6uSNMiBXi2VNI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1KJ3Lj0BK8Zcg5kUc1Rn6uSNMiBXi2VNI/view",
+   "title": "(Sweetspot) 엔자임 밴티브 세계 콩팥의 날 행사_견적서_5차_250313.pdf"
+  },
+  {
+   "doc_id": "1V4pUQ0q6N4mCP2gkzJTTxt6vrDvPP2BC",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1V4pUQ0q6N4mCP2gkzJTTxt6vrDvPP2BC/view",
+   "title": "[Sweetspot] 엔자임_밴티브 세계 콩팥의 날 행사_결과보고서_250313.pdf"
+  },
+  {
+   "doc_id": "1uzoOcMHjgPcJ7o0SLb1Dv0CbURNn32Pw",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1uzoOcMHjgPcJ7o0SLb1Dv0CbURNn32Pw/view",
+   "title": "밴티브 세계 콩팥의 날 행사_업무 계약서_250306.pdf"
+  },
+  {
+   "doc_id": "1xB2qi3xpa9IZGO1NiL17dLvpbk0JlyPm",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1xB2qi3xpa9IZGO1NiL17dLvpbk0JlyPm/view",
+   "title": "[Sweetspot] 엔자임_밴티브 세계 콩팥의 날 행사_기획안_250306.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 4건: 밴티브 세계 콩팥의 날 행사_업무 계약서_250306., [Sweetspot] 엔자임_밴티브 세계 콩팥의 날 행, (Sweetspot) 엔자임 밴티브 세계 콩팥의 날 행, [Sweetspot] 엔자임_밴티브 세계 콩팥의 날 행. 미확실: 결과보고서에 실측 방문자 수 및 소비자 매출 데이터 없음; POS 매출 없음(판매 행사 아님); counting_method 판정 근거 부재로 unknown; area_pyeong 정보 없음"
+ }
+}

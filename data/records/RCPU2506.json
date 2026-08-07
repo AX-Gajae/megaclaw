@@ -1,0 +1,1251 @@
+{
+ "record_id": "RCPU2506",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:오버더월_OVERtheWALL",
+  "space_id": "unresolved:종로_익선동_누디트익선B동",
+  "client_party_id": "unresolved:주식회사_팬딩",
+  "brand_key": "오버더월",
+  "space_key": "종로_익선동_누디트익선"
+ },
+ "intervention": {
+  "concept": "버추얼 아이돌 그룹 '오버더월' IP 팝업스토어. 전투+메이드 일러스트 콘셉트로 1층 상품판매존, 2층 체험존(셀프 포토존·메시지월·등신대)을 구성. 남성 방문층 97% 대상 캐릭터 굿즈 판매 및 포토 체험 중심.",
+  "brand_name": "오버더월",
+  "experience_elements": [
+   "셀프 포토존(포토기계/셀피스탠드)",
+   "메시지월",
+   "LD 아크릴 등신대 10종",
+   "멤버 소품 쇼케이스 열람",
+   "상품 판매존"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "전투+메이드 콘셉트",
+   "외벽 전체 그래픽",
+   "2층 체험존",
+   "한옥거리 로드숍",
+   "IP 캐릭터"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "종로구 익선동",
+   "venue_name": "누디트 익선 B동",
+   "venue_type": "한옥거리 로드숍(2층+옥상)",
+   "foot_traffic_context": "익선동 한옥거리 메인 위치, 일평균 6.5만명 유동인구 1위, 종로3가역 4번출구 도보 2분"
+  },
+  "area_pyeong": 54,
+  "period": {
+   "from": "2025-05-16",
+   "to": "2025-05-19",
+   "days": 4
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "총 계약금액 100,000,000원(VAT 별도). 대관·인테리어 시공·운영 비용 포함. 1차 선금 15,000,000원(2025-04-04), 2차 중도금 40,000,000원(2025-04-30), 3차 잔금 45,000,000원(2025-05-30). 판매 LOSS 총매출 3% 이상 발생 시 제조원가(판매가의 50%) 100% 공제, 3% 이하는 통상LOSS로 의뢰사 부담. 대관금액 별도참고: 익선 B동 1일 500만원/총 2,500만원(VAT별도)."
+  },
+  "brand_requirements": [
+   "모든 제작물 지식재산권은 의뢰사(팬딩)에 단독 귀속",
+   "제작물 사용 전 의뢰사 검수 필수",
+   "지식재산권 사용 가이드라인 준수",
+   "품질 불량 제작물 제조·판매 금지",
+   "비밀유지 의무"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "익선동 한옥거리 메인 위치, 일평균 6.5만명 유동인구 1위(로드숍 자체집객)"
+  },
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.5,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 10,
+    "holiday_until": 21,
+    "holiday_block_in": 0,
+    "nat_event_gap": 18,
+    "nat_event": null,
+    "doc_lag_days": 654,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 2679374.0,
+    "pnl_pre_accounts": 6,
+    "pnl_pre_months": 3,
+    "pnl_pre_first": "2025-02-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 48.6
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서에 일일/일자별 방문 수치 및 매출 표가 없음. 카테고리 분류 태그만 기재됨.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "partial",
+   "rule": "인식 48.6 < 총액 100.0의 90%",
+   "contract_total_mm": 100.0,
+   "last_recognition_period": "2025-05"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-GHWWV6pN6HbXzeE5zdPdqWHHttuuH9O",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1-GHWWV6pN6HbXzeE5zdPdqWHHttuuH9O/view",
+   "title": "오버더월 로고-05.png"
+  },
+  {
+   "doc_id": "1-GdQHkJyZOH0s3-tB1Orq3DzgR-02mZI",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1-GdQHkJyZOH0s3-tB1Orq3DzgR-02mZI/view",
+   "title": "b19d1caa-7bd7-40ef-af92-78d345e46306_1280.jpg"
+  },
+  {
+   "doc_id": "10Gkk_Lhr73gx0OqD9Horf4oPl3x_Uwq1",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/10Gkk_Lhr73gx0OqD9Horf4oPl3x_Uwq1/view",
+   "title": "80663_246394_1942.jpg"
+  },
+  {
+   "doc_id": "10bwqzxZ6Y93OE-jaBKTMDBW-b2rEoB_4",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/10bwqzxZ6Y93OE-jaBKTMDBW-b2rEoB_4/view",
+   "title": "716313251.032573.jpg"
+  },
+  {
+   "doc_id": "10cuqPCBNbE9_-MBOmGcjzDlXtdl-mzV-",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/10cuqPCBNbE9_-MBOmGcjzDlXtdl-mzV-/view",
+   "title": "스크린샷 2025-03-05 162908.png"
+  },
+  {
+   "doc_id": "10uQm95c4r3o4S6Cm6bJoIwRWbfSK5xKB",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/10uQm95c4r3o4S6Cm6bJoIwRWbfSK5xKB/view",
+   "title": "IMG_5244.jpg"
+  },
+  {
+   "doc_id": "11N2nMh3-2Cq8ToLeP5ftwxAqHJ1pCkOo",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/11N2nMh3-2Cq8ToLeP5ftwxAqHJ1pCkOo/view",
+   "title": "0501 오버더월 5차 견적요청(최종안),.pdf"
+  },
+  {
+   "doc_id": "11bQ8kwCN24iotS3VgSo8EatOQq1qdpU0",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/11bQ8kwCN24iotS3VgSo8EatOQq1qdpU0/view",
+   "title": "747c4841-2ddf-4c65-8fb1-2fbe66feb27d.jpg"
+  },
+  {
+   "doc_id": "11oIu345rF0FwkOH-U_nRh2XoFxEoXLE0",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/11oIu345rF0FwkOH-U_nRh2XoFxEoXLE0/view",
+   "title": "오버더월 로고-03.png"
+  },
+  {
+   "doc_id": "121aQVslLLia6UWXZg_H8ORTg5Xu7iOs8",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/121aQVslLLia6UWXZg_H8ORTg5Xu7iOs8/view",
+   "title": "0401 오버더월 견적요청시안.pdf"
+  },
+  {
+   "doc_id": "12qhxqwwI4_iocLXGHcha_vT2PtTID8MA",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/12qhxqwwI4_iocLXGHcha_vT2PtTID8MA/view",
+   "title": "쎈느건국1.jpg"
+  },
+  {
+   "doc_id": "13WSDa7rIRB6ATy0dTX6PSDfg0KbkcXtm",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/13WSDa7rIRB6ATy0dTX6PSDfg0KbkcXtm/view",
+   "title": "스크린샷 2025-03-05 144825.png"
+  },
+  {
+   "doc_id": "13bVtT2GAy-gz8Neyq7ILATdWKumhAP95",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/13bVtT2GAy-gz8Neyq7ILATdWKumhAP95/view",
+   "title": "95ea943a-9eb1-4011-bc69-2182ed6c2079_1280.jpg"
+  },
+  {
+   "doc_id": "14ilD4iLxoo6doeLRlInECXzHWmElsUA4",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/14ilD4iLxoo6doeLRlInECXzHWmElsUA4/view",
+   "title": "스크린샷 2025-03-05 143810.png"
+  },
+  {
+   "doc_id": "14twg3J7U4wYmtDJ1e_c9eAh_3VfPy09I",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/14twg3J7U4wYmtDJ1e_c9eAh_3VfPy09I/view",
+   "title": "쎈느건국 5.jpg"
+  },
+  {
+   "doc_id": "15IcZPMOD4t50IrnZaRPMqQZpuDdPEqFl",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/15IcZPMOD4t50IrnZaRPMqQZpuDdPEqFl/view",
+   "title": "오버더월_팝업스토어_견적_0423.pdf"
+  },
+  {
+   "doc_id": "15ZSC8qng3SvSork4neRLJBNav4_0m4mS",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/15ZSC8qng3SvSork4neRLJBNav4_0m4mS/view",
+   "title": "스크린샷 2025-01-06 184502.png"
+  },
+  {
+   "doc_id": "15fhsZ-YcDGznecoq3EZ8BqPWaYA6ccB-",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/15fhsZ-YcDGznecoq3EZ8BqPWaYA6ccB-/view",
+   "title": "20230801＿133915.jpg"
+  },
+  {
+   "doc_id": "16arkgeYl6Yv2iVgkXF8VxdaHzJj0e7AZ",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/16arkgeYl6Yv2iVgkXF8VxdaHzJj0e7AZ/view",
+   "title": "20150114075819_571921_520_347.jpg"
+  },
+  {
+   "doc_id": "16kZo9kmSrCyXqeW8naXJxJRiXlICCnub",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/16kZo9kmSrCyXqeW8naXJxJRiXlICCnub/view",
+   "title": "0304 오버더월 공간제안서.pdf"
+  },
+  {
+   "doc_id": "16s6K6op6c2iLEwQRck4_d-pepKUeoFyr",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/16s6K6op6c2iLEwQRck4_d-pepKUeoFyr/view",
+   "title": "쎈느건국 2.jpg"
+  },
+  {
+   "doc_id": "17vvac8sqXNwSCekXCjIUjJ6_bpa4sIsv",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/17vvac8sqXNwSCekXCjIUjJ6_bpa4sIsv/view",
+   "title": "219562_239769_4532.jpg"
+  },
+  {
+   "doc_id": "18IsPtTQ39J0O_1Gkx9rvxKXXSV9hguPX",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/18IsPtTQ39J0O_1Gkx9rvxKXXSV9hguPX/view",
+   "title": "647c1a42-6a14-4bc9-a28b-ccfe5be14944.jpg"
+  },
+  {
+   "doc_id": "18QwXpgtUABjhWqua3s98Uy-Bf6yG0iBD",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/18QwXpgtUABjhWqua3s98Uy-Bf6yG0iBD/view",
+   "title": "스크린샷 2025-03-05 144612.png"
+  },
+  {
+   "doc_id": "18fqd1_Zyqg0TRBOZG92syKJnsGbVGZhv",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/18fqd1_Zyqg0TRBOZG92syKJnsGbVGZhv/view",
+   "title": "스크린샷 2025-03-12 102855.png"
+  },
+  {
+   "doc_id": "18rT29nrXr_1vIJAaIZ0D6i19pD-yMdeC",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/18rT29nrXr_1vIJAaIZ0D6i19pD-yMdeC/view",
+   "title": "스크린샷 2025-03-05 142701.png"
+  },
+  {
+   "doc_id": "18zEoLLJ2q4IY_nbVDtlVfBcAUZbYcu-n",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/18zEoLLJ2q4IY_nbVDtlVfBcAUZbYcu-n/view",
+   "title": "90af3667-f987-4bed-8f93-872253389fdb_1280.jpg"
+  },
+  {
+   "doc_id": "19CzXExny6_YWQxzUWChAVzWLs0A44xFQ",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/19CzXExny6_YWQxzUWChAVzWLs0A44xFQ/view",
+   "title": "20230617122532 (2).jpg"
+  },
+  {
+   "doc_id": "19kMt3vjMHznXznvrhKYTg7AEXs46FrhM",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/19kMt3vjMHznXznvrhKYTg7AEXs46FrhM/view",
+   "title": "스크린샷 2025-03-05 144800.png"
+  },
+  {
+   "doc_id": "19s25imU1x2SlcMRH8Vt3AD2IqnzMoecC",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/19s25imU1x2SlcMRH8Vt3AD2IqnzMoecC/view",
+   "title": "668029814ed1f030cc2708c5_3615_ì§_ì__ì_°_ë®¤ì¦_í__.jpg"
+  },
+  {
+   "doc_id": "1ArmMyLItTnE9Wpz5fU-YCj0Xufac3ZQi",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ArmMyLItTnE9Wpz5fU-YCj0Xufac3ZQi/view",
+   "title": "오버더월 예상비용.pdf"
+  },
+  {
+   "doc_id": "1Avib7VflP_oxfDd0S4Pg38npPZhtJFSJ",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Avib7VflP_oxfDd0S4Pg38npPZhtJFSJ/view",
+   "title": "cd0f8417-89f9-405d-99c1-e9278bd0f171.jpg"
+  },
+  {
+   "doc_id": "1B2Fv0QzyWRX1Le3N6E-jRgNVVWWFafWD",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1B2Fv0QzyWRX1Le3N6E-jRgNVVWWFafWD/view",
+   "title": "0501 오버더월 견적요청(최종안),.pdf"
+  },
+  {
+   "doc_id": "1B3dQsr0i-VF5TfsD6wphqpCRUfEu9khw",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1B3dQsr0i-VF5TfsD6wphqpCRUfEu9khw/view",
+   "title": "스크린샷 2025-03-05 144444.png"
+  },
+  {
+   "doc_id": "1B7g9_8jnSQbEVHCHCIOQTd-oTUVRxQHq",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1B7g9_8jnSQbEVHCHCIOQTd-oTUVRxQHq/view",
+   "title": "4b926eba-6d44-498d-a675-8b9a37270b99.jpg"
+  },
+  {
+   "doc_id": "1BfBKy0notbf70xwko38Bz9Dc67KdeRS6",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1BfBKy0notbf70xwko38Bz9Dc67KdeRS6/view",
+   "title": "0305 오버더월 공간제안서 인쇄.pptx"
+  },
+  {
+   "doc_id": "1Bh5LdzVm7_kK8duTl-ji-oz7xkkMHgpo",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Bh5LdzVm7_kK8duTl-ji-oz7xkkMHgpo/view",
+   "title": "c86b07ee-20b2-4433-af8e-d0b59d88ee78.jpg"
+  },
+  {
+   "doc_id": "1CHr07m4QGZKuH82rqEkX3qIdFat1t2UA",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1CHr07m4QGZKuH82rqEkX3qIdFat1t2UA/view",
+   "title": "다운로드.png"
+  },
+  {
+   "doc_id": "1Cma_J7_SwnBUi92HyLfVzbfoNhCkDjc4",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Cma_J7_SwnBUi92HyLfVzbfoNhCkDjc4/view",
+   "title": "01- 오브더월 최종 견적.pdf"
+  },
+  {
+   "doc_id": "1Dkj9OUyJ2mrUHdET8qGvJZbt3r3A00u8",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Dkj9OUyJ2mrUHdET8qGvJZbt3r3A00u8/view",
+   "title": "1525700673508.jpg"
+  },
+  {
+   "doc_id": "1DwQurCEoUhkTGph_AiTFtJKzhxgv-eVu",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1DwQurCEoUhkTGph_AiTFtJKzhxgv-eVu/view",
+   "title": "feb7a596-f4c2-48d2-afcd-d37fc8d817e3.jpg"
+  },
+  {
+   "doc_id": "1ELpr4CYkFgWiKIM07qmqZZ2U4vr8bSck",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1ELpr4CYkFgWiKIM07qmqZZ2U4vr8bSck/view",
+   "title": "fcccc036-eda0-43c4-84db-d0d8c284d723.jpg"
+  },
+  {
+   "doc_id": "1EcaAZjVuUUjcemZl7ls8RLLN9IKdKyA2",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1EcaAZjVuUUjcemZl7ls8RLLN9IKdKyA2/view",
+   "title": "5c4cc77e-c360-4f86-b9fa-cab912488915.jpg"
+  },
+  {
+   "doc_id": "1EkNYqCVqot8G-RPZzd9lP_Zk4SFERti3",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1EkNYqCVqot8G-RPZzd9lP_Zk4SFERti3/view",
+   "title": "(세금계산서-렌탈큐브) 오버더월 카운터4대, 쇼케이스 1대.png"
+  },
+  {
+   "doc_id": "1F3_SZ5Qz4TsScxpYss0NYbSew2SL4TaZ",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1F3_SZ5Qz4TsScxpYss0NYbSew2SL4TaZ/view",
+   "title": "스크린샷 2025-03-26 183702.png"
+  },
+  {
+   "doc_id": "1FE1sp90pRpn3Rxt_9OfmBc0CgUDCvDyY",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1FE1sp90pRpn3Rxt_9OfmBc0CgUDCvDyY/view",
+   "title": "20230617122532 (1).jpg"
+  },
+  {
+   "doc_id": "1FEdmUXctxlxaNKgXsTx56tQ0bdhNC42G",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1FEdmUXctxlxaNKgXsTx56tQ0bdhNC42G/view",
+   "title": "7c64434f-2aa7-4e62-a312-da90caf41173_1280.jpg"
+  },
+  {
+   "doc_id": "1FFynwHXD0kWcLet7uJXeHsyf5VTbpA6k",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1FFynwHXD0kWcLet7uJXeHsyf5VTbpA6k/view",
+   "title": "누디트 익선 오버더월 시공 견적서.xls"
+  },
+  {
+   "doc_id": "1FjOyDLxrB2mT8Vr3yjMQ3h5foSArYQnx",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1FjOyDLxrB2mT8Vr3yjMQ3h5foSArYQnx/view",
+   "title": "41d052d3-e993-4c18-a90c-bcb7231a9e86_1280.jpg"
+  },
+  {
+   "doc_id": "1IDfi2DThOf5awrn5IM-1NOnRC9TzTM7a",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1IDfi2DThOf5awrn5IM-1NOnRC9TzTM7a/view",
+   "title": "20230617122531.jpg"
+  },
+  {
+   "doc_id": "1IYYXzi5gKB7g9beGlFCL2opgHWSmB2cO",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1IYYXzi5gKB7g9beGlFCL2opgHWSmB2cO/view",
+   "title": "20230617122532.jpg"
+  },
+  {
+   "doc_id": "1IZtEwweD9nigDQcfVD6DwIOhFZ23oxmA",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1IZtEwweD9nigDQcfVD6DwIOhFZ23oxmA/view",
+   "title": "0120 오버더월 2025 팝업 공간 제안.pptx"
+  },
+  {
+   "doc_id": "1ImKaPuycVkG6WGUrZEn3Rms3k1ZVOLlE",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1ImKaPuycVkG6WGUrZEn3Rms3k1ZVOLlE/view",
+   "title": "스크린샷 2025-01-10 104035.png"
+  },
+  {
+   "doc_id": "1IrpLDbGGOxKXdq9d_MRnQFYGHgqORXtI",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1IrpLDbGGOxKXdq9d_MRnQFYGHgqORXtI/view",
+   "title": "스크린샷 2025-03-05 143736.png"
+  },
+  {
+   "doc_id": "1J1_D-jbGFmmEabZf1UpU-MtLXbUpwpK6",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1J1_D-jbGFmmEabZf1UpU-MtLXbUpwpK6/view",
+   "title": "a7d911b8-11fc-484c-8287-e07e38457e61.jpg"
+  },
+  {
+   "doc_id": "1JfhetIbDYu_158phxutDgCFizNvuBAmn",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1JfhetIbDYu_158phxutDgCFizNvuBAmn/view",
+   "title": "0401 오버더월 견적요청시안.pptx"
+  },
+  {
+   "doc_id": "1Jp9Y9IXBezoXpuWeWqmZXx3ZY7pmblcd",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Jp9Y9IXBezoXpuWeWqmZXx3ZY7pmblcd/view",
+   "title": "오버더월 예상비용.xlsx"
+  },
+  {
+   "doc_id": "1Jw9qygIRbR5shhFkNFtegm5gsiwZBV5W",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Jw9qygIRbR5shhFkNFtegm5gsiwZBV5W/view",
+   "title": "ab620da1-8330-4fb2-8aa3-77ed23ac72d1_1280.jpg"
+  },
+  {
+   "doc_id": "1K4vhZdLGgHclAONMW1WSFKmcEFVw37Hc",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1K4vhZdLGgHclAONMW1WSFKmcEFVw37Hc/view",
+   "title": "6cc57785-dad3-4583-b2cc-dd41c11b2377_1280.jpg"
+  },
+  {
+   "doc_id": "1K6kFUGEGBUrcJzCsQPOSBcxydPH86h7o",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1K6kFUGEGBUrcJzCsQPOSBcxydPH86h7o/view",
+   "title": "YxVnHH.jpg"
+  },
+  {
+   "doc_id": "1K9tBauOeF2w9xLaNvqzWmJX0EiLMwSDw",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1K9tBauOeF2w9xLaNvqzWmJX0EiLMwSDw/view",
+   "title": "0501 오버더월 5차 견적요청(최종안),.pptx"
+  },
+  {
+   "doc_id": "1KFe-xgqVQiw0Ga4NMOXk5pSHB2wFy2hZ",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1KFe-xgqVQiw0Ga4NMOXk5pSHB2wFy2hZ/view",
+   "title": "오버더월 결과보고서.pdf"
+  },
+  {
+   "doc_id": "1KWSEZPhzDdH3863Mu4nLEZUmoPHCwvha",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1KWSEZPhzDdH3863Mu4nLEZUmoPHCwvha/view",
+   "title": "20230801＿133923.jpg"
+  },
+  {
+   "doc_id": "1KeVOJ4wFzRtHNVhO_5JM2okTe-UK0C3e",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1KeVOJ4wFzRtHNVhO_5JM2okTe-UK0C3e/view",
+   "title": "오버더월 로고-04.png"
+  },
+  {
+   "doc_id": "1KpchNpNajIT429Ns2RFTu53r4uLGRw9U",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1KpchNpNajIT429Ns2RFTu53r4uLGRw9U/view",
+   "title": "01- 오브더월 최종 견적.xls"
+  },
+  {
+   "doc_id": "1Lm3kRSOV4H5Sm6Uc7pE4pJaOWkWO5oMS",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Lm3kRSOV4H5Sm6Uc7pE4pJaOWkWO5oMS/view",
+   "title": "[사업자등록증-엘디에스] 오버더월 포토기계 대여건.pdf"
+  },
+  {
+   "doc_id": "1LnwNWbVmQvewVkO-mNdJ3roFj9BspVfe",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1LnwNWbVmQvewVkO-mNdJ3roFj9BspVfe/view",
+   "title": "gqwEwG.jpg"
+  },
+  {
+   "doc_id": "1Lt_uK-JX_K_3Xh8Q08pw4jUqIT0GNZEv",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Lt_uK-JX_K_3Xh8Q08pw4jUqIT0GNZEv/view",
+   "title": "32dbece5-5600-4c35-8084-b2e264e9cc33_1280.jpg"
+  },
+  {
+   "doc_id": "1MB6e41C68Qa6J8lRPGjBN8Jf0Q_ZTY3o",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1MB6e41C68Qa6J8lRPGjBN8Jf0Q_ZTY3o/view",
+   "title": "[견적서-현대드림애드] 오버더월 시공비.pdf"
+  },
+  {
+   "doc_id": "1MBXANT31u8pGslVdyiMFI4ooxWPBGRD8",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1MBXANT31u8pGslVdyiMFI4ooxWPBGRD8/view",
+   "title": "스크린샷 2025-03-12 103116.png"
+  },
+  {
+   "doc_id": "1MMRI1adxLp5FSuwgMHSbv_PV4bQEmnNe",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1MMRI1adxLp5FSuwgMHSbv_PV4bQEmnNe/view",
+   "title": "GgC0GsEaoAAeELO.jfif"
+  },
+  {
+   "doc_id": "1N-HYkfeCvpC_wO6e0Rfbn2I6nlVIoKlx",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1N-HYkfeCvpC_wO6e0Rfbn2I6nlVIoKlx/view",
+   "title": "a8f147e5-4910-40c4-8f15-39bcbc5321b2.jpg"
+  },
+  {
+   "doc_id": "1NjSMs6NYpsy5Wek0bDPTPIR48hx3sqFa",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1NjSMs6NYpsy5Wek0bDPTPIR48hx3sqFa/view",
+   "title": "IMG_1661_copy.jpg"
+  },
+  {
+   "doc_id": "1NnSHCj1TbfUXNqK3NMNXvNijEUWqV-yV",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1NnSHCj1TbfUXNqK3NMNXvNijEUWqV-yV/view",
+   "title": "8a89a3b8-9d1a-45f4-8c1c-5d2e6fa27bcc.jpg"
+  },
+  {
+   "doc_id": "1O5Xf4j-4OTMUD4wIyrShtk2Rt6DroCrr",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1O5Xf4j-4OTMUD4wIyrShtk2Rt6DroCrr/view",
+   "title": "0501 오버더월 견적요청(최종안),.pptx"
+  },
+  {
+   "doc_id": "1OIk81O32sAxLa3l7t6tR4xM5cIsScXhA",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1OIk81O32sAxLa3l7t6tR4xM5cIsScXhA/view",
+   "title": "오버더월 로고-06.png"
+  },
+  {
+   "doc_id": "1OOwPQoWqjmfIr26sIKmVvPVdzShH4elP",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1OOwPQoWqjmfIr26sIKmVvPVdzShH4elP/view",
+   "title": "sTKxiT.jpg"
+  },
+  {
+   "doc_id": "1OaWl0U2PoEUcGFeLkQEwuQpi-wMX0TPa",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1OaWl0U2PoEUcGFeLkQEwuQpi-wMX0TPa/view",
+   "title": "0305 오버더월 공간제안서.pdf"
+  },
+  {
+   "doc_id": "1P3jlDqC1_rIMz0QJDIZ2KYVX8qh0I9er",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1P3jlDqC1_rIMz0QJDIZ2KYVX8qh0I9er/view",
+   "title": "219562_239768_4448.jpg"
+  },
+  {
+   "doc_id": "1PZICXxMjLKlgqCw4hZs1gokwvcVUH0E2",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1PZICXxMjLKlgqCw4hZs1gokwvcVUH0E2/view",
+   "title": "스크린샷 2025-03-12 112136.png"
+  },
+  {
+   "doc_id": "1PpkUN2Eo6V6RFkMDJOTKhjfpTHm8fHhi",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1PpkUN2Eo6V6RFkMDJOTKhjfpTHm8fHhi/view",
+   "title": "스크린샷 2025-01-06 184556.png"
+  },
+  {
+   "doc_id": "1Q2zu13c2jv9c4Jl_8KetDPDm0JuaBNC_",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Q2zu13c2jv9c4Jl_8KetDPDm0JuaBNC_/view",
+   "title": "(견적서-렌탈큐브) 오버더월 카운터4대, 쇼케이스 1대.pdf"
+  },
+  {
+   "doc_id": "1RPn1dUl55Bhf9zkvTcgpPkMlRaXOuORD",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1RPn1dUl55Bhf9zkvTcgpPkMlRaXOuORD/view",
+   "title": "MoLkNL.jpg"
+  },
+  {
+   "doc_id": "1RQhzjOCwDVFbwZhnMnHOoFqMEY5YLCkL",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1RQhzjOCwDVFbwZhnMnHOoFqMEY5YLCkL/view",
+   "title": "GZmReoPaIAAO_8I.jfif"
+  },
+  {
+   "doc_id": "1RdIECOxDGJPZEmQkQj6EMykqywvk-_H0",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1RdIECOxDGJPZEmQkQj6EMykqywvk-_H0/view",
+   "title": "스크린샷 2025-01-06 184436.png"
+  },
+  {
+   "doc_id": "1STfrCgRXrEh5QxNzf2DUHPDUnDqUWH5i",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1STfrCgRXrEh5QxNzf2DUHPDUnDqUWH5i/view",
+   "title": "bf5ea02b-3d06-4fea-97fc-26bce6166823_1280.jpg"
+  },
+  {
+   "doc_id": "1SqPFPqaTtAI3sFRHMUO22_2wHMnTfPs-",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1SqPFPqaTtAI3sFRHMUO22_2wHMnTfPs-/view",
+   "title": "스크린샷 2025-03-12 112113.png"
+  },
+  {
+   "doc_id": "1TSUdxnxwPI7eTgk_ZKirxvWbeuxPPa2r",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1TSUdxnxwPI7eTgk_ZKirxvWbeuxPPa2r/view",
+   "title": "item_401610_1_7_title_7.jpeg"
+  },
+  {
+   "doc_id": "1U8D1oGtzsIJb0lJb_yNfAIXUAu9MLKiS",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1U8D1oGtzsIJb0lJb_yNfAIXUAu9MLKiS/view",
+   "title": "20230617122538.jpg"
+  },
+  {
+   "doc_id": "1UlphFMFF8IvQ1tze93jZc_ad9385hYoB",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1UlphFMFF8IvQ1tze93jZc_ad9385hYoB/view",
+   "title": "[견적서-엠제이렌탈] 스피커, 노트북 대여 및 설치 비용.pdf"
+  },
+  {
+   "doc_id": "1Uqbvt_V3crgr7eQM6O2oafJZ306xjP8w",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Uqbvt_V3crgr7eQM6O2oafJZ306xjP8w/view",
+   "title": "item_401610_1_6_title_6.jpeg"
+  },
+  {
+   "doc_id": "1UwjUiibt42ygC53JlV05eVwps-b9QDT6",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1UwjUiibt42ygC53JlV05eVwps-b9QDT6/view",
+   "title": "742055e9-21fa-4f86-b30f-3d7dc540e443_1280.jpg"
+  },
+  {
+   "doc_id": "1VTt1iuNKNj2fhl_WNpObHAFrtOklnfQ3",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1VTt1iuNKNj2fhl_WNpObHAFrtOklnfQ3/view",
+   "title": "74a1035a-91a8-4671-9f85-78622ab5d790_1280.jpg"
+  },
+  {
+   "doc_id": "1WP2LlsX5sHoNT6JzictnGsTiCgK7-PHl",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1WP2LlsX5sHoNT6JzictnGsTiCgK7-PHl/view",
+   "title": "UezDBI.jpg"
+  },
+  {
+   "doc_id": "1Ws--M5ROoC5cMtjcJnYiVev4WCXeJcQL",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Ws--M5ROoC5cMtjcJnYiVev4WCXeJcQL/view",
+   "title": "스크린샷 2025-03-05 144409.png"
+  },
+  {
+   "doc_id": "1Wt_Xv3hUOOYqRJ2od9HJPYq1iS4FilAp",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Wt_Xv3hUOOYqRJ2od9HJPYq1iS4FilAp/view",
+   "title": "[통장사본-엘디에스] 오버더월 포토기계 대여건.jpg"
+  },
+  {
+   "doc_id": "1WvkREucWRi_dBS698SzdfzNqt51H3kjU",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1WvkREucWRi_dBS698SzdfzNqt51H3kjU/view",
+   "title": "20230617122537.jpg"
+  },
+  {
+   "doc_id": "1WzCz-Uw2-1n2IMo33xZ2RoNW7BI_xLEj",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1WzCz-Uw2-1n2IMo33xZ2RoNW7BI_xLEj/view",
+   "title": "20230617122523.jpg"
+  },
+  {
+   "doc_id": "1XCbh0jG3L_dHaPD4KAdaaKQGXS2CQv6m",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1XCbh0jG3L_dHaPD4KAdaaKQGXS2CQv6m/view",
+   "title": "대지 29-100.jpg"
+  },
+  {
+   "doc_id": "1XKcFP0vFDGMnx2rpBpsg7Pf2OO1IogEe",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1XKcFP0vFDGMnx2rpBpsg7Pf2OO1IogEe/view",
+   "title": "393df35b-8d7a-4e13-b33f-6d822446aca6_1280.jpg"
+  },
+  {
+   "doc_id": "1XV058jsXQgBtvEtU9ijthqjqESgO2VMm",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1XV058jsXQgBtvEtU9ijthqjqESgO2VMm/view",
+   "title": "스크린샷 2025-03-05 144331.png"
+  },
+  {
+   "doc_id": "1XhNvwC9rf7LPiBK48Fa3tqgfM9xmZNRD",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1XhNvwC9rf7LPiBK48Fa3tqgfM9xmZNRD/view",
+   "title": "에프터타임 성수 2.jpg"
+  },
+  {
+   "doc_id": "1XmAJDE9d0eBeRcL2AyLr6Jd26NDlrjN5",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1XmAJDE9d0eBeRcL2AyLr6Jd26NDlrjN5/view",
+   "title": "스크린샷 2025-01-06 184520.png"
+  },
+  {
+   "doc_id": "1XvX7pGRASeDh1V26O3mcdq9WblQNu4Gl",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1XvX7pGRASeDh1V26O3mcdq9WblQNu4Gl/view",
+   "title": "54dc7376-dae3-4396-8582-4ba8cf8df422_1280.jpg"
+  },
+  {
+   "doc_id": "1YVmM5A4SKZ5d7UHR4cbTDhqkQx6_zLsg",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1YVmM5A4SKZ5d7UHR4cbTDhqkQx6_zLsg/view",
+   "title": "unnamed.jpg"
+  },
+  {
+   "doc_id": "1Yfg8_n2XxC6PexrXGvN8anK-oFUXDAVQ",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Yfg8_n2XxC6PexrXGvN8anK-oFUXDAVQ/view",
+   "title": "93ccbc46-7a1b-4a1e-8718-bfe4b6bcd2b5.jpg"
+  },
+  {
+   "doc_id": "1YiYgp-k_A2yYcQYJG-XyCj53nVMk1O_-",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1YiYgp-k_A2yYcQYJG-XyCj53nVMk1O_-/view",
+   "title": "219562_239770_4538.jpg"
+  },
+  {
+   "doc_id": "1YsUoxQMT86o1UOgGeQXg-G71BEWhEdvR",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1YsUoxQMT86o1UOgGeQXg-G71BEWhEdvR/view",
+   "title": "219562_239771_4556.jpg"
+  },
+  {
+   "doc_id": "1Z8luATKoWNl6lU052yEMPsCBegYrgHTp",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Z8luATKoWNl6lU052yEMPsCBegYrgHTp/view",
+   "title": "건대 1층.pdf"
+  },
+  {
+   "doc_id": "1ZAnhOSvy4dr4HTNRmgS8Nu_r34qy-lVN",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1ZAnhOSvy4dr4HTNRmgS8Nu_r34qy-lVN/view",
+   "title": "스크린샷 2025-01-06 185455.png"
+  },
+  {
+   "doc_id": "1ZUOAe7gAKR_8s-2M6ryGq1c8Hekb1lo7",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1ZUOAe7gAKR_8s-2M6ryGq1c8Hekb1lo7/view",
+   "title": "47061_1671600452.jpg"
+  },
+  {
+   "doc_id": "1ZqL7dLPf8aIMUqNAzr6mPTB2j7ln1-r3",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1ZqL7dLPf8aIMUqNAzr6mPTB2j7ln1-r3/view",
+   "title": "스크린샷 2025-03-05 144527.png"
+  },
+  {
+   "doc_id": "1Zsa1W33hX6RyxsDb2kpXi-EDzus6t9qe",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Zsa1W33hX6RyxsDb2kpXi-EDzus6t9qe/view",
+   "title": "[세금계산서-엘디에스] 오버더월 포토기계 대여건.PDF"
+  },
+  {
+   "doc_id": "1_7OpDuXbWEgo0xyAIGwhTaZc6phAdict",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1_7OpDuXbWEgo0xyAIGwhTaZc6phAdict/view",
+   "title": "3110918_3132116_5828.jpg"
+  },
+  {
+   "doc_id": "1_RZa0zA-KeKgBc2GNANVNLXxcAcv3_Cz",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1_RZa0zA-KeKgBc2GNANVNLXxcAcv3_Cz/view",
+   "title": "3917aae4-fbb7-438c-8d7d-416b348918d5.jpg"
+  },
+  {
+   "doc_id": "1aJLvdTbFK5HPThGpRe0zGpVjg9kJD02q",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1aJLvdTbFK5HPThGpRe0zGpVjg9kJD02q/view",
+   "title": "2403280826073750.jpg"
+  },
+  {
+   "doc_id": "1aPevW2fII4jheVoHv0wE6pzPikYWPvPq",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1aPevW2fII4jheVoHv0wE6pzPikYWPvPq/view",
+   "title": "2023051220124791300_l.jpg"
+  },
+  {
+   "doc_id": "1aUsd4qa13nwc9YC6Zb2xthFQ_siVHaBO",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1aUsd4qa13nwc9YC6Zb2xthFQ_siVHaBO/view",
+   "title": "0120 오버더월 2025 팝업 공간 제안.pdf"
+  },
+  {
+   "doc_id": "1aenxDglS23yRUbecOPpVZLJFtaCDiS0A",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1aenxDglS23yRUbecOPpVZLJFtaCDiS0A/view",
+   "title": "쎈느건국 4.jpg"
+  },
+  {
+   "doc_id": "1akbVjZOZ5ckEke2v869vWxxcRG8zEGPg",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1akbVjZOZ5ckEke2v869vWxxcRG8zEGPg/view",
+   "title": "200885_200779_1444.jpg"
+  },
+  {
+   "doc_id": "1bfMCiJcjngLKPJWgvJYMBGt0Ra7_IH6a",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1bfMCiJcjngLKPJWgvJYMBGt0Ra7_IH6a/view",
+   "title": "IMG_3827.jpg"
+  },
+  {
+   "doc_id": "1cFbzrJVcGHMi-9wyAMbJBwqUeuMJw96g",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1cFbzrJVcGHMi-9wyAMbJBwqUeuMJw96g/view",
+   "title": "스크린샷 2025-03-26 195752.png"
+  },
+  {
+   "doc_id": "1cqLCQPToroAKJYhtli2h9cefP3Z7TrhM",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1cqLCQPToroAKJYhtli2h9cefP3Z7TrhM/view",
+   "title": "오버더월 로고-07.png"
+  },
+  {
+   "doc_id": "1d-ZyzgLw3DFKTny3-G8_UC8vCkxg0WwV",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1d-ZyzgLw3DFKTny3-G8_UC8vCkxg0WwV/view",
+   "title": "[세금계산서-현대드림애드] 오버더월 시공비.png"
+  },
+  {
+   "doc_id": "1dCu5bB-TdHhUSj27Xgs5bGFiURaeFju7",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1dCu5bB-TdHhUSj27Xgs5bGFiURaeFju7/view",
+   "title": "[견적서-프린트팩]떡메모지.pdf"
+  },
+  {
+   "doc_id": "1dWE1LfbZvv5qMLHtIA45vpt7C9ziWuX8",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1dWE1LfbZvv5qMLHtIA45vpt7C9ziWuX8/view",
+   "title": "[견적서-엘디에스] 오버더월 포토기계 대여건.PDF"
+  },
+  {
+   "doc_id": "1dZY8exTz4T_9lPorPNfWYvKK2HuuSNA8",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1dZY8exTz4T_9lPorPNfWYvKK2HuuSNA8/view",
+   "title": "239c0482-6ed3-49eb-a77d-4bcc826f3597.jpg"
+  },
+  {
+   "doc_id": "1dcjTL_3QEhJqYN3d0PK_KZrvEuewhY8K",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1dcjTL_3QEhJqYN3d0PK_KZrvEuewhY8K/view",
+   "title": "39088753-073b-4f69-98c3-18c0d6c0f04f.jpg"
+  },
+  {
+   "doc_id": "1dl4Qfdu-6xH_-WBv9DNaC0uq52F9LNo3",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1dl4Qfdu-6xH_-WBv9DNaC0uq52F9LNo3/view",
+   "title": "219562_239767_4427.jpg"
+  },
+  {
+   "doc_id": "1dv58LoNWPerDM04Zgt2Pd7SrKIC6Kk8x",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1dv58LoNWPerDM04Zgt2Pd7SrKIC6Kk8x/view",
+   "title": "에프터타임 성수 1.jpg"
+  },
+  {
+   "doc_id": "1ekQvi4OdDxYOsbzOyThyg0DG754I1ohC",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1ekQvi4OdDxYOsbzOyThyg0DG754I1ohC/view",
+   "title": "468040250_17964999782815535_6380657883673346901_n.jpg"
+  },
+  {
+   "doc_id": "1eozNhn4IkuhH0CKCLQBnBgAtiDJPKgwM",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1eozNhn4IkuhH0CKCLQBnBgAtiDJPKgwM/view",
+   "title": "219562_239773_4624.jpg"
+  },
+  {
+   "doc_id": "1f_4pz0kJgV8gRuzMklNbPi_4xOnIHrjO",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1f_4pz0kJgV8gRuzMklNbPi_4xOnIHrjO/view",
+   "title": "20230617122522 (2).jpg"
+  },
+  {
+   "doc_id": "1gkgUZyn0JVZBhUMoz2_qKs67SR2WeKl-",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1gkgUZyn0JVZBhUMoz2_qKs67SR2WeKl-/view",
+   "title": "GLcEFEZbIAAG5ut.jpg"
+  },
+  {
+   "doc_id": "1gq9YD7M6QBsZoe_uzhAe_UQKBkMEAlMv",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1gq9YD7M6QBsZoe_uzhAe_UQKBkMEAlMv/view",
+   "title": "66868477622884ea8c20f082_Slide 16_9 - 13-p-500.jpg"
+  },
+  {
+   "doc_id": "1iaNORGZwoRyCLBbV46Q2uKJMZFltrdgb",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1iaNORGZwoRyCLBbV46Q2uKJMZFltrdgb/view",
+   "title": "0120 오버더월 2025 팝업 공간 제안 + 레퍼.pptx"
+  },
+  {
+   "doc_id": "1igvb2DSEHzfDZt-m6YijkSNBgXm50qjy",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1igvb2DSEHzfDZt-m6YijkSNBgXm50qjy/view",
+   "title": "LWNVYx.jpg"
+  },
+  {
+   "doc_id": "1ir00f1pduh625a63aY3PQvwyhncsE6YX",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1ir00f1pduh625a63aY3PQvwyhncsE6YX/view",
+   "title": "20230617122522.jpg"
+  },
+  {
+   "doc_id": "1j-5SEdtLUVFVyIQzHDhQd1BOt1H50ocb",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1j-5SEdtLUVFVyIQzHDhQd1BOt1H50ocb/view",
+   "title": "오버더월 최종견적서.pdf"
+  },
+  {
+   "doc_id": "1jNDt87X4BB0G3ASJejwQVfFDT6rJMula",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1jNDt87X4BB0G3ASJejwQVfFDT6rJMula/view",
+   "title": "0425 오버더월 2차 견적요청.pdf"
+  },
+  {
+   "doc_id": "1jR5sRrEd1lmbIpJk3wOxuiwoqXISJ-1r",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1jR5sRrEd1lmbIpJk3wOxuiwoqXISJ-1r/view",
+   "title": "204278_209206_5230.jpg"
+  },
+  {
+   "doc_id": "1kXSZa1StTpKpblOx-OevoaFzGWEJts_d",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1kXSZa1StTpKpblOx-OevoaFzGWEJts_d/view",
+   "title": "오버더월_업무계약서0403 최종.pdf"
+  },
+  {
+   "doc_id": "1kbf_41zzFN_A5kdgmx52OjtC1eYbubky",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1kbf_41zzFN_A5kdgmx52OjtC1eYbubky/view",
+   "title": "5a506cba-4fb9-4e03-bd26-2a54e9a24220_1280.jpg"
+  },
+  {
+   "doc_id": "1kpFDBEWeRwcklyAtbB59v6kIYFZUSeJW",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1kpFDBEWeRwcklyAtbB59v6kIYFZUSeJW/view",
+   "title": "Pic－4.png"
+  },
+  {
+   "doc_id": "1l-kaHDDImglo_ShDirFxkBFwnYL6kvUK",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1l-kaHDDImglo_ShDirFxkBFwnYL6kvUK/view",
+   "title": "오버더월_팝업스토어_견적_0423(수정).pdf"
+  },
+  {
+   "doc_id": "1lksNgVEqPGkiB1vJYpBYYxt0_taOcxRQ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1lksNgVEqPGkiB1vJYpBYYxt0_taOcxRQ/view",
+   "title": "(견적서-렌탈큐브) 오버더월 카운터4대, 쇼케이스 1대.xlsx"
+  },
+  {
+   "doc_id": "1m_I4RKh_qED_lhXDNRmy994mUTawLG5x",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1m_I4RKh_qED_lhXDNRmy994mUTawLG5x/view",
+   "title": "videoframe_6386.png"
+  },
+  {
+   "doc_id": "1mnDnLRMVPQtAxfR38s7M9dYi5oFNWoPL",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1mnDnLRMVPQtAxfR38s7M9dYi5oFNWoPL/view",
+   "title": "474a488b-6443-4885-ae6d-339f45a4f9d8_1280.jpg"
+  },
+  {
+   "doc_id": "1mrnCwviqGIW6fv8NROQlkCo8iBJ7DU7q",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1mrnCwviqGIW6fv8NROQlkCo8iBJ7DU7q/view",
+   "title": "2ba293ff-b509-49f2-bf64-9bab47bfb73f_1280.jpg"
+  },
+  {
+   "doc_id": "1n4gubjaadgdNrZMf1lympt8Ud6YZ2a9x",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1n4gubjaadgdNrZMf1lympt8Ud6YZ2a9x/view",
+   "title": "스크린샷 2025-03-26 182839.png"
+  },
+  {
+   "doc_id": "1nPQrOPZrqBpKrOu-kY-Wj-Cd_IUH36KW",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1nPQrOPZrqBpKrOu-kY-Wj-Cd_IUH36KW/view",
+   "title": "0508 현대드림애드 오버더월 최종 견적.xls"
+  },
+  {
+   "doc_id": "1ohCYim-FnUzwfO-yuek5OiBSgxma8Bug",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1ohCYim-FnUzwfO-yuek5OiBSgxma8Bug/view",
+   "title": "219562_239772_4618.jpg"
+  },
+  {
+   "doc_id": "1oz-p1WjFjs7GnaPB8TsBa9bwBTmdpns3",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1oz-p1WjFjs7GnaPB8TsBa9bwBTmdpns3/view",
+   "title": "스크린샷 2025-01-06 185406.png"
+  },
+  {
+   "doc_id": "1pd0xqFRVqvLPQhKFMaMAWjyV9NPatYCB",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1pd0xqFRVqvLPQhKFMaMAWjyV9NPatYCB/view",
+   "title": "스크린샷 2025-01-06 184532.png"
+  },
+  {
+   "doc_id": "1ptlChvIy5Ipq5vsict3TlFVmT5pztyWq",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ptlChvIy5Ipq5vsict3TlFVmT5pztyWq/view",
+   "title": "0305 오버더월 공간제안서.pptx"
+  },
+  {
+   "doc_id": "1qAzpPwgvNUh7r7yNK_M2OwmnTHK5v-4P",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1qAzpPwgvNUh7r7yNK_M2OwmnTHK5v-4P/view",
+   "title": "219562_239766_4421.jpg"
+  },
+  {
+   "doc_id": "1qGfnf4UbY7ZpoR75o3OiHi_o9Jz1Z1qU",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1qGfnf4UbY7ZpoR75o3OiHi_o9Jz1Z1qU/view",
+   "title": "배경.png"
+  },
+  {
+   "doc_id": "1qJNk88kJI_OJRZCuLRVa9cth_ScyQOvf",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1qJNk88kJI_OJRZCuLRVa9cth_ScyQOvf/view",
+   "title": "6b46fd68-c58b-4960-a4b2-1d50ccafb904.jpg"
+  },
+  {
+   "doc_id": "1qNadUCMZOs9N8xr7y_3EGjGODDsfoHc-",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1qNadUCMZOs9N8xr7y_3EGjGODDsfoHc-/view",
+   "title": "e69af27c-af0b-43e0-ac48-f56017e9065d_1280.jpg"
+  },
+  {
+   "doc_id": "1qgHaVzHRLJhqZ0ib8p9yWp-Dy-UfnvJZ",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1qgHaVzHRLJhqZ0ib8p9yWp-Dy-UfnvJZ/view",
+   "title": "20230617122537 (1).jpg"
+  },
+  {
+   "doc_id": "1rX6JkhNItfYQ_BUZXRbu5EbKEnrzHJ2X",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1rX6JkhNItfYQ_BUZXRbu5EbKEnrzHJ2X/view",
+   "title": "스크린샷 2025-01-06 184406.png"
+  },
+  {
+   "doc_id": "1ra09hsGNq7k_JaRt8LIIhuGf8rzeK7rj",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1ra09hsGNq7k_JaRt8LIIhuGf8rzeK7rj/view",
+   "title": "1694315702762.jpg"
+  },
+  {
+   "doc_id": "1rmYExzsq5aYzpTOTf_HGFQn4_GN4ULgy",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1rmYExzsq5aYzpTOTf_HGFQn4_GN4ULgy/view",
+   "title": "스크린샷 2025-01-06 185212.png"
+  },
+  {
+   "doc_id": "1rw-ypQ7FFZvl7KR2Fc5uDzPSeJDoZVyI",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1rw-ypQ7FFZvl7KR2Fc5uDzPSeJDoZVyI/view",
+   "title": "219562_239774_4638.jpg"
+  },
+  {
+   "doc_id": "1s3bEcg5ZncXDQC9ChbBACq4R6OaKtCdJ",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1s3bEcg5ZncXDQC9ChbBACq4R6OaKtCdJ/view",
+   "title": "20230617122523 (1).jpg"
+  },
+  {
+   "doc_id": "1s8vlIvpR0eJ58JJVjGcpivttSGNnSgfh",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1s8vlIvpR0eJ58JJVjGcpivttSGNnSgfh/view",
+   "title": "스크린샷 2025-03-05 144423.png"
+  },
+  {
+   "doc_id": "1sS0iHK0AsLP1rKOWbexEyiPnUkqm1lN_",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1sS0iHK0AsLP1rKOWbexEyiPnUkqm1lN_/view",
+   "title": "4cc3976a-c91b-47cd-82d6-797af567c0ad_1280.jpg"
+  },
+  {
+   "doc_id": "1solERJxuxsyKbTd9lrZ-Qhk3L1_qY0UC",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1solERJxuxsyKbTd9lrZ-Qhk3L1_qY0UC/view",
+   "title": "스크린샷 2025-03-26 193655.png"
+  },
+  {
+   "doc_id": "1tFKc2LNCiQK8n6P4Hr7G6f-weDelBvLv",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1tFKc2LNCiQK8n6P4Hr7G6f-weDelBvLv/view",
+   "title": "219562_239775_5332.jpg"
+  },
+  {
+   "doc_id": "1tK-C39g4e9c-B3EVRDDFMOhHGqihja4O",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1tK-C39g4e9c-B3EVRDDFMOhHGqihja4O/view",
+   "title": "오버더월_팝업스토어_견적_0423.xlsx"
+  },
+  {
+   "doc_id": "1tUBCIooUspe3owYczfBVUZlcByAYrmTy",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1tUBCIooUspe3owYczfBVUZlcByAYrmTy/view",
+   "title": "0429 오버더월 공간 견적요청.pdf"
+  },
+  {
+   "doc_id": "1u5gNfsILps8_gLV3792e3tc3nQfTTFNO",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1u5gNfsILps8_gLV3792e3tc3nQfTTFNO/view",
+   "title": "image.png"
+  },
+  {
+   "doc_id": "1uGQch9lFzpV3xuWb23c8WtUl5s1GKQBM",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1uGQch9lFzpV3xuWb23c8WtUl5s1GKQBM/view",
+   "title": "20230617122522 (1).jpg"
+  },
+  {
+   "doc_id": "1uVOy1M1Y0j1oSax46cCKs4IomWqIQpUO",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1uVOy1M1Y0j1oSax46cCKs4IomWqIQpUO/view",
+   "title": "6a8a00c2-5792-4d57-9476-27149f3dc55b.jpg"
+  },
+  {
+   "doc_id": "1vDTzcLdG7HNOC2PIA7F7gZ6Qpx1gEy9q",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1vDTzcLdG7HNOC2PIA7F7gZ6Qpx1gEy9q/view",
+   "title": "쎈느건국 3.jpg"
+  },
+  {
+   "doc_id": "1w9blwq77NaILSTwzlSUyGyoo22itktqd",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1w9blwq77NaILSTwzlSUyGyoo22itktqd/view",
+   "title": "0110 스타데이즈 2025 팝업 공간 제안.pdf"
+  },
+  {
+   "doc_id": "1wi1duaxuZsQth7OBW6RNXVBl7Lf0J9s6",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1wi1duaxuZsQth7OBW6RNXVBl7Lf0J9s6/view",
+   "title": "스크린샷 2025-03-05 144346.png"
+  },
+  {
+   "doc_id": "1wum993b9w2herVoeY247XVayfEXsae5W",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1wum993b9w2herVoeY247XVayfEXsae5W/view",
+   "title": "c79331ea-377a-4acf-ab1a-570a6c036719_1280.jpg"
+  },
+  {
+   "doc_id": "1xITAGNAW-bG-Z87hD8SIU5jGqmUwznGQ",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1xITAGNAW-bG-Z87hD8SIU5jGqmUwznGQ/view",
+   "title": "AKR20240223078700005_03_i_P4.jpg"
+  },
+  {
+   "doc_id": "1xSRRjQUa3H04GpufF2_5GiV_kqBZHuln",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1xSRRjQUa3H04GpufF2_5GiV_kqBZHuln/view",
+   "title": "오버더월 로고-08.png"
+  },
+  {
+   "doc_id": "1xjCcsx_KGQOMLGpYwaJepzQx6z063bvY",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1xjCcsx_KGQOMLGpYwaJepzQx6z063bvY/view",
+   "title": "다운로드.jfif"
+  },
+  {
+   "doc_id": "1xjIXHXU3LY-rhNhNR1mdvDUzow4tJ4sY",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1xjIXHXU3LY-rhNhNR1mdvDUzow4tJ4sY/view",
+   "title": "gqwEwG (1).jpg"
+  },
+  {
+   "doc_id": "1xnCPnP2fVZvcCXDU3OLRoq4a4gheJW3_",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1xnCPnP2fVZvcCXDU3OLRoq4a4gheJW3_/view",
+   "title": "다운로드 (1).jfif"
+  },
+  {
+   "doc_id": "1y8NWRAMuktXgpYIECu06ASn__R_ZQmPz",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1y8NWRAMuktXgpYIECu06ASn__R_ZQmPz/view",
+   "title": "maxresdefault.jpg"
+  },
+  {
+   "doc_id": "1ydZHelDtK9tRvKxZxHEafGRnKxTHbNCl",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1ydZHelDtK9tRvKxZxHEafGRnKxTHbNCl/view",
+   "title": "img.jpg"
+  },
+  {
+   "doc_id": "1zAA7cjtINgNKelcUxs1yzZEdI7h6473V",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1zAA7cjtINgNKelcUxs1yzZEdI7h6473V/view",
+   "title": "Gm3Vm-KbEAArmJE.jfif"
+  },
+  {
+   "doc_id": "1zVUR6eLg1L6Z2HgVIbD8Uknbr1wQZJ1T",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1zVUR6eLg1L6Z2HgVIbD8Uknbr1wQZJ1T/view",
+   "title": "스크린샷 2025-01-06 185430.png"
+  },
+  {
+   "doc_id": "1zmj1x9wMKFo9bhJjl7aoTpPCV4G_1FXW",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1zmj1x9wMKFo9bhJjl7aoTpPCV4G_1FXW/view",
+   "title": "kWZVRq.jpg"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 7건: 오버더월_업무계약서0403 최종.pdf, 0120 오버더월 2025 팝업 공간 제안 + 레퍼.p, 0305 오버더월 공간제안서 인쇄.pptx, 0501 오버더월 5차 견적요청(최종안),.pptx, 0501 오버더월 견적요청(최종안),.pptx, 오버더월 결과보고서.pdf. 미확실: 결과보고서에 실측 방문자수/매출 데이터 없음; counting_method 판정 불가(방문 표 부재); 기획서상 예상 방문자수 명시 없음; client_party_id 정규화명 확정 필요; 최종 운영 기간(5/16-5/19)은 계약서 기준이나 초기 제안서는 4/4-4/7이었음"
+ }
+}

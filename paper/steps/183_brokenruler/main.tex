@@ -1,0 +1,78 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{kotex}
+\setmainfont{Apple SD Gothic Neo}
+\setsansfont{Apple SD Gothic Neo}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,linkcolor=MidnightBlue,citecolor=MidnightBlue,
+            urlcolor=MidnightBlue]{hyperref}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\captionsetup{font=small,labelfont=bf}
+\setlength{\parskip}{0.35em}
+\setlength{\parindent}{0pt}
+
+\usepackage{mdframed}
+\newmdenv[linewidth=0.4pt,linecolor=gray!60,backgroundcolor=gray!5,
+          innertopmargin=6pt,innerbottommargin=6pt,skipabove=8pt,skipbelow=8pt]{claimbox}
+\newcommand{\claim}[2]{\begin{claimbox}\textbf{주장.} #1\par\smallskip
+  \textcolor{gray!70}{\textbf{반증 조건.} #2}\end{claimbox}}
+
+\title{\bfseries 부러진 자\\[2pt]
+\large 측정 전 검증이 잡았고, 고친 자가 $2{,}137$ 을 그대로 돌려줬다}
+\author{월드모델 실험실 · 노트 $823 \sim 824$}
+\date{2026-08-07}
+\begin{document}\maketitle
+
+\section{한 줄}
+
+이번 사이클부터 루프에 두 기계가 붙었다(사용자 지시) --- \textbf{측정 전 적대
+검증 워크플로}(3렌즈 리뷰 $\to$ 발견별 반증 에이전트, 총 $19$개)와 \textbf{프레시
+티처 세션}. 첫 가동에서 곡선 파이프라인 재건축(v$1$)의 \textbf{치명 $3$ · 주의
+$10$} 을 측정 전에 확정해 노트 $823$ 을 반려시켰다: 쌍바닥을 산술평균으로
+썼는데 \textbf{$814$ 관례는 RSS}(대장에 살아 있었다), $45$일 창을 썼는데
+\textbf{$813$ 의 $2{,}137$ 은 $90$일 곡선 수}, 합성 잡음이 실측 바닥의
+$1/16{\sim}1/4$ 인데 격자 끝을 무성 채택.
+
+수리판(v$2$ · 노트 $824$)은 사전등록과 코드를 \textbf{커밋한 뒤} 측정했다
+(티처: ``측정 전 고정 주장은 커밋 해시가 있어야 성립한다'').
+
+\begin{figure}[t]\centering
+\includegraphics[width=0.99\textwidth]{figs/ruler.pdf}
+\caption{왼쪽: $814$ 재현 --- v$1$(반려)과 v$2$. 가운데: 겹침 제외 전/후.
+오른쪽: 특징 자의 갈래 B$1$ 과 그 안의 구조.}
+\end{figure}
+
+\section{결과 둘}
+
+\claim{\textbf{① $814$ 복권(갈래 A$3$).} $90$일 적재에서 곡선 수가 \textbf{정확히
+$2{,}137$} --- $813$ 모집단의 완전 재현이고, 세 쌍 판정이 전부 $814$ 와 질적으로
+일치한다(같다 $0.43\times$ · 같다 $1.19\times$ · 모른다 $1.58\times$ --- 널 p$95$
+백스톱이 삼). 노트 $820$ 이 세운 겹침 의심은 곡선 층에서 \textbf{무해}였다:
+$38$ 겹침 제목 중 $90$일 학습 곡선을 가진 것은 $6$제목뿐이고, 제외 후에도
+같다($0.67\times$)가 유지된다. \textbf{규약 $41$ 위반(러너 소실)의 사슬이 이번
+사이클로 닫혔다} --- 파이프라인은 이제 저장소(\texttt{lab/curveshape.py})에 있다.}
+{\textbf{② 특징 자는 무효(갈래 B$1$).} 새 게이트(같은-형태 p$95$ 대 다른-형태
+최솟값 --- CV 게이트는 검증이 씨앗 복권으로 판정해 교체)에서 같은-형태 p$95$
+$0.681$ 이 지연상승-계단 $0.384$ 를 덮는다. 내 예측(B$2$ $75\%$)은 틀렸다.
+단 구조는 남는다: \textbf{감쇠-이중피크는 특징 거리 $1.495$ = p$95$ 의
+$2.2$배로 갈리고}(RMSE 는 같은 쌍에서 여전히 $1.84\times$ 모른다), 두 자의
+맹점이 \textbf{서로 다르다} --- RMSE 는 감쇠-이중피크를, 특징 자는
+지연상승-계단을 못 본다. 자 결합이 다음 사전등록 후보이고, 능력 카드 한계
+기재는 재확인 $1$회 후(노트 $133$).}
+
+\section{티처의 방향 수정 --- 다음 사이클}
+
+티처 세션(프레시 에이전트)의 최우선 지적을 트랙에 반영했다: \textbf{$822$(b)
+합동승 지도의 IP 겹침 통제가 곡선 층보다 먼저다} --- 합동승 도메인이 정확히
+겹침 큰 쪽(세계애니 $+0.143$ = 만화와 $29\%$ 겹침 · 애니 $+0.153$ · 게임
+$+0.180$)이고, 그 지도는 이미 사업 문장에 들어가 있다. T$3$ ① 로 등록,
+결정 규칙 포함. 아이돌 보조 헤드 승격 결정 규칙(확인 $1$회 $\to$ 서빙 권고)과
+유튜브 전향 폴링의 달력 마감도 트랙에 박았다. 판 $\rho$ $0.4689$ 그대로.
+
+\end{document}

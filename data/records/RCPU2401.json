@@ -1,0 +1,157 @@
+{
+ "record_id": "RCPU2401",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:스즈메의_문단속",
+  "space_id": "unresolved:잠실_롯데월드몰_롯데시네마_월드타워점_7층",
+  "client_party_id": "unresolved:미디어캐슬",
+  "brand_key": "스즈메의문단속",
+  "space_key": "잠실_롯데월드몰"
+ },
+ "intervention": {
+  "concept": "영화 '스즈메의 문단속' 굿즈 판매형 팝업스토어. 메인 포토존, 리얼문 DP, 캐릭터 등신대와 상품 진열대로 구성한 극장 내 팝업.",
+  "brand_name": "스즈메의 문단속",
+  "experience_elements": [
+   "메인 포토존 1ea",
+   "리얼문 DP(1100*500*h2100)",
+   "캐릭터 등신대(실물 사이즈) 7ea",
+   "라이트 패널 그래픽",
+   "입출구 바닥 그래픽",
+   "상품 판매존"
+  ],
+  "promotions": [
+   "엽서 1인 2개 구매 제한 상품"
+  ],
+  "staging_tags": [
+   "포토존",
+   "리얼문",
+   "캐릭터등신대",
+   "라이트패널",
+   "입구로고그래픽",
+   "외부그래픽"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "송파구",
+   "venue_name": "롯데시네마 월드타워점 7층",
+   "venue_type": "영화관 팝업존",
+   "foot_traffic_context": "롯데시네마 월드타워관 입장객(약 300만) 약 70% 이동동선 상 위치, 씨네파크·랑데자뷰·공차·랜덤스퀘어 인접",
+   "venue_slot": "7층"
+  },
+  "area_pyeong": 14.5,
+  "period": {
+   "from": "2024-01-10",
+   "to": "2024-01-24",
+   "days": 15
+  },
+  "season": "겨울(겨울방학)",
+  "fee_structure": {
+   "type": "revenue_share",
+   "detail": "매출쉐어 10% +-, 관리비 전기 실사용량(월 약 5~6만원). 견적서상 VAT 10% 별도이나 구체 계약총액·분할 금액 미기재."
+  },
+  "brand_requirements": [
+   "필수 구성 요소 외 환경 조성 업체 자율(단 사전 공유 필수)",
+   "라이트패널 3개 및 모니터 영상",
+   "400x1200mm 배너 3개(입구1, 타층홍보2)",
+   "팝업스토어 명칭 제작"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "롯데시네마 월드타워관 입장객(약 300만) 약 70% 이동동선 상 위치"
+  },
+  "derived": {
+   "duration": {
+    "days": 15,
+    "weekend_share": 0.27,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 9,
+    "holiday_until": 30,
+    "holiday_block_in": 0,
+    "nat_event_gap": 55,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": "서울 송파구 올림픽로 300"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": -18.8
+  },
+  "counting_method": "unknown",
+  "counting_basis": "매출 엑셀에 1월 10일~24일 일매출 표(총매출/카드/구매건수/객단가) 항목이 존재하나 실제 수치는 텍스트에 포함되지 않음. 방문자 집계 정의 없음.",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 성격의 매출 파일은 존재하나 일자별 매출·구매건수 실측 수치가 텍스트에 비어 있음. 방문자 수 데이터 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-01, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2024-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-Z8Cp-DK4VccIXaR1IhnfGny298n5vir",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1-Z8Cp-DK4VccIXaR1IhnfGny298n5vir/view",
+   "title": "0103 롯데시네마 월드타워 스즈메팝업스토어 시안.pdf"
+  },
+  {
+   "doc_id": "13u_HtJJMvvZzTZypMASCY_2nw73dqQth",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/13u_HtJJMvvZzTZypMASCY_2nw73dqQth/view",
+   "title": "스즈메의 문단속 롯데월드몰 팝업스토어 운영견적서(계약서 작성x)(스위트스팟_23.12.21).xlsx"
+  },
+  {
+   "doc_id": "1B3gBXpzulgJ6xge-aD4ZfkLMmKEj5dmH",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1B3gBXpzulgJ6xge-aD4ZfkLMmKEj5dmH/view",
+   "title": "Thumbs.db"
+  },
+  {
+   "doc_id": "1skwnsDFqjDdvphvxaAMl2B6XhoTvbzdK",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1skwnsDFqjDdvphvxaAMl2B6XhoTvbzdK/view",
+   "title": "롯데시네마 월드타워 팝업스토어 제안 23.11.pdf"
+  },
+  {
+   "doc_id": "1xWcLjC22pkqStGq0Kmc1_FvlJLr5q47Y",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1xWcLjC22pkqStGq0Kmc1_FvlJLr5q47Y/view",
+   "title": "롯데월드타워_스즈메의 문단속 매출.xlsx"
+  },
+  {
+   "doc_id": "1yVUmxLgXnHRzrTEQLUjRbINV0ks3rkZN",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1yVUmxLgXnHRzrTEQLUjRbINV0ks3rkZN/view",
+   "title": "스즈메의 문단속 롯데월드몰 팝업스토어 운영견적안(스위트스팟_23.12.21).xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 4건: 0103 롯데시네마 월드타워 스즈메팝업스토어 시안.pd, 스즈메의 문단속 롯데월드몰 팝업스토어 운영견적안(스위트, 롯데월드타워_스즈메의 문단속 매출.xlsx, 롯데시네마 월드타워 팝업스토어 제안 23.11.pdf. 미확실: 일자별 매출/구매건수 실측 수치 없음; 총 방문자 수 데이터 없음; 계약 총액 및 선금/중도금/잔금 분할 금액 미기재; 견적서 단가/합계 수치 비어 있음; 예상 방문자수(plan) 미기재; 운영기간 견적서는 14일(1/10~23), 계약/메타는 15일(1/10~24)로 불일치"
+ }
+}

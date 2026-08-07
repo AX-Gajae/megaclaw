@@ -1,0 +1,167 @@
+{
+ "record_id": "RTPU2541",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:농심_신라면",
+  "space_id": "unresolved:전주_오거리문화광장_프로모션부스존",
+  "client_party_id": "unresolved:농심_면마케팅팀",
+  "brand_key": "농심_신라면",
+  "space_key": "전주_오거리문화광장"
+ },
+ "intervention": {
+  "concept": "신라면 39년의 역사를 극장에서 상영하는 컨셉의 '辛네마(辛라면+CINEMA)' 부스. 전주국제영화제와 신라면이 가진 '진짜의 맛/진짜 이야기'를 레드&블랙 극장 분위기로 연출. 극장 입구·시상식 포토존·티켓부스형 결제매대·브로드웨이 히스토리월로 구성.",
+  "brand_name": "농심 신라면",
+  "experience_elements": [
+   "게이트(극장 입구 커튼 연출)",
+   "신네마 시상식 포토존",
+   "신라면 정보전달 및 히스토리월(역대 포스터·광고, 나라별 수출현황)",
+   "이벤트 및 결제존(티켓부스형 매대)",
+   "스피드 퀴즈",
+   "영수증 이벤트"
+  ],
+  "promotions": [
+   "스피드 퀴즈 이용권",
+   "영수증 이벤트"
+  ],
+  "staging_tags": [
+   "극장/씨네마 컨셉",
+   "레드&블랙",
+   "레드카펫",
+   "시상식 포토존",
+   "브로드웨이 빈티지 극장",
+   "히스토리월"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "전주시",
+   "district": "완산구",
+   "venue_name": "전주 오거리 문화광장 앞 프로모션 부스존",
+   "venue_type": "야외 프로모션 부스존",
+   "foot_traffic_context": "제26회 전주국제영화제 관객 이동 동선상 위치"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-05-01",
+   "to": "2025-05-08",
+   "days": 8
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 31,500,000원 (VAT 10% 별도, 만단위 이하 절사). 정가항목 소계 4,500,000(기획료1,500,000+디자인3,000,000). 실비정산액: 제작/운영물자 4,900,000, STAFF 15,525,000, 진행비 4,200,000. 소계1~4 29,125,000. 대행수수료 소계의 10%(정가항목 제외) 2,462,500. 합계 31,500,000. 운영 09:30-18:30 9시간, 공휴일(5/5,6) STAFF 2.5배 적용."
+  },
+  "brand_requirements": [
+   "몽골부스 3m×3m×2.4m(W×D×H, 게이트 미포함), 뒤쪽 절반 6m×1.5m 창고 사용",
+   "4/30 설치, 5/1 정오 전까지 부스 설치 완료",
+   "농심 브랜딩 스탭복 10장",
+   "결제 단말기 등 운영물품 구비"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "전주국제영화제 관객 이동 동선상 부스존"
+  },
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  },
+  "derived": {
+   "duration": {
+    "days": 8,
+    "weekend_share": 0.25,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 59,
+    "holiday_until": 2,
+    "holiday_block_in": 4,
+    "nat_event_gap": 33,
+    "nat_event": null,
+    "doc_lag_days": 20,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 2262551.0,
+    "pnl_pre_accounts": 6,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-04-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": 3966997,
+   "rev_mm_recognized": 31.4
+  },
+  "counting_method": "unknown",
+  "counting_basis": "결과보고서 표 컬럼: 날짜, 스피드 퀴즈 이용권 매출액, 영수증 이벤트 참여자 수, 스피드 퀴즈 참여자 수, 추정 방문객 — 데이터 값이 기재되어 있지 않음",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서에 일자별 표 양식(날짜/스피드퀴즈 이용권 매출액/영수증 이벤트 참여자 수/스피드 퀴즈 참여자 수/추정 방문객)은 존재하나 실측 수치가 비어 있음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 31.4 ≈ 계약총액 31.5",
+   "contract_total_mm": 31.5,
+   "last_recognition_period": "2025-05"
+  },
+  "sales_basis": "PnL 상품매출 양수계정 합 × 1.1 (부가세 포함 기준)",
+  "label_history": [
+   {
+    "at": "pnl_sales (2026-07-28)",
+    "action": "mine",
+    "changes": [
+     "sales_krw 3,966,997 (PnL 총 결제액)"
+    ],
+    "evidence": "core.project_pnl_monthly 상품매출 양수계정 합 3,606,361(공급가) × 1.1, 인식 1개월"
+   }
+  ]
+ },
+ "docs": [
+  {
+   "doc_id": "1Bug7VGJamcKHTkW9sYFB3kdfSqcDdG8y",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Bug7VGJamcKHTkW9sYFB3kdfSqcDdG8y/view",
+   "title": "계약서 없음.txt"
+  },
+  {
+   "doc_id": "1cfkPF2UeKU1l8YXpU3p_LTQJInsTv4d5",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1cfkPF2UeKU1l8YXpU3p_LTQJInsTv4d5/view",
+   "title": "(SWEETSPOT)농심_전주국제영화제_견적서_0512.pdf"
+  },
+  {
+   "doc_id": "1erZTXKU0W2BlNcTdbs05aLuekonFXETh",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1erZTXKU0W2BlNcTdbs05aLuekonFXETh/view",
+   "title": "250411 전주국제영화제 농심신라면부스_디자인제안서.pdf"
+  },
+  {
+   "doc_id": "1xUQJQbCukbM4HB_lzOHLJQmT5oFvdHHg",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1xUQJQbCukbM4HB_lzOHLJQmT5oFvdHHg/view",
+   "title": "농심_전주국제영화제_결과보고서_250513.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: 250411 전주국제영화제 농심신라면부스_디자인제안서., (SWEETSPOT)농심_전주국제영화제_견적서_0512, 농심_전주국제영화제_결과보고서_250513.pdf. 미확실: 결과보고서 방문객·매출 실측 수치 전부 공란; 면적(평); 예상 방문객(KPI) 미기재; 방문객 집계 방식(추정 방문객) 정의 없음; 견적서 수신일(5/27)과 파일명(0512), 운영기간(5/1~8) 간 날짜 불일치"
+ }
+}

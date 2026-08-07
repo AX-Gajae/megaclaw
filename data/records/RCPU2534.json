@@ -1,0 +1,195 @@
+{
+ "record_id": "RCPU2534",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:EOA",
+  "space_id": "unresolved:더현대서울",
+  "client_party_id": null,
+  "brand_key": "EOA",
+  "space_key": "더현대서울"
+ },
+ "intervention": {
+  "concept": "더퓨처 EOA 브랜드의 팝업스토어로 더현대서울에서 운영. 원문 문서(기획서/제안서/결과보고서)가 제공되지 않아 세부 컨셉 파악 불가.",
+  "brand_name": "EOA",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": null,
+   "venue_name": "더현대서울",
+   "venue_type": "백화점",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-08-04",
+   "to": "2025-08-17",
+   "days": 14
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대서울"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 57,
+    "holiday_until": 11,
+    "holiday_block_in": 3,
+    "nat_event_gap": 62,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 15,
+    "comp_prior_at_venue": 373,
+    "comp_within_500m_open": 16,
+    "comp_within_1000m_open": 16,
+    "matched_address": "서울 영등포구 여의대로 108"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 307844.0,
+    "pnl_pre_accounts": 5,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-07-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 48.4
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-08, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-08"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "14fNUTgji282CJ3N2dUnBbPERMcdWBxSB",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14fNUTgji282CJ3N2dUnBbPERMcdWBxSB/view",
+   "title": "시공계약서-그리드_더현대서울 EOA팝업스토어 인테리어건.docx"
+  },
+  {
+   "doc_id": "18yua-H36sH-2IVl88WwFd-ZGz7fSqcTK",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/18yua-H36sH-2IVl88WwFd-ZGz7fSqcTK/view",
+   "title": "견적서_그리드_더현대서울 EOA팝업스토어 인테리어건.xlsx"
+  },
+  {
+   "doc_id": "1LyUQ3batCjD78nZh15B2HN0zmO39C2SV",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1LyUQ3batCjD78nZh15B2HN0zmO39C2SV/view",
+   "title": "견적서_더퓨쳐 더현대서울 EOA팝업_0811.pdf의 사본"
+  },
+  {
+   "doc_id": "1N6O9st6D0ZmlNBlhXhgRfkfC_GHqCk65",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1N6O9st6D0ZmlNBlhXhgRfkfC_GHqCk65/view",
+   "title": "견적서_현대드림애드_EOA더현서 시트추가건.xls"
+  },
+  {
+   "doc_id": "1OS6fDBPZ4z2t8wkpvqTjWu9g83VX616x",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1OS6fDBPZ4z2t8wkpvqTjWu9g83VX616x/view",
+   "title": "세금계산서_그리드_EOA더현서 팝업 인테리어건(선금50%).JPG"
+  },
+  {
+   "doc_id": "1QPaNnN8f-wSBQlynSOgywQlJr9r1boIr",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1QPaNnN8f-wSBQlynSOgywQlJr9r1boIr/view",
+   "title": "세금계산서_에이컴퍼니_EOA더현대서울 팝업 렌탈건.JPG"
+  },
+  {
+   "doc_id": "1Wu1YJSIINzXHlNLc_ShVVRvo75bIVPZe",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Wu1YJSIINzXHlNLc_ShVVRvo75bIVPZe/view",
+   "title": "견적서_에이렌탈_EOA더현서팝업 가구렌탈.xlsx"
+  },
+  {
+   "doc_id": "1ZXVeEcxchLftbwaSWU2Td1w8fGh2loQ-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ZXVeEcxchLftbwaSWU2Td1w8fGh2loQ-/view",
+   "title": "더현서EOA 최종견적서.pdf"
+  },
+  {
+   "doc_id": "1i7qiIH-jImuzaSvM-KHrXGfFfOlzfb5Z",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1i7qiIH-jImuzaSvM-KHrXGfFfOlzfb5Z/view",
+   "title": "시공계약서-그리드_더현대서울 EOA팝업스토어 인테리어건.pdf"
+  },
+  {
+   "doc_id": "1iwgxplNupu67jwAqLc3WWRuf7FfTgAbr",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1iwgxplNupu67jwAqLc3WWRuf7FfTgAbr/view",
+   "title": "더퓨처 결과보고서.pdf"
+  },
+  {
+   "doc_id": "1kwMRL8aH80axeTqtgz_LtK-6BV3oYx9r",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1kwMRL8aH80axeTqtgz_LtK-6BV3oYx9r/view",
+   "title": "세금계산서_그리드_EOA더현서 팝업 인테리어건(잔금50%).JPG"
+  },
+  {
+   "doc_id": "1nVn5xj7dmzXonraaJ3k4J9PeVKz8Yguw",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1nVn5xj7dmzXonraaJ3k4J9PeVKz8Yguw/view",
+   "title": "날인)EOA더현대서울_업무계약서0723.pdf의 사본"
+  },
+  {
+   "doc_id": "1o6sUngxs6CPSOYc2DUT5jOAqYCacYzH9",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1o6sUngxs6CPSOYc2DUT5jOAqYCacYzH9/view",
+   "title": "★EOA더현서팝업 실비정리.xlsx"
+  },
+  {
+   "doc_id": "1t8lA4qB94EcvmB-BUUzhBsgNqfRKzm6W",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1t8lA4qB94EcvmB-BUUzhBsgNqfRKzm6W/view",
+   "title": "수정견적_그리드_더현대서울 EOA팝업스토어 인테리어건(철수비 네고).xlsx"
+  },
+  {
+   "doc_id": "1vaY-VEiGpcL360fYi9_JYke4YuDgNL_G",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1vaY-VEiGpcL360fYi9_JYke4YuDgNL_G/view",
+   "title": "세금계산서_현대드림애드_EOA더현서 팝업 시트추가건.JPG"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서/기획서/견적서/결과보고서) 전체 미제공; 클라이언트명 불명; 컨셉·체험요소·프로모션·연출태그 정보 없음; 면적(평) 정보 없음; 수수료구조·계약금액 정보 없음; 방문자·매출 실측 데이터 없음; 예상 방문자 수 없음"
+ }
+}

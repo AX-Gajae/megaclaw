@@ -1,0 +1,158 @@
+{
+ "record_id": "RTPU2550",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:클리오",
+  "space_id": "unresolved:도쿄_고토구_Ariake_GYM-EX",
+  "client_party_id": "unresolved:클리오",
+  "brand_key": "클리오",
+  "space_key": "도쿄_아리아케_GYM-EX"
+ },
+ "intervention": {
+  "concept": "Qoo10 메가코스메랜드 내 CLIO AIRLINE 컨셉의 팝업 부스. 항공사 탑승 수속을 모티브로 여권형 리플렛에 스탬프랠리(체크인→퀴즈→수하물 찾기→오미쿠지)를 진행하는 체험형 부스. 스탬프 3개 완성 시 오미쿠지 뽑기로 등수별 GWP를 제공한다.",
+  "brand_name": "클리오 (CLIO)",
+  "experience_elements": [
+   "체크인 데스크(CLIO AIRLINE 여권 발급)",
+   "이벤트1: 에센셜 립치크탭 퀴즈",
+   "포토존",
+   "제품 체험존(립치크탭/킬커버/크리스탈 글램 틴트/프로 아이 팔레트)",
+   "이벤트2: 수하물 찾기(미니 컨베이어벨트/캐리어 카드)",
+   "오미쿠지 뽑기",
+   "스탬프랠리(여권형 리플렛)"
+  ],
+  "promotions": [
+   "에센셜 립치크 탭 미니 실버 2호 증정(체크인)",
+   "오미쿠지 등수별 GWP(1등 시딩키트, 2등 참, 3등 탭탭블러쉬, 4등 키링, 5등 손거울, 6등 투명파우치)",
+   "1등 당첨자 시딩키트 추후 발송"
+  ],
+  "staging_tags": [
+   "항공사/공항 컨셉",
+   "CLIO AIRLINE",
+   "스탬프랠리",
+   "여권형 리플렛",
+   "비행기 시트",
+   "대형 립치크탭 시딩박스",
+   "미니 컨베이어벨트",
+   "오미쿠지 커스텀"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "도쿄",
+   "district": "고토구",
+   "venue_name": "Ariake GYM-EX",
+   "venue_type": "전시/박람회장 (Qoo10 메가코스메랜드 내)",
+   "foot_traffic_context": "Qoo10 MEGA COSME LAND 2025 대형 코스메 박람회 내 부스"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-10-04",
+   "to": "2025-10-05",
+   "days": 2
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총 계약금액 100,000,000원(VAT 별도). 선금 50% 50,000,000원(계산서 2025.10.13, 지급 2025.09.09), 잔금 50% 50,000,000원(계산서 2025.10.24). 견적: 합계(Sub Total 1~3) 91,900,000원 + 대행수수료 소계의 10%(정가 항목 제외) 8,190,000원 = 100,000,000원(만단위 이하 절사, VAT 별도). 지체상금 지체 1일당 총 계약금액의 3/1000."
+  },
+  "brand_requirements": [
+   "공간 연출 및 컨셉 기획",
+   "장치장식물/제작물 디자인 및 제작",
+   "세팅 및 철수",
+   "제작물 사용 전 의뢰사 감수 필수",
+   "모든 제작물 권리 및 지식재산권 의뢰사 귀속",
+   "정치·사회·종교적 중립 유지",
+   "측면 메인월 2곳 및 바닥 카펫은 주최측 제공"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "Qoo10 MEGA COSME LAND 2025 대형 박람회 내 부스"
+  },
+  "derived": {
+   "duration": {
+    "days": 2,
+    "weekend_share": 1.0,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 5.5,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 0,
+    "holiday_until": 0,
+    "holiday_block_in": 2,
+    "nat_event_gap": 27,
+    "nat_event": null,
+    "doc_lag_days": 5,
+    "doc_dates_found": 4
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 52960550.0,
+    "pnl_pre_accounts": 13,
+    "pnl_pre_months": 3,
+    "pnl_pre_first": "2025-06-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 100.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 미제공으로 실측 방문/매출 없음. 기획서 배포 계획상 오미쿠지 사용 계획이 10/4·10/5 각 10,000개(합 20,000+10/3 300), 여권형 리플렛 8,900개, 립치크탭 미니 5,008개로 명시되나 이는 배포물 수량 계획이며 예상 방문 총원으로 단정 불가.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 100.0 ≈ 계약총액 100.0",
+   "contract_total_mm": 100.0,
+   "last_recognition_period": "2025-10"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1E1LrOcaiH7SPJjn2GM_amUimZK60Cn-C",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1E1LrOcaiH7SPJjn2GM_amUimZK60Cn-C/view",
+   "title": "820250827115043_스위트스팟 클리오 Qoo10 메가코스메랜드_계약서_250822_법무검토완료(250827).pdf"
+  },
+  {
+   "doc_id": "1YuRsZXRDKSpnDvGRPRyzyMMvvtV-4Ywz",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1YuRsZXRDKSpnDvGRPRyzyMMvvtV-4Ywz/view",
+   "title": "[Sweetspot] 클리오_Qoo10 메가코스메랜드 운영계획안_250929_제안서.pdf"
+  },
+  {
+   "doc_id": "1nseqvlcVBJI_fk4yirHrSU1QedfA43co",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1nseqvlcVBJI_fk4yirHrSU1QedfA43co/view",
+   "title": "(Sweetspot) 클리오_Qoo10 메가코스메랜드_견적서_250822.pdf"
+  },
+  {
+   "doc_id": "1vvw0ejagTsHOabAePFMNGf2uzZ6zZ9h3",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1vvw0ejagTsHOabAePFMNGf2uzZ6zZ9h3/view",
+   "title": "클리오 Qoo10.txt"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: 820250827115043_스위트스팟 클리오 Qoo1, [Sweetspot] 클리오_Qoo10 메가코스메랜드 , (Sweetspot) 클리오_Qoo10 메가코스메랜드_. 미확실: 결과보고서 부재 - 실측 방문자수 및 POS 매출 없음; 면적(평) 정보 없음; 기간 불일치: 계약/제안서 본행사는 2025-10-04~10-05, 프로젝트 메타 및 배포계획은 10-03 포함(10/3은 설치일/인플루언서 사전입장으로 보임); 예상 방문 총원(plan_visitors_expected) 명시 없음 - 배포물 수량만 존재"
+ }
+}

@@ -1,0 +1,157 @@
+{
+  "record_id": "RTPU2582",
+  "schema_version": "0.1",
+  "entities": {
+    "brand_id": "unresolved:부드바르",
+    "space_id": "unresolved:서울_브루어리",
+    "client_party_id": "unresolved:벡터컴",
+    "brand_key": "부드바르",
+    "space_key": "서울_브루어리"
+  },
+  "intervention": {
+    "concept": "부드바르X서울 브루어리 콜라보 '부드바르 인 서울' 프로모션. 스탬프 랠리 이벤트와 룰렛을 활용한 콜라보 팝업 프로모션.",
+    "brand_name": "부드바르 X 서울 브루어리",
+    "experience_elements": [
+      "스탬프 랠리 이벤트",
+      "룰렛(스탠드형)"
+    ],
+    "promotions": [
+      "스탬프 랠리",
+      "룰렛"
+    ],
+    "staging_tags": []
+  },
+  "conditions": {
+    "location": {
+      "city": null,
+      "district": null,
+      "venue_name": null,
+      "venue_type": null,
+      "foot_traffic_context": null
+    },
+    "area_pyeong": null,
+    "period": {
+      "from": "2025-11-07",
+      "to": "2025-11-23",
+      "days": null
+    },
+    "season": "가을",
+    "fee_structure": {
+      "type": "agency_fee",
+      "detail": "총계 32,900,000원 (VAT 10% 별도, 만원단위 이하 절사). 소계(Sub Total 1~3) 30,280,000원 + 대행수수료 2,678,000원(소계의 10%, 정가항목 제외). 기획료 3,500,000(기획 총괄 2,500,000+아트워크 1,000,000), 인건비 소계 23,625,000, 제작·구매·기타 3,155,000. 프로모터 4인 320,000/일, 운영스태프 160,000/일, 슈퍼바이저 220,000/일, 식비 10,000."
+    },
+    "brand_requirements": [
+      "프로모터 4인(2인 상주 2교대)",
+      "운영 스태프 상주 배치",
+      "슈퍼바이저 1인",
+      "프로모터 사전교육(10/27,10/29,10/31)",
+      "스태프 근무복 착용",
+      "방한대비 물품(옥외 대비)"
+    ],
+    "scale": {
+      "store_count": 1,
+      "venue_traffic_type": "standalone",
+      "host_traffic_note": null
+    }
+  },
+  "outcome": {
+    "daily": [
+      {
+        "date": "11/1",
+        "visitors": 433,
+        "sales_krw": null
+      },
+      {
+        "date": "11/2",
+        "visitors": 341,
+        "sales_krw": null
+      },
+      {
+        "date": "11/3",
+        "visitors": 108,
+        "sales_krw": null
+      },
+      {
+        "date": "11/7",
+        "visitors": 273,
+        "sales_krw": null
+      },
+      {
+        "date": "11/8",
+        "visitors": 332,
+        "sales_krw": null
+      },
+      {
+        "date": "11/9",
+        "visitors": 287,
+        "sales_krw": null
+      },
+      {
+        "date": "11/14",
+        "visitors": 248,
+        "sales_krw": null
+      },
+      {
+        "date": "11/15",
+        "visitors": 271,
+        "sales_krw": null
+      },
+      {
+        "date": "11/16",
+        "visitors": 311,
+        "sales_krw": null
+      },
+      {
+        "date": "11/21",
+        "visitors": 233,
+        "sales_krw": null
+      },
+      {
+        "date": "11/22",
+        "visitors": 189,
+        "sales_krw": null
+      },
+      {
+        "date": "11/23",
+        "visitors": 172,
+        "sales_krw": null
+      }
+    ],
+    "totals": {
+      "visitors": 2837,
+      "sales_krw": null,
+      "rev_mm_recognized": 32.9
+    },
+    "counting_method": "entry",
+    "counting_basis": "리플렛 소진수량",
+    "plan_visitors_expected": null,
+    "retention": null,
+    "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+    "rev_mm_completion": {
+      "status": "complete",
+      "rule": "인식 32.9 ≈ 계약총액 32.9",
+      "contract_total_mm": 32.9,
+      "last_recognition_period": "2025-11"
+    }
+  },
+  "docs": [
+    {
+      "doc_id": "15xej848clgpfBnB8fK_EP2r2S0DBufo8",
+      "kind": "정산",
+      "uri": "https://drive.google.com/file/d/15xej848clgpfBnB8fK_EP2r2S0DBufo8/view",
+      "title": "Sweetspot_부드바르X서울브루어리_견적서_1127.pdf"
+    },
+    {
+      "doc_id": "1R8_Q4flTAxbA5fzRQ96CawA23ZRHS46d",
+      "kind": "운영일지",
+      "uri": "https://drive.google.com/file/d/1R8_Q4flTAxbA5fzRQ96CawA23ZRHS46d/view",
+      "title": "부드바르 서울브루어리 팝업_결과보고서_1124.pdf"
+    }
+  ],
+  "provenance": {
+    "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+    "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+    "extracted_at": "2026-07-23",
+    "notes": "일괄 정규화. confidence=medium. 완독 문서 1건: Sweetspot_부드바르X서울브루어. 미확실: 입지/장소 정보 전체(견적서에 미기재); 면적(평); 일일 방문객 및 매출 실측(결과보고서 없음); 예상 방문객 수; 운영기간 일수 정확값; 클라이언트 정식 법인명 | 라벨발굴(2026-07-24): 결과보고서 재추출 — OVERVIEW '팝업 방문객 데이터' 표, 카운팅 기준: 리플렛 소진수량"
+  }
+}

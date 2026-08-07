@@ -1,0 +1,86 @@
+{
+ "market_record_id": "MKT-2024-0006",
+ "event_name": "서울시 '서울 굿즈 팝업스토어'",
+ "brand": "서울특별시",
+ "ip_or_collab": "풀무원 협업 서울라면",
+ "category": "other",
+ "intervention": {
+  "concept_description": "서울 브랜드 굿즈 70여 종 전시·판매. 1층 서울나이트·2층 서울라이트 콘셉트, 서울라면 시식 포차 등 야외존",
+  "experience_elements": [
+   "굿즈 전시 판매",
+   "디저트 카페",
+   "서울라면 시식",
+   "정책퀴즈"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "성수 쎈느(연무장5길 20)",
+  "venue_type": "other",
+  "neighborhood": "성수",
+  "city": "서울",
+  "period_from": "2024-02-01",
+  "period_to": "2024-02-04",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.5,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 15000,
+  "visitors_period_days": 4,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "서울시 제공. 하루 평균 약 4000명, 인스타그램 게시물 약 3200개 업로드",
+  "visitors_source_quote": "성수동 '서울 굿즈 팝업스토어' 성료…나흘간 1만5000명 방문 / 이번 팝업 스토어는 굿즈 전시는 물론 서울 사람의 일상을 체험할 수 있는 볼거리를 선보였으며, 하루 평균 약 4000명이 찾았다.",
+  "visitors_source_url": "https://www.newsis.com/view/NISX20240205_0002617745",
+  "visitors_source_date": "2024-02-05",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": true,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "오세훈 시장 3일 현장 방문. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

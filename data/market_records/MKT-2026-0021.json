@@ -1,0 +1,111 @@
+{
+ "market_record_id": "MKT-2026-0021",
+ "event_name": "쿠팡 '메가뷰티쇼 버추얼 스토어' @앤더슨씨 성수",
+ "brand": "쿠팡",
+ "ip_or_collab": "메가뷰티쇼 온라인 행사 연계 오프라인 버추얼 스토어",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "온라인 메가뷰티쇼 연계 오프라인 팝업. 시간당 100명·일일 1000명 한정 운영, 입장권 사전 배포",
+  "experience_elements": [
+   "버추얼 스토어 체험",
+   "브랜드 존",
+   "포토존"
+  ],
+  "promotions": [
+   "입장권 사전 배포(무료)",
+   "쿠팡 연계 혜택"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "앤더슨씨 성수",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2026-04-17",
+  "period_to": "2026-04-19",
+  "area_pyeong": 600,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.67,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 3000,
+  "visitors_period_days": 3,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "쿠팡 사전 예상치('3일 간 3000여 명이 방문할 예정'). 사후 실적 보도 아님. 피지오겔 팝업 집계와 중첩 가능성(노트)",
+  "visitors_source_quote": "3일 간 3000여 명이 방문할 예정이다",
+  "visitors_source_url": "https://www.sedaily.com/NewsView/20033891",
+  "visitors_source_date": "2026-04-17",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "평일 낮에도 입장 대기줄",
+   "sold_out": null,
+   "reservation_fill": "입장권 10분 만에 매진",
+   "signal_quotes": [
+    "입장권이 오픈 10분 만에 매진됐다",
+    "하루 입장객은 1000명(시간당 100명)으로 한정했다",
+    "사전 입장권이 판매 오픈 10분 만에 전 시간대가 매진된 만큼 이미 길게 늘어선 줄이 눈에 들어왔다.(서울파이낸스 2026-04-18)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "E",
+    "C",
+    "A"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "예상치 기반이나 주최사 공식 수치(일일 1000명 한정 운영과 정합). 피지오겔 팝업(MKT-2026-0003)과 동 장소·기간. | 병합 레코드: MKT-2026-0041 | [병합:MKT-2026-0041] 주최 예상 방문객 기반. 시사저널e는 '3000명 이상 예상' 보도.",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 3000,
+   "basis": "organizer_claim",
+   "quote": "사전 입장권은 이달 6일 오픈 10분 만에 전 시간대 예약이 모두 매진됐다. 쿠팡에 따르면 오전 10시부터 오후 8시까지 운영하며 3일 간 3000여 명이 방문할 예정이다.",
+   "url": "https://www.sedaily.com/article/20033891",
+   "date": "2026-04-17"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

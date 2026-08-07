@@ -1,0 +1,100 @@
+{
+ "market_record_id": "MKT-2023-0025",
+ "event_name": "네이버웹툰 2023 하반기 팝업스토어 3개(스타필드 코엑스몰·더현대 서울·신세계 센텀시티)",
+ "brand": "네이버웹툰",
+ "ip_or_collab": "마루는 강쥐, 냐한남자 등 네이버웹툰 IP",
+ "category": "game_webtoon",
+ "intervention": {
+  "concept_description": "네이버웹툰 캐릭터 IP 굿즈 팝업 3개 지역 순회(코엑스몰·더현대 서울 90평 대형·부산 센텀시티). 각 행사장 역대 IP 팝업 최대 매출·최대 방문객 기록",
+  "experience_elements": [
+   "웹툰 캐릭터 굿즈 판매",
+   "대형 팝업 공간(90평 규모)"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "스타필드 코엑스몰(6/29~7/12), 더현대 서울(9/5~9/17), 신세계백화점 센텀시티점(11/10~11/23)",
+  "venue_type": "mall",
+  "neighborhood": "삼성/여의도/센텀",
+  "city": "서울·부산",
+  "period_from": "2023-06-29",
+  "period_to": "2023-11-23",
+  "area_pyeong": 90,
+  "multi_store": true,
+  "derived": {
+   "duration": {
+    "days": 148,
+    "weekend_share": 0.28,
+    "holiday_days": 7
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 170000,
+  "visitors_period_days": 41,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "네이버웹툰 성과 집계 발표: '세 차례의 팝업스토어 성과 집계 결과, 누적 방문객 수 약 17만 명을 기록했다'",
+  "visitors_source_quote": "네이버웹툰에 따르면 스타필드 코엑스몰, 더현대서울, 신세계백화점 센텀시티점에서 열린 총 세 차례의 팝업스토어 성과 집계 결과, 누적 방문객 수 약 17만명을 기록했다.",
+  "visitors_source_url": "https://www.newsis.com/view/NISX20231207_0002549229",
+  "visitors_source_date": "2023-12-07",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "세 차례의 팝업스토어 현장에서는 약 60만 개 이상의 상품이 팔렸으며 개인 최대 결제 금액은 116만 원에 달한다.",
+    "각 행사장의 역대 IP 팝업스토어 중 최대 매출과 최대 방문객 수를 기록하며",
+    "약 60만개 이상 상품이 팔렸으며 개인 최대 결제 금액은 116만원에 달한다. (디지털데일리 2023-12-07)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "3개 팝업 합산 수치(개별 팝업 수치 미분리). area_pyeong 90평은 더현대 서울 대형 팝업 기준 언급. 총 운영일수 41일(14+13+14). | 병합 레코드: MKT-2023-0003 | [병합:MKT-2023-0003] 3개 팝업 합산 수치. 각 팝업별 개별 수치는 미공개",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 170000,
+   "basis": "organizer_claim",
+   "quote": "총 세 차례 팝업스토어 성과 집계 결과, 누적 방문객 수 약 17만명을 기록했다고 7일 밝혔다. 약 60만개 이상 상품이 팔렸으며 개인 최대 결제 금액은 116만원에 달한다.",
+   "url": "https://m.ddaily.co.kr/page/view/2023120709314396675",
+   "date": "2023-12-07"
+  }
+ ],
+ "_aggregate": true,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "집계형(통합/합산)",
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

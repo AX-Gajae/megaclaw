@@ -1,0 +1,225 @@
+{
+ "record_id": "RCPU2523",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:카카오스타일",
+  "space_id": "unresolved:스테이지_성수",
+  "client_party_id": "unresolved:카카오스타일",
+  "brand_key": "카카오스타일",
+  "space_key": "성수_스테이지"
+ },
+ "intervention": {
+  "concept": "카카오스타일 사내행사로 추정되나 원문 문서가 제공되지 않아 컨셉을 확인할 수 없음.",
+  "brand_name": "카카오스타일",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": "성수",
+   "venue_name": "스테이지 성수",
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-06-16",
+   "to": "2025-06-16",
+   "days": 1
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 0.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 8,
+    "holiday_until": 60,
+    "holiday_block_in": 0,
+    "nat_event_gap": 13,
+    "nat_event": "대통령 선거",
+    "doc_lag_days": 20,
+    "doc_dates_found": 9
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 13274502.0,
+    "pnl_pre_accounts": 6,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2025-04-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 122.2
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-06, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-06"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "15hne5KZiVUFv_OVKCSUxcV2Tx8aWkH7g",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/15hne5KZiVUFv_OVKCSUxcV2Tx8aWkH7g/view",
+   "title": "카카오스타일 결과보고서.pdf"
+  },
+  {
+   "doc_id": "18aweK2-GgSfO7Mv20fd81czsFhNizZn-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/18aweK2-GgSfO7Mv20fd81czsFhNizZn-/view",
+   "title": "카카오스타일_현대드림애드_가견적.xls"
+  },
+  {
+   "doc_id": "1FM50euoy8N3KePKQvq0Idf__UzaHl_G2",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1FM50euoy8N3KePKQvq0Idf__UzaHl_G2/view",
+   "title": "포토블링_행사장비제안.pdf"
+  },
+  {
+   "doc_id": "1Gt6sIL8vVZlmlQsPjbOqWj6toqOhQ2tt",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Gt6sIL8vVZlmlQsPjbOqWj6toqOhQ2tt/view",
+   "title": "지그재그 10주년 공간기획안_3차(250527).pdf"
+  },
+  {
+   "doc_id": "1J3JaEHdA_w87z9Z5hXeZSHCNVKkp3f6E",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1J3JaEHdA_w87z9Z5hXeZSHCNVKkp3f6E/view",
+   "title": "스위트스팟_지그재그 런칭 10주년 행사 업무 대행 계약서 250428_클린수정.pdf"
+  },
+  {
+   "doc_id": "1JTVcRbLgW5P5u2qMTGKs856Hkib8Mhf2",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1JTVcRbLgW5P5u2qMTGKs856Hkib8Mhf2/view",
+   "title": "KakaoTalk_20250515_110333743.png"
+  },
+  {
+   "doc_id": "1LYZ8Wc1yZkaQVtBTGYia-2k0flX6nfYY",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1LYZ8Wc1yZkaQVtBTGYia-2k0flX6nfYY/view",
+   "title": "지그재그 10주년 기획안(250511).pdf"
+  },
+  {
+   "doc_id": "1QywiL7pXL0y3VisJh4kGyf_SUnTcDfyC",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1QywiL7pXL0y3VisJh4kGyf_SUnTcDfyC/view",
+   "title": "지그재그 10주년 공간기획안_2차(250519).pptx"
+  },
+  {
+   "doc_id": "1VhWBwbEtTRjFjer656xEk0-qRv_BR9Ia",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1VhWBwbEtTRjFjer656xEk0-qRv_BR9Ia/view",
+   "title": "카카오스타일_현대드림애드_견적용(250520).ai"
+  },
+  {
+   "doc_id": "1Z_jAzcQ49C7GnrXyMTrtH-_wog3UC1ks",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Z_jAzcQ49C7GnrXyMTrtH-_wog3UC1ks/view",
+   "title": "지그재그 10주년 공간기획안_1차(250512).pdf"
+  },
+  {
+   "doc_id": "1ac49nY4Eku-UjXqBzjghFeqA9qeKWLpC",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ac49nY4Eku-UjXqBzjghFeqA9qeKWLpC/view",
+   "title": "카카오스타일 10주년 행사 최종 견적서(250623).xlsx"
+  },
+  {
+   "doc_id": "1i6j99_BoA9GqGSexaBDpEB3JU3GNCoAc",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1i6j99_BoA9GqGSexaBDpEB3JU3GNCoAc/view",
+   "title": "지그재그 10주년 공간기획안_2차(250519).pdf"
+  },
+  {
+   "doc_id": "1iBx6G4mW4r4wHgy_nsBv3cAUG8I0ebM3",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1iBx6G4mW4r4wHgy_nsBv3cAUG8I0ebM3/view",
+   "title": "크라운스테이지 견적서.jpg"
+  },
+  {
+   "doc_id": "1kZ_Gl_gjnpqQTWK7Sb5myoKj7TzeCd50",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1kZ_Gl_gjnpqQTWK7Sb5myoKj7TzeCd50/view",
+   "title": "오렌토 견적서.PDF"
+  },
+  {
+   "doc_id": "1ljKDipBRvHVFjxBMvHVBSGnEroGMl4i_",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ljKDipBRvHVFjxBMvHVBSGnEroGMl4i_/view",
+   "title": "10주년 행사기획안.pdf"
+  },
+  {
+   "doc_id": "1opPYQ0h24pOFRahcASn45LYCXNgHAm4l",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1opPYQ0h24pOFRahcASn45LYCXNgHAm4l/view",
+   "title": "화면 캡처 2025-05-22 183453.jpg"
+  },
+  {
+   "doc_id": "1s-zEL-AAjYa05c0J3MgcI0TByWnn0edS",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1s-zEL-AAjYa05c0J3MgcI0TByWnn0edS/view",
+   "title": "지그재그 10주년 _ 공간별그래픽사이즈(250515).pdf"
+  },
+  {
+   "doc_id": "1xSQuS0Q8irMmu2jAHwXRDuvpBf4dYNcl",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1xSQuS0Q8irMmu2jAHwXRDuvpBf4dYNcl/view",
+   "title": "지그재그 10주년 기획안.pptx"
+  },
+  {
+   "doc_id": "1xhun56QsCb1NlS0uAT0YRkDV3CwHdPKf",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1xhun56QsCb1NlS0uAT0YRkDV3CwHdPKf/view",
+   "title": "지그재그10주년_공간 실사용비용(250618).xlsx"
+  },
+  {
+   "doc_id": "1yS9NDXcJS8YGHsRhCkefDSuqJWNQgL8D",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1yS9NDXcJS8YGHsRhCkefDSuqJWNQgL8D/view",
+   "title": "카카오스타일_견적초안_0430_공유용 (1).pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체 부재; client_name 미확인(프로젝트명 기반 추정); venue 상세 정보 부재; 면적·수수료구조·요구사항 정보 없음; 방문/매출 실측 데이터 없음; 컨셉·체험요소·프로모션 정보 없음"
+ }
+}

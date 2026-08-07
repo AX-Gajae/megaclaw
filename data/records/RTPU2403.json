@@ -1,0 +1,129 @@
+{
+ "record_id": "RTPU2403",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:unknown",
+  "space_id": "unresolved:unknown",
+  "client_party_id": null,
+  "brand_key": "미상",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "",
+  "brand_name": "",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-03-01",
+   "to": "2024-03-10",
+   "days": 10
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 0,
+    "holiday_until": 0,
+    "holiday_block_in": 3,
+    "nat_event_gap": 40,
+    "nat_event": null,
+    "doc_lag_days": 30,
+    "doc_dates_found": 3
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": null,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1W7zEcjuWn0V--HmULL7zoLT3wDr8yovX",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1W7zEcjuWn0V--HmULL7zoLT3wDr8yovX/view",
+   "title": "제안서_내용없음.txt"
+  },
+  {
+   "doc_id": "1d1Ia8vBCfmUuw_APPoqtcZv4ySlgMZbv",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1d1Ia8vBCfmUuw_APPoqtcZv4ySlgMZbv/view",
+   "title": "RTPU2403_창비 고양이해결사 깜냥 팝업스토어_계약서_240131.doc"
+  },
+  {
+   "doc_id": "1qo7CCkjmg3wLrLcVwsFX_5sR53QamMRP",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1qo7CCkjmg3wLrLcVwsFX_5sR53QamMRP/view",
+   "title": "결과보고서_내용없음.txt"
+  },
+  {
+   "doc_id": "1uD-SYi5KTRa1xZIKDT9679xmbqY_5Y3C",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1uD-SYi5KTRa1xZIKDT9679xmbqY_5Y3C/view",
+   "title": "RTPU2403_창비 고양이해결사 깜냥 팝업스토어_계약서_240131.doc"
+  },
+  {
+   "doc_id": "1uZpLA6RHCh1-Ot61K2I77dIXatVbiMt8",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1uZpLA6RHCh1-Ot61K2I77dIXatVbiMt8/view",
+   "title": "RTPU2403_창비 고양이해결사 깜냥 팝업스토어_견적서_240124.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서 텍스트가 전혀 제공되지 않음; project_name; client_name; venue; category; 브랜드/컨셉/체험요소 정보 없음; 입지/면적/수수료구조 정보 없음; 방문/매출 실측 데이터 없음"
+ }
+}

@@ -1,0 +1,124 @@
+{
+ "record_id": "RXST2503",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:삼성전자",
+  "space_id": "unresolved:화성",
+  "client_party_id": "unresolved:삼성전자",
+  "brand_key": "삼성전자",
+  "space_key": "화성"
+ },
+ "intervention": {
+  "concept": "문서 원문이 제공되지 않아 컨셉을 확인할 수 없음. 프로젝트명 'shop Atpisode 삼성전자 화성'만 확인됨.",
+  "brand_name": "삼성전자",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-08-01",
+   "to": "",
+   "days": null
+  },
+  "season": "summer",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "ip_history": {
+    "prior_count": 4,
+    "months_since_last": 0.4,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 54,
+    "holiday_until": 14,
+    "holiday_block_in": 0,
+    "nat_event_gap": 59,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 410.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "unknown",
+   "rule": "총액 불명·최근 종료",
+   "contract_total_mm": null,
+   "last_recognition_period": "2026-05"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "104fK-IUGbZVysCLOLmKO0whgPWLWsYF2",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/104fK-IUGbZVysCLOLmKO0whgPWLWsYF2/view",
+   "title": "샵앳피소드 화성점_메리츠화재 청약서(날인본).pdf"
+  },
+  {
+   "doc_id": "19KwSa_1nDtVGi9R58arSm-X0qqQUBWhG",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/19KwSa_1nDtVGi9R58arSm-X0qqQUBWhG/view",
+   "title": "250808_스위트스팟(삼성전자 화성캠퍼스)견적서.pdf"
+  },
+  {
+   "doc_id": "1P3-9Vw7VxRWL1T6lWa5YsojovWwc3LU8",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1P3-9Vw7VxRWL1T6lWa5YsojovWwc3LU8/view",
+   "title": "cer.log"
+  },
+  {
+   "doc_id": "1wENwg79wGmk1sOb_yWuLGJls7wl48xCd",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1wENwg79wGmk1sOb_yWuLGJls7wl48xCd/view",
+   "title": "250804_공사_스위트스팟화성_계약서(날인).pdf"
+  },
+  {
+   "doc_id": "1yB8_ADUiNbZ3-Czhutbbm9tezRAAPdFL",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1yB8_ADUiNbZ3-Czhutbbm9tezRAAPdFL/view",
+   "title": "KT12개월 개통 신청서_스위트스팟.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서/기획서/견적서/결과보고서) 전체 미제공; 컨셉 및 체험요소; 입지 상세(도시/구/장소/유형); 면적; 운영 종료일; 수수료 구조 및 계약금액; 방문자 및 매출 실측 데이터; 집계 방식; 예상 방문 수"
+ }
+}

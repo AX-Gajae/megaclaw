@@ -1,0 +1,335 @@
+{
+ "record_id": "RIPU2520",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:바이탈뷰티",
+  "space_id": "unresolved:아모레성수",
+  "client_party_id": null,
+  "brand_key": "바이탈뷰티",
+  "space_key": "아모레성수"
+ },
+ "intervention": {
+  "concept": "아모레퍼시픽 바이탈뷰티 브랜드의 아모레 성수 팝업스토어. 레시피 & 스타일링을 주제로 슈퍼 시카 B5, 슈퍼 레티놀, 슈퍼 콜라겐 등 제품 라인을 소개하는 뷰티 팝업.",
+  "brand_name": "바이탈뷰티 (아모레퍼시픽)",
+  "experience_elements": [
+   "Recipe & Styling 메뉴",
+   "Super Cica B5 존",
+   "Super Retinol 존",
+   "Super Collagen 존"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "뷰티",
+   "레시피&스타일링"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": null,
+   "area_sqm": null,
+   "planned_operating_days": 18,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": null,
+   "experience_density": 3,
+   "goods_scale": 1,
+   "photo_zones": 2,
+   "collab_strength": 1,
+   "ip_awareness": 3,
+   "target_breadth": 2,
+   "entry_friction": 1,
+   "media_push": 1,
+   "season_fit": 2,
+   "venue_prominence": 3
+  },
+  "attr_meta": {
+   "evidence": "계약서 제2조③ '행사일: 2025년 10월 14일 – 11월 2일 (휴무 2일 제외 총 18일)' → 운영 18일, conditions.period 20일과 2일 차이. 견적서 미첨부, 메뉴 제안서는 음료 레시피만 담아 인원·면적·시간·인력 수치 전무.",
+   "confidence": "medium",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "capacity": {
+   "access_type": "unknown",
+   "total_capacity": null,
+   "detail": ""
+  },
+  "location": {
+   "city": "서울",
+   "district": "성동구",
+   "venue_name": "아모레 성수",
+   "venue_type": "브랜드 플래그십/팝업 공간",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-10-14",
+   "to": "2025-11-02",
+   "days": 20
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "총 계약금액 50,000,000원. 선금 20%(계약체결일 세금계산서 발행 후 5일 내), 중도금 30%(행사 시작 전 세금계산서 발행 후 1주일 내), 잔금 50%(행사 종료일 기준 세금계산서 발행 후 30일 내). VAT 명시 없음. 이는 운영 대행 계약금액으로 소비자 매출이 아님."
+  },
+  "brand_requirements": [
+   "행사 운영 인력 섭외·교육·관리",
+   "인력 현장 관리",
+   "상품 배포 및 재고관리",
+   "행사 운영 및 결과보고 제출",
+   "제작물 사용 전 의뢰사 서면 승인",
+   "정치·사회·종교적 중립 유지",
+   "지식재산권 의뢰사 귀속"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "아모레성수 내 팝업"
+  },
+  "derived": {
+   "duration": {
+    "days": 20,
+    "weekend_share": 0.3,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 1.5,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 5,
+    "holiday_until": 123,
+    "holiday_block_in": 0,
+    "nat_event_gap": 17,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 772900.0,
+    "pnl_pre_accounts": 2,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-09-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 500,
+   "popup_zone_pass_rate": 0.8,
+   "host_traffic_est": 400.0,
+   "venue_scale_tier": 5,
+   "confidence": "medium",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2025-10-14",
+    "visitors": 252,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-10-15",
+    "visitors": 312,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-10-16",
+    "visitors": 357,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-10-17",
+    "visitors": 520,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-10-18",
+    "visitors": 650,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-10-19",
+    "visitors": 413,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-10-20",
+    "visitors": null,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-10-21",
+    "visitors": 318,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-10-22",
+    "visitors": 358,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-10-23",
+    "visitors": 400,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-10-24",
+    "visitors": 527,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-10-25",
+    "visitors": 522,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-10-26",
+    "visitors": 446,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-10-27",
+    "visitors": null,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-10-28",
+    "visitors": 380,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-10-29",
+    "visitors": 378,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-10-30",
+    "visitors": 339,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-10-31",
+    "visitors": 331,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-11-01",
+    "visitors": 503,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-11-02",
+    "visitors": 380,
+    "sales_krw": null
+   }
+  ],
+  "totals": {
+   "visitors": 8122,
+   "sales_krw": null,
+   "rev_mm_recognized": 77.0
+  },
+  "counting_method": "entry",
+  "counting_basis": "일일 방문객 인원 / 총 방문객 인원",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-11, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-11"
+  },
+  "label_trust": {
+   "grade": "A",
+   "flags": [],
+   "why": "일별 표가 기간의 100% 커버"
+  },
+  "label_scope": {
+   "label_from": "2025-10-14",
+   "label_to": "2025-11-02",
+   "label_active_days": 20,
+   "label_span_days": 20,
+   "label_contiguous": true,
+   "daily_sum": 7386,
+   "sum_agrees": false,
+   "source": "daily 일자에서 유도 — 합 7,386 이 총계 8,122 와 -9.1% 어긋남 (방문객 결측 2행)"
+  },
+  "label_history": [
+   {
+    "at": "relabel R1 (2026-07-28)",
+    "prev_visitors": 8122,
+    "prev_counting": "entry",
+    "action": "revise",
+    "changes": [
+     "집계 세분 미지정 → unique_entry (뱅크 단위는 entry 유지)",
+     "운영일수 20 → 18"
+    ],
+    "evidence": "출처는 [스위트스팟] 바이탈뷰티 아모레성수 결과보고서 Ver.1.0(Drive 1MTX3jcc1WLDhzkM8jDj1pDyyYGtAz3dK) 한 장 — '01. OVERVIEW_방문객 현황'에 '- 총 방문객 인원 - TOTAL 8,122명'과 '- 일일 방문객 인원 -' 표가 같은 페이지에 나란히 있다. 즉 총계와 일별이 같은 문서·같은 섹션에서 나왔고, 문서는 두 수치에 어떤 단위 구분 표기도 두지 않는다(둘 다 '방문객 인원', 단위 '명'). 따라서 '총계=순방문 / 일별=연방문' 같은 단위 불일치 가설은 원문 근거가 없다. 일별 표 20칸 중 10/20·10/27 두 칸은 숫자가 없는 게 아니라 '휴무'로 적혀 있다 — 검출기가 본 '방문객 결측 2행'은 비운영일이다(같은 문서 개요: '10월 14",
+    "verdict": "총계 8,122는 결과보고서 헤드라인 실측치로 확정 — 값은 유지하고 운영일수만 20일 → 18일(월요일 2회 휴무)로 고친다. 일별 합 7,386으로 총계를 대체하지 말 것(결측이 아니라 문서 내부 불일치)."
+   },
+   {
+    "at": "relabel R1 (2026-07-28)",
+    "prev_visitors": 8122,
+    "prev_counting": "entry",
+    "action": "revise",
+    "changes": [
+     "집계 세분 unique_entry → visits (뱅크 단위는 entry 유지)",
+     "운영일수 20 → 18"
+    ],
+    "evidence": "출처는 [스위트스팟] 바이탈뷰티 아모레성수 결과보고서 Ver.1.0(Drive 1MTX3jcc1WLDhzkM8jDj1pDyyYGtAz3dK) 한 장 — '01. OVERVIEW_방문객 현황'에 '- 총 방문객 인원 - TOTAL 8,122명'과 '- 일일 방문객 인원 -' 표가 같은 페이지에 나란히 있다. 즉 총계와 일별이 같은 문서·같은 섹션에서 나왔고, 문서는 두 수치에 어떤 단위 구분 표기도 두지 않는다(둘 다 '방문객 인원', 단위 '명'). 따라서 '총계=순방문 / 일별=연방문' 같은 단위 불일치 가설은 원문 근거가 없다. 일별 계수에 재방문 보정 근거가 전혀 없어 18일 합산값은 연인원이므로 세분 단위는 visits로 둔다(뱅크 단위 entry는 그대로). 일별 표 20칸 중 10/20·10/27",
+    "verdict": "총계 8,122는 결과보고서 헤드라인 실측치로 확정 — 값은 유지하고 운영일수만 20일 → 18일(월요일 2회 휴무)로 고친다. 일별 합 7,386으로 총계를 대체하지 말 것(결측이 아니라 문서 내부 불일치)."
+   }
+  ],
+  "counting_detail": "visits"
+ },
+ "docs": [
+  {
+   "doc_id": "1GDvWr3urfwmuiZ69kYtnR40UI0gB8YCE",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1GDvWr3urfwmuiZ69kYtnR40UI0gB8YCE/view",
+   "title": "스위트스팟 피알원 아모레 성수 팝업스토어 계약서 _0924.pdf"
+  },
+  {
+   "doc_id": "1MTX3jcc1WLDhzkM8jDj1pDyyYGtAz3dK",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1MTX3jcc1WLDhzkM8jDj1pDyyYGtAz3dK/view",
+   "title": "[스위트스팟] 바이탈뷰티 아모레성수 결과보고서 Ver. 1.0.pdf"
+  },
+  {
+   "doc_id": "1VIWP_MD7kUhuhNP_GDHUtv5si9FcEaYz",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1VIWP_MD7kUhuhNP_GDHUtv5si9FcEaYz/view",
+   "title": "[스위트스팟] 바이탈뷰티 아모레성수 팝업스토어_운영안 F.pdf"
+  },
+  {
+   "doc_id": "1W-QmYTX9AVss6xxWxcz6f7ESgJvAGmYp",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1W-QmYTX9AVss6xxWxcz6f7ESgJvAGmYp/view",
+   "title": "아모레 성수 바이탈뷰티_메뉴.pdf"
+  },
+  {
+   "doc_id": "1axt9k7WX9w9pVdAA-ZFGdXrTe3hpseze",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1axt9k7WX9w9pVdAA-ZFGdXrTe3hpseze/view",
+   "title": "[스위트스팟] 바이탈뷰티 팝업스토어_피알원_견적서 0917.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서/기획서/견적서/결과보고서) 미제공; client_name 미상; 입지 상세(도시/구/장소유형) 미상; 면적 미상; 수수료구조 미상; 컨셉·체험요소·프로모션 세부 미상; 방문객수 및 매출 실측 데이터 미상; 예상 방문객수 미상 | 라벨발굴(2026-07-24): 결과보고서 재추출 — 01. OVERVIEW_방문객 현황 (총 방문객 8,122명, 일일 방문객 표) | 자극 보강(2026-07-24): 운영안·기획안·계약서 재인제스트로 intervention/conditions 교체 (585→789자, capacity=unknown). outcome·entities·period 보존 | 자극 보강(2026-07-24): 운영안·기획안·계약서 재인제스트로 intervention/conditions 교체 (789→1087자, capacity=unknown). outcome·entities·period 보존"
+ }
+}

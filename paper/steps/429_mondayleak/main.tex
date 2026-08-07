@@ -1,0 +1,188 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{월요일은 요일이 아니었다 --- 두 해 전 손으로 뺀 열이 성분 분해를 통해 뒷문으로 돌아와 있었다}
+\author{월드모델 실험실}
+\date{노트 546 · 2026년 8월 4일}
+\maketitle
+
+\begin{abstract}
+원장에 \textbf{``웹툰 연재 요일이 미사용''}이라 사전 등록해 뒀다 --- 라벨과
+크루스칼 $p < 10^{-6}$ 로 갈리고 웹툰은 판 무게 $20.7\%$ 로 제일 큰
+도메인이니, 남은 것 중 값이 제일 큰 항목이었다. \textbf{재기 전에 두 가지가
+차례로 뒤집혔다.}
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+적어 둔 것 & 실제 \\
+\hline
+\texttt{days} 가 미사용 & \textbf{쓰고 있다} --- \texttt{tagaxes.META} 의 토큰 \\
+요일이 라벨과 갈린다 & \textbf{요일이 아니라 ``월요일이냐''} 하나뿐 \\
+그것이 진짜 신호다 & \textbf{매일$+$ 전환의 잔여} \\
+\hline
+\end{tabular}
+\end{center}
+
+요일을 믿을 수 있는 $932$ 행(연재중이고 매일$+$ 가 아닌 것)만 보면 일곱
+요일이 \textbf{크루스칼 $p = 0.3624$} --- 신호가 아예 없다.
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 초과분의 자리. \textbf{나} --- 걷어내면 사라진다.
+\textbf{다} --- 그 축이 벌던 곳.}
+\end{figure}
+
+\section{빈 축 감사가 축 이름만 훑었다}
+
+\texttt{tagaxes.META} 는 \texttt{("webtoon\_records.json", ("days",),
+("age\_type", "n\_artist"), (0, 3))} 다 --- \texttt{days} 를 토큰으로 놓고
+SVD 를 쳐서 성분 $0$ 과 $3$ 을 축으로 쓴다. \textbf{축 이름에
+``\texttt{days}'' 가 안 나와서 감사가 못 봤다.}
+
+\begin{center}
+\begin{tabular}{lrrrrr}
+\hline
+성분 적재 & c0 & c1 & c2 & \textbf{c3} & c4 \\
+\hline
+\textbf{MONDAY} & $-0.024$ & $0.056$ & $-0.121$ & $\mathbf{0.900}$ & $-0.049$ \\
+나머지 여섯(범위) & \multicolumn{5}{l}{\ 전부 $|{\cdot}| \le 0.12$ 에서
+$c3$ 만 $-0.15 \sim -0.20$} \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{\texttt{meta\_c3\_웹툰} 은 사실상 ``월요일이냐''다} --- $c0 \cdot c3$
+로 요일 원핫을 되맞히면 월요일만 $R^2 = 0.96$ 이고 나머지 여섯은
+$0.02\!\sim\!0.05$ 다.
+
+\section{요일 효과 전체가 월요일 하나였다}
+
+유보 $687$ 행에서
+
+\begin{center}
+\begin{tabular}{lr}
+\hline
+ & 라벨과의 $\rho$ \\
+\hline
+요일 목표부호화(일곱 값) & $+0.2557$ \\
+\textbf{월요일 지시자(두 값)} & $\mathbf{-0.2941}$ \\
+\hline
+목표부호화, $c0 \cdot c3$ 통제 후 & $+0.0024$ \\
+\textbf{월요일 뺀 여섯 요일} & \textbf{크루스칼 $p = 0.1058$} \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{두 값짜리가 일곱 값짜리보다 세다.} 나머지 여섯 요일은 서로 안
+갈린다.
+
+\section{월요일은 매일$+$ 로 옮겨간 표시다}
+
+\begin{center}
+\begin{tabular}{lrrr}
+\hline
+조각 & $n$ & 월요일 비중 & 월요일 $\rho$ \\
+\hline
+연재중 · 매일$+$ 아님 & $932$ & $\mathbf{14.5\%}$ & $+0.0050$ \\
+완결 · 매일$+$ 아님 & $612$ & $\mathbf{14.5\%}$ & $+0.0462$ \\
+\textbf{완결 · 매일$+$} & $1{,}862$ & $\mathbf{27.5\%}$ & $\mathbf{-0.3661}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{균등은 $14.3\%$ 다.} 초과분 $+13.2$\%p 가 셋째 줄에만 있다 ---
+$1{,}862$ 행 중 약 $246$ 건이 원래 요일을 잃고 월요일로 적혔다.
+
+\begin{quote}
+\textbf{그 조각 안에서 일곱 요일이 안 갈린다} --- 연재중·매일$+$ 아닌
+$932$ 행의 크루스칼 $p = \mathbf{0.3624}$. 중앙값도 월 $62{,}547$ ·
+일 $75{,}969$ 로 흩어져 있을 뿐이다.
+\end{quote}
+
+\paragraph{충돌자 설명은 안 맞는다.} ``월요일 슬롯이 약해서 인기 없는
+작품이 조기 종영된다''면 \emph{연재중인 것들 안에서도} 월요일이 낮아야
+한다. $+0.0050$ 이다. 직접 화살이 없다.
+
+\section{손으로 뺀 열이 돌아와 있었다}
+
+\texttt{tagaxes.py} 의 주석이 두 해 전에 이렇게 적어 뒀다.
+
+\begin{quote}
+``\textbf{\texttt{daily\_pass} 를 뺐다.} 처음엔 넣었는데 \texttt{finished}
+와 $+0.841$ 이고 연도와 $-0.437$ 이다 --- \textbf{완결 표지의 다른
+이름}이고, \texttt{finished} 는 \texttt{provenance.GROUP\_WHEN} 에 이미
+POST 로 적혀 있다. \textbf{빼니 오히려 세졌다}(판 $0.4831 \to 0.4916$).''
+\end{quote}
+
+유보에서 \textbf{매일$+$ $\leftrightarrow$ 완결이 $+0.8619$}(그때 적힌
+$+0.841$ 이 그대로 재현된다)이고 \textbf{월요일 $\leftrightarrow$ 매일$+$
+가 $+0.4688$} 이다.
+
+\begin{quote}
+\textbf{손으로 뺀 열이, 다른 필드를 토큰으로 삼은 성분 분해를 통해 절반쯤
+돌아와 있었다.} \texttt{provenance} 는 \texttt{meta\_c3\_웹툰} 을
+\emph{사전}(``연재 요일 · 연령 등급 · 작가 수'')으로 적고 있다 ---
+\textbf{그 분류가 틀렸다.}
+\end{quote}
+
+\section{그 축이 벌던 곳}
+
+축을 빼고 짝 씨앗 $12$ 로 쟀다. 사전 등록 셋을 다 적고 시작했다.
+
+\begin{center}
+\begin{tabular}{lrrl}
+\hline
+자 & 전 & 후 & 차 \\
+\hline
+판 & $+0.4908$ & $+0.4821$ & $-0.0087$ ($0/12$) \\
+날짜 통제 판 & $+0.5279$ & $+0.5165$ & $-0.0114$ ($0/12$) \\
+무리 안 판 & $+0.4081$ & $+0.3922$ & $-0.0159$ ($0/12$) \\
+KR 만화 & $+0.6290$ & $+0.6296$ & $+0.0007$ (문다) \\
+비게임 앱 & $+0.2880$ & $+0.2865$ & $-0.0015$ (문다) \\
+\hline
+웹툰 전체 & $+0.4783$ & $+0.4385$ & $-0.0399$ ($0/12$) \\
+\textbf{웹툰 연재중만} & $+0.3289$ & $+0.3272$ & $\mathbf{-0.0017}$
+\textbf{(문다)} \\
+\textbf{웹툰 완결만} & $+0.6497$ & $+0.5580$ & $\mathbf{-0.0917}$ ($0/12$) \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{사전 등록 ①②③ 이 다 섰다.} 그 축이 판에 넣어 주는 $+0.0087$ 이
+\textbf{전부 완결 조각}에서 나오고, 아직 안 끝난 작품 --- \emph{새로 나온
+웹툰을 예보할 때 우리가 실제로 마주하는 것} --- 에는 $0$ 을 준다.
+
+\begin{quote}
+\textbf{도메인 수준에도 같은 무늬가 있다.} 챔피언의 웹툰 $\rho$ 는 완결작에서
+$+0.6497$ 인데 연재중에서 $+0.3289$ 다. \textbf{절반이다.} 유보 $711$ 행 중
+$158$ 행($22.2\%$)이 오염 조각이고, 그 안에서 월요일 효과가 $-0.6466$ 이다.
+\end{quote}
+
+\section*{조항}
+
+\begin{quote}
+\textbf{사후 상태로 갱신되는 필드는, 그 필드를 토큰으로 삼은 성분도
+사후다.} 손으로 뺀 열이 분해를 통해 돌아올 수 있다 --- 배제는 \emph{원본
+필드}가 아니라 \emph{그 필드가 실어 나르는 상태}에 걸어야 한다.
+\textbf{그리고 빈 축 감사는 축 이름이 아니라 축이 읽는 필드를 훑어야 한다.}
+\end{quote}
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{수술적 교정}(노트 $547$, 진행 중) --- \texttt{days} 를 매일$+$
+행에서만 지우고 성분을 다시 짜면 대가가 $-0.0087$ 과 같은가. 같으면 그
+축이 벌던 것이 \emph{전부} 오염이다.
+\item \textbf{판이 $0.0087$ 만큼 부풀어 있었다} --- 빼면 판이 내려가지만
+그것은 성능 하락이 아니라 \emph{그동안의 과대 보고}다. 이 처분을 어떻게
+적을지는 관문에 없던 사례다.
+\item \textbf{다른 도메인에도 같은 것이 있나} --- ``연재중만''처럼 상태가
+아직 안 갈린 행만 채점하는 자가 웹툰 말고 어디에 세워지는지 안 봤다.
+게임의 서비스 종료 · 펀딩의 마감이 후보다.
+\end{itemize}
+
+\end{document}

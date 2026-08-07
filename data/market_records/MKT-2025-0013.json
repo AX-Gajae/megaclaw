@@ -1,0 +1,78 @@
+{
+  "market_record_id": "MKT-2025-0013",
+  "event_name": "플레이브 2주년 팝업 'Happy Plave Day'",
+  "brand": "플레이브(VLAST)/롯데백화점",
+  "ip_or_collab": "플레이브(PLAVE, 버추얼 아이돌)",
+  "category": "character",
+  "intervention": {
+    "concept_description": "버추얼 아이돌 플레이브 데뷔 2주년 기념 팝업. 롯데월드몰 전체를 플레이브 테마로 꾸민 대형 팝업.",
+    "experience_elements": [
+      "팝업스토어",
+      "테마 존"
+    ],
+    "promotions": [
+      "사전 예약제"
+    ],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "롯데월드몰(서울 송파구 잠실)",
+    "venue_type": "mall",
+    "neighborhood": "잠실",
+    "city": "서울",
+    "period_from": "2025-03-07",
+    "period_to": "2025-03-16",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 10,
+        "weekend_share": 0.4,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "unknown",
+    "counting_basis_note": "방문객 집계 원문 없음(예약 접속 대기 수치만 보도)",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": "사전 예약 대기 접속자 2만5000명 이상",
+      "signal_quotes": [
+        "팝업스토어 순위 1위를 차지한 플레이브 팝업스토어는 사전 예약 대기 접속자만 2만5000명 이상을 기록했다. (패션비즈 2025-05-27)",
+        "지난달 28일 진행된 사전 예약 접수는 대기 접속자만 2만5000명이 몰려 2시간 만에 조기 마감됐다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "기간은 데뷔 2주년(2025-03-12) 전후 3월 운영으로 보도. 머니투데이(2025-03-09)도 사전예약 2시간 만에 마감 보도 | 병합 레코드: MKT-2025-0004 | [병합:MKT-2025-0004] 예약 수요 수치(2.5만 대기). 오픈일 2025-03-07(아시아투데이 '지난 7일 오픈').",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

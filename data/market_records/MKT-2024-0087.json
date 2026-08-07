@@ -1,0 +1,93 @@
+{
+ "market_record_id": "MKT-2024-0087",
+ "event_name": "롯데 크리스마스 마켓 2024",
+ "brand": "롯데백화점",
+ "ip_or_collab": null,
+ "category": "other",
+ "intervention": {
+  "concept_description": "2회차 크리스마스 마켓, 규모 700평대로 확대",
+  "experience_elements": [
+   "크리스마스 마켓 부스",
+   "포토존"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "롯데타운 잠실(롯데월드타워·몰 일대)",
+  "venue_type": "mall",
+  "neighborhood": "잠실",
+  "city": "서울",
+  "period_from": "2024-11-01",
+  "period_to": "2024-12-31",
+  "area_pyeong": 700,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  },
+  "derived": {
+   "duration": {
+    "days": 61,
+    "weekend_share": 0.3,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 12.0,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 250000,
+  "visitors_period_days": 28,
+  "counting_basis": "entry",
+  "counting_basis_note": "입장객 집계(오픈 4주 기준): '올해는 규모를 700평대로 확대하면서 오픈 4주만에 입장객 25만명을 돌파하는 기록을 세웠다. 외국인 방문객도 하루 평균 4백여 명에 달한다'",
+  "visitors_source_quote": "올해는 규모를 700평대로 확대하면서 오픈 4주만에 입장객 25만명을 돌파하는 기록을 세웠다. 외국인 방문객도 하루 평균 4백여 명에 달한다.",
+  "visitors_source_url": "https://tnnews.co.kr/archives/218180",
+  "visitors_source_date": "2024-12-26",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "잠실 크리스마스 마켓 방문객의 절반 이상이 에비뉴엘, 월드몰, 잠실점 등에서도 쇼핑을 하는 것으로 나타났다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": true,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "오픈 4주(약 28일) 기준 25만 돌파. 한경(2025-01-06) '오픈 4주 만에 방문객 25만명을 돌파하고 외국인 방문객도 하루 평균 400여명' 동일 확인. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

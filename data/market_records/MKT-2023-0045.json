@@ -1,0 +1,97 @@
+{
+ "market_record_id": "MKT-2023-0045",
+ "event_name": "2023 LoL 월드 챔피언십(롤드컵) 개최 기념 라이엇 팝업스토어",
+ "brand": "라이엇게임즈/롯데월드몰",
+ "ip_or_collab": "리그 오브 레전드 2023 월드 챔피언십",
+ "category": "game_webtoon",
+ "intervention": {
+  "concept_description": "5년 만의 한국 롤드컵 개최 기념 팝업. 15m 초대형 티모·2.5m 티버 조형물, 티모 찾기 스탬프·SNS 인증 룰렛 이벤트, 월드 챔피언십 굿즈(바시티 점퍼·모나미 콜라보 볼펜·스태츄·조폐공사 기념메달)",
+  "experience_elements": [
+   "15m 초대형 티모·2.5m 티버 포토존",
+   "숨은 티모 찾기 스탬프 티켓",
+   "치어풀 부착·룰렛 이벤트"
+  ],
+  "promotions": [
+   "노티드 협업 LCK 슈가 베어·스위스 스테이지 티켓 경품"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "롯데월드몰 1층",
+  "venue_type": "mall",
+  "neighborhood": "잠실",
+  "city": "서울",
+  "period_from": "2023-10-07",
+  "period_to": "2023-10-17",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(invite)",
+   "access_type": "invite"
+  },
+  "derived": {
+   "duration": {
+    "days": 11,
+    "weekend_share": 0.36,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 50000,
+  "visitors_period_days": 11,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "라이엇 게임즈 발표 인용: '2023 리그 오브 레전드 월드 챔피언십(롤드컵) 개최 기념 라이엇 팝업스토어에 하루 평균 5000명씩 총 5만 명이 넘는 팬들이 다녀갔다고 20일 밝혔다'",
+  "visitors_source_quote": "라이엇 게임즈가 7일부터 17일까지 서울 송파구 롯데월드몰 1층에 2023 리그 오브 레전드 월드 챔피언십 개최 기념 라이엇 팝업스토어를 열었고, 하루 평균 5천 명씩 총 5만 명이 넘는 팬들이 다녀갔다고 20일 밝혔다.",
+  "visitors_source_url": "https://m.cnet.co.kr/view/?no=20231020134340",
+  "visitors_source_date": "2023-10-20",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "주말 대기줄 번호표 운영",
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "오픈 첫 날인 7일에는 3,300 명, 일요일이었던 8일에는 7,900여 명, 한글날인 9일에는 5,000여 명이 현장을 찾으면서 사흘 합산 16,000여 명의 팬들이 팝업스토어를 방문했다. (워크투데이 2023-10-10, http://www.worktoday.co.kr/news/articleView.html?idxno=43170)",
+    "주말에는 팝업스토어 대기 줄이 길어 번호표를 뽑고 기다려야 한다. (더리포트 2023-10-16, https://www.thereport.co.kr/news/articleView.html?idxno=41949)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": true,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "총 5만 명(11일)은 라이엇 발표, 사흘 1.6만 명은 워크투데이·더리포트 교차 확인. 평일 평균 3500명, 14일 7200여 명, 15일 6500여 명(아이뉴스24). | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

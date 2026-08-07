@@ -1,0 +1,102 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{가격은 비슷한 것들 사이에서만 정보다 --- 태그 다섯을 갈라 보니 처방이 ``새 축''에서 ``값 단계''로 바뀌었다}
+\author{월드모델 실험실}
+\date{노트 538 · 2026년 8월 4일}
+\maketitle
+
+\begin{abstract}
+노트 537 이 \textbf{접전($<2$ 배)을 제일 많이 사는 계열은 ALL5}(사람이 태깅한
+기획 속성 다섯)임을 보였다. 다섯 중 어느 것인지 알면 \textbf{시장팝업 태깅에서
+무엇부터 채울지}가 정해진다.
+
+\begin{center}
+\begin{tabular}{lrrrl}
+\hline
+축 & \textbf{$<2$ 배} & $5$ 배 이상 & 비 & 시장팝업 \\
+\hline
+\textbf{target\_breadth} & $\mathbf{+0.00709}$ & $+0.01692$ & $2.4$ & 있음(\textbf{두 값}) \\
+media\_push & $+0.00190$ & $+0.00390$ & $2.0$ & \textbf{없음} \\
+venue\_prominence & $+0.00126$ & $+0.00852$ & $6.7$ & 있음 \\
+\textbf{entry\_friction} & $+0.00093$ & $\mathbf{-0.00035}$ & $\mathbf{-0.4}$ & \textbf{없음} \\
+goods\_scale & $+0.00014$ & $+0.00461$ & $\mathbf{33.0}$ & 있음 \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{사전 등록 둘 다 반증}이고 둘 다 실행 지시를 준다.
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 접전 대 극단. \textbf{나} --- 접전 값어치.
+\textbf{다} --- 읽기.}
+\end{figure}
+
+\section{② 반증 --- 처방이 바뀐다}
+
+사전 등록은 ``$<2$ 배 $1$ 등이 시장팝업에 \emph{없는} 축(entry\_friction 이나
+media\_push)일 것''이었다. 실제 $1$ 등은 \textbf{target\_breadth}
+($+0.00709$)이고 \textbf{시장팝업에 이미 있다.}
+
+\begin{quote}
+\textbf{그러면 처방이 ``새 축을 채워라''에서 ``값 단계를 쪼개라''로 바뀐다.}
+노트 530 이 잰 대로 시장팝업의 target\_breadth 는 \textbf{두 값뿐}이다
+($126$ 행이 $2 \times 2 \times 7 = 27$ 가지로 무너지는 데 이 축이 한몫한다).
+\textbf{접전을 제일 많이 사는 축이 그 도메인에서 가장 거칠게 잘려 있다.}
+\end{quote}
+
+\textbf{시장팝업 태깅의 순서}가 이렇게 정해진다 --- ① target\_breadth 값 단계
+쪼개기 ② media\_push 채우기(없는 축 중 접전 $1$ 등) ③ entry\_friction 채우기.
+
+\section{① 반증 --- 낱개로 재면 조금 부풀린다}
+
+다섯의 $<2$ 배 값어치 낱개 합은 $+0.01132$ 인데 ALL5 를 통째로 끄면
+$+0.00733$ 이다. \textbf{합/전체 $= 1.54$} 로 사전 등록 범위($0.7\!\sim\!1.5$)
+바로 밖이다.
+
+\begin{quote}
+\textbf{정직하게} --- $1.54$ 는 $1.5$ 에 아주 가까워서 ``크게 걸린다''고 하면
+과장이다. 읽기는 이렇다: \textbf{축들이 서로 $1/3$ 쯤 대체한다.} 하나를 빼면
+나머지가 일부 메운다. 그래서 \textbf{media\_push 를 채워도 $+0.0019$ 를 다 벌지는
+못한다} --- 노트 489 의 조항(``절제는 수집 단위로'')이 ALL5 안에서도 약하게
+걸린다.
+\end{quote}
+
+\section{가격은 비슷한 것들 사이에서만 정보다}
+
+\begin{quote}
+\texttt{entry\_friction} 은 \textbf{다섯 중 유일하게 구간에 따라 부호가 갈린다}
+--- 접전에서 $+0.00093$($6/6$), $5$ 배 이상에서 $\mathbf{-0.00035}$.
+\end{quote}
+
+읽기가 자연스럽다. 가격 $\cdot$ 진입 장벽은 \textbf{엎치락뒤치락하는 후보들
+사이에서} 결정을 가르지만, \textbf{대박과 실패 사이에서는 아무 말도 안 한다}
+--- 오히려 방해한다. 노트 441 은 이 축의 부호가 \emph{도메인마다} 뒤집힌다고
+적었다. 이제 \textbf{배수 구간마다도} 뒤집힌다.
+
+반대쪽 끝은 \texttt{goods\_scale} 로 비가 $\mathbf{33.0}$ 배다 --- 규모는
+극단에서만 말한다.
+
+\section*{조항}
+
+\begin{quote}
+\textbf{축의 값어치를 적을 때 ``접전 대 극단''의 부호까지 적는다.} 전체 이득이
+같아도 접전에서 버는 축과 극단에서만 버는 축은 제품에서 다른 물건이고,
+\texttt{entry\_friction} 처럼 \emph{한쪽에서 해로운} 축도 있다.
+\end{quote}
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{\texttt{entry\_friction} 을 극단 쌍에서만 끄면 판이 오르나} ---
+구간별 가림은 아직 배선이 없다. 있으면 첫 ``구간 조건부 손잡이''가 된다.
+\item \textbf{시장팝업 target\_breadth 를 몇 단계로 쪼갤 수 있나} --- 원본
+레코드가 무엇을 담고 있는지 사람이 봐야 한다(과제 $78$, 시장 레코드 $20$ 건).
+\item \textbf{$1.54$ 의 대체율} --- 축 쌍을 둘씩 끄면 어느 짝이 겹치는지 나온다.
+\end{itemize}
+
+\end{document}

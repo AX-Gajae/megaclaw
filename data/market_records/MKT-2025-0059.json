@@ -1,0 +1,81 @@
+{
+  "market_record_id": "MKT-2025-0059",
+  "event_name": "리그 오브 레전드 '아리의 온천' 팝업스토어",
+  "brand": "라이엇게임즈",
+  "ip_or_collab": "리그 오브 레전드 (영혼의 꽃 온천 스킨, 아리)",
+  "category": "game_webtoon",
+  "intervention": {
+    "concept_description": "LoL 신규 스킨 '영혼의 꽃 온천' 공개 기념. 아리가 운영하는 온천 일손 돕기 콘셉트, 5종 미션 체험, 굿즈 스토어(신드라·요네 피규어 등)",
+    "experience_elements": [
+      "포토이즘 부스",
+      "티모의 티하우스(무료 음료)",
+      "미션 5종(소나의 아리아·볼리베어 온천 돌쌓기 등)",
+      "신규 챔피언 유나라 플레이 체험",
+      "제비뽑기(영혼의 꽃 하오리·피규어)"
+    ],
+    "promotions": [
+      "현장 한정 굿즈 판매"
+    ],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "무신사 스페이스 성수4",
+    "venue_type": "street_standalone",
+    "neighborhood": "성수",
+    "city": "서울",
+    "period_from": "2025-07-16",
+    "period_to": "2025-07-27",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 12,
+        "weekend_share": 0.33,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 12,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "라이엇게임즈 관계자 집계 인용(일평균만 보도): '평일 평균 1천여명이 방문했으며, 지난 주말에는 하루 평균 약 1천200명 이상이 현장을 찾은 것으로 집계됐다' - 총계 미보도로 visitors_total=null",
+    "visitors_source_quote": "라이엇게임즈 관계자에 따르면 평일 평균 1천여명이 방문했으며, 지난 주말에는 하루 평균 약 1천200명 이상이 현장을 찾은 것으로 집계됐다.",
+    "visitors_source_url": "https://zdnet.co.kr/view/?no=20250721163256",
+    "visitors_source_date": "2025-07-21",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": "시간대별 온라인 예약자 100명+현장 100명 운영",
+      "signal_quotes": [
+        "현장은 시간대별로 온라인 예약자 100명과 현장 방문객 100명이 더해져, 총 200여 명이 동시에 즐길 수 있는 공간으로 마련됐다.",
+        "내부 공간 한켠에 마련된 굿즈 스토어는 이번 이벤트 현장에서만 만나볼 수 있는 굿즈를 사기 위한 방문객들로 인산인해를 이뤘다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "일평균 수치만 보도(규칙 5에 따라 총계 미산출). 운영 약 2주(7/16~27). | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

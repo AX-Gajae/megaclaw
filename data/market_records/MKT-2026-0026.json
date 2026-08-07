@@ -1,0 +1,98 @@
+{
+ "market_record_id": "MKT-2026-0026",
+ "event_name": "순하리 찐(JIN) '순하리찐 아일랜드' 팝업스토어",
+ "brand": "롯데칠성음료 (순하리 찐)",
+ "ip_or_collab": "BTS 진(글로벌 앰버서더)",
+ "category": "liquor",
+ "intervention": {
+  "concept_description": "순하리 찐(JIN) 론칭 기념 글로벌 앰버서더 BTS 진 콘셉트의 아일랜드 테마 팝업",
+  "experience_elements": [
+   "아일랜드 콘셉트 포토존",
+   "제품 체험",
+   "굿즈 이벤트"
+  ],
+  "promotions": [
+   "럭키드로우 굿즈(보드게임·전용잔)",
+   "탐험가 ID 카드"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "서울 성동구 성수동",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2026-04-30",
+  "period_to": "2026-05-10",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 11,
+    "weekend_share": 0.36,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 12000,
+  "visitors_period_days": 11,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "롯데칠성음료 발표 인용",
+  "visitors_source_quote": "지난 4월30일부터 5월10일까지 서울 성수동에서 운영된 이번 팝업스토어에는 11일간 누적 방문객 약 1만2000명이 몰리며 뜨거운 반응을 얻었다.",
+  "visitors_source_url": "https://www.hankyung.com/article/202605118457g",
+  "visitors_source_date": "2026-05-11",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "etnews 동일 수치 보도(2026-05-11). | 병합 레코드: MKT-2026-0011 | [병합:MKT-2026-0011] 장소 '스테이지 엑스 성수 52'(스포츠서울·중앙일보). 전자신문 등 다수 동일 보도.",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 12000,
+   "basis": "organizer_claim",
+   "quote": "지난 4월30일부터 5월10일까지 서울 성수동에서 운영된 이번 팝업스토어에는 11일간 누적 방문객 약 1만2000명이 몰리며 브랜드에 대한 높은 관심을 입증했다.",
+   "url": "https://www.hankyung.com/article/202605118457g",
+   "date": "2026-05-11"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

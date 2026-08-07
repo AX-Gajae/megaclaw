@@ -1,0 +1,78 @@
+{
+  "market_record_id": "MKT-2024-0015",
+  "event_name": "'Artist-Made Collection by SEVENTEEN' 팝업 시즌2 @신세계 강남",
+  "brand": "하이브/신세계백화점",
+  "ip_or_collab": "세븐틴(SEVENTEEN)",
+  "category": "entertainment",
+  "intervention": {
+    "concept_description": "세븐틴 멤버(호시·원우·우지·디에잇)가 기획·제작에 참여한 상품을 선보이는 아티스트-메이드 컬렉션",
+    "experience_elements": [
+      "메이킹 로그 영상·화보 전시"
+    ],
+    "promotions": [
+      "멤버별 공식 상품 오프라인 최초 공개"
+    ],
+    "is_free_entry": true,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "신세계백화점 강남점 1층 더 스테이지·지하 1층 행사장",
+    "venue_type": "department_store",
+    "neighborhood": "반포",
+    "city": "서울",
+    "period_from": "2024-03-12",
+    "period_to": "2024-03-25",
+    "area_pyeong": null,
+    "multi_store": null,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(session)",
+      "access_type": "session"
+    },
+    "derived": {
+      "duration": {
+        "days": 14,
+        "weekend_share": 0.29,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 1,
+        "months_since_last": 5.3,
+        "first_edition": false
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "아시아타임즈 보도(신세계백화점 인용): '10일간... 15억원에 가까운 역대급 매출'. 시즌1(2023-09)과 시즌2(2024-03) 중 어느 회차 매출인지 원문이 명확하지 않아 시즌2로 기록(기사 시점상 직전 회차)",
+    "visitors_source_quote": "",
+    "visitors_source_url": "",
+    "visitors_source_date": "",
+    "sales_krw": 1500000000,
+    "sales_source_quote": "지난해 9월과 올해 3월에는 강남점 더 스테이지에서 글로벌 엔터테인먼트 라이프스타일 플랫폼 기업 '하이브'와 손잡고 그룹 '세븐틴'의 'Artist-Made Collection by SEVENTEEN' 팝업을 진행했다. 신세계백화점에 따르면 10일간의 기간 동안에 15억원에 가까운 팝업 역사상 역대급 매출이 발생한 것으로 알려졌다.",
+    "sales_source_url": "https://www.asiatime.co.kr/article/20240424500283",
+    "sales_source_date": "2024-04-25",
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "당시 구매 고객의 75%가 신세계백화점을 처음 방문한 것으로 집계되며 신규 고객 유치 효과까지 톡톡히 누린 것으로 나타났다.(시즌1 관련, 폴리뉴스)"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "매출 15억원에 가까움(근사치 보도). 시즌2 기간 3/12~25(폴리뉴스 2024-03-12). 회차 귀속 불확실 | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {
+    "sales": "verified"
+  },
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

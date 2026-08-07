@@ -1,0 +1,226 @@
+{
+ "record_id": "RCPU2628",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:레진_스파클즈_Sparkles",
+  "space_id": "unresolved:성수_아차산로9길41_레이어41",
+  "client_party_id": "unresolved:레진엔터테인먼트",
+  "brand_key": "레진_스파클즈",
+  "space_key": "성수_레이어41"
+ },
+ "intervention": {
+  "concept": "BL 웹툰 IP '스파클즈(Sparkles)'의 2026 시즌그리팅 MD 판매 팝업. '아이돌' 테마 기반으로 195종 상품(예상물량 40~50만개)을 3개 층에서 판매. VIP데이·가오픈·진오픈 구조로 예약 입장제 운영.",
+  "brand_name": "스파클즈 (Sparkles) / 레진엔터테인먼트",
+  "experience_elements": [
+   "시그니처 촬영/시그니처존",
+   "3개 층 운영(1~3층)",
+   "1층 CS/교환환불존 통합",
+   "픽업대(듀라테이블·간이 픽업대)"
+  ],
+  "promotions": [
+   "VIP데이",
+   "가오픈(5/20 16시 일반입장)",
+   "콘서트 티셔츠·뽀시래기 인형 시리즈·다이아몬드더스터 등 한정 MD"
+  ],
+  "staging_tags": [
+   "IP팝업",
+   "BL웹툰",
+   "시즌그리팅",
+   "MD판매",
+   "예약입장제",
+   "아이돌테마"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": null,
+   "area_sqm": 1487.61,
+   "planned_operating_days": 6,
+   "throughput_units": 7,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": 80,
+   "experience_density": 1,
+   "goods_scale": 4,
+   "photo_zones": 1,
+   "collab_strength": 0,
+   "ip_awareness": 2,
+   "target_breadth": 0,
+   "entry_friction": 3,
+   "media_push": 1,
+   "season_fit": 2,
+   "venue_prominence": 2
+  },
+  "attr_meta": {
+   "evidence": "업무계약서 제2조③ '행사기간: 2026년 5월 20일 ~ 2026년 5월 25일'(휴무 조항 없음 → 6일). 면적 레코드 450평×3.3058. throughput은 결제 병목인 POS 7대(오케이포스 통합연동 요구사항). staff_count는 운영견적 기준 스탭 78~80명 중 상한. MD 예상물량은 40~50만개 범위값이라 giveaway_qty null.",
+   "confidence": "medium",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "성동구",
+   "venue_name": "레이어41 스튜디오 (성수)",
+   "venue_type": "스튜디오/대관 팝업 공간",
+   "foot_traffic_context": "성수동, 3개 층 운영·층별 와이파이 분리로 7대 POS 통합연동 리스크"
+  },
+  "area_pyeong": 450,
+  "period": {
+   "from": "2026-05-20",
+   "to": "2026-05-25",
+   "days": 6
+  },
+  "season": "봄(5월)",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "대행 인식매출(계약) 최종견적 139,400,000원 (초기견적 138,900,000원 → 지게차 704,000 + 세팅인원 추가 750,000 + X배너 80,000 반영). 선금 69,450,000원(5/19 입금)·잔금 69,950,000원(6/10 입금) 전액 완료. 운영견적 101,925,000원 / 실 인건비 65,292,750원(스탭 78~80명)·마진 36%. 전사 net 46,554,201원(수익률 33.4%, 실사용비용 92,845,799원). VAT 포함여부 문서상 불명. | 계약서 재독해(2026-07-27): 총액 일치 확인(138.9M)"
+  },
+  "brand_requirements": [
+   "7대 POS 통합연동(오케이포스)",
+   "층별 와이파이/POS 연동 대응",
+   "교환환불존 1층 통합",
+   "행사보험 가입"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 6,
+    "weekend_share": 0.33,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 79,
+    "holiday_until": 3,
+    "holiday_block_in": 3,
+    "nat_event_gap": 14,
+    "nat_event": "지방선거",
+    "doc_lag_days": 14,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 864114.0,
+    "pnl_pre_accounts": 2,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2026-04-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 900,
+   "popup_zone_pass_rate": 0.7,
+   "host_traffic_est": 630.0,
+   "venue_scale_tier": 4,
+   "confidence": "low",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2026-05-20",
+    "visitors": 280,
+    "sales_krw": 354000000
+   },
+   {
+    "date": "2026-05-21",
+    "visitors": null,
+    "sales_krw": 477000000
+   },
+   {
+    "date": "2026-05-22",
+    "visitors": null,
+    "sales_krw": 444000000
+   },
+   {
+    "date": "2026-05-23",
+    "visitors": null,
+    "sales_krw": 366000000
+   },
+   {
+    "date": "2026-05-24",
+    "visitors": null,
+    "sales_krw": 302000000
+   },
+   {
+    "date": "2026-05-25",
+    "visitors": null,
+    "sales_krw": 231000000
+   }
+  ],
+  "totals": {
+   "visitors": 4500,
+   "sales_krw": 2173779900,
+   "rev_mm_recognized": 139.4
+  },
+  "retention": null,
+  "source": "방문: 역검색 외부 보도 — http://v.daum.net/v/20260611095602488 (2026-06-11) | 인용: 약 4,500여 명의 국내외 팬들이 방문하며 성황리에 행사를 마쳤다.",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식액 139.4 ≈ 계약총액 139.4 (±10%)",
+   "contract_total_mm": 139.4,
+   "last_recognition_period": "2026-05"
+  },
+  "counting_method": "unknown",
+  "counting_basis": "원문 표현 '약 4,500여 명의 국내외 팬들이 방문' — 방문 인원 기준, 주최(레진엔터테인먼트) 발표 인용. 게이트 실측 여부 불명.",
+  "label_source": "external_press",
+  "label_trust": {
+   "grade": "A",
+   "flags": [],
+   "why": "일별 표가 기간의 100% 커버"
+  },
+  "label_scope": {
+   "label_from": "2026-05-20",
+   "label_to": "2026-05-25",
+   "label_active_days": 6,
+   "label_span_days": 6,
+   "label_contiguous": true,
+   "daily_sum": 280,
+   "sum_agrees": false,
+   "source": "daily 일자에서 유도 — 합 280 이 총계 4,500 와 -93.8% 어긋남 (방문객 결측 5행)"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1GtaqNJurtGff-ROGYe0a4lqAO64CKjWZT9RW0KDOoWc",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1GtaqNJurtGff-ROGYe0a4lqAO64CKjWZT9RW0KDOoWc/view",
+   "title": "■ RC본부 프로젝트 견적서(all)"
+  },
+  {
+   "doc_id": "1SB7wC_jw4IM98mBUWRRK23RAgcYAA4zl",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1SB7wC_jw4IM98mBUWRRK23RAgcYAA4zl/view",
+   "title": "(검토완료)+[레진스파클즈시즌그리팅]팝업대행+표준계약서_260506 (1).pdf"
+  },
+  {
+   "doc_id": "1w--qq3bhjktMC1Etb_Nd8hQWIanjkuGw",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1w--qq3bhjktMC1Etb_Nd8hQWIanjkuGw/view",
+   "title": "(스위트스팟)레진 시즌그리팅_스파클즈 최종견적서.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 0건: . 미확실: 일별 방문객수(5/21~5/25) 미확보, 6일 총 방문객 합산 미확정; 5/20 매출 2.5억(가오픈)과 일별 POS 3.54억 표기 차이 확인 필요; 일별 매출 억단위 반올림값(정확한 원단위 미확보); VAT 포함 여부 불명; 클라이언트 담당자 실명/연락처 불명; 레이어41 core.venue 매핑 여부 미확인; 전사 net 46.6 vs 운영수익 36.6 grain 차이 | fee 계약서화(2026-07-27) | 외부 라벨 역검색(2026-07-27): 방문 라벨 충전 4500"
+ }
+}

@@ -1,0 +1,78 @@
+{
+  "market_record_id": "MKT-2025-0041",
+  "event_name": "발베니 메이커스 테이블 팝업스토어",
+  "brand": "발베니(The Balvenie)",
+  "ip_or_collab": null,
+  "category": "liquor",
+  "intervention": {
+    "concept_description": "몰트 마스터 데이비드 스튜어트의 장인정신을 테마로 한 미식 페어링 체험 팝업. 테이스팅 클래스·페어링 세트 운영",
+    "experience_elements": [
+      "발베니 테이스팅 클래스(브랜드 앰버서더 진행)",
+      "미식 페어링 세트(6만9천원)",
+      "위스키 존 전시"
+    ],
+    "promotions": [
+      "페어링 세트 유료 판매"
+    ],
+    "is_free_entry": null,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "성수 스테이지 성수 도원(피치스 도원)",
+    "venue_type": "street_standalone",
+    "neighborhood": "성수동",
+    "city": "서울",
+    "period_from": "2025-05-27",
+    "period_to": "2025-06-10",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(session)",
+      "access_type": "session"
+    },
+    "derived": {
+      "duration": {
+        "days": 15,
+        "weekend_share": 0.27,
+        "holiday_days": 2
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "unknown",
+    "counting_basis_note": "방문객 총계 미공개. 수요 신호(예약 마감)만 기록. 신호 출처: 뉴스탭 https://www.newstap.co.kr/news/articleView.html?idxno=304786 (보도일 2025-05-26)",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": "페어링 세트·클래스 매진 보도",
+      "reservation_fill": "사전 예약 시작 하루 만에 전석 마감",
+      "signal_quotes": [
+        "김미정 발베니 브랜드 앰버서더가 직접 진행하는 '발베니 테이스팅 클래스'는 사전 예약 시작 하루 만에 전석이 마감되며 높은 관심을 입증했다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "수치 없는 정성 수요 신호 레코드(예약 전석 마감). 스위트스팟 운영 사례집도 '전 회차 매진' 확인. | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

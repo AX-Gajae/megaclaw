@@ -1,0 +1,200 @@
+{
+ "record_id": "RCPU2546",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:슈퍼주니어",
+  "space_id": "unresolved:성수_아이언빌딩",
+  "client_party_id": null,
+  "brand_key": "슈퍼주니어",
+  "space_key": "성수_아이언빌딩"
+ },
+ "intervention": {
+  "concept": "슈퍼주니어 관련 팝업스토어(성수 아이언빌딩). 원문 문서가 제공되지 않아 컨셉 상세를 확인할 수 없음.",
+  "brand_name": "슈퍼주니어",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": null,
+   "area_sqm": null,
+   "planned_operating_days": 17,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": null,
+   "experience_density": 2,
+   "goods_scale": 4,
+   "photo_zones": 3,
+   "collab_strength": 0,
+   "ip_awareness": 4,
+   "target_breadth": 2,
+   "entry_friction": 2,
+   "media_push": 2,
+   "season_fit": 3,
+   "venue_prominence": 2
+  },
+  "attr_meta": {
+   "evidence": "[SME] 0718 4차 시안 피드백 p.1 일정표: '2025.8.15(금)~8.31(일) / 17일간 운영', 세팅 2025.8.11(월)~8.14(목) 4일간, 철수 9.1(월) 1일. 장소 성수동1가 656-294 아이언빌딩 1-2층. MD LIST 25개 아이템군·250여 SKU(총계 미기재). SMBM 계약서는 연간 기본계약뿐.",
+   "confidence": "medium",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": "아이언빌딩",
+   "venue_type": null,
+   "foot_traffic_context": "성수"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-08-15",
+   "to": "2025-08-31",
+   "days": 17
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "성수 아이언빌딩"
+  },
+  "derived": {
+   "duration": {
+    "days": 17,
+    "weekend_share": 0.35,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 0,
+    "holiday_until": 0,
+    "holiday_block_in": 3,
+    "nat_event_gap": 73,
+    "nat_event": null,
+    "doc_lag_days": 38,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 7900.0,
+    "pnl_pre_accounts": 1,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-07-01"
+   }
+  },
+  "demand_signals": {
+   "waiting_reported": "오픈 2~3시간 전부터 50m 대기줄 — 원문: '팝업스토어를 찾은 여러 국적의 팬들은 오픈 약 2~3시간 전부터 50m 가량의 긴 대기줄을 만들었으며' (뉴스인사이드 2025-09-02, https://www.newsinside.kr/news/articleView.html?idxno=3970570)",
+   "sold_out": null,
+   "source": "역검색 외부 보도(2026-07-27)"
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 800,
+   "popup_zone_pass_rate": 0.75,
+   "host_traffic_est": 600.0,
+   "venue_scale_tier": 4,
+   "confidence": "low",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": 12000,
+   "sales_krw": null,
+   "rev_mm_recognized": 125.6
+  },
+  "counting_method": "unknown",
+  "counting_basis": "원문 표현 '17일간 약 1만 2천명이 방문했다' — 운영 전기간 누적 '방문' 기준, 소속사 배포 자료 기반 보도. '약' 단위 반올림값.",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "방문: 역검색 외부 보도 — https://www.newsinside.kr/news/articleView.html?idxno=3970570 (2025-09-02) | 인용: 슈퍼주니어 데뷔 20주년 기념 팝업스토어 'GRAND OPENING! SJ MARKET'(그랜드 오프닝! 슈주마켓)은 8월 15일부터 31일까지 서울 성동구 왕십리로 121 아이언 빌딩에서 열렸으며, 17일간 약 1만 2천명이 방문했다.",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-08, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-09"
+  },
+  "label_source": "external_press",
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1EfTLwdj2Lua0cEIbspCalrXDGkuBDHzM",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1EfTLwdj2Lua0cEIbspCalrXDGkuBDHzM/view",
+   "title": "슈퍼주니어_결과보고서.pdf"
+  },
+  {
+   "doc_id": "1OsZ344XTNuu1Xow4JEIYaHvlXmMPp3Wv",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1OsZ344XTNuu1Xow4JEIYaHvlXmMPp3Wv/view",
+   "title": "(스위트스팟)슈퍼주니어 20주년 팝업_MD LIST.xlsx"
+  },
+  {
+   "doc_id": "1dd47QIyt97Yx8yIGblUjHSIFIcn1e8Yl",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1dd47QIyt97Yx8yIGblUjHSIFIcn1e8Yl/view",
+   "title": "[SME] 0718_SJ 팝업 4차 시안 피드백.pdf"
+  },
+  {
+   "doc_id": "1dq2KOq4fyOewoJmAiDw5tDJLmY_zsWVr",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1dq2KOq4fyOewoJmAiDw5tDJLmY_zsWVr/view",
+   "title": "SMBM_2025 슈퍼주니어 팝업_최종견적서_0902.pdf"
+  },
+  {
+   "doc_id": "1hRpfk-uTuFO6SoRnfNVtj452mfwiVw_j",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1hRpfk-uTuFO6SoRnfNVtj452mfwiVw_j/view",
+   "title": "(스위트스팟) 2025 슈퍼주니어 팝업 'Grand Opening! SJ Market'_운영계획안_V2.pdf"
+  },
+  {
+   "doc_id": "1rIVEtFy8Xxx81OIvOvBVkHXWcPGmpTNA",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1rIVEtFy8Xxx81OIvOvBVkHXWcPGmpTNA/view",
+   "title": "견적서_삼성지게차_슈퍼주니어 지게차 사용 250901.jpg"
+  },
+  {
+   "doc_id": "1sq3zXuMauX1DCxcEcyR9YcHLODyiSY0X",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1sq3zXuMauX1DCxcEcyR9YcHLODyiSY0X/view",
+   "title": "견적서_에이렌탈_슈퍼주니어_8.25 스위트스팟(추가) 님.xlsx"
+  },
+  {
+   "doc_id": "1y7D2TQ4hhmb_QLjYmmcuVzVo47htc8Vl",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1y7D2TQ4hhmb_QLjYmmcuVzVo47htc8Vl/view",
+   "title": "날인계약서(SMBM) 상품판매용역계약서_주식회사스위트스팟_250708.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서/기획서/견적서/결과보고서)가 제공되지 않음; client_name 불명; 컨셉·체험요소·프로모션 정보 없음; 입지 상세(도시/구/장소유형) 불명; 면적 불명; 수수료구조 불명; 방문자수 및 매출 실측 없음; counting_method 판정 불가 | 외부 라벨 역검색(2026-07-27): 방문 라벨 충전 12000; 수요신호 적재"
+ }
+}

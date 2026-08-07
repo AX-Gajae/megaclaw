@@ -1,0 +1,151 @@
+{
+ "record_id": "RTPU2576",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:조인_마에라",
+  "space_id": "unresolved:양재_aT센터_제1전시장",
+  "client_party_id": "unresolved:조인주식회사",
+  "brand_key": "조인_마에라",
+  "space_key": "양재_aT센터"
+ },
+ "intervention": {
+  "concept": "에그테크코리아 2025 박람회 내 조인 부스 운영. 입구 리플렛·볼펜 제공 후 회사소개존 가로세로 낱말퀴즈 미션, 완료 시 조인 백색 구운란 2구 리워드 증정 및 마에라 자사몰 가입 유도, 마에라 런치박스 시식, B2B 제품 상담존으로 구성된 고객 플로우형 팝업.",
+  "brand_name": "조인 / 마에라",
+  "experience_elements": [
+   "회사 소개 Zone 가로세로 낱말 퀴즈 미션",
+   "마에라 제품(마이 에그라이스) 런치박스 시식",
+   "B2B존 조인·세양·알로팜 제품 소개 및 상담",
+   "입장 시 리플렛+볼펜 제공",
+   "마에라 문구로 그린 크리스마스 트리"
+  ],
+  "promotions": [
+   "미션 완료 시 조인 백색 구운란 2구 증정(10,000ea)",
+   "마에라 자사몰 가입 시 마이 에그라이스 런치박스 시식 제공(MAX 10,000명)"
+  ],
+  "staging_tags": [
+   "입구 게이트 LED 간판",
+   "회사소개존",
+   "마에라존",
+   "Newness존(액란 홍보)",
+   "B2B존",
+   "시식 트레이",
+   "블랙 테이블 DP"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "서초구",
+   "venue_name": "양재 aT센터 제1전시장",
+   "venue_type": "전시장/박람회",
+   "foot_traffic_context": "에그테크코리아 2025 박람회 방문객"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-12-19",
+   "to": "2025-12-21",
+   "days": 3
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 81,300,000원(VAT 10% 포함). Sub Total 합계 74,390,000원, 대행수수료 소계의 10%(정가항목 제외) 7,239,000원, NEGO -329,000원. 견적 항목별 예: 아트워크 2,000,000, 마에라존 목공/시트(95㎡) 9,500,000, 시식트레이 10,000장 2,900,000, 운반/철거폐기 6,000,000, 진행비 4,000,000 등. VAT 10% 별도 표기와 포함 표기가 혼재. | 계약서 미확인(2026-07-27 재독해 시도 — 대상 문서 부재/추출 실패): 총액은 견적 기준"
+  },
+  "brand_requirements": [
+   "초상권 동의",
+   "마에라 자사몰 가입 확인(런치박스 수령 전 가입 완료 화면 더블체크)",
+   "고객 입장 후 계수기 카운팅",
+   "방염 목공 처리"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "에그테크코리아 2025 박람회 방문객"
+  },
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.67,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 71,
+    "holiday_until": 57,
+    "holiday_block_in": 0,
+    "nat_event_gap": 36,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 48436.0,
+    "pnl_pre_accounts": 3,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2025-10-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 81.8
+  },
+  "counting_method": "unknown",
+  "counting_basis": "결과보고서에 일자별 방문객 집계표나 매출 데이터가 포함되어 있지 않음(Overview·Design·Photo 섹션까지만 존재). 기획서상 입구에서 계수기로 입장 카운팅 예정이었으나 실측치 미기재.",
+  "plan_visitors_expected": 15000,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(기획서 예상 방문객 15,000명(일 5,000명). 결과보고서에 실측 방문/매출 표 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-12, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": 73.909,
+   "last_recognition_period": "2025-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "12PLhHTmQlWbvEHlS2pjg3tQP-WQscxoI",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/12PLhHTmQlWbvEHlS2pjg3tQP-WQscxoI/view",
+   "title": "농업회사법인조인_계약서.pdf"
+  },
+  {
+   "doc_id": "13E2M68kSFdS9kL5nnJ7_RFYYyuSHGzCa",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/13E2M68kSFdS9kL5nnJ7_RFYYyuSHGzCa/view",
+   "title": "(Sweetspot) 조인_에그테크코리아 2025 운영계획안_제안서.pdf"
+  },
+  {
+   "doc_id": "1GZDquiMUo1_FjfUkDqIf4AN09VHHJCPw",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1GZDquiMUo1_FjfUkDqIf4AN09VHHJCPw/view",
+   "title": "Sweetspot_조인_에그테크코리아2025_견적서.pdf"
+  },
+  {
+   "doc_id": "1Wer009BDtL3c5RmgxD_6-MbBf8ulje39",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Wer009BDtL3c5RmgxD_6-MbBf8ulje39/view",
+   "title": "(Sweetspot) 조인_에그테크코리아 2025 결과보고서.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: (Sweetspot) 조인_에그테크코리아 2025 운영, Sweetspot_조인_에그테크코리아2025_견적서.p, (Sweetspot) 조인_에그테크코리아 2025 결과. 미확실: 결과보고서에 실측 방문객·매출 데이터 없음; 전체 부스 면적(평) 단일값 불명 - 견적서에 구역별 ㎡만 존재; client_name 프로젝트 메타에는 null이나 견적서 수신처는 조인주식회사; venue 상세 주소/구 확인 필요(양재 aT센터는 서초구 소재)"
+ }
+}

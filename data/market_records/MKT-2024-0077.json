@@ -1,0 +1,101 @@
+{
+ "market_record_id": "MKT-2024-0077",
+ "event_name": "아떼 바네사브루노 성수 포인트 오브 뷰 팝업 (10월, 가을의 프릴 파티)",
+ "brand": "아떼 바네사브루노 (LF)",
+ "ip_or_collab": null,
+ "category": "fashion",
+ "intervention": {
+  "concept_description": "FW 소재 신제품(르봉백·프릴백) 공개 팝업, '가을의 프릴 파티' 콘셉트",
+  "experience_elements": [
+   "크리스탈 키링 샹들리에",
+   "포토존"
+  ],
+  "promotions": [
+   "현장 구매 시 최대 20% 할인",
+   "한정판 키링 증정"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "포인트 오브 뷰(Point of View)",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2024-10-12",
+  "period_to": "2024-10-20",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 9,
+    "weekend_share": 0.44,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 1.3,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 22000,
+  "visitors_period_days": 9,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "LF 발표 인용. 하루 방문객 중 외국인 비율 70~80%",
+  "visitors_source_quote": "이번 성수 팝업스토어에서는 총 약 2만2000명의 국내외 고객들이 직접 르봉백과 프릴백을 경험했으며, 입장을 위한 웨이팅이 발생하는 등 발걸음이 끊이지 않았다.",
+  "visitors_source_url": "https://fashionbiz.co.kr/article/211327",
+  "visitors_source_date": "2024-10-25",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "입장을 위한 웨이팅 발생",
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "입장을 위한 웨이팅이 발생하는 등 발걸음이 끊이지 않았다.",
+    "다양한 국적과 연령대의 고객이 이번 팝업을 찾았으며, 일 방문객 중 외국인의 비율이 적게는 70%, 많게는 80%에 달하는 날도 있었다.",
+    "일 방문객 중 외국인의 비율이 적게는 70%, 많게는 80%에 달하는 날도 있었다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "팝업 관련 인스타그램 콘텐츠 약 1000개 발생, 팔로워 2000명 증가. 2024년 전체 팝업 누적 7만3000명(연간 합산)은 별도 기록 안 함. | 병합 레코드: MKT-2024-0004 | [병합:MKT-2024-0004] 뉴시스/fnnews 동일 보도. LF는 올해 팝업 누적 약 7만3000명(전국) 언급.",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 22000,
+   "basis": "organizer_claim",
+   "quote": "이번 성수 팝업스토어에서는 총 약 2만2000명의 국내외 고객들이 르봉백과 프릴백을 경험했으며, 입장을 위한 웨이팅이 발생하는 등 발걸음이 끊이지 않았다.",
+   "url": "https://daily.hankooki.com/news/articleView.html?idxno=1140439",
+   "date": "2024-10-25"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "집계형(통합/합산)",
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

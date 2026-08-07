@@ -1,0 +1,96 @@
+{
+ "market_record_id": "MKT-2023-0013",
+ "event_name": "마리떼 프랑소와 저버 'IMAGINE, DENIM' 성수 팝업스토어",
+ "brand": "마리떼 프랑소와 저버 (레이어)",
+ "ip_or_collab": null,
+ "category": "fashion",
+ "intervention": {
+  "concept_description": "국내 첫 단독 팝업. 마리떼 데님 헤리티지 탐구 콘셉트, 거울·데님 소재 오브제 공간. 고윤정 방문·크러쉬 라이브 퍼포먼스",
+  "experience_elements": [
+   "오브제·포토존",
+   "셀럽 오프닝 이벤트",
+   "커스텀 티셔츠 제작 경험"
+  ],
+  "promotions": [
+   "익스클루시브 상품",
+   "매일 선착순 300명 럭키 드로우",
+   "SNS 인증 시 데님 에코백 증정",
+   "전 상품 10% 할인"
+  ],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "비컨 스튜디오(Beacon Studio)",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2023-04-28",
+  "period_to": "2023-05-07",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 15000,
+  "visitors_period_days": 10,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "브랜드 관계자 발언 인용. '1만 5천 명 이상'이므로 하한값 기록",
+  "visitors_source_quote": "브랜드 관계자는 “기본적으로 유동 인구가 확보된 백화점 등이 아닌, 단독 팝업 스토어임에도 1만 5천 명 이상의 고객들이 방문했다”라며",
+  "visitors_source_url": "http://apparelnews.co.kr/news/news_view/?idx=205666",
+  "visitors_source_date": "2023-05-08",
+  "sales_krw": 350000000,
+  "sales_source_quote": "데님을 타이틀로 선보이는 팝업인 만큼, 아이코닉한 클래식 로고 아이템과 데님 컬렉션으로만 약 3억 5천만 원의 매출을 달성했다.",
+  "sales_source_url": "http://apparelnews.co.kr/news/news_view/?idx=205666",
+  "sales_source_date": "2023-05-08",
+  "demand_signals": {
+   "waiting_time_reported": "오픈 4시간 전인 오전 7시부터 줄 서기, 열흘간 매일 아침 인파로 일대 마비",
+   "sold_out": "클래식 로고 티셔츠·볼캡·데님 미니스커트 등 인기 상품 오픈 3일 만에 품절",
+   "reservation_fill": null,
+   "signal_quotes": [
+    "팝업이 진행된 열흘간 매일 아침 수많은 인파가 몰려 성수동 일대를 마비시켰으며, 일부 고객들은 빠른 입장을 위해 오픈 4시간 전인 오전 7시부터 줄을 서기도 했다.",
+    "클래식 로고 티셔츠와 볼캡, 데님 미니스커트 등 인기 상품은 오픈 3일 만에 품절 사태를 빚기도 했다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "기간은 어패럴뉴스(2023-05-02, idx=205577) '오는 5월 7일까지 10일간' 근거. 패션비즈(2023-05-09)는 '1만5000여명 이상'·'약 3억 5000만원' 보도. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified",
+  "sales": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,92 @@
+{
+ "market_record_id": "MKT-2024-0094",
+ "event_name": "와인킹 윈터랜드 팝업스토어(시즌2)",
+ "brand": "와인킹×HDC아이파크몰",
+ "ip_or_collab": "유튜버 와인킹×주류 공급사 100여개·푸드업체 15개, 이케아 팝업 동시 운영",
+ "category": "liquor",
+ "intervention": {
+  "concept_description": "연말 창고형 할인 매장+푸드코트 콘셉트 와인 팝업, 500여종 와인과 30여종 페어링 안주, 블라인드 테이스팅·와인 클래스",
+  "experience_elements": [
+   "무제한 와인 시음",
+   "블라인드테이스팅",
+   "와인클래스"
+  ],
+  "promotions": [
+   "선물 이벤트",
+   "이케아 연계 판매"
+  ],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "아이파크몰 용산점 리빙파크 3층 이벤트홀",
+  "venue_type": "mall",
+  "neighborhood": "용산",
+  "city": "서울",
+  "period_from": "2024-12-06",
+  "period_to": "2025-02-02",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 59,
+    "weekend_share": 0.31,
+    "holiday_days": 6
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 260000,
+  "visitors_period_days": null,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "아이파크몰 제공 수치(2024-12-06 오픈~2025-01-24 기사 시점 누적): '지난 해 12월부터 현재까지 누적 방문객 수 26만여명, 일 평균 6000여 명이 다녀갈 정도로 인기를 얻고 있는 와인킹 윈터랜드 팝업스토어'. 비즈월드(1/26)는 '오픈 3일 만에 10만병 판매, 일평균 4500명 이상 방문 중' 보도(일평균 기준 시점 상이)",
+  "visitors_source_quote": "지난 해 12월부터 현재까지 누적 방문객 수 26만여명, 일 평균 6000여 명이 다녀갈 정도로 인기를 얻고 있는 '와인킹 윈터랜드' 팝업스토어에서는 500여 종의 와인 및 리큐르 등을 무료 시음 하고 구매 할 수 있다.",
+  "visitors_source_url": "https://www.newsis.com/view/NISX20250124_0003045781",
+  "visitors_source_date": "2025-01-25",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "현재 열리고 있는 와인킹 팝업스토어는 시즌2로 오픈 3일 만에 10만병 판매, 일평균 4500명 이상 방문 중인 것으로 알려졌다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": true,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": true,
+   "final_marked": false,
+   "usable": false
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "누적 26만명(뉴시스, 2025-01-24 시점 누적). 오픈 3일 10만병 판매(비즈월드, 2025-01-26)는 수요 지표로 병기. 일평균 6000명 vs 4500명은 보도 시점·집계 구간 차이로 conflict 미적용. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,87 @@
+{
+ "market_record_id": "MKT-2026-0003",
+ "event_name": "국내 최초 종이접기 팝업스토어",
+ "brand": "HDC아이파크몰",
+ "ip_or_collab": "종이접기 콘텐츠",
+ "category": "other",
+ "intervention": {
+  "concept_description": "국내 최초 종이접기 테마 팝업, 취향 세분화 전략의 일환",
+  "experience_elements": [
+   "종이접기 전시·체험"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "아이파크몰 용산점 도파민 스테이션",
+  "venue_type": "mall",
+  "neighborhood": "용산",
+  "city": "서울",
+  "period_from": "2026-01-23",
+  "period_to": "2026-01-28",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 6,
+    "weekend_share": 0.33,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 10000,
+  "visitors_period_days": 6,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "아이파크몰 MD 인터뷰 기사 수치(1만명 '넘게'이므로 1만 이상): '지난 1월 23일부터 28일까지 진행한 국내 최초 종이접기 팝업스토어 현장. 오픈 전부터 많은 고객이 몰리며 평일에도 2시간 이상 입장 대기시간이 발생했으며 1주일간 1만 명이 넘게 방문했다'",
+  "visitors_source_quote": "지난 1월 23일부터 28일까지 진행한 국내 최초 종이접기 팝업스토어 현장. 오픈 전부터 많은 고객이 몰리며 평일에도 2시간 이상 입장 대기시간이 발생했으며 1주일간 1만 명이 넘게 방문했다.",
+  "visitors_source_url": "https://www.hankyung.com/article/202606221397i",
+  "visitors_source_date": "2026-06-25",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "평일에도 2시간 이상 입장 대기",
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "오픈 전부터 많은 고객이 몰리며 평일에도 2시간 이상 입장 대기시간이 발생했으며 1주일간 1만 명이 넘게 방문했다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "운영 기간 1/23~28(6일), 보도는 '1주일간'으로 표기. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

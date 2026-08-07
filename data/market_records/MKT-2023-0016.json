@@ -1,0 +1,90 @@
+{
+ "market_record_id": "MKT-2023-0016",
+ "event_name": "엔씨소프트 '도구리(DOGURI)' 코엑스 팝업스토어",
+ "brand": "엔씨소프트",
+ "ip_or_collab": "도구리",
+ "category": "character",
+ "intervention": {
+  "concept_description": "신입사원을 위한 오리엔테이션 콘셉트",
+  "experience_elements": [
+   "포토존",
+   "일러스트 제작",
+   "럭키드로우 이벤트"
+  ],
+  "promotions": [
+   "도구리 신규 굿즈 15종 첫 공개"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "코엑스",
+  "venue_type": "convention",
+  "neighborhood": "삼성동",
+  "city": "서울",
+  "period_from": "2023-05-03",
+  "period_to": "2023-05-16",
+  "area_pyeong": null,
+  "multi_store": null,
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 50000,
+  "visitors_period_days": 14,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "엔씨소프트 발표 인용: '도구리(DOGURI)' 코엑스 팝업 스토어가 2주간 방문객 5만명을 기록하고 성료했다.",
+  "visitors_source_quote": "엔씨소프트 캐릭터 브랜드 '도구리(DOGURI)' 코엑스 팝업 스토어가 2주간 방문객 5만명을 기록하고 성료했다.",
+  "visitors_source_url": "https://www.etnews.com/20230519000073",
+  "visitors_source_date": "2023-05-19",
+  "sales_krw": null,
+  "sales_source_quote": "",
+  "sales_source_url": "",
+  "sales_source_date": "",
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": true,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "굿즈는 △'넵' 티셔츠 △미니 피규어(사과 ver) △앉은 인형(사과 ver) 순으로 조기 품절됐다.",
+    "올해 도구리 팝업스토어 누적 이벤트 참여자 수는 3만5900명이다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "굿즈 15종 첫 공개, 일부 조기 품절 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

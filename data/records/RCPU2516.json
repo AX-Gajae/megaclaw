@@ -1,0 +1,251 @@
+{
+ "record_id": "RCPU2516",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:퓨어스펙_오렌지",
+  "space_id": "unresolved:미상",
+  "client_party_id": null,
+  "brand_key": "퓨어스펙",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "퓨어스펙 오렌지 샘플링 행사.",
+  "brand_name": "퓨어스펙 오렌지",
+  "experience_elements": [],
+  "promotions": [
+   "샘플링"
+  ],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-04-11",
+   "to": "2025-04-20",
+   "days": 10
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 39,
+    "holiday_until": 22,
+    "holiday_block_in": 0,
+    "nat_event_gap": 53,
+    "nat_event": null,
+    "doc_lag_days": 2,
+    "doc_dates_found": 3
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 6641544.0,
+    "pnl_pre_accounts": 2,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-03-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 35.4
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-04, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-04"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "14gS_FGgGLURRPCn762TTRGjuyRSERp9r",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/14gS_FGgGLURRPCn762TTRGjuyRSERp9r/view",
+   "title": "2025 스프링워크서울_부스운영계획서_250409.docx"
+  },
+  {
+   "doc_id": "15N5Y4DD6NIOn1zbN3wRnOGZXOacqDgqD",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/15N5Y4DD6NIOn1zbN3wRnOGZXOacqDgqD/view",
+   "title": "등신대 보수.xlsx"
+  },
+  {
+   "doc_id": "17ksqdtW6FOTWX2AC3z_T4kstBbo0Qp_X",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17ksqdtW6FOTWX2AC3z_T4kstBbo0Qp_X/view",
+   "title": "[세금계산서-프로모션팀] PSK 오렌지 행사 선금 70%.pdf"
+  },
+  {
+   "doc_id": "1A6ucY7knj08CDDosVw2QOUJ6_4iN7Mph",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1A6ucY7knj08CDDosVw2QOUJ6_4iN7Mph/view",
+   "title": "[견적서-프로모션팀] 등신대 보수건.pdf"
+  },
+  {
+   "doc_id": "1AaCFsvzT-0-7JP04Q47Icdpex7OZncs2",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1AaCFsvzT-0-7JP04Q47Icdpex7OZncs2/view",
+   "title": "e3e26f9dab84b98522bc0d044013853b.jpg"
+  },
+  {
+   "doc_id": "1BIarQ45cCMQ_2YiFT7XO8Q3ZJ74bhwLV",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1BIarQ45cCMQ_2YiFT7XO8Q3ZJ74bhwLV/view",
+   "title": "장세연_스위트스팟 엽서 2종_100x150_각5,000매_아르떼울트라190g.pdf"
+  },
+  {
+   "doc_id": "1C1sdIskwnC1rb13MVrSrMZrxaoLgVc3U",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1C1sdIskwnC1rb13MVrSrMZrxaoLgVc3U/view",
+   "title": "af244d383c627cd262c7d7b64ec866a1.jpg"
+  },
+  {
+   "doc_id": "1H4dTT5J87SAgYVk5aHSHp5TidJMsvTAn",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1H4dTT5J87SAgYVk5aHSHp5TidJMsvTAn/view",
+   "title": "(세금계산서-프로모션팀) 등신대 보수건.pdf"
+  },
+  {
+   "doc_id": "1IyhSVYSiXaizJv8Lhne3rJxFGxgR-CsJ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1IyhSVYSiXaizJv8Lhne3rJxFGxgR-CsJ/view",
+   "title": "250403-스위트스팟_견적서(우정).pdf"
+  },
+  {
+   "doc_id": "1Kgof1zancxszY7OICVQLI3bLMA0Rp87w",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Kgof1zancxszY7OICVQLI3bLMA0Rp87w/view",
+   "title": "2fd1b645ab8555b32c02adacb734b4de.jpg"
+  },
+  {
+   "doc_id": "1LgP7mpnogKAUwogYtp8NKqkNgQjTai-5",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1LgP7mpnogKAUwogYtp8NKqkNgQjTai-5/view",
+   "title": "[통장사본-프로모션팀].jpg"
+  },
+  {
+   "doc_id": "1LrTx8DQuxZNWUqYepCuYIQoAkvZCtNCI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1LrTx8DQuxZNWUqYepCuYIQoAkvZCtNCI/view",
+   "title": "[사업자등록증-프로모션팀].jpg"
+  },
+  {
+   "doc_id": "1Su9XPRoFjKO6QhKZzFWCXv6zWstsgx6X",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Su9XPRoFjKO6QhKZzFWCXv6zWstsgx6X/view",
+   "title": "03a6de793e014c43b78473524512207e.jpg"
+  },
+  {
+   "doc_id": "1UUQ4oy4ZgrBY12yrWU7vSDz0IgKuOBWb",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1UUQ4oy4ZgrBY12yrWU7vSDz0IgKuOBWb/view",
+   "title": "dff698cb21f470da3dd73ac9dc5dab43.jpg"
+  },
+  {
+   "doc_id": "1XLdEOnypvyRZxEiw9N2OsTlaTovEfUb4",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1XLdEOnypvyRZxEiw9N2OsTlaTovEfUb4/view",
+   "title": "psk인터내셔널_업무계약서0324.doc"
+  },
+  {
+   "doc_id": "1awjrxiDumcDlgcpqM0E6ka4Vjf-smsah",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1awjrxiDumcDlgcpqM0E6ka4Vjf-smsah/view",
+   "title": "5912a350231061c67092a01bf627f182.jpg"
+  },
+  {
+   "doc_id": "1d4rPplQfEFCAkSWSlvrySbUgItLA2BFg",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1d4rPplQfEFCAkSWSlvrySbUgItLA2BFg/view",
+   "title": "[견적서-프로모션팀] PSK 최종.xlsx"
+  },
+  {
+   "doc_id": "1nbmsDh8wyPZb9fWdJlBOcMM9MkOouMqn",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1nbmsDh8wyPZb9fWdJlBOcMM9MkOouMqn/view",
+   "title": "PSK인터내셔널 트럭 샘플링  운영 대행 견적 250422 추가 청구.pdf"
+  },
+  {
+   "doc_id": "1pC9-vkcu5KUXzGYFAdeIOv8CKYV_d3s3",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1pC9-vkcu5KUXzGYFAdeIOv8CKYV_d3s3/view",
+   "title": "psk 결과보고서.pdf"
+  },
+  {
+   "doc_id": "1pjfSxj2eO1p1rVQxcW6HHtFe0A2Pbpzg",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1pjfSxj2eO1p1rVQxcW6HHtFe0A2Pbpzg/view",
+   "title": "장세연_스위트스팟 스티커_110x27_1,000매_아트지90g유광_칼선포함.pdf"
+  },
+  {
+   "doc_id": "1tdh33WAKIUlEUMrquW35KEXendocuPYD",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1tdh33WAKIUlEUMrquW35KEXendocuPYD/view",
+   "title": "프린트팩 견적서.pdf"
+  },
+  {
+   "doc_id": "1wHXVT4OFBoiglWe9TiyUVaf1JDXEVr7s",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1wHXVT4OFBoiglWe9TiyUVaf1JDXEVr7s/view",
+   "title": "[세금계산서-프로모션팀] PSK 오렌지 행사 잔금 30%.pdf"
+  },
+  {
+   "doc_id": "1yO2VwRJHtbK0CbncT44H7gGJ7U6l4Ml6",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1yO2VwRJHtbK0CbncT44H7gGJ7U6l4Ml6/view",
+   "title": "522aaaeed1ec8e89ffc7ee725ce5601b.jpg"
+  },
+  {
+   "doc_id": "1yyBr7BLt_Ir6EBq0vsuDxJ8nfR1q6SnH",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1yyBr7BLt_Ir6EBq0vsuDxJ8nfR1q6SnH/view",
+   "title": "2025 스프링워크서울_부스운영계획서_250409.docx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서 텍스트 없음(research_summary 비어있음); client_name/venue/category 미상; 입지·면적·수수료구조·요구사항 정보 없음; 방문자·매출 실측 데이터 없음; 컨셉·체험요소·연출 상세 없음"
+ }
+}

@@ -1,0 +1,185 @@
+{
+ "record_id": "RCPU2421",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:잔망루피",
+  "space_id": "unresolved:신세계광주_본관지하1층_이벤트홀A관",
+  "client_party_id": "unresolved:아이코닉스",
+  "brand_key": "잔망루피",
+  "space_key": "신세계백화점_광주점"
+ },
+ "intervention": {
+  "concept": "잔망루피 광주 팝업스토어. 광주 지역 특색(사투리)을 담은 한정 굿즈와 VMD, 노티드 콜라보 상품을 선보이는 캐릭터 팝업. 포토존·행잉 조형물·등신대 등 체험 연출 포함.",
+  "brand_name": "잔망루피",
+  "experience_elements": [
+   "광주 특색 한정 굿즈(사투리 엽서/키링)",
+   "노티드 콜라보 상품",
+   "행잉 조형물(레일조명 사이)",
+   "진입통로 자동문 이미지랩핑",
+   "포토존 조형물&등신대",
+   "사투리 등 광주지역 특색 VMD",
+   "네온사인",
+   "스탠딩 모니터",
+   "버블 퍼포먼스",
+   "포토부스"
+  ],
+  "promotions": [
+   "금액대별 GWP(광주점 고객 한정 증정품: 부채/음료/에코백)",
+   "3만원 이상 구매고객 포토부스 이용권 제공"
+  ],
+  "staging_tags": [
+   "기둥 랩핑",
+   "행잉 조형물",
+   "포토존",
+   "등신대",
+   "네온사인",
+   "VP존",
+   "유리면 시트랩핑"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "광주",
+   "district": null,
+   "venue_name": "신세계백화점 광주점 본관 지하1층 이벤트홀 A관",
+   "venue_type": "백화점 행사장",
+   "foot_traffic_context": "신관-본관 진입통로, 본관 1층 터미널 브릿지홀 등 백화점 내 동선",
+   "venue_slot": "지하1층"
+  },
+  "area_pyeong": 47,
+  "period": {
+   "from": "2024-08-15",
+   "to": "2024-08-29",
+   "days": 15
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "hybrid",
+   "detail": "매출 연동 대행수수료 계약. MG(최소보장) 설정, 운영사 실지급 인건비 포함 최소마진 32백만원으로 MG 설정. 인센티브: 2억 이상 달성 시 최소목표(1.8억) 대비 초과달성금의 5%, 이후 매 5천만원 단위 허들. 초과매출액의 5% 추가 인센티브. (단위 원, VAT 별도)"
+  },
+  "brand_requirements": [
+   "기둥 랩핑 소재/레퍼런스 회신",
+   "행잉 조형물 사이즈·위치·소재 사전협의(화재 이슈)",
+   "GWP 계획 회신",
+   "버블 퍼포먼스 레퍼런스 회신",
+   "유료 LED 광고패널 영상(30초, 896x1024) 회신",
+   "포토부스 인화지 이미지 D-7까지 회신",
+   "세팅일 8/14 야간 폐점 후 시공",
+   "창고: 지하1층 검품장 쪽 주차면 3면 확보"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "신세계백화점 광주점 본관 지하1층 이벤트홀, 신관-본관 진입통로"
+  },
+  "derived": {
+   "duration": {
+    "days": 15,
+    "weekend_share": 0.27,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 3.5,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 101,
+    "holiday_until": 30,
+    "holiday_block_in": 0,
+    "nat_event_gap": 91,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 3690506.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2024-07-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 65.4
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 미제공. 견적서에 운영 인력 기준(평일 10명/주말 12명)만 언급.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-08, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": 32.0,
+   "last_recognition_period": "2024-08"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "10_A2SQScoQwa_4W6irHtJMiXXhQR_Dtm",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/10_A2SQScoQwa_4W6irHtJMiXXhQR_Dtm/view",
+   "title": "잔망루피_신세계광주_운영비견적서_0704.xlsx"
+  },
+  {
+   "doc_id": "16AFbUBlhvTLcHK8Dud-ekze5Q2IMcJsr",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/16AFbUBlhvTLcHK8Dud-ekze5Q2IMcJsr/view",
+   "title": "잔망루피 팝업스토어 위탁운영 계약서_스위트스팟_신세계 광주점.doc"
+  },
+  {
+   "doc_id": "1CovlRXX7cz84_8K-EwCIIhrhAVovmb_A",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1CovlRXX7cz84_8K-EwCIIhrhAVovmb_A/view",
+   "title": "0809 신세계광주 잔망루피 팝업.pdf"
+  },
+  {
+   "doc_id": "1IbdHF9dd07Omhjfu_RvyyqCL5FX6B-fx",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1IbdHF9dd07Omhjfu_RvyyqCL5FX6B-fx/view",
+   "title": "포토부스 01.ai"
+  },
+  {
+   "doc_id": "1_A6bwSmP1E94i6ePgNVGC1Is2M9_JmPg",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1_A6bwSmP1E94i6ePgNVGC1Is2M9_JmPg/view",
+   "title": "전기도면.pdf"
+  },
+  {
+   "doc_id": "1nxztKpy7UZxcRZcWgmhQP5APpwiKSfmj",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1nxztKpy7UZxcRZcWgmhQP5APpwiKSfmj/view",
+   "title": "잔망루피 팝업스토어 위탁운영 계약서_스위트스팟_신세계 광주점.doc"
+  },
+  {
+   "doc_id": "1o6hqSP--PMelR_YBMvAOlAjr3L3yqTV_",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1o6hqSP--PMelR_YBMvAOlAjr3L3yqTV_/view",
+   "title": "[광주점] 잔망루피 팝업스토어 준비사항.pptx"
+  },
+  {
+   "doc_id": "1onikVWSdTFpZs92Fk4JNbHr8Q06zVNbg",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1onikVWSdTFpZs92Fk4JNbHr8Q06zVNbg/view",
+   "title": "잔망루피_신세계광주_운영비견적_0704.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 4건: [광주점] 잔망루피 팝업스토어 준비사항.pptx, 0809 신세계광주 잔망루피 팝업.pdf, 전기도면.pdf, 잔망루피_신세계광주_운영비견적서_0704.xlsx. 미확실: 결과보고서 부재로 실측 방문자·매출 없음; client_party_id 불명확(아이코닉스/광주신세계); 계약 총액 명시 없음; plan_visitors_expected 없음(견적 인력 수치는 운영 인원)"
+ }
+}

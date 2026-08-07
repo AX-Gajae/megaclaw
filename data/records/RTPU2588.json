@@ -1,0 +1,198 @@
+{
+ "record_id": "RTPU2588",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:마녀공장",
+  "space_id": "unresolved:성수_연무장길_연남홍대_강남대로_게릴라샘플링",
+  "client_party_id": "unresolved:마녀공장",
+  "brand_key": "마녀공장",
+  "space_key": "multi_게릴라샘플링"
+ },
+ "intervention": {
+  "concept": "마녀공장 '돌콩 퍼레이드' 게릴라 샘플링. 성수·연남/홍대·강남 3개 지역 거리에서 퓨어 소이빈 클렌징 밀크, 퓨어 클렌징 오일 본품 및 샘플을 배포하며 QR 퀴즈·SNS 스토리 이벤트로 자발적 참여를 유도한 이동형 샘플링 캠페인.",
+  "brand_name": "마녀공장",
+  "experience_elements": [
+   "QR 퀴즈 참여 후 본품 증정",
+   "스쿱을 이용한 직접 샘플 픽업",
+   "인스타그램 스토리 업로드 & 태그 이벤트",
+   "돌콩 풍선 배포",
+   "인형탈/슈바",
+   "자전거 카트",
+   "스팟 고정형 + 거리 활보 병행 샘플링"
+  ],
+  "promotions": [
+   "본품 증정 이벤트(QR 팔로우+퀴즈 완료 시 퓨어 클렌징 오일 or 퓨어 소이빈 클렌징 밀크 택1)",
+   "샘플 증정 이벤트(관심 고객 누구나 스쿱 픽업)",
+   "인스타그램 스토리 이벤트(현장 사진 업로드+태그&팔로우 시 추가 본품)"
+  ],
+  "staging_tags": [
+   "게릴라 샘플링",
+   "돌콩 풍선",
+   "키 비주얼",
+   "인형탈",
+   "자전거 카트",
+   "옐로우 유니폼",
+   "거리 활보"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": null,
+   "area_sqm": null,
+   "planned_operating_days": null,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": null,
+   "experience_density": 2,
+   "goods_scale": 0,
+   "photo_zones": 0,
+   "collab_strength": 0,
+   "ip_awareness": 3,
+   "target_breadth": 3,
+   "entry_friction": 0,
+   "media_push": 2,
+   "season_fit": 2,
+   "venue_prominence": 3
+  },
+  "attr_meta": {
+   "evidence": "사전 문서 없음(제안서·견적서 미첨부). 레코드 요약만 존재해 숫자 전부 null. 성수/연남·홍대/강남 3개 지역 이동형 게릴라 샘플링, 거리 무료 워크인.",
+   "confidence": "low",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "성수/연남·홍대/강남",
+   "venue_name": "성수 연무장길 일대, 경의선 숲길/홍대 상상마당 일대, 강남대로 일대",
+   "venue_type": "거리(옥외 게릴라 샘플링)",
+   "foot_traffic_context": "성수는 감도 높은 브랜드/트렌드 상권, 연남·홍대는 2030 유동 집중 거리, 강남은 직장인 유입이 많은 점심/퇴근시간대 상권"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-11-21",
+   "to": "2025-11-28",
+   "days": 3
+  },
+  "season": "가을/겨울(11월)",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": "문서에 계약금액·수수료·분할 정보 없음"
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 3,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "성수·연남/홍대·강남 3개 지역 거리 이동형 게릴라 샘플링"
+  },
+  "derived": {
+   "duration": {
+    "days": 8,
+    "weekend_share": 0.25,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 43,
+    "holiday_until": 85,
+    "holiday_block_in": 0,
+    "nat_event_gap": 8,
+    "nat_event": "수능",
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": null,
+   "popup_zone_pass_rate": null,
+   "host_traffic_est": null,
+   "venue_scale_tier": 5,
+   "confidence": "low",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2025-11-21",
+    "visitors": 2514,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-11-25",
+    "visitors": 1885,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-11-28",
+    "visitors": 2148,
+    "sales_krw": null
+   }
+  ],
+  "totals": {
+   "visitors": 6547,
+   "sales_krw": null,
+   "rev_mm_recognized": 31.3
+  },
+  "counting_method": "participation",
+  "counting_basis": "결과보고서 '샘플링 참여자 수' 표: 성수 2,514명(628명/1H), 연남/홍대 1,885명(628명/1H), 강남 2,148명(537명/1H), 총 6,547명",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(참여자 수는 샘플링 이벤트 참여 기준. 본품/샘플 전량 소진(본품 900+900EA, 샘플 각종). 매출(POS) 데이터 없음 — 무료 샘플링 캠페인.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-11, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-11"
+  },
+  "label_trust": {
+   "grade": "A",
+   "flags": [],
+   "why": "일별 표가 기간의 100% 커버"
+  },
+  "label_scope": {
+   "label_from": "2025-11-21",
+   "label_to": "2025-11-28",
+   "label_active_days": 3,
+   "label_span_days": 8,
+   "label_contiguous": false,
+   "daily_sum": 6547,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1Pfp4QlpS4if12WOEjczBQ4T-QxZkRimW",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Pfp4QlpS4if12WOEjczBQ4T-QxZkRimW/view",
+   "title": "[스위트스팟]마녀공장 게릴라 샘플링_결과보고서.pdf"
+  },
+  {
+   "doc_id": "1u7PeVZytBSSqTVHVCUfMf0p6IAiNc3lk",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1u7PeVZytBSSqTVHVCUfMf0p6IAiNc3lk/view",
+   "title": "(SWEETSPOT) 마녀공장_게릴라 샘플링 이벤트_견적서_1201(최종).pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 1건: [스위트스팟]마녀공장 게릴ᄅ. 미확실: 계약금액 및 수수료 구조 정보 없음; 면적(평) 정보 없음(거리 샘플링); 예상 방문자(기획 KPI) 명시 없음, 목표 배포 수량만 존재; POS 매출 없음(무료 샘플링)"
+ }
+}

@@ -1,0 +1,104 @@
+{
+ "market_record_id": "MKT-2024-0095",
+ "event_name": "무신사 2024 뷰티 어워즈 팝업스토어",
+ "brand": "무신사 뷰티",
+ "ip_or_collab": "2024 무신사 뷰티 어워즈 수상 브랜드 연합",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "연간 뷰티 어워즈 연계 2개 지역(성수 대림창고·홍대) 동시 팝업. 스쿱 이벤트, 럭키박스, 수상 브랜드 체험",
+  "experience_elements": [
+   "스쿱 이벤트",
+   "럭키박스",
+   "브랜드 체험존",
+   "포토존"
+  ],
+  "promotions": [
+   "럭키박스 판매",
+   "온라인 어워즈 기획전 연계"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "무신사 스토어 성수@대림창고 외 홍대",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동/홍대",
+  "city": "서울",
+  "period_from": "2024-12-09",
+  "period_to": "2024-12-22",
+  "area_pyeong": null,
+  "multi_store": true,
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 120000,
+  "visitors_period_days": 14,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "무신사 성료 발표 인용: 성수·홍대 합산 12만 명",
+  "visitors_source_quote": "팝업 기간 성수와 홍대 두 곳에 12만 명이 방문했다",
+  "visitors_source_url": "https://www.etnews.com/20241224000107",
+  "visitors_source_date": "2024-12-24",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": "럭키박스 매일 당일 완판",
+   "reservation_fill": null,
+   "signal_quotes": [
+    "스쿱 이벤트에 1만3000명이 참여했다",
+    "럭키박스는 매일 준비 수량이 당일 완판됐다",
+    "입점 브랜드의 본품 및 샘플 상품이 가득 담긴 통에서 고객이 스쿱(scoop)에 담은 만큼 증정하는 '스쿱 이벤트'에는 약 1만3000여명이 참여했다.",
+    "제이엠더블유, 메디필, 비플레인 등 입점 브랜드별로 무신사 뷰티 어워즈를 기념해 선보인 럭키박스(lucky box) 30여 종이 발매 당일 '완판'될 만큼 화제를 모았다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "동 기사에 온라인 어워즈 기간 거래액 전년 대비 약 3배 언급(온라인 지표라 별도 미기재). | 병합 레코드: MKT-2024-0018 | [병합:MKT-2024-0018] 합산 수치임을 명시. 어워즈 선정 48개 브랜드 기획전 거래액 전년비 3배+(온라인).",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 120000,
+   "basis": "organizer_claim",
+   "quote": "지난 9일부터 22일까지 2주간 '무신사스토어 성수@대림창고'와 '무신사 스토어 홍대'에서 동시에 진행된 무신사 뷰티 어워즈 팝업에는 누적 합산으로 12만 명이 넘는 고객이 방문한 것으로 나타났다.",
+   "url": "https://newsroom.musinsa.com/newsroom-menu/2024-1224",
+   "date": "2024-12-24"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

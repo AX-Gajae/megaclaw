@@ -1,0 +1,474 @@
+{
+ "record_id": "RCPU2511",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:레진코믹스",
+  "space_id": "unresolved:성수_연무장3길9_피치스도원",
+  "client_party_id": "unresolved:레진엔터테인먼트",
+  "brand_key": "레진코믹스",
+  "space_key": "성수_피치스도원"
+ },
+ "intervention": {
+  "concept": "레진코믹스(레진 경찰청 IP 테마) 시즌 그리팅 팝업스토어. '레진경찰청' 세계관을 사건현장·형사팀 무드로 연출한 테마존, 통로 행잉, 야외 테마존, 굿즈존, 포토존으로 구성된 상품 판매형 팝업. 어두운 조도와 디오라마·디머 조명을 활용한 몰입형 공간 연출.",
+  "brand_name": "레진코믹스",
+  "experience_elements": [
+   "테마존(레진경찰청 사건현장·형사팀 연출)",
+   "디오라마 제작",
+   "통로 행잉 그래픽",
+   "야외 테마존",
+   "굿즈존(등신대·매대·카운터)",
+   "포토존",
+   "리셉션(컨테이너부스)",
+   "럭키드로우용 자판기"
+  ],
+  "promotions": [
+   "럭키드로우"
+  ],
+  "staging_tags": [
+   "IP/캐릭터",
+   "어두운 조도",
+   "디머 조명",
+   "디오라마",
+   "폼보드 제작물",
+   "총기보관함 연출",
+   "증거품 전시",
+   "라인테이프 바닥연출"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "성동구",
+   "venue_name": "피치스 도원",
+   "venue_type": "복합문화공간",
+   "foot_traffic_context": "성수 로드(성수·강남·홍대·신사·한남 등 로드 입지)"
+  },
+  "area_pyeong": 570,
+  "period": {
+   "from": "2025-06-19",
+   "to": "2025-06-29",
+   "days": 11
+  },
+  "season": "여름(장마기간)",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "총 계약금액 250,000,000원(VAT 별도). 1차 선금 50,000,000원(2025-03-31), 2차 중도금 100,000,000원(2025-05-30), 3차 잔금 100,000,000원(2025-06-30). 판매 분실분(LOSS): 총매출 기준 3% 이상 발생 시 제품 제조원가의 100% 공제(제조원가는 판매가의 50%로 산정), 3% 이하는 통상 LOSS로 의뢰사 부담."
+  },
+  "brand_requirements": [
+   "제작물 사용 전 의뢰사 검수 필수",
+   "모든 제작물 권리 및 지식재산권 의뢰사 단독 귀속",
+   "IP 사용 가이드라인 준수",
+   "상품 검수 주체는 의뢰사",
+   "포스기 5대(랜선 10개, 220V 4구) 사용",
+   "CCTV 사용(픽업데스크)"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "성수 로드 입지"
+  },
+  "derived": {
+   "duration": {
+    "days": 11,
+    "weekend_share": 0.36,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 11,
+    "holiday_until": 57,
+    "holiday_block_in": 0,
+    "nat_event_gap": 16,
+    "nat_event": null,
+    "doc_lag_days": 14,
+    "doc_dates_found": 4
+   },
+   "competition": {
+    "comp_same_addr_open": 5,
+    "comp_prior_at_venue": 29,
+    "comp_within_500m_open": 25,
+    "comp_within_1000m_open": 33,
+    "matched_address": "서울 성동구 성수이로 74"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 388272.0,
+    "pnl_pre_accounts": 3,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2025-04-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 355.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서에 일일/일자별 방문자 수 및 매출 실측 데이터가 포함되어 있지 않음(공간 규모·형태·카테고리·기간·입지·대행범위 요약만 존재).). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-06, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": 250.0,
+   "last_recognition_period": "2025-06"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-TEFnyl5LvkI0NaNDTi0bo1CrgxxccGU",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1-TEFnyl5LvkI0NaNDTi0bo1CrgxxccGU/view",
+   "title": "엠에스밴딩) 세금계산서.png"
+  },
+  {
+   "doc_id": "1-ii8x8FpfkdlTf3_fhNRsYMvnoHlhm92",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1-ii8x8FpfkdlTf3_fhNRsYMvnoHlhm92/view",
+   "title": "스위트스팟_레진 시즌그리팅_견적서_250605(인건비 추가) (1).pdf"
+  },
+  {
+   "doc_id": "13eydIZUzi6GMKmlUAudBXUyZuDxLLC3M",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/13eydIZUzi6GMKmlUAudBXUyZuDxLLC3M/view",
+   "title": "통장사본.jpg"
+  },
+  {
+   "doc_id": "14AepUvXBq-DZYTsZtAlXzlMikXYpJ0Kq",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/14AepUvXBq-DZYTsZtAlXzlMikXYpJ0Kq/view",
+   "title": "12_통로2.jpg"
+  },
+  {
+   "doc_id": "14S-JtvdnR1rP9UmmcjF3LBBajPJRo1j1",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/14S-JtvdnR1rP9UmmcjF3LBBajPJRo1j1/view",
+   "title": "통장사본.jpg"
+  },
+  {
+   "doc_id": "18oVdWJplOLbAnwCVNTk82p17ZM6GXdh-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/18oVdWJplOLbAnwCVNTk82p17ZM6GXdh-/view",
+   "title": "세금계산서.jpg"
+  },
+  {
+   "doc_id": "19Eyn4yNheijOd7ndnYwrR4_KB_jg1RnN",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/19Eyn4yNheijOd7ndnYwrR4_KB_jg1RnN/view",
+   "title": "레진 시즌그리팅 결과보고서.pdf"
+  },
+  {
+   "doc_id": "19RfojH83_PKYpYwh2dkO9nuqe7qgcUUK",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/19RfojH83_PKYpYwh2dkO9nuqe7qgcUUK/view",
+   "title": "08_점심크로스오버.jpg"
+  },
+  {
+   "doc_id": "1AKV2A2cbchMXAvcI6Y0K4LyF8DpmCwFl",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1AKV2A2cbchMXAvcI6Y0K4LyF8DpmCwFl/view",
+   "title": "통장사본.jpg"
+  },
+  {
+   "doc_id": "1AWKb10J0KGt6YFMPKGjo5J6yMB633V07",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1AWKb10J0KGt6YFMPKGjo5J6yMB633V07/view",
+   "title": "0611_레진 시즌그리팅 최종안.pdf"
+  },
+  {
+   "doc_id": "1Aw8se4E0yqPrAsm7hUdwKxsQhcz2K80I",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Aw8se4E0yqPrAsm7hUdwKxsQhcz2K80I/view",
+   "title": "세금계산서.png"
+  },
+  {
+   "doc_id": "1AxuD6orvccQlAfSARBaSFCoUbdbjYfCU",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1AxuD6orvccQlAfSARBaSFCoUbdbjYfCU/view",
+   "title": "최종본_레진엔터테인먼트_스위트스팟_시즌그리팅_팝업 업무계약서.pdf"
+  },
+  {
+   "doc_id": "1BwC1DchwxmOlhBOtcFk01kB9tknopIAl",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1BwC1DchwxmOlhBOtcFk01kB9tknopIAl/view",
+   "title": "04_복도크로스오버.jpg"
+  },
+  {
+   "doc_id": "1DHj8QsdjxlSiyr17sPWXSCRnCELLUKgR",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1DHj8QsdjxlSiyr17sPWXSCRnCELLUKgR/view",
+   "title": "02_입구-복도.jpg"
+  },
+  {
+   "doc_id": "1DeyzLC60tEzhM2sNtF7NGAHEOlFhleTy",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DeyzLC60tEzhM2sNtF7NGAHEOlFhleTy/view",
+   "title": "수정세금계산서.png"
+  },
+  {
+   "doc_id": "1EwQNExSv_8fDuLCTqOYHgLxhjAzO1VQW",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1EwQNExSv_8fDuLCTqOYHgLxhjAzO1VQW/view",
+   "title": "견적서.jpg"
+  },
+  {
+   "doc_id": "1F7YhahFfNPTGaxXAyL4RXD6tDCQAGn47",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1F7YhahFfNPTGaxXAyL4RXD6tDCQAGn47/view",
+   "title": "11_전체뷰.jpg"
+  },
+  {
+   "doc_id": "1F7gr9mUgnDMZonnSOoDjfjjSy17GEGYh",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1F7gr9mUgnDMZonnSOoDjfjjSy17GEGYh/view",
+   "title": "취소세금계산서.png"
+  },
+  {
+   "doc_id": "1FrOc3SdO6tpG96er1bZnw7wtiBzeCMsE",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1FrOc3SdO6tpG96er1bZnw7wtiBzeCMsE/view",
+   "title": "사업자등록증.jpg"
+  },
+  {
+   "doc_id": "1G-5cAzKu8EBAGbJtkry0SjsGgWgpUqhs",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1G-5cAzKu8EBAGbJtkry0SjsGgWgpUqhs/view",
+   "title": "見積書(성수동).xls"
+  },
+  {
+   "doc_id": "1GCrWlGStqXOXF1WXnY0Txn9v5Oigkdhr",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1GCrWlGStqXOXF1WXnY0Txn9v5Oigkdhr/view",
+   "title": "스위트스팟_레진 시즌그리팅_견적서_250605(인건비 추가).xlsx"
+  },
+  {
+   "doc_id": "1HgUGUJix553quleVt03ZnHw2CTD68W9J",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1HgUGUJix553quleVt03ZnHw2CTD68W9J/view",
+   "title": "15_굿즈존픽업.jpg"
+  },
+  {
+   "doc_id": "1Hgk5iwurrt_rsF8ZXbPa5Ztgip4QrM8v",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Hgk5iwurrt_rsF8ZXbPa5Ztgip4QrM8v/view",
+   "title": "대여견적서-스위트스팟(2025.6.18~)최종견적서.pdf"
+  },
+  {
+   "doc_id": "1IBr6hw1c4p7E_Uh7qeKuC6lCbfKj2yT1",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1IBr6hw1c4p7E_Uh7qeKuC6lCbfKj2yT1/view",
+   "title": "금강컨테이너) 세금계산서.png"
+  },
+  {
+   "doc_id": "1KGOnSlwi2NNHqH9AVb3XcJfwb0shml5u",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1KGOnSlwi2NNHqH9AVb3XcJfwb0shml5u/view",
+   "title": "통장사본.jpg"
+  },
+  {
+   "doc_id": "1NW4A9HEUjTwE9NsJV9FDqHD9Q1CcccqT",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1NW4A9HEUjTwE9NsJV9FDqHD9Q1CcccqT/view",
+   "title": "아트매니아_통장사본.jpg"
+  },
+  {
+   "doc_id": "1PA59ZH49jB6iV0hTsx5BK_xvkSuJBTiq",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1PA59ZH49jB6iV0hTsx5BK_xvkSuJBTiq/view",
+   "title": "KakaoTalk_20250624_155926477.jpg"
+  },
+  {
+   "doc_id": "1PGgd47a8tm_faq5agqsIf9ATnWo2fO9P",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1PGgd47a8tm_faq5agqsIf9ATnWo2fO9P/view",
+   "title": "0611_레진 시즌그리팅 최종안.pptx"
+  },
+  {
+   "doc_id": "1Rxyy4sQ6L_kGznb-nIrDYeyr2Ps18ysK",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Rxyy4sQ6L_kGznb-nIrDYeyr2Ps18ysK/view",
+   "title": "0619청약서(스위트스팟_레진코믹스_미날인) (1).pdf"
+  },
+  {
+   "doc_id": "1SQ40sbCouBYi_5Ncnca3UbFBvZpsWtfv",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1SQ40sbCouBYi_5Ncnca3UbFBvZpsWtfv/view",
+   "title": "見積書(성수동).pdf"
+  },
+  {
+   "doc_id": "1Tq6yF0KEByDoTldaDki0LtGenhRP5UCe",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Tq6yF0KEByDoTldaDki0LtGenhRP5UCe/view",
+   "title": "14_굿즈존.jpg"
+  },
+  {
+   "doc_id": "1Wx8J5mpVnYFOWiOUUVvpM02MHvXUD4bv",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Wx8J5mpVnYFOWiOUUVvpM02MHvXUD4bv/view",
+   "title": "09_영상조사실크로스오버.jpg"
+  },
+  {
+   "doc_id": "1Wy1tUkqLszcFSo3GinRS-t24VP3F6UiD",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Wy1tUkqLszcFSo3GinRS-t24VP3F6UiD/view",
+   "title": "사업자등록증.jpg"
+  },
+  {
+   "doc_id": "1XzyYLA4NTDOJveuoWVSFmxq68tipQ8Ai",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1XzyYLA4NTDOJveuoWVSFmxq68tipQ8Ai/view",
+   "title": "03_입구_문서보관실.jpg"
+  },
+  {
+   "doc_id": "1YEO9Oy6gcb4xihZGaCZCboAzwLNL-jB3",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1YEO9Oy6gcb4xihZGaCZCboAzwLNL-jB3/view",
+   "title": "250602 견적서.pdf"
+  },
+  {
+   "doc_id": "1ZxKCXx9zC7uktmh7bfMi15eJ0V8H6uqM",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ZxKCXx9zC7uktmh7bfMi15eJ0V8H6uqM/view",
+   "title": "세금계산서.png"
+  },
+  {
+   "doc_id": "1ep0kVuKaBqsVtnOUJacUBtEdh4moDA3E",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ep0kVuKaBqsVtnOUJacUBtEdh4moDA3E/view",
+   "title": "06_무기고크로스오버.jpg"
+  },
+  {
+   "doc_id": "1fm1murhiOIV9PGyJLcPKtzSI6vMsgruu",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1fm1murhiOIV9PGyJLcPKtzSI6vMsgruu/view",
+   "title": "[시즌 그리팅]피치스도원_0611.skb"
+  },
+  {
+   "doc_id": "1hRKR8sMAbM8LH1t53etm0XciO5kD797m",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1hRKR8sMAbM8LH1t53etm0XciO5kD797m/view",
+   "title": "엠에스밴딩) 통장사본.jpg"
+  },
+  {
+   "doc_id": "1iivtOja29DzjOfAKm4PrDzmTn0opwsRN",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1iivtOja29DzjOfAKm4PrDzmTn0opwsRN/view",
+   "title": "[시공계약서-아트매니아] 시즌그리팅_시공건_0616(날인완료).pdf"
+  },
+  {
+   "doc_id": "1jCyTCHEI3A6l2St1I-tUP_zVMwxW6TcO",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1jCyTCHEI3A6l2St1I-tUP_zVMwxW6TcO/view",
+   "title": "세금계산서.png"
+  },
+  {
+   "doc_id": "1jsIZdOmuPfXMnfCGB1krPlE1Rx5n7U3G",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1jsIZdOmuPfXMnfCGB1krPlE1Rx5n7U3G/view",
+   "title": "최종본_레진엔터테인먼트_스위트스팟_시즌그리팅_팝업 업무계약서.pdf"
+  },
+  {
+   "doc_id": "1kJ-eSG1ZFGEr_8xSJe0_9BeazKkQpr7G",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1kJ-eSG1ZFGEr_8xSJe0_9BeazKkQpr7G/view",
+   "title": "아트매니아_사업자등록증.jpg"
+  },
+  {
+   "doc_id": "1kY3DN4NS2mGaiSwyhG63LUKQV7TLNBZO",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1kY3DN4NS2mGaiSwyhG63LUKQV7TLNBZO/view",
+   "title": "12_통로.jpg"
+  },
+  {
+   "doc_id": "1mJfItTdYs-nYEry_cKxO8FdqLxiAPWoY",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1mJfItTdYs-nYEry_cKxO8FdqLxiAPWoY/view",
+   "title": "13_굿즈존입구.jpg"
+  },
+  {
+   "doc_id": "1mOulSW2WPTtb-Yph-oQTFuTqsXnmuLLY",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1mOulSW2WPTtb-Yph-oQTFuTqsXnmuLLY/view",
+   "title": "견적서.jpg"
+  },
+  {
+   "doc_id": "1o1qldRulSjHRvv-nGA2W6MbIqdU2xYXY",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1o1qldRulSjHRvv-nGA2W6MbIqdU2xYXY/view",
+   "title": "24컬럼 음료수자판기단기렌탈(스위트스팟).pdf"
+  },
+  {
+   "doc_id": "1onIrI-A_vtzR1YSA9G35ZAGl1DlPdgT7",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1onIrI-A_vtzR1YSA9G35ZAGl1DlPdgT7/view",
+   "title": "스위트스팟_레진 시즌그리팅_견적서_250605(인건비 추가).xlsx"
+  },
+  {
+   "doc_id": "1pLw8oWHe7UgiIYvVoX7MN5A0LDUzMTQJ",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1pLw8oWHe7UgiIYvVoX7MN5A0LDUzMTQJ/view",
+   "title": "01_입구-방명록.jpg"
+  },
+  {
+   "doc_id": "1pQnPgtmjYm3bBbRAQ6TwQEyjgQNcfdMv",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1pQnPgtmjYm3bBbRAQ6TwQEyjgQNcfdMv/view",
+   "title": "엠에스밴딩) 추가건 세금계산서.png"
+  },
+  {
+   "doc_id": "1pTED2XxVQkOfN5cHr1dN3vzkRau-sLjP",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1pTED2XxVQkOfN5cHr1dN3vzkRau-sLjP/view",
+   "title": "(최종)25.6.5_컨테이너부스렌탈_스위트스팟(성수동).xlsx"
+  },
+  {
+   "doc_id": "1qupSJtLPIDEm2Qc1RrfIe4ZG0NPi0ZdH",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1qupSJtLPIDEm2Qc1RrfIe4ZG0NPi0ZdH/view",
+   "title": "금강컨테이너)렌탈계약서.pdf"
+  },
+  {
+   "doc_id": "1s7sPt1W0ptMYtkUNsaPDxDeNGZkExtpD",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1s7sPt1W0ptMYtkUNsaPDxDeNGZkExtpD/view",
+   "title": "Thumbs.db"
+  },
+  {
+   "doc_id": "1swDYZ7ZDonibYTV8ZosxxYuI9xiQQfCO",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1swDYZ7ZDonibYTV8ZosxxYuI9xiQQfCO/view",
+   "title": "10_회의실크로스오버.jpg"
+  },
+  {
+   "doc_id": "1tty_gtMJtOpJAjxepLHzQ6Gek4faqOIK",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1tty_gtMJtOpJAjxepLHzQ6Gek4faqOIK/view",
+   "title": "사업자등록증.jpg"
+  },
+  {
+   "doc_id": "1xyqiHA-qEqfnMz9haT3yjrcfiLyVDI5-",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1xyqiHA-qEqfnMz9haT3yjrcfiLyVDI5-/view",
+   "title": "05_단체등신대.jpg"
+  },
+  {
+   "doc_id": "1y56r_OOTRvArycdk9Wpn_b0BGXVOzE-y",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1y56r_OOTRvArycdk9Wpn_b0BGXVOzE-y/view",
+   "title": "사업자등록증.jpg"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 7건: 최종본_레진엔터테인먼트_스위트스팟_시즌그리팅_팝업 업무, 최종본_레진엔터테인먼트_스위트스팟_시즌그리팅_팝업 업무, 0611_레진 시즌그리팅 최종안.pptx, 0611_레진 시즌그리팅 최종안.pdf, (최종)25.6.5_컨테이너부스렌탈_스위트스팟(성수동), 대여견적서-스위트스팟(2025.6.18~)최종견적서.p. 미확실: 방문자 수 및 매출 실측 데이터 없음; counting_method/basis 판정 불가; plan_visitors_expected 기획서에 명시 없음; client_party_id 정규화 미해결; 세팅 6/17~18, 철수 6/29(계약서 제4조에는 철수완료일 2025-05-06으로 오기된 부분 존재)"
+ }
+}

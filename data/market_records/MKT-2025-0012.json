@@ -1,0 +1,75 @@
+{
+  "market_record_id": "MKT-2025-0012",
+  "event_name": "더바넷(The Barnnet) 롯데월드몰 국내 첫 팝업스토어",
+  "brand": "더바넷",
+  "ip_or_collab": null,
+  "category": "fashion",
+  "intervention": {
+    "concept_description": "디자이너 여성복 브랜드 국내 첫 대형유통 팝업, 2025 봄 컬렉션 단독 선공개",
+    "experience_elements": [
+      "클래식·러블리 무드 공간 연출",
+      "현장 이벤트"
+    ],
+    "promotions": [
+      "익스클루시브 상품",
+      "봄 컬렉션 단독 선공개"
+    ],
+    "is_free_entry": null,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "롯데월드몰",
+    "venue_type": "mall",
+    "neighborhood": "잠실",
+    "city": "서울",
+    "period_from": "2025-03-07",
+    "period_to": "2025-03-20",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 14,
+        "weekend_share": 0.29,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 1,
+        "months_since_last": 2.6,
+        "first_edition": false
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 14,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "브랜드·유통 실적 보도. 롯데월드몰 단일 패션브랜드 실적 1위",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": 600000000,
+    "sales_source_quote": "더바넷(대표 정해신)의 디자이너 여성복 '더바넷(The Barnnet)'이 지난 3월 7일부터 3월 20일까지 서울 잠실 롯데월드몰에서 진행한 국내 첫 팝업에서 매출 6억원을 기록했다.",
+    "sales_source_url": "https://fashionbiz.co.kr/article/214757",
+    "sales_source_date": "2025-03-26",
+    "demand_signals": {
+      "waiting_time_reported": "오픈 첫날부터 긴 대기 줄",
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "오픈 첫날부터 긴 대기 줄을 형성한 이번 팝업은 롯데월드몰 단일 패션브랜드 실적 1위, 일평균 판매 실적 1위를 기록하며 높은 인지도와 관심을 입증했다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "어패럴뉴스(2025-03-25)도 '약 6억 원' 보도: https://www.apparelnews.co.kr/news/news_view/?idx=216340 | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {
+    "sales": "num_only"
+  },
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

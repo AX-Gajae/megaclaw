@@ -1,0 +1,77 @@
+{
+  "market_record_id": "MKT-2025-0117",
+  "event_name": "'주토피아2: 시크릿 미션' 팝업(더현대 서울 에픽서울)",
+  "brand": "디즈니코리아/현대백화점",
+  "ip_or_collab": "주토피아2(디즈니)",
+  "category": "character",
+  "intervention": {
+    "concept_description": "영화 '주토피아2' 개봉 연계 팝업. 더현대 서울 5층 에픽서울에서 2025-11-15~12-03 운영. 사전 예약제.",
+    "experience_elements": [
+      "테마 존",
+      "굿즈 판매"
+    ],
+    "promotions": [
+      "사전 예약제"
+    ],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "더현대 서울 5층 에픽서울(서울 영등포구)",
+    "venue_type": "department_store",
+    "neighborhood": "여의도",
+    "city": "서울",
+    "period_from": "2025-11-15",
+    "period_to": "2025-12-03",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 19,
+        "weekend_share": 0.32,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "unknown",
+    "counting_basis_note": "방문객 총계 미공개(예약 마감 신호만 보도)",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": "1차 사전 예약 오픈 1시간 만에 전 회차 매진",
+      "signal_quotes": [
+        "1차 사전 예약 오픈 후 한 시간 만에 11월 23일까지의 전 회차가 매진됐다. (전자신문 2025-11-20)"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

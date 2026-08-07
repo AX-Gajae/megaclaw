@@ -1,0 +1,144 @@
+{
+ "record_id": "RTPU2564",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:엔자임헬스",
+  "space_id": "unresolved:국회의사당",
+  "client_party_id": "unresolved:엔자임헬스_주식회사",
+  "brand_key": "엔자임헬스",
+  "space_key": "국회의사당"
+ },
+ "intervention": {
+  "concept": "NMOSD(시신경척수염) 질환 인식 개선을 위한 콘서트 행사. 국회의사당에서 백월·테이블 부스를 설치하고 현장 운영하는 하루 행사.",
+  "brand_name": "엔자임헬스 (NMOSD 질환 인식 개선 콘서트)",
+  "experience_elements": [
+   "백월(9*2.5*0.4m) 실사출력",
+   "테이블(1.2*1.0*0.6m) 제작 및 실사출력",
+   "부스"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "백월",
+   "부스",
+   "실사출력",
+   "목공 부스"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": null,
+   "venue_name": "국회의사당",
+   "venue_type": "공공기관/행사장",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-09-25",
+   "to": "2025-09-25",
+   "days": 1
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "용역 총액 11,300,000원(VAT 별도). 선금 5,650,000원(VAT 별도), 잔금 5,650,000원(VAT 별도). 선금 세금계산서 2025-09-01 발행, 엔자임 2025-09-19까지 지급. 잔금은 최종 승인일로부터 30일 이내 세금계산서 발행, 발행일로부터 30일 이내 지급. 견적 기준 소계(정가 항목 제외)의 10% 대행수수료 853,500원 포함. 계좌: 국민은행 378801-01-088226 주식회사 스위트스팟. | 계약서 재독해(2026-07-27): 총액 일치 확인(11.3M)"
+  },
+  "brand_requirements": [
+   "기획, 디자인, 제작물 설치/철수, 현장 운영 대행",
+   "지적재산권 엔자임 귀속",
+   "안전관리 대행사 부담",
+   "하도급 금지(사전 서면 동의 필요)",
+   "개인정보 처리제한 및 보안유지"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "국회의사당 하루 행사"
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 0.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 0.1,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 39,
+    "holiday_until": 8,
+    "holiday_block_in": 0,
+    "nat_event_gap": 36,
+    "nat_event": null,
+    "doc_lag_days": 3,
+    "doc_dates_found": 3
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 11.3
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 문서에 내용이 없어 실측 방문/매출 데이터 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 11.3 ≈ 계약총액 11.3",
+   "contract_total_mm": 11.3,
+   "last_recognition_period": "2025-09"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "12TCthYvHPqk6CH-X6zBoXoPQaXOWjD7mcEwatnCr40c",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/12TCthYvHPqk6CH-X6zBoXoPQaXOWjD7mcEwatnCr40c/view",
+   "title": "결과보고서_내용없음"
+  },
+  {
+   "doc_id": "14t6PRr375Cvp4pT76E6JGXoiwYnazc5x",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14t6PRr375Cvp4pT76E6JGXoiwYnazc5x/view",
+   "title": "[엔자임] 스위트스팟_행사 대행 계약서_250901.pdf"
+  },
+  {
+   "doc_id": "18gj8VYk0QEZmyzkTet09mdaiXpzZM_7K",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/18gj8VYk0QEZmyzkTet09mdaiXpzZM_7K/view",
+   "title": "엔자임 국회의사당 행사.txt"
+  },
+  {
+   "doc_id": "1EDzPWMWcDzRdr1B-SdJJ26h0A-Tczetb",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1EDzPWMWcDzRdr1B-SdJJ26h0A-Tczetb/view",
+   "title": "(SWEETSPOT) 엔자임_국회의사당 행사_기획안_250922(제안서).pdf"
+  },
+  {
+   "doc_id": "1i82IvNgUAjlrJR2I1dOtH6zKpaocoYn-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1i82IvNgUAjlrJR2I1dOtH6zKpaocoYn-/view",
+   "title": "(Sweetspot) 엔자임_국회의사당 행사_견적서_3차_250819.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 4건: [엔자임] 스위트스팟_행사 대행 계약서_250901.p, (SWEETSPOT) 엔자임_국회의사당 행사_기획안_2, (Sweetspot) 엔자임_국회의사당 행사_견적서_3, 결과보고서_내용없음. 미확실: 결과보고서 내용 전무 - 방문자수·매출 실측 없음; 기획안(제안서) PDF는 운영 스케줄만 있고 예상 방문 인원 없음; 입지 세부(구/면적/유동인구) 미기재; 콘서트 성격상 팝업스토어 방문 카운팅 정의 없음; client_party_id 정규화 미확정 | fee 계약서화(2026-07-27)"
+ }
+}

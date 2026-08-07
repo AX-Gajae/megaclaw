@@ -1,0 +1,250 @@
+{
+ "record_id": "RTPU2535",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:원피스_ONE_PIECE",
+  "space_id": "unresolved:김포_현대프리미엄아울렛_EAST1층_매종드H",
+  "client_party_id": "unresolved:대원미디어",
+  "brand_key": "원피스",
+  "space_key": "현대프리미엄아울렛_김포점"
+ },
+ "intervention": {
+  "concept": "애니메이션 '원피스' IP 팝업스토어. 굿즈 판매 중심의 리테일 팝업으로 웨이팅 등록·호출 운영, 포토카드 증정, 행잉 모빌 및 백월 연출을 적용했다.",
+  "brand_name": "원피스 (ONE PIECE)",
+  "experience_elements": [
+   "웨이팅 등록 및 호출 시스템",
+   "포토카드 증정",
+   "팝업 내부 행잉 모빌",
+   "계산대 뒤 백월 연출",
+   "굿즈 진열 VMD/조닝"
+  ],
+  "promotions": [
+   "구매 특전(포토카드) 증정",
+   "A4 POP 구매 특전 안내"
+  ],
+  "staging_tags": [
+   "벽면 랩핑",
+   "포맥스",
+   "행잉 모빌",
+   "백월",
+   "키비주얼",
+   "VMD 조닝"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": null,
+   "area_sqm": null,
+   "planned_operating_days": null,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": null,
+   "experience_density": 1,
+   "goods_scale": 3,
+   "photo_zones": 1,
+   "collab_strength": 3,
+   "ip_awareness": 4,
+   "target_breadth": 3,
+   "entry_friction": 2,
+   "media_push": 2,
+   "season_fit": 2,
+   "venue_prominence": 3
+  },
+  "attr_meta": {
+   "evidence": "목록 문서 2건(제안서 .pptx, 계약서 .doc) 모두 Drive 추출 실패(unsupported mime type). 원문 근거 확보 불가로 수치 전부 null, 순서형은 레코드 기술만으로 판정",
+   "confidence": "low",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": "김포",
+   "district": null,
+   "venue_name": "김포 현대 프리미엄 아울렛 EAST 1층 매종드H",
+   "venue_type": "프리미엄 아울렛",
+   "foot_traffic_context": null,
+   "venue_slot": "1층"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-10-24",
+   "to": "2025-11-02",
+   "days": 10
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "김포 견적 총계 49,685,000원(VAT 10% 별도). 소계 45,350,000원 + 대행수수료 4,335,000원(소계의 10%, 정가항목/실비정산 진행비 항목 제외). 제작/공간구성 18,500,000원, 설치/철수 및 운영 인력 18,350,000원, 진행비 6,500,000원. 참고: 대전점 별도 견적 54,432,590원(VAT 10% 포함, 2025.12.19~12.28). | 계약서 미확인(2026-07-27 재독해 시도 — 대상 문서 부재/추출 실패): 총액은 견적 기준"
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "김포 현대프리미엄아울렛 EAST 매종드H"
+  },
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 6,
+    "months_since_last": 2.1,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 15,
+    "holiday_until": 113,
+    "holiday_block_in": 0,
+    "nat_event_gap": 7,
+    "nat_event": "APEC 경주 정상회의",
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 18000,
+   "popup_zone_pass_rate": 0.4,
+   "host_traffic_est": 7200.0,
+   "venue_scale_tier": 3,
+   "confidence": "medium",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2025-10-24",
+    "visitors": 238,
+    "sales_krw": 3090700
+   },
+   {
+    "date": "2025-10-25",
+    "visitors": 482,
+    "sales_krw": 5780500
+   },
+   {
+    "date": "2025-10-26",
+    "visitors": 493,
+    "sales_krw": 7500500
+   },
+   {
+    "date": "2025-10-27",
+    "visitors": 206,
+    "sales_krw": 3000100
+   },
+   {
+    "date": "2025-10-28",
+    "visitors": 149,
+    "sales_krw": 1580200
+   },
+   {
+    "date": "2025-10-29",
+    "visitors": 186,
+    "sales_krw": 3548300
+   },
+   {
+    "date": "2025-10-30",
+    "visitors": 171,
+    "sales_krw": 2603400
+   },
+   {
+    "date": "2025-10-31",
+    "visitors": 175,
+    "sales_krw": 3274700
+   },
+   {
+    "date": "2025-11-01",
+    "visitors": 747,
+    "sales_krw": 10225200
+   },
+   {
+    "date": "2025-11-02",
+    "visitors": 827,
+    "sales_krw": 11763800
+   }
+  ],
+  "totals": {
+   "visitors": 3674,
+   "sales_krw": 52367400,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "entry",
+  "counting_basis": "방문객 수 표의 '실제 입장(명)' 컬럼 — 웨이팅 등록(4,579명) 중 노쇼(905명, 20%)를 제외한 실제 입장 인원 합계 3,674명",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(웨이팅 등록 총 4,579명, 실제 입장 3,674명, 노쇼 905명(평균 20%). 평균 대기시간 11.7분. 운영시간 매일 10:30~21:00, 웨이팅 오픈 아침 9시.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": 49.685,
+   "last_recognition_period": null
+  },
+  "label_trust": {
+   "grade": "A",
+   "flags": [
+    "A"
+   ],
+   "why": "정밀 집계 표현"
+  },
+  "label_scope": {
+   "label_from": "2025-10-24",
+   "label_to": "2025-11-02",
+   "label_active_days": 10,
+   "label_span_days": 10,
+   "label_contiguous": true,
+   "daily_sum": 3674,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1YDCKKswPV937VLh1UtVPZp7L77dlPBCv",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1YDCKKswPV937VLh1UtVPZp7L77dlPBCv/view",
+   "title": "2025 팝업스토어 업무계약서_원피스 현대아울렛 팝업_대원_스위트스팟.doc"
+  },
+  {
+   "doc_id": "1kddVol86DahsF5eAHYrxRNijW2M5fG3l",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1kddVol86DahsF5eAHYrxRNijW2M5fG3l/view",
+   "title": "SWEETSPOT_원피스 현대아울렛 대전점_팝업견적서_260108.pdf"
+  },
+  {
+   "doc_id": "1nV1sAkudrLk0Tjymg2F0XX28qUkG6r1f",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1nV1sAkudrLk0Tjymg2F0XX28qUkG6r1f/view",
+   "title": "SWEETSPOT_원피스 현대아울렛_김포_팝업견적서_0930.pdf"
+  },
+  {
+   "doc_id": "1oD0k17TsmHI8weGuATw_jcv64C0Ufngx",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1oD0k17TsmHI8weGuATw_jcv64C0Ufngx/view",
+   "title": "감수제출용_스위트스팟_원피스x현대프리미엄아울렛_0702_제안서.pptx"
+  },
+  {
+   "doc_id": "1t9-psjlcVc7jNPv0MU7nwON-pCHK3Fuq",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1t9-psjlcVc7jNPv0MU7nwON-pCHK3Fuq/view",
+   "title": "Sweetspot_2025 원피스 김포 현대아울렛_결과보고서_1107.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 3건: SWEETSPOT_원피스 현대아울렛 대전점_팝업견적서_, SWEETSPOT_원피스 현대아울렛_김포_팝업견적서_0, Sweetspot_2025 원피스 김포 현대아울렛_결과. 미확실: area_pyeong(면적) 미기재; plan_visitors_expected(기획 예상 방문) 문서 없음; client_party_id(대원미디어) 정식 확인 필요; 대전점 결과보고서 부재 — 대전 실측 없음; brand_requirements 명시 없음"
+ }
+}

@@ -1,0 +1,165 @@
+{
+ "record_id": "RIPU2507",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:OK저축은행",
+  "space_id": "unresolved:미상",
+  "client_party_id": "unresolved:OK저축은행",
+  "brand_key": "OK저축은행",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "OK 저축은행 팝업스토어. 원문 문서가 제공되지 않아 세부 컨셉을 확인할 수 없다.",
+  "brand_name": "OK 저축은행",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": null,
+   "area_sqm": null,
+   "planned_operating_days": 10,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": null,
+   "experience_density": 2,
+   "goods_scale": 2,
+   "photo_zones": 2,
+   "collab_strength": 2,
+   "ip_awareness": 3,
+   "target_breadth": 2,
+   "entry_friction": 2,
+   "media_push": 2,
+   "season_fit": 2,
+   "venue_prominence": 2
+  },
+  "attr_meta": {
+   "evidence": "목록 문서는 계약서 1건뿐(기획서·견적서 없음). 계약서 제2조③ '행사일: 2025년 7월 17일(목) ~ 7월 27일(일) 총 11일 (1일 설치 / 10일 행사)' → 설치일을 뺀 실운영 10일. 레코드 period(7/17~7/28, 12일)와 계약서 종료일(7/27)·운영일수(10일)가 모두 어긋남. 행사장소는 '스위트스팟 스테이지 성수 MAIN동(서울 성동구 연무장3길 9)'으로 자체 대관 공간(레코드 장소 필드는 전부 null). 총 계약금액 3억(부가세 별도, 대관비 포함), 선금10/중도40/잔금50. 업무범위에 '굿즈 판매 및 재고 관리'가 있어 goods_scale 2, 체험·포토존·인력·면적·입객 수치는 계약서에 전무하여 나머지 순서형은 기본값 2, 숫자는 null.",
+   "confidence": "low",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-07-17",
+   "to": "2025-07-28",
+   "days": 12
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 12,
+    "weekend_share": 0.33,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 39,
+    "holiday_until": 29,
+    "holiday_block_in": 0,
+    "nat_event_gap": 44,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 50359817.0,
+    "pnl_pre_accounts": 3,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-06-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": 1000,
+   "sales_krw": null,
+   "rev_mm_recognized": 278.4
+  },
+  "counting_method": "unknown",
+  "counting_basis": "원문 표현은 \"1000명 정도 오신 것 같아요\" — 현장 팝업스토어 직원의 어림 추정 발언이며 집계 시스템 수치가 아님. 대상 기간은 행사 2일차 토요일(2025-07-19) 하루로, 전체 10일 운영 누계가 아닌 부분집계.",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "방문: 역검색 외부 보도 — https://www.ajunews.com/view/20250720130025289 (2025-07-20) | 인용: 이틀 차인 토요일 하루에만 1000명 정도 오신 것 같아요.",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-07, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-08"
+  },
+  "label_source": "external_press",
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "E"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-D8R8l8iRCk1mHe6hO_Ov2k80r5rFZJ4",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1-D8R8l8iRCk1mHe6hO_Ov2k80r5rFZJ4/view",
+   "title": "스위트스팟 OK저축은행_견적서_최종_3억_250805.pdf"
+  },
+  {
+   "doc_id": "1RXKqzd2TlmK_dAX7CwX-HOsPwxlBfFxu",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1RXKqzd2TlmK_dAX7CwX-HOsPwxlBfFxu/view",
+   "title": "[스위트스팟]OK저축은행 읏수저 놀이터 팝업스토어 결과보고서_0801 Ver. 2.1.pdf"
+  },
+  {
+   "doc_id": "1Teyeu-tllndCCG6S32w0nUIasF2lcZud",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Teyeu-tllndCCG6S32w0nUIasF2lcZud/view",
+   "title": "OK저축은행 업무계약서.pdf"
+  },
+  {
+   "doc_id": "1hUyN4PrmbaAkMo-UxIS_ncjqRAEToNLNV9ohUF7TXk0",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1hUyN4PrmbaAkMo-UxIS_ncjqRAEToNLNV9ohUF7TXk0/view",
+   "title": "별도 실행안 없음"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서/기획서/견적서/결과보고서) 미제공; 입지/venue 정보 없음; 면적 정보 없음; 수수료 구조 정보 없음; 컨셉·체험요소·프로모션 정보 없음; 방문자/매출 실측 데이터 없음; client_name 미확인 | 외부 라벨 역검색(2026-07-27): 방문 라벨 충전 1000"
+ }
+}

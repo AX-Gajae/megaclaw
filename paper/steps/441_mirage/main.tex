@@ -1,0 +1,153 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{안 가져가는 이득이 있는 줄 알았는데 거기 없었다 --- 유보에서 잰 기준선을 상한으로 읽는 실수를 세 번째로 했다}
+\author{월드모델 실험실}
+\date{노트 567 · 568 · 2026년 8월 5일}
+\maketitle
+
+\begin{abstract}
+이번 사이클의 실질은 \textbf{정정($0.0246$)이 두 해치 채택보다 컸다}는
+것이었다. 그러면 값이 큰 것은 \emph{아직 안 걸어 본 감사}인데, 노트 $210$ 이
+게임에서 ``라벨이 스팀 리뷰 \textbf{누적} 수였다''를 잡고 \texttt{y\_w30}
+으로 고친 뒤 \textbf{다른 열 도메인 라벨에는 같은 검사를 안 걸었다.}
+
+걸었더니 \textbf{도서만} 걸린다 --- \texttt{sales\_point}$\leftrightarrow$
+연도 $\mathbf{-0.5788}$, 유보에서 ``$-$출판일'' 하나로 $\mathbf{+0.5615}$,
+유보 극단 구간 판매지수 $\mathbf{18.9}$ 배. 챔피언은 $+0.4023$ 이다.
+
+\begin{center}
+\begin{tabular}{lr}
+\hline
+도서 & \\
+\hline
+예보 $\leftrightarrow$ $-$출판일 & $\mathbf{+0.0711}$ \\
+원 $\rho$ & $+0.4023$ \\
+\textbf{날짜 통제 $\rho$} & $\mathbf{+0.4391}$ (오른다) \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{모형이 날짜를 안 읽는다.} 노트 $210$ 의 게임과 정반대다 --- 거기서는
+모형이 달력과 \emph{동점}이라 ``달력만 읽고 있었다''였다.
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 도서만 걸린다. \textbf{나} --- 통제하면 오른다.
+\textbf{다} --- 신기루.}
+\end{figure}
+
+\section{누적은 실재하지만 모형을 오염시키지 않는다}
+
+누적 성분이 모형 예보와 \textbf{직교}하므로, 날짜를 통제하면 상관이
+\emph{올라간다}($+0.4023 \to +0.4391$). 전 도메인에서 예보
+$\leftrightarrow$ $-$날짜가 최대 $+0.1524$(게임)다.
+
+\begin{quote}
+\textbf{감사 층 하나가 깨끗하게 닫힌다} --- 라벨 누적은 도서에서 크지만
+($-0.5788$) 모형이 그것을 안 읽는다. 노트 $210$ 의 처방이 게임에 정확했고
+나머지에는 필요 없다. \textbf{대안 라벨도 없다}(\texttt{review\_count} 는
+$-0.6118$ 로 더 심하다).
+\end{quote}
+
+\section{그래서 $+0.008$ 이 놓여 있는 줄 알았다}
+
+도서는 \texttt{CAL\_KEEP=("펀딩","웹툰")} 이라 \textbf{달력 축이 없다.}
+기준선 $+0.5615$ 가 챔피언 $+0.4023$ 보다 높으니, 달력을 주면 판이
+$4.8\% \times 0.16 \approx \mathbf{+0.008}$ 오를 자리로 읽었다 ---
+\textbf{이 판에서 두 해 동안 채택한 어떤 모형 변경보다 크다.}
+
+그리고 그것이 \emph{시계}이므로 노트 $446$ 거부권이 막을 것이라 예상하고,
+\textbf{거부권이 값을 하는 사례로 남기려고} 쟀다.
+
+\begin{center}
+\begin{tabular}{lrl}
+\hline
+자 & 차 & \\
+\hline
+\textbf{판} & $\mathbf{-0.0024}$ & $0$ 밖 음수 \\
+날짜 통제 판 & $-0.0051$ & $0$ 밖 음수 \\
+KR 만화 & $+0.0034$ & $0$ 밖 양수 \\
+비게임 앱 & $+0.0032$ & $0$ 밖 양수 \\
+\textbf{도서} & $\mathbf{-0.0454}$ & $0/12$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{오르기는커녕 도서가 $-0.045$ 내려간다.} 거부권 $446$ 은
+\textbf{안 걸렸다} --- 판이 애초에 안 올랐으니 발동 조건이 아니다.
+\textbf{거부권이 필요 없었다.}
+
+\section{왜 빗나갔나}
+
+기준선 $+0.5615$ 는 \textbf{유보에서 직접} 잰 값인데, 모형은 \textbf{학습에서
+배운 달력 규칙을 유보에 적용}한다. 라벨이 누적이므로 달력$\leftrightarrow$
+라벨 관계가 \emph{해마다 이동}하고, 학습($2016\!\sim\!2024$)에서 배운 것이
+유보($2025\!\sim\!2026$)에서 안 맞아 오히려 해롭다.
+
+\begin{quote}
+\textbf{유보 $\rho$ 는 \emph{그 자리에서 아는 것}이고 모형은 \emph{학습에서
+배운 것}이다.} 라벨이 시간에 따라 이동하면 둘이 갈린다. \textbf{기준선은
+상한이 아니라 신기루였다.}
+\end{quote}
+
+\section{세 번째로 같은 함정}
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+ & 유보에서 잰 것 & 가져갈 수 있다고 읽음 \\
+\hline
+노트 $548$ & 검색 축 전체의 값(\emph{상한}) & 펀딩 수집의 \emph{기대값} \\
+노트 $560$ & 전역 변경의 도메인별 차 & 그 도메인만 바꿨을 때의 \emph{이득} \\
+\textbf{노트 $568$} & 단일 특성의 유보 $\rho$ & 모형이 벌 \emph{양} \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{셋 다 유보에서 잰 값을 모형이 가져갈 수 있는 것으로 읽었다.}
+
+\begin{quote}
+사람이 기억하는 조항은 세 번을 못 갔다. 노트 $561$ 이 이웃 효과 표에 한
+것과 같이 --- \textbf{수치를 낼 때 경고를 같이 낸다}
+(\texttt{sideaudit.holdout\_baseline}).
+\end{quote}
+
+\section*{배선 가드가 한 번 더 값을 했다}
+
+첫 실행이 \textbf{``A 팔 도서에 달력이 있다''} 로 멈췄다. 하네스는 축
+\emph{이름}을 모든 도메인에 붙이고 없는 곳은 마스크 $0$ 으로 두므로
+\texttt{"cal\_dow\_sin" in d.names[dom]} 은 \textbf{늘 참}이다.
+
+\begin{quote}
+\textbf{배선 가드도 이름이 아니라 마스크로 건다.} 노트 $435$ 가 ``원배열이
+아니라 모형이 보는 설계행렬에서 확인한다''고 적은 것을, 이번엔 \emph{가드
+자체}에 적용해야 했다.
+\end{quote}
+
+\section*{조항}
+
+\begin{quote}
+\textbf{유보에서 잰 단일 특성의 $\rho$ 는 모형의 상한이 아니다.} 상한이려면
+그 관계가 학습과 유보에서 같아야 하는데, \textbf{누적 라벨은 정확히 그것을
+깨뜨린다.} 상한을 말하려면 \textbf{학습에서 적합해 유보에서 채점}한다.
+\end{quote}
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{도서에 달력을 주면 집 밖 짝 둘이 다 오른다}(KR $+0.0034$ ·
+앱 $+0.0032$, 둘 다 $0$ 밖 양수). 판 $\cdot$ 날짜 통제 $\cdot$ 도서가 음수라
+기각이지만 \emph{왜 전이가 오르는지}는 안 봤다.
+\item \textbf{도서 라벨은 고칠 수 없다} --- 대안 칸이 없다. 그 도메인
+$\rho$ 는 ``누적 라벨 위에서 잰 것''으로 읽어야 하고, \textbf{날짜 통제
+$\rho$($+0.4391$)가 더 정직한 수치}다.
+\item \textbf{전 도메인 달력(대조 팔)} --- 판 $-0.0055$ · 도서 $-0.0115$.
+넓게 주면 더 나쁘다. \texttt{CAL\_KEEP} 이 지금 자리에 있는 이유가
+사후적으로 확인된다.
+\end{itemize}
+
+\end{document}

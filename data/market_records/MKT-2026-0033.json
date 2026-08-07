@@ -1,0 +1,76 @@
+{
+  "market_record_id": "MKT-2026-0033",
+  "event_name": "엔하이픈 엔친(ENHYPEN&Friends) 팝업(아이파크몰)",
+  "brand": "빌리프랩(하이브)",
+  "ip_or_collab": "엔하이픈(ENHYPEN) 캐릭터 '엔친'",
+  "category": "entertainment",
+  "intervention": {
+    "concept_description": "엔하이픈 공식 캐릭터 '엔친' 팝업. 캐릭터 MD·포토존, 사전 예약제",
+    "experience_elements": [
+      "캐릭터 MD 판매",
+      "포토존"
+    ],
+    "promotions": [],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "아이파크몰 도파민 스테이션",
+    "venue_type": "mall",
+    "neighborhood": "용산",
+    "city": "서울",
+    "period_from": "2026-05-21",
+    "period_to": "2026-05-31",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 11,
+        "weekend_share": 0.36,
+        "holiday_days": 2
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 11,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "아이파크몰 집계(인접 F&B 매출 증가율). 원문: '팝업 기간 주말 F&B 매출이 전년 동기 대비 22% 증가'",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": "사전 예약 회차 모두 조기 마감",
+      "signal_quotes": [
+        "사전 예약 회차가 모두 조기 마감됐고",
+        "팝업 기간 주말 F&B 매출이 전년 동기 대비 22% 증가하는 등 집객 효과가 확인됐다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "lcnews 2026-05-26 / fashionbiz. 팝업 자체 방문·매출 수치 없이 인접 매출 효과(+22%)와 예약 마감 신호 확보. | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

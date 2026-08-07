@@ -1,0 +1,109 @@
+{
+ "market_record_id": "MKT-2025-0024",
+ "event_name": "라이즈 'WE LITTLE RIIZE @RIIZE PARK' 팝업(성수)",
+ "brand": "SM엔터테인먼트",
+ "ip_or_collab": "라이즈(RIIZE) 캐릭터 '위 리틀 라이즈'",
+ "category": "entertainment",
+ "intervention": {
+  "concept_description": "라이즈 공식 캐릭터 '위 리틀 라이즈' 첫 단독 팝업. 캐릭터 포토존·체험 콘텐츠·MD",
+  "experience_elements": [
+   "캐릭터 포토존",
+   "체험 콘텐츠",
+   "MD 판매"
+  ],
+  "promotions": [
+   "온라인 사전 예약"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "성수이로20길 57",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2025-04-04",
+  "period_to": "2025-04-20",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 17,
+    "weekend_share": 0.35,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 12000,
+  "visitors_period_days": 17,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "SM 발표 인용. 원문: '17일 간 …1만2000명이 운집했다'",
+  "visitors_source_quote": "지난 4일부터 20일까지 17일 간 서울 성동구 성수이로20길 57에서 열린 ‘위 리틀 라이즈 @라이즈 파크(WE LITTLE RIIZE @RIIZE PARK)’에 1만2000명이 운집했다.",
+  "visitors_source_url": "https://www.newsis.com/view/NISX20250423_0003149967",
+  "visitors_source_date": "2025-04-23",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "1000명 이상 대기 인원 발생",
+   "sold_out": "인기 MD 품절",
+   "reservation_fill": "1주차 온라인 사전 예약 3분 만에 전 회차 매진",
+   "signal_quotes": [
+    "1주차 온라인 사전 예약을 시작한 지 3분 만에 전 회차가 매진됐고",
+    "1000 명 이상의 대기 인원이 몰리며 현장을 가득 메웠다.",
+    "인기 MD는 품절 사태를 빚기도 했다.",
+    "1주차 온라인 사전 예약을 시작한 지 3분 만에 전 회차가 매진됨은 물론, 2주차 현장 방문 예약 기간에는 오픈 전부터 1000 명 이상의 대기 인원이 길게 줄을 서는 진풍경이 펼쳐졌다. (뉴시스 2025-04-23)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "SM 공식 성료 보도(뉴시스). | 병합 레코드: MKT-2025-0022",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 12000,
+   "basis": "organizer_claim",
+   "quote": "지난 4일부터 20일까지 17일 간 서울 성동구 성수이로20길 57에서 열린 '위 리틀 라이즈 @라이즈 파크(WE LITTLE RIIZE @RIIZE PARK)'에 1만2000명이 운집했다.",
+   "url": "https://www.newsis.com/view/NISX20250423_0003149967",
+   "date": "2025-04-23"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

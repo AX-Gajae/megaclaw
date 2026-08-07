@@ -1,0 +1,157 @@
+{
+ "record_id": "RTPU2516",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:짱구",
+  "space_id": "unresolved:용산아이파크몰",
+  "client_party_id": "unresolved:대원미디어",
+  "brand_key": "짱구",
+  "space_key": "용산_아이파크몰"
+ },
+ "intervention": {
+  "concept": "짱구(크레용 신짱) IP 팝업스토어. 키비주얼 기반 공간 연출과 포토존, 굿즈 판매 중심 운영. 서울 용산아이파크몰과 청주 커넥트현대 두 장소에서 순차 진행.",
+  "brand_name": "짱구",
+  "experience_elements": [
+   "포토존",
+   "키비주얼 공간 연출",
+   "굿즈 판매존(VMD/조닝)"
+  ],
+  "promotions": [
+   "일름보 쿠폰 6만장 제작/증정"
+  ],
+  "staging_tags": [
+   "가벽 시공",
+   "벽면 랩핑",
+   "포맥스 제작",
+   "평매 및 매대 구성"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "용산구",
+   "venue_name": "용산아이파크몰",
+   "venue_type": "쇼핑몰",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-08-06",
+   "to": "2025-09-14",
+   "days": null
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "총 계약금액 480,000,000원(VAT별도). 1차 서울 팝업 288,000,000원(행사종료 후 30일 이내), 2차 청주 팝업 192,000,000원(행사종료 후 30일 이내). 서울 견적서(0825) 총계 260,000,000원(VAT10%별도, 대행수수료 소계의 10%), 청주 견적서(0923) 총계 188,000,000원(VAT10%별도, 대행수수료 소계의 10%)."
+  },
+  "brand_requirements": [
+   "제작물 사용 이전 의뢰사 감수 및 서면 승인 필수",
+   "모든 제작물 권리(지식재산권) 의뢰사 귀속",
+   "진행 보고서 제출",
+   "안전관리 및 보안유지 의무"
+  ],
+  "scale": {
+   "store_count": 2,
+   "venue_traffic_type": "multi_store",
+   "host_traffic_note": "용산아이파크몰과 청주 커넥트현대 두 장소 순차 진행"
+  },
+  "derived": {
+   "duration": {
+    "days": 40,
+    "weekend_share": 0.3,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 4,
+    "months_since_last": 2.0,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 59,
+    "holiday_until": 9,
+    "holiday_block_in": 3,
+    "nat_event_gap": 64,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 7,
+    "comp_prior_at_venue": 69,
+    "comp_within_500m_open": 8,
+    "comp_within_1000m_open": 9,
+    "matched_address": "서울 용산구 한강대로23길 55"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 31031175.0,
+    "pnl_pre_accounts": 10,
+    "pnl_pre_months": 6,
+    "pnl_pre_first": "2025-01-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 464.4
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 미포함 — 방문/매출 실측 데이터 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 464.4 ≈ 계약총액 480.0",
+   "contract_total_mm": 480.0,
+   "last_recognition_period": "2025-09"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "11ueOSU2aZi8gDQD_wh3O5eW4m0tpzlQd",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/11ueOSU2aZi8gDQD_wh3O5eW4m0tpzlQd/view",
+   "title": "SWEETSPOT_2025 짱구 용산 팝업스토어 통합견적서_0825.pdf"
+  },
+  {
+   "doc_id": "1BlhJ6MZnNNovrQWCLcwCSmfnwCSWQflk",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1BlhJ6MZnNNovrQWCLcwCSmfnwCSWQflk/view",
+   "title": "2025 팝업스토어 업무계약서_짱구_대원_스위트스팟.pdf"
+  },
+  {
+   "doc_id": "1DZVn_PkTPHXzMU3aC6OfFHxTDNRoEHln",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DZVn_PkTPHXzMU3aC6OfFHxTDNRoEHln/view",
+   "title": "SWEETSPOT_2025 청주 팝업스토어 견적서_0923.pdf"
+  },
+  {
+   "doc_id": "1dqFvxLEE7iK7yD6kNyZ7e7UP9fC7Zexk",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1dqFvxLEE7iK7yD6kNyZ7e7UP9fC7Zexk/view",
+   "title": "임시 결과보고서.txt"
+  },
+  {
+   "doc_id": "1ugBeLHk1g8_ciX_lriPZ0NYuGU25pJOh",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ugBeLHk1g8_ciX_lriPZ0NYuGU25pJOh/view",
+   "title": "짱구_청주_v1.1_0710_기획안.pptx"
+  },
+  {
+   "doc_id": "1w9Fjj4ScA4WRxYE0Lu1XXPfvBgvnZNxL",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1w9Fjj4ScA4WRxYE0Lu1XXPfvBgvnZNxL/view",
+   "title": "짱구_용산_v1_0508_기획안.pptx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: 2025 팝업스토어 업무계약서_짱구_대원_스위트스팟.p, SWEETSPOT_2025 짱구 용산 팝업스토어 통합견, SWEETSPOT_2025 청주 팝업스토어 견적서_09. 미확실: 결과보고서 부재로 outcome(방문자/매출) 전체 없음; 기획서/제안서 부재로 예상 방문(plan_visitors_expected) 없음; 면적(area_pyeong) 정보 없음; 청주 장소(커넥트현대 청주)는 space_id에 미반영 - 두 장소 프로젝트; 계약금액(480M)과 견적 합계(448M) 차이 존재; 기간 days 미기재"
+ }
+}

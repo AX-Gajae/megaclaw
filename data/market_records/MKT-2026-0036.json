@@ -1,0 +1,70 @@
+{
+  "market_record_id": "MKT-2026-0036",
+  "event_name": "어반드레스(URBANDRESS) 더현대 대구 팝업스토어",
+  "brand": "어반드레스 (어드레스8)",
+  "ip_or_collab": null,
+  "category": "fashion",
+  "intervention": {
+    "concept_description": "유니섹스 캐주얼 브랜드 백화점 팝업, 체험형 공간·스타일링 제안으로 구매 전환율 제고",
+    "experience_elements": [
+      "체험형 공간 연출",
+      "크로스 코디 제안"
+    ],
+    "promotions": [],
+    "is_free_entry": null,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "더현대 대구",
+    "venue_type": "department_store",
+    "neighborhood": "대구",
+    "city": "대구",
+    "period_from": "2026-05-28",
+    "period_to": "2026-06-05",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 9,
+        "weekend_share": 0.22,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 1,
+        "months_since_last": 5.3,
+        "first_edition": false
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 9,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "브랜드 발표 인용. 품목별 판매 수량: V셔링 카라티 122개, VV멀티 스트라이프 티 103개, 센셀 시스루 클래식 셔츠 96개",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": 150000000,
+    "sales_source_quote": "특히 더현대 대구 팝업은 지난 5월 28일부터 6월 5일까지 1억5,000만 원의 매출을 기록했다.",
+    "sales_source_url": "https://www.apparelnews.co.kr/news/news_view/?idx=226039",
+    "sales_source_date": "2026-06-28",
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": []
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "동 기사에 신세계 광주점 팝업(상반기)·연남동 팝업(~7/14)은 수치 없어 미수집. | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {
+    "sales": "quote_only"
+  },
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

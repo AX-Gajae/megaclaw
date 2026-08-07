@@ -1,0 +1,90 @@
+{
+ "market_record_id": "MKT-2025-0099",
+ "event_name": "BYC 반려견의류 '개리야스' 팝업스토어 @스타필드 코엑스몰·하남",
+ "brand": "BYC",
+ "ip_or_collab": "개리야스",
+ "category": "fashion",
+ "intervention": {
+  "concept_description": "반려견 의류 25FW 신제품 체험 팝업(피팅존·포토존)",
+  "experience_elements": [],
+  "promotions": [
+   "전 품목 20%, 일부 최대 40% 할인",
+   "폴라로이드 촬영",
+   "3만원 이상 리유저블백 증정"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "스타필드 코엑스몰(10/16~29)·스타필드 하남(10/30~11/9)",
+  "venue_type": "mall",
+  "neighborhood": "삼성동·하남",
+  "city": "서울·하남",
+  "period_from": "2025-10-16",
+  "period_to": "2025-11-09",
+  "area_pyeong": null,
+  "multi_store": true,
+  "derived": {
+   "duration": {
+    "days": 25,
+    "weekend_share": 0.32,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 15000,
+  "visitors_period_days": null,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "BYC 발표 인용: '팝업스토어에는 하루 최대 1000명, 총 1만5000명에 달하는 고객이 방문했다.' (2개 점포 합산)",
+  "visitors_source_quote": "팝업스토어에는 하루 최대 1000명, 총 1만5000명에 달하는 고객이 방문했다.",
+  "visitors_source_url": "https://www.newsprime.co.kr/news/article.html?no=711141",
+  "visitors_source_date": "2025-11-10",
+  "sales_krw": null,
+  "sales_source_quote": "",
+  "sales_source_url": "",
+  "sales_source_date": "",
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": true,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "특히 소비자들에게 높은 관심을 받은 '김장조끼' 신제품은 행사 기간 중 조기품절되며 뜨거운 반응을 입증했다.",
+    "현장에서 무료로 제공한 '개리야스 카카오톡 이모티콘'은 배포 시작 1시간 만에 준비된 수량이 모두 소진되며 큰 인기를 끌었다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "D",
+   "flags": [
+    "D"
+   ],
+   "why": "스코프 혼합(합산/총계) 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": true,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "코엑스몰 14일+하남 11일, 2개 점포 합산 방문객 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "집계형(통합/합산)",
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,85 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{kotex}
+\setmainfont{Apple SD Gothic Neo}
+\setsansfont{Apple SD Gothic Neo}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,linkcolor=MidnightBlue,citecolor=MidnightBlue,
+            urlcolor=MidnightBlue]{hyperref}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.5em}{}
+\captionsetup{font=small,labelfont=bf}
+\setlength{\parskip}{0.35em}
+\setlength{\parindent}{0pt}
+
+\usepackage{mdframed}
+\newmdenv[linewidth=0.4pt,linecolor=gray!60,backgroundcolor=gray!5,
+          innertopmargin=6pt,innerbottommargin=6pt,skipabove=8pt,skipbelow=8pt]{claimbox}
+\newcommand{\claim}[2]{\begin{claimbox}\textbf{주장.} #1\par\smallskip
+  \textcolor{gray!70}{\textbf{반증 조건.} #2}\end{claimbox}}
+
+\title{\bfseries 얇은 장\\[2pt]
+\large 판별 널이 도착했다 --- 그리고 판 유보에 균일한 부패는 없었다}
+\author{월드모델 실험실 · 노트 $817 \sim 818$}
+\date{2026-08-07}
+\begin{document}\maketitle
+
+\section{한 줄 둘}
+
+\textbf{①(노트 $817$)} 논문 $178$ 의 붕괴가 판 전체의 병인지 쟀다 --- 유보를
+$2025$H$1$/H$2{\sim}$ 로 갈라 채점하니 \textbf{도메인별 $4{:}5$ · 중앙값
+$-0.016$}: 판에 균일한 최근-부패는 없다. $816$ 의 붕괴($0.69 \to 0.30$)는
+\textbf{집 밖 짝 특유}로 국소화됐다(만화만 $-0.199$ 로 예외). 합동 $+0.072$ 는
+구성 효과와 섞여 있어 그대로 못 읽는다.
+
+\textbf{②(노트 $818$)} 사용자의 판별-널 지적 --- \emph{``진폭$+$시간을 다
+정규화하면 형태가 달라도 겹친다''} --- 을 이행했다. 결과: \textbf{파이프라인은
+유효하고, 결과는 약했다.}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+자유도 제거 & 실측 결과 & \\
+\midrule
+없음 & 곡선의 존재부터 갈림(진폭 $0.17{\sim}1.83$) & 논문 $175$ \\
+시간만 & \textbf{$3$쌍 전부 갈라짐}($5.8\times$·$4.3\times$·$2.7\times$) & 이번 \\
+진폭만 & 교차 $0.331$ --- 안 겹침 & 논문 $175$ \\
+\textbf{둘 다} & 잡음 안 일치(같다 $2$·모른다 $1$) & 논문 $176$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{figure}[t]\centering
+\includegraphics[width=0.99\textwidth]{figs/thin.pdf}
+\caption{왼쪽: 판 유보 앞/뒤 --- $4{:}5$. 가운데: 합성 판별 널 --- ``같다'' $0$.
+오른쪽: \textbf{자유도 사다리} --- 장의 두께 측정.}
+\end{figure}
+
+\section{판별 널의 두 팔}
+
+\claim{\textbf{합성 판별력 통과} --- 실측 바닥에 잡음을 눈금 맞춘 합성 도메인
+넷(감쇠·이중피크·지연상승·계단)에서 서로-다른-형태 $6$쌍 중 \textbf{``같다''
+$0$}(다르다 $5$ · 모른다 $1$). 진폭$+$시간 정규화가 형태 정보를 다 지우지는
+않는다 --- \textbf{논문 $176$ 의 판정은 무효가 아니다.}}
+{\textbf{그러나 시간만 정규화하면 실측 $3$쌍이 전부 갈라진다} --- 즉 논문 $176$
+의 ``같다''는 \textbf{두 자유도를 다 빼야만 성립}한다. 사용자 기준(``둘 다 해야
+겹침 $=$ 사실상 결과 없음'')으로 \textbf{약한 결과로 강등}한다. \textbf{장은
+얇다}: 공유되는 것은 두-자유도-제거 후의 잔여 형태뿐이고, 그마저 게임-세계애니는
+모른다.}
+
+\section{곡선 층의 최종 문구}
+
+진폭이 곡선의 존재를 가른다($175$) $\to$ 진폭을 남기면 형태가 명확히 다르다
+($818$) $\to$ 둘 다 빼면 잡음 안 일치($176$ · 유효하되 약함) $\to$ 감쇠율$\to$
+라벨 사상은 도메인 고유($158/790$). \textbf{판별력의 다음 문}: KOBIS(네 번째
+안정 도메인) $+$ 교차 채널(위키 밖 감쇠 --- 수집 필요 · 사용자 ③). $36$축 공유
+기저 검증(도메인별 중요도 벡터의 교차 코사인)을 T$5$ 명제로 등록했다. 판 $\rho$
+$0.4689$ 그대로.
+
+\end{document}

@@ -1,0 +1,206 @@
+{
+ "record_id": "RCGD2403",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:폴햄_POLHAM",
+  "space_id": "unresolved:더현대서울_현대백화점",
+  "client_party_id": "unresolved:에이션패션",
+  "brand_key": "폴햄",
+  "space_key": "더현대서울"
+ },
+ "intervention": {
+  "concept": "폴햄 X 골때리는 그녀들 콜라보 팝업스토어. 굿즈 판매와 함께 입단테스트존, 포토부스, 락커룸, 의류 커스텀 등 체험 요소를 갖춘 더현대서울 팝업.",
+  "brand_name": "폴햄 X 골때리는그녀들",
+  "experience_elements": [
+   "굿즈판매존",
+   "포토부스/포토존",
+   "입단테스트존",
+   "락커룸&벤치",
+   "의류 커스텀존",
+   "골대 설치(구단별)",
+   "트로피 조닝",
+   "액션마네킨"
+  ],
+  "promotions": [
+   "의류 커스텀(열압착) 서비스",
+   "나우웨이팅 시스템 운영"
+  ],
+  "staging_tags": [
+   "그래픽랩핑",
+   "LED패널/LED매립",
+   "돌출스카시 로고사인",
+   "대형로고사인",
+   "바닥잔디카페트",
+   "헤어라인 집기",
+   "방염시트",
+   "입구펜스망"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": 56088,
+   "area_sqm": 264.46,
+   "planned_operating_days": null,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": null,
+   "experience_density": 4,
+   "goods_scale": 4,
+   "photo_zones": 3,
+   "collab_strength": 4,
+   "ip_awareness": 3,
+   "target_breadth": 3,
+   "entry_friction": 2,
+   "media_push": 2,
+   "season_fit": 2,
+   "venue_prominence": 3
+  },
+  "attr_meta": {
+   "evidence": "물품공급계약 [별첨1] 발주서 합계 '56,088 / ₩448,064,836(VAT별도)' 16품목(판매용 굿즈 총 제작수량). 면적은 레코드 80평×3.3058. 제공된 두 계약서(상품화권·물품공급)에 운영일수·인력·입객 수치 전무 → 나머지 null.",
+   "confidence": "low",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": null,
+   "venue_name": "더현대서울",
+   "venue_type": "백화점 팝업스토어",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": 80,
+  "period": {
+   "from": "2024-09-18",
+   "to": "2024-09-29",
+   "days": 12
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "더현대서울 팝업 견적: 시공대행 14백만, 운영대행 5백만 (천원단위 절삭, VAT 10% 별도). 예비비 소계의 5%. 최종 제작발주 전 선금 50% 지급, 팝업 종료 후 잔금 50% 지급. 별도 상품공급계약: 굿즈 총 발주 56,088개 ₩448,064,836(VAT별도), 물품대금 2024-08-15까지 선금 50% 현금지급, 2024-09-15까지 잔금 전액 지급. 상품화권 계약: 비독점 라이선스, 발주시점 50%·납품시점 50% 지급. | 계약서 재독해(2026-07-27): 총액 일치 확인(448.1M)"
+  },
+  "brand_requirements": [
+   "갑(에이션패션)이 팝업 판매 상품 전량 매입",
+   "제품 생산 전 ARTWORK 컨셉/디자인 사전승인 필수",
+   "권리문구 및 경고문구 제품 기재 의무",
+   "사용지역 대한민국 한정",
+   "비독점 라이선스",
+   "MD존 판매 스태프는 에이션패션 운영(캐셔 포함)"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대서울 팝업"
+  },
+  "derived": {
+   "duration": {
+    "days": 12,
+    "weekend_share": 0.33,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 0,
+    "holiday_until": 0,
+    "holiday_block_in": 1,
+    "nat_event_gap": 57,
+    "nat_event": null,
+    "doc_lag_days": 133,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 22,
+    "comp_prior_at_venue": 37,
+    "comp_within_500m_open": 22,
+    "comp_within_1000m_open": 23,
+    "matched_address": "서울 영등포구 여의대로 108"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 32900.0,
+    "pnl_pre_accounts": 2,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2024-08-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 45000,
+   "popup_zone_pass_rate": 0.4,
+   "host_traffic_est": 18000.0,
+   "venue_scale_tier": 1,
+   "confidence": "medium",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": 23000,
+   "sales_krw": 433133620,
+   "rev_mm_recognized": 405.3
+  },
+  "counting_method": "unknown",
+  "counting_basis": "원문 표현 \"12일간 2만 3000여 명 이상이 방문했으며\" — 12일 운영 기간 누적 '방문' 인원. 브랜드(폴햄) 발표 기반 보도.",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "방문: 역검색 외부 보도 — https://www.dailysecu.com/news/articleView.html?idxno=159891 (2024-10-02) | 인용: 12일간 2만 3000여 명 이상이 방문했으며",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 405.3 ≈ 계약총액 448.06",
+   "contract_total_mm": 448.06,
+   "last_recognition_period": "2024-12"
+  },
+  "label_source": "external_press",
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "sales_basis": "PnL 상품매출 양수계정 합 × 1.1 (부가세 포함 기준)",
+  "label_history": [
+   {
+    "at": "pnl_sales (2026-07-28)",
+    "action": "mine",
+    "changes": [
+     "sales_krw 433,133,620 (PnL 총 결제액)"
+    ],
+    "evidence": "core.project_pnl_monthly 상품매출 양수계정 합 393,757,836(공급가) × 1.1, 인식 2개월"
+   }
+  ]
+ },
+ "docs": [
+  {
+   "doc_id": "1VOl6DTZ_zJALoUkmhe8Gpaw8y-C_F0oI",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1VOl6DTZ_zJALoUkmhe8Gpaw8y-C_F0oI/view",
+   "title": "폴햄 골때녀 팝업스토어 상품 공급계약_0730 (수정)_스위트스팟검토.docx"
+  },
+  {
+   "doc_id": "1dxUj2W_9pYojUMqivtyabnXfbKjSo-yV",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1dxUj2W_9pYojUMqivtyabnXfbKjSo-yV/view",
+   "title": "0719_폴햄x골때녀 팝업_더현대서울 견적서_하울확인.xlsx"
+  },
+  {
+   "doc_id": "1kAi3i1ZuI84rXRTgSO2TvTSJNwFDLD9n",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1kAi3i1ZuI84rXRTgSO2TvTSJNwFDLD9n/view",
+   "title": "(주)에이션패션 상품화권 계약서 초안_240508.docx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: (주)에이션패션 상품화권 계약서 초안_240508.do, 폴햄 골때녀 팝업스토어 상품 공급계약_0730 (수정), 0719_폴햄x골때녀 팝업_더현대서울 견적서_하울확인.. 미확실: 결과보고서 부재로 방문자수·매출 실측 데이터 전무; 견적서 금액 대부분이 표에서 단가/합계 수치 누락(텍스트 추출 한계); 운영시간 10:00~20:00, 일 출근 7명 확인되나 정확한 총 방문 예상치 없음; 위치 세부(구/층) 미기재; 계약서상 계약기간 2024-05-01~12-31이나 실제 팝업 운영기간은 견적서 기준 09-18~09-29 | fee 계약서화(2026-07-27) | 외부 라벨 역검색(2026-07-27): 방문 라벨 충전 23000"
+ }
+}

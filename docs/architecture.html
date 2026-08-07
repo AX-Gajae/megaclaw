@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>소셜 월드모델 — 아키텍처 해설서 (2026-07-27 기준)</title>
+<style>
+  :root{
+    --paper:#ffffff; --ink:#1d2126; --ink-soft:#4a5158; --ink-faint:#8a9199;
+    --line:#e3e6e9; --panel:#f4f6f7; --panel-deep:#eceff1;
+    --accent:#0e7a5f; --accent-soft:#e2f2ec;
+    --warn:#b3541e; --warn-soft:#f9ece2;
+    --bad:#a63232; --bad-soft:#f7e7e7;
+    --mono:'SF Mono',Menlo,Consolas,'Courier New',monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#16181c; --ink:#e6e8ea; --ink-soft:#b3b9c0; --ink-faint:#7c838b;
+      --line:#2c3138; --panel:#1e2127; --panel-deep:#24282f;
+      --accent:#3dbd97; --accent-soft:#12352b;
+      --warn:#e0854a; --warn-soft:#3a2617;
+      --bad:#e07070; --bad-soft:#3a1f1f;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Apple SD Gothic Neo','Pretendard','Noto Sans KR',system-ui,sans-serif;
+    line-height:1.75;font-size:16px;}
+  .wrap{max-width:860px;margin:0 auto;padding:48px 24px 120px}
+  header{margin-bottom:56px;border-bottom:1px solid var(--line);padding-bottom:36px}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--accent);
+    text-transform:uppercase;margin-bottom:14px}
+  h1{font-size:34px;line-height:1.3;margin:0 0 14px;font-weight:800;text-wrap:balance}
+  .lede{font-size:18px;color:var(--ink-soft);max-width:640px}
+  .lede b{color:var(--ink)}
+  .stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 16px}
+  .stat .n{font-family:var(--mono);font-size:20px;font-weight:700;color:var(--accent);
+    font-variant-numeric:tabular-nums}
+  .stat .l{font-size:12px;color:var(--ink-faint)}
+  h2{font-size:24px;margin:72px 0 8px;font-weight:800;text-wrap:balance}
+  h2 .no{font-family:var(--mono);color:var(--accent);font-size:15px;vertical-align:middle;margin-right:10px}
+  h3{font-size:17px;margin:34px 0 8px;font-weight:700}
+  .sub{color:var(--ink-soft);margin:0 0 22px;max-width:680px}
+  p{max-width:680px}
+  code{font-family:var(--mono);font-size:.86em;background:var(--panel);
+    border:1px solid var(--line);border-radius:4px;padding:1px 6px}
+  /* 파이프라인 */
+  .pipe{display:flex;flex-direction:column;gap:0;margin:28px 0}
+  .stage{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 22px}
+  .stage h4{margin:0 0 6px;font-size:15px}
+  .stage h4 .tag{font-family:var(--mono);font-size:11px;color:var(--accent);margin-right:8px}
+  .stage p{margin:0;font-size:14px;color:var(--ink-soft);max-width:none}
+  .arrow{align-self:center;color:var(--ink-faint);font-size:18px;padding:6px 0;line-height:1}
+  /* 카드 그리드 */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:24px 0}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+  .card h4{margin:0 0 8px;font-size:15px}
+  .card .kicker{font-family:var(--mono);font-size:11px;color:var(--accent);display:block;margin-bottom:6px}
+  .card p{font-size:14px;color:var(--ink-soft);margin:0;max-width:none}
+  /* 표 */
+  .tblwrap{overflow-x:auto;margin:24px 0}
+  table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px}
+  th{text-align:left;font-size:12px;color:var(--ink-faint);font-weight:600;
+    border-bottom:2px solid var(--line);padding:8px 12px;white-space:nowrap}
+  td{border-bottom:1px solid var(--line);padding:10px 12px;vertical-align:top}
+  td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+  tr:last-child td{border-bottom:none}
+  .good{color:var(--accent);font-weight:700}
+  .bad{color:var(--bad);font-weight:700}
+  .warn{color:var(--warn);font-weight:700}
+  /* 콜아웃 */
+  .callout{border-left:3px solid var(--accent);background:var(--accent-soft);
+    border-radius:0 8px 8px 0;padding:14px 18px;margin:22px 0;font-size:14.5px}
+  .callout.w{border-color:var(--warn);background:var(--warn-soft)}
+  .callout b:first-child{display:block;margin-bottom:4px}
+  /* 사건 파일 */
+  .incident{display:flex;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line)}
+  .incident:last-child{border-bottom:none}
+  .incident .date{font-family:var(--mono);font-size:12px;color:var(--ink-faint);
+    min-width:74px;padding-top:3px}
+  .incident .body{font-size:14.5px}
+  .incident .body b{color:var(--ink)}
+  .incident .body .born{color:var(--accent);font-weight:700}
+  details{background:var(--panel);border:1px solid var(--line);border-radius:8px;
+    padding:12px 18px;margin:14px 0;max-width:680px}
+  details summary{cursor:pointer;font-weight:700;font-size:14px}
+  details p, details li{font-size:14px;color:var(--ink-soft)}
+  .tier{display:flex;gap:0;flex-direction:column;margin:24px 0;border:1px solid var(--line);
+    border-radius:10px;overflow:hidden}
+  .tier .row{display:flex;align-items:center;gap:18px;padding:16px 20px;border-bottom:1px solid var(--line)}
+  .tier .row:last-child{border-bottom:none}
+  .tier .pct{font-family:var(--mono);font-size:22px;font-weight:800;min-width:110px;
+    font-variant-numeric:tabular-nums}
+  .tier .desc{font-size:14px;color:var(--ink-soft)}
+  .tier .desc b{color:var(--ink)}
+  footer{margin-top:90px;border-top:1px solid var(--line);padding-top:20px;
+    font-size:12.5px;color:var(--ink-faint)}
+  .legend{font-size:13px;color:var(--ink-faint);margin-top:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Sweetspot · Social World Model · Architecture Explainer</div>
+  <h1>팝업이 열리기 전에 결과를 봉인하고,<br>실측과 채점하며 스스로 배우는 시스템</h1>
+  <p class="lede">이 문서는 2026-07-27 기준의 전체 아키텍처를 <b>한 건의 예측이 겪는 여정</b> 순서로 설명합니다.
+  각 부품이 <b>왜</b> 존재하는지 — 대부분은 실제로 겪은 사고(事故)가 낳았습니다 — 까지 담았습니다.</p>
+  <div class="stats">
+    <div class="stat"><div class="n">380 + 408</div><div class="l">내부 레코드 + 시장 레코드</div></div>
+    <div class="stat"><div class="n">16~18%</div><div class="l">자극 풍부 구역 방문 오차</div></div>
+    <div class="stat"><div class="n">D-4</div><div class="l">첫 실전 채점 (KIOF 7/31)</div></div>
+  </div>
+</header>
+
+<!-- ============================================================ -->
+<h2><span class="no">01</span>이게 무슨 시스템인가 — 30초 요약</h2>
+<p class="sub">한 문장: <b>"이 기획서·계약서로 이 팝업을 열면 몇 명이 올까?"에 대해, 결과를 보기 전에
+예측을 암호학적으로 봉인하고, 실측이 도착하면 자동 채점해서, 틀린 이유를 다음 예측의 재료로 만드는 기계.</b></p>
+
+<p>보통의 "AI 예측"과 다른 점이 세 가지 있습니다.</p>
+<div class="grid">
+  <div class="card"><span class="kicker">① 봉인 (Commit)</span>
+    <h4>사후 조작이 불가능하다</h4>
+    <p>모든 예측은 결과를 보기 전에 sha256 해시로 봉인됩니다. 나중에 "사실 우리 이렇게 예측했었다"는
+    말이 원천적으로 불가능합니다. 잘 맞은 것도, 크게 틀린 것도 전부 장부에 남습니다.</p></div>
+  <div class="card"><span class="kicker">② 채점 (Score)</span>
+    <h4>모든 예측이 성적표를 받는다</h4>
+    <p>실측이 도착하면 자동으로 오차(APE)와 구간 적중 여부가 계산됩니다. (자극, 조건, 예측, 실측)
+    4튜플이 사이클 로그에 쌓이고, 이것이 자생적인 실험 뱅크가 됩니다.</p></div>
+  <div class="card"><span class="kicker">③ 잔차 루프 (Learn)</span>
+    <h4>크게 틀리면 변수 이름을 얻는다</h4>
+    <p>대형 미스가 날 때마다 "왜 틀렸나"를 해부해서 새 변수를 찾아냅니다. 지금 스택의 거의 모든 층이
+    이 루프에서 태어났습니다 (아래 05장 연대기 참고).</p></div>
+</div>
+
+<!-- ============================================================ -->
+<h2><span class="no">02</span>큰 그림 — 4개의 층</h2>
+<p class="sub">아래로 갈수록 "데이터 → 재료 준비 → 예측 → 검증"입니다. 예측 한 건은 이 파이프라인을
+위에서 아래로 한 번 통과합니다.</p>
+
+<div class="pipe">
+  <div class="stage"><h4><span class="tag">LAYER 1</span>데이터 층 — 세 종류의 기억</h4>
+    <p>내부 실측 뱅크(380건, 우리가 직접 수행한 팝업) · 시장 층(408건, 뉴스에서 크롤링·검증한 남의 팝업)
+    · popga 잠재 상태(소비자 앱 행동 임베딩, 실험 중). 서로 등급이 달라 절대 섞지 않습니다.</p></div>
+  <div class="arrow">▼</div>
+  <div class="stage"><h4><span class="tag">LAYER 2</span>조건화 층 — 예측 재료를 조립</h4>
+    <p>타깃 팝업이 정해지면: 그 팝업의 <b>오픈일 이전</b> 정보만으로(시간 마스크) 과거 선례 요약본
+    + 가장 닮은 선례 전문 + 시장 선례를 조립합니다. 각 선례에 신뢰등급·주말율·IP회차·캡 태그가 붙습니다.</p></div>
+  <div class="arrow">▼</div>
+  <div class="stage"><h4><span class="tag">LAYER 3</span>예측 엔진 — 게이트를 통과한 것만, 3번 물어서 중앙값</h4>
+    <p>먼저 자극(기획서 정보)이 충분한지 게이트가 검사합니다. 부족하면 구간을 강제로 넓히거나 아예
+    예측을 거부합니다. 통과하면 LLM에게 독립적으로 3번 예측시켜 중앙값을 취하고(median-of-3), 봉인합니다.</p></div>
+  <div class="arrow">▼</div>
+  <div class="stage"><h4><span class="tag">LAYER 4</span>검증 층 — 채점과 잔차 해부</h4>
+    <p>실측 도착 → 자동 채점 → 오차가 크면 잔차 해부(왜 틀렸나) → 새 변수 후보 발굴 → 페어드 절제
+    실험으로 검증 → 채택되면 Layer 2에 태그로 편입. 이 순환이 매주 월요일 크론으로 정례 운행됩니다.</p></div>
+</div>
+
+<!-- ============================================================ -->
+<h2><span class="no">03</span>데이터 층 자세히 — 세 기억의 정체와 등급</h2>
+
+<h3>내부 실측 뱅크 — data/records/ (380건)</h3>
+<p>우리가 직접 수행한 팝업들. 기획서·계약서·결과보고서 원문을 LLM으로 정규화한
+<code>popup_record</code>들입니다. 하나의 레코드는 세 부분으로 나뉩니다:</p>
+<div class="tblwrap"><table>
+  <tr><th>부분</th><th>출처</th><th>담는 것</th><th>예측에서의 역할</th></tr>
+  <tr><td><b>intervention</b> (개입)</td><td>기획서</td><td>컨셉, 체험요소, 프로모션, IP</td><td>"무엇을 하는가" — 지배 변수</td></tr>
+  <tr><td><b>conditions</b> (조건)</td><td>계약서</td><td>입지, 기간, 면적, 수수료, 스케일, <b>capacity</b>(좌석·초청·예약)</td><td>"어떤 판에서 하는가"</td></tr>
+  <tr><td><b>outcome</b> (결과)</td><td>결과보고서·P&amp;L</td><td>일별 방문·매출, 인식매출, <b>집계 방식</b>, <b>라벨 신뢰등급</b></td><td>채점 정답 + 선례 앵커. <b>타깃 예측 때는 절대 노출 금지</b></td></tr>
+</table></div>
+<p>방문 실측 라벨은 80건. 핵심은 <b>같은 "방문자 수"라도 세는 방식이 4가지</b>라는 것 —
+입장(entry) / 프로그램 참여(participation) / 통과·노출(exposure) / 구매(purchase).
+이 단위를 안 맞추면 100배 오차가 납니다(실제로 났습니다).</p>
+
+<h3>시장 층 — data/market_records/ (408건)</h3>
+<p>뉴스·주최측 발표에서 크롤링한 <b>남의 팝업</b> 데이터. 모든 수치에 (인용문, 기사 URL, 날짜) 3종 세트가
+붙어 있고, 원문 재접속 검증을 통과한 비율이 98%입니다. 내부 실측과는 <b>등급이 다릅니다</b> —
+주최측 발표는 스토어 단위에선 실측 대비 ×1.07~1.19 정도로 온건하지만(같은 이벤트를 양쪽에서 재본 결과),
+"잠실 일대 400만 명" 같은 <b>권역 집계</b>가 섞여 있어 단일 이벤트 필터를 거친 309건만 앵커로 씁니다.</p>
+
+<h3>popga 잠재 상태 — data/encoder/ (실험 중)</h3>
+<p>자사 소비자 앱(popga)의 "함께 본 스토어" 행동으로 8,388개 스토어를 64차원 좌표에 심은 임베딩.
+"이 팝업에 관심 갖는 사람들이 과거에 뭘 봤나"로 취향 이웃을 찾습니다. 프롬프트로 주입하는 방식은
+3연속 실패(B, B′, B″)해서 현재는 <b>챌린저 트랙</b>(전향 예측에서 챔피언과 병행 봉인, 실측이 심판)으로만
+운행 중입니다. 결론: 이런 연속 신호는 프롬프트가 아니라 학습된 가중치로 소화해야 한다는 것이
+지금까지의 실험적 교훈입니다.</p>
+
+<details><summary>라벨 신뢰등급 A~E — "몇 명 왔다"를 그대로 믿지 않는 이유</summary>
+<p>쌍둥이 분석(같은 IP의 반복 팝업 비교)에서 성과 격차의 최대 성분이 <b>세상의 차이가 아니라
+측정의 차이</b>로 판명됐습니다. 그래서 모든 방문 라벨에 등급을 붙입니다:</p>
+<ul>
+<li><b>A 정밀</b> — 계수기·등록·티켓·일별 표 완비 (내부 54건이 A)</li>
+<li><b>B 발표</b> — 주최측 단정 발표 (반올림 노이즈 ±수%)</li>
+<li><b>C 하한</b> — "1만 명 돌파" 류. 실제는 그 위 (시장 라벨의 38%가 C 또는 E)</li>
+<li><b>D 혼합</b> — 존/지점/채널 합산이라 단위가 왜곡됨</li>
+<li><b>E 추정</b> — 사전 예상치 재활용·환산 추정 의심</li>
+</ul>
+<p>예측 엔진은 C/D/E 앵커를 "액면 그대로 쓰지 말라"는 범례와 함께 받습니다.</p></details>
+
+<!-- ============================================================ -->
+<h2><span class="no">04</span>한 건의 예측이 겪는 여정 — 6단계</h2>
+<p class="sub">"8월에 열릴 팝업 X, 몇 명이 올까?"가 들어왔다고 합시다.</p>
+
+<div class="pipe">
+  <div class="stage"><h4><span class="tag">STEP 1</span>타깃 자극 구성 — 결과는 절대 안 본다</h4>
+    <p>타깃의 intervention + conditions + 집계 방식(enum)만 꺼냅니다. outcome은 물론이고,
+    실측 숫자가 스며들 수 있는 서술 필드(counting_basis 원문)도 차단합니다 — 실제로 한 번
+    누출 사고가 나서(basis 문자열에 실측값 포함) 오염 폴드를 폐기하고 막았습니다.</p></div>
+  <div class="arrow">▼</div>
+  <div class="stage"><h4><span class="tag">STEP 2</span>자극 빈곤 게이트 — "모른다"를 말할 권리</h4>
+    <p>자극 텍스트가 1,200자 이상이고 빈약 마커가 없으면 <b>pass</b>. 그보다 얇으면 <b>widen</b>
+    (예측 후 구간을 점추정의 ÷4.5 ~ ×4.5까지 강제 확대 — 이 배율은 빈곤 폴드 실측에서 80% 커버리지가
+    복원되는 값으로 역산). 개입 정보가 사실상 없으면(&lt;450자) <b>refuse</b> — API 호출 자체를 안 하고
+    "예측 불가"를 기록합니다. 모델의 겸손을 재량에 맡기지 않고 시스템 규칙으로 강제하는 장치입니다.</p></div>
+  <div class="arrow">▼</div>
+  <div class="stage"><h4><span class="tag">STEP 3</span>조건화 조립 — 시간 마스크가 걸린 세 블록</h4>
+    <p><b>블록 1</b> 내부 뱅크 다이제스트: 타깃 오픈일 이전의 선례 전부를 한 줄씩 요약
+    (코드|기간|공간|스케일|방문(집계)|매출|컨셉|<b>T:A 주말35% IP6회차 캡:session</b> 태그).<br>
+    <b>블록 2</b> 관련 전문: 같은 브랜드·같은 공간·같은 스케일 유형 선례 최대 15건은 요약이 아니라 전문.<br>
+    <b>블록 3</b> 시장 다이제스트: 타깃 오픈 전에 끝난 시장 선례 (수요신호 — 완판·대기·예약 — 와
+    피처 태그 포함), 타깃과 IP·공간이 겹치는 것 최대 8건은 상세로.</p></div>
+  <div class="arrow">▼</div>
+  <div class="stage"><h4><span class="tag">STEP 4</span>LLM 예측 — 규칙 9개, 독립 3회, 중앙값</h4>
+    <p>모델(claude-opus-4-8)은 9개 규칙이 박힌 시스템 프롬프트로 예측합니다: 2단 분해(소비자 성과 먼저,
+    계약 산수는 나중) · 80% 신뢰구간 · 근거 선례 ID 인용 의무 · 생존편향 경고 · 스케일 산식(매장수 곱,
+    숙주×포획률) · 기획 예상치는 일급 증거 · <b>capacity 천장</b>(좌석·초청제면 그 이상 못 감) ·
+    <b>시장층 사용법</b>(같은 IP 일평균 앵커, 주최측 발표 ×1.1 보정, 권역 수치 금지). 같은 입력으로
+    <b>독립 3회</b> 돌려 필드별 중앙값을 취합니다 — 단일 실행은 운에 따라 오차가 8~27%까지 흔들린다는
+    것을 실측했기 때문입니다. 캐시 덕에 2·3회차 비용은 거의 공짜입니다.</p></div>
+  <div class="arrow">▼</div>
+  <div class="stage"><h4><span class="tag">STEP 5</span>봉인 — 여기서부터 되돌릴 수 없다</h4>
+    <p>예측 JSON의 sha256 해시 + 프롬프트 버전 해시(시스템 프롬프트가 한 글자라도 바뀌면 버전이 갈리고,
+    버전이 다른 성적은 합산 금지) + 사용한 조건화 목록이 커밋 파일로 저장됩니다. 앙상블의 개별 3회
+    실행도 감사용으로 함께 보존됩니다.</p></div>
+  <div class="arrow">▼</div>
+  <div class="stage"><h4><span class="tag">STEP 6</span>실측 도착 → 자동 채점 → 잔차 해부</h4>
+    <p>매주 월요일 09:00 크론이 P&amp;L을 갱신하고, 새 팝업을 발굴해 봉인하고, 실측이 도착한 커밋을
+    채점합니다. 오차·구간적중이 사이클 로그에 쌓이고, 크게 틀린 건은 "왜"를 해부해 다음 변수 후보가
+    됩니다. rev_mm(인식매출)은 부분 인식 상태에서 채점하면 라벨 오염이라, 완결 판정된 것만 채점합니다.</p></div>
+</div>
+
+<!-- ============================================================ -->
+<h2><span class="no">05</span>스택의 연대기 — 각 층을 낳은 사고들</h2>
+<p class="sub">이 시스템의 거의 모든 부품에는 그것을 만들게 한 구체적 사건이 있습니다.
+"미리 설계한 기능"이 아니라 "틀림이 가르쳐 준 기능"입니다.</p>
+
+<div class="incident"><div class="date">07-23</div><div class="body">
+  <b>선금 400% 사건.</b> 계약총액 6억짜리 팝업의 인식매출을 예측했더니 실측이 1.2억 — 알고 보니
+  선금만 인식된 미완결 라벨. → <span class="born">rev_mm 완결 판정</span> 탄생 (완결된 것만 채점).</div></div>
+<div class="incident"><div class="date">07-23</div><div class="body">
+  <b>베리시 5.6만·YES24 4.1만 대형 미스.</b> 유통 연계 멀티스토어의 스케일을 놓치고, "방문"의 정의가
+  통과자인지 참여자인지 몰랐음. → <span class="born">scale 산식(규칙 6)</span>과
+  <span class="born">counting 온톨로지</span> 탄생.</div></div>
+<div class="incident"><div class="date">07-24</div><div class="body">
+  <b>measurement.basis 누출 사고.</b> 집계 설명 문자열에 실측값("입장객 2,669명")이 들어 있어 모델이
+  앵커해버림. 오염 폴드 폐기. → <span class="born">자극에서 basis 원문 제거</span>, enum만 전달.</div></div>
+<div class="incident"><div class="date">07-24</div><div class="body">
+  <b>2%↔26% 요동 발견.</b> 같은 입력을 다시 돌렸더니 오차가 완전히 다름 — 헤드라인 12.8%가 주사위였음이
+  판명, 상태층 "승격 후보"도 철회. → <span class="born">median-of-3 챔피언</span>과
+  <span class="born">반복≥3회 프로토콜</span> 탄생.</div></div>
+<div class="incident"><div class="date">07-24</div><div class="body">
+  <b>커버리지 붕괴 8/20.</b> 라벨 채굴로 찾은 폴드들은 자극이 550자(뼈대뿐)였는데 모델이 자신만만하게
+  좁은 구간을 찍음 — 자기가 모른다는 걸 모름. → <span class="born">자극 빈곤 게이트</span> 탄생
+  (pass / widen ×4.5 / refuse).</div></div>
+<div class="incident"><div class="date">07-24</div><div class="body">
+  <b>상영회 좌석 사건.</b> 좌석제 행사를 자유입장 팝업 선례로 앵커해 226% 미스. 기획자는 좌석수를 알아서
+  18%로 이김. → <span class="born">capacity 일급 필드</span>(규칙 8) 탄생. 실증: 같은 폴드 226→77%.</div></div>
+<div class="incident"><div class="date">07-24</div><div class="body">
+  <b>예산 앵커링.</b> 자극 보강으로 계약액 1.1억이 들어가자 대학 부스 캠페인을 9,000명으로 과대 예측
+  (실측 1,674). → <span class="born">"예산↛방문 디커플링" 경고</span>가 규칙 8에 명시.</div></div>
+<div class="incident"><div class="date">07-27</div><div class="body">
+  <b>QR 프록시 함정.</b> 채굴된 라벨 "241명"이 알고 보니 54일짜리 축제 부스의 QR 스캔 수 — 물리 방문이
+  아님(GA4 대기열=실방문의 16% 교훈 재발). → <span class="born">발굴 라벨 삼각검증</span> 의무화.</div></div>
+<div class="incident"><div class="date">07-27</div><div class="body">
+  <b>쌍둥이 해부.</b> 같은 IP 반복 팝업들의 격차 81%가 관측 변수로 설명됨 — "세상의 요동"이라 부르던
+  것의 대부분이 미사용 변수였음. → <span class="born">라벨 신뢰등급(T:A~E) + 주말율 + IP회차 + 캡 태그</span>
+  일괄 탄생, 페어드 검증 후 채택.</div></div>
+
+<!-- ============================================================ -->
+<h2><span class="no">06</span>성능 지도 — 하나의 숫자가 아니라 세 개의 구역</h2>
+<p class="sub">이 시스템의 정직한 셀링 포인트는 "몇 % 맞힌다"가 아니라
+<b>"어디서 맞고 어디서 못 맞히는지 그 경계를 안다"</b>입니다.</p>
+
+<div class="tier">
+  <div class="row"><div class="pct good">16~18%</div><div class="desc">
+    <b>자극 풍부 구역</b> — 기획서·계약서가 손에 있고 뱅크에 닮은 선례가 있는 표준 리테일 팝업.
+    실전 의사결정(수주 심사)의 대부분이 여기서 일어납니다. 기획자 본인의 사전 예상(~30%)보다
+    정확하고, 진짜 쌍둥이들끼리의 자연 편차(~17%)와 같은 수준.</div></div>
+  <div class="row"><div class="pct warn">~49%</div><div class="desc">
+    <b>선례 희박 구역</b> — 축제 부스, 팬 이벤트, 유통 프로모션처럼 뱅크에 닮은 것이 없는 비정형.
+    자극을 아무리 채워도 여기 갇힙니다. 처방은 더 좋은 모델이 아니라 <b>더 많은 선례</b> —
+    시장 층 주입으로 관련 선례가 있을 때 54→30%까지 좁혀지는 것이 실증됐습니다.</div></div>
+  <div class="row"><div class="pct bad">60%+</div><div class="desc">
+    <b>자극 빈곤 구역</b> — 기획 정보 자체가 없는 경우. 예전엔 여기서도 자신 있게 찍다가 참사가
+    났고, 지금은 게이트가 구간을 강제로 벌리거나 예측을 거부합니다. "모른다"가 시스템의 공식 출력입니다.</div></div>
+</div>
+
+<div class="tblwrap"><table>
+  <tr><th>예측 주체</th><th>방문 오차 (중앙값)</th><th>비고</th></tr>
+  <tr><td>과거 유사 사례 하나 복사 (naive-2)</td><td class="num bad">~95%+</td><td>엔티티 이름만으론 무정보 — 쌍둥이 분석으로 원리 확인</td></tr>
+  <tr><td>카테고리 평균값 (naive-1)</td><td class="num">38~75%</td><td>구역에 따라 다름</td></tr>
+  <tr><td>기획자 본인의 사전 예상 (naive-3)</td><td class="num">~30%</td><td>내부 정보(좌석수 등)를 아는 인간의 성적</td></tr>
+  <tr><td><b>이 시스템 (자극 풍부 구역)</b></td><td class="num good">16~18%</td><td>봉인 45개 커밋 해시 검증 완료</td></tr>
+  <tr><td>진짜 쌍둥이 간 자연 편차</td><td class="num">~17%</td><td>단, 그 격차의 81%도 변수로 설명 가능 → 진짜 바닥은 한 자릿수 가능성</td></tr>
+</table></div>
+
+<div class="callout w"><b>정직한 각주</b>
+16~18%는 아직 과거 데이터를 시간여행으로 재현한 성적입니다(백테스트). 미래를 상대로 봉인한 첫 실전
+시험이 7/31 KIOF입니다. 또한 최근 절제 실험들의 기여가 점감 중(-6.2 → -3.3 → -2.0%p)이라, 프롬프트에
+사실을 얹는 방식은 한계에 접근하고 있습니다 — 다음 단계 개선은 학습된 가중치(popga 인코더의 원래 방향)나
+타깃 자체의 실시간 신호에서 나올 가능성이 높습니다.</div>
+
+<!-- ============================================================ -->
+<h2><span class="no">07</span>무결성 장치 — 이 숫자들을 믿어도 되는 이유</h2>
+<div class="grid">
+  <div class="card"><span class="kicker">SEAL</span><h4>예측 봉인</h4>
+    <p>sha256 해시. 오픈 후 봉인 금지. 해시 불일치 시 사이클 무효 처리.</p></div>
+  <div class="card"><span class="kicker">VERSION</span><h4>프롬프트 버전 장부</h4>
+    <p>시스템 프롬프트+스키마의 해시가 예측기 ID에 박힘. 버전이 다른 성적은 합산 금지.
+    현재 v3 = <code>a9149081da</code>.</p></div>
+  <div class="card"><span class="kicker">BURN</span><h4>소모 폴드 장부</h4>
+    <p>어떤 홀드아웃을 보고 무엇을 고쳤는지 기록. 그 폴드는 해당 버전의 성능 주장에 재사용 금지.</p></div>
+  <div class="card"><span class="kicker">TIME</span><h4>시간 마스크</h4>
+    <p>조건화·시장층·IP이력 전부 타깃 오픈일 이전 정보만. 백테스트와 전향 예측이 같은 코드로 돕니다.</p></div>
+  <div class="card"><span class="kicker">ABLATE</span><h4>페어드 절제</h4>
+    <p>새 부품은 같은 폴드를 ON/OFF 두 번 예측해 차이로 검증. 효과 없으면 채택 안 함
+    (상태층은 이 관문에서 3연속 탈락).</p></div>
+  <div class="card"><span class="kicker">REPEAT</span><h4>반복 ≥3 프로토콜</h4>
+    <p>단일 실행 비교는 증거로 취급하지 않음. 실행 간 요동(8~27%)을 실측한 뒤 세운 규칙.</p></div>
+</div>
+<p class="legend">+ 운영 원칙: BQ/GCP는 전 과정 읽기 전용(SELECT·Drive 읽기만), 모든 쓰기는 로컬 저장소.</p>
+
+<!-- ============================================================ -->
+<h2><span class="no">08</span>지금 걸려 있는 것 — 실전 첫 대진</h2>
+<p class="sub">두 세대의 스택이 같은 미래를 상대로 나란히 봉인되어 있습니다. 실측이 심판입니다.</p>
+
+<div class="tblwrap"><table>
+  <tr><th>타깃</th><th>v2 구스택 (7/24 봉인)</th><th>v3 신스택 (7/27 봉인)</th><th>실측</th></tr>
+  <tr><td><b>KIOF</b> · 7/31 오픈</td>
+      <td class="num">5,000 [800~25,000]</td>
+      <td class="num">6,000 [1,333~27,000] <span class="legend">게이트 widen</span></td>
+      <td class="num">대기 중</td></tr>
+  <tr><td><b>TWS 팬미팅</b> · 8/22</td>
+      <td class="num">800 [350~1,600]</td>
+      <td class="num">1,000 [450~1,800]</td>
+      <td class="num">대기 중</td></tr>
+</table></div>
+<p>실측 도착은 3중으로 감시됩니다: 매주 월요일 자동 채점 크론 + 매일 결과보고서 도착 체크 +
+절차 문서(어느 세션이든 승계 가능). 채점되는 순간 v2↔v3 실전 첫 대조가 자동으로 나옵니다.</p>
+
+<h3>그 다음 로드맵 (우선순위 순)</h3>
+<div class="grid">
+  <div class="card"><span class="kicker">NEXT 1</span><h4>학습 가중치로의 전환</h4>
+    <p>프롬프트에 사실을 얹는 방식은 한계효용 점감이 확인됨. popga 임베딩·버즈 같은 연속 신호를
+    학습된 모델(Genie 방향)이 소화하는 단계로.</p></div>
+  <div class="card"><span class="kicker">NEXT 2</span><h4>크롤링 확장</h4>
+    <p>선례 희박 구역(~49%)의 유일한 처방. 라벨 공급 + 진짜 쌍둥이 공급 + 이벤트 선례를 동시에
+    해결하는 소스.</p></div>
+  <div class="card"><span class="kicker">NEXT 3</span><h4>rev_mm 트랙 정화</h4>
+    <p>8월 P&amp;L 마감 전 "계약서 확정액 &gt; 견적" 규칙으로 fee 재정규화 + 검수 발견 major 6건 패치.
+    이후 매출 예측 채점 재개.</p></div>
+</div>
+
+<footer>
+  소셜 월드모델 아키텍처 해설서 · 2026-07-27 기준 · 저장소 /Users/ax/world_model ·
+  수치는 전부 cycle_log/ 봉인 커밋과 메모리 로드맵에서 인용
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+{
+ "market_record_id": "MKT-2024-0058",
+ "event_name": "아떼 바네사브루노 신세계백화점 강남점 팝업 (9월)",
+ "brand": "아떼 바네사브루노 (LF)",
+ "ip_or_collab": null,
+ "category": "fashion",
+ "intervention": {
+  "concept_description": "프릴백 출시 기념 백화점 팝업",
+  "experience_elements": [],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "신세계백화점 강남점",
+  "venue_type": "department_store",
+  "neighborhood": "반포동",
+  "city": "서울",
+  "period_from": "2024-09-01",
+  "period_to": null,
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 6.1,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 20000,
+  "visitors_period_days": 7,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "'2만명 이상'이므로 하한값 20000 기록. LF 발표 인용",
+  "visitors_source_quote": "지난 3월 팝업스토어 당시, 오픈 첫 날 약 천여명의 고객들이 방문하고, 9월 신세계백화점 강남점 팝업스토어에는 일주일 간 총 2만명 이상의 고객이 방문하는 등 브랜드의 인기를 다시금 입증한 바 있다.",
+  "visitors_source_url": "https://www.pharmnews.com/news/articleView.html?idxno=251745",
+  "visitors_source_date": "2024-10-14",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "일주일간 총 2만명 이상. 정확한 시작일 미상(2024년 9월). | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "기간 미상",
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

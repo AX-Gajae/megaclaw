@@ -1,0 +1,111 @@
+{
+ "market_record_id": "MKT-2024-0071",
+ "event_name": "명조: 워더링 웨이브 팝업스토어 '뭇별이 잠든 – 띵조파크 in 용산'",
+ "brand": "쿠로게임즈",
+ "ip_or_collab": "명조: 워더링 웨이브",
+ "category": "game_webtoon",
+ "intervention": {
+  "concept_description": "오픈월드 ARPG 명조의 세 번째 오프라인 행사. 굿즈 판매존·명조 테라스·명조 가든, 빙고 미션, 미니 라이브·피아노 연주·성우 토크쇼·드로잉쇼, 2차 창작 전시존",
+  "experience_elements": [
+   "빙고 미션",
+   "미니 라이브",
+   "성우 토크쇼",
+   "포토존",
+   "2차 창작 전시"
+  ],
+  "promotions": [
+   "한정 굿즈 판매",
+   "방문 인증 이벤트"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "아이파크몰 용산점 3·4층 POPUP 특설존",
+  "venue_type": "mall",
+  "neighborhood": "용산",
+  "city": "서울",
+  "period_from": "2024-10-03",
+  "period_to": "2024-10-09",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 2.5,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 60000,
+  "visitors_period_days": 7,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "쿠로게임즈 공식 발표: '띵조파크 in 용산은 띵조랜드(홍대), 띵조파크(신촌)에 이은 세 번째 오프라인 행사로 총 7일간 6만여 명의 관람객이 다녀갔다'",
+  "visitors_source_quote": "회사에 따르면 ‘명조’에 관심을 갖고 게임을 즐기는 이용자에 대한 감사의 의미가 담긴 ‘띵조파크 in 용산’은 띵조랜드(홍대), 띵조파크(신촌)에 이은 세 번째 오프라인 행사로 총 7일간 6만여 명의 관람객이 다녀갔다.",
+  "visitors_source_url": "http://www.worktoday.co.kr/news/articleView.html?idxno=58708",
+  "visitors_source_date": "2024-10-10",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "1일 차 오전부터 대기줄 발생",
+   "sold_out": null,
+   "reservation_fill": "굿즈 판매존 공휴일 사전 예약제 운영",
+   "signal_quotes": [
+    "‘띵조파크 in 용산’ 1일 차에는 오전부터 대기줄이 발생할 정도로 많은 관람객이 현장을 찾았다.",
+    "이번 행사 때만 구입할 수 있는 특별 한정 굿즈에는 특히나 많은 구매자가 몰리기도 했다.",
+    "'띵조파크 in 용산' 1일 차에는 오전부터 대기줄이 발생할 정도로 많은 관람객이 현장을 찾았다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "E"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": true,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "기간은 2024-10-01 매거진 기준 '9일까지'로 10/9 종료 확인, 총 7일 운영 보도로 개시일 10/3 추정(개시일 단독 근거 없음). | 병합 레코드: MKT-2024-0002 | [병합:MKT-2024-0002] 정확한 시작일 미기재(종료 보도 2024-10-10, 7일간 운영 → 10월 초 추정이나 추정 금지로 period_from=null, period_to는 보도일 기준 표기). '관람객' 집계 기준(입장 카운트) 명시 없음.",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 60000,
+   "basis": "organizer_claim",
+   "quote": "회사에 따르면 '명조'에 관심을 갖고 게임을 즐기는 이용자에 대한 감사의 의미가 담긴 '띵조파크 in 용산'은 띵조랜드(홍대), 띵조파크(신촌)에 이은 세 번째 오프라인 행사로 총 7일간 6만여 명의 관람객이 다녀갔다.",
+   "url": "http://www.worktoday.co.kr/news/articleView.html?idxno=58708",
+   "date": "2024-10-10"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

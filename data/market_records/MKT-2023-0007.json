@@ -1,0 +1,71 @@
+{
+  "market_record_id": "MKT-2023-0007",
+  "event_name": "동해형씨 팝업(현대백화점 판교점·더현대서울·무역센터점 위마켓)",
+  "brand": "동해형씨",
+  "ip_or_collab": null,
+  "category": "other",
+  "intervention": {
+    "concept_description": "수산물 펫푸드 브랜드의 '생선장수' 콘셉트 팝업, 위마켓(현대백화점 큐레이션 매장) 내 진행",
+    "experience_elements": [
+      "생선장수 콘셉트 부스"
+    ],
+    "promotions": [],
+    "is_free_entry": null,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "현대백화점 판교점→더현대서울→무역센터점 위마켓",
+    "venue_type": "department_store",
+    "neighborhood": "판교·여의도·삼성동",
+    "city": "서울",
+    "period_from": "2023-03-10",
+    "period_to": "2023-03-16",
+    "area_pyeong": null,
+    "multi_store": true,
+    "derived": {
+      "duration": {
+        "days": 7,
+        "weekend_share": 0.29,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 7,
+    "counting_basis": "unknown",
+    "counting_basis_note": "원문 '판교점(분당)을 시작으로 더현대서울점(여의도 파크원), 무역센터점(삼성동)으로 이어지는 기간 동안 동해형씨는 2,300만원 이상의 매출을 올렸다' — 산정 근거 명시 없음",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": 23000000,
+    "sales_source_quote": "현대백화점 판교점(분당)을 시작으로 더현대서울점(여의도 파크원), 무역센터점(삼성동)으로 이어지는 기간 동안 '동해형씨'는 2,300만원 이상의 매출을 올렸다. 펫푸드 업체 평균 매출을 상회하는 수치다.",
+    "sales_source_url": "https://www.belocal.kr/news/articleView.html?idxno=2243442",
+    "sales_source_date": "2023-04-06",
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": true,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "지난 3월 10일~16일 일주일간, 현대백화점 위마켓에 초대된 수산물 펫푸드 브랜드 '동해형씨'가 더현대서울(여의도 파크원점) 매장에서 생선장수 컨셉의 팝업을 선보였고, 완판을 기록했다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "3개 점포 합산 매출 2,300만원 이상. 기간은 더현대서울 위마켓 기준(3/10~16)이며 3점포 순회 전체 기간은 불명. category: 펫푸드→other | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": false,
+  "exclude_reason": "집계형(통합/합산)",
+  "verification": {
+    "sales": "verified"
+  },
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

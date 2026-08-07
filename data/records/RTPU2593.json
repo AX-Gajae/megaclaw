@@ -1,0 +1,135 @@
+{
+ "record_id": "RTPU2593",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:한국주택금융공사",
+  "space_id": "unresolved:미상",
+  "client_party_id": "unresolved:한국주택금융공사",
+  "brand_key": "한국주택금융공사",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "한국주택금융공사 제작물(등신대) 납품 프로젝트. 4종 세트 등신대와 1종 등신대 제작 및 배송 납품 건으로, 팝업 운영보다는 제작물 제작·납품 성격의 프로젝트다.",
+  "brand_name": "한국주택금융공사",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [
+   "등신대(H:1,200mm)"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-12-19",
+   "to": "2025-12-26",
+   "days": 8
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 9,740,500원(VAT 10% 포함). 소계(Sub Total 1~3) 8,050,000원 + 대행수수료(정가항목 제외 소계의 10%) 805,000원 = 8,855,000원(VAT 별도), VAT 10% 포함 시 9,740,500원. 세부: 기획 프로젝트 관리비 500,000원, 디자인(2D&3D·제작설계·소재 바리에이션) 500,000원(Sub Total 1: 1,000,000원); 제작비 4종 세트 등신대(H:1,200mm) 120,000원×41=4,920,000원, 1종 등신대 120,000원×6=720,000원(Sub Total 2: 5,640,000원); 진행비 포장비(박스·부자재·포장) 10,000원×47=470,000원, 배송비(화물 택배) 20,000원×47=940,000원(Sub Total 3: 1,410,000원). 견적 3차, 2025-12-19 기준. 공급자: 주식회사 스위트스팟(846-86-00225). | 계약서 미확인(2026-07-27 재독해 시도 — 대상 문서 부재/추출 실패): 총액은 견적 기준"
+  },
+  "brand_requirements": [
+   "4종 세트 등신대(H:1,200mm) 41개 제작",
+   "1종 등신대(H:1,200mm) 6개 제작",
+   "박스 및 부자재 포장, 화물 택배 배송 47건"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "제작물 납품 건"
+  },
+  "derived": {
+   "duration": {
+    "days": 8,
+    "weekend_share": 0.25,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 0.7,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 71,
+    "holiday_until": 57,
+    "holiday_block_in": 0,
+    "nat_event_gap": 36,
+    "nat_event": null,
+    "doc_lag_days": 0,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 8.9
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 및 제안서 원문이 비어 있어 방문/매출 실측 데이터 없음. 본 건은 제작물 납품 프로젝트로 방문자 개념이 없을 가능성이 높음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 8.9 ≈ 계약총액 8.855",
+   "contract_total_mm": 8.855,
+   "last_recognition_period": "2025-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "15jzOE9yzrK85WQjDXRwU35ZrwfV1Pxz2",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/15jzOE9yzrK85WQjDXRwU35ZrwfV1Pxz2/view",
+   "title": "(Sweetspot) 한국주택금융공사_제작물 납품_견적서_3차_251219.pdf"
+  },
+  {
+   "doc_id": "1Z80zcNvCpi6LrXsWNAPmKJvsGYMLhntyudQTldUyj9s",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Z80zcNvCpi6LrXsWNAPmKJvsGYMLhntyudQTldUyj9s/view",
+   "title": "제안서_내용없음"
+  },
+  {
+   "doc_id": "1k3kzLiQw-hsQKmRd8qebr8PJYkyIGqY7QkboVyJOmW8",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1k3kzLiQw-hsQKmRd8qebr8PJYkyIGqY7QkboVyJOmW8/view",
+   "title": "결과보고서_내용없음"
+  },
+  {
+   "doc_id": "1sKOmYwct9qvHuiO46_Qlm9dWWDvHdgN4",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1sKOmYwct9qvHuiO46_Qlm9dWWDvHdgN4/view",
+   "title": "[별지 제13호 서식] 수의계약 체결 제한 여부 확인서_계약서 갈음.hwp"
+  },
+  {
+   "doc_id": "1wmIrgmBu_slwbiE3Dp-n51LY8zG6KE6h",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1wmIrgmBu_slwbiE3Dp-n51LY8zG6KE6h/view",
+   "title": "한국주택금융공사 제작물납품.txt"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 3건: 제안서_내용없음, (Sweetspot) 한국주택금융공사_제작물 납품_견적, 결과보고서_내용없음. 미확실: 제안서 원문 없음(내용 비어있음); 결과보고서 원문 없음(내용 비어있음); 입지/장소 정보 전무; 컨셉·체험요소·프로모션 정보 없음; 방문자 및 매출 실측 데이터 없음; 본 프로젝트는 팝업 운영이 아닌 제작물 납품 성격일 가능성"
+ }
+}

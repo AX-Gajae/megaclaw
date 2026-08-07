@@ -1,0 +1,336 @@
+{
+ "record_id": "RCPU2403",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:린트초콜릿_Lindt",
+  "space_id": "unresolved:시흥_신세계사이먼시흥점",
+  "client_party_id": null,
+  "brand_key": "린트",
+  "space_key": "신세계사이먼시흥점"
+ },
+ "intervention": {
+  "concept": "린트(Lindt) 초콜릿의 발렌타인데이 시즌 판매형 팝업스토어. 프랄린 집기, 벽면 4단 중앙/사이드 매대, 카운터, 포토존, 이벤트 룰렛(돌림판)으로 공간을 구성했다.",
+  "brand_name": "린트 (Lindt)",
+  "experience_elements": [
+   "이벤트 룰렛(돌림판) 850*500*h1850",
+   "포토존(벨벳 커튼, 로고 그래픽)",
+   "린도볼 3종 조형물 h700/h500/h400",
+   "프랄린 집기",
+   "벽면 진열용 4단 중앙/사이드 매대",
+   "사탕 오브제/사탕스탠드"
+  ],
+  "promotions": [
+   "룰렛 이벤트"
+  ],
+  "staging_tags": [
+   "발렌타인데이",
+   "벨벳 리본/커튼",
+   "바닥 카페트",
+   "지정색 도장",
+   "린도 로고 사인물"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "시흥",
+   "district": null,
+   "venue_name": "신세계 사이먼 시흥점",
+   "venue_type": "프리미엄 아울렛",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": 12.1,
+  "period": {
+   "from": "2024-02-03",
+   "to": "2024-02-25",
+   "days": 9
+  },
+  "season": "발렌타인데이(겨울)",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "지급액은 선금(발주시 50%), 잔금(완료시 50%). 대행수수료 소계의 10%(정가 항목 제외), 예비비 소계의 5%. VAT 10% 별도. 계좌: KB국민은행 주식회사 스위트스팟 810101-04-339489. 계약 총액 및 세부 단가는 원문 견적서에 금액 미표기(추출 불가). 3월8일~31일 금/토/일 연장영업 추가항목(룰렛 추가, 시트지작업) 별도."
+  },
+  "brand_requirements": [
+   "운영시간 10:00~21:00 스태프 풀근무",
+   "주말영업(금요일 미근무 케이스 포함)",
+   "세팅/철수 각 0.5일",
+   "창고보관비 2월 종료시점~4월 사용시점까지",
+   "2/10(토) 지점휴무"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "신세계 사이먼 시흥점 프리미엄 아울렛"
+  },
+  "derived": {
+   "duration": {
+    "days": 23,
+    "weekend_share": 0.35,
+    "holiday_days": 4
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 33,
+    "holiday_until": 6,
+    "holiday_block_in": 4,
+    "nat_event_gap": 67,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 미제공 — 방문객/매출 실측 데이터 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": null,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-W50mMwNWNL1JO3BSmgdxSyAAt9lq5X-",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1-W50mMwNWNL1JO3BSmgdxSyAAt9lq5X-/view",
+   "title": "Lindt 2023 xmas_Wow display_Big_3D layout.jpg"
+  },
+  {
+   "doc_id": "17-yO6a4-tgOveRlCLMVsY_Kbm5rIkayV",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/17-yO6a4-tgOveRlCLMVsY_Kbm5rIkayV/view",
+   "title": "견적서 린트초콜릿 팝업공간구성_스위트스팟(수정)_주말만영업.xlsx"
+  },
+  {
+   "doc_id": "171dg0yOYTyPOJIL0pxK7Yqxw9vOm3JhA",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/171dg0yOYTyPOJIL0pxK7Yqxw9vOm3JhA/view",
+   "title": "농심 외주 용역계약서.pdf"
+  },
+  {
+   "doc_id": "17F7ypgEgPwgDBTXKYP3gy2KzsISWpIWq",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/17F7ypgEgPwgDBTXKYP3gy2KzsISWpIWq/view",
+   "title": "0123_린트 발렌타인데이 팝업스토어 공간구성안.pdf"
+  },
+  {
+   "doc_id": "17Um3f-b-9dLD2I806ZhESmNDH0ro0GPF",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/17Um3f-b-9dLD2I806ZhESmNDH0ro0GPF/view",
+   "title": "Lindt 2023 xmas_Wow display_Big_AW1_ribbon.jpg"
+  },
+  {
+   "doc_id": "19RUCFQsnZuZKaJKn4Qiv0QMkkLPjexN6",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/19RUCFQsnZuZKaJKn4Qiv0QMkkLPjexN6/view",
+   "title": "Lindt 2023 xmas_Wow display_Big_AW1_ribbon.jpg"
+  },
+  {
+   "doc_id": "1Cm6fTkRpviUyoCY-Kmx-86xGatFBIhwo",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Cm6fTkRpviUyoCY-Kmx-86xGatFBIhwo/view",
+   "title": "용역계약서_농심_스위트스팟_20240229 법무팀 수정 (2) (1).docx"
+  },
+  {
+   "doc_id": "1Dx-wg412rDX_xLPFvnO1RHwwP-dBuaTx",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Dx-wg412rDX_xLPFvnO1RHwwP-dBuaTx/view",
+   "title": "용역계약서_농심_스위트스팟_초안.docx"
+  },
+  {
+   "doc_id": "1LXhl9MOhdn0Gk21agY8U8EQnKWFmx-th",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1LXhl9MOhdn0Gk21agY8U8EQnKWFmx-th/view",
+   "title": "._Lindt 2023 xmas_Wow display_Big_AW1_ribbon.jpg"
+  },
+  {
+   "doc_id": "1MAC01eU40xv-aaOwxcRFX9zYY2dM-D9m",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1MAC01eU40xv-aaOwxcRFX9zYY2dM-D9m/view",
+   "title": "._Lindt 2023 xmas_Wow display_Big_AW1_base_side.jpg"
+  },
+  {
+   "doc_id": "1PCXR8GtOFgFZyAdSnoCyDP52LhYD0cdM",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1PCXR8GtOFgFZyAdSnoCyDP52LhYD0cdM/view",
+   "title": "Lindt 2023 xmas_Wow display_Big_AW1_base_front.jpg"
+  },
+  {
+   "doc_id": "1PONArDVkGmKkV4j54MPUg1JInEcr5QX7",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1PONArDVkGmKkV4j54MPUg1JInEcr5QX7/view",
+   "title": "Lindt 2023 xmas_Wow display_Big_AW1_base_front.jpg"
+  },
+  {
+   "doc_id": "1RGH3TtsqMGhLou7vLoEwtmz1T6nDDmZM",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1RGH3TtsqMGhLou7vLoEwtmz1T6nDDmZM/view",
+   "title": "Thumbs.db"
+  },
+  {
+   "doc_id": "1Sjmefs_rIk79odZhM9x-CY8Mg5ZrzJAx",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Sjmefs_rIk79odZhM9x-CY8Mg5ZrzJAx/view",
+   "title": "Lindt 2023 xmas_Wow display_Big_AW1_shelftalker.jpg"
+  },
+  {
+   "doc_id": "1SnNy0CM435uCoYTHg9oaBRwqD9ovXB7x",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1SnNy0CM435uCoYTHg9oaBRwqD9ovXB7x/view",
+   "title": "용역계약서_농심_스위트스팟_20240229 법무팀 수정 (2) (1).docx"
+  },
+  {
+   "doc_id": "1TIFdJL_AACIaIAs4M93k8B3BXnNiII55",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1TIFdJL_AACIaIAs4M93k8B3BXnNiII55/view",
+   "title": "Lindt 2023 xmas_Wow display_Big_AW1_base_side.jpg"
+  },
+  {
+   "doc_id": "1VfEFZmy7D5Ma-Xct_q1tUII7y89URIBw",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1VfEFZmy7D5Ma-Xct_q1tUII7y89URIBw/view",
+   "title": "Thumbs.db"
+  },
+  {
+   "doc_id": "1Y0JdZzv7QLkYFmpUlFiXW7RgJO3TW1MA",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Y0JdZzv7QLkYFmpUlFiXW7RgJO3TW1MA/view",
+   "title": ".DS_Store"
+  },
+  {
+   "doc_id": "1a_yGEinxdL62WVVH6Gj77FUwKKfAlLO-",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1a_yGEinxdL62WVVH6Gj77FUwKKfAlLO-/view",
+   "title": "._Positioning reference.jpg"
+  },
+  {
+   "doc_id": "1bhjJdlkG57Y_8ln1zrj0aIFDtJ5G_hLN",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1bhjJdlkG57Y_8ln1zrj0aIFDtJ5G_hLN/view",
+   "title": "어반에이블_사업자등록증.jpg"
+  },
+  {
+   "doc_id": "1d6q7nYF2jr5tRK-hc7h2D-OD6wBxKhNI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1d6q7nYF2jr5tRK-hc7h2D-OD6wBxKhNI/view",
+   "title": "[견적서] 린트초콜릿 팝업공간구성_스위트스팟.xlsx"
+  },
+  {
+   "doc_id": "1d9MRhgnRqZpdGPBfN0sBfuq4TBkHlzKi",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1d9MRhgnRqZpdGPBfN0sBfuq4TBkHlzKi/view",
+   "title": "._Lindt 2023 xmas_Wow display_Big_3D layout.jpg"
+  },
+  {
+   "doc_id": "1f4xsci6Px0KChm69Ri1y9yd870iDPSAO",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1f4xsci6Px0KChm69Ri1y9yd870iDPSAO/view",
+   "title": "위탁판매_2023년)_ABANABLE_0129.docx"
+  },
+  {
+   "doc_id": "1fxK_L6d0R6MlQ6NJ20UgoE_1SEiJ3A28",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1fxK_L6d0R6MlQ6NJ20UgoE_1SEiJ3A28/view",
+   "title": "._.DS_Store"
+  },
+  {
+   "doc_id": "1hXg4DDz8V71mQGyIEMBrgcbxpM1VZkyv",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1hXg4DDz8V71mQGyIEMBrgcbxpM1VZkyv/view",
+   "title": "._Reference jpg"
+  },
+  {
+   "doc_id": "1jmqo6tSmjHutkp4CPdPAlfv-H0nuDNTq",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1jmqo6tSmjHutkp4CPdPAlfv-H0nuDNTq/view",
+   "title": "견적서 린트초콜릿 팝업공간구성_스위트스팟(최종)_금토일영업 - 복사본.xlsx"
+  },
+  {
+   "doc_id": "1kNbE5u3aybPgN87ZcjEJ0ZpJkaAOJJDD",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1kNbE5u3aybPgN87ZcjEJ0ZpJkaAOJJDD/view",
+   "title": ".DS_Store"
+  },
+  {
+   "doc_id": "1kOHOcNloi0RyqeSjElcWhSNTXqQNeywx",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1kOHOcNloi0RyqeSjElcWhSNTXqQNeywx/view",
+   "title": "._Lindt 2023 xmas_Wow display_Big_AW1_shelftalker.jpg"
+  },
+  {
+   "doc_id": "1kmt9tbYWzodsFdITtBZ5OVa6wK8IUoGO",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1kmt9tbYWzodsFdITtBZ5OVa6wK8IUoGO/view",
+   "title": "._Lindt 2023 xmas_Wow display_Big_AW1_base_front.jpg"
+  },
+  {
+   "doc_id": "1l-2jhlBurCLCTxvVqTQ_FRnpPxahv2Jh",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1l-2jhlBurCLCTxvVqTQ_FRnpPxahv2Jh/view",
+   "title": "Lindt 2023 xmas_Wow display_Big_3D layout.jpg"
+  },
+  {
+   "doc_id": "1m-sAnDNaBSe4WIT8mIaQOpl2cbDamxY1",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1m-sAnDNaBSe4WIT8mIaQOpl2cbDamxY1/view",
+   "title": "Positioning reference.jpg"
+  },
+  {
+   "doc_id": "1pNLzGXND6Zrw0eXtIYb95DIOliTIV5OS",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1pNLzGXND6Zrw0eXtIYb95DIOliTIV5OS/view",
+   "title": "견적서 린트초콜릿 팝업공간구성_스위트스팟(수정)_금토일영업.xlsx"
+  },
+  {
+   "doc_id": "1pRkTkRtPX3xXnWXPcitwyqSjjug0kIOa",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1pRkTkRtPX3xXnWXPcitwyqSjjug0kIOa/view",
+   "title": "Positioning reference.jpg"
+  },
+  {
+   "doc_id": "1qtRqYpLoDCI_yGmZZMCnM710P3YPaSHL",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1qtRqYpLoDCI_yGmZZMCnM710P3YPaSHL/view",
+   "title": "Lindt 2023 xmas_Wow display_Big_AW1_shelftalker.jpg"
+  },
+  {
+   "doc_id": "1twFA4OCMIxJ6-eNcPjMeR-x815rjGVgV",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1twFA4OCMIxJ6-eNcPjMeR-x815rjGVgV/view",
+   "title": "견적서 린트초콜릿 팝업공간구성_스위트스팟(최종)_금토일영업 - 복사본.xlsx"
+  },
+  {
+   "doc_id": "1xxOA7s8Rjmc7mmUe_bFqJbu3WqVIiyz3",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1xxOA7s8Rjmc7mmUe_bFqJbu3WqVIiyz3/view",
+   "title": "Lindt 2023 xmas_Wow display_Big_AW1_base_side.jpg"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 4건: 견적서 린트초콜릿 팝업공간구성_스위트스팟(최종)_금토일, 0123_린트 발렌타인데이 팝업스토어 공간구성안.pdf, 견적서 린트초콜릿 팝업공간구성_스위트스팟(최종)_금토일, [견적서] 린트초콜릿 팝업공간구성_스위트스팟.xlsx. 미확실: 계약/견적 총액 및 세부 단가(원문에 금액 미표기); 결과보고서 부재로 방문객 및 POS 매출 전무; client_name/발주처 정보 없음; 운영일자 견적서와 기획서 간 불일치(기획서: 2/3,4,9,10,12,17,18,24,25 / 견적서: 2/3,4,9,11,12,17,18,24,25); district(정확한 구/동) 정보 없음; 예상 방문객(plan_visitors_expected) 문서에 없음"
+ }
+}

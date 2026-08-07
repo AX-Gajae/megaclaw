@@ -1,0 +1,94 @@
+{
+ "market_record_id": "MKT-2024-0082",
+ "event_name": "신영와코루 70주년 '비너스X무비랜드' 팝업스토어(성수)",
+ "brand": "신영와코루 비너스(VENUS)",
+ "ip_or_collab": "성수동 소극장 무비랜드",
+ "category": "fashion",
+ "intervention": {
+  "concept_description": "브랜드 헤리티지를 영화로 풀어낸 영화제형 팝업. '사랑의 형태들' 무료 영화 7편 상영, 아카이브 전시, 하트 피팅 포토부스, 한정 콜라보 파자마",
+  "experience_elements": [
+   "무료 영화제",
+   "아카이브 전시",
+   "포토부스"
+  ],
+  "promotions": [
+   "한정 콜라보 파자마 판매"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "무비랜드, 성수동",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수",
+  "city": "서울",
+  "period_from": "2024-10-21",
+  "period_to": "2024-11-03",
+  "area_pyeong": null,
+  "multi_store": true,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 15000,
+  "visitors_period_days": null,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "성수 비너스X무비랜드+강남 신영방직 2개 팝업 합산 누적 1만5000여 명(성수 단독 수치 없음)",
+  "visitors_source_quote": "신영와코루는 브랜드 70주년을 기념해 성수와 강남에 오픈한 팝업스토어에 누적 방문객 1만5000여명이 방문하는 등 고객들에게 큰 사랑을 받으며 마무리했다고 26일 밝혔다.",
+  "visitors_source_url": "http://www.enewstoday.co.kr/news/articleView.html?idxno=2205365",
+  "visitors_source_date": "2024-11-26",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": true,
+   "reservation_fill": "영화제 사전 예매 오픈 40분 만에 전석 매진",
+   "signal_quotes": [
+    "비너스의 시그니처 메시지 '사랑의 비너스'에서 확장한 '사랑의 형태들'을 주제로 한 영화 7편을 무료로 상영하는 영화제가 사전 예매 오픈 40분 만에 전석 매진됐고, 협업을 기념해 한정 수량으로 제작한 '비너스X무비랜드' 콜라보 파자마는 전 사이즈 품절됐다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": true,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "합산 수치 명시. 성수 팝업 개별 수요 신호(예매 40분 매진·파자마 품절)는 성수 단독. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "집계형(통합/합산)",
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

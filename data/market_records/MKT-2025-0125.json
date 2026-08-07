@@ -1,0 +1,101 @@
+{
+ "market_record_id": "MKT-2025-0125",
+ "event_name": "케이팝 데몬 헌터스 첫 공식 팝업(성수 Layer57)",
+ "brand": "넷플릭스/비마이프렌즈",
+ "ip_or_collab": "케이팝 데몬 헌터스(KPop Demon Hunters)",
+ "category": "character",
+ "intervention": {
+  "concept_description": "넷플릭스 '케이팝 데몬 헌터스' 첫 공식 팝업. 성수 Layer57에서 2025-12-04~12-28 운영.",
+  "experience_elements": [
+   "체험 존",
+   "굿즈 판매"
+  ],
+  "promotions": [
+   "사전 예약"
+  ],
+  "is_free_entry": null,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "Layer57(서울 성동구 성수)",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수",
+  "city": "서울",
+  "period_from": "2025-12-04",
+  "period_to": "2025-12-28",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 25,
+    "weekend_share": 0.32,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 60000,
+  "visitors_period_days": 25,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "주최측(비마이프렌즈) 집계(뉴스탭 보도 인용)",
+  "visitors_source_quote": "지난해 성수에서 진행된 첫 공식 팝업은 현장 방문객 6만 명 이상을 기록했다.",
+  "visitors_source_url": "https://www.newstap.co.kr/news/articleView.html?idxno=326845",
+  "visitors_source_date": "2026-05-12",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "기간은 헤이팝(heypop) 공지 기준 2025-12-04~28 | 병합 레코드: MKT-2025-0014 | [병합:MKT-2025-0014] 개최 시기 '지난해(2025년) 성수'로만 보도되어 period null 처리(2025-12 운영으로 알려졌으나 출처 내 명시 없음).",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 60000,
+   "basis": "organizer_claim",
+   "quote": "지난해 성수에서 진행된 〈케이팝 데몬 헌터스〉 첫 공식 팝업은 현장 방문객 6만 명 이상을 기록하며 큰 호응을 얻었다.",
+   "url": "https://www.newstap.co.kr/news/articleView.html?idxno=326845",
+   "date": "2026-05-12"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,257 @@
+{
+ "record_id": "RTPU2548",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:필립스_바리스티나",
+  "space_id": "unresolved:성수_팝업스토어",
+  "client_party_id": "unresolved:스프링앤플라워_김석중",
+  "brand_key": "필립스",
+  "space_key": "성수"
+ },
+ "intervention": {
+  "concept": "필립스 바리스티나 커피머신 팝업스토어. 공간 곳곳에 숨겨진 7개의 포터필터를 QR로 찾는 미션, 취향 투표 후 슈링클스 키링 제작, 바리스티나로 직접 커피를 만드는 테이스팅 체험을 연계한 리테일테인먼트형 팝업.",
+  "brand_name": "필립스 바리스티나",
+  "experience_elements": [
+   "FIND THE PORTAFILTER (7개 포터필터 찾기 QR 스캔 미션)",
+   "포터필터 색상 취향 투표 Wall",
+   "슈링클스 포터필터 키링 만들기",
+   "취향 맞춤 커피 만들기 체험 (TASTE ZONE)",
+   "블랙&화이트 쇼룸/컬러풀 쇼룸/포토스팟",
+   "QR 이미지 카드 7종 수집"
+  ],
+  "promotions": [
+   "SNS 해시태그 인증 이벤트(나의 커피 취향 자랑하기)",
+   "럭키드로우 경품 추첨(1등 바리스티나, 2등 밀크프로더, 3등 토스터기, 4등 원두)",
+   "8월 출시 바리스티나 프리미엄 선물 추첨"
+  ],
+  "staging_tags": [
+   "FACADE",
+   "ENTRANCE",
+   "GATE",
+   "TABLE DISPLAY",
+   "BRAND WALL",
+   "BLACK&WHITE SHOWROOM",
+   "PALETTE STAIRS",
+   "PHOTO SPOT",
+   "COLORFUL ROOM",
+   "TASTE ZONE"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": 226,
+   "capacity_per_session": 21,
+   "giveaway_qty": null,
+   "area_sqm": null,
+   "planned_operating_days": 10,
+   "throughput_units": 6,
+   "unit_minutes": 6,
+   "operating_hours_per_day": 9,
+   "staff_count": 9,
+   "experience_density": 4,
+   "goods_scale": 1,
+   "photo_zones": 3,
+   "collab_strength": 1,
+   "ip_awareness": 3,
+   "target_breadth": 3,
+   "entry_friction": 3,
+   "media_push": 2,
+   "season_fit": 3,
+   "venue_prominence": 1
+  },
+  "attr_meta": {
+   "evidence": "운영계획안 '07.11~07.20(10일간)*7.10 가오픈', '11:00~20:00/18타임', '타임별 최대 21명'. 일일방문객 평일226·주말291명(총2,650). '상주인력 합계 9'. 체험용 바리스티나 블랙3+화이트3대, 1인당 6~7분",
+   "confidence": "high",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "성동구",
+   "venue_name": null,
+   "venue_type": "팝업스토어 단독 공간(1F~2F)",
+   "foot_traffic_context": "유동인구가 적은 골목, 성수 지역 특성상 월~금 방문객 유사, 운영 기간 중 지속적 강우로 유동인구 감소"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-07-10",
+   "to": "2025-07-20",
+   "days": 10
+  },
+  "season": "여름(장마철)",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 148,000,000원 (VAT 10% 별도). 기획료 10,000,000 + 제작비 84,420,000 + 인건비(설치철거+운영) 29,755,000 + 진행비 11,500,000 = 소계 135,675,000, 대행수수료 소계의 10% 12,567,500, NEGO -242,500 적용하여 총계 148,000,000. 견적서 4차(2025-07-23) 기준 | 계약서 미확인(2026-07-27 재독해 시도 — 대상 문서 부재/추출 실패): 총액은 견적 기준"
+  },
+  "brand_requirements": [
+   "앞치마 필립스 제공",
+   "8월 런칭 예정 바리스티나 프리미엄 신제품 DP 및 홍보",
+   "필립스 AI 상담사 수니 안내"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "유동인구 적은 성수 골목, 강우로 유동 감소"
+  },
+  "derived": {
+   "duration": {
+    "days": 11,
+    "weekend_share": 0.36,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 32,
+    "holiday_until": 36,
+    "holiday_block_in": 0,
+    "nat_event_gap": 37,
+    "nat_event": null,
+    "doc_lag_days": 3,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 3,
+    "comp_prior_at_venue": 71,
+    "comp_within_500m_open": 30,
+    "comp_within_1000m_open": 40,
+    "matched_address": "서울 성동구 연무장15길 11"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 35147081.0,
+    "pnl_pre_accounts": 5,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-06-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 60000,
+   "popup_zone_pass_rate": 0.05,
+   "host_traffic_est": 3000.0,
+   "venue_scale_tier": 2,
+   "confidence": "low",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2025-07-11",
+    "visitors": 88,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-07-12",
+    "visitors": 233,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-07-13",
+    "visitors": 150,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-07-14",
+    "visitors": 100,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-07-15",
+    "visitors": 158,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-07-16",
+    "visitors": 136,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-07-17",
+    "visitors": 138,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-07-18",
+    "visitors": 140,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-07-19",
+    "visitors": 233,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-07-20",
+    "visitors": 256,
+    "sales_krw": null
+   }
+  ],
+  "totals": {
+   "visitors": 1632,
+   "sales_krw": null,
+   "rev_mm_recognized": 148.0
+  },
+  "counting_method": "entry",
+  "counting_basis": "결과보고서 일자별 '방문자수' 컬럼(포터필터 찾기 완료·키링제작·제품구매와 별도 집계). 웨이팅 프로그램(번호 입력/타임별 입장) 기반 입장 관리",
+  "plan_visitors_expected": 2650,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(제품 구매는 2건. 포터필터 찾기 완료 1,164명, 키링 제작 869명. 원 KPI 2,650명이었으나 운영 타임을 1시간→30분 단위 조정 및 강우로 실측 1,632명. 보고서상 수정 KPI는 1,682명(평일 6일/주말 4일 재정의)). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 148.0 ≈ 계약총액 148.0",
+   "contract_total_mm": 148.0,
+   "last_recognition_period": "2025-07"
+  },
+  "label_trust": {
+   "grade": "A",
+   "flags": [],
+   "why": "일별 표가 기간의 100% 커버"
+  },
+  "label_scope": {
+   "label_from": "2025-07-11",
+   "label_to": "2025-07-20",
+   "label_active_days": 10,
+   "label_span_days": 10,
+   "label_contiguous": true,
+   "daily_sum": 1632,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-lwgclfHvazlxYTS5AXthnB-8A_CO1GO",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1-lwgclfHvazlxYTS5AXthnB-8A_CO1GO/view",
+   "title": "[Sweetspot]필립스 바리스티나_팝업스토어 운영계획안_250707_기획안.pdf"
+  },
+  {
+   "doc_id": "1JG4bolfz7dfy_aTTdonZjS5h837e-gLs",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1JG4bolfz7dfy_aTTdonZjS5h837e-gLs/view",
+   "title": "(Sweetspot) 필립스 바리스티나 팝업스토어_견적서_4차_250723.pdf"
+  },
+  {
+   "doc_id": "1LMYpWm-B58_F66KTvAUc00j5CZvEToVY",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1LMYpWm-B58_F66KTvAUc00j5CZvEToVY/view",
+   "title": "[Sweetspot]필립스 바리스티나 팝업스토어 결과보고서_250723.pdf"
+  },
+  {
+   "doc_id": "1WBrFiCl_H3RC_kgb3W90cvNr-KpVwQMf",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1WBrFiCl_H3RC_kgb3W90cvNr-KpVwQMf/view",
+   "title": "계약서.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 3건: [Sweetspot]필립스 바리스티나_팝업스토어 운영계, (Sweetspot) 필립스 바리스티나 팝업스토어_견적, [Sweetspot]필립스 바리스티나 팝업스토어 결과보. 미확실: 정확한 venue_name 및 상세 주소; area_pyeong(면적); 소비자 매출액(POS, sales_krw) - 구매 2건 금액 미기재; client_name 정식 법인명(스프링앤플라워로 추정)"
+ }
+}

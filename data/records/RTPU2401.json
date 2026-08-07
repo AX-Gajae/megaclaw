@@ -1,0 +1,185 @@
+{
+ "record_id": "RTPU2401",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:세가_용과같이8",
+  "space_id": "unresolved:미상",
+  "client_party_id": null,
+  "brand_key": "용과같이",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "세가 게임 신작 '용과같이8' 신작발표회 이벤트.",
+  "brand_name": "세가(SEGA) 용과같이8",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": null,
+   "area_sqm": null,
+   "planned_operating_days": null,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": null,
+   "experience_density": 2,
+   "goods_scale": 2,
+   "photo_zones": 2,
+   "collab_strength": 0,
+   "ip_awareness": 2,
+   "target_breadth": 0,
+   "entry_friction": 4,
+   "media_push": 2,
+   "season_fit": 2,
+   "venue_prominence": 2
+  },
+  "attr_meta": {
+   "evidence": "제안서는 '제안서_내용없음.txt'(빈 파일). 계약서 2건은 동일 문서(세가퍼블리싱코리아↔스위트스팟, 2024-01-16) — 제2조는 '계약 기간은 계약일로부터 2024년 2월 29일까지'로 계약기간일 뿐 운영일수 조항·회차표 없음 → planned_operating_days=null(period 1일은 베끼지 않음). 제3조 업무범위에 인력(MC·통역사) 섭외만 있고 인원수·수용인원·면적·운영시간 전부 미기재. 제4조 전체 예산 52,400,000원(VAT별도)이 유일한 수치. '유저초청회' 명칭에서 초청·사전신청형으로 보아 entry_friction 4, 게임 코어 팬덤 대상으로 target_breadth 0. 나머지 순서형은 근거 부재로 기본값 2.",
+   "confidence": "low",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "capacity": {
+   "access_type": "unknown",
+   "total_capacity": null,
+   "detail": ""
+  },
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-01-19",
+   "to": "2024-01-19",
+   "days": 1
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 0.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 18,
+    "holiday_until": 21,
+    "holiday_block_in": 0,
+    "nat_event_gap": 64,
+    "nat_event": null,
+    "doc_lag_days": 368,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2024-01-19",
+    "visitors": 136,
+    "sales_krw": null
+   }
+  ],
+  "totals": {
+   "visitors": 136,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "participation",
+  "counting_basis": "행사 참여 인원 통계(기자간담회30+유저초청회120)",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": null,
+   "last_recognition_period": null
+  },
+  "label_trust": {
+   "grade": "A",
+   "flags": [],
+   "why": "일별 표가 기간의 100% 커버"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "14XUP8S-pe_5c_NKEJEtisI-IhedIcKlC",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14XUP8S-pe_5c_NKEJEtisI-IhedIcKlC/view",
+   "title": "RTPU2401_세가 용과같이8 신작발표회_계약서_230116.doc"
+  },
+  {
+   "doc_id": "17M8jP_NcpuALutRwyXqccUYmEP6_Zg6l",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/17M8jP_NcpuALutRwyXqccUYmEP6_Zg6l/view",
+   "title": "RTPU2401_세가 용과같이8 신작발표회_계약서_230116.doc"
+  },
+  {
+   "doc_id": "1OWO_77jzd4HIlyDHDOT9mFEkCUmDvPiH",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1OWO_77jzd4HIlyDHDOT9mFEkCUmDvPiH/view",
+   "title": "RTPU2401_세가 용과같이8 신작발표회_견적서(추가비용)_240122.xlsx"
+  },
+  {
+   "doc_id": "1XUuPbjI5qJQnAYhck-RegUAoVxvAJ2N9",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1XUuPbjI5qJQnAYhck-RegUAoVxvAJ2N9/view",
+   "title": "RTPU2401_세가 용과같이8 신작발표회_견적서_241023.xlsx"
+  },
+  {
+   "doc_id": "1h6WP-d2Oqx00thex3CJMd3fxajo9u-uY",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1h6WP-d2Oqx00thex3CJMd3fxajo9u-uY/view",
+   "title": "RTPU2401_세가 용과같이8 신작발표회_결과보고서_0207.pptx"
+  },
+  {
+   "doc_id": "1iyBi_jTZKRunq2Qfn4FK6IcNAQVK6qcT",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1iyBi_jTZKRunq2Qfn4FK6IcNAQVK6qcT/view",
+   "title": "RTPU2401_세가 용과같이8 신작발표회_실행계획안_0116.pdf"
+  },
+  {
+   "doc_id": "1lMH9eCnm_Yne_0EGBVUXsKw5hNrxIrHm",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1lMH9eCnm_Yne_0EGBVUXsKw5hNrxIrHm/view",
+   "title": "제안서_내용없음.txt"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체 미제공; client_name; venue 정보 전체; category; 면적; 수수료구조; 방문자수 및 매출 실측; 컨셉·체험요소·프로모션 상세 | 라벨발굴(2026-07-24): 결과보고서 재추출 — slide12 고객 통계 - 행사 참여 인원 통계 표 (기자간담회 30명 + 유저초청회 120명, 단 VIP | 자극 보강(2026-07-24): 운영안·기획안·계약서 재인제스트로 intervention/conditions 교체 (605→619자, capacity=unknown). outcome·entities·period 보존"
+ }
+}

@@ -1,0 +1,71 @@
+{
+  "market_record_id": "MKT-2026-0037",
+  "event_name": "와이오와이(yoyoyoy) 더현대서울 팝업스토어",
+  "brand": "와이오와이(yoyoyoy)",
+  "ip_or_collab": null,
+  "category": "fashion",
+  "intervention": {
+    "concept_description": "플리츠 패션 브랜드 팝업. MZ세대 플리츠 선호 고객 타깃",
+    "experience_elements": [
+      "플리츠 패션 상품 판매"
+    ],
+    "promotions": [
+      "세일가 판매"
+    ],
+    "is_free_entry": null,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "더현대서울 B2 웨스트 팝업존",
+    "venue_type": "department_store",
+    "neighborhood": "여의도",
+    "city": "서울",
+    "period_from": "2026-05-28",
+    "period_to": "2026-06-03",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 7,
+        "weekend_share": 0.29,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 7,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "브랜드 측 발표 인용 '플리츠 패션 브랜드 와이오와이(yoyoyoy)가 서울 여의도 더현대서울에서 진행한 팝업스토어를 성공적으로 마무리하며 7일간 8천만원의 매출을 기록했다'",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": 80000000,
+    "sales_source_quote": "플리츠 패션 브랜드 와이오와이(yoyoyoy)가 서울 여의도 더현대서울에서 진행한 팝업스토어를 성공적으로 마무리하며 7일간 8천만원의 매출을 기록했다. 정상가 기준으로 환산하면 1억원을 웃도는 실적으로 평가되며, 플리츠 패션 시장에서 브랜드 경쟁력을 다시 한번 입증했다.",
+    "sales_source_url": "https://www.peoplegate.co.kr/2026/06/news-yoyoyoy-thehyundai-seoul-popupstore-80million-sales.html",
+    "sales_source_date": "2026-06-04",
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": []
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "세일가 기준 8천만원, 정상가 기준 1억원+ (alt 기준은 본문에 명시). 매출 3종 세트 확보 | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {
+    "sales": "quote_only"
+  },
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

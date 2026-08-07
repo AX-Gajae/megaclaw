@@ -1,0 +1,97 @@
+{
+ "market_record_id": "MKT-2025-0088",
+ "event_name": "롯데리아 '맛의 해커, 리아' 서교동 팝업스토어",
+ "brand": "롯데리아(롯데GRS)",
+ "ip_or_collab": "'맛의 해커로부터 온 초대' 추리·해킹 콘셉트, 전년 '리아's 버거 아트 뮤지엄' 후속 시리즈",
+ "category": "fnb",
+ "intervention": {
+  "concept_description": "해커의 정체를 찾는 스토리형 미션 팝업. 미션 수행과 함께 팝업 한정 버거·굿즈 체험",
+  "experience_elements": [
+   "데이터 보관소(재료 스티커 수집 미션)",
+   "해커의 역작(레전드 버거 투표)",
+   "해커의 노트북(스크린 서치·방화벽 해제 게임)",
+   "키링·디폼 블록 굿즈 공방",
+   "테이스티 트럭(한정 메뉴 불새버거·오새버거 제공)",
+   "루프탑 아지트(인디밴드 공연)"
+  ],
+  "promotions": [
+   "미션 완료 고객 한정 버거 시식 제공"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "서울 마포구 서교동(팝업 공간, 루프탑 포함)",
+  "venue_type": "street_standalone",
+  "neighborhood": "서교동(홍대)",
+  "city": "서울",
+  "period_from": "2025-09-12",
+  "period_to": "2025-09-28",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  },
+  "derived": {
+   "duration": {
+    "days": 17,
+    "weekend_share": 0.35,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 20000,
+  "visitors_period_days": 17,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "롯데GRS가 10월 2일 밝힌 17일간 총 누적 방문객('2만여 명')을 언론 전재",
+  "visitors_source_quote": "MZ세대 고객을 비롯해 주말 나들이객, 외국인 관광객 등 행사 기간 17일간 누적 방문객 수는 2만여 명에 달했다.",
+  "visitors_source_url": "https://www.newsis.com/view/NISX20251002_0003353566",
+  "visitors_source_date": "2025-10-02",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "키링 만들기, 포토존 촬영 등의 프로그램도 높은 참여율을 달성했다.(로이슈)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "뉴시스·빅데이터뉴스·로이슈 동일(2025-10-02). 2024년 성수 팝업(2만)에 이은 2년 연속 시리즈 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

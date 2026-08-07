@@ -1,0 +1,147 @@
+{
+ "record_id": "RTPU2589",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:서울디자인재단_DDP_영디자이너",
+  "space_id": "unresolved:DDP_디자인스토어_중간매대",
+  "client_party_id": "unresolved:서울디자인재단",
+  "brand_key": "서울디자인재단",
+  "space_key": "DDP"
+ },
+ "intervention": {
+  "concept": "DDP the NEXT 영디자이너 굿즈 챌린지 공모전에서 선정된 9팀의 굿즈를 DDP 디자인스토어 내 중간 매대에서 판매하는 온·오프라인 팝업 프로모션. 순위경쟁이 아닌 대중 참여형 챌린지 마켓을 지향하며, 현장 펀딩(스티커)으로 BEST 제품을 반영하는 참여형 프로그램을 운영. 버비작가 키비주얼 기반의 크리스마스 연출과 SNS 콘텐츠 홍보를 병행.",
+  "brand_name": "DDP the NEXT 영디자이너 굿즈 스테이지",
+  "experience_elements": [
+   "9팀 영디자이너 굿즈 판매 매대",
+   "펀딩보드+스티커 참여형 펀딩 프로그램",
+   "인형뽑기 기계 형태 포멕스 연출",
+   "크리스마스 목재 DP 소품/미니 트리/화분 연출",
+   "3단 분할 행잉배너",
+   "허니콤보드 스탠딩 배너",
+   "작가 인터뷰/프리뷰 SNS 콘텐츠"
+  ],
+  "promotions": [
+   "영디 굿즈 10% 할인",
+   "1만 원 이상 구매 시 한정판 엽서 증정",
+   "3만 원 이상 구매 시 오이뮤xDDP 콜라보 노방백 파우치 증정(일 한정 수량)"
+  ],
+  "staging_tags": [
+   "크리스마스",
+   "버비작가 키비주얼",
+   "펀딩보드",
+   "인형뽑기 포멕스",
+   "허니콤보드",
+   "목재 DP 소품"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "동대문",
+   "venue_name": "DDP 디자인스토어",
+   "venue_type": "디자인 편집숍 내 중간 매대",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-12-01",
+   "to": "2025-12-26",
+   "days": 26
+  },
+  "season": "겨울(크리스마스)",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "견적서상 정가항목(기획료 등) 소계에 대행수수료 소계의 10%(정가 항목 제외) + VAT 별도. 구체 계약 총액/분할 금액은 원문에 숫자 미기재."
+  },
+  "brand_requirements": [
+   "DDP 디자인스토어 인스타그램(@ddpdesignstore) 활용",
+   "운영시간 10:10~20:00",
+   "26일 오전 철거 및 공간 원복",
+   "매대 원복 위해 마킹테이프 보양 작업"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "DDP 디자인스토어 내 중간 매대"
+  },
+  "derived": {
+   "duration": {
+    "days": 26,
+    "weekend_share": 0.23,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 53,
+    "holiday_until": 75,
+    "holiday_block_in": 0,
+    "nat_event_gap": 18,
+    "nat_event": null,
+    "doc_lag_days": 5,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": "결과보고서에 오프라인 방문자·POS 매출 표가 없음. SNS 피드/릴스 조회수(피드 57,593 / 릴스 27,103) 등 온라인 지표만 존재.",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서는 SNS 콘텐츠 성과(조회·좋아요·저장·공유)와 현장 사진 위주이며 실측 방문자수·매출 데이터가 없음. 온라인 조회수는 방문자로 볼 수 없어 미기재.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": null,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1A4e872_9bJzUWwgFMKiro7K_9jNkCVw9",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1A4e872_9bJzUWwgFMKiro7K_9jNkCVw9/view",
+   "title": "[sweetspot] DDP the NEXT 영디자이너 굿즈 스테이지_온오프라인 운영계획안_251126_제안서.pdf"
+  },
+  {
+   "doc_id": "1OMa8kze-qM3roAWb6cz_NBhqDKJYBuA3",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1OMa8kze-qM3roAWb6cz_NBhqDKJYBuA3/view",
+   "title": "계약서 없음.txt"
+  },
+  {
+   "doc_id": "1QpXHWZuoOT-GY_HsedxjWUl5GLrjMUCO",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1QpXHWZuoOT-GY_HsedxjWUl5GLrjMUCO/view",
+   "title": "(sweetspot) 서울디자인재단 영디자이너챌린지_ 견적서_ 20251125.xlsx"
+  },
+  {
+   "doc_id": "1a13RxsvS8G-jWOPvscaLRS9Swm04VRt1",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1a13RxsvS8G-jWOPvscaLRS9Swm04VRt1/view",
+   "title": "[sweetspot] DDP the NEXT 영디자이너 굿즈 스테이지_온오프라인 결과보고서_251216 .pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: [sweetspot] DDP the NEXT 영디자이너, (sweetspot) 서울디자인재단 영디자이너챌린지_ , [sweetspot] DDP the NEXT 영디자이너. 미확실: 오프라인 방문자수 데이터 없음; POS 소비자 매출 데이터 없음; 계약 총액/선금·잔금 분할 금액 미기재(견적서 숫자 비어있음); 면적(평) 미기재; 기획서상 예상 방문 인원 미기재; 운영기간 제안서 12/1~12/15 vs 결과보고서 12/1~12/26 상이(결과 기준 채택)"
+ }
+}

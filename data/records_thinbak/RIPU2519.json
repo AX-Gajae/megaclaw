@@ -1,0 +1,110 @@
+{
+  "record_id": "RIPU2519",
+  "schema_version": "0.1",
+  "entities": {
+    "brand_id": "unresolved:네이버페이",
+    "space_id": "unresolved:미상",
+    "client_party_id": null,
+    "brand_key": "네이버페이",
+    "space_key": "미상"
+  },
+  "intervention": {
+    "concept": "네이버페이 전시부스. 상세 원문 문서가 제공되지 않아 컨셉·체험요소·프로모션 정보를 확인할 수 없음.",
+    "brand_name": "네이버페이",
+    "experience_elements": [],
+    "promotions": [],
+    "staging_tags": []
+  },
+  "conditions": {
+    "location": {
+      "city": null,
+      "district": null,
+      "venue_name": null,
+      "venue_type": null,
+      "foot_traffic_context": null
+    },
+    "area_pyeong": null,
+    "period": {
+      "from": "2025-11-19",
+      "to": "2025-11-22",
+      "days": 4
+    },
+    "season": "가을",
+    "fee_structure": {
+      "type": "unknown",
+      "detail": ""
+    },
+    "brand_requirements": [],
+    "scale": {
+      "store_count": 1,
+      "venue_traffic_type": "host_venue",
+      "host_traffic_note": "전시(박람회) 부스"
+    }
+  },
+  "outcome": {
+    "daily": [
+      {
+        "date": "2025-11-19",
+        "visitors": 4468,
+        "sales_krw": null
+      },
+      {
+        "date": "2025-11-20",
+        "visitors": 7462,
+        "sales_krw": null
+      },
+      {
+        "date": "2025-11-21",
+        "visitors": 9461,
+        "sales_krw": null
+      },
+      {
+        "date": "2025-11-22",
+        "visitors": 7310,
+        "sales_krw": null
+      }
+    ],
+    "totals": {
+      "visitors": 28701,
+      "sales_krw": null,
+      "rev_mm_recognized": 474.0
+    },
+    "counting_method": "participation",
+    "counting_basis": "합산 방문객(각 존 체험 합산)",
+    "plan_visitors_expected": null,
+    "retention": null,
+    "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+    "rev_mm_completion": {
+      "status": "complete",
+      "rule": "운영종료 2025-11, 스냅샷까지 2개월+ (시간 규칙)",
+      "contract_total_mm": null,
+      "last_recognition_period": "2025-12"
+    }
+  },
+  "docs": [
+    {
+      "doc_id": "11koufHQYTuugEzJXRXfAI4Lvw2aJiV2N",
+      "kind": "계약서",
+      "uri": "https://drive.google.com/file/d/11koufHQYTuugEzJXRXfAI4Lvw2aJiV2N/view",
+      "title": "네이버페이 커넥트 개별계약서&견적서.pdf"
+    },
+    {
+      "doc_id": "1eN_Bc8b0vJIjpY-F5YX80nDK1QZ9DhhC",
+      "kind": "운영일지",
+      "uri": "https://drive.google.com/file/d/1eN_Bc8b0vJIjpY-F5YX80nDK1QZ9DhhC/view",
+      "title": "[SweetSpot] N페이 커넥트_결과보고서_1203.pdf"
+    },
+    {
+      "doc_id": "1y2Fhs6Q_tjBhnp4AqaRA2ukJljsTyQrz",
+      "kind": "기획서",
+      "uri": "https://drive.google.com/file/d/1y2Fhs6Q_tjBhnp4AqaRA2ukJljsTyQrz/view",
+      "title": "[SweetSpot] N페이 커넥트_Proposal_0918.pdf"
+    }
+  ],
+  "provenance": {
+    "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+    "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+    "extracted_at": "2026-07-23",
+    "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체 부재; 입지/면적/수수료구조/요구사항 정보 없음; 방문객·매출 실측 데이터 없음; 컨셉·체험요소·프로모션 상세 없음; 전시부스 성격(팝업스토어 여부 불명확) | 라벨발굴(2026-07-24): 결과보고서 재추출 — 슬라이드8 '결과 KPI' 일자별 합산 방문객 표, 슬라이드11 총 누적 28,701명"
+  }
+}

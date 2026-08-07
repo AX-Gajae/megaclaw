@@ -1,0 +1,84 @@
+{
+ "market_record_id": "MKT-2023-0006",
+ "event_name": "영탁 팝업스토어(더현대 서울)",
+ "brand": "영탁(트로트 가수)",
+ "ip_or_collab": "영탁",
+ "category": "entertainment",
+ "intervention": {
+  "concept_description": "트로트 가수 영탁의 팝업스토어. 지방 팬들이 관광버스를 대절해 방문할 정도로 팬덤 집객",
+  "experience_elements": [
+   "굿즈 판매"
+  ],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "더현대 서울",
+  "venue_type": "department_store",
+  "neighborhood": "여의도",
+  "city": "서울",
+  "period_from": "2023-02-25",
+  "period_to": "2023-03-09",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 13,
+    "weekend_share": 0.31,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 15000,
+  "visitors_period_days": 14,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "현대백화점에 따르면(27일) '2월25일부터 2주 동안 열린 트로트 가수 영탁의 팝업스토어에도 1만5천 명가량이 방문했다'. 소속사(밀라그로) 보도자료도 '약 1만 5000명의 관객을 동원' 확인(시사줌뉴스 2023-03-10)",
+  "visitors_source_quote": "지난 2월 25일부터 3월 9일까지 여의도에 위치한 '더 현대 서울' 지하 1층 대행사장에서 진행된 영탁의 오프라인 팝업스토어... 'YOUNGTAK POP-UP STORE 'TAKs STUDIO'는 오픈 기간 동안 약 1만 5000명의 관객을 동원, 약 9억원의 총매출을 기록하며 성황리에 마무리됐다.",
+  "visitors_source_url": "http://www.sisazoom.co.kr/30052",
+  "visitors_source_date": "2023-03-10",
+  "sales_krw": 900000000,
+  "sales_source_quote": "'YOUNGTAK POP-UP STORE 'TAKs STUDIO'는 오픈 기간 동안 약 1만 5000명의 관객을 동원, 약 9억원의 총매출을 기록하며 성황리에 마무리됐다.",
+  "sales_source_url": "http://www.sisazoom.co.kr/30052",
+  "sales_source_date": "2023-03-10",
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": true,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "기간 2023-02-25~03-09(보도자료). 소속사 보도자료 3종 세트 + 비즈니스포스트(2023-06-28) 동일 수치 교차 확인. 지방 팬 관광버스 대절, 하루 입장 인원 제한 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified",
+  "sales": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

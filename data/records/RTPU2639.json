@@ -1,0 +1,136 @@
+{
+ "record_id": "RTPU2639",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:대교_써밋_스타런",
+  "space_id": "unresolved:서울_공연장_미확정",
+  "client_party_id": "unresolved:대교_교육기업",
+  "brand_key": "대교",
+  "space_key": "서울_공연장"
+ },
+ "intervention": {
+  "concept": "아이돌 그룹 TWS를 활용한 대교 '써밋(SUMMIT)'·'스타런' 학습 브랜드 프로모션 오프라인 팬미팅. 2026-08-22 서울 소재 공연장에서 단일일 개최 예정. 팬미팅 프로그램과 스타런 응원템 전시존을 함께 운영.",
+  "brand_name": "대교 써밋·스타런 (TWS 팬미팅)",
+  "experience_elements": [
+   "TWS 팬미팅 프로그램",
+   "스타런 응원템 전시존"
+  ],
+  "promotions": [
+   "굿즈 5회차 구성",
+   "6회차 굿즈 9월 초 입고 예정"
+  ],
+  "staging_tags": [
+   "연출",
+   "운영",
+   "팬미팅",
+   "응원템전시존",
+   "테이블·집기 렌탈"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": null,
+   "venue_name": null,
+   "venue_type": "공연장",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2026-08-22",
+   "to": "2026-08-22",
+   "days": 1
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "노션 확정 예산 50,000,000원(VAT별도). 노션 formula 이윤 50,000,000/수익률 1. 시드 P&L(2026 1~5월): 매출 27.3백만원, 순이익 26.9백만원. 아마란스 project_amount·contractor_code 공란(미확정). 선금/중도금/잔금 분할·수수료율 정보 없음."
+  },
+  "brand_requirements": [
+   "테이블·집기 렌탈 필요(응원템 전시존)"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 1.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 5,
+    "holiday_until": 33,
+    "holiday_block_in": 0,
+    "nat_event_gap": 80,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 327636.0,
+    "pnl_pre_accounts": 3,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2026-04-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 27.3
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(미래 행사(2026-08-22)로 방문객·티켓 판매 실적 없음. 결과보고서 부재.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "partial",
+   "rule": "인식 27.3 < 총액 50.0의 90%",
+   "contract_total_mm": 50.0,
+   "last_recognition_period": "2026-05"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "notion-0",
+   "kind": "기획서",
+   "uri": "https://app.notion.com/p/TWS-33d8e34fcdb2806fb361e4099f1940c6",
+   "title": "대교 써밋 스타런 TWS 오프라인 팬미팅"
+  },
+  {
+   "doc_id": "notion-1",
+   "kind": "기획서",
+   "uri": "https://app.notion.com/p/TWS-37b8e34fcdb2812aa3c7ec442ed7fcb2",
+   "title": "대교 써밋 스타런 TWS 오프라인 팬미팅"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "전향 자동투입(미검수)",
+  "extracted_at": "2026-07-24",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 0건: . 미확실: 구체 공연장명·주소 미확정; 대교 클라이언트 담당자 정보 없음; 외주(굿즈·렌탈·촬영) 미특정; 노션 예산(5천만) vs P&L(27.3/26.9백만) 관계 미확인; 방문객·매출 실적 없음(미래 행사); 아마란스 금액·계약처 공란; 예상 방문객수(plan_visitors_expected) 미기재; 수수료 구조·분할 조건 미상; Sophy 미등록·슬랙 대화 전무 | 전향 리서치 기반(계약 전 단계) — Drive 원문 태깅 후 재정규화 대상"
+ }
+}

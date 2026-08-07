@@ -1,0 +1,509 @@
+{
+ "record_id": "RCPU2560",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:진도곱창김",
+  "space_id": "unresolved:성수",
+  "client_party_id": null,
+  "brand_key": "진도곱창김",
+  "space_key": "성수"
+ },
+ "intervention": {
+  "concept": "진도곱창김 성수 팝업스토어. 원문 문서가 제공되지 않아 구체적 컨셉을 확인할 수 없음.",
+  "brand_name": "진도곱창김",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": 3200,
+   "area_sqm": null,
+   "planned_operating_days": null,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": null,
+   "experience_density": 2,
+   "goods_scale": 1,
+   "photo_zones": 2,
+   "collab_strength": 0,
+   "ip_awareness": 1,
+   "target_breadth": 2,
+   "entry_friction": 2,
+   "media_push": 2,
+   "season_fit": 2,
+   "venue_prominence": 2
+  },
+  "attr_meta": {
+   "evidence": "제공된 문서는 굿즈제작 계약/견적(콘콘 251110)과 그래픽 외주계약(스튜디오btf)뿐. 굿즈 견적서: 스포츠 파일양말 3,200개, 스포츠용 헤어밴드 3,200개(실크인쇄 블랙2,500/화이트700), 총 20,801,000원 → giveaway_qty 3,200(2종 각 3,200). 운영기간 조항·회차표·면적·인력·운영시간이 담긴 운영 견적서나 계약서가 목록에 없어 나머지 수치는 null. 자체 신규 캐릭터(테토김·에겐밥) 개발 건이라 외부 IP 콜라보 아님(collab 0, ip_awareness 1).",
+   "confidence": "low",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": "성수",
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-12-12",
+   "to": "2025-12-14",
+   "days": 3
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.67,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 64,
+    "holiday_until": 64,
+    "holiday_block_in": 0,
+    "nat_event_gap": 29,
+    "nat_event": null,
+    "doc_lag_days": 32,
+    "doc_dates_found": 5
+   },
+   "competition": {
+    "comp_same_addr_open": 2,
+    "comp_prior_at_venue": 107,
+    "comp_within_500m_open": 28,
+    "comp_within_1000m_open": 35,
+    "matched_address": "서울 성동구 연무장15길 11"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 36027394.0,
+    "pnl_pre_accounts": 11,
+    "pnl_pre_months": 3,
+    "pnl_pre_first": "2025-09-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 60000,
+   "popup_zone_pass_rate": 0.05,
+   "host_traffic_est": 3000.0,
+   "venue_scale_tier": 2,
+   "confidence": "low",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": 6000,
+   "sales_krw": null,
+   "rev_mm_recognized": 120.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": "원문 표현 '약 6000명의 방문객'. 3일간 누계이며 '하루 평균 2000여 명의 방문객이 찾으며'로 일평균이 함께 제시됨. 입장 게이트 카운트인지 추산인지는 기사에 명시 없고 주최(진도군) 발표 기반 보도.",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "방문: 역검색 외부 보도 — http://v.daum.net/v/20251219085543345 (2025-12-19) | 인용: 서울 성수동에서 열린 '진도 곱창김 팝업스토어'가 약 6000명의 방문객을 끌어모으며 성황리에 마무리됐다.",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-12, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-12"
+  },
+  "label_source": "external_press",
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "E"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "103gKFEBQ_Pc1z46Ued_SwCVxhVZRltTl",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/103gKFEBQ_Pc1z46Ued_SwCVxhVZRltTl/view",
+   "title": "★진도곱창김팝업 실비정리.xlsx"
+  },
+  {
+   "doc_id": "10gg-lMuOdmbPF_7hT4syUtj3F4ijBjXp",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/10gg-lMuOdmbPF_7hT4syUtj3F4ijBjXp/view",
+   "title": "굿즈제작 계약서_스위트스팟_양말, 헤어밴드_20251110.docx"
+  },
+  {
+   "doc_id": "10mGCoC-H80Bra1p7BGYNVu5O35BWeW1z",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/10mGCoC-H80Bra1p7BGYNVu5O35BWeW1z/view",
+   "title": "진도곱창김_결과보고서.pdf"
+  },
+  {
+   "doc_id": "11DnGvqXfc-e3kFR1mBR8F05Rk2Z8BDop",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/11DnGvqXfc-e3kFR1mBR8F05Rk2Z8BDop/view",
+   "title": "견적서_금하암스트롱_진도곱창김팝업 집기제작건.jpg"
+  },
+  {
+   "doc_id": "11gAFjiiIo07C7YXoCUtkGhL96jQji90t",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/11gAFjiiIo07C7YXoCUtkGhL96jQji90t/view",
+   "title": "1103_진도곱창김 팝업_사이클스템퍼 견적요청.pptx"
+  },
+  {
+   "doc_id": "129SzVoe4KYpvSp_UVJfKGmiKaHwlcTBz",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/129SzVoe4KYpvSp_UVJfKGmiKaHwlcTBz/view",
+   "title": "btf스튜디오 간이사업자.jpg"
+  },
+  {
+   "doc_id": "14vMMs6t5xWt25mdv9KF3PIFR7f5mFfoH",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/14vMMs6t5xWt25mdv9KF3PIFR7f5mFfoH/view",
+   "title": "1103_진도곱창김팝업 렌탈문의.pptx"
+  },
+  {
+   "doc_id": "14vwlMdL1I9t0Gdj_4Hf3cuLyN5v4NHGG",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/14vwlMdL1I9t0Gdj_4Hf3cuLyN5v4NHGG/view",
+   "title": "1106_진도곱창김 팝업 1차 그래픽 시공견적.xls"
+  },
+  {
+   "doc_id": "16XOJz2Q2t4lEl6Hm5jHgePFUef4mncFI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/16XOJz2Q2t4lEl6Hm5jHgePFUef4mncFI/view",
+   "title": "현대드림애드 사업자등록증.jpg"
+  },
+  {
+   "doc_id": "16qzxpsrylowyIkZHowUlCy2aPpJKr_fm",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/16qzxpsrylowyIkZHowUlCy2aPpJKr_fm/view",
+   "title": "1124 진도곱창김 가구제작건 재견적요청.pptx"
+  },
+  {
+   "doc_id": "17YKrqCyAGpzBoEbQNzvlU99s_CRtZ9nQ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17YKrqCyAGpzBoEbQNzvlU99s_CRtZ9nQ/view",
+   "title": "세금계산서_현대드림애드_성수동 진도곱창김팝업 그래픽시공건.JPG"
+  },
+  {
+   "doc_id": "182QnW6G-ctBlFTZ4GG3iWCuosvcUrKJi",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/182QnW6G-ctBlFTZ4GG3iWCuosvcUrKJi/view",
+   "title": "견적서_btf스튜디오_진도곱창김 그래픽개발건.pdf"
+  },
+  {
+   "doc_id": "18p_x02FA0ORUQYO-2MDTJdlRZSDVZ1zg",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/18p_x02FA0ORUQYO-2MDTJdlRZSDVZ1zg/view",
+   "title": "진도김_밸류포인트_최종견적서_1027.pdf"
+  },
+  {
+   "doc_id": "19-tpA8PbH8fWvnSAgQ10PxzJB99jqxyN",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19-tpA8PbH8fWvnSAgQ10PxzJB99jqxyN/view",
+   "title": "견적서_이벤툴_진도곱창김팝업 자전거스텝퍼 렌탈건.xls"
+  },
+  {
+   "doc_id": "19KAOY2v1Vc1RD2p5fhpERqbBHMTi1QZB",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19KAOY2v1Vc1RD2p5fhpERqbBHMTi1QZB/view",
+   "title": "1031_진도곱창김 팝업_그래픽시공 견적요청.pptx"
+  },
+  {
+   "doc_id": "1BNpFsJmBdfskgVFfqycOReswO02TrWT2",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1BNpFsJmBdfskgVFfqycOReswO02TrWT2/view",
+   "title": "허원회 (1).jpg"
+  },
+  {
+   "doc_id": "1BSkPnLO87b1tuCEL0vuCXhPssvO1ok94",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1BSkPnLO87b1tuCEL0vuCXhPssvO1ok94/view",
+   "title": "1031_진도곱창김 팝업_목가구제작 견적요청.pptx"
+  },
+  {
+   "doc_id": "1CVV0QMIFB_MM7POl5mK7FPbddfBRLNkM",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CVV0QMIFB_MM7POl5mK7FPbddfBRLNkM/view",
+   "title": "btf스튜디오 통장사본.jpg"
+  },
+  {
+   "doc_id": "1DTS8IkrIQ0I3HDn2fspNx2FuodA5lmmr",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1DTS8IkrIQ0I3HDn2fspNx2FuodA5lmmr/view",
+   "title": "업무계약서_스튜디오btf_진도곱창김팝업 그래픽 개발건(날인문서).pdf"
+  },
+  {
+   "doc_id": "1DfFK-nr_OBPPSLBBu-TK6g04cTu9tuQv",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DfFK-nr_OBPPSLBBu-TK6g04cTu9tuQv/view",
+   "title": "현금영수증_스튜디오비티에프_진도곱창김 그래픽 개발건(선금50%).pdf"
+  },
+  {
+   "doc_id": "1FiUFgOWRYTg4ogkh7u6U_lXv0PMuUsjC",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1FiUFgOWRYTg4ogkh7u6U_lXv0PMuUsjC/view",
+   "title": "업무계약서_스튜디오btf_진도곱창김팝업 그래픽 개발건.docx"
+  },
+  {
+   "doc_id": "1I_bCjc3dlS3ogwkYdFdHFXZ6p3Gnx4-8",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1I_bCjc3dlS3ogwkYdFdHFXZ6p3Gnx4-8/view",
+   "title": "견적서_디자인알파_진도곱창김팝업 진도케틀벨제작건.xlsx"
+  },
+  {
+   "doc_id": "1JyoHlXRvfUrmDtDVYuaauhGU3h4pqcz8",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1JyoHlXRvfUrmDtDVYuaauhGU3h4pqcz8/view",
+   "title": "진도곱창김팝업 세팅 알바 정보.zip"
+  },
+  {
+   "doc_id": "1KWFMFqAw4m3Jr7js3mlePDX9HSKCvpGG",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1KWFMFqAw4m3Jr7js3mlePDX9HSKCvpGG/view",
+   "title": "1124 집기제작 견적요청 (1).png"
+  },
+  {
+   "doc_id": "1Q01CZEzPgB4r4MyiRkm2EiRABsDZZrbw",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Q01CZEzPgB4r4MyiRkm2EiRABsDZZrbw/view",
+   "title": "세금계산서_렌탈큐브_카운터2개 렌탈건.JPG"
+  },
+  {
+   "doc_id": "1QIbDbRiqvx3NI5dSfcybqpCcbyBFlI-3",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1QIbDbRiqvx3NI5dSfcybqpCcbyBFlI-3/view",
+   "title": "굿즈제작 계약서_스위트스팟_양말, 헤어밴드_20251110_전자계약 날인본.pdf"
+  },
+  {
+   "doc_id": "1QUJJbQ0h2t4fchEDIv_uAsd8jjYH28-q",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1QUJJbQ0h2t4fchEDIv_uAsd8jjYH28-q/view",
+   "title": "2번 싸이클모델.jpeg"
+  },
+  {
+   "doc_id": "1SHU_d4dEoNsDFN2lpoF5ds4WQlFIZYYX",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1SHU_d4dEoNsDFN2lpoF5ds4WQlFIZYYX/view",
+   "title": "견적서_21세기스포츠_진도곱창김팝업 자전거렌탈건.xlsx"
+  },
+  {
+   "doc_id": "1T5uwo1VEJ1BTEitrJeTAHSbNo9wNrxeo",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1T5uwo1VEJ1BTEitrJeTAHSbNo9wNrxeo/view",
+   "title": "이벤툴_사업자등록증.jpg"
+  },
+  {
+   "doc_id": "1TSDpUxnzmR_3Z7nKIolcNsSJk01khc2K",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1TSDpUxnzmR_3Z7nKIolcNsSJk01khc2K/view",
+   "title": "이벤툴 통장 사본 _ IBK 기업은행 (20240612).pdf"
+  },
+  {
+   "doc_id": "1TvXxN1AdXdP-3LFOV6KdNiwh0wk7TR9R",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1TvXxN1AdXdP-3LFOV6KdNiwh0wk7TR9R/view",
+   "title": "밸류포인트_선금보증보험 증권.pdf"
+  },
+  {
+   "doc_id": "1YlXb_Rvq4cJBbcMs8BsKCRXtSpSUSkmB",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1YlXb_Rvq4cJBbcMs8BsKCRXtSpSUSkmB/view",
+   "title": "★업무계약서_현대드림애드_성수동 진도곱창김팝업 시공건 날인본.pdf"
+  },
+  {
+   "doc_id": "1Z-1CX3ZDCzPI-t1_8CemWQ5w4ZuWeW0-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Z-1CX3ZDCzPI-t1_8CemWQ5w4ZuWeW0-/view",
+   "title": "견적서_현대드림애드_진도곱창김팝업 그래픽시공건.xls"
+  },
+  {
+   "doc_id": "1ZI4JyMmGUeogsAUv61YQRRiqssAKnlgo",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ZI4JyMmGUeogsAUv61YQRRiqssAKnlgo/view",
+   "title": "강한모 (2).jpg"
+  },
+  {
+   "doc_id": "1ZP-4VwvqbzrfwJ7ijwjlKpWO1W-S776Q",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ZP-4VwvqbzrfwJ7ijwjlKpWO1W-S776Q/view",
+   "title": "견적서_렌탈큐브_카운터2개 렌탈건.xlsx"
+  },
+  {
+   "doc_id": "1awYuOS7VrxK4tCWTR9AIoMg520k_EHa-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1awYuOS7VrxK4tCWTR9AIoMg520k_EHa-/view",
+   "title": "견적서_디자인알파_진도곱창김팝업 김바벨제작건.xlsx"
+  },
+  {
+   "doc_id": "1bUheth1Wd8KsH0nBUrbQqeS5OQtCOHn0",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1bUheth1Wd8KsH0nBUrbQqeS5OQtCOHn0/view",
+   "title": "현금영수증_스튜디오비티에프_진도곱창김 그래픽 개발건(잔금50%).pdf"
+  },
+  {
+   "doc_id": "1bdIBAY4bFT0vdMqxI37UzUTaBfGf6jz7",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1bdIBAY4bFT0vdMqxI37UzUTaBfGf6jz7/view",
+   "title": "21세기스포츠 국민은행 계좌번호.jpg"
+  },
+  {
+   "doc_id": "1dHBuNzQ215Wt0G7dKrP_QOLSiE0Pjkf5",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1dHBuNzQ215Wt0G7dKrP_QOLSiE0Pjkf5/view",
+   "title": "1215_진도곱창김팝업 세팅 알바채용_지급_요청.xlsx"
+  },
+  {
+   "doc_id": "1dYwPOtrXl9wbPEl6waoVNvuiIDY9r48K",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1dYwPOtrXl9wbPEl6waoVNvuiIDY9r48K/view",
+   "title": "강한모 (1).jpg"
+  },
+  {
+   "doc_id": "1d_umHRnFO8owgcA-Es3Trr2PC4gM8-6-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1d_umHRnFO8owgcA-Es3Trr2PC4gM8-6-/view",
+   "title": "세금계산서_금하암스트롱_진도곱창김팝업 집기제작건.JPG"
+  },
+  {
+   "doc_id": "1e8r37TfAktA7fndH9H1yFHPRSBEvl4hj",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1e8r37TfAktA7fndH9H1yFHPRSBEvl4hj/view",
+   "title": "현대드림애드 통장사본.jpg"
+  },
+  {
+   "doc_id": "1fybJ8jLGfx2XshxwRAQAiKjm3Y-xKnZL",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1fybJ8jLGfx2XshxwRAQAiKjm3Y-xKnZL/view",
+   "title": "1103_진도곱창김팝업_금속가구제작물 견적요청.pptx"
+  },
+  {
+   "doc_id": "1fz2fOBrlD3EHAlGs0woC2m3Lfb_lcoHn",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1fz2fOBrlD3EHAlGs0woC2m3Lfb_lcoHn/view",
+   "title": "진도곱창김 굿즈 수정 최종 251106.pdf"
+  },
+  {
+   "doc_id": "1gEcfrfXZCP3-uyKKpBy4fbk3uAUUHpzH",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1gEcfrfXZCP3-uyKKpBy4fbk3uAUUHpzH/view",
+   "title": "세금계산서_이벤툴_진도곱창김팝업 자전거스텝퍼 렌탈건.pdf"
+  },
+  {
+   "doc_id": "1hEeBYe_z8PWSWMrtI_-HLIPMrVOz24KF",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1hEeBYe_z8PWSWMrtI_-HLIPMrVOz24KF/view",
+   "title": "세금계산서_에이컴퍼니_진도곱창김팝업 난로렌탈.JPG"
+  },
+  {
+   "doc_id": "1jMu4_Mj81GYK8TvPHtA-b8ELZGCp_sEg",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1jMu4_Mj81GYK8TvPHtA-b8ELZGCp_sEg/view",
+   "title": "세금계산서_디자인알파_진도곱창김 팝업 바벨제작.JPG"
+  },
+  {
+   "doc_id": "1jTLdaRFSiHAZmU-ghaxifsFf8Cv5xmUs",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1jTLdaRFSiHAZmU-ghaxifsFf8Cv5xmUs/view",
+   "title": "견적서_에이렌탈_진도곱창김팝업 야외난로 렌탈건.xlsx"
+  },
+  {
+   "doc_id": "1mUrtAxvOZMu1S7BzEfujSNSbRLlc4HYr",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1mUrtAxvOZMu1S7BzEfujSNSbRLlc4HYr/view",
+   "title": "세금계산서_21세기스포츠_진도곱창김팝업 자전거렌탈건.JPG"
+  },
+  {
+   "doc_id": "1mXEReRnVS7NjcXR6hvrcHZRTZIS9ExLp",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1mXEReRnVS7NjcXR6hvrcHZRTZIS9ExLp/view",
+   "title": "견적서_스위트스팟_251110_양말, 헤어밴드_ver2.pdf"
+  },
+  {
+   "doc_id": "1qTHkxaKhFZnjFVBN-bXB8KNHcfxXB04S",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1qTHkxaKhFZnjFVBN-bXB8KNHcfxXB04S/view",
+   "title": "1124 집기제작 견적요청 (2).png"
+  },
+  {
+   "doc_id": "1r_mNFNnAakw9GujZviBoUd_ajDe0doZR",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1r_mNFNnAakw9GujZviBoUd_ajDe0doZR/view",
+   "title": "★업무계약서_현대드림애드_성수동 진도곱창김팝업 시공건.docx"
+  },
+  {
+   "doc_id": "1s5hoO9NcJnRNxuR0QHCiI1AvNMHWVgrC",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1s5hoO9NcJnRNxuR0QHCiI1AvNMHWVgrC/view",
+   "title": "세금계산서_디자인알파_진도곱창김 팝업 진도케틀벨제작건.JPG"
+  },
+  {
+   "doc_id": "1uHpoKJ_4jehlDKJKDxfjKA33-FeiIYpq",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1uHpoKJ_4jehlDKJKDxfjKA33-FeiIYpq/view",
+   "title": "가구제작건.skb"
+  },
+  {
+   "doc_id": "1umdV0eWcaUftWfpxbCs1sXLDlgKdFNAh",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1umdV0eWcaUftWfpxbCs1sXLDlgKdFNAh/view",
+   "title": "견적서_btf스튜디오_진도곱창김 그래픽개발건.pdf"
+  },
+  {
+   "doc_id": "1va2P7siHHi23xI7-wU0fLxz041lkTI5c",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1va2P7siHHi23xI7-wU0fLxz041lkTI5c/view",
+   "title": "허원회 (2).jpg"
+  },
+  {
+   "doc_id": "1wfLnvvvgFayiO_pxAg7uuMVXr0pN17HU",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1wfLnvvvgFayiO_pxAg7uuMVXr0pN17HU/view",
+   "title": "1103_진도곱창김 팝업_오브제 제작 견적문의.pptx"
+  },
+  {
+   "doc_id": "1xA_9iWrH8SFQVHqi4EN54fIQ4DUEMw7f",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1xA_9iWrH8SFQVHqi4EN54fIQ4DUEMw7f/view",
+   "title": "KB보험_진도곱창김_1212증서(스위트스팟).pdf"
+  },
+  {
+   "doc_id": "1y8laVUVRQQw0NXFm8iqeOE1R14z5nfYn",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1y8laVUVRQQw0NXFm8iqeOE1R14z5nfYn/view",
+   "title": "21세기스포츠 사업자사본.jpg"
+  },
+  {
+   "doc_id": "1yErDvjiO8mV_oyaW-TS-FHAWE_quK6_-",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1yErDvjiO8mV_oyaW-TS-FHAWE_quK6_-/view",
+   "title": "밸류포인트_진도곱창김 팝업스토어 운영계약서_서면계약 날인본.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체 미제공; client_name 미상; venue_name 미상; 면적 미상; 수수료구조 미상; 방문객·매출 실측 데이터 없음; 컨셉·체험요소·프로모션 정보 없음 | 외부 라벨 역검색(2026-07-27): 방문 라벨 충전 6000"
+ }
+}

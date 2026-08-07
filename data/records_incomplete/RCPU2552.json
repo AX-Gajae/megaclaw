@@ -1,0 +1,70 @@
+{
+  "record_id": "RCPU2552",
+  "schema_version": "0.1",
+  "entities": {
+    "brand_id": "unresolved:쿠쿠",
+    "space_id": "unresolved:신세계사이먼_여주",
+    "client_party_id": null
+  },
+  "intervention": {
+    "concept": "쿠쿠 브랜드의 신세계사이먼 여주(프리미엄 아울렛) 팝업스토어로 추정된다. 원문 문서가 제공되지 않아 세부 컨셉은 확인 불가.",
+    "brand_name": "쿠쿠",
+    "experience_elements": [],
+    "promotions": [],
+    "staging_tags": []
+  },
+  "conditions": {
+    "location": {
+      "city": "여주",
+      "district": null,
+      "venue_name": "신세계사이먼 여주 프리미엄 아울렛",
+      "venue_type": "프리미엄 아울렛",
+      "foot_traffic_context": null
+    },
+    "area_pyeong": null,
+    "period": {
+      "from": "",
+      "to": "",
+      "days": null
+    },
+    "season": null,
+    "fee_structure": {
+      "type": "unknown",
+      "detail": ""
+    },
+    "brand_requirements": []
+  },
+  "outcome": {
+    "daily": [],
+    "totals": {
+      "visitors": null,
+      "sales_krw": null,
+      "rev_mm_recognized": 10.9
+    },
+    "counting_method": "unknown",
+    "counting_basis": null,
+    "plan_visitors_expected": null,
+    "retention": null,
+    "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조"
+  },
+  "docs": [
+    {
+      "doc_id": "1EdCVRbBgJgWRC-uifin3KALpw4VVxaRu",
+      "kind": "운영일지",
+      "uri": "https://drive.google.com/file/d/1EdCVRbBgJgWRC-uifin3KALpw4VVxaRu/view",
+      "title": "쿠쿠 사이먼여주_결과보고서.pdf"
+    },
+    {
+      "doc_id": "1_IxY7SU3XZYmshA8rc8CG8YfL52msG4Y",
+      "kind": "정산",
+      "uri": "https://drive.google.com/file/d/1_IxY7SU3XZYmshA8rc8CG8YfL52msG4Y/view",
+      "title": "쿠쿠_에코웨일_사이먼여주_최종견적서_250918.pdf"
+    }
+  ],
+  "provenance": {
+    "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+    "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+    "extracted_at": "2026-07-23",
+    "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체 미제공; 운영 기간; 면적; 수수료 구조 및 계약금액; 컨셉 및 체험요소; 프로모션; 방문객 및 매출 실측 데이터; client_name/발주처"
+  }
+}

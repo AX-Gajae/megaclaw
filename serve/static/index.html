@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Foundation LLM</title>
+<link rel="icon" href="data:image/svg+xml,<svg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'><g fill='none' stroke='%23C2C0B6' stroke-width='12.5'><polyline points='29.4,20.9 50.0,9.0 85.5,29.5 85.5,70.5 74.9,76.7'/><polyline points='59.9,85.3 50.0,91.0 14.5,70.5 14.5,29.5 18.8,27.0'/></g><polygon points='50.0,33.0 64.7,41.5 64.7,58.5 50.0,67.0 35.3,58.5 35.3,41.5' fill='%23C2C0B6'/></svg>">
+<style>
+/* ── 팔레트: 붙여 준 코드의 토큰을 그대로 옮긴다 ───────────────────── */
+:root{
+  --page:#262624;        /* bg-[#262624] */
+  --card:#30302E;        /* bg-[#30302E] */
+  --serif-fg:#C2C0B6;    /* text-[#C2C0B6] */
+  --drop:#1C3F62;        /* bg-[#1C3F62] */
+  --zinc100:#f4f4f5; --zinc200:#e4e4e7; --zinc300:#d4d4d8; --zinc400:#a1a1aa;
+  --zinc500:#71717a; --zinc600:#52525b; --zinc700:#3f3f46; --zinc800:#27272a;
+  --n300:#d4d4d4; --n400:#a3a3a3; --n500:#737373; --n600:#525252;
+  --amber600:#d97706; --amber700:#b45309;
+  --blue300:#93c5fd; --blue400:#60a5fa; --blue500:#3b82f6;
+  --red400:#f87171; --red500:#ef4444;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  background:var(--page); color:var(--zinc100);
+  font:14px/1.6 ui-sans-serif,-apple-system,"Apple SD Gothic Neo","Segoe UI",sans-serif;
+  display:flex; justify-content:center; overflow:hidden;
+}
+
+/* ── 뼈대: 빈 상태는 **가운데**, 대화가 시작되면 위로 붙는다 ────────── */
+.wrap{width:100%;max-width:56rem;padding:0 1rem;min-height:0;
+      display:flex;flex-direction:column;justify-content:center}
+.wrap.started{justify-content:flex-start}
+
+header{text-align:center;flex-shrink:0;padding-bottom:1.75rem;
+       transition:padding .3s ease}
+.brand{display:flex;align-items:center;justify-content:center;gap:.65rem;
+  margin-bottom:1.15rem;color:var(--serif-fg)}
+.brand .mark{width:3.1rem;height:3.1rem;flex-shrink:0}
+header h1{font-family:ui-serif,Georgia,"Times New Roman",serif;
+          font-weight:300;font-size:1.875rem;color:var(--serif-fg);
+          letter-spacing:-.01em}
+header .sub{margin-top:.6rem;font-size:12px;color:var(--zinc500)}
+header .sub b{color:var(--zinc300);font-weight:500}
+.wrap.started header{padding:1.15rem 0 .8rem}
+.wrap.started header h1,.wrap.started header .sub{display:none}
+.wrap.started .brand{margin-bottom:0}
+.wrap.started .brand .mark{width:1.5rem;height:1.5rem;opacity:.75}
+
+/* 대화와 입력창 사이에 **딱 잘린 경계를 두지 않는다.**
+   ① 스크롤바를 없앤다  ② 위아래를 마스크로 흐린다  ③ 입력창 위에 스크림 */
+#log{overflow-y:auto;min-height:0;display:none;
+     flex-direction:column;gap:1.35rem;padding:.25rem 0 2.5rem;
+     scrollbar-width:none;-ms-overflow-style:none;
+     -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 22px,
+        #000 calc(100% - 56px),transparent 100%);
+     mask-image:linear-gradient(to bottom,transparent 0,#000 22px,
+        #000 calc(100% - 56px),transparent 100%)}
+#log::-webkit-scrollbar{width:0;height:0;display:none}
+.wrap.started #log{display:flex;flex:1}
+
+/* ── 시머 둘 ───────────────────────────────────────────────────────
+   ① ShiningText  --- 110deg · #404040 → #fff  (붙여 준 motion 컴포넌트)
+   ② ToolGroup    --- 90deg  · base #525252 → hi #a3a3a3 (dark 값)      */
+.shine{display:inline-block;background-clip:text;-webkit-background-clip:text;
+  color:transparent;background-repeat:no-repeat;background-size:200% 100%;
+  background-image:linear-gradient(110deg,#404040,35%,#fff,50%,#404040,75%,#404040);
+  animation:shine 2s linear infinite}
+@keyframes shine{from{background-position:200% 0}to{background-position:-200% 0}}
+
+.tgshine{display:inline-block;background-clip:text;-webkit-background-clip:text;
+  color:transparent;background-repeat:no-repeat;background-size:250% 100%;
+  background-image:linear-gradient(90deg,#525252 0%,#525252 40%,#a3a3a3 50%,
+                   #525252 60%,#525252 100%);
+  animation:tgshine 2s linear infinite}
+@keyframes tgshine{from{background-position:100% center}to{background-position:0% center}}
+
+@media (prefers-reduced-motion:reduce){
+  .shine,.tgshine{animation:none;color:var(--n400);background:none;
+                  -webkit-background-clip:initial;background-clip:initial}
+  .think svg animate{display:none}      /* 점 셋을 세운다 --- 자리는 남긴다 */
+  .spin,.caret{animation:none}
+}
+
+/* ── 용어 패널 ────────────────────────────────────────────────────── */
+.lnk{color:var(--zinc300);text-decoration:underline;text-underline-offset:3px;
+  font-size:12px;padding:0}
+.lnk:hover{color:var(--zinc100)}
+/* **항상 보이는 문.** 대화가 시작되면 머리말(.sub)이 감춰져 용어로 들어가는
+   길이 사라져 있었다 --- 실제로 쓸 때는 볼 수 없는 문이었다. */
+.chipbtn{height:2.25rem;padding:0 .7rem 0 .55rem;border-radius:.375rem;
+  display:flex;align-items:center;gap:.35rem;font-size:13px;color:var(--zinc400);
+  transition:background .12s,color .12s}
+.chipbtn:hover{color:var(--zinc100);background:var(--zinc700)}
+/* 답 안의 용어 --- 점선을 그어 뜻과 방향을 바로 보여 준다 */
+.gt{border-bottom:1px dotted var(--zinc500);cursor:help}
+.gt:hover{border-bottom-color:var(--zinc200);color:#fff}
+#gwrap{position:fixed;inset:0;z-index:100;display:none;
+  background:rgba(0,0,0,.55);backdrop-filter:blur(2px)}
+#gwrap.on{display:block}
+#gpanel{position:absolute;top:0;right:0;bottom:0;width:min(38rem,100%);
+  background:var(--card);border-left:1px solid var(--zinc700);
+  display:flex;flex-direction:column;box-shadow:-20px 0 40px rgba(0,0,0,.4)}
+#gpanel .ghead{display:flex;align-items:center;justify-content:space-between;
+  padding:1.1rem 1.25rem .9rem;border-bottom:1px solid var(--zinc700);flex-shrink:0}
+#gpanel .ghead h2{font-family:ui-serif,Georgia,serif;font-weight:300;
+  font-size:1.15rem;color:var(--serif-fg)}
+#gbody{overflow-y:auto;padding:1.1rem 1.25rem 2rem;display:flex;
+  flex-direction:column;gap:1.4rem}
+#gbody h3{font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--zinc500);margin-bottom:.55rem}
+.gterm{padding:.6rem 0;border-top:1px solid var(--zinc700)}
+.gterm:first-of-type{border-top:0}
+.gterm b{color:var(--zinc100);font-weight:600;display:block;margin-bottom:.15rem}
+.gterm span{color:var(--zinc300);font-size:13px;line-height:1.65}
+.gdir{display:grid;grid-template-columns:auto 1fr;gap:.35rem .8rem;
+  font-size:13px;align-items:baseline}
+.gdir code{background:var(--zinc800);border:1px solid var(--zinc700);
+  border-radius:.25rem;padding:.05rem .35rem;font-size:12px;color:var(--zinc200);
+  font-family:ui-monospace,Menlo,monospace;white-space:nowrap}
+.gdir .up{color:#7dd3a0}.gdir .dn{color:#f0a97d}.gdir .neu{color:var(--zinc400)}
+.gcap{border:1px solid var(--zinc700);border-radius:.55rem;padding:.65rem .8rem;
+  margin-bottom:.5rem}
+.gcap .top{display:flex;align-items:center;gap:.45rem;flex-wrap:wrap;
+  margin-bottom:.3rem}
+.gcap .top code{background:var(--zinc800);border:1px solid var(--zinc700);
+  border-radius:.25rem;padding:.05rem .35rem;font-size:12px;
+  font-family:ui-monospace,Menlo,monospace;color:var(--zinc100)}
+.gcap .tag{font-size:11px;padding:.1rem .4rem;border-radius:.25rem;
+  border:1px solid var(--zinc700);color:var(--zinc400)}
+.gcap .live{border-color:rgba(125,211,160,.4);color:#7dd3a0}
+.gcap .rec{border-color:rgba(240,169,125,.4);color:#f0a97d}
+.gcap .what{font-size:13px;color:var(--zinc300)}
+.gcap ul{margin:.4rem 0 0 1rem;padding:0}
+.gcap li{font-size:12px;color:var(--zinc400);margin:.15rem 0;
+  font-family:ui-monospace,Menlo,monospace}
+#gwarm{font-size:12px;color:var(--zinc400)}
+#gwarm b{color:var(--zinc200)}
+
+/* ── 도구 묶음(ToolGroup) ─────────────────────────────────────────── */
+.tg{width:100%}
+.tg>button{width:100%;display:flex;align-items:center;gap:.5rem;height:2rem;
+  text-align:left;font-size:14px;color:var(--n300);cursor:pointer;
+  background:none;border:0;font:inherit;padding:0}
+.tg>button:disabled{cursor:default}
+.tg .chev{width:.875rem;height:.875rem;flex-shrink:0;color:var(--n500);
+  transition:transform .18s ease}
+.tg.open .chev{transform:rotate(90deg)}
+.tg .hdr{flex-shrink:0}
+.tg .cnt{color:var(--n500);min-width:0;flex:1;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap}
+.tg .el{font-variant-numeric:tabular-nums;flex-shrink:0;color:var(--n500)}
+.tg .list{padding-left:1.25rem;display:none;flex-direction:column;gap:.25rem}
+.tg.open .list{display:flex}
+.tg .row{display:flex;align-items:center;gap:.5rem;height:1.75rem;
+  font-size:14px;color:var(--n300)}
+.tg .row svg{width:.875rem;height:.875rem;flex-shrink:0;color:var(--n400)}
+.tg .row.err svg,.tg .row.err .t{color:var(--red500)}
+.tg .row .t{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tg .row .s{color:var(--n500);overflow:hidden;text-overflow:ellipsis;
+  white-space:nowrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:12.5px}
+
+/* ── 대화 ─────────────────────────────────────────────────────────── */
+.turn{display:flex;flex-direction:column;gap:.45rem}
+.turn .who{font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+           color:var(--zinc500)}
+.turn.me{align-items:flex-end}
+.turn.me .bubble{background:var(--card);border:1px solid var(--zinc700);
+  border-radius:.75rem;padding:.7rem .95rem;max-width:85%;
+  white-space:pre-wrap;word-break:break-word}
+.turn.ai .bubble{max-width:100%;color:var(--zinc200)}
+.turn.ai .bubble>.body h3{font-size:14px;font-weight:600;color:var(--zinc100);
+  margin:.9rem 0 .3rem}
+.turn.ai .bubble>.body h3:first-child{margin-top:0}
+.turn.ai .bubble p{margin:.45rem 0}
+.turn.ai .bubble ul{margin:.45rem 0 .45rem 1.15rem}
+.turn.ai .bubble li{margin:.2rem 0}
+.turn.ai .bubble strong{color:var(--zinc100);font-weight:600}
+.turn.ai .bubble code{background:var(--zinc800);border:1px solid var(--zinc700);
+  border-radius:.25rem;padding:.05rem .3rem;font-size:12.5px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.turn.ai .bubble hr{border:0;border-top:1px solid var(--zinc700);margin:.9rem 0}
+/* 표 --- 좁은 창에서 **표만** 옆으로 구르고 본문은 안 구른다 */
+.turn.ai .bubble .tw{overflow-x:auto;margin:.65rem 0;
+  border:1px solid var(--zinc700);border-radius:.4rem}
+.turn.ai .bubble table{border-collapse:collapse;width:100%;font-size:12.5px;
+  font-variant-numeric:tabular-nums}
+.turn.ai .bubble th,.turn.ai .bubble td{padding:.36rem .6rem;
+  border-bottom:1px solid var(--zinc800);vertical-align:top;
+  white-space:normal;word-break:break-word}
+.turn.ai .bubble thead th{background:var(--zinc800);color:var(--zinc100);
+  font-weight:600;white-space:nowrap;position:sticky;top:0}
+.turn.ai .bubble tbody tr:last-child td{border-bottom:0}
+.turn.ai .bubble tbody tr:hover{background:rgba(255,255,255,.025)}
+.turn.ai .body{margin-top:.35rem}
+/* 스트리밍 --- 이번 프레임에 드러난 꼬리만 부드럽게 (ResponseStream 의
+   fade 를 바닐라로: 전체를 다시 그리되 마지막 텍스트 노드의 새 글자만 감싼다) */
+.tfade{animation:tfadein .22s ease-out}
+@keyframes tfadein{from{opacity:0;transform:translateY(1px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.tfade{animation:none}}
+.caret{display:inline-block;width:.5rem;height:1.05em;vertical-align:-.15em;
+  background:var(--zinc400);margin-left:.1rem;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* 생각 --- ShiningText */
+.think{display:flex;align-items:center;gap:.5rem;height:2rem;font-size:14px}
+.think .peek{color:var(--n500);font-size:12.5px;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0}
+
+.selfcheck{margin-top:.8rem;display:flex;gap:.5rem;align-items:flex-start;
+  background:rgba(180,83,9,.12);border:1px solid rgba(217,119,6,.4);
+  border-radius:.6rem;padding:.6rem .75rem;font-size:12.5px;color:#fcd34d}
+
+/* ── 입력 카드 ─────────────────────────────────────────────────────── */
+.composer{position:relative;width:100%;max-width:42rem;margin:0 auto;flex-shrink:0}
+.wrap.started .composer{margin-bottom:1.5rem}
+/* 입력창 위로 페이지색이 올라오는 스크림 --- 글이 카드 뒤로 사라지게 보인다 */
+.wrap.started .composer::before{content:"";position:absolute;left:-1rem;right:-1rem;
+  bottom:100%;height:4.5rem;pointer-events:none;
+  background:linear-gradient(to top,var(--page) 15%,transparent)}
+.card{background:var(--card);border:1px solid var(--zinc700);border-radius:.75rem;
+  box-shadow:0 10px 15px -3px rgba(0,0,0,.35);min-height:150px;
+  display:flex;flex-direction:column;align-items:flex-end;gap:.5rem}
+textarea{flex:1;min-height:100px;max-height:120px;width:100%;padding:1rem;
+  resize:none;border:0;outline:0;background:transparent;color:var(--zinc100);
+  font:inherit;font-size:15px}
+textarea::placeholder{color:var(--zinc500)}
+.bar{display:flex;align-items:center;justify-content:space-between;width:100%;
+  gap:.5rem;padding:0 .75rem .375rem}
+.bar .grp{display:flex;align-items:center;gap:.5rem}
+
+button{font:inherit;cursor:pointer;border:0;background:transparent;color:inherit}
+button:disabled{cursor:not-allowed}
+.icon{width:2.25rem;height:2.25rem;display:grid;place-items:center;
+  border-radius:.375rem;color:var(--zinc400);flex-shrink:0;
+  transition:background .12s,color .12s}
+.icon:hover:not(:disabled){color:var(--zinc200);background:var(--zinc700)}
+.icon:disabled{opacity:.45}
+.send{width:2.25rem;height:2.25rem;display:grid;place-items:center;
+  border-radius:.375rem;background:var(--zinc700);color:var(--zinc500);
+  transition:background .12s,color .12s}
+.send.on{background:var(--amber600);color:#fff}
+.send.on:hover{background:var(--amber700)}
+.send.stop{background:var(--zinc600);color:var(--zinc100)}
+
+.model{position:relative}
+.model>button{height:2.25rem;padding:0 .625rem;border-radius:.375rem;
+  display:flex;align-items:center;gap:.25rem;font-size:14px;font-weight:500;
+  color:var(--zinc300)}
+.model>button:hover{color:var(--zinc100);background:var(--zinc700)}
+.model .menu{position:absolute;bottom:100%;right:0;margin-bottom:.5rem;width:18rem;
+  background:var(--zinc800);border:1px solid var(--zinc700);border-radius:.5rem;
+  box-shadow:0 20px 25px -5px rgba(0,0,0,.5);z-index:20;padding:.5rem;display:none}
+.model .menu.open{display:block}
+.model .menu button{width:100%;text-align:left;padding:.625rem;border-radius:.375rem;
+  display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.model .menu button:hover,.model .menu button.sel{background:var(--zinc700)}
+.model .menu .nm{display:flex;align-items:center;gap:.5rem}
+.model .menu .nm b{color:var(--zinc100);font-weight:500}
+.model .menu .badge{padding:.125rem .375rem;font-size:11px;border-radius:.25rem;
+  background:rgba(59,130,246,.2);color:var(--blue300)}
+.model .menu .dsc{font-size:12px;color:var(--zinc400);margin-top:.125rem}
+.model .menu svg.chk{color:var(--blue400);flex-shrink:0}
+.rot{transform:rotate(180deg)}
+
+.strip{overflow-x:auto;border-top:1px solid var(--zinc700);padding:.75rem;width:100%;
+  background:var(--page);border-bottom-left-radius:.7rem;
+  border-bottom-right-radius:.7rem}
+.strip::-webkit-scrollbar{display:none}
+.strip .row{display:flex;gap:.75rem}
+.chip{position:relative;background:var(--zinc700);border:1px solid var(--zinc600);
+  border-radius:.5rem;width:125px;height:125px;flex-shrink:0;overflow:hidden;
+  box-shadow:0 4px 6px -1px rgba(0,0,0,.3)}
+.chip .txt{font-size:8px;line-height:1.35;color:var(--zinc300);padding:.75rem;
+  white-space:pre-wrap;word-break:break-word;max-height:100%;overflow:hidden}
+.chip img{width:100%;height:100%;object-fit:cover;display:block}
+.chip .ov{position:absolute;inset:0;padding:.5rem;display:flex;align-items:flex-end;
+  background:linear-gradient(to bottom,transparent,var(--card))}
+.chip .lbl{font-size:11px;background:var(--zinc800);border:1px solid var(--zinc700);
+  padding:.25rem .5rem;border-radius:.375rem;color:#fff;text-transform:capitalize}
+.chip .acts{position:absolute;top:.5rem;right:.5rem;display:flex;gap:.125rem;
+  opacity:0;transition:opacity .3s}
+.chip:hover .acts{opacity:1}
+.chip .acts button{width:1.5rem;height:1.5rem;display:grid;place-items:center;
+  border:1px solid var(--zinc600);border-radius:.375rem;background:var(--zinc800);
+  color:var(--zinc300)}
+.chip .acts button:hover{background:var(--zinc700)}
+.chip .st{position:absolute;top:.5rem;left:.5rem}
+
+.drop{position:absolute;inset:0;z-index:50;background:var(--drop);
+  border:2px dashed var(--blue500);border-radius:.75rem;display:none;
+  align-items:center;justify-content:center;pointer-events:none}
+.drop.on{display:flex}
+.drop span{font-size:14px;color:var(--blue500);display:flex;align-items:center;gap:.5rem}
+
+.spin{animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+textarea::-webkit-scrollbar{width:6px}
+textarea::-webkit-scrollbar-thumb{background:var(--zinc700);border-radius:3px}
+</style>
+</head>
+<body>
+<div id="gwrap"><div id="gpanel">
+  <div class="ghead"><h2>용어와 수치 읽는 법</h2>
+    <button class="icon" id="closeg" title="닫기">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button></div>
+  <div id="gbody"><div id="gwarm">불러오는 중…</div></div>
+</div></div>
+
+<div class="wrap" id="wrap">
+  <header>
+    <div class="brand"><svg class="mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="12.5"><polyline points="29.4,20.9 50.0,9.0 85.5,29.5 85.5,70.5 74.9,76.7"/><polyline points="59.9,85.3 50.0,91.0 14.5,70.5 14.5,29.5 18.8,27.0"/></g><polygon points="50.0,33.0 64.7,41.5 64.7,58.5 50.0,67.0 35.3,58.5 35.3,41.5" fill="currentColor"/></svg></div>
+    <h1 id="greet">무엇을 재 볼까요?</h1>
+    <div class="sub">IP 파운데이션 월드모델 · <b>순위와 확률만</b> 말합니다.
+      "관객 몇 명" 같은 절대값은 <b>안 냅니다</b> — 자릿수를 42% 확률로 틀리기 때문입니다.
+      <button class="lnk" id="openg">용어와 수치 읽는 법 →</button></div>
+  </header>
+
+  <div id="log"></div>
+
+  <div class="composer" id="composer">
+    <div class="drop" id="drop"><span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".5"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+      파일을 여기 놓으면 대화에 붙습니다</span></div>
+
+    <div class="card">
+      <textarea id="ta" rows="1" placeholder="만화 제목을 주거나, 이 모형이 못 하는 것을 물어보세요"></textarea>
+      <div class="bar">
+        <div class="grp">
+          <button class="icon" id="attach" title="파일 붙이기">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+          </button>
+          <button class="chipbtn" id="opts" title="용어와 수치 읽는 법">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            용어
+          </button>
+          <button class="icon" id="opts2" hidden title="옛 자리">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="21" x2="14" y1="4" y2="4"/><line x1="10" x2="3" y1="4" y2="4"/><line x1="21" x2="12" y1="12" y2="12"/><line x1="8" x2="3" y1="12" y2="12"/><line x1="21" x2="16" y1="20" y2="20"/><line x1="12" x2="3" y1="20" y2="20"/><line x1="14" x2="14" y1="2" y2="6"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="16" x2="16" y1="18" y2="22"/></svg>
+          </button>
+        </div>
+        <div class="grp">
+          <div class="model" id="model">
+            <button id="mbtn"><span id="mname">Claude Opus 4.8</span>
+              <svg id="mchev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="menu" id="mmenu"></div>
+          </div>
+          <button class="send" id="send" disabled title="보내기">
+            <svg id="sicon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="strip" id="strip" hidden><div class="row" id="striprow"></div></div>
+    </div>
+    <input type="file" id="fi" multiple hidden>
+  </div>
+</div>
+
+<script>
+"use strict";
+const MAX_FILES=10, MAX_FILE_SIZE=50*1024*1024, PASTE_THRESHOLD=200;
+/* auth 백엔드(`claude` CLI)는 **별칭**을 이해한다. 정식 이름을 넣으면 CLI 가
+   못 알아볼 수 있으므로 별칭으로 둔다 --- 빈 값이면 CLI 기본을 쓴다. */
+const MODELS=[
+  {id:"",       name:"기본 (Opus)",  description:"로그인 계정의 기본 모형", badge:"기본"},
+  {id:"opus",   name:"Opus",         description:"가장 센 모형"},
+  {id:"sonnet", name:"Sonnet",       description:"균형 · 더 빠름"},
+  {id:"haiku",  name:"Haiku",        description:"가장 빠름"},
+];
+let model=MODELS[0].id, files=[], pasted=[], busy=false, started=false, ctl=null;
+let session=null;   // **대화를 이어 준다** --- 서버가 준 session id 를 되돌려준다
+
+const $=s=>document.querySelector(s);
+const wrap=$("#wrap"), ta=$("#ta"), send=$("#send"), log=$("#log"),
+      strip=$("#strip"), striprow=$("#striprow"), fi=$("#fi"), drop=$("#drop");
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const uid=()=>(crypto.randomUUID?crypto.randomUUID():String(Date.now())+Math.random().toString(36).slice(2));
+const fmtSize=b=>{if(!b)return"0 Bytes";const k=1024,s=["Bytes","KB","MB","GB"],
+  i=Math.floor(Math.log(b)/Math.log(k));return parseFloat((b/Math.pow(k,i)).toFixed(2))+" "+s[i]};
+const SVG={
+  x:'<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>',
+  copy:'<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>',
+  spin:'<svg class="spin" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>',
+  /* 읽는 중 --- 점 셋(아래 `dots`)을 쓴다. 자를 둘로 두면 화면이 산만하다 */
+  warn:'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="flex-shrink:0;margin-top:2px"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>',
+  chev:'<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6l-6 6"/></svg>',
+  /* ToolGroup 갈래 아이콘 --- 붙여 준 컴포넌트의 셋 */
+  file:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"/></svg>',
+  search:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><path d="M21 21l-6 -6"/></svg>',
+  command:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 7l5 5l-5 5"/><path d="M12 19h7"/></svg>',
+};
+/* ── 점 셋 로딩(MessageLoading) ────────────────────────────────
+   SMIL 이 `begin="A.begin+0.1s"` 로 **ID 를 참조**하므로 인스턴스가 둘 이상
+   DOM 에 남으면 ID 가 겹쳐 고리가 깨진다. 대화는 턴이 쌓이므로 **셀 때마다
+   새 ID 를 찍는다.** (지난 턴의 `.think` 는 `display:none` 이지만 DOM 에 남는다) */
+let _dotN = 0;
+function dots(px){
+  const a="ld"+(++_dotN)+"a", b="ld"+_dotN+"b";
+  return `<svg width="${px||20}" height="${px||20}" viewBox="0 0 24 24"
+    style="flex-shrink:0;color:var(--n500)" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="4" cy="12" r="2" fill="currentColor"><animate id="${a}"
+      begin="0;${b}.end+0.25s" attributeName="cy" calcMode="spline" dur="0.6s"
+      values="12;6;12" keySplines=".33,.66,.66,1;.33,0,.66,.33"/></circle>
+    <circle cx="12" cy="12" r="2" fill="currentColor"><animate
+      begin="${a}.begin+0.1s" attributeName="cy" calcMode="spline" dur="0.6s"
+      values="12;6;12" keySplines=".33,.66,.66,1;.33,0,.66,.33"/></circle>
+    <circle cx="20" cy="12" r="2" fill="currentColor"><animate id="${b}"
+      begin="${a}.begin+0.2s" attributeName="cy" calcMode="spline" dur="0.6s"
+      values="12;6;12" keySplines=".33,.66,.66,1;.33,0,.66,.33"/></circle>
+  </svg>`;
+}
+
+/* 도구 이름 → 사람 말 · 갈래. 화면은 `ip_query(...)` 가 아니라 뜻을 보여야 한다 */
+const TOOLMAP={
+  ip_query:      {t:"IP 조회",   c:"search",  arg:i=>i.title||""},
+  model_report:  {t:"모형 보고", c:"file"},
+  capability_card:{t:"능력 카드", c:"file"},
+  known_scope:   {t:"아는 범위", c:"search"},
+};
+const TEXT_EXT="txt md py js ts jsx tsx html htm css scss sass json xml yaml yml csv sql sh bash php rb go java c cpp h hpp cs rs swift kt scala r vue svelte astro config conf ini toml log gitignore dockerfile makefile readme".split(" ");
+const isTextual=f=>/^text\/|^application\/(json|xml|javascript|typescript)/.test(f.type)
+  ||TEXT_EXT.includes((f.name.split(".").pop()||"").toLowerCase())
+  ||/readme|dockerfile|makefile/i.test(f.name);
+
+/* ── 모형 고르기 ─────────────────────────────────────────────── */
+function drawModels(){
+  $("#mmenu").innerHTML=MODELS.map(m=>`
+    <button data-id="${m.id}" class="${m.id===model?"sel":""}">
+      <div><div class="nm"><b>${esc(m.name)}</b>${m.badge?`<span class="badge">${esc(m.badge)}</span>`:""}</div>
+        <div class="dsc">${esc(m.description)}</div></div>
+      ${m.id===model?'<svg class="chk" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>':""}
+    </button>`).join("");
+  $("#mname").textContent=(MODELS.find(m=>m.id===model)||MODELS[0]).name;
+}
+$("#mbtn").onclick=e=>{e.stopPropagation();
+  $("#mmenu").classList.toggle("open"); $("#mchev").classList.toggle("rot")};
+$("#mmenu").onclick=e=>{const b=e.target.closest("button[data-id]");if(!b)return;
+  model=b.dataset.id;drawModels();
+  $("#mmenu").classList.remove("open");$("#mchev").classList.remove("rot")};
+document.addEventListener("mousedown",e=>{if(!$("#model").contains(e.target)){
+  $("#mmenu").classList.remove("open");$("#mchev").classList.remove("rot")}});
+drawModels();
+
+/* ── 붙임 ────────────────────────────────────────────────────── */
+function drawStrip(){
+  const has=files.length||pasted.length;
+  strip.hidden=!has;
+  if(!has){striprow.innerHTML="";refresh();return}
+  striprow.innerHTML=
+    pasted.map(p=>`<div class="chip">
+      <div class="txt">${esc(p.content.slice(0,600))}</div>
+      <div class="ov"><span class="lbl">PASTED</span></div>
+      <div class="acts"><button data-copy="${p.id}" title="복사">${SVG.copy}</button>
+        <button data-rm="${p.id}" title="지우기">${SVG.x}</button></div></div>`).join("")
+  + files.map(f=>{
+      const img=f.type.startsWith("image/")&&f.preview;
+      const body=img?`<img src="${f.preview}" alt="${esc(f.name)}">`
+        :`<div class="txt">${f.text!==undefined?esc(f.text.slice(0,600))
+            :`<div style="display:grid;place-items:center;height:100%">${SVG.spin}</div>`}</div>`;
+      const lbl=img?(f.type.split("/").pop()||"IMG").toUpperCase()
+                   :((f.name.split(".").pop()||"FILE").toUpperCase());
+      return `<div class="chip">${body}
+        <div class="ov"><span class="lbl">${esc(lbl)}</span></div>
+        ${f.status==="reading"?`<div class="st">${dots(16)}</div>`:""}
+        <div class="acts"><button data-rm="${f.id}" title="지우기">${SVG.x}</button></div></div>`;
+    }).join("");
+  refresh();
+}
+striprow.onclick=e=>{
+  const rm=e.target.closest("[data-rm]"), cp=e.target.closest("[data-copy]");
+  if(rm){const id=rm.dataset.rm;const f=files.find(x=>x.id===id);
+    if(f&&f.preview)URL.revokeObjectURL(f.preview);
+    files=files.filter(x=>x.id!==id);pasted=pasted.filter(x=>x.id!==id);drawStrip()}
+  if(cp){const p=pasted.find(x=>x.id===cp.dataset.copy);
+    if(p)navigator.clipboard.writeText(p.content)}
+};
+function addFiles(list){
+  if(!list)return;
+  const room=MAX_FILES-files.length;
+  if(room<=0){alert(`파일은 최대 ${MAX_FILES}개입니다.`);return}
+  const take=Array.from(list).slice(0,room);
+  if(list.length>room)alert(`${list.length-room}개는 안 붙였습니다(빈 자리 ${room}개).`);
+  for(const file of take){
+    if(file.size>MAX_FILE_SIZE){
+      alert(`${file.name} (${fmtSize(file.size)}) 이 한도 ${fmtSize(MAX_FILE_SIZE)} 를 넘습니다.`);continue}
+    const rec={id:uid(),name:file.name,size:file.size,
+      type:file.type||"application/octet-stream",
+      preview:file.type.startsWith("image/")?URL.createObjectURL(file):undefined,
+      status:"pending"};
+    files.push(rec);
+    if(isTextual(file)){
+      rec.status="reading";
+      const r=new FileReader();
+      r.onload=ev=>{rec.text=String(ev.target.result||"");rec.status="done";drawStrip()};
+      r.onerror=()=>{rec.text="파일을 못 읽었다";rec.status="error";drawStrip()};
+      r.readAsText(file);
+    } else rec.status="done";
+  }
+  drawStrip();
+}
+$("#attach").onclick=()=>fi.click();
+fi.onchange=()=>{addFiles(fi.files);fi.value=""};
+const comp=$("#composer");
+comp.addEventListener("dragover",e=>{e.preventDefault();drop.classList.add("on")});
+comp.addEventListener("dragleave",e=>{e.preventDefault();drop.classList.remove("on")});
+comp.addEventListener("drop",e=>{e.preventDefault();drop.classList.remove("on");
+  addFiles(e.dataTransfer.files)});
+ta.addEventListener("paste",e=>{
+  const items=Array.from(e.clipboardData.items||[]).filter(i=>i.kind==="file");
+  if(items.length&&files.length<MAX_FILES){
+    e.preventDefault();addFiles(items.map(i=>i.getAsFile()).filter(Boolean));return}
+  const t=e.clipboardData.getData("text");
+  if(t&&t.length>PASTE_THRESHOLD&&pasted.length<5){
+    e.preventDefault();
+    pasted.push({id:uid(),content:t,words:t.split(/\s+/).filter(Boolean).length});
+    drawStrip()}
+});
+
+/* ── 입력 상태 ───────────────────────────────────────────────── */
+function refresh(){
+  ta.style.height="auto";
+  ta.style.height=Math.min(ta.scrollHeight,120)+"px";
+  if(busy){
+    send.disabled=false;
+    send.className="send stop"; send.title="멈추기";
+    $("#sicon").outerHTML='<svg id="sicon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>';
+    return;
+  }
+  if($("#sicon").getAttribute("fill")==="currentColor")
+    $("#sicon").outerHTML='<svg id="sicon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>';
+  const has=ta.value.trim()||files.length||pasted.length;
+  const reading=files.some(f=>f.status==="reading");
+  const ok=has&&!reading;
+  send.disabled=!ok;
+  send.className="send"+(ok?" on":""); send.title="보내기";
+}
+ta.addEventListener("input",refresh);
+ta.addEventListener("keydown",e=>{
+  if(e.key==="Enter"&&!e.shiftKey&&!e.isComposing){e.preventDefault();submit()}});
+send.onclick=()=>{ if(busy){ ctl&&ctl.abort(); } else submit(); };
+
+/* ── 용어 자동 표시 ─────────────────────────────────────────────
+   사용자가 '팔이 뭔지 씨앗이 뭔지 모르겠다 · 각 수치가 클수록 좋은지 알려면
+   설명이 있어야 해석이 된다' 고 했다. 패널만 두면 답을 읽는 중에 못 본다.
+   그래서 **답 안의 낱말에 바로 붙인다** --- 점선 밑줄 + 뜻 + 방향.
+   HTML 태그 안(속성 값)은 건드리지 않게 태그 밖 텍스트만 바꾼다. */
+let GLOSS=null;
+const stripMd=t=>String(t).replace(/\*\*/g,"").replace(/`/g,"");
+function annotate(html){
+  if(!GLOSS) return html;
+  const keys=Object.keys(GLOSS.용어||{})
+    .map(k=>({k, w:k.replace(/\(.*?\)/g,"").trim()}))
+    .filter(x=>x.w.length>=2)
+    .sort((a,b)=>b.w.length-a.w.length);
+  const dirs=GLOSS.방향||{};
+  const dirOf=w=>{ for(const [dk,dv] of Object.entries(dirs)) if(w.includes(dk)) return dv; return ""; };
+  return html.split(/(<[^>]*>)/).map(part=>{
+    if(part.startsWith("<")) return part;          // 태그는 건드리지 않는다
+    let out=part;
+    for(const {k,w} of keys){
+      if(!out.includes(w)) continue;
+      const tip=stripMd(GLOSS.용어[k]) + (dirOf(w)?"  ·  "+stripMd(dirOf(w)):"");
+      out=out.split(w).join(
+        `<span class="gt" data-t="${esc(k)}" title="${esc(tip.slice(0,320))}">${esc(w)}</span>`);
+      break;                                       // 한 조각에 하나만 --- 과하면 읽기 나쁘다
+    }
+    return out;
+  }).join("");
+}
+
+/* 이번 프레임에 새로 드러난 k 글자를 페이드 --- 마지막 텍스트 노드의
+   꼬리만 span.tfade 로 감싼다. 표·코드 안이어도 DOM 수준이라 안전하고,
+   전체 innerHTML 재렌더가 옛 글자를 다시 애니메이션하지 않게 한다. */
+function fadeTail(root,k){
+  if(!k||k<=0)return;
+  const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{
+    acceptNode:n=>n.parentElement&&n.parentElement.classList.contains("caret")
+      ?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});
+  let last=null,node;
+  while((node=w.nextNode()))last=node;
+  if(!last)return;
+  const t=last.nodeValue||"";
+  const cut=Math.max(0,t.length-Math.min(k,t.length));
+  if(cut>=t.length)return;
+  const tail=last.splitText(cut);
+  const sp=document.createElement("span");
+  sp.className="tfade";
+  tail.parentNode.insertBefore(sp,tail);
+  sp.appendChild(tail);
+}
+
+/* ── 아주 작은 마크다운 ──────────────────────────────────────── */
+/* 표를 넣었다. 그 전에는 `| a | b |` 가 문법에 없어서 파이프 원문이
+   그대로 문단으로 나갔다 --- 창구가 능력 카드를 표로 낼 때마다 깨졌다. */
+const mdCells=l=>l.replace(/^\s*\|/,"").replace(/\|\s*$/,"").split("|")
+                  .map(c=>c.trim());
+const mdIsSep=l=>/\|/.test(l)&&/^[\s|:-]+$/.test(l)&&/-/.test(l);
+function md(s){
+  const lines=esc(s).split("\n");let out="",ul=false,i=0;
+  const inline=t=>t.replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>")
+                   .replace(/`([^`]+)`/g,"<code>$1</code>");
+  const shut=()=>{if(ul){out+="</ul>";ul=false}};
+  for(;i<lines.length;i++){
+    const l=lines[i].trim();
+    /* 표 --- 머리줄 다음이 구분줄이어야 표로 본다(마크다운 규칙) */
+    const nx=(lines[i+1]||"").trim();
+    if(/\|/.test(l)&&mdIsSep(nx)&&mdCells(l).length>1){
+      shut();
+      const al=mdCells(nx).map(c=>c.startsWith(":")&&c.endsWith(":")?"center"
+                                 :c.endsWith(":")?"right":"left");
+      const cell=(c,j,tag)=>`<${tag} style="text-align:${al[j]||"left"}">`
+                            +`${inline(c)}</${tag}>`;
+      let t=`<div class="tw"><table><thead><tr>`
+           +mdCells(l).map((c,j)=>cell(c,j,"th")).join("")+`</tr></thead><tbody>`;
+      i+=2;
+      for(;i<lines.length;i++){
+        const r=lines[i].trim();
+        if(!/\|/.test(r)||!r)break;
+        t+="<tr>"+mdCells(r).map((c,j)=>cell(c,j,"td")).join("")+"</tr>";
+      }
+      i--;
+      out+=t+"</tbody></table></div>";continue;
+    }
+    if(/^-{3,}$/.test(l)){shut();out+="<hr>";continue}
+    if(/^#{1,4}\s/.test(l)){shut();
+      out+=`<h3>${inline(l.replace(/^#{1,4}\s/,""))}</h3>`;continue}
+    if(/^[-*•]\s/.test(l)){if(!ul){out+="<ul>";ul=true}
+      out+=`<li>${inline(l.replace(/^[-*•]\s/,""))}</li>`;continue}
+    if(!l){shut();continue}
+    shut();
+    out+=`<p>${inline(l)}</p>`;
+  }
+  if(ul)out+="</ul>";
+  return out;
+}
+
+/* ── 도구 묶음 --- 붙여 준 ToolGroup 을 옮긴다 ────────────────── */
+function ToolGroup(host){
+  const el=document.createElement("div");
+  el.className="tg open";
+  el.innerHTML=`<button type="button" disabled>${SVG.chev}
+      <span class="hdr"></span><span class="cnt"></span><span class="el"></span>
+    </button><div class="list"></div>`;
+  host.appendChild(el);
+  const btn=el.querySelector("button"), hdr=el.querySelector(".hdr"),
+        cnt=el.querySelector(".cnt"), elp=el.querySelector(".el"),
+        list=el.querySelector(".list");
+  const tools=[]; const t0=Date.now(); let pending=true, timer=null;
+  btn.onclick=()=>{ if(tools.length) el.classList.toggle("open") };
+
+  /* 갈래 수 요약 --- "파일 2 · 조회 1" */
+  function counts(){
+    const n={file:0,search:0,command:0};
+    for(const t of tools) n[t.c]=(n[t.c]||0)+1;
+    const p=[];
+    if(n.file) p.push(`파일 ${n.file}`);
+    if(n.search) p.push(`조회 ${n.search}`);
+    if(n.command) p.push(`명령 ${n.command}`);
+    return p.join(" · ");
+  }
+  function tick(){
+    const s=Math.round((Date.now()-t0)/1000);
+    elp.textContent = s<60 ? `${s}s` : `${Math.floor(s/60)}m ${s%60}s`;
+  }
+  function draw(){
+    hdr.className="hdr"+(pending?" tgshine":"");
+    hdr.textContent = pending ? "재고 있다" : "쟀다";
+    cnt.textContent = counts();
+    btn.disabled = !tools.length;
+    list.innerHTML = tools.map((t,i)=>
+      `<div class="row${t.err?" err":""}">${SVG[t.c]||SVG.file}
+        <span class="t${pending&&i===tools.length-1?" tgshine":""}">${esc(t.t)}</span>
+        ${t.s?`<span class="s">${esc(t.s)}</span>`:""}</div>`).join("");
+    tick();
+  }
+  timer=setInterval(tick,1000);
+  draw();
+  return {
+    add(name,input){
+      const m=TOOLMAP[name]||{t:name,c:"command"};
+      tools.push({t:m.t, c:m.c, s:m.arg?m.arg(input||{}):"", err:false});
+      draw();
+    },
+    done(){ pending=false; clearInterval(timer); draw();
+            if(tools.length) el.classList.remove("open"); },
+    empty(){ return tools.length===0 },
+    remove(){ clearInterval(timer); el.remove(); },
+  };
+}
+
+/* ── 보내기 · 스트림 ─────────────────────────────────────────── */
+function turn(who,cls){
+  const d=document.createElement("div");
+  d.className="turn "+cls;
+  d.innerHTML=`<div class="who">${who}</div><div class="bubble"></div>`;
+  log.appendChild(d); log.scrollTop=log.scrollHeight;
+  return d.querySelector(".bubble");
+}
+const atBottom=()=>log.scrollHeight-log.scrollTop-log.clientHeight<120;
+
+async function submit(){
+  if(busy||send.disabled)return;
+  let text=ta.value.trim();
+  const att=[
+    ...pasted.map(p=>({kind:"pasted",name:`붙여넣기 ${p.words}단어`,body:p.content})),
+    ...files.filter(f=>f.text!==undefined).map(f=>({kind:"file",name:f.name,body:f.text})),
+  ];
+  const nf=files.length, np=pasted.length;
+  if(!text&&att.length)text="붙인 것을 읽고 무엇을 재 줄 수 있는지 말해줘.";
+
+  if(!started){started=true;wrap.classList.add("started")}
+
+  turn("나","me").textContent=text+((nf||np)
+    ? `\n\n· 붙임 ${nf}개 파일${np?` · 붙여넣기 ${np}개`:""}`:"");
+  ta.value="";files.forEach(f=>f.preview&&URL.revokeObjectURL(f.preview));
+  files=[];pasted=[];drawStrip();
+
+  busy=true;refresh();
+  const bub=turn("월드모델","ai");
+  /* 생각 줄(ShiningText) + 도구 묶음(ToolGroup) + 본문 */
+  bub.innerHTML=`<div class="think">${dots(20)}
+      <span class="shine">생각하고 있다</span><span class="peek"></span></div>
+    <div class="tghost"></div><div class="body"></div>`;
+  const think=bub.querySelector(".think"), peek=bub.querySelector(".peek"),
+        body=bub.querySelector(".body");
+  const tg=ToolGroup(bub.querySelector(".tghost"));
+  let check=[], failed=null;
+
+  /* ── 부드러운 흘림 ────────────────────────────────────────────
+     **토막이 크다.** 재 보니 평균 52자가 0.75초마다 온다(≈70자/초). 받은 대로
+     그리면 0.75초마다 52자가 튄다 --- 사용자가 본 '끊어져 나오는' 것이 이것이다.
+     청크 크기는 우리 통제 밖이므로 **받는 속도와 그리는 속도를 갈라 둔다.**
+
+     **속도를 어떻게 정하나 --- 두 번 틀렸다.**
+       ① 밀린 양에 비례(`/8`) --- 52자를 130ms 에 뱉고 600ms 쉬었다(빈프레임 46%).
+          뭉텅이가 작아진 것뿐이다.
+       ② 고정 속도 --- 정면 상충이다. 60자/초면 빈프레임 5% 인데 마감이 3.45초
+          늦고, 84자/초면 마감은 0.6초인데 빈프레임 17% 다. **그리고 모형마다
+          도착 속도가 다르다**(하이쿠는 오푸스의 네 배). 고정값은 답이 아니다.
+
+     **그래서 실행 중에 도착 속도를 재서 맞춘다.** 토막이 올 때마다 자/초를 재고
+     EMA 로 다듬어 그것보다 `LEAD` 배만 빠르게 그린다 --- 큐가 늘 얕게 유지되고
+     쉬는 틈이 안 생긴다. 매개변수는 다섯 무늬(관측 · 빠른 · 큰토막 · 느린 ·
+     들쭉날쭉)로 훑어 **최악 무늬 기준**으로 골랐다:
+
+         LEAD 1.03 · A 0.3 · INIT 0.5 → 빈프레임 6.0 / 0.0 / 0.0 / 6.9 / 24.7%
+
+     평균으로 고르면 A 0.7 이 이기는데 들쭉날쭉에서 49% 다 --- **평균이 최악을
+     가린다**(노트 698 과 같은 실수를 여기서 또 했다). */
+  const LEAD=1.03, ALPHA=0.3, INIT=0.5, FLOOR=0.2, CEIL=12, TAIL=20;
+  const R={pending:"", shown:"", live:true, drained:null,
+           acc:0, rate:INIT, last:0};
+  function feed(txt){
+    const now=performance.now();
+    if(R.last && now>R.last){
+      const obs=txt.length/((now-R.last)/1000)/60*LEAD;   // 자/프레임
+      R.rate=Math.min(Math.max((1-ALPHA)*R.rate+ALPHA*obs, FLOOR), CEIL);
+    }
+    R.last=now; R.pending+=txt;
+  }
+  function pump(){
+    if(R.pending){
+      let r=R.rate;
+      if(!R.live) r=Math.max(r, R.pending.length/TAIL);   // 꼬리는 빨리 비운다
+      if(R.pending.length>400) r=Math.max(r, R.pending.length/60);
+      R.acc+=r;
+      const n=Math.floor(R.acc);
+      if(n>0){
+        R.acc-=n;
+        const stick=atBottom();
+        R.shown+=R.pending.slice(0,n); R.pending=R.pending.slice(n);
+        body.innerHTML=annotate(md(R.shown))+'<span class="caret"></span>';
+        fadeTail(body,n);
+        if(stick)log.scrollTop=log.scrollHeight;
+      }
+    } else R.acc=0;
+    if(R.pending||R.live) requestAnimationFrame(pump);
+    else { body.innerHTML=annotate(md(R.shown)); R.drained&&R.drained(); }
+  }
+  requestAnimationFrame(pump);
+
+  ctl=new AbortController();
+  try{
+    const r=await fetch("/api/stream",{method:"POST",signal:ctl.signal,
+      headers:{"content-type":"application/json"},
+      body:JSON.stringify({message:text,attachments:att,model,session})});
+    if(!r.ok||!r.body) throw new Error("HTTP "+r.status);
+    const rd=r.body.getReader(), dec=new TextDecoder();
+    let buf="";
+    for(;;){
+      const {value,done}=await rd.read();
+      if(done)break;
+      buf+=dec.decode(value,{stream:true});
+      let p;
+      while((p=buf.indexOf("\n\n"))>=0){
+        const line=buf.slice(0,p).trim(); buf=buf.slice(p+2);
+        if(!line.startsWith("data:"))continue;
+        let ev; try{ev=JSON.parse(line.slice(5).trim())}catch(_){continue}
+        const stick=atBottom();
+        if(ev.type==="thinking"){
+          peek.textContent=(peek.textContent+ev.text).slice(-90);
+        }else if(ev.type==="tool"){
+          const m=/^([a-z_]+)\((.*)\)$/s.exec(ev.text||"");
+          let name=ev.text, input={};
+          if(m){name=m[1]; try{input=JSON.parse(m[2]||"{}")}catch(_){}}
+          tg.add(name,input);
+          peek.textContent="";
+        }else if(ev.type==="text"){
+          if(think.style.display!=="none"){ think.style.display="none"; tg.done(); }
+          feed(ev.text);               // **그리는 것은 pump 가 한다**
+        }else if(ev.type==="session"){ session=ev.text; }
+        else if(ev.type==="backend"){ /* 표시만 --- 아래 머리말에서 쓴다 */ }
+        else if(ev.type==="error"){ failed=ev.text; }
+        else if(ev.type==="done"){ check=ev.selfcheck||[]; }
+        if(stick)log.scrollTop=log.scrollHeight;
+      }
+    }
+  }catch(err){
+    failed = (err&&err.name==="AbortError") ? "멈췄다" : String(err&&err.message||err);
+  }
+  /* 남은 토막을 다 흘려보낸 뒤에 꼬리를 붙인다 --- 안 기다리면 자기 검사
+     상자가 타이핑 중간에 끼어든다 */
+  await new Promise(res=>{ R.drained=res; R.live=false; });
+  think.style.display="none"; tg.done(); if(tg.empty())tg.remove();
+  body.innerHTML = R.shown ? annotate(md(R.shown)) : "";
+  if(failed) body.insertAdjacentHTML("beforeend",
+    `<div class="selfcheck">${SVG.warn}<div><strong>${esc(failed)}</strong></div></div>`);
+  if(check.length) body.insertAdjacentHTML("beforeend",
+    `<div class="selfcheck">${SVG.warn}<div><strong>자기 검사에 걸렸다</strong><br>${esc(check.join(" · "))}</div></div>`);
+  busy=false;ctl=null;refresh();log.scrollTop=log.scrollHeight;ta.focus();
+}
+/* ── 용어 패널 ───────────────────────────────────────────────── */
+let gloaded=false;
+async function openG(){
+  $("#gwrap").classList.add("on");
+  if(gloaded) return;
+  try{
+    const [g,w]=await Promise.all([
+      fetch("/api/glossary").then(r=>r.json()),
+      fetch("/api/warm").then(r=>r.json()).catch(()=>null)]);
+    const dirCls=v=>/클수록/.test(v)?"up":/작을수록/.test(v)?"dn":"neu";
+    const terms=Object.entries(g.용어||{}).map(([k,v])=>
+      `<div class="gterm"><b>${esc(k)}</b><span>${md(v).replace(/<\/?p>/g,"")}</span></div>`).join("");
+    const dirs=Object.entries(g.방향||{}).map(([k,v])=>
+      `<code>${esc(k)}</code><div class="${dirCls(v)}">${md(v).replace(/<\/?p>/g,"")}</div>`).join("");
+    const caps=(g.능력||[]).map(c=>{
+      const live=/지금 계산/.test(c.산출);
+      return `<div class="gcap"><div class="top"><code>${esc(c.이름)}</code>
+        <span class="tag">${esc(c.꼴)}</span>
+        <span class="tag ${live?"live":"rec"}">${esc(c.산출)}</span></div>
+        <div class="what">${esc(c.무엇)}</div>
+        <ul>${(c.자||[]).map(r=>`<li>${esc(r)}</li>`).join("")}</ul></div>`;
+    }).join("");
+    const warm = w ? (w.상태==="데움"
+      ? `판이 데워졌다 — <b>판 rho ${w["판 rho"]}</b> · 도메인 ${w["도메인 수"]}개 · 적합 ${w.적합초}초`
+      : `판 상태: <b>${esc(w.상태)}</b> — 데우는 데 몇 분 걸린다. 그동안 순위 질문은 답을 못 낸다.`)
+      : "판 상태를 못 읽었다";
+    $("#gbody").innerHTML=`
+      <div id="gwarm">${warm}</div>
+      <div><h3>수치의 방향 — 클수록 좋은가 작을수록 좋은가</h3>
+        <div class="gdir">${dirs}</div></div>
+      <div><h3>부를 수 있는 능력 ${(g.능력||[]).length}가지 — 각 숫자의 자</h3>${caps}</div>
+      <div><h3>용어</h3>${terms}</div>`;
+    gloaded=true;
+  }catch(err){ $("#gbody").innerHTML=`<div id="gwarm">못 불러왔다: ${esc(String(err))}</div>`; }
+}
+$("#openg").onclick=openG;
+$("#opts").onclick=openG;
+/* 답 안의 점선 낱말을 누르면 패널을 연다 */
+log.addEventListener("click",e=>{ if(e.target.closest(".gt")) openG(); });
+/* 용어를 미리 받아 둔다 --- 첫 답이 오기 전에 있어야 붙일 수 있다 */
+fetch("/api/glossary").then(r=>r.json()).then(g=>{GLOSS=g}).catch(()=>{});
+$("#closeg").onclick=()=>$("#gwrap").classList.remove("on");
+$("#gwrap").onclick=e=>{ if(e.target.id==="gwrap") $("#gwrap").classList.remove("on"); };
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") $("#gwrap").classList.remove("on"); });
+
+refresh();ta.focus();
+</script>
+</body>
+</html>

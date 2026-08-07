@@ -1,0 +1,90 @@
+{
+ "market_record_id": "MKT-2026-0008",
+ "event_name": "미쟝센 '퍼펙트세럼' 팝업(트렌드팟 올리브영N 성수)×에스파",
+ "brand": "미쟝센(아모레퍼시픽)",
+ "ip_or_collab": "미쟝센×에스파(aespa, 브랜드 모델)",
+ "category": "entertainment",
+ "intervention": {
+  "concept_description": "에스파를 모델로 기용한 미쟝센 퍼펙트세럼 팝업. 제품 체험·포토존·한정 구성 판매",
+  "experience_elements": [
+   "제품 체험",
+   "포토존"
+  ],
+  "promotions": [
+   "구매 금액별 에스파 포토카드·파우치 증정"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "트렌드팟 올리브영N 성수",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2026-02-14",
+  "period_to": "2026-02-26",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 13,
+    "weekend_share": 0.31,
+    "holiday_days": 3
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 1200,
+  "visitors_period_days": null,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "일평균 방문객 수치(총계 아님). 원문: '하루 평균 약 1200명이 찾았다' — 총계 계산 금지 원칙에 따라 일평균 값만 기록",
+  "visitors_source_quote": "팝업 기간 연휴 일정과 맞물려 중국·일본 고객을 중심으로 하루 평균 약 1200명이 찾았다.",
+  "visitors_source_url": "https://www.kdfnews.com/news/articleView.html?idxno=178351",
+  "visitors_source_date": "2026-02-21",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "한파에도 입장 대기 발생",
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "팝업 기간 연휴 일정과 맞물려 중국·일본 고객을 중심으로 하루 평균 약 1200명이 찾았다.",
+    "한파에도 현장은 입장 대기 인원으로 북새통을 이뤘다.",
+    "하루 평균 약 1200명이 방문했고 입장 대기가 발생했다 (마이데일리 2026-02-20, https://www.mydaily.co.kr/page/view/2026022016590807736)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": true,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "브랜드 팝업(아이돌 모델 협업). 시작일 미기재('이달 26일까지'). 외국인(중국·일본) 고객 중심. | 병합 레코드: MKT-2026-0009, MKT-2026-0002 | [병합:MKT-2026-0009] 오픈일 2/14(마이데일리 '지난 14일 오픈 행사'). 출처: 한국면세뉴스 https://www.kdfnews.com/news/articleView.html?idxno=178351 (2026-02-21). || [병합:MKT-2026-0002] 일평균×일수 총계 금지 규칙 적용해 시그널로만 기록.",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

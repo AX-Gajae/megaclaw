@@ -1,0 +1,265 @@
+{
+ "record_id": "RTPU2519",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:강동_아이파크_더_리버_더_리버몰",
+  "space_id": "unresolved:강동_고덕동_더_리버몰_1F_3F",
+  "client_party_id": null,
+  "brand_key": "강동_아이파크더리버",
+  "space_key": "강동_더리버몰"
+ },
+ "intervention": {
+  "concept": "강동 고덕동에 새로 오픈하는 복합쇼핑몰 '강동 아이파크 더 리버(더 리버몰)'의 오픈 마케팅으로, '크루즈/쇼핑의 방주'를 컨셉으로 '새로운 경험을 원한다면 탑승하세요(Board a new Experience)'라는 슬로건을 내세웠다. 온·오프라인 디지털 마케팅(브랜드필름·숏폼·FOOH·SNS·바이럴)과 함께 몰 내부에서 '스위트 빌리지 팝업스토어'를 운영했다.",
+  "brand_name": "강동 아이파크 더 리버 (더 리버몰)",
+  "experience_elements": [
+   "체험존",
+   "리워드존",
+   "포토존",
+   "판매존",
+   "스탬프랠리",
+   "팽이 만들기",
+   "색칠공부",
+   "임시 피크닉 존"
+  ],
+  "promotions": [
+   "마감 2·4시간 전 50% 할인",
+   "스탬프랠리 리워드 및 시식/할인권 제공",
+   "럭키드로우 경품 이벤트",
+   "골든티켓(경품·할인권) 찾기 이벤트",
+   "LMS 프로모션 문자 발송(카드사·통신사·TMAP)"
+  ],
+  "staging_tags": [
+   "크루즈",
+   "쇼핑의 방주",
+   "FOOH",
+   "윈도우래핑",
+   "가로등 배너",
+   "행잉보드"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": 3000,
+   "capacity_per_session": null,
+   "giveaway_qty": 30000,
+   "area_sqm": null,
+   "planned_operating_days": 12,
+   "throughput_units": 1,
+   "unit_minutes": null,
+   "operating_hours_per_day": 12,
+   "staff_count": 18,
+   "experience_density": 4,
+   "goods_scale": 2,
+   "photo_zones": 2,
+   "collab_strength": 0,
+   "ip_awareness": 1,
+   "target_breadth": 4,
+   "entry_friction": 0,
+   "media_push": 4,
+   "season_fit": 4,
+   "venue_prominence": 2
+  },
+  "attr_meta": {
+   "evidence": "계약서첨부 견적서(3/31) 인건비 '설치/철수/운영 인건비(SV 2, STAFF 16)' 비고 '4/30~5/11(12일), 10:00~22:00(12시간)'; 콘텐츠 '포토부스 렌탈비 수1(인화지 포함)'; 제안서 리워드굿즈표 리플렛·선장모자 '일별 3,000 / 총 30,000'(제안서 본문은 '10일간의 팝업스토어')",
+   "confidence": "high",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "강동구 고덕동",
+   "venue_name": "강동 아이파크 더 리버 (더 리버몰)",
+   "venue_type": "복합쇼핑몰",
+   "foot_traffic_context": "고덕비즈밸리 인근, 고덕강일·미사강변 등 아파트 밀집 배후수요, 9호선 연장(2028 예정) 등 교통망 개발 지역"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-04-30",
+   "to": "2025-05-11",
+   "days": 12
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": "계약서·견적서 미제공으로 계약 총액, 수수료율, 분할 조건 확인 불가"
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "강동 아이파크 더 리버몰 오픈 마케팅, 배후수요 아파트 밀집"
+  },
+  "derived": {
+   "duration": {
+    "days": 12,
+    "weekend_share": 0.33,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 58,
+    "holiday_until": 3,
+    "holiday_block_in": 4,
+    "nat_event_gap": 34,
+    "nat_event": null,
+    "doc_lag_days": 30,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 14499642.0,
+    "pnl_pre_accounts": 6,
+    "pnl_pre_months": 3,
+    "pnl_pre_first": "2025-01-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 12000,
+   "popup_zone_pass_rate": 0.4,
+   "host_traffic_est": 4800.0,
+   "venue_scale_tier": 3,
+   "confidence": "low",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2025-04-30",
+    "visitors": null,
+    "sales_krw": 196100
+   },
+   {
+    "date": "2025-05-01",
+    "visitors": null,
+    "sales_krw": 454310
+   },
+   {
+    "date": "2025-05-02",
+    "visitors": null,
+    "sales_krw": 518730
+   },
+   {
+    "date": "2025-05-03",
+    "visitors": null,
+    "sales_krw": 1169010
+   },
+   {
+    "date": "2025-05-04",
+    "visitors": null,
+    "sales_krw": 1466100
+   },
+   {
+    "date": "2025-05-05",
+    "visitors": null,
+    "sales_krw": 2785750
+   },
+   {
+    "date": "2025-05-06",
+    "visitors": null,
+    "sales_krw": 1612650
+   },
+   {
+    "date": "2025-05-07",
+    "visitors": null,
+    "sales_krw": 842100
+   },
+   {
+    "date": "2025-05-08",
+    "visitors": null,
+    "sales_krw": 590300
+   },
+   {
+    "date": "2025-05-09",
+    "visitors": null,
+    "sales_krw": 905650
+   },
+   {
+    "date": "2025-05-10",
+    "visitors": null,
+    "sales_krw": 3149350
+   },
+   {
+    "date": "2025-05-11",
+    "visitors": null,
+    "sales_krw": 3548200
+   }
+  ],
+  "totals": {
+   "visitors": 17709,
+   "sales_krw": 17238250,
+   "rev_mm_recognized": 658.5
+  },
+  "counting_method": "participation",
+  "counting_basis": "팝업스토어 개요 표의 '이벤트 참여자 수 17,709' — 프로그램(체험/리워드/이벤트) 참여 인원 집계로 추정",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(방문자 수치는 '이벤트 참여자 수' 총계로만 제시됨(일자별 방문자 미제공). 일별 매출은 1층+4층 합산 총매출액 기준. 총 판매건수 3,409건, 평균 객단가 5,057원.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-05, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-06"
+  },
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "E"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "label_scope": {
+   "label_from": "2025-04-30",
+   "label_to": "2025-05-11",
+   "label_active_days": 12,
+   "label_span_days": 12,
+   "label_contiguous": true,
+   "daily_sum": null,
+   "sum_agrees": null,
+   "source": "daily 일자에서 유도 — daily에 방문객 수 없음(매출만) — 일자만 사용"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "16lmwg9h0tP61kiMA0b8HXir9RU6xHkRY",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/16lmwg9h0tP61kiMA0b8HXir9RU6xHkRY/view",
+   "title": "[Sweetspot] 더 리버몰_오픈마케팅_결과보고서_250729.pdf"
+  },
+  {
+   "doc_id": "1XunHwkkcaMteQDVsE6RyQ5cMH3OcOeL1",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1XunHwkkcaMteQDVsE6RyQ5cMH3OcOeL1/view",
+   "title": "더 리버몰 OPEN MKT 업무 계약서_250331_날인본.pdf"
+  },
+  {
+   "doc_id": "1beF2ZdbqzxWRbQUAujz0XpnvvSinGdSA",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1beF2ZdbqzxWRbQUAujz0XpnvvSinGdSA/view",
+   "title": "(Sweetspot) 강동 아이파크 더 리버_OPEN MKT 예산안_12차_250707.pdf"
+  },
+  {
+   "doc_id": "1yqfSgCgZkP9vg2W4LhqY22K5913b3M0c",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1yqfSgCgZkP9vg2W4LhqY22K5913b3M0c/view",
+   "title": "[Sweetspot] 강동 아이파크 더 리버_OPEN MKT 제안서_250123.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: [Sweetspot] 강동 아이파크 더 리버_OPEN , [Sweetspot] 더 리버몰_오픈마케팅_결과보고서_. 미확실: 계약서/견적서 부재로 fee_structure, area_pyeong, brand_requirements 확인 불가; 일자별 방문자 수 미제공; 이벤트 참여자 수의 정확한 집계 방식(연인원/실인원) 불명확; client_name 및 정확한 임대/운영 주체 미확인; plan_visitors_expected(기획 예상 방문) 수치 미기재"
+ }
+}

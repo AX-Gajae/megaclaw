@@ -1,0 +1,225 @@
+{
+ "record_id": "RTPU2549",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:한국주택금융공사",
+  "space_id": "unresolved:성동구_아차산로120_베델플레이스_틸테이블",
+  "client_party_id": "unresolved:엔자임",
+  "brand_key": "한국주택금융공사",
+  "space_key": "성동구_베델플레이스"
+ },
+ "intervention": {
+  "concept": "한국주택금융공사(HF)의 대표상품과 내 집 마련 정보를 알리기 위한 팝업스토어. 전시, OX퀴즈, 내 집 마련 성향 테스트, 집 그리기, 미니카페 등 체험형 프로그램을 배치하고 4개 중 3개 이상 참여 시 캔커피 리워드를 제공한다. 오픈행사에 채수빈 배우가 참여했다.",
+  "brand_name": "한국주택금융공사",
+  "experience_elements": [
+   "전시월",
+   "한국주택금융공사 OX 퀴즈",
+   "내 집 마련 성향 테스트(영수증 키오스크 2대)",
+   "내가 살고 싶은 집 그리기",
+   "미니 카페(리워드 캔커피)",
+   "포토존",
+   "홍보영상 상영(12편 롤링)"
+  ],
+  "promotions": [
+   "스탬프 랠리 이벤트(3개 이상 획득 시 캔커피 제공)",
+   "OX 퀴즈 굿즈 증정(꼬박이 키링/주하 키링/타포린백 각 600개)",
+   "SNS 이벤트"
+  ],
+  "staging_tags": [
+   "체험형",
+   "금융공공기관",
+   "리테일테인먼트",
+   "굿즈증정",
+   "셀럽오픈행사"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": 1800,
+   "area_sqm": null,
+   "planned_operating_days": null,
+   "throughput_units": 2,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": null,
+   "experience_density": 4,
+   "goods_scale": 1,
+   "photo_zones": 1,
+   "collab_strength": 2,
+   "ip_awareness": 2,
+   "target_breadth": 3,
+   "entry_friction": 2,
+   "media_push": 3,
+   "season_fit": 2,
+   "venue_prominence": 2
+  },
+  "attr_meta": {
+   "evidence": "사전 문서 없음(목록 공백) — 레코드 기재분만 사용. 굿즈 '꼬박이/주하 키링·타포린백 각 600개'=3종×600. 성향 테스트 '영수증 키오스크 2대'. 대관비 6.5M×4일은 세팅 포함 대관일수라 운영일수 근거 아님 → null(period 3일 전사 금지)",
+   "confidence": "low",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "성동구",
+   "venue_name": "베델플레이스 틸테이블",
+   "venue_type": "팝업 행사장(틸테이블)",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-11-28",
+   "to": "2025-11-30",
+   "days": 3
+  },
+  "season": "가을/초겨울",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "기본 견적 총계 95,557,984원(VAT 10% 포함). 소계(Sub Total 1~6) 79,518,995원, 대행수수료 소계의 10%(정가항목 제외), 일반관리비+대행수수료 합계 86,870,895원(VAT 별도). 대관비 6,500,000원×4일=26,000,000원, 부스제작비 28,000,000원, 기획료 3,000,000원, 아트워크 3,000,000원. 추가건 견적 총계 849,516원(VAT 10% 포함, 보안요원·냉장고 렌탈·조정 포함, 대행수수료 소계의 10%)."
+  },
+  "brand_requirements": [
+   "계수기로 입장 인원 체크 필수",
+   "웨이팅 시스템 운영",
+   "초상권 활용 동의 안내"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "베델플레이스 틸테이블 행사장"
+  },
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  },
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.67,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 50,
+    "holiday_until": 78,
+    "holiday_block_in": 0,
+    "nat_event_gap": 15,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 28621000.0,
+    "pnl_pre_accounts": 3,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-10-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 800,
+   "popup_zone_pass_rate": 0.5,
+   "host_traffic_est": 400.0,
+   "venue_scale_tier": 4,
+   "confidence": "low",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2025-11-28",
+    "visitors": 349,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-11-29",
+    "visitors": 439,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-11-30",
+    "visitors": 681,
+    "sales_krw": null
+   }
+  ],
+  "totals": {
+   "visitors": 1469,
+   "sales_krw": null,
+   "rev_mm_recognized": 87.6
+  },
+  "counting_method": "entry",
+  "counting_basis": "입구에서 '계수기로 입장 인원 체크 필수', 참여 현황 표의 '방문자수' 컬럼",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(방문자수 외 OX퀴즈 참여자수, 집 그리기 참여자수, 스탬프 랠리 참여자수, SNS 이벤트 참여자수가 별도 집계됨. 총 방문자수는 일별 합산(349+439+681=1469).). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 87.6 ≈ 계약총액 86.870895",
+   "contract_total_mm": 86.870895,
+   "last_recognition_period": "2025-12"
+  },
+  "label_trust": {
+   "grade": "A",
+   "flags": [
+    "A"
+   ],
+   "why": "정밀 집계 표현"
+  },
+  "label_scope": {
+   "label_from": "2025-11-28",
+   "label_to": "2025-11-30",
+   "label_active_days": 3,
+   "label_span_days": 3,
+   "label_contiguous": true,
+   "daily_sum": 1469,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1BUjoQYLEALoaesZJJPsDm_adAuzXDkIy",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1BUjoQYLEALoaesZJJPsDm_adAuzXDkIy/view",
+   "title": "Sweetspot_엔자임_한국주택금융공사 팝업스토어_견적서_251204.pdf"
+  },
+  {
+   "doc_id": "1Sql9kGCFRsmFV-vTEZQ7AklevaCkdGgu",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Sql9kGCFRsmFV-vTEZQ7AklevaCkdGgu/view",
+   "title": "[Sweetspot] 한국주택금융공사_팝업스토어_결과보고서_1205.pdf"
+  },
+  {
+   "doc_id": "1U2KXJai2CJinDJRl4igWYhuIjhAhCEdC",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1U2KXJai2CJinDJRl4igWYhuIjhAhCEdC/view",
+   "title": "[Sweetspot] 한국주택금융공사_팝업스토어_결과보고서_1205.pptx"
+  },
+  {
+   "doc_id": "1uBLeLklECLyXIIEdsYMPluUJ-o8wXkjr",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1uBLeLklECLyXIIEdsYMPluUJ-o8wXkjr/view",
+   "title": "Sweetspot_엔자임_한국주택금융공사 팝업스토어_추가건_견적서_251204.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 4건: Sweetspot_엔자임_한국주택금융공사 팝업스토어_견, Sweetspot_엔자임_한국주택금융공사 팝업스토어_추, [Sweetspot] 한국주택금융공사_팝업스토어_결과보, [Sweetspot] 한국주택금융공사_팝업스토어_결과보. 미확실: POS 소비자 매출 없음(무료 체험형 행사); 면적(평) 정보 없음; 클라이언트 정식 party_id 미확정; 예상 방문자수(기획서 KPI) 문서에 없음; 운영 기간이 프로젝트 메타(2025-09-01)와 실제 행사일(2025-11-28~30) 불일치"
+ }
+}

@@ -1,0 +1,90 @@
+{
+ "market_record_id": "MKT-2022-0001",
+ "event_name": "LG전자 팝업스토어 통합 실적 (2022.01~2023.06)",
+ "brand": "LG전자",
+ "ip_or_collab": null,
+ "category": "electronics",
+ "intervention": {
+  "concept_description": "금성 오락실, LG 그램, LG 틔운, LG 프라엘 더마쎄라, LG 스탠바이미 Go 등 다수 제품 팝업스토어 마케팅 통합 집계",
+  "experience_elements": [
+   "제품 체험존",
+   "뉴트로 콘셉트 공간"
+  ],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "전국 다수 (성수동, 더현대 서울 등)",
+  "venue_type": "other",
+  "neighborhood": null,
+  "city": "서울 외",
+  "period_from": "2022-01-01",
+  "period_to": "2023-06-30",
+  "area_pyeong": null,
+  "multi_store": true,
+  "derived": {
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 550000,
+  "visitors_period_days": null,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "LG전자 발표. 복수 팝업스토어 합산 수치이며 '6월 말 기준으로는 60만명을 넘었을 것으로 추산' 언급",
+  "visitors_source_quote": "3일 LG전자에 따르면 지난해 1월 이후 올해 6월 초까지 팝업스토어를 방문한 고객이 55만명으로 집계됐다. 아직 집계 전이지만 6월 말 기준으로는 60만명을 넘었을 것으로 추산된다.",
+  "visitors_source_url": "https://www.etnews.com/20230704000002",
+  "visitors_source_date": "2023-07-04",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [
+   {
+    "metric": "visitors_total",
+    "figure": 600000,
+    "scope_note": "2023년 6월 말 기준 추산치(집계 전, LG전자 추산)",
+    "source_url": "https://www.etnews.com/20230704000002",
+    "source_date": "2023-07-04"
+   }
+  ],
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "E",
+    "C"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "단일 이벤트가 아닌 팝업 마케팅 통합 통계. 참고용 레코드. | 병합 레코드: ",
+ "_aggregate": true,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "집계형(통합/합산)",
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

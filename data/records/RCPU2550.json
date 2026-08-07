@@ -1,0 +1,182 @@
+{
+ "record_id": "RCPU2550",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:퇴마록",
+  "space_id": "unresolved:더현대서울_대행사장",
+  "client_party_id": null,
+  "brand_key": "퇴마록",
+  "space_key": "더현대서울"
+ },
+ "intervention": {
+  "concept": "영화 '퇴마록' 관련 팝업스토어로 추정되나 원문 문서가 제공되지 않아 컨셉 상세를 확인할 수 없음.",
+  "brand_name": "퇴마록",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": null,
+   "venue_name": "더현대서울",
+   "venue_type": "백화점",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-10-27",
+   "to": "2025-11-09",
+   "days": 14
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": "원문 문서 미제공으로 계약 금액·수수료 구조 확인 불가"
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대서울 백화점 입점"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 18,
+    "holiday_until": 110,
+    "holiday_block_in": 0,
+    "nat_event_gap": 4,
+    "nat_event": "APEC 경주 정상회의",
+    "doc_lag_days": 27,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 13,
+    "comp_prior_at_venue": 479,
+    "comp_within_500m_open": 14,
+    "comp_within_1000m_open": 14,
+    "matched_address": "서울 영등포구 여의대로 108"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 24227.0,
+    "pnl_pre_accounts": 2,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-09-01"
+   }
+  },
+  "demand_signals": {
+   "waiting_reported": null,
+   "sold_out": true,
+   "source": "역검색 외부 보도(2026-07-27)"
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 163.6
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-11, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-11"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "16K8vaFzeCbmZCLVZoT2qNserr9dfmgNp",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/16K8vaFzeCbmZCLVZoT2qNserr9dfmgNp/view",
+   "title": "핌아트웍스_통장사본.png"
+  },
+  {
+   "doc_id": "1CMqsVTdbpIH3zt3o2ml1ATB25az_IO85",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CMqsVTdbpIH3zt3o2ml1ATB25az_IO85/view",
+   "title": "핌아트웍스_사업자등록증.png"
+  },
+  {
+   "doc_id": "1CYvXDxbYbgfgQkNWX5N1kKg1AAMJ0_YL",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CYvXDxbYbgfgQkNWX5N1kKg1AAMJ0_YL/view",
+   "title": "견적서_PIMM_인테리어_더현대퇴마록_견적 250930.pdf"
+  },
+  {
+   "doc_id": "1JqrOyPScoT7wZ4-9GMsr4vhyWoEHcqnB",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1JqrOyPScoT7wZ4-9GMsr4vhyWoEHcqnB/view",
+   "title": "PIMM_더현대퇴마록_견적.pdf"
+  },
+  {
+   "doc_id": "1QfASNr3DLsYHJ4pPVcrxb9VtGmT6CtHV",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1QfASNr3DLsYHJ4pPVcrxb9VtGmT6CtHV/view",
+   "title": "[시공계약서-핌아트웍스] 퇴마록_시공_날인본.pdf"
+  },
+  {
+   "doc_id": "1VzLlrS0WlDAQeszkDrHDpsJ1xisSGyk5",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1VzLlrS0WlDAQeszkDrHDpsJ1xisSGyk5/view",
+   "title": "퇴마록 팝업대행 표준 계약서_와린디앤씨_1001.pdf"
+  },
+  {
+   "doc_id": "1WDjavbEmttUC91B38jBR1g6EZEwFXcuf",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1WDjavbEmttUC91B38jBR1g6EZEwFXcuf/view",
+   "title": "견적서_에이렌탈_퇴마록 10.27 스위트스팟(연장건) 님.xlsx"
+  },
+  {
+   "doc_id": "1caCAVFxJUf3XFJMh5-dY_xxSNcPacvEF",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1caCAVFxJUf3XFJMh5-dY_xxSNcPacvEF/view",
+   "title": "퇴마록_결과보고서.pdf"
+  },
+  {
+   "doc_id": "1jts5hlvvuiKSyWr4LiUdVSxsQsn88HmB",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1jts5hlvvuiKSyWr4LiUdVSxsQsn88HmB/view",
+   "title": "[시공계약서-핌아트웍스] 퇴마록_시공_모두싸인 날인본.pdf"
+  },
+  {
+   "doc_id": "1oO-W1tU_mF_IM9YxrgyhxQbhlAhOrgfq",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1oO-W1tU_mF_IM9YxrgyhxQbhlAhOrgfq/view",
+   "title": "퇴마록_1020(최종파일).zip"
+  },
+  {
+   "doc_id": "1s3hZSR16wPe1_um714-Khm5X655B7y9j",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1s3hZSR16wPe1_um714-Khm5X655B7y9j/view",
+   "title": "스위트스팟_퇴마록_최종견적서_1001.pdf"
+  },
+  {
+   "doc_id": "1xewYIB-zIINB2UaQRAPhKTp6qOyQzwUl",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1xewYIB-zIINB2UaQRAPhKTp6qOyQzwUl/view",
+   "title": "1028증서(스위트스팟).pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체 미제공; 클라이언트명; 면적(평); 수수료 구조 및 계약금액; 컨셉 및 체험요소·프로모션·연출태그; 일일 방문·매출 실측; 예상 방문객 수; 정확한 층/위치(구·존) | 외부 라벨 역검색(2026-07-27): 수요신호 적재"
+ }
+}

@@ -1,0 +1,106 @@
+{
+ "market_record_id": "MKT-2025-0031",
+ "event_name": "2025 K리그 X 산리오캐릭터즈 팝업스토어 1차(무신사 스토어 성수)",
+ "brand": "한국프로축구연맹/무신사",
+ "ip_or_collab": "산리오캐릭터즈 X K리그",
+ "category": "character",
+ "intervention": {
+  "concept_description": "2025 시즌 K리그-산리오 콜라보 1차 팝업. 무신사 스토어 성수@대림창고에서 2025-04-24~05-08 운영. 무신사 스토어 성수 역대 단일 최고 매출 기록.",
+  "experience_elements": [
+   "콜라보 굿즈 판매",
+   "포토존"
+  ],
+  "promotions": [
+   "한정 유니폼"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "무신사 스토어 성수@대림창고(서울 성동구)",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수",
+  "city": "서울",
+  "period_from": "2025-04-24",
+  "period_to": "2025-05-08",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 15,
+    "weekend_share": 0.27,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 9.2,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 60000,
+  "visitors_period_days": 15,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "주최측 집계(베스트일레븐 보도 인용)",
+  "visitors_source_quote": "공식 운영 기간 동안 누적 방문객 약 6만 명, 하루 평균 약 3,800명(최다 5,285명)이 방문했다.",
+  "visitors_source_url": "https://besteleven.com/news/articleView.html?idxno=230025",
+  "visitors_source_date": "2025-05-13",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "오픈 첫날 웨이팅 1,300팀",
+   "sold_out": true,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "오픈 첫날 4,361명이 입장했고 1,300팀의 웨이팅이 이어졌다. (베스트일레븐 2025-05-13)",
+    "1인 평균 구매 단가는 오프라인 기준 51,085원, 최다 구매 금액은 120만 원이었다. (베스트일레븐 2025-05-13)",
+    "무신사 스토어 성수 역대 단일 최고 매출을 기록했다. (베스트일레븐 2025-05-13)",
+    "오픈 첫날 매출 1억4천만 원, 7일 누적 매출 4억5천만 원을 기록했다. (파이낸셜뉴스 2025-05-07)",
+    "운영 첫날, 개업 2시간 전부터 200개 팀 이상의 대기 인원이 몰렸고, 하루 동안 총 1,300팀이 대기했다. 이 결과 첫날에만 총 4,361명이 입장했다.",
+    "운영 첫날 전체 상품의 약 20%가 품절됐다.",
+    "온라인 플랫폼 '무신사 드롭' 역시 24일 오전 11시 정각 구매창이 열리자마자 1분 만에 주요 상품이 품절되는 등 큰 인기를 끌었다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": true,
+   "final_marked": true,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "매출액 총계 미공개(첫날 1.4억·7일 누적 4.5억만 보도). 가장 많이 팔린 상품 약 2만5천 개 | 병합 레코드: MKT-2025-0028 | [병합:MKT-2025-0028] 풍부한 세부 지표: 1인당 평균 구매액 오프라인 51,085원·온라인 22,061원, 단일 최다 120만원, 판매 수량 약 2.5만개.",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 60000,
+   "basis": "organizer_claim",
+   "quote": "서울 성동구 성수동 성수@대림창고에서 4월 24일부터 5월 8일부터 보름간 열린 'K리그 X 산리오캐릭터즈 1차 팝업스토어'는 하루 평균 약 3,800명(최다는 5,285명), 누적은 약 6만 명이 방문하며 '무신사 스토어 성수'의 단일 기준 역대 최고 매출액을 기록했다.",
+   "url": "https://www.besteleven.com/news/articleView.html?idxno=230025",
+   "date": "2025-05-13"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,1170 @@
+{
+ "record_id": "RCPU2510",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:뿌리없는나무_레진엔터테인먼트",
+  "space_id": "unresolved:성수_성수이로18길8_BEACON스튜디오",
+  "client_party_id": "unresolved:주식회사_레진엔터테인먼트",
+  "brand_key": "뿌리없는나무",
+  "space_key": "성수_비콘스튜디오"
+ },
+ "intervention": {
+  "concept": "레진코믹스 웹툰 IP '뿌리 없는 나무' 팝업스토어. 원작 세계관을 구현한 연출공간과 상품 판매·굿즈 DP, 작가 사인회, 포토이즘, 럭키드로우 체험을 결합한 IP/캐릭터 팝업.",
+  "brand_name": "뿌리없는나무",
+  "experience_elements": [
+   "상품 DP 및 주문·픽업",
+   "연출공간(원작구현 희서방+CCTV실)",
+   "작가님 편지함",
+   "포토이즘(몽골텐트 내 2대)",
+   "리셉션 및 사인회 공간",
+   "숲 인트로 웹툰 연출",
+   "럭키드로우(등신대 및 스템프)",
+   "등신대 포토존"
+  ],
+  "promotions": [
+   "럭키드로우 스템프",
+   "작가 사인회"
+  ],
+  "staging_tags": [
+   "웹툰 인트로 연출",
+   "베란다 연출",
+   "외부 벽면그래픽",
+   "코르크보드",
+   "쇠사슬 진열",
+   "천정 검은천 마감",
+   "상단부 바LED 파란형광 무드",
+   "양면 등신대"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "성동구 성수동",
+   "venue_name": "BEACON스튜디오(비컨스튜디오)",
+   "venue_type": "팝업 전용 스튜디오",
+   "foot_traffic_context": "성수 로드상권"
+  },
+  "area_pyeong": 100,
+  "period": {
+   "from": "2025-05-02",
+   "to": "2025-05-06",
+   "days": 5
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "계약서 총 계약금액 120,000,000원(VAT 별도). 지급: 1차 선금 30,000,000원(2025-03-31), 2차 중도금 30,000,000원(2025-04-30), 3차 잔금 60,000,000원(2025-05-30). 견적서 총계 163,000,000원(VAT 10% 별도, 만원단위 절삭): 인테리어 소계 117,400,000원(대관료 42,000,000원 7일대관+인테리어 시공철수 75,400,000원), 운영 소계 153,015,000원, 대행수수료 10,000,000원. 판매 분실분(LOSS): 제품 제조원가(판매가의 50%)의 100% 공제, 단 총매출 대비 3% 이상 발생시 공제·3% 이하는 의뢰사 부담."
+  },
+  "brand_requirements": [
+   "모든 제작물 검수는 의뢰사 승인 후 진행",
+   "제작물 지식재산권 의뢰사 단독 귀속",
+   "행사주최자배상책임보험 가입(의무)",
+   "CCTV 설치 및 행사종료 후 2개월 영상보관",
+   "상품 검수 주체는 의뢰사"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "성수 로드상권"
+  },
+  "derived": {
+   "duration": {
+    "days": 5,
+    "weekend_share": 0.4,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 60,
+    "holiday_until": 1,
+    "holiday_block_in": 4,
+    "nat_event_gap": 32,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 82784575.0,
+    "pnl_pre_accounts": 9,
+    "pnl_pre_months": 3,
+    "pnl_pre_first": "2025-02-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 163.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서에 일자별 방문자 수·매출 실측 표가 없음. 문서는 공간규모/콘텐츠/카테고리 분류 정보만 포함.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-05, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": 120.0,
+   "last_recognition_period": "2025-05"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-MNahTjLHwY7N4qV0EcB6ULh_pjNpFxE",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1-MNahTjLHwY7N4qV0EcB6ULh_pjNpFxE/view",
+   "title": "Enscape_2025-03-20-16-55-50.png"
+  },
+  {
+   "doc_id": "1-TCdQmaltb0N8Po5xm_IwnzMG9eip5mP",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1-TCdQmaltb0N8Po5xm_IwnzMG9eip5mP/view",
+   "title": "뿌리 없는 나무 견적서_0428_3차.xlsx"
+  },
+  {
+   "doc_id": "1-xkbryzQL0hSOAgqeZYGVOO7dBDVFd_V",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1-xkbryzQL0hSOAgqeZYGVOO7dBDVFd_V/view",
+   "title": "Enscape_2025-03-31-16-56-41.png"
+  },
+  {
+   "doc_id": "10Ew7x8PNYPVRthmfWT-WjA2mmmR_5WiB",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/10Ew7x8PNYPVRthmfWT-WjA2mmmR_5WiB/view",
+   "title": "(주)아트매니아플러스_통장사본.jpg"
+  },
+  {
+   "doc_id": "11HYGDu4JMxfAlnakBtzujuTumJ_yoGYk",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/11HYGDu4JMxfAlnakBtzujuTumJ_yoGYk/view",
+   "title": "[★견적추가]뿌없나_cctv존_등신대_3종.ai"
+  },
+  {
+   "doc_id": "11IgeCOZ9FcDcptI0KsHv9XiE6Mc62pPH",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/11IgeCOZ9FcDcptI0KsHv9XiE6Mc62pPH/view",
+   "title": "Enscape_2025-04-16-13-31-59.png"
+  },
+  {
+   "doc_id": "11RHJUC2g3_weSJedcltdtka8wD-d7zo1",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/11RHJUC2g3_weSJedcltdtka8wD-d7zo1/view",
+   "title": "Enscape_2025-03-31-17-01-56.png"
+  },
+  {
+   "doc_id": "12FjmJ6eC-LYS0PfIYN_YGaNSjVHA44Gh",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/12FjmJ6eC-LYS0PfIYN_YGaNSjVHA44Gh/view",
+   "title": "0326_뿌리없는나무 팝업스토어 2차 공간구성안.pptx"
+  },
+  {
+   "doc_id": "12unOHPPcDZedtRi9nmR-qTni6baJ9c3z",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/12unOHPPcDZedtRi9nmR-qTni6baJ9c3z/view",
+   "title": "0403_식재연출 견적요청.pptx"
+  },
+  {
+   "doc_id": "13KZmBSu42JtU6ZHjmFSo1JhnVte2HVRq",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/13KZmBSu42JtU6ZHjmFSo1JhnVte2HVRq/view",
+   "title": "0417_뿌리없는나무 팝업스토어 조명계획.pptx"
+  },
+  {
+   "doc_id": "13QoHlm55SNqsZEY4UjT-nftKepijYUPt",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/13QoHlm55SNqsZEY4UjT-nftKepijYUPt/view",
+   "title": "Enscape_2025-04-08-17-48-39.png"
+  },
+  {
+   "doc_id": "13RGYeDdJM2exXAkiZ8gHU300aTDhW_nO",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/13RGYeDdJM2exXAkiZ8gHU300aTDhW_nO/view",
+   "title": "Enscape_2025-03-20-16-57-09.png"
+  },
+  {
+   "doc_id": "13ZOsu4JjNUQusm60oHL92PsVpNLowEPZ",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/13ZOsu4JjNUQusm60oHL92PsVpNLowEPZ/view",
+   "title": "Enscape_2025-03-20-16-58-14.png"
+  },
+  {
+   "doc_id": "13bXnEo3AnL7k1dSPzs2Eyy0alkNEC6GS",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/13bXnEo3AnL7k1dSPzs2Eyy0alkNEC6GS/view",
+   "title": "Enscape_2025-04-16-13-34-27.png"
+  },
+  {
+   "doc_id": "13y2cu_TfLV5ODBH_DqV7OWEJLc-gx1ck",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/13y2cu_TfLV5ODBH_DqV7OWEJLc-gx1ck/view",
+   "title": "뿌리 없는 나무 견적서_0421_2차.xlsx"
+  },
+  {
+   "doc_id": "14a7cfloIZINHbygjYAIHXo5U7cLKgPYB",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/14a7cfloIZINHbygjYAIHXo5U7cLKgPYB/view",
+   "title": "Enscape_2025-04-08-17-46-42.png"
+  },
+  {
+   "doc_id": "156YJrKkkEIJknVxjMUf11-OK6H-m5yfe",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/156YJrKkkEIJknVxjMUf11-OK6H-m5yfe/view",
+   "title": "Enscape_2025-03-20-16-59-36.png"
+  },
+  {
+   "doc_id": "15_K-PW2b_hKYV_ad1Rv34VDyO678EloC",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/15_K-PW2b_hKYV_ad1Rv34VDyO678EloC/view",
+   "title": "Enscape_2025-03-20-17-57-59.png"
+  },
+  {
+   "doc_id": "15jh-N2XPiod-_nZ0ukVj-JvhjvdF1t3e",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/15jh-N2XPiod-_nZ0ukVj-JvhjvdF1t3e/view",
+   "title": "Enscape_2025-03-20-17-57-34.png"
+  },
+  {
+   "doc_id": "16MkA4WqL9hFMW6LM5sVXb8SjFKuZaj_v",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/16MkA4WqL9hFMW6LM5sVXb8SjFKuZaj_v/view",
+   "title": "Enscape_2025-04-08-17-49-18.png"
+  },
+  {
+   "doc_id": "16YjPZ2iw7mqfTafAg2QMmneL0ffhz-lY",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/16YjPZ2iw7mqfTafAg2QMmneL0ffhz-lY/view",
+   "title": "Enscape_2025-04-08-17-51-42.png"
+  },
+  {
+   "doc_id": "17QNUVU3tISivZ8Tte2HPRe3m5iJLIpfI",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/17QNUVU3tISivZ8Tte2HPRe3m5iJLIpfI/view",
+   "title": "Enscape_2025-03-20-17-59-05.png"
+  },
+  {
+   "doc_id": "17iG-GuWTM8IZF2-xJF95IWotNVk0GoJb",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17iG-GuWTM8IZF2-xJF95IWotNVk0GoJb/view",
+   "title": "[견적서-아트매니아플러스] 뿌리없는나무 1차견적.pdf"
+  },
+  {
+   "doc_id": "188rmy5T0nRPDFjNj8bUnLolNIsEp-D6a",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/188rmy5T0nRPDFjNj8bUnLolNIsEp-D6a/view",
+   "title": "Enscape_2025-04-16-13-32-57.png"
+  },
+  {
+   "doc_id": "18ADVi2Z2Hbc_MFrqBlhLVTKbF0I05dX7",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/18ADVi2Z2Hbc_MFrqBlhLVTKbF0I05dX7/view",
+   "title": "Enscape_2025-03-20-16-55-59.png"
+  },
+  {
+   "doc_id": "18LYlkspLbdd2lNTImEQnUPLAtgZefAZ0",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/18LYlkspLbdd2lNTImEQnUPLAtgZefAZ0/view",
+   "title": "Enscape_2025-04-08-17-45-21.png"
+  },
+  {
+   "doc_id": "18PnAB33knvzT3_pL86o2aHAVhcqBxiR3",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/18PnAB33knvzT3_pL86o2aHAVhcqBxiR3/view",
+   "title": "Enscape_2025-03-31-17-02-07.png"
+  },
+  {
+   "doc_id": "18odabTzqzqDRLKA0Pi51nLbI7A0chcq9",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/18odabTzqzqDRLKA0Pi51nLbI7A0chcq9/view",
+   "title": "Enscape_2025-04-08-17-53-52.png"
+  },
+  {
+   "doc_id": "19CkG7ZUjyyHjXbKZJj2HoEO5raayErsw",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/19CkG7ZUjyyHjXbKZJj2HoEO5raayErsw/view",
+   "title": "Enscape_2025-03-31-18-13-24.png"
+  },
+  {
+   "doc_id": "19HROy41ltBAGOpEYtPJrnyUSYiiL2GcR",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19HROy41ltBAGOpEYtPJrnyUSYiiL2GcR/view",
+   "title": "[세금계산서-에이렌탈] 뿌리없는나무 팝업 집기렌탈.JPG"
+  },
+  {
+   "doc_id": "19i_5tHoKfmcLCqEN6UwU95gUepfaCmi8",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/19i_5tHoKfmcLCqEN6UwU95gUepfaCmi8/view",
+   "title": "Enscape_2025-03-31-16-50-46.png"
+  },
+  {
+   "doc_id": "19rrVFALfTENqDaGaM5v5hpZYC8UT11FB",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19rrVFALfTENqDaGaM5v5hpZYC8UT11FB/view",
+   "title": "[견적서-에이렌탈] 뿌리없는나무 물품렌탈.xlsx"
+  },
+  {
+   "doc_id": "1ATOCsUjSzAibUw_B6-D9j6e71UjtjQc1",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ATOCsUjSzAibUw_B6-D9j6e71UjtjQc1/view",
+   "title": "Enscape_2025-04-16-13-32-08.png"
+  },
+  {
+   "doc_id": "1ATsijn8747vBJhRO88fEMbz9NeEQADo_",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ATsijn8747vBJhRO88fEMbz9NeEQADo_/view",
+   "title": "Enscape_2025-04-08-17-46-53.png"
+  },
+  {
+   "doc_id": "1AZNMykWCxTs2tiBrYf2y3sfNq3TJcKD9",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1AZNMykWCxTs2tiBrYf2y3sfNq3TJcKD9/view",
+   "title": "Enscape_2025-03-31-17-03-05.png"
+  },
+  {
+   "doc_id": "1AkcYCb3lKWpYOtX_U3oFqTF_ZY86eiVM",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1AkcYCb3lKWpYOtX_U3oFqTF_ZY86eiVM/view",
+   "title": "[세금계산서-풀홉] 뿌리없는나무 팝업 식재연출(선금50%).JPG"
+  },
+  {
+   "doc_id": "1B0wjO15RcmqSMqddNiwYgurvHFNtsY-B",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1B0wjO15RcmqSMqddNiwYgurvHFNtsY-B/view",
+   "title": "[세금계산서-에이아시스템] 뿌리없는나무 팝업 PC렌탈건.JPG"
+  },
+  {
+   "doc_id": "1B7hYJj-JkQegWZ4pzRyPz_njZ0cYQPpv",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1B7hYJj-JkQegWZ4pzRyPz_njZ0cYQPpv/view",
+   "title": "Enscape_2025-04-08-17-46-05.png"
+  },
+  {
+   "doc_id": "1BPsuDWdMxIAA70NUtbY8zPjK-BsZ8cwU",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1BPsuDWdMxIAA70NUtbY8zPjK-BsZ8cwU/view",
+   "title": "Enscape_2025-04-08-17-45-48.png"
+  },
+  {
+   "doc_id": "1CgsFWeY12byy3SdemqqL6K0iXwCnu4pV",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1CgsFWeY12byy3SdemqqL6K0iXwCnu4pV/view",
+   "title": "Enscape_2025-04-16-13-33-58.png"
+  },
+  {
+   "doc_id": "1D143lvWaDNhZkMc8CXREc5B0WhR4W3a_",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1D143lvWaDNhZkMc8CXREc5B0WhR4W3a_/view",
+   "title": "Enscape_2025-04-16-13-33-37.png"
+  },
+  {
+   "doc_id": "1DCoxEaEKPhXycNic2P5Bspayll7JNEI9",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1DCoxEaEKPhXycNic2P5Bspayll7JNEI9/view",
+   "title": "Enscape_2025-03-31-10-40-13.png"
+  },
+  {
+   "doc_id": "1DT_btAVC0whlbgfYrboEfF1dLlpcahyp",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DT_btAVC0whlbgfYrboEfF1dLlpcahyp/view",
+   "title": "0417 뿌리없는나무 팝업 인테리어견적서.xlsx"
+  },
+  {
+   "doc_id": "1DiWZ4mB9r4A7PT6MbVeqCn61wtpgOQiP",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1DiWZ4mB9r4A7PT6MbVeqCn61wtpgOQiP/view",
+   "title": "Enscape_2025-03-20-16-56-35.png"
+  },
+  {
+   "doc_id": "1E3yppLnRatlwHnD2HNJYmurp60gt_PTf",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1E3yppLnRatlwHnD2HNJYmurp60gt_PTf/view",
+   "title": "Enscape_2025-03-31-17-02-54.png"
+  },
+  {
+   "doc_id": "1E_L4QylgGEcqAAmY1cDiZfNR_jbBbo73",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1E_L4QylgGEcqAAmY1cDiZfNR_jbBbo73/view",
+   "title": "Enscape_2025-03-31-16-51-07.png"
+  },
+  {
+   "doc_id": "1E_rAESRARFJaJX2KYrVGhZpHDeZ3j8ry",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1E_rAESRARFJaJX2KYrVGhZpHDeZ3j8ry/view",
+   "title": "Enscape_2025-04-08-17-47-10.png"
+  },
+  {
+   "doc_id": "1Eb4554XIZRWJHee6Z8wN40wr76NmfrA5",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Eb4554XIZRWJHee6Z8wN40wr76NmfrA5/view",
+   "title": "Enscape_2025-03-20-16-56-17.png"
+  },
+  {
+   "doc_id": "1ExeRxwUutPo4xS46OnXG6CUltw3bth_7",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ExeRxwUutPo4xS46OnXG6CUltw3bth_7/view",
+   "title": "Enscape_2025-03-20-16-55-34.png"
+  },
+  {
+   "doc_id": "1FCTchbbLJlQFk7BXQUzhaKSTD-m9vzXb",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1FCTchbbLJlQFk7BXQUzhaKSTD-m9vzXb/view",
+   "title": "Enscape_2025-04-16-13-33-48.png"
+  },
+  {
+   "doc_id": "1G3JWHTebfLOPPbRlWCAcsqp6Jqm4hAVQ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1G3JWHTebfLOPPbRlWCAcsqp6Jqm4hAVQ/view",
+   "title": "0404_뿌리없는나무 팝업 전기배선 요청.pptx"
+  },
+  {
+   "doc_id": "1GKZFEu8YtzbhhmTolCV-0lAyuZd7uYqj",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1GKZFEu8YtzbhhmTolCV-0lAyuZd7uYqj/view",
+   "title": "Enscape_2025-03-20-16-57-38.png"
+  },
+  {
+   "doc_id": "1HDUg0JK3J8nHGw6o_kRnGjgT0NqzYeva",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1HDUg0JK3J8nHGw6o_kRnGjgT0NqzYeva/view",
+   "title": "Enscape_2025-04-08-17-44-47.png"
+  },
+  {
+   "doc_id": "1HEcML8v26Xy7aFoSIC9WZGM4Fc9UWGLG",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1HEcML8v26Xy7aFoSIC9WZGM4Fc9UWGLG/view",
+   "title": "Enscape_2025-04-08-17-40-51.png"
+  },
+  {
+   "doc_id": "1HM9STlV_OfEMJ-vTw9hPP0WLW0kJEIAJ",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1HM9STlV_OfEMJ-vTw9hPP0WLW0kJEIAJ/view",
+   "title": "Enscape_2025-04-08-17-51-53.png"
+  },
+  {
+   "doc_id": "1Hzexp30WdyV06p1pESD6NehElOW5lzzI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Hzexp30WdyV06p1pESD6NehElOW5lzzI/view",
+   "title": "0408_뿌리없는나무 팝업스토어 견적요청.pptx"
+  },
+  {
+   "doc_id": "1I4kXgmaKyaCNSQu1X0XMnAim79dXIYIi",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1I4kXgmaKyaCNSQu1X0XMnAim79dXIYIi/view",
+   "title": "Enscape_2025-04-16-13-31-41.png"
+  },
+  {
+   "doc_id": "1Iror_N5zAi5P9XSWe5lbLoUBN7aF0HJB",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Iror_N5zAi5P9XSWe5lbLoUBN7aF0HJB/view",
+   "title": "Enscape_2025-04-08-18-11-58.png"
+  },
+  {
+   "doc_id": "1JA02C_yH7J1BSlImqBGz1vw6S5TaJqkg",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1JA02C_yH7J1BSlImqBGz1vw6S5TaJqkg/view",
+   "title": "Enscape_2025-04-08-17-43-36.png"
+  },
+  {
+   "doc_id": "1JLarODlxYBDO1xZers-EDqoEGqNbmW9T",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1JLarODlxYBDO1xZers-EDqoEGqNbmW9T/view",
+   "title": "Enscape_2025-03-20-16-58-40.png"
+  },
+  {
+   "doc_id": "1Ji_dJOLAMWrFWHE83fZLC7X0db-W2gcA",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Ji_dJOLAMWrFWHE83fZLC7X0db-W2gcA/view",
+   "title": "0416_뿌리없는나무 팝업스토어 최종안.pptx"
+  },
+  {
+   "doc_id": "1KSrKo_bA0khH1DjRQ0zAjp6pbeJtExG9",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1KSrKo_bA0khH1DjRQ0zAjp6pbeJtExG9/view",
+   "title": "Enscape_2025-03-20-17-58-21.png"
+  },
+  {
+   "doc_id": "1KhxRopwv19glYbuQOeGSY-fHNK59EF0e",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1KhxRopwv19glYbuQOeGSY-fHNK59EF0e/view",
+   "title": "Enscape_2025-04-08-17-46-17.png"
+  },
+  {
+   "doc_id": "1L32XVgLHnPhKUW1kVlcKD-nUXL3bt0IM",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1L32XVgLHnPhKUW1kVlcKD-nUXL3bt0IM/view",
+   "title": "Enscape_2025-03-20-16-56-08.png"
+  },
+  {
+   "doc_id": "1L9jAZxJRbLfHex4fczWopTLthjluEjir",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1L9jAZxJRbLfHex4fczWopTLthjluEjir/view",
+   "title": "Enscape_2025-03-20-16-56-44.png"
+  },
+  {
+   "doc_id": "1LRSLklunKNrBUWjyvKgaQRd19Y5JuMgp",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1LRSLklunKNrBUWjyvKgaQRd19Y5JuMgp/view",
+   "title": "Enscape_2025-04-16-13-34-09.png"
+  },
+  {
+   "doc_id": "1L_wINOV4rBv-9Bmrv7SCUACPIJpr8o43",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1L_wINOV4rBv-9Bmrv7SCUACPIJpr8o43/view",
+   "title": "[견적서-렌탈큐브] 뿌리없는나무 팝업 카운터 및 스툴렌탈.xlsx"
+  },
+  {
+   "doc_id": "1LtcUfabQewtgdlBhjGbwca6sbQyic5iJ",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1LtcUfabQewtgdlBhjGbwca6sbQyic5iJ/view",
+   "title": "Enscape_2025-04-16-13-33-15.png"
+  },
+  {
+   "doc_id": "1MAg47jVI1JgEj1GdvpK69SJgAYRXadxr",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1MAg47jVI1JgEj1GdvpK69SJgAYRXadxr/view",
+   "title": "[견적서- 아트매니아플러스] 뿌리없는나무 2차견적서.xlsx"
+  },
+  {
+   "doc_id": "1MIoSDuHMX_nHIWg_P1JqYTHBderhiu9K",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1MIoSDuHMX_nHIWg_P1JqYTHBderhiu9K/view",
+   "title": "0320_뿌리없는나무 팝업스토어 1차 공간구성안.pptx"
+  },
+  {
+   "doc_id": "1MQfXf2_irlkO1JYh1aJIx8I-BYsX-oIa",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1MQfXf2_irlkO1JYh1aJIx8I-BYsX-oIa/view",
+   "title": "Enscape_2025-04-08-18-10-36.png"
+  },
+  {
+   "doc_id": "1MjpV0nImjABHluo54XMqSo7q9_n1ocPS",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1MjpV0nImjABHluo54XMqSo7q9_n1ocPS/view",
+   "title": "Enscape_2025-04-08-18-11-18.png"
+  },
+  {
+   "doc_id": "1N0Av3QNYF3neddrDchvGt-dSBLQohKNa",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1N0Av3QNYF3neddrDchvGt-dSBLQohKNa/view",
+   "title": "뿌없나_cctv존_모니터_6~10번-003.ai"
+  },
+  {
+   "doc_id": "1NhgwIhDW4bm9V3c32oSfd0sBkko1-SGh",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1NhgwIhDW4bm9V3c32oSfd0sBkko1-SGh/view",
+   "title": "Enscape_2025-04-16-13-32-21.png"
+  },
+  {
+   "doc_id": "1O3_QIE4r545RFIXiY7coL_tlZXMoHq5P",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1O3_QIE4r545RFIXiY7coL_tlZXMoHq5P/view",
+   "title": "Enscape_2025-04-08-17-49-43.png"
+  },
+  {
+   "doc_id": "1OHF9VS4MT27b9ek0XADm2eA7J83q6ZqJ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1OHF9VS4MT27b9ek0XADm2eA7J83q6ZqJ/view",
+   "title": "뿌없나_cctv존_모니터_1~5번-002.ai"
+  },
+  {
+   "doc_id": "1PEd7VOxvAN67RGlwV5Qo87moTjTXAOtA",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1PEd7VOxvAN67RGlwV5Qo87moTjTXAOtA/view",
+   "title": "[견적서-풀홉] 뿌리없는나무 팝업 식재연출건.xlsx"
+  },
+  {
+   "doc_id": "1PWMLLxkgMbGUVympcoNoqOw8YR5H6Fbt",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1PWMLLxkgMbGUVympcoNoqOw8YR5H6Fbt/view",
+   "title": "Enscape_2025-03-20-17-58-06.png"
+  },
+  {
+   "doc_id": "1Q2UEALxKvB8WxJLk8LF3IypiQuqhL1OK",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Q2UEALxKvB8WxJLk8LF3IypiQuqhL1OK/view",
+   "title": "Enscape_2025-04-16-13-32-44.png"
+  },
+  {
+   "doc_id": "1Q9rtMhEN1z1WKtdfKUCVrvz61Y7ciJRx",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Q9rtMhEN1z1WKtdfKUCVrvz61Y7ciJRx/view",
+   "title": "[견적서-에이아시스템] 뿌리없는나무 팝업 PC렌탈건.xlsx"
+  },
+  {
+   "doc_id": "1QBOWJNBcBMPJ0D3_2PQd2N593dgyeD4b",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1QBOWJNBcBMPJ0D3_2PQd2N593dgyeD4b/view",
+   "title": "0331_뿌리없는나무 팝업스토어 3차 공간구성안.pptx"
+  },
+  {
+   "doc_id": "1QCcF1tizTRjP7ODnx4CjzGUf1Aa50UBo",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1QCcF1tizTRjP7ODnx4CjzGUf1Aa50UBo/view",
+   "title": "[세금계산서-별솔렌탈] 뿌리없는나무 팝업 텐트 및 게임기 렌탈건.JPG"
+  },
+  {
+   "doc_id": "1R93KwIKiIYtZyRHbtxjL-iGEoX5PnBjx",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1R93KwIKiIYtZyRHbtxjL-iGEoX5PnBjx/view",
+   "title": "Enscape_2025-03-20-17-58-33.png"
+  },
+  {
+   "doc_id": "1R9MH9i5QdyFOlG-H6bA5kTWmtht1x5ZD",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1R9MH9i5QdyFOlG-H6bA5kTWmtht1x5ZD/view",
+   "title": "Enscape_2025-04-16-13-36-40.png"
+  },
+  {
+   "doc_id": "1RHEHZKbqk-2B4cR8TJs3TA_13r09n2my",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1RHEHZKbqk-2B4cR8TJs3TA_13r09n2my/view",
+   "title": "Enscape_2025-04-08-17-48-57.png"
+  },
+  {
+   "doc_id": "1RIqECBGu3b48Dp4Mu8DOoxim6x1n0MoN",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1RIqECBGu3b48Dp4Mu8DOoxim6x1n0MoN/view",
+   "title": "Enscape_2025-03-20-17-59-40.png"
+  },
+  {
+   "doc_id": "1RUQgtOIzTJDMqM2pYXRVy8jfgH_2dteD",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1RUQgtOIzTJDMqM2pYXRVy8jfgH_2dteD/view",
+   "title": "Enscape_2025-04-08-18-13-17.png"
+  },
+  {
+   "doc_id": "1SNkPNosUZjaW7b8lLUUZFZPTe7UtlaBA",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1SNkPNosUZjaW7b8lLUUZFZPTe7UtlaBA/view",
+   "title": "Enscape_2025-03-20-17-27-58.png"
+  },
+  {
+   "doc_id": "1SOs36RYnWe8M4X7WdzjdnTCk7MxY8NNp",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1SOs36RYnWe8M4X7WdzjdnTCk7MxY8NNp/view",
+   "title": "Enscape_2025-04-16-13-31-19.png"
+  },
+  {
+   "doc_id": "1TArgwCI64DK4BFRwHWPSS5IylCLrThBx",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1TArgwCI64DK4BFRwHWPSS5IylCLrThBx/view",
+   "title": "0416_뿌리없는나무 팝업스토어 최종안(수정).pdf"
+  },
+  {
+   "doc_id": "1TO2-G6q8ynvO2QRujsT2giAR899out9Q",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1TO2-G6q8ynvO2QRujsT2giAR899out9Q/view",
+   "title": "Enscape_2025-04-08-17-45-06.png"
+  },
+  {
+   "doc_id": "1TY4s_Rgb40UeD6NoUAGAYD6D7p9q0CfM",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1TY4s_Rgb40UeD6NoUAGAYD6D7p9q0CfM/view",
+   "title": "뿌없나_cctv존_격자모니터.ai"
+  },
+  {
+   "doc_id": "1UcsqIxwX3fKYah_6ncayBAMOQDugfjo6",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1UcsqIxwX3fKYah_6ncayBAMOQDugfjo6/view",
+   "title": "Enscape_2025-03-20-17-24-22.png"
+  },
+  {
+   "doc_id": "1V6LgYz9WkP5tjODEPt8hdybJySYfOUa6",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1V6LgYz9WkP5tjODEPt8hdybJySYfOUa6/view",
+   "title": "Enscape_2025-03-20-17-59-28.png"
+  },
+  {
+   "doc_id": "1VTFLHGYvQyXZaiHMi_ntvDQMcRKpNVdK",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1VTFLHGYvQyXZaiHMi_ntvDQMcRKpNVdK/view",
+   "title": "Enscape_2025-04-08-17-47-40.png"
+  },
+  {
+   "doc_id": "1VYLCONHH-0DfBgs8DHZnalsb9ooyI0IF",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1VYLCONHH-0DfBgs8DHZnalsb9ooyI0IF/view",
+   "title": "[견적서-아트매니아플러스] 뿌리없는나무 4차견적.xlsx"
+  },
+  {
+   "doc_id": "1VbsAmikojewxoYwjOScdVLagcJ_2mwij",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1VbsAmikojewxoYwjOScdVLagcJ_2mwij/view",
+   "title": "Enscape_2025-03-31-17-03-27.png"
+  },
+  {
+   "doc_id": "1WICzGy_Vb3_KaT_OM2RI0ztsE2WlTFB3",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1WICzGy_Vb3_KaT_OM2RI0ztsE2WlTFB3/view",
+   "title": "Enscape_2025-03-20-16-57-28.png"
+  },
+  {
+   "doc_id": "1WU-yM4vScfzGfkysqMoc-quL-nT-oB5A",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1WU-yM4vScfzGfkysqMoc-quL-nT-oB5A/view",
+   "title": "Enscape_2025-03-31-16-52-12.png"
+  },
+  {
+   "doc_id": "1We2r4bQz7HD0-AQbgaE-MDaA1lHpLEnS",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1We2r4bQz7HD0-AQbgaE-MDaA1lHpLEnS/view",
+   "title": "Enscape_2025-04-16-13-30-58.png"
+  },
+  {
+   "doc_id": "1WgruhnZ5egLUf751z0z2Ls9_8czQSy5B",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1WgruhnZ5egLUf751z0z2Ls9_8czQSy5B/view",
+   "title": "Enscape_2025-03-20-17-58-49.png"
+  },
+  {
+   "doc_id": "1X3w8jG2utNcyTXqsRjsleB88bwcaI4TC",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1X3w8jG2utNcyTXqsRjsleB88bwcaI4TC/view",
+   "title": "Enscape_2025-03-31-18-36-53.png"
+  },
+  {
+   "doc_id": "1XB9RfKEIhJKilfWziLTP0oeLOF1KzlFD",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1XB9RfKEIhJKilfWziLTP0oeLOF1KzlFD/view",
+   "title": "Enscape_2025-03-31-16-57-00.png"
+  },
+  {
+   "doc_id": "1XMXdeYjF_Vk_HMwJXTFtrmx2XBrX6vqB",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1XMXdeYjF_Vk_HMwJXTFtrmx2XBrX6vqB/view",
+   "title": "Enscape_2025-04-16-13-36-03.png"
+  },
+  {
+   "doc_id": "1Xb3Hw5nsVB4OrCfXn9wejULak9d4au15",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Xb3Hw5nsVB4OrCfXn9wejULak9d4au15/view",
+   "title": "0408_뿌리없는나무 팝업스토어 4차 공간구성안.pptx"
+  },
+  {
+   "doc_id": "1Y5Xr3eTzQHUxKQVSTTLdzQ3RQDOHkul_",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Y5Xr3eTzQHUxKQVSTTLdzQ3RQDOHkul_/view",
+   "title": "0320_뿌리없는나무 팝업스토어 1차 공간구성안.pdf"
+  },
+  {
+   "doc_id": "1YEavHrp3oM8iErrQ8tPGJrw_JX06ir-x",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1YEavHrp3oM8iErrQ8tPGJrw_JX06ir-x/view",
+   "title": "Enscape_2025-04-08-17-42-16.png"
+  },
+  {
+   "doc_id": "1YOTPcz3vwjNdcM_MgjXoTkO5EJvxXYye",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1YOTPcz3vwjNdcM_MgjXoTkO5EJvxXYye/view",
+   "title": "Enscape_2025-04-08-17-55-13.png"
+  },
+  {
+   "doc_id": "1ZJ6T6pKFJyjtOztGRgicQlyEzDoDb4PC",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ZJ6T6pKFJyjtOztGRgicQlyEzDoDb4PC/view",
+   "title": "Enscape_2025-04-16-13-34-40.png"
+  },
+  {
+   "doc_id": "1_iLCoxS9dQHUiL8uXLWBVYKRkS3rwIzD",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1_iLCoxS9dQHUiL8uXLWBVYKRkS3rwIzD/view",
+   "title": "Enscape_2025-04-16-13-35-07.png"
+  },
+  {
+   "doc_id": "1_t8O6QI0X5mitqspfzir5WiE7r_JAROH",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1_t8O6QI0X5mitqspfzir5WiE7r_JAROH/view",
+   "title": "Enscape_2025-03-20-17-57-43.png"
+  },
+  {
+   "doc_id": "1_tm-vBpJoa_OWbxp8pyjiRu0yp-YBJZY",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1_tm-vBpJoa_OWbxp8pyjiRu0yp-YBJZY/view",
+   "title": "Enscape_2025-04-08-18-37-36.png"
+  },
+  {
+   "doc_id": "1_y-XUWlmI405JfP37VM8xRAERQDO9WKM",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1_y-XUWlmI405JfP37VM8xRAERQDO9WKM/view",
+   "title": "뿌리없는나무 팝업 식재연출 견적요청.pdf"
+  },
+  {
+   "doc_id": "1a8GB0hu3QC82cA3xLl7vA0IGldwvy8Mf",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1a8GB0hu3QC82cA3xLl7vA0IGldwvy8Mf/view",
+   "title": "Enscape_2025-04-08-17-43-50.png"
+  },
+  {
+   "doc_id": "1b2uRDxJLK4VqTZe3CrTtRiWeu24HRhpS",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1b2uRDxJLK4VqTZe3CrTtRiWeu24HRhpS/view",
+   "title": "Enscape_2025-03-20-17-59-13.png"
+  },
+  {
+   "doc_id": "1bfX8J3Fd3M15imN9XPhcYDV5y5QeORfD",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1bfX8J3Fd3M15imN9XPhcYDV5y5QeORfD/view",
+   "title": "Enscape_2025-03-20-17-02-01.png"
+  },
+  {
+   "doc_id": "1c9jzHHHjpF3kicPzUbxheb_7nBoAVsbP",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1c9jzHHHjpF3kicPzUbxheb_7nBoAVsbP/view",
+   "title": "0408_뿌리없는나무 팝업스토어 4차 공간구성안.pdf"
+  },
+  {
+   "doc_id": "1duAk2_zqXbDAwpQ9lEcUlUb05xp5CPRQ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1duAk2_zqXbDAwpQ9lEcUlUb05xp5CPRQ/view",
+   "title": "[견적서-아트매니아플러스] 뿌리없는나무 2차견적.pdf"
+  },
+  {
+   "doc_id": "1eD6U1QSR5WJS1EiR6kFKFOFsqgk2B4u9",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1eD6U1QSR5WJS1EiR6kFKFOFsqgk2B4u9/view",
+   "title": "에이아이시스템 사업자등록증명.pdf"
+  },
+  {
+   "doc_id": "1eDeaZ6iYrQKAImwGu1MfDyB_JCre0Ksu",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1eDeaZ6iYrQKAImwGu1MfDyB_JCre0Ksu/view",
+   "title": "Enscape_2025-03-20-17-00-53.png"
+  },
+  {
+   "doc_id": "1gcl-sGm7zKs2JPf-8sSz0rYpvI0DbWyG",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1gcl-sGm7zKs2JPf-8sSz0rYpvI0DbWyG/view",
+   "title": "Enscape_2025-03-20-17-08-06.png"
+  },
+  {
+   "doc_id": "1gdiHOeYDGCQ72KAYmoNYQi9-p-u7bnlH",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1gdiHOeYDGCQ72KAYmoNYQi9-p-u7bnlH/view",
+   "title": "Enscape_2025-03-31-18-31-35.png"
+  },
+  {
+   "doc_id": "1h7VbxpNfmhKH6IPLl50S13IEqdmLyRv6",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1h7VbxpNfmhKH6IPLl50S13IEqdmLyRv6/view",
+   "title": "Enscape_2025-04-08-17-50-22.png"
+  },
+  {
+   "doc_id": "1jMab2O8XYlrdrOdHSI-m_w0TAkoMBrob",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1jMab2O8XYlrdrOdHSI-m_w0TAkoMBrob/view",
+   "title": "Enscape_2025-03-31-18-30-36.png"
+  },
+  {
+   "doc_id": "1jMkPuX8f37W9YyirH1QaK4VOGk03JFP2",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1jMkPuX8f37W9YyirH1QaK4VOGk03JFP2/view",
+   "title": "Enscape_2025-03-31-17-01-45.png"
+  },
+  {
+   "doc_id": "1jP8orBiWZGyZFmwaoJKM0yw6e8Kdz4wK",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1jP8orBiWZGyZFmwaoJKM0yw6e8Kdz4wK/view",
+   "title": "Enscape_2025-03-31-17-01-27.png"
+  },
+  {
+   "doc_id": "1jzE8qnGS-7JS0huzX-0gnLozVsYMfNS9",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1jzE8qnGS-7JS0huzX-0gnLozVsYMfNS9/view",
+   "title": "Enscape_2025-03-20-16-57-01.png"
+  },
+  {
+   "doc_id": "1lcUTI2XzRIL9sbOJDWo2P72cNBpbBQ9n",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1lcUTI2XzRIL9sbOJDWo2P72cNBpbBQ9n/view",
+   "title": "Enscape_2025-03-31-17-02-30.png"
+  },
+  {
+   "doc_id": "1li3i6ZC832yWMQvu7bwI6ZTnx6poB2ob",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1li3i6ZC832yWMQvu7bwI6ZTnx6poB2ob/view",
+   "title": "(주)아트매니아플러스 사업자등록증.jpg"
+  },
+  {
+   "doc_id": "1n0q11FexSyeY_8SdfjQSyLr8UW7SL7Vn",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1n0q11FexSyeY_8SdfjQSyLr8UW7SL7Vn/view",
+   "title": "Enscape_2025-04-08-17-39-20.png"
+  },
+  {
+   "doc_id": "1n6sV5S99WJmYUzXmlzr4jTBB4UtsAJG0",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1n6sV5S99WJmYUzXmlzr4jTBB4UtsAJG0/view",
+   "title": "뿌리 없는 나무 견적서_0509_최종견적서.pdf"
+  },
+  {
+   "doc_id": "1nPgVpIDooZ9f3iuZlO3tfy3nbayi9SFT",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1nPgVpIDooZ9f3iuZlO3tfy3nbayi9SFT/view",
+   "title": "Enscape_2025-03-31-16-56-50.png"
+  },
+  {
+   "doc_id": "1o4a1yehKPE0tQS8LHA8j3IkI3pF-2AUb",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1o4a1yehKPE0tQS8LHA8j3IkI3pF-2AUb/view",
+   "title": "Enscape_2025-03-20-16-55-42.png"
+  },
+  {
+   "doc_id": "1oQM68P5SwUEODYuU_oKsTZu-Pm2t_RIt",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1oQM68P5SwUEODYuU_oKsTZu-Pm2t_RIt/view",
+   "title": "0416_뿌리없는나무 팝업스토어 견적수정요청.pptx"
+  },
+  {
+   "doc_id": "1oWi45FBMiA3v5x3t37NNETKgjzq4tg1U",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1oWi45FBMiA3v5x3t37NNETKgjzq4tg1U/view",
+   "title": "Enscape_2025-04-16-13-36-20.png"
+  },
+  {
+   "doc_id": "1oehjLb1HM4iO7AxBOtlGTCIXXFDP7h-A",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1oehjLb1HM4iO7AxBOtlGTCIXXFDP7h-A/view",
+   "title": "Enscape_2025-04-16-13-33-28.png"
+  },
+  {
+   "doc_id": "1pB-8wiJFZY2QFJz7LRz5H0ShQX_l5p-5",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1pB-8wiJFZY2QFJz7LRz5H0ShQX_l5p-5/view",
+   "title": "0416_뿌리없는나무 팝업스토어 최종안.pdf"
+  },
+  {
+   "doc_id": "1pG5RJvPznsay7QqR74-xpzHXDR-deFPW",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1pG5RJvPznsay7QqR74-xpzHXDR-deFPW/view",
+   "title": "Enscape_2025-03-31-17-02-19.png"
+  },
+  {
+   "doc_id": "1pHhY4WJrXMGhV9tkNauMZ3zkb11s9oU_",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1pHhY4WJrXMGhV9tkNauMZ3zkb11s9oU_/view",
+   "title": "0331_뿌리없는나무 팝업스토어 3차 공간구성안.pdf"
+  },
+  {
+   "doc_id": "1pVi2KZcOWzTz-xMHW_S9CJrnRfJo3g4l",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1pVi2KZcOWzTz-xMHW_S9CJrnRfJo3g4l/view",
+   "title": "Enscape_2025-03-31-17-00-26.png"
+  },
+  {
+   "doc_id": "1pkxWjbmFKX-8kwdNfyMyapoIjEg0oaP_",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1pkxWjbmFKX-8kwdNfyMyapoIjEg0oaP_/view",
+   "title": "Enscape_2025-03-31-16-51-31.png"
+  },
+  {
+   "doc_id": "1plxD4PR1CHJrYZnRIUQK8sKYApxwPwwc",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1plxD4PR1CHJrYZnRIUQK8sKYApxwPwwc/view",
+   "title": "Enscape_2025-04-08-17-47-23.png"
+  },
+  {
+   "doc_id": "1qSTIXjRJ0PJE_1hIB93rOfHR_qSpTyQt",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1qSTIXjRJ0PJE_1hIB93rOfHR_qSpTyQt/view",
+   "title": "[견적서-별솔렌탈] 뿌리없는나무 팝업 텐트 및 기기렌탈건.xlsx"
+  },
+  {
+   "doc_id": "1qTwvwAMbYfwkWY03ik5SkEA_jdDzVbA4",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1qTwvwAMbYfwkWY03ik5SkEA_jdDzVbA4/view",
+   "title": "Enscape_2025-03-31-17-00-38.png"
+  },
+  {
+   "doc_id": "1qUHVGmx9-iuEf2cQEdg2Km2MuO3H4iwf",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1qUHVGmx9-iuEf2cQEdg2Km2MuO3H4iwf/view",
+   "title": "Enscape_2025-03-20-16-56-26.png"
+  },
+  {
+   "doc_id": "1qak0sLbf6gWzoPNZlDifWYAA88R3ukxa",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1qak0sLbf6gWzoPNZlDifWYAA88R3ukxa/view",
+   "title": "Enscape_2025-03-20-17-58-13.png"
+  },
+  {
+   "doc_id": "1qbPxvmnVJ-HDcQfqH47IoKmX57qLeaiG",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1qbPxvmnVJ-HDcQfqH47IoKmX57qLeaiG/view",
+   "title": "Enscape_2025-03-31-17-01-10.png"
+  },
+  {
+   "doc_id": "1rQAWj52t2acZglzzReLqjLeGqtZXfu9J",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1rQAWj52t2acZglzzReLqjLeGqtZXfu9J/view",
+   "title": "Enscape_2025-04-16-13-35-53.png"
+  },
+  {
+   "doc_id": "1reHzA_8RhLe8dBeZ7ZsEIF2ZKVwR9LAA",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1reHzA_8RhLe8dBeZ7ZsEIF2ZKVwR9LAA/view",
+   "title": "Enscape_2025-04-16-13-32-31.png"
+  },
+  {
+   "doc_id": "1sAdq28Aqy3OOLrGjBEPQjfhLtBFXJEwV",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1sAdq28Aqy3OOLrGjBEPQjfhLtBFXJEwV/view",
+   "title": "[견적서-아트매니아플러스] 뿌리없는나무 3차견적.xlsx"
+  },
+  {
+   "doc_id": "1t3HHVHEBpIhw5-5t8QC5iOYLjaPaFc61",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1t3HHVHEBpIhw5-5t8QC5iOYLjaPaFc61/view",
+   "title": "Enscape_2025-03-20-17-27-51.png"
+  },
+  {
+   "doc_id": "1t3zQbPBBNQn59OcVkamfuQFEqOI7dM1e",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1t3zQbPBBNQn59OcVkamfuQFEqOI7dM1e/view",
+   "title": "Enscape_2025-04-16-13-34-52.png"
+  },
+  {
+   "doc_id": "1t9ECwZAdG7pu2Vu_KpN0lZOJdepu0CH-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1t9ECwZAdG7pu2Vu_KpN0lZOJdepu0CH-/view",
+   "title": "모니터폼보드_배치예시_현장조정예정.png"
+  },
+  {
+   "doc_id": "1tNh-D-t9vIs2J5w5rmtXHUgZB75mKFdJ",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1tNh-D-t9vIs2J5w5rmtXHUgZB75mKFdJ/view",
+   "title": "Enscape_2025-04-08-17-44-29.png"
+  },
+  {
+   "doc_id": "1u8vjyZtL9rrHnBi0s2TJoxh46NU-oXpM",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1u8vjyZtL9rrHnBi0s2TJoxh46NU-oXpM/view",
+   "title": "Enscape_2025-03-31-18-38-06.png"
+  },
+  {
+   "doc_id": "1u9m-A8I5bXbpGr-ueojUn7lRgP2QjmWB",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1u9m-A8I5bXbpGr-ueojUn7lRgP2QjmWB/view",
+   "title": "0414 뿌리없는나무 팝업 인테리어견적서.xlsx"
+  },
+  {
+   "doc_id": "1uWUIhHC7CCHhkccIOqRPrweC4IVZXko-",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1uWUIhHC7CCHhkccIOqRPrweC4IVZXko-/view",
+   "title": "0326_뿌리없는나무 팝업스토어 2차 공간구성안.pdf"
+  },
+  {
+   "doc_id": "1uyiy653OUnoSog1qAXqdMfMK-m5--rRc",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1uyiy653OUnoSog1qAXqdMfMK-m5--rRc/view",
+   "title": "Enscape_2025-03-20-16-56-53.png"
+  },
+  {
+   "doc_id": "1v4-byTJG5x0hjqfnaZ6y_oL6EkWeabe0",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1v4-byTJG5x0hjqfnaZ6y_oL6EkWeabe0/view",
+   "title": "Enscape_2025-03-20-17-57-51.png"
+  },
+  {
+   "doc_id": "1vQU2PmjAE2MpBd_tukSeZxWKcF0G34Ms",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1vQU2PmjAE2MpBd_tukSeZxWKcF0G34Ms/view",
+   "title": "Enscape_2025-04-16-13-36-11.png"
+  },
+  {
+   "doc_id": "1vRtqk26brbBCqrgq7uScLmSmyZ1qWbl4",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1vRtqk26brbBCqrgq7uScLmSmyZ1qWbl4/view",
+   "title": "에이아시스템 통장사본.pdf"
+  },
+  {
+   "doc_id": "1w50sjfw57G2vyPEBjs4iQrHTE8mJMosm",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1w50sjfw57G2vyPEBjs4iQrHTE8mJMosm/view",
+   "title": "최종본_레진엔터테인먼트_스위트스팟 뿌리없는나무_팝업 업무계약서.pdf"
+  },
+  {
+   "doc_id": "1wCGM7Woox0gGFpgybvYuOPYaepWnCGeV",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1wCGM7Woox0gGFpgybvYuOPYaepWnCGeV/view",
+   "title": "Enscape_2025-03-31-17-02-40.png"
+  },
+  {
+   "doc_id": "1wPRyKKNTgFizvgOVquBcVygLj_wA4ZYV",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1wPRyKKNTgFizvgOVquBcVygLj_wA4ZYV/view",
+   "title": "Enscape_2025-03-31-16-51-53.png"
+  },
+  {
+   "doc_id": "1wnJFbUDg4A0IMbT1EbKXPs_2aa22IV0H",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1wnJFbUDg4A0IMbT1EbKXPs_2aa22IV0H/view",
+   "title": "0331_뿌리없는나무 팝업 견적요청.pptx"
+  },
+  {
+   "doc_id": "1y6q0ZS-VCDPvYrihhfUTPL_8GAFmfWA6",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1y6q0ZS-VCDPvYrihhfUTPL_8GAFmfWA6/view",
+   "title": "Enscape_2025-04-08-18-12-11.png"
+  },
+  {
+   "doc_id": "1yQL3UEQa9T7mduxNlEVJsnC0y15Knv8K",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1yQL3UEQa9T7mduxNlEVJsnC0y15Knv8K/view",
+   "title": "Enscape_2025-03-31-16-52-02.png"
+  },
+  {
+   "doc_id": "1yXZRfXKP7ntOS_Uncr_8Pw6CjiuAS1uE",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1yXZRfXKP7ntOS_Uncr_8Pw6CjiuAS1uE/view",
+   "title": "Enscape_2025-03-20-16-57-18.png"
+  },
+  {
+   "doc_id": "1zBJnlTgYI1xBTN-JABC30yANERrf4U1K",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1zBJnlTgYI1xBTN-JABC30yANERrf4U1K/view",
+   "title": "뿌리없는나무 결과보고서.pdf"
+  },
+  {
+   "doc_id": "1zUlaWm2K68-M3Ea7ZoqVZXqXQ_P4LChW",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1zUlaWm2K68-M3Ea7ZoqVZXqXQ_P4LChW/view",
+   "title": "Enscape_2025-03-20-17-58-42.png"
+  },
+  {
+   "doc_id": "1zej78W6OtVfDnD9eaE1S81qczngRmgW-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1zej78W6OtVfDnD9eaE1S81qczngRmgW-/view",
+   "title": "★뿌리없는나무 팝업스토어 실비정리.xlsx"
+  },
+  {
+   "doc_id": "1ziR8zSj0ApWSxs7ZuudPuMcoPwupuQBL",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ziR8zSj0ApWSxs7ZuudPuMcoPwupuQBL/view",
+   "title": "뿌리 없는 나무 견적서_0417.xlsx"
+  },
+  {
+   "doc_id": "1zlvmLQbKBw11QC0k5fcyFoS1jrsFnyZq",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1zlvmLQbKBw11QC0k5fcyFoS1jrsFnyZq/view",
+   "title": "0306_뿌리없는나무 1차 아이데이션.pptx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 5건: 최종본_레진엔터테인먼트_스위트스팟 뿌리없는나무_팝업 업, 0416_뿌리없는나무 팝업스토어 최종안.pptx, 0416_뿌리없는나무 팝업스토어 최종안.pdf, 뿌리 없는 나무 견적서_0509_최종견적서.pdf, 뿌리없는나무 결과보고서.pdf. 미확실: 결과보고서에 일일 방문자/매출 실측 데이터 없음; counting_method 판정 근거 없음; plan_visitors_expected 기획서에 예상 방문자 수 없음; 계약서(120,000,000원)와 견적서(163,000,000원) 금액 상이; 기획서 파일 날짜(2024.04.16)와 프로젝트 기간(2025) 불일치"
+ }
+}

@@ -1,0 +1,77 @@
+{
+  "market_record_id": "MKT-2025-0075",
+  "event_name": "캐치테이블×tvN '폭군의 다이닝' 팝업 레스토랑",
+  "brand": "캐치테이블/tvN",
+  "ip_or_collab": "드라마 '폭군의 셰프'",
+  "category": "entertainment",
+  "intervention": {
+    "concept_description": "드라마 '폭군의 셰프' 속 요리를 재현한 팝업 다이닝(런치·디너 세션). 추첨제 응모",
+    "experience_elements": [
+      "팝업 다이닝",
+      "드라마 메뉴 재현"
+    ],
+    "promotions": [
+      "캐치테이블 앱 추첨 응모"
+    ],
+    "is_free_entry": false,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "서울 소재 레스토랑(캐치테이블 제휴)",
+    "venue_type": "other",
+    "neighborhood": null,
+    "city": "서울",
+    "period_from": "2025-08-14",
+    "period_to": "2025-08-15",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(session)",
+      "access_type": "session"
+    },
+    "derived": {
+      "duration": {
+        "days": 2,
+        "weekend_share": 0.0,
+        "holiday_days": 1
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 2,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "응모자 수(캐치테이블 발표). 원문: '총 6600명이 몰려 230대 1이라는 치열한 경쟁률을 기록했다'",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": "응모 6600명, 경쟁률 230:1, 6일 만에 응모 마감",
+      "signal_quotes": [
+        "지난 5일 캐치테이블 앱에서 시작된 응모는 단 6일 만에 마감될 정도로 높은 인기를 끌었으며, 총 6600명이 몰려 230대 1이라는 치열한 경쟁률을 기록했다"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "다이닝 팝업(스토어 아님). 응모 수요 수치 확보. | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

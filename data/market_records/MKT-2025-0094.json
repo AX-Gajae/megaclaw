@@ -1,0 +1,98 @@
+{
+ "market_record_id": "MKT-2025-0094",
+ "event_name": "호요랜드 2025(HOYOLAND 2025, 굿즈존 팝업 포함)",
+ "brand": "호요버스 코리아",
+ "ip_or_collab": "원신·붕괴: 스타레일·붕괴3rd·젠레스 존 제로·미해결사건부",
+ "category": "game_webtoon",
+ "intervention": {
+  "concept_description": "호요버스 5종 게임 세계관 종합 체험 페스티벌. 게임별 체험 부스, 굿즈존(QR 온라인 예약·픽업 시스템), OST 공연, 코스프레 런웨이, 웰컴 키트(한정 굿즈·리딤코드)",
+  "experience_elements": [
+   "게임별 테마 체험 부스",
+   "굿즈존(QR 예약·픽업)",
+   "OST 공연 메인 무대",
+   "코스프레 런웨이·퀴즈쇼",
+   "창작전시존·DIY존·푸드존"
+  ],
+  "promotions": [
+   "웰컴 키트(한정 굿즈·홀로그램 티켓·갤럭시 스토어 쿠폰)"
+  ],
+  "is_free_entry": false,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "킨텍스 제2전시장 9·10홀 및 후면 광장",
+  "venue_type": "convention",
+  "neighborhood": "일산",
+  "city": "경기 고양",
+  "period_from": "2025-10-09",
+  "period_to": "2025-10-12",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  },
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.5,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 32000,
+  "visitors_period_days": 4,
+  "counting_basis": "entry",
+  "counting_basis_note": "호요버스 발표 인용(티켓 전량 매진 기반 관람객 집계): '지난 9일부터 12일까지 일산 킨텍스 제2전시장 9, 10홀과 후면 광장에서 개최한 호요랜드 2025가 약 3만 2천 명의 관람객이 방문하며'",
+  "visitors_source_quote": "호요버스 코리아는 지난 9일부터 12일까지 일산 킨텍스 제2전시장 9, 10홀과 후면 광장에서 개최한 '호요랜드 2025'가 약 3만 2천 명의 관람객이 방문하며 성황리에 막을 내렸다고 13일 밝혔다.",
+  "visitors_source_url": "https://www.newstap.co.kr/news/articleView.html?idxno=314593",
+  "visitors_source_date": "2025-10-13",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "원신 부스 체험 대기 장줄",
+   "sold_out": "전 티켓 완판, 붕괴3rd 부스 입장권·미해결사건부 한정 굿즈 패키지 조기 매진",
+   "reservation_fill": "온라인 입장권 티켓팅 전량 매진",
+   "signal_quotes": [
+    "별도 예매로 진행된 '붕괴3rd' 부스 입장권과 '미해결사건부' 한정 굿즈 패키지 역시 조기 매진되며 인기를 입증했다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "A",
+   "flags": [
+    "A"
+   ],
+   "why": "정밀 집계 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "유료 티켓제 페스티벌. 굿즈존은 팝업스토어 성격(한정 굿즈 판매). 게임메카·디지털데일리·아이뉴스24 등 다수 동일 수치. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,100 @@
+{
+ "market_record_id": "MKT-2023-0026",
+ "event_name": "네이버웹툰 공식 팝업스토어 1차(냐한남자·마루는 강쥐) 스타필드 코엑스몰",
+ "brand": "네이버웹툰",
+ "ip_or_collab": "냐한남자, 마루는 강쥐",
+ "category": "game_webtoon",
+ "intervention": {
+  "concept_description": "두 웹툰 캐릭터가 사는 마을 콘셉트 공간 재현. 약 260종 굿즈(대형 인형·가방·키링 등, 단가 1,500~65,000원)",
+  "experience_elements": [
+   "웹툰 속 마을 재현 공간",
+   "포토존"
+  ],
+  "promotions": [
+   "현장 한정 굿즈"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "스타필드 코엑스몰",
+  "venue_type": "mall",
+  "neighborhood": "삼성",
+  "city": "서울",
+  "period_from": "2023-06-29",
+  "period_to": "2023-07-12",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 55700,
+  "visitors_period_days": 14,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "네이버웹툰 발표 인용: '지난달 29일부터 이달 12일까지 코엑스에서 운영된 냐한남자·마루는 강쥐 팝업스토어에 하루 최대 5700여명, 누적 총 5만5천700여명이 찾았다'",
+  "visitors_source_quote": "19일 네이버웹툰에 따르면 지난달 29일부터 이달 12일까지 코엑스에서 운영된 '냐한남자' '마루는 강쥐' 팝업스토어에 하루 최대 5700여명, 누적 총 5만5천700여명이 찾았다.",
+  "visitors_source_url": "https://www.jayupress.com/news/articleView.html?idxno=19736",
+  "visitors_source_date": "2023-07-20",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "새벽 4시부터 대기줄, 전날 밤 11시부터 대기 고객, 주말 코엑스 보안팀 전원 투입",
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "예약 대기를 걸고 순차입장해야 하는가 하면, 개장 전부터 줄지어 서있는 이른바 '오픈런'도 흔했다. 눈에 띄게 긴 줄이 생기는 것은 새벽 4시경부터이며, 전날밤 11시부터 기다린 고객도 있었다.",
+    "특히 주말이던 8~9일엔 유례없는 수준으로 대기 줄이 길어지는 등 인파가 몰려 코엑스 보안팀 전원이 나서야 했다고 전해진다.",
+    "팝업스토어 방문객 중엔 116만원어치 상품을 구매한 고객도 있었다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [
+   {
+    "value": 55000,
+    "basis": "organizer_claim",
+    "quote": "앞서 지난 1차 팝업스토어에는 운영기간 2주 동안 5만 5000명 이상이 방문했다.",
+    "url": "https://www.edaily.co.kr/News/Read?newsId=01662966635712896&mediaCodeNo=257",
+    "date": "2023-08-31"
+   }
+  ],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": true,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "이데일리는 5만5000명 이상, 자유프레스는 5만5700여 명 보도(동일 집계의 반올림 차이로 판단, conflict는 미표기하고 alt 기록). | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

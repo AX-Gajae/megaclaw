@@ -1,0 +1,159 @@
+{
+ "record_id": "RCPU2558",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:애플뮤직_이창섭",
+  "space_id": "unresolved:더현대서울",
+  "client_party_id": null,
+  "brand_key": "애플뮤직_이창섭",
+  "space_key": "더현대서울"
+ },
+ "intervention": {
+  "concept": "애플뮤직과 이창섭 협업 팝업스토어를 더현대서울에서 운영.",
+  "brand_name": "애플뮤직 이창섭",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "영등포구",
+   "venue_name": "더현대서울",
+   "venue_type": "백화점",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-10-23",
+   "to": "2025-10-29",
+   "days": 7
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대서울 백화점 입점"
+  },
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 14,
+    "holiday_until": 114,
+    "holiday_block_in": 0,
+    "nat_event_gap": 8,
+    "nat_event": "APEC 경주 정상회의",
+    "doc_lag_days": 8,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 8,
+    "comp_prior_at_venue": 476,
+    "comp_within_500m_open": 10,
+    "comp_within_1000m_open": 10,
+    "matched_address": "서울 영등포구 여의대로 108"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 28500.0,
+    "pnl_pre_accounts": 1,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-09-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 70.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-10, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-10"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "10FHUNN1P7Uaak-FQEwx-iuavXGKt3bwl",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/10FHUNN1P7Uaak-FQEwx-iuavXGKt3bwl/view",
+   "title": "견적서_파이넬로_이창섭 팝업_견적서 251013.pdf"
+  },
+  {
+   "doc_id": "13hRi3V0UBaa0IIFqIE9xLFt0SlYCDzgI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/13hRi3V0UBaa0IIFqIE9xLFt0SlYCDzgI/view",
+   "title": "파이넬로_세금계산서(선금).png"
+  },
+  {
+   "doc_id": "1R1aYry7ACkNNQWblk0MptKsIp8kdi1Q1",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1R1aYry7ACkNNQWblk0MptKsIp8kdi1Q1/view",
+   "title": "애플뮤직 유한책임회사_이창섭 팝업대행_표준계약서_모두싸인 날인본.pdf"
+  },
+  {
+   "doc_id": "1Zpoue56bN1uae52lNkyRJz0j5n4KrDrZ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Zpoue56bN1uae52lNkyRJz0j5n4KrDrZ/view",
+   "title": "[시공계약서-파이넬로] 이창섭 팝업_시공건_1014.pdf"
+  },
+  {
+   "doc_id": "1bKxRdvnW17etyB3SBktJKpdTjSBC_3Gp",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1bKxRdvnW17etyB3SBktJKpdTjSBC_3Gp/view",
+   "title": "애플뮤직 유한책임회사_이창섭 팝업대행_표준계약서 1024.doc"
+  },
+  {
+   "doc_id": "1d9KGgpPLMkkaWmssgofyOhrlF-Lrx7_M",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1d9KGgpPLMkkaWmssgofyOhrlF-Lrx7_M/view",
+   "title": "스위트스팟_이창섭 팝업스토어_최종견적서_1014.pdf"
+  },
+  {
+   "doc_id": "1pNV7BwiWhtwCkSfNU3QvcFTKQQYrn2gM",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1pNV7BwiWhtwCkSfNU3QvcFTKQQYrn2gM/view",
+   "title": "애플뮤직 이창섭_결과보고서.pdf"
+  },
+  {
+   "doc_id": "1xvkhJcvWP6tqBlwKT6l-rLK1VnH64XrS",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1xvkhJcvWP6tqBlwKT6l-rLK1VnH64XrS/view",
+   "title": "이창섭 미니 2집 팝업_공간 연출 제안서 251015.pdf"
+  },
+  {
+   "doc_id": "1zm1OM9TQGclN9OEej5OJCIKiLESOW6Lb",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1zm1OM9TQGclN9OEej5OJCIKiLESOW6Lb/view",
+   "title": "(주)파이넬로 사업자등록증.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서 텍스트 없음; client_name; 컨셉/체험요소/프로모션/연출태그; 면적; 수수료구조; 일일 방문 및 매출 실측; counting_method 판정 근거"
+ }
+}

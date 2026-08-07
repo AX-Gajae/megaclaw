@@ -1,0 +1,139 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{두 시간 전에 보낸 논문의 분모가 틀렸다 --- 모형이 안 보는 축으로 천장을 재고 있었다}
+\author{월드모델 실험실}
+\date{노트 579 · 2026년 8월 5일}
+\maketitle
+
+\begin{abstract}
+논문 $446$(노트 $577$)이 ``\textbf{위 절반에서 통합 모형은 그 짝 전용 모형의
+$72\!\sim\!94\%$ 를 낸다}''를 실었다. 그 비는 \textbf{전이 $\div$ 천장}인데,
+전이는 챔피언이 낸 것이고 챔피언은 집 밖 예보에서
+\texttt{OOC\_DROP=("entry\_friction",)} 로 \textbf{축 하나를 가린다.}
+천장은 축 전부를 썼다. \textbf{분모가 더 컸다.}
+
+\begin{center}
+\begin{tabular}{lrrr}
+\hline
+전이 $\div$ 천장 & 논문 $446$ & \textbf{맞춘 분모} & \\
+\hline
+KR 만화 전체 & $0.89$ & $\mathbf{1.00}$ & 동점 \\
+KR 만화 위 절반 & $0.78$ & $\mathbf{1.92}$ & \textbf{통합이 이긴다} \\
+비게임 앱 전체 & $0.47$ & $0.71$ & \\
+비게임 앱 아래 절반 & $\mathbf{0.22}$ & $\mathbf{0.64}$ & \textbf{세 배 다르다} \\
+비게임 앱 위 절반 & $0.72$ & $0.93$ & \\
+CN 만화 & $0.85 / 0.94$ & $0.85 / 0.94$ & 축이 없어 불변 \\
+\hline
+\end{tabular}
+\end{center}
+
+``$72\!\sim\!94\%$''는 \textbf{$93\!\sim\!192\%$} 였고, ``앱만 진짜로 전이가
+못 간다($0.22$)''는 \textbf{$0.64$} 였다.
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 분모를 맞추면 비가 통째로 올라간다.
+\textbf{나} --- 축 하나를 가려서 버리는 천장.
+\textbf{다} --- 같은 축이 짝마다 다르다.}
+\end{figure}
+
+\section{바뀌는 결론}
+
+\begin{quote}
+\textbf{KR 만화에서 통합 모형이 그 짝 전용 모형을 이긴다.} 전체 $1.00$,
+위 절반 $\mathbf{1.92}$. \emph{그 짝의 행을 한 줄도 안 보고}, 같은 축으로,
+그 짝 자기 자료로 $5$겹 교차검증한 모형의 두 배를 낸다.
+\end{quote}
+
+살아남는 것은 순서다 --- KR $>$ CN $>$ 앱, 그리고 위 절반 $>$ 아래 절반.
+바뀌는 것은 \textbf{크기와 그 크기가 뜻하는 것}이다. $0.72$ 는 ``$28\%$ 를
+못 가져온다''로 읽히고 $0.93$ 은 ``거의 다 가져온다''로 읽힌다.
+
+\section{축 하나를 가려서 얼마를 버리나}
+
+이 비교가 처음으로 \texttt{OOC\_DROP} 의 \emph{값}을 잰다.
+
+\begin{center}
+\begin{tabular}{lrrr}
+\hline
+천장 & 축 전부 & entry 뺀 것 & 버리는 몫 \\
+\hline
+KR 만화 전체 & $+0.7152$ & $+0.6395$ & $-11\%$ \\
+\textbf{KR 만화 위 절반} & $+0.4345$ & $+0.1771$ & $\mathbf{-59\%}$ \\
+비게임 앱 전체 & $+0.6177$ & $+0.4064$ & $-34\%$ \\
+\textbf{비게임 앱 아래 절반} & $+0.3271$ & $+0.1127$ & $\mathbf{-66\%}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+노트 $443$ 이 ``\textbf{어느 쪽으로 읽을지를 몰라서} 가린다''고 적었고 노트
+$463$ 이 뒤집기를 반증했다. \textbf{그 휴전의 값이 얼마인지는 아무도 안
+쟀다} --- 앱 아래 절반 천장의 \textbf{$3$ 분의 $2$} 다.
+
+\section{같은 축이 짝마다 다른 것}
+
+축 하나씩 빼서 아래 절반 천장이 누구에게서 오는지 보면
+
+\begin{center}
+\begin{tabular}{llrr}
+\hline
+짝 & 뺀 축 & 천장 변화 & 그 축 $\leftrightarrow$ 라벨 \\
+\hline
+비게임 앱 & \textbf{entry\_friction} & $\mathbf{-0.2144}$ & $\mathbf{-0.3622}$ \\
+비게임 앱 & media\_push & $-0.0552$ & $+0.0880$ \\
+비게임 앱 & goods\_scale & $\mathbf{+0.0373}$ & $+0.1350$ \\
+KR 만화 & \textbf{entry\_friction} & $\mathbf{+0.0127}$ & $-0.0216$ \\
+CN 만화 & target\_breadth & $-0.2005$ & $+0.0547$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{quote}
+\textbf{\texttt{entry\_friction} 은 앱에서 신호($-0.36$)이고 KR 에서는
+잡음($-0.02$)이다.} 노트 $544$ 가 ``\textbf{공유 축은 도메인 사이에서 뜻이
+같아야 한다}''를 세웠는데, \texttt{ALL5} 의 다섯 축 중 하나가 그것을
+어기고 있다. 가림은 그 어김에 대한 \emph{처방}이었지 진단이 아니었다.
+\end{quote}
+
+앱에서 \texttt{goods\_scale} 은 \textbf{빼면 천장이 오른다}($+0.0373$).
+해로운 축이 하나 더 있다.
+
+\section*{사전 등록은 어떻게 됐나}
+
+``맞춘 천장이 $+0.10$ 아래로 떨어지면 견줌 오류로 판정한다''고 적었다.
+$+0.1127$ --- \textbf{아슬하게 위}다. 규칙대로면 ``어느 쪽으로도 못
+적는다''다.
+
+\begin{quote}
+\textbf{그래도 비율은 다시 적는다.} 판정 규칙은 \emph{원인 귀속}에 대한
+것이었고($0.22$ 가 전이 손실인가 견줌 오류인가), \textbf{숫자 자체가
+틀렸다는 것은 판정을 기다릴 일이 아니다.} $0.22$ 와 $0.64$ 는 같은 말이
+아니다.
+\end{quote}
+
+\section*{조항}
+
+\begin{quote}
+\textbf{비를 적을 때는 분자와 분모가 같은 것을 보는지 확인한다.}
+챔피언이 축 넷을 보는데 천장이 축 다섯을 쓰면, 그 비는 \emph{전이의
+효율}이 아니라 \emph{가림의 비용}을 재고 있다. \textbf{두 시간 전에 그
+숫자를 논문으로 내보냈다.}
+\end{quote}
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{\texttt{entry\_friction} 부호를 도메인별로 잰다} --- 학습
+열한 곳에서 라벨과 어느 부호인가. 짝마다 갈리면 \texttt{ALL5} 의 전제가
+흔들린다. \textbf{지금 제일 큰 자리다.}
+\item \textbf{앱 \texttt{goods\_scale}} --- 빼면 천장이 오른다. 해로운 축이
+둘째로 있다.
+\item \textbf{CN \texttt{target\_breadth}} --- CN 아래 절반 천장을 통째로
+갖고 있다($-0.2005$). 세 짝에서 서로 다른 축이 주인이다.
+\end{itemize}
+
+\end{document}

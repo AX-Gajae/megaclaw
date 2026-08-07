@@ -1,0 +1,74 @@
+{
+  "market_record_id": "MKT-2026-0052",
+  "event_name": "더벤티 X 젠레스 존 제로 팝업스토어 '별빛 축제로의 초대'",
+  "brand": "더벤티/호요버스",
+  "ip_or_collab": "젠레스 존 제로 (휴고·비비안)",
+  "category": "game_webtoon",
+  "intervention": {
+    "concept_description": "ZZZ 세계관 오프라인 구현. 콜라보 세트 메뉴 구매 시 한정 굿즈(엽서) 제공, 미니게임, 코스어 포토타임. 신림역점 본행사+대전·대구·부산 3개 매장 굿즈 판매 병행",
+    "experience_elements": [
+      "미니게임",
+      "휴고·비비안 코스어 포토타임",
+      "게임 속 분위기 공간 구현"
+    ],
+    "promotions": [
+      "콜라보 세트(휴고 퍼플 뱅쇼·비비안 우베 라떼, 피규어·포토카드 포함)",
+      "신메뉴 3종"
+    ],
+    "is_free_entry": true,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "더벤티 신림역점(+대전은행점·대구수성레이크점·부산경성대부경대점)",
+    "venue_type": "street_standalone",
+    "neighborhood": "신림",
+    "city": "서울(대전·대구·부산 병행)",
+    "period_from": "2026-07-02",
+    "period_to": "2026-07-05",
+    "area_pyeong": null,
+    "multi_store": true,
+    "derived": {
+      "duration": {
+        "days": 4,
+        "weekend_share": 0.5,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 2,
+        "months_since_last": 4.3,
+        "first_edition": false
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 4,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "더벤티 발표 인용(완판): '행사를 기념해 출시한 아크릴 스탠드와 금속 배지 세트 등 한정 굿즈는 팝업스토어가 열린 신림역점을 비롯해 대전은행점, 대구 수성레이크점, 부산 경성대부경대점에서도 모두 판매를 마쳤다' - 방문객 수치 미보도",
+    "visitors_source_quote": "더벤티는 지난 2일부터 5일까지 더벤티 신림역점에서 '별빛 축제로의 초대(Drift into night)'를 주제로 팝업스토어를 운영했다. 행사장은 게임 속 분위기를 오프라인 공간으로 구현했으며, 다양한 체험 프로그램과 한정 굿즈를 마련해 방문객을 맞이했다.",
+    "visitors_source_url": "https://m.ekn.kr/view.php?key=20260707022190153",
+    "visitors_source_date": "2026-07-07",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": "한정 굿즈(아크릴 스탠드·금속 배지 세트) 신림역점 포함 4개 매장 모두 완판",
+      "reservation_fill": null,
+      "signal_quotes": [
+        "행사를 기념해 출시한 아크릴 스탠드와 금속 배지 세트 등 한정 굿즈는 팝업스토어가 열린 신림역점을 비롯해 대전은행점, 대구 수성레이크점, 부산 경성대부경대점에서도 모두 판매를 마쳤다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "에너지경제 원문 웹오픈 감사 거부, 검색 추출 전문 기반. 콜라보 메뉴·세트는 7월 23일까지 판매 지속. | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

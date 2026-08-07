@@ -1,0 +1,108 @@
+{
+ "market_record_id": "MKT-2024-0069",
+ "event_name": "네이버웹툰 '집이 없어' 팝업스토어 '홈커밍데이'",
+ "brand": "네이버웹툰/이너부스",
+ "ip_or_collab": "집이 없어(웹툰)",
+ "category": "character",
+ "intervention": {
+  "concept_description": "네이버웹툰 '집이 없어' 팝업스토어. 스타필드 코엑스몰에서 2024-10-03~10-16 운영. 사전 예약제.",
+  "experience_elements": [
+   "웹툰 굿즈 판매",
+   "전시"
+  ],
+  "promotions": [
+   "사전 예약"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "스타필드 코엑스몰(서울 강남구)",
+  "venue_type": "mall",
+  "neighborhood": "삼성",
+  "city": "서울",
+  "period_from": "2024-10-03",
+  "period_to": "2024-10-16",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 10000,
+  "visitors_period_days": 14,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "팝업 운영사(이너부스) 보도(투데이경제 인용)",
+  "visitors_source_quote": "팝업 기간 총 1만 명 이상의 방문객이 다녀갔으며, 112종의 굿즈 중 59.1%가 완판됐다.",
+  "visitors_source_url": "https://www.tookyung.com/news/articleView.html?idxno=528497",
+  "visitors_source_date": "2024-11-21",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "오픈 첫날 3000명 대기",
+   "sold_out": "굿즈 59.1% 완판",
+   "reservation_fill": "사전 예약 오픈 직후 3000명 동시 접속으로 시스템 마비",
+   "signal_quotes": [
+    "사전 예약 오픈 직후 3000명이 동시에 몰리며 예약 시스템이 잠시 멈췄다. (뉴스TF 2024-09-27)",
+    "112종의 굿즈 중 59.1%가 완판됐다. (투데이경제 2024-11-21)",
+    "팝업스토어는 오픈 첫날부터 3000명이 넘는 대기자가 몰리며 큰 관심을 받았다.",
+    "준비된 제품 112종 중 59.1%가 기간 내 한 번 이상 품절되는 등 폭발적인 반응을 얻었다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "병합 레코드: MKT-2024-0022, MKT-2024-0013 | [병합:MKT-2024-0022] '1만명을 넘었다' → 10000 보수 기록 || [병합:MKT-2024-0013] 2024년 10월 네이버웹툰 팝업 3건(스쿨 오브 가비지타임 120평·마루는 강쥐 기적의 별 70평·집이 없어) 동시 진행 중 코엑스 건.",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 10000,
+   "basis": "organizer_claim",
+   "quote": "10월3일부터 10월16일까지 진행된 팝업스토어의 총 방문자 수는 1만명을 넘었다.",
+   "url": "https://www.mt.co.kr/future/2024/12/12/2024121114093355068",
+   "date": "2024-12-12"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

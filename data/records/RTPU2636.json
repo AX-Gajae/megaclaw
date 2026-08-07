@@ -1,0 +1,150 @@
+{
+ "record_id": "RTPU2636",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:LIMELIGHT_APPAREL",
+  "space_id": "unresolved:부산_벡스코_제2전시장_FarEastThrowdown",
+  "client_party_id": "unresolved:주_라임라잇어패럴_문정민",
+  "brand_key": "LIMELIGHT_APPAREL",
+  "space_key": "부산_벡스코"
+ },
+ "intervention": {
+  "concept": "'빛이 닿을 때 완성되는 공간'을 컨셉으로 라임라잇어패럴의 브랜드 아이덴티티를 모듈형 구조와 빛으로 해석한 전시부스 디자인. 불투명 아크릴 모듈로 공간을 섹션별 존으로 분리하고 라임톤·블랙톤의 은은한 광으로 무대 위 스포트라이트 같은 브랜드 무드를 연출한다. 오픈형 구조 중앙에 신상품존을 배치해 주목도를 높이고 카테고리별 존과 피팅룸으로 체험 동선을 구성했다.",
+  "brand_name": "LIMELIGHT APPAREL",
+  "experience_elements": [
+   "어패럴존",
+   "애슬릿존",
+   "신상품존(중앙 배치)",
+   "피팅룸 2개",
+   "캐셔",
+   "메인게이트",
+   "거울 디스플레이",
+   "제품 피팅 및 체험"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "모듈형 구조",
+   "불투명 아크릴 패널",
+   "라임톤/블랙톤 조명",
+   "2가지 아크릴 컬러로 존 분리",
+   "오픈형 구조",
+   "스포트라이트 무드"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "부산",
+   "district": null,
+   "venue_name": "벡스코(BEXCO) 제2전시장",
+   "venue_type": "전시장 브랜드 부스",
+   "foot_traffic_context": "2026 Far East Throwdown(부산 벡스코 최대규모 아시아 크로스핏 대회) 현장 부스"
+  },
+  "area_pyeong": 21.78,
+  "period": {
+   "from": "2026-05-30",
+   "to": "2026-06-01",
+   "days": 3
+  },
+  "season": "봄/초여름",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "부스 디자인 시안 제작 용역비 1,000,000원 (VAT 10% 별도), 만원단위 이하 절사. 총계 1,000,000원. 견적일 2026-03-31. 부스 시공/제작 제외, 디자인 시안만 포함. 선금/중도금/잔금 분할 조건 명시 없음. 수수료율·RS 없음."
+  },
+  "brand_requirements": [
+   "부스 규모 12m x 6m",
+   "어패럴/애슬릿 존 분리 운영",
+   "신상품존 중앙 배치",
+   "피팅룸 2개 확보",
+   "모듈형 메인게이트"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "2026 Far East Throwdown(부산 벡스코 최대규모 아시아 크로스핏 대회) 현장 부스"
+  },
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.67,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 5,
+    "holiday_until": 77,
+    "holiday_block_in": 0,
+    "nat_event_gap": 4,
+    "nat_event": "지방선거",
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 538600.0,
+    "pnl_pre_accounts": 2,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2026-03-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 1.0
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(본 건은 B2B 전시부스 디자인 용역으로 현장 방문객·POS 매출 실적 데이터가 문서에 없음. 클라이언트 대내 목적(예상/KPI 성격): 행사기간 최대 매출, 신상품 초기 판매량 확보, 현장 판매 데이터 분석, 시즌 반응 테스트.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식액 1.0 ≈ 계약총액 1.0 (±10%)",
+   "contract_total_mm": 1.0,
+   "last_recognition_period": "2026-04"
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "1AOi5XrpRHGXXSTkygxeU5VVLq0FjAE1f",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1AOi5XrpRHGXXSTkygxeU5VVLq0FjAE1f/view",
+   "title": "[Sweetspot] LIMELIGHT APPAREL PROPOSAL_0224_제안서.pdf"
+  },
+  {
+   "doc_id": "1Hcmt77I5VH4S-_3iLuc1fdrMmaqFRI4I",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Hcmt77I5VH4S-_3iLuc1fdrMmaqFRI4I/view",
+   "title": "SWEETSPOT_라임라잇어패럴 부스시공_견적서_FN_견적서.pdf"
+  },
+  {
+   "doc_id": "1OFh_nrRdPRWhVmTsw47O_Kj-tIX2bsST",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1OFh_nrRdPRWhVmTsw47O_Kj-tIX2bsST/view",
+   "title": "결과보고서 없음(정보는 기입).txt"
+  },
+  {
+   "doc_id": "1cu_QDG2sIi4pfUcLivy-yH4BD2IrUgIZ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1cu_QDG2sIi4pfUcLivy-yH4BD2IrUgIZ/view",
+   "title": "계약서 없음.txt"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: [Sweetspot] LIMELIGHT APPAREL , SWEETSPOT_라임라잇어패럴 부. 미확실: 실제 방문객·매출(POS) 실적 데이터 없음 (디자인 용역 스코프); 행사 일정 불일치: 클라 문의 원문 2026-05-01~03 vs 아마란스/Notion 확정 2026-05-30~06-01; 견적서 상 계약금액 분할(선금/중도금/잔금) 조건 미기재; 면적은 도면 12m x 6m 기준 환산치(약 72㎡=21.78평), 실제 계약 명시 면적 아님; 재무 상충: 시드 net 50만 vs Notion 이윤 100만; 도시(부산)는 벡스코 위치 기준 추정, 견적서에는 미기재; 부스 시공/제작 벤더 및 현장운영 주체 미확인"
+ }
+}

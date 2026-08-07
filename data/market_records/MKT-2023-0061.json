@@ -1,0 +1,92 @@
+{
+ "market_record_id": "MKT-2023-0061",
+ "event_name": "디즈니 100주년 팝업: 하우스 오브 위시(House of WISH)",
+ "brand": "디즈니코리아/스튜디오사이",
+ "ip_or_collab": "디즈니 100주년",
+ "category": "character",
+ "intervention": {
+  "concept_description": "디즈니 창립 100주년 기념 체험형 팝업. 누디트 서울숲에서 2023-12-16~2024-01-10 운영.",
+  "experience_elements": [
+   "전시",
+   "포토존",
+   "굿즈 판매"
+  ],
+  "promotions": [
+   "입장 등록제"
+  ],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "누디트 서울숲(서울 성동구)",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수",
+  "city": "서울",
+  "period_from": "2023-12-16",
+  "period_to": "2024-01-10",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 26,
+    "weekend_share": 0.31,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 10000,
+  "visitors_period_days": 6,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "주최측 집계(패션비즈 보도 인용)",
+  "visitors_source_quote": "지난 16일 오픈한 '디즈니 100주년 팝업: 하우스 오브 위시(House of WISH)'의 누적 방문객이 오픈 6일만에 1만명을 기록하며",
+  "visitors_source_url": "https://fashionbiz.co.kr/article/204713",
+  "visitors_source_date": "2023-12-26",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": "오후 1~2시에 입장 등록 조기 마감",
+   "signal_quotes": [
+    "하루 평균 1500~2000명가량의 방문객이 다녀갔으며 오후 1~2시에 입장 등록이 조기 마감됐다. (패션비즈 2023-12-26)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": true,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": false,
+   "days_stated": 6,
+   "days_stored": 26,
+   "days_corrected": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "오픈 6일 시점 수치(전체 기간 누적 미공개) | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

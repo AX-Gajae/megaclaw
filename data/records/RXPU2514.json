@@ -1,0 +1,2079 @@
+{
+ "record_id": "RXPU2514",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:우리은행",
+  "space_id": "unresolved:인천_외국인_라운지",
+  "client_party_id": null,
+  "brand_key": "우리은행",
+  "space_key": "인천_외국인라운지"
+ },
+ "intervention": {
+  "concept": "우리은행 인천 외국인 라운지 관련 프로젝트로 추정되나 원문 문서가 제공되지 않아 컨셉 세부 내용을 확인할 수 없다.",
+  "brand_name": "우리은행",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": "인천",
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-09-16",
+   "to": "2026-04-19",
+   "days": 216
+  },
+  "season": null,
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "우리은행 인천 외국인 라운지"
+  },
+  "derived": {
+   "duration": {
+    "days": 216,
+    "weekend_share": 0.29,
+    "holiday_days": 13
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 30,
+    "holiday_until": 17,
+    "holiday_block_in": 15,
+    "nat_event_gap": 45,
+    "nat_event": null,
+    "doc_lag_days": 0,
+    "doc_dates_found": 17
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 160543.0,
+    "pnl_pre_accounts": 2,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-08-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 668.6
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "unknown",
+   "rule": "총액 불명·최근 종료",
+   "contract_total_mm": null,
+   "last_recognition_period": "2026-05"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1--74M10zkzYuPCUa8L9OJF6ig--ob8YR",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1--74M10zkzYuPCUa8L9OJF6ig--ob8YR/view",
+   "title": "4. 주거래 통장사본_(주)비오드.jpg"
+  },
+  {
+   "doc_id": "1-Ry9F4gbadD4EcCXcyJfJkiPLSlEHvvg",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1-Ry9F4gbadD4EcCXcyJfJkiPLSlEHvvg/view",
+   "title": "woori-43.jpg"
+  },
+  {
+   "doc_id": "1-VMZiaDFCmPNHgqw6t777uHm3qyJNfQa",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1-VMZiaDFCmPNHgqw6t777uHm3qyJNfQa/view",
+   "title": "woori-8.jpg"
+  },
+  {
+   "doc_id": "1-rTimstXtCdQrbQs-4de3AfM-trw3INO",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1-rTimstXtCdQrbQs-4de3AfM-trw3INO/view",
+   "title": "인천 지정게시대 견적서.pdf"
+  },
+  {
+   "doc_id": "1063mh7M8IJ5sbyfU4j5VHQ__yrfM0auQ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1063mh7M8IJ5sbyfU4j5VHQ__yrfM0auQ/view",
+   "title": "RXPU2514_경품_기타소득_지급요청_1103.xlsx"
+  },
+  {
+   "doc_id": "10BJwuT6xfFUxPdl8y2fdM3Pz0mJLJ-8P",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/10BJwuT6xfFUxPdl8y2fdM3Pz0mJLJ-8P/view",
+   "title": "스위트스팟_우리글로벌라운지 프로그램 운영 업무 협약서_메르네쥬.pdf"
+  },
+  {
+   "doc_id": "10FVQ8isnCtr4HGDfKr5droPZYwVSfP0d",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/10FVQ8isnCtr4HGDfKr5droPZYwVSfP0d/view",
+   "title": "(스위트스팟) 챕터코리안_견적서.pdf"
+  },
+  {
+   "doc_id": "10FcZPasJeTnWhPlygpt8hOeyCeRKZKbB",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/10FcZPasJeTnWhPlygpt8hOeyCeRKZKbB/view",
+   "title": "woori-41.jpg"
+  },
+  {
+   "doc_id": "10tx0gOJHDHigmH91y8mkZFdwSXTLTqNy",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/10tx0gOJHDHigmH91y8mkZFdwSXTLTqNy/view",
+   "title": "스위트스팟_우리은행 주안서금융센터 라운지 구축 제안서_update 0602.pptx"
+  },
+  {
+   "doc_id": "11GG_t4zL-zVxM5W_s-4en_ssNpph4uXQ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/11GG_t4zL-zVxM5W_s-4en_ssNpph4uXQ/view",
+   "title": "매타애드_인플루언서 광고 견적서_섭외형_스위트 스팟.pdf"
+  },
+  {
+   "doc_id": "11USGmIN7W9Cwcf8azDQo5ukJ_sxXvgF3",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/11USGmIN7W9Cwcf8azDQo5ukJ_sxXvgF3/view",
+   "title": "woori-44.jpg"
+  },
+  {
+   "doc_id": "11X5G0kKxlpw2y4GN0FUOJirk2xzQu2jP",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/11X5G0kKxlpw2y4GN0FUOJirk2xzQu2jP/view",
+   "title": "250619_우리은행주안서금융센터라운지_제안_ATAA.pdf"
+  },
+  {
+   "doc_id": "11fyg9_SEp9EgtlGOa69rA484tF1zYxSM",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/11fyg9_SEp9EgtlGOa69rA484tF1zYxSM/view",
+   "title": "woori-12.jpg"
+  },
+  {
+   "doc_id": "12nMZC9uDtkn-8lTBZhPNme9ZYoupjpmE",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/12nMZC9uDtkn-8lTBZhPNme9ZYoupjpmE/view",
+   "title": "스위트스팟_우리글로벌라운지 프로그램 운영 업무 협약서_차완.docx"
+  },
+  {
+   "doc_id": "12oXkhr5jup9eZhwl6TrA3essIaYTO6W1",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/12oXkhr5jup9eZhwl6TrA3essIaYTO6W1/view",
+   "title": "250827_제안서-우리은행.pdf"
+  },
+  {
+   "doc_id": "12tLDcJGKfQgTTHE2E_CJwIuYLjBKS0Gw",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/12tLDcJGKfQgTTHE2E_CJwIuYLjBKS0Gw/view",
+   "title": "woori-45.jpg"
+  },
+  {
+   "doc_id": "13Uw1zlaa8EVBEJIUp_4CdXjM-yVX1Ayz",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/13Uw1zlaa8EVBEJIUp_4CdXjM-yVX1Ayz/view",
+   "title": "(주)무브 스위트스팟 견적서_250722.pdf"
+  },
+  {
+   "doc_id": "13XlVGBrirN46rTFWmmbjHAotoWe9hwRj",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/13XlVGBrirN46rTFWmmbjHAotoWe9hwRj/view",
+   "title": "미디어오픈_사업자등록증.jpg"
+  },
+  {
+   "doc_id": "13ormewG3RLOkuK6eH5hE0p6vvghdK9VU",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/13ormewG3RLOkuK6eH5hE0p6vvghdK9VU/view",
+   "title": "woori-13.jpg"
+  },
+  {
+   "doc_id": "13yq50QgiZU3HAu7IhjDmDsx_bEVia6Rj",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/13yq50QgiZU3HAu7IhjDmDsx_bEVia6Rj/view",
+   "title": "스위트스팟_우리글로벌라운지 프로그램 운영 업무 협약서_희히스튜디오.docx"
+  },
+  {
+   "doc_id": "147Os2pKtAwnC20pd4UNKTg9X4lb-F5zI",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/147Os2pKtAwnC20pd4UNKTg9X4lb-F5zI/view",
+   "title": "계약서_우리은행 인천 외국인 라운지 구축,운영 계약서_날인본.pdf"
+  },
+  {
+   "doc_id": "148vNA8qszsmSUGMWsYu2-ytbSYQOH5Cg",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/148vNA8qszsmSUGMWsYu2-ytbSYQOH5Cg/view",
+   "title": "클로즈랭스_통장사본.png"
+  },
+  {
+   "doc_id": "149-XAL42ptpAGz9a4xnjonkJdvc2w7L8",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/149-XAL42ptpAGz9a4xnjonkJdvc2w7L8/view",
+   "title": "사인플러스_거래명세서(2).jpg"
+  },
+  {
+   "doc_id": "14C6GTfkyFXfGKFPWOgRpGpCxYHWEo3MW",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/14C6GTfkyFXfGKFPWOgRpGpCxYHWEo3MW/view",
+   "title": "woori-24.jpg"
+  },
+  {
+   "doc_id": "14NqxicIxAoBZNQh3C2kmm4md2NkoJ8Qo",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14NqxicIxAoBZNQh3C2kmm4md2NkoJ8Qo/view",
+   "title": "KT텔레캅 이용계약서_우리글로벌라운지.pdf"
+  },
+  {
+   "doc_id": "14Pmo2NspBtHTisCSsJr6GRhzCDUgrqLi",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14Pmo2NspBtHTisCSsJr6GRhzCDUgrqLi/view",
+   "title": "위드브로코리아_사업자등록증.png"
+  },
+  {
+   "doc_id": "14WuddycZTdxf9LLY7Ccb7anJv7RnwjEX",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/14WuddycZTdxf9LLY7Ccb7anJv7RnwjEX/view",
+   "title": "woori-4.jpg"
+  },
+  {
+   "doc_id": "14ftwANMWG1Vvsequkvzlbt2VjM2OzrD9",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14ftwANMWG1Vvsequkvzlbt2VjM2OzrD9/view",
+   "title": "소망기획_견적서.pdf"
+  },
+  {
+   "doc_id": "14zGwyF8ZQeE99qLbBQ0-PtNNbjVU3qyI",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/14zGwyF8ZQeE99qLbBQ0-PtNNbjVU3qyI/view",
+   "title": "견적서_외국인 대상 금융사 북라운지 운영 인력섭외_BRO_250930.pdf"
+  },
+  {
+   "doc_id": "15FxgiIi2M9m7Teorp5SEPUm5ULLutAmX",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/15FxgiIi2M9m7Teorp5SEPUm5ULLutAmX/view",
+   "title": "woori-55.jpg"
+  },
+  {
+   "doc_id": "15TA7zgp1StHBGGu0DkRgsFfvYwkQJdg_",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/15TA7zgp1StHBGGu0DkRgsFfvYwkQJdg_/view",
+   "title": "woori-7.jpg"
+  },
+  {
+   "doc_id": "15URYuRAaQX4TvSVQDWMAtsHXLH07S45N",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/15URYuRAaQX4TvSVQDWMAtsHXLH07S45N/view",
+   "title": "우리동네사진관_서울대입구점_통장사본.jpg"
+  },
+  {
+   "doc_id": "15WW9R0vSHugHwQIWiINJ7HzyEVXRNOLS",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/15WW9R0vSHugHwQIWiINJ7HzyEVXRNOLS/view",
+   "title": "클로즈랭스_사업자등록증.jpg"
+  },
+  {
+   "doc_id": "15_Bgy7skgdVzEG_GsPk-vzY60VgcMrGg",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/15_Bgy7skgdVzEG_GsPk-vzY60VgcMrGg/view",
+   "title": "250617우리은행 주안서금융센터 제안서_비오드.pdf"
+  },
+  {
+   "doc_id": "16Hi_gqs6FQNY2X1s1BzsrwVVl2IQkP9j",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/16Hi_gqs6FQNY2X1s1BzsrwVVl2IQkP9j/view",
+   "title": "251020_인크루트_우리은행 오프라인 취업 특강 및 컨설팅 용역 계약서.pdf"
+  },
+  {
+   "doc_id": "16LnF7RGqNbODdriE48wKUsn_1fsMrew2",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/16LnF7RGqNbODdriE48wKUsn_1fsMrew2/view",
+   "title": "250922_제안서-우리은행_수정.pdf"
+  },
+  {
+   "doc_id": "16fOVy5u6fDspXzA_AKH5aWTBU6WXCxT7",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/16fOVy5u6fDspXzA_AKH5aWTBU6WXCxT7/view",
+   "title": "kt텔레캅_견적제안서(스위트스팟 인천주안점).pdf"
+  },
+  {
+   "doc_id": "170YLuXUI4nGcoFZQv2qrogUgGIyhhdCy",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/170YLuXUI4nGcoFZQv2qrogUgGIyhhdCy/view",
+   "title": "프로필_우리글로벌라운지 운영인력리스트_위드브로_251020.pdf"
+  },
+  {
+   "doc_id": "17Mydm5e6jCTreUiwifOK6puv22PzNIaa",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/17Mydm5e6jCTreUiwifOK6puv22PzNIaa/view",
+   "title": "woori-51.jpg"
+  },
+  {
+   "doc_id": "17Yy1rmEKVh0EgaSxGkwhOERPxT8QiAjI",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/17Yy1rmEKVh0EgaSxGkwhOERPxT8QiAjI/view",
+   "title": "희히스튜디오_통장사본.jpg"
+  },
+  {
+   "doc_id": "17ZB0twVCIbVZBfmRFROgq17GtzjmfBgR",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/17ZB0twVCIbVZBfmRFROgq17GtzjmfBgR/view",
+   "title": "소망기획_통장사본.jpg"
+  },
+  {
+   "doc_id": "17_0AwvmY797p0GR3fX_CiI5f0YzHhPWo",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17_0AwvmY797p0GR3fX_CiI5f0YzHhPWo/view",
+   "title": "가견적서_우리은행 주안서금융센터 라운지 인테리어 공사 58PY.pdf"
+  },
+  {
+   "doc_id": "17_9OS-v4Xf3nvbbA2aq7AnQ2v8Z40L0b",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/17_9OS-v4Xf3nvbbA2aq7AnQ2v8Z40L0b/view",
+   "title": "woori-21.jpg"
+  },
+  {
+   "doc_id": "17e_FbZOx4kVChWlWzhRAX1Dr79d4TbB2",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/17e_FbZOx4kVChWlWzhRAX1Dr79d4TbB2/view",
+   "title": "woori-47.jpg"
+  },
+  {
+   "doc_id": "17i6oO6VhPTs12JmHLxxmu-i1x9mHv0mo",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/17i6oO6VhPTs12JmHLxxmu-i1x9mHv0mo/view",
+   "title": "woori-34.jpg"
+  },
+  {
+   "doc_id": "17w6iLo66uqz1p8sXHcptIbsMN0i4esr2",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/17w6iLo66uqz1p8sXHcptIbsMN0i4esr2/view",
+   "title": "스위트스팟 통장사본_우리은행.pdf"
+  },
+  {
+   "doc_id": "180_nUv-n47Oh7uv1xFs2xHT1IoPbAj5Q",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/180_nUv-n47Oh7uv1xFs2xHT1IoPbAj5Q/view",
+   "title": "woori-36.jpg"
+  },
+  {
+   "doc_id": "18BUtnPsrnWewa_WFtpdvT9tSjuzM47K_",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/18BUtnPsrnWewa_WFtpdvT9tSjuzM47K_/view",
+   "title": "견적서_금융사 북라운지 10,11월운영 인건비_251202.pdf"
+  },
+  {
+   "doc_id": "18LKR5MGV_l3ksQAkSHz6QYqYO-3f70yd",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/18LKR5MGV_l3ksQAkSHz6QYqYO-3f70yd/view",
+   "title": "그라운드케이_스위트스팟 셔틀서비스_견적서_250610.pdf"
+  },
+  {
+   "doc_id": "18MPHjumu5LuTexepxedrAtQaSqaLaRP8",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/18MPHjumu5LuTexepxedrAtQaSqaLaRP8/view",
+   "title": "SONG CHENGLONG_신분증.jpg"
+  },
+  {
+   "doc_id": "18U1lqmUo3cdwlzSt3ONyX1KTmp_bOssy",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/18U1lqmUo3cdwlzSt3ONyX1KTmp_bOssy/view",
+   "title": "인크루트 교육사업그룹 사업안내서.pdf"
+  },
+  {
+   "doc_id": "191MNpInN3vy-okEU6DmmKiwlDx1nc_10",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/191MNpInN3vy-okEU6DmmKiwlDx1nc_10/view",
+   "title": "스틸북스견적서_도서큐레이션_우리은행라운지.pdf"
+  },
+  {
+   "doc_id": "194TmiWHx0XjQGaDD4IuJakbRBb3LfE79",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/194TmiWHx0XjQGaDD4IuJakbRBb3LfE79/view",
+   "title": "RXPU2514_오픈 이벤트경품_기타소득_지급요청_0219.xlsx"
+  },
+  {
+   "doc_id": "194Vv6JF4xMgz90MBcvUhIJEfpT3PAqbs",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/194Vv6JF4xMgz90MBcvUhIJEfpT3PAqbs/view",
+   "title": "샤오홍슈-제안서최신.pdf"
+  },
+  {
+   "doc_id": "198OqnQaNC-TsUakb0SEVGFflf6vlkABT",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/198OqnQaNC-TsUakb0SEVGFflf6vlkABT/view",
+   "title": "251020_제안서-우리은행.pdf"
+  },
+  {
+   "doc_id": "19ROoR9cqGmP7E01gnnHxjRzT_dY877P8",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/19ROoR9cqGmP7E01gnnHxjRzT_dY877P8/view",
+   "title": "woori-7.jpg"
+  },
+  {
+   "doc_id": "19TfOmz7ltl_6PKMLXc0gwhZSiUxvVg7Y",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/19TfOmz7ltl_6PKMLXc0gwhZSiUxvVg7Y/view",
+   "title": "크리에이티브꾼_사업자등록증, 통장사본.pdf"
+  },
+  {
+   "doc_id": "19mCDcnLrk6JgJtf7T5Ce_dHIS3MCYKER",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/19mCDcnLrk6JgJtf7T5Ce_dHIS3MCYKER/view",
+   "title": "[서식2] 입찰보증금납부서.pdf"
+  },
+  {
+   "doc_id": "19o69311shoCOTmJzxaPbBgo-xgs0Z2Vp",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/19o69311shoCOTmJzxaPbBgo-xgs0Z2Vp/view",
+   "title": "woori-17.jpg"
+  },
+  {
+   "doc_id": "1AKbB9ZcoyeCkqiC7ui-AchCx_IwJ5G6v",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1AKbB9ZcoyeCkqiC7ui-AchCx_IwJ5G6v/view",
+   "title": "woori-3.jpg"
+  },
+  {
+   "doc_id": "1AjyQLOgXHJwASGcwBcMXhXmQJjjGJ7jg",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1AjyQLOgXHJwASGcwBcMXhXmQJjjGJ7jg/view",
+   "title": "스위트스팟_우리은행 인천 외국인 라운지 기획,구축,운영_제안서.pptx"
+  },
+  {
+   "doc_id": "1BEjiqEYUocyLwBP2umXXv5tOiPufGwni",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1BEjiqEYUocyLwBP2umXXv5tOiPufGwni/view",
+   "title": "250915_제안서-우리은행_키즈존.pdf"
+  },
+  {
+   "doc_id": "1BgARHKf02TDL7fz3Q_mAHPt2cEBNmigG",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1BgARHKf02TDL7fz3Q_mAHPt2cEBNmigG/view",
+   "title": "250814_사업자등록증(중앙일보).pdf"
+  },
+  {
+   "doc_id": "1Bm5-AMkZyaauVSPDdNz6tNoqpOVrARv2",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Bm5-AMkZyaauVSPDdNz6tNoqpOVrARv2/view",
+   "title": "2025년 12월 KT email 명세서(문서열기암호：사업자등록번호 뒤 5자리).pdf"
+  },
+  {
+   "doc_id": "1Bw1A6adc3mvw_XUF-rKsoATsQ-JBnY09",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Bw1A6adc3mvw_XUF-rKsoATsQ-JBnY09/view",
+   "title": "(스위트스팟) 챕터코리안 토픽 수업 제안서 & 회사 소개서.pdf"
+  },
+  {
+   "doc_id": "1C5H-_CnbHgo_YTRKdonbhK4ICgw_qSh0",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1C5H-_CnbHgo_YTRKdonbhK4ICgw_qSh0/view",
+   "title": "woori-36.jpg"
+  },
+  {
+   "doc_id": "1CPHvIhVQnflgi4Bo4j2k36KBKoXyUknu",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1CPHvIhVQnflgi4Bo4j2k36KBKoXyUknu/view",
+   "title": "woori-11.jpg"
+  },
+  {
+   "doc_id": "1CShjXDNDuw23rYm4Iu4BrCbrRit-RiDf",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CShjXDNDuw23rYm4Iu4BrCbrRit-RiDf/view",
+   "title": "0723_스위트스팟_우리은행 주안서금융센터 외국인 라운지 구축 및 운영_가견적.xlsx"
+  },
+  {
+   "doc_id": "1Cbj2g39O1vo6VCefV5NUY-Z8SyIHGv4w",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Cbj2g39O1vo6VCefV5NUY-Z8SyIHGv4w/view",
+   "title": "우리은행 인천 외국인 라운지 구축,운영 계약서_최종.pdf"
+  },
+  {
+   "doc_id": "1CeaRXnIrt8LoEz-kujO2JOeVnLySPsz-",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1CeaRXnIrt8LoEz-kujO2JOeVnLySPsz-/view",
+   "title": "전단지 배포_인하대 정문.jpg"
+  },
+  {
+   "doc_id": "1CzQNEgBzFfYY-d2MzvAOnZyqPrrlSt3R",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1CzQNEgBzFfYY-d2MzvAOnZyqPrrlSt3R/view",
+   "title": "소망기획_사업자등록증.pdf"
+  },
+  {
+   "doc_id": "1D3ofLtrxeHlrEqpROvTmNUzznN0KkO6X",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1D3ofLtrxeHlrEqpROvTmNUzznN0KkO6X/view",
+   "title": "우리은행_0722.docx"
+  },
+  {
+   "doc_id": "1D61Oub5x3IRTz1dkSvSYpF42tmA8MEyc",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1D61Oub5x3IRTz1dkSvSYpF42tmA8MEyc/view",
+   "title": "woori-49.jpg"
+  },
+  {
+   "doc_id": "1DFB2vlE7UsK1trUOCRMWutMgJ-Oqwj0x",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DFB2vlE7UsK1trUOCRMWutMgJ-Oqwj0x/view",
+   "title": "0723_스위트스팟_우리은행 주안서금융센터 외국인 라운지 구축 및 운영_가견적.pdf"
+  },
+  {
+   "doc_id": "1DR6VaBNcDA8PHQWHvLU062Vhyr4C7cAI",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1DR6VaBNcDA8PHQWHvLU062Vhyr4C7cAI/view",
+   "title": "251028_제안서_우리은행_피드백 수정2.pdf"
+  },
+  {
+   "doc_id": "1DbGWhrFUQqKzElvLa2swFBx1LM-fMzcF",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1DbGWhrFUQqKzElvLa2swFBx1LM-fMzcF/view",
+   "title": "woori-18.jpg"
+  },
+  {
+   "doc_id": "1DlZ7vF7i5npRsHWOkuRjSdKm-GkdJv3f",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1DlZ7vF7i5npRsHWOkuRjSdKm-GkdJv3f/view",
+   "title": "사업자등록증_차완3.png"
+  },
+  {
+   "doc_id": "1DsBnnRhurHM7Dm9nVPXLebpPGnR_KZmS",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1DsBnnRhurHM7Dm9nVPXLebpPGnR_KZmS/view",
+   "title": "스위트스팟_우리글로벌라운지 프로그램 운영 업무 협약서_우리동네사진관.docx"
+  },
+  {
+   "doc_id": "1E2_-uZXDqlp6uZfMkda8viyM8LBsE6rG",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1E2_-uZXDqlp6uZfMkda8viyM8LBsE6rG/view",
+   "title": "인천 외국인 라운지 기획,구축,운영 대행 계약서_초안(스위트스팟 수정).pdf"
+  },
+  {
+   "doc_id": "1E4NFuZwm9PBpUDqB0QVGHTqCSnwbJFJt",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1E4NFuZwm9PBpUDqB0QVGHTqCSnwbJFJt/view",
+   "title": "woori-26.jpg"
+  },
+  {
+   "doc_id": "1EA2rMF04Kd6GB4pvS71KtFOsbDWOBGtr",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1EA2rMF04Kd6GB4pvS71KtFOsbDWOBGtr/view",
+   "title": "인천매체 제안.pptx"
+  },
+  {
+   "doc_id": "1EB5n_93vHpvjffsOZHuBun_5ZJpjADzz",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1EB5n_93vHpvjffsOZHuBun_5ZJpjADzz/view",
+   "title": "251028_제안서_우리은행_피드백 수정.pdf"
+  },
+  {
+   "doc_id": "1ETi118YDELz3fc2tdWNS4KW88tSehjLi",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1ETi118YDELz3fc2tdWNS4KW88tSehjLi/view",
+   "title": "woori-46.jpg"
+  },
+  {
+   "doc_id": "1EqcKa8_7WC0ZcAGtXsQWuld27m3n8Bqp",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1EqcKa8_7WC0ZcAGtXsQWuld27m3n8Bqp/view",
+   "title": "woori-37.jpg"
+  },
+  {
+   "doc_id": "1FprXzQG2v6t9WFQZjdP8xfCbr0swuBol",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1FprXzQG2v6t9WFQZjdP8xfCbr0swuBol/view",
+   "title": "11)4대보험 완납증명서_스위트스팟.pdf"
+  },
+  {
+   "doc_id": "1Ftp0kiMozTuzjKwtxZBlBfKLj-X06GIa",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Ftp0kiMozTuzjKwtxZBlBfKLj-X06GIa/view",
+   "title": "픽스업 통장사본.png"
+  },
+  {
+   "doc_id": "1GD0EOccPUQ-YBR_1QbpBrfCmUTKuce8l",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1GD0EOccPUQ-YBR_1QbpBrfCmUTKuce8l/view",
+   "title": "한복한땀_사업자등록증.jpg"
+  },
+  {
+   "doc_id": "1GdSUI8NQ174TdpCKdvjIqCKBiZEr3RAx",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1GdSUI8NQ174TdpCKdvjIqCKBiZEr3RAx/view",
+   "title": "[클로즈랭스] 견적서 (우리글로벌라운지)_251113.docx"
+  },
+  {
+   "doc_id": "1Gkbqo4XdRMITEpdhNjTIVV8pyaWE-R7u",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Gkbqo4XdRMITEpdhNjTIVV8pyaWE-R7u/view",
+   "title": "사업자등록증_DDPS_250730.pdf"
+  },
+  {
+   "doc_id": "1Gt0rb1OJxH8TwTRxHQepXVsoyrKVIc4e",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1Gt0rb1OJxH8TwTRxHQepXVsoyrKVIc4e/view",
+   "title": "[Sweetspot] 회사 소개서.pdf"
+  },
+  {
+   "doc_id": "1HXSjB7Ai0Zos3PzFNRf4aMrSxNnk8h4T",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1HXSjB7Ai0Zos3PzFNRf4aMrSxNnk8h4T/view",
+   "title": "woori-21.jpg"
+  },
+  {
+   "doc_id": "1HbIcxvglf6grv17RmcAoLTIcRsDqGgef",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1HbIcxvglf6grv17RmcAoLTIcRsDqGgef/view",
+   "title": "net 입금가) 251013 대학교 교내 포스터광고 예상견적서(인천 4개교).xlsx"
+  },
+  {
+   "doc_id": "1IAK1t-L2XFrsWXX7FlkKwCoNMa3gQ6wh",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1IAK1t-L2XFrsWXX7FlkKwCoNMa3gQ6wh/view",
+   "title": "woori-44.jpg"
+  },
+  {
+   "doc_id": "1IC5s7TlFs1xe3NxXlAnxW8VxXmPwd9mr",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1IC5s7TlFs1xe3NxXlAnxW8VxXmPwd9mr/view",
+   "title": "메타애드_회사소개서_2025년.pdf"
+  },
+  {
+   "doc_id": "1IE1aCW79V-rxqmdGWBFFiUMZAh8u60Nq",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1IE1aCW79V-rxqmdGWBFFiUMZAh8u60Nq/view",
+   "title": "WANG YE_신분증.jpg"
+  },
+  {
+   "doc_id": "1IZ-q7kNoVGDyOr0W_-KcTJukqgvR3xPm",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1IZ-q7kNoVGDyOr0W_-KcTJukqgvR3xPm/view",
+   "title": "woori-28.jpg"
+  },
+  {
+   "doc_id": "1In5BWlI_Sg5I4IQ76D0DeNiji-zcZVPF",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1In5BWlI_Sg5I4IQ76D0DeNiji-zcZVPF/view",
+   "title": "비오드_스위트스팟 우리은행 인천 외국인 라운지 공사 계약서.docx"
+  },
+  {
+   "doc_id": "1IsQnH2DRRV0m5318u5HL030h1CTNM0sY",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1IsQnH2DRRV0m5318u5HL030h1CTNM0sY/view",
+   "title": "RXPU2514_사업소득 지급 요청.xlsx"
+  },
+  {
+   "doc_id": "1J8CmyXwqFJE5aRBToMoywjz1tvoFWlaF",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1J8CmyXwqFJE5aRBToMoywjz1tvoFWlaF/view",
+   "title": "스위트스팟 - 견적서 ( 스탠딩 ) - ( 소망기획 251205 ).xlsx"
+  },
+  {
+   "doc_id": "1JDjD-gYM3x_Cy6u1IGAZMMKq2VvbNkX9",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1JDjD-gYM3x_Cy6u1IGAZMMKq2VvbNkX9/view",
+   "title": "비오드_스위트스팟 우리은행 인천 외국인 라운지 공사 계약서_날인본.pdf"
+  },
+  {
+   "doc_id": "1JJfWOH0MySR06l56CTzSEgW5qVL6v3RW",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1JJfWOH0MySR06l56CTzSEgW5qVL6v3RW/view",
+   "title": "woori-14.jpg"
+  },
+  {
+   "doc_id": "1JLvRka9LHqWBNT5_5N289gTVrxLOVV5D",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1JLvRka9LHqWBNT5_5N289gTVrxLOVV5D/view",
+   "title": "스위트스팟_우리은행 인천 외국인 라운지 기획,구축,운영_가격제안서(견적서).pdf"
+  },
+  {
+   "doc_id": "1JaoH2MAGmDfmeVNiKk6eqQdWp0N0xnPN",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1JaoH2MAGmDfmeVNiKk6eqQdWp0N0xnPN/view",
+   "title": "woori-12.jpg"
+  },
+  {
+   "doc_id": "1K-wfOsnUO-Yy51mwlVARGaT_YPhig3eV",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1K-wfOsnUO-Yy51mwlVARGaT_YPhig3eV/view",
+   "title": "한복한땀_ 통장사본.pdf"
+  },
+  {
+   "doc_id": "1K1Gg871ZgnJKgi3O4iBSh46hubmLKKZ5",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1K1Gg871ZgnJKgi3O4iBSh46hubmLKKZ5/view",
+   "title": "woori-18.jpg"
+  },
+  {
+   "doc_id": "1K8IPMOIckk04uAUmRz70Vzot8lm1ejBE",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1K8IPMOIckk04uAUmRz70Vzot8lm1ejBE/view",
+   "title": "woori-52.jpg"
+  },
+  {
+   "doc_id": "1KT93mXRlIbv8IoiATYJK7kkdcoNlMgRP",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1KT93mXRlIbv8IoiATYJK7kkdcoNlMgRP/view",
+   "title": "견적서- 한복한땀.hwp"
+  },
+  {
+   "doc_id": "1KVI4jx_7zp_Nq582E7QtWEsEjBGA2a2a",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1KVI4jx_7zp_Nq582E7QtWEsEjBGA2a2a/view",
+   "title": "스위트스팟_우리글로벌라운지 프로그램 운영 업무 협약서_희히스튜디오.pdf"
+  },
+  {
+   "doc_id": "1KmpkAHUG1jzsxbUKVkyMfrknj5rj55Mj",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1KmpkAHUG1jzsxbUKVkyMfrknj5rj55Mj/view",
+   "title": "스위트스팟_우리은행 인천 외국인 라운지 기획,구축,운영_발표용.pptx"
+  },
+  {
+   "doc_id": "1KxLp8UBy5o6XfH5aPgb5zBOpjdaoJmCr",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1KxLp8UBy5o6XfH5aPgb5zBOpjdaoJmCr/view",
+   "title": "woori-50.jpg"
+  },
+  {
+   "doc_id": "1L0cx4zTQZSFrAfV5jLdSAy97ZcGNVQa8",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1L0cx4zTQZSFrAfV5jLdSAy97ZcGNVQa8/view",
+   "title": "희히스튜디오_현금영수증.jpg"
+  },
+  {
+   "doc_id": "1L0uUElrmt3gdGcGWg0dIQep8eV7eybwh",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1L0uUElrmt3gdGcGWg0dIQep8eV7eybwh/view",
+   "title": "MUN OKSANA_경품수령증.jpg"
+  },
+  {
+   "doc_id": "1L8ZMdCJEGN3aRFpvyury7kuT1fZu_2td",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1L8ZMdCJEGN3aRFpvyury7kuT1fZu_2td/view",
+   "title": "목공_품_비교표.pdf"
+  },
+  {
+   "doc_id": "1LCzNuOnJ9zb9jy8u5w_B2JeuhM9IBDrT",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1LCzNuOnJ9zb9jy8u5w_B2JeuhM9IBDrT/view",
+   "title": "스위트스팟_우리은행 주안서금융센터 라운지 구축 제안서_update 0711.pptx"
+  },
+  {
+   "doc_id": "1L_ENav8p1xJ1o3tC63HPvrfcfEjaH_pT",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1L_ENav8p1xJ1o3tC63HPvrfcfEjaH_pT/view",
+   "title": "woori-22.jpg"
+  },
+  {
+   "doc_id": "1Lh1UHWn4IrlZq-1mNCNBfyzsJG2Ww2gd",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Lh1UHWn4IrlZq-1mNCNBfyzsJG2Ww2gd/view",
+   "title": "우리은행 우리글로벌라운지 _운영인력계약서_BRO.pdf"
+  },
+  {
+   "doc_id": "1LjF6bPKSoJti-z_1xSMVS2EGXIqj8hoQ",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1LjF6bPKSoJti-z_1xSMVS2EGXIqj8hoQ/view",
+   "title": "woori-39.jpg"
+  },
+  {
+   "doc_id": "1Lq_B_A7GacwYOQESUIxaYnczUUCMSLbh",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Lq_B_A7GacwYOQESUIxaYnczUUCMSLbh/view",
+   "title": "스위트스팟_우리글로벌라운지 프로그램 운영 업무 협약서_우리동네사진관.pdf"
+  },
+  {
+   "doc_id": "1Lqs4T_j3VY3qsk5ixV8oYhWUKMK2Zhum",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Lqs4T_j3VY3qsk5ixV8oYhWUKMK2Zhum/view",
+   "title": "견적서_우리글로벌라운지_11.21.xls"
+  },
+  {
+   "doc_id": "1LzqwL9Zb_W-FquCF3MUUt34mwZgvsfUl",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1LzqwL9Zb_W-FquCF3MUUt34mwZgvsfUl/view",
+   "title": "미디어오픈_통장사본.jpg"
+  },
+  {
+   "doc_id": "1M6y1l0YLtfVQF7afmexoodt8i237RwMb",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1M6y1l0YLtfVQF7afmexoodt8i237RwMb/view",
+   "title": "woori-28.jpg"
+  },
+  {
+   "doc_id": "1MACEkDYyBkXUNxCCEvjtoynHXP9oqrIf",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1MACEkDYyBkXUNxCCEvjtoynHXP9oqrIf/view",
+   "title": "woori-31.jpg"
+  },
+  {
+   "doc_id": "1MB7ot0fze58z_9R2Wk8AzBAIx9MdGDeC",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1MB7ot0fze58z_9R2Wk8AzBAIx9MdGDeC/view",
+   "title": "통장사본 차완.jpg"
+  },
+  {
+   "doc_id": "1MGR71u7e1nUqimvlug866yNAzqnawPWR",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1MGR71u7e1nUqimvlug866yNAzqnawPWR/view",
+   "title": "woori-9.jpg"
+  },
+  {
+   "doc_id": "1MSZgHIt1FYwIru63DRGZS5UcSbXpCdHZ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1MSZgHIt1FYwIru63DRGZS5UcSbXpCdHZ/view",
+   "title": "픽스업_사업자등록증.jpg"
+  },
+  {
+   "doc_id": "1MV8f91MJhkDs3uYzOfrKPxFXQfve15AK",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1MV8f91MJhkDs3uYzOfrKPxFXQfve15AK/view",
+   "title": "woori-6.jpg"
+  },
+  {
+   "doc_id": "1MYFgKkpBG0WaA2lydXSzVVNWJs8qqJw0",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1MYFgKkpBG0WaA2lydXSzVVNWJs8qqJw0/view",
+   "title": "woori-48.jpg"
+  },
+  {
+   "doc_id": "1McCFYOQTEFFpPyxCdPxaR2RHkvHdNTn5",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1McCFYOQTEFFpPyxCdPxaR2RHkvHdNTn5/view",
+   "title": "(스위트스팟) 우리은행 외국인 라운지 도서 큐레이션 및 납품 용역 계약서_초안.doc"
+  },
+  {
+   "doc_id": "1MqZ1dPU1qV8Ks-hQkvdSPuch_aysYNTU",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1MqZ1dPU1qV8Ks-hQkvdSPuch_aysYNTU/view",
+   "title": "woori-34.jpg"
+  },
+  {
+   "doc_id": "1MragyO4HqZuc8AFuxAwFuNkSBaT7wgq4",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1MragyO4HqZuc8AFuxAwFuNkSBaT7wgq4/view",
+   "title": "woori-5.jpg"
+  },
+  {
+   "doc_id": "1NAECs5RDVoCk1KeYlqwMvuf6aA-wi3tU",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1NAECs5RDVoCk1KeYlqwMvuf6aA-wi3tU/view",
+   "title": "woori-20.jpg"
+  },
+  {
+   "doc_id": "1NLHdmslGHdFV0hH34uecLkkB_LzrwRFh",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1NLHdmslGHdFV0hH34uecLkkB_LzrwRFh/view",
+   "title": "SONG CHENGLONG_경품수령증.jpg"
+  },
+  {
+   "doc_id": "1NWcSTPDvdfUlIT2JuvCp8FcihHioSwdL",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1NWcSTPDvdfUlIT2JuvCp8FcihHioSwdL/view",
+   "title": "우리은행_사업자등록증.jpg"
+  },
+  {
+   "doc_id": "1NXtekhtztTjI4rvIdtXVw7Vj_eny1xq0",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1NXtekhtztTjI4rvIdtXVw7Vj_eny1xq0/view",
+   "title": "비오드_스위트스팟 우리은행 인천 외국인 라운지 공사 계약서.pdf"
+  },
+  {
+   "doc_id": "1NjiZqgHN8i0voQuWmGzCurSW1ALowKy7",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1NjiZqgHN8i0voQuWmGzCurSW1ALowKy7/view",
+   "title": "3)보험증권.pdf"
+  },
+  {
+   "doc_id": "1NltV6LvZ3w-L1fGC0lg7CzxYvjWNF-A4",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1NltV6LvZ3w-L1fGC0lg7CzxYvjWNF-A4/view",
+   "title": "6)사용인감계.pdf"
+  },
+  {
+   "doc_id": "1Nt5E54RRlKG9LI6JK0lTpZ6aPep0XHYV",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Nt5E54RRlKG9LI6JK0lTpZ6aPep0XHYV/view",
+   "title": "250925_제안서-우리은행.pdf"
+  },
+  {
+   "doc_id": "1NtoAZ4mZ2qx2mCPJaPon37t5MRgm8VBg",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1NtoAZ4mZ2qx2mCPJaPon37t5MRgm8VBg/view",
+   "title": "woori-37.jpg"
+  },
+  {
+   "doc_id": "1NveEwH91JDBLhYue801n964t9Gc9QEok",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1NveEwH91JDBLhYue801n964t9Gc9QEok/view",
+   "title": "스위트스팟_우리은행 인천 외국인 라운지 기획,구축,운영_가격 제안서.xlsx"
+  },
+  {
+   "doc_id": "1Nvvye2VlCliP6LRr06ns_l7_OsUROSXM",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Nvvye2VlCliP6LRr06ns_l7_OsUROSXM/view",
+   "title": "스위트스팟_우리글로벌라운지 프로그램 운영 업무 협약서_바인드썸띵.pdf"
+  },
+  {
+   "doc_id": "1O-Eg24u94_ks9Xa4szIF1CRsOl6JPWAm",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1O-Eg24u94_ks9Xa4szIF1CRsOl6JPWAm/view",
+   "title": "woori-23.jpg"
+  },
+  {
+   "doc_id": "1O0efurz8iSfbsoBzUjlYfNIEeH0JUlOj",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1O0efurz8iSfbsoBzUjlYfNIEeH0JUlOj/view",
+   "title": "woori-10.jpg"
+  },
+  {
+   "doc_id": "1ONS33dEgZm3ZqU4tiQpSydjfe40Nf8Fw",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ONS33dEgZm3ZqU4tiQpSydjfe40Nf8Fw/view",
+   "title": "스위트스팟_우리은행 인천 외국인 라운지 기획,구축,운영_가격제안서.pdf"
+  },
+  {
+   "doc_id": "1OT1bMvlkIM-NaLvcYmjGekFf7X4oRyy-",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1OT1bMvlkIM-NaLvcYmjGekFf7X4oRyy-/view",
+   "title": "woori-52.jpg"
+  },
+  {
+   "doc_id": "1OVOad7UQ8zT9nsSTCTlyILsskIUsLl1u",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1OVOad7UQ8zT9nsSTCTlyILsskIUsLl1u/view",
+   "title": "인천 외국인 라운지 기획 구축 운영 대행사 입찰공고.pdf"
+  },
+  {
+   "doc_id": "1OXu-ptX4753SPdo4W84xX9PXN3kUx3wQ",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1OXu-ptX4753SPdo4W84xX9PXN3kUx3wQ/view",
+   "title": "woori-42.jpg"
+  },
+  {
+   "doc_id": "1OZjk9oi80SS7w9CZVp_rfpUllCQluNMf",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1OZjk9oi80SS7w9CZVp_rfpUllCQluNMf/view",
+   "title": "스위트스팟 - 우리동네사진관 견적서(출장촬영)_2025.11.14.pdf"
+  },
+  {
+   "doc_id": "1ObB4ulNJ8NbIgne3OcnEzcXpkmMRju9I",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1ObB4ulNJ8NbIgne3OcnEzcXpkmMRju9I/view",
+   "title": "스위트스팟_우리글로벌라운지 프로그램 운영 업무 협약서_한복한땀.docx"
+  },
+  {
+   "doc_id": "1Oe5DkJtFBvDS6tFx62DZ25H0lFNghgmY",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Oe5DkJtFBvDS6tFx62DZ25H0lFNghgmY/view",
+   "title": "woori-4.jpg"
+  },
+  {
+   "doc_id": "1PARSKCQ-OPqaqRkffF-vfLL28Q9J08Q7",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1PARSKCQ-OPqaqRkffF-vfLL28Q9J08Q7/view",
+   "title": "희히스튜디오_사업자등록증명.pdf"
+  },
+  {
+   "doc_id": "1PJjkelNR-SdL7xOB5jzvyuIGXFjClK-E",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1PJjkelNR-SdL7xOB5jzvyuIGXFjClK-E/view",
+   "title": "인천 외국인 라운지 구축,운영 계약서_최종.hwp"
+  },
+  {
+   "doc_id": "1PUZvf3MnUh7OvjFxDeGUceuf8jFwV_zz",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1PUZvf3MnUh7OvjFxDeGUceuf8jFwV_zz/view",
+   "title": "woori-9.jpg"
+  },
+  {
+   "doc_id": "1PUq5UlGu1wZGWGmXX6VV5AKdMvjW10-G",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1PUq5UlGu1wZGWGmXX6VV5AKdMvjW10-G/view",
+   "title": "3)보험료 영수증.pdf"
+  },
+  {
+   "doc_id": "1PWIoyoCt2QNYFRnUzpjNye9YzPqdiBfk",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1PWIoyoCt2QNYFRnUzpjNye9YzPqdiBfk/view",
+   "title": "woori-47.jpg"
+  },
+  {
+   "doc_id": "1PWnJlClswbdf0fmyuOp6HC29Sk3OQDbF",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1PWnJlClswbdf0fmyuOp6HC29Sk3OQDbF/view",
+   "title": "메르네쥬 견적서_251204.jpg"
+  },
+  {
+   "doc_id": "1PcuhhIka60tPKiT5r3q5_IyjBgD7mWYp",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1PcuhhIka60tPKiT5r3q5_IyjBgD7mWYp/view",
+   "title": "woori-32.jpg"
+  },
+  {
+   "doc_id": "1PmH8Sf9qjyMAl4Z5R-4s1DqqPBQEF38g",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1PmH8Sf9qjyMAl4Z5R-4s1DqqPBQEF38g/view",
+   "title": "견적서_우리글로벌라운지_11.21.pdf"
+  },
+  {
+   "doc_id": "1QEYGD_eCf7Ff5xkmbDJGXWdaKhBBRh8S",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1QEYGD_eCf7Ff5xkmbDJGXWdaKhBBRh8S/view",
+   "title": "스위트스팟_우리글로벌라운지 프로그램 운영 업무 협약서_메르네쥬.docx"
+  },
+  {
+   "doc_id": "1R0LVj3ug-pIaiQiXHejjqOkTTg5JuGC6",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1R0LVj3ug-pIaiQiXHejjqOkTTg5JuGC6/view",
+   "title": "바이탈애드_사업자등록증.jpg"
+  },
+  {
+   "doc_id": "1RJtIQ5JmLeptS0sAuDC0iQ6cUfsZNj0X",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1RJtIQ5JmLeptS0sAuDC0iQ6cUfsZNj0X/view",
+   "title": "KT텔레캅_10월 청구서.pdf"
+  },
+  {
+   "doc_id": "1S1NHIlA_fmrFR7P4kusLEjkRBabsuakI",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1S1NHIlA_fmrFR7P4kusLEjkRBabsuakI/view",
+   "title": "(변경내역)우리은행 온_오프 외국인 유학생 채용박람회.pdf"
+  },
+  {
+   "doc_id": "1S56r-UX9YieJ3_bxfxCglmkRmMwwF169",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1S56r-UX9YieJ3_bxfxCglmkRmMwwF169/view",
+   "title": "woori-19.jpg"
+  },
+  {
+   "doc_id": "1SRoaji7wt7aC8z0axsDEOY73O05PwNMH",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1SRoaji7wt7aC8z0axsDEOY73O05PwNMH/view",
+   "title": "데일리_신한_115126.pdf"
+  },
+  {
+   "doc_id": "1SdadbdXw-zqx1nSvShoA-YAsYhFpw1JW",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1SdadbdXw-zqx1nSvShoA-YAsYhFpw1JW/view",
+   "title": "woori-25.jpg"
+  },
+  {
+   "doc_id": "1SnKYHBGK0YgIMn0t7AJedDVIEZxyfhHY",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1SnKYHBGK0YgIMn0t7AJedDVIEZxyfhHY/view",
+   "title": "스위트스팟_우리은행 주안서금융센터 외국인 라운지 구축 및 운영_제안서 작성중.pptx"
+  },
+  {
+   "doc_id": "1SpFKossZVXbZmujMyDCHJQkZp9mZwsae",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1SpFKossZVXbZmujMyDCHJQkZp9mZwsae/view",
+   "title": "woori-50.jpg"
+  },
+  {
+   "doc_id": "1SurcuOTVdK7id7mW2mfMIaGNMn8VLE-P",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1SurcuOTVdK7id7mW2mfMIaGNMn8VLE-P/view",
+   "title": "woori-15.jpg"
+  },
+  {
+   "doc_id": "1T7DRQZYuSz4KndLib6XVJbgAIZpoYTdq",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1T7DRQZYuSz4KndLib6XVJbgAIZpoYTdq/view",
+   "title": "woori-51.jpg"
+  },
+  {
+   "doc_id": "1TGgUIHcG-6ML14zhCoHg9K_VwmrdKMad",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1TGgUIHcG-6ML14zhCoHg9K_VwmrdKMad/view",
+   "title": "우리은행 인천 외국인 라운지 구축,운영 계약서_날인본.pdf"
+  },
+  {
+   "doc_id": "1THPwXkUHQgFG_e3hoz8-a4fDV7dV1jEK",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1THPwXkUHQgFG_e3hoz8-a4fDV7dV1jEK/view",
+   "title": "250827_제안서-우리은행_서가 사이즈 .pdf"
+  },
+  {
+   "doc_id": "1Tb5F5Wu3X-YBvEoptQg8qqmFXdvgb9nt",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Tb5F5Wu3X-YBvEoptQg8qqmFXdvgb9nt/view",
+   "title": "1. 사업자등록증_(주)비오드.pdf"
+  },
+  {
+   "doc_id": "1TeK7tNqqGW9Y0qKxd2qmPSDRR1r37xzw",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1TeK7tNqqGW9Y0qKxd2qmPSDRR1r37xzw/view",
+   "title": "0916_스위트스팟_우리은행 인천 외국인 라운지 기획,구축,운영_견적서_합본.xlsx"
+  },
+  {
+   "doc_id": "1ThbfB1YWifLTqe5zcQTjzH4WdmLGCAoR",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1ThbfB1YWifLTqe5zcQTjzH4WdmLGCAoR/view",
+   "title": "우리동네사진관_서울대입구점_사업자등록증.jpg"
+  },
+  {
+   "doc_id": "1ToozPOYQzPa9-GwjmAB5PtL1dkZ7WLa8",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1ToozPOYQzPa9-GwjmAB5PtL1dkZ7WLa8/view",
+   "title": "woori-30.jpg"
+  },
+  {
+   "doc_id": "1UMbD0N5Had-D8sFDsHHQCFT5fVZ94qjQ",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1UMbD0N5Had-D8sFDsHHQCFT5fVZ94qjQ/view",
+   "title": "woori-16.jpg"
+  },
+  {
+   "doc_id": "1UiDWUpgFtqrDdgo-NOg0Nd2uA-khIK3x",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1UiDWUpgFtqrDdgo-NOg0Nd2uA-khIK3x/view",
+   "title": "woori-27.jpg"
+  },
+  {
+   "doc_id": "1UiSDXLzLSJzZiFXPsvu7JRyKmMEvwjLW",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1UiSDXLzLSJzZiFXPsvu7JRyKmMEvwjLW/view",
+   "title": "스위트스팟_우리은행 주안서금융센터 라운지 구축 제안서.pdf"
+  },
+  {
+   "doc_id": "1Ulpsf0g0ogHwJrUa2CwmWpBWQdDs4lNY",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Ulpsf0g0ogHwJrUa2CwmWpBWQdDs4lNY/view",
+   "title": "woori-55.jpg"
+  },
+  {
+   "doc_id": "1VL6gEZx9PbzHfcvWR-xzxRJ7nn3glBZ3",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1VL6gEZx9PbzHfcvWR-xzxRJ7nn3glBZ3/view",
+   "title": "woori-22.jpg"
+  },
+  {
+   "doc_id": "1VO1morZj3MwE5-DR4DAeOjSHd29zfvRd",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1VO1morZj3MwE5-DR4DAeOjSHd29zfvRd/view",
+   "title": "251104_스위트스팟-우리은행_추가공사 견적서.pdf"
+  },
+  {
+   "doc_id": "1VWwU39buXMgJ9m0E_ANAqhA7tq6ZXsaI",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1VWwU39buXMgJ9m0E_ANAqhA7tq6ZXsaI/view",
+   "title": "스위트스팟_우리글로벌라운지 프로그램 운영 업무 협약서_글씨그리다.docx"
+  },
+  {
+   "doc_id": "1VYWgpUb4f3FGHnbgWPUBQ8BztDoBSKFs",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1VYWgpUb4f3FGHnbgWPUBQ8BztDoBSKFs/view",
+   "title": "매타애드_인플루언서 광고 견적서_모집형_스위트 스팟.pdf"
+  },
+  {
+   "doc_id": "1VZGQzxI2yTIBpOmSN6x4wsDAiIlAJSHa",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1VZGQzxI2yTIBpOmSN6x4wsDAiIlAJSHa/view",
+   "title": "2025년 11월 KT email 명세서(문서열기암호：사업자등록번호 뒤 5자리).pdf"
+  },
+  {
+   "doc_id": "1VZIrHCbpUaxE_5Mmjbrb0Ynb0DYDtN9j",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1VZIrHCbpUaxE_5Mmjbrb0Ynb0DYDtN9j/view",
+   "title": "ATAA_PORTFOLIO.pdf"
+  },
+  {
+   "doc_id": "1VhDsGFF1n4SYBAOsUu189ezxcJGg95j4",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1VhDsGFF1n4SYBAOsUu189ezxcJGg95j4/view",
+   "title": "인천통합매체소개서_애드메카.pdf"
+  },
+  {
+   "doc_id": "1Vpeovy-hqepLjcsn8UVHChIc-Al2kezH",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Vpeovy-hqepLjcsn8UVHChIc-Al2kezH/view",
+   "title": "woori-11.jpg"
+  },
+  {
+   "doc_id": "1WK2NKp-DRqRr8TP2h9UjFt3u1Fu9X15T",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1WK2NKp-DRqRr8TP2h9UjFt3u1Fu9X15T/view",
+   "title": "LIN PHYUSIN THANT_신분증.jpg"
+  },
+  {
+   "doc_id": "1WfWyxC80STPpqc0iskerg6RbljZ_NO0N",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1WfWyxC80STPpqc0iskerg6RbljZ_NO0N/view",
+   "title": "스위트스팟_우리은행 주안서금융센터 외국인 라운지 구축 및 운영_가견적.xlsx"
+  },
+  {
+   "doc_id": "1X0qruBknQYNGZSjsBD98Y70yQ2G1y9tz",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1X0qruBknQYNGZSjsBD98Y70yQ2G1y9tz/view",
+   "title": "woori-32.jpg"
+  },
+  {
+   "doc_id": "1X6yfzyv6a5drr0UDWVwdPceHPNeI6CYA",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1X6yfzyv6a5drr0UDWVwdPceHPNeI6CYA/view",
+   "title": "(주)무브 카운티, 쏠라티 차량정보.pdf"
+  },
+  {
+   "doc_id": "1XBPtZukK2YzMSaifgxq60MIBWgeZ1elf",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1XBPtZukK2YzMSaifgxq60MIBWgeZ1elf/view",
+   "title": "woori-27.jpg"
+  },
+  {
+   "doc_id": "1XGaUGXYkL5jKHP_Jz7SB6CrAYdwo7qy0",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1XGaUGXYkL5jKHP_Jz7SB6CrAYdwo7qy0/view",
+   "title": "견적서_금융사 북라운지 12월운영 인건비_260106.pdf"
+  },
+  {
+   "doc_id": "1XexvFIdoQSYUflRRlbRCBaWLgYeRqWZK",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1XexvFIdoQSYUflRRlbRCBaWLgYeRqWZK/view",
+   "title": "woori-48.jpg"
+  },
+  {
+   "doc_id": "1XtDg-DTmFGqoHd4cKPNZjhJN_SXzXAuX",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1XtDg-DTmFGqoHd4cKPNZjhJN_SXzXAuX/view",
+   "title": "250814_우리은행_리딩 라운지 제안서.pdf"
+  },
+  {
+   "doc_id": "1XynF0sYnjftmCX0oTB275nDWKYgvw0wc",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1XynF0sYnjftmCX0oTB275nDWKYgvw0wc/view",
+   "title": "입찰 사항.pdf"
+  },
+  {
+   "doc_id": "1Y2957P_ZEf5Ugnf3twSQD7CSSAFhv0OJ",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Y2957P_ZEf5Ugnf3twSQD7CSSAFhv0OJ/view",
+   "title": "woori-2.jpg"
+  },
+  {
+   "doc_id": "1YO28Nd-8-7R9jf7-E4uAhJEw7OHedeNL",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1YO28Nd-8-7R9jf7-E4uAhJEw7OHedeNL/view",
+   "title": "0711_스위트스팟_우리은행 주안서금융센터 외국인 라운지 구축 및 운영_가견적.pdf"
+  },
+  {
+   "doc_id": "1YfarrHf-ZLYgWyxxjoX2LKZ86xtLYV7z",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1YfarrHf-ZLYgWyxxjoX2LKZ86xtLYV7z/view",
+   "title": "인천 외국인 라운지 기획,구축,운영 대행 계약서_초안(스위트스팟 수정).hwp"
+  },
+  {
+   "doc_id": "1ZKG0copotvDdYZZWc6swZ5HsydmdizmT",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1ZKG0copotvDdYZZWc6swZ5HsydmdizmT/view",
+   "title": "woori-13.jpg"
+  },
+  {
+   "doc_id": "1ZT-3Mkp_04MRAcGIvLbL69ecOFVK267q",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1ZT-3Mkp_04MRAcGIvLbL69ecOFVK267q/view",
+   "title": "woori-49.jpg"
+  },
+  {
+   "doc_id": "1ZWGqDV95VE0oazSpNhizTTjawpRuGCrZ",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1ZWGqDV95VE0oazSpNhizTTjawpRuGCrZ/view",
+   "title": "woori-38.jpg"
+  },
+  {
+   "doc_id": "1Zx1FW48llHUaDkpGes4HwU4WPes4CvL6",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Zx1FW48llHUaDkpGes4HwU4WPes4CvL6/view",
+   "title": "#인크루트(주)_사업자등록증.pdf"
+  },
+  {
+   "doc_id": "1_D3wlLzK3MgEXPio-4L5AGdh_jqArw7p",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1_D3wlLzK3MgEXPio-4L5AGdh_jqArw7p/view",
+   "title": "woori-33.jpg"
+  },
+  {
+   "doc_id": "1_NTx6jAXas7z48ZaXJ1PZ_a-04aOHx2l",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1_NTx6jAXas7z48ZaXJ1PZ_a-04aOHx2l/view",
+   "title": "메르네쥬_사업자등록증.pdf"
+  },
+  {
+   "doc_id": "1_NsZZH_e0B5iUvoVNTHIcCmW4Q1Q4vvj",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1_NsZZH_e0B5iUvoVNTHIcCmW4Q1Q4vvj/view",
+   "title": "woori-41.jpg"
+  },
+  {
+   "doc_id": "1_ZhvvCOfT-TJy_aY5amogyi76HFUwPt3",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1_ZhvvCOfT-TJy_aY5amogyi76HFUwPt3/view",
+   "title": "[클로즈랭스] 견적서 (우리글로벌라운지)_251113.pdf"
+  },
+  {
+   "doc_id": "1_rn0bLg2MsOdvICy66U5owqEknfoTGnd",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1_rn0bLg2MsOdvICy66U5owqEknfoTGnd/view",
+   "title": "요청 인력건 사전 견적서_0924_25y.xlsx"
+  },
+  {
+   "doc_id": "1_va0_LM7lvrvkcC7T9nMHnDLB0p_39KI",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1_va0_LM7lvrvkcC7T9nMHnDLB0p_39KI/view",
+   "title": "2026년 2월 KT email 명세서(문서열기암호：사업자등록번호 뒤 5자리).pdf"
+  },
+  {
+   "doc_id": "1a1qCqmJuq3wYqIxAjqAsMAlvpzQJffh-",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1a1qCqmJuq3wYqIxAjqAsMAlvpzQJffh-/view",
+   "title": "woori-43.jpg"
+  },
+  {
+   "doc_id": "1aH5QYLFtI0mhvr6MIA8Xkz5l6POMhkp6",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1aH5QYLFtI0mhvr6MIA8Xkz5l6POMhkp6/view",
+   "title": "전단지 배포_남동인더스파크역.jpg"
+  },
+  {
+   "doc_id": "1aNn8lSBR9UuCQXKtIKPX8wVx93R6e83u",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1aNn8lSBR9UuCQXKtIKPX8wVx93R6e83u/view",
+   "title": "woori-38.jpg"
+  },
+  {
+   "doc_id": "1adBWCye0BDx7ZtIugDZQhqob-H1aB6cH",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1adBWCye0BDx7ZtIugDZQhqob-H1aB6cH/view",
+   "title": "woori-33.jpg"
+  },
+  {
+   "doc_id": "1aerUdcE9oePAw_jzm0SvPs-tesUkmppP",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1aerUdcE9oePAw_jzm0SvPs-tesUkmppP/view",
+   "title": "(인크루트) 통장사본.pdf"
+  },
+  {
+   "doc_id": "1bDX0e-v7rCB_msuilU_TEV_chCXIMloM",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1bDX0e-v7rCB_msuilU_TEV_chCXIMloM/view",
+   "title": "(인크루트)우리은행 온,오프 외국인 유학생 채용박람회 견적서_250926V4.xlsx"
+  },
+  {
+   "doc_id": "1bn6E3ky0IwQgW9Q-ouPRD5BKTGeu6GOT",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1bn6E3ky0IwQgW9Q-ouPRD5BKTGeu6GOT/view",
+   "title": "우리은행 인천 외국인 라운지 구축,운영 계약서_초안.pdf"
+  },
+  {
+   "doc_id": "1c80_ESbDBx5MHGXo-ZWkOEFYDjz3IF2W",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1c80_ESbDBx5MHGXo-ZWkOEFYDjz3IF2W/view",
+   "title": "우리은행 우리글로벌라운지 _운영인력계약서_BRO.docx"
+  },
+  {
+   "doc_id": "1cG_UoFxNq_yorlW44gm-dVgs64DEQQlO",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1cG_UoFxNq_yorlW44gm-dVgs64DEQQlO/view",
+   "title": "스위트스팟_우리은행 주안서금융센터 외국인 라운지 구축 및 운영_제안서 작성중(2).pptx"
+  },
+  {
+   "doc_id": "1ciWuYXMO_pwVVYha5xO8dswU8w7JYFDN",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1ciWuYXMO_pwVVYha5xO8dswU8w7JYFDN/view",
+   "title": "스위트스팟_우리글로벌라운지 제안서_공유용.pdf"
+  },
+  {
+   "doc_id": "1ckj8g4SvTLwbs3AyprmUr8cufK8NqbwU",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1ckj8g4SvTLwbs3AyprmUr8cufK8NqbwU/view",
+   "title": "woori-3.jpg"
+  },
+  {
+   "doc_id": "1ckuflaRUlS4a2n1RvuaUidCPXXS3NFlg",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ckuflaRUlS4a2n1RvuaUidCPXXS3NFlg/view",
+   "title": "#홍보_글로브피알_샤오홍슈 체험단 마케팅 서비스 제안서.pdf"
+  },
+  {
+   "doc_id": "1clVITDQjY6ky_hTqS9WoJy5Vx1ERonCG",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1clVITDQjY6ky_hTqS9WoJy5Vx1ERonCG/view",
+   "title": "스위트스팟_우리은행 인천 외국인 라운지 기획,구축,운영_가격제안서.xlsx"
+  },
+  {
+   "doc_id": "1cmomX_GGxNezISHzYMl2eJUqe4hsINDP",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1cmomX_GGxNezISHzYMl2eJUqe4hsINDP/view",
+   "title": "woori-29.jpg"
+  },
+  {
+   "doc_id": "1cvkBVmOMdZU8hWek2dR7BDQh0aG2rvoL",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1cvkBVmOMdZU8hWek2dR7BDQh0aG2rvoL/view",
+   "title": "250922_스위트스팟-우리은행_견적서.pdf"
+  },
+  {
+   "doc_id": "1cyFCKLQFUj0IiTi9sSFLXcpsw5A0g_-O",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1cyFCKLQFUj0IiTi9sSFLXcpsw5A0g_-O/view",
+   "title": "스위트스팟_미디어오픈_계약서_25.10.16.pdf"
+  },
+  {
+   "doc_id": "1dODFNEBV4wv1hqmq5v_aiBfr283DhW1A",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1dODFNEBV4wv1hqmq5v_aiBfr283DhW1A/view",
+   "title": "메르네쥬 추가 견적서_251212.jpg"
+  },
+  {
+   "doc_id": "1dRcpKhwIqWFlnvOQVEY7g_JZSvNP0KxE",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1dRcpKhwIqWFlnvOQVEY7g_JZSvNP0KxE/view",
+   "title": "전단지 배포_남동인더스파크역 1번출구 사거리.jpg"
+  },
+  {
+   "doc_id": "1dzW-LM7EI7Z2VjbJi_jRR9ujF5JRJsha",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1dzW-LM7EI7Z2VjbJi_jRR9ujF5JRJsha/view",
+   "title": "RXPU2514_오픈 이벤트경품_기타소득_지급요청_0219.xlsx"
+  },
+  {
+   "doc_id": "1e1gmsM_UGjAqoaGXpssyj0jvFgWDd_Xe",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1e1gmsM_UGjAqoaGXpssyj0jvFgWDd_Xe/view",
+   "title": "2026년 1월 KT email 명세서(문서열기암호：사업자등록번호 뒤 5자리).pdf"
+  },
+  {
+   "doc_id": "1e3XyaD2zcUXJiuqVNwVaViGn9Ua7Jlve",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1e3XyaD2zcUXJiuqVNwVaViGn9Ua7Jlve/view",
+   "title": "스위트스팟_우리은행 인천 외국인 라운지 기획,구축,운영_제안서.pdf"
+  },
+  {
+   "doc_id": "1e7F6n8Vq8w5M6szYu0NaZk7HA7mCHvH4",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1e7F6n8Vq8w5M6szYu0NaZk7HA7mCHvH4/view",
+   "title": "ATAA_공간설계개요.pdf"
+  },
+  {
+   "doc_id": "1eFy3lFErVOeticC1D4OpL7waNcXe4cyc",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1eFy3lFErVOeticC1D4OpL7waNcXe4cyc/view",
+   "title": "net 입금가) 251022 대학교 교내 포스터광고 예상견적서(인천 4개교).xlsx"
+  },
+  {
+   "doc_id": "1eYZLjW5nPhIMzFmDsapDiP8SFIVaztyf",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1eYZLjW5nPhIMzFmDsapDiP8SFIVaztyf/view",
+   "title": "WANG YE_경품수령증.jpg"
+  },
+  {
+   "doc_id": "1fMqYF6-ytQZcpdsM5BTJbPjX4cM88P65",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1fMqYF6-ytQZcpdsM5BTJbPjX4cM88P65/view",
+   "title": "251021_스위트스팟-우리은행_추가견적서.pdf"
+  },
+  {
+   "doc_id": "1fk0MdXPcb3C0YgdZnsQM0HRZ7ECgE8fc",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1fk0MdXPcb3C0YgdZnsQM0HRZ7ECgE8fc/view",
+   "title": "ddps 기업은행_1029(주거래) 통장사본.pdf"
+  },
+  {
+   "doc_id": "1g3JFbXW27zc3_AAYFPzV2aQshZhQFQHm",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1g3JFbXW27zc3_AAYFPzV2aQshZhQFQHm/view",
+   "title": "스위트스팟_우리은행 주안서금융센터 라운지 구축 제안서_update 0602.pdf"
+  },
+  {
+   "doc_id": "1gMXfkq4NHB7VQ3a9NSrpasElgmyL67bu",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1gMXfkq4NHB7VQ3a9NSrpasElgmyL67bu/view",
+   "title": "킨다그로스 사업자등록증_2023.PDF"
+  },
+  {
+   "doc_id": "1gN8MIBvzDllGCWnXIo2TEpup6KpMamxx",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1gN8MIBvzDllGCWnXIo2TEpup6KpMamxx/view",
+   "title": "스위트스팟_우리은행 인천 외국인 라운지 기획,구축,운영_가격제안서 발표용.pdf"
+  },
+  {
+   "doc_id": "1gT8SM9BTjQ9XrCa4vEKFjdkT7oL4uDTg",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1gT8SM9BTjQ9XrCa4vEKFjdkT7oL4uDTg/view",
+   "title": "woori-46.jpg"
+  },
+  {
+   "doc_id": "1gwtTyj7S4ZPr2XANX7qtrgPEz1J9lJcg",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1gwtTyj7S4ZPr2XANX7qtrgPEz1J9lJcg/view",
+   "title": "woori-40.jpg"
+  },
+  {
+   "doc_id": "1h-a8oIqURIGcKAbVdOyZC9-rnBlsHMSB",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1h-a8oIqURIGcKAbVdOyZC9-rnBlsHMSB/view",
+   "title": "woori-25.jpg"
+  },
+  {
+   "doc_id": "1hdMWupJVNiJ5brmmwTQuqsz8JqfCdFIK",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1hdMWupJVNiJ5brmmwTQuqsz8JqfCdFIK/view",
+   "title": "KT텔레캅_11월 청구서.pdf"
+  },
+  {
+   "doc_id": "1i6YPePBIPnl5t2nuX6wKnP1T53ngCvCr",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1i6YPePBIPnl5t2nuX6wKnP1T53ngCvCr/view",
+   "title": "woori-35.jpg"
+  },
+  {
+   "doc_id": "1iW3zRzKdWHKeFgWxLri55Xk-kFkOukDx",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1iW3zRzKdWHKeFgWxLri55Xk-kFkOukDx/view",
+   "title": "견적서_금융사 북라운지 10,11월운영 인건비_251201.pdf"
+  },
+  {
+   "doc_id": "1j_JEAcoZuEDnhYE9OZ9mzufnEVDZmhth",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1j_JEAcoZuEDnhYE9OZ9mzufnEVDZmhth/view",
+   "title": "(스위트스팟) 우리은행 외국인 라운지 도서 큐레이션 및 납품 용역 계약서_날인본.pdf"
+  },
+  {
+   "doc_id": "1jrbGmi9MgZ4QzGOsUkrvfIjzkXTZXpL6",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1jrbGmi9MgZ4QzGOsUkrvfIjzkXTZXpL6/view",
+   "title": "woori-23.jpg"
+  },
+  {
+   "doc_id": "1jxZGwFe_m11uoPWMGPDkALarvCEpNGB-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1jxZGwFe_m11uoPWMGPDkALarvCEpNGB-/view",
+   "title": "스위트스팟 - 우리동네사진관 견적서(출장촬영)_2025.07.23.pdf"
+  },
+  {
+   "doc_id": "1kOoX-XOlOiKqr2tpcxD9-mYtLpTcBhJB",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1kOoX-XOlOiKqr2tpcxD9-mYtLpTcBhJB/view",
+   "title": "woori-20.jpg"
+  },
+  {
+   "doc_id": "1kk-kfSKNQkveNrx80uMwO6wOIj_wtLYi",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1kk-kfSKNQkveNrx80uMwO6wOIj_wtLYi/view",
+   "title": "인천 외국인 라운지 구축,운영 계약서_초안.hwp"
+  },
+  {
+   "doc_id": "1l2uyXU_kpG0iiMFqOr1TLB_bZZfUH7q4",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1l2uyXU_kpG0iiMFqOr1TLB_bZZfUH7q4/view",
+   "title": "스위트스팟_우리은행 인천 외국인 라운지 기획,구축,운영_제안서(발표용).pdf"
+  },
+  {
+   "doc_id": "1lU5yBIlujjvn-pIZixhrH3-MHrj7QGIP",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1lU5yBIlujjvn-pIZixhrH3-MHrj7QGIP/view",
+   "title": "견적서_스위트스팟.xlsx"
+  },
+  {
+   "doc_id": "1lV46uyS59iZxoowJNhMhugWT0nxuCR4F",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1lV46uyS59iZxoowJNhMhugWT0nxuCR4F/view",
+   "title": "KT텔레캅_1월 청구서.pdf"
+  },
+  {
+   "doc_id": "1lXtlH9fDiedK8v9ftR1AgQC0pzR2Kmkw",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1lXtlH9fDiedK8v9ftR1AgQC0pzR2Kmkw/view",
+   "title": "woori-15.jpg"
+  },
+  {
+   "doc_id": "1lZgP3UymONtkCmzPD5P99ndsNUQAZr91",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1lZgP3UymONtkCmzPD5P99ndsNUQAZr91/view",
+   "title": "woori-54.jpg"
+  },
+  {
+   "doc_id": "1lcF_ItEyogUCjJ7M426VdmtEBZP-4OZs",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1lcF_ItEyogUCjJ7M426VdmtEBZP-4OZs/view",
+   "title": "250821_우리은행_리딩 라운지 제안서.pdf"
+  },
+  {
+   "doc_id": "1lezoOvsfkF4pX4j2xVKemIm37BkAMNaZ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1lezoOvsfkF4pX4j2xVKemIm37BkAMNaZ/view",
+   "title": "킨다그로스_통장사본.png"
+  },
+  {
+   "doc_id": "1lkHqw6SkH9pcYEnYK_hOsOFFFpQP8OW-",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1lkHqw6SkH9pcYEnYK_hOsOFFFpQP8OW-/view",
+   "title": "woori-35.jpg"
+  },
+  {
+   "doc_id": "1mKfMeh88KWuthnqsz8-b-f95iD05WX7t",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1mKfMeh88KWuthnqsz8-b-f95iD05WX7t/view",
+   "title": "250826_스위트스팟-우리은행_견적서.pdf"
+  },
+  {
+   "doc_id": "1mdQWgosS01vWdqxc4dO9XdZKMXB5I9pO",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1mdQWgosS01vWdqxc4dO9XdZKMXB5I9pO/view",
+   "title": "견적서_외국인 대상 금융사 북라운지 운영 인력섭외_BRO_250916.pdf"
+  },
+  {
+   "doc_id": "1modPn1MVeHz8ABHM8jYTflc-ULkBH0Tn",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1modPn1MVeHz8ABHM8jYTflc-ULkBH0Tn/view",
+   "title": "LIN PHYUSIN THANT_경품수령증.jpg"
+  },
+  {
+   "doc_id": "1n9eBWz-xRKNZcoWAKKAsy0kvKrIHHHDk",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1n9eBWz-xRKNZcoWAKKAsy0kvKrIHHHDk/view",
+   "title": "woori-14.jpg"
+  },
+  {
+   "doc_id": "1nB8PUfIna3xJAY-z36fNBkoPBpTiwMFA",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1nB8PUfIna3xJAY-z36fNBkoPBpTiwMFA/view",
+   "title": "가견적서_우리은행 주안서금융센터 라운지 인테리어 공사 92PY.pdf"
+  },
+  {
+   "doc_id": "1nBh-PRNBZAlRIKh3vKPkqb1Pu-SKGFtR",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1nBh-PRNBZAlRIKh3vKPkqb1Pu-SKGFtR/view",
+   "title": "우리은행 주안서금융센터 라운지 인테리어공사-레이아웃검토 및 레퍼런스 이미지.pdf"
+  },
+  {
+   "doc_id": "1nCkdABMs6rqPQq6F9QNwzg7nxRIcWsUO",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1nCkdABMs6rqPQq6F9QNwzg7nxRIcWsUO/view",
+   "title": "woori-19.jpg"
+  },
+  {
+   "doc_id": "1nPrsfPKqbL99wrjXKmQYsLqu61ApqpZt",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1nPrsfPKqbL99wrjXKmQYsLqu61ApqpZt/view",
+   "title": "woori-31.jpg"
+  },
+  {
+   "doc_id": "1neV0S1rC0lPuCEWnT7n4b2tQm2-ZVHhT",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1neV0S1rC0lPuCEWnT7n4b2tQm2-ZVHhT/view",
+   "title": "250922_제안서-우리은행 (변경사항).pdf"
+  },
+  {
+   "doc_id": "1nzOEnqsYkikIH06TnOuR3B5XugkI3Tqu",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1nzOEnqsYkikIH06TnOuR3B5XugkI3Tqu/view",
+   "title": "woori.jpg"
+  },
+  {
+   "doc_id": "1o03QwSB5vd_9nMGQU1BAPxfodsg5wN_-",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1o03QwSB5vd_9nMGQU1BAPxfodsg5wN_-/view",
+   "title": "글씨그리다_사업자등록증.jpg"
+  },
+  {
+   "doc_id": "1o5s8i7SYYE1PB9XUg0rnC326DvgMa6MR",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1o5s8i7SYYE1PB9XUg0rnC326DvgMa6MR/view",
+   "title": "(계획안)우리은행-외국인 고객 대상 오프라인 취업특강 및 컨설팅_인크루트 주식회사.pdf"
+  },
+  {
+   "doc_id": "1oeWpF1Fi1PdsVAlhVTgBww0HAybRAMkx",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1oeWpF1Fi1PdsVAlhVTgBww0HAybRAMkx/view",
+   "title": "woori-39.jpg"
+  },
+  {
+   "doc_id": "1ohxaPnm8u3ItOIEolW0_WDrrDaxJ4jjg",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1ohxaPnm8u3ItOIEolW0_WDrrDaxJ4jjg/view",
+   "title": "크리에이티브꾼_251022 대학교 교내 포스터광고 견적서(인천 4개교).pdf"
+  },
+  {
+   "doc_id": "1okj6oP6ui0yajfS78sL5f8uPSLEhsVHw",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1okj6oP6ui0yajfS78sL5f8uPSLEhsVHw/view",
+   "title": "견적서_외국인 대상 금융사 북라운지 운영 인력섭외_BRO_250916.xlsx"
+  },
+  {
+   "doc_id": "1pGXb9NkxYEyBNllDLJtFovi03wjghmDA",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1pGXb9NkxYEyBNllDLJtFovi03wjghmDA/view",
+   "title": "버스지하철 할인 견적_수정_25.10.15.pdf"
+  },
+  {
+   "doc_id": "1p_9jYc3TjZeaGi1um4mXKPD-g3WV-x6m",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1p_9jYc3TjZeaGi1um4mXKPD-g3WV-x6m/view",
+   "title": "위드브로코리아_통장사본.jpg"
+  },
+  {
+   "doc_id": "1p_DCRsJ4UjnMpy8Swvxyq13WwXG91Orb",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1p_DCRsJ4UjnMpy8Swvxyq13WwXG91Orb/view",
+   "title": "[견적서]수제도장만들기_260228.pdf"
+  },
+  {
+   "doc_id": "1qKsVqd13jajzNuPrsDNMpA7G7SCEOi_Z",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1qKsVqd13jajzNuPrsDNMpA7G7SCEOi_Z/view",
+   "title": "스위트스팟_우리글로벌라운지 프로그램 운영 업무 협약서_글씨그리다.pdf"
+  },
+  {
+   "doc_id": "1qlJOrtcYzVmNvMgoiRea9FkUcEYamO-g",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1qlJOrtcYzVmNvMgoiRea9FkUcEYamO-g/view",
+   "title": "스위트스팟_우리은행 주안서금융센터 라운지 구축 제안서_update 0711.pdf"
+  },
+  {
+   "doc_id": "1qmr7Kb8nCqC2WNjxP2bzyniLpAnPxMm2",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1qmr7Kb8nCqC2WNjxP2bzyniLpAnPxMm2/view",
+   "title": "[서식1] 입찰참가신청서.pdf"
+  },
+  {
+   "doc_id": "1qn3tA_vDFX67y4vnNl60YePvH4JeT4jo",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1qn3tA_vDFX67y4vnNl60YePvH4JeT4jo/view",
+   "title": "251204_스위트스팟-우리은행_간판추가공사 견적서.pdf"
+  },
+  {
+   "doc_id": "1qnGVHzh5EQ9RxUposSDRhmU0TZJB_uC4",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1qnGVHzh5EQ9RxUposSDRhmU0TZJB_uC4/view",
+   "title": "woori-6.jpg"
+  },
+  {
+   "doc_id": "1qqZZY4rP2DAsAtq317gIfPm2_sTw6mwT",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1qqZZY4rP2DAsAtq317gIfPm2_sTw6mwT/view",
+   "title": "스위트스팟_우리글로벌라운지 프로그램 운영 업무 협약서_초안.docx"
+  },
+  {
+   "doc_id": "1rFcBjFhpAczoT-AkW89DBTq33WNWyYSB",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1rFcBjFhpAczoT-AkW89DBTq33WNWyYSB/view",
+   "title": "0918_스위트스팟_우리은행 인천 외국인 라운지 구축,운영_견적서(0918)_분리본.pdf"
+  },
+  {
+   "doc_id": "1rKQuRbAeKdbP_e8Q8CHMbt6VJp1G6pmv",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1rKQuRbAeKdbP_e8Q8CHMbt6VJp1G6pmv/view",
+   "title": "251020_인크루트_우리은행 오프라인 취업 특강 및 컨설팅 용역 계약서.docx"
+  },
+  {
+   "doc_id": "1rOzAdHIYYRNLsWCaTBDkyHZeYCN3DQq1",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1rOzAdHIYYRNLsWCaTBDkyHZeYCN3DQq1/view",
+   "title": "woori-42.jpg"
+  },
+  {
+   "doc_id": "1rQ0QTp2jtPDgC4yqOrK2QUVMv4msApXI",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1rQ0QTp2jtPDgC4yqOrK2QUVMv4msApXI/view",
+   "title": "woori-10.jpg"
+  },
+  {
+   "doc_id": "1rTRaGw3mY_up-BWMpOaNwjrs2BgLs7-Q",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1rTRaGw3mY_up-BWMpOaNwjrs2BgLs7-Q/view",
+   "title": "전단지 배포_인하대역.jpg"
+  },
+  {
+   "doc_id": "1rjIoPRCUixEtjdrMI5kp60sjokcOaJXZ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1rjIoPRCUixEtjdrMI5kp60sjokcOaJXZ/view",
+   "title": "픽스업_견적서.png"
+  },
+  {
+   "doc_id": "1sBdFNPUVahKqDCfEINvgurocUIS81mKC",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1sBdFNPUVahKqDCfEINvgurocUIS81mKC/view",
+   "title": "woori-54.jpg"
+  },
+  {
+   "doc_id": "1tRJEZ6g1ZfOQCyhZRLtDdM4kw66mDiaM",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1tRJEZ6g1ZfOQCyhZRLtDdM4kw66mDiaM/view",
+   "title": "버스지하철 할인 견적_25.10.15.pdf"
+  },
+  {
+   "doc_id": "1tRq3vEWy7YlDuHaklUM2r-VzF0sr7nz5",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1tRq3vEWy7YlDuHaklUM2r-VzF0sr7nz5/view",
+   "title": "woori-5.jpg"
+  },
+  {
+   "doc_id": "1tYld6p8JmBFOySehnje1fUuQ9YdM2RS7",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1tYld6p8JmBFOySehnje1fUuQ9YdM2RS7/view",
+   "title": "희히스튜디오 견적서_우리글로벌라운지.xls"
+  },
+  {
+   "doc_id": "1tiuE4t7LCiGVZMC807TBl1Sbzam5oZOf",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1tiuE4t7LCiGVZMC807TBl1Sbzam5oZOf/view",
+   "title": "메르네쥬_통장사본.JPG"
+  },
+  {
+   "doc_id": "1tkroOoU_wuj6mNKYNwBWKEVW_rxAmGrY",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1tkroOoU_wuj6mNKYNwBWKEVW_rxAmGrY/view",
+   "title": "RXPU2514_사업소득 지급 요청_1031.xlsx"
+  },
+  {
+   "doc_id": "1tmguXQlecxLjs3-_66QBNwM8LVLbdUeH",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1tmguXQlecxLjs3-_66QBNwM8LVLbdUeH/view",
+   "title": "스위트스팟_인테리어 구축 선금 세금계산서.png"
+  },
+  {
+   "doc_id": "1tr0GM_9lTY5qST6DOvGzRfoSDxgGNmBG",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1tr0GM_9lTY5qST6DOvGzRfoSDxgGNmBG/view",
+   "title": "스위트스팟_우리은행 인천 외국인 라운지 기획,구축,운영_발표용.pdf"
+  },
+  {
+   "doc_id": "1uQUnQjvKoPFs-RLqIx67senT-qX_sAi6",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1uQUnQjvKoPFs-RLqIx67senT-qX_sAi6/view",
+   "title": "woori-26.jpg"
+  },
+  {
+   "doc_id": "1uSR9rA_s1p0Gw6RbyV3iW-bgGk08rZGm",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1uSR9rA_s1p0Gw6RbyV3iW-bgGk08rZGm/view",
+   "title": "3)보증보험 청약서.pdf"
+  },
+  {
+   "doc_id": "1v4hexKGpK8X0rU2eqtxpRfVf-2Cyo5Ve",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1v4hexKGpK8X0rU2eqtxpRfVf-2Cyo5Ve/view",
+   "title": "(킨다G) 우리글로벌라운지 체험단 견적서_1121.pdf"
+  },
+  {
+   "doc_id": "1vJIDGW8Jm0sVagUP3fnOydJyMM0BK4VB",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1vJIDGW8Jm0sVagUP3fnOydJyMM0BK4VB/view",
+   "title": "woori-40.jpg"
+  },
+  {
+   "doc_id": "1vKK_yUt2Xb28kSSLMA0IQicear2Lhe3a",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1vKK_yUt2Xb28kSSLMA0IQicear2Lhe3a/view",
+   "title": "(인크루트)우리은행 온,오프 외국인 유학생 채용박람회 견적서_250905.xlsx"
+  },
+  {
+   "doc_id": "1vf8i_lJh_ZiL-mNSRGQpRQmd87rrT78m",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1vf8i_lJh_ZiL-mNSRGQpRQmd87rrT78m/view",
+   "title": "MUN OKSANA_신분증.jpg"
+  },
+  {
+   "doc_id": "1voXcJnu-5gzAdkg_V9A4DT4iWWi6A1qc",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1voXcJnu-5gzAdkg_V9A4DT4iWWi6A1qc/view",
+   "title": "(스위트스팟) 우리은행 외국인 라운지 도서 큐레이션 및 납품 용역 계약서.pdf"
+  },
+  {
+   "doc_id": "1vuV3pzNzoM84Y1gJhyeHUjBNvotCm6GW",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1vuV3pzNzoM84Y1gJhyeHUjBNvotCm6GW/view",
+   "title": "woori-53.jpg"
+  },
+  {
+   "doc_id": "1wC3kfsUmFSBT-y5aM6TKtAYOMcMmE5A8",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1wC3kfsUmFSBT-y5aM6TKtAYOMcMmE5A8/view",
+   "title": "250916_제안서-우리은행_키즈존(ALT).pdf"
+  },
+  {
+   "doc_id": "1wHbsTy0U8wYcA-T1u2yRI3Zr3BPE2kF1",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1wHbsTy0U8wYcA-T1u2yRI3Zr3BPE2kF1/view",
+   "title": "사인플러스_거래명세서.jpg"
+  },
+  {
+   "doc_id": "1wHsce53ZUKMWqQFQtWIfkZBwEAYuw3Kl",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1wHsce53ZUKMWqQFQtWIfkZBwEAYuw3Kl/view",
+   "title": "woori-53.jpg"
+  },
+  {
+   "doc_id": "1wJqtnOi0ERHKxvrDbTO4KxjBI6T1nmEL",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1wJqtnOi0ERHKxvrDbTO4KxjBI6T1nmEL/view",
+   "title": "계약이행보증보험_청약서.pdf"
+  },
+  {
+   "doc_id": "1wK9VSPhw5YspqjGrQ-kx8aSGXU4j7j5J",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1wK9VSPhw5YspqjGrQ-kx8aSGXU4j7j5J/view",
+   "title": "woori-16.jpg"
+  },
+  {
+   "doc_id": "1wVB6jM_0LRU8aFlOBPqKk3FbDTnzgESr",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1wVB6jM_0LRU8aFlOBPqKk3FbDTnzgESr/view",
+   "title": "250612_우리은행 주안서금융센터 라운지_가견적서.pdf"
+  },
+  {
+   "doc_id": "1wd8CJPTaqLzpsENG1h3Ml_5_YlRLwkQs",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1wd8CJPTaqLzpsENG1h3Ml_5_YlRLwkQs/view",
+   "title": "글씨그리다_통장사본.jpg"
+  },
+  {
+   "doc_id": "1whiDQN_pbM899c-_m1p9mXJb-x87dtxq",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1whiDQN_pbM899c-_m1p9mXJb-x87dtxq/view",
+   "title": "0916_스위트스팟_우리은행 인천 외국인 라운지 기획,구축,운영_견적서_합본.pdf"
+  },
+  {
+   "doc_id": "1wkU39esaOcE4Spzum9YRym-Sckm6V0Hx",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1wkU39esaOcE4Spzum9YRym-Sckm6V0Hx/view",
+   "title": "woori-2.jpg"
+  },
+  {
+   "doc_id": "1woEWIND64Dj4JppIqS-OVGdu2H9wFXiN",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1woEWIND64Dj4JppIqS-OVGdu2H9wFXiN/view",
+   "title": "(인크루트)우리은행 온,오프 외국인 유학생 채용박람회 견적서_250926V4.xlsx"
+  },
+  {
+   "doc_id": "1xDM5NGWEhX8T5PWUgUicWWZ8_RtXyG7L",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1xDM5NGWEhX8T5PWUgUicWWZ8_RtXyG7L/view",
+   "title": "woori-45.jpg"
+  },
+  {
+   "doc_id": "1xF6Abzy3bJST4UwKFAcphkevQqSo1Qr_",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1xF6Abzy3bJST4UwKFAcphkevQqSo1Qr_/view",
+   "title": "RXPU2514_사업소득 지급 요청_1027.xlsx"
+  },
+  {
+   "doc_id": "1xNs3A22WrFWUqjMbxxqnaWyRObUQwOHT",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1xNs3A22WrFWUqjMbxxqnaWyRObUQwOHT/view",
+   "title": "woori-24.jpg"
+  },
+  {
+   "doc_id": "1xQicxrizWdXjWxwBk4N4l1LUhlB8dI4d",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1xQicxrizWdXjWxwBk4N4l1LUhlB8dI4d/view",
+   "title": "스위트스팟_운영비 선금 세금계산서.png"
+  },
+  {
+   "doc_id": "1xYshMNvQraK_aV3fyvMIFpUD8bflHULx",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1xYshMNvQraK_aV3fyvMIFpUD8bflHULx/view",
+   "title": "견적서_외국인 대상 금융사 북라운지 운영 인력섭외_BRO_250925.pdf"
+  },
+  {
+   "doc_id": "1xZ2HGdHp9WCKgwJdW4-gSRu5ZemmDdf0",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1xZ2HGdHp9WCKgwJdW4-gSRu5ZemmDdf0/view",
+   "title": "25.10.28~26.04.24_스위트스팟 김우연님 우리은행 북라운지_사전견적서.xlsx"
+  },
+  {
+   "doc_id": "1xw4wcumAGie9q7k_Cj01tLCvWjmMRWvc",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1xw4wcumAGie9q7k_Cj01tLCvWjmMRWvc/view",
+   "title": "woori.jpg"
+  },
+  {
+   "doc_id": "1xyuZ_XeVsAW0MyRlkzLvFOhhgzq3ahae",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1xyuZ_XeVsAW0MyRlkzLvFOhhgzq3ahae/view",
+   "title": "스위트스팟 - 우리동네사진관 견적서(출장촬영)_2025.09.30.pdf"
+  },
+  {
+   "doc_id": "1y8zs_H_wjWpQr97aXJT7R9noeq4nmPnV",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1y8zs_H_wjWpQr97aXJT7R9noeq4nmPnV/view",
+   "title": "250922_제안서-우리은행.pdf"
+  },
+  {
+   "doc_id": "1yLvpWxlnvvqMI_vItQ1712BNrN9-AGfm",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1yLvpWxlnvvqMI_vItQ1712BNrN9-AGfm/view",
+   "title": "바이탈애드_통장사본.jpg"
+  },
+  {
+   "doc_id": "1yUZe-mH3m0tOrRCZVvAZrtnUgOTBE_uL",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1yUZe-mH3m0tOrRCZVvAZrtnUgOTBE_uL/view",
+   "title": "0918_스위트스팟_우리은행 인천 외국인 라운지 구축,운영_견적서(0918)_분리본.xlsx"
+  },
+  {
+   "doc_id": "1ykgeWohERpDIfkbAUp8AX2qO8n2vDzky",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1ykgeWohERpDIfkbAUp8AX2qO8n2vDzky/view",
+   "title": "woori-29.jpg"
+  },
+  {
+   "doc_id": "1zDgGzkerprX3qQ9pcUaK1vJx71GWA9er",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1zDgGzkerprX3qQ9pcUaK1vJx71GWA9er/view",
+   "title": "woori-30.jpg"
+  },
+  {
+   "doc_id": "1zHMOKx0ZWQ79AZbDvwXQyhPhxRUS41GE",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1zHMOKx0ZWQ79AZbDvwXQyhPhxRUS41GE/view",
+   "title": "woori-17.jpg"
+  },
+  {
+   "doc_id": "1zSIY1S4csLZgsEZwPdSCoeLzS2kJtPgF",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1zSIY1S4csLZgsEZwPdSCoeLzS2kJtPgF/view",
+   "title": "바이탈애드_인천지역 지정게시대 견적서_11개소.pdf"
+  },
+  {
+   "doc_id": "1zedFaTgOwEcKJKvlYpqe0xAkQ76l8t1H",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1zedFaTgOwEcKJKvlYpqe0xAkQ76l8t1H/view",
+   "title": "251021_제안서-우리은행 (최종시안).pdf"
+  },
+  {
+   "doc_id": "1zj0lyUwJB_XGPnqLo_iU7368MGpxIEnP",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1zj0lyUwJB_XGPnqLo_iU7368MGpxIEnP/view",
+   "title": "woori-8.jpg"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체 미제공; client_name 미상; venue_name 및 상세 입지 미상; 면적(area_pyeong) 미상; 수수료 구조 및 계약금액 미상; 컨셉·체험요소·프로모션·연출태그 미상; 방문객 실측 및 매출 데이터 미상; 예상 방문객수 미상"
+ }
+}

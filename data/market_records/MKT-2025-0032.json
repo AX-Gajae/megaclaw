@@ -1,0 +1,94 @@
+{
+ "market_record_id": "MKT-2025-0032",
+ "event_name": "박카스맛젤리X원신 팝업스토어 '박맛젤 살롱'",
+ "brand": "동아제약/호요버스",
+ "ip_or_collab": "원신 X 박카스맛젤리",
+ "category": "game_webtoon",
+ "intervention": {
+  "concept_description": "박카스맛젤리와 원신 콜라보 팝업. 콜라보 굿즈 판매, 박맛젤·얼박 활용 음료/스낵 카페, 미니게임 3종 체험존, 나비아 포토존",
+  "experience_elements": [
+   "미니게임 3종 체험존",
+   "나비아 포토존",
+   "콜라보 카페(음료·스낵)"
+  ],
+  "promotions": [
+   "콜라보 굿즈 판매"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "홍익대학교 인근 대형카페",
+  "venue_type": "street_standalone",
+  "neighborhood": "홍대",
+  "city": "서울",
+  "period_from": "2025-04-24",
+  "period_to": "2025-04-27",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.5,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 2000,
+  "visitors_period_days": 4,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "동아제약 보도자료: '팝업 방문객은 총 2000명으로 사전예약을 통해 모집했으며 높은 관심에 힘입어 조기마감됐다' - 사전예약 모집 인원 기준",
+  "visitors_source_quote": "박맛젤 살롱은 지난 24일부터 27일까지 4일간 서울 홍익대학교 인근 대형카페에서 진행됐다. 팝업 방문객은 총 2000명으로 사전예약을 통해 모집했으며 높은 관심에 힘입어 조기마감됐다.",
+  "visitors_source_url": "https://www.mediapen.com/news/view/1012090",
+  "visitors_source_date": "2025-04-30",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": "사전예약 2,000명 조기 마감",
+   "signal_quotes": [
+    "팝업 방문객은 총 2000명으로 사전예약을 통해 모집했으며 높은 관심에 힘입어 조기마감됐다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "방문객 수가 실측 입장이 아닌 사전예약 모집 인원일 가능성(counting_basis organizer_claim으로 처리). | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,223 @@
+{
+ "record_id": "RTPU2422",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:룰루레몬",
+  "space_id": "unresolved:미상",
+  "client_party_id": "unresolved:룰루레몬에이팩",
+  "brand_key": "룰루레몬",
+  "space_key": "코엑스"
+ },
+ "intervention": {
+  "concept": "lululemon 'Together We Grow'(Q3 TWG) 브랜드 이벤트 — COEX K-POP 광장 특설 돔. 10/11 VIP Day(APAC VIP·미디어), 10/12 Public Day(HIIT·마인드풀니스 요가 세션, DJ 파티, 푸드존·포토부스)",
+  "brand_name": "룰루레몬",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": null,
+   "area_sqm": null,
+   "planned_operating_days": 2,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": null,
+   "experience_density": 3,
+   "goods_scale": 2,
+   "photo_zones": 3,
+   "collab_strength": 1,
+   "ip_awareness": 3,
+   "target_breadth": 1,
+   "entry_friction": 4,
+   "media_push": 4,
+   "season_fit": 2,
+   "venue_prominence": 3
+  },
+  "attr_meta": {
+   "evidence": "계약 Schedule A '11 Oct VIP day / 12 Oct public day' 2일(대관 2~14 Oct은 별개). 세션 2회(9:00/12:30) 인원 미기재. 제안서 1650/360/2318㎡는 후보지라 미채택.",
+   "confidence": "medium",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-10-11",
+   "to": "2024-10-12",
+   "days": 2
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "SERVICES AGREEMENT(lululemon HK Limited↔Sweet Spot) Schedule C 총액 KRW 1,413,613,188(세금 포함, 조항 3.1). 분할: 계약금 375,692,000(서명 전 기지급) + 중도금 500,000,000(2024-09-25) + 잔금 537,921,188(2024-10-14). 주의: 인식 1,111.5M과 차이 — VAT 제외 1,285.1M과도 상이, 정산 확인 필요"
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 2,
+    "weekend_share": 0.5,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 23,
+    "holiday_until": 106,
+    "holiday_block_in": 0,
+    "nat_event_gap": 34,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 412737520.0,
+    "pnl_pre_accounts": 16,
+    "pnl_pre_months": 3,
+    "pnl_pre_first": "2024-07-01"
+   }
+  },
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 25000,
+   "popup_zone_pass_rate": 0.4,
+   "host_traffic_est": 10000.0,
+   "venue_scale_tier": 2,
+   "confidence": "medium",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2024-10-12",
+    "visitors": 301,
+    "sales_krw": null
+   }
+  ],
+  "totals": {
+   "visitors": 301,
+   "sales_krw": null,
+   "rev_mm_recognized": 1111.5
+  },
+  "counting_method": "participation",
+  "counting_basis": "결과보고서 Public Day 세션 참석: 오전 154(126+28)+오후 147(110+37)=301 — 돔 외부 자유입장 미포함(하한 성격)",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "partial",
+   "rule": "인식 1111.5 vs 계약총액 1413.6 (정화 재판정)",
+   "contract_total_mm": 1413.6,
+   "last_recognition_period": "2024-10"
+  },
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "13iEwWAOQDuCHJwgZyhXgu19PvwNirTNc",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/13iEwWAOQDuCHJwgZyhXgu19PvwNirTNc/view",
+   "title": "룰루레몬 팝업스토어 제안서.pdf"
+  },
+  {
+   "doc_id": "13ifUCKv_EVtk7gpE1U6XEw4Cyxlt1jbu",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/13ifUCKv_EVtk7gpE1U6XEw4Cyxlt1jbu/view",
+   "title": "RTPU2422_룰루레몬 에이팩 행사_제안서.pdf"
+  },
+  {
+   "doc_id": "14kWkhP2QDy6uQP9N_lrS__Ju20mBSmxJ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/14kWkhP2QDy6uQP9N_lrS__Ju20mBSmxJ/view",
+   "title": "RTPU2422_룰루레몬 에이팩 행사_견적서_2.COEX.pdf"
+  },
+  {
+   "doc_id": "1CvWIiK2LVLAv3w33Q-UJFNWLJGkMToL3",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CvWIiK2LVLAv3w33Q-UJFNWLJGkMToL3/view",
+   "title": "RTPU2422_룰루레몬 에이팩 행사_견적서_3.HOTEL.pdf"
+  },
+  {
+   "doc_id": "1LbLvmTK5OlYJdmgD2zUr1W4FWasW2rrD",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1LbLvmTK5OlYJdmgD2zUr1W4FWasW2rrD/view",
+   "title": "RTPU2422_룰루레몬 에이팩 행사_견적서_4.CONSTRUCTION&PRODUCTION.pdf"
+  },
+  {
+   "doc_id": "1SWlt1BjKa4s0s7cLURRdtNJ2h5FQhBq_",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1SWlt1BjKa4s0s7cLURRdtNJ2h5FQhBq_/view",
+   "title": "RTPU2422_룰루레몬 에이팩 행사_견적서_1.Total.pdf"
+  },
+  {
+   "doc_id": "1f3LYf6zou8jY1Ibg0GpnMdbtt775jE9u",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1f3LYf6zou8jY1Ibg0GpnMdbtt775jE9u/view",
+   "title": "RTPU2422_룰루레몬 에이팩 행사_계약서_최종.pdf"
+  },
+  {
+   "doc_id": "1g82Dk5k-lsVeSxKz9zWmYzXZLaJXe0_P",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1g82Dk5k-lsVeSxKz9zWmYzXZLaJXe0_P/view",
+   "title": "RTPU2422_룰루레몬 에이팩 행사_견적서_5.OPERATION.pdf"
+  },
+  {
+   "doc_id": "1n65W8yDpxsuUTAwgkRGn5XeAw9V7Esk_",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1n65W8yDpxsuUTAwgkRGn5XeAw9V7Esk_/view",
+   "title": "RTPU2422_룰루레몬 에이팩 행사_결과보고서.pdf"
+  },
+  {
+   "doc_id": "1npPfMm0vNCkXLBNt69phfUR3TShhCeWD",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1npPfMm0vNCkXLBNt69phfUR3TShhCeWD/view",
+   "title": "RTPU2422_룰루레몬 에이팩 행사_제안서.pptx"
+  },
+  {
+   "doc_id": "1zRYgR6gDGDPuJI793BM3u5k3ynAtHXjH",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1zRYgR6gDGDPuJI793BM3u5k3ynAtHXjH/view",
+   "title": "RTPU2422_룰루레몬 에이팩 행사_계약서_최종.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서/기획서/견적서/결과보고서) 미제공; 입지·면적·수수료구조 전부 불명; 방문객수·매출 실측 데이터 없음; 컨셉·체험요소·프로모션 정보 없음; 클라이언트명 및 장소 미확인 | rev_mm 정화(2026-07-27): 스팟 검수(7/24) 원문 대조 결과 반영 — 계약서 확정액>견적 우선순위 규칙"
+ }
+}

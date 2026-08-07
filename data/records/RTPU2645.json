@@ -1,0 +1,164 @@
+{
+ "record_id": "RTPU2645",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:야놀자_NOL_Universe",
+  "space_id": "unresolved:성수_서울숲_AK밸리앞_Layby__롯데아울렛_의왕",
+  "client_party_id": "unresolved:야놀자_놀유니버스_HSAD",
+  "brand_key": "야놀자",
+  "space_key": "multi_성수_롯데아울렛"
+ },
+ "intervention": {
+  "concept": "야놀자 놀데이 여름시즌 로드 캠페인. 과일트럭처럼 랩핑한 기프트럭/푸드트럭으로 게임과 선물을 증정하며 놀데이 대규모 할인 프로모션을 붐업하는 이동형 프로모션. 이후 성수(서울숲)·롯데아울렛 의왕 고정 대관 형태로 정리됨.",
+  "brand_name": "야놀자 NOL",
+  "experience_elements": [
+   "게임 이벤트",
+   "선물 증정",
+   "캡슐뽑기 가차머신",
+   "베이직 굿즈(투명 부채)",
+   "스페셜 굿즈(버킷햇)",
+   "스페셜 굿즈(바캉스백)",
+   "워리스톤 키링",
+   "우양산",
+   "비치타월",
+   "과일 클리커 키링",
+   "굿즈 패키지",
+   "STAFF 제공용 화채"
+  ],
+  "promotions": [
+   "놀데이 대규모 할인 프로모션 붐업"
+  ],
+  "staging_tags": [
+   "기프트럭 랩핑",
+   "푸드트레일러",
+   "푸드트럭",
+   "VMD",
+   "조형물 및 VMD 설치물",
+   "트럭 순회형"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울/의왕",
+   "district": "성수동/의왕",
+   "venue_name": "AK밸리 앞 서울숲 Lay-by, 롯데아울렛 의왕",
+   "venue_type": "로드 캠페인(Lay-by 대관) / 아울렛",
+   "foot_traffic_context": "대학가·직장인 밀집지역 순회(최초 브리프), 서울숲/아울렛 유동인구"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2026-06-15",
+   "to": "2026-06-21",
+   "days": 7
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "확정 예산 50,000,000원(Notion). 견적 총계는 VAT 10% 별도, 만단위 이하 절사. 일반관리비=합계의 5%, 기업이윤=합계+일반관리비의 10%, 총계=합계+일반관리비+기업이윤. 취소 견적(260522)에는 디자인비 위약금 30% 명시. 대관: 성수 6/15~19, 의왕 6/20~21 / 서울숲 Lay-by 6/15~16(월,화), 6/17~19(수,목,금). 항목별 구체 금액은 원문 표에 수치 미표기. | 계약서 미확인(2026-07-27 재독해 시도 — 대상 문서 부재/추출 실패): 총액은 견적 기준"
+  },
+  "brand_requirements": [
+   "AK밸리 앞 서울숲 Lay-by 대관",
+   "성수(6/15~19) 및 의왕(6/20~21) 운영",
+   "6/15 설치",
+   "SV 2식·STAFF 1식 제공",
+   "행사보험 가입(KB손해보험)",
+   "기프트럭/푸드트럭 랩핑 및 탁송(수도권 왕복 운송)",
+   "캡슐뽑기 가차머신 랩핑 포함 1주일 렌탈"
+  ],
+  "scale": {
+   "store_count": 2,
+   "venue_traffic_type": "multi_store",
+   "host_traffic_note": "서울숲/아울렛 유동인구"
+  },
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 21,
+    "holiday_until": 61,
+    "holiday_block_in": 0,
+    "nat_event_gap": 12,
+    "nat_event": "지방선거",
+    "doc_lag_days": 24,
+    "doc_dates_found": 4
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 15806320.0,
+    "pnl_pre_accounts": 3,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2026-05-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 24.0
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 부재. 실제 방문객/참여자 수 및 현장 매출(POS) 기록 없음. 확정 예산 50,000,000원은 계약금액이며 소비자 매출이 아님. 2026 1~5월 시드 P&L 매출 24.0백만/net 8.2백만은 6월 운영 실적 미포함(예상/집계). 최초 브리프 예산 5천만원.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "partial",
+   "rule": "인식액 24.0 < 계약총액 50.0의 90% — 잔금 미인식 추정",
+   "contract_total_mm": 50.0,
+   "last_recognition_period": "2026-05"
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "14V41r6NBT_Z5v14EbyowxwrLPY9kmhjG",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/14V41r6NBT_Z5v14EbyowxwrLPY9kmhjG/view",
+   "title": "결과보고서 없음(정보는 기입).txt"
+  },
+  {
+   "doc_id": "19Mc_O8TWi-rLPRMa0rH96-dPyNRRDk5u",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19Mc_O8TWi-rLPRMa0rH96-dPyNRRDk5u/view",
+   "title": "(Sweetspot) HSAD_NOL 여름시즌 로드 캠페인_취소 견적서_260522.xlsx"
+  },
+  {
+   "doc_id": "1GRz2aNizoLWrAmXzxPDbTMusOT9HfMyg",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1GRz2aNizoLWrAmXzxPDbTMusOT9HfMyg/view",
+   "title": "HSAD-Sweet Spot 용역 계약서 _놀유니버스 놀데이 오프라인 이벤트_260519.doc"
+  },
+  {
+   "doc_id": "1IH-nvEH_TM7_OPrxil2WtdffKJsjCt9M",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1IH-nvEH_TM7_OPrxil2WtdffKJsjCt9M/view",
+   "title": "(Sweetspot) HSAD_NOL 여름시즌 로드 캠페인_견적서_1차_260427.xlsx"
+  },
+  {
+   "doc_id": "1VjxiP0-k7tjvTFwXFzf-OW_fAs3HkYxn",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1VjxiP0-k7tjvTFwXFzf-OW_fAs3HkYxn/view",
+   "title": "[Sweetspot] 놀데이 오프라인 이벤트 공간 및 굿즈제안서_260511.pptx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: (Sweetspot) HSAD_NOL 여름시즌 로드 캠, (Sweetspot) HSAD_NOL 여름시즌 로드 캠. 미확실: 견적 항목별 실제 금액(원문 표에 수치 미표기); 실제 방문객/참여자 수; 현장 매출(POS); 최종 운영 형태(트럭 순회 vs 고정 팝업) 및 성수/의왕 병행 여부 확정; 면적(평); 야놀자 측 실무 담당자 실명·직함; 확정예산 50M과 P&L 매출 24M의 원가·수수료 구조; 취소 견적서 발생으로 실제 실행 여부 불확실"
+ }
+}

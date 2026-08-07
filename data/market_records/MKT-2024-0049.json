@@ -1,0 +1,104 @@
+{
+ "market_record_id": "MKT-2024-0049",
+ "event_name": "K리그 X 산리오캐릭터즈 팝업스토어 'FC 세븐일레븐'",
+ "brand": "한국프로축구연맹/롯데백화점",
+ "ip_or_collab": "산리오캐릭터즈 X K리그",
+ "category": "character",
+ "intervention": {
+  "concept_description": "K리그와 산리오 콜라보 팝업. 롯데월드몰에서 2024-07-19~08-11, 24일간 운영. 유니폼 등 콜라보 굿즈 판매.",
+  "experience_elements": [
+   "콜라보 굿즈 판매",
+   "야외 행사",
+   "포토이즘 부스"
+  ],
+  "promotions": [
+   "한정 유니폼"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "롯데월드몰(서울 송파구 잠실)",
+  "venue_type": "mall",
+  "neighborhood": "잠실",
+  "city": "서울",
+  "period_from": "2024-07-19",
+  "period_to": "2024-08-11",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 24,
+    "weekend_share": 0.33,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 250000,
+  "visitors_period_days": 24,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "주최측 집계(팝업+야외 행사 포함 총계로 보도)",
+  "visitors_source_quote": "공식 운영 기간 하루 평균 약 1만500명이 방문해 최종 누적 방문객 약 25만명을 기록했다.",
+  "visitors_source_url": "https://sports.hankooki.com/news/articleView.html?idxno=6871929",
+  "visitors_source_date": "2024-08-13",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "오픈런 누적 총 1만 명",
+   "sold_out": "예약 판매 30분 내 완판, K리그×산리오 유니폼 판매 개시 1분 내 매진, 인형 키링 일부 30분 완판",
+   "reservation_fill": null,
+   "signal_quotes": [
+    "오픈런 인원만 총 1만명에 달했다. (문화일보 2024-08-14)",
+    "K리그 유니폼은 2044장이 팔렸다. (문화일보 2024-08-14)",
+    "롯데 단일 팝업스토어 역대 최고 매출을 기록했다. (문화일보 2024-08-14)",
+    "앞서 19일과 25일에는 세븐앱에서 팝업스토어 전용 상품 일부 수량을 예약 판매로 선 30분 내로 완판했다. 특히 K리그&산리오캐릭터즈 유니폼은 판매 개시 1분이 채 되지 않아 매진됐다.(현대경제신문)",
+    "팝업스토어 오픈 첫날부터 600명 이상의 오픈런 대기인원을 모으며 지난 28일까지 5000명 가량의 오픈런 대기 인원을 기록하기도 했다.(현대경제신문)"
+   ]
+  },
+  "conflict": true,
+  "alt_figures": [
+   {
+    "value": 170000,
+    "basis": "organizer_claim",
+    "quote": "팝업스토어 방문객이 약 17만 명, 야외 행사 방문객이 8만 명가량으로 집계됐다(팝업+야외 합산 25만 명).",
+    "url": "https://www.newsis.com/view/NISX20240813_0002848293",
+    "date": "2024-08-13"
+   }
+  ],
+  "label_trust": {
+   "grade": "D",
+   "flags": [
+    "D",
+    "C"
+   ],
+   "why": "스코프 혼합(합산/총계) 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": true,
+   "final_marked": true,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "총계 25만(팝업+야외) vs 팝업스토어 단독 17만 보도가 병존해 conflict 처리. K리그 공식 보도(kleague seq=90699, 2024-07-23): 오픈 첫 3일 일평균 8,300여 명·누적 2.5만 돌파 | 병합 레코드: MKT-2024-0025 | [병합:MKT-2024-0025] 편의점 콜라보 팝업(굿즈 중심, 세븐셀렉트 식품 연계). 아시아투데이·연합뉴스·현대경제신문·대한경제·비바100 등 동일(2024-07-29)",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

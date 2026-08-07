@@ -1,0 +1,94 @@
+{
+ "market_record_id": "MKT-2023-0020",
+ "event_name": "동서식품 '오레오 111주년 생일파티' 성수 팝업스토어",
+ "brand": "동서식품(오레오 OREO)",
+ "ip_or_collab": "오레오 탄생 111주년+세계 1위 비스킷 달성 기념, 오레오 데이(5/25) 연계",
+ "category": "fnb",
+ "intervention": {
+  "concept_description": "'오레오의 생일 파티' 콘셉트 체험형 팝업. 웰컴존·커넥트존·플레이존 3개 공간",
+  "experience_elements": [
+   "대형 오레오 젠가·미니골프·바운스 게임",
+   "나만의 오레오 만들기",
+   "대형 LED 볼풀·포토부스",
+   "111주년 대형 케이크 포토존",
+   "오레오 굿즈 판매"
+  ],
+  "promotions": [
+   "입장 시 웰컴 기프트 오레오 증정",
+   "미션 스탬프 완료 시 오레오 한 상자 추가 증정"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "서울 성동구 성수동(팝업 공간)",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2023-05-18",
+  "period_to": "2023-06-18",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 32,
+    "weekend_share": 0.31,
+    "holiday_days": 3
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 35000,
+  "visitors_period_days": 32,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "뉴시스(동서식품 제공)가 '행사가 진행된 한 달 동안 3만5000여명이 다녀간' 총 누적으로 보도",
+  "visitors_source_quote": "또한 지난 5월 오레오 데이(5월25일)을 맞이하여 서울 성동구 성수동에서 '오레오의 생일 파티' 콘셉트로 팝업 스토어를 운영했다. 행사가 진행된 한 달 동안 3만5000여명이 다녀간 팝업 스토어는 오레오 탄생 111주년과 세계 1위 비스킷 달성을 기념해 소비자들에게 색다른 브랜드 경험을 선사하기 위해 기획됐다.",
+  "visitors_source_url": "https://mobile.newsis.com/view/NISX20230721_0002386110",
+  "visitors_source_date": "2023-07-21",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "평일 평균 약 1000명, 주말 약 1700명 방문(동서식품)",
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "동서식품에 따르면 오레오 팝업스토어는 지난 5월 18일 오픈 후 30일까지 누적방문객 수가 1만 2600명을 넘어섰다. 평일 평균 약 1000명, 주말에는 약 1700명이 방문했다고.(메트로신문 2023-05-31, 중간 집계)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "종료 후 총계 3.5만(뉴시스 2023-07-21)과 중간 집계 1.26만(메트로 5/31)은 시점 차이로 상충 아님 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

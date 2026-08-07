@@ -1,0 +1,74 @@
+{
+  "market_record_id": "MKT-2026-0042",
+  "event_name": "롯데웰푸드 '돼지바 빵집 since 1983' 팝업스토어",
+  "brand": "롯데웰푸드(돼지바)",
+  "ip_or_collab": "1983년 출시 장수 아이스크림 '돼지바' 43주년 레트로 콘셉트, 신제품 '돼지바빵' 연계",
+  "category": "fnb",
+  "intervention": {
+    "concept_description": "돼지바를 빵집(제과점) 콘셉트로 재해석한 레트로 체험형 팝업. 빛바랜 '돼지바 빵 제-과' 간판 등 옛 제과점 무드 연출",
+    "experience_elements": [
+      "커스텀 돼지바빵 만들기(현장 방문객 약 73% 참여)",
+      "밤티 돼지바빵 꾸미기 콘테스트(온·오프라인 약 3000명 참여)",
+      "캐릭터 '돼장님' 포토"
+    ],
+    "promotions": [
+      "신제품 돼지바빵 판매(출시 두 달 540만개 판매 보도)"
+    ],
+    "is_free_entry": true,
+    "reservation_required": false
+  },
+  "conditions": {
+    "venue": "서울 관악구 샤로수길 인근(관악로 157)",
+    "venue_type": "street_standalone",
+    "neighborhood": "샤로수길(봉천동)",
+    "city": "서울",
+    "period_from": "2026-06-05",
+    "period_to": "2026-06-21",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 17,
+        "weekend_share": 0.35,
+        "holiday_days": 1
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 17,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "주최사(롯데웰푸드) 16일 발표. '오픈 열흘 만에' 누적 1만2000명은 6/5~6/14 부분 기간 수치이며 행사 전체(6/21까지) 총계는 미공개 → visitors_total null 처리",
+    "visitors_source_quote": "롯데웰푸드 가 서울 관악구 샤로수길 인근에서 운영 중인 팝업스토어 '돼지바 빵집 since 1983' 누적 방문객이 오픈 열흘 만에 1만2000명을 넘어섰다.",
+    "visitors_source_url": "https://www.hankyung.com/article/202606168944g",
+    "visitors_source_date": "2026-06-16",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "하루 평균 1000명 이상 방문, 주말 이틀 약 3000명(주최사 집계). 입장 대기줄 사진 보도",
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "행사 기간 하루 평균 1000명 이상이 방문했다. 지난 주말에는 이틀간 약 3000명이 몰렸다.(전자신문 2026-06-16)",
+        "돼지바빵은 출시 두 달 만에 약 540만개가 판매됐다. 시간당 3000개 이상, 1초당 1개꼴로 판매된 셈이다.(주간한국 2026-06-16)"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "한국경제·전자신문·주간한국·포춘코리아 등 동일 수치(2026-06-16). 방문객 수치는 열흘 누적(부분 기간) | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

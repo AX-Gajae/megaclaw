@@ -1,0 +1,138 @@
+{
+ "record_id": "RTSO2402",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:하이브로",
+  "space_id": "unresolved:미정",
+  "client_party_id": "unresolved:스위트스팟",
+  "brand_key": "하이브로",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "하이브로의 게임 IP '드래곤빌리지 시리즈'(드래곤빌리지, 드래곤빌리지 M, 드래곤빌리지 컬렉션) 캐릭터를 활용한 상품화 라이선싱 계약. 팝업스토어 및 행사용 상품화권을 비독점으로 허가받는 IP 라이선싱 건이다.",
+  "brand_name": "드래곤빌리지",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-05-01",
+   "to": "2025-04-30",
+   "days": 365
+  },
+  "season": null,
+  "fee_structure": {
+   "type": "hybrid",
+   "detail": "최소사용료(MG) 5,000,000원(VAT별도), 지불시기 2024-06-30 이전. 러닝로열티는 누적 로열티가 MG 초과분부터 발생. 로열티: 드래곤빌리지 팝업스토어 및 행사=소비자가의 15%(VAT포함), 그 외=소비자가의 10%(VAT포함). 증지대금 별도 장당 5원(VAT별도). 로열티는 분기별(1,4,7,10월 10일) 배분정산서 제공 후 익월 10일 정산. 허가지역 대한민국, 비독점."
+  },
+  "brand_requirements": [
+   "제품 및 포장에 저작권 표시 필수(상품화 문구 및 ⓒhighbrow)",
+   "유통 전 갑 제공 증지(홀로그램 스티커) 개별 판매단위별 부착",
+   "제품 아이디어·기초디자인·샘플 갑의 서면 승인 필수",
+   "갑 제공 ARTWORK 외 제3자 제작 이미지 사용 금지",
+   "계약체결일로부터 3개월 이내 샘플·Mock-Up 생산",
+   "허가상품 5개씩 출시 이전 무상 제공",
+   "유통 경로·조건 사전 서면 보고 및 승인",
+   "분기별 배분정산서(생산수량,출고가,소비자가,로열티) 제출"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "IP 라이선싱 계약 건"
+  },
+  "derived": {
+   "duration": {
+    "days": 365,
+    "weekend_share": 0.28,
+    "holiday_days": 19
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 59,
+    "holiday_until": 3,
+    "holiday_block_in": 17,
+    "nat_event_gap": 21,
+    "nat_event": null,
+    "doc_lag_days": 0,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 53.7
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서가 제공되지 않아 방문/매출 실측 데이터 없음. 본 건은 IP 상품화 라이선싱 계약으로 특정 팝업 운영 결과 문서가 부재.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-04, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": 5.0,
+   "last_recognition_period": "2025-07"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "107cHUNVhQJc6YTXhv5-zlcokv_IMpeTT",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/107cHUNVhQJc6YTXhv5-zlcokv_IMpeTT/view",
+   "title": "240501_드래곤빌리지 상품화 계약서_스위트스팟.pdf"
+  },
+  {
+   "doc_id": "1YfF7VTasH59zELYTgqX6nybIGcVRjRKq",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1YfF7VTasH59zELYTgqX6nybIGcVRjRKq/view",
+   "title": "결과보고서_내용없음.txt"
+  },
+  {
+   "doc_id": "1kD1XWyJjgBLOMZTJ29r6g0t7vgRaKGFk",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1kD1XWyJjgBLOMZTJ29r6g0t7vgRaKGFk/view",
+   "title": "RTSO2402_하이브로_하이브로 IP 라이선싱_계약서_240501.pdf"
+  },
+  {
+   "doc_id": "1xH9a9OC1l29n251TnU2E2rHIm-B25fBxqsOj9f8IXJw",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1xH9a9OC1l29n251TnU2E2rHIm-B25fBxqsOj9f8IXJw/view",
+   "title": "제안서_내용없음"
+  },
+  {
+   "doc_id": "1yPJdGqzxcwiXmz6jdsRmLSokLaYBxC9O",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1yPJdGqzxcwiXmz6jdsRmLSokLaYBxC9O/view",
+   "title": "견적서_없음.docx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 4건: 240501_드래곤빌리지 상품화 계약서_스위트스팟.pd, RTSO2402_하이브로_하이브로 IP 라이선싱_계약서, 제안서_내용없음, 견적서_없음.docx. 미확실: 제안서/기획서 내용 없음(빈 문서); 견적서 내용 없음; 결과보고서 부재로 방문자수/매출 실측 불가; 팝업 개최 입지·면적·구체적 운영기간 미상(본 계약은 IP 라이선싱 기본계약); 예상 방문객(plan_visitors_expected) 정보 없음; 계약서 2건이 동일 내용으로 중복 제공됨"
+ }
+}

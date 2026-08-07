@@ -1,0 +1,314 @@
+{
+ "record_id": "RCPU2408",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:수키도키",
+  "space_id": "unresolved:더현대대구_B2_크리에이티브라운지",
+  "client_party_id": "unresolved:수키도키",
+  "brand_key": "수키도키",
+  "space_key": "더현대대구"
+ },
+ "intervention": {
+  "concept": "'불지옥바캉스' — 여름철 뜨거운 대프리카에 바캉스 온 수키도키를 컨셉으로 한 캐릭터 팝업스토어. 포토존, 사인회, 메시지월 등 체험 요소와 캐릭터 굿즈 판매를 결합했다.",
+  "brand_name": "수키도키",
+  "experience_elements": [
+   "포토존A(사인회 병행)",
+   "포토존B",
+   "등신대 뒤 얼굴 내밀고 촬영",
+   "실물소품 촬영(야자수나무, 라탄테이블, 비치볼, 튜브, 슬리퍼)",
+   "사인회(B6 사인용지 500장, 촬영용 피켓 6종)",
+   "메시지월(서핑보드 가벽, 포스트잇 3000장)",
+   "카운터이벤트A/이벤트B"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "야자수나무(실물)",
+   "밀짚파라솔(실물)",
+   "바닥그래픽",
+   "계란그래픽",
+   "등신대",
+   "불모양 등신대",
+   "튜브 등신대",
+   "상단배너",
+   "메인타이틀(파라솔 행잉)",
+   "선반형 매대",
+   "걸이형 매대(행거)"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "대구",
+   "district": null,
+   "venue_name": "더현대 대구 B2 크리에이티브 라운지",
+   "venue_type": "백화점 팝업 공간",
+   "foot_traffic_context": "지하철 입구 방면"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-05-03",
+   "to": "2024-05-16",
+   "days": 14
+  },
+  "season": "여름(초여름)",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "용역계약(갑:수키도키, 을:㈜스위트스팟) 총 47,610,000원(부가세 별도, 제세공과금 포함). 계약기간 2024-05-07~2024-05-30, 대금은 검수 합격 후 세금계산서 제출, 2024-05-31까지 지급. 로스율 관련: 총매출 대비 5% 이상 발생 시 공제, 5% 이하는 통상 LOSS로 갑 부담. 지연손해금 1일당 총 용역비의 1/1000, 의무위반 시 위약벌 용역비 20%. 별도 시공 견적(현대드림애드): 공급가 6,608,500원 + VAT 660,850원 = 합계 7,269,350원(VAT 포함)."
+  },
+  "brand_requirements": [
+   "부스 디자인/설계, 인테리어 시공 및 철거",
+   "집기 제작 및 시공",
+   "사인/그래픽 제작 및 시공(가격표, POP, ISP)",
+   "진열/연출 소도구 납품",
+   "입점사 관리 및 정산",
+   "운영: 10:30~20:00, 금·토·일 20:30까지 연장영업",
+   "설치 2024-05-03 08:00까지, 철거 2024-05-16 24:00까지",
+   "하자보증 2년"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대 대구 B2 크리에이티브 라운지, 지하철 입구 방면"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 3
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 3.0,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 61,
+    "holiday_until": 1,
+    "holiday_block_in": 3,
+    "nat_event_gap": 23,
+    "nat_event": null,
+    "doc_lag_days": 9,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": "대구 중구 달구벌대로 2077"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서가 제공되지 않아 방문객·매출 실측 데이터 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": 47.61,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-gaLxU7EB7RWcgkzWNMpB4f6h_zoDjHV",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1-gaLxU7EB7RWcgkzWNMpB4f6h_zoDjHV/view",
+   "title": "현대드림애드_세금계산서.png"
+  },
+  {
+   "doc_id": "11irssFHu4gbCkagV2-5bybvkUbXs_1X0",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/11irssFHu4gbCkagV2-5bybvkUbXs_1X0/view",
+   "title": "수키도키_포토부스 렌탈.pptx"
+  },
+  {
+   "doc_id": "11lnI7SOStOOcFCaxKBX8Oct4JzQStks9",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/11lnI7SOStOOcFCaxKBX8Oct4JzQStks9/view",
+   "title": "렌탈기본구동화면.zip"
+  },
+  {
+   "doc_id": "12V3k_oBO8PREsp0kxNI3P3nTZgwOYw6-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/12V3k_oBO8PREsp0kxNI3P3nTZgwOYw6-/view",
+   "title": "나랑한컷_2023_렌탈구동화면.psd"
+  },
+  {
+   "doc_id": "13XXPBPs6thnldMKOuweNUHOCtag9vp-q",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/13XXPBPs6thnldMKOuweNUHOCtag9vp-q/view",
+   "title": "주식회사 비에스 통장사본(대구은행).jpg"
+  },
+  {
+   "doc_id": "17ZK5N0QtX7jBE9APljprQWVAOuGiZghw",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17ZK5N0QtX7jBE9APljprQWVAOuGiZghw/view",
+   "title": "라이브뷰 템플릿(1080x720).psd"
+  },
+  {
+   "doc_id": "19Py7sQyuzHRqBCQK2v9VHdStUou5lTXX",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19Py7sQyuzHRqBCQK2v9VHdStUou5lTXX/view",
+   "title": "세금계산서.jpg"
+  },
+  {
+   "doc_id": "1FTz_GsKes5QpLOIMiNiJi1TdBcCbBd59",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1FTz_GsKes5QpLOIMiNiJi1TdBcCbBd59/view",
+   "title": "수키도키견적_0502.xlsx"
+  },
+  {
+   "doc_id": "1Huk_HzYC2KdXPFx-msY_l3IWK3ioOukY",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Huk_HzYC2KdXPFx-msY_l3IWK3ioOukY/view",
+   "title": "수키도키견적_0502.xlsx"
+  },
+  {
+   "doc_id": "1J8dxEDReD01SUQwiohjOcsRa9hkY4Riz",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1J8dxEDReD01SUQwiohjOcsRa9hkY4Riz/view",
+   "title": "(주)비에스 사업자등록증.jpg"
+  },
+  {
+   "doc_id": "1KSvNxdjykPIwQ82PvbpvKhUFZVzpG7_e",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1KSvNxdjykPIwQ82PvbpvKhUFZVzpG7_e/view",
+   "title": "프레임 템플릿(4x6inch).psd"
+  },
+  {
+   "doc_id": "1LgmUVEOkwYZno6D9afdr7LjRp3PqMHuO",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1LgmUVEOkwYZno6D9afdr7LjRp3PqMHuO/view",
+   "title": "더현대대구 수키도키 팝업스토어_공간기획안 2차(240424).pdf"
+  },
+  {
+   "doc_id": "1NxrBRai2_0JjmG7d5Mjh5WUyemHhOAhn",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1NxrBRai2_0JjmG7d5Mjh5WUyemHhOAhn/view",
+   "title": "프레임 템플릿(2x6inch).psd"
+  },
+  {
+   "doc_id": "1QZt1ngm6o5AwzuSm3HXJsqwWvA7ZMGR3",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1QZt1ngm6o5AwzuSm3HXJsqwWvA7ZMGR3/view",
+   "title": "더현대대구 수키도키 팝업스토어_견적요청.pptx"
+  },
+  {
+   "doc_id": "1Td8yQ-iYoGn-8SIBhhoebHrbZu1TBjjn",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Td8yQ-iYoGn-8SIBhhoebHrbZu1TBjjn/view",
+   "title": "더현대대구 수키도키 팝업스토어_공간기획안 2차(240424).pdf"
+  },
+  {
+   "doc_id": "1UpMSCd1izSFg-Ehighz9_yat_QMjNqwb",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1UpMSCd1izSFg-Ehighz9_yat_QMjNqwb/view",
+   "title": "계산서_비에스.jpg"
+  },
+  {
+   "doc_id": "1YEmHgJDo7lfFdHL738t6u1JYOw1dwbLX",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1YEmHgJDo7lfFdHL738t6u1JYOw1dwbLX/view",
+   "title": "용역계약서_수키도키_스위트스팟_2024-05-07.pdf"
+  },
+  {
+   "doc_id": "1boVFu9CzEegY2-0sGTOp38JhpeQViBLg",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1boVFu9CzEegY2-0sGTOp38JhpeQViBLg/view",
+   "title": "수키도키견적_0502_PDF.pdf"
+  },
+  {
+   "doc_id": "1cMgblZhlmCpFoKWkHP737go3XfARIvZ9",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1cMgblZhlmCpFoKWkHP737go3XfARIvZ9/view",
+   "title": "(주)비에스 나랑한컷렌탈견적서.pdf"
+  },
+  {
+   "doc_id": "1cPxBRYBNMzBHSW5zgS9xQ9JPIrBpO0yF",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1cPxBRYBNMzBHSW5zgS9xQ9JPIrBpO0yF/view",
+   "title": "라이브뷰 템플릿(정방형).psd"
+  },
+  {
+   "doc_id": "1e2gf9SInrpCuFWow-5rvwkRnKs7Wh_si",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1e2gf9SInrpCuFWow-5rvwkRnKs7Wh_si/view",
+   "title": "라이브뷰-가이드라인.png"
+  },
+  {
+   "doc_id": "1i937Y4rR9jQVpQmCViaHm6k16p6N-DCn",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1i937Y4rR9jQVpQmCViaHm6k16p6N-DCn/view",
+   "title": "랩핑참고사항.jpg"
+  },
+  {
+   "doc_id": "1lEQtbfeQbLaXgKnSWw8M7ZjUQhFaNrRf",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1lEQtbfeQbLaXgKnSWw8M7ZjUQhFaNrRf/view",
+   "title": "부스랩핑가이드.ai"
+  },
+  {
+   "doc_id": "1m_JKnTIGqj4sLp4FHKjUTlrnaNHEEqE6",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1m_JKnTIGqj4sLp4FHKjUTlrnaNHEEqE6/view",
+   "title": "부스랩핑가이드.png"
+  },
+  {
+   "doc_id": "1nhD2k2WaIKipFsF6OC1j5L-dsQmKDHBj",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1nhD2k2WaIKipFsF6OC1j5L-dsQmKDHBj/view",
+   "title": "더현대대구B2_MD존 연출사례.pdf"
+  },
+  {
+   "doc_id": "1ornwFyqzt83eYjxAb9MK7eRWsYopiw0Z",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ornwFyqzt83eYjxAb9MK7eRWsYopiw0Z/view",
+   "title": "인화지디자인-작업-가이드.png"
+  },
+  {
+   "doc_id": "1rNzi_yx6KvU5HkMetzCJNpJx53-g8EZy",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1rNzi_yx6KvU5HkMetzCJNpJx53-g8EZy/view",
+   "title": "더현대대구 수키도키 팝업스토어_견적요청.pdf"
+  },
+  {
+   "doc_id": "1sYKxRVC6OFuUlERUsER9Ymi-waE_44vN",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1sYKxRVC6OFuUlERUsER9Ymi-waE_44vN/view",
+   "title": "수키도키견적서_0502_PDF.pdf"
+  },
+  {
+   "doc_id": "1tkZ9kzyIIgbt3FI2bHBtldrkDc48cswz",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1tkZ9kzyIIgbt3FI2bHBtldrkDc48cswz/view",
+   "title": "견적서.png"
+  },
+  {
+   "doc_id": "1x5TU8VzSeZM0rB5739Puh8anPG-CeZJy",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1x5TU8VzSeZM0rB5739Puh8anPG-CeZJy/view",
+   "title": "현대드림애드_견적서(최종).pdf"
+  },
+  {
+   "doc_id": "1zYxb0qpAM_jOdSlGA-NSUjEHOq8-9GOY",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1zYxb0qpAM_jOdSlGA-NSUjEHOq8-9GOY/view",
+   "title": "용역계약서_수키도키_스위트스팟_2024-05-07.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 5건: 더현대대구 수키도키 팝업스토어_공간기획안 2차(2404, 더현대대구B2_MD존 연출사례.pdf, 용역계약서_수키도키_스위트스팟_2024-05-07.pd, 더현대대구 수키도키 팝업스토어_공간기획안 2차(2404, 현대드림애드_견적서(최종).pdf. 미확실: 결과보고서 부재로 outcome 전체(일일/총 방문객, POS 매출) 확인 불가; 면적(평) 정보 없음; 기획서상 예상 방문객 수치 없음; client_name 프로젝트 메타데이터에는 null이나 계약서상 갑=수키도키"
+ }
+}

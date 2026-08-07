@@ -1,0 +1,146 @@
+{
+ "record_id": "RTPU2615",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:리쥬란_Rejuran",
+  "space_id": "unresolved:none_트로피제작납품",
+  "client_party_id": "unresolved:파마리서치_정환웅",
+  "brand_key": "리쥬란",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "KLPGA 리쥬란 챔피언십 우승 트로피 디자인·제작 프로젝트로, 리쥬란 핵심가치(회복·재생)와 PDRN 기술력을 유기적 조형으로 상징화한다. 'DOT에서 시작되는 승리(THE START OF VICTORY)'를 컨셉으로, 물살을 거슬러 오르는 연어의 생명력과 수직 상승 조형으로 정상을 향한 선수의 비상을 표현한다. 트로피 디자인을 대회 전체 키비주얼의 핵심 요소로 확장 활용한다.",
+  "brand_name": "리쥬란 (Rejuran) / 파마리서치",
+  "experience_elements": [
+   "ENERGY - 역경을 뚫고 오르는 에너지의 궤적",
+   "HARMONY - 한 방울의 파동이 만드는 승리",
+   "PERFECTION - 완벽하게 계산된 승리의 DNA",
+   "수직 상승 유기적 조형 (연어 생명력 추상화)",
+   "스테인리스 금속 소재 + 생동감 있는 곡선",
+   "트로피 디자인의 대회 키비주얼 확장 적용"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "트로피디자인",
+   "키비주얼",
+   "브랜드상징물",
+   "3D모델링",
+   "스테인리스제작"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2026-03-06",
+   "to": "2026-03-06",
+   "days": 1
+  },
+  "season": null,
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "총계 21,250,000원 (VAT 10% 별도). 정가항목: 기획 프로젝트 핸들링 2,000,000 / 3D 트로피 모델링 및 수정 4,000,000 / 샘플 제작(스테인리스, 내부 확인·보관용) 6,000,000 / 트로피 실제작(스테인리스, 선수용) 6,000,000 / 선수용 트로피 케이스 제작 1,500,000. Sub Total 1 = 17,500,000, Sub Total 2 = 19,500,000. 일반관리비+대행수수료 = 소계의 10%(정가항목 제외) = 1,750,000. 합계 21,250,000 (VAT 별도). 선금/중도금/잔금 분할 조건 문서상 명시 없음."
+  },
+  "brand_requirements": [
+   "천편일률적 컵 형태·일차원적 로고 변형 탈피",
+   "리쥬란 브랜드 정체성(회복·재생) 반영",
+   "리쥬란 키컬러 및 PDRN 핵심성분 직관적 표현",
+   "선수용 트로피 및 전용 케이스 포함"
+  ],
+  "scale": {
+   "store_count": 0,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 0.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 4,
+    "holiday_until": 78,
+    "holiday_block_in": 0,
+    "nat_event_gap": 89,
+    "nat_event": null,
+    "doc_lag_days": 39,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 377850.0,
+    "pnl_pre_accounts": 3,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2026-01-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 21.3
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(현장 운영형 팝업이 아닌 KLPGA 리쥬란 챔피언십 트로피 제작 납품 건으로 방문객·현장(POS)매출 등 운영지표 해당 없음. 참고: 계약(대행)금액은 21,250,000원(VAT 별도)이며 이는 소비자 매출이 아님. PnL 매출 인식 2026-02 10,625,000 + 2026-03 10,625,000.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식액 21.3 ≈ 계약총액 21.25 (±10%)",
+   "contract_total_mm": 21.25,
+   "last_recognition_period": "2026-03"
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "1_eAXUZSqU8DUtoSoAWYRP3ho_15jRHSI",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1_eAXUZSqU8DUtoSoAWYRP3ho_15jRHSI/view",
+   "title": "[제안서]리쥬란 챔피언십 트로피 기획안_제안서 (1).pdf"
+  },
+  {
+   "doc_id": "1mAvZyaukSaNtmDy0V5OCo1Xd_oUlGEjv",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1mAvZyaukSaNtmDy0V5OCo1Xd_oUlGEjv/view",
+   "title": "결과보고서 없음(정보는 기입).txt"
+  },
+  {
+   "doc_id": "1oHINd8gerSogU7vpJA6RYdkDZjDeBRwB",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1oHINd8gerSogU7vpJA6RYdkDZjDeBRwB/view",
+   "title": "Sweetspot_파마리서치_트로피납품_업무 계약서_260126.doc"
+  },
+  {
+   "doc_id": "1tywu0wJpK2w-CIpfY0dKMBenQJ71Qg6s",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1tywu0wJpK2w-CIpfY0dKMBenQJ71Qg6s/view",
+   "title": "(Sweetspot) KLGPA 리쥬란 챔피언십 트로피 견적서_0120.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 2건: [제안서]리쥬란 챔피언십 트로피 기획안_제안서 (1)., (Sweetspot) KLGPA 리쥬란 챔피언십 트로피. 미확실: 트로피 수량·규격·최종 디자인 산출물 상세; 제작 외주 벤더/contractor (3월 판관비 13.75M 지급처); 실제 KLPGA 대회명·개최지·일정; 선금/중도금/잔금 분할 결제 조건; 견적서 수신인 표기 '정경환님' vs CRM '정환웅' 이름 불일치; 당초 병행 논의된 국내 리쥬란 팝업/동남아 골프대회 부스의 진행 여부·별도 코드; 납품일 2026-03-06의 정확한 근거(매출인식 기준일 추정)"
+ }
+}

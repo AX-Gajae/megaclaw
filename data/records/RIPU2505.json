@@ -1,0 +1,117 @@
+{
+ "record_id": "RIPU2505",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:엑시스와이",
+  "space_id": "unresolved:서울재즈페스티벌",
+  "client_party_id": null,
+  "brand_key": "엑시스와이",
+  "space_key": "서울재즈페스티벌"
+ },
+ "intervention": {
+  "concept": "엑시스와이 서울 재즈 페스티벌 부스 운영 프로젝트. 상세 원문 문서가 제공되지 않아 컨셉·체험요소를 확인할 수 없다.",
+  "brand_name": "엑시스와이",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": null,
+   "venue_name": "서울 재즈 페스티벌",
+   "venue_type": "페스티벌 부스",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-05-30",
+   "to": "2025-06-01",
+   "days": 3
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "서울 재즈 페스티벌 부스"
+  },
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.67,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 24,
+    "holiday_until": 7,
+    "holiday_block_in": 0,
+    "nat_event_gap": 4,
+    "nat_event": "대통령 선거",
+    "doc_lag_days": 8,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 25.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-06, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-06"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "10lYjLgPssp5ys1u-VNIMxtnuwM0K3gnj",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/10lYjLgPssp5ys1u-VNIMxtnuwM0K3gnj/view",
+   "title": "(스위트스팟) 엑시스와이_공간 제작_견적서_250522.pdf"
+  },
+  {
+   "doc_id": "1bagBlBDK4PLFgI5zOLUMDYOVB-Oqq7hg",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1bagBlBDK4PLFgI5zOLUMDYOVB-Oqq7hg/view",
+   "title": "[스위트스팟] AXIS-Y_서재페_결과보고서_250602.pdf"
+  },
+  {
+   "doc_id": "1n0wF4hqYWh1BieQrcRTAy7BIg5pnbJc_",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1n0wF4hqYWh1BieQrcRTAy7BIg5pnbJc_/view",
+   "title": "① [스위트스팟] 엑시스와이_전시 부스_계약서_250519-날인 완료.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서 텍스트 전체 미제공; client_name; venue 상세; category; 면적; 수수료구조; 방문자 실측 데이터; 매출 데이터; 컨셉/체험요소/프로모션 상세"
+ }
+}

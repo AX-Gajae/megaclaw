@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>소셜 월드모델 — 아키텍처 브리핑 (2026-07-28)</title>
+<style>
+  :root{
+    --bg:#0d1014; --bg2:#141922; --ink:#eef1f4; --dim:#9aa5b1; --faint:#5f6b78;
+    --line:#232b36; --accent:#48d1a0; --accent2:#7aa2f7; --warn:#e0a458; --bad:#e07b7b;
+    --mono:'SF Mono',Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%;background:var(--bg);color:var(--ink);
+    font-family:'Apple SD Gothic Neo','Pretendard','Noto Sans KR',system-ui,sans-serif;
+    overflow:hidden}
+  #deck{height:100%;position:relative}
+  .slide{position:absolute;inset:0;display:none;flex-direction:column;
+    padding:5.5vh 6vw 8vh;overflow-y:auto}
+  .slide.on{display:flex;animation:fade .35s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;color:var(--accent);
+    text-transform:uppercase;margin-bottom:1.1rem}
+  h1{font-size:clamp(1.9rem,3.6vw,3rem);line-height:1.22;font-weight:800;
+    letter-spacing:-.02em;margin-bottom:1.1rem;text-wrap:balance}
+  h2{font-size:clamp(1.4rem,2.5vw,2.1rem);font-weight:800;margin-bottom:.5rem;
+    letter-spacing:-.015em;text-wrap:balance}
+  .sub{color:var(--dim);font-size:clamp(.9rem,1.25vw,1.06rem);max-width:62ch;
+    line-height:1.65;margin-bottom:1.8rem}
+  .sub b{color:var(--ink)}
+  p{color:var(--dim);line-height:1.7;max-width:66ch}
+  b,strong{color:var(--ink)}
+  code{font-family:var(--mono);font-size:.88em;color:var(--accent2)}
+  /* 그리드 카드 */
+  .grid{display:grid;gap:.9rem;margin-top:.4rem}
+  .g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  .card{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:1.05rem 1.2rem}
+  .card h3{font-size:.95rem;margin-bottom:.4rem;font-weight:700}
+  .card p{font-size:.84rem;line-height:1.6}
+  .kick{font-family:var(--mono);font-size:.68rem;color:var(--accent);
+    letter-spacing:.1em;display:block;margin-bottom:.45rem}
+  /* 수치 */
+  .stat{font-family:var(--mono);font-variant-numeric:tabular-nums;font-weight:700}
+  .big{font-size:clamp(1.6rem,3vw,2.4rem);color:var(--accent)}
+  .lbl{font-size:.74rem;color:var(--faint);margin-top:.25rem;letter-spacing:.02em}
+  /* 파이프라인 */
+  .flow{display:flex;flex-direction:column;gap:.35rem;margin-top:.6rem}
+  .step{background:var(--bg2);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:0 10px 10px 0;padding:.75rem 1.1rem}
+  .step .t{font-size:.9rem;font-weight:700}
+  .step .t span{font-family:var(--mono);font-size:.7rem;color:var(--accent);margin-right:.6rem}
+  .step .d{font-size:.8rem;color:var(--dim);line-height:1.55;margin-top:.2rem}
+  .arr{text-align:center;color:var(--faint);font-size:.8rem;line-height:1}
+  /* 표 */
+  .tblwrap{overflow-x:auto;margin-top:.5rem}
+  table{width:100%;border-collapse:collapse;font-size:.86rem;margin-top:.5rem;min-width:640px}
+  th{text-align:left;font-size:.7rem;color:var(--faint);font-weight:600;
+    border-bottom:1px solid var(--line);padding:.5rem .7rem;letter-spacing:.04em}
+  td{border-bottom:1px solid var(--line);padding:.6rem .7rem;color:var(--dim)}
+  td:first-child{color:var(--ink)}
+  td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+  td.n.ok,td.n.no,td.n.mid{text-align:center;font-family:inherit;font-size:.82rem}
+  .ok{color:var(--accent);font-weight:700} .no{color:var(--bad);font-weight:700}
+  .mid{color:var(--warn);font-weight:700}
+  /* 콜아웃 */
+  .callout{border-left:3px solid var(--accent);background:rgba(72,209,160,.07);
+    border-radius:0 10px 10px 0;padding:.9rem 1.15rem;margin-top:1rem;font-size:.88rem;
+    line-height:1.65;color:var(--dim)}
+  .callout.w{border-color:var(--warn);background:rgba(224,164,88,.07)}
+  .callout b{color:var(--ink)}
+  pre{background:var(--bg2);border:1px solid var(--line);border-radius:10px;
+    padding:.9rem 1.1rem;font-family:var(--mono);font-size:.78rem;line-height:1.75;
+    color:var(--dim);overflow-x:auto;margin-top:.6rem}
+  pre .hl{color:var(--accent)} pre .dim{color:var(--faint)} pre .bad{color:var(--bad)}
+  ul{margin-left:1.1rem;color:var(--dim);line-height:1.75;font-size:.9rem}
+  li{margin-bottom:.3rem} li b{color:var(--ink)}
+  /* 진행 */
+  #bar{position:fixed;bottom:0;left:0;height:2px;background:var(--accent);transition:width .3s}
+  #num{position:fixed;bottom:1.1rem;right:1.5rem;font-family:var(--mono);font-size:.72rem;
+    color:var(--faint);letter-spacing:.08em}
+  #hint{position:fixed;bottom:1.1rem;left:1.5rem;font-size:.7rem;color:var(--faint)}
+  @media (max-width:860px){.g3,.g4{grid-template-columns:repeat(2,1fr)}
+    .g2{grid-template-columns:1fr} .slide{padding:5vh 6vw 8vh}}
+</style>
+</head>
+<body>
+<div id="deck">
+
+<!-- 1 -->
+<section class="slide on">
+  <div class="eyebrow">Sweetspot · Social World Model</div>
+  <h1>팝업이 열리기 전에 결과를 봉인하고,<br>실측과 채점하며 스스로 배우는 시스템</h1>
+  <p class="sub">2026-07-28 아키텍처 브리핑. 두 달간의 실험 로그, 오늘 확정된 병목,
+  그리고 다음에 무엇을 해야 하는가.</p>
+  <div class="grid g4" style="margin-top:1.4rem">
+    <div class="card"><div class="stat big">1,309</div><div class="lbl">전체 레코드 (팝업 380 + 시장 647 + 아이돌 282)</div></div>
+    <div class="card"><div class="stat big">598</div><div class="lbl">성과 라벨 (방문 423 + 초동 175)</div></div>
+    <div class="card"><div class="stat big">286,657</div><div class="lbl">비라벨 상태 관측점 (popga)</div></div>
+    <div class="card"><div class="stat big">D-3</div><div class="lbl">첫 실전 채점 (KIOF 7/31)</div></div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="slide">
+  <div class="eyebrow">01 · 무엇을 만드는가</div>
+  <h2>예측기가 아니라 채점 루프입니다</h2>
+  <p class="sub">"몇 명 올까"를 맞히는 것이 목적이 아니라, <b>틀린 이유를 다음 예측의 재료로
+  바꾸는 기계</b>를 만드는 것이 목적입니다.</p>
+  <div class="grid g3">
+    <div class="card"><span class="kick">① SEAL</span><h3>봉인</h3>
+      <p>모든 예측은 결과를 보기 전 sha256으로 봉인. 사후 조작이 원천 불가능하고,
+      잘 맞은 것도 크게 틀린 것도 전부 장부에 남습니다.</p></div>
+    <div class="card"><span class="kick">② SCORE</span><h3>채점</h3>
+      <p>실측 도착 시 자동 채점. (자극, 조건, 예측, 실측) 4튜플이 쌓여
+      자생적 실험 뱅크가 됩니다.</p></div>
+    <div class="card"><span class="kick">③ LEARN</span><h3>잔차 루프</h3>
+      <p>크게 틀리면 변수 이름을 얻습니다. 지금 스택의 거의 모든 층이
+      실제 사고에서 태어났습니다.</p></div>
+  </div>
+  <div class="callout"><b>왜 이 구조인가</b> — 예측 정확도는 데이터가 쌓이면 따라옵니다.
+  그러나 "무엇이 틀렸는지 증명할 수 있는 장부"는 처음부터 설계하지 않으면 영영 생기지 않습니다.</div>
+</section>
+
+<!-- 3 -->
+<section class="slide">
+  <div class="eyebrow">02 · 데이터 자산</div>
+  <h2>네 종류의 데이터를 모았고, 쓰임새가 각각 다릅니다</h2>
+  <p class="sub">전부 한 솥에 넣고 학습하는 게 아닙니다. <b>하나는 정답지, 하나는 AI가 읽는 참고서,
+  하나는 비교용, 하나는 버렸습니다.</b></p>
+
+  <div class="flow" style="gap:.6rem">
+    <div class="step">
+      <div class="t"><span>① 정답지</span>우리가 직접 한 팝업 — 성과 기록 95건</div>
+      <div class="d"><b>쓰임: 채점 기준.</b> 예측이 맞았는지 판정하는 유일한 자료입니다. 우리가 현장에서 직접
+      센 숫자라 믿을 수 있고, 매주 새 팝업이 여기 추가됩니다.<br>
+      <b>없으면:</b> 시스템 자체가 성립하지 않습니다. 맞았는지 틀렸는지 알 방법이 없으니까요.</div>
+    </div>
+    <div class="step">
+      <div class="t"><span>② 참고서</span>뉴스에서 모은 남의 팝업 — 성과 보도 328건</div>
+      <div class="d"><b>쓰임: AI에게 보여주는 비슷한 사례.</b> "이런 팝업은 보통 이 정도 왔다"를 참고하게 합니다.
+      실제로 비슷한 사례가 있을 때 오차가 <b>절반</b>으로 줄었습니다(54% → 30%).<br>
+      <b>주의:</b> 같은 데이터를 통계 모델에 넣으면 오히려 나빠집니다. 뉴스 수치는 집계 방식이 제각각이라,
+      AI는 "참고만" 하지만 통계 모델은 "우리 실측과 동급"으로 취급해버리기 때문입니다.</div>
+    </div>
+    <div class="step" style="border-left-color:var(--warn)">
+      <div class="t"><span>③ 비교용</span>아이돌 데뷔 초동 — 175건</div>
+      <div class="d"><b>쓰임: "왜 팝업은 예측이 어려운가"를 밝히는 대조군.</b> 아이돌은 예측이 되는데
+      (오차 5.8배 → 4.2배) 팝업은 잘 안 됩니다. 그 차이가 진단을 줍니다 — 아이돌 성과는 <b>누가·어떤 규모로
+      데뷔했나</b>가 정하는데, 팝업은 <b>무엇을 하는 팝업인가</b>가 정하고 그건 숫자로 정리되지 않습니다.<br>
+      <b>나중에:</b> 같은 IP가 양쪽에 나타나면(뉴진스가 앨범도 내고 팝업도 열듯이) 서로 도울 수 있는데,
+      지금은 그런 IP가 7개뿐이라 아직 못 합니다.</div>
+    </div>
+    <div class="step" style="border-left-color:var(--faint);opacity:.72">
+      <div class="t"><span>④ 폐기</span>자사 앱(popga) 조회 기록 — 28만 건</div>
+      <div class="d"><b>버렸습니다.</b> 앱에서 많이 본 팝업이 실제로도 사람이 많이 왔을 거라 기대했는데,
+      확인해보니 <b>거의 무관</b>했습니다. 앱 조회는 팝업당 평균 86명인데 실제 방문은 수천~수만이라,
+      100배 작은 창으로 본 셈이었습니다.</div>
+    </div>
+  </div>
+
+  <div class="callout"><b>이 슬라이드의 요점</b> — 데이터는 많을수록 좋은 게 아니라
+  <b>어디에 쓸지가 정해져야 좋습니다.</b> ②를 통계 모델에 넣었을 때 성능이 떨어진 것,
+  ④가 아예 무관했던 것이 그 증거이고, 둘 다 실제로 실험해서 확인했습니다.</div>
+</section>
+
+<!-- 4 -->
+<section class="slide">
+  <div class="eyebrow">03 · 예측 파이프라인</div>
+  <h2>한 건의 예측이 겪는 여정</h2>
+  <div class="flow">
+    <div class="step"><div class="t"><span>STEP 1</span>타깃 자극 구성 — 결과는 절대 안 본다</div>
+      <div class="d">기획서·계약서 정보와 집계 방식(enum)만. 실측이 스며들 수 있는 서술 필드는 차단
+      — 실제 누출 사고 후 도입.</div></div>
+    <div class="arr">▼</div>
+    <div class="step"><div class="t"><span>STEP 2</span>자극 빈곤 게이트 — "모른다"를 말할 권리</div>
+      <div class="d">1,200자 이상이면 <b>pass</b>, 얇으면 <b>widen</b>(구간 ÷×4.5 강제 확대),
+      개입 정보가 없으면 <b>refuse</b>(API 호출 전 거부). 모델 재량이 아니라 시스템 규칙.</div></div>
+    <div class="arr">▼</div>
+    <div class="step"><div class="t"><span>STEP 3</span>조건화 조립 — 시간 마스크가 걸린 세 블록</div>
+      <div class="d">내부 뱅크 다이제스트(피처 태그 포함) + 관련 선례 전문 ≤15 + 시장 선례(수요신호·피처).
+      전부 타깃 오픈일 이전 정보만.</div></div>
+    <div class="arr">▼</div>
+    <div class="step"><div class="t"><span>STEP 4</span>LLM 예측 — 규칙 9개, 독립 3회, 중앙값</div>
+      <div class="d">2단 분해 · 80% 구간 · 근거 ID 인용 의무 · 스케일 산식 · capacity 천장 ·
+      시장층 사용법. 단일 실행은 8~27%까지 흔들려 <b>median-of-3</b>가 표준.</div></div>
+    <div class="arr">▼</div>
+    <div class="step"><div class="t"><span>STEP 5</span>봉인 — 여기서부터 되돌릴 수 없다</div>
+      <div class="d">예측 해시 + 프롬프트 버전 해시 + 조건화 목록. 앙상블 개별 런도 감사용 보존.</div></div>
+    <div class="arr">▼</div>
+    <div class="step"><div class="t"><span>STEP 6</span>실측 도착 → 자동 채점 → 잔차 해부</div>
+      <div class="d">매주 월요일 09:00 크론. 챔피언·챌린저·v3스택 3개 장부를 동시 채점.</div></div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="slide">
+  <div class="eyebrow">04 · 성능</div>
+  <h2>하나의 숫자가 아니라 지도입니다</h2>
+  <p class="sub">이 시스템의 정직한 셀링 포인트는 "몇 % 맞힌다"가 아니라
+  <b>"어디서 맞고 어디서 못 맞히는지, 그 경계가 무엇인지 안다"</b>입니다.</p>
+  <div class="grid g3">
+    <div class="card" style="border-color:rgba(72,209,160,.4)">
+      <div class="stat big">16~18%</div><div class="lbl">자극 풍부 · 표준 리테일 팝업</div>
+      <p style="margin-top:.6rem">기획서·계약서가 있고 뱅크에 닮은 선례가 있는 경우.
+      실전 의사결정(수주 심사)의 대부분이 여기.</p></div>
+    <div class="card" style="border-color:rgba(224,164,88,.4)">
+      <div class="stat big" style="color:var(--warn)">~49%</div><div class="lbl">선례 희박 · 비정형 이벤트</div>
+      <p style="margin-top:.6rem">축제 부스·팬 이벤트·유통 프로모션. 처방은 더 좋은 모델이 아니라
+      <b>더 많은 선례</b> — 시장층 주입으로 54→30% 실증.</p></div>
+    <div class="card" style="border-color:rgba(224,123,123,.4)">
+      <div class="stat big" style="color:var(--bad)">60%+</div><div class="lbl">자극 빈곤 · 게이트 방어</div>
+      <p style="margin-top:.6rem">기획 정보 자체가 없는 경우. 지금은 구간을 강제로 벌리거나
+      예측을 거부합니다.</p></div>
+  </div>
+  <table>
+    <tr><th>예측 주체</th><th style="text-align:right">방문 오차(중앙값)</th><th>비고</th></tr>
+    <tr><td>과거 유사 사례 하나 복사</td><td class="n no">~95%</td><td>엔티티 이름만으론 무정보 — 쌍둥이 분석으로 원리 확인</td></tr>
+    <tr><td>카테고리 평균값</td><td class="n">38~75%</td><td>구역에 따라</td></tr>
+    <tr><td>기획자 본인의 사전 예상</td><td class="n mid">~30%</td><td>좌석수 등 내부 정보를 아는 인간</td></tr>
+    <tr><td><b>이 시스템 (자극 풍부)</b></td><td class="n ok">16~18%</td><td>봉인 45커밋 해시 검증</td></tr>
+    <tr><td>진짜 쌍둥이 간 자연 편차</td><td class="n">~17%</td><td>단, 그 격차의 81%도 변수로 설명 가능</td></tr>
+  </table>
+</section>
+
+<!-- 6 -->
+<section class="slide">
+  <div class="eyebrow">05 · 무결성</div>
+  <h2>이 숫자들을 믿어도 되는 이유</h2>
+  <div class="grid g3">
+    <div class="card"><span class="kick">SEAL</span><h3>예측 봉인</h3><p>sha256. 오픈 후 봉인 금지. 해시 불일치 시 사이클 무효.</p></div>
+    <div class="card"><span class="kick">VERSION</span><h3>프롬프트 버전 장부</h3><p>시스템 프롬프트+스키마 해시가 예측기 ID에. 버전 다른 성적은 합산 금지.</p></div>
+    <div class="card"><span class="kick">BURN</span><h3>소모 폴드 장부</h3><p>어떤 홀드아웃을 보고 무엇을 고쳤는지 기록. 그 폴드는 재사용 금지.</p></div>
+    <div class="card"><span class="kick">TIME</span><h3>시간 마스크</h3><p>조건화·시장층·IP이력·상태 전부 타깃 오픈일 이전만.</p></div>
+    <div class="card"><span class="kick">ABLATE</span><h3>페어드 절제</h3><p>새 부품은 같은 폴드 ON/OFF로 검증. 상태층은 이 관문에서 4연속 탈락.</p></div>
+    <div class="card"><span class="kick">FOLD</span><h3>IP-그룹 ∩ 시간순</h3><p>같은 IP는 한 폴드에만, test는 항상 미래. 폴드 내부 fit 강제.</p></div>
+  </div>
+  <div class="callout w"><b>오늘 자체 감사로 발견한 것</b> — 초기 NN 평가는 무효였습니다.
+  전체 데이터 표준화 누출 · IP·시간 무시 랜덤 분할 · 폴드 간 인코더 누수.
+  그래서 "LLM 0.07 vs NN 0.53" 비교 자체가 성립하지 않았고, 눈금부터 교체했습니다.</div>
+</section>
+
+<!-- 7 -->
+<section class="slide">
+  <div class="eyebrow">06 · 오늘의 실험</div>
+  <h2>"무엇을 더 알아야 하는가"를 네 번 물었습니다</h2>
+  <p class="sub">집단 상태를 재려면 어떤 관측 창이 필요한가. 네 개의 후보를 전부 실측했습니다.</p>
+  <table>
+    <tr><th>시도</th><th style="text-align:right">확보</th><th style="text-align:right">단변량 상관</th><th>다운스트림</th><th>판정</th></tr>
+    <tr><td>popga 행동 (view_store)</td><td class="n">199</td><td class="n">r=0.056</td><td>없음</td><td class="no">신호 부재</td></tr>
+    <tr><td>popga 심층 (대기·이미지확대)</td><td class="n">24~188</td><td class="n">r≤0.23</td><td>없음</td><td class="no">신호 부재</td></tr>
+    <tr><td>네이버 검색 트렌드</td><td class="n">79</td><td class="n mid">r=0.295</td><td>없음</td><td class="mid">전환율 미지</td></tr>
+    <tr><td>T1 원문 태깅</td><td class="n">9%</td><td class="n">—</td><td>−0.008 ❌</td><td class="no">원문에 없음</td></tr>
+    <tr><td><b>T1b 세계지식 태깅</b></td><td class="n ok">91%</td><td class="n ok">r=0.327</td><td>+0.003 ❌</td><td class="mid">포획률 미지</td></tr>
+  </table>
+  <div class="callout"><b>popga는 왜 실패했나</b> — 오픈 <i>후</i> 조회조차 방문객과 r=0.034입니다.
+  사전 예측력의 문제가 아니라 <b>두 숫자가 다른 것을 재고 있습니다</b>. 스토어당 조회 중앙값 86명 vs
+  실제 방문 수천~수만 — 100배 작은 창이었습니다. 상태층 4연속 실패의 원인이 방법이 아니라
+  신호 부재였음이 확정됐습니다.</div>
+</section>
+
+<!-- 8 -->
+<section class="slide">
+  <div class="eyebrow">07 · 병목</div>
+  <h2>네 번의 시도가 같은 답으로 수렴했습니다</h2>
+  <p class="sub">분모(노출·검색량)는 알아낼 수 있었습니다. 문제는 <b>비율</b>이었습니다.</p>
+  <pre><span class="dim">실험          분모(알아낸 것)      비율(모르는 것)        흩어짐    반복관측 시</span>
+네이버        검색량               검색→방문 전환율        <span class="bad">8배</span>      67% 감소  <span class="dim">(반복 IP 15%)</span>
+T1b          노출량(몰×통과율)     노출→방문 포획률        <span class="bad">6배</span>      41% 감소  <span class="dim">(반복 장소 17%)</span>
+쌍둥이 해부    같은 IP·같은 공간     개입 내용의 차이        <span class="hl">격차의 81%가 설명 가능</span></pre>
+  <div class="callout"><b>결론</b> — 분모를 아무리 정확히 알아도 비율을 모르면 예측이 안 됩니다.
+  그리고 그 비율은 개입(무엇을 하는가)과 개체(어느 IP·어느 장소인가)에 달렸으며,
+  <b>학습하려면 같은 대상의 반복 관측이 필요합니다.</b> 이건 크롤링으로 살 수 없습니다 —
+  매주 봉인·채점하는 전향 사이클로만 쌓입니다.</div>
+</section>
+
+<!-- 9 -->
+<section class="slide">
+  <div class="eyebrow">08 · 두 도메인</div>
+  <h2>아이돌은 학습되고, 팝업은 아직입니다</h2>
+  <div class="grid g2">
+    <div class="card" style="border-color:rgba(72,209,160,.4)">
+      <h3>아이돌 데뷔 초동 <span class="ok">✅ 상수를 이김</span></h3>
+      <pre style="margin-top:.5rem">상수 중앙값   0.766 <span class="dim">(5.84x)</span>
+연도 추세     0.675 <span class="hl">✅</span>
+전체피처      <span class="hl">0.618</span> <span class="dim">(4.15x)</span> <span class="hl">✅ CI[-0.26,-0.04]</span></pre>
+      <p style="margin-top:.6rem">구조적 변수가 결과를 설명: 데뷔연도 r=+0.49,
+      걸그룹 r=−0.38, 선주문 r=+0.24, 서바이벌 r=+0.23</p></div>
+    <div class="card" style="border-color:rgba(224,164,88,.4)">
+      <h3>팝업 방문 <span class="mid">△ 내부만 이김</span></h3>
+      <pre style="margin-top:.5rem">상수 중앙값   0.378 <span class="dim">(2.39x)</span>
+기존 피처     <span class="hl">0.329</span> <span class="dim">(2.13x)</span> <span class="hl">✅ CI[-0.099,-0.003]</span>
++T1/T1b      0.321/0.332 <span class="bad">기여 없음</span></pre>
+      <p style="margin-top:.6rem">시장 레코드를 섞으면 0.380~0.413으로 <b>악화</b> —
+      층별 품질 차이가 신호를 덮습니다.</p></div>
+  </div>
+  <div class="callout"><b>왜 갈리는가</b> — 아이돌 초동은 <b>구조적 변수</b>(누가·어떤 규모로·어떤 경로로
+  데뷔했나)가 지배하고 그건 관측됩니다. 팝업 방문은 <b>개입 내용</b>(무엇을 하는 팝업인가)이
+  지배하는데 그게 구조화되지 않아 표형 모델이 접근하지 못합니다.
+  쌍둥이 해부의 "개입이 지배 변수"가 두 도메인의 대비로 재확인됐습니다.</div>
+</section>
+
+<!-- 10 -->
+<section class="slide">
+  <div class="eyebrow">09 · 설계</div>
+  <h2>SFS-1 — 산수·출처를 구조로 빼내고 남은 강도만 학습</h2>
+  <p class="sub">10트랙 프론티어 리서치 + 우리 코드·데이터 실측 감사로 나온 6층 구조.
+  핵심 통찰: 표형 모델의 "실력"은 대부분 <b>기간 산수와 출처 신호</b>였습니다(개선분의 72%가 days).</p>
+  <pre>log10 ŷ = log10(days) <span class="dim">← 오프셋, 계수 1 고정</span>
+        + log10(store_count) <span class="dim">← 오프셋, 계수 1 고정</span>
+        + log10(exposure_base) <span class="dim">← 숙주 트래픽·캐파 상한 (T1b)</span>
+        + b_unit <span class="dim">← 라벨 단위 오프셋 (entry ≡ 0)</span>
+        + <span class="hl">η(x)</span> <span class="dim">← ★ 잔여 강도 = 포획률·팬덤 발현 · 여기서부터가 학습 대상</span></pre>
+  <div class="grid g3" style="margin-top:.9rem">
+    <div class="card"><span class="kick">층 3</span><h3>공유 잠재 상태 θ</h3>
+      <p>신경망이 아니라 <b>계층 베이즈 부분풀링</b> — n&lt;1000에서 유일하게 식별 가능한 형태.
+      θ = 모든 관측 피처를 뺀 뒤 남는 IP 고유 잔차. <b>τ²의 사후분포가 곧 "잠재가 실재하는가"의 검정.</b></p></div>
+    <div class="card"><span class="kick">층 4</span><h3>도메인 디코더 (FiLM)</h3>
+      <p>h_d = γ_d ⊙ θ + β_d. 도메인 추가 비용이 헤드 복제가 아니라 벡터 두 개.
+      λ_d가 0에서 떨어지면 "같은 상태가 두 행동으로 발현".</p></div>
+    <div class="card"><span class="kick">층 6</span><h3>Mondrian CV+</h3>
+      <p>pooled 커버리지 0.804는 A·B 0.853 / C~E 0.749의 붕괴를 숨깁니다.
+      등급별로 분리해야 정직해집니다.</p></div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section class="slide">
+  <div class="eyebrow">10 · 로드맵</div>
+  <h2>단계별 롤아웃과 통과 게이트</h2>
+  <table>
+    <tr><th>단계</th><th>할 일</th><th>통과 게이트</th></tr>
+    <tr><td><b>Stage 0</b><br><span style="color:var(--accent);font-size:.75rem">완료</span></td>
+      <td>평가 배선 교체 — IP-그룹 ∩ 시간순, 폴드 내부 fit, 모델-프리 하한 3종</td>
+      <td>모든 레인이 같은 표에 오른다 ✅</td></tr>
+    <tr><td><b>Stage 1</b><br><span style="color:var(--warn);font-size:.75rem">진행 중</span></td>
+      <td>물리 분해 + 관측모형(Tobit) + Hawkes 시간커널 + 계층 축소 + Mondrian 보정</td>
+      <td>일평균 축에서 상수를 CI로 이긴다 <span class="ok">✅ 내부 한정 달성</span></td></tr>
+    <tr><td><b>Stage 2</b></td>
+      <td>계층 베이즈 잠재상태 개통 + FiLM 도메인 공동학습</td>
+      <td>τ² 사후가 0을 제외 = <b>잠재 상태 실재 실증</b></td></tr>
+    <tr><td><b>Stage 3</b></td>
+      <td>학습형 헤드(TabM/twohot) + Deep Sets 시간 풀링 + 3번째 도메인</td>
+      <td>페어드로 Stage 2를 ≥0.03 이긴다</td></tr>
+    <tr><td><b>Stage 4</b></td>
+      <td>프론티어 재판정 (CARTE·TabPFN·mTAND·JEPA)</td>
+      <td>우리 데이터 실측으로 스택을 이긴다</td></tr>
+  </table>
+  <div class="callout w"><b>Stage 2의 선결 조건</b> — 양쪽 도메인에 라벨이 모두 있는 IP가 현재 7개입니다.
+  λ_d(도메인별 발현 계수)를 7개로 추정할 수 없으므로, 공동학습은 이 수가 15+로 늘 때까지 잠급니다.</div>
+</section>
+
+<!-- 12 -->
+<section class="slide">
+  <div class="eyebrow">11 · 지금</div>
+  <h2>3일 뒤, 첫 실전 숫자가 나옵니다</h2>
+  <p class="sub">두 세대의 스택이 같은 미래를 상대로 나란히 봉인되어 있습니다. 실측이 심판입니다.</p>
+  <table>
+    <tr><th>타깃</th><th>v2 구스택 (7/24 봉인)</th><th>v3 신스택 (7/27 봉인)</th><th>실측</th></tr>
+    <tr><td><b>KIOF</b> · 7/31 오픈</td><td class="n">5,000 [800~25,000]</td>
+      <td class="n">6,000 [1,333~27,000]<br><span style="color:var(--faint);font-size:.7rem">게이트 widen</span></td>
+      <td class="n mid">대기 중</td></tr>
+    <tr><td><b>TWS 팬미팅</b> · 8/22</td><td class="n">800 [350~1,600]</td>
+      <td class="n">1,000 [450~1,800]</td><td class="n mid">대기 중</td></tr>
+  </table>
+  <div class="grid g3" style="margin-top:1.1rem">
+    <div class="card"><span class="kick">감시 3중</span><h3>자동 채점</h3>
+      <p>주간 크론(3개 장부) + 일일 결과보고서 도착 체크 + 절차 문서(세션 승계).</p></div>
+    <div class="card"><span class="kick">다음 수</span><h3>반복 관측 축적</h3>
+      <p>오늘 확정된 병목. 크롤링으로 못 사고 전향 루프로만 쌓입니다.</p></div>
+    <div class="card"><span class="kick">비용</span><h3>월 $10 안쪽</h3>
+      <p>실험·인제스트는 구독 에이전트($0), 무인 크론만 API.</p></div>
+  </div>
+  <div class="callout"><b>오늘 하루의 요약</b> — 시스템이 자기 눈금을 교체했고(기존 평가 무효 판정),
+  네 개의 관측 창을 전부 실측해 병목을 특정했으며, 두 도메인의 비대칭을 확인했습니다.
+  음성 결과들은 전부 <code>data/encoder/README.md</code>에 영구 기록됐습니다 —
+  다음에 누군가 같은 길을 다시 파지 않도록.</div>
+</section>
+
+</div>
+<div id="bar"></div>
+<div id="num"></div>
+<div id="hint">← → 또는 스페이스 · F 전체화면</div>
+<script>
+  const S=[...document.querySelectorAll('.slide')];let i=0;
+  const bar=document.getElementById('bar'),num=document.getElementById('num');
+  function go(n){i=Math.max(0,Math.min(S.length-1,n));
+    S.forEach((s,k)=>s.classList.toggle('on',k===i));
+    bar.style.width=((i+1)/S.length*100)+'%';
+    num.textContent=String(i+1).padStart(2,'0')+' / '+String(S.length).padStart(2,'0');
+    S[i].scrollTop=0;}
+  addEventListener('keydown',e=>{
+    if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();go(i+1);}
+    else if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(i-1);}
+    else if(e.key==='Home')go(0); else if(e.key==='End')go(S.length-1);
+    else if(e.key.toLowerCase()==='f'){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();}});
+  let x0=null;addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
+  addEventListener('touchend',e=>{if(x0===null)return;const d=e.changedTouches[0].clientX-x0;
+    if(Math.abs(d)>60)go(i+(d<0?1:-1));x0=null;},{passive:true});
+  go(0);
+</script>
+</body>
+</html>

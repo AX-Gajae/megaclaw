@@ -1,0 +1,90 @@
+{
+ "market_record_id": "MKT-2023-0030",
+ "event_name": "로스트아크 X 노티드 월드 컬래버레이션(롯데월드몰)",
+ "brand": "스마일게이트/노티드",
+ "ip_or_collab": "로스트아크 X 노티드 월드",
+ "category": "game_webtoon",
+ "intervention": {
+  "concept_description": "인기 RPG 로스트아크와 노티드 월드(롯데월드몰 5~6층) 컬래버레이션 행사",
+  "experience_elements": [
+   "컬래버 테마 존",
+   "콜라보 메뉴·굿즈"
+  ],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "노티드 월드(롯데월드몰 5~6층)",
+  "venue_type": "mall",
+  "neighborhood": "잠실",
+  "city": "서울",
+  "period_from": "2023-07-29",
+  "period_to": "2023-08-13",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 16,
+    "weekend_share": 0.38,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 90000,
+  "visitors_period_days": 16,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "GFFG 집계 보도: '약 9만여명에 육박하는 방문객이 행사장을 찾은 것으로 집계됐다' - 노티드 월드 행사장 기준 16일 누적",
+  "visitors_source_quote": "잠실 노티드 월드에서 진행된 '모코코in노티드월드' 팝업 행사는 16일 간 수많은 고객들이 방문하며 성황을 이뤘으며, 약 9만여명에 육박하는 방문객이 행사장을 찾은 것으로 집계됐다. 특히 행사 오픈 첫날에 오픈런 인원 약 1,000여명이 몰려 긴 대기줄로 장사진을 이뤘다.",
+  "visitors_source_url": "https://www.onews.tv/news/articleView.html?idxno=176987",
+  "visitors_source_date": "2023-08-14",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "오픈 첫날 오픈런 약 1,000여 명, 긴 대기줄",
+   "sold_out": "모코코 멜론 크림 도넛 세트 행사 기간 연일 완판, 콜라보 굿즈 12종 오픈 당일 2만 개 이상 판매",
+   "reservation_fill": "도넛 세트 네이버 사전예약 일일 한정 판매",
+   "signal_quotes": [
+    "12종의 한정판 콜라보레이션 굿즈는 행사 오픈 당일에만 2만개 이상 판매되며 뜨거운 관심을 받았다.",
+    "'모코코 멜론 크림 도넛 세트'는 행사 기간 동안 준비된 수량이 모두 판매되는 등 연일 완판 행진을 기록했다.",
+    "개장 전날부터 1,000명이 넘는 고객이 대기 줄을 섰다. (우먼센스 2023-10-28, https://www.womansense.co.kr/news/articleView.html?idxno=54756)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "9만 명은 노티드 월드 6주년 리뉴얼 공간 전체 방문객 집계(GFFG)로 팝업존 단독 카운트와 구분될 수 있음. 첫날 오픈런 1,000명은 우먼센스·열린뉴스 교차 확인. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

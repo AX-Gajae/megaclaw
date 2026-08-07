@@ -1,0 +1,78 @@
+{
+  "market_record_id": "MKT-2024-0031",
+  "event_name": "하이큐!! 극장판 개봉 기념 팝업스토어 더현대 서울",
+  "brand": "현대백화점/하이큐!!",
+  "ip_or_collab": "하이큐!! (극장판 쓰레기장의 결전)",
+  "category": "game_webtoon",
+  "intervention": {
+    "concept_description": "극장판 하이큐!! 개봉 기념 더현대 서울 애니메이션 팝업 시리즈 1탄. 네이버 사전 예약제 운영",
+    "experience_elements": [
+      "굿즈 판매",
+      "포토존"
+    ],
+    "promotions": [
+      "한정 굿즈"
+    ],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "더현대 서울",
+    "venue_type": "department_store",
+    "neighborhood": "여의도",
+    "city": "서울",
+    "period_from": "2024-05-16",
+    "period_to": "2024-05-29",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 14,
+        "weekend_share": 0.29,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 14,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "현대백화점 집계 인용(예약 대기 인원): '하이큐는 네이버 사전 예약 오픈첫날 대기인원이 5000명 넘게 발생해 조기 마감됐고' - 실방문 총계 미보도",
+    "visitors_source_quote": "하이큐는 네이버 사전 예약 오픈첫날 대기인원이 5000명 넘게 발생해 조기 마감됐고, 원피스 팝업엔 일평균 3000명 넘는 현장 대기 고객이 몰렸다.",
+    "visitors_source_url": "https://www.m-i.kr/news/articleView.html?idxno=1134946",
+    "visitors_source_date": "2024-06-30",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "사전 예약 첫날 5000명 이상 대기 발생",
+      "sold_out": null,
+      "reservation_fill": "사전 예약 조기 마감",
+      "signal_quotes": [
+        "하이큐!!의 경우 네이버 사전 예약 오픈 첫날 5000명 이상의 대기 인원이 발생해 조기 마감됐고 (비즈워치 2024-06-27, https://news.bizwatch.co.kr/article/consumer/2024/06/27/0007)",
+        "하이큐!!의 경우 네이버 사전 예약 오픈 첫날 5000명 이상의 대기 인원이 발생해 조기 마감됐고, 원피스 팝업스토어에는 일평균 3000명 이상의 현장 대기 고객이 몰렸다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "더현대 서울 애니메이션 팝업 1탄(2024년 5월). 기간은 매체 보도(5/16~29) 기반이나 확인된 원문에 명시 없어 medium. | 병합 레코드: MKT-2024-0002 | [병합:MKT-2024-0002] 사전예약 첫날 대기 5000명+(숫자). 총 방문객·매출 미공개. 비즈워치 2024-06-27 보도 원문 확보",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

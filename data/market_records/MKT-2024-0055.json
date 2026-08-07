@@ -1,0 +1,93 @@
+{
+ "market_record_id": "MKT-2024-0055",
+ "event_name": "설화수 '자음생' 팝업스토어 @롯데 에비뉴엘 월드타워점",
+ "brand": "설화수 (아모레퍼시픽)",
+ "ip_or_collab": "자음생크림 리뉴얼 캠페인",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "자음생 라인 리뉴얼 기념 백화점 팝업. 제품 체험 및 브랜드 스토리 공간",
+  "experience_elements": [
+   "제품 체험존",
+   "브랜드 스토리 전시"
+  ],
+  "promotions": [
+   "현장 구매 혜택"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "롯데 에비뉴엘 월드타워점 1층",
+  "venue_type": "department_store",
+  "neighborhood": "잠실",
+  "city": "서울",
+  "period_from": "2024-08-29",
+  "period_to": "2024-09-08",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 11,
+    "weekend_share": 0.36,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 4000,
+  "visitors_period_days": 5,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "오픈 초반 5일간(8/29~9/3까지로 추정되는 보도 시점 기준) 누적. 전체 기간(11일) 총계는 미공개. 일평균 수치는 signal로만 기록(총계 환산 금지 원칙 준수)",
+  "visitors_source_quote": "지난 3일까지 5일간 방문한 고객만 4000여명",
+  "visitors_source_url": "https://www.etnews.com/20240905000035",
+  "visitors_source_date": "2024-09-05",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "일평균 평일 600명/주말 1000명 (브랜드 관계자 인용)",
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "오픈 이후 하루 평균 평일 기준 600여명, 주말 기준 1000여명이 이곳을 다녀갔다 (아시아타임즈 2024-09-06, https://www.asiatime.co.kr/article/20240906500337)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "E"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true,
+   "days_stated": 5,
+   "days_stored": 11,
+   "days_corrected": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "visitors_total=4000은 5일간 누적(전체 기간 아님). 기간 표기: 아시아타임즈/이데일리는 8/29~9/8, popga는 8/26~9/8로 상이. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

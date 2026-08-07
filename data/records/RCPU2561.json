@@ -1,0 +1,183 @@
+{
+ "record_id": "RCPU2561",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:주토피아",
+  "space_id": "unresolved:메가박스_4개점",
+  "client_party_id": null,
+  "brand_key": "주토피아",
+  "space_key": "multi_메가박스"
+ },
+ "intervention": {
+  "concept": "디즈니/픽사 영화 '주토피아' 관련 팝업스토어로 추정되며 메가박스 4개점에서 운영. 상세 컨셉·체험요소는 원문 문서 부재로 확인 불가.",
+  "brand_name": "주토피아",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": "메가박스 4개점",
+   "venue_type": "영화관",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-11-20",
+   "to": "2025-12-21",
+   "days": 32
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 4,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "메가박스 4개점 영화관 입점"
+  },
+  "derived": {
+   "duration": {
+    "days": 32,
+    "weekend_share": 0.31,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 42,
+    "holiday_until": 86,
+    "holiday_block_in": 0,
+    "nat_event_gap": 7,
+    "nat_event": "수능",
+    "doc_lag_days": 2,
+    "doc_dates_found": 4
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 228134.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2025-09-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 173.2
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-12, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-bVl6OAISpRf8CfFeaa3Tk60b2P9tuLd",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1-bVl6OAISpRf8CfFeaa3Tk60b2P9tuLd/view",
+   "title": "[스위트스팟] 주토피아2 X 메가박스 팝업 _ 공간기획안(251023).pptx"
+  },
+  {
+   "doc_id": "1-vhNxwAPmXnXNUclpPNu2DkK8LVa8AA_",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1-vhNxwAPmXnXNUclpPNu2DkK8LVa8AA_/view",
+   "title": "[스위트스팟] 주토피아2 X 3개점 팝업 _ 공간기획안(251210).pptx"
+  },
+  {
+   "doc_id": "17CtYD5I5SiIeZq9J9xRuSRGNQVhn1SX3",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/17CtYD5I5SiIeZq9J9xRuSRGNQVhn1SX3/view",
+   "title": "주토피아2 메가박스_결과보고서.pdf"
+  },
+  {
+   "doc_id": "19k2aXF8xjckAbe8Vt_oCwZ7JiMYAPUip",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/19k2aXF8xjckAbe8Vt_oCwZ7JiMYAPUip/view",
+   "title": "[스위트스팟] 주토피아2 X 3개점 팝업 _ 공간기획안(251210).pdf"
+  },
+  {
+   "doc_id": "1Cbg3bXyiVo0ocb18oY-ueu3fqE78BZJr",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Cbg3bXyiVo0ocb18oY-ueu3fqE78BZJr/view",
+   "title": "[스위트스팟] 주토피아 팝업스토어(메가박스) 타임라인.pdf"
+  },
+  {
+   "doc_id": "1Ef8ThtZNbUImwzuQdKccTOHsM2kc5dEG",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Ef8ThtZNbUImwzuQdKccTOHsM2kc5dEG/view",
+   "title": "1120증서(스위트스팟_주토피아4곳일괄) (1).pdf"
+  },
+  {
+   "doc_id": "1GgAEDiqW_DjrPlocOyNiP9gIxxUN7KsD",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1GgAEDiqW_DjrPlocOyNiP9gIxxUN7KsD/view",
+   "title": "[스위트스팟] 주토피아2 X 3개점 팝업 _ 공간기획안 3차(251215).pptx"
+  },
+  {
+   "doc_id": "1H4OCcw5qI1InZmbCFMkerGXV1J707kaP",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1H4OCcw5qI1InZmbCFMkerGXV1J707kaP/view",
+   "title": "클랩스_주토피아 최종견적서_1031.pdf"
+  },
+  {
+   "doc_id": "1Jgbs0aPAkvdma4ViXReQRhIQa8bok2iD",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Jgbs0aPAkvdma4ViXReQRhIQa8bok2iD/view",
+   "title": "팝업대행 표준 계약서_클랩스_모두싸인 날인본.pdf"
+  },
+  {
+   "doc_id": "1S_Uo_7MVpveSu6dupi7R7kw5wadTuLob",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1S_Uo_7MVpveSu6dupi7R7kw5wadTuLob/view",
+   "title": "[스위트스팟] 주토피아2 X 메가박스 팝업 _ 최종 공간기획안(251118).pptx"
+  },
+  {
+   "doc_id": "1TIVIQgbslDvf2mPy-bvx7EBLfVUCtXJx",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1TIVIQgbslDvf2mPy-bvx7EBLfVUCtXJx/view",
+   "title": "[스위트스팟] 주토피아2 X 3개점 팝업 _ 공간기획안 3차(251215).pdf"
+  },
+  {
+   "doc_id": "1dtF11xCoiMNRGic04sVdtxvdlqgNhjmj",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1dtF11xCoiMNRGic04sVdtxvdlqgNhjmj/view",
+   "title": "[스위트스팟] 주토피아2 X 메가박스 팝업 _ 공간기획안(251106).pdf"
+  },
+  {
+   "doc_id": "1fVZs6E3GG7YeA9s6Oi90RtLkFNTCxBP-",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1fVZs6E3GG7YeA9s6Oi90RtLkFNTCxBP-/view",
+   "title": "[스위트스팟] 주토피아2 X 메가박스 팝업 _ 공간기획안(251023).pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체 부재; client_name; 정확한 venue 위치 및 4개점 명칭; 면적; 수수료 구조; 컨셉·체험요소·프로모션; 방문객 및 매출 실측 데이터; 예상 방문객 수"
+ }
+}

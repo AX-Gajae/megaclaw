@@ -1,0 +1,607 @@
+{
+ "record_id": "RXPU2602",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:더_글렌그란트_The_Glen_Grant",
+  "space_id": "unresolved:스테이지엑스_성수_차봇_StageX_Seongsu_Chabot",
+  "client_party_id": "unresolved:캄파리코리아_Campari_Korea",
+  "brand_key": "더글렌그란트",
+  "space_key": "성수52"
+ },
+ "intervention": {
+  "concept": "더 글렌그란트 싱글몰트 위스키의 페어링 여정을 전시(이해)→경험(체감) 이중 구조로 구현한 팝업스토어. 외부 빅토리안 가든에서 아페롤 웰컴 샘플링(크로스 브랜딩), 1F 헤리티지 전시와 12/15/18YO 시향·시음, 2F 셰프 협업 페어링·바·VIP룸으로 구성. 티켓형(사전예약/워크인) 운영과 취향 테스트 알고리즘 기반 SKU 추천이 핵심.",
+  "brand_name": "The Glen Grant (더 글렌그란트)",
+  "experience_elements": [
+   "빅토리안 가든 조경 연출 및 포토존",
+   "아페롤 스피리츠 칵테일 현장 제조 샘플링(크로스 브랜딩)",
+   "TGG 브랜드 헤리티지 전시",
+   "12/15/18YO 아로마 시향 체험 존",
+   "취향 테스트(8문항) 기반 SKU 추천",
+   "페어링 마스터즈 셰프 인터뷰 영상 전시(시네마 존)",
+   "셰프 협업 페어링 메뉴 및 보틀 판매(더 글렌그란트 바)",
+   "마스터클래스 및 마스터 디스틸러 클래스",
+   "VIP 디너 코스",
+   "레이저 각인 서비스 및 커스텀 와펜/키링 커스터마이징",
+   "김우진 작가 조형물 작품 전시"
+  ],
+  "promotions": [
+   "네이버 사전예약 및 팝가 워크인 웨이팅",
+   "입장 고객 리플릿 및 시음쿠폰 3종 증정",
+   "마스터클래스 참가비 30,000원 현장 결제",
+   "SNS 후기 이벤트 커스텀 키링 증정",
+   "보틀/글랜캐런잔 구입 시 레이저 각인 서비스",
+   "GWP 보틀 캐리어(가죽/캔버스) 제공",
+   "Phase1 온트레이드 레스토랑 협업 프로모션(캐치테이블 기획전)"
+  ],
+  "staging_tags": [
+   "빅토리안 가든",
+   "증류소/숙성창고 컨셉",
+   "헤리티지 전시",
+   "시향/시음 부스",
+   "셰프 페어링",
+   "VIP룸",
+   "크로스 브랜딩(아페롤)",
+   "티켓형 팝업",
+   "2개층 1F/2F"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": 12,
+   "giveaway_qty": 4000,
+   "area_sqm": null,
+   "planned_operating_days": 10,
+   "throughput_units": 3,
+   "unit_minutes": 60,
+   "operating_hours_per_day": 9,
+   "staff_count": 21,
+   "experience_density": 4,
+   "goods_scale": 3,
+   "photo_zones": 2,
+   "collab_strength": 4,
+   "ip_awareness": 2,
+   "target_breadth": 1,
+   "entry_friction": 4,
+   "media_push": 3,
+   "season_fit": 3,
+   "venue_prominence": 3
+  },
+  "attr_meta": {
+   "evidence": "운영계획안 Phase2 회차표: 6/26(금)~7/5(일) 10일 전 열에 세션 편성(페어링 푸드 수급표도 10일 모두 픽업), 13:00~22:00 = 9h. 마스터클래스 '회차당 정원: 12명 한정 / 회차당 진행 시간 60분', 네이버 예약 '60분 간격 정시'(사전예약 슬롯은 시간당 10~20명). 상주 인력 배치: 운영사x3·프로모터x3·스탭x13·슈퍼바이저x2=21(각인기사 1 별도). 시향 체험 존 SKU별(12/15/18YO) 부스 3개=직렬 병목. 리플릿 4,000(입장 인원 대상 증정), 시음쿠폰 1,500. 브랜드요건의 '50㎡ 미만'은 임시 음식점 영업신고 기준이라 팝업 면적 아님.",
+   "confidence": "high",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "성동구 성수동",
+   "venue_name": "스테이지엑스 성수 차봇 (StageX Seongsu Chabot)",
+   "venue_type": "팝업 전용 공간 (1F/2F 2개층 + 외부)",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2026-06-26",
+   "to": "2026-07-05",
+   "days": 10
+  },
+  "season": "여름 (초여름/장마철, 7월 초 폭우 가능성)",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "Marketing Agency Agreement(2026-04-20 서명) Service Fees 총액 524,000,000원(VAT 별도) = Phase1 64,032,500 + Phase2 460,427,500. 지급: 체결 시 60%(318,332,500)·Phase2 완료(7월) 후 40%(206,127,500). 수수료: 콜라보 파트너십 5%, 기타 3자 비용 10%. 별도 venue: STAGE X Chabot 14일 렌탈 161,000,000(100% 선금). 견적 870.2M·POM 835.9M은 참고치. 1순위: 계약서 524.0M"
+  },
+  "brand_requirements": [
+   "팝업 내 위스키 판매를 위한 주류 영업신고 — 동일 장소 중복신고 불가로 50㎡ 미만 임시 일반음식점 영업신고(성동구청), 종료 후 폐업 조건",
+   "엠케이펍 주류 판매대행(중납) 통한 판매 처리",
+   "성인인증 필수(실물/모바일 신분증, 팝가 성인인증, 외국인 여권)",
+   "캄파리 직원 명함 제시 시 입장",
+   "Phase1 온트레이드: 제품 지원 불가·업장 사입, 캐치테이블 2주 업로드, 프로모션 매출 전액 업장 소유"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 32,
+    "holiday_until": 50,
+    "holiday_block_in": 0,
+    "nat_event_gap": 23,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 60,
+    "comp_within_500m_open": 3,
+    "comp_within_1000m_open": 3,
+    "matched_address": "서울 성동구 성수이로 97"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 200038308.0,
+    "pnl_pre_accounts": 8,
+    "pnl_pre_months": 3,
+    "pnl_pre_first": "2026-03-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 900,
+   "popup_zone_pass_rate": 0.85,
+   "host_traffic_est": 765.0,
+   "venue_scale_tier": 4,
+   "confidence": "low",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2026-06-26",
+    "visitors": 130,
+    "sales_krw": 304000
+   },
+   {
+    "date": "2026-06-27",
+    "visitors": 332,
+    "sales_krw": 3722000
+   },
+   {
+    "date": "2026-06-28",
+    "visitors": 387,
+    "sales_krw": 4921000
+   },
+   {
+    "date": "2026-06-29",
+    "visitors": 290,
+    "sales_krw": 3723000
+   },
+   {
+    "date": "2026-06-30",
+    "visitors": 279,
+    "sales_krw": 10128000
+   },
+   {
+    "date": "2026-07-01",
+    "visitors": 306,
+    "sales_krw": 8727000
+   },
+   {
+    "date": "2026-07-02",
+    "visitors": 259,
+    "sales_krw": 3322000
+   },
+   {
+    "date": "2026-07-03",
+    "visitors": 280,
+    "sales_krw": 12496000
+   },
+   {
+    "date": "2026-07-04",
+    "visitors": 517,
+    "sales_krw": 13383000
+   },
+   {
+    "date": "2026-07-05",
+    "visitors": 407,
+    "sales_krw": 8954000
+   }
+  ],
+  "totals": {
+   "visitors": 3187,
+   "sales_krw": 69680000,
+   "rev_mm_recognized": 161.9
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(총 방문객 3,187명(6/26~7/5), 예상치/KPI 3,320명 대비 95.9% 달성. 일자별 예상치(KPI): 6/27 450, 6/28 450, 6/29 304, 6/30 304, 7/1 304, 7/2 304, 7/3 304, 7/4 450, 7/5 450. 방문객 구성: 사전예약·워크인·마스터클래스·마스터디스틸러·VIP·미디어&프레스(6/26 38)·인플루언서(6/26 72)·기타. 총 매출 69,680,000원(소비자 POS) — 주류 40,180,000 + 페어링 메뉴 20,105,000 + 굿즈 2,615,000 + 마스터클래스 6,780,000. 주류+페어링이 전체 86.6%. 28일 이후 노쇼 감안 사전예약 슬롯 2배수 오픈. 취향테스트 15YO 추천 확률 약 60% 설계.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "partial",
+   "rule": "인식액 161.9 < 계약총액 870.2의 90% — 잔금 미인식 추정",
+   "contract_total_mm": 524.0,
+   "last_recognition_period": "2026-04"
+  },
+  "counting_method": "entry",
+  "counting_basis": "예약·워크인·VIP 등 방문객",
+  "label_trust": {
+   "grade": "A",
+   "flags": [],
+   "why": "일별 표가 기간의 100% 커버"
+  },
+  "label_scope": {
+   "label_from": "2026-06-26",
+   "label_to": "2026-07-05",
+   "label_active_days": 10,
+   "label_span_days": 10,
+   "label_contiguous": true,
+   "daily_sum": 3187,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-heA9-3GSelsaFpSb0aIOG81MXHu2gyE",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1-heA9-3GSelsaFpSb0aIOG81MXHu2gyE/view",
+   "title": ".DS_Store"
+  },
+  {
+   "doc_id": "10O4qShXNbY-i2hkEtNJH9qQmUQSEPmsg",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/10O4qShXNbY-i2hkEtNJH9qQmUQSEPmsg/view",
+   "title": "DSC00945.JPG"
+  },
+  {
+   "doc_id": "10YSXl-k5p6d-ceWKHkdnh4HDYZcVwUJM",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/10YSXl-k5p6d-ceWKHkdnh4HDYZcVwUJM/view",
+   "title": "DSC00979.JPG"
+  },
+  {
+   "doc_id": "13dwKo1y-lnZ_ZyRqAfO6ybYPAzh7kHFF",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/13dwKo1y-lnZ_ZyRqAfO6ybYPAzh7kHFF/view",
+   "title": "DSC00973.JPG"
+  },
+  {
+   "doc_id": "15FzAShI3ucyrUxlUhvTA80ViTryRd3nY",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/15FzAShI3ucyrUxlUhvTA80ViTryRd3nY/view",
+   "title": "DSC00970.JPG"
+  },
+  {
+   "doc_id": "1AODuUuzS_tU6LS25oOOxOBpnL7Zt4TDV",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1AODuUuzS_tU6LS25oOOxOBpnL7Zt4TDV/view",
+   "title": "DSC00975.JPG"
+  },
+  {
+   "doc_id": "1CSoz1ExpqZRsXzLTHaNimmkukP3n7vAd",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1CSoz1ExpqZRsXzLTHaNimmkukP3n7vAd/view",
+   "title": "DSC00953.JPG"
+  },
+  {
+   "doc_id": "1D52Tkd6PbgKlB6Z6qcGr6EXjrAzA3fFK",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1D52Tkd6PbgKlB6Z6qcGr6EXjrAzA3fFK/view",
+   "title": "DSC00937.JPG"
+  },
+  {
+   "doc_id": "1HSUmlUaaOhyrtKUqkZ8LV9lvw8VoMCsc",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1HSUmlUaaOhyrtKUqkZ8LV9lvw8VoMCsc/view",
+   "title": "DSC00949.JPG"
+  },
+  {
+   "doc_id": "1ICtuYjh54t6nHyw8GmeP5CeajlxEq9WH",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1ICtuYjh54t6nHyw8GmeP5CeajlxEq9WH/view",
+   "title": "DSC00968.JPG"
+  },
+  {
+   "doc_id": "1IpFMseaTtu16OYIo3Ne2EPbeHLa6i3SU",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1IpFMseaTtu16OYIo3Ne2EPbeHLa6i3SU/view",
+   "title": "DSC00983.JPG"
+  },
+  {
+   "doc_id": "1JT9bFm2te3pCs6WNhRYCTy9Fh4Hp75AD",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1JT9bFm2te3pCs6WNhRYCTy9Fh4Hp75AD/view",
+   "title": "DSC00985.JPG"
+  },
+  {
+   "doc_id": "1JYJRUfiJl_WqTCdrH2zHIgEVZRRJUvXB",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1JYJRUfiJl_WqTCdrH2zHIgEVZRRJUvXB/view",
+   "title": "DSC00940.JPG"
+  },
+  {
+   "doc_id": "1JjkNb4LSZb2wsdKbc7b1O18IheRTkH3r",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1JjkNb4LSZb2wsdKbc7b1O18IheRTkH3r/view",
+   "title": "DSC00952.JPG"
+  },
+  {
+   "doc_id": "1LZZrVzIuVN9PWvH2NyLrXxSt33TKjES8",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1LZZrVzIuVN9PWvH2NyLrXxSt33TKjES8/view",
+   "title": "DSC00981.JPG"
+  },
+  {
+   "doc_id": "1MhAvUipoXUV-Xlv4r207X9yOkItYK7Df",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1MhAvUipoXUV-Xlv4r207X9yOkItYK7Df/view",
+   "title": "DSC00961.JPG"
+  },
+  {
+   "doc_id": "1NRKBQ4saIx6h2OtirYQK5V56XHUjTQ-z",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1NRKBQ4saIx6h2OtirYQK5V56XHUjTQ-z/view",
+   "title": "(Sweetspot) Estimate_The Glen Grant 2026_fin.pdf"
+  },
+  {
+   "doc_id": "1NXivvSZIyVJVLT6pkEYTTfpm9YkWkftj",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1NXivvSZIyVJVLT6pkEYTTfpm9YkWkftj/view",
+   "title": "DSC00982.JPG"
+  },
+  {
+   "doc_id": "1P3KMm6pKCa3Vh4KNDdpBiRe0NtDmJLBh",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1P3KMm6pKCa3Vh4KNDdpBiRe0NtDmJLBh/view",
+   "title": "DSC00958.JPG"
+  },
+  {
+   "doc_id": "1QoQBR65AvIqbUwzCTLOCHsUPZXj5G3ci",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1QoQBR65AvIqbUwzCTLOCHsUPZXj5G3ci/view",
+   "title": "DSC00988.JPG"
+  },
+  {
+   "doc_id": "1QyWjLPZJUDPOvNUZ-aLpRtMV2IsqDoIK",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1QyWjLPZJUDPOvNUZ-aLpRtMV2IsqDoIK/view",
+   "title": "DSC00972.JPG"
+  },
+  {
+   "doc_id": "1R4k3SkCVVcHGVF6X504q8_jOXuZSbdRF",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1R4k3SkCVVcHGVF6X504q8_jOXuZSbdRF/view",
+   "title": "DSC00956.JPG"
+  },
+  {
+   "doc_id": "1TryXzuceKqivx9HNIloo49tp8n0mqgnm",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1TryXzuceKqivx9HNIloo49tp8n0mqgnm/view",
+   "title": "DSC00955.JPG"
+  },
+  {
+   "doc_id": "1Uq1ENuYDfXQLWfA-8VXJNQWgiRo70FEK",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Uq1ENuYDfXQLWfA-8VXJNQWgiRo70FEK/view",
+   "title": "DSC00943.JPG"
+  },
+  {
+   "doc_id": "1VS3K3h8fsfd_slRBJwhkuVc88k4aNhsR",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1VS3K3h8fsfd_slRBJwhkuVc88k4aNhsR/view",
+   "title": "DSC00964.JPG"
+  },
+  {
+   "doc_id": "1X9l-8rA5az9o_nypeBZQXaJmmJK6e-bP",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1X9l-8rA5az9o_nypeBZQXaJmmJK6e-bP/view",
+   "title": "DSC00966.JPG"
+  },
+  {
+   "doc_id": "1XTP-5havxNKx4vD7-d2SRWe-yVeMC2qk",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1XTP-5havxNKx4vD7-d2SRWe-yVeMC2qk/view",
+   "title": "DSC00974.JPG"
+  },
+  {
+   "doc_id": "1XqdziSIAklpssI_C90Ef1viOav_N9nfc",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1XqdziSIAklpssI_C90Ef1viOav_N9nfc/view",
+   "title": "DSC00984.JPG"
+  },
+  {
+   "doc_id": "1Z1oWP-IYbATST5WZjC0SZKamJNhkQb1N",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Z1oWP-IYbATST5WZjC0SZKamJNhkQb1N/view",
+   "title": "계약서_The GlenGrant 2026 Campaign.pdf"
+  },
+  {
+   "doc_id": "1_9eoSl29fAnAJ6MfJ9GAbvoI87T-HIvv",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1_9eoSl29fAnAJ6MfJ9GAbvoI87T-HIvv/view",
+   "title": "DSC00959.JPG"
+  },
+  {
+   "doc_id": "1_Ke21fAHK1P1vF9E6jG9eyWLbDprxKMs",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1_Ke21fAHK1P1vF9E6jG9eyWLbDprxKMs/view",
+   "title": "DSC00965.JPG"
+  },
+  {
+   "doc_id": "1cgZ0W54xkB9CPVpJTBX-aef0XKqhf5eB",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1cgZ0W54xkB9CPVpJTBX-aef0XKqhf5eB/view",
+   "title": "DSC00957.JPG"
+  },
+  {
+   "doc_id": "1cr_pDOYX03Nm5Wh7AWDb2IC0dh3xapML",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1cr_pDOYX03Nm5Wh7AWDb2IC0dh3xapML/view",
+   "title": "DSC00950.JPG"
+  },
+  {
+   "doc_id": "1czjCsLkBWFPPe7ZYTQTSNY9a9XdHRhL7",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1czjCsLkBWFPPe7ZYTQTSNY9a9XdHRhL7/view",
+   "title": "계약서_The GlenGrant 2026 Campaign.pdf"
+  },
+  {
+   "doc_id": "1fs6KcNk-Kl1tjV73Ky19KqvPX3Mlum-k",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1fs6KcNk-Kl1tjV73Ky19KqvPX3Mlum-k/view",
+   "title": "DSC00971.JPG"
+  },
+  {
+   "doc_id": "1giu2_I_1joA42hJTsLz3tm6AnT-kaeg3",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1giu2_I_1joA42hJTsLz3tm6AnT-kaeg3/view",
+   "title": "DSC00969.JPG"
+  },
+  {
+   "doc_id": "1jjQ9k8Ya2eFJ67hjCFD_O8moDfj2Dtt-",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1jjQ9k8Ya2eFJ67hjCFD_O8moDfj2Dtt-/view",
+   "title": "DSC00977.JPG"
+  },
+  {
+   "doc_id": "1lMdYFBKESF3KQvSD_rTlC4LD2_ii7257",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1lMdYFBKESF3KQvSD_rTlC4LD2_ii7257/view",
+   "title": "DSC00954.JPG"
+  },
+  {
+   "doc_id": "1mzWPn5sBDPF6i68qf-PUr3SjN1rnvoif",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1mzWPn5sBDPF6i68qf-PUr3SjN1rnvoif/view",
+   "title": "(Sweetspot) TGG 팝업스토어 운영계획안.pdf"
+  },
+  {
+   "doc_id": "1oT6i2oozgyoCajrzz4BhyAIZXISLB-20",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1oT6i2oozgyoCajrzz4BhyAIZXISLB-20/view",
+   "title": "DSC00986.JPG"
+  },
+  {
+   "doc_id": "1qmMY9D13rCCc4wZm8FB61GUIXdW8hwWH",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1qmMY9D13rCCc4wZm8FB61GUIXdW8hwWH/view",
+   "title": "스위트스팟(dm).lnk"
+  },
+  {
+   "doc_id": "1rCHUV9UNco91SnaOD4rPusidg1pyd2WI",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1rCHUV9UNco91SnaOD4rPusidg1pyd2WI/view",
+   "title": "DSC00976.JPG"
+  },
+  {
+   "doc_id": "1rPzPbh0XTiUgAV5IrR59QkNeLvsrdjof",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1rPzPbh0XTiUgAV5IrR59QkNeLvsrdjof/view",
+   "title": "DSC00939.JPG"
+  },
+  {
+   "doc_id": "1ramyn7l0I4JfUmgVfngJzd684sS_530m",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1ramyn7l0I4JfUmgVfngJzd684sS_530m/view",
+   "title": "DSC00947.JPG"
+  },
+  {
+   "doc_id": "1rv12GqCXWtlusWIdimORI_aiPsFxzKbV",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1rv12GqCXWtlusWIdimORI_aiPsFxzKbV/view",
+   "title": "DSC00936.JPG"
+  },
+  {
+   "doc_id": "1rvFOUel4T93uCDtGpovazXOWRR6L738G",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1rvFOUel4T93uCDtGpovazXOWRR6L738G/view",
+   "title": "DSC00946.JPG"
+  },
+  {
+   "doc_id": "1t5DTDbScPN8IB5eeDI7O1ZVVM8Z1DvgJ",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1t5DTDbScPN8IB5eeDI7O1ZVVM8Z1DvgJ/view",
+   "title": "(Sweetspot) The Glen Grant 2026 Experience 팝업스토어 결과 보고_0714.pdf"
+  },
+  {
+   "doc_id": "1tJBdC9w34gHX1jBggyovsvliKvlSSaZ7",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1tJBdC9w34gHX1jBggyovsvliKvlSSaZ7/view",
+   "title": "DSC00962.JPG"
+  },
+  {
+   "doc_id": "1tjweDL6SK9sC4eZLaQDYy8E8N9ggTWJP",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1tjweDL6SK9sC4eZLaQDYy8E8N9ggTWJP/view",
+   "title": "DSC00944.JPG"
+  },
+  {
+   "doc_id": "1txgE9YnFPLLuIKJOgsuiNnRGpaaaz_t9",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1txgE9YnFPLLuIKJOgsuiNnRGpaaaz_t9/view",
+   "title": "DSC00978.JPG"
+  },
+  {
+   "doc_id": "1tyyz-l8pR1NbHv1SGY6mpX76x4FXYpI3",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1tyyz-l8pR1NbHv1SGY6mpX76x4FXYpI3/view",
+   "title": "DSC00960.JPG"
+  },
+  {
+   "doc_id": "1v1WtqBbtWzN4R-2S0-IBudTvwXXSQLGg",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1v1WtqBbtWzN4R-2S0-IBudTvwXXSQLGg/view",
+   "title": "DSC00963.JPG"
+  },
+  {
+   "doc_id": "1vM7gY2LW93EnT_g8UG5RX8m2U11Xdkjb",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1vM7gY2LW93EnT_g8UG5RX8m2U11Xdkjb/view",
+   "title": "DSC00987.JPG"
+  },
+  {
+   "doc_id": "1vuvdzq56VgWiKV37obaen2Q0A1wRarUY",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1vuvdzq56VgWiKV37obaen2Q0A1wRarUY/view",
+   "title": "DSC00980.JPG"
+  },
+  {
+   "doc_id": "1wI9zRa9z22h-gZLowiEr8VW-8XYMBLT7",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1wI9zRa9z22h-gZLowiEr8VW-8XYMBLT7/view",
+   "title": "DSC00967.JPG"
+  },
+  {
+   "doc_id": "1wQWPCaDmGkFgSVqi4jA_ZL61zfi72xDj",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1wQWPCaDmGkFgSVqi4jA_ZL61zfi72xDj/view",
+   "title": "DSC00941.JPG"
+  },
+  {
+   "doc_id": "1ySoFEWoeTqcSuNDhg9h_JOOsi1ZH91y_",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1ySoFEWoeTqcSuNDhg9h_JOOsi1ZH91y_/view",
+   "title": "DSC00948.JPG"
+  },
+  {
+   "doc_id": "1y_uhSU0PYO1SZfrnFWLmlwBZ3jMLwkRr",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1y_uhSU0PYO1SZfrnFWLmlwBZ3jMLwkRr/view",
+   "title": "DSC00951.JPG"
+  },
+  {
+   "doc_id": "1z6Qi9Tps2dKfcWesoTOmb77tGHSPiLvK",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1z6Qi9Tps2dKfcWesoTOmb77tGHSPiLvK/view",
+   "title": "DSC00942.JPG"
+  },
+  {
+   "doc_id": "1zaMUsJrQnFXIZ3ao_fAzsow982ZOqab3",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1zaMUsJrQnFXIZ3ao_fAzsow982ZOqab3/view",
+   "title": "DSC00938.JPG"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 3건: (Sweetspot) TGG 팝업스토어 운영계획안.pd, (Sweetspot) Estimate_The Glen , (Sweetspot) The Glen Grant 202. 미확실: 면적(평) 정보 없음; Phase1 온트레이드 프로모션 정산 결과·캐치테이블 예약 실적 미포함(본 결과보고는 Phase2 팝업 매출만); 최종 손익·총계약금액 확정치(견적 870.2백만 vs POM 835.9백만 혼재); 차봇 venue rental 계약 상세·임대기간; foot_traffic_context 미기재; 견적서 Phase2 인건비 이하 항목 원문 절단됨 | rev_mm 정화(2026-07-27): 스팟 검수(7/24) 원문 대조 결과 반영 — 계약서 확정액>견적 우선순위 규칙"
+ }
+}

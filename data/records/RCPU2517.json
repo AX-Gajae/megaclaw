@@ -1,0 +1,267 @@
+{
+ "record_id": "RCPU2517",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:마른파이브",
+  "space_id": "unresolved:인천공항_면세점",
+  "client_party_id": null,
+  "brand_key": "마른파이브",
+  "space_key": "인천공항"
+ },
+ "intervention": {
+  "concept": "인천공항 면세점 내 마른파이브 팝업스토어. 세부 컨셉·체험요소는 원문 문서 미제공으로 확인 불가.",
+  "brand_name": "마른파이브",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": "인천",
+   "district": null,
+   "venue_name": "인천공항 면세점",
+   "venue_type": "airport_duty_free",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-04-02",
+   "to": "2025-05-01",
+   "days": 30
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "인천공항 면세점 내"
+  },
+  "derived": {
+   "duration": {
+    "days": 30,
+    "weekend_share": 0.27,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 30,
+    "holiday_until": 31,
+    "holiday_block_in": 0,
+    "nat_event_gap": 62,
+    "nat_event": null,
+    "doc_lag_days": 8,
+    "doc_dates_found": 7
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 8242127.0,
+    "pnl_pre_accounts": 5,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-03-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 26.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-05, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-06"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "14906Iz75-myg2hFXMaezTVKx9A98tdqd",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/14906Iz75-myg2hFXMaezTVKx9A98tdqd/view",
+   "title": "[세금계산서-그리드] 마른파이브 인천국제공항 면세점 팝업건 선금(50%).JPG"
+  },
+  {
+   "doc_id": "1BGJqHCJpv0ssQyqmD7k_yhICYjw1QnpS",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1BGJqHCJpv0ssQyqmD7k_yhICYjw1QnpS/view",
+   "title": "스위트스팟_마른파이브 팝업스토어 면세점 견적서_0318.pdf"
+  },
+  {
+   "doc_id": "1CSE8XMZFyZGrVt4TKovxNqifOFxnYfck",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CSE8XMZFyZGrVt4TKovxNqifOFxnYfck/view",
+   "title": "견적서_면세점 마른파이브 철수건_마른파이브.pdf"
+  },
+  {
+   "doc_id": "1DvjeGF8DQ053sdNUwnxdooEijAw3fqxB",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DvjeGF8DQ053sdNUwnxdooEijAw3fqxB/view",
+   "title": "[세금계산서-진성아크릴] 마른파이브 면세점 팝업 소도구제작건.JPG"
+  },
+  {
+   "doc_id": "1GnLZNCIeg41oj-l0kwBeiEP-UTlKH4NY",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1GnLZNCIeg41oj-l0kwBeiEP-UTlKH4NY/view",
+   "title": "잔금(50%).png"
+  },
+  {
+   "doc_id": "1GysB69v2BidmS8CPFmGB9lt8zrqIweP2",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1GysB69v2BidmS8CPFmGB9lt8zrqIweP2/view",
+   "title": "마른파이브 인천공항 신세계면세점 업무계약서_250321.pdf"
+  },
+  {
+   "doc_id": "1Jsp-Hub9TzpCCO1SVVQsGfi5IDcKRvAt",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Jsp-Hub9TzpCCO1SVVQsGfi5IDcKRvAt/view",
+   "title": "견적서_마른파이브 인천공항 면세점 팝업스토어 견적서_250318.xlsx"
+  },
+  {
+   "doc_id": "1McmgzEORVrzsAsmEhX4s9ftZhBAYUEjF",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1McmgzEORVrzsAsmEhX4s9ftZhBAYUEjF/view",
+   "title": "★시공계약서_마른파이브 인천공항 면세점 팝업스토어_250319.docx"
+  },
+  {
+   "doc_id": "1UJYmIaUB3FhZfR4vIJZMwvW808w-zDH4",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1UJYmIaUB3FhZfR4vIJZMwvW808w-zDH4/view",
+   "title": "★ 마른파이브 인천공항 면세점 팝업스토어 업무계약서(날인완료).pdf"
+  },
+  {
+   "doc_id": "1V7HNhotG2mJYsoU3wU4Dv14Hq6KokSEN",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1V7HNhotG2mJYsoU3wU4Dv14Hq6KokSEN/view",
+   "title": "아크릴소도구제작건.png"
+  },
+  {
+   "doc_id": "1_AFzzvU0speILj2ZA8Z3Of5ElnguRKnc",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1_AFzzvU0speILj2ZA8Z3Of5ElnguRKnc/view",
+   "title": "(주)마른파이브 사업자등록증.jpg"
+  },
+  {
+   "doc_id": "1erDCZdp8Xqa27TQo7ruLcCI-VhNmfQN8",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1erDCZdp8Xqa27TQo7ruLcCI-VhNmfQN8/view",
+   "title": "마른파이브 인천공항 면세점 팝업스토어 추가제작건.xlsx"
+  },
+  {
+   "doc_id": "1gIGs0iPLR4oCm8JQN3gymHRVKcE34QJq",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1gIGs0iPLR4oCm8JQN3gymHRVKcE34QJq/view",
+   "title": "견적서_면세점 마른파이브 철수건_마른파이브.xlsx"
+  },
+  {
+   "doc_id": "1jhVCQSHiO6QOchFFYBZ2VwAvWsKivI10",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1jhVCQSHiO6QOchFFYBZ2VwAvWsKivI10/view",
+   "title": "[견적서-진성아크릴] 마른파이브 면세점 팝업 소도구제작건.jpg"
+  },
+  {
+   "doc_id": "1jy22rPpEiLAtUz3ymPQkdrcSY63jM-Ko",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1jy22rPpEiLAtUz3ymPQkdrcSY63jM-Ko/view",
+   "title": "세금계산서_그리드_마른파이브 인천공항 면세점 철수건.JPG"
+  },
+  {
+   "doc_id": "1k3JfMYQbthT50QLIzQex-DM-47Gsg9qm",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1k3JfMYQbthT50QLIzQex-DM-47Gsg9qm/view",
+   "title": "견적서_그리드_마른파이브 인천공항 면세점 철수건.xlsx"
+  },
+  {
+   "doc_id": "1nzCVii_JETt8LJPyD5GwKdMYZrv1QsXI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1nzCVii_JETt8LJPyD5GwKdMYZrv1QsXI/view",
+   "title": "[세금계산서-그리드] 마른파이브 인천국제공항 면세점 팝업건 잔금(50%).JPG"
+  },
+  {
+   "doc_id": "1oLpDaSG480MP8h5HLC0hxdsoLQxtZIhR",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1oLpDaSG480MP8h5HLC0hxdsoLQxtZIhR/view",
+   "title": "마른파이브 인천공항 면세점 팝업스토어 아크릴소도구 제작건.pdf"
+  },
+  {
+   "doc_id": "1rN7mF1fUfOlHxYvbFQush4fKJsAPZLjS",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1rN7mF1fUfOlHxYvbFQush4fKJsAPZLjS/view",
+   "title": "★업무 계약서_마른파이브 인천공항 면세점 팝업스토어_250319.doc"
+  },
+  {
+   "doc_id": "1rg2FHiFDeS64n5uhEBzDTTvvQUvELyMd",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1rg2FHiFDeS64n5uhEBzDTTvvQUvELyMd/view",
+   "title": "★업무 계약서_마른파이브 인천공항 면세점 팝업스토어_250319.doc"
+  },
+  {
+   "doc_id": "1tsLoBp77f4wO_E0bfftarpHDADX2TK55",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1tsLoBp77f4wO_E0bfftarpHDADX2TK55/view",
+   "title": "카운터추가제작건.png"
+  },
+  {
+   "doc_id": "1uBHW0GTtgCvQx7fHly1tPpV7E4DDBe3k",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1uBHW0GTtgCvQx7fHly1tPpV7E4DDBe3k/view",
+   "title": "★마른파이브 실비정리.xlsx"
+  },
+  {
+   "doc_id": "1uPr2oWBqobdQrQTAWTrFyaY7qQPaq93z",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1uPr2oWBqobdQrQTAWTrFyaY7qQPaq93z/view",
+   "title": "[견적서-그리드] 마른파이브 카운터 추가제작건_250325.xlsx"
+  },
+  {
+   "doc_id": "1ucm8vJQRxSNvaNqCFKojqfCQfQjOy6jL",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ucm8vJQRxSNvaNqCFKojqfCQfQjOy6jL/view",
+   "title": "견적서-그리드 마른파이브 인천국제공항 면세점 팝업스토어_250318.xlsx"
+  },
+  {
+   "doc_id": "1v-iEQzH3RjryXkXwf34qHJd_hpB8eYg6",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1v-iEQzH3RjryXkXwf34qHJd_hpB8eYg6/view",
+   "title": "시공계약서_마른파이브 인천공항 면세점 팝업스토어_25031_날인완료.pdf"
+  },
+  {
+   "doc_id": "1vBvngKjR_rX_CmPaMHdZs4eP5IkIsodj",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1vBvngKjR_rX_CmPaMHdZs4eP5IkIsodj/view",
+   "title": "[세금계산서-그리드] 마른파이브 카운터추가제작건.JPG"
+  },
+  {
+   "doc_id": "1xrboy4YfxQyuTGTlcpJTd76-NM68nwMG",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1xrboy4YfxQyuTGTlcpJTd76-NM68nwMG/view",
+   "title": "마른파이브 결과보고서.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서/기획서/견적서/결과보고서) 미제공; client_name 불명; 컨셉·체험요소·프로모션·연출태그 전체; 면적/수수료구조/브랜드 요구사항; 방문자수 및 매출 실측치 전무; counting_method 판정 불가"
+ }
+}

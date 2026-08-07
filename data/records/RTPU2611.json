@@ -1,0 +1,151 @@
+{
+ "record_id": "RTPU2611",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:원피스_One_Piece_IP",
+  "space_id": "unresolved:청주_커넥트현대_청주점",
+  "client_party_id": "unresolved:주식회사_현대백화점",
+  "brand_key": "원피스",
+  "space_key": "커넥트현대_청주점"
+ },
+ "intervention": {
+  "concept": "원피스(One Piece) IP를 활용한 커넥트현대 청주점 10일 버짓형 IP 팝업스토어. 굿즈 판매를 중심으로 키비주얼·포토존·상품 조닝으로 공간을 연출했다. 게임존은 제외하고 진행되었다.",
+  "brand_name": "원피스 (One Piece)",
+  "experience_elements": [
+   "외벽 1면 정면 백월 마감(20m)",
+   "기둥 랩핑 및 포맥스 제작/부착",
+   "천장 행잉 모빌(재사용)",
+   "10인 등신대 포토존(재사용)",
+   "현상금 수배 포토존(재사용)",
+   "판매 평매 및 매대 구성/VMD/조닝",
+   "포스기 등 운영 물품"
+  ],
+  "promotions": [
+   "판매촉진 제품 운영(원피스 굿즈 판매)"
+  ],
+  "staging_tags": [
+   "키비주얼",
+   "포토존",
+   "등신대",
+   "현상금수배",
+   "VMD조닝",
+   "굿즈판매"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "청주시",
+   "district": "흥덕구",
+   "venue_name": "커넥트현대 청주점",
+   "venue_type": "백화점(터미널복합/청주센트럴시티)",
+   "foot_traffic_context": "충북 청주시 흥덕구 2순환로 1225, 청주센트럴시티(터미널복합) 내"
+  },
+  "area_pyeong": 35,
+  "period": {
+   "from": "2026-02-06",
+   "to": "2026-02-15",
+   "days": 10
+  },
+  "season": "겨울(2월)",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "본 계약(청주+송도) 총 계약금액 158,000,000원(VAT별도). 청주 팝업 배분액 80,700,000원(VAT별도, 견적 총계와 일치): 선금33% 26,631,000원(2026-02-19), 중도금33% 26,631,000원(2026-03-16), 잔금34% 27,438,000원(2026-04-16). 지급처 (주)현대백화점. 견적 대행수수료는 소계의 10%(정가항목/실비정산 진행비 제외), 일반관리비+대행수수료 6,884,500원. 상품 손망실 loss는 판매금액의 5% 초과분에 대해 실행사가 원가 현금 배상."
+  },
+  "brand_requirements": [
+   "반입 물품 방염처리 및 방염 필증/시험성적서 백화점 관리실 제출",
+   "물품 제작 전 의뢰사(현대백화점) 시안 승인 및 감수 필수",
+   "안전관리책임자 지정(오동원, 스위트스팟 과장)",
+   "납품물품 지식재산권 발주자(의뢰사) 귀속",
+   "의뢰사 사전 서면 승인 없이 자료 복제/유출 금지"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "청주센트럴시티(터미널복합) 내"
+  },
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 7,
+    "months_since_last": 3.5,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 120,
+    "holiday_until": 8,
+    "holiday_block_in": 2,
+    "nat_event_gap": 85,
+    "nat_event": null,
+    "doc_lag_days": 4,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 826257.0,
+    "pnl_pre_accounts": 7,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2026-01-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 145.8
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서에 02.06~02.15 일자별 총 매출액/결제 건수/팝업 객단가 그래프가 존재하나 원문 텍스트가 인코딩 깨짐으로 수치 판독 불가(축 상한: 매출 20,000,000원, 결제건수 600건, 객단가 40,000원 수준). 아마란스 P&L상 상품매출(굿즈 POS 성격 추정) 69,398,271원, 서비스매출_팝업(대행용역) 76,446,316원이나 이는 회계 인식치로 일자별 POS 실측 아님. 방문객(visitors) 수치는 문서에 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식액 145.8 ≈ 계약총액 158.0 (±10%)",
+   "contract_total_mm": 158.0,
+   "last_recognition_period": "2026-04"
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "1WxMOnE6WKUl_He8DwMex69GeIjzawTNT",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1WxMOnE6WKUl_He8DwMex69GeIjzawTNT/view",
+   "title": "[스위트스팟] 현대백화점_청주_송도_원피스팝업스토어_운영대행계약서_0127(최종).pdf"
+  },
+  {
+   "doc_id": "1dp6KzJk719cwUFxWvo6a2GZ5rTV5XBYL",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1dp6KzJk719cwUFxWvo6a2GZ5rTV5XBYL/view",
+   "title": "(최종)Sweetspot_현대아울렛_2026원피스팝업_견적서_0102.pdf"
+  },
+  {
+   "doc_id": "1keezsAZ_sUlTq31l8XavGRtUi3TYtm5h",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1keezsAZ_sUlTq31l8XavGRtUi3TYtm5h/view",
+   "title": "[sweetspot] 원피스 청주 커넥트현대 팝업스토어 운영안_260202_제안서.pdf"
+  },
+  {
+   "doc_id": "1zPcUWcxknNwJLF0JXZb3LLuz1CRptNqK",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1zPcUWcxknNwJLF0JXZb3LLuz1CRptNqK/view",
+   "title": "[sweetspot] 원피스 현대아울렛 팝업스토어_청주_결과보고서_260220_결과보고서.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 4건: [스위트스팟] 현대백화점_청주_송도_원피스팝업스토어_운, [sweetspot] 원피스 청주 커네, (최종)Sweetspot_현대아울렛_2026원피스팝업_, [sweetspot] 원피스 현대아울. 미확실: 결과보고서 일자별 매출/결제건수/객단가 실측값(원문 인코딩 깨짐으로 판독 불가); 현장 방문객수 데이터 부재; 실제 발주사/클라이언트가 현대백화점인지 vs 노션상 디벨니티 추정 상충(계약서상 의뢰사는 (주)현대백화점); 원피스 IP 라이선서 정보 없음; POS 소비자 매출 총액 확정 불가(회계 인식치만 존재); 제안서 원문 인코딩 깨짐으로 프로모션/체험요소 세부 일부 불확실"
+ }
+}

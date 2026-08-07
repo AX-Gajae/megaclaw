@@ -1,0 +1,65 @@
+{
+  "market_record_id": "MKT-2024-0005",
+  "event_name": "블루보틀커피 갤러리아 광교 팝업스토어",
+  "brand": "블루보틀커피 코리아",
+  "ip_or_collab": "갤러리아백화점 광교점 지하 1층 '지랩(G.LAB)' 팝업존, 드립 커피 체험",
+  "category": "fnb",
+  "intervention": {
+    "concept_description": "백화점 식품관 내 팝업존에 블루보틀 드립 커피 매장 운영(수원·광교 지역 F&B 강화 전략)",
+    "experience_elements": [
+      "드립 방식 커피 주문·시음",
+      "블루보틀 굿즈·원두 판매"
+    ],
+    "promotions": [],
+    "is_free_entry": null,
+    "reservation_required": false
+  },
+  "conditions": {
+    "venue": "갤러리아백화점 광교점 지하 1층",
+    "venue_type": "department_store",
+    "neighborhood": "광교",
+    "city": "경기 수원",
+    "period_from": "2024-02-01",
+    "period_to": null,
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "갤러리아 광교점이 밝힌 오픈 당일 수치(400~500명). 총 누적 미공개 → visitors_total null",
+    "visitors_source_quote": "광교점에 따르면 팝업 오픈 당일인 1일 400~500명이 블루보틀을 찾았다. 제조 시간이 길어 타 커피 브랜드보다 회전률이 떨어지는 것을 감안하면 오픈 첫 날부터 많은 이들이 다녀간 셈이다.",
+    "visitors_source_url": "https://www.kyeongin.com/article/1676135",
+    "visitors_source_date": "2024-02-07",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "커피 주문 후 약 10분 대기(고객 인터뷰)",
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "커피를 주문하고 10분 가량 기다리는 중인데, 충분히 기다릴 만하다.(고객 인터뷰, 경인일보)"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "오픈 첫날 수치만 존재하는 약한 레코드. 2022년 앨리웨이 광교 팝업에 이은 두 번째 수원권 팝업 | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": false,
+  "exclude_reason": "기간 미상",
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

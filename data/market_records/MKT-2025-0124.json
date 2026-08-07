@@ -1,0 +1,77 @@
+{
+  "market_record_id": "MKT-2025-0124",
+  "event_name": "산리오 스위트 홀리데이 팝업(성수)",
+  "brand": "산리오코리아",
+  "ip_or_collab": "산리오캐릭터즈",
+  "category": "character",
+  "intervention": {
+    "concept_description": "산리오 홀리데이 시즌 팝업. 성수이로7길 28에서 2025-11-29~12-28 운영. 사전 예약+현장 웨이팅 병행.",
+    "experience_elements": [
+      "캐릭터 굿즈 판매",
+      "포토존"
+    ],
+    "promotions": [
+      "사전 예약"
+    ],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "성수이로7길 28(서울 성동구)",
+    "venue_type": "street_standalone",
+    "neighborhood": "성수",
+    "city": "서울",
+    "period_from": "2025-11-29",
+    "period_to": "2025-12-28",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 30,
+        "weekend_share": 0.33,
+        "holiday_days": 1
+      },
+      "ip_history": {
+        "prior_count": 3,
+        "months_since_last": 2.3,
+        "first_edition": false
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "unknown",
+    "counting_basis_note": "방문객 총계 미공개(현장 웨이팅 수치는 방문 후기 블로그 기준)",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "화요일 낮 12시 기준 대기 303팀, 약 2시간 20분 대기 후 입장",
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "화요일 낮 12시 기준 현장 웨이팅이 303팀이었고 약 2시간 20분을 기다려 입장했다. (방문 후기 블로그 2025-12-17)"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "low",
+  "notes": "수치 출처가 개인 방문 후기 블로그(mayao3oa.tistory.com/145)라 정성 신호로만 활용 권장 | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

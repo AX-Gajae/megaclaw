@@ -1,0 +1,43 @@
+{
+ "slots": [
+  "target_breadth",
+  "goods_scale"
+ ],
+ "n": {
+  "팝업": 75,
+  "아이돌": 63,
+  "게임": 482
+ },
+ "결과": {
+  "팝업": {
+   "const": 0.7596,
+   "inner_ridge": 0.6898,
+   "best_pair": 0.6954,
+   "mean_pair": 0.7038,
+   "foundation": 0.7357,
+   "vs_const": -0.0238,
+   "vs_mean_pair": 0.0319,
+   "p": 0.135
+  },
+  "아이돌": {
+   "const": 0.6474,
+   "inner_ridge": 0.5837,
+   "best_pair": 0.5804,
+   "mean_pair": 0.5832,
+   "foundation": 0.6166,
+   "vs_const": -0.0308,
+   "vs_mean_pair": 0.0335,
+   "p": 0.04
+  },
+  "게임": {
+   "const": 0.7701,
+   "inner_ridge": 0.7313,
+   "best_pair": 0.7349,
+   "mean_pair": 0.7381,
+   "foundation": 0.7501,
+   "vs_const": -0.02,
+   "vs_mean_pair": 0.012,
+   "p": 0.11
+  }
+ }
+}

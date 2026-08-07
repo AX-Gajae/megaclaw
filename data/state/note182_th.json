@@ -1,0 +1,108 @@
+{
+ "현행": {
+  "F18_bagboost": 0.449,
+  "F6_directpool": 0.3709
+ },
+ "문턱-0.05": {
+  "끈수": 13,
+  "축": [
+   "만화·target_breadth",
+   "만화·media_push",
+   "만화·goods_scale",
+   "만화·wiki_level",
+   "만화·wiki_volatility",
+   "만화·wiki_peak_ratio",
+   "모바일·trend_momentum",
+   "세계애니·target_breadth",
+   "세계애니·media_push",
+   "웹툰·target_breadth",
+   "웹툰·goods_scale",
+   "펀딩·entry_friction",
+   "펀딩·cal_dow_cos"
+  ],
+  "F18_bagboost": 0.4565,
+  "F6_directpool": 0.371,
+  "짝검정": {
+   "F18_bagboost": {
+    "차": 0.0084,
+    "sd": 0.0104,
+    "t": 0.81
+   },
+   "F6_directpool": {
+    "차": 0.001,
+    "sd": 0.0133,
+    "t": 0.07
+   }
+  }
+ },
+ "문턱-0.1": {
+  "끈수": 7,
+  "축": [
+   "만화·goods_scale",
+   "만화·wiki_level",
+   "만화·wiki_volatility",
+   "만화·wiki_peak_ratio",
+   "웹툰·target_breadth",
+   "웹툰·goods_scale",
+   "펀딩·cal_dow_cos"
+  ],
+  "F18_bagboost": 0.4571,
+  "F6_directpool": 0.3953,
+  "짝검정": {
+   "F18_bagboost": {
+    "차": 0.0084,
+    "sd": 0.0077,
+    "t": 1.09
+   },
+   "F6_directpool": {
+    "차": 0.0244,
+    "sd": 0.0085,
+    "t": 2.86
+   }
+  }
+ },
+ "문턱-0.15": {
+  "끈수": 5,
+  "축": [
+   "만화·goods_scale",
+   "만화·wiki_level",
+   "만화·wiki_volatility",
+   "만화·wiki_peak_ratio",
+   "웹툰·target_breadth"
+  ],
+  "F18_bagboost": 0.464,
+  "F6_directpool": 0.3409,
+  "짝검정": {
+   "F18_bagboost": {
+    "차": 0.0148,
+    "sd": 0.0049,
+    "t": 3.05
+   },
+   "F6_directpool": {
+    "차": -0.0299,
+    "sd": 0.0075,
+    "t": -3.99
+   }
+  }
+ },
+ "문턱-0.2": {
+  "끈수": 1,
+  "축": [
+   "만화·goods_scale"
+  ],
+  "F18_bagboost": 0.452,
+  "F6_directpool": 0.3712,
+  "짝검정": {
+   "F18_bagboost": {
+    "차": 0.003,
+    "sd": 0.0017,
+    "t": 1.79
+   },
+   "F6_directpool": {
+    "차": 0.0004,
+    "sd": 0.0006,
+    "t": 0.59
+   }
+  }
+ }
+}

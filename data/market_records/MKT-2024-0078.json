@@ -1,0 +1,74 @@
+{
+  "market_record_id": "MKT-2024-0078",
+  "event_name": "울산 HD 공식 팝업스토어(더현대 서울 3층)",
+  "brand": "울산 HD FC×현대백화점",
+  "ip_or_collab": "울산 HD(2005 시즌 우승 레트로 콘셉트)",
+  "category": "entertainment",
+  "intervention": {
+    "concept_description": "K리그1 울산 HD의 2005 시즌 우승 콘셉트 서울 공식 팝업. 두 번째 레트로 유니폼 최초 공개, 감독·선수 현장 방문",
+    "experience_elements": [
+      "굿즈 판매(유니폼·머플러·모자·키링)",
+      "레트로 유니폼 공개",
+      "감독·선수 팬 소통"
+    ],
+    "promotions": [],
+    "is_free_entry": null,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "더현대 서울 3층",
+    "venue_type": "department_store",
+    "neighborhood": "여의도",
+    "city": "서울",
+    "period_from": "2024-10-12",
+    "period_to": "2024-10-20",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 9,
+        "weekend_share": 0.44,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 9,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "울산 구단 설명 인용 '지난 15일까지 팝업 스토어에는 1200여 명이 방문한 것으로 전해졌다. 특히 12~13일 1억원에 가까운 매출을 올렸다는 게 울산 구단의 설명이다' — 4일 기준 부분 수치(규칙 5)",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "지난 15일까지 팝업 스토어에는 1200여 명이 방문한 것으로 전해졌다.",
+        "특히 12~13일 1억원에 가까운 매출을 올렸다는 게 울산 구단의 설명이다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "울산일보 2024-10-17. 방문 1200명(12~15일)·매출 약 1억(12~13일) 모두 부분 기간 수치로 신호 처리 | 병합 레코드: ",
+  "outcome_source_url": "http://www.ulsanilbo.co.kr/news/articleView.html?idxno=86891",
+  "outcome_source_date": "2024-10-17",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

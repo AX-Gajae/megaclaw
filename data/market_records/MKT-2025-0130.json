@@ -1,0 +1,79 @@
+{
+  "market_record_id": "MKT-2025-0130",
+  "event_name": "애슐리퀸즈 '하우스 오브 애슐리(House of Ashley)' 성수 팝업스토어",
+  "brand": "애슐리퀸즈(이랜드이츠)",
+  "ip_or_collab": "애슐리 브랜드 최초 팝업, 3대 모녀 세계관(이랜드뮤지엄 아카이브 소장품), 오세득·박준우 셰프 협업",
+  "category": "fnb",
+  "intervention": {
+    "concept_description": "'3대 모녀의 집' 세계관 전시+프라이빗 디저트 뷔페 결합 팝업. 헤리티지 룸(무료 전시)·애슐리 테이블(카페)·디저트 뮤지엄(예약제 뷔페) 3개 공간",
+    "experience_elements": [
+      "디저트 뮤지엄(1인 12,900원, 약 10종 무제한, 일 50팀 한정)",
+      "생체리 무제한 바스켓",
+      "셰프 협업 한정 메뉴(한우 비프웰링턴 버거 등)",
+      "아메리칸 클래식 소장품 전시·스탬프 엽서·포토존"
+    ],
+    "promotions": [
+      "얼리버드 방문객 팝업 한정 굿즈 1인 1개 증정"
+    ],
+    "is_free_entry": false,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "성수낙낙 B1F(서울 성동구 아차산로17길 48)",
+    "venue_type": "mall",
+    "neighborhood": "성수동",
+    "city": "서울",
+    "period_from": "2025-12-20",
+    "period_to": "2026-01-25",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 37,
+        "weekend_share": 0.32,
+        "holiday_days": 2
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 37,
+    "counting_basis": "unknown",
+    "counting_basis_note": "총 방문객 수치 미공개. 예약 경쟁 수치(1차 예약 즉시 매진·예약 시스템 마비·2030 여성 58%)만 보도",
+    "visitors_source_quote": "이랜드이츠가 운영하는 애슐리퀸즈도 오는 20일부터 팝업을 열고 프라이빗 디저트 뷔페 '디저트 뮤지엄'을 선보이는데 1차 예약이 열리자마자 모든 좌석이 매진됐다. 동시 접속자가 몰리며 예약 시스템이 한때 마비되기도 했다. 이랜드이츠에 따르면 1차 예약자 중 2030세대 여성 고객 비율은 58%에 달한다.",
+    "visitors_source_url": "https://www.hankyung.com/article/2025121662737",
+    "visitors_source_date": "2025-12-17",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": "일 50팀 한정 디저트 뮤지엄, 1차 예약 오픈 직후 전 좌석 매진, 예약 시스템 일시 마비(얼리버드 12/3 포함 4차례 예약 오픈)",
+      "signal_quotes": [
+        "일 50팀 한정 '디저트 뮤지엄' 1차 예약 오픈 직후 매진... 생체리 무제한 12,900원(이랜드 매거진 2025-12-05)"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "방문객 총계 없이 예약 수급 수치만 존재. 팝업 종료 후 동일 공간에 애슐리 성수점(2026-03) 오픈 예정이던 테스트베드 성격 | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,76 @@
+{
+  "market_record_id": "MKT-2024-0007",
+  "event_name": "헤브블루(치페·모브닝) 팝업스토어(더현대 서울 아이코닉존)",
+  "brand": "헤브블루(코스멘토코리아)",
+  "ip_or_collab": null,
+  "category": "beauty",
+  "intervention": {
+    "concept_description": "클린 뷰티 브랜드 3개(헤브블루·치페·모브닝) 첫 팝업. 팝업 한정 신제품·전제품 판매, 구매 고객 선물·이벤트",
+    "experience_elements": [
+      "신제품·전제품 판매",
+      "이벤트 참여"
+    ],
+    "promotions": [
+      "구매 고객 선물",
+      "할인 쿠폰 제공"
+    ],
+    "is_free_entry": null,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "더현대 서울 아이코닉존",
+    "venue_type": "department_store",
+    "neighborhood": "여의도",
+    "city": "서울",
+    "period_from": "2024-02-01",
+    "period_to": "2024-02-07",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 7,
+        "weekend_share": 0.29,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 7,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "브랜드 측 결과 인용 '더현대 단독 팝업 스토어 매출 1억 3천을 달성하는 놀라운 결과를 보여주었다'",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": 130000000,
+    "sales_source_quote": "헤브블루 ㈜코스멘토 코리아는 더현대 단독 팝업 스토어 매출 1억 3천을 달성하는 놀라운 결과를 보여주었다.",
+    "sales_source_url": "https://www.enetnews.co.kr/news/articleView.html?idxno=22285",
+    "sales_source_url_2": null,
+    "sales_source_date": "2024-03-27",
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": true,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "첫 팝업 스토어였으나 폭발적인 반응으로 입소문을 타며 초도 물량이 완판됐다는 설명이다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "기간 원문 '2월 1일부터 2월 7일까지 6일간'(1일 휴무 추정, 원문 6일 표기 그대로 반영) | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {
+    "sales": "quote_only"
+  },
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

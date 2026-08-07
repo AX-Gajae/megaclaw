@@ -1,0 +1,184 @@
+{
+ "record_id": "RTPU2612",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:원피스_ONE_PIECE_IP",
+  "space_id": "unresolved:송도_현대프리미엄아울렛_송도점",
+  "client_party_id": null,
+  "brand_key": "원피스",
+  "space_key": "현대프리미엄아울렛_송도점"
+ },
+ "intervention": {
+  "concept": "원피스(One Piece) 애니메이션 IP를 활용한 버짓형 팝업스토어. 현대프리미엄 아울렛 송도점 1층에서 포토존과 써니호 벌룬 등 IP 조형물 중심의 체험·판매 공간을 운영했다. 현대아울렛 다점포 원피스 롤아웃(대전·청주·송도 등)의 송도 매장이다.",
+  "brand_name": "원피스 (One Piece)",
+  "experience_elements": [
+   "10인 등신대 포토존",
+   "현상금 수배 포토존",
+   "써니호 벌룬 조형물",
+   "천장 행잉 모빌",
+   "판매 매대/VMD 조닝"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "포토존",
+   "써니호_벌룬",
+   "등신대",
+   "현상금수배_포토존",
+   "천장_행잉_모빌",
+   "기둥_랩핑",
+   "외벽_화이트_마감"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "인천",
+   "district": "연수구",
+   "venue_name": "현대프리미엄 아울렛 송도점",
+   "venue_type": "프리미엄 아울렛",
+   "foot_traffic_context": "포토존은 지하철 출입구 정면, 써니호는 1F 1st Avenue 코치 매장 앞에 설치"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2026-03-06",
+   "to": "2026-03-15",
+   "days": 10
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "견적서상 VAT 10% 별도. 대행수수료=소계(정가항목/실비정산 진행비 항목 제외)의 10%. 일반관리비+대행수수료 합산. 계약 총액·분할·RS 조건은 원문에 명시 없음. 참고: Sophy budget 77,300,000원, 아마란스 project_amount null."
+  },
+  "brand_requirements": [
+   "대전/청주 진행 집기·포토존·행잉 모빌 재사용(시공 검토 후 재사용 불가 시 비용 발생 가능)",
+   "5t 크레인 주간 시공 필요"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "포토존은 지하철 출입구 정면"
+  },
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 8,
+    "months_since_last": 0.9,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 4,
+    "holiday_until": 78,
+    "holiday_block_in": 0,
+    "nat_event_gap": 89,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 1424678.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2026-02-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2026-03-06",
+    "visitors": null,
+    "sales_krw": null
+   },
+   {
+    "date": "2026-03-07",
+    "visitors": null,
+    "sales_krw": null
+   },
+   {
+    "date": "2026-03-08",
+    "visitors": null,
+    "sales_krw": null
+   },
+   {
+    "date": "2026-03-09",
+    "visitors": null,
+    "sales_krw": null
+   },
+   {
+    "date": "2026-03-10",
+    "visitors": null,
+    "sales_krw": null
+   },
+   {
+    "date": "2026-03-11",
+    "visitors": null,
+    "sales_krw": null
+   },
+   {
+    "date": "2026-03-12",
+    "visitors": null,
+    "sales_krw": null
+   },
+   {
+    "date": "2026-03-13",
+    "visitors": null,
+    "sales_krw": null
+   },
+   {
+    "date": "2026-03-14",
+    "visitors": null,
+    "sales_krw": null
+   },
+   {
+    "date": "2026-03-15",
+    "visitors": null,
+    "sales_krw": null
+   }
+  ],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 46.9
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서에 일자별(03.06~03.15) 총매출액·결제건수·팝업 객단가 차트가 존재하나 원문 텍스트가 인코딩 깨짐으로 수치 판독 불가. 아마란스 PnL상 순매출 46,944,973원(서비스매출 74,559,309−상품매출조정 27,614,336)은 회계 인식액이며 POS 소비자 매출 실측치는 확정 불가.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2026-03, 스냅샷 2026-05까지 2개월+ 경과 (계약총액 불명, 시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2026-04"
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "1IdkF7huWFOSGC3X-yhmqZDlOeMz9lJja",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1IdkF7huWFOSGC3X-yhmqZDlOeMz9lJja/view",
+   "title": "[sweetspot] 원피스 현대아울렛 팝업스토어_송도_결과보고서_260324.pdf"
+  },
+  {
+   "doc_id": "1MqfcfJ5KmULRRiMnd7bXErar5YL7e6ao",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1MqfcfJ5KmULRRiMnd7bXErar5YL7e6ao/view",
+   "title": "(최종)Sweetspot_송도현대아울렛_2026원피스팝업_견적서_0102.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 2건: (최종)Sweetspot_송도현대아ᄋ, [sweetspot] 원피스 현대아울. 미확실: 실제 계약 클라이언트 신원(현대아울렛 vs 원피스 IP 라이선서/에이전시); 일자별 및 총 방문객 수 실측치; 일자별 및 총 POS 소비자 매출액(결과보고서 차트 판독 불가); 팝업 면적(평); 계약 총액·선금/중도금/잔금 분할·수수료율 세부; 결과보고서 원문 다수가 인코딩 깨짐으로 상세 성과 KPI 확인 불가"
+ }
+}

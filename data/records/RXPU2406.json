@@ -1,0 +1,209 @@
+{
+ "record_id": "RXPU2406",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:바오패밀리",
+  "space_id": "unresolved:더현대서울_5층_팝업플랫폼_메인팝업존",
+  "client_party_id": "unresolved:삼성물산",
+  "brand_key": "바오패밀리",
+  "space_key": "더현대서울"
+ },
+ "intervention": {
+  "concept": "바오패밀리 캐릭터 팝업스토어. 캡슐 뽑기(가차) 기기와 포토존, 굿즈 판매 중심으로 운영되었으며 사전예약 및 현장 웨이팅 시스템을 갖춘 팝업.",
+  "brand_name": "바오패밀리",
+  "experience_elements": [
+   "캡슐 뽑기 기기(가차) 4대",
+   "포토존",
+   "굿즈 진열/판매",
+   "경품",
+   "사전예약 및 현장 웨이팅"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "가차 랩핑",
+   "타포린백 굿즈",
+   "유니폼"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": null,
+   "venue_name": "더현대서울",
+   "venue_type": "백화점 5층 팝업플랫폼 메인팝업존",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-06-18",
+   "to": "2024-06-30",
+   "days": 13
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "구성 총계 105,600,000원 (VAT 10% 별도). Sub Total 인건비 77,280,000 / 전산 3,000,000 / 웨이팅시스템 3,970,000 / 이벤트·기기렌탈·제작 7,825,000 / VOC·사후관리·마케팅 1,000,000 / 예비비(현장운영비용 및 공과잡비) 3,000,000. 소계 96,075,000원, 대행수수료(소계*10%) 9,607,500원, 합계 공급가 105,600,000원(만단위 이하 절삭)."
+  },
+  "brand_requirements": [
+   "POS 결제단말기 5개",
+   "전산 재고관리 시스템 구축",
+   "나우웨이팅 웨이팅 시스템",
+   "차단봉/무전기 렌탈(현대백화점 지원 여부에 따라 상이)"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대서울 5층 팝업플랫폼 메인팝업존"
+  },
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 13,
+    "weekend_share": 0.31,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 43,
+    "holiday_until": 88,
+    "holiday_block_in": 0,
+    "nat_event_gap": 69,
+    "nat_event": null,
+    "doc_lag_days": 7,
+    "doc_dates_found": 5
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": "서울 영등포구 여의대로 108"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 107.4
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 107.4 ≈ 계약총액 105.6",
+   "contract_total_mm": 105.6,
+   "last_recognition_period": "2024-07"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "10_AEgInkCw67Pzf3AlbMuR475qzZjBMJ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/10_AEgInkCw67Pzf3AlbMuR475qzZjBMJ/view",
+   "title": "240625_계약변경합의서_스위트스팟_RE_LC (1).docx"
+  },
+  {
+   "doc_id": "10dS95A-DdEbOgnLbLp1PdJ2YLVsW8IgX",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/10dS95A-DdEbOgnLbLp1PdJ2YLVsW8IgX/view",
+   "title": "240611 스위트스팟_24년 바오패밀리 더현대서울 팝업스토어 용역계약서_RE_LC.docx"
+  },
+  {
+   "doc_id": "13CWpIaLj7cPVJDOInhGt1a1Og-G8XhnL",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/13CWpIaLj7cPVJDOInhGt1a1Og-G8XhnL/view",
+   "title": "240611 스위트스팟_24년 바오패밀리 더현대서울 팝업스토어 용역계약서_RE_LC.docx"
+  },
+  {
+   "doc_id": "13FrSHofZ8cf1asdyEhvR3SyOUHN9ql-l",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/13FrSHofZ8cf1asdyEhvR3SyOUHN9ql-l/view",
+   "title": "240625_계약변경합의서_스위트스팟_RE_LC (1).docx"
+  },
+  {
+   "doc_id": "13H2V5EJEjloudXivhUmL7LCUItvw74jz",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/13H2V5EJEjloudXivhUmL7LCUItvw74jz/view",
+   "title": "240409_Everland_Baofamily Pop UP_Vol2_공유.pdf"
+  },
+  {
+   "doc_id": "13K-TC1hGBaQ2mx7LM9lTQepTn1XI9BAj",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/13K-TC1hGBaQ2mx7LM9lTQepTn1XI9BAj/view",
+   "title": "240501_Everland_Baofamily Pop UP_공간_컨셉.pdf"
+  },
+  {
+   "doc_id": "13L8gLT--D1Tj7hMMwAmR_K2md8RXOAeC",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/13L8gLT--D1Tj7hMMwAmR_K2md8RXOAeC/view",
+   "title": "2024.01.더현대서울.5층.팝업플랫폼.메인팝업존.유리월길이.최종수정.pdf"
+  },
+  {
+   "doc_id": "13Sy5vwtOY70jSg_jx5EGLw_WY5LssJxF",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/13Sy5vwtOY70jSg_jx5EGLw_WY5LssJxF/view",
+   "title": "240108 더현대서울 5F 신규팝업 조명배치도 (0105.pdf"
+  },
+  {
+   "doc_id": "1cS2SPmL8u-Zv2PisZubMUtqhytizsJlb",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1cS2SPmL8u-Zv2PisZubMUtqhytizsJlb/view",
+   "title": "240628_계약변경합의서_스위트스팟x삼성물산.pdf"
+  },
+  {
+   "doc_id": "1nylB_1ydi00Wa7-vHnmq0bCwhlsPwxEY",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1nylB_1ydi00Wa7-vHnmq0bCwhlsPwxEY/view",
+   "title": "바오패밀리X스위트스팟 최종계약서.pdf의 사본"
+  },
+  {
+   "doc_id": "1rTBYBkZv0AJgmQAaS8CuE7FgFh7AEDMd",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1rTBYBkZv0AJgmQAaS8CuE7FgFh7AEDMd/view",
+   "title": "240628_계약변경합의서_스위트스팟x삼성물산.pdf"
+  },
+  {
+   "doc_id": "1rWUP9NVKVwxRf_Kgd9Uwb687xgjt9koy",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1rWUP9NVKVwxRf_Kgd9Uwb687xgjt9koy/view",
+   "title": "[Sweetspot]삼성물산 바오패밀리 용역계약서_날인.pdf"
+  },
+  {
+   "doc_id": "1rxv9vEwpKqxjBcZLN66qb_9KBE8Zui2B",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1rxv9vEwpKqxjBcZLN66qb_9KBE8Zui2B/view",
+   "title": "바오패밀리 팝업스토어_더현대서울_운영견적서.24.06.04.pdf"
+  },
+  {
+   "doc_id": "1y2cp3C_dFbVDTfYTy9wVguy627rOrzd9",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1y2cp3C_dFbVDTfYTy9wVguy627rOrzd9/view",
+   "title": "[Sweetspot]계약변경합의서_스위트스팟x삼성물산_날인.pdf"
+  },
+  {
+   "doc_id": "1zKBoQ075BUPATqQDaq7-GfmbuzaJajGS",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1zKBoQ075BUPATqQDaq7-GfmbuzaJajGS/view",
+   "title": "바오패밀리X스위트스팟 최종계약서.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: 2024.01.더현대서울.5층.팝업플랫폼.메인팝업존.유, 바오패밀리 팝업스토어_더현대서울_운영견적서.24.06.. 미확실: 결과보고서 부재로 방문객/매출 실측 없음; 면적(평) 정보 없음; 계약서 원문이 수치 나열만 있어 계약 세부조건 확인 불가; client_name은 견적서 수신인 삼성물산 최동진 책임 기준으로 추정"
+ }
+}

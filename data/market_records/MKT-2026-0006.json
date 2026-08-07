@@ -1,0 +1,96 @@
+{
+ "market_record_id": "MKT-2026-0006",
+ "event_name": "NCT WISH 'WISH BAKERY' 팝업(성수)",
+ "brand": "SM엔터테인먼트",
+ "ip_or_collab": "NCT WISH",
+ "category": "entertainment",
+ "intervention": {
+  "concept_description": "NCT WISH 베이커리 콘셉트 팝업. 포토존·MD, 전 회차 사전 예약제",
+  "experience_elements": [
+   "포토존",
+   "MD 판매"
+  ],
+  "promotions": [
+   "프로모션 웹사이트 연계"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "연무장13길 11",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2026-02-07",
+  "period_to": "2026-02-22",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  },
+  "derived": {
+   "duration": {
+    "days": 16,
+    "weekend_share": 0.38,
+    "holiday_days": 3
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 12000,
+  "visitors_period_days": 16,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "SM 발표. 원문: '16일간 약 1만 2천 명이 방문'",
+  "visitors_source_quote": "지난 7일부터 22일까지 16일간 서울 성동구 연무장13길 11에서 열린 이번 팝업스토어에는 약 1만 2천 명이 방문했으며, 사전 예약은 전 회차 매진을 기록했다.",
+  "visitors_source_url": "https://www.starnewskorea.com/music/2026/02/24/202602241006292825",
+  "visitors_source_date": "2026-02-24",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": "사전 예약 전 회차 매진",
+   "signal_quotes": [
+    "사전 예약은 전 회차 매진을 기록했다.",
+    "프로모션 웹사이트 누적 접속자 수는 37만 5천 명을 넘어섰다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "SM 공식 성료 보도(스타뉴스). 프로모션 웹사이트 접속 37.5만+(노출 지표). | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "unreachable"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

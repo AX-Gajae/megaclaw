@@ -1,0 +1,73 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{kotex}
+\setmainfont{Apple SD Gothic Neo}
+\setsansfont{Apple SD Gothic Neo}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,linkcolor=MidnightBlue,citecolor=MidnightBlue,
+            urlcolor=MidnightBlue]{hyperref}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\captionsetup{font=small,labelfont=bf}
+\setlength{\parskip}{0.35em}
+\setlength{\parindent}{0pt}
+
+\usepackage{mdframed}
+\newmdenv[linewidth=0.4pt,linecolor=gray!60,backgroundcolor=gray!5,
+          innertopmargin=6pt,innerbottommargin=6pt,skipabove=8pt,skipbelow=8pt]{claimbox}
+\newcommand{\claim}[2]{\begin{claimbox}\textbf{주장.} #1\par\smallskip
+  \textcolor{gray!70}{\textbf{반증 조건.} #2}\end{claimbox}}
+
+\title{\bfseries 반쪽의 판\\[2pt]
+\large 두 번째 짝도 릿지가 이겼다 --- 그리고 합동의 이득은 절반에만 산다}
+\author{월드모델 실험실 · 노트 $822$}
+\date{2026-08-07}
+\begin{document}\maketitle
+
+\section{한 줄 둘}
+
+\textbf{①(a · 폐기 확정)} 논문 $181$ 의 판정을 두 번째 집 밖 짝에서 확정했다.
+비게임 앱(평가 $=2025{\sim}$ 시작 $189$행 · 풀 $1{,}411$행): 전이
+$0.3095\pm0.0047$ 대 \textbf{릿지 $0.5087$} --- 차 $+0.1992$ 는 앱 $2\sigma$ 의
+\textbf{$8.3$배}다(위약 $-0.220$ 통과). 앱 짝은 $t$ 열 몫이 크지만($t$ 제외
+$0.3659$) 빼도 $+0.0564$($2\sigma$ 의 $2.4$배)로 판정 불변. \textbf{두 짝 모두
+릿지 $\geq$ 전이 --- `$50$건이면 전이 동급' 서사는 폐기 확정이다.} 종전 앱
+기준선 $0.5053$ 도 과거-가중이었다는 방증이 덤이다(시간 갈림에선 $0.31$).
+
+\textbf{②(b · 혼전)} 판 안 $10$도메인에서 합동 챔피언 대 자기-도메인 릿지:
+\textbf{합동승 $5$ · 동점 $4$ · 릿지승 $1$.} 내 예측(합동 우세 $\geq 7$)은
+틀렸다 --- 합동의 이득(표본 공유 · 논문 $180$)은 \textbf{반쪽 도메인에만
+실재}한다.
+
+\begin{figure}[t]\centering
+\includegraphics[width=0.99\textwidth]{figs/half.pdf}
+\caption{왼쪽: 두 짝의 같은 그림. 오른쪽: 판 도메인별 합동$-$릿지(세로선
+$=2\sigma$).}
+\end{figure}
+
+\section{패자가 아이돌이라는 것이 요점이다}
+
+\claim{\textbf{아이돌은 합동이 해롭다}($-0.086$ · $2\sigma\,0.073$ 초과) ---
+논문 $180$ 이 중요도 기하에서 본 ``방향이 다르다''(교차 정렬 최하위)가
+\textbf{성능 손실로 실물화}됐다. TabPFN 두 왕국($803/806$)의 세 번째 독립
+확인이다. 반대편 극단도 실물이다: \textbf{팝업은 학습 $24$행이라 단독 모형
+자체가 성립 불가} --- 합동만이 가능한 도메인, 표본 공유의 존재 이유다.
+사업 문장($181+182$ 합본): \textbf{전이의 실측 가치 $=$ cold-start $+$ 단독
+불가 도메인}이고, 파는 물건은 ``우리 모델이 늘 낫다''가 아니라 \textbf{어느
+도메인이 합동 수혜인지의 지도}다(아이돌형 도메인엔 자기 모델을 권하는 것이
+정직).}
+{이득의 지도는 아직 설명이 없다 --- 합동승/동점을 논문 $180$ 의
+target\_breadth 질량과도, 유보 행수(얇음)와도 견줬는데 \textbf{어느 쪽도
+깨끗한 상관이 없다}(합동승에 t\_b $64\%$ 와 $0\%$ 공존 · 동점에 $98\%$ 와
+$0\%$ 공존). 게다가 내 도메인 예측은 정반대였다(게임을 릿지승 후보로 봤는데
+합동승 최대급 $+0.180$, 얇은 아이돌에서 합동승을 예상했는데 유일한 릿지승).
+제$3$의 변수 탐색은 KOBIS 합류 후 재상관으로 등록. 아이돌 서빙 경로 변경은
+노트 $133$(첫 양성 채택 금지)에 따라 확인 사이클 후. 판 $\rho$ $0.4689$
+그대로.}
+
+\end{document}

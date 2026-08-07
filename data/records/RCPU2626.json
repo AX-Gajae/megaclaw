@@ -1,0 +1,156 @@
+{
+ "record_id": "RCPU2626",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:NCT_NEO_GROUND",
+  "space_id": "unresolved:군자_광나루로441_파이팩토리",
+  "client_party_id": "unresolved:에스엠엔터테인먼트_SME",
+  "brand_key": "NCT",
+  "space_key": "군자_파이팩토리"
+ },
+ "intervention": {
+  "concept": "NCT 데뷔 10주년 기념 IP 팝업스토어 'NEO GROUND(네오그라운드)'. 입단센터·초상전시·스포츠프랍·러닝 등 체험존과 가챠/밴딩머신 기기 판매, MD 굿즈 판매를 결합한 아이돌 IP 팝업. NCT 멤버 순차 방문 특전을 운영.",
+  "brand_name": "NCT 2026 (NEO GROUND)",
+  "experience_elements": [
+   "파이홀X 입장/입단센터",
+   "초상전시 체험",
+   "스포츠프랍 체험",
+   "러닝 체험",
+   "그랜드호리존 L 가챠",
+   "밴딩머신",
+   "MD 결제존",
+   "크림파이룸C 픽업",
+   "팝가 웨이팅 플랫폼(사전예약+현장예약)"
+  ],
+  "promotions": [
+   "NCT 멤버 순차 방문(5/14~차주 월)",
+   "1일차 이후 구매제한 해제"
+  ],
+  "staging_tags": [
+   "엔터IP",
+   "아이돌굿즈",
+   "가챠",
+   "밴딩머신",
+   "체험형",
+   "10주년기념"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "광진구",
+   "venue_name": "파이팩토리(본다빈치뮤지엄 능동)",
+   "venue_type": "전시/뮤지엄 공간",
+   "foot_traffic_context": "군자, 광나루로 441(답사시 광나루로 404 2층 표기 혼재)"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2026-05-15",
+   "to": "2026-05-23",
+   "days": 9
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "대행 계약금액(노션 확정예산) 174,800,000원 / 아마란스 project_amount 170,300,000원(VAT별도, 견적 최종확정 2026-04-21). 견적 협상이력: 1차 168.0M→수정 170.6M→2차 182.6M(인력 7명 증원)→인력조정 후 170.3M 최종. 당사 가맹점코드로 현장 결제 후 상품매출 전액을 SM으로 입금하는 대행수수료형(총체계약 제6조4항). 상품매출은 통과분, 스위트스팟 수익은 대행수수료. 카드수수료 14.49M(2.02%), 로스 변제 허용율 0.4%."
+  },
+  "brand_requirements": [
+   "매출 전액 SM 입금(계약 6조4항)",
+   "당사 가맹점코드 사용 현장결제"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 9,
+    "weekend_share": 0.33,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 74,
+    "holiday_until": 8,
+    "holiday_block_in": 1,
+    "nat_event_gap": 19,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 177669.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2026-04-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2026-05-15",
+    "visitors": 1130,
+    "sales_krw": 115345400
+   }
+  ],
+  "totals": {
+   "visitors": null,
+   "sales_krw": 716654200,
+   "rev_mm_recognized": 174.8
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(1일차(5/15) 입장 1,130명, 일매출 115,345,400원(MD 81.17M+쇼핑백 0.067M+가챠·밴딩 34.10M). 2~9일차(5/16~23) 일별 입장객·매출 및 9일 누적 방문객 총계 미확보. totals.sales_krw 716,654,200원은 클라이언트 GMV(MD+기기 전체 통과매출, 실측)로 SME 귀속분이며 당사 소비자매출 총계와 별개로 참고. 밴딩머신 매출 집계오류(가챠 2일차 정정), VAN 취소건 정산 지연 발생. 목표/KPI 별도 명시 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식액 174.8 ≈ 계약총액 174.8 (±10%)",
+   "contract_total_mm": 174.8,
+   "last_recognition_period": "2026-05"
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "15h85DjPGQ0IhKdgFI-n_OkbDC-2vMcYrrvzmgSECXFQ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/15h85DjPGQ0IhKdgFI-n_OkbDC-2vMcYrrvzmgSECXFQ/view",
+   "title": "■ RC본부 프로젝트 견적서(all)"
+  },
+  {
+   "doc_id": "1AoRzU_xNq4e1dVmf5J59LUB5RuZIDkV3",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1AoRzU_xNq4e1dVmf5J59LUB5RuZIDkV3/view",
+   "title": "스위트스팟 NCT 10TH ANNIVERSARY (NCT 2026) POP UP 견적서 ver.최종.pdf"
+  },
+  {
+   "doc_id": "1mp_dpN0908AZkEm8BFbnOY6bfT4PgSx4",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1mp_dpN0908AZkEm8BFbnOY6bfT4PgSx4/view",
+   "title": "SME 연간 용역계약서_서면 날인본.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 0건: . 미확실: 2~9일차(5/16~23) 일별 입장객·매출 상세; 9일 누적 방문객 총계; area_pyeong(면적) 미확보; MD 품목별 판매수량·완판 여부; NPS/만족도 결과보고서 실물; 아티스트 방문 정량 집객효과; 최종 손익 확정치(6월 잔여정산 반영 전)"
+ }
+}

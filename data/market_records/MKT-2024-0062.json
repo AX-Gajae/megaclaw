@@ -1,0 +1,82 @@
+{
+  "market_record_id": "MKT-2024-0062",
+  "event_name": "원신 X 라인프렌즈 '원신 미니니' 팝업스토어",
+  "brand": "호요버스/IPX(라인프렌즈)",
+  "ip_or_collab": "원신 미니니 (이나즈마 7종 캐릭터)",
+  "category": "game_webtoon",
+  "intervention": {
+    "concept_description": "원신 캐릭터를 미니니로 재해석한 서울 첫 팝업. 24종 굿즈, 이나즈마 세계관 공간 연출, 코스어 이벤트, SNS 인증 리딤코드",
+    "experience_elements": [
+      "캡슐 뽑기 기기",
+      "미니니 프레임 네 컷 사진",
+      "체험형 포토존",
+      "코스어 이벤트(캐릭터별 일정)",
+      "페이몬 스탬프"
+    ],
+    "promotions": [
+      "구매 금액별 특전(쇼핑백·부채·렌티큘러 포토카드)",
+      "SNS 인증 리딤코드 쿠폰 카드"
+    ],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "라인프렌즈 강남 플래그십 스토어",
+    "venue_type": "street_standalone",
+    "neighborhood": "강남(서초구)",
+    "city": "서울",
+    "period_from": "2024-09-25",
+    "period_to": "2024-10-09",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 15,
+        "weekend_share": 0.27,
+        "holiday_days": 3
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 15,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "실방문 총계 미보도. 운영 설계 수용 인원만 보도: '시간당 최대 50여명의 유저들이 방문할 수 있도록 구성됐으며, 오전 11시부터 저녁 9시까지 19타임을 운영해 하루에 총 1천여 명의 유저가 방문할 수 있도록 만들었다'",
+    "visitors_source_quote": "팝업 스토어 현장은 100% 사전 예약제로 운영된다. 시간당 최대 50여명의 유저들이 방문할 수 있도록 구성됐으며, 오전 11시부터 저녁 9시까지 19타임을 운영해 하루에 총 1천여 명의 유저가 방문할 수 있도록 만들었다.",
+    "visitors_source_url": "https://www.gamevu.co.kr/news/articleView.html?idxno=35602",
+    "visitors_source_date": "2024-09-25",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "개점 1시간 전부터 방문객 북적",
+      "sold_out": null,
+      "reservation_fill": "일부 날짜 입장 예약 마감, 첫날 당일 예약 마감 상태",
+      "signal_quotes": [
+        "팝업 스토어 입장은 사전예약제로 진행되며, 팬들의 뜨거운 관심 속에 이미 일부 날짜의 입장 예약이 마감됐다. (테크데일리 2024-09-25, https://www.tgdaily.co.kr/news/articleView.html?idxno=335373)",
+        "아직 개점도 하기 전이었지만, 팝업 스토어 현장은 유동인구와 개점을 기다리는 방문객들로 북적였다. (테크데일리 2024-09-25)"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "수용 인원(하루 약 1천 명)은 설계치이며 실방문 집계 아님. 규칙 5에 따라 총계 미산출. | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

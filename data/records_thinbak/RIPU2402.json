@@ -1,0 +1,112 @@
+{
+  "record_id": "RIPU2402",
+  "schema_version": "0.1",
+  "entities": {
+    "brand_id": "unresolved:엘소드",
+    "space_id": "unresolved:미상",
+    "client_party_id": null,
+    "brand_key": "엘소드",
+    "space_key": "미상"
+  },
+  "intervention": {
+    "concept": "엘소드 오프라인 행사. 상세 문서가 제공되지 않아 컨셉·체험요소 확인 불가.",
+    "brand_name": "엘소드",
+    "experience_elements": [],
+    "promotions": [],
+    "staging_tags": []
+  },
+  "conditions": {
+    "location": {
+      "city": null,
+      "district": null,
+      "venue_name": null,
+      "venue_type": null,
+      "foot_traffic_context": null
+    },
+    "area_pyeong": null,
+    "period": {
+      "from": "2024-11-09",
+      "to": "2024-11-30",
+      "days": 22
+    },
+    "season": "가을",
+    "fee_structure": {
+      "type": "unknown",
+      "detail": ""
+    },
+    "brand_requirements": [],
+    "scale": {
+      "store_count": 1,
+      "venue_traffic_type": "standalone",
+      "host_traffic_note": null
+    }
+  },
+  "outcome": {
+    "daily": [
+      {
+        "date": "2024-11-09",
+        "visitors": 495,
+        "sales_krw": null
+      },
+      {
+        "date": "2024-11-30",
+        "visitors": 579,
+        "sales_krw": null
+      }
+    ],
+    "totals": {
+      "visitors": 1074,
+      "sales_krw": null,
+      "rev_mm_recognized": 50.8
+    },
+    "counting_method": "participation",
+    "counting_basis": "좌석 수령/캐시쿠폰 제공 좌석수",
+    "plan_visitors_expected": 880,
+    "retention": null,
+    "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+    "rev_mm_completion": {
+      "status": "complete",
+      "rule": "운영종료 2024-11, 스냅샷까지 2개월+ (시간 규칙)",
+      "contract_total_mm": null,
+      "last_recognition_period": "2024-12"
+    }
+  },
+  "docs": [
+    {
+      "doc_id": "15IKHmIR8alaoA-e9bAX0PixI12eFvsIy",
+      "kind": "계약서",
+      "uri": "https://drive.google.com/file/d/15IKHmIR8alaoA-e9bAX0PixI12eFvsIy/view",
+      "title": "엘소드 오프라인행사 계약서.pdf"
+    },
+    {
+      "doc_id": "1647vEHziplN2uerni4NyaitCiGQP-mzc",
+      "kind": "운영일지",
+      "uri": "https://drive.google.com/file/d/1647vEHziplN2uerni4NyaitCiGQP-mzc/view",
+      "title": "[대홍기획] 엘소드 엘스타 CGV 오프라인 행사 _ 본상영회 결과보고서.pdf"
+    },
+    {
+      "doc_id": "1Gj8WV7fYEyXi0A5AqZ6Dbd6ekwdNbFAO",
+      "kind": "운영일지",
+      "uri": "https://drive.google.com/file/d/1Gj8WV7fYEyXi0A5AqZ6Dbd6ekwdNbFAO/view",
+      "title": "[대홍기획] 엘소드 엘스타 CGV 오프라인 행사 _ 사전상영회 결과보고서.pdf"
+    },
+    {
+      "doc_id": "1rZv4wCixKF8Hbx2RF6sxrEmT-xy3tR7R",
+      "kind": "계약서",
+      "uri": "https://drive.google.com/file/d/1rZv4wCixKF8Hbx2RF6sxrEmT-xy3tR7R/view",
+      "title": "RIPU2402_대홍기획 엘소드 계약서 1차.pdf"
+    },
+    {
+      "doc_id": "1vHXJ13ZAYFZ-0Pm1DrbzoC0KSLND2JEZ",
+      "kind": "정산",
+      "uri": "https://drive.google.com/file/d/1vHXJ13ZAYFZ-0Pm1DrbzoC0KSLND2JEZ/view",
+      "title": "2. 엘소드_견적서_대홍기획_241206_업체견적포함.pdf"
+    }
+  ],
+  "provenance": {
+    "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+    "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+    "extracted_at": "2026-07-23",
+    "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서 텍스트 전체 부재; 클라이언트명; 입지/장소 정보; 면적; 수수료구조 및 계약금액; 컨셉 및 체험요소; 프로모션; 방문객 실측 데이터; 매출 데이터; 예상 방문객수 | 라벨발굴(2026-07-24): 결과보고서 재추출 — 사전상영회 캐시쿠폰존: 14시 266좌석/532매, 16시 229좌석/458매(총990매); 본상영회 굿즈배"
+  }
+}

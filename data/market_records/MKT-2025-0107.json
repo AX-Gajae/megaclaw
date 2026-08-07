@@ -1,0 +1,97 @@
+{
+ "market_record_id": "MKT-2025-0107",
+ "event_name": "컬리뷰티페스타 2025",
+ "brand": "컬리(뷰티컬리)",
+ "ip_or_collab": "뷰티 브랜드 연합 페스타(2회차)",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "컬리 2회차 오프라인 뷰티 페스타. 브랜드 부스·체험 콘텐츠, 온라인 뷰티페스타 연계",
+  "experience_elements": [
+   "브랜드 부스",
+   "체험 콘텐츠",
+   "클래스/이벤트"
+  ],
+  "promotions": [
+   "유료 티켓",
+   "온라인 기획전 연계"
+  ],
+  "is_free_entry": false,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "동대문디자인플라자(DDP)",
+  "venue_type": "convention",
+  "neighborhood": "동대문",
+  "city": "서울",
+  "period_from": "2025-10-30",
+  "period_to": "2025-11-02",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  },
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.5,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 12.7,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 16000,
+  "visitors_period_days": 4,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "컬리 성료 발표 인용(사전 예상 1만6000명과 동일 수치로 성료 보도)",
+  "visitors_source_quote": "컬리뷰티페스타 2025가 1만 6000여 명의 관람객이 참여한 가운데 성황리에 막을 내렸다고 3일 밝혔다",
+  "visitors_source_url": "https://www.foodtoday.co.kr/news/articleView.html?no=199663",
+  "visitors_source_date": "2025-11-03",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": "얼리버드 티켓 매진",
+   "signal_quotes": [
+    "파트너사 거래액이 전년 동기 대비 평균 9배 성장했다 (온라인 연계 지표)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "E",
+   "flags": [
+    "E"
+   ],
+   "why": "예상치 재활용·추산 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "거래액 9배는 온라인 연계 지표라 signal로만 기록. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

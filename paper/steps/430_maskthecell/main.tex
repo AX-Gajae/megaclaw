@@ -1,0 +1,154 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{축을 빼지 말고 칸을 가려라 --- 오염된 행에서만 지웠더니 값은 똑같이 치르고 배포 시점 성능은 오히려 올랐다}
+\author{월드모델 실험실}
+\date{노트 547 · 2026년 8월 4일}
+\maketitle
+
+\begin{abstract}
+노트 $546$ 이 \texttt{meta\_c3\_웹툰} 을 사후 표지로 지목했다 --- 그 축이
+사실상 ``월요일이냐''이고, 월요일은 매일$+$ 로 옮겨간 작품이 요일을 잃고
+남긴 자국이다. \textbf{고치는 방법이 둘이었다.}
+
+\begin{center}
+\begin{tabular}{lrrr}
+\hline
+자 & 축 통째 제거 & \textbf{칸만 마스킹} & \\
+\hline
+\textbf{판} & $-0.0087$ & $\mathbf{-0.0097}$ & \textbf{구간 겹침} \\
+ & $[-0.0097,-0.0078]$ & $[-0.0105,-0.0089]$ & \\
+\hline
+웹툰 완결만 & $-0.0917$ & $-0.1135$ & \\
+\textbf{웹툰 연재중만} & $-0.0017$ & $\mathbf{+0.0015}$ ($8/12$) & \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{같은 값을 치른다} --- 그 축이 벌던 것이 \emph{전부} 오염이었다는
+뜻이다. 그런데 \textbf{배포 시점에 실제로 마주하는 자}(아직 안 끝난 작품)
+에서는 마스킹이 낫다. \textbf{마스킹을 채택한다.}
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 같은 값. \textbf{나} --- 갈리는 자리.
+\textbf{다} --- 냄새가 걷혔다.}
+\end{figure}
+
+\section{수술}
+
+\texttt{days} 토큰을 \textbf{\texttt{daily\_pass} 인 $1{,}978$ 행에서만}
+지우고 성분을 다시 짰다. \texttt{age\_type} 과 \texttt{n\_artist} 는
+그대로다 --- \textbf{필드를 통째로 빼면 깨끗한 행의 정보까지 버린다.}
+
+\begin{center}
+\begin{tabular}{lrrrrr}
+\hline
+월요일 적재 & c0 & c1 & c2 & \textbf{c3} & c4 \\
+\hline
+전 & $-0.024$ & $0.056$ & $-0.121$ & $\mathbf{0.900}$ & $-0.049$ \\
+\textbf{후} & $-0.016$ & $0.001$ & $-0.006$ & $\mathbf{+0.007}$ & $-0.317$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{$0.900 \to +0.007$.} 월요일 방향은 $c4$ 로 밀려났고 그 성분은
+안 쓴다.
+
+\begin{quote}
+\textbf{배선 가드 둘을 걸고 시작했다} --- 축 개수가 $36$ 으로 같은지, 그리고
+\texttt{meta\_c3} 의 \emph{값}이 실제로 바뀌었는지(상관 $-0.160$). 노트
+$509$ 의 ``차가 정확히 $0$ 이면 배선을 의심한다''가 노트 $545$ 에서 세 번째로
+값을 했기 때문이다.
+\end{quote}
+
+\section{냄새가 걷혔다}
+
+\begin{center}
+\begin{tabular}{lrrr}
+\hline
+유보 $711$ 행, 연도 통제 & 완결과 & 매일$+$ 와 & 라벨과 \\
+\hline
+\texttt{meta\_c3\_웹툰} 전 & $\mathbf{+0.3303}$ & $\mathbf{+0.3610}$ & $-0.2668$ \\
+\textbf{후} & $\mathbf{+0.0299}$ & $\mathbf{+0.0549}$ & $+0.0050$ \\
+\hline
+\texttt{meta\_c0\_웹툰} 후 & $+0.0128$ & $+0.0825$ & $+0.1936$ \\
+\texttt{tag\_c1\_웹툰} & $-0.1916$ & $-0.1320$ & $+0.2300$ \\
+\hline
+\end{tabular}
+\end{center}
+
+고친 뒤 \texttt{meta\_c3} 의 라벨 상관이 $+0.0050$ 이다 --- \textbf{그 축은
+이제 거의 아무것도 아니다.} 그것이 이 노트의 결론을 다시 말해 준다.
+
+\section{노출 범위를 닫았다}
+
+노트 $546$ 의 조항(``축이 읽는 필드를 훑는다'')을 실제로 집행했다.
+
+\begin{itemize}
+\item \textbf{상태 칸이 있는 도메인은 넷} --- 애니 $\cdot$ 세계애니는
+$98\%$ 상수라 위험이 없고, \textbf{만화는 상태$\leftrightarrow$라벨이
+$-0.0142$} 로 깨끗하다. \textbf{웹툰만 $-0.3195$} 다.
+\item \textbf{집 밖 짝 KR 만화는 상태$\leftrightarrow$라벨이 $-0.3450$
+(날짜 통제)로 세다.} 그런데 \textbf{ALL5 축이 상태를 안 읽는다} --- 날짜
+통제 후 최대 $|0.14|$ 인데 라벨과는 $+0.4155 \cdot +0.4995$ 다.
+\textbf{축이 속성을 읽는 것이지 결말을 읽는 것이 아니다.}
+\item \textbf{웹툰 전 축} --- $|0.25|$ 를 넘는 것은 \texttt{meta\_c3}
+하나뿐이었다. 큐레이션 토큰도 완결과 최대 $+0.1565$ 다.
+\end{itemize}
+
+\begin{quote}
+\textbf{누출은 정확히 한 축이었다.} 상태가 라벨과 붙는 것 자체는 누출이
+아니다 --- \textbf{축이 그 상태를 읽을 때가 누출이다.}
+\end{quote}
+
+\section{남은 격차는 누출이 아니다}
+
+고친 뒤에도 웹툰 $\rho$ 는 연재중 $+0.3304$ · 완결 $+0.5362$ 로 $1.6$ 배
+차다. \textbf{그런데 완결 조각의 라벨 폭이 $2.06$ 배}(표준편차 $0.893$ 대
+$0.433$)다 --- 노트 $534$ 가 세운 성과 폭 효과 안에 들어간다. 완결 조각에서
+중앙 $68\%$ 만 남기면 표준편차가 $0.422$ 로 연재중($0.433$)과 같아진다.
+
+\section*{처분 --- 채택이 아니라 정정이다}
+
+\begin{quote}
+관문의 다섯 자로 보면 이것은 \textbf{기각}이다(판 $\cdot$ 날짜 통제 $\cdot$
+무리 안이 다 $0$ 밖 음수). \textbf{그래도 넣는다} --- 이것은 성능 후보가
+아니라 \emph{시점 판정의 정정}이고, \texttt{provenance} 는 관문보다
+위에 있다. 선례가 있다 --- \textbf{노트 $306$} 에서 위키 마스크가 ``긁은
+시점에 문서를 찾았나''라 사후임을 알고 고쳤고, 그때도 판이 내려갔으며 새
+기준선을 적었다.
+\end{quote}
+
+\textbf{판 $0.4908 \to 0.4812$ 가 새 기준선이다.} 이 시점 이전 실행의 판과
+견주면 안 된다. \textbf{내려간 것이 아니라 그동안 $0.0097$ 만큼 과대
+보고돼 있었다.}
+
+\section*{조항}
+
+\begin{quote}
+\textbf{오염이 필드 전체가 아니라 일부 행에 있으면, 축을 빼지 말고 그 행의
+칸을 가린다.} 값은 같이 치르면서 깨끗한 행의 정보는 남는다
+(\texttt{tagaxes.STALE}). \textbf{그리고 가드가 조용히 안 도는 것을 막기
+위해 몇 행에서 지웠는지 기록한다}(\texttt{STALE\_HITS}).
+\end{quote}
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{다른 축에도 ``상해 있는 행''이 있나} --- 이번엔 상태 플래그가
+있는 도메인만 봤다. 플래그가 없이 조용히 갱신되는 필드는 못 잡는다.
+\item \textbf{팝업 $16$ 행 학습이 도움이 되나} --- 문턱 $15\!\to\!40$ 은
+팝업 하나에만 닿는다(재확정). 유보 $59$ 행은 어느 쪽이든 채점되므로 분모를
+안 바꾸고 잴 수 있다.
+\item \textbf{애니 \texttt{age} 는 닫혔다} --- 라벨과 $+0.5307$(연도 통제)
+로 커 보였는데 \textbf{기존 \texttt{target\_breadth} 와 상관 $+1.000$} 이다.
+애니의 그 축이 이미 연령 등급이었다. 만화 $\cdot$ 세계애니 \texttt{n\_tag}
+는 노트 $117$ 가드 ②(라벨을 만든 플랫폼의 계수기)로 막힌다 --- 라벨이
+AniList \texttt{y\_popularity} 이고 태그는 같은 곳의 이용자 계수기다.
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,78 @@
+{
+  "market_record_id": "MKT-2024-0045",
+  "event_name": "헤이프×IPX '베베더월드' 팝업스토어",
+  "brand": "헤이프(베베더오리)",
+  "ip_or_collab": "베베더오리(IPX 협업)",
+  "category": "character",
+  "intervention": {
+    "concept_description": "베베더오리 캐릭터 팝업. 한정 굿즈 판매, 포토존, 방문 증정(스티커·부채), 구매 금액별 리유저블백",
+    "experience_elements": [
+      "캐릭터 포토존",
+      "한정 굿즈 판매"
+    ],
+    "promotions": [
+      "방문 증정 스티커·부채"
+    ],
+    "is_free_entry": null,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "라인프렌즈 스퀘어 성수",
+    "venue_type": "street_standalone",
+    "neighborhood": "성수",
+    "city": "서울",
+    "period_from": "2024-07-05",
+    "period_to": "2024-07-18",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 14,
+        "weekend_share": 0.29,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "unknown",
+    "counting_basis_note": "방문객 총수 미공개. 사전예약 매진 신호만 확보",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": "사전예약 1시간 매진",
+      "signal_quotes": [
+        "5일부터 7일까지 사전 방문 예매 인원은 1시간 안에 모두 매진될 만큼 큰 열풍을 일으키고 있다.",
+        "오픈 첫날부터 인산인해를 이뤘고"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "수요 신호(예약 1시간 매진) 기반 레코드. 방문 총수 비공개. 수요신호 출처: 이투데이(구 이투뉴스) http://www.e2news.com/news/articleView.html?idxno=310685 (2024-07-15, '오픈 첫날부터 인산인해…사전 방문 예매 인원은 1시간 안에 모두 매진'). | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

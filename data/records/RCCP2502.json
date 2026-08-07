@@ -1,0 +1,140 @@
+{
+ "record_id": "RCCP2502",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:mani_아이엠니트",
+  "space_id": "unresolved:이마트_울산점_행사장",
+  "client_party_id": null,
+  "brand_key": "아이엠니트",
+  "space_key": "multi_이마트"
+ },
+ "intervention": {
+  "concept": "여성 의류 도/소매 전문 브랜드 mani(아이엠니트)의 이마트 울산점 행사. F/W 시즌 니트류, S/S 시즌 홈웨어 위주 상품을 취급하는 브랜드 판매 행사.",
+  "brand_name": "mani",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": "울산",
+   "district": null,
+   "venue_name": "이마트 울산점",
+   "venue_type": "대형마트 행사장",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-01-30",
+   "to": "2025-02-20",
+   "days": null
+  },
+  "season": "겨울(F/W)",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": "결과보고서에 업체 수수료·카드 수수료·이마트 입점수수료 항목이 존재하나 구체 수치 미기재. VAT포함 기준 언급."
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "이마트 울산점"
+  },
+  "derived": {
+   "duration": {
+    "days": 22,
+    "weekend_share": 0.27,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 0,
+    "holiday_until": 0,
+    "holiday_block_in": 1,
+    "nat_event_gap": 77,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": 4860674,
+   "rev_mm_recognized": 4.4
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서는 매출/수익 중심이며 방문자 수 데이터가 추출 텍스트에 포함되지 않음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-02, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-02"
+  },
+  "sales_basis": "PnL 상품매출 양수계정 합 × 1.1 (부가세 포함 기준)",
+  "label_history": [
+   {
+    "at": "pnl_sales (2026-07-28)",
+    "action": "mine",
+    "changes": [
+     "sales_krw 4,860,674 (PnL 총 결제액)"
+    ],
+    "evidence": "core.project_pnl_monthly 상품매출 양수계정 합 4,418,795(공급가) × 1.1, 인식 2개월"
+   }
+  ]
+ },
+ "docs": [
+  {
+   "doc_id": "114DugdkYuKMv1Iv3CjYAZY_WlI52Gsr8",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/114DugdkYuKMv1Iv3CjYAZY_WlI52Gsr8/view",
+   "title": "이마트 계약서 귀속(별도 계약서 없음)_내용없음.txt"
+  },
+  {
+   "doc_id": "119-kZ5sl0bn-I3cDZPQED57KQPRJB40D",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/119-kZ5sl0bn-I3cDZPQED57KQPRJB40D/view",
+   "title": "이마트 울산점_마니 결과보고서 250227.xlsx"
+  },
+  {
+   "doc_id": "11IHOPpc7rUvfm6bYAz28vWhwcqdlnV3J",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/11IHOPpc7rUvfm6bYAz28vWhwcqdlnV3J/view",
+   "title": "별도 견적서 없음_내용없음.txt"
+  },
+  {
+   "doc_id": "11IvlJvbXDVBTwjZlJ1NyTUE6KqWtCa5k",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/11IvlJvbXDVBTwjZlJ1NyTUE6KqWtCa5k/view",
+   "title": "이마트 울산점 마니 브랜드 소개서(제안서).pdf"
+  },
+  {
+   "doc_id": "1iGCcSFWrId0JiVGDOd-v82eqp3TKzk76",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1iGCcSFWrId0JiVGDOd-v82eqp3TKzk76/view",
+   "title": "이마트 울산점 마니 행사 수익 결과.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 3건: 이마트 울산점 마니 브랜드 소개서(제안서).pdf, 이마트 울산점 마니 행사 수익 결과.xlsx, 이마트 울산점_마니 결과보고서 250227.xlsx. 미확실: 방문자 수 전체 미확인; 일자별 실측 매출/방문 데이터 없음; 수수료율·계약금액 등 구체 수치 없음; 면적(평) 미확인; 운영기간이 메타(1/31~2/12)와 보고서(1/30~2/20) 불일치; 고객사 정보 없음"
+ }
+}

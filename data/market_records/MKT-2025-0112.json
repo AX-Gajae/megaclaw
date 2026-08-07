@@ -1,0 +1,78 @@
+{
+  "market_record_id": "MKT-2025-0112",
+  "event_name": "퀴진케이×tvN '폭군의 식탁' 팝업 레스토랑",
+  "brand": "CJ ENM(tvN)/퀴진케이",
+  "ip_or_collab": "드라마 '폭군의 셰프'",
+  "category": "entertainment",
+  "intervention": {
+    "concept_description": "드라마 '폭군의 셰프' 콘셉트 팝업 레스토랑(퀴진케이). 무료 추첨 이벤트로 초대",
+    "experience_elements": [
+      "팝업 다이닝",
+      "드라마 테마 공간"
+    ],
+    "promotions": [
+      "무료 추첨 초대 이벤트"
+    ],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "퀴진케이 레스토랑(강남구)",
+    "venue_type": "other",
+    "neighborhood": "강남",
+    "city": "서울",
+    "period_from": "2025-11-02",
+    "period_to": "2025-11-04",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(invite)",
+      "access_type": "invite"
+    },
+    "derived": {
+      "duration": {
+        "days": 3,
+        "weekend_share": 0.33,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 1,
+        "months_since_last": 2.6,
+        "first_edition": false
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 3,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "응모 경쟁률(CJ 보도자료). 원문: '무료 추첨 이벤트 1200:1 경쟁률로 마감'",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": "무료 추첨 이벤트 1200:1 경쟁률 마감",
+      "signal_quotes": [
+        "무료 추첨 이벤트 1200:1 경쟁률로 마감",
+        "소셜미디어(SNS)에서도 관련 게시물이 총 조회수 50만, 좋아요·댓글·공유 등의 상호작용 1만5천 건 이상을 기록하는 등"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "CJ 뉴스룸 보도자료(2025-11-09). 다이닝 팝업. | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

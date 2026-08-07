@@ -1,0 +1,90 @@
+{
+ "market_record_id": "MKT-2026-0012",
+ "event_name": "삼양식품 'House of Burn(하우스 오브 번)' 팝업스토어",
+ "brand": "삼양식품(불닭)",
+ "ip_or_collab": "불닭(Buldak) 자체 IP, 명동 사옥 최초 공개",
+ "category": "fnb",
+ "intervention": {
+  "concept_description": "'Make Life Spicy!' 콘셉트의 브랜드 체험형 팝업. 명동 신사옥 1층 로비를 최초 일반 공개해 글로벌 관광객 대상 불닭 브랜드 체험 공간 운영",
+  "experience_elements": [
+   "불닭볶음면·까보불닭 시식",
+   "포토존(스탬프 3개 수집 시 불닭 제공)",
+   "여행객 휴식 라운지·파우더룸",
+   "무료 생수 제공"
+  ],
+  "promotions": [
+   "명동·광화문 편의점·면세점 연계 한정판 타포린백 증정"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "삼양식품 명동 사옥 1층 로비",
+  "venue_type": "street_standalone",
+  "neighborhood": "명동",
+  "city": "서울",
+  "period_from": "2026-03-20",
+  "period_to": "2026-03-24",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 5,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 8000,
+  "visitors_period_days": 5,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "주최사(삼양식품)가 25일 발표한 누적 방문객 수치를 언론이 전재. 천지일보 르포는 '5일 누적 방문객은 8000여 명에 달했다'고 삼양식품 발표 인용",
+  "visitors_source_quote": "삼양식품 은 최근 서울 명동 사옥 1층에서 진행한 체험형 팝업스토어(팝업) '하우스 오브 번'에 닷새간 8000여명이 다녀갔다고 25일 밝혔다.",
+  "visitors_source_url": "https://www.hankyung.com/article/202603254913g",
+  "visitors_source_date": "2026-03-25",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "개장 첫날 오후 5시~10시 5시간 만에 1000여 명 방문, 오픈 전부터 오픈런 대기 행렬(천지일보 2026-03-25: '개장 첫날 오후 5시부터 10시까지 5시간 만에 1000여 명이 다녀갔고')",
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "글로벌 팬들 사이의 자발적인 입소문으로 오픈 전부터 대기 행렬이 이어지는 등 높은 관심을 보였다(팍스경제TV)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "동일 수치 보도 다수: 한국경제·ZDNet·컨슈머타임스·주간한국·에너지경제·뉴스탭 등(모두 2026-03-25). 외국인 비중 과반(천지일보 르포) | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

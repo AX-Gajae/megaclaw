@@ -1,0 +1,135 @@
+{
+ "record_id": "RTPU2402",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:unknown",
+  "space_id": "unresolved:unknown",
+  "client_party_id": null,
+  "brand_key": "미상",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "문서 텍스트가 제공되지 않아 컨셉을 추출할 수 없음.",
+  "brand_name": "",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-03-23",
+   "to": "2024-03-23",
+   "days": 1
+  },
+  "season": "spring",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 1.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 0.7,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 20,
+    "holiday_until": 42,
+    "holiday_block_in": 0,
+    "nat_event_gap": 18,
+    "nat_event": null,
+    "doc_lag_days": 24,
+    "doc_dates_found": 4
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": null,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1LubdVdpj6aIzsRDN9Tc-J5sLenwdOKua",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1LubdVdpj6aIzsRDN9Tc-J5sLenwdOKua/view",
+   "title": "결과보고서_내용없음.txt"
+  },
+  {
+   "doc_id": "1TXDZd3FKLYTrJXv35ayqde0bVXFrvTHT",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1TXDZd3FKLYTrJXv35ayqde0bVXFrvTHT/view",
+   "title": "RTPU2402_2024년 소닉 팬미팅_계약서_240215.doc"
+  },
+  {
+   "doc_id": "1kWDA_uosFizr1krINivNEOoz6BmFdkj4",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1kWDA_uosFizr1krINivNEOoz6BmFdkj4/view",
+   "title": "RTPU2402_2024년 소닉 팬미팅_실행계획안_240215.pptx"
+  },
+  {
+   "doc_id": "1ktKru6bCWmxai3Ijh-gCRmNf5uurHJrG",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1ktKru6bCWmxai3Ijh-gCRmNf5uurHJrG/view",
+   "title": "RTPU2402_2024년 소닉 팬미팅_계약서_240215.doc"
+  },
+  {
+   "doc_id": "1qV25VlyINfX0KSqBlFf-Tcbr88F6UI2c",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1qV25VlyINfX0KSqBlFf-Tcbr88F6UI2c/view",
+   "title": "RTPU2402_2024년 소닉 팬미팅_견적서_240228.xlsx"
+  },
+  {
+   "doc_id": "1t0b7TYUXot9KkPmcgvH8dMYtX5I4HJZD",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1t0b7TYUXot9KkPmcgvH8dMYtX5I4HJZD/view",
+   "title": "제안서_내용없음.txt"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서 텍스트 전체가 제공되지 않음; 프로젝트명/클라이언트/장소/카테고리 모두 null; 컨셉·체험요소·프로모션·연출태그 없음; 입지·면적·수수료구조·요구사항 없음; 방문자수·매출 등 결과 데이터 없음"
+ }
+}

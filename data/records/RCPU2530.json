@@ -1,0 +1,123 @@
+{
+ "record_id": "RCPU2530",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:더퓨처칼로",
+  "space_id": "unresolved:성수",
+  "client_party_id": null,
+  "brand_key": "더퓨처칼로",
+  "space_key": "성수"
+ },
+ "intervention": {
+  "concept": "성수에서 진행된 더퓨처칼로 팝업스토어. 원문 문서가 제공되지 않아 세부 컨셉을 확인할 수 없다.",
+  "brand_name": "더퓨처칼로",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": "성수",
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-07-08",
+   "to": "2025-07-15",
+   "days": 8
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "성수"
+  },
+  "derived": {
+   "duration": {
+    "days": 8,
+    "weekend_share": 0.25,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 30,
+    "holiday_until": 38,
+    "holiday_block_in": 0,
+    "nat_event_gap": 35,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 3,
+    "comp_prior_at_venue": 71,
+    "comp_within_500m_open": 31,
+    "comp_within_1000m_open": 40,
+    "matched_address": "서울 성동구 연무장15길 11"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 44.2
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-07, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-08"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1FS0dqo_pOBSbOL5T74NP6Sz0bBbqUS9_",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1FS0dqo_pOBSbOL5T74NP6Sz0bBbqUS9_/view",
+   "title": "칼로 결과보고서.pdf"
+  },
+  {
+   "doc_id": "1KV29pFpoFaRYV7vL1zuAfONlqnVrhiEp",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1KV29pFpoFaRYV7vL1zuAfONlqnVrhiEp/view",
+   "title": "견적서_더퓨쳐 EOA성수팝업_0611_수정완료.xlsx"
+  },
+  {
+   "doc_id": "1bIecGCvNg55GMilSv5KrGH2RpBttZDbl",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1bIecGCvNg55GMilSv5KrGH2RpBttZDbl/view",
+   "title": "칼로 십사일동안_업무계약서0610.doc"
+  },
+  {
+   "doc_id": "1ftv2t09TluiqqT0rIjon6h-BBzcXwu3n",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ftv2t09TluiqqT0rIjon6h-BBzcXwu3n/view",
+   "title": "성수 칼로 최종견적서.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전부 미제공; client_name 미상; venue_name 및 venue_type 미상; 면적(area_pyeong) 미상; 수수료구조 미상; 컨셉·체험요소·프로모션 미상; 방문자수 및 매출 실측 데이터 미상; 예상 방문자수 미상"
+ }
+}

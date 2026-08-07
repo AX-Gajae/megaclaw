@@ -1,0 +1,123 @@
+{
+ "record_id": "RTPU2456",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:무직타이거",
+  "space_id": "unresolved:전주시",
+  "client_party_id": "unresolved:전주시",
+  "brand_key": "무직타이거",
+  "space_key": "전주시"
+ },
+ "intervention": {
+  "concept": "전주시 대상 무직타이거 뚱랑이 캐릭터 굿즈(키링, 스트레스볼) 납품 건.",
+  "brand_name": "무직타이거",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": "전주시",
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-12-12",
+   "to": "2024-12-12",
+   "days": 1
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "총계 2,580,000원(VAT 10% 포함). 항목: 뚱랑이 얼굴 키링 2,000원×210개=420,000원, 뚱랑이 스트레스볼 12,000원×180개=2,160,000원. 소계 2,580,000원."
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 0.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 4,
+    "months_since_last": 0.1,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 85,
+    "holiday_until": 44,
+    "holiday_block_in": 0,
+    "nat_event_gap": 28,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": 2.3454545454545452,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1F0p9UOArkVDwO0ecU4O8SUz0KdIXWT7O",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1F0p9UOArkVDwO0ecU4O8SUz0KdIXWT7O/view",
+   "title": "RTPU2456_전주시 굿즈 납품_견적서_1129.pdf"
+  },
+  {
+   "doc_id": "1MEhwpvvhi7MRvMZabY8nLOFLpH3VEZod",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1MEhwpvvhi7MRvMZabY8nLOFLpH3VEZod/view",
+   "title": "계약서_내용없음.txt"
+  },
+  {
+   "doc_id": "1NSLO1HAZiTNyebmslT_ZvHVLXBclsz0N",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1NSLO1HAZiTNyebmslT_ZvHVLXBclsz0N/view",
+   "title": "결과보고서_내용없음.txt"
+  },
+  {
+   "doc_id": "1WV532Eq_BGMbYUcmCk6FkfdUaVuRoA72",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1WV532Eq_BGMbYUcmCk6FkfdUaVuRoA72/view",
+   "title": "제안서_내용없음.txt"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 1건: RTPU2456_전주시 굿즈 납품_견적서_1129.pd. 미확실: 실제 팝업스토어가 아닌 굿즈 납품 건으로 보임; venue/입지 정보 없음; 방문/매출 실측 없음(결과보고서 부재); client_name 정식 명칭 미확인(수신: 서창문 주무관)"
+ }
+}

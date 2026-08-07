@@ -1,0 +1,130 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{없는 것의 값은 구간으로만 말할 수 있다 --- 그리고 그 구간이 0 을 물면 순서가 정해진다}
+\author{월드모델 실험실}
+\date{노트 605 · 606 · 2026년 8월 5일}
+\maketitle
+
+\begin{abstract}
+이 판의 상시 갈래에 두 해 동안 ``\textbf{과제 $78$ 시장 레코드 $20$ 건 사람
+태깅}''이 걸려 있었다. \textbf{값을 아무도 안 쟀다.} 재려 했더니 두 번
+막혔다 --- 노트 $605$ 에서 팔이 \emph{정의되지 않았고}(축을 가리면 예보가
+상수가 되어 $\rho$ 가 \texttt{nan}), 축당 어림은 \emph{내 자신의 측정에
+반증됐다}(\texttt{goods\_scale} 을 가려도 $-0.0013$ 뿐).
+
+\textbf{거꾸로 재는 자}를 만들었다 --- 그 축을 \emph{가진} 도메인에서
+하나씩 빼면 ``그 축이 그 도메인에서 얼마를 내나''가 나오고, 도메인마다
+다르므로 \textbf{분포}가 나온다.
+
+\begin{center}
+\begin{tabular}{lrrr}
+\hline
+축 & $n$ & 구간 & 폭 \\
+\hline
+\texttt{venue\_prominence} & $10$ & $[-0.024, \mathbf{+0.285}]$ & $\mathbf{0.309}$ \\
+\texttt{target\_breadth} & $11$ & $[-0.031, +0.203]$ & $0.234$ \\
+\texttt{media\_push} & $6$ & $[\mathbf{-0.124}, +0.041]$ & $0.165$ \\
+\texttt{goods\_scale} & $8$ & $[-0.056, +0.037]$ & $0.093$ \\
+\texttt{entry\_friction} & $7$ & $[-0.007, +0.044]$ & $0.051$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{같은 축이 도메인마다 열 배 넘게 다르다.} ``축당 값'' 같은 것은
+없다.
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 같은 축이 도메인마다 열 배 넘게 다르다.
+\textbf{나} --- 사람 일 순서가 정해졌다.
+\textbf{다} --- 라벨과 붙는 것 $\neq$ 모형이 쓰는 것.}
+\end{figure}
+
+\section{순서가 정해졌다}
+
+시장팝업이 없는 축은 둘이다 --- \texttt{entry\_friction}(노트 $354$ 가
+\textbf{배치 편향}으로 막았다) $\cdot$ \texttt{media\_push}(원래 없다).
+다른 도메인의 구간을 시장팝업 크기($126/3369$)로 환산하면
+
+\begin{center}
+\begin{tabular}{lrl}
+\hline
+ & 판 환산 & \\
+\hline
+\textbf{팝업 $7$ 건} & $\mathbf{+0.0010}$ & \textbf{부호 확실} \\
+시장 $20$ 건 · \texttt{entry\_friction} & $[-0.00025, +0.00165]$ & $0$ 을 문다 \\
+시장 $20$ 건 · \texttt{media\_push} & $[\mathbf{-0.00462}, +0.00154]$ & \textbf{음수 쪽이 넓다} \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{quote}
+\textbf{팝업 $7$ 건이 앞이다.} 그 $7$ 행은 지금 예보가 상수라 채점에서
+서로 동점이므로 \emph{채우면 반드시 오른다}. 시장 $20$ 건은 \textbf{건수가
+세 배인데 부호도 모르고}, \texttt{media\_push} 쪽은 \textbf{해로울 가능성이
+더 넓다}.
+\end{quote}
+
+\section{왜 음수가 나오나}
+
+축을 빼면 \emph{오르는} 도메인이 있다 --- \texttt{media\_push} 가 한
+도메인에서 $\mathbf{-0.1235}$, \texttt{goods\_scale} 이 $-0.0555$,
+\texttt{target\_breadth} 가 $-0.0307$ 이다.
+
+\textbf{그 도메인에서 그 축이 해롭다}는 뜻이고, 이 판이 \texttt{DOMDROP}
+$\cdot$ \texttt{BLOCK} 으로 처리해 온 무늬와 같다(노트 $262$ 웹툰
+\texttt{entry\_friction} $\cdot$ 노트 $354$ 시장팝업 $\cdot$ 노트 $379$
+펀딩 $\cdot$ 노트 $553$ 만화). \textbf{없는 축을 새로 만들면 그 자리에
+떨어질 수도 있다.}
+
+\section{라벨과 붙는 것과 모형이 쓰는 것은 다르다}
+
+\begin{center}
+\begin{tabular}{lrr}
+\hline
+축 & 학습 가중(노트 $589$) & 도메인 손해 가중 \\
+\hline
+\texttt{target\_breadth} & $+0.4163$ & $+0.0293$ \\
+\texttt{media\_push} & $+0.3688$ & $+0.0159$ \\
+\texttt{goods\_scale} & $+0.3097$ & $+0.0173$ \\
+\texttt{venue\_prominence} & $\mathbf{+0.0775}$ & $\mathbf{+0.0331}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{학습 꼴찌가 손해 일등이다.} \texttt{venue\_prominence} 는 라벨과
+$+0.0775$ 로만 붙는데 빼면 제일 많이 잃는다 --- 아이돌에서 $+0.2848$ 이다.
+
+\begin{quote}
+주변 상관은 \emph{그 축 하나로} 라벨을 얼마나 맞히나이고, 빼기 손해는
+\emph{다른 축들과 함께} 얼마를 하나다. \textbf{둘이 다르면 그 축은
+조합에서 값이 난다} --- 노트 $579$ 가 KR 만화에서 본 것(모형이 어떤 단일
+축보다 낫다)과 같은 자리다.
+\end{quote}
+
+\section*{조항}
+
+\begin{quote}
+\textbf{없는 것의 값은 가진 데서 재고, 구간으로만 말한다.} 점추정을 하면
+노트 $568$ 함정(유보에서 잰 값을 모형이 가져갈 값으로 읽는다)의 다른
+얼굴에 빠진다. \textbf{그리고 구간이 $0$ 을 물면 그것으로 충분하다} ---
+순서를 정하는 데는 부호만 있으면 된다.
+\end{quote}
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{가진 데서 뺀 값 $\neq$ 없는 데 넣을 값.} 미리 적은 한계가
+그대로 산다. 실제로 만들어 재는 수밖에 없다.
+\item \textbf{\texttt{venue\_prominence} 가 아이돌에서 왜 $+0.285$ 인가} ---
+그 도메인 유보가 $51$ 행이라 잡음일 수도 있다(노트 $591$ 의
+\texttt{NOISY\_N}$=200$ 아래다). 안 봤다.
+\item \textbf{$n$ 이 $6\!\sim\!11$ 이다} --- 구간의 끝은 한 도메인이 정한다.
+노트 $600$ 이 이웃 효과에서 겪은 것과 같은 크기 문제다.
+\end{itemize}
+
+\end{document}

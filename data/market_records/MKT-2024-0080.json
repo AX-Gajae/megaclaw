@@ -1,0 +1,98 @@
+{
+ "market_record_id": "MKT-2024-0080",
+ "event_name": "동서식품 '맥심골목' 군산 팝업스토어",
+ "brand": "동서식품(맥심)",
+ "ip_or_collab": "맥심 마스터브랜드, 군산 월명동 달빛마을 로컬상점 5곳 협업(골목 단위 팝업)",
+ "category": "fnb",
+ "intervention": {
+  "concept_description": "'골목' 콘셉트로 골목 전체를 맥심 브랜드 체험 공간으로 조성. 부동산·방앗간·운세·슈퍼·한의원·놀이터 등 6개 콘셉트 공간+골목길",
+  "experience_elements": [
+   "맥심방앗간(원두 선택 아메리카노+가래떡)",
+   "맥심운세·슈퍼·한의원·놀이터 체험",
+   "맥심 마이포인트 앱 빙고 미션",
+   "벽화 골목길"
+  ],
+  "promotions": [
+   "빙고 2줄 완성 시 굿즈 증정"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "전북 군산시 월명동 달빛마을 일대",
+  "venue_type": "street_standalone",
+  "neighborhood": "월명동",
+  "city": "전북 군산",
+  "period_from": "2024-10-17",
+  "period_to": "2024-11-17",
+  "area_pyeong": null,
+  "multi_store": true,
+  "derived": {
+   "duration": {
+    "days": 32,
+    "weekend_share": 0.31,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 128000,
+  "visitors_period_days": 32,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "동서식품 관계자가 종료 직후 기자에게 밝힌 최종 집계('일 평균 3500명이 방문해 최종 약 12만8000명이 방문했다')",
+  "visitors_source_quote": "동서식품 관계자는 “일 평균 3500명이 방문해 최종 약 12만8000명이 방문했다. 지난 주말에만 1만명이 방문했다”고 말했다.",
+  "visitors_source_url": "https://www.kfenews.co.kr/news/articleView.html?idxno=626934",
+  "visitors_source_date": "2024-11-19",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "평일 오전에도 각 장소마다 웨이팅 줄, 마지막 주말 이틀 1만명 방문",
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "평일 오전 시간이었음에도 불구하고 많은 방문객들이 이곳을 찾아 각 장소마다 웨이팅 줄이 길게 늘어뜨려져 있었다.(한국금융경제신문)"
+   ]
+  },
+  "conflict": true,
+  "alt_figures": [
+   {
+    "value": 120000,
+    "basis": "organizer_claim",
+    "quote": "특히 동서식품이 지난해 10월 17월부터 11월 17일까지 한 달간 전북 군산시 월명동 달빛마을 일대에서 운영한 '맥심골목'은 한 달간 약 12만 명이 방문하며 큰 호평을 받았다.",
+    "url": "https://www.newsis.com/view/NISX20250917_0003333112",
+    "date": "2025-09-17"
+   }
+  ],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": true,
+   "final_marked": true,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "12만8000명(한국금융경제신문, 주최사 관계자 인용)과 12만명(뉴시스 2025-09-17·뉴데일리 2025-02-24)이 공존 → conflict 처리. 뉴데일리는 '최단 기간 최다 방문 기록 경신' 평가 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

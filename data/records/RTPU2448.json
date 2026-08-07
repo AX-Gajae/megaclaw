@@ -1,0 +1,129 @@
+{
+ "record_id": "RTPU2448",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:무직타이거",
+  "space_id": "unresolved:전주_덕진공원",
+  "client_party_id": null,
+  "brand_key": "무직타이거",
+  "space_key": "전주_덕진공원"
+ },
+ "intervention": {
+  "concept": "전주 덕진공원에서 진행된 무직타이거 팝업 프로모션. 세부 컨셉·체험요소 정보는 원문 문서가 제공되지 않아 확인 불가.",
+  "brand_name": "무직타이거",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": "전주",
+   "district": null,
+   "venue_name": "덕진공원",
+   "venue_type": "공원",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-11-22",
+   "to": "2024-11-22",
+   "days": 1
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "전주 덕진공원 내 프로모션"
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 0.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 7.7,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 65,
+    "holiday_until": 64,
+    "holiday_block_in": 0,
+    "nat_event_gap": 8,
+    "nat_event": "수능",
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 158400.0,
+    "pnl_pre_accounts": 3,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2024-10-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 15.8
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-11, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2024-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1EQdh6TaZhQ7G8lOeLScUfnLkH4f_eI_j",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1EQdh6TaZhQ7G8lOeLScUfnLkH4f_eI_j/view",
+   "title": "견적서_내용없음.txt"
+  },
+  {
+   "doc_id": "1O_FTvSN9Vul2L_89iiOS-v6KblRi9O1y",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1O_FTvSN9Vul2L_89iiOS-v6KblRi9O1y/view",
+   "title": "계약서_내용없음.txt"
+  },
+  {
+   "doc_id": "1Ofu-qIy_0cCilrrDYkSngjTQYhnmGHjh",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1Ofu-qIy_0cCilrrDYkSngjTQYhnmGHjh/view",
+   "title": "결과보고서_내용없음.txt"
+  },
+  {
+   "doc_id": "1mpBSXg6hw9GKWcs4EU_tDUUSF8SEp18p",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1mpBSXg6hw9GKWcs4EU_tDUUSF8SEp18p/view",
+   "title": "제안서_내용없음.txt"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서/기획서/견적서/결과보고서) 전부 미제공; client_name 불명; 면적/수수료구조/브랜드 요구사항 불명; 방문객수 및 매출 실측 데이터 없음; 컨셉·체험요소·프로모션 세부 불명"
+ }
+}

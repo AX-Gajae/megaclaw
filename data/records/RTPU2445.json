@@ -1,0 +1,129 @@
+{
+ "record_id": "RTPU2445",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:안테나_최고심",
+  "space_id": "unresolved:미상_venue",
+  "client_party_id": null,
+  "brand_key": "최고심",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "안테나와 최고심 캐릭터의 협업 팝업스토어(문서 원문 내용 없음).",
+  "brand_name": "안테나 x 최고심",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-12-26",
+   "to": "2025-01-05",
+   "days": 11
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 11,
+    "weekend_share": 0.36,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 5.4,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 99,
+    "holiday_until": 30,
+    "holiday_block_in": 0,
+    "nat_event_gap": 42,
+    "nat_event": null,
+    "doc_lag_days": 21,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 319450.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2024-10-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 130.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-01, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2024-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "11Ru5ZFAHR3J-W4LRtj5MbaVoutiv75Uj",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/11Ru5ZFAHR3J-W4LRtj5MbaVoutiv75Uj/view",
+   "title": "[Sweetspot] 안테나x최고심 새해복공장 팝업스토어_결과보고서_250110.pdf"
+  },
+  {
+   "doc_id": "1eKSSE2AgRotaoMsJsmTx-DiVuYH7dNnrqyujCZGFRw4",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1eKSSE2AgRotaoMsJsmTx-DiVuYH7dNnrqyujCZGFRw4/view",
+   "title": "제안서_내용없음"
+  },
+  {
+   "doc_id": "1eXbC3Y7Ma5VhkPYa7VtXiZp6u9r4uOdv",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1eXbC3Y7Ma5VhkPYa7VtXiZp6u9r4uOdv/view",
+   "title": "안테나 최고심 팝업스토어 계약서_날인 스캔본_241205.pdf"
+  },
+  {
+   "doc_id": "1xoWKIt_5QAfSkEEE-BsSdmL2cLk1XphS",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1xoWKIt_5QAfSkEEE-BsSdmL2cLk1XphS/view",
+   "title": "(Sweetspot) 안테나x최고심 팝업_예산안_4차_241128_견적서.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 1건: 제안서_내용없음. 미확실: 제안서 원문 내용 없음(빈 문서); client_name 미상; venue/입지 정보 없음; 면적 정보 없음; 수수료 구조 없음; 컨셉·체험요소·프로모션 상세 없음; 결과보고서 없음(방문/매출 실측 없음); 예상 방문 수치 없음"
+ }
+}

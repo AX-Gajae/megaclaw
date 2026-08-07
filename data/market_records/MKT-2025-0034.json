@@ -1,0 +1,89 @@
+{
+ "market_record_id": "MKT-2025-0034",
+ "event_name": "프로티원(Proteeone) 첫 오프라인 팝업스토어(더현대 서울)",
+ "brand": "프로티원(앳홈)",
+ "ip_or_collab": "일러스트레이터 김잼(협업 한정판)",
+ "category": "fnb",
+ "intervention": {
+  "concept_description": "단백질 식품 브랜드 첫 오프라인 팝업. '맛있게 먹고 즐겁게 운동하면 빛나는 나를 재발견' 메시지, 김잼 작가 협업 한정판 패키지, 시그니처 유리컵·굿즈 키링 한정 수량 특별가",
+  "experience_elements": [
+   "단백질 쉐이크 판매",
+   "굿즈(유리컵·키링)"
+  ],
+  "promotions": [
+   "한정 수량 특별가 판매"
+  ],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "더현대 서울",
+  "venue_type": "department_store",
+  "neighborhood": "여의도",
+  "city": "서울",
+  "period_from": "2025-04-25",
+  "period_to": "2025-05-01",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 9000,
+  "visitors_period_days": 7,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "운영사 앳홈 발표(뉴스탭) '4월 25일부터 5월 1일까지 이어진 이번 행사가 약 9,000여 명의 방문객을 기록하며 성황리에 종료됐다고 2일 밝혔다'",
+  "visitors_source_quote": "단백질 식품 브랜드 프로티원(Proteeone)이 더현대 서울에서 진행한 첫 오프라인 팝업스토어를 성공적으로 마무리했다. 운영사 앳홈(대표 양정호)은 4월 25일부터 5월 1일까지 이어진 이번 행사가 약 9,000여 명의 방문객을 기록하며 성황리에 종료됐다고 2일 밝혔다.",
+  "visitors_source_url": "https://www.newstap.co.kr/news/articleView.html?idxno=303264",
+  "visitors_source_date": "2025-05-02",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": true,
+   "sold_out": true,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "행사 기간 내내 현장에는 긴 대기 행렬이 이어지며, 단백질 제품에 대한 소비자의 높은 관심을 방증했다.",
+    "해당 제품들은 현장에서 빠르게 품절될 정도로 뜨거운 반응을 얻었다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": true,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "9000명은 '약/여' 표현. fnb(단백질 식품) | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

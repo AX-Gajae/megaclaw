@@ -1,0 +1,80 @@
+{
+  "market_record_id": "MKT-2023-0053",
+  "event_name": "마루는 강쥐 팝업스토어 인 부산(신세계백화점 센텀시티점)",
+  "brand": "네이버웹툰/신세계백화점",
+  "ip_or_collab": "마루는 강쥐",
+  "category": "game_webtoon",
+  "intervention": {
+    "concept_description": "웹툰 IP 비수도권 첫 팝업. 마루는 강쥐 단독 팝업, 기존 상품+40종 추가 총 322종 굿즈, 포토존",
+    "experience_elements": [
+      "포토존",
+      "굿즈 판매(322종)"
+    ],
+    "promotions": [
+      "신규 40종 상품"
+    ],
+    "is_free_entry": true,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "신세계백화점 센텀시티점",
+    "venue_type": "department_store",
+    "neighborhood": "센텀",
+    "city": "부산",
+    "period_from": "2023-11-10",
+    "period_to": "2023-11-23",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 14,
+        "weekend_share": 0.29,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 14,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "총 방문객 미보도(3개 팝업 합산 17만 명에 포함). 대기 수치만 보도: '주말에는 100팀 이상의 입장 대기와 1시간 이상의 대기 시간을 버텨야 팝업스토어 현장에 입장할 수 있고'",
+    "visitors_source_quote": "특히 주말에는 100팀 이상의 입장 대기와 1시간 이상의 대기 시간을 버텨야 팝업스토어 현장에 입장할 수 있고, 현장에서 판매되는 인형·키링·노트 등의 굿즈를 구매하기 위해서는 추가적으로 결제 대기 라인에서 줄을 서야 한다.",
+    "visitors_source_url": "https://www.ceoscoredaily.com/page/view/2023112114320501995",
+    "visitors_source_date": "2023-11-21",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "주말 100팀 이상 입장 대기, 1시간 이상 대기, 결제 대기 라인 별도",
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "네이버웹툰 측은 '지난 두 차례의 팝업스토어에 총 방문객 약 12만 명, 1인 최대 결제 금액 116만 원을 기록하며 유통업계의 주목을 받았다'고 강조했다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": [
+      {
+        "metric": "visitors_total",
+        "figure": 50000,
+        "scope_note": "2차수집 대안치: 원문 표현 '방문객 약 5만 명이 몰렸다' — 14일 기간 전체 누적 방문객. 입장 집계인지 추정인지 산정 ",
+        "source_url": "https://www.sedaily.com/article/13797384",
+        "source_date": "2023-11-26"
+      }
+    ]
+  },
+  "extraction_confidence": "medium",
+  "notes": "CEO스코어데일리 원문 웹오픈 실패, 검색 추출 전문 기반. 2023년 3개 팝업 합산 17만 명(MKT-2023-0002)의 부산분 포함, 개별 총계 미보도. | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": false,
+  "exclude_reason": "집계형(통합/합산)",
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

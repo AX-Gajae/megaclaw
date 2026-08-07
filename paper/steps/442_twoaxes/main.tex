@@ -1,0 +1,115 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{순위가 목표를 못 맞힌다 --- 열다섯 팔을 모아 보니 판과 전이가 거의 독립이었다}
+\author{월드모델 실험실}
+\date{노트 569 · 2026년 8월 5일}
+\maketitle
+
+\begin{abstract}
+노트 $568$ 이 남긴 것 --- ``도서에 달력을 주면 판 $\cdot$ 도서가 음수인데
+\textbf{집 밖 짝 둘이 다 오른다}''. 노트 $553$(만화 가림)도 같은 무늬였다.
+\textbf{판과 전이가 서로 다른 것을 사는가}를 이 세션에서 잰 팔 전부로 쟀다.
+
+\begin{center}
+\begin{tabular}{lrr}
+\hline
+표본 & $n$ & 판 $\leftrightarrow$ 전이 순위상관 \\
+\hline
+전부 & $15$ & $+0.230$ \\
+\textbf{극단 하나 빼고} & $14$ & $\mathbf{+0.108}$ \\
+$|$판 차$|<0.010$ 만 & $13$ & $+0.326$ \\
+대조 제외 & $12$ & $+0.207$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{가설 둘이 다 반증됐다} --- ``서로 다른 것을 산다''(음수)도 아니고
+``같이 움직인다''(강한 양수)도 아니다. \textbf{판은 전이를 예측하지 못한다.}
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 거의 독립. \textbf{나} --- 집 밖끼리는 붙는다.
+\textbf{다} --- 둘뿐이고 둘 다 판이 음수.}
+\end{figure}
+
+\section{집 밖 짝끼리는 붙는다}
+
+KR 만화 $\leftrightarrow$ 비게임 앱 순위상관 $\mathbf{+0.436}$(극단 빼고
+$+0.304$). 두 짝은 서로 어느 정도 같은 것을 잰다 --- \textbf{노트 $426$
+거울 검사(집 밖 짝 둘의 부호가 같아야 한다)가 뜻이 있다}는 뜻이다.
+
+\begin{quote}
+반면 판은 그 둘과 각각 $+0.040$(KR) $\cdot$ $+0.340$(앱)이다.
+\textbf{집 안 셋과 집 밖 둘이 거의 다른 것을 재고 있다.}
+\end{quote}
+
+\section{집 밖 둘 다 오른 팔은 둘뿐이고, 둘 다 판이 음수다}
+
+\begin{center}
+\begin{tabular}{lrrrl}
+\hline
+ & 판 & KR 만화 & 비게임 앱 & \\
+\hline
+만화 검색 가림 & $-0.0001$ & $+0.0082$ & $+0.0022$ & \textbf{채택}(노트 $553$) \\
+도서 달력 & $-0.0024$ & $+0.0034$ & $+0.0032$ & 기각(노트 $568$) \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{판만으로 줄 세웠으면 둘 다 놓쳤다.} 그리고 이 사이클의 채택 둘이
+모두 그 모양이다 --- 노트 $553$(판 $-0.0001$, 전이 $++$) $\cdot$ 노트
+$564$(판 $+0.0005$, 게임 $40/40$). \textbf{둘 다 판이 아니라 다른 자로
+채택됐다.}
+
+\section{그래서 무엇인가}
+
+목표는 \textbf{IP 파운데이션 월드모델} --- 집 밖 도메인에 서는 것이다.
+그런데 순위 지표(판)가 전이를 못 맞힌다($\rho \approx +0.1\!\sim\!0.3$).
+이것은 두 가지로 읽힌다.
+
+\begin{itemize}
+\item \textbf{경고} --- 판으로만 고르면 목표와 어긋난 것을 고를 수 있다.
+\item \textbf{사후 검증} --- 그래서 관문이 \emph{다섯} 자다. 집 안 셋
+(판 $\cdot$ 날짜 통제 $\cdot$ 무리 안)과 집 밖 둘(KR $\cdot$ 앱)이
+\textbf{거의 독립인 것을 재고 있고}, 그 둘을 다 요구하는 설계가 옳았다.
+\end{itemize}
+
+\begin{quote}
+\textbf{다섯 자는 중복이 아니라 두 축이다.} 판이 전이를 예측했다면 집 밖
+짝은 장식이었을 것이다 --- 안 예측하므로 \emph{필요하다}.
+\end{quote}
+
+\section*{한계}
+
+팔 $15$ 개는 이 세션에서 잰 것뿐이고 \textbf{전부 검색 $\cdot$ 달력 $\cdot$
+라벨 계열}이다. 모형 손잡이(깊이 $\cdot$ 학습률 $\cdot$ 행 무게) 팔은 안
+들어갔다. 그 계열에서는 판과 전이가 더 붙을 수도 있다 --- \textbf{자료 쪽
+변경에서 독립이라는 것}까지가 여기서 말할 수 있는 것이다.
+
+\section*{조항}
+
+\begin{quote}
+\textbf{순위 지표가 목표를 대신하지 않는다.} 판은 ``지금 판에서 얼마나
+맞히나''이고 목표는 ``안 본 판에서 서나''다. 열다섯 팔에서 둘의 순위상관이
+$+0.1\!\sim\!0.3$ 이므로, \textbf{후보를 판으로 거르되 판정은 다섯 자로
+한다}는 지금 규약을 그대로 둔다.
+\end{quote}
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{모형 손잡이 계열로도 재 본다} --- 깊이 $\cdot$ \texttt{TRAINR}
+$\cdot$ \texttt{TRAINCAP} 을 흔든 팔들의 (판, 전이)를 모으면 이 독립성이
+자료 쪽에만 있는 것인지 알 수 있다. 옛 노트의 기록을 긁어야 한다.
+\item \textbf{도서 달력이 왜 전이를 올리나} --- 판 $\cdot$ 도서가 내려가는데
+집 밖 둘이 오른다. 달력을 준 도메인이 아니라 \emph{남들}이 달라진 것이므로
+이웃 효과인데, 노트 $562$ 가 그 손잡이를 못 찾았다.
+\item \textbf{집 밖 짝이 둘뿐이다} --- KR 만화 $\cdot$ 비게임 앱. 셋째 짝이
+있으면 거울이 더 단단해진다(노트 $426$).
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,669 @@
+{
+ "record_id": "RCPU2528",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:더퓨처EOA",
+  "space_id": "unresolved:성수",
+  "client_party_id": null,
+  "brand_key": "더퓨처EOA",
+  "space_key": "성수"
+ },
+ "intervention": {
+  "concept": "더퓨처EOA 팝업스토어 (성수). 원문 문서가 제공되지 않아 컨셉 세부 내용을 확인할 수 없음.",
+  "brand_name": "더퓨처EOA",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "성동구",
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": "성수 지역"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-06-27",
+   "to": "2025-07-06",
+   "days": 10
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": "원문 문서 미제공으로 계약금액·수수료 정보 확인 불가"
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "성수 지역"
+  },
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 19,
+    "holiday_until": 49,
+    "holiday_block_in": 0,
+    "nat_event_gap": 24,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 2,
+    "comp_prior_at_venue": 69,
+    "comp_within_500m_open": 28,
+    "comp_within_1000m_open": 39,
+    "matched_address": "서울 성동구 연무장15길 11"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 84.9
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 미제공). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-07, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-08"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-b-ZFDiusx26wmy6LUGrTinjhxaRgWfi",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1-b-ZFDiusx26wmy6LUGrTinjhxaRgWfi/view",
+   "title": "Enscape_2025-06-05-13-01-36.png"
+  },
+  {
+   "doc_id": "10DfL9pKfQRPpmNRk6B-1kkORMyd7NK-7",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/10DfL9pKfQRPpmNRk6B-1kkORMyd7NK-7/view",
+   "title": "Enscape_2025-06-05-13-02-16.png"
+  },
+  {
+   "doc_id": "10ONwRECFzmQ_KGEinAdJAutr2yQWEg1d",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/10ONwRECFzmQ_KGEinAdJAutr2yQWEg1d/view",
+   "title": "Enscape_2025-06-05-13-01-28.png"
+  },
+  {
+   "doc_id": "10Y-Cyb_7aX1OR8FPJ-QhZi5kJeU7NPkT",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/10Y-Cyb_7aX1OR8FPJ-QhZi5kJeU7NPkT/view",
+   "title": "더퓨쳐 EOA팝업 제안용 시안_0605.skp"
+  },
+  {
+   "doc_id": "11UVmzUO_XtfK5J4HuaJrdsTKrlbLRCa7",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/11UVmzUO_XtfK5J4HuaJrdsTKrlbLRCa7/view",
+   "title": "임대계약서_금강컨테이너_성수동 더퓨쳐팝업 날인완료문서.pdf"
+  },
+  {
+   "doc_id": "11_UNwoudmcM0-V4xtq_HtnKO134fb3oH",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/11_UNwoudmcM0-V4xtq_HtnKO134fb3oH/view",
+   "title": "0617 더퓨쳐_EOA팝업 아크릴 소도구.pptx"
+  },
+  {
+   "doc_id": "133Urp3_5v2N_jZlJwe41szm6Q_0aN8SR",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/133Urp3_5v2N_jZlJwe41szm6Q_0aN8SR/view",
+   "title": "Enscape_2025-06-11-18-02-32.png"
+  },
+  {
+   "doc_id": "14612jWzVSmSWGvst5REkr_L1OKXQ5pfi",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/14612jWzVSmSWGvst5REkr_L1OKXQ5pfi/view",
+   "title": "더퓨쳐 EOA팝업 제안용 시안.skp"
+  },
+  {
+   "doc_id": "14mFbv7nfbUMyUgGg_8uUJtrjMXpUDhig",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/14mFbv7nfbUMyUgGg_8uUJtrjMXpUDhig/view",
+   "title": "0611 더퓨쳐_EOA팝업 공간구성안.pptx"
+  },
+  {
+   "doc_id": "15l7Aa0hxXnBeVhKHDd9GhZXNS0o4GTTv",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/15l7Aa0hxXnBeVhKHDd9GhZXNS0o4GTTv/view",
+   "title": "0604 더퓨쳐_EOA팝업 공간구성안.pdf"
+  },
+  {
+   "doc_id": "16NX6M87kXYy6T0gCu56HJFpexwOOQFUb",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/16NX6M87kXYy6T0gCu56HJFpexwOOQFUb/view",
+   "title": "0605 EOA오브제 제작견적문의.pptx"
+  },
+  {
+   "doc_id": "16jhyeTuYqsVScTu9sU-eDwZB8qRpweMq",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/16jhyeTuYqsVScTu9sU-eDwZB8qRpweMq/view",
+   "title": "더퓨쳐 EOA팝업 제안용 시안_0604.skb"
+  },
+  {
+   "doc_id": "17LpA0dyLD60MO9I26HV1rYonqgnYdBnQ",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/17LpA0dyLD60MO9I26HV1rYonqgnYdBnQ/view",
+   "title": "더퓨쳐 EOA팝업 제안용 시안_6011.skp"
+  },
+  {
+   "doc_id": "17tU1_rXQQPqa0c2uB5w49G13sDBQssLz",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17tU1_rXQQPqa0c2uB5w49G13sDBQssLz/view",
+   "title": "견적서_그리드_더퓨쳐 성수팝업 컨테이너 간판 추가건.xlsx"
+  },
+  {
+   "doc_id": "17x0JYWraxIER35EzvbYMuNOXilv2UqyI",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/17x0JYWraxIER35EzvbYMuNOXilv2UqyI/view",
+   "title": "Enscape_2025-06-05-13-01-12.png"
+  },
+  {
+   "doc_id": "182IxPiAI5bLzykpJOtE5XoY7xoDysYK0",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/182IxPiAI5bLzykpJOtE5XoY7xoDysYK0/view",
+   "title": "프레임내부사이즈 (1).jpg"
+  },
+  {
+   "doc_id": "18qsdhxkpDy5YeTDkHVRRKZRd6LaE-Geo",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/18qsdhxkpDy5YeTDkHVRRKZRd6LaE-Geo/view",
+   "title": "Enscape_2025-06-11-18-03-17.png"
+  },
+  {
+   "doc_id": "19vxXTJX1npbE1lwzgkRmLA7t09S8Jz7k",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/19vxXTJX1npbE1lwzgkRmLA7t09S8Jz7k/view",
+   "title": "0605 더퓨쳐_EOA팝업 공간구성안.pdf"
+  },
+  {
+   "doc_id": "19y0HmU4CvV4p-6RGfk_UXterUGmrlz64",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/19y0HmU4CvV4p-6RGfk_UXterUGmrlz64/view",
+   "title": "Enscape_2025-06-05-13-01-53.png"
+  },
+  {
+   "doc_id": "1A6sgeIZ6VEEv6Go0P3FGHoqZzQV0gljh",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1A6sgeIZ6VEEv6Go0P3FGHoqZzQV0gljh/view",
+   "title": "견적서_그리드_성수동 더퓨쳐 EOA팝업 및 브랜드교체건(시공계약).xlsx"
+  },
+  {
+   "doc_id": "1Ap6nwky2d1XRCN2KiL74TZs0UEY-dKWG",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Ap6nwky2d1XRCN2KiL74TZs0UEY-dKWG/view",
+   "title": "세금계산서_그리드_더퓨쳐 성수팝업 철수 바닥보수건.JPG"
+  },
+  {
+   "doc_id": "1C3_j1k1DF78WpbENyVm5FCFk7nFXDjNv",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1C3_j1k1DF78WpbENyVm5FCFk7nFXDjNv/view",
+   "title": "세금계산서_그리드_더퓨쳐 성수팝업 칼로 추가연출건.JPG"
+  },
+  {
+   "doc_id": "1CxeKDoXSG9woDf2ySzZo-4yFgB7I1yQr",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CxeKDoXSG9woDf2ySzZo-4yFgB7I1yQr/view",
+   "title": "세금계산서_그리드_성수동 더퓨쳐팝업스토어 인테리어 시공건(선금30%).JPG"
+  },
+  {
+   "doc_id": "1E6BKg-MsyI52dUj5THdWya74GXbGjxt_",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1E6BKg-MsyI52dUj5THdWya74GXbGjxt_/view",
+   "title": "견적서_더퓨쳐 EOA성수팝업_0611_수정완료.xlsx"
+  },
+  {
+   "doc_id": "1EAYpmPKL0YVrBu69LhiJQPe5BSskiam_",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1EAYpmPKL0YVrBu69LhiJQPe5BSskiam_/view",
+   "title": "Enscape_2025-06-05-13-05-33.png"
+  },
+  {
+   "doc_id": "1EgcxjPFg15z4qr-Cifp1lRBg1e6LLfLw",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1EgcxjPFg15z4qr-Cifp1lRBg1e6LLfLw/view",
+   "title": "견적서_렌탈큐브_더퓨쳐 성수팝업 집기렌탈건.xlsx"
+  },
+  {
+   "doc_id": "1EvXb8ATLXmR-X9n52e4sJG1fkPNc9186",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1EvXb8ATLXmR-X9n52e4sJG1fkPNc9186/view",
+   "title": "Enscape_2025-06-11-18-17-03.png"
+  },
+  {
+   "doc_id": "1EznO0jOaQiLRiYDVGVszqSgtcWvLAXkU",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1EznO0jOaQiLRiYDVGVszqSgtcWvLAXkU/view",
+   "title": "더퓨쳐 EOA팝업 제안용 시안.skb"
+  },
+  {
+   "doc_id": "1F8wxRKMMp-t6PP9wG5nqVTu0eCvjyG4G",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1F8wxRKMMp-t6PP9wG5nqVTu0eCvjyG4G/view",
+   "title": "EOA_업무계약서0610.doc"
+  },
+  {
+   "doc_id": "1F9iyNLsDDyysqlUDuQv6vLJ0B4m4BrEQ",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1F9iyNLsDDyysqlUDuQv6vLJ0B4m4BrEQ/view",
+   "title": "Enscape_2025-06-05-13-03-22.png"
+  },
+  {
+   "doc_id": "1FPFbIvEIOSej69wdf5CnstynSpRYP0KM",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1FPFbIvEIOSej69wdf5CnstynSpRYP0KM/view",
+   "title": "Enscape_2025-06-05-13-01-20.png"
+  },
+  {
+   "doc_id": "1FTPEb1cNQ8L68zARZtB8yiBK0uvAabUz",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1FTPEb1cNQ8L68zARZtB8yiBK0uvAabUz/view",
+   "title": "Enscape_2025-06-05-13-01-45.png"
+  },
+  {
+   "doc_id": "1Fsf7K__LFEvZRVMBT6Rbt6u74zlXzsxG",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Fsf7K__LFEvZRVMBT6Rbt6u74zlXzsxG/view",
+   "title": "Enscape_2025-06-11-18-17-29.png"
+  },
+  {
+   "doc_id": "1G3j8OZ0EpiYO9vNs_SQWkd3K3Cqr3MDP",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1G3j8OZ0EpiYO9vNs_SQWkd3K3Cqr3MDP/view",
+   "title": "세금계산서_디자인알파_낫띵베럴 오브제제작건.JPG"
+  },
+  {
+   "doc_id": "1Glc2qJ1cft3cEb4HbphtyedLJVNFoBqp",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Glc2qJ1cft3cEb4HbphtyedLJVNFoBqp/view",
+   "title": "세금계산서_진성아크릴_더퓨쳐 칼로팝업 소도구제작건.JPG"
+  },
+  {
+   "doc_id": "1Hao74Zsp2qMhEt0oYyASxxzTkq_Lqqmr",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Hao74Zsp2qMhEt0oYyASxxzTkq_Lqqmr/view",
+   "title": "낫띵베럴_업무계약서0610.doc"
+  },
+  {
+   "doc_id": "1HvE2xb6r_4bhyiyS2d9x1lmo57H1Njm0",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1HvE2xb6r_4bhyiyS2d9x1lmo57H1Njm0/view",
+   "title": "★더퓨쳐 EOA팝업 실비정리.xlsx"
+  },
+  {
+   "doc_id": "1HxrWDg6cYqs_6-ZcedJ73Bs7J97mU_O8",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1HxrWDg6cYqs_6-ZcedJ73Bs7J97mU_O8/view",
+   "title": "0611 더퓨쳐_EOA팝업 공간구성안.pdf"
+  },
+  {
+   "doc_id": "1Io9pi8BFO9IIRnMrF0ZK5-Ske1BLcyaL",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Io9pi8BFO9IIRnMrF0ZK5-Ske1BLcyaL/view",
+   "title": "세금계산서_디자인알파_EOA팝업 조형물제작건.JPG"
+  },
+  {
+   "doc_id": "1JYqStoFM9zSP2G6lS4CDoTCXOfK5E_rn",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1JYqStoFM9zSP2G6lS4CDoTCXOfK5E_rn/view",
+   "title": "Enscape_2025-06-11-18-23-42.png"
+  },
+  {
+   "doc_id": "1Jlk0kbIf-RDn5sfXsSiNXm265OdAZwpq",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Jlk0kbIf-RDn5sfXsSiNXm265OdAZwpq/view",
+   "title": "시공계약서_그리드_성수동 더퓨쳐 팝업 인테리어 시공간.docx"
+  },
+  {
+   "doc_id": "1Jy5lXsDDfBxXd9uZZV8xQXoPGfB12sbc",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Jy5lXsDDfBxXd9uZZV8xQXoPGfB12sbc/view",
+   "title": "견적서_금강컨테이너_더퓨쳐 성수팝업 철수 중장비 렌탈건.pdf"
+  },
+  {
+   "doc_id": "1K-XynY-ahwq_DU86XKiMG_XvVX-OfFk9",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1K-XynY-ahwq_DU86XKiMG_XvVX-OfFk9/view",
+   "title": "Enscape_2025-06-11-18-01-29.png"
+  },
+  {
+   "doc_id": "1KQd8XLaia2BkfgrfxtJ6lUVyR3KgBkeS",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1KQd8XLaia2BkfgrfxtJ6lUVyR3KgBkeS/view",
+   "title": "세금계산서_그리드_더퓨쳐 성수팝업 컨테이너 간판 추가건.JPG"
+  },
+  {
+   "doc_id": "1KiNQ4nM_VX6j0LSKjE43RfKvhpH_a8vv",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1KiNQ4nM_VX6j0LSKjE43RfKvhpH_a8vv/view",
+   "title": "세금계산서_그리드_성수동 더퓨쳐팝업스토어 인테리어 시공건(중도금30%).JPG"
+  },
+  {
+   "doc_id": "1KtskMX7zdpNJl5mLHGQbxkf6brtuaAb2",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1KtskMX7zdpNJl5mLHGQbxkf6brtuaAb2/view",
+   "title": "견적서_디자인알파_낫띵베럴 오브제 제작건.xlsx"
+  },
+  {
+   "doc_id": "1LgeuQDntZgaLIK8sz0qqBrD6aHT676EG",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1LgeuQDntZgaLIK8sz0qqBrD6aHT676EG/view",
+   "title": "Enscape_2025-06-05-13-02-02.png"
+  },
+  {
+   "doc_id": "1MoS53GXnUbYpDR2WzpawWkYl0qGohcgf",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1MoS53GXnUbYpDR2WzpawWkYl0qGohcgf/view",
+   "title": "칼로 십사일동안_업무계약서0610.doc"
+  },
+  {
+   "doc_id": "1N7o5CYNpdXHRqT8eSWmmS9Pz-wNbnMxw",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1N7o5CYNpdXHRqT8eSWmmS9Pz-wNbnMxw/view",
+   "title": "세금계산서_렌탈큐브_더퓨쳐 성수팝업 집기렌탈건.JPG"
+  },
+  {
+   "doc_id": "1NQb246ba1U48HWZtj-mpvhRPwGFawJMn",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1NQb246ba1U48HWZtj-mpvhRPwGFawJMn/view",
+   "title": "0605 컨테이너 임대문의.pptx"
+  },
+  {
+   "doc_id": "1OEi1ftSwHv2qvFa3zzAwDAe9VuImzY6c",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1OEi1ftSwHv2qvFa3zzAwDAe9VuImzY6c/view",
+   "title": "견적서_그리드_더퓨쳐 성수팝업 철수 바닥보수건.xlsx"
+  },
+  {
+   "doc_id": "1PCUuAo9OMLj41UaEnqE70HCfUujbas9g",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1PCUuAo9OMLj41UaEnqE70HCfUujbas9g/view",
+   "title": "0617 더퓨쳐_EOA팝업 아크릴 소도구.pdf"
+  },
+  {
+   "doc_id": "1Q3B-jN977VwijDa-kcpy8KdWRkaPH77q",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Q3B-jN977VwijDa-kcpy8KdWRkaPH77q/view",
+   "title": "닥터블릿_업무계약서0610.doc"
+  },
+  {
+   "doc_id": "1QbOG9_DZ-3ocaK0HA6jbIHa2cAJIVAHY",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1QbOG9_DZ-3ocaK0HA6jbIHa2cAJIVAHY/view",
+   "title": "Enscape_2025-06-11-18-03-03.png"
+  },
+  {
+   "doc_id": "1RPC6xkev25RuF8HMMy0iThauhRDtTy8U",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1RPC6xkev25RuF8HMMy0iThauhRDtTy8U/view",
+   "title": "Enscape_2025-06-11-18-18-08.png"
+  },
+  {
+   "doc_id": "1SASqOhvs5TMb1nNWFndoDHShugXLFs5f",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1SASqOhvs5TMb1nNWFndoDHShugXLFs5f/view",
+   "title": "프레임내부사이즈 (3).jpg"
+  },
+  {
+   "doc_id": "1Se-hUVzWBGxR6uPMfrH2yfsoweCnzk8Y",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Se-hUVzWBGxR6uPMfrH2yfsoweCnzk8Y/view",
+   "title": "0619 더퓨쳐_EOA팝업 공간구성안.pdf"
+  },
+  {
+   "doc_id": "1TiGIZvVld5Rq_bi_OkQnzgNBbvE0S6F6",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1TiGIZvVld5Rq_bi_OkQnzgNBbvE0S6F6/view",
+   "title": "견적서_진성아크릴_칼로 아크릴소도구 제작.jpg"
+  },
+  {
+   "doc_id": "1UGrENm8_DIUciYQNqriVz0HNKcaqjktA",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1UGrENm8_DIUciYQNqriVz0HNKcaqjktA/view",
+   "title": "0610 컨테이너 광고용 프레임 도면.pdf"
+  },
+  {
+   "doc_id": "1WJc-fl-RsE21JyL5J5Je2LOL_HhEEi66",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1WJc-fl-RsE21JyL5J5Je2LOL_HhEEi66/view",
+   "title": "Enscape_2025-06-05-13-02-10.png"
+  },
+  {
+   "doc_id": "1WtWKVcdJ1g2jA0dLCfaNcLmqtBahw6e6",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1WtWKVcdJ1g2jA0dLCfaNcLmqtBahw6e6/view",
+   "title": "Enscape_2025-06-05-13-06-01.png"
+  },
+  {
+   "doc_id": "1Xkjn_F6Y3ozEiwT-BkRKVKK2JSn4IRDP",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Xkjn_F6Y3ozEiwT-BkRKVKK2JSn4IRDP/view",
+   "title": "견적서_그리드_더퓨쳐 성수팝업 칼로 추가연출건.xlsx"
+  },
+  {
+   "doc_id": "1Z0ZHT8Pn3jqp8qCx6lz5FVr3JVMN0sd7",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Z0ZHT8Pn3jqp8qCx6lz5FVr3JVMN0sd7/view",
+   "title": "세금계산서_그리그_더퓨쳐성수팝업 낫띵베럴 추가연출건.JPG"
+  },
+  {
+   "doc_id": "1bKu3H34yjodAodHzx-dGOgelWgFYTPVB",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1bKu3H34yjodAodHzx-dGOgelWgFYTPVB/view",
+   "title": "Enscape_2025-06-11-18-02-11.png"
+  },
+  {
+   "doc_id": "1bi5DJVWTV0p3db0tDP-cfxHa5z2dqwg1",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1bi5DJVWTV0p3db0tDP-cfxHa5z2dqwg1/view",
+   "title": "Enscape_2025-06-11-18-23-58.png"
+  },
+  {
+   "doc_id": "1c_iUEEupKXqaNvyE9bz5KZOOZyCjtA23",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1c_iUEEupKXqaNvyE9bz5KZOOZyCjtA23/view",
+   "title": "세금계산서_금강컨테이너_더퓨쳐 성수팝업 철수 중장비 렌탈건.JPG"
+  },
+  {
+   "doc_id": "1dUxIJzceY8iRPdTEku1wBVhiBmTZQcQf",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1dUxIJzceY8iRPdTEku1wBVhiBmTZQcQf/view",
+   "title": "세금계산서_그리드_성수동 더퓨쳐팝업스토어 인테리어 시공건(잔금40%).JPG"
+  },
+  {
+   "doc_id": "1e9RcEHvIOdNcEm4V2r9CcGbGMT4w3yT6",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1e9RcEHvIOdNcEm4V2r9CcGbGMT4w3yT6/view",
+   "title": "칼로_십사일동안_사업자등록증.pdf"
+  },
+  {
+   "doc_id": "1eR7uSadFgRutTbXTXO7dHvjXlEgRgoGs",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1eR7uSadFgRutTbXTXO7dHvjXlEgRgoGs/view",
+   "title": "시공계약서_그리드_성수동 더퓨쳐 팝업 인테리어 시공간_날인.pdf"
+  },
+  {
+   "doc_id": "1eYzSPCBCX7x_oVZEUZ6hzZG40iypDcnr",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1eYzSPCBCX7x_oVZEUZ6hzZG40iypDcnr/view",
+   "title": "닥터블릿헬스케어_사업자등록증.pdf"
+  },
+  {
+   "doc_id": "1fB55s-mXhMeLTrW27dwlJ2B4lOkW6IN_",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1fB55s-mXhMeLTrW27dwlJ2B4lOkW6IN_/view",
+   "title": "EOA_넥스트립_사업자등록증.pdf"
+  },
+  {
+   "doc_id": "1fOPXYnIhkEhgE7OZ6gvkRf_6zZncpWTc",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1fOPXYnIhkEhgE7OZ6gvkRf_6zZncpWTc/view",
+   "title": "프레임내부사이즈 (2).jpg"
+  },
+  {
+   "doc_id": "1gwWPofFtwZQoLXsLPm4H9hY-OyMjHyyW",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1gwWPofFtwZQoLXsLPm4H9hY-OyMjHyyW/view",
+   "title": "견적서_그리드_더퓨쳐 성수팝업 낫띵베럴 연출추가건.xlsx"
+  },
+  {
+   "doc_id": "1hHWLFoUE7CMs0ePvVPGl2KR6RxQoYU7r",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1hHWLFoUE7CMs0ePvVPGl2KR6RxQoYU7r/view",
+   "title": "0605 더퓨쳐_EOA팝업 공간구성안.pptx"
+  },
+  {
+   "doc_id": "1iXLARSMDdVl4b5-ywYkwjOu7rh3RJn4h",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1iXLARSMDdVl4b5-ywYkwjOu7rh3RJn4h/view",
+   "title": "더퓨쳐 EOA팝업 제안용 시안_0605.skb"
+  },
+  {
+   "doc_id": "1jkMnmc4rjqktSVJz-jX9kpp4RblHN1Ow",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1jkMnmc4rjqktSVJz-jX9kpp4RblHN1Ow/view",
+   "title": "성수EOA 최종 견적서.pdf"
+  },
+  {
+   "doc_id": "1kCYPeqQSZgiTOOckfBMGmw3yC-s7dKqM",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1kCYPeqQSZgiTOOckfBMGmw3yC-s7dKqM/view",
+   "title": "Enscape_2025-06-05-13-28-12.png"
+  },
+  {
+   "doc_id": "1kdTo2JH25yKLP1OEBAMmgmeaUWjpByTR",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1kdTo2JH25yKLP1OEBAMmgmeaUWjpByTR/view",
+   "title": "Enscape_2025-06-11-18-01-14.png"
+  },
+  {
+   "doc_id": "1lFdmAwd0-HrNY-CmybZh3a5rep8_a0rj",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1lFdmAwd0-HrNY-CmybZh3a5rep8_a0rj/view",
+   "title": "더퓨쳐 EOA팝업 제안용 시안_0604.skp"
+  },
+  {
+   "doc_id": "1lhoKavItUF1qImKhYa28pQh7RQIlV4uo",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1lhoKavItUF1qImKhYa28pQh7RQIlV4uo/view",
+   "title": "Enscape_2025-06-11-18-26-12.png"
+  },
+  {
+   "doc_id": "1llYuaq4GCtJ6Cdl2jSCmvTRGrfjGR8dq",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1llYuaq4GCtJ6Cdl2jSCmvTRGrfjGR8dq/view",
+   "title": "낫띵베럴_사업자등록증.pdf"
+  },
+  {
+   "doc_id": "1m2OFXG5AwgfFyfp0sFtBAhFjLSn2V66B",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1m2OFXG5AwgfFyfp0sFtBAhFjLSn2V66B/view",
+   "title": "최종외형 (2).jpg"
+  },
+  {
+   "doc_id": "1nK9IxtZoLW4cP6jxagRVTBfMROyYGJOs",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1nK9IxtZoLW4cP6jxagRVTBfMROyYGJOs/view",
+   "title": "0619 더퓨쳐_EOA팝업 공간구성안.pptx"
+  },
+  {
+   "doc_id": "1nbHqn8WZT1zv4vkM9V39HFPLMYQAhx89",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1nbHqn8WZT1zv4vkM9V39HFPLMYQAhx89/view",
+   "title": "제안용-그래픽.jpg"
+  },
+  {
+   "doc_id": "1pitDChv2hjsJvR_shVx7lMXUbxseS1BR",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1pitDChv2hjsJvR_shVx7lMXUbxseS1BR/view",
+   "title": "프레임내부사이즈 (4).jpg"
+  },
+  {
+   "doc_id": "1rLVR1GNNKyYi_LuUcWTpycs5HQ0YIei2",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1rLVR1GNNKyYi_LuUcWTpycs5HQ0YIei2/view",
+   "title": "견적서_디자인알파_EOA팝업 조형물제작건.xlsx"
+  },
+  {
+   "doc_id": "1rRi-DqvAKjw7HQnWZ_QjDXUg-QGdod1B",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1rRi-DqvAKjw7HQnWZ_QjDXUg-QGdod1B/view",
+   "title": "Enscape_2025-06-11-18-20-02.png"
+  },
+  {
+   "doc_id": "1s3PFKmbX8Zam8o0C-G1Okh2MwYCI-TZX",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1s3PFKmbX8Zam8o0C-G1Okh2MwYCI-TZX/view",
+   "title": "0604 더퓨쳐_EOA팝업 공간구성안.pptx"
+  },
+  {
+   "doc_id": "1smklAqQToL6_BRibaLgKz5hV3Mm6bIdP",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1smklAqQToL6_BRibaLgKz5hV3Mm6bIdP/view",
+   "title": "더퓨쳐 EOA팝업 제안용 시안_6011.skb"
+  },
+  {
+   "doc_id": "1tOKHKB-ceQhqdQK2M6oPY4wry5m19gaI",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1tOKHKB-ceQhqdQK2M6oPY4wry5m19gaI/view",
+   "title": "Enscape_2025-06-11-18-31-46.png"
+  },
+  {
+   "doc_id": "1vqTEESK7idokQ9lfFxq1njbnEKn7O132",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1vqTEESK7idokQ9lfFxq1njbnEKn7O132/view",
+   "title": "최종외형 (1).jpg"
+  },
+  {
+   "doc_id": "1wafRFAIaoCY0lCk106J7s015wxVHywAE",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1wafRFAIaoCY0lCk106J7s015wxVHywAE/view",
+   "title": "세금계산서_금강컨테이너_성수동 더퓨쳐팝업 컨테이너 임대.PDF"
+  },
+  {
+   "doc_id": "1wkd3T7fnUc82iQu1m5NbalbSXnRTCRHH",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1wkd3T7fnUc82iQu1m5NbalbSXnRTCRHH/view",
+   "title": "견적서_금강컨테이너_성수동 더퓨쳐팝업 컨테이너 임대.xlsx"
+  },
+  {
+   "doc_id": "1zg-SPfCJ1zF2_fSAXnlFWHif7Xzbv9ZO",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1zg-SPfCJ1zF2_fSAXnlFWHif7Xzbv9ZO/view",
+   "title": "Enscape_2025-06-11-18-03-31.png"
+  },
+  {
+   "doc_id": "1zj_tcpv0prDk9lfMJNZkxF2kezmE6Dl-",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1zj_tcpv0prDk9lfMJNZkxF2kezmE6Dl-/view",
+   "title": "더퓨처 결과보고서.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체 미제공; client_name/발주처 미확인; venue_name·venue_type 미확인; 면적(area_pyeong) 미확인; 수수료구조·계약금액 미확인; 컨셉·체험요소·프로모션·연출태그 미확인; 방문객수·매출 실측 데이터 미확인; 예상 방문객수 미확인"
+ }
+}

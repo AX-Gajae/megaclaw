@@ -1,0 +1,141 @@
+{
+ "record_id": "RCPU2566",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:태연_전시회",
+  "space_id": "unresolved:성수플라츠",
+  "client_party_id": null,
+  "brand_key": "태연",
+  "space_key": "성수플라츠"
+ },
+ "intervention": {
+  "concept": "태연 전시회로 추정되는 팝업/전시 프로젝트. 상세 컨셉 정보는 원문 문서가 제공되지 않아 확인 불가.",
+  "brand_name": "태연",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": "성수플라츠",
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-11-26",
+   "to": "2025-12-03",
+   "days": 8
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 8,
+    "weekend_share": 0.25,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 48,
+    "holiday_until": 80,
+    "holiday_block_in": 0,
+    "nat_event_gap": 13,
+    "nat_event": "수능",
+    "doc_lag_days": 6,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 74.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-12, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "140ySd87WInjujhptgvwCqBWuldY0C6Hp",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/140ySd87WInjujhptgvwCqBWuldY0C6Hp/view",
+   "title": "태연전시회_결과보고서.pdf"
+  },
+  {
+   "doc_id": "19XUFpaKo5SuL0DLjjN49GeG8oBPSEezw",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/19XUFpaKo5SuL0DLjjN49GeG8oBPSEezw/view",
+   "title": "견적서_무전기_태연_거성렌탈 견적서 251120.pdf"
+  },
+  {
+   "doc_id": "1JfekJNK9nvX3_l9t8EKN5DRyFcd2CmWL",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1JfekJNK9nvX3_l9t8EKN5DRyFcd2CmWL/view",
+   "title": "견적서_POS SYSTEM 견적서 NICE VAN_스위트스팟_태연 전시회 성수_20251203.pdf"
+  },
+  {
+   "doc_id": "1bAZNEwZyN51Wxx_lqHjs-TNDzkLHygom",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1bAZNEwZyN51Wxx_lqHjs-TNDzkLHygom/view",
+   "title": "견적서_태연_무선라우터렌탈견적서(스위트스팟)_25년11월.xlsx"
+  },
+  {
+   "doc_id": "1gXVHtP-wC-lLNX2T3Nx-_tQFFy6VLq5K",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1gXVHtP-wC-lLNX2T3Nx-_tQFFy6VLq5K/view",
+   "title": "(SMBM) 상품판매용역계약서_주식회사스위트스팟_250708_연간계약_모두싸인 날인본.pdf"
+  },
+  {
+   "doc_id": "1rc05TURAPLjdxYYTxeiT9t15wkqlM4W2",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1rc05TURAPLjdxYYTxeiT9t15wkqlM4W2/view",
+   "title": "견적서_태연 렌탈물품_JS렌탈_11.25~12.03 스위트스팟.xlsx"
+  },
+  {
+   "doc_id": "1xazVzZRE6uhWtPwTtbwQj34kMHVVxMGD",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1xazVzZRE6uhWtPwTtbwQj34kMHVVxMGD/view",
+   "title": "(스위트스팟) 2025 태연 10주년 전시회_최종견적서_251209.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서/기획서/견적서/결과보고서) 미제공; client_name 없음; 입지 상세(도시/구/venue_type) 불명; 면적 불명; 수수료 구조 불명; 체험요소/프로모션/연출 정보 없음; 방문자/매출 실측 없음; counting_method 판정 불가"
+ }
+}

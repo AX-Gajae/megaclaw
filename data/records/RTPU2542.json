@@ -1,0 +1,125 @@
+{
+ "record_id": "RTPU2542",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:삼양식품_잭앤펄스",
+  "space_id": "unresolved:삼양라운드힐",
+  "client_party_id": "unresolved:삼양식품",
+  "brand_key": "삼양식품",
+  "space_key": "삼양라운드힐"
+ },
+ "intervention": {
+  "concept": "삼양식품 잭앤펄스 브랜드의 샘플링 프로모션. 삼양라운드힐에서 진행된 시음/시식 중심 활동으로 추정된다.",
+  "brand_name": "잭앤펄스",
+  "experience_elements": [
+   "샘플링(시음/시식)"
+  ],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": "삼양라운드힐",
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-05-02",
+   "to": "2025-05-05",
+   "days": 4
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "삼양라운드힐 샘플링"
+  },
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.5,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 60,
+    "holiday_until": 1,
+    "holiday_block_in": 3,
+    "nat_event_gap": 32,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 20.8
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-05, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-09"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "16zdAAxdRX_J0_Y7I_k_eZq1eqWOIpUQI",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/16zdAAxdRX_J0_Y7I_k_eZq1eqWOIpUQI/view",
+   "title": "결과보고서 없음.txt"
+  },
+  {
+   "doc_id": "1ZjgEWbqgTJgHahlLW76a7kozi7fbiK-N",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1ZjgEWbqgTJgHahlLW76a7kozi7fbiK-N/view",
+   "title": "계약서 없음.txt"
+  },
+  {
+   "doc_id": "1hzmxKjiksOh_CToP7Y3lfUwtvFHn80Gz",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1hzmxKjiksOh_CToP7Y3lfUwtvFHn80Gz/view",
+   "title": "Sweetspot_삼양목장 샘플링 견적서_0507(최종).xlsx"
+  },
+  {
+   "doc_id": "1zQOfIW9VOpPRF8GA5eq005sSD7rLcCAP",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1zQOfIW9VOpPRF8GA5eq005sSD7rLcCAP/view",
+   "title": "제안서 없음.txt"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서 텍스트가 제공되지 않음(프로젝트 메타데이터만 존재); client_name 미상; 입지 상세(도시/구/장소유형/유동인구) 미상; 면적 미상; 수수료 구조/계약금액 미상; 브랜드 요구사항 미상; 결과보고서 방문/매출 실측 데이터 없음; counting_method 판정 불가; 기획 예상 방문 수 없음"
+ }
+}

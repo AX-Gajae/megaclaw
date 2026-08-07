@@ -1,0 +1,100 @@
+{
+ "market_record_id": "MKT-2025-0016",
+ "event_name": "로터스 팝업 전시 (현대백화점 판교점)",
+ "brand": "로터스자동차코리아",
+ "ip_or_collab": null,
+ "category": "other",
+ "intervention": {
+  "concept_description": "엘레트라·에메야·에미라 전 라인업 백화점 최초 전시 + 프라이빗 상담·도심 시승",
+  "experience_elements": [
+   "전 차종 전시",
+   "프라이빗 상담존",
+   "도심 시승 프로그램"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "현대백화점 판교점 1층 열린광장",
+  "venue_type": "department_store",
+  "neighborhood": "판교",
+  "city": "성남",
+  "period_from": "2025-03-18",
+  "period_to": "2025-03-27",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.2,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 11.9,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 1500,
+  "visitors_period_days": 10,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "로터스자동차코리아 발표(3/28)",
+  "visitors_source_quote": "로터스자동차코리아는 이곳에서 1,500명 이상의 현장 방문자와 약 100건의 구매 상담을 유도하며 소비자와의 직접 소통에 성공했다.",
+  "visitors_source_url": "https://www.gpkorea.com/news/articleView.html?idxno=126677",
+  "visitors_source_date": "2025-03-28",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "약 100건의 구매 상담",
+    "약 100건의 구매 상담이 이뤄졌다"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "이뉴스투데이·로터스 공식 사이트 동일 보도. | 병합 레코드: MKT-2025-0016 | [병합:MKT-2025-0016] 1500명은 '이상' 하한. 자동차→electronics(스키마 카테고리 한정)로 분류, notes에 명시. 씨넷코리아·오토뷰 동일 수치 교차 확인",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 1500,
+   "basis": "organizer_claim",
+   "quote": "실제로 팝업 전시회가 진행된 열흘간 1,500명 이상의 관람객이 현장에 방문했으며, 약 100건의 구매 상담이 이뤄지면서 팝업 이벤트를 성공적으로 마무리했다.",
+   "url": "https://www.lotuscars.co.kr/NEWS/?bmode=view&idx=159847509",
+   "date": "2025-03-28"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

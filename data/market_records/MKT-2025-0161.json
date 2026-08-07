@@ -1,0 +1,73 @@
+{
+ "market_record_id": "MKT-2025-0161",
+ "event_name": "포켓몬 팝업스토어(롯데백화점 부산본점, 2025년 여름)",
+ "brand": "롯데백화점/포켓몬코리아",
+ "ip_or_collab": "포켓몬",
+ "category": "character",
+ "intervention": {
+  "concept_description": "2025년 여름 롯데백화점 부산본점에서 열린 포켓몬 팝업스토어. 한 달간 운영됐다.",
+  "experience_elements": [
+   "캐릭터 굿즈 판매"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "롯데백화점 부산본점",
+  "venue_type": "department_store",
+  "neighborhood": "광복",
+  "city": "부산",
+  "period_from": null,
+  "period_to": null,
+  "area_pyeong": null,
+  "multi_store": false
+ },
+ "outcome": {
+  "visitors_total": 70000,
+  "visitors_period_days": 30,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "롯데백화점 측 집계(노컷뉴스·서울경제 보도 인용)",
+  "visitors_source_quote": "지난해 부산본점에서 열린 포켓몬 팝업스토어는 문을 연 지 한 달 만에 7만 명 넘는 방문객이 다녀갔다.",
+  "visitors_source_url": "https://www.nocutnews.co.kr/news/6547895",
+  "visitors_source_date": "2026-07-14",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": []
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "2026-07 보도상 '지난해'=2025년 행사. 서울경제(2026-07-14): '지난해 부산본점 포켓몬 팝업에는 한 달간 7만여 명이 방문했고'로 동일 확인 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": false,
+ "exclude_reason": "기간 미상",
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

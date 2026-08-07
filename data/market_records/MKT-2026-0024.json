@@ -1,0 +1,83 @@
+{
+  "market_record_id": "MKT-2026-0024",
+  "event_name": "붕괴: 스타레일 3주년 '환락! 팝업스토어 in 삼성스토어 홍대'",
+  "brand": "호요버스 코리아/삼성전자(갤럭시 스토어)",
+  "ip_or_collab": "붕괴: 스타레일 (키레네) X 갤럭시 S26 울트라",
+  "category": "game_webtoon",
+  "intervention": {
+    "concept_description": "서비스 3주년 기념, 신규 지역 '이상 낙원' 콘셉트. 갤럭시 S26 울트라 키레네 액세서리 에디션 2000개 한정, 2층 MD숍 '편의점'(공식 굿즈 66종), 미니게임·스탬프 미션",
+    "experience_elements": [
+      "구구탑을 완성해라!(블록 쌓기)",
+      "리리 특종을 포착해라!(프라이버시 디스플레이 체험)",
+      "이상 낙원 포토존",
+      "이스터에그 노래방",
+      "포토부스"
+    ],
+    "promotions": [
+      "이벤트 3개 완수 시 기억의 프리즘 홀로그램 티켓 선착순",
+      "구매 금액별 쇼핑백·포토카드·마그넷 랜덤 증정",
+      "키레네 스페셜 테마·성옥 300개·갤럭시 스토어 40% 할인 쿠폰"
+    ],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "삼성스토어 홍대",
+    "venue_type": "street_standalone",
+    "neighborhood": "홍대",
+    "city": "서울",
+    "period_from": "2026-04-24",
+    "period_to": "2026-05-05",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(session)",
+      "access_type": "session"
+    },
+    "derived": {
+      "duration": {
+        "days": 12,
+        "weekend_share": 0.33,
+        "holiday_days": 1
+      },
+      "ip_history": {
+        "prior_count": 1,
+        "months_since_last": 24.9,
+        "first_edition": false
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 12,
+    "counting_basis": "unknown",
+    "counting_basis_note": "총 방문객 미보도. 오픈런·예약 마감 정황만 보도",
+    "visitors_source_quote": "오전 10시 오픈을 앞두고 찾은 스토어 앞에는 2000개 한정으로 판매되는 액세서리 에디션과 3주년 공식 굿즈를 사기 위한 줄이 길게 이어졌다.",
+    "visitors_source_url": "https://zdnet.co.kr/view/?no=20260424220828",
+    "visitors_source_date": "2026-04-25",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "오픈 전 오픈런 행렬",
+      "sold_out": null,
+      "reservation_fill": "행사 첫날 사전 예약 일찍 마감",
+      "signal_quotes": [
+        "현장 관계자는 \"행사 첫날인 이날 사전 예약은 이미 일찍부터 마감됐다\"며 이용자들의 뜨거운 열기를 설명했다.",
+        "방문객 이지현씨(29세)는 \"키레네 에디션과 3주년 한정 굿즈 구매를 위해 연차까지 썼다\""
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "키레네 액세서리 에디션 2,000개 한정(온·오프라인). 회차별 사전 예약제(온·오프라인). | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

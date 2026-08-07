@@ -1,0 +1,133 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{kotex}
+\setmainfont{Apple SD Gothic Neo}
+\setsansfont{Apple SD Gothic Neo}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,linkcolor=MidnightBlue,citecolor=MidnightBlue,
+            urlcolor=MidnightBlue]{hyperref}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.5em}{}
+\captionsetup{font=small,labelfont=bf}
+\setlength{\parskip}{0.35em}
+\setlength{\parindent}{0pt}
+
+\usepackage{mdframed}
+\newmdenv[linewidth=0.4pt,linecolor=gray!60,backgroundcolor=gray!5,
+          innertopmargin=6pt,innerbottommargin=6pt,skipabove=8pt,skipbelow=8pt]{claimbox}
+\newcommand{\claim}[2]{\begin{claimbox}\textbf{주장.} #1\par\smallskip
+  \textcolor{gray!70}{\textbf{반증 조건.} #2}\end{claimbox}}
+
+\title{\bfseries 덮음 0.110 중 유효는 0.046\\[2pt]
+\large 매처가 멤버 이름을 동 이름으로 읽었다}
+\author{월드모델 실험실 · 노트 674}
+\date{2026-08-06}
+\begin{document}\maketitle
+
+\section{한 줄}
+
+지역 방문자 축을 세 번째 도메인으로 넓힐 수 있나 물었다. 덮음이 $0.110$ 으로 나왔고
+게이트 $0.7$ 에 못 미치니 그것으로 끝낼 수 있었다. \textbf{붙은 31건을 눈으로 다 보니
+유효한 것은 13건}이었다 --- 12건은 데뷔 \emph{이후}의 팝업 개최지고 6건은 멤버 이름이
+동 이름과 겹친 위양성이다. 유효 덮음 $\mathbf{0.046}$, 게이트의 15분의 1.
+
+\section{왜 이걸 했나}
+
+노트 668 이 학습/유보 경계 이동을 기각했다 --- 순효과는 7.2배 올랐지만 위약이 부호를
+뒤집어 신호 몫이 줄었다. 방문자 축의 행을 늘리는 두 길 중 하나가 닫혔고, 남은 하나가
+\textbf{덮음을 다른 도메인으로 넓히기}였다.
+
+이 축은 지금 11개 도메인 판에서 \textbf{팝업 · 시장팝업 둘}에만 붙는다. (시간 $\times$
+대상) 이 되려면 대상에 장소가 있어야 하고(노트 641·649), 나머지 아홉 중 여덟은 온라인
+출시다. \textbf{아이돌만 물리 장소를 가질 수 있다} --- 쇼케이스는 공연장에서 열린다.
+
+\section{내 필드 열거가 먼저 틀렸다}
+
+장소를 담을 수 있는 필드를 키워드로 훑었다: \verb|venue| · \verb|place| · \verb|hall| ·
+\verb|location| · \verb|city| · \verb|region| · \verb|address|. 결과는
+\textbf{0개}였다. 그런데 전수 열거로 보니 이것이 있었다.
+
+\begin{center}
+\verb|showcase_scale|:
+``서울 구로구 고척스카이돔에서 데뷔 쇼케이스 개최$\ldots$''
+\end{center}
+
+\textbf{내 키워드 목록에 `scale' 이 없었다.} 노트 671(키워드 전용 \texttt{T} 를 놓친
+검사)과 노트 672(정정 문맥을 오탐한 검사)에 이어 세 번째다 --- \textbf{검사를 세우면
+그 검사의 구멍을 먼저 찾아야 한다.} 여기서는 전수 열거가 그 일을 했다.
+
+\section{쟀다 --- 그리고 31건을 눈으로 다 봤다}
+
+분모는 \textbf{판이 쓰는 것}으로 잡았다(원천 그룹 586 이 아니라
+\verb|data/idol_records| \textbf{281}). 매칭은 팝업과 \textbf{같은 함수}를 썼다
+(\verb|sgg_index| · \verb|hood_sgg| · \verb|city_sgg|) --- 새로 짜면 다른 자를 쓰는 것이
+된다.
+
+\begin{figure}[t]\centering
+\includegraphics[width=0.99\textwidth]{figs/funnel.pdf}
+\caption{덮음 $31/281 = 0.110$(시군구이름 19 · 동이름 8 · city만 4). 그 31건을 눈으로
+가르면 \textbf{유효 13 · 시간 게이트 위반 12 · 위양성 6} 이다.}
+\end{figure}
+
+\subsection*{시간 게이트 위반 12건 --- 데뷔 이후의 팝업 개최지}
+
+BTS 성동구 · TREASURE 마포구 · NMIXX 성동구 · QWER 성동구 $\ldots$ 전부
+\verb|notes| 에 적힌 \textbf{팝업 개최지}이고 2024$\sim$2025년이다. 그런데 이 도메인의
+라벨은 \textbf{데뷔주 초동}이다. 몇 년 뒤 팝업 장소의 유동인구로 데뷔주 앨범 판매를
+맞히는 것은 \textbf{미래를 보는 일}이다.
+
+\subsection*{위양성 6건 --- 매처가 부분 문자열로 붙는다}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+그룹 & 붙은 것 & 실제 원인 \\
+\midrule
+에버글로우 & 강북구(미아동) & 멤버 이름 \textbf{미아} \\
+베이비돈크라이 & 강북구(미아동) & 멤버 이름 \textbf{미아} \\
+에이비식스 & 서대문구(이대) & 멤버 \textbf{이대휘} 의 `이대' \\
+배드빌런 · 모디세이 · 도드리 & 경기·경남·전북 & \verb|city_sgg| 가 자유 텍스트에서 헛맞음 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\claim{\texttt{hood\_sgg} · \texttt{city\_sgg} 는 \textbf{부분 문자열}로 붙으므로 자유 텍스트에
+걸면 사람 이름 · 단어 조각이 지명으로 읽힌다. 31건 중 \textbf{6건(19\%)} 이 그렇다.
+\textbf{자유 텍스트에 이 매처를 걸 때는 매칭 근거를 눈으로 확인한다} --- 노트 661 이
+시장팝업에서 표본 10건을 본 것이 그 선례다.}
+{구조화된 필드(\texttt{neighborhood} 같은)에서는 위양성이 훨씬 낮을 것이다. 그래서
+시장팝업의 덮음 $0.956$ 에 대해서는 \textbf{이 논문이 아무 주장도 하지 않는다} ---
+안 쟀다. 방문자 축을 다시 열 때 표본 20건을 확인하기로 트랙에 미결로 달았다.}
+
+\section{판정 --- 축을 닫는다}
+
+유효 덮음 $0.046 <$ 게이트 $0.7$. 사전등록 규칙 ②가 발동한다.
+
+\claim{\textbf{방문자 축의 천장은 두 도메인이다.} 판의 11개 도메인 중 장소를 가진 것은
+팝업 계열 둘이 전부다 --- 아이돌까지 확인했고 나머지 여덟은 온라인 출시다. 노트 668 이
+경계 이동을 닫았고 이번에 덮음 확장이 닫혔으므로 \textbf{두 길이 다 닫혔다.}}
+{공연 도메인이 새로 서면(KOPIS) 장소를 가진 세 번째 도메인이 생긴다. 그때 이 축은
+다시 열린다 --- \textbf{닫은 것은 축이 아니라 지금 자료에서의 확장 경로}다.}
+
+이 축은 신호 몫으로 문턱을 넘은 이 판 최초의 상태 축이다(노트 662:
+$+0.0064 > 0.0045$). 그런데 순효과로는 못 넘고 더 키울 방법이 없다. \textbf{서랍에
+넣는다.}
+
+\section{그래서 물음이 바뀐다}
+
+\emph{``방문자 축을 어떻게 더 키우나''}는 잘못된 물음이었다. 바뀐 물음은
+\textbf{``장소가 없는 도메인에서 (시간 $\times$ 대상) 을 만드는 것이 무엇인가''}다.
+
+후보가 하나 준비돼 있다. 노트 670 이 \verb|crowd_share|(갈래 혼잡도)의 결함을 고쳤다
+--- 축 $\leftrightarrow$ 갈래 개수 $|r|$ 이 $0.86 \to 0.16$ 으로 떨어지고 축
+$\leftrightarrow$ 라벨은 $0.146 \to 0.105$ 가 됐다. 그때는 ``창 불변이라 판을 안
+돈다''로 보류했는데, \textbf{방문자 축이 닫힌 지금은 비교 대상이 없다.} 그리고 그 축은
+\textbf{다섯 도메인}에 붙는다(가중 $0.629$) --- 방문자 축의 세 배다.
+
+\end{document}

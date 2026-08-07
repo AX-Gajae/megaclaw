@@ -1,0 +1,155 @@
+{
+ "record_id": "RCPU2625",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:로제_ROSE_블랙핑크_솔로",
+  "space_id": "unresolved:부산_해운대_엑스더스카이_100층",
+  "client_party_id": "unresolved:씨벨리_641-87-03100",
+  "brand_key": "로제",
+  "space_key": "부산_엑스더스카이"
+ },
+ "intervention": {
+  "concept": "블랙핑크 로제 솔로 굿즈 팝업스토어로 부산 엘시티 엑스 더 스카이 100층 전망대에서 운영대행 형태로 진행. VINYL/LP MD, 스크린 MD, 리스닝존, 포토이즘, 가챠 등 음악 IP 체험 존과 결제·픽업·스탁 동선을 구성. 스위트스팟이 운영·물류·인력·POS·사전예약을 대행.",
+  "brand_name": "로제 (ROSÉ)",
+  "experience_elements": [
+   "VINYL/LP MD",
+   "스크린 MD",
+   "리스닝존",
+   "포토이즘",
+   "가챠",
+   "결제/픽업/스탁 존"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "컨셉존",
+   "전망대 100층",
+   "POP 스탠드 입간판"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "부산",
+   "district": "해운대구",
+   "venue_name": "엑스 더 스카이(X the SKY) 100층 (엘시티 랜드마크타워동)",
+   "venue_type": "전망대",
+   "foot_traffic_context": "부산 해운대 달맞이길 30, 엘시티 랜드마크타워 100층 전망대. 물류는 1F→98층 화물엘리베이터 직행(입구폭 140cm), 97F 창고 사용.",
+   "venue_slot": "100층"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2026-04-17",
+   "to": "2026-05-17",
+   "days": 31
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총 계약금액 84,700,000원(VAT 10% 별도). 소계 77,052,700원 + 대행수수료 10% 7,705,270원. 세부: 운영인력/사전교육/리허설 소계 70,470,000원, 렌탈·운영기타 소계 5,412,700원. 선금 81,690,000원 입금, 잔금 별도 청구. 근로자의날 2.5배·어린이날 1.5배 수당 반영. 5월 인력 감축 반영된 견적. 로스 변상금 약 -890,000원 잔금 차감. 견적 변천: 1차 116.7백만 → 최종 84.7백만."
+  },
+  "brand_requirements": [
+   "행사주최자배상책임보험(대인·대물) 의무 가입",
+   "OK POS 및 카드사 가맹, 카카오/제로/위챗/알리/토스페이 등록",
+   "네이버 사전예약 운영대행"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "엘시티 랜드마크타워 100층 전망대"
+  },
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 31,
+    "weekend_share": 0.32,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 46,
+    "holiday_until": 36,
+    "holiday_block_in": 0,
+    "nat_event_gap": 47,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 659755.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2026-03-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 84.7
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 미확보. 방문객수·굿즈 총매출(GMV)·사전예약 실소진율 등 실측 성과지표 미확인(운영대행 구조로 리테일 매출은 클라이언트 귀속). [예상/KPI] 네이버 사전예약 1일 1회차 약 1,000명 기준으로 운영대행 설계.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식액 84.7 ≈ 계약총액 84.7 (±10%)",
+   "contract_total_mm": 84.7,
+   "last_recognition_period": "2026-05"
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "1GqT_1eyVmj3TNXQzKKmHuOcCnDddCVqQ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1GqT_1eyVmj3TNXQzKKmHuOcCnDddCVqQ/view",
+   "title": "로제팝업_업무대행 계약서(3자계약_주식회사 씨벨리, 팬덤코퍼레이션).pdf"
+  },
+  {
+   "doc_id": "1IRs9MDAi4fQyQBhSI6CfNDn66FTN9ezBFqanTL-Cnng",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1IRs9MDAi4fQyQBhSI6CfNDn66FTN9ezBFqanTL-Cnng/view",
+   "title": "■ RC본부 프로젝트 견적서(all)"
+  },
+  {
+   "doc_id": "1gya6HK0qfcgKXhFi-RVittY5utQ-CMTa",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1gya6HK0qfcgKXhFi-RVittY5utQ-CMTa/view",
+   "title": "주식회사 씨벨리.pdf"
+  },
+  {
+   "doc_id": "1jM9b3xClTd4TbiU_4s6h5lssP0RsODnx",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1jM9b3xClTd4TbiU_4s6h5lssP0RsODnx/view",
+   "title": "RCPU2625_로제_부산엘시티 최종 견적서.pdf"
+  },
+  {
+   "doc_id": "1wJkZsA4FjW3N3Q6nWS4WXpEkMpVSSE20",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1wJkZsA4FjW3N3Q6nWS4WXpEkMpVSSE20/view",
+   "title": "사업자등록증 (1).jpg"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: 주식회사 씨벨리.pdf, RCPU2625_로제_부산엘시티 최종 견적서.pdf. 미확실: 면적(평) 미기재; 일자별 방문객수·매출 실측 데이터 없음(결과보고서 미확보); 굿즈 총매출(GMV) 미확인; 사전예약 실소진율 미확인; 최종 실입금 잔금(로스 차감 후) 확정치 미확인; client_party_id 정규 사업자번호(팬덤코퍼레이션) 미정리; 프로모션 정보 원문 부재"
+ }
+}

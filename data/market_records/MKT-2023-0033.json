@@ -1,0 +1,104 @@
+{
+ "market_record_id": "MKT-2023-0033",
+ "event_name": "뉴진스 X 라인프렌즈 팝업스토어(홍대·강남)",
+ "brand": "라인프렌즈(IPX)/어도어",
+ "ip_or_collab": "뉴진스 X bunini(라인프렌즈)",
+ "category": "character",
+ "intervention": {
+  "concept_description": "뉴진스와 라인프렌즈 콜라보 팝업스토어. 홍대와 강남 라인프렌즈 스토어에서 2023-08-11~08-31 운영.",
+  "experience_elements": [
+   "콜라보 굿즈 판매"
+  ],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "라인프렌즈 스토어 홍대점·강남점",
+  "venue_type": "street_standalone",
+  "neighborhood": "홍대·강남",
+  "city": "서울",
+  "period_from": "2023-08-11",
+  "period_to": "2023-08-31",
+  "area_pyeong": null,
+  "multi_store": true,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 21,
+    "weekend_share": 0.29,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 0.5,
+    "first_edition": false
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 55000,
+  "visitors_period_days": 21,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "어도어 측 집계(뉴시스 보도 인용)",
+  "visitors_source_quote": "라인프렌즈와 손잡고 이달 11일부터 31일까지 홍대와 강남에서 운영한 팝업 스토어엔 5만5000명 이상이 몰렸다.",
+  "visitors_source_url": "https://www.newsis.com/view/NISX20230904_0002436913",
+  "visitors_source_date": "2023-09-04",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "오픈 당일 1시간 만에 당일 최대 입장 2000명 마감",
+   "sold_out": null,
+   "reservation_fill": "오픈 첫날 1시간 만에 당일 최대 입장 인원 마감",
+   "signal_quotes": [
+    "오픈 당일 운영 시작 1시간 만에 당일 입장 가능한 최대 인원인 2000명이 마감됐다. (뉴시스 2023-09-04)",
+    "오픈 첫날에는 1시간 만에 당일 최대 입장 인원 2000 명이 마감됐고, 연일 오픈 전부터 긴 대기 줄이 이어졌다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "D",
+   "flags": [
+    "D",
+    "C"
+   ],
+   "why": "스코프 혼합(합산/총계) 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "병합 레코드: MKT-2023-0003 | [병합:MKT-2023-0003] 2개 점 합산 5.5만 명. 첫날 입장 인원 2000명 1시간 마감(사전예약제).",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 55000,
+   "basis": "organizer_claim",
+   "quote": "지난달 11~31일 라인프렌즈 스토어 서울 홍대점과 강남점에서 운영된 팝업스토어에는 약 5만5000명이 다녀갔다.",
+   "url": "https://www.newsis.com/view/NISX20230904_0002436913",
+   "date": "2023-09-04"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

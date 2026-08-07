@@ -1,0 +1,193 @@
+\documentclass[10pt]{article}
+\usepackage{icmlko}
+
+\icmlmeta{IP 파운데이션 월드모델}{90}{네 번째 축을 네 번 시도했다}{넷 다 떨어졌고, 소거법으로 재니 현행 설계가 국소 최적이었다 --- 그리고 분모가 또 속일 뻔했다}
+
+\begin{document}
+
+\twocolumn[
+\icmlheader
+
+\begin{abstract}
+노트 89가 숙제를 남겼다 --- 기획서 열 칸 중 모델이 버리는 다섯 축의 대응물을
+다른 도메인에서 찾아라. \textbf{체험 밀도}를 열 도메인 전부에서 만들었다(게임
+기능 수 · 도서 쪽수 · 펀딩 리워드 단계 수 · 웹툰/애니/만화/세계애니 회차 수 ·
+모바일 스크린샷 수 · 팝업 사람 태그). \textbf{떨어졌다} --- 공통 축으로
+$-$0.060, 고유 축으로 $-$0.029다. 이것으로 \textbf{네 번째 공통 축 시도가
+네 번 모두 실패}했다: 경쟁 밀도 $-$0.020(노트 84) · 전형성 $-$0.009(84) ·
+IP 인지도 팝업 $-$0.051(89) · 체험 밀도 $-$0.060. 그래서 축을 더하는 대신
+\textbf{빼면서} 설계를 검사했다. 공통 축 셋 중 타깃 폭을 빼면 $-$0.028(팝업은
+$+$0.450에서 $+$0.170으로 무너진다), 굿즈 규모를 빼면 $-$0.028이다. 성분 수는
+$k{=}2$가 $k{=}1$보다 $+$0.019, $k{=}3$보다 $+$0.006 낫다. \textbf{현행
+설계(공통 3축 · 성분 2)가 국소 최적이다.} 다만 하나가 갈린다 --- \textbf{팝업만
+보면 $k{=}1$이 $+$0.4736으로 현행($+$0.4501)보다 낫다.} 그리고 함정을 하나
+또 밟을 뻔했다. 매장 노출도를 빼면 판정치가 $+$0.0077 \emph{오르는 것처럼}
+보이는데, 그 축이 없으면 정렬이 안 되는 도메인이 생겨 \textbf{대상이 10개에서
+9개로 준} 것이었다. 고정하고 재면 $-$0.0067이다 --- \textbf{노트 82의 분모
+문제가 축 수준에서 그대로 재현됐다.}
+\end{abstract}
+]
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/fourth.pdf}
+\caption{왼쪽 --- 네 번째 공통 축 시도 넷. 오른쪽 --- 공통 축 수와 성분 수의 격자.}
+\end{figure*}
+
+\section{체험 밀도 --- 네 번째 실패}
+
+``안에서 할 일이 얼마나 되나''는 어느 도메인에나 있다. 열 도메인 전부에서
+만들었다.
+
+\begin{table}[t]
+\centering\tsize
+\caption{체험 밀도의 대응물.}
+\begin{tabular}{ll}
+\toprule
+팝업 & 체험 밀도(사람이 매김) \\
+게임 & 기능 수 \\
+도서 & 쪽수 \\
+펀딩 & 리워드 단계 수 \\
+웹툰 · 애니 · 만화 · 세계애니 & 회차 수 \\
+모바일 & 스크린샷 수 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering\tsize
+\caption{판정치와 팝업. 대상 10개 고정.}
+\begin{tabular}{lrr}
+\toprule
+& 판정치 & 팝업 \\
+\midrule
+현행 & \textbf{$+$0.4038} & \textbf{$+$0.4501} \\
+공통 4축(중립 대입) & $+$0.3439 & $+$0.4377 \\
+고유 축(중립 대입) & $+$0.3745 & $+$0.4240 \\
+공통 4축(마스크 유지) & $+$0.3597 & $+$0.4333 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\centering\tsize
+\caption{네 번째 공통 축 시도 넷.}
+\begin{tabular}{lrr}
+\toprule
+& $\Delta$판정치 & $\Delta$팝업 \\
+\midrule
+경쟁 밀도(노트 84) & $-$0.020 & --- \\
+전형성(노트 84) & $-$0.009 & --- \\
+IP 인지도(노트 89) & $+$0.011 & \textbf{$-$0.051} \\
+\textbf{체험 밀도(노트 90)} & \textbf{$-$0.060} & $-$0.012 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\claimx{공통 축을 넷째로 늘리는 것은 닫혔다 --- 네 번 시도해 네 번 떨어졌다.
+성질이 다른 넷(시장 혼잡도 · 내용 전형성 · 사전 인지도 · 내용 분량)이 전부
+같은 결과를 냈다.}{넷 다 ``도메인마다 다른 물리량을 같은 슬롯에 넣는'' 방식이었다.
+열 도메인이 문자 그대로 같은 것을 재는 양은 아직 경쟁 밀도 하나뿐이었고
+그것도 시간과 겹쳐 실패했다.}
+
+\section{빼면서 검사한다}
+
+더하는 것이 안 되니 빼 봤다.
+
+\begin{table}[t]
+\centering\tsize
+\caption{공통 축을 하나씩 뺄 때. \textbf{대상 9개 고정}.}
+\begin{tabular}{lrr}
+\toprule
+& 판정치 & 팝업 \\
+\midrule
+\textbf{현행 3축} & \textbf{$+$0.4182} & $+$0.4501 \\
+매장 노출도 뺌 & $+$0.4115 & $+$0.4499 \\
+\midrule
+\multicolumn{3}{l}{\emph{(대상 고정 안 하면)} 매장 노출도 뺌 $+$0.4115 $\to$
+``$+$0.0077 상승''} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\claimx{매장 노출도를 빼면 판정치가 오르는 것처럼 보이지만 분모 효과다. 그 축이
+없으면 정렬이 안 되는 도메인이 생겨 대상이 10개에서 9개로 줄고, 빠지는 것이
+성적이 낮은 대상이다. 고정하고 재면 $-$0.0067이다.}{9개로 고정한 비교도
+완전하지는 않다 --- 빠진 대상(애니)이 어느 설정에서 살아나느냐가 결과를 바꿀
+수 있다.}
+
+\textbf{노트 82가 도메인 수준에서 발견한 함정이 축 수준에서 그대로 재현됐다.}
+그때 세운 규약 --- ``분모가 바뀌는 비교에는 다른 자가 필요하다'' --- 이 여기서도
+그대로 적용된다.
+
+\section{성분 수}
+
+\begin{table}[t]
+\centering\tsize
+\caption{공통 축 수 $\times$ 성분 수. 대상 9개 고정.}
+\begin{tabular}{lrrr}
+\toprule
+& $k{=}1$ & $k{=}2$ & $k{=}3$ \\
+\midrule
+공통 3축 (평균) & $+$0.3990 & \textbf{$+$0.4182} & $+$0.4121 \\
+공통 3축 (팝업) & \textbf{$+$0.4736} & $+$0.4501 & $+$0.4216 \\
+\midrule
+공통 2축 (평균) & $+$0.3990 & $+$0.4115 & $+$0.4112 \\
+공통 2축 (팝업) & $+$0.4736 & $+$0.4499 & $+$0.4464 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+$k{=}1$에서는 공통 축 셋과 둘이 \emph{똑같다} --- 성분이 하나면 셋째 축이
+회전에 기여할 자리가 없기 때문이다. 노트 37이 ``공통 축 $c$, 성분 $k$일 때
+$c<k$면 회전이 과소결정된다''고 했는데, 반대쪽 경계도 있다 --- \textbf{$k{=}1$이면
+$c$가 몇이든 같다.}
+
+\claimx{현행 설계(공통 3축 · 성분 2)가 국소 최적이다. 축을 더해도 빼도, 성분을
+늘려도 줄여도 판정치가 내린다.}{$k{=}1$이 팝업에서는 $+$0.4736으로 현행보다
+$+$0.0235 낫다. 노트 75가 보인 대로 팝업 75건으로는 그 차이를 잡음과 못
+가르지만, \textbf{제품 목표만 보면 다른 설계가 있을 수 있다는 신호다.}}
+
+\section{한계}
+
+\begin{itemize}[leftmargin=1.1em,itemsep=0.15em]
+\item 체험 밀도의 대응물이 도메인마다 성질이 다르다 --- 회차 수는 누적이고
+      스크린샷 수는 마케팅 투입이다. ``할 일의 양''이라는 하나의 뜻으로
+      묶은 것이 무리였을 수 있다.
+\item 남은 세 축(포토존 · 컬래버 강도 · 계절 적합)은 안 만들었다. 대응물이
+      더 얇다고 보고 멈췄다.
+\item 소거법을 공통 축 하나씩만 했다. 둘을 동시에 빼면 다를 수 있다.
+\item $k{=}1$이 팝업에서 낫다는 것을 채택 검정으로 확인하지 않았다.
+\item 대상 9개 고정 비교에서 애니가 빠졌다 --- 애니는 굿즈 규모가 꺼져 있어
+      축을 빼면 정렬이 먼저 무너지는 도메인이다.
+\end{itemize}
+
+\section{다음}
+
+\begin{enumerate}[leftmargin=1.3em,itemsep=0.15em]
+\item \textbf{제품 전용 설계를 따로 둘지 정한다} --- 팝업만 보면 $k{=}1$이
+      $+$0.0235 낫다. 판정치용과 제품용을 갈라 두는 것이 정직한지 검토한다.
+\item 열 도메인이 \emph{문자 그대로} 같은 것을 재는 양을 더 찾는다. 경쟁 밀도가
+      유일했고 시간과 겹쳐 실패했다.
+\item 제품 도구(노트 89)를 다른 카테고리로 넓힌다 --- 웹툰 · 만화 신작 기획.
+\item 팝업 표본. 네 노트가 같은 곳을 가리킨다(75 · 86 · 87 · 90).
+\end{enumerate}
+
+\vspace{0.6em}
+\hrule height 0.3pt
+\vspace{0.5em}
+{\footnotesize
+\textbf{참고문헌}\\[0.3em]
+Schoenemann, P. H. (1966). A generalized solution of the orthogonal Procrustes
+problem. \emph{Psychometrika}, 31(1), 1--10.\\[0.15em]
+Meredith, W. (1993). Measurement invariance, factor analysis and factorial
+invariance. \emph{Psychometrika}, 58(4), 525--543.\\[0.15em]
+Simpson, E. H. (1951). The interpretation of interaction in contingency tables.
+\emph{JRSS-B}, 13(2), 238--241.\\[0.15em]
+Ben-David, S. et al. (2010). A theory of learning from different domains.
+\emph{Machine Learning}, 79(1--2), 151--175.\\[0.15em]
+Efron, B., Tibshirani, R. J. (1993). \emph{An Introduction to the Bootstrap}.
+Chapman \& Hall.
+}
+
+\end{document}

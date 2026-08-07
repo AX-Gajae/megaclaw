@@ -1,0 +1,133 @@
+{
+ "record_id": "RTPU2592",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:파마리서치",
+  "space_id": "unresolved:미상",
+  "client_party_id": "unresolved:파마리서치",
+  "brand_key": "파마리서치",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "파마리서치 브랜드 쿠션(인형) 제작 프로젝트. 직경 370mm 스판덱스 원단 쿠션에 브랜드 라벨을 부착하고 개별 포장하여 제작한다. 팝업 운영이 아닌 굿즈/판촉물 제작 건이다.",
+  "brand_name": "파마리서치",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [
+   "브랜드라벨부착",
+   "개별포장",
+   "스판덱스쿠션"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-12-22",
+   "to": "2025-12-22",
+   "days": 1
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 6,900,000원 (VAT 10% 별도). 쿠션제작 단가 23,000원 x 300개 = 6,900,000원. 대행수수료 소계의 10%. 샘플 2종 제공. 스위트스팟 검수 후 11/28 오후 혹은 12/1 광고주 전달."
+  },
+  "brand_requirements": [
+   "직경 370mm",
+   "원단 스판덱스",
+   "브랜드 라벨 부착",
+   "개별 포장",
+   "샘플 2종 제공"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "굿즈/판촉물 제작 건"
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 0.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 74,
+    "holiday_until": 54,
+    "holiday_block_in": 0,
+    "nat_event_gap": 39,
+    "nat_event": null,
+    "doc_lag_days": 28,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 6.9
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 6.9 ≈ 계약총액 6.9",
+   "contract_total_mm": 6.9,
+   "last_recognition_period": "2025-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "11ECr2DMffOBVDqMRiie1fin34abOkGK_",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/11ECr2DMffOBVDqMRiie1fin34abOkGK_/view",
+   "title": "제안서 없음.txt"
+  },
+  {
+   "doc_id": "1CfzGFk9IUaaCcc9wUhijiyFdypqdZAVm",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1CfzGFk9IUaaCcc9wUhijiyFdypqdZAVm/view",
+   "title": "결과보고서 없음.txt"
+  },
+  {
+   "doc_id": "1W3TiuVatT7bbXrtjr_BGt_DdUWxOWpyV",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1W3TiuVatT7bbXrtjr_BGt_DdUWxOWpyV/view",
+   "title": "계약서 없음.txt"
+  },
+  {
+   "doc_id": "1liRnbCXofJNMXWFiMDE453AZGjf4sfmD",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1liRnbCXofJNMXWFiMDE453AZGjf4sfmD/view",
+   "title": "(sweetspot) 파마리서치 인형 제작_견적서_251124.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 1건: (sweetspot) 파마리서치 인형 제작_견적서_25. 미확실: 입지/장소 정보 없음(제작 건으로 팝업 운영 아님); 방문/매출 결과 데이터 없음; 프로젝트명은 인형제작이나 견적은 쿠션 제작으로 명시; 면적 정보 없음"
+ }
+}

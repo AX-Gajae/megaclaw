@@ -1,0 +1,161 @@
+{
+ "record_id": "RTPU2417",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:보보_국가보훈부",
+  "space_id": "unresolved:미상",
+  "client_party_id": "unresolved:국가보훈부",
+  "brand_key": "보보_국가보훈부",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "국가보훈부 관련 '보보' 팝업스토어. 상세 컨셉·체험요소는 원문 문서가 제공되지 않아 확인 불가.",
+  "brand_name": "보보",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-05-22",
+   "to": "2024-05-26",
+   "days": 5
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 5,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 16,
+    "holiday_until": 115,
+    "holiday_block_in": 0,
+    "nat_event_gap": 42,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": 8000,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "entry",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": null,
+   "last_recognition_period": null
+  },
+  "counting_detail": "entry",
+  "label_trust": {
+   "grade": "E",
+   "why": "origin=unknown — 실측이 아니므로 평가 풀에서 제외"
+  },
+  "provenance": {
+   "source": "mine2 (2026-07-28)",
+   "evidence": "'보훈문화제 보보 팝업스토어 기획 및 운영 대행용역_결과보고서.pptx'(24.0MB, 한컴 저장본 application/haansoftpptx, 12슬라이드) 슬라이드2 '행사 개요' 표. 항목 순서: 행사명 / 기간 '2024년 5월 22일(수) ~ 5월 26일(일)' / 사업예산 '50,000,000원' / 장소 '천안시 독립기념관 겨레의 탑 앞, MQ 부스 6동(3mx3m)' / 과업범위 / 부스 방문객 '약 8,000여명'. 일별 표·집계 방법·계수 도구에 대한 기술이 문서 어디에도 없고 '약 …여명'이라는 어림 표기라 실측인지 현장 추산인지 판정 불가하여 origin=unknown으로 둔다. 사업예산 5,000만원은 발주 예산이지 매출이 아니므로 sales_krw는 null. 같은 내용의 PDF 판본은 이미지 스캔이라 pdftotext가 14자만 뽑았고, MCP의 PDF OCR 판독본에는 이 '행사 개요' 슬라이드가 통째로 누락되어 있었다 — 방문객 수는 pptx 우회 판독으로만 확보됐다.",
+   "column_quote": "부스 방문객 / 약 8,000여명",
+   "docs_opened": [
+    "보훈문화제 보보 팝업스토어 기획 및 운영 대행용역_결과보고서.pptx — 우회성공 (MCP는 unsupported mime type 거부)",
+    "보훈문화제 보보 팝업스토어 기획 및 운영 대행용역_결과보고서.pdf — MCP성공(단 OCR본에서 방문객이 적힌 개요 슬라이드 누락) / pdftotext는 이미지본이라 실패"
+   ]
+  },
+  "label_history": [
+   {
+    "at": "mine2 (2026-07-28)",
+    "action": "mine",
+    "changes": [
+     "visitors 8,000 (entry/unknown) 등급 E"
+    ],
+    "origin": "unknown",
+    "instrument": null,
+    "evidence": "'보훈문화제 보보 팝업스토어 기획 및 운영 대행용역_결과보고서.pptx'(24.0MB, 한컴 저장본 application/haansoftpptx, 12슬라이드) 슬라이드2 '행사 개요' 표. 항목 순서: 행사명 / 기간 '2024년 5월 22일(수) ~ 5월 26일(일)' / 사업예산 '50,000,000원' / 장소 '천안시 독립기념관 겨레의 탑 앞, MQ 부스 6동(3mx3m)' / 과업범위 / 부스 방문객 '약 8,000여명'. 일별 표·집계 방법·계수 도구에 대한 기술이 문서 어디에도 없고 '약 …여명'이라는 어림 표기라 실측인지 현장 추산인지 판정 불가하여 origin=unknown으로 둔다. 사업예산 5,000만원은 발주 예산이지 매출이 아니므로 sales_krw는 null. 같은 내용의 PDF "
+   }
+  ]
+ },
+ "docs": [
+  {
+   "doc_id": "14O_TF-_mc7R2iRk3YOW1QI-bCzrzIWpa",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/14O_TF-_mc7R2iRk3YOW1QI-bCzrzIWpa/view",
+   "title": "제안서_내용없음.txt"
+  },
+  {
+   "doc_id": "1Ess4_ZC9WmQX5dA_zLhxi812Du8t60Ei",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Ess4_ZC9WmQX5dA_zLhxi812Du8t60Ei/view",
+   "title": "RTPU2417_보보팝업스토어(국가보훈부)_계약서_0416.pdf"
+  },
+  {
+   "doc_id": "1_SFdF0EHZwcMpyaKpEr3QFyOAeTzKCdb",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1_SFdF0EHZwcMpyaKpEr3QFyOAeTzKCdb/view",
+   "title": "보훈문화제 보보 팝업스토어 기획 및 운영 대행용역_결과보고서.pptx"
+  },
+  {
+   "doc_id": "1mCc5_uXQmfwtGTINvb0JFF7tT8ARA5p5",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1mCc5_uXQmfwtGTINvb0JFF7tT8ARA5p5/view",
+   "title": "보훈문화제 보보 팝업스토어 기획 및 운영 대행용역_결과보고서.pdf"
+  },
+  {
+   "doc_id": "1orDgqD_Z5vV1j9DXS_8oix67z_URFb1r",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1orDgqD_Z5vV1j9DXS_8oix67z_URFb1r/view",
+   "title": "RTPU2417_보보팝업스토어(국가보훈부)_계약서_0416.pdf"
+  },
+  {
+   "doc_id": "1somCaoulBWxhT9lY2EZsDSYJ99s0isyh",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1somCaoulBWxhT9lY2EZsDSYJ99s0isyh/view",
+   "title": "RTPU2417_보보팝업스토어(국가보훈부)_견적서_0421.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체 미제공; 클라이언트명·장소·면적 미상; 컨셉 및 체험요소 상세 없음; 수수료 구조 정보 없음; 방문객수 및 매출 실측 데이터 없음; 예상 방문객수 없음"
+ }
+}

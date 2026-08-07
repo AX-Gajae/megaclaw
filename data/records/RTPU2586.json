@@ -1,0 +1,283 @@
+{
+ "record_id": "RTPU2586",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:세가_소닉",
+  "space_id": "unresolved:하남_스타필드",
+  "client_party_id": "unresolved:세가퍼블리싱코리아",
+  "brand_key": "세가",
+  "space_key": "하남_스타필드"
+ },
+ "intervention": {
+  "concept": "소닉 레이싱 크로스월드 신작 출시를 기념한 하남 스타필드 오프라인 게임 시연 프로모션. 게임 시연존(닌텐도 스위치/플레이스테이션), 캐릭터 에어벌룬 포토존, 구매특전 판매, SNS·앙게이트 설문 이벤트로 구성. 크리스마스 시즈널 이슈와 연계한 한정판 굿즈 증정 운영.",
+  "brand_name": "소닉 (SEGA)",
+  "experience_elements": [
+   "게임 시연대(닌텐도 스위치/플레이스테이션)",
+   "팝가 웨이팅 예약 시스템",
+   "소닉·마인크래프트 에어벌룬 포토존",
+   "크리스마스 트리 및 시상대 순위 포토존",
+   "구매특전 판매존",
+   "SNS 팔로우 인증 이벤트",
+   "앙게이트 설문조사 이벤트"
+  ],
+  "promotions": [
+   "게임 시연 시 도무송 스티커 기본 증정",
+   "6등 이내 기록 시 캔뱃지 증정(일별 선착순)",
+   "구매 시 아코디언 의자 증정(구매특전)",
+   "무료 썬캡 증정(모객)",
+   "SNS 팔로우&해시태그 인증 시 소닉 한정판 엽서 3종 증정",
+   "앙게이트 설문 참여 시 스타벅스 커피 교환권 증정"
+  ],
+  "staging_tags": [
+   "대형 캐릭터 벌룬",
+   "레이싱 컨셉",
+   "시즈널 이슈 연계",
+   "4면 시연기기 배치",
+   "크리스마스 트리 아크릴 장식",
+   "순위 시상대 포토존"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": null,
+   "area_sqm": null,
+   "planned_operating_days": null,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": null,
+   "experience_density": 3,
+   "goods_scale": 2,
+   "photo_zones": 4,
+   "collab_strength": 2,
+   "ip_awareness": 4,
+   "target_breadth": 4,
+   "entry_friction": 2,
+   "media_push": 1,
+   "season_fit": 4,
+   "venue_prominence": 3
+  },
+  "attr_meta": {
+   "evidence": "기획안(SEGA_스타필드 프로모션 제안서_v1)은 레이아웃·VMD 제안만으로 수치가 전무 — '확장 1영역 레이아웃 기준', 포토존(소닉/마크 대형 벌룬·시상대·FINISH LINE·출발선 등신대)과 게임 시연대존 구분, 안내/홍보물·소닉 깃발·주사위 스툴·레이싱 펜스 제안. 시연기 대수·운영시간·인원·면적·증정 수량 모두 미기재. 계약서(2025.11.26 체결)는 제2조 '계약 기간은 계약일로부터 2025년 12월 31일까지', 제4조 '전체 예산 99,000,000원(VAT별도)'뿐이고 운영일수·운영시간·인력 조항 없음 → planned_operating_days는 conditions.period(12/04~12/17, 14일)를 베끼지 않고 null. 스타필드 일 입객 수치도 문서에 없어 host_daily_traffic null.",
+   "confidence": "low",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "location": {
+   "city": "하남",
+   "district": null,
+   "venue_name": "하남 스타필드",
+   "venue_type": "복합쇼핑몰",
+   "foot_traffic_context": "스타필드 내 중심부에서 운영, 주말 가족단위 고객 방문 높고 평일 화·수요일 방문객 가장 적음, 평일 15시 이후 활성화"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-12-04",
+   "to": "2025-12-17",
+   "days": 14
+  },
+  "season": "겨울(크리스마스)",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "계약서(2025-11-26 체결) 전체 예산 99,000,000원(VAT 별도) — 확정액. 이후 견적서(12/04) 총계 106,400,000원(소계 96,730,000+대행수수료 9,673,000, VAT 별도) 존재 — 제4조 상호합의 추가비용 조항에 따른 증액 가능성 있으나 합의서 미확보. 1순위: 계약서 99.0M"
+  },
+  "brand_requirements": [
+   "일렉트로마트 계산대에서 판매재고 수령(NS 400ea/PS 200ea)",
+   "일렉트로마트 단말기 사용, 카드 결제만 가능",
+   "소닉 스태츄 취급 주의(코·손 약함)",
+   "행사 종료 후 소닉 스태츄 홍대 반납"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "하남 스타필드, 주말 가족단위 방문 높음"
+  },
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 4,
+    "months_since_last": 0.7,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 56,
+    "holiday_until": 72,
+    "holiday_block_in": 0,
+    "nat_event_gap": 21,
+    "nat_event": null,
+    "doc_lag_days": 8,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 11566454.0,
+    "pnl_pre_accounts": 3,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-11-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 70000,
+   "popup_zone_pass_rate": 0.4,
+   "host_traffic_est": 28000.0,
+   "venue_scale_tier": 1,
+   "confidence": "high",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2025-12-04",
+    "visitors": 265,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-12-05",
+    "visitors": 432,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-12-06",
+    "visitors": 707,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-12-07",
+    "visitors": 821,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-12-08",
+    "visitors": 317,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-12-09",
+    "visitors": 273,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-12-10",
+    "visitors": 281,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-12-11",
+    "visitors": 274,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-12-12",
+    "visitors": 426,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-12-13",
+    "visitors": 1013,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-12-14",
+    "visitors": 873,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-12-15",
+    "visitors": 398,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-12-16",
+    "visitors": 320,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-12-17",
+    "visitors": 250,
+    "sales_krw": null
+   }
+  ],
+  "totals": {
+   "visitors": 6650,
+   "sales_krw": null,
+   "rev_mm_recognized": 106.4
+  },
+  "counting_method": "participation",
+  "counting_basis": "'게임 시연 참여자'는 웨이팅 기기 집계 데이터로, 노쇼 고객 제외 및 재등록하여 중복참여한 인원 포함된 수치. 별도로 구매특전 159명(아코디언 의자 소진량), SNS 이벤트 540명(엽서 소진량), 앙게이트 647명(QR 참여자 데이터) 집계.",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(견적서에 '하루 시연자 280명 예상(작년 기준)' 기재. NS 판매 135ea, PS 판매 24ea(총 159건 구매). 소비자 매출(POS KRW) 금액은 보고서에 미기재. 전년 소닉x섀도우제너레이션즈 시연(2025.01.16~22) 대비 게임시연 266%↑.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 106.4 = 견적(12/04)과 일치 → 추가비용 합의(제4조) 실행 추정, 완결",
+   "contract_total_mm": 106.4,
+   "last_recognition_period": "2025-12"
+  },
+  "label_trust": {
+   "grade": "A",
+   "flags": [],
+   "why": "일별 표가 기간의 100% 커버"
+  },
+  "label_scope": {
+   "label_from": "2025-12-04",
+   "label_to": "2025-12-17",
+   "label_active_days": 14,
+   "label_span_days": 14,
+   "label_contiguous": true,
+   "daily_sum": 6650,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1Y-Oni6pyqTLr74cTwfnRfl5R08LwIQG8",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Y-Oni6pyqTLr74cTwfnRfl5R08LwIQG8/view",
+   "title": "SWEETSPOT_세가퍼블리싱코리아_소닉 프로모션 견적서_1204.pdf"
+  },
+  {
+   "doc_id": "1fBd88s-2i7KlCePcowJODzjXSUPP0YqO",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1fBd88s-2i7KlCePcowJODzjXSUPP0YqO/view",
+   "title": "[sweetspot] SEGA_레이싱 크로스월드 스타필드 시연회_결과보고서_1218.pdf"
+  },
+  {
+   "doc_id": "1rT45PaV6d5yWYNlOmwyKrZugy-jsFdzy",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1rT45PaV6d5yWYNlOmwyKrZugy-jsFdzy/view",
+   "title": "SEGA_스타필드 프로모션 제안서_v1.pptx"
+  },
+  {
+   "doc_id": "1t_6yMOLz1xICTK7DKr7_DOHOtVAlDr9e",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1t_6yMOLz1xICTK7DKr7_DOHOtVAlDr9e/view",
+   "title": "SEGA퍼블리싱코리아_스위트스팟 세가 스타필드 프로모션 업무협약서_계약서_251126.doc"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 2건: SWEETSPOT_세가퍼블리싱코리아_소닉 프로모션 견적, [sweetspot] SEGA_레이싱 크로스월드 스타필. 미확실: 소비자 매출(POS) 금액 KRW 미기재; 면적(평) 정보 없음; 정확한 예상 총 방문객(견적서상 일 280명 기준이나 총원 명시 없음); 프로젝트 메타 운영기간(12/14~12/17)과 실제 행사기간(12/4~12/17) 불일치 | rev_mm 정화(2026-07-27): 스팟 검수(7/24) 원문 대조 결과 반영 — 계약서 확정액>견적 우선순위 규칙 | 3각 대조: 인식액=견적 → 106.4 채택(계약 명목 99 병기)"
+ }
+}

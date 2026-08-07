@@ -1,0 +1,99 @@
+{
+ "market_record_id": "MKT-2024-0072",
+ "event_name": "아디다스 그라운드 성수 (ADIDAS GROUND SEONGSU)",
+ "brand": "아디다스 (아디다스코리아)",
+ "ip_or_collab": "베이비몬스터·오상욱·정호연 등 파트너 프로그램",
+ "category": "fashion",
+ "intervention": {
+  "concept_description": "75년 브랜드 히스토리를 성수 일대 7개 공간에서 재조명하는 대규모 오프라인 팝업 이벤트 (쇼케이스 'THIS IS ADIDAS'로 개막)",
+  "experience_elements": [
+   "패션쇼 쇼케이스",
+   "팬밋업",
+   "토크쇼",
+   "플라워 워크샵",
+   "시티 러닝 세션",
+   "커스텀 존",
+   "DJ 파티"
+  ],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "앤더슨씨 성수·무신사스토어 성수@대림창고·도원 성수·Y173 등 성수 일대 7개 공간",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2024-10-03",
+  "period_to": "2024-10-06",
+  "area_pyeong": null,
+  "multi_store": true,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  },
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.5,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 500,
+  "visitors_period_days": 4,
+  "counting_basis": "participation",
+  "counting_basis_note": "전체 방문객 수치 없음. 쇼케이스 관객 약 350명 + 오프닝 파티 500명 이상 등 행사별 참석 인원만 보도. 대표값으로 오프닝 파티 500명(이상) 기록",
+  "visitors_source_quote": "약 350명의 관객이 참석한 가운데 패션쇼를 열었다. ... 쇼케이스가 끝난 직후, DJ 아프로(APRO)와 함께 밤 10시경까지 이어진 오프닝 파티에도 500명 이상의 관객이 참석하며 서늘해진 가을 밤을 열기로 뜨겁게 달궜다.",
+  "visitors_source_url": "https://fashionbiz.co.kr/article/210865",
+  "visitors_source_date": "2024-10-04",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": "오상욱 토크쇼 티켓 오픈 3분 만에 모든 좌석 마감",
+   "signal_quotes": [
+    "아디하우스에서는 '오상욱과의 토크쇼'를 마련했는데 무려 티켓 오픈 3분 만에 모든 좌석이 마감됐다고.",
+    "사전 신청한 팬 외에도, 수많은 팬들이 행사장 앞에 줄을 섰다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "medium",
+ "notes": "방문객 총계 미공개. 수치는 개별 행사 참석 인원(쇼케이스 350명/파티 500명+). | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,120 @@
+{
+ "record_id": "RCPU2435",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:잔망루피",
+  "space_id": "unresolved:신세계부산센텀점",
+  "client_party_id": "unresolved:아이코닉스",
+  "brand_key": "잔망루피",
+  "space_key": "신세계백화점_센텀시티점"
+ },
+ "intervention": {
+  "concept": "잔망루피 캐릭터 팝업스토어. 판매존 중심의 운영형 팝업으로 추정된다.",
+  "brand_name": "잔망루피",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": "부산",
+   "district": "센텀",
+   "venue_name": "신세계 센텀시티점",
+   "venue_type": "백화점",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-12-10",
+   "to": "2024-12-25",
+   "days": 16
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 29,425,750원(VAT 10% 별도), 만원단위 절삭. 소계 27,110,000원 + 대행수수료 5,000,000원(채용·교육·CS처리 등 업무대행) - 물류반품비 2,684,250원. 운영인력 소계 23,780,000원(슈퍼바이저 30만/일×3일, 매니저 26만/일×16일, 운영스태프 15만/일×7명×16일, 식대 15,000×8×16), 세팅/철수 3,030,000원, 기타(배상책임보험) 300,000원. 견적서상 견적명은 '잔망루피팝업스토어_코엑스점'. | 계약서 미확인(2026-07-27 재독해 시도 — 대상 문서 부재/추출 실패): 총액은 견적 기준"
+  },
+  "brand_requirements": [
+   "행사주최자배상책임보험 가입(의무)",
+   "영업시간 10:30~22:00 풀근무"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "신세계 센텀시티점"
+  },
+  "derived": {
+   "duration": {
+    "days": 16,
+    "weekend_share": 0.25,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 3,
+    "months_since_last": 3.8,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 83,
+    "holiday_until": 46,
+    "holiday_block_in": 0,
+    "nat_event_gap": 26,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 3825442.0,
+    "pnl_pre_accounts": 6,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2024-10-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 100.1
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-12, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": 29.43,
+   "last_recognition_period": "2024-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-Y54IphPi4bCnCQ4u2Kl-KRrAjmGqau_",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1-Y54IphPi4bCnCQ4u2Kl-KRrAjmGqau_/view",
+   "title": "잔망루피 팝업스토어 위탁운영 계약서_스위트스팟_삼성 코엑스점.doc"
+  },
+  {
+   "doc_id": "112wARy4Ub5XCH3sZ34I5amDzfWr-d1MB",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/112wARy4Ub5XCH3sZ34I5amDzfWr-d1MB/view",
+   "title": "잔망루피_코엑스_견적서_운영.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 1건: 잔망루피_코엑스_견적서_운영.pdf. 미확실: 견적서 문서명은 '코엑스점'이나 프로젝트 메타는 '신세계부산센텀점'으로 불일치 — venue/location 불확실; 견적서 기간(12.10~12.25)과 프로젝트 메타 운영기간(12.12~12.26) 불일치; 면적(평), 컨셉, 체험요소, 프로모션 정보 없음(기획서/결과보고서 부재); 방문객·매출 실측 데이터 없음(결과보고서 부재); client_name 미기재, 발주처는 아이코닉스로 추정"
+ }
+}

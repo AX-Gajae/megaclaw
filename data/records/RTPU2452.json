@@ -1,0 +1,135 @@
+{
+ "record_id": "RTPU2452",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:오리온_ORION",
+  "space_id": "unresolved:컬리_푸드페스타",
+  "client_party_id": "unresolved:컬리_Kurly",
+  "brand_key": "오리온",
+  "space_key": "컬리_푸드페스타"
+ },
+ "intervention": {
+  "concept": "컬리 푸드페스타 내 오리온 부스 참가 팝업. 상세 컨셉은 원문(결과보고서) 본문에 텍스트가 없어 확인 불가.",
+  "brand_name": "오리온",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": "행사/페스타 부스",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-12-19",
+   "to": "2024-12-22",
+   "days": 4
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": "문서에 계약금액·수수료 정보 없음"
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "컬리 푸드페스타 내 부스 참가"
+  },
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.5,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 0.0,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 92,
+    "holiday_until": 37,
+    "holiday_block_in": 0,
+    "nat_event_gap": 35,
+    "nat_event": null,
+    "doc_lag_days": 1,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 1020000.0,
+    "pnl_pre_accounts": 1,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2024-11-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 8.9
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 원문에 실제 텍스트/표 내용이 없어 방문·매출 실측 추출 불가). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-12, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2024-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1-cLyOKuKMNNEiyuxXtKTCxy3mobDzVpT",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1-cLyOKuKMNNEiyuxXtKTCxy3mobDzVpT/view",
+   "title": "오리온_컬리푸드페스타_운영계획안_241217.pptx"
+  },
+  {
+   "doc_id": "13xdbDDQyoD0SjGxiCFECDmgtyK4PBnvD",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/13xdbDDQyoD0SjGxiCFECDmgtyK4PBnvD/view",
+   "title": "[스위트스팟] 컬리푸드페스타 운영대행 계약서(특약)_241218.docx"
+  },
+  {
+   "doc_id": "1OElkl1E6w2huVYMy4WYJ4gEcA8hoN-sX",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1OElkl1E6w2huVYMy4WYJ4gEcA8hoN-sX/view",
+   "title": "SWEETSPOT_컬리푸드페스타_견적서_1203.xlsx"
+  },
+  {
+   "doc_id": "1dpzz-ZkJLPYsBGvcSRk-_5L-rSD09O0v",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1dpzz-ZkJLPYsBGvcSRk-_5L-rSD09O0v/view",
+   "title": "제안서_내용없음.txt"
+  },
+  {
+   "doc_id": "1rIVOCZ4PAVVaJb5_jQFlZGDOWK9-erD4",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1rIVOCZ4PAVVaJb5_jQFlZGDOWK9-erD4/view",
+   "title": "오리온_컬리푸드페스타_결과보고서_241224.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 1건: 오리온_컬리푸드페스타_결과보고서_241224.pdf. 미확실: 결과보고서 본문 텍스트 부재로 방문자수·매출·집계방식 확인 불가; 컨셉/체험요소/프로모션/연출 정보 없음; 입지(도시·구·장소명) 정보 없음; 면적 정보 없음; 수수료구조·계약금액 정보 없음; client_name(컬리 추정) 미확정; 예상 방문 KPI 없음"
+ }
+}

@@ -1,0 +1,93 @@
+{
+ "market_record_id": "MKT-2025-0053",
+ "event_name": "백조씽크 체험형 팝업스토어(더현대 서울)",
+ "brand": "백조씽크",
+ "ip_or_collab": "백씽이(자사 캐릭터)",
+ "category": "other",
+ "intervention": {
+  "concept_description": "씽크볼 제조업체의 체험형 팝업. 금속 재질칩 비교 체험, 1:1 씽크볼 상담, 브랜드 월·영상·포토존, 캐릭터 '백씽이' 배치",
+  "experience_elements": [
+   "재질칩 비교 체험존",
+   "1:1 씽크볼 상담",
+   "브랜드 월",
+   "포토존"
+  ],
+  "promotions": [
+   "상담 고객 사은품"
+  ],
+  "is_free_entry": true,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "더현대 서울 지하 1층 대행사장",
+  "venue_type": "department_store",
+  "neighborhood": "여의도",
+  "city": "서울",
+  "period_from": "2025-07-04",
+  "period_to": "2025-07-16",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 13,
+    "weekend_share": 0.31,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 20000,
+  "visitors_period_days": 13,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "백조씽크 측 성료 보도 '지난 7월 4일부터 16일까지 더현대 서울 지하 1층 대행사장에서 운영한 체험형 팝업스토어가 방문객 2만여 명을 기록하며 마무리됐다'",
+  "visitors_source_quote": "백조씽크가 지난 7월 4일부터 16일까지 더현대 서울 지하 1층 대행사장에서 운영한 체험형 팝업스토어가 방문객 2만여 명을 기록하며 마무리됐다.",
+  "visitors_source_url": "https://magazine.hankyung.com/business/article/202507236212b",
+  "visitors_source_date": "2025-07-23",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": true,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "팝업 오픈 첫날부터 일 방문객 2,000명 이상이 유입되며 뜨거운 반응을 얻고 있으며(서울신문 2025-07-15)",
+    "특히 주말에는 가족 단위 방문객들의 체험 문의가 이어지며 전시 부스 앞에 대기줄이 형성되기도 했다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": true,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "리빙(주방) 카테고리→other. 누적 2만여 명 organizer 발표 | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

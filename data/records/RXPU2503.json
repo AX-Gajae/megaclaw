@@ -1,0 +1,166 @@
+{
+ "record_id": "RXPU2503",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:한국패션디자이너연합회_서울패션허브",
+  "space_id": "unresolved:서울특별시",
+  "client_party_id": "unresolved:한국패션디자이너연합회",
+  "brand_key": "한국패션디자이너연합회",
+  "space_key": "서울특별시"
+ },
+ "intervention": {
+  "concept": "서울패션허브 B2C 바이어 수주전시회장 조성 프로젝트. 바이어 수주전시회장 인테리어 기획 용역을 수행한다.",
+  "brand_name": "서울패션허브 B2C 수주회",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [
+   "수주전시회장",
+   "인테리어기획"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울특별시",
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-04-25",
+   "to": "2025-04-27",
+   "days": 3
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "계약금액 일금 이천일백팔십구만원(₩21,890,000), 총용역부기금액 동일. 계약보증금 ₩2,189,000(보증금율 10%). 지체상금율 0.13%. 인지세액 ₩20,000. 수의계약(지방계약법 제20조제1항6호). VAT 포함 여부 명시 없음."
+  },
+  "brand_requirements": [
+   "용역기간: 계약체결일부터 금차 3일, 총차 3일",
+   "금차/총차 완수일자 2025/04/11",
+   "용역입찰유의서·용역계약일반조건·특수조건·산출내역서·과업지시서 준수"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "서울패션허브 B2C 바이어 수주전시회장"
+  },
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.67,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 53,
+    "holiday_until": 8,
+    "holiday_block_in": 0,
+    "nat_event_gap": 39,
+    "nat_event": null,
+    "doc_lag_days": 43,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 2398637.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-03-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 19.9
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 19.9 ≈ 계약총액 21.89",
+   "contract_total_mm": 21.89,
+   "last_recognition_period": "2025-04"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1CKoUcOHj_G3QlDv0f4m1_RwkhxeHovQ-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CKoUcOHj_G3QlDv0f4m1_RwkhxeHovQ-/view",
+   "title": "[스위트스팟] 링제본(인쇄포함) 견적서 250313 - 1.PDF"
+  },
+  {
+   "doc_id": "1CKtHMQiE6HWo4yCZkx9Jnph-MvAG-wAF",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1CKtHMQiE6HWo4yCZkx9Jnph-MvAG-wAF/view",
+   "title": "[스위트스팟] 링제본(인쇄포함) 견적서 250313 - 2.PDF"
+  },
+  {
+   "doc_id": "1COTq33HqVDcVRxo6Hw7q9QUvf_iJL6v4",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1COTq33HqVDcVRxo6Hw7q9QUvf_iJL6v4/view",
+   "title": "[스위트스팟] 인쇄포함 제본 견적서.PDF"
+  },
+  {
+   "doc_id": "1EjAD4PBjeLN7n9U90JGV23Ec8xmh_7Ch",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1EjAD4PBjeLN7n9U90JGV23Ec8xmh_7Ch/view",
+   "title": "아이린플라워_DDP 세팅 견적서.pdf"
+  },
+  {
+   "doc_id": "1HSnCcf-WBNYjg3SAMUyhr4QZ19laUaoU",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1HSnCcf-WBNYjg3SAMUyhr4QZ19laUaoU/view",
+   "title": "아이린파티_플랜테리어 추가 견적서.png"
+  },
+  {
+   "doc_id": "1M-Sx5l8IErYZKhdmC1ueiPJCCk7o4D2t",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1M-Sx5l8IErYZKhdmC1ueiPJCCk7o4D2t/view",
+   "title": "제안서_내용없음.txt"
+  },
+  {
+   "doc_id": "1RR793inGbkXEmNq3qnvQRvG8tejtWqlL",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1RR793inGbkXEmNq3qnvQRvG8tejtWqlL/view",
+   "title": "(Sweetspot)서울패션허브_동대문 K 패션 브랜드 수주전시_견적서.pdf"
+  },
+  {
+   "doc_id": "1eEldkiGWmieIe3c-tghwaz2FlHp8MqvJ",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1eEldkiGWmieIe3c-tghwaz2FlHp8MqvJ/view",
+   "title": "임시결과보고서.txt"
+  },
+  {
+   "doc_id": "1qALguFVImi2959y0sp-tXq6NQpjYNL_B",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1qALguFVImi2959y0sp-tXq6NQpjYNL_B/view",
+   "title": "계약서_패션허브 수주회.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 1건: 계약서_패션허브 수주회.pdf. 미확실: 결과보고서 없음 - 방문자수·매출 실측 데이터 전무; 기획서/제안서 없음 - 체험요소·프로모션·예상방문 미상; 면적(평) 정보 없음; venue_name·venue_type 미상 - 계약서상 현장은 '서울특별시'로만 표기; 계약서상 완수일자(2025/04/11)와 project_meta 운영기간(2025-04-25~27) 불일치"
+ }
+}

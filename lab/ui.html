@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>월드모델 실험실</title>
+<style>
+:root{
+  --bg:#0b0d10; --panel:#12151a; --panel2:#171b21; --line:#232830;
+  --ink:#e6e9ef; --dim:#8b94a3; --dim2:#5c6572;
+  --acc:#4ea1ff; --ok:#3fca7f; --warn:#ffb648; --bad:#ff5f6d; --gold:#d9b45b;
+  --mono:'SF Mono',ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--ink);
+  font:13px/1.5 -apple-system,'Pretendard','Apple SD Gothic Neo',sans-serif;}
+a{color:var(--acc);text-decoration:none}
+#wrap{display:grid;grid-template-columns:300px 1fr;height:100vh}
+#side{background:var(--panel);border-right:1px solid var(--line);
+  display:flex;flex-direction:column;min-height:0}
+#main{overflow:auto;padding:18px 22px 60px}
+.hd{padding:14px 16px;border-bottom:1px solid var(--line);
+  display:flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);
+  box-shadow:0 0 8px var(--ok)}
+.dot.off{background:var(--dim2);box-shadow:none}
+h1{font-size:13px;margin:0;letter-spacing:.02em;font-weight:600}
+.sub{color:var(--dim2);font-size:11px;margin-left:auto;font-family:var(--mono)}
+.tabs{display:flex;border-bottom:1px solid var(--line)}
+.tab{flex:1;padding:9px 0;text-align:center;color:var(--dim);cursor:pointer;
+  font-size:12px;border-bottom:2px solid transparent}
+.tab.on{color:var(--ink);border-bottom-color:var(--acc)}
+#list{overflow:auto;flex:1;min-height:0}
+.row{padding:9px 14px;border-bottom:1px solid var(--line);cursor:pointer;
+  display:grid;grid-template-columns:1fr auto;gap:2px 8px}
+.row:hover{background:var(--panel2)}
+.row.on{background:var(--panel2);
+  box-shadow:inset 3px 0 0 var(--acc)}
+.row .f{font-size:12px;font-weight:600}
+.row .m{font-family:var(--mono);font-size:12px;color:var(--acc)}
+.row .t{color:var(--dim2);font-size:11px;font-family:var(--mono)}
+.row .s{font-size:10px;text-transform:uppercase;letter-spacing:.05em}
+.s.running{color:var(--warn)} .s.done{color:var(--ok)}
+.s.failed{color:var(--bad)} .s.killed{color:var(--dim2)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;
+  padding:14px 16px;margin-bottom:14px}
+.card h2{font-size:12px;margin:0 0 10px;color:var(--dim);font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:1fr 1fr}
+.g3{grid-template-columns:repeat(3,1fr)}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{text-align:left;color:var(--dim2);font-weight:500;padding:5px 8px 5px 0;
+  border-bottom:1px solid var(--line);font-size:11px}
+td{padding:5px 8px 5px 0;border-bottom:1px solid #1a1e25;font-variant-numeric:tabular-nums}
+td.n,th.n{text-align:right;font-family:var(--mono)}
+.pill{display:inline-block;padding:1px 7px;border-radius:20px;font-size:10px;
+  border:1px solid var(--line);color:var(--dim)}
+.pill.champion{color:var(--gold);border-color:#4a3f22;background:#221d10}
+.pill.challenger{color:var(--acc);border-color:#1d3550;background:#0f1a26}
+.pill.baseline{color:var(--dim2)}
+.pill.retired{color:var(--bad);border-color:#3a1f22;background:#201113}
+.big{font-family:var(--mono);font-size:26px;letter-spacing:-.02em}
+.lbl{color:var(--dim2);font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+.up{color:var(--ok)} .down{color:var(--bad)} .flat{color:var(--dim)}
+canvas{width:100%;display:block}
+.log{font-family:var(--mono);font-size:11px;max-height:260px;overflow:auto}
+.log div{padding:2px 0;border-bottom:1px solid #161a20;white-space:pre-wrap}
+.log .error{color:var(--bad)} .log .warn{color:var(--warn)}
+.log .ts{color:var(--dim2);margin-right:8px}
+.gu{display:inline-flex;align-items:center;gap:5px;margin:0 12px 6px 0;font-size:11px}
+.gu i{width:7px;height:7px;border-radius:50%;display:inline-block}
+.gu.p i{background:var(--ok)} .gu.f i{background:var(--bad)}
+.empty{color:var(--dim2);padding:26px 0;text-align:center;font-size:12px}
+.bar{height:5px;background:#1a1e25;border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--acc)}
+</style></head><body>
+<div id="wrap">
+  <div id="side">
+    <div class="hd"><span class="dot" id="live"></span><h1>월드모델 실험실</h1>
+      <span class="sub" id="clock"></span></div>
+    <div class="tabs">
+      <div class="tab on" data-t="runs">실행</div>
+      <div class="tab" data-t="forms">포트폴리오</div>
+    </div>
+    <div id="list"></div>
+  </div>
+  <div id="main"></div>
+</div>
+<script>
+const $=s=>document.querySelector(s), fmt=v=>v==null||isNaN(v)?'—':(v>=0?'+':'')+(+v).toFixed(4);
+const ago=t=>{const s=Date.now()/1e3-t;if(s<60)return Math.round(s)+'초';
+  if(s<3600)return Math.round(s/60)+'분';if(s<86400)return Math.round(s/3600)+'시간';
+  return Math.round(s/86400)+'일';};
+let TAB='runs', SEL=null, RUNS=[], FORMS=[];
+
+async function j(u){try{const r=await fetch(u);return await r.json()}catch(e){return null}}
+
+function sideRuns(){
+  if(!RUNS.length)return '<div class="empty">아직 실행이 없다</div>';
+  return RUNS.map(r=>{
+    const s=r.summary||{},h=(s.pooled==null||s.pooled!==s.pooled)?null:s.pooled;
+    return `<div class="row ${SEL===r.id?'on':''}" data-id="${r.id}">
+      <div class="f">${r.formulation}</div>
+      <div class="m">${h==null?'':fmt(h)}</div>
+      <div class="t">${r.program?r.program+' · ':''}${ago(r.started)} 전</div>
+      <div class="s ${r.status}">${r.status}</div></div>`}).join('');
+}
+function sideForms(){
+  if(!FORMS.length)return '<div class="empty">포트폴리오가 비었다</div>';
+  return FORMS.map(f=>`<div class="row" data-form="${f.formulation}">
+    <div class="f">${f.formulation}</div>
+    <div class="m">${f.best==null?'':fmt(f.best)}</div>
+    <div class="t">${(f.idea||'').slice(0,42)}</div>
+    <div class="s"><span class="pill ${f.status}">${f.status}</span></div></div>`).join('');
+}
+
+function chart(el,series){
+  const c=document.createElement('canvas'),dpr=devicePixelRatio||1;
+  const W=el.clientWidth||600,H=190;
+  c.width=W*dpr;c.height=H*dpr;c.style.height=H+'px';el.appendChild(c);
+  const x=c.getContext('2d');x.scale(dpr,dpr);
+  const all=series.flatMap(s=>s.pts);
+  if(!all.length){x.fillStyle='#5c6572';x.font='12px sans-serif';
+    x.fillText('자료 없음',10,20);return}
+  const xs=all.map(p=>p[0]),ys=all.map(p=>p[1]);
+  let x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys);
+  if(x1===x0)x1=x0+1; if(y1===y0){y0-=.01;y1+=.01}
+  const pad=(y1-y0)*.12;y0-=pad;y1+=pad;
+  const L=44,R=8,T=10,B=22, px=v=>L+(v-x0)/(x1-x0)*(W-L-R),
+        py=v=>T+(1-(v-y0)/(y1-y0))*(H-T-B);
+  x.strokeStyle='#232830';x.lineWidth=1;x.fillStyle='#5c6572';x.font='10px monospace';
+  for(let i=0;i<=4;i++){const v=y0+(y1-y0)*i/4,Y=py(v);
+    x.beginPath();x.moveTo(L,Y);x.lineTo(W-R,Y);x.stroke();
+    x.fillText(v.toFixed(3),2,Y+3);}
+  const cols=['#4ea1ff','#3fca7f','#ffb648','#ff5f6d','#d9b45b','#b48bff'];
+  series.forEach((s,i)=>{
+    x.strokeStyle=cols[i%cols.length];x.lineWidth=1.6;x.beginPath();
+    s.pts.forEach((p,k)=>k?x.lineTo(px(p[0]),py(p[1])):x.moveTo(px(p[0]),py(p[1])));
+    x.stroke();
+    x.fillStyle=cols[i%cols.length];x.font='10px monospace';
+    x.fillText(s.k,L+6+i*84,T+10);
+  });
+}
+
+async function paintRun(id){
+  const d=await j('/api/run?id='+id);const m=$('#main');
+  if(!d||d.error){m.innerHTML='<div class="empty">없는 실행</div>';return}
+  const byKey={};(d.metrics||[]).forEach(r=>{(byKey[r.key]=byKey[r.key]||[]).push([r.step,r.value])});
+  const sc=d.scores||[],gu=d.guards||[],ev=d.events||[];
+  const S=d.summary||{},head=S.headline,z=(S.z==null||S.z!==S.z)?null:S.z;
+  m.innerHTML=`
+  <div class="grid g3">
+    <div class="card"><div class="lbl">판 ρ — 유보 표본, 순위 기준</div>
+      <div class="big ${S.pooled>0?'up':'down'}">${fmt(S.pooled)}</div>
+      <div style="color:var(--dim2);font-size:11px">치환 귀무 ${fmt(S.null_sd)}
+        · z ${z==null?'—':(z>0?'+':'')+z.toFixed(2)+'σ'} · p ${S.p==null?'—':S.p.toFixed(3)}</div></div>
+    <div class="card"><div class="lbl">팝업 (분해능 없음 · n=59)</div>
+      <div class="big ${head>0?'up':head<0?'down':'flat'}"
+        style="opacity:.72">${fmt(head)}</div>
+      <div style="color:var(--dim2);font-size:11px">대상 ${S.targets||0}개
+        · 구간 ${S.ci&&S.ci[0]===S.ci[0]?fmt(S.ci[0])+' ~ '+fmt(S.ci[1]):'—'}</div></div>
+    <div class="card"><div class="lbl">${d.formulation}</div>
+      <div class="big ${d.status==='done'?'up':d.status==='failed'?'down':'flat'}"
+        style="font-size:17px">${d.status}${S.guards_ok===false?
+        ' <span style="color:var(--bad);font-size:12px">가드 실패</span>':''}</div>
+      <div style="color:var(--dim2);font-size:11px">${d.program||'—'}
+        · ${ago(d.started)} 전 시작</div></div>
+  </div>
+  <div class="card"><h2>학습 곡선</h2><div id="chart"></div></div>
+  <div class="grid g2">
+    <div class="card"><h2>대상별 점수</h2>${sc.length?
+      `<table><tr><th>대상</th><th>규약</th><th class="n">ρ</th><th class="n">구간</th></tr>
+       ${sc.map(s=>`<tr><td>${s.target}</td><td style="color:var(--dim)">${s.split}</td>
+        <td class="n">${fmt(s.value)}</td>
+        <td class="n" style="color:var(--dim2)">${s.lo==null?'':fmt(s.lo)+' ~ '+fmt(s.hi)}</td></tr>`).join('')}
+       </table>`:'<div class="empty">아직</div>'}</div>
+    <div class="card"><h2>가드</h2>${gu.length?
+      gu.map(g=>`<span class="gu ${g.passed?'p':'f'}"><i></i>${g.name}${
+        g.detail?' · <span style="color:var(--dim2)">'+g.detail+'</span>':''}</span>`).join(''):
+      '<div class="empty">아직</div>'}
+      <h2 style="margin-top:16px">설정</h2>
+      <div class="log">${Object.entries(d.config||{}).map(([k,v])=>
+        `<div><span class="ts">${k}</span>${JSON.stringify(v)}</div>`).join('')||'—'}</div>
+    </div>
+  </div>
+  <div class="card"><h2>로그</h2><div class="log">${ev.length?ev.map(e=>
+    `<div class="${e.level}"><span class="ts">${new Date(e.ts*1e3).toLocaleTimeString('ko')}</span>${
+      e.msg.replace(/[<>]/g,'')}</div>`).join(''):'<div class="empty">조용함</div>'}</div></div>`;
+  const keys=Object.keys(byKey).slice(0,6);
+  chart($('#chart'),keys.map(k=>({k,pts:byKey[k].sort((a,b)=>a[0]-b[0])})));
+}
+
+async function paintForms(){
+  const m=$('#main');
+  const best={};
+  RUNS.forEach(r=>{const s=r.summary||{};
+    if(s.pooled==null||s.pooled!==s.pooled)return; const k=r.formulation;
+    if(!(k in best)||s.pooled>best[k].pooled)best[k]={...s,formulation:k,id:r.id}});
+  const rank=Object.values(best).sort((a,b)=>b.pooled-a.pooled);
+  m.innerHTML=`
+  <div class="card"><h2>포트폴리오 — 목표는 고정, 방법은 교체</h2>
+    <table><tr><th>정식화</th><th>상태</th><th>착상</th>
+      <th class="n">최고 판 ρ</th></tr>
+    ${FORMS.map(f=>`<tr><td><b>${f.formulation}</b></td>
+      <td><span class="pill ${f.status}">${f.status}</span></td>
+      <td style="color:var(--dim)">${f.idea||'—'}${f.killed_why?
+        ' <span style="color:var(--bad)">· '+f.killed_why+'</span>':''}</td>
+      <td class="n">${fmt(f.best)}</td></tr>`).join('')}
+    </table></div>
+  <div class="card"><h2>순위표 — 유보 표본의 판 ρ</h2>
+    <div style="color:var(--dim2);font-size:11px;margin:-4px 0 12px">
+      순위는 ρ, z 는 가드다. 강하게 규제된 모형은 섞인 라벨도 못 맞혀서 귀무가
+      좁아지고 z 가 커진다 — z 로 줄을 세우면 규제가 셀수록 이기는 표가 된다.
+      ρ 차이가 대상별 짝지은 1 SE 안이면 귀무가 좁은 쪽을 고른다.</div>
+    ${rank.length?`<table><tr><th>#</th><th>정식화</th>
+      <th class="n">판 ρ</th><th class="n">귀무 폭</th><th class="n">z</th>
+      <th class="n">p</th><th style="width:28%"></th></tr>
+    ${rank.map((r,i)=>{const w=Math.max(0,Math.min(1,r.pooled/.45))*100;
+      return `<tr><td style="color:var(--dim2)">${i+1}</td>
+      <td><b>${r.formulation}</b>${r.guards_ok===false?
+        ' <span style="color:var(--bad);font-size:10px">가드</span>':''}</td>
+      <td class="n"><b>${fmt(r.pooled)}</b></td>
+      <td class="n" style="color:var(--dim2)">${fmt(r.null_sd)}</td>
+      <td class="n" style="color:var(--dim2)">${r.z==null||r.z!==r.z?'—':(r.z>0?'+':'')+r.z.toFixed(2)+'σ'}</td>
+      <td class="n" style="color:var(--dim2)">${r.p==null?'—':r.p.toFixed(3)}</td>
+      <td><div class="bar"><i style="width:${w}%"></i></div></td></tr>`}).join('')}
+    </table>`:'<div class="empty">아직 채점된 것이 없다</div>'}</div>`;
+}
+
+async function tick(){
+  const st=await j('/api/stat');
+  $('#live').className='dot'+(st?'':' off');
+  $('#clock').textContent=new Date().toLocaleTimeString('ko');
+  RUNS=await j('/api/runs?limit=120')||[];
+  FORMS=await j('/api/portfolio')||[];
+  $('#list').innerHTML=TAB==='runs'?sideRuns():sideForms();
+  if(TAB==='runs'){ if(!SEL&&RUNS.length)SEL=RUNS[0].id; if(SEL)await paintRun(SEL); }
+  else await paintForms();
+}
+document.addEventListener('click',e=>{
+  const t=e.target.closest('.tab'); if(t){TAB=t.dataset.t;
+    document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===t));tick();return}
+  const r=e.target.closest('.row[data-id]'); if(r){SEL=r.dataset.id;tick()}
+});
+tick(); setInterval(tick,3000);
+</script></body></html>

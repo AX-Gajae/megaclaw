@@ -1,0 +1,299 @@
+<title>03 · 수학적 원리 ① — 전이가 성립하는 조건</title>
+<style>
+:root{
+  --ground:#F7F8FA; --surface:#FFFFFF; --surface-2:#F1F4F7;
+  --ink:#131A22; --ink-2:#46525F; --ink-3:#717E8C;
+  --rule:#DCE2E9; --rule-2:#EAEEF2;
+  --measured:#0E7C86; --unmeasurable:#9C6C15; --refuted:#A93A4A; --absent:#8A94A0;
+  --wash:#E7F1F2; --wash-2:#F3F1E7; --wash-3:#F6EAEC;
+  --sans:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --ground:#0B1015; --surface:#111921; --surface-2:#16202A;
+    --ink:#E2E9F0; --ink-2:#A2AFBB; --ink-3:#75828F;
+    --rule:#22303B; --rule-2:#1A252E;
+    --measured:#42B8C1; --unmeasurable:#D6A445; --refuted:#E0808F; --absent:#7C8996;
+    --wash:#153840; --wash-2:#2E2814; --wash-3:#38181E;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0B1015; --surface:#111921; --surface-2:#16202A;
+  --ink:#E2E9F0; --ink-2:#A2AFBB; --ink-3:#75828F;
+  --rule:#22303B; --rule-2:#1A252E;
+  --measured:#42B8C1; --unmeasurable:#D6A445; --refuted:#E0808F; --absent:#7C8996;
+  --wash:#153840; --wash-2:#2E2814; --wash-3:#38181E;
+}
+:root[data-theme="light"]{
+  --ground:#F7F8FA; --surface:#FFFFFF; --surface-2:#F1F4F7;
+  --ink:#131A22; --ink-2:#46525F; --ink-3:#717E8C;
+  --rule:#DCE2E9; --rule-2:#EAEEF2;
+  --measured:#0E7C86; --unmeasurable:#9C6C15; --refuted:#A93A4A; --absent:#8A94A0;
+  --wash:#E7F1F2; --wash-2:#F3F1E7; --wash-3:#F6EAEC;
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--ground); color:var(--ink);
+  font-family:var(--sans); font-size:16.5px; line-height:1.78; -webkit-font-smoothing:antialiased}
+.n{font-family:var(--mono); font-variant-numeric:tabular-nums; font-size:.94em; letter-spacing:-.01em}
+code{font-family:var(--mono); font-size:.9em; background:var(--surface-2);
+  padding:.1em .34em; border-radius:3px; color:var(--ink-2)}
+.sheet{max-width:960px; margin:0 auto; padding:0 clamp(18px,4vw,40px);
+  min-height:100vh; display:flex; flex-direction:column}
+.measure{max-width:69ch}
+h1,h2,h3,h4{text-wrap:balance; line-height:1.28; letter-spacing:-.022em}
+h1{font-size:clamp(1.75rem,4vw,2.6rem); font-weight:800; margin:0 0 .4em}
+h2{font-size:clamp(1.42rem,3.1vw,2.02rem); font-weight:750; margin:0 0 .3em}
+h3{font-size:1.11rem; font-weight:700; margin:2.2em 0 .5em}
+p{margin:0 0 1.15em}
+strong{font-weight:700}
+em{font-style:normal; background:linear-gradient(transparent 62%,var(--wash) 62%)}
+ul,ol{padding-left:1.3em; margin:0 0 1.2em}
+li{margin-bottom:.55em} li::marker{color:var(--ink-3)}
+a{color:var(--measured)}
+:focus-visible{outline:2px solid var(--measured); outline-offset:2px}
+
+/* 머리 — 자(ruler) 눈금 */
+.top{padding:20px 0 0; position:sticky; top:0; background:var(--ground); z-index:5}
+.topbar{display:flex; align-items:baseline; justify-content:space-between; gap:16px;
+  padding-bottom:10px; border-bottom:1px solid var(--rule)}
+.docname{font-family:var(--mono); font-size:.72rem; letter-spacing:.11em; text-transform:uppercase;
+  color:var(--ink-3); text-decoration:none}
+.docname:hover{color:var(--measured)}
+.pageno{font-family:var(--mono); font-size:.72rem; color:var(--ink-3); white-space:nowrap}
+.ticks{display:flex; gap:3px; padding:9px 0 0}
+.ticks i{flex:1; height:3px; background:var(--rule); border-radius:1px}
+.ticks i.on{background:var(--measured)}
+.ticks i.past{background:var(--ink-3); opacity:.42}
+
+main{flex:1; padding:clamp(30px,5vw,54px) 0 clamp(28px,4vw,44px)}
+.sechead{margin:0 0 1.5em; padding-bottom:.7em; border-bottom:1px solid var(--rule)}
+.secno{font-family:var(--mono); font-size:.8rem; color:var(--ink-3); display:block; margin-bottom:.5em}
+.sechead p{margin:.5em 0 0; color:var(--ink-3); font-size:.93rem; max-width:60ch}
+
+/* 인식 상태 */
+.st{font-family:var(--mono); font-size:.72rem; letter-spacing:.02em; padding:.2em .55em;
+  border-radius:2px; white-space:nowrap; border:1px solid; font-weight:500}
+.st-m{color:var(--measured); border-color:var(--measured); background:var(--wash)}
+.st-u{color:var(--unmeasurable); border-color:var(--unmeasurable); background:var(--wash-2)}
+.st-r{color:var(--refuted); border-color:var(--refuted); background:var(--wash-3)}
+.st-a{color:var(--absent); border-color:var(--absent); background:transparent}
+
+/* 수식 */
+.eq{font-family:var(--mono); font-size:.93rem; line-height:1.65; background:var(--surface);
+  border:1px solid var(--rule); border-left:2px solid var(--ink-3);
+  padding:16px 20px; margin:1.5em 0; overflow-x:auto; color:var(--ink)}
+.eq .cm{color:var(--ink-3)} .eq b{font-weight:600; color:var(--measured)}
+
+/* 표 */
+.tw{overflow-x:auto; margin:1.6em 0; border:1px solid var(--rule); background:var(--surface)}
+table{border-collapse:collapse; width:100%; font-size:.9rem; min-width:520px}
+th,td{padding:9px 14px; text-align:left; border-bottom:1px solid var(--rule-2)}
+thead th{background:var(--surface-2); font-weight:600; font-size:.79rem; color:var(--ink-2);
+  border-bottom:1px solid var(--rule); white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right; font-family:var(--mono); font-variant-numeric:tabular-nums;
+  font-size:.87rem; white-space:nowrap}
+tr.hl td{background:var(--wash)}
+
+/* 구간 그림 */
+.plot{border:1px solid var(--rule); background:var(--surface); margin:1.8em 0; overflow:hidden}
+.plot-h{padding:14px 18px 10px; border-bottom:1px solid var(--rule-2)}
+.plot-h .t{font-weight:700; font-size:.95rem}
+.plot-h .d{font-size:.82rem; color:var(--ink-3); margin-top:.2em}
+.plot-b{padding:16px 18px 8px}
+.ivrow{display:grid; grid-template-columns:minmax(96px,132px) 1fr 62px; gap:0 14px;
+  align-items:center; margin-bottom:11px}
+.ivlab{font-size:.83rem; line-height:1.35}
+.ivlab .sub{display:block; font-family:var(--mono); font-size:.71rem; color:var(--ink-3)}
+.ivtrack{position:relative; height:22px}
+.ivtrack::before{content:""; position:absolute; left:0; right:0; top:50%; height:1px;
+  background:var(--rule); transform:translateY(-50%)}
+.ivzero{position:absolute; top:0; bottom:0; width:1px; background:var(--ink-3); opacity:.85}
+.ivband{position:absolute; top:50%; height:7px; transform:translateY(-50%); border-radius:1px; opacity:.34}
+.ivdot{position:absolute; top:50%; width:9px; height:9px; margin-left:-4.5px;
+  transform:translateY(-50%); border-radius:50%}
+.iv-m .ivband{background:var(--measured)} .iv-m .ivdot{background:var(--measured)}
+.iv-u .ivband{background:var(--unmeasurable)} .iv-u .ivdot{background:var(--unmeasurable)}
+.ivnum{font-family:var(--mono); font-variant-numeric:tabular-nums; font-size:.79rem;
+  text-align:right; color:var(--ink-2)}
+.plot-f{padding:10px 18px 14px; font-size:.78rem; color:var(--ink-3);
+  border-top:1px solid var(--rule-2); margin-top:6px}
+.axis{display:grid; grid-template-columns:minmax(96px,132px) 1fr 62px; gap:0 14px;
+  font-family:var(--mono); font-size:.7rem; color:var(--ink-3); margin-top:2px}
+.axis .ticks2{position:relative; height:14px}
+.axis .ticks2 span{position:absolute; transform:translateX(-50%)}
+
+/* 막대 */
+.bars{display:flex; align-items:flex-end; gap:clamp(8px,2vw,22px); height:180px;
+  padding:18px 18px 0; border-bottom:1px solid var(--rule)}
+.bar{flex:1; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; height:100%}
+.bar .col{width:100%; max-width:76px; background:var(--measured); border-radius:2px 2px 0 0}
+.bar.peak .col{background:var(--refuted)}
+.bar .v{font-family:var(--mono); font-size:.78rem; font-weight:600; margin-bottom:5px}
+.barlabs{display:flex; gap:clamp(8px,2vw,22px); padding:8px 18px 16px}
+.barlabs div{flex:1; text-align:center; font-size:.77rem; color:var(--ink-3); line-height:1.35}
+
+/* 사다리 */
+.ladder{border:1px solid var(--rule); background:var(--surface); margin:1.8em 0}
+.rung{display:grid; grid-template-columns:54px 1fr auto; gap:0 16px; padding:15px 18px;
+  border-bottom:1px solid var(--rule-2); align-items:start}
+.rung:last-child{border-bottom:none}
+.rung .lv{font-family:var(--mono); font-size:.8rem; font-weight:600; color:var(--ink-3); padding-top:2px}
+.rung .nm{font-weight:700; font-size:.97rem; margin-bottom:.15em}
+.rung .ds{font-size:.855rem; color:var(--ink-2); line-height:1.6}
+.rung .ds .eqi{font-family:var(--mono); font-size:.87em; color:var(--ink)}
+.rung.on{background:var(--wash)} .rung.part{background:var(--wash-2)}
+
+/* 강조 */
+.call{border:1px solid var(--rule); border-left:2px solid var(--measured);
+  background:var(--surface); padding:16px 20px; margin:1.6em 0}
+.call.warn{border-left-color:var(--unmeasurable)}
+.call.bad{border-left-color:var(--refuted)}
+.call .h{font-size:.76rem; font-family:var(--mono); letter-spacing:.06em; text-transform:uppercase;
+  color:var(--ink-3); margin-bottom:.55em}
+.call p:last-child{margin-bottom:0}
+
+/* 표지 */
+.cover{padding:clamp(40px,7vw,80px) 0 0}
+.eyebrow{font-family:var(--mono); font-size:.74rem; letter-spacing:.13em; text-transform:uppercase;
+  color:var(--ink-3); margin:0 0 1.5em}
+.lede{font-size:clamp(1rem,1.8vw,1.16rem); color:var(--ink-2); max-width:64ch}
+.headnums{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:1px; background:var(--rule); border:1px solid var(--rule); margin-top:clamp(30px,5vw,46px)}
+.hn{background:var(--surface); padding:18px 20px 16px}
+.hn .v{font-family:var(--mono); font-variant-numeric:tabular-nums; font-size:1.7rem;
+  font-weight:600; letter-spacing:-.03em; display:block; line-height:1.1}
+.hn .k{font-size:.82rem; color:var(--ink-3); margin-top:.5em; display:block}
+.hn .s{font-size:.78rem; margin-top:.6em; display:inline-block}
+.idx{border:1px solid var(--rule); background:var(--surface); margin:2.2em 0 0}
+.idx a{display:grid; grid-template-columns:44px 1fr auto; gap:0 14px; padding:12px 18px;
+  border-bottom:1px solid var(--rule-2); text-decoration:none; color:var(--ink); align-items:baseline}
+.idx a:last-child{border-bottom:none}
+.idx a:hover,.idx a:focus-visible{background:var(--surface-2)}
+.idx .no{font-family:var(--mono); font-size:.78rem; color:var(--ink-3)}
+.idx .ti{font-weight:600; font-size:.95rem}
+.idx .sub{display:block; font-weight:400; font-size:.82rem; color:var(--ink-3); margin-top:.1em}
+
+/* 발 — 앞뒤 */
+.nav{border-top:1px solid var(--rule); display:grid; grid-template-columns:1fr auto 1fr;
+  gap:12px; padding:18px 0 40px; align-items:center}
+.nav a{text-decoration:none; color:var(--ink-2); font-size:.87rem; display:block}
+.nav a:hover,.nav a:focus-visible{color:var(--measured)}
+.nav .arrow{font-family:var(--mono); font-size:.74rem; color:var(--ink-3); display:block}
+.nav .r{text-align:right}
+.nav .home{font-family:var(--mono); font-size:.74rem; color:var(--ink-3); text-decoration:none}
+.nav .home:hover{color:var(--measured)}
+.nav .dis{opacity:.32; pointer-events:none}
+
+@media print{
+  .top,.nav{display:none} body{background:#fff; color:#000; font-size:11pt}
+  .sheet{min-height:0} main{padding:0}
+  .plot,.tw,.call,.eq,.ladder{break-inside:avoid}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+  /* ── 읽기 보조 (2026-08-06 추가) ─────────────────────────────
+     읽는 사람이 팔·씨앗·유보를 안다고 가정하고 있었다. 그리고 숫자에
+     방향(클수록 좋은가)이 없어서 해석이 안 됐다. 그 둘을 고치는 장치다. */
+  .tldr{background:var(--wash);border-left:3px solid var(--measured);
+    border-radius:0 6px 6px 0;padding:12px 16px;margin:0 0 20px}
+  .tldr .h{font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--measured);font-weight:700;margin-bottom:5px}
+  .tldr p{margin:0;font-size:15px;line-height:1.65;color:var(--ink)}
+  .terms{border:1px solid var(--rule);border-radius:8px;padding:12px 16px;
+    margin:0 0 22px;background:var(--surface)}
+  .terms .h{font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--ink-3);font-weight:700;margin-bottom:8px}
+  .terms dl{margin:0;display:grid;grid-template-columns:auto 1fr;
+    gap:5px 14px;align-items:baseline}
+  .terms dt{font-family:var(--mono);font-size:12.5px;color:var(--ink);
+    font-weight:600;white-space:nowrap}
+  .terms dd{margin:0;font-size:13.5px;line-height:1.6;color:var(--ink-2)}
+  .read{font-size:13px;line-height:1.6;color:var(--ink-2);margin:8px 0 0;
+    padding-left:12px;border-left:2px solid var(--rule)}
+  .read b{color:var(--ink)}
+  .dir{display:inline-block;font-family:var(--sans);font-size:10.5px;
+    font-weight:700;letter-spacing:.02em;padding:1px 5px;border-radius:4px;
+    margin-left:5px;vertical-align:1px;white-space:nowrap}
+  .dir.up{background:var(--wash);color:var(--measured)}
+  .dir.dn{background:var(--wash-2);color:var(--unmeasurable)}
+  .dir.base{background:var(--surface-2);color:var(--ink-3)}
+  .why{display:block;font-size:13.5px;line-height:1.65;color:var(--ink-2);
+    margin:10px 0 0;padding:10px 14px;background:var(--surface-2);
+    border-radius:6px}
+  .why b{color:var(--ink)}
+</style>
+
+<div class="sheet"><div class="top"><div class="topbar"><a class="docname" href="index.html">IP 파운데이션 월드모델</a><span class="pageno">03 / 11</span></div><div class="ticks"><i class="past"></i><i class="past"></i><i class="past"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div><main><div class="sechead"><span class="secno">03</span><h2>수학적 원리 ① — 전이가 성립하는 조건</h2><p>왜 한 모형이 한 번도 안 본 시장에서 작동할 수 있는가.</p></div>
+
+<div class="tldr"><div class="h">한 줄 요약</div>
+<p>도메인마다 모형을 따로 만드는 대신 <b>같은 열 몇 개로 번역해</b> 한 모형에 넣는다. 그것이 통하려면
+“<b>열의 값이 같으면 도메인이 달라도 결과가 비슷해야</b>” 한다. 그 조건을 <b>직접 검사했고</b>,
+한 줄도 안 본 시장에서 전용 모형의 <b>82~95%</b>가 나왔다. 다만 그 비율은 <b>기준선에 얼마나 공들였나</b>에
+따라 크게 변한다 — 처음 발표한 1.67배가 1.23배로 깎였다.</p></div>
+
+<div class="terms"><div class="h">먼저 알아야 할 말</div>
+<dl>
+<dt>축(φ)</dt><dd>원래 자료를 도메인이 달라도 뜻이 통하는 <b>공통 열</b>로 옮긴 것. 예를 들어 “출시 전
+  검색 관심도의 백분위”는 만화든 게임이든 같은 뜻이다.</dd>
+<dt>전이</dt><dd>한 번도 학습하지 않은 시장에서도 작동하는 것. 이 프로젝트의 핵심 주장이다.</dd>
+<dt>개념 이동</dt><dd>같은 열 값이 도메인마다 <b>다른 결과</b>를 뜻하는 상태. 이러면 전이가 원리상 불가능하다.</dd>
+<dt>공변량 이동</dt><dd>열 값의 <b>분포</b>만 도메인마다 다른 상태. 이건 괜찮다.</dd>
+<dt>ρ(로)</dt><dd>순위를 맞힌 정도. −1~+1이고 <b>클수록 좋다</b>. 0이면 무작위와 같다.</dd>
+<dt>천장</dt><dd>그 시장 자료만으로 만든 <b>전용 모형</b>이 낼 수 있는 최고점. 비교 기준선이다.</dd>
+</dl></div>
+<div class="measure">
+<p>도메인마다 자료를 따로 모으고 모형을 따로 만드는 것이 보통이다. 이 프로젝트는 열한 개 도메인을
+<strong>하나의 축 집합 <span class="n">φ</span></strong> 로 옮겨 한 모형에 넣는다.
+그것이 안 본 도메인에서도 작동하려면 다음이 필요하다.</p></div>
+<div class="eq"><span class="cm">전이 조건 (개념 이동 없음)</span>
+
+    𝔼[ y | φ(x) = v , d ]  =  𝔼[ y | φ(x) = v ]     <b>모든 도메인 d 에 대해</b>
+
+<span class="cm">즉 축의 값이 같으면 도메인이 달라도 결과의 기대가 같아야 한다.</span>
+<span class="cm">도메인마다 φ 의 분포가 다른 것(공변량 이동)은 괜찮다.</span>
+<span class="cm">도메인마다 φ→y 의 관계가 다르면(개념 이동) 전이는 원리상 불가능하다.</span></div>
+<p class="read"><b>읽는 법.</b> 왼쪽은 “도메인 d를 알고 열 값이 v일 때 결과의 평균”, 오른쪽은 “도메인을
+모르고 열 값만 v일 때 결과의 평균”이다. <b>둘이 같다 = 도메인을 몰라도 된다 = 전이가 된다.</b>
+반대로 다르면 “같은 검색 관심도인데 만화는 뜨고 게임은 안 뜬다”는 뜻이라 옮겨 쓸 수 없다.</p>
+<div class="measure">
+<p>이 조건은 <strong>직접 검사할 수 있다.</strong> 어떤 도메인을 학습에서 통째로 빼고, 그 도메인 전용
+모형이 자기 자료로 교차검증해 낼 수 있는 최고점(<em>천장</em>)과 견주면 된다. 비율이 1에 가까우면
+개념 이동이 거의 없다는 뜻이다.</p></div>
+<div class="tw"><table>
+<thead><tr><th>안 본 시장</th><th class="num">행수</th><th class="num">전이 ρ<span class="dir up">클수록 좋음</span></th>
+<th class="num">전용 모형 천장 대비<span class="dir up">100%면 대등</span></th>
+<th class="num">상위 절반<span class="dir up">클수록 좋음</span></th><th>상태</th></tr></thead>
+<tbody>
+<tr class="hl"><td>KR 만화</td><td class="num">1,716</td><td class="num">+0.684</td><td class="num">95%</td><td class="num">112%</td><td><span class="st st-m">측정됨</span></td></tr>
+<tr><td>비게임 앱</td><td class="num">1,600</td><td class="num">+0.505</td><td class="num">82%</td><td class="num">95%</td><td><span class="st st-m">측정됨</span></td></tr>
+<tr><td>CN 만화</td><td class="num">352</td><td class="num">+0.32</td><td class="num">88%</td><td class="num">96%</td><td><span class="st st-u">관문 불가</span></td></tr>
+</tbody></table></div>
+<p class="read"><b>이 표를 읽는 법.</b> “전이 ρ”는 <b>그 시장의 행을 한 줄도 학습하지 않은</b> 통합 모형이
+그 시장에서 순위를 맞힌 정도다. “천장 대비”는 그 시장 자료만으로 만든 전용 모형과 견준 것 —
+<b>100%면 대등, 100% 넘으면 통합 모형이 더 낫다</b>는 뜻이다. “관문 불가”는 성적이 나쁘다는 뜻이 아니라
+<b>표본이 352행뿐이라 자기 잡음이 커서 채택 판정에 못 쓴다</b>는 뜻이다.</p>
+<div class="measure">
+<p><strong>KR 만화 상위 절반에서 비율이 <span class="n">112%</span></strong> 라는 것은, 그 시장의 행을
+<em>한 줄도 안 보고</em> 만든 통합 모형이 그 시장 전용 모형보다 잘 가려낸다는 뜻이다. 전용 모형은 자기 시장
+자료가 적어 과적합하고, 통합 모형은 다른 열 개 도메인에서 빌려 온다.</p>
+<p>같은 얘기를 집안에서도 확인했다 — 도메인별 전용 모형을 스물여덟 개 후보로 넉넉히 만들어 견줘도
+<strong>통합÷전용 가중 평균 <span class="n">1.23배</span>, 10개 중 8개 승리</strong>다.</p></div>
+<div class="call bad"><div class="h">여기서 한 번 크게 틀렸다</div>
+<p>이 비율은 처음에 <span class="n">1.67배</span> 로 발표됐다. 전용 모형 후보를 넷만 준 상태의 숫자였다.
+스물여덟으로 넓히자 <span class="n">1.23</span> 이 됐고, 같이 주장했던 “작은 시장일수록 크게 이긴다”
+(<span class="n">−0.697</span>)는 <strong>완전히 무너졌다</strong>(<span class="n">−0.030</span>).
+<strong>비는 기준선에 준 노력이 정한다.</strong></p>
+<p class="read"><b>왜 이런 일이 나나.</b> “우리 것이 몇 배 낫다”는 말의 분모는 <b>우리가 만든 기준선</b>이다.
+기준선을 약하게 만들면 배수가 커진다. 그래서 이 프로젝트는 배수를 볼 때 <b>기준선 후보를 몇 개
+줬는지</b>를 같이 적는다 — 넷 → 스물여덟으로 늘리자 1.67배가 1.23배가 됐다.</p></div>
+</main><nav class="nav"><a data-prev href="02.html"><span class="arrow">← 앞</span>사다리 — L0에서 L4까지</a><a class="home" href="index.html">목차</a><a data-next class="r" href="04.html"><span class="arrow">뒤 →</span>수학적 원리 ② — 방향이 없으면 전이도 없다</a></nav></div>
+<script>
+document.addEventListener('keydown',function(e){
+  if(e.metaKey||e.ctrlKey||e.altKey) return;
+  var p=document.querySelector('[data-prev]'), n=document.querySelector('[data-next]');
+  if(e.key==='ArrowLeft'&&p&&p.getAttribute('href')) location.href=p.getAttribute('href');
+  if(e.key==='ArrowRight'&&n&&n.getAttribute('href')) location.href=n.getAttribute('href');
+});
+</script>

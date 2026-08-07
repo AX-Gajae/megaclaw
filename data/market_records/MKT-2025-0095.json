@@ -1,0 +1,99 @@
+{
+ "market_record_id": "MKT-2025-0095",
+ "event_name": "2025 SUPER 한돈 페스타 팝업스토어",
+ "brand": "한돈자조금관리위원회",
+ "ip_or_collab": "샘표식품·와인플렉스·롯데 돼지바 등 협업",
+ "category": "other",
+ "intervention": {
+  "concept_description": "한돈데이 기념 체험형 팝업. '슈퍼 한돈 에너지 타운' 미션 체험 + 글로벌 야장 푸드 로테이션 시식",
+  "experience_elements": [
+   "미션형 체험(한돈 에너지 스토어 ZONE)",
+   "파트너 브랜드 존",
+   "글로벌 야장(외식 브랜드 시식)",
+   "스탬프→굿즈 교환"
+  ],
+  "promotions": [
+   "입장객 전원 외식 브랜드 50% 할인 쿠폰",
+   "한돈몰 5천원 할인권"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "성수 XYZ SEOUL",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2025-10-11",
+  "period_to": "2025-10-19",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  },
+  "derived": {
+   "duration": {
+    "days": 9,
+    "weekend_share": 0.44,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 15000,
+  "visitors_period_days": 9,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "한돈자조금 발표(성료 보도). 워크인 고객만 1만여 명 별도 언급",
+  "visitors_source_quote": "1만 5천여 명이 넘는 방문객을 맞이하며 지난 19일 성황리에 막을 내렸습니다.",
+  "visitors_source_url": "http://www.pigpeople.net/news/articleView.html?idxno=17953",
+  "visitors_source_date": "2025-10-21",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": "난축맛돈 200kg 조기 완판",
+   "reservation_fill": "사전예약 전 일정(9일) 조기 매진",
+   "signal_quotes": [
+    "총 9일간 전 일정의 사전예약이 조기 매진되는 기록을 세워, 한돈에 대한 소비자들의 뜨거운 관심을 입증했습니다.",
+    "현장 대기 예약으로 입장한 워크인 고객만 1만여 명을 넘어서는 등"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "전년(2024) 회차는 9일간 약 1만5천 명(별도 레코드). | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

@@ -1,0 +1,88 @@
+{
+ "market_record_id": "MKT-2025-0074",
+ "event_name": "23.65 더현대 서울 첫 팝업스토어 (1차)",
+ "brand": "23.65 (이십삼점육오)",
+ "ip_or_collab": "키보드 키링 잡화 병행",
+ "category": "fashion",
+ "intervention": {
+  "concept_description": "K-슈즈 브랜드 첫 오프라인 팝업. '동화 속에서 걸어 나온 듯한 콘셉트', 스카이블루 색감 공간",
+  "experience_elements": [
+   "유니크한 제품 전시·공간 연출"
+  ],
+  "promotions": [],
+  "is_free_entry": null,
+  "reservation_required": null
+ },
+ "conditions": {
+  "venue": "더현대 서울",
+  "venue_type": "department_store",
+  "neighborhood": "여의도",
+  "city": "서울",
+  "period_from": "2025-08-14",
+  "period_to": "2025-08-20",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 5000,
+  "visitors_period_days": 7,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "브랜드 발표 인용. 일 매출 1천만 원 이상",
+  "visitors_source_quote": "일주일간 약 5000명의 고객이 방문하며 뜨거운 관심을 모았고, 일 매출 1천만 원 이상을 기록하며 온라인에서의 강세를 오프라인에서도 입증했다.",
+  "visitors_source_url": "https://fashionbiz.co.kr/article/218889",
+  "visitors_source_date": "2025-08-26",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "오픈 직후부터 대기 줄 형성",
+   "sold_out": "메리제인 스니커즈 오픈 3일 만에 전 사이즈 완판",
+   "reservation_fill": null,
+   "signal_quotes": [
+    "오픈 직후부터 대기 줄이 형성됐으며",
+    "특히 브랜드의 대표 제품 '메리제인 스니커즈'는 오픈 3일 만에 전 사이즈가 완판되며 폭발적인 인기를 입증했다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "연 2회 팝업 중 1차(8월). 2차(12월, 1.4억)는 별도 레코드 MKT-2025-0011. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

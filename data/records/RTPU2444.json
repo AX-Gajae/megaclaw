@@ -1,0 +1,146 @@
+{
+ "record_id": "RTPU2444",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:마이리틀타이거",
+  "space_id": "unresolved:미상",
+  "client_party_id": "unresolved:삼성출판사",
+  "brand_key": "마이리틀타이거",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "홈닉데이와 마이리틀타이거 협업 오프라인 프로모션 행사. 캐노피텐트와 체험 테이블을 활용한 체험형 부스 운영.",
+  "brand_name": "마이리틀타이거 X 홈닉데이",
+  "experience_elements": [
+   "체험 테이블"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "캐노피텐트",
+   "현수막",
+   "POSM"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-10-26",
+   "to": "2024-10-26",
+   "days": 1
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 2,000,000원(VAT 10% 별도, 만원단위 이하 절사). 실비정산액 소계: 기획료 100,000 + 공간(렌탈 캐노피텐트/체험테이블 600,000, 제작 현수막·POSM 300,000) 900,000 + 진행비(인건비 130,000×4=520,000, 기타 잡비 480,000) 1,000,000 = Sub Total 2,000,000. 대행수수료 소계의 10%(정가 항목 제외) 190,000. 합계 2,188,000에서 스위트스팟 부담 비용 제외 NEGO -188,000 적용하여 최종 2,000,000원."
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 1.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 38,
+    "holiday_until": 91,
+    "holiday_block_in": 0,
+    "nat_event_gap": 19,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 63354.0,
+    "pnl_pre_accounts": 2,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2024-09-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": 763699,
+   "rev_mm_recognized": 2.7
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-10, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": 2.0,
+   "last_recognition_period": "2024-11"
+  },
+  "sales_basis": "PnL 상품매출 양수계정 합 × 1.1 (부가세 포함 기준)",
+  "label_history": [
+   {
+    "at": "pnl_sales (2026-07-28)",
+    "action": "mine",
+    "changes": [
+     "sales_krw 763,699 (PnL 총 결제액)"
+    ],
+    "evidence": "core.project_pnl_monthly 상품매출 양수계정 합 694,272(공급가) × 1.1, 인식 1개월"
+   }
+  ]
+ },
+ "docs": [
+  {
+   "doc_id": "112IoT3vxLBJX2uB_Z-haREIePsys-THM",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/112IoT3vxLBJX2uB_Z-haREIePsys-THM/view",
+   "title": "제안서_내용없음.txt"
+  },
+  {
+   "doc_id": "14v5PxuTcGrxu7R0cPES2F71HAnwImR64",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/14v5PxuTcGrxu7R0cPES2F71HAnwImR64/view",
+   "title": "결과보고서_내용없음.txt"
+  },
+  {
+   "doc_id": "17k-NNobqaTF6QSeqJuYhD3OSC2uJ-fJ3",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/17k-NNobqaTF6QSeqJuYhD3OSC2uJ-fJ3/view",
+   "title": "RTPU2444_홈닉데이 마이리틀타이거 오프라인 프로모션_견적서_241105.pdf"
+  },
+  {
+   "doc_id": "1EHUYYJIdrOsAn_dExeyalak48Mz2RUjk",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1EHUYYJIdrOsAn_dExeyalak48Mz2RUjk/view",
+   "title": "계약서_내용없음.txt"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 1건: RTPU2444_홈닉데이 마이리틀타이거 오프라인 프로모. 미확실: 결과보고서 없음 - 방문자수/매출 실측 데이터 전무; 입지 정보(도시·구·장소명) 미상; 면적 정보 없음; 기획서/제안서 없어 컨셉·체험요소 상세 불명; 예상 방문객수 정보 없음"
+ }
+}

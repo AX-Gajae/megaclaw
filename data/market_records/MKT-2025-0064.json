@@ -1,0 +1,97 @@
+{
+ "market_record_id": "MKT-2025-0064",
+ "event_name": "SBS '견우와 선녀' 팝업스토어(스페이스비 연남)",
+ "brand": "스튜디오드래곤/SBS",
+ "ip_or_collab": "드라마 '견우와 선녀'",
+ "category": "entertainment",
+ "intervention": {
+  "concept_description": "드라마 세계관(무당·부적 콘셉트) 체험 팝업. 포토존·MD, 사전 예약제",
+  "experience_elements": [
+   "체험형 공간",
+   "포토존",
+   "MD 판매"
+  ],
+  "promotions": [],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "스페이스비 연남",
+  "venue_type": "street_standalone",
+  "neighborhood": "연남동",
+  "city": "서울",
+  "period_from": "2025-08-01",
+  "period_to": "2025-08-10",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 3000,
+  "visitors_period_days": 10,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "오픈 후 첫 3일 누적 방문객 3000명(전체 10일 운영 중 초기 수치). 원문: '오픈 이후 첫 3일 만에 팝업스토어 누적 방문객이 3천명을 돌파하며'",
+  "visitors_source_quote": "팝업스토어는 사전 예약 2시간 만에 6천장의 티켓이 매진되는 등 오픈 전부터 폭발적인 관심을 모았다. 오픈 이후 첫 3일 만에 팝업스토어 누적 방문객이 3천명을 돌파하며 흥행을 이어가고 있다.",
+  "visitors_source_url": "https://zdnet.co.kr/view/?no=20250811101039",
+  "visitors_source_date": "2025-08-11",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": "사전 예약 2시간 만에 티켓 6000장 매진",
+   "signal_quotes": [
+    "사전 예약 2시간 만에 6천장의 티켓이 매진되는 등 오픈 전부터 폭발적인 관심을 모았다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": true,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": false,
+   "days_stated": 3,
+   "days_stored": 10,
+   "days_corrected": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "visitors_total=3000은 오픈 후 3일 누적(총 10일 운영). 기간 2025-08-01~10. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "quote_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

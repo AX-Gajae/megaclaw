@@ -1,0 +1,54 @@
+{
+  "record_id": "RIPU2607",
+  "schema_version": "0.1",
+  "entities": {
+    "brand_id": "unresolved:엑소코바이오_Exocobio",
+    "space_id": "unresolved:성수_517랩_517Lab",
+    "client_party_id": null
+  },
+  "intervention": {
+    "concept": "엑소코바이오 브랜드의 버짓형 팝업스토어. 컨셉·체험요소·프로모션 등 기획 상세는 문서에서 확인되지 않음.",
+    "brand_name": "엑소코바이오 (Exocobio)",
+    "experience_elements": [],
+    "promotions": [],
+    "staging_tags": []
+  },
+  "conditions": {
+    "location": {
+      "city": "서울",
+      "district": "성수",
+      "venue_name": "517랩 (517 Lab)",
+      "venue_type": "대관 공간(추정)",
+      "foot_traffic_context": null
+    },
+    "area_pyeong": null,
+    "period": {
+      "from": "2026-06-19",
+      "to": "2026-06-29",
+      "days": 11
+    },
+    "season": "여름",
+    "fee_structure": {
+      "type": "fixed",
+      "detail": "확정 예산(노션 POM) 255,000,000원(2.55억). 아마란스 손익상 서비스매출_팝업스토어 142.2M원, 매출 인식 분할: 2026-03월 25.2M(계약금 성격 추정)+2026-05월 117.0M(잔금). 판관비 54.3M(공간수수료 49.0M=월 24.5M×2 + 기타수수료 4.9M + 현장소모품 0.4M). VAT 포함 여부·수수료율·RS 조건 미기재."
+    },
+    "brand_requirements": []
+  },
+  "outcome": {
+    "daily": [],
+    "totals": {
+      "visitors": null,
+      "sales_krw": null,
+      "rev_mm_recognized": 142.2
+    },
+    "retention": null,
+    "source": "visitors/sales: 결과보고서 LLM 추출(방문객 수·판매 실적·현장 KPI 데이터 없음. 소비자 POS 매출 미확보. 아마란스상 서비스매출 142.2M원은 대행 계약매출이며 소비자 매출(POS) 아님.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조"
+  },
+  "docs": [],
+  "provenance": {
+    "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+    "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+    "extracted_at": "2026-07-23",
+    "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 클라이언트 담당자 실명·연락처·발주처; 517랩 정확 주소·규모·면적(평)·계약조건; 팝업 컨셉·체험요소·프로모션·연출태그 상세; 방문객 수·판매 실적(POS 매출)·현장 성과; 수수료 구조 상세(VAT 포함 여부·수수료율·RS 조건); 브랜드 요구사항; 미팅록 3건 본문 미확보; 전환일 2026-04-17 vs 1차 미팅 2026-04-29 날짜 역전"
+  }
+}

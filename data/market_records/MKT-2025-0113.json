@@ -1,0 +1,78 @@
+{
+  "market_record_id": "MKT-2025-0113",
+  "event_name": "젤리캣 스페이스(Jellycat Space) 팝업(성수)",
+  "brand": "젤리캣 코리아",
+  "ip_or_collab": "젤리캣(Jellycat)",
+  "category": "character",
+  "intervention": {
+    "concept_description": "젤리캣 대형 체험형 팝업 '젤리캣 스페이스'. 성수동 엠엠성수에서 2025-11-05~12-28 운영. 사전 예약제 병행.",
+    "experience_elements": [
+      "체험형 전시",
+      "캐릭터 인형 판매"
+    ],
+    "promotions": [
+      "사전 예약제"
+    ],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "엠엠성수(서울 성동구)",
+    "venue_type": "street_standalone",
+    "neighborhood": "성수",
+    "city": "서울",
+    "period_from": "2025-11-05",
+    "period_to": "2025-12-28",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 54,
+        "weekend_share": 0.3,
+        "holiday_days": 1
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": null,
+    "counting_basis": "unknown",
+    "counting_basis_note": "방문객 총계 미공개(예약 마감·대기 시간 신호만 보도)",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "현장 대기 1시간30분~1시간45분",
+      "sold_out": null,
+      "reservation_fill": "예약 1분 내 마감",
+      "signal_quotes": [
+        "예약은 1분 내 마감되는 경우가 많다. (넥스트스퀘어 2025-11-14)",
+        "현장 대기 시간은 1시간 30분에서 1시간 45분가량 소요됐다. (그리니드 2025-12-29)"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "medium",
+  "notes": "병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

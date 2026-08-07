@@ -1,0 +1,100 @@
+{
+ "market_record_id": "MKT-2023-0027",
+ "event_name": "하나금융 '하나뿐인 공항, 성수국제공항' 트래블로그 팝업스토어",
+ "brand": "하나금융그룹(하나은행 트래블로그)",
+ "ip_or_collab": "아이브 안유진 등 하나금융 모델 포토카드",
+ "category": "other",
+ "intervention": {
+  "concept_description": "공항 콘셉트 체험형 팝업. 체크인 카운터-캐리어 커스터마이징-체크아웃 키오스크-기내식 카페까지 여행 경험 재현",
+  "experience_elements": [
+   "캐리어 파우치 DIY",
+   "체크인/체크아웃 수속 체험",
+   "럭키드로우",
+   "기내식 카페"
+  ],
+  "promotions": [
+   "하나머니 앱 연동 기내식 무료",
+   "SNS 인증 100% 당첨 스크래치 쿠폰"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "성수역 인근(성수동)",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수",
+  "city": "서울",
+  "period_from": "2023-07-07",
+  "period_to": "2023-07-23",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 17,
+    "weekend_share": 0.35,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 13351,
+  "visitors_period_days": 14,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "하나금융 제공 수치. '지난 20일까지 2주 동안' 기준. 인기로 운영기간 16일→23일 연장",
+  "visitors_source_quote": "한편 하나금융에 따르면 지난 20일까지 2주 동안 팝업스토어에는 총 1만3351명이 방문하고 2만9209명이 대기 등록했다.",
+  "visitors_source_url": "https://www.fnnews.com/news/202307231224145398",
+  "visitors_source_date": "2023-07-23",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": "대기 등록 2만9209명, 현장 1~3시간 대기 보도",
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "지난 20일까지 2주 동안 팝업스토어에는 총 1만3351명이 방문하고 2만9209명이 대기 등록했다.",
+    "최고기온 33도를 웃돌던 20일 오후 3시 성수국제공항 입장을 위해 1시간 대기한 정예지(30·회사원) 씨(프라임경제)",
+    "아침 9시부터 줄 서 있었는데도 5번째로 들어갔다...비를 맞으며 기다린 3시간 대기 시간(비즈워치)"
+   ]
+  },
+  "conflict": true,
+  "alt_figures": [
+   {
+    "figure": 14000,
+    "source_quote": "하나은행은 지난해 7월 여행 전용 카드인 '트래블로그'를 홍보하기 위해 성수동에 첫 번째 팝업스토어인 '성수국제공항'을 열었다. 개관 이후 2주 동안 1만4000여명의 방문객이 몰리자 하나은행은 팝업스토어 운영 기간을 일주일 연장하기도 했다.",
+    "source_url": "https://www.econovill.com/news/articleView.html?idxno=660148",
+    "source_date": "2024-07-12"
+   }
+  ],
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "당초 7/7~16 예정이었으나 인기로 23일까지 연장(프라임경제 2023-07-21). 일평균 약 950명(프라임경제). fnnews 13,351명(7/20 기준 2주) vs 이코노믹리뷰 1만4000여명(2주) 수치 상충으로 conflict 처리. tleaves는 '오픈 4일 만에 누적 2000명' 보도. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

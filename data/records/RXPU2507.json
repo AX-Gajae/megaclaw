@@ -1,0 +1,162 @@
+{
+ "record_id": "RXPU2507",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:두나무_업비트",
+  "space_id": "unresolved:서울_7개대학교_캠퍼스",
+  "client_party_id": "unresolved:두나무_주식회사",
+  "brand_key": "업비트",
+  "space_key": "multi_대학교"
+ },
+ "intervention": {
+  "concept": "업비트 피자데이를 기념한 서울시 내 7개 대학교(성균관대/서울대/경희대/숭실대/건국대/한양대/연세대) 캠퍼스 순회 프로모션. 피자데이 브랜딩 굿즈 증정과 부스 운영을 통한 대학생 대상 체험형 마케팅.",
+  "brand_name": "업비트(Upbit) 피자데이",
+  "experience_elements": [
+   "캠퍼스 부스 운영",
+   "굿즈 증정(피크닉 매트, 손선풍기, 지비츠, 리무버블 스티커, 클립 볼펜, 티셔츠)"
+  ],
+  "promotions": [
+   "업비트 피자데이 굿즈 증정 이벤트"
+  ],
+  "staging_tags": [
+   "캠퍼스 프로모션",
+   "부스",
+   "피자데이 브랜딩"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": null,
+   "venue_name": "성균관대/서울대/경희대/숭실대/건국대/한양대/연세대",
+   "venue_type": "대학교 캠퍼스",
+   "foot_traffic_context": "서울시 내 7개 대학교 캠퍼스 순회"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-05-08",
+   "to": "2025-05-29",
+   "days": null
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "프로모션 실행 총 계약금액 118,700,000원(VAT 별도, 변경 전 75,700,000원). 선금 약49% 57,890,000원(2025-04-25 이내), 잔금 약51% 60,810,000원(행사 종료 후 10일 이내). 별도 굿즈 제작 계약: 62,920,000원(VAT 별도, 소계 57,200,000원 + 구매·제작 대행 수수료 10% 5,720,000원), 선금 70%(2025-04-24), 잔금 30%(2025-05-07). 견적서 합계 108,410,000원 + 수수료/부가 10,241,000원 = 118,700,000원."
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 7,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "서울시 내 7개 대학교 캠퍼스 순회"
+  },
+  "derived": {
+   "duration": {
+    "days": 22,
+    "weekend_share": 0.27,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 2,
+    "holiday_until": 29,
+    "holiday_block_in": 0,
+    "nat_event_gap": 26,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 64913608.0,
+    "pnl_pre_accounts": 9,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-04-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 181.6
+  },
+  "counting_method": "participation",
+  "counting_basis": "결과보고서 표는 대학별·항목별 수치가 텍스트 추출 과정에서 열/행 정렬이 붕괴되어 정확한 일자별 매핑 불가. 총합 행으로 추정되는 '11,000 426 849 745 980 1210 943 2243 0' 존재하나 컬럼 정의 불명확.",
+  "plan_visitors_expected": 11000,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 표가 심하게 깨져 일자별 방문/참여 수치를 신뢰성 있게 추출 불가. 총합 행의 첫 값 11,000은 계획/예상치로 추정, 이후 수치 합계 약 7,396은 실측 참여 인원으로 추정되나 컬럼 정의 부재로 확정 불가.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 181.6 ≈ 계약총액 181.62",
+   "contract_total_mm": 181.62,
+   "last_recognition_period": "2025-06"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1AYQXUYnjP17lXB3czM7Pn-CA_h8-_lVX",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1AYQXUYnjP17lXB3czM7Pn-CA_h8-_lVX/view",
+   "title": "(Sweetspot)업비트_피자데이 캠퍼스 프로모션_견적서_0526.pdf"
+  },
+  {
+   "doc_id": "1BBo-3r521ALOnEctvnL7PINJu314TjOS",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1BBo-3r521ALOnEctvnL7PINJu314TjOS/view",
+   "title": "제안서_내용없음.txt"
+  },
+  {
+   "doc_id": "1cfeHFk1bPl5DNJQXTEfMlQaaJ_L6bNKG",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1cfeHFk1bPl5DNJQXTEfMlQaaJ_L6bNKG/view",
+   "title": "(Sweetspot)업비트_피자데이 캠퍼스 프로모션_굿즈제작_견적서_0422.pdf"
+  },
+  {
+   "doc_id": "1g-N45m-Fdzy1moR6V7Vm4YFmvnTBEnZH",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1g-N45m-Fdzy1moR6V7Vm4YFmvnTBEnZH/view",
+   "title": "RXPU2507_두나무(업비트) 피자데이 굿즈제작_계약서.pdf"
+  },
+  {
+   "doc_id": "1qoYqP6a-M8iD-R6Xrl2lTzM_MRPwK4EJ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1qoYqP6a-M8iD-R6Xrl2lTzM_MRPwK4EJ/view",
+   "title": "RXPU2507_두나무(업비트) 피자데이 프로모션_계약서.pdf"
+  },
+  {
+   "doc_id": "1vx94OBFaz91kjSVpT8UMHNFYgid6x-9v",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1vx94OBFaz91kjSVpT8UMHNFYgid6x-9v/view",
+   "title": "(Sweetspot)업비트_피자데이 캠퍼스 프로모션_결과보고서_0602.pdf"
+  },
+  {
+   "doc_id": "1x63ZFe4x5YUiP32uRbstwxlqo-Bz_4vI",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1x63ZFe4x5YUiP32uRbstwxlqo-Bz_4vI/view",
+   "title": "(Sweetspot)업비트_피자데이 캠퍼스 프로모션_견적서_0526.pdf"
+  },
+  {
+   "doc_id": "1zIXmKjjIDSGWr6aR60PVFlsa4bryHee2",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1zIXmKjjIDSGWr6aR60PVFlsa4bryHee2/view",
+   "title": "(Sweetspot)업비트_피자데이 캠퍼스 프로모션_굿즈제작_견적서_0422.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 4건: RXPU2507_두나무(업비트) 피자데이 굿즈제작_계약, RXPU2507_두나무(업비트) 피자데이 프로모션_계약, (Sweetspot)업비트_피자데이 캠퍼스 프로모션_견, (Sweetspot)업비트_피자데이 캠퍼스 프로모션_결. 미확실: 결과보고서 표 붕괴로 일자별 방문/참여 수치 및 총 방문자 확정 불가; 소비자 매출(POS) 데이터 없음(굿즈는 비매품 증정); 면적(평), 정확한 부스 위치/일정 미기재; counting_method는 표 컬럼 정의 부재로 participation 추정; plan_visitors_expected 11,000은 총합 행 추정값"
+ }
+}

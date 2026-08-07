@@ -1,0 +1,300 @@
+{
+ "record_id": "RTPU2415",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:unknown",
+  "space_id": "unresolved:unknown",
+  "client_party_id": null,
+  "brand_key": "미상",
+  "space_key": "multi_미지정",
+  "space_key_source": "venue_key 정규화 (다중 장소)"
+ },
+ "intervention": {
+  "concept": "올리브영 바이브 캠페인 팝업스토어. 서울 소재 2개 대학교에서 진행하는 부스 형태의 캠페인 팝업.",
+  "brand_name": "올리브영",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [
+   "부스",
+   "대학교 캠페인"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": 3150,
+   "area_sqm": null,
+   "planned_operating_days": 5,
+   "throughput_units": 3,
+   "unit_minutes": 30,
+   "operating_hours_per_day": 6,
+   "staff_count": 10,
+   "experience_density": 3,
+   "goods_scale": 1,
+   "photo_zones": 2,
+   "collab_strength": 1,
+   "ip_awareness": 4,
+   "target_breadth": 1,
+   "entry_friction": 1,
+   "media_push": 1,
+   "season_fit": 2,
+   "venue_prominence": 2
+  },
+  "attr_meta": {
+   "evidence": "견적서 대관 항목이 회차표: 서울여자대학교 '4월 15일, 16일, 17일'(3일)+동국대학교 '4월 18일, 19일'(2일)=부스 개방 5일(비연속 2개 캠퍼스 순차). 인건비 전 항목이 5일(슈퍼바이저1·운영STAFF6·메이크업아티스트3, 식대 7인×5일). 계약서 제2조 '행사일: 2024년 4월 15일(월)~4월 18일(목)'는 4일로 상이(계약 시점 장소 미확정, 견적 대관일이 최신). 메이크업 비고 '6시간 기준 / 30분 진행, 30분 휴식'→아티스트 3대(석) 30분. DIY 스티커 '홀로그램 3150장'. conditions.period(21일)는 근거 없음.",
+   "confidence": "medium",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "capacity": {
+   "access_type": "unknown",
+   "total_capacity": null,
+   "detail": ""
+  },
+  "location": {
+   "city": "서울",
+   "district": null,
+   "venue_name": "서울소재 2개 대학교",
+   "venue_type": "대학교",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-04-15",
+   "to": "2024-04-18",
+   "days": 21,
+   "source": "재발굴 판정 — 계획 문서로 교정"
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "총 계약금액 110,000,000원 (VAT 별도). 선금 50% 55,000,000원, 잔금 50% 55,000,000원. 세금계산서 발행일로부터 영업일 기준 7일 이내 지급. 발행 일정 추후 협의."
+  },
+  "brand_requirements": [
+   "부스 제작 및 운영",
+   "장소 대관",
+   "인력 투입(교육 및 관리)",
+   "기타 운영 제반사항(구매 및 렌탈)",
+   "참여자 및 임직원 안전관리"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 21,
+    "weekend_share": 0.29,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 3,
+    "months_since_last": 0.9,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 43,
+    "holiday_until": 19,
+    "holiday_block_in": 0,
+    "nat_event_gap": 5,
+    "nat_event": "국회의원 총선",
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": 15000,
+   "popup_zone_pass_rate": 0.25,
+   "host_traffic_est": 3750.0,
+   "venue_scale_tier": 3,
+   "confidence": "low",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2024-04-15",
+    "visitors": 297,
+    "sales_krw": null
+   },
+   {
+    "date": "2024-04-16",
+    "visitors": 398,
+    "sales_krw": null
+   },
+   {
+    "date": "2024-04-17",
+    "visitors": 372,
+    "sales_krw": null
+   },
+   {
+    "date": "2024-04-18",
+    "visitors": 607,
+    "sales_krw": null
+   }
+  ],
+  "totals": {
+   "visitors": 1674,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "participation",
+  "counting_basis": "총 방문객 & 바이브 테스트 참여",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": null,
+   "last_recognition_period": null
+  },
+  "label_trust": {
+   "grade": "B",
+   "flags": [],
+   "why": "단정 발표(기본)"
+  },
+  "label_scope": {
+   "label_from": "2024-04-15",
+   "label_to": "2024-04-18",
+   "label_active_days": 4,
+   "label_span_days": 4,
+   "label_contiguous": true,
+   "daily_sum": 1674,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  },
+  "label_history": [
+   {
+    "at": "relabel R1 (2026-07-28)",
+    "prev_visitors": 1674,
+    "prev_counting": "participation",
+    "action": "revise",
+    "changes": [
+     "집계 세분 미지정 → participation (뱅크 단위는 participation 유지)",
+     "범위 표시: multi_store_sum"
+    ],
+    "evidence": "① 결과보고서((sweetspot)올리브영_캠퍼스어택_결과보고서_240425.pptx, 11RFQ96-XmXXF-WNY1EcxWpVDNBhUW9i_ — 216MB라 Drive 텍스트 추출이 빈 값을 반환해 ranged-zip(remotezip)으로 slide XML 직접 추출) 슬라이드2 개요: '행사명 2024 올리브영 트렌드 리딩 캠페인 / 기간 2024년 4월 15일(월)~4월 18일(목) / 시간 07:00~설치, 17:00~철거, 11:00~17:00 *이벤트 운영 시간 / 장소 서울여자대학교, 동국대학교'. ② 슬라이드8 '1-3. 결과 통계 — 방문객 & 이벤트 참여' 표: 4/15 297, 4/16 398, 4/17 372, 4/18 607, 총 방문객 1,674. 같은 표에서 '바이브 테스트",
+    "verdict": "실제 운영은 4일(2024-04-15~04-18)이고 총 1,674명이 맞으므로 period를 이 창으로 교체하라 — 4/19~5/9는 아마란스 발급원장에 행사 3개월 뒤 소급 등록된 사내 프로젝트 창일 뿐 운영일이 아니며, 1,674는 서울여대 3일 + 동국대 1일 두 캠퍼스 합계(multi_store_sum)이고 '총 방문객'이라 쓰였지만 실체는 바이브 테스트 참여자 수다."
+   },
+   {
+    "at": "relabel R1 (2026-07-28)",
+    "prev_visitors": 1674,
+    "prev_counting": "participation",
+    "action": "revise",
+    "changes": [
+     "범위 표시: multi_store_sum"
+    ],
+    "evidence": "① 결과보고서((sweetspot)올리브영_캠퍼스어택_결과보고서_240425.pptx, 11RFQ96-XmXXF-WNY1EcxWpVDNBhUW9i_ — 216MB라 Drive 텍스트 추출이 빈 값을 반환해 ranged-zip(remotezip)으로 slide XML 직접 추출) 슬라이드2 개요: '행사명 2024 올리브영 트렌드 리딩 캠페인 / 기간 2024년 4월 15일(월)~4월 18일(목) / 시간 07:00~설치, 17:00~철거, 11:00~17:00 *이벤트 운영 시간 / 장소 서울여자대학교, 동국대학교'. ② 슬라이드8 '1-3. 결과 통계 — 방문객 & 이벤트 참여' 표: 4/15 297, 4/16 398, 4/17 372, 4/18 607, 총 방문객 1,674. 같은 표에서 '바이브 테스트",
+    "verdict": "실제 운영은 4일(2024-04-15~04-18)이고 총 1,674명이 맞으므로 period를 이 창으로 교체하라 — 4/19~5/9는 아마란스 발급원장에 행사 3개월 뒤 소급 등록된 사내 프로젝트 창일 뿐 운영일이 아니며, 1,674는 서울여대 3일 + 동국대 1일 두 캠퍼스 합계(multi_store_sum)이고 '총 방문객'이라 쓰였지만 실체는 바이브 테스트 참여자 수다."
+   },
+   {
+    "at": "relabel R1 (2026-07-28)",
+    "prev_visitors": 1674,
+    "prev_counting": "participation",
+    "action": "revise",
+    "changes": [
+     "period 교정 {'from': '2024-04-15', 'to': '2024-04-18'} (계획 문서 근거)",
+     "범위 표시: multi_store_sum"
+    ],
+    "evidence": "① 결과보고서((sweetspot)올리브영_캠퍼스어택_결과보고서_240425.pptx, 11RFQ96-XmXXF-WNY1EcxWpVDNBhUW9i_ — 216MB라 Drive 텍스트 추출이 빈 값을 반환해 ranged-zip(remotezip)으로 slide XML 직접 추출) 슬라이드2 개요: '행사명 2024 올리브영 트렌드 리딩 캠페인 / 기간 2024년 4월 15일(월)~4월 18일(목) / 시간 07:00~설치, 17:00~철거, 11:00~17:00 *이벤트 운영 시간 / 장소 서울여자대학교, 동국대학교'. ② 슬라이드8 '1-3. 결과 통계 — 방문객 & 이벤트 참여' 표: 4/15 297, 4/16 398, 4/17 372, 4/18 607, 총 방문객 1,674. 같은 표에서 '바이브 테스트",
+    "verdict": "실제 운영은 4일(2024-04-15~04-18)이고 총 1,674명이 맞으므로 period를 이 창으로 교체하라 — 4/19~5/9는 아마란스 발급원장에 행사 3개월 뒤 소급 등록된 사내 프로젝트 창일 뿐 운영일이 아니며, 1,674는 서울여대 3일 + 동국대 1일 두 캠퍼스 합계(multi_store_sum)이고 '총 방문객'이라 쓰였지만 실체는 바이브 테스트 참여자 수다.",
+    "period_prev": {
+     "from": "2024-04-19",
+     "to": "2024-05-09",
+     "days": 21
+    },
+    "adjudication": "period 4/19~5/9는 아마란스 발급원장에 행사 3개월 뒤 소급 등록된 사내 프로젝트 창이지 운영일이 아니다. 계약서 제2조(사전 문서)가 '행사일 4/15(월)~4/18(목)'로 독립 확인하므로 계획값 교정이며 실측 주입이 아니다. 1,674는 서울여대 3일 + 동국대 1일 합계이고 실체는 바이브 테스트 참여자 수라 counting=participation이 맞다."
+   },
+   {
+    "at": "relabel R1 (2026-07-28)",
+    "prev_visitors": 1674,
+    "prev_counting": "participation",
+    "action": "revise",
+    "changes": [
+     "period 교정 {'from': '2024-04-15', 'to': '2024-04-18'} (계획 문서 근거)",
+     "범위 표시: multi_store_sum"
+    ],
+    "evidence": "① 결과보고서((sweetspot)올리브영_캠퍼스어택_결과보고서_240425.pptx, 11RFQ96-XmXXF-WNY1EcxWpVDNBhUW9i_ — 216MB라 Drive 텍스트 추출이 빈 값을 반환해 ranged-zip(remotezip)으로 slide XML 직접 추출) 슬라이드2 개요: '행사명 2024 올리브영 트렌드 리딩 캠페인 / 기간 2024년 4월 15일(월)~4월 18일(목) / 시간 07:00~설치, 17:00~철거, 11:00~17:00 *이벤트 운영 시간 / 장소 서울여자대학교, 동국대학교'. ② 슬라이드8 '1-3. 결과 통계 — 방문객 & 이벤트 참여' 표: 4/15 297, 4/16 398, 4/17 372, 4/18 607, 총 방문객 1,674. 같은 표에서 '바이브 테스트",
+    "verdict": "실제 운영은 4일(2024-04-15~04-18)이고 총 1,674명이 맞으므로 period를 이 창으로 교체하라 — 4/19~5/9는 아마란스 발급원장에 행사 3개월 뒤 소급 등록된 사내 프로젝트 창일 뿐 운영일이 아니며, 1,674는 서울여대 3일 + 동국대 1일 두 캠퍼스 합계(multi_store_sum)이고 '총 방문객'이라 쓰였지만 실체는 바이브 테스트 참여자 수다.",
+    "period_prev": {
+     "from": "2024-04-15",
+     "to": "2024-04-18",
+     "days": 21,
+     "source": "재발굴 판정 — 계획 문서로 교정"
+    },
+    "adjudication": "period 4/19~5/9는 아마란스 발급원장에 행사 3개월 뒤 소급 등록된 사내 프로젝트 창이지 운영일이 아니다. 계약서 제2조(사전 문서)가 '행사일 4/15(월)~4/18(목)'로 독립 확인하므로 계획값 교정이며 실측 주입이 아니다. 1,674는 서울여대 3일 + 동국대 1일 합계이고 실체는 바이브 테스트 참여자 수라 counting=participation이 맞다."
+   },
+   {
+    "at": "relabel R1 (2026-07-28)",
+    "prev_visitors": 1674,
+    "prev_counting": "participation",
+    "action": "revise",
+    "changes": [
+     "period 교정 {'from': '2024-04-15', 'to': '2024-04-18'} (계획 문서 근거)",
+     "범위 표시: multi_store_sum"
+    ],
+    "evidence": "① 결과보고서((sweetspot)올리브영_캠퍼스어택_결과보고서_240425.pptx, 11RFQ96-XmXXF-WNY1EcxWpVDNBhUW9i_ — 216MB라 Drive 텍스트 추출이 빈 값을 반환해 ranged-zip(remotezip)으로 slide XML 직접 추출) 슬라이드2 개요: '행사명 2024 올리브영 트렌드 리딩 캠페인 / 기간 2024년 4월 15일(월)~4월 18일(목) / 시간 07:00~설치, 17:00~철거, 11:00~17:00 *이벤트 운영 시간 / 장소 서울여자대학교, 동국대학교'. ② 슬라이드8 '1-3. 결과 통계 — 방문객 & 이벤트 참여' 표: 4/15 297, 4/16 398, 4/17 372, 4/18 607, 총 방문객 1,674. 같은 표에서 '바이브 테스트",
+    "verdict": "실제 운영은 4일(2024-04-15~04-18)이고 총 1,674명이 맞으므로 period를 이 창으로 교체하라 — 4/19~5/9는 아마란스 발급원장에 행사 3개월 뒤 소급 등록된 사내 프로젝트 창일 뿐 운영일이 아니며, 1,674는 서울여대 3일 + 동국대 1일 두 캠퍼스 합계(multi_store_sum)이고 '총 방문객'이라 쓰였지만 실체는 바이브 테스트 참여자 수다.",
+    "period_prev": {
+     "from": "2024-04-15",
+     "to": "2024-04-18",
+     "days": 21,
+     "source": "재발굴 판정 — 계획 문서로 교정"
+    },
+    "adjudication": "period 4/19~5/9는 아마란스 발급원장에 행사 3개월 뒤 소급 등록된 사내 프로젝트 창이지 운영일이 아니다. 계약서 제2조(사전 문서)가 '행사일 4/15(월)~4/18(목)'로 독립 확인하므로 계획값 교정이며 실측 주입이 아니다. 1,674는 서울여대 3일 + 동국대 1일 합계이고 실체는 바이브 테스트 참여자 수라 counting=participation이 맞다."
+   }
+  ],
+  "counting_detail": "participation",
+  "label_scope_kind": "multi_store_sum"
+ },
+ "docs": [
+  {
+   "doc_id": "11RFQ96-XmXXF-WNY1EcxWpVDNBhUW9i_",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/11RFQ96-XmXXF-WNY1EcxWpVDNBhUW9i_/view",
+   "title": "(sweetspot)올리브영_캠퍼스어택_결과보고서_240425.pptx"
+  },
+  {
+   "doc_id": "1IjGU5EgIbDt43EauWUK1kjSPU2pTlwpm",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1IjGU5EgIbDt43EauWUK1kjSPU2pTlwpm/view",
+   "title": "RTPU2415_올리브영 팝업스토어_계약서.docx"
+  },
+  {
+   "doc_id": "1cFlzB9z1BbaliCjlpzMhXAxPWXQkqSlH",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1cFlzB9z1BbaliCjlpzMhXAxPWXQkqSlH/view",
+   "title": "제안서_내용없음.txt"
+  },
+  {
+   "doc_id": "1gocFaMAZGcy626F0PZoMrwgyDnMx5CDu",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1gocFaMAZGcy626F0PZoMrwgyDnMx5CDu/view",
+   "title": "RTPU2415_올리브영 팝업스토어_계약서.docx"
+  },
+  {
+   "doc_id": "1lWB2Xy4aPoo4Rb1VDHf1zga5uQ9yuJDc",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1lWB2Xy4aPoo4Rb1VDHf1zga5uQ9yuJDc/view",
+   "title": "RTPU2415_올리브영 팝업스토어_견적서_240417.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서 텍스트(계약서/기획서/견적서/결과보고서)가 전혀 제공되지 않음; 프로젝트명, 클라이언트명, 장소, 카테고리 모두 null; 컨셉/체험요소/프로모션/연출태그 추출 불가; 입지/면적/수수료구조/브랜드요구사항 추출 불가; 방문자수/매출 등 결과 데이터 없음; 기간(2024-04-19~2024-05-09)만 메타데이터에서 확인 가능 | 라벨발굴(2026-07-24): 결과보고서 재추출 — slide8 1-3. 결과 통계 방문객&이벤트 참여 표 | 자극 보강(2026-07-24): 운영안·기획안·계약서 재인제스트로 intervention/conditions 교체 (500→851자, capacity=unknown). outcome·entities·period 보존"
+ }
+}

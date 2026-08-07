@@ -1,0 +1,166 @@
+{
+ "record_id": "RTPU2441",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:농심_안성탕면",
+  "space_id": "unresolved:안성_보개면_남사당로198_바우덕이축제",
+  "client_party_id": "unresolved:농심",
+  "brand_key": "농심_안성탕면",
+  "space_key": "안성_바우덕이축제"
+ },
+ "intervention": {
+  "concept": "농심 안성탕면이 안성 바우덕이축제에서 진행한 브랜드 부스 프로모션. 부스 브랜딩(게이트·슬로건·간판)과 인형탈 운영, 이벤트 기기를 활용한 제품 판매 및 홍보.",
+  "brand_name": "농심 안성탕면",
+  "experience_elements": [
+   "브랜드 부스",
+   "포토존/등신대",
+   "인형탈 캐릭터",
+   "이벤트 기기(브랜딩)",
+   "제품 판매 매대"
+  ],
+  "promotions": [
+   "제품 판매"
+  ],
+  "staging_tags": [
+   "부스 브랜딩",
+   "게이트",
+   "상단 슬로건",
+   "POSM",
+   "등신대"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "안성시",
+   "district": "보개면",
+   "venue_name": "바우덕이축제(남사당로 198)",
+   "venue_type": "축제 현장 부스",
+   "foot_traffic_context": "안성 바우덕이축제 방문객"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-10-03",
+   "to": "2024-10-06",
+   "days": 4
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총 계약금액 32,000,000원(VAT 별도). 계약금액 100% 32,000,000원을 행사 종료 후 익월 중순 지급. 견적 기준 실비정산액 소계 31,910,000원, 대행수수료 소계의 10% 2,891,000원, 네고 -2,800,000원. 판매 제품 공급가·판매가는 별도 파일 요율 적용, 판매 수익은 판매사가 전부 소유하고 손망실 loss도 판매사 부담, 잔여 물량은 반품(개봉 낱개 제외)."
+  },
+  "brand_requirements": [
+   "제작물 사용 이전 의뢰사 감수 필수",
+   "모든 제작물 권리 및 지식재산권 의뢰사 귀속",
+   "지식재산권 사용 가이드라인 준수",
+   "안전관리 및 사고방지",
+   "보안유지 의무"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "안성 바우덕이축제 방문객"
+  },
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.5,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 15,
+    "holiday_until": 114,
+    "holiday_block_in": 0,
+    "nat_event_gap": 42,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 2523634.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2024-09-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": 6640198,
+   "rev_mm_recognized": 38.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서가 제공되지 않아 방문자·매출 실측 데이터 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-10, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": 32.0,
+   "last_recognition_period": "2024-10"
+  },
+  "sales_basis": "PnL 상품매출 양수계정 합 × 1.1 (부가세 포함 기준)",
+  "label_history": [
+   {
+    "at": "pnl_sales (2026-07-28)",
+    "action": "mine",
+    "changes": [
+     "sales_krw 6,640,198 (PnL 총 결제액)"
+    ],
+    "evidence": "core.project_pnl_monthly 상품매출 양수계정 합 6,036,544(공급가) × 1.1, 인식 1개월"
+   }
+  ]
+ },
+ "docs": [
+  {
+   "doc_id": "11-NqBWi9A0risroqVCfZksQQ9R2AO9rh",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/11-NqBWi9A0risroqVCfZksQQ9R2AO9rh/view",
+   "title": "제안서_내용없음.txt"
+  },
+  {
+   "doc_id": "1GjO5aAy1mO9sPH12JJq8gF94Gy3p1Zbj",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1GjO5aAy1mO9sPH12JJq8gF94Gy3p1Zbj/view",
+   "title": "RTPU2441_농심 안성 바우덕이축제 프로모션_견적서(최종).pdf"
+  },
+  {
+   "doc_id": "1L6hu6PPbd4D_es5Oh_-zc6uVP0TJG3VY",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1L6hu6PPbd4D_es5Oh_-zc6uVP0TJG3VY/view",
+   "title": "RTPU2441_농심 안성 바우덕이축제 프로모션_계약서_최종.docx"
+  },
+  {
+   "doc_id": "1RKOW01pkZY_smaWKowArmfblqlRtGIno",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1RKOW01pkZY_smaWKowArmfblqlRtGIno/view",
+   "title": "RTPU2441_농심 안성 바우덕이축제 프로모션_계약서_최종.docx"
+  },
+  {
+   "doc_id": "1gaIdQ8CiMEDi6J-xUKbyl_GUde93oQSr",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1gaIdQ8CiMEDi6J-xUKbyl_GUde93oQSr/view",
+   "title": "결과보고서_내용없음.txt"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: RTPU2441_농심 안성 바우덕이축제 프로모션_계약서, RTPU2441_농심 안성 바우덕이축제 프로모션_계약서, RTPU2441_농심 안성 바우덕이축제 프로모션_견적서. 미확실: 결과보고서 부재로 방문자 수·POS 매출 등 outcome 전체 미확인; 면적(평) 정보 없음; 기획서/제안서 부재로 예상 방문객 및 상세 체험요소 불확실; client_party_id 정식 식별자 미상"
+ }
+}

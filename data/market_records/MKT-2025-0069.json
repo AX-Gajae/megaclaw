@@ -1,0 +1,74 @@
+{
+  "market_record_id": "MKT-2025-0069",
+  "event_name": "메디힐×PLAVE 팝업 @더현대 서울",
+  "brand": "메디힐",
+  "ip_or_collab": "버추얼 아이돌 PLAVE 콜라보",
+  "category": "beauty",
+  "intervention": {
+    "concept_description": "메디힐 모델(버추얼 아이돌 PLAVE) 콜라보 팝업. 더현대 서울 지하2층 아이코닉존, 대기열 관리형 운영",
+    "experience_elements": [
+      "콜라보 포토존",
+      "한정 굿즈",
+      "제품 체험"
+    ],
+    "promotions": [
+      "한정 굿즈",
+      "현장 구매 혜택"
+    ],
+    "is_free_entry": true,
+    "reservation_required": false
+  },
+  "conditions": {
+    "venue": "더현대 서울 B2 아이코닉존",
+    "venue_type": "department_store",
+    "neighborhood": "여의도",
+    "city": "서울",
+    "period_from": "2025-08-07",
+    "period_to": "2025-08-20",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 14,
+        "weekend_share": 0.29,
+        "holiday_days": 1
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 14,
+    "counting_basis": "unknown",
+    "counting_basis_note": "총 방문객 미공개. 현장 르포 기반 대기 규모만 확인",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "오픈 당일 오전 기준 140팀 대기 (현장 르포)",
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "기자가 도착했을 땐 이미 앞에 140팀이 대기 중인 상황"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "금융경제신문 르포(2025-08-22) 기반 수요 신호 레코드. | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

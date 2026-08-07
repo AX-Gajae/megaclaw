@@ -1,0 +1,169 @@
+{
+ "record_id": "RTPU2437",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:한국애브비_편두통_질환인식캠페인",
+  "space_id": "unresolved:다장소_위워크서울스퀘어_위워크선릉3호점_삼탄빌딩",
+  "client_party_id": "unresolved:엔자임헬스",
+  "brand_key": "한국애브비",
+  "space_key": "multi_위워크"
+ },
+ "intervention": {
+  "concept": "한국애브비의 편두통 질환인식캠페인 팝업부스. 위워크 오피스 및 애브비 사옥 등 다장소에서 운영된 단기 팝업으로, 편두통 질환 인식 제고를 목적으로 한다. 롤링 영상, 포토존, 안내 배너 등을 활용한 공간 연출 중심 부스.",
+  "brand_name": "한국애브비 편두통 질환인식캠페인",
+  "experience_elements": [
+   "스탠바이미 롤링 영상(의료전문가 의견)",
+   "안내 배너 및 이벤트용 폼보드",
+   "백월/테이블 VMD",
+   "VMD 소품 및 조화 화분"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "가벽/백월",
+   "테이블/캐비넷",
+   "카페트",
+   "스탭복(검정티+청바지+목걸이)"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "강남구",
+   "venue_name": "위워크 서울스퀘어 / 위워크 선릉3호점 / 삼탄빌딩(한국애브비)",
+   "venue_type": "오피스(공유오피스 및 사옥) 로비/부스",
+   "foot_traffic_context": "위워크 공유오피스 입주사 및 애브비 사옥 임직원 대상 오피스 내부 부스"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-09-23",
+   "to": "2024-09-27",
+   "days": 5
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "기본계약(2024-09-03) 총 20,700,000원(VAT 별도), 선금50% 10,350,000(2024.10.04 지급)+잔금50% 10,350,000(2024.11.29 지급). 추가제작 계약(2024-09-20) 총 11,500,000원(VAT 별도), 잔금100% 11,500,000(2024.10.25 지급). 대행수수료는 각 소계의 10%(정가항목 제외). 실행사=주식회사 스위트스팟, 의뢰사=엔자임헬스."
+  },
+  "brand_requirements": [
+   "제작물 사용 전 의뢰사 서면 승인 필수",
+   "롤링 영상에 의료전문가 의견 고지 문구 부착",
+   "하도급 금지(사전 서면동의 필요)",
+   "제작물 지식재산권 의뢰사 귀속",
+   "정치·사회·종교적 중립 유지"
+  ],
+  "scale": {
+   "store_count": 3,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "위워크 공유오피스 입주사 및 애브비 사옥 임직원 대상 오피스 내부 부스"
+  },
+  "derived": {
+   "duration": {
+    "days": 5,
+    "weekend_share": 0.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 5,
+    "holiday_until": 124,
+    "holiday_block_in": 0,
+    "nat_event_gap": 52,
+    "nat_event": null,
+    "doc_lag_days": 3,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 130100.0,
+    "pnl_pre_accounts": 2,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2024-08-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 31.5
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 미제공. 방문자 실측 데이터 없음. 의료 질환인식 캠페인으로 소비자 매출(POS) 개념 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 31.5 ≈ 계약총액 32.2",
+   "contract_total_mm": 32.2,
+   "last_recognition_period": "2024-11"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1R4rFqn6zwKK41LubT0GYdlHpraCIp7Ys",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1R4rFqn6zwKK41LubT0GYdlHpraCIp7Ys/view",
+   "title": "RTPU2437_엔자임_질환인식캠페인_업무 계약서_최종.pdf"
+  },
+  {
+   "doc_id": "1V8wpgIQCIwRkc8VrIiK6waFBuVPX03R4",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1V8wpgIQCIwRkc8VrIiK6waFBuVPX03R4/view",
+   "title": "Sweetspot_엔자임_질환인식캠페인_견적서_240903.pdf"
+  },
+  {
+   "doc_id": "1WQ9qQKQDEQgCfVv5ZEyRyxWWOK979l42",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1WQ9qQKQDEQgCfVv5ZEyRyxWWOK979l42/view",
+   "title": "[Sweetspot] 엔자임 팝업부스_기획안_0920.pdf"
+  },
+  {
+   "doc_id": "1km-Hsq2XuLvuR1nmX1M7C46HttlADK9g",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1km-Hsq2XuLvuR1nmX1M7C46HttlADK9g/view",
+   "title": "Sweetspot 엔자임_질환인식캠페인_업무 계약서_최종.pdf"
+  },
+  {
+   "doc_id": "1sJKcx3haa5zio6u8KmFSL0JOieFhjJ_9",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1sJKcx3haa5zio6u8KmFSL0JOieFhjJ_9/view",
+   "title": "RTPU2437_엔자임_질환인식캠페인 추가 건_업무 계약서_240924"
+  },
+  {
+   "doc_id": "1tEbyVTjO9FY_t8UDa-LxVFf3MblpJjfO",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1tEbyVTjO9FY_t8UDa-LxVFf3MblpJjfO/view",
+   "title": "Sweetspot_엔자임_질환인식캠페인 추가 제작 건_견적서_240920.pdf"
+  },
+  {
+   "doc_id": "1wdEQcl9-kKL0UU-gbZo-DPb8VS6fsa7Z",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1wdEQcl9-kKL0UU-gbZo-DPb8VS6fsa7Z/view",
+   "title": "결과보고서_내용없음.txt"
+  },
+  {
+   "doc_id": "1zOZ3OGvOHgWQcJGF5d_5G5AsDOwljiE3d4ijvAWNcJI",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1zOZ3OGvOHgWQcJGF5d_5G5AsDOwljiE3d4ijvAWNcJI/view",
+   "title": "제안서_내용없음"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=high. 완독 문서 7건: RTPU2437_엔자임_질환인식캠페인_업무 계약서_최종, Sweetspot 엔자임_질환인식캠페인_업무 계약서_최, RTPU2437_엔자임_질환인식캠페인 추가 건_업무 계, 제안서_내용없음, [Sweetspot] 엔자임 팝업부스_기획안_0920., Sweetspot_엔자임_질환인식캠페인_견적서_2409. 미확실: 결과보고서 부재로 방문자수·매출 실측 없음; 기획서상 예상 방문 수치 없음; 면적(평) 정보 없음; 제안서 내용 없음(빈 문서); 위워크 서울스퀘어는 중구 한강대로 소재이나 다장소 운영으로 대표 입지 판단 불확실"
+ }
+}

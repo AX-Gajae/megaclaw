@@ -1,0 +1,81 @@
+{
+  "market_record_id": "MKT-2025-0004",
+  "event_name": "던전앤파이터 공식 팝업 행사 'SNOWMAGE in 강남'",
+  "brand": "넥슨",
+  "ip_or_collab": "던전앤파이터 (스노우메이지, 신규 시즌 중천)",
+  "category": "game_webtoon",
+  "intervention": {
+    "concept_description": "던파 신규 시즌 '중천' 알리기 위한 스노우메이지 콘셉트 팝업. 1층 체험부스(새해 소망 카드·종말 펀치·수호공룡 선물·미니맵 탐방), 2층 굿즈 판매·미니게임",
+    "experience_elements": [
+      "종말 펀치! 미니게임",
+      "파핑파핑 애쥬어 메인 미니게임",
+      "크레인 게임",
+      "던생네컷 with 베누스 포토부스",
+      "다같이 돌자 이내 한바퀴"
+    ],
+    "promotions": [
+      "이용자 인증·신규 가입 시 경품",
+      "발란사 협업 의류, 우주먼지·레바 작가 굿즈 판매"
+    ],
+    "is_free_entry": true,
+    "reservation_required": true
+  },
+  "conditions": {
+    "venue": "라인프렌즈 플래그십스토어 강남점",
+    "venue_type": "street_standalone",
+    "neighborhood": "강남(서초구 강남대로)",
+    "city": "서울",
+    "period_from": "2025-01-17",
+    "period_to": "2025-01-25",
+    "area_pyeong": null,
+    "multi_store": false,
+    "capacity": {
+      "total_capacity": null,
+      "detail": "키워드 승격(reservation)",
+      "access_type": "reservation"
+    },
+    "derived": {
+      "duration": {
+        "days": 9,
+        "weekend_share": 0.33,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 9,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "사전 예약 기간(3일) 집계만 보도: '17일부터 19일까지 사전 예약으로 운영된 이번 팝업 행사에는... 3일간 약 3,000명 가량의 인원이 현장을 찾으며' - 전 기간(9일) 총계 미보도로 visitors_total=null",
+    "visitors_source_quote": "17일부터 19일까지 사전 예약으로 운영된 이번 팝업 행사에는 오픈 첫 날부터 많은 인파가 몰려 주위의 시선을 사로잡았고, 3일간 약 3,000명 가량의 인원이 현장을 찾으며 여전한 인기를 증명했다.",
+    "visitors_source_url": "http://www.worktoday.co.kr/news/articleView.html?idxno=63339",
+    "visitors_source_date": "2025-01-24",
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "오픈 전부터 사전 예약 방문객 대기열 형성",
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "오픈 전부터 사전 예약 방문객들로 인한 대기열이 형성됐고, 안전요원의 통제에 따라 질서정연하게 움직였다."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "경기신문(kgnews, 2025-01-24) 동일 수치: '3일간 약 3000명 가량의 인원이 현장을 찾은 것으로 집계됐다'. 사전 예약은 1월 6일 19시 오픈(팝가 기준). | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

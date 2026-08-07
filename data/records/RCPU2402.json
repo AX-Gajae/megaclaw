@@ -1,0 +1,171 @@
+{
+ "record_id": "RCPU2402",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:수키도키",
+  "space_id": "unresolved:더현대서울_B2_아이코닉존",
+  "client_party_id": "unresolved:수키도키",
+  "brand_key": "수키도키",
+  "space_key": "더현대서울"
+ },
+ "intervention": {
+  "concept": "수키도키 '쥐구멍가게' 캐릭터 IP를 활용한 팝업스토어. 정류장·상점 콘셉트의 포토존과 봉제인형·선반형 매대로 구성된 리테일형 부스. 더현대 서울 B2 아이코닉존에서 진행.",
+  "brand_name": "수키도키",
+  "experience_elements": [
+   "포토존(정류장)",
+   "포토존(상점)",
+   "스탬프 매대",
+   "봉제인형 매대",
+   "포토카드 기계",
+   "거울"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "쥐구멍가게",
+   "선반형매대",
+   "걸이형매대",
+   "가벽 H2000",
+   "커텐 출입구"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": null,
+   "venue_name": "더현대 서울",
+   "venue_type": "백화점",
+   "foot_traffic_context": "B2 아이코닉행사장(아이코닉존)"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-02-01",
+   "to": "2024-02-14",
+   "days": 14
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "용역계약 총액 68,500,000원(부가세 별도, 고용보험 및 제세공과금 포함). 대금 지급일 2024-02-29. 견적서상 대행수수료는 운영대행 만원단위 절삭. 지연손해금 1일당 총액의 1/1000, 계약위반 위약벌 용역비의 20%."
+  },
+  "brand_requirements": [
+   "부스 디자인 및 설계, 인테리어 시공 및 철거(폐기물 처리 포함)",
+   "집기 제작 및 시공",
+   "사인/그래픽 제작 및 시공(가격표, POP, ISP 디자인 파일 포함)",
+   "진열/연출 소도구 납품",
+   "입점사 관리 및 정산",
+   "부스 행사 운영 전반 및 동원 인력 관리책임",
+   "운영시간 10:00~20:00, 금·토·일 20:30까지 연장영업",
+   "설치 2024-02-01 08:00까지, 철거 2024-02-14 24:00까지",
+   "수키도키 IP 및 결과물 지식재산권 갑 귀속",
+   "2년간 무상 하자보증"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대 서울 B2 아이코닉행사장"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 4
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 31,
+    "holiday_until": 8,
+    "holiday_block_in": 4,
+    "nat_event_gap": 69,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": "서울 영등포구 여의대로 108"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서가 제공되지 않아 실측 방문/매출 데이터 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": 68.5,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "191vkcsiv9_JWzulNgU7uzwOWAevbdeNM",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/191vkcsiv9_JWzulNgU7uzwOWAevbdeNM/view",
+   "title": "더현서 수키도키 팝업스토어_공간기획안 2차(최종).pdf"
+  },
+  {
+   "doc_id": "1A6AopzYdWYSVmv0O3JsA9nko0frXk02c",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1A6AopzYdWYSVmv0O3JsA9nko0frXk02c/view",
+   "title": "수키도키 _ 4차(2차 기획안 자료)_ 최종.skp"
+  },
+  {
+   "doc_id": "1Af5VdQiO32thHRXVoo9VWtHVGWTLV_jE",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Af5VdQiO32thHRXVoo9VWtHVGWTLV_jE/view",
+   "title": "더현서 수키도키 팝업스토어_공간기획안 2차(최종).pdf"
+  },
+  {
+   "doc_id": "1NAqm0ea1OKE7JbG37vrWEUziEBSzpvIp",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1NAqm0ea1OKE7JbG37vrWEUziEBSzpvIp/view",
+   "title": "용역계약서_수키도키_스위트스팟_2024-01-29.docx"
+  },
+  {
+   "doc_id": "1RBwPvpnKu3vOykS7yMTPWVcGFifmPmcA",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1RBwPvpnKu3vOykS7yMTPWVcGFifmPmcA/view",
+   "title": "수키도키 사업자등록증(정정).pdf"
+  },
+  {
+   "doc_id": "1_bUgr1v8c0orVLWnEhkq839T_iseum1-",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1_bUgr1v8c0orVLWnEhkq839T_iseum1-/view",
+   "title": "수키도키 팝업스토어 기획 및 운영대행 견적서(24.01.03).xlsx"
+  },
+  {
+   "doc_id": "1bBbhaQn_gzP0_lcOYqiHKsvmSUk2zYPI",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1bBbhaQn_gzP0_lcOYqiHKsvmSUk2zYPI/view",
+   "title": "수키도키 팝업스토어 기획 및 운영대행 견적서(24.01.03).xlsx"
+  },
+  {
+   "doc_id": "1pfI9TPEl95Lzya_gdvzlCrjvqxaOH7b1",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1pfI9TPEl95Lzya_gdvzlCrjvqxaOH7b1/view",
+   "title": "용역계약서_수키도키_스위트스팟_2024-01-29.docx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 5건: 더현서 수키도키 팝업스토어_공간기획안 2차(최종).pd, 용역계약서_수키도키_스위트스팟_2024-01-29.do, 용역계약서_수키도키_스위트스팟_2024-01-29.do, 더현서 수키도키 팝업스토어_공간기획안 2차(최종).pd, 수키도키 팝업스토어 기획 및 운영대행 견적서(24.01. 미확실: 결과보고서 부재로 방문자수·매출 실측 데이터 없음; 면적(평) 정보 없음; 견적서 금액 세부 수치 미기재(빈칸); 예상 방문자수 정보 없음; client_party_id 정확한 법인 식별 불명"
+ }
+}

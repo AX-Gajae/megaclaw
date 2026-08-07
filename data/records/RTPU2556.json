@@ -1,0 +1,221 @@
+{
+ "record_id": "RTPU2556",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:짱구_크레용신짱",
+  "space_id": "unresolved:현대프리미엄아울렛_김포점",
+  "client_party_id": "unresolved:현대백화점",
+  "brand_key": "짱구",
+  "space_key": "현대프리미엄아울렛_김포점"
+ },
+ "intervention": {
+  "concept": "현대아울렛 5개 지점에서 진행하는 짱구 테마 팝업 및 스토어. '짱구와 함께 현대아울렛에서 놀아요!'를 테마로 공용/특화 포토존, 짱구 스토어, 방문객 이벤트를 구성한다. 지점별 특화포토존과 공용 벌룬 포토존, 한정 증정상품을 운영한다.",
+  "brand_name": "짱구(크레용 신짱) X 현대프리미엄아울렛",
+  "experience_elements": [
+   "공용포토존 1(쇼핑백 피켓 소품)",
+   "공용포토존 2(캐릭터별 소품: 골프채, 헤드셋, 책, 응원봉, 메론쥬스)",
+   "공용포토존 3(벌룬)",
+   "지점별 특화포토존(김포/송도/대전/SPACE1)",
+   "짱구 스토어(팝업 내부 매대)",
+   "등신대",
+   "가로등배너",
+   "윈도우 시트",
+   "김포점 인형뽑기 이벤트(성공 시 인형 증정)",
+   "송도점 미니 축구공 골대 이벤트(성공 시 도무송 스티커 증정)",
+   "대전점 링 던지기 이벤트(성공 시 도무송 스티커 증정)",
+   "SPACE1 점수 달성 이벤트(성공 시 도무송 스티커 증정)"
+  ],
+  "promotions": [
+   "한정 증정 상품: 키링 2종, 수건 1종",
+   "방문객 대상 이벤트 참여 시 인형/도무송 스티커 증정"
+  ],
+  "staging_tags": [
+   "포토존",
+   "벌룬",
+   "캐릭터굿즈",
+   "팝업스토어",
+   "테이블스커트",
+   "상단모빌",
+   "등신대"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": "김포현대프리미엄아울렛 외 (송도/대전/SPACE1/시티커넥트)",
+   "venue_type": "아울렛",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-06-06",
+   "to": "2025-06-26",
+   "days": 21
+  },
+  "season": "초여름",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": "제안서에 계약 금액·수수료 정보 없음"
+  },
+  "brand_requirements": [
+   "현대백화점 컨펌 및 감수 진행"
+  ],
+  "scale": {
+   "store_count": 5,
+   "venue_traffic_type": "multi_store",
+   "host_traffic_note": "현대아울렛 5개 지점"
+  },
+  "derived": {
+   "duration": {
+    "days": 21,
+    "weekend_share": 0.29,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 10.1,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 0,
+    "holiday_until": 0,
+    "holiday_block_in": 3,
+    "nat_event_gap": 3,
+    "nat_event": "대통령 선거",
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 283.1
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-06, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "11yu01fBJwCEt7QAhYm3iS0_Obj0-68U6",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/11yu01fBJwCEt7QAhYm3iS0_Obj0-68U6/view",
+   "title": "김포_Sweetspot_현대아울렛_원피스테마존_점포별_견적서_1104.pdf"
+  },
+  {
+   "doc_id": "168m8zzJDyxWfcKsF8d08QrjUixZmFnrQ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/168m8zzJDyxWfcKsF8d08QrjUixZmFnrQ/view",
+   "title": "Sweetspot_선금50%_현대아울렛_원피스테마존_청주점_견적서_0728.pdf"
+  },
+  {
+   "doc_id": "1AJUbRCGMg4fnNiuGOIeCJHnZsdOJhGdD",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1AJUbRCGMg4fnNiuGOIeCJHnZsdOJhGdD/view",
+   "title": "스페이스1_Sweetspot_현대아울렛_원피스테마존_점포별_견적서_1104.pdf"
+  },
+  {
+   "doc_id": "1AuVZ30HlQKGpIlax7ldxV7tsNz_nFb_h",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1AuVZ30HlQKGpIlax7ldxV7tsNz_nFb_h/view",
+   "title": "Sweetspot_선금50%_현대아울렛_원피스테마존_대전점_견적서_0728.pdf"
+  },
+  {
+   "doc_id": "1B0wla2oim54ifaLEE8kg_uGTaR96v0lo",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1B0wla2oim54ifaLEE8kg_uGTaR96v0lo/view",
+   "title": "결과보고서 없음.txt"
+  },
+  {
+   "doc_id": "1BZHke0gwfgEIkVJJMdMmVt-v7hgXJECw",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1BZHke0gwfgEIkVJJMdMmVt-v7hgXJECw/view",
+   "title": "임시 결과보고서 (2).txt"
+  },
+  {
+   "doc_id": "1DJxQGlAW3KW82XrBPWCSdigd5RP139M2",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1DJxQGlAW3KW82XrBPWCSdigd5RP139M2/view",
+   "title": "Sweetspot_선금50%_현대아울렛_원피스테마존_송도점_견적서_0728.pdf"
+  },
+  {
+   "doc_id": "1LD6N3SAF3i-3kCqXyAe5lBSXI9ymv57x",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1LD6N3SAF3i-3kCqXyAe5lBSXI9ymv57x/view",
+   "title": "대전_Sweetspot_현대아울렛_원피스테마존_점포별_견적서_1104.pdf"
+  },
+  {
+   "doc_id": "1OIYrLZehYgELt17EYuQq_Tcd1VU6OYmj",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1OIYrLZehYgELt17EYuQq_Tcd1VU6OYmj/view",
+   "title": "선금50%_Sweetspot_원피스테마존 조성_점포별 견적서.zip"
+  },
+  {
+   "doc_id": "1QUcB8N9n0I4YCw1rTY7bWk1qNfWB3rkE",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1QUcB8N9n0I4YCw1rTY7bWk1qNfWB3rkE/view",
+   "title": "송도_Sweetspot_현대아울렛_원피스테마존_점포별_견적서_1104.pdf"
+  },
+  {
+   "doc_id": "1SCLhQth-2AtLfm2iWlW1_BJOC9d4ociu",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1SCLhQth-2AtLfm2iWlW1_BJOC9d4ociu/view",
+   "title": "0418_스위트스팟_짱구X현대프리미엄아울렛_공간정리제안서_기획안_제안서.pdf"
+  },
+  {
+   "doc_id": "1SK6EPBRr1r6lfX18a5cyYFCEeK4R0fVz",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1SK6EPBRr1r6lfX18a5cyYFCEeK4R0fVz/view",
+   "title": "용역위탁계약서_캐릭터테마존_현대아울렛커넥트_0211_재수정.docx"
+  },
+  {
+   "doc_id": "1ZooLUnSjs4DYYNANLyBsOuvJ1erSqqz0",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ZooLUnSjs4DYYNANLyBsOuvJ1erSqqz0/view",
+   "title": "Sweetspot_선금50%_현대아울렛_원피스테마존_스페이스1점_견적서_0728.pdf"
+  },
+  {
+   "doc_id": "1bXZl-TKy7-M3idNBGI8UjDgFevsbONAy",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1bXZl-TKy7-M3idNBGI8UjDgFevsbONAy/view",
+   "title": "1104 잔금 50% 점포별 견적서 (2).zip"
+  },
+  {
+   "doc_id": "1d1y44DEiOopvoFqUJXp7fl2AuDEn5SP_",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1d1y44DEiOopvoFqUJXp7fl2AuDEn5SP_/view",
+   "title": "Sweetspot_선금50%_현대아울렛_원피스테마존_김포점_견적서_0728.pdf"
+  },
+  {
+   "doc_id": "1gSEO9vW9aIF_96uPeXPDhjryPV3Gkppl",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1gSEO9vW9aIF_96uPeXPDhjryPV3Gkppl/view",
+   "title": "청주_Sweetspot_현대아울렛_원피스테마존_점포별_견적서_1104.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 1건: 0418_스위트스팟_짱구X현대프리미엄아울렛_공간정리제안. 미확실: 프로젝트 메타(원피스 테마, 2025-10-10~2025-12-28)와 제안서 내용(짱구 테마, 2025-06-06~06-26)이 불일치; 계약서/견적서 없음 - 수수료구조·면적·정확한 입지 미상; 결과보고서 없음 - 실측 방문/매출 데이터 없음; 연도는 파일명(0418) 기준 2025 추정; 김포점만 일정 확정, 나머지 지점 예정; 클라이언트명·정확한 venue 미확정"
+ }
+}

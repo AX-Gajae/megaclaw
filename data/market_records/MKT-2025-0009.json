@@ -1,0 +1,71 @@
+{
+  "market_record_id": "MKT-2025-0009",
+  "event_name": "파르벵(FARVEN) 스프링 시즌 성수 팝업스토어",
+  "brand": "파르벵 (피버/김선영)",
+  "ip_or_collab": null,
+  "category": "fashion",
+  "intervention": {
+    "concept_description": "인플루언서 피버(67만 팔로워) 론칭 브랜드 스프링 시즌 팝업, 2층 규모 공간",
+    "experience_elements": [],
+    "promotions": [
+      "전 품목 10% 할인",
+      "SNS 방문 인증 시 적립금 지급(최대 50만원)"
+    ],
+    "is_free_entry": null,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "LES601 (성동구 연무장17길 4)",
+    "venue_type": "street_standalone",
+    "neighborhood": "성수동",
+    "city": "서울",
+    "period_from": "2025-02-20",
+    "period_to": "2025-02-23",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 4,
+        "weekend_share": 0.5,
+        "holiday_days": 0
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 4,
+    "counting_basis": "media_estimate",
+    "counting_basis_note": "방문객 총계 없음. 대기시간은 매체가 인용한 SNS 후기 기반 추정치. 출처: https://www.careet.net/1422 (캐릿, 2025-07-25); 보조: fi.co.kr idx=87972(2026-04-16, '대기 시간이 3시간을 넘겼다는 후기'—팝업 연도를 2024년 3·6월로 기술해 careet의 2025년 론칭 시점과 상이, note 참조)",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": null,
+    "sales_source_quote": null,
+    "sales_source_url": null,
+    "sales_source_date": null,
+    "demand_signals": {
+      "waiting_time_reported": "대기 시간 3시간 이상 후기 다수(매체 인용), 2시간 이상 대기줄 일상화(한국섬유신문 인용 보도)",
+      "sold_out": "신제품 내놓는 족족 품절",
+      "reservation_fill": null,
+      "signal_quotes": [
+        "3월에 열린 파르벵 팝업스토어는 규모가 큰 2층 공간에서 진행됐음에도 대기 시간이 3시간 이상이었다는 후기가 넘쳐날 정도로 화제를 모으기도 했습니다.",
+        "인플루언서 기반 브랜드 파르벵은 팝업 행사에서 2시간 이상 대기줄이 생기는 현상이 일상화되었습니다 (출처: 한국섬유신문, 2025)."
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "low",
+  "notes": "일정은 팝업가(popga.co.kr) 등록 정보(2/20~23). 대기시간 보도(careet 2025-07-25)는 '3월에 열린'으로 기술해 2차 팝업 가능성 있음. 2시간/3시간 보도 상이하여 범위로 기록. | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {},
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

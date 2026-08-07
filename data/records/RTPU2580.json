@@ -1,0 +1,162 @@
+{
+ "record_id": "RTPU2580",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:SEGA_ATLUS",
+  "space_id": "unresolved:부산_해운대_BEXCO_제2전시장",
+  "client_party_id": "unresolved:SEGA_Shimada_Yuichiro",
+  "brand_key": "세가",
+  "space_key": "부산_벡스코"
+ },
+ "intervention": {
+  "concept": "2025 G-STAR(지스타) 국제게임전시회 내 SEGA ATLUS 브랜드 부스. 메타포 리판타지오·페르소나3 리로드 등 신작 시연대와 쇼케이스 전시, 스탬프랠리, 게임 PKG 판매로 구성된 28부스 규모 대형 게임 프로모션 부스.",
+  "brand_name": "SEGA ATLUS",
+  "experience_elements": [
+   "Metaphor P3R 게임 시연대(시연기기 8대, 1회 15분)",
+   "쇼케이스 전시물(P3R 대본·사인색지, METAPHOR 사인색지)",
+   "스탬프랠리(P3R/Ballon/Metaphor/Stamp Table 5스팟)",
+   "ATLUS 로고 벌룬",
+   "게임 PKG 판매존",
+   "인포데스크",
+   "MC/성우 남도형 사인회/코스어 4인"
+  ],
+  "promotions": [
+   "잭프로스트 선바이저 노벨티 배부(1일 5,000부 한정)",
+   "스탬프랠리 완료자 뮤직 키홀더 증정(1시간 250명·1일 2,000개)",
+   "게임 PKG 구매특전 세트",
+   "포스트카드/스티커 배부"
+  ],
+  "staging_tags": [
+   "게임전시부스",
+   "시연존",
+   "스탬프랠리",
+   "쇼케이스전시",
+   "벌룬연출",
+   "B2C판매"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "부산광역시",
+   "district": "해운대구",
+   "venue_name": "BEXCO 제2전시장",
+   "venue_type": "전시장/컨벤션",
+   "foot_traffic_context": "G-STAR 2025 국제게임전시회 참관객 총 20만 2,000명, 제2전시장 예상방문객 약 10만명"
+  },
+  "area_pyeong": 76.3,
+  "period": {
+   "from": "2025-11-13",
+   "to": "2025-11-16",
+   "days": 4
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "견적 총계 118,600,000원(VAT 10% 별도). 소계 107,860,000원 + 대행수수료(소계의 10%) 10,786,000원. 대행수수료는 소계의 10% 적용(견적서 rev.1, 2025-10-22 기준). 참고: 2025-10-16자 초안은 12,593,000 JPY 환산 병기. | 계약서 미확인(2026-07-27 재독해 시도 — 대상 문서 부재/추출 실패): 총액은 견적 기준"
+  },
+  "brand_requirements": [
+   "부스 사이즈 21000x12000mm/28booth, 부스 높이 H:4000",
+   "방염 목공구조 적용",
+   "사진 및 영상촬영·전시이미지 포맥스 무상제공(Shimada 요청)",
+   "운영스태프 유니폼(파커/후드티)",
+   "이벤트 보험 가입",
+   "운영시간 10:00~18:00 준수"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "G-STAR 2025, 제2전시장 예상방문객 약 10만명"
+  },
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.5,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 3,
+    "months_since_last": 0.4,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 35,
+    "holiday_until": 93,
+    "holiday_block_in": 0,
+    "nat_event_gap": 0,
+    "nat_event": "수능",
+    "doc_lag_days": 3,
+    "doc_dates_found": 2
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 4158835.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-10-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": 13167000,
+   "rev_mm_recognized": 120.4
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": 50000,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서에 부스 방문객 일일/총합 실측치 미기재. 참관객 20만 2,000명은 G-STAR 전시회 전체 참관객이며 부스 방문객 아님. 매출 13,167,000원은 게임 PKG 판매 실적(POS): P3R 리로드 57개(3,591,000), 페르소나5 로열 115개(3,450,000), 유니콘 오버로드 55개(1,650,000), 13기병방위권 23개(736,000), 진여신전생V 50개(1,850,000), 메타포 PS4 20개(600,000), 메타포 PS5 43개(1,290,000).). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 120.4 ≈ 계약총액 118.6",
+   "contract_total_mm": 118.6,
+   "last_recognition_period": "2025-11"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "11nRB0yYM4hC5cdN4n_n4VhdRlaSntqvU",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/11nRB0yYM4hC5cdN4n_n4VhdRlaSntqvU/view",
+   "title": "내부용_Sweetspot_SEGA_ATLUS_2025 GSTAR_Quotation_1126.Rev.1 견적서.pdf"
+  },
+  {
+   "doc_id": "1XByyIC_TvQsb9hPMRqK4Bv7xree_EBy1",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1XByyIC_TvQsb9hPMRqK4Bv7xree_EBy1/view",
+   "title": "G STAR_ATLUS 운영기획안_251110_제안서.pdf"
+  },
+  {
+   "doc_id": "1_sJ7W7Q9vgngO9ckywLLZcdWqW8wAgsK",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1_sJ7W7Q9vgngO9ckywLLZcdWqW8wAgsK/view",
+   "title": "SEGA퍼블리싱코리아_스위트스팟 세가 지스타 아틀라스 부스운영 업무협약서_251022_계약서.doc"
+  },
+  {
+   "doc_id": "1guSYGFcXyCY7Bbuz2Gra62vBv9u_iGQq",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1guSYGFcXyCY7Bbuz2Gra62vBv9u_iGQq/view",
+   "title": "내부용_Sweetspot_SEGA_ATLUS_2025 GSTAR_Quotation_1126.Rev.1 견적서.xlsx"
+  },
+  {
+   "doc_id": "1yrCNNFkSA8xXJG60XWvypJcHNACYDYKw",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1yrCNNFkSA8xXJG60XWvypJcHNACYDYKw/view",
+   "title": "[Sweetspot] 2025 G-STAR_SEGA_ATLUS 결과보고서_251119.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 4건: G STAR_ATLUS 운영기획안_251110_제안서., 내부용_Sweetspot_SEGA_ATLUS_2025 , 내부용_Sweetspot_SEGA_ATLUS_2025 , [Sweetspot] 2025 G-STAR_SEGA_A. 미확실: 부스 방문객 일일/총합 실측치 결과보고서에 미기재; counting_method 판정 불가(방문 계수 정의·데이터 없음); plan_visitors_expected는 제안서 '제2전시장 예상방문객 절반 50,000명' 기준이며 견적서상 노벨티 KPI 5,000명 등 다른 수치 존재; client_party_id·정확한 계약 구조(선금/중도금/잔금) 미확인; 면적(pyeong)은 21000x12000mm 도면 기준 환산 추정치 | 라벨발굴(2026-07-24): 결과보고서 재추출 — 행사개요 슬라이드 참관객 총 20만2,000명; 판매상품 목록표 매출액 합산(3,591,000+3,450,0 | 라벨 철회(2026-07-24): 발굴된 202,000은 G-STAR 전시회 전체 참관객(부스 단위 아님, RTPU2569와 동일 출처) — 부스 실측 부재로 no_label. 매출 라벨은 부스 판매표 합산이라 유지"
+ }
+}

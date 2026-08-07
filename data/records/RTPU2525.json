@@ -1,0 +1,135 @@
+{
+ "record_id": "RTPU2525",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:SME_아티스트_게릴라",
+  "space_id": "unresolved:성수동_일대_게릴라_포스터",
+  "client_party_id": "unresolved:SM_Entertainment",
+  "brand_key": "SME",
+  "space_key": "성수"
+ },
+ "intervention": {
+  "concept": "자사 아티스트 홍보를 위한 성수동 일대 게릴라 오프라인 포스터 부착 프로모션. 카페 외벽·유리창·사유지 외벽 등 외부 노출 구좌에 A2 포스터를 다양한 공간에 4-5장씩 분산 부착.",
+  "brand_name": "SM Entertainment",
+  "experience_elements": [
+   "A2 오프라인 포스터 게릴라 부착"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "게릴라",
+   "오프라인 포스터",
+   "외벽 부착",
+   "카페 유리창"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "성동구 성수동",
+   "venue_name": null,
+   "venue_type": "거리/카페 외벽·사유지 외벽",
+   "foot_traffic_context": "성수동 일대 카페 및 건물 외부 노출 구좌"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-03-24",
+   "to": "2025-03-27",
+   "days": 4
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 2,178,000원 (VAT 10% 별도). 공간협의 1,500,000(5곳 이상 기준), 제작물 160,000(샘플 10,000+포스터 1종 100장 150,000), 인력(설치/철거 STAFF 1인) 200,000, 운영 제경비/물류비 120,000. 소계 1,980,000 + 대행수수료 198,000(소계의 10%) = 2,178,000. 제안서상 버짓 100만원 선 언급."
+  },
+  "brand_requirements": [
+   "건물주/구좌 사전 승인 확보(불법부착물 신고 방지)",
+   "카페 내부보다 외벽·유리창 등 외부 노출 구좌 부착",
+   "한 곳 집중보다 다양한 공간에 미니멈 4-5장 분산 부착",
+   "포스터 A2 사이즈, 디자인 파일은 브랜드 전달"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": "성수동 일대 외부 노출 구좌 포스터 부착"
+  },
+  "derived": {
+   "duration": {
+    "days": 4,
+    "weekend_share": 0.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 1,
+    "months_since_last": 8.8,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 21,
+    "holiday_until": 40,
+    "holiday_block_in": 0,
+    "nat_event_gap": 71,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 5,
+    "comp_prior_at_venue": 35,
+    "comp_within_500m_open": 27,
+    "comp_within_1000m_open": 31,
+    "matched_address": "서울 성동구 연무장15길 11"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 2.2
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 미제공 — 방문/노출 실측 데이터 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 2.2 ≈ 계약총액 2.178",
+   "contract_total_mm": 2.178,
+   "last_recognition_period": "2025-04"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1PRChnr-tytO4njlkRHeKn-yGM09YSGAG",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1PRChnr-tytO4njlkRHeKn-yGM09YSGAG/view",
+   "title": "SME 게릴라 포스터 결과보고서_스위트스팟0327.pdf"
+  },
+  {
+   "doc_id": "1Qgfr2Lc_mPXpXcUBC3tQn9yVEQ_dsZ52",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1Qgfr2Lc_mPXpXcUBC3tQn9yVEQ_dsZ52/view",
+   "title": "SME_아티스트 게릴라 프로모션_제안서.pptx"
+  },
+  {
+   "doc_id": "1ad2NI8u3JjCMhqYc8xYqjKKXlOI7zrso",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ad2NI8u3JjCMhqYc8xYqjKKXlOI7zrso/view",
+   "title": "(SWEETSPOT) SME_게릴라이벤트(포스터)_0310_견적서.pdf"
+  },
+  {
+   "doc_id": "1rTQRSC5sFSyxXI9DQfZ-5D18_AKZU3Dg",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1rTQRSC5sFSyxXI9DQfZ-5D18_AKZU3Dg/view",
+   "title": "SME_게릴라 아티스트 프로모션_별도 계약서 없음.docx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 2건: SME_아티스트 게릴라 프로모션, (SWEETSPOT) SME_게릴라이벤트. 미확실: 결과보고서 부재로 방문·노출·매출 실측 없음; client_name 프로젝트 메타 null(문서상 SM Entertainment 수신); 포스터 최종 부착 위치 및 수량 미확정; 운영 기간이 메타(3/24)와 제안서(3/24~27) 불일치"
+ }
+}

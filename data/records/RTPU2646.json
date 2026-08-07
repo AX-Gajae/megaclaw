@@ -1,0 +1,150 @@
+{
+ "record_id": "RTPU2646",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:에비스맥주_Ebisu",
+  "space_id": "unresolved:서울_세텍_SETEC",
+  "client_party_id": "unresolved:벡터컴_손민재",
+  "brand_key": "에비스맥주",
+  "space_key": "서울_세텍"
+ },
+ "intervention": {
+  "concept": "2026 서울 사케 페스티벌 내 에비스맥주 부스 운영. 맥주 시음과 스탬프·추첨 이벤트를 결합한 2일 부스 프로모션. 굿즈(코스터·키링·쇼핑백 등) 증정을 통한 브랜드 체험 강화.",
+  "brand_name": "에비스맥주 (Ebisu)",
+  "experience_elements": [
+   "맥주 시음",
+   "스탬프 도장(4종 8개)",
+   "제품 테이스트 카드",
+   "가라폰(가라폰 추첨기) 추첨 이벤트",
+   "원형 코스터 증정",
+   "에비스 사마 아크릴 키링 증정",
+   "금박 미니 쇼핑백 증정",
+   "스티커 증정"
+  ],
+  "promotions": [
+   "가라폰 추첨 이벤트",
+   "스탬프 이벤트",
+   "굿즈 증정(코스터/테이스트카드/키링/쇼핑백/스티커)"
+  ],
+  "staging_tags": [
+   "실내용 엑스배너",
+   "A4 POP 스탠드 거치대",
+   "집기 렌탈(의자/쓰레기통/차단봉)",
+   "가라폰 브랜딩 랩핑"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": null,
+   "venue_name": "세텍(SETEC)",
+   "venue_type": "전시회장",
+   "foot_traffic_context": "서울 사케 페스티벌 방문객"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2026-05-23",
+   "to": "2026-05-24",
+   "days": 2
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "총계 22,300,000원 (VAT 10% 별도, 만원단위 이하 절사). 세부: Sub Total1(기획+아트워크) 2,500,000 / Sub Total2(제작·대여) 9,510,000 / Sub Total3(인력·운영) 5,843,000 / Sub Total4(스탭) 100,000 / Sub Total5(제경비·물류) 1,800,000, 소계 19,753,000. 일반관리비(Sub total1 제외 항목의 5%) 862,650, 기업이윤(Sub total1 제외 항목의 10%) 1,725,300. 선금/중도금/잔금 분할 및 RS 조건 문서에 없음."
+  },
+  "brand_requirements": [
+   "5/24 부처님오신날 공휴일 인건비 1.5배 적용",
+   "5/22 프로모터 사전교육(맥주 시음 담당 2인)",
+   "키링은 비매품, 원산지(중국) 표기 스티커 부착",
+   "토요일 운영시간 11:00~18:00"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "서울 사케 페스티벌 방문객"
+  },
+  "derived": {
+   "duration": {
+    "days": 2,
+    "weekend_share": 1.0,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 11.7,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 0,
+    "holiday_until": 0,
+    "holiday_block_in": 2,
+    "nat_event_gap": 11,
+    "nat_event": "지방선거",
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  },
+  "demand_signals": {
+   "waiting_reported": true,
+   "sold_out": true,
+   "source": "역검색 외부 보도(2026-07-27)"
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 22.3
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 본문 텍스트가 추출되지 않아 방문객 수·현장 판매 실적 등 실측 성과 지표 확인 불가. 팝가 미연동으로 방문 데이터 없음. 견적서상 프로모터 운영 규모는 슈퍼바이저 1인+프로모터 6인(3인 상주 2교대) 기준.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식액 22.3 ≈ 계약총액 22.3 (±10%)",
+   "contract_total_mm": 22.3,
+   "last_recognition_period": "2026-05"
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "16aEzX8Toobt4yB2yYeoLhadQWCPjPI2_",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/16aEzX8Toobt4yB2yYeoLhadQWCPjPI2_/view",
+   "title": "Sweetspot_에비스맥주_서울사케페스티벌2026_결과보고서 0529.pdf"
+  },
+  {
+   "doc_id": "1FGFYWmhgOxIs_uPcYSo8SStCL_yF4H8e",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1FGFYWmhgOxIs_uPcYSo8SStCL_yF4H8e/view",
+   "title": "Sweetspot_에비스맥주_서울사케페스티벌2026_제안서 0519.pdf"
+  },
+  {
+   "doc_id": "1L6L_yjN8rnIr-FIc567VIh86POwc7rgk",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1L6L_yjN8rnIr-FIc567VIh86POwc7rgk/view",
+   "title": "계약서 없음.txt"
+  },
+  {
+   "doc_id": "1cSBLFwFGGxzJjm47RJLCLxs2bE_-5xBT",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1cSBLFwFGGxzJjm47RJLCLxs2bE_-5xBT/view",
+   "title": "내부용_Sweetspot_에비스맥주 서울 사케페스티벌 견적서_0526 행사종료후 최종.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: Sweetspot_에비스맥주_서울사케페스티벌2026_제, 내부용_Sweetspot_에비스맥주 서울 사케페스티벌 , Sweetspot_에비스맥주_서울사케페스티벌2026_결. 미확실: 결과보고서 본문 텍스트 미추출 → 방문객 수/현장 판매(POS) 실적 전무; 제안서 본문 대부분 미추출(운영시간 정보만 확인); 발주 법인명·계약 담당자(견적 수신은 벡터컴 손민재 과장, 실제 발주처 법인 불명확); 부스 면적(평수) 미확인; 수수료 분할 지급 조건·RS 조건 미기재; 세텍 상세 주소/구 정보 미확인 | 외부 라벨 역검색(2026-07-27): 수요신호 적재"
+ }
+}

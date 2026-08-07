@@ -1,0 +1,123 @@
+{
+ "record_id": "RTPU2450",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:퍼블릭에이아이",
+  "space_id": "unresolved:미상",
+  "client_party_id": null,
+  "brand_key": "퍼블릭에이아이",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "문서 내용이 제공되지 않아 컨셉을 확인할 수 없음. 프로젝트명 '퍼블릭에이아이 상품대납'만 확인됨.",
+  "brand_name": "퍼블릭에이아이",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-11-06",
+   "to": "2024-11-18",
+   "days": 13
+  },
+  "season": "autumn",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 13,
+    "weekend_share": 0.31,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 49,
+    "holiday_until": 80,
+    "holiday_block_in": 0,
+    "nat_event_gap": 8,
+    "nat_event": "수능",
+    "doc_lag_days": 1,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 15.4
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-11, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2024-11"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1R6cDyk4zz7ballAXtCRP9421BwCHQYi_",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1R6cDyk4zz7ballAXtCRP9421BwCHQYi_/view",
+   "title": "견적서_내용없음.txt"
+  },
+  {
+   "doc_id": "1pCu_IPQ7ZHnoebfNOrMxHC7mdkEGrLYR",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1pCu_IPQ7ZHnoebfNOrMxHC7mdkEGrLYR/view",
+   "title": "제안서_내용없음.txt"
+  },
+  {
+   "doc_id": "1pQ-9S5gfzZmOKB8vXx6Cnp6bfLBe2Fwp",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1pQ-9S5gfzZmOKB8vXx6Cnp6bfLBe2Fwp/view",
+   "title": "결과보고서_내용없음.txt"
+  },
+  {
+   "doc_id": "1wjHTjqauDEC9T3li9xLDx5yFyYnfTNdT",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1wjHTjqauDEC9T3li9xLDx5yFyYnfTNdT/view",
+   "title": "RTPU2450_퍼블릭에이아이 상품대납_계약서_241105_revised.doc"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서/기획서/견적서/결과보고서) 전체 미제공; 클라이언트명; 입지 정보; 면적; 수수료구조; 컨셉 및 체험요소; 방문객 및 매출 실측 데이터; 예상 방문객수"
+ }
+}

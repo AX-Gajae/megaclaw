@@ -1,0 +1,125 @@
+{
+ "record_id": "RIPU2512",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:무신사_어스",
+  "space_id": "unresolved:쉘코퍼레이션_오프라인점포",
+  "client_party_id": null,
+  "brand_key": "무신사어스",
+  "space_key": "쉘코퍼레이션"
+ },
+ "intervention": {
+  "concept": "무신사 어스와 쉘코퍼레이션의 오프라인 점포 VMD 프로젝트로 추정된다. 상세 기획 문서가 제공되지 않아 컨셉을 특정할 수 없다.",
+  "brand_name": "무신사 어스",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [
+   "VMD"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-09-09",
+   "to": "2025-09-16",
+   "days": 8
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 8,
+    "weekend_share": 0.25,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 23,
+    "holiday_until": 24,
+    "holiday_block_in": 0,
+    "nat_event_gap": 52,
+    "nat_event": null,
+    "doc_lag_days": 6,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 13.6
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-09, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-10"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "12CdkiCoMQpGrD-MfgMj86o6n1OEPVQ03",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/12CdkiCoMQpGrD-MfgMj86o6n1OEPVQ03/view",
+   "title": "2025 무신사x쉘콥 점포컨설팅 vmd견적서.pdf"
+  },
+  {
+   "doc_id": "1K4361KXC4fwLWyckUP6mekfNQ2v4Qs5X",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1K4361KXC4fwLWyckUP6mekfNQ2v4Qs5X/view",
+   "title": "1. 용역도급표준계약서(스위트스팟).pdf"
+  },
+  {
+   "doc_id": "1SMvfjtEM58hy0UesNLK-_mxjBA25A_ff",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1SMvfjtEM58hy0UesNLK-_mxjBA25A_ff/view",
+   "title": "[SWEETSPOT]무신사어스x쉘 코퍼레이션_팝업 행사 제안서(운영안)_250903.pdf"
+  },
+  {
+   "doc_id": "1h3Gn4ySvSrKtWVBwJ_6F6ovSEODATOz6",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1h3Gn4ySvSrKtWVBwJ_6F6ovSEODATOz6/view",
+   "title": "[SWEETSPOT]무신사어스x쉘 코퍼레이션 결과보고서_09.22.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 전체 미제공; 입지 정보 없음; 면적 없음; 수수료 구조 없음; 방문객 및 매출 실측 데이터 없음; 컨셉/체험요소/프로모션 상세 없음; client_name 미확정"
+ }
+}

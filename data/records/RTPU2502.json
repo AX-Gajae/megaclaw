@@ -1,0 +1,141 @@
+{
+ "record_id": "RTPU2502",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:먼작귀_대원미디어",
+  "space_id": "unresolved:부산_먼작귀_팝업",
+  "client_party_id": "unresolved:대원미디어",
+  "brand_key": "치이카와",
+  "space_key": "부산"
+ },
+ "intervention": {
+  "concept": "부산에서 진행된 먼작귀(치이카와) 캐릭터 팝업스토어. 키비주얼 아트워크 기반 공간 연출과 상품 판매(평매·매대·VMD 조닝) 중심으로 구성.",
+  "brand_name": "먼작귀",
+  "experience_elements": [
+   "키비주얼 연출",
+   "포토/래핑 공간",
+   "상품 판매존"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "가벽 시공",
+   "벽면 래핑",
+   "포맥스 제작·부착",
+   "VMD 조닝",
+   "평매 및 매대 구성"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "부산",
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-01-17",
+   "to": "2025-01-26",
+   "days": 10
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "총계 105,000,000원 (VAT 10% 별도, 만원단위 이하 절사). 소계(Sub Total 1~4) 104,220,000원 + 일반관리비+대행수수료(소계의 10%, 정가항목/추가예산 제외) 9,722,000원 - 로스액 2,915,271원 - 네고금액 6,026,729원. 세부: 제작/대여 34,000,000, 인력(설치/철수·운영·검수) 50,220,000, 아트워크 2,000,000, 물류 서울→부산 5,000,000, 제경비 5,000,000, 물류 잔고 8,000,000. 스태프 단가 235,000원(12시간 기준), 슈퍼바이저 250,000원, 식비 20,000원."
+  },
+  "brand_requirements": [
+   "서울 먼작귀 잔여 재고 보관 후 부산으로 배송"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 3,
+    "months_since_last": 1.2,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 121,
+    "holiday_until": 8,
+    "holiday_block_in": 2,
+    "nat_event_gap": 64,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 233773.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2024-12-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 105.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 원문에 판독 가능한 일일 방문/매출 표가 없음(차트 축 수치만 존재).). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 105.0 ≈ 계약총액 105.0",
+   "contract_total_mm": 105.0,
+   "last_recognition_period": "2025-01"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "1QmJoCkGb4ORit17lEZ0vz1CQWwRt3cmE",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1QmJoCkGb4ORit17lEZ0vz1CQWwRt3cmE/view",
+   "title": "먼작귀부산_v5_1209_최종_제안서.pptx"
+  },
+  {
+   "doc_id": "1R3m3JZnOmJZnXydeDp4l4UmXcKJzkiOF",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1R3m3JZnOmJZnXydeDp4l4UmXcKJzkiOF/view",
+   "title": "계약서 없음.txt"
+  },
+  {
+   "doc_id": "1RLJYmO5VoH1Fx9iT3RZiWmPk4VssUpNE",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1RLJYmO5VoH1Fx9iT3RZiWmPk4VssUpNE/view",
+   "title": "SWEETSPOT_대원미디어_먼작귀부산팝업견적서_0207_revised.pdf"
+  },
+  {
+   "doc_id": "1VY7eHdx6RPfPQwgVKeEOCdPNKDmDBfL8",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1VY7eHdx6RPfPQwgVKeEOCdPNKDmDBfL8/view",
+   "title": "부산 먼작귀 결과보고서_0304.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 2건: SWEETSPOT_대원미디어_먼작귀부산팝업견적서_020, 부산 먼작귀 결과보고서_0304.pdf. 미확실: 결과보고서 실측 방문자/매출 데이터 없음; venue_name·venue_type·district 미상; 면적(평) 미상; 방문 집계 방식 미상; 예상 방문자수 미상; fee_structure는 견적 총액이며 실제 계약 분할(선금/중도금/잔금) 정보 없음"
+ }
+}

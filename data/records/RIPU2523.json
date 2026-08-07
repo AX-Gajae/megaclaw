@@ -1,0 +1,235 @@
+{
+ "record_id": "RIPU2523",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:MUSINSA_TOPS",
+  "space_id": "unresolved:MUSINSA_TOPS_Connect_Shop",
+  "client_party_id": null,
+  "brand_key": "무신사",
+  "space_key": "무신사탑스_커넥트샵"
+ },
+ "intervention": {
+  "concept": "무신사 입점 브랜드(최소 3개)의 오프라인 팝업스토어. 온라인 소상공인 브랜드의 오프라인 소비자 접점 확대를 위한 통합형(한 장소 내 다른 공간 동시 운영) 또는 별도형(같은 장소 다른 일자 운영) 팝업 기획. 브랜드 체험·전시·판매와 SNS 바이럴을 결합한 브랜드 경험 강화가 목적.",
+  "brand_name": "MUSINSA",
+  "experience_elements": [
+   "브랜드존(제품 전시·체험·구매)",
+   "이벤트존(현장 체험 콘텐츠·증정 이벤트)",
+   "사용 체험존",
+   "라이브 커머스",
+   "쇼룸 AI 스크린(사이즈·착용 모습 확인)",
+   "제품별 할인 QR코드 태그",
+   "브랜드 체험 완료 도장(스탬프) 증정",
+   "WHO'S NEXT? 브랜드 맞추기 이벤트"
+  ],
+  "promotions": [
+   "사전 프로모션",
+   "현장 홍보",
+   "팝업 특별 할인 쿠폰/QR 할인",
+   "SNS 공유 이벤트",
+   "투표(룩북) 이벤트",
+   "브랜드 맞추기 정답자 선물 증정",
+   "3개 브랜드 모두 방문 시 추가 선물 증정"
+  ],
+  "staging_tags": [
+   "통합형 팝업",
+   "별도형 팝업",
+   "브랜드존",
+   "이벤트존",
+   "스토리텔링 공간",
+   "이동집기 활용 통합"
+  ],
+  "attributes": {
+   "host_daily_traffic": null,
+   "plan_visitors_per_day": null,
+   "capacity_per_session": null,
+   "giveaway_qty": null,
+   "area_sqm": 33.06,
+   "planned_operating_days": null,
+   "throughput_units": null,
+   "unit_minutes": null,
+   "operating_hours_per_day": null,
+   "staff_count": null,
+   "experience_density": 3,
+   "goods_scale": 3,
+   "photo_zones": 2,
+   "collab_strength": 3,
+   "ip_awareness": 4,
+   "target_breadth": 2,
+   "entry_friction": 0,
+   "media_push": 3,
+   "season_fit": 3,
+   "venue_prominence": 2
+  },
+  "attr_meta": {
+   "evidence": "목록의 유일 문서 [계약서] Google Doc(1L1szsY…)는 본문 공란(fileSize 1KB, contentSnippet 빈 문자열)으로 추출 불가. area_sqm은 레코드 면적 10평×3.3058=33.06㎡. 운영일수 근거 문서 없어 null(period 3일 미복사).",
+   "confidence": "low",
+   "range_dropped": null,
+   "tagger": "T1c (2026-07-28) 사전문서 층화선별"
+  }
+ },
+ "conditions": {
+  "capacity": {
+   "access_type": "open",
+   "total_capacity": null,
+   "detail": ""
+  },
+  "location": {
+   "city": "서울",
+   "district": "성동구",
+   "venue_name": "피치스 도원(스위트스팟 스테이지 성수) 또는 STORY-KAAN",
+   "venue_type": "팝업 전용 공간",
+   "foot_traffic_context": "유동인구가 많은 쇼핑 중심 지역(성수동), 성동구는 팝업 장소 비중 28.53%"
+  },
+  "area_pyeong": 10,
+  "period": {
+   "from": "2025-12-12",
+   "to": "2025-12-14",
+   "days": 3
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "통합형(가안): 총합 129,560,000원, 최종 비용 120,000,000원 (공간임대료 30,000,000, 인테리어 66,800,000, 인건비 16,860,000 등). 별도형(나안): 총합 124,820,000원, 최종 비용 120,000,000원 (공간임대료 22,500,000, 인테리어 69,000,000, 인건비 10,620,000 등). VAT 포함 여부 및 분할(선금/중도금/잔금) 명시 없음."
+  },
+  "brand_requirements": [
+   "무신사 내 입점 브랜드(패션 및 뷰티 계열) 최소 3개 참여",
+   "브랜드별 고유 스토리텔링 유지",
+   "무신사 어플/QR코드 연계 판매 유도"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 3,
+    "weekend_share": 0.67,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 64,
+    "holiday_until": 64,
+    "holiday_block_in": 0,
+    "nat_event_gap": 29,
+    "nat_event": null,
+    "doc_lag_days": 308,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 312093.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2025-11-01"
+   }
+  },
+  "venue_knowledge": {
+   "venue_daily_footfall": null,
+   "popup_zone_pass_rate": 0.8,
+   "host_traffic_est": null,
+   "venue_scale_tier": 5,
+   "confidence": "low",
+   "source": "T1b 세계지식 태거(2026-07-28) — 장소만 질의, 팝업 정보 미제공"
+  }
+ },
+ "outcome": {
+  "daily": [
+   {
+    "date": "2025-12-12",
+    "visitors": 1189,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-12-13",
+    "visitors": 1289,
+    "sales_krw": null
+   },
+   {
+    "date": "2025-12-14",
+    "visitors": 1643,
+    "sales_krw": null
+   }
+  ],
+  "totals": {
+   "visitors": 4121,
+   "sales_krw": null,
+   "rev_mm_recognized": 162.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": "방문객 (집계 정의 없음)",
+  "plan_visitors_expected": 4500,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-12, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-12"
+  },
+  "label_trust": {
+   "grade": "A",
+   "flags": [],
+   "why": "일별 표가 기간의 100% 커버"
+  },
+  "label_scope": {
+   "label_from": "2025-12-12",
+   "label_to": "2025-12-14",
+   "label_active_days": 3,
+   "label_span_days": 3,
+   "label_contiguous": true,
+   "daily_sum": 4121,
+   "sum_agrees": true,
+   "source": "daily 일자에서 유도 — 합이 총계와 일치"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "11KSIvW080upTdvhzq495K10dntgTO1FO",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/11KSIvW080upTdvhzq495K10dntgTO1FO/view",
+   "title": "[스위트스팟] MUSINSA TOPS CONNECT 결과보고서.pdf"
+  },
+  {
+   "doc_id": "1Cn9hQO9fAMqp5FfYNLaU-WzRyCccurdT",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Cn9hQO9fAMqp5FfYNLaU-WzRyCccurdT/view",
+   "title": "MUSINSA TOPS CONNECT_견적서(최종)_251218.pdf"
+  },
+  {
+   "doc_id": "1L1szsYH4YfRCULASfR8FlCopr2OK69vPsmaCKKNhr6k",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1L1szsYH4YfRCULASfR8FlCopr2OK69vPsmaCKKNhr6k/view",
+   "title": "계약서"
+  },
+  {
+   "doc_id": "1TsMt-Maj0R-Z0R57oM8GQUBYpUn_NjHU",
+   "kind": "기타",
+   "uri": "https://drive.google.com/file/d/1TsMt-Maj0R-Z0R57oM8GQUBYpUn_NjHU/view",
+   "title": "[스위트스팟] 온라인 브랜드 소상공인 육성사업 운영계획안_250207.pdf"
+  },
+  {
+   "doc_id": "1tl18IQ1YlpS1WVkl9z_yOwnoxJ9TjDnF",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1tl18IQ1YlpS1WVkl9z_yOwnoxJ9TjDnF/view",
+   "title": "[스위트스팟] MUSINSA TOPS CONNECT 결과보고서.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서(계약서·기획서·견적서·결과보고서) 미제공; client_name 미확인; venue 및 입지 정보 미확인; 면적·수수료구조·요구사항 미확인; 컨셉·체험요소·프로모션·연출태그 미확인; 방문자수·매출 실측 데이터 미확인; 예상 방문객 수 미확인 | 라벨발굴(2026-07-24): 결과보고서 재추출 — OVERVIEW 참가자 현황 - 일자별 방문객 표 | 자극 보강(2026-07-24): 운영안·기획안·계약서 재인제스트로 intervention/conditions 교체 (578→1467자, capacity=open). outcome·entities·period 보존"
+ }
+}

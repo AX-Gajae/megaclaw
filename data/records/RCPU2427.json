@@ -1,0 +1,146 @@
+{
+ "record_id": "RCPU2427",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:던전밥",
+  "space_id": "unresolved:더현대신촌_B2_현대백화점신촌점",
+  "client_party_id": "unresolved:소미미디어",
+  "brand_key": "던전밥",
+  "space_key": "현대백화점_신촌점"
+ },
+ "intervention": {
+  "concept": "만화·애니메이션 '던전밥' IP 기반 팝업스토어로, 굿즈 판매를 중심으로 한 IP 팬 대상 리테일 행사. 더현대 대구에서 사용한 3D 전시 소품 및 그래픽(등신대)을 재사용하여 신촌점에서 진행.",
+  "brand_name": "던전밥",
+  "experience_elements": [
+   "3D 전시 소품",
+   "VMD 연출물(등신대 등 그래픽)",
+   "상품 매대/진열"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "IP팝업",
+   "굿즈판매",
+   "애니메이션",
+   "더현대신촌B2"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": null,
+   "venue_name": "현대백화점 신촌점(더현대 신촌) B2",
+   "venue_type": "백화점 팝업 공간",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-11-15",
+   "to": "2024-11-28",
+   "days": 14
+  },
+  "season": "가을",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "위탁운영 견적(VAT 제외). 계약 첨부 별첨1 기준 총계 78,500,000원(정가항목 소계 74,532,000원 + 대행수수료 4,000,000원, 만원단위 절삭). 별도 견적서(1023)는 79,500,000원(대행수수료 5,000,000원). 구성: 기획료 5,000,000원, 인테리어 40,000,000원, 판매인력 22,332,000원, 기타 7,200,000원. 지급: 갑이 2024-11-15까지 운영비 50% 선지급, 행사 종료 익월 2024-12-27까지 잔여 50% 지급. LOSS 조항: 총매출 기준 3% 초과 발생 시 제품 제조원가(판매가의 50%)의 100% 공제, 3% 이하는 통상LOSS로 갑 부담. VMD시공·집기·인건비·상품제작대금은 갑 부담. | 계약서 재독해(2026-07-27): 총액 일치 확인(78.5M)"
+  },
+  "brand_requirements": [
+   "행사 운영 시 항시 갑에게 사전 보고 및 허가",
+   "상품을 갑과 협의된 가격으로 판매",
+   "판매 관련 데이터 및 장부 비치·보관, 갑 요구 시 공개",
+   "영업 종료 후 5일 이내 최종 재고 수량 및 상품 반납",
+   "행사주최자배상책임보험 가입(의무)",
+   "점휴(11월18일) 없이 진행",
+   "운영시간 10:30-22:00, 하루 출근 8명(오픈조/마감조 별도)"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "더현대 신촌 B2"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 58,
+    "holiday_until": 71,
+    "holiday_block_in": 0,
+    "nat_event_gap": 1,
+    "nat_event": "수능",
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 10842369.0,
+    "pnl_pre_accounts": 7,
+    "pnl_pre_months": 3,
+    "pnl_pre_first": "2024-08-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 78.5
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서가 제공되지 않아 실측 방문자 및 매출 데이터 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식 78.5 ≈ 계약총액 78.5",
+   "contract_total_mm": 78.5,
+   "last_recognition_period": "2024-12"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "19BwPWWu-YVBw5cX71PGmlVz2pyQ9Hg64",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/19BwPWWu-YVBw5cX71PGmlVz2pyQ9Hg64/view",
+   "title": "(주)소미미디어 팝업스토어 위탁운영계약서_1104_소미미디어 수정 건 (1).pdf"
+  },
+  {
+   "doc_id": "1DAZXCyFIiZi5NIOKbeD9MZh9as7YMySJ",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1DAZXCyFIiZi5NIOKbeD9MZh9as7YMySJ/view",
+   "title": "신촌B2_던전밥_운영견적(수정).xlsx"
+  },
+  {
+   "doc_id": "1EjJbZbVHFrcZl1m5Fpm1r7pxDnsJdBmc",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1EjJbZbVHFrcZl1m5Fpm1r7pxDnsJdBmc/view",
+   "title": "~$신촌B2_던전밥_운영견적(수정).xlsx"
+  },
+  {
+   "doc_id": "1Ek8FVzwLCKnfnwEceJGtEPPwHhi9MZcC",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1Ek8FVzwLCKnfnwEceJGtEPPwHhi9MZcC/view",
+   "title": "신촌B2_던전밥_운영견적서_1023.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 3건: (주)소미미디어 팝업스토어 위탁운영계약서_1104_소미, 신촌B2_던전밥_운영견적(수정).xlsx, 신촌B2_던전밥_운영견적서_1023.pdf. 미확실: 결과보고서 부재로 outcome(일별/총 방문자, POS 매출) 전무; 면적(평) 정보 없음; 기획서/제안서 부재로 컨셉·체험요소는 견적서 항목에서 추정; 견적서 2종(78,500,000 / 79,500,000)의 대행수수료 상이 — 최종 확정액 불명확; 첨부 xlsx 견적은 초기 7월/8월 일정(더현서B2 7일간, 8/02~15) 내용이 혼재되어 본 11월 행사와 조건 상이; client_name/district 등 세부 입지 미확정 | fee 계약서화(2026-07-27)"
+ }
+}

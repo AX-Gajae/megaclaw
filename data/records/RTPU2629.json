@@ -1,0 +1,136 @@
+{
+ "record_id": "RTPU2629",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:웨이든_WEYDEN",
+  "space_id": "unresolved:스테이지X_성수52",
+  "client_party_id": "unresolved:웨이든_WEYDEN",
+  "brand_key": "웨이든",
+  "space_key": "성수52"
+ },
+ "intervention": {
+  "concept": "웨이든과 무하마드 알리 IP를 활용한 콜라보 팝업스토어(리테일테인먼트). 성수 스테이지X 성수52에서 진행된 브랜드 콜라보 팝업. 외부 노출 불가로 포트폴리오 미공개 프로젝트.",
+  "brand_name": "웨이든(WEYDEN)",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": [
+   "무하마드_알리_콜라보",
+   "리테일테인먼트"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "성수",
+   "venue_name": "스테이지X 성수52",
+   "venue_type": "팝업 전용공간(StageX 직영)",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2026-05-01",
+   "to": "2026-05-10",
+   "days": 10
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": "계약서·견적서 미확보. 아마란스 P&L(2026-05 누적): 서비스매출_팝업스토어 50,200,000원, 판관비 39,515,658원, 당기순손실 -10,684,342원. Notion 확정예산 50,000,000원. 수수료율·RS·분할·VAT 정보 없음. 외주비용(판관비): 시공 12,800,000, 물품대여 10,976,000, 제작비 5,600,000, 디자인 3,500,000, 행사출력물 2,493,100, 현장소모품 2,429,825. | 계약서 재독해(2026-07-27): 총액 일치 확인(49.0M)"
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 10,
+    "weekend_share": 0.4,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 2,
+    "months_since_last": 1.7,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 60,
+    "holiday_until": 22,
+    "holiday_block_in": 0,
+    "nat_event_gap": 33,
+    "nat_event": null,
+    "doc_lag_days": 16,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 60,
+    "comp_within_500m_open": 3,
+    "comp_within_1000m_open": 3,
+    "matched_address": "서울 성동구 성수이로 97"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 270936.0,
+    "pnl_pre_accounts": 2,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2026-04-01"
+   }
+  },
+  "demand_signals": {
+   "waiting_reported": null,
+   "sold_out": true,
+   "source": "역검색 외부 보도(2026-07-27)"
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 50.2
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(현장 성과(방문객·POS 매출) 지표 없음. 팝가 spot 연결 미확인. 50,200,000원은 소비자 POS 매출이 아니라 아마란스 서비스매출(계약/정산 매출)이므로 outcome에 미기재.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "인식액 50.2 ≈ 계약총액 50.0 (±10%)",
+   "contract_total_mm": 50.0,
+   "last_recognition_period": "2026-05"
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "12nAn6mdOncgdn7Lyx-YUZ5qXC8IQtqtZ",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/12nAn6mdOncgdn7Lyx-YUZ5qXC8IQtqtZ/view",
+   "title": "결과보고서_없음.txt"
+  },
+  {
+   "doc_id": "1KzUz9bM2EoZGrBDU4l9sGy4ly_OGCQc_",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1KzUz9bM2EoZGrBDU4l9sGy4ly_OGCQc_/view",
+   "title": "[스위트스팟] 웨이든X무하마드알리_성수팝업스토어_계약서_0512(최종).pdf"
+  },
+  {
+   "doc_id": "1U0ojkGBxyai9TuTBhIPCthvEjkyLbeEU",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1U0ojkGBxyai9TuTBhIPCthvEjkyLbeEU/view",
+   "title": "260522_Sweetspot_웨이든_성수팝업_견적서_0522(최종).pdf"
+  },
+  {
+   "doc_id": "1xbLvPhzefBI0CBuktoCbk_I3MKQm5zn0",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1xbLvPhzefBI0CBuktoCbk_I3MKQm5zn0/view",
+   "title": "[Sweetspot] 2026 웨이든 팝업스토어_제안서_260415.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 계약서·기획서·견적서·결과보고서 등 산출물 문서 미확보; 실제 운영일 확정 불가(아마란스 05-01~05-10, Notion POM 05-13~05-17, 콘텐츠 05-14~05-17 상이); 현장 방문객·POS 매출 등 성과지표 없음; 클라 담당자 성명·연락처, 웨이든 법인정보 미상; 면적(평), 입지 유동인구 컨텍스트 미상; 체험요소·프로모션·연출태그 상세 미확보(기획서 부재); 수수료구조·계약총액·분할·RS 조건 불명; 원가 계상/직접비 귀속 방식 불명 | fee 계약서화(2026-07-27) | 외부 라벨 역검색(2026-07-27): 수요신호 적재"
+ }
+}

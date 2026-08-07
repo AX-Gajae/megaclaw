@@ -1,0 +1,111 @@
+{
+ "market_record_id": "MKT-2024-0092",
+ "event_name": "디써티원 '텔레그래프(D:THIRTYONE TELEGRAPH)' 스테이지35 성수 팝업스토어",
+ "brand": "디써티원 D:THIRTYONE (TP)",
+ "ip_or_collab": "뮤직컴플렉스서울 컬래버 굿즈, 모스 코드 콘셉트",
+ "category": "fashion",
+ "intervention": {
+  "concept_description": "아메리칸 캐주얼 브랜드 론칭 팝업. 모스 코드 콘텐츠·엽서 보내기 등 브랜드 아이덴티티 체험 공간",
+  "experience_elements": [
+   "모스 코드 콘텐츠(1층)",
+   "엽서 보내기 이벤트",
+   "스탬프 미션",
+   "LP 카페 컬래버 공간"
+  ],
+  "promotions": [
+   "이벤트 선물"
+  ],
+  "is_free_entry": true,
+  "reservation_required": false
+ },
+ "conditions": {
+  "venue": "스테이지35(STAGE35)",
+  "venue_type": "street_standalone",
+  "neighborhood": "성수동",
+  "city": "서울",
+  "period_from": "2024-12-05",
+  "period_to": "2025-01-12",
+  "area_pyeong": null,
+  "multi_store": false,
+  "derived": {
+   "duration": {
+    "days": 39,
+    "weekend_share": 0.31,
+    "holiday_days": 2
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 22000,
+  "visitors_period_days": 39,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "TP 발표 인용. 일평균 500명 이상",
+  "visitors_source_quote": "일평균 500명 이상이 방문했고, 약 한 달간 누적 방문객 2만2000명을 기록하며 많은 호응을 얻었다.",
+  "visitors_source_url": "https://fashionbiz.co.kr/article/213044",
+  "visitors_source_date": "2025-01-16",
+  "sales_krw": 150000000,
+  "sales_source_quote": "팝업 기간 중 누적 매출액 1억5000만원을 돌파하며 브랜드의 성장 가능성을 입증했으며 국내 고객뿐만 아니라 다수의 해외 관광객들이 방문해 높은 구매율을 기록했다.",
+  "sales_source_url": "https://fashionbiz.co.kr/article/213044",
+  "sales_source_date": "2025-01-16",
+  "demand_signals": {
+   "waiting_time_reported": "이벤트 시간대 중심 입장 1시간가량 웨이팅",
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "특히 이벤트 시간대를 중심으로 팝업스토어에 입장하기 위해 1시간가량 웨이팅이 이어지는 등 국내, 해외 고객 가릴 것 없이 꾸준한 방문이 이어졌다."
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": true,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "기간 2024-12-05~2025-01-12(약 한 달). 성과 보도 2025-01. 후속 더현대 서울 팝업(2025-02 예정)은 수치 미확인. | 병합 레코드: MKT-2024-0017 | [병합:MKT-2024-0017] 방문객·매출 동시 확보 레코드.",
+ "additional_sources": [
+  {
+   "metric": "visitors",
+   "value": 22000,
+   "basis": "organizer_claim",
+   "quote": "일평균 500명 이상이 방문했고, 약 한 달간 누적 방문객 2만2000명을 기록하며 많은 호응을 얻었다.",
+   "url": "https://fashionbiz.co.kr/article/213044",
+   "date": "2025-01-16"
+  },
+  {
+   "metric": "sales",
+   "value": 150000000,
+   "basis": "organizer_claim",
+   "quote": "팝업 기간 중 누적 매출액 1억5000만원을 돌파하며 브랜드의 성장 가능성을 입증했으며 국내 고객뿐만 아니라 다수의 해외 관광객들이 방문해 높은 구매율을 기록했다.",
+   "url": "https://fashionbiz.co.kr/article/213044",
+   "date": "2025-01-16"
+  }
+ ],
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified",
+  "sales": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

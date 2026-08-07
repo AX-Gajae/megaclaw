@@ -1,0 +1,182 @@
+{
+ "record_id": "RCPU2405",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:하리보_HARIBO",
+  "space_id": "unresolved:신세계사이먼_프리미엄아울렛_4개점_시흥_여주_파주_부산",
+  "client_party_id": "unresolved:신세계사이먼",
+  "brand_key": "하리보",
+  "space_key": "multi_신세계사이먼"
+ },
+ "intervention": {
+  "concept": "하리보 블루밍 가든 팝업스토어. 신세계사이먼 프리미엄아울렛 4개점(시흥·여주·파주·부산)에서 봄 정원(온실) 컨셉으로 하리보 젤리 및 굿즈 29 SKU를 판매한 팝업. 룰렛·풍선증정·인형탈·인스탁스 등 체험 이벤트로 집객 및 업셀링 진행.",
+  "brand_name": "하리보(HARIBO)",
+  "experience_elements": [
+   "룰렛 이벤트",
+   "풍선 증정",
+   "마스코트 & 샘플링",
+   "인스탁스 촬영",
+   "인형탈 부스"
+  ],
+  "promotions": [
+   "룰렛: 1만원 이상 구매객 선물 증정(일 250개)",
+   "풍선 증정: 2만원 이상 구매객(일 500개)",
+   "인스탁스 촬영 증정: 방문 고객(일 100명)",
+   "화이트데이 파우치",
+   "리유저블백(판매수량/매출 7,934개/26.9백만)"
+  ],
+  "staging_tags": [
+   "온실하우스",
+   "보이드",
+   "중앙광장",
+   "봄/블루밍 가든"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": "신세계사이먼 프리미엄아울렛 4개점(시흥·여주·파주·부산)",
+   "venue_type": "프리미엄아울렛",
+   "foot_traffic_context": "아울렛 중앙광장/에스컬레이터 인근, 주차장→광장 동선"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-02-29",
+   "to": "2024-03-31",
+   "days": 32
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "수도권 1개점 운영 기준 점당 4천만원→점당 4500만원(VAT 10% 별도). 대행수수료는 소계의 10%(정가 항목 제외). 상품 출고비용 팔레트 1개당 15,000원, 상품보관비 팔레트당 600원/일(맥스). 4개점 합산 견적."
+  },
+  "brand_requirements": [
+   "팝업 운영시간 10:00~19:00",
+   "금~일/공휴일 운영, 스태프 11시간(1시간 휴게) 근무",
+   "신세계 POS 개별 바코드 등록 판매·정산",
+   "하리보→본사물류(스위트스팟)→4개지점 주단위 출고(10회, 1회 200박스)",
+   "점별 총 구인인원 8명(리빙 외부인력 2명 포함 총 10명)"
+  ],
+  "scale": {
+   "store_count": 4,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "신세계사이먼 프리미엄아울렛 4개점 중앙광장/에스컬레이터 인근, 주차장→광장 동선"
+  },
+  "derived": {
+   "duration": {
+    "days": 32,
+    "weekend_share": 0.31,
+    "holiday_days": 1
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 17,
+    "holiday_until": 1,
+    "holiday_block_in": 3,
+    "nat_event_gap": 41,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": 460120140,
+   "rev_mm_recognized": 23.3
+  },
+  "counting_method": "purchase",
+  "counting_basis": "결과보고서 매출표는 2024년 4개점(시흥·여주·파주·부산) 주차별 소비자 판매 매출(신세계 POS) 합계 460,120,140원. 방문객 수 집계 없음. 24년 평균 객단가 4.4천원 언급.",
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(방문자 실측 수치 없음. 매출표는 주차별 집계로 일자별 데이터 없음. 2023년 대비 신장률 30.4%(작년 320,058,040원). 판매량 베스트: 해피스프링 80g 5,619개, 메가룰렛 사우어 5,217개, 메가룰렛 5,200개.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-03, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2024-07"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "10ctW74o5pLuFDCrzvBCztQWkq-FjzO1f",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/10ctW74o5pLuFDCrzvBCztQWkq-FjzO1f/view",
+   "title": "신세계사이먼 하리보 팝업스토어 운영견적 초안(스위트스팟_24.02.05).xlsx"
+  },
+  {
+   "doc_id": "18Qml3zwaaWZFS3NXZ3nGQvwrlOc8A5JG",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/18Qml3zwaaWZFS3NXZ3nGQvwrlOc8A5JG/view",
+   "title": "신세계사이먼 하리보 팝업스토어 운영견적 수정(최종).xlsx"
+  },
+  {
+   "doc_id": "1HJg98VjonGy_7_9jkL_aGKVPqQAzzdxf",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1HJg98VjonGy_7_9jkL_aGKVPqQAzzdxf/view",
+   "title": "[스위트스팟] 신세계사이먼 하리보 팝업스토어 결과보고서.pptx"
+  },
+  {
+   "doc_id": "1Jn0C33FKHprfXvgTD907q6F5S8MGp52M",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Jn0C33FKHprfXvgTD907q6F5S8MGp52M/view",
+   "title": "Thumbs.db"
+  },
+  {
+   "doc_id": "1LK8UhGAsKT49PIIuwvjVd7uY1_0H5EEU",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1LK8UhGAsKT49PIIuwvjVd7uY1_0H5EEU/view",
+   "title": "삼경에프에스 통장사본(기업).png"
+  },
+  {
+   "doc_id": "1RFmxAkXSO9BLXIKXzsQMGq9gaW9PaDQR",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1RFmxAkXSO9BLXIKXzsQMGq9gaW9PaDQR/view",
+   "title": "신세계사이먼 하리보 팝업스토어 운영견적서및계약서 수정(최종).xlsx"
+  },
+  {
+   "doc_id": "1We_yHm0a40zQYnz51i8sQyq72lmScl0P",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1We_yHm0a40zQYnz51i8sQyq72lmScl0P/view",
+   "title": "[스위트스팟] 신세계사이먼 하리보 팝업스토어 1차 결과보고서 (2).pdf"
+  },
+  {
+   "doc_id": "1XynW4hfOmjGr0CMHUoFwUOfAz6_i0RcX",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1XynW4hfOmjGr0CMHUoFwUOfAz6_i0RcX/view",
+   "title": "[스위트스팟] 신세계사이먼 하리보 팝업스토어 결과보고서.pptx"
+  },
+  {
+   "doc_id": "1nKKLGSInJ4h-l7UBSglX43iihCrCqznL",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1nKKLGSInJ4h-l7UBSglX43iihCrCqznL/view",
+   "title": "삼경에프에스 - 사업자등록증.pdf"
+  },
+  {
+   "doc_id": "1sKRFPxpaE3ZZi_IGK7bzzojS7viwCImO",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1sKRFPxpaE3ZZi_IGK7bzzojS7viwCImO/view",
+   "title": "신세계사이먼 하리보 팝업스토어 운영견적 수정.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 4건: 신세계사이먼 하리보 팝업스토어 운영견적 수정(최종).x, 신세계사이먼 하리보 팝업스토어 운영견적서및계약서 수정(, [스위트스팟] 신세계사이먼 하리보 팝업스토어 1차 결과, [스위트스팟] 신세계사이먼 하리보 팝업스토어 결과보고서. 미확실: 방문객 수/집계 방식 문서에 없음; 일자별 방문·매출 데이터 없음(주차별만 존재); 면적(평) 명시 없음(부스 5x6m, 12x4m, 10x4m 언급만); 기획 예상 방문자 수 없음; 계약 총액 정확한 확정치 불명확(점당 4천만~4500만원 범위); 1차 결과보고서 기간(2/29-3/31)과 프로젝트 운영종료(4/28) 불일치"
+ }
+}

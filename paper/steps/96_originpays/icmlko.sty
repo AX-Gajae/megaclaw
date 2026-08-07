@@ -1,0 +1,147 @@
+% icmlko.sty — ICML 투고 규격을 한글 조판에 맞춘 스타일
+%
+% ICML 2024 형식을 따른다: letter 용지, 2단, 단폭 3.25in, 단간격 0.25in,
+% 본문 10pt/11pt, 제목 14pt 볼드, 전폭 초록.
+% 한글 본문은 나눔명조(세리프)를, 제목·표제는 나눔고딕(산세리프)을 쓴다.
+% ICML의 Times/Helvetica 대비를 한글에 옮긴 것이다.
+%
+% 수식·숫자는 라틴 폰트를 그대로 쓴다 — 한글 폰트의 숫자 자간이 표에서 어긋난다.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{icmlko}[2026/07/28 ICML-style Korean paper]
+
+\RequirePackage[letterpaper,
+  top=1.0in, left=0.875in, right=0.875in, bottom=1.125in,
+  columnsep=0.25in]{geometry}
+\RequirePackage{fontspec}
+\RequirePackage{kotex}
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{graphicx}
+\RequirePackage{booktabs}
+\RequirePackage{caption}
+\RequirePackage{multirow}
+\RequirePackage{array}
+\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage{mdframed}
+\RequirePackage{enumitem}
+\RequirePackage[colorlinks=true,linkcolor=MidnightBlue,citecolor=MidnightBlue,
+                urlcolor=MidnightBlue,breaklinks=true]{hyperref}
+
+% ── 폰트 ───────────────────────────────────────────────────────────────
+\setmainfont{Nanum Myeongjo}[Ligatures=TeX]
+\setsansfont{Nanum Gothic}[Ligatures=TeX]
+\setmonofont{Menlo}[Scale=0.86]
+\setmainhangulfont{Nanum Myeongjo}
+\setsanshangulfont{Nanum Gothic}
+
+% ── 본문 조판 ───────────────────────────────────────────────────────────
+\renewcommand{\normalsize}{\fontsize{10}{11.4}\selectfont}
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0pt}
+\linespread{1.0}
+\setlength{\columnsep}{0.25in}
+\sloppy
+\clubpenalty=8000
+\widowpenalty=8000
+
+% ── 표제 ───────────────────────────────────────────────────────────────
+\RequirePackage{titlesec}
+\titleformat{\section}{\titlefont\fontsize{11.5}{13.5}\bfseries}{\thesection.}{0.5em}{}
+\titlespacing*{\section}{0pt}{1.1em}{0.5em}
+\titleformat{\subsection}{\titlefont\fontsize{10.5}{12.5}\bfseries}{\thesubsection}{0.5em}{}
+\titlespacing*{\subsection}{0pt}{0.8em}{0.35em}
+\titleformat{\paragraph}[runin]{\titlefont\bfseries\normalsize}{}{0pt}{}[.]
+\titlespacing*{\paragraph}{0pt}{0.5em}{0.5em}
+
+% ── 캡션 ───────────────────────────────────────────────────────────────
+% 캡션도 본문과 같은 명조를 쓴다. 산세리프 캡션은 본문과 이질적으로 보인다.
+\captionsetup{font=footnotesize,labelfont=bf,skip=5pt,
+              justification=raggedright,singlelinecheck=false}
+\captionsetup[table]{position=top}
+
+% ── 제목 블록 ──────────────────────────────────────────────────────────
+% 연구 노트 시리즈이므로 매 편이 같은 골격을 갖는다:
+%   시리즈명 · 스텝 번호  /  제목  /  부제  /  소속 · 날짜
+% 스텝마다 조판이 달라지면 한 편씩은 읽혀도 시리즈로는 읽히지 않는다.
+\RequirePackage{fancyhdr}
+\RequirePackage{lastpage}
+\RequirePackage{datetime2}
+\DTMnewdatestyle{krdate}{%
+  \renewcommand{\DTMdisplaydate}[4]{##1년 ##2월 ##3일}%
+  \renewcommand{\DTMDisplaydate}{\DTMdisplaydate}}
+\DTMsetdatestyle{krdate}
+
+\newcommand{\seriesname}{}
+\newcommand{\stepno}{}
+\newcommand{\papertitle}{}
+
+% 페이지 스타일은 패키지 로드 시점에 확정한다. \twocolumn[] 안에서 \pagestyle을
+% 부르면 1쪽에는 article 기본 headings가 이미 적용된 뒤라 절 제목이 새어 나온다.
+\fancypagestyle{icmlnote}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{0.3pt}%
+  \fancyhead[L]{\titlefont\fontsize{7.8}{9}\selectfont\color{black!50}
+                \seriesname\ · 노트 \stepno}%
+  \fancyhead[R]{\titlefont\fontsize{7.8}{9}\selectfont\color{black!50}\papertitle}%
+  \fancyfoot[C]{\titlefont\fontsize{7.8}{9}\selectfont\color{black!50}
+                \thepage\,/\,\pageref{LastPage}}%
+}
+\AtBeginDocument{\pagestyle{icmlnote}%
+  \renewcommand{\sectionmark}[1]{}\renewcommand{\subsectionmark}[1]{}}
+
+% 제목·부제는 한국 학술논문 관례를 따른다 — 굵은 명조 제목, 앞뒤 대시로 감싼 부제.
+% 산세리프 제목은 슬라이드 인상을 주므로 쓰지 않는다.
+\newfontfamily\titlefont{Nanum Myeongjo}[UprightFont=*, BoldFont={NanumMyeongjoExtraBold}]
+
+% 사용법 — 메타는 \begin{document} 앞에서 선언하고, 제목 블록은 \twocolumn[] 안에서 그린다.
+%   \icmlmeta{IP 파운데이션 월드모델}{3}{제목}{부제}
+%   \begin{document}\twocolumn[\icmlheader ...]
+% 메타를 제목 블록과 함께 두면 1쪽 러닝헤더가 이미 출력된 뒤라 값이 비어 나온다.
+\newcommand{\icmlmeta}[4]{%
+  \gdef\seriesname{#1}\gdef\stepno{#2}\gdef\papertitle{#3}\gdef\papersub{#4}}
+\newcommand{\papersub}{}
+
+\newcommand{\icmlheader}{%
+  \begingroup
+  \begin{center}
+    {\titlefont\fontsize{8.6}{10}\selectfont\color{black!50}%
+     \seriesname\ \ 연구 노트 \stepno}\\[0.7em]
+    {\titlefont\fontsize{15.5}{19}\bfseries \papertitle}\\[0.45em]
+    {\titlefont\fontsize{10.8}{13.5}\selectfont \papersub}\\[1.0em]
+    {\titlefont\fontsize{10}{12}\selectfont Sweetspot 월드모델 연구}\\[0.2em]
+    {\titlefont\fontsize{8.6}{10}\selectfont\color{black!50}\DTMtoday}
+  \end{center}
+  \vspace{0.55em}\hrule height 0.4pt\vspace{0.9em}
+  \endgroup\thispagestyle{icmlnote}}
+
+% 주의 — 초록은 \twocolumn[] 의 선택인자 안에서 조판되므로 수식 모드가 불안정하다.
+% `\(...\)` 나 여러 개의 `$...$` 그룹이 "Missing $ inserted"로 실패한 사례가 있다.
+% 초록에서는 수식 대신 평문 표기를 쓰거나 `$-$` 같은 단일 기호만 쓴다.
+\renewenvironment{abstract}{%
+  \begin{center}\titlefont\fontsize{10.8}{13}\bfseries 초\hspace{0.4em}록\end{center}
+  \vspace{-0.2em}\begin{quote}\fontsize{9.5}{11.5}\selectfont}
+  {\end{quote}\vspace{0.4em}}
+
+% ── 주장 상자 ──────────────────────────────────────────────────────────
+% 이 프로젝트에서 반복해 무너진 것은 코드가 아니라 주장이었다.
+% 모든 주장에 반증 조건을 붙이도록 조판이 강제한다.
+\newmdenv[linewidth=0.5pt,linecolor=black!45,backgroundcolor=black!3,
+          innertopmargin=5pt,innerbottommargin=5pt,innerleftmargin=6pt,
+          innerrightmargin=6pt,skipabove=7pt,skipbelow=7pt,
+          roundcorner=1.5pt]{claimbox}
+\newcounter{claimno}
+\newcommand{\claimx}[2]{%
+  \begin{claimbox}\fontsize{9.3}{11}\selectfont
+  \refstepcounter{claimno}%
+  {\titlefont\bfseries 주장 \theclaimno.}\ #1\par\smallskip
+  {\titlefont\bfseries\color{black!55} 반증 조건.}\ {\color{black!62} #2}
+  \end{claimbox}}
+
+% ── 표 ─────────────────────────────────────────────────────────────────
+\renewcommand{\arraystretch}{1.12}
+\newcommand{\tsize}{\fontsize{8.6}{10.2}\selectfont}
+
+% ── 각주 ───────────────────────────────────────────────────────────────
+\renewcommand{\footnotesize}{\fontsize{8}{9.5}\selectfont}
+
+\endinput

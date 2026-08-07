@@ -1,0 +1,98 @@
+\documentclass[11pt]{article}
+\usepackage{icmlko}
+\begin{document}
+
+\title{최근성은 한 번만 팔린다 --- 새 규약이 처음 찾은 것은 열린 문이 아니라 닫힌 문이었다}
+\author{월드모델 실험실}
+\date{노트 524 · 2026년 8월 4일}
+\maketitle
+
+\begin{abstract}
+노트 $519 \cdot 522 \cdot 523$ 이 세 번 제안한 규약을 원장에 만들었다 ---
+\textbf{채택할 때마다 ``이 채택이 여는 갈래''를 적고, 다음 사이클의 첫 일은
+그 목록을 재는 것.} 첫 항목은 \texttt{TRAINR}(학습 쪽 최근성)이 열 수 있는
+것이었고, 제일 그럴듯한 후보는 노트 447 이 죽인 \textbf{최근순 축}(예보 쪽
+최근성)이었다.
+
+\begin{center}
+\begin{tabular}{lrr}
+\hline
+최근순 축의 차 & 노트 447 & \textbf{지금} \\
+\hline
+판 & $\mathbf{+0.0186}$ & $\mathbf{-0.0090}$ ($0/12$) \\
+날짜 통제 판 & $-0.0294$ & $-0.0068$ ($0/12$) \\
+KR 만화 & --- & $\mathbf{-0.0561}$ ($0/12$) \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{살아나기는커녕 더 확실히 죽었다.} 노트 447 때는 최소한 \emph{날
+판}은 올렸다($+0.0186$) --- 날짜 구멍을 파서. 지금은 \textbf{세 자가 전부
+$0/12$ 로 내려간다.}
+\end{abstract}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figs/f1.pdf}
+\caption{\textbf{가} --- 그때와 지금. \textbf{나} --- 세 자.
+\textbf{다} --- 읽기.}
+\end{figure}
+
+\section{읽기 --- 한 번만 팔린다}
+
+\begin{quote}
+\textbf{학습 쪽}이 최근성을 먼저 가져가면 --- 그것도 \emph{깨끗하게}, 날짜
+통제 판을 $+0.0013$ 올리면서(노트 516) --- \textbf{예보 쪽에는 남는 것이
+없다.} 그 축이 실어 오는 것은 이제 \emph{날짜 구멍뿐}이고, 그래서 세 자가
+다 내려간다.
+\end{quote}
+
+노트 447 때는 챔피언에 최근성이 아예 없었다. 그때 최근순 축이 날 판을
+올린 것은 \emph{진짜 정보}(요즘 것이 더 잘 팔린다)와 \emph{구멍}(라벨이
+쌓인다)을 함께 실어 왔기 때문이고, 날짜 통제 판이 그중 구멍을 벗겨
+$-0.0294$ 를 남겼다. 지금은 진짜 정보를 \texttt{TRAINR} 이 이미 가져갔으니
+축에는 구멍만 남는다.
+
+\section{규약이 찾은 것은 닫힌 문이었다}
+
+새 규약의 첫 적용이 \textbf{열린 문이 아니라 닫힌 문}을 찾았다.
+
+\begin{quote}
+\textbf{조항(보탬)} --- \textbf{채택은 갈래를 열기도 닫기도 한다.} ``이
+채택이 여는 갈래'' 칸에 \emph{닫는} 갈래도 적는다. 닫힌 것을 적어 두면
+다음 사이클이 그것을 안 판다.
+\end{quote}
+
+이것이 실은 더 흔한 경우일 수 있다 --- 채택은 대개 \emph{어떤 일을 대신
+해 주는} 것이고, 그러면 그 일을 하던 옛 후보는 죽는다. 노트 519 가 찾은
+``깊이가 \texttt{TRAINR} 을 열었다''는 반대 방향이라 눈에 띄었을 뿐이다.
+
+\section*{이번 사이클 마무리}
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+챔피언 & \texttt{DOMDROP\{애니:trend\_\}} · \texttt{TRAINCAP\{만화:0.5\}} \\
+ & \texttt{TRAINW}(유보 무게·clip $0.2\!\sim\!1.0$) · \texttt{TRAINR}$=8.0$ \\
+판 & $0.4812 \to \mathbf{0.4932}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{네 손잡이가 전부 ``어떤 행으로 배울까''다.} 그리고 노트 523 이
+그중 절반이 노트 457 의 깊이 $12$ 가 산 것임을 보였다.
+
+\section*{남은 것}
+
+\begin{itemize}
+\item \textbf{노트 447 의 나머지 둘}(밀도 $\cdot$ 간격) --- 구현이 안
+남아 재구성이 필요하다. 최근순이 더 확실히 죽은 것으로 보아 같은 그림일
+것 같다.
+\item \textbf{다른 채택이 닫은 갈래} --- \texttt{TRAINW} 가 들어간 뒤
+도메인 무게 계열 후보, \texttt{DOMDROP} 이 들어간 뒤 축 가림 계열 후보.
+\item \textbf{자료 쪽} --- 노트 506 의 ``행 두 배 $= +0.0245$''. 이
+사이클이 그 절반을 있던 행으로 벌었고 \textbf{나머지는 새 행이 있어야
+한다.} 노트 508 이 어디부터 늘릴지 적었다(모바일 $\to$ 애니 $\to$ 세계애니).
+\end{itemize}
+
+\end{document}

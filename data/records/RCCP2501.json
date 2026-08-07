@@ -1,0 +1,163 @@
+{
+ "record_id": "RCCP2501",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:팝업스토어가자",
+  "space_id": "unresolved:용산_아이파크몰_리빙파크1F_스타벅스앞",
+  "client_party_id": "unresolved:스위트스팟_리테일MD팀",
+  "brand_key": "팝업스토어가자",
+  "space_key": "용산_아이파크몰"
+ },
+ "intervention": {
+  "concept": "신진 캐릭터 작가 7팀이 참여하는 캐릭터 콘테스트형 팝업. 행사 기간 매출 50%와 고객 투표 50%로 최종 브랜드를 선정해 용산 아이파크몰 팝업스토어가자 신규 부스 1개월 입점 혜택을 제공한다. 신진 작가 발굴과 팝가 매장 굿즈 순환을 목적으로 정기 개최를 지향한다.",
+  "brand_name": "팝업스토어가자 캐릭터 콘테스트",
+  "experience_elements": [
+   "최고의 캐릭터 고객 투표",
+   "체험형 캐리커쳐(하슈랜드)"
+  ],
+  "promotions": [
+   "팝가 매장 구매 영수증 지참 방문 시 마인드어데이 2025 캘린더 엽서 증정",
+   "행사장 상품 10,000원 구매 + 투표 진행 시 팝가 아크릴 거울 키링 증정"
+  ],
+  "staging_tags": [
+   "A매대(1500*750) 듀라테이블+포맥스 4면 마감",
+   "브랜드 상품 공용 VP",
+   "팝가스토어 로고 대형 현수막",
+   "바닥 시트지",
+   "백월 현수막"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "용산구",
+   "venue_name": "용산 아이파크몰 리빙파크 1층 스타벅스 앞 행사장",
+   "venue_type": "쇼핑몰 행사장",
+   "foot_traffic_context": null,
+   "venue_slot": "1층 행사장"
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-01-31",
+   "to": "2025-02-06",
+   "days": 7
+  },
+  "season": "겨울",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": "시공·제작 견적(현대드림애드): 공급가 1,279,000원 + VAT 127,900원 = 합계 1,406,900원(VAT 포함). 항목: 바닥시트지 200,000, 백월현수막 90,000, 매대 하부현수막 18개 324,000, 매대상단현수막 16개 80,000, 매대하단현수막 2개 30,000, 포멕스 135,000+120,000, 시공 300,000. 점포수수료·입점수수료 항목 존재하나 원문에 수치 미기재."
+  },
+  "brand_requirements": [
+   "참여 작가 7팀",
+   "선정 기준: 행사 기간 내 매출 50% + 고객 투표 50%",
+   "선정 혜택: 팝업스토어가자 1호전 신상 부스 1개월 입점(2025년 4월 예상)"
+  ],
+  "scale": {
+   "store_count": 7,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "용산 아이파크몰 리빙파크 1층 스타벅스 앞 행사장"
+  },
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 1,
+    "holiday_until": 29,
+    "holiday_block_in": 0,
+    "nat_event_gap": 78,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 6,
+    "comp_prior_at_venue": 34,
+    "comp_within_500m_open": 6,
+    "comp_within_1000m_open": 6,
+    "matched_address": "서울 용산구 한강대로23길 55"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": 2104172,
+   "rev_mm_recognized": 1.9
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 텍스트에 일자별 방문/매출 실측 표의 수치가 포함되어 있지 않음. 업체별 매출 상세·비용 상세 항목명만 확인됨.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2025-02, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2025-02"
+  },
+  "sales_basis": "PnL 상품매출 양수계정 합 × 1.1 (부가세 포함 기준)",
+  "label_history": [
+   {
+    "at": "pnl_sales (2026-07-28)",
+    "action": "mine",
+    "changes": [
+     "sales_krw 2,104,172 (PnL 총 결제액)"
+    ],
+    "evidence": "core.project_pnl_monthly 상품매출 양수계정 합 1,912,884(공급가) × 1.1, 인식 2개월"
+   }
+  ]
+ },
+ "docs": [
+  {
+   "doc_id": "1-MWLdO8M7C2RV1BgqRyCy9YmIUhZ1TDf",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1-MWLdO8M7C2RV1BgqRyCy9YmIUhZ1TDf/view",
+   "title": "[Sweetspot] 제1회 팝업스토어가자 캐릭터 콘테스트 행사 기획안.pdf"
+  },
+  {
+   "doc_id": "1-QFJWmBBJkpH0xtpbdsCCzrcZB-o9c-d",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1-QFJWmBBJkpH0xtpbdsCCzrcZB-o9c-d/view",
+   "title": "(내부자료) 25.01 용산 아이파크몰 팝콘 행사 BEP 계산.xlsx"
+  },
+  {
+   "doc_id": "1-_NRFfO125etEaCWSZN842eDkIXVgbDd",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1-_NRFfO125etEaCWSZN842eDkIXVgbDd/view",
+   "title": "용산 3층 팝업스토어가자 계약서 귀속(별도 계약서 없음)_내용없음.txt"
+  },
+  {
+   "doc_id": "1-oWzf2WtskfJDKm5IMxNp3r3uu3omDGL",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1-oWzf2WtskfJDKm5IMxNp3r3uu3omDGL/view",
+   "title": "용산_팝콘_프로젝트(시공, 제작 견적서)_현대드림애드 250223.pdf"
+  },
+  {
+   "doc_id": "10IzHjXO49O93gFEg3Gg4e8Onykx0h6lB",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/10IzHjXO49O93gFEg3Gg4e8Onykx0h6lB/view",
+   "title": "현진렌탈 용산 아이파크몰 팝업스토어가자 콘테스트 매대 견적서.png"
+  },
+  {
+   "doc_id": "10NaddFCnnKDefhRRR8YrX1fRh4DtuKWP",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/10NaddFCnnKDefhRRR8YrX1fRh4DtuKWP/view",
+   "title": "용산 팝업스토어가자콘테스트 결과보고서 250211.xlsx"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 4건: [Sweetspot] 제1회 팝업스토어가자 캐릭터 콘테, (내부자료) 25.01 용산 아이파크몰 팝콘 행사 BE, 용산_팝콘_프로젝트(시공, 제작 견적서)_현대드림애드 , 용산 팝업스토어가자콘테스트 결과보고서 250211.xl. 미확실: outcome.daily 및 totals 실측 수치 없음(결과보고서 표 수치 미포함); plan_visitors_expected: 기획서에 목표매출(일평균 3,150천원/기간 22,000천원)만 있고 예상 방문 인원 없음; counting_method 판정 불가(방문 집계 정의 없음); area_pyeong 미기재(매대 사이즈만 존재); client_party_id 및 정확한 수수료율/RS 조건 미확인"
+ }
+}

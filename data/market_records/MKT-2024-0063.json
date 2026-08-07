@@ -1,0 +1,74 @@
+{
+  "market_record_id": "MKT-2024-0063",
+  "event_name": "르니나(LENINA) 팝업스토어(더현대 서울)",
+  "brand": "르니나(레이커)",
+  "ip_or_collab": "트와이스 사나(브랜드 모델)",
+  "category": "fashion",
+  "intervention": {
+    "concept_description": "프렌치 감성 여성복 첫 오프라인 팝업 시리즈 중 하나. 브랜드 모델 사나 폴라로이드 이벤트로 일본·중국 관광객 유입",
+    "experience_elements": [
+      "추동 신상 컬렉션 판매",
+      "사나 폴라로이드 이벤트"
+    ],
+    "promotions": [
+      "폴라로이드 이벤트"
+    ],
+    "is_free_entry": null,
+    "reservation_required": null
+  },
+  "conditions": {
+    "venue": "더현대 서울",
+    "venue_type": "department_store",
+    "neighborhood": "여의도",
+    "city": "서울",
+    "period_from": "2024-09-26",
+    "period_to": "2024-10-02",
+    "area_pyeong": null,
+    "multi_store": false,
+    "derived": {
+      "duration": {
+        "days": 7,
+        "weekend_share": 0.29,
+        "holiday_days": 1
+      },
+      "ip_history": {
+        "prior_count": 0,
+        "months_since_last": null,
+        "first_edition": true
+      }
+    }
+  },
+  "outcome": {
+    "visitors_total": null,
+    "visitors_period_days": 7,
+    "counting_basis": "organizer_claim",
+    "counting_basis_note": "전개사 레이커 기반 어패럴뉴스 보도 '더현대서울 팝업 스토어는 일주일간 1억 이상의 매출을 달성했다'",
+    "visitors_source_quote": null,
+    "visitors_source_url": null,
+    "visitors_source_date": null,
+    "sales_krw": 100000000,
+    "sales_source_quote": "더현대서울 팝업 스토어는 일주일간 1억 이상의 매출을 달성했다. 주말 동안 브랜드 모델로 활동 중인 트와이스 멤버 사나의 폴라로이드 이벤트를 진행한 결과, 일본, 중국 관광객들이 몰려 일 매출 2,000만 원 이상을 달성했다.",
+    "sales_source_url": "https://www.apparelnews.co.kr/news/news_view/?idx=213597&cat=CAT100",
+    "sales_source_date": "2024-10-15",
+    "demand_signals": {
+      "waiting_time_reported": null,
+      "sold_out": null,
+      "reservation_fill": null,
+      "signal_quotes": [
+        "일 매출 2,000만 원 이상을 달성했다"
+      ]
+    },
+    "conflict": false,
+    "alt_figures": []
+  },
+  "extraction_confidence": "high",
+  "notes": "1억은 '이상' 하한 표현. 같은 시즌 롯데월드몰 팝업(9/5~30)은 별개 이벤트 | 병합 레코드: ",
+  "_aggregate": false,
+  "tier": "market_claim",
+  "single_event": true,
+  "exclude_reason": null,
+  "verification": {
+    "sales": "verified"
+  },
+  "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

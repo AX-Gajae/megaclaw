@@ -1,0 +1,129 @@
+{
+ "record_id": "RTPU2512",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:페슬_니아르",
+  "space_id": "unresolved:미상",
+  "client_party_id": null,
+  "brand_key": "페슬_니아르",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "",
+  "brand_name": "페슬 니아르",
+  "experience_elements": [],
+  "promotions": [],
+  "staging_tags": []
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2025-04-01",
+   "to": "2025-04-01",
+   "days": 1
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "unknown",
+   "detail": ""
+  },
+  "brand_requirements": [],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 0.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 29,
+    "holiday_until": 32,
+    "holiday_block_in": 0,
+    "nat_event_gap": 63,
+    "nat_event": null,
+    "doc_lag_days": null,
+    "doc_dates_found": 0
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 57700.0,
+    "pnl_pre_accounts": 2,
+    "pnl_pre_months": 2,
+    "pnl_pre_first": "2025-01-01"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": null
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(표 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "no_label",
+   "rule": "P&L 인식 없음(2026-05 스냅샷)",
+   "contract_total_mm": null,
+   "last_recognition_period": null
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "16zeReSLwPdxnKAnBwOYk0e4Aun28f2oD",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/16zeReSLwPdxnKAnBwOYk0e4Aun28f2oD/view",
+   "title": "견적서_파일없음(제안X,실행건이나 취소된 건).txt"
+  },
+  {
+   "doc_id": "1a-J5gIk5nm92JMvV4Z9-2p2r6EVyzzPz",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1a-J5gIk5nm92JMvV4Z9-2p2r6EVyzzPz/view",
+   "title": "결과보고서_파일없음(제안X,실행건이나 취소된 건).txt"
+  },
+  {
+   "doc_id": "1kxXK7PvgrfrFzEhzAwvhOUmVFRncQgJg",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1kxXK7PvgrfrFzEhzAwvhOUmVFRncQgJg/view",
+   "title": "제안서_파일없음(제안X,실행건이나 취소된 건).txt"
+  },
+  {
+   "doc_id": "1msCKEhLxxaijSxEvBwxep7hNGntoo527",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1msCKEhLxxaijSxEvBwxep7hNGntoo527/view",
+   "title": "계약서_파일없음(제안X,실행건이나 취소된 건).txt"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 0건: . 미확실: 원문 문서 텍스트가 전혀 제공되지 않음; client_name 미상; venue 및 입지 정보 없음; category 없음; 컨셉·체험요소·프로모션·연출태그 없음; 수수료구조/계약금액 없음; 방문/매출 실측 데이터 없음; 운영기간 시작/종료가 동일 날짜로 불명확"
+ }
+}

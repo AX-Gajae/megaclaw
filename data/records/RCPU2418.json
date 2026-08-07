@@ -1,0 +1,140 @@
+{
+ "record_id": "RCPU2418",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:신카이마코토_SHOP",
+  "space_id": "unresolved:더현대대구_투어팝업",
+  "client_party_id": "unresolved:미디어캐슬",
+  "brand_key": "신카이마코토",
+  "space_key": "더현대대구"
+ },
+ "intervention": {
+  "concept": "신카이마코토 시네마 스토어 '#Shop' 팝업스토어. 현대백화점 투어팝업의 대구점으로, 신카이마코토 애니메이션 관련 상품 판매 매장을 구축·운영.",
+  "brand_name": "신카이마코토 #Shop (시네마스토어)",
+  "experience_elements": [
+   "포토카드 기기(2대 운영)",
+   "상품 판매 매장",
+   "현장 웨이팅 시스템"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "현장 그래픽 연출",
+   "벽면시트",
+   "텐트천 현수막"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "대구",
+   "district": null,
+   "venue_name": "현대백화점 대구",
+   "venue_type": "백화점 투어팝업",
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-07-26",
+   "to": "2024-08-08",
+   "days": 14
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "[전체 컨설팅 계약(더현대 서울/대구/신촌/천호)] 총액 330,500,000원 VAT별도; 계약금 165,250,000원(24.5.31 이전), 잔금 165,250,000원(잔여 3개점 신촌·대구·천호 행사 시작 월 분할납부). LOSS: 총매출 기준 4% 이상 발생 시 제품 제조원가로 공제, 4% 이하는 통상LOSS로 갑 부담. [대구점 견적] 총계 60,010,000원 VAT10% 별도(공간기획 2,000,000 / 공간구성 24,100,000 / 판매인력 26,210,000 / 세팅·물류 4,700,000 / 소계 57,010,000 / 대행수수료 3,000,000). 그래픽·사인공사 협력사(프렌디) 결제조건: 계약시 50%, 납품시 잔액.}, | 계약서 재독해(2026-07-27): 총액 일치 확인(330.5M)"
+  },
+  "brand_requirements": [
+   "팝업 매장 디자인 및 설계",
+   "인테리어 시공, 집기 제작/시공",
+   "사인/그래픽 제작 및 시공(가격표, POP, ISP)",
+   "진열/연출 소도구 납품",
+   "팝업스토어 운영",
+   "인허가 요건 및 자격 보유 보증",
+   "용역 성과물 소유권·저작권 갑 귀속",
+   "비밀유지"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": "현대백화점 대구"
+  },
+  "derived": {
+   "duration": {
+    "days": 14,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 3,
+    "months_since_last": 0.6,
+    "first_edition": false
+   },
+   "calendar": {
+    "holiday_since": 81,
+    "holiday_until": 50,
+    "holiday_block_in": 0,
+    "nat_event_gap": 107,
+    "nat_event": null,
+    "doc_lag_days": 80,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 2,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 2,
+    "comp_within_1000m_open": 2,
+    "matched_address": "대구 중구 달구벌대로 2077"
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 60.0
+  },
+  "counting_method": "unknown",
+  "counting_basis": null,
+  "plan_visitors_expected": null,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서 미제공 - 방문객/매출 실측 데이터 없음). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "partial",
+   "rule": "인식 60.0 < 총액 330.5의 90%",
+   "contract_total_mm": 330.5,
+   "last_recognition_period": "2024-08"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "16NB7OTYc2WfKQW0jnAmre3375LnxdNrQ",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/16NB7OTYc2WfKQW0jnAmre3375LnxdNrQ/view",
+   "title": "신카이마코토_대구점_견적서_0822.pdf"
+  },
+  {
+   "doc_id": "1PMWdoAYhlH3YCn-NqfOQGRoRND5AywcI",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1PMWdoAYhlH3YCn-NqfOQGRoRND5AywcI/view",
+   "title": "신카이마코토_대구점_견적_0822_하울확인.xlsx"
+  },
+  {
+   "doc_id": "1fKFraIQ8Diqy_UQUILnO5zlyl6J-4n7x",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1fKFraIQ8Diqy_UQUILnO5zlyl6J-4n7x/view",
+   "title": "미디어캐슬 신카이마코토 팝업스토어 구축 컨설팅용역계약서_240507.docx"
+  },
+  {
+   "doc_id": "1y9QawdjI-BqIY07oXcIGilQQB4bJdzCj",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1y9QawdjI-BqIY07oXcIGilQQB4bJdzCj/view",
+   "title": "신카이마코토_대구점_견적_0822.pdf"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 4건: 미디어캐슬 신카이마코토 팝업스토어 구축 컨설팅용역계약서, 신카이마코토_대구점_견적_0822_하울확인.xlsx, 신카이마코토_대구점_견적_0822.pdf, 신카이마코토_대구점_견적서_0822.pdf. 미확실: fee_structure.detail JSON 이스케이프 오류 가능성; 대구점 정확한 venue_name/층/면적 미기재; 결과보고서 부재로 방문객·POS매출·counting_method 전부 미상; area_pyeong 미기재; 운영기간 days는 project_meta 기준 산정(견적서상 13일 인건비와 상이); client_name(갑=미디어캐슬)과 실제 브랜드 소유주 구분 불확실 | fee 계약서화(2026-07-27)"
+ }
+}

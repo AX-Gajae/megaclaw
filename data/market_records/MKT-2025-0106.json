@@ -1,0 +1,96 @@
+{
+ "market_record_id": "MKT-2025-0106",
+ "event_name": "2025 서울뷰티트래블위크 (남산골한옥마을 거점)",
+ "brand": "서울특별시",
+ "ip_or_collab": "서울 뷰티웰니스 관광 100선 연계 프로그램",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "서울시 뷰티웰니스 관광 주간. 남산골한옥마을 '뷰티하우스' 거점 체험 프로그램(사전예약+현장접수) 및 중구 일대 100개 관광지 연계",
+  "experience_elements": [
+   "웰니스 클래스",
+   "뷰티 체험 프로그램",
+   "뷰티키트 제공"
+  ],
+  "promotions": [
+   "무료 체험 프로그램(사전예약)"
+  ],
+  "is_free_entry": true,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "남산골한옥마을 외 중구 일대",
+  "venue_type": "other",
+  "neighborhood": "중구",
+  "city": "서울",
+  "period_from": "2025-10-30",
+  "period_to": "2025-11-05",
+  "area_pyeong": null,
+  "multi_store": true,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 27177,
+  "visitors_period_days": 2,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "서울시 결과 보도자료: 남산골한옥마을 거점 기준 이틀간(11/1~2) 방문객. 주간 전체 합산 아님",
+  "visitors_source_quote": "남산골한옥마을에는 체험 프로그램이 진행된 이틀간 2만7177명이 다녀갔으며, 이중 3595명이 프로그램에 직접 참여했다",
+  "visitors_source_url": "https://www.newswire.co.kr/newsRead.php?no=1022837",
+  "visitors_source_date": "2025-11-12",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": null,
+   "signal_quotes": [
+    "프로그램 만족도 90% 이상(817명 설문, 내용 92.2%)"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [],
+  "label_trust": {
+   "grade": "D",
+   "flags": [
+    "D"
+   ],
+   "why": "스코프 혼합(합산/총계) 표현"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "low",
+ "notes": "보조 레코드: 팝업스토어가 아닌 시 주관 뷰티웰니스 관광 프로그램(거점 체험존 포함). 카테고리 해석 주의. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "verified"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

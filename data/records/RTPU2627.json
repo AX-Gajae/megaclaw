@@ -1,0 +1,172 @@
+{
+ "record_id": "RTPU2627",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:제니_Ruby_1주년",
+  "space_id": "unresolved:더현대서울_B2_아이코닉존",
+  "client_party_id": "unresolved:소니뮤직_sonymusic-001",
+  "brand_key": "제니",
+  "space_key": "더현대서울"
+ },
+ "intervention": {
+  "concept": "BLACKPINK 제니 솔로 정규앨범 'Ruby' 발매 1주년 기념 팝업스토어. 더현대 B2 아이코닉존에 굿즈 VMD 판매 공간과 사진전 요소를 구성. 앨범 관련 의류·액세서리·포토북 등 MD 전시·판매 중심.",
+  "brand_name": "제니 (Jennie) Ruby",
+  "experience_elements": [
+   "검정 전신 마네킹 2ea",
+   "검정 상반신 마네킹 1ea",
+   "투명 아크릴박스 전시",
+   "블랙 전신거울 1ea",
+   "굿즈 전시용 트롤리 2ea",
+   "USB 롤링 영상",
+   "Jennie Photo Grid",
+   "사진전(포폴 근거)"
+  ],
+  "promotions": [],
+  "staging_tags": [
+   "블랙_마네킹",
+   "투명아크릴박스",
+   "굿즈전시_트롤리",
+   "전신거울",
+   "포토그리드"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": "서울",
+   "district": "영등포구 여의도(추정)",
+   "venue_name": "더현대서울 B2 아이코닉존(에스컬레이터 방향)",
+   "venue_type": "백화점 팝업존",
+   "foot_traffic_context": null,
+   "venue_slot": "아이코닉존"
+  },
+  "area_pyeong": 30,
+  "period": {
+   "from": "2026-03-05",
+   "to": "2026-03-11",
+   "days": 7
+  },
+  "season": "봄",
+  "fee_structure": {
+   "type": "fixed",
+   "detail": "빈드(viind) 인테리어 디자인·제작·시공 계약 총액 51,000,000원(VAT 별도). 착수금 70% 35,700,000원(2026-02-23 계약 시), 잔금 30% 15,300,000원(2026-03-11 팝업종료 후). 견적서상 시공 46,000,000원/디자인 5,000,000원 구성. 별도 클라이언트(소니뮤직, Bill To: Vincent) 인보이스 46,000 USD(계약번호 sonymusic-001, 결제기한 2026-03-31). 프로젝트 확정예산 65,000,000원(Sophy/Notion)."
+  },
+  "brand_requirements": [
+   "원상복구 조건 시공/철거",
+   "백화점 컨펌 포함",
+   "3월 4일 폐점 후 야간 셋팅",
+   "3월 11일 폐점 후 야간 철거",
+   "납품 결과물 지적재산권은 위탁자 귀속"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "host_venue",
+   "host_traffic_note": null
+  },
+  "derived": {
+   "duration": {
+    "days": 7,
+    "weekend_share": 0.29,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 3,
+    "holiday_until": 79,
+    "holiday_block_in": 0,
+    "nat_event_gap": 90,
+    "nat_event": null,
+    "doc_lag_days": 10,
+    "doc_dates_found": 1
+   },
+   "competition": {
+    "comp_same_addr_open": 7,
+    "comp_prior_at_venue": 665,
+    "comp_within_500m_open": 7,
+    "comp_within_1000m_open": 7,
+    "matched_address": "서울 영등포구 여의대로 108"
+   },
+   "pnl_pre": {
+    "pnl_pre_total": 313045.0,
+    "pnl_pre_accounts": 4,
+    "pnl_pre_months": 1,
+    "pnl_pre_first": "2026-02-01"
+   }
+  },
+  "demand_signals": {
+   "waiting_reported": "사전예약(네이버 예약) 운영 + 미예약자 현장 대기 입장 (개최 전 공지)",
+   "sold_out": null,
+   "source": "역검색 외부 보도(2026-07-27)"
+  },
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 61.4
+  },
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(결과보고서상 실측 방문객·소비자 매출(POS) 데이터 없음. 재무 시드상 2026 1~5월 매출 61.4백만원/net 9.9백만원은 프로젝트 손익 수치이며 소비자 POS 매출이 아님. platform_spot_id 부재로 팝가 실적 연결 불가.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2026-03, 스냅샷 2026-05까지 2개월+ 경과 (계약총액 불명, 시간 규칙)",
+   "contract_total_mm": 51.0,
+   "last_recognition_period": "2026-03"
+  },
+  "counting_method": "no_data",
+  "counting_basis": null
+ },
+ "docs": [
+  {
+   "doc_id": "1-sqEqHb7miJiYsiVeg7flxsusHqrs5c0",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1-sqEqHb7miJiYsiVeg7flxsusHqrs5c0/view",
+   "title": "제니루비 1주년 POP UP_ Design estimate_ viind 0223.pdf"
+  },
+  {
+   "doc_id": "12rn3dv8AdiZEumsuhHSyJPOL4GVlf6uc",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/12rn3dv8AdiZEumsuhHSyJPOL4GVlf6uc/view",
+   "title": "제니루비1주년 POP UP_인테리어 디자인 계약서_260223.docx"
+  },
+  {
+   "doc_id": "1SkcGh3-BuxELFpklmZFcLfppKTc8B3KL",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1SkcGh3-BuxELFpklmZFcLfppKTc8B3KL/view",
+   "title": "[Sweetspot]루비 1주년 더현대 팝업_최종 제안서.pdf"
+  },
+  {
+   "doc_id": "1Wrm1E_pCx-9Zgrpa26EKwR3HU5lpNfop",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1Wrm1E_pCx-9Zgrpa26EKwR3HU5lpNfop/view",
+   "title": "계약서 없음.txt"
+  },
+  {
+   "doc_id": "1ZfARkBUNJuu4wjFKKqClqPUhMcjQtYpB",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1ZfARkBUNJuu4wjFKKqClqPUhMcjQtYpB/view",
+   "title": "Sweetspot_Ruby 1 Year Anniversary Pop up_Invoice_260312_견적서.pdf"
+  },
+  {
+   "doc_id": "1vN1BYJny124bbl3-NHBC296OXcODyXAP",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1vN1BYJny124bbl3-NHBC296OXcODyXAP/view",
+   "title": "결과보고서 없음(정보는 기입).txt"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 사용자 지시로 백테스트 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=medium. 완독 문서 4건: 제니루비 1주년 POP UP_ Design estima, 제니루비1주년 POP UP_인테리어 디자인 계약서_26, [Sweetspot]루비 1주년 더현대 팝업_최종 제안, Sweetspot_Ruby 1 Year Annivers. 미확실: 발주 클라이언트 정식 회사명·담당자·연락처(소니뮤직 추정, 문서상 Bill To: Vincent/sonymusic-001); 실 방문객·웨이팅·찜·POS 매출 실적; 정확한 지점(더현대서울 여의도 추정)·도로명주소·좌표; 벤더/외주 상세 및 현장 이슈; 손익 상세 원가 구성; 프로모션·이벤트 내용 명시 없음 | 외부 라벨 역검색(2026-07-27): 수요신호 적재"
+ }
+}

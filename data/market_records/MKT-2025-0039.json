@@ -1,0 +1,107 @@
+{
+ "market_record_id": "MKT-2025-0039",
+ "event_name": "2025 올리브영 페스타 @노들섬",
+ "brand": "올리브영 (CJ올리브영)",
+ "ip_or_collab": "108개 K뷰티 브랜드 연합 페스티벌",
+ "category": "beauty",
+ "intervention": {
+  "concept_description": "올리브영 첫 대형 야외 K뷰티 페스티벌. 108개 브랜드 부스, 바이어 프로그램, 체험 콘텐츠",
+  "experience_elements": [
+   "브랜드 부스",
+   "바이어 프로그램",
+   "체험존",
+   "포토존"
+  ],
+  "promotions": [
+   "유료 티켓",
+   "현장 한정 프로모션"
+  ],
+  "is_free_entry": false,
+  "reservation_required": true
+ },
+ "conditions": {
+  "venue": "노들섬",
+  "venue_type": "other",
+  "neighborhood": "용산구",
+  "city": "서울",
+  "period_from": "2025-05-21",
+  "period_to": "2025-05-25",
+  "area_pyeong": null,
+  "multi_store": false,
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(reservation)",
+   "access_type": "reservation"
+  },
+  "derived": {
+   "duration": {
+    "days": 5,
+    "weekend_share": 0.4,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   }
+  }
+ },
+ "outcome": {
+  "visitors_total": 33000,
+  "visitors_period_days": 5,
+  "counting_basis": "organizer_claim",
+  "counting_basis_note": "올리브영 발표 인용: 5일간 유료 관람객 33,000명. 별도로 뷰티 업계 관계자 3,700명 이상",
+  "visitors_source_quote": "5일간 33,000명의 관람객과 3,700명 이상의 뷰티 업계 관계자가 방문했다",
+  "visitors_source_url": "https://m.ekn.kr/view.php?key=20250527020570949",
+  "visitors_source_date": "2025-05-27",
+  "sales_krw": null,
+  "sales_source_quote": null,
+  "sales_source_url": null,
+  "sales_source_date": null,
+  "demand_signals": {
+   "waiting_time_reported": null,
+   "sold_out": null,
+   "reservation_fill": "티켓 오픈 즉시 매진",
+   "signal_quotes": [
+    "티켓은 열리자마자 매진됐다"
+   ]
+  },
+  "conflict": false,
+  "alt_figures": [
+   {
+    "value": 37000,
+    "basis": "media_estimate",
+    "source_quote": "닷새 동안 참여자는 관람객과 K뷰티 산업 종사자 등 총 3만7000명이나 됐다고 하네요",
+    "source_url": "https://www.khan.co.kr/article/202508230801001",
+    "source_date": "2025-08-23",
+    "note": "관람객+업계 관계자 합산 표현. 집계 범위 차이로 conflict 아님"
+   }
+  ],
+  "label_trust": {
+   "grade": "C",
+   "flags": [
+    "C"
+   ],
+   "why": "하한값 표현(돌파/이상/넘는)"
+  },
+  "scope_class": {
+   "interim": false,
+   "forecast": false,
+   "multi_run": false,
+   "wider_scope": false,
+   "per_day": false,
+   "final_marked": false,
+   "usable": true
+  }
+ },
+ "extraction_confidence": "high",
+ "notes": "관람객 33,000(유료)과 총 참여 37,000(관계자 포함)은 집계 범위가 달라 병기. | 병합 레코드: ",
+ "_aggregate": false,
+ "tier": "market_claim",
+ "single_event": true,
+ "exclude_reason": null,
+ "verification": {
+  "visitors": "num_only"
+ },
+ "ingested_from": "kimi-crawl-2026-07 (records_merged.jsonl)"
+}

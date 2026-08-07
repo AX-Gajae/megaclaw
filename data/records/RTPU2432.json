@@ -1,0 +1,159 @@
+{
+ "record_id": "RTPU2432",
+ "schema_version": "0.1",
+ "entities": {
+  "brand_id": "unresolved:컴투스_미니게임천국",
+  "space_id": "unresolved:미상",
+  "client_party_id": "unresolved:컴투스",
+  "brand_key": "컴투스_미니게임천국",
+  "space_key": "미상"
+ },
+ "intervention": {
+  "concept": "컴투스 모바일게임 '미니게임천국' 1주년 기념 유저 초청 행사. 초청 유저 대상으로 무대 프로그램과 좌석 배치, 굿즈 제공을 진행하는 오프라인 팬 미팅형 이벤트.",
+  "brand_name": "미니게임천국 (컴투스)",
+  "experience_elements": [
+   "1주년 기념 무대 프로그램",
+   "유저 지정 좌석 배치",
+   "포토존 및 등신대",
+   "MC 진행",
+   "굿즈 오퍼레이션(에코백/방석/엽서/스티커)"
+  ],
+  "promotions": [
+   "룰렛 이벤트",
+   "유저 굿즈 제공"
+  ],
+  "staging_tags": [
+   "유저초청회",
+   "1주년",
+   "포토존",
+   "등신대",
+   "출입구 윈도우 랩핑"
+  ]
+ },
+ "conditions": {
+  "location": {
+   "city": null,
+   "district": null,
+   "venue_name": null,
+   "venue_type": null,
+   "foot_traffic_context": null
+  },
+  "area_pyeong": null,
+  "period": {
+   "from": "2024-07-20",
+   "to": "2024-07-20",
+   "days": 1
+  },
+  "season": "여름",
+  "fee_structure": {
+   "type": "agency_fee",
+   "detail": "견적서 항목만 존재하고 금액 수치는 원문에 표기되지 않음. 대행수수료/기획료/아트워크/운영인건비/일반관리비(정가 항목 제외 소계의 10%)/VAT 10% 별도 구조. 공간 임대료, 시스템 대관, 제작, 인력 운영, 케이터링(70인분 기준), 굿즈 제작(에코백 70개/방석 70개/엽서 100개/스티커 500개) 등 항목 포함."
+  },
+  "brand_requirements": [
+   "케이터링 및 식음료 반입",
+   "1층 입구 LED 전광판 광고 노출",
+   "출입구 윈도우 랩핑"
+  ],
+  "scale": {
+   "store_count": 1,
+   "venue_traffic_type": "standalone",
+   "host_traffic_note": null
+  },
+  "capacity": {
+   "total_capacity": null,
+   "detail": "키워드 승격(session)",
+   "access_type": "session"
+  },
+  "derived": {
+   "duration": {
+    "days": 1,
+    "weekend_share": 1.0,
+    "holiday_days": 0
+   },
+   "ip_history": {
+    "prior_count": 0,
+    "months_since_last": null,
+    "first_edition": true
+   },
+   "calendar": {
+    "holiday_since": 75,
+    "holiday_until": 56,
+    "holiday_block_in": 0,
+    "nat_event_gap": 101,
+    "nat_event": null,
+    "doc_lag_days": 3,
+    "doc_dates_found": 3
+   },
+   "competition": {
+    "comp_same_addr_open": 0,
+    "comp_prior_at_venue": 0,
+    "comp_within_500m_open": 0,
+    "comp_within_1000m_open": 0,
+    "matched_address": null
+   }
+  }
+ },
+ "outcome": {
+  "daily": [],
+  "totals": {
+   "visitors": null,
+   "sales_krw": null,
+   "rev_mm_recognized": 24.2
+  },
+  "counting_method": "unknown",
+  "counting_basis": "결과보고서 본문에 방문 수치 표가 없음",
+  "plan_visitors_expected": 70,
+  "retention": null,
+  "source": "visitors/sales: 결과보고서 LLM 추출(케이터링/굿즈가 70인분(70개) 기준으로 견적되어 초청 규모는 약 70명으로 추정되나 실측 방문 데이터는 문서에 없음.). rev_mm: ods.amaranth_project_pnl 매출액 합산 스냅샷(2026-05 마감분까지) — 진행 중 프로젝트는 부분 인식일 수 있음, 계약 총액은 fee_structure.detail 참조",
+  "rev_mm_completion": {
+   "status": "complete",
+   "rule": "운영종료 2024-07, 스냅샷까지 2개월+ (시간 규칙)",
+   "contract_total_mm": null,
+   "last_recognition_period": "2024-07"
+  }
+ },
+ "docs": [
+  {
+   "doc_id": "178AZQGO08Ue-cJI7l1cI1KDyD4aKEvGp",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/178AZQGO08Ue-cJI7l1cI1KDyD4aKEvGp/view",
+   "title": "컴투스 계약서.pdf"
+  },
+  {
+   "doc_id": "1O-hewWqkH_P42drK7CZvXNNJnQkBnxvp",
+   "kind": "계약서",
+   "uri": "https://drive.google.com/file/d/1O-hewWqkH_P42drK7CZvXNNJnQkBnxvp/view",
+   "title": "RTPU2432_컴투스_유저초청행사_계약서_240619.doc"
+  },
+  {
+   "doc_id": "1T-lcpHJ_IXg9Qc0hjQVE3X0-GiazUOmv",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1T-lcpHJ_IXg9Qc0hjQVE3X0-GiazUOmv/view",
+   "title": "[Sweetspot] 컴투스 유저초청회 기획안_240717.pdf"
+  },
+  {
+   "doc_id": "1TUszcpPLBb7S_4vMxF4-VkxFWOECrrTt",
+   "kind": "운영일지",
+   "uri": "https://drive.google.com/file/d/1TUszcpPLBb7S_4vMxF4-VkxFWOECrrTt/view",
+   "title": "[Sweetspot] 컴투스 유저초청회 결과보고서_0722.pdf"
+  },
+  {
+   "doc_id": "1oqyliVgAd9EGyeeAQxGPgY17w1QaendT",
+   "kind": "정산",
+   "uri": "https://drive.google.com/file/d/1oqyliVgAd9EGyeeAQxGPgY17w1QaendT/view",
+   "title": "Sweetspot_미니게임천국 유저 초청행사_견적서_240711.xlsx"
+  },
+  {
+   "doc_id": "1pT2JYxnrKMpPApnemlSm_CUhaqKswdUhIrJB6BeC8lk",
+   "kind": "기획서",
+   "uri": "https://drive.google.com/file/d/1pT2JYxnrKMpPApnemlSm_CUhaqKswdUhIrJB6BeC8lk/view",
+   "title": "제안서_내용없음"
+  }
+ ],
+ "provenance": {
+  "extracted_by": "llm:claude-opus-4-8(bulk-ingest)",
+  "reviewed_by": "미검수 — 뱅크 확장 우선 투입(2026-07-23), 정식 검수 대기",
+  "extracted_at": "2026-07-23",
+  "notes": "일괄 정규화. confidence=low. 완독 문서 4건: 제안서_내용없음, [Sweetspot] 컴투스 유저초청회 기획안_2407, Sweetspot_미니게임천국 유저 초청행사_견적서_2, [Sweetspot] 컴투스 유저초청회 결과보고서_07. 미확실: 입지 정보(도시/구/venue) 전부 미상; 면적(평) 미상; 견적 금액 수치 전부 누락(항목명만 존재); 결과보고서 실측 방문자/매출 데이터 없음; 제안서 내용 비어있음; counting_method 판정 불가"
+ }
+}
