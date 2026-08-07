@@ -1,0 +1,65 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{fontspec}
+\usepackage{kotex}
+\setmainfont{Apple SD Gothic Neo}
+\setsansfont{Apple SD Gothic Neo}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,linkcolor=MidnightBlue,citecolor=MidnightBlue,
+            urlcolor=MidnightBlue]{hyperref}
+\usepackage{titlesec}
+\titleformat{\section}{\large\bfseries}{\thesection}{0.6em}{}
+\captionsetup{font=small,labelfont=bf}
+\setlength{\parskip}{0.35em}
+\setlength{\parindent}{0pt}
+\usepackage{mdframed}
+\newmdenv[linewidth=0.4pt,linecolor=gray!60,backgroundcolor=gray!5,
+          innertopmargin=6pt,innerbottommargin=6pt,skipabove=8pt,skipbelow=8pt]{claimbox}
+\newcommand{\claim}[2]{\begin{claimbox}\textbf{주장.} #1\par\smallskip
+  \textcolor{gray!70}{\textbf{반증 조건.} #2}\end{claimbox}}
+
+\title{\bfseries 상업 창은 열 몇 건이었다\\[2pt]
+\large 전이가 다리인 구간을 실측했다 --- 두 짝 모두 `창 없음'}
+\author{월드모델 실험실 · 노트 $843$}
+\date{2026-08-08}
+\begin{document}\maketitle
+
+\section{한 줄}
+
+$821/833$ 이 세운 것은 ``과거 자료 전부를 가진 고객의 릿지가 전이를
+이긴다''였다. 남은 사업 빈칸은 \textbf{몇 건부터인가} --- 고객 라벨 $n$건의
+릿지가 전이 앙상블을 넘는 교차점 $n^{\dagger}$. 사전등록 $843$(커밋이 측정보다
+먼저 · 이슈 \#$12$)으로 재고 답을 얻었다: \textbf{KR 만화 $n^{\dagger}=10$ ·
+비게임 앱 $n^{\dagger}=20$ --- 두 짝 모두 갈래 $2$(창 없음, $n^{\dagger}\le
+30$).} 판정은 교차 규칙 선택에 강건하다 --- KR 은 $n\ge10$ 전부, 앱은
+$n\ge20$ 전부 전이를 넘는다.
+
+\begin{figure}[t]\centering
+\includegraphics[width=0.97\textwidth]{figs/curve.pdf}
+\caption{릿지 적응 곡선(뽑기 $4$회 평균 $\pm$ SD · 로그 $n$). 회색 파선 =
+$833$ 실측 전이 앙상블(같은 평가 행). 두 짝 모두 열~스무 건에서 교차한다.}
+\end{figure}
+
+\claim{\textbf{전이-단독 다리의 상업 창은 첫 $10\sim20$건이다.} $833$ 사업
+문장의 cold-start 는 ``첫 열$\sim$스무 건''으로 좁혀 쓴다. 죽은 것은 ``고객
+자료가 모일 때까지 전이가 다리''라는 서사의 폭이지 합동 수혜가 아니다 ---
+합동 학습 이득($822/842$ 지도)은 다른 량이고, 라벨 $481$행인 영화에서도
+$+0.115$ 가 남는다. 남는 전이 가치 = 단독 불가 도메인(팝업 $24$행) + 합동
+수혜 지도 + 축 스키마.}
+{내 예측이 반증됐다: KR $n^{\dagger}\in[50,200]$ $60\%$ 라 걸었는데 $10$ 이다
+--- ``소표본 선형은 약하다''는 믿음은 $816$ TabPFN 곡선($n^{*}=50$)에서 유추한
+것이었고, $36$축 공유 표현 위의 릿지는 열 건이면 충분했다. 곡선 예측은 헤드
+종류가 아니라 표현의 질에서 유추할 것. 앱 $n^{\dagger}\le50$($70\%$)은 적중.}
+
+\section{정직}
+
+뽑기 $4$회($815$ 관례)라 SD 는 뽑기 요동이고 좁다. $n=5$ 는 릿지 계수 폭주
+(오버플로)로 참고용 --- 교차 판정($10/20$)에는 관여하지 않는다. 앱 $n=50$ 은
+SD $0.241$ 로 요동이 크지만 갈래 판정은 불변. 앱 $n=800$ 릿지 $0.5034$ 는
+전이의 $1.6$배 --- ``로컬 자료가 곧 왕''($821/822$)의 곡선판. GitHub 흐름
+$6$회째 완주(이슈 \#$12$ $\to$ PR \#$13$). 판 $\rho$ $0.4710$ 그대로.
+
+\end{document}
