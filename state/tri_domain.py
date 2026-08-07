@@ -166,6 +166,19 @@ def load_all(with_names: bool = False):
     wp2 = Path("data/state/wanime_axes.json")
     if wp2.exists():
         out["세계애니"] = _from_axes_json(str(wp2), "start_date", trend="elapsed")
+    # 열두 번째 도메인 --- **영화**(KOBIS · 노트 829~837).
+    #
+    # 다섯 노트(808·813·814·818·819·822)가 문패만 걸었던 원천을 829 가
+    # 두드려 키 없이 열었다. 라벨 = log10(개봉 후 21일 마지막 누적 관객 ·
+    # 시사회 포함 — 문턱 제외·라벨 포함 비대칭은 kobis_axes 메타 참조).
+    # 모집단 = 첫 7일 최대 일관객 >= q85(1,488 · 동결) 상업 개봉작 887.
+    # 살아있는 축 3/5(등급·장르·배급 — media/goods 는 마스크 0 · 규약 대로
+    # 억지 사상 금지). 개봉 연도 탈추세(팝업·펀딩과 같음 · trend 기본).
+    # **합류는 재기선이다**(노트 552 관례 · 837: 새 기준선 0.4710 ± 0.0021,
+    # 0.4689 와 비교 금지).
+    kp = Path("data/state/kobis_axes.json")
+    if kp.exists():
+        out["영화"] = _from_axes_json(str(kp), "release_date")
     # 열한 번째 도메인 --- **시장 팝업**(노트 283 · 284, `ingest/market_axes.py`).
     #
     # 기사가 된 팝업 205건이다. 내부 팝업(75행)과 **붙이지 않고 따로 연다** ---
