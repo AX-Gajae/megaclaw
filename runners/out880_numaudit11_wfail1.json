@@ -1,0 +1,812 @@
+{
+ "시각(UTC)": "2026-08-08T14:20:32+00:00",
+ "git HEAD": "99e31a295",
+ "입력 지문": "ea6bde460488",
+ "눈금": "짝 단위 · ±1ulp 밴드 · %p 제외 · '.json' 없는 인용 접두 글롭 · 자기 배제(878~880)",
+ "픽스처": {
+  "(a1) 심은 참양성": true,
+  "(a2) 참음성": true,
+  "(a3) 백분율": true,
+  "(a4) 승계 sd·HEAD(깊이 2)": true,
+  "(b) 이중 반올림 82.4↔0.8235": true,
+  "(c) 실추출 94.1": true,
+  "(d) 자기 배제": true,
+  "(e) .json 없는 인용 포섭": true,
+  "합격(5부류)": true
+ },
+ "모집단(863+·자기 배제)": {
+  "짝": 99,
+  "미대응": 51,
+  "pct 단독 대응": 3
+ },
+ "층화 표본(판정 필드 포함)": {
+  "다중-미스 5": [
+   {
+    "노트": 869,
+    "키": "티처 #34 기록 — 0.2969 는 유령이 아니라 3점 보존 실측이었다(전건 교차검증) (노트 869 서문",
+    "리터럴": "0.0069",
+    "대응": null,
+    "산출물": [
+     "out833.json"
+    ],
+    "판정": "소음(교차 인용) — 868 하한 이동값·유의 미달 서술: out833 실측 주장 아님"
+   },
+   {
+    "노트": 869,
+    "키": "티처 #34 기록 — 0.2969 는 유령이 아니라 3점 보존 실측이었다(전건 교차검증) (노트 869 서문",
+    "리터럴": "0.0076",
+    "대응": null,
+    "산출물": [
+     "out833.json"
+    ],
+    "판정": "소음(교차 인용) — rss 자 2×rss(SE): 868 부속 정오의 자"
+   },
+   {
+    "노트": 869,
+    "키": "티처 #34 기록 — 0.2969 는 유령이 아니라 3점 보존 실측이었다(전건 교차검증) (노트 869 서문",
+    "리터럴": "0.0125",
+    "대응": null,
+    "산출물": [
+     "out833.json"
+    ],
+    "판정": "소음(교차 인용) — 868 상한 이동값"
+   },
+   {
+    "노트": 869,
+    "키": "티처 #34 기록 — 0.2969 는 유령이 아니라 3점 보존 실측이었다(전건 교차검증) (노트 869 서문",
+    "리터럴": "0.018",
+    "대응": null,
+    "산출물": [
+     "out833.json"
+    ],
+    "판정": "소음(교차 인용) — 852 씨앗 SD(허용 오차 유도 근거)"
+   },
+   {
+    "노트": 869,
+    "키": "티처 #34 기록 — 0.2969 는 유령이 아니라 3점 보존 실측이었다(전건 교차검증) (노트 869 서문",
+    "리터럴": "0.02",
+    "대응": null,
+    "산출물": [
+     "out833.json"
+    ],
+    "판정": "소음(교차 인용) — ±0.02 무근거 승계 금지 문면의 문턱"
+   }
+  ],
+  "단일-미스 5": [
+   {
+    "노트": 871,
+    "키": "**사전등록** 배선 사이클 — era manifest 봉합·릿지 산출물·방문객 스냅샷 (노트 871 · T",
+    "리터럴": "0.0005",
+    "대응": null,
+    "산출물": [
+     "out871_ridge.json"
+    ],
+    "판정": "소음(문턱) — 릿지 재현 판정선 |ρ−0.3393| ≤0.0005"
+   },
+   {
+    "노트": 864,
+    "키": "명단은 있으나 날짜가 없다 — day0b 동결·y_w30 UTC 실통일 (노트 864 · T4)",
+    "리터럴": "1.6",
+    "대응": null,
+    "산출물": [
+     "out864_day0b.json",
+     "out864_gate_rows.json",
+     "out864_repair.json"
+    ],
+    "판정": "**진짜 부재·박제 대상** — '전행 228 재계산 p95 1.6%' 실측 주장의 집계값이 어느 out 에도 없음(행 원자료 rel_diff 는 game_recent_utc.json 에 실재) — 본 산출물 '864 p95 박제' 절이 새 보존처"
+   },
+   {
+    "노트": 863,
+    "키": "게임의 문이 열렸다 — day0 코호트 동결·y_w30 정본화 (노트 863 · T4/T7)",
+    "리터럴": "0.05",
+    "대응": null,
+    "산출물": [
+     "out863_day0.json",
+     "out863_knock.json"
+    ],
+    "판정": "소음(문턱) — p95 ≤0.05 판정선"
+   }
+  ],
+  "대응 의심 10": [
+   {
+    "노트": 864,
+    "키": "명단은 있으나 날짜가 없다 — day0b 동결·y_w30 UTC 실통일 (노트 864 · T4)",
+    "리터럴": "0.34",
+    "대응": "pct",
+    "산출물": [
+     "out864_day0b.json",
+     "out864_gate_rows.json",
+     "out864_repair.json"
+    ],
+    "판정": "정당 대응 — 중앙 0.34% = out864_gate_rows 의 0.0034 실재"
+   },
+   {
+    "노트": 864,
+    "키": "명단은 있으나 날짜가 없다 — day0b 동결·y_w30 UTC 실통일 (노트 864 · T4)",
+    "리터럴": "2.2",
+    "대응": "pct",
+    "산출물": [
+     "out864_day0b.json",
+     "out864_gate_rows.json",
+     "out864_repair.json"
+    ],
+    "판정": "정당 대응 — p95 2.2% = out864_gate_rows 의 0.022 실재"
+   },
+   {
+    "노트": 864,
+    "키": "명단은 있으나 날짜가 없다 — day0b 동결·y_w30 UTC 실통일 (노트 864 · T4)",
+    "리터럴": "87.4",
+    "대응": "pct",
+    "산출물": [
+     "out864_day0b.json",
+     "out864_gate_rows.json",
+     "out864_repair.json"
+    ],
+    "판정": "정당 대응(전사층) — 0.874 가 day0b·repair 에 실재. 주장층 주의: 87.4% 는 865 가 철회한 숫자(죽은 구간 착시) — 전사 정합과 주장 유효는 다른 층"
+   }
+  ]
+ },
+ "864 p95 박제": {
+  "모집단": 228,
+  "p95(rel_diff)": 0.017,
+  "p95 %": 1.7,
+  "864 문면": 1.6,
+  "반올림 일치": false,
+  "중앙": 0.0,
+  "출처": "data/state/game_recent_utc.json 행(228) — 집계값의 새 보존처는 본 산출물"
+ },
+ "논문 번호 중복(유산 포함 — 문서)": {
+  "100": [
+   "100_slot",
+   "100_whatboardpicked"
+  ],
+  "101": [
+   "101_hearing",
+   "101_where"
+  ],
+  "102": [
+   "102_crowd",
+   "102_hearingcurve"
+  ],
+  "103": [
+   "103_theonlyknob",
+   "103_unalign"
+  ],
+  "104": [
+   "104_mygate",
+   "104_relax"
+  ],
+  "105": [
+   "105_borrowed",
+   "105_fourth"
+  ],
+  "106": [
+   "106_elevenththeroom",
+   "106_tsplit"
+  ],
+  "107": [
+   "107_realbutunseen",
+   "107_split"
+  ],
+  "108": [
+   "108_adopt",
+   "108_onenumber"
+  ],
+  "109": [
+   "109_blur",
+   "109_whichrows"
+  ],
+  "110": [
+   "110_onemarker",
+   "110_popkeep"
+  ],
+  "111": [
+   "111_nobodypicked",
+   "111_whenknow"
+  ],
+  "112": [
+   "112_bothears",
+   "112_twoclock"
+  ],
+  "114": [
+   "114_namediff",
+   "114_theyneverme"
+  ],
+  "115": [
+   "115_nocompass",
+   "115_tiebreak"
+  ],
+  "116": [
+   "116_samework",
+   "116_sweep"
+  ],
+  "117": [
+   "117_leak",
+   "117_threetries"
+  ],
+  "118": [
+   "118_lowerresolution",
+   "118_placebopass",
+   "118_quality"
+  ],
+  "119": [
+   "119_samesite",
+   "119_sixteenrows",
+   "119_twinsnottwins"
+  ],
+  "120": [
+   "120_crossedbutquiet",
+   "120_honest",
+   "120_twoquestions"
+  ],
+  "121": [
+   "121_law",
+   "121_onlyonesurvived",
+   "121_sharedcolumn"
+  ],
+  "122": [
+   "122_alreadyinside",
+   "122_coverageflipssign",
+   "122_scalefix"
+  ],
+  "123": [
+   "123_coveragecurve",
+   "123_plan",
+   "123_whoaxesserve"
+  ],
+  "124": [
+   "124_empty",
+   "124_emptycolumnfree",
+   "124_loadbearing"
+  ],
+  "125": [
+   "125_null",
+   "125_shapenotcontent",
+   "125_sixteenrows"
+  ],
+  "126": [
+   "126_bothways",
+   "126_flat",
+   "126_howmuchborrowed"
+  ],
+  "127": [
+   "127_ghostfix",
+   "127_neitherverdict",
+   "127_seen"
+  ],
+  "128": [
+   "128_outside",
+   "128_samefile",
+   "128_scrapedafter"
+  ],
+  "129": [
+   "129_brokenruler",
+   "129_couple",
+   "129_theindicatoraudit"
+  ],
+  "130": [
+   "130_calendar",
+   "130_fifteenth",
+   "130_ownaxisatlast"
+  ],
+  "131": [
+   "131_dosecurve",
+   "131_sizeorshape",
+   "131_when"
+  ],
+  "132": [
+   "132_contentthistime",
+   "132_countthedoors",
+   "132_hetero"
+  ],
+  "133": [
+   "133_onesurvives",
+   "133_pooledisborrowed",
+   "133_wide"
+  ],
+  "134": [
+   "134_base",
+   "134_fivetimes",
+   "134_onedomainonly"
+  ],
+  "135": [
+   "135_noruler",
+   "135_power",
+   "135_searchnotcalendar"
+  ],
+  "136": [
+   "136_group",
+   "136_noonelender",
+   "136_whatsells"
+  ],
+  "137": [
+   "137_corr",
+   "137_rankcheck",
+   "137_sealed"
+  ],
+  "138": [
+   "138_baseline",
+   "138_floor",
+   "138_neverread"
+  ],
+  "139": [
+   "139_dilute",
+   "139_sigma",
+   "139_whatpoolingbuys"
+  ],
+  "140": [
+   "140_hide",
+   "140_noiselaw",
+   "140_swallowed"
+  ],
+  "141": [
+   "141_reallocation",
+   "141_when",
+   "141_yesterday"
+  ],
+  "142": [
+   "142_age",
+   "142_backwards",
+   "142_convexcost"
+  ],
+  "143": [
+   "143_almostconstant",
+   "143_did",
+   "143_nofamily"
+  ],
+  "144": [
+   "144_attrib",
+   "144_screensdontrank",
+   "144_shrinkpool"
+  ],
+  "145": [
+   "145_myownnote",
+   "145_onestep",
+   "145_stab"
+  ],
+  "146": [
+   "146_roughcol",
+   "146_seed",
+   "146_tenaxes"
+  ],
+  "147": [
+   "147_nopath",
+   "147_order",
+   "147_unusedrows"
+  ],
+  "148": [
+   "148_blend",
+   "148_dilution",
+   "148_thepoolsshadow"
+  ],
+  "149": [
+   "149_ushape",
+   "149_whatthepoolate",
+   "149_wiki"
+  ],
+  "150": [
+   "150_fivedoors",
+   "150_match",
+   "150_thefloorwemissed"
+  ],
+  "151": [
+   "151_borrowednoise",
+   "151_gate",
+   "151_ninetysix"
+  ],
+  "152": [
+   "152_read",
+   "152_remeasured",
+   "152_twothousand"
+  ],
+  "153": [
+   "153_emptyjoin",
+   "153_llm",
+   "153_thefloorunderthemodel"
+  ],
+  "154": [
+   "154_fill",
+   "154_sametwentynine",
+   "154_scrapedtheshadow"
+  ],
+  "155": [
+   "155_firstpass",
+   "155_lever",
+   "155_thesecondline"
+  ],
+  "156": [
+   "156_drawer",
+   "156_half",
+   "156_theshadowlifted"
+  ],
+  "157": [
+   "157_onecolumn",
+   "157_split",
+   "157_thecostofacolumn"
+  ],
+  "158": [
+   "158_ctrl",
+   "158_insidenotout",
+   "158_thereadingside"
+  ],
+  "159": [
+   "159_climatology",
+   "159_fourthlist",
+   "159_holi"
+  ],
+  "160": [
+   "160_orient",
+   "160_theflatprice",
+   "160_wrongruler"
+  ],
+  "161": [
+   "161_debt",
+   "161_neutralswitch",
+   "161_onejunkcolumn"
+  ],
+  "162": [
+   "162_nothingtoprune",
+   "162_notthewidth",
+   "162_ruler"
+  ],
+  "163": [
+   "163_harmfulbranch",
+   "163_loud",
+   "163_thetwinstest"
+  ],
+  "164": [
+   "164_driftforetold",
+   "164_slot",
+   "164_theinformationmap"
+  ],
+  "165": [
+   "165_ninetyeight",
+   "165_tenant",
+   "165_thesixthlist"
+  ],
+  "166": [
+   "166_firstlicense",
+   "166_thehairsbreadth",
+   "166_three"
+  ],
+  "167": [
+   "167_member",
+   "167_thebandbelow",
+   "167_twokingdoms"
+  ],
+  "168": [
+   "168_ninetyfourrows",
+   "168_sample",
+   "168_standingchallenger"
+  ],
+  "169": [
+   "169_measuredneverused",
+   "169_step",
+   "169_thintitles"
+  ],
+  "170": [
+   "170_stable",
+   "170_thebundleandthefour",
+   "170_whotoblame"
+  ],
+  "171": [
+   "171_absencemeasured",
+   "171_consist",
+   "171_thecalendarcut"
+  ],
+  "172": [
+   "172_cutbiggerstill",
+   "172_fair",
+   "172_wiredlicense"
+  ],
+  "173": [
+   "173_both",
+   "173_rightname"
+  ],
+  "174": [
+   "174_bare",
+   "174_lockrecovered"
+  ],
+  "175": [
+   "175_amplitudecut",
+   "175_mask"
+  ],
+  "176": [
+   "176_frag",
+   "176_shapesurvives"
+  ],
+  "177": [
+   "177_assume",
+   "177_fiftyrows"
+  ],
+  "178": [
+   "178_famous",
+   "178_timetax"
+  ],
+  "179": [
+   "179_dead",
+   "179_thinfield"
+  ],
+  "180": [
+   "180_onaxis",
+   "180_sign"
+  ],
+  "181": [
+   "181_label",
+   "181_oneridge"
+  ],
+  "182": [
+   "182_halfpool",
+   "182_past"
+  ],
+  "183": [
+   "183_brokenruler",
+   "183_shade"
+  ],
+  "184": [
+   "184_cleanmap",
+   "184_weight"
+  ],
+  "185": [
+   "185_hairline",
+   "185_prov"
+  ],
+  "186": [
+   "186_honestmap",
+   "186_mono"
+  ],
+  "187": [
+   "187_errata",
+   "187_mimic"
+  ],
+  "188": [
+   "188_fivedoors",
+   "188_stack"
+  ],
+  "189": [
+   "189_impulse",
+   "189_knob"
+  ],
+  "190": [
+   "190_flat",
+   "190_underfoot"
+  ],
+  "191": [
+   "191_frac",
+   "191_twelfth"
+  ],
+  "192": [
+   "192_rebaseline",
+   "192_small"
+  ],
+  "193": [
+   "193_samecooling",
+   "193_three"
+  ],
+  "194": [
+   "194_fourfield",
+   "194_row"
+  ],
+  "195": [
+   "195_seen",
+   "195_unknown"
+  ],
+  "196": [
+   "196_cost",
+   "196_venueclan"
+  ],
+  "197": [
+   "197_carry",
+   "197_sixthdoor"
+  ],
+  "198": [
+   "198_sharp",
+   "198_window"
+  ],
+  "199": [
+   "199_loop",
+   "199_maskline"
+  ],
+  "200": [
+   "200_halfline",
+   "200_interp"
+  ],
+  "201": [
+   "201_already",
+   "201_batchfn"
+  ],
+  "202": [
+   "202_erratum201",
+   "202_order"
+  ],
+  "203": [
+   "203_alone",
+   "203_ridgeyouth"
+  ],
+  "204": [
+   "204_carry2",
+   "204_nameless"
+  ],
+  "205": [
+   "205_onecol",
+   "205_wrongname"
+  ],
+  "206": [
+   "206_onef",
+   "206_onename"
+  ],
+  "207": [
+   "207_denom",
+   "207_threedoors"
+  ],
+  "208": [
+   "208_divide",
+   "208_nokingdom"
+  ],
+  "210": [
+   "210_pastworld",
+   "210_window"
+  ],
+  "211": [
+   "211_floor",
+   "211_whatisoverlap"
+  ],
+  "213": [
+   "213_ghostrx",
+   "213_hol"
+  ],
+  "62": [
+   "62_dupspeak",
+   "62_four-wrong"
+  ],
+  "63": [
+   "63_cantpick",
+   "63_hygiene"
+  ],
+  "64": [
+   "64_diagnostic-lies",
+   "64_thinshape"
+  ],
+  "65": [
+   "65_audit-module",
+   "65_innerscale"
+  ],
+  "66": [
+   "66_regimemix",
+   "66_reproduced"
+  ],
+  "67": [
+   "67_mimic",
+   "67_vanished"
+  ],
+  "68": [
+   "68_othersppay",
+   "68_saturated"
+  ],
+  "69": [
+   "69_seventh",
+   "69_zerosum"
+  ],
+  "70": [
+   "70_halfknown",
+   "70_sedomain"
+  ],
+  "71": [
+   "71_nosum",
+   "71_together"
+  ],
+  "72": [
+   "72_newruler",
+   "72_sharedname"
+  ],
+  "73": [
+   "73_gatefed",
+   "73_halfdose"
+  ],
+  "74": [
+   "74_exhausted",
+   "74_teacher"
+  ],
+  "75": [
+   "75_notmore",
+   "75_seventyfive"
+  ],
+  "76": [
+   "76_onlybook",
+   "76_prospective"
+  ],
+  "77": [
+   "77_onebyone",
+   "77_tagmeaning"
+  ],
+  "78": [
+   "78_ninth",
+   "78_passfail"
+  ],
+  "79": [
+   "79_animetag",
+   "79_ceiling"
+  ],
+  "80": [
+   "80_crowding",
+   "80_seeds"
+  ],
+  "81": [
+   "81_notroom",
+   "81_samesame"
+  ],
+  "82": [
+   "82_denominator",
+   "82_whichday"
+  ],
+  "83": [
+   "83_howmany",
+   "83_loadlies"
+  ],
+  "84": [
+   "84_gate",
+   "84_samefield"
+  ],
+  "85": [
+   "85_accrual",
+   "85_encoder"
+  ],
+  "86": [
+   "86_fillside",
+   "86_nolabel"
+  ],
+  "87": [
+   "87_memorize",
+   "87_overceiling"
+  ],
+  "88": [
+   "88_epochs",
+   "88_recordedness"
+  ],
+  "89": [
+   "89_notthedate",
+   "89_tool"
+  ],
+  "90": [
+   "90_fourth",
+   "90_samerank"
+  ],
+  "91": [
+   "91_bookclock",
+   "91_toolkit"
+  ],
+  "92": [
+   "92_clockshare",
+   "92_history"
+  ],
+  "93": [
+   "93_gapsplit",
+   "93_whichrows"
+  ],
+  "94": [
+   "94_cover",
+   "94_twoinners"
+  ],
+  "95": [
+   "95_runitforreal",
+   "95_text"
+  ],
+  "96": [
+   "96_borrow",
+   "96_originpays"
+  ],
+  "97": [
+   "97_onlyother",
+   "97_thetenth"
+  ],
+  "98": [
+   "98_learnfloor",
+   "98_stackcap"
+  ],
+  "99": [
+   "99_blindchamp",
+   "99_receive"
+  ]
+ },
+ "문서 절": "v1/v1.1 은 전사층 전용 — 티처 #44 참양성 2건(figure 모순·시대 라벨)은 주장층이라 범위 밖(주장층 도구는 미건조)"
+}
