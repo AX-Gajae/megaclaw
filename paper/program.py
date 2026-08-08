@@ -228,9 +228,10 @@ def report(path: Path = OUT) -> Path:
     parts.append("<h2>트랙 한눈</h2><div class=scroll><table>")
     parts.append("<tr><th>트랙</th><th>질문</th><th>현재 입장</th><th>다음</th></tr>")
     for k, t in tr.items():
-        e = (t.get("다음 실험") or "")
-        st = "막힘" if ("대기" in e or "없음" in e) else "지금 가능"
-        cls = "stop" if st == "막힘" else "go"
+        #: 상태는 **값으로 읽는다**(노트 730 · 규약 15). 산문 추론('대기'/'없음' 문자열)은
+        #: 노트 868 에서 제거 — 867 커밋이 주선 트랙 T1·T4 를 빨갛게 실어 날랐다(티처 #33).
+        st = (t.get("상태") or "").strip() or "(상태 안 적힘)"
+        cls = "go" if st == "지금 가능" else "stop"
         parts.append(f"<tr><td><span class=tag>{html.escape(k)}</span></td>"
                      f"<td>{_md(t.get('질문',''))}</td>"
                      f"<td>{_md(t.get('현재 입장',''))}</td>"
