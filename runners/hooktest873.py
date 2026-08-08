@@ -17,6 +17,9 @@ sys.path.insert(0, "/Users/ax/world_model/runners")
 ROOT = Path("/Users/ax/world_model")
 
 
+N_EV = {}
+
+
 def one_fit(hook_on: bool) -> str:
     os.environ["ERA_HOOK"] = "1" if hook_on else "0"
     import ff753 as FF
@@ -32,6 +35,7 @@ def one_fit(hook_on: bool) -> str:
     years = np.array([int(str((r.get("start_date") or "0000"))[:4] or 0) for r in recs.values()])
     ev = np.flatnonzero(fin & (years >= 2025))
     p = np.asarray(f.predict(src, A[ev], M[ev], np.asarray(t, float)[ev]), float)
+    N_EV['n'] = int(len(ev))                             # 자기서술 실측(874 — '322행' 산문 제거)
     return hashlib.sha256(p.tobytes()).hexdigest()[:16]
 
 
@@ -39,14 +43,16 @@ def main():
     t0 = time.time()
     h_on, h_off = one_fit(True), one_fit(False)
     out = {"자기서술": {"모형": "F18_bagboost(seed=0)", "구성": "ff753.shell(base()) — 챔피언 축",
-                     "해시 대상": "KR 만화 평가 322행 예측 배열(sha256[:16])",
+                     "해시 대상": "KR 만화 평가행 예측 배열(sha256[:16])",
                      "논거": "주 = 훅 print 전용(코드 성질) · 이 스모크는 방증"},
+           "평가행(실측)": N_EV.get("n"),
            "훅 on": h_on, "훅 off": h_off, "비트 동일": h_on == h_off,
            "초": round(time.time() - t0, 1)}
-    import datetime as dt
-    with open(ROOT / f"runners/out_hooktest_{dt.date.today()}.json", "x") as fh:
-        json.dump(out, fh, ensure_ascii=False, indent=1)
     print(json.dumps(out, ensure_ascii=False, indent=1), flush=True)
+    if "--save" in sys.argv:                             # 동결 규율 통일(874 — erascan 과 동일 게이트)
+        import datetime as dt
+        with open(ROOT / f"runners/out_hooktest_{dt.date.today()}.json", "x") as fh:
+            json.dump(out, fh, ensure_ascii=False, indent=1)
 
 
 if __name__ == "__main__":
