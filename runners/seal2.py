@@ -68,12 +68,14 @@ def open_schedule(month):
 def sealed_codes():
     """기존 봉인 코드 전량 — 후봉인 제외(annex6 중복 규칙)."""
     out = set()
-    for p in SEALDIR.glob("seal_*.json"):
-        try:
-            for m in json.loads(p.read_text())["작품"]:
-                out.add(m["code"])
-        except Exception:
-            pass
+    for p in sorted(SEALDIR.glob("seal_*.json")):
+        if "erratum" in p.name or "annex" in p.name:
+            continue
+        doc = json.loads(p.read_text())          # 손상은 침묵하지 않고 즉사(860 위생)
+        if "작품" not in doc:
+            raise SystemExit(f"⛔ 봉인 파일에 '작품' 없음: {p.name}")
+        for m in doc["작품"]:
+            out.add(m["code"])
     return out
 
 
