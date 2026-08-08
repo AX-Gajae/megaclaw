@@ -124,6 +124,13 @@ def _dir(slug: str) -> Path:
 
 def build(slug: str) -> Path:
     d = _dir(slug)
+    # 번호 충돌 경고(2026-08-08 · 노트 880) — 전수 스캔 실측: 62~213 이 거의 전부 2~3중
+    # (두 계열 공존 · 유산 규범)이라 생성-시 차단은 불가능하다. 유일 키는 디렉터리 이름이고
+    # 호출-시 모호성은 _dir 가 이미 예외로 막는다(788). 신규 논문은 470+(첫 빈 번호)를 쓴다.
+    num = d.name.split("_")[0]
+    dups = [c.name for c in STEPS.glob(f"{num}_*") if c.name != d.name]
+    if dups:
+        print(f"⚠ 번호 {num} 공유: {d.name} 대 {dups} — 신규면 470+ 를 쓰라(노트 880)")
     BUILD.mkdir(exist_ok=True)
     r = subprocess.run(["tectonic", "-X", "compile", str(d / "main.tex"),
                         "--outdir", str(BUILD)], capture_output=True, text=True)
