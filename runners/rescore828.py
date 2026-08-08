@@ -29,7 +29,7 @@ print("챔피언 씨앗 1~4 적합...", flush=True)
 fits = [G._fit_on(lambda s=s: cls(seed=s), data, 2025.0, seed=s) for s in (1, 2, 3, 4)]
 print(f"적합 완료 {time.time()-t0:.0f}s", flush=True)
 
-REF827 = json.load(open("/private/tmp/claude-501/-Users-ax-world-model/ab2920c3-279e-40cd-b648-7c58d9b12d79/scratchpad/out827.json"))
+REF827 = json.load(open("/Users/ax/world_model/runners/out827.json"))  # 휘발 경로 수리(티처 #24)
 DOMS = ["게임", "도서", "만화", "모바일", "세계애니", "시장팝업", "아이돌", "애니", "웹툰", "펀딩"]
 OUT = {"(a) 대 릿지": {}, "(b) 챌린저": {}, "(c) 825 부분집합": {}, "군집 병기": {}}
 for d in DOMS:
