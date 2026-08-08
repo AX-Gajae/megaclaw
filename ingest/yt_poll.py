@@ -56,7 +56,9 @@ def snapshot() -> dict:
                 m = yt_meta(v.get("id") or v.get("videoId") or "")
             except Exception as e:
                 m = {"id": v.get("id"), "⛔": type(e).__name__}
-            m["published(RSS)"] = v.get("published")
+            # 🔴 노트 883 수리: yt_rss 는 키를 "게시"로 준다("published" 아님) —
+            # 조용한 None 으로 **시간 게이트 필드가 전부 버려지고 있었다**(첫 스냅샷 실측).
+            m["published(RSS)"] = v.get("게시") or v.get("published")
             row["영상"].append(m)
         out["대상"].append(row)
     p = OUTDIR / f"{today}.json"
