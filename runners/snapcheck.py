@@ -23,9 +23,10 @@ def main():
            "행 수": len(rows), "원행 기존 키": row_key(orig) in seen,
            "변조행 신규 감지": row_key(mut) not in seen, "통과": ok,
            "자기서술": "필드 1(total_visitor_count) +1 변조 · _스냅샷 제외 전행 해시"}
-    p = ROOT / f"runners/out_snapcheck_{dt.date.today()}.json"
-    if not p.exists():
-        json.dump(out, open(p, "x"), ensure_ascii=False, indent=1)
+    if "--save" in sys.argv:                             # 동결 규율 통일(875 — exists-skip 제3 패턴 제거)
+        p = ROOT / f"runners/out_snapcheck_{dt.date.today()}.json"
+        with open(p, "x") as fh:
+            json.dump(out, fh, ensure_ascii=False, indent=1)
     print(json.dumps(out, ensure_ascii=False), flush=True)
     assert ok, "양성 대조 실패"
 
