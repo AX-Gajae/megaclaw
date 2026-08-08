@@ -101,6 +101,12 @@ def check(p: dict | None = None) -> list:
             if key in t and not isinstance(t[key], typ):
                 bad.append(f"{name}: '{key}' 가 {typ.__name__} 이어야 하는데 "
                            f"{type(t[key]).__name__} 이다")
+        #: **곁가지 키를 위반으로 찍는다**(노트 867 · 티처 #32 중대 1). '다음' 키에
+        #: 갱신이 가고 `next` 는 '다음 실험' 을 읽어 — 죽은 좌표(0순위 813/814)가
+        #: 세 관문(next → 티처 → 사전등록)을 통과했다. 노트 546/549 병의 재발.
+        stray = set(t.keys()) - set(SHAPE)
+        if stray:
+            bad.append(f"{name}: 스키마 밖 키 {sorted(stray)} — '다음 실험' 하나에만 적는다(노트 867)")
         if not t.get("근거"):
             bad.append(f"{name}: 근거가 없다")
         # **상태는 값으로 적는다**(노트 730 · 규약 15). 산문 추론을 없앴으므로
