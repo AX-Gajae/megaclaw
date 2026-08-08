@@ -150,8 +150,12 @@ yr_f = np.asarray(data12.yr["영화"], float)
 y_f = np.asarray(data12.dom["영화"][2], float)
 kho = np.isfinite(yr_f) & (yr_f >= T) & np.isfinite(y_f)
 preds_new, preds_eval = [], []
+spec_picks = []
 for s in SEEDS:
     f = G._fit_on(lambda s=s: cls(seed=s), data12, T, seed=s)
+    #: 🔴 레짐 등가(856 규약 ⑥)의 전제 감시(티처 #22) — 봉인 시점 spec 픽을 지문에 기록.
+    #: None 이 아니면 단독-배치 밴드 별도 산출이 필요하다(등가 이월 금지).
+    spec_picks.append(f.spec.get("영화"))
     preds_new.append(np.asarray(f.predict("영화", X, Mx, tx), float))
     Ah, Mh, yh, th = data12.slice("영화", kho)
     preds_eval.append(np.asarray(f.predict("영화", Ah, Mh, th), float))
@@ -192,7 +196,9 @@ seal = {
              for i, m in enumerate(pool)],
     "모형 지문": {"form": "F18_bagboost 합동(12도메인)", "T": T, "씨앗": SEEDS,
                  "공유 축": len(common), "배급 사전(학습)": len(train_count),
-                 "코드 sha256": code_sha, "git": git_sha},
+                 "코드 sha256": code_sha, "git": git_sha,
+                 "spec 픽(영화·씨앗별)": [str(x) for x in spec_picks],
+                 "레짐 등가 전제": "spec 전부 None 이어야 856 등가 이월 가능"},
     "채점 규칙(동결)": {
         "라벨": "836 규칙 그대로 — 개봉일~+20일 창의 마지막 누적관객 log10(일별 표 소급 fetch)",
         "검열": "마지막 관측 < 개봉+14일 → 제외(검열 행 수 병기)",
