@@ -34,11 +34,20 @@ cohort = json.load(open(ROOT / cfg["파일"]))["코호트"]
 print(f"코호트 {len(cohort)} · 가드 {cfg['가드']} · 오늘 {today}\n갈래(동결): {cfg['갈래']}", flush=True)
 if plan:
     sys.exit(0)
+def _sept_window_open():
+    """(5,15] 갈래 발동 시에만 9/1~9/7 1회 허용(사전등록 866 P1②)."""
+    f = ROOT / "runners/out_day7_864_2026-08-29.json"
+    if not f.exists():
+        return False
+    return any("재판정" in v for v in json.load(open(f))["판정"])
+
+
 if mode == "863":
     if today < "2026-08-15":
         sys.exit("거부: 2026-08-15 이전 실행 금지(사전등록 864)")
 elif today not in ("2026-08-22", "2026-08-29"):
-    sys.exit("거부: 실행일은 {8/22, 8/29} 로 고정(사전등록 865 P1′)")
+    if not ("2026-09-01" <= today <= "2026-09-07" and _sept_window_open()):
+        sys.exit("거부: 실행일 {8/22, 8/29} 고정 · 9/1~9/7 은 8/29 '재판정' 발동 시에만(사전등록 866)")
 
 outp = ROOT / f"runners/out_day7_{mode}_{today}.json"
 states = []
@@ -50,6 +59,10 @@ for i, c in enumerate(cohort):
         d = _get(url)
         time.sleep(1.2)
     node = (d or {}).get(str(c["appid"])) or {}
+    if d is not None and not node.get("success"):
+        d = _get(url)                   # success:false 1회 재확인(866 P1④ — 간헐 오류 방어)
+        time.sleep(1.2)
+        node = (d or {}).get(str(c["appid"])) or {}
     if d is None:
         st, new_std = "조회실패", None
     elif not node.get("success"):
@@ -81,22 +94,25 @@ for s in states:
 조기 = sum(1 for s in states if s["상태"] == "선행(조기출시)")
 폐지 = cnt.get("상장폐지", 0) / n
 실패 = cnt.get("조회실패", 0)
-이동 = cnt.get("후행", 0) + cnt.get("선행", 0)
+이동 = cnt.get("후행", 0) + cnt.get("선행", 0) - 조기   # 조기출시는 분자·분모 동시 제외(866 P1① — 분자⊆분모)
 미출시잔존 = n - cnt.get("출시", 0) - 조기 - cnt.get("상장폐지", 0) - 실패
 verdict = []
 if 실패:
     verdict.append(f"조회실패 {실패}건 — 분모에서 제외·판정에 불산입(폐지 아님 · 865 P1′②)")
+if 미출시잔존 < 0.5 * n and mode != "863":
+    verdict.append(f"**판정 무효** — 미출시 잔존 {미출시잔존} < 0.5n(조회 신뢰 붕괴 · 866 P1③) — 다른 판정에 우선")
 if mode == "863":
     정시 = cnt.get("출시", 0) / n
+    cav = " · 캐비앳: 늦출시(밀렸다 출시)를 '정시'와 구분 못함 — 소폭 상향 편향(티처 #31 경미)"
     if 정시 >= 0.90 and 폐지 <= 0.02:
-        verdict.append(f"배선 신뢰 — 정시 {정시:.3f} · 폐지 {폐지:.3f}(봉인 판정 아님 — 권한은 864 코호트)")
+        verdict.append(f"배선 신뢰 — 정시 {정시:.3f} · 폐지 {폐지:.3f}(봉인 판정 아님 — 권한은 864 코호트){cav}")
     elif (이동 / n + 폐지) > 0.15:
-        verdict.append(f"노크 중단 — 4일 지평에서 이동+폐지 {이동 / n + 폐지:.3f} > 0.15")
+        verdict.append(f"노크 중단 — 4일 지평에서 이동+폐지 {이동 / n + 폐지:.3f} > 0.15{cav}")
     else:
-        verdict.append(f"유보 — 정시 {정시:.3f} · 폐지 {폐지:.3f} · 이동 {이동 / n:.3f} (864로 이관)")
+        verdict.append(f"유보 — 정시 {정시:.3f} · 폐지 {폐지:.3f} · 이동 {이동 / n:.3f} (864로 이관){cav}")
 else:
     mv = 이동 / max(미출시잔존, 1)
-    권위 = "판정(권위)" if today == "2026-08-29" else "중간 관측(권위 아님 — 판정은 8/29 누적)"
+    권위 = "판정(권위)" if today >= "2026-08-29" else "중간 관측(권위 아님 — 판정은 8/29 누적)"
     if mode == "865":
         verdict.append(f"후미 병기 전용(권위 없음) — 이동률 {mv:.3f}(잔존 {미출시잔존}) · 앞창(864)과 |Δ|>5%p 면 앞창 편향 실물")
     elif (폐지 + 조기 / n) >= 0.05:
@@ -105,8 +121,16 @@ else:
         verdict.append(("봉인 규칙 사전등록 진행" if mv <= 0.05 else
                         "9월 첫 주 1회 추가 관측 후 재판정" if mv <= 0.15 else "봉인 금지")
                        + f" — 이동률 {mv:.3f}(분모 미출시 잔존 {미출시잔존}) · 전체 분모 기준 {이동 / n:.3f} 병기 · {권위}")
+    sib = ROOT / f"runners/out_day7_{'865' if mode == '864' else '864'}_{today}.json"
+    if sib.exists():                    # 같은 실행일 앞창/후미 |Δ| 자동 병기(866 P1⑤)
+        so = json.load(open(sib))
+        s_mv = so.get("이동률(mv)")
+        if s_mv is not None:
+            dlt = abs(mv - s_mv)
+            verdict.append(f"앞창/후미 |Δ| = {dlt:.3f}" + (" > 0.05 — 앞창 편향 실물(봉인 문서에 창 제한 의무)" if dlt > 0.05 else " ≤ 0.05"))
 
 out = {"모드": mode, "판정일": today, "분포": cnt, "조기출시": 조기, "상태": states,
+       "이동률(mv)": (round(이동 / max(미출시잔존, 1), 4) if mode != "863" else None),
        "분모": {"전체": n, "미출시 잔존": 미출시잔존, "조회실패 제외": 실패}, "판정": verdict}
 with open(outp, "x") as fh:
     json.dump(out, fh, ensure_ascii=False, indent=1)

@@ -37,7 +37,9 @@ def main():
                              "provenance": f"만기 재계산 {today}(절단→성숙 · KST 저장값은 절단분)"}
     u["행"].update(added)
     u["만기 추가 이력"] = u.get("만기 추가 이력", []) + [{"일": str(today), "n": len(added)}]
-    json.dump(u, open(UF, "w"), ensure_ascii=False, indent=1)
+    tmp = UF.with_suffix(".tmp")        # 원자적 쓰기(866 — 정본은 성장물·단일 필자)
+    json.dump(u, open(tmp, "w"), ensure_ascii=False, indent=1)
+    tmp.replace(UF)
     with open(ROOT / f"runners/out_matured_{today}.json", "x") as fh:
         json.dump({"일": str(today), "추가": added}, fh, ensure_ascii=False, indent=1)
     print(f"UTC 정본에 {len(added)}행 추가(만기)", flush=True)
