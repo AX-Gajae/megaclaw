@@ -18,8 +18,10 @@
 from __future__ import annotations
 
 import datetime as _dt
+import hashlib
 import json
 import re
+import subprocess
 import time
 import urllib.parse
 import urllib.request
@@ -82,15 +84,51 @@ def fetch_daily(date: str) -> list[dict]:
     return rows
 
 
+#: 🔴 노트 884 — 무명 위치 배열의 열 이름 핀(티처 #48 e4). 비숫자 셀이 하나 끼면
+#: 위치가 조용히 밀린다. 셀 수를 assert 하고 이름을 붙여 앞으로 자라는 자산에 이름을 준다.
+CELLS = ["순위", "매출액", "누적매출액", "관객수", "누적관객수", "스크린수", "상영횟수"]
+
+
+def _named(nums: list[int]) -> dict:
+    """셀 수가 관례(7)와 다르면 이름을 붙이지 않고 사실을 남긴다."""
+    if len(nums) == len(CELLS):
+        return dict(zip(CELLS, nums))
+    return {"⚠ 셀 수 이탈": len(nums), "기대": len(CELLS)}
+
+
 def snapshot(date: str | None = None) -> dict:
     date = date or (_dt.date.today() - _dt.timedelta(days=1)).isoformat()
     rows = fetch_daily(date)
     if not rows:
         return {"⛔": "행 0 — 파싱 실패 또는 자료 없음", "date": date}
+    for r in rows:
+        r["셀"] = _named(r["숫자 셀(원본 순서)"])
     OUTDIR.mkdir(parents=True, exist_ok=True)
     p = OUTDIR / f"{date}.json"
-    p.write_text(json.dumps({"date": date, "rows": rows}, ensure_ascii=False, indent=1))
-    return {"저장": str(p), "행": len(rows)}
+    prev = json.loads(p.read_text()) if p.exists() else None
+    head = subprocess.run(["git", "rev-parse", "--short", "HEAD"], cwd=ROOT,
+                          capture_output=True, text=True).stdout.strip()
+    body = {
+        "date": date,
+        "시각(UTC)": _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds"),
+        "git HEAD": head,
+        "입력 지문": hashlib.sha256(
+            json.dumps(rows, ensure_ascii=False, sort_keys=True).encode()).hexdigest()[:12],
+        "열 이름 핀": CELLS,
+        "셀 수 이탈 행": sum(1 for r in rows if "⚠ 셀 수 이탈" in r["셀"]),
+        "개봉일 null": sum(1 for r in rows if not r.get("개봉일")),
+        "rows": rows,
+    }
+    if prev:                       # 🔴 덮어쓰기 금지(티처 #48 M8) — 이전 판을 이력으로 보존
+        body["이전 판 이력"] = (prev.get("이전 판 이력") or []) + [
+            {k: prev.get(k) for k in ("시각(UTC)", "git HEAD", "입력 지문", "보수")
+             if prev.get(k) is not None} | {"행": len(prev.get("rows") or [])}]
+        for k in ("보수",):
+            if prev.get(k) and k not in body:
+                body[k] = prev[k]
+    p.write_text(json.dumps(body, ensure_ascii=False, indent=1))
+    return {"저장": str(p), "행": len(rows), "셀 수 이탈": body["셀 수 이탈 행"],
+            "개봉일 null": body["개봉일 null"], "이전 판 보존": bool(prev)}
 
 
 def movie_detail(code: str) -> dict:
