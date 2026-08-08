@@ -61,10 +61,27 @@ def snapshot() -> dict:
             m["published(RSS)"] = v.get("게시") or v.get("published")
             row["영상"].append(m)
         out["대상"].append(row)
+    # 🔴 노트 884 위생(티처 #48 M8): 자기서술 + 덮어쓰기 금지(같은 날 재실행은 이력 보존)
+    import hashlib
+    import subprocess
+    out["시각(UTC)"] = _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds")
+    out["git HEAD"] = subprocess.run(["git", "rev-parse", "--short", "HEAD"], cwd=ROOT,
+                                     capture_output=True, text=True).stdout.strip()
+    out["입력 지문"] = hashlib.sha256(
+        json.dumps(targets, ensure_ascii=False, sort_keys=True).encode()).hexdigest()[:12]
     p = OUTDIR / f"{today}.json"
+    if p.exists():
+        prev = json.loads(p.read_text())
+        out["이전 판 이력"] = (prev.get("이전 판 이력") or []) + [
+            {k: prev.get(k) for k in ("찍은 때", "시각(UTC)", "git HEAD", "입력 지문", "보수")
+             if prev.get(k) is not None}
+            | {"영상 수": sum(len(r.get("영상") or []) for r in prev.get("대상") or [])}]
+        if prev.get("보수"):
+            out["보수"] = prev["보수"]
     p.write_text(json.dumps(out, ensure_ascii=False, indent=1))
     return {"저장": str(p), "대상 수": len(targets),
-            "영상 수": sum(len(r["영상"]) for r in out["대상"])}
+            "영상 수": sum(len(r["영상"]) for r in out["대상"]),
+            "이전 판 보존": "이전 판 이력" in out}
 
 
 if __name__ == "__main__":
