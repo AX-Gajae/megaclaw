@@ -65,12 +65,39 @@ def open_schedule(month):
     return out
 
 
+def sealed_codes():
+    """기존 봉인 코드 전량 — 후봉인 제외(annex6 중복 규칙)."""
+    out = set()
+    for p in SEALDIR.glob("seal_*.json"):
+        try:
+            for m in json.loads(p.read_text())["작품"]:
+                out.add(m["code"])
+        except Exception:
+            pass
+    return out
+
+
 def plan(months, today, open_max):
     movies = {}
     for month in months:
         movies.update(open_schedule(month))
-    pool = [m for m in movies.values() if today < m["개봉일"] <= open_max]
-    out = {"수집": len(movies), "개봉 전 풀": len(pool),
+    done = sealed_codes()
+    pool = [m for m in movies.values() if today < m["개봉일"] <= open_max and m["code"] not in done]
+    # 명단 편향 병기: 어제 일별 표의 최근 개봉작(≤7일) 중 일람 밖 비율
+    import datetime as _dt
+    try:
+        from ingest.kobis import fetch_daily
+        yday = (_dt.date.fromisoformat(today) - _dt.timedelta(days=1)).isoformat()
+        rows_y = fetch_daily(yday)
+        recent = {r["제목"].strip() for r in rows_y
+                  if r.get("개봉일") and (0 <= (_dt.date.fromisoformat(yday) -
+                                                _dt.date.fromisoformat(r["개봉일"])).days <= 7)}
+        listed = {m["제목"].strip() for m in movies.values()}
+        missing = sorted(recent - listed)
+    except Exception as e:
+        missing = [f"⛔ 대조 실패 {str(e)[:40]}"]
+    out = {"수집": len(movies), "개봉 전 풀": len(pool), "기봉인 제외": len(sealed_codes()),
+           "일별 신작 대조(일람 밖)": missing,
            "명단": [(m["제목"], m["개봉일"]) for m in sorted(pool, key=lambda x: x["개봉일"])[:40]]}
     print(json.dumps(out, ensure_ascii=False, indent=1))
     return pool
@@ -172,6 +199,25 @@ def seal(months, today, open_max):
     code_sha = hashlib.sha256(open(__file__, "rb").read()).hexdigest()[:16]
     git_sha = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True, text=True,
                              cwd=ROOT).stdout.strip()[:12]
+    # v2 팔(세그먼트 사전 — cleanwin847 동결 규칙)
+    def segments_v2(raw_s):
+        s2 = html.unescape(str(raw_s or ""))
+        parts = [p.strip() for p in re.split("[\u00a0]+|[ \t]{2,}", s2) if p.strip()]
+        parts = [re.sub(r"^(?:수입사|제공|공동제공|배급|투자)\s+", "", p) for p in parts]
+        segs = [clean_dist(p) for p in parts]
+        return [x for x in segs if len(re.sub(r"[()㈜\s]|주식회사|유한회사", "", x)) >= 2]
+
+    tc2 = {}
+    for r in raw:
+        if "⛔" not in r and r.get("code") and r["개봉일"] < "2025-01-01" and r.get("배급사"):
+            for seg in set(segments_v2(r["배급사"])):
+                tc2[seg] = tc2.get(seg, 0) + 1
+    rk2 = sorted(tc2.values())
+    v2_vp = {}
+    for m in pool:
+        segs = segments_v2(m.get("배급사")) if m.get("배급사") else []
+        if segs and segs[0] in tc2:
+            v2_vp[m["code"]] = float(np.searchsorted(rk2, tc2[segs[0]], side="right") / len(rk2))
     seal_doc = {
         "봉인일": today_s, "층": "갑(개봉 전 청정)",
         "작품": [{"code": m["code"], "제목": m["제목"], "개봉일": m["개봉일"],
@@ -181,6 +227,8 @@ def seal(months, today, open_max):
                   "예측 순위": rank[i]} for i, m in enumerate(pool)],
         "모형 지문": {"form": "F18_bagboost 합동(12도메인)", "T": T, "씨앗": list(range(12)),
                      "spec 픽(영화·씨앗별)": spec_picks, "코드 sha256": code_sha, "git": git_sha},
+        "v2 팔(세그먼트 사전 · venue 만)": {c: round(v, 4) for c, v in v2_vp.items()},
+        "v3 팔": "봉인 직후 별도 조회(회사 필모 — refilmo851 절차) 후 annex 로 병기(사전 밖 배급사만)",
         "조용한 기본값 체크리스트": CHECKLIST,
         "채점": "harvest844.py(동결) + harvest844b.py 진단 사이드카 — 규칙 동일(836 라벨·검열 14·문턱 0.2046 은 1호 전용 · 2호 밴드는 봉인 후 같은 절차로 산출)",
     }
