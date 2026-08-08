@@ -209,6 +209,16 @@ def load(extra: dict | None = None, quiet: set | None = None) -> Data:
     dom, hits = _hyg(dict(dom))
     LOAD_HYGIENE.clear()
     LOAD_HYGIENE.update(hits)
+    #: (노트 872) 시대 단절 조기 경보 — **라벨 층만**(행+y · A/M 은 축 구성 종속이라
+    #: 여기서 대조하면 extra 실험마다 거짓 단절 — lab/eracheck 문서). print 전용이라
+    #: 적합·채점에 무영향(씨앗 0 on/off 비트 동일로 실증 — out872). ERA_HOOK=0 이면 끔.
+    import os as _os
+    if _os.environ.get("ERA_HOOK") != "0":
+        try:
+            from .eracheck import compare_labels as _cl
+            _cl(Data(dom, names))
+        except Exception as _e:                          # 가드가 본선을 죽이면 안 된다
+            print(f"era 가드 자체 오류(무시): {_e}", flush=True)
     if not extra:
         return Data(dom, names)
     dom2, nm2 = {}, {}
