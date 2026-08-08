@@ -35,7 +35,8 @@ def main():
         rows = _bq(["head", "-n", str(CAP), "--format=json", TABLE])
         meta = _bq(["show", "--format=json", TABLE])
         num_rows = int(meta.get("numRows", -1))
-    except (RuntimeError, subprocess.TimeoutExpired, json.JSONDecodeError) as e:
+    except (RuntimeError, subprocess.TimeoutExpired, json.JSONDecodeError,
+            FileNotFoundError, OSError, ValueError) as e:
         entry = {"시각(UTC)": now, "실패": f"{type(e).__name__}: {str(e)[:180]}"}
         with open(LOG, "a") as fh:
             fh.write(json.dumps(entry, ensure_ascii=False) + "\n")
