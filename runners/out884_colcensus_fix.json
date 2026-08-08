@@ -1,0 +1,1514 @@
+{
+ "시각(UTC)": "2026-08-08T20:10:35+00:00",
+ "git HEAD": "faa85e3a0",
+ "자 범위(writer 제외)": {
+  "만화": [
+   "ingest/manga_axes.py",
+   "ingest/manga_push.py",
+   "state/tri_domain.py",
+   "ingest/derive_features.py",
+   "ingest/calendar_features.py",
+   "ingest/attr_tagger.py",
+   "ingest/bulk_normalize.py",
+   "lab/provenance.py",
+   "lab/tagaxes.py",
+   "lab/genaxes.py",
+   "lab/rawaxes.py",
+   "lab/animeaxes.py",
+   "lab/langaxes.py",
+   "lab/autotag.py",
+   "lab/fixaxes.py",
+   "lab/forms.py"
+  ],
+  "웹툰": [
+   "ingest/webtoon_axes.py",
+   "ingest/webtoon_more.py",
+   "state/tri_domain.py",
+   "ingest/derive_features.py",
+   "ingest/calendar_features.py",
+   "ingest/attr_tagger.py",
+   "ingest/bulk_normalize.py",
+   "lab/provenance.py",
+   "lab/tagaxes.py",
+   "lab/genaxes.py",
+   "lab/rawaxes.py",
+   "lab/animeaxes.py",
+   "lab/langaxes.py",
+   "lab/autotag.py",
+   "lab/fixaxes.py",
+   "lab/forms.py"
+  ],
+  "애니": [
+   "ingest/anime_axes.py",
+   "ingest/anime_more.py",
+   "state/tri_domain.py",
+   "ingest/derive_features.py",
+   "ingest/calendar_features.py",
+   "ingest/attr_tagger.py",
+   "ingest/bulk_normalize.py",
+   "lab/provenance.py",
+   "lab/tagaxes.py",
+   "lab/genaxes.py",
+   "lab/rawaxes.py",
+   "lab/animeaxes.py",
+   "lab/langaxes.py",
+   "lab/autotag.py",
+   "lab/fixaxes.py",
+   "lab/forms.py"
+  ],
+  "세계애니": [
+   "ingest/wanime_axes.py",
+   "state/tri_domain.py",
+   "ingest/derive_features.py",
+   "ingest/calendar_features.py",
+   "ingest/attr_tagger.py",
+   "ingest/bulk_normalize.py",
+   "lab/provenance.py",
+   "lab/tagaxes.py",
+   "lab/genaxes.py",
+   "lab/rawaxes.py",
+   "lab/animeaxes.py",
+   "lab/langaxes.py",
+   "lab/autotag.py",
+   "lab/fixaxes.py",
+   "lab/forms.py"
+  ],
+  "게임": [
+   "ingest/game_axes.py",
+   "ingest/game_friction.py",
+   "ingest/game_recent.py",
+   "state/tri_domain.py",
+   "ingest/derive_features.py",
+   "ingest/calendar_features.py",
+   "ingest/attr_tagger.py",
+   "ingest/bulk_normalize.py",
+   "lab/provenance.py",
+   "lab/tagaxes.py",
+   "lab/genaxes.py",
+   "lab/rawaxes.py",
+   "lab/animeaxes.py",
+   "lab/langaxes.py",
+   "lab/autotag.py",
+   "lab/fixaxes.py",
+   "lab/forms.py"
+  ],
+  "도서": [
+   "ingest/book_axes.py",
+   "state/tri_domain.py",
+   "ingest/derive_features.py",
+   "ingest/calendar_features.py",
+   "ingest/attr_tagger.py",
+   "ingest/bulk_normalize.py",
+   "lab/provenance.py",
+   "lab/tagaxes.py",
+   "lab/genaxes.py",
+   "lab/rawaxes.py",
+   "lab/animeaxes.py",
+   "lab/langaxes.py",
+   "lab/autotag.py",
+   "lab/fixaxes.py",
+   "lab/forms.py"
+  ],
+  "펀딩": [
+   "ingest/funding_axes.py",
+   "ingest/funding_creators.py",
+   "state/tri_domain.py",
+   "ingest/derive_features.py",
+   "ingest/calendar_features.py",
+   "ingest/attr_tagger.py",
+   "ingest/bulk_normalize.py",
+   "lab/provenance.py",
+   "lab/tagaxes.py",
+   "lab/genaxes.py",
+   "lab/rawaxes.py",
+   "lab/animeaxes.py",
+   "lab/langaxes.py",
+   "lab/autotag.py",
+   "lab/fixaxes.py",
+   "lab/forms.py"
+  ],
+  "모바일": [
+   "ingest/mobile_axes.py",
+   "state/tri_domain.py",
+   "ingest/derive_features.py",
+   "ingest/calendar_features.py",
+   "ingest/attr_tagger.py",
+   "ingest/bulk_normalize.py",
+   "lab/provenance.py",
+   "lab/tagaxes.py",
+   "lab/genaxes.py",
+   "lab/rawaxes.py",
+   "lab/animeaxes.py",
+   "lab/langaxes.py",
+   "lab/autotag.py",
+   "lab/fixaxes.py",
+   "lab/forms.py"
+  ],
+  "앱": [
+   "state/tri_domain.py",
+   "ingest/derive_features.py",
+   "ingest/calendar_features.py",
+   "ingest/attr_tagger.py",
+   "ingest/bulk_normalize.py",
+   "lab/provenance.py",
+   "lab/tagaxes.py",
+   "lab/genaxes.py",
+   "lab/rawaxes.py",
+   "lab/animeaxes.py",
+   "lab/langaxes.py",
+   "lab/autotag.py",
+   "lab/fixaxes.py",
+   "lab/forms.py"
+  ],
+  "영화": [
+   "ingest/kobis.py",
+   "state/tri_domain.py",
+   "ingest/derive_features.py",
+   "ingest/calendar_features.py",
+   "ingest/attr_tagger.py",
+   "ingest/bulk_normalize.py",
+   "lab/provenance.py",
+   "lab/tagaxes.py",
+   "lab/genaxes.py",
+   "lab/rawaxes.py",
+   "lab/animeaxes.py",
+   "lab/langaxes.py",
+   "lab/autotag.py",
+   "lab/fixaxes.py",
+   "lab/forms.py"
+  ],
+  "팝업": [
+   "ingest/popup_wiki.py",
+   "state/tri_domain.py",
+   "ingest/derive_features.py",
+   "ingest/calendar_features.py",
+   "ingest/attr_tagger.py",
+   "ingest/bulk_normalize.py",
+   "lab/provenance.py",
+   "lab/tagaxes.py",
+   "lab/genaxes.py",
+   "lab/rawaxes.py",
+   "lab/animeaxes.py",
+   "lab/langaxes.py",
+   "lab/autotag.py",
+   "lab/fixaxes.py",
+   "lab/forms.py"
+  ],
+  "아이돌": [
+   "state/tri_domain.py",
+   "ingest/derive_features.py",
+   "ingest/calendar_features.py",
+   "ingest/attr_tagger.py",
+   "ingest/bulk_normalize.py",
+   "lab/provenance.py",
+   "lab/tagaxes.py",
+   "lab/genaxes.py",
+   "lab/rawaxes.py",
+   "lab/animeaxes.py",
+   "lab/langaxes.py",
+   "lab/autotag.py",
+   "lab/fixaxes.py",
+   "lab/forms.py"
+  ],
+  "시장팝업": [
+   "state/tri_domain.py",
+   "ingest/derive_features.py",
+   "ingest/calendar_features.py",
+   "ingest/attr_tagger.py",
+   "ingest/bulk_normalize.py",
+   "lab/provenance.py",
+   "lab/tagaxes.py",
+   "lab/genaxes.py",
+   "lab/rawaxes.py",
+   "lab/animeaxes.py",
+   "lab/langaxes.py",
+   "lab/autotag.py",
+   "lab/fixaxes.py",
+   "lab/forms.py"
+  ]
+ },
+ "883 대비": "자에서 *_domain.py(레코드 writer) 제거 + 미계수 4 도메인 추가. 883 의 0 은 인용 항등식의 인공물",
+ "눈금": "미사용 = 원천 필드 중 **그 도메인의 빌더+공유 조립 코드**에 이름이 인용되지 않고, 상수·식별자·자유텍스트·채움<0.30 이 아닌 것(사전등록 883 D · 보수 방향)",
+ "한계": "① 이름 인용 검사는 여전히 보수적이라 미사용을 **과소** 보고한다(별칭 소비를 소비로 셈) — wfail1(전역 자)에서는 판별력이 0 이었다 ② 시간 게이트는 이 러너가 판정하지 않는다 — 후속 눈/적대 검증 몫",
+ "도메인": {
+  "만화": {
+   "원천": [
+    "data/state/manga_records.json"
+   ],
+   "행": 7982,
+   "필드 수": 18,
+   "빌더 인용됨": 14,
+   "자 범위 파일": [
+    "ingest/manga_axes.py",
+    "ingest/manga_push.py"
+   ],
+   "미사용 후보(제외 후)": 3,
+   "미사용 후보": [
+    {
+     "필드": "mean_score",
+     "채움": 1.0,
+     "값 가짓수": 59,
+     "평균 길이": 2.0,
+     "코드 인용": false,
+     "표본": [
+      "85",
+      "84",
+      "80"
+     ]
+    },
+    {
+     "필드": "n_author",
+     "채움": 1.0,
+     "값 가짓수": 9,
+     "평균 길이": 1.0,
+     "코드 인용": false,
+     "표본": [
+      "1",
+      "4",
+      "1"
+     ]
+    },
+    {
+     "필드": "n_volume",
+     "채움": 0.5324,
+     "값 가짓수": 59,
+     "평균 길이": 1.7,
+     "코드 인용": false,
+     "표본": [
+      "24",
+      "15",
+      "30"
+     ]
+    }
+   ],
+   "제외 요약": {
+    "식별자류": 1
+   },
+   "판 특징 수": 36
+  },
+  "웹툰": {
+   "원천": [
+    "data/state/webtoon_records.json"
+   ],
+   "행": 3652,
+   "필드 수": 19,
+   "빌더 인용됨": 15,
+   "자 범위 파일": [
+    "ingest/webtoon_axes.py",
+    "ingest/webtoon_more.py"
+   ],
+   "미사용 후보(제외 후)": 1,
+   "미사용 후보": [
+    {
+     "필드": "age_rank",
+     "채움": 1.0,
+     "값 가짓수": 3,
+     "평균 길이": 1.0,
+     "코드 인용": false,
+     "표본": [
+      "2",
+      "2",
+      "2"
+     ]
+    }
+   ],
+   "제외 요약": {
+    "식별자류": 1,
+    "상수(값 가짓수 ≤1)": 2
+   },
+   "판 특징 수": 36
+  },
+  "애니": {
+   "원천": [
+    "data/state/anime_records.json"
+   ],
+   "행": 3385,
+   "필드 수": 24,
+   "빌더 인용됨": 20,
+   "자 범위 파일": [
+    "ingest/anime_axes.py",
+    "ingest/anime_more.py"
+   ],
+   "미사용 후보(제외 후)": 3,
+   "미사용 후보": [
+    {
+     "필드": "avg_rating",
+     "채움": 1.0,
+     "값 가짓수": 45,
+     "평균 길이": 3.0,
+     "코드 인용": false,
+     "표본": [
+      "4.7",
+      "4.8",
+      "4.6"
+     ]
+    },
+    {
+     "필드": "is_free",
+     "채움": 1.0,
+     "값 가짓수": 2,
+     "평균 길이": 4.9,
+     "코드 인용": false,
+     "표본": [
+      "False",
+      "False",
+      "False"
+     ]
+    },
+    {
+     "필드": "is_ending",
+     "채움": 1.0,
+     "값 가짓수": 2,
+     "평균 길이": 4.2,
+     "코드 인용": false,
+     "표본": [
+      "False",
+      "False",
+      "False"
+     ]
+    }
+   ],
+   "제외 요약": {
+    "식별자류": 1
+   },
+   "판 특징 수": 36
+  },
+  "세계애니": {
+   "원천": [
+    "data/state/wanime_records.json"
+   ],
+   "행": 2988,
+   "필드 수": 22,
+   "빌더 인용됨": 17,
+   "자 범위 파일": [
+    "ingest/wanime_axes.py"
+   ],
+   "미사용 후보(제외 후)": 3,
+   "미사용 후보": [
+    {
+     "필드": "native",
+     "채움": 1.0,
+     "값 가짓수": 2971,
+     "평균 길이": 12.6,
+     "코드 인용": false,
+     "표본": [
+      "進撃の巨人",
+      "鬼滅の刃",
+      "呪術廻戦"
+     ]
+    },
+    {
+     "필드": "mean_score",
+     "채움": 0.9923,
+     "값 가짓수": 54,
+     "평균 길이": 2.0,
+     "코드 인용": false,
+     "표본": [
+      "85",
+      "83",
+      "84"
+     ]
+    },
+    {
+     "필드": "english",
+     "채움": 0.9388,
+     "값 가짓수": 2804,
+     "평균 길이": 23.9,
+     "코드 인용": false,
+     "표본": [
+      "Attack on Titan",
+      "Demon Slayer: Kimetsu no Yaiba",
+      "JUJUTSU KAISEN"
+     ]
+    }
+   ],
+   "제외 요약": {
+    "식별자류": 1,
+    "자유 텍스트(평균 길이 >80)": 1
+   },
+   "판 특징 수": 36
+  },
+  "게임": {
+   "원천": [
+    "data/state/game_records.json"
+   ],
+   "행": 482,
+   "필드 수": 20,
+   "빌더 인용됨": 19,
+   "자 범위 파일": [
+    "ingest/game_axes.py",
+    "ingest/game_friction.py",
+    "ingest/game_recent.py"
+   ],
+   "미사용 후보(제외 후)": 0,
+   "미사용 후보": [],
+   "제외 요약": {
+    "상수(값 가짓수 ≤1)": 1
+   },
+   "판 특징 수": 40
+  },
+  "도서": {
+   "원천": [
+    "data/state/book_records.json"
+   ],
+   "행": 396,
+   "필드 수": 19,
+   "빌더 인용됨": 11,
+   "자 범위 파일": [
+    "ingest/book_axes.py"
+   ],
+   "미사용 후보(제외 후)": 5,
+   "미사용 후보": [
+    {
+     "필드": "isbn",
+     "채움": 1.0,
+     "값 가짓수": 396,
+     "평균 길이": 13.0,
+     "코드 인용": false,
+     "표본": [
+      "9791191824582",
+      "9788937493584",
+      "9788937460586"
+     ]
+    },
+    {
+     "필드": "pages",
+     "채움": 0.9975,
+     "값 가짓수": 112,
+     "평균 길이": 3.0,
+     "코드 인용": false,
+     "표본": [
+      "396",
+      "252",
+      "252"
+     ]
+    },
+    {
+     "필드": "genre",
+     "채움": 0.9949,
+     "값 가짓수": 144,
+     "평균 길이": 23.9,
+     "코드 인용": false,
+     "표본": [
+      "['독일소설', '서양고전문학', '위대한 작가들', '세계의 문학', ",
+      "['추리', '미스터리소설', '세계의 문학', '일본소설', '테마문학",
+      "['한국소설']"
+     ]
+    },
+    {
+     "필드": "review_count",
+     "채움": 0.9949,
+     "값 가짓수": 133,
+     "평균 길이": 2.0,
+     "코드 인용": false,
+     "표본": [
+      "163",
+      "24",
+      "13"
+     ]
+    },
+    {
+     "필드": "weight_g",
+     "채움": 0.6111,
+     "값 가짓수": 175,
+     "평균 길이": 3.0,
+     "코드 인용": false,
+     "표본": [
+      "515",
+      "333",
+      "577"
+     ]
+    }
+   ],
+   "제외 요약": {
+    "식별자류": 1,
+    "채움 <0.30": 2
+   },
+   "판 특징 수": 36
+  },
+  "펀딩": {
+   "원천": [
+    "data/state/funding_records.json"
+   ],
+   "행": 2887,
+   "필드 수": 20,
+   "빌더 인용됨": 12,
+   "자 범위 파일": [
+    "ingest/funding_axes.py",
+    "ingest/funding_creators.py"
+   ],
+   "미사용 후보(제외 후)": 8,
+   "미사용 후보": [
+    {
+     "필드": "uuid",
+     "채움": 1.0,
+     "값 가짓수": 2887,
+     "평균 길이": 36.0,
+     "코드 인용": false,
+     "표본": [
+      "91797958-ab75-40b8-bbce-8fcdffe61049",
+      "a650ecce-9d1d-4264-b5c2-a936f073ba8b",
+      "906cefab-ff17-4964-88a0-92331a4fd4dd"
+     ]
+    },
+    {
+     "필드": "permalink",
+     "채움": 1.0,
+     "값 가짓수": 2887,
+     "평균 길이": 11.1,
+     "코드 인용": false,
+     "표본": [
+      "theglassofwine",
+      "dwd2023",
+      "seizethetime"
+     ]
+    },
+    {
+     "필드": "category_name",
+     "채움": 1.0,
+     "값 가짓수": 92,
+     "평균 길이": 5.7,
+     "코드 인용": false,
+     "표본": [
+      "캘린더 · 다이어리",
+      "단편영화",
+      "전자책 · 템플릿"
+     ]
+    },
+    {
+     "필드": "end_date",
+     "채움": 1.0,
+     "값 가짓수": 1891,
+     "평균 길이": 10.0,
+     "코드 인용": false,
+     "표본": [
+      "2021-01-03",
+      "2023-08-03",
+      "2022-12-18"
+     ]
+    },
+    {
+     "필드": "adult_only",
+     "채움": 1.0,
+     "값 가짓수": 2,
+     "평균 길이": 5.0,
+     "코드 인용": false,
+     "표본": [
+      "False",
+      "False",
+      "False"
+     ]
+    },
+    {
+     "필드": "amount",
+     "채움": 1.0,
+     "값 가짓수": 2512,
+     "평균 길이": 7.3,
+     "코드 인용": false,
+     "표본": [
+      "628000",
+      "1535000",
+      "1795000"
+     ]
+    },
+    {
+     "필드": "n_delivery",
+     "채움": 1.0,
+     "값 가짓수": 35,
+     "평균 길이": 1.2,
+     "코드 인용": false,
+     "표본": [
+      "3",
+      "4",
+      "4"
+     ]
+    },
+    {
+     "필드": "_page",
+     "채움": 0.8614,
+     "값 가짓수": 1841,
+     "평균 길이": 3.7,
+     "코드 인용": false,
+     "표본": [
+      "1925",
+      "823",
+      "474"
+     ]
+    }
+   ],
+   "제외 요약": {},
+   "판 특징 수": 36
+  },
+  "모바일": {
+   "원천": [
+    "data/state/mobile_records.json"
+   ],
+   "행": 2000,
+   "필드 수": 18,
+   "빌더 인용됨": 14,
+   "자 범위 파일": [
+    "ingest/mobile_axes.py"
+   ],
+   "미사용 후보(제외 후)": 3,
+   "미사용 후보": [
+    {
+     "필드": "updated",
+     "채움": 1.0,
+     "값 가짓수": 705,
+     "평균 길이": 10.0,
+     "코드 인용": false,
+     "표본": [
+      "2026-07-24",
+      "2026-07-24",
+      "2026-07-22"
+     ]
+    },
+    {
+     "필드": "avg_rating",
+     "채움": 1.0,
+     "값 가짓수": 1576,
+     "평균 길이": 6.7,
+     "코드 인용": false,
+     "표본": [
+      "3.64935",
+      "4",
+      "4.64878"
+     ]
+    },
+    {
+     "필드": "n_device",
+     "채움": 1.0,
+     "값 가짓수": 18,
+     "평균 길이": 3.0,
+     "코드 인용": false,
+     "표본": [
+      "127",
+      "127",
+      "127"
+     ]
+    }
+   ],
+   "제외 요약": {
+    "식별자류": 1
+   },
+   "판 특징 수": 36
+  },
+  "앱": {
+   "원천": [
+    "data/state/app_records.json"
+   ],
+   "행": 1600,
+   "필드 수": 20,
+   "빌더 인용됨": 11,
+   "자 범위 파일": [],
+   "미사용 후보(제외 후)": 7,
+   "미사용 후보": [
+    {
+     "필드": "updated",
+     "채움": 1.0,
+     "값 가짓수": 507,
+     "평균 길이": 10.0,
+     "코드 인용": false,
+     "표본": [
+      "2026-04-24",
+      "2026-07-28",
+      "2026-07-30"
+     ]
+    },
+    {
+     "필드": "y_rating_count",
+     "채움": 1.0,
+     "값 가짓수": 759,
+     "평균 길이": 2.4,
+     "코드 인용": false,
+     "표본": [
+      "998",
+      "1472",
+      "236616"
+     ]
+    },
+    {
+     "필드": "avg_rating",
+     "채움": 1.0,
+     "값 가짓수": 1051,
+     "평균 길이": 5.1,
+     "코드 인용": false,
+     "표본": [
+      "1.66834",
+      "3.80231",
+      "4.79214"
+     ]
+    },
+    {
+     "필드": "artist",
+     "채움": 1.0,
+     "값 가짓수": 1321,
+     "평균 길이": 15.4,
+     "코드 인용": false,
+     "표본": [
+      "행정안전부",
+      "한국고용정보원",
+      "WORXPHERE LLC."
+     ]
+    },
+    {
+     "필드": "n_device",
+     "채움": 1.0,
+     "값 가짓수": 26,
+     "평균 길이": 3.0,
+     "코드 인용": false,
+     "표본": [
+      "127",
+      "127",
+      "127"
+     ]
+    },
+    {
+     "필드": "_genre",
+     "채움": 1.0,
+     "값 가짓수": 8,
+     "평균 길이": 4.0,
+     "코드 인용": false,
+     "표본": [
+      "6000",
+      "6000",
+      "6000"
+     ]
+    },
+    {
+     "필드": "_list_release",
+     "채움": 1.0,
+     "값 가짓수": 1321,
+     "평균 길이": 10.0,
+     "코드 인용": false,
+     "표본": [
+      "2014-06-21",
+      "2024-04-01",
+      "2010-07-25"
+     ]
+    }
+   ],
+   "제외 요약": {
+    "식별자류": 2
+   },
+   "판 특징 수": 0
+  },
+  "영화": {
+   "원천": [
+    "data/state/kobis_axes.json"
+   ],
+   "행": 887,
+   "필드 수": 22,
+   "빌더 인용됨": 18,
+   "자 범위 파일": [
+    "ingest/kobis.py"
+   ],
+   "미사용 후보(제외 후)": 4,
+   "미사용 후보": [
+    {
+     "필드": "검열(개봉+14 미달)",
+     "채움": 1.0,
+     "값 가짓수": 2,
+     "평균 길이": 5.0,
+     "코드 인용": false,
+     "표본": [
+      "False",
+      "False",
+      "False"
+     ]
+    },
+    {
+     "필드": "마지막 관측일차",
+     "채움": 1.0,
+     "값 가짓수": 17,
+     "평균 길이": 2.0,
+     "코드 인용": false,
+     "표본": [
+      "20",
+      "20",
+      "20"
+     ]
+    },
+    {
+     "필드": "국적",
+     "채움": 0.9955,
+     "값 가짓수": 38,
+     "평균 길이": 2.1,
+     "코드 인용": false,
+     "표본": [
+      "한국",
+      "일본",
+      "미국"
+     ]
+    },
+    {
+     "필드": "상영등급 원문",
+     "채움": 0.9233,
+     "값 가짓수": 3,
+     "평균 길이": 6.9,
+     "코드 인용": false,
+     "표본": [
+      "12세이상관람가",
+      "12세이상관람가",
+      "전체관람가"
+     ]
+    }
+   ],
+   "제외 요약": {},
+   "판 특징 수": 36
+  },
+  "팝업": {
+   "원천": [
+    "data/state/popup_meta.json"
+   ],
+   "행": 372,
+   "필드 수": 3,
+   "빌더 인용됨": 2,
+   "자 범위 파일": [
+    "ingest/popup_wiki.py"
+   ],
+   "미사용 후보(제외 후)": 1,
+   "미사용 후보": [
+    {
+     "필드": "raw",
+     "채움": 1.0,
+     "값 가짓수": 162,
+     "평균 길이": 4.6,
+     "코드 인용": false,
+     "표본": [
+      "4062",
+      "5737",
+      "1173"
+     ]
+    }
+   ],
+   "제외 요약": {},
+   "판 특징 수": 36
+  },
+  "아이돌": {
+   "원천": [
+    "data/state/idol_meta.json",
+    "data/state/idol_album_meta.json"
+   ],
+   "행": 350,
+   "필드 수": 18,
+   "빌더 인용됨": 2,
+   "자 범위 파일": [],
+   "미사용 후보(제외 후)": 11,
+   "미사용 후보": [
+    {
+     "필드": "ip",
+     "채움": 0.5,
+     "값 가짓수": 174,
+     "평균 길이": 4.6,
+     "코드 인용": false,
+     "표본": [
+      "엘즈업",
+      "더윈드",
+      "우아"
+     ]
+    },
+    {
+     "필드": "raw",
+     "채움": 0.5,
+     "값 가짓수": 151,
+     "평균 길이": 5.1,
+     "코드 인용": false,
+     "표본": [
+      "39100",
+      "3600",
+      "1100"
+     ]
+    },
+    {
+     "필드": "group",
+     "채움": 0.5,
+     "값 가짓수": 174,
+     "평균 길이": 6.0,
+     "코드 인용": false,
+     "표본": [
+      "뉴비트",
+      "메이드인",
+      "방탄소년단 (BTS)"
+     ]
+    },
+    {
+     "필드": "album",
+     "채움": 0.5,
+     "값 가짓수": 168,
+     "평균 길이": 18.5,
+     "코드 인용": false,
+     "표본": [
+      "RAW AND RAD",
+      "상승 (EP 1집)",
+      "2 COOL 4 SKOOL (싱글 1집)"
+     ]
+    },
+    {
+     "필드": "why",
+     "채움": 0.5,
+     "값 가짓수": 22,
+     "평균 길이": 17.7,
+     "코드 인용": false,
+     "표본": [
+      "일치 4건 중 단품 우선 채택",
+      "일치 1건 중 단품 우선 채택",
+      "제목에 그룹명+앨범명 동시 일치 없음 (후보 6건)"
+     ]
+    },
+    {
+     "필드": "versions",
+     "채움": 0.4314,
+     "값 가짓수": 10,
+     "평균 길이": 1.0,
+     "코드 인용": false,
+     "표본": [
+      "2",
+      "8",
+      "1"
+     ]
+    },
+    {
+     "필드": "unit_price",
+     "채움": 0.4314,
+     "값 가짓수": 37,
+     "평균 길이": 4.9,
+     "코드 인용": false,
+     "표본": [
+      "22300",
+      "19300",
+      "11900"
+     ]
+    },
+    {
+     "필드": "matched_title",
+     "채움": 0.4314,
+     "값 가짓수": 133,
+     "평균 길이": 42.5,
+     "코드 인용": false,
+     "표본": [
+      "뉴비트 - 1ST FULL ALBUM [RAW AND RAD] PHOTO",
+      "MADEIN - EP 1집 상승 [커버 8종 중 랜덤발송]",
+      "아이오아이 - 미니 1집 Chrysalis [재발매]"
+     ]
+    },
+    {
+     "필드": "versions_from.근거",
+     "채움": 0.4314,
+     "값 가짓수": 3,
+     "평균 길이": 3.5,
+     "코드 인용": false,
+     "표본": [
+      "N종표기",
+      "N종표기",
+      "단일"
+     ]
+    },
+    {
+     "필드": "n_hits",
+     "채움": 0.4314,
+     "값 가짓수": 13,
+     "평균 길이": 1.1,
+     "코드 인용": false,
+     "표본": [
+      "4",
+      "1",
+      "3"
+     ]
+    },
+    {
+     "필드": "needs_review",
+     "채움": 0.4,
+     "값 가짓수": 2,
+     "평균 길이": 4.8,
+     "코드 인용": false,
+     "표본": [
+      "False",
+      "False",
+      "True"
+     ]
+    }
+   ],
+   "제외 요약": {
+    "채움 <0.30": 4,
+    "식별자류": 1
+   },
+   "판 특징 수": 36
+  },
+  "시장팝업": {
+   "원천": [
+    "data/state/market.json"
+   ],
+   "행": 7,
+   "필드 수": 0,
+   "빌더 인용됨": 0,
+   "자 범위 파일": [],
+   "미사용 후보(제외 후)": 0,
+   "미사용 후보": [],
+   "제외 요약": {},
+   "판 특징 수": 36
+  }
+ },
+ "판 특징 이름(참고)": {
+  "팝업": [
+   "target_breadth",
+   "venue_prominence",
+   "entry_friction",
+   "media_push",
+   "goods_scale",
+   "trend_level",
+   "trend_momentum",
+   "trend_volatility",
+   "cal_dow_sin",
+   "cal_dow_cos",
+   "cal_weekend",
+   "cal_month_sin",
+   "cal_month_cos",
+   "cal_holiday_gap",
+   "wiki_level",
+   "wiki_momentum",
+   "wiki_volatility",
+   "tag_c1_웹툰",
+   "tag_c3_웹툰",
+   "tag_c4_웹툰",
+   "tag_c2_애니",
+   "tag_c3_애니",
+   "tag_c2_모바일",
+   "tag_c3_모바일",
+   "tag_c1_모바일",
+   "tag_c2_세계애니",
+   "tag_c3_세계애니",
+   "meta_c0_웹툰",
+   "meta_c3_웹툰",
+   "fund_cat",
+   "mob_advisory",
+   "mob_ngenre",
+   "mob_nlang",
+   "fund_maxprice",
+   "gen",
+   "grp"
+  ],
+  "아이돌": [
+   "target_breadth",
+   "venue_prominence",
+   "entry_friction",
+   "media_push",
+   "goods_scale",
+   "trend_level",
+   "trend_momentum",
+   "trend_volatility",
+   "cal_dow_sin",
+   "cal_dow_cos",
+   "cal_weekend",
+   "cal_month_sin",
+   "cal_month_cos",
+   "cal_holiday_gap",
+   "wiki_level",
+   "wiki_momentum",
+   "wiki_volatility",
+   "tag_c1_웹툰",
+   "tag_c3_웹툰",
+   "tag_c4_웹툰",
+   "tag_c2_애니",
+   "tag_c3_애니",
+   "tag_c2_모바일",
+   "tag_c3_모바일",
+   "tag_c1_모바일",
+   "tag_c2_세계애니",
+   "tag_c3_세계애니",
+   "meta_c0_웹툰",
+   "meta_c3_웹툰",
+   "fund_cat",
+   "mob_advisory",
+   "mob_ngenre",
+   "mob_nlang",
+   "fund_maxprice",
+   "gen",
+   "grp"
+  ],
+  "게임": [
+   "target_breadth",
+   "venue_prominence",
+   "entry_friction",
+   "media_push",
+   "goods_scale",
+   "price",
+   "age_rating",
+   "ram_gb",
+   "n_category",
+   "trend_level",
+   "trend_momentum",
+   "trend_volatility",
+   "cal_dow_sin",
+   "cal_dow_cos",
+   "cal_weekend",
+   "cal_month_sin",
+   "cal_month_cos",
+   "cal_holiday_gap",
+   "wiki_level",
+   "wiki_momentum",
+   "wiki_volatility",
+   "tag_c1_웹툰",
+   "tag_c3_웹툰",
+   "tag_c4_웹툰",
+   "tag_c2_애니",
+   "tag_c3_애니",
+   "tag_c2_모바일",
+   "tag_c3_모바일",
+   "tag_c1_모바일",
+   "tag_c2_세계애니",
+   "tag_c3_세계애니",
+   "meta_c0_웹툰",
+   "meta_c3_웹툰",
+   "fund_cat",
+   "mob_advisory",
+   "mob_ngenre",
+   "mob_nlang",
+   "fund_maxprice",
+   "gen",
+   "grp"
+  ],
+  "도서": [
+   "target_breadth",
+   "venue_prominence",
+   "entry_friction",
+   "media_push",
+   "goods_scale",
+   "trend_level",
+   "trend_momentum",
+   "trend_volatility",
+   "cal_dow_sin",
+   "cal_dow_cos",
+   "cal_weekend",
+   "cal_month_sin",
+   "cal_month_cos",
+   "cal_holiday_gap",
+   "wiki_level",
+   "wiki_momentum",
+   "wiki_volatility",
+   "tag_c1_웹툰",
+   "tag_c3_웹툰",
+   "tag_c4_웹툰",
+   "tag_c2_애니",
+   "tag_c3_애니",
+   "tag_c2_모바일",
+   "tag_c3_모바일",
+   "tag_c1_모바일",
+   "tag_c2_세계애니",
+   "tag_c3_세계애니",
+   "meta_c0_웹툰",
+   "meta_c3_웹툰",
+   "fund_cat",
+   "mob_advisory",
+   "mob_ngenre",
+   "mob_nlang",
+   "fund_maxprice",
+   "gen",
+   "grp"
+  ],
+  "펀딩": [
+   "target_breadth",
+   "venue_prominence",
+   "entry_friction",
+   "media_push",
+   "goods_scale",
+   "trend_level",
+   "trend_momentum",
+   "trend_volatility",
+   "cal_dow_sin",
+   "cal_dow_cos",
+   "cal_weekend",
+   "cal_month_sin",
+   "cal_month_cos",
+   "cal_holiday_gap",
+   "wiki_level",
+   "wiki_momentum",
+   "wiki_volatility",
+   "tag_c1_웹툰",
+   "tag_c3_웹툰",
+   "tag_c4_웹툰",
+   "tag_c2_애니",
+   "tag_c3_애니",
+   "tag_c2_모바일",
+   "tag_c3_모바일",
+   "tag_c1_모바일",
+   "tag_c2_세계애니",
+   "tag_c3_세계애니",
+   "meta_c0_웹툰",
+   "meta_c3_웹툰",
+   "fund_cat",
+   "mob_advisory",
+   "mob_ngenre",
+   "mob_nlang",
+   "fund_maxprice",
+   "gen",
+   "grp"
+  ],
+  "웹툰": [
+   "target_breadth",
+   "venue_prominence",
+   "entry_friction",
+   "media_push",
+   "goods_scale",
+   "trend_level",
+   "trend_momentum",
+   "trend_volatility",
+   "cal_dow_sin",
+   "cal_dow_cos",
+   "cal_weekend",
+   "cal_month_sin",
+   "cal_month_cos",
+   "cal_holiday_gap",
+   "wiki_level",
+   "wiki_momentum",
+   "wiki_volatility",
+   "tag_c1_웹툰",
+   "tag_c3_웹툰",
+   "tag_c4_웹툰",
+   "tag_c2_애니",
+   "tag_c3_애니",
+   "tag_c2_모바일",
+   "tag_c3_모바일",
+   "tag_c1_모바일",
+   "tag_c2_세계애니",
+   "tag_c3_세계애니",
+   "meta_c0_웹툰",
+   "meta_c3_웹툰",
+   "fund_cat",
+   "mob_advisory",
+   "mob_ngenre",
+   "mob_nlang",
+   "fund_maxprice",
+   "gen",
+   "grp"
+  ],
+  "애니": [
+   "target_breadth",
+   "venue_prominence",
+   "entry_friction",
+   "media_push",
+   "goods_scale",
+   "trend_level",
+   "trend_momentum",
+   "trend_volatility",
+   "cal_dow_sin",
+   "cal_dow_cos",
+   "cal_weekend",
+   "cal_month_sin",
+   "cal_month_cos",
+   "cal_holiday_gap",
+   "wiki_level",
+   "wiki_momentum",
+   "wiki_volatility",
+   "tag_c1_웹툰",
+   "tag_c3_웹툰",
+   "tag_c4_웹툰",
+   "tag_c2_애니",
+   "tag_c3_애니",
+   "tag_c2_모바일",
+   "tag_c3_모바일",
+   "tag_c1_모바일",
+   "tag_c2_세계애니",
+   "tag_c3_세계애니",
+   "meta_c0_웹툰",
+   "meta_c3_웹툰",
+   "fund_cat",
+   "mob_advisory",
+   "mob_ngenre",
+   "mob_nlang",
+   "fund_maxprice",
+   "gen",
+   "grp"
+  ],
+  "모바일": [
+   "target_breadth",
+   "venue_prominence",
+   "entry_friction",
+   "media_push",
+   "goods_scale",
+   "trend_level",
+   "trend_momentum",
+   "trend_volatility",
+   "cal_dow_sin",
+   "cal_dow_cos",
+   "cal_weekend",
+   "cal_month_sin",
+   "cal_month_cos",
+   "cal_holiday_gap",
+   "wiki_level",
+   "wiki_momentum",
+   "wiki_volatility",
+   "tag_c1_웹툰",
+   "tag_c3_웹툰",
+   "tag_c4_웹툰",
+   "tag_c2_애니",
+   "tag_c3_애니",
+   "tag_c2_모바일",
+   "tag_c3_모바일",
+   "tag_c1_모바일",
+   "tag_c2_세계애니",
+   "tag_c3_세계애니",
+   "meta_c0_웹툰",
+   "meta_c3_웹툰",
+   "fund_cat",
+   "mob_advisory",
+   "mob_ngenre",
+   "mob_nlang",
+   "fund_maxprice",
+   "gen",
+   "grp"
+  ],
+  "만화": [
+   "target_breadth",
+   "venue_prominence",
+   "entry_friction",
+   "media_push",
+   "goods_scale",
+   "trend_level",
+   "trend_momentum",
+   "trend_volatility",
+   "cal_dow_sin",
+   "cal_dow_cos",
+   "cal_weekend",
+   "cal_month_sin",
+   "cal_month_cos",
+   "cal_holiday_gap",
+   "wiki_level",
+   "wiki_momentum",
+   "wiki_volatility",
+   "tag_c1_웹툰",
+   "tag_c3_웹툰",
+   "tag_c4_웹툰",
+   "tag_c2_애니",
+   "tag_c3_애니",
+   "tag_c2_모바일",
+   "tag_c3_모바일",
+   "tag_c1_모바일",
+   "tag_c2_세계애니",
+   "tag_c3_세계애니",
+   "meta_c0_웹툰",
+   "meta_c3_웹툰",
+   "fund_cat",
+   "mob_advisory",
+   "mob_ngenre",
+   "mob_nlang",
+   "fund_maxprice",
+   "gen",
+   "grp"
+  ],
+  "세계애니": [
+   "target_breadth",
+   "venue_prominence",
+   "entry_friction",
+   "media_push",
+   "goods_scale",
+   "trend_level",
+   "trend_momentum",
+   "trend_volatility",
+   "cal_dow_sin",
+   "cal_dow_cos",
+   "cal_weekend",
+   "cal_month_sin",
+   "cal_month_cos",
+   "cal_holiday_gap",
+   "wiki_level",
+   "wiki_momentum",
+   "wiki_volatility",
+   "tag_c1_웹툰",
+   "tag_c3_웹툰",
+   "tag_c4_웹툰",
+   "tag_c2_애니",
+   "tag_c3_애니",
+   "tag_c2_모바일",
+   "tag_c3_모바일",
+   "tag_c1_모바일",
+   "tag_c2_세계애니",
+   "tag_c3_세계애니",
+   "meta_c0_웹툰",
+   "meta_c3_웹툰",
+   "fund_cat",
+   "mob_advisory",
+   "mob_ngenre",
+   "mob_nlang",
+   "fund_maxprice",
+   "gen",
+   "grp"
+  ],
+  "영화": [
+   "target_breadth",
+   "venue_prominence",
+   "entry_friction",
+   "media_push",
+   "goods_scale",
+   "trend_level",
+   "trend_momentum",
+   "trend_volatility",
+   "cal_dow_sin",
+   "cal_dow_cos",
+   "cal_weekend",
+   "cal_month_sin",
+   "cal_month_cos",
+   "cal_holiday_gap",
+   "wiki_level",
+   "wiki_momentum",
+   "wiki_volatility",
+   "tag_c1_웹툰",
+   "tag_c3_웹툰",
+   "tag_c4_웹툰",
+   "tag_c2_애니",
+   "tag_c3_애니",
+   "tag_c2_모바일",
+   "tag_c3_모바일",
+   "tag_c1_모바일",
+   "tag_c2_세계애니",
+   "tag_c3_세계애니",
+   "meta_c0_웹툰",
+   "meta_c3_웹툰",
+   "fund_cat",
+   "mob_advisory",
+   "mob_ngenre",
+   "mob_nlang",
+   "fund_maxprice",
+   "gen",
+   "grp"
+  ],
+  "시장팝업": [
+   "target_breadth",
+   "venue_prominence",
+   "entry_friction",
+   "media_push",
+   "goods_scale",
+   "trend_level",
+   "trend_momentum",
+   "trend_volatility",
+   "cal_dow_sin",
+   "cal_dow_cos",
+   "cal_weekend",
+   "cal_month_sin",
+   "cal_month_cos",
+   "cal_holiday_gap",
+   "wiki_level",
+   "wiki_momentum",
+   "wiki_volatility",
+   "tag_c1_웹툰",
+   "tag_c3_웹툰",
+   "tag_c4_웹툰",
+   "tag_c2_애니",
+   "tag_c3_애니",
+   "tag_c2_모바일",
+   "tag_c3_모바일",
+   "tag_c1_모바일",
+   "tag_c2_세계애니",
+   "tag_c3_세계애니",
+   "meta_c0_웹툰",
+   "meta_c3_웹툰",
+   "fund_cat",
+   "mob_advisory",
+   "mob_ngenre",
+   "mob_nlang",
+   "fund_maxprice",
+   "gen",
+   "grp"
+  ]
+ }
+}
