@@ -8148,5 +8148,13 @@
   "**P3 — popup_visitor_daily 일일 스냅샷 배선(T7)**": "경로 실측: core 데이터셋은 **sweetspot-ax**(내 프로젝트)에 있고 `bq head`(tabledata.list) 가 통한다 — **잡 생성 없는 순수 읽기**(BQ 읽기 전용 제약 내 · prd 프로젝트는 jobs.create 권한 없음 실측). ingest/popupsnap.py: bq head 전량 → data/state/popup_visitor_daily.jsonl 에 **멱등 append**(키 visitor_daily_id+updated_at — 재실행 무중복) + 스냅샷 로그(일시·전체 행·신규 행). **갈래**: 전체 행 >48 → **둘째 적재 실물 — 636/673 의 '앞으로 쌓이는 자산' 판정 재개**(재판정 사전등록은 별도) / =48 → 단일 적재 유지(무증가 창 연장 — 일수 병기) / <48 ∨ 실패 → 실물 보고(행 삭제/권한 변동). 전역: 세 갈래가 전 정수 덮음.",
   "**내 예측(순서·문턱만)**": "comparator 12/12 일치 90% · 릿지 재현 90% · popup 행수 =48(둘째 적재 아직 없음) 70% · 스냅샷 배선 완료 90%.",
   "**가드**": "BQ 는 tabledata.list 읽기만(잡 생성 없음·구조 변경 없음) · 레코드 라벨 무접촉(스냅샷은 로컬 사본) · main 가드·멱등·산출물 'x'(스냅샷 로그는 append 장부) · 판 무관."
+ },
+ "세 배선이 닫혔다 — manifest 정본·릿지 정오·방문객 스냅샷 (노트 871 · T1 진단/T7)": {
+  "**P1 결과(봉합 완료 갈래)**": "**data/lab/era_manifest.json 정본 동결**(시대 '837+kobis' · git HEAD · 도메인 12 · 지문 = 행+y/**A/M** 해시 — 티처 #36 감도 구멍 봉합) + **lab/eracheck.py comparator**(소비 주체 — compare(data) 가 정본 대조·불일치 나열): 동일 객체·독립 재빌드 둘 다 **12/12 일치** → 규약 '학습측 재료 지문'이 산문에서 코드가 됐다. 적합류 러너는 이후 적합 전 compare() 호출이 규율.",
+  "**P1 결과(릿지 정오 — 논문 210 출처 결함 봉합)**": "runners/out871_ridge.json 동결: **α 1.0 · 평가 ρ 0.3393 — 833 기록과 정확 일치**(names 36·평가 322·학습 1,394). 869 의 인라인 실행이 이제 산출물을 가졌다 — 논문 210 의 '증명' 문장이 소급 지지됨(출처 결함 해소 · 다음 논문에서 재인용 시 이 파일).",
+  "**P3 결과(=48 갈래 — 스냅샷 배선 완료)**": "ingest/popupsnap.py: `bq head`(tabledata.list — **잡 생성 없는 순수 읽기** · prd 는 jobs.create 없음 실측 · core 는 sweetspot-ax 상주) → data/state/popup_visitor_daily.jsonl 멱등 append + 장부. 첫 실행 **전체 48 · 신규 48** · 재실행 **신규 0(멱등 실증)**. **갈래 =48 발동: 둘째 적재 아직 없음 — 무증가 창 8/5 05:08 UTC 이후 ~77시간.** 노트 636 '채굴보다 배선' 이행 — 이제 매일 1회 실행이면 '앞으로 쌓이는 자산' 판정이 자동 축적된다(>48 이 처음 찍히는 날 = 둘째 적재 실물 · 재판정 사전등록 별도).",
+  "**예측 채점**": "comparator 일치 적중(90%) · 릿지 재현 적중(90%) · =48 적중(70%) · 배선 완료 적중(90%) — **4/4.**",
+  "**달력**": "만기 러너 첫 발화 내일(8/9) — 창 8/9~8/23. popupsnap 은 크론 후보(사람: 크론 한 줄 — T7 미결에 등재).",
+  "**재현**": "runners/eramanifest871.py('x' 동결) · lab/eracheck.py · ingest/popupsnap.py · data/lab/era_manifest.json · out871_ridge.json · 스냅샷 9초+8초."
  }
 }
