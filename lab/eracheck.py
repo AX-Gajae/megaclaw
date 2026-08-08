@@ -3,8 +3,10 @@
 # 층이 둘이다(노트 872 · 함정 명기): **compare(전층 A/M/y)** 는 챔피언 축 구성 전용 —
 # A/M 해시가 extra 축 구성에 종속이라 전역 훅에 쓰면 거짓 단절. **compare_labels(행+y)** 가
 # 전역 훅(harness.load 기저 빌드 직후 · 경고형)이고 833 병(도메인 합류·라벨 드리프트)을 잡는다.
-# 정본: data/lab/era_manifest.json. **재동결 규약(872)**: 구 정본을 data/lab/eras/era_<시대id>.json
-# 으로 이동한 뒤 새 정본을 'x' 로 쓴다(덮어쓰기 금지 — git 과 이중 보존).
+# 정본 둘: era_manifest.json(챔피언 전층) · era_manifest_base.json(기저 라벨 — 훅).
+# **재동결 규약(872·873)**: 시대 교체 시 **둘 다 동반 이동** — 구 정본을 각각
+# data/lab/eras/era_<시대id>.json · era_base_<시대id>.json 으로 옮긴 뒤 새 정본을 'x' 로
+# 쓴다(덮어쓰기 금지 — git 과 이중 보존). base 를 잊으면 훅이 영구 거짓 경보를 낸다(티처 #38).
 import hashlib
 import json
 from pathlib import Path
@@ -59,7 +61,7 @@ def compare_labels(data, verbose: bool = False):
                  | {d for d in set(canon) & set(now)
                     if canon[d]["행"] != now[d]["행"] or canon[d]["y"] != now[d]["y"]})
     if bad:
-        print(f"⚠ era 라벨 단절 — {bad} (정본 {CANON.name})", flush=True)
+        print(f"⚠ era 라벨 단절 — {bad} (정본 {CANON_BASE.name})", flush=True)
     elif verbose:
         print(f"era 라벨 대조: 일치 {len(now)}/{len(canon)}", flush=True)
     return (not bad), bad
