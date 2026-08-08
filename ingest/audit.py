@@ -563,6 +563,90 @@ LIVE_DOCS = ["data/lab/program.json", "docs/program-report.html",
              "../.claude/projects/-Users-ax-world-model/memory/project-lab-state.md"]
 
 
+#: 논문은 **발행물**이지 살아 있는 문서가 아니다 --- 지난 것을 고쳐 쓰면 역사 왜곡이다.
+#: 그래서 `LIVE_DOCS` 에 넣지 않고 따로 본다. 규칙은 둘:
+#:   · 아직 유통 중인 것만 본다(최근 `PAPER_WINDOW_D` 일)
+#:   · `meta.json` 의 `errata` 가 그 숫자를 언급하면 넘어간다(471 선례)
+#: 노트 886 --- 티처 #50 M7: `LIVE_DOCS` 에 `paper/` 가 없어서 논문 473 이 은퇴 숫자
+#: 3,369 을 **정정을 명령한 바로 그 사이클에** 인쇄하고도 검사를 통과했다.
+#: 처음엔 "최근 30일 논문만 본다"로 짰는데 **자가 무력화**였다 --- 논문 전량(677편)이
+#: 2026-07~08 에 만들어져 창이 아무것도 거르지 않았다(886 실측: 창 밖 0). 대신 둘로 나눈다:
+#:   · **신선**(`FRESH_D` 일 이내 = 이번 사이클이 낸 논문)은 **경성 실패**. 지금 고친다.
+#:   · 나머지는 **등록된 빚**(`PAPER_DEBT`)을 넘을 때만 실패 --- 래칫이다.
+#: 85편 112곳을 오늘 일괄 수정하는 것은 발행물 개작이라 안 한다. 새 논문이 죽은 숫자를
+#: 인쇄하는 것만 막고, 빚은 세어서 들고 간다.
+#: 정정 표시. 노트 886 --- `은퇴` 를 넣는다. 티처 #50 M7 은 논문 473 이 3,369 을
+#: *"면제 창 없이"* 인쇄했다고 했는데 **틀렸다**: 그 문장은 *"자의 분모가 **은퇴한**
+#: 숫자(11도메인 시대 유보 3,369)였다"* 이다. 구멍은 논문이 아니라 **표시 목록**에 있었다.
+OK_MARKS = ("죽은 숫자", "정정", "철회", "은퇴")
+
+#: 날짜 창으로 가르려던 두 번째 시도도 실패했다 --- 3일 이내 논문이 **113편**이다
+#: (두 계열이 동시에 쓰이는 중이라 118~230 번대가 지금도 나온다). 나이는 자가 못 된다.
+#: 그래서 **기준선 시각**으로 가른다: 이 검사가 생긴 뒤에 나온 논문은 경성 실패,
+#: 그 전 것은 등록된 빚(래칫). 정확하고 재량이 없다.
+PAPER_BASELINE_AT = "2026-08-09T08:40:00"
+PAPER_DEBT = 111        # 886 등록(실측). 이 수를 **넘으면** 실패한다(줄어드는 건 언제나 통과).
+
+
+def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> dict:
+    """죽은 숫자가 논문에 인쇄돼 있나(노트 886 · 티처 #50 M7).
+
+    논문은 발행물이라 옛것을 고쳐 쓰면 역사 왜곡이다. 그래서 **새로 내는 것만**
+    막고 이미 인쇄된 것은 세어서 들고 간다.
+    """
+    import re as _re
+    from datetime import datetime as _dt
+
+    cut = _dt.fromisoformat(baseline_at)
+    fresh, aged = [], []
+    for meta_p in sorted((ROOT / "paper/steps").glob("*/meta.json")):
+        try:
+            meta = json.loads(meta_p.read_text())
+            tex = (meta_p.parent / "main.tex").read_text()
+        except Exception:
+            continue
+        errata = str(meta.get("errata", ""))
+        is_fresh = False
+        try:
+            is_fresh = _dt.fromisoformat(str(meta.get("created", ""))) >= cut
+        except Exception:
+            pass
+        lines = tex.splitlines()
+        for i, ln in enumerate(lines, 1):
+            near = "\n".join(lines[max(0, i - 1 - 2):i + 2])
+            for row in DEAD_NUMBERS:
+                dead, live, what, note = row[:4]
+                ctx = row[4] if len(row) > 4 else None
+                if not any(not (ln[m.end():m.end() + 1].isdigit()
+                                or (m.start() and ln[m.start() - 1].isdigit()))
+                           for m in _re.finditer(_re.escape(dead), ln)):
+                    continue
+                if ctx and not any(w in ln for w in ctx):
+                    continue
+                if live.split("(")[0] in near or any(m in near for m in
+                                                     OK_MARKS):
+                    continue
+                if dead in errata:
+                    continue
+                rec = {"논문": meta_p.parent.name, "줄": i, "죽은 값": dead,
+                       "산 값": live, "무엇": what, "정정 노트": note,
+                       "errata 있나": bool(errata)}
+                (fresh if is_fresh else aged).append(rec)
+    over = len(aged) > debt
+    from collections import Counter as _C
+    return {"검사": "죽은 숫자가 논문에 인쇄돼 있나",
+            "논문 수": len(list((ROOT / "paper/steps").glob("*/meta.json"))),
+            "기준선": baseline_at,
+            "🔴 기준선 뒤 논문(경성 실패)": fresh or "없음",
+            "빚 내역(죽은 값별)": dict(_C(r["죽은 값"] for r in aged).most_common()),
+            "묵은 빚": len(aged), "등록된 빚": debt, "빚이 늘었나": over,
+            "빚진 논문 수": len({r["논문"] for r in aged}),
+            "통과": (not fresh) and (not over),
+            "왜": ("노트 886 티처 #50 M7 — LIVE_DOCS 에 paper/ 가 없어 473 이 은퇴 숫자 3,369 을 "
+                  "**정정을 명령한 바로 그 사이클에** 인쇄하고도 통과했다. "
+                  "발행물은 개작하지 않으므로 새 논문만 막고 빚은 래칫으로 든다.")}
+
+
 def dead_numbers() -> dict:
     """정정된 숫자가 **살아 있는 문서**에 남아 있나(노트 672).
 
@@ -602,7 +686,7 @@ def dead_numbers() -> dict:
     #
     # 그래서 앞뒤 두 줄까지 함께 본다. `철회` 도 표시로 인정한다 --- 숫자를
     # 죽었다고 밝히는 말이다.
-    ok_marks = ("죽은 숫자", "정정", "철회")
+    ok_marks = OK_MARKS
     SPAN = 2
     hits = []
     for rel in LIVE_DOCS:
@@ -642,6 +726,7 @@ def audit() -> dict:
             "주장한 고침": claimed_fixes(),
             "T 전파": t_propagation(),
             "죽은 숫자": dead_numbers(),
+            "죽은 숫자(논문)": paper_dead(),
             "승인 대기": pending()}
 
 
