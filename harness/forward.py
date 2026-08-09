@@ -99,8 +99,35 @@ def step2_discover_and_normalize() -> list[str]:
                    f'AND project_code IN ({",".join(chr(34)+c+chr(34) for c in codes)})')
     docs_path = INGEST / "docs_forward.json"
     docs_path.write_text(json.dumps(docs, ensure_ascii=False))
+    # 🔴 **종량제 API 를 안 부른다**(2026-08-09 · 노트 888). 옛 코드는 `--agent-dir`
+    # 없이 불렀고 그러면 `bulk_normalize` 가 `anthropic.Anthropic()` 경로로 간다.
+    # 2026-08-09 실행에서 그것이 이렇게 끝났다 ---
+    #   [2] ROPU2616 실패: 400 'Your credit balance is too low'  → 뱅크 투입 0건
+    # 그런데 **종료 코드는 0** 이라 크론 로그만 보면 성공이다.
+    #
+    # `core/agent_task.py` 가 이 문제를 위해 이미 존재한다 --- 그 독스트링:
+    #   *"배경(2026-07-27): 인제스트·예측을 종량제 API로 돌려 하루 $297 발생.
+    #     무인 크론이 아닌 작업은 세션 에이전트가 처리하면 추가 비용이 0이다."*
+    # 이 패스는 이제 **무인 크론이 아니라 연구 루프의 스텝**이므로(사용자 지시
+    # 2026-08-09: *"크론 돌려두면 테스트 주기도 길고 틀렸을 때 대처가 안 된다"*)
+    # 에이전트 경로가 맞다. 비용 0 이고, 실패하면 그 자리에서 고친다.
+    #
+    # **2패스다.** 1패스는 `{AGENT_DIR}/*.req.json` 을 덤프하고 그 항목을 스킵한다
+    # (그래서 첫 패스의 '투입 0건' 은 실패가 아니다). 에이전트가 `.res.json` 을
+    # 채우고 같은 명령을 다시 돌리면 적용된다. `res.json` 이 있으면 항상 그것을
+    # 쓰므로 몇 번 재실행해도 안전하다.
+    AGENT_DIR = "cycle_log/agent_tasks/forward"
     subprocess.run([sys.executable, "-m", "ingest.bulk_normalize",
-                    "--projects", str(proj_path), "--docs", str(docs_path)], check=True)
+                    "--projects", str(proj_path), "--docs", str(docs_path),
+                    "--agent-dir", AGENT_DIR], check=True)
+    # 이름 규칙은 `AgentTask`: `{task_id}.req.json` / `{task_id}.res.json`.
+    # `with_suffix` 를 쓰면 task_id 에 점이 있을 때 조용히 어긋나므로 문자열로 짝짓는다.
+    ad = Path(AGENT_DIR)
+    pend = [p for p in sorted(ad.glob("*.req.json")) if ad.is_dir()
+            and not (ad / (p.name[:-len(".req.json")] + ".res.json")).exists()]
+    if pend:
+        print(f"[2] ⏳ 에이전트 대기 {len(pend)}건 — {AGENT_DIR}/*.req.json 을 읽고 "
+              f"같은 이름의 .res.json 을 쓴 뒤 이 패스를 다시 돌린다")
     # 리서치 기반 레코드는 Drive 문서가 없으므로 Notion 페이지를 docs로 연결
     research_codes = {r["project_code"]: r for r in research_cands}
     notion_links = {}
@@ -128,6 +155,23 @@ def step2_discover_and_normalize() -> list[str]:
                 r["provenance"]["notes"] += " | 전향 리서치 기반(계약 전 단계) — Drive 원문 태깅 후 재정규화 대상"
             if not r.get("docs"):
                 d.rename(f"data/records_incomplete/{c}.json"); continue
+            # 🔴 **팝업이 아닌 것을 뱅크에 넣지 않는다**(2026-08-09 · 노트 888).
+            # 여기 게이트는 오래 **"문서가 있나" 하나뿐**이었다. 그래서 전향 발굴이
+            # 물어 온 `ROPU2616`(= SDT 양자체험관 리뉴얼 **시공** · 문서 3건)이
+            # 그대로 통과해 `data/records/` 로 들어가고 step3 가 **방문객이 없는
+            # 것에 방문 예측을 봉인**할 참이었다. 추출 스키마가 필드를 강제하므로
+            # 추출기는 없는 방문객도 뭐라도 채워 넣는다 --- 조용히.
+            kind = (r.get("provenance", {}).get("record_kind")
+                    or r.get("record_kind") or "unknown")
+            if kind != "popup":
+                r.setdefault("provenance", {})["notes"] = (
+                    r.get("provenance", {}).get("notes", "")
+                    + f" | 전향 발굴에서 record_kind={kind} 로 판정되어 뱅크 투입 보류")
+                Path(f"data/records_incomplete/{c}.json").write_text(
+                    json.dumps(r, ensure_ascii=False, indent=2))
+                d.unlink()
+                print(f"[2] ⛔ {c}: record_kind={kind} — 팝업이 아니라 뱅크에 안 넣는다")
+                continue
             r["provenance"]["reviewed_by"] = "전향 자동투입(미검수)"
             Path(f"data/records/{c}.json").write_text(json.dumps(r, ensure_ascii=False, indent=2))
             d.unlink(); moved.append(c)
@@ -138,7 +182,27 @@ def step2_discover_and_normalize() -> list[str]:
 
 
 def step3_seal_upcoming() -> int:
-    """챔피언(A' 무상태) + 챌린저(B'' 잠재 상태) 병렬 봉인 — 실측이 승자를 가린다."""
+    """챔피언(A' 무상태) + 챌린저(B'' 잠재 상태) 병렬 봉인 — 실측이 승자를 가린다.
+
+    🔴 **예측기가 `llm` → `agent` 로 바뀌었다**(2026-08-09 · 노트 888).
+    옛 코드는 `--predictor llm --auto --ensemble 3` 이었고 그것은 레코드당 종량제
+    API 를 **3회** 부른다 --- 2026-07-27 에 하루 $297 을 낸 바로 그 경로다.
+    2026-08-09 현재 크레딧이 없어 step2 가 400 으로 죽었으므로 이 경로는 **작동
+    자체를 안 한다**.
+
+    `--auto` 를 뗀 것은 실수가 아니다 --- 에이전트 경로는 구조상 2패스라 사람/
+    에이전트가 예측을 쓰는 단계가 이미 있고, `--auto` 는 `LLMPredictor` 의
+    검토 건너뛰기 플래그다.
+
+    **바뀐 것을 숨기지 않는다.** 예측기 ID 가 `llm:claude-opus-4-8@prompt-…` 에서
+    `agent:session-agent@prompt-…` 로 간다. 프롬프트 해시와 `+median3` 꼬리표는
+    **글자 그대로 같게** 맞췄지만(검증 완료) **모델이 다르므로 두 경로의 성적을
+    합산하면 안 된다**(`predictor_agent` 무결성 조항). 이미 봉인된 커밋 2건은
+    `llm:` 이므로 이후 봉인과 **따로 집계**한다.
+
+    이 경로에 median-of-3 이 없어서 옮기면 챔피언 정의가 조용히 K=1 로 바뀌는
+    문제가 있었다 --- `AgentPredictor(ensemble=)` 를 새로 붙여 막았다.
+    """
     sys.path.insert(0, ".")
     from harness.records import load_records
     CHAL = Path("cycle_log/forward_challenger")
@@ -162,13 +226,13 @@ def step3_seal_upcoming() -> int:
         print(f"[3] 챔피언 봉인(median-of-3): {r.record_id} (오픈 {r.start})")
         subprocess.run([sys.executable, "-m", "harness.backtest", "--records", "data/records",
                         "--cycle-dir", str(FWD), "--holdout", r.record_id,
-                        "--forward", "--predictor", "llm", "--auto", "--ensemble", "3"], check=True)
+                        "--forward", "--predictor", "agent", "--ensemble", "3"], check=True)
         sealed += 1
     for r in todo_chal:
         print(f"[3] 챌린저 봉인(잠재, median-of-3): {r.record_id}")
         subprocess.run([sys.executable, "-m", "harness.backtest", "--records", "data/records",
                         "--cycle-dir", str(CHAL), "--holdout", r.record_id,
-                        "--forward", "--predictor", "llm", "--auto", "--ensemble", "3",
+                        "--forward", "--predictor", "agent", "--ensemble", "3",
                         "--state-file", "cycle_log/forward_state.json"], check=True)
     print(f"[3] 신규 봉인: 챔피언 {sealed} / 챌린저 {len(todo_chal)}")
     return sealed

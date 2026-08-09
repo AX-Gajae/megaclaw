@@ -34,8 +34,38 @@ KIND_MAP = {"contract": "계약서", "proposal": "기획서", "event_plan": "기
 
 EXTRACT_SCHEMA = {
     "type": "object", "additionalProperties": False,
-    "required": ["entities", "intervention", "conditions", "outcome", "extraction_confidence", "missing_or_uncertain"],
+    "required": ["record_kind", "record_kind_basis", "entities", "intervention", "conditions",
+                 "outcome", "extraction_confidence", "missing_or_uncertain"],
     "properties": {
+        # 🔴 **이 프로젝트가 팝업이 맞나**(2026-08-09 · 노트 888). 추가한 이유가
+        # 실측이다 --- 전향 발굴이 `ROPU2616` 을 물어 왔는데 문서 셋이 전부
+        # *"SDT주식회사 양자체험관 리뉴얼 **시공**"* 이었다(바닥 에폭시 · 목공 ·
+        # 페인트 · 간판 · 폐기물 처리 · 5,000만원). 스위트스팟이 **시공사**이고
+        # 방문객도 운영 기간도 계수 기준도 없다.
+        #
+        # 그런데 `harness/forward.py` 의 승격 게이트는 **"문서가 있나" 하나뿐**이라
+        # 문서 3건인 이것이 그대로 `data/records/` 로 들어가고, step3 가 거기에
+        # **방문 예측을 봉인**한다. 스키마가 필드를 강제하므로 추출기는 없는
+        # 방문객도 뭐라도 채워 넣는다 --- 조용히.
+        #
+        # **산문으로 추론하지 않고 값을 요구한다**(노트 730 조항: *"추론을 없애고
+        # 값을 요구한다"*). 문서 이름에 '시공' 이 있나 같은 문자열 검사는 노트
+        # 674·677·693·697·730 이 다섯 번 당한 부류다.
+        "record_kind": {
+            "type": "string",
+            "enum": ["popup", "exhibition", "construction", "consulting", "other"],
+            "description": (
+                "이 프로젝트가 무엇인가. popup=한시 운영 팝업스토어(방문객을 받는다) · "
+                "exhibition=상설 전시/체험관 · construction=시공·인테리어 수주(우리가 "
+                "시공사) · consulting=기획/자문만 · other=그 밖. **방문객을 받는 한시 "
+                "운영이 아니면 popup 이 아니다.** 우리가 공간을 만들어 주고 끝나면 "
+                "construction 이다. 애매하면 popup 말고 실제에 가까운 쪽을 골라라 --- "
+                "popup 이 아닌 것이 뱅크에 들어가면 없는 방문객에 예측이 봉인된다."),
+        },
+        "record_kind_basis": {
+            "type": "string",
+            "description": "그렇게 판정한 근거를 원문에서 인용. 빈 문자열 금지.",
+        },
         "entities": {"type": "object", "additionalProperties": False,
                      "required": ["brand_id", "space_id", "client_party_id"],
                      "properties": {"brand_id": {"type": "string"}, "space_id": {"type": "string"},
@@ -99,6 +129,7 @@ EXTRACT_SCHEMA = {
 SYSTEM = """당신은 팝업스토어 아카이브 정규화 추출기다. 프로젝트 메타데이터와 원문 문서 텍스트(계약서·기획서·견적서·결과보고서)를 받아 popup_record 필드를 추출한다.
 
 규칙:
+0. **record_kind 를 먼저 판정하라 — 이것이 팝업이 맞나.** 우리 회사는 팝업 외에 시공·전시관·자문도 수주한다. 방문객을 받는 한시 운영이 아니면 popup 이 아니다: 우리가 공간을 만들어 주고 끝나면 construction, 상설 전시/체험관이면 exhibition, 기획·자문만이면 consulting. record_kind_basis 에 원문을 인용하라. **popup 이 아닌데 popup 이라고 하면 없는 방문객에 예측이 봉인된다** — 나머지 필드를 채우기 어렵다는 것 자체가 popup 이 아니라는 신호다. 억지로 채우지 마라.
 1. intervention(컨셉·체험요소·프로모션·연출태그)은 기획서/제안서/결과보고서에서, conditions(입지·면적·기간·수수료구조·요구사항)는 계약서/견적서에서 추출한다.
 2. outcome.daily와 totals.visitors는 결과보고서의 일일/일자별 방문 표에서 실측만 뽑는다. sales_krw는 소비자 매출(POS)만 — 계약금액이 아니다.
 2-1. counting_method 필수: 그 방문 숫자가 무엇을 센 것인지 판정하라 — entry(입장 게이트/계수기), participation(프로그램 참여, 존별 합산이면 연인원), exposure(통과·접촉·노출), purchase(구매 건). 보고서 표의 컬럼명·집계 방식 설명을 counting_basis에 인용하고, 정의가 없으면 unknown. 이 판정이 라벨의 단위다 — 추측으로 entry를 주지 마라.
@@ -257,6 +288,11 @@ def normalize_one(client, reader: DriveReader, proj: dict, docs: list[dict], pnl
     record = {
         "record_id": code,
         "schema_version": "0.1",
+        # 판정을 **레코드에 남긴다**(2026-08-09 · 노트 888). 추출만 하고 안 실으면
+        # `harness/forward.py` 의 승격 게이트가 볼 것이 없어 옛날처럼 문서 유무로만
+        # 거른다 --- 그러면 시공 계약이 팝업 뱅크로 들어간다.
+        "record_kind": ext.get("record_kind", "unknown"),
+        "record_kind_basis": ext.get("record_kind_basis", ""),
         "entities": ext["entities"],
         "intervention": ext["intervention"],
         "conditions": ext["conditions"],
