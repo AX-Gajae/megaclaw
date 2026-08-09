@@ -84,18 +84,25 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--no-forward", action="store_true", help="전향 패스를 건너뛴다")
     ap.add_argument("--no-collect", action="store_true")
+    ap.add_argument("--slack", action="store_true",
+                    help="사이클 요약을 슬랙 DM 으로 (크론에서 켠다)")
     a = ap.parse_args()
     todo: list[str] = []
+    lines: list[str] = []          # 슬랙 본문 --- 화면과 따로 모은다
 
     # ① 수집 --- 종료 코드가 아니라 산출물의 성장으로 판정한다(ingest.collect 규칙)
     if not a.no_collect:
         _bar("① 수집")
         code, out = _sh([sys.executable, "-m", "ingest.collect"])
         print(out.rstrip())
+        lines += [l for l in out.splitlines() if l.strip().startswith(("성장", "──", "  "))][:8]
         if code:
             todo.append("🔴 수집 실패 --- 위 서명을 보고 **이번 사이클에** 고친다")
-        if "연속 무성장" in out:
-            todo.append("⚠ 연속 무성장 --- 원천이 멈춘 건지 우리가 막힌 건지 갈라라")
+        # **사유를 아는 정체는 할 일에 안 올린다**(노트 889). `ingest.collect` 가
+        # 둘을 갈라 찍으므로 여기서는 '사유 모르는' 쪽만 본다 --- 그래야 슬랙이
+        # 매 사이클 '할 일 1건' 을 반복하지 않고, 반복하지 않아야 진짜일 때 읽힌다.
+        if "사유 모르는 3회+ 연속 무성장" in out:
+            todo.append("⚠ 사유 모르는 연속 무성장 --- 원천이 멈춘 건지 우리가 막힌 건지 갈라라")
 
     # ② 전향 패스 --- 종량제 API 를 안 쓴다(에이전트 2패스)
     if not a.no_forward:
@@ -104,11 +111,26 @@ def main() -> int:
                          'export PATH="$HOME/google-cloud-sdk/bin:/usr/local/bin:$PATH"; '
                          "set -a; source .env; set +a; "
                          f"{sys.executable} -m harness.forward"])
-        for ln in out.splitlines():
-            if ln.startswith("[") or ln.startswith("===") or "⛔" in ln or "⏳" in ln:
-                print(ln)
+        keep = [ln for ln in out.splitlines()
+                if ln.startswith("[") or ln.startswith("===") or "⛔" in ln or "⏳" in ln]
+        for ln in keep:
+            print(ln)
+        lines += keep[-6:]
         if code:
-            todo.append("🔴 전향 패스 실패 --- 위 출력 확인")
+            # 🔴 **실패했으면 이유를 찍는다**(2026-08-10 자가 적발). 위 필터는
+            # `[`·`===` 로 시작하는 줄만 남기는데 **파이썬 트레이스백은 둘 다
+            # 아니다.** 그래서 첫 launchd 실행에서 전향 패스가 죽었을 때 로그에
+            # 남은 것이 `===== 전향 패스 2026-08-10 =====` 한 줄뿐이었다 ---
+            # 실패를 보고하면서 실패의 이유를 버렸다. 오늘 아침에 잡은
+            # '종료 코드가 거짓말한다' 의 사촌이다: **보고가 반쪽이면 없는 것과 같다.**
+            tail = [l for l in out.strip().splitlines() if l.strip()][-8:]
+            print("  🔴 실패 꼬리:")
+            for l in tail:
+                print("   |", l[:200])
+            lines += ["🔴 전향 실패:"] + ["  " + l[:160] for l in tail[-4:]]
+            todo.append("🔴 전향 패스 실패 --- " + (tail[-1][:120] if tail else "출력 없음"))
+        if "⏳ 후처리 보류" in out:
+            todo.append("⏳ `ingest.postprocess` 에 **무료 경로가 없다** --- 에이전트 모드 신설(노트 889)")
 
     # ③ 내가 해야 하는 것 --- 파일로 세워서 넘긴다
     _bar("③ 에이전트 대기(= 이번 사이클에 내가 할 일)")
@@ -144,7 +166,21 @@ def main() -> int:
         print("  기계적인 것은 다 돌았다 --- 트랙에서 하나 골라 재라(사전등록 먼저).")
     for i, t in enumerate(todo, 1):
         print(f"  {i}. {t}")
-    print("\n크론이 아니라 이 명령이 사이클을 연다. 데몬 idle_exit 에 안 물린다.")
+
+    # ⑥ 슬랙 --- **크론으로 돌리면 아무도 안 본다**(2026-08-09 실측). 보고가
+    # 사람에게 도착해야 크론이 의미가 있다. 알림 실패는 루프를 안 죽인다.
+    if a.slack:
+        head = ("🔴 사이클 — 할 일 %d건" % len(todo)) if todo else "✅ 사이클 — 할 일 없음"
+        body = [head, ""]
+        body += [l for l in lines if l.strip()]
+        if todo:
+            body += ["", "*할 일*"] + [f"{i}. {t}" for i, t in enumerate(todo, 1)]
+        body += ["", "`python3 -m ingest.cycle_open` 로 세션에서 이어간다."]
+        from .notify import dm
+        r = dm("\n".join(body))
+        print("\n슬랙:", "보냄" if r.get("보냄") else "실패 — " + str(r.get("사유"))[:120])
+
+    print("\n크론은 기계적인 것만 돌린다. 판단이 필요한 자리는 위 '할 일' 로 나온다.")
     return 0
 
 

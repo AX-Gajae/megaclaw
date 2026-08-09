@@ -9,13 +9,33 @@ import anthropic
 
 INGEST = Path("data/ingest")  # 2026-07-27 스크래치패드(휘발성 임시폴더) 탈출 — 리포 내로 이관
 SNAP = "2026-05"
-client = anthropic.Anthropic()
+
+# 🔴 **임포트 시점에 클라이언트를 만들지 않는다**(2026-08-10 · 노트 889).
+# 옛 코드는 모듈 첫머리에서 `client = anthropic.Anthropic()` 를 만들었다.
+# `harness/forward.py` step2 가 뱅크 투입 후 이 모듈을 부르므로, **레코드가
+# 하나라도 승격되면 유료 경로가 열린다.** 2026-08-09 의 "0원 완주" 확인은
+# 그때 `moved` 가 비어 있어서(ROPU2616 이 record_kind 로 걸려서) 안 불린
+# 덕이었다 --- 진짜 팝업이 하나 들어오는 순간 달라졌을 것이다.
+#
+# ⚠ **이 모듈에는 에이전트 모드가 없다.** `bulk_normalize`·`mine_labels` 등과
+# 달리 `--agent-dir` 가 아예 없어서 지금은 무료로 돌릴 방법이 없다. 숨기지
+# 않고 막고, 막힌 사실을 사이클 할 일로 올린다(`ingest/cycle_open.py`).
+_client = None
+
+
+def client_():
+    global _client
+    if _client is None:
+        from core.noapi import assert_free
+        assert_free("postprocess")
+        _client = anthropic.Anthropic()
+    return _client
 
 
 def llm(system, payload, schema, max_tokens=16000, effort="low"):
     for attempt in range(5):
         try:
-            with client.messages.stream(model="claude-opus-4-8", max_tokens=max_tokens,
+            with client_().messages.stream(model="claude-opus-4-8", max_tokens=max_tokens,
                 thinking={"type": "adaptive"},
                 output_config={"effort": effort, "format": {"type": "json_schema", "schema": schema}},
                 system=[{"type": "text", "text": system}],

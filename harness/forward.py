@@ -176,7 +176,20 @@ def step2_discover_and_normalize() -> list[str]:
             Path(f"data/records/{c}.json").write_text(json.dumps(r, ensure_ascii=False, indent=2))
             d.unlink(); moved.append(c)
     if moved:
-        subprocess.run([sys.executable, "-m", "ingest.postprocess"], check=True)
+        # 🔴 **후처리는 아직 유료 전용이다**(2026-08-10 · 노트 889).
+        # `ingest/postprocess.py` 에는 `--agent-dir` 가 없다 --- `bulk_normalize`
+        # 와 달리 무료 경로가 **아예 없다**. 그래서 `core.noapi` 가 여기를 막는다.
+        # 옛 코드는 `check=True` 라 막히는 순간 **전향 패스 전체가 죽었다**;
+        # 사용자 지시가 *"루프 안 끊어지게"* 이므로 **막힘을 결과로 바꿔 계속한다**.
+        # 숨기지 않는다 --- `⏳` 로 찍어 사이클 할 일에 올라가게 한다.
+        r = subprocess.run([sys.executable, "-m", "ingest.postprocess"],
+                           capture_output=True, text=True)
+        if r.returncode:
+            tail = ((r.stdout or "") + (r.stderr or "")).strip().splitlines()[-3:]
+            print(f"[2] ⏳ 후처리 보류({len(moved)}건) — 무료 경로 없음(노트 889). "
+                  f"에이전트 모드 신설이 필요하다: " + " / ".join(t[:120] for t in tail))
+        else:
+            print("[2] 후처리 완료")
     print(f"[2] 뱅크 투입: {len(moved)}건 (+후처리)")
     return moved
 

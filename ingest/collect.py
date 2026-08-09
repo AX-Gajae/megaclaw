@@ -278,10 +278,19 @@ def run(only: str | None = None) -> dict:
               ", ".join("%s(%ds)" % (r["이름"], r["초"]) for r in slow))
     if bad:
         print("🔴 이번 사이클에서 고칠 것:", ", ".join(r["이름"] for r in bad))
-    if stale:
-        print("⚠ 3회+ 연속 무성장(원천이 멈췄나 우리가 막혔나 갈라야 한다):",
-              ", ".join("%s(%d)" % (r["이름"], r["연속"]) for r in stale))
-    return {"행": rows, "실패": len(bad), "정체": len(stale)}
+    # **사유를 아는 정체는 할 일이 아니다.** 둘을 갈라 찍는다 --- 안 그러면 매
+    # 사이클 같은 ⚠ 가 떠서(popupsnap 은 원천이 동결이라 영영 안 는다) 보고가
+    # 늑대소년이 되고, 그때 **진짜 정체를 놓친다**. 이 모듈이 막으려는 병과 같다.
+    known = [r for r in stale if r.get("정체사유")]
+    unknown = [r for r in stale if not r.get("정체사유")]
+    if known:
+        print("· 정체(사유 있음 · 조치 불필요):",
+              ", ".join("%s(%d)" % (r["이름"], r["연속"]) for r in known))
+    if unknown:
+        print("⚠ 사유 모르는 3회+ 연속 무성장(원천이 멈췄나 우리가 막혔나 갈라야 한다):",
+              ", ".join("%s(%d)" % (r["이름"], r["연속"]) for r in unknown))
+    return {"행": rows, "실패": len(bad), "정체": len(stale),
+            "사유없는정체": len(unknown)}
 
 
 def report(n: int = 40) -> None:

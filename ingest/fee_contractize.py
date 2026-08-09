@@ -64,6 +64,8 @@ def main() -> int:
     client = None
     if not args.agent_dir:
         import anthropic
+        from core.noapi import assert_free  # 노트 889 — 유료 API 기본 차단
+        assert_free("fee_contractize")
         client = anthropic.Anthropic()
     task = AgentTask("agent" if args.agent_dir else "api", args.agent_dir, client, effort="low", max_tokens=4000)
     reader = DriveReader()

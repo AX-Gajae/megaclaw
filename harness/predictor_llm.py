@@ -272,6 +272,8 @@ class LLMPredictor:
     def _generate(self, target_stimulus: dict, conditioning_manifest: list[dict]) -> dict:
         import anthropic
 
+        from core.noapi import assert_free  # 노트 889 — 유료 API 기본 차단
+        assert_free("predictor_llm")
         client = anthropic.Anthropic()
         relevant_block = ""
         if len(conditioning_manifest) > DIGEST_THRESHOLD:

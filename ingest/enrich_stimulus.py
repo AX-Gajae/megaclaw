@@ -27,6 +27,8 @@ def main() -> int:
     client = None
     if not args.agent_dir:
         import anthropic
+        from core.noapi import assert_free  # 노트 889 — 유료 API 기본 차단
+        assert_free("enrich_stimulus")
         client = anthropic.Anthropic()
     task = AgentTask("agent" if args.agent_dir else "api", args.agent_dir, client,
                      effort="medium", max_tokens=16000) if args.agent_dir else None
