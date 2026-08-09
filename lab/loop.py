@@ -638,7 +638,41 @@ def _idol(make_extra=None, mode: str = "cut", wide: bool = True,
     trnv = idolset.trend(wide_post=wide_post) if with_trend else {}
     cols, msk, names = [A], [M], list(nm)
     for c, byd in (extra or {}).items():
-        v = calv.get(c) or wikv.get(c) or trnv.get(c)
+        # 🔴 **`byd` 를 먼저 본다 --- 팝업과 같은 규약**(2026-08-09 · 노트 888 · 티처 #52 (나)).
+        #
+        # 옛 코드는 `calv`·`wikv`·`trnv` **셋만** 봤다. 팝업은 같은 함수 605-613 에서
+        # `byd.get(PRIMARY)` 로 `extra` 를 읽는데 아이돌만 안 읽었다. 그래서 `extra` 로
+        # 아이돌 전용 열을 넣으면 아래 `else` 로 떨어져 **0.5/마스크0 으로 조용히
+        # 중립화**된다 --- 노트 887 초판이 무효가 된 근인이 정확히 이것이다
+        # (위약 여섯의 도메인 Δ 가 전부 정확히 0.0000 이었던 것이 그 지문).
+        #
+        # 수리 전 실측(`runners/hole888.py`): 아이돌 주입 `닿는다=False ·
+        # 중립화됐다=True`, 같은 주입을 팝업에 하면 `닿는다=True`. 비대칭이 값으로 찍혔다.
+        #
+        # ⚠ **이 수리는 열을 `Data` 에 넣을 뿐 설계행렬에 넣지 않는다.**
+        # `lab/forms.py:171 AXIS_MODE='common'` 이라 `axis_order()` 는 12도메인이
+        # 전부 가진 축만 돌려주고 `_feat` 는 그 목록으로만 돈다(티처 #52 C1).
+        # 여기서 '아이돌 축을 살렸다' 고 말하면 887 의 실수를 반복하는 것이다.
+        # 🔴 **길이 가드는 무조건이다 --- 여기가 이 수리의 핵심이다**(자가 적발).
+        # 초판은 가드를 `not wide` 일 때만 걸었다가 `ValueError: size 173 vs 81` 로
+        # 죽었고, 그 크래시가 티처 #52 의 실측 하나를 뒤집었다:
+        #
+        #   티처 C1 *"현행 extra 31열 중 아이돌 항목이 있는 열 **0개**"* → **틀렸다. 6개다.**
+        #   `trend_level`·`trend_momentum`·`trend_volatility`·`wiki_level`·
+        #   `wiki_momentum`·`wiki_volatility` 가 전부 아이돌 항목을 갖고 있고
+        #   **길이가 81** 이다 --- 한터 79행 시절 값이다. 아이돌은 노트 332 에서
+        #   원천 레코드 기반 **173행**으로 커졌는데 이 여섯은 안 따라왔다.
+        #
+        # 그래서 **옛 코드는 우연히 옳았다.** `byd` 를 안 읽은 덕에 낡은 81행을 피하고
+        # 올바른 173행 제공자(`idolset.wiki`·`idolset.trend`)를 썼다. 가드 없이
+        # `byd` 를 먼저 보게 고치면 **낡은 값으로 되돌아간다** --- 수리가 퇴행이 된다.
+        #
+        # 팝업 605-613 의 규약이 정확히 이것이고(`len(v[0]) == len(pA)`), 그 규약을
+        # 그대로 가져온다: **길이가 맞을 때만 `byd`, 아니면 제공자.**
+        v = byd.get(idolset.DOM) if isinstance(byd, dict) else None
+        if v is not None and len(np.asarray(v[0], float)) != len(A):
+            v = None                       # 낡았거나 다른 행 집합이다 --- 조용히 자르지 않는다
+        v = v or calv.get(c) or wikv.get(c) or trnv.get(c)
         if v is not None:
             vv, oo = v
             if not wide:
