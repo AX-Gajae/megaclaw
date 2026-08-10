@@ -9,17 +9,17 @@
   "🔴 측정보다 앞선다": true
  },
  "배선 스탬프": {
-  "시각(UTC)": "2026-08-10T16:47:26+00:00",
-  "git HEAD": "3f721c19de521eebf1cf33aecca2372a1a41cd73",
+  "시각(UTC)": "2026-08-10T17:05:08+00:00",
+  "git HEAD": "6faf7db9cdadb196272c0d5d5618758423c195d2",
   "git 브랜치": "note/900-levers",
-  "🔴 코드 sha256(이 파일 · runners/levers900.py)": "c29b41332c11868139fc7b758bfaff77d4b95cbd03dae26a15b2ea19726e4891",
+  "🔴 코드 sha256(이 파일 · runners/levers900.py)": "c05784a993fff4b4d6ee17d13f54837cad9b3657ca5620f9b8891a5c5dc0cd92",
   "참조 코드 sha256": {
    "runners/wire900.py": "50fb36be0a8934e60175f0212886c87d4935886231f9c7b221231a6e62a27a76",
    "lab/forms.py": "5cfa890460eab48bc8511c231d2043efce68c298ccd5360825a9c2dcff506fd1",
    "lab/harness.py": "0383271fa2f4ba0730e6084193a03a209c644e83379484415567f37323eec1fc",
    "lab/pairboot.py": "8e1e7b2fb00c3bd763e9d6b9b78b1fc11cc60b23defd821c0ebad37e781ea8cc",
    "runners/ff753.py": "744a1273b197b597531962af7717fdd370ae285eace1eac6f0671bc9b732f842",
-   "docs/prereg_900_levers.md": "a76dd4760725afbc35ba2b4b588d3914268221fe338fb83fae905dfd3f96ae7d"
+   "docs/prereg_900_levers.md": "7d3899e83f38202af245d88a4f239fb75fdfee418dc413862594dc43091057bd"
   }
  },
  "② 배선 검사 요약(out900_wire.json 에서 읽음)": {
@@ -66,6 +66,8 @@
    10,
    11
   ],
+  "🔴 자료 sha(이 실행에서 다시 쟀다)": "721a7b7e0d15",
+  "🔴 배선 검사와 같은 자료": true,
   "🔴 분모": "3,775 하나만 쓴다(897 의 3,710 을 안 섞는다 · 조항 60)"
  },
  "🔴 조용한 탈락 회계": {
@@ -279,9 +281,14 @@
  },
  "🔴 팔 A 와 판 정본 대조": {
   "이번 팔 A 평균": 0.47034252170476804,
-  "정본(out112_board.json)": 0.4698232980146997,
-  "차": 0.00051922,
-  "출처": "runners/out112_board.json 의 「평균」"
+  "🔴 오늘의 정본(노트 898 · 동률 평균)": 0.47034252170476804,
+  "정본과의 차": 0.0,
+  "정본 재현(1 ULP 안)": true,
+  "출처(정본)": "runners/out898_board.json 의 팔/B(동률 평균)/평균",
+  "⚠ 은퇴한 옛 정본(서수 순위 시대 값)": 0.46982329801469963,
+  "옛 값과의 차": 0.0005192236900684044,
+  "출처(은퇴값)": "runners/out898_board.json 의 팔/A(서수 · 현행 챔피언)/평균",
+  "왜 은퇴했나": "노트 898 커밋 39afa03e6 — state/rank_test.spearman 이 서수 → 동률 평균(scipy)으로. 손잡이가 아니라 통계량의 정의"
  },
  "③ 짝 Δ(팔 X − 팔 A · 같은 씨앗)": {
   "B_union": {
@@ -1180,5 +1187,5 @@
    }
   }
  },
- "초": 428.3
+ "초": 413.7
 }

@@ -108,6 +108,31 @@ def _bca(vals):
     return pt, lo, hi, kind, fb, wire
 
 
+def canon_cmp(mine: float) -> dict:
+    """팔 A 를 **오늘의 판 정본**과 견준다.
+
+    🔴 수를 이 파일에 안 적는다 --- `runners/out898_board.json` 을 **읽는다**
+    (손 전사 금지 · 노트 898 이 「손으로 세 벌 전사해 따로 늙었다」로 걸린 자리).
+    옛 정본(서수 순위 시대 값)은 **은퇴**했으므로 여기서는 이름만 남기고
+    수는 같은 산출물의 팔 A 칸에서 읽는다.
+    """
+    b8 = json.loads((ROOT / "runners/out898_board.json").read_text("utf-8"))
+    live = float(b8["팔"]["B(동률 평균)"]["평균"])
+    retired = float(b8["팔"]["A(서수 · 현행 챔피언)"]["평균"])
+    return {
+        "이번 팔 A 평균": mine,
+        "🔴 오늘의 정본(노트 898 · 동률 평균)": live,
+        "정본과의 차": float(mine - live),
+        "정본 재현(1 ULP 안)": bool(abs(mine - live) <= 4 * np.spacing(0.47)),
+        "출처(정본)": "runners/out898_board.json 의 팔/B(동률 평균)/평균",
+        "⚠ 은퇴한 옛 정본(서수 순위 시대 값)": retired,
+        "옛 값과의 차": float(mine - retired),
+        "출처(은퇴값)": "runners/out898_board.json 의 팔/A(서수 · 현행 챔피언)/평균",
+        "왜 은퇴했나": ("노트 898 커밋 39afa03e6 — state/rank_test.spearman 이 "
+                  "서수 → 동률 평균(scipy)으로. 손잡이가 아니라 통계량의 정의"),
+    }
+
+
 def _rec(vals, thresh, thresh_day):
     from lab import pairboot as PB
     pt, lo, hi, kind, fb, wire = _bca(vals)
@@ -144,6 +169,12 @@ def main():
     W = d0.weights(T)
     TOT = int(sum(W.values()))
     assert TOT == 3775, f"🔴 유보 가중 합이 3775 가 아니다: {TOT}"
+    # 🔴 자료 지문을 **이 실행에서 다시 잰다** --- 배선 검사 때와 자료가 갈리면
+    # 두 산출물의 수를 나란히 놓을 수 없다(`harness.fingerprint` docstring).
+    from lab.harness import fingerprint as _fp
+    fp_now = _fp(d0)["_전체"]
+    fp_wire = wire["ㄱ 판"]["자료 sha(전체)"]
+    assert fp_now == fp_wire, f"🔴 자료가 갈렸다: {fp_now} 대 {fp_wire}"
     seeds = list(range(12))
 
     tasks = [(nm, s) for nm in ARM_ORDER for s in seeds]
@@ -300,15 +331,12 @@ def main():
         },
         "판 뼈대": {"도메인 수": len(doms), "유보 가중 합": TOT,
                  "씨앗": seeds,
+                 "🔴 자료 sha(이 실행에서 다시 쟀다)": fp_now,
+                 "🔴 배선 검사와 같은 자료": fp_now == fp_wire,
                  "🔴 분모": "3,775 하나만 쓴다(897 의 3,710 을 안 섞는다 · 조항 60)"},
         "🔴 조용한 탈락 회계": {**silent, "🔴 전 팔 전 씨앗 온전": ok_all},
         "판 수준(팔별)": level,
-        "🔴 팔 A 와 판 정본 대조": {
-            "이번 팔 A 평균": level["A_common"]["평균"],
-            "정본(out112_board.json)": 0.4698232980146997,
-            "차": round(level["A_common"]["평균"] - 0.4698232980146997, 8),
-            "출처": "runners/out112_board.json 의 「평균」",
-        },
+        "🔴 팔 A 와 판 정본 대조": canon_cmp(level["A_common"]["평균"]),
         "③ 짝 Δ(팔 X − 팔 A · 같은 씨앗)": arms,
         "④ 판정": verdict,
         "초": round(time.time() - t0, 1),
