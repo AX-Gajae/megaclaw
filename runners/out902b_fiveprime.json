@@ -9,29 +9,24 @@
  "⓪ 관문(작업 트리)": {
   "검사": "⓪ 관문 --- 작업 트리가 비었나(⑤′ 는 커밋된 트리를 검사한다)",
   "git status --porcelain 종료": 0,
-  "더러운 경로 수": 4,
-  "더러운 경로": [
-   " M ingest/audit.py",
-   " M lab/datehygiene.py",
-   " M runners/fiveprime902.py",
-   " M runners/out902b_fiveprime.json"
-  ],
-  "⚠": "🔴 안 비었다 --- ⑤′ 는 실패다. 이 목록을 보고서에 그대로 싣는다",
-  "통과": false
+  "더러운 경로 수": 0,
+  "더러운 경로": "없음",
+  "⚠": "비었다",
+  "통과": true
  },
  "1 소비자 역참조": {
   "검사": "1 소비자 역참조 --- 🔴 사람이 고르지 않는다(`docs/루프.md:249-253`)",
   "취합 시작(base)": "e2abd9de5",
   "머리(head)": "HEAD",
   "역참조한 트리": "작업 트리",
-  "🔴 분모 ① 바뀐 경로 수": 28,
+  "🔴 분모 ① 바뀐 경로 수": 29,
   "🔴 분모 ② 역참조 소비자 수": 708,
   "🔴 분모 ②-py 역참조 소비자 중 .py": 91,
-  "🔴 분모 ③ 실제로 돌린 수": 0,
-  "🔴 분모 ④ 안 돌린 수": 708,
-  "🔴 분모 ④-py 안 돌린 .py 수": 91,
-  "🔴 분모 ④-사유없음 안 돌린 .py 중 사유 없는 것": 91,
-  "⚠ 분모 ① 과 ② 는 다른 자다": "「돌린 셋 / 바뀐 경로 28」과 「돌린 셋 / 소비자 708」는 다른 문장이다. ⑤′ 의 대상은 ② 다(티처 #64 M3 나).",
+  "🔴 분모 ③ 실제로 돌린 수": 4,
+  "🔴 분모 ④ 안 돌린 수": 704,
+  "🔴 분모 ④-py 안 돌린 .py 수": 87,
+  "🔴 분모 ④-사유없음 안 돌린 .py 중 사유 없는 것": 87,
+  "⚠ 분모 ① 과 ② 는 다른 자다": "「돌린 셋 / 바뀐 경로 29」과 「돌린 셋 / 소비자 708」는 다른 문장이다. ⑤′ 의 대상은 ② 다(티처 #64 M3 나).",
   "🔴 음성 대조(quotepath 를 안 끈 바늘)": {
    "왜": "`git diff --name-only` 는 한글 경로를 이스케이프한다 --- 그 바늘은 한 곳도 안 맞는데 **종료 0** 이 난다(조항 59 그 자체)",
    "이스케이프된 경로 수": 3,
@@ -46,6 +41,7 @@
    "docs/지평/902.md",
    "docs/탐색/902.md",
    "ingest/audit.py",
+   "lab/datehygiene.py",
    "paper/build/487_fourconditions.pdf",
    "paper/harness.py",
    "paper/steps/487_fourconditions/figs/fig1.pdf",
@@ -71,19 +67,19 @@
   ],
   "자별 역참조": {
    "전체 경로": {
-    "바늘 수": 28,
+    "바늘 수": 29,
     "소비자 수": 76,
     "그중 .py": 35,
     "rc": 0
    },
    "파일명": {
-    "바늘 수": 27,
+    "바늘 수": 28,
     "소비자 수": 708,
     "그중 .py": 91,
     "rc": 0
    },
    "모듈 점경로": {
-    "바늘 수": 7,
+    "바늘 수": 8,
     "소비자 수": 17,
     "그중 .py": 7,
     "rc": 0
@@ -799,12 +795,16 @@
    "state/transfer_eval.py",
    "state/wiring_search.py"
   ],
-  "돌렸다": [],
+  "돌렸다": [
+   "ingest/audit.py",
+   "runners/fiveprime902.py",
+   "runners/out899a_gates.py",
+   "runners/quote901.py"
+  ],
   "⚠ 돌렸다고 적었지만 소비자 목록에 없는 것": "없음",
   "🔴 안 돌렸다(= 「없다」가 아니다 · 조항 59)": [
    "harness/discovery.py",
    "harness/recheck.py",
-   "ingest/audit.py",
    "ingest/idol_album_meta.py",
    "ingest/idol_axes.py",
    "ingest/notify.py",
@@ -846,7 +846,6 @@
    "runners/dnc848.py",
    "runners/dose896.py",
    "runners/era870.py",
-   "runners/fiveprime902.py",
    "runners/floor892.py",
    "runners/ident901.py",
    "runners/ident902.py",
@@ -864,13 +863,11 @@
    "runners/note892_ledger.py",
    "runners/note893_ledger.py",
    "runners/note893_prereg.py",
-   "runners/out899a_gates.py",
    "runners/out900a_design.py",
    "runners/out900c_ulp.py",
    "runners/out901h_link.py",
    "runners/out902h_snap.py",
    "runners/pilot893.py",
-   "runners/quote901.py",
    "runners/ruler887.py",
    "runners/ruler887b.py",
    "runners/ruler890.py",
@@ -1517,7 +1514,6 @@
   "🔴 사유 없이 안 돌린 .py": [
    "harness/discovery.py",
    "harness/recheck.py",
-   "ingest/audit.py",
    "ingest/idol_album_meta.py",
    "ingest/idol_axes.py",
    "ingest/notify.py",
@@ -1559,7 +1555,6 @@
    "runners/dnc848.py",
    "runners/dose896.py",
    "runners/era870.py",
-   "runners/fiveprime902.py",
    "runners/floor892.py",
    "runners/ident901.py",
    "runners/ident902.py",
@@ -1577,13 +1572,11 @@
    "runners/note892_ledger.py",
    "runners/note893_ledger.py",
    "runners/note893_prereg.py",
-   "runners/out899a_gates.py",
    "runners/out900a_design.py",
    "runners/out900c_ulp.py",
    "runners/out901h_link.py",
    "runners/out902h_snap.py",
    "runners/pilot893.py",
-   "runners/quote901.py",
    "runners/ruler887.py",
    "runners/ruler887b.py",
    "runners/ruler890.py",
@@ -1632,22 +1625,23 @@
    "runners/snapcheck.py",
    "serve/registry.py"
   ],
-  "🔴 돌린 수": 0,
-  "돌렸다": [],
-  "🔴 안 돌린 수": 15,
-  "🔴 안 돌렸다(= 「없다」가 아니다)": [
+  "🔴 돌린 수": 4,
+  "돌렸다": [
    "ingest/audit.py",
+   "runners/fiveprime902.py",
+   "runners/out899a_gates.py",
+   "runners/quote901.py"
+  ],
+  "🔴 안 돌린 수": 11,
+  "🔴 안 돌렸다(= 「없다」가 아니다)": [
    "runners/board898.py",
    "runners/dose113.py",
    "runners/dose896.py",
-   "runners/fiveprime902.py",
    "runners/inv901.py",
    "runners/nanfix115.py",
    "runners/note893_ledger.py",
-   "runners/out899a_gates.py",
    "runners/pilot893.py",
    "runners/preflight928.py",
-   "runners/quote901.py",
    "runners/shape824.py",
    "runners/snapcheck.py",
    "serve/registry.py"
@@ -1657,43 +1651,44 @@
    "runners/inv901.py": "이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/preflight928.py": "이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/shape824.py": "이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/snapcheck.py": "이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/out899a_gates.py": "다른 팔 소유 · 돌리면 `runners/out899a_gates.json` 을 덮어써서 동시에 도는 팔의 산출물을 깨뜨린다. 대신 **3 절이 그 산출물을 읽어 판정 키를 감사한다**"
+   "runners/snapcheck.py": "이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)"
   },
   "🔴 사유 없이 안 돌린 것": [
-   "ingest/audit.py",
    "runners/board898.py",
    "runners/dose896.py",
-   "runners/fiveprime902.py",
    "runners/nanfix115.py",
    "runners/note893_ledger.py",
    "runners/pilot893.py",
-   "runners/quote901.py",
    "serve/registry.py"
   ],
-  "돌린 게이트의 절별 판정": "안 돌렸다(--gates 를 안 줬다)",
-  "🔴 실패한 절": "없음",
+  "돌린 게이트의 절별 판정": {
+   "법칙전용 누출": true,
+   "주장한 고침": true,
+   "T 전파": true,
+   "죽은 숫자": false,
+   "죽은 숫자(1 ULP 짝)": true,
+   "죽은 숫자(논문)": true,
+   "_초": 15.0
+  },
+  "🔴 실패한 절": [
+   "죽은 숫자"
+  ],
   "🔴 예외": "없음",
   "통과": false
  },
  "3 판정 키 규약": {
   "검사": "3 판정 키 규약 --- `통과` 하나로 규약화됐나",
   "🔴 왜 읽는 쪽에서 하나": "대상 산출물은 남의 소유다. 고치지 않고 **세어 드러낸다**",
-  "🔴 절 수 합(분모)": 9,
+  "🔴 절 수 합(분모)": 4,
   "`통과` 키가 있는 절 합": 0,
-  "🔴 모른다(=`통과` 키 없음) 합": 9,
+  "🔴 모른다(=`통과` 키 없음) 합": 4,
   "파일별": {
    "runners/out899a_gates.json": {
-    "🔴 절 수(분모)": 9,
+    "🔴 절 수(분모)": 4,
     "`통과` 키가 있는 절": 0,
     "그 목록": "없음",
-    "🔴 `통과` 키가 없는 절 = 모른다": 9,
+    "🔴 `통과` 키가 없는 절 = 모른다": 4,
     "모른다 목록": [
-     "동적 ㄱ dose896.stage0 (판정 게이트)",
-     "동적 ㄴ verdict112 (동결 대조)",
-     "동적 ㄷ nanfix115.trace (회귀 증거)",
-     "동적 ㄹ board898 재현 대조",
-     "동적 ㅁ wire898 재현 대조",
      "재현본 꼬리표",
      "정적 ① 전수 훑기",
      "정적 ② 반입 금지",
@@ -2423,9 +2418,9 @@
      "이 파일 sha256",
      "시각(UTC · 끝)"
     ],
-    "시작 시각": "2026-08-10T20:12:41+00:00",
-    "끝 시각": "2026-08-10T20:14:41+00:00",
-    "초": 120.3,
+    "시작 시각": "2026-08-10T21:14:18+00:00",
+    "끝 시각": "2026-08-10T21:14:23+00:00",
+    "초": 5.8,
     "시작<끝": true
    },
    "runners/out899a_nanfix115_trace.json": {
@@ -2556,9 +2551,9 @@
      "🔴 입력 산출물 sha256",
      "시각(UTC · 끝)"
     ],
-    "시작 시각": "2026-08-10T21:00:59+00:00",
-    "끝 시각": "2026-08-10T21:01:18+00:00",
-    "초": 19.1,
+    "시작 시각": "2026-08-10T21:05:25+00:00",
+    "끝 시각": "2026-08-10T21:05:44+00:00",
+    "초": 19.0,
     "시작<끝": true
    },
    "runners/out902b_fiveprime_901.json": {
@@ -2886,19 +2881,18 @@
   "1 소비자 역참조",
   "2 게이트",
   "3 판정 키 규약",
-  "5 quote901 무변",
-  "⓪ 관문(작업 트리)"
+  "5 quote901 무변"
  ],
  "통과": false,
- "시각(UTC · 시작)": "2026-08-10T21:05:25+00:00",
+ "시각(UTC · 시작)": "2026-08-10T21:15:11+00:00",
  "🔴 코드 sha256(이게 자다)": {
   "runners/fiveprime902.py": "447aa10e9c6bb309",
   "runners/quote901.py": "1778c5659dcd3f8c"
  },
  "🔴 입력 산출물 sha256": {
-  "runners/out899a_gates.json": "097e708ca83601e6"
+  "runners/out899a_gates.json": "ebd5dd3ea0ed8163"
  },
- "⚠ git HEAD(시작 시점 · 판정에 쓰지 마라)": "124b02f141607f8ab2311ef6b883ea7b81dd646e",
- "시각(UTC · 끝)": "2026-08-10T21:05:44+00:00",
- "초": 19.0
+ "⚠ git HEAD(시작 시점 · 판정에 쓰지 마라)": "29d7ab9f97ec256e80207ad505996dae840b38fe",
+ "시각(UTC · 끝)": "2026-08-10T21:15:45+00:00",
+ "초": 34.2
 }
