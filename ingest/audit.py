@@ -1305,7 +1305,7 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
 #: 함께 여는 자리가 있다). **개별 토글 실측을 그대로 적었고, 합을 맞추려 고르지 않았다.**
 #: ⚠ **판정 자리(경성)는 0 이 아니다** --- 아래 `걸린 곳` 넷은 전부 남의 파일이라
 #: 이 팔이 안 고친다(보고로 넘긴다).
-DEAD_HISTORY_DEBT = 391
+DEAD_HISTORY_DEBT = 390
 
 #: 🔴 **문서별 등록**(티처 #61 C3 이빨 ② · 2026-08-10 실측). 총합만 있으면
 #: 한 곳이 늘고 다른 곳이 줄 때 **상쇄돼 안 보인다** --- 그 상쇄가 위 문단의 옛
@@ -1382,7 +1382,6 @@ DEAD_HISTORY_BY_DOC: dict = {
     "runners/out898_confirm.txt": 1,
     "runners/out898_verdict.json": 2,
     "runners/out898c_fix.json": 1,
-    "runners/out899a_dose896_step0.json": 1,
     "runners/out899a_gates.json": 1,
     "runners/out899a_gates.py": 1,
     "runners/out899a_verdict112.json": 12,
