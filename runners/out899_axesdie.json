@@ -1,0 +1,1420 @@
+{
+ "노트": 899,
+ "갈래": "ㄱ · 유보에서 축이 죽는다",
+ "사전등록": {
+  "파일": "docs/prereg_899_axesdie.md",
+  "커밋": "ee2436a43b35b06a2ae4156afaf346f55efa599d",
+  "시각": "2026-08-10T23:22:56+09:00"
+ },
+ "HEAD": "ee2436a43b35b06a2ae4156afaf346f55efa599d",
+ "시각": "2026-08-10T23:25:31",
+ "코드 sha": {
+  "runners/axesdie899.py": "d589dc19adcf97e1",
+  "lab/forms.py": "5cfa890460eab48b",
+  "lab/harness.py": "0383271fa2f4ba07",
+  "lab/fixaxes.py": "90f4023e578e8f8e",
+  "state/rank_test.py": "66e9358836334b0c",
+  "runners/ff753.py": "744a1273b197b597",
+  "state/tri_domain.py": "6476d3558abc7b06"
+ },
+ "🔴 자": "뗐다 — 채택 문턱 0.00353 을 이번 판정에 쓰지 않는다. 채택/기각 없음",
+ "배선": {
+  "W1 자료 sha256": "d7e2df860139efba",
+  "W1 890 과 동일": true,
+  "W2 도메인 수": 12,
+  "W2 가중 합": 3775,
+  "W2 가중 합 == 3775": true,
+  "W3 채점행 == 판 가중 전 도메인": true,
+  "W4 원천 json 행 맞음": {
+   "게임": true,
+   "도서": true,
+   "만화": true,
+   "모바일": true,
+   "세계애니": true,
+   "시장팝업": true,
+   "아이돌": false,
+   "애니": true,
+   "영화": true,
+   "웹툰": true,
+   "팝업": false,
+   "펀딩": true
+  }
+ },
+ "🔴 axis_order(common)": {
+  "열 수": 36,
+  "이름": [
+   "target_breadth",
+   "venue_prominence",
+   "entry_friction",
+   "media_push",
+   "goods_scale",
+   "trend_level",
+   "trend_momentum",
+   "trend_volatility",
+   "cal_dow_sin",
+   "cal_dow_cos",
+   "cal_weekend",
+   "cal_month_sin",
+   "cal_month_cos",
+   "cal_holiday_gap",
+   "wiki_level",
+   "wiki_momentum",
+   "wiki_volatility",
+   "tag_c1_웹툰",
+   "tag_c3_웹툰",
+   "tag_c4_웹툰",
+   "tag_c2_애니",
+   "tag_c3_애니",
+   "tag_c2_모바일",
+   "tag_c3_모바일",
+   "tag_c1_모바일",
+   "tag_c2_세계애니",
+   "tag_c3_세계애니",
+   "meta_c0_웹툰",
+   "meta_c3_웹툰",
+   "fund_cat",
+   "mob_advisory",
+   "mob_ngenre",
+   "mob_nlang",
+   "fund_maxprice",
+   "gen",
+   "grp"
+  ],
+  "AXIS_MODE": "common"
+ },
+ "12도메인 축퇴 표": {
+  "게임": {
+   "채점행": 180,
+   "판 가중": 180,
+   "채점행 == 판 가중(W3)": true,
+   "축 이름 수(티처의 36)": 40,
+   "고유 특성행 uniq(A)": 180,
+   "고유 특성행 uniq(A,M)": 180,
+   "🔴 고유 설계행 uniq(_feat)": 180,
+   "비상수 열 A/이름수": "16/40",
+   "비상수 열 A": 16,
+   "비상수 열 M": 9,
+   "🔴 설계행렬에 닿는 축(order)": 36,
+   "🔴 유보에서 살아 있는 축(order 중)": 11,
+   "살아 있는 축 이름": [
+    "target_breadth",
+    "media_push",
+    "goods_scale",
+    "trend_level",
+    "trend_momentum",
+    "trend_volatility",
+    "wiki_level",
+    "wiki_momentum",
+    "wiki_volatility",
+    "gen",
+    "grp"
+   ],
+   "비상수 A 열 이름": [
+    "target_breadth",
+    "venue_prominence",
+    "media_push",
+    "goods_scale",
+    "price",
+    "age_rating",
+    "ram_gb",
+    "n_category",
+    "trend_level",
+    "trend_momentum",
+    "trend_volatility",
+    "wiki_level",
+    "wiki_momentum",
+    "wiki_volatility",
+    "gen",
+    "grp"
+   ],
+   "라벨 고유": 179,
+   "예측 고유(씨앗0)": 177,
+   "동률 비율(씨앗0)": 0.0167
+  },
+  "도서": {
+   "채점행": 163,
+   "판 가중": 163,
+   "채점행 == 판 가중(W3)": true,
+   "축 이름 수(티처의 36)": 36,
+   "고유 특성행 uniq(A)": 157,
+   "고유 특성행 uniq(A,M)": 157,
+   "🔴 고유 설계행 uniq(_feat)": 157,
+   "비상수 열 A/이름수": "8/36",
+   "비상수 열 A": 8,
+   "비상수 열 M": 3,
+   "🔴 설계행렬에 닿는 축(order)": 36,
+   "🔴 유보에서 살아 있는 축(order 중)": 8,
+   "살아 있는 축 이름": [
+    "target_breadth",
+    "venue_prominence",
+    "entry_friction",
+    "goods_scale",
+    "trend_level",
+    "trend_momentum",
+    "trend_volatility",
+    "grp"
+   ],
+   "비상수 A 열 이름": [
+    "target_breadth",
+    "venue_prominence",
+    "entry_friction",
+    "goods_scale",
+    "trend_level",
+    "trend_momentum",
+    "trend_volatility",
+    "grp"
+   ],
+   "라벨 고유": 162,
+   "예측 고유(씨앗0)": 158,
+   "동률 비율(씨앗0)": 0.0307
+  },
+  "만화": {
+   "채점행": 258,
+   "판 가중": 258,
+   "채점행 == 판 가중(W3)": true,
+   "축 이름 수(티처의 36)": 36,
+   "고유 특성행 uniq(A)": 179,
+   "고유 특성행 uniq(A,M)": 186,
+   "🔴 고유 설계행 uniq(_feat)": 186,
+   "비상수 열 A/이름수": "8/36",
+   "비상수 열 A": 8,
+   "비상수 열 M": 7,
+   "🔴 설계행렬에 닿는 축(order)": 36,
+   "🔴 유보에서 살아 있는 축(order 중)": 8,
+   "살아 있는 축 이름": [
+    "target_breadth",
+    "venue_prominence",
+    "entry_friction",
+    "goods_scale",
+    "trend_level",
+    "trend_momentum",
+    "trend_volatility",
+    "gen"
+   ],
+   "비상수 A 열 이름": [
+    "target_breadth",
+    "venue_prominence",
+    "entry_friction",
+    "goods_scale",
+    "trend_level",
+    "trend_momentum",
+    "trend_volatility",
+    "gen"
+   ],
+   "라벨 고유": 234,
+   "예측 고유(씨앗0)": 255,
+   "동률 비율(씨앗0)": 0.0116
+  },
+  "모바일": {
+   "채점행": 441,
+   "판 가중": 441,
+   "채점행 == 판 가중(W3)": true,
+   "축 이름 수(티처의 36)": 36,
+   "고유 특성행 uniq(A)": 441,
+   "고유 특성행 uniq(A,M)": 441,
+   "🔴 고유 설계행 uniq(_feat)": 441,
+   "비상수 열 A/이름수": "19/36",
+   "비상수 열 A": 19,
+   "비상수 열 M": 6,
+   "🔴 설계행렬에 닿는 축(order)": 36,
+   "🔴 유보에서 살아 있는 축(order 중)": 19,
+   "살아 있는 축 이름": [
+    "target_breadth",
+    "venue_prominence",
+    "entry_friction",
+    "media_push",
+    "goods_scale",
+    "trend_level",
+    "trend_momentum",
+    "trend_volatility",
+    "wiki_level",
+    "wiki_momentum",
+    "wiki_volatility",
+    "tag_c2_모바일",
+    "tag_c3_모바일",
+    "tag_c1_모바일",
+    "mob_advisory",
+    "mob_ngenre",
+    "mob_nlang",
+    "gen",
+    "grp"
+   ],
+   "비상수 A 열 이름": [
+    "target_breadth",
+    "venue_prominence",
+    "entry_friction",
+    "media_push",
+    "goods_scale",
+    "trend_level",
+    "trend_momentum",
+    "trend_volatility",
+    "wiki_level",
+    "wiki_momentum",
+    "wiki_volatility",
+    "tag_c2_모바일",
+    "tag_c3_모바일",
+    "tag_c1_모바일",
+    "mob_advisory",
+    "mob_ngenre",
+    "mob_nlang",
+    "gen",
+    "grp"
+   ],
+   "라벨 고유": 310,
+   "예측 고유(씨앗0)": 435,
+   "동률 비율(씨앗0)": 0.0136
+  },
+  "세계애니": {
+   "채점행": 300,
+   "판 가중": 300,
+   "채점행 == 판 가중(W3)": true,
+   "축 이름 수(티처의 36)": 36,
+   "고유 특성행 uniq(A)": 300,
+   "고유 특성행 uniq(A,M)": 300,
+   "🔴 고유 설계행 uniq(_feat)": 300,
+   "비상수 열 A/이름수": "15/36",
+   "비상수 열 A": 15,
+   "비상수 열 M": 10,
+   "🔴 설계행렬에 닿는 축(order)": 36,
+   "🔴 유보에서 살아 있는 축(order 중)": 15,
+   "살아 있는 축 이름": [
+    "target_breadth",
+    "venue_prominence",
+    "entry_friction",
+    "media_push",
+    "goods_scale",
+    "trend_level",
+    "trend_momentum",
+    "trend_volatility",
+    "wiki_level",
+    "wiki_momentum",
+    "wiki_volatility",
+    "tag_c2_세계애니",
+    "tag_c3_세계애니",
+    "gen",
+    "grp"
+   ],
+   "비상수 A 열 이름": [
+    "target_breadth",
+    "venue_prominence",
+    "entry_friction",
+    "media_push",
+    "goods_scale",
+    "trend_level",
+    "trend_momentum",
+    "trend_volatility",
+    "wiki_level",
+    "wiki_momentum",
+    "wiki_volatility",
+    "tag_c2_세계애니",
+    "tag_c3_세계애니",
+    "gen",
+    "grp"
+   ],
+   "라벨 고유": 299,
+   "예측 고유(씨앗0)": 294,
+   "동률 비율(씨앗0)": 0.02
+  },
+  "시장팝업": {
+   "채점행": 126,
+   "판 가중": 126,
+   "채점행 == 판 가중(W3)": true,
+   "축 이름 수(티처의 36)": 36,
+   "고유 특성행 uniq(A)": 27,
+   "고유 특성행 uniq(A,M)": 27,
+   "🔴 고유 설계행 uniq(_feat)": 15,
+   "비상수 열 A/이름수": "4/36",
+   "비상수 열 A": 4,
+   "비상수 열 M": 1,
+   "🔴 설계행렬에 닿는 축(order)": 36,
+   "🔴 유보에서 살아 있는 축(order 중)": 3,
+   "살아 있는 축 이름": [
+    "target_breadth",
+    "venue_prominence",
+    "goods_scale"
+   ],
+   "비상수 A 열 이름": [
+    "target_breadth",
+    "venue_prominence",
+    "entry_friction",
+    "goods_scale"
+   ],
+   "라벨 고유": 85,
+   "예측 고유(씨앗0)": 15,
+   "동률 비율(씨앗0)": 0.881
+  },
+  "아이돌": {
+   "채점행": 51,
+   "판 가중": 51,
+   "채점행 == 판 가중(W3)": true,
+   "축 이름 수(티처의 36)": 36,
+   "고유 특성행 uniq(A)": 51,
+   "고유 특성행 uniq(A,M)": 51,
+   "🔴 고유 설계행 uniq(_feat)": 51,
+   "비상수 열 A/이름수": "16/36",
+   "비상수 열 A": 16,
+   "비상수 열 M": 6,
+   "🔴 설계행렬에 닿는 축(order)": 36,
+   "🔴 유보에서 살아 있는 축(order 중)": 14,
+   "살아 있는 축 이름": [
+    "target_breadth",
+    "venue_prominence",
+    "media_push",
+    "trend_level",
+    "trend_momentum",
+    "trend_volatility",
+    "cal_dow_sin",
+    "cal_dow_cos",
+    "cal_month_sin",
+    "cal_month_cos",
+    "cal_holiday_gap",
+    "wiki_level",
+    "wiki_momentum",
+    "wiki_volatility"
+   ],
+   "비상수 A 열 이름": [
+    "target_breadth",
+    "venue_prominence",
+    "entry_friction",
+    "media_push",
+    "goods_scale",
+    "trend_level",
+    "trend_momentum",
+    "trend_volatility",
+    "cal_dow_sin",
+    "cal_dow_cos",
+    "cal_month_sin",
+    "cal_month_cos",
+    "cal_holiday_gap",
+    "wiki_level",
+    "wiki_momentum",
+    "wiki_volatility"
+   ],
+   "라벨 고유": 42,
+   "예측 고유(씨앗0)": 50,
+   "동률 비율(씨앗0)": 0.0196
+  },
+  "애니": {
+   "채점행": 606,
+   "판 가중": 606,
+   "채점행 == 판 가중(W3)": true,
+   "축 이름 수(티처의 36)": 36,
+   "고유 특성행 uniq(A)": 565,
+   "고유 특성행 uniq(A,M)": 565,
+   "🔴 고유 설계행 uniq(_feat)": 565,
+   "비상수 열 A/이름수": "11/36",
+   "비상수 열 A": 11,
+   "비상수 열 M": 6,
+   "🔴 설계행렬에 닿는 축(order)": 36,
+   "🔴 유보에서 살아 있는 축(order 중)": 11,
+   "살아 있는 축 이름": [
+    "target_breadth",
+    "venue_prominence",
+    "entry_friction",
+    "media_push",
+    "trend_level",
+    "trend_momentum",
+    "trend_volatility",
+    "tag_c2_애니",
+    "tag_c3_애니",
+    "gen",
+    "grp"
+   ],
+   "비상수 A 열 이름": [
+    "target_breadth",
+    "venue_prominence",
+    "entry_friction",
+    "media_push",
+    "trend_level",
+    "trend_momentum",
+    "trend_volatility",
+    "tag_c2_애니",
+    "tag_c3_애니",
+    "gen",
+    "grp"
+   ],
+   "라벨 고유": 251,
+   "예측 고유(씨앗0)": 580,
+   "동률 비율(씨앗0)": 0.0429
+  },
+  "영화": {
+   "채점행": 406,
+   "판 가중": 406,
+   "채점행 == 판 가중(W3)": true,
+   "축 이름 수(티처의 36)": 36,
+   "고유 특성행 uniq(A)": 139,
+   "고유 특성행 uniq(A,M)": 139,
+   "🔴 고유 설계행 uniq(_feat)": 139,
+   "비상수 열 A/이름수": "3/36",
+   "비상수 열 A": 3,
+   "비상수 열 M": 1,
+   "🔴 설계행렬에 닿는 축(order)": 36,
+   "🔴 유보에서 살아 있는 축(order 중)": 3,
+   "살아 있는 축 이름": [
+    "target_breadth",
+    "venue_prominence",
+    "entry_friction"
+   ],
+   "비상수 A 열 이름": [
+    "target_breadth",
+    "venue_prominence",
+    "entry_friction"
+   ],
+   "라벨 고유": 406,
+   "예측 고유(씨앗0)": 139,
+   "동률 비율(씨앗0)": 0.6576
+  },
+  "웹툰": {
+   "채점행": 650,
+   "판 가중": 650,
+   "채점행 == 판 가중(W3)": true,
+   "축 이름 수(티처의 36)": 36,
+   "고유 특성행 uniq(A)": 650,
+   "고유 특성행 uniq(A,M)": 650,
+   "🔴 고유 설계행 uniq(_feat)": 650,
+   "비상수 열 A/이름수": "19/36",
+   "비상수 열 A": 19,
+   "비상수 열 M": 3,
+   "🔴 설계행렬에 닿는 축(order)": 36,
+   "🔴 유보에서 살아 있는 축(order 중)": 17,
+   "살아 있는 축 이름": [
+    "target_breadth",
+    "venue_prominence",
+    "trend_level",
+    "trend_momentum",
+    "trend_volatility",
+    "cal_dow_sin",
+    "cal_dow_cos",
+    "cal_weekend",
+    "cal_month_sin",
+    "cal_month_cos",
+    "cal_holiday_gap",
+    "tag_c1_웹툰",
+    "tag_c3_웹툰",
+    "tag_c4_웹툰",
+    "meta_c0_웹툰",
+    "meta_c3_웹툰",
+    "grp"
+   ],
+   "비상수 A 열 이름": [
+    "target_breadth",
+    "venue_prominence",
+    "entry_friction",
+    "goods_scale",
+    "trend_level",
+    "trend_momentum",
+    "trend_volatility",
+    "cal_dow_sin",
+    "cal_dow_cos",
+    "cal_weekend",
+    "cal_month_sin",
+    "cal_month_cos",
+    "cal_holiday_gap",
+    "tag_c1_웹툰",
+    "tag_c3_웹툰",
+    "tag_c4_웹툰",
+    "meta_c0_웹툰",
+    "meta_c3_웹툰",
+    "grp"
+   ],
+   "라벨 고유": 649,
+   "예측 고유(씨앗0)": 639,
+   "동률 비율(씨앗0)": 0.0169
+  },
+  "팝업": {
+   "채점행": 65,
+   "판 가중": 65,
+   "채점행 == 판 가중(W3)": true,
+   "축 이름 수(티처의 36)": 36,
+   "고유 특성행 uniq(A)": 56,
+   "고유 특성행 uniq(A,M)": 56,
+   "🔴 고유 설계행 uniq(_feat)": 56,
+   "비상수 열 A/이름수": "5/36",
+   "비상수 열 A": 5,
+   "비상수 열 M": 5,
+   "🔴 설계행렬에 닿는 축(order)": 36,
+   "🔴 유보에서 살아 있는 축(order 중)": 5,
+   "살아 있는 축 이름": [
+    "target_breadth",
+    "venue_prominence",
+    "entry_friction",
+    "media_push",
+    "goods_scale"
+   ],
+   "비상수 A 열 이름": [
+    "target_breadth",
+    "venue_prominence",
+    "entry_friction",
+    "media_push",
+    "goods_scale"
+   ],
+   "라벨 고유": 65,
+   "예측 고유(씨앗0)": 63,
+   "동률 비율(씨앗0)": 0.0308
+  },
+  "펀딩": {
+   "채점행": 529,
+   "판 가중": 529,
+   "채점행 == 판 가중(W3)": true,
+   "축 이름 수(티처의 36)": 36,
+   "고유 특성행 uniq(A)": 529,
+   "고유 특성행 uniq(A,M)": 529,
+   "🔴 고유 설계행 uniq(_feat)": 529,
+   "비상수 열 A/이름수": "16/36",
+   "비상수 열 A": 16,
+   "비상수 열 M": 0,
+   "🔴 설계행렬에 닿는 축(order)": 36,
+   "🔴 유보에서 살아 있는 축(order 중)": 13,
+   "살아 있는 축 이름": [
+    "target_breadth",
+    "venue_prominence",
+    "entry_friction",
+    "goods_scale",
+    "cal_dow_sin",
+    "cal_dow_cos",
+    "cal_weekend",
+    "cal_month_sin",
+    "cal_month_cos",
+    "cal_holiday_gap",
+    "fund_cat",
+    "fund_maxprice",
+    "grp"
+   ],
+   "비상수 A 열 이름": [
+    "target_breadth",
+    "venue_prominence",
+    "entry_friction",
+    "goods_scale",
+    "trend_level",
+    "trend_momentum",
+    "trend_volatility",
+    "cal_dow_sin",
+    "cal_dow_cos",
+    "cal_weekend",
+    "cal_month_sin",
+    "cal_month_cos",
+    "cal_holiday_gap",
+    "fund_cat",
+    "fund_maxprice",
+    "grp"
+   ],
+   "라벨 고유": 184,
+   "예측 고유(씨앗0)": 523,
+   "동률 비율(씨앗0)": 0.0113
+  }
+ },
+ "왜 죽는가 — 세 갈래": {
+  "게임": {
+   "죽은 열(모형 관점)": 25,
+   "배정 합": 25,
+   "배정 일치": true,
+   "원천 json 행 맞음(W4)": true,
+   "원천 json": "data/state/game_axes.json",
+   "ⓐ-0 축 없음(중립 채움)": {
+    "수": 23,
+    "이름": [
+     "cal_dow_sin",
+     "cal_dow_cos",
+     "cal_weekend",
+     "cal_month_sin",
+     "cal_month_cos",
+     "cal_holiday_gap",
+     "tag_c1_웹툰",
+     "tag_c3_웹툰",
+     "tag_c4_웹툰",
+     "tag_c2_애니",
+     "tag_c3_애니",
+     "tag_c2_모바일",
+     "tag_c3_모바일",
+     "tag_c1_모바일",
+     "tag_c2_세계애니",
+     "tag_c3_세계애니",
+     "meta_c0_웹툰",
+     "meta_c3_웹툰",
+     "fund_cat",
+     "mob_advisory",
+     "mob_ngenre",
+     "mob_nlang",
+     "fund_maxprice"
+    ]
+   },
+   "ⓐ 원천 무변이": {
+    "수": 1,
+    "이름": [
+     "entry_friction"
+    ]
+   },
+   "ⓑ 전처리(BLOCK)": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓑ 전처리(그 밖)": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓒ 유보 분할": {
+    "수": 1,
+    "이름": [
+     "venue_prominence"
+    ]
+   },
+   "모른다": {
+    "수": 0,
+    "이름": []
+   }
+  },
+  "도서": {
+   "죽은 열(모형 관점)": 28,
+   "배정 합": 28,
+   "배정 일치": true,
+   "원천 json 행 맞음(W4)": true,
+   "원천 json": "data/state/book_axes.json",
+   "ⓐ-0 축 없음(중립 채움)": {
+    "수": 27,
+    "이름": [
+     "cal_dow_sin",
+     "cal_dow_cos",
+     "cal_weekend",
+     "cal_month_sin",
+     "cal_month_cos",
+     "cal_holiday_gap",
+     "wiki_level",
+     "wiki_momentum",
+     "wiki_volatility",
+     "tag_c1_웹툰",
+     "tag_c3_웹툰",
+     "tag_c4_웹툰",
+     "tag_c2_애니",
+     "tag_c3_애니",
+     "tag_c2_모바일",
+     "tag_c3_모바일",
+     "tag_c1_모바일",
+     "tag_c2_세계애니",
+     "tag_c3_세계애니",
+     "meta_c0_웹툰",
+     "meta_c3_웹툰",
+     "fund_cat",
+     "mob_advisory",
+     "mob_ngenre",
+     "mob_nlang",
+     "fund_maxprice",
+     "gen"
+    ]
+   },
+   "ⓐ 원천 무변이": {
+    "수": 1,
+    "이름": [
+     "media_push"
+    ]
+   },
+   "ⓑ 전처리(BLOCK)": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓑ 전처리(그 밖)": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓒ 유보 분할": {
+    "수": 0,
+    "이름": []
+   },
+   "모른다": {
+    "수": 0,
+    "이름": []
+   }
+  },
+  "만화": {
+   "죽은 열(모형 관점)": 28,
+   "배정 합": 28,
+   "배정 일치": true,
+   "원천 json 행 맞음(W4)": true,
+   "원천 json": "data/state/manga_axes.json",
+   "ⓐ-0 축 없음(중립 채움)": {
+    "수": 24,
+    "이름": [
+     "cal_dow_sin",
+     "cal_dow_cos",
+     "cal_weekend",
+     "cal_month_sin",
+     "cal_month_cos",
+     "cal_holiday_gap",
+     "tag_c1_웹툰",
+     "tag_c3_웹툰",
+     "tag_c4_웹툰",
+     "tag_c2_애니",
+     "tag_c3_애니",
+     "tag_c2_모바일",
+     "tag_c3_모바일",
+     "tag_c1_모바일",
+     "tag_c2_세계애니",
+     "tag_c3_세계애니",
+     "meta_c0_웹툰",
+     "meta_c3_웹툰",
+     "fund_cat",
+     "mob_advisory",
+     "mob_ngenre",
+     "mob_nlang",
+     "fund_maxprice",
+     "grp"
+    ]
+   },
+   "ⓐ 원천 무변이": {
+    "수": 1,
+    "이름": [
+     "media_push"
+    ]
+   },
+   "ⓑ 전처리(BLOCK)": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓑ 전처리(그 밖)": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓒ 유보 분할": {
+    "수": 3,
+    "이름": [
+     "wiki_level",
+     "wiki_momentum",
+     "wiki_volatility"
+    ]
+   },
+   "모른다": {
+    "수": 0,
+    "이름": []
+   }
+  },
+  "모바일": {
+   "죽은 열(모형 관점)": 17,
+   "배정 합": 17,
+   "배정 일치": true,
+   "원천 json 행 맞음(W4)": true,
+   "원천 json": "data/state/mobile_axes.json",
+   "ⓐ-0 축 없음(중립 채움)": {
+    "수": 17,
+    "이름": [
+     "cal_dow_sin",
+     "cal_dow_cos",
+     "cal_weekend",
+     "cal_month_sin",
+     "cal_month_cos",
+     "cal_holiday_gap",
+     "tag_c1_웹툰",
+     "tag_c3_웹툰",
+     "tag_c4_웹툰",
+     "tag_c2_애니",
+     "tag_c3_애니",
+     "tag_c2_세계애니",
+     "tag_c3_세계애니",
+     "meta_c0_웹툰",
+     "meta_c3_웹툰",
+     "fund_cat",
+     "fund_maxprice"
+    ]
+   },
+   "ⓐ 원천 무변이": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓑ 전처리(BLOCK)": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓑ 전처리(그 밖)": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓒ 유보 분할": {
+    "수": 0,
+    "이름": []
+   },
+   "모른다": {
+    "수": 0,
+    "이름": []
+   }
+  },
+  "세계애니": {
+   "죽은 열(모형 관점)": 21,
+   "배정 합": 21,
+   "배정 일치": true,
+   "원천 json 행 맞음(W4)": true,
+   "원천 json": "data/state/wanime_axes.json",
+   "ⓐ-0 축 없음(중립 채움)": {
+    "수": 21,
+    "이름": [
+     "cal_dow_sin",
+     "cal_dow_cos",
+     "cal_weekend",
+     "cal_month_sin",
+     "cal_month_cos",
+     "cal_holiday_gap",
+     "tag_c1_웹툰",
+     "tag_c3_웹툰",
+     "tag_c4_웹툰",
+     "tag_c2_애니",
+     "tag_c3_애니",
+     "tag_c2_모바일",
+     "tag_c3_모바일",
+     "tag_c1_모바일",
+     "meta_c0_웹툰",
+     "meta_c3_웹툰",
+     "fund_cat",
+     "mob_advisory",
+     "mob_ngenre",
+     "mob_nlang",
+     "fund_maxprice"
+    ]
+   },
+   "ⓐ 원천 무변이": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓑ 전처리(BLOCK)": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓑ 전처리(그 밖)": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓒ 유보 분할": {
+    "수": 0,
+    "이름": []
+   },
+   "모른다": {
+    "수": 0,
+    "이름": []
+   }
+  },
+  "시장팝업": {
+   "죽은 열(모형 관점)": 33,
+   "배정 합": 33,
+   "배정 일치": true,
+   "원천 json 행 맞음(W4)": true,
+   "원천 json": "data/state/market_axes.json",
+   "ⓐ-0 축 없음(중립 채움)": {
+    "수": 32,
+    "이름": [
+     "media_push",
+     "trend_level",
+     "trend_momentum",
+     "trend_volatility",
+     "cal_dow_sin",
+     "cal_dow_cos",
+     "cal_weekend",
+     "cal_month_sin",
+     "cal_month_cos",
+     "cal_holiday_gap",
+     "wiki_level",
+     "wiki_momentum",
+     "wiki_volatility",
+     "tag_c1_웹툰",
+     "tag_c3_웹툰",
+     "tag_c4_웹툰",
+     "tag_c2_애니",
+     "tag_c3_애니",
+     "tag_c2_모바일",
+     "tag_c3_모바일",
+     "tag_c1_모바일",
+     "tag_c2_세계애니",
+     "tag_c3_세계애니",
+     "meta_c0_웹툰",
+     "meta_c3_웹툰",
+     "fund_cat",
+     "mob_advisory",
+     "mob_ngenre",
+     "mob_nlang",
+     "fund_maxprice",
+     "gen",
+     "grp"
+    ]
+   },
+   "ⓐ 원천 무변이": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓑ 전처리(BLOCK)": {
+    "수": 1,
+    "이름": [
+     "entry_friction"
+    ]
+   },
+   "ⓑ 전처리(그 밖)": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓒ 유보 분할": {
+    "수": 0,
+    "이름": []
+   },
+   "모른다": {
+    "수": 0,
+    "이름": []
+   }
+  },
+  "아이돌": {
+   "죽은 열(모형 관점)": 22,
+   "배정 합": 22,
+   "배정 일치": true,
+   "원천 json 행 맞음(W4)": false,
+   "원천 json": "data/state/idol_axes.json",
+   "ⓐ-0 축 없음(중립 채움)": {
+    "수": 19,
+    "이름": [
+     "tag_c1_웹툰",
+     "tag_c3_웹툰",
+     "tag_c4_웹툰",
+     "tag_c2_애니",
+     "tag_c3_애니",
+     "tag_c2_모바일",
+     "tag_c3_모바일",
+     "tag_c1_모바일",
+     "tag_c2_세계애니",
+     "tag_c3_세계애니",
+     "meta_c0_웹툰",
+     "meta_c3_웹툰",
+     "fund_cat",
+     "mob_advisory",
+     "mob_ngenre",
+     "mob_nlang",
+     "fund_maxprice",
+     "gen",
+     "grp"
+    ]
+   },
+   "ⓐ 원천 무변이": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓑ 전처리(BLOCK)": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓑ 전처리(그 밖)": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓒ 유보 분할": {
+    "수": 3,
+    "이름": [
+     "entry_friction",
+     "goods_scale",
+     "cal_weekend"
+    ]
+   },
+   "모른다": {
+    "수": 0,
+    "이름": []
+   }
+  },
+  "애니": {
+   "죽은 열(모형 관점)": 25,
+   "배정 합": 25,
+   "배정 일치": true,
+   "원천 json 행 맞음(W4)": true,
+   "원천 json": "data/state/anime_axes.json",
+   "ⓐ-0 축 없음(중립 채움)": {
+    "수": 24,
+    "이름": [
+     "cal_dow_sin",
+     "cal_dow_cos",
+     "cal_weekend",
+     "cal_month_sin",
+     "cal_month_cos",
+     "cal_holiday_gap",
+     "wiki_level",
+     "wiki_momentum",
+     "wiki_volatility",
+     "tag_c1_웹툰",
+     "tag_c3_웹툰",
+     "tag_c4_웹툰",
+     "tag_c2_모바일",
+     "tag_c3_모바일",
+     "tag_c1_모바일",
+     "tag_c2_세계애니",
+     "tag_c3_세계애니",
+     "meta_c0_웹툰",
+     "meta_c3_웹툰",
+     "fund_cat",
+     "mob_advisory",
+     "mob_ngenre",
+     "mob_nlang",
+     "fund_maxprice"
+    ]
+   },
+   "ⓐ 원천 무변이": {
+    "수": 1,
+    "이름": [
+     "goods_scale"
+    ]
+   },
+   "ⓑ 전처리(BLOCK)": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓑ 전처리(그 밖)": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓒ 유보 분할": {
+    "수": 0,
+    "이름": []
+   },
+   "모른다": {
+    "수": 0,
+    "이름": []
+   }
+  },
+  "영화": {
+   "죽은 열(모형 관점)": 33,
+   "배정 합": 33,
+   "배정 일치": true,
+   "원천 json 행 맞음(W4)": true,
+   "원천 json": "data/state/kobis_axes.json",
+   "ⓐ-0 축 없음(중립 채움)": {
+    "수": 33,
+    "이름": [
+     "media_push",
+     "goods_scale",
+     "trend_level",
+     "trend_momentum",
+     "trend_volatility",
+     "cal_dow_sin",
+     "cal_dow_cos",
+     "cal_weekend",
+     "cal_month_sin",
+     "cal_month_cos",
+     "cal_holiday_gap",
+     "wiki_level",
+     "wiki_momentum",
+     "wiki_volatility",
+     "tag_c1_웹툰",
+     "tag_c3_웹툰",
+     "tag_c4_웹툰",
+     "tag_c2_애니",
+     "tag_c3_애니",
+     "tag_c2_모바일",
+     "tag_c3_모바일",
+     "tag_c1_모바일",
+     "tag_c2_세계애니",
+     "tag_c3_세계애니",
+     "meta_c0_웹툰",
+     "meta_c3_웹툰",
+     "fund_cat",
+     "mob_advisory",
+     "mob_ngenre",
+     "mob_nlang",
+     "fund_maxprice",
+     "gen",
+     "grp"
+    ]
+   },
+   "ⓐ 원천 무변이": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓑ 전처리(BLOCK)": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓑ 전처리(그 밖)": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓒ 유보 분할": {
+    "수": 0,
+    "이름": []
+   },
+   "모른다": {
+    "수": 0,
+    "이름": []
+   }
+  },
+  "웹툰": {
+   "죽은 열(모형 관점)": 19,
+   "배정 합": 19,
+   "배정 일치": true,
+   "원천 json 행 맞음(W4)": true,
+   "원천 json": "data/state/webtoon_axes.json",
+   "ⓐ-0 축 없음(중립 채움)": {
+    "수": 16,
+    "이름": [
+     "wiki_level",
+     "wiki_momentum",
+     "wiki_volatility",
+     "tag_c2_애니",
+     "tag_c3_애니",
+     "tag_c2_모바일",
+     "tag_c3_모바일",
+     "tag_c1_모바일",
+     "tag_c2_세계애니",
+     "tag_c3_세계애니",
+     "fund_cat",
+     "mob_advisory",
+     "mob_ngenre",
+     "mob_nlang",
+     "fund_maxprice",
+     "gen"
+    ]
+   },
+   "ⓐ 원천 무변이": {
+    "수": 1,
+    "이름": [
+     "media_push"
+    ]
+   },
+   "ⓑ 전처리(BLOCK)": {
+    "수": 2,
+    "이름": [
+     "entry_friction",
+     "goods_scale"
+    ]
+   },
+   "ⓑ 전처리(그 밖)": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓒ 유보 분할": {
+    "수": 0,
+    "이름": []
+   },
+   "모른다": {
+    "수": 0,
+    "이름": []
+   }
+  },
+  "팝업": {
+   "죽은 열(모형 관점)": 31,
+   "배정 합": 31,
+   "배정 일치": true,
+   "원천 json 행 맞음(W4)": false,
+   "원천 json": "없음(팝업은 slots)",
+   "ⓐ-0 축 없음(중립 채움)": {
+    "수": 31,
+    "이름": [
+     "trend_level",
+     "trend_momentum",
+     "trend_volatility",
+     "cal_dow_sin",
+     "cal_dow_cos",
+     "cal_weekend",
+     "cal_month_sin",
+     "cal_month_cos",
+     "cal_holiday_gap",
+     "wiki_level",
+     "wiki_momentum",
+     "wiki_volatility",
+     "tag_c1_웹툰",
+     "tag_c3_웹툰",
+     "tag_c4_웹툰",
+     "tag_c2_애니",
+     "tag_c3_애니",
+     "tag_c2_모바일",
+     "tag_c3_모바일",
+     "tag_c1_모바일",
+     "tag_c2_세계애니",
+     "tag_c3_세계애니",
+     "meta_c0_웹툰",
+     "meta_c3_웹툰",
+     "fund_cat",
+     "mob_advisory",
+     "mob_ngenre",
+     "mob_nlang",
+     "fund_maxprice",
+     "gen",
+     "grp"
+    ]
+   },
+   "ⓐ 원천 무변이": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓑ 전처리(BLOCK)": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓑ 전처리(그 밖)": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓒ 유보 분할": {
+    "수": 0,
+    "이름": []
+   },
+   "모른다": {
+    "수": 0,
+    "이름": []
+   }
+  },
+  "펀딩": {
+   "죽은 열(모형 관점)": 23,
+   "배정 합": 23,
+   "배정 일치": true,
+   "원천 json 행 맞음(W4)": true,
+   "원천 json": "data/state/funding_axes.json",
+   "ⓐ-0 축 없음(중립 채움)": {
+    "수": 19,
+    "이름": [
+     "wiki_level",
+     "wiki_momentum",
+     "wiki_volatility",
+     "tag_c1_웹툰",
+     "tag_c3_웹툰",
+     "tag_c4_웹툰",
+     "tag_c2_애니",
+     "tag_c3_애니",
+     "tag_c2_모바일",
+     "tag_c3_모바일",
+     "tag_c1_모바일",
+     "tag_c2_세계애니",
+     "tag_c3_세계애니",
+     "meta_c0_웹툰",
+     "meta_c3_웹툰",
+     "mob_advisory",
+     "mob_ngenre",
+     "mob_nlang",
+     "gen"
+    ]
+   },
+   "ⓐ 원천 무변이": {
+    "수": 1,
+    "이름": [
+     "media_push"
+    ]
+   },
+   "ⓑ 전처리(BLOCK)": {
+    "수": 3,
+    "이름": [
+     "trend_level",
+     "trend_momentum",
+     "trend_volatility"
+    ]
+   },
+   "ⓑ 전처리(그 밖)": {
+    "수": 0,
+    "이름": []
+   },
+   "ⓒ 유보 분할": {
+    "수": 0,
+    "이름": []
+   },
+   "모른다": {
+    "수": 0,
+    "이름": []
+   }
+  }
+ },
+ "판 기여와의 관계(표·산점만 · 🔴 회귀선 없음 — 조항 60 · n=12)": {
+  "게임": {
+   "살아 있는 축(order 중)": 11,
+   "비상수 A 열": 16,
+   "고유 설계행/채점행": 1.0,
+   "판 가중 w/Σw": 0.04768,
+   "도메인 ρ(898 B팔 평균)": 0.6546304981480775,
+   "898 판 기여 Δ": -1.0037779346979052e-06,
+   "동률 비율(씨앗0)": 0.0167
+  },
+  "도서": {
+   "살아 있는 축(order 중)": 8,
+   "비상수 A 열": 8,
+   "고유 설계행/채점행": 0.9632,
+   "판 가중 w/Σw": 0.04318,
+   "도메인 ρ(898 B팔 평균)": 0.388497282241409,
+   "898 판 기여 Δ": 7.1700508922931635e-06,
+   "동률 비율(씨앗0)": 0.0307
+  },
+  "만화": {
+   "살아 있는 축(order 중)": 8,
+   "비상수 A 열": 8,
+   "고유 설계행/채점행": 0.7209,
+   "판 가중 w/Σw": 0.06834,
+   "도메인 ρ(898 B팔 평균)": 0.3375429521147044,
+   "898 판 기여 Δ": -1.7029716006488412e-05,
+   "동률 비율(씨앗0)": 0.0116
+  },
+  "모바일": {
+   "살아 있는 축(order 중)": 19,
+   "비상수 A 열": 19,
+   "고유 설계행/채점행": 1.0,
+   "판 가중 w/Σw": 0.11682,
+   "도메인 ρ(898 B팔 평균)": 0.6261519972842989,
+   "898 판 기여 Δ": 1.3638448253753796e-05,
+   "동률 비율(씨앗0)": 0.0136
+  },
+  "세계애니": {
+   "살아 있는 축(order 중)": 15,
+   "비상수 A 열": 15,
+   "고유 설계행/채점행": 1.0,
+   "판 가중 w/Σw": 0.07947,
+   "도메인 ρ(898 B팔 평균)": 0.5799544533086202,
+   "898 판 기여 Δ": 1.2781687187546353e-06,
+   "동률 비율(씨앗0)": 0.02
+  },
+  "시장팝업": {
+   "살아 있는 축(order 중)": 3,
+   "비상수 A 열": 4,
+   "고유 설계행/채점행": 0.119,
+   "판 가중 w/Σw": 0.03338,
+   "도메인 ρ(898 B팔 평균)": 0.1830259298977002,
+   "898 판 기여 Δ": 0.0005108388803736707,
+   "동률 비율(씨앗0)": 0.881
+  },
+  "아이돌": {
+   "살아 있는 축(order 중)": 14,
+   "비상수 A 열": 16,
+   "고유 설계행/채점행": 1.0,
+   "판 가중 w/Σw": 0.01351,
+   "도메인 ρ(898 B팔 평균)": 0.4563374435267167,
+   "898 판 기여 Δ": 5.291339904745563e-05,
+   "동률 비율(씨앗0)": 0.0196
+  },
+  "애니": {
+   "살아 있는 축(order 중)": 11,
+   "비상수 A 열": 11,
+   "고유 설계행/채점행": 0.9323,
+   "판 가중 w/Σw": 0.16053,
+   "도메인 ρ(898 B팔 평균)": 0.6040431293102645,
+   "898 판 기여 Δ": 3.710551612468145e-05,
+   "동률 비율(씨앗0)": 0.0429
+  },
+  "영화": {
+   "살아 있는 축(order 중)": 3,
+   "비상수 A 열": 3,
+   "고유 설계행/채점행": 0.3424,
+   "판 가중 w/Σw": 0.10755,
+   "도메인 ρ(898 B팔 평균)": 0.4849530476384562,
+   "898 판 기여 Δ": 1.1171768420129165e-05,
+   "동률 비율(씨앗0)": 0.6576
+  },
+  "웹툰": {
+   "살아 있는 축(order 중)": 17,
+   "비상수 A 열": 19,
+   "고유 설계행/채점행": 1.0,
+   "판 가중 w/Σw": 0.17219,
+   "도메인 ρ(898 B팔 평균)": 0.35701692979485805,
+   "898 판 기여 Δ": 1.1274975764843875e-06,
+   "동률 비율(씨앗0)": 0.0169
+  },
+  "팝업": {
+   "살아 있는 축(order 중)": 5,
+   "비상수 A 열": 5,
+   "고유 설계행/채점행": 0.8615,
+   "판 가중 w/Σw": 0.01722,
+   "도메인 ρ(898 B팔 평균)": 0.3780893814858806,
+   "898 판 기여 Δ": -5.505856929513755e-07,
+   "동률 비율(씨앗0)": 0.0308
+  },
+  "펀딩": {
+   "살아 있는 축(order 중)": 13,
+   "비상수 A 열": 16,
+   "고유 설계행/채점행": 1.0,
+   "판 가중 w/Σw": 0.14013,
+   "도메인 ρ(898 B팔 평균)": 0.36156268368524386,
+   "898 판 기여 Δ": -9.743595970458871e-05,
+   "동률 비율(씨앗0)": 0.0113
+  }
+ },
+ "⚠ 조항 60": "표본이 12 다. 회귀선·기울기·R²·p 를 내지 않는다. 위 표의 좌표만 산점으로 읽는다."
+}

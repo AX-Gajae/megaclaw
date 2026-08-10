@@ -1,0 +1,29 @@
+자료 build (fixaxes 포함) ...
+/Users/ax/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/ax/world_model/state/tri_domain.py:290: UserWarning: media_push 채움 길이 불일치: 만화 2041 대 5905 --- 축이 빠진다
+  warnings.warn("media_push 채움 길이 불일치: %s %d 대 %d --- 축이 빠진다"
+/Users/ax/world_model/state/tri_domain.py:290: UserWarning: media_push 채움 길이 불일치: 만화 1789 대 5905 --- 축이 빠진다
+  warnings.warn("media_push 채움 길이 불일치: %s %d 대 %d --- 축이 빠진다"
+{"W1 자료 sha256": "d7e2df860139efba", "W1 890 과 동일": true, "W2 도메인 수": 12, "W2 가중 합": 3775, "W2 가중 합 == 3775": true}
+학습 도메인 12 · 적합 시작 ...
+🔴 axis_order(common) = 36열: ['target_breadth', 'venue_prominence', 'entry_friction', 'media_push', 'goods_scale', 'trend_level', 'trend_momentum', 'trend_volatility', 'cal_dow_sin', 'cal_dow_cos', 'cal_weekend', 'cal_month_sin', 'cal_month_cos', 'cal_holiday_gap', 'wiki_level', 'wiki_momentum', 'wiki_volatility', 'tag_c1_웹툰', 'tag_c3_웹툰', 'tag_c4_웹툰', 'tag_c2_애니', 'tag_c3_애니', 'tag_c2_모바일', 'tag_c3_모바일', 'tag_c1_모바일', 'tag_c2_세계애니', 'tag_c3_세계애니', 'meta_c0_웹툰', 'meta_c3_웹툰', 'fund_cat', 'mob_advisory', 'mob_ngenre', 'mob_nlang', 'fund_maxprice', 'gen', 'grp']
+자료 build (fixaxes 없이) ...
+/Users/ax/world_model/state/tri_domain.py:290: UserWarning: media_push 채움 길이 불일치: 만화 2041 대 5905 --- 축이 빠진다
+  warnings.warn("media_push 채움 길이 불일치: %s %d 대 %d --- 축이 빠진다"
+/Users/ax/world_model/state/tri_domain.py:290: UserWarning: media_push 채움 길이 불일치: 만화 1789 대 5905 --- 축이 빠진다
+  warnings.warn("media_push 채움 길이 불일치: %s %d 대 %d --- 축이 빠진다"
+  게임: n=180 죽은열 25/40 · 살아있는축 11/36 · 고유설계행 180
+  도서: n=163 죽은열 28/36 · 살아있는축 8/36 · 고유설계행 157
+  만화: n=258 죽은열 28/36 · 살아있는축 8/36 · 고유설계행 186
+  모바일: n=441 죽은열 17/36 · 살아있는축 19/36 · 고유설계행 441
+  세계애니: n=300 죽은열 21/36 · 살아있는축 15/36 · 고유설계행 300
+  시장팝업: n=126 죽은열 33/36 · 살아있는축 3/36 · 고유설계행 15
+  아이돌: n=51 죽은열 22/36 · 살아있는축 14/36 · 고유설계행 51
+  애니: n=606 죽은열 25/36 · 살아있는축 11/36 · 고유설계행 565
+  영화: n=406 죽은열 33/36 · 살아있는축 3/36 · 고유설계행 139
+  웹툰: n=650 죽은열 19/36 · 살아있는축 17/36 · 고유설계행 650
+  팝업: n=65 죽은열 31/36 · 살아있는축 5/36 · 고유설계행 56
+  펀딩: n=529 죽은열 23/36 · 살아있는축 13/36 · 고유설계행 529
+
+→ /Users/ax/world_model/runners/out899_axesdie.json
