@@ -791,8 +791,17 @@ ULP_STEPS = 4
 #: ⚠ **이 자가 못 보는 것**: `axvline(0.4689)`(**은퇴**)
 #: 처럼 **함수 인자**로 들어가는 수는 산술도 비교도 아니라 기록으로 떨어진다 ---
 #: 132 를 잡은 것은 이 자가 아니라 사람이다. 래칫이 그 자리를 대신 지킨다.
+#: 🔴 **그 셋째 칸도 한 켜였다(티처 #64 C4 를 고치다 실측 · 2026-08-11).**
+#: `paper/steps/*/figs/*.py` 는 **`figs/` 안**만 본다. 실제로 세어 보니 `paper/steps`
+#: 아래 `.py` 는 **113개**인데 그 glob 이 잡는 것은 **106개**다 --- 나머지 **7개**는
+#: `paper/steps/<스텝>/fig.py`(`figs/` 없이 폴더 바로 밑)이고 **어느 검사에도 안
+#: 걸렸다**: `paper_dead()` 는 `.py` 를 본문으로 안 세고(`PAPER_SKIP_SUFFIXES`),
+#: 이 래칫은 한 켜만 봤다. 213·470·471·472·473·474·475 일곱 편이다.
+#: → `paper/steps/**/*.py` 로 켜를 없앤다. 🔴 **래칫은 안 움직인다** --- 그 7파일에
+#: 든 죽은 값을 세니 **0건**이다(사면 전 생 매치 기준). 늘었으면 여기 수와 이유를
+#: 적었을 것이다.
 HISTORY_GLOBS = ("runners/**/*", "data/lab/denominator.json",
-                 "paper/steps/*/figs/*.py",
+                 "paper/steps/**/*.py",
                  # 🔴 **사전등록은 정의상 얼어붙은 기록이다**(노트 898).
                  # 측정 전에 커밋됐다는 사실 자체가 증거물이고(티처 #58 이
                  # 「사후냐」를 분 단위로 판정한 근거), 그래서 **고칠 수 없다** ---
@@ -937,10 +946,32 @@ def _same_number(dead: str, ext: str) -> bool:
     return round(v, nd) == round(d, nd)
 
 
+#: 🔴 **LaTeX 는 천단위를 `3{,}430` 으로 쓴다 --- 인쇄되는 글자는 「3,430」이다**(티처 #65 C4).
+#: `_spans` 이 `re.escape(dead)` 리터럴을 찾으므로 그 표기는 **원리상 안 보였다**.
+#: 실물: `3{,}430` **9곳** · `3{,}369` **20곳** = **29곳**(둘 다 등록된 은퇴 분모).
+#: 게이트가 장부에 달던 수는 평서형 10곳뿐이었고 나머지 19곳을 **「없다」로 냈다** --- 조항 59.
+#:
+#: 🔴 **줄을 고치지 않고 「찾는 패턴」을 넓힌다.** 줄을 정규화하면 자리(offset)가 밀리고,
+#: 그러면 사면 판정(`_amnestied`)이 **엉뚱한 이웃을 본다**. 채움 문자로 길이를 맞추려던
+#: 첫 시도는 채움이 숫자 사이에 끼어 **매칭 자체를 막았다**(주 세션이 실측으로 잡았다) ---
+#: 그래서 자리를 원본 그대로 두는 이 길만 남는다.
+#: 쉼표 자리에 허용하는 것 셋: `,` · `{,}` · `\,`(LaTeX 얇은 공백).
+_TEXSEP = r"(?:,|\{,\}|\\,)"
+
+
+def _dead_re(dead: str):
+    """🔴 `dead` 를 찾는 정규식. 쉼표 자리는 **LaTeX 표기도 받는다**(자리는 원본 기준)."""
+    return re.compile(_TEXSEP.join(re.escape(x) for x in dead.split(",")))
+
+
 def _spans(dead: str, line: str) -> list:
-    """`line` 안에서 `dead` 가 **그 수로서** 나타나는 자리 `(시작, 끝)` 전부."""
+    """`line` 안에서 `dead` 가 **그 수로서** 나타나는 자리 `(시작, 끝)` 전부.
+
+    🔴 LaTeX 천단위 표기(`3{,}430`·`3\,430` --- 둘 다 **은퇴**한 채점 분모다)도
+    **같은 수로 본다**(티처 #65 C4). 산 값은 3,775.
+    """
     out = []
-    for m in re.finditer(re.escape(dead), line):
+    for m in _dead_re(dead).finditer(line):
         if m.start() and line[m.start() - 1].isdigit():
             continue                       # 더 긴 수의 꼬리다(노트 677)
         j = m.end()
@@ -1087,7 +1118,22 @@ PAPER_BASELINE_AT = "2026-08-09T08:40:00"
 #: ⚠ 전부 **묵은 빚**(기준선 이전)이고 **경성은 0**이다. 발행물이라 본문을 안 고친다.
 #: ⚠ errata 사면은 **안 늘었다**(4 → 4) --- 기본 사정거리에 `meta.json` 을 넣었지만
 #:   그것으로 새로 사면된 자리는 0건이다(실측).
-PAPER_DEBT = 128
+#:
+#: 🔴 **128 → 156 (+28) · 노트 902 · 티처 #65 C4 --- 눈을 뜬 것이지 새로 인쇄된 게 아니다.**
+#:   `_spans` 이 `re.escape(dead)` 리터럴만 찾아서 **LaTeX 천단위 표기를 원리상 못 봤다** ---
+#:   `3{,}430`(**은퇴** · 산 값 3,775) 은 「3,430」(**은퇴**)으로 **인쇄되는데** 그 문자열을 안 품는다.
+#:   `_dead_re()` 로 쉼표 자리에 `,`·`{,}`·`\,` 를 받게 하니 그 자리가 드러났다.
+#:   ⚠ **줄을 정규화하지 않고 패턴을 넓힌 이유**: 줄을 고치면 자리(offset)가 밀려
+#:   사면 판정이 **엉뚱한 이웃을 본다**. 채움 문자로 길이를 맞추려던 첫 시도는
+#:   **채움이 숫자 사이에 끼어 매칭 자체를 막았다**(주 세션이 실측으로 잡았다).
+#:   증가분 내역(값별 · 전부 **은퇴**한 채점 분모):
+#:     `3,369`(**은퇴** · 11도메인 시대 값) 4 → **24** (+20)
+#:     `3,430`(**은퇴** · 노트 552 이전 분모) 6 → **14** (+8)
+#:   🔴 **빚진 논문이 89 → 106 으로 는다** --- 즉 **17편이 그동안 「빚 없음」으로 보였다.**
+#:   ⚠ 경성은 여전히 **0**(전부 기준선 이전). 발행물이라 본문을 안 고친다.
+#:   ⚠ 🔴 **이 문단을 쓰면서 또 걸렸다** --- `lab/datehygiene.py:46` 이 같은 표기로
+#:   은퇴를 **설명하는** 문장을 갖고 있었고 C4 로 처음 보였다. 그 줄에 딱지를 달아 닫았다.
+PAPER_DEBT = 156
 
 
 def _dirty_papers() -> set:
@@ -1136,55 +1182,178 @@ def _dirty_papers() -> set:
 #      즉 게이트가 「인쇄되는 것」이 아니라 「이름이 `.tex` 인 것」을 보고 있었다.
 #      #62 C6 과 **정확히 같은 병**의 세 번째 얼굴이다(이름 -> 켜 -> 확장자).
 #
-#: `\input{x}` · `\include{x}` · 중괄호 없는 `\input x` 셋 다 본다.
-_INPUT_RE = re.compile(r"\\(?:input|include)\s*\{([^}]*)\}"
-                       r"|\\input\s+([^\s%{}\\]+)")
+# 🔴 **티처 #64 C4 --- 그 「전량」이 `\input` 둘만 아는 전량이었다.** 위 ②가
+# *"확장자와 무관하게 따라간다"* 고 적었는데 **따라가는 명령이 `\input`·`\include`
+# 둘뿐**이었다. 티처가 `paper/steps/_zzprobe/` 를 만들어 심고 지웠다 --- `main.tex`
+# 하나만 잡히고 나머지 넷이 전부 시야 밖이었고, 그래서 `paper_dead` 가
+# **통과 True · 경성 0**, `⚠ 못 푼 \input` 은 **「없음」**이었다.
+# 🔴 **조항 59 그대로 --- 게이트가 「못 봤다」를 「없다」로 냈다.**
+# 2026-08-11 재현(격리 트리 · 옛 코드 = `git show HEAD:ingest/audit.py`):
+#
+#   | 심은 자리                          | 옛 코드   | 새 코드 |
+#   | `\input{_zzC.tex}`(대조군)          | 잡음      | 잡음    |
+#   | `\subfile{_zzS.txt}`               | **못 봄** | 잡음    |
+#   | `\import{./}{_zzI.txt}`            | **못 봄** | 잡음    |
+#   | `\InputIfFileExists{_zzF.txt}`     | **못 봄** | 잡음    |
+#   | `\usepackage{_zzsty}` -> `_zzsty.sty` | **못 봄** | 잡음 |
+#
+# 🔴 **그리고 이건 심은 자리만의 이야기가 아니다.** `icmlko.sty` 는 루프 ⑥ 규약이
+# 모든 스텝 폴더에 복사시키고 `\usepackage{icmlko}` 로 **실제 인쇄된다** ---
+# 2026-08-11 실측 **531편**. 즉 **모든 논문이 게이트 밖 파일을 하나씩 이고 있었다.**
+#
+# 고치는 것 둘:
+#   ③ **끌어오는 명령을 전부 안다** --- `\subfile` · `\import{경로}{파일}` ·
+#      `\subimport` · `\InputIfFileExists` · `\usepackage`/`\RequirePackage`(→`.sty`) ·
+#      `\documentclass`/`\LoadClass`(→`.cls`).
+#   ④ **수집 대상에서 `.tex` 확장자 가정을 뺀다** --- 씨앗은 이제 폴더 안 **파일 전량**이고,
+#      **빼는 쪽**만 이름으로 적는다(`PAPER_SKIP_SUFFIXES`). 검사할 확장자를 나열하면
+#      새 확장자가 생길 때마다 조용히 시야 밖이 된다 --- 이 저장소가 네 번 겪은 손
+#      나열 병이고, `META_AMNESTY_KEYS` 문단이 *"목록은 「빼는 쪽」에 적는다"* 로
+#      이미 규약화한 것이다(fail-open 이 아니라 fail-closed).
+#
+#: 본다: ①`\input{x}`·`\include{x}`·중괄호 없는 `\input x` ②`\subfile{x}` ·
+#: `\InputIfFileExists{x}` ③`\import{경로}{파일}`·`\subimport`(별표 판 포함 · 인자 둘)
+#: ④`\usepackage[..]{a,b}`·`\RequirePackage` -> `.sty` · `\documentclass`·`\LoadClass` -> `.cls`.
+#: ⚠ `\includegraphics{x}` 는 안 걸린다 --- `include` 뒤에 `\s*\{` 를 요구하므로
+#: `graphics` 에서 끊긴다(그림은 본문이 아니다).
+_INPUT_RE = re.compile(
+    r"\\(?P<sub>sub)?import\*?\s*\{(?P<impdir>[^}]*)\}\s*\{(?P<impf>[^}]*)\}"
+    r"|\\(?P<pkg>usepackage|RequirePackage|documentclass|LoadClass)\s*"
+    r"(?:\[[^\]]*\])?\s*\{(?P<pkgn>[^}]*)\}"
+    r"|\\(?P<cmd>input|include|InputIfFileExists|subfile|subfileinclude)\s*\{(?P<arg>[^}]*)\}"
+    r"|\\input\s+(?P<bare>[^\s%{}\\]+)")
 #: 이스케이프되지 않은 `%` 뒤는 TeX 주석이라 인쇄되지 않는다 --- `\input` 도 안 산다.
 _TEX_COMMENT = re.compile(r"(?<!\\)%.*$", re.M)
 #: `\input` 사슬을 따라갈 최대 깊이. 넘으면 **「모른다」로 올린다**(조항 59).
 PAPER_TEX_DEPTH = 8
 
+#: 🔴 **본문 수집에서 「빼는」 확장자 --- 나열은 이쪽에만 한다**(티처 #64 C4).
+#: 여기 없는 확장자는 **전부 수집 대상**이다. 값은 「왜 뺐나」이고, 빼는 이유가
+#: 「본문이 아니다」가 아니면 여기 적으면 안 된다.
+#: ⚠ 뺀 것은 **조용히 사라지지 않는다** --- `paper_bodies()` 가 확장자별 개수를
+#: 세어 올리고 `paper_dead()`/`ulp_twins()` 신호에 싣는다(「없다」와 「안 봤다」는 둘이다).
+PAPER_SKIP_SUFFIXES = {
+    ".pdf": "이진 산출물 --- 인쇄의 **결과**이지 원천이 아니다(글월로 못 읽는다)",
+    ".png": "이진 그림",
+    ".py": "`HISTORY_GLOBS` 의 `paper/steps/**/*.py` 가 **이미 본다**(래칫 · 113파일). "
+           "같은 글을 두 래칫으로 세면 어느 쪽이 얼마나 움직였는지 못 읽는다. "
+           "⚠ 그 glob 은 2026-08-11 까지 `*/figs/*.py`(106파일)라 **7파일이 양쪽 밖**"
+           "이었다 --- 같이 고쳤다(그 문단 참조)",
+    ".json": "`meta.json` 은 `meta_body_text()` 로 **따로** 세운다 --- 사면 칸 처리가 "
+             "게이트마다 다르기 때문이다(C5 참조)",
+    ".ds_store": "macOS 이진 부스러기",
+}
+
+# 🔴🔴 **이 수리가 아직 못 닫는 것**(여기 적는 것이 수리의 절반이다 · 조항 59).
+#   ⓐ **끌어오는 명령의 목록이 여전히 손 나열이다.** `\lstinputlisting` ·
+#      `\verbatiminput` · `\includeonly` · `\bibliography`/`\addbibresource`(→`.bbl`) ·
+#      `\input` 을 감싼 **사용자 매크로**(`\newcommand\sec[1]{\input{...}}`)는 못 본다.
+#      C4 가 고친 것은 「어떤 명령을 아는가」이지 「명령을 손으로 적는가」가 아니다 ---
+#      **다음 우회로는 이 목록 밖에서 온다.** 확장자 쪽은 「빼는 쪽」으로 뒤집었지만
+#      명령 쪽은 못 뒤집었다(끌어오지 **않는** 명령이 훨씬 많아서).
+#   ⓑ **매크로가 든 인자는 못 푼다**(`\input{\jobname}`). `missing` 으로 낸다 ---
+#      「없다」가 아니라 「못 푼다」다.
+#   ⓒ **저장소 밖 `.sty`/`.cls` 는 원리상 못 읽는다.** `graphicx` 같은 시스템 패키지가
+#      죽은 수를 인쇄해도 이 자는 모른다. 이름별 개수까지만 안다(어느 논문 어느 줄인지
+#      **안 싣는다** --- 687편 × 서너 개면 신호가 묻힌다).
+#   ⓓ **`PAPER_SKIP_SUFFIXES` 의 다섯은 「없다」가 아니라 「안 봤다」다.** 신호에 개수를
+#      싣지만, `.pdf` 안의 글자(= 실제로 인쇄된 것!)는 **아무 게이트도 안 본다.**
+#      최종 산출물을 읽는 자가 없다는 뜻이고, 이것이 이 계열에서 제일 큰 남은 구멍이다.
+#   ⓔ **확장자 없는 파일은 씨앗에 들어온다** --- 오늘 `paper/steps` 에 0개다. 이진이면
+#      `UnicodeDecodeError` 로 **「모른다」가 되어 게이트가 붉어진다**(통과가 아니다).
+#      그건 설계대로지만, 그런 파일이 생기면 여기 확장자를 더할지 먼저 판단해야 한다.
+
 
 def _input_targets(text: str, q: Path, d: Path):
-    """`text`(파일 `q`) 안의 `\\input`/`\\include` 가 가리키는 **실재 파일**과 미해결 인자.
+    """`text`(파일 `q`)가 **끌어오는 실재 파일**과 못 푼 인자. `(got, missing, pkg)`.
 
-    LaTeX 의 이름 풀이를 그대로 흉내낸다: 확장자가 있으면 그대로, 없으면 `.tex`
-    를 붙인다. 기준 디렉터리는 **그 파일이 있는 곳** 다음 **논문 폴더**다.
+    LaTeX 의 이름 풀이를 그대로 흉내낸다: 확장자가 있으면 그대로, 없으면 그
+    **명령에 맞는** 확장자를 붙인다 --- `\\input` 계열은 `.tex`, `\\usepackage`
+    계열은 `.sty`, `\\documentclass` 계열은 `.cls`. 🔴 옛 판은 명령과 무관하게
+    `.tex` 만 붙였고 그래서 `\\usepackage{icmlko}` 가 옆에 있는 `icmlko.sty` 를
+    **원리상 못 찾았다**(티처 #64 C4).
+
+    기준 디렉터리는 **그 파일이 있는 곳** 다음 **논문 폴더**다.
+    `\\import{경로}{파일}`·`\\subimport` 는 그 앞에 **지정된 경로**를 먼저 본다.
+
+    돌려주는 셋을 가르는 이유(조항 59):
+      · `missing` --- 본문을 끌어오는 명령인데 **못 풀었다**. 시끄럽게 낸다.
+      · `pkg` --- `\\usepackage`/`\\documentclass` 인데 저장소에 그 `.sty`/`.cls` 가
+        **없다**. 시스템 패키지(`graphicx`·`amsmath`…)가 여기 온다 --- 저장소 밖이라
+        원리상 못 읽는다. **「없다」가 아니라 「저장소에 없다」로 낸다.**
+        ⚠ 이름만 모은다 --- 어느 논문 어느 줄인지는 **안 싣는다**(687편 × 서너 개라
+        신호가 묻힌다). 그래서 **이름별 개수**까지만 안다.
     """
-    got, missing = [], []
+    got, missing, pkg = [], [], []
     body = _TEX_COMMENT.sub("", text)
     for m in _INPUT_RE.finditer(body):
-        a = (m.group(1) or m.group(2) or "").strip()
-        if not a or "\\" in a or "#" in a:
-            # 매크로가 든 인자는 풀 수 없다 --- **「없다」가 아니라 「못 푼다」**다.
-            if a:
-                missing.append(a)
-            continue
-        hit = None
-        for basedir in (q.parent, d):
-            for cand in (basedir / a, basedir / (a + ".tex")):
-                if cand.is_file():
-                    hit = cand
+        g = m.groupdict()
+        if g["impf"] is not None:                      # \import{경로}{파일}
+            kind = "\\" + ("subimport" if g["sub"] else "import")
+            args, exts = [g["impf"].strip()], (".tex",)
+            sub = (g["impdir"] or "").strip()
+            bases = ([q.parent / sub, d / sub] if sub and "\\" not in sub else []) \
+                + [q.parent, d]
+        elif g["pkgn"] is not None:                    # \usepackage / \documentclass
+            kind = "\\" + g["pkg"]
+            args = [a.strip() for a in g["pkgn"].split(",")]
+            exts = ((".sty",) if g["pkg"] in ("usepackage", "RequirePackage")
+                    else (".cls",))
+            bases = [q.parent, d]
+        else:                                          # \input / \subfile / …
+            kind = "\\" + (g["cmd"] or "input")
+            a = g["arg"] if g["arg"] is not None else g["bare"]
+            args, exts, bases = [(a or "").strip()], (".tex",), [q.parent, d]
+        for a in args:
+            if not a or "\\" in a or "#" in a:
+                # 매크로가 든 인자는 풀 수 없다 --- **「없다」가 아니라 「못 푼다」**다.
+                if a:
+                    (pkg if exts != (".tex",) else missing).append(
+                        a if exts != (".tex",) else f"{kind}{{{a}}}")
+                continue
+            hit = None
+            for basedir in bases:
+                for cand in [basedir / a] + [basedir / (a + e) for e in exts]:
+                    if cand.is_file():
+                        hit = cand
+                        break
+                if hit:
                     break
             if hit:
-                break
-        (got.append(hit) if hit else missing.append(a))
-    return got, missing
+                got.append(hit)
+            elif exts == (".tex",):
+                missing.append(f"{kind}{{{a}}}")
+            else:
+                pkg.append(a)
+    return got, missing, pkg
 
 
 def paper_bodies(d: Path):
     """논문 폴더 `d` 가 **인쇄하는 본문 전량**. `(상대이름, 글월)` 목록.
 
-    돌려주는 것 셋: `bodies` · `unknown`(못 읽은 것) · `unresolved`(못 푼 `\\input`).
-    🔴 **셋을 갈라 놓는 것이 이 함수의 요지다** --- 「없다」와 「못 봤다」와
-    「못 읽었다」는 셋이다(조항 59).
+    돌려주는 것 넷: `bodies` · `unknown`(못 읽은 것) · `unresolved`(못 푼 끌어오기) ·
+    `aside`(저장소에 없는 패키지 이름 · 수집에서 뺀 확장자별 개수).
+    🔴 **넷을 갈라 놓는 것이 이 함수의 요지다** --- 「없다」와 「못 봤다」와
+    「못 읽었다」와 「안 봤다」는 넷이다(조항 59).
+
+    🔴 **씨앗은 `*.tex` 가 아니라 폴더 안 파일 전량이다**(티처 #64 C4). 빼는 것만
+    `PAPER_SKIP_SUFFIXES` 에 이름으로 적고, 뺀 개수는 `aside` 로 올린다.
     """
-    bodies, unknown, unresolved = [], [], []
+    bodies, unknown, unresolved, pkgmiss = [], [], [], []
+    skipped: dict = {}
     seen = set()
     try:
-        queue = sorted(q for q in d.rglob("*.tex") if q.is_file())
+        allf = sorted(p for p in d.rglob("*") if p.is_file())
     except Exception as e:
-        return [], [{"못 읽은 것": "*.tex(rglob)", "왜": type(e).__name__}], []
+        return ([], [{"못 읽은 것": "rglob(*)", "왜": type(e).__name__}], [],
+                {"저장소에 없는 패키지": [], "수집에서 뺀 것": {}})
+    queue = []
+    for p in allf:
+        sfx = p.suffix.lower()
+        if sfx in PAPER_SKIP_SUFFIXES:
+            skipped[sfx] = skipped.get(sfx, 0) + 1
+        else:
+            queue.append(p)
     for _ in range(PAPER_TEX_DEPTH):
         if not queue:
             break
@@ -1207,14 +1376,16 @@ def paper_bodies(d: Path):
                 unknown.append({"못 읽은 것": rel, "왜": type(e).__name__})
                 continue
             bodies.append((rel, text))
-            got, miss = _input_targets(text, q, d)
+            got, miss, pk = _input_targets(text, q, d)
             nxt += got
-            unresolved += [f"{rel}: \\input{{{a}}}" for a in miss]
+            unresolved += [f"{rel}: {a}" for a in miss]
+            pkgmiss += pk
         queue = nxt
     if queue:
         unknown.append({"못 읽은 것": "\\input 사슬",
                         "왜": f"깊이 {PAPER_TEX_DEPTH} 초과"})
-    return bodies, unknown, unresolved
+    return bodies, unknown, unresolved, {"저장소에 없는 패키지": pkgmiss,
+                                         "수집에서 뺀 것": skipped}
 
 
 # ── `meta.json` 을 검사 대상에 넣는다(티처 #63 M3) ─────────────────────────────
@@ -1240,19 +1411,40 @@ def paper_bodies(d: Path):
 #     `numbers`·`정정`…)가 생길 때마다 **조용히 시야 밖**이 된다 --- 이 저장소가
 #     세 번 겪은 손 나열 병이다(893·티처 #55 M8·#57 m1). 여기 적힌 **하나만** 빠지고
 #     나머지는 전부 검사 대상이다(fail-open 이 아니라 fail-closed).
+#
+# 🔴🔴 **티처 #64 C5 --- 위 논증은 `paper_dead()` 에만 성립한다.**
+# 「사면이 자기를 사면한다」는 **사면 기제가 있는 게이트**의 병이다. `ulp_twins()` 는
+# 사면 개념이 **아예 없는데** 같은 `meta_body_text()` 를 써서 **시야만 잃었다.**
+# 2026-08-11 격리 확인(같은 파일 · 같은 값 · **등록 밖 1 ULP 짝**을 심었다 ---
+# 그 짝의 표기는 여기 **안 적는다**: 적는 순간 `ulp_twins()`/`dead_numbers()` 가
+# 이 주석을 잡는다. 실제로 초고가 적었다가 둘 다 통과 False 를 냈다. 뽑는 법은
+# `_ulp_neighbours("0.4724867181663707"(**은퇴** · 노트 898))` 의 첫 미등록 원소):
+#
+#   | 넣은 칸  | 옛 코드                    | 새 코드                  |
+#   | `claims` | 통과 False · 짝 정확히 신고 | 통과 False · 짝 정확히 신고 |
+#   | `errata` | 🔴 **통과 True · 「없음」** | 통과 False · 짝 정확히 신고 |
+#
+# 그래서 도려내기를 **인자로** 옮긴다. 기본값은 `paper_dead()` 의 필요 그대로이고,
+# `ulp_twins()` 는 `amnesty_keys=()` 로 부른다 --- **사면할 게 없으므로 되먹임도 없다.**
+# 한 줄로: **두 게이트가 다른 글월을 보는 이유는 「사면을 하느냐」 하나다.**
 #: 🔴 **사면 근거로만 쓰는 칸.** 이 목록에 무엇을 더하려면 위 문단을 다시 읽어라 ---
-#: 더하는 만큼 게이트의 시야가 준다.
+#: 더하는 만큼 **사면하는 게이트의** 시야가 준다(사면 안 하는 게이트는 안 준다).
 META_AMNESTY_KEYS = ("errata",)
 
 #: `json.dumps(..., indent=1)` 이 찍는 최상위 키 줄(들여쓰기 한 칸).
 _META_TOPKEY = re.compile(r'^ "((?:[^"\\]|\\.)*)":')
 
 
-def meta_body_text(raw: str, meta: dict):
+def meta_body_text(raw: str, meta: dict, amnesty_keys=META_AMNESTY_KEYS):
     """`meta.json` 에서 **사면 근거 칸을 도려낸** 본문 투영. `(글월, 왜, 줄이 원문인가)`.
 
-    길이 둘이다. 되먹임(사면이 자기를 사면한다)은 **둘 다** 끊는다 --- 어느 길로
-    가든 `errata` 는 돌려주는 글월에 **들어가지 않는다**.
+    🔴 **`amnesty_keys` 는 부르는 게이트가 정한다**(티처 #64 C5). 도려내기는
+    「사면이 자기를 사면한다」는 되먹임을 끊으려는 것이므로 **사면을 하는 게이트에만**
+    필요하다. `paper_dead()` 는 기본값(`errata` 도려냄)을 쓰고, 사면 기제가 없는
+    `ulp_twins()` 는 `amnesty_keys=()` --- 도려내면 **되먹임은 안 끊기고 시야만 준다.**
+
+    길이 둘이다. 되먹임은 **둘 다** 끊는다 --- 어느 길로 가든 `amnesty_keys` 의 칸은
+    돌려주는 글월에 **들어가지 않는다**.
 
       ① **원문 도려내기**(기본). `harness.new()`/`send()` 가 `indent=1` 로 찍으므로
          최상위 키가 한 줄씩이다. 그 줄을 빈 줄로 바꾼다 --- **줄 번호가 파일과
@@ -1277,12 +1469,12 @@ def meta_body_text(raw: str, meta: dict):
                 seen = {"?": 2}          # 폴백으로 보낸다
                 break
             seen[cur] = seen.get(cur, 0) + 1
-        out.append("" if cur in META_AMNESTY_KEYS else ln)
+        out.append("" if cur in amnesty_keys else ln)
     missing = [k for k in meta if k not in seen]
     dup = sorted(k for k, n in seen.items() if n > 1)
     if not missing and not dup:
         return "\n".join(out), None, True
-    body = {k: v for k, v in meta.items() if k not in META_AMNESTY_KEYS}
+    body = {k: v for k, v in meta.items() if k not in amnesty_keys}
     return (json.dumps(body, ensure_ascii=False, indent=1),
             f"줄로 못 갈라 재구성했다 --- 안 보인 키 {missing} · 두 번 보인 키 {dup}",
             False)
@@ -1336,6 +1528,10 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
     amnestied_by_errata: list = []
     fresh, aged, unknown, skipped, unresolved = [], [], [], [], []
     meta_rebuilt: list = []
+    # 🔴 티처 #64 C4 --- 「저장소에 없는 패키지」와 「수집에서 뺀 확장자」는 **실패가
+    # 아니지만 조용하면 안 된다**. 이름·확장자별 개수로 올린다(조항 59).
+    pkg_missing: list = []
+    body_skipped: dict = {}
     if dirty is None:
         unknown.append({"논문": "(전체)", "못 읽은 것": "git status",
                         "왜": "손 도장(created·sent_at·mtime)만으로는 신선도를 못 가른다"})
@@ -1360,11 +1556,22 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
         # `paper/steps/**` 의 `.tex` 는 `main.tex` 687개뿐이므로 빚은 안 움직인다.
         # 🔴 **그리고 그 「전량」이 한 켜뿐이었다**(티처 #63 M4). `paper_bodies()` 가
         # `rglob` + `\input` 추적으로 켜와 확장자를 둘 다 없앤다 --- 근거는 그 함수 위 문단.
-        bodies, unk, unres = paper_bodies(d)
+        bodies, unk, unres, aside = paper_bodies(d)
         for u in unk:
             unknown.append({"논문": d.name, **u})
         unresolved += [f"{d.name}/{s}" for s in unres]
+        pkg_missing += aside["저장소에 없는 패키지"]
+        for _s, _n in aside["수집에서 뺀 것"].items():
+            body_skipped[_s] = body_skipped.get(_s, 0) + _n
         tex_paths = [d / rel for rel, _ in bodies]
+        # 🔴 **「미착수냐」는 `.sty`/`.cls` 를 빼고 센다**(티처 #64 C4 후속).
+        # C4 수리로 `icmlko.sty` 가 본문에 들어오자 `112_bothears`(본문 0줄 · 껍데기)가
+        # **미착수 목록에서 조용히 사라졌다** --- 폴더에 `icmlko.sty` 만 있었기 때문이다.
+        # 게이트가 넓어진 대가로 **신호 하나가 없어진 것**이고, 그것도 조항 59 위반이다.
+        # 그래서 검사 대상은 넓힌 채로 두고(`.sty` 도 본문이다) **「저자가 쓴 것이
+        # 있나」는 조판 기계(`.sty`·`.cls`)를 빼고** 판단한다.
+        authored = [p for p in tex_paths
+                    if p.suffix.lower() not in (".sty", ".cls")]
         # 🔴 **`meta.json` 을 본문 옆에 세운다**(티처 #63 M3). `claims`·`title` 은
         # `paper/harness.py` 가 그대로 전송하는 글이다. `errata` 는 도려낸다 ---
         # 되먹임을 끊는 이유와 방법은 `meta_body_text` 위 문단에 한 벌만 적었다.
@@ -1380,7 +1587,7 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
                     meta_rebuilt.append({"논문": d.name, "왜": _why,
                                          "⚠": "이 논문의 `meta.json` 신고는 **줄 번호가 "
                                               "파일과 안 맞는다**(재구성한 투영의 줄이다)"})
-        if not tex_paths:
+        if not authored:
             # 🔴 **미착수 스텝은 「못 읽었다」가 아니라 「아직 안 썼다」다**(노트 899).
             # 수리 B 가 glob 을 디렉터리 순회로 바꾸자 `112_bothears` 가 드러났는데,
             # 세어 보니 그건 결함이 아니라 **본문을 한 줄도 안 쓴 껍데기**였다:
@@ -1392,11 +1599,12 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
                     and not meta.get("sent")):
                 skipped.append({"논문": d.name, "왜": "미착수 껍데기",
                                 "근거": "claims [] · figures [] · sent false · "
-                                        "**폴더 안 `.tex` 0장**",
-                                "⚠": "🔴 `meta.json` 본문은 그래도 검사한다"
-                                     "(티처 #63 M3) — 제목 칸은 껍데기에도 있다"})
+                                        "**폴더 안 저자 본문 0장**"
+                                        "(`.sty`·`.cls` 는 조판 기계라 안 센다)",
+                                "⚠": "🔴 `meta.json` 본문과 `.sty` 는 그래도 검사한다"
+                                     "(티처 #63 M3 · #64 C4) — 제목 칸은 껍데기에도 있다"})
             else:
-                unknown.append({"논문": d.name, "못 읽은 것": "*.tex",
+                unknown.append({"논문": d.name, "못 읽은 것": "저자 본문(`.tex` 등)",
                                 "왜": "FileNotFoundError"})
             # 🔴 **여기서 `continue` 하지 않는다**(티처 #63 M3). 옛 코드는 `.tex` 가
             # 없으면 그 스텝을 통째로 건너뛰었고, 그래서 **`.tex` 를 안 쓰고
@@ -1504,6 +1712,15 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
             # 매크로가 든 인자(`\input{\jobname}`)는 이 자가 못 푼다. 실패로 세지는
             # 않는다 --- 그러면 매크로 하나에 게이트가 꺼진다. **보이게** 둔다.
             "⚠ 못 푼 \\input(시야 밖 · 실패 아님)": unresolved or "없음",
+            # 🔴 티처 #64 C4 --- `\usepackage{graphicx}` 처럼 **저장소 밖**에 사는 것.
+            # 실패로 세면 게이트가 논문 전편에서 꺼진다. 실패는 아니되 **보이게** 둔다.
+            # ⚠ 이름별 개수까지만 안다 --- 어느 논문 어느 줄인지는 안 싣는다.
+            "⚠ 저장소에 없는 `\\usepackage`/`\\documentclass`(시야 밖 · 실패 아님)":
+                dict(_C(pkg_missing).most_common()) or "없음",
+            # 🔴 씨앗에서 **뺀** 것. 「없다」가 아니라 「안 봤다」다.
+            "⚠ 본문 수집에서 뺀 파일(확장자별 · 안 봤다)":
+                {k: {"수": v, "왜": PAPER_SKIP_SUFFIXES[k]}
+                 for k, v in sorted(body_skipped.items())} or "없음",
             # 검사는 온전하고 **줄 번호만** 못 믿는 자리. 실패는 아니지만 조용하면 안 된다.
             "⚠ meta.json 재구성(줄 번호 안 맞음 · 검사는 온전)": meta_rebuilt or "없음",
             "미착수 스텝(`.tex` 없음 · `meta.json` 은 검사함)": skipped or "없음",
@@ -1521,7 +1738,14 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
                   "`분모`…)이 **세 게이트 어디에도 안 보였다**(전송되는 글인데). "
                   "`errata` 만 도려내고 나머지 전부를 본다 — 되먹임은 「사면은 자기를 볼 수 "
                   "없다」로 끊는다. ②`.tex` 훑기가 **한 켜뿐**이었다 — `rglob` 과 "
-                  "`\\input` 추적으로 켜와 확장자를 없앴다.")}
+                  "`\\input` 추적으로 켜와 확장자를 없앴다. "
+                  "🔴 티처 #64 C4 — 그 추적이 아는 명령이 `\\input`·`\\include` **둘뿐**이었다. "
+                  "`\\subfile`·`\\import`·`\\subimport`·`\\InputIfFileExists`·`\\usepackage`(로컬 "
+                  "`.sty`)·`\\documentclass`(로컬 `.cls`)로 넓히고, **씨앗에서 `.tex` 확장자 "
+                  "가정을 뺐다**(빼는 확장자만 `PAPER_SKIP_SUFFIXES` 에 적는다). "
+                  "그 전에는 `icmlko.sty` 가 **531편 전부에서 게이트 밖**이었다 — "
+                  "2026-08-11 실측으로 그 파일에 든 죽은 값은 0 이라 **빚은 안 움직였다**"
+                  "(묵은 빚 128 → 128).")}
 
 
 #: ↑ `NOW_WORDS` 는 **표보다 위**로 옮겼다(노트 898) --- `DEAD_NUMBERS` 의
@@ -2122,7 +2346,10 @@ def dead_numbers(debt: int = DEAD_HISTORY_DEBT) -> dict:
             # 위 `DEAD_HISTORY_DEBT` 문단이 "덩어리로 적어서" 두 번 틀린 바로 그 병이다.
             # 나눔의 근거: 논문은 **발행물**이라 신선/묵음을 기준선으로 갈라야 하는데
             # (`PAPER_BASELINE_AT`) 이 검사에는 그 자가 없다.
-            "논문은 어디서 보나": "paper_dead() — 본문 .tex 전량 · \\input 추적 · meta.json 본문 칸",
+            "논문은 어디서 보나": ("paper_dead() — 폴더 안 **파일 전량**(빼는 확장자는 "
+                                  "PAPER_SKIP_SUFFIXES) · `\\input`/`\\subfile`/`\\import`/"
+                                  "`\\subimport`/`\\InputIfFileExists`/`\\usepackage`/"
+                                  "`\\documentclass` 추적 · meta.json 본문 칸"),
             "통과": (not hits) and (not over) and canon["통과"],
             "걸린 곳": hits or "없음",
             "역사 기록(래칫)": {
@@ -2214,14 +2441,17 @@ def ulp_twins() -> dict:
             # 실패로 세면 게이트가 꺼지므로, 실패로는 안 세되 **보이게** 올린다.
             unread.append({"문서": rel, "왜": type(e).__name__})
     steps = ROOT / "paper/steps"
-    paper_unres = []
+    paper_unres, pkg_missing, body_skipped = [], [], {}
     for d in (sorted(p for p in steps.iterdir() if p.is_dir())
               if steps.is_dir() else []):
-        bodies, unk, unres = paper_bodies(d)
+        bodies, unk, unres, aside = paper_bodies(d)
         for u in unk:
             unread.append({"문서": f"paper/steps/{d.name}/{u['못 읽은 것']}",
                            "왜": u["왜"]})
         paper_unres += [f"{d.name}/{s}" for s in unres]
+        pkg_missing += aside["저장소에 없는 패키지"]
+        for _s, _n in aside["수집에서 뺀 것"].items():
+            body_skipped[_s] = body_skipped.get(_s, 0) + _n
         for rel, text in bodies:
             srcs_text.append((f"paper/steps/{d.name}/{rel}", text))
         mp = d / "meta.json"
@@ -2232,7 +2462,12 @@ def ulp_twins() -> dict:
             unread.append({"문서": f"paper/steps/{d.name}/meta.json",
                            "왜": type(e).__name__})
         else:
-            proj, why, exact = meta_body_text(raw, meta)
+            # 🔴 **`amnesty_keys=()` --- errata 를 도려내지 않는다**(티처 #64 C5).
+            # 이 게이트에는 사면 기제가 **없다**. 그래서 도려내기는 되먹임을 끊는 게
+            # 아니라 **시야만 줄인다**: 티처가 같은 파일·같은 값으로 격리 확인했다 ---
+            # `claims` 에 넣으면 통과 False(정확히 신고), `errata` 에 넣으면
+            # **통과 True · 「없음」**. 근거는 `META_AMNESTY_KEYS` 위 문단.
+            proj, why, exact = meta_body_text(raw, meta, amnesty_keys=())
             srcs_text.append((f"paper/steps/{d.name}/meta.json"
                               + ("" if exact else "(재구성 · 줄 번호 안 맞음)"), proj))
     hits = []
@@ -2254,6 +2489,12 @@ def ulp_twins() -> dict:
             "⚠ 못 읽은 문서(시야 밖 · 실패 아님)": len(unread),
             "⚠ 못 읽은 문서 내역": unread[:20] or "없음",
             "⚠ 못 푼 \\input(시야 밖 · 실패 아님)": paper_unres or "없음",
+            # 🔴 티처 #64 C4 --- `paper_dead()` 와 같은 자리. 근거는 그쪽 문단.
+            "⚠ 저장소에 없는 `\\usepackage`/`\\documentclass`(시야 밖 · 실패 아님)":
+                dict(_C(pkg_missing).most_common()) or "없음",
+            "⚠ 본문 수집에서 뺀 파일(확장자별 · 안 봤다)":
+                {k: {"수": v, "왜": PAPER_SKIP_SUFFIXES[k]}
+                 for k, v in sorted(body_skipped.items())} or "없음",
             "통과": not hits,
             "🔴 등록 밖 짝": hits or "없음",
             "짝별": dict(_C(h["짝"] for h in hits).most_common()) or "없음",
@@ -2263,7 +2504,14 @@ def ulp_twins() -> dict:
                   "원리상 못 잡는다 — 자를 넓히는 것이 아니라 줄을 늘려야 닫힌다. "
                   "🔴 티처 #63 M3·M4 — 논문 쪽 시야가 `steps/*/*.tex` **한 켜**였고 "
                   "`meta.json` 은 아예 없었다. 이제 `paper_bodies()` 로 켜·확장자를 "
-                  "없애고 `meta.json` 본문 칸(`errata` 제외)까지 본다.")}
+                  "없애고 `meta.json` 본문 칸까지 본다. "
+                  "🔴 티처 #64 C5 — 그 `meta.json` 투영이 **`errata` 를 도려낸 것**이었다. "
+                  "도려내기는 `paper_dead()` 의 사면 되먹임을 끊으려는 장치인데 이 게이트엔 "
+                  "**사면 기제가 없다** — 끊을 고리가 없으므로 시야만 줄었다. 같은 값을 "
+                  "`claims` 에 넣으면 잡히고 `errata` 에 넣으면 통과 True·「없음」이었다. "
+                  "이제 `amnesty_keys=()` 로 부른다. "
+                  "🔴 티처 #64 C4 — 끌어오는 명령 넷(`\\subfile`·`\\import`·"
+                  "`\\InputIfFileExists`·`\\usepackage`)이 시야 밖이었다(그쪽 문단 참조).")}
 
 
 def audit() -> dict:

@@ -207,7 +207,11 @@ def _dead_gate(d: Path, phase: str) -> None:
             "노트 900) --- 이름만 바꾸면 미착수로 갈리던 구멍을 닫았다. "
             "🔴 그리고 그 「전량」은 **깊이와 확장자를 안 가린다**(티처 #63 M4) --- "
             "`rglob` 이 `parts/*.tex` 까지 보고 `\\input`/`\\include` 가 가리키는 "
-            "파일은 `.txt` 여도 따라간다. LaTeX 가 인쇄하는 것이 본문이다.")
+            "파일은 `.txt` 여도 따라간다. LaTeX 가 인쇄하는 것이 본문이다. "
+            "🔴 **끌어오는 명령도 안 가린다**(티처 #64 C4) --- `\\subfile` · "
+            "`\\import{경로}{파일}` · `\\subimport` · `\\InputIfFileExists` · "
+            "`\\usepackage`(로컬 `.sty`) · `\\documentclass`(로컬 `.cls`) 전부 따라간다. "
+            "그 전에는 `icmlko.sty` 가 **531편 모두에서 게이트 밖**이었다.")
 
     fresh = r[_GATE_FRESH]
     fresh = [] if isinstance(fresh, str) else [x for x in fresh if isinstance(x, dict)]

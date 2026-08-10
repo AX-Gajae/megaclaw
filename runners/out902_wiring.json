@@ -1,0 +1,279 @@
+{
+ "노트": 902,
+ "사전등록": {
+  "파일": "docs/prereg_902_identify.md",
+  "커밋": "b37ccd01959b74b019f1e0b5f68a8ebb5a7d1bed",
+  "커밋 시각": "2026-08-11T04:43:09+09:00"
+ },
+ "시작 시각": "2026-08-11T04:51:11",
+ "코드 sha256": {
+  "runners/ident902.py": "05e117876fcdeed0c16f863393a19b46ef5e9fd9311d521f957a21444c7a9a0b",
+  "runners/inv901.py": "c862e3ec2c78c51cd2abc01cb21ddd1456f32a4a8dbad622a1e7fc360ef73cd2",
+  "runners/ident901.py": "e041c51defd5d751d1e2e47326a611b3c17d125f568c4d3f6bc345b1bd3cbdc0"
+ },
+ "입력 sha256": {
+  "data/records": {
+   "sha256(결합)": "57c45acbd4652af85a6c7cc1f737182f95c4c392e605c169ee486a1d93516049",
+   "파일 수": 380
+  },
+  "data/market_records": {
+   "sha256(결합)": "f356e11eff0dcbf7e34a46242648eb6b609b340e047e6d3df65c91ac86a12fd1",
+   "파일 수": 647
+  },
+  "data/state/market_axes.json": {
+   "sha256": "8f36ac5b4e0d58625f09b866b9e482764a7fba7485b554c1561cb4d9fd0ef432"
+  },
+  "data/idol_records": {
+   "sha256(결합)": "b0dbeca38094856c5244e9e428711f761321239debfa5098917a49c2e45f029e",
+   "파일 수": 282
+  },
+  "data/state/idol_axes.json": {
+   "sha256": "16a9b113999cc7882e8668973072dcd4f8ada96436d5a715f60992e5afad59d7"
+  },
+  "data/state/game_records.json": {
+   "sha256": "c9619e81d707bbb8f4dd779c695256de1ba37a2df26a22b9504bb319a2270f6c"
+  },
+  "data/state/game_axes.json": {
+   "sha256": "0ffe6cba0e291f79b02c443912eb9cf9f1b0964a5161cc69dd6d08b733747e79"
+  },
+  "data/state/book_records.json": {
+   "sha256": "47ba6a693130465f265bf05ed75602645d32499deb29d43f803ead00f8f8a617"
+  },
+  "data/state/book_axes.json": {
+   "sha256": "ba3b9d6d851998daebf6d4610aec5c9506a9c3f66cf9cdf5a4725a5a1fa6e89f"
+  },
+  "data/state/funding_records.json": {
+   "sha256": "7ce077b6d9c8df55492583ca9bd96169ff434253c6f802dd461b0c53bb62d938"
+  },
+  "data/state/funding_axes.json": {
+   "sha256": "e77fbff60bb97bb5fa3f743b61bdf8067cd2bb7f6dd58f60750f90abb87d15c4"
+  },
+  "data/state/webtoon_records.json": {
+   "sha256": "374be78f8c47d08ceccbd1a1a83626d47d53d5a9a32c1b6d9a8bc3acb29736dc"
+  },
+  "data/state/webtoon_axes.json": {
+   "sha256": "9c84c267a506049f73176d971fe092a902f76c98b2c96aa77c26a2220d2e8048"
+  },
+  "data/state/anime_records.json": {
+   "sha256": "9ecdebcf81ae2adb9696b1f2217dd4570b460b3ae4b281ce8f2bc5ef496b0b43"
+  },
+  "data/state/anime_axes.json": {
+   "sha256": "e76c8c9f4376691448b7a03b30da196cc14cfd5a387c046ea3cf45aeeeab2055"
+  },
+  "data/state/mobile_records.json": {
+   "sha256": "b186bd432a33b42b63645b8206a341f417b09e2d6c197c9c86604de9b3bc317f"
+  },
+  "data/state/mobile_axes.json": {
+   "sha256": "c09ef438f79c6ced24c08552435f36a825b7ace1d7296abc0cc8c7c231fe7bed"
+  },
+  "data/state/manga_records.json": {
+   "sha256": "6bcb8003dfabe2686979d29956ddca699c418488ad8d53c6e646ea787fdbfe89"
+  },
+  "data/state/manga_axes.json": {
+   "sha256": "4bf8b11639a300032400e4b12189051ecbaf4a7729cc47ca4f007c0cfb7299eb"
+  },
+  "data/state/wanime_records.json": {
+   "sha256": "6c165f93cd71271b1e977901b7180543c27aafddde64021a8cb61373e66354d7"
+  },
+  "data/state/wanime_axes.json": {
+   "sha256": "c6278cf6697562501fe15089ae815442bed956e742cb13e11c4bce9ee13bbebd"
+  },
+  "data/ingest/kobis/axes_raw_897.jsonl": {
+   "sha256": "a6db92d9284fd5a9799a99521a4709baa524e18d1f2522088a715ff46d1fa1a6"
+  },
+  "data/state/kobis_axes.json": {
+   "sha256": "ce344dd54d2fb9fc0468cf6d4bc6b160136f52b04afc14122735ea3e62f5d9c8"
+  },
+  "runners/out901_identify.json": {
+   "sha256": "a6718ed766439b9d47ecabf3fe5da76de899becef7f5cf6ec88ca2e45463fee7"
+  },
+  "runners/out901_inventory.json": {
+   "sha256": "5d71cf6bdb67fbe25e1d4e4f541e92795c389dcaa11c6ca835b6e7fa62231046"
+  }
+ },
+ "배선 검사": {
+  "W-F 분할 자기시험": {
+   "ㄱ 1..40": {
+    "n": 40,
+    "절단값": 21.0,
+    "저군": 20,
+    "고군": 20,
+    "소수 쪽": 20
+   },
+   "ㄴ 상수 40개": {
+    "n": 40,
+    "절단값": 7.0,
+    "저군": 0,
+    "고군": 40,
+    "소수 쪽": 0
+   },
+   "ㄷ 0×36 + 1..4": {
+    "n": 40,
+    "절단값": 0.0,
+    "저군": 0,
+    "고군": 40,
+    "소수 쪽": 0
+   },
+   "ㄷ 최대균형": 4,
+   "ㄹ 날짜 40개": {
+    "n": 40,
+    "절단값": "2020-01-21",
+    "저군": 20,
+    "고군": 20,
+    "소수 쪽": 20
+   }
+  },
+  "🔴 심은 결함의 발화": {
+   "W-F 심은 결함(분할 함수 파손)": {
+    "무엇": "median_split 이 소수 쪽을 min(|L|,|H|) 대신 총수로 내게 파손",
+    "발화": "AssertionError: W-F ㄱ 실패: {'n': 40, '절단값': 21.0, '저군': 20, '고군': 20, '소수 쪽': 40}"
+   },
+   "W-H 심은 결함(영화 KOBIS- 정규화 되돌리기)": {
+    "무엇": "축 키 `KOBIS-20215315` 대 원천 `20215315` — 901 의 실사고 재현",
+    "발화": "AssertionError: D3 되짚기 조용한 0/부분 실패 영화: 키 406 → 매칭 0"
+   },
+   "W-G 심은 결함(두 번째 구현이 이웃 키를 읽는다)": {
+    "무엇": "dig2 가 마지막 키를 `<키>_x` 로 바꿔 읽게 파손",
+    "발화": "AssertionError: W-G 두 경로 어긋남(심은 결함): dig=482 dig2=0"
+   }
+  },
+  "W-A 축 파일 경로": {
+   "팝업": "축 파일 없음(팝업은 npz 경로)",
+   "시장팝업": {
+    "resolve() 대조": "일치"
+   },
+   "아이돌": {
+    "resolve() 대조": "일치"
+   },
+   "게임": {
+    "resolve() 대조": "일치"
+   },
+   "도서": {
+    "resolve() 대조": "일치"
+   },
+   "펀딩": {
+    "resolve() 대조": "일치"
+   },
+   "웹툰": {
+    "resolve() 대조": "일치"
+   },
+   "애니": {
+    "resolve() 대조": "일치"
+   },
+   "모바일": {
+    "resolve() 대조": "일치"
+   },
+   "만화": {
+    "resolve() 대조": "일치"
+   },
+   "세계애니": {
+    "resolve() 대조": "일치"
+   },
+   "영화": {
+    "resolve() 대조": "일치"
+   }
+  },
+  "W-B D2 대 D4": {
+   "게임": {
+    "D2 축행": 482,
+    "D4 도메인 행": 482,
+    "같나": true
+   },
+   "도서": {
+    "D2 축행": 243,
+    "D4 도메인 행": 243,
+    "같나": true
+   },
+   "만화": {
+    "D2 축행": 5905,
+    "D4 도메인 행": 5905,
+    "같나": true
+   },
+   "모바일": {
+    "D2 축행": 2000,
+    "D4 도메인 행": 2000,
+    "같나": true
+   },
+   "세계애니": {
+    "D2 축행": 2948,
+    "D4 도메인 행": 2948,
+    "같나": true
+   },
+   "시장팝업": {
+    "D2 축행": 249,
+    "D4 도메인 행": 249,
+    "같나": true
+   },
+   "아이돌": {
+    "D2 축행": 81,
+    "D4 도메인 행": 173,
+    "같나": false
+   },
+   "애니": {
+    "D2 축행": 3385,
+    "D4 도메인 행": 3385,
+    "같나": true
+   },
+   "영화": {
+    "D2 축행": 887,
+    "D4 도메인 행": 887,
+    "같나": true
+   },
+   "웹툰": {
+    "D2 축행": 3652,
+    "D4 도메인 행": 3652,
+    "같나": true
+   },
+   "팝업": {
+    "D2 축행": null,
+    "D4 도메인 행": 89,
+    "같나": false
+   },
+   "펀딩": {
+    "D2 축행": 2887,
+    "D4 도메인 행": 2887,
+    "같나": true
+   }
+  },
+  "W-E D3 합(챔피언 배선 ff753.shell(base()))": 3775,
+  "W-E 대조": "3775 와 일치",
+  "W-E D3 도메인별": {
+   "팝업": 65,
+   "아이돌": 51,
+   "게임": 180,
+   "도서": 163,
+   "펀딩": 529,
+   "웹툰": 650,
+   "애니": 606,
+   "모바일": 441,
+   "만화": 258,
+   "세계애니": 300,
+   "영화": 406,
+   "시장팝업": 126
+  },
+  "🔴 D3 는 배선에 따라 다르다": {
+   "챔피언 ff753.shell(base()) 합": 3775,
+   "생 harness.load() 합": 3786,
+   "차이 나는 도메인": {
+    "팝업": {
+     "챔피언": 65,
+     "생": 59
+    },
+    "아이돌": {
+     "챔피언": 51,
+     "생": 25
+    },
+    "게임": {
+     "챔피언": 180,
+     "생": 223
+    }
+   }
+  },
+  "W-G 두 경로 대조": {
+   "어긋난 짝": "없음 — 105짝 전량에서 두 구현의 비결측 수가 같다"
+  },
+  "🔴 심은 결함 셋이 전부 발화했나": true
+ },
+ "끝 시각": "2026-08-11T04:51:18",
+ "초": 6.8
+}
