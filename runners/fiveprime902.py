@@ -58,6 +58,7 @@ import hashlib
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import time
@@ -459,7 +460,21 @@ def quote_regress(ref, now=None) -> dict:
             ("--help", ["--help"]),
             ("--selftest", ["--selftest"]),
         ]
-        new = Path(now) if now else (ROOT / "runners/quote901.py")
+        # 🔴 **작업본을 저장소에서 그대로 돌리면 안 된다**(티처 #65 M16).
+        #    `--selftest` 는 **자기 파일 위치 기준**으로 `runners/out902b_selftest.json` 을
+        #    **쓴다**(도장에 시각이 들어가 내용이 매번 바뀐다). 그래서 ⑤′ 를 돌리는 것만으로
+        #    작업 트리가 더러워지고 --- 🔴 **⓪ 관문(트리가 비어야 한다)을 5절이 깨뜨렸다.**
+        #    실측: 커밋된 ⓪ 의 더러운 7 안에 `out902b_selftest.json` 이 있었다.
+        #    그래서 **작업본도 사본을 임시 디렉터리에 두고 돌린다** --- 기준본과 같은 조건이 되고
+        #    저장소는 안 더러워진다. ⚠ 그 대가로 산출물 경로가 둘 다 임시라 `_scrub` 이
+        #    양쪽을 `<경로>` 로 뭉갠다(그 사각지대는 아래 `⚠ 못 재는 것` 에 적었다).
+        if now:
+            new = Path(now)
+            _new_tmp = None
+        else:
+            _new_tmp = tempfile.mkdtemp(prefix="fp902new_")
+            new = Path(_new_tmp) / "quote901.py"
+            new.write_text((ROOT / "runners/quote901.py").read_text(), encoding="utf-8")
         diff, per = [], {}
         for name, argv in cases:
             a = subprocess.run([sys.executable, str(old)] + argv,
@@ -486,6 +501,8 @@ def quote_regress(ref, now=None) -> dict:
                          "같나": same, **({"⚠": note} if note else {})}
             if not same:
                 diff.append(name)
+        if _new_tmp:
+            shutil.rmtree(_new_tmp, ignore_errors=True)
         return {
             "검사": "5 quote901 기존 동작 무변 --- 기준본 대 작업본",
             "기준본": "git show %s:runners/quote901.py" % ref,
@@ -494,7 +511,11 @@ def quote_regress(ref, now=None) -> dict:
             "🔴 같은 것": len(cases) - len(diff),
             "🔴 다른 것": diff or "없음",
             "가짓수별": per,
-            "⚠ 지운 것": "임시 디렉터리 이름만(`<TMP>`). 그 밖은 한 글자도 안 지웠다",
+            "⚠ 지운 것": ("임시 디렉터리 이름과 `--selftest` 의 「산출물:」 경로 **한 줄**. "
+                          "그 밖은 한 글자도 안 지웠다"),
+            "🔴 ⚠ 못 재는 것": ("`--selftest` 가 **어느 파일에 쓰는지**가 바뀌어도 이 시험은 "
+                            "못 잡는다 --- 양쪽 경로를 `<경로>` 로 뭉개기 때문이다(티처 #65 M15). "
+                            "그 사각지대를 5-나 에 심어서 재야 한다(아직 안 했다)"),
             "통과": (not diff),
         }
 
@@ -515,8 +536,19 @@ MUTANTS = [
 
 
 def quote_power(ref) -> dict:
+    """🔴 이 무변 시험이 **실제로 붉어지나**(검정력)를 심어서 잰다.
+
+    ⚠ **씨앗은 기준본이어야 한다**(티처 #65 C1 수리의 곁가지 · 주 세션 실측).
+    작업본을 씨앗으로 쓰면 「안 바꾼 사본」이 **기준본과 실제로 달라서**
+    음성 대조가 영원히 False 가 된다 --- 그러면 이 절도 아무것도 못 잰다.
+    「안 바꿨으면 통과」가 성립하려면 사본이 **견줄 대상과 같은 판**이어야 한다.
+    """
     import tempfile
-    src = (ROOT / "runners/quote901.py").read_text(encoding="utf-8")
+    rc0, base_src, err0 = _git(["show", "%s:runners/quote901.py" % ref])
+    if rc0 != 0 or not base_src.strip():
+        return {"검사": "5-나 심어서 확인", "🔴 예외": "씨앗(기준본)을 못 꺼냈다: %s" % err0[:200],
+                "통과": False}
+    src = base_src
     rows, missed, unplanted = {}, [], []
     with tempfile.TemporaryDirectory() as td:
         for name, old, new in MUTANTS:
@@ -616,11 +648,22 @@ def main(argv=None):
     ap.add_argument("--exempt", action="append", default=[], help="경로=사유")
     ap.add_argument("--keyaudit", action="append", default=[], help="판정 키를 감사할 산출물 추가")
     ap.add_argument("--gates", action="store_true", help="게이트를 실제로 돌린다")
-    ap.add_argument("--quote-ref", default="HEAD", help="quote901 기준본 rev")
+    # 🔴 **기준본이 `HEAD` 면 이 절은 원리상 아무것도 못 잰다**(티처 #65 C1).
+    #    ⑤′ 는 **⑤ 취합 뒤**에 돌므로 그때 HEAD 는 이미 **그 편집을 담은 커밋**이다.
+    #    실측: 커밋된 실행의 기준본이 `0c323056c`(= `quote901.py` 를 고친 그 커밋)라
+    #    작업본과 **바이트 동일**이었고 13/13 이 나왔다. 진짜 편집 전 rev(`6a27a645f`)로
+    #    돌리면 **12/13 · 다른 것 `--selftest`** 다.
+    #    🔴 티처 #64 M4 의 「16/16」이 「13/13」으로 **얼굴만 바꿔 재발**했다.
+    #    그래서 기본값을 **취합 시작 rev(`--base`)** 로 바꾼다 --- 그게 「편집 전」이다.
+    ap.add_argument("--quote-ref", default=None,
+                    help="quote901 기준본 rev(기본: --base = 취합 시작 rev)")
     ap.add_argument("--quote-now", default=None,
                     help="🔴 작업본 대신 이 파일을 견준다 --- **심어서 검정력을 재는** 자리")
     ap.add_argument("--out", default=str(OUT_DEFAULT))
     a = ap.parse_args(argv)
+
+    if a.quote_ref is None:
+        a.quote_ref = a.base          # 🔴 위 주석 참조 --- HEAD 는 자기 자신이다
 
     t0 = time.time()
     exempt = {}
