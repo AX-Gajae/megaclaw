@@ -204,7 +204,10 @@ def _dead_gate(d: Path, phase: str) -> None:
             f"{mine_unk}. '없다'와 '못 봤다'는 다르다(조항 59). meta.json · 폴더 안 "
             "`.tex` 전량을 읽을 수 있게 고친 뒤 다시 하라. 🔴 **본문 판정은 "
             "`main.tex` 라는 이름이 아니라 폴더 안 `.tex` 유무다**(티처 #62 C6 · "
-            "노트 900) --- 이름만 바꾸면 미착수로 갈리던 구멍을 닫았다.")
+            "노트 900) --- 이름만 바꾸면 미착수로 갈리던 구멍을 닫았다. "
+            "🔴 그리고 그 「전량」은 **깊이와 확장자를 안 가린다**(티처 #63 M4) --- "
+            "`rglob` 이 `parts/*.tex` 까지 보고 `\\input`/`\\include` 가 가리키는 "
+            "파일은 `.txt` 여도 따라간다. LaTeX 가 인쇄하는 것이 본문이다.")
 
     fresh = r[_GATE_FRESH]
     fresh = [] if isinstance(fresh, str) else [x for x in fresh if isinstance(x, dict)]
@@ -218,8 +221,12 @@ def _dead_gate(d: Path, phase: str) -> None:
               "올랐다(고칠 자리는 ingest/audit.py 의 DEAD_NUMBERS·PAPER_DEBT 다)")
     if mine:
         for x in mine:
-            print(f"   줄 {x.get('줄')} · 죽은 값 \"{x.get('죽은 값')}\" → 산 값 "
-                  f"\"{x.get('산 값')}\"(정정 노트 {x.get('정정 노트')}) · "
+            # 🔴 **`파일` 을 함께 찍는다**(티처 #63 M3·M4). 게이트의 시야가 `main.tex`
+            # 한 장에서 **폴더 안 `.tex` 전량 + `\input` 이 가리키는 것 + `meta.json`
+            # 본문 칸**으로 넓어졌으므로, 줄 번호만 찍으면 **어느 파일의 줄인지 모른다**
+            # --- 그러면 저자가 `main.tex` 를 들여다보며 없는 줄을 찾는다.
+            print(f"   {x.get('파일')}:{x.get('줄')} · 죽은 값 \"{x.get('죽은 값')}\" → "
+                  f"산 값 \"{x.get('산 값')}\"(정정 노트 {x.get('정정 노트')}) · "
                   f"errata 있나: {x.get('errata 있나')}")
         raise SystemExit(
             f"🔴 죽은 숫자 게이트({phase}): {d.name} 이 정정된 숫자 {len(mine)}곳을 "
@@ -227,7 +234,11 @@ def _dead_gate(d: Path, phase: str) -> None:
             "(`죽은 숫자`·`정정`·`철회`·`은퇴`·`시대 값` 중 한 낱말 또는 산 값)을 넣는다. "
             "🔴 낱말 하나만 있는 줄은 표시로 안 세고, 딴 숫자의 괄호 딱지도 안 센다 "
             "ⓑ 오탐이면 meta.json 의 `errata` 에 **그 숫자 + 산 값(또는 정정 낱말) + "
-            "20자 이상의 이유**를 적는다. 숫자만 적으면 안 열린다.")
+            "20자 이상의 이유**를 적는다. 숫자만 적으면 안 열린다. "
+            "🔴 **자리가 `meta.json` 이면 `claims`·`title`·`figures`·`분모` 를 고치는 "
+            "것이 정도다** --- 그 칸은 harness 가 그대로 전송하는 글이고 아직 발행 "
+            "전이다. `errata` 는 검사 대상이 아니라 사면 근거라서 거기에 적는 것은 "
+            "「고쳤다」가 아니라 「오탐이라고 주장한다」이다(티처 #63 M3).")
     print(f"✅ 죽은 숫자 게이트({phase}) 통과 --- {d.name} 경성 실패 0곳 "
           f"(묵은 빚 {r.get('묵은 빚')}/{r.get('등록된 빚')})")
 

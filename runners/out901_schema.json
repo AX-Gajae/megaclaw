@@ -1,0 +1,1868 @@
+{
+ "팝업": {
+  "원천": "data/records",
+  "D1": 380,
+  "필드": {
+   "conditions.area_pyeong": [
+    380,
+    48
+   ],
+   "conditions.brand_requirements": [
+    380,
+    232
+   ],
+   "conditions.capacity.access_type": [
+    76,
+    76
+   ],
+   "conditions.capacity.detail": [
+    76,
+    66
+   ],
+   "conditions.capacity.total_capacity": [
+    76,
+    2
+   ],
+   "conditions.demand_signals.sold_out": [
+    22,
+    11
+   ],
+   "conditions.demand_signals.source": [
+    22,
+    22
+   ],
+   "conditions.demand_signals.waiting_reported": [
+    22,
+    15
+   ],
+   "conditions.derived.calendar.doc_dates_found": [
+    380,
+    380
+   ],
+   "conditions.derived.calendar.doc_lag_days": [
+    380,
+    218
+   ],
+   "conditions.derived.calendar.holiday_block_in": [
+    380,
+    380
+   ],
+   "conditions.derived.calendar.holiday_since": [
+    380,
+    380
+   ],
+   "conditions.derived.calendar.holiday_until": [
+    380,
+    380
+   ],
+   "conditions.derived.calendar.nat_event": [
+    380,
+    74
+   ],
+   "conditions.derived.calendar.nat_event_gap": [
+    380,
+    380
+   ],
+   "conditions.derived.competition.comp_prior_at_venue": [
+    380,
+    380
+   ],
+   "conditions.derived.competition.comp_same_addr_open": [
+    380,
+    380
+   ],
+   "conditions.derived.competition.comp_within_1000m_open": [
+    380,
+    380
+   ],
+   "conditions.derived.competition.comp_within_500m_open": [
+    380,
+    380
+   ],
+   "conditions.derived.competition.matched_address": [
+    380,
+    81
+   ],
+   "conditions.derived.duration.days": [
+    368,
+    368
+   ],
+   "conditions.derived.duration.holiday_days": [
+    368,
+    368
+   ],
+   "conditions.derived.duration.weekend_share": [
+    368,
+    368
+   ],
+   "conditions.derived.ip_history.first_edition": [
+    380,
+    380
+   ],
+   "conditions.derived.ip_history.months_since_last": [
+    380,
+    123
+   ],
+   "conditions.derived.ip_history.prior_count": [
+    380,
+    380
+   ],
+   "conditions.derived.pnl_pre.pnl_pre_accounts": [
+    214,
+    214
+   ],
+   "conditions.derived.pnl_pre.pnl_pre_first": [
+    214,
+    214
+   ],
+   "conditions.derived.pnl_pre.pnl_pre_months": [
+    214,
+    214
+   ],
+   "conditions.derived.pnl_pre.pnl_pre_total": [
+    214,
+    214
+   ],
+   "conditions.fee_structure.detail": [
+    380,
+    271
+   ],
+   "conditions.fee_structure.type": [
+    380,
+    380
+   ],
+   "conditions.location.city": [
+    380,
+    254
+   ],
+   "conditions.location.district": [
+    380,
+    179
+   ],
+   "conditions.location.foot_traffic_context": [
+    380,
+    142
+   ],
+   "conditions.location.venue_name": [
+    380,
+    275
+   ],
+   "conditions.location.venue_slot": [
+    48,
+    48
+   ],
+   "conditions.location.venue_type": [
+    380,
+    275
+   ],
+   "conditions.period.days": [
+    380,
+    346
+   ],
+   "conditions.period.from": [
+    380,
+    380
+   ],
+   "conditions.period.source": [
+    4,
+    4
+   ],
+   "conditions.period.to": [
+    380,
+    368
+   ],
+   "conditions.scale.host_traffic_note": [
+    380,
+    254
+   ],
+   "conditions.scale.store_count": [
+    380,
+    380
+   ],
+   "conditions.scale.venue_traffic_type": [
+    380,
+    380
+   ],
+   "conditions.season": [
+    380,
+    371
+   ],
+   "conditions.venue_knowledge.confidence": [
+    90,
+    90
+   ],
+   "conditions.venue_knowledge.host_traffic_est": [
+    90,
+    86
+   ],
+   "conditions.venue_knowledge.popup_zone_pass_rate": [
+    90,
+    88
+   ],
+   "conditions.venue_knowledge.source": [
+    90,
+    90
+   ],
+   "conditions.venue_knowledge.venue_daily_footfall": [
+    90,
+    86
+   ],
+   "conditions.venue_knowledge.venue_scale_tier": [
+    90,
+    90
+   ],
+   "docs": [
+    380,
+    380
+   ],
+   "entities.brand_id": [
+    380,
+    380
+   ],
+   "entities.brand_key": [
+    380,
+    380
+   ],
+   "entities.client_key": [
+    1,
+    1
+   ],
+   "entities.client_party_id": [
+    380,
+    256
+   ],
+   "entities.space_id": [
+    380,
+    380
+   ],
+   "entities.space_key": [
+    380,
+    380
+   ],
+   "entities.space_key_source": [
+    10,
+    10
+   ],
+   "intervention.attr_meta.confidence": [
+    95,
+    95
+   ],
+   "intervention.attr_meta.evidence": [
+    95,
+    95
+   ],
+   "intervention.attr_meta.giveaway_note": [
+    1,
+    1
+   ],
+   "intervention.attr_meta.range_dropped": [
+    95,
+    2
+   ],
+   "intervention.attr_meta.tagger": [
+    95,
+    95
+   ],
+   "intervention.attributes.area_sqm": [
+    95,
+    21
+   ],
+   "intervention.attributes.capacity_per_session": [
+    95,
+    13
+   ],
+   "intervention.attributes.collab_strength": [
+    95,
+    95
+   ],
+   "intervention.attributes.entry_friction": [
+    95,
+    95
+   ],
+   "intervention.attributes.experience_density": [
+    95,
+    95
+   ],
+   "intervention.attributes.giveaway_qty": [
+    95,
+    37
+   ],
+   "intervention.attributes.goods_scale": [
+    95,
+    95
+   ],
+   "intervention.attributes.host_daily_traffic": [
+    95,
+    3
+   ],
+   "intervention.attributes.ip_awareness": [
+    95,
+    95
+   ],
+   "intervention.attributes.media_push": [
+    95,
+    95
+   ],
+   "intervention.attributes.operating_hours_per_day": [
+    95,
+    54
+   ],
+   "intervention.attributes.photo_zones": [
+    95,
+    95
+   ],
+   "intervention.attributes.plan_visitors_per_day": [
+    95,
+    19
+   ],
+   "intervention.attributes.planned_operating_days": [
+    95,
+    78
+   ],
+   "intervention.attributes.season_fit": [
+    95,
+    95
+   ],
+   "intervention.attributes.staff_count": [
+    95,
+    48
+   ],
+   "intervention.attributes.target_breadth": [
+    95,
+    95
+   ],
+   "intervention.attributes.throughput_units": [
+    95,
+    34
+   ],
+   "intervention.attributes.unit_minutes": [
+    95,
+    18
+   ],
+   "intervention.attributes.venue_prominence": [
+    95,
+    95
+   ],
+   "intervention.brand_name": [
+    380,
+    374
+   ],
+   "intervention.concept": [
+    380,
+    372
+   ],
+   "intervention.experience_elements": [
+    380,
+    229
+   ],
+   "intervention.promotions": [
+    380,
+    172
+   ],
+   "intervention.staging_tags": [
+    380,
+    258
+   ],
+   "outcome.counting_basis": [
+    380,
+    118
+   ],
+   "outcome.counting_detail": [
+    15,
+    15
+   ],
+   "outcome.counting_method": [
+    380,
+    380
+   ],
+   "outcome.daily": [
+    380,
+    89
+   ],
+   "outcome.daily_alt.note": [
+    1,
+    1
+   ],
+   "outcome.daily_alt.rows": [
+    1,
+    1
+   ],
+   "outcome.daily_alt.series": [
+    1,
+    1
+   ],
+   "outcome.daily_alt.unit": [
+    1,
+    1
+   ],
+   "outcome.demand_proxy_popga.daily_queue_users.2026-06-08": [
+    1,
+    1
+   ],
+   "outcome.demand_proxy_popga.daily_queue_users.2026-06-09": [
+    1,
+    1
+   ],
+   "outcome.demand_proxy_popga.daily_queue_users.2026-06-10": [
+    1,
+    1
+   ],
+   "outcome.demand_proxy_popga.daily_queue_users.2026-06-11": [
+    1,
+    1
+   ],
+   "outcome.demand_proxy_popga.daily_queue_users.2026-06-12": [
+    1,
+    1
+   ],
+   "outcome.demand_proxy_popga.daily_queue_users.2026-06-13": [
+    1,
+    1
+   ],
+   "outcome.demand_proxy_popga.daily_queue_users.2026-06-14": [
+    1,
+    1
+   ],
+   "outcome.demand_proxy_popga.daily_view_users_operating.2026-06-08": [
+    2,
+    2
+   ],
+   "outcome.demand_proxy_popga.daily_view_users_operating.2026-06-09": [
+    2,
+    2
+   ],
+   "outcome.demand_proxy_popga.daily_view_users_operating.2026-06-10": [
+    2,
+    2
+   ],
+   "outcome.demand_proxy_popga.daily_view_users_operating.2026-06-11": [
+    2,
+    2
+   ],
+   "outcome.demand_proxy_popga.daily_view_users_operating.2026-06-12": [
+    2,
+    2
+   ],
+   "outcome.demand_proxy_popga.daily_view_users_operating.2026-06-13": [
+    2,
+    2
+   ],
+   "outcome.demand_proxy_popga.daily_view_users_operating.2026-06-14": [
+    2,
+    2
+   ],
+   "outcome.demand_proxy_popga.daily_view_users_operating.2026-06-15": [
+    1,
+    1
+   ],
+   "outcome.demand_proxy_popga.daily_view_users_operating.2026-06-16": [
+    1,
+    1
+   ],
+   "outcome.demand_proxy_popga.daily_view_users_operating.2026-06-17": [
+    1,
+    1
+   ],
+   "outcome.demand_proxy_popga.daily_view_users_operating.2026-06-18": [
+    1,
+    1
+   ],
+   "outcome.demand_proxy_popga.daily_view_users_operating.2026-06-19": [
+    1,
+    1
+   ],
+   "outcome.demand_proxy_popga.daily_view_users_operating.2026-06-20": [
+    1,
+    1
+   ],
+   "outcome.demand_proxy_popga.daily_view_users_operating.2026-06-21": [
+    1,
+    1
+   ],
+   "outcome.demand_proxy_popga.metric": [
+    2,
+    2
+   ],
+   "outcome.demand_proxy_popga.source": [
+    2,
+    2
+   ],
+   "outcome.demand_proxy_popga.total_queue_events": [
+    1,
+    1
+   ],
+   "outcome.demand_proxy_popga.total_queue_users_unique": [
+    1,
+    1
+   ],
+   "outcome.demand_proxy_popga.total_view_users_unique": [
+    1,
+    1
+   ],
+   "outcome.label_alternates.participation_touchpoints": [
+    1,
+    1
+   ],
+   "outcome.label_history": [
+    46,
+    46
+   ],
+   "outcome.label_scope.daily_sum": [
+    68,
+    66
+   ],
+   "outcome.label_scope.label_active_days": [
+    69,
+    69
+   ],
+   "outcome.label_scope.label_contiguous": [
+    68,
+    68
+   ],
+   "outcome.label_scope.label_from": [
+    68,
+    68
+   ],
+   "outcome.label_scope.label_span_days": [
+    68,
+    68
+   ],
+   "outcome.label_scope.label_to": [
+    68,
+    68
+   ],
+   "outcome.label_scope.source": [
+    69,
+    69
+   ],
+   "outcome.label_scope.sum_agrees": [
+    68,
+    66
+   ],
+   "outcome.label_scope_kind": [
+    2,
+    2
+   ],
+   "outcome.label_source": [
+    15,
+    15
+   ],
+   "outcome.label_trust.flags": [
+    94,
+    31
+   ],
+   "outcome.label_trust.grade": [
+    99,
+    99
+   ],
+   "outcome.label_trust.note": [
+    1,
+    1
+   ],
+   "outcome.label_trust.regraded_from": [
+    6,
+    6
+   ],
+   "outcome.label_trust.why": [
+    99,
+    99
+   ],
+   "outcome.label_trust_sales.grade": [
+    1,
+    1
+   ],
+   "outcome.label_trust_sales.why": [
+    1,
+    1
+   ],
+   "outcome.legs": [
+    3,
+    3
+   ],
+   "outcome.measurement_instrument": [
+    7,
+    7
+   ],
+   "outcome.plan_visitors_expected": [
+    320,
+    26
+   ],
+   "outcome.provenance.column_quote": [
+    5,
+    5
+   ],
+   "outcome.provenance.docs_opened": [
+    6,
+    6
+   ],
+   "outcome.provenance.evidence": [
+    5,
+    5
+   ],
+   "outcome.provenance.source": [
+    6,
+    6
+   ],
+   "outcome.retention": [
+    380,
+    0
+   ],
+   "outcome.rev_mm_completion.contract_total_mm": [
+    380,
+    204
+   ],
+   "outcome.rev_mm_completion.last_recognition_period": [
+    380,
+    331
+   ],
+   "outcome.rev_mm_completion.rule": [
+    380,
+    380
+   ],
+   "outcome.rev_mm_completion.status": [
+    380,
+    380
+   ],
+   "outcome.sales_basis": [
+    26,
+    26
+   ],
+   "outcome.source": [
+    380,
+    380
+   ],
+   "outcome.totals.rev_mm_recognized": [
+    380,
+    331
+   ],
+   "outcome.totals.sales_krw": [
+    380,
+    70
+   ],
+   "outcome.totals.visitors": [
+    380,
+    99
+   ],
+   "outcome.uncaptured_sibling": [
+    2,
+    2
+   ],
+   "outcome.visit_detail.kpi": [
+    1,
+    1
+   ],
+   "outcome.visit_detail.note": [
+    2,
+    2
+   ],
+   "outcome.visit_detail.program_participations.SNS업로드챌린지": [
+    1,
+    1
+   ],
+   "outcome.visit_detail.program_participations.중계전(한국vs체코)": [
+    1,
+    1
+   ],
+   "outcome.visit_detail.program_participations.케어체크존": [
+    1,
+    1
+   ],
+   "outcome.visit_detail.program_participations.풋볼존": [
+    1,
+    1
+   ],
+   "outcome.visit_detail.week1.program_participations": [
+    1,
+    1
+   ],
+   "outcome.visit_detail.week1.reserved_visit": [
+    1,
+    1
+   ],
+   "outcome.visit_detail.week1.visitors": [
+    1,
+    1
+   ],
+   "outcome.visit_detail.week1.walkin": [
+    1,
+    1
+   ],
+   "outcome.visit_detail.week2.program_participations": [
+    1,
+    1
+   ],
+   "outcome.visit_detail.week2.reserved_visit": [
+    1,
+    1
+   ],
+   "outcome.visit_detail.week2.visitors": [
+    1,
+    1
+   ],
+   "outcome.visit_detail.week2.walkin": [
+    1,
+    1
+   ],
+   "provenance.extracted_at": [
+    380,
+    380
+   ],
+   "provenance.extracted_by": [
+    380,
+    380
+   ],
+   "provenance.notes": [
+    380,
+    380
+   ],
+   "provenance.reviewed_by": [
+    380,
+    380
+   ],
+   "record_id": [
+    380,
+    380
+   ],
+   "schema_version": [
+    380,
+    380
+   ]
+  }
+ },
+ "시장팝업": {
+  "원천": "data/market_records",
+  "D1": 647,
+  "필드": {
+   "_aggregate": [
+    408,
+    408
+   ],
+   "additional_sources": [
+    44,
+    44
+   ],
+   "brand": [
+    647,
+    647
+   ],
+   "category": [
+    647,
+    647
+   ],
+   "conditions.area_pyeong": [
+    647,
+    14
+   ],
+   "conditions.capacity.access_type": [
+    170,
+    170
+   ],
+   "conditions.capacity.detail": [
+    170,
+    170
+   ],
+   "conditions.capacity.total_capacity": [
+    170,
+    0
+   ],
+   "conditions.city": [
+    647,
+    644
+   ],
+   "conditions.derived.duration.days": [
+    503,
+    503
+   ],
+   "conditions.derived.duration.holiday_days": [
+    503,
+    503
+   ],
+   "conditions.derived.duration.weekend_share": [
+    503,
+    503
+   ],
+   "conditions.derived.ip_history.first_edition": [
+    555,
+    555
+   ],
+   "conditions.derived.ip_history.months_since_last": [
+    555,
+    132
+   ],
+   "conditions.derived.ip_history.prior_count": [
+    555,
+    555
+   ],
+   "conditions.multi_store": [
+    647,
+    612
+   ],
+   "conditions.neighborhood": [
+    647,
+    395
+   ],
+   "conditions.period_from": [
+    647,
+    555
+   ],
+   "conditions.period_to": [
+    647,
+    526
+   ],
+   "conditions.venue": [
+    647,
+    644
+   ],
+   "conditions.venue_type": [
+    647,
+    645
+   ],
+   "event_name": [
+    647,
+    647
+   ],
+   "exclude_reason": [
+    408,
+    99
+   ],
+   "extraction_confidence": [
+    647,
+    647
+   ],
+   "ingested_from": [
+    408,
+    408
+   ],
+   "intervention.concept_description": [
+    647,
+    647
+   ],
+   "intervention.experience_elements": [
+    647,
+    389
+   ],
+   "intervention.is_free_entry": [
+    647,
+    274
+   ],
+   "intervention.promotions": [
+    647,
+    266
+   ],
+   "intervention.reservation_required": [
+    647,
+    189
+   ],
+   "ip_or_collab": [
+    647,
+    539
+   ],
+   "market_record_id": [
+    647,
+    647
+   ],
+   "notes": [
+    647,
+    647
+   ],
+   "outcome.alt_figures": [
+    647,
+    33
+   ],
+   "outcome.conflict": [
+    647,
+    647
+   ],
+   "outcome.counting_basis": [
+    647,
+    647
+   ],
+   "outcome.counting_basis_note": [
+    647,
+    542
+   ],
+   "outcome.demand_signals.reservation_fill": [
+    647,
+    109
+   ],
+   "outcome.demand_signals.signal_quotes": [
+    647,
+    319
+   ],
+   "outcome.demand_signals.sold_out": [
+    647,
+    191
+   ],
+   "outcome.demand_signals.waiting_time_reported": [
+    647,
+    253
+   ],
+   "outcome.label_trust.flags": [
+    328,
+    182
+   ],
+   "outcome.label_trust.grade": [
+    328,
+    328
+   ],
+   "outcome.label_trust.why": [
+    328,
+    328
+   ],
+   "outcome.sales_krw": [
+    647,
+    102
+   ],
+   "outcome.sales_source_date": [
+    647,
+    121
+   ],
+   "outcome.sales_source_quote": [
+    647,
+    122
+   ],
+   "outcome.sales_source_url": [
+    647,
+    122
+   ],
+   "outcome.sales_source_url_2": [
+    1,
+    0
+   ],
+   "outcome.scope_class.days_corrected": [
+    21,
+    21
+   ],
+   "outcome.scope_class.days_stated": [
+    21,
+    21
+   ],
+   "outcome.scope_class.days_stored": [
+    21,
+    21
+   ],
+   "outcome.scope_class.final_marked": [
+    328,
+    328
+   ],
+   "outcome.scope_class.forecast": [
+    328,
+    328
+   ],
+   "outcome.scope_class.interim": [
+    328,
+    328
+   ],
+   "outcome.scope_class.multi_run": [
+    328,
+    328
+   ],
+   "outcome.scope_class.per_day": [
+    328,
+    328
+   ],
+   "outcome.scope_class.usable": [
+    328,
+    328
+   ],
+   "outcome.scope_class.wider_scope": [
+    328,
+    328
+   ],
+   "outcome.visitors_period_days": [
+    647,
+    312
+   ],
+   "outcome.visitors_source_date": [
+    647,
+    426
+   ],
+   "outcome.visitors_source_quote": [
+    647,
+    426
+   ],
+   "outcome.visitors_source_url": [
+    647,
+    426
+   ],
+   "outcome.visitors_total": [
+    647,
+    328
+   ],
+   "outcome_source_date": [
+    12,
+    12
+   ],
+   "outcome_source_url": [
+    12,
+    12
+   ],
+   "sales_source_date_note": [
+    1,
+    1
+   ],
+   "single_event": [
+    408,
+    408
+   ],
+   "tier": [
+    408,
+    408
+   ],
+   "verification.sales": [
+    102,
+    102
+   ],
+   "verification.visitors": [
+    328,
+    328
+   ]
+  }
+ },
+ "아이돌": {
+  "원천": "data/idol_records",
+  "D1": 282,
+  "필드": {
+   "agency": [
+    261,
+    239
+   ],
+   "chart_note": [
+    250,
+    111
+   ],
+   "chart_peak": [
+    250,
+    79
+   ],
+   "chodong": [
+    282,
+    175
+   ],
+   "chodong_basis": [
+    282,
+    282
+   ],
+   "chodong_basis_resolved": [
+    175,
+    175
+   ],
+   "chodong_basis_why": [
+    175,
+    175
+   ],
+   "chodong_note": [
+    282,
+    271
+   ],
+   "chodong_source_date": [
+    282,
+    192
+   ],
+   "chodong_source_kind": [
+    175,
+    175
+   ],
+   "chodong_source_quote": [
+    282,
+    191
+   ],
+   "chodong_source_url": [
+    282,
+    193
+   ],
+   "debut_album": [
+    282,
+    269
+   ],
+   "debut_date": [
+    282,
+    274
+   ],
+   "found_chodong": [
+    282,
+    282
+   ],
+   "gender": [
+    261,
+    256
+   ],
+   "group_name": [
+    282,
+    282
+   ],
+   "group_name_en": [
+    250,
+    250
+   ],
+   "ingested_from": [
+    282,
+    282
+   ],
+   "is_group": [
+    250,
+    250
+   ],
+   "label_reject": [
+    3,
+    3
+   ],
+   "label_trust.basis": [
+    175,
+    175
+   ],
+   "label_trust.grade": [
+    175,
+    175
+   ],
+   "label_trust.why": [
+    175,
+    175
+   ],
+   "member_count": [
+    261,
+    237
+   ],
+   "mv_24h": [
+    250,
+    2
+   ],
+   "mv_24h_source_url": [
+    250,
+    2
+   ],
+   "notes": [
+    282,
+    282
+   ],
+   "pre_debut_note": [
+    250,
+    238
+   ],
+   "pre_debut_signals.predebut_buzz_note": [
+    77,
+    77
+   ],
+   "pre_debut_signals.preorder": [
+    8,
+    8
+   ],
+   "pre_debut_signals.showcase_scale": [
+    36,
+    36
+   ],
+   "pre_debut_signals.sns_followers_debut": [
+    4,
+    4
+   ],
+   "pre_debut_signals.source": [
+    77,
+    77
+   ],
+   "pre_debut_signals.teaser_views": [
+    7,
+    7
+   ],
+   "record_id": [
+    282,
+    282
+   ],
+   "survival_show": [
+    261,
+    95
+   ],
+   "tier": [
+    282,
+    282
+   ]
+  }
+ },
+ "게임": {
+  "원천": "data/state/game_records.json",
+  "D1": 482,
+  "필드": {
+   "appid": [
+    482,
+    482
+   ],
+   "developers": [
+    482,
+    482
+   ],
+   "genres": [
+    482,
+    480
+   ],
+   "is_free": [
+    482,
+    482
+   ],
+   "label_basis": [
+    482,
+    482
+   ],
+   "label_note": [
+    482,
+    482
+   ],
+   "n_category": [
+    482,
+    482
+   ],
+   "n_dlc": [
+    482,
+    482
+   ],
+   "n_lang": [
+    482,
+    482
+   ],
+   "n_platform": [
+    482,
+    482
+   ],
+   "name": [
+    482,
+    482
+   ],
+   "price_krw": [
+    482,
+    482
+   ],
+   "publishers": [
+    482,
+    482
+   ],
+   "record_id": [
+    482,
+    482
+   ],
+   "release_date": [
+    482,
+    482
+   ],
+   "source": [
+    482,
+    482
+   ],
+   "y_positive": [
+    482,
+    482
+   ],
+   "y_raw": [
+    482,
+    482
+   ],
+   "y_w30": [
+    482,
+    482
+   ],
+   "y_w30_truncated": [
+    482,
+    482
+   ]
+  }
+ },
+ "도서": {
+  "원천": "data/state/book_records.json",
+  "D1": 396,
+  "필드": {
+   "book_format": [
+    394,
+    394
+   ],
+   "genre": [
+    394,
+    394
+   ],
+   "height_mm": [
+    242,
+    242
+   ],
+   "isbn": [
+    396,
+    396
+   ],
+   "item_id": [
+    396,
+    396
+   ],
+   "n_genre": [
+    394,
+    394
+   ],
+   "pages": [
+    395,
+    395
+   ],
+   "price": [
+    396,
+    396
+   ],
+   "pub_date": [
+    396,
+    396
+   ],
+   "publisher": [
+    396,
+    396
+   ],
+   "rank": [
+    2,
+    2
+   ],
+   "rating": [
+    394,
+    376
+   ],
+   "record_id": [
+    396,
+    396
+   ],
+   "review_count": [
+    394,
+    394
+   ],
+   "sale": [
+    2,
+    2
+   ],
+   "sales_point": [
+    396,
+    396
+   ],
+   "title": [
+    396,
+    396
+   ],
+   "weight_g": [
+    242,
+    242
+   ],
+   "width_mm": [
+    242,
+    242
+   ]
+  }
+ },
+ "펀딩": {
+  "원천": "data/state/funding_records.json",
+  "D1": 2887,
+  "필드": {
+   "_page": [
+    2487,
+    2487
+   ],
+   "adult_only": [
+    2887,
+    2887
+   ],
+   "amount": [
+    2887,
+    2887
+   ],
+   "category": [
+    2887,
+    2887
+   ],
+   "category_name": [
+    2887,
+    2887
+   ],
+   "creator": [
+    2887,
+    2887
+   ],
+   "creator_uuid": [
+    2887,
+    2865
+   ],
+   "end_date": [
+    2887,
+    2887
+   ],
+   "max_price": [
+    2887,
+    2887
+   ],
+   "min_price": [
+    2887,
+    2887
+   ],
+   "n_delivery": [
+    2887,
+    2887
+   ],
+   "n_reward": [
+    2887,
+    2887
+   ],
+   "n_unlimited": [
+    2887,
+    2887
+   ],
+   "permalink": [
+    2887,
+    2887
+   ],
+   "record_id": [
+    2887,
+    2887
+   ],
+   "start_date": [
+    2887,
+    2887
+   ],
+   "title": [
+    2887,
+    2887
+   ],
+   "unlimited_ratio": [
+    2887,
+    2887
+   ],
+   "uuid": [
+    2887,
+    2887
+   ],
+   "y_backers": [
+    2887,
+    2887
+   ]
+  }
+ },
+ "웹툰": {
+  "원천": "data/state/webtoon_records.json",
+  "D1": 3652,
+  "필드": {
+   "_src_page": [
+    835,
+    835
+   ],
+   "age_rank": [
+    3652,
+    3652
+   ],
+   "age_type": [
+    3652,
+    3652
+   ],
+   "artists": [
+    3652,
+    3652
+   ],
+   "daily_pass": [
+    3652,
+    3652
+   ],
+   "days": [
+    3652,
+    3623
+   ],
+   "finished": [
+    3652,
+    3652
+   ],
+   "level": [
+    3652,
+    3652
+   ],
+   "n_artist": [
+    3652,
+    3652
+   ],
+   "n_day": [
+    3652,
+    3652
+   ],
+   "n_episode": [
+    3652,
+    3652
+   ],
+   "n_tag": [
+    3652,
+    3652
+   ],
+   "record_id": [
+    3652,
+    3652
+   ],
+   "star": [
+    3652,
+    0
+   ],
+   "start_date": [
+    3652,
+    3652
+   ],
+   "tags": [
+    3652,
+    3652
+   ],
+   "title": [
+    3652,
+    3652
+   ],
+   "title_id": [
+    3652,
+    3652
+   ],
+   "y_favorite": [
+    3652,
+    3652
+   ]
+  }
+ },
+ "애니": {
+  "원천": "data/state/anime_records.json",
+  "D1": 3385,
+  "필드": {
+   "_offset": [
+    1312,
+    1312
+   ],
+   "age": [
+    3385,
+    3364
+   ],
+   "air_quarter": [
+    3385,
+    2750
+   ],
+   "avg_rating": [
+    3385,
+    3385
+   ],
+   "genres": [
+    3385,
+    3219
+   ],
+   "is_adult": [
+    3385,
+    3385
+   ],
+   "is_dubbed": [
+    3385,
+    3385
+   ],
+   "is_ending": [
+    3385,
+    3385
+   ],
+   "is_free": [
+    3385,
+    3385
+   ],
+   "is_only": [
+    3385,
+    3385
+   ],
+   "is_original": [
+    3385,
+    3385
+   ],
+   "item_id": [
+    3385,
+    3385
+   ],
+   "medium": [
+    3385,
+    3385
+   ],
+   "n_episode": [
+    3385,
+    3385
+   ],
+   "n_genre": [
+    3385,
+    3385
+   ],
+   "n_tag": [
+    3385,
+    3385
+   ],
+   "price": [
+    3385,
+    3385
+   ],
+   "production": [
+    3385,
+    2474
+   ],
+   "record_id": [
+    3385,
+    3385
+   ],
+   "series_id": [
+    3385,
+    3361
+   ],
+   "start_date": [
+    3385,
+    3385
+   ],
+   "tags": [
+    3385,
+    3356
+   ],
+   "title": [
+    3385,
+    3385
+   ],
+   "y_review": [
+    3385,
+    3385
+   ]
+  }
+ },
+ "모바일": {
+  "원천": "data/state/mobile_records.json",
+  "D1": 2000,
+  "필드": {
+   "advisory": [
+    2000,
+    2000
+   ],
+   "app_id": [
+    2000,
+    2000
+   ],
+   "artist": [
+    2000,
+    2000
+   ],
+   "artist_id": [
+    2000,
+    2000
+   ],
+   "avg_rating": [
+    2000,
+    2000
+   ],
+   "genres": [
+    2000,
+    2000
+   ],
+   "langs": [
+    2000,
+    1991
+   ],
+   "n_device": [
+    2000,
+    2000
+   ],
+   "n_genre": [
+    2000,
+    2000
+   ],
+   "n_lang": [
+    2000,
+    2000
+   ],
+   "n_shot": [
+    2000,
+    2000
+   ],
+   "price": [
+    2000,
+    2000
+   ],
+   "record_id": [
+    2000,
+    2000
+   ],
+   "release_date": [
+    2000,
+    2000
+   ],
+   "size_mb": [
+    2000,
+    2000
+   ],
+   "title": [
+    2000,
+    2000
+   ],
+   "updated": [
+    2000,
+    2000
+   ],
+   "y_rating_count": [
+    2000,
+    2000
+   ]
+  }
+ },
+ "만화": {
+  "원천": "data/state/manga_records.json",
+  "D1": 7982,
+  "필드": {
+   "authors": [
+    7982,
+    7974
+   ],
+   "country": [
+    7982,
+    7982
+   ],
+   "favourites": [
+    7982,
+    7982
+   ],
+   "format": [
+    7982,
+    7982
+   ],
+   "genres": [
+    7982,
+    7924
+   ],
+   "is_adult": [
+    7982,
+    7982
+   ],
+   "mean_score": [
+    7982,
+    7982
+   ],
+   "media_id": [
+    7982,
+    7982
+   ],
+   "n_author": [
+    7982,
+    7982
+   ],
+   "n_chapter": [
+    7982,
+    5884
+   ],
+   "n_genre": [
+    7982,
+    7982
+   ],
+   "n_tag": [
+    7982,
+    7982
+   ],
+   "n_volume": [
+    7982,
+    4250
+   ],
+   "record_id": [
+    7982,
+    7982
+   ],
+   "start_date": [
+    7982,
+    7982
+   ],
+   "status": [
+    7982,
+    7982
+   ],
+   "title": [
+    7982,
+    7982
+   ],
+   "y_popularity": [
+    7982,
+    7982
+   ]
+  }
+ },
+ "세계애니": {
+  "원천": "data/state/wanime_records.json",
+  "D1": 2988,
+  "필드": {
+   "country": [
+    2988,
+    2988
+   ],
+   "duration": [
+    2988,
+    2965
+   ],
+   "english": [
+    2988,
+    2805
+   ],
+   "favourites": [
+    2988,
+    2988
+   ],
+   "format": [
+    2988,
+    2987
+   ],
+   "genres": [
+    2988,
+    2988
+   ],
+   "is_adult": [
+    2988,
+    2988
+   ],
+   "mean_score": [
+    2988,
+    2965
+   ],
+   "media_id": [
+    2988,
+    2988
+   ],
+   "n_episode": [
+    2988,
+    2958
+   ],
+   "n_genre": [
+    2988,
+    2988
+   ],
+   "n_tag": [
+    2988,
+    2988
+   ],
+   "native": [
+    2988,
+    2988
+   ],
+   "record_id": [
+    2988,
+    2988
+   ],
+   "source": [
+    2988,
+    2986
+   ],
+   "start_date": [
+    2988,
+    2988
+   ],
+   "status": [
+    2988,
+    2988
+   ],
+   "studio_name": [
+    2988,
+    2956
+   ],
+   "studios": [
+    2988,
+    2956
+   ],
+   "synonyms": [
+    2988,
+    2477
+   ],
+   "title": [
+    2988,
+    2988
+   ],
+   "y_popularity": [
+    2988,
+    2988
+   ]
+  }
+ }
+}

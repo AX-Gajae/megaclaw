@@ -1,0 +1,3949 @@
+{
+ "노트": 901,
+ "사전등록 커밋": "ae0ed6c49799011efab8614c7f7171ae08c7a6bb",
+ "사전등록 시각": "2026-08-11T03:21:42+09:00",
+ "시작 시각": "2026-08-11T03:37:02",
+ "코드 sha256": {
+  "runners/ident901.py": "e041c51defd5d751d1e2e47326a611b3c17d125f568c4d3f6bc345b1bd3cbdc0",
+  "runners/inv901.py": "c862e3ec2c78c51cd2abc01cb21ddd1456f32a4a8dbad622a1e7fc360ef73cd2"
+ },
+ "🔴 효과 크기": "없음",
+ "🔴 assert 발화 확인(심어서 봤다)": {
+  "무엇": "D3 되짚기의 조용한 0 을 막는 assert",
+  "방법": "영화 키 정규화 `k.replace(\"KOBIS-\", \"\")` 를 일부러 되돌려 실행",
+  "결과": "AssertionError: D3 되짚기 조용한 0/부분 실패 영화: 키 406 → 매칭 0",
+  "🔴 왜 넣었나": "초판이 실제로 여기 걸렸다 — 축 키 `KOBIS-20215315` 대 원천 `20215315` 라 교집합 0 인데 산출물은 「가능=True · 0행」으로 조용히 나왔다"
+ },
+ "🔴 「소수 쪽」의 읽기": "🔴 「소수 쪽」의 조작적 읽기 — **최빈값 대 나머지**. — 최빈값 대 나머지. 사전등록이 k>2 를 안 정해서 여기서 명시한다",
+ "🔴 D5(사전등록에 없던 분모) 팝업": {
+  "정의": "`state.slots.load_popup()` 가 남기는 행 — 등급 A·B + scope_usable + counting∈{entry,participation}",
+  "load_popup 이 낸 행 수": 75,
+  "meta 로 다시 건 대략 필터(등급 조건 제외) 행 수": 91,
+  "그중 손 태그(intervention.attributes)가 있는 record_id 수": 74,
+  "data/records 전체(D1=380) 중 손 태그 있는 수": 95,
+  "🔴 주의": "이 수는 D1·D2·D3·D4 어느 것과도 나누거나 더하지 않는다"
+ },
+ "🔴 사전등록 예측 판정": {
+  "P1 T1 열이 1개 이상인 도메인 ≥ 6/12": {
+   "실측": "12/12",
+   "판정": "확인",
+   "도메인": [
+    "게임",
+    "도서",
+    "만화",
+    "모바일",
+    "세계애니",
+    "시장팝업",
+    "아이돌",
+    "애니",
+    "영화",
+    "웹툰",
+    "팝업",
+    "펀딩"
+   ]
+  },
+  "P2 결측<50% 이고 처치·대조 둘 다 관측되는 짝 ≥ 3": {
+   "D1 분모 실측": 28,
+   "D3 분모 실측": 22,
+   "판정(D1)": "확인",
+   "판정(D3)": "확인",
+   "🔴 분모 주의": "두 수는 분모가 달라 서로 안 섞는다",
+   "D1 목록": [
+    [
+     "팝업",
+     "intervention.experience_elements"
+    ],
+    [
+     "팝업",
+     "intervention.staging_tags"
+    ],
+    [
+     "팝업",
+     "conditions.fee_structure.type"
+    ],
+    [
+     "팝업",
+     "conditions.location.venue_type"
+    ],
+    [
+     "시장팝업",
+     "intervention.experience_elements"
+    ],
+    [
+     "시장팝업",
+     "conditions.venue_type"
+    ],
+    [
+     "시장팝업",
+     "ip_or_collab"
+    ],
+    [
+     "아이돌",
+     "debut_album"
+    ],
+    [
+     "아이돌",
+     "agency"
+    ],
+    [
+     "게임",
+     "is_free"
+    ],
+    [
+     "게임",
+     "publishers"
+    ],
+    [
+     "게임",
+     "developers"
+    ],
+    [
+     "도서",
+     "book_format"
+    ],
+    [
+     "도서",
+     "publisher"
+    ],
+    [
+     "펀딩",
+     "adult_only"
+    ],
+    [
+     "펀딩",
+     "category"
+    ],
+    [
+     "펀딩",
+     "creator"
+    ],
+    [
+     "웹툰",
+     "daily_pass"
+    ],
+    [
+     "웹툰",
+     "artists"
+    ],
+    [
+     "애니",
+     "is_free"
+    ],
+    [
+     "애니",
+     "is_dubbed"
+    ],
+    [
+     "애니",
+     "is_only"
+    ],
+    [
+     "애니",
+     "production"
+    ],
+    [
+     "모바일",
+     "artist"
+    ],
+    [
+     "만화",
+     "authors"
+    ],
+    [
+     "세계애니",
+     "format"
+    ],
+    [
+     "세계애니",
+     "studios"
+    ],
+    [
+     "영화",
+     "배급사"
+    ]
+   ],
+   "D3 목록": [
+    [
+     "시장팝업",
+     "intervention.promotions"
+    ],
+    [
+     "시장팝업",
+     "intervention.experience_elements"
+    ],
+    [
+     "시장팝업",
+     "conditions.venue_type"
+    ],
+    [
+     "시장팝업",
+     "ip_or_collab"
+    ],
+    [
+     "게임",
+     "is_free"
+    ],
+    [
+     "게임",
+     "publishers"
+    ],
+    [
+     "게임",
+     "developers"
+    ],
+    [
+     "도서",
+     "book_format"
+    ],
+    [
+     "도서",
+     "publisher"
+    ],
+    [
+     "펀딩",
+     "adult_only"
+    ],
+    [
+     "펀딩",
+     "category"
+    ],
+    [
+     "펀딩",
+     "creator"
+    ],
+    [
+     "웹툰",
+     "daily_pass"
+    ],
+    [
+     "웹툰",
+     "artists"
+    ],
+    [
+     "애니",
+     "is_free"
+    ],
+    [
+     "애니",
+     "is_dubbed"
+    ],
+    [
+     "애니",
+     "is_only"
+    ],
+    [
+     "모바일",
+     "artist"
+    ],
+    [
+     "만화",
+     "authors"
+    ],
+    [
+     "세계애니",
+     "format"
+    ],
+    [
+     "세계애니",
+     "studios"
+    ],
+    [
+     "영화",
+     "배급사"
+    ]
+   ]
+  },
+  "P3 식별 5조건 전부 만족(A등급) 짝 ≥ 1": {
+   "실측 A": 0,
+   "판정": "🔴 반증",
+   "B": 34,
+   "C": 71,
+   "B 목록": [
+    [
+     "팝업",
+     "intervention.experience_elements"
+    ],
+    [
+     "팝업",
+     "intervention.promotions"
+    ],
+    [
+     "팝업",
+     "intervention.staging_tags"
+    ],
+    [
+     "팝업",
+     "conditions.fee_structure.type"
+    ],
+    [
+     "팝업",
+     "conditions.capacity.access_type"
+    ],
+    [
+     "팝업",
+     "conditions.location.venue_type"
+    ],
+    [
+     "시장팝업",
+     "intervention.reservation_required"
+    ],
+    [
+     "시장팝업",
+     "intervention.promotions"
+    ],
+    [
+     "시장팝업",
+     "intervention.experience_elements"
+    ],
+    [
+     "시장팝업",
+     "conditions.venue_type"
+    ],
+    [
+     "시장팝업",
+     "ip_or_collab"
+    ],
+    [
+     "아이돌",
+     "survival_show"
+    ],
+    [
+     "아이돌",
+     "debut_album"
+    ],
+    [
+     "아이돌",
+     "agency"
+    ],
+    [
+     "아이돌",
+     "pre_debut_signals.showcase_scale"
+    ],
+    [
+     "게임",
+     "is_free"
+    ],
+    [
+     "게임",
+     "publishers"
+    ],
+    [
+     "게임",
+     "developers"
+    ],
+    [
+     "도서",
+     "book_format"
+    ],
+    [
+     "도서",
+     "publisher"
+    ],
+    [
+     "펀딩",
+     "adult_only"
+    ],
+    [
+     "펀딩",
+     "category"
+    ],
+    [
+     "펀딩",
+     "creator"
+    ],
+    [
+     "웹툰",
+     "daily_pass"
+    ],
+    [
+     "웹툰",
+     "artists"
+    ],
+    [
+     "애니",
+     "is_free"
+    ],
+    [
+     "애니",
+     "is_dubbed"
+    ],
+    [
+     "애니",
+     "is_only"
+    ],
+    [
+     "애니",
+     "production"
+    ],
+    [
+     "모바일",
+     "artist"
+    ],
+    [
+     "만화",
+     "authors"
+    ],
+    [
+     "세계애니",
+     "format"
+    ],
+    [
+     "세계애니",
+     "studios"
+    ],
+    [
+     "영화",
+     "배급사"
+    ]
+   ]
+  },
+  "🔴 P4 개입 이전 관측이 있는 도메인은 0 이다": {
+   "실측": "12/12",
+   "판정": "🔴 반증",
+   "도메인별 레코드 수(분모 D1)": {
+    "팝업": 106,
+    "시장팝업": 62,
+    "아이돌": 25,
+    "게임": 160,
+    "도서": 252,
+    "펀딩": 408,
+    "웹툰": 1474,
+    "애니": 2098,
+    "모바일": 722,
+    "만화": 2487,
+    "세계애니": 2691,
+    "영화": 510
+   },
+   "🔴 단서": "사전등록 §5 식2 가 「같은 record_id **또는 같은 IP/브랜드/창작자**」라고 넓게 적었다. 여기 수는 **약한 쪽(생산자 단위)** 이다. **강한 쪽(같은 제품의 개입 이전 결과)은 12도메인 전부 0** 이다 — 저장소의 레코드는 전부 단면이다"
+  }
+ },
+ "🔴 식2-강 실측 — 같은 레코드의 「개입 이전 결과」 필드를 훑었다": {
+  "방법": "레코드 전량의 필드 경로를 훑어 pre/prior/before/baseline/사전/이전 을 포함하는 이름을 전부 센다",
+  "🔴 결론의 형태": "아래에 잡힌 것은 전부 **사전 상태**(직전 회계·데뷔 전 신호)이지 **라벨과 같은 물리량의 개입 이전 관측**이 아니다. 따라서 식2-강 = 0 은 「안 봤다」가 아니라 「훑었고 그 꼴의 필드가 없다」다",
+  "도메인별": {
+   "팝업": {
+    "분모": "D1",
+    "D1": 380,
+    "이름에 사전/이전 이 든 필드": {
+     "conditions.derived.competition.comp_prior_at_venue": 380,
+     "conditions.derived.ip_history.prior_count": 380,
+     "conditions.derived.pnl_pre": 214,
+     "conditions.derived.pnl_pre.pnl_pre_accounts": 214,
+     "conditions.derived.pnl_pre.pnl_pre_first": 214,
+     "conditions.derived.pnl_pre.pnl_pre_months": 214,
+     "conditions.derived.pnl_pre.pnl_pre_total": 214
+    }
+   },
+   "시장팝업": {
+    "분모": "D1",
+    "D1": 647,
+    "이름에 사전/이전 이 든 필드": {
+     "conditions.derived.ip_history.prior_count": 555
+    }
+   },
+   "아이돌": {
+    "분모": "D1",
+    "D1": 282,
+    "이름에 사전/이전 이 든 필드": {
+     "pre_debut_note": 238,
+     "pre_debut_signals": 77,
+     "pre_debut_signals.predebut_buzz_note": 77,
+     "pre_debut_signals.preorder": 8,
+     "pre_debut_signals.showcase_scale": 36,
+     "pre_debut_signals.sns_followers_debut": 4,
+     "pre_debut_signals.source": 77,
+     "pre_debut_signals.teaser_views": 7
+    }
+   },
+   "게임": {
+    "분모": "D1",
+    "D1": 482,
+    "이름에 사전/이전 이 든 필드": "없음"
+   },
+   "도서": {
+    "분모": "D1",
+    "D1": 396,
+    "이름에 사전/이전 이 든 필드": "없음"
+   },
+   "펀딩": {
+    "분모": "D1",
+    "D1": 2887,
+    "이름에 사전/이전 이 든 필드": "없음"
+   },
+   "웹툰": {
+    "분모": "D1",
+    "D1": 3652,
+    "이름에 사전/이전 이 든 필드": "없음"
+   },
+   "애니": {
+    "분모": "D1",
+    "D1": 3385,
+    "이름에 사전/이전 이 든 필드": "없음"
+   },
+   "모바일": {
+    "분모": "D1",
+    "D1": 2000,
+    "이름에 사전/이전 이 든 필드": "없음"
+   },
+   "만화": {
+    "분모": "D1",
+    "D1": 7982,
+    "이름에 사전/이전 이 든 필드": "없음"
+   },
+   "세계애니": {
+    "분모": "D1",
+    "D1": 2988,
+    "이름에 사전/이전 이 든 필드": "없음"
+   },
+   "영화": {
+    "분모": "D1",
+    "D1": 897,
+    "이름에 사전/이전 이 든 필드": "없음"
+   }
+  }
+ },
+ "D3 되짚기": {
+  "팝업": {
+   "가능": false,
+   "이유": "축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다"
+  },
+  "시장팝업": {
+   "가능": true
+  },
+  "아이돌": {
+   "가능": false,
+   "D2": 81,
+   "D4": 173,
+   "이유": "D2 != D4 — 챔피언 배선이 행을 넓힌다. 🔴 못 셌다"
+  },
+  "게임": {
+   "가능": true
+  },
+  "도서": {
+   "가능": true
+  },
+  "펀딩": {
+   "가능": true
+  },
+  "웹툰": {
+   "가능": true
+  },
+  "애니": {
+   "가능": true
+  },
+  "모바일": {
+   "가능": true
+  },
+  "만화": {
+   "가능": true
+  },
+  "세계애니": {
+   "가능": true
+  },
+  "영화": {
+   "가능": true
+  }
+ },
+ "판정 표": {
+  "팝업": {
+   "원천": "data/records",
+   "D1": 380,
+   "D3 되짚기": false,
+   "D3 되짚은 레코드 수": null,
+   "개입 값의 관측 시점 필드": {
+    "intervention.attr_meta.tagger": 95,
+    "intervention.attr_meta.evidence": 95,
+    "intervention.attr_meta.confidence": 95,
+    "provenance.extracted_at": 380,
+    "provenance.extracted_by": 380
+   },
+   "교란 후보(같은 레코드 열)": {
+    "conditions.period.from": 380,
+    "conditions.location.city": 254,
+    "conditions.location.venue_type": 275,
+    "conditions.scale.store_count": 380,
+    "conditions.derived.ip_history.prior_count": 380,
+    "conditions.derived.competition.comp_within_500m_open": 380
+   },
+   "짝": {
+    "intervention.attributes.entry_friction": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 380,
+     "비결측(D1)": 95,
+     "결측률(D1)": 0.75,
+     "값 가짓수": 5,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — 축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다",
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 5 (D1). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(entities.brand_key)의 더 이른 결과 관측이 있는 레코드 106 (D1=380)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "예",
+     "식3 근거": "코드 강제 시간 마스크 — `ingest/doc_select.is_pre_open()` 가 문서 날짜 ≤ `conditions.period.from` 만 통과시키고 `ingest/attr_tagger.build_user()` 가 그 목록만 넣는다. ⚠ 기획서·계약서는 날짜를 못 읽으면 통과한다(`doc_select.py:71-79`)",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period.from=380, conditions.location.city=254, conditions.location.venue_type=275, conditions.scale.store_count=380, conditions.derived.ip_history.prior_count=380, conditions.derived.competition.comp_within_500m_open=380",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "intervention.attributes.goods_scale": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 380,
+     "비결측(D1)": 95,
+     "결측률(D1)": 0.75,
+     "값 가짓수": 5,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — 축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다",
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 5 (D1). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(entities.brand_key)의 더 이른 결과 관측이 있는 레코드 106 (D1=380)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "예",
+     "식3 근거": "코드 강제 시간 마스크 — `ingest/doc_select.is_pre_open()` 가 문서 날짜 ≤ `conditions.period.from` 만 통과시키고 `ingest/attr_tagger.build_user()` 가 그 목록만 넣는다. ⚠ 기획서·계약서는 날짜를 못 읽으면 통과한다(`doc_select.py:71-79`)",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period.from=380, conditions.location.city=254, conditions.location.venue_type=275, conditions.scale.store_count=380, conditions.derived.ip_history.prior_count=380, conditions.derived.competition.comp_within_500m_open=380",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "intervention.attributes.media_push": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 380,
+     "비결측(D1)": 95,
+     "결측률(D1)": 0.75,
+     "값 가짓수": 5,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — 축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다",
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 5 (D1). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(entities.brand_key)의 더 이른 결과 관측이 있는 레코드 106 (D1=380)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "예",
+     "식3 근거": "코드 강제 시간 마스크 — `ingest/doc_select.is_pre_open()` 가 문서 날짜 ≤ `conditions.period.from` 만 통과시키고 `ingest/attr_tagger.build_user()` 가 그 목록만 넣는다. ⚠ 기획서·계약서는 날짜를 못 읽으면 통과한다(`doc_select.py:71-79`)",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period.from=380, conditions.location.city=254, conditions.location.venue_type=275, conditions.scale.store_count=380, conditions.derived.ip_history.prior_count=380, conditions.derived.competition.comp_within_500m_open=380",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "intervention.attributes.target_breadth": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 380,
+     "비결측(D1)": 95,
+     "결측률(D1)": 0.75,
+     "값 가짓수": 5,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — 축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다",
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 5 (D1). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(entities.brand_key)의 더 이른 결과 관측이 있는 레코드 106 (D1=380)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "예",
+     "식3 근거": "코드 강제 시간 마스크 — `ingest/doc_select.is_pre_open()` 가 문서 날짜 ≤ `conditions.period.from` 만 통과시키고 `ingest/attr_tagger.build_user()` 가 그 목록만 넣는다. ⚠ 기획서·계약서는 날짜를 못 읽으면 통과한다(`doc_select.py:71-79`)",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period.from=380, conditions.location.city=254, conditions.location.venue_type=275, conditions.scale.store_count=380, conditions.derived.ip_history.prior_count=380, conditions.derived.competition.comp_within_500m_open=380",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "intervention.attributes.photo_zones": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 380,
+     "비결측(D1)": 95,
+     "결측률(D1)": 0.75,
+     "값 가짓수": 5,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — 축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다",
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 5 (D1). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(entities.brand_key)의 더 이른 결과 관측이 있는 레코드 106 (D1=380)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "예",
+     "식3 근거": "코드 강제 시간 마스크 — `ingest/doc_select.is_pre_open()` 가 문서 날짜 ≤ `conditions.period.from` 만 통과시키고 `ingest/attr_tagger.build_user()` 가 그 목록만 넣는다. ⚠ 기획서·계약서는 날짜를 못 읽으면 통과한다(`doc_select.py:71-79`)",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period.from=380, conditions.location.city=254, conditions.location.venue_type=275, conditions.scale.store_count=380, conditions.derived.ip_history.prior_count=380, conditions.derived.competition.comp_within_500m_open=380",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "intervention.attributes.giveaway_qty": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 380,
+     "비결측(D1)": 37,
+     "결측률(D1)": 0.9026,
+     "값 가짓수": 27,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — 축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다",
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 27 (D1). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(entities.brand_key)의 더 이른 결과 관측이 있는 레코드 106 (D1=380)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "예",
+     "식3 근거": "코드 강제 시간 마스크 — `ingest/doc_select.is_pre_open()` 가 문서 날짜 ≤ `conditions.period.from` 만 통과시키고 `ingest/attr_tagger.build_user()` 가 그 목록만 넣는다. ⚠ 기획서·계약서는 날짜를 못 읽으면 통과한다(`doc_select.py:71-79`)",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period.from=380, conditions.location.city=254, conditions.location.venue_type=275, conditions.scale.store_count=380, conditions.derived.ip_history.prior_count=380, conditions.derived.competition.comp_within_500m_open=380",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "intervention.attributes.staff_count": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 380,
+     "비결측(D1)": 48,
+     "결측률(D1)": 0.8737,
+     "값 가짓수": 22,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — 축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다",
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 22 (D1). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(entities.brand_key)의 더 이른 결과 관측이 있는 레코드 106 (D1=380)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "예",
+     "식3 근거": "코드 강제 시간 마스크 — `ingest/doc_select.is_pre_open()` 가 문서 날짜 ≤ `conditions.period.from` 만 통과시키고 `ingest/attr_tagger.build_user()` 가 그 목록만 넣는다. ⚠ 기획서·계약서는 날짜를 못 읽으면 통과한다(`doc_select.py:71-79`)",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period.from=380, conditions.location.city=254, conditions.location.venue_type=275, conditions.scale.store_count=380, conditions.derived.ip_history.prior_count=380, conditions.derived.competition.comp_within_500m_open=380",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "intervention.attributes.operating_hours_per_day": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 380,
+     "비결측(D1)": 54,
+     "결측률(D1)": 0.8579,
+     "값 가짓수": 15,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — 축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다",
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 15 (D1). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(entities.brand_key)의 더 이른 결과 관측이 있는 레코드 106 (D1=380)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "예",
+     "식3 근거": "코드 강제 시간 마스크 — `ingest/doc_select.is_pre_open()` 가 문서 날짜 ≤ `conditions.period.from` 만 통과시키고 `ingest/attr_tagger.build_user()` 가 그 목록만 넣는다. ⚠ 기획서·계약서는 날짜를 못 읽으면 통과한다(`doc_select.py:71-79`)",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period.from=380, conditions.location.city=254, conditions.location.venue_type=275, conditions.scale.store_count=380, conditions.derived.ip_history.prior_count=380, conditions.derived.competition.comp_within_500m_open=380",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "intervention.attributes.planned_operating_days": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 380,
+     "비결측(D1)": 78,
+     "결측률(D1)": 0.7947,
+     "값 가짓수": 19,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — 축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다",
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 19 (D1). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(entities.brand_key)의 더 이른 결과 관측이 있는 레코드 106 (D1=380)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "예",
+     "식3 근거": "코드 강제 시간 마스크 — `ingest/doc_select.is_pre_open()` 가 문서 날짜 ≤ `conditions.period.from` 만 통과시키고 `ingest/attr_tagger.build_user()` 가 그 목록만 넣는다. ⚠ 기획서·계약서는 날짜를 못 읽으면 통과한다(`doc_select.py:71-79`)",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period.from=380, conditions.location.city=254, conditions.location.venue_type=275, conditions.scale.store_count=380, conditions.derived.ip_history.prior_count=380, conditions.derived.competition.comp_within_500m_open=380",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "intervention.attributes.capacity_per_session": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 380,
+     "비결측(D1)": 13,
+     "결측률(D1)": 0.9658,
+     "값 가짓수": 11,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — 축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다",
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 11 (D1). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(entities.brand_key)의 더 이른 결과 관측이 있는 레코드 106 (D1=380)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "예",
+     "식3 근거": "코드 강제 시간 마스크 — `ingest/doc_select.is_pre_open()` 가 문서 날짜 ≤ `conditions.period.from` 만 통과시키고 `ingest/attr_tagger.build_user()` 가 그 목록만 넣는다. ⚠ 기획서·계약서는 날짜를 못 읽으면 통과한다(`doc_select.py:71-79`)",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period.from=380, conditions.location.city=254, conditions.location.venue_type=275, conditions.scale.store_count=380, conditions.derived.ip_history.prior_count=380, conditions.derived.competition.comp_within_500m_open=380",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "intervention.attributes.area_sqm": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 380,
+     "비결측(D1)": 21,
+     "결측률(D1)": 0.9447,
+     "값 가짓수": 18,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — 축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다",
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 18 (D1). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(entities.brand_key)의 더 이른 결과 관측이 있는 레코드 106 (D1=380)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "예",
+     "식3 근거": "코드 강제 시간 마스크 — `ingest/doc_select.is_pre_open()` 가 문서 날짜 ≤ `conditions.period.from` 만 통과시키고 `ingest/attr_tagger.build_user()` 가 그 목록만 넣는다. ⚠ 기획서·계약서는 날짜를 못 읽으면 통과한다(`doc_select.py:71-79`)",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period.from=380, conditions.location.city=254, conditions.location.venue_type=275, conditions.scale.store_count=380, conditions.derived.ip_history.prior_count=380, conditions.derived.competition.comp_within_500m_open=380",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "intervention.attributes.experience_density": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 380,
+     "비결측(D1)": 95,
+     "결측률(D1)": 0.75,
+     "값 가짓수": 5,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — 축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다",
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 5 (D1). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(entities.brand_key)의 더 이른 결과 관측이 있는 레코드 106 (D1=380)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "예",
+     "식3 근거": "코드 강제 시간 마스크 — `ingest/doc_select.is_pre_open()` 가 문서 날짜 ≤ `conditions.period.from` 만 통과시키고 `ingest/attr_tagger.build_user()` 가 그 목록만 넣는다. ⚠ 기획서·계약서는 날짜를 못 읽으면 통과한다(`doc_select.py:71-79`)",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period.from=380, conditions.location.city=254, conditions.location.venue_type=275, conditions.scale.store_count=380, conditions.derived.ip_history.prior_count=380, conditions.derived.competition.comp_within_500m_open=380",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "intervention.attributes.unit_minutes": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 380,
+     "비결측(D1)": 18,
+     "결측률(D1)": 0.9526,
+     "값 가짓수": 10,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — 축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다",
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 10 (D1). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(entities.brand_key)의 더 이른 결과 관측이 있는 레코드 106 (D1=380)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "예",
+     "식3 근거": "코드 강제 시간 마스크 — `ingest/doc_select.is_pre_open()` 가 문서 날짜 ≤ `conditions.period.from` 만 통과시키고 `ingest/attr_tagger.build_user()` 가 그 목록만 넣는다. ⚠ 기획서·계약서는 날짜를 못 읽으면 통과한다(`doc_select.py:71-79`)",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period.from=380, conditions.location.city=254, conditions.location.venue_type=275, conditions.scale.store_count=380, conditions.derived.ip_history.prior_count=380, conditions.derived.competition.comp_within_500m_open=380",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "intervention.attributes.throughput_units": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 380,
+     "비결측(D1)": 34,
+     "결측률(D1)": 0.9105,
+     "값 가짓수": 9,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — 축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다",
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 9 (D1). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(entities.brand_key)의 더 이른 결과 관측이 있는 레코드 106 (D1=380)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "예",
+     "식3 근거": "코드 강제 시간 마스크 — `ingest/doc_select.is_pre_open()` 가 문서 날짜 ≤ `conditions.period.from` 만 통과시키고 `ingest/attr_tagger.build_user()` 가 그 목록만 넣는다. ⚠ 기획서·계약서는 날짜를 못 읽으면 통과한다(`doc_select.py:71-79`)",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period.from=380, conditions.location.city=254, conditions.location.venue_type=275, conditions.scale.store_count=380, conditions.derived.ip_history.prior_count=380, conditions.derived.competition.comp_within_500m_open=380",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "intervention.attributes.collab_strength": {
+     "등급": "T2",
+     "형": "c",
+     "D1": 380,
+     "비결측(D1)": 95,
+     "결측률(D1)": 0.75,
+     "값 가짓수": 5,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — 축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다",
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 5 (D1). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(entities.brand_key)의 더 이른 결과 관측이 있는 레코드 106 (D1=380)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "예",
+     "식3 근거": "코드 강제 시간 마스크 — `ingest/doc_select.is_pre_open()` 가 문서 날짜 ≤ `conditions.period.from` 만 통과시키고 `ingest/attr_tagger.build_user()` 가 그 목록만 넣는다. ⚠ 기획서·계약서는 날짜를 못 읽으면 통과한다(`doc_select.py:71-79`)",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period.from=380, conditions.location.city=254, conditions.location.venue_type=275, conditions.scale.store_count=380, conditions.derived.ip_history.prior_count=380, conditions.derived.competition.comp_within_500m_open=380",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "intervention.attributes.venue_prominence": {
+     "등급": "T2",
+     "형": "c",
+     "D1": 380,
+     "비결측(D1)": 95,
+     "결측률(D1)": 0.75,
+     "값 가짓수": 5,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — 축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다",
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 5 (D1). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(entities.brand_key)의 더 이른 결과 관측이 있는 레코드 106 (D1=380)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "예",
+     "식3 근거": "코드 강제 시간 마스크 — `ingest/doc_select.is_pre_open()` 가 문서 날짜 ≤ `conditions.period.from` 만 통과시키고 `ingest/attr_tagger.build_user()` 가 그 목록만 넣는다. ⚠ 기획서·계약서는 날짜를 못 읽으면 통과한다(`doc_select.py:71-79`)",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period.from=380, conditions.location.city=254, conditions.location.venue_type=275, conditions.scale.store_count=380, conditions.derived.ip_history.prior_count=380, conditions.derived.competition.comp_within_500m_open=380",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "intervention.experience_elements": {
+     "등급": "T1",
+     "형": "l",
+     "D1": 380,
+     "비결측(D1)": 229,
+     "결측률(D1)": 0.3974,
+     "값 가짓수": 16,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — 축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다",
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 16 · 소수 쪽 196 (D1)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(entities.brand_key)의 더 이른 결과 관측이 있는 레코드 106 (D1=380)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): intervention.attr_meta.tagger=95, intervention.attr_meta.evidence=95, intervention.attr_meta.confidence=95, provenance.extracted_at=380, provenance.extracted_by=380",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period.from=380, conditions.location.city=254, conditions.location.venue_type=275, conditions.scale.store_count=380, conditions.derived.ip_history.prior_count=380, conditions.derived.competition.comp_within_500m_open=380",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "intervention.promotions": {
+     "등급": "T1",
+     "형": "l",
+     "D1": 380,
+     "비결측(D1)": 172,
+     "결측률(D1)": 0.5474,
+     "값 가짓수": 8,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — 축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다",
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 8 · 소수 쪽 123 (D1)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(entities.brand_key)의 더 이른 결과 관측이 있는 레코드 106 (D1=380)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): intervention.attr_meta.tagger=95, intervention.attr_meta.evidence=95, intervention.attr_meta.confidence=95, provenance.extracted_at=380, provenance.extracted_by=380",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period.from=380, conditions.location.city=254, conditions.location.venue_type=275, conditions.scale.store_count=380, conditions.derived.ip_history.prior_count=380, conditions.derived.competition.comp_within_500m_open=380",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "intervention.staging_tags": {
+     "등급": "T1",
+     "형": "l",
+     "D1": 380,
+     "비결측(D1)": 258,
+     "결측률(D1)": 0.3211,
+     "값 가짓수": 13,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — 축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다",
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 13 · 소수 쪽 198 (D1)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(entities.brand_key)의 더 이른 결과 관측이 있는 레코드 106 (D1=380)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): intervention.attr_meta.tagger=95, intervention.attr_meta.evidence=95, intervention.attr_meta.confidence=95, provenance.extracted_at=380, provenance.extracted_by=380",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period.from=380, conditions.location.city=254, conditions.location.venue_type=275, conditions.scale.store_count=380, conditions.derived.ip_history.prior_count=380, conditions.derived.competition.comp_within_500m_open=380",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "conditions.fee_structure.type": {
+     "등급": "T1",
+     "형": "b",
+     "D1": 380,
+     "비결측(D1)": 380,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 5,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — 축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다",
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 5 · 소수 쪽 227 (D1)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(entities.brand_key)의 더 이른 결과 관측이 있는 레코드 106 (D1=380)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): intervention.attr_meta.tagger=95, intervention.attr_meta.evidence=95, intervention.attr_meta.confidence=95, provenance.extracted_at=380, provenance.extracted_by=380",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period.from=380, conditions.location.city=254, conditions.location.venue_type=275, conditions.scale.store_count=380, conditions.derived.ip_history.prior_count=380, conditions.derived.competition.comp_within_500m_open=380",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "conditions.scale.store_count": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 380,
+     "비결측(D1)": 380,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 10,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — 축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다",
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 10 (D1). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(entities.brand_key)의 더 이른 결과 관측이 있는 레코드 106 (D1=380)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): intervention.attr_meta.tagger=95, intervention.attr_meta.evidence=95, intervention.attr_meta.confidence=95, provenance.extracted_at=380, provenance.extracted_by=380",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period.from=380, conditions.location.city=254, conditions.location.venue_type=275, conditions.scale.store_count=380, conditions.derived.ip_history.prior_count=380, conditions.derived.competition.comp_within_500m_open=380",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "conditions.area_pyeong": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 380,
+     "비결측(D1)": 48,
+     "결측률(D1)": 0.8737,
+     "값 가짓수": 38,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — 축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다",
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 38 (D1). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(entities.brand_key)의 더 이른 결과 관측이 있는 레코드 106 (D1=380)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): intervention.attr_meta.tagger=95, intervention.attr_meta.evidence=95, intervention.attr_meta.confidence=95, provenance.extracted_at=380, provenance.extracted_by=380",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period.from=380, conditions.location.city=254, conditions.location.venue_type=275, conditions.scale.store_count=380, conditions.derived.ip_history.prior_count=380, conditions.derived.competition.comp_within_500m_open=380",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "conditions.period.days": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 380,
+     "비결측(D1)": 346,
+     "결측률(D1)": 0.0895,
+     "값 가짓수": 41,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — 축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다",
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 41 (D1). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(entities.brand_key)의 더 이른 결과 관측이 있는 레코드 106 (D1=380)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): intervention.attr_meta.tagger=95, intervention.attr_meta.evidence=95, intervention.attr_meta.confidence=95, provenance.extracted_at=380, provenance.extracted_by=380",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period.from=380, conditions.location.city=254, conditions.location.venue_type=275, conditions.scale.store_count=380, conditions.derived.ip_history.prior_count=380, conditions.derived.competition.comp_within_500m_open=380",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "conditions.capacity.access_type": {
+     "등급": "T1",
+     "형": "b",
+     "D1": 380,
+     "비결측(D1)": 76,
+     "결측률(D1)": 0.8,
+     "값 가짓수": 5,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — 축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다",
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 5 · 소수 쪽 38 (D1)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(entities.brand_key)의 더 이른 결과 관측이 있는 레코드 106 (D1=380)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): intervention.attr_meta.tagger=95, intervention.attr_meta.evidence=95, intervention.attr_meta.confidence=95, provenance.extracted_at=380, provenance.extracted_by=380",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period.from=380, conditions.location.city=254, conditions.location.venue_type=275, conditions.scale.store_count=380, conditions.derived.ip_history.prior_count=380, conditions.derived.competition.comp_within_500m_open=380",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "conditions.location.venue_type": {
+     "등급": "T2",
+     "형": "b",
+     "D1": 380,
+     "비결측(D1)": 275,
+     "결측률(D1)": 0.2763,
+     "값 가짓수": 194,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — 축 파일이 없다(popup_v2.npz 경로) — 🔴 못 셌다",
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 194 · 소수 쪽 238 (D1)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(entities.brand_key)의 더 이른 결과 관측이 있는 레코드 106 (D1=380)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): intervention.attr_meta.tagger=95, intervention.attr_meta.evidence=95, intervention.attr_meta.confidence=95, provenance.extracted_at=380, provenance.extracted_by=380",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period.from=380, conditions.location.city=254, conditions.location.venue_type=275, conditions.scale.store_count=380, conditions.derived.ip_history.prior_count=380, conditions.derived.competition.comp_within_500m_open=380",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    }
+   },
+   "등급 요약": {
+    "A": [],
+    "B": [
+     "intervention.experience_elements",
+     "intervention.promotions",
+     "intervention.staging_tags",
+     "conditions.fee_structure.type",
+     "conditions.capacity.access_type",
+     "conditions.location.venue_type"
+    ],
+    "C": [
+     "intervention.attributes.entry_friction",
+     "intervention.attributes.goods_scale",
+     "intervention.attributes.media_push",
+     "intervention.attributes.target_breadth",
+     "intervention.attributes.photo_zones",
+     "intervention.attributes.giveaway_qty",
+     "intervention.attributes.staff_count",
+     "intervention.attributes.operating_hours_per_day",
+     "intervention.attributes.planned_operating_days",
+     "intervention.attributes.capacity_per_session",
+     "intervention.attributes.area_sqm",
+     "intervention.attributes.experience_density",
+     "intervention.attributes.unit_minutes",
+     "intervention.attributes.throughput_units",
+     "intervention.attributes.collab_strength",
+     "intervention.attributes.venue_prominence",
+     "conditions.scale.store_count",
+     "conditions.area_pyeong",
+     "conditions.period.days"
+    ]
+   }
+  },
+  "시장팝업": {
+   "원천": "data/market_records",
+   "D1": 647,
+   "D3 되짚기": true,
+   "D3 되짚은 레코드 수": 126,
+   "개입 값의 관측 시점 필드": {
+    "outcome.visitors_source_date": 426,
+    "outcome.sales_source_date": 121,
+    "ingested_from": 408,
+    "extraction_confidence": 647
+   },
+   "교란 후보(같은 레코드 열)": {
+    "conditions.period_from": 555,
+    "conditions.city": 644,
+    "conditions.venue_type": 645,
+    "conditions.multi_store": 612,
+    "conditions.derived.ip_history.prior_count": 555
+   },
+   "짝": {
+    "intervention.is_free_entry": {
+     "등급": "T1",
+     "형": "b",
+     "D1": 647,
+     "비결측(D1)": 274,
+     "결측률(D1)": 0.5765,
+     "값 가짓수": 2,
+     "D3(유보 채점행)": 126,
+     "비결측(D3)": 84,
+     "결측률(D3)": 0.3333,
+     "값 가짓수(D3)": 2,
+     "소수 쪽(D3 · 최빈 대 나머지)": 8,
+     "식1 처치/대조": "아니오",
+     "식1 근거": "값 가짓수 2 · 소수 쪽 8 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(brand)의 더 이른 결과 관측이 있는 레코드 62 (D1=647)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): outcome.visitors_source_date=426, outcome.sales_source_date=121, ingested_from=408, extraction_confidence=647",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period_from=555, conditions.city=644, conditions.venue_type=645, conditions.multi_store=612, conditions.derived.ip_history.prior_count=555",
+     "식5 도메인 안 변이": "아니오",
+     "등급(식별)": "C",
+     "W": [
+      "W1 대조군 없음",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "intervention.reservation_required": {
+     "등급": "T1",
+     "형": "b",
+     "D1": 647,
+     "비결측(D1)": 189,
+     "결측률(D1)": 0.7079,
+     "값 가짓수": 2,
+     "D3(유보 채점행)": 126,
+     "비결측(D3)": 58,
+     "결측률(D3)": 0.5397,
+     "값 가짓수(D3)": 2,
+     "소수 쪽(D3 · 최빈 대 나머지)": 25,
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 2 · 소수 쪽 25 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(brand)의 더 이른 결과 관측이 있는 레코드 62 (D1=647)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): outcome.visitors_source_date=426, outcome.sales_source_date=121, ingested_from=408, extraction_confidence=647",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period_from=555, conditions.city=644, conditions.venue_type=645, conditions.multi_store=612, conditions.derived.ip_history.prior_count=555",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "intervention.promotions": {
+     "등급": "T1",
+     "형": "l",
+     "D1": 647,
+     "비결측(D1)": 266,
+     "결측률(D1)": 0.5889,
+     "값 가짓수": 4,
+     "D3(유보 채점행)": 126,
+     "비결측(D3)": 79,
+     "결측률(D3)": 0.373,
+     "값 가짓수(D3)": 4,
+     "소수 쪽(D3 · 최빈 대 나머지)": 33,
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 4 · 소수 쪽 33 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(brand)의 더 이른 결과 관측이 있는 레코드 62 (D1=647)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): outcome.visitors_source_date=426, outcome.sales_source_date=121, ingested_from=408, extraction_confidence=647",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period_from=555, conditions.city=644, conditions.venue_type=645, conditions.multi_store=612, conditions.derived.ip_history.prior_count=555",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "intervention.experience_elements": {
+     "등급": "T1",
+     "형": "l",
+     "D1": 647,
+     "비결측(D1)": 389,
+     "결측률(D1)": 0.3988,
+     "값 가짓수": 7,
+     "D3(유보 채점행)": 126,
+     "비결측(D3)": 103,
+     "결측률(D3)": 0.1825,
+     "값 가짓수(D3)": 6,
+     "소수 쪽(D3 · 최빈 대 나머지)": 64,
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 6 · 소수 쪽 64 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(brand)의 더 이른 결과 관측이 있는 레코드 62 (D1=647)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): outcome.visitors_source_date=426, outcome.sales_source_date=121, ingested_from=408, extraction_confidence=647",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period_from=555, conditions.city=644, conditions.venue_type=645, conditions.multi_store=612, conditions.derived.ip_history.prior_count=555",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "conditions.multi_store": {
+     "등급": "T1",
+     "형": "b",
+     "D1": 647,
+     "비결측(D1)": 612,
+     "결측률(D1)": 0.0541,
+     "값 가짓수": 2,
+     "D3(유보 채점행)": 126,
+     "비결측(D3)": 118,
+     "결측률(D3)": 0.0635,
+     "값 가짓수(D3)": 2,
+     "소수 쪽(D3 · 최빈 대 나머지)": 7,
+     "식1 처치/대조": "아니오",
+     "식1 근거": "값 가짓수 2 · 소수 쪽 7 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(brand)의 더 이른 결과 관측이 있는 레코드 62 (D1=647)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): outcome.visitors_source_date=426, outcome.sales_source_date=121, ingested_from=408, extraction_confidence=647",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period_from=555, conditions.city=644, conditions.venue_type=645, conditions.multi_store=612, conditions.derived.ip_history.prior_count=555",
+     "식5 도메인 안 변이": "아니오",
+     "등급(식별)": "C",
+     "W": [
+      "W1 대조군 없음",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "conditions.area_pyeong": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 647,
+     "비결측(D1)": 14,
+     "결측률(D1)": 0.9784,
+     "값 가짓수": 10,
+     "D3(유보 채점행)": 126,
+     "비결측(D3)": 3,
+     "결측률(D3)": 0.9762,
+     "값 가짓수(D3)": 3,
+     "소수 쪽(D3 · 최빈 대 나머지)": 2,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 3 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(brand)의 더 이른 결과 관측이 있는 레코드 62 (D1=647)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): outcome.visitors_source_date=426, outcome.sales_source_date=121, ingested_from=408, extraction_confidence=647",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period_from=555, conditions.city=644, conditions.venue_type=645, conditions.multi_store=612, conditions.derived.ip_history.prior_count=555",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W6 표본 부족 — D3 비결측 3",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "conditions.derived.duration.days": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 647,
+     "비결측(D1)": 503,
+     "결측률(D1)": 0.2226,
+     "값 가짓수": 67,
+     "D3(유보 채점행)": 126,
+     "비결측(D3)": 126,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 26,
+     "소수 쪽(D3 · 최빈 대 나머지)": 113,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 26 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(brand)의 더 이른 결과 관측이 있는 레코드 62 (D1=647)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): outcome.visitors_source_date=426, outcome.sales_source_date=121, ingested_from=408, extraction_confidence=647",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period_from=555, conditions.city=644, conditions.venue_type=645, conditions.multi_store=612, conditions.derived.ip_history.prior_count=555",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "conditions.venue_type": {
+     "등급": "T2",
+     "형": "b",
+     "D1": 647,
+     "비결측(D1)": 645,
+     "결측률(D1)": 0.0031,
+     "값 가짓수": 5,
+     "D3(유보 채점행)": 126,
+     "비결측(D3)": 126,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 5,
+     "소수 쪽(D3 · 최빈 대 나머지)": 85,
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 5 · 소수 쪽 85 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(brand)의 더 이른 결과 관측이 있는 레코드 62 (D1=647)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): outcome.visitors_source_date=426, outcome.sales_source_date=121, ingested_from=408, extraction_confidence=647",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period_from=555, conditions.city=644, conditions.venue_type=645, conditions.multi_store=612, conditions.derived.ip_history.prior_count=555",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "ip_or_collab": {
+     "등급": "T2",
+     "형": "b",
+     "D1": 647,
+     "비결측(D1)": 539,
+     "결측률(D1)": 0.1669,
+     "값 가짓수": 434,
+     "D3(유보 채점행)": 126,
+     "비결측(D3)": 110,
+     "결측률(D3)": 0.127,
+     "값 가짓수(D3)": 106,
+     "소수 쪽(D3 · 최빈 대 나머지)": 107,
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 106 · 소수 쪽 107 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(brand)의 더 이른 결과 관측이 있는 레코드 62 (D1=647)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): outcome.visitors_source_date=426, outcome.sales_source_date=121, ingested_from=408, extraction_confidence=647",
+     "식4 교란 관측": "예",
+     "식4 근거": "conditions.period_from=555, conditions.city=644, conditions.venue_type=645, conditions.multi_store=612, conditions.derived.ip_history.prior_count=555",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    }
+   },
+   "등급 요약": {
+    "A": [],
+    "B": [
+     "intervention.reservation_required",
+     "intervention.promotions",
+     "intervention.experience_elements",
+     "conditions.venue_type",
+     "ip_or_collab"
+    ],
+    "C": [
+     "intervention.is_free_entry",
+     "conditions.multi_store",
+     "conditions.area_pyeong",
+     "conditions.derived.duration.days"
+    ]
+   }
+  },
+  "아이돌": {
+   "원천": "data/idol_records",
+   "D1": 282,
+   "D3 되짚기": false,
+   "D3 되짚은 레코드 수": null,
+   "개입 값의 관측 시점 필드": {
+    "ingested_from": 282,
+    "chodong_source_date": 192
+   },
+   "교란 후보(같은 레코드 열)": {
+    "debut_date": 274,
+    "agency": 239,
+    "member_count": 237
+   },
+   "짝": {
+    "member_count": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 282,
+     "비결측(D1)": 237,
+     "결측률(D1)": 0.1596,
+     "값 가짓수": 13,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — D2 != D4 — 챔피언 배선이 행을 넓힌다. 🔴 못 셌다",
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 13 (D1). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(agency)의 더 이른 결과 관측이 있는 레코드 25 (D1=282)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): ingested_from=282, chodong_source_date=192",
+     "식4 교란 관측": "예",
+     "식4 근거": "debut_date=274, agency=239, member_count=237",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "survival_show": {
+     "등급": "T1",
+     "형": "b",
+     "D1": 282,
+     "비결측(D1)": 95,
+     "결측률(D1)": 0.6631,
+     "값 가짓수": 85,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — D2 != D4 — 챔피언 배선이 행을 넓힌다. 🔴 못 셌다",
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 85 · 소수 쪽 91 (D1)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(agency)의 더 이른 결과 관측이 있는 레코드 25 (D1=282)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): ingested_from=282, chodong_source_date=192",
+     "식4 교란 관측": "예",
+     "식4 근거": "debut_date=274, agency=239, member_count=237",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "debut_album": {
+     "등급": "T2",
+     "형": "b",
+     "D1": 282,
+     "비결측(D1)": 269,
+     "결측률(D1)": 0.0461,
+     "값 가짓수": 262,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — D2 != D4 — 챔피언 배선이 행을 넓힌다. 🔴 못 셌다",
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 262 · 소수 쪽 267 (D1)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(agency)의 더 이른 결과 관측이 있는 레코드 25 (D1=282)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): ingested_from=282, chodong_source_date=192",
+     "식4 교란 관측": "예",
+     "식4 근거": "debut_date=274, agency=239, member_count=237",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "agency": {
+     "등급": "T2",
+     "형": "b",
+     "D1": 282,
+     "비결측(D1)": 239,
+     "결측률(D1)": 0.1525,
+     "값 가짓수": 205,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — D2 != D4 — 챔피언 배선이 행을 넓힌다. 🔴 못 셌다",
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 205 · 소수 쪽 235 (D1)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(agency)의 더 이른 결과 관측이 있는 레코드 25 (D1=282)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): ingested_from=282, chodong_source_date=192",
+     "식4 교란 관측": "예",
+     "식4 근거": "debut_date=274, agency=239, member_count=237",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "pre_debut_signals.showcase_scale": {
+     "등급": "T1",
+     "형": "b",
+     "D1": 282,
+     "비결측(D1)": 36,
+     "결측률(D1)": 0.8723,
+     "값 가짓수": 36,
+     "D3(유보 채점행)": null,
+     "🔴 D3 덮음": "못 셌다 — D2 != D4 — 챔피언 배선이 행을 넓힌다. 🔴 못 셌다",
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 36 · 소수 쪽 35 (D1)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(agency)의 더 이른 결과 관측이 있는 레코드 25 (D1=282)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): ingested_from=282, chodong_source_date=192",
+     "식4 교란 관측": "예",
+     "식4 근거": "debut_date=274, agency=239, member_count=237",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    }
+   },
+   "등급 요약": {
+    "A": [],
+    "B": [
+     "survival_show",
+     "debut_album",
+     "agency",
+     "pre_debut_signals.showcase_scale"
+    ],
+    "C": [
+     "member_count"
+    ]
+   }
+  },
+  "게임": {
+   "원천": "data/state/game_records.json",
+   "D1": 482,
+   "D3 되짚기": true,
+   "D3 되짚은 레코드 수": 180,
+   "개입 값의 관측 시점 필드": {
+    "source": 482,
+    "label_basis": 482
+   },
+   "교란 후보(같은 레코드 열)": {
+    "release_date": 482,
+    "publishers": 482,
+    "genres": 480,
+    "n_category": 482
+   },
+   "짝": {
+    "price_krw": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 482,
+     "비결측(D1)": 482,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 151,
+     "D3(유보 채점행)": 180,
+     "비결측(D3)": 180,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 86,
+     "소수 쪽(D3 · 최빈 대 나머지)": 155,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 86 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(publishers)의 더 이른 결과 관측이 있는 레코드 160 (D1=482)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): source=482, label_basis=482",
+     "식4 교란 관측": "예",
+     "식4 근거": "release_date=482, publishers=482, genres=480, n_category=482",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "is_free": {
+     "등급": "T1",
+     "형": "b",
+     "D1": 482,
+     "비결측(D1)": 482,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 2,
+     "D3(유보 채점행)": 180,
+     "비결측(D3)": 180,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 2,
+     "소수 쪽(D3 · 최빈 대 나머지)": 25,
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 2 · 소수 쪽 25 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(publishers)의 더 이른 결과 관측이 있는 레코드 160 (D1=482)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): source=482, label_basis=482",
+     "식4 교란 관측": "예",
+     "식4 근거": "release_date=482, publishers=482, genres=480, n_category=482",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "n_dlc": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 482,
+     "비결측(D1)": 482,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 55,
+     "D3(유보 채점행)": 180,
+     "비결측(D3)": 180,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 20,
+     "소수 쪽(D3 · 최빈 대 나머지)": 120,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 20 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(publishers)의 더 이른 결과 관측이 있는 레코드 160 (D1=482)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): source=482, label_basis=482",
+     "식4 교란 관측": "예",
+     "식4 근거": "release_date=482, publishers=482, genres=480, n_category=482",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "n_lang": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 482,
+     "비결측(D1)": 482,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 32,
+     "D3(유보 채점행)": 180,
+     "비결측(D3)": 180,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 27,
+     "소수 쪽(D3 · 최빈 대 나머지)": 161,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 27 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(publishers)의 더 이른 결과 관측이 있는 레코드 160 (D1=482)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): source=482, label_basis=482",
+     "식4 교란 관측": "예",
+     "식4 근거": "release_date=482, publishers=482, genres=480, n_category=482",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "n_platform": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 482,
+     "비결측(D1)": 482,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 3,
+     "D3(유보 채점행)": 180,
+     "비결측(D3)": 180,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 3,
+     "소수 쪽(D3 · 최빈 대 나머지)": 40,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 3 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(publishers)의 더 이른 결과 관측이 있는 레코드 160 (D1=482)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): source=482, label_basis=482",
+     "식4 교란 관측": "예",
+     "식4 근거": "release_date=482, publishers=482, genres=480, n_category=482",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "n_category": {
+     "등급": "T2",
+     "형": "c",
+     "D1": 482,
+     "비결측(D1)": 482,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 29,
+     "D3(유보 채점행)": 180,
+     "비결측(D3)": 180,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 26,
+     "소수 쪽(D3 · 최빈 대 나머지)": 161,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 26 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(publishers)의 더 이른 결과 관측이 있는 레코드 160 (D1=482)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): source=482, label_basis=482",
+     "식4 교란 관측": "예",
+     "식4 근거": "release_date=482, publishers=482, genres=480, n_category=482",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "publishers": {
+     "등급": "T2",
+     "형": "b",
+     "D1": 482,
+     "비결측(D1)": 482,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 4,
+     "D3(유보 채점행)": 180,
+     "비결측(D3)": 180,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 3,
+     "소수 쪽(D3 · 최빈 대 나머지)": 32,
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 3 · 소수 쪽 32 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(publishers)의 더 이른 결과 관측이 있는 레코드 160 (D1=482)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): source=482, label_basis=482",
+     "식4 교란 관측": "예",
+     "식4 근거": "release_date=482, publishers=482, genres=480, n_category=482",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "developers": {
+     "등급": "T2",
+     "형": "b",
+     "D1": 482,
+     "비결측(D1)": 482,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 10,
+     "D3(유보 채점행)": 180,
+     "비결측(D3)": 180,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 4,
+     "소수 쪽(D3 · 최빈 대 나머지)": 12,
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 4 · 소수 쪽 12 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(publishers)의 더 이른 결과 관측이 있는 레코드 160 (D1=482)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): source=482, label_basis=482",
+     "식4 교란 관측": "예",
+     "식4 근거": "release_date=482, publishers=482, genres=480, n_category=482",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "release_date": {
+     "등급": "T1",
+     "형": "d",
+     "D1": 482,
+     "비결측(D1)": 482,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 402,
+     "D3(유보 채점행)": 180,
+     "비결측(D3)": 180,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 141,
+     "소수 쪽(D3 · 최빈 대 나머지)": 175,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "날짜형 — 사전등록이 분할을 안 정했다",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(publishers)의 더 이른 결과 관측이 있는 레코드 160 (D1=482)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "예",
+     "식3 근거": "날짜 자체 — 결과 창이 이 날짜에 열린다(구조상 사전)",
+     "식4 교란 관측": "예",
+     "식4 근거": "release_date=482, publishers=482, genres=480, n_category=482",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    }
+   },
+   "등급 요약": {
+    "A": [],
+    "B": [
+     "is_free",
+     "publishers",
+     "developers"
+    ],
+    "C": [
+     "price_krw",
+     "n_dlc",
+     "n_lang",
+     "n_platform",
+     "n_category",
+     "release_date"
+    ]
+   }
+  },
+  "도서": {
+   "원천": "data/state/book_records.json",
+   "D1": 396,
+   "D3 되짚기": true,
+   "D3 되짚은 레코드 수": 163,
+   "개입 값의 관측 시점 필드": "없음",
+   "교란 후보(같은 레코드 열)": {
+    "pub_date": 396,
+    "publisher": 396,
+    "genre": 394,
+    "pages": 395
+   },
+   "짝": {
+    "price": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 396,
+     "비결측(D1)": 396,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 115,
+     "D3(유보 채점행)": 163,
+     "비결측(D3)": 163,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 36,
+     "소수 쪽(D3 · 최빈 대 나머지)": 139,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 36 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(publisher)의 더 이른 결과 관측이 있는 레코드 252 (D1=396)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): 없음",
+     "식4 교란 관측": "예",
+     "식4 근거": "pub_date=396, publisher=396, genre=394, pages=395",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "pages": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 396,
+     "비결측(D1)": 395,
+     "결측률(D1)": 0.0025,
+     "값 가짓수": 112,
+     "D3(유보 채점행)": 163,
+     "비결측(D3)": 163,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 89,
+     "소수 쪽(D3 · 최빈 대 나머지)": 156,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 89 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(publisher)의 더 이른 결과 관측이 있는 레코드 252 (D1=396)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): 없음",
+     "식4 교란 관측": "예",
+     "식4 근거": "pub_date=396, publisher=396, genre=394, pages=395",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "book_format": {
+     "등급": "T1",
+     "형": "b",
+     "D1": 396,
+     "비결측(D1)": 394,
+     "결측률(D1)": 0.0051,
+     "값 가짓수": 3,
+     "D3(유보 채점행)": 163,
+     "비결측(D3)": 162,
+     "결측률(D3)": 0.0061,
+     "값 가짓수(D3)": 2,
+     "소수 쪽(D3 · 최빈 대 나머지)": 31,
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 2 · 소수 쪽 31 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(publisher)의 더 이른 결과 관측이 있는 레코드 252 (D1=396)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): 없음",
+     "식4 교란 관측": "예",
+     "식4 근거": "pub_date=396, publisher=396, genre=394, pages=395",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "height_mm": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 396,
+     "비결측(D1)": 242,
+     "결측률(D1)": 0.3889,
+     "값 가짓수": 39,
+     "D3(유보 채점행)": 163,
+     "비결측(D3)": 163,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 31,
+     "소수 쪽(D3 · 최빈 대 나머지)": 135,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 31 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(publisher)의 더 이른 결과 관측이 있는 레코드 252 (D1=396)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): 없음",
+     "식4 교란 관측": "예",
+     "식4 근거": "pub_date=396, publisher=396, genre=394, pages=395",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "width_mm": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 396,
+     "비결측(D1)": 242,
+     "결측률(D1)": 0.3889,
+     "값 가짓수": 40,
+     "D3(유보 채점행)": 163,
+     "비결측(D3)": 163,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 33,
+     "소수 쪽(D3 · 최빈 대 나머지)": 130,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 33 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(publisher)의 더 이른 결과 관측이 있는 레코드 252 (D1=396)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): 없음",
+     "식4 교란 관측": "예",
+     "식4 근거": "pub_date=396, publisher=396, genre=394, pages=395",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "weight_g": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 396,
+     "비결측(D1)": 242,
+     "결측률(D1)": 0.3889,
+     "값 가짓수": 175,
+     "D3(유보 채점행)": 163,
+     "비결측(D3)": 163,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 126,
+     "소수 쪽(D3 · 최빈 대 나머지)": 159,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 126 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(publisher)의 더 이른 결과 관측이 있는 레코드 252 (D1=396)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): 없음",
+     "식4 교란 관측": "예",
+     "식4 근거": "pub_date=396, publisher=396, genre=394, pages=395",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "publisher": {
+     "등급": "T2",
+     "형": "b",
+     "D1": 396,
+     "비결측(D1)": 396,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 124,
+     "D3(유보 채점행)": 163,
+     "비결측(D3)": 163,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 100,
+     "소수 쪽(D3 · 최빈 대 나머지)": 155,
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 100 · 소수 쪽 155 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(publisher)의 더 이른 결과 관측이 있는 레코드 252 (D1=396)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): 없음",
+     "식4 교란 관측": "예",
+     "식4 근거": "pub_date=396, publisher=396, genre=394, pages=395",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "pub_date": {
+     "등급": "T1",
+     "형": "d",
+     "D1": 396,
+     "비결측(D1)": 396,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 237,
+     "D3(유보 채점행)": 163,
+     "비결측(D3)": 163,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 89,
+     "소수 쪽(D3 · 최빈 대 나머지)": 152,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "날짜형 — 사전등록이 분할을 안 정했다",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(publisher)의 더 이른 결과 관측이 있는 레코드 252 (D1=396)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "예",
+     "식3 근거": "날짜 자체 — 결과 창이 이 날짜에 열린다(구조상 사전)",
+     "식4 교란 관측": "예",
+     "식4 근거": "pub_date=396, publisher=396, genre=394, pages=395",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    }
+   },
+   "등급 요약": {
+    "A": [],
+    "B": [
+     "book_format",
+     "publisher"
+    ],
+    "C": [
+     "price",
+     "pages",
+     "height_mm",
+     "width_mm",
+     "weight_g",
+     "pub_date"
+    ]
+   }
+  },
+  "펀딩": {
+   "원천": "data/state/funding_records.json",
+   "D1": 2887,
+   "D3 되짚기": true,
+   "D3 되짚은 레코드 수": 529,
+   "개입 값의 관측 시점 필드": {
+    "_page": 2487
+   },
+   "교란 후보(같은 레코드 열)": {
+    "start_date": 2887,
+    "creator_uuid": 2865,
+    "category": 2887,
+    "n_reward": 2887
+   },
+   "짝": {
+    "min_price": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 2887,
+     "비결측(D1)": 2887,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 385,
+     "D3(유보 채점행)": 529,
+     "비결측(D3)": 529,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 184,
+     "소수 쪽(D3 · 최빈 대 나머지)": 485,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 184 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(creator_uuid)의 더 이른 결과 관측이 있는 레코드 408 (D1=2887)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): _page=2487",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=2887, creator_uuid=2865, category=2887, n_reward=2887",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "max_price": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 2887,
+     "비결측(D1)": 2887,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 718,
+     "D3(유보 채점행)": 529,
+     "비결측(D3)": 529,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 287,
+     "소수 쪽(D3 · 최빈 대 나머지)": 517,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 287 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(creator_uuid)의 더 이른 결과 관측이 있는 레코드 408 (D1=2887)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): _page=2487",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=2887, creator_uuid=2865, category=2887, n_reward=2887",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "n_reward": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 2887,
+     "비결측(D1)": 2887,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 38,
+     "D3(유보 채점행)": 529,
+     "비결측(D3)": 529,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 27,
+     "소수 쪽(D3 · 최빈 대 나머지)": 458,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 27 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(creator_uuid)의 더 이른 결과 관측이 있는 레코드 408 (D1=2887)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): _page=2487",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=2887, creator_uuid=2865, category=2887, n_reward=2887",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "n_delivery": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 2887,
+     "비결측(D1)": 2887,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 35,
+     "D3(유보 채점행)": 529,
+     "비결측(D3)": 529,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 23,
+     "소수 쪽(D3 · 최빈 대 나머지)": 404,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 23 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(creator_uuid)의 더 이른 결과 관측이 있는 레코드 408 (D1=2887)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): _page=2487",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=2887, creator_uuid=2865, category=2887, n_reward=2887",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "n_unlimited": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 2887,
+     "비결측(D1)": 2887,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 30,
+     "D3(유보 채점행)": 529,
+     "비결측(D3)": 529,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 22,
+     "소수 쪽(D3 · 최빈 대 나머지)": 433,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 22 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(creator_uuid)의 더 이른 결과 관측이 있는 레코드 408 (D1=2887)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): _page=2487",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=2887, creator_uuid=2865, category=2887, n_reward=2887",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "unlimited_ratio": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 2887,
+     "비결측(D1)": 2887,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 107,
+     "D3(유보 채점행)": 529,
+     "비결측(D3)": 529,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 69,
+     "소수 쪽(D3 · 최빈 대 나머지)": 412,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 69 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(creator_uuid)의 더 이른 결과 관측이 있는 레코드 408 (D1=2887)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): _page=2487",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=2887, creator_uuid=2865, category=2887, n_reward=2887",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "adult_only": {
+     "등급": "T1",
+     "형": "b",
+     "D1": 2887,
+     "비결측(D1)": 2887,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 2,
+     "D3(유보 채점행)": 529,
+     "비결측(D3)": 529,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 2,
+     "소수 쪽(D3 · 최빈 대 나머지)": 11,
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 2 · 소수 쪽 11 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(creator_uuid)의 더 이른 결과 관측이 있는 레코드 408 (D1=2887)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): _page=2487",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=2887, creator_uuid=2865, category=2887, n_reward=2887",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "category": {
+     "등급": "T2",
+     "형": "b",
+     "D1": 2887,
+     "비결측(D1)": 2887,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 21,
+     "D3(유보 채점행)": 529,
+     "비결측(D3)": 529,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 21,
+     "소수 쪽(D3 · 최빈 대 나머지)": 408,
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 21 · 소수 쪽 408 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(creator_uuid)의 더 이른 결과 관측이 있는 레코드 408 (D1=2887)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): _page=2487",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=2887, creator_uuid=2865, category=2887, n_reward=2887",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "creator": {
+     "등급": "T2",
+     "형": "b",
+     "D1": 2887,
+     "비결측(D1)": 2887,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 2452,
+     "D3(유보 채점행)": 529,
+     "비결측(D3)": 529,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 457,
+     "소수 쪽(D3 · 최빈 대 나머지)": 522,
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 457 · 소수 쪽 522 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(creator_uuid)의 더 이른 결과 관측이 있는 레코드 408 (D1=2887)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): _page=2487",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=2887, creator_uuid=2865, category=2887, n_reward=2887",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "start_date": {
+     "등급": "T1",
+     "형": "d",
+     "D1": 2887,
+     "비결측(D1)": 2887,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 1846,
+     "D3(유보 채점행)": 529,
+     "비결측(D3)": 529,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 322,
+     "소수 쪽(D3 · 최빈 대 나머지)": 523,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "날짜형 — 사전등록이 분할을 안 정했다",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(creator_uuid)의 더 이른 결과 관측이 있는 레코드 408 (D1=2887)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "예",
+     "식3 근거": "날짜 자체 — 결과 창이 이 날짜에 열린다(구조상 사전)",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=2887, creator_uuid=2865, category=2887, n_reward=2887",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "end_date": {
+     "등급": "T1",
+     "형": "d",
+     "D1": 2887,
+     "비결측(D1)": 2887,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 1891,
+     "D3(유보 채점행)": 529,
+     "비결측(D3)": 529,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 333,
+     "소수 쪽(D3 · 최빈 대 나머지)": 519,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "날짜형 — 사전등록이 분할을 안 정했다",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(creator_uuid)의 더 이른 결과 관측이 있는 레코드 408 (D1=2887)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "예",
+     "식3 근거": "날짜 자체 — 결과 창이 이 날짜에 열린다(구조상 사전)",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=2887, creator_uuid=2865, category=2887, n_reward=2887",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    }
+   },
+   "등급 요약": {
+    "A": [],
+    "B": [
+     "adult_only",
+     "category",
+     "creator"
+    ],
+    "C": [
+     "min_price",
+     "max_price",
+     "n_reward",
+     "n_delivery",
+     "n_unlimited",
+     "unlimited_ratio",
+     "start_date",
+     "end_date"
+    ]
+   }
+  },
+  "웹툰": {
+   "원천": "data/state/webtoon_records.json",
+   "D1": 3652,
+   "D3 되짚기": true,
+   "D3 되짚은 레코드 수": 650,
+   "개입 값의 관측 시점 필드": "없음",
+   "교란 후보(같은 레코드 열)": {
+    "start_date": 3652,
+    "artists": 3652,
+    "n_tag": 3652,
+    "age_type": 3652
+   },
+   "짝": {
+    "daily_pass": {
+     "등급": "T1",
+     "형": "b",
+     "D1": 3652,
+     "비결측(D1)": 3652,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 2,
+     "D3(유보 채점행)": 650,
+     "비결측(D3)": 650,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 2,
+     "소수 쪽(D3 · 최빈 대 나머지)": 101,
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 2 · 소수 쪽 101 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(artists)의 더 이른 결과 관측이 있는 레코드 1474 (D1=3652)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): 없음",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=3652, artists=3652, n_tag=3652, age_type=3652",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "n_day": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 3652,
+     "비결측(D1)": 3652,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 7,
+     "D3(유보 채점행)": 650,
+     "비결측(D3)": 650,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 4,
+     "소수 쪽(D3 · 최빈 대 나머지)": 24,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 4 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(artists)의 더 이른 결과 관측이 있는 레코드 1474 (D1=3652)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): 없음",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=3652, artists=3652, n_tag=3652, age_type=3652",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "n_episode": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 3652,
+     "비결측(D1)": 3652,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 349,
+     "D3(유보 채점행)": 650,
+     "비결측(D3)": 650,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 89,
+     "소수 쪽(D3 · 최빈 대 나머지)": 629,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 89 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(artists)의 더 이른 결과 관측이 있는 레코드 1474 (D1=3652)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "아니오",
+     "식3 근거": "🔴 결과 창이 열린 뒤에도 자란다(수집 시점 스냅숏) — 결과와 동시 결정",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=3652, artists=3652, n_tag=3652, age_type=3652",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W7 역인과 — 결과 창이 열린 뒤에도 자라는 값이다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "n_tag": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 3652,
+     "비결측(D1)": 3652,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 28,
+     "D3(유보 채점행)": 650,
+     "비결측(D3)": 650,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 26,
+     "소수 쪽(D3 · 최빈 대 나머지)": 548,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 26 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(artists)의 더 이른 결과 관측이 있는 레코드 1474 (D1=3652)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): 없음",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=3652, artists=3652, n_tag=3652, age_type=3652",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "n_artist": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 3652,
+     "비결측(D1)": 3652,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 5,
+     "D3(유보 채점행)": 650,
+     "비결측(D3)": 650,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 4,
+     "소수 쪽(D3 · 최빈 대 나머지)": 285,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 4 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(artists)의 더 이른 결과 관측이 있는 레코드 1474 (D1=3652)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): 없음",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=3652, artists=3652, n_tag=3652, age_type=3652",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "level": {
+     "등급": "T2",
+     "형": "b",
+     "D1": 3652,
+     "비결측(D1)": 3652,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 1,
+     "D3(유보 채점행)": 650,
+     "비결측(D3)": 650,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 1,
+     "소수 쪽(D3 · 최빈 대 나머지)": 0,
+     "식1 처치/대조": "아니오",
+     "식1 근거": "값 가짓수 1 · 소수 쪽 0 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(artists)의 더 이른 결과 관측이 있는 레코드 1474 (D1=3652)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): 없음",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=3652, artists=3652, n_tag=3652, age_type=3652",
+     "식5 도메인 안 변이": "아니오",
+     "등급(식별)": "C",
+     "W": [
+      "W1 대조군 없음",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "artists": {
+     "등급": "T2",
+     "형": "b",
+     "D1": 3652,
+     "비결측(D1)": 3652,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 5,
+     "D3(유보 채점행)": 650,
+     "비결측(D3)": 650,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 4,
+     "소수 쪽(D3 · 최빈 대 나머지)": 285,
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 4 · 소수 쪽 285 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(artists)의 더 이른 결과 관측이 있는 레코드 1474 (D1=3652)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): 없음",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=3652, artists=3652, n_tag=3652, age_type=3652",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "start_date": {
+     "등급": "T1",
+     "형": "d",
+     "D1": 3652,
+     "비결측(D1)": 3652,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 2548,
+     "D3(유보 채점행)": 650,
+     "비결측(D3)": 650,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 467,
+     "소수 쪽(D3 · 최빈 대 나머지)": 646,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "날짜형 — 사전등록이 분할을 안 정했다",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(artists)의 더 이른 결과 관측이 있는 레코드 1474 (D1=3652)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "예",
+     "식3 근거": "날짜 자체 — 결과 창이 이 날짜에 열린다(구조상 사전)",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=3652, artists=3652, n_tag=3652, age_type=3652",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    }
+   },
+   "등급 요약": {
+    "A": [],
+    "B": [
+     "daily_pass",
+     "artists"
+    ],
+    "C": [
+     "n_day",
+     "n_episode",
+     "n_tag",
+     "n_artist",
+     "level",
+     "start_date"
+    ]
+   }
+  },
+  "애니": {
+   "원천": "data/state/anime_records.json",
+   "D1": 3385,
+   "D3 되짚기": true,
+   "D3 되짚은 레코드 수": 606,
+   "개입 값의 관측 시점 필드": "없음",
+   "교란 후보(같은 레코드 열)": {
+    "start_date": 3385,
+    "production": 2474,
+    "genres": 3219,
+    "medium": 3385
+   },
+   "짝": {
+    "is_free": {
+     "등급": "T1",
+     "형": "b",
+     "D1": 3385,
+     "비결측(D1)": 3385,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 2,
+     "D3(유보 채점행)": 606,
+     "비결측(D3)": 606,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 2,
+     "소수 쪽(D3 · 최빈 대 나머지)": 60,
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 2 · 소수 쪽 60 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(production)의 더 이른 결과 관측이 있는 레코드 2098 (D1=3385)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): 없음",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=3385, production=2474, genres=3219, medium=3385",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "is_dubbed": {
+     "등급": "T1",
+     "형": "b",
+     "D1": 3385,
+     "비결측(D1)": 3385,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 2,
+     "D3(유보 채점행)": 606,
+     "비결측(D3)": 606,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 2,
+     "소수 쪽(D3 · 최빈 대 나머지)": 130,
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 2 · 소수 쪽 130 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(production)의 더 이른 결과 관측이 있는 레코드 2098 (D1=3385)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): 없음",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=3385, production=2474, genres=3219, medium=3385",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "is_only": {
+     "등급": "T1",
+     "형": "b",
+     "D1": 3385,
+     "비결측(D1)": 3385,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 2,
+     "D3(유보 채점행)": 606,
+     "비결측(D3)": 606,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 2,
+     "소수 쪽(D3 · 최빈 대 나머지)": 30,
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 2 · 소수 쪽 30 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(production)의 더 이른 결과 관측이 있는 레코드 2098 (D1=3385)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): 없음",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=3385, production=2474, genres=3219, medium=3385",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "price": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 3385,
+     "비결측(D1)": 3385,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 28,
+     "D3(유보 채점행)": 606,
+     "비결측(D3)": 606,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 12,
+     "소수 쪽(D3 · 최빈 대 나머지)": 137,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 12 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(production)의 더 이른 결과 관측이 있는 레코드 2098 (D1=3385)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): 없음",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=3385, production=2474, genres=3219, medium=3385",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "n_episode": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 3385,
+     "비결측(D1)": 3385,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 92,
+     "D3(유보 채점행)": 606,
+     "비결측(D3)": 606,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 51,
+     "소수 쪽(D3 · 최빈 대 나머지)": 416,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 51 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(production)의 더 이른 결과 관측이 있는 레코드 2098 (D1=3385)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): 없음",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=3385, production=2474, genres=3219, medium=3385",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "n_tag": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 3385,
+     "비결측(D1)": 3385,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 19,
+     "D3(유보 채점행)": 606,
+     "비결측(D3)": 606,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 17,
+     "소수 쪽(D3 · 최빈 대 나머지)": 474,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 17 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(production)의 더 이른 결과 관측이 있는 레코드 2098 (D1=3385)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): 없음",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=3385, production=2474, genres=3219, medium=3385",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "is_original": {
+     "등급": "T2",
+     "형": "b",
+     "D1": 3385,
+     "비결측(D1)": 3385,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 2,
+     "D3(유보 채점행)": 606,
+     "비결측(D3)": 606,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 2,
+     "소수 쪽(D3 · 최빈 대 나머지)": 9,
+     "식1 처치/대조": "아니오",
+     "식1 근거": "값 가짓수 2 · 소수 쪽 9 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(production)의 더 이른 결과 관측이 있는 레코드 2098 (D1=3385)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): 없음",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=3385, production=2474, genres=3219, medium=3385",
+     "식5 도메인 안 변이": "아니오",
+     "등급(식별)": "C",
+     "W": [
+      "W1 대조군 없음",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "production": {
+     "등급": "T2",
+     "형": "b",
+     "D1": 3385,
+     "비결측(D1)": 2474,
+     "결측률(D1)": 0.2691,
+     "값 가짓수": 300,
+     "D3(유보 채점행)": 606,
+     "비결측(D3)": 119,
+     "결측률(D3)": 0.8036,
+     "값 가짓수(D3)": 55,
+     "소수 쪽(D3 · 최빈 대 나머지)": 108,
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 55 · 소수 쪽 108 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(production)의 더 이른 결과 관측이 있는 레코드 2098 (D1=3385)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): 없음",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=3385, production=2474, genres=3219, medium=3385",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    }
+   },
+   "등급 요약": {
+    "A": [],
+    "B": [
+     "is_free",
+     "is_dubbed",
+     "is_only",
+     "production"
+    ],
+    "C": [
+     "price",
+     "n_episode",
+     "n_tag",
+     "is_original"
+    ]
+   }
+  },
+  "모바일": {
+   "원천": "data/state/mobile_records.json",
+   "D1": 2000,
+   "D3 되짚기": true,
+   "D3 되짚은 레코드 수": 441,
+   "개입 값의 관측 시점 필드": {
+    "updated": 2000
+   },
+   "교란 후보(같은 레코드 열)": {
+    "release_date": 2000,
+    "artist_id": 2000,
+    "genres": 2000,
+    "size_mb": 2000
+   },
+   "짝": {
+    "price": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 2000,
+     "비결측(D1)": 2000,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 42,
+     "D3(유보 채점행)": 441,
+     "비결측(D3)": 441,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 19,
+     "소수 쪽(D3 · 최빈 대 나머지)": 85,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 19 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(artist_id)의 더 이른 결과 관측이 있는 레코드 722 (D1=2000)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): updated=2000",
+     "식4 교란 관측": "예",
+     "식4 근거": "release_date=2000, artist_id=2000, genres=2000, size_mb=2000",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "n_lang": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 2000,
+     "비결측(D1)": 2000,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 57,
+     "D3(유보 채점행)": 441,
+     "비결측(D3)": 441,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 34,
+     "소수 쪽(D3 · 최빈 대 나머지)": 308,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 34 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(artist_id)의 더 이른 결과 관측이 있는 레코드 722 (D1=2000)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): updated=2000",
+     "식4 교란 관측": "예",
+     "식4 근거": "release_date=2000, artist_id=2000, genres=2000, size_mb=2000",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "n_device": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 2000,
+     "비결측(D1)": 2000,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 18,
+     "D3(유보 채점행)": 441,
+     "비결측(D3)": 441,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 4,
+     "소수 쪽(D3 · 최빈 대 나머지)": 10,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 4 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(artist_id)의 더 이른 결과 관측이 있는 레코드 722 (D1=2000)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): updated=2000",
+     "식4 교란 관측": "예",
+     "식4 근거": "release_date=2000, artist_id=2000, genres=2000, size_mb=2000",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "n_shot": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 2000,
+     "비결측(D1)": 2000,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 19,
+     "D3(유보 채점행)": 441,
+     "비결측(D3)": 441,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 2,
+     "소수 쪽(D3 · 최빈 대 나머지)": 5,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 2 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(artist_id)의 더 이른 결과 관측이 있는 레코드 722 (D1=2000)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): updated=2000",
+     "식4 교란 관측": "예",
+     "식4 근거": "release_date=2000, artist_id=2000, genres=2000, size_mb=2000",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "size_mb": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 2000,
+     "비결측(D1)": 2000,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 1803,
+     "D3(유보 채점행)": 441,
+     "비결측(D3)": 441,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 432,
+     "소수 쪽(D3 · 최빈 대 나머지)": 439,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 432 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(artist_id)의 더 이른 결과 관측이 있는 레코드 722 (D1=2000)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): updated=2000",
+     "식4 교란 관측": "예",
+     "식4 근거": "release_date=2000, artist_id=2000, genres=2000, size_mb=2000",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "n_genre": {
+     "등급": "T2",
+     "형": "c",
+     "D1": 2000,
+     "비결측(D1)": 2000,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 4,
+     "D3(유보 채점행)": 441,
+     "비결측(D3)": 441,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 4,
+     "소수 쪽(D3 · 최빈 대 나머지)": 185,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 4 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(artist_id)의 더 이른 결과 관측이 있는 레코드 722 (D1=2000)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): updated=2000",
+     "식4 교란 관측": "예",
+     "식4 근거": "release_date=2000, artist_id=2000, genres=2000, size_mb=2000",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "artist": {
+     "등급": "T2",
+     "형": "b",
+     "D1": 2000,
+     "비결측(D1)": 2000,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 1259,
+     "D3(유보 채점행)": 441,
+     "비결측(D3)": 441,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 358,
+     "소수 쪽(D3 · 최빈 대 나머지)": 432,
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 358 · 소수 쪽 432 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(artist_id)의 더 이른 결과 관측이 있는 레코드 722 (D1=2000)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): updated=2000",
+     "식4 교란 관측": "예",
+     "식4 근거": "release_date=2000, artist_id=2000, genres=2000, size_mb=2000",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "release_date": {
+     "등급": "T1",
+     "형": "d",
+     "D1": 2000,
+     "비결측(D1)": 2000,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 1481,
+     "D3(유보 채점행)": 441,
+     "비결측(D3)": 441,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 281,
+     "소수 쪽(D3 · 최빈 대 나머지)": 430,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "날짜형 — 사전등록이 분할을 안 정했다",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(artist_id)의 더 이른 결과 관측이 있는 레코드 722 (D1=2000)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "예",
+     "식3 근거": "날짜 자체 — 결과 창이 이 날짜에 열린다(구조상 사전)",
+     "식4 교란 관측": "예",
+     "식4 근거": "release_date=2000, artist_id=2000, genres=2000, size_mb=2000",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    }
+   },
+   "등급 요약": {
+    "A": [],
+    "B": [
+     "artist"
+    ],
+    "C": [
+     "price",
+     "n_lang",
+     "n_device",
+     "n_shot",
+     "size_mb",
+     "n_genre",
+     "release_date"
+    ]
+   }
+  },
+  "만화": {
+   "원천": "data/state/manga_records.json",
+   "D1": 7982,
+   "D3 되짚기": true,
+   "D3 되짚은 레코드 수": 258,
+   "개입 값의 관측 시점 필드": "없음",
+   "교란 후보(같은 레코드 열)": {
+    "start_date": 7982,
+    "authors": 7974,
+    "genres": 7924,
+    "country": 7982
+   },
+   "짝": {
+    "n_chapter": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 7982,
+     "비결측(D1)": 5884,
+     "결측률(D1)": 0.2628,
+     "값 가짓수": 383,
+     "D3(유보 채점행)": 258,
+     "비결측(D3)": 55,
+     "결측률(D3)": 0.7868,
+     "값 가짓수(D3)": 31,
+     "소수 쪽(D3 · 최빈 대 나머지)": 48,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 31 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(authors)의 더 이른 결과 관측이 있는 레코드 2487 (D1=7982)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "아니오",
+     "식3 근거": "🔴 결과 창이 열린 뒤에도 자란다(수집 시점 스냅숏) — 결과와 동시 결정",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=7982, authors=7974, genres=7924, country=7982",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W7 역인과 — 결과 창이 열린 뒤에도 자라는 값이다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "n_volume": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 7982,
+     "비결측(D1)": 4250,
+     "결측률(D1)": 0.4676,
+     "값 가짓수": 59,
+     "D3(유보 채점행)": 258,
+     "비결측(D3)": 44,
+     "결측률(D3)": 0.8295,
+     "값 가짓수(D3)": 6,
+     "소수 쪽(D3 · 최빈 대 나머지)": 25,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 6 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(authors)의 더 이른 결과 관측이 있는 레코드 2487 (D1=7982)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "아니오",
+     "식3 근거": "🔴 결과 창이 열린 뒤에도 자란다(수집 시점 스냅숏) — 결과와 동시 결정",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=7982, authors=7974, genres=7924, country=7982",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W7 역인과 — 결과 창이 열린 뒤에도 자라는 값이다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "n_tag": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 7982,
+     "비결측(D1)": 7982,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 53,
+     "D3(유보 채점행)": 258,
+     "비결측(D3)": 258,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 20,
+     "소수 쪽(D3 · 최빈 대 나머지)": 220,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 20 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(authors)의 더 이른 결과 관측이 있는 레코드 2487 (D1=7982)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): 없음",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=7982, authors=7974, genres=7924, country=7982",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "format": {
+     "등급": "T2",
+     "형": "b",
+     "D1": 7982,
+     "비결측(D1)": 7982,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 3,
+     "D3(유보 채점행)": 258,
+     "비결측(D3)": 258,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 3,
+     "소수 쪽(D3 · 최빈 대 나머지)": 8,
+     "식1 처치/대조": "아니오",
+     "식1 근거": "값 가짓수 3 · 소수 쪽 8 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(authors)의 더 이른 결과 관측이 있는 레코드 2487 (D1=7982)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): 없음",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=7982, authors=7974, genres=7924, country=7982",
+     "식5 도메인 안 변이": "아니오",
+     "등급(식별)": "C",
+     "W": [
+      "W1 대조군 없음",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "authors": {
+     "등급": "T2",
+     "형": "b",
+     "D1": 7982,
+     "비결측(D1)": 7974,
+     "결측률(D1)": 0.001,
+     "값 가짓수": 8,
+     "D3(유보 채점행)": 258,
+     "비결측(D3)": 257,
+     "결측률(D3)": 0.0039,
+     "값 가짓수(D3)": 5,
+     "소수 쪽(D3 · 최빈 대 나머지)": 108,
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 5 · 소수 쪽 108 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(authors)의 더 이른 결과 관측이 있는 레코드 2487 (D1=7982)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): 없음",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=7982, authors=7974, genres=7924, country=7982",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "start_date": {
+     "등급": "T1",
+     "형": "d",
+     "D1": 7982,
+     "비결측(D1)": 7982,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 4623,
+     "D3(유보 채점행)": 258,
+     "비결측(D3)": 258,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 183,
+     "소수 쪽(D3 · 최빈 대 나머지)": 253,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "날짜형 — 사전등록이 분할을 안 정했다",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(authors)의 더 이른 결과 관측이 있는 레코드 2487 (D1=7982)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "예",
+     "식3 근거": "날짜 자체 — 결과 창이 이 날짜에 열린다(구조상 사전)",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=7982, authors=7974, genres=7924, country=7982",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    }
+   },
+   "등급 요약": {
+    "A": [],
+    "B": [
+     "authors"
+    ],
+    "C": [
+     "n_chapter",
+     "n_volume",
+     "n_tag",
+     "format",
+     "start_date"
+    ]
+   }
+  },
+  "세계애니": {
+   "원천": "data/state/wanime_records.json",
+   "D1": 2988,
+   "D3 되짚기": true,
+   "D3 되짚은 레코드 수": 300,
+   "개입 값의 관측 시점 필드": {
+    "source": 2986
+   },
+   "교란 후보(같은 레코드 열)": {
+    "start_date": 2988,
+    "studio_name": 2956,
+    "genres": 2988,
+    "country": 2988
+   },
+   "짝": {
+    "n_episode": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 2988,
+     "비결측(D1)": 2958,
+     "결측률(D1)": 0.01,
+     "값 가짓수": 99,
+     "D3(유보 채점행)": 300,
+     "비결측(D3)": 273,
+     "결측률(D3)": 0.09,
+     "값 가짓수(D3)": 21,
+     "소수 쪽(D3 · 최빈 대 나머지)": 118,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 21 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(studio_name)의 더 이른 결과 관측이 있는 레코드 2691 (D1=2988)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): source=2986",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=2988, studio_name=2956, genres=2988, country=2988",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "duration": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 2988,
+     "비결측(D1)": 2965,
+     "결측률(D1)": 0.0077,
+     "값 가짓수": 127,
+     "D3(유보 채점행)": 300,
+     "비결측(D3)": 277,
+     "결측률(D3)": 0.0767,
+     "값 가짓수(D3)": 24,
+     "소수 쪽(D3 · 최빈 대 나머지)": 78,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 24 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(studio_name)의 더 이른 결과 관측이 있는 레코드 2691 (D1=2988)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): source=2986",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=2988, studio_name=2956, genres=2988, country=2988",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "n_tag": {
+     "등급": "T1",
+     "형": "c",
+     "D1": 2988,
+     "비결측(D1)": 2988,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 50,
+     "D3(유보 채점행)": 300,
+     "비결측(D3)": 300,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 34,
+     "소수 쪽(D3 · 최빈 대 나머지)": 275,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "🔴 사전등록 결함 — 「소수 쪽 10행」 규칙이 연속형에 정의가 없다. 값 가짓수 34 (D3). 보조(판정 미사용): 중앙값 분할 가능",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(studio_name)의 더 이른 결과 관측이 있는 레코드 2691 (D1=2988)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): source=2986",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=2988, studio_name=2956, genres=2988, country=2988",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "format": {
+     "등급": "T2",
+     "형": "b",
+     "D1": 2988,
+     "비결측(D1)": 2987,
+     "결측률(D1)": 0.0003,
+     "값 가짓수": 7,
+     "D3(유보 채점행)": 300,
+     "비결측(D3)": 299,
+     "결측률(D3)": 0.0033,
+     "값 가짓수(D3)": 6,
+     "소수 쪽(D3 · 최빈 대 나머지)": 70,
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 6 · 소수 쪽 70 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(studio_name)의 더 이른 결과 관측이 있는 레코드 2691 (D1=2988)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): source=2986",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=2988, studio_name=2956, genres=2988, country=2988",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "studios": {
+     "등급": "T2",
+     "형": "b",
+     "D1": 2988,
+     "비결측(D1)": 2956,
+     "결측률(D1)": 0.0107,
+     "값 가짓수": 7,
+     "D3(유보 채점행)": 300,
+     "비결측(D3)": 299,
+     "결측률(D3)": 0.0033,
+     "값 가짓수(D3)": 4,
+     "소수 쪽(D3 · 최빈 대 나머지)": 29,
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 4 · 소수 쪽 29 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(studio_name)의 더 이른 결과 관측이 있는 레코드 2691 (D1=2988)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): source=2986",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=2988, studio_name=2956, genres=2988, country=2988",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "start_date": {
+     "등급": "T1",
+     "형": "d",
+     "D1": 2988,
+     "비결측(D1)": 2988,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 1711,
+     "D3(유보 채점행)": 300,
+     "비결측(D3)": 300,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 123,
+     "소수 쪽(D3 · 최빈 대 나머지)": 289,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "날짜형 — 사전등록이 분할을 안 정했다",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(studio_name)의 더 이른 결과 관측이 있는 레코드 2691 (D1=2988)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "예",
+     "식3 근거": "날짜 자체 — 결과 창이 이 날짜에 열린다(구조상 사전)",
+     "식4 교란 관측": "예",
+     "식4 근거": "start_date=2988, studio_name=2956, genres=2988, country=2988",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    }
+   },
+   "등급 요약": {
+    "A": [],
+    "B": [
+     "format",
+     "studios"
+    ],
+    "C": [
+     "n_episode",
+     "duration",
+     "n_tag",
+     "start_date"
+    ]
+   }
+  },
+  "영화": {
+   "원천": "data/ingest/kobis/axes_raw_897.jsonl",
+   "D1": 897,
+   "D3 되짚기": true,
+   "D3 되짚은 레코드 수": 406,
+   "개입 값의 관측 시점 필드": {
+    "첫 관측일": 897
+   },
+   "교란 후보(같은 레코드 열)": {
+    "개봉일": 897,
+    "배급사": 886,
+    "장르": 887,
+    "국적 후보": 883
+   },
+   "짝": {
+    "배급사": {
+     "등급": "T2",
+     "형": "b",
+     "D1": 897,
+     "비결측(D1)": 886,
+     "결측률(D1)": 0.0123,
+     "값 가짓수": 376,
+     "D3(유보 채점행)": 406,
+     "비결측(D3)": 406,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 202,
+     "소수 쪽(D3 · 최빈 대 나머지)": 383,
+     "식1 처치/대조": "예",
+     "식1 근거": "값 가짓수 202 · 소수 쪽 383 (D3)",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(배급사)의 더 이른 결과 관측이 있는 레코드 510 (D1=897)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "모른다",
+     "식3 근거": "이 열의 **관측 시점** 필드가 없다. 도메인에 있는 시점 필드(개입 열을 안 덮는다): 첫 관측일=897",
+     "식4 교란 관측": "예",
+     "식4 근거": "개봉일=897, 배급사=886, 장르=887, 국적 후보=883",
+     "식5 도메인 안 변이": "예",
+     "등급(식별)": "B",
+     "W": [
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W4 처치 시점 없음 — 개입 값이 언제 정해졌는지 기록이 없다",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    },
+    "개봉일": {
+     "등급": "T1",
+     "형": "d",
+     "D1": 897,
+     "비결측(D1)": 897,
+     "결측률(D1)": 0.0,
+     "값 가짓수": 351,
+     "D3(유보 채점행)": 406,
+     "비결측(D3)": 406,
+     "결측률(D3)": 0.0,
+     "값 가짓수(D3)": 171,
+     "소수 쪽(D3 · 최빈 대 나머지)": 398,
+     "식1 처치/대조": "모른다",
+     "식1 근거": "날짜형 — 사전등록이 분할을 안 정했다",
+     "식2 사전 관측(약·생산자 단위)": "예",
+     "식2 근거": "같은 단위(배급사)의 더 이른 결과 관측이 있는 레코드 510 (D1=897)",
+     "식2 사전 관측(강·같은 레코드)": "아니오",
+     "식3 역인과 아님": "예",
+     "식3 근거": "날짜 자체 — 결과 창이 이 날짜에 열린다(구조상 사전)",
+     "식4 교란 관측": "예",
+     "식4 근거": "개봉일=897, 배급사=886, 장르=887, 국적 후보=883",
+     "식5 도메인 안 변이": "모른다",
+     "등급(식별)": "C",
+     "W": [
+      "W-미정 규칙 미정의(연속·날짜형) — 🔴 사전등록 결함",
+      "W2 사전 관측 없음(같은 레코드 기준)",
+      "W8 배정 기제 미상 — 누가 왜 그 값을 골랐는지 기록이 없다"
+     ]
+    }
+   },
+   "등급 요약": {
+    "A": [],
+    "B": [
+     "배급사"
+    ],
+    "C": [
+     "개봉일"
+    ]
+   }
+  }
+ },
+ "끝 시각": "2026-08-11T03:37:08",
+ "초": 6.2
+}

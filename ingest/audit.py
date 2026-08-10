@@ -813,6 +813,18 @@ LIVE_GLOBS = ("docs/**/*.html", "docs/**/*.md", "serve/*.py",
               ) + HISTORY_GLOBS
 #: ↑ **더해서 만든다.** 역사 아카이브가 시야에서 빠지는 경우를 문법으로 없앤다 ---
 #: 손으로 두 목록을 맞추면 다시 갈라진다(893 이 버린 손 나열 병의 재발 경로).
+#:
+#: 🔴 **`paper/steps/*/meta.json` 이 여기 없는 것은 결함이 아니라 분담이다**(티처 #63 M3).
+#: 티처가 잡은 것은 참이었다 --- 두 목록 어디에도 없었고 `paper_dead()` 는 그 파일을
+#: **errata 를 읽으려고만** 열었다. 그런데 `claims`·`title`·`summary` 는 `paper/harness.py`
+#: 가 **그대로 전송하는 글**이다(`:306`·`:317`). 고친 자리는 `paper_dead()` 와
+#: `ulp_twins()` 다 --- 여기 넣지 **않은** 이유는 둘:
+#:   ① 논문은 **발행물**이라 기준선(`PAPER_BASELINE_AT`)으로 신선/묵음을 갈라야 하는데
+#:      이 목록에는 그 자가 없다. 넣으면 689편이 통째로 기록 자리로 들어가
+#:      `DEAD_HISTORY_DEBT` 를 삼키고, 새 논문의 죽은 숫자는 **경성이 아니라 래칫**이 된다.
+#:   ② 같은 글을 두 래칫으로 세면 어느 쪽이 얼마나 움직였는지 못 읽는다
+#:      (`DEAD_HISTORY_DEBT` 문단이 "덩어리로 적어서" 두 번 틀린 그 병).
+#: `dead_numbers()` 의 신호에 「논문은 어디서 보나」를 실어 두 목록이 갈라지는 것을 막는다.
 
 #: 위 glob 이 쓸어 오되 **역사**라서 빼는 것(이름으로만 뺀다 --- 경로 규칙이 아니다).
 LIVE_SKIP = ("project-world-model-lab.md",)
@@ -1054,7 +1066,28 @@ PAPER_BASELINE_AT = "2026-08-09T08:40:00"
 #:     래칫은 남는 칸만큼 조용히 사면한다. 그래서 실측으로 다시 죈다.
 #:   · **주장어 문맥 선거름 제거로 +17**(91 → 108 · 85편). 은퇴한 판 rho 를 표지 없이
 #:     인쇄한 논문이 그만큼 더 보인다. 발행물은 개작하지 않으므로 세어서 들고 간다.
-PAPER_DEBT = 108
+#: 🔴 **2026-08-11 108 → 128 (+20 · 85편 → 89편). 티처 #63 M3 --- 눈을 뜬 것이지
+#: 새로 인쇄된 것이 아니다.** 늘어난 몫이 **전부** `meta.json` 이다. 실측으로 가른다:
+#:   · `paper_bodies()` 를 빈 목록으로 바꿔 **`meta.json` 만** 재면 정확히 **20**.
+#:   · `.tex` 쪽 몫은 **0** --- `paper/steps/**` 를 `rglob` 으로 훑어도 `.tex` 는
+#:     `main.tex` **688장**뿐이고 `\input`/`\include` 는 **0건**이다(2026-08-11 실측).
+#:     즉 M4 수리는 오늘 트리에서 빚을 **안 움직인다**(심기시험에서만 발화한다).
+#: 🔴 **어느 논문의 어느 값인지 적는다**(안 적으면 이 상수는 자동 사면 장치다).
+#: ⚠ 아래 수는 전부 **은퇴**한 값이고 오늘의 정본은 `CANON_RHO`·유보 3,775 다:
+#:   `156_drawer` 4(0.4689(**은퇴**) · 3,369(**은퇴**)) · `155_firstpass` 3(0.4697(**은퇴**)) ·
+#:   `196_venueclan`·`197_sixthdoor`·`198_window`·`199_maskline`·`200_halfline`·
+#:   `204_nameless`·`206_onename` 각 1(0.4710(**은퇴** · 「837 시대 값」) · **7편**) ·
+#:   `465_threesilent`·`466_howmanyrulers` 각 1(3,369(**은퇴**)) ·
+#:   `132_countthedoors`·`166_firstlicense` 각 1(0.4689(**은퇴**)) ·
+#:   `138_baseline` 1(`두 번 연속`(**정정**됨 · 노트 677)) ·
+#:   `146_roughcol` 1(0.0043(**은퇴** · 노트 742)).
+#: ⚠ 🔴 **이 문단을 딱지 없이 처음 적었다가 `dead_numbers()` 가 나를 잡았다**(경성 8).
+#:   티처 #63 C2 주석이 같은 자리에서 같은 일을 겪었다고 적어 둔 바로 그 얼굴이다 ---
+#:   설계대로 작동한다. 그래서 딱지를 붙였다.
+#: ⚠ 전부 **묵은 빚**(기준선 이전)이고 **경성은 0**이다. 발행물이라 본문을 안 고친다.
+#: ⚠ errata 사면은 **안 늘었다**(4 → 4) --- 기본 사정거리에 `meta.json` 을 넣었지만
+#:   그것으로 새로 사면된 자리는 0건이다(실측).
+PAPER_DEBT = 128
 
 
 def _dirty_papers() -> set:
@@ -1083,17 +1116,187 @@ def _dirty_papers() -> set:
     return out
 
 
-#: 🔴 errata 사면의 **사정거리**를 재는 도구(티처 #63 C2).
-#: errata 가 그 논문의 `.tex` 파일 이름을 하나라도 **지목**하는가.
-#: 지목이 있으면 그 파일들만 사면 대상이고, 하나도 없으면 관행대로 본문(`main.tex`)만.
-#: 🔴 못 여는 것은 「없다」가 아니다 --- 예외는 삼키지 않고 **지목 없음이 아니라 지목 있음**
-#: 쪽으로 넘어가지 않도록, 실패하면 보수적으로 False(= main.tex 만 사면)를 낸다.
-def _errata_names_tex(errata: str, d: Path) -> bool:
+# ── 논문 폴더의 **인쇄되는 본문 전량** ─────────────────────────────────────────
+#
+# 🔴 **티처 #63 M4 --- `.tex` 훑기가 한 켜뿐이었다.** 티처 #62 C6 이 닫은 「이름」
+# 구멍(`main.tex` -> `body.tex`)의 **디렉터리 판본**이 그대로 열려 있었다.
+# `paper_dead()` 는 `d.glob("*.tex")`, `ulp_twins()` 는 `steps.glob("*/*.tex")` ---
+# 둘 다 **한 켜**다. 2026-08-11 실측(옛 코드 · 심어서 확인):
+#
+#   | 심은 자리                          | `ulp_twins` | `paper_dead` |
+#   | `485_reachingdown/_zzB.tex`(대조군) | 잡음        | 잡음         |
+#   | `485_reachingdown/parts/_zzC.tex`  | **못 봄**   | **못 봄**    |
+#   | `485_reachingdown/_zzD.txt`        | **못 봄**   | **못 봄**    |
+#   | `docs/탐색/_zzA.md`(대조군)         | 잡음        | ---          |
+#
+# 그래서 둘을 고친다:
+#   ① `rglob` --- 켜를 없앤다. 「폴더 안의 `.tex`」는 깊이와 무관하다.
+#   ② 🔴 **`\input`/`\include` 가 가리키는 파일을 확장자와 무관하게 따라간다.**
+#      `\input{body.txt}` 는 확장자가 `.tex` 가 아니어도 **LaTeX 가 인쇄한다** ---
+#      즉 게이트가 「인쇄되는 것」이 아니라 「이름이 `.tex` 인 것」을 보고 있었다.
+#      #62 C6 과 **정확히 같은 병**의 세 번째 얼굴이다(이름 -> 켜 -> 확장자).
+#
+#: `\input{x}` · `\include{x}` · 중괄호 없는 `\input x` 셋 다 본다.
+_INPUT_RE = re.compile(r"\\(?:input|include)\s*\{([^}]*)\}"
+                       r"|\\input\s+([^\s%{}\\]+)")
+#: 이스케이프되지 않은 `%` 뒤는 TeX 주석이라 인쇄되지 않는다 --- `\input` 도 안 산다.
+_TEX_COMMENT = re.compile(r"(?<!\\)%.*$", re.M)
+#: `\input` 사슬을 따라갈 최대 깊이. 넘으면 **「모른다」로 올린다**(조항 59).
+PAPER_TEX_DEPTH = 8
+
+
+def _input_targets(text: str, q: Path, d: Path):
+    """`text`(파일 `q`) 안의 `\\input`/`\\include` 가 가리키는 **실재 파일**과 미해결 인자.
+
+    LaTeX 의 이름 풀이를 그대로 흉내낸다: 확장자가 있으면 그대로, 없으면 `.tex`
+    를 붙인다. 기준 디렉터리는 **그 파일이 있는 곳** 다음 **논문 폴더**다.
+    """
+    got, missing = [], []
+    body = _TEX_COMMENT.sub("", text)
+    for m in _INPUT_RE.finditer(body):
+        a = (m.group(1) or m.group(2) or "").strip()
+        if not a or "\\" in a or "#" in a:
+            # 매크로가 든 인자는 풀 수 없다 --- **「없다」가 아니라 「못 푼다」**다.
+            if a:
+                missing.append(a)
+            continue
+        hit = None
+        for basedir in (q.parent, d):
+            for cand in (basedir / a, basedir / (a + ".tex")):
+                if cand.is_file():
+                    hit = cand
+                    break
+            if hit:
+                break
+        (got.append(hit) if hit else missing.append(a))
+    return got, missing
+
+
+def paper_bodies(d: Path):
+    """논문 폴더 `d` 가 **인쇄하는 본문 전량**. `(상대이름, 글월)` 목록.
+
+    돌려주는 것 셋: `bodies` · `unknown`(못 읽은 것) · `unresolved`(못 푼 `\\input`).
+    🔴 **셋을 갈라 놓는 것이 이 함수의 요지다** --- 「없다」와 「못 봤다」와
+    「못 읽었다」는 셋이다(조항 59).
+    """
+    bodies, unknown, unresolved = [], [], []
+    seen = set()
     try:
-        names = [q.name for q in d.glob("*.tex")]
-    except Exception:
-        return False
-    return any(n in errata for n in names)
+        queue = sorted(q for q in d.rglob("*.tex") if q.is_file())
+    except Exception as e:
+        return [], [{"못 읽은 것": "*.tex(rglob)", "왜": type(e).__name__}], []
+    for _ in range(PAPER_TEX_DEPTH):
+        if not queue:
+            break
+        nxt = []
+        for q in queue:
+            try:
+                key = q.resolve()
+            except Exception:
+                key = q
+            if key in seen:
+                continue
+            seen.add(key)
+            try:
+                rel = str(key.relative_to(d.resolve()))
+            except Exception:
+                rel = str(q)
+            try:
+                text = q.read_text()
+            except Exception as e:
+                unknown.append({"못 읽은 것": rel, "왜": type(e).__name__})
+                continue
+            bodies.append((rel, text))
+            got, miss = _input_targets(text, q, d)
+            nxt += got
+            unresolved += [f"{rel}: \\input{{{a}}}" for a in miss]
+        queue = nxt
+    if queue:
+        unknown.append({"못 읽은 것": "\\input 사슬",
+                        "왜": f"깊이 {PAPER_TEX_DEPTH} 초과"})
+    return bodies, unknown, unresolved
+
+
+# ── `meta.json` 을 검사 대상에 넣는다(티처 #63 M3) ─────────────────────────────
+#
+# 🔴 **`paper/steps/*/meta.json` 이 세 게이트 어디에도 안 보였다.** `LIVE_GLOBS`·
+# `HISTORY_GLOBS` 어디에도 없고, `paper_dead()` 는 `meta.json` 을 **errata 를 읽으려고만**
+# 열었다. 그런데 `claims`·`title`·`summary` 는 **실제로 전송되는 본문**이다 ---
+# `paper/harness.py:306·317` 이 `meta['title']` 과 `meta.get('summary')` 를 그대로
+# 슬랙에 싣는다. **본문보다 먼저 읽히는 자리가 게이트 밖에 있었다.**
+# 2026-08-11 실측(옛 코드 · 새 스텝에 심어서 확인): `claims` 의 딱지 없는 은퇴값 ·
+# `title` 의 은퇴값 · `figures` 의 등록 밖 1 ULP 짝 --- **셋 다 세 게이트 전부 「못 봄」.**
+#
+# 🔴🔴 **되먹임을 어떻게 끊었나 --- 여기가 이 수리의 핵심이다.**
+# `errata` 는 **사면의 근거**다. 그것을 검사 대상에 함께 넣으면 **사면이 자기를
+# 사면한다**: errata 에 적힌 죽은 값이 곧 걸리고, 그 걸린 것이 바로 그 errata 로
+# 사면된다 --- 게이트가 언제나 「걸었다가 풀었다」를 반복하며 아무 말도 안 하게 된다.
+# 그래서 **읽는 글월 자체에서 errata 칸을 도려낸다**(`meta_body_text`).
+#   · 도려낸 자리는 **빈 줄로 채운다** --- 줄 번호가 파일과 계속 맞아야 한다.
+#   · 그러므로 errata 는 **검사 대상이 될 수 없고**(입력에 없다) 오직 사면 근거로만 쓰인다.
+#     되먹임 고리는 「사면이 자기를 사면한다」가 아니라 **「사면은 자기를 볼 수 없다」**
+#     로 끊긴다. 방향이 한쪽뿐이므로 고리가 원리상 안 닫힌다.
+#   · 🔴 **목록은 「빼는 쪽」에 적는다.** 검사할 키를 나열하면 새 키(`분모`·`산출물`·
+#     `numbers`·`정정`…)가 생길 때마다 **조용히 시야 밖**이 된다 --- 이 저장소가
+#     세 번 겪은 손 나열 병이다(893·티처 #55 M8·#57 m1). 여기 적힌 **하나만** 빠지고
+#     나머지는 전부 검사 대상이다(fail-open 이 아니라 fail-closed).
+#: 🔴 **사면 근거로만 쓰는 칸.** 이 목록에 무엇을 더하려면 위 문단을 다시 읽어라 ---
+#: 더하는 만큼 게이트의 시야가 준다.
+META_AMNESTY_KEYS = ("errata",)
+
+#: `json.dumps(..., indent=1)` 이 찍는 최상위 키 줄(들여쓰기 한 칸).
+_META_TOPKEY = re.compile(r'^ "((?:[^"\\]|\\.)*)":')
+
+
+def meta_body_text(raw: str, meta: dict):
+    """`meta.json` 에서 **사면 근거 칸을 도려낸** 본문 투영. `(글월, 왜, 줄이 원문인가)`.
+
+    길이 둘이다. 되먹임(사면이 자기를 사면한다)은 **둘 다** 끊는다 --- 어느 길로
+    가든 `errata` 는 돌려주는 글월에 **들어가지 않는다**.
+
+      ① **원문 도려내기**(기본). `harness.new()`/`send()` 가 `indent=1` 로 찍으므로
+         최상위 키가 한 줄씩이다. 그 줄을 빈 줄로 바꾼다 --- **줄 번호가 파일과
+         계속 맞는다.** 그래서 신고에 적힌 `줄` 로 파일을 바로 열 수 있다.
+      ② 🔴 **재구성**(폴백). 손으로 한 줄 JSON 을 적어 넣으면 ①이 키를 못 가른다.
+         2026-08-11 실측으로 그런 논문이 **둘** 있다(`477_cancel`·`483_nojunction`).
+         그때 ①의 실패를 그대로 「모른다」로 내면 `paper_dead()` 가 **영원히 통과
+         False** 가 되고, 그러면 게이트가 꺼진다(노트 886 의 교훈). 대신 파싱된
+         dict 에서 사면 칸만 빼고 **다시 찍는다** --- 검사 대상은 온전하고 잃는 것은
+         줄 번호뿐이다. 잃었다는 사실을 `줄이 원문인가=False` 로 **말한다**.
+      🔴 ①도 ②도 못 하면(= JSON 이 애초에 안 읽혔으면) 그건 부르는 쪽이 「모른다」로
+         센다. **「없다」와 「못 봤다」와 「못 읽었다」는 셋이다**(조항 59).
+    """
+    out, seen, cur = [], {}, None
+    for ln in raw.splitlines():
+        mm = _META_TOPKEY.match(ln)
+        if mm:
+            try:
+                cur = json.loads('"' + mm.group(1) + '"')
+            except Exception:
+                cur = None
+                seen = {"?": 2}          # 폴백으로 보낸다
+                break
+            seen[cur] = seen.get(cur, 0) + 1
+        out.append("" if cur in META_AMNESTY_KEYS else ln)
+    missing = [k for k in meta if k not in seen]
+    dup = sorted(k for k, n in seen.items() if n > 1)
+    if not missing and not dup:
+        return "\n".join(out), None, True
+    body = {k: v for k, v in meta.items() if k not in META_AMNESTY_KEYS}
+    return (json.dumps(body, ensure_ascii=False, indent=1),
+            f"줄로 못 갈라 재구성했다 --- 안 보인 키 {missing} · 두 번 보인 키 {dup}",
+            False)
+
+
+#: 🔴 errata 사면의 **사정거리**를 재는 도구(티처 #63 C2).
+#: errata 가 그 논문의 본문 파일 이름을 하나라도 **지목**하는가.
+#: 지목이 있으면 그 파일들만 사면 대상이고, 하나도 없으면 관행대로 `main.tex`·`meta.json`.
+#: 🔴 못 여는 것은 「없다」가 아니다 --- 예외는 삼키지 않고 **지목 없음이 아니라 지목 있음**
+#: 쪽으로 넘어가지 않도록, 실패하면 보수적으로 False(= 기본 자리만 사면)를 낸다.
+#: 🔴 **`rglob` 으로 바꾼다**(티처 #63 M4) --- 한 켜만 보면 `parts/x.tex` 를 지목한
+#: errata 가 「지목 없음」으로 읽혀 사면이 **넓어지는** 쪽으로 틀렸다.
+def _errata_names_body(errata: str, names) -> bool:
+    return any(n and n in errata for n in names)
 
 
 def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> dict:
@@ -1114,13 +1317,25 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
     **이름만 바꾸면** 죽은 숫자가 든 본문이 폴더에 그대로 있는데 통과 true 가 났다.
     ⚠ 이 갈래는 **직전 사이클이 신설**했고, 그때 심기시험은 meta 위조 세 방향
     (껍데기 · `sent:true` · `claims` 있음)만 봤다 --- **파일명 방향을 안 봐서 뚫렸다.**
+
+    🔴 **그 「전량」이 한 켜뿐이었다(티처 #63 M4).** `d.glob("*.tex")` 는 `parts/x.tex`
+    를 못 보고, `\\input{body.txt}` 로 인쇄되는 `.txt` 는 이름이 `.tex` 가 아니라서
+    못 본다. 같은 병의 세 번째 얼굴이다: **이름 -> 켜 -> 확장자.** 이제
+    `paper_bodies()` 가 `rglob` 과 `\\input` 추적으로 셋을 다 없앤다.
+
+    🔴 **그리고 `meta.json` 은 errata 를 읽으려고만 열렸다(티처 #63 M3).**
+    `claims`·`title`·`summary` 는 `paper/harness.py` 가 **그대로 전송하는 글**인데
+    세 게이트 어디에도 없었다 --- **본문보다 먼저 읽히는 자리가 게이트 밖에 있었다.**
+    이제 `errata` 만 도려낸 투영(`meta_body_text`)을 본문 옆에 세운다. 도려내는
+    이유(사면이 자기를 사면하는 되먹임)와 끊는 방법은 그 함수 위 문단에 적었다.
     """
     from datetime import datetime as _dt
 
     cut = _dt.fromisoformat(baseline_at)
     dirty = _dirty_papers()
     amnestied_by_errata: list = []
-    fresh, aged, unknown, skipped = [], [], [], []
+    fresh, aged, unknown, skipped, unresolved = [], [], [], [], []
+    meta_rebuilt: list = []
     if dirty is None:
         unknown.append({"논문": "(전체)", "못 읽은 것": "git status",
                         "왜": "손 도장(created·sent_at·mtime)만으로는 신선도를 못 가른다"})
@@ -1143,16 +1358,29 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
         # ⚠ 같은 구멍이 한 켜 더 있었다: `main.tex` 가 **있어도** 옆의 `body.tex` 는
         # 안 봤다. 그래서 이제 **폴더 안 `.tex` 전량**을 읽는다. 2026-08-11 실측으로
         # `paper/steps/**` 의 `.tex` 는 `main.tex` 687개뿐이므로 빚은 안 움직인다.
-        texs = sorted(d.glob("*.tex"))
-        bodies, tex_paths = [], []
-        for q in texs:
+        # 🔴 **그리고 그 「전량」이 한 켜뿐이었다**(티처 #63 M4). `paper_bodies()` 가
+        # `rglob` + `\input` 추적으로 켜와 확장자를 둘 다 없앤다 --- 근거는 그 함수 위 문단.
+        bodies, unk, unres = paper_bodies(d)
+        for u in unk:
+            unknown.append({"논문": d.name, **u})
+        unresolved += [f"{d.name}/{s}" for s in unres]
+        tex_paths = [d / rel for rel, _ in bodies]
+        # 🔴 **`meta.json` 을 본문 옆에 세운다**(티처 #63 M3). `claims`·`title` 은
+        # `paper/harness.py` 가 그대로 전송하는 글이다. `errata` 는 도려낸다 ---
+        # 되먹임을 끊는 이유와 방법은 `meta_body_text` 위 문단에 한 벌만 적었다.
+        if meta:
             try:
-                bodies.append((q.name, q.read_text()))
-                tex_paths.append(q)
+                _proj, _why, _exact = meta_body_text(meta_p.read_text(), meta)
             except Exception as e:
-                unknown.append({"논문": d.name, "못 읽은 것": q.name,
-                                "왜": f"{type(e).__name__}"})
-        if not texs:
+                unknown.append({"논문": d.name, "못 읽은 것": "meta.json(본문 투영)",
+                                "왜": type(e).__name__})
+            else:
+                bodies.append(("meta.json", _proj))
+                if not _exact:
+                    meta_rebuilt.append({"논문": d.name, "왜": _why,
+                                         "⚠": "이 논문의 `meta.json` 신고는 **줄 번호가 "
+                                              "파일과 안 맞는다**(재구성한 투영의 줄이다)"})
+        if not tex_paths:
             # 🔴 **미착수 스텝은 「못 읽었다」가 아니라 「아직 안 썼다」다**(노트 899).
             # 수리 B 가 glob 을 디렉터리 순회로 바꾸자 `112_bothears` 가 드러났는데,
             # 세어 보니 그건 결함이 아니라 **본문을 한 줄도 안 쓴 껍데기**였다:
@@ -1164,14 +1392,22 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
                     and not meta.get("sent")):
                 skipped.append({"논문": d.name, "왜": "미착수 껍데기",
                                 "근거": "claims [] · figures [] · sent false · "
-                                        "**폴더 안 `.tex` 0장**"})
-                continue
-            unknown.append({"논문": d.name, "못 읽은 것": "*.tex",
-                            "왜": "FileNotFoundError"})
-            continue
+                                        "**폴더 안 `.tex` 0장**",
+                                "⚠": "🔴 `meta.json` 본문은 그래도 검사한다"
+                                     "(티처 #63 M3) — 제목 칸은 껍데기에도 있다"})
+            else:
+                unknown.append({"논문": d.name, "못 읽은 것": "*.tex",
+                                "왜": "FileNotFoundError"})
+            # 🔴 **여기서 `continue` 하지 않는다**(티처 #63 M3). 옛 코드는 `.tex` 가
+            # 없으면 그 스텝을 통째로 건너뛰었고, 그래서 **`.tex` 를 안 쓰고
+            # `meta.json` 만 채운 스텝**은 어느 칸도 검사되지 않았다.
         if not bodies:
             continue                       # 전량 읽기 실패 --- 위에서 `모른다` 로 셌다
         errata = str(meta.get("errata", ""))
+        # errata 가 **본문 파일을 지목하나**를 재는 이름 집합. 상대경로와 파일이름
+        # 둘 다 넣는다 --- 사람은 `parts/x.tex` 라고도 `x.tex` 라고도 적는다.
+        body_names = {rel for rel, _ in bodies if rel != "meta.json"}
+        body_names |= {rel.rsplit("/", 1)[-1] for rel in body_names}
         # 🔴 894 수리(티처 #56 M6). 옛 코드는 `meta["created"]` **하나**를 봤는데 그건
         # 저자가 손으로 적는 문자열이다 --- 480 의 `created`(15:05:00 · 초가 00)가
         # `sent_at`(15:00:18)보다 **5분 늦다**. 자동 생성이 아니라는 뜻이고, 기준선보다
@@ -1233,12 +1469,19 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
                     # 잡았다**(통과 false · 경성 2). 설계대로다 --- 그래서 딱지를 붙였다.
                     # 이제 errata 가 **그 파일을 지목해야** 그 파일이 사면된다. 지목이 하나도
                     # 없으면 관행대로 본문(`main.tex`)에만 적용한다 --- errata 는 본문의 정정이다.
+                    # 🔴 **기본 사정거리에 `meta.json` 을 넣는다**(티처 #63 M3). errata 는
+                    # `meta.json` **안에** 살고 그 논문의 앞머리(`title`·`claims`)를 고치려고
+                    # 쓰인다 --- 485 의 정정 6건이 정확히 그것이다. 사면을 **넓히는** 변경이므로
+                    # 근거와 실측을 남긴다: 조건 셋(숫자·산 값/표시·20자)은 그대로이고,
+                    # errata 가 파일을 하나라도 지목하면 이 기본값은 꺼진다.
+                    # 2026-08-11 실측: 기본 사정거리 확대로 늘어난 사면 **0건**
+                    # (errata 를 가진 논문 12편 중 파일 지목이 없는 편이 인쇄한 죽은 값 0).
                     if (dead in errata and len(errata.strip()) >= 20
                             and (live.split("(")[0] in errata
                                  or any(m in errata for m in OK_MARKS))
                             and (fname in errata
-                                 or (fname == "main.tex"
-                                     and not _errata_names_tex(errata, d)))):
+                                 or (fname in ("main.tex", "meta.json")
+                                     and not _errata_names_body(errata, body_names)))):
                         amnestied_by_errata.append(
                             {"논문": d.name, "파일": fname, "줄": i, "죽은 값": dead})
                         continue
@@ -1257,7 +1500,13 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
             "기준선": baseline_at,
             "🔴 기준선 뒤 논문(경성 실패)": fresh or "없음",
             "🔴 검사 못 한 논문(모른다)": unknown or "없음",
-            "미착수 스텝(본문 없음 · 검사 대상 아님)": skipped or "없음",
+            # 🔴 **못 푼 `\input` 은 「없다」가 아니다**(조항 59 · 티처 #63 M4).
+            # 매크로가 든 인자(`\input{\jobname}`)는 이 자가 못 푼다. 실패로 세지는
+            # 않는다 --- 그러면 매크로 하나에 게이트가 꺼진다. **보이게** 둔다.
+            "⚠ 못 푼 \\input(시야 밖 · 실패 아님)": unresolved or "없음",
+            # 검사는 온전하고 **줄 번호만** 못 믿는 자리. 실패는 아니지만 조용하면 안 된다.
+            "⚠ meta.json 재구성(줄 번호 안 맞음 · 검사는 온전)": meta_rebuilt or "없음",
+            "미착수 스텝(`.tex` 없음 · `meta.json` 은 검사함)": skipped or "없음",
             "빚 내역(죽은 값별)": dict(_C(r["죽은 값"] for r in aged).most_common()),
             "묵은 빚": len(aged), "등록된 빚": debt, "빚이 늘었나": over,
             "빚진 논문 수": len({r["논문"] for r in aged}),
@@ -1267,7 +1516,12 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
                   "발행물은 개작하지 않으므로 새 논문만 막고 빚은 래칫으로 든다. "
                   "🔴 티처 #61 C2 — 심기시험 여덟 중 여섯이 열려 있었다. 닫은 것: "
                   "맨 숫자 · errata 부분문자열 · 낱말만 있는 표시 줄 · meta.json 부재(모른다) · "
-                  "손 도장 되돌리기(git) · 정밀 표기 · 판정 자리 순서.")}
+                  "손 도장 되돌리기(git) · 정밀 표기 · 판정 자리 순서. "
+                  "🔴 티처 #63 M3·M4 — ①`meta.json` 의 본문 칸(`claims`·`title`·`figures`·"
+                  "`분모`…)이 **세 게이트 어디에도 안 보였다**(전송되는 글인데). "
+                  "`errata` 만 도려내고 나머지 전부를 본다 — 되먹임은 「사면은 자기를 볼 수 "
+                  "없다」로 끊는다. ②`.tex` 훑기가 **한 켜뿐**이었다 — `rglob` 과 "
+                  "`\\input` 추적으로 켜와 확장자를 없앴다.")}
 
 
 #: ↑ `NOW_WORDS` 는 **표보다 위**로 옮겼다(노트 898) --- `DEAD_NUMBERS` 의
@@ -1752,14 +2006,18 @@ def dead_numbers(debt: int = DEAD_HISTORY_DEBT) -> dict:
     # 죽었다고 밝히는 말이다.
     ok_marks = OK_MARKS
     SPAN = 2
-    hits, aged = [], []
+    hits, aged, unread = [], [], []
     docs = live_docs()
     hist = history_docs()
     for rel in docs:
         p = (ROOT / rel).resolve()
         try:
             text = p.read_text()
-        except Exception:
+        except Exception as e:
+            # 🔴 옛 코드는 조용히 `continue` 했다 --- **「없다」와 「못 읽었다」가
+            # 구별이 안 됐다**(조항 59 · 티처 #63). `runners/**/*` 에 이진 산출물이
+            # 섞여 있어 실패로 세면 게이트가 꺼지므로, 세지 않되 **보이게** 올린다.
+            unread.append({"문서": rel, "왜": type(e).__name__})
             continue
         lines = text.splitlines()
         # 역사 아카이브의 판정 자리를 따로 센다. `.py` 는 통째로, `.md` 는
@@ -1855,6 +2113,16 @@ def dead_numbers(debt: int = DEAD_HISTORY_DEBT) -> dict:
             # 🔴 정본 대조를 **이 통과에 넣는다**(노트 898). 산 값 칸이 정본과
             # 어긋나면 이 검사가 내는 「통과」는 뜻이 없다 --- 조항 59.
             "정본 대조": canon,
+            "⚠ 못 읽은 문서(시야 밖 · 실패 아님)": len(unread),
+            "⚠ 못 읽은 문서 내역": unread[:20] or "없음",
+            # 🔴 **논문은 여기 없다 --- 일부러 없다**(티처 #63 M3).
+            # `paper/steps/**` 는 `paper_dead()` 가 본다: 본문 `.tex` 전량 + `\input` 이
+            # 가리키는 것 + `meta.json` 의 본문 칸(`errata` 도려냄). 여기와 저기가 **같은
+            # 글을 두 래칫으로 세면** 어느 쪽이 얼마나 움직였는지 못 읽는다 --- 그것이
+            # 위 `DEAD_HISTORY_DEBT` 문단이 "덩어리로 적어서" 두 번 틀린 바로 그 병이다.
+            # 나눔의 근거: 논문은 **발행물**이라 신선/묵음을 기준선으로 갈라야 하는데
+            # (`PAPER_BASELINE_AT`) 이 검사에는 그 자가 없다.
+            "논문은 어디서 보나": "paper_dead() — 본문 .tex 전량 · \\input 추적 · meta.json 본문 칸",
             "통과": (not hits) and (not over) and canon["통과"],
             "걸린 곳": hits or "없음",
             "역사 기록(래칫)": {
@@ -1930,16 +2198,45 @@ def ulp_twins() -> dict:
             if t not in reg:
                 targets.setdefault(t, []).append(dead)
     docs = list(live_docs()) + sorted(history_docs())
-    steps = ROOT / "paper/steps"
-    if steps.is_dir():
-        docs += sorted(str(p.relative_to(ROOT))
-                       for p in steps.glob("*/*.tex"))
-    hits = []
+    # 🔴 **논문은 「폴더 안의 인쇄되는 것 전량」이다**(티처 #63 M3·M4).
+    # 옛 코드는 `steps.glob("*/*.tex")` --- **한 켜**이고 **`.tex` 라는 이름**만
+    # 봤다. `parts/x.tex` 도 `\input` 이 가리키는 `body.txt` 도 못 봤고,
+    # `meta.json` 은 아예 없었다(그런데 `figures` 칸은 전정밀 수가 앉는 자리다).
+    # 이제 `paper_dead()` 와 **같은 수집기**(`paper_bodies` + `meta_body_text`)를 쓴다
+    # --- 두 벌로 적으면 갈라진다(노트 701·713 이 등록소로 고친 병).
+    srcs_text, unread = [], []
     for rel in dict.fromkeys(docs):
         try:
-            text = (ROOT / rel).read_text()
-        except Exception:
-            continue
+            srcs_text.append((rel, (ROOT / rel).read_text()))
+        except Exception as e:
+            # 🔴 옛 코드는 여기서 조용히 `continue` 했다 --- **「없다」와 「못 읽었다」가
+            # 구별이 안 됐다**(조항 59). `runners/**/*` 에는 이진 산출물이 섞여 있어
+            # 실패로 세면 게이트가 꺼지므로, 실패로는 안 세되 **보이게** 올린다.
+            unread.append({"문서": rel, "왜": type(e).__name__})
+    steps = ROOT / "paper/steps"
+    paper_unres = []
+    for d in (sorted(p for p in steps.iterdir() if p.is_dir())
+              if steps.is_dir() else []):
+        bodies, unk, unres = paper_bodies(d)
+        for u in unk:
+            unread.append({"문서": f"paper/steps/{d.name}/{u['못 읽은 것']}",
+                           "왜": u["왜"]})
+        paper_unres += [f"{d.name}/{s}" for s in unres]
+        for rel, text in bodies:
+            srcs_text.append((f"paper/steps/{d.name}/{rel}", text))
+        mp = d / "meta.json"
+        try:
+            raw = mp.read_text()
+            meta = json.loads(raw)
+        except Exception as e:
+            unread.append({"문서": f"paper/steps/{d.name}/meta.json",
+                           "왜": type(e).__name__})
+        else:
+            proj, why, exact = meta_body_text(raw, meta)
+            srcs_text.append((f"paper/steps/{d.name}/meta.json"
+                              + ("" if exact else "(재구성 · 줄 번호 안 맞음)"), proj))
+    hits = []
+    for rel, text in srcs_text:
         for i, ln in enumerate(text.splitlines(), 1):
             for t, srcs in targets.items():
                 if t in ln and _found(t, ln):
@@ -1953,14 +2250,20 @@ def ulp_twins() -> dict:
                  if "." in r[0]
                  and len(r[0].split(".")[1]) >= ULP_MIN_DECIMALS}),
             "이웃 걸음": ULP_STEPS, "찾은 표기 수": len(targets),
-            "문서": len(dict.fromkeys(docs)),
+            "문서": len(srcs_text),
+            "⚠ 못 읽은 문서(시야 밖 · 실패 아님)": len(unread),
+            "⚠ 못 읽은 문서 내역": unread[:20] or "없음",
+            "⚠ 못 푼 \\input(시야 밖 · 실패 아님)": paper_unres or "없음",
             "통과": not hits,
             "🔴 등록 밖 짝": hits or "없음",
             "짝별": dict(_C(h["짝"] for h in hits).most_common()) or "없음",
             "왜": ("티처 #62 C4 — `…707` 만 등록했더니 `board898` 이 **오늘 내는** "
                   "`…708` 이 저장소 9곳에 있는데 검출기가 한 곳도 못 봤다. "
                   "`_same_number` 는 **접두사 확장**만 보므로 끝자리가 갈리는 짝은 "
-                  "원리상 못 잡는다 — 자를 넓히는 것이 아니라 줄을 늘려야 닫힌다.")}
+                  "원리상 못 잡는다 — 자를 넓히는 것이 아니라 줄을 늘려야 닫힌다. "
+                  "🔴 티처 #63 M3·M4 — 논문 쪽 시야가 `steps/*/*.tex` **한 켜**였고 "
+                  "`meta.json` 은 아예 없었다. 이제 `paper_bodies()` 로 켜·확장자를 "
+                  "없애고 `meta.json` 본문 칸(`errata` 제외)까지 본다.")}
 
 
 def audit() -> dict:
