@@ -119,9 +119,16 @@ ax[0].set_title("(a) 노트 900 이 「채우면 열린다」던 그 열 —\n�
 ax[0].set_yscale("log")
 ax[0].grid(axis="y", alpha=.25)
 
-# (b) 지평 접합 깔때기 — 🔴 **유보 채점행 층만** 쓴다.
-#     「두 도메인 합집합 185 · 붙음 93」은 `docs/지평/901.md` 에만 있고 산출물에는 없다 —
-#     수리 B 가 이 사이클에 세운 규약(산출물에 없는 수는 인용 금지)을 그대로 지킨다.
+# (b) 지평 접합 깔때기 — 유보 채점행 층.
+# 🔴 **정정(티처 #64 M1)**: 위 주석의 초판은 *"「합집합 185 · 붙음 93」은 문서에만 있고
+#     산출물에는 없다"* 라고 적었다. **틀렸다 — 산출물에 있다.**
+#     `runners/out901h_link.json` 의 **`⑥ 🔴 결정적 수 — 판 유보 기준`** 절에
+#     `팝업 두 도메인 유보 합(중복 제거)=185` · `🔴 격자에 붙음=93` 이 그대로 있고,
+#     이 사이클 자신의 도구로 `rc=0` 으로 뽑힌다.
+# 🔴 **일어난 일**: 아래 `K` 가 **다른 절**(`④⑤⑥ …`)만 보고 assert 로 죽었다.
+#     즉 **조회 경로가 틀린 것을 「그 수는 측정 안 됐다」로 읽었다** — 조항 59 의 정확한 반대 방향이고,
+#     그것을 「인용 규약이 발화한 성공 사례」로 네 곳에 기록했다. **승리가 아니라 오독이었다.**
+#     ⚠ 그림은 유보 채점행 층을 그대로 그린다(그 자체는 옳다). 아래에 185/93 도 함께 읽어 둔다.
 K = "④⑤⑥ 매칭 · 날짜 · 결정적 수"
 assert K in LINK, list(LINK)
 STEP = ["분모", "좌표 있음", "🔴 격자에 붙음", "격자 붙음 · ±7일 검증 통과",
@@ -148,7 +155,12 @@ for i, dm in enumerate(doms):
 ax[1].set_yticks(yy)
 ax[1].set_yticklabels([s.replace("🔴 ", "").replace(" · ", "\n· ") for s in STEP], fontsize=7.2)
 ax[1].set_xlabel("팝업 수 (분모 = 각 도메인 유보 채점행)")
-ax[1].set_title("(b) 붙는다 — 막는 것은 공간이 아니라\n받아 둔 두 달", fontsize=10)
+K6 = "⑥ 🔴 결정적 수 — 판 유보 기준"
+assert K6 in LINK, list(LINK)
+U = LINK[K6]["팝업 두 도메인 유보 합(중복 제거)"]
+G = LINK[K6]["🔴 격자에 붙음"]
+ax[1].set_title(f"(b) 붙는다 — 두 도메인 합집합 {U} 중 {G} 이 격자에 붙는다.\n"
+                "막는 것은 공간이 아니라 받아 둔 두 달", fontsize=9.5)
 ax[1].set_xlim(0, max(max(v) for v in rows.values()) * 1.22)
 ax[1].legend(fontsize=7.5, loc="lower right")
 ax[1].grid(axis="x", alpha=.25)
@@ -161,4 +173,5 @@ print("fig1.pdf · fig2.pdf")
 print("  등급", dict(gr), "· 짝", len(pairs))
 print("  W", dict(wc))
 print("  is_free_entry D1", d1n, d1o, "· D3", d3n, d3o, "· 대조군", minor)
+print("  합집합/붙음 =", U, G)
 print("  깔때기", {d: dict(zip(STEP, v)) for d, v in rows.items()})

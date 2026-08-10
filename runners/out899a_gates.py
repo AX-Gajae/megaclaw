@@ -109,6 +109,18 @@ ALLOW = {
         "검출기가 자기가 잡는 수를 이고 있는 것은 구조상 불가피하다. "
         "⚠ 티처 #62 C4: 여기 적힌 것은 `...707` 이고 **오늘 board898 이 내는 값은 `...708`** 이다. "
         "끝자리가 다른 짝은 아직 등록 안 됐다 --- 이슈 #133"),
+    # 🔴 티처 #64 가 이 자리를 붉게 만들었다 --- **집행자가 옳게 작동했다.**
+    # 논문 486 의 errata 가 *"이 논문은 은퇴값을 한 번도 인용하지 않는다"* 를 적으면서
+    # **그 값들을 나열했다.** `paper_dead()` 의 errata 사면은 그걸 통과시키지만
+    # **집행자는 별개 검사라 안 통과시킨다** --- 두 게이트가 같은 자리를 다르게 본다.
+    # 🔴 그 자체가 발견이다: **errata 는 `paper_dead` 의 사면 근거일 뿐 집행자의 면허가 아니다.**
+    # 본문(`main.tex`)은 은퇴값을 한 자도 안 쓴다(티처가 훑어 확인) --- 그래서 여기서 닫는다.
+    "paper/steps/486_nolever/meta.json": ("errata",
+        "발행물의 errata. **「이 논문은 은퇴값을 인용하지 않는다」를 적으려면 "
+        "어느 값을 안 쓰는지 적어야 한다** --- 그 문장 자체가 값을 요구한다. "
+        "본문 `main.tex` 은 은퇴값이 0건(티처 #64 가 훑어 확인). 본문은 안 고친다(발행물 개작 금지). "
+        "⚠ 다음에 이런 문장을 쓸 때는 값을 나열하지 말고 `ingest/audit.py:DEAD_NUMBERS` 를 "
+        "가리켜라 --- 그러면 이 등록이 필요 없다"),
     "paper/steps/477_cancel/meta.json": ("errata",
         "발행물의 errata. 본문 77행이 은퇴값을 인쇄하므로 errata 가 그 수를 **인용해야** "
         "무엇이 왜 은퇴했는지 적을 수 있다. 본문은 안 고친다(발행물 개작 금지)"),
@@ -729,6 +741,15 @@ def compare(orig: Path, rerun: Path) -> dict:
 
 def main(full: bool, reuse: bool = False):
     t0 = time.time()
+    # 🔴 **`stamp()` 은 실행 「시작」에서 불러야 한다**(티처 #64 C3).
+    # v3.2 가 `git HEAD` 스탬프를 폐기하며 「시작·끝 시각 + 코드 sha256」을 세웠는데,
+    # 그 구현이 `res.update(stamp_close(stamp()))` 로 **끝에서 둘 다** 불렀다.
+    # 실측: `out899a_gates.json` 이 **시작 18:45:10 · 끝 18:45:10 · 초 116.9** —
+    # **116.9초 걸린 실행의 시작과 끝이 같은 초다. 「시작 시각」이 실은 끝 시각이었다.**
+    # 코드 sha 도 끝에서 읽혔으므로, 도는 동안 다른 팔이 `ingest/audit.py` 를 고치면
+    # **실행에 쓰인 코드가 아니라 끝난 뒤의 코드**를 증언한다 —
+    # 🔴 **v3.1 의 HEAD 스탬프가 걸린 그 병이 자리만 옮겨 재발했다.**
+    _st = stamp()
     s = scan()
     r2 = rule2(s["은퇴값을 이고 있는 파일"])
     st = selftest()
@@ -770,7 +791,7 @@ def main(full: bool, reuse: bool = False):
           and st["🔴 전부 잡았나"])
     res["🔴 정적 통과"] = ok
     res["초"] = round(time.time() - t0, 1)
-    res.update(stamp_close(stamp()))
+    res.update(stamp_close(_st))
     OUT.write_text(json.dumps(res, ensure_ascii=False, indent=1))
     print(json.dumps({k: res[k] for k in res
                       if k.startswith(("정적", "동적", "🔴", "산 값"))},
