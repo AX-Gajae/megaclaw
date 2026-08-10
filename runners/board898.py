@@ -17,10 +17,36 @@
   ②    행 군집 BCa (아이돌 프랜차이즈 + 나머지 단독행) --- 병기. 🔴 편향 단서 있음
 
 산출물: `runners/out898_board.json` · 예측 캐시 `runners/out898_fits.npz`
+
+────────────────────────────────────────────────────────────────────────────
+🔴 **정오(2026-08-10 · 이슈 #123 · 티처 #61 C1). 이 러너는 자기가 만든 판정 뒤에
+   자기 자신을 못 돌리고 있었다.**
+
+   초판은 팔 A 를 `from state.rank_test import spearman` 으로 **반입**했다. 그런데
+   이 러너의 판정이 바로 그 함수를 **동률 평균으로 바꿨다**(커밋 `39afa03e6`).
+   그래서 오늘 돌리면 **팔 A ≡ 팔 B** 가 되고 `assert ok_stop`(초판 :137 · 지금 :200)이 터진다
+   (실측 차 +6.195847e-04 대 TOL 1e-12). 게다가 R-3a 는 NaN 을 심어 놓고
+   `rt_spearman` 을 부르는데 새 `ranks()` 는 비유한 값에 `ValueError` 를 던진다 ---
+   그 자리도 같이 죽어 있었다.
+
+   같은 사이클의 `runners/thr898.py:41-43` 은 이 함정을 **알고 피했다**(옛 서수
+   구현을 파일 안에 박아 뒀다). **그 방식을 그대로 따른다** --- 아래 `sp_A_old`.
+
+   ⚠ **값을 다시 재는 것이 아니다.** 티처 #61 이 챔피언 경로 12씨앗을 독립 실행해
+   비트 동일 재현했다(0.47034252170476804 · 차 0.0). 여기서 복구하는 것은 **재현성**이다.
+
+🔴 **규칙(이 사이클이 저장소에 없어서 다섯 자리가 조용히 죽은 그 규칙)**
+
+   **정본이 옮겨가면 씨앗0 상수도 같이 옮긴다. 그리고 옛 정본을 재는 러너는
+   옛 구현을 파일 안에 박는다 --- 반입하지 않는다.**
+
+   기계 확인은 `runners/out899a_gates.py` 가 한다(씨앗0 상수를 이고 있는 자리를
+   전수로 훑어 「옛 값 = 옛 구현 · 새 값 = 오늘 챔피언 경로」를 강제한다).
 """
 import datetime as dt
 import hashlib
 import json
+import os
 import subprocess
 import sys
 import time
@@ -35,17 +61,54 @@ sys.path.insert(0, "/Users/ax/world_model/runners")
 import ff753 as FF                                    # noqa: E402
 from lab import pairboot as PB                        # noqa: E402
 from lab.harness import Data, MIN_TRAIN               # noqa: E402
-from state.rank_test import spearman as rt_spearman   # noqa: E402
+
+#: 🔴 **`state.rank_test.spearman` 을 반입하지 않는다**(이슈 #123 · `thr898.py:37-43`
+#: 과 같은 이유·같은 방식). 이 러너의 일은 **팔 A(서수 · 898 이전 챔피언)** 를 재는
+#: 것인데, 이 러너가 낸 판정으로 그 함수가 **동률 평균으로 바뀌었다**. 반입하면 두
+#: 팔이 같은 물건이 되어 측정이 조용히 무의미해진다(887형 중립화의 정확한 꼴).
+#: 그래서 옛 구현을 **글자 그대로** 여기 박아 둔다.
+def rt_ranks_old(v):
+    """2026-08-10 이전 `state/rank_test.py:42-44`(커밋 `39afa03e6^`) 그대로."""
+    o = np.argsort(np.argsort(np.asarray(v, float)))
+    return o.astype(float)
+
+
+def rt_spearman_old(a, b):
+    """2026-08-10 이전 `state/rank_test.py:47-51`(커밋 `39afa03e6^`) 그대로.
+
+    분모의 `+1e-12` 까지 옮긴다 --- 그것이 옛 값과 `scipy` 를 소수 12자리에서
+    가르던 바로 그 항이다(새 `rank_test.spearman` 독스트링 참고). 여기서 눈금을
+    '고치면' 팔 A 가 재현하려는 값 자체가 달라진다.
+    """
+    ra, rb = rt_ranks_old(a), rt_ranks_old(b)
+    ra = (ra - ra.mean()) / (ra.std() + 1e-12)
+    rb = (rb - rb.mean()) / (rb.std() + 1e-12)
+    return float((ra * rb).mean())
+
 
 ROOT = Path("/Users/ax/world_model")
-OUT = ROOT / "runners/out898_board.json"
-NPZ = ROOT / "runners/out898_fits.npz"
+
+#: 🔴 **재현 실행이 이력 산출물을 덮으면 안 된다**(이슈 #123). `out898_board.json` 은
+#: 노트 898 판정의 증거물이고 git 에 들어 있다. 그래서 꼬리표를 붙여 딴 이름으로
+#: 쓸 수 있게 한다 --- 꼬리표가 없으면 **원래 이름 그대로**라 초판 동작이 안 바뀐다.
+#:     `OUT898_TAG=899a python3 runners/board898.py` → `out898_board.899a.json`
+TAG = os.environ.get("OUT898_TAG", "")
+_sfx = f".{TAG}" if TAG else ""
+OUT = ROOT / f"runners/out898_board{_sfx}.json"
+NPZ = ROOT / f"runners/out898_fits{_sfx}.npz"
+LOG = ROOT / f"runners/out898_board{_sfx}.log"
 T = 2025.0
 SEEDS = FF.RULER_SEEDS
 B_SEED = 10_000
 B_ROW = 2_000
 SHUF = 20
 
+#: 🔴 **씨앗0 상수 --- 옛 값이라서 옛 구현과 짝이다**(이슈 #123).
+#: `A(서수)` 는 **898 이전** 챔피언(`state/rank_test.py` 옛 서수 구현)의 씨앗0 이고,
+#: 그 구현은 이제 저장소에 없으므로 위 `rt_spearman_old` 로 재현한다.
+#: `B(동률평균)` 이 **오늘의 정본 경로**다 --- 2026-08-10 실측으로
+#: `lab.harness.evaluate`+`Data.pooled` 도 같은 `0.4731063028988084` 를 낸다
+#: (`runners/out899a_gates.json`).
 EXPECT_S0 = {"A(서수)": 0.4724867181663707, "B(동률평균)": 0.4731063028988084}
 TOL = 1e-12
 
@@ -55,7 +118,7 @@ def sha(p: Path) -> str:
 
 
 def sp_A(p, y):
-    return float(rt_spearman(p, y))
+    return float(rt_spearman_old(p, y))
 
 
 def sp_B(p, y):
@@ -64,7 +127,7 @@ def sp_B(p, y):
 
 def main():
     t0 = time.time()
-    log = open(ROOT / "runners/out898_board.log", "w", buffering=1)
+    log = open(LOG, "w", buffering=1)
 
     def say(s):
         print(s, flush=True)
@@ -207,8 +270,11 @@ def main():
         "심은 도메인": d1,
         "마스크 없이 B(scipy)": float(spearmanr(p1, y1)[0]),
         "마스크 없이 B 가 nan 인가": bool(not np.isfinite(spearmanr(p1, y1)[0])),
-        "마스크 없이 A(서수)": float(rt_spearman(p1, y1)),
-        "마스크 없이 A 가 nan 인가": bool(not np.isfinite(rt_spearman(p1, y1))),
+        # 🔴 옛 서수 구현(`rt_spearman_old`)을 쓴다 --- 재는 것이 바로 **옛 구현이
+        # NaN 을 조용히 삼켰다**는 사실이기 때문이다. 오늘의 `rank_test.ranks` 는
+        # 비유한 값에 `ValueError` 를 던지므로(이슈 #115) 반입하면 이 줄이 죽는다.
+        "마스크 없이 A(서수)": float(rt_spearman_old(p1, y1)),
+        "마스크 없이 A 가 nan 인가": bool(not np.isfinite(rt_spearman_old(p1, y1))),
         "ok 마스크 뒤 B": float(sp_B(p1[okm], y1[okm])),
         "ok 마스크 뒤 B 가 유한한가": bool(np.isfinite(sp_B(p1[okm], y1[okm]))),
         "_score_one 이 같은 마스크를 쓰는가":

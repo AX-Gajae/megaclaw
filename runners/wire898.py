@@ -19,10 +19,27 @@
         kho 배치 + rank_test                            기대 0.47319563433056183
 
 산출물: `runners/out898_wire.json`
+
+────────────────────────────────────────────────────────────────────────────
+🔴 **정오(2026-08-10 · 이슈 #123 · 티처 #61 C1)** --- `board898.py` 와 **같은 병**이다.
+
+   초판은 ㄷ 의 두 조합(`post+rank_test` · `kho+rank_test`)을
+   `from state.rank_test import spearman` 으로 **반입**했는데, 노트 898 의 판정이
+   그 함수를 **동률 평균으로 바꿨다**. 그래서 오늘 돌리면
+   `post+rank_test == post+scipy` · `kho+rank_test == kho+scipy` 가 되어
+   **이 파일이 재려던 「스피어만 구현 몫」이 정확히 0 이 된다** --- 게이트가 터지지도
+   않고 **조용히 0 을 낸다**. `board898` 보다 나쁘다(거기는 `assert` 라도 있었다).
+
+   `runners/thr898.py:41-43` 방식으로 옛 서수 구현을 파일 안에 박았다(아래).
+
+🔴 **규칙**: **정본이 옮겨가면 씨앗0 상수도 같이 옮긴다. 그리고 옛 정본을 재는
+   러너는 옛 구현을 파일 안에 박는다 --- 반입하지 않는다.**
+   기계 확인은 `runners/out899a_gates.py`.
 """
 import datetime as dt
 import hashlib
 import json
+import os
 import subprocess
 import sys
 import time
@@ -37,14 +54,50 @@ sys.path.insert(0, "/Users/ax/world_model/runners")
 import ff753 as FF                                    # noqa: E402
 from lab import guards as G                           # noqa: E402
 from lab.harness import Data, MIN_TRAIN               # noqa: E402
-from state.rank_test import spearman as rt_spearman   # noqa: E402
+
+
+#: 🔴 **`state.rank_test.spearman` 을 반입하지 않는다**(이슈 #123 · `thr898.py:37-43`
+#: 과 같은 이유·같은 방식). 옛 서수 구현을 **글자 그대로** 여기 박아 둔다.
+def rt_ranks_old(v):
+    """2026-08-10 이전 `state/rank_test.py:42-44`(커밋 `39afa03e6^`) 그대로."""
+    o = np.argsort(np.argsort(np.asarray(v, float)))
+    return o.astype(float)
+
+
+def rt_spearman_old(a, b):
+    """2026-08-10 이전 `state/rank_test.py:47-51`(커밋 `39afa03e6^`) 그대로.
+
+    분모의 `+1e-12` 까지 옮긴다 --- ㄷ 가 재는 「스피어만 구현 몫」이 바로 그 항과
+    동률 처리의 합이다. 눈금을 '고치면' 재려는 대비가 사라진다.
+    """
+    ra, rb = rt_ranks_old(a), rt_ranks_old(b)
+    ra = (ra - ra.mean()) / (ra.std() + 1e-12)
+    rb = (rb - rb.mean()) / (rb.std() + 1e-12)
+    return float((ra * rb).mean())
+
 
 ROOT = Path("/Users/ax/world_model")
-OUT = ROOT / "runners/out898_wire.json"
+
+#: 🔴 재현 실행이 이력 산출물(`out898_wire.json` · git 안)을 덮지 않게 한다(이슈 #123).
+#:     `OUT898_TAG=899a python3 runners/wire898.py` → `out898_wire.899a.json`
+TAG = os.environ.get("OUT898_TAG", "")
+_sfx = f".{TAG}" if TAG else ""
+OUT = ROOT / f"runners/out898_wire{_sfx}.json"
+LOG = ROOT / f"runners/out898_wire{_sfx}.log"
 T = 2025.0
 
+#: 🔴 **씨앗0 상수 --- 넷 중 둘은 옛 값이라서 옛 구현과 짝이다**(이슈 #123).
+#: `post+rank_test(챔피언)` 의 「챔피언」은 **898 이전**을 뜻한다. 오늘의 챔피언
+#: 경로(동률 평균)가 내는 씨앗0 은 `post+scipy` 쪽 `0.4731063028988084` 이고
+#: 2026-08-10 에 `lab.harness.evaluate`+`Data.pooled` 로 직접 확인했다
+#: (`runners/out899a_gates.json`).
+#: 🔴 **은퇴한 씨앗0 값**(노트 898 · 이슈 #123). 이 러너는 **옛 값을 재는 것이 일**이라
+#: 값을 그대로 둔다. 딱지는 숫자 바로 뒤 괄호에 붙인다 --- `_mark_owner` 가 그 꼴만 읽는다.
+SEED0_RETIRED = 0.4724867181663707  # 0.4724867181663707(은퇴 · 「서수 순위 시대 값」 · 노트 898)
+
 EXPECT = {
-    "post+rank_test(챔피언)": 0.4724867181663707,
+    # 아래 값은 **은퇴**했다(「서수 순위 시대 값」 · 노트 898). 이 러너는 옛 값을 재는 것이 일이다
+    "post+rank_test(그때의 챔피언)": SEED0_RETIRED,
     "post+scipy": 0.4731063028988084,
     "kho+scipy(837)": 0.47382623452954425,
     "kho+rank_test": 0.47319563433056183,
@@ -61,7 +114,7 @@ def sp_scipy(p, y):
 
 def main():
     t0 = time.time()
-    log = open(ROOT / "runners/out898_wire.log", "w", buffering=1)
+    log = open(LOG, "w", buffering=1)
 
     def say(s):
         print(s, flush=True)
@@ -135,10 +188,10 @@ def main():
             "kho 배치 행": int(okk.sum()),
             "kho 예측 고유값": int(len(np.unique(pk[okk]))),
         }
-        sc["post+rank_test(챔피언)"][d] = float(rt_spearman(pp[ok], y[ok]))
+        sc["post+rank_test(그때의 챔피언)"][d] = float(rt_spearman_old(pp[ok], y[ok]))
         sc["post+scipy"][d] = sp_scipy(pp[ok], y[ok])
         sc["kho+scipy(837)"][d] = sp_scipy(pk[okk], yh[okk])
-        sc["kho+rank_test"][d] = float(rt_spearman(pk[okk], yh[okk]))
+        sc["kho+rank_test"][d] = float(rt_spearman_old(pk[okk], yh[okk]))
 
     pooled = {}
     for k, s in sc.items():
@@ -158,11 +211,11 @@ def main():
 
     dec = {
         "스피어만 구현 몫(post: scipy − rank_test)":
-            pooled["post+scipy"] - pooled["post+rank_test(챔피언)"],
+            pooled["post+scipy"] - pooled["post+rank_test(그때의 챔피언)"],
         "채점 배치 몫(scipy: kho − post)":
             pooled["kho+scipy(837)"] - pooled["post+scipy"],
         "총 Δ(837 − 챔피언)":
-            pooled["kho+scipy(837)"] - pooled["post+rank_test(챔피언)"],
+            pooled["kho+scipy(837)"] - pooled["post+rank_test(그때의 챔피언)"],
     }
     dec["합이 비트 동일"] = (
         dec["스피어만 구현 몫(post: scipy − rank_test)"]

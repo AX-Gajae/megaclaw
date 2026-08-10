@@ -317,6 +317,10 @@ def trace() -> dict:
     import ff753 as FF
     from lab.harness import evaluate
     from lab import forms
+    #: 🔴 씨앗0 상수는 **읽어 온다**(이슈 #123). 손으로 베낀 사본은 정본이 옮겨갈 때
+    #: 같이 안 옮겨져서 게이트를 영구 False 로 만든다 --- 그 일이 실제로 났다.
+    from dose896 import EXPECT_POOLED_K1_S0 as SEED0_CANON
+    SEED0_RETIRED = 0.4724867181663707   #: 서수 시대(898 이전) 값 --- 대조용으로만
     t0 = time.time()
     hits = {}
     orig = SS.rankdata
@@ -359,13 +363,23 @@ def trace() -> dict:
            "한계": ["씨앗 1 · F18 하나 · protocol='deploy' 하나",
                   "안 발화 = 이 경로에서 안 불린다(영영 안 불린다가 아니다)"],
            "판(씨앗0)": round(pooled, 5),
-           # 🔴 회귀 증거 --- 노트 890 배선 ㄷ 가 못박은 상수와 **비트 단위로**
-           # 견준다. `lab/forms.py` 를 만졌으므로 이것이 안 맞으면 수리가 판을
-           # 바꾼 것이다(조항 59 --- '통과' 대신 수를 견준다).
-           "🔴 판(씨앗0) 대 노트 890 배선 상수": {
-               "재현": repr(pooled), "상수": repr(0.4724867181663707),
-               "차": pooled - 0.4724867181663707,
-               "비트 동일": pooled == 0.4724867181663707},
+           # 🔴 회귀 증거 --- 정본 경로가 못박은 씨앗0 상수와 **비트 단위로** 견준다.
+           # `lab/forms.py` 를 만졌으므로 이것이 안 맞으면 수리가 판을 바꾼 것이다
+           # (조항 59 --- '통과' 대신 수를 견준다).
+           #
+           # 🔴 **2026-08-10 · 이슈 #123 · 티처 #61 C7.** 이 자리가 **바로 그 병을
+           # 앓았다** --- 위 두 줄이 *"회귀 증거 · 조항 59"* 라고 적어 놓고, 정작
+           # 노트 898 이 정본을 옮겼을 때(서수 → 동률 평균) 상수를 **손으로 박아
+           # 둔 탓에** 아무도 안 옮겼고 `"비트 동일"` 이 **영구 False** 가 됐다.
+           # 이제 상수를 여기 안 적는다 --- `dose896.EXPECT_POOLED_K1_S0` **한 자리**를
+           # 읽는다(두 곳이 같은 수를 손으로 베끼면 갈라진다 · `ingest/audit.py:534`).
+           "🔴 판(씨앗0) 대 정본 경로 씨앗0 상수": {
+               "출처": "runners/dose896.py:EXPECT_POOLED_K1_S0 (손 전사 아님)",
+               "재현": repr(pooled), "상수": repr(SEED0_CANON),
+               "차": pooled - SEED0_CANON,
+               "비트 동일": pooled == SEED0_CANON,
+               "은퇴값(서수 시대)": repr(SEED0_RETIRED),
+               "은퇴값과의 차": pooled - SEED0_RETIRED},
            "채점된 도메인": sorted(sc),
            "🔴 채점 못 한 도메인": sorted(set(data.dom) - set(sc)),
            "발화 자리": dict(sorted(hits.items())),

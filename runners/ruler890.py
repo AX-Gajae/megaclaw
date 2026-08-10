@@ -9,6 +9,31 @@
     자④ 도메인 행 군집 부트 BCa      표본 잡음(49행) --- 자③ 이 못 보는 것
 
 배선 검사 다섯(ㄱ~ㅁ)을 측정 전에 닫는다. 사전등록은 `data/lab/denominator.json`.
+
+🔴 **2026-08-10 정정(노트 899 · 이슈 #126 M-3 · 티처 #61).**
+`:30` 이 반입하는 `state.rank_test.spearman` 을 노트 898 이 **서수 → 동률 평균**으로
+바꿨다. 898 은 *"890 의 자①은 바뀐다 — 안 쟀다"* 라고 자백만 하고 판정문·논문·원장에는
+**「자는 안 움직인다」**라 적었다. **그 문장은 R5(문턱) 하나에만 참이다.**
+899 가 재적합 0회로 다시 쟀다(`runners/out899c_ruler890R12.py` ·
+`out899c_ruler890R12.json` · 캐시 = 890 의 적합임을 288칸 **비트 동일**로 확인):
+
+    자      옛(서수) 짝Δ      새(동률 평균) 짝Δ    상대     규약 47 판정
+    ① 판    -0.00035526      -0.00034175        +3.80%   판정 불능 → 판정 불능
+    ② 거시  +0.00037923      +0.00027906       -26.42%   판정 불능 → 판정 불능
+    ③ 아이돌 +0.02672700      +0.02585515        -3.26%   승 → 승
+    ④ 행 BCa / 행수준 병기 --- 국소 `sp`(처음부터 동률 평균) → **안 움직인다**
+
+🔴 **셋 다 움직이고 방향이 서로 다르다**(자①만 커진다). 판정은 하나도 안 뒤집혔지만
+**「안 움직인다」와 「판정이 안 바뀐다」는 다른 문장이다**(조항 59). 이 파일이 인쇄한
+`out890_ruler.json` 의 자①·자②·자③ 은 **서수 시대의 수**다.
+
+⚠ **못 한 것을 못 했다고 적는다.** 이 파일을 동률 평균 아래 **전량 재적합**으로
+다시 돌리려 했고(`RULER890_OUT=out899c_ruler890_midrank.json`) **중간에 끊었다** ---
+기계 부하가 높아(load 43 · 여섯 팔 동시) 씨앗 하나에 1,011초, 24씨앗 + 부트 10,000 이
+6시간을 넘길 참이었다. 끊기 전까지 확인된 것: **배선 ㄷ(동결값 대조)가 통과했고**
+`K=1 씨앗0 판 0.4731 · 아이돌 0.4176` 으로 `EXPECT_POOLED_K1_S0` 와 맞았다.
+같은 값을 899 의 캐시 통로가 **비트 동일**로 재현하므로(차 0.0) 결론은 서지만,
+**24씨앗 전량 재적합본은 없다.**
 """
 import datetime as dt
 import hashlib
@@ -30,7 +55,13 @@ from lab.harness import Data, MIN_TRAIN                         # noqa: E402
 from state.rank_test import spearman as rt_spearman             # noqa: E402
 
 ROOT = Path("/Users/ax/world_model")
-OUT = ROOT / "runners/out890_ruler.json"
+#: 🔴 **2026-08-10 · 노트 899 · 이슈 #126 M-3.** 산출물 경로를 환경변수로 뗀다.
+#: 이유: 890 의 다섯 자를 **동률 평균 아래에서 다시 재는데**(898 이 순위 함수를
+#: 바꿨다) 옛 산출물 `out890_ruler.json` 은 **서수 시대의 증거물**이라 덮으면
+#: 안 된다. `RULER890_OUT` / `RULER890_LOG` 를 주면 그리로 쓰고, 안 주면 옛 경로다.
+import os                                                        # noqa: E402
+OUT = Path(os.environ.get("RULER890_OUT", ROOT / "runners/out890_ruler.json"))
+LOG = Path(os.environ.get("RULER890_LOG", ROOT / "runners/out890_log.txt"))
 CLS = REGISTRY["F18_bagboost"]["cls"]
 T = 2025.0
 DOM = "아이돌"
@@ -68,6 +99,25 @@ EXPECT_K1_S0_서수시대 = {
     "팝업": 0.382998251748211, "펀딩": 0.3704998589526129,
 }
 EXPECT_POOLED_K1_S0_서수시대 = 0.4724867181663707
+
+
+def _rank_fn_stamp():
+    """🔴 어느 시대의 순위 함수로 쟀는지를 **읽어서** 찍는다(손 전사 금지 · 조항 60).
+
+    `fit_arm` 이 쓰는 `state.rank_test.spearman` 의 소스를 그대로 해싱하고,
+    동률이 있는 표본에서 midrank 인지 서수인지 **실측**한다.
+    """
+    import inspect
+    from state import rank_test as RT
+    src = "".join(inspect.getsource(f) for f in (RT.ranks, RT.spearman))
+    p = np.array([1.0, 1.0, 2.0, 3.0]); y = np.array([1.0, 2.0, 3.0, 4.0])
+    a = float(RT.spearman(p, y)); b = float(RT.spearman(p[::-1], y[::-1]))
+    return {"소스 sha256(ranks+spearman)": hashlib.sha256(src.encode()).hexdigest()[:16],
+            "동률 표본 ρ": round(a, 6),
+            "행을 뒤집었을 때 ρ": round(b, 6),
+            "순서 불변(동률 평균)": bool(abs(a - b) < 1e-12),
+            "시대": "동률 평균(midrank · 노트 898~)" if abs(a - b) < 1e-12
+                   else "서수(argsort · ~2026-08-10 오전)"}
 
 
 def klass(k):
@@ -146,7 +196,7 @@ def fit_arm(data, k, seed, post):
 
 def main():
     t0 = time.time()
-    log = open(ROOT / "runners/out890_log.txt", "w", buffering=1)
+    log = open(LOG, "w", buffering=1)
 
     def say(s):
         print(s, flush=True); log.write(s + "\n")
@@ -308,6 +358,7 @@ def main():
         "시각(UTC)": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
         "git HEAD": subprocess.run(["git", "rev-parse", "--short", "HEAD"], cwd=ROOT,
                                    capture_output=True, text=True).stdout.strip(),
+        "순위 함수(자① 자② 자③ 이 쓰는 것)": _rank_fn_stamp(),
         "배선": wire,
         "자① 판": ja1, "자② 거시판": ja2, "자③ 아이돌 씨앗 짝": ja3,
         "자④ 아이돌 행 BCa": ja4,
