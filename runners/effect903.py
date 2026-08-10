@@ -383,6 +383,60 @@ def run_arm(arm, judge: bool, note: str):
     return res, p
 
 
+# ── 🔴 티처 #65 M13 (이슈 #144) — 「원장이 이 물음에 이미 뭐라 했나」를 센다 ────
+#    `docs/루프.md` ⓪ 에 아직 없는 단계다. 사전등록 §1 이 이 수를 인용하므로 산출물에 낸다.
+PRIOR_TITLES = [
+    "entry_friction 방향 되돌림 — 사전 등록 (노트 583)",
+    "**채택** — entry_friction 방향 되돌림 + OOC_DROP 해제 (노트 586)",
+    "entry_friction 은 눈금이 도메인마다 뒤집힌다 — 사전 등록",
+    "규모가 부호를 바꾼다 (노트 468)",
+    "**판정** 규칙이 고른 열은 죽고 규칙이 밀어낸 열이 살아났다 (노트 884 · 사전등록+부칙은 위 칸)",
+    "**사전등록** 절단 보정 — 잘린 값이 순위를 바꾸나 (노트 658)",
+    "target_breadth 도메인별 관문 (노트 502)",
+    "**측정** 0.1200 은 실은 0.0024 였다 — 번역이 안 된다 (노트 769 · 사전등록은 768)",
+]
+
+
+def ledger_prior():
+    d = json.loads((ROOT / "data/lab/denominator.json").read_text())
+
+    def flat(o, p=""):
+        if isinstance(o, dict):
+            for k, v in o.items():
+                yield from flat(v, p + "/" + str(k))
+        elif isinstance(o, list):
+            for i, v in enumerate(o):
+                yield from flat(v, p + f"[{i}]")
+        else:
+            yield p, str(o)
+    rows = list(flat(d))
+    res = {"🔴 왜 세나": "티처 #65 M13(이슈 #144) — 「없는 원천을 찾는」 ⓪-나 는 있는데 "
+                    "**이미 저장소 안에 있는 판정을 찾는 단계**는 루프에 없었다. "
+                    "직전 사이클이 그 구멍에 빠졌다(노트 769 를 아무도 안 봤다)",
+           "원장 최상위 항목 수": len(d), "원장 리프 수": len(rows)}
+    for nd in ("entry_friction", "개봉일", "절단 보정", "위약"):
+        hits = [(p, v) for p, v in rows if nd in p or nd in v]
+        res[f"바늘 `{nd}`"] = {
+            "리프": len(hits),
+            "최상위 항목": len({p.split("/")[1] for p, _ in hits if "/" in p[1:]})}
+    found = [t for t in PRIOR_TITLES if t in d]
+    res["🔴 이 물음에 직접 걸리는 옛 판정"] = {
+        "센 수": len(PRIOR_TITLES),
+        "원장에서 실제로 찾은 수": len(found),
+        "못 찾은 제목(있으면 손 기억이라는 뜻이다)": [t for t in PRIOR_TITLES if t not in d],
+        "목록": PRIOR_TITLES}
+    res["🔴 사전등록과 어긋난 수 — 정정(사전등록은 증거물이라 안 고친다)"] = (
+        "`docs/prereg_903_effect.md` §1 이 바늘 `entry_friction` 의 「최상위 항목 **67**」이라 적었다. "
+        "러너가 다시 세면 **66** 이다 — **자가 다르다**: 사전등록의 수는 임시 스크립트가 "
+        "최상위 키를 못 가진 리프까지 세어 하나를 더 잡았다. "
+        "🔴 **사전등록을 안 고치고 여기에 정정문을 둔다**(902 m2 의 처방 그대로). "
+        "판정에 쓰이는 수가 아니다")
+    res["🔴 못 잰 것"] = ("원장은 「팝업 도메인 안에서 entry_friction 과 **원 방문자 수**의 관계」를 "
+                     "**한 번도 직접 안 쟀다** — 옛 부호는 전부 판 라벨·눈금 맞춘 축에 대한 것이다. "
+                     "903 은 원천 원값을 쓴다. **같은 이름의 다른 자다**")
+    return res
+
+
 def main():
     out = {"노트": 903, "사전등록": PREREG, "시작 시각": START,
            "🔴 채점기 무접촉": "ident901.py · ident902.py 를 import 만 했다. "
@@ -403,6 +457,9 @@ def main():
             {"sha256": sha(ROOT / "data/ingest/kobis/axes_raw_897.jsonl")},
         "data/state/kobis_axes.json":
             {"sha256": sha(ROOT / "data/state/kobis_axes.json")}}
+
+    print("원장 옛 판정 세기…", flush=True)
+    out["🔴 원장이 이 물음에 이미 뭐라 했나 (재기 전에 센다 · 티처 #65 M13)"] = ledger_prior()
 
     print("배선 검사…", flush=True)
     out["🔴 배선 검사(심어서 확인 · 넷)"] = wiring_checks()
