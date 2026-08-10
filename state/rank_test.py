@@ -31,6 +31,7 @@ from itertools import permutations
 from pathlib import Path
 
 import numpy as np
+from scipy.stats import rankdata, spearmanr
 from sklearn.linear_model import Ridge
 
 from .procrustes import align, align_pair, factor_space, lam_by_overlap
@@ -41,15 +42,61 @@ SEED = 20260729
 
 
 def ranks(v):
-    o = np.argsort(np.argsort(np.asarray(v, float)))
-    return o.astype(float)
+    """**동률 평균(midrank)** 순위.
+
+    🔴 **2026-08-10 · 이슈 #117(티처 #60 C1·C2) · 노트 898 에서 바뀌었다.**
+    옛 구현은 ``o = np.argsort(np.argsort(v))`` --- **서수 순위**였고 동률을
+    **배열 순서**로 깼다. 그러면 통계량이 **자료의 정렬에 의존한다.**
+
+    898 이 잰 것(사전등록 R-1 · `runners/out898_board.json`): 같은 (예측, 라벨) 짝을
+    스무 번 섞기만 해도 옛 함수는 **12/12 도메인에서** ρ 가 갈렸고 최대 폭이
+    **0.1562** 였다. 새 함수는 **0/12 · 폭 0.0** 이다. 통계량이 아니라 정렬의
+    함수였던 것이다.
+
+    **동률은 예외가 아니었다.** ``BagBoost.predict`` 는 자루 순위 평균이라
+    같은 값이 흔하다 --- 시장팝업 126행에 예측 고유값 **15**(동률 0.881) ·
+    영화 406행에 **139**(0.658).
+
+    그리고 저장소의 **자**(``runners/ruler890.sp`` · ``runners/thresh891`` 전량)는
+    처음부터 동률 평균을 썼다. **판과 자가 서로 다른 스피어만을 쓰고 있었다.**
+    여기서 통일한다 --- 자를 판에 맞추지 않고 판을 자에 맞춘 이유는 크기가 아니라
+    원칙이다(순서 불변 · 표준 정의).
+
+    판 정본은 이 한 줄로 **0.46982 → 0.47034** 로 옮겨간다(12씨앗 짝 Δ
+    +0.00051922 · BCa [+0.00044404,+0.00059359] · 12/12 양수). **개선이 아니라
+    편의 제거다** --- 서수는 동률에서 순위를 무작위로 갈라 상관을 아래로 끈다.
+
+    🔴 **비유한 값은 막는다**(이슈 #115). 옛 ``argsort`` 는 NaN 을 맨 뒤로 밀어
+    **조용히 숫자를 냈다** --- 887형 중립화의 거울상이다. 부르는 쪽이 마스크를
+    씌워야 한다. 챔피언 경로에서 그 자리는 ``lab/harness.py:265`` 의 ``ok`` 다.
+    """
+    a = np.asarray(v, float)
+    fin = np.isfinite(a)
+    if not fin.all():
+        raise ValueError(
+            f"rank_test.ranks: {a.size} 개 중 {int((~fin).sum())} 개가 비유한 --- "
+            "부르는 쪽에서 isfinite 마스크를 씌워라(이슈 #115 · #117 · 노트 898). "
+            "옛 argsort 구현은 여기서 조용히 숫자를 냈다.")
+    return np.asarray(rankdata(a), float)
 
 
 def spearman(a, b):
-    ra, rb = ranks(a), ranks(b)
-    ra = (ra - ra.mean()) / (ra.std() + 1e-12)
-    rb = (rb - rb.mean()) / (rb.std() + 1e-12)
-    return float((ra * rb).mean())
+    """동률 평균 스피어만. **`scipy.stats.spearmanr` 과 부동소수 동일**하다.
+
+    🔴 노트 898 --- 옛 구현은 `ranks()` 뒤에 손으로 표준화하면서 분모에 `+1e-12` 를
+    넣었다. 그 눈금 보정 때문에 같은 정의인데도 `scipy` 와 **소수 12자리에서 갈렸고**,
+    그래서 「판과 자가 같은 함수를 쓴다」를 **부동소수로는 확인할 수 없었다**.
+    (자기 손으로 짠 표준화 대신 `scipy` 를 부르면 이 물음이 아예 안 생긴다.)
+    `ranks()` 가 이미 비유한 값을 막으므로 여기서 다시 안 막는다.
+
+    예측이 **전부 동률**이면 순위가 상수라 상관이 정의되지 않고 `nan` 이 나온다 ---
+    옛 서수 구현에서는 순위가 언제나 0..n-1 이라 **일어날 수 없던 일**이다.
+    `harness.pooled` 는 비유한 도메인을 건너뛰므로 그 도메인이 **조용히 빠진다**.
+    가짓수가 1인 예측을 채점하는 자리가 생기면 그때는 '없다'가 아니라 '모른다'로
+    적어야 한다(조항 59 · 노트 887 병기 의무).
+    """
+    ranks(a), ranks(b)                      # 비유한 값 가드(#115)를 여기서도 태운다
+    return float(spearmanr(a, b)[0])
 
 
 def rank_cross(Ss, ys, St, yt, perm=3000, seed=SEED):

@@ -1,17 +1,21 @@
 """이슈 #112 — **837 이 쓴 적합 경로**(`guards._fit_on(..., seed=s)`)로 판을 다시 잰다.
 
-🔴 이것이 원인 후보다. `rebase837.py:80-83` 은 `G._fit_on(lambda: cls(seed=s),
-data, T, seed=s)` 를 부르는데, `lab/guards.py:69-75` 가 그때 **정식화의 `kw`
-안 `random_state` 까지 s 로 갈아 끼운다**:
+🔴 **2026-08-10 정정(이슈 #117 · 티처 #60 C1 · 노트 898). 아래 문단의 원인 지목이 틀렸다.**
+이 파일이 원래 적었던 것: *"`lab/guards.py:69-75` 가 `kw['random_state']` 를 s 로 갈아
+끼우고 `BagBoost` 는 `random_state=0` 고정이라 두 경로는 씨앗 0 에서만 같다."*
 
-    if isinstance(kw, dict) and "random_state" in kw:
-        f.kw = {**kw, "random_state": seed}
+**둘 다 틀렸다.**
+① `lab/forms.py:702-703` 이 자루마다 `{**self.kw, "random_state": k}` 로 **자루 색인 k** 를
+   덮으므로 `kw['random_state']` 는 GBM 에 **한 번도 안 닿는다**(898 실측: `kw=7` 로 주고
+   자루를 찍으니 `[0,1,…,31]`). 조기중단 검증 분할도 자루 색인을 쓴다.
+② 두 경로는 **씨앗 0 에서도 갈린다** --- 0.4724867181663707(챔피언) 대
+   0.4738262345295442(837), Δ **+0.00133952** 로 12씨앗 중 **최대** 차이다.
 
-`BagBoost` 는 `Boost.__init__` 에서 `random_state=0` 을 **고정**으로 갖는다
-(`lab/forms.py:287`). 챔피언 채점 경로(`harness.evaluate`)는 `make()` 만 부르므로
-**`random_state` 가 언제나 0** 이고 씨앗은 `BagBoost` 자체 뽑기에만 든다.
-n≈22,000 이라 `HistGradientBoostingRegressor` 의 조기중단이 켜지고 그 검증 분할이
-`random_state` 를 쓴다 --- 그래서 **두 경로는 씨앗 0 에서만 같고 s>=1 에서 갈린다.**
+**진짜 원인 둘**(씨앗 0 · 합이 비트 동일 · `runners/out898_wire.json`):
+   ① 채점 배치(post 전체 대 post∩라벨)                       +0.00071993
+   ② 스피어만 구현(`scipy` 동률 평균 대 `rank_test` 서수)     +0.00061958
+아래 코드는 그대로 두 규약(kho 배치 + `scipy`)을 돌리므로 **측정 자체는 옳다.**
+바뀐 것은 그 Δ 를 무엇 탓으로 돌리느냐다.
 
 여기서는 오늘 자료·오늘 코드로 **837 경로**를 그대로 돌린다. 평균이 0.4710 으로
 가면 원인이 특정된 것이다.
