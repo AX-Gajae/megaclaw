@@ -7,6 +7,20 @@
 🔴 이 사이클은 **자를 뗐다** — 채택/기각을 안 낸다. 서술 통계만 낸다.
 
 산출물: `runners/out899_axesdie.json`
+
+🔴🔴 **노트 900 A 의 정정(티처 #62 C1 · C2-ⓓ)** — 아래 두 곳이 틀렸었다.
+
+① `_feat` 는 **설계행렬이 아니다.** 챔피언 `F18_bagboost` 가 실제로 보는 것은
+   `lab/forms.py:1101-1130 Boost._design()` 이다(`_feat` + `_season(t)` +
+   `_spec_col` + `_domdrop`/`_domperm` + 도메인 원핫). 옛 열은 `_feat` 라는
+   **이름 그대로** 남기고(증거물), `_design()` 열과 **부등호 assert** 를 더했다.
+   실측 차: 도서 157→159 · 만화 186→257 · 애니 565→588 · 팝업 56→65.
+② 배정 체계에 **ⓓ 「정식화가 안 본다」**(`order` 에 없는 축)가 없었다 —
+   게임 전용 넷(`price`·`age_rating`·`ram_gb`·`n_category`)이 유보에서 살아
+   있어서 **죽은 칸 305 에 한 칸도 안 들어갔다.** 305 → **309**(ⓓ 4).
+
+⚠ `runners/out899_axesdie.json` 은 **덮지 않는다**(사전등록에 묶인 증거물).
+   정정판 표는 `runners/out900a_design.py` → `runners/out900a_design.json` 이다.
 """
 import datetime as dt
 import hashlib
@@ -167,10 +181,13 @@ def main():
         n = len(hidx)
 
         Ah, Mh = A[hidx], M[hidx]
-        # 모형이 실제로 보는 설계행렬(도메인 원핫 제외)
+        th = np.asarray(t, float)[hidx]
+        # ⚠ 이것은 **설계행렬이 아니다** --- `_feat` 조각일 뿐이다(900 A 정정 ①).
         F_all = FORMS.DirectPool._feat(Ah, Mh, nm, order)
         Fv = F_all[:, 0::2]        # 값 열
         Fi = F_all[:, 1::2]        # 표시자 열
+        # 🔴 모형이 실제로 보는 설계행렬 --- `predict` 가 그대로 부르는 것
+        X_design = f._design(d, Ah, Mh, th)
 
         nzA = [nm[j] for j in range(A.shape[1]) if nuniq(Ah[:, j]) > 1]
         nzM = [nm[j] for j in range(M.shape[1]) if nuniq(Mh[:, j]) > 1]
@@ -183,7 +200,9 @@ def main():
             "축 이름 수(티처의 36)": len(nm),
             "고유 특성행 uniq(A)": uniq_rows(Ah),
             "고유 특성행 uniq(A,M)": uniq_rows(np.hstack([Ah, Mh])),
-            "🔴 고유 설계행 uniq(_feat)": uniq_rows(F_all),
+            "⚠ 고유 `_feat` 행(설계행렬 아님 · 옛 열)": uniq_rows(F_all),
+            "🔴 고유 설계행 uniq(_feat)": uniq_rows(F_all),   # 옛 이름 보존
+            "🔴 고유 설계행 uniq(_design)": uniq_rows(X_design),
             "비상수 열 A/이름수": f"{len(nzA)}/{len(nm)}",
             "비상수 열 A": len(nzA), "비상수 열 M": len(nzM),
             "🔴 설계행렬에 닿는 축(order)": len(order),
@@ -193,6 +212,15 @@ def main():
             "라벨 고유": nuniq(yh[ok]), "예측 고유(씨앗0)": nuniq(p[ok]),
             "동률 비율(씨앗0)": round(1 - nuniq(p[ok]) / n, 4) if n else None,
         }
+
+        # 🔴 조항 59 --- 결정적 함수에서 `예측 고유 <= 설계행` 은 **원리**다.
+        # 899 초판은 이 부등호가 네 도메인에서 깨진 채로 자기 표에 인쇄돼
+        # 있었는데 **기계가 안 봤다**. 이제 기계가 본다.
+        assert table[d]["예측 고유(씨앗0)"] <= table[d][
+            "🔴 고유 설계행 uniq(_design)"], (
+            f"🔴 {d}: 예측 고유 {table[d]['예측 고유(씨앗0)']} > 설계행 "
+            f"{table[d]['🔴 고유 설계행 uniq(_design)']} --- "
+            "설계행렬이 모형의 것이 아니다(`_feat` 를 쓰고 있지 않나?)")
 
         # ── 세 갈래 배정 ─────────────────────────────────────────────
         rs = raw_src(d)
