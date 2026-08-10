@@ -14,6 +14,15 @@ from ingest.news_counts import SRC
 
 S = Path("data/state")
 
+#: 판 ρ **정본** --- 12도메인 · 유보 3,775 · 씨앗 0~11(노트 837 재기선 · `docs/용어.md`).
+#: 🔴 이 자리는 **판정이지 기록이 아니다.** 아래 `비` 는 이 러너를 돌릴 때마다 오늘
+#: 자료로 새로 계산되므로, 나누는 수도 **오늘의 정본**이어야 짝이 맞는다(조항 60 ---
+#: 두 수를 이어 붙일 때 분모가 같은지 본다. 분자는 12도메인 유보에서 나온다).
+#: 노트 680 이 인쇄한 「챔피언 판 0.4689」와 그 비(0.51)는 **11도메인 시대의 값이고
+#: 837 재기선으로 은퇴했다** --- 그 기록은 노트 680 · 논문 132 · 원장에 남아 있고
+#: 여기서 되살리지 않는다(옛 분모로 나눈 비는 오늘 분자와 분모가 다르다).
+BOARD_RHO = 0.4710
+
 
 def data():
     from lab import loop as L
@@ -77,8 +86,8 @@ for dom in d.dom:
 print(json.dumps({"도메인별": out, "빠짐": {k: v for k, v in rep.items() if v != "ok"},
                   "**텍스트만 판 rho**": round(num / den, 4) if den else None,
                   "채점 유보 합": int(den),
-                  "챔피언 판": 0.4689,
-                  "비": round((num / den) / 0.4689, 3) if den else None},
+                  "챔피언 판(정본 · 12도메인 · 유보 3,775 · 노트 837)": BOARD_RHO,
+                  "비": round((num / den) / BOARD_RHO, 3) if den else None},
                  ensure_ascii=False, indent=1), flush=True)
 
 # 판정이 양성이면 상위 n-gram 을 눈으로 (사각 ②)

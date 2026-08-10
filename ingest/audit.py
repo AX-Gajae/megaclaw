@@ -264,6 +264,14 @@ def law_only_leak() -> dict:
 #:
 #: (파일, 있어야 하는 문자열, 없으면 무엇이 깨지나, 노트)
 CLAIMED_FIXES = [
+    ("ingest/audit.py", "HISTORY_GLOBS",
+     "역사 아카이브(`runners/`·대장·논문 그림)가 시야 밖으로 되돌아가면 티처가 "
+     "또 손으로 찾는다 --- 894 가 스스로 '검출기의 네 번째 시야 밖' 이라 적어 "
+     "놓고 **부류를 안 고친** 자리다(티처 #58 M11)", 896),
+    ("runners/text680.py", "BOARD_RHO",
+     "은퇴한 판 0.4689(**은퇴**)로 나눈 비가 되살아나면 판정이 옛 분모를 탄다 --- "
+     "분자는 오늘 12도메인 유보에서 나오는데 분모만 11도메인이면 조항 60 위반"
+     "(티처 #58 M11)", 896),
     ("lab/pairboot.py", "def check(",
      "규약 47 의 자는 자기시험이 코드에 있어야 한다 --- 829 가 '내장' 을 "
      "문안으로만 주장했다(티처 #6 · 노트 830)", 830),
@@ -588,8 +596,6 @@ DEAD_NUMBERS = [
 #:
 #: **무엇을 안 보는지**(여기 적는 것이 이 상수의 절반이다):
 #:   · `paper/` --- 발행물은 개작하지 않는다. `paper_dead()` 가 따로 본다(빚 래칫).
-#:   · `runners/` --- 그 노트의 역사다. 옛 자로 잰 값이 남아 있는 게 정상이다.
-#:   · `data/lab/denominator.json` --- 대장. 판정 원문을 고치면 역사 왜곡이다.
 #:   · 메모리 아카이브(`project-world-model-lab.md`) --- 노트 108~540 의 **이력**이라
 #:     같은 이유로 뺀다. 살아 있는 것은 색인(MEMORY.md)과 인계 카드다.
 #:   · 🔴 **코드 트리의 하위 디렉터리**(`lab/**`·`ingest/**` 의 깊은 곳) · `tests/` ·
@@ -603,26 +609,63 @@ DEAD_NUMBERS = [
 #: 이고 있었다**(티처 #49 C1 의 *'검출기가 옛 값을 이고 있다'* 가 이 파일에서 재발).
 #: 그래서 `lab/`·`ingest/`·`core/`·`state/` 를 시야에 넣는다. **비재귀**다 --- 하위
 #: 디렉터리는 아직 안 본다(그것도 여기 적어 둔다).
+
+#: 🔴 **역사 아카이브 --- 시야 안이되 층이 다르다(티처 #58 M11 · 노트 896).**
+#:
+#: 894 까지 `runners/` 와 대장은 *"역사라서 안 본다"* 로 **glob 밖**에 있었다. 티처
+#: #57 C4 가 손으로 찾은 죽은 문장이 있던 곳이 정확히 `runners/` 이고, 894 스스로
+#: *'검출기의 네 번째 시야 밖(코드 트리)'* 이라 적어 놓고 **부류는 안 고쳤다**.
+#: 시야 밖의 실물이 `runners/text680.py:80-81` 이었다 --- 은퇴한 판 0.4689 를
+#: 「챔피언」으로 놓고 **그것으로 나눠 비를 냈다**. 역사가 아니라 **오늘 도는 판정**이다.
+#:
+#: 그래서 **빼지 않고 층을 나눈다.** 시야는 넓힌 채로 두고 판별을 정밀하게 한다:
+#:   · **판정 자리**(경성 실패) --- 그 수가 **식에 들어간다**. `.py` 를 AST 로 읽어
+#:     ①산술·비교의 피연산자 ②「챔피언·정본·현재」류 키가 가리키는 값 둘만 고른다.
+#:   · **기록 자리**(등록된 빚) --- 나머지 전부. 주석·docstring·노트 인용·산출물 JSON.
+#: 한 줄로: **역사는 문장이고 판정은 식이다.**
+#:
+#: 넓히자 실제로 나온 것(2026-08-10 실측 · 236건): 판정 **2**(text680 둘) · 기록 **234**.
+#: 기록 쪽의 제일 큰 덩어리는 `out848_checkpoint.jsonl` **13건**인데 전부 `joint_pred`
+#: 부동소수 배열 안의 **자릿수 우연**이다(`… 0.4117, 0.4689(**은퇴**), 0.4065 …`). 산출물 파일은
+#: 원리상 판정을 못 하므로 --- 그 안의 수는 **그때 잰 값**이다 --- 여기서 걸리는 것은
+#: 전부 잡음이다. 894 가 `26시간` 에서 겪은 것(문맥 없는 맨 수량)의 **자릿수 판본**이고,
+#: 그래서 시야를 좁히는 대신 **판정 자리 규칙**을 세웠다.
+#:
+#: 🔴 **셋째 칸은 논문 그림 코드다(티처 #58 m7).** `paper_dead()` 는 `main.tex` 만
+#: 읽으므로 `paper/steps/*/figs/make.py` 는 **어느 검사에도 안 걸렸다** --- 132 의
+#: 그림이 은퇴한 0.4689 를 날짜 없는 「챔피언」 세로선으로 그리고 있었는데 티처가
+#: 손으로 찾았다. 논문 본문은 개작하지 않지만 **그림은 코드라서 다시 돈다.**
+#: 실측 101파일 · 경성 0 · 기록 4(전부 그 시대의 실측을 그린 것이고 값은 넷 다
+#: **은퇴** --- 129 의 3,369 · 74·87 의 0.4697 · 132 의 0.4689).
+#: ⚠ **이 자가 못 보는 것**: `axvline(0.4689)`(**은퇴**)
+#: 처럼 **함수 인자**로 들어가는 수는 산술도 비교도 아니라 기록으로 떨어진다 ---
+#: 132 를 잡은 것은 이 자가 아니라 사람이다. 래칫이 그 자리를 대신 지킨다.
+HISTORY_GLOBS = ("runners/**/*", "data/lab/denominator.json",
+                 "paper/steps/*/figs/*.py")
+
 LIVE_GLOBS = ("docs/**/*.html", "docs/**/*.md", "serve/*.py",
               "lab/*.py", "ingest/*.py", "core/*.py", "state/*.py",
               "data/lab/program.json", "*.md",   # 🔴 티처 #57 m1 --- 저장소 루트의
               # `*.md` 가 통째로 시야 밖이었다(`social-world-model-research.md`).
               # `README.md` 만 손으로 박아 둔 것이 **손 나열 병의 마지막 잔재**였다.
               "../.claude/projects/-Users-ax-world-model/memory/MEMORY.md",
-              "../.claude/projects/-Users-ax-world-model/memory/project-lab-state.md")
+              "../.claude/projects/-Users-ax-world-model/memory/project-lab-state.md",
+              ) + HISTORY_GLOBS
+#: ↑ **더해서 만든다.** 역사 아카이브가 시야에서 빠지는 경우를 문법으로 없앤다 ---
+#: 손으로 두 목록을 맞추면 다시 갈라진다(893 이 버린 손 나열 병의 재발 경로).
 
 #: 위 glob 이 쓸어 오되 **역사**라서 빼는 것(이름으로만 뺀다 --- 경로 규칙이 아니다).
 LIVE_SKIP = ("project-world-model-lab.md",)
 
 
-def live_docs() -> list[str]:
-    """살아 있는 발행물 목록을 **glob 으로 모은다**(손 나열 금지).
+def _glob_docs(pats) -> list[str]:
+    """glob 묶음 → ROOT 기준 상대 경로. **매처는 한 곳에만 둔다.**
 
-    ROOT 기준 상대 경로 문자열을 정렬해 돌려준다. 상수처럼 쓰이지만 함수인
-    이유는 하나 --- **새 문서가 생기면 자동으로 시야에 들어와야 한다.**
+    `live_docs()` 와 `history_docs()` 가 같은 함수를 쓴다 --- 두 벌로 적으면
+    갈라진다(노트 701·713 이 등록소로 고친 병과 같은 것).
     """
     out = []
-    for pat in LIVE_GLOBS:
+    for pat in pats:
         if "*" in pat:
             for p in sorted(ROOT.glob(pat)):
                 if p.is_file() and p.name not in LIVE_SKIP:
@@ -632,6 +675,20 @@ def live_docs() -> list[str]:
             if p.exists() and p.name not in LIVE_SKIP:
                 out.append(pat)
     return sorted(dict.fromkeys(out))
+
+
+def live_docs() -> list[str]:
+    """살아 있는 발행물 목록을 **glob 으로 모은다**(손 나열 금지).
+
+    ROOT 기준 상대 경로 문자열을 정렬해 돌려준다. 상수처럼 쓰이지만 함수인
+    이유는 하나 --- **새 문서가 생기면 자동으로 시야에 들어와야 한다.**
+    """
+    return _glob_docs(LIVE_GLOBS)
+
+
+def history_docs() -> set:
+    """역사 아카이브(`HISTORY_GLOBS`). 시야 안이되 **판정 자리만** 경성이다."""
+    return set(_glob_docs(HISTORY_GLOBS))
 
 
 #: 논문은 **발행물**이지 살아 있는 문서가 아니다 --- 지난 것을 고쳐 쓰면 역사 왜곡이다.
@@ -738,7 +795,80 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
                   "발행물은 개작하지 않으므로 새 논문만 막고 빚은 래칫으로 든다.")}
 
 
-def dead_numbers() -> dict:
+#: 역사 아카이브에서 그 수를 **오늘의 값으로 발행하는** 라벨(티처 #58 M11).
+#: dict 의 키가 이 낱말을 품으면 그 값은 기록이 아니라 **주장**이다 ---
+#: `{"챔피언 판": 0.4689}`(**은퇴**한 값) 가 정확히 그 꼴이었다. 반대로
+#: `{"노트 703 학습구간 검증": 0.134}`(**은퇴** · `runners/hold732.py:151`)는
+#: **인용**이라 안 잡는다.
+NOW_WORDS = ("챔피언", "정본", "현재", "기준선", "지금")
+
+#: 역사 아카이브에 이미 인쇄된 죽은 숫자(**기록 자리**). `PAPER_DEBT` 와 같은
+#: 래칫이다 --- 줄어드는 것은 언제나 통과, **늘면 실패**. 그래서 새 러너가
+#: 죽은 숫자를 조용히 인쇄하는 것은 막히고, 옛 기록은 개작하지 않는다.
+#: 2026-08-10 실측 238 = `runners/` 30 + `data/lab/denominator.json` 204
+#: + `paper/steps/*/figs/*.py` 4.
+DEAD_HISTORY_DEBT = 238
+
+
+def _judgment_lits(src: str) -> set:
+    """그 파일에서 **판정에 쓰이는 상수**만 `(줄, 원문)` 으로 고른다.
+
+    역사 아카이브 안에서 *경성 실패*와 *기록*을 가르는 유일한 자다. 셋만 본다:
+
+      · 산술(`BinOp`)의 피연산자 --- `(num/den) / 0.4689`(**은퇴**) 처럼 **나누는 수**.
+      · 비교(`Compare`)의 양변 --- `if rho >= 0.4689`(**은퇴**) 처럼 **문턱**.
+      · `NOW_WORDS` 를 품은 dict 키가 가리키는 값 --- **오늘의 값이라 주장하는 라벨.**
+
+    주석·docstring·문자열 산문·노트 인용은 전부 빠진다 --- 그것이 역사다.
+
+    🔴 **알려진 구멍**: 죽은 수를 이름 뒤에 숨기면(`OLD = 0.4689` 뒤에 `x / OLD`)
+    이 자는 못 본다. 다만 그 대입줄에 `은퇴` 를 안 달면 `OK_MARKS` 검사가 대신
+    잡고, 달면 그것은 **표시된 역사**라 잡지 않는 것이 옳다. 즉 구멍이 아니라
+    표시 의무로 넘어간다 --- 그래도 자동은 아니므로 여기 적어 둔다.
+    """
+    import ast
+    try:
+        tree = ast.parse(src)
+    except Exception:
+        return set()
+    out = set()
+
+    def take(node):
+        if not isinstance(node, ast.Constant):
+            return
+        if node.value is None or isinstance(node.value, bool):
+            return
+        if not isinstance(node.value, (int, float, str)):
+            return
+        if isinstance(node.value, str):
+            seg = node.value
+        else:
+            # `get_source_segment` 은 열 오프셋이 **바이트**라 한글 줄에서 터진다.
+            # 터지면 값 자체로 떨어진다(리터럴 표기와 다를 수 있으나 자릿수는 같다).
+            try:
+                seg = ast.get_source_segment(src, node) or repr(node.value)
+            except Exception:
+                seg = repr(node.value)
+        if seg:
+            out.add((node.lineno, seg.strip()))
+
+    for n in ast.walk(tree):
+        if isinstance(n, ast.BinOp):
+            take(n.left)
+            take(n.right)
+        elif isinstance(n, ast.Compare):
+            take(n.left)
+            for c in n.comparators:
+                take(c)
+        elif isinstance(n, ast.Dict):
+            for k, v in zip(n.keys, n.values):
+                if (isinstance(k, ast.Constant) and isinstance(k.value, str)
+                        and any(w in k.value for w in NOW_WORDS)):
+                    take(v)
+    return out
+
+
+def dead_numbers(debt: int = DEAD_HISTORY_DEBT) -> dict:
     """정정된 숫자가 **살아 있는 문서**에 남아 있나(노트 672).
 
     노트 518 이 판 0.4932 를 적고 노트 556 이 그것을 정정했는데, 메모리 색인이
@@ -783,14 +913,19 @@ def dead_numbers() -> dict:
     # 죽었다고 밝히는 말이다.
     ok_marks = OK_MARKS
     SPAN = 2
-    hits = []
+    hits, aged = [], []
     docs = live_docs()
+    hist = history_docs()
     for rel in docs:
         p = (ROOT / rel).resolve()
         try:
-            lines = p.read_text().splitlines()
+            text = p.read_text()
         except Exception:
             continue
+        lines = text.splitlines()
+        # 역사 아카이브의 `.py` 만 판정 자리를 따로 센다. 나머지 산출물·대장은
+        # 식이 없으므로 **전부 기록**이다(그 안의 수는 그때 잰 값이다).
+        jl = _judgment_lits(text) if (rel in hist and rel.endswith(".py")) else None
         for i, ln in enumerate(lines, 1):
             near = "\n".join(lines[max(0, i - 1 - SPAN):i + SPAN])
             for row in DEAD_NUMBERS:
@@ -806,11 +941,26 @@ def dead_numbers() -> dict:
                     continue
                 if live.split("(")[0] in near or any(m in near for m in ok_marks):
                     continue
-                hits.append({"문서": rel, "줄": i, "죽은 값": dead,
-                             "산 값": live, "무엇": what, "정정 노트": note})
+                rec = {"문서": rel, "줄": i, "죽은 값": dead,
+                       "산 값": live, "무엇": what, "정정 노트": note}
+                if rel not in hist:
+                    hits.append(rec)                    # 살아 있는 발행물 --- 경성
+                elif jl and any(lno == i and _found(dead, seg) for lno, seg in jl):
+                    rec["왜 경성인가"] = "역사 아카이브지만 이 수가 **식에 들어간다**"
+                    hits.append(rec)                    # 판정 자리 --- 경성
+                else:
+                    aged.append(rec)                    # 기록 자리 --- 래칫
+    from collections import Counter as _C
+    over = len(aged) > debt
     return {"검사": "정정된 숫자가 살아 있는 문서에 남아 있나",
             "표 크기": len(DEAD_NUMBERS), "문서": len(docs),
-            "통과": not hits, "걸린 곳": hits or "없음",
+            "역사 아카이브 문서": len(hist),
+            "통과": (not hits) and (not over),
+            "걸린 곳": hits or "없음",
+            "역사 기록(래칫)": {
+                "수": len(aged), "등록된 빚": debt, "빚이 늘었나": over,
+                "문서별": dict(_C(r["문서"] for r in aged).most_common(8)),
+                "값별": dict(_C(r["죽은 값"] for r in aged).most_common())},
             "왜": "노트 672 — 메모리 색인이 100노트 넘게 죽은 판 수치를 이고 있었다"}
 
 
