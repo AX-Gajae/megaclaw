@@ -561,9 +561,14 @@ DEAD_NUMBERS = [
 
 #: 죽은 숫자를 찾을 **살아 있는 문서**. 대장(`denominator.json`)은 일부러 뺀다.
 #: 노트 736 --- **입문서도 산 문서다.** 11면이 0.134 를 일곱 번 이고 있었는데 검사 밖이었다.
+#: 🔴 노트 892 --- `serve/capability.py` 가 빠져 있었다. 그 파일은 **사용자에게 무엇을
+#: 말해도 되는지**를 정하는 표이고, 거기 붙은 '자' 칸이 837 로 은퇴한 0.4689 · 3,369 ·
+#: 11 도메인 셋을 그대로 발행하고 있었다. 티처 #49 C1(*'검출기 자신이 옛 값을 이고
+#: 있었다'*)의 사촌 --- 이번엔 **검출기의 시야 밖**이었다. 검출기를 세울 때는
+#: **무엇을 안 보는지**를 같이 적어야 한다.
 LIVE_DOCS = ["data/lab/program.json", "docs/program-report.html",
              "docs/primer/index.html", "docs/primer/07.html", "docs/primer/11.html",
-             "serve/registry.py",
+             "serve/registry.py", "serve/capability.py",
              "../.claude/projects/-Users-ax-world-model/memory/MEMORY.md",
              "../.claude/projects/-Users-ax-world-model/memory/project-lab-state.md"]
 
