@@ -33,6 +33,8 @@ _HOW = {
     "predictor_llm": "python3 -m harness.backtest --predictor agent --ensemble 3",
     # 2026-08-10 신설 --- 노트 889 가 '무료 경로가 없는 유일한 자리' 로 남겨 둔 곳.
     "postprocess": "python3 -m ingest.postprocess --agent-dir cycle_log/agent_tasks/postprocess",
+    # 사용자 대면 창구(티처 #53 M5 — 889 가 "여섯"이라 했으나 실제 7곳이었다).
+    "serve_agent": "창구는 유료 경로가 전제다 --- 정말 서빙하려면 WM_ALLOW_PAID_API=1 을 명시하라",
 }
 
 

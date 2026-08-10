@@ -18,12 +18,28 @@
 #
 # 이 두 결함은 "돌고 있다고 믿었는데 안 돌고 있었다" 부류다 — 산출물이 안 생기는
 # 것으로만 드러나고 로그를 열기 전에는 조용하다. 크론 로그를 사이클마다 본다.
-export PATH="$HOME/google-cloud-sdk/bin:/usr/local/bin:/opt/homebrew/bin:$PATH"
+# 🔴 **티처 #53 C4** — 이 스크립트는 crontab 에 살아 있는 **유일한** 작업인데,
+# 노트 889 가 진단하고 `cycle_run.sh` 에서만 고친 결함을 그대로 이고 있었다:
+#   ⓐ PATH 에 `~/.local/bin` 이 없어 gcloud 가 **python3.9** 를 잡고 `bq` 가
+#      `TypeError: unsupported operand type(s) for |` 로 죽는다(티처 실측 · 종료 1).
+#      그런데 `command -v bq` 는 **종료 0** 을 낸다 --- 존재 확인은 작동 확인이 아니다.
+#   ⓑ `source .env` 로 `ANTHROPIC_API_KEY` 를 세우고 **unset 하지 않는다**.
+#      `cycle_run.sh` 가 명시한 두 겹(코드 가드 + 키 제거) 중 한 겹이 없었다.
+export PATH="$HOME/google-cloud-sdk/bin:$HOME/.local/bin:/usr/local/bin:/opt/homebrew/bin:$PATH"
+export CLOUDSDK_PYTHON="$HOME/.local/bin/python3.12"
 cd /Users/ax/world_model || exit 1
 set -a
 source /Users/ax/world_model/.env
 set +a
+
+# 🔴 유료 API 를 크론에서 열지 않는다(사용자 상시 지시 · `cycle_run.sh` 와 같은 두 겹).
+unset ANTHROPIC_API_KEY
+unset WM_ALLOW_PAID_API
 echo "\n===== $(date '+%Y-%m-%d %H:%M') 전향 패스 시작 ====="
-command -v bq >/dev/null || echo "🔴 bq 없음 — step1 이 죽는다"
+# **있는지가 아니라 도는지** 본다(889 의 교훈을 여기에도 적용).
+if ! bq query --project_id=sweetspot-ax --use_legacy_sql=false --format=json \
+     --max_rows=1 'SELECT 1' >/dev/null 2>&1; then
+  echo "🔴 프리플라이트 실패: bq 가 안 돈다(CLOUDSDK_PYTHON=$CLOUDSDK_PYTHON) — step1 이 죽는다"
+fi
 /usr/bin/python3 -m harness.forward
 echo "===== 종료 코드 $? ====="

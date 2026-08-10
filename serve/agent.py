@@ -108,6 +108,11 @@ def stream(question: str, model: str | None = None):
     import anthropic
     from . import capability
 
+    # 🔴 **일곱 번째 진입점**(티처 #53 M5). 노트 889 가 '여섯 자리를 막았다'고
+    # 했는데 저장소 전수 grep 은 **7곳**이었고 여기가 빠져 있었다 --- 그것도
+    # 사용자 대면 창구다. grep 한 번이면 잡혔을 자리다.
+    from core.noapi import assert_free
+    assert_free("serve_agent")
     client = anthropic.Anthropic()
     msgs = [{"role": "user", "content": question}]
     full = ""
