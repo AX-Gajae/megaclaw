@@ -1,0 +1,46 @@
+{
+ "0 현행(BLOCK 그대로)": {
+  "이름": "0 현행",
+  "채점행": 126,
+  "고유 설계행 uniq(_design)": 15,
+  "예측 고유(씨앗0)": 15,
+  "설계행렬 열 수": 88,
+  "유보 entry_friction 마스크 합": 0.0,
+  "유보 entry_friction 값 가짓수": 4,
+  "유보 entry_friction 마스크 가짓수": 1,
+  "order 에 entry_friction 있나": true
+ },
+ "1 BLOCK 만 항등(채우지 않음)": {
+  "이름": "1 BLOCK 해제",
+  "채점행": 126,
+  "고유 설계행 uniq(_design)": 27,
+  "예측 고유(씨앗0)": 27,
+  "설계행렬 열 수": 88,
+  "유보 entry_friction 마스크 합": 89.0,
+  "유보 entry_friction 값 가짓수": 4,
+  "유보 entry_friction 마스크 가짓수": 2,
+  "order 에 entry_friction 있나": true
+ },
+ "2 BLOCK 해제 + 88행 채움(가정)": {
+  "이름": "2 해제+채움",
+  "채점행": 126,
+  "고유 설계행 uniq(_design)": 27,
+  "예측 고유(씨앗0)": 27,
+  "설계행렬 열 수": 88,
+  "유보 entry_friction 마스크 합": 89.0,
+  "유보 entry_friction 값 가짓수": 4,
+  "유보 entry_friction 마스크 가짓수": 2,
+  "order 에 entry_friction 있나": true
+ },
+ "3 채우기만(BLOCK 유지) — 음성대조": {
+  "이름": "3 채움만",
+  "채점행": 126,
+  "고유 설계행 uniq(_design)": 15,
+  "예측 고유(씨앗0)": 15,
+  "설계행렬 열 수": 88,
+  "유보 entry_friction 마스크 합": 0.0,
+  "유보 entry_friction 값 가짓수": 4,
+  "유보 entry_friction 마스크 가짓수": 1,
+  "order 에 entry_friction 있나": true
+ }
+}
