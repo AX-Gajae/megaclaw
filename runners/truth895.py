@@ -17,6 +17,13 @@
 🔴 **파서를 다시 구현하지 않는다**(티처 #57 M8). `runners/pilot893.py` 의 출하된
 `_nav_title` 을 import 해서 쓴다.
 
+🔴 **정정(2026-08-10 저녁 · 티처 #58 C1)**: 초판은 규약 47 을 어겼다 --- `lab.pairboot` 를
+import 조차 안 하고 손으로 짠 **순 percentile**(`boot_auc`, B=4000)로 모든 구간을 냈고,
+그 사실이 산출물에 **한 글자도** 적히지 않았다. 그 구간의 하한 0.7211 이 **F5 게이트**를
+통과시켰다. 이 판은 모든 AUC 구간을 `cluster_boot` **BCa**(B=10,000 · 씨앗 895)로 다시
+내고 --- `bca_auc()` --- **옛 값을 지우지 않고 나란히 병기**한다(`auc_intervals()`).
+F5 판정은 `🔴 F5 게이트` 칸에 기계가 적는다.
+
 🔴 **디시 재분류의 지위**: 894 가 옛 가드의 `결과 컨테이너 없음` 을 '확인된 0' 으로
 재분류했다. 그 전제(응답에 무결과 표지가 있었다)는 P4 재요청 **12/12** 로 실측됐으나
 `boot_ratio(12,12)=[1,1]` 은 퇴화이고 **Clopper-Pearson 하한 0.7354** 다(티처 #57 C4).
@@ -32,7 +39,10 @@ import sys
 from collections import Counter
 from pathlib import Path
 
+import numpy as np
+
 sys.path.insert(0, "/Users/ax/world_model")
+from lab.pairboot import cluster_boot, solo_clusters   # noqa: E402  규약 47(정정 · 아래)
 from runners.pilot893 import _nav_title          # noqa: E402  --- 출하된 파서를 쓴다
 
 ROOT = Path("/Users/ax/world_model")
@@ -153,6 +163,13 @@ def mwu_p(pos: list[float], neg: list[float]) -> float:
 
 
 def boot_auc(pos, neg, B=4000, seed=895):
+    """🔴 **초판(2026-08-10 17:00) 의 구간 — 순 percentile 이다. 정본이 아니다.**
+
+    규약 47 은 BCa 를 요구하는데 이 함수는 `lab.pairboot` 를 쓰지 않고 손으로 짠
+    층화 2표본 percentile 이었고, 그 사실이 산출물에 **한 글자도** 적히지 않았다
+    (티처 #58 C1). **지우지 않고 남긴다** --- 이 실험실은 이력을 안 뭉갠다.
+    지금은 `bca_auc()` 가 정본이고 이 값은 「순 percentile(초판)」으로 병기된다.
+    """
     rng = random.Random(seed)
     es = []
     for _ in range(B):
@@ -161,6 +178,57 @@ def boot_auc(pos, neg, B=4000, seed=895):
         es.append(auc(p, q))
     es.sort()
     return [round(es[int(0.025 * B)], 4), round(es[int(0.975 * B)], 4)]
+
+
+def bca_auc(pos, neg, B=10_000, seed=895) -> dict:
+    """🔴 **정본 구간 — 규약 47 의 `lab.pairboot.cluster_boot` BCa**(씨앗 895).
+
+    작품 하나가 단독 클러스터이므로 `solo_clusters` 로 **명시적** 무군집을 쓴다 ---
+    조용한 폴백을 만들지 않는다(규약 47 병기 의무 · 티처 #5 결함 ③).
+
+    ⚠ **한 벌 재표집이다**: AUC 는 실물·음성 **두 표본**의 통계인데 `cluster_boot` 는
+    합친 78(또는 179)행을 한 번에 다시 뽑으므로 재표집마다 군 비율이 흔들린다.
+    그 성질을 **없애는 대신 적는다** --- 같은 자료의 층화 percentile(초판)을 나란히
+    병기하므로 둘을 비교할 수 있다. `score895.py:199` 가 A 에서 층화를 정본으로 삼은
+    사유와 같은 사실이고, 여기서는 **규약 47 문면을 따르는 쪽(BCa)을 정본으로 둔다.**
+
+    코드가 `percentile(유실)`·`percentile(폴백)` 을 돌려주면 그 문자열을 **그대로**
+    `구간 종류` 에 적고 `폴백 사유` 를 함께 박는다(사전등록 220-224행).
+    """
+    arr = np.asarray(list(pos) + list(neg), float)
+    nr = len(pos)
+
+    def stat(idx):
+        idx = np.asarray(idx, int)
+        p, q = arr[idx[idx < nr]], arr[idx[idx >= nr]]
+        if p.size == 0 or q.size == 0:
+            return float("nan")            # 한 군이 통째로 빠진 재표집 --- 유실로 센다
+        c = p[:, None] - q[None, :]
+        return float(((c > 0).sum() + 0.5 * (c == 0).sum()) / (p.size * q.size))
+
+    clusters, wire = solo_clusters(len(arr))
+    th, lo, hi, kind = cluster_boot(stat, clusters, B=B, seed=seed)
+    rep = {"점추정": round(float(th), 4), "lo": round(float(lo), 4),
+           "hi": round(float(hi), 4), "구간 종류": kind,
+           "B": B, "씨앗": seed, "n": {"실물": nr, "음성": len(arr) - nr},
+           "⚠ 무군집": wire["⚠ 무군집"],
+           "⚠ 한 벌 재표집": "실물·음성을 합쳐 한 번에 재표집한다 --- 군 비율이 흔들린다(층화 아님)"}
+    if kind != "BCa":
+        rep["🔴 폴백 사유"] = (
+            f"`cluster_boot` 이 BCa 를 못 내고 `{kind}` 를 돌려줬다 --- 유실 ≥10%(재표집에서 "
+            "한 군이 비었거나 통계가 nan) 또는 BCa 계산 실패. 사전등록 220-224행의 "
+            "폴백 조항을 발화시킨 것이고, 그 사실을 이 필드로 박는다.")
+    return rep
+
+
+def auc_intervals(pos, neg) -> dict:
+    """🔴 **정정(BCa)과 초판(순 percentile)을 나란히** --- 하나를 지우지 않는다."""
+    new = bca_auc(pos, neg)
+    old = boot_auc(pos, neg)
+    return {"🔴 BCa(정정 · 규약 47 cluster_boot)": new,
+            "순 percentile(초판 · 층화 2표본 · B=4000)": old,
+            "정정−초판 하한 차": round(new["lo"] - old[0], 4),
+            "정정−초판 상한 차": round(new["hi"] - old[1], 4)}
 
 
 # ── 본체 ────────────────────────────────────────────────────────────
@@ -248,7 +316,7 @@ def score_report(out: list[dict], field: str) -> dict:
     }
     if rv and fv:
         rep["🔴 AUC(음성<실물)"] = round(auc(rv, fv), 4)
-        rep["AUC 부트 95%"] = boot_auc(rv, fv)
+        rep["AUC 95% 구간"] = auc_intervals(rv, fv)
         rep["MWU p(양측·타이보정)"] = round(mwu_p(rv, fv), 4)
     if allv:
         rep["🔴 스피어만 천장(타이 없는 완벽한 자)"] = round(ceiling(allv), 4)
@@ -263,7 +331,7 @@ def score_report(out: list[dict], field: str) -> dict:
             continue
         strat[src] = {"n": len(ys), "중앙값": round(sorted(ys)[len(ys) // 2], 4),
                       "AUC(음성<이 팔)": round(auc(ys, fv), 4),
-                      "부트 95%": boot_auc(ys, fv),
+                      "95% 구간": auc_intervals(ys, fv),
                       "MWU p": round(mwu_p(ys, fv), 4)}
     ko = [w[field] for w in real
           if w["질의출처"] in ("AniList native(한글)", "AniList synonyms(한글)")
@@ -272,7 +340,7 @@ def score_report(out: list[dict], field: str) -> dict:
         strat["🔴 한글 질의 실물 전부(native+synonyms)"] = {
             "n": len(ko), "중앙값": round(sorted(ko)[len(ko) // 2], 4),
             "AUC(음성<이 팔)": round(auc(ko, fv), 4),
-            "부트 95%": boot_auc(ko, fv), "MWU p": round(mwu_p(ko, fv), 4)}
+            "95% 구간": auc_intervals(ko, fv), "MWU p": round(mwu_p(ko, fv), 4)}
     rep["🔴 질의 언어로 가른 AUC"] = strat
 
     # 길이 교락 --- 정답지 자신이 질의 길이의 자인가(티처 #57 C3)
@@ -326,8 +394,24 @@ def main():
             w["층"] for w in ko if w[F] is not None)),
         "원산국 분포": dict(Counter(w["country"] for w in ko if w[F] is not None)),
         "AUC(음성<실물)": round(auc(kov, fkv), 4),
-        "AUC 부트 95%": boot_auc(kov, fkv),
+        "AUC 95% 구간": auc_intervals(kov, fkv),
         "MWU p": round(mwu_p(kov, fkv), 4),
+        # 🔴 M8(티처 #58) --- 62 인가 58 인가. 아래 「정본 분모」 칸이 못 박은 것.
+        "🔴 분모 못 박기(62 대 58)": {
+            "등록 모집단(한글 질의 실물 전수)": len(ko),
+            "정답지 값 있음(v2b·느슨)": len(kov),
+            "정답지 결측": len(ko) - len(kov),
+            "정본": ("**A 의 분모는 62**(등록 모집단 전수) · **정답지가 필요한 통계"
+                   "(정답지 자신의 AUC · 천장 · B · C)의 분모는 58+음성 20 = 78**. "
+                   "이 두 수를 한 문장에 잇지 마라(조항 60)."),
+            "근거": ("결측 4건은 **정답지의 결측**이지 자의 결측이 아니다. A 는 '자가 음성을 "
+                   "가르는가' 라 자의 값만 있으면 재진다 --- 정답지 값으로 4건을 떨어뜨리면 "
+                   "**결과(정답지)에 조건을 붙여 표본을 고르는 것**이고, 그것은 v3 이 고친 것 ① "
+                   "에서 스스로 이름 붙여 피한 병(selection on outcome)과 같은 종류다. "
+                   "반대로 B·C·천장은 정답지 값이 **정의상 필요**하므로 58 이 분모다. "
+                   "구현도 그렇게 서 있다 --- score895.py:118 은 62, :152·:170 은 58."),
+            "🔴 둘 다의 값은 out895_score.json 의 「A · 분모 62 대 58 병기」 칸에 있다": True,
+        },
         "🔴 스피어만 천장(이 모집단)": round(ceiling(pop), 4),
         "값 가짓수": len(set(pop)), "제일 큰 타이 블록": max(Counter(pop).values()),
     }
@@ -337,6 +421,44 @@ def main():
         "🔴 통과선 = 천장 × 0.60": round(0.60 * cap, 4),
         "참고 · 전 표본 천장(v2b·느슨)": rep["v2b·느슨"].get("🔴 스피어만 천장(타이 없는 완벽한 자)"),
         "참고 · v1 6단계 천장(티처 #57 이 잰 것)": 0.8278,
+        "⚠ 이 천장의 분모는 78(값 있는 한글 실물 58 + 음성 20)이다": "A 의 분모 62 와 다른 수다(조항 60)",
+    }
+    # ── 🔴 구간법을 산출물 머리에 박는다(티처 #58 C1: 초판엔 이 칸이 없었다) ──
+    kinds = Counter()
+    def _walk(o):
+        if isinstance(o, dict):
+            if "구간 종류" in o and "점추정" in o:
+                kinds[o["구간 종류"]] += 1
+            for v in o.values():
+                _walk(v)
+        elif isinstance(o, list):
+            for v in o:
+                _walk(v)
+    _walk(d)
+    d["🔴 구간법(규약 47)"] = {
+        "정본": "BCa · lab/pairboot.cluster_boot · B=10,000 · 씨앗 895 · 작품 단독 클러스터(무군집 병기)",
+        "구간 종류 집계(세어서)": dict(kinds),
+        "폴백 발화": sum(v for k, v in kinds.items() if k != "BCa"),
+        "폴백 사유": ("없다 --- 퇴화가 한 번도 발화하지 않았다(유실 <10% · BCa 계산 성공). "
+                  "발화했다면 각 구간의 `🔴 폴백 사유` 필드에 코드가 적는다."),
+        "병기": "모든 구간에 초판의 순 percentile(층화 2표본 · B=4000) 값을 나란히 남겼다",
+        "🔴 이력": ("초판(17:00)은 `lab.pairboot` 를 import 조차 안 했고 모든 구간이 손수 짠 "
+                 "순 percentile 이었으며 그 사실이 산출물에 없었다(티처 #58 C1 · 규약 47 위반)."),
+    }
+    # ── 🔴 F5 게이트를 **산출물에 박는다**(티처 #58 C1 이 걸린 자리) ─────
+    ci = d["🔴 정본 채점 모집단(한글 질의 실물 + 음성)"]["AUC 95% 구간"]
+    lo_new = ci["🔴 BCa(정정 · 규약 47 cluster_boot)"]["lo"]
+    lo_old = ci["순 percentile(초판 · 층화 2표본 · B=4000)"][0]
+    d["🔴 F5 게이트(정답지 AUC 부트 하한 ≤ 0.5 면 채점 중단)"] = {
+        "정정 · BCa 하한": lo_new,
+        "초판 · 순 percentile 하한": lo_old,
+        "구간 종류": ci["🔴 BCa(정정 · 규약 47 cluster_boot)"]["구간 종류"],
+        "🔴 판정(정본 = BCa)": "통과(채점 진행)" if lo_new > 0.5 else "🔴 중단 --- 채점하지 마라",
+        "초판 기준 판정": "통과(채점 진행)" if lo_old > 0.5 else "🔴 중단",
+        "판정이 바뀌었나": bool((lo_new > 0.5) != (lo_old > 0.5)),
+        "🔴 이력": ("초판(2026-08-10 17:00)은 규약 47 을 어기고 순 percentile 로 이 게이트를 "
+                 "통과시켰고 그 사실이 산출물에 적히지 않았다(티처 #58 C1). 이 판은 "
+                 "`lab.pairboot.cluster_boot` BCa 로 다시 냈고 **두 값을 나란히 남긴다.**"),
     }
     OUT.write_text(json.dumps(d, ensure_ascii=False, indent=1), encoding="utf-8")
     print(json.dumps({"채점": rep, "B 통과선": d["🔴 B 의 통과선"]}, ensure_ascii=False, indent=1))
