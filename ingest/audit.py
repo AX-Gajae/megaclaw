@@ -547,7 +547,11 @@ DEAD_NUMBERS = [
     ("+0.024", "-0.0648",
      "공휴일 항의 이득. 노트 703 은 학습에 도움이라 적었는데 유보에서는 해롭다(2σ 밖 · 씨앗 8/8). "
      "**그러나 항을 빼지는 않는다** — 그 이득이 달력 재흡수다(노트 736)", 736),
-    ("0.037", "0.0696", "장 지속성 R2 h=30 (같은 이유)", 669),
+    # 🔴 894: ctx 를 건다. 맥락 없이 `0.037` 만 보면 **웹툰 곡선의 폭**(`lab/forms.py:1293`)과
+    # **정규식 경계 시험의 예시**(이 파일 아래)까지 잡는다 --- 둘 다 장 지속성이 아니다.
+    # 자를 좁히는 것이므로 적어 둔다: 이제 이 행은 **`지속성`·`R2`·`R²` 가 같은 줄에
+    # 있을 때만** 발화한다. 좁힌 만큼 못 보는 자리가 생겼다.
+    ("0.037", "0.0696", "장 지속성 R2 h=30 (같은 이유)", 669, ("지속성", "R2", "R²")),
     ("두 번 연속", "다섯 번(671·672·674·676·677)", "자기 검사 결함 횟수", 677),
     ("3,430", "3,775", "채점 분모", 552),
     ("3,369", "3,775", "채점 분모(유보) — 11도메인 시대 값. 837 재기선으로 은퇴", 837),
@@ -561,11 +565,65 @@ DEAD_NUMBERS = [
 
 #: 죽은 숫자를 찾을 **살아 있는 문서**. 대장(`denominator.json`)은 일부러 뺀다.
 #: 노트 736 --- **입문서도 산 문서다.** 11면이 0.134 를 일곱 번 이고 있었는데 검사 밖이었다.
-LIVE_DOCS = ["data/lab/program.json", "docs/program-report.html",
-             "docs/primer/index.html", "docs/primer/07.html", "docs/primer/11.html",
-             "serve/registry.py",
-             "../.claude/projects/-Users-ax-world-model/memory/MEMORY.md",
-             "../.claude/projects/-Users-ax-world-model/memory/project-lab-state.md"]
+#: 🔴 노트 892 --- `serve/capability.py` 가 빠져 있었다. 그 파일은 **사용자에게 무엇을
+#: 말해도 되는지**를 정하는 표이고, 거기 붙은 '자' 칸이 837 로 은퇴한 0.4689 · 3,369 ·
+#: 11 도메인 셋을 그대로 발행하고 있었다. 티처 #49 C1(*'검출기 자신이 옛 값을 이고
+#: 있었다'*)의 사촌 --- 이번엔 **검출기의 시야 밖**이었다. 검출기를 세울 때는
+#: **무엇을 안 보는지**를 같이 적어야 한다.
+#: 🔴 **손 나열을 버린다(티처 #55 C4 · 노트 893).** 위 문단이 *"검출기를 세울 때는
+#: 무엇을 안 보는지를 같이 적어야 한다"* 고 적어 놓고 **목록은 아홉 줄 손 나열**이었다.
+#: 티처가 같은 매처를 274 파일에 대니 목록 **밖에서 27건 / 12파일**이 걸렸고 그중
+#: 살아 있는 발행물이 **20건 / 6파일**이다 --- `docs/용어.md:19` 판 `0.4932`(**은퇴** · 인계 카드
+#: 13행이 모든 프레시 세션을 그 파일로 보낸다) · `serve/boardsvc.py:423`(사용자 응답
+#: 본문) · `docs/investor-deck.html:610`(**투자자 대면**) · `docs/worldmodel-primer.html`
+#: · `docs/primer/05·06.html`(옛 목록은 `index·07·11` 만 짚어 **05·06 이 원리상 안 걸렸다**).
+#: 손 나열은 새 발행물이 생길 때마다 조용히 시야 밖을 만든다 --- 노트 886(`paper/` 누락)
+#: 과 티처 #55 M8(표시 루프 손 나열)이 같은 병이고, 이것이 **세 번째 자리**다.
+#:
+#: **무엇을 안 보는지**(여기 적는 것이 이 상수의 절반이다):
+#:   · `paper/` --- 발행물은 개작하지 않는다. `paper_dead()` 가 따로 본다(빚 래칫).
+#:   · `runners/` --- 그 노트의 역사다. 옛 자로 잰 값이 남아 있는 게 정상이다.
+#:   · `data/lab/denominator.json` --- 대장. 판정 원문을 고치면 역사 왜곡이다.
+#:   · 메모리 아카이브(`project-world-model-lab.md`) --- 노트 108~540 의 **이력**이라
+#:     같은 이유로 뺀다. 살아 있는 것은 색인(MEMORY.md)과 인계 카드다.
+#:   · 🔴 **코드 트리의 하위 디렉터리**(`lab/**`·`ingest/**` 의 깊은 곳) · `tests/` ·
+#:     `notebooks/` --- 위 glob 은 **비재귀**다. 894 가 넣은 것은 네 디렉터리의 **첫 켜**뿐이다.
+#:   · `data/state/*.json` --- 측정 산출물이다. 옛 값이 남아 있는 게 정상이다.
+#: 🔴 **네 번째 자리 --- 코드 트리 전부가 시야 밖이었다(티처 #56 M5 · 노트 894).**
+#: 893 이 손 나열을 버리고 glob 으로 갔는데 glob 이 `serve/*.py` 하나뿐이라 라이브
+#: 라이브러리가 통째로 안 보였다. 같은 매처를 3,233 파일에 대니 진짜가 셋 --- 전부
+#: **머리말**이다: `lab/textaxes.py:3`(0.4689 **은퇴**) · `lab/calib.py:239`(3,369 **은퇴**) ·
+#: `ingest/news_counts.py:58`(3,369 **은퇴**). 그리고 🔴 **`audit.py` 자신이 표시 없는 0.4932 를
+#: 이고 있었다**(티처 #49 C1 의 *'검출기가 옛 값을 이고 있다'* 가 이 파일에서 재발).
+#: 그래서 `lab/`·`ingest/`·`core/`·`state/` 를 시야에 넣는다. **비재귀**다 --- 하위
+#: 디렉터리는 아직 안 본다(그것도 여기 적어 둔다).
+LIVE_GLOBS = ("docs/**/*.html", "docs/**/*.md", "serve/*.py",
+              "lab/*.py", "ingest/*.py", "core/*.py", "state/*.py",
+              "data/lab/program.json", "README.md",
+              "../.claude/projects/-Users-ax-world-model/memory/MEMORY.md",
+              "../.claude/projects/-Users-ax-world-model/memory/project-lab-state.md")
+
+#: 위 glob 이 쓸어 오되 **역사**라서 빼는 것(이름으로만 뺀다 --- 경로 규칙이 아니다).
+LIVE_SKIP = ("project-world-model-lab.md",)
+
+
+def live_docs() -> list[str]:
+    """살아 있는 발행물 목록을 **glob 으로 모은다**(손 나열 금지).
+
+    ROOT 기준 상대 경로 문자열을 정렬해 돌려준다. 상수처럼 쓰이지만 함수인
+    이유는 하나 --- **새 문서가 생기면 자동으로 시야에 들어와야 한다.**
+    """
+    out = []
+    for pat in LIVE_GLOBS:
+        if "*" in pat:
+            for p in sorted(ROOT.glob(pat)):
+                if p.is_file() and p.name not in LIVE_SKIP:
+                    out.append(str(p.relative_to(ROOT)))
+        else:
+            p = (ROOT / pat)
+            if p.exists() and p.name not in LIVE_SKIP:
+                out.append(pat)
+    return sorted(dict.fromkeys(out))
 
 
 #: 논문은 **발행물**이지 살아 있는 문서가 아니다 --- 지난 것을 고쳐 쓰면 역사 왜곡이다.
@@ -596,7 +654,7 @@ OK_MARKS = ("죽은 숫자", "정정", "철회", "은퇴")
 #: 그래서 **기준선 시각**으로 가른다: 이 검사가 생긴 뒤에 나온 논문은 경성 실패,
 #: 그 전 것은 등록된 빚(래칫). 정확하고 재량이 없다.
 PAPER_BASELINE_AT = "2026-08-09T08:40:00"
-PAPER_DEBT = 127        # 886 등록(실측). 111 → 127 은 0.4697 등재분(티처 #51 F5 · 9편 16곳). 이 수를 **넘으면** 실패한다(줄어드는 건 언제나 통과).
+PAPER_DEBT = 127        # 886 등록(실측). 111 → 127 은 0.4697(**은퇴**) 등재분(티처 #51 F5 · 9편 16곳). 이 수를 **넘으면** 실패한다(줄어드는 건 언제나 통과).
 
 
 def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> dict:
@@ -617,11 +675,25 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
         except Exception:
             continue
         errata = str(meta.get("errata", ""))
-        is_fresh = False
-        try:
-            is_fresh = _dt.fromisoformat(str(meta.get("created", ""))) >= cut
-        except Exception:
-            pass
+        # 🔴 894 수리(티처 #56 M6). 옛 코드는 `meta["created"]` **하나**를 봤는데 그건
+        # 저자가 손으로 적는 문자열이다 --- 480 의 `created`(15:05:00 · 초가 00)가
+        # `sent_at`(15:00:18)보다 **5분 늦다**. 자동 생성이 아니라는 뜻이고, 기준선보다
+        # 이른 값을 적으면 **경성 실패가 조용히 래칫으로 내려간다**. 손으로 적는 값이
+        # 관문을 여는 자리에 있으면 그건 관문이 아니다.
+        # → `created` · `sent_at` · 파일 mtime **셋 중 제일 늦은 것**을 쓴다. 손으로
+        #   이르게 적어도 mtime 이 안 속는다.
+        stamps = []
+        for k in ("created", "sent_at"):
+            try:
+                stamps.append(_dt.fromisoformat(str(meta.get(k, ""))))
+            except Exception:
+                pass
+        for q in (meta_p, meta_p.parent / "main.tex"):
+            try:
+                stamps.append(_dt.fromtimestamp(q.stat().st_mtime))
+            except Exception:
+                pass
+        is_fresh = bool(stamps) and max(stamps) >= cut
         lines = tex.splitlines()
         for i, ln in enumerate(lines, 1):
             near = "\n".join(lines[max(0, i - 1 - 2):i + 2])
@@ -700,7 +772,8 @@ def dead_numbers() -> dict:
     ok_marks = OK_MARKS
     SPAN = 2
     hits = []
-    for rel in LIVE_DOCS:
+    docs = live_docs()
+    for rel in docs:
         p = (ROOT / rel).resolve()
         try:
             lines = p.read_text().splitlines()
@@ -721,10 +794,10 @@ def dead_numbers() -> dict:
                     continue
                 if live.split("(")[0] in near or any(m in near for m in ok_marks):
                     continue
-                hits.append({"문서": p.name, "줄": i, "죽은 값": dead,
+                hits.append({"문서": rel, "줄": i, "죽은 값": dead,
                              "산 값": live, "무엇": what, "정정 노트": note})
     return {"검사": "정정된 숫자가 살아 있는 문서에 남아 있나",
-            "표 크기": len(DEAD_NUMBERS), "문서": len(LIVE_DOCS),
+            "표 크기": len(DEAD_NUMBERS), "문서": len(docs),
             "통과": not hits, "걸린 곳": hits or "없음",
             "왜": "노트 672 — 메모리 색인이 100노트 넘게 죽은 판 수치를 이고 있었다"}
 
@@ -758,7 +831,18 @@ if __name__ == "__main__":
         # 이 세운 가드인데 `--json` 없이는 **한 번도 화면에 안 찍혔다** ---
         # '가드는 불려야 가드다'(노트 598)의 다음 층이다: **불려도 안 보이면
         # 안 불린 것과 같다.** 실패는 앞에 표시를 달아 눈에 걸리게 한다.
-        for k in ("법칙전용 누출", "주장한 고침", "T 전파", "죽은 숫자"):
-            mark = "" if d[k]["통과"] else "  ⛔ 실패"
-            print(f"\n══ {k}{mark}\n ", json.dumps(d[k], ensure_ascii=False))
+        # 🔴 **손 나열을 버린다(티처 #55 M8 · 2026-08-10).** 위 문단이 *'불려도 안
+        # 보이면 안 불린 것과 같다'* 를 적어 놓고 **목록을 손으로 넷 적었고**, 노트 886
+        # 이 `죽은 숫자(논문)` 을 신설하면서 여기에 안 넣었다. 그래서 그 검사는
+        # `--json` 없이는 **한 줄도 안 찍혔고**, 노트 892 사이클에서 실제로
+        # `통과=False` 인 채 기본 화면이 전부 초록이었다. **자기가 진단한 병에
+        # 자기가 걸린 것이고, 원인은 목록이 손 나열이었다는 것 하나다.**
+        # 이제 `통과` 키를 가진 항목을 **전부 자동 수집**한다 --- 새 검사를 넣는
+        # 사람이 이 줄을 몰라도 화면에 뜬다.
+        _shown = {"덮음", "신선도", "절단", "대조", "메타 신뢰", "승인 대기"}
+        for k, v in d.items():
+            if k in _shown or not isinstance(v, dict) or "통과" not in v:
+                continue
+            mark = "" if v["통과"] else "  ⛔ 실패"
+            print(f"\n══ {k}{mark}\n ", json.dumps(v, ensure_ascii=False))
         print("\n══ 승인 대기\n ", json.dumps(d["승인 대기"], ensure_ascii=False))

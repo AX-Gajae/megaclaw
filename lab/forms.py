@@ -517,6 +517,12 @@ class BagBoost(Boost):
     SPEC = True
     SPEC_MAXDOM = 4      # 이 수 이하 도메인에서만 관측되는 축을 전용으로 본다
     SPEC_MINOBS = 15
+    #: 도메인마다 특기 칸을 **몇 개** 주나 (노트 888 병 · 티처 #52 (다) · 미결 33).
+    #: 1 이 현행이고 **1 일 때는 옛 경로를 글자 그대로 탄다** --- 그래야 K=2·3 의
+    #: 차가 K 때문인지 내가 넣은 버그 때문인지 갈린다(888 을 에서 쓴 방법).
+    #: `self.spec`(단일 픽 dict) 의 모양은 **안 바꾼다** --- `runners/seal844.py:158`
+    #: 과 `seal2.py:188` 이 `f.spec.get("영화")` 를 단일 튜플로 읽는다.
+    SPEC_K = 1
 
     def _spec_pick(self, train) -> dict:
         """도메인마다 전용 특기 축을 고른다. **학습 라벨만 본다.**"""
@@ -528,11 +534,12 @@ class BagBoost(Boost):
                 if M[:, j].sum() >= self.SPEC_MINOBS:
                     cnt[a] = cnt.get(a, 0) + 1
         excl = {a for a, c in cnt.items() if c <= self.SPEC_MAXDOM}
-        out = {}
+        out, allk = {}, {}
         for d in train.dom:
             A, M, y, t = train.dom[d]
             nm = list(train.names.get(d) or ALL5)
             best = None
+            cand = []
             for j, a in enumerate(nm):
                 if a not in excl:
                     continue
@@ -544,23 +551,44 @@ class BagBoost(Boost):
                     continue
                 if best is None or abs(r) > abs(best[1]):
                     best = (a, float(r))
+                cand.append((a, float(r)))
             out[d] = best
+            # K 개 픽은 **따로 담는다**(노트 888 병). `out` 의 모양을 바꾸면
+            # `seal844`·`seal2` 가 깨진다. |r| 내림차순 · 동률은 이름순으로
+            # 못박아 씨앗·사전순에 안 흔들리게 한다.
+            allk[d] = [x for x in sorted(cand, key=lambda x: (-abs(x[1]), x[0]))]
+        self.spec_all = allk
         return out
 
     def _spec_col(self, d, A, M, names):
-        """(도메인 안 순위, 표시자). 고른 축이 없으면 칸이 빈다."""
+        """(도메인 안 순위, 표시자) × K. 고른 축이 없으면 그 칸이 빈다.
+
+        🔴 **폭은 언제나 2K 다**(노트 888 병 자백 예약). 픽이 없는 칸도 0.5/0 으로
+        자리를 채운다 --- 도메인마다 폭이 다르면 `np.column_stack` 이 죽거나, 더
+        나쁘게 **조용히 어긋난 열끼리 붙는다**. 이 불변식을 검사에 넣었다.
+        """
         nm = list(names or ALL5)
-        pk = getattr(self, "spec", {}).get(d)
-        v = np.full(len(A), 0.5)
-        m = np.zeros(len(A))
-        if pk and pk[0] in nm:
-            j = nm.index(pk[0])
-            o = M[:, j] > 0
-            if o.sum() >= 5:
-                r = rankdata(A[o, j]) / o.sum()
-                v[o] = r if pk[1] >= 0 else 1.0 - r
-                m[o] = 1.0
-        return np.column_stack([v, m])
+        K = int(getattr(self, "SPEC_K", 1) or 1)
+        if K == 1:
+            # **옛 경로 그대로.** K=1 이 비트 동일이어야 K=2·3 의 차를 K 에
+            # 돌릴 수 있다 --- 888 을 에서 쓴 항등 검사와 같은 규율이다.
+            picks = [getattr(self, "spec", {}).get(d)]
+        else:
+            picks = list((getattr(self, "spec_all", {}) or {}).get(d) or [])[:K]
+            picks += [None] * (K - len(picks))
+        cols = []
+        for pk in picks:
+            v = np.full(len(A), 0.5)
+            m = np.zeros(len(A))
+            if pk and pk[0] in nm:
+                j = nm.index(pk[0])
+                o = M[:, j] > 0
+                if o.sum() >= 5:
+                    r = rankdata(A[o, j]) / o.sum()
+                    v[o] = r if pk[1] >= 0 else 1.0 - r
+                    m[o] = 1.0
+            cols += [v, m]
+        return np.column_stack(cols)
 
     @staticmethod
     def _timeax(t):

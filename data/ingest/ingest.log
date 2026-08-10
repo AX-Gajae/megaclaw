@@ -1404,3 +1404,17 @@
 [16:02:10]   RXPU2515 문서 추출 실패 (0910_(Sweetspot) 이마트 ESG 쓱데이 프로모션 기획안.pd): HTTPError
 [16:02:32]   RXPU2515 LLM in=8475 cache_r=3529 out=1189 conf=low docs_read=1
 [16:03:09]   RIPU2520 LLM in=6751 cache_r=3529 out=1173 conf=medium docs_read=2
+[15:47:58] [1/1] ROPU2616 (이름없음)
+[15:48:07]   ROPU2616 실패: BadRequestError: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API.
+[15:48:07] 완료 0 / 스킵 0 / 실패 1
+[20:35:50] [1/1] ROPU2616 (이름없음)
+[20:36:00] 완료 0 / 스킵 0 / 실패 0
+[20:36:00] agent 모드 — 신규 요청 1건 덤프 / 응답 적용 0건
+요청 디렉토리: cycle_log/agent_tasks/forward
+[20:38:46] [1/1] ROPU2616 (이름없음)
+[20:38:56] 완료 0 / 스킵 0 / 실패 0
+[20:38:56] agent 모드 — 신규 요청 1건 덤프 / 응답 적용 0건
+요청 디렉토리: cycle_log/agent_tasks/forward
+[20:40:17] [1/1] ROPU2616 (이름없음)
+[20:40:27] 완료 1 / 스킵 0 / 실패 0
+[20:40:27] agent 모드 — 신규 요청 0건 덤프 / 응답 적용 1건

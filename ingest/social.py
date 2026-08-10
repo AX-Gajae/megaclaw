@@ -219,6 +219,70 @@ def news_rss(q: str, start: str, end: str, hl: str = "ko") -> dict:
             "상한도달": items >= 100, "첫날": dates[-1] if dates else None}
 
 
+def news_rss_items(q: str, start: str, end: str, hl: str = "ko") -> dict:
+    """`news_rss` 가 **세고 버리는 것**을 살린다 --- 제목·링크·**게시일 전량**.
+
+    왜 따로 두나: `news_rss` 는 `<pubDate>` 를 전부 파싱해 놓고 `dates[-1]` 하나만
+    돌려주고 버린다. 건수만 필요할 때는 그게 맞지만, **후견지명 비율**
+    (대상 사건일 **이전**에 쓰인 문서의 비율)을 재려면 **날짜가 전량** 있어야 한다.
+    기존 함수는 쓰는 데가 있으므로 안 건드리고 옆에 붙인다.
+
+    ⚠ **본문은 여기 없다.** RSS 는 제목과 링크만 준다 --- 본문은 링크를 따라가야
+    하고 그건 매체마다 다르다. 그러므로 이 함수로 낼 수 있는 것은
+    **'문서가 언제 쓰였나'** 까지다. 두께(본문 바이트)는 다음 단계다.
+    **셋을 갈라 적는다 --- 있다 / 없다 / 못 읽었다**(조항 59).
+    """
+    qq = f"{q} after:{start} before:{end}"
+    url = ("https://news.google.com/rss/search?q=" + urllib.parse.quote(qq)
+           + f"&hl={hl}&gl=KR&ceid=KR:{hl}")
+    try:
+        h = _get(url)
+    except Exception as e:
+        return {"질의": q, "쓸만한가": False, "사유": f"{type(e).__name__}: {e}"[:160],
+                "항목": []}
+    blocks = re.findall(r"<item>(.*?)</item>", h, re.S)
+    out = []
+    for b in blocks:
+        t = re.search(r"<title>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?</title>", b, re.S)
+        p_ = re.search(r"<pubDate>([^<]+)</pubDate>", b)
+        src = re.search(r"<source[^>]*>([^<]+)</source>", b)
+        out.append({"제목": (t.group(1).strip() if t else "")[:200],
+                    "게시": p_.group(1).strip() if p_ else None,
+                    "매체": src.group(1).strip() if src else None})
+    return {"질의": q, "쓸만한가": True, "창": [start, end],
+            "건수": len(blocks), "상한도달": len(blocks) >= 100,
+            "날짜있음": sum(1 for x in out if x["게시"]), "항목": out}
+
+
+def hindsight_ratio(items, event_date: str) -> dict:
+    """대상 사건일 **이전**에 쓰인 문서의 비율. 이 한 숫자가 코퍼스 전략을 가른다.
+
+    10% 면 '두꺼운 텍스트'는 대부분 후견지명이라 못 쓰고, 60% 면 쓴다.
+    **날짜를 못 읽은 것은 분모에서 뺀다** --- 0 으로 세면 비율이 거짓이 된다(조항 59).
+    """
+    from email.utils import parsedate_to_datetime
+    import datetime as _dt
+    ev = _dt.date.fromisoformat(str(event_date)[:10])
+    pre = post = bad = 0
+    for x in items:
+        d = x.get("게시")
+        if not d:
+            bad += 1
+            continue
+        try:
+            dt = parsedate_to_datetime(d).date()
+        except Exception:
+            bad += 1
+            continue
+        if dt < ev:
+            pre += 1
+        else:
+            post += 1
+    n = pre + post
+    return {"이전": pre, "이후": post, "날짜불명": bad, "판정가능": n,
+            "후견지명이전비율": round(pre / n, 4) if n else None}
+
+
 #: 블로그 크롤 기본 쪽수. **6 에서 20 으로 올렸다**(노트 658).
 #:
 #: 6쪽(180건)에서 자르면 순위가 망가진다. 같은 브랜드를 6쪽과 20쪽으로 재

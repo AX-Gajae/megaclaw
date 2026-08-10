@@ -53,8 +53,11 @@ def make_predictor(kind: str, cycle_dir: str | Path, auto: bool = False, state_f
     if kind == "agent":
         # 구독 세션 내 서브에이전트 경로 — 종량제 API 호출 0 (2026-07-27 비용 사고 대응).
         # 2패스: 1패스에서 request.md 덤프 → 에이전트가 prediction.json 작성 → 2패스에서 봉인.
+        # `ensemble` 을 넘긴다(2026-08-09 · 노트 888). 안 넘기던 동안 이 경로는
+        # 언제나 K=1 이었고, 챔피언 정의(median-of-3)와 **말없이 달랐다**.
         from .predictor_agent import AgentPredictor
-        return AgentPredictor(cycle_dir, state_file=state_file, market=market, features=features)
+        return AgentPredictor(cycle_dir, state_file=state_file, market=market,
+                              features=features, ensemble=ensemble)
     return ManualPredictor(cycle_dir)
 
 
