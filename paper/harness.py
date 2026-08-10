@@ -128,6 +128,13 @@ def _dir(slug: str) -> Path:
 #: `paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> dict`.
 _GATE_FRESH = "🔴 기준선 뒤 논문(경성 실패)"
 
+#: 🔴 **「검사 대상 밖」은 통과가 아니라 「모른다」다**(조항 59 · 티처 #61 C2).
+#: 티처가 `meta.json` 을 지우고 심었더니 그 논문이 **검출기 시야에서 사라지고**
+#: 게이트는 ✅ 를 찍고 빌드까지 했다. 조항 59 위반이 게이트 **안**에 있었다.
+#: `paper_dead()` 가 이제 못 읽은 논문을 이 칸에 실어 주므로 여기서 붙잡는다 ---
+#: 칸이 없으면 계약 파기로 멈춘다(`_GATE_FRESH` 와 같은 이유).
+_GATE_UNKNOWN = "🔴 검사 못 한 논문(모른다)"
+
 
 def _dead_gate(d: Path, phase: str) -> None:
     """죽은 숫자 게이트 --- `ingest.audit.paper_dead()` 를 **실제로 부른다**(노트 898).
@@ -149,9 +156,16 @@ def _dead_gate(d: Path, phase: str) -> None:
         다르다). 반입 실패 · 예외 · **반환 칸 이름이 바뀐 경우** 전부 멈춘다.
 
     **빠져나가는 길은 하나뿐이고 그것이 이 게이트의 목적이다**: 본문에 정정 표시
-    (`죽은 숫자`·`정정`·`철회`·`은퇴` 중 하나 또는 산 값)를 앞뒤 2줄 안에 달거나,
-    오탐이면 `meta.json` 의 `errata` 에 **그 숫자를 문자로** 적는다. 환경변수 같은
-    조용한 우회로는 **일부러 안 만들었다**.
+    (`죽은 숫자`·`정정`·`철회`·`은퇴`·`시대 값` 중 하나 또는 산 값)를 앞뒤 2줄 안에
+    달거나, 오탐이면 `meta.json` 의 `errata` 에 적는다. 환경변수 같은 조용한 우회로는
+    **일부러 안 만들었다**.
+
+    🔴 **두 길이 다 좁아졌다(티처 #61 C2 · 2026-08-10)** --- 심기시험에서 둘 다
+    **빈 표시**로 열렸기 때문이다:
+      · 표시는 **그 숫자에 붙어야 한다.** 같은 줄 이웃 숫자의 괄호 딱지는 안 센다.
+        그리고 **낱말만 덜렁 있는 줄은 표시가 아니다**(`정정` 한 낱말로 열렸었다).
+      · `errata` 는 셋을 다 갖춰야 한다: **그 숫자 · 산 값이나 정정 낱말 · 20자 이상의
+        설명.** 옛 규칙은 숫자만 적어도 열렸다 --- 설명 0글자로 통과했다.
     """
     repo = ROOT.parent
     if str(repo) not in sys.path:
@@ -168,12 +182,27 @@ def _dead_gate(d: Path, phase: str) -> None:
         raise SystemExit(
             f"🔴 paper_dead() 가 예외로 죽었다({type(e).__name__}: {e}) --- "
             "게이트가 안 돌았으므로 build/send 를 멈춘다.")
-    if not isinstance(r, dict) or _GATE_FRESH not in r or "통과" not in r:
+    if (not isinstance(r, dict) or _GATE_FRESH not in r
+            or _GATE_UNKNOWN not in r or "통과" not in r):
         raise SystemExit(
-            f"🔴 게이트 계약이 깨졌다 --- paper_dead() 반환에 '{_GATE_FRESH}' 나 "
-            f"'통과' 칸이 없다(받은 칸: {list(r)[:12] if isinstance(r, dict) else type(r)}). "
-            "칸 이름이 바뀌었으면 harness._GATE_FRESH 를 같이 고쳐라. 이름이 어긋난 채로 "
-            "돌면 빈 목록을 읽고 **조용히 통과**한다 --- 그게 이 게이트가 없던 이유다.")
+            f"🔴 게이트 계약이 깨졌다 --- paper_dead() 반환에 '{_GATE_FRESH}' · "
+            f"'{_GATE_UNKNOWN}' · '통과' 중 없는 칸이 있다"
+            f"(받은 칸: {list(r)[:12] if isinstance(r, dict) else type(r)}). "
+            "칸 이름이 바뀌었으면 harness._GATE_FRESH·_GATE_UNKNOWN 을 같이 고쳐라. "
+            "이름이 어긋난 채로 돌면 빈 목록을 읽고 **조용히 통과**한다 --- 그게 이 "
+            "게이트가 없던 이유다.")
+
+    unk = r[_GATE_UNKNOWN]
+    unk = [] if isinstance(unk, str) else [x for x in unk if isinstance(x, dict)]
+    mine_unk = [x for x in unk if x.get("논문") in (d.name, "(전체)")]
+    if len(unk) - len(mine_unk):
+        print(f"⚠ 검사 못 한 논문 {len(unk) - len(mine_unk)}편이 있다(내 것 아님): "
+              f"{sorted({x.get('논문') for x in unk if x not in mine_unk})[:8]}")
+    if mine_unk:
+        raise SystemExit(
+            f"🔴 죽은 숫자 게이트({phase}): {d.name} 을 **검사하지 못했다** --- "
+            f"{mine_unk}. '없다'와 '못 봤다'는 다르다(조항 59). meta.json · main.tex 를 "
+            "읽을 수 있게 고친 뒤 다시 하라.")
 
     fresh = r[_GATE_FRESH]
     fresh = [] if isinstance(fresh, str) else [x for x in fresh if isinstance(x, dict)]
@@ -192,9 +221,11 @@ def _dead_gate(d: Path, phase: str) -> None:
                   f"errata 있나: {x.get('errata 있나')}")
         raise SystemExit(
             f"🔴 죽은 숫자 게이트({phase}): {d.name} 이 정정된 숫자 {len(mine)}곳을 "
-            "표지 없이 인용한다. 푸는 길 둘 --- ⓐ 그 줄 앞뒤 2줄 안에 정정 문단"
-            "(`죽은 숫자`·`정정`·`철회`·`은퇴` 중 한 낱말 또는 산 값)을 넣는다 "
-            "ⓑ 오탐이면 meta.json 의 `errata` 에 **그 숫자를 문자로** 적고 왜 오탐인지 쓴다.")
+            "표지 없이 인용한다. 푸는 길 둘 --- ⓐ 그 줄 앞뒤 2줄 안에 정정 **문단**"
+            "(`죽은 숫자`·`정정`·`철회`·`은퇴`·`시대 값` 중 한 낱말 또는 산 값)을 넣는다. "
+            "🔴 낱말 하나만 있는 줄은 표시로 안 세고, 딴 숫자의 괄호 딱지도 안 센다 "
+            "ⓑ 오탐이면 meta.json 의 `errata` 에 **그 숫자 + 산 값(또는 정정 낱말) + "
+            "20자 이상의 이유**를 적는다. 숫자만 적으면 안 열린다.")
     print(f"✅ 죽은 숫자 게이트({phase}) 통과 --- {d.name} 경성 실패 0곳 "
           f"(묵은 빚 {r.get('묵은 빚')}/{r.get('등록된 빚')})")
 

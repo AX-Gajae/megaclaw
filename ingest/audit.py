@@ -39,6 +39,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
+import subprocess
 from datetime import date
 from pathlib import Path
 
@@ -536,7 +538,10 @@ NOW_WORDS = ("챔피언", "정본", "현재", "기준선", "지금")
 
 #: 🔴 **판 rho 정본 --- 이 저장소에서 문자열 정본은 여기 한 줄뿐이다(노트 898).**
 #:
-#: 값의 출처는 **한 자리**다: `runners/text680.py:35` 의 `BOARD_RHO`.
+#: 값의 출처는 **한 자리**다: `runners/text680.py:56` 의 `BOARD_RHO`
+#: (🔴 이 주석은 `:35` 라 적고 있었다 --- 티처 #61 경미. 줄 번호를 손으로 적으면
+#: 파일이 자랄 때마다 조용히 틀린다. 대조 자체는 `CANON_SRC` 의 **이름**으로 하므로
+#: 이 숫자는 사람 안내일 뿐이고, 그래서 더 조용히 틀렸다).
 #:   · 잰 것: 2026-08-10 · 12도메인 · 유보 3,775 · 씨앗 0~11 · 오늘 챔피언 경로
 #:   · 원값 0.47034252170476804 · 씨앗 **SD** 0.0020895 · **SE** 0.00060319
 #:   · 판정 근거: 노트 898(이슈 #117) · `runners/out898_verdict.json`
@@ -631,9 +636,13 @@ DEAD_NUMBERS = [
     # ⚠ **개선이 아니라 편의(便倚) 제거다** --- 서수 순위는 판 rho 를 **자료 정렬에
     # 의존하게** 만들었다(행을 20번 섞으니 12/12 도메인에서 갈리고 최대 폭 0.15616,
     # 동률 평균은 0/12 · 폭 0.0). 크기는 판정 규칙에 안 들어갔다.
+    # 🔴 **표에 딱지를 단다**(티처 #61 C2 수리 뒤). 주장어 행은 이제 문맥 선거름이
+    # 없으므로 --- 그것이 맨 숫자를 잡는 값이다 --- **표 자신의 선언 줄이 걸린다.**
+    # 선언은 「죽었다고 적는 자리」이므로 그 사실을 낱말로 적어 둔다. 사면 장치가
+    # 아니라 **표기 의무를 표에도 적용하는 것**이다.
     ("0.46982", CANON_RHO,
-     "판 rho — 「서수 순위 시대 값」. 노트 898 이 판을 자에 맞춰(동률 평균) 내려옴. "
-     "이 값 자체는 오늘도 재현되지만 자료 정렬에 의존한다",
+     "판 rho — 「서수 순위 시대 값」으로 **은퇴**. 노트 898 이 판을 자에 맞춰"
+     "(동률 평균) 내려옴. 이 값 자체는 오늘도 재현되지만 자료 정렬에 의존한다",
      898, NOW_WORDS),
 ]
 
@@ -772,23 +781,224 @@ def history_docs() -> set:
 #:   · 나머지는 **등록된 빚**(`PAPER_DEBT`)을 넘을 때만 실패 --- 래칫이다.
 #: 85편 112곳을 오늘 일괄 수정하는 것은 발행물 개작이라 안 한다. 새 논문이 죽은 숫자를
 #: 인쇄하는 것만 막고, 빚은 세어서 들고 간다.
-#: 🔴 **알려진 약점(티처 #51 F9)**: 표시를 **문단(앞뒤 2줄)** 에서 찾으므로 같은 줄의 이웃 숫자에
-#: 표시를 달면 표시 없는 숫자까지 사면된다. 실물: 인계 카드 366행(살아 있는 `## 현재 챔피언` 블록)이
-#: `판 ρ 0.4697`(표시 없음) 옆에 `0.4689(11도메인·은퇴)` 를 달아 0.4697 이 검출을 피했다.
-#: 창을 좁히면 노트 736 이 고친 결함(HTML 산문 줄바꿈)이 되살아나므로 **방향이 반대인 두 요구**다.
-#: 지금은 약점을 적어 두고, 표시를 **숫자에 붙여 다는 것**(사용처 표시)으로 대응한다.
+#: 🔴 **닫았다(티처 #51 F9 → #61 C6 · 2026-08-10).** 옛 약점: 표시를 **문단(앞뒤 2줄)**
+#: 에서 찾으므로 같은 줄 이웃 숫자에 표시를 달면 표시 없는 숫자까지 사면됐다. 실물 둘 ---
+#: 인계 카드 366행이 표시 없는 판 ρ **0.4697**(**은퇴**) 옆에 `0.4689(11도메인·은퇴)` 를 달아
+#: 검출을 피했고, `docs/program-report.html:124` 가 `0.46982`(**은퇴**)를 「오늘의 정본」이라
+#: 적고도 이웃 `0.4710` 의 괄호 딱지에 사면됐다(**이번엔 실해를 냈다**).
+#: 창을 좁히면 노트 736 이 고친 결함(HTML 산문 줄바꿈)이 되살아나므로 **방향이 반대인 두 요구**
+#: 였는데, `_mark_owner` 가 셋째 길을 낸다: **창은 문단으로 두고, 딴 숫자의 괄호 딱지만 뺀다.**
+#: ⚠ 남은 것: 괄호 없는 산문의 이웃 표시(`0.4932 와 0.4689 는 은퇴`)는 여전히 둘 다 사면한다.
 #:
 #: 정정 표시. 노트 886 --- `은퇴` 를 넣는다. 티처 #50 M7 은 논문 473 이 3,369 을
 #: *"면제 창 없이"* 인쇄했다고 했는데 **틀렸다**: 그 문장은 *"자의 분모가 **은퇴한**
 #: 숫자(11도메인 시대 유보 3,369)였다"* 이다. 구멍은 논문이 아니라 **표시 목록**에 있었다.
-OK_MARKS = ("죽은 숫자", "정정", "철회", "은퇴")
+#: 🔴 **「시대 값」을 넣는다(2026-08-10 · 티처 #61 C2 수리 뒤 실측).** 주장어 행의
+#: 문맥 선거름을 떼자 **제대로 딱지 붙은 줄 셋이 걸렸다** --- `README.md:70·72`
+#: (*"딱지 붙은 값 … ← **서수 시대 값** … 이력으로만 읽는다"*) · `docs/용어.md:25`.
+#: 셋 다 「은퇴」라는 낱말만 안 썼을 뿐 **은퇴를 말하고 있다**. 이 저장소는 은퇴를
+#: `「837 시대 값」`·`「서수 순위 시대 값」` 으로 적는 관용을 이미 쓰고 있고(이 파일의
+#: `DEAD_NUMBERS` 설명 칸이 그렇다), 표시 목록이 그 관용을 몰랐다 --- 노트 886 이
+#: `은퇴` 를 넣을 때 *"구멍은 논문이 아니라 **표시 목록**에 있었다"* 고 적은 자리와
+#: 같은 얼굴이다. ⚠ 사면을 **넓히는** 변경이므로 근거를 남긴다: `_mark_owner` 가
+#: 괄호 딱지를 딴 숫자에서 떼므로, 넓힌 낱말이 이웃 숫자를 덮는 경로는 닫혀 있다.
+OK_MARKS = ("죽은 숫자", "정정", "철회", "은퇴", "시대 값")
+
+# ── 매처 셋. **한 곳에만 둔다** ────────────────────────────────────────────
+# 🔴 티처 #61 C2 --- `paper_dead()` 와 `dead_numbers()` 가 **각자 제 매처를 이고
+# 있었다**(논문 쪽은 :837 에 인라인 한 벌, 문서 쪽은 `_found` 로 또 한 벌). 같은
+# 규칙을 두 벌 적으면 갈라지고, 실제로 갈라져 있었다. 노트 701·713 이 도구를
+# 등록소 하나로 모은 것과 같은 수리다.
+
+
+def _same_number(dead: str, ext: str) -> bool:
+    """`ext`(`dead` 뒤에 숫자가 더 붙은 것)가 **같은 수를 더 정밀하게 적은 것**인가.
+
+    🔴 옛 규칙은 뒤에 숫자가 붙으면 **무조건 버렸다.** 노트 677 이 `0.037` 이
+    `+0.0374`(팝업 이웃 효과) 안에서 잡히는 것을 막으려고 넣은 규칙인데, 그 대가로
+    은퇴값의 정밀 표기가 **원리상 안 잡혔다** --- 실물이
+    `paper/steps/484_oneruler/main.tex:130` 과
+    `docs/prereg_897_architecture.md:27` 의 「실측」 칸이다(티처 #61 C2 · 둘 다 **은퇴**값).
+
+    가르는 자: **`dead` 의 소수 자릿수로 반올림해 같으면 같은 수다**(더 정밀한 표기).
+    자릿수가 어긋나면 딴 수다.
+    숫자가 아닌 죽은 값(수량 표현 · 횟수 표현)은 `float` 이 터지므로 옛 규칙대로 버린다.
+
+    🔴 **다만 소수 4자리 미만에는 안 쓴다.** 처음 판은 자릿수를 안 봤고, 그러자
+    노트 677 이 고친 병이 **그대로 되살아났다**(실측 2026-08-10 · 셋 다 **은퇴**값 아님):
+      · `docs/탐색/898.md:36` 의 BCa 상한이 장 사전학습 R2 의 죽은 값으로
+      · `lab/forms.py:508`·`data/lab/program.json:413` 의 시장팝업 달력 계수가
+        공휴일 항 이득의 죽은 값으로
+    잡혔다 --- **셋 다 딴 뜻이다.** 세 자리는 수를 지목하기에 너무 굵다. 이 규칙이
+    값을 하는 자리는 전부 5자리이므로 잃는 것이 없다.
+    """
+    if "." not in dead or len(dead.split(".")[1]) < 4:
+        return False
+    try:
+        d = float(dead.replace(",", ""))
+        v = float(ext.replace(",", ""))
+    except ValueError:
+        return False
+    nd = len(dead.split(".")[1])
+    return round(v, nd) == round(d, nd)
+
+
+def _spans(dead: str, line: str) -> list:
+    """`line` 안에서 `dead` 가 **그 수로서** 나타나는 자리 `(시작, 끝)` 전부."""
+    out = []
+    for m in re.finditer(re.escape(dead), line):
+        if m.start() and line[m.start() - 1].isdigit():
+            continue                       # 더 긴 수의 꼬리다(노트 677)
+        j = m.end()
+        while j < len(line) and line[j].isdigit():
+            j += 1
+        if j > m.end() and not _same_number(dead, line[m.start():j]):
+            continue                       # 뒤가 붙어 **딴 수**가 됐다
+        out.append((m.start(), j))
+    return out
+
+
+def _found(dead: str, line: str) -> bool:
+    return bool(_spans(dead, line))
+
+
+#: 「값-숫자」 --- 소수점이나 천단위 쉼표가 있는 수. 노트 번호(`898`) · 이슈 번호
+#: (`#112`) · 도메인 수(`12`)는 **값이 아니라 이름**이라 일부러 뺀다.
+VALNUM = re.compile(r"\d{1,3}(?:,\d{3})+|\d+\.\d+")
+
+_OPEN, _CLOSE = "([{（〔［", ")]}）〕］"
+
+
+def _mark_owner(text: str, pos: int):
+    """`pos` 의 정정 표시가 **어느 숫자에 붙었나**. 괄호 밖이면 `None`(무주공산).
+
+    🔴 티처 #61 C6 --- `docs/program-report.html:124` 가 실해를 냈다:
+
+        0.4710±0.0021(분모 3,775 · 「837 시대 값」으로 **은퇴** --- 오늘의 정본은 0.46982…)
+
+    `은퇴` 는 `0.4710` 이 연 괄호 **안**에 있으니 `0.4710` 의 딱지인데, 옛 규칙은
+    표시를 문단 전체에서 찾아 **같은 문단의 0.46982 까지 사면**했다. `:775-779` 가
+    *"알려진 약점"* 이라 적어 놓고 안 닫은 그 구멍이다.
+
+    그래서 **괄호로 주인을 정한다**: 표시가 괄호 안에 있고 그 괄호를 연 자리 바로
+    앞이 값-숫자면(`±`/`∓` 로 이어진 오차 표기는 건너뛴다) 그 숫자가 주인이다.
+    괄호 밖이면 `None` --- 그때는 옛 규칙대로 문단 전체 사면이다.
+
+    ⚠ **닫은 것은 괄호 딱지뿐이다.** 산문 안의 이웃 표시(`0.4932 와 0.4689 는 은퇴`)는
+    여전히 둘 다 사면한다. 더 좁히면 정정 문장 자신이 걸린다 --- 노트 898 실측으로
+    사면을 끄면 경성 13 → 36 이고 는 것 대부분이 정정 문장이다.
+    """
+    depth, i = 0, pos - 1
+    while i >= 0:
+        c = text[i]
+        if c in _CLOSE:
+            depth += 1
+        elif c in _OPEN:
+            if depth == 0:
+                break
+            depth -= 1
+        i -= 1
+    if i < 0:
+        return None                        # 괄호 밖 --- 주인 없음
+    head = text[:i].rstrip()
+    while True:
+        last = None
+        for m in VALNUM.finditer(head):
+            last = m
+        if last is None or last.end() != len(head):
+            return None                    # 괄호 앞이 값-숫자가 아니다
+        prev = head[:last.start()].rstrip()
+        if prev.endswith(("±", "∓")):
+            head = prev[:-1].rstrip()      # 오차 표기다 --- 본값까지 더 간다
+            continue
+        return (last.start(), last.end())
+
+
+def _amnestied(near: str, span, live: str, marks=OK_MARKS) -> bool:
+    """`span` 의 죽은 숫자가 정정 표시나 산 값으로 **사면되나**.
+
+    표시는 **문단**에서 찾는다(노트 736 --- HTML 산문은 줄바꿈으로 끊긴다). 다만
+    **딴 숫자의 괄호 딱지는 세지 않는다**(`_mark_owner`). 두 요구는 방향이 반대라
+    옛 판은 넓은 쪽만 만족했다.
+    """
+    live_tok = live.split("(")[0].strip()
+    for tok in [t for t in (live_tok,) + tuple(marks) if t]:
+        for m in re.finditer(re.escape(tok), near):
+            own = _mark_owner(near, m.start())
+            if own is not None and not (own[0] < span[1] and span[0] < own[1]):
+                continue                   # 딴 숫자의 괄호 딱지다
+            # 🔴 **낱말만 덜렁 있는 줄은 표시가 아니다**(티처 #61 C2 심기시험 넷째).
+            # *"이웃 줄에 「정정」 낱말만"* 두면 통과했다. 게이트가 문서로 약속한
+            # 빠져나갈 길은 *"정정 **문단**을 넣는다"* 이지 낱말 하나가 아니다 ---
+            # `errata` 쪽에 건 것과 같은 요구다(숫자만 적으면 표시가 아니다).
+            # 산 값 토큰에는 안 건다: 표 한 칸에 값만 있는 것은 정상이다.
+            if tok != live_tok:
+                b = near.rfind("\n", 0, m.start()) + 1
+                e = near.find("\n", m.end())
+                mline = near[b:] if e < 0 else near[b:e]
+                if len(mline.strip()) < len(tok) + 12:
+                    continue
+            return True
+    return False
+
+
+def _claim_row(ctx) -> bool:
+    """이 행의 다섯째 칸이 **주장어**(`NOW_WORDS`)인가 --- 뜻 가르개가 아니라.
+
+    다섯째 칸은 두 가지로 쓰이고 있는데 **이름이 하나**여서 섞였다:
+
+      · **뜻 가르개**(`26시간` · `0.0043` · `0.037`) --- 같은 숫자열이 딴 뜻이라
+        그 낱말이 같은 줄에 있을 때만 발화한다. 좁히는 것이 옳다.
+      · **주장어**(옛 판 rho 두 행의 `NOW_WORDS`) --- 그 수는 역사에서는
+        옳고 「오늘의 값」 라벨이 붙은 자리에서만 죽었다.
+
+    🔴 티처 #61 C2 --- 둘을 같은 규칙으로 다루자 **맨 숫자가 영영 안 잡혔다**:
+    *"판 rho 는 〈은퇴한 수〉 이다."* 는 주장인데 `NOW_WORDS` 가 줄에 없어서 통과했고
+    PDF 까지 나왔다(티처가 심어서 확인). 주장어 행은 **낱말이 있어야 잡는 것**이 아니라
+    **표시가 없으면 잡는 것**이다 --- 그래서 문맥 선거름을 걸지 않고
+    사면(`_amnestied`)에만 맡긴다. `ctx is NOW_WORDS` 로 가른다(같은 객체다).
+    """
+    return ctx is NOW_WORDS
 
 #: 날짜 창으로 가르려던 두 번째 시도도 실패했다 --- 3일 이내 논문이 **113편**이다
 #: (두 계열이 동시에 쓰이는 중이라 118~230 번대가 지금도 나온다). 나이는 자가 못 된다.
 #: 그래서 **기준선 시각**으로 가른다: 이 검사가 생긴 뒤에 나온 논문은 경성 실패,
 #: 그 전 것은 등록된 빚(래칫). 정확하고 재량이 없다.
 PAPER_BASELINE_AT = "2026-08-09T08:40:00"
-PAPER_DEBT = 127        # 886 등록(실측). 111 → 127 은 0.4697(**은퇴**) 등재분(티처 #51 F5 · 9편 16곳). 이 수를 **넘으면** 실패한다(줄어드는 건 언제나 통과).
+#: 이 수를 **넘으면** 실패한다(줄어드는 건 언제나 통과).
+#: 886 등록 111 → 127 은 0.4697(**은퇴**) 등재분(티처 #51 F5 · 9편 16곳).
+#: 🔴 **2026-08-10 127 → 108 로 내린다**(티처 #61 C2 수리 뒤 실측). 두 움직임이 겹쳤다:
+#:   · 옛 규칙으로 오늘 트리를 재면 **91** 이다 --- 등록 127 은 **36칸이 놀고 있었다.**
+#:     래칫은 남는 칸만큼 조용히 사면한다. 그래서 실측으로 다시 죈다.
+#:   · **주장어 문맥 선거름 제거로 +17**(91 → 108 · 85편). 은퇴한 판 rho 를 표지 없이
+#:     인쇄한 논문이 그만큼 더 보인다. 발행물은 개작하지 않으므로 세어서 들고 간다.
+PAPER_DEBT = 108
+
+
+def _dirty_papers() -> set:
+    """작업 트리에서 **손댄** 논문 디렉터리 이름. 못 물으면 `None`.
+
+    🔴 티처 #61 C2 --- *"`created` 를 기준선 이전으로 `touch` 하면 통과하고 빚만
+    조용히 +1"* 이 실측으로 확인됐다. 894 수리가 `created`·`sent_at`·mtime 중
+    **제일 늦은 것**을 쓰게 했지만 셋 다 손이 닿는 값이다(`touch -t` 하나로 끝난다).
+    손이 못 닿는 자는 **git** 이다: 방금 심은 논문은 미추적이거나 수정 상태다.
+    """
+    try:
+        r = subprocess.run(["git", "status", "--porcelain", "-z", "--", "paper/steps"],
+                           cwd=ROOT, capture_output=True, text=True, timeout=30)
+        if r.returncode:
+            return None
+    except Exception:
+        return None
+    out = set()
+    for rec in r.stdout.split("\0"):
+        rec = rec.strip()
+        if len(rec) < 4:
+            continue
+        parts = rec[3:].split("/")
+        if len(parts) >= 3 and parts[0] == "paper" and parts[1] == "steps":
+            out.add(parts[2])
+    return out
 
 
 def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> dict:
@@ -796,17 +1006,36 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
 
     논문은 발행물이라 옛것을 고쳐 쓰면 역사 왜곡이다. 그래서 **새로 내는 것만**
     막고 이미 인쇄된 것은 세어서 들고 간다.
+
+    🔴 **검사 대상 밖은 통과가 아니라 「모른다」다**(조항 59 · 티처 #61 C2).
+    옛 판은 `paper/steps/*/meta.json` 을 훑고 읽기 실패하면 `continue` 했다 ---
+    `meta.json` 을 **지우면** 그 논문이 시야에서 사라지고 게이트는 ✅ 를 찍었다.
+    이제 디렉터리를 훑어 `main.tex`/`meta.json` 을 못 읽은 것을 `모른다` 로 세고,
+    하나라도 있으면 **통과가 아니다**.
     """
-    import re as _re
     from datetime import datetime as _dt
 
     cut = _dt.fromisoformat(baseline_at)
-    fresh, aged = [], []
-    for meta_p in sorted((ROOT / "paper/steps").glob("*/meta.json")):
+    dirty = _dirty_papers()
+    fresh, aged, unknown = [], [], []
+    if dirty is None:
+        unknown.append({"논문": "(전체)", "못 읽은 것": "git status",
+                        "왜": "손 도장(created·sent_at·mtime)만으로는 신선도를 못 가른다"})
+    steps = ROOT / "paper/steps"
+    dirs = sorted(p for p in steps.iterdir() if p.is_dir()) if steps.is_dir() else []
+    for d in dirs:
+        meta_p, tex_p = d / "meta.json", d / "main.tex"
         try:
             meta = json.loads(meta_p.read_text())
-            tex = (meta_p.parent / "main.tex").read_text()
-        except Exception:
+        except Exception as e:
+            unknown.append({"논문": d.name, "못 읽은 것": "meta.json",
+                            "왜": f"{type(e).__name__}"})
+            meta = {}
+        try:
+            tex = tex_p.read_text()
+        except Exception as e:
+            unknown.append({"논문": d.name, "못 읽은 것": "main.tex",
+                            "왜": f"{type(e).__name__}"})
             continue
         errata = str(meta.get("errata", ""))
         # 🔴 894 수리(티처 #56 M6). 옛 코드는 `meta["created"]` **하나**를 봤는데 그건
@@ -822,51 +1051,65 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
                 stamps.append(_dt.fromisoformat(str(meta.get(k, ""))))
             except Exception:
                 pass
-        for q in (meta_p, meta_p.parent / "main.tex"):
+        for q in (meta_p, tex_p):
             try:
                 stamps.append(_dt.fromtimestamp(q.stat().st_mtime))
             except Exception:
                 pass
-        is_fresh = bool(stamps) and max(stamps) >= cut
+        # 🔴 **git 이 마지막 자다**(티처 #61 C2 · 위 `_dirty_papers` 참조).
+        # 손이 닿는 세 도장(`created`·`sent_at`·mtime)은 `touch -t` 하나로 뒤집힌다.
+        # 작업 트리에서 손댄 논문은 **무조건 신선**이다. git 을 못 물으면(`None`)
+        # 그 사실을 `모른다` 로 올린다 --- 통과가 아니다.
+        is_fresh = (bool(stamps) and max(stamps) >= cut) or (
+            dirty is not None and d.name in dirty)
         lines = tex.splitlines()
         for i, ln in enumerate(lines, 1):
             near = "\n".join(lines[max(0, i - 1 - 2):i + 2])
+            off = sum(len(x) + 1 for x in lines[max(0, i - 1 - 2):i - 1])
             for row in DEAD_NUMBERS:
                 dead, live, what, note = row[:4]
                 ctx = row[4] if len(row) > 4 else None
-                if not any(not (ln[m.end():m.end() + 1].isdigit()
-                                or (m.start() and ln[m.start() - 1].isdigit()))
-                           for m in _re.finditer(_re.escape(dead), ln)):
+                sp = _spans(dead, ln)
+                if not sp:
                     continue
-                if ctx and not any(w in ln for w in ctx):
+                # **주장어 행은 문맥 선거름을 걸지 않는다**(`_claim_row` 참조).
+                # 맨 숫자(*"판 rho 는 〈은퇴한 수〉 이다."*)가 영영 안 잡히던 자리다.
+                if ctx and not _claim_row(ctx) and not any(w in ln for w in ctx):
                     continue
-                # 🔴 **사면 규칙 --- 노트 898 에서 검토했다(티처 #60 C3 · 이슈 #118).**
-                # 판단: **규칙의 모양은 옳다. 틀린 것은 비교 대상이었다.** 근거(세
-                # 변형의 저장소 전량 실측)는 아래 `dead_numbers()` 의 **같은 두 줄**
-                # 바로 위에 적어 두었다 --- 두 곳에 같은 판단을 베끼면 갈라지므로
-                # 여기서는 가리키기만 한다.
-                if live.split("(")[0] in near or any(m in near for m in
-                                                     OK_MARKS):
+                # 🔴 **사면 규칙 --- 표시는 그 숫자에 붙어야 한다**(`_amnestied`).
+                # 근거와 실측은 `_mark_owner` 의 docstring 에 한 벌만 적었다 ---
+                # 두 곳에 같은 판단을 베끼면 갈라진다.
+                if all(_amnestied(near, (s + off, e + off), live) for s, e in sp):
                     continue
-                if dead in errata:
+                # 🔴 **errata 사면을 좁힌다**(티처 #61 C2). 옛 규칙은 `dead in errata`
+                # **부분문자열 하나**였다 --- `errata: "0.46982"` 처럼 숫자만 적으면
+                # 설명 0글자로 통과했다. 표시는 「무엇이 왜 오탐인가」이지 숫자가 아니다.
+                # 이제 셋 다 요구한다: ①그 숫자 ②산 값이나 정정 표시 낱말 ③설명 20자 이상.
+                if (dead in errata and len(errata.strip()) >= 20
+                        and (live.split("(")[0] in errata
+                             or any(m in errata for m in OK_MARKS))):
                     continue
-                rec = {"논문": meta_p.parent.name, "줄": i, "죽은 값": dead,
+                rec = {"논문": d.name, "줄": i, "죽은 값": dead,
                        "산 값": live, "무엇": what, "정정 노트": note,
                        "errata 있나": bool(errata)}
                 (fresh if is_fresh else aged).append(rec)
     over = len(aged) > debt
     from collections import Counter as _C
     return {"검사": "죽은 숫자가 논문에 인쇄돼 있나",
-            "논문 수": len(list((ROOT / "paper/steps").glob("*/meta.json"))),
+            "논문 수": len(dirs),
             "기준선": baseline_at,
             "🔴 기준선 뒤 논문(경성 실패)": fresh or "없음",
+            "🔴 검사 못 한 논문(모른다)": unknown or "없음",
             "빚 내역(죽은 값별)": dict(_C(r["죽은 값"] for r in aged).most_common()),
             "묵은 빚": len(aged), "등록된 빚": debt, "빚이 늘었나": over,
             "빚진 논문 수": len({r["논문"] for r in aged}),
-            "통과": (not fresh) and (not over),
+            "통과": (not fresh) and (not over) and (not unknown),
             "왜": ("노트 886 티처 #50 M7 — LIVE_DOCS 에 paper/ 가 없어 473 이 은퇴 숫자 3,369 을 "
                   "**정정을 명령한 바로 그 사이클에** 인쇄하고도 통과했다. "
-                  "발행물은 개작하지 않으므로 새 논문만 막고 빚은 래칫으로 든다.")}
+                  "발행물은 개작하지 않으므로 새 논문만 막고 빚은 래칫으로 든다. "
+                  "🔴 티처 #61 C2 — 심기시험 여덟 중 여섯이 열려 있었다. 닫은 것: "
+                  "맨 숫자 · errata 부분문자열 · 낱말만 있는 표시 줄 · meta.json 부재(모른다) · "
+                  "손 도장 되돌리기(git) · 정밀 표기 · 판정 자리 순서.")}
 
 
 #: ↑ `NOW_WORDS` 는 **표보다 위**로 옮겼다(노트 898) --- `DEAD_NUMBERS` 의
@@ -880,17 +1123,22 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
 #:
 #: 🔴 **래칫을 올릴 때는 늘어난 항목을 여기 이름으로 적는다.** 안 적으면 이 상수는
 #: 게이트가 아니라 **자동 사면 장치**가 된다.
-#: 🔴 2026-08-10 **273 으로 +15**(노트 898 · 취합). 늘어난 곳을 전부 이름으로 적는다:
-#:   · `denominator.json` 220(+14) --- 티처 #60 · 수리 셋 · 898 판정을 원장에 적으면서
-#:     그 문장들이 인용한 은퇴값(0.4710 · 0.46982 · 0.4689 · 노트 703 R2)이 늘었다
-#:   · `runners/verdict112.py` 4 · `out113_*` 8 --- **이미 있던 산출물**이 이번에
-#:     새로 세어졌다. 0.46982 를 이번 사이클에 죽은 숫자로 **등록**했기 때문이다.
-#:     🔴 이 +12 는 새로 인쇄된 것이 아니라 **눈을 뜬 결과**다(수리 A 가 0.4710 을
-#:     등록했을 때와 같은 얼굴).
-#:   · `docs/prereg_897_architecture.md` 1 --- 사전등록을 **역사 자리**로 옮겼다.
-#:     사전등록은 정의상 얼어붙은 기록이라 고칠 수 없고, 판정 자리로 세면 영원히
-#:     못 닫는 경성 실패가 되어 게이트가 꺼진다. 래칫에는 계속 올린다.
-#: ⚠ **판정 자리는 0 이다** --- `걸린 곳: 없음`.
+#: 🔴 **2026-08-10 258 → 273 (+15). 이 문단의 산수와 원인이 둘 다 틀렸다** ---
+#: 티처 #61 M-4 가 세었다. 아래가 정정본이고, 취소선 대신 **틀린 서술을 남겨 둔다**:
+#:   · 옛 서술 ①: *"denominator.json 220(+14) · verdict112.py 4 · out113_* 8"* ---
+#:     **+14 / +12 / +1 을 더하면 27 이지 15 가 아니다.** 나열한 것은 **증분이 아니라
+#:     그 문서의 총계**였다(220 은 +14 가 아니라 220건 자체다). 증분과 총계를 같은
+#:     칸에 섞어 적었다.
+#:   · 옛 서술 ②: *"verdict112.py 4 는 0.46982 를 등록했기 때문"* --- **틀렸다.**
+#:     그 4건은 `0.4710`·`0.4932`·`0.4689`·`0.4697` 이고 **`0.46982` 는 0건**이다.
+#:   · 🔴 **진짜 원인은 사면 토큰의 이동**이다. `CANON_RHO` 를 0.46982 → 0.47034 로
+#:     옮기자 「산 값」 문자열이 덮어 주던 줄들이 드러났다(옛 정본이 사면 토큰이던
+#:     자리 --- `denominator.json:7495` 가 그 실물). `0.46982` **등록분은 8건**이고
+#:     전부 `out113_*` 셋이다.
+#: ⚠ **판정 자리는 0 이었다** --- `걸린 곳: 없음`.
+#: 🔴 **그리고 총합 하나로는 이 정정을 못 했을 것이다** --- 어디가 얼마나 늘었는지
+#: 신호에 없었으니까. 그래서 `DEAD_HISTORY_BY_DOC` 를 함께 등록하고 래칫 실패에
+#: **파일:줄**을 싣는다(티처 #61 C3 이빨 ②).
 #:
 #: 2026-08-10 240 으로 +2 --- 티처 #60 을 원장(`denominator.json`)에 적으면서
 #: 그 비평이 인용한 은퇴값 둘(노트 703 학습구간 R2 · 11도메인 시대 판 rho)이
@@ -918,7 +1166,78 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
 #:      (같은 원인으로 `state/tri_domain.py:178` 이 **경성**으로 드러났다.)
 #:   ③ 나머지 1 은 ②와 같은 원인의 딴 줄(0.4932 계열)이다.
 #: 새 러너가 죽은 숫자를 인쇄해서 는 것이 **아니다.** 판정 자리는 아래 보고 참조.
-DEAD_HISTORY_DEBT = 273
+#: 🔴 **2026-08-10 273 → 337 (+64). 는 것을 만든 것은 러너가 아니라 검출기다**
+#: (티처 #61 C2·C3·C6 수리). **원인별로 실측해 적는다** --- 위 문단이 산수와 원인을
+#: 둘 다 틀린 이유가 "덩어리로 적어서" 였다. 각 수는 그 기능 **하나만 끈** 값과의 차다:
+#:   · **저장소 표류 +1** --- 옛 규칙 그대로 오늘 트리를 재면 274 다(273 등록분 대비).
+#:     러너 산출물 하나가 늘었다. 검출기와 무관한 유일한 몫이다.
+#:   · **정밀 표기 확장 +32**(`_same_number`) --- 은퇴한 판 rho 를 소수 여섯·여덟
+#:     자리로 적은 꼴처럼 **같은 수를 더 정밀하게 적은 것**이 이제 잡힌다.
+#:     옛 규칙은 뒤에 숫자가 붙으면
+#:     무조건 버렸다. 새로 인쇄된 것이 아니라 **눈을 뜬 결과**다.
+#:   · **주장어 문맥 선거름 제거 +50**(`_claim_row`) --- 옛 판은 `NOW_WORDS` 가 같은
+#:     줄에 없으면 은퇴한 판 rho 를 **아예 안 봤다**. 맨 숫자가 영영 안 잡히던 자리다.
+#:   · **「시대 값」을 표시로 인정 −5**(`OK_MARKS`) --- 유일하게 **줄이는** 몫이다.
+#: ⚠ 겹침이 있어 32+50−5 가 64 와 정확히 같지는 않다(정밀 표기와 주장어가 같은 줄을
+#: 함께 여는 자리가 있다). **개별 토글 실측을 그대로 적었고, 합을 맞추려 고르지 않았다.**
+#: ⚠ **판정 자리(경성)는 0 이 아니다** --- 아래 `걸린 곳` 넷은 전부 남의 파일이라
+#: 이 팔이 안 고친다(보고로 넘긴다).
+DEAD_HISTORY_DEBT = 337
+
+#: 🔴 **문서별 등록**(티처 #61 C3 이빨 ② · 2026-08-10 실측). 총합만 있으면
+#: 한 곳이 늘고 다른 곳이 줄 때 **상쇄돼 안 보인다** --- 그 상쇄가 위 문단의 옛
+#: 서술을 못 잡은 이유다. **등록된 문서**가 늘면 실패고, 실패 신호에 `파일:줄` 이 실린다.
+#: 등록에 없는 문서(새 산출물)는 총합 래칫이 덮으므로 **보이기만** 한다 --- 안 그러면
+#: 러너가 파일 하나 낼 때마다 붉어지고, 그러면 게이트가 꺼진다(노트 886 의 교훈).
+#: 🔴 **손으로 추정하지 마라.** `python3 -m ingest.audit --ratchet` 이 붙여 넣을 꼴로 찍는다.
+DEAD_HISTORY_BY_DOC: dict = {
+    "data/lab/denominator.json": 234,
+    "docs/prereg_897_architecture.md": 2,
+    "paper/steps/129_brokenruler/figs/make.py": 1,
+    "paper/steps/132_countthedoors/figs/make.py": 1,
+    "paper/steps/74_exhausted/figs/make.py": 1,
+    "paper/steps/87_overceiling/figs/make.py": 1,
+    "runners/bverdict885.py": 1,
+    "runners/condperm841.py": 1,
+    "runners/conv734.py": 1,
+    "runners/dataeq112.py": 2,
+    "runners/emul112.py": 1,
+    "runners/field669.py": 1,
+    "runners/fig145.py": 1,
+    "runners/floor892.py": 1,
+    "runners/hold732.py": 2,
+    "runners/ledgeraudit878.py": 1,
+    "runners/nat_measure.py": 1,
+    "runners/out112_board.json": 1,
+    "runners/out112_board.log": 1,
+    "runners/out112_verdict.json": 6,
+    "runners/out113_armB12.json": 16,
+    "runners/out113_armB12_log.txt": 2,
+    "runners/out113_loo.json": 1,
+    "runners/out113_summary.json": 3,
+    "runners/out837.json": 1,
+    "runners/out837_centered.json": 1,
+    "runners/out848_checkpoint.jsonl": 13,
+    "runners/out877_recheck.json": 1,
+    "runners/out878_ledgeraudit.json": 1,
+    "runners/out879_numaudit.json": 1,
+    "runners/out885_bverdict.json": 1,
+    "runners/out890_log.txt": 2,
+    "runners/out892_floor.json": 3,
+    "runners/out892_log.txt": 2,
+    "runners/out892_stdout.txt": 2,
+    "runners/out896_armB.json": 3,
+    "runners/out898_board.json": 1,
+    "runners/out898_verdict.json": 2,
+    "runners/out898c_fix.json": 1,
+    "runners/out899a_verdict112.json": 6,
+    "runners/out899c_ruler890R12.json": 1,
+    "runners/rebase837.py": 1,
+    "runners/refit112.py": 2,
+    "runners/rerun112.py": 1,
+    "runners/ship736.py": 1,
+    "runners/verdict112.py": 7,
+}
 
 
 def _judgment_lits(src: str) -> set:
@@ -944,12 +1263,26 @@ def _judgment_lits(src: str) -> set:
         return set()
     out = set()
 
-    def take(node):
+    def take(node, allow_str=True):
         if not isinstance(node, ast.Constant):
             return
         if node.value is None or isinstance(node.value, bool):
             return
         if not isinstance(node.value, (int, float, str)):
+            return
+        # 🔴 **산술·비교의 문자열 피연산자는 판정이 아니다**(2026-08-10 실측).
+        # 파이썬에서 `"가" + "나"` 도 `BinOp` 이고 `x in "…"` 도 `Compare` 다 ---
+        # 그래서 `runners/verdict112.py:134` 의 **여러 줄 문자열 이어붙이기**가
+        # *"이 수가 식에 들어간다"* 로 신고됐다. 산문을 식으로 읽은 것이고,
+        # 이 자가 가르려던 것(`역사는 문장이고 판정은 식이다`)의 정반대다.
+        # 숫자만 본다. dict 의 「오늘의 값」 라벨 쪽은 문자열도 값이라 그대로 둔다.
+        if isinstance(node.value, str) and not allow_str:
+            return
+        # 🔴 **라벨이 가리키는 값은 「깨끗한 숫자」다**(이 파일의 `CANON_RHO` 규칙과
+        # 같은 것). `runners/verdict112.py:165` 는 키가 문장(*"…정본은 안 바꿨다"*)이고
+        # 값이 **300자 서사**인데, 그 안의 은퇴값이 *"식에 들어간다"* 로 신고됐다.
+        # 키에 「정본」이 들어갔다고 서사가 판정이 되지는 않는다 --- 40자를 넘으면 산문이다.
+        if isinstance(node.value, str) and len(node.value) > 40:
             return
         if isinstance(node.value, str):
             seg = node.value
@@ -965,12 +1298,12 @@ def _judgment_lits(src: str) -> set:
 
     for n in ast.walk(tree):
         if isinstance(n, ast.BinOp):
-            take(n.left)
-            take(n.right)
+            take(n.left, allow_str=False)
+            take(n.right, allow_str=False)
         elif isinstance(n, ast.Compare):
-            take(n.left)
+            take(n.left, allow_str=False)
             for c in n.comparators:
-                take(c)
+                take(c, allow_str=False)
         elif isinstance(n, ast.Dict):
             for k, v in zip(n.keys, n.values):
                 if (isinstance(k, ast.Constant) and isinstance(k.value, str)
@@ -979,8 +1312,152 @@ def _judgment_lits(src: str) -> set:
     return out
 
 
+#: 마크다운 코드펜스. ```python … ``` · ``` … ``` 둘 다 본다.
+_FENCE = re.compile(r"^[ \t]*(?:```+|~~~+)[ \t]*([A-Za-z0-9_+-]*)[ \t]*$")
+
+
+def _judgment_lits_md(src: str) -> set:
+    """마크다운의 **코드펜스 안**만 파이썬으로 읽어 판정 자리를 고른다.
+
+    🔴 티처 #61 C3(이슈 #125) 의 이빨 ① --- `_judgment_lits` 가 `.py` 에만 돌아서
+    **`.md` 사전등록은 원리상 경성이 될 수 없었다.** 그런데 `HISTORY_GLOBS` 의
+    주석은 *"사전등록이 새로 죽은 숫자를 「식」으로 쓰면 그때는 걸린다"* 고 적어
+    두었다 --- **강제 불가능한 약속**이었고 티처가 심기시험으로 확인했다.
+
+    **판단**: 마크다운 **전체**에 AST 를 돌릴 수는 없다(산문이다). 산문 안의
+    〈은퇴한 수 나누기 은퇴한 수〉 같은 꼴을 정규식으로 식이라 우기면 화살표(`→`)·
+    범위(`~`)·가운뎃점(`·`)이 전부 오탐이 된다 --- 노트 674·677·693 이 세 번 겪은 병이다.
+    대신 **약속을 지킬 수 있는 만큼으로 줄인다**: 코드펜스는 코드이므로 파싱된다.
+    이제 사전등록이 `if rho >= 〈은퇴한 수〉:` 를 펜스 안에 적으면 **정말로 걸린다**.
+    펜스 밖 산문은 여전히 기록 자리이고, 그 사실을 여기 적어 둔다.
+    """
+    out, lines = set(), src.splitlines()
+    i, n = 0, len(lines)
+    while i < n:
+        m = _FENCE.match(lines[i])
+        if not m:
+            i += 1
+            continue
+        lang = (m.group(1) or "").lower()
+        j = i + 1
+        while j < n and not _FENCE.match(lines[j]):
+            j += 1
+        if lang in ("", "py", "python", "python3"):
+            body = "\n".join(lines[i + 1:j])
+            for lno, seg in _judgment_lits(body):
+                out.add((i + 1 + lno, seg))
+        i = j + 1
+    return out
+
+
+def judgment_lits(rel: str, src: str) -> set:
+    """파일 종류에 맞는 판정 자리. `.py` 는 통째로, `.md` 는 코드펜스만."""
+    if rel.endswith(".py"):
+        return _judgment_lits(src)
+    if rel.endswith(".md"):
+        return _judgment_lits_md(src)
+    return set()
+
+
+# ── 사전등록 사면을 **커밋 시각으로 좁힌다**(티처 #61 C3 · 이슈 #125) ──────────
+#
+# 🔴 주 세션이 내린 결정(`a78f5c85c`)이 사면 장치였다. `docs/prereg_*.md` 를 통째로
+# `HISTORY_GLOBS` 에 넣자 실제 경성 실패 하나가 삼켜졌다. 전제(*"사전등록은 정의상
+# 얼어붙은 기록"*)는 옳지만 **범위를 「모든 사전등록 · 영원히」로 잡은 것이 틀렸다.**
+#
+# 좁히는 자는 저장소에 **이미 있었다**: 논문이 쓰는 `PAPER_BASELINE_AT` 방식.
+# 다만 논문은 상수 하나로 가르면 되고 사전등록은 **값마다 은퇴 시각이 다르다.**
+# 그래서 상수를 손으로 적지 않고 **git 에서 읽는다**(조항 60 --- 손 전사 금지):
+#
+#   · 그 사전등록이 **마지막으로 커밋된 시각**(수정·미추적이면 얼어붙지 않았다)
+#   · 그 죽은 값이 **정본 자리를 떠난 시각**(`runners/text680.py:BOARD_RHO` 의 이력)
+#
+# 커밋이 은퇴보다 **이르면** 얼어붙은 기록이다 --- 그때는 그것이 정본이었다.
+# 늦으면 「죽은 줄 알면서 오늘의 값으로 적은 것」이라 **경성**이다.
+# 🔴 은퇴 시각을 못 구하면 **사면하지 않는다**(fail-closed). '모른다'는 통과가 아니다.
+
+_GIT: dict = {}
+
+
+def _git(*args):
+    if args in _GIT:
+        return _GIT[args]
+    try:
+        r = subprocess.run(("git",) + args, cwd=ROOT, capture_output=True,
+                           text=True, timeout=30)
+        v = r.stdout if r.returncode == 0 else None
+    except Exception:
+        v = None
+    _GIT[args] = v
+    return v
+
+
+def _committed_at(rel: str):
+    """그 파일이 마지막으로 커밋된 시각(ISO). 미추적·수정 상태면 `None`."""
+    st = _git("status", "--porcelain", "--", rel)
+    if st is None or st.strip():
+        return None                        # 손대는 중인 파일은 얼어붙은 기록이 아니다
+    out = (_git("log", "-1", "--format=%cI", "--", rel) or "").strip()
+    return out or None
+
+
+def board_rho_timeline() -> list:
+    """`CANON_SRC` 의 값이 **언제 무엇이었나** --- 저장소에서 읽는다. [(시각, 값문자열)]."""
+    rel, name = CANON_SRC
+    log = _git("log", "--reverse", "--format=%H %cI", "--", rel)
+    if log is None:
+        return []
+    pat = re.compile(rf"^{re.escape(name)}\s*=\s*([0-9.]+)", re.M)
+    out = []
+    for line in log.splitlines():
+        if not line.strip():
+            continue
+        sha, _, when = line.partition(" ")
+        blob = _git("show", f"{sha}:{rel}")
+        m = pat.search(blob or "")
+        out.append((when.strip(), m.group(1) if m else None))
+    return out
+
+
+def _retired_at(dead: str):
+    """그 값이 **정본 자리를 떠난** 시각. 정본이었던 적이 없으면 `None`."""
+    tl = board_rho_timeline()
+    seen = False
+    for when, val in tl:
+        if val == dead:
+            seen = True
+        elif seen:
+            return when                    # 값이 바뀐 첫 커밋 = 은퇴
+    return None
+
+
+def _frozen_prereg(rel: str, dead: str) -> bool:
+    """이 사전등록이 그 죽은 값에 대해 **얼어붙은 기록**인가."""
+    ct = _committed_at(rel)
+    rt = _retired_at(dead)
+    if ct is None or rt is None:
+        return False                       # 모르면 사면하지 않는다
+    return ct < rt
+
+
 #: 숫자 정본이 사는 **한 자리**. 여기 적힌 이름을 저 파일에서 **읽어서** 맞춘다.
 CANON_SRC = ("runners/text680.py", "BOARD_RHO")
+
+#: 🔴 **실측 산출물** --- 티처 #61 경미 14: *"`canon_rho()` 는 손 전사를 없애지 못하고
+#: 손 타자 둘을 짝지을 뿐이다."* 맞다. `CANON_RHO="0.47034"`(문자열)와
+#: `BOARD_RHO=0.47034`(숫자)는 **둘 다 사람이 반올림해 친 리터럴**이고,
+#: 잰 값 `0.47034252170476804` 는 아무도 안 읽고 있었다.
+#:
+#: 그래서 **산출물을 읽게 한다.** 손이 남는 자리는 값이 아니라 **가리키는 손가락**
+#: (파일 이름과 키 경로)이고, 손가락이 틀리면 값이 조용히 낡는 대신 **못 읽었다고
+#: 소리를 낸다**(fail-closed). 값 하나를 손으로 옮기는 것과 포인터를 옮기는 것은
+#: 다르다 --- 포인터는 틀리면 즉시 터지고, 값은 틀려도 조용하다.
+#:
+#: ⚠ **여전히 손이 닿는 것**: 이 튜플 자신. 사이클마다 새 산출물이 나오므로
+#: 다음 판정이 정본을 옮기면 이 포인터도 옮겨야 한다. 안 옮기면 옛 산출물과
+#: 새 `BOARD_RHO` 가 어긋나 이 대조가 **먼저 소리를 낸다** --- 그게 목적이다.
+CANON_MEASURED = ("runners/out898_board.json", ("팔", "B(동률 평균)"),
+                  "평균", "씨앗별(전정밀)")
 
 
 def canon_rho() -> dict:
@@ -1012,14 +1489,39 @@ def canon_rho() -> dict:
     except Exception as e:                       # 파일이 없거나 파싱 실패
         why = f"{type(e).__name__}: {e}"
     ok = isinstance(got, (int, float)) and f"{got:.5f}" == CANON_RHO
+
+    # 🔴 **셋째 대조 --- 실측 산출물**(티처 #61 경미 14). 위 둘은 손 타자끼리다.
+    mrel, path, mkey, skey = CANON_MEASURED
+    meas, sd, se, mwhy = None, None, None, ""
+    try:
+        node = json.loads((ROOT / mrel).read_text())
+        for k in path:
+            node = node[k]
+        meas = float(node[mkey])
+        xs = [float(x) for x in node[skey]]
+        n = len(xs)
+        mu = sum(xs) / n
+        sd = (sum((x - mu) ** 2 for x in xs) / (n - 1)) ** 0.5
+        se = sd / (n ** 0.5)
+        if abs(mu - meas) > 1e-12:
+            mwhy = f"산출물 안에서 평균이 안 맞는다({mu!r} 대 {meas!r})"
+    except Exception as e:
+        mwhy = f"{type(e).__name__}: {e}"
+    m_ok = (meas is not None and not mwhy and f"{meas:.5f}" == CANON_RHO
+            and f"{sd:.4f}" in CANON_RHO_FULL and f"{se:.5f}" in CANON_RHO_FULL)
     return {"검사": "판 rho 정본이 한 자리인가",
             "문자열 정본(CANON_RHO)": CANON_RHO,
             "숫자 정본": f"{rel}:{name}",
             "읽은 값": got if got is not None else f"못 읽음 --- {why}",
+            "실측 산출물": f"{mrel}:{'/'.join(path)}/{mkey}",
+            "실측 읽은 값": meas if meas is not None else f"못 읽음 --- {mwhy}",
+            "실측에서 계산한 SD·SE": [round(sd, 7), round(se, 7)] if sd else mwhy,
             "표기": CANON_RHO_FULL,
-            "통과": ok,
+            "통과": bool(ok and m_ok),
             "왜": ("노트 898 티처 #60 C3 — 「산 값」 칸이 정본을 손으로 세 벌 전사해 "
-                  "따로 늙었다. 벌 수를 하나로 줄이고 출처와 대조한다(손 전사 금지).")}
+                  "따로 늙었다. 벌 수를 하나로 줄이고 출처와 대조한다(손 전사 금지). "
+                  "🔴 티처 #61 경미 14 — 그래도 손 타자 **둘을 짝지을 뿐**이라 "
+                  "실측 산출물을 셋째 자리로 읽는다: 반올림 5자리 · SD · SE 셋을 맞춘다.")}
 
 
 def dead_numbers(debt: int = DEAD_HISTORY_DEBT) -> dict:
@@ -1045,16 +1547,8 @@ def dead_numbers(debt: int = DEAD_HISTORY_DEBT) -> dict:
     # **숫자 경계를 본다**(노트 677). 처음 판은 부분 문자열로 맞아서 `0.037` 이
     # `+0.0374`(팝업 이웃 효과) · `+0.0373`(goods_scale) 안에서 잡혔다 --- 노트
     # 674 가 `hood_sgg` 에서 진단한 것과 **같은 기제가 내 검사 안에 있었다.**
-    import re as _re
-
-    def _found(dead: str, line: str) -> bool:
-        for m in _re.finditer(_re.escape(dead), line):
-            nxt = line[m.end():m.end() + 1]
-            prv = line[m.start() - 1:m.start()] if m.start() else ""
-            if nxt.isdigit() or prv.isdigit():
-                continue                      # 더 긴 숫자의 일부다
-            return True
-        return False
+    # 🔴 매처는 이제 모듈 한 곳(`_spans`·`_found`·`_amnestied`)에 있다 --- 여기
+    # 안에 한 벌, `paper_dead()` 안에 또 한 벌 있던 것을 합쳤다(티처 #61 C2).
 
     # **표시는 문단에서 찾는다 --- 줄에서 찾으면 안 된다**(노트 736).
     #
@@ -1077,21 +1571,37 @@ def dead_numbers(debt: int = DEAD_HISTORY_DEBT) -> dict:
         except Exception:
             continue
         lines = text.splitlines()
-        # 역사 아카이브의 `.py` 만 판정 자리를 따로 센다. 나머지 산출물·대장은
-        # 식이 없으므로 **전부 기록**이다(그 안의 수는 그때 잰 값이다).
-        jl = _judgment_lits(text) if (rel in hist and rel.endswith(".py")) else None
+        # 역사 아카이브의 판정 자리를 따로 센다. `.py` 는 통째로, `.md` 는
+        # **코드펜스만**(`judgment_lits` --- 티처 #61 C3 이빨 ①). 나머지 산출물·
+        # 대장은 식이 없으므로 전부 기록이다(그 안의 수는 그때 잰 값이다).
+        jl = judgment_lits(rel, text) if rel in hist else None
+        is_prereg = rel.startswith("docs/prereg_") and rel.endswith(".md")
         for i, ln in enumerate(lines, 1):
             near = "\n".join(lines[max(0, i - 1 - SPAN):i + SPAN])
+            off = sum(len(x) + 1 for x in lines[max(0, i - 1 - SPAN):i - 1])
             for row in DEAD_NUMBERS:
                 dead, live, what, note = row[:4]
                 ctx = row[4] if len(row) > 4 else None
-                if not _found(dead, ln):
+                sp = _spans(dead, ln)
+                if not sp:
+                    continue
+                # 🔴 **판정 자리는 문맥·사면보다 앞이다**(티처 #61 C2).
+                # 옛 판은 이 검사를 맨 뒤에 뒀다 --- 그래서 `rho / 〈은퇴한 수〉` 같은
+                # **식**이 `NOW_WORDS` 가 줄에 없다는 이유로 먼저 걸러졌다.
+                # 문맥 칸이 없는 은퇴값은 잡히고 주장어 행의 은퇴값은 안 잡히는,
+                # **값에 따라 자가 달라지는** 상태였다. 식은 문맥이 필요 없다.
+                if jl and any(lno == i and _found(dead, seg) for lno, seg in jl):
+                    hits.append({"문서": rel, "줄": i, "죽은 값": dead,
+                                 "산 값": live, "무엇": what, "정정 노트": note,
+                                 "왜 경성인가": "역사 아카이브지만 이 수가 **식에 들어간다**"})
                     continue
                 # **문맥은 그 줄에서 찾고 표시는 문단에서 찾는다**(노트 743).
                 # 창을 넓히면(`near`) 옆줄의 '3열' 이 딴 뜻의 0.0043 을 잡는다 ---
                 # 표시는 산문이 줄바꿈으로 끊기니 넓혀야 하고(노트 736) 문맥은
                 # 그 숫자가 무엇인지를 가르니 좁혀야 한다. **방향이 반대다.**
-                if ctx and not any(w in ln for w in ctx):
+                # 🔴 다만 **주장어 행**(`_claim_row`)은 뜻 가르개가 아니라 사면
+                # 조건이었으므로 선거름을 걸지 않는다 --- 걸면 맨 숫자를 영영 못 잡는다.
+                if ctx and not _claim_row(ctx) and not any(w in ln for w in ctx):
                     continue
                 # 🔴 **사면 규칙(`AMNESTY`) --- 노트 898 판단.** 티처 #60 C3 는
                 # *"산 값 문자열이 근처에 있으면 그 줄을 통째로 사면한다 --- 옛
@@ -1115,26 +1625,38 @@ def dead_numbers(debt: int = DEAD_HISTORY_DEBT) -> dict:
                 # `state/tri_domain.py:178`(*"0.4689 와 비교 금지"* · **은퇴**값에
                 # 딱지 없음)이 드러났다 --- 옛 정본이 가려 주던 줄이다.
                 #
-                # ⚠ **안 고친 것**: 표시(`OK_MARKS`)를 문단에서 찾는 쪽은
-                # 그대로다. 그래서 같은 줄 이웃 숫자에 붙은 「은퇴」가 표시 없는
-                # 숫자까지 사면하는 :750 의 약점이 살아 있고, C5 의 7곳 중
-                # `investor-deck:610` · `primer:199` · `primer/index:241` ·
-                # `textaxes.py:4` **넷이 정확히 그 구멍으로 숨어 있었다**
-                # (티처가 손으로 찾은 이유다). 고치려면 딱지를 **숫자에 붙여**
-                # 달아야 하고 그건 문서 쪽 규약이라 이번 사이클에서 안 닫았다.
-                if live.split("(")[0] in near or any(m in near for m in ok_marks):
+                # 🔴 **고친 것(티처 #61 C6)**: 표시를 **그 숫자에 붙인다.**
+                # 문단에서 찾되 딴 숫자의 괄호 딱지는 안 센다 --- `_mark_owner`.
+                # `:775-779` 가 *"알려진 약점 · 이번 사이클에서 안 닫았다"* 라
+                # 적어 둔 그 구멍이고, `program-report.html:124` 에서 실해를 냈다.
+                if all(_amnestied(near, (s + off, e + off), live, ok_marks)
+                       for s, e in sp):
                     continue
                 rec = {"문서": rel, "줄": i, "죽은 값": dead,
                        "산 값": live, "무엇": what, "정정 노트": note}
                 if rel not in hist:
                     hits.append(rec)                    # 살아 있는 발행물 --- 경성
-                elif jl and any(lno == i and _found(dead, seg) for lno, seg in jl):
-                    rec["왜 경성인가"] = "역사 아카이브지만 이 수가 **식에 들어간다**"
-                    hits.append(rec)                    # 판정 자리 --- 경성
+                elif is_prereg and not _frozen_prereg(rel, dead):
+                    # 🔴 티처 #61 C3 --- **은퇴 뒤에 쓰인 사전등록은 얼어붙은
+                    # 이력이 아니다.** 커밋 시각이 그 값의 은퇴보다 늦으면 경성.
+                    rec["왜 경성인가"] = (
+                        f"사전등록이지만 커밋({_committed_at(rel)})이 이 값의 "
+                        f"은퇴({_retired_at(dead)})보다 **늦다**")
+                    hits.append(rec)
                 else:
                     aged.append(rec)                    # 기록 자리 --- 래칫
     from collections import Counter as _C
-    over = len(aged) > debt
+    by_doc = _C(r["문서"] for r in aged)
+    # 🔴 **래칫 실패 신호에 파일:줄을 싣는다**(티처 #61 C3 이빨 ②).
+    # 옛 판은 **총합 하나**였다 --- 한 곳이 늘고 다른 곳이 줄면 상쇄돼 안 보인다.
+    # 이제 **문서별 등록**과 대조하고, 넘은 문서의 `문서:줄 값` 을 전부 낸다.
+    # **등록된 문서**가 는 것만 실패로 센다. 등록에 없는 문서(새 산출물)는
+    # 총합 래칫이 이미 덮으므로 **보이기만** 한다 --- 안 그러면 사이클마다
+    # 러너 산출물이 하나 날 때마다 붉어지고, 그러면 게이트가 꺼진다.
+    grew = {d: [n, DEAD_HISTORY_BY_DOC[d]] for d, n in by_doc.items()
+            if d in DEAD_HISTORY_BY_DOC and n > DEAD_HISTORY_BY_DOC[d]}
+    newdoc = {d: n for d, n in by_doc.items() if d not in DEAD_HISTORY_BY_DOC}
+    over = len(aged) > debt or bool(grew)
     canon = canon_rho()
     return {"검사": "정정된 숫자가 살아 있는 문서에 남아 있나",
             "표 크기": len(DEAD_NUMBERS), "문서": len(docs),
@@ -1146,7 +1668,12 @@ def dead_numbers(debt: int = DEAD_HISTORY_DEBT) -> dict:
             "걸린 곳": hits or "없음",
             "역사 기록(래칫)": {
                 "수": len(aged), "등록된 빚": debt, "빚이 늘었나": over,
-                "문서별": dict(_C(r["문서"] for r in aged).most_common(8)),
+                "🔴 늘어난 문서(지금 대 등록)": grew or "없음",
+                "🔴 늘어난 곳(파일:줄)": [
+                    f"{r['문서']}:{r['줄']} {r['죽은 값']}"
+                    for r in aged if r["문서"] in grew] or "없음",
+                "등록에 없는 문서(보이기만)": newdoc or "없음",
+                "문서별": dict(by_doc.most_common()),
                 "값별": dict(_C(r["죽은 값"] for r in aged).most_common())},
             "왜": "노트 672 — 메모리 색인이 100노트 넘게 죽은 판 수치를 이고 있었다"}
 
@@ -1166,7 +1693,19 @@ def audit() -> dict:
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--json", action="store_true")
+    # 🔴 **래칫 등록은 손으로 세지 않는다**(조항 60). 이 플래그가 붙여 넣을 꼴로
+    # 찍어 준다 --- `DEAD_HISTORY_BY_DOC` 를 사람이 추정하면 그 순간 자동 사면이다.
+    ap.add_argument("--ratchet", action="store_true",
+                    help="DEAD_HISTORY_BY_DOC 에 붙여 넣을 실측 표를 찍는다")
     a = ap.parse_args()
+    if a.ratchet:
+        r = dead_numbers(debt=10 ** 9)["역사 기록(래칫)"]
+        print(f"DEAD_HISTORY_DEBT = {r['수']}")
+        print("DEAD_HISTORY_BY_DOC = {")
+        for k, v in sorted(r["문서별"].items()):
+            print(f'    "{k}": {v},')
+        print("}")
+        raise SystemExit(0)
     d = audit()
     if a.json:
         print(json.dumps(d, ensure_ascii=False, indent=1))
