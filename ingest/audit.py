@@ -566,11 +566,48 @@ DEAD_NUMBERS = [
 #: 11 도메인 셋을 그대로 발행하고 있었다. 티처 #49 C1(*'검출기 자신이 옛 값을 이고
 #: 있었다'*)의 사촌 --- 이번엔 **검출기의 시야 밖**이었다. 검출기를 세울 때는
 #: **무엇을 안 보는지**를 같이 적어야 한다.
-LIVE_DOCS = ["data/lab/program.json", "docs/program-report.html",
-             "docs/primer/index.html", "docs/primer/07.html", "docs/primer/11.html",
-             "serve/registry.py", "serve/capability.py",
-             "../.claude/projects/-Users-ax-world-model/memory/MEMORY.md",
-             "../.claude/projects/-Users-ax-world-model/memory/project-lab-state.md"]
+#: 🔴 **손 나열을 버린다(티처 #55 C4 · 노트 893).** 위 문단이 *"검출기를 세울 때는
+#: 무엇을 안 보는지를 같이 적어야 한다"* 고 적어 놓고 **목록은 아홉 줄 손 나열**이었다.
+#: 티처가 같은 매처를 274 파일에 대니 목록 **밖에서 27건 / 12파일**이 걸렸고 그중
+#: 살아 있는 발행물이 **20건 / 6파일**이다 --- `docs/용어.md:19` 판 `0.4932`(인계 카드
+#: 13행이 모든 프레시 세션을 그 파일로 보낸다) · `serve/boardsvc.py:423`(사용자 응답
+#: 본문) · `docs/investor-deck.html:610`(**투자자 대면**) · `docs/worldmodel-primer.html`
+#: · `docs/primer/05·06.html`(옛 목록은 `index·07·11` 만 짚어 **05·06 이 원리상 안 걸렸다**).
+#: 손 나열은 새 발행물이 생길 때마다 조용히 시야 밖을 만든다 --- 노트 886(`paper/` 누락)
+#: 과 티처 #55 M8(표시 루프 손 나열)이 같은 병이고, 이것이 **세 번째 자리**다.
+#:
+#: **무엇을 안 보는지**(여기 적는 것이 이 상수의 절반이다):
+#:   · `paper/` --- 발행물은 개작하지 않는다. `paper_dead()` 가 따로 본다(빚 래칫).
+#:   · `runners/` --- 그 노트의 역사다. 옛 자로 잰 값이 남아 있는 게 정상이다.
+#:   · `data/lab/denominator.json` --- 대장. 판정 원문을 고치면 역사 왜곡이다.
+#:   · 메모리 아카이브(`project-world-model-lab.md`) --- 노트 108~540 의 **이력**이라
+#:     같은 이유로 뺀다. 살아 있는 것은 색인(MEMORY.md)과 인계 카드다.
+LIVE_GLOBS = ("docs/**/*.html", "docs/**/*.md", "serve/*.py",
+              "data/lab/program.json", "README.md",
+              "../.claude/projects/-Users-ax-world-model/memory/MEMORY.md",
+              "../.claude/projects/-Users-ax-world-model/memory/project-lab-state.md")
+
+#: 위 glob 이 쓸어 오되 **역사**라서 빼는 것(이름으로만 뺀다 --- 경로 규칙이 아니다).
+LIVE_SKIP = ("project-world-model-lab.md",)
+
+
+def live_docs() -> list[str]:
+    """살아 있는 발행물 목록을 **glob 으로 모은다**(손 나열 금지).
+
+    ROOT 기준 상대 경로 문자열을 정렬해 돌려준다. 상수처럼 쓰이지만 함수인
+    이유는 하나 --- **새 문서가 생기면 자동으로 시야에 들어와야 한다.**
+    """
+    out = []
+    for pat in LIVE_GLOBS:
+        if "*" in pat:
+            for p in sorted(ROOT.glob(pat)):
+                if p.is_file() and p.name not in LIVE_SKIP:
+                    out.append(str(p.relative_to(ROOT)))
+        else:
+            p = (ROOT / pat)
+            if p.exists() and p.name not in LIVE_SKIP:
+                out.append(pat)
+    return sorted(dict.fromkeys(out))
 
 
 #: 논문은 **발행물**이지 살아 있는 문서가 아니다 --- 지난 것을 고쳐 쓰면 역사 왜곡이다.
@@ -705,7 +742,8 @@ def dead_numbers() -> dict:
     ok_marks = OK_MARKS
     SPAN = 2
     hits = []
-    for rel in LIVE_DOCS:
+    docs = live_docs()
+    for rel in docs:
         p = (ROOT / rel).resolve()
         try:
             lines = p.read_text().splitlines()
@@ -726,10 +764,10 @@ def dead_numbers() -> dict:
                     continue
                 if live.split("(")[0] in near or any(m in near for m in ok_marks):
                     continue
-                hits.append({"문서": p.name, "줄": i, "죽은 값": dead,
+                hits.append({"문서": rel, "줄": i, "죽은 값": dead,
                              "산 값": live, "무엇": what, "정정 노트": note})
     return {"검사": "정정된 숫자가 살아 있는 문서에 남아 있나",
-            "표 크기": len(DEAD_NUMBERS), "문서": len(LIVE_DOCS),
+            "표 크기": len(DEAD_NUMBERS), "문서": len(docs),
             "통과": not hits, "걸린 곳": hits or "없음",
             "왜": "노트 672 — 메모리 색인이 100노트 넘게 죽은 판 수치를 이고 있었다"}
 
