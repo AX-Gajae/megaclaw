@@ -16,14 +16,20 @@ ROOT = Path("/Users/ax/world_model")
 ME = Path(__file__).resolve()
 OUT = ROOT / "runners/out897_inventory.json"
 
+#: 🔴 **초판은 1800초였다.** `state.shared_encoder` 가 그 30분을 통째로 태우고
+#: 아무것도 안 냈다 --- 그래서 나머지 여섯을 잴 시간이 안 남았다. `docs/아키텍처.md`
+#: §4 가 *"팔 하나가 10분을 넘으면 사다리를 줄여라"* 라고 적었으므로 **상한을 300초로
+#: 내리고 「300초 안에 안 끝난다」를 결과로 적는다**(조항 59 — 시간초과는 '안 돈다'가
+#: 아니라 **'이 상한 안에 안 끝난다'** 이고 셋째 범주다).
+CAP = int(sys.argv[1]) if len(sys.argv) > 1 else 300
 PIECES = [
-    ("state.fieldmodel", ["horizons"], 900),
-    ("state.shared_encoder", [], 1800),
-    ("state.foundation", [], 1800),
-    ("state.masked_encoder", [], 1800),
-    ("state.fewshot", [], 1800),
-    ("state.transfer_eval", [], 900),
-    ("state.encoder", [], 900),
+    ("state.fieldmodel", ["horizons"], CAP),
+    ("state.shared_encoder", [], CAP),
+    ("state.foundation", [], CAP),
+    ("state.masked_encoder", [], CAP),
+    ("state.fewshot", [], CAP),
+    ("state.transfer_eval", [], CAP),
+    ("state.encoder", [], CAP),
 ]
 
 
