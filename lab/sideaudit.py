@@ -86,7 +86,16 @@ TODAY = datetime.date(2026, 8, 4)
 
 
 def _part(a, b, c):
-    ra, rb, rc = rankdata(a), rankdata(b), rankdata(c)
+    # 🔴 이슈 #115 --- **여기가 제일 위험한 꼴이다.** NaN 이 하나 섞이면
+    # `rankdata` 가 전부 NaN → 편상관이 `nan` → 호출자 셋이 전부
+    # `if not np.isfinite(r): continue` 로 **그 줄을 조용히 버린다** = 감사가
+    # *"짚이는 것 없음"* 을 낸다(조항 59 의 '빈 것을 부정으로 읽기' 바로 그것).
+    # 실측: 호출자 셋(:135 · :252 · :753)은 모두 라벨을 `isfinite` 로 걸러
+    # 넘기므로 오늘은 안 걸린다 --- 그 전제를 검사로 못박는다.
+    from .pairboot import safe_rank
+    ra, rb, rc = (safe_rank(a, where="sideaudit._part(a)"),
+                  safe_rank(b, where="sideaudit._part(b)"),
+                  safe_rank(c, where="sideaudit._part(c)"))
     r = lambda u, v: spearmanr(u, v).correlation      # noqa: E731
     ab, ac, bc = r(ra, rb), r(ra, rc), r(rb, rc)
     den = np.sqrt((1 - ac ** 2) * (1 - bc ** 2))

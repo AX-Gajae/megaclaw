@@ -28,14 +28,24 @@ NG = (2, 4)
 MIN_TRAIN = 100
 MIN_LEN = 2
 
+#: **마지막 `build`/`build_shared` 의 회계**(이슈 #115). `report=True` 로만
+#: 인쇄하면 부르는 쪽이 *"어느 도메인이 왜 빠졌나"* 를 못 읽는다 --- 그러면
+#: 축 사전에 이름이 없는 것을 '효과 없음' 으로 오독한다(887 형). 그래서
+#: **report 와 무관하게** 여기 남긴다. `textnn.LAST` 와 같은 꼴이다.
+LAST: dict = {}
+
 
 def _pct(v: np.ndarray, ok: np.ndarray) -> np.ndarray:
-    """관측된 값만으로 백분위. 동률은 평균 순위로(노트 292)."""
-    from scipy.stats import rankdata
+    """관측된 값만으로 백분위. 동률은 평균 순위로(노트 292).
+
+    ``ok`` 가 유한 마스크라는 것이 이 함수의 전제다 --- 이슈 #115 의 한 줄
+    규칙(*rankdata 앞에는 isfinite 마스크*)을 여기서 **강제**한다.
+    """
+    from .pairboot import safe_rank
     out = np.zeros(len(v), np.float32)
     if ok.sum() < 3:
         return out
-    r = rankdata(v[ok]) - 1.0
+    r = safe_rank(v[ok], where="textaxes._pct") - 1.0
     out[ok] = (r / max(ok.sum() - 1, 1)).astype(np.float32)
     return out
 
@@ -46,10 +56,10 @@ def build(data, T: float = 2025.0, folds: int = FOLDS,
 
     `data` 를 받는다 --- 라벨과 연도를 그 판에서 그대로 읽어야 자가 같다.
     """
-    from scipy.stats import rankdata
     from sklearn.feature_extraction.text import TfidfVectorizer
     from sklearn.linear_model import Ridge
     from ingest.news_counts import titles
+    from .pairboot import safe_rank
 
     out, rep = {}, {}
     for dom in data.dom:
@@ -62,6 +72,9 @@ def build(data, T: float = 2025.0, folds: int = FOLDS,
         ts = list(ts[:n])
         y, yr = y[:n], yr[:n]
         has = np.array([len(t.strip()) >= MIN_LEN for t in ts])
+        #: 🔴 `np.isfinite(y)` 가 여기 있는 것이 **이슈 #115 의 핵심**이다 ---
+        #: 이게 빠지면 라벨 결측 한 행이 `rankdata` 를 통째 NaN 으로 만들어
+        #: 도메인이 조용히 빠진다. 아래 `safe_rank` 가 그 전제를 강제한다.
         tr = has & np.isfinite(y) & np.isfinite(yr) & (yr < T)
         te = has & np.isfinite(yr) & (yr >= T)          # 유보는 라벨을 안 본다
         if tr.sum() < MIN_TRAIN:
@@ -69,7 +82,7 @@ def build(data, T: float = 2025.0, folds: int = FOLDS,
             continue
         col = np.full(len(y), np.nan)
         itr = np.flatnonzero(tr)
-        rk = rankdata(y[tr]) / tr.sum()
+        rk = safe_rank(y[tr], where=f"textaxes.build:{dom}") / tr.sum()
 
         def fit_predict(fit_idx, pred_idx, fit_rank):
             V = TfidfVectorizer(analyzer="char_wb", ngram_range=NG, min_df=3,
@@ -105,6 +118,13 @@ def build(data, T: float = 2025.0, folds: int = FOLDS,
                     "유보예보 SD": round(float(np.nanstd(col[ite])), 4)
                     if len(ite) else None}
     res = {AX: out} if out else {}
+    # 🔴 이슈 #115 --- **빠진 도메인을 회계에 남긴다.** report 와 무관하다.
+    LAST.clear()
+    LAST.update({"자리": "textaxes.build", "전 도메인": sorted(data.dom),
+                 "붙은 도메인": sorted(out),
+                 "🔴 빠진 도메인": {k: rep[k] for k in sorted(rep)
+                               if not isinstance(rep[k], dict)},
+                 "도메인별": rep})
     if report:
         # **`flush` 를 빼면 안 된다**(노트 686). stdout 을 파일로 돌리면
         # 블록 버퍼(8KB)에 갇혀 **몇 십 분 동안 안 보인다** --- 경고는
@@ -145,10 +165,10 @@ def build_shared(data, T: float = 2025.0, folds: int = FOLDS,
     (서재 등록 수 · 평가 수 · 초동) 원값을 한 통에 넣으면 도메인 지시자를
     배운다(노트 646).
     """
-    from scipy.stats import rankdata
     from sklearn.feature_extraction.text import TfidfVectorizer
     from sklearn.linear_model import Ridge
     from ingest.news_counts import titles
+    from .pairboot import safe_rank
 
     # ① 전 도메인 행을 한 통에 --- 도메인 이름을 같이 들고 다닌다
     txt, dom_of, y_all, is_tr, is_te, idx_in_dom = [], [], [], [], [], []
@@ -182,7 +202,11 @@ def build_shared(data, T: float = 2025.0, folds: int = FOLDS,
     for dom in set(dom_of[is_tr]):
         m = is_tr & (dom_of == dom)
         if m.sum() >= 2:
-            rk[m] = rankdata(y_all[m]) / m.sum()
+            #: `is_tr` 이 이미 `isfinite(y)` 를 담고 있다(①의 168행) --- 그래서
+            #: 여기 인자는 유한이 **보장**이고, `safe_rank` 가 그 보장을 검사로
+            #: 바꾼다(이슈 #115). 보장이 깨지면 조용히 NaN 이 아니라 예외다.
+            rk[m] = safe_rank(y_all[m],
+                              where=f"textaxes.build_shared:{dom}") / m.sum()
     fitable = is_tr & np.isfinite(rk)
 
     def fit_predict(fit_m, pred_m):
@@ -230,6 +254,14 @@ def build_shared(data, T: float = 2025.0, folds: int = FOLDS,
                 "예보 평균": round(float(np.nanmean(col[ok])), 4),
                 "예보 SD": round(float(np.nanstd(col[ok])), 4)})
     res = {AX: out} if out else {}
+    # 🔴 이슈 #115 --- 빠진 도메인을 회계에 남긴다(report 와 무관).
+    LAST.clear()
+    LAST.update({"자리": "textaxes.build_shared", "전 도메인": sorted(data.dom),
+                 "붙은 도메인": sorted(out),
+                 "🔴 빠진 도메인": {k: per_dom[k] for k in sorted(per_dom)
+                               if k not in out},
+                 "한 통 학습": int(fitable.sum()), "한 통 유보": int(is_te.sum()),
+                 "도메인별": per_dom})
     if report:
         print(json.dumps({"축": list(res), "붙은 도메인": sorted(out),
                           "한 통 학습": int(fitable.sum()),
@@ -260,8 +292,8 @@ def predict_titles(data, dom: str, titles_out: list, T: float = 2025.0) -> dict:
     """
     from sklearn.feature_extraction.text import TfidfVectorizer
     from sklearn.linear_model import Ridge
-    from scipy.stats import rankdata
     from ingest.news_counts import titles as src_titles
+    from .pairboot import safe_rank
 
     ts = src_titles(dom)
     if ts is None:
@@ -277,7 +309,8 @@ def predict_titles(data, dom: str, titles_out: list, T: float = 2025.0) -> dict:
     V = TfidfVectorizer(analyzer="char_wb", ngram_range=NG, min_df=3,
                         max_features=40000, sublinear_tf=True)
     X = V.fit_transform([ts[i] for i in itr])
-    m = Ridge(alpha=1.0).fit(X, rankdata(y[tr]) / tr.sum())
+    m = Ridge(alpha=1.0).fit(
+        X, safe_rank(y[tr], where=f"textaxes.predict_titles:{dom}") / tr.sum())
 
     out_ts = [str(t or "").strip() for t in titles_out]
     ok = np.array([len(t) >= MIN_LEN for t in out_ts])

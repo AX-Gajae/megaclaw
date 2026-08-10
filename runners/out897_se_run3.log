@@ -1,0 +1,861 @@
+/Users/ax/world_model/state/tri_domain.py:289: UserWarning: media_push 채움 길이 불일치: 만화 2041 대 5905 --- 축이 빠진다
+  warnings.warn("media_push 채움 길이 불일치: %s %d 대 %d --- 축이 빠진다"
+/Users/ax/world_model/state/tri_domain.py:289: UserWarning: media_push 채움 길이 불일치: 만화 1789 대 5905 --- 축이 빠진다
+  warnings.warn("media_push 채움 길이 불일치: %s %d 대 %d --- 축이 빠진다"
+/Users/ax/world_model/state/tri_domain.py:56: RuntimeWarning: divide by zero encountered in matmul
+  out[ok] = v[ok] - X @ np.linalg.lstsq(X, v[ok], rcond=None)[0]
+/Users/ax/world_model/state/tri_domain.py:56: RuntimeWarning: overflow encountered in matmul
+  out[ok] = v[ok] - X @ np.linalg.lstsq(X, v[ok], rcond=None)[0]
+/Users/ax/world_model/state/tri_domain.py:56: RuntimeWarning: invalid value encountered in matmul
+  out[ok] = v[ok] - X @ np.linalg.lstsq(X, v[ok], rcond=None)[0]
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: divide by zero encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: overflow encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/world_model/state/procrustes.py:236: RuntimeWarning: invalid value encountered in matmul
+  return Fs["S"] @ procrustes(Ls, Lt), shared
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: divide by zero encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: overflow encountered in matmul
+  return X @ coef_ + self.intercept_
+/Users/ax/Library/Python/3.9/lib/python/site-packages/sklearn/linear_model/_base.py:279: RuntimeWarning: invalid value encountered in matmul
+  return X @ coef_ + self.intercept_
+현행 선형(프로크루스테스)  +0.3023
+
+단독     인코더  +0.2019 ± 0.0106   (씨앗 5개, 범위 +0.1896~+0.2200)
+공유     인코더  +0.1860 ± 0.0519   (씨앗 5개, 범위 +0.0922~+0.2409)
+
+씨앗 표준편차 대 선형과의 차이:
+  단독: 차이 -0.1005, 씨앗 SD 0.0106, 비 9.46
+  공유: 차이 -0.1163, 씨앗 SD 0.0519, 비 2.24
+real 1328.67
+user 1240.35
+sys 1681.37

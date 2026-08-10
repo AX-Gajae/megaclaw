@@ -21,7 +21,18 @@ S = Path("data/state")
 #: 노트 680 이 인쇄한 「챔피언 판 0.4689」와 그 비(0.51)는 **11도메인 시대의 값이고
 #: 837 재기선으로 은퇴했다** --- 그 기록은 노트 680 · 논문 132 · 원장에 남아 있고
 #: 여기서 되살리지 않는다(옛 분모로 나눈 비는 오늘 분자와 분모가 다르다).
-BOARD_RHO = 0.4710
+#:
+#: 🔴 **이슈 #112(티처 #59 C1) 로 값이 바뀌었다 --- 0.4710 → 0.46982.** #109 수리가
+#: 은퇴한 0.4689 를 여기 0.4710 으로 갈아 끼웠는데, **0.4710 은 오늘 재현되지 않는
+#: 숫자였다**(죽은 숫자를 재현 안 되는 숫자로 바꾼 것). 0.4710 은 지금 판이 쓰지 않는
+#: **두 옛 규약**의 값이다: ① 채점 배치 = post ∩ 라벨(노트 855 가 규약을 **post 전체**
+#: 로 바꿨다) ② 적합이 `guards._fit_on(seed=s)` 라 GBM `random_state` 까지 씨앗을 탔다
+#: (챔피언 `harness.evaluate` 는 `random_state=0` 고정 · `lab/forms.py:287`).
+#: 아래 값은 **오늘 챔피언 경로로 직접 잰 것**이다(2026-08-10 · 씨앗 0~11 · 유보 3,775):
+#:   재현: `python3 -m runners.rerun112` → `runners/out112_board.json`
+#:   0.4698232980146997 · 씨앗 SD 0.0020371 · SE 0.00058806
+#:   씨앗 0 단독은 0.4724867181663707 로 노트 890 동결값과 **부동소수 정확 일치**.
+BOARD_RHO = 0.46982
 
 
 def data():
@@ -86,7 +97,9 @@ for dom in d.dom:
 print(json.dumps({"도메인별": out, "빠짐": {k: v for k, v in rep.items() if v != "ok"},
                   "**텍스트만 판 rho**": round(num / den, 4) if den else None,
                   "채점 유보 합": int(den),
-                  "챔피언 판(정본 · 12도메인 · 유보 3,775 · 노트 837)": BOARD_RHO,
+                  "챔피언 판(정본 · 12도메인 · 유보 3,775 · 씨앗 0~11 · 이슈 #112 재측정)":
+                      BOARD_RHO,
+                  "정본 재현 명령": "python3 -m runners.rerun112",
                   "비": round((num / den) / BOARD_RHO, 3) if den else None},
                  ensure_ascii=False, indent=1), flush=True)
 

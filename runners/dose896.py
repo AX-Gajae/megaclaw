@@ -43,7 +43,12 @@ DS = ROOT / "data/state"
 ME = Path(__file__).resolve()
 
 T = 2025.0
-SEEDS = tuple(range(6))                #: ff753.board 관례
+#: 🔴 이슈 #113 / 티처 #59 M1 --- **이 6은 문턱 0.00353 과 분모가 다르다.**
+#: 문턱은 `thresh891` 이 12씨앗 앙상블 짝으로 만든 자이고 여기는 6씨앗이라
+#: 씨앗 성분만 √2 어긋난다. 씨앗 목록의 정본은 이제 `ff753.RULER_SEEDS`(12)이고
+#: 12씨앗 재측정은 `runners/dose113.py B` → `runners/out113_armB12.json` 이다.
+#: 이 상수는 **노트 896 을 그대로 재현하기 위해** 6으로 남긴다(이력을 안 뭉갠다).
+SEEDS = tuple(range(6))                #: = ff753.SEEDS (ff753.RULER_SEEDS[:6])
 NULL_DRAWS = (8960, 8961, 8962)        #: 널 팔 뽑기 셋(값만 섞고 마스크 무늬 보존 · 노트 335)
 B_BOOT = 10_000
 BOOT_SEED = 896

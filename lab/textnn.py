@@ -53,11 +53,11 @@ LAST: dict = {}
 
 
 def _pct(v: np.ndarray, ok: np.ndarray) -> np.ndarray:
-    from scipy.stats import rankdata
+    from .pairboot import safe_rank          # 이슈 #115 --- 마스크를 강제한다
     out = np.zeros(len(v), np.float32)
     if ok.sum() < 3:
         return out
-    r = rankdata(v[ok]) - 1.0
+    r = safe_rank(v[ok], where="textnn._pct") - 1.0
     out[ok] = (r / max(ok.sum() - 1, 1)).astype(np.float32)
     return out
 
@@ -94,7 +94,7 @@ def build(data, T: float = 2025.0, folds: int = FOLDS, seed: int = 685,
         import torch.nn as nn
     except ImportError:
         return {"오류": "torch 없음"}
-    from scipy.stats import rankdata
+    from .pairboot import safe_rank          # 이슈 #115 --- rankdata 직접 금지
     from sklearn.decomposition import TruncatedSVD
     from sklearn.feature_extraction.text import TfidfVectorizer
 
@@ -110,7 +110,10 @@ def build(data, T: float = 2025.0, folds: int = FOLDS, seed: int = 685,
     for d in doms:
         m = is_tr & (dom == d)
         if m.sum() >= 2:
-            rk[m] = rankdata(y[m]) / m.sum()
+            #: `_pool` 의 `a = isfinite(yy[i]) and ...` 가 라벨 유한을 보장한다.
+            #: `safe_rank` 는 그 보장을 **검사**로 바꾼다(이슈 #115) --- 보장이
+            #: 깨지면 도메인이 조용히 빠지는 대신 예외가 난다.
+            rk[m] = safe_rank(y[m], where=f"textnn.build:{d}") / m.sum()
     fit_all = is_tr & np.isfinite(rk)
 
     # 표현은 **학습 행에서만** 적합한다(노트 645)
@@ -194,6 +197,10 @@ def build(data, T: float = 2025.0, folds: int = FOLDS, seed: int = 685,
     res = {AX: out} if out else {}
     LAST.clear()
     LAST.update({"붕괴": coll, "도메인": doms, "붙은 도메인": sorted(out),
+                 # 🔴 이슈 #115 --- '이름이 없다' 를 '효과 없음' 으로 오독하지
+                 # 않게 **빠진 도메인을 이유와 함께** 따로 세운다(887 형).
+                 "🔴 빠진 도메인": {k: rep[k] for k in sorted(rep)
+                               if not isinstance(rep[k], dict)},
                  "한 통 학습": int(fit_all.sum()), "한 통 유보": int(is_te.sum()),
                  "도메인별": rep})
     if report:
