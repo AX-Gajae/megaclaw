@@ -13,6 +13,31 @@
   ② 네이버 블로그 기간검색 같은 대칭창 · 각 1쪽
   ③ 디시 통합검색      창 없음 · 최신순 1쪽 + 정확도순 1쪽
   ④ 디시 댓글 API      G3 전용 · 표본의 부분집합
+
+🔴 **노트 894 수리(티처 #56 C3·m3 · 이 파일은 그 뒤로 바뀌었다)**. `out893_pilot.json`
+과 `out893_diag.json` 은 **수리 전** 코드(`7509ec163` 시점)의 산출물이다 --- 이 파일을
+다시 돌리면 그 수치가 안 나온다. 무엇을 고쳤나:
+
+  ① `dcin()` 의 무결과 판정이 **반대 방향**이었다. 결과 컨테이너 `sch_result` 의
+     **부재**를 '판정 불가' 로 읽어 **'확인된 0' 을 '모른다' 로 강등**했다(디시 440요청
+     중 망 예외는 3건뿐인데 판정 불가가 139건). 조항 59 를 사전에 배선해 놓고 가드를
+     거꾸로 달았다. 이제 무결과 표지 `검색 결과가 없` 을 먼저 보고, **표지도 없고
+     컨테이너도 없을 때만** 판정 불가로 올린다.
+
+  ② `naver()` 의 `제목` 이 3,568/3,568 전부 UI 문자열이었다(`"새 창 열림 …"`).
+     `txt.split('desk">')[-1][:120]` 이 블로그 이름·날짜·`Keep에 저장` 을 잡고 진짜
+     제목은 120자 잘림 뒤로 밀어냈다. 이제 `_nav_title()` 이 UI 부스러기를 걷고
+     제목만 남기며, 어디서 나왔는지 `제목출처` 로 적는다.
+
+  ③ 🔴 `naver_alive()` **양성 통제 신설**. 2026-08-10 실측: 네이버 블로그 검색이
+     우리 UA 에 **`id="notfound"` 껍데기**를 내주기 시작했다 --- **`체인소맨` 조차 0건**
+     이고 응답은 200 · 72,547바이트다. 즉 '확인된 0' 표지가 **차단의 얼굴**로도 온다.
+     표지만 믿으면 조항 59 를 다시 밟는다. 원천이 살아 있는지 **알려진 양성 질의**로
+     먼저 확인하고, 죽어 있으면 그 원천의 결과는 전부 **판정 불가**로 올린다.
+
+  ④ 실패 회계에 **`e.code`** 를 남긴다. 예전에는 `type(e).__name__` 만 적어서
+     *'레이트 리밋'* 이 측정이 아니라 추정이었다(뉴스 187 `HTTPError` 의 상태 코드가
+     기록에 없었다).
 """
 from __future__ import annotations
 
@@ -44,7 +69,8 @@ POLITE = 0.6            # 작업 하나 안에서 요청 사이
 
 # ── 요청 계기 --- 몇 번 두드렸고 몇 바이트를 받았나(배선 검사 ㄹ · 항등 통제 ㄷ)
 _LK = threading.Lock()
-REQ = {"n": 0, "bytes": [], "fail": Counter(), "by_src": Counter()}
+REQ = {"n": 0, "bytes": [], "fail": Counter(), "by_src": Counter(),
+       "fail_code": Counter()}      # 894 ④ --- 상태 코드를 버리지 않는다
 
 
 def fetch(url: str, src: str, data=None, extra=None, timeout: int = 25) -> str:
@@ -59,8 +85,12 @@ def fetch(url: str, src: str, data=None, extra=None, timeout: int = 25) -> str:
     try:
         b = urllib.request.urlopen(req, timeout=timeout).read()
     except Exception as e:
+        # 🔴 894 ④ --- `e.code` 를 남긴다. 이름만 적으면 'HTTPError' 가 403 인지 503 인지
+        # 모르고, 그러면 *'레이트 리밋'* 은 측정이 아니라 추정이 된다.
+        code = getattr(e, "code", None)
         with _LK:
             REQ["fail"][f"{src}:{type(e).__name__}"] += 1
+            REQ["fail_code"][f"{src}:{type(e).__name__}:{code if code is not None else '-'}"] += 1
         raise
     with _LK:
         REQ["bytes"].append([src, len(b)])
@@ -101,6 +131,49 @@ def news(q: str, s: str, e: str) -> list[dict]:
 
 # ── 원천 ②  네이버 블로그 기간검색 ────────────────────────────
 _NAV_D = re.compile(r">(\d{4})\.\s?(\d{1,2})\.\s?(\d{1,2})\.?<")
+_NAV_KEEP = "Keep에 바로가기"          # 이 뒤부터가 글 제목이다
+_NAV_NEW = "새 창 열림"                 # 스크린리더용 구분자 --- 필드 경계로 쓴다
+_NAV_EMPTY = 'id="notfound"'            # 무결과 컨테이너(자유 문자열 말고 컨테이너로 잡는다)
+_NAV_ITEM = 'data-template-id="ugcItem"'
+NAV_ALIVE_Q = "체인소맨"                # 🔴 양성 통제 --- 이게 0 이면 원천이 죽은 것이다
+
+
+def _nav_title(block_text: str) -> tuple[str, str]:
+    """블록 평문에서 **글 제목**만 뽑는다. 반환 (제목, 제목출처).
+
+    🔴 894 수리. 옛 코드는 `desk">` 뒤 120자를 그대로 제목이라 불렀는데, 그 120자는
+    거의 전부 **블로그 이름 · 게시일 · `Keep에 저장` · `Keep에 바로가기`** 라는 UI
+    부스러기이고 진짜 제목은 그 **뒤**에 온다(893 실측 3,568/3,568 이 UI 문자열).
+    네이버는 스크린리더용으로 필드마다 `새 창 열림` 을 끼워 넣으므로 그것을 경계로
+    쓴다. 어디서 나왔는지 함께 돌려주어 **'제목을 못 얻은 것'과 '제목이 짧은 것'을
+    가른다**(조항 59).
+    """
+    s = block_text
+    src = "UI 잔여"
+    if _NAV_KEEP in s:
+        s = s.split(_NAV_KEEP)[-1]
+        src = "본문 앵커"
+    parts = [p.strip() for p in s.replace(_NAV_NEW, "\x00").split("\x00") if p.strip()]
+    return ((parts[0][:120], src) if parts else ("", "없음"))
+
+
+def naver_alive() -> dict:
+    """🔴 894 신설 --- 원천이 살아 있는가를 **알려진 양성 질의**로 먼저 묻는다.
+
+    2026-08-10 실측: 네이버 블로그 검색이 우리 UA 에 200 · 72,547바이트 응답을 주면서
+    `id="notfound"` 를 달았다 --- **`체인소맨` 인데도** 0건이다. 무결과 표지는
+    *'없다'* 의 얼굴도 하고 *'너한테는 안 준다'* 의 얼굴도 한다. 표지만 믿는 순간
+    조항 59 를 반대 방향으로 다시 밟는다(그게 정확히 `dcin()` 이 저지른 일이다).
+    """
+    u = ("https://search.naver.com/search.naver?ssc=tab.blog.all&query="
+         + urllib.parse.quote(NAV_ALIVE_Q) + "&start=1")
+    try:
+        h = fetch(u, "naver_alive")
+    except Exception as e:
+        return {"살았나": None, "사유": f"{type(e).__name__}:{getattr(e, 'code', '-')}"}
+    n = len(re.split(_NAV_ITEM, h)) - 1
+    return {"살았나": n > 0, "양성 질의": NAV_ALIVE_Q, "항목": n,
+            "무결과 컨테이너": _NAV_EMPTY in h, "바이트": len(h)}
 
 
 def naver(q: str, s: str, e: str) -> list[dict]:
@@ -110,15 +183,17 @@ def naver(q: str, s: str, e: str) -> list[dict]:
          + f"&nso=so%3Ar%2Cp%3Afrom{ymd(s)}to{ymd(e)}&start=1")
     h = fetch(u, "naver")
     out = []
-    for b in re.split(r'data-template-id="ugcItem"', h)[1:]:
+    for b in re.split(_NAV_ITEM, h)[1:]:
         m = _NAV_D.search(b)
         iso = ("%04d-%02d-%02d" % tuple(int(x) for x in m.groups())) if m else None
         txt = _html.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", b))).strip()
-        txt = txt.split("desk\">", 1)[-1][:120]
-        out.append({"원천": "블로그", "제목": txt[:120], "시각": iso, "창": [s, e],
-                    "id": "nav:" + hashlib.sha1((txt + str(iso)).encode()).hexdigest()[:16]})
-    if not out and "검색결과가 없" not in h:
-        raise ValueError("블로그 0건인데 무결과 표지 없음 --- 판정 불가")
+        txt = txt.split("desk\">", 1)[-1]
+        title, tsrc = _nav_title(txt)
+        out.append({"원천": "블로그", "제목": title, "제목출처": tsrc,
+                    "시각": iso, "창": [s, e],
+                    "id": "nav:" + hashlib.sha1((title + str(iso)).encode()).hexdigest()[:16]})
+    if not out and _NAV_EMPTY not in h:
+        raise ValueError("블로그 0건인데 무결과 컨테이너 없음 --- 판정 불가")
     return out
 
 
@@ -126,6 +201,8 @@ def naver(q: str, s: str, e: str) -> list[dict]:
 _DC_LI = re.compile(r"<li>(.*?)</li>", re.S)
 _DC_DT = re.compile(r'class="date_time">([\d.]+)\s+([\d:]+)<')
 _DC_LN = re.compile(r"gall\.dcinside\.com/(?:mgallery/|mini/)?board/view/\?id=([\w]+)&(?:amp;)?no=(\d+)")
+DC_EMPTY = "검색 결과가 없"       # 🔴 894 --- 무결과 **표지**. 이게 있으면 '확인된 0' 이다
+DC_BOX = "sch_result"             # 결과 컨테이너. 표지도 없고 이것도 없을 때만 판정 불가
 
 
 def dcin(q: str, sort: str) -> list[dict]:
@@ -149,8 +226,17 @@ def dcin(q: str, sort: str) -> list[dict]:
             re.sub(r"<[^>]+>", "", t.group(1))).strip()[:200] if t else "",
             "시각": iso, "갤": ln.group(1), "글번호": ln.group(2),
             "m": "mgallery" in ln.group(0), "id": f"dc:{ln.group(1)}:{ln.group(2)}"})
-    if not out and "sch_result" not in h:
-        raise ValueError("디시 0건인데 결과 컨테이너 없음 --- 판정 불가")
+    # 🔴 894 수리 --- 가드가 반대 방향이었다(티처 #56 C3).
+    # 옛 코드: `sch_result` **부재**를 판정 불가로 읽었다 → 디시 440요청 중 망 예외는
+    # 3건뿐인데 판정 불가가 **139건**. 136건은 46KB 이상의 **정상 응답**이고 내용에
+    # `검색 결과가 없` 표지가 있었다. 즉 **'확인된 0' 을 '모른다' 로 강등**했다.
+    # 조항 59 는 '빈 것을 부정으로 읽지 마라' 이지 '확인된 0 을 버려라' 가 아니다.
+    if not out:
+        if DC_EMPTY in h:
+            return []                      # 확인된 0 --- 디시가 없다고 말했다
+        if DC_BOX in h:
+            return []                      # 컨테이너는 왔는데 항목이 0 --- 역시 확인된 0
+        raise ValueError("디시 0건인데 무결과 표지도 결과 컨테이너도 없음 --- 판정 불가")
     return out
 
 
