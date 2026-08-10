@@ -547,7 +547,11 @@ DEAD_NUMBERS = [
     ("+0.024", "-0.0648",
      "공휴일 항의 이득. 노트 703 은 학습에 도움이라 적었는데 유보에서는 해롭다(2σ 밖 · 씨앗 8/8). "
      "**그러나 항을 빼지는 않는다** — 그 이득이 달력 재흡수다(노트 736)", 736),
-    ("0.037", "0.0696", "장 지속성 R2 h=30 (같은 이유)", 669),
+    # 🔴 894: ctx 를 건다. 맥락 없이 `0.037` 만 보면 **웹툰 곡선의 폭**(`lab/forms.py:1293`)과
+    # **정규식 경계 시험의 예시**(이 파일 아래)까지 잡는다 --- 둘 다 장 지속성이 아니다.
+    # 자를 좁히는 것이므로 적어 둔다: 이제 이 행은 **`지속성`·`R2`·`R²` 가 같은 줄에
+    # 있을 때만** 발화한다. 좁힌 만큼 못 보는 자리가 생겼다.
+    ("0.037", "0.0696", "장 지속성 R2 h=30 (같은 이유)", 669, ("지속성", "R2", "R²")),
     ("두 번 연속", "다섯 번(671·672·674·676·677)", "자기 검사 결함 횟수", 677),
     ("3,430", "3,775", "채점 분모", 552),
     ("3,369", "3,775", "채점 분모(유보) — 11도메인 시대 값. 837 재기선으로 은퇴", 837),
@@ -569,7 +573,7 @@ DEAD_NUMBERS = [
 #: 🔴 **손 나열을 버린다(티처 #55 C4 · 노트 893).** 위 문단이 *"검출기를 세울 때는
 #: 무엇을 안 보는지를 같이 적어야 한다"* 고 적어 놓고 **목록은 아홉 줄 손 나열**이었다.
 #: 티처가 같은 매처를 274 파일에 대니 목록 **밖에서 27건 / 12파일**이 걸렸고 그중
-#: 살아 있는 발행물이 **20건 / 6파일**이다 --- `docs/용어.md:19` 판 `0.4932`(인계 카드
+#: 살아 있는 발행물이 **20건 / 6파일**이다 --- `docs/용어.md:19` 판 `0.4932`(**은퇴** · 인계 카드
 #: 13행이 모든 프레시 세션을 그 파일로 보낸다) · `serve/boardsvc.py:423`(사용자 응답
 #: 본문) · `docs/investor-deck.html:610`(**투자자 대면**) · `docs/worldmodel-primer.html`
 #: · `docs/primer/05·06.html`(옛 목록은 `index·07·11` 만 짚어 **05·06 이 원리상 안 걸렸다**).
@@ -582,7 +586,19 @@ DEAD_NUMBERS = [
 #:   · `data/lab/denominator.json` --- 대장. 판정 원문을 고치면 역사 왜곡이다.
 #:   · 메모리 아카이브(`project-world-model-lab.md`) --- 노트 108~540 의 **이력**이라
 #:     같은 이유로 뺀다. 살아 있는 것은 색인(MEMORY.md)과 인계 카드다.
+#:   · 🔴 **코드 트리의 하위 디렉터리**(`lab/**`·`ingest/**` 의 깊은 곳) · `tests/` ·
+#:     `notebooks/` --- 위 glob 은 **비재귀**다. 894 가 넣은 것은 네 디렉터리의 **첫 켜**뿐이다.
+#:   · `data/state/*.json` --- 측정 산출물이다. 옛 값이 남아 있는 게 정상이다.
+#: 🔴 **네 번째 자리 --- 코드 트리 전부가 시야 밖이었다(티처 #56 M5 · 노트 894).**
+#: 893 이 손 나열을 버리고 glob 으로 갔는데 glob 이 `serve/*.py` 하나뿐이라 라이브
+#: 라이브러리가 통째로 안 보였다. 같은 매처를 3,233 파일에 대니 진짜가 셋 --- 전부
+#: **머리말**이다: `lab/textaxes.py:3`(0.4689 **은퇴**) · `lab/calib.py:239`(3,369 **은퇴**) ·
+#: `ingest/news_counts.py:58`(3,369 **은퇴**). 그리고 🔴 **`audit.py` 자신이 표시 없는 0.4932 를
+#: 이고 있었다**(티처 #49 C1 의 *'검출기가 옛 값을 이고 있다'* 가 이 파일에서 재발).
+#: 그래서 `lab/`·`ingest/`·`core/`·`state/` 를 시야에 넣는다. **비재귀**다 --- 하위
+#: 디렉터리는 아직 안 본다(그것도 여기 적어 둔다).
 LIVE_GLOBS = ("docs/**/*.html", "docs/**/*.md", "serve/*.py",
+              "lab/*.py", "ingest/*.py", "core/*.py", "state/*.py",
               "data/lab/program.json", "README.md",
               "../.claude/projects/-Users-ax-world-model/memory/MEMORY.md",
               "../.claude/projects/-Users-ax-world-model/memory/project-lab-state.md")
@@ -638,7 +654,7 @@ OK_MARKS = ("죽은 숫자", "정정", "철회", "은퇴")
 #: 그래서 **기준선 시각**으로 가른다: 이 검사가 생긴 뒤에 나온 논문은 경성 실패,
 #: 그 전 것은 등록된 빚(래칫). 정확하고 재량이 없다.
 PAPER_BASELINE_AT = "2026-08-09T08:40:00"
-PAPER_DEBT = 127        # 886 등록(실측). 111 → 127 은 0.4697 등재분(티처 #51 F5 · 9편 16곳). 이 수를 **넘으면** 실패한다(줄어드는 건 언제나 통과).
+PAPER_DEBT = 127        # 886 등록(실측). 111 → 127 은 0.4697(**은퇴**) 등재분(티처 #51 F5 · 9편 16곳). 이 수를 **넘으면** 실패한다(줄어드는 건 언제나 통과).
 
 
 def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> dict:
@@ -659,11 +675,25 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
         except Exception:
             continue
         errata = str(meta.get("errata", ""))
-        is_fresh = False
-        try:
-            is_fresh = _dt.fromisoformat(str(meta.get("created", ""))) >= cut
-        except Exception:
-            pass
+        # 🔴 894 수리(티처 #56 M6). 옛 코드는 `meta["created"]` **하나**를 봤는데 그건
+        # 저자가 손으로 적는 문자열이다 --- 480 의 `created`(15:05:00 · 초가 00)가
+        # `sent_at`(15:00:18)보다 **5분 늦다**. 자동 생성이 아니라는 뜻이고, 기준선보다
+        # 이른 값을 적으면 **경성 실패가 조용히 래칫으로 내려간다**. 손으로 적는 값이
+        # 관문을 여는 자리에 있으면 그건 관문이 아니다.
+        # → `created` · `sent_at` · 파일 mtime **셋 중 제일 늦은 것**을 쓴다. 손으로
+        #   이르게 적어도 mtime 이 안 속는다.
+        stamps = []
+        for k in ("created", "sent_at"):
+            try:
+                stamps.append(_dt.fromisoformat(str(meta.get(k, ""))))
+            except Exception:
+                pass
+        for q in (meta_p, meta_p.parent / "main.tex"):
+            try:
+                stamps.append(_dt.fromtimestamp(q.stat().st_mtime))
+            except Exception:
+                pass
+        is_fresh = bool(stamps) and max(stamps) >= cut
         lines = tex.splitlines()
         for i, ln in enumerate(lines, 1):
             near = "\n".join(lines[max(0, i - 1 - 2):i + 2])
