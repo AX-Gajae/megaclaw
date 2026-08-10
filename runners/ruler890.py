@@ -38,6 +38,7 @@
 import datetime as dt
 import hashlib
 import json
+import math
 import subprocess
 import sys
 import time
@@ -87,7 +88,22 @@ EXPECT_K1_S0 = {
     "영화": 0.48618584902107354, "웹툰": 0.362116364440692,
     "팝업": 0.3834218406038064, "펀딩": 0.3698419278496076,
 }
-EXPECT_POOLED_K1_S0 = 0.4731063028988083
+#: 🔴 **판 기대값은 손으로 안 적는다**(조항 60 · 이슈 #131 미결①).
+#: 정본 한 자리(`runners/dose896.py:71 EXPECT_POOLED_K1_S0`)에서 **읽어** 온다.
+#: 여기 예전에 손으로 적혀 있던 `0.4731063028988083` 은 정본과 **2 ULP** 달랐고,
+#: 그런데도 `:245` 가 판을 **대조조차 안 했기 때문에** 아무도 몰랐다
+#: (`runners/out899c_ruler890_log.txt:70` 이 `"판": …84, "기대 판": …83` 을 나란히
+#: 찍어 놓고 `"12도메인 부동소수 정확일치": true` 를 냈다).
+from dose896 import EXPECT_POOLED_K1_S0                          # noqa: E402
+
+#: 🔴 **판 대조는 `==` 가 아니다 --- `==` 는 「값이 같은가」가 아니라 「더한 차례가
+#: 같은가」를 잰다.** 실측(`runners/out900c_ulp.py` → `out900c_ulp.json`):
+#: 같은 12개 ρ 와 같은 12개 가중을 **차례만 바꿔** 더하면 서로 다른 double 이
+#: **다섯** 나오고 폭이 **5 ULP** 다. `sorted(dom)` 차례는 …83 을, 하네스
+#: `list(data.dom)` 차례(`lab/harness.py:168 Data.pooled`)는 …84 를 낸다.
+#: 그래서 문턱을 **8 ULP**(실측 폭 5 + 여유)로 두되, **정확일치 여부도 같이 찍는다**
+#: --- 숨기면 다음 세션이 「정확일치 False」를 보고 없는 회귀를 쫓는다.
+POOLED_ULP_TOL = 8
 
 #: 🔴 **이력 --- 서수 순위 시대(2026-08-10 이전)의 같은 배선.** 판정에 쓰지 마라.
 EXPECT_K1_S0_서수시대 = {
@@ -241,14 +257,33 @@ def main():
                 f" 아이돌 {sc.get(DOM, float('nan')):.4f} ({time.time()-t0:.0f}s)")
             if k == 1 and s == 0:
                 same = {d: (sc.get(d) == EXPECT_K1_S0[d]) for d in EXPECT_K1_S0}
+                #: 🔴 이슈 #131 · 티처 #62 C5 --- 여기는 **판을 찍기만 하고 대조를
+                #: 안 했다.** `"12도메인 부동소수 정확일치": true` 옆에 `판 …84 ·
+                #: 기대 판 …83` 이 나란히 인쇄돼 있었는데도 아무 게이트도 안 걸렸다.
+                #: 이제 **판도 대조한다** --- ULP 거리로(위 `POOLED_ULP_TOL` 주석).
+                _pool = (sum(sc[d]*W[d] for d in sc if d in W)
+                         / sum(W[d] for d in sc if d in W))
+                _ulp = (_pool - EXPECT_POOLED_K1_S0) / math.ulp(EXPECT_POOLED_K1_S0)
                 wire["ㄷ 정본 하네스와 일치(K=1 씨앗0)"] = {
                     "12도메인 부동소수 정확일치": all(same.values()),
                     "어긋난 도메인": [d for d, v in same.items() if not v],
-                    "판": sum(sc[d]*W[d] for d in sc if d in W)/sum(W[d] for d in sc if d in W),
-                    "기대 판": EXPECT_POOLED_K1_S0}
+                    "판": _pool,
+                    "기대 판(dose896.EXPECT_POOLED_K1_S0 에서 읽음 · 손 전사 아님)":
+                        EXPECT_POOLED_K1_S0,
+                    "🔴 판 부동소수 정확일치": _pool == EXPECT_POOLED_K1_S0,
+                    "판 − 기대 판 (ULP)": _ulp,
+                    "🔴 판 대조 통과(|ULP| ≤ %d · 누적 차례 몫)" % POOLED_ULP_TOL:
+                        abs(_ulp) <= POOLED_ULP_TOL,
+                    "⚠ 왜 ULP 인가": (
+                        "같은 12개 값을 차례만 바꿔 더하면 double 이 다섯 갈래로 "
+                        "갈린다(폭 5 ULP · 실측 runners/out900c_ulp.json). "
+                        "`==` 는 값이 아니라 누적 차례를 재는 게이트가 된다"),
+                }
                 say(json.dumps(wire["ㄷ 정본 하네스와 일치(K=1 씨앗0)"],
                                ensure_ascii=False))
                 assert all(same.values()), "🔴 재구현이 정본과 다르다 --- 중단"
+                assert abs(_ulp) <= POOLED_ULP_TOL, (
+                    f"🔴 판이 정본과 다르다({_ulp:+.1f} ULP > {POOLED_ULP_TOL}) --- 중단")
 
     # ㄹ 팔이 실제로 다른가
     diff_cells = [int(np.sum(PR[1][DOM][i] != PR[2][DOM][i])) for i in range(len(SEEDS))]
