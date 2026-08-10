@@ -1,0 +1,6148 @@
+{
+ "무엇": "시장팝업 intervention 두 필드 결측 전수 계수 + 🔴 티처 #63 M2 카테고리 재계수",
+ "🔴 조항 60": "이 산출물의 모든 계수는 **분모 이름을 달고** 나른다. 분모가 다르면 잇지 마라",
+ "도장": {
+  "시각(UTC · 시작)": "2026-08-10T18:24:39+00:00",
+  "⚠ git HEAD(시작 시점 · 판정에 쓰지 마라)": "ae0ed6c49799011efab8614c7f7171ae08c7a6bb",
+  "🔴 코드 sha256(이게 자다)": {
+   "runners/out900h_census.py": "e1293157c749a2ea"
+  },
+  "🔴 입력 파일 sha256": {
+   "data/state/market_axes.json": "8f36ac5b4e0d5862"
+  },
+  "🔴 입력 묶음 sha256": {
+   "data/market_records/*.json": {
+    "파일 수": 647,
+    "묶음 sha256": "d4c8049d0434ed77",
+    "재현법": "sorted((상대경로, sha256(파일)[:16])) 를 '경로 공백 sha' 줄로 이어 개행 결합 → sha256[:16]"
+   }
+  },
+  "시각(UTC · 끝)": "2026-08-10T18:24:39+00:00"
+ },
+ "분모별 계수": {
+  "분모 A · data/market_records 파일 전수": {
+   "🔴 분모": "분모 A · data/market_records 파일 전수 647",
+   "n": 647,
+   "free": {
+    "MKT · null": 134,
+    "MKT · value:False": 15,
+    "MKT · value:True": 259,
+    "MKT2 · null": 239
+   },
+   "resv": {
+    "MKT · null": 219,
+    "MKT · value:False": 85,
+    "MKT · value:True": 104,
+    "MKT2 · null": 239
+   },
+   "둘 다 결측(=_friction None)": {
+    "계": 356,
+    "MKT": 117,
+    "MKT2": 239
+   }
+  },
+  "분모 B · 판 축 파일(market_axes.json)": {
+   "🔴 분모": "분모 B · 판 축 파일 249",
+   "n": 249,
+   "free": {
+    "MKT · null": 53,
+    "MKT · value:False": 11,
+    "MKT · value:True": 141,
+    "MKT2 · null": 44
+   },
+   "resv": {
+    "MKT · null": 106,
+    "MKT · value:False": 51,
+    "MKT · value:True": 48,
+    "MKT2 · null": 44
+   },
+   "둘 다 결측(=_friction None)": {
+    "계": 88,
+    "MKT": 44,
+    "MKT2": 44
+   }
+  },
+  "분모 C · 유보(period_from ≥ 2025)": {
+   "🔴 분모": "분모 C · 유보 126",
+   "n": 126,
+   "free": {
+    "MKT · null": 20,
+    "MKT · value:False": 8,
+    "MKT · value:True": 76,
+    "MKT2 · null": 22
+   },
+   "resv": {
+    "MKT · null": 46,
+    "MKT · value:False": 25,
+    "MKT · value:True": 33,
+    "MKT2 · null": 22
+   },
+   "둘 다 결측(=_friction None)": {
+    "계": 37,
+    "MKT": 15,
+    "MKT2": 22
+   }
+  },
+  "분모 C′ · 학습(period_from < 2025)": {
+   "🔴 분모": "분모 C′ · 학습 123",
+   "n": 123,
+   "free": {
+    "MKT · null": 33,
+    "MKT · value:False": 3,
+    "MKT · value:True": 65,
+    "MKT2 · null": 22
+   },
+   "resv": {
+    "MKT · null": 60,
+    "MKT · value:False": 26,
+    "MKT · value:True": 15,
+    "MKT2 · null": 22
+   },
+   "둘 다 결측(=_friction None)": {
+    "계": 51,
+    "MKT": 29,
+    "MKT2": 22
+   }
+  }
+ },
+ "entry_friction 마스크": {
+  "분모 B · 축 파일 249": {
+   "n": 249,
+   "마스크 평균": 0.6465863453815262,
+   "1인 행": 161,
+   "0인 행": 88,
+   "MKT": {
+    "n": 205,
+    "마스크 평균": 0.7853658536585366
+   },
+   "MKT2": {
+    "n": 44,
+    "마스크 평균": 0.0
+   }
+  },
+  "분모 C · 유보 126": {
+   "n": 126,
+   "마스크 평균": 0.7063492063492064,
+   "1인 행": 89,
+   "0인 행": 37,
+   "MKT": {
+    "n": 104,
+    "마스크 평균": 0.8557692307692307
+   },
+   "MKT2": {
+    "n": 22,
+    "마스크 평균": 0.0
+   }
+  },
+  "분모 C′ · 학습 123": {
+   "n": 123,
+   "마스크 평균": 0.5853658536585366,
+   "1인 행": 72,
+   "0인 행": 51,
+   "MKT": {
+    "n": 101,
+    "마스크 평균": 0.7128712871287128
+   },
+   "MKT2": {
+    "n": 22,
+    "마스크 평균": 0.0
+   }
+  }
+ },
+ "분모 G · 원천 MKT 카테고리별 둘 다 null": {
+  "🔴 분모": "카테고리별 MKT 원천 행 수(각 행마다 분모가 다르다 --- 조항 60)",
+  "표": {
+   "beauty": {
+    "n": 39,
+    "둘 다 null": 3,
+    "비율": 0.0769
+   },
+   "character": {
+    "n": 53,
+    "둘 다 null": 12,
+    "비율": 0.2264
+   },
+   "electronics": {
+    "n": 13,
+    "둘 다 null": 6,
+    "비율": 0.4615
+   },
+   "entertainment": {
+    "n": 42,
+    "둘 다 null": 8,
+    "비율": 0.1905
+   },
+   "fashion": {
+    "n": 82,
+    "둘 다 null": 59,
+    "비율": 0.7195
+   },
+   "fnb": {
+    "n": 44,
+    "둘 다 null": 6,
+    "비율": 0.1364
+   },
+   "game_webtoon": {
+    "n": 72,
+    "둘 다 null": 10,
+    "비율": 0.1389
+   },
+   "liquor": {
+    "n": 12,
+    "둘 다 null": 6,
+    "비율": 0.5
+   },
+   "other": {
+    "n": 51,
+    "둘 다 null": 7,
+    "비율": 0.1373
+   }
+  },
+  "합계": {
+   "n": 408,
+   "둘 다 null": 117,
+   "비율": 0.2868
+  }
+ },
+ "🔴 티처 #63 M2 판정": {
+  "무엇": "docs/지평/900.md 가 적은 카테고리 계수 다섯을 다시 셌다",
+  "🔴 「그 밖」의 뜻": "옛 본문이 카테고리 일곱을 나열하고 남은 것을 「그 밖 3」으로 적었다. 실측 37행의 고유 카테고리는 **일곱뿐**이라 잔여는 **0** 이다",
+  "대조": {
+   "docs/지평/900.md:143 · 유보 15행 중 fashion": {
+    "옛 값(900.md)": 9,
+    "다시 센 값": 8,
+    "일치": false
+   },
+   "docs/지평/900.md:143 · 37행 중 fashion": {
+    "옛 값(900.md)": 12,
+    "다시 센 값": 13,
+    "일치": false
+   },
+   "docs/지평/900.md:149 · 37행 중 character": {
+    "옛 값(900.md)": 5,
+    "다시 센 값": 6,
+    "일치": false
+   },
+   "docs/지평/900.md:149 · 37행 중 fnb": {
+    "옛 값(900.md)": 4,
+    "다시 센 값": 5,
+    "일치": false
+   },
+   "docs/지평/900.md:149 · 37행 중 「그 밖」": {
+    "옛 값(900.md)": 3,
+    "다시 센 값": 0,
+    "일치": false
+   }
+  },
+  "🔴 틀린 항목 수": 5,
+  "🔴 왜 검산이 안 걸렸나": "옛 여덟 항목의 합도 37 · 새 일곱 항목의 합도 37 --- 합만으로는 못 가른다",
+  "카테고리 계수 전량": {
+   "분모 D · 유보 결측 중 MKT 15행": {
+    "🔴 분모": "분모 D · 유보 결측 중 MKT 15행",
+    "n": 15,
+    "계수": {
+     "fashion": 8,
+     "fnb": 4,
+     "game_webtoon": 2,
+     "electronics": 1
+    },
+    "🔴 검산 · 계수 합": 15,
+    "🔴 검산 · 합 == n": true,
+    "고유 카테고리 수": 4
+   },
+   "분모 D′ · 유보 결측 중 MKT2 22행": {
+    "🔴 분모": "분모 D′ · 유보 결측 중 MKT2 22행",
+    "n": 22,
+    "계수": {
+     "character": 6,
+     "fashion": 5,
+     "game_webtoon": 4,
+     "beauty": 3,
+     "other": 2,
+     "electronics": 1,
+     "fnb": 1
+    },
+    "🔴 검산 · 계수 합": 22,
+    "🔴 검산 · 합 == n": true,
+    "고유 카테고리 수": 7
+   },
+   "분모 E · 유보 결측 37행": {
+    "🔴 분모": "분모 E · 유보 결측 37행",
+    "n": 37,
+    "계수": {
+     "fashion": 13,
+     "character": 6,
+     "game_webtoon": 6,
+     "fnb": 5,
+     "beauty": 3,
+     "electronics": 2,
+     "other": 2
+    },
+    "🔴 검산 · 계수 합": 37,
+    "🔴 검산 · 합 == n": true,
+    "고유 카테고리 수": 7
+   },
+   "분모 F · 축 파일 결측 88행": {
+    "🔴 분모": "분모 F · 축 파일 결측 88행",
+    "n": 88,
+    "계수": {
+     "fashion": 35,
+     "character": 21,
+     "game_webtoon": 9,
+     "fnb": 6,
+     "electronics": 5,
+     "other": 5,
+     "beauty": 3,
+     "entertainment": 3,
+     "liquor": 1
+    },
+    "🔴 검산 · 계수 합": 88,
+    "🔴 검산 · 합 == n": true,
+    "고유 카테고리 수": 9
+   },
+   "분모 G · 원천 MKT 408행": {
+    "🔴 분모": "분모 G · 원천 MKT 408행",
+    "n": 408,
+    "계수": {
+     "fashion": 82,
+     "game_webtoon": 72,
+     "character": 53,
+     "other": 51,
+     "fnb": 44,
+     "entertainment": 42,
+     "beauty": 39,
+     "electronics": 13,
+     "liquor": 12
+    },
+    "🔴 검산 · 계수 합": 408,
+    "🔴 검산 · 합 == n": true,
+    "고유 카테고리 수": 9
+   }
+  }
+ },
+ "행 전수(증거물)": [
+  {
+   "rid": "MKT-2022-0001",
+   "file": "MKT-2022-0001.json",
+   "b": "MKT",
+   "cat": "electronics",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2022-0002",
+   "file": "MKT-2022-0002.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2022-0003",
+   "file": "MKT-2022-0003.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0001",
+   "file": "MKT-2023-0001.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0002",
+   "file": "MKT-2023-0002.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0003",
+   "file": "MKT-2023-0003.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0004",
+   "file": "MKT-2023-0004.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0005",
+   "file": "MKT-2023-0005.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0006",
+   "file": "MKT-2023-0006.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0007",
+   "file": "MKT-2023-0007.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0008",
+   "file": "MKT-2023-0008.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0009",
+   "file": "MKT-2023-0009.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0010",
+   "file": "MKT-2023-0010.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0011",
+   "file": "MKT-2023-0011.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0012",
+   "file": "MKT-2023-0012.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0013",
+   "file": "MKT-2023-0013.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0014",
+   "file": "MKT-2023-0014.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0015",
+   "file": "MKT-2023-0015.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "null",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0016",
+   "file": "MKT-2023-0016.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0017",
+   "file": "MKT-2023-0017.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0018",
+   "file": "MKT-2023-0018.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0019",
+   "file": "MKT-2023-0019.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0020",
+   "file": "MKT-2023-0020.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0021",
+   "file": "MKT-2023-0021.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0022",
+   "file": "MKT-2023-0022.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0023",
+   "file": "MKT-2023-0023.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0024",
+   "file": "MKT-2023-0024.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0025",
+   "file": "MKT-2023-0025.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0026",
+   "file": "MKT-2023-0026.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0027",
+   "file": "MKT-2023-0027.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0028",
+   "file": "MKT-2023-0028.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0029",
+   "file": "MKT-2023-0029.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0030",
+   "file": "MKT-2023-0030.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0031",
+   "file": "MKT-2023-0031.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0032",
+   "file": "MKT-2023-0032.json",
+   "b": "MKT",
+   "cat": "electronics",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0033",
+   "file": "MKT-2023-0033.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "null",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0034",
+   "file": "MKT-2023-0034.json",
+   "b": "MKT",
+   "cat": "liquor",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0035",
+   "file": "MKT-2023-0035.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0036",
+   "file": "MKT-2023-0036.json",
+   "b": "MKT",
+   "cat": "liquor",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0037",
+   "file": "MKT-2023-0037.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0038",
+   "file": "MKT-2023-0038.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0039",
+   "file": "MKT-2023-0039.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0040",
+   "file": "MKT-2023-0040.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0041",
+   "file": "MKT-2023-0041.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0042",
+   "file": "MKT-2023-0042.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0043",
+   "file": "MKT-2023-0043.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0044",
+   "file": "MKT-2023-0044.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0045",
+   "file": "MKT-2023-0045.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0046",
+   "file": "MKT-2023-0046.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0047",
+   "file": "MKT-2023-0047.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0048",
+   "file": "MKT-2023-0048.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0049",
+   "file": "MKT-2023-0049.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0050",
+   "file": "MKT-2023-0050.json",
+   "b": "MKT",
+   "cat": "liquor",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0051",
+   "file": "MKT-2023-0051.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0052",
+   "file": "MKT-2023-0052.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "null",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0053",
+   "file": "MKT-2023-0053.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0054",
+   "file": "MKT-2023-0054.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0055",
+   "file": "MKT-2023-0055.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0056",
+   "file": "MKT-2023-0056.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0057",
+   "file": "MKT-2023-0057.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0058",
+   "file": "MKT-2023-0058.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0059",
+   "file": "MKT-2023-0059.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:False",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0060",
+   "file": "MKT-2023-0060.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0061",
+   "file": "MKT-2023-0061.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0062",
+   "file": "MKT-2023-0062.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0063",
+   "file": "MKT-2023-0063.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0064",
+   "file": "MKT-2023-0064.json",
+   "b": "MKT",
+   "cat": "electronics",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0065",
+   "file": "MKT-2023-0065.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0066",
+   "file": "MKT-2023-0066.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0067",
+   "file": "MKT-2023-0067.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0068",
+   "file": "MKT-2023-0068.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0069",
+   "file": "MKT-2023-0069.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0070",
+   "file": "MKT-2023-0070.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0071",
+   "file": "MKT-2023-0071.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2023-0072",
+   "file": "MKT-2023-0072.json",
+   "b": "MKT",
+   "cat": "liquor",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0001",
+   "file": "MKT-2024-0001.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0002",
+   "file": "MKT-2024-0002.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0003",
+   "file": "MKT-2024-0003.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0004",
+   "file": "MKT-2024-0004.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0005",
+   "file": "MKT-2024-0005.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "null",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0006",
+   "file": "MKT-2024-0006.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0007",
+   "file": "MKT-2024-0007.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0008",
+   "file": "MKT-2024-0008.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0009",
+   "file": "MKT-2024-0009.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0010",
+   "file": "MKT-2024-0010.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0011",
+   "file": "MKT-2024-0011.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "null",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0012",
+   "file": "MKT-2024-0012.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0013",
+   "file": "MKT-2024-0013.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0014",
+   "file": "MKT-2024-0014.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0015",
+   "file": "MKT-2024-0015.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0016",
+   "file": "MKT-2024-0016.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "null",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0017",
+   "file": "MKT-2024-0017.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0018",
+   "file": "MKT-2024-0018.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0019",
+   "file": "MKT-2024-0019.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0020",
+   "file": "MKT-2024-0020.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0021",
+   "file": "MKT-2024-0021.json",
+   "b": "MKT",
+   "cat": "liquor",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0022",
+   "file": "MKT-2024-0022.json",
+   "b": "MKT",
+   "cat": "electronics",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0023",
+   "file": "MKT-2024-0023.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0024",
+   "file": "MKT-2024-0024.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0025",
+   "file": "MKT-2024-0025.json",
+   "b": "MKT",
+   "cat": "liquor",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0026",
+   "file": "MKT-2024-0026.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0027",
+   "file": "MKT-2024-0027.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0028",
+   "file": "MKT-2024-0028.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0029",
+   "file": "MKT-2024-0029.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0030",
+   "file": "MKT-2024-0030.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0031",
+   "file": "MKT-2024-0031.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0032",
+   "file": "MKT-2024-0032.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0033",
+   "file": "MKT-2024-0033.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0034",
+   "file": "MKT-2024-0034.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0035",
+   "file": "MKT-2024-0035.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0036",
+   "file": "MKT-2024-0036.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0037",
+   "file": "MKT-2024-0037.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0038",
+   "file": "MKT-2024-0038.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0039",
+   "file": "MKT-2024-0039.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0040",
+   "file": "MKT-2024-0040.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0041",
+   "file": "MKT-2024-0041.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0042",
+   "file": "MKT-2024-0042.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0043",
+   "file": "MKT-2024-0043.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0044",
+   "file": "MKT-2024-0044.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0045",
+   "file": "MKT-2024-0045.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "null",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0046",
+   "file": "MKT-2024-0046.json",
+   "b": "MKT",
+   "cat": "electronics",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0047",
+   "file": "MKT-2024-0047.json",
+   "b": "MKT",
+   "cat": "electronics",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0048",
+   "file": "MKT-2024-0048.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0049",
+   "file": "MKT-2024-0049.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0050",
+   "file": "MKT-2024-0050.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0051",
+   "file": "MKT-2024-0051.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0052",
+   "file": "MKT-2024-0052.json",
+   "b": "MKT",
+   "cat": "electronics",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0053",
+   "file": "MKT-2024-0053.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0054",
+   "file": "MKT-2024-0054.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0055",
+   "file": "MKT-2024-0055.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0056",
+   "file": "MKT-2024-0056.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0057",
+   "file": "MKT-2024-0057.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0058",
+   "file": "MKT-2024-0058.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0059",
+   "file": "MKT-2024-0059.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0060",
+   "file": "MKT-2024-0060.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:False",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0061",
+   "file": "MKT-2024-0061.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0062",
+   "file": "MKT-2024-0062.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0063",
+   "file": "MKT-2024-0063.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0064",
+   "file": "MKT-2024-0064.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0065",
+   "file": "MKT-2024-0065.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0066",
+   "file": "MKT-2024-0066.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0067",
+   "file": "MKT-2024-0067.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0068",
+   "file": "MKT-2024-0068.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0069",
+   "file": "MKT-2024-0069.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0070",
+   "file": "MKT-2024-0070.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0071",
+   "file": "MKT-2024-0071.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0072",
+   "file": "MKT-2024-0072.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0073",
+   "file": "MKT-2024-0073.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0074",
+   "file": "MKT-2024-0074.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0075",
+   "file": "MKT-2024-0075.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:False",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0076",
+   "file": "MKT-2024-0076.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0077",
+   "file": "MKT-2024-0077.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0078",
+   "file": "MKT-2024-0078.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0079",
+   "file": "MKT-2024-0079.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0080",
+   "file": "MKT-2024-0080.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0081",
+   "file": "MKT-2024-0081.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0082",
+   "file": "MKT-2024-0082.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0083",
+   "file": "MKT-2024-0083.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0084",
+   "file": "MKT-2024-0084.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0085",
+   "file": "MKT-2024-0085.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0086",
+   "file": "MKT-2024-0086.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0087",
+   "file": "MKT-2024-0087.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0088",
+   "file": "MKT-2024-0088.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0089",
+   "file": "MKT-2024-0089.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0090",
+   "file": "MKT-2024-0090.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0091",
+   "file": "MKT-2024-0091.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0092",
+   "file": "MKT-2024-0092.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0093",
+   "file": "MKT-2024-0093.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0094",
+   "file": "MKT-2024-0094.json",
+   "b": "MKT",
+   "cat": "liquor",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0095",
+   "file": "MKT-2024-0095.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0096",
+   "file": "MKT-2024-0096.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0097",
+   "file": "MKT-2024-0097.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0098",
+   "file": "MKT-2024-0098.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0099",
+   "file": "MKT-2024-0099.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0100",
+   "file": "MKT-2024-0100.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0101",
+   "file": "MKT-2024-0101.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0102",
+   "file": "MKT-2024-0102.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0103",
+   "file": "MKT-2024-0103.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0104",
+   "file": "MKT-2024-0104.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0105",
+   "file": "MKT-2024-0105.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0106",
+   "file": "MKT-2024-0106.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0107",
+   "file": "MKT-2024-0107.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2024-0108",
+   "file": "MKT-2024-0108.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0001",
+   "file": "MKT-2025-0001.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0002",
+   "file": "MKT-2025-0002.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0003",
+   "file": "MKT-2025-0003.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0004",
+   "file": "MKT-2025-0004.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0005",
+   "file": "MKT-2025-0005.json",
+   "b": "MKT",
+   "cat": "electronics",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0006",
+   "file": "MKT-2025-0006.json",
+   "b": "MKT",
+   "cat": "electronics",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0007",
+   "file": "MKT-2025-0007.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0008",
+   "file": "MKT-2025-0008.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0009",
+   "file": "MKT-2025-0009.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0010",
+   "file": "MKT-2025-0010.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0011",
+   "file": "MKT-2025-0011.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0012",
+   "file": "MKT-2025-0012.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0013",
+   "file": "MKT-2025-0013.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0014",
+   "file": "MKT-2025-0014.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0015",
+   "file": "MKT-2025-0015.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0016",
+   "file": "MKT-2025-0016.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0017",
+   "file": "MKT-2025-0017.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0018",
+   "file": "MKT-2025-0018.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0019",
+   "file": "MKT-2025-0019.json",
+   "b": "MKT",
+   "cat": "liquor",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0020",
+   "file": "MKT-2025-0020.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0021",
+   "file": "MKT-2025-0021.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0022",
+   "file": "MKT-2025-0022.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0023",
+   "file": "MKT-2025-0023.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0024",
+   "file": "MKT-2025-0024.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0025",
+   "file": "MKT-2025-0025.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0026",
+   "file": "MKT-2025-0026.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0027",
+   "file": "MKT-2025-0027.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0028",
+   "file": "MKT-2025-0028.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0029",
+   "file": "MKT-2025-0029.json",
+   "b": "MKT",
+   "cat": "electronics",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0030",
+   "file": "MKT-2025-0030.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0031",
+   "file": "MKT-2025-0031.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0032",
+   "file": "MKT-2025-0032.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0033",
+   "file": "MKT-2025-0033.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0034",
+   "file": "MKT-2025-0034.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0035",
+   "file": "MKT-2025-0035.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0036",
+   "file": "MKT-2025-0036.json",
+   "b": "MKT",
+   "cat": "electronics",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0037",
+   "file": "MKT-2025-0037.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0038",
+   "file": "MKT-2025-0038.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0039",
+   "file": "MKT-2025-0039.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:False",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0040",
+   "file": "MKT-2025-0040.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0041",
+   "file": "MKT-2025-0041.json",
+   "b": "MKT",
+   "cat": "liquor",
+   "free": "null",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0042",
+   "file": "MKT-2025-0042.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0043",
+   "file": "MKT-2025-0043.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0044",
+   "file": "MKT-2025-0044.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0045",
+   "file": "MKT-2025-0045.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0046",
+   "file": "MKT-2025-0046.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0047",
+   "file": "MKT-2025-0047.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0048",
+   "file": "MKT-2025-0048.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0049",
+   "file": "MKT-2025-0049.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "null",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0050",
+   "file": "MKT-2025-0050.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0051",
+   "file": "MKT-2025-0051.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0052",
+   "file": "MKT-2025-0052.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0053",
+   "file": "MKT-2025-0053.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0054",
+   "file": "MKT-2025-0054.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0055",
+   "file": "MKT-2025-0055.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0056",
+   "file": "MKT-2025-0056.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "null",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0057",
+   "file": "MKT-2025-0057.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0058",
+   "file": "MKT-2025-0058.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0059",
+   "file": "MKT-2025-0059.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0060",
+   "file": "MKT-2025-0060.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0061",
+   "file": "MKT-2025-0061.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0062",
+   "file": "MKT-2025-0062.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0063",
+   "file": "MKT-2025-0063.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0064",
+   "file": "MKT-2025-0064.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0065",
+   "file": "MKT-2025-0065.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0066",
+   "file": "MKT-2025-0066.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0067",
+   "file": "MKT-2025-0067.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0068",
+   "file": "MKT-2025-0068.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0069",
+   "file": "MKT-2025-0069.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0070",
+   "file": "MKT-2025-0070.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0071",
+   "file": "MKT-2025-0071.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0072",
+   "file": "MKT-2025-0072.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0073",
+   "file": "MKT-2025-0073.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0074",
+   "file": "MKT-2025-0074.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0075",
+   "file": "MKT-2025-0075.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:False",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0076",
+   "file": "MKT-2025-0076.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0077",
+   "file": "MKT-2025-0077.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0078",
+   "file": "MKT-2025-0078.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0079",
+   "file": "MKT-2025-0079.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0080",
+   "file": "MKT-2025-0080.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0081",
+   "file": "MKT-2025-0081.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:False",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0082",
+   "file": "MKT-2025-0082.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0083",
+   "file": "MKT-2025-0083.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0084",
+   "file": "MKT-2025-0084.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0085",
+   "file": "MKT-2025-0085.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0086",
+   "file": "MKT-2025-0086.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0087",
+   "file": "MKT-2025-0087.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0088",
+   "file": "MKT-2025-0088.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0089",
+   "file": "MKT-2025-0089.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0090",
+   "file": "MKT-2025-0090.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "null",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0091",
+   "file": "MKT-2025-0091.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0092",
+   "file": "MKT-2025-0092.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:False",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0093",
+   "file": "MKT-2025-0093.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0094",
+   "file": "MKT-2025-0094.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:False",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0095",
+   "file": "MKT-2025-0095.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0096",
+   "file": "MKT-2025-0096.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:False",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0097",
+   "file": "MKT-2025-0097.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0098",
+   "file": "MKT-2025-0098.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0099",
+   "file": "MKT-2025-0099.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0100",
+   "file": "MKT-2025-0100.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0101",
+   "file": "MKT-2025-0101.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0102",
+   "file": "MKT-2025-0102.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0103",
+   "file": "MKT-2025-0103.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0104",
+   "file": "MKT-2025-0104.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0105",
+   "file": "MKT-2025-0105.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0106",
+   "file": "MKT-2025-0106.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0107",
+   "file": "MKT-2025-0107.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:False",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0108",
+   "file": "MKT-2025-0108.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0109",
+   "file": "MKT-2025-0109.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0110",
+   "file": "MKT-2025-0110.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0111",
+   "file": "MKT-2025-0111.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "null",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0112",
+   "file": "MKT-2025-0112.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0113",
+   "file": "MKT-2025-0113.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0114",
+   "file": "MKT-2025-0114.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0115",
+   "file": "MKT-2025-0115.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0116",
+   "file": "MKT-2025-0116.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0117",
+   "file": "MKT-2025-0117.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0118",
+   "file": "MKT-2025-0118.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0119",
+   "file": "MKT-2025-0119.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0120",
+   "file": "MKT-2025-0120.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0121",
+   "file": "MKT-2025-0121.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:False",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0122",
+   "file": "MKT-2025-0122.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0123",
+   "file": "MKT-2025-0123.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:False",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0124",
+   "file": "MKT-2025-0124.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0125",
+   "file": "MKT-2025-0125.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "null",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0126",
+   "file": "MKT-2025-0126.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0127",
+   "file": "MKT-2025-0127.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0128",
+   "file": "MKT-2025-0128.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0129",
+   "file": "MKT-2025-0129.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0130",
+   "file": "MKT-2025-0130.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:False",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0131",
+   "file": "MKT-2025-0131.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0132",
+   "file": "MKT-2025-0132.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0133",
+   "file": "MKT-2025-0133.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0134",
+   "file": "MKT-2025-0134.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0135",
+   "file": "MKT-2025-0135.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0136",
+   "file": "MKT-2025-0136.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0137",
+   "file": "MKT-2025-0137.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0138",
+   "file": "MKT-2025-0138.json",
+   "b": "MKT",
+   "cat": "electronics",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0139",
+   "file": "MKT-2025-0139.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0140",
+   "file": "MKT-2025-0140.json",
+   "b": "MKT",
+   "cat": "electronics",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0141",
+   "file": "MKT-2025-0141.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0142",
+   "file": "MKT-2025-0142.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0143",
+   "file": "MKT-2025-0143.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0144",
+   "file": "MKT-2025-0144.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0145",
+   "file": "MKT-2025-0145.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0146",
+   "file": "MKT-2025-0146.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0147",
+   "file": "MKT-2025-0147.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0148",
+   "file": "MKT-2025-0148.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0149",
+   "file": "MKT-2025-0149.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0150",
+   "file": "MKT-2025-0150.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0151",
+   "file": "MKT-2025-0151.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0152",
+   "file": "MKT-2025-0152.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0153",
+   "file": "MKT-2025-0153.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0154",
+   "file": "MKT-2025-0154.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0155",
+   "file": "MKT-2025-0155.json",
+   "b": "MKT",
+   "cat": "liquor",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0156",
+   "file": "MKT-2025-0156.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0157",
+   "file": "MKT-2025-0157.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0158",
+   "file": "MKT-2025-0158.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0159",
+   "file": "MKT-2025-0159.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0160",
+   "file": "MKT-2025-0160.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0161",
+   "file": "MKT-2025-0161.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2025-0162",
+   "file": "MKT-2025-0162.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0001",
+   "file": "MKT-2026-0001.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0002",
+   "file": "MKT-2026-0002.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0003",
+   "file": "MKT-2026-0003.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0004",
+   "file": "MKT-2026-0004.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0005",
+   "file": "MKT-2026-0005.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0006",
+   "file": "MKT-2026-0006.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0007",
+   "file": "MKT-2026-0007.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0008",
+   "file": "MKT-2026-0008.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0009",
+   "file": "MKT-2026-0009.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0010",
+   "file": "MKT-2026-0010.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0011",
+   "file": "MKT-2026-0011.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0012",
+   "file": "MKT-2026-0012.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0013",
+   "file": "MKT-2026-0013.json",
+   "b": "MKT",
+   "cat": "liquor",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0014",
+   "file": "MKT-2026-0014.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0015",
+   "file": "MKT-2026-0015.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0016",
+   "file": "MKT-2026-0016.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0017",
+   "file": "MKT-2026-0017.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:False",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0018",
+   "file": "MKT-2026-0018.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0019",
+   "file": "MKT-2026-0019.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0020",
+   "file": "MKT-2026-0020.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0021",
+   "file": "MKT-2026-0021.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0022",
+   "file": "MKT-2026-0022.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:False",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0023",
+   "file": "MKT-2026-0023.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0024",
+   "file": "MKT-2026-0024.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0025",
+   "file": "MKT-2026-0025.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0026",
+   "file": "MKT-2026-0026.json",
+   "b": "MKT",
+   "cat": "liquor",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0027",
+   "file": "MKT-2026-0027.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0028",
+   "file": "MKT-2026-0028.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0029",
+   "file": "MKT-2026-0029.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0030",
+   "file": "MKT-2026-0030.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0031",
+   "file": "MKT-2026-0031.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0032",
+   "file": "MKT-2026-0032.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0033",
+   "file": "MKT-2026-0033.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0034",
+   "file": "MKT-2026-0034.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0035",
+   "file": "MKT-2026-0035.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0036",
+   "file": "MKT-2026-0036.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0037",
+   "file": "MKT-2026-0037.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0038",
+   "file": "MKT-2026-0038.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0039",
+   "file": "MKT-2026-0039.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0040",
+   "file": "MKT-2026-0040.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0041",
+   "file": "MKT-2026-0041.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0042",
+   "file": "MKT-2026-0042.json",
+   "b": "MKT",
+   "cat": "fnb",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0043",
+   "file": "MKT-2026-0043.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0044",
+   "file": "MKT-2026-0044.json",
+   "b": "MKT",
+   "cat": "other",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0045",
+   "file": "MKT-2026-0045.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0046",
+   "file": "MKT-2026-0046.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0047",
+   "file": "MKT-2026-0047.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0048",
+   "file": "MKT-2026-0048.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0049",
+   "file": "MKT-2026-0049.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0050",
+   "file": "MKT-2026-0050.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0051",
+   "file": "MKT-2026-0051.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0052",
+   "file": "MKT-2026-0052.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0053",
+   "file": "MKT-2026-0053.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0054",
+   "file": "MKT-2026-0054.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0055",
+   "file": "MKT-2026-0055.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0056",
+   "file": "MKT-2026-0056.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0057",
+   "file": "MKT-2026-0057.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0058",
+   "file": "MKT-2026-0058.json",
+   "b": "MKT",
+   "cat": "game_webtoon",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0059",
+   "file": "MKT-2026-0059.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0060",
+   "file": "MKT-2026-0060.json",
+   "b": "MKT",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0061",
+   "file": "MKT-2026-0061.json",
+   "b": "MKT",
+   "cat": "character",
+   "free": "value:True",
+   "resv": "value:False",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0062",
+   "file": "MKT-2026-0062.json",
+   "b": "MKT",
+   "cat": "entertainment",
+   "free": "null",
+   "resv": "null",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT-2026-0063",
+   "file": "MKT-2026-0063.json",
+   "b": "MKT",
+   "cat": "beauty",
+   "free": "value:True",
+   "resv": "value:True",
+   "ingested": "kimi-crawl-2026-07 (records_merged.jsonl)"
+  },
+  {
+   "rid": "MKT2-0000-0013",
+   "file": "MKT2-0000-0013.json",
+   "b": "MKT2",
+   "cat": "other",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0014",
+   "file": "MKT2-0000-0014.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0080",
+   "file": "MKT2-0000-0080.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0081",
+   "file": "MKT2-0000-0081.json",
+   "b": "MKT2",
+   "cat": "liquor",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0082",
+   "file": "MKT2-0000-0082.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0083",
+   "file": "MKT2-0000-0083.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0084",
+   "file": "MKT2-0000-0084.json",
+   "b": "MKT2",
+   "cat": "fnb",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0085",
+   "file": "MKT2-0000-0085.json",
+   "b": "MKT2",
+   "cat": "other",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0086",
+   "file": "MKT2-0000-0086.json",
+   "b": "MKT2",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0087",
+   "file": "MKT2-0000-0087.json",
+   "b": "MKT2",
+   "cat": "other",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0088",
+   "file": "MKT2-0000-0088.json",
+   "b": "MKT2",
+   "cat": "entertainment",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0089",
+   "file": "MKT2-0000-0089.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0090",
+   "file": "MKT2-0000-0090.json",
+   "b": "MKT2",
+   "cat": "other",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0091",
+   "file": "MKT2-0000-0091.json",
+   "b": "MKT2",
+   "cat": "other",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0092",
+   "file": "MKT2-0000-0092.json",
+   "b": "MKT2",
+   "cat": "other",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0114",
+   "file": "MKT2-0000-0114.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0115",
+   "file": "MKT2-0000-0115.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0218",
+   "file": "MKT2-0000-0218.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0219",
+   "file": "MKT2-0000-0219.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0220",
+   "file": "MKT2-0000-0220.json",
+   "b": "MKT2",
+   "cat": "entertainment",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0221",
+   "file": "MKT2-0000-0221.json",
+   "b": "MKT2",
+   "cat": "liquor",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0222",
+   "file": "MKT2-0000-0222.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0223",
+   "file": "MKT2-0000-0223.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0224",
+   "file": "MKT2-0000-0224.json",
+   "b": "MKT2",
+   "cat": "fnb",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0225",
+   "file": "MKT2-0000-0225.json",
+   "b": "MKT2",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0226",
+   "file": "MKT2-0000-0226.json",
+   "b": "MKT2",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0227",
+   "file": "MKT2-0000-0227.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0228",
+   "file": "MKT2-0000-0228.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0229",
+   "file": "MKT2-0000-0229.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0230",
+   "file": "MKT2-0000-0230.json",
+   "b": "MKT2",
+   "cat": "fnb",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0231",
+   "file": "MKT2-0000-0231.json",
+   "b": "MKT2",
+   "cat": "fnb",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0232",
+   "file": "MKT2-0000-0232.json",
+   "b": "MKT2",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0233",
+   "file": "MKT2-0000-0233.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0234",
+   "file": "MKT2-0000-0234.json",
+   "b": "MKT2",
+   "cat": "beauty",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0235",
+   "file": "MKT2-0000-0235.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0236",
+   "file": "MKT2-0000-0236.json",
+   "b": "MKT2",
+   "cat": "beauty",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0237",
+   "file": "MKT2-0000-0237.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0238",
+   "file": "MKT2-0000-0238.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-0000-0239",
+   "file": "MKT2-0000-0239.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2022-0009",
+   "file": "MKT2-2022-0009.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2022-0027",
+   "file": "MKT2-2022-0027.json",
+   "b": "MKT2",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2022-0070",
+   "file": "MKT2-2022-0070.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2022-0071",
+   "file": "MKT2-2022-0071.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2022-0078",
+   "file": "MKT2-2022-0078.json",
+   "b": "MKT2",
+   "cat": "fnb",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2022-0125",
+   "file": "MKT2-2022-0125.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2022-0126",
+   "file": "MKT2-2022-0126.json",
+   "b": "MKT2",
+   "cat": "electronics",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0019",
+   "file": "MKT2-2023-0019.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0028",
+   "file": "MKT2-2023-0028.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0029",
+   "file": "MKT2-2023-0029.json",
+   "b": "MKT2",
+   "cat": "fnb",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0030",
+   "file": "MKT2-2023-0030.json",
+   "b": "MKT2",
+   "cat": "other",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0031",
+   "file": "MKT2-2023-0031.json",
+   "b": "MKT2",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0032",
+   "file": "MKT2-2023-0032.json",
+   "b": "MKT2",
+   "cat": "other",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0033",
+   "file": "MKT2-2023-0033.json",
+   "b": "MKT2",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0034",
+   "file": "MKT2-2023-0034.json",
+   "b": "MKT2",
+   "cat": "fnb",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0035",
+   "file": "MKT2-2023-0035.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0044",
+   "file": "MKT2-2023-0044.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0064",
+   "file": "MKT2-2023-0064.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0065",
+   "file": "MKT2-2023-0065.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0066",
+   "file": "MKT2-2023-0066.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0068",
+   "file": "MKT2-2023-0068.json",
+   "b": "MKT2",
+   "cat": "entertainment",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0072",
+   "file": "MKT2-2023-0072.json",
+   "b": "MKT2",
+   "cat": "other",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0073",
+   "file": "MKT2-2023-0073.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0079",
+   "file": "MKT2-2023-0079.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0093",
+   "file": "MKT2-2023-0093.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0094",
+   "file": "MKT2-2023-0094.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0101",
+   "file": "MKT2-2023-0101.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0110",
+   "file": "MKT2-2023-0110.json",
+   "b": "MKT2",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0111",
+   "file": "MKT2-2023-0111.json",
+   "b": "MKT2",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0112",
+   "file": "MKT2-2023-0112.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0117",
+   "file": "MKT2-2023-0117.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0149",
+   "file": "MKT2-2023-0149.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0150",
+   "file": "MKT2-2023-0150.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0151",
+   "file": "MKT2-2023-0151.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0152",
+   "file": "MKT2-2023-0152.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0153",
+   "file": "MKT2-2023-0153.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0154",
+   "file": "MKT2-2023-0154.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0155",
+   "file": "MKT2-2023-0155.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0156",
+   "file": "MKT2-2023-0156.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0163",
+   "file": "MKT2-2023-0163.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0184",
+   "file": "MKT2-2023-0184.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0192",
+   "file": "MKT2-2023-0192.json",
+   "b": "MKT2",
+   "cat": "liquor",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2023-0210",
+   "file": "MKT2-2023-0210.json",
+   "b": "MKT2",
+   "cat": "fnb",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0002",
+   "file": "MKT2-2024-0002.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0010",
+   "file": "MKT2-2024-0010.json",
+   "b": "MKT2",
+   "cat": "entertainment",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0012",
+   "file": "MKT2-2024-0012.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0017",
+   "file": "MKT2-2024-0017.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0018",
+   "file": "MKT2-2024-0018.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0020",
+   "file": "MKT2-2024-0020.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0021",
+   "file": "MKT2-2024-0021.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0023",
+   "file": "MKT2-2024-0023.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0037",
+   "file": "MKT2-2024-0037.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0038",
+   "file": "MKT2-2024-0038.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0041",
+   "file": "MKT2-2024-0041.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0042",
+   "file": "MKT2-2024-0042.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0054",
+   "file": "MKT2-2024-0054.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0056",
+   "file": "MKT2-2024-0056.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0057",
+   "file": "MKT2-2024-0057.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0058",
+   "file": "MKT2-2024-0058.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0059",
+   "file": "MKT2-2024-0059.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0061",
+   "file": "MKT2-2024-0061.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0075",
+   "file": "MKT2-2024-0075.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0095",
+   "file": "MKT2-2024-0095.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0096",
+   "file": "MKT2-2024-0096.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0097",
+   "file": "MKT2-2024-0097.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0098",
+   "file": "MKT2-2024-0098.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0102",
+   "file": "MKT2-2024-0102.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0127",
+   "file": "MKT2-2024-0127.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0130",
+   "file": "MKT2-2024-0130.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0139",
+   "file": "MKT2-2024-0139.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0140",
+   "file": "MKT2-2024-0140.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0142",
+   "file": "MKT2-2024-0142.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0144",
+   "file": "MKT2-2024-0144.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0157",
+   "file": "MKT2-2024-0157.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0158",
+   "file": "MKT2-2024-0158.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0164",
+   "file": "MKT2-2024-0164.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0171",
+   "file": "MKT2-2024-0171.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0186",
+   "file": "MKT2-2024-0186.json",
+   "b": "MKT2",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0193",
+   "file": "MKT2-2024-0193.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0194",
+   "file": "MKT2-2024-0194.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0199",
+   "file": "MKT2-2024-0199.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0203",
+   "file": "MKT2-2024-0203.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0204",
+   "file": "MKT2-2024-0204.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0205",
+   "file": "MKT2-2024-0205.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0211",
+   "file": "MKT2-2024-0211.json",
+   "b": "MKT2",
+   "cat": "entertainment",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0212",
+   "file": "MKT2-2024-0212.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2024-0213",
+   "file": "MKT2-2024-0213.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0001",
+   "file": "MKT2-2025-0001.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0003",
+   "file": "MKT2-2025-0003.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0006",
+   "file": "MKT2-2025-0006.json",
+   "b": "MKT2",
+   "cat": "beauty",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0011",
+   "file": "MKT2-2025-0011.json",
+   "b": "MKT2",
+   "cat": "entertainment",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0015",
+   "file": "MKT2-2025-0015.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0016",
+   "file": "MKT2-2025-0016.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0022",
+   "file": "MKT2-2025-0022.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0024",
+   "file": "MKT2-2025-0024.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0025",
+   "file": "MKT2-2025-0025.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0026",
+   "file": "MKT2-2025-0026.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0036",
+   "file": "MKT2-2025-0036.json",
+   "b": "MKT2",
+   "cat": "beauty",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0045",
+   "file": "MKT2-2025-0045.json",
+   "b": "MKT2",
+   "cat": "electronics",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0046",
+   "file": "MKT2-2025-0046.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0047",
+   "file": "MKT2-2025-0047.json",
+   "b": "MKT2",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0049",
+   "file": "MKT2-2025-0049.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0050",
+   "file": "MKT2-2025-0050.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0051",
+   "file": "MKT2-2025-0051.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0053",
+   "file": "MKT2-2025-0053.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0062",
+   "file": "MKT2-2025-0062.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0067",
+   "file": "MKT2-2025-0067.json",
+   "b": "MKT2",
+   "cat": "fnb",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0074",
+   "file": "MKT2-2025-0074.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0099",
+   "file": "MKT2-2025-0099.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0103",
+   "file": "MKT2-2025-0103.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0104",
+   "file": "MKT2-2025-0104.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0105",
+   "file": "MKT2-2025-0105.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0107",
+   "file": "MKT2-2025-0107.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0108",
+   "file": "MKT2-2025-0108.json",
+   "b": "MKT2",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0113",
+   "file": "MKT2-2025-0113.json",
+   "b": "MKT2",
+   "cat": "fnb",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0116",
+   "file": "MKT2-2025-0116.json",
+   "b": "MKT2",
+   "cat": "entertainment",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0118",
+   "file": "MKT2-2025-0118.json",
+   "b": "MKT2",
+   "cat": "liquor",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0119",
+   "file": "MKT2-2025-0119.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0122",
+   "file": "MKT2-2025-0122.json",
+   "b": "MKT2",
+   "cat": "beauty",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0128",
+   "file": "MKT2-2025-0128.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0131",
+   "file": "MKT2-2025-0131.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0132",
+   "file": "MKT2-2025-0132.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0133",
+   "file": "MKT2-2025-0133.json",
+   "b": "MKT2",
+   "cat": "beauty",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0135",
+   "file": "MKT2-2025-0135.json",
+   "b": "MKT2",
+   "cat": "entertainment",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0143",
+   "file": "MKT2-2025-0143.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0145",
+   "file": "MKT2-2025-0145.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0148",
+   "file": "MKT2-2025-0148.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0159",
+   "file": "MKT2-2025-0159.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0160",
+   "file": "MKT2-2025-0160.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0161",
+   "file": "MKT2-2025-0161.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0162",
+   "file": "MKT2-2025-0162.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0165",
+   "file": "MKT2-2025-0165.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0166",
+   "file": "MKT2-2025-0166.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0167",
+   "file": "MKT2-2025-0167.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0172",
+   "file": "MKT2-2025-0172.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0176",
+   "file": "MKT2-2025-0176.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0177",
+   "file": "MKT2-2025-0177.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0178",
+   "file": "MKT2-2025-0178.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0179",
+   "file": "MKT2-2025-0179.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0180",
+   "file": "MKT2-2025-0180.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0181",
+   "file": "MKT2-2025-0181.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0185",
+   "file": "MKT2-2025-0185.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0191",
+   "file": "MKT2-2025-0191.json",
+   "b": "MKT2",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0195",
+   "file": "MKT2-2025-0195.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0196",
+   "file": "MKT2-2025-0196.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0197",
+   "file": "MKT2-2025-0197.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0200",
+   "file": "MKT2-2025-0200.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0201",
+   "file": "MKT2-2025-0201.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0206",
+   "file": "MKT2-2025-0206.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0214",
+   "file": "MKT2-2025-0214.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0215",
+   "file": "MKT2-2025-0215.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0216",
+   "file": "MKT2-2025-0216.json",
+   "b": "MKT2",
+   "cat": "other",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2025-0217",
+   "file": "MKT2-2025-0217.json",
+   "b": "MKT2",
+   "cat": "beauty",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0004",
+   "file": "MKT2-2026-0004.json",
+   "b": "MKT2",
+   "cat": "other",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0005",
+   "file": "MKT2-2026-0005.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0007",
+   "file": "MKT2-2026-0007.json",
+   "b": "MKT2",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0008",
+   "file": "MKT2-2026-0008.json",
+   "b": "MKT2",
+   "cat": "other",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0039",
+   "file": "MKT2-2026-0039.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0040",
+   "file": "MKT2-2026-0040.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0043",
+   "file": "MKT2-2026-0043.json",
+   "b": "MKT2",
+   "cat": "fnb",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0048",
+   "file": "MKT2-2026-0048.json",
+   "b": "MKT2",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0052",
+   "file": "MKT2-2026-0052.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0055",
+   "file": "MKT2-2026-0055.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0060",
+   "file": "MKT2-2026-0060.json",
+   "b": "MKT2",
+   "cat": "beauty",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0063",
+   "file": "MKT2-2026-0063.json",
+   "b": "MKT2",
+   "cat": "beauty",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0069",
+   "file": "MKT2-2026-0069.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0076",
+   "file": "MKT2-2026-0076.json",
+   "b": "MKT2",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0077",
+   "file": "MKT2-2026-0077.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0100",
+   "file": "MKT2-2026-0100.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0106",
+   "file": "MKT2-2026-0106.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0109",
+   "file": "MKT2-2026-0109.json",
+   "b": "MKT2",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0120",
+   "file": "MKT2-2026-0120.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0121",
+   "file": "MKT2-2026-0121.json",
+   "b": "MKT2",
+   "cat": "fnb",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0123",
+   "file": "MKT2-2026-0123.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0124",
+   "file": "MKT2-2026-0124.json",
+   "b": "MKT2",
+   "cat": "entertainment",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0129",
+   "file": "MKT2-2026-0129.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0134",
+   "file": "MKT2-2026-0134.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0136",
+   "file": "MKT2-2026-0136.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0137",
+   "file": "MKT2-2026-0137.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0138",
+   "file": "MKT2-2026-0138.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0141",
+   "file": "MKT2-2026-0141.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0146",
+   "file": "MKT2-2026-0146.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0147",
+   "file": "MKT2-2026-0147.json",
+   "b": "MKT2",
+   "cat": "beauty",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0168",
+   "file": "MKT2-2026-0168.json",
+   "b": "MKT2",
+   "cat": "beauty",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0169",
+   "file": "MKT2-2026-0169.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0170",
+   "file": "MKT2-2026-0170.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0173",
+   "file": "MKT2-2026-0173.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0174",
+   "file": "MKT2-2026-0174.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0175",
+   "file": "MKT2-2026-0175.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0182",
+   "file": "MKT2-2026-0182.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0183",
+   "file": "MKT2-2026-0183.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0187",
+   "file": "MKT2-2026-0187.json",
+   "b": "MKT2",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0188",
+   "file": "MKT2-2026-0188.json",
+   "b": "MKT2",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0189",
+   "file": "MKT2-2026-0189.json",
+   "b": "MKT2",
+   "cat": "fashion",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0190",
+   "file": "MKT2-2026-0190.json",
+   "b": "MKT2",
+   "cat": "game_webtoon",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0198",
+   "file": "MKT2-2026-0198.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0202",
+   "file": "MKT2-2026-0202.json",
+   "b": "MKT2",
+   "cat": "beauty",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0207",
+   "file": "MKT2-2026-0207.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0208",
+   "file": "MKT2-2026-0208.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  },
+  {
+   "rid": "MKT2-2026-0209",
+   "file": "MKT2-2026-0209.json",
+   "b": "MKT2",
+   "cat": "character",
+   "free": "null",
+   "resv": "null",
+   "ingested": null
+  }
+ ]
+}
