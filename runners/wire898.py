@@ -188,7 +188,7 @@ def main():
             "kho 배치 행": int(okk.sum()),
             "kho 예측 고유값": int(len(np.unique(pk[okk]))),
         }
-        sc["post+rank_test(챔피언)"][d] = float(rt_spearman_old(pp[ok], y[ok]))
+        sc["post+rank_test(그때의 챔피언)"][d] = float(rt_spearman_old(pp[ok], y[ok]))
         sc["post+scipy"][d] = sp_scipy(pp[ok], y[ok])
         sc["kho+scipy(837)"][d] = sp_scipy(pk[okk], yh[okk])
         sc["kho+rank_test"][d] = float(rt_spearman_old(pk[okk], yh[okk]))
@@ -211,11 +211,11 @@ def main():
 
     dec = {
         "스피어만 구현 몫(post: scipy − rank_test)":
-            pooled["post+scipy"] - pooled["post+rank_test(챔피언)"],
+            pooled["post+scipy"] - pooled["post+rank_test(그때의 챔피언)"],
         "채점 배치 몫(scipy: kho − post)":
             pooled["kho+scipy(837)"] - pooled["post+scipy"],
         "총 Δ(837 − 챔피언)":
-            pooled["kho+scipy(837)"] - pooled["post+rank_test(챔피언)"],
+            pooled["kho+scipy(837)"] - pooled["post+rank_test(그때의 챔피언)"],
     }
     dec["합이 비트 동일"] = (
         dec["스피어만 구현 몫(post: scipy − rank_test)"]
