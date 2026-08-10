@@ -644,6 +644,21 @@ DEAD_NUMBERS = [
      "판 rho — 「서수 순위 시대 값」으로 **은퇴**. 노트 898 이 판을 자에 맞춰"
      "(동률 평균) 내려옴. 이 값 자체는 오늘도 재현되지만 자료 정렬에 의존한다",
      898, NOW_WORDS),
+    # 🔴 이슈 #123(티처 #61 C7) --- **씨앗0 상수**. 판 평균 0.46982(**은퇴** · 「서수 순위
+    # 시대 값」)와 짝이지만
+    # **분모가 다르다**(조항 60): 저것은 12씨앗 평균이고 이것은 **씨앗 0 하나**다.
+    # 노트 898 이 정본을 옮길 때(서수 -> 동률 평균) 이 수를 이고 있던 게이트 다섯이
+    # 조용히 **영구 False** 가 됐다 --- 검출기가 **원리상 못 봤기 때문**이다.
+    # ⚠ 수리 A 실측: 이 수를 이고 있는 자리는 다섯이 아니라 **33 파일**이고 대부분 역사다.
+    # 그래서 문맥어를 NOW_WORDS 로 건다 --- 안 걸면 33이 전부 걸린다.
+    ("0.4724867181663707", "0.4731063028988084",
+     "판 rho **씨앗 0**(정본 경로) --- 「서수 순위 시대 값」. 노트 898 이 판을 자에 맞추면서 은퇴. "
+     "옛 값은 `runners/board898.py`·`thr898.py` 가 옛 구현을 파일에 박아 오늘도 재현한다 --- "
+     "역사에서는 옳고 「오늘/챔피언/정본」 딱지가 붙은 자리에서만 죽었다. "
+     "⚠ 산 값은 `Data.pooled` 누적 기준이다. `board898`·`wire898` 의 자체 누적은 1 ULP 아래"
+     "(0.4731063028988083)이고 `runners/text680.py:55` 가 그 표기를 쓴다 --- "
+     "`==` 게이트는 **어느 경로에서 나온 값인지**를 같이 적어야 한다",
+     898, NOW_WORDS),
 ]
 
 #: 죽은 숫자를 찾을 **살아 있는 문서**. 대장(`denominator.json`)은 일부러 뺀다.
@@ -1017,7 +1032,7 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
 
     cut = _dt.fromisoformat(baseline_at)
     dirty = _dirty_papers()
-    fresh, aged, unknown = [], [], []
+    fresh, aged, unknown, skipped = [], [], [], []
     if dirty is None:
         unknown.append({"논문": "(전체)", "못 읽은 것": "git status",
                         "왜": "손 도장(created·sent_at·mtime)만으로는 신선도를 못 가른다"})
@@ -1034,6 +1049,17 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
         try:
             tex = tex_p.read_text()
         except Exception as e:
+            # 🔴 **미착수 스텝은 「못 읽었다」가 아니라 「아직 안 썼다」다**(노트 899).
+            # 수리 B 가 glob 을 디렉터리 순회로 바꾸자 `112_bothears` 가 드러났는데,
+            # 세어 보니 그건 결함이 아니라 **본문을 한 줄도 안 쓴 껍데기**였다:
+            # claims [] · figures [] · sent false · 초기 스냅샷 이후 손댄 적 없음.
+            # 그 셋을 **전부** 만족할 때만 「미착수」로 가른다 --- 하나라도 어긋나면
+            # 「모른다」로 남는다. 발행 흔적이 있는데 본문이 없으면 그건 진짜 사고다.
+            if (not meta.get("claims") and not meta.get("figures")
+                    and not meta.get("sent")):
+                skipped.append({"논문": d.name, "왜": "미착수 껍데기",
+                                "근거": "claims [] · figures [] · sent false · main.tex 없음"})
+                continue
             unknown.append({"논문": d.name, "못 읽은 것": "main.tex",
                             "왜": f"{type(e).__name__}"})
             continue
@@ -1100,6 +1126,7 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
             "기준선": baseline_at,
             "🔴 기준선 뒤 논문(경성 실패)": fresh or "없음",
             "🔴 검사 못 한 논문(모른다)": unknown or "없음",
+            "미착수 스텝(본문 없음 · 검사 대상 아님)": skipped or "없음",
             "빚 내역(죽은 값별)": dict(_C(r["죽은 값"] for r in aged).most_common()),
             "묵은 빚": len(aged), "등록된 빚": debt, "빚이 늘었나": over,
             "빚진 논문 수": len({r["논문"] for r in aged}),
@@ -1182,7 +1209,7 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
 #: 함께 여는 자리가 있다). **개별 토글 실측을 그대로 적었고, 합을 맞추려 고르지 않았다.**
 #: ⚠ **판정 자리(경성)는 0 이 아니다** --- 아래 `걸린 곳` 넷은 전부 남의 파일이라
 #: 이 팔이 안 고친다(보고로 넘긴다).
-DEAD_HISTORY_DEBT = 337
+DEAD_HISTORY_DEBT = 389
 
 #: 🔴 **문서별 등록**(티처 #61 C3 이빨 ② · 2026-08-10 실측). 총합만 있으면
 #: 한 곳이 늘고 다른 곳이 줄 때 **상쇄돼 안 보인다** --- 그 상쇄가 위 문단의 옛
@@ -1190,31 +1217,38 @@ DEAD_HISTORY_DEBT = 337
 #: 등록에 없는 문서(새 산출물)는 총합 래칫이 덮으므로 **보이기만** 한다 --- 안 그러면
 #: 러너가 파일 하나 낼 때마다 붉어지고, 그러면 게이트가 꺼진다(노트 886 의 교훈).
 #: 🔴 **손으로 추정하지 마라.** `python3 -m ingest.audit --ratchet` 이 붙여 넣을 꼴로 찍는다.
+#: 🔴 **2026-08-11 재확정(노트 899 · 337 -> 389).** 수리 B 가 만든 `--ratchet` 로 찍었다 ---
+#: **손 추정 금지**. 늘어난 몫은 여섯 팔이 이 사이클에 낸 `runners/out899*` 산출물과,
+#: 씨앗0 상수 `0.4724867181663707`(**은퇴** · 「서수 순위 시대 값」)를 **새로 등록**해서 눈을 뜬 자리들이다.
+#: **판정 자리는 0** --- `걸린 곳: 없음`. 새로 인쇄된 것이 아니라 **눈을 뜬 결과**다.
 DEAD_HISTORY_BY_DOC: dict = {
-    "data/lab/denominator.json": 234,
+    "data/lab/denominator.json": 241,
     "docs/prereg_897_architecture.md": 2,
     "paper/steps/129_brokenruler/figs/make.py": 1,
     "paper/steps/132_countthedoors/figs/make.py": 1,
     "paper/steps/74_exhausted/figs/make.py": 1,
     "paper/steps/87_overceiling/figs/make.py": 1,
     "runners/bverdict885.py": 1,
-    "runners/condperm841.py": 1,
+    "runners/condperm841.py": 4,
     "runners/conv734.py": 1,
     "runners/dataeq112.py": 2,
-    "runners/emul112.py": 1,
+    "runners/emul112.py": 2,
     "runners/field669.py": 1,
     "runners/fig145.py": 1,
     "runners/floor892.py": 1,
     "runners/hold732.py": 2,
     "runners/ledgeraudit878.py": 1,
+    "runners/nanfix115.py": 1,
     "runners/nat_measure.py": 1,
-    "runners/out112_board.json": 1,
-    "runners/out112_board.log": 1,
-    "runners/out112_verdict.json": 6,
+    "runners/out112_board.json": 3,
+    "runners/out112_board.log": 4,
+    "runners/out112_emul837.log": 1,
+    "runners/out112_verdict.json": 13,
     "runners/out113_armB12.json": 16,
     "runners/out113_armB12_log.txt": 2,
     "runners/out113_loo.json": 1,
     "runners/out113_summary.json": 3,
+    "runners/out115_trace.json": 2,
     "runners/out837.json": 1,
     "runners/out837_centered.json": 1,
     "runners/out848_checkpoint.jsonl": 13,
@@ -1222,21 +1256,31 @@ DEAD_HISTORY_BY_DOC: dict = {
     "runners/out878_ledgeraudit.json": 1,
     "runners/out879_numaudit.json": 1,
     "runners/out885_bverdict.json": 1,
-    "runners/out890_log.txt": 2,
-    "runners/out892_floor.json": 3,
+    "runners/out888_speck.json": 1,
+    "runners/out890_log.txt": 3,
+    "runners/out890_ruler.json": 2,
+    "runners/out892_floor.json": 5,
     "runners/out892_log.txt": 2,
     "runners/out892_stdout.txt": 2,
     "runners/out896_armB.json": 3,
+    "runners/out896_step0.json": 2,
+    "runners/out898_board.899a.json": 1,
     "runners/out898_board.json": 1,
+    "runners/out898_confirm.json": 1,
+    "runners/out898_confirm.txt": 1,
     "runners/out898_verdict.json": 2,
     "runners/out898c_fix.json": 1,
-    "runners/out899a_verdict112.json": 6,
+    "runners/out899a_gates.json": 1,
+    "runners/out899a_gates.py": 1,
+    "runners/out899a_verdict112.json": 12,
     "runners/out899c_ruler890R12.json": 1,
     "runners/rebase837.py": 1,
-    "runners/refit112.py": 2,
+    "runners/refit112.py": 3,
     "runners/rerun112.py": 1,
+    "runners/ruler890.py": 1,
     "runners/ship736.py": 1,
-    "runners/verdict112.py": 7,
+    "runners/text680.py": 1,
+    "runners/verdict112.py": 10,
 }
 
 
