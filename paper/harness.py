@@ -122,8 +122,86 @@ def _dir(slug: str) -> Path:
     return cands[0]
 
 
+#: `paper_dead()` 반환에서 우리가 **이름으로 붙잡는** 칸. 이름이 바뀌면 조용히
+#: 빈 목록을 읽고 통과시키게 되므로 --- 그게 정확히 이 게이트가 없던 이유다 ---
+#: 없으면 **계약 파기로 멈춘다**. 내가 배선한 시점(2026-08-10)의 시그니처는
+#: `paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> dict`.
+_GATE_FRESH = "🔴 기준선 뒤 논문(경성 실패)"
+
+
+def _dead_gate(d: Path, phase: str) -> None:
+    """죽은 숫자 게이트 --- `ingest.audit.paper_dead()` 를 **실제로 부른다**(노트 898).
+
+    🔴 **왜 생겼나(티처 #60 C6 · 이슈 119).** `docs/루프.md` 는 *"죽은 숫자를 표지
+    없이 인용하면 `paper_dead()` 가 막는다"* 라고 적어 놓았는데 **이 파일은 그 함수를
+    한 번도 안 불렀다**(전수 grep: 호출자는 `ingest/audit.py` 두 곳뿐이었다). 논문
+    483 이 경성 실패인 채로 build 되고 send 되고 **재전송까지** 됐다. 배선 없이
+    "막는다"고 적힌 자리다.
+
+    **막는 방식**(넷 다 일부러 다르다):
+
+      · **이 스텝이 경성 실패면 멈춘다**(`SystemExit`). 컴파일도 전송도 안 한다.
+      · **다른 논문의 경성 실패는 경고만** 한다. 남의 논문 때문에 내 빌드가 막히면
+        게이트가 제일 먼저 꺼진다 --- 그리고 발행물은 개작하지 않는 것이 규칙이다.
+      · **묵은 빚 래칫이 올랐으면 경고만** 한다. 그건 이 빌드가 만든 일이 아니라
+        `DEAD_NUMBERS` 표가 자란 결과이고, 고칠 자리는 `ingest/audit.py` 다.
+      · **게이트가 못 돌면 통과가 아니라 멈춤이다**(조항 59 --- '없다'와 '못 봤다'는
+        다르다). 반입 실패 · 예외 · **반환 칸 이름이 바뀐 경우** 전부 멈춘다.
+
+    **빠져나가는 길은 하나뿐이고 그것이 이 게이트의 목적이다**: 본문에 정정 표시
+    (`죽은 숫자`·`정정`·`철회`·`은퇴` 중 하나 또는 산 값)를 앞뒤 2줄 안에 달거나,
+    오탐이면 `meta.json` 의 `errata` 에 **그 숫자를 문자로** 적는다. 환경변수 같은
+    조용한 우회로는 **일부러 안 만들었다**.
+    """
+    repo = ROOT.parent
+    if str(repo) not in sys.path:
+        sys.path.insert(0, str(repo))
+    try:
+        from ingest.audit import paper_dead
+    except Exception as e:                              # 반입 실패 = 못 봤다
+        raise SystemExit(
+            f"🔴 죽은 숫자 게이트를 반입하지 못했다({type(e).__name__}: {e}) --- "
+            "'통과'가 아니라 '모른다'다. ingest/audit.py 를 고친 뒤 다시 하라.")
+    try:
+        r = paper_dead()
+    except Exception as e:                              # 예외 = 못 봤다
+        raise SystemExit(
+            f"🔴 paper_dead() 가 예외로 죽었다({type(e).__name__}: {e}) --- "
+            "게이트가 안 돌았으므로 build/send 를 멈춘다.")
+    if not isinstance(r, dict) or _GATE_FRESH not in r or "통과" not in r:
+        raise SystemExit(
+            f"🔴 게이트 계약이 깨졌다 --- paper_dead() 반환에 '{_GATE_FRESH}' 나 "
+            f"'통과' 칸이 없다(받은 칸: {list(r)[:12] if isinstance(r, dict) else type(r)}). "
+            "칸 이름이 바뀌었으면 harness._GATE_FRESH 를 같이 고쳐라. 이름이 어긋난 채로 "
+            "돌면 빈 목록을 읽고 **조용히 통과**한다 --- 그게 이 게이트가 없던 이유다.")
+
+    fresh = r[_GATE_FRESH]
+    fresh = [] if isinstance(fresh, str) else [x for x in fresh if isinstance(x, dict)]
+    mine = [x for x in fresh if x.get("논문") == d.name]
+    others = len(fresh) - len(mine)
+    if others:
+        print(f"⚠ 다른 논문 {others}곳이 경성 실패다 --- 이 스텝({d.name})은 아니므로 "
+              f"막지 않는다: {sorted({x.get('논문') for x in fresh if x not in mine})}")
+    if r.get("빚이 늘었나"):
+        print(f"⚠ 묵은 빚 {r.get('묵은 빚')} > 등록된 빚 {r.get('등록된 빚')} --- 래칫이 "
+              "올랐다(고칠 자리는 ingest/audit.py 의 DEAD_NUMBERS·PAPER_DEBT 다)")
+    if mine:
+        for x in mine:
+            print(f"   줄 {x.get('줄')} · 죽은 값 \"{x.get('죽은 값')}\" → 산 값 "
+                  f"\"{x.get('산 값')}\"(정정 노트 {x.get('정정 노트')}) · "
+                  f"errata 있나: {x.get('errata 있나')}")
+        raise SystemExit(
+            f"🔴 죽은 숫자 게이트({phase}): {d.name} 이 정정된 숫자 {len(mine)}곳을 "
+            "표지 없이 인용한다. 푸는 길 둘 --- ⓐ 그 줄 앞뒤 2줄 안에 정정 문단"
+            "(`죽은 숫자`·`정정`·`철회`·`은퇴` 중 한 낱말 또는 산 값)을 넣는다 "
+            "ⓑ 오탐이면 meta.json 의 `errata` 에 **그 숫자를 문자로** 적고 왜 오탐인지 쓴다.")
+    print(f"✅ 죽은 숫자 게이트({phase}) 통과 --- {d.name} 경성 실패 0곳 "
+          f"(묵은 빚 {r.get('묵은 빚')}/{r.get('등록된 빚')})")
+
+
 def build(slug: str) -> Path:
     d = _dir(slug)
+    _dead_gate(d, "build")
     # 번호 충돌 경고(2026-08-08 · 노트 880) — 전수 스캔 실측: 62~213 이 거의 전부 2~3중
     # (두 계열 공존 · 유산 규범)이라 생성-시 차단은 불가능하다. 유일 키는 디렉터리 이름이고
     # 호출-시 모호성은 _dir 가 이미 예외로 막는다(788). 신규 논문은 470+(첫 빈 번호)를 쓴다.
@@ -155,6 +233,9 @@ def send(slug: str, note: str = "") -> None:
     import urllib.request
 
     d = _dir(slug)
+    # 🔴 build 를 건너뛰고 보내는 길이 있다(PDF 가 이미 있으면 아래에서 build 를 안
+    # 부른다). 483 이 그렇게 나갔다 --- 그래서 게이트는 **두 곳 다** 걸어야 한다.
+    _dead_gate(d, "send")
     meta = json.loads((d / "meta.json").read_text())
     pdf = BUILD / f"{d.name}.pdf"
     if not pdf.exists():
