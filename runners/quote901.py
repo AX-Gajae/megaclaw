@@ -38,7 +38,10 @@
 🔴 **키 자체가 `/` 를 품어도 된다** --- 각 자리에서 긴 조각부터 맞춰 본다
 (실물: `out900h_backout.json` 의 `🔴 안 잡힘(none/both)`). 모호하면 긴 쪽이 이긴다.
 
-`--selftest` 가 위 표의 종료 코드를 **전부 심어서 확인**한다(15가지 · 지금 15/15).
+`--selftest` 가 위 표의 종료 코드를 **전부 심어서 확인**한다. 🔴 **결과는 손으로 옮겨 적지
+마라** --- 이슈 #140 M4 가 걸린 자리다(*"자기시험 16/16"* 이라 적었는데 어느 산출물에도 없는
+수였다). `--selftest` 는 `runners/out902b_selftest.json` 을 쓰고, 인용은 그 키로 한다:
+`python3 runners/quote901.py --cite runners/out902b_selftest.json '표기'`.
 """
 import argparse
 import json
@@ -178,8 +181,37 @@ SELFTEST_DOC = {
 }
 
 
-def selftest() -> int:
+#: 🔴 **자기 시험 결과도 산출물이어야 한다** --- 이슈 #140 M4.
+#: ⑤′ 커밋과 PR #138:51 이 *"자기시험 **16/16**"* 이라 적었다. 실제는 **15/15** 였고
+#: 🔴 **16 은 어느 산출물에도 없는 수**였다 --- 결과가 stdout 으로만 나가서
+#: **인용할 키가 아예 없었다.** ⑦ 인용 규약대로면 애초에 인용하면 안 되는 수였고,
+#: 인용했더니 틀렸다. PR #135 의 「629」와 같은 얼굴이다.
+#: 그래서 여기서 JSON 을 낸다 --- **인용은 이 키로 한다**:
+#:     python3 runners/quote901.py --selftest
+#:     python3 runners/quote901.py --cite runners/out902b_selftest.json '표기'
+#: 🔴 **기존 동작은 하나도 안 바꾼다**: 종료 코드 갈래·`--cite`·`--check`·`--help` 그대로,
+#: stdout 도 그대로이고 **맨 끝에 `산출물: …` 한 줄만 는다**.
+#: 대조는 `runners/fiveprime902.py` 의 `5 quote901 무변` 절이 기준본
+#: (`git show <rev>:runners/quote901.py`)과 13가지를 견주어 기계로 한다.
+SELFTEST_OUT = "runners/out902b_selftest.json"
+
+
+def _sha(p: Path) -> str:
+    import hashlib
+    return hashlib.sha256(p.read_bytes()).hexdigest()[:16]
+
+
+def selftest(out_path=None) -> int:
+    import datetime as _dt
     import tempfile
+    import time as _time
+    _w0 = _time.time()
+    # 🔴 **도장은 실행 「시작」에서 찍는다**(티처 #64 C3) --- 901 에서 `stamp_close(stamp())`
+    #    가 끝에서 둘 다 불려 116.9초 실행의 시작 == 끝이었다.
+    _t0 = _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds")
+    _me = Path(__file__).resolve()
+    _code = {"runners/quote901.py": _sha(_me)}
+    rows = []
     ok, bad = 0, []
     with tempfile.TemporaryDirectory() as td:
         j = Path(td) / "t.json"
@@ -212,8 +244,44 @@ def selftest() -> int:
                 ok += 1
             else:
                 bad.append((name, want, got))
+            rows.append({"이름": name, "기대 종료": want, "실제 종료": got,
+                         "같나": got == want})
             print("  %-28s 기대 %d · 실제 %s  %s" % (name, want, got, "✅" if got == want else "🔴"))
-    print("자기 시험 %d/%d" % (ok, len(cases)))
+        n = len(cases)
+    print("자기 시험 %d/%d" % (ok, n))
+
+    #: 🔴 **여기서부터가 #140 M4 로 는 것이다.** 위 stdout 은 한 글자도 안 바뀐다.
+    doc = {
+        "무엇": "`runners/quote901.py --selftest` --- 종료 코드 여섯을 전부 심어서 확인한다",
+        "🔴 왜 산출물인가": (
+            "이슈 #140 M4 --- ⑤′ 커밋과 PR #138:51 이 「자기시험 16/16」이라 적었는데 "
+            "실제는 15/15 였고 **16 은 어느 산출물에도 없는 수**였다. 결과가 stdout 으로만 "
+            "나가서 인용할 키가 없었다. ⑦ 인용 규약대로면 애초에 인용하면 안 되는 수였다"),
+        "🔴 본 가짓수(분모)": n,
+        "🔴 맞은 수": ok,
+        "🔴 틀린 수": n - ok,
+        "표기": "%d/%d" % (ok, n),
+        "자리": rows,
+        "🔴 놓친 것": [{"이름": b[0], "기대 종료": b[1], "실제 종료": b[2]} for b in bad] or "없음",
+        "🔴 전부 잡았나": (not bad),
+        "통과": (not bad),
+        "종료 코드 표": {"값을 찾았다": E_OK, "파일이 없다": E_NOFILE, "JSON 이 아니다": E_NOTJSON,
+                   "그 키가 없다": E_NOKEY, "값이 null 이다": E_NULL, "--check 어긋남": E_MISMATCH},
+        # ── 도장 넷 ───────────────────────────────────────────────
+        "시각(UTC · 시작)": _t0,
+        "시각(UTC · 끝)": _dt.datetime.now(_dt.timezone.utc).isoformat(timespec="seconds"),
+        # 🔴 초 단위 도장에서 「시작 == 끝」은 **901 의 병일 수도 있고 그냥 빠른 것일 수도**
+        #    있다. 둘을 가르려면 걸린 시간이 있어야 한다 --- 그래서 같이 박는다.
+        "초": round(_time.time() - _w0, 2),
+        "🔴 입력 산출물 sha256": {
+            "⚠": "없다 --- 자기 시험은 임시 파일을 **스스로 만든다**. 「못 읽었다」가 아니라 「입력이 없다」다"},
+        "🔴 코드 sha256(이게 자다)": _code,
+    }
+    op = Path(out_path or (Path(__file__).resolve().parents[1] / SELFTEST_OUT))
+    op.parent.mkdir(parents=True, exist_ok=True)
+    op.write_text(json.dumps(doc, ensure_ascii=False, indent=1), encoding="utf-8")
+    print("산출물: %s" % op)
+
     if bad:
         print("🔴 어긋난 것: %r" % (bad,), file=sys.stderr)
         return 1
@@ -222,5 +290,10 @@ def selftest() -> int:
 
 if __name__ == "__main__":
     if "--selftest" in sys.argv[1:]:
-        sys.exit(selftest())
+        # 🔴 `--selftest-out` 은 **여기서만** 읽는다 --- argparse 에 넣으면 `--help` 의
+        #    stdout 이 바뀌고, 그건 「기존 동작을 하나도 바꾸지 마라」를 어기는 것이다.
+        _a = sys.argv[1:]
+        _o = (_a[_a.index("--selftest-out") + 1]
+              if ("--selftest-out" in _a and _a.index("--selftest-out") + 1 < len(_a)) else None)
+        sys.exit(selftest(_o))
     sys.exit(main())

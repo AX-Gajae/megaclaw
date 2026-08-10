@@ -1,0 +1,1646 @@
+{
+ "무엇": "⑤′ 취합 검사 러너 --- 이슈 #140 M3·M4·M6",
+ "🔴 규약": [
+  "① 소비자는 **기계 역참조**로 뽑고 **목록을 이 파일에 남긴다**",
+  "② 🔴 분모 넷을 나란히 박는다 --- 바뀐 경로 · 역참조 소비자 · 돌린 것 · **안 돌린 것**",
+  "③ 모든 절이 `통과` 키를 갖는다. 없는 절을 소비할 땐 **「모른다」로 센다**",
+  "④ 「안 돌렸다」는 「없다」가 아니다(조항 59)"
+ ],
+ "⓪ 관문(작업 트리)": {
+  "검사": "⓪ 관문 --- 작업 트리가 비었나(⑤′ 는 커밋된 트리를 검사한다)",
+  "git status --porcelain 종료": 0,
+  "더러운 경로 수": 6,
+  "더러운 경로": [
+   " M \"docs/\\353\\243\\250\\355\\224\\204.md\"",
+   " M runners/quote901.py",
+   "?? runners/fiveprime902.py",
+   "?? runners/out902b_fiveprime.json",
+   "?? runners/out902b_fiveprime_901.json",
+   "?? runners/out902b_selftest.json"
+  ],
+  "⚠": "🔴 안 비었다 --- ⑤′ 는 실패다. 이 목록을 보고서에 그대로 싣는다",
+  "통과": false
+ },
+ "1 소비자 역참조": {
+  "검사": "1 소비자 역참조 --- 🔴 사람이 고르지 않는다(`docs/루프.md:249-253`)",
+  "취합 시작(base)": "e2abd9de5",
+  "머리(head)": "HEAD",
+  "역참조한 트리": "작업 트리",
+  "🔴 분모 ① 바뀐 경로 수": 11,
+  "🔴 분모 ② 역참조 소비자 수": 108,
+  "🔴 분모 ②-py 역참조 소비자 중 .py": 45,
+  "🔴 분모 ③ 실제로 돌린 수": 2,
+  "🔴 분모 ④ 안 돌린 수": 106,
+  "🔴 분모 ④-py 안 돌린 .py 수": 43,
+  "🔴 분모 ④-사유없음 안 돌린 .py 중 사유 없는 것": 43,
+  "⚠ 분모 ① 과 ② 는 다른 자다": "「돌린 셋 / 바뀐 경로 11」과 「돌린 셋 / 소비자 108」는 다른 문장이다. ⑤′ 의 대상은 ② 다(티처 #64 M3 나).",
+  "🔴 음성 대조(quotepath 를 안 끈 바늘)": {
+   "왜": "`git diff --name-only` 는 한글 경로를 이스케이프한다 --- 그 바늘은 한 곳도 안 맞는데 **종료 0** 이 난다(조항 59 그 자체)",
+   "이스케이프된 경로 수": 2,
+   "이스케이프 바늘로 센 소비자 수": 64,
+   "정상 바늘(전체 경로)로 센 소비자 수": 64,
+   "🔴 차(이스케이프 때문에 사라지는 소비자 수)": 0
+  },
+  "바뀐 경로": [
+   "data/lab/denominator.json",
+   "docs/prereg_902_identify.md",
+   "docs/지평/902.md",
+   "docs/탐색/902.md",
+   "ingest/audit.py",
+   "paper/harness.py",
+   "runners/ident902.py",
+   "runners/out902_identify.json",
+   "runners/out902_wiring.json",
+   "runners/out902h_snap.json",
+   "runners/out902h_snap.py"
+  ],
+  "자별 역참조": {
+   "전체 경로": {
+    "바늘 수": 11,
+    "소비자 수": 64,
+    "그중 .py": 30,
+    "rc": 0
+   },
+   "파일명": {
+    "바늘 수": 10,
+    "소비자 수": 106,
+    "그중 .py": 45,
+    "rc": 0
+   },
+   "모듈 점경로": {
+    "바늘 수": 4,
+    "소비자 수": 17,
+    "그중 .py": 7,
+    "rc": 0
+   }
+  },
+  "역참조 소비자(전량)": [
+   "\"docs/\\353\\243\\250\\355\\224\\204.md\"",
+   "\"docs/\\354\\232\\251\\354\\226\\264.md\"",
+   "\"docs/\\354\\247\\200\\355\\217\\211/901.md\"",
+   "\"docs/\\354\\247\\200\\355\\217\\211/902.md\"",
+   "\"docs/\\355\\203\\220\\354\\203\\211/898.md\"",
+   "\"docs/\\355\\203\\220\\354\\203\\211/899.md\"",
+   "\"docs/\\355\\203\\220\\354\\203\\211/900.md\"",
+   "\"docs/\\355\\203\\220\\354\\203\\211/901.md\"",
+   "\"docs/\\355\\203\\220\\354\\203\\211/902.md\"",
+   "README.md",
+   "data/lab/denominator.json",
+   "data/lab/preregister_idolpromote.json",
+   "data/lab/preregister_minTrain.json",
+   "data/lab/program.json",
+   "docs/prereg_897_architecture.md",
+   "docs/prereg_898_oneruler.md",
+   "docs/prereg_899_axesdie.md",
+   "docs/prereg_900_levers.md",
+   "docs/prereg_901_intervention.md",
+   "docs/prereg_902_identify.md",
+   "docs/primer/10.html",
+   "docs/program-report.html",
+   "docs/worldmodel-primer.html",
+   "ingest/audit.py",
+   "ingest/notify.py",
+   "ingest/wiki_after.py",
+   "lab/decay.py",
+   "lab/forms.py",
+   "lab/guards.py",
+   "lab/loop.py",
+   "paper/harness.py",
+   "paper/program.py",
+   "paper/steps/110_onemarker/main.tex",
+   "paper/steps/128_scrapedafter/main.tex",
+   "paper/steps/168_ninetyfourrows/main.tex",
+   "paper/steps/411_twoboards/main.tex",
+   "paper/steps/477_cancel/meta.json",
+   "paper/steps/479_twofloors/main.tex",
+   "paper/steps/479_twofloors/meta.json",
+   "paper/steps/483_nojunction/meta.json",
+   "paper/steps/484_oneruler/main.tex",
+   "paper/steps/484_oneruler/meta.json",
+   "paper/steps/485_reachingdown/main.tex",
+   "paper/steps/65_audit-module/main.tex",
+   "paper/steps/72_newruler/main.tex",
+   "paper/steps/88_epochs/main.tex",
+   "runners/axesdie899.py",
+   "runners/board898.py",
+   "runners/dnc848.py",
+   "runners/era870.py",
+   "runners/fiveprime902.py",
+   "runners/floor892.py",
+   "runners/ident902.py",
+   "runners/knock894.py",
+   "runners/ledger892.py",
+   "runners/ledger899.py",
+   "runners/ledgeraudit878.py",
+   "runners/ledgeraudit878b.py",
+   "runners/ledgeraudit879.py",
+   "runners/ledgeraudit880.py",
+   "runners/ledgeraudit881.py",
+   "runners/ledgeraudit882.py",
+   "runners/levers900.py",
+   "runners/nanfix115.py",
+   "runners/note892_ledger.py",
+   "runners/note893_ledger.py",
+   "runners/note893_prereg.py",
+   "runners/out112_verdict.json",
+   "runners/out115_astcheck.json",
+   "runners/out115_callgraph.json",
+   "runners/out892_floor.json",
+   "runners/out892_log.txt",
+   "runners/out892_stdout.txt",
+   "runners/out898_board.899a.json",
+   "runners/out898_board.json",
+   "runners/out898_confirm.json",
+   "runners/out898_verdict.json",
+   "runners/out898_wire.899a.json",
+   "runners/out898_wire.900c.json",
+   "runners/out898_wire.json",
+   "runners/out899_axesdie.json",
+   "runners/out899a_dose896_step0.json",
+   "runners/out899a_gates.json",
+   "runners/out899a_gates.py",
+   "runners/out899a_verdict112.json",
+   "runners/out900_levers.json",
+   "runners/out900_wire.json",
+   "runners/out900a_design.json",
+   "runners/out900a_design.py",
+   "runners/out900c_ulp.py",
+   "runners/out901h_link.json",
+   "runners/out901h_link.py",
+   "runners/out902_identify.json",
+   "runners/out902_wiring.json",
+   "runners/out902b_fiveprime.json",
+   "runners/out902b_fiveprime_901.json",
+   "runners/out902h_snap.json",
+   "runners/out902h_snap.py",
+   "runners/pilot893.py",
+   "runners/ruler890.py",
+   "runners/thresh891.py",
+   "runners/verdict112.py",
+   "runners/wire898.py",
+   "runners/wire900.py",
+   "serve/boardsvc.py",
+   "serve/capability.py",
+   "serve/registry.py",
+   "state/rank_test.py"
+  ],
+  "돌렸다": [
+   "ingest/audit.py",
+   "runners/fiveprime902.py"
+  ],
+  "⚠ 돌렸다고 적었지만 소비자 목록에 없는 것": [
+   "runners/quote901.py"
+  ],
+  "🔴 안 돌렸다(= 「없다」가 아니다 · 조항 59)": [
+   "ingest/notify.py",
+   "ingest/wiki_after.py",
+   "lab/decay.py",
+   "lab/forms.py",
+   "lab/guards.py",
+   "lab/loop.py",
+   "paper/harness.py",
+   "paper/program.py",
+   "runners/axesdie899.py",
+   "runners/board898.py",
+   "runners/dnc848.py",
+   "runners/era870.py",
+   "runners/floor892.py",
+   "runners/ident902.py",
+   "runners/knock894.py",
+   "runners/ledger892.py",
+   "runners/ledger899.py",
+   "runners/ledgeraudit878.py",
+   "runners/ledgeraudit878b.py",
+   "runners/ledgeraudit879.py",
+   "runners/ledgeraudit880.py",
+   "runners/ledgeraudit881.py",
+   "runners/ledgeraudit882.py",
+   "runners/levers900.py",
+   "runners/nanfix115.py",
+   "runners/note892_ledger.py",
+   "runners/note893_ledger.py",
+   "runners/note893_prereg.py",
+   "runners/out899a_gates.py",
+   "runners/out900a_design.py",
+   "runners/out900c_ulp.py",
+   "runners/out901h_link.py",
+   "runners/out902h_snap.py",
+   "runners/pilot893.py",
+   "runners/ruler890.py",
+   "runners/thresh891.py",
+   "runners/verdict112.py",
+   "runners/wire898.py",
+   "runners/wire900.py",
+   "serve/boardsvc.py",
+   "serve/capability.py",
+   "serve/registry.py",
+   "state/rank_test.py"
+  ],
+  "안 돌렸다(비 .py · 실행 대상 아님)": [
+   "\"docs/\\353\\243\\250\\355\\224\\204.md\"",
+   "\"docs/\\354\\232\\251\\354\\226\\264.md\"",
+   "\"docs/\\354\\247\\200\\355\\217\\211/901.md\"",
+   "\"docs/\\354\\247\\200\\355\\217\\211/902.md\"",
+   "\"docs/\\355\\203\\220\\354\\203\\211/898.md\"",
+   "\"docs/\\355\\203\\220\\354\\203\\211/899.md\"",
+   "\"docs/\\355\\203\\220\\354\\203\\211/900.md\"",
+   "\"docs/\\355\\203\\220\\354\\203\\211/901.md\"",
+   "\"docs/\\355\\203\\220\\354\\203\\211/902.md\"",
+   "README.md",
+   "data/lab/denominator.json",
+   "data/lab/preregister_idolpromote.json",
+   "data/lab/preregister_minTrain.json",
+   "data/lab/program.json",
+   "docs/prereg_897_architecture.md",
+   "docs/prereg_898_oneruler.md",
+   "docs/prereg_899_axesdie.md",
+   "docs/prereg_900_levers.md",
+   "docs/prereg_901_intervention.md",
+   "docs/prereg_902_identify.md",
+   "docs/primer/10.html",
+   "docs/program-report.html",
+   "docs/worldmodel-primer.html",
+   "paper/steps/110_onemarker/main.tex",
+   "paper/steps/128_scrapedafter/main.tex",
+   "paper/steps/168_ninetyfourrows/main.tex",
+   "paper/steps/411_twoboards/main.tex",
+   "paper/steps/477_cancel/meta.json",
+   "paper/steps/479_twofloors/main.tex",
+   "paper/steps/479_twofloors/meta.json",
+   "paper/steps/483_nojunction/meta.json",
+   "paper/steps/484_oneruler/main.tex",
+   "paper/steps/484_oneruler/meta.json",
+   "paper/steps/485_reachingdown/main.tex",
+   "paper/steps/65_audit-module/main.tex",
+   "paper/steps/72_newruler/main.tex",
+   "paper/steps/88_epochs/main.tex",
+   "runners/out112_verdict.json",
+   "runners/out115_astcheck.json",
+   "runners/out115_callgraph.json",
+   "runners/out892_floor.json",
+   "runners/out892_log.txt",
+   "runners/out892_stdout.txt",
+   "runners/out898_board.899a.json",
+   "runners/out898_board.json",
+   "runners/out898_confirm.json",
+   "runners/out898_verdict.json",
+   "runners/out898_wire.899a.json",
+   "runners/out898_wire.900c.json",
+   "runners/out898_wire.json",
+   "runners/out899_axesdie.json",
+   "runners/out899a_dose896_step0.json",
+   "runners/out899a_gates.json",
+   "runners/out899a_verdict112.json",
+   "runners/out900_levers.json",
+   "runners/out900_wire.json",
+   "runners/out900a_design.json",
+   "runners/out901h_link.json",
+   "runners/out902_identify.json",
+   "runners/out902_wiring.json",
+   "runners/out902b_fiveprime.json",
+   "runners/out902b_fiveprime_901.json",
+   "runners/out902h_snap.json"
+  ],
+  "안 돌린 .py 의 사유": {},
+  "🔴 사유 없이 안 돌린 .py": [
+   "ingest/notify.py",
+   "ingest/wiki_after.py",
+   "lab/decay.py",
+   "lab/forms.py",
+   "lab/guards.py",
+   "lab/loop.py",
+   "paper/harness.py",
+   "paper/program.py",
+   "runners/axesdie899.py",
+   "runners/board898.py",
+   "runners/dnc848.py",
+   "runners/era870.py",
+   "runners/floor892.py",
+   "runners/ident902.py",
+   "runners/knock894.py",
+   "runners/ledger892.py",
+   "runners/ledger899.py",
+   "runners/ledgeraudit878.py",
+   "runners/ledgeraudit878b.py",
+   "runners/ledgeraudit879.py",
+   "runners/ledgeraudit880.py",
+   "runners/ledgeraudit881.py",
+   "runners/ledgeraudit882.py",
+   "runners/levers900.py",
+   "runners/nanfix115.py",
+   "runners/note892_ledger.py",
+   "runners/note893_ledger.py",
+   "runners/note893_prereg.py",
+   "runners/out899a_gates.py",
+   "runners/out900a_design.py",
+   "runners/out900c_ulp.py",
+   "runners/out901h_link.py",
+   "runners/out902h_snap.py",
+   "runners/pilot893.py",
+   "runners/ruler890.py",
+   "runners/thresh891.py",
+   "runners/verdict112.py",
+   "runners/wire898.py",
+   "runners/wire900.py",
+   "serve/boardsvc.py",
+   "serve/capability.py",
+   "serve/registry.py",
+   "state/rank_test.py"
+  ],
+  "통과": false,
+  "⚠ 통과의 뜻": "역참조 소비자 중 **실행 가능한 `.py` 가 전부 다시 돌았거나 사유가 등록됐나**. 「안 돌렸다」가 하나라도 사유 없이 남으면 실패다"
+ },
+ "2 게이트": {
+  "검사": "2 게이트 --- 🔴 명부를 기계로 뽑는다(손 나열 금지)",
+  "명부를 어떻게 뽑았나": "`git grep -lF -e '\"통과\":'` 로 **`통과` 를 키로 내는 `.py` 전량**",
+  "🔴 게이트 생산자 수(분모)": 15,
+  "🔴 그중 이번 취합의 소비자인 것": 8,
+  "게이트 생산자": [
+   "ingest/audit.py",
+   "runners/board898.py",
+   "runners/dose113.py",
+   "runners/dose896.py",
+   "runners/fiveprime902.py",
+   "runners/inv901.py",
+   "runners/nanfix115.py",
+   "runners/note893_ledger.py",
+   "runners/out899a_gates.py",
+   "runners/pilot893.py",
+   "runners/preflight928.py",
+   "runners/quote901.py",
+   "runners/shape824.py",
+   "runners/snapcheck.py",
+   "serve/registry.py"
+  ],
+  "🔴 돌린 수": 3,
+  "돌렸다": [
+   "ingest/audit.py",
+   "runners/fiveprime902.py",
+   "runners/quote901.py"
+  ],
+  "🔴 안 돌린 수": 12,
+  "🔴 안 돌렸다(= 「없다」가 아니다)": [
+   "runners/board898.py",
+   "runners/dose113.py",
+   "runners/dose896.py",
+   "runners/inv901.py",
+   "runners/nanfix115.py",
+   "runners/note893_ledger.py",
+   "runners/out899a_gates.py",
+   "runners/pilot893.py",
+   "runners/preflight928.py",
+   "runners/shape824.py",
+   "runners/snapcheck.py",
+   "serve/registry.py"
+  ],
+  "안 돌린 사유": {
+   "runners/dose113.py": "이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
+   "runners/dose896.py": "이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
+   "runners/inv901.py": "이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
+   "runners/preflight928.py": "이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
+   "runners/shape824.py": "이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
+   "runners/snapcheck.py": "이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
+   "runners/out899a_gates.py": "다른 팔 소유 · 돌리면 `runners/out899a_gates.json` 을 덮어써서 동시에 도는 팔의 산출물을 깨뜨린다. 대신 **3 절이 그 산출물을 읽어 판정 키를 감사한다**"
+  },
+  "🔴 사유 없이 안 돌린 것": [
+   "runners/board898.py",
+   "runners/nanfix115.py",
+   "runners/note893_ledger.py",
+   "runners/pilot893.py",
+   "serve/registry.py"
+  ],
+  "돌린 게이트의 절별 판정": {
+   "법칙전용 누출": true,
+   "주장한 고침": true,
+   "T 전파": true,
+   "죽은 숫자": true,
+   "죽은 숫자(1 ULP 짝)": true,
+   "죽은 숫자(논문)": true,
+   "_초": 13.0
+  },
+  "🔴 실패한 절": "없음",
+  "🔴 예외": "없음",
+  "통과": false
+ },
+ "3 판정 키 규약": {
+  "검사": "3 판정 키 규약 --- `통과` 하나로 규약화됐나",
+  "🔴 왜 읽는 쪽에서 하나": "대상 산출물은 남의 소유다. 고치지 않고 **세어 드러낸다**",
+  "🔴 절 수 합(분모)": 9,
+  "`통과` 키가 있는 절 합": 0,
+  "🔴 모른다(=`통과` 키 없음) 합": 9,
+  "파일별": {
+   "runners/out899a_gates.json": {
+    "🔴 절 수(분모)": 9,
+    "`통과` 키가 있는 절": 0,
+    "그 목록": "없음",
+    "🔴 `통과` 키가 없는 절 = 모른다": 9,
+    "모른다 목록": [
+     "동적 ㄱ dose896.stage0 (판정 게이트)",
+     "동적 ㄴ verdict112 (동결 대조)",
+     "동적 ㄷ nanfix115.trace (회귀 증거)",
+     "동적 ㄹ board898 재현 대조",
+     "동적 ㅁ wire898 재현 대조",
+     "재현본 꼬리표",
+     "정적 ① 전수 훑기",
+     "정적 ② 반입 금지",
+     "정적 ③ 🔴 검출기 자기 시험(심어서 확인)"
+    ],
+    "⚠ 절 밖의 최상위 판정 불리언(규약 밖)": [
+     "🔴 정적 통과"
+    ],
+    "⚠ 절로 세지 않은 도장 dict": [
+     "🔴 코드 sha256(이게 자다)"
+    ],
+    "통과": false
+   }
+  },
+  "통과": false,
+  "⚠ 통과의 뜻": "🔴 `통과 == False` 는 「게이트가 실패했다」가 아니라 **「판정을 못 읽는다」**다"
+ },
+ "4 도장 확인": {
+  "검사": "4 도장 확인 --- ① 시작 ② 끝 ③ 입력 sha ④ 코드 sha",
+  "🔴 훑은 산출물 수(분모)": 175,
+  "도장이 있는 산출물 수": 83,
+  "🔴 도장이 하나도 없는 산출물 수": 92,
+  "🔴 도장이 하나도 없는 산출물": [
+   "runners/out112_board.json",
+   "runners/out112_refit837.json",
+   "runners/out112_verdict.json",
+   "runners/out819.json",
+   "runners/out821.json",
+   "runners/out822.json",
+   "runners/out824.json",
+   "runners/out825.json",
+   "runners/out826.json",
+   "runners/out827.json",
+   "runners/out828.json",
+   "runners/out830.json",
+   "runners/out831_backfill.json",
+   "runners/out832a.json",
+   "runners/out832b.json",
+   "runners/out833.json",
+   "runners/out835.json",
+   "runners/out836_build.json",
+   "runners/out837.json",
+   "runners/out837_centered.json",
+   "runners/out838.json",
+   "runners/out839.json",
+   "runners/out840.json",
+   "runners/out841.json",
+   "runners/out842.json",
+   "runners/out843.json",
+   "runners/out844_seal.json",
+   "runners/out845_rehearsal.json",
+   "runners/out846_ruler.json",
+   "runners/out847_cleanwin.json",
+   "runners/out849_quota.json",
+   "runners/out850_door.json",
+   "runners/out851_cf_annex5.json",
+   "runners/out851_judge.json",
+   "runners/out851_refilmo.json",
+   "runners/out852_unify.json",
+   "runners/out853_general.json",
+   "runners/out854_namegrid.json",
+   "runners/out855_servaudit.json",
+   "runners/out856_regime.json",
+   "runners/out859_idolkey.json",
+   "runners/out859_rows.json",
+   "runners/out860_preharvest.json",
+   "runners/out861_entity.json",
+   "runners/out862_entity_v3.json",
+   "runners/out863_knock.json",
+   "runners/out864_day0b_sidecar.json",
+   "runners/out864_gate_rows.json",
+   "runners/out864_repair.json",
+   "runners/out866_census_erratum.json",
+   "runners/out868_pairboot.json",
+   "runners/out869_gap.json",
+   "runners/out870_era.json",
+   "runners/out870_era_wfail1.json",
+   "runners/out871_ridge.json",
+   "runners/out872_hook.json",
+   "runners/out874_ipctl.json",
+   "runners/out874_ipctl_wfail1.json",
+   "runners/out886b_power.json",
+   "runners/out888_after.json",
+   "runners/out888_before.json",
+   "runners/out888_speck.json",
+   "runners/out892_floor.json",
+   "runners/out895_control.json",
+   "runners/out895_control2.json",
+   "runners/out895_r1.json",
+   "runners/out895_r2full.json",
+   "runners/out895_r3namu.json",
+   "runners/out895_r3wiki.json",
+   "runners/out895_score.json",
+   "runners/out895_truth.json",
+   "runners/out897_control.json",
+   "runners/out897_decay.json",
+   "runners/out897_graph.json",
+   "runners/out897_inventory.json",
+   "runners/out897_nnchk.json",
+   "runners/out897_partial.json",
+   "runners/out897_placebo.json",
+   "runners/out898c_fix.json",
+   "runners/out899a_verdict112.json",
+   "runners/out900_levers.json",
+   "runners/out900_ruler.json",
+   "runners/out900_wire.json",
+   "runners/out900h_backout.json",
+   "runners/out900h_census.json",
+   "runners/out900h_design.json",
+   "runners/out900h_design2.json",
+   "runners/out900h_levers.json",
+   "runners/out901_schema.json",
+   "runners/out_hooktest_2026-08-08.json",
+   "runners/out_hooktest_2026-08-08_v873.json",
+   "runners/out_matured_2026-08-09.json"
+  ],
+  "🔴 못 읽은 산출물": "없음",
+  "🔴 시작 == 끝 인데 초 > 1.5 인 산출물(901 의 그 병)": "없음",
+  "⚠ 시작 == 끝 이지만 1.5초 안에 끝난 산출물(병 아님)": [
+   "runners/out902b_selftest.json"
+  ],
+  "도장별": {
+   "runners/out113_armB12.json": {
+    "도장 키": [
+     "주입 열 sha256",
+     "시각(UTC)",
+     "🔴 코드 sha256(이 파일 · runners/dose113.py)",
+     "참조 코드 sha256"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 1141.6,
+    "시작<끝": null
+   },
+   "runners/out113_loo.json": {
+    "도장 키": [
+     "시각(UTC)",
+     "🔴 코드 sha256(이 파일 · runners/dose113.py)",
+     "참조 코드 sha256"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out113_summary.json": {
+    "도장 키": [
+     "시각(UTC)",
+     "🔴 코드 sha256(이 파일 · runners/loo113.py)",
+     "참조 코드 sha256",
+     "읽은 산출물 sha256"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out113_thresh.json": {
+    "도장 키": [
+     "시각(UTC)",
+     "🔴 코드 sha256(이 파일 · runners/dose113.py)",
+     "참조 코드 sha256"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 94.8,
+    "시작<끝": null
+   },
+   "runners/out113_thresh_recheck.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out115_armA.json": {
+    "도장 키": [
+     "시각(UTC)",
+     "코드 sha256"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 101.5,
+    "시작<끝": null
+   },
+   "runners/out115_armA_verdict.json": {
+    "도장 키": [
+     "시각(UTC)",
+     "코드 sha256"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 102.5,
+    "시작<끝": null
+   },
+   "runners/out115_astcheck.json": {
+    "도장 키": [
+     "시각(UTC)",
+     "코드 sha256"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out115_callgraph.json": {
+    "도장 키": [
+     "시각(UTC)",
+     "코드 sha256"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out115_plant.json": {
+    "도장 키": [
+     "시각(UTC)",
+     "코드 sha256"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out115_trace.json": {
+    "도장 키": [
+     "시각(UTC)",
+     "코드 sha256"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 70.3,
+    "시작<끝": null
+   },
+   "runners/out863_day0.json": {
+    "도장 키": [
+     "수집 시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out864_day0b.json": {
+    "도장 키": [
+     "수집 시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out865_day0c.json": {
+    "도장 키": [
+     "수집 시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 68.6,
+    "시작<끝": null
+   },
+   "runners/out866_census.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 36.1,
+    "시작<끝": null
+   },
+   "runners/out873_hook.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out876_goldaudit.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 8.4,
+    "시작<끝": null
+   },
+   "runners/out876_goldaudit_wfail1.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 8.4,
+    "시작<끝": null
+   },
+   "runners/out877_ipmap.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out877_recheck.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 76.5,
+    "시작<끝": null
+   },
+   "runners/out878_ledgeraudit.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out878b_ledgeraudit.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out878b_ledgeraudit_wfail1.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out879_numaudit.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out880_numaudit11.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out880_numaudit11_wfail1.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out881_numaudit12.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out881_sample.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out882_numaudit121.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out883_colcensus.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out883_colcensus_wfail1.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out883_colcensus_wfail2.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out883_ytcomment.json": {
+    "도장 키": [
+     "시각(UTC)",
+     "시각 입도(한계 명기)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out883_ytcomment_wfail1.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out884_colcensus_fix.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out884_newcol.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 974.1,
+    "시작<끝": null
+   },
+   "runners/out885_bverdict.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out885_nation.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 1380.8,
+    "시작<끝": null
+   },
+   "runners/out886_band.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out887_ruler.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 1748.8,
+    "시작<끝": null
+   },
+   "runners/out887b_ruler.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 2455.6,
+    "시작<끝": null
+   },
+   "runners/out887c_bca.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 645.0,
+    "시작<끝": null
+   },
+   "runners/out890_ruler.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out891_thresh.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out893_diag.json": {
+    "도장 키": [
+     "① 음성 통제도 같은 시각 분포를 내는가"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out893_pilot.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 468.4,
+    "시작<끝": null
+   },
+   "runners/out894_knock.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out894_refit.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out896_armA.json": {
+    "도장 키": [
+     "시각(UTC)",
+     "코드 sha256"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 87.5,
+    "시작<끝": null
+   },
+   "runners/out896_armB.json": {
+    "도장 키": [
+     "주입 열 sha256",
+     "시각(UTC)",
+     "코드 sha256"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 573.0,
+    "시작<끝": null
+   },
+   "runners/out896_step0.json": {
+    "도장 키": [
+     "시각(UTC)",
+     "코드 sha256"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 59.8,
+    "시작<끝": null
+   },
+   "runners/out896_wiring.json": {
+    "도장 키": [
+     "시각(UTC)",
+     "코드 sha256"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out898_board.899a.json": {
+    "도장 키": [
+     "시각"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 1813.2,
+    "시작<끝": null
+   },
+   "runners/out898_board.json": {
+    "도장 키": [
+     "시각"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 1205.3,
+    "시작<끝": null
+   },
+   "runners/out898_confirm.json": {
+    "도장 키": [
+     "시각"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out898_thr.json": {
+    "도장 키": [
+     "시각"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 63.4,
+    "시작<끝": null
+   },
+   "runners/out898_verdict.json": {
+    "도장 키": [
+     "시각"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out898_wire.899a.json": {
+    "도장 키": [
+     "시각"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 843.2,
+    "시작<끝": null
+   },
+   "runners/out898_wire.900c.json": {
+    "도장 키": [
+     "시각"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 475.0,
+    "시작<끝": null
+   },
+   "runners/out898_wire.json": {
+    "도장 키": [
+     "시각"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 147.4,
+    "시작<끝": null
+   },
+   "runners/out899_axesdie.json": {
+    "도장 키": [
+     "시각"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out899_dateclust.json": {
+    "도장 키": [
+     "시각"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out899_deffchk.json": {
+    "도장 키": [
+     "시각"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out899a_dose896_step0.json": {
+    "도장 키": [
+     "시각(UTC · 시작)",
+     "🔴 코드 sha256(이게 자다)",
+     "이 파일 sha256"
+    ],
+    "시작 시각": "2026-08-10T19:24:47+00:00",
+    "끝 시각": "🔴 없다",
+    "초": 56.5,
+    "시작<끝": null
+   },
+   "runners/out899a_gates.json": {
+    "도장 키": [
+     "시각(UTC · 시작)",
+     "🔴 코드 sha256(이게 자다)",
+     "이 파일 sha256",
+     "시각(UTC · 끝)"
+    ],
+    "시작 시각": "2026-08-10T19:23:44+00:00",
+    "끝 시각": "2026-08-10T19:25:41+00:00",
+    "초": 117.4,
+    "시작<끝": true
+   },
+   "runners/out899a_nanfix115_trace.json": {
+    "도장 키": [
+     "시각(UTC)",
+     "코드 sha256"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 54.2,
+    "시작<끝": null
+   },
+   "runners/out899c_ruler890R12.json": {
+    "도장 키": [
+     "시각(UTC)",
+     "코드 sha256"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out900a_design.json": {
+    "도장 키": [
+     "시각"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out900c_ruler890R12.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out900c_ulp.json": {
+    "도장 키": [
+     "시각(UTC)",
+     "이 파일 sha256",
+     "읽은 산출물 sha256"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 6.0,
+    "시작<끝": null
+   },
+   "runners/out901_identify.json": {
+    "도장 키": [
+     "사전등록 시각",
+     "시작 시각",
+     "코드 sha256",
+     "끝 시각"
+    ],
+    "시작 시각": "2026-08-11T03:37:02",
+    "끝 시각": "2026-08-11T03:37:08",
+    "초": 6.2,
+    "시작<끝": true
+   },
+   "runners/out901_inventory.json": {
+    "도장 키": [
+     "사전등록 시각",
+     "시작 시각",
+     "코드 sha256",
+     "입력 sha256",
+     "끝 시각"
+    ],
+    "시작 시각": "2026-08-11T03:34:36",
+    "끝 시각": "2026-08-11T03:34:45",
+    "초": 8.5,
+    "시작<끝": true
+   },
+   "runners/out901h_grid.json": {
+    "도장 키": [
+     "시각(UTC · 시작)",
+     "🔴 코드 sha256(이게 자다)",
+     "시각(UTC · 끝)"
+    ],
+    "시작 시각": "2026-08-10T18:25:28+00:00",
+    "끝 시각": "2026-08-10T18:25:58+00:00",
+    "초": "모른다",
+    "시작<끝": true
+   },
+   "runners/out901h_link.json": {
+    "도장 키": [
+     "시각(UTC · 시작)",
+     "🔴 코드 sha256(이게 자다)",
+     "🔴 입력 파일 sha256",
+     "시각(UTC · 끝)"
+    ],
+    "시작 시각": "2026-08-10T18:39:22+00:00",
+    "끝 시각": "2026-08-10T18:39:28+00:00",
+    "초": "모른다",
+    "시작<끝": true
+   },
+   "runners/out902_identify.json": {
+    "도장 키": [
+     "시작 시각",
+     "코드 sha256",
+     "입력 sha256",
+     "끝 시각"
+    ],
+    "시작 시각": "2026-08-11T04:51:11",
+    "끝 시각": "2026-08-11T04:51:18",
+    "초": 6.8,
+    "시작<끝": true
+   },
+   "runners/out902_wiring.json": {
+    "도장 키": [
+     "시작 시각",
+     "코드 sha256",
+     "입력 sha256",
+     "끝 시각"
+    ],
+    "시작 시각": "2026-08-11T04:51:11",
+    "끝 시각": "2026-08-11T04:51:18",
+    "초": 6.8,
+    "시작<끝": true
+   },
+   "runners/out902b_fiveprime.json": {
+    "도장 키": [
+     "시각(UTC · 시작)",
+     "🔴 코드 sha256(이게 자다)",
+     "🔴 입력 산출물 sha256",
+     "시각(UTC · 끝)"
+    ],
+    "시작 시각": "2026-08-10T20:02:31+00:00",
+    "끝 시각": "2026-08-10T20:03:01+00:00",
+    "초": 29.7,
+    "시작<끝": true
+   },
+   "runners/out902b_fiveprime_901.json": {
+    "도장 키": [
+     "시각(UTC · 시작)",
+     "🔴 코드 sha256(이게 자다)",
+     "🔴 입력 산출물 sha256",
+     "시각(UTC · 끝)"
+    ],
+    "시작 시각": "2026-08-10T20:01:36+00:00",
+    "끝 시각": "2026-08-10T20:01:50+00:00",
+    "초": 13.9,
+    "시작<끝": true
+   },
+   "runners/out902b_selftest.json": {
+    "도장 키": [
+     "시각(UTC · 시작)",
+     "시각(UTC · 끝)",
+     "🔴 입력 산출물 sha256",
+     "🔴 코드 sha256(이게 자다)"
+    ],
+    "시작 시각": "2026-08-10T20:04:25+00:00",
+    "끝 시각": "2026-08-10T20:04:25+00:00",
+    "초": 0.01,
+    "시작<끝": false
+   },
+   "runners/out902h_snap.json": {
+    "도장 키": [
+     "시작 시각",
+     "코드 sha256",
+     "입력 sha256",
+     "끝 시각"
+    ],
+    "시작 시각": "2026-08-11T04:54:55",
+    "끝 시각": "2026-08-11T04:55:04",
+    "초": 9.0,
+    "시작<끝": true
+   },
+   "runners/out_erafreeze_2026-08-08.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 5.4,
+    "시작<끝": null
+   },
+   "runners/out_erascan_2026-08-08.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": 5.5,
+    "시작<끝": null
+   },
+   "runners/out_snapcheck_2026-08-08.json": {
+    "도장 키": [
+     "시각(UTC)"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   }
+  },
+  "통과": true,
+  "⚠": "도장 없음을 「실패」로 세지 않는다 --- 옛 산출물이 많다. **수를 드러내는 것**이 이 절의 일이다"
+ },
+ "5 quote901 무변": {
+  "검사": "5 quote901 기존 동작 무변 --- 기준본 대 작업본",
+  "기준본": "git show HEAD:runners/quote901.py",
+  "작업본": "runners/quote901.py",
+  "🔴 견준 가짓수(분모)": 13,
+  "🔴 같은 것": 13,
+  "🔴 다른 것": "없음",
+  "가짓수별": {
+   "값": {
+    "기준 종료": 0,
+    "지금 종료": 0,
+    "stdout 같나": true,
+    "stderr 같나": true,
+    "같나": true
+   },
+   "--cite": {
+    "기준 종료": 0,
+    "지금 종료": 0,
+    "stdout 같나": true,
+    "stderr 같나": true,
+    "같나": true
+   },
+   "--check 맞음": {
+    "기준 종료": 0,
+    "지금 종료": 0,
+    "stdout 같나": true,
+    "stderr 같나": true,
+    "같나": true
+   },
+   "🔴 --check 어긋남": {
+    "기준 종료": 6,
+    "지금 종료": 6,
+    "stdout 같나": true,
+    "stderr 같나": true,
+    "같나": true
+   },
+   "🔴 파일 없다": {
+    "기준 종료": 2,
+    "지금 종료": 2,
+    "stdout 같나": true,
+    "stderr 같나": true,
+    "같나": true
+   },
+   "🔴 JSON 아니다": {
+    "기준 종료": 3,
+    "지금 종료": 3,
+    "stdout 같나": true,
+    "stderr 같나": true,
+    "같나": true
+   },
+   "🔴 키 없다": {
+    "기준 종료": 4,
+    "지금 종료": 4,
+    "stdout 같나": true,
+    "stderr 같나": true,
+    "같나": true
+   },
+   "🔴 null": {
+    "기준 종료": 5,
+    "지금 종료": 5,
+    "stdout 같나": true,
+    "stderr 같나": true,
+    "같나": true
+   },
+   "🔴 키 경로 없음": {
+    "기준 종료": 4,
+    "지금 종료": 4,
+    "stdout 같나": true,
+    "stderr 같나": true,
+    "같나": true
+   },
+   "--list": {
+    "기준 종료": 0,
+    "지금 종료": 0,
+    "stdout 같나": true,
+    "stderr 같나": true,
+    "같나": true
+   },
+   "🔴 구분자 품은 키": {
+    "기준 종료": 0,
+    "지금 종료": 0,
+    "stdout 같나": true,
+    "stderr 같나": true,
+    "같나": true
+   },
+   "--help": {
+    "기준 종료": 0,
+    "지금 종료": 0,
+    "stdout 같나": true,
+    "stderr 같나": true,
+    "같나": true
+   },
+   "--selftest": {
+    "기준 종료": 0,
+    "지금 종료": 0,
+    "stdout 같나": true,
+    "stderr 같나": true,
+    "같나": true,
+    "⚠": "🔴 새 판의 `산출물: …` 한 줄만 떼고 견줬다"
+   }
+  },
+  "⚠ 지운 것": "임시 디렉터리 이름만(`<TMP>`). 그 밖은 한 글자도 안 지웠다",
+  "통과": true
+ },
+ "5-나 무변 시험의 검정력(심어서 확인)": {
+  "검사": "5-나 🔴 **심어서 확인** --- 이 무변 시험이 실제로 붉어지나(검정력)",
+  "🔴 심은 가짓수(분모)": 3,
+  "🔴 잡은 수": 3,
+  "🔴 놓친 것": "없음",
+  "🔴 못 심은 것(=「잡았다」가 아니다)": "없음",
+  "심은 것별": {
+   "종료 코드 갈래를 흔든다(E_MISMATCH 6→7)": {
+    "잡았나": true,
+    "붉어진 가짓수": [
+     "🔴 --check 어긋남",
+     "--selftest"
+    ]
+   },
+   "--cite 의 출처 꼴에서 백틱을 뗀다": {
+    "잡았나": true,
+    "붉어진 가짓수": [
+     "--cite",
+     "--check 맞음",
+     "🔴 --check 어긋남",
+     "--selftest"
+    ]
+   },
+   "--check 를 관대하게 만든다(어긋나도 안 죽는다)": {
+    "잡았나": true,
+    "붉어진 가짓수": [
+     "🔴 --check 어긋남",
+     "--selftest"
+    ]
+   }
+  },
+  "음성 대조(안 바꾼 사본)": {
+   "통과": true,
+   "다른 것": "없음"
+  },
+  "통과": true
+ },
+ "6 D1 실측": {
+  "검사": "6 D1 실측 --- 사전등록의 「원천 파일 수」가 실제와 맞나(이슈 #140 M6)",
+  "🔴 사전등록은 고치지 않는다": "`docs/prereg_901_intervention.md` 는 증거물이다. 정정문으로 닫는다",
+  "🔴 도메인 수(분모)": 12,
+  "🔴 파일이 여럿인 도메인 수": 3,
+  "그 목록": [
+   "게임",
+   "도서",
+   "만화",
+   "모바일",
+   "세계애니",
+   "애니",
+   "영화",
+   "웹툰",
+   "펀딩"
+  ],
+  "🔴 파일이 하나인 도메인 수": 9,
+  "🔴 「파일 수 == 레코드 수」가 성립하는 도메인 수": 3,
+  "도메인별": {
+   "팝업": {
+    "원천 종류": "dir",
+    "원천": "data/records",
+    "원천 파일 수": 380,
+    "레코드 수": 380,
+    "🔴 「파일 수」 정의가 맞나": true
+   },
+   "시장팝업": {
+    "원천 종류": "dir",
+    "원천": "data/market_records",
+    "원천 파일 수": 647,
+    "레코드 수": 647,
+    "🔴 「파일 수」 정의가 맞나": true
+   },
+   "아이돌": {
+    "원천 종류": "dir",
+    "원천": "data/idol_records",
+    "원천 파일 수": 282,
+    "레코드 수": 282,
+    "🔴 「파일 수」 정의가 맞나": true
+   },
+   "게임": {
+    "원천 종류": "json",
+    "원천": "data/state/game_records.json",
+    "원천 파일 수": 1,
+    "레코드 수": 482,
+    "🔴 「파일 수」 정의가 맞나": false
+   },
+   "도서": {
+    "원천 종류": "json",
+    "원천": "data/state/book_records.json",
+    "원천 파일 수": 1,
+    "레코드 수": 396,
+    "🔴 「파일 수」 정의가 맞나": false
+   },
+   "펀딩": {
+    "원천 종류": "json",
+    "원천": "data/state/funding_records.json",
+    "원천 파일 수": 1,
+    "레코드 수": 2887,
+    "🔴 「파일 수」 정의가 맞나": false
+   },
+   "웹툰": {
+    "원천 종류": "json",
+    "원천": "data/state/webtoon_records.json",
+    "원천 파일 수": 1,
+    "레코드 수": 3652,
+    "🔴 「파일 수」 정의가 맞나": false
+   },
+   "애니": {
+    "원천 종류": "json",
+    "원천": "data/state/anime_records.json",
+    "원천 파일 수": 1,
+    "레코드 수": 3385,
+    "🔴 「파일 수」 정의가 맞나": false
+   },
+   "모바일": {
+    "원천 종류": "json",
+    "원천": "data/state/mobile_records.json",
+    "원천 파일 수": 1,
+    "레코드 수": 2000,
+    "🔴 「파일 수」 정의가 맞나": false
+   },
+   "만화": {
+    "원천 종류": "json",
+    "원천": "data/state/manga_records.json",
+    "원천 파일 수": 1,
+    "레코드 수": 7982,
+    "🔴 「파일 수」 정의가 맞나": false
+   },
+   "세계애니": {
+    "원천 종류": "json",
+    "원천": "data/state/wanime_records.json",
+    "원천 파일 수": 1,
+    "레코드 수": 2988,
+    "🔴 「파일 수」 정의가 맞나": false
+   },
+   "영화": {
+    "원천 종류": "jsonl",
+    "원천": "data/ingest/kobis/axes_raw_897.jsonl",
+    "원천 파일 수": 1,
+    "레코드 수": 897,
+    "🔴 「파일 수」 정의가 맞나": false
+   }
+  },
+  "🔴 예외": "없음",
+  "🔴 정정문(원장용)": "정정 — `docs/prereg_901_intervention.md:101` 의 **D1 = 「원천 파일 수」**는 틀렸다. 그 정의가 맞는 도메인은 **셋**(디렉터리 원천: 팝업·시장팝업·아이돌)뿐이고 나머지 **아홉**은 원천이 **파일 하나**다. 실제로 측정된 D1 은 **전 도메인에서 레코드 수**이며, 구현이 그렇게 적혀 있다(`runners/inv901.py:6` *「D1 원천 레코드 수」* · `:392` `D1 = len(recs)`). 🔴 **사전등록 파일은 증거물이라 고치지 않는다** --- 이 정정문이 딱지의 정본이다.",
+  "통과": true
+ },
+ "🔴 절 수(분모)": 8,
+ "🔴 `통과` 키를 가진 절": 8,
+ "🔴 실패한 절": [
+  "1 소비자 역참조",
+  "2 게이트",
+  "3 판정 키 규약",
+  "⓪ 관문(작업 트리)"
+ ],
+ "통과": false,
+ "시각(UTC · 시작)": "2026-08-10T20:04:25+00:00",
+ "🔴 코드 sha256(이게 자다)": {
+  "runners/fiveprime902.py": "e8f704c7954724b1",
+  "runners/quote901.py": "1778c5659dcd3f8c"
+ },
+ "🔴 입력 산출물 sha256": {
+  "runners/out899a_gates.json": "d0bd90374a94462c"
+ },
+ "⚠ git HEAD(시작 시점 · 판정에 쓰지 마라)": "259bb0b00cd328c263dcb1ccf0ffe5b67e373bf0",
+ "시각(UTC · 끝)": "2026-08-10T20:04:54+00:00",
+ "초": 29.4
+}
