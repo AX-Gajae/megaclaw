@@ -37,11 +37,15 @@ OUT = ROOT / "runners/out891_thresh.json"
 REF = ROOT / "runners/out890_ruler.json"
 T = 2025.0
 DOM = "아이돌"
-SEEDS = tuple(range(12))
+#: 🔴 씨앗 목록은 **ff753 이 정본**이다(이슈 #113 · 티처 #59 M1).
+#: 여기 `tuple(range(12))` 를 따로 적어 두었더니 노트 896 이 `ff753.SEEDS`(6개)로
+#: 재고 그 값을 이 파일이 만든 12씨앗 문턱에 댔다 --- 씨앗 성분만 √2 어긋난다.
+SEEDS = FF.RULER_SEEDS
+assert len(SEEDS) == 12, f"🔴 이 자는 12씨앗 6대6 분할 전제다(지금 {len(SEEDS)})"
 ARMS = (1, 2)
 B = 10_000
 RNG_890 = 8900          # 890 의 행수준 판 부트 rng --- 재현 대조용
-HALF_A, HALF_B = tuple(range(0, 6)), tuple(range(6, 12))
+HALF_A, HALF_B = SEEDS[:6], SEEDS[6:]      #: 정본에서 **파생**시킨다(따로 안 적는다)
 OLD = 0.0045            # 은퇴한 11도메인 상수
 SHARP = 0.0011          # 890 의 예리한 자(씨앗 짝 평균 2σ)
 

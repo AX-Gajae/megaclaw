@@ -19,7 +19,18 @@ from lab.harness import evaluate
 from state import fieldmodel as F
 
 T = 2025.0
-SEEDS = tuple(range(6))
+
+#: 🔴 **씨앗 목록의 정본은 여기 하나다**(이슈 #113 · 티처 #59 M1).
+#: 노트 896 은 6씨앗(`SEEDS`)으로 재고 노트 891 의 문턱 0.00353 은 12씨앗
+#: (`thresh891.SEEDS = tuple(range(12))`)으로 만든 자였다 --- 두 목록이 **따로
+#: 적혀 있어서** 씨앗 성분만 √2 어긋난 채 한 문장에 이어 붙었다(조항 60).
+#: 이제 thresh891·dose113 은 이 모듈에서 **가져다 쓴다**.
+RULER_SEEDS = tuple(range(12))     #: 자(thresh891)와 판정 측정이 함께 쓰는 정본
+SEEDS = RULER_SEEDS[:6]            #: 노트 753 원본 관례(옛 측정 재현용)
+#: 부분집합이라는 것을 **코드로** 못박는다 --- 갈리면 여기서 죽는다
+assert tuple(SEEDS) == tuple(RULER_SEEDS[:len(SEEDS)]), "🔴 씨앗 목록이 갈렸다"
+N_SEEDS_THRESH = len(RULER_SEEDS)  #: 문턱 0.00353 이 전제하는 씨앗 수
+
 PLACEBO_DRAWS = (7440, 7441, 7442)
 CLS = forms.REGISTRY["F18_bagboost"]["cls"]
 AX = "field_spread_ff"
