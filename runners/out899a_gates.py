@@ -216,12 +216,37 @@ def sha(p: Path) -> str:
     return hashlib.sha256(p.read_bytes()).hexdigest()[:16]
 
 
+#: 🔴 **`git HEAD` 스탬프는 원리상 「시작 시점」이다** --- ⑤′ v3.1 의 체크리스트 3 번이 이걸
+#: 몰랐다. 실물: 수리 C 가 `wire898`(475초)을 도는 동안 HEAD 가 다섯 번 움직였고
+#: (`0a4d43a2→f3ca1d3e→9bd63101→3f721c19→c21d6afb`), 취합 뒤 이 게이트를 다시 돌려도
+#: **그 산출물을 커밋하는 순간 HEAD 가 또 바뀌어** 스탬프가 어긋난다. 티처 #63 C1 이
+#: 실측했다: 커밋본 `c21d6afbd` · 작업본 `49513995b` · 그때 HEAD `80ea94507` --- **셋이 다 다르다.**
+#: 뒤쫓아 다시 찍는 것으로는 안 닫힌다(`main` 의 `a5e5d950a` 가 이미 한 번 손으로 고쳤고
+#: 한 사이클 만에 재발했다).
+#:
+#: **그래서 자를 바꾼다.** HEAD 대신 ① 시작·**끝** 시각 ② 이 러너와 **읽는 코드의 sha256**
+#: 을 박는다. 소비자는 「④ 코드 sha == 지금 커밋된 코드의 sha」와 「끝 시각 > 마지막 소스
+#: 커밋 시각」을 본다 --- **긴 러너에서도 이 둘은 안 거짓말한다.**
+#: `git HEAD` 는 참고용으로만 남기고 이름에 그 뜻을 박는다(판정에 쓰지 마라).
+STAMP_CODE = ["runners/out899a_gates.py", "lab/harness.py", "lab/forms.py",
+              "state/rank_test.py", "ingest/audit.py"]
+
+
 def stamp() -> dict:
     head = subprocess.run(["git", "-C", str(ROOT), "rev-parse", "HEAD"],
                           capture_output=True, text=True).stdout.strip()
-    return {"시각(UTC)": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
-            "git HEAD": head,
+    codes = {c: (sha(ROOT / c) if (ROOT / c).exists() else "🔴 파일 없음")
+             for c in STAMP_CODE}
+    return {"시각(UTC · 시작)": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
+            "⚠ git HEAD(시작 시점 · 판정에 쓰지 마라)": head,
+            "🔴 코드 sha256(이게 자다)": codes,
             "이 파일 sha256": sha(Path(__file__).resolve())}
+
+
+def stamp_close(st: dict) -> dict:
+    """🔴 끝 시각을 박는다 --- 시작 시각만으로는 「언제까지의 코드를 봤나」를 못 말한다."""
+    st["시각(UTC · 끝)"] = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
+    return st
 
 
 # ── 정적: 은퇴값 전수 훑기 ──────────────────────────────────────────────────
@@ -745,7 +770,7 @@ def main(full: bool, reuse: bool = False):
           and st["🔴 전부 잡았나"])
     res["🔴 정적 통과"] = ok
     res["초"] = round(time.time() - t0, 1)
-    res.update(stamp())
+    res.update(stamp_close(stamp()))
     OUT.write_text(json.dumps(res, ensure_ascii=False, indent=1))
     print(json.dumps({k: res[k] for k in res
                       if k.startswith(("정적", "동적", "🔴", "산 값"))},

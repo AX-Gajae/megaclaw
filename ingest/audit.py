@@ -1083,6 +1083,19 @@ def _dirty_papers() -> set:
     return out
 
 
+#: 🔴 errata 사면의 **사정거리**를 재는 도구(티처 #63 C2).
+#: errata 가 그 논문의 `.tex` 파일 이름을 하나라도 **지목**하는가.
+#: 지목이 있으면 그 파일들만 사면 대상이고, 하나도 없으면 관행대로 본문(`main.tex`)만.
+#: 🔴 못 여는 것은 「없다」가 아니다 --- 예외는 삼키지 않고 **지목 없음이 아니라 지목 있음**
+#: 쪽으로 넘어가지 않도록, 실패하면 보수적으로 False(= main.tex 만 사면)를 낸다.
+def _errata_names_tex(errata: str, d: Path) -> bool:
+    try:
+        names = [q.name for q in d.glob("*.tex")]
+    except Exception:
+        return False
+    return any(n in errata for n in names)
+
+
 def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> dict:
     """죽은 숫자가 논문에 인쇄돼 있나(노트 886 · 티처 #50 M7).
 
@@ -1106,6 +1119,7 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
 
     cut = _dt.fromisoformat(baseline_at)
     dirty = _dirty_papers()
+    amnestied_by_errata: list = []
     fresh, aged, unknown, skipped = [], [], [], []
     if dirty is None:
         unknown.append({"논문": "(전체)", "못 읽은 것": "git status",
@@ -1207,9 +1221,26 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
                     # **부분문자열 하나**였다 --- `errata: "0.46982"` 처럼 숫자만 적으면
                     # 설명 0글자로 통과했다. 표시는 「무엇이 왜 오탐인가」이지 숫자가 아니다.
                     # 이제 셋 다 요구한다: ①그 숫자 ②산 값이나 정정 표시 낱말 ③설명 20자 이상.
+                    # 🔴 **그리고 사면을 「그 논문」이 아니라 「그 파일」에 건다**(티처 #63 C2).
+                    # 위 셋을 다 채워도 옛 규칙은 **논문 단위**였다 --- `meta.json` 의 errata 가
+                    # 한 번 그 숫자를 담으면 그 폴더의 **모든 `.tex` 모든 줄**이 통째로 사면됐다.
+                    # 티처 #63 이 심어서 확인: `485_reachingdown/_zzF.tex` 에
+                    # **그 논문 errata 가 담은 은퇴값**(0.46982 · 은퇴 · 노트 898)을 한 줄
+                    # 인쇄 → **통과 True · 경성 0**. 같은 자리에 **그 논문 errata 에 없는**
+                    # 다른 은퇴값(0.4932 · 은퇴 · 노트 556)을 넣으면 경성 1 로 즉시 걸린다
+                    # --- 즉 매처는 멀쩡했고 **사면의 사정거리가 넓었다.**
+                    # ⚠ 이 주석을 처음 쓸 때 두 수를 딱지 없이 적었다가 **이 게이트가 나를
+                    # 잡았다**(통과 false · 경성 2). 설계대로다 --- 그래서 딱지를 붙였다.
+                    # 이제 errata 가 **그 파일을 지목해야** 그 파일이 사면된다. 지목이 하나도
+                    # 없으면 관행대로 본문(`main.tex`)에만 적용한다 --- errata 는 본문의 정정이다.
                     if (dead in errata and len(errata.strip()) >= 20
                             and (live.split("(")[0] in errata
-                                 or any(m in errata for m in OK_MARKS))):
+                                 or any(m in errata for m in OK_MARKS))
+                            and (fname in errata
+                                 or (fname == "main.tex"
+                                     and not _errata_names_tex(errata, d)))):
+                        amnestied_by_errata.append(
+                            {"논문": d.name, "파일": fname, "줄": i, "죽은 값": dead})
                         continue
                     rec = {"논문": d.name, "파일": fname, "줄": i, "죽은 값": dead,
                            "산 값": live, "무엇": what, "정정 노트": note,
@@ -1219,6 +1250,10 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
     from collections import Counter as _C
     return {"검사": "죽은 숫자가 논문에 인쇄돼 있나",
             "논문 수": len(dirs),
+            # 🔴 **사면을 보이게 한다**(티처 #63 C2). 사면은 조용하면 안 된다 ---
+            # 숨은 사면은 「없다」와 구별이 안 된다(조항 59).
+            "⚠ errata 로 사면된 자리": amnestied_by_errata or "없음",
+            "⚠ errata 사면 수": len(amnestied_by_errata),
             "기준선": baseline_at,
             "🔴 기준선 뒤 논문(경성 실패)": fresh or "없음",
             "🔴 검사 못 한 논문(모른다)": unknown or "없음",
