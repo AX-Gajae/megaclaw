@@ -435,6 +435,74 @@ $\pm2\sigma$. \textbf{시각만(초록)이 장만(파랑)보다 오른쪽에 있
 \label{fig:2}
 \end{figure*}
 
+\section{0단계의 부작용이 낸 발견 --- 넷 다 재현되지 않는다}
+
+지시는 \emph{``실제로 도는가 --- 돌려 봐라''} 였다. 돌렸더니 조각들이
+\textbf{자기 산출물을 다시 썼다}. 그래서 \texttt{git diff} 가 \textbf{옛 기록값과 오늘
+값의 대조표}가 됐다. \textbf{넷 다 재현되지 않는다.}
+
+\begin{table}[h]\centering\tsize
+\begin{tabular}{llrr}
+\toprule
+조각 & 값 & 옛 & 오늘 \\
+\midrule
+\texttt{shared\_encoder} & 단독 & 0.16304 & \textbf{0.20188} \\
+                        & 공유 & 0.17024 & \textbf{0.18599} \\
+\texttt{foundation} & 아이돌 $p$ & \textbf{0.04} & \textbf{0.06} \\
+                    & 팝업 점수 & 0.7357 & 0.7163 \\
+\texttt{masked\_encoder} & 도메인 수 & \textbf{10} & \textbf{12} \\
+                        & 팝업 & 0.4587 & \textbf{0.1777} \\
+\texttt{fewshot} & 팝업 $k{=}0$ diff & \textbf{+0.0116} & \textbf{$-$0.0231} \\
+\bottomrule
+\end{tabular}
+\caption{0단계가 조각을 돌린 부작용. \texttt{masked\_encoder} 는 \textbf{분모가 달라졌다}
+(도메인 10$\to$12) --- 그래서 종합 지표 $0.3575\to0.3174$ 는 같은 자의 변화가 아니다(조항 60).}
+\label{tab:repro}
+\end{table}
+
+\claimx{\textbf{\texttt{shared\_encoder} 는 결론이 뒤집힌다.} 옛 값은 공유 $0.17024 >$
+단독 $0.16304$ 로 \emph{``공유 인코더가 단독을 이긴다''} 였고 그것이 그 파일의 존재
+이유였다. 오늘은 단독 $\mathbf{0.20188} >$ 공유 $\mathbf{0.18599}$ --- \textbf{부호가
+뒤집힌다}. 🔴 \textbf{그런데 애초에 판정할 수 있는 값이 아니었다}: 그 파일이 스스로 적은
+씨앗 SD 가 공유 $0.01778$ 인데 두 팔의 차는 $0.0072$ --- \textbf{차가 씨앗 SD 의
+0.41배}다. docstring 은 \emph{``노트 14에서 씨앗 SD 가 효과의 4--5배라 아무것도 판정할
+수 없었다''} 를 인용해 놓고, \textbf{적기만 하고 판정에 쓰지 않았다}.}
+{같은 씨앗 다섯으로 오늘 다시 돌렸을 때 옛 값이 나오면 이 주장은 틀린다.}
+
+\claimx{\textbf{그리고 씨앗 잡음이 아니다 --- 오늘 두 번 돌려 비트 동일하다.}
+19:50 과 20:20 의 두 실행이 단독·공유·선형·\textbf{씨앗별 값까지 전부 같다}. 그러므로
+기록값과의 차이는 \textbf{밑자료나 코드가 바뀐 것}이다(원인은 \emph{안 갈랐다}).
+게다가 \textbf{공유 팔의 씨앗 다섯이 $+0.0922$부터 $+0.2409$까지 흩어진다}
+(범위 $0.1487$ · SD $0.0519$) --- 두 팔의 차 $0.0159$ 의 \textbf{9.4배}다.
+그리고 그 실행의 요약이 스스로 적는다: 단독은 선형 기준선보다 $-0.1005$
+(씨앗 SD 의 \textbf{9.46배}), 공유는 $-0.1163$(2.24배) --- \textbf{두 신경망 인코더가
+선형에 크게 진다}. 다만 그 선형 값 자체가 오버플로 위에서 나온다.}
+{셋 중 하나라도 오늘 다시 돌려 다른 값이 나오면 「비트 동일」 주장은 틀린다.}
+
+\claimx{\textbf{옛 논문의 그림이 살아 있는 파일을 가리키고 있었다.}
+\texttt{paper/figs.py:1320,1347} 의 \texttt{fig\_foundation}(노트 14 주장 1)이
+\texttt{data/state/foundation.json} 을 \emph{빌드할 때} 읽는다. 그 파일이 오늘 바뀌었으므로
+\textbf{그 옛 논문을 다시 빌드하면 그림의 숫자가 조용히 바뀐다} --- 하필 바뀐 것이
+\textbf{유일하게 유의했던 아이돌 $p=0.04 \to 0.06$} 이다. \textbf{죽은 숫자의 거울상}이다.}
+{\texttt{figs.py} 가 실제로는 스냅샷을 읽고 있었다면 틀린다 --- 확인했다. 경로 하나이고
+스냅샷이 없다.}
+
+\claimx{\textbf{\texttt{state/masked\_encoder.py} 의 의존물이 저장소 밖에 있다.}
+\texttt{masked\_encoder.py:144--145} 가
+\texttt{sys.path.insert(0, "/Users/ax/.claude/jobs/a5c89f96/tmp")} 뒤
+\texttt{from prior\_hit import REC, cols} 를 한다. 그 파일은 \textbf{2026-07-29 자
+스크래치패드}(6,539바이트 · 버전관리 밖)이고 \textbf{반입만으로 저장소에 쓴다}
+(\texttt{prior\_hit.py:155} 가 \texttt{data/state/prior\_hit.json} 에 \texttt{json.dump}).
+🔴 티처 \#4 의 \emph{``규약 하나와 판정 13개를 낳은 코드가 스크래치패드에만 있었다''} 가
+\textbf{아직 살아 있다.}}
+{그 스크래치패드가 지워진 뒤에도 \texttt{masked\_encoder} 가 돌면 틀린다.}
+
+🔴 \textbf{그래서 아키텍처 사다리를 이 조각들 위에 올리면 안 된다} --- L0 기준선으로
+인용할 수 있는 값이 넷 다 없다. 그리고 일반화가 하나 남는다:
+\texttt{data/state/*.json} 안에 \textbf{``다시 돌리면 덮이는 것''}과
+\textbf{``판정의 증거로 인용되는 것''}이 \emph{같은 디렉터리에 섞여 있고},
+\textbf{어느 것이 인용 중인지 아무도 세어 본 적이 없다.}
+
 \section{남은 것}
 
 \begin{enumerate}\setlength\itemsep{1pt}
@@ -444,6 +512,7 @@ $\pm2\sigma$. \textbf{시각만(초록)이 장만(파랑)보다 오른쪽에 있
 \item \textbf{동네 임베딩 재학습 대조} --- 상수가 여분인가 일을 하는가.
 \item \textbf{$L$ 의 $b$ 항은 자료가 자라야 열린다} --- 노트 771 의 2,028행. 지금 62행.
 \item \textbf{다리를 하나라도 놓는다} --- 두 인코더를 함께 반입하는 파일이 오늘 기준 0개다.
+\item \textbf{\texttt{data/state/} 를 「덮이는 것」과 「인용되는 것」으로 가른다} --- 아무도 세어 본 적이 없다.
 \end{enumerate}
 
 \end{document}
