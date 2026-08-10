@@ -9,14 +9,15 @@
  "⓪ 관문(작업 트리)": {
   "검사": "⓪ 관문 --- 작업 트리가 비었나(⑤′ 는 커밋된 트리를 검사한다)",
   "git status --porcelain 종료": 0,
-  "더러운 경로 수": 6,
+  "더러운 경로 수": 7,
   "더러운 경로": [
-   " M \"docs/\\353\\243\\250\\355\\224\\204.md\"",
-   " M runners/quote901.py",
-   "?? runners/fiveprime902.py",
-   "?? runners/out902b_fiveprime.json",
-   "?? runners/out902b_fiveprime_901.json",
-   "?? runners/out902b_selftest.json"
+   " M runners/fiveprime902.py",
+   " M runners/out899a_dose896_step0.json",
+   " M runners/out899a_gates.json",
+   " M runners/out899a_nanfix115_trace.json",
+   " M runners/out899a_verdict112.json",
+   " M runners/out902b_fiveprime.json",
+   " M runners/out902b_selftest.json"
   ],
   "⚠": "🔴 안 비었다 --- ⑤′ 는 실패다. 이 목록을 보고서에 그대로 싣는다",
   "통과": false
@@ -26,49 +27,55 @@
   "취합 시작(base)": "e2abd9de5",
   "머리(head)": "HEAD",
   "역참조한 트리": "작업 트리",
-  "🔴 분모 ① 바뀐 경로 수": 11,
-  "🔴 분모 ② 역참조 소비자 수": 108,
-  "🔴 분모 ②-py 역참조 소비자 중 .py": 45,
-  "🔴 분모 ③ 실제로 돌린 수": 2,
-  "🔴 분모 ④ 안 돌린 수": 106,
-  "🔴 분모 ④-py 안 돌린 .py 수": 43,
-  "🔴 분모 ④-사유없음 안 돌린 .py 중 사유 없는 것": 43,
-  "⚠ 분모 ① 과 ② 는 다른 자다": "「돌린 셋 / 바뀐 경로 11」과 「돌린 셋 / 소비자 108」는 다른 문장이다. ⑤′ 의 대상은 ② 다(티처 #64 M3 나).",
+  "🔴 분모 ① 바뀐 경로 수": 17,
+  "🔴 분모 ② 역참조 소비자 수": 112,
+  "🔴 분모 ②-py 역참조 소비자 중 .py": 46,
+  "🔴 분모 ③ 실제로 돌린 수": 0,
+  "🔴 분모 ④ 안 돌린 수": 112,
+  "🔴 분모 ④-py 안 돌린 .py 수": 46,
+  "🔴 분모 ④-사유없음 안 돌린 .py 중 사유 없는 것": 46,
+  "⚠ 분모 ① 과 ② 는 다른 자다": "「돌린 셋 / 바뀐 경로 17」과 「돌린 셋 / 소비자 112」는 다른 문장이다. ⑤′ 의 대상은 ② 다(티처 #64 M3 나).",
   "🔴 음성 대조(quotepath 를 안 끈 바늘)": {
    "왜": "`git diff --name-only` 는 한글 경로를 이스케이프한다 --- 그 바늘은 한 곳도 안 맞는데 **종료 0** 이 난다(조항 59 그 자체)",
-   "이스케이프된 경로 수": 2,
-   "이스케이프 바늘로 센 소비자 수": 64,
-   "정상 바늘(전체 경로)로 센 소비자 수": 64,
-   "🔴 차(이스케이프 때문에 사라지는 소비자 수)": 0
+   "이스케이프된 경로 수": 3,
+   "이스케이프 바늘로 센 소비자 수": 68,
+   "정상 바늘(전체 경로)로 센 소비자 수": 70,
+   "🔴 차(이스케이프 때문에 사라지는 소비자 수)": 2
   },
   "바뀐 경로": [
    "data/lab/denominator.json",
    "docs/prereg_902_identify.md",
+   "docs/루프.md",
    "docs/지평/902.md",
    "docs/탐색/902.md",
    "ingest/audit.py",
    "paper/harness.py",
+   "runners/fiveprime902.py",
    "runners/ident902.py",
    "runners/out902_identify.json",
    "runners/out902_wiring.json",
+   "runners/out902b_fiveprime.json",
+   "runners/out902b_fiveprime_901.json",
+   "runners/out902b_selftest.json",
    "runners/out902h_snap.json",
-   "runners/out902h_snap.py"
+   "runners/out902h_snap.py",
+   "runners/quote901.py"
   ],
   "자별 역참조": {
    "전체 경로": {
-    "바늘 수": 11,
-    "소비자 수": 64,
-    "그중 .py": 30,
+    "바늘 수": 17,
+    "소비자 수": 70,
+    "그중 .py": 31,
     "rc": 0
    },
    "파일명": {
-    "바늘 수": 10,
-    "소비자 수": 106,
-    "그중 .py": 45,
+    "바늘 수": 16,
+    "소비자 수": 110,
+    "그중 .py": 46,
     "rc": 0
    },
    "모듈 점경로": {
-    "바늘 수": 4,
+    "바늘 수": 6,
     "소비자 수": 17,
     "그중 .py": 7,
     "rc": 0
@@ -76,6 +83,7 @@
   },
   "역참조 소비자(전량)": [
    "\"docs/\\353\\243\\250\\355\\224\\204.md\"",
+   "\"docs/\\354\\225\\204\\355\\202\\244\\355\\205\\215\\354\\262\\230.md\"",
    "\"docs/\\354\\232\\251\\354\\226\\264.md\"",
    "\"docs/\\354\\247\\200\\355\\217\\211/901.md\"",
    "\"docs/\\354\\247\\200\\355\\217\\211/902.md\"",
@@ -118,6 +126,7 @@
    "paper/steps/484_oneruler/main.tex",
    "paper/steps/484_oneruler/meta.json",
    "paper/steps/485_reachingdown/main.tex",
+   "paper/steps/486_nolever/meta.json",
    "paper/steps/65_audit-module/main.tex",
    "paper/steps/72_newruler/main.tex",
    "paper/steps/88_epochs/main.tex",
@@ -171,9 +180,11 @@
    "runners/out902_wiring.json",
    "runners/out902b_fiveprime.json",
    "runners/out902b_fiveprime_901.json",
+   "runners/out902b_selftest.json",
    "runners/out902h_snap.json",
    "runners/out902h_snap.py",
    "runners/pilot893.py",
+   "runners/quote901.py",
    "runners/ruler890.py",
    "runners/thresh891.py",
    "runners/verdict112.py",
@@ -184,14 +195,10 @@
    "serve/registry.py",
    "state/rank_test.py"
   ],
-  "돌렸다": [
-   "ingest/audit.py",
-   "runners/fiveprime902.py"
-  ],
-  "⚠ 돌렸다고 적었지만 소비자 목록에 없는 것": [
-   "runners/quote901.py"
-  ],
+  "돌렸다": [],
+  "⚠ 돌렸다고 적었지만 소비자 목록에 없는 것": "없음",
   "🔴 안 돌렸다(= 「없다」가 아니다 · 조항 59)": [
+   "ingest/audit.py",
    "ingest/notify.py",
    "ingest/wiki_after.py",
    "lab/decay.py",
@@ -204,6 +211,7 @@
    "runners/board898.py",
    "runners/dnc848.py",
    "runners/era870.py",
+   "runners/fiveprime902.py",
    "runners/floor892.py",
    "runners/ident902.py",
    "runners/knock894.py",
@@ -226,6 +234,7 @@
    "runners/out901h_link.py",
    "runners/out902h_snap.py",
    "runners/pilot893.py",
+   "runners/quote901.py",
    "runners/ruler890.py",
    "runners/thresh891.py",
    "runners/verdict112.py",
@@ -238,6 +247,7 @@
   ],
   "안 돌렸다(비 .py · 실행 대상 아님)": [
    "\"docs/\\353\\243\\250\\355\\224\\204.md\"",
+   "\"docs/\\354\\225\\204\\355\\202\\244\\355\\205\\215\\354\\262\\230.md\"",
    "\"docs/\\354\\232\\251\\354\\226\\264.md\"",
    "\"docs/\\354\\247\\200\\355\\217\\211/901.md\"",
    "\"docs/\\354\\247\\200\\355\\217\\211/902.md\"",
@@ -271,6 +281,7 @@
    "paper/steps/484_oneruler/main.tex",
    "paper/steps/484_oneruler/meta.json",
    "paper/steps/485_reachingdown/main.tex",
+   "paper/steps/486_nolever/meta.json",
    "paper/steps/65_audit-module/main.tex",
    "paper/steps/72_newruler/main.tex",
    "paper/steps/88_epochs/main.tex",
@@ -299,10 +310,12 @@
    "runners/out902_wiring.json",
    "runners/out902b_fiveprime.json",
    "runners/out902b_fiveprime_901.json",
+   "runners/out902b_selftest.json",
    "runners/out902h_snap.json"
   ],
   "안 돌린 .py 의 사유": {},
   "🔴 사유 없이 안 돌린 .py": [
+   "ingest/audit.py",
    "ingest/notify.py",
    "ingest/wiki_after.py",
    "lab/decay.py",
@@ -315,6 +328,7 @@
    "runners/board898.py",
    "runners/dnc848.py",
    "runners/era870.py",
+   "runners/fiveprime902.py",
    "runners/floor892.py",
    "runners/ident902.py",
    "runners/knock894.py",
@@ -337,6 +351,7 @@
    "runners/out901h_link.py",
    "runners/out902h_snap.py",
    "runners/pilot893.py",
+   "runners/quote901.py",
    "runners/ruler890.py",
    "runners/thresh891.py",
    "runners/verdict112.py",
@@ -354,7 +369,7 @@
   "검사": "2 게이트 --- 🔴 명부를 기계로 뽑는다(손 나열 금지)",
   "명부를 어떻게 뽑았나": "`git grep -lF -e '\"통과\":'` 로 **`통과` 를 키로 내는 `.py` 전량**",
   "🔴 게이트 생산자 수(분모)": 15,
-  "🔴 그중 이번 취합의 소비자인 것": 8,
+  "🔴 그중 이번 취합의 소비자인 것": 9,
   "게이트 생산자": [
    "ingest/audit.py",
    "runners/board898.py",
@@ -372,23 +387,22 @@
    "runners/snapcheck.py",
    "serve/registry.py"
   ],
-  "🔴 돌린 수": 3,
-  "돌렸다": [
-   "ingest/audit.py",
-   "runners/fiveprime902.py",
-   "runners/quote901.py"
-  ],
-  "🔴 안 돌린 수": 12,
+  "🔴 돌린 수": 0,
+  "돌렸다": [],
+  "🔴 안 돌린 수": 15,
   "🔴 안 돌렸다(= 「없다」가 아니다)": [
+   "ingest/audit.py",
    "runners/board898.py",
    "runners/dose113.py",
    "runners/dose896.py",
+   "runners/fiveprime902.py",
    "runners/inv901.py",
    "runners/nanfix115.py",
    "runners/note893_ledger.py",
    "runners/out899a_gates.py",
    "runners/pilot893.py",
    "runners/preflight928.py",
+   "runners/quote901.py",
    "runners/shape824.py",
    "runners/snapcheck.py",
    "serve/registry.py"
@@ -403,21 +417,16 @@
    "runners/out899a_gates.py": "다른 팔 소유 · 돌리면 `runners/out899a_gates.json` 을 덮어써서 동시에 도는 팔의 산출물을 깨뜨린다. 대신 **3 절이 그 산출물을 읽어 판정 키를 감사한다**"
   },
   "🔴 사유 없이 안 돌린 것": [
+   "ingest/audit.py",
    "runners/board898.py",
+   "runners/fiveprime902.py",
    "runners/nanfix115.py",
    "runners/note893_ledger.py",
    "runners/pilot893.py",
+   "runners/quote901.py",
    "serve/registry.py"
   ],
-  "돌린 게이트의 절별 판정": {
-   "법칙전용 누출": true,
-   "주장한 고침": true,
-   "T 전파": true,
-   "죽은 숫자": true,
-   "죽은 숫자(1 ULP 짝)": true,
-   "죽은 숫자(논문)": true,
-   "_초": 13.0
-  },
+  "돌린 게이트의 절별 판정": "안 돌렸다(--gates 를 안 줬다)",
   "🔴 실패한 절": "없음",
   "🔴 예외": "없음",
   "통과": false
@@ -1157,9 +1166,9 @@
      "🔴 코드 sha256(이게 자다)",
      "이 파일 sha256"
     ],
-    "시작 시각": "2026-08-10T19:24:47+00:00",
+    "시작 시각": "2026-08-10T20:13:46+00:00",
     "끝 시각": "🔴 없다",
-    "초": 56.5,
+    "초": 58.1,
     "시작<끝": null
    },
    "runners/out899a_gates.json": {
@@ -1169,9 +1178,9 @@
      "이 파일 sha256",
      "시각(UTC · 끝)"
     ],
-    "시작 시각": "2026-08-10T19:23:44+00:00",
-    "끝 시각": "2026-08-10T19:25:41+00:00",
-    "초": 117.4,
+    "시작 시각": "2026-08-10T20:12:41+00:00",
+    "끝 시각": "2026-08-10T20:14:41+00:00",
+    "초": 120.3,
     "시작<끝": true
    },
    "runners/out899a_nanfix115_trace.json": {
@@ -1181,7 +1190,7 @@
     ],
     "시작 시각": "🔴 없다",
     "끝 시각": "🔴 없다",
-    "초": 54.2,
+    "초": 55.2,
     "시작<끝": null
    },
    "runners/out899c_ruler890R12.json": {
@@ -1302,9 +1311,9 @@
      "🔴 입력 산출물 sha256",
      "시각(UTC · 끝)"
     ],
-    "시작 시각": "2026-08-10T20:02:31+00:00",
-    "끝 시각": "2026-08-10T20:03:01+00:00",
-    "초": 29.7,
+    "시작 시각": "2026-08-10T20:11:48+00:00",
+    "끝 시각": "2026-08-10T20:12:05+00:00",
+    "초": 17.3,
     "시작<끝": true
    },
    "runners/out902b_fiveprime_901.json": {
@@ -1326,8 +1335,8 @@
      "🔴 입력 산출물 sha256",
      "🔴 코드 sha256(이게 자다)"
     ],
-    "시작 시각": "2026-08-10T20:04:25+00:00",
-    "끝 시각": "2026-08-10T20:04:25+00:00",
+    "시작 시각": "2026-08-10T20:12:03+00:00",
+    "끝 시각": "2026-08-10T20:12:03+00:00",
     "초": 0.01,
     "시작<끝": false
    },
@@ -1472,7 +1481,7 @@
     "stdout 같나": true,
     "stderr 같나": true,
     "같나": true,
-    "⚠": "🔴 새 판의 `산출물: …` 한 줄만 떼고 견줬다"
+    "⚠": "🔴 `산출물:` 경로 한 줄을 **양쪽 다** `<경로>` 로 정규화하고 견줬다 --- 그 경로는 자기 파일 위치 기준이라 기준본과 작업본이 원리상 다르다"
    }
   },
   "⚠ 지운 것": "임시 디렉터리 이름만(`<TMP>`). 그 밖은 한 글자도 안 지웠다",
@@ -1632,15 +1641,15 @@
   "⓪ 관문(작업 트리)"
  ],
  "통과": false,
- "시각(UTC · 시작)": "2026-08-10T20:04:25+00:00",
+ "시각(UTC · 시작)": "2026-08-10T20:15:16+00:00",
  "🔴 코드 sha256(이게 자다)": {
-  "runners/fiveprime902.py": "e8f704c7954724b1",
+  "runners/fiveprime902.py": "39f38ce074b59e95",
   "runners/quote901.py": "1778c5659dcd3f8c"
  },
  "🔴 입력 산출물 sha256": {
-  "runners/out899a_gates.json": "d0bd90374a94462c"
+  "runners/out899a_gates.json": "097e708ca83601e6"
  },
- "⚠ git HEAD(시작 시점 · 판정에 쓰지 마라)": "259bb0b00cd328c263dcb1ccf0ffe5b67e373bf0",
- "시각(UTC · 끝)": "2026-08-10T20:04:54+00:00",
- "초": 29.4
+ "⚠ git HEAD(시작 시점 · 판정에 쓰지 마라)": "0c323056c5c8e4715b4547f980bb3dedab0d72d3",
+ "시각(UTC · 끝)": "2026-08-10T20:15:33+00:00",
+ "초": 17.5
 }
