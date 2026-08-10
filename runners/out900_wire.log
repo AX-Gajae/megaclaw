@@ -1,0 +1,31 @@
+/Users/ax/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/ax/world_model/state/tri_domain.py:290: UserWarning: media_push 채움 길이 불일치: 만화 2041 대 5905 --- 축이 빠진다
+  warnings.warn("media_push 채움 길이 불일치: %s %d 대 %d --- 축이 빠진다"
+/Users/ax/world_model/state/tri_domain.py:290: UserWarning: media_push 채움 길이 불일치: 만화 1789 대 5905 --- 축이 빠진다
+  warnings.warn("media_push 채움 길이 불일치: %s %d 대 %d --- 축이 빠진다"
+ㄱ 도메인 12 · 유보 합 3775 · sha 721a7b7e0d15
+ㄴ common=36 union=40 추가=['price', 'age_rating', 'ram_gb', 'n_category']
+ㄷ price: 도메인 ['게임'] · common False
+ㄷ n_category: 도메인 ['게임'] · common False
+ㄷ ram_gb: 도메인 ['게임'] · common False
+ㄷ age_rating: 도메인 ['게임'] · common False
+ㄹ A_common: order 36 · fit 열 88 · assert(예측<=설계) True
+ㄹ B_union: order 40 · fit 열 96 · assert(예측<=설계) True
+ㄹ C_domax: order 36 · fit 열 96 · assert(예측<=설계) True
+ㄹ D_nanpad: order 40 · fit 열 96 · assert(예측<=설계) True
+ㅁ B vs C 열집합 일치: True
+ㅅ 문턱 0.00353 / 0.0037 · 게임 하나로 넘으려면 Δ {'w': 180, '필요 Δ(문턱 0.00353)': 0.07403, '필요 Δ(문턱 0.00370)': 0.0776}
+=== 관문 ===
+{
+ "도메인 12": true,
+ "유보 합 3775": true,
+ "팔 B 열이 늘었다": true,
+ "팔 C 열이 늘었다": true,
+ "팔 D 열이 늘었다": true,
+ "예측 고유 <= 설계 고유행 (전 팔·전 도메인)": true,
+ "채점행 == 판 가중 (전 팔·전 도메인)": true,
+ "_design 열 == fit 열 (전 팔)": true,
+ "🔴 전부 통과": true
+}
+완료 · /Users/ax/world_model/runners/out900_wire.json

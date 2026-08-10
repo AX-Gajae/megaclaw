@@ -39,6 +39,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import re
 import subprocess
 from datetime import date
@@ -651,15 +652,81 @@ DEAD_NUMBERS = [
     # 조용히 **영구 False** 가 됐다 --- 검출기가 **원리상 못 봤기 때문**이다.
     # ⚠ 수리 A 실측: 이 수를 이고 있는 자리는 다섯이 아니라 **33 파일**이고 대부분 역사다.
     # 그래서 문맥어를 NOW_WORDS 로 건다 --- 안 걸면 33이 전부 걸린다.
+    # 🔴 **끝자리가 다른 짝은 두 줄이다 --- 한 줄로 못 적는다**(티처 #62 C4 · 노트 900).
+    # 아래 규칙(`ULP_TWIN_RULE`)의 실물이 이 두 행이다. `…707` 만 등록했더니
+    # `…708` 이 저장소 **9곳**에 있는데 검출기가 **한 곳도** 못 봤다.
+    #
+    # 🔴 **1 ULP 의 원인 서술이 틀렸었다 --- 정정한다(티처 #62 C5 · 노트 900 재현).**
+    # 옛 서술: *"`Data.pooled` 누적은 …84, `board898`/`wire898` 자체 누적은 …83"*.
+    # **누적 경로는 가르개가 아니다.** 수리 B 가 `out898_fits.npz`(씨앗0 예측·라벨)로
+    # 도메인별 점수를 다시 만들어 **같은 dict 를 두 순서로** 접었다(2026-08-11):
+    #
+    #   팔 A(서수 · 죽은 값)      삽입순서 0.4724867181663707 · 정렬순서 0.4724867181663708
+    #   팔 B(동률평균 · 산 값)    삽입순서 0.4731063028988084 · 정렬순서 0.4731063028988083
+    #   경로 차(`Data.pooled` − board898 자체 누적 · **같은 순서**)  = **0.0** (네 조합 전부)
+    #   순서 차(**같은 경로** · 삽입 − 정렬)  A −5.551e-17 · B +1.110e-16
+    #
+    # 즉 **진짜 가르개는 「도메인 반복 순서」다**:
+    #   · `lab/harness.py:275  tg = targets or list(data.dom)`  --- **삽입 순서** → …707/…84
+    #   · `runners/board898.py:143  doms = sorted(d0.dom)`      --- **정렬 순서** → …708/…83
+    # 두 경로는 같은 식(`num += v*w; den += w`)을 같은 순서로 접으면 **부동소수 동일**이다.
+    # 옛 서술은 *어느 프로그램이 무엇을 찍는지*는 맞혔고 **왜**를 틀렸다 --- 그래서
+    # "누적을 맞추면 같아진다"는 잘못된 처방을 낳았다. 맞춰야 하는 것은 **순서**다.
     ("0.4724867181663707", "0.4731063028988084",
-     "판 rho **씨앗 0**(정본 경로) --- 「서수 순위 시대 값」. 노트 898 이 판을 자에 맞추면서 은퇴. "
+     "판 rho **씨앗 0**(도메인 **삽입 순서** = `lab/harness.py:275 tg = list(data.dom)`) --- "
+     "「서수 순위 시대 값」. 노트 898 이 판을 자에 맞추면서 은퇴. "
      "옛 값은 `runners/board898.py`·`thr898.py` 가 옛 구현을 파일에 박아 오늘도 재현한다 --- "
      "역사에서는 옳고 「오늘/챔피언/정본」 딱지가 붙은 자리에서만 죽었다. "
-     "⚠ 산 값은 `Data.pooled` 누적 기준이다. `board898`·`wire898` 의 자체 누적은 1 ULP 아래"
-     "(0.4731063028988083)이고 `runners/text680.py:55` 가 그 표기를 쓴다 --- "
-     "`==` 게이트는 **어느 경로에서 나온 값인지**를 같이 적어야 한다",
+     "⚠ 1 ULP 짝은 `…708`(**정렬 순서**) --- 아래 행에 따로 등록했다. "
+     "`==` 게이트는 **어느 반복 순서에서 나온 값인지**를 같이 적어야 한다",
+     898, NOW_WORDS),
+    # 🔴 **티처 #62 C4 --- 등록된 죽은 값의 끝자리가 틀렸다.**
+    # 전 사이클의 수리 B 가 커밋 메시지 「못 한 것 6」에 *"…707 은 `out898_board.json` 의
+    # 씨앗0 서수 값 **…708**(끝자리 8)과 **다르다** --- 넘길 때 끝자리를 확인해야 한다"*
+    # 라고 **명시 경고**했는데, 취합 커밋이 *"요청문 그대로"* `…707` 만 등록했다.
+    # **경고가 한 커밋 만에 무시됐다.**
+    # `…708` 은 `board898`·`wire898`·`prereg_898_oneruler.md` 가 **오늘 실제로 내는 값**이고
+    # 저장소 9곳에 있다. `…707` 행은 그중 **한 곳도** 못 본다 --- 이유는 `ULP_TWIN_RULE`.
+    # 산 값도 짝이 다르다: 정렬 순서의 오늘 값은 `…83`(`…84` 아님).
+    ("0.4724867181663708", "0.4731063028988083",
+     "판 rho **씨앗 0**(도메인 **정렬 순서** = `runners/board898.py:143 sorted(d0.dom)`) --- "
+     "「서수 순위 시대 값」. `…707` 과 **같은 수가 아니라 1 ULP 위**다. "
+     "`board898`·`wire898`·`thr898` 이 내는 표기이고 `runners/text680.py:55` 가 그 짝(`…83`)을 쓴다. "
+     "역사에서는 옳고 「오늘/챔피언/정본」 딱지가 붙은 자리에서만 죽었다",
      898, NOW_WORDS),
 ]
+
+#: 🔴 **끝자리가 다른 짝을 어떻게 다루나 --- 규칙**(티처 #62 C4 · 노트 900).
+#:
+#: **① 1 ULP 짝은 딴 수다. 한 줄로 못 적는다 --- 각각 등록한다.**
+#: `_same_number()` 가 있는데 왜 `…708` 을 못 잡았나 --- **부를 기회가 없었다**:
+#:   · `_spans()` 는 `re.finditer(re.escape(dead), line)` --- **글자 그대로의 부분
+#:     문자열**을 찾는다. **은퇴**한 두 표기 `"0.4724867181663708"` 안에
+#:     `"0.4724867181663707"` 은 **없다.** 매치가 0이면 `_same_number` 는
+#:     **한 번도 안 불린다.**
+#:   · `_same_number` 가 여는 문은 오른쪽 하나뿐이다: `dead` 가 **접두사**이고
+#:     뒤에 숫자가 더 붙은 것(`0.4689`(**은퇴**) → `0.46891…`)이 **같은 수를 더
+#:     정밀하게** 적은 것인가. 끝자리가 갈리는 짝은 접두사 관계가 **아니다.**
+#:   · 소수 4자리 규칙(`len(...) < 4 → False`)은 이 자리와 무관하다. 설령 규칙이
+#:     불렸어도 `nd=16` 반올림에서 `…707 != …708` 이다 --- **애초에 다른 수이므로
+#:     같은 수 규칙으로는 원리상 못 잡는다.** `_same_number` 는 *표기* 문제를 풀고
+#:     ULP 짝은 *값* 문제다. 자를 넓히는 것으로는 안 닫히고, **줄을 늘려야 닫힌다.**
+#:
+#: **② 전정밀 값(소수 12자리 이상)을 등록할 때는 짝을 기계로 세어라.**
+#: 손으로 「끝자리를 확인해야 한다」고 적는 것은 이번에 **한 커밋 만에 무시됐다.**
+#: 그래서 `ulp_twins()` 가 등록된 전정밀 값의 이웃 부동소수(`nextafter` ±N)를
+#: 저장소에서 찾아 **등록 안 된 것이 있으면 실패**를 낸다(조항 60 · 손 전사 금지).
+#:
+#: **③ 산 값도 짝이 갈린다.** 죽은 값의 순서가 갈리면 그 순서의 산 값도 갈린다 ---
+#: 짝을 등록할 때 산 값 칸을 그대로 베끼면 사면 토큰이 어긋난다(`…707↔…84` ·
+#: `…708↔…83`).
+ULP_TWIN_RULE = (
+    "끝자리가 다른 짝(1 ULP)은 딴 수다 --- `_same_number` 는 **접두사 확장**만 보므로 "
+    "원리상 못 잡는다. 각각 등록하고, 등록 누락은 `ulp_twins()` 가 기계로 센다")
+
+#: `ulp_twins()` 가 이웃을 몇 걸음까지 보나. 12씨앗 합·순서 뒤집기에서 나는 차가
+#: 실측 1~2 ULP 였으므로(노트 900 재현) 넉넉히 넷.
+ULP_STEPS = 4
 
 #: 죽은 숫자를 찾을 **살아 있는 문서**. 대장(`denominator.json`)은 일부러 뺀다.
 #: 노트 736 --- **입문서도 산 문서다.** 11면이 0.134 를 일곱 번 이고 있었는데 검사 밖이었다.
@@ -1016,6 +1083,19 @@ def _dirty_papers() -> set:
     return out
 
 
+#: 🔴 errata 사면의 **사정거리**를 재는 도구(티처 #63 C2).
+#: errata 가 그 논문의 `.tex` 파일 이름을 하나라도 **지목**하는가.
+#: 지목이 있으면 그 파일들만 사면 대상이고, 하나도 없으면 관행대로 본문(`main.tex`)만.
+#: 🔴 못 여는 것은 「없다」가 아니다 --- 예외는 삼키지 않고 **지목 없음이 아니라 지목 있음**
+#: 쪽으로 넘어가지 않도록, 실패하면 보수적으로 False(= main.tex 만 사면)를 낸다.
+def _errata_names_tex(errata: str, d: Path) -> bool:
+    try:
+        names = [q.name for q in d.glob("*.tex")]
+    except Exception:
+        return False
+    return any(n in errata for n in names)
+
+
 def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> dict:
     """죽은 숫자가 논문에 인쇄돼 있나(노트 886 · 티처 #50 M7).
 
@@ -1025,13 +1105,21 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
     🔴 **검사 대상 밖은 통과가 아니라 「모른다」다**(조항 59 · 티처 #61 C2).
     옛 판은 `paper/steps/*/meta.json` 을 훑고 읽기 실패하면 `continue` 했다 ---
     `meta.json` 을 **지우면** 그 논문이 시야에서 사라지고 게이트는 ✅ 를 찍었다.
-    이제 디렉터리를 훑어 `main.tex`/`meta.json` 을 못 읽은 것을 `모른다` 로 세고,
+    이제 디렉터리를 훑어 `.tex`/`meta.json` 을 못 읽은 것을 `모른다` 로 세고,
     하나라도 있으면 **통과가 아니다**.
+
+    🔴 **본문은 「폴더 안의 `.tex`」다 --- 「`main.tex` 라는 이름」이 아니다**
+    (티처 #62 C6 · 노트 900). 옛 판은 `main.tex` **한 이름**만 읽었고, 못 읽으면
+    「미착수」로 갈라 **검사 대상에서 뺐다.** 그래서 `main.tex` 를 `body.tex` 로
+    **이름만 바꾸면** 죽은 숫자가 든 본문이 폴더에 그대로 있는데 통과 true 가 났다.
+    ⚠ 이 갈래는 **직전 사이클이 신설**했고, 그때 심기시험은 meta 위조 세 방향
+    (껍데기 · `sent:true` · `claims` 있음)만 봤다 --- **파일명 방향을 안 봐서 뚫렸다.**
     """
     from datetime import datetime as _dt
 
     cut = _dt.fromisoformat(baseline_at)
     dirty = _dirty_papers()
+    amnestied_by_errata: list = []
     fresh, aged, unknown, skipped = [], [], [], []
     if dirty is None:
         unknown.append({"논문": "(전체)", "못 읽은 것": "git status",
@@ -1039,30 +1127,50 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
     steps = ROOT / "paper/steps"
     dirs = sorted(p for p in steps.iterdir() if p.is_dir()) if steps.is_dir() else []
     for d in dirs:
-        meta_p, tex_p = d / "meta.json", d / "main.tex"
+        meta_p = d / "meta.json"
         try:
             meta = json.loads(meta_p.read_text())
         except Exception as e:
             unknown.append({"논문": d.name, "못 읽은 것": "meta.json",
                             "왜": f"{type(e).__name__}"})
             meta = {}
-        try:
-            tex = tex_p.read_text()
-        except Exception as e:
+        # 🔴 **본문은 「`main.tex` 라는 이름의 파일」이 아니라 「폴더 안의 `.tex`」다**
+        # (티처 #62 C6 · 노트 900). 옛 코드는 `d / "main.tex"` 하나만 읽었고,
+        # 못 읽으면 아래 「미착수」 갈래로 갔다. 그래서 **`main.tex` 를 `body.tex` 로
+        # 이름만 바꾸면** 죽은 숫자가 든 본문이 폴더에 그대로 있는데 미착수로 갈리고
+        # `paper_dead()` 가 통과 true 를 냈다(티처가 심어서 확인).
+        # **게이트가 확인하던 것은 「본문이 없다」가 아니라 「그 이름의 파일이 없다」였다.**
+        # ⚠ 같은 구멍이 한 켜 더 있었다: `main.tex` 가 **있어도** 옆의 `body.tex` 는
+        # 안 봤다. 그래서 이제 **폴더 안 `.tex` 전량**을 읽는다. 2026-08-11 실측으로
+        # `paper/steps/**` 의 `.tex` 는 `main.tex` 687개뿐이므로 빚은 안 움직인다.
+        texs = sorted(d.glob("*.tex"))
+        bodies, tex_paths = [], []
+        for q in texs:
+            try:
+                bodies.append((q.name, q.read_text()))
+                tex_paths.append(q)
+            except Exception as e:
+                unknown.append({"논문": d.name, "못 읽은 것": q.name,
+                                "왜": f"{type(e).__name__}"})
+        if not texs:
             # 🔴 **미착수 스텝은 「못 읽었다」가 아니라 「아직 안 썼다」다**(노트 899).
             # 수리 B 가 glob 을 디렉터리 순회로 바꾸자 `112_bothears` 가 드러났는데,
             # 세어 보니 그건 결함이 아니라 **본문을 한 줄도 안 쓴 껍데기**였다:
             # claims [] · figures [] · sent false · 초기 스냅샷 이후 손댄 적 없음.
             # 그 셋을 **전부** 만족할 때만 「미착수」로 가른다 --- 하나라도 어긋나면
             # 「모른다」로 남는다. 발행 흔적이 있는데 본문이 없으면 그건 진짜 사고다.
+            # 🔴 그리고 **`.tex` 가 한 장도 없을 때만** 여기 온다(티처 #62 C6).
             if (not meta.get("claims") and not meta.get("figures")
                     and not meta.get("sent")):
                 skipped.append({"논문": d.name, "왜": "미착수 껍데기",
-                                "근거": "claims [] · figures [] · sent false · main.tex 없음"})
+                                "근거": "claims [] · figures [] · sent false · "
+                                        "**폴더 안 `.tex` 0장**"})
                 continue
-            unknown.append({"논문": d.name, "못 읽은 것": "main.tex",
-                            "왜": f"{type(e).__name__}"})
+            unknown.append({"논문": d.name, "못 읽은 것": "*.tex",
+                            "왜": "FileNotFoundError"})
             continue
+        if not bodies:
+            continue                       # 전량 읽기 실패 --- 위에서 `모른다` 로 셌다
         errata = str(meta.get("errata", ""))
         # 🔴 894 수리(티처 #56 M6). 옛 코드는 `meta["created"]` **하나**를 봤는데 그건
         # 저자가 손으로 적는 문자열이다 --- 480 의 `created`(15:05:00 · 초가 00)가
@@ -1077,7 +1185,7 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
                 stamps.append(_dt.fromisoformat(str(meta.get(k, ""))))
             except Exception:
                 pass
-        for q in (meta_p, tex_p):
+        for q in [meta_p] + tex_paths:
             try:
                 stamps.append(_dt.fromtimestamp(q.stat().st_mtime))
             except Exception:
@@ -1088,41 +1196,64 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
         # 그 사실을 `모른다` 로 올린다 --- 통과가 아니다.
         is_fresh = (bool(stamps) and max(stamps) >= cut) or (
             dirty is not None and d.name in dirty)
-        lines = tex.splitlines()
-        for i, ln in enumerate(lines, 1):
-            near = "\n".join(lines[max(0, i - 1 - 2):i + 2])
-            off = sum(len(x) + 1 for x in lines[max(0, i - 1 - 2):i - 1])
-            for row in DEAD_NUMBERS:
-                dead, live, what, note = row[:4]
-                ctx = row[4] if len(row) > 4 else None
-                sp = _spans(dead, ln)
-                if not sp:
-                    continue
-                # **주장어 행은 문맥 선거름을 걸지 않는다**(`_claim_row` 참조).
-                # 맨 숫자(*"판 rho 는 〈은퇴한 수〉 이다."*)가 영영 안 잡히던 자리다.
-                if ctx and not _claim_row(ctx) and not any(w in ln for w in ctx):
-                    continue
-                # 🔴 **사면 규칙 --- 표시는 그 숫자에 붙어야 한다**(`_amnestied`).
-                # 근거와 실측은 `_mark_owner` 의 docstring 에 한 벌만 적었다 ---
-                # 두 곳에 같은 판단을 베끼면 갈라진다.
-                if all(_amnestied(near, (s + off, e + off), live) for s, e in sp):
-                    continue
-                # 🔴 **errata 사면을 좁힌다**(티처 #61 C2). 옛 규칙은 `dead in errata`
-                # **부분문자열 하나**였다 --- `errata: "0.46982"` 처럼 숫자만 적으면
-                # 설명 0글자로 통과했다. 표시는 「무엇이 왜 오탐인가」이지 숫자가 아니다.
-                # 이제 셋 다 요구한다: ①그 숫자 ②산 값이나 정정 표시 낱말 ③설명 20자 이상.
-                if (dead in errata and len(errata.strip()) >= 20
-                        and (live.split("(")[0] in errata
-                             or any(m in errata for m in OK_MARKS))):
-                    continue
-                rec = {"논문": d.name, "줄": i, "죽은 값": dead,
-                       "산 값": live, "무엇": what, "정정 노트": note,
-                       "errata 있나": bool(errata)}
-                (fresh if is_fresh else aged).append(rec)
+        for fname, tex in bodies:
+            lines = tex.splitlines()
+            for i, ln in enumerate(lines, 1):
+                near = "\n".join(lines[max(0, i - 1 - 2):i + 2])
+                off = sum(len(x) + 1 for x in lines[max(0, i - 1 - 2):i - 1])
+                for row in DEAD_NUMBERS:
+                    dead, live, what, note = row[:4]
+                    ctx = row[4] if len(row) > 4 else None
+                    sp = _spans(dead, ln)
+                    if not sp:
+                        continue
+                    # **주장어 행은 문맥 선거름을 걸지 않는다**(`_claim_row` 참조).
+                    # 맨 숫자(*"판 rho 는 〈은퇴한 수〉 이다."*)가 영영 안 잡히던 자리다.
+                    if ctx and not _claim_row(ctx) and not any(w in ln for w in ctx):
+                        continue
+                    # 🔴 **사면 규칙 --- 표시는 그 숫자에 붙어야 한다**(`_amnestied`).
+                    # 근거와 실측은 `_mark_owner` 의 docstring 에 한 벌만 적었다 ---
+                    # 두 곳에 같은 판단을 베끼면 갈라진다.
+                    if all(_amnestied(near, (s + off, e + off), live)
+                           for s, e in sp):
+                        continue
+                    # 🔴 **errata 사면을 좁힌다**(티처 #61 C2). 옛 규칙은 `dead in errata`
+                    # **부분문자열 하나**였다 --- `errata: "0.46982"` 처럼 숫자만 적으면
+                    # 설명 0글자로 통과했다. 표시는 「무엇이 왜 오탐인가」이지 숫자가 아니다.
+                    # 이제 셋 다 요구한다: ①그 숫자 ②산 값이나 정정 표시 낱말 ③설명 20자 이상.
+                    # 🔴 **그리고 사면을 「그 논문」이 아니라 「그 파일」에 건다**(티처 #63 C2).
+                    # 위 셋을 다 채워도 옛 규칙은 **논문 단위**였다 --- `meta.json` 의 errata 가
+                    # 한 번 그 숫자를 담으면 그 폴더의 **모든 `.tex` 모든 줄**이 통째로 사면됐다.
+                    # 티처 #63 이 심어서 확인: `485_reachingdown/_zzF.tex` 에
+                    # **그 논문 errata 가 담은 은퇴값**(0.46982 · 은퇴 · 노트 898)을 한 줄
+                    # 인쇄 → **통과 True · 경성 0**. 같은 자리에 **그 논문 errata 에 없는**
+                    # 다른 은퇴값(0.4932 · 은퇴 · 노트 556)을 넣으면 경성 1 로 즉시 걸린다
+                    # --- 즉 매처는 멀쩡했고 **사면의 사정거리가 넓었다.**
+                    # ⚠ 이 주석을 처음 쓸 때 두 수를 딱지 없이 적었다가 **이 게이트가 나를
+                    # 잡았다**(통과 false · 경성 2). 설계대로다 --- 그래서 딱지를 붙였다.
+                    # 이제 errata 가 **그 파일을 지목해야** 그 파일이 사면된다. 지목이 하나도
+                    # 없으면 관행대로 본문(`main.tex`)에만 적용한다 --- errata 는 본문의 정정이다.
+                    if (dead in errata and len(errata.strip()) >= 20
+                            and (live.split("(")[0] in errata
+                                 or any(m in errata for m in OK_MARKS))
+                            and (fname in errata
+                                 or (fname == "main.tex"
+                                     and not _errata_names_tex(errata, d)))):
+                        amnestied_by_errata.append(
+                            {"논문": d.name, "파일": fname, "줄": i, "죽은 값": dead})
+                        continue
+                    rec = {"논문": d.name, "파일": fname, "줄": i, "죽은 값": dead,
+                           "산 값": live, "무엇": what, "정정 노트": note,
+                           "errata 있나": bool(errata)}
+                    (fresh if is_fresh else aged).append(rec)
     over = len(aged) > debt
     from collections import Counter as _C
     return {"검사": "죽은 숫자가 논문에 인쇄돼 있나",
             "논문 수": len(dirs),
+            # 🔴 **사면을 보이게 한다**(티처 #63 C2). 사면은 조용하면 안 된다 ---
+            # 숨은 사면은 「없다」와 구별이 안 된다(조항 59).
+            "⚠ errata 로 사면된 자리": amnestied_by_errata or "없음",
+            "⚠ errata 사면 수": len(amnestied_by_errata),
             "기준선": baseline_at,
             "🔴 기준선 뒤 논문(경성 실패)": fresh or "없음",
             "🔴 검사 못 한 논문(모른다)": unknown or "없음",
@@ -1209,7 +1340,7 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
 #: 함께 여는 자리가 있다). **개별 토글 실측을 그대로 적었고, 합을 맞추려 고르지 않았다.**
 #: ⚠ **판정 자리(경성)는 0 이 아니다** --- 아래 `걸린 곳` 넷은 전부 남의 파일이라
 #: 이 팔이 안 고친다(보고로 넘긴다).
-DEAD_HISTORY_DEBT = 389
+DEAD_HISTORY_DEBT = 390
 
 #: 🔴 **문서별 등록**(티처 #61 C3 이빨 ② · 2026-08-10 실측). 총합만 있으면
 #: 한 곳이 늘고 다른 곳이 줄 때 **상쇄돼 안 보인다** --- 그 상쇄가 위 문단의 옛
@@ -1221,6 +1352,22 @@ DEAD_HISTORY_DEBT = 389
 #: **손 추정 금지**. 늘어난 몫은 여섯 팔이 이 사이클에 낸 `runners/out899*` 산출물과,
 #: 씨앗0 상수 `0.4724867181663707`(**은퇴** · 「서수 순위 시대 값」)를 **새로 등록**해서 눈을 뜬 자리들이다.
 #: **판정 자리는 0** --- `걸린 곳: 없음`. 새로 인쇄된 것이 아니라 **눈을 뜬 결과**다.
+#: 🔴 **2026-08-11 재확정(노트 900 · 389 -> 391).** `--ratchet` 실측이다(손 추정 금지).
+#: 이 팔(수리 B)의 몫은 **+2** 하나뿐이고, 나머지는 같은 시각에 도는 다른 수리 팔의
+#: 산출물 표류다(실측: `runners/out899a_gates.json` +1 · `out899a_dose896_step0.json` +1
+#: · `refit112.py` −1 · 착수 시점의 `out899a_gates.json` 등록 초과 −1).
+#: 셈의 앞 두 항은 이렇다:
+#:   · **−1** `runners/out899a_gates.json` --- 등록은 1인데 오늘 재면 **0** 이다.
+#:     이 어긋남은 노트 900 이 손대기 **전에 이미** 있었다(수리 B 착수 시 실측
+#:     `수 388 / 등록 389`). 등록이 실측보다 컸으므로 래칫은 조용했다 --- **등록이
+#:     실측보다 큰 것도 결함이다.** 총합 래칫은 그 방향을 안 본다.
+#:   · **+2** `runners/out898_board.json`·`.899a.json` --- 씨앗0 상수의 **1 ULP 짝**
+#:     `0.4724867181663708`(**은퇴** · 티처 #62 C4)을 새로 등록해서 눈을 떴다.
+#:     나머지 일곱 자리는 같은 문단에 산 값이 있어 사면된다(아래 보고 참조).
+#: ⚠ **이 등록은 사이클 중간에 잰 값이다.** 수리 팔 여럿이 `runners/**` 를 동시에
+#: 고치고 있어서 실측이 재는 순간마다 흔들린다(잰 뒤 `runners/refit112.py` 가
+#: 3 -> 2 로 줄었다 --- 등록이 실측보다 커지는 방향이라 래칫은 조용하다).
+#: 🔴 **취합 커밋이 `python3 -m ingest.audit --ratchet` 을 다시 돌려 재등록하라.**
 DEAD_HISTORY_BY_DOC: dict = {
     "data/lab/denominator.json": 241,
     "docs/prereg_897_architecture.md": 2,
@@ -1264,8 +1411,8 @@ DEAD_HISTORY_BY_DOC: dict = {
     "runners/out892_stdout.txt": 2,
     "runners/out896_armB.json": 3,
     "runners/out896_step0.json": 2,
-    "runners/out898_board.899a.json": 1,
-    "runners/out898_board.json": 1,
+    "runners/out898_board.899a.json": 2,
+    "runners/out898_board.json": 2,
     "runners/out898_confirm.json": 1,
     "runners/out898_confirm.txt": 1,
     "runners/out898_verdict.json": 2,
@@ -1275,7 +1422,7 @@ DEAD_HISTORY_BY_DOC: dict = {
     "runners/out899a_verdict112.json": 12,
     "runners/out899c_ruler890R12.json": 1,
     "runners/rebase837.py": 1,
-    "runners/refit112.py": 3,
+    "runners/refit112.py": 2,
     "runners/rerun112.py": 1,
     "runners/ruler890.py": 1,
     "runners/ship736.py": 1,
@@ -1722,6 +1869,100 @@ def dead_numbers(debt: int = DEAD_HISTORY_DEBT) -> dict:
             "왜": "노트 672 — 메모리 색인이 100노트 넘게 죽은 판 수치를 이고 있었다"}
 
 
+def _ulp_neighbours(dead: str, steps: int = ULP_STEPS) -> list[str]:
+    """`dead` 의 **부동소수 이웃** 표기들. 자기 자신은 뺀다.
+
+    `repr(float)` 을 쓴다 --- 파이썬이 그 부동소수를 찍는 **표준 표기**이고,
+    저장소의 전정밀 숫자는 전부 `json.dump`/`repr` 에서 나왔으므로 같은 꼴이다.
+    """
+    try:
+        d = float(dead)
+    except ValueError:
+        return []
+    out, v = [], d
+    for _ in range(steps):
+        v = math.nextafter(v, math.inf)
+        out.append(repr(v))
+    v = d
+    for _ in range(steps):
+        v = math.nextafter(v, -math.inf)
+        out.append(repr(v))
+    return [s for s in dict.fromkeys(out) if s != dead]
+
+
+#: `ulp_twins()` 가 볼 최소 정밀도. 이보다 굵은 값(`0.4689` --- **은퇴**한 판 rho)은
+#: 표기이지 부동소수가 아니므로 이웃을 따지는 것이 뜻이 없다.
+ULP_MIN_DECIMALS = 12
+
+
+def ulp_twins() -> dict:
+    """🔴 **등록된 전정밀 죽은 값의 「끝자리가 다른 짝」이 등록 밖에 있나**(티처 #62 C4).
+
+    규칙 자체는 `ULP_TWIN_RULE` 에 적었다. 여기는 그 규칙을 **기계로** 지키는
+    자리다 --- 이번 결함의 뿌리는 규칙이 없어서가 아니라, 규칙이 **커밋 메시지의
+    사람 경고**로만 있었고 그것이 **한 커밋 만에 무시**됐다는 것이기 때문이다
+    (조항 60 · 손 전사 금지).
+
+    무엇을 보나: 등록된 죽은 값 중 소수 `ULP_MIN_DECIMALS` 자리 이상인 것의
+    `nextafter` 이웃 `±ULP_STEPS` 걸음을, `dead_numbers()` 와 **같은 문서 집합**
+    (살아 있는 발행물 + 역사 아카이브)과 논문 본문에서 글자 그대로 찾는다.
+    하나라도 나오면 **실패** --- 그 수는 등록돼야 한다.
+
+    ⚠ **못 보는 것**(여기 적는 것이 이 검사의 절반이다):
+      · 표기가 `repr(float)` 이 아닌 것(`%.16f` · 지수 표기 · 손 반올림).
+        ⚠ `repr` 은 이웃으로 갈수록 **길어지기도** 한다 --- `repr(nextafter(
+        0.4731063028988083)) == "0.47310630289880834"`(17자리). 문서가 짧은 꼴로
+        적었으면 이 자는 못 본다.
+      · `ULP_STEPS` 걸음 밖. 순서 뒤집기는 실측 1~2 ULP 였다(노트 900:
+        `…707`→`…708` 이 **1 ULP** · `…83`→`…84` 가 **2 ULP**).
+      · 죽은 값이 **굵게**(소수 5자리) 등록된 계열 --- 이웃 개념이 없다.
+    """
+    reg = set()
+    for row in DEAD_NUMBERS:
+        reg.add(row[0])
+        reg.add(row[1])
+    targets = {}
+    for row in DEAD_NUMBERS:
+        dead = row[0]
+        if "." not in dead or len(dead.split(".")[1]) < ULP_MIN_DECIMALS:
+            continue
+        for t in _ulp_neighbours(dead):
+            if t not in reg:
+                targets.setdefault(t, []).append(dead)
+    docs = list(live_docs()) + sorted(history_docs())
+    steps = ROOT / "paper/steps"
+    if steps.is_dir():
+        docs += sorted(str(p.relative_to(ROOT))
+                       for p in steps.glob("*/*.tex"))
+    hits = []
+    for rel in dict.fromkeys(docs):
+        try:
+            text = (ROOT / rel).read_text()
+        except Exception:
+            continue
+        for i, ln in enumerate(text.splitlines(), 1):
+            for t, srcs in targets.items():
+                if t in ln and _found(t, ln):
+                    hits.append({"문서": rel, "줄": i, "짝": t,
+                                 "등록된 값": srcs[0]})
+    from collections import Counter as _C
+    return {"검사": "등록된 죽은 값의 1 ULP 짝이 등록 밖에 있나",
+            "규칙": ULP_TWIN_RULE,
+            "본 값(전정밀 등록)": sorted(
+                {r[0] for r in DEAD_NUMBERS
+                 if "." in r[0]
+                 and len(r[0].split(".")[1]) >= ULP_MIN_DECIMALS}),
+            "이웃 걸음": ULP_STEPS, "찾은 표기 수": len(targets),
+            "문서": len(dict.fromkeys(docs)),
+            "통과": not hits,
+            "🔴 등록 밖 짝": hits or "없음",
+            "짝별": dict(_C(h["짝"] for h in hits).most_common()) or "없음",
+            "왜": ("티처 #62 C4 — `…707` 만 등록했더니 `board898` 이 **오늘 내는** "
+                  "`…708` 이 저장소 9곳에 있는데 검출기가 한 곳도 못 봤다. "
+                  "`_same_number` 는 **접두사 확장**만 보므로 끝자리가 갈리는 짝은 "
+                  "원리상 못 잡는다 — 자를 넓히는 것이 아니라 줄을 늘려야 닫힌다.")}
+
+
 def audit() -> dict:
     return {"생성": date.today().isoformat(),
             "덮음": coverage(), "신선도": freshness(),
@@ -1730,6 +1971,7 @@ def audit() -> dict:
             "주장한 고침": claimed_fixes(),
             "T 전파": t_propagation(),
             "죽은 숫자": dead_numbers(),
+            "죽은 숫자(1 ULP 짝)": ulp_twins(),
             "죽은 숫자(논문)": paper_dead(),
             "승인 대기": pending()}
 
