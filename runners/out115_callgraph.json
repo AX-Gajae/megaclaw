@@ -1,0 +1,92 @@
+{
+ "무엇": "이슈 #115 ③ --- 호출 경로 세기(AST)",
+ "🔴 어떻게 셌나": {
+  "ㄱ": "저장소 전체 .py 를 ast.parse 로 읽어 Call 노드의 이름을 센다 --- 훑은 파일 604개",
+  "ㄴ": "문자열·주석 안 이름은 안 센다(grep 과 다른 점)",
+  "ㄷ": "**같은 이름의 다른 함수도 같이 잡힌다** --- 그래서 '정의가 있는 파일'을 같이 실어 사람이 가를 수 있게 한다(동명이인 문제)",
+  "ㄹ": "실제 실행 증거는 `trace` 가 따로 낸다 --- AST 는 '불릴 수 있다'까지만 말한다"
+ },
+ "대상": {
+  "decay.transfer": {
+   "정의": [
+    "lab/decay.py:172",
+    "state/dual.py:90"
+   ],
+   "자기 파일 안 호출": [],
+   "다른 파일 호출": [
+    "runners/xfer790.py:49",
+    "state/dual.py:129"
+   ],
+   "다른 파일 호출 수": 2
+  },
+  "sideaudit.audit": {
+   "정의": [
+    "harness/label_hygiene.py:212",
+    "ingest/audit.py:967",
+    "ingest/link_audit.py:49",
+    "ingest/news_context.py:138",
+    "lab/poolshadow.py:106",
+    "lab/provenance.py:293",
+    "lab/sideaudit.py:814"
+   ],
+   "자기 파일 안 호출": [
+    "lab/sideaudit.py:832"
+   ],
+   "다른 파일 호출": [
+    "harness/label_hygiene.py:257",
+    "ingest/audit.py:983",
+    "ingest/link_audit.py:88",
+    "ingest/news_context.py:189",
+    "lab/loop.py:1111",
+    "lab/poolshadow.py:146",
+    "lab/provenance.py:307"
+   ],
+   "다른 파일 호출 수": 7
+  },
+  "sideaudit.post_state": {
+   "정의": [
+    "lab/sideaudit.py:105"
+   ],
+   "자기 파일 안 호출": [
+    "lab/sideaudit.py:822"
+   ],
+   "다른 파일 호출": [],
+   "다른 파일 호출 수": 0
+  },
+  "sideaudit.collect_order": {
+   "정의": [
+    "lab/sideaudit.py:214"
+   ],
+   "자기 파일 안 호출": [
+    "lab/sideaudit.py:824"
+   ],
+   "다른 파일 호출": [],
+   "다른 파일 호출 수": 0
+  },
+  "sideaudit.shared_sign": {
+   "정의": [
+    "lab/sideaudit.py:703"
+   ],
+   "자기 파일 안 호출": [
+    "lab/sideaudit.py:825"
+   ],
+   "다른 파일 호출": [],
+   "다른 파일 호출 수": 0
+  },
+  "calib.drift_corrected": {
+   "정의": [
+    "lab/calib.py:235"
+   ],
+   "자기 파일 안 호출": [],
+   "다른 파일 호출": [
+    "serve/boardsvc.py:362"
+   ],
+   "다른 파일 호출 수": 1
+  }
+ },
+ "시각(UTC)": "2026-08-10T10:34:11+00:00",
+ "git HEAD": "33926f2af725faad8bb2497f4cc886af9c6799d4",
+ "코드 sha256": "b2456b6db865ee28e532370617c4e4ecee0174b3af96b98961afef5fa1a67436",
+ "코드": "runners/nanfix115.py",
+ "scipy": "1.13.1"
+}

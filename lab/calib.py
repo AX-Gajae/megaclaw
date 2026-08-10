@@ -95,7 +95,15 @@ def wiring(fc: dict, data: Data, T: float = T_CUT) -> dict:
 # ── 되돌림 셋. **전부 학습 행에서만 배운다** ──────────────────────
 def inv_percentile(ptr, ytr, p):
     """예보 백분위 → 학습 라벨의 같은 분위(노트 691 이 쓴 것)."""
-    q = (rankdata(ptr) - 0.5) / len(ptr)
+    # 🔴 이슈 #115 --- 여기서 만드는 `q` 는 **둘째 반환값**이고 저장소의 일곱
+    # 호출자(`drift_corrected`:245·247 · corr801:64,65 · corr802:64,65 ·
+    # calib791:42)가 **전부 버린다**(`[0]` 또는 `yA, _ =`). 그런데
+    # `drift_corrected` 는 `serve/boardsvc.py:362` 의 **서빙 경로**다 --- 아무도
+    # 안 쓰는 값 때문에 서빙을 죽이는 것은 나쁜 거래라, 여기만 예외가 아니라
+    # **마스크 + 회계**(pairboot.NAN_LOG)로 간다.
+    from .pairboot import safe_rank
+    q = (safe_rank(ptr, where="calib.inv_percentile(q · 호출자 7/7 이 버림)",
+                   on_nan="mask") - 0.5) / len(ptr)
     srt = np.sort(ytr)
     #: 유보 예보의 백분위를 **학습 예보 분포 안에서** 매긴다
     pct = np.searchsorted(np.sort(ptr), p, side="left") / max(len(ptr) - 1, 1)
@@ -113,7 +121,12 @@ def inv_holdout_pct(ptr, ytr, p):
     ⚠️ **전이적(transductive)이다.** 유보 예보 *분포* 를 쓰므로 **한 건씩
     예보하는 데는 못 쓰고 배치 채점에만** 쓸 수 있다. 라벨은 안 본다.
     """
-    pct = (rankdata(p) - 0.5) / len(p)
+    # 🔴 이슈 #115 --- 여기 `pct` 는 **반환값 그 자체**라 NaN 하나면 그 도메인의
+    # 절대값이 통째로 NaN 이 되고 부르는 쪽이 '이 도메인은 못 낸다' 로 읽는다.
+    # 호출자 다섯(abscorr840 · calib792 · corr801 · corr802 · iqr798)은 전부
+    # 손으로 돌리는 runner 이고 예외를 삼키는 자리가 없다 --- **예외가 맞다.**
+    from .pairboot import safe_rank
+    pct = (safe_rank(p, where="calib.inv_holdout_pct") - 0.5) / len(p)
     srt = np.sort(ytr)
     return np.interp(pct, np.linspace(0, 1, len(srt)), srt), None
 

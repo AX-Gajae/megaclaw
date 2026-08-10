@@ -25,6 +25,28 @@ from state.tri_domain import ALL5
 from .harness import Data
 
 
+# ── 이슈 #115 --- **모형 예보에 걸는 rankdata 마스크** ───────────────────
+#
+# `scipy 1.13` 의 `rankdata` 는 배열에 NaN 이 하나만 있어도 **전부 NaN** 을 낸다.
+# 라벨 쪽은 `harness.py:288·309-310` 이 막는다(노트 273·274 가 이 병으로 죽어서
+# 넣은 가드). 막히지 **않는** 것은 *모형 예보* 쪽이다 --- 예보 한 칸이 NaN 이면
+# 그 도메인의 예보 벡터 전체가 NaN 이 되고, `harness._score_one` 이 조용히
+# `None` 을 돌려주며 도메인이 **'채택' 목록에는 남은 채** 판에서 사라진다
+# (887 형 중립화의 통계 판본 · 노트 896 이 자가 적발).
+#
+# 여기서 **예외를 던지지 않는** 이유: `_score_one` 이 `except Exception:
+# return None` 으로 감싸고 있어 예외가 곧바로 같은 조용한 실패로 되돌아간다.
+# 그래서 이 자리는 (가)행 마스크 + (나)회계로 간다 --- 시끄러움은 NAN_LOG 가
+# 맡는다. 순수 라벨 자리(`rankdata(y)`)는 반대로 **예외**가 맞다.
+def _rank_masked(v, where: str) -> np.ndarray:
+    """유한한 자리끼리만 순위. 비유한이 있으면 `pairboot.NAN_LOG` 에 적는다."""
+    from .pairboot import safe_rank
+    a = np.asarray(v, float)
+    if np.isfinite(a).all():                       # 오늘의 경로 --- 옛 코드와 동일
+        return np.asarray(rankdata(a), float)
+    return safe_rank(a, where=where, on_nan="mask")
+
+
 # ── F0 무작위 --- 바닥 ──────────────────────────────────────────────────
 class Chance:
     name = "F0_chance"
@@ -90,7 +112,11 @@ class Procrustes:
             R, ke = r
             p = Ridge(alpha=1.0).fit(Fs["S"][:, :ke] @ R,
                                      Fs["y"]).predict(Ft["S"][:, :ke])
-            ps.append(rankdata(p) / len(p))
+            # 🔴 이슈 #115 --- `Ft["S"]` 에 비유한이 섞이면 Ridge 예보가 NaN 이
+            # 되고 `rankdata` 는 **전부 NaN** 을 낸다 → 이 도메인이 통째로
+            # `_score_one` 의 `isfinite(p).any()` 에 걸려 **조용히 빠진다**(887 형).
+            # 행 단위로 마스크하고 `pairboot.NAN_LOG` 에 회계를 남긴다.
+            ps.append(_rank_masked(p, "forms.F1_procrustes.predict") / len(p))
         if not ps:
             return np.full(len(A), np.nan)
         e = np.column_stack(ps).mean(1)
@@ -1105,7 +1131,14 @@ class BagBoost(Boost):
 
     def predict(self, d, A, M, t):
         X = self._design(d, A, M, t)
-        return np.mean([rankdata(m.predict(X)) for m in self.ms], axis=0)
+        # 🔴 이슈 #115 --- 자루 예보 하나에 NaN 한 칸이 생기면 그 자루의 순위가
+        # 통째 NaN 이 되고 평균도 통째 NaN 이 된다 = **챔피언이 그 도메인을
+        # 조용히 버린다**(`harness._score_one` 이 None 을 돌려준다). 오늘
+        # `HistGradientBoosting` 은 NaN 입력을 스스로 처리해 유한 예보를 내므로
+        # 이 마스크는 **한 번도 안 발화한다**(실측: 12도메인 A/M 비유한 0칸).
+        # 그래도 잠복을 남기지 않는다 --- 발화하면 NAN_LOG 에 적힌다.
+        return np.mean([_rank_masked(m.predict(X), "forms.BagBoost.predict")
+                        for m in self.ms], axis=0)
 
     def predict_bags(self, d, A, M, t):
         """자루마다의 순위를 (K, n) 으로 돌려준다(노트 532).
@@ -1115,7 +1148,10 @@ class BagBoost(Boost):
         자루 사이의 불일치를 **예보 때 쓸 수 있는 신뢰도**로 쓸 수 있다.
         """
         X = self._design(d, A, M, t)
-        return np.vstack([rankdata(m.predict(X)) for m in self.ms])
+        # `predict` 와 **같은 마스크 규율**이라야 평균이 정확히 `predict` 다
+        # (스크립트 가드가 그것을 확인한다) --- 이슈 #115.
+        return np.vstack([_rank_masked(m.predict(X), "forms.BagBoost.predict_bags")
+                          for m in self.ms])
 
 
 register(BagBoost)

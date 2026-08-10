@@ -158,9 +158,15 @@ def stair(g, y, nbin: int = NBIN):
     이것을 **다른 도메인**에 먹이는 것이 전이 시험이다. 계단은 이 도메인의
     라벨로만 만들고 채점은 상대 도메인의 라벨로 하므로 순환이 아니다.
     """
+    from .pairboot import safe_rank
     edges = np.quantile(g, np.linspace(0, 1, nbin + 1)[1:-1])
     idx = np.searchsorted(edges, g, side="right")
-    yp = rankdata(y) / len(y)
+    # 🔴 이슈 #115 --- `rankdata` 는 NaN 하나에 **전부 NaN** 을 낸다. 그러면 `med`
+    # 가 전부 NaN 이 되고 아래 `np.interp` 가 빈 배열로 보간해 **계단이 조용히
+    # 쓰레기**가 된다. 유일한 호출자(`transfer` ← `runners/xfer790.py`)는
+    # `by_domain` 이 `isfinite(g) & isfinite(y)` 로 걸러 주므로 오늘은 안 걸린다
+    # --- 그 전제를 **검사**로 바꾼다(라벨 자리라 마스크가 아니라 예외가 맞다).
+    yp = safe_rank(y, where="decay.stair") / len(y)
     med = np.array([np.median(yp[idx == k]) if (idx == k).any() else np.nan
                     for k in range(nbin)])
     if not np.isfinite(med).all():           # 빈 칸은 앞뒤로 채운다
