@@ -37,9 +37,10 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-AGENT_DIRS = [ROOT / "cycle_log/agent_tasks/forward",
-              ROOT / "cycle_log/agent_tasks/attr",
-              ROOT / "cycle_log/agent_tasks/venue"]
+# 🔴 **하드코딩한 목록은 새 디렉터리를 못 본다.** `postprocess` 에 에이전트 모드를
+# 붙였을 때(2026-08-10) 이 목록에 없어서 그 대기가 사이클 할 일에 **안 올라왔다** ---
+# 요청은 쌓이는데 아무도 안 보는 상태. 목록을 지우고 **부모를 훑는다**.
+AGENT_ROOT = ROOT / "cycle_log/agent_tasks"
 
 
 def _sh(cmd: list[str], timeout: int = 1800) -> tuple[int, str]:
@@ -51,13 +52,16 @@ def _sh(cmd: list[str], timeout: int = 1800) -> tuple[int, str]:
 
 
 def _bar(t: str) -> None:
-    print(f"\n{'─' * 4} {t} {'─' * max(0, 56 - len(t))}")
+    # **flush 는 선택이 아니다**(노트 686). stdout 을 파일로 돌리면 파이썬이
+    # 블록 버퍼(8KB)를 쓰므로 진행이 로그에 안 보이고, 그러면 '멈춘 것'과
+    # '버퍼에 갇힌 것'을 못 가른다. 보고가 요지인 모듈이 그 함정에 걸렸었다.
+    print(f"\n{'─' * 4} {t} {'─' * max(0, 56 - len(t))}", flush=True)
 
 
 def pending_agent_tasks() -> list[Path]:
     """응답이 아직 없는 `.req.json`. **여기 있는 것이 내가 할 일이다.**"""
     out = []
-    for d in AGENT_DIRS:
+    for d in sorted(AGENT_ROOT.glob("*")) if AGENT_ROOT.is_dir() else []:
         if not d.is_dir():
             continue
         for p in sorted(d.glob("*.req.json")):
@@ -94,7 +98,7 @@ def main() -> int:
     if not a.no_collect:
         _bar("① 수집")
         code, out = _sh([sys.executable, "-m", "ingest.collect"])
-        print(out.rstrip())
+        print(out.rstrip(), flush=True)
         lines += [l for l in out.splitlines() if l.strip().startswith(("성장", "──", "  "))][:8]
         if code:
             todo.append("🔴 수집 실패 --- 위 서명을 보고 **이번 사이클에** 고친다")
@@ -114,7 +118,7 @@ def main() -> int:
         keep = [ln for ln in out.splitlines()
                 if ln.startswith("[") or ln.startswith("===") or "⛔" in ln or "⏳" in ln]
         for ln in keep:
-            print(ln)
+            print(ln, flush=True)
         lines += keep[-6:]
         if code:
             # 🔴 **실패했으면 이유를 찍는다**(2026-08-10 자가 적발). 위 필터는
@@ -124,30 +128,34 @@ def main() -> int:
             # 실패를 보고하면서 실패의 이유를 버렸다. 오늘 아침에 잡은
             # '종료 코드가 거짓말한다' 의 사촌이다: **보고가 반쪽이면 없는 것과 같다.**
             tail = [l for l in out.strip().splitlines() if l.strip()][-8:]
-            print("  🔴 실패 꼬리:")
+            print("  🔴 실패 꼬리:", flush=True)
             for l in tail:
-                print("   |", l[:200])
+                print("   |", l[:200], flush=True)
             lines += ["🔴 전향 실패:"] + ["  " + l[:160] for l in tail[-4:]]
             todo.append("🔴 전향 패스 실패 --- " + (tail[-1][:120] if tail else "출력 없음"))
-        if "⏳ 후처리 보류" in out:
-            todo.append("⏳ `ingest.postprocess` 에 **무료 경로가 없다** --- 에이전트 모드 신설(노트 889)")
+        # 후처리는 이제 무료 경로가 있다(2026-08-10). 문구가 바뀌었으므로 감지도 바꾼다
+        # --- 안 바꾸면 **영영 안 걸리는 검사**가 남는다(죽은 검사).
+        if "⏳ 후처리 에이전트 대기" in out:
+            todo.append("⏳ `cycle_log/agent_tasks/postprocess/*.req.json` 을 채우고 전향 패스 재실행")
+        if "🔴 후처리 실패" in out:
+            todo.append("🔴 후처리 실패 --- 위 꼬리 확인")
 
     # ③ 내가 해야 하는 것 --- 파일로 세워서 넘긴다
     _bar("③ 에이전트 대기(= 이번 사이클에 내가 할 일)")
     reqs, preds = pending_agent_tasks(), pending_predictions()
     if not reqs and not preds:
-        print("  없음")
+        print("  없음", flush=True)
     for p in reqs:
-        print(f"  ⏳ 추출 {p.relative_to(ROOT)}")
+        print(f"  ⏳ 추출 {p.relative_to(ROOT)}", flush=True)
         todo.append(f"{p.name} 을 읽고 같은 이름 .res.json 을 쓴 뒤 전향 패스 재실행")
     for p in preds:
-        print(f"  ⏳ 예측 {p.relative_to(ROOT)}")
+        print(f"  ⏳ 예측 {p.relative_to(ROOT)}", flush=True)
         todo.append(f"{p.name} 을 읽고 예측 JSON(median-of-3 이면 run1..3)을 쓴 뒤 재실행")
 
     # ④ 규약 위반
     _bar("④ 규약 검사")
     code, out = _sh([sys.executable, "-m", "paper.program", "check"])
-    print(out.rstrip())
+    print(out.rstrip(), flush=True)
     if '"위반": "없음"' not in out:
         todo.append("🔴 규약 위반 --- 트랙에 근거 노트/결정 규칙을 채운다")
 
@@ -157,15 +165,15 @@ def main() -> int:
     try:
         for t in json.loads(out):
             if t.get("상태") == "지금 가능":
-                print(f"  ▶ {t['트랙']}: {str(t.get('다음',''))[:180]}…")
+                print(f"  ▶ {t['트랙']}: {str(t.get('다음',''))[:180]}…", flush=True)
     except Exception:
-        print(out[:800])
+        print(out[:800], flush=True)
 
     _bar("이번 사이클 할 일")
     if not todo:
-        print("  기계적인 것은 다 돌았다 --- 트랙에서 하나 골라 재라(사전등록 먼저).")
+        print("  기계적인 것은 다 돌았다 --- 트랙에서 하나 골라 재라(사전등록 먼저).", flush=True)
     for i, t in enumerate(todo, 1):
-        print(f"  {i}. {t}")
+        print(f"  {i}. {t}", flush=True)
 
     # ⑥ 슬랙 --- **크론으로 돌리면 아무도 안 본다**(2026-08-09 실측). 보고가
     # 사람에게 도착해야 크론이 의미가 있다. 알림 실패는 루프를 안 죽인다.
@@ -178,9 +186,9 @@ def main() -> int:
         body += ["", "`python3 -m ingest.cycle_open` 로 세션에서 이어간다."]
         from .notify import dm
         r = dm("\n".join(body))
-        print("\n슬랙:", "보냄" if r.get("보냄") else "실패 — " + str(r.get("사유"))[:120])
+        print("\n슬랙:", "보냄" if r.get("보냄") else "실패 — " + str(r.get("사유"))[:120], flush=True)
 
-    print("\n크론은 기계적인 것만 돌린다. 판단이 필요한 자리는 위 '할 일' 로 나온다.")
+    print("\n크론은 기계적인 것만 돌린다. 판단이 필요한 자리는 위 '할 일' 로 나온다.", flush=True)
     return 0
 
 

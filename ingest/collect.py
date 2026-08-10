@@ -151,6 +151,16 @@ COLLECTORS = [
         "단위": "영상관측",
         # 채널 17개 × 영상마다 조회수를 읽는다. 242초~10분+ 로 요동친다(원격 의존).
         "제한": 1500,
+        "정체사유": "산출이 **로컬 날짜 파일**(`YYYY-MM-DD.json`)이라 **하루 첫 실행에만** 는다"
+                    "(17채널 × 255관측/일). 같은 날 다시 돌리면 같은 파일을 덮어쓸 뿐이다 --- 정상이다. "
+                    "**날이 바뀌었는데도 안 늘면** 그때가 진짜 정체다.",
+        # 같은 날 두 번째부터는 **안 돌린다**. 2026-08-10 실측: 7회 중 성장 2회이고
+        # 나머지 5회가 각 12분씩 헛돌았다. 더 나쁜 것은 **덮어쓰기라 앞선 스냅샷이
+        # 사라진다**는 점이다 --- 조회수 차분을 촘촘히 하려면 하루 여러 점이 필요한데
+        # 지금 구조는 **하루 한 점만 남긴다**(설계 한계 · T7 에 등재).
+        "건너뜀": lambda: (ROOT / "data/ingest/youtube_poll" /
+                          (dt.date.today().isoformat() + ".json")).exists(),
+        "건너뜀사유": "오늘 자 스냅샷이 이미 있다(하루 1점 설계)",
         "무엇": "유튜브 채널 17개의 영상별 누적 조회수 — 일 단위 차분 곡선의 재료",
     },
     {
@@ -175,6 +185,14 @@ def _run_one(c: dict, timeout: int | None = None) -> dict:
     # 진짜 고장과 섞이면 장부가 못 쓰게 된다. 판정을 따로 세우고 제한도 수집기별로 둔다.
     timeout = timeout or int(c.get("제한", 900))
     before = c["측정"]()
+    # **안 돌려도 되는 것은 안 돌린다.** 판정은 `건너뜀` --- 무성장과 섞지 않는다
+    # (무성장은 '돌렸는데 안 늘었다' 이고 이쪽은 '돌릴 필요가 없었다' 다).
+    skip = c.get("건너뜀")
+    if skip is not None and skip():
+        return {"이름": c["이름"], "판정": "건너뜀", "델타": 0,
+                "before": before, "after": before, "단위": c["단위"],
+                "종료코드": 0, "서명": [], "초": 0.0, "출력끝": "",
+                "사유": c.get("건너뜀사유", "")}
     t0 = dt.datetime.now()
     timed_out = False
     try:
@@ -261,6 +279,8 @@ def run(only: str | None = None) -> dict:
         print(line)
         if r["판정"] == "무성장" and r["연속"] >= 3 and r.get("정체사유"):
             print("      아는 사유:", r["정체사유"])
+        if r["판정"] == "건너뜀" and r.get("사유"):
+            print("      사유:", r["사유"])
         if r["판정"].startswith("🔴"):
             if r["서명"]:
                 print("      서명:", ", ".join(r["서명"]))
@@ -272,6 +292,7 @@ def run(only: str | None = None) -> dict:
     stale = [r for r in rows if r["판정"] == "무성장" and r["연속"] >= 3]
     print(f"── 성장 {sum(1 for r in rows if r['판정']=='성장')}"
           f" · 무성장 {sum(1 for r in rows if r['판정']=='무성장')}"
+          f" · 건너뜀 {sum(1 for r in rows if r['판정']=='건너뜀')}"
           f" · 시간초과 {len(slow)} · 실패 {len(bad)}")
     if slow:
         print("⏱ 제한 안에 못 끝냄(고장 아님 — 제한을 올리거나 따로 돌린다):",
