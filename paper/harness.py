@@ -201,8 +201,10 @@ def _dead_gate(d: Path, phase: str) -> None:
     if mine_unk:
         raise SystemExit(
             f"🔴 죽은 숫자 게이트({phase}): {d.name} 을 **검사하지 못했다** --- "
-            f"{mine_unk}. '없다'와 '못 봤다'는 다르다(조항 59). meta.json · main.tex 를 "
-            "읽을 수 있게 고친 뒤 다시 하라.")
+            f"{mine_unk}. '없다'와 '못 봤다'는 다르다(조항 59). meta.json · 폴더 안 "
+            "`.tex` 전량을 읽을 수 있게 고친 뒤 다시 하라. 🔴 **본문 판정은 "
+            "`main.tex` 라는 이름이 아니라 폴더 안 `.tex` 유무다**(티처 #62 C6 · "
+            "노트 900) --- 이름만 바꾸면 미착수로 갈리던 구멍을 닫았다.")
 
     fresh = r[_GATE_FRESH]
     fresh = [] if isinstance(fresh, str) else [x for x in fresh if isinstance(x, dict)]
