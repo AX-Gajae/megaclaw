@@ -31,6 +31,8 @@ ENV = "WM_ALLOW_PAID_API"
 _HOW = {
     "bulk_normalize": "python3 -m ingest.bulk_normalize --agent-dir cycle_log/agent_tasks/<이름>",
     "predictor_llm": "python3 -m harness.backtest --predictor agent --ensemble 3",
+    # 2026-08-10 신설 --- 노트 889 가 '무료 경로가 없는 유일한 자리' 로 남겨 둔 곳.
+    "postprocess": "python3 -m ingest.postprocess --agent-dir cycle_log/agent_tasks/postprocess",
 }
 
 

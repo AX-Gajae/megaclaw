@@ -182,14 +182,22 @@ def step2_discover_and_normalize() -> list[str]:
         # 옛 코드는 `check=True` 라 막히는 순간 **전향 패스 전체가 죽었다**;
         # 사용자 지시가 *"루프 안 끊어지게"* 이므로 **막힘을 결과로 바꿔 계속한다**.
         # 숨기지 않는다 --- `⏳` 로 찍어 사이클 할 일에 올라가게 한다.
-        r = subprocess.run([sys.executable, "-m", "ingest.postprocess"],
-                           capture_output=True, text=True)
-        if r.returncode:
-            tail = ((r.stdout or "") + (r.stderr or "")).strip().splitlines()[-3:]
-            print(f"[2] ⏳ 후처리 보류({len(moved)}건) — 무료 경로 없음(노트 889). "
-                  f"에이전트 모드 신설이 필요하다: " + " / ".join(t[:120] for t in tail))
-        else:
+        # 무료 경로가 생겼다(2026-08-10 · 노트 889 의 '남은 것' 이행).
+        # 종료 코드 규약: 0 완료 · **2 에이전트 응답 대기** · 그 밖 실패.
+        PP_DIR = "cycle_log/agent_tasks/postprocess"
+        r = subprocess.run([sys.executable, "-m", "ingest.postprocess",
+                            "--agent-dir", PP_DIR], capture_output=True, text=True)
+        tail = ((r.stdout or "") + (r.stderr or "")).strip().splitlines()[-4:]
+        if r.returncode == 0:
             print("[2] 후처리 완료")
+        elif r.returncode == 2:
+            print(f"[2] ⏳ 후처리 에이전트 대기 — {PP_DIR}/*.req.json 을 채우고 다시 돌린다")
+            for t in tail:
+                print("     |", t[:160])
+        else:
+            print(f"[2] 🔴 후처리 실패(코드 {r.returncode}):")
+            for t in tail:
+                print("     |", t[:160])
     print(f"[2] 뱅크 투입: {len(moved)}건 (+후처리)")
     return moved
 

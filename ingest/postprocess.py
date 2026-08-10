@@ -22,6 +22,12 @@ SNAP = "2026-05"
 # 않고 막고, 막힌 사실을 사이클 할 일로 올린다(`ingest/cycle_open.py`).
 _client = None
 
+#: 에이전트 모드(2패스 · 종량제 호출 0). `--agent-dir` 를 주면 켜진다.
+#: 노트 889 가 이 모듈을 **무료 경로가 없는 유일한 자리**로 남겨 뒀고
+#: (진짜 팝업이 하나 승격되는 순간 사이클이 여기서 멈춘다) 여기서 닫는다.
+TASK = None
+PENDING = []          # 이번 패스에서 응답을 기다리는 task_id
+
 
 def client_():
     global _client
@@ -32,7 +38,23 @@ def client_():
     return _client
 
 
-def llm(system, payload, schema, max_tokens=16000, effort="low"):
+def _tid(tag, payload):
+    """작업 이름. **내용으로 정한다** --- 배치 번호로 하면 레코드가 늘 때
+    같은 일이 다른 이름을 받아 응답이 버려진다(멱등성이 깨진다)."""
+    import hashlib
+    h = hashlib.sha1(json.dumps(payload, ensure_ascii=False, sort_keys=True).encode())
+    return f"post{tag}-{h.hexdigest()[:10]}"
+
+
+def llm(system, payload, schema, max_tokens=16000, effort="low", tag="x"):
+    if TASK is not None:
+        # 에이전트 2패스. 1패스는 요청만 덤프하고 **None** --- 호출부가 건너뛴다.
+        tid = _tid(tag, payload)
+        out = TASK.call(tid, system, schema,
+                        json.dumps(payload, ensure_ascii=False))
+        if out is None:
+            PENDING.append(tid)
+        return out
     for attempt in range(5):
         try:
             with client_().messages.stream(model="claude-opus-4-8", max_tokens=max_tokens,
@@ -80,10 +102,23 @@ def main():
             "스위트스팟 수령분만. 불명확하면 null. basis는 20자 내 인용.")
     for batch in chunks(todo, 100):
         payload = [{"code": c, "detail": recs[c]["conditions"]["fee_structure"]["detail"][:400]} for c in batch]
-        out = llm(sys1, payload, sch)
+        out = llm(sys1, payload, sch, tag="1")
+        if out is None:
+            continue          # 에이전트 응답 대기 --- 이 배치는 다음 패스에서
         totals.update({x["code"]: x.get("contract_total_mm") for x in out["items"]})
         print(f"  계약총액 배치 {len(totals)}/{len(todo)}", flush=True)
 
+    # 🔴 **대기 중이면 판정을 쓰지 않는다**(2026-08-10 · 넣자마자 자가 적발).
+    # 에이전트 1패스에서 배치가 `None` 이면 `totals` 가 비는데, 그대로 아래로
+    # 내려가면 모든 레코드가 `ct=None` → `status:"unknown"`("총액 불명")으로
+    # **써지고 저장된다**. 그리고 `todo` 는 `rev_mm_completion` 이 **없는** 것만
+    # 고르므로 다음 패스에서 **다시 안 본다** --- 응답이 도착해도 영영 반영이
+    # 안 되는 영구 오염이다. 이 저장소가 반복해서 당한 '조용한 무작동'(노트 359)
+    # 부류이고, 무료 경로를 넣다가 그 자리를 새로 만들 뻔했다.
+    if PENDING:
+        print(f"  ⏳ 계약총액 응답 대기 {len(PENDING)}건 — **완결 판정을 건너뛴다**"
+              f"(지금 쓰면 '총액 불명'이 굳어 다음 패스에서 안 보인다)", flush=True)
+        todo = []
     for c in todo:
         r = recs[c]
         rev = r["outcome"]["totals"].get("rev_mm_recognized")
@@ -122,7 +157,9 @@ def main():
                     "venue_type": recs[c]["conditions"]["location"].get("venue_type"),
                     "foot": recs[c]["conditions"]["location"].get("foot_traffic_context"),
                     "concept": recs[c]["intervention"]["concept"][:120]} for c in batch]
-        out = llm(sys2, payload, sch2)
+        out = llm(sys2, payload, sch2, tag="2")
+        if out is None:
+            continue          # 에이전트 응답 대기
         for x in out["items"]:
             if x["code"] in recs:
                 recs[x["code"]]["conditions"]["scale"] = {k: x[k] for k in
@@ -131,15 +168,32 @@ def main():
         print(f"  scale 진행 {sum(1 for c in todo2 if 'scale' in recs[c]['conditions'])}/{len(todo2)}", flush=True)
 
     # ── ③ 엔티티 정준화 (전역 일관성 — 전체 한 번에) ──
-    print("[3/3] 엔티티 정준화 (전역)", flush=True)
+    # 🔴 **건너뛰기 조건이 없었다**(2026-08-10 · 에이전트 모드를 넣다가 드러남).
+    # 이 모듈 독스트링은 *"이미 처리된 레코드는 건너뜀(재실행 안전)"* 이라고 하는데
+    # 그것은 ①②에만 참이고 **③은 매번 전량을 다시 돌린다**. 유료 경로에서는
+    # 돈만 더 쓰고 끝났지만, 에이전트 모드에서는 **매 사이클 380행짜리 대기 요청이
+    # 쌓여** 사이클 할 일이 늑대소년이 된다(노트 889 에서 정체 경고에 당한 것과 같다).
+    #
+    # 전역 정준화는 **새 레코드가 들어왔을 때** 전체를 다시 봐야 옳으므로,
+    # 조건은 "키가 빠진 레코드가 하나라도 있나" 다.
+    need3 = [c for c in recs
+             if not recs[c]["entities"].get("brand_key")
+             or not recs[c]["entities"].get("space_key")]
+    if not need3:
+        print(f"[3/3] 엔티티 정준화 — 건너뜀(전 {len(recs)}건에 키가 이미 있다)", flush=True)
+        print("후처리 완료", flush=True)
+        return 0
+    print(f"[3/3] 엔티티 정준화 (전역 · 키 없는 {len(need3)}건 때문에 전량 재계산)", flush=True)
     sch3 = items_schema({"code": {"type": "string"}, "brand_key": {"type": "string"}, "space_key": {"type": "string"}})
     sys3 = ("엔티티 정준화. brand/space 자유 문자열을 정준 키로. 같은 실체는 반드시 같은 키(소문자·언더스코어·한글). "
             "공간은 건물/매장 단위 통일, 멀티스토어는 multi_유통 형태. 브랜드는 소비자 인식 기준. "
             "전체 목록에서 표기가 달라도 같은 실체면 병합. 모든 항목을 빠짐없이 출력하라.")
     payload = [{"code": c, "brand": recs[c]["entities"].get("brand_id"),
                 "space": recs[c]["entities"].get("space_id")} for c in sorted(recs)]
-    out = llm(sys3, payload, sch3, max_tokens=64000, effort="low")
+    out = llm(sys3, payload, sch3, max_tokens=64000, effort="low", tag="3")
     got = 0
+    if out is None:
+        out = {"items": []}   # 에이전트 응답 대기
     for x in out["items"]:
         if x["code"] in recs:
             recs[x["code"]]["entities"]["brand_key"] = x["brand_key"]
@@ -152,4 +206,20 @@ def main():
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--agent-dir", default=None,
+                    help="지정 시 에이전트 모드(2패스 · 종량제 API 호출 0)")
+    a = ap.parse_args()
+    if a.agent_dir:
+        from core.agent_task import AgentTask
+        TASK = AgentTask("agent", a.agent_dir)
+    rc = main()
+    if PENDING:
+        # 대기가 있으면 **종료 코드로도 알린다**. 다만 판정의 근거는 이 출력이다 ---
+        # 종료 코드만 보는 쪽이 있으면 그쪽도 알아채야 한다(노트 888 갑).
+        print(f"⏳ 에이전트 응답 대기 {len(PENDING)}건: {', '.join(PENDING[:6])}"
+              + (" …" if len(PENDING) > 6 else ""), flush=True)
+        print(f"   {a.agent_dir}/*.req.json 을 읽고 같은 이름 .res.json 을 쓴 뒤 재실행하라", flush=True)
+        sys.exit(2)
+    sys.exit(rc)
