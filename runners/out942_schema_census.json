@@ -1,0 +1,474 @@
+{
+ "D1(파일=레코드)": {
+  "data/records": {
+   "파일": 380,
+   "최상위 키 분포": {
+    "record_id": 380,
+    "schema_version": 380,
+    "entities": 380,
+    "intervention": 380,
+    "conditions": 380,
+    "outcome": 380,
+    "docs": 380,
+    "provenance": 380
+   },
+   "outcome 모양": {
+    "outcome 이 dict": 380
+   },
+   "outcome 하위 키 분포": {
+    "daily": 380,
+    "totals": 380,
+    "counting_method": 380,
+    "counting_basis": 380,
+    "retention": 380,
+    "source": 380,
+    "rev_mm_completion": 380,
+    "plan_visitors_expected": 320,
+    "label_trust": 99,
+    "label_scope": 69,
+    "label_history": 46,
+    "sales_basis": 26,
+    "label_source": 15,
+    "counting_detail": 15,
+    "measurement_instrument": 7,
+    "provenance": 6,
+    "legs": 3,
+    "visit_detail": 2,
+    "demand_proxy_popga": 2,
+    "label_scope_kind": 2,
+    "uncaptured_sibling": 2,
+    "label_trust_sales": 1,
+    "label_alternates": 1,
+    "daily_alt": 1
+   }
+  },
+  "data/market_records": {
+   "파일": 647,
+   "최상위 키 분포": {
+    "market_record_id": 647,
+    "event_name": 647,
+    "brand": 647,
+    "ip_or_collab": 647,
+    "category": 647,
+    "intervention": 647,
+    "conditions": 647,
+    "outcome": 647,
+    "extraction_confidence": 647,
+    "notes": 647,
+    "verification": 502,
+    "_aggregate": 408,
+    "tier": 408,
+    "single_event": 408,
+    "exclude_reason": 408,
+    "ingested_from": 408,
+    "additional_sources": 44,
+    "outcome_source_url": 12,
+    "outcome_source_date": 12,
+    "sales_source_date_note": 1
+   },
+   "outcome 모양": {
+    "outcome 이 dict": 647
+   },
+   "outcome 하위 키 분포": {
+    "visitors_total": 647,
+    "visitors_period_days": 647,
+    "counting_basis": 647,
+    "counting_basis_note": 647,
+    "visitors_source_quote": 647,
+    "visitors_source_url": 647,
+    "visitors_source_date": 647,
+    "sales_krw": 647,
+    "sales_source_quote": 647,
+    "sales_source_url": 647,
+    "sales_source_date": 647,
+    "demand_signals": 647,
+    "conflict": 647,
+    "alt_figures": 647,
+    "label_trust": 328,
+    "scope_class": 328,
+    "sales_source_url_2": 1
+   }
+  },
+  "data/idol_records": {
+   "파일": 282,
+   "최상위 키 분포": {
+    "group_name": 282,
+    "debut_date": 282,
+    "debut_album": 282,
+    "chodong": 282,
+    "chodong_basis": 282,
+    "chodong_note": 282,
+    "chodong_source_quote": 282,
+    "chodong_source_url": 282,
+    "chodong_source_date": 282,
+    "found_chodong": 282,
+    "notes": 282,
+    "record_id": 282,
+    "tier": 282,
+    "ingested_from": 282,
+    "agency": 261,
+    "member_count": 261,
+    "gender": 261,
+    "survival_show": 261,
+    "group_name_en": 250,
+    "is_group": 250,
+    "pre_debut_note": 250,
+    "mv_24h": 250,
+    "mv_24h_source_url": 250,
+    "chart_peak": 250,
+    "chart_note": 250,
+    "label_trust": 175,
+    "chodong_basis_resolved": 175,
+    "chodong_basis_why": 175,
+    "chodong_source_kind": 175,
+    "pre_debut_signals": 77,
+    "label_reject": 3
+   },
+   "outcome 모양": {
+    "🔴 outcome/결과 키 없음": 282
+   },
+   "outcome 하위 키 분포": {}
+  },
+  "data/records_draft": {
+   "파일": 0,
+   "최상위 키 분포": {},
+   "outcome 모양": {},
+   "outcome 하위 키 분포": {}
+  },
+  "data/records_incomplete": {
+   "파일": 8,
+   "최상위 키 분포": {
+    "record_id": 8,
+    "schema_version": 8,
+    "entities": 8,
+    "intervention": 8,
+    "conditions": 8,
+    "outcome": 8,
+    "docs": 8,
+    "provenance": 8,
+    "record_kind": 1,
+    "record_kind_basis": 1
+   },
+   "outcome 모양": {
+    "outcome 이 dict": 8
+   },
+   "outcome 하위 키 분포": {
+    "daily": 8,
+    "totals": 8,
+    "retention": 8,
+    "source": 8,
+    "counting_method": 6,
+    "counting_basis": 6,
+    "plan_visitors_expected": 6
+   }
+  },
+  "data/records_thinbak": {
+   "파일": 19,
+   "최상위 키 분포": {
+    "record_id": 19,
+    "schema_version": 19,
+    "entities": 19,
+    "intervention": 19,
+    "conditions": 19,
+    "outcome": 19,
+    "docs": 19,
+    "provenance": 19
+   },
+   "outcome 모양": {
+    "outcome 이 dict": 19
+   },
+   "outcome 하위 키 분포": {
+    "daily": 19,
+    "totals": 19,
+    "counting_method": 19,
+    "counting_basis": 19,
+    "retention": 19,
+    "source": 19,
+    "rev_mm_completion": 19,
+    "plan_visitors_expected": 18
+   }
+  }
+ },
+ "D2(저장소=레코드 여럿)": {
+  "data/state/anime_records.json": {
+   "도메인": "애니",
+   "레코드": 3385,
+   "바이트": 2000897,
+   "키 분포": {
+    "record_id": 3385,
+    "item_id": 3385,
+    "title": 3385,
+    "start_date": 3385,
+    "air_quarter": 3385,
+    "y_review": 3385,
+    "avg_rating": 3385,
+    "tags": 3385,
+    "n_tag": 3385,
+    "genres": 3385,
+    "n_genre": 3385,
+    "production": 3385,
+    "series_id": 3385,
+    "medium": 3385,
+    "age": 3385,
+    "is_adult": 3385,
+    "price": 3385,
+    "is_free": 3385,
+    "is_dubbed": 3385,
+    "is_only": 3385,
+    "is_original": 3385,
+    "is_ending": 3385,
+    "n_episode": 3385,
+    "_offset": 1312
+   },
+   "🔴 outcome/결과 키": [],
+   "🔴 y_ 로 시작하는 열": [
+    "y_review"
+   ]
+  },
+  "data/state/app_records.json": {
+   "도메인": "앱(구 모바일)",
+   "레코드": 1600,
+   "바이트": 811863,
+   "키 분포": {
+    "record_id": 1600,
+    "app_id": 1600,
+    "title": 1600,
+    "release_date": 1600,
+    "updated": 1600,
+    "y_rating_count": 1600,
+    "avg_rating": 1600,
+    "n_lang": 1600,
+    "langs": 1600,
+    "price": 1600,
+    "size_mb": 1600,
+    "n_genre": 1600,
+    "genres": 1600,
+    "n_shot": 1600,
+    "artist_id": 1600,
+    "artist": 1600,
+    "advisory": 1600,
+    "n_device": 1600,
+    "_genre": 1600,
+    "_list_release": 1600
+   },
+   "🔴 outcome/결과 키": [],
+   "🔴 y_ 로 시작하는 열": [
+    "y_rating_count"
+   ]
+  },
+  "data/state/book_records.json": {
+   "도메인": "도서",
+   "레코드": 396,
+   "바이트": 181836,
+   "키 분포": {
+    "record_id": 396,
+    "item_id": 396,
+    "sales_point": 396,
+    "isbn": 396,
+    "price": 396,
+    "pub_date": 396,
+    "publisher": 396,
+    "title": 396,
+    "pages": 395,
+    "book_format": 394,
+    "n_genre": 394,
+    "genre": 394,
+    "review_count": 394,
+    "rating": 394,
+    "width_mm": 242,
+    "height_mm": 242,
+    "weight_g": 242,
+    "sale": 2,
+    "rank": 2
+   },
+   "🔴 outcome/결과 키": [],
+   "🔴 y_ 로 시작하는 열": []
+  },
+  "data/state/funding_records.json": {
+   "도메인": "펀딩",
+   "레코드": 2887,
+   "바이트": 1682535,
+   "키 분포": {
+    "record_id": 2887,
+    "uuid": 2887,
+    "permalink": 2887,
+    "title": 2887,
+    "creator_uuid": 2887,
+    "creator": 2887,
+    "category": 2887,
+    "category_name": 2887,
+    "start_date": 2887,
+    "end_date": 2887,
+    "adult_only": 2887,
+    "y_backers": 2887,
+    "amount": 2887,
+    "n_reward": 2887,
+    "min_price": 2887,
+    "max_price": 2887,
+    "n_unlimited": 2887,
+    "unlimited_ratio": 2887,
+    "n_delivery": 2887,
+    "_page": 2487
+   },
+   "🔴 outcome/결과 키": [],
+   "🔴 y_ 로 시작하는 열": [
+    "y_backers"
+   ]
+  },
+  "data/state/game_records.json": {
+   "도메인": "게임",
+   "레코드": 482,
+   "바이트": 365178,
+   "키 분포": {
+    "record_id": 482,
+    "appid": 482,
+    "name": 482,
+    "release_date": 482,
+    "publishers": 482,
+    "developers": 482,
+    "genres": 482,
+    "n_dlc": 482,
+    "n_lang": 482,
+    "price_krw": 482,
+    "is_free": 482,
+    "n_platform": 482,
+    "n_category": 482,
+    "y_raw": 482,
+    "y_positive": 482,
+    "label_basis": 482,
+    "label_note": 482,
+    "source": 482,
+    "y_w30": 482,
+    "y_w30_truncated": 482
+   },
+   "🔴 outcome/결과 키": [],
+   "🔴 y_ 로 시작하는 열": [
+    "y_raw",
+    "y_positive",
+    "y_w30",
+    "y_w30_truncated"
+   ]
+  },
+  "data/state/manga_records.json": {
+   "도메인": "만화",
+   "레코드": 7982,
+   "바이트": 3230010,
+   "키 분포": {
+    "record_id": 7982,
+    "media_id": 7982,
+    "title": 7982,
+    "start_date": 7982,
+    "y_popularity": 7982,
+    "favourites": 7982,
+    "mean_score": 7982,
+    "n_genre": 7982,
+    "genres": 7982,
+    "n_tag": 7982,
+    "n_chapter": 7982,
+    "n_volume": 7982,
+    "format": 7982,
+    "status": 7982,
+    "country": 7982,
+    "is_adult": 7982,
+    "authors": 7982,
+    "n_author": 7982
+   },
+   "🔴 outcome/결과 키": [],
+   "🔴 y_ 로 시작하는 열": [
+    "y_popularity"
+   ]
+  },
+  "data/state/mobile_records.json": {
+   "도메인": "모바일",
+   "레코드": 2000,
+   "바이트": 1100642,
+   "키 분포": {
+    "record_id": 2000,
+    "app_id": 2000,
+    "title": 2000,
+    "release_date": 2000,
+    "updated": 2000,
+    "y_rating_count": 2000,
+    "avg_rating": 2000,
+    "n_lang": 2000,
+    "langs": 2000,
+    "price": 2000,
+    "size_mb": 2000,
+    "n_genre": 2000,
+    "genres": 2000,
+    "n_shot": 2000,
+    "artist_id": 2000,
+    "artist": 2000,
+    "advisory": 2000,
+    "n_device": 2000
+   },
+   "🔴 outcome/결과 키": [],
+   "🔴 y_ 로 시작하는 열": [
+    "y_rating_count"
+   ]
+  },
+  "data/state/wanime_records.json": {
+   "도메인": "세계애니",
+   "레코드": 2988,
+   "바이트": 2145068,
+   "키 분포": {
+    "record_id": 2988,
+    "media_id": 2988,
+    "title": 2988,
+    "native": 2988,
+    "english": 2988,
+    "synonyms": 2988,
+    "start_date": 2988,
+    "y_popularity": 2988,
+    "favourites": 2988,
+    "mean_score": 2988,
+    "n_genre": 2988,
+    "genres": 2988,
+    "n_tag": 2988,
+    "n_episode": 2988,
+    "duration": 2988,
+    "format": 2988,
+    "status": 2988,
+    "country": 2988,
+    "is_adult": 2988,
+    "source": 2988,
+    "studios": 2988,
+    "studio_name": 2988
+   },
+   "🔴 outcome/결과 키": [],
+   "🔴 y_ 로 시작하는 열": [
+    "y_popularity"
+   ]
+  },
+  "data/state/webtoon_records.json": {
+   "도메인": "웹툰",
+   "레코드": 3652,
+   "바이트": 1677290,
+   "키 분포": {
+    "record_id": 3652,
+    "title_id": 3652,
+    "title": 3652,
+    "start_date": 3652,
+    "finished": 3652,
+    "y_favorite": 3652,
+    "star": 3652,
+    "age_type": 3652,
+    "age_rank": 3652,
+    "n_tag": 3652,
+    "tags": 3652,
+    "n_day": 3652,
+    "days": 3652,
+    "n_episode": 3652,
+    "artists": 3652,
+    "n_artist": 3652,
+    "daily_pass": 3652,
+    "level": 3652,
+    "_src_page": 835
+   },
+   "🔴 outcome/결과 키": [],
+   "🔴 y_ 로 시작하는 열": [
+    "y_favorite"
+   ]
+  }
+ }
+}

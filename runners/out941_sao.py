@@ -49,6 +49,15 @@ MIN_SIDE = 30       # 한쪽에 최소 며칠이 있어야 삼중쌍으로 세�
 
 # ── ㄱ 저장소 재고 ────────────────────────────────────────────────────────
 def stock() -> dict:
+    """🔴🔴 **이 함수의 o 검출기(아래 `ov =` 줄)는 틀렸다. 새로 쓰지 마라.**
+
+    `outcome.totals.*` 하나의 스키마만 본다. 저장소에는 계열이 **셋**이고
+    (`data/market_records` 647 은 `totals` 키가 없고, `data/idol_records` 282 는
+    `outcome` 키 자체가 없다) 그래서 **929파일이 자동 0점**이었다.
+    고친 것은 **`runners/out942_stock.py`** 다 — 같은 분모 1,336 위에서 **157 → 755**.
+    🔴 본문은 일부러 안 고친다(`runners/out941_sao.json` 이 동결물이고, 942 가
+    **이 함수를 그대로 import 해서 호출**해 자기 옛-검출기 수와 대조하기 때문이다).
+    """
     n = 0
     sch = a_n = s_n = o_key = o_val = daily = full = 0
     for d in REC_DIRS:

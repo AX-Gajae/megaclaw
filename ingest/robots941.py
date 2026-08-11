@@ -88,7 +88,15 @@ def parse(txt: str) -> dict:
 
 
 def hits(path: str, dis: list) -> list:
-    """경로가 걸리는 Disallow 규칙(접두사 대조 · `*` 는 앞부분만 본다)."""
+    """경로가 걸리는 Disallow 규칙(접두사 대조 · `*` 는 앞부분만 본다).
+
+    🔴🔴 **이 함수는 틀렸다. 새로 쓰지 마라 — `runners/out942_robots.rfc9309` 를 써라.**
+    노트 942(수리)가 RFC 9309 규격 예제 **32건 중 10건을 틀린다**는 것을 실측했다
+    (`runners/out942_robots.json` → `배선·정확도 검사`). 틀리는 방향은 **전부
+    「안 막힌 것을 막혔다」**이고, 그래서 941 의 「막힘 6」이 실제로는 **5** 였다.
+    🔴 **본문(logic)은 일부러 안 고친다** — `runners/out941_robots.json` 이 동결물이고
+    이 함수가 그 수를 낸 그 함수여야 942 의 「옛/새 나란히」 대조가 성립한다.
+    """
     out = []
     for d in dis:
         pat = d.split("*")[0]
