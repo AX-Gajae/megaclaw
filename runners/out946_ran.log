@@ -1,0 +1,36 @@
+=== 노트 946 · 「돌려 봤다」 로그 (손 전사 금지 — 이 파일이 원본이다) ===
+UTC 2026-08-11T22:44:46
+
+--- 1) 고친 한 줄이 답을 안 바꾸나 (thr939_run.py:73) ---
+  옛(날 것)           rc=0 · 바늘적중=False · 줄=4
+  새(quotePath=false)  rc=0 · 바늘적중=False · 줄=4
+  → 두 값이 같다. 이 자리의 답은 안 바뀐다(바늘이 ASCII 라서).
+    🔴 그래도 날 것은 남기지 않는다 --- 다음 사람이 그 출력을 경로 집합으로 쓴다.
+
+--- 2) 바뀐 .py 전량 컴파일 ---
+  OK  lab/keyspace.py
+  OK  runners/out946_quotefix.py
+  OK  runners/out946_recount.py
+  OK  runners/out946_keymap.py
+  OK  runners/thr939_run.py
+
+--- 3) lab/keyspace.py doctest ---
+4 passed and 0 failed.
+Test passed.
+
+--- 4) 🔴 러너를 다시 돌리는 순서가 판정에 걸린다 ---
+  out946_quotefix.json 은 스탬프(시작/끝 시각)를 담으므로 **돌릴 때마다 바이트가 바뀐다.**
+  out946_recount.py 는 그 파일의 sha 를 **커밋된 blob 과 견준다**(절 「바」).
+  그래서 순서는: quotefix 를 돌린다 → 커밋한다 → recount 를 돌린다.
+  이 로그를 처음 쓸 때 그 순서를 어겨 절 「바」가 붉었다 --- 그 사실을 지우지 않고 여기 적는다.
+  아래는 커밋된 산출물을 되돌린(git restore) 뒤 recount 만 다시 돌린 결과다.
+→ runners/out946_recount.json · 통과 True · 실패 []
+
+--- 5) 🔴 thr939_run.py 를 통째로 안 돌린 이유(실측) ---
+  돌리면 runners/out939_threshold.json(939 의 동결 산출물)을 덮어쓴다.
+  그 파일 이름이 러너에 나오는 줄 수: runners/thr939_run.py:2
+  → 그래서 위 1) 로 **고친 그 한 줄만** 두 설정으로 직접 돌려 답의 불변을 확인했다.
+
+--- 6) git status (이 로그를 쓴 직후) ---
+ M runners/out946_recount.json
+?? runners/out946_fiveprime.json
