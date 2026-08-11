@@ -1,0 +1,232 @@
+{
+ "무엇": "노트 946 두 번째 경로 --- 🔴 첫 경로와 결함을 공유하지 않는다",
+ "가 · 트리 객체 원 바이트": {
+  "검사": "가 · `git cat-file --batch` 로 트리 객체를 직접 파싱 (🔴 `--name-only` 를 안 쓴다 --- 포매팅 층이 없다)",
+  "🔴 세는 명령": "git rev-parse HEAD^{tree} → git cat-file --batch (바이너리) → `<모드> <이름>\\0<20바이트 sha>` 직접 파싱",
+  "🔴 범위": "data/state/cache_* ",
+  "🔴 트리": "HEAD 끝 트리(객체 DB)",
+  "HEAD 트리 캐시 파일": 54876,
+  "디스크 캐시 파일": 54876,
+  "🔴 트리 − 디스크": 0,
+  "🔴 디스크 − 트리": 0,
+  "예시 다섯(트리)": [
+   "data/state/cache_aladin/AB6IX.html",
+   "data/state/cache_aladin/AB6IX_B_COMPLETE__미니_1집_.html",
+   "data/state/cache_aladin/AHOF__아홉__WHO_WE_ARE__미니_1집_.html",
+   "data/state/cache_aladin/ALLDAY_PROJECT__올데이_프로젝트__FAMOUS__데뷔_싱글_.html",
+   "data/state/cache_aladin/Alpha_Drive_One_Euphoria.html"
+  ],
+  "통과": true
+ },
+ "나 · 🔴 결함 공유 시험": {
+  "검사": "나 · 🔴 이 경로가 `core.quotepath` 에 의존하나 --- 켜고 끄고 두 번",
+  "quotepath=true 로 센 수": 54876,
+  "quotepath=false 로 센 수": 54876,
+  "🔴 두 설정의 차(양방향)": [
+   0,
+   0
+  ],
+  "🔴 뜻": "차가 0 이면 이 경로는 그 설정을 **안 탄다** --- 945 의 두 경로가 둘 다 탔던 층을 이 경로는 안 지난다는 실측",
+  "대조 --- 날 것 `ls-tree --name-only` 를 같은 두 설정으로": {
+   "quotepath=true": 54661,
+   "quotepath=false": 54876,
+   "🔴 차": 215,
+   "🔴 뜻": "날 것은 설정을 **탄다**. 그래서 이것이 음성 대조가 된다"
+  },
+  "통과": true
+ },
+ "다 · census 재계수": {
+  "검사": "다 · census 재계수 --- 🔴 `tokenize`(첫 경로는 `ast`)",
+  "🔴 훑은 .py": 754,
+  "🔴 뺀 것(이 사이클이 만든 .py)": [
+   "lab/keyspace.py",
+   "runners/out946_keymap.py",
+   "runners/out946_quotefix.py",
+   "runners/out946_recount.py"
+  ],
+  "🔴 실제로 훑은 .py(남의 것)": 750,
+  "🔴 자리 수": 14,
+  "🔴 날 것": 8,
+  "날 것 목록": [
+   {
+    "파일:줄": "runners/fiveprime902.py:178",
+    "인자": [
+     "diff",
+     "--name-only",
+     "%s..%s"
+    ],
+    "안전": false
+   },
+   {
+    "파일:줄": "runners/out943b_d2time.py:164",
+    "인자": [
+     "git",
+     "ls-files",
+     "data/state/"
+    ],
+    "안전": false
+   },
+   {
+    "파일:줄": "runners/out944b_obstime.py:143",
+    "인자": [
+     "git",
+     "log",
+     "--format=\\x01%aI",
+     "--name-only",
+     "--diff-filter=A"
+    ],
+    "안전": false
+   },
+   {
+    "파일:줄": "runners/out945_colcensus.py:59",
+    "인자": [
+     "git",
+     "ls-files",
+     "*.py"
+    ],
+    "안전": false
+   },
+   {
+    "파일:줄": "runners/out945_obstime.py:120",
+    "인자": [
+     "git",
+     "log",
+     "--format=\\x01%aI",
+     "--name-only",
+     "--diff-filter=A"
+    ],
+    "안전": false
+   },
+   {
+    "파일:줄": "runners/out945_obstime.py:144",
+    "인자": [
+     "git",
+     "log",
+     "--all",
+     "--format=\\x01%H %aI",
+     "--name-only",
+     "--diff-filter=A",
+     "--",
+     "data/state/cache_*"
+    ],
+    "안전": false
+   },
+   {
+    "파일:줄": "runners/out945_verify.py:71",
+    "인자": [
+     "git",
+     "ls-tree",
+     "-r",
+     "--name-only"
+    ],
+    "안전": false
+   },
+   {
+    "파일:줄": "runners/ratio940_run.py:78",
+    "인자": [
+     "show",
+     "--name-only",
+     "--pretty=format:"
+    ],
+    "안전": false
+   }
+  ],
+  "안전 목록": [
+   "runners/fiveprime902.py:167",
+   "runners/gate940_wiring.py:69",
+   "runners/gate940_wiring.py:107",
+   "runners/ratio940_run.py:114",
+   "runners/thr939_run.py:78",
+   "runners/thr939_run.py:250"
+  ],
+  "첫 경로(ast)가 낸 자리 수(남의 것)": 14,
+  "첫 경로(ast)가 낸 날 것": 7,
+  "첫 경로(ast)가 낸 의도적 날 것(남의 것)": 1,
+  "⚠ 의도적 1 은 무엇인가": "runners/fiveprime902.py:178 --- ⑤′ 의 음성 대조. 나머지 셋은 946 자신의 파일이라 위에서 뺐다",
+  "⚠ 분모를 맞춘다": "이 경로는 `INTENTIONAL` 표를 안 본다 --- 그래서 「날 것」에 ⑤′ 의 음성 대조 자리가 **같이 들어간다**. 견줄 짝은 `ast 날 것 + ast 의도적 날 것` 이다(조항 60)",
+  "🔴 두 파서가 같은가(자리 수 · 남의 것)": true,
+  "🔴 두 파서가 같은가(날 것 + 의도적 · 남의 것)": true,
+  "통과": true
+ },
+ "라 · 지도 대조": {
+  "검사": "라 · 새 지도와 옛 지도를 **바이트 공간**에서 견준다",
+  "새 지도 키": 54876,
+  "옛 지도 키": 54876,
+  "🔴 디스크 − 새 지도": 0,
+  "🔴 새 지도 − 디스크": 0,
+  "🔴 디스크 − 옛 지도": 215,
+  "🔴 옛 지도 − 디스크": 215,
+  "옛 지도 − 디스크 예시 다섯": [
+   "\"data/state/cache_aladin/AB6IX_B_COMPLETE__\\353\\257\\270\\353\\213\\210_1\\354\\247\\221_.html\"",
+   "\"data/state/cache_aladin/AHOF__\\354\\225\\204\\355\\231\\211__WHO_WE_ARE__\\353\\257\\270\\353\\213\\210_1\\354\\247\\221_.html\"",
+   "\"data/state/cache_aladin/ALLDAY_PROJECT__\\354\\230\\254\\353\\215\\260\\354\\235\\264_\\355\\224\\204\\353\\241\\234\\354\\240\\235\\355\\212\\270__FAMOUS__\\353\\215\\260\\353\\267\\224_\\354\\213\\261\\352\\270\\200_.html\"",
+   "\"data/state/cache_aladin/AtHeart__\\354\\225\\263\\355\\225\\230\\355\\212\\270_.html\"",
+   "\"data/state/cache_aladin/AtHeart__\\354\\225\\263\\355\\225\\230\\355\\212\\270__Plot_Twist__EP_1\\354\\247\\221_.html\""
+  ],
+  "🔴 뜻": "양쪽이 같은 수면 「없는 파일」이 아니라 **두 이름**이다(조항 61 ①). 945 는 한쪽만 실었다",
+  "통과": true
+ },
+ "마 · 첫 경로와 수 대조": {
+  "검사": "마 · 첫 경로 산출물의 수를 **읽어서** 견준다(손 전사 금지)",
+  "첫 경로 디스크 캐시": 54876,
+  "이 경로 디스크 캐시": 54876,
+  "첫 경로 새 자 디스크−트리": 0,
+  "이 경로 디스크−트리": 0,
+  "첫 경로 새 자 트리−디스크": 0,
+  "이 경로 트리−디스크": 0,
+  "첫 경로 이스케이프된 키(945 지도)": 215,
+  "이 경로 옛지도−디스크": 215,
+  "🔴 어긋난 항목": [],
+  "통과": true
+ },
+ "바 · 🔴 커밋된 실물과 대조": {
+  "검사": "바 · 🔴 내 입력이 **커밋된 실물**과 같은가(945 C3)",
+  "🔴 분모(견준 파일)": 5,
+  "🔴 같은 것": 5,
+  "🔴 다른 것": [],
+  "파일별": {
+   "runners/out946_quotefix.json": {
+    "작업 트리 sha256": "23fa3a90e831e9b0752a4b77ae30bec83294805b7e9370826702a1af3708b8ea",
+    "커밋된 sha256": "23fa3a90e831e9b0752a4b77ae30bec83294805b7e9370826702a1af3708b8ea",
+    "같은가": true
+   },
+   "data/state/obs_time946_cachemap.json": {
+    "작업 트리 sha256": "9a1c74e2438c77b2517f24c9ea2dcfd13912f789dabf3d2ada1acb676fe80486",
+    "커밋된 sha256": "9a1c74e2438c77b2517f24c9ea2dcfd13912f789dabf3d2ada1acb676fe80486",
+    "같은가": true
+   },
+   "data/state/obs_time945_cachemap.json": {
+    "작업 트리 sha256": "8a9c524fe13d60a97fe3e3b4a93f96634566e8dfa49fea9d294085316112da82",
+    "커밋된 sha256": "8a9c524fe13d60a97fe3e3b4a93f96634566e8dfa49fea9d294085316112da82",
+    "같은가": true
+   },
+   "runners/out946_quotefix.py": {
+    "작업 트리 sha256": "5f4effb602b124c27b3000af585149aa3efa684c78b81e7d39dbba1fcd11c7ae",
+    "커밋된 sha256": "5f4effb602b124c27b3000af585149aa3efa684c78b81e7d39dbba1fcd11c7ae",
+    "같은가": true
+   },
+   "lab/keyspace.py": {
+    "작업 트리 sha256": "e63c86da248e5255f73442405b27693ee0a11cdcff2dd37d4debcbef0a362657",
+    "커밋된 sha256": "e63c86da248e5255f73442405b27693ee0a11cdcff2dd37d4debcbef0a362657",
+    "같은가": true
+   }
+  },
+  "🔴 뜻": "「아직 안 커밋됐다」와 「내용이 다르다」는 둘이다(조항 59). 앞의 것이면 커밋한 뒤 이 러너를 **다시** 돌려라",
+  "통과": true
+ },
+ "🔴 절 수(분모)": 6,
+ "🔴 `통과` 키를 가진 절": 6,
+ "🔴 실패한 절": [],
+ "통과": true,
+ "시각(UTC · 시작)": "2026-08-11T22:44:46+00:00",
+ "시각(UTC · 끝)": "2026-08-11T22:44:49+00:00",
+ "🔴 코드 sha256(이게 자다)": {
+  "runners/out946_recount.py": "17ce17cf94ba70aa25621902427bbd1ce6ce70bedab5bf685b65a5c4ffc3e98b"
+ },
+ "🔴 입력 산출물 sha256": {
+  "runners/out946_quotefix.json": "23fa3a90e831e9b0752a4b77ae30bec83294805b7e9370826702a1af3708b8ea",
+  "data/state/obs_time946_cachemap.json": "9a1c74e2438c77b2517f24c9ea2dcfd13912f789dabf3d2ada1acb676fe80486",
+  "data/state/obs_time945_cachemap.json": "8a9c524fe13d60a97fe3e3b4a93f96634566e8dfa49fea9d294085316112da82"
+ },
+ "⚠ git HEAD(시작 시점 · 판정에 쓰지 마라)": "56aa0c6799b150b71c978524dd667181e7862e6c"
+}
