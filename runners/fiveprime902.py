@@ -65,10 +65,16 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+from lab import gitcall as gc                                       # noqa: E402
+from lab import keyspace as ks                                      # noqa: E402
+
 OUT_DEFAULT = ROOT / "runners/out902b_fiveprime.json"
 
 #: 🔴 **이 러너가 자기 판정에 쓰는 코드** --- 도장 ④ 가 이것들의 sha256 이다.
-STAMP_CODE = ["runners/fiveprime902.py", "runners/quote901.py"]
+STAMP_CODE = ["runners/fiveprime902.py", "runners/quote901.py",
+              "lab/gitcall.py", "lab/keyspace.py"]
 
 #: 판정 키 감사의 **필수** 대상. 남의 소유라 고치지 않고 **읽는 쪽에서** 「모른다」로 센다.
 KEYAUDIT_MUST = ["runners/out899a_gates.json"]
@@ -115,9 +121,19 @@ def _git(args, timeout=600):
 
 # ── ⓪ 관문 ──────────────────────────────────────────────────────────────
 def gate_worktree() -> dict:
-    """`git status --porcelain` 이 비어야 ⑤′ 를 시작한다. 900 은 정확히 여기서 샜다."""
-    rc, out, err = _git(["status", "--porcelain"])
-    dirty = [l for l in out.split("\n") if l.strip()]
+    """`git status --porcelain` 이 비어야 ⑤′ 를 시작한다. 900 은 정확히 여기서 샜다.
+
+    🔴 **947 수리(티처 #86 C1)**: 이 자리는 946 의 「날 것 전수」 바늘 **밖**이었다
+    --- 바늘이 `ls-files`·`ls-tree`·`--name-only`·`--name-status` 넷뿐이라
+    `status --porcelain` 은 통째로 분모 밖이었고, 그래서 **⑤′ 의 ⓪ 관문 자신이
+    안 세어졌다.** `-z` 와 `core.quotePath=false` 를 붙인다.
+
+    ⚠ `-z` 를 주면 항목이 NUL 로 끊기고 **이름 바꾸기는 `XY 새\\0옛\\0`** 로 나온다
+    --- 그래서 아래 목록에는 옛 이름이 **표지 없는 한 줄**로 섞인다. 「줄 수」가
+    아니라 「항목 수」로 읽어라.
+    """
+    rc, out, err = _git(["-c", "core.quotePath=false", "status", "--porcelain", "-z"])
+    dirty = [l for l in out.split("\0") if l.strip()]
     return {
         "검사": "⓪ 관문 --- 작업 트리가 비었나(⑤′ 는 커밋된 트리를 검사한다)",
         "git status --porcelain 종료": rc,
@@ -139,18 +155,51 @@ def _needles(paths):
 
 
 def _grep_l(needles, tree=None):
-    """`git grep -lF` 로 역참조한다. 🔴 못 돌면 빈 목록이 아니라 예외를 들고 온다."""
+    """`git grep -l` 로 역참조한다. 🔴 못 돌면 빈 목록이 아니라 예외를 들고 온다.
+
+    🔴🔴 **947 수리 (티처 #86 C2)** --- 이 함수는 ⑤′ 의 **건초더미 생산기**다.
+    946 은 **바늘 쪽** 음성 대조(107 대 144)만 보고 이겼다고 했고 **출력 쪽은
+    아무도 안 봤다.** 실측: `out946_fiveprime.json` 의 역참조 소비자 **154 중 22**
+    가 `"data/state/cache_aladin/…\\353\\257\\270…"` 꼴의 **이스케이프된 가짜
+    이름**이었고, 반대 방향(참 이름 비-ASCII 소비자)은 **0** 이었다.
+
+    잠복 결함: 아래 `backref`·`gate_roster` 가 `endswith(".py")` 로 가르는데
+    이스케이프된 이름은 `.py"` 로 끝난다 --- **한글 `.py` 는 「비-.py」로 조용히
+    재분류된다.** 오늘 안 터진 이유는 추적 `.py` 754 중 비-ASCII 이름이 0 이라서다
+    (「못 걸린다」가 아니라 **「안 걸렸다」**). 947 이 그 분모를 1 로 만들었다
+    (`lab/fixtures/한글이름_고정물.py`).
+
+    이제 `lab.gitcall.grep_files` 정본 판독기를 지난다(`-z` + `core.quotePath=false`).
+    """
     if not needles:
         return [], {"rc": None, "왜": "바늘이 0개다 --- 「소비자 없음」이 아니다"}
     # 🔴 `--untracked` 는 rev 와 못 섞인다(`fatal: … no such path in the working tree`).
     #    작업 트리를 볼 때만 붙인다 --- 안 붙이면 아직 커밋 안 된 소비자가 **조용히 사라진다**.
+    try:
+        files = gc.grep_files(needles, tree=tree, untracked=(tree is None))
+    except ks.GitError as e:
+        raise RuntimeError(str(e))
+    return sorted(files), {"rc": 0, "바늘 수": len(needles),
+                           "판독기": "lab.gitcall.grep_files(`-z` + core.quotePath=false)"}
+
+
+def _grep_l_old(needles, tree=None):
+    """🔴 **946 판 그대로** --- 음성 대조 전용(판정에 쓰지 마라).
+
+    「고쳤다」를 말로 하지 않으려면 **고치기 전 판이 같은 자리에서 무엇을 냈는지**를
+    같은 실행 안에서 재야 한다. 이 함수는 그 기준본이다.
+    """
+    if not needles:
+        return []
+    # 날것허용: 🔴 음성 대조 --- 946 판 `git grep -lF` 를 **일부러 그대로** 돌린다.
+    #           여기서 인용을 끄면 「고치기 전에 무엇이 나왔나」를 못 잰다.
     args = ["grep", "-lF"] + ([] if tree else ["--untracked"])
     for n in needles:
         args += ["-e", n]
     if tree:
         args += [tree]
     rc, out, err = _git(args, timeout=900)
-    if rc not in (0, 1):                      # 0=맞음 1=하나도 안 맞음 그 밖=고장
+    if rc not in (0, 1):
         raise RuntimeError("git grep 종료 %d: %s" % (rc, err[:400]))
     files = []
     for l in out.split("\n"):
@@ -160,7 +209,7 @@ def _grep_l(needles, tree=None):
         if tree and l.startswith(tree + ":"):
             l = l[len(tree) + 1:]
         files.append(l)
-    return sorted(set(files)), {"rc": rc, "바늘 수": len(needles)}
+    return sorted(set(files))
 
 
 def backref(base, head, tree, ran, exempt) -> dict:
@@ -175,6 +224,8 @@ def backref(base, head, tree, ran, exempt) -> dict:
     # 🔴 **음성 대조** --- `-c core.quotepath=false` 를 **안 쓴** 바늘로도 한 번 센다.
     #    한글 경로가 `"docs/\353\243…"` 로 이스케이프되어 **한 곳도 안 맞는데 종료 0** 이
     #    나는 길이 실재한다. 그 차를 수로 남기지 않으면 다음 사람이 또 밟는다.
+    # 날것허용: 🔴 음성 대조 --- **일부러** quotepath 를 안 끈 바늘을 만든다.
+    #           여기서 인용을 끄면 이 대조가 죽는다(946 부터 이어지는 자리).
     rc_q, out_q, _ = _git(["diff", "--name-only", "%s..%s" % (base, head)])
     esc = sorted(p for p in out_q.split("\n") if p.strip())
     esc_hit, _m = _grep_l(sorted(set(esc)), tree)
@@ -232,6 +283,71 @@ def backref(base, head, tree, ran, exempt) -> dict:
         "통과": (not no_reason),
         "⚠ 통과의 뜻": ("역참조 소비자 중 **실행 가능한 `.py` 가 전부 다시 돌았거나 "
                    "사유가 등록됐나**. 「안 돌렸다」가 하나라도 사유 없이 남으면 실패다"),
+    }
+
+
+# ── 1-나/다/라 🔴 날 것 git 호출 (947 · 티처 #86 C1·C2·M2 상설 배선) ──────
+def rawgit_gate() -> dict:
+    """🔴 **「날 것 호출은 ⑤′ 가 잡는다」를 배선으로 만든다**(티처 #86 M2).
+
+    `docs/루프.md:698` 은 그 문장을 **절 제목으로 단언**하는데, 946 까지 ⑤′ 에는
+    그 배선이 **없었다**(946 의 게이트는 자기 사이클 러너 안에 있었고 그 러너는
+    동결됐다). 이 절이 그 문장을 참으로 만든다.
+    """
+    return gc.census()
+
+
+def rawgit_power() -> dict:
+    """🔴 이 게이트가 **실제로 붉어지나** --- 다섯 갈래를 심어서 잰다."""
+    return gc.plant_check()
+
+
+def grepl_regress(base, head, tree=None) -> dict:
+    """🔴 **건초더미 대조** --- `_grep_l` 의 새 판독 대 946 판독 (티처 #86 C2).
+
+    조항 62 로 낸다: **반대 방향 · 예시 다섯 · 심은 키**를 같이 싣는다.
+    심은 키는 `lab/fixtures/한글이름_고정물.py` --- 947 이 이 검사를 위해
+    분모를 0 에서 1 로 올린 그 파일이다.
+    """
+    rc, out, err = _git(["-c", "core.quotepath=false", "diff", "--name-only", "-z",
+                         "%s..%s" % (base, head)])
+    if rc != 0:
+        return {"검사": "1-라 `_grep_l` 건초더미 대조", "🔴 예외": err[:300], "통과": False}
+    needles = sorted({p for p in out.split("\0") if p})
+    if not needles:
+        return {"검사": "1-라 `_grep_l` 건초더미 대조",
+                "🔴 못 쟀다": "바뀐 경로가 0 --- 「같다」가 아니라 **「못 쟀다」**다(조항 59)",
+                "통과": False}
+    new, _m = _grep_l(needles, tree)
+    old = _grep_l_old(needles, tree)
+    rep = gc.diff62("새 판독(`-z`+quotePath=false)", set(new),
+                    "946 판독(날 것)", set(old), probe=ks.octal_escape)
+
+    #: 🔴 **심은 키 --- `.py` 재분류가 실제로 일어나나**(티처 #86 C2 의 잠복 결함).
+    fx = "lab/fixtures/한글이름_고정물.py"
+    fx_esc = ks.octal_escape(fx)
+    return {
+        "검사": "1-라 🔴 `_grep_l` 건초더미 대조 --- 새 판독 대 946 판독(조항 62)",
+        "🔴 왜": ("946 은 **바늘 쪽** 음성 대조만 보고 이겼다고 했다. **출력 쪽은 "
+               "아무도 안 봤다** --- 소비자 154 중 22 가 이스케이프된 가짜 이름이었다"),
+        "🔴 바늘 수": len(needles),
+        "🔴 새 판독이 낸 소비자 수": len(new),
+        "🔴 946 판독이 낸 소비자 수": len(old),
+        "🔴 946 판독 중 `\"` 로 시작하는 가짜 이름": len([x for x in old if x.startswith('"')]),
+        "🔴 새 판독 중 `\"` 로 시작하는 가짜 이름": len([x for x in new if x.startswith('"')]),
+        "🔴 새 판독 중 비-ASCII 참 이름": len([x for x in new if not x.isascii()]),
+        "조항 62 대조": rep,
+        "🔴 심은 키 --- `endswith('.py')` 재분류": {
+            "심은 것": fx, "두 번째 인코딩": fx_esc,
+            "새 판독은 `.py` 로 보나": fx.endswith(".py"),
+            "🔴 946 판독은 `.py` 로 보나": fx_esc.endswith(".py"),
+            "🔴 발화했나": fx.endswith(".py") and not fx_esc.endswith(".py"),
+            "⚠": ("이 심은 키가 없으면 이 검사는 **영원히 초록**이다 --- 946 당시 "
+                  "추적 `.py` 754 중 비-ASCII 이름이 **0** 이었다"),
+        },
+        "통과": (len([x for x in new if x.startswith('"')]) == 0),
+        "⚠ 통과의 뜻": "🔴 **새 판독의 출력에 가짜 이름이 하나도 없나.** 두 판독이 "
+                  "같은지가 아니다 --- 다른 것이 정상이다(그게 이 수리의 내용이다)",
     }
 
 
@@ -688,6 +804,19 @@ def main(argv=None):
         res["1 소비자 역참조"] = backref(a.base, a.head, a.tree, ran, exempt)
     except Exception as e:                                        # noqa: BLE001
         res["1 소비자 역참조"] = {"🔴 예외": "%s: %s" % (type(e).__name__, e), "통과": False}
+    # 🔴 947 --- 「날 것 호출은 ⑤′ 가 잡는다」를 **배선**으로 만든다(티처 #86 M2)
+    for key, fn in (("1-나 🔴 날 것 git 호출 전수(947 상설)", rawgit_gate),
+                    ("1-다 🔴 그 게이트의 검정력(심어서 확인)", rawgit_power)):
+        try:
+            res[key] = fn()
+        except Exception as e:                                    # noqa: BLE001
+            res[key] = {"🔴 예외": "%s: %s" % (type(e).__name__, e), "통과": False}
+    try:
+        res["1-라 🔴 `_grep_l` 건초더미 대조(947)"] = grepl_regress(a.base, a.head, a.tree)
+    except Exception as e:                                        # noqa: BLE001
+        res["1-라 🔴 `_grep_l` 건초더미 대조(947)"] = {
+            "🔴 예외": "%s: %s" % (type(e).__name__, e), "통과": False}
+
     _cons = res["1 소비자 역참조"].get("역참조 소비자(전량)", [])
     res["2 게이트"] = run_gates(a.gates, a.tree,
                              _cons if isinstance(_cons, list) else [], ran)

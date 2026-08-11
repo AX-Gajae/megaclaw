@@ -2072,7 +2072,11 @@ def _git(*args):
 
 def _committed_at(rel: str):
     """그 파일이 마지막으로 커밋된 시각(ISO). 미추적·수정 상태면 `None`."""
-    st = _git("status", "--porcelain", "--", rel)
+    # 🔴 947 수리 (티처 #86 C1) --- 이 자리는 946 의 「날 것 전수」 바늘 **밖**이었다.
+    #    `-z` + `core.quotePath=false`. ⚠ **이 자리의 실해는 0 이다** --- 아래는
+    #    출력의 **빈/안 빔**만 읽으므로 이름이 어떻게 적히든 판정이 같다.
+    #    그래도 고친다: 「오늘 무해」와 「원리상 무해」는 둘이다(조항 59).
+    st = _git("-c", "core.quotePath=false", "status", "--porcelain", "-z", "--", rel)
     if st is None or st.strip():
         return None                        # 손대는 중인 파일은 얼어붙은 기록이 아니다
     out = (_git("log", "-1", "--format=%cI", "--", rel) or "").strip()
