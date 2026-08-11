@@ -1,0 +1,425 @@
+{
+ "노트": 944,
+ "레인": "수리",
+ "무엇": "판정 단위를 「열」 → 「(계열, 열)」 · 규약 충돌의 정본을 정한다 (티처 #83 C1·M7)",
+ "사전등록": "docs/prereg_944_famgrade.md (커밋 e71dc122f · 측정 전)",
+ "🔴 스탬프(git rev-parse HEAD 안 쓴다)": {
+  "시작 시각": "2026-08-12T05:41:41+0900",
+  "끝 시각": "2026-08-12T05:41:41+0900",
+  "초": 0.5,
+  "입력 sha256(D1 디렉터리별)": {
+   "data/records": {
+    "파일": 380,
+    "sha256(파일명+파일sha 이어붙임)": "57c45acbd4652af85a6c7cc1f737182f95c4c392e605c169ee486a1d93516049"
+   },
+   "data/market_records": {
+    "파일": 647,
+    "sha256(파일명+파일sha 이어붙임)": "f356e11eff0dcbf7e34a46242648eb6b609b340e047e6d3df65c91ac86a12fd1"
+   },
+   "data/idol_records": {
+    "파일": 282,
+    "sha256(파일명+파일sha 이어붙임)": "b0dbeca38094856c5244e9e428711f761321239debfa5098917a49c2e45f029e"
+   },
+   "data/records_draft": {
+    "파일": 0,
+    "sha256(파일명+파일sha 이어붙임)": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   "data/records_incomplete": {
+    "파일": 8,
+    "sha256(파일명+파일sha 이어붙임)": "0e391fc15b2fc016a9067b9fa21c69f8a8f2e2850dfee05c3c867c877208f572"
+   },
+   "data/records_thinbak": {
+    "파일": 19,
+    "sha256(파일명+파일sha 이어붙임)": "071df0c45b530822b8c3b5442fcdd8aca5ec117c506f47e2eca4baa5e5c89399"
+   }
+  },
+  "입력 sha256(동결 산출물)": {
+   "runners/out943_axis.json": "601cb5c2ef3a74ffd4f5f982218a9804b44846627013ee60e329f0e4079447d6",
+   "runners/out942_stock.json": "f4b0c621f0b5c3730c278a951a7d9fd5353ae1d2a8e78c3bf57aa69f4763d98b"
+  },
+  "코드 sha256": {
+   "runners/out944_famgrade.py": "8425bbe43b66d6219920d577b52a39793b1346003f19647c33244f28a2cb8bf0",
+   "runners/out943_axis.py": "0684cad031cd69ea65e029864f721fa8531266671795b3920a218aaeee9dfdd8",
+   "ingest/derive_features.py": "c0688678c7d7a59ea2140004403862fc08ee15ec3e99d3cb22cb4e54164a4be0",
+   "lab/provenance.py": "b8b9ad9b1e4e9c3d6e89fdff44bee85c13f416472569aadedb932f157c7cee92",
+   "state/dataset_v2.py": "237a08057dbb20426c65bd06dac88fefd31e4c119257726b571d6dfc018798c8"
+  }
+ },
+ "🔴 조항 60 — 명령·범위·트리": {
+  "명령": "python3 runners/out944_famgrade.py",
+  "범위": [
+   "data/records",
+   "data/market_records",
+   "data/idol_records",
+   "data/records_draft",
+   "data/records_incomplete",
+   "data/records_thinbak"
+  ],
+  "트리": "작업 트리만 읽는다(인덱스와 안 섞는다)"
+ },
+ "🔴 안 부른 자": "판 ρ · 문턱 0.00353",
+ "🔴 분모": {
+  "D1(파일)": 1336,
+  "계열 분포": {
+   "A_팝업(outcome.totals)": 407,
+   "B_시장(평평한 outcome)": 647,
+   "C_아이돌(outcome 없음)": 282
+  },
+  "🔴 합 == 분모": true,
+  "🔴 ㄹ 판정의 분모(A+B · C 는 conditions 행 0)": 1054
+ },
+ "🔴 ㄱ 배선 검사": {
+  "943 의 GRADE 를 import 했나": true,
+  "GRADE 항목 수": 19,
+  "943 이 capacity 를 뭐라 했나": "PRE",
+  "grade_of 가 받는 인자 수(943)": 1,
+  "CAP_PAT 을 ingest 에서 import 했나": [
+   "invite",
+   "reservation",
+   "session"
+  ],
+  "🔴 943 산출물과 같은가(고치기 전)": {
+   "943 이 적은 통": {
+    "PRE": 1053,
+    "모른다": 90,
+    "POST": 22
+   },
+   "지금 부른 통": {
+    "PRE": 1053,
+    "모른다": 90,
+    "POST": 22
+   },
+   "같나": true,
+   "943 이 적은 PRE 분포 == 지금": true
+  }
+ },
+ "🔴 ㄴ 고치기 전/후 나란히": {
+  "고치기 전(943 · 열 단위)": {
+   "PRE": 1053,
+   "모른다": 90,
+   "POST": 22
+  },
+  "🔴 고친 뒤(944 · (계열,열) 단위)": {
+   "PRE": 1053,
+   "모른다": 260,
+   "POST": 22
+  },
+  "차": {
+   "PRE": 0,
+   "POST": 0,
+   "모른다": 170
+  },
+  "🔴 PRE 통에서 아주 떨어진 레코드": [],
+  "레코드당 PRE 열 개수 — 전": {
+   "0": 1,
+   "2": 6,
+   "3": 1,
+   "4": 59,
+   "5": 65,
+   "6": 209,
+   "7": 223,
+   "8": 183,
+   "9": 134,
+   "10": 99,
+   "11": 63,
+   "12": 11
+  },
+  "레코드당 PRE 열 개수 — 후": {
+   "0": 1,
+   "2": 6,
+   "3": 1,
+   "4": 61,
+   "5": 78,
+   "6": 233,
+   "7": 292,
+   "8": 81,
+   "9": 128,
+   "10": 99,
+   "11": 63,
+   "12": 11
+  }
+ },
+ "🔴 ㄷ 겹침 (세 통은 분할이 아니다)": {
+  "분모": 1054,
+  "세 통 세로합": 1335,
+  "🔴 세로합 − 분모": 281,
+  "쌍별 겹침": {
+   "PRE ∩ 모른다": 260,
+   "POST ∩ PRE": 22,
+   "POST ∩ 모른다": 4
+  }
+ },
+ "🔴 모른다로 센 열": {
+  "열별": {
+   "capacity": 170,
+   "venue_knowledge": 90
+  },
+  "(계열,열)별": {
+   "B · capacity": 170,
+   "A · venue_knowledge": 90
+  }
+ },
+ "🔴 ㄹ notes 가 승격을 만드는가 (사전등록 밖의 추가 측정 · B 계열)": {
+  "B 계열 capacity 값 있는 레코드": 170,
+  "detail 분포": {
+   "키워드 승격": 170
+  },
+  "access_type 분포": {
+   "session": 53,
+   "reservation": 105,
+   "invite": 12
+  },
+  "🔴 notes 를 빼면 정규식이 안 걸리는 레코드": 11,
+  "notes 없이도 걸리는 레코드": 159,
+  "🔴 분모": 170,
+  "🔴 blob 셋 — concept_description 이 notes 의 복사본이라 「notes 를 뺐다」가 참이 아니다": {
+   "실제 blob(iv+notes) 에서 걸림": 170,
+   "notes 만 뺀 blob 에서 걸림": 159,
+   "🔴 notes·concept_description 둘 다 뺀 blob 에서 걸림": 122,
+   "🔴 사후 문자열이 있어야만 걸리는 레코드": 48
+  },
+  "🔴 concept_description 이 notes 안에 그대로 든 레코드": 29,
+  "보기 셋": [
+   {
+    "record": "MKT-2023-0012",
+    "notes": "정확한 개최 일자는 2023년 4~5월 10일간으로 추정(기사 미명시). 2023~2025 누적 100만명(시리즈 레코드 MKT-2023-2001) 중 2023년 회차 수치. | 병합 레코드: ",
+    "access_type": "session",
+    "detail": "키워드 승격(session)"
+   },
+   {
+    "record": "MKT-2024-0015",
+    "notes": "매출 15억원에 가까움(근사치 보도). 시즌2 기간 3/12~25(폴리뉴스 2024-03-12). 회차 귀속 불확실 | 병합 레코드: ",
+    "access_type": "session",
+    "detail": "키워드 승격(session)"
+   },
+   {
+    "record": "MKT-2024-0044",
+    "notes": "나흘간 2500명(뉴스웍스)+첫날 900·둘째날 1200(fnnews)+사전예약 하루 마감. 하나은행 예상 총방문 1만~1.5만은 추정치로 visitors에 미반영. | 병합 레코드: ",
+    "access_type": "reservation",
+    "detail": "키워드 승격(reservation)"
+   }
+  ]
+ },
+ "🔴 P4 — A 계열 capacity (분모 A 407)": {
+  "값 있는 레코드": 78,
+  "detail 분포": {
+   "키워드 승격": 61,
+   "그 밖": 17
+  },
+  "access_type 분포": {
+   "session": 38,
+   "reservation": 20,
+   "open": 5,
+   "unknown": 8,
+   "invite": 7
+  },
+  "🔴 A 는 PRE 유지": "derive_features.py:150-152 의 blob 은 intervention + conditions(derived 제외)뿐 — notes 를 안 먹는다"
+ },
+ "🔴 P5 — 두 계열에 다 값이 있는 열": {
+  "열 목록": {
+   "area_pyeong": [
+    "A",
+    "B"
+   ],
+   "capacity": [
+    "A",
+    "B"
+   ],
+   "derived.duration": [
+    "A",
+    "B"
+   ],
+   "derived.ip_history": [
+    "A",
+    "B"
+   ]
+  },
+  "🔴 그중 계열별로 코드 경로가 다른 것": [
+   "capacity"
+  ],
+  "손으로 확인한 근거": {
+   "derived.ip_history": "A·B 가 **같은 함수** ip_history() 를 부른다(derive_features.py:129 · 둘 다 `e[0] < open_from` 컷) → PRE 유지",
+   "derived.duration": "A·B 가 같은 duration_features(from,to) → PRE 유지",
+   "area_pyeong": "B 는 market_merge.py:156 이 **None 으로 박는다**(값 있는 14 는 그 앞 MKT- 경로) — notes 를 안 먹는다 → PRE 유지",
+   "capacity": "🔴 A :150-152 vs B :170-172 — **입력이 다르다**"
+  }
+ },
+ "🔴 ㅁ 규약 충돌 — lab/provenance.py 가 정본": {
+  "정본 선언": "「축을 판에 써도 되나」는 provenance 가 정한다(미등록=사후=막는다). 943 의 「모른다」는 **다른 물음**(아는가)의 답이고 막는 힘이 없다. 포섭: 회계에서 모른다인 열이 만드는 축은 usable()==False 여야 한다. 그 포섭을 **기본값에 안 기대고** WHEN 에 명시 등록한다",
+  "provenance": {
+   "WHEN 등록 축 수": 85,
+   "기본값(미등록 축)": "사후",
+   "🔴 t1b 넷": {
+    "t1b_host_traffic": {
+     "WHEN 에 있나": true,
+     "when()": "사후",
+     "usable()": false
+    },
+    "t1b_venue_footfall": {
+     "WHEN 에 있나": true,
+     "when()": "사후",
+     "usable()": false
+    },
+    "t1b_pass_rate": {
+     "WHEN 에 있나": true,
+     "when()": "사후",
+     "usable()": false
+    },
+    "t1b_tier": {
+     "WHEN 에 있나": true,
+     "when()": "사후",
+     "usable()": false
+    }
+   }
+  },
+  "dataset_v2": {
+   "dataset_v2 축 이름 수(마스크 제외)": 79,
+   "축 이름 수(마스크 포함)": 132,
+   "🔴 provenance.WHEN 에 미등록": 71,
+   "🔴 usable() == False": 75,
+   "미등록 축(앞 40개)": [
+    "prior_n_log",
+    "prior_label_n_log",
+    "prior_log_mean",
+    "prior_log_max",
+    "months_since_log",
+    "cross_domain",
+    "family",
+    "days",
+    "days_from_doc",
+    "weekend_share",
+    "holiday_days",
+    "venue_tier",
+    "store_count",
+    "area_pyeong",
+    "is_host",
+    "cap_bound",
+    "total_capacity",
+    "is_market",
+    "t1_host_daily_traffic",
+    "t1_plan_visitors_per_day",
+    "t1_capacity_per_session",
+    "t1_giveaway_qty",
+    "t1_area_sqm",
+    "t1_throughput_units",
+    "t1_unit_minutes",
+    "t1_operating_hours_per_day",
+    "t1_staff_count",
+    "t1o_experience_density",
+    "t1o_goods_scale",
+    "t1o_photo_zones",
+    "t1o_collab_strength",
+    "t1o_ip_awareness",
+    "t1o_target_breadth",
+    "t1o_entry_friction",
+    "t1o_media_push",
+    "t1o_season_fit",
+    "t1o_venue_prominence",
+    "cap_per_day",
+    "trend_n_weeks",
+    "comp_same_addr_open"
+   ],
+   "🔴 t1b 넷이 실제 축에 있나": [
+    "t1b_host_traffic",
+    "t1b_venue_footfall",
+    "t1b_pass_rate",
+    "t1b_tier"
+   ]
+  },
+  "🔴 지어 둔 판 행렬에서 t1b 가 살아 있나": {
+   "파일": "data/state/popup_v2.npz",
+   "sha256": "c3f58e12279e59d48253eccafb42ad1c16edfc95a36721264ee989669d855579",
+   "행": 376,
+   "열": 132,
+   "g_when 문턱": 0.01,
+   "🔴 t1b 넷의 표시자 평균": {
+    "t1b_host_traffic": 0.2287,
+    "t1b_venue_footfall": 0.2287,
+    "t1b_pass_rate": 0.234,
+    "t1b_tier": 0.2394
+   },
+   "🔴 넷 다 문턱을 넘나": true
+  },
+  "게이트가 물려 있나": {
+   "🔴 grep 범위(조항 60)": {
+    "명령": "grep -rn --include=*.py <pat> lab state ingest runners harness serve",
+    "트리": "작업 트리"
+   },
+   "state/dataset_v2.py 안의 usable/audit/when 호출": [],
+   "provenance 를 import 하는 파일": [
+    "lab/guards.py",
+    "runners/out944_famgrade.py"
+   ],
+   "🔴 usable( 를 부르는 곳": [
+    "lab/provenance.py:173:    # 노트 944 의 정본 선언: **회계에서 ``모른다''인 열이 만드는 축은 usable() 이",
+    "lab/provenance.py:308:    **회계에서 ``모른다''인 열이 만드는 축은 이 표에서 반드시 usable()==False 여야 한다.**",
+    "lab/provenance.py:315:    🔴 노트 944 실측: ``usable()'' 의 호출자가 이 파일 밖에 **0건**이고,",
+    "lab/provenance.py:322:def usable(axis: str) -> bool:",
+    "runners/out944_famgrade.py:264:                                   \"usable()\": PV.usable(a)} for a in t1b}",
+    "runners/out944_famgrade.py:275:        blocked = [x for x in base if not PV2.usable(x)]",
+    "runners/out944_famgrade.py:280:            \"🔴 usable() == False\": len(blocked),",
+    "runners/out944_famgrade.py:322:            callers(r\"usable(\\|audit(\\|when(\\|when_in(\", [\"state/dataset_v2.py\"]),",
+    "runners/out944_famgrade.py:326:        \"🔴 usable( 를 부르는 곳\": callers(r\"usable(\", scope),",
+    "runners/out944_famgrade.py:424:                     \"포섭: 회계에서 모른다인 열이 만드는 축은 usable()==False 여야 한다. \"",
+    "runners/out944_famgrade.py:433:                      \"표시자가 g_when 문턱을 넘는다 ③provenance 에 미등록이라 usable()=False \"",
+    "harness/discovery.py:219:def _usable(how: str, leak_ok: bool = True) -> str:",
+    "harness/discovery.py:257:                      \"usable\": _usable(how),"
+   ],
+   "🔴 audit( · audit_data( 를 부르는 곳": [
+    "lab/guards.py:372:    bad = audit_data(obs)",
+    "lab/poolshadow.py:106:def audit(root: str = \".\") -> dict:",
+    "lab/poolshadow.py:146:    a = audit()",
+    "lab/sideaudit.py:22:    from lab.sideaudit import audit ; audit()",
+    "lab/sideaudit.py:823:def audit(data=None) -> dict:",
+    "lab/sideaudit.py:841:    a = audit()",
+    "lab/loop.py:1111:        cfg[\"풀그림자\"] = poolshadow.audit()",
+    "lab/provenance.py:326:def audit(names, domain: str | None = None) -> dict:",
+    "lab/provenance.py:336:def audit_data(names_by_domain: dict) -> dict:",
+    "lab/provenance.py:340:        b = audit(nm, d)",
+    "ingest/link_audit.py:49:def audit() -> dict:",
+    "ingest/link_audit.py:88:    r = audit()",
+    "ingest/audit.py:2526:def audit() -> dict:",
+    "ingest/audit.py:2555:    d = audit()",
+    "ingest/news_context.py:138:def audit(write: bool = False) -> dict:",
+    "ingest/news_context.py:189:    audit(write=a.write)",
+    "runners/out944_famgrade.py:322:            callers(r\"usable(\\|audit(\\|when(\\|when_in(\", [\"state/dataset_v2.py\"]),",
+    "runners/out944_famgrade.py:327:        \"🔴 audit( · audit_data( 를 부르는 곳\": callers(r\"audit(\\|audit_data(\", scope),",
+    "runners/fiveprime902.py:304:def keyaudit(extra) -> dict:",
+    "runners/fiveprime902.py:357:def stamp_audit() -> dict:",
+    "runners/fiveprime902.py:694:    res[\"3 판정 키 규약\"] = keyaudit(a.keyaudit)",
+    "runners/fiveprime902.py:695:    res[\"4 도장 확인\"] = stamp_audit()",
+    "harness/label_hygiene.py:212:def audit() -> dict:",
+    "harness/label_hygiene.py:257:    r = audit()"
+   ]
+  },
+  "🔴 못 본 것": "이 79 축이 `data.names['팝업']` 에 그대로 들어가는지는 **안 봤다** — lab/popupset.py·lab/popaxes.py 가 부분집합을 고른다. 확인한 것은 ①dataset_v2 가 넷을 만든다 ②지어 둔 npz 에 살아 있고 표시자가 g_when 문턱을 넘는다 ③provenance 에 미등록이라 usable()=False ④state/dataset_v2.py 가 게이트를 **한 번도 안 부른다**"
+ },
+ "🔴 열별 레코드 수(계열 · 값 있는 것만)": {
+  "A_팝업(outcome.totals) · location  [PRE·ㄷ]": 407,
+  "A_팝업(outcome.totals) · period  → a 로 옮김": 407,
+  "A_팝업(outcome.totals) · fee_structure  [PRE·ㄷ]": 407,
+  "A_팝업(outcome.totals) · scale  [PRE·ㄷ]": 399,
+  "A_팝업(outcome.totals) · season  [PRE·ㄴ]": 394,
+  "A_팝업(outcome.totals) · derived.ip_history  [PRE·ㄱ]": 380,
+  "A_팝업(outcome.totals) · derived.calendar  [PRE·ㄴ]": 380,
+  "A_팝업(outcome.totals) · derived.competition  [PRE·ㄱ]": 380,
+  "A_팝업(outcome.totals) · derived.duration  [PRE·ㄴ]": 368,
+  "A_팝업(outcome.totals) · brand_requirements  [PRE·ㄷ]": 238,
+  "A_팝업(outcome.totals) · derived.pnl_pre  [PRE·ㄱ]": 214,
+  "A_팝업(outcome.totals) · venue_knowledge  [모른다·ㅁ]": 90,
+  "A_팝업(outcome.totals) · capacity  [PRE·ㄴ]": 78,
+  "A_팝업(outcome.totals) · area_pyeong  [PRE·ㄷ]": 49,
+  "A_팝업(outcome.totals) · demand_signals  [POST·ㄹ]": 22,
+  "B_시장(평평한 outcome) · venue_type  [PRE·ㄷ]": 645,
+  "B_시장(평평한 outcome) · venue  [PRE·ㄷ]": 644,
+  "B_시장(평평한 outcome) · city  [PRE·ㄷ]": 644,
+  "B_시장(평평한 outcome) · multi_store  [PRE·ㄷ]": 612,
+  "B_시장(평평한 outcome) · period_from  → a 로 옮김": 555,
+  "B_시장(평평한 outcome) · derived.ip_history  [PRE·ㄱ]": 555,
+  "B_시장(평평한 outcome) · period_to  → a 로 옮김": 526,
+  "B_시장(평평한 outcome) · derived.duration  [PRE·ㄴ]": 503,
+  "B_시장(평평한 outcome) · neighborhood  [PRE·ㄷ]": 395,
+  "B_시장(평평한 outcome) · capacity  [모른다·ㅁ]": 170,
+  "B_시장(평평한 outcome) · area_pyeong  [PRE·ㄷ]": 14
+ }
+}
