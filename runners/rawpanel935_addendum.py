@@ -81,6 +81,42 @@ def main() -> None:
         "🔴 **진단 ③ 은 관문이 실제로 걸렸다**(통과 0/%d) — 사전등록 §4-다 가 「원리상 걸린다」고 "
         "미리 적은 그대로다. **걸린 대로 신고한다.**" % len(recs),
     ]
+    # ── 🔴 칸 분해 — **원판의 수로** 다시 낸다 (조항 60 · 티처 #76 M4 형식판) ──
+    vv = d["⑥ 🔴 판정용 순열"]
+    rows = {p: d["② 항등 검사 (사전등록 §7-2·§7-4)"]
+            ["W3 b_prv=−1 이 prevmed 결측과 같은 행인가 · 행 회계"]["행"][k]
+            for p, k in zip(PANELS, ("판 ①", "판 ②", "진단 ③"))}
+    n1 = rows[PANELS[0]]
+    eff = {p: vv[p]["🔴 효과(진짜 − 귀무평균 · 일)"] for p in PANELS}
+    imp = {p: vv[p]["진짜"] for p in PANELS}
+    share_eff = eff[PANELS[2]] * rows[PANELS[2]] / n1 / eff[PANELS[0]]
+    share_imp = imp[PANELS[2]] * rows[PANELS[2]] / n1 / imp[PANELS[0]]
+    out["🔴🔴 칸 분해 — 원판의 수로 (🔴 티처 #76 의 87.5% 는 [달력제거] 판의 수다)"] = {
+        "행": rows,
+        "b_prv=−1 칸이 홀드아웃 행의 몇 %": 100.0 * rows[PANELS[2]] / n1,
+        "🔴 그 칸이 나르는 **효과**의 몫(원판)": share_eff,
+        "🔴 그 칸이 나르는 **개선**의 몫(원판)": share_imp,
+        "합 검사(효과)": {"칸 밖 + 칸": eff[PANELS[1]] * rows[PANELS[1]] / n1
+                                + eff[PANELS[2]] * rows[PANELS[2]] / n1,
+                      "전량": eff[PANELS[0]],
+                      "🔴 맞나": bool(abs(eff[PANELS[1]] * rows[PANELS[1]] / n1
+                                       + eff[PANELS[2]] * rows[PANELS[2]] / n1
+                                       - eff[PANELS[0]]) < 1e-12)},
+        "합 검사(개선)": {"칸 밖 + 칸": imp[PANELS[1]] * rows[PANELS[1]] / n1
+                                + imp[PANELS[2]] * rows[PANELS[2]] / n1,
+                      "전량": imp[PANELS[0]],
+                      "🔴 맞나": bool(abs(imp[PANELS[1]] * rows[PANELS[1]] / n1
+                                       + imp[PANELS[2]] * rows[PANELS[2]] / n1
+                                       - imp[PANELS[0]]) < 1e-12)},
+        "🔴🔴 자기 적발": "판정 커밋 0be729569 의 메시지와 원장 첫 판이 **티처의 87.5%% 를 그대로 옮겼다.** "
+                    "그 수는 **[달력제거] 판**의 칸 분해(#76 M8)이고, **원판에서는 효과의 %.1f%% · "
+                    "개선의 %.1f%%** 다. 🔴 **한 문단에 두 판의 수를 섞는 것**(조항 60 · #76 M4 가 933 "
+                    "논문에서 잡은 바로 그 형식판)이라 여기서 정정한다. **판정은 안 바뀐다** — "
+                    "p·k·Z 는 이 수를 한 번도 안 쓴다" % (100 * share_eff, 100 * share_imp),
+        "🔴 그래도 남는 문장": "그 칸은 홀드아웃 행의 **4.15%** 인데 효과의 **약 절반**을 나른다 — "
+                       "「한 칸이 헤드라인을 나른다」는 우려 자체는 원판에서도 참이다. "
+                       "그래서 판 ② 가 필요했고, 그 칸을 빼도 k=0 이다",
+    }
     out["🔴 판정이 바뀌나"] = ("아니다 — 순열 p 는 관문 통과·불통과로 부분집합을 안 만든다(전량으로 냈다). "
                        "바뀌는 것은 **「관문이 검정력을 가졌다」의 뜻**이다: 눈금 A 로는 참, 눈금 B 로는 거짓")
     out["쓴 시각(UTC)"] = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
