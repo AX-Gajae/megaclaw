@@ -69,8 +69,14 @@ def part0() -> dict:
         "🔴 stamp 가 측정보다 먼저인가":
             dt.datetime.fromisoformat(st["이 stamp 를 쓴 시각(UTC)"]) < now,
         "🔴 사전등록만 담은 커밋": git("log", "--oneline", "-1", "--", str(PREREG)),
+        #: 🔴 노트 946 [수리] --- `core.quotePath` 를 끈다. `core.quotepath` 가 unset(기본
+        #: true) 이면 `--name-only` 가 비-ASCII 경로를 `"…\353\257\270…"` 로 8진
+        #: 이스케이프해서 낸다. 여기 바늘은 ASCII 라 **이 자리의 답은 안 바뀌지만**,
+        #: 날 것 호출을 남겨 두면 다음 사람이 그 출력을 경로 집합으로 쓴다
+        #: (943·944·티처 #84·945 가 「215」를 그렇게 출판했다 · 티처 #85 C1).
         "🔴 그 커밋에 측정 러너가 들어 있나":
-            "runners/thr939_run.py" in git("show", "--name-only", "--pretty=format:",
+            "runners/thr939_run.py" in git("-c", "core.quotePath=false",
+                                           "show", "--name-only", "--pretty=format:",
                                            "ffd6f9b79"),
         "🔴 os.utime 을 썼나": False,
         "🔴 남의 파일이 안 바뀌었나(스탬프 대조)": {
