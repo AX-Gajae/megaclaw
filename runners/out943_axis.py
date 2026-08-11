@@ -166,7 +166,24 @@ def s_moved(r: dict, fam: str, s_old_C, drop_period: bool = True) -> bool:
 
 
 def grade_of(key: str) -> tuple:
-    """표에 없으면 🔴 **모른다**. (새 열이 조용히 PRE 가 되는 길을 막는다.)"""
+    """표에 없으면 🔴 **모른다**. (새 열이 조용히 PRE 가 되는 길을 막는다.)
+
+    🔴🔴 **이 함수는 틀렸다 — 노트 944 가 고쳤다(티처 #83 C1).**
+
+    **열 이름만** 받는데 같은 러너의 `colcnt`(:196)는 이미 `(fam, key)` 로 센다 —
+    **한 검출기, 두 스키마**(942 의 병)를 그것을 고치는 러너가 자기 판정표에 남겼다.
+    실제로 `GRADE["capacity"]=PRE`(:81)의 근거 `derive_features.py:98` 은
+    **A 계열 경로(:150-152)에만 참**이고, B 계열은 `:170-172` 에서
+    `blob = json.dumps(iv) + str(r.get("notes"))` 로 **행사 뒤 보도 요약**을 먹는다.
+
+    고친 뒤: **모른다 90 → 260**(분모 A+B 1,054 · B `capacity` 170 이 옮겨 간다).
+    PRE 1,053 · POST 22 는 안 움직인다.
+
+    🔴 **정본은 `runners/out944_famgrade.py` 의 `grade_new(fam, key)` 다.**
+    이 함수는 **동작을 안 바꾼다** — `runners/out943_axis.json` 이 동결물이고
+    944 의 배선 검사가 그 json 을 재현하는 데 이 함수를 쓴다. 고치면 동결물이 깨진다.
+    새로 세려면 944 의 러너를 써라.
+    """
     return GRADE.get(key, ("모른다", "ㅁ", "🔴 판정표에 없는 열 — 안 가른 것이다(조항 59)"))
 
 
