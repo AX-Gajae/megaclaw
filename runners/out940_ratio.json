@@ -10,7 +10,7 @@
   "사전등록 sha256(지금 다시 계산)": "2cdc550ac5ad5059864bb28b54737fd9365c0c540d72a163d8bf1cda019c8231",
   "🔴 같은가": true,
   "stamp 를 쓴 시각(UTC)": "2026-08-11T15:52:04.149244+00:00",
-  "측정 시작(UTC)": "2026-08-11T16:06:11.728557+00:00",
+  "측정 시작(UTC)": "2026-08-11T16:24:55.055397+00:00",
   "🔴 stamp 가 측정보다 먼저인가": true,
   "🔴 사전등록만 담은 커밋": "a21dd5ab7 940 사전등록 — T 를 문턱에서 민감도 비 r 로 강등하고, 배선을 심는다 (측정 전 · 러너도 새 모듈도 아직 없다)",
   "🔴 그 커밋에 측정 러너가 들어 있었나": false,
@@ -70,7 +70,7 @@
  },
  "코드 sha256": {
   "state/ratio940.py": "0be0c5b24c8eb30029f577b2337dbd6d0f9ee30fdf35c58f5643d27fc0ebfba9",
-  "runners/ratio940_run.py": "07c37d13df35d3e7c5814a77b4b764b53ae9d366eb48e9528668e87393685f62",
+  "runners/ratio940_run.py": "da5060343b1e035483523f1578753c377eb299611f4800420fe4d3f7b5a1c19f",
   "runners/gate940_wiring.py": "5021a3614f97cac754de905d3b397c1cd53531f7b83bec21939a83b768cbc8b0",
   "runners/ratio940_stamp.py": "caea97bab2232133bb75bae88ce283552abdd3d67b0bf5c3595a06ca8d31b3c2",
   "state/perm922.py": "3853d11d086e1ba25558ffc084f1fe2964cb3005111d0db973d39233dc3095c2",
@@ -87,13 +87,14 @@
  ],
  "A · 배선 실측": {
   "무엇": "🔴 배선 실측 — 게이트(`runners/out940_gate.json`)가 낸 계수를 그대로 싣는다",
-  "🔴 게이트 rev": "a21dd5ab71739d8c4855c4903ad5c6c3ead11d47",
-  "🔴 이 절의 rev": "a21dd5ab71739d8c4855c4903ad5c6c3ead11d47",
+  "🔴 게이트 rev": "9295cfe9941392567700611cd1b45f852ae8a723",
+  "🔴 이 절의 rev": "9295cfe9941392567700611cd1b45f852ae8a723",
   "🔴 둘이 같은가": true,
+  "⚠ 지금 HEAD(판정에 안 쓴다 · 루프.md v3.2)": "e13c33da846982b7fe8919a6dd00e5da11d00728",
   "A-1 `COMPARABLE_REL` 을 import 하는 .py": {
    "🔴 세는 명령": "git ls-tree -r -z --name-only HEAD → .py 만 → git archive HEAD | tar -x → ast.ImportFrom(name=='COMPARABLE_REL')",
    "🔴 범위": ".py **만** · 저장소 전량 · 경로 제한 없음",
-   "🔴 어느 트리": "HEAD = a21dd5ab71739d8c4855c4903ad5c6c3ead11d47 (커밋된 트리 하나 · 🔴 인덱스·작업 트리와 **안 섞었다**)",
+   "🔴 어느 트리": "HEAD = 9295cfe9941392567700611cd1b45f852ae8a723 (커밋된 트리 하나 · 🔴 인덱스·작업 트리와 **안 섞었다**)",
    "🔴 수": 4,
    "목록": [
     "runners/calpanel933_run.py",
@@ -103,8 +104,8 @@
    ]
   },
   "A-2 낱말 언급(🔴 **다른 분모**다 — 조항 60)": {
-   "파일 수": 19,
-   "줄 수 합": 36,
+   "파일 수": 27,
+   "줄 수 합": 67,
    "🔴 범위": ".py·.md·.json · 저장소 전량 · 같은 트리",
    "⚠ import 분모와 나란히 놓지 마라": "언급 ⊇ import. 두 수는 **다른 것을 센다**"
   },
@@ -136,35 +137,106 @@
    "갈래 ㄷ — 삼항": []
   },
   "A-4 🔴 게이트가 안 세는 갈래 — 상수를 **손으로 베낀** 자리": {
-   "🔴 세는 명령": "git archive a21dd5ab71739d8c4855c4903ad5c6c3ead11d47 | tar -x → .py 줄에 'perm922.COMPARABLE_REL' 가 있고 'import' 가 없는 줄",
+   "🔴 세는 명령": "git archive 9295cfe9941392567700611cd1b45f852ae8a723 | tar -x → .py 줄에 'perm922.COMPARABLE_REL' 가 있고 'import' 가 없는 줄",
    "🔴 범위": ".py 만 · 저장소 전량",
-   "🔴 어느 트리": "a21dd5ab71739d8c4855c4903ad5c6c3ead11d47",
-   "실측": {
+   "🔴 어느 트리": "9295cfe9941392567700611cd1b45f852ae8a723",
+   "🔴 분모를 셋으로 가른다(조항 60)": {
+    "㉠ 남의 파일에서 이름을 언급한 줄": 4,
+    "🔴🔴 ㉡ 그중 **값 0.05 가 그 줄에 같이 있는** 줄(= 진짜 손 사본)": 2,
+    "㉢ 🔴 **이 사이클이 만든 파일**의 언급(자기 부풀림 · 분모에서 뺀다)": 8
+   },
+   "㉠ 실측": {
     "runners/rawpanel935_addendum.py": [
      {
       "줄": 43,
-      "본문": "\"문턱(perm922.COMPARABLE_REL)\": COMPARABLE_REL,"
+      "본문": "\"문턱(perm922.COMPARABLE_REL)\": COMPARABLE_REL,",
+      "🔴 값(0.05)이 그 줄에 있나": false
      }
     ],
     "runners/repair937_run.py": [
      {
       "줄": 51,
-      "본문": "THR = 0.05                                # perm922.COMPARABLE_REL"
+      "본문": "THR = 0.05                                # perm922.COMPARABLE_REL",
+      "🔴 값(0.05)이 그 줄에 있나": true
      },
      {
       "줄": 348,
-      "본문": "\"문턱(perm922.COMPARABLE_REL)\": THR,"
+      "본문": "\"문턱(perm922.COMPARABLE_REL)\": THR,",
+      "🔴 값(0.05)이 그 줄에 있나": false
      }
     ],
     "runners/thr939_run.py": [
      {
       "줄": 38,
-      "본문": "OLD_THR = 0.05                      # perm922.COMPARABLE_REL — 🔴 안 고친다"
+      "본문": "OLD_THR = 0.05                      # perm922.COMPARABLE_REL — 🔴 안 고친다",
+      "🔴 값(0.05)이 그 줄에 있나": true
      }
     ]
    },
-   "🔴 수": 4,
-   "🔴 뜻": "**단일 출처가 이미 갈라져 있다.** 상수를 고쳐도 이 사본들은 안 따라온다 — 「상수 하나를 고치면 저장소가 따라온다」는 전제가 실측으로 거짓이다"
+   "🔴🔴 ㉡ 실측 — 진짜 손 사본": {
+    "runners/repair937_run.py": [
+     {
+      "줄": 51,
+      "본문": "THR = 0.05                                # perm922.COMPARABLE_REL",
+      "🔴 값(0.05)이 그 줄에 있나": true
+     }
+    ],
+    "runners/thr939_run.py": [
+     {
+      "줄": 38,
+      "본문": "OLD_THR = 0.05                      # perm922.COMPARABLE_REL — 🔴 안 고친다",
+      "🔴 값(0.05)이 그 줄에 있나": true
+     }
+    ]
+   },
+   "㉢ 실측 — 이 사이클이 만든 파일": {
+    "runners/gate940_wiring.py": [
+     {
+      "줄": 201,
+      "본문": "그래서 `perm922.COMPARABLE_REL = X` 를 나중에 넣어도 관문은 옛 값을 계속 쓴다.",
+      "🔴 값(0.05)이 그 줄에 있나": false
+     },
+     {
+      "줄": 207,
+      "본문": "const0 = perm922.COMPARABLE_REL",
+      "🔴 값(0.05)이 그 줄에 있나": false
+     },
+     {
+      "줄": 208,
+      "본문": "perm922.COMPARABLE_REL = -12345.0            # 심는다",
+      "🔴 값(0.05)이 그 줄에 있나": false
+     },
+     {
+      "줄": 210,
+      "본문": "perm922.COMPARABLE_REL = const0              # 되돌린다",
+      "🔴 값(0.05)이 그 줄에 있나": false
+     },
+     {
+      "줄": 219,
+      "본문": "\"복원됐나\": perm922.COMPARABLE_REL == const0,",
+      "🔴 값(0.05)이 그 줄에 있나": false
+     },
+     {
+      "줄": 220,
+      "본문": "\"통과\": bool(kd_after == frozen and perm922.COMPARABLE_REL == const0),",
+      "🔴 값(0.05)이 그 줄에 있나": false
+     }
+    ],
+    "runners/ratio940_run.py": [
+     {
+      "줄": 89,
+      "본문": "HAND_COPIES_NEEDLE = \"perm922.COMPARABLE_REL\"",
+      "🔴 값(0.05)이 그 줄에 있나": false
+     },
+     {
+      "줄": 165,
+      "본문": "perm922.COMPARABLE_REL = float(os.environ[\"G940_CONST\"])",
+      "🔴 값(0.05)이 그 줄에 있나": false
+     }
+    ]
+   },
+   "🔴 수(정본 = ㉡)": 2,
+   "🔴 뜻": "**단일 출처가 이미 갈라져 있다.** 상수를 고쳐도 이 사본들은 안 따라온다 — 「상수 하나를 고치면 저장소가 따라온다」는 전제가 실측으로 거짓이다. 🔴 **㉢ 를 ㉠ 에 섞으면 내가 만든 언급을 남의 부채로 세는 것**이라 갈랐다"
   },
   "A-5 🔴 기본 인자 동결(게이트 3절)": {
    "import 직후 상수": 0.05,
@@ -196,7 +268,7 @@
     "종료코드": 0,
     "🔴 종료코드를 성공으로 안 읽는다 — 산출물이 났나": true,
     "산출물": "/private/tmp/claude-501/-Users-ax-world-model/511dc308-36bf-409d-9afe-b82a8bb5d7ae/scratchpad/g940/out922_ctrl.json",
-    "초": 27.4,
+    "초": 27.5,
     "산출물에 적힌 문턱": 0.05,
     "N2 상대차": 0.004726558449268011,
     "N2 관문 결과(불리언)": true,
@@ -212,7 +284,7 @@
     "종료코드": 0,
     "🔴 종료코드를 성공으로 안 읽는다 — 산출물이 났나": true,
     "산출물": "/private/tmp/claude-501/-Users-ax-world-model/511dc308-36bf-409d-9afe-b82a8bb5d7ae/scratchpad/g940/out922_constonly.json",
-    "초": 27.6,
+    "초": 27.5,
     "산출물에 적힌 문턱": 1e-09,
     "N2 상대차": 0.004726558449268011,
     "N2 관문 결과(불리언)": true,
@@ -228,7 +300,7 @@
     "종료코드": 0,
     "🔴 종료코드를 성공으로 안 읽는다 — 산출물이 났나": true,
     "산출물": "/private/tmp/claude-501/-Users-ax-world-model/511dc308-36bf-409d-9afe-b82a8bb5d7ae/scratchpad/g940/out922_kwdef.json",
-    "초": 27.5,
+    "초": 27.8,
     "산출물에 적힌 문턱": 0.015121953502588681,
     "N2 상대차": 0.004726558449268011,
     "N2 관문 결과(불리언)": true,
@@ -866,7 +938,7 @@
   "🔴 왜 파일을 아예 안 여나": "`state/perm922.py` 의 sha256 이 `runners/out939_threshold.json:코드 sha256` 과 `runners/out939_prereg_stamp.json` 에 박혀 있다. 한 글자만 고쳐도 939 의 「남의 파일이 안 바뀌었나」 대조가 붉어진다 — **옛 산출물의 재현성과 새 규약을 둘 다 지키는 유일한 길은 안 여는 것**이다",
   "🔴 그래서 무엇을 잃나": "저장소에 「쓰면 안 되는 상수」가 주석 없이 계속 남는다. 다음 세션이 위에서 아래로 읽다가 만난다. 🔴 **그 손해는 게이트로만 막는다** — `runners/gate940_wiring.py` 가 명부 밖의 새 소비자를 붉게 낸다"
  },
- "시작 UTC": "2026-08-11T16:04:39.828707+00:00",
- "끝 UTC": "2026-08-11T16:06:11.760611+00:00",
- "초": 91.931904
+ "시작 UTC": "2026-08-11T16:23:20.106037+00:00",
+ "끝 UTC": "2026-08-11T16:24:55.088689+00:00",
+ "초": 94.982652
 }

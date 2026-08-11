@@ -90,7 +90,12 @@ HAND_COPIES_NEEDLE = "perm922.COMPARABLE_REL"
 
 
 def part_A(rev: str) -> dict:
-    """게이트가 낸 계수를 **그대로 싣고**, 게이트가 안 보는 갈래 하나를 더 센다."""
+    """게이트가 낸 계수를 **그대로 싣고**, 게이트가 안 보는 갈래 하나를 더 센다.
+
+    🔴 **rev 를 `HEAD` 로 잡으면 안 된다**(루프.md v3.2 — HEAD 는 뒤쫓을 수 없다).
+    이 절은 게이트가 읽은 **바로 그 트리**를 다시 읽는다. 그래야 두 계수가 **구조적으로**
+    같은 분모 위에 선다(조항 60).
+    """
     g = jload("runners/out940_gate.json")
     tree = git("rev-parse", rev).strip()
 
@@ -101,7 +106,11 @@ def part_A(rev: str) -> dict:
                           stdout=subprocess.PIPE)
     subprocess.run(["tar", "-x", "-C", str(tar)], stdin=p1.stdout, check=True)
     p1.wait()
-    hand = {}
+    #: 🔴 이 사이클이 만든 파일 — 자기가 만든 언급을 「남의 손 사본」으로 세면 분모 부풀리기다
+    MINE = ("state/ratio940.py", "runners/ratio940_run.py",
+            "runners/ratio940_addendum.py", "runners/ratio940_stamp.py",
+            "runners/gate940_wiring.py")
+    hand, mine_hits = {}, {}
     for f in sorted(x for x in git("ls-tree", "-r", "-z", "--name-only",
                                    tree).split("\0") if x.endswith(".py")):
         try:
@@ -110,13 +119,19 @@ def part_A(rev: str) -> dict:
             continue
         for i, ln in enumerate(src.split("\n"), 1):
             if HAND_COPIES_NEEDLE in ln and "import" not in ln:
-                hand.setdefault(f, []).append({"줄": i, "본문": ln.strip()})
+                rec = {"줄": i, "본문": ln.strip(),
+                       "🔴 값(0.05)이 그 줄에 있나": "0.05" in ln}
+                (mine_hits if f in MINE else hand).setdefault(f, []).append(rec)
+    val = {f: [x for x in v if x["🔴 값(0.05)이 그 줄에 있나"]]
+           for f, v in hand.items()}
+    val = {f: v for f, v in val.items() if v}
 
     return {
         "무엇": "🔴 배선 실측 — 게이트(`runners/out940_gate.json`)가 낸 계수를 그대로 싣는다",
         "🔴 게이트 rev": g["🔴 rev"],
         "🔴 이 절의 rev": tree,
         "🔴 둘이 같은가": g["🔴 rev"] == tree,
+        "⚠ 지금 HEAD(판정에 안 쓴다 · 루프.md v3.2)": git("rev-parse", "HEAD").strip(),
         "A-1 `COMPARABLE_REL` 을 import 하는 .py": {
             "🔴 세는 명령": g["1 소비자 명부 대조"]["🔴 세는 명령"],
             "🔴 범위": g["1 소비자 명부 대조"]["🔴 범위"],
@@ -143,10 +158,20 @@ def part_A(rev: str) -> dict:
                       f"'{HAND_COPIES_NEEDLE}' 가 있고 'import' 가 없는 줄",
             "🔴 범위": ".py 만 · 저장소 전량",
             "🔴 어느 트리": tree,
-            "실측": hand,
-            "🔴 수": sum(len(v) for v in hand.values()),
+            "🔴 분모를 셋으로 가른다(조항 60)": {
+                "㉠ 남의 파일에서 이름을 언급한 줄": sum(len(v) for v in hand.values()),
+                "🔴🔴 ㉡ 그중 **값 0.05 가 그 줄에 같이 있는** 줄(= 진짜 손 사본)":
+                    sum(len(v) for v in val.values()),
+                "㉢ 🔴 **이 사이클이 만든 파일**의 언급(자기 부풀림 · 분모에서 뺀다)":
+                    sum(len(v) for v in mine_hits.values()),
+            },
+            "㉠ 실측": hand,
+            "🔴🔴 ㉡ 실측 — 진짜 손 사본": val,
+            "㉢ 실측 — 이 사이클이 만든 파일": mine_hits,
+            "🔴 수(정본 = ㉡)": sum(len(v) for v in val.values()),
             "🔴 뜻": "**단일 출처가 이미 갈라져 있다.** 상수를 고쳐도 이 사본들은 안 따라온다 — "
-                  "「상수 하나를 고치면 저장소가 따라온다」는 전제가 실측으로 거짓이다",
+                  "「상수 하나를 고치면 저장소가 따라온다」는 전제가 실측으로 거짓이다. "
+                  "🔴 **㉢ 를 ㉠ 에 섞으면 내가 만든 언급을 남의 부채로 세는 것**이라 갈랐다",
         },
         "A-5 🔴 기본 인자 동결(게이트 3절)": {
             k: v for k, v in g["3 기본 인자 동결"].items()
@@ -475,6 +500,7 @@ def part_F(A: dict, C: dict) -> dict:
 # ══════════════════════════════════════════════════════ 판정
 def verdicts(A: dict, Ap: dict, B: dict, C: dict, F: dict) -> dict:
     n_imp = Ap["A-1 `COMPARABLE_REL` 을 import 하는 .py"]["🔴 수"]
+    _ = A
     ifs = Ap["A-3 🔴 관문 결과로 **분기하는** 자리"]["갈래 ㄱ — `if` 문(판정 갈래를 고른다)"]
     if_files = sorted({x["파일"] for x in ifs})
     ctrl = B["판별"]["ㄱ 대조(주입 없음)"]
@@ -546,7 +572,8 @@ def verdicts(A: dict, Ap: dict, B: dict, C: dict, F: dict) -> dict:
 
 def main() -> None:
     t0 = dt.datetime.now(dt.timezone.utc)
-    rev = git("rev-parse", "HEAD").strip()
+    #: 🔴 게이트가 읽은 트리를 그대로 쓴다 — HEAD 를 뒤쫓지 않는다(루프.md v3.2)
+    rev = jload("runners/out940_gate.json")["🔴 rev"]
     Ap = part_A(rev)
     Bp = part_B()
     A = arms()
