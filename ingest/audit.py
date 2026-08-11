@@ -1818,7 +1818,7 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
 #: 함께 여는 자리가 있다). **개별 토글 실측을 그대로 적었고, 합을 맞추려 고르지 않았다.**
 #: ⚠ **판정 자리(경성)는 0 이 아니다** --- 아래 `걸린 곳` 넷은 전부 남의 파일이라
 #: 이 팔이 안 고친다(보고로 넘긴다).
-DEAD_HISTORY_DEBT = 390
+DEAD_HISTORY_DEBT = 392
 
 #: 🔴 **문서별 등록**(티처 #61 C3 이빨 ② · 2026-08-10 실측). 총합만 있으면
 #: 한 곳이 늘고 다른 곳이 줄 때 **상쇄돼 안 보인다** --- 그 상쇄가 위 문단의 옛
@@ -1846,8 +1846,17 @@ DEAD_HISTORY_DEBT = 390
 #: 고치고 있어서 실측이 재는 순간마다 흔들린다(잰 뒤 `runners/refit112.py` 가
 #: 3 -> 2 로 줄었다 --- 등록이 실측보다 커지는 방향이라 래칫은 조용하다).
 #: 🔴 **취합 커밋이 `python3 -m ingest.audit --ratchet` 을 다시 돌려 재등록하라.**
+#:
+#: 🔴🔴 **2026-08-11 재등록 390 -> 392 (티처 #68 C5).** 늘어난 둘은 전부
+#: `data/lab/denominator.json` 241 -> 244 --- **원장이 옛 분모를 인용한 역사 기록**이고
+#: 새로 인쇄된 것이 아니다. 🔴 **이 게이트는 네 사이클(902~905) 연속 붉었다.**
+#: 902 의 C4 수리로 매처가 LaTeX 표기에 눈을 뜨면서 `PAPER_DEBT` 는 재등록했는데
+#: **이 래칫은 안 했고**, 그 뒤 원장에 항목이 늘 때마다 벌어졌다.
+#: ⚠ 그동안 `out902b`~`out905b_fiveprime.json` 넷이 `실패한 절: ["죽은 숫자"]` 를
+#: **이름으로 말하고 있었는데** 티처 #65·#66·#67 전원이 「죽은 숫자 0곳」을
+#: 「맞다고 확인된 것」에 올렸다. **산출물이 말하는데 아무도 안 읽은 자리다.**
 DEAD_HISTORY_BY_DOC: dict = {
-    "data/lab/denominator.json": 241,
+    "data/lab/denominator.json": 244,
     "docs/prereg_897_architecture.md": 2,
     "paper/steps/129_brokenruler/figs/make.py": 1,
     "paper/steps/132_countthedoors/figs/make.py": 1,
