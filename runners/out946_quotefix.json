@@ -1,0 +1,969 @@
+{
+ "무엇": "노트 946 [수리] --- `core.quotePath` 전량 수리. 「디스크에 있으나 어떤 ref 에도 없는 캐시 파일 215」는 존재하지 않는다",
+ "🔴 규약": "조항 61(차집합은 홀로 못 선다) · 조항 59 · 조항 60(명령·범위·트리) · 규칙 4(수리 하나) · 941~945 동결",
+ "🔴 디스크 캐시 파일(분모)": 54876,
+ "1 날 것 호출 전수": {
+  "검사": "1 날 것 호출 전수 --- 🔴 AST 로 센다(grep 히트가 아니다)",
+  "🔴 세는 명령": "git ls-files -z -- '*.py' 로 목록 → 각 파일을 `ast.parse` → `List/Tuple` 원소와 `Call` 위치 인자의 문자열 상수 벡터 중 ['ls-files', 'ls-tree', '--name-only', '--name-status'] 를 품은 것",
+  "🔴 범위": "추적된 `*.py` 전량(확장자 하나 · 경로 제한 없음)",
+  "🔴 트리": "인덱스(`git ls-files`)로 목록 · 내용은 작업 트리 --- 🔴 규약 60 이 금지한 혼합이다. 그래서 ⓪ 관문에서 `git status --porcelain` 이 비었음을 같이 신고한다(아래 `⓪ 작업 트리가 깨끗한가`)",
+  "⓪ 작업 트리가 깨끗한가": {
+   "줄 수": 4,
+   "예시 다섯": [
+    "?? data/state/obs_time946_cachemap.json",
+    "?? runners/out946_keymap.json",
+    "?? runners/out946_quotefix.json",
+    "?? runners/out946_recount.json"
+   ],
+   "깨끗한가": false
+  },
+  "🔴 분모 ⓪ 이 사이클이 더한 .py(분모에서 가른다)": [
+   "lab/keyspace.py",
+   "runners/out946_keymap.py",
+   "runners/out946_quotefix.py",
+   "runners/out946_recount.py"
+  ],
+  "🔴 분모 ① 훑은 .py": 754,
+  "🔴 분모 ①′ 그중 남의 것(이 사이클 밖)": 750,
+  "🔴 분모 ② grep 히트(문서·주석 포함)": 70,
+  "🔴 분모 ③ 실제 호출 자리": 19,
+  "🔴 분모 ③′ 그중 이 사이클이 만든 것": 5,
+  "🔴 분모 ③″ 남의 것": 14,
+  "🔴 분모 ④ 날 것": 7,
+  "🔴 분모 ④′ 그중 이 사이클이 만든 것": 0,
+  "🔴 분모 ④-동결 날 것 중 941~945(못 고친다)": 6,
+  "🔴 분모 ④-살아있는 날 것": 1,
+  "🔴 분모 ④-㉮ 원리상 못 고친다": 7,
+  "🔴 분모 ④-㉯ 고칠 수 있다(🔴 이 수가 0 이어야 통과)": 0,
+  "🔴 ㉯ 목록": [],
+  "㉮ 목록과 사유": {
+   "runners/out943b_d2time.py:164": "㉮ 원리상 못 고친다 --- 941~945 동결",
+   "runners/out944b_obstime.py:143": "㉮ 원리상 못 고친다 --- 941~945 동결",
+   "runners/out945_colcensus.py:59": "㉮ 원리상 못 고친다 --- 941~945 동결",
+   "runners/out945_obstime.py:120": "㉮ 원리상 못 고친다 --- 941~945 동결",
+   "runners/out945_obstime.py:144": "㉮ 원리상 못 고친다 --- 941~945 동결",
+   "runners/out945_verify.py:71": "㉮ 원리상 못 고친다 --- 941~945 동결",
+   "runners/ratio940_run.py:77": "㉮ 원리상 못 고친다 --- 이 파일의 지금 sha 를 산출물 2 개가 인용한다(고치면 그 대조가 깨진다)"
+  },
+  "분모 ⑤ 의도적 날 것(음성 대조)": 4,
+  "분모 ⑥ 안전": 8,
+  "파싱 실패": [],
+  "🔴 날 것 전량(목록)": [
+   {
+    "파일:줄": "runners/out943b_d2time.py:164",
+    "자리": "argv 리터럴(`[\"git\", …]`)",
+    "인자": [
+     "git",
+     "ls-files",
+     "data/state/"
+    ],
+    "-z": false,
+    "core.quotePath=false": false,
+    "갈래": "🔴 날 것",
+    "동결(941~945)": true,
+    "사유": null,
+    "🔴 지금 sha 를 인용하는 산출물": [
+     "runners/out943b_d2time.json"
+    ],
+    "🔴 ㉮/㉯": "㉮ 원리상 못 고친다 --- 941~945 동결",
+    "🔴 실해": {
+     "범위": [
+      "data/state/"
+     ],
+     "범위 안 추적 경로": 69523,
+     "🔴 그중 두 인코딩이 갈리는 것": 218,
+     "예시 다섯": [
+      "data/state/cache_aladin/AB6IX_B_COMPLETE__미니_1집_.html",
+      "data/state/cache_aladin/AHOF__아홉__WHO_WE_ARE__미니_1집_.html",
+      "data/state/cache_aladin/ALLDAY_PROJECT__올데이_프로젝트__FAMOUS__데뷔_싱글_.html",
+      "data/state/cache_aladin/AtHeart__앳하트_.html",
+      "data/state/cache_aladin/AtHeart__앳하트__Plot_Twist__EP_1집_.html"
+     ],
+     "🔴 실제로 둘 다 돌렸다": {
+      "정본이 낸 수": 69523,
+      "날 것이 낸 수": 69523,
+      "🔴 정본 − 날것": 218,
+      "🔴 날것 − 정본": 218,
+      "🔴 사라지는 경로 예시 다섯": [
+       "data/state/cache_aladin/AB6IX_B_COMPLETE__미니_1집_.html",
+       "data/state/cache_aladin/AHOF__아홉__WHO_WE_ARE__미니_1집_.html",
+       "data/state/cache_aladin/ALLDAY_PROJECT__올데이_프로젝트__FAMOUS__데뷔_싱글_.html",
+       "data/state/cache_aladin/AtHeart__앳하트_.html",
+       "data/state/cache_aladin/AtHeart__앳하트__Plot_Twist__EP_1집_.html"
+      ]
+     }
+    }
+   },
+   {
+    "파일:줄": "runners/out944b_obstime.py:143",
+    "자리": "argv 리터럴(`[\"git\", …]`)",
+    "인자": [
+     "git",
+     "log",
+     "--format=\u0001%aI",
+     "--name-only",
+     "--diff-filter=A"
+    ],
+    "-z": false,
+    "core.quotePath=false": false,
+    "갈래": "🔴 날 것",
+    "동결(941~945)": true,
+    "사유": null,
+    "🔴 지금 sha 를 인용하는 산출물": [
+     "runners/out944b_obstime.json"
+    ],
+    "🔴 ㉮/㉯": "㉮ 원리상 못 고친다 --- 941~945 동결",
+    "🔴 실해": {
+     "범위": [
+      "(저장소 전량 --- ref/경로를 원리상 못 가르는 자리)"
+     ],
+     "범위 안 추적 경로": 259,
+     "🔴 그중 두 인코딩이 갈리는 것": 259,
+     "예시 다섯": [
+      "data/ingest/wiki_daily/게임.jsonl.gz",
+      "data/ingest/wiki_daily/도서.jsonl.gz",
+      "data/ingest/wiki_daily/만화.jsonl.gz",
+      "data/ingest/wiki_daily/모바일.jsonl.gz",
+      "data/ingest/wiki_daily/세계애니.jsonl.gz"
+     ],
+     "🔴 실제로 둘 다 돌렸다": "🔴 못 돌렸다 --- 인자에 동적 값(ref·경로)이 섞여 이 자리를 재현할 수 없다. **「무해」가 아니라 「못 쟀다」다**(조항 59)"
+    }
+   },
+   {
+    "파일:줄": "runners/out945_colcensus.py:59",
+    "자리": "argv 리터럴(`[\"git\", …]`)",
+    "인자": [
+     "git",
+     "ls-files",
+     "*.py"
+    ],
+    "-z": false,
+    "core.quotePath=false": false,
+    "갈래": "🔴 날 것",
+    "동결(941~945)": true,
+    "사유": null,
+    "🔴 지금 sha 를 인용하는 산출물": [
+     "runners/out945_colcensus.json"
+    ],
+    "🔴 ㉮/㉯": "㉮ 원리상 못 고친다 --- 941~945 동결",
+    "🔴 실해": {
+     "범위": [
+      "*.py"
+     ],
+     "범위 안 추적 경로": 754,
+     "🔴 그중 두 인코딩이 갈리는 것": 0,
+     "예시 다섯": [],
+     "🔴 실제로 둘 다 돌렸다": {
+      "정본이 낸 수": 754,
+      "날 것이 낸 수": 754,
+      "🔴 정본 − 날것": 0,
+      "🔴 날것 − 정본": 0,
+      "🔴 사라지는 경로 예시 다섯": []
+     }
+    }
+   },
+   {
+    "파일:줄": "runners/out945_obstime.py:120",
+    "자리": "argv 리터럴(`[\"git\", …]`)",
+    "인자": [
+     "git",
+     "log",
+     "--format=\u0001%aI",
+     "--name-only",
+     "--diff-filter=A"
+    ],
+    "-z": false,
+    "core.quotePath=false": false,
+    "갈래": "🔴 날 것",
+    "동결(941~945)": true,
+    "사유": null,
+    "🔴 지금 sha 를 인용하는 산출물": [
+     "runners/out945_obstime.json"
+    ],
+    "🔴 ㉮/㉯": "㉮ 원리상 못 고친다 --- 941~945 동결",
+    "🔴 실해": {
+     "범위": [
+      "(저장소 전량 --- ref/경로를 원리상 못 가르는 자리)"
+     ],
+     "범위 안 추적 경로": 259,
+     "🔴 그중 두 인코딩이 갈리는 것": 259,
+     "예시 다섯": [
+      "data/ingest/wiki_daily/게임.jsonl.gz",
+      "data/ingest/wiki_daily/도서.jsonl.gz",
+      "data/ingest/wiki_daily/만화.jsonl.gz",
+      "data/ingest/wiki_daily/모바일.jsonl.gz",
+      "data/ingest/wiki_daily/세계애니.jsonl.gz"
+     ],
+     "🔴 실제로 둘 다 돌렸다": "🔴 못 돌렸다 --- 인자에 동적 값(ref·경로)이 섞여 이 자리를 재현할 수 없다. **「무해」가 아니라 「못 쟀다」다**(조항 59)"
+    }
+   },
+   {
+    "파일:줄": "runners/out945_obstime.py:144",
+    "자리": "argv 리터럴(`[\"git\", …]`)",
+    "인자": [
+     "git",
+     "log",
+     "--all",
+     "--format=\u0001%H %aI",
+     "--name-only",
+     "--diff-filter=A",
+     "--",
+     "data/state/cache_*"
+    ],
+    "-z": false,
+    "core.quotePath=false": false,
+    "갈래": "🔴 날 것",
+    "동결(941~945)": true,
+    "사유": null,
+    "🔴 지금 sha 를 인용하는 산출물": [
+     "runners/out945_obstime.json"
+    ],
+    "🔴 ㉮/㉯": "㉮ 원리상 못 고친다 --- 941~945 동결",
+    "🔴 실해": {
+     "범위": [
+      "data/state/cache_*"
+     ],
+     "범위 안 추적 경로": 54876,
+     "🔴 그중 두 인코딩이 갈리는 것": 215,
+     "예시 다섯": [
+      "data/state/cache_aladin/AB6IX_B_COMPLETE__미니_1집_.html",
+      "data/state/cache_aladin/AHOF__아홉__WHO_WE_ARE__미니_1집_.html",
+      "data/state/cache_aladin/ALLDAY_PROJECT__올데이_프로젝트__FAMOUS__데뷔_싱글_.html",
+      "data/state/cache_aladin/AtHeart__앳하트_.html",
+      "data/state/cache_aladin/AtHeart__앳하트__Plot_Twist__EP_1집_.html"
+     ],
+     "🔴 실제로 둘 다 돌렸다": "🔴 못 돌렸다 --- 인자에 동적 값(ref·경로)이 섞여 이 자리를 재현할 수 없다. **「무해」가 아니라 「못 쟀다」다**(조항 59)"
+    }
+   },
+   {
+    "파일:줄": "runners/out945_verify.py:71",
+    "자리": "argv 리터럴(`[\"git\", …]`)",
+    "인자": [
+     "git",
+     "ls-tree",
+     "-r",
+     "--name-only",
+     "--",
+     "data/state/"
+    ],
+    "-z": false,
+    "core.quotePath=false": false,
+    "갈래": "🔴 날 것",
+    "동결(941~945)": true,
+    "사유": null,
+    "🔴 지금 sha 를 인용하는 산출물": [
+     "runners/out945_verify.json"
+    ],
+    "🔴 ㉮/㉯": "㉮ 원리상 못 고친다 --- 941~945 동결",
+    "🔴 실해": {
+     "범위": [
+      "data/state/"
+     ],
+     "범위 안 추적 경로": 69523,
+     "🔴 그중 두 인코딩이 갈리는 것": 218,
+     "예시 다섯": [
+      "data/state/cache_aladin/AB6IX_B_COMPLETE__미니_1집_.html",
+      "data/state/cache_aladin/AHOF__아홉__WHO_WE_ARE__미니_1집_.html",
+      "data/state/cache_aladin/ALLDAY_PROJECT__올데이_프로젝트__FAMOUS__데뷔_싱글_.html",
+      "data/state/cache_aladin/AtHeart__앳하트_.html",
+      "data/state/cache_aladin/AtHeart__앳하트__Plot_Twist__EP_1집_.html"
+     ],
+     "🔴 실제로 둘 다 돌렸다": {
+      "못 돌렸다": "git -c core.quotePath=false ls-tree -r --name-only -z -- data/state/ → rc=128 · fatal: Not a valid object name data/state/\n"
+     }
+    }
+   },
+   {
+    "파일:줄": "runners/ratio940_run.py:77",
+    "자리": "같은 파일의 git 래퍼 `git(…)`",
+    "인자": [
+     "show",
+     "--name-only",
+     "--pretty=format:"
+    ],
+    "-z": false,
+    "core.quotePath=false": false,
+    "갈래": "🔴 날 것",
+    "동결(941~945)": false,
+    "사유": null,
+    "🔴 지금 sha 를 인용하는 산출물": [
+     "runners/out940_addendum.json",
+     "runners/out940_ratio.json"
+    ],
+    "🔴 ㉮/㉯": "㉮ 원리상 못 고친다 --- 이 파일의 지금 sha 를 산출물 2 개가 인용한다(고치면 그 대조가 깨진다)",
+    "🔴 실해": {
+     "범위": [
+      "(저장소 전량 --- ref/경로를 원리상 못 가르는 자리)"
+     ],
+     "범위 안 추적 경로": 259,
+     "🔴 그중 두 인코딩이 갈리는 것": 259,
+     "예시 다섯": [
+      "data/ingest/wiki_daily/게임.jsonl.gz",
+      "data/ingest/wiki_daily/도서.jsonl.gz",
+      "data/ingest/wiki_daily/만화.jsonl.gz",
+      "data/ingest/wiki_daily/모바일.jsonl.gz",
+      "data/ingest/wiki_daily/세계애니.jsonl.gz"
+     ],
+     "🔴 실제로 둘 다 돌렸다": "🔴 못 돌렸다 --- 인자에 동적 값(ref·경로)이 섞여 이 자리를 재현할 수 없다. **「무해」가 아니라 「못 쟀다」다**(조항 59)"
+    }
+   }
+  ],
+  "의도적 날 것(목록)": [
+   {
+    "파일:줄": "runners/fiveprime902.py:178",
+    "자리": "같은 파일의 git 래퍼 `_git(…)`",
+    "인자": [
+     "diff",
+     "--name-only"
+    ],
+    "-z": false,
+    "core.quotePath=false": false,
+    "갈래": "🔴 의도적 날 것(음성 대조)",
+    "동결(941~945)": false,
+    "사유": "🔴 음성 대조 --- ⑤′ 가 **일부러** quotepath 를 안 꺼서 이스케이프 바늘로 한 번 더 센다(`out945_fiveprime.json:1 소비자 역참조/🔴 음성 대조…`). 고치면 그 검사가 죽는다",
+    "🔴 지금 sha 를 인용하는 산출물": [
+     "runners/out945_stampscan.json"
+    ],
+    "🔴 ㉮/㉯": null,
+    "🔴 실해": {
+     "범위": [
+      "(저장소 전량 --- ref/경로를 원리상 못 가르는 자리)"
+     ],
+     "범위 안 추적 경로": 259,
+     "🔴 그중 두 인코딩이 갈리는 것": 259,
+     "예시 다섯": [
+      "data/ingest/wiki_daily/게임.jsonl.gz",
+      "data/ingest/wiki_daily/도서.jsonl.gz",
+      "data/ingest/wiki_daily/만화.jsonl.gz",
+      "data/ingest/wiki_daily/모바일.jsonl.gz",
+      "data/ingest/wiki_daily/세계애니.jsonl.gz"
+     ],
+     "🔴 실제로 둘 다 돌렸다": "🔴 못 돌렸다 --- 인자에 동적 값(ref·경로)이 섞여 이 자리를 재현할 수 없다. **「무해」가 아니라 「못 쟀다」다**(조항 59)"
+    }
+   },
+   {
+    "파일:줄": "runners/out946_quotefix.py:386",
+    "자리": "argv 리터럴(`[\"git\", …]`)",
+    "인자": [
+     "git",
+     "-C",
+     "ls-tree",
+     "-r",
+     "--name-only",
+     "HEAD",
+     "--",
+     "data/state"
+    ],
+    "-z": false,
+    "core.quotePath=false": false,
+    "갈래": "🔴 의도적 날 것(음성 대조)",
+    "동결(941~945)": false,
+    "사유": "🔴 재현 --- `_raw_lstree_cache()` 는 **945 의 날 것 술어를 그대로 다시 돌린다**. 여기서 인용을 끄면 「옛 자로 얼마가 나왔나」를 못 잰다(절 2 나)",
+    "🔴 지금 sha 를 인용하는 산출물": [],
+    "🔴 ㉮/㉯": null,
+    "🔴 실해": {
+     "범위": [
+      "data/state"
+     ],
+     "범위 안 추적 경로": 69523,
+     "🔴 그중 두 인코딩이 갈리는 것": 218,
+     "예시 다섯": [
+      "data/state/cache_aladin/AB6IX_B_COMPLETE__미니_1집_.html",
+      "data/state/cache_aladin/AHOF__아홉__WHO_WE_ARE__미니_1집_.html",
+      "data/state/cache_aladin/ALLDAY_PROJECT__올데이_프로젝트__FAMOUS__데뷔_싱글_.html",
+      "data/state/cache_aladin/AtHeart__앳하트_.html",
+      "data/state/cache_aladin/AtHeart__앳하트__Plot_Twist__EP_1집_.html"
+     ],
+     "🔴 실제로 둘 다 돌렸다": "🔴 못 돌렸다 --- 인자에 동적 값(ref·경로)이 섞여 이 자리를 재현할 수 없다. **「무해」가 아니라 「못 쟀다」다**(조항 59)"
+    }
+   },
+   {
+    "파일:줄": "runners/out946_recount.py:367",
+    "자리": "같은 파일의 git 래퍼 `_git(…)`",
+    "인자": [
+     "ls-tree",
+     "-r",
+     "--name-only",
+     "HEAD",
+     "--",
+     "data/state"
+    ],
+    "-z": false,
+    "core.quotePath=false": false,
+    "갈래": "🔴 의도적 날 것(음성 대조)",
+    "동결(941~945)": false,
+    "사유": "🔴 음성 대조 --- `_raw_two_ways()` 는 날 것을 `quotepath` 켜고/끄고 두 번 돌려 「날 것은 그 설정을 탄다」를 실측한다. 끄면 그 대조가 죽는다",
+    "🔴 지금 sha 를 인용하는 산출물": [],
+    "🔴 ㉮/㉯": null,
+    "🔴 실해": {
+     "범위": [
+      "data/state"
+     ],
+     "범위 안 추적 경로": 69523,
+     "🔴 그중 두 인코딩이 갈리는 것": 218,
+     "예시 다섯": [
+      "data/state/cache_aladin/AB6IX_B_COMPLETE__미니_1집_.html",
+      "data/state/cache_aladin/AHOF__아홉__WHO_WE_ARE__미니_1집_.html",
+      "data/state/cache_aladin/ALLDAY_PROJECT__올데이_프로젝트__FAMOUS__데뷔_싱글_.html",
+      "data/state/cache_aladin/AtHeart__앳하트_.html",
+      "data/state/cache_aladin/AtHeart__앳하트__Plot_Twist__EP_1집_.html"
+     ],
+     "🔴 실제로 둘 다 돌렸다": {
+      "정본이 낸 수": 69523,
+      "날 것이 낸 수": 69523,
+      "🔴 정본 − 날것": 218,
+      "🔴 날것 − 정본": 218,
+      "🔴 사라지는 경로 예시 다섯": [
+       "data/state/cache_aladin/AB6IX_B_COMPLETE__미니_1집_.html",
+       "data/state/cache_aladin/AHOF__아홉__WHO_WE_ARE__미니_1집_.html",
+       "data/state/cache_aladin/ALLDAY_PROJECT__올데이_프로젝트__FAMOUS__데뷔_싱글_.html",
+       "data/state/cache_aladin/AtHeart__앳하트_.html",
+       "data/state/cache_aladin/AtHeart__앳하트__Plot_Twist__EP_1집_.html"
+      ]
+     }
+    }
+   },
+   {
+    "파일:줄": "runners/out946_recount.py:369",
+    "자리": "같은 파일의 git 래퍼 `_git(…)`",
+    "인자": [
+     "ls-tree",
+     "-r",
+     "--name-only",
+     "HEAD",
+     "--",
+     "data/state"
+    ],
+    "-z": false,
+    "core.quotePath=false": false,
+    "갈래": "🔴 의도적 날 것(음성 대조)",
+    "동결(941~945)": false,
+    "사유": "🔴 음성 대조 --- `_raw_two_ways()` 는 날 것을 `quotepath` 켜고/끄고 두 번 돌려 「날 것은 그 설정을 탄다」를 실측한다. 끄면 그 대조가 죽는다",
+    "🔴 지금 sha 를 인용하는 산출물": [],
+    "🔴 ㉮/㉯": null,
+    "🔴 실해": {
+     "범위": [
+      "data/state"
+     ],
+     "범위 안 추적 경로": 69523,
+     "🔴 그중 두 인코딩이 갈리는 것": 218,
+     "예시 다섯": [
+      "data/state/cache_aladin/AB6IX_B_COMPLETE__미니_1집_.html",
+      "data/state/cache_aladin/AHOF__아홉__WHO_WE_ARE__미니_1집_.html",
+      "data/state/cache_aladin/ALLDAY_PROJECT__올데이_프로젝트__FAMOUS__데뷔_싱글_.html",
+      "data/state/cache_aladin/AtHeart__앳하트_.html",
+      "data/state/cache_aladin/AtHeart__앳하트__Plot_Twist__EP_1집_.html"
+     ],
+     "🔴 실제로 둘 다 돌렸다": {
+      "정본이 낸 수": 69523,
+      "날 것이 낸 수": 69523,
+      "🔴 정본 − 날것": 218,
+      "🔴 날것 − 정본": 218,
+      "🔴 사라지는 경로 예시 다섯": [
+       "data/state/cache_aladin/AB6IX_B_COMPLETE__미니_1집_.html",
+       "data/state/cache_aladin/AHOF__아홉__WHO_WE_ARE__미니_1집_.html",
+       "data/state/cache_aladin/ALLDAY_PROJECT__올데이_프로젝트__FAMOUS__데뷔_싱글_.html",
+       "data/state/cache_aladin/AtHeart__앳하트_.html",
+       "data/state/cache_aladin/AtHeart__앳하트__Plot_Twist__EP_1집_.html"
+      ]
+     }
+    }
+   }
+  ],
+  "안전(목록)": [
+   {
+    "파일:줄": "runners/fiveprime902.py:167",
+    "자리": "같은 파일의 git 래퍼 `_git(…)`",
+    "인자": [
+     "-c",
+     "core.quotepath=false",
+     "diff",
+     "--name-only",
+     "-z"
+    ],
+    "-z": true,
+    "core.quotePath=false": true,
+    "갈래": "안전(정본)",
+    "동결(941~945)": false,
+    "사유": null,
+    "🔴 지금 sha 를 인용하는 산출물": [],
+    "🔴 ㉮/㉯": null,
+    "🔴 실해": "해당 없음(안전한 자리)"
+   },
+   {
+    "파일:줄": "runners/gate940_wiring.py:69",
+    "자리": "같은 파일의 git 래퍼 `git(…)`",
+    "인자": [
+     "ls-tree",
+     "-r",
+     "-z",
+     "--name-only"
+    ],
+    "-z": true,
+    "core.quotePath=false": false,
+    "갈래": "안전(-z)",
+    "동결(941~945)": false,
+    "사유": null,
+    "🔴 지금 sha 를 인용하는 산출물": [],
+    "🔴 ㉮/㉯": null,
+    "🔴 실해": "해당 없음(안전한 자리)"
+   },
+   {
+    "파일:줄": "runners/gate940_wiring.py:107",
+    "자리": "같은 파일의 git 래퍼 `git(…)`",
+    "인자": [
+     "ls-tree",
+     "-r",
+     "-z",
+     "--name-only"
+    ],
+    "-z": true,
+    "core.quotePath=false": false,
+    "갈래": "안전(-z)",
+    "동결(941~945)": false,
+    "사유": null,
+    "🔴 지금 sha 를 인용하는 산출물": [],
+    "🔴 ㉮/㉯": null,
+    "🔴 실해": "해당 없음(안전한 자리)"
+   },
+   {
+    "파일:줄": "runners/out946_quotefix.py:438",
+    "자리": "argv 리터럴(`[\"git\", …]`)",
+    "인자": [
+     "git",
+     "-C",
+     "-c",
+     "core.quotePath=false",
+     "log",
+     "--all",
+     "--format=\u0001%H %aI",
+     "--name-only",
+     "-z",
+     "--diff-filter=A",
+     "--",
+     "data/state/cache_*"
+    ],
+    "-z": true,
+    "core.quotePath=false": true,
+    "갈래": "안전(정본)",
+    "동결(941~945)": false,
+    "사유": "🔴 재현 --- `_raw_lstree_cache()` 는 **945 의 날 것 술어를 그대로 다시 돌린다**. 여기서 인용을 끄면 「옛 자로 얼마가 나왔나」를 못 잰다(절 2 나)",
+    "🔴 지금 sha 를 인용하는 산출물": [],
+    "🔴 ㉮/㉯": null,
+    "🔴 실해": "해당 없음(안전한 자리)"
+   },
+   {
+    "파일:줄": "runners/out946_recount.py:137",
+    "자리": "같은 파일의 git 래퍼 `_git(…)`",
+    "인자": [
+     "-c",
+     "core.quotePath=false",
+     "ls-files",
+     "-z",
+     "--",
+     "*.py"
+    ],
+    "-z": true,
+    "core.quotePath=false": true,
+    "갈래": "안전(정본)",
+    "동결(941~945)": false,
+    "사유": "🔴 음성 대조 --- `_raw_two_ways()` 는 날 것을 `quotepath` 켜고/끄고 두 번 돌려 「날 것은 그 설정을 탄다」를 실측한다. 끄면 그 대조가 죽는다",
+    "🔴 지금 sha 를 인용하는 산출물": [],
+    "🔴 ㉮/㉯": null,
+    "🔴 실해": "해당 없음(안전한 자리)"
+   },
+   {
+    "파일:줄": "runners/ratio940_run.py:114",
+    "자리": "같은 파일의 git 래퍼 `git(…)`",
+    "인자": [
+     "ls-tree",
+     "-r",
+     "-z",
+     "--name-only"
+    ],
+    "-z": true,
+    "core.quotePath=false": false,
+    "갈래": "안전(-z)",
+    "동결(941~945)": false,
+    "사유": null,
+    "🔴 지금 sha 를 인용하는 산출물": [],
+    "🔴 ㉮/㉯": null,
+    "🔴 실해": "해당 없음(안전한 자리)"
+   },
+   {
+    "파일:줄": "runners/thr939_run.py:78",
+    "자리": "같은 파일의 git 래퍼 `git(…)`",
+    "인자": [
+     "-c",
+     "core.quotePath=false",
+     "show",
+     "--name-only",
+     "--pretty=format:",
+     "ffd6f9b79"
+    ],
+    "-z": false,
+    "core.quotePath=false": true,
+    "갈래": "안전(quotePath=false)",
+    "동결(941~945)": false,
+    "사유": null,
+    "🔴 지금 sha 를 인용하는 산출물": [],
+    "🔴 ㉮/㉯": null,
+    "🔴 실해": "해당 없음(안전한 자리)"
+   },
+   {
+    "파일:줄": "runners/thr939_run.py:250",
+    "자리": "argv 리터럴(`[\"git\", …]`)",
+    "인자": [
+     "git",
+     "-C",
+     "ls-files",
+     "-z"
+    ],
+    "-z": true,
+    "core.quotePath=false": false,
+    "갈래": "안전(-z)",
+    "동결(941~945)": false,
+    "사유": null,
+    "🔴 지금 sha 를 인용하는 산출물": [],
+    "🔴 ㉮/㉯": null,
+    "🔴 실해": "해당 없음(안전한 자리)"
+   }
+  ],
+  "⚠ ② 와 ③ 은 다른 분모다": "grep 히트 70 중 실제 호출 자리는 19 다. 나머지는 docstring·주석·JSON 값 문자열이다 --- 「29 를 고쳤다」로 세면 틀린다",
+  "통과": true,
+  "🔴 통과의 뜻": "**㉯(고칠 수 있는데 안 고친 것)가 0** 이면 통과. 🔴 ㉮ 는 분모에 남지만 통과를 막지 않는다 --- 동결된 941~945 러너와 **지금 sha 가 산출물에 인용된 러너**는 고치는 순간 그 사이클의 스탬프 대조가 깨진다. 그것들은 「고쳤다」가 아니라 「정정문을 냈다」로 닫는다(티처 #78 M2 의 ㉮/㉯)"
+ },
+ "2 `215 → 0`": {
+  "검사": "2 `215 → 0` --- 🔴 조항 61 형식(반대 방향 · 예시 다섯 · 심은 키)",
+  "🔴 세는 명령": "정본: `git -c core.quotePath=false ls-tree -r -z --name-only HEAD -- data/state` / 옛것: 같은 명령에서 `-z` 와 `-c` 를 뺀 것",
+  "🔴 범위": "`data/state/cache_*` 전량",
+  "🔴 트리": "HEAD 끝 트리 대 디스크(작업 트리). 인덱스는 안 섞는다",
+  "가 · 정본 판독기로": {
+   "조항": "🔴 조항 61 --- 차집합은 홀로 못 선다(반대 방향 · 예시 다섯 · 심은 키)",
+   "A": "디스크",
+   "B": "HEAD 트리(정본 판독기)",
+   "|디스크|": 54876,
+   "|HEAD 트리(정본 판독기)|": 54876,
+   "🔴 A − B": 0,
+   "🔴 B − A": 0,
+   "A − B 예시 다섯": [],
+   "B − A 예시 다섯": [],
+   "🔴 두 크기가 같은가": true,
+   "🔴 양쪽 차가 같은가": true,
+   "🔴 경보(두 이름 의심 · 크기와 양쪽 차가 같다)": false,
+   "③ 두 이름 대조": {
+    "🔴 A − B 중 B 에 두 번째 인코딩으로 있는 것": 0,
+    "🔴 B − A 중 A 에 첫 인코딩으로 있는 것": 0,
+    "예시 다섯": []
+   },
+   "④ 심은 키": {
+    "원본": "data/state/cache_aladin/AB6IX_B_COMPLETE__미니_1집_.html",
+    "심은 것(두 번째 인코딩)": "\"data/state/cache_aladin/AB6IX_B_COMPLETE__\\353\\257\\270\\353\\213\\210_1\\354\\247\\221_.html\"",
+    "🔴 심었나": true,
+    "🔴 발화했나": true,
+    "심은 뒤 순 A − B(대조 전)": 1
+   },
+   "🔴 검출기가 두 번째 인코딩을 보나": "✅ 본다 --- 심은 키를 ③ 이 잡았다",
+   "통과": true
+  },
+  "나 · 945 의 날 것 술어로(재현)": {
+   "조항": "🔴 조항 61 --- 차집합은 홀로 못 선다(반대 방향 · 예시 다섯 · 심은 키)",
+   "A": "디스크",
+   "B": "HEAD 트리(945 의 날 것 술어)",
+   "|디스크|": 54876,
+   "|HEAD 트리(945 의 날 것 술어)|": 54661,
+   "🔴 A − B": "🔴 모른다 --- 심은 키를 못 찾았다(검출기가 두 번째 인코딩을 못 본다)",
+   "🔴 B − A": "🔴 모른다 --- 심은 키를 못 찾았다(검출기가 두 번째 인코딩을 못 본다)",
+   "A − B 예시 다섯": [
+    "data/state/cache_aladin/AB6IX_B_COMPLETE__미니_1집_.html",
+    "data/state/cache_aladin/AHOF__아홉__WHO_WE_ARE__미니_1집_.html",
+    "data/state/cache_aladin/ALLDAY_PROJECT__올데이_프로젝트__FAMOUS__데뷔_싱글_.html",
+    "data/state/cache_aladin/AtHeart__앳하트_.html",
+    "data/state/cache_aladin/AtHeart__앳하트__Plot_Twist__EP_1집_.html"
+   ],
+   "B − A 예시 다섯": [],
+   "🔴 두 크기가 같은가": false,
+   "🔴 양쪽 차가 같은가": false,
+   "🔴 경보(두 이름 의심 · 크기와 양쪽 차가 같다)": false,
+   "③ 두 이름 대조": {
+    "🔴 A − B 중 B 에 두 번째 인코딩으로 있는 것": 0,
+    "🔴 B − A 중 A 에 첫 인코딩으로 있는 것": 0,
+    "예시 다섯": []
+   },
+   "④ 심은 키": "🔴 심을 수 없다 --- 두 인코딩이 갈리는 원소가 A∩B 에 하나도 없다. 🔴 **그 자체가 신호다**: B 의 생산자가 두 번째 인코딩 줄을 아예 버렸으면 심을 자리가 남지 않는다",
+   "🔴 왜 수를 안 내나": "④ 심은 키를 못 심었다 --- 이 대조가 눈이 있는지 원리상 확인할 수 없다",
+   "순 A − B(참고 · 판정에 쓰지 마라)": 215,
+   "순 B − A(참고 · 판정에 쓰지 마라)": 0,
+   "🔴 검출기가 두 번째 인코딩을 보나": "🔴 모른다 --- 심은 키를 못 찾았다(검출기가 두 번째 인코딩을 못 본다)",
+   "통과": false
+  },
+  "다 · 945 가 커밋한 지도로(🔴 양방향을 옆에 놓는다)": {
+   "조항": "🔴 조항 61 --- 차집합은 홀로 못 선다(반대 방향 · 예시 다섯 · 심은 키)",
+   "A": "디스크",
+   "B": "945 지도(obs_time945_cachemap.json)",
+   "|디스크|": 54876,
+   "|945 지도(obs_time945_cachemap.json)|": 54876,
+   "🔴 A − B": "🔴 모른다 --- 심은 키를 못 찾았다(검출기가 두 번째 인코딩을 못 본다)",
+   "🔴 B − A": "🔴 모른다 --- 심은 키를 못 찾았다(검출기가 두 번째 인코딩을 못 본다)",
+   "A − B 예시 다섯": [
+    "data/state/cache_aladin/AB6IX_B_COMPLETE__미니_1집_.html",
+    "data/state/cache_aladin/AHOF__아홉__WHO_WE_ARE__미니_1집_.html",
+    "data/state/cache_aladin/ALLDAY_PROJECT__올데이_프로젝트__FAMOUS__데뷔_싱글_.html",
+    "data/state/cache_aladin/AtHeart__앳하트_.html",
+    "data/state/cache_aladin/AtHeart__앳하트__Plot_Twist__EP_1집_.html"
+   ],
+   "B − A 예시 다섯": [
+    "\"data/state/cache_aladin/AB6IX_B_COMPLETE__\\353\\257\\270\\353\\213\\210_1\\354\\247\\221_.html\"",
+    "\"data/state/cache_aladin/AHOF__\\354\\225\\204\\355\\231\\211__WHO_WE_ARE__\\353\\257\\270\\353\\213\\210_1\\354\\247\\221_.html\"",
+    "\"data/state/cache_aladin/ALLDAY_PROJECT__\\354\\230\\254\\353\\215\\260\\354\\235\\264_\\355\\224\\204\\353\\241\\234\\354\\240\\235\\355\\212\\270__FAMOUS__\\353\\215\\260\\353\\267\\224_\\354\\213\\261\\352\\270\\200_.html\"",
+    "\"data/state/cache_aladin/AtHeart__\\354\\225\\263\\355\\225\\230\\355\\212\\270_.html\"",
+    "\"data/state/cache_aladin/AtHeart__\\354\\225\\263\\355\\225\\230\\355\\212\\270__Plot_Twist__EP_1\\354\\247\\221_.html\""
+   ],
+   "🔴 두 크기가 같은가": true,
+   "🔴 양쪽 차가 같은가": true,
+   "🔴 경보(두 이름 의심 · 크기와 양쪽 차가 같다)": true,
+   "③ 두 이름 대조": {
+    "🔴 A − B 중 B 에 두 번째 인코딩으로 있는 것": 215,
+    "🔴 B − A 중 A 에 첫 인코딩으로 있는 것": 0,
+    "예시 다섯": [
+     "data/state/cache_aladin/AB6IX_B_COMPLETE__미니_1집_.html",
+     "data/state/cache_aladin/AHOF__아홉__WHO_WE_ARE__미니_1집_.html",
+     "data/state/cache_aladin/ALLDAY_PROJECT__올데이_프로젝트__FAMOUS__데뷔_싱글_.html",
+     "data/state/cache_aladin/AtHeart__앳하트_.html",
+     "data/state/cache_aladin/AtHeart__앳하트__Plot_Twist__EP_1집_.html"
+    ]
+   },
+   "④ 심은 키": "🔴 심을 수 없다 --- 두 인코딩이 갈리는 원소가 A∩B 에 하나도 없다. 🔴 **그 자체가 신호다**: B 의 생산자가 두 번째 인코딩 줄을 아예 버렸으면 심을 자리가 남지 않는다",
+   "🔴 왜 수를 안 내나": "③ 이 두 이름을 215 개 잡았다 --- 이 차집합은 「없는 원소」가 아니라 **두 이름**이다",
+   "순 A − B(참고 · 판정에 쓰지 마라)": 215,
+   "순 B − A(참고 · 판정에 쓰지 마라)": 215,
+   "🔴 검출기가 두 번째 인코딩을 보나": "🔴 모른다 --- 심은 키를 못 찾았다(검출기가 두 번째 인코딩을 못 본다)",
+   "통과": false
+  },
+  "🔴 전 / 후": {
+   "옛 자 `디스크 − 트리`": "🔴 모른다 --- 심은 키를 못 찾았다(검출기가 두 번째 인코딩을 못 본다)",
+   "옛 자 `트리 − 디스크`": "🔴 모른다 --- 심은 키를 못 찾았다(검출기가 두 번째 인코딩을 못 본다)",
+   "새 자 `디스크 − 트리`": 0,
+   "새 자 `트리 − 디스크`": 0,
+   "🔴 945 지도 양방향": [
+    "🔴 모른다 --- 심은 키를 못 찾았다(검출기가 두 번째 인코딩을 못 본다)",
+    "🔴 모른다 --- 심은 키를 못 찾았다(검출기가 두 번째 인코딩을 못 본다)"
+   ]
+  },
+  "🔴 이스케이프된 키 수(945 지도)": 215,
+  "이스케이프된 키 예시 다섯": [
+   "\"data/state/cache_aladin/AB6IX_B_COMPLETE__\\353\\257\\270\\353\\213\\210_1\\354\\247\\221_.html\"",
+   "\"data/state/cache_aladin/AHOF__\\354\\225\\204\\355\\231\\211__WHO_WE_ARE__\\353\\257\\270\\353\\213\\210_1\\354\\247\\221_.html\"",
+   "\"data/state/cache_aladin/ALLDAY_PROJECT__\\354\\230\\254\\353\\215\\260\\354\\235\\264_\\355\\224\\204\\353\\241\\234\\354\\240\\235\\355\\212\\270__FAMOUS__\\353\\215\\260\\353\\267\\224_\\354\\213\\261\\352\\270\\200_.html\"",
+   "\"data/state/cache_aladin/AtHeart__\\354\\225\\263\\355\\225\\230\\355\\212\\270_.html\"",
+   "\"data/state/cache_aladin/AtHeart__\\354\\225\\263\\355\\225\\230\\355\\212\\270__Plot_Twist__EP_1\\354\\247\\221_.html\""
+  ],
+  "그 다섯을 풀면": [
+   "data/state/cache_aladin/AB6IX_B_COMPLETE__미니_1집_.html",
+   "data/state/cache_aladin/AHOF__아홉__WHO_WE_ARE__미니_1집_.html",
+   "data/state/cache_aladin/ALLDAY_PROJECT__올데이_프로젝트__FAMOUS__데뷔_싱글_.html",
+   "data/state/cache_aladin/AtHeart__앳하트_.html",
+   "data/state/cache_aladin/AtHeart__앳하트__Plot_Twist__EP_1집_.html"
+  ],
+  "🔴 그 다섯이 디스크에 있나": [
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "🔴 그 다섯이 HEAD 트리에 있나": [
+   true,
+   true,
+   true,
+   true,
+   true
+  ],
+  "통과": true
+ },
+ "3 지도 정정": {
+  "검사": "3 지도 정정 --- `obs_time946_cachemap.json`",
+  "🔴 세는 명령": "git -c core.quotePath=false log --all --format='\\x01%H %aI' --name-only -z --diff-filter=A -- data/state/cache_*",
+  "🔴 범위": "data/state/cache_*",
+  "🔴 트리": "모든 ref 의 이력(--all) + 디스크 mtime",
+  "새 파일": "data/state/obs_time946_cachemap.json",
+  "새 지도 파일 수": 54876,
+  "새 지도 커밋 수": 42,
+  "🔴 새 지도의 이스케이프된 키": 0,
+  "🔴 새 지도의 mtime null": 0,
+  "🔴 옛 지도의 mtime null(=정정 대상)": 215,
+  "정정 예시 다섯(옛 키 → 새 키)": [
+   {
+    "옛": "\"data/state/cache_aladin/AB6IX_B_COMPLETE__\\353\\257\\270\\353\\213\\210_1\\354\\247\\221_.html\"",
+    "새": "data/state/cache_aladin/AB6IX_B_COMPLETE__미니_1집_.html",
+    "새 mtime": 1785512790
+   },
+   {
+    "옛": "\"data/state/cache_aladin/AHOF__\\354\\225\\204\\355\\231\\211__WHO_WE_ARE__\\353\\257\\270\\353\\213\\210_1\\354\\247\\221_.html\"",
+    "새": "data/state/cache_aladin/AHOF__아홉__WHO_WE_ARE__미니_1집_.html",
+    "새 mtime": 1785513194
+   },
+   {
+    "옛": "\"data/state/cache_aladin/ALLDAY_PROJECT__\\354\\230\\254\\353\\215\\260\\354\\235\\264_\\355\\224\\204\\353\\241\\234\\354\\240\\235\\355\\212\\270__FAMOUS__\\353\\215\\260\\353\\267\\224_\\354\\213\\261\\352\\270\\200_.html\"",
+    "새": "data/state/cache_aladin/ALLDAY_PROJECT__올데이_프로젝트__FAMOUS__데뷔_싱글_.html",
+    "새 mtime": 1785233411
+   },
+   {
+    "옛": "\"data/state/cache_aladin/AtHeart__\\354\\225\\263\\355\\225\\230\\355\\212\\270_.html\"",
+    "새": "data/state/cache_aladin/AtHeart__앳하트_.html",
+    "새 mtime": 1785513213
+   },
+   {
+    "옛": "\"data/state/cache_aladin/AtHeart__\\354\\225\\263\\355\\225\\230\\355\\212\\270__Plot_Twist__EP_1\\354\\247\\221_.html\"",
+    "새": "data/state/cache_aladin/AtHeart__앳하트__Plot_Twist__EP_1집_.html",
+    "새 mtime": 1785513210
+   }
+  ],
+  "🔴 정정된 215 가 전부 새 지도에 참 이름으로 있나": true,
+  "🔴 정정된 215 가 전부 mtime 을 얻었나": true,
+  "🔴 옛 지도의 안 바뀐 항목이 같은가(비-인용 키)": {
+   "같은 것": 54661,
+   "🔴 다른 것": 0,
+   "다른 것 예시(20 까지)": [],
+   "🔴 분모(옛 지도의 비-인용 키)": 54661
+  },
+  "통과": true
+ },
+ "4 철회": {
+  "검사": "4 🔴 철회 --- 945 의 T3 와 후보 3(「215 에 사본을 준다」)",
+  "무엇을 철회하나": [
+   "🔴 `docs/수리/945.md` T3 --- 「디스크에 있으나 어떤 ref 에도 없는 캐시 파일 215 · mtime 이 유일한 근거 · 사본이 없다」",
+   "🔴 945 원장 항목의 P4 = 215 와 「어떤 ref 에도 없는 파일 215 는 사본 0」",
+   "🔴 945 의 다음 후보 3 --- 「T3 의 215 에 사본을 준다」. **사본이 이미 있다**",
+   "🔴 티처 #84 의 「cache_aladin 222 중 215 가 git 미추적」",
+   "🔴 `docs/탐색/943.md:25` 의 「추적됨 54,661」 · `docs/탐색/944.md:147` 의 같은 문장"
+  ],
+  "🔴 왜 --- 사본이 이미 있다": {
+   "그 215 가 HEAD 에 추적되나": 215,
+   "🔴 분모(215)": 215,
+   "origin/main 이 있나": true,
+   "cache_aladin 이 origin/main 에 몇 개": 222,
+   "cache_aladin 이 디스크에 몇 개": 222,
+   "cache_aladin 이 HEAD 에 몇 개": 222,
+   "예시 다섯": [
+    "data/state/cache_aladin/AB6IX_B_COMPLETE__미니_1집_.html",
+    "data/state/cache_aladin/AHOF__아홉__WHO_WE_ARE__미니_1집_.html",
+    "data/state/cache_aladin/ALLDAY_PROJECT__올데이_프로젝트__FAMOUS__데뷔_싱글_.html",
+    "data/state/cache_aladin/AtHeart__앳하트_.html",
+    "data/state/cache_aladin/AtHeart__앳하트__Plot_Twist__EP_1집_.html"
+   ],
+   "그 다섯이 HEAD 에 있나": [
+    true,
+    true,
+    true,
+    true,
+    true
+   ]
+  },
+  "🔴 남는 참된 문장": "cache_aladin 222 는 **전부** 추적된다. 「mtime 이 유일한 근거인 캐시 파일」은 **0** 이다. 945 가 T3 로 낸 것은 파일의 성질이 아니라 **판독기의 성질**이었다",
+  "통과": true
+ },
+ "5 심어서 확인": {
+  "검사": "5 🔴 심어서 확인 --- 검출기가 두 번째 인코딩을 보나",
+  "🔴 심은 수(분모)": 3,
+  "🔴 발화한 수": 3,
+  "음성 대조": [
+   {
+    "검사": "다 · 🔴 음성 대조 --- ASCII 경로 50 은 두 인코딩이 같다",
+    "🔴 심었나": false,
+    "심은 수": 50,
+    "🔴 발화했나": false,
+    "두 인코딩이 다른 것": 0
+   },
+   {
+    "검사": "마 · 🔴 음성 대조 --- 같은 인코딩 두 집합",
+    "🔴 심었나": false,
+    "심은 수": 10,
+    "🔴 발화했나": false,
+    "낸 것": 0,
+    "통과": true
+   }
+  ],
+  "검사들": [
+   {
+    "검사": "가 · 945 의 `startswith` 필터에 이스케이프 줄 50 을 먹인다",
+    "🔴 심었나": true,
+    "심은 수": 50,
+    "🔴 발화했나": true,
+    "살아남은 수": 0,
+    "뜻": "🔴 50 이 **전부** 조용히 버려진다 --- 예외도 0 도 아니고 **작고 그럴듯한 양수**만 남는다(티처 #85 의 진단 그대로)"
+   },
+   {
+    "검사": "나 · 정본 판독기가 그 50 을 참 이름으로 내나",
+    "🔴 심었나": true,
+    "심은 수": 50,
+    "🔴 발화했나": true,
+    "잡은 수": 50
+   },
+   {
+    "검사": "다 · 🔴 음성 대조 --- ASCII 경로 50 은 두 인코딩이 같다",
+    "🔴 심었나": false,
+    "심은 수": 50,
+    "🔴 발화했나": false,
+    "두 인코딩이 다른 것": 0
+   },
+   {
+    "검사": "라 · `diff_report` 가 두 이름을 만나면 수를 안 내나",
+    "🔴 심었나": true,
+    "심은 수": 10,
+    "🔴 발화했나": true,
+    "낸 것": "🔴 모른다 --- 심은 키를 못 찾았다(검출기가 두 번째 인코딩을 못 본다)",
+    "③ 두 이름 대조": {
+     "🔴 A − B 중 B 에 두 번째 인코딩으로 있는 것": 10,
+     "🔴 B − A 중 A 에 첫 인코딩으로 있는 것": 0,
+     "예시 다섯": [
+      "data/state/cache_aladin/AB6IX_B_COMPLETE__미니_1집_.html",
+      "data/state/cache_aladin/AHOF__아홉__WHO_WE_ARE__미니_1집_.html",
+      "data/state/cache_aladin/ALLDAY_PROJECT__올데이_프로젝트__FAMOUS__데뷔_싱글_.html",
+      "data/state/cache_aladin/AtHeart__앳하트_.html",
+      "data/state/cache_aladin/AtHeart__앳하트__Plot_Twist__EP_1집_.html"
+     ]
+    },
+    "🔴 경보(두 이름 의심)": true
+   },
+   {
+    "검사": "마 · 🔴 음성 대조 --- 같은 인코딩 두 집합",
+    "🔴 심었나": false,
+    "심은 수": 10,
+    "🔴 발화했나": false,
+    "낸 것": 0,
+    "통과": true
+   }
+  ],
+  "🔴 두 인코딩이 갈리는 디스크 파일 수": 215,
+  "통과": true
+ },
+ "6 날 것 게이트": {
+  "검사": "6 날 것 호출 게이트(⑤′ 명부에 자동 편입)",
+  "🔴 어떻게 명부에 드나": "⑤′ 는 `git grep -lF -e '\"통과\":'` 로 게이트 생산자를 뽑는다. 이 파일이 `통과` 키를 내므로 **다음 ⑤′ 부터 40 → 41 명부에 잡힌다** --- 손 나열이 아니다",
+  "🔴 ⑤′ 러너를 고쳤나": false,
+  "🔴 왜 안 고쳤나": "규칙 4(수리 레인은 한 사이클에 하나) --- 이번 수리는 `core.quotePath` 다. 그리고 `fiveprime902.py` 를 이 사이클 안에서 고치면 ⑤′ 가 자기 코드 sha 가 바뀐 채로 돈다. **신고만 한다**",
+  "🔴 신고": "`runners/fiveprime902.py` 에 이 게이트를 상설로 넣어야 한다 --- 지금은 이 러너가 있어야만 잡힌다. 다음 사이클 [수리] 후보",
+  "살아있는 날 것": 1,
+  "㉮ 원리상 못 고친다": 7,
+  "🔴 ㉯ 고칠 수 있는데 안 고친 것": 0,
+  "통과": true
+ },
+ "🔴 절 수(분모)": 6,
+ "🔴 `통과` 키를 가진 절": 6,
+ "🔴 실패한 절": [],
+ "통과": true,
+ "시각(UTC · 시작)": "2026-08-11T22:39:13+00:00",
+ "🔴 코드 sha256(이게 자다)": {
+  "runners/out946_quotefix.py": "5f4effb602b124c27b3000af585149aa3efa684c78b81e7d39dbba1fcd11c7ae",
+  "lab/keyspace.py": "e63c86da248e5255f73442405b27693ee0a11cdcff2dd37d4debcbef0a362657"
+ },
+ "🔴 입력 산출물 sha256": {
+  "data/state/obs_time945_cachemap.json": "8a9c524fe13d60a97fe3e3b4a93f96634566e8dfa49fea9d294085316112da82",
+  "runners/out945_obstime.json": "a9284b357477510c594d1cd1f4d5b9ef90ff1b8340d4557568f0d98ca3581265",
+  "runners/out945_verify.json": "fb6d80e2eea0f61c5a5c3bd2c348dc4a2ab013cc3aca565e3c0869daef720f99",
+  "runners/out943b_d2time.json": "ca61fc6dceed8e77659ab859c13b32346044bbe75cda77a3c4fde30c1a96b47f"
+ },
+ "⚠ git HEAD(시작 시점 · 판정에 쓰지 마라)": "a1d1b1d1840ef65fc85c7730be51997a27909090",
+ "시각(UTC · 끝)": "2026-08-11T22:39:36+00:00"
+}
