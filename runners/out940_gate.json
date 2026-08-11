@@ -1,0 +1,174 @@
+{
+ "게이트": "940 — 비교가능성 관문의 배선 잠금",
+ "사전등록": "docs/prereg_940_ratio.md §4 판정규칙 ③",
+ "🔴 rev": "9295cfe9941392567700611cd1b45f852ae8a723",
+ "🔴 트리의 .py 수(분모)": 732,
+ "코드 sha256": {
+  "state/ratio940.py": "0be0c5b24c8eb30029f577b2337dbd6d0f9ee30fdf35c58f5643d27fc0ebfba9",
+  "runners/gate940_wiring.py": "5021a3614f97cac754de905d3b397c1cd53531f7b83bec21939a83b768cbc8b0"
+ },
+ "1 소비자 명부 대조": {
+  "무엇": "🔴 `COMPARABLE_REL` 소비자 명부 대조 — 명부 밖의 새 소비자가 생기면 붉어진다",
+  "🔴 세는 명령": "git ls-tree -r -z --name-only HEAD → .py 만 → git archive HEAD | tar -x → ast.ImportFrom(name=='COMPARABLE_REL')",
+  "🔴 범위": ".py **만** · 저장소 전량 · 경로 제한 없음",
+  "🔴 어느 트리": "HEAD = 9295cfe9941392567700611cd1b45f852ae8a723 (커밋된 트리 하나 · 🔴 인덱스·작업 트리와 **안 섞었다**)",
+  "실측 소비자": {
+   "runners/calpanel933_run.py": [
+    {
+     "모듈": "state.perm922",
+     "줄": 32
+    }
+   ],
+   "runners/perm922_run.py": [
+    {
+     "모듈": "state.perm922",
+     "줄": 35
+    }
+   ],
+   "runners/rawpanel935_addendum.py": [
+    {
+     "모듈": "state.perm922",
+     "줄": 26
+    }
+   ],
+   "runners/rawpanel935_run.py": [
+    {
+     "모듈": "state.perm922",
+     "줄": 34
+    }
+   ]
+  },
+  "실측 소비자 수": 4,
+  "명부 소비자 수": 4,
+  "🔴 명부에 없는 새 소비자": [],
+  "명부에 있는데 실측에 없는 것": [],
+  "ast 로 못 읽은 파일": [],
+  "통과": true,
+  "🔴 붉으면 무엇을 하나": "새 소비자를 `state/ratio940.CONSUMERS` 에 갈래와 증거와 함께 등록하거나, 그 소비자가 옛 상수 대신 `ratio940.sensitivity_ratio` 를 쓰게 고친다. **등록 없이 넘어갈 길은 없다**"
+ },
+ "2 분기 자리 회계": {
+  "무엇": "🔴 관문 결과가 **조건**으로 쓰인 자리 전량 — 세 갈래로 가른다",
+  "🔴 세는 명령": "git archive HEAD | tar -x → ast.walk → If/IfExp/comprehension.ifs 의 test 를 `ast.unparse` 로 떠서 '통과' 를 찾는다",
+  "🔴 범위": ".py **만** · 저장소 전량",
+  "🔴 어느 트리": "HEAD = 9295cfe9941392567700611cd1b45f852ae8a723",
+  "🔴 갈래 ㄱ — `if` 문 (판정 갈래를 고른다)": [
+   {
+    "파일": "runners/perm922_run.py",
+    "줄": 433,
+    "조건식": "not cmp_n2['🔴 통과']"
+   }
+  ],
+  "갈래 ㄴ — 내포 조건 (부분집합을 만든다)": [
+   {
+    "파일": "paper/steps/497_samegroundtruth/figs/make.py",
+    "줄": 141,
+    "조건식": "r['🔴 비교가능성 통과']"
+   },
+   {
+    "파일": "runners/calpanel933_run.py",
+    "줄": 395,
+    "조건식": "recs[s]['🔴 비교가능성 통과']"
+   },
+   {
+    "파일": "runners/rawpanel935_run.py",
+    "줄": 473,
+    "조건식": "recs[s][p]['🔴 비교가능성 통과']"
+   }
+  ],
+  "갈래 ㄷ — 삼항": [],
+  "🔴 갈래 ㄱ 의 파일": [
+   "runners/perm922_run.py"
+  ],
+  "🔴 갈래 ㄱ 이 한 파일뿐인가(사전등록 P2)": true,
+  "통과": true,
+  "🔴 붉으면 무엇을 하나": "관문이 판정 갈래를 고르는 자리가 둘 이상이면 **각 자리마다** 「이 r 로 무엇을 갈랐나」를 산출물에 적어야 한다(규약 61 의무 필드 6)"
+ },
+ "3 기본 인자 동결": {
+  "무엇": "🔴 상수를 바꿔 넣어도 관문이 옛 값을 쓰는가 — **심어서 확인**",
+  "import 직후 상수": 0.05,
+  "함수 기본값 rel_thr": 0.05,
+  "상수를 −12345.0 으로 심은 뒤의 기본값": 0.05,
+  "🔴 상수를 바꿨더니 기본값이 따라 바뀌었나": false,
+  "🔴 뜻": "따라 안 바뀌면 — **상수는 신고용이고 관문이 쓰는 수는 따로 동결돼 있다**. 그러면 「상수를 고쳐서 문턱을 바꾼다」는 길은 **원리상 없다**",
+  "복원됐나": true,
+  "통과": true,
+  "⚠ 이 절의 「통과」의 뜻": "🔴 **「좋다」가 아니다.** 동결이 실측대로 재현됐다는 뜻이다 — 동결 자체는 이 저장소의 결함이고, 그것을 **드러내 놓는 것**이 이 절의 일이다"
+ },
+ "4 새 자의 자가검사": {
+  "무엇": "새 자가 ① 공식대로 계산하나 ② 결손을 「못 잰다」로 내나 ③ 금지어를 안 쓰나",
+  "합성 r": 1.7999999999999998,
+  "손 계산": 1.7999999999999998,
+  "🔴 같은가": true,
+  "결손 입력의 답": "G 를 이 팔의 산출물에서 못 읽었다 — 🔴 **「없다」가 아니라 「못 읽었다」다**(조항 59)",
+  "🔴 결손을 「못 잰다」로 냈나": true,
+  "금지어 자가검사": "없다",
+  "폐기한 신고 확인": {
+   "1 − (1−u)^B 를 냈나": false,
+   "k 를 기본으로 냈나": false
+  },
+  "통과": true
+ },
+ "5 작업 트리(따로)": {
+  "무엇": "🔴 작업 트리는 **커밋된 트리와 안 섞는다**(규약 60) — 여기서 따로 잰다",
+  "git status --porcelain 줄 수": 4,
+  "목록": [
+   " M data/state/collect_log.jsonl",
+   " M data/state/popup_visitor_daily_log.jsonl",
+   "?? data/ingest/kobis/2026-08-11.json",
+   "?? data/ingest/youtube_poll/2026-08-12.json"
+  ],
+  "🔴 위 절들이 읽은 트리": "HEAD = 9295cfe9941392567700611cd1b45f852ae8a723",
+  "통과": false,
+  "⚠ 붉어도 위 절의 계수는 안 흔들린다": "위 절은 `git show <rev>:` 로만 읽었다 — 작업 트리가 더러워도 그 수는 rev 의 수다"
+ },
+ "낱말 언급(병기 · import 와 **다른 분모**)": {
+  "파일 수": 27,
+  "줄 수 합": 67,
+  "파일별": {
+   "data/lab/denominator.json": 2,
+   "docs/prereg_933_calpanel.md": 1,
+   "docs/prereg_935_rawpanel.md": 1,
+   "docs/prereg_939_threshold.md": 2,
+   "docs/prereg_940_ratio.md": 5,
+   "docs/루프.md": 1,
+   "docs/목표.md": 4,
+   "paper/steps/499_borrowedthreshold/meta.json": 1,
+   "runners/calpanel933_run.py": 2,
+   "runners/gate940_wiring.py": 9,
+   "runners/out923_teacher.json": 2,
+   "runners/out935_addendum.json": 1,
+   "runners/out937_repair.json": 1,
+   "runners/out940_addendum.json": 1,
+   "runners/out940_gate.json": 2,
+   "runners/out940_prereg_stamp.json": 1,
+   "runners/out940_ratio.json": 8,
+   "runners/perm922_run.py": 2,
+   "runners/ratio940_addendum.py": 1,
+   "runners/ratio940_run.py": 4,
+   "runners/ratio940_stamp.py": 1,
+   "runners/rawpanel935_addendum.py": 6,
+   "runners/rawpanel935_run.py": 2,
+   "runners/repair937_run.py": 2,
+   "runners/thr939_run.py": 1,
+   "state/perm922.py": 2,
+   "state/ratio940.py": 2
+  },
+  "🔴 이 분모는 import 분모와 다르다": "낱말 언급 ⊇ import"
+ },
+ "시작 UTC": "2026-08-11T16:12:48.517752+00:00",
+ "🔴 절별 판정": {
+  "1 소비자 명부 대조": true,
+  "2 분기 자리 회계": true,
+  "3 기본 인자 동결": true,
+  "4 새 자의 자가검사": true,
+  "5 작업 트리(따로)": false
+ },
+ "🔴 전체": {
+  "절 수(분모)": 5,
+  "🔴 붉은 절": [
+   "5 작업 트리(따로)"
+  ],
+  "통과": false
+ },
+ "끝 UTC": "2026-08-11T16:12:59.807548+00:00"
+}
