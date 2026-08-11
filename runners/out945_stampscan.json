@@ -1,0 +1,288 @@
+{
+ "노트": 945,
+ "레인": "🔴 수리 — ⑤′ 절 4 의 수를 다시 센다",
+ "물음": "⑤′ 가 「도장 없음」이라 센 산출물이 정말 도장이 없나",
+ "🔴 스탬프": {
+  "시작 시각": "2026-08-12T06:40:36+0900",
+  "끝 시각": "2026-08-12T06:40:36+0900",
+  "초": 0.0,
+  "입력 sha256": {
+   "runners/fiveprime902.py": "447aa10e9c6bb30995bbe326ac1a5ffe3985e439efc0213fceb3157afad5c91e"
+  },
+  "코드 sha256": {
+   "runners/out945_stampscan.py": "bd9bda37f6725d9a149dabda60271d039b171d2b886e352d533d02cad8e671a0"
+  }
+ },
+ "🔴 조항 60 — 명령·범위·트리": {
+  "명령": "python3 runners/out945_stampscan.py",
+  "범위": "runners/out*.json 전량",
+  "트리": "작업 트리만"
+ },
+ "🔴 분모 — runners/out*.json": 279,
+ "최상위에 도장이 있다(검출기가 세는 것)": 161,
+ "🔴 한 겹 아래에만 도장이 있다(거짓 음성)": 29,
+ "🔴 정말 아무 도장도 없다": 89,
+ "못 읽었다": "없음",
+ "🔴 검출기가 「없음」으로 세는 수(= 거짓음성 + 진짜없음)": 118,
+ "거짓 음성 목록": [
+  "runners/out892_floor.json",
+  "runners/out897_control.json",
+  "runners/out897_decay.json",
+  "runners/out897_graph.json",
+  "runners/out897_inventory.json",
+  "runners/out897_nnchk.json",
+  "runners/out897_partial.json",
+  "runners/out897_placebo.json",
+  "runners/out898c_fix.json",
+  "runners/out900_levers.json",
+  "runners/out900_ruler.json",
+  "runners/out900_wire.json",
+  "runners/out900h_backout.json",
+  "runners/out900h_census.json",
+  "runners/out908a_collect.json",
+  "runners/out908c_verdict.json",
+  "runners/out916_teacher.json",
+  "runners/out920_teacher.json",
+  "runners/out923_teacher.json",
+  "runners/out929_teacher.json",
+  "runners/out943_axis.json",
+  "runners/out943_recount.json",
+  "runners/out944_famgrade.json",
+  "runners/out944_recount.json",
+  "runners/out944b_obstime.json",
+  "runners/out944b_verify.json",
+  "runners/out945_colcensus.json",
+  "runners/out945_obstime.json",
+  "runners/out945_verify.json"
+ ],
+ "거짓 음성이 도장을 숨긴 바깥 키": {
+  "runners/out892_floor.json": {
+   "② 배선": [
+    "ㄱ 자료 sha256(기준선)",
+    "ㅅ 난수 자체 sha256(뽑기 900 · 12도메인)"
+   ]
+  },
+  "runners/out897_control.json": {
+   "stamp": [
+    "시각"
+   ]
+  },
+  "runners/out897_decay.json": {
+   "stamp": [
+    "시각"
+   ]
+  },
+  "runners/out897_graph.json": {
+   "stamp": [
+    "시각"
+   ]
+  },
+  "runners/out897_inventory.json": {
+   "stamp": [
+    "시각"
+   ]
+  },
+  "runners/out897_nnchk.json": {
+   "stamp": [
+    "시각"
+   ]
+  },
+  "runners/out897_partial.json": {
+   "stamp": [
+    "시각"
+   ],
+   "팔": [
+    "ㅂ-1 시각만 · 전 도메인",
+    "ㅂ-1 시각만 · 퇴화 제외",
+    "ㅂ-2 시각+장 · 전 도메인",
+    "ㅂ-2 시각+장 · 퇴화 제외"
+   ]
+  },
+  "runners/out897_placebo.json": {
+   "stamp": [
+    "시각"
+   ]
+  },
+  "runners/out898c_fix.json": {
+   "stamp": [
+    "시각"
+   ]
+  },
+  "runners/out900_levers.json": {
+   "사전등록": [
+    "커밋 시각(UTC)"
+   ],
+   "배선 스탬프": [
+    "시각(UTC)",
+    "🔴 코드 sha256(이 파일 · runners/levers900.py)",
+    "참조 코드 sha256"
+   ]
+  },
+  "runners/out900_ruler.json": {
+   "배선 스탬프": [
+    "시각(UTC)",
+    "🔴 코드 sha256(이 파일 · runners/ruler900.py)",
+    "참조 산출물 sha256"
+   ]
+  },
+  "runners/out900_wire.json": {
+   "배선 스탬프": [
+    "시각(UTC)",
+    "🔴 코드 sha256(이 파일 · runners/wire900.py)",
+    "참조 코드 sha256"
+   ]
+  },
+  "runners/out900h_backout.json": {
+   "도장": [
+    "시각(UTC · 시작)",
+    "🔴 코드 sha256(이게 자다)",
+    "🔴 입력 파일 sha256",
+    "🔴 입력 묶음 sha256",
+    "시각(UTC · 끝)"
+   ]
+  },
+  "runners/out900h_census.json": {
+   "도장": [
+    "시각(UTC · 시작)",
+    "🔴 코드 sha256(이게 자다)",
+    "🔴 입력 파일 sha256",
+    "🔴 입력 묶음 sha256",
+    "시각(UTC · 끝)"
+   ]
+  },
+  "runners/out908a_collect.json": {
+   "나. 수집 실행": [
+    "코드 sha256",
+    "seoul_lifepop.py sha256"
+   ],
+   "가. 200시간 계획": [
+    "코드 sha256",
+    "찍은 시각(UTC)"
+   ],
+   "다. 받은 파일 검사(조항 59)": [
+    "찍은 시각(UTC)",
+    "코드 sha256"
+   ]
+  },
+  "runners/out908c_verdict.json": {
+   "사전등록": [
+    "sha256(지금 · §5.5 2단계 절 포함)",
+    "sha256(1단계 측정 때)"
+   ]
+  },
+  "runners/out916_teacher.json": {
+   "경미": [
+    "m9 「빠진 날 0」은 날짜 단위의 참이고 시각 단위 결손은 안 셌다"
+   ]
+  },
+  "runners/out920_teacher.json": {
+   "치명": [
+    "C3 🔴🔴 순열 귀무가 「시각 구조만 부순 자료」가 아니다 — 사건 자체가 다른 사건이다"
+   ]
+  },
+  "runners/out923_teacher.json": {
+   "✅ 검산 — 내가 다시 세서 맞은 것": [
+    "문턱 상수의 시각"
+   ],
+   "중대": [
+    "M8 — 사전등록의 자기신고 시각이 제 mtime 과 안 맞는다"
+   ]
+  },
+  "runners/out929_teacher.json": {
+   "🔴 참인 것 — 내가 세어서 확인했다 (다음 사이클이 이것까지 버리면 안 된다)": [
+    "T6 사전등록 시각 증거는 실제로 작동한다"
+   ]
+  },
+  "runners/out943_axis.json": {
+   "🔴 스탬프(루프 v3.2 — git HEAD 안 쓴다)": [
+    "시작 시각",
+    "끝 시각",
+    "입력 sha256(D1 디렉터리별)",
+    "입력 sha256(동결 산출물)",
+    "코드 sha256"
+   ]
+  },
+  "runners/out943_recount.json": {
+   "🔴 스탬프": [
+    "시작 시각",
+    "끝 시각",
+    "입력 sha256(첫 경로 산출물)",
+    "코드 sha256"
+   ]
+  },
+  "runners/out944_famgrade.json": {
+   "🔴 스탬프(git rev-parse HEAD 안 쓴다)": [
+    "시작 시각",
+    "끝 시각",
+    "입력 sha256(D1 디렉터리별)",
+    "입력 sha256(동결 산출물)",
+    "코드 sha256"
+   ]
+  },
+  "runners/out944_recount.json": {
+   "🔴 스탬프": [
+    "시작 시각",
+    "끝 시각",
+    "입력 sha256(대조 대상)",
+    "코드 sha256"
+   ]
+  },
+  "runners/out944b_obstime.json": {
+   "🔴 스탬프": [
+    "시작 시각",
+    "끝 시각",
+    "입력 sha256(저장소 아홉)",
+    "코드 sha256"
+   ],
+   "🔴 ② 만화 두 점": [
+    "되풀이 id(만화 · 두 시각 이상)"
+   ]
+  },
+  "runners/out944b_verify.json": {
+   "🔴 스탬프": [
+    "시작 시각",
+    "끝 시각",
+    "입력 sha256(저장소 아홉)",
+    "입력 sha256(대조 대상)",
+    "코드 sha256"
+   ]
+  },
+  "runners/out945_colcensus.json": {
+   "🔴 스탬프": [
+    "시작 시각",
+    "끝 시각",
+    "입력 sha256",
+    "코드 sha256"
+   ]
+  },
+  "runners/out945_obstime.json": {
+   "🔴 스탬프": [
+    "시작 시각",
+    "끝 시각",
+    "입력 sha256(저장소 아홉)",
+    "코드 sha256"
+   ],
+   "🔴 지도 전/후": [
+    "HEAD 지도의 서로 다른 커밋 시각",
+    "--all 지도의 서로 다른 커밋 시각"
+   ],
+   "🔴 레코드 전/후": [
+    "시각이 붙은 레코드",
+    "🔴 git 시각이 달라진 레코드"
+   ]
+  },
+  "runners/out945_verify.json": {
+   "🔴 스탬프": [
+    "시작 시각",
+    "끝 시각",
+    "입력 sha256",
+    "코드 sha256"
+   ]
+  }
+ },
+ "🔴 못 한 것": [
+  "`fiveprime902.py` 를 **안 고쳤다** — 수리 레인은 한 사이클에 하나(규칙 4)",
+  "두 겹 아래는 안 봤다 — 한 겹만 내려갔다",
+  "`runners/` 밖의 산출물은 안 봤다(검출기와 같은 범위를 썼다)"
+ ]
+}
