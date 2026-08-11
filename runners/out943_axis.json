@@ -1,0 +1,370 @@
+{
+ "노트": 943,
+ "레인": "수리",
+ "무엇": "a 를 「시점이 붙은 액션」으로 다시 정의하고 D1 을 다시 센다 (티처 #82 C1·C2)",
+ "사전등록": "docs/prereg_943_actiontime.md (커밋 b576f7768 · 측정 전)",
+ "🔴 스탬프(루프 v3.2 — git HEAD 안 쓴다)": {
+  "시작 시각": "2026-08-12T04:41:49+0900",
+  "끝 시각": "2026-08-12T04:41:49+0900",
+  "초": 0.1,
+  "입력 sha256(D1 디렉터리별)": {
+   "data/records": {
+    "파일": 380,
+    "sha256(파일명+파일sha 이어붙임)": "57c45acbd4652af85a6c7cc1f737182f95c4c392e605c169ee486a1d93516049"
+   },
+   "data/market_records": {
+    "파일": 647,
+    "sha256(파일명+파일sha 이어붙임)": "f356e11eff0dcbf7e34a46242648eb6b609b340e047e6d3df65c91ac86a12fd1"
+   },
+   "data/idol_records": {
+    "파일": 282,
+    "sha256(파일명+파일sha 이어붙임)": "b0dbeca38094856c5244e9e428711f761321239debfa5098917a49c2e45f029e"
+   },
+   "data/records_draft": {
+    "파일": 0,
+    "sha256(파일명+파일sha 이어붙임)": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+   },
+   "data/records_incomplete": {
+    "파일": 8,
+    "sha256(파일명+파일sha 이어붙임)": "0e391fc15b2fc016a9067b9fa21c69f8a8f2e2850dfee05c3c867c877208f572"
+   },
+   "data/records_thinbak": {
+    "파일": 19,
+    "sha256(파일명+파일sha 이어붙임)": "071df0c45b530822b8c3b5442fcdd8aca5ec117c506f47e2eca4baa5e5c89399"
+   }
+  },
+  "입력 sha256(동결 산출물)": {
+   "runners/out941_sao.json": "ea2349461f35b17f12dd15b2a983e864595b6b467ec73d75edf870f747d9ae49",
+   "runners/out942_stock.json": "f4b0c621f0b5c3730c278a951a7d9fd5353ae1d2a8e78c3bf57aa69f4763d98b",
+   "runners/out942_schema_census.json": "a0171e9ff8e130648f1f496932a177f6af512be720faf1ac947f9f863577cb8d"
+  },
+  "코드 sha256": {
+   "runners/out943_axis.py": "c9d8da914a1f7cab6fa9215388cd0492e76ef1b8798a95eca71371b379bb2f11",
+   "runners/out942_stock.py": "5412bf7ef8ea3f96ae8d449d66cc80fa7242a387795e8fb292d8bbec2d23c2bc",
+   "runners/out941_sao.py": "f9cea60aeba3d4daa1aa5a90dbe091b624a254f8d5a158ac191d240a3a222583"
+  }
+ },
+ "🔴 조항 60 — 명령·범위": {
+  "명령": "python3 runners/out943_axis.py",
+  "범위": [
+   "data/records",
+   "data/market_records",
+   "data/idol_records",
+   "data/records_draft",
+   "data/records_incomplete",
+   "data/records_thinbak"
+  ],
+  "🔴 인덱스와 작업 트리를 섞지 않았다": "파일 시스템의 작업 트리만 읽는다"
+ },
+ "🔴 안 부른 자": "판 ρ · 문턱 0.00353 — 이 사이클은 예측 성능을 안 잰다",
+ "🔴 분모 D1(파일)": 1336,
+ "계열 분포": {
+  "A_팝업(outcome.totals)": 407,
+  "B_시장(평평한 outcome)": 647,
+  "C_아이돌(outcome 없음)": 282
+ },
+ "🔴 합 == 분모": true,
+ "🔴 ㄱ 배선 검사 — 942 의 함수를 import 해서 호출한 값(고치기 전)": {
+  "a(942)": 1328,
+  "s(942)": 1315,
+  "o(942 새 검출기)": 755,
+  "a·s·o(942)": 732,
+  "🔴 942 산출물과 같은가": {
+   "942 가 적은 a": 1328,
+   "지금 부른 a": 1328,
+   "942 가 적은 s": 1315,
+   "지금 부른 s": 1315,
+   "942 가 적은 o(새)": 755,
+   "지금 부른 o": 755,
+   "942 가 적은 a·s·o(새)": 732,
+   "지금 부른 a·s·o": 732,
+   "🔴 넷 다 같은가": true
+  }
+ },
+ "🔴 ㄴ·ㄷ 고치기 전/후 나란히": {
+  "a — 942(intervention 칸 존재)": 1328,
+  "a — 943(액션 **시점**)": 1231,
+  "a 차": -97,
+  "s — 942(conditions **칸**이 있다)": 1315,
+  "s — 943ㄱ(칸→**값**만 고침 · 기간 열은 그대로)": 1314,
+  "s — 943ㄴ(거기서 period_* 를 a 로 옮김)": 1314,
+  "s 차(942→943 전체)": -1,
+  "🔴 s 차 분해 — ①칸→값": -1,
+  "🔴 s 차 분해 — ②period_* 제거": 0,
+  "🔴 period_* 제거 **때문에** 떨어진 레코드": [],
+  "o — 942 새 검출기(안 건드림)": 755,
+  "o ∧ a(시점)": 697,
+  "a·s·o — 942": 732,
+  "a·s·o — 943": 676,
+  "a·s·o 차": -56
+ },
+ "계열별 a(942/943)": {
+  "A_팝업(outcome.totals)": {
+   "942": 407,
+   "943": 402
+  },
+  "B_시장(평평한 outcome)": {
+   "942": 647,
+   "943": 555
+  },
+  "C_아이돌(outcome 없음)": {
+   "942": 274,
+   "943": 274
+  }
+ },
+ "계열별 o∧a(시점)": {
+  "A_팝업(outcome.totals)": 157,
+  "B_시장(평평한 outcome)": 342,
+  "C_아이돌(outcome 없음)": 198
+ },
+ "🔴 시점 없는 레코드(어디에 몰리나)": {
+  "data/market_records · B_시장(평평한 outcome)": 92,
+  "data/idol_records · C_아이돌(outcome 없음)": 8,
+  "data/records_incomplete · A_팝업(outcome.totals)": 5
+ },
+ "디렉터리별": {
+  "data/records": {
+   "파일": 380,
+   "계열": {
+    "A_팝업(outcome.totals)": 380
+   },
+   "a(942·칸 존재)": 380,
+   "a(943·시점)": 380,
+   "s(942)": 380,
+   "s(943·period 뺌)": 380,
+   "o(942 새 검출기)": 138,
+   "o∧a(시점)": 138,
+   "a·s·o(942)": 138,
+   "a·s·o(943)": 138
+  },
+  "data/market_records": {
+   "파일": 647,
+   "계열": {
+    "B_시장(평평한 outcome)": 647
+   },
+   "a(942·칸 존재)": 647,
+   "a(943·시점)": 555,
+   "s(942)": 647,
+   "s(943·period 뺌)": 646,
+   "o(942 새 검출기)": 398,
+   "o∧a(시점)": 342,
+   "a·s·o(942)": 398,
+   "a·s·o(943)": 342
+  },
+  "data/idol_records": {
+   "파일": 282,
+   "계열": {
+    "C_아이돌(outcome 없음)": 282
+   },
+   "a(942·칸 존재)": 274,
+   "a(943·시점)": 274,
+   "s(942)": 261,
+   "s(943·period 뺌)": 261,
+   "o(942 새 검출기)": 200,
+   "o∧a(시점)": 198,
+   "a·s·o(942)": 177,
+   "a·s·o(943)": 177
+  },
+  "data/records_draft": {
+   "파일": 0,
+   "계열": {},
+   "a(942·칸 존재)": 0,
+   "a(943·시점)": 0,
+   "s(942)": 0,
+   "s(943·period 뺌)": 0,
+   "o(942 새 검출기)": 0,
+   "o∧a(시점)": 0,
+   "a·s·o(942)": 0,
+   "a·s·o(943)": 0
+  },
+  "data/records_incomplete": {
+   "파일": 8,
+   "계열": {
+    "A_팝업(outcome.totals)": 8
+   },
+   "a(942·칸 존재)": 8,
+   "a(943·시점)": 3,
+   "s(942)": 8,
+   "s(943·period 뺌)": 8,
+   "o(942 새 검출기)": 0,
+   "o∧a(시점)": 0,
+   "a·s·o(942)": 0,
+   "a·s·o(943)": 0
+  },
+  "data/records_thinbak": {
+   "파일": 19,
+   "계열": {
+    "A_팝업(outcome.totals)": 19
+   },
+   "a(942·칸 존재)": 19,
+   "a(943·시점)": 19,
+   "s(942)": 19,
+   "s(943·period 뺌)": 19,
+   "o(942 새 검출기)": 19,
+   "o∧a(시점)": 19,
+   "a·s·o(942)": 19,
+   "a·s·o(943)": 19
+  }
+ },
+ "🔴 반증 조건 3 — 계열 경로가 엇갈리나(둘 다 0 이어야 한다)": {
+  "A 에 평평한 period_from": 0,
+  "B 에 중첩 period.from": 0
+ },
+ "🔴 ㄹ conditions 열 단위 판정 (PRE / POST / 모른다)": {
+  "판정 규칙": {
+   "ㄱ": "코드가 액션 날짜 이전으로 자르는 것이 원문에 보인다 → PRE",
+   "ㄴ": "액션 날짜·기간·계획 텍스트의 결정론적 함수 → PRE",
+   "ㄷ": "계획서·계약서 원문에 속한 열(문서 근거) → PRE",
+   "ㄹ": "값·출처가 액션 시작 뒤 관측이라고 스스로 말한다 → POST",
+   "ㅁ": "근거 없음 → 🔴 모른다(‘없다’가 아니다 · 조항 59)",
+   "🔴 표에 없는 열": "자동으로 모른다"
+  },
+  "열별 근거": {
+   "location": {
+    "통": "PRE",
+    "근거종류": "ㄷ",
+    "근거": "장소는 계약·기획 시점에 확정 — lab/provenance.py:131-133(노트 276)"
+   },
+   "venue": {
+    "통": "PRE",
+    "근거종류": "ㄷ",
+    "근거": "〃"
+   },
+   "venue_type": {
+    "통": "PRE",
+    "근거종류": "ㄷ",
+    "근거": "〃"
+   },
+   "neighborhood": {
+    "통": "PRE",
+    "근거종류": "ㄷ",
+    "근거": "〃"
+   },
+   "city": {
+    "통": "PRE",
+    "근거종류": "ㄷ",
+    "근거": "〃"
+   },
+   "multi_store": {
+    "통": "PRE",
+    "근거종류": "ㄷ",
+    "근거": "〃"
+   },
+   "area_pyeong": {
+    "통": "PRE",
+    "근거종류": "ㄷ",
+    "근거": "〃"
+   },
+   "scale": {
+    "통": "PRE",
+    "근거종류": "ㄷ",
+    "근거": "〃 — 계약 매장 수 · lab/provenance.py:141 pop_stores=PRE"
+   },
+   "fee_structure": {
+    "통": "PRE",
+    "근거종류": "ㄷ",
+    "근거": "계약 조건"
+   },
+   "brand_requirements": {
+    "통": "PRE",
+    "근거종류": "ㄷ",
+    "근거": "계약 조건"
+   },
+   "season": {
+    "통": "PRE",
+    "근거종류": "ㄴ",
+    "근거": "기간의 결정론적 함수"
+   },
+   "capacity": {
+    "통": "PRE",
+    "근거종류": "ㄴ",
+    "근거": "ingest/derive_features.py:98 capacity_upgrade — 입력 blob 이 intervention+conditions(derived 제외)뿐"
+   },
+   "derived.ip_history": {
+    "통": "PRE",
+    "근거종류": "ㄱ",
+    "근거": "ingest/derive_features.py:130 `e[0] < open_from`"
+   },
+   "derived.competition": {
+    "통": "PRE",
+    "근거종류": "ㄱ",
+    "근거": "ingest/competition.py:136-138 `s.open < d <= s.close` · `s.close < d` · lab/provenance.py:134"
+   },
+   "derived.pnl_pre": {
+    "통": "PRE",
+    "근거종류": "ㄱ",
+    "근거": "ingest/pnl_features.py:73-76 cutoff=오픈월 1일, `period_start < cutoff`. 🔴 티처 #82 는 '사후 파생으로 **보인다**'고 했는데 코드는 앞으로 자른다"
+   },
+   "derived.calendar": {
+    "통": "PRE",
+    "근거종류": "ㄴ",
+    "근거": "ingest/calendar_features.py:73 calendar_features(from,to)"
+   },
+   "derived.duration": {
+    "통": "PRE",
+    "근거종류": "ㄴ",
+    "근거": "ingest/derive_features.py:80 duration_features(from,to) · lab/provenance.py:139-140 pop_wkend·pop_holid=PRE"
+   },
+   "demand_signals": {
+    "통": "POST",
+    "근거종류": "ㄹ",
+    "근거": "ingest/apply_external_labels.py:75-78 — '역검색 외부 보도(2026-07-27)' 이고 값이 「행사 시작 1시간 전 대기 행렬」·「7000장 2분 만에 조기 마감」 = **행사 중/후 관측**"
+   },
+   "venue_knowledge": {
+    "통": "모른다",
+    "근거종류": "ㅁ",
+    "근거": "ingest/venue_knowledge.py 는 누출 차단 설계를 docstring 에 적는다(장소 문자열만 질의). 그러나 **관측 시각이 없고**(태깅 2026-07-28) 코드에 액션 날짜 컷이 없다 → 내 사전등록 규칙으로는 ㅁ. 🔴 '없다'가 아니라 '못 가른다'"
+   }
+  },
+  "🔴 열별 레코드 수(계열 · 값 있는 것만)": {
+   "A_팝업(outcome.totals) · location  [PRE·ㄷ]": 407,
+   "A_팝업(outcome.totals) · period  → a 로 옮김": 407,
+   "A_팝업(outcome.totals) · fee_structure  [PRE·ㄷ]": 407,
+   "A_팝업(outcome.totals) · scale  [PRE·ㄷ]": 399,
+   "A_팝업(outcome.totals) · season  [PRE·ㄴ]": 394,
+   "A_팝업(outcome.totals) · derived.ip_history  [PRE·ㄱ]": 380,
+   "A_팝업(outcome.totals) · derived.calendar  [PRE·ㄴ]": 380,
+   "A_팝업(outcome.totals) · derived.competition  [PRE·ㄱ]": 380,
+   "A_팝업(outcome.totals) · derived.duration  [PRE·ㄴ]": 368,
+   "A_팝업(outcome.totals) · brand_requirements  [PRE·ㄷ]": 238,
+   "A_팝업(outcome.totals) · derived.pnl_pre  [PRE·ㄱ]": 214,
+   "A_팝업(outcome.totals) · venue_knowledge  [모른다·ㅁ]": 90,
+   "A_팝업(outcome.totals) · capacity  [PRE·ㄴ]": 78,
+   "A_팝업(outcome.totals) · area_pyeong  [PRE·ㄷ]": 49,
+   "A_팝업(outcome.totals) · demand_signals  [POST·ㄹ]": 22,
+   "B_시장(평평한 outcome) · venue_type  [PRE·ㄷ]": 645,
+   "B_시장(평평한 outcome) · venue  [PRE·ㄷ]": 644,
+   "B_시장(평평한 outcome) · city  [PRE·ㄷ]": 644,
+   "B_시장(평평한 outcome) · multi_store  [PRE·ㄷ]": 612,
+   "B_시장(평평한 outcome) · period_from  → a 로 옮김": 555,
+   "B_시장(평평한 outcome) · derived.ip_history  [PRE·ㄱ]": 555,
+   "B_시장(평평한 outcome) · period_to  → a 로 옮김": 526,
+   "B_시장(평평한 outcome) · derived.duration  [PRE·ㄴ]": 503,
+   "B_시장(평평한 outcome) · neighborhood  [PRE·ㄷ]": 395,
+   "B_시장(평평한 outcome) · capacity  [PRE·ㄴ]": 170,
+   "B_시장(평평한 outcome) · area_pyeong  [PRE·ㄷ]": 14
+  },
+  "🔴 그 통의 열을 하나라도 가진 레코드 수": {
+   "PRE": 1053,
+   "모른다": 90,
+   "POST": 22
+  },
+  "🔴 레코드당 PRE 열 개수 분포": {
+   "0": 1,
+   "2": 6,
+   "3": 1,
+   "4": 59,
+   "5": 65,
+   "6": 209,
+   "7": 223,
+   "8": 183,
+   "9": 134,
+   "10": 99,
+   "11": 63,
+   "12": 11
+  },
+  "🔴 모른다로 센 열(레코드 수)": {
+   "venue_knowledge": 90
+  }
+ }
+}
