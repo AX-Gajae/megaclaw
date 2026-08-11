@@ -1,0 +1,241 @@
+\documentclass{article}
+\usepackage{icmlko}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+
+\title{「고를 수 있는 짝이 하나도 없다」는 틀렸다 --- 짝은 54개 있었고, 없는 것은 짝이 아니라 \emph{언제 봤는지}였다 \\
+  {\large 그리고 식별 조건 넷 중 둘은 105번이 아니라 12번 잰 것이다}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+직전 노트는 판정문에 \textbf{「고를 수 있는 짝이 하나도 없다」}고 적었다.
+프레시 티처가 같은 산출물을 손으로 도로 세어 그 문장이 \textbf{51건의 「모른다」를
+「없다」로 접은 것}임을 보였다. 이 노트는 그 접힘을 러너로 펴고, 접혀 있던 것이
+무엇이었는지 \textbf{열 이름으로} 적는다. 그리고 아무도 안 물은 물음 하나를 덧붙인다 ---
+\textbf{조건의 판정 단위는 짝인가 도메인인가.}
+\claimx{짝은 있었다 --- 54개다. 그리고 그 54 전부가 조건 넷 중 \emph{식3 하나}에서만 떨어진다.}
+{식3 밖의 조건에서 떨어지는 짝이 그 54 안에 하나라도 있으면 무너진다.
+실측 \textbf{0}: 「예가 아닌 조건」의 조합이 그 66짝 안에 \textbf{둘}뿐이고
+(식3 단독 \textbf{54} $\cdot$ 식1+식3 \textbf{12}) 둘 다 식3 을 품는다.}
+\claimx{식별 조건 넷 중 \emph{둘}은 짝의 성질이 아니라 도메인의 성질이다.}
+{식2$\cdot$식4 가 도메인 안에서 값이 갈리는 도메인이 하나라도 있으면 무너진다.
+실측 \textbf{12/12 도메인에서 상수}. 실효 자유도는 \textbf{12} 이지 105 가 아니다.}
+$\Rightarrow$ 이 노트가 뒤집는 것은 자료가 아니라 \textbf{직전 노트의 판정문}이고,
+덧붙이는 것은 \textbf{그 판정문이 쓴 분모가 애초에 몇이었나}이다.
+\end{abstract}
+
+\section{접힌 한 글자}
+
+「없다」와 「모른다」와 「못 봤다」를 셋으로 가르는 것이 이 저장소의 1번 규약(조항 59)이다.
+직전 노트의 판정문은 그 규약을 인용하는 문단 안에서 그 규약을 어겼다 ---
+\textbf{「고를 수 있는 짝이 하나도 없다」}.
+
+프레시 티처가 같은 산출물(\texttt{runners/out902\_identify.json:판정 표})을
+\textbf{손으로} 도로 세어 다른 그림을 냈다: 식1 예 54 $\cdot$ 식2 예 66 $\cdot$ 식4 예 66 $\cdot$
+\textbf{식3 --- 모른다 63 $\cdot$ 아니오 3 $\cdot$ 예 0}.
+규약대로면 \textbf{손으로 센 수는 후보이지 판정이 아니다.} 이 노트가 러너로 센다.
+
+⚠ 그 표에는 조항 60 이 걸릴 자리가 하나 있다.
+\textbf{「모른다 63 + 아니오 3 = 66」의 분모와 「식1 예 54」의 분모가 같은 66 인데,
+「54 중 몇이 모른다인가」는 아직 아무도 안 센 세 번째 수다.}
+
+\section{재기 전에 자백한다 --- 그리고 이번엔 자백이 명부를 깎는다}
+
+사전등록 \texttt{docs/prereg\_905\_cond.md} 는 커밋 \texttt{9a8d42a04}
+(2026-08-11T08:22:38+09:00)로 들어갔고, 측정 산출물 \texttt{runners/out905\_cond.json} 의
+스탬프는 \textbf{2026-08-11T08:28:30}이다(\texttt{stamp} 은 \textbf{실행 시작}에서 부른다).
+커밋이 측정보다 앞선다.
+
+직전 노트가 \S 0 에 「무엇을 먼저 봤나」를 자백하는 장치를 넣었고, 티처가 그 장치를
+때려 \textbf{세 자리에서 부쉈다} --- 자백한 수 89$\cdot$65 가 \emph{그대로 예측 명부에
+남아} 「예측 다섯 --- 전부 확인」으로 팔렸다. 이번 \S 0 은 셋을 고친다:
+\textbf{(1)} 「받았다 / 읽었다 / \textbf{돌렸다} / 안 봤다」를 넷으로 가른다
+(「돌렸다」는 측정이므로 사전등록 전에 하면 그 수는 예측이 될 수 없다),
+\textbf{(2)} 「본 것이 전부다」를 쓰지 않고 문서 끝에서 \S 0 을 다시 훑어 갱신한다,
+\textbf{(3)} 🔴 \textbf{러너가 \S 0 목록과 예측 목록의 교집합을 기계로 센다}.
+
+\claimx{자백은 이번에 명부를 실제로 깎았다.}
+{\S 0 과 예측의 교집합이 1 이상이면 그 예측은 「확인」으로 강등된다. 실측 교집합
+\textbf{0} (\texttt{runners/out905\_cond.json:0-나 \S 0 대 예측 교집합 (이슈 \#152 처방 · 기계로 센다)/🔴 교집합 수}).}
+티처가 준 손 계수(54 $\cdot$ 66 $\cdot$ 63 $\cdot$ 3 $\cdot$ 0 $\cdot$ 21)는
+\textbf{전부 「받았다」로 자백했고 예측 명부에서 뺐다.} 그래서 이 노트의 예측은 넷뿐이고,
+그중 \textbf{하나는 반증됐다}(\S 5).
+
+\section{배선 검사 --- 이번엔 각 검사를 \emph{국소적으로} 시험한다}
+
+직전 노트의 배선 검사는 티처가 실측으로 진짜임을 확인했다. 다만 둘이 남았다:
+검사 하나가 두 \texttt{assert} 의 \textbf{OR} 이라 하나만 지워도 다른 하나가 대신
+발화했고(국소 시험 실패), 검사 하나가 심는 결함이 생산 함수의 \textbf{인자}(시험 전용
+가지)라 나머지와 성질이 달랐다.
+
+이번 설계는 생산 함수 안의 모든 검사에 \textbf{번호}를 붙이고
+(\texttt{\_A(아이디, 조건, 메시지)}), 전역 \texttt{OFF} 집합으로 \textbf{그 검사 하나만}
+끌 수 있게 한다. 그리고 검사마다 \textbf{세 번} 돌린다:
+㉮ 파손 입력 $\cdot$ 전부 켬(발화해야 한다) $\cdot$
+㉯ \textbf{파손 입력 $\cdot$ 그 검사만 끔}(발화하면 안 된다 --- 발화하면 다른 검사가 대신 잡은 것) $\cdot$
+㉰ 정상 입력(발화하면 안 된다). \textbf{심는 결함은 전부 입력 파손이고 시험 전용 인자를 안 쓴다.}
+
+\begin{center}
+\begin{tabular}{lccccc}
+\toprule
+심은 결함(분모) & ㉮ 발화 & \textbf{㉯ 국소} & ㉰ 음성 & 지우면 통과 & 계수기 증가 \\
+\midrule
+\textbf{7} & 7 & \textbf{7} & 7 & 7 & 7 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+값은 \texttt{runners/out905\_cond.json:2 배선 검사/\{🔴 분모(심은 결함 수), 발화,
+🔴 국소 시험 통과, 음성 대조 통과, 🔴 지우면 통과로 바뀐 수, 🔴 계수기가 늘어난 수\}}
+이고 최상위 \texttt{통과}는 \texttt{true} 다.
+\textbf{국소 열이 직전 노트에 없던 열이고}, 그것이 「한 검사를 지우면 다른 검사가
+대신 발화하는가」를 아는 유일한 자다.
+
+\section{팔 ㄱ --- 접힌 것을 편다}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figs/fig1.pdf}
+\caption{(a) (형$\neq$d)$\wedge$D3 인 66짝의 식1 $\times$ 식3 교차표 ---
+아무도 안 센 세 번째 수다. (b) 짝마다 「예가 아닌 조건」의 조합은 그 66짝 안에 둘뿐이고
+둘 다 식3 을 품는다.}
+\end{figure}
+
+\textbf{교차표}(\texttt{out905\_cond.json:3-가 …/🔴 식1 × 식3 교차표(아무도 안 센 수)/표}):
+식1=예 $\times$ 식3=모른다 \textbf{51} $\cdot$ 식1=예 $\times$ 식3=아니오 \textbf{3} $\cdot$
+식1=아니오 $\times$ 식3=모른다 \textbf{12} $\cdot$ 분모 \textbf{66}.
+\textbf{식3=예 인 칸은 아예 없다.}
+
+\textbf{조합 분포}(\texttt{…/🔴 짝마다 「예가 아닌 조건」의 조합 분포}):
+「식3」 \textbf{54} $\cdot$ 「식1 + 식3」 \textbf{12}. 그밖의 조합은 없다.
+그러므로 식3 \textbf{하나만} 걸리는 짝 \textbf{54}
+(\texttt{…/🔴 식3 **하나만** 걸리는 짝 수}) $\cdot$
+걸리는 조건이 둘 이상인 짝 \textbf{12} $\cdot$
+넷 다 예인 짝 \textbf{0} $\cdot$ 66 중 A 등급 \textbf{0}.
+
+\claimx{그러므로 직전 노트의 판정문을 정정한다.}
+{「고를 수 있는 짝이 하나도 없다」 $\to$ \textbf{「54짝이 있고, 그 전부가 식3 한 조건에서만
+떨어진다(모른다 51 $\cdot$ 아니오 3)」}. 🔴 그리고 이 사이클의 유일한 분모는
+\textbf{0/66} 이다 --- 「0/21」이 아니다.}
+
+\subsection{그 「모른다」는 무엇을 안 적어 뒀나 --- 열 이름으로}
+
+산출물이 짝마다 적어 둔 근거는 \textbf{지시적}이다: \emph{「이 열의 관측 시점 필드가 없다.
+도메인에 있는 시점 필드(개입 열을 안 덮는다): …」}. 63/63 이 그 문형이고
+(\texttt{3-나 …/🔴 지시적 문형인 짝 수}), 지목된 열은 \textbf{짝 자신의 개입 열}이며
+어긋남 \textbf{0} 이다. ⚠ 문형이 지시적이라 \textbf{이 예측은 원리상 반증되기 어려웠다} ---
+약한 예측이었고 산출물에 그렇게 적었다.
+
+\textbf{도메인이 \emph{대신} 가진 시점 필드의 이름은 10가지}
+(\texttt{3-나 …/🔴 그 이름의 가짓수} $\cdot$ 도메인 분모 10):
+\texttt{outcome.visitors\_source\_date} $\cdot$ \texttt{outcome.sales\_source\_date} $\cdot$
+\texttt{ingested\_from} $\cdot$ \texttt{extraction\_confidence} $\cdot$ \texttt{source} $\cdot$
+\texttt{label\_basis} $\cdot$ \texttt{updated} $\cdot$ \texttt{\_page} $\cdot$
+\texttt{첫 관측일} $\cdot$ 그리고 \textbf{「없음」}.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figs/fig2.pdf}
+\caption{(a) 팔 ㄴ --- 조건별 실효 자유도. 붉은 것은 12/12 도메인에서 상수라
+\textbf{105번이 아니라 12번} 잰 것이다. (b) 「모른다」 51건은 한 덩어리가 아니다.}
+\end{figure}
+
+\claimx{🔴 그러므로 「모른다」 51건은 한 덩어리가 아니다 --- 그 안이 다시 「없다」와 「안 적어 뒀다」로 갈린다.}
+{두 무리의 합이 51 이 아니면 무너진다. 실측:
+도메인에 시점 필드가 \textbf{하나도 없는} 4도메인(도서$\cdot$만화$\cdot$애니$\cdot$웹툰)에서 \textbf{19짝},
+시점 필드는 \textbf{있는데 개입 열을 안 덮는} 6도메인에서 \textbf{32짝}, 합 \textbf{51}.}
+⚠ \textbf{이 절은 사후 집계다} --- 사전등록 \S 4 의 예측이 아니고 모집단도 안 바꿨다.
+산출물이 절 이름에 그렇게 박아 두었다.
+
+\section{팔 ㄴ --- 아무도 안 물은 것: 조건의 판정 단위}
+
+티처가 증명한 것은 \textbf{분모 딱지 한 칸}이 도메인의 성질이라는 것이었다.
+이 노트는 그 한 칸이 아니라 \textbf{조건 넷 전부}에 같은 자를 댄다 ---
+\emph{105짝은 105번의 독립 판정인가, 12개 도메인 사실의 복제인가?}
+
+\begin{center}
+\begin{tabular}{lccccl}
+\toprule
+& 식1 & 식2 & 식3 & 식4 & (형 / 분모) \\
+\midrule
+도메인 안 상수인 도메인 (분모 12) & 5 & \textbf{12} & 3 & \textbf{12} & 0 / \textbf{12} \\
+실효 자유도 (짝으로 세면 105) & 19 & \textbf{12} & 23 & \textbf{12} & 33 / \textbf{12} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+값은 \texttt{out905\_cond.json:3-다 …/조건별/\{식1,식2,식3,식4,형,분모\}/
+🔴 도메인 안 상수인 도메인 수} 와 \texttt{…/🔴 실효 자유도(도메인별 값 가짓수 합)} 다.
+분모 딱지 열이 \textbf{12/12} 로 티처 \#67 C2 를 재현한다.
+
+\claimx{식별 조건 넷 중 둘(식2 사전 관측 $\cdot$ 식4 교란 관측)은 짝의 성질이 아니라 도메인의 성질이다.}
+{둘 중 하나라도 도메인 안에서 값이 갈리면 무너진다. 실측 \textbf{12/12 상수}.
+그러므로 「66짝 전부가 식2$\cdot$식4 를 통과했다」는 \textbf{66번의 통과가 아니라
+10개 도메인 사실}이고, \textbf{짝을 더 모아도 그 둘은 원리상 안 움직인다.}}
+
+⚠ 반대로 \textbf{식3 은 12 중 3 에서만 상수}다(실효 자유도 23) --- 즉 식3 은
+\emph{도메인이 정하는 것이 아니라 열마다 갈린다.} 이 노트의 예측 P3 은
+「식2$\cdot$식3$\cdot$식4 가 다 12/12」라고 적었고 \textbf{식3 에서 반증됐다.}
+
+\section{예측 --- 넷 중 셋}
+
+\begin{center}
+\begin{tabular}{llc}
+\toprule
+& 예측 & 판정 \\
+\midrule
+P1 & 식3=아니오 3 이 전부 식1=예 쪽에 있다 (54 = 51 + 3) & 확인 \\
+P2 & 근거가 지목한 열 == 짝 자신의 개입 열 (어긋남 0) & 확인 \emph{(약한 예측)} \\
+P3 & 식2$\cdot$식3$\cdot$식4 는 12/12 상수 $\cdot$ 식1 은 12 미만 & \textbf{🔴 반증} \\
+P4 & \S 0 자백과 예측 명부의 교집합 0 & 확인 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\texttt{out905\_cond.json:4 예측 판정/\{🔴 예측 수(분모)=4, 🔴 확인=3\}}.
+🔴 \textbf{티처가 준 손 계수는 이 표에 없다} --- \S 0 이 「받았다」로 자백했고
+러너가 교집합 0 을 기계로 확인했다.
+
+\section{원장은 이미 뭐라 했나}
+
+\texttt{data/lab/denominator.json} 최상위 항목 \textbf{894} 중, 좁은 바늘
+(식3 $\cdot$ 역인과 $\cdot$ 관측 시점)에 걸리는 옛 항목이 \textbf{15}, 넓은 바늘까지 하면
+\textbf{80} 이다(\texttt{out905\_cond.json:0-가 원장이 이미 뭐라 했나/…}).
+🔴 그중 하나가 이 노트의 헤드라인을 \textbf{이미 갖고 있다} --- 노트 901 의 판정 항목이
+\emph{「막는 것은 결측이 아니라 \textbf{「처치 시점이 없다」}와 「배정 기제가 없다」」}라고
+적어 두었다. 그 문장은 \textbf{원장에 이미 있었고}, 이 노트가 오늘 한 일은 그 문장에 \textbf{분모를 단 것}이다. ⚠ 「그 뒤 몇 사이클 동안 판정문에 안 올라왔나」는 \textbf{안 쟀다}.
+⚠ 903 은 여덟 $\cdot$ 904 는 넷을 찾았지만 \textbf{바늘이 서로 달라 세 수를 잇지 않는다}(조항 60).
+
+\section{인용한 수는 전부 검산했다 --- 그리고 그 검산에 산출물이 있다}
+
+직전 노트가 \emph{「서른다섯을 검산했고 어긋남 0」}이라 적었는데 \textbf{그 검산 결과를
+담은 산출물이 없었다} --- 그리고 같은 논문이 산출물에 없는 수 둘을 인용했고 둘 다 틀렸다.
+그러므로 그 주장은 성립할 수 없었다.
+
+이번엔 \texttt{runners/quotecheck905.py} 가 \texttt{quote901.py --check}(도구는 \textbf{한 글자도
+안 고쳤다})를 부르고 결과를 \texttt{runners/out905\_quotecheck.json} 에 남긴다:
+검산 대상 키 \textbf{52}
+(\texttt{runners/out905\_quotecheck.json:🔴 검산 대상 키 수(분모)}) $\cdot$
+어긋남 \textbf{0}(\texttt{…:🔴 어긋남 수}) $\cdot$
+🔴 \textbf{검정력 --- 일부러 틀린 값 3 을 심어 도구가 3 다 붉어졌다}
+(\texttt{…:🔴 검정력(일부러 틀린 값을 넣었다)/🔴 도구가 붉어진 수(종료 6)}) $\cdot$
+없는 키는 종료 4 로 죽는다(\texttt{…:🔴 조항 59 — 없는 키는 종료 4 로 죽는가}).
+\textbf{이 논문이 인용한 수는 전부 그 52 안에 있다.}
+
+\section{못 잰 것 --- 🔴 「없다」가 아니다}
+
+\begin{itemize}
+\item 도메인이 \emph{대신} 가진 그 10개 이름이 \textbf{정말 시점인가} --- 안 쟀다.
+\texttt{source} $\cdot$ \texttt{label\_basis} $\cdot$ \texttt{extraction\_confidence} 같은
+이름을 직전 채점기가 「시점 필드」로 부른 것을 \textbf{옮겼을 뿐이다}
+\item 식3 을 「예」로 바꾸려면 무엇을 수집해야 하는가 --- 열 이름까지만이다
+\item 효과 크기 $\cdot$ 구간 --- 안 냈다(사전등록 \S 2 에 미리 못 박았다). 규약 47 해당 없음
+\item A 등급 21짝의 식3=예가 \textbf{몇 가지 근거}에서 오는가 --- A 쪽에서는 안 셌다
+\item KOSTAT 격자 생활인구 --- 🔴 \textbf{안 받았다}(「없다」가 아니다 $\cdot$ ⓪-나)
+\item 채점기가 「시점 필드」로 인정하는 이름 규칙 --- 코드를 안 읽었다(무접촉 규율)
+\end{itemize}
+
+\end{document}
