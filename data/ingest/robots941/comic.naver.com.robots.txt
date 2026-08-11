@@ -1,0 +1,31 @@
+User-agent: *
+Allow: /
+
+Disallow: /webtoon/list?*&page=
+Disallow: /webtoon/detail
+Disallow: /bestChallenge/list?*&page=
+Disallow: /bestChallenge/detail
+Disallow: /challenge/list?*&page=
+Disallow: /challenge/detail
+Disallow: /business
+Disallow: /community
+Disallow: /creators
+Disallow: /mypage
+Disallow: /notice
+Disallow: /curation
+Disallow: /artistTitle
+Disallow: /event
+Disallow: /search
+Disallow: /external
+
+Sitemap: https://comic.naver.com/sitemap.xml
+
+# Facebook/Twitter 공유하기 시, 크롤러봇이 og 태그를 읽지 못하는 이슈 대응
+User-agent: facebookexternalhit
+User-agent: Twitterbot
+Allow: /webtoon/list
+Allow: /webtoon/detail
+Allow: /bestChallenge/detail
+Allow: /bestChallenge/list
+Allow: /challenge/detail
+Allow: /challenge/list

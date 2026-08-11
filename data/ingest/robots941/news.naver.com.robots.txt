@@ -1,0 +1,26 @@
+User-agent: *
+Disallow: /
+
+User-agent: FacebookExternalHit
+User-agent: Twitterbot
+Allow: /
+
+# BOT ACCESS FOR THE PURPOSES OF AI TRAINING AND RETRIEVAL-AUGMENTED GENERATION (RAG) IS STRICTLY PROHIBITED.
+User-agent: GPTBot
+Disallow: /
+User-agent: OAI-SearchBot
+Disallow: /
+User-agent: PerplexityBot
+Disallow: /
+User-agent: Google-Extended
+Disallow: /
+User-agent: ClaudeBot
+Disallow: /
+User-agent: Claude-SearchBot
+Disallow: /
+User-agent: meta-externalagent
+Disallow: /
+User-agent: Applebot-Extended
+Disallow: /
+User-agent: CCBot
+Disallow: /
