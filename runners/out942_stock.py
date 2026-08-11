@@ -355,6 +355,31 @@ def main() -> dict:
     CENSUS.write_text(json.dumps(cen, ensure_ascii=False, indent=1))
     d1 = d1_stock()
     d2 = d2_stock()
+    # 🔴 배선 검사 — 941 의 `stock()` 을 **그대로 import 해서 호출**하고
+    #    내가 이식한 `o_old` 가 정말 같은 수를 내는지 대조한다.
+    #    (베껴 쓴 함수끼리 비교하면 「내가 쓴 두 함수를 비교했다」가 된다.)
+    from runners.out941_sao import stock as stock_941   # noqa: PLC0415
+    s941 = stock_941()
+    wire = {
+        "941 stock() 을 import 해서 호출한 값": {
+            "분모 D_레코드(파일)": s941["분모 D_레코드(파일)"],
+            "o 에 값이 있음": s941["🔴 o 에 **값**이 있음"],
+            "a·s·o 셋 다": s941["🔴 a·s·o 셋 다 값이 있는 레코드"],
+        },
+        "942 가 이식한 o_old 의 값": d1["🔴 o 값 있음 — 옛 검출기(941)"],
+        "🔴 같은가": (s941["🔴 o 에 **값**이 있음"]
+                  == d1["🔴 o 값 있음 — 옛 검출기(941)"]
+                  and s941["분모 D_레코드(파일)"] == d1["🔴 분모 D1(파일)"]),
+        "동결 산출물 out941_sao.json 의 값": None,
+    }
+    fz = ROOT / "runners/out941_sao.json"
+    if fz.exists():
+        z = json.loads(fz.read_text())["ㄱ 저장소 재고(레코드)"]
+        wire["동결 산출물 out941_sao.json 의 값"] = {
+            "분모": z["분모 D_레코드(파일)"], "o": z["🔴 o 에 **값**이 있음"]}
+        wire["🔴 동결 산출물과도 같은가"] = (
+            z["🔴 o 에 **값**이 있음"] == d1["🔴 o 값 있음 — 옛 검출기(941)"])
+
     tree = subprocess.run(["git", "rev-parse", "HEAD"], capture_output=True,
                           text=True).stdout.strip()
     dirty = subprocess.run(["git", "status", "--porcelain"],
@@ -372,6 +397,7 @@ def main() -> dict:
             "🔴 깨끗하지 않으면 여기 전량": dirty.splitlines(),
         },
         "🔴 안 부른 자": "판 ρ · 문턱 0.00353 — 이 사이클은 예측 성능을 안 잰다",
+        "🔴 배선 검사(옛 함수를 import 해서 호출)": wire,
         "ㄱ 키 분포 전수(파일)": {
             "경로": str(CENSUS.relative_to(ROOT)),
             "요약": {k: {kk: {"레코드": vv.get("파일", vv.get("레코드")),

@@ -2,16 +2,18 @@
  "노트": 942,
  "레인": "수리",
  "무엇": "robots 대조기를 RFC 9309 로 고치고 재판정 (티처 #81 C2) — 🔴 새 크롤 0",
- "시각": "2026-08-12T04:02:46+0900",
+ "시각": "2026-08-12T04:05:24+0900",
  "초": 0.2,
  "🔴 조항 60 — 명령·범위·트리": {
   "명령": "python3 runners/out942_robots.py",
   "범위": "data/ingest/robots941 의 저장된 robots.txt (새로 안 받았다)",
-  "트리": "a4b243525adad5c6ec54bec39a8b22f60c5ee7d7",
+  "트리": "017785ccd19d156028011334822ce5f674689428",
   "작업 트리 깨끗함": false,
   "🔴 깨끗하지 않으면 여기 전량": [
-   "?? runners/out942_robots.json",
-   "?? runners/out942_robots.py"
+   " M ingest/robots941.py",
+   " M runners/out941_sao.py",
+   " M runners/out942_stock.json",
+   " M runners/out942_stock.py"
   ]
  },
  "🔴 호스트 분모 — 941 이 18 과 16 을 섞어 쓴 자리": {
