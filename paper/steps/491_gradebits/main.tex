@@ -1,0 +1,181 @@
+\documentclass{article}
+\usepackage{icmlko}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+
+\title{「식별 등급」은 절반만 이름이었다 --- 다섯 서술 통계는 1.3842 비트 중 0.362 비트만 나른다 \\
+  {\large 그리고 남은 1.0221 비트는 같은 파일의 \emph{「등급 미사용」} 칸에 통째로 적혀 있었다}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+직전 5개 사이클(901--905)은 \textbf{식별 등급 A/B/C} 라는 라벨을 두고 다퉜다.
+프레시 티처가 물음을 하나로 좁혔다 --- \textbf{그 라벨이 실제로 나르는 정보가 몇 비트인가.}
+이 노트는 그 물음에 답하면서 \textbf{물음 자체가 놓인 자리}를 먼저 고친다:
+다섯 서술 통계의 조합은 T1 81짝에서 \textbf{81가지}로 서로 달라
+\textbf{암기표가 곧 「재현 함수」}이고 조건부 엔트로피는 정의상 0 이 된다.
+그래서 재현 여부가 아니라 \textbf{복잡도를 통제한 재현}으로 답했다.
+\claimx{다섯 서술 통계는 등급의 1.3842 비트 중 0.362 비트만 나른다 --- 잔여가 1.0221 비트 있다.}
+{도메인을 포함한 다섯 통계로 학습한 규칙이 leave-one-domain-out 에서 1짝도 안 틀리면 무너진다.
+실측 \textbf{22} 짝을 틀린다(분모 T1 \textbf{81}). 반대로 재대입은 \textbf{0} 까지 내려가고,
+그 \textbf{0} 은 자료의 성질이 아니라 튜플이 유일하다는 성질이다.}
+\claimx{그 잔여는 같은 파일이 「등급 계산에 안 들어간다」고 선언한 칸에 통째로 적혀 있었다.}
+{W 코드 집합이 등급을 결정하지 못하는 짝이 하나라도 있으면 무너진다.
+실측 --- W 코드 집합은 \textbf{5} 가지뿐이고 등급이 섞인 칸이 \textbf{0} 이다.
+상호정보 \textbf{1.3842} 비트 = 등급 엔트로피 전량.}
+$\Rightarrow$ 이 노트가 뒤집는 것은 등급도 자료도 아니라 \textbf{「무엇이 이미 산출물에 적혀 있었나」를
+사람이 훑는다는 절차}다. 러너 2개 절이 그것을 기계로 했다.
+\end{abstract}
+
+\section{물음을 글자대로 받으면 답이 자명하다}
+
+티처 \#68 이 지정한 물음은 이것이다 ---
+\textbf{(형 $\cdot$ 도메인 $\cdot$ 값 가짓수 $\cdot$ 비결측 $\cdot$ 소수 쪽 크기)}
+다섯 서술 통계만으로 105짝의 등급을 \textbf{완전히 재현하는 함수가 있는가.}
+헤드라인 분모는 T1 \textbf{81}
+(\texttt{runners/out906\_grade.json:1 분모 (조항 60 --- 매 수마다 병기한다)/T1 수(분모)}),
+T2 \textbf{24} 는 \texttt{docs/prereg\_901\_intervention.md:61} 대로 \textbf{안 더한다.}
+등급 분포는 A \textbf{21} $\cdot$ B \textbf{47} $\cdot$ C \textbf{13} 이고
+엔트로피는 \textbf{1.3842} 비트다
+(\texttt{:3-가 팔 ㄱ $\cdots$/엔트로피 $\cdot$ T1 81/H(등급)}).
+
+\textbf{그런데 그 다섯 통계의 조합은 T1 81짝에서 81가지로 서로 다르다}
+(\texttt{:3-가 팔 ㄱ $\cdots$/엔트로피 $\cdot$ T1 81/5-튜플 암기/서로 다른 튜플 수} = \textbf{81} $\cdot$
+유일 비율 \textbf{1.0} $\cdot$ 암기 재대입 오류 \textbf{0}).
+즉 조회표를 만들면 오류가 0 이고 $H(\text{등급}\mid\text{다섯 통계})=\mathbf{0.0}$ 이 된다.
+\textbf{물음을 글자대로 받으면 답은 「있다」이고, 그 답은 자료가 아니라 표본 크기가 만든다.}
+
+그래서 이 노트는 물음을 세 겹으로 다시 놓는다:
+\textbf{(1)} 규칙의 표현력을 결정트리 깊이로 제한한 \textbf{재대입},
+\textbf{(2)} 도메인 하나씩 빼고 학습해 뺀 도메인에서 채점하는 \textbf{LODO},
+\textbf{(3)} 조회표를 \textbf{암기 상한}으로 나란히 싣기.
+사전등록이 측정 전에 이 셋을 못 박았다(\texttt{docs/prereg\_906\_grade.md} $\S$1).
+
+\section{다섯 통계가 실제로 나르는 것 --- 0.362 비트}
+
+\begin{figure}[t]\centering
+\includegraphics[width=\linewidth]{figs/fig1.pdf}
+\caption{(a) 재대입은 깊이가 늘면 0 까지 내려가지만 LODO 는 22 에서 멈춘다.
+(b) 조건별 상호정보. 붉은 막대(다섯 통계 전부)는 자료가 아니라 튜플이 유일해서 생긴 값이다.
+값은 전부 \texttt{runners/out906\_grade.json} 에서 읽었다 --- 손 전사 0.}
+\end{figure}
+
+\begin{table}[t]\centering\small
+\begin{tabular}{lrr}
+\toprule
+특징 집합 & 최소 재대입 오류 & 최소 LODO 오류 \\
+\midrule
+F5 다섯 통계(전부) & \textbf{0} & \textbf{22} \\
+F4 도메인 뺀 넷 & \textbf{0} & \textbf{22} \\
+F3 소수 쪽 뺀 넷(음성 대조) & \textbf{7} & \textbf{25} \\
+\bottomrule
+\end{tabular}
+\caption{분모는 T1 \textbf{81} 짝. 출처
+\texttt{runners/out906\_grade.json:3-나 팔 ㄱ $\cdots$/$\langle$특징 집합$\rangle$/최소 재대입 오류 $\cdot$ 최소 LODO 오류}.}
+\end{table}
+
+일반화되는 규칙의 잔여는 $H(\text{등급}\mid\hat{y}_{\mathrm{LODO}}) = \mathbf{1.0221}$ 비트이고
+상호정보는 \textbf{0.362} 비트다
+(\texttt{:3-나 $\cdots$/잔여 비트(= H(등급 | LODO 예측))} $\cdot$ \texttt{/일반화 기준 상호정보(비트)}).
+\textbf{1.3842} 비트 중 \textbf{0.362} 비트다.
+
+\textbf{음성 대조가 중요하다.} 소수 쪽은 \texttt{식1 근거} 블록 안에 있다 ---
+즉 식1 을 판정한 그 루틴의 산물이다. 그것을 뺀 F3 은 최소 재대입 오류가
+\textbf{0} 에서 \textbf{7} 로, 최소 LODO 오류가 \textbf{22} 에서 \textbf{25} 로 나빠질 뿐이다.
+\textbf{답을 물음에서 베끼는 자리를 막아도 그림이 안 바뀐다}(이슈 \#155 처방 2).
+
+\textbf{그리고 도메인은 재대입에서 아무 일도 안 한다} --- F5 와 F4 의 최소 재대입 오류가
+둘 다 \textbf{0}, 최소 LODO 오류가 둘 다 \textbf{22} 다.
+
+\subsection{잔여를 지는 짝은 어디에 있나}
+
+LODO 가 틀리는 \textbf{22} 짝(\texttt{:3-나 $\cdots$/잔여를 지는 짝 수})은
+도메인 「팝업」에 \textbf{15} 짝이 몰려 있고,
+식3 으로 가르면 예 \textbf{14} $\cdot$ 모른다 \textbf{8} $\cdot$ 아니오 \textbf{3} 이다.
+\textbf{그 15짝은 전부 \texttt{intervention.attributes.*} 접두사를 갖는다} ---
+잔여를 가르는 것은 수치가 아니라 \textbf{열 이름의 뜻}이라는 뜻이고,
+\textbf{저장소에는 열 이름의 뜻을 담은 사전이 없다}(사전등록 $\S$⓪-나).
+
+\section{그런데 그 잔여는 같은 파일에 이미 적혀 있었다}
+
+\begin{figure}[t]\centering
+\includegraphics[width=\linewidth]{figs/fig2.pdf}
+\caption{(a) W 코드 집합 5가지가 등급을 결정한다 --- 섞인 칸 0.
+(b) 잔여 22짝의 도메인 분해.}
+\end{figure}
+
+이 노트가 스스로 고른 팔은 이것이다 ---
+\textbf{같은 파일이 「등급 계산에 안 들어간다」고 선언한 형제 키들이 정보 차원에서도 그런가.}
+
+\texttt{runners/out902\_identify.json} 은 최상위 키
+\textbf{「W 는 어느 것도 등급 계산에 안 들어간다」} 를 갖고 있다.
+그 W 목록을 코드 집합으로 읽으면 T1 81짝에서 \textbf{5} 가지뿐이고
+(\texttt{runners/out906\_grade.json:3-다 팔 ㄴ $\cdots$/W 코드 집합만/특징 값 가짓수}),
+\textbf{등급이 2가지 이상 섞인 칸이 0} 이다
+(\texttt{:$\cdots$/대응이 일대일인가/등급이 두 가지 이상 섞인 W 코드 집합 수}).
+상호정보는 \textbf{1.3842} 비트, 즉 \textbf{등급 엔트로피 전량}이고
+조건부 엔트로피는 \textbf{0.0} 이다.
+
+\begin{table}[t]\centering\small
+\begin{tabular}{lrrr}
+\toprule
+W 코드 집합 & A & B & C \\
+\midrule
+W2, W8 & \textbf{21} & & \\
+W2, W4, W8 & & \textbf{45} & \\
+W2, W6, W8 & & 2 & \\
+W2, W7, W8 & & & 3 \\
+W2, W4, W6, W8 & & & \textbf{10} \\
+\bottomrule
+\end{tabular}
+\caption{분모 T1 \textbf{81} 짝. 출처
+\texttt{runners/out906\_grade.json:3-다 팔 ㄴ $\cdots$/W 코드 집합 → 등급 대응표(T1 81)}.}
+\end{table}
+
+\textbf{놀랍지 않은 부분과 놀라운 부분을 갈라 적는다.}
+안 놀라운 것 --- W 는 「무엇이 없어서 못 재는가」의 목록이라 조건에서 파생되고,
+그러니 등급을 결정하는 것 자체는 대수롭지 않다.
+\textbf{놀라운 것} --- 그 파생물이 \textbf{「등급 미사용」이라는 이름표를 달고} 산출물에 실려 있었고,
+\textbf{「등급이 나르는 잔여가 무엇인가」를 5개 사이클 동안 물으면서 아무도 그 이름표를 안 열었다.}
+그리고 그 잔여(W4 $\cdot$ W6 $\cdot$ W7 의 유무)는
+\textbf{다섯 서술 통계가 못 나르는 바로 그 부분이다.}
+
+\section{장치 --- 자백을 기계가 깎는다}
+
+티처 \#68 은 직전 노트의 자백 장치를 2군데서 부쉈다:
+P2 가 \textbf{답을 물음에서 베끼는 항등식}이었고(C1),
+$\S$0 과 예측의 교집합 0 은 \textbf{저자가 지은 두 목록의 차이}였다(C2).
+이슈 \#155 의 처방을 이번엔 글자가 아니라 \textbf{기계}로 실행했다.
+
+\claimx{예측마다 그 예측을 거짓으로 만드는 입력을 심었고, 장치가 반증 불가능한 것을 실제로 뺐다.}
+{심은 반증 입력에서 평가기가 「확인」을 그대로 내면 그 예측은 명부에서 자동으로 빠진다.
+실측 --- 심은 \textbf{4} 중 반증 가능으로 확인된 것 \textbf{3},
+명부에 남은 예측 \textbf{3}(확인 \textbf{2} $\cdot$ 반증 \textbf{1}),
+장치가 뺀 것 \textbf{1}(반증 불가능하게 설계한 가짜 예측).}
+
+배선 검사는 심은 결함 \textbf{11} 에 대해 발화 \textbf{11} $\cdot$ 국소 \textbf{11} $\cdot$
+음성 대조 \textbf{11} $\cdot$ 지우면 통과 \textbf{11} $\cdot$ 계수기 증가 \textbf{11} 이고,
+직전 노트에서 \textbf{검정력이 0} 이라 지적받은 「국소」 열에 대해
+\textbf{그 열이 거짓이 되는 입력}을 \textbf{8} 개 심어 \textbf{8} 개 전부 발화시켰다
+(\texttt{runners/out906\_grade.json:2 배선 검사/㉱ 국소 열 검정력 $>$ 0 인 검사 수}).
+
+그리고 티처 \#68 ⑧ 의 처방 --- \textbf{「지금 읽고 있는 그 산출물의 최상위 키를 전량 읽고,
+오늘 낼 문장이 그중 어디에 이미 있는지 대조하라」} --- 를 \textbf{러너 2개 절}로 넣었다.
+입력 산출물의 최상위 키 \textbf{30} 개를 전량 찍고,
+판정문에서 뽑은 정수 \textbf{9} 가지를 입력에서 되찾아
+\textbf{6} 가지는 이미 있고 \textbf{3} 가지(엔트로피 값들)만 오늘 새것임을 기계로 적었다
+(\texttt{:0-나 $\cdots$/입력에 이미 있는 수의 개수} $\cdot$ \texttt{/입력에서 못 찾은 수의 개수}).
+\textbf{양쪽이 다 기계 산물이다} --- 판정문은 러너가 만들고 경로는 탐색이 찾는다.
+
+\section{그래서 무엇이 정해졌나}
+
+\textbf{등급은 절반만 이름이었다.} 다섯 서술 통계가 \textbf{0.362} 비트를 나르고
+\textbf{1.0221} 비트가 남는다. 남는 쪽은 식3(역인과 아님)과 식1 의 표본 크기 미달이고,
+그 둘은 \textbf{같은 파일의 W 목록에 이미 코드로 적혀 있다.}
+그러므로 다음 수는 \textbf{등급을 더 다투는 것이 아니라}
+\textbf{잔여를 지는 22짝의 열 이름이 무엇을 뜻하는지 기계가 읽을 수 있게 만드는 것}이다.
+그 사전은 저장소에도 세상에도 없다 --- 우리 자료의 우리 열이라 밖에서 받을 것이 없다.
+
+\end{document}
