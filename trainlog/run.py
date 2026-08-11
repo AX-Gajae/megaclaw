@@ -37,8 +37,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from . import arch as _arch
-from .spec import (ARCH_SPEC, METRICS_SPEC, SPEC, SPEC_VERSION, SpecError,
-                   ascii_id, norm_output)
+from .spec import (ARCH_SPEC, METRICS_SPEC, NODE_METRICS_SPEC, SPEC,
+                   SPEC_VERSION, SpecError, ascii_id, norm_output)
 
 ROOT = Path(__file__).resolve().parents[1]
 #: 기본 저장 자리. 🔴 **데모도 진짜 run 도 여기 들어간다** --- 가르는 것은
@@ -111,7 +111,12 @@ class Run:
                  seed=None, hparams: dict | None = None,
                  data=None, code=None, demo: bool = False,
                  note: str | None = None, root=None,
-                 flush_every: int = 50, flush_secs: float = 1.0):
+                 flush_every: int = 50, flush_secs: float = 1.0,
+                 trained=None):
+        #: 🔴 판 1.1.0 --- **학습을 돌렸나.** `False` 면 「구조만 적은 run」이고
+        #: 지표가 0점인 것이 **정상**이다. `None` 이면 **안 적은 것**이라
+        #: 화면이 「구조만 있다」와 「지표를 못 남겼다」를 **못 가른다**고 적는다.
+        self.학습돌림 = trained
         self.이름 = str(name)
         self.run_id = None
         self.미는출력 = norm_output(pushes)
@@ -123,6 +128,11 @@ class Run:
         self.상태 = "도는 중"
         self._buf: list = []
         self._n = 0
+        #: 🔴 판 1.1.0 --- 노드별 시계열 버퍼(파일이 따로다)
+        self._nbuf: list = []
+        self._nn = 0
+        self._nfh = None
+        self._nnames: set = set()
         self._fails: list = []
         self._nfail = 0
         self._fh = None
@@ -163,6 +173,7 @@ class Run:
         self._metrics = self.dir / "metrics.jsonl"
         self._manifest = self.dir / "manifest.json"
         self._archp = self.dir / "arch.json"
+        self._nodep = self.dir / "node_metrics.jsonl"
         try:
             self._fh = self._metrics.open("a", encoding="utf-8")
             self._fh.write(json.dumps(
@@ -202,6 +213,59 @@ class Run:
         if (len(self._buf) >= self.flush_every
                 or (time.time() - self._last_flush) >= self.flush_secs):
             self.flush()
+
+    def log_node(self, step=None, node: str = "", **metrics) -> None:
+        """🔴 **노드(층) 하나의 상태**를 적는다 --- 판 1.1.0 에서 새로 생겼다.
+
+            r.log_node(step=s, node="block.ff1", grad_norm=..., act_mean=...)
+
+        `node` 는 **`arch.json` 의 층 id 와 같은 이름**이어야 화면이 그래프 위에
+        얹는다(`nn.Module.named_modules()` 의 이름 --- 예: `block.heads.0.q`).
+
+        🔴 **안 부르면 그냥 「못 잼」이다.** 세 줄 사용례는 그대로다. 화면은 값이
+        없는 노드를 **회색**으로 두고 「이 run 은 그 지표를 안 기록했다」를 적는다
+        --- 추정하거나 보간하면 그 순간 실패다(곡선 지어내기 금지와 같은 규율).
+        """
+        if not node:
+            self._fail("log_node 에 node 이름이 없다",
+                       SpecError("node= 가 비었다 --- 어느 층인지 모른다"))
+            return
+        t = _utc()
+        for k, v in metrics.items():
+            self._nbuf.append((step, str(node), str(k), v, t))
+            self._nnames.add(str(k))
+        if (len(self._nbuf) >= self.flush_every
+                or (time.time() - self._last_flush) >= self.flush_secs):
+            self.flush_nodes()
+
+    def flush_nodes(self) -> int:
+        """노드 지표 버퍼를 흘린다 --- **파일이 따로다**(`node_metrics.jsonl`)."""
+        if not self._nbuf:
+            return 0
+        buf, self._nbuf = self._nbuf, []
+        try:
+            if self._nfh is None:
+                new = not self._nodep.exists()
+                self._nfh = self._nodep.open("a", encoding="utf-8")
+                if new:
+                    self._nfh.write(json.dumps(
+                        {"규격": NODE_METRICS_SPEC, "run_id": self.run_id,
+                         "UTC": self.시작,
+                         "칸": ["step", "node", "name", "value"],
+                         "🔴 뜻": "노드 이름은 `arch.json` 의 층 id 와 같다"},
+                        ensure_ascii=False) + "\n")
+            for step, node, name, value, t in buf:
+                if not isinstance(value, (int, float)) or isinstance(value, bool):
+                    value = str(value)
+                self._nfh.write(json.dumps(
+                    {"step": step, "node": node, "name": name,
+                     "value": value, "t": t}, ensure_ascii=False) + "\n")
+            self._nfh.flush()
+            self._nn += len(buf)
+            return len(buf)
+        except Exception as e:                # 🔴 학습을 죽이지 않는다
+            self._fail(f"노드 지표 {len(buf)}건을 못 썼다", e)
+            return 0
 
     def log_metric(self, step, split: str, name: str, value) -> None:
         self._buf.append((step, split, str(name), value, _utc()))
@@ -250,6 +314,8 @@ class Run:
             "규격": SPEC, "규격 판": SPEC_VERSION,
             "run_id": self.run_id, "이름(원래)": self.이름,
             "데모인가": self.데모,
+            #: 🔴 판 1.1.0 --- 「구조만 있다」와 「지표를 못 남겼다」를 가르는 칸
+            "학습 돌렸나": self.학습돌림,
             "메모": self.메모,
             "상태": self.상태,
             "시작 UTC": self.시작, "끝 UTC": self.끝,
@@ -267,9 +333,14 @@ class Run:
                           "이 run 은 **어느 자로 판정하는지 안 적혔다** --- "
                           "기록은 되지만 이 값으로 무엇을 주장할 수는 없다"),
             "지표 줄 수": self._n,
+            #: 🔴 판 1.1.0 --- 노드별 지표를 **몇 줄** 어떤 **이름**으로 적었나.
+            #: 0 줄이면 화면이 「이 run 은 노드 상태를 안 기록했다」를 적는다.
+            "노드 지표 줄 수": self._nn,
+            "노드 지표 이름": sorted(self._nnames) or None,
             "기록 실패 n건": self._nfail,
             "기록 실패(앞 몇 건)": self._fails or None,
             "아키텍처": {"읽음": bool(a.get("읽음")), "출처": a.get("출처"),
+                    "모형 클래스": a.get("모형 클래스"),
                     "층 수": len(a.get("층") or []),
                     "간선 수": len(a.get("간선") or []),
                     "간선 출처": a.get("간선 출처"),
@@ -277,7 +348,9 @@ class Run:
                     "가중치를 읽었나": bool(a.get("가중치를 읽었나")),
                     "왜 못 읽음": a.get("왜 못 읽음")},
             "파일": {"manifest": "manifest.json", "지표": "metrics.jsonl",
-                   "아키텍처": "arch.json"},
+                   "아키텍처": "arch.json",
+                   "노드 지표": ("node_metrics.jsonl" if self._nn else
+                             "🔴 없다 --- 이 run 은 노드별 상태를 안 적었다")},
             "환경": {"python": platform.python_version(),
                    "platform": platform.platform(),
                    "torch": _torch_ver(), "pid": os.getpid(),
@@ -297,6 +370,7 @@ class Run:
         if self._closed:
             return self.manifest()
         self.flush()
+        self.flush_nodes()
         self.상태 = 상태
         self.끝 = _utc()
         m = self.manifest()
@@ -307,12 +381,13 @@ class Run:
                                       encoding="utf-8")
         except Exception as e:
             self._fail("manifest.json 을 못 썼다", e)
-        try:
-            if self._fh is not None:
-                self._fh.close()
-        except Exception:
-            pass
-        self._fh, self._closed = None, True
+        for h in (self._fh, self._nfh):
+            try:
+                if h is not None:
+                    h.close()
+            except Exception:
+                pass
+        self._fh, self._nfh, self._closed = None, None, True
         return m
 
     def _atexit(self) -> None:

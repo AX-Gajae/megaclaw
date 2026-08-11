@@ -29,7 +29,7 @@
 """
 from __future__ import annotations
 
-from .spec import ARCH_SPEC, EDGE_SOURCES
+from .spec import ARCH_SPEC, EDGE_SOURCES, SPEC_VERSION
 
 #: 이 크기를 넘는 가중치 행렬은 **값을 안 담는다**(파일이 학습보다 무거워진다).
 MAX_WEIGHT_ELEMS = 4096
@@ -46,7 +46,8 @@ ACTIVATIONS = {
 
 def _fail(why: str, 무엇: str = "") -> dict:
     """🔴 **못 읽음** --- 빈 그래프가 아니다."""
-    return {"규격": ARCH_SPEC, "읽음": False, "출처": "못 읽음",
+    return {"규격": ARCH_SPEC, "규격 판": SPEC_VERSION,
+            "읽음": False, "출처": "못 읽음",
             "왜 못 읽음": why, "무엇을 받았나": 무엇,
             "층": [], "간선": [], "간선 출처": "없음",
             "총 파라미터": None, "가중치를 읽었나": False,
@@ -78,6 +79,9 @@ def from_dict(d: dict) -> dict:
             "활성함수": L.get("활성함수") or L.get("act"),
             "뉴런 수": L.get("뉴런 수", L.get("units")),
             "입력 뉴런 수": L.get("입력 뉴런 수", L.get("in_units")),
+            #: 판 1.1.0 --- 묶음(부모 모듈 경로)과 그 부모의 클래스. 없으면 **없다**.
+            "묶음": L.get("묶음"), "묶음 종류": L.get("묶음 종류"),
+            "헤드 수": L.get("헤드 수"),
             "가중치": L.get("가중치") or {"있나": False, "담음": False,
                                     "왜": "준 dict 에 가중치가 없다"},
         })
@@ -88,9 +92,11 @@ def from_dict(d: dict) -> dict:
     if tot is None:
         vals = [L["파라미터 수"] for L in 층 if isinstance(L["파라미터 수"], int)]
         tot = sum(vals) if vals else None
-    return {"규격": ARCH_SPEC, "읽음": True, "출처": "준 dict",
+    return {"규격": ARCH_SPEC, "규격 판": SPEC_VERSION,
+            "읽음": True, "출처": "준 dict",
             "왜 못 읽음": None, "층": 층, "간선": 간선,
             "간선 출처": "준 dict",
+            "묶음 표": dict(d.get("묶음 표") or {}),
             "총 파라미터": tot,
             "가중치를 읽었나": any((L.get("가중치") or {}).get("담음") for L in 층),
             "말": "사람이 준 그래프를 그대로 받았다 --- **이 저장소가 introspect 한 "
@@ -198,13 +204,65 @@ def _fx_edges(model, fold: dict) -> tuple:
             if not dst:
                 continue
             for p in node.all_input_nodes:
-                for s in upstream(p):
+                #: 🔴 `upstream` 은 **집합**이라 순회 순서가 실행마다 달라진다
+                #: (파이썬 문자열 해시가 매번 다르다). 정렬하지 않으면 **같은 모형에서
+                #: `arch.json` 이 매번 다른 파일**이 되어 sha 대조가 무의미해진다.
+                for s in sorted(upstream(p)):
                     if s != dst and (s, dst) not in seen:
                         seen.add((s, dst))
                         edges.append({"from": s, "to": dst})
         return (edges, None) if edges else (None, "fx 가 간선을 하나도 안 냈다")
     except Exception as e:
         return None, f"{type(e).__name__}: {e}"
+
+
+#: `torch.fx` 가 실패했을 때 **형제를 나란히 놓는** 그릇. `Sequential` 은 뜻 자체가
+#: 「차례로」이므로 여기 안 넣는다 --- 넣으면 사슬을 병렬로 잘못 편다.
+PARALLEL_CONTAINERS = ("ModuleList", "ModuleDict")
+
+
+def _order_edges(층: list, 묶음표: dict) -> tuple:
+    """🔴 **가정으로 잇는다** --- 다만 `ModuleList`·`ModuleDict` 는 나란히 놓는다.
+
+    판 1.0.0 은 잎을 **한 줄로** 이었다. 그래서 도메인마다 머리가 하나씩 달린
+    `nn.ModuleDict` 가 **12개짜리 사슬**로 그려졌다 --- 실제로는 인코더 하나에
+    머리 12개가 **나란히** 붙는데도. 둘 다 가정이지만 두 번째가 덜 틀린다.
+
+    🔴 그래도 **가정은 가정이다.** `간선 출처` 는 그대로 「모듈 등록 순서(가정)」이고,
+    나란히 놓은 그릇 목록을 `병렬로 본 그릇` 에 적어 화면에 띄운다.
+    """
+    if not 층:
+        return [], None
+    #: 잎을 **뭉치**로 나눈다 --- 나란히 볼 그릇이면 한 뭉치(병렬), 아니면 홀로.
+    뭉치, 병렬 = [], []
+    for L in 층:
+        g = L.get("묶음")
+        나란히 = bool(g) and str(묶음표.get(g) or "") in PARALLEL_CONTAINERS
+        키 = g if 나란히 else None
+        if 키 is not None and 뭉치 and 뭉치[-1][0] == 키:
+            뭉치[-1][1].append(L["id"])
+        else:
+            뭉치.append([키, [L["id"]]])
+    edges = ([{"from": "__입력__", "to": 층[0]["id"]}]
+             if 층[0].get("입력 뉴런 수") else [])
+    for 키, mem in 뭉치:
+        if 키 is None:                       # 홀로인 뭉치는 원소가 하나뿐이다
+            continue
+        if len(mem) > 1:
+            병렬.append({"그릇": 키, "종류": 묶음표.get(키), "형제 수": len(mem)})
+    for i in range(len(뭉치) - 1):
+        _, 앞 = 뭉치[i]
+        _, 뒤 = 뭉치[i + 1]
+        for a in 앞:
+            for b in 뒤:
+                edges.append({"from": a, "to": b})
+    out, seen = [], set()
+    for e in edges:
+        key = (e["from"], e["to"])
+        if key not in seen and e["from"] != e["to"]:
+            seen.add(key)
+            out.append(e)
+    return out, (병렬 or None)
 
 
 def from_torch(model, weights: bool = True) -> dict:
@@ -225,6 +283,12 @@ def from_torch(model, weights: bool = True) -> dict:
         else:
             return _fail("torch 모듈인데 **잎 모듈이 하나도 없다** --- 층을 못 셌다",
                          type(model).__name__)
+    #: 🔴 판 1.1.0 --- **묶음 표**: 잎이 아닌 모듈의 경로 → 클래스 이름.
+    #: 화면이 `N×` 로 접을 때 **진짜 복제 그릇**(`ModuleList`·`ModuleDict`·`Sequential`)
+    #: 인지 아니면 사람이 짠 클래스(`Head` 같은)인지를 갈라야 하기 때문이다.
+    #: 사람이 짠 클래스 안의 형제(q·k·v)는 **모양이 같아도 다른 물건**이므로 안 접는다.
+    묶음표 = {n: type(m).__name__ for n, m in model.named_modules()
+            if n and list(m.children())}
     #: 모듈 이름 → **그림에 남은 층 id**. 접힌 활성함수는 앞 층을 가리킨다.
     fold: dict = {}
     층, 접음, prev = [], [], None
@@ -237,6 +301,7 @@ def from_torch(model, weights: bool = True) -> dict:
             continue
         i, o = _io(m)
         p = sum(int(x.numel()) for x in m.parameters(recurse=False))
+        묶음 = n.rsplit(".", 1)[0] if "." in n else None
         row = {
             "id": n, "이름": n, "종류": kind,
             "입력 모양": [None, i] if i else None,
@@ -244,32 +309,41 @@ def from_torch(model, weights: bool = True) -> dict:
             "파라미터 수": p,
             "활성함수": kind if kind in ACTIVATIONS else None,
             "뉴런 수": o, "입력 뉴런 수": i,
+            #: 판 1.1.0 --- 묶음(부모 경로) · 그 부모의 클래스 · 어텐션 헤드 수
+            "묶음": 묶음,
+            "묶음 종류": 묶음표.get(묶음) if 묶음 else None,
+            "헤드 수": (int(getattr(m, "num_heads")) if hasattr(m, "num_heads")
+                    else None),
             "가중치": _weights(m, weights),
         }
         층.append(row)
         fold[n] = row["id"]
         prev = row
     edges, why = _fx_edges(model, fold)
+    병렬 = None
     if edges:
         src = "torch.fx 추적"
     else:
         src = "모듈 등록 순서(가정)"
-        edges = ([{"from": "__입력__", "to": 층[0]["id"]}] if 층[0].get("입력 뉴런 수")
-                 else [])
-        edges += [{"from": 층[i]["id"], "to": 층[i + 1]["id"]}
-                  for i in range(len(층) - 1)]
+        edges, 병렬 = _order_edges(층, 묶음표)
     tot = sum(int(x.numel()) for x in model.parameters())
     train = sum(int(x.numel()) for x in model.parameters() if x.requires_grad)
     assert src in EDGE_SOURCES
     return {
-        "규격": ARCH_SPEC, "읽음": True, "출처": "torch introspect",
+        "규격": ARCH_SPEC, "규격 판": SPEC_VERSION,
+        "읽음": True, "출처": "torch introspect",
         "왜 못 읽음": None,
         "모형 클래스": type(model).__name__,
         "층": 층, "간선": edges, "간선 출처": src,
+        "묶음 표": 묶음표,
         "🔴 간선 단서": ("실제 호출 그래프다(`torch.fx`)" if src == "torch.fx 추적"
                    else f"🔴 **가정이다** --- `torch.fx` 가 실패해서"
                         f"(`{why}`) 모듈 **등록 순서**로 이었다. forward 가 순서를 "
-                        f"바꾸거나 건너뛰면 이 간선은 틀린다"),
+                        f"바꾸거나 건너뛰면 이 간선은 틀린다"
+                        + (f" · `ModuleList`/`ModuleDict` "
+                           f"{len(병렬)}자리는 **나란히** 놓았다(이것도 가정이다)"
+                           if 병렬 else "")),
+        "병렬로 본 그릇": 병렬,
         "접은 활성함수": 접음 or None,
         "총 파라미터": tot, "학습 가능 파라미터": train,
         "가중치를 읽었나": any(L["가중치"].get("담음") for L in 층),

@@ -25,11 +25,41 @@ from __future__ import annotations
 import re
 
 #: 규격 이름과 판. 🔴 **판 칸은 필수다** --- 규격은 나중에 바뀐다.
+#:
+#: 🔴 **판 1.1.0(노트 913 팔 ㅈ)** --- 규격 **이름은 그대로 `trainlog/1`** 이다.
+#: 늘어난 것은 전부 **더한 칸**이고 뺀 칸이 없으므로 판 1.0.0 으로 적힌 옛 run 은
+#: 그대로 읽힌다(`READ_VERSIONS` 가 그것을 명시한다). 무엇이 왜 늘었는지는
+#: `docs/학습기록규격.md` §9 에 적혀 있다.
 SPEC = "trainlog/1"
-SPEC_VERSION = "1.0.0"
+SPEC_VERSION = "1.1.0"
+
+#: 🔴 **이 판이 읽을 수 있는 옛 판.** 없는 칸은 「없다」로 읽고 **지어내지 않는다**.
+READ_VERSIONS = ("1.0.0", "1.1.0")
+
+#: 판마다 무엇이 늘었나 --- 문서와 코드가 갈라지지 않게 **여기가 정본이다**.
+SPEC_CHANGELOG = {
+    "1.0.0": "신설(노트 912 팔 ㅇ) --- manifest · metrics.jsonl · arch.json 셋",
+    "1.1.0": (
+        "노트 913 팔 ㅈ --- **임의 DAG · 동적 잘라내기 · 실시간 · 노드별 상태**를 "
+        "위해 여섯을 더했다. ① `층[].묶음`·`층[].묶음 종류`·`arch.json.묶음 표` "
+        "(모듈 등록 경로와 그릇 클래스 --- 같은 부분그래프가 N번 나오는 것을 **구조로** "
+        "탐지해 `N×` 로 접는 데 쓴다) · ② `층[].헤드 수`(있을 때만) · "
+        "③ `arch.json` 에 `규격 판` 칸 · ④ manifest 에 `학습 돌렸나`(구조만 있는 run 과 "
+        "지표를 못 남긴 run 을 가른다) · ⑤ 🔴 **`node_metrics.jsonl` 신설** --- "
+        "노드별 시계열(grad_norm 등)을 append-only 로 담는다(`Run.log_node()`) · "
+        "⑥ 창구가 내는 그림에 `깊이`·`레인`·`간선 표`·`노드 상태`. **뺀 칸은 없다**"),
+}
 
 #: 지표 스트림의 규격(파일이 다르므로 이름도 다르다).
 METRICS_SPEC = "trainlog/metrics/1"
+#: 🔴 판 1.1.0 --- **노드별** 시계열(그래디언트 노름 · 활성 통계 …).
+#: 파일이 다르다(`node_metrics.jsonl`) --- 스칼라 스트림을 안 건드리려고 나눴다.
+NODE_METRICS_SPEC = "trainlog/node_metrics/1"
+
+#: 노드 지표로 **자주 쓰는 이름**. 목록에 없는 이름도 적을 수 있다(막지 않는다).
+#: 🔴 **안 적으면 「못 잼」이다** --- 화면이 회색으로 두고 그렇게 적는다(추정 금지).
+NODE_METRIC_NAMES = ("grad_norm", "param_norm", "act_mean", "act_std",
+                     "act_zero_frac", "update_norm")
 #: 아키텍처 그래프의 규격.
 ARCH_SPEC = "trainlog/arch/1"
 

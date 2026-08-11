@@ -1,0 +1,74 @@
+{
+ "규격": "trainlog/1",
+ "규격 판": "1.1.0",
+ "run_id": "popup-state.masked_encoder.Net-20260811T054735Z",
+ "이름(원래)": "popup 표 복원(state.masked_encoder.Net)",
+ "데모인가": false,
+ "학습 돌렸나": true,
+ "메모": "노트 913 팔 ㅈ --- **실물 코드(state.masked_encoder.Net)** 를 **실물 자료(data/state/popup_table.npz 의 X)** 로 몇 초 돌렸다. 🔴 **라벨 y 를 한 번도 안 본다** --- 복원 손실만 줄인다. 그래서 이 곡선으로는 아무것도 주장하지 않는다(자 없음). 화면이 도는 중에 자라는지 보려고 남긴 기록이다",
+ "상태": "끝남",
+ "시작 UTC": "2026-08-11T05:47:35Z",
+ "끝 UTC": "2026-08-11T05:47:50Z",
+ "초": 15.453,
+ "씨앗": 0,
+ "하이퍼파라미터": {
+  "d_in": 15,
+  "k": 2,
+  "h": 32,
+  "lr": 0.003,
+  "steps": 30000,
+  "optim": "Adam",
+  "손실": "복원 MSE 하나뿐(라벨을 안 본다)"
+ },
+ "코드 sha256": [
+  {
+   "경로": "runners/trainlog913_live.py",
+   "sha256": "1cbbc020e5abb4b7d7659d86dd20d55bdbe99ef782ea3b366590cf9213a751cf",
+   "바이트": 3405
+  },
+  {
+   "경로": "state/masked_encoder.py",
+   "sha256": "9d91bb51f45b57d23662967ce4d64fb907dbf7317d2100bbd133b2c2f84a4fb6",
+   "바이트": 12078
+  }
+ ],
+ "입력 데이터 sha256": [
+  {
+   "경로": "data/state/popup_table.npz",
+   "sha256": "8038e8a9db30f4b80f7389a490b818be97638f857f7a0e224eab093b9b2ab493",
+   "바이트": 51316
+  }
+ ],
+ "미는 출력": [
+  "해당 없음"
+ ],
+ "자": null,
+ "자 없음": true,
+ "🔴 자 없음 단서": "이 run 은 **어느 자로 판정하는지 안 적혔다** --- 기록은 되지만 이 값으로 무엇을 주장할 수는 없다",
+ "지표 줄 수": 12000,
+ "기록 실패 n건": 0,
+ "기록 실패(앞 몇 건)": null,
+ "아키텍처": {
+  "읽음": true,
+  "출처": "torch introspect",
+  "모형 클래스": "Net",
+  "층 수": 5,
+  "간선 수": 5,
+  "간선 출처": "torch.fx 추적",
+  "총 파라미터": 1377,
+  "가중치를 읽었나": true,
+  "왜 못 읽음": null
+ },
+ "파일": {
+  "manifest": "manifest.json",
+  "지표": "metrics.jsonl",
+  "아키텍처": "arch.json"
+ },
+ "환경": {
+  "python": "3.9.6",
+  "platform": "macOS-26.4-arm64-arm-64bit",
+  "torch": "2.8.0",
+  "pid": 23379,
+  "cwd": "."
+ }
+}

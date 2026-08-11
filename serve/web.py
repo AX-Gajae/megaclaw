@@ -171,7 +171,9 @@ class H(BaseHTTPRequestHandler):
             /api/trainlog/runs                run 목록
             /api/trainlog/run?id=…            한 run 의 전부(manifest·곡선·구조·뉴런)
             /api/trainlog/metrics?id=…        곡선만
-            /api/trainlog/arch?id=…&max_neurons=…   뉴런 그림만
+            /api/trainlog/arch?id=…&max_neurons=…&px_height=…   뉴런 그림만
+            /api/trainlog/blocks?id=…&fold=0|1   🔴 블록 다이어그램(그림 1 꼴)
+            /api/trainlog/tail?id=…&since_bytes=N  🔴 실시간 --- **새 줄만**
             /api/trainlog/selftest            🔴 이 창구의 자를 잰다
 
         🔴 **HTTP 200 을 성공으로 읽지 마라**(조항 59). 지표가 없는 run 은 200 을
@@ -182,6 +184,17 @@ class H(BaseHTTPRequestHandler):
         q = parse_qs(u.query or "")
         rid = (q.get("id") or [""])[0]
         mx = (q.get("max_neurons") or ["32"])[0]
+        px = (q.get("px_height") or ["620"])[0]
+        fold = (q.get("fold") or ["1"])[0] not in ("0", "false", "no")
+        since = (q.get("since_bytes") or ["0"])[0]
+        try:
+            since = int(since)
+        except Exception:
+            since = 0
+        #: 🔴 누른 자리만 펼친다 · 곡선에서 고른 step 을 그래프에 얹는다
+        exp = [x for x in (q.get("expand") or [""])[0].split(",") if x]
+        step = (q.get("step") or [""])[0] or None
+        met = (q.get("node_metric") or ["grad_norm"])[0]
         try:
             from . import trainlog_svc as tl
         except Exception as e:
@@ -193,14 +206,26 @@ class H(BaseHTTPRequestHandler):
                 return self._json(200, tl.runs() if tail != "index" else tl.index())
             if tail == "selftest":
                 return self._json(200, tl.selftest())
+            #: 🔴 런 비교 패널 --- run 여럿을 나란히(사이드바·겹친 곡선·평행좌표)
+            if tail == "compare":
+                return self._json(200, tl.compare(
+                    (q.get("target") or [""])[0]))
             if not rid:
                 return self._json(400, {"error": "`id=` 가 없다 --- 어떤 run 인가"})
             if tail == "run":
-                return self._json(200, tl.detail(rid, mx))
+                return self._json(200,
+                                  tl.detail(rid, mx, px, fold, exp, step, met))
+            if tail == "nodestate":
+                return self._json(200, tl.nodestate(rid, step, met))
             if tail == "metrics":
                 return self._json(200, tl.metrics(rid))
             if tail == "arch":
-                return self._json(200, tl.neurons(rid, mx))
+                return self._json(200, tl.neurons(rid, mx, px))
+            if tail == "blocks":
+                return self._json(200, tl.blocks(rid, fold, exp))
+            #: 🔴 실시간 --- **새로 붙은 줄만** 낸다(전량 재전송 금지)
+            if tail == "tail":
+                return self._json(200, tl.tail(rid, since))
             return self._json(404, {"error": f"없는 자리다: {u.path}"})
         except Exception as e:
             traceback.print_exc()

@@ -19,10 +19,12 @@ from .arch import extract as extract_arch          # noqa: F401
 from .run import Run, sha256_file                  # noqa: F401
 from .spec import (ARCH_SPEC, METRICS_SPEC, SPEC,  # noqa: F401
                    SPEC_VERSION, OUTPUTS, SpecError, check_manifest)
-from .store import (list_runs, neurons, read_arch,  # noqa: F401
-                    read_manifest, read_metrics)
+from .store import (graph, list_runs, liveness, neurons,  # noqa: F401
+                    node_state, read_arch, read_manifest, read_metrics,
+                    read_node_metrics, tail_metrics)
 
 __all__ = ["Run", "SPEC", "SPEC_VERSION", "ARCH_SPEC", "METRICS_SPEC",
            "OUTPUTS", "SpecError", "check_manifest", "extract_arch",
            "sha256_file", "list_runs", "read_manifest", "read_metrics",
-           "read_arch", "neurons"]
+           "read_arch", "neurons", "graph", "tail_metrics", "liveness",
+           "read_node_metrics", "node_state"]
