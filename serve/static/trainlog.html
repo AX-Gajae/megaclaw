@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>학습 기록 · trainlog</title>
+<!-- 🔴 CDN 없음 · 외부 요청 없음. 차트도 그림도 전부 여기서 직접 그린다.
+     이 파일이 부르는 것은 같은 서버의 /api/trainlog/* 뿐이다. -->
+<link rel="icon" href="data:image/svg+xml,<svg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'><polyline points='10,80 34,52 56,64 90,20' fill='none' stroke='%23C2C0B6' stroke-width='10'/></svg>">
+<style>
+:root{
+  --page:#262624; --card:#30302E; --serif-fg:#C2C0B6;
+  --zinc100:#f4f4f5; --zinc200:#e4e4e7; --zinc300:#d4d4d8; --zinc400:#a1a1aa;
+  --zinc500:#71717a; --zinc600:#52525b; --zinc700:#3f3f46; --zinc800:#27272a;
+  --amber600:#d97706; --amber700:#b45309;
+  --blue400:#60a5fa; --green400:#4ade80; --red400:#f87171; --purple400:#c084fc;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--page);color:var(--zinc200);
+  font:13px/1.6 ui-sans-serif,-apple-system,"Apple SD Gothic Neo","Segoe UI",sans-serif}
+a{color:var(--blue400)}
+.wrap{max-width:78rem;margin:0 auto;padding:1.4rem 1rem 4rem}
+h1{font-family:ui-serif,Georgia,serif;font-weight:300;font-size:1.6rem;
+   color:var(--serif-fg);letter-spacing:-.01em}
+h2{font-size:.95rem;font-weight:600;color:var(--zinc200);margin:0 0 .55rem}
+h3{font-size:.8rem;font-weight:600;color:var(--zinc300);margin:.9rem 0 .35rem}
+.sub{color:var(--zinc500);font-size:11.5px;margin-top:.3rem}
+.ruler{margin:.9rem 0 1.1rem;padding:.6rem .75rem;border-left:3px solid var(--amber600);
+  background:#2b2b28;color:var(--zinc300);font-size:11.5px;border-radius:0 4px 4px 0}
+.ruler b{color:var(--amber600)}
+.cols{display:grid;grid-template-columns:20.5rem 1fr;gap:1rem;align-items:start}
+@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--zinc700);border-radius:8px;
+  padding:.8rem .9rem;margin-bottom:.75rem}
+.runs{max-height:78vh;overflow:auto}
+.run{border:1px solid var(--zinc700);border-radius:6px;padding:.5rem .6rem;
+  margin-bottom:.45rem;cursor:pointer;background:#2a2a28}
+.run:hover{border-color:var(--zinc500)}
+.run.on{border-color:var(--amber600);background:#332e26}
+.run .id{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;
+  color:var(--zinc100);word-break:break-all}
+.run .meta{font-size:10.5px;color:var(--zinc500);margin-top:.2rem}
+.tag{display:inline-block;font-size:10px;padding:.05rem .35rem;border-radius:3px;
+  border:1px solid var(--zinc600);color:var(--zinc400);margin:.18rem .18rem 0 0}
+.tag.demo{border-color:var(--purple400);color:var(--purple400)}
+.tag.ok{border-color:var(--green400);color:var(--green400)}
+.tag.bad{border-color:var(--red400);color:var(--red400)}
+.tag.warn{border-color:var(--amber600);color:var(--amber600)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:.5rem}
+.kv{border:1px solid var(--zinc700);border-radius:5px;padding:.4rem .5rem;background:#2a2a28}
+.kv .k{font-size:10.5px;color:var(--zinc500)}
+.kv .v{font-size:12px;color:var(--zinc100);word-break:break-all;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(19rem,1fr));gap:.6rem}
+.chart{border:1px solid var(--zinc700);border-radius:6px;padding:.45rem .5rem;background:#2a2a28}
+.chart .t{font-size:11.5px;color:var(--zinc300);margin-bottom:.2rem}
+canvas{display:block;width:100%}
+.legend{font-size:10.5px;color:var(--zinc400);margin-top:.25rem;display:flex;
+  flex-wrap:wrap;gap:.6rem}
+.legend i{display:inline-block;width:.6rem;height:.15rem;vertical-align:middle;margin-right:.25rem}
+.empty{border:1px dashed var(--red400);border-radius:6px;padding:.9rem;
+  color:var(--red400);font-size:12px;background:#2e2626}
+.empty b{color:#ffb4b4}
+.note{font-size:11px;color:var(--amber600);margin:.35rem 0 .1rem}
+.muted{font-size:11px;color:var(--zinc500)}
+table{border-collapse:collapse;width:100%;font-size:11.5px;margin-top:.3rem}
+th,td{border:1px solid var(--zinc700);padding:.25rem .4rem;text-align:left;
+  color:var(--zinc300);vertical-align:top}
+th{color:var(--zinc500);font-weight:500;background:#2a2a28}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:var(--zinc300)}
+select,button{background:#2a2a28;color:var(--zinc200);border:1px solid var(--zinc600);
+  border-radius:4px;padding:.2rem .4rem;font-size:11.5px}
+button{cursor:pointer}
+.rowbar{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;margin-bottom:.4rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>학습 기록 <span style="font-size:.8rem;color:var(--zinc500)">trainlog</span></h1>
+  <div class="sub" id="head">불러오는 중…</div>
+
+  <div class="ruler">
+    <b>이 페이지의 자</b> — 이 창구는 <b>모형 정량 주장을 내지 않는다.</b>
+    학습 run 이 스스로 적은 것을 그대로 읽어 보여 줄 뿐이고, 모든 응답이
+    금지 꼴 게이트 다섯(<code>serve/layers.py:gate()</code>)을 지난다.
+    <b>지표가 없으면 곡선을 그리지 않는다</b> — 빈 차트가 정답이다.
+  </div>
+
+  <div class="cols">
+    <div>
+      <div class="card">
+        <h2>run 목록</h2>
+        <div class="rowbar">
+          <label class="muted"><input type="checkbox" id="hideDemo"> 데모 숨기기</label>
+          <button id="reload">다시 읽기</button>
+        </div>
+        <div class="runs" id="runs">불러오는 중…</div>
+      </div>
+    </div>
+    <div id="detail"><div class="card muted">왼쪽에서 run 을 고르면 학습 곡선과
+      아키텍처 그림이 여기에 뜬다.</div></div>
+  </div>
+</div>
+
+<script>
+"use strict";
+// ── 도우미 ────────────────────────────────────────────────────────
+const $ = (s,r)=> (r||document).querySelector(s);
+const el = (t,c,x)=>{const e=document.createElement(t); if(c) e.className=c;
+  if(x!==undefined && x!==null) e.textContent=String(x); return e;};
+const num = n => (n===null||n===undefined) ? "—" : Number(n).toLocaleString("ko-KR");
+async function get(u){ const r = await fetch(u,{cache:"no-store"});
+  return await r.json(); }
+// 계열 색. **고정 팔레트다** — 색을 무작위로 뽑지 않는다(같은 계열은 늘 같은 색).
+const COLORS = ["#60a5fa","#4ade80","#d97706","#c084fc","#f87171","#22d3ee",
+                "#facc15","#fb923c","#a3e635","#f472b6"];
+const colorOf = i => COLORS[i % COLORS.length];
+
+let STATE = {runs:[], sel:null, maxN:32};
+
+// ── run 목록 ──────────────────────────────────────────────────────
+async function loadRuns(){
+  const d = await get("/api/trainlog/runs");
+  STATE.runs = d.run || [];
+  $("#head").textContent =
+    `규격 ${d["규격"]} 판 ${d["규격 판"]} · 층 ${d["층"]} · run ${num(d["run 수"])}개`
+    + ` (데모 ${num(d["데모 수"])} · 진짜 ${num(d["진짜 run 수"])}`
+    + ` · 차단 ${num(d["차단된 run 수"])})`;
+  drawRuns();
+  if(!STATE.sel && STATE.runs.length) select(STATE.runs[0]["run_id"]);
+}
+function drawRuns(){
+  const box = $("#runs"); box.textContent = "";
+  const hide = $("#hideDemo").checked;
+  const rows = STATE.runs.filter(r => !(hide && r["데모인가"]));
+  if(!rows.length){ box.appendChild(el("div","muted","보여 줄 run 이 없다.")); return; }
+  rows.forEach(r=>{
+    const c = el("div","run" + (r["run_id"]===STATE.sel ? " on" : ""));
+    c.appendChild(el("div","id", r["run_id"]));
+    if(r["차단됨"]){
+      c.appendChild(el("div","note","🔴 금지 꼴에 걸려 내용을 안 보낸다"));
+      c.onclick = ()=> select(r["run_id"]); box.appendChild(c); return;
+    }
+    c.appendChild(el("div","meta",
+      `${r["시작 UTC"]||"?"} → ${r["끝 UTC"]||"도는 중"} · ${num(r["초"])}초`));
+    const t = el("div");
+    t.appendChild(el("span","tag " + (r["상태"]==="끝남"?"ok":"bad"), r["상태"]||"?"));
+    if(r["데모인가"]) t.appendChild(el("span","tag demo","데모"));
+    (r["미는 출력"]||[]).forEach(o=> t.appendChild(el("span","tag","미는 출력 "+o)));
+    t.appendChild(el("span","tag " + (r["자 없음"]?"warn":""),
+      r["자 없음"] ? "🔴 자 없음" : "자 있음"));
+    t.appendChild(el("span","tag", "지표 " + num(r["지표 줄 수(읽어 센 것)"]) + "줄"));
+    if(r["🔴 수가 어긋나나"]) t.appendChild(el("span","tag bad","🔴 manifest 와 수가 다르다"));
+    t.appendChild(el("span","tag", r["아키텍처 읽음"]
+      ? ("구조 " + num(r["층 수"]) + "층") : "🔴 아키텍처 못 읽음"));
+    c.appendChild(t);
+    c.onclick = ()=> select(r["run_id"]);
+    box.appendChild(c);
+  });
+}
+function select(id){ STATE.sel = id; drawRuns(); loadDetail(); }
+
+// ── run 상세 ──────────────────────────────────────────────────────
+async function loadDetail(){
+  const box = $("#detail"); box.textContent = "";
+  box.appendChild(el("div","card muted","읽는 중…"));
+  const d = await get("/api/trainlog/run?id=" + encodeURIComponent(STATE.sel)
+                      + "&max_neurons=" + STATE.maxN);
+  box.textContent = "";
+  if(d["차단됨"]){
+    const c = el("div","card");
+    c.appendChild(el("h2",null,"🔴 차단됨"));
+    c.appendChild(el("div","empty", d["말"]||""));
+    c.appendChild(el("pre","muted", JSON.stringify(d["금지 꼴 게이트"],null,1)));
+    box.appendChild(c); return;
+  }
+  if(d["오류"]){ box.appendChild(el("div","empty", d["오류"])); return; }
+  box.appendChild(manifestCard(d));
+  box.appendChild(curveCard(d["곡선"]));
+  box.appendChild(neuronCard(d["뉴런"]));
+  box.appendChild(archCard(d["아키텍처"]));
+}
+
+function manifestCard(d){
+  const m = d["manifest"]||{}, cnt = d["🔴 이 창구가 직접 센 것"]||{};
+  const c = el("div","card");
+  c.appendChild(el("h2",null, m["이름(원래)"] ? (m["이름(원래)"]+" — "+d["run_id"]) : d["run_id"]));
+  if(m["메모"]) c.appendChild(el("div","muted", m["메모"]));
+  const g = el("div","grid");
+  const kv = (k,v)=>{const e=el("div","kv"); e.appendChild(el("div","k",k));
+    e.appendChild(el("div","v", v===null||v===undefined?"—":String(v))); g.appendChild(e);};
+  kv("상태", m["상태"]);
+  kv("데모인가", m["데모인가"] ? "🟣 데모" : "진짜 run");
+  kv("시작 → 끝 (UTC)", (m["시작 UTC"]||"?") + " → " + (m["끝 UTC"]||"—"));
+  kv("초", num(m["초"]));
+  kv("씨앗", m["씨앗"]);
+  kv("미는 출력 (docs/목표.md)", (m["미는 출력"]||[]).join(" · "));
+  kv("자 (무엇으로 판정하나)", m["자 없음"] ? "🔴 자 없음 — 이 run 으로는 아무것도 주장 못 한다"
+                                        : m["자"]);
+  kv("규격 / 판", (m["규격"]||"?") + " / " + (m["규격 판"]||"?"));
+  kv("기록 실패", num(m["기록 실패 n건"]) + "건");
+  kv("지표 줄 수 (manifest / 이 창구가 센 것)",
+     num(m["지표 줄 수"]) + " / " + num(cnt["곡선 점 수"]));
+  (m["코드 sha256"]||[]).forEach(x=> kv("코드 sha256 — " + (x["경로"]||"?"),
+      x["sha256"] ? x["sha256"].slice(0,16)+"…" : ("🔴 " + (x["못 읽음"]||"없다"))));
+  (m["입력 데이터 sha256"]||[]).forEach(x=> kv("입력 데이터 sha256 — " + (x["경로"]||"—"),
+      x["sha256"] ? x["sha256"].slice(0,16)+"…" : ("🔴 " + (x["못 읽음"]||x["없음"]||"없다"))));
+  const hp = m["하이퍼파라미터"];
+  if(hp) kv("하이퍼파라미터", JSON.stringify(hp));
+  const en = m["환경"]||{};
+  kv("환경", `python ${en["python"]||"?"} · torch ${en["torch"]||"?"}`);
+  c.appendChild(g);
+  if(m["기록 실패(앞 몇 건)"]){
+    c.appendChild(el("div","note","🔴 기록이 실패한 적이 있다 — 조용히 삼키지 않는다:"));
+    c.appendChild(el("pre","muted", JSON.stringify(m["기록 실패(앞 몇 건)"],null,1)));
+  }
+  return c;
+}
+
+// ── 학습 곡선 --- 🔴 점은 전부 API 에서 온다. 만들어 내지 않는다 ────
+function curveCard(cur){
+  const c = el("div","card");
+  c.appendChild(el("h2",null,"학습 곡선"));
+  if(!cur || cur["상태"] !== "읽었다" || !(cur["곡선"]||[]).length){
+    const e = el("div","empty");
+    e.appendChild(el("b", "🔴 곡선을 그리지 않는다 — 상태: "
+      + ((cur&&cur["상태"])||"못 읽음")));
+    e.appendChild(el("div",null, (cur&&cur["왜"]) || "지표를 못 읽었다"));
+    e.appendChild(el("div",null, (cur&&cur["말"]) || ""));
+    c.appendChild(e);
+    return c;
+  }
+  c.appendChild(el("div","muted",
+    `계열 ${num(cur["곡선 수"])}개 · 점 ${num(cur["점 수"])}개 — ` + cur["말"]));
+  // 지표 이름마다 차트 하나, 그 안에 split 을 **겹쳐** 그린다
+  const byName = {};
+  cur["곡선"].forEach(s => { (byName[s.name] = byName[s.name] || []).push(s); });
+  const wrap = el("div","charts");
+  Object.keys(byName).sort().forEach(name=>{
+    const box = el("div","chart");
+    box.appendChild(el("div","t", name));
+    const cv = document.createElement("canvas");
+    box.appendChild(cv);
+    const lg = el("div","legend");
+    byName[name].forEach((s,i)=>{
+      const sp = el("span");
+      const sw = el("i"); sw.style.background = colorOf(i); sw.style.height="3px";
+      sp.appendChild(sw);
+      sp.appendChild(document.createTextNode(
+        `${s.split} (${num(s["점 수"])}점)` + (s["솎음"] ? " 🔴솎음" : "")));
+      lg.appendChild(sp);
+    });
+    box.appendChild(lg);
+    wrap.appendChild(box);
+    drawCurve(cv, byName[name]);
+  });
+  c.appendChild(wrap);
+  if(cur["수가 아닌 값"]){
+    c.appendChild(el("div","note",
+      "🔴 수가 아닌 값이 있어 곡선에서 뺐다(버리지 않고 기록에는 남아 있다):"));
+    c.appendChild(el("pre","muted", JSON.stringify(cur["수가 아닌 값"],null,1)));
+  }
+  return c;
+}
+
+function fit(cv, h){
+  const dpr = window.devicePixelRatio || 1;
+  const w = cv.clientWidth || 320;
+  cv.width = Math.round(w*dpr); cv.height = Math.round(h*dpr);
+  cv.style.height = h + "px";
+  const g = cv.getContext("2d"); g.setTransform(dpr,0,0,dpr,0,0);
+  g.clearRect(0,0,w,h);
+  return {g, w, h};
+}
+
+function drawCurve(cv, series){
+  const H = 150, P = {l:44, r:8, t:8, b:22};
+  const {g,w,h} = fit(cv, H);
+  let xs=[], ys=[];
+  series.forEach(s => s["점"].forEach(p=>{
+    if(p[0]!==null && p[0]!==undefined) xs.push(p[0]); ys.push(p[1]); }));
+  if(!ys.length) return;                       // 점이 없으면 **아무것도 안 그린다**
+  let x0=Math.min.apply(null,xs), x1=Math.max.apply(null,xs);
+  let y0=Math.min.apply(null,ys), y1=Math.max.apply(null,ys);
+  if(x1===x0) x1 = x0 + 1;
+  if(y1===y0){ y0 -= 0.5; y1 += 0.5; }
+  const pad = (y1-y0)*0.08; y0 -= pad; y1 += pad;
+  const X = v => P.l + (v-x0)/(x1-x0)*(w-P.l-P.r);
+  const Y = v => h-P.b - (v-y0)/(y1-y0)*(h-P.t-P.b);
+  // 축
+  g.strokeStyle = "#3f3f46"; g.lineWidth = 1;
+  g.beginPath(); g.moveTo(P.l, P.t); g.lineTo(P.l, h-P.b); g.lineTo(w-P.r, h-P.b); g.stroke();
+  g.fillStyle = "#71717a"; g.font = "10px ui-monospace,monospace";
+  [[y1,P.t+3],[ (y0+y1)/2, (P.t+h-P.b)/2 ],[y0, h-P.b]].forEach(([v,yy])=>{
+    g.fillText(v.toPrecision(3), 2, yy+3);
+    g.strokeStyle = "#333336"; g.beginPath();
+    g.moveTo(P.l, Y(v)); g.lineTo(w-P.r, Y(v)); g.stroke();
+  });
+  g.fillText(String(x0), P.l, h-6);
+  const lx = String(x1); g.fillText(lx, w-P.r-lx.length*6, h-6);
+  // 계열
+  series.forEach((s,i)=>{
+    g.strokeStyle = colorOf(i); g.lineWidth = 1.5; g.beginPath();
+    let started = false, k = 0;
+    s["점"].forEach(p=>{
+      const xv = (p[0]===null||p[0]===undefined) ? (k++) : p[0];
+      const X0 = X(xv), Y0 = Y(p[1]);
+      if(!started){ g.moveTo(X0,Y0); started = true; } else g.lineTo(X0,Y0);
+    });
+    g.stroke();
+    if(s["점"].length === 1){                   // 점 하나는 선이 아니다 --- 점으로
+      const p = s["점"][0];
+      g.fillStyle = colorOf(i);
+      g.beginPath(); g.arc(X(p[0]===null?0:p[0]), Y(p[1]), 2.5, 0, 6.284); g.fill();
+    }
+  });
+}
+
+// ── 🔴 뉴런 단위 그림 ─────────────────────────────────────────────
+function neuronCard(n){
+  const c = el("div","card");
+  const bar = el("div","rowbar");
+  bar.appendChild(el("h2",null,"뉴런 단위 그림"));
+  const sel = document.createElement("select");
+  [8,16,32,64,128,256].forEach(v=>{ const o=document.createElement("option");
+    o.value=v; o.textContent="층당 최대 "+v+"뉴런"; if(v===STATE.maxN) o.selected=true;
+    sel.appendChild(o); });
+  sel.onchange = ()=>{ STATE.maxN = Number(sel.value); loadDetail(); };
+  bar.appendChild(sel);
+  c.appendChild(bar);
+  if(!n || !n["그릴 수 있나"]){
+    const e = el("div","empty");
+    e.appendChild(el("b","🔴 아무것도 그리지 않는다 — 아키텍처를 못 읽었다"));
+    e.appendChild(el("div",null,(n&&n["왜"])||""));
+    c.appendChild(e); return c;
+  }
+  // 🔴 무엇을 몇 개로 잘랐나 --- **화면에 그대로 적는다.**
+  // 조용히 자르면 그것이 조항 59 위반이므로, 층마다 「전체 / 그린 것 / 고른 기준」을
+  // 표로 다 적는다(잘린 층만이 아니라 **모든 층**을 적어야 자른 것이 눈에 띈다).
+  c.appendChild(el("div","note", n["말"]));
+  const t = el("table");
+  t.appendChild(rowOf("th",["층","종류","전체 뉴런","그린 뉴런","잘림",
+                            "무슨 기준으로 골랐나"]));
+  (n["층"]||[]).forEach(L=> t.appendChild(rowOf("td",
+    [L["이름"], L["종류"], num(L["전체 뉴런"]), num(L["그린 뉴런"]),
+     L["잘림"] ? "🔴 잘림" : "전부", L["고른 기준"]])));
+  c.appendChild(t);
+  c.appendChild(el("div","muted",
+    "간선 출처: " + (n["간선 출처"]||"?") + " — " + (n["🔴 간선 단서"]||"")));
+  c.appendChild(el("div","muted", n["🔴 이 그림의 가정"]||""));
+  const cv = document.createElement("canvas");
+  c.appendChild(cv);
+  drawNeurons(cv, n);
+  const lg = el("div","legend");
+  lg.appendChild(el("span", null, n["가중치를 읽었나"]
+    ? "간선 굵기·색 = 가중치 세기(붉은색 음수 · 푸른색 양수)"
+    : "🔴 가중치를 못 읽어 **구조만** 그렸다 — 굵기에 뜻이 없다"));
+  c.appendChild(lg);
+  return c;
+}
+function rowOf(tag, cells){
+  const tr = document.createElement("tr");
+  cells.forEach(v=>{ const td=document.createElement(tag);
+    td.textContent = v===null||v===undefined?"—":String(v); tr.appendChild(td); });
+  return tr;
+}
+
+function drawNeurons(cv, n){
+  const L = n["층"]||[];
+  const maxDots = Math.max.apply(null, L.map(x=>x["그린 뉴런"]||1).concat([1]));
+  const H = Math.max(220, Math.min(760, 26 + maxDots*13));
+  const {g,w,h} = fit(cv, H);
+  const top = 34, bot = 26;
+  const colW = (w-40) / Math.max(1, L.length);
+  const pos = [];                              // 층마다 점 좌표
+  L.forEach((layer, i)=>{
+    const x = 20 + colW*(i+0.5);
+    const k = layer["그린 뉴런"]||0;
+    const pts = [];
+    for(let j=0;j<k;j++){
+      const y = (k===1) ? (top+(h-top-bot)/2)
+                        : top + (h-top-bot) * (j/(k-1));
+      pts.push([x,y]);
+    }
+    pos.push(pts);
+    // 층 이름 · 종류 · 몇 개 중 몇 개
+    g.fillStyle = "#d4d4d8"; g.font = "10px ui-sans-serif,sans-serif";
+    const t1 = (layer["이름"]||"") + " · " + (layer["종류"]||"");
+    g.fillText(clip(g,t1,colW-6), x - Math.min(g.measureText(clip(g,t1,colW-6)).width,colW)/2, 12);
+    g.fillStyle = layer["잘림"] ? "#d97706" : "#71717a";
+    const t2 = (layer["잘림"] ? "🔴 " : "")
+      + num(layer["그린 뉴런"]) + "/" + num(layer["전체 뉴런"]) + "개";
+    g.fillText(t2, x - g.measureText(t2).width/2, 24);
+    if(layer["활성함수"]){
+      g.fillStyle = "#71717a";
+      const t3 = layer["활성함수"];
+      g.fillText(t3, x - g.measureText(t3).width/2, h-8);
+    }
+  });
+  // 간선 먼저(점 아래로)
+  (n["간선"]||[]).forEach(e=>{
+    const i = L.findIndex(x=>x.id===e.from), j = L.findIndex(x=>x.id===e.to);
+    if(i<0||j<0) return;
+    const A = pos[i], B = pos[j];
+    const W = e["세기"];
+    let mx = 0;
+    if(W) W.forEach(r=> r.forEach(v=> { const a=Math.abs(v); if(a>mx) mx=a; }));
+    for(let b=0;b<B.length;b++){
+      for(let a=0;a<A.length;a++){
+        let alpha = 0.12, lw = 0.35, col = "163,163,163";
+        if(W && mx>0){
+          const v = W[b][a], s = Math.abs(v)/mx;
+          alpha = 0.05 + 0.75*s*s; lw = 0.25 + 1.5*s;
+          col = v >= 0 ? "96,165,250" : "248,113,113";
+        }
+        g.strokeStyle = "rgba("+col+","+alpha.toFixed(3)+")";
+        g.lineWidth = lw;
+        g.beginPath(); g.moveTo(A[a][0],A[a][1]); g.lineTo(B[b][0],B[b][1]); g.stroke();
+      }
+    }
+  });
+  // 뉴런 점
+  L.forEach((layer,i)=>{
+    pos[i].forEach(p=>{
+      g.fillStyle = layer["종류"]==="입력" ? "#C2C0B6" : "#e4e4e7";
+      g.beginPath(); g.arc(p[0],p[1],2.6,0,6.284); g.fill();
+    });
+    if(!pos[i].length){                        // 뉴런 수를 못 읽은 층은 **상자**로
+      const x = 20 + colW*(i+0.5);
+      g.strokeStyle = "#d97706"; g.lineWidth = 1;
+      g.strokeRect(x-26, top+10, 52, h-top-bot-20);
+      g.fillStyle = "#d97706"; g.font="10px ui-sans-serif,sans-serif";
+      g.fillText("뉴런 수", x-16, (top+h-bot)/2-4);
+      g.fillText("못 읽음", x-16, (top+h-bot)/2+8);
+    }
+  });
+}
+function clip(g, s, maxw){
+  while(s.length>4 && g.measureText(s).width > maxw) s = s.slice(0,-2);
+  return s;
+}
+
+// ── 아키텍처 표 ───────────────────────────────────────────────────
+function archCard(a){
+  const c = el("div","card");
+  c.appendChild(el("h2",null,"아키텍처 (층 · 간선)"));
+  if(!a || !a["읽음"]){
+    const e = el("div","empty");
+    e.appendChild(el("b","🔴 아키텍처 못 읽음"));
+    e.appendChild(el("div",null,(a&&a["왜 못 읽음"])||""));
+    e.appendChild(el("div",null,(a&&a["말"])||""));
+    c.appendChild(e); return c;
+  }
+  c.appendChild(el("div","muted",
+    `출처 ${a["출처"]} · 총 파라미터 ${num(a["총 파라미터"])}`
+    + (a["학습 가능 파라미터"]!==undefined
+       ? ` (학습 가능 ${num(a["학습 가능 파라미터"])})` : "")
+    + ` · 간선 출처 ${a["간선 출처"]} · ${a["말"]||""}`));
+  const t = el("table");
+  t.appendChild(rowOf("th",["이름","종류","입력","출력","뉴런 수","파라미터 수",
+                            "활성함수","가중치"]));
+  (a["층"]||[]).forEach(L=>{
+    const w = L["가중치"]||{};
+    t.appendChild(rowOf("td",[L["이름"], L["종류"],
+      (L["입력 모양"]||[]).join("×")||"모름", (L["출력 모양"]||[]).join("×")||"모름",
+      num(L["뉴런 수"]), num(L["파라미터 수"]), L["활성함수"]||"—",
+      w["담음"] ? ("값 " + (w["모양"]||[]).join("×"))
+                : ("🔴 " + (w["왜"]||"없다"))]));
+  });
+  c.appendChild(t);
+  c.appendChild(el("h3",null,"간선"));
+  c.appendChild(el("code", null,
+    (a["간선"]||[]).map(e=>e.from+" → "+e.to).join("   |   ") || "없음"));
+  if(a["접은 활성함수"]){
+    c.appendChild(el("div","muted","접은 활성함수(앞 층의 칸으로 넣었다): "
+      + a["접은 활성함수"].map(x=>x["모듈"]+"("+x["종류"]+")→"+x["붙인 층"]).join(", ")));
+  }
+  return c;
+}
+
+$("#hideDemo").onchange = drawRuns;
+$("#reload").onclick = loadRuns;
+let _rz = 0;                                   // 창을 늘일 때마다 다시 그린다(디바운스)
+window.addEventListener("resize", ()=>{
+  clearTimeout(_rz); _rz = setTimeout(()=>{ if(STATE.sel) loadDetail(); }, 250);
+});
+loadRuns();
+</script>
+</body>
+</html>

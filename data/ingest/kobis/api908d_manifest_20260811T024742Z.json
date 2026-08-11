@@ -1,0 +1,32 @@
+{
+  "무엇": "KOBIS 공식 오픈API 상세 — 노트 908 팔 ㄹ",
+  "UTC 시각": "2026-08-11T03:05:30+00:00",
+  "원천": "kobisopenapi.kofic.or.kr (KOFIC 오픈API · 무료 · 일 3,000회)",
+  "🔴 키": "`.env` 의 KOBIS_API_KEY 에서만 읽었다 — 산출물·로그에 안 적었다(URL 은 key=*** 로 가림)",
+  "입력 지문": {
+    "data/ingest/kobis/axes_raw_897.jsonl": "a6db92d9284fd5a9799a99521a4709baa524e18d1f2522088a715ff46d1fa1a6",
+    "data/state/kobis_axes.json": "ce344dd54d2fb9fc0468cf6d4bc6b160136f52b04afc14122735ea3e62f5d9c8",
+    "ingest/kobis_api908.py": "a5e5f328fba278ed24c1a67a1b9bc2f4660d517195abf6a94fc808af4d7cc80c"
+  },
+  "분모": {
+    "D1(원천 레코드 · data/ingest/kobis/axes_raw_897.jsonl)": 897,
+    "D2(축 파일 키 · data/state/kobis_axes.json)": 887,
+    "D3(판 채점 유보 · post=True · T=2025.0)": 406
+  },
+  "🔴 --limit(0 = 전량)": 0,
+  "이 판이 다룬 유보 행": 406,
+  "실제 호출 수": 817,
+  "faultInfo 건수": 0,
+  "파일": [
+    {
+      "경로": "data/ingest/kobis/api908d_list_20260811T024742Z.jsonl",
+      "바이트": 203379,
+      "sha256[:16]": "a05d024a276f88ce"
+    },
+    {
+      "경로": "data/ingest/kobis/api908d_movieinfo_20260811T024742Z.jsonl",
+      "바이트": 1917441,
+      "sha256[:16]": "7e97dbd6caf271af"
+    }
+  ]
+}
