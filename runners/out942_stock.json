@@ -1,0 +1,444 @@
+{
+ "노트": 942,
+ "레인": "수리",
+ "무엇": "o 검출기를 스키마별로 갈라 저장소 재고를 다시 센다 (티처 #81 C1)",
+ "시각": "2026-08-12T03:58:21+0900",
+ "초": 0.5,
+ "🔴 조항 60 — 명령·범위·트리": {
+  "명령": "python3 runners/out942_stock.py",
+  "범위": {
+   "D1": [
+    "data/records",
+    "data/market_records",
+    "data/idol_records",
+    "data/records_draft",
+    "data/records_incomplete",
+    "data/records_thinbak"
+   ],
+   "D2": [
+    "data/state/anime_records.json",
+    "data/state/app_records.json",
+    "data/state/book_records.json",
+    "data/state/funding_records.json",
+    "data/state/game_records.json",
+    "data/state/manga_records.json",
+    "data/state/mobile_records.json",
+    "data/state/wanime_records.json",
+    "data/state/webtoon_records.json"
+   ]
+  },
+  "트리": "dd53b4eba85c3b0aa99004706b6632fc6bfbc172",
+  "작업 트리 깨끗함": false,
+  "🔴 깨끗하지 않으면 여기 전량": [
+   "?? runners/out942_schema_census.json",
+   "?? runners/out942_stock.json",
+   "?? runners/out942_stock.py"
+  ]
+ },
+ "🔴 안 부른 자": "판 ρ · 문턱 0.00353 — 이 사이클은 예측 성능을 안 잰다",
+ "ㄱ 키 분포 전수(파일)": {
+  "경로": "runners/out942_schema_census.json",
+  "요약": {
+   "D1(파일=레코드)": {
+    "data/records": {
+     "레코드": 380,
+     "outcome 모양": {
+      "outcome 이 dict": 380
+     },
+     "y_ 열": null
+    },
+    "data/market_records": {
+     "레코드": 647,
+     "outcome 모양": {
+      "outcome 이 dict": 647
+     },
+     "y_ 열": null
+    },
+    "data/idol_records": {
+     "레코드": 282,
+     "outcome 모양": {
+      "🔴 outcome/결과 키 없음": 282
+     },
+     "y_ 열": null
+    },
+    "data/records_draft": {
+     "레코드": 0,
+     "outcome 모양": {},
+     "y_ 열": null
+    },
+    "data/records_incomplete": {
+     "레코드": 8,
+     "outcome 모양": {
+      "outcome 이 dict": 8
+     },
+     "y_ 열": null
+    },
+    "data/records_thinbak": {
+     "레코드": 19,
+     "outcome 모양": {
+      "outcome 이 dict": 19
+     },
+     "y_ 열": null
+    }
+   },
+   "D2(저장소=레코드 여럿)": {
+    "data/state/anime_records.json": {
+     "레코드": 3385,
+     "outcome 모양": null,
+     "y_ 열": [
+      "y_review"
+     ]
+    },
+    "data/state/app_records.json": {
+     "레코드": 1600,
+     "outcome 모양": null,
+     "y_ 열": [
+      "y_rating_count"
+     ]
+    },
+    "data/state/book_records.json": {
+     "레코드": 396,
+     "outcome 모양": null,
+     "y_ 열": []
+    },
+    "data/state/funding_records.json": {
+     "레코드": 2887,
+     "outcome 모양": null,
+     "y_ 열": [
+      "y_backers"
+     ]
+    },
+    "data/state/game_records.json": {
+     "레코드": 482,
+     "outcome 모양": null,
+     "y_ 열": [
+      "y_raw",
+      "y_positive",
+      "y_w30",
+      "y_w30_truncated"
+     ]
+    },
+    "data/state/manga_records.json": {
+     "레코드": 7982,
+     "outcome 모양": null,
+     "y_ 열": [
+      "y_popularity"
+     ]
+    },
+    "data/state/mobile_records.json": {
+     "레코드": 2000,
+     "outcome 모양": null,
+     "y_ 열": [
+      "y_rating_count"
+     ]
+    },
+    "data/state/wanime_records.json": {
+     "레코드": 2988,
+     "outcome 모양": null,
+     "y_ 열": [
+      "y_popularity"
+     ]
+    },
+    "data/state/webtoon_records.json": {
+     "레코드": 3652,
+     "outcome 모양": null,
+     "y_ 열": [
+      "y_favorite"
+     ]
+    }
+   }
+  }
+ },
+ "ㄴ·ㄷ D1 재고(옛/새 나란히)": {
+  "🔴 분모 D1(파일)": 1336,
+  "스키마가 (a,s,o) 셋을 가진 파일": 1054,
+  "계열 분포": {
+   "A_팝업(outcome.totals)": 407,
+   "B_시장(평평한 outcome)": 647,
+   "C_아이돌(outcome 없음)": 282
+  },
+  "🔴 합 == 분모": true,
+  "a 값 있음": 1328,
+  "s 값 있음": 1315,
+  "🔴 o 값 있음 — 옛 검출기(941)": 157,
+  "🔴 o 값 있음 — 새 검출기(942)": 755,
+  "🔴 a·s·o 셋 다 — 옛": 157,
+  "🔴 a·s·o 셋 다 — 새": 732,
+  "계열별 o(옛/새)": {
+   "A_팝업(outcome.totals)": {
+    "옛": 157,
+    "새": 157
+   },
+   "B_시장(평평한 outcome)": {
+    "옛": 0,
+    "새": 398
+   },
+   "C_아이돌(outcome 없음)": {
+    "옛": 0,
+    "새": 200
+   }
+  },
+  "🔴 반증 조건 1 — A계열(팝업)은 옛==새 여야 한다": true,
+  "🔴 뒤집힌 파일 수": 598,
+  "🔴 뒤집힘 == 새−옛": true,
+  "뒤집힌 것 앞 3건": [
+   {
+    "파일": "data/market_records/MKT-2022-0001.json",
+    "계열": "B_시장(평평한 outcome)",
+    "옛": false,
+    "새": true,
+    "걸린 열": [
+     "outcome.visitors_total"
+    ]
+   },
+   {
+    "파일": "data/market_records/MKT-2022-0002.json",
+    "계열": "B_시장(평평한 outcome)",
+    "옛": false,
+    "새": true,
+    "걸린 열": [
+     "outcome.visitors_total",
+     "outcome.sales_krw"
+    ]
+   },
+   {
+    "파일": "data/market_records/MKT-2022-0003.json",
+    "계열": "B_시장(평평한 outcome)",
+    "옛": false,
+    "새": true,
+    "걸린 열": [
+     "outcome.visitors_total"
+    ]
+   }
+  ],
+  "걸린 결과 열 분포(새)": {
+   "outcome.visitors_total": 328,
+   "chodong": 175,
+   "outcome.totals.visitors": 118,
+   "outcome.daily": 108,
+   "outcome.sales_krw": 102,
+   "chart_peak": 79,
+   "outcome.totals.sales_krw": 77,
+   "mv_24h": 2
+  },
+  "디렉터리별": {
+   "data/records": {
+    "파일": 380,
+    "a": 380,
+    "s": 380,
+    "o_옛": 138,
+    "o_새": 138,
+    "a·s·o(옛)": 138,
+    "a·s·o(새)": 138,
+    "계열": {
+     "A_팝업(outcome.totals)": 380
+    }
+   },
+   "data/market_records": {
+    "파일": 647,
+    "a": 647,
+    "s": 647,
+    "o_옛": 0,
+    "o_새": 398,
+    "a·s·o(옛)": 0,
+    "a·s·o(새)": 398,
+    "계열": {
+     "B_시장(평평한 outcome)": 647
+    }
+   },
+   "data/idol_records": {
+    "파일": 282,
+    "a": 274,
+    "s": 261,
+    "o_옛": 0,
+    "o_새": 200,
+    "a·s·o(옛)": 0,
+    "a·s·o(새)": 177,
+    "계열": {
+     "C_아이돌(outcome 없음)": 282
+    }
+   },
+   "data/records_draft": {
+    "파일": 0,
+    "a": 0,
+    "s": 0,
+    "o_옛": 0,
+    "o_새": 0,
+    "a·s·o(옛)": 0,
+    "a·s·o(새)": 0,
+    "계열": {}
+   },
+   "data/records_incomplete": {
+    "파일": 8,
+    "a": 8,
+    "s": 8,
+    "o_옛": 0,
+    "o_새": 0,
+    "a·s·o(옛)": 0,
+    "a·s·o(새)": 0,
+    "계열": {
+     "A_팝업(outcome.totals)": 8
+    }
+   },
+   "data/records_thinbak": {
+    "파일": 19,
+    "a": 19,
+    "s": 19,
+    "o_옛": 19,
+    "o_새": 19,
+    "a·s·o(옛)": 19,
+    "a·s·o(새)": 19,
+    "계열": {
+     "A_팝업(outcome.totals)": 19
+    }
+   }
+  },
+  "아이돌 열별": {
+   "debut_date": 274,
+   "chodong": 175,
+   "chart_peak": 79,
+   "mv_24h": 2,
+   "found_chodong": 282,
+   "결과 하나라도(chodong|chart_peak|mv_24h)": 200,
+   "chodong|chart_peak 만": 199
+  },
+  "시장 열별": {
+   "outcome.totals 키 있음": 0,
+   "visitors_total": 328,
+   "sales_krw": 102,
+   "둘 중 하나": 398,
+   "둘 다": 32
+  }
+ },
+ "ㄹ D2 재고 — 🔴 941 이 안 본 원천": {
+  "🔴 분모 D2(저장소 레코드)": 25372,
+  "a(액션 날짜)": 25372,
+  "o(y_* 값)": 25372,
+  "a∩o": 25372,
+  "저장소별": {
+   "애니": {
+    "파일": "data/state/anime_records.json",
+    "레코드": 3385,
+    "a(액션 날짜 있음)": 3385,
+    "o(y_* 값 있음)": 3385,
+    "a∩o": 3385,
+    "결과 열": {
+     "y_review": 3385
+    },
+    "날짜 열": {
+     "start_date": 3385
+    }
+   },
+   "앱(구 모바일)": {
+    "파일": "data/state/app_records.json",
+    "레코드": 1600,
+    "a(액션 날짜 있음)": 1600,
+    "o(y_* 값 있음)": 1600,
+    "a∩o": 1600,
+    "결과 열": {
+     "y_rating_count": 1600
+    },
+    "날짜 열": {
+     "release_date": 1600
+    }
+   },
+   "도서": {
+    "파일": "data/state/book_records.json",
+    "레코드": 396,
+    "a(액션 날짜 있음)": 396,
+    "o(y_* 값 있음)": 396,
+    "a∩o": 396,
+    "결과 열": {
+     "sales_point": 396
+    },
+    "날짜 열": {
+     "pub_date": 396
+    }
+   },
+   "펀딩": {
+    "파일": "data/state/funding_records.json",
+    "레코드": 2887,
+    "a(액션 날짜 있음)": 2887,
+    "o(y_* 값 있음)": 2887,
+    "a∩o": 2887,
+    "결과 열": {
+     "y_backers": 2887
+    },
+    "날짜 열": {
+     "start_date": 2887
+    }
+   },
+   "게임": {
+    "파일": "data/state/game_records.json",
+    "레코드": 482,
+    "a(액션 날짜 있음)": 482,
+    "o(y_* 값 있음)": 482,
+    "a∩o": 482,
+    "결과 열": {
+     "y_raw": 482,
+     "y_positive": 482,
+     "y_w30": 482,
+     "y_w30_truncated": 482
+    },
+    "날짜 열": {
+     "release_date": 482
+    }
+   },
+   "만화": {
+    "파일": "data/state/manga_records.json",
+    "레코드": 7982,
+    "a(액션 날짜 있음)": 7982,
+    "o(y_* 값 있음)": 7982,
+    "a∩o": 7982,
+    "결과 열": {
+     "y_popularity": 7982
+    },
+    "날짜 열": {
+     "start_date": 7982
+    }
+   },
+   "모바일": {
+    "파일": "data/state/mobile_records.json",
+    "레코드": 2000,
+    "a(액션 날짜 있음)": 2000,
+    "o(y_* 값 있음)": 2000,
+    "a∩o": 2000,
+    "결과 열": {
+     "y_rating_count": 2000
+    },
+    "날짜 열": {
+     "release_date": 2000
+    }
+   },
+   "세계애니": {
+    "파일": "data/state/wanime_records.json",
+    "레코드": 2988,
+    "a(액션 날짜 있음)": 2988,
+    "o(y_* 값 있음)": 2988,
+    "a∩o": 2988,
+    "결과 열": {
+     "y_popularity": 2988
+    },
+    "날짜 열": {
+     "start_date": 2988
+    }
+   },
+   "웹툰": {
+    "파일": "data/state/webtoon_records.json",
+    "레코드": 3652,
+    "a(액션 날짜 있음)": 3652,
+    "o(y_* 값 있음)": 3652,
+    "a∩o": 3652,
+    "결과 열": {
+     "y_favorite": 3652
+    },
+    "날짜 열": {
+     "start_date": 3652
+    }
+   }
+  },
+  "🔴 이 o 는 D1 의 o 와 종류가 다르다": "D1 의 o 는 `outcome.daily` 일별 **시계열**이거나 총합 스칼라다. D2 의 o 는 **스칼라 라벨 하나**(y_review·y_backers·y_positive…)다. 🔴 **두 수를 더해서 「(s,a,o) 삼중쌍」이라 부르면 종류를 섞는 것이다**(조항 60).",
+  "🔴 s 는 세지 않았다": "D2 의 나머지 열이 전부 s 후보이지만 **액션 시점 전에 알 수 있었는지**를 이 러너는 못 가른다(예: avg_rating 은 사후값이다). 그래서 s 는 **안 셌다** — 「0」이 아니라 **안 잰 것**이다(조항 59)."
+ },
+ "🔴 분모를 잇지 마라": "D1 1336 과 D2 25372 는 다른 분모다. 「157 → 555」는 **둘 다 D1 분모 위의 수**이고, D2 는 그 위에 더하는 것이 아니라 **따로 신고**한다."
+}
