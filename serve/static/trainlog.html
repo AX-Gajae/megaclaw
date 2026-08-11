@@ -1,0 +1,1298 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>학습 기록 · trainlog</title>
+<!-- 🔴 CDN 없음 · 외부 요청 없음. 차트도 그림도 전부 여기서 직접 그린다.
+     이 파일이 부르는 것은 같은 서버의 /api/trainlog/* 뿐이다. -->
+<link rel="icon" href="data:image/svg+xml,<svg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'><polyline points='10,80 34,52 56,64 90,20' fill='none' stroke='%23C2C0B6' stroke-width='10'/></svg>">
+<style>
+:root{
+  --page:#262624; --card:#30302E; --serif-fg:#C2C0B6;
+  --zinc100:#f4f4f5; --zinc200:#e4e4e7; --zinc300:#d4d4d8; --zinc400:#a1a1aa;
+  --zinc500:#71717a; --zinc600:#52525b; --zinc700:#3f3f46; --zinc800:#27272a;
+  --amber600:#d97706; --amber700:#b45309;
+  --blue400:#60a5fa; --green400:#4ade80; --red400:#f87171; --purple400:#c084fc;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--page);color:var(--zinc200);
+  font:13px/1.6 ui-sans-serif,-apple-system,"Apple SD Gothic Neo","Segoe UI",sans-serif}
+a{color:var(--blue400)}
+.wrap{max-width:82rem;margin:0 auto;padding:1.4rem 1rem 4rem}
+h1{font-family:ui-serif,Georgia,serif;font-weight:300;font-size:1.6rem;
+   color:var(--serif-fg);letter-spacing:-.01em}
+h2{font-size:.95rem;font-weight:600;color:var(--zinc200);margin:0 0 .55rem}
+h3{font-size:.8rem;font-weight:600;color:var(--zinc300);margin:.9rem 0 .35rem}
+.sub{color:var(--zinc500);font-size:11.5px;margin-top:.3rem}
+.ruler{margin:.9rem 0 1.1rem;padding:.6rem .75rem;border-left:3px solid var(--amber600);
+  background:#2b2b28;color:var(--zinc300);font-size:11.5px;border-radius:0 4px 4px 0}
+.ruler b{color:var(--amber600)}
+.cols{display:grid;grid-template-columns:21rem 1fr;gap:1rem;align-items:start}
+@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--zinc700);border-radius:8px;
+  padding:.8rem .9rem;margin-bottom:.75rem}
+.runs{max-height:78vh;overflow:auto}
+.run{border:1px solid var(--zinc700);border-radius:6px;padding:.5rem .6rem;
+  margin-bottom:.45rem;cursor:pointer;background:#2a2a28}
+.run:hover{border-color:var(--zinc500)}
+.run.on{border-color:var(--amber600);background:#332e26}
+.run .id{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;
+  color:var(--zinc100);word-break:break-all}
+.run .meta{font-size:10.5px;color:var(--zinc500);margin-top:.2rem}
+.tag{display:inline-block;font-size:10px;padding:.05rem .35rem;border-radius:3px;
+  border:1px solid var(--zinc600);color:var(--zinc400);margin:.18rem .18rem 0 0}
+.tag.demo{border-color:var(--purple400);color:var(--purple400)}
+.tag.ok{border-color:var(--green400);color:var(--green400)}
+.tag.bad{border-color:var(--red400);color:var(--red400)}
+.tag.warn{border-color:var(--amber600);color:var(--amber600)}
+.tag.live{border-color:var(--green400);color:var(--green400);font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:.5rem}
+.kv{border:1px solid var(--zinc700);border-radius:5px;padding:.4rem .5rem;background:#2a2a28}
+.kv .k{font-size:10.5px;color:var(--zinc500)}
+.kv .v{font-size:12px;color:var(--zinc100);word-break:break-all;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+.charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(19rem,1fr));gap:.6rem}
+.chart{border:1px solid var(--zinc700);border-radius:6px;padding:.45rem .5rem;background:#2a2a28}
+.chart .t{font-size:11.5px;color:var(--zinc300);margin-bottom:.2rem}
+canvas{display:block;width:100%}
+.scroll{overflow:auto;max-height:80vh}
+.legend{font-size:10.5px;color:var(--zinc400);margin-top:.25rem;display:flex;
+  flex-wrap:wrap;gap:.6rem;align-items:center}
+.legend i{display:inline-block;width:.6rem;height:.15rem;vertical-align:middle;margin-right:.25rem}
+.swatch{display:inline-block;width:.65rem;height:.65rem;border-radius:3px;
+  vertical-align:-1px;margin-right:.22rem;border:1px solid #0003}
+.empty{border:1px dashed var(--red400);border-radius:6px;padding:.9rem;
+  color:var(--red400);font-size:12px;background:#2e2626}
+.empty b{color:#ffb4b4}
+.info{border:1px dashed var(--zinc500);border-radius:6px;padding:.9rem;
+  color:var(--zinc300);font-size:12px;background:#2a2a28}
+.note{font-size:11px;color:var(--amber600);margin:.35rem 0 .1rem}
+.muted{font-size:11px;color:var(--zinc500)}
+table{border-collapse:collapse;width:100%;font-size:11.5px;margin-top:.3rem}
+th,td{border:1px solid var(--zinc700);padding:.25rem .4rem;text-align:left;
+  color:var(--zinc300);vertical-align:top}
+th{color:var(--zinc500);font-weight:500;background:#2a2a28}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:var(--zinc300)}
+select,button,input[type=number]{background:#2a2a28;color:var(--zinc200);
+  border:1px solid var(--zinc600);border-radius:4px;padding:.2rem .4rem;font-size:11.5px}
+button{cursor:pointer}
+button.on{border-color:var(--amber600);color:var(--amber600)}
+.rowbar{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;margin-bottom:.4rem}
+.rowbar label{font-size:11px;color:var(--zinc400)}
+input[type=range]{width:9rem;vertical-align:middle}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>학습 기록 <span style="font-size:.8rem;color:var(--zinc500)">trainlog</span></h1>
+  <div class="sub" id="head">불러오는 중…</div>
+
+  <div class="ruler">
+    <b>이 페이지의 자</b> — 이 창구는 <b>모형 정량 주장을 내지 않는다.</b>
+    학습 run 이 스스로 적은 것을 그대로 읽어 보여 줄 뿐이고, 모든 응답이
+    금지 꼴 게이트 다섯(<code>serve/layers.py:gate()</code>)을 지난다.
+    <b>지표가 없으면 곡선을 그리지 않는다</b> — 빈 차트가 정답이다.
+    그림도 마찬가지다 — <b>접은 것·자른 것·못 읽은 것을 전부 화면에 적는다.</b>
+  </div>
+
+  <div class="rowbar" style="margin:.6rem 0">
+    <button id="tabArch" class="on">아키텍처</button>
+    <button id="tabCmp">런 비교</button>
+    <span class="muted" id="tabnote"></span>
+  </div>
+
+  <div id="cmp" style="display:none"></div>
+
+  <div class="cols" id="archview">
+    <div>
+      <div class="card">
+        <h2>run 목록</h2>
+        <div class="rowbar">
+          <label><input type="checkbox" id="hideDemo"> 데모 숨기기</label>
+          <button id="reload">다시 읽기</button>
+        </div>
+        <div class="runs" id="runs">불러오는 중…</div>
+      </div>
+    </div>
+    <div id="detail"><div class="card muted">왼쪽에서 run 을 고르면 학습 곡선과
+      아키텍처 그림이 여기에 뜬다.</div></div>
+  </div>
+</div>
+
+<script>
+"use strict";
+// ── 도우미 ────────────────────────────────────────────────────────
+const $ = (s,r)=> (r||document).querySelector(s);
+const el = (t,c,x)=>{const e=document.createElement(t); if(c) e.className=c;
+  if(x!==undefined && x!==null) e.textContent=String(x); return e;};
+const num = n => (n===null||n===undefined) ? "—" : Number(n).toLocaleString("ko-KR");
+async function get(u){ const r = await fetch(u,{cache:"no-store"});
+  return await r.json(); }
+// 계열 색. **고정 팔레트다** — 색을 무작위로 뽑지 않는다(같은 계열은 늘 같은 색).
+const COLORS = ["#60a5fa","#4ade80","#d97706","#c084fc","#f87171","#22d3ee",
+                "#facc15","#fb923c","#a3e635","#f472b6"];
+const colorOf = i => COLORS[i % COLORS.length];
+
+// 🔴 화면 상태는 **전부 여기 하나에** 모으고 URL 해시에 적는다 --- 같은 화면을
+// 다시 열 수 있어야 한다(주소를 복사하면 접힘·검색·눈금까지 그대로 돌아온다).
+let STATE = {runs:[], sel:null, maxN:32, px:620, fold:true,
+             drill:null, detail:null, since:0, poll:null, pollN:0,
+             expand:[], q:"", hide:[], zoom:1, step:null,
+             nmetric:"grad_norm"};
+
+function saveHash(){
+  const p = [];
+  const put = (k,v)=>{ if(v!==null&&v!==undefined&&v!=="") p.push(k+"="+encodeURIComponent(v)); };
+  put("run", STATE.sel); put("max", STATE.maxN); put("fold", STATE.fold?1:0);
+  put("expand", STATE.expand.join(",")); put("drill", STATE.drill);
+  put("step", STATE.step); put("metric", STATE.nmetric);
+  put("q", STATE.q); put("hide", STATE.hide.join(","));
+  put("zoom", STATE.zoom);
+  location.replace("#" + p.join("&"));
+}
+function loadHash(){
+  const h = (location.hash||"").replace(/^#/,"");
+  if(!h) return false;
+  const o = {};
+  h.split("&").forEach(kv=>{ const i = kv.indexOf("=");
+    if(i>0) o[kv.slice(0,i)] = decodeURIComponent(kv.slice(i+1)); });
+  if(o.run) STATE.sel = o.run;
+  if(o.max) STATE.maxN = Number(o.max)||32;
+  if(o.fold!==undefined) STATE.fold = o.fold !== "0";
+  if(o.expand) STATE.expand = o.expand.split(",").filter(Boolean);
+  if(o.drill) STATE.drill = o.drill;
+  if(o.step) STATE.step = o.step;
+  if(o.metric) STATE.nmetric = o.metric;
+  if(o.q) STATE.q = o.q;
+  if(o.hide) STATE.hide = o.hide.split(",").filter(Boolean);
+  if(o.zoom) STATE.zoom = Number(o.zoom)||1;
+  return !!o.run;
+}
+
+// ── run 목록 ──────────────────────────────────────────────────────
+async function loadRuns(){
+  const d = await get("/api/trainlog/runs");
+  STATE.runs = d.run || [];
+  $("#head").textContent =
+    `규격 ${d["규격"]} 판 ${d["규격 판"]} · 층 ${d["층"]} · run ${num(d["run 수"])}개`
+    + ` (데모 ${num(d["데모 수"])} · 진짜 ${num(d["진짜 run 수"])}`
+    + ` · 차단 ${num(d["차단된 run 수"])})`;
+  drawRuns();
+  if(STATE.sel && STATE.runs.some(r=>r["run_id"]===STATE.sel)){
+    loadDetail();                              // 🔴 주소에 적힌 화면을 되살린다
+  } else if(STATE.runs.length){
+    select(STATE.runs[0]["run_id"]);
+  }
+}
+function badgeClass(b){
+  const s = String(b||"");
+  if(s.indexOf("도는 중")>=0 && s.indexOf("🔴")<0) return "live";
+  if(s.indexOf("끝남")>=0) return "ok";
+  return "bad";
+}
+function drawRuns(){
+  const box = $("#runs"); box.textContent = "";
+  const hide = $("#hideDemo").checked;
+  const rows = STATE.runs.filter(r => !(hide && r["데모인가"]));
+  if(!rows.length){ box.appendChild(el("div","muted","보여 줄 run 이 없다.")); return; }
+  rows.forEach(r=>{
+    const c = el("div","run" + (r["run_id"]===STATE.sel ? " on" : ""));
+    c.appendChild(el("div","id", r["run_id"]));
+    if(r["차단됨"]){
+      c.appendChild(el("div","note","🔴 금지 꼴에 걸려 내용을 안 보낸다"));
+      c.onclick = ()=> select(r["run_id"]); box.appendChild(c); return;
+    }
+    c.appendChild(el("div","meta",
+      `${r["시작 UTC"]||"?"} → ${r["끝 UTC"]||"도는 중"} · ${num(r["초"])}초`
+      + (r["모형 클래스"] ? (" · " + r["모형 클래스"]) : "")));
+    const t = el("div");
+    const live = (r["생사"]||{})["뱃지"] || r["상태"] || "?";
+    t.appendChild(el("span","tag " + badgeClass(live), live));
+    if(r["데모인가"]) t.appendChild(el("span","tag demo","데모"));
+    if(r["학습 돌렸나"] === false)
+      t.appendChild(el("span","tag","구조만 (학습 안 돌림)"));
+    t.appendChild(el("span","tag " + (r["자 없음"]?"warn":""),
+      r["자 없음"] ? "🔴 자 없음" : "자 있음"));
+    t.appendChild(el("span","tag", "지표 " + num(r["지표 줄 수(읽어 센 것)"]) + "줄"));
+    if(r["🔴 수가 어긋나나"]) t.appendChild(el("span","tag bad","🔴 manifest 와 수가 다르다"));
+    t.appendChild(el("span","tag", r["아키텍처 읽음"]
+      ? ("구조 " + num(r["층 수"]) + "층") : "🔴 아키텍처 못 읽음"));
+    c.appendChild(t);
+    c.onclick = ()=> select(r["run_id"]);
+    box.appendChild(c);
+  });
+}
+function select(id){
+  if(id !== STATE.sel){
+    STATE.drill = null; STATE.expand = []; STATE.step = null;
+  }
+  STATE.sel = id; STATE.since = 0; stopPoll();
+  drawRuns(); loadDetail();
+}
+
+// ── run 상세 ──────────────────────────────────────────────────────
+async function loadDetail(){
+  const box = $("#detail"); box.textContent = "";
+  box.appendChild(el("div","card muted","읽는 중…"));
+  saveHash();
+  const d = await get("/api/trainlog/run?id=" + encodeURIComponent(STATE.sel)
+                      + "&max_neurons=" + STATE.maxN
+                      + "&px_height=" + STATE.px
+                      + "&fold=" + (STATE.fold ? 1 : 0)
+                      + "&expand=" + encodeURIComponent(STATE.expand.join(","))
+                      + "&step=" + (STATE.step===null?"":STATE.step)
+                      + "&node_metric=" + encodeURIComponent(STATE.nmetric));
+  STATE.detail = d;
+  box.textContent = "";
+  if(d["차단됨"]){
+    const c = el("div","card");
+    c.appendChild(el("h2",null,"🔴 차단됨"));
+    c.appendChild(el("div","empty", d["말"]||""));
+    c.appendChild(el("pre","muted", JSON.stringify(d["금지 꼴 게이트"],null,1)));
+    box.appendChild(c); return;
+  }
+  if(d["오류"]){ box.appendChild(el("div","empty", d["오류"])); return; }
+  box.appendChild(manifestCard(d));
+  box.appendChild(curveCard(d));
+  box.appendChild(blockCard(d));
+  box.appendChild(neuronCard(d["뉴런"]));
+  box.appendChild(archCard(d["아키텍처"]));
+  // 🔴 도는 중이면 **새 줄만** 이어 읽는다(전량 재전송 금지)
+  STATE.since = (d["살아 있나"]||{})["파일 바이트"] || 0;
+  maybePoll(d["살아 있나"]);
+}
+
+function manifestCard(d){
+  const m = d["manifest"]||{}, cnt = d["🔴 이 창구가 직접 센 것"]||{};
+  const live = d["살아 있나"]||{};
+  const c = el("div","card");
+  c.appendChild(el("h2",null, m["이름(원래)"] ? (m["이름(원래)"]+" — "+d["run_id"]) : d["run_id"]));
+  const bar = el("div","rowbar");
+  const b = el("span","tag " + badgeClass(live["뱃지"]), live["뱃지"]||"?");
+  bar.appendChild(b);
+  bar.appendChild(el("span","muted", live["말"]||""));
+  c.appendChild(bar);
+  if(m["메모"]) c.appendChild(el("div","muted", m["메모"]));
+  const g = el("div","grid");
+  const kv = (k,v)=>{const e=el("div","kv"); e.appendChild(el("div","k",k));
+    e.appendChild(el("div","v", v===null||v===undefined?"—":String(v))); g.appendChild(e);};
+  kv("상태 (manifest / 이 창구가 잰 것)", (m["상태"]||"?") + " / " + (live["뱃지"]||"?"));
+  kv("마지막 지표 이후", live["마지막 지표 이후 초"]===null||live["마지막 지표 이후 초"]===undefined
+     ? "—" : (num(live["마지막 지표 이후 초"]) + "초 (문턱 " + num(live["문턱 초"]) + "초)"));
+  kv("데모인가", m["데모인가"] ? "🟣 데모" : "진짜 run");
+  kv("학습 돌렸나", m["학습 돌렸나"]===false ? "🔴 아니다 — 구조만 적은 run"
+     : (m["학습 돌렸나"]===true ? "돌렸다" : "🔴 안 적혔다"));
+  kv("시작 → 끝 (UTC)", (m["시작 UTC"]||"?") + " → " + (m["끝 UTC"]||"—"));
+  kv("초", num(m["초"]));
+  kv("씨앗", m["씨앗"]);
+  kv("미는 출력 (docs/목표.md)", (m["미는 출력"]||[]).join(" · "));
+  kv("자 (무엇으로 판정하나)", m["자 없음"] ? "🔴 자 없음 — 이 run 으로는 아무것도 주장 못 한다"
+                                        : m["자"]);
+  kv("규격 / 판", (m["규격"]||"?") + " / " + (m["규격 판"]||"?"));
+  kv("기록 실패", num(m["기록 실패 n건"]) + "건");
+  kv("지표 줄 수 (manifest / 이 창구가 센 것)",
+     num(m["지표 줄 수"]) + " / " + num(cnt["곡선 점 수"]));
+  (m["코드 sha256"]||[]).forEach(x=> kv("코드 sha256 — " + (x["경로"]||"?"),
+      x["sha256"] ? x["sha256"].slice(0,16)+"…" : ("🔴 " + (x["못 읽음"]||"없다"))));
+  (m["입력 데이터 sha256"]||[]).forEach(x=> kv("입력 데이터 sha256 — " + (x["경로"]||"—"),
+      x["sha256"] ? x["sha256"].slice(0,16)+"…" : ("🔴 " + (x["못 읽음"]||x["없음"]||"없다"))));
+  const hp = m["하이퍼파라미터"];
+  if(hp) kv("하이퍼파라미터", JSON.stringify(hp));
+  const en = m["환경"]||{};
+  kv("환경", `python ${en["python"]||"?"} · torch ${en["torch"]||"?"}`);
+  c.appendChild(g);
+  if(m["기록 실패(앞 몇 건)"]){
+    c.appendChild(el("div","note","🔴 기록이 실패한 적이 있다 — 조용히 삼키지 않는다:"));
+    c.appendChild(el("pre","muted", JSON.stringify(m["기록 실패(앞 몇 건)"],null,1)));
+  }
+  return c;
+}
+
+// ── 학습 곡선 --- 🔴 점은 전부 API 에서 온다. 만들어 내지 않는다 ────
+function curveCard(d){
+  const cur = d["곡선"], only = d["구조만 있나"]||{};
+  const c = el("div","card"); c.id = "curveCard";
+  const bar = el("div","rowbar");
+  bar.appendChild(el("h2",null,"학습 곡선"));
+  const st = el("span","muted","");
+  st.id = "liveline"; bar.appendChild(st);
+  c.appendChild(bar);
+  if(!cur || cur["상태"] !== "읽었다" || !(cur["곡선"]||[]).length){
+    if(only["구조만"] === true){
+      const e = el("div","info");
+      e.appendChild(el("b","이 run 은 구조만 있다 — 학습을 안 돌렸다"));
+      e.appendChild(el("div",null, only["말"]||""));
+      e.appendChild(el("div",null, "왜 아나: " + (only["왜 아나"]||"")));
+      e.appendChild(el("div",null,
+        "🔴 그래서 곡선을 그리지 않는다 — 없는 곡선을 그리면 그 순간 실패다."));
+      c.appendChild(e);
+      return c;
+    }
+    const e = el("div","empty");
+    e.appendChild(el("b", "🔴 곡선을 그리지 않는다 — 상태: "
+      + ((cur&&cur["상태"])||"못 읽음")));
+    e.appendChild(el("div",null, (cur&&cur["왜"]) || "지표를 못 읽었다"));
+    e.appendChild(el("div",null, (cur&&cur["말"]) || ""));
+    if(only["구조만"] === null) e.appendChild(el("div",null, only["말"]||""));
+    c.appendChild(e);
+    return c;
+  }
+  const head = el("div","muted");
+  head.id = "curvehead";
+  c.appendChild(head);
+  const wrap = el("div","charts"); wrap.id = "curvewrap";
+  c.appendChild(wrap);
+  //: 🔴 실시간 갱신이 다시 찾아야 하므로 **element 를 들고 있는다**
+  //: (아직 문서에 안 붙은 카드라 `querySelector` 로는 못 찾는다).
+  STATE.curveEls = {head: head, wrap: wrap};
+  drawAllCurves(head, wrap, cur);
+  if(cur["수가 아닌 값"]){
+    c.appendChild(el("div","note",
+      "🔴 수가 아닌 값이 있어 곡선에서 뺐다(버리지 않고 기록에는 남아 있다):"));
+    c.appendChild(el("pre","muted", JSON.stringify(cur["수가 아닌 값"],null,1)));
+  }
+  return c;
+}
+
+// 곡선을 그린다 --- 🔴 실시간으로 점이 붙으면 **다시 그린다**(점은 API 가 준 것뿐)
+function drawAllCurves(head, wrap, cur){
+  if(!wrap) return;
+  let 점 = 0; (cur["곡선"]||[]).forEach(s=> 점 += (s["점"]||[]).length);
+  if(head) head.textContent =
+    `계열 ${num(cur["곡선"].length)}개 · 점 ${num(점)}개 — ` + (cur["말"]||"");
+  wrap.textContent = "";
+  const byName = {};
+  cur["곡선"].forEach(s => { (byName[s.name] = byName[s.name] || []).push(s); });
+  Object.keys(byName).sort().forEach(name=>{
+    const box = el("div","chart");
+    box.appendChild(el("div","t", name));
+    const cv = document.createElement("canvas");
+    box.appendChild(cv);
+    const lg = el("div","legend");
+    byName[name].forEach((s,i)=>{
+      const sp = el("span");
+      const sw = el("i"); sw.style.background = colorOf(i); sw.style.height="3px";
+      sp.appendChild(sw);
+      sp.appendChild(document.createTextNode(
+        `${s.split} (${num((s["점"]||[]).length)}점)` + (s["솎음"] ? " 🔴솎음" : "")));
+      lg.appendChild(sp);
+    });
+    box.appendChild(lg);
+    wrap.appendChild(box);
+    drawCurve(cv, byName[name]);
+  });
+}
+
+function fit(cv, h, w){
+  const dpr = window.devicePixelRatio || 1;
+  const W = w || cv.clientWidth || 320;
+  cv.width = Math.round(W*dpr); cv.height = Math.round(h*dpr);
+  cv.style.height = h + "px";
+  if(w) cv.style.width = w + "px";
+  const g = cv.getContext("2d"); g.setTransform(dpr,0,0,dpr,0,0);
+  g.clearRect(0,0,W,h);
+  return {g, w:W, h};
+}
+
+function drawCurve(cv, series){
+  const H = 150, P = {l:44, r:8, t:8, b:22};
+  const {g,w,h} = fit(cv, H);
+  let xs=[], ys=[];
+  series.forEach(s => (s["점"]||[]).forEach(p=>{
+    if(p[0]!==null && p[0]!==undefined) xs.push(p[0]); ys.push(p[1]); }));
+  if(!ys.length) return;                       // 점이 없으면 **아무것도 안 그린다**
+  let x0=Math.min.apply(null,xs), x1=Math.max.apply(null,xs);
+  let y0=Math.min.apply(null,ys), y1=Math.max.apply(null,ys);
+  if(x1===x0) x1 = x0 + 1;
+  if(y1===y0){ y0 -= 0.5; y1 += 0.5; }
+  const pad = (y1-y0)*0.08; y0 -= pad; y1 += pad;
+  const X = v => P.l + (v-x0)/(x1-x0)*(w-P.l-P.r);
+  const Y = v => h-P.b - (v-y0)/(y1-y0)*(h-P.t-P.b);
+  g.strokeStyle = "#3f3f46"; g.lineWidth = 1;
+  g.beginPath(); g.moveTo(P.l, P.t); g.lineTo(P.l, h-P.b); g.lineTo(w-P.r, h-P.b); g.stroke();
+  g.fillStyle = "#71717a"; g.font = "10px ui-monospace,monospace";
+  [[y1,P.t+3],[ (y0+y1)/2, (P.t+h-P.b)/2 ],[y0, h-P.b]].forEach(([v,yy])=>{
+    g.fillText(v.toPrecision(3), 2, yy+3);
+    g.strokeStyle = "#333336"; g.beginPath();
+    g.moveTo(P.l, Y(v)); g.lineTo(w-P.r, Y(v)); g.stroke();
+  });
+  g.fillText(String(x0), P.l, h-6);
+  const lx = String(x1); g.fillText(lx, w-P.r-lx.length*6, h-6);
+  series.forEach((s,i)=>{
+    g.strokeStyle = colorOf(i); g.lineWidth = 1.5; g.beginPath();
+    let started = false, k = 0;
+    (s["점"]||[]).forEach(p=>{
+      const xv = (p[0]===null||p[0]===undefined) ? (k++) : p[0];
+      const X0 = X(xv), Y0 = Y(p[1]);
+      if(!started){ g.moveTo(X0,Y0); started = true; } else g.lineTo(X0,Y0);
+    });
+    g.stroke();
+    if((s["점"]||[]).length === 1){             // 점 하나는 선이 아니다 --- 점으로
+      const p = s["점"][0];
+      g.fillStyle = colorOf(i);
+      g.beginPath(); g.arc(X(p[0]===null?0:p[0]), Y(p[1]), 2.5, 0, 6.284); g.fill();
+    }
+  });
+}
+
+// ── 🔴 실시간 --- 새로 붙은 줄만 이어 읽는다 ──────────────────────
+function stopPoll(){ if(STATE.poll){ clearTimeout(STATE.poll); STATE.poll = null; } }
+function maybePoll(live){
+  stopPoll();
+  const b = String((live||{})["뱃지"]||"");
+  if(b.indexOf("도는 중")<0 && b.indexOf("멈춘 지")<0) return;   // 끝난 run 은 안 쫓는다
+  STATE.poll = setTimeout(pollOnce, 1500);
+}
+async function pollOnce(){
+  STATE.poll = null;
+  const id = STATE.sel;
+  const d = await get("/api/trainlog/tail?id=" + encodeURIComponent(id)
+                      + "&since_bytes=" + STATE.since);
+  if(id !== STATE.sel) return;                 // 그 사이 다른 run 을 골랐다
+  STATE.pollN += 1;
+  if(d["차단됨"]){ return; }
+  const live = d["살아 있나"]||{};
+  const cur = (STATE.detail||{})["곡선"];
+  const 새 = d["새 점"]||[];
+  if(cur && cur["곡선"] && 새.length){
+    // 🔴 **점은 API 가 준 것만** 붙인다 --- 없는 점을 만들지 않는다
+    const key = s => s.split + " " + s.name;
+    const idx = {}; cur["곡선"].forEach(s => idx[key(s)] = s);
+    새.forEach(p=>{
+      let s = idx[key(p)];
+      if(!s){ s = {split:p.split, name:p.name, "점":[], "점 수":0};
+              cur["곡선"].push(s); idx[key(p)] = s; }
+      s["점"].push([p.step, p.value]);
+    });
+    cur["점 수"] = (cur["점 수"]||0) + 새.length;
+    const E = STATE.curveEls||{};
+    drawAllCurves(E.head, E.wrap, cur);
+  }
+  STATE.since = d["다음 바이트"] || STATE.since;
+  const line = $("#liveline");
+  if(line) line.textContent =
+    `실시간 ${STATE.pollN}회 이어 읽음 · 이번에 새 점 ${num(새.length)}개`
+    + ` · 오프셋 ${num(STATE.since)}바이트 · ${live["뱃지"]||""}`
+    + (String(live["뱃지"]||"").indexOf("멈춘")>=0 ? (" — " + (live["말"]||"")) : "");
+  maybePoll(live);
+}
+
+// ── 🔴 블록 다이어그램 --- 박스 · 화살표 · 잔차 · `N×` · 상태 얹기 ──
+// 🔴 **배치를 손으로 안 적는다.** 노드도 간선도 `arch.json` 에서 오고, 깊이·레인은
+// 서버가 위상 정렬로 계산한다. 모형 코드가 바뀌면 이 그림은 **저절로** 바뀐다.
+function blockCard(d){
+  const B = d["블록 그림"]||{};
+  const S = d["노드 상태"]||{};
+  const c = el("div","card");
+  const bar = el("div","rowbar");
+  bar.appendChild(el("h2",null,"아키텍처 (블록 그래프 · 조작 가능)"));
+  const fb = el("button", STATE.fold ? "on" : null,
+    STATE.fold ? "N× 로 접는 중 (누르면 전부 펼침)" : "전부 펼친 중 (누르면 접음)");
+  fb.onclick = ()=>{ STATE.fold = !STATE.fold; STATE.expand = []; loadDetail(); };
+  bar.appendChild(fb);
+  const qi = document.createElement("input");
+  qi.type = "search"; qi.placeholder = "노드 이름 검색"; qi.value = STATE.q;
+  qi.style.width = "9rem";
+  qi.oninput = ()=>{ STATE.q = qi.value; redrawStatic(); };
+  bar.appendChild(qi);
+  const zl = el("label",null,"확대 ");
+  const zr = document.createElement("input");
+  zr.type = "range"; zr.min = "0.5"; zr.max = "2.5"; zr.step = "0.1";
+  zr.value = String(STATE.zoom); zr.style.width = "6rem";
+  zr.onchange = ()=>{ STATE.zoom = Number(zr.value); redrawStatic(); };
+  zl.appendChild(zr); bar.appendChild(zl);
+  c.appendChild(bar);
+  // 종류별 숨기기 --- 🔴 숨긴 것과 안 그린 화살표를 **센다**
+  const fbar = el("div","rowbar");
+  fbar.appendChild(el("span","muted","종류 필터:"));
+  Object.keys(B["색"]||{}).forEach(k=>{
+    const lb = el("label",null,"");
+    const cb = document.createElement("input");
+    cb.type = "checkbox"; cb.checked = STATE.hide.indexOf(k) < 0;
+    cb.onchange = ()=>{
+      STATE.hide = cb.checked ? STATE.hide.filter(x=>x!==k)
+                              : STATE.hide.concat([k]);
+      redrawStatic();
+    };
+    const sw = el("i","swatch"); sw.style.background = B["색"][k];
+    lb.appendChild(cb); lb.appendChild(sw);
+    lb.appendChild(document.createTextNode(k));
+    fbar.appendChild(lb);
+  });
+  c.appendChild(fbar);
+  c.appendChild(stateBar(S));
+  if(!B["그릴 수 있나"]){
+    const e = el("div","empty");
+    e.appendChild(el("b","🔴 아무것도 그리지 않는다 — 아키텍처를 못 읽었다"));
+    e.appendChild(el("div",null,(B["왜"])||""));
+    c.appendChild(e); return c;
+  }
+  const s = B["요약"]||{};
+  c.appendChild(el("div","muted",
+    `${B["모형 클래스"]||"?"} · 총 파라미터 ${num(B["총 파라미터"])} · ` + (B["말"]||"")));
+  c.appendChild(el("div","muted",
+    `블록 ${num(s["블록 수"])}개(접기 전 ${num(s["접기 전 블록 수"])}) · `
+    + `화살표 ${num(s["화살표 수"])}개(접기 전 ${num(s["접기 전 간선 수"])}) · `
+    + `🔴 건너뛴 화살표(잔차·우회) ${num(s["🔴 건너뛴 화살표(잔차·우회)"])}개 · `
+    + `분기 ${num(s["분기 노드(나가는 간선 2개 이상)"])} · `
+    + `합류 ${num(s["합류 노드(들어오는 간선 2개 이상)"])}`));
+  c.appendChild(el("div","muted",
+    "간선 출처: " + (B["간선 출처"]||"?") + " — " + (B["🔴 간선 단서"]||"")));
+  if(B["🔴 입력 노드"]) c.appendChild(el("div","muted", B["🔴 입력 노드"]));
+  c.appendChild(el("div","muted", B["🔴 접기 결과"]||""));
+  (B["접은 것"]||[]).forEach(f=> c.appendChild(el("div","note",
+    `🔴 접었다: ${f["대표"]} 를 ${f["배수"]}× 로 그린다 — 같은 꼴 형제 `
+    + `${f["접힌 id"].length}개(${f["그릇"]} · ${f["그릇 종류"]})가 화면에 없다. `
+    + `박스 오른쪽 끝(＋)을 누르면 펴진다`)));
+  if((B["펼친 것"]||[]).length) c.appendChild(el("div","note",
+    "🔴 눌러서 펼친 자리: " + B["펼친 것"].join(", ")));
+  const wrapper = el("div","scroll");
+  const cv = document.createElement("canvas");
+  wrapper.appendChild(cv);
+  c.appendChild(wrapper);
+  dragScroll(wrapper);
+  const 센것 = drawBlocks(cv, B, S);
+  c.appendChild(el("div","muted",
+    `그린 박스 ${num(센것.박스)}개 · 그린 화살표 ${num(센것.화살표)}개`
+    + (센것.숨김 ? ` · 🔴 종류 필터로 숨긴 박스 ${num(센것.숨김)}개 · `
+                 + `그래서 안 그린 화살표 ${num(센것.숨긴화살표)}개` : "")
+    + (STATE.q ? ` · 검색 「${STATE.q}」에 맞은 박스 ${num(센것.검색)}개` : "")
+    + ` · 상태를 얹은 박스 ${num(센것.상태)}개 · 🔴 못 잰 박스 ${num(센것.못잼)}개`));
+  const lg = el("div","legend");
+  Object.keys(B["색"]||{}).forEach(k=>{
+    const sp = el("span");
+    const sw = el("i","swatch"); sw.className = "swatch";
+    sw.style.background = B["색"][k]; sp.appendChild(sw);
+    sp.appendChild(document.createTextNode(k)); lg.appendChild(sp);
+  });
+  const sk = el("span"); const si = el("i");
+  si.style.background = "#d97706"; si.style.height = "3px";
+  sk.appendChild(si); sk.appendChild(document.createTextNode("건너뛴 화살표(잔차·우회)"));
+  lg.appendChild(sk);
+  c.appendChild(lg);
+  c.appendChild(el("div","muted",
+    "박스를 누르면 그 층만 뉴런 단위로 내려간다(아래 카드)."));
+  return c;
+}
+
+// 🔴 **학습 중 상태를 그래프 위에 얹는 자리.** 없으면 회색이고 「못 잼」이라 적는다.
+function stateBar(S){
+  const box = el("div","rowbar");
+  if(!S || !S["잴 수 있나"]){
+    const w = el("div","info");
+    w.appendChild(el("b","🔴 이 run 은 노드 상태를 안 기록했다 — 못 잼"));
+    w.appendChild(el("div",null, (S&&(S["왜"]||S["말"]))||""));
+    w.appendChild(el("div",null,
+      "🔴 그래서 박스를 **회색**으로 둔다. 추정하거나 보간하면 그 순간 실패다 — "
+      + "곡선 지어내기 금지와 같은 규율이다. 기록하려면 학습 쪽에서 "
+      + "`r.log_node(step=…, node=…, grad_norm=…)` 을 부르면 된다."));
+    return w;
+  }
+  const sel = document.createElement("select");
+  (S["지표 이름"]||[]).forEach(n=>{ const o = document.createElement("option");
+    o.value = n; o.textContent = n; if(n===S["고른 지표"]) o.selected = true;
+    sel.appendChild(o); });
+  sel.onchange = ()=>{ STATE.nmetric = sel.value; loadDetail(); };
+  box.appendChild(el("span","muted","노드에 얹은 지표"));
+  box.appendChild(sel);
+  const 단계 = S["단계"]||[];
+  const r = document.createElement("input");
+  r.type = "range"; r.min = "0"; r.max = String(Math.max(0,단계.length-1));
+  r.step = "1"; r.style.width = "12rem";
+  r.value = String(Math.max(0, 단계.indexOf(S["고른 단계"])));
+  const lab = el("span","muted", " step " + num(S["고른 단계"])
+    + " (기록된 단계 " + num(단계.length) + "개 중)");
+  r.oninput = ()=>{ lab.textContent = " step " + num(단계[Number(r.value)])
+    + " (기록된 단계 " + num(단계.length) + "개 중)"; };
+  r.onchange = ()=>{ STATE.step = 단계[Number(r.value)]; loadDetail(); };
+  box.appendChild(r); box.appendChild(lab);
+  const w = el("div");
+  w.appendChild(box);
+  w.appendChild(el("div","muted", S["말"]||""));
+  if(S["🔴 단계를 옮겼나"]) w.appendChild(el("div","note", S["🔴 단계를 옮겼나"]));
+  if(S["단계 솎음"]) w.appendChild(el("div","note", S["단계 솎음"]));
+  if(S["🔴 이 단계에 값이 없는 노드"])
+    w.appendChild(el("div","note", "🔴 이 단계에 값이 없는 노드: "
+      + S["🔴 이 단계에 값이 없는 노드"].join(", ")));
+  return w;
+}
+
+const BW = 186, BH = 66, DX = 210, DY = 106, MX = 24, MY = 20;
+// 상태 색 --- 낮음(차가움) → 높음(뜨거움). **로그 눈금**이고 눈금을 화면에 적는다.
+function heat(t){
+  const c = [[59,130,246],[34,197,94],[250,204,21],[249,115,22],[239,68,68]];
+  const x = Math.max(0, Math.min(0.9999, t)) * (c.length-1);
+  const i = Math.floor(x), f = x - i;
+  const a = c[i], b = c[Math.min(c.length-1,i+1)];
+  return "rgb(" + Math.round(a[0]+(b[0]-a[0])*f) + ","
+       + Math.round(a[1]+(b[1]-a[1])*f) + ","
+       + Math.round(a[2]+(b[2]-a[2])*f) + ")";
+}
+function fmt(v){
+  if(v===null||v===undefined) return "못 잼";
+  const a = Math.abs(v);
+  if(a!==0 && (a<0.001 || a>=100000)) return v.toExponential(2);
+  return String(Math.round(v*10000)/10000);
+}
+function drawBlocks(cv, B, S){
+  let blocks = B["블록"]||[], arrows = B["화살표"]||[];
+  const 전체 = blocks.length;
+  if(STATE.hide.length)
+    blocks = blocks.filter(b=> STATE.hide.indexOf(b["색 갈래"]) < 0);
+  const live = {};
+  blocks.forEach(b=> live[b["id"]] = 1);
+  const 그릴화살표 = arrows.filter(a=> live[a.from] && live[a.to]);
+  let maxLane = 0, maxDepth = 0;
+  blocks.forEach(b=>{ if(b["레인"]>maxLane) maxLane = b["레인"];
+                      if(b["깊이"]>maxDepth) maxDepth = b["깊이"]; });
+  const z = STATE.zoom || 1;
+  const W = MX*2 + (maxLane+1)*DX + 110;       // 오른쪽 110px 은 잔차 선이 도는 길
+  const H = MY*2 + (maxDepth+1)*DY;
+  const {g} = fit(cv, H*z, W*z);
+  g.scale(z, z);
+  // 상태 눈금 --- 로그 눈금(값이 몇 자리씩 차이 난다)
+  const 값 = (S && S["잴 수 있나"]) ? (S["값"]||{}) : {};
+  const lo = Math.log10(Math.max(1e-12, S && S["최소"] ? S["최소"] : 1e-12));
+  const hi = Math.log10(Math.max(1e-12, S && S["최대"] ? S["최대"] : 1e-12));
+  const norm = v => (hi>lo) ? (Math.log10(Math.max(1e-12,v))-lo)/(hi-lo) : 0.5;
+  const pos = {};
+  blocks.forEach(b=>{
+    const x = MX + b["레인"]*DX, y = MY + b["깊이"]*DY;
+    pos[b["id"]] = {x, y, w:BW, h:BH, b};
+  });
+  // 묶음 상자 --- 그림 1 의 `Nx` 처럼 점선으로 두른다
+  (B["묶음 상자"]||[]).forEach(box=>{
+    const ms = (box["블록"]||[]).map(i=>pos[i]).filter(Boolean);
+    if(!ms.length) return;
+    let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;
+    ms.forEach(p=>{ x0=Math.min(x0,p.x-10); y0=Math.min(y0,p.y-16);
+                    x1=Math.max(x1,p.x+p.w+10); y1=Math.max(y1,p.y+p.h+10); });
+    g.strokeStyle = "#8b8b93"; g.setLineDash([4,3]); g.lineWidth = 1;
+    roundRect(g, x0, y0, x1-x0, y1-y0, 8); g.stroke(); g.setLineDash([]);
+    g.fillStyle = "#a1a1aa"; g.font = "10px ui-sans-serif,sans-serif";
+    g.fillText(box["라벨"]||"", x0+6, y0+11);
+  });
+  // 화살표 --- 차례는 곧게, **건너뜀은 옆으로 돌아가는 곡선**(잔차)
+  그릴화살표.forEach(a=>{
+    const p = pos[a.from], q = pos[a.to];
+    if(!p||!q) return;
+    const skip = a["건너뜀"] > 1;
+    g.strokeStyle = skip ? "#d97706" : "#9aa0a6";
+    g.fillStyle = g.strokeStyle;
+    g.lineWidth = skip ? 1.6 : 1.2;
+    if(skip){
+      const lane = MX + (maxLane+1)*DX + 26 + (a["건너뜀"]%3)*22;
+      g.beginPath();
+      g.moveTo(p.x+p.w, p.y+p.h/2);
+      g.bezierCurveTo(lane, p.y+p.h/2, lane, q.y+q.h/2, q.x+q.w, q.y+q.h/2);
+      g.stroke();
+      head(g, q.x+q.w+7, q.y+q.h/2, Math.PI);
+    } else {
+      const x0 = p.x+p.w/2, y0 = p.y+p.h, x1 = q.x+q.w/2, y1 = q.y;
+      g.beginPath(); g.moveTo(x0,y0);
+      if(Math.abs(x0-x1) < 1){ g.lineTo(x1,y1-6); }
+      else { g.bezierCurveTo(x0, y0+(y1-y0)*0.55, x1, y1-(y1-y0)*0.55, x1, y1-6); }
+      g.stroke();
+      head(g, x1, y1-1, Math.PI/2);
+    }
+  });
+  // 박스 --- 색은 종류, **아래 막대는 학습 상태**(없으면 회색 「못 잼」)
+  let 검색맞음 = 0, 상태있음 = 0, 못잼 = 0;
+  const qq = (STATE.q||"").toLowerCase();
+  blocks.forEach(b=>{
+    const p = pos[b["id"]];
+    const 맞음 = qq && String(b["id"]).toLowerCase().indexOf(qq) >= 0;
+    if(맞음) 검색맞음 += 1;
+    g.globalAlpha = (qq && !맞음) ? 0.32 : 1;
+    const fill = (B["색"]||{})[b["색 갈래"]] || "#e0ded8";
+    g.fillStyle = fill; g.strokeStyle = "#00000055"; g.lineWidth = 1;
+    roundRect(g, p.x, p.y, p.w, p.h, 10); g.fill(); g.stroke();
+    if(STATE.drill === b["id"] || 맞음){
+      g.strokeStyle = 맞음 ? "#4ade80" : "#d97706"; g.lineWidth = 2.4;
+      roundRect(g, p.x-2, p.y-2, p.w+4, p.h+4, 12); g.stroke();
+    }
+    g.fillStyle = "#17181a";
+    g.font = "600 11.5px ui-sans-serif,sans-serif";
+    let t = b["이름"] + (b["접힘 배수"]>1 ? ("   " + b["접힘 배수"] + "×") : "");
+    g.fillText(clip(g,t,p.w-30), p.x+8, p.y+16);
+    g.font = "10px ui-sans-serif,sans-serif"; g.fillStyle = "#33363a";
+    g.fillText(clip(g, b["종류"] + (b["활성함수"] ? (" + " + b["활성함수"]) : ""),
+                    p.w-14), p.x+8, p.y+30);
+    g.fillStyle = "#4a4d52";
+    const s2 = (b["모양"]||"모양 못 읽음")
+      + (b["파라미터 수"]===null||b["파라미터 수"]===undefined ? ""
+         : ("   " + Number(b["파라미터 수"]).toLocaleString("ko-KR") + "p"));
+    g.fillText(clip(g,s2,p.w-14), p.x+8, p.y+42);
+    // 🔴 상태 막대 --- 값이 **있을 때만** 색이 붙는다
+    const v = 값[b["id"]];
+    const bx = p.x+8, by = p.y+p.h-11, bw = p.w-16;
+    g.fillStyle = "#00000018"; g.fillRect(bx, by, bw, 7);
+    if(v===undefined){
+      못잼 += 1;
+      g.fillStyle = "#6b6f76"; g.font = "9px ui-sans-serif,sans-serif";
+      g.fillText((S&&S["잴 수 있나"] ? "🔴 못 잼" : "상태 못 잼"), bx+2, by+6.5);
+    } else {
+      상태있음 += 1;
+      const tt = norm(v);
+      g.fillStyle = heat(tt); g.fillRect(bx, by, Math.max(2, bw*tt), 7);
+      g.fillStyle = "#17181a"; g.font = "9px ui-mono,ui-monospace,monospace";
+      const lab = (S["고른 지표"]||"") + " " + fmt(v);
+      g.fillText(clip(g, lab, bw-4), bx+2, by+6.5);
+    }
+    // 접힌 박스는 오른쪽 끝에 **＋** --- 누르면 그 자리만 펴진다
+    if(b["접힘 배수"]>1){
+      g.fillStyle = "#00000022";
+      roundRect(g, p.x+p.w-26, p.y+4, 22, 18, 6); g.fill();
+      g.fillStyle = "#17181a"; g.font = "600 12px ui-sans-serif,sans-serif";
+      g.fillText(STATE.expand.indexOf(b["id"])>=0 ? "−" : "＋", p.x+p.w-21, p.y+17);
+    }
+    g.globalAlpha = 1;
+  });
+  cv.onclick = (ev)=>{
+    const r = cv.getBoundingClientRect();
+    const sx = (cv.clientWidth||W*z) / (W*z);
+    const x = (ev.clientX - r.left)/sx/z, y = (ev.clientY - r.top)/sx/z;
+    let hit = null, plus = false;
+    blocks.forEach(b=>{ const p = pos[b["id"]];
+      if(x>=p.x && x<=p.x+p.w && y>=p.y && y<=p.y+p.h){
+        hit = b["id"];
+        plus = (b["접힘 배수"]>1) && (x >= p.x+p.w-28) && (y <= p.y+24);
+      }});
+    if(!hit) return;
+    if(plus){                                  // 🔴 그 자리만 펴고 접는다
+      STATE.expand = (STATE.expand.indexOf(hit)>=0)
+        ? STATE.expand.filter(x2=>x2!==hit) : STATE.expand.concat([hit]);
+      loadDetail();
+    } else {                                   // 🔴 뉴런 단위로 파고든다
+      STATE.drill = (STATE.drill===hit) ? null : hit; redrawStatic();
+    }
+  };
+  return {박스: blocks.length, 화살표: 그릴화살표.length,
+          숨김: 전체 - blocks.length, 숨긴화살표: arrows.length - 그릴화살표.length,
+          검색: 검색맞음, 상태: 상태있음, 못잼: 못잼};
+}
+// 끌어서 이동 --- 확대해 놓고 손으로 미는 것이 스크롤바보다 빠르다
+function dragScroll(box){
+  let on = null;
+  box.onmousedown = (e)=>{ on = {x:e.clientX, y:e.clientY,
+    l:box.scrollLeft, t:box.scrollTop}; box.style.cursor = "grabbing"; };
+  box.onmousemove = (e)=>{ if(!on) return;
+    box.scrollLeft = on.l - (e.clientX-on.x);
+    box.scrollTop = on.t - (e.clientY-on.y); };
+  const off = ()=>{ on = null; box.style.cursor = "grab"; };
+  box.onmouseup = off; box.onmouseleave = off;
+  box.style.cursor = "grab";
+}
+function head(g,x,y,ang){
+  g.save(); g.translate(x,y); g.rotate(ang);
+  g.beginPath(); g.moveTo(0,0); g.lineTo(-6,-3.4); g.lineTo(-6,3.4);
+  g.closePath(); g.fill(); g.restore();
+}
+function roundRect(g,x,y,w,h,r){
+  g.beginPath();
+  g.moveTo(x+r,y); g.lineTo(x+w-r,y); g.quadraticCurveTo(x+w,y,x+w,y+r);
+  g.lineTo(x+w,y+h-r); g.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+  g.lineTo(x+r,y+h); g.quadraticCurveTo(x,y+h,x,y+h-r);
+  g.lineTo(x,y+r); g.quadraticCurveTo(x,y,x+r,y); g.closePath();
+}
+function redrawStatic(){
+  // 곡선은 건드리지 않는다(실시간 점을 잃지 않게) --- 그림 카드만 다시 그린다
+  const d = STATE.detail; if(!d) return;
+  saveHash();
+  const box = $("#detail");
+  const cards = box.children;
+  if(cards.length < 4) return;
+  // 3번째·4번째 카드가 블록/뉴런이다 --- 통째로 다시 만든다
+  const nb = blockCard(d), nn = neuronCard(d["뉴런"]);
+  box.replaceChild(nb, cards[2]);
+  box.replaceChild(nn, cards[3]);
+}
+
+// ── 🔴 뉴런 단위 드릴다운 --- 자른 개수·기준을 화면에 적는다 ───────
+function neuronCard(n){
+  const c = el("div","card");
+  const bar = el("div","rowbar");
+  bar.appendChild(el("h2",null,"뉴런 단위 (드릴다운)"));
+  const lab = el("label",null,"층당 최대 뉴런 ");
+  const rng = document.createElement("input");
+  rng.type = "range"; rng.min = "4"; rng.max = "256"; rng.step = "4";
+  rng.value = String(STATE.maxN);
+  const shown = el("span","muted", " " + STATE.maxN + "개");
+  rng.oninput = ()=>{ shown.textContent = " " + rng.value + "개"; };
+  rng.onchange = ()=>{ STATE.maxN = Number(rng.value); loadDetail(); };
+  lab.appendChild(rng); lab.appendChild(shown);
+  bar.appendChild(lab);
+  if(STATE.drill){
+    const bt = el("button",null,"전체 층 보기 (지금: " + STATE.drill + ")");
+    bt.onclick = ()=>{ STATE.drill = null; redrawStatic(); };
+    bar.appendChild(bt);
+  }
+  c.appendChild(bar);
+  if(!n || !n["그릴 수 있나"]){
+    const e = el("div","empty");
+    e.appendChild(el("b","🔴 아무것도 그리지 않는다 — 아키텍처를 못 읽었다"));
+    e.appendChild(el("div",null,(n&&n["왜"])||""));
+    c.appendChild(e); return c;
+  }
+  // 🔴 무엇을 몇 개로 잘랐나 --- **화면에 그대로 적는다.**
+  c.appendChild(el("div","note", n["말"]));
+  c.appendChild(el("div","note", n["🔴 간선을 몇 개 중 몇 개 그렸나"]||""));
+  c.appendChild(el("div","muted", (n["자르기 역산"]||{})["🔴 어떻게 정했나"]||""));
+  if(!STATE.drill){
+    c.appendChild(el("div","info",
+      "위 블록 다이어그램에서 박스를 누르면 그 층만 뉴런으로 내려간다. "
+      + "지금은 층마다 무엇을 몇 개로 잘랐는지 표로만 적는다."));
+  } else {
+    const cv = document.createElement("canvas");
+    const wr = el("div","scroll"); wr.appendChild(cv); c.appendChild(wr);
+    drawNeurons(cv, n, STATE.drill);
+    const lg = el("div","legend");
+    lg.appendChild(el("span", null, n["가중치를 읽었나"]
+      ? "간선 굵기·색 = 가중치 세기(붉은색 음수 · 푸른색 양수)"
+      : "🔴 가중치를 못 읽어 **구조만** 그렸다 — 굵기에 뜻이 없다"));
+    c.appendChild(lg);
+  }
+  const t = el("table");
+  t.appendChild(rowOf("th",["층","종류","전체 뉴런","그린 뉴런","잘림",
+                            "무슨 기준으로 골랐나"]));
+  (n["층"]||[]).forEach(L=> t.appendChild(rowOf("td",
+    [L["이름"], L["종류"], num(L["전체 뉴런"]), num(L["그린 뉴런"]),
+     L["잘림"] ? "🔴 잘림" : "전부", L["고른 기준"]])));
+  c.appendChild(t);
+  c.appendChild(el("h3",null,"간선 — 몇 개 중 몇 개를 그렸나"));
+  const t2 = el("table");
+  t2.appendChild(rowOf("th",["from","to","전체 뉴런쌍","그릴 수 있는 쌍","그린 선",
+                             "방식","기준"]));
+  (n["🔴 간선 표"]||[]).forEach(e=> t2.appendChild(rowOf("td",
+    [e["from"], e["to"], num(e["전체 뉴런쌍"]), num(e["그릴 수 있는 뉴런쌍"]),
+     num(e["그린 선"]), e["방식"], e["기준"]])));
+  c.appendChild(t2);
+  if((n["잘린 층"]||[]).length)
+    c.appendChild(el("div","note",
+      "🔴 잘린 층 " + n["잘린 층"].length + "개 — 위 표의 「잘림」 줄이 그것이다"));
+  c.appendChild(el("div","muted", n["🔴 이 그림의 가정"]||""));
+  return c;
+}
+function rowOf(tag, cells){
+  const tr = document.createElement("tr");
+  cells.forEach(v=>{ const td=document.createElement(tag);
+    td.textContent = v===null||v===undefined?"—":String(v); tr.appendChild(td); });
+  return tr;
+}
+
+// 드릴다운 그림 --- 고른 층 하나 + 그 층에 **실제로 붙은** 앞뒤 층만 그린다
+function drawNeurons(cv, n, focus){
+  const L = n["층"]||[];
+  const E = (n["간선"]||[]).filter(e=> e.from===focus || e.to===focus);
+  const 앞 = E.filter(e=>e.to===focus).map(e=>e.from);
+  const 뒤 = E.filter(e=>e.from===focus).map(e=>e.to);
+  const cols = [앞, [focus], 뒤].map(ids=> ids.map(i=> L.find(x=>x.id===i))
+                                             .filter(Boolean));
+  const maxDots = Math.max(1, ...L.filter(x=>cols.some(c=>c.includes(x)))
+                                  .map(x=>x["그린 뉴런"]||1));
+  const maxRows = Math.max(1, ...cols.map(c=>c.length));
+  const H = Math.max(260, Math.min(1400, 60 + maxDots*11*Math.min(maxRows,3)));
+  const W = 720;
+  const {g} = fit(cv, H, W);
+  const colX = [110, 360, 610];
+  const pos = {};
+  cols.forEach((col,ci)=>{
+    const slot = (H-70) / Math.max(1,col.length);
+    col.forEach((layer, ri)=>{
+      const k = layer["그린 뉴런"]||0;
+      const top = 46 + ri*slot + 6;
+      const 높이 = Math.max(10, slot - 26) * (0.35 + 0.65*(layer["크기 눈금"]||1));
+      const pts = [];
+      for(let j=0;j<k;j++){
+        const y = (k===1) ? (top+높이/2) : top + 높이*(j/(k-1));
+        pts.push([colX[ci], y]);
+      }
+      pos[layer.id] = pts;
+      // 🔴 잘린 층은 **크기가 보이게** --- 전체 수를 로그 눈금 띠로 그린다
+      if(layer["잘림"]){
+        g.fillStyle = "rgba(217,119,6,0.20)";
+        g.fillRect(colX[ci]-13, top-4, 26, 높이+8);
+        g.fillStyle = "#d97706"; g.font = "9px ui-sans-serif,sans-serif";
+        g.fillText("⋮ 접힘", colX[ci]-16, top+높이+16);
+      }
+      g.fillStyle = "#d4d4d8"; g.font = "10px ui-sans-serif,sans-serif";
+      const t1 = (layer["이름"]||"") + " · " + (layer["종류"]||"");
+      g.fillText(clip(g,t1,220), colX[ci]-100, top-14);
+      g.fillStyle = layer["잘림"] ? "#d97706" : "#71717a";
+      g.fillText((layer["잘림"] ? "🔴 " : "") + num(layer["그린 뉴런"]) + "/"
+                 + num(layer["전체 뉴런"]) + "개", colX[ci]-100, top-2);
+    });
+  });
+  // 간선 --- 고른 선만 긋고, 세기를 모르면 **띠 하나**로 묶는다
+  E.forEach(e=>{
+    const A = pos[e.from], Bp = pos[e.to];
+    if(!A||!Bp||!A.length||!Bp.length) return;
+    if(e["그리기 방식"] === "띠"){
+      g.fillStyle = "rgba(161,161,170,0.13)";
+      g.beginPath();
+      g.moveTo(A[0][0], A[0][1]); g.lineTo(Bp[0][0], Bp[0][1]);
+      g.lineTo(Bp[Bp.length-1][0], Bp[Bp.length-1][1]);
+      g.lineTo(A[A.length-1][0], A[A.length-1][1]);
+      g.closePath(); g.fill();
+      g.strokeStyle = "rgba(161,161,170,0.5)"; g.lineWidth = 1;
+      g.beginPath(); g.moveTo(A[0][0], A[0][1]); g.lineTo(Bp[0][0], Bp[0][1]);
+      g.moveTo(A[A.length-1][0], A[A.length-1][1]);
+      g.lineTo(Bp[Bp.length-1][0], Bp[Bp.length-1][1]); g.stroke();
+      return;
+    }
+    let mx = 0;
+    (e["선"]||[]).forEach(t=>{ const a = Math.abs(t[2]); if(a>mx) mx = a; });
+    (e["선"]||[]).forEach(t=>{
+      const b = t[0], a = t[1], v = t[2];
+      if(!A[a] || !Bp[b]) return;
+      const s = mx>0 ? Math.abs(v)/mx : 0;
+      g.strokeStyle = (v>=0 ? "rgba(96,165,250," : "rgba(248,113,113,")
+        + (0.08+0.7*s*s).toFixed(3) + ")";
+      g.lineWidth = 0.3 + 1.6*s;
+      g.beginPath(); g.moveTo(A[a][0],A[a][1]); g.lineTo(Bp[b][0],Bp[b][1]); g.stroke();
+    });
+  });
+  Object.keys(pos).forEach(id=>{
+    const layer = L.find(x=>x.id===id);
+    pos[id].forEach(p=>{
+      g.fillStyle = (id===focus) ? "#f4f4f5"
+                  : (layer && layer["종류"]==="입력" ? "#C2C0B6" : "#a1a1aa");
+      g.beginPath(); g.arc(p[0],p[1],2.6,0,6.284); g.fill();
+    });
+  });
+  if(!E.length){
+    g.fillStyle = "#d97706"; g.font = "11px ui-sans-serif,sans-serif";
+    g.fillText("🔴 이 층에 붙은 간선이 하나도 없다", 24, H-14);
+  }
+}
+function clip(g, s, maxw){
+  while(s.length>4 && g.measureText(s).width > maxw) s = s.slice(0,-2);
+  return s;
+}
+
+// ── 아키텍처 표 ───────────────────────────────────────────────────
+function archCard(a){
+  const c = el("div","card");
+  c.appendChild(el("h2",null,"아키텍처 (층 · 간선 원문)"));
+  if(!a || !a["읽음"]){
+    const e = el("div","empty");
+    e.appendChild(el("b","🔴 아키텍처 못 읽음"));
+    e.appendChild(el("div",null,(a&&a["왜 못 읽음"])||""));
+    e.appendChild(el("div",null,(a&&a["말"])||""));
+    c.appendChild(e); return c;
+  }
+  c.appendChild(el("div","muted",
+    `출처 ${a["출처"]} · 총 파라미터 ${num(a["총 파라미터"])}`
+    + (a["학습 가능 파라미터"]!==undefined
+       ? ` (학습 가능 ${num(a["학습 가능 파라미터"])})` : "")
+    + ` · 간선 출처 ${a["간선 출처"]} · ${a["말"]||""}`));
+  const t = el("table");
+  t.appendChild(rowOf("th",["이름","종류","입력","출력","뉴런 수","파라미터 수",
+                            "활성함수","묶음","가중치"]));
+  (a["층"]||[]).forEach(L=>{
+    const w = L["가중치"]||{};
+    t.appendChild(rowOf("td",[L["이름"], L["종류"],
+      (L["입력 모양"]||[]).join("×")||"모름", (L["출력 모양"]||[]).join("×")||"모름",
+      num(L["뉴런 수"]), num(L["파라미터 수"]), L["활성함수"]||"—",
+      (L["묶음"]||"—") + (L["묶음 종류"] ? (" ("+L["묶음 종류"]+")") : ""),
+      w["담음"] ? ("값 " + (w["모양"]||[]).join("×"))
+                : ("🔴 " + (w["왜"]||"없다"))]));
+  });
+  c.appendChild(t);
+  c.appendChild(el("h3",null,"간선 원문"));
+  c.appendChild(el("code", null,
+    (a["간선"]||[]).map(e=>e.from+" → "+e.to).join("   |   ") || "없음"));
+  if(a["접은 활성함수"]){
+    c.appendChild(el("div","muted","접은 활성함수(앞 층의 칸으로 넣었다): "
+      + a["접은 활성함수"].map(x=>x["모듈"]+"("+x["종류"]+")→"+x["붙인 층"]).join(", ")));
+  }
+  if(a["병렬로 본 그릇"]){
+    c.appendChild(el("div","note","🔴 `torch.fx` 가 실패해 **가정으로** 이었고, "
+      + "다음 그릇은 나란히 놓았다(이것도 가정이다): "
+      + a["병렬로 본 그릇"].map(x=>x["그릇"]+"("+x["종류"]+" · "+x["형제 수"]+"개)").join(", ")));
+  }
+  return c;
+}
+
+// ── 🔴 런 비교 탭 --- 사이드바 · 겹친 곡선 · 평행좌표 · 중요도 · 으뜸 ──
+let CMP = {data:null, target:"", hidden:[], sort:null, q:"", re:false};
+function cmpColor(i){ return colorOf(i); }
+async function loadCompare(){
+  const box = $("#cmp"); box.textContent = "";
+  box.appendChild(el("div","card muted","읽는 중…"));
+  const d = await get("/api/trainlog/compare"
+                      + (CMP.target ? ("?target=" + encodeURIComponent(CMP.target)) : ""));
+  CMP.data = d;
+  box.textContent = "";
+  if(d["오류"]){ box.appendChild(el("div","empty", d["오류"])); return; }
+  box.appendChild(cmpSideCard(d));
+  box.appendChild(cmpBestCard(d));
+  box.appendChild(cmpCurveCard(d));
+  box.appendChild(cmpParallelCard(d));
+  box.appendChild(cmpImportanceCard(d));
+}
+function cmpRows(d){
+  const rows = (d["run"]||[]).slice();
+  let f = rows;
+  if(CMP.q){
+    if(CMP.re){
+      let rx = null;
+      try{ rx = new RegExp(CMP.q, "i"); }catch(e){ rx = null; }
+      f = rx ? rows.filter(r=> rx.test(r["run_id"]) || rx.test(r["이름"]||"")) : [];
+    } else {
+      const q = CMP.q.toLowerCase();
+      f = rows.filter(r=> (r["run_id"]+" "+(r["이름"]||"")).toLowerCase().indexOf(q)>=0);
+    }
+  }
+  if(CMP.sort){
+    f = f.slice().sort((a,b)=>{
+      const va = (a["최종 지표"]||{})[CMP.sort], vb = (b["최종 지표"]||{})[CMP.sort];
+      if(va===undefined && vb===undefined) return 0;
+      if(va===undefined) return 1;
+      if(vb===undefined) return -1;
+      return vb - va;                        // 내림차순
+    });
+  }
+  return f;
+}
+function visible(r){ return CMP.hidden.indexOf(r["run_id"]) < 0; }
+function cmpSideCard(d){
+  const c = el("div","card");
+  const rows = cmpRows(d);
+  const 보임 = rows.filter(visible).length;
+  const bar = el("div","rowbar");
+  bar.appendChild(el("h2",null,
+    `run 목록 (${num(d["run 수"])}개 중 ${num(보임)}개를 그리고 있다)`));
+  const qi = document.createElement("input");
+  qi.type="search"; qi.placeholder="run 검색"; qi.value=CMP.q; qi.style.width="10rem";
+  qi.oninput = ()=>{ CMP.q = qi.value; refreshCmp(); };
+  bar.appendChild(qi);
+  const rl = el("label",null,"");
+  const rc = document.createElement("input");
+  rc.type="checkbox"; rc.checked = CMP.re;
+  rc.onchange = ()=>{ CMP.re = rc.checked; refreshCmp(); };
+  rl.appendChild(rc); rl.appendChild(document.createTextNode(" 정규식"));
+  bar.appendChild(rl);
+  const sel = document.createElement("select");
+  const o0 = document.createElement("option");
+  o0.value=""; o0.textContent="정렬: 없음(기록 순)"; sel.appendChild(o0);
+  (d["지표 후보"]||[]).forEach(m=>{ const o=document.createElement("option");
+    o.value=m["이름"]; o.textContent="정렬: "+m["이름"]+" 내림차순";
+    if(CMP.sort===m["이름"]) o.selected=true; sel.appendChild(o); });
+  sel.onchange = ()=>{ CMP.sort = sel.value || null; refreshCmp(); };
+  bar.appendChild(sel);
+  c.appendChild(bar);
+  c.appendChild(el("div","muted",
+    `🔴 지표가 하나도 없는 run ${num(d["🔴 지표 없는 run 수"])}개 — 구조만 있는 run 이다`));
+  const t = el("table");
+  t.appendChild(rowOf("th",["보임","색","run","모형","최종 "+(d["고른 지표"]||"지표"),
+                            "지표 줄","자"]));
+  rows.forEach((r,i)=>{
+    const tr = document.createElement("tr");
+    const td = ()=>{ const x=document.createElement("td"); tr.appendChild(x); return x; };
+    const eye = document.createElement("input");
+    eye.type="checkbox"; eye.checked = visible(r);
+    eye.onchange = ()=>{
+      CMP.hidden = eye.checked ? CMP.hidden.filter(x=>x!==r["run_id"])
+                               : CMP.hidden.concat([r["run_id"]]);
+      refreshCmp();
+    };
+    td().appendChild(eye);
+    const dot = el("span","swatch"); dot.style.background = cmpColor(i);
+    td().appendChild(dot);
+    const a = td(); a.textContent = r["run_id"];
+    td().textContent = r["모형 클래스"] || "—";
+    const v = (r["최종 지표"]||{})[d["고른 지표"]];
+    td().textContent = (v===undefined) ? "🔴 없음" : String(Math.round(v*1e6)/1e6);
+    td().textContent = num(r["지표 줄 수"]);
+    td().textContent = r["자 없음"] ? "🔴 자 없음" : "자 있음";
+    t.appendChild(tr);
+  });
+  c.appendChild(t);
+  return c;
+}
+function cmpBestCard(d){
+  const c = el("div","card");
+  c.appendChild(el("h2",null,"으뜸 run"));
+  const b = d["으뜸"]||{};
+  if(!b["잴 수 있나"]){
+    const e = el("div","empty"); e.appendChild(el("b","🔴 못 잰다"));
+    e.appendChild(el("div",null,b["🔴 왜"]||"")); c.appendChild(e); return c;
+  }
+  const g = el("div","grid");
+  [["가장 큰 값",b["가장 큰 값"]],["가장 작은 값",b["가장 작은 값"]]].forEach(([k,v])=>{
+    const e = el("div","kv");
+    e.appendChild(el("div","k", k + " — " + b["지표"]));
+    e.appendChild(el("div","v", String(v["값"])));
+    e.appendChild(el("div","k", v["run_id"]));
+    g.appendChild(e);
+  });
+  c.appendChild(g);
+  c.appendChild(el("div","note", b["🔴 어느 쪽이 좋은가"]||""));
+  return c;
+}
+function cmpCurveCard(d){
+  const c = el("div","card");
+  const O = d["겹친 곡선"]||{};
+  const bar = el("div","rowbar");
+  bar.appendChild(el("h2",null,"여러 run 겹친 곡선 — " + (O["지표"]||"지표 없음")));
+  const sel = document.createElement("select");
+  (d["지표 후보"]||[]).forEach(m=>{ const o=document.createElement("option");
+    o.value=m["이름"]; o.textContent=m["이름"]+" ("+m["run 수"]+" run);";
+    if(m["이름"]===d["고른 지표"]) o.selected=true; sel.appendChild(o); });
+  sel.onchange = ()=>{ CMP.target = sel.value; loadCompare(); };
+  bar.appendChild(sel);
+  c.appendChild(bar);
+  const 곡선 = (O["곡선"]||[]).filter(x=> CMP.hidden.indexOf(x["run_id"])<0);
+  c.appendChild(el("div","note", O["🔴 몇 개 중 몇 개"]||""));
+  if(!곡선.length){
+    const e = el("div","empty");
+    e.appendChild(el("b","🔴 곡선을 그리지 않는다 — 그릴 run 이 없다"));
+    c.appendChild(e); return c;
+  }
+  const cv = document.createElement("canvas");
+  c.appendChild(cv);
+  drawCurve(cv, 곡선.map(x=>({split:x["run_id"], name:O["지표"], "점":x["점"]})));
+  const lg = el("div","legend");
+  곡선.forEach((x,i)=>{ const sp=el("span"); const sw=el("i");
+    sw.style.background=colorOf(i); sw.style.height="3px"; sp.appendChild(sw);
+    sp.appendChild(document.createTextNode(x["run_id"]
+      + (x["솎음"] ? " 🔴솎음" : ""))); lg.appendChild(sp); });
+  c.appendChild(lg);
+  return c;
+}
+function cmpParallelCard(d){
+  const c = el("div","card");
+  const P = d["평행좌표"]||{};
+  c.appendChild(el("h2",null,"평행좌표 (설정 축 × run)"));
+  c.appendChild(el("div","muted", P["🔴 축은 어디서 왔나"]||""));
+  c.appendChild(el("div","note", P["🔴 못 한 것"]||""));
+  if(P["🔴 버린 축"]) c.appendChild(el("div","muted",
+    "🔴 버린 축: " + P["🔴 버린 축"].map(x=>x["축"]+"("+x["왜"]+")").join(" · ")));
+  if(!P["그릴 수 있나"]){
+    const e = el("div","empty");
+    e.appendChild(el("b","🔴 평행좌표를 그리지 않는다"));
+    e.appendChild(el("div",null,P["왜"]||"")); c.appendChild(e); return c;
+  }
+  const rows = cmpRows(d).filter(visible);
+  const cv = document.createElement("canvas");
+  const wr = el("div","scroll"); wr.appendChild(cv); c.appendChild(wr);
+  const 센 = drawParallel(cv, P["축"]||[], rows, d["고른 지표"]);
+  c.appendChild(el("div","muted",
+    `축 ${num((P["축"]||[]).length)}개 · run ${num(rows.length)}개 중 `
+    + `**선 ${num(센.선)}개**를 그렸다 · 🔴 축 값이 없어 선이 끊긴 자리 ${num(센.빈칸)}개`
+    + ` · 색은 최종 ${d["고른 지표"]||"지표"}(값 없는 run 은 회색)`));
+  return c;
+}
+function drawParallel(cv, 축, rows, target){
+  const W = Math.max(560, 130*축.length + 120), H = 300;
+  const {g} = fit(cv, H, W);
+  const L = 60, R = W-60, T = 40, Bm = 60;
+  const xs = 축.map((a,i)=> 축.length===1 ? (L+R)/2 : L + (R-L)*i/(축.length-1));
+  g.strokeStyle = "#4b4f56"; g.lineWidth = 1;
+  g.fillStyle = "#a1a1aa"; g.font = "10px ui-sans-serif,sans-serif";
+  축.forEach((a,i)=>{
+    g.beginPath(); g.moveTo(xs[i], T); g.lineTo(xs[i], H-Bm); g.stroke();
+    const t = a["이름"] + (a["종류"]==="수치" ? "" : " (범주)");
+    g.fillText(clip(g,t,120), xs[i]-Math.min(60, t.length*3), T-16);
+    if(a["종류"]==="수치"){
+      g.fillText(String(a["최대"]), xs[i]+4, T+8);
+      g.fillText(String(a["최소"]), xs[i]+4, H-Bm-2);
+    } else {
+      g.fillText("값 " + a["값 가짓수"] + "가지", xs[i]+4, T+8);
+    }
+  });
+  const vals = rows.map(r=> (r["최종 지표"]||{})[target])
+                   .filter(v=> v!==undefined);
+  const lo = vals.length ? Math.min.apply(null, vals) : 0;
+  const hi = vals.length ? Math.max.apply(null, vals) : 1;
+  let 선 = 0, 빈칸 = 0;
+  rows.forEach(r=>{
+    const v = (r["최종 지표"]||{})[target];
+    g.strokeStyle = (v===undefined) ? "rgba(161,161,170,0.45)"
+      : heat(hi>lo ? (v-lo)/(hi-lo) : 0.5);
+    g.lineWidth = 1.6;
+    let started = false, 그림 = false;
+    g.beginPath();
+    축.forEach((a,i)=>{
+      const raw = (r["하이퍼파라미터(평평하게)"]||{})[a["이름"]];
+      if(raw===undefined || raw===null){ started = false; 빈칸 += 1; return; }
+      let t;
+      if(a["종류"]==="수치"){
+        t = (a["최대"]>a["최소"]) ? (Number(raw)-a["최소"])/(a["최대"]-a["최소"]) : 0.5;
+      } else {
+        const list = a["값 목록"]||[];
+        const k = list.indexOf(String(raw));
+        if(k<0){ started=false; 빈칸 += 1; return; }
+        t = list.length>1 ? k/(list.length-1) : 0.5;
+      }
+      const y = (H-Bm) - t*(H-Bm-T);
+      if(!started){ g.moveTo(xs[i], y); started = true; }
+      else { g.lineTo(xs[i], y); 그림 = true; }
+    });
+    g.stroke();
+    if(그림) 선 += 1;
+  });
+  // 컬러바
+  g.fillStyle = "#a1a1aa"; g.font = "10px ui-sans-serif,sans-serif";
+  g.fillText("색 = 최종 " + (target||"지표") + "  (" + fmt(lo) + " → " + fmt(hi) + ")",
+             L, H-20);
+  for(let i=0;i<60;i++){
+    g.fillStyle = heat(i/59); g.fillRect(L + i*3, H-16, 3, 8);
+  }
+  return {선: 선, 빈칸: 빈칸};
+}
+function cmpImportanceCard(d){
+  const c = el("div","card");
+  const I = d["중요도"]||{};
+  c.appendChild(el("h2",null,"파라미터 중요도 · 상관"));
+  c.appendChild(el("div","muted", I["계산법"]||""));
+  if(!I["잴 수 있나"]){
+    const e = el("div","empty");
+    e.appendChild(el("b",
+      `🔴 못 잰다 — run 이 ${num(I["지금 run 수"])}개다. 최소 ${num(I["최소 필요"])}개 필요`));
+    e.appendChild(el("div",null, I["🔴 왜"]||""));
+    e.appendChild(el("div",null,
+      "🔴 막대를 그리지 않는다. 표본이 모자란데 막대를 그리면 그것이 조항 60 위반이다."));
+    c.appendChild(e); return c;
+  }
+  const t = el("table");
+  t.appendChild(rowOf("th",["축","중요도 |ρ|","상관 ρ","널 95분위","널보다 큰가","순열 p"]));
+  (I["표"]||[]).forEach(r=> t.appendChild(rowOf("td",
+    [r["축"], r["중요도(|ρ|)"], r["상관(ρ)"], r["널 95분위"],
+     r["널보다 큰가"] ? "예" : "🔴 아니다", r["순열 p"]])));
+  c.appendChild(t);
+  c.appendChild(el("div","note", I["🔴 단서"]||""));
+  return c;
+}
+function refreshCmp(){ if(CMP.data){ const b=$("#cmp"); b.textContent="";
+  b.appendChild(cmpSideCard(CMP.data)); b.appendChild(cmpBestCard(CMP.data));
+  b.appendChild(cmpCurveCard(CMP.data)); b.appendChild(cmpParallelCard(CMP.data));
+  b.appendChild(cmpImportanceCard(CMP.data)); } }
+function showTab(which){
+  const arch = which === "arch";
+  $("#archview").style.display = arch ? "" : "none";
+  $("#cmp").style.display = arch ? "none" : "";
+  $("#tabArch").className = arch ? "on" : "";
+  $("#tabCmp").className = arch ? "" : "on";
+  $("#tabnote").textContent = arch
+    ? "모형 하나의 그래프 · 노드 상태 · 뉴런 드릴다운"
+    : "run 여럿을 나란히 — 중요도는 run 이 모자라면 「못 잼」으로 비운다";
+  if(!arch && !CMP.data) loadCompare();
+}
+$("#tabArch").onclick = ()=> showTab("arch");
+$("#tabCmp").onclick = ()=> showTab("cmp");
+showTab("arch");
+
+$("#hideDemo").onchange = drawRuns;
+$("#reload").onclick = loadRuns;
+let _rz = 0;                                   // 창을 늘일 때마다 다시 그린다(디바운스)
+window.addEventListener("resize", ()=>{
+  clearTimeout(_rz); _rz = setTimeout(()=>{ if(STATE.sel) loadDetail(); }, 400);
+});
+loadHash();                                    // 주소에 적힌 상태를 먼저 읽는다
+loadRuns();
+</script>
+</body>
+</html>

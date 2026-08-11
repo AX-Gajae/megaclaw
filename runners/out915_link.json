@@ -1,0 +1,285 @@
+{
+ "팔": "915-ㅋ",
+ "단계": "1 — 부착 계수",
+ "🔴 자": "뗐다 — 계수만. 효과 추정 없음",
+ "사전등록": "docs/prereg_915_grid.md",
+ "코드 sha256": {
+  "runners/grid915_link.py": "9b07b2fc12f30c41",
+  "runners/out901h_link.py": "cc18ce3549d30f3f",
+  "ingest/lifepop915.py": "1c36d4004635e6b7"
+ },
+ "시작 UTC": "2026-08-11T06:59:53+00:00",
+ "받아 둔 지평(실측)": {
+  "처음~끝": [
+   "2025-01-01",
+   "2026-07-31"
+  ],
+  "날짜 수": 577,
+  "달력 일수": 577,
+  "빠진 날": 0,
+  "서로 다른 격자(19개월 합집합)": 8880,
+  "🔴 901 이 갖고 있던 것": [
+   "2026-06-01",
+   "2026-07-31",
+   "61일"
+  ]
+ },
+ "② 분모 — 🔴 셋이 다르다(조항 60)": {
+  "행 수 대조(챔피언 자료)": {
+   "팝업": {
+    "축행(자료)": 89,
+    "축행(내 id 목록)": 89,
+    "길이 일치": true,
+    "유보 채점행": 65
+   },
+   "시장팝업": {
+    "축행(자료)": 249,
+    "축행(내 id 목록)": 249,
+    "길이 일치": true,
+    "유보 채점행": 126
+   }
+  },
+  "팝업 유보": 65,
+  "시장팝업 유보": 126,
+  "두 도메인 유보 합집합(겹치는 id 제거)": 185,
+  "겹치는 id": 6,
+  "판 유보 전체(12도메인)": 3775,
+  "합집합이 판 유보에서 차지하는 몫": 0.049
+ },
+ "③ 부착 — 도메인별": {
+  "팝업": {
+   "분모": 65,
+   "좌표 있음": 28,
+   "🔴 좌표 열이 없다(링크가 안 닿는다)": 37,
+   "좌표 있는데 서울 상자 밖": 2,
+   "서울 안인데 격자 집합에 없다": 3,
+   "격자에 붙음": 23,
+   "날짜가 지평과 겹침": 65,
+   "🔴 격자 + 날짜 둘 다": 23,
+   "🔴 격자 + 날짜 + ±7일 검증 좌표": 16
+  },
+  "시장팝업": {
+   "분모": 126,
+   "좌표 있음": 77,
+   "🔴 좌표 열이 없다(링크가 안 닿는다)": 49,
+   "좌표 있는데 서울 상자 밖": 4,
+   "서울 안인데 격자 집합에 없다": 0,
+   "격자에 붙음": 73,
+   "날짜가 지평과 겹침": 126,
+   "🔴 격자 + 날짜 둘 다": 73,
+   "🔴 격자 + 날짜 + ±7일 검증 좌표": 53
+  }
+ },
+ "③ 부착 — 유보 합집합(분모 185)": {
+  "분모": 185,
+  "좌표 있음": 102,
+  "🔴 좌표 열이 없다(링크가 안 닿는다)": 83,
+  "좌표 있는데 서울 상자 밖": 6,
+  "서울 안인데 격자 집합에 없다": 3,
+  "격자에 붙음": 93,
+  "날짜가 지평과 겹침": 185,
+  "🔴 격자 + 날짜 둘 다": 93,
+  "🔴 격자 + 날짜 + ±7일 검증 좌표": 67
+ },
+ "🔴 판 유보 3,775 기준": {
+  "격자에 붙음": 93,
+  "격자에 붙음 %": 2.464,
+  "격자+날짜 둘 다": 93,
+  "격자+날짜 %": 2.464,
+  "격자+날짜+±7일": 67
+ },
+ "④ 901 의 날짜 벽이 헐렸나": {
+  "901(두 달)": 1,
+  "915(19개월)": 93,
+  "배수": 93.0,
+  "격자에 붙는 것 중 날짜까지 겹치는 몫": 1.0,
+  "자기시험": {
+   "901 공표 — 좌표 102 / 격자 93 / 두 달 겹침 1(±7일 엄격 0)": true,
+   "내 코드가 두 달로 낸 값": {
+    "좌표 있음": 102,
+    "격자에 붙음(19개월 격자 집합 기준)": 93,
+    "격자+날짜": 1,
+    "격자+날짜+±7일": 0
+   },
+   "🔴 어긋나면": "격자 집합이 다르다(901 은 두 달 8,594 · 나는 19개월 8,880) — 좌표 수와 겹침 수는 같아야 하고 격자 수는 커질 수 있다"
+  }
+ },
+ "⑤ 다른 도메인 — 🔴 「좌표 열이 없다」와 「안 붙는다」를 가른다": {
+  "아이돌": {
+   "파일 수": 282,
+   "서로 다른 키": 40,
+   "지리 낌새 키": "🔴 0개 — 좌표 열이 없다"
+  },
+  "팝업(내부 레코드)": {
+   "파일 수": 380,
+   "서로 다른 키": 248,
+   "지리 낌새 키": [
+    "conditions.capacity",
+    "conditions.capacity.access_type",
+    "conditions.capacity.detail",
+    "conditions.capacity.total_capacity",
+    "conditions.derived.competition.comp_prior_at_venue",
+    "conditions.derived.competition.comp_same_addr_open",
+    "conditions.derived.competition.matched_address",
+    "conditions.location",
+    "conditions.location.city",
+    "conditions.location.district",
+    "conditions.location.foot_traffic_context",
+    "conditions.location.venue_name",
+    "conditions.location.venue_slot",
+    "conditions.location.venue_type",
+    "conditions.scale.venue_traffic_type",
+    "conditions.venue_knowledge",
+    "conditions.venue_knowledge.confidence",
+    "conditions.venue_knowledge.host_traffic_est",
+    "conditions.venue_knowledge.popup_zone_pass_rate",
+    "conditions.venue_knowledge.source",
+    "conditions.venue_knowledge.venue_daily_footfall",
+    "conditions.venue_knowledge.venue_scale_tier",
+    "intervention.attributes.capacity_per_session",
+    "intervention.attributes.venue_prominence"
+   ]
+  },
+  "시장팝업(레코드)": {
+   "파일 수": 647,
+   "서로 다른 키": 100,
+   "지리 낌새 키": [
+    "conditions.capacity",
+    "conditions.capacity.access_type",
+    "conditions.capacity.detail",
+    "conditions.capacity.total_capacity",
+    "conditions.city",
+    "conditions.venue",
+    "conditions.venue_type"
+   ]
+  },
+  "영화": {
+   "원천": "data/state/kobis_axes.json",
+   "행": 887,
+   "서로 다른 키": 25,
+   "지리 낌새 키": [
+    "axes.venue_prominence",
+    "mask.venue_prominence",
+    "why.venue_prominence"
+   ]
+  },
+  "게임": {
+   "원천": "data/state/game_axes.json",
+   "행": 482,
+   "서로 다른 키": 22,
+   "지리 낌새 키": [
+    "axes.venue_prominence",
+    "mask.venue_prominence",
+    "why.venue_prominence"
+   ]
+  },
+  "도서": {
+   "원천": "data/state/book_axes.json",
+   "행": 243,
+   "서로 다른 키": 22,
+   "지리 낌새 키": [
+    "axes.venue_prominence",
+    "mask.venue_prominence",
+    "why.venue_prominence"
+   ]
+  },
+  "모바일": {
+   "원천": "data/state/app_records.json",
+   "행": 1600,
+   "서로 다른 키": 20,
+   "지리 낌새 키": "🔴 0개 — 좌표 열이 없다"
+  },
+  "애니": {
+   "원천": "data/state/anime_axes.json",
+   "행": 3385,
+   "서로 다른 키": 22,
+   "지리 낌새 키": [
+    "axes.venue_prominence",
+    "mask.venue_prominence",
+    "why.venue_prominence"
+   ]
+  },
+  "웹툰": {
+   "원천": "data/state/webtoon_axes.json",
+   "행": 3652,
+   "서로 다른 키": 22,
+   "지리 낌새 키": [
+    "axes.venue_prominence",
+    "mask.venue_prominence",
+    "why.venue_prominence"
+   ]
+  },
+  "펀딩": {
+   "원천": "data/state/funding_axes.json",
+   "행": 2887,
+   "서로 다른 키": 23,
+   "지리 낌새 키": [
+    "axes.venue_prominence",
+    "mask.venue_prominence",
+    "why.venue_prominence"
+   ]
+  },
+  "펀딩(레코드)": {
+   "원천": "data/state/funding_records.json",
+   "행": 2887,
+   "서로 다른 키": 19,
+   "지리 낌새 키": "🔴 0개 — 좌표 열이 없다"
+  },
+  "만화": {
+   "원천": "data/state/manga_axes.json",
+   "행": 5905,
+   "서로 다른 키": 22,
+   "지리 낌새 키": [
+    "axes.venue_prominence",
+    "mask.venue_prominence",
+    "why.venue_prominence"
+   ]
+  },
+  "세계애니": {
+   "원천": "data/state/anime_more.json",
+   "행": 3000,
+   "서로 다른 키": 24,
+   "지리 낌새 키": "🔴 0개 — 좌표 열이 없다"
+  }
+ },
+ "🔴 사전등록 문턱 판정": {
+  "문턱 ①(기질 규모)": {
+   "격자 ≥ 4,000": {
+    "값": 8880,
+    "통과": true
+   },
+   "날짜 ≥ 365": {
+    "값": 577,
+    "통과": true
+   },
+   "행 ≥ 3.0e7": {
+    "값": 146611427,
+    "통과": true
+   },
+   "시간 해상도 = 시간별 24칸": {
+    "값": "24",
+    "통과": true
+   },
+   "통과": true
+  },
+  "문턱 ②(부착)": {
+   "격자에 붙는 유보 ≥ 38": {
+    "값": 93,
+    "통과": true
+   },
+   "격자+날짜 유보 ≥ 38": {
+    "값": 93,
+    "통과": true
+   },
+   "통과": true
+  },
+  "문턱 ③(프로브 가능) → 잴 k": [
+   8,
+   16,
+   32
+  ],
+  "🔴 3단계로 가나": true
+ },
+ "끝 UTC": "2026-08-11T06:59:59+00:00",
+ "초": 5.8
+}

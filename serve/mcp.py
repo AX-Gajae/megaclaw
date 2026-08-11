@@ -36,10 +36,17 @@ def _tools() -> list:
     out = []
     for c in _reg().CAPS:
         rulers = " · ".join(f"[노트 {n}] {w} = {v}" for n, w, v in c["자"])
+        #: 🔴 **층과 떠받치는 출력을 같이 박는다**(노트 911). 창구가 "무엇을 할 수
+        #: 있나" 를 물을 때, **옛 13능력 중 다섯이 ②(결과) 하나**를 떠받치고 ①④⑤ 에
+        #: 붙는 것은 `event_brief` 하나뿐(그것도 「못 잼」을 낸다)이라는 사실이
+        #: 도구 목록에서 보여야 한다.
         out.append({
             "name": c["이름"],
             "description": (f"{c['설명']}\n\n"
-                            f"산출: {c['산출']} · 꼴: {c['꼴']}\n자: {rulers}"),
+                            f"산출: {c['산출']} · 꼴: {c['꼴']}\n"
+                            f"층: {c.get('층')} · 떠받치는 출력: "
+                            f"{' · '.join(c.get('떠받치는 출력') or ['없음'])}\n"
+                            f"자: {rulers}"),
             "inputSchema": c["입력"],
         })
     return out

@@ -22,3 +22,7 @@ data/state/_boardsvc_warm*.npz
 
 # GitHub 100MB 한도 초과 — 원격에서 제외(로컬 유지 · 2026-08-07)
 data/state/funding_pool.json
+
+# 이벤트 표 — 58MB 파생물이다(노트 910). `python3 -m runners.event910_run` 으로 재생성된다.
+# cycle_log/ · visitors 캐시와 같은 이유로 제외한다. 인구조사 수치는 runners/out910_event.json 에 남는다.
+data/state/eventline910.jsonl
