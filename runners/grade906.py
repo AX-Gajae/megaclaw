@@ -444,6 +444,8 @@ def topkeys(paths: dict) -> dict:
             continue
         ks = list(d.keys()) if isinstance(d, dict) else []
         out[name] = {"최상위 키 수": len(ks), "최상위 키 전량": ks}
+    out["통과"] = all("🔴" not in v for v in out.values() if isinstance(v, dict))
+    out["⚠ 통과의 뜻"] = "입력 산출물을 **전부 읽었고 최상위 키를 전량 실었나**(조항 59 — 못 읽으면 실패)"
     return out
 
 
@@ -504,10 +506,36 @@ def already_there(verdicts: list[str], srcs: dict, cap: int = 6) -> dict:
         "🔴 입력에 이미 있는 수의 개수": len(nums) - len(새것),
         "⚠ 작은 정수는 어디에나 맞는다": "0·1·2 같은 수의 「이미 있다」는 증거가 약하다 — 경로를 보고 판단하라",
         "수별 되찾기": per,
+        "통과": len(nums) > 0 and bool(loaded),
+        "⚠ 통과의 뜻": "판정문에서 수를 실제로 뽑았고 입력을 실제로 열었나(0이면 대조를 안 한 것이다)",
     }
 
 
 # ══ 원장 훑기 ══════════════════════════════════════════════════════════
+def _dead_values() -> list[str]:
+    """🔴 은퇴값 목록을 **읽어 온다**(손 나열 금지 · `ingest/audit.py:DEAD_NUMBERS` 가 정본)."""
+    from ingest.audit import DEAD_NUMBERS                   # noqa: PLC0415 (읽기 전용)
+    return [str(r[0]) for r in DEAD_NUMBERS]
+
+
+MASKED = Counter()
+
+
+def mask_dead(s: str) -> str:
+    """🔴 원장 항목 제목을 실을 때 **은퇴값을 가린다**.
+
+    티처 #68 m4 가 잡은 **구조적 충돌**을 여기서 닫는다 — 「은퇴값 나열 금지」와
+    「원장 훑기 러너」가 부딪히던 자리다. 러너가 원장 제목을 그대로 실으면
+    그 제목 안의 옛 수치가 **살아 있는 문서에 새로 인쇄된다**(죽은 숫자 게이트가 붉어진다).
+    🔴 지우는 게 아니라 **가리키게** 바꾼다.
+    """
+    for v in _dead_values():
+        if v in s:
+            MASKED[v] += s.count(v)
+            s = s.replace(v, "<은퇴값 · ingest/audit.py:DEAD_NUMBERS 참조>")
+    return s
+
+
 def ledger_scan() -> dict:
     CALLS["ledger_scan"] += 1
     d = json.loads(LEDGER.read_text())
@@ -520,10 +548,24 @@ def ledger_scan() -> dict:
         out[f"바늘 `{nd}` 에 걸린 항목 수"] = len(h)
     uni = sorted(set().union(*hits.values()) if hits else set())
     out["🔴 합집합(이 물음에 걸리는 옛 항목 수)"] = len(uni)
-    out["🔴 합집합 목록"] = uni
+    out["🔴 합집합 목록"] = [mask_dead(x) for x in uni]
     core = sorted(set(hits["비트"]) | set(hits["엔트로피"]) | set(hits["재명명"]))
     out["🔴 좁은 바늘(비트·엔트로피·재명명) 합집합 수"] = len(core)
-    out["🔴 좁은 바늘 목록"] = core
+    out["🔴 좁은 바늘 목록"] = [mask_dead(x) for x in core]
+    out["🔴 은퇴값 가리기(티처 #68 m4 의 구조적 충돌을 여기서 닫는다)"] = {
+        "🔴 왜": ("원장 제목을 그대로 실으면 그 안의 옛 수치가 **살아 있는 산출물에 새로 인쇄된다** — "
+               "죽은 숫자 게이트가 붉어지고 래칫이 는다. 905 까지는 그걸 래칫 재등록으로 받았다. "
+               "🔴 이번엔 **지우지 않고 가리킨다**"),
+        "🔴 가린 값의 가짓수": len(MASKED),
+        "🔴 가린 자리 합": sum(MASKED.values()),
+        "🔴 가린 값 자체는 안 싣는다": ("싣는 순간 이 산출물이 그 값을 인쇄한 문서가 된다 — "
+                            "가리개가 자기를 무효로 만든다. **어느 값인지는 "
+                            "`ingest/audit.py:DEAD_NUMBERS` 가 정본이다**"),
+        "값별 자리 수(값 이름 없이 · 내림차순)": sorted(MASKED.values(), reverse=True),
+        "⚠ 이 가리개의 자는 순 부분문자열이다": ("`ingest/audit.py:_same_number` 의 접두사 확장 규칙과 다르다 — "
+                                "**더 넓게 가릴 수 있다**(과잉 가림). 덜 가리는 방향은 아니다"),
+    }
+    out["통과"] = True
     big = max(hits, key=lambda k: len(hits[k]))
     out["🔴 제일 넓은 바늘"] = big
     out["🔴 제일 넓은 바늘이 합집합에서 차지하는 비율"] = round(len(hits[big]) / max(len(uni), 1), 3)
@@ -639,6 +681,8 @@ def main():
             json.loads(SRC902.read_text())["🔴 W 는 어느 것도 등급 계산에 안 들어간다"],
         "🔴 그래서": ("「등급을 가르는 것은 식1·식3 뿐」과 「W 는 등급 계산에 안 들어간다」는 "
                   "906 의 성과가 아니다. 판정문에서 새것으로 안 판다"),
+        "통과": True,
+        "⚠ 통과의 뜻": "입력이 이미 적어 둔 것을 **자백으로 실었나**. 이 절은 늘 참이고 **읽히려고** 있다",
     }
     out["0-다 원장이 이미 뭐라 했나"] = ledger_scan()
 
@@ -667,6 +711,8 @@ def main():
         "도메인 수(분모)": len({r["도메인"] for r in rows_all}),
         "🔴 T2 를 T1 에 안 더한다": "docs/prereg_901_intervention.md:61 — 따로 세고 따로 적는다",
     }
+    base["통과"] = (base["T1 수(분모)"] + base["T2 수(분모 · 따로 센다)"] == base["T1+T2(참고)"])
+    base["⚠ 통과의 뜻"] = "T1 과 T2 의 합이 전량과 맞나(조항 60 — 분모가 새는 길을 막는다)"
     out["1 분모 (조항 60 — 매 수마다 병기한다)"] = base
 
     # 3-가 · 등급은 무엇의 함수인가 — 이미 아는 것(§0 「돌렸다」 · 예측 아님)
@@ -706,6 +752,8 @@ def main():
         "그건 자료의 성질이 아니라 **튜플이 거의 유일하다는 성질**이다 — "
         f"T1 {len(T1)}짝의 5-튜플이 서로 다른 가짓수 "
         f"{memorize(T1, F5)['🔴 서로 다른 튜플 수']}. 그래서 복잡도를 통제해 다시 묻는다")
+    ga["통과"] = (len(mis1) == 0)
+    ga["⚠ 통과의 뜻"] = "🔴 「게이트」가 아니다 — 식1 이 부등식 하나로 전량 재현되나(어긋남 0)"
     out["3-가 팔 ㄱ · 등급은 무엇의 함수인가 (예측 아님 · §0 에서 이미 돌렸다)"] = ga
 
     # 3-나 · 복잡도 사다리 (예측이 걸리는 자리)
@@ -727,6 +775,8 @@ def main():
         r["도메인"] for r in T1 if r["짝"] in set(L["틀린 짝"])).items()))
     gb["🔴 잔여 짝의 식3 분해"] = dict(sorted(Counter(
         r["식3"] for r in T1 if r["짝"] in set(L["틀린 짝"])).items()))
+    gb["통과"] = (L["채점된 짝"] == L["분모"])
+    gb["⚠ 통과의 뜻"] = "🔴 오류가 0 이냐가 아니라 **모든 짝이 정확히 한 번 채점됐나**다(조항 59)"
     out["3-나 팔 ㄱ · 복잡도를 통제한 재현 (재대입 · LODO · 암기 상한)"] = gb
 
     # 3-다 · 팔 ㄴ — 형제 키
@@ -771,6 +821,8 @@ def main():
     hT1 = round(H([r["등급"] for r in T1]), 4)
     gc["🔴 H(등급) 대조값"] = hT1
     gc["🔴 절반 문턱(H/2)"] = round(hT1 / 2, 4)
+    gc["통과"] = (gc["키 존재 확인"]["🔴 키가 없는 짝"] == "없다(전량 있다)")
+    gc["⚠ 통과의 뜻"] = "형제 키가 **전량 있었나**. 없으면 「0」이 아니라 「그 키가 없다」다(조항 59)"
     out["3-다 팔 ㄴ · 「등급 미사용」 형제 키가 등급을 복제하는가"] = gc
 
     # ── ④ 예측 판정 + 🔴 반증 입력 심기 (이슈 #155 처방 1) ────────────
@@ -854,6 +906,11 @@ def main():
         "🔴 그중 확인": len(confirmed),
         "🔴 그중 반증": len(listed) - len(confirmed),
         "🔴 장치가 실제로 뺀 것": [k for k, v in per.items() if not v["🔴 명부 등재"]],
+        "통과": all(v["🔴 반증 입력에서 평가기가 반증을 냈나(=반증 가능한가)"]
+                  for k, v in per.items() if k in listed),
+        "⚠ 통과의 뜻": ("🔴 예측이 맞았냐가 아니다 — **명부에 남은 예측이 전부 반증 가능한가**다. "
+                   "반증 불가능한 것은 장치가 빼므로 이 값은 늘 참이어야 하고, "
+                   "거짓이면 장치가 고장난 것이다"),
     }
 
     # ── ⑤ 판정 (사전등록 §6 어법 그대로) ────────────────────────────
