@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import datetime as _dt
 import json
+import os
 import time
 from pathlib import Path
 
@@ -69,7 +70,26 @@ def snapshot() -> dict:
                                      capture_output=True, text=True).stdout.strip()
     out["입력 지문"] = hashlib.sha256(
         json.dumps(targets, ensure_ascii=False, sort_keys=True).encode()).hexdigest()[:12]
-    p = OUTDIR / f"{today}.json"
+    # 🔴 노트 952 수리 --- **「하루 1점 설계」를 뗐다.**
+    #
+    # 사용자 지시(2026-08-12 축자): *「하루 한번만 수집한다거나 그런게 아니라
+    # 모을 수 있는 모든 걸 모아」*.
+    #
+    # 옛 구조는 `YYYY-MM-DD.json` **한 파일을 덮어썼다.** 그래서 같은 날 몇 번을
+    # 돌려도 **남는 점은 하루에 하나**였고, 조회수 차분 곡선의 해상도가 하루로
+    # 고정돼 있었다(`collect.py` 가 아예 「건너뜀」으로 막고 있었다).
+    # 🔴 **바깥 세계가 하루 한 번 변하는 것이 아니라 우리 파일 이름이 그랬다.**
+    #
+    # 이제 **회차마다 다른 파일**로 남긴다: `YYYY-MM-DDTHHMMSSZ.json`.
+    # `WM_YT_DAILY=1` 을 주면 옛 동작(하루 한 파일 덮어쓰기)으로 되돌아간다 ---
+    # 🔴 옛 파일 형식을 읽는 소비자가 있을 수 있어 **문을 남긴다**(있는지는 안 쟀다).
+    if os.environ.get("WM_YT_DAILY") == "1":
+        p = OUTDIR / f"{today}.json"
+        out["🔴 적재 방식"] = "옛 하루1점(WM_YT_DAILY=1)"
+    else:
+        stamp = _dt.datetime.now(_dt.timezone.utc).strftime("%Y-%m-%dT%H%M%SZ")
+        p = OUTDIR / f"{stamp}.json"
+        out["🔴 적재 방식"] = "회차별 파일(952 --- 하루 1점 제한 제거)"
     if p.exists():
         prev = json.loads(p.read_text())
         out["이전 판 이력"] = (prev.get("이전 판 이력") or []) + [

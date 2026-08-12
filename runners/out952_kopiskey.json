@@ -1,0 +1,78 @@
+{
+ "시각(UTC)": "2026-08-12T05:17:53+00:00",
+ "코드sha": "3aa49666f362b7e6d1f608d82c7d8aa0c67116d40db23f8f9e5681fd1d319063",
+ "🔴 무엇을 재는가": "키 발급을 **사람 없이** 끝낼 수 있나. 폼 제출·회원가입은 안 한다",
+ "시도": [
+  {
+   "무엇": "메인",
+   "url": "https://www.kopis.or.kr/por/main/main.do",
+   "HTTP": 200,
+   "바이트": 64616,
+   "폼 개수": 0,
+   "입력칸 개수": 0,
+   "말 나옴": [],
+   "🔴 껍데기 의심": true
+  },
+  {
+   "무엇": "오픈API 안내(추정)",
+   "url": "https://www.kopis.or.kr/por/openApi/openApiIntro.do",
+   "HTTP": 404,
+   "바이트": 3708,
+   "본문머리": " 요청하신 페이지에 에러가 발생하였습니다. (self.__next_s=self.__next_s||[]).push([\"https://www.googletagmanager.com/gtag/js?id=UA-172921662-1\",{}]) (self.__next_s=self.__next_s||"
+  },
+  {
+   "무엇": "키 신청(추정 ㄱ)",
+   "url": "https://www.kopis.or.kr/por/openApi/openApiKey/openApiKeyList.do",
+   "HTTP": 404,
+   "바이트": 3708,
+   "본문머리": " 요청하신 페이지에 에러가 발생하였습니다. (self.__next_s=self.__next_s||[]).push([\"https://www.googletagmanager.com/gtag/js?id=UA-172921662-1\",{}]) (self.__next_s=self.__next_s||"
+  },
+  {
+   "무엇": "키 신청(추정 ㄴ)",
+   "url": "https://www.kopis.or.kr/por/openapi/openApiKeyApply.do",
+   "HTTP": 404,
+   "바이트": 3708,
+   "본문머리": " 요청하신 페이지에 에러가 발생하였습니다. (self.__next_s=self.__next_s||[]).push([\"https://www.googletagmanager.com/gtag/js?id=UA-172921662-1\",{}]) (self.__next_s=self.__next_s||"
+  },
+  {
+   "무엇": "키 신청(추정 ㄷ)",
+   "url": "https://www.kopis.or.kr/por/cs/openApi/openApiKeyIsse.do",
+   "HTTP": 404,
+   "바이트": 3708,
+   "본문머리": " 요청하신 페이지에 에러가 발생하였습니다. (self.__next_s=self.__next_s||[]).push([\"https://www.googletagmanager.com/gtag/js?id=UA-172921662-1\",{}]) (self.__next_s=self.__next_s||"
+  },
+  {
+   "무엇": "개발 가이드(추정)",
+   "url": "https://www.kopis.or.kr/por/openApi/openApiGuide.do",
+   "HTTP": 404,
+   "바이트": 3708,
+   "본문머리": " 요청하신 페이지에 에러가 발생하였습니다. (self.__next_s=self.__next_s||[]).push([\"https://www.googletagmanager.com/gtag/js?id=UA-172921662-1\",{}]) (self.__next_s=self.__next_s||"
+  },
+  {
+   "무엇": "data.go.kr 등록본",
+   "url": "https://www.data.go.kr/data/15000488/openapi.do",
+   "HTTP": 500,
+   "바이트": 2156,
+   "본문머리": " 에러 | 공공데이터포털 function goBack() { history.back(-2); } function goHome() { location.href = \"/index.do\"; } 죄송합니다. 오류 요청하신 페이지를 찾을 수 없습니다. 페이지의 주소가 잘못 입력되었거나, 변경 혹"
+  }
+ ],
+ "집계": {
+  "후보": 7,
+  "HTTP 200": 1,
+  "404 등": 6,
+  "🔴 폼이 실제로 있는 쪽": 0,
+  "폼 있는 곳": []
+ },
+ "🔴 판정": {
+  "키를 얻었나": false,
+  "막혔나": true,
+  "🔴 어떻게 막혔나": "KOPIS 포털이 **자바스크립트로 그리는 SPA** 다 --- 받아 온 HTML 에 `<form>` 이 **0개**이고 클래스 이름이 `styles-module-scss-module__…` 다. 키 신청 화면의 실제 주소를 정적 HTML 에서 못 찾았고, 추정 주소는 전부 404 였다. 🔴 **그러므로 「엔드포인트가 없다」가 아니라 「내가 못 찾았다」이다**(조항 59). 사람이 브라우저로 들어가면 되는 일일 가능성이 높다",
+  "🔴 안 한 것": [
+   "회원가입·로그인을 **안 했다**(정문 원칙 · 자동 폼 제출 안 한다)",
+   "브라우저 렌더링을 **안 했다**(JS 실행 없음)",
+   "data.go.kr 쪽 신청 경로를 **안 밟았다**",
+   "🔴 **사람이 신청하면 되는지는 안 쟀다** --- 이 러너가 답할 수 있는 물음이 아니다"
+  ],
+  "다음이 할 일": "🔴 **사람이 KOPIS 포털에서 이름·이메일로 키를 신청한다.** 키가 오면 `data/lab/sources.json` 의 `kopis` 항목에서 `모듈` 을 채우고 `켬` 을 true 로 바꾸면 끝이다 --- 그게 등기부의 요점이다"
+ }
+}

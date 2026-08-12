@@ -1,0 +1,60 @@
+{
+ "시각": "2026-08-12T05:07:12+00:00",
+ "코드sha": "e42225408f80302165eeb69b52129d5562887c83c88e99dfd6e5bb114b21062a",
+ "ㄱ 도구": {
+  "python": "3.9.6",
+  "pyarrow": "21.0.0",
+  "여유디스크GB": 524.1
+ },
+ "ㄴ HPLT": {
+  "목록": {
+   "코드": 200,
+   "헤더길이": "2577",
+   "받은바이트": 200,
+   "최종url": "https://huggingface.co/api/datasets/HPLT/HPLT2.0_cleaned/tree/main/kor_Hang?limit=8",
+   "머리": "5b7b2274797065223a2266696c65222c"
+  },
+  "첫파일 1MB": {
+   "코드": 200,
+   "헤더길이": "261353830",
+   "받은바이트": 1048576,
+   "최종url": "https://us.aws.cdn.hf.co/xet-bridge-us/6713a6329b9d8eb6844ca835/2baff9d9dcc47cb895c7baaf399dd2d0a1f1250b6d8e2796b4d7d865",
+   "머리": "50415231150415a00e15d6064c152015"
+  }
+ },
+ "ㄷ Kaggle": {
+  "무인증 302": {
+   "코드": 302,
+   "리다이렉트": "https://storage.googleapis.com:443/kaggle-data-sets/2109585/18695903/bundle/archive.zip?X-Goog-Algorithm=GOOG4",
+   "본문머리": ""
+  }
+ },
+ "ㄹ KOPIS": {
+  "키없이": {
+   "코드": 200,
+   "헤더길이": null,
+   "받은바이트": 202,
+   "최종url": "https://kopis.or.kr/openApi/restful/pblprfr?service=&stdate=20260101&eddate=20260131&cpage=1&rows=1",
+   "머리": "3c3f786d6c2076657273696f6e3d2231"
+  }
+ },
+ "ㅁ bq": {
+  "which(PATH)": "/Users/ax/google-cloud-sdk/bin/bq",
+  "존재하는후보": [
+   "/Users/ax/google-cloud-sdk/bin/bq",
+   "/Users/ax/google-cloud-sdk/bin/bq"
+  ],
+  "🔴 PATH": "/Applications/cmux.app/Contents/Resources/bin:/Users/ax/google-cloud-sdk/bin:/Users/ax/.local/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/s"
+ },
+ "ㅂ 기존재고": {
+  "steam_reviews 행": 94484,
+  "sao941 쌍": 1063
+ },
+ "판정": {
+  "HPLT 바이트가 온다": true,
+  "Kaggle 이 서명URL 로 넘긴다": true,
+  "KOPIS 호스트가 응답한다(내용은 ③ 에서 본다)": true,
+  "parquet 을 읽을 도구가 있다": true,
+  "🔴 측정 시작 가능": true
+ }
+}

@@ -26,3 +26,12 @@ data/state/funding_pool.json
 # 이벤트 표 — 58MB 파생물이다(노트 910). `python3 -m runners.event910_run` 으로 재생성된다.
 # cycle_log/ · visitors 캐시와 같은 이유로 제외한다. 인구조사 수치는 runners/out910_event.json 에 남는다.
 data/state/eventline910.jsonl
+
+# 🔴 노트 952 [수집] — 원본 대용량은 git 에 안 넣는다(100MB 한도).
+# **표본과 계수 결과 JSON 만** 커밋한다: runners/out952_count.json · data/ingest/*/sample*.jsonl
+# HPLT 2.0 kor_Hang parquet (464 shard 중 4개 ≈ 1.05GB · CC0-1.0)
+data/ingest/hplt_ko/*.parquet
+# Kaggle fronkongames/steam-games-dataset (309.8MB zip · MIT 업로더 신고)
+data/ingest/steam_games/archive.zip
+data/ingest/steam_games/*.csv
+data/ingest/steam_games/*.json.raw

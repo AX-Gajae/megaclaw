@@ -1,0 +1,214 @@
+{
+ "시각": "2026-08-12T05:09:47+00:00",
+ "코드sha": "2a9b98dbeab11d7a76291df50858832925ca7ca2d55df33c08d78d6f147cbae8",
+ "원천": "KOPIS 공연예술통합전산망 OpenAPI",
+ "라이선스": "data.go.kr 등록본 「이용허락범위 제한 없음」 (지평 조사 인용 · 🔴 이 러너가 직접 확인한 것이 아니다)",
+ "robots": "https://www.kopis.or.kr/robots.txt → `User-agent: * / Allow: /` (직접 받아 읽었다)",
+ "🔴 분모": "내가 만든 후보 23 개(대조군 2 포함). 지평 조사의 「19」와 **이어 붙이지 않는다**",
+ "🔴 예상 행수": "모른다 — 키가 없어 목록 크기를 못 쟀다. 안 쟀다",
+ "엔드포인트": [
+  {
+   "이름": "pblprfr",
+   "무엇": "공연목록",
+   "HTTP": 200,
+   "판정": "살아있다(키없음)",
+   "본문머리": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><dbs><db><returncode>02</returncode><errmsg>SERVICE KEY IS NOT REGISTERED ERROR</errmsg><responsetime>202"
+  },
+  {
+   "이름": "pblprfr/PF000001",
+   "무엇": "공연상세",
+   "HTTP": 200,
+   "판정": "살아있다(키없음)",
+   "본문머리": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><dbs><db><returncode>02</returncode><errmsg>SERVICE KEY IS NOT REGISTERED ERROR</errmsg><responsetime>202"
+  },
+  {
+   "이름": "prfplc",
+   "무엇": "공연시설목록",
+   "HTTP": 200,
+   "판정": "살아있다(키없음)",
+   "본문머리": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><dbs><db><returncode>02</returncode><errmsg>SERVICE KEY IS NOT REGISTERED ERROR</errmsg><responsetime>202"
+  },
+  {
+   "이름": "prfplc/FC000001",
+   "무엇": "공연시설상세",
+   "HTTP": 200,
+   "판정": "살아있다(키없음)",
+   "본문머리": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><dbs><db><returncode>02</returncode><errmsg>SERVICE KEY IS NOT REGISTERED ERROR</errmsg><responsetime>202"
+  },
+  {
+   "이름": "boxoffice",
+   "무엇": "예매상황판",
+   "HTTP": 200,
+   "판정": "살아있다(키없음)",
+   "본문머리": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><dbs><db><returncode>02</returncode><errmsg>SERVICE KEY IS NOT REGISTERED ERROR</errmsg><responsetime>202"
+  },
+  {
+   "이름": "prfstsTotal",
+   "무엇": "공연통계 전체",
+   "HTTP": 200,
+   "판정": "살아있다(다른오류: 시스템 오류가 발생했습니다.)",
+   "본문머리": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><dbs><db><returncode>99</returncode><errmsg>시스템 오류가 발생했습니다.</errmsg><responsetime>2026-08-12 14:09:48</re"
+  },
+  {
+   "이름": "prfstsCate",
+   "무엇": "공연통계 장르별",
+   "HTTP": 200,
+   "판정": "살아있다(다른오류: 시스템 오류가 발생했습니다.)",
+   "본문머리": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><dbs><db><returncode>99</returncode><errmsg>시스템 오류가 발생했습니다.</errmsg><responsetime>2026-08-12 14:09:49</re"
+  },
+  {
+   "이름": "prfstsArea",
+   "무엇": "공연통계 지역별",
+   "HTTP": 200,
+   "판정": "살아있다(다른오류: 시스템 오류가 발생했습니다.)",
+   "본문머리": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><dbs><db><returncode>99</returncode><errmsg>시스템 오류가 발생했습니다.</errmsg><responsetime>2026-08-12 14:09:49</re"
+  },
+  {
+   "이름": "prfstsPrfBy",
+   "무엇": "공연별 통계",
+   "HTTP": 200,
+   "판정": "살아있다(키없음)",
+   "본문머리": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><dbs><db><returncode>02</returncode><errmsg>SERVICE KEY IS NOT REGISTERED ERROR</errmsg><responsetime>202"
+  },
+  {
+   "이름": "prfstsPrfByFct",
+   "무엇": "시설별 통계",
+   "HTTP": 200,
+   "판정": "살아있다(키없음)",
+   "본문머리": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><dbs><db><returncode>02</returncode><errmsg>SERVICE KEY IS NOT REGISTERED ERROR</errmsg><responsetime>202"
+  },
+  {
+   "이름": "prffest",
+   "무엇": "축제목록",
+   "HTTP": 200,
+   "판정": "살아있다(키없음)",
+   "본문머리": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><dbs><db><returncode>02</returncode><errmsg>SERVICE KEY IS NOT REGISTERED ERROR</errmsg><responsetime>202"
+  },
+  {
+   "이름": "prfnew",
+   "무엇": "신규등록공연",
+   "HTTP": 404,
+   "판정": "없다(404)",
+   "본문머리": "{\"success\":false,\"code\":404,\"message\":\"요청한 리소스를 찾을 수 없습니다.\",\"data\":null}"
+  },
+  {
+   "이름": "prfawad",
+   "무엇": "수상작",
+   "HTTP": 200,
+   "판정": "살아있다(키없음)",
+   "본문머리": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><dbs><db><returncode>02</returncode><errmsg>SERVICE KEY IS NOT REGISTERED ERROR</errmsg><responsetime>202"
+  },
+  {
+   "이름": "mnfprfr",
+   "무엇": "지역별 공연",
+   "HTTP": 404,
+   "판정": "없다(404)",
+   "본문머리": "{\"success\":false,\"code\":404,\"message\":\"요청한 리소스를 찾을 수 없습니다.\",\"data\":null}"
+  },
+  {
+   "이름": "boxStatsTotal",
+   "무엇": "예매통계 전체",
+   "HTTP": 404,
+   "판정": "없다(404)",
+   "본문머리": "{\"success\":false,\"code\":404,\"message\":\"요청한 리소스를 찾을 수 없습니다.\",\"data\":null}"
+  },
+  {
+   "이름": "boxStatsCate",
+   "무엇": "예매통계 장르",
+   "HTTP": 200,
+   "판정": "살아있다(다른오류: 시스템 오류가 발생했습니다.)",
+   "본문머리": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><dbs><db><returncode>99</returncode><errmsg>시스템 오류가 발생했습니다.</errmsg><responsetime>2026-08-12 14:09:50</re"
+  },
+  {
+   "이름": "boxStatsArea",
+   "무엇": "예매통계 지역",
+   "HTTP": 404,
+   "판정": "없다(404)",
+   "본문머리": "{\"success\":false,\"code\":404,\"message\":\"요청한 리소스를 찾을 수 없습니다.\",\"data\":null}"
+  },
+  {
+   "이름": "prfstsTotalDay",
+   "무엇": "일별 통계",
+   "HTTP": 404,
+   "판정": "없다(404)",
+   "본문머리": "{\"success\":false,\"code\":404,\"message\":\"요청한 리소스를 찾을 수 없습니다.\",\"data\":null}"
+  },
+  {
+   "이름": "prfstsTotalMonth",
+   "무엇": "월별 통계",
+   "HTTP": 404,
+   "판정": "없다(404)",
+   "본문머리": "{\"success\":false,\"code\":404,\"message\":\"요청한 리소스를 찾을 수 없습니다.\",\"data\":null}"
+  },
+  {
+   "이름": "prfprd",
+   "무엇": "공연기간",
+   "HTTP": 404,
+   "판정": "없다(404)",
+   "본문머리": "{\"success\":false,\"code\":404,\"message\":\"요청한 리소스를 찾을 수 없습니다.\",\"data\":null}"
+  },
+  {
+   "이름": "relateList",
+   "무엇": "관련목록",
+   "HTTP": 404,
+   "판정": "없다(404)",
+   "본문머리": "{\"success\":false,\"code\":404,\"message\":\"요청한 리소스를 찾을 수 없습니다.\",\"data\":null}"
+  },
+  {
+   "이름": "zzz_nosuch_endpoint_A",
+   "무엇": "🔴 대조군(없어야 한다)",
+   "HTTP": 404,
+   "판정": "없다(404)",
+   "본문머리": "{\"success\":false,\"code\":404,\"message\":\"요청한 리소스를 찾을 수 없습니다.\",\"data\":null}"
+  },
+  {
+   "이름": "prfNoSuchThing_B",
+   "무엇": "🔴 대조군(없어야 한다)",
+   "HTTP": 404,
+   "판정": "없다(404)",
+   "본문머리": "{\"success\":false,\"code\":404,\"message\":\"요청한 리소스를 찾을 수 없습니다.\",\"data\":null}"
+  }
+ ],
+ "집계": {
+  "후보(대조군 제외)": 21,
+  "살아있다": 13,
+  "없다(404)": 8,
+  "그밖": 0,
+  "살아있는 이름": [
+   "pblprfr",
+   "pblprfr/PF000001",
+   "prfplc",
+   "prfplc/FC000001",
+   "boxoffice",
+   "prfstsTotal",
+   "prfstsCate",
+   "prfstsArea",
+   "prfstsPrfBy",
+   "prfstsPrfByFct",
+   "prffest",
+   "prfawad",
+   "boxStatsCate"
+  ],
+  "없는 이름": [
+   "prfnew",
+   "mnfprfr",
+   "boxStatsTotal",
+   "boxStatsArea",
+   "prfstsTotalDay",
+   "prfstsTotalMonth",
+   "prfprd",
+   "relateList"
+  ],
+  "🔴 대조군이 실제로 404 를 냈나": true,
+  "대조군 결과": [
+   [
+    "zzz_nosuch_endpoint_A",
+    "없다(404)"
+   ],
+   [
+    "prfNoSuchThing_B",
+    "없다(404)"
+   ]
+  ]
+ }
+}

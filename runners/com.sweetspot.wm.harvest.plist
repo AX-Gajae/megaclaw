@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  상시 수집 데몬 (노트 952 [수집])
+
+  🔴 952 가 고친 것 셋:
+    ① ProgramArguments 가 저장소 밖(/Users/ax/wm_harvest/harvest_daemon.py)을 가리키고
+       있었다 → runners/harvest_daemon.py (버전 관리되는 자리)
+    ② PATH 가 없었다 → launchd 기본 PATH 는 /usr/bin:/bin:/usr/sbin:/sbin 뿐이라
+       gcloud SDK 도 python3.12 도 안 보이고, 그래서 popupsnap 이 **매 회차** 죽었다
+    ③ 이 plist 자체가 저장소에 없었다 → 여기 둔다. 설치는 아래 한 줄
+
+  설치:
+    cp runners/com.sweetspot.wm.harvest.plist ~/Library/LaunchAgents/
+    launchctl bootout gui/$(id -u)/com.sweetspot.wm.harvest 2>/dev/null
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.sweetspot.wm.harvest.plist
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.sweetspot.wm.harvest</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/python3</string>
+    <string>/Users/ax/world_model/runners/harvest_daemon.py</string>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PYTHONPATH</key><string>/Users/ax/world_model</string>
+    <key>WM_HARVEST_INTERVAL</key><string>60</string>
+    <key>PYTHONUNBUFFERED</key><string>1</string>
+    <key>PATH</key><string>/Users/ax/google-cloud-sdk/bin:/Users/ax/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+  <key>WorkingDirectory</key><string>/Users/ax/world_model</string>
+  <key>RunAtLoad</key><true/>
+  <key>KeepAlive</key><true/>
+  <key>StandardOutPath</key><string>/Users/ax/wm_harvest/daemon.out</string>
+  <key>StandardErrorPath</key><string>/Users/ax/wm_harvest/daemon.err</string>
+</dict>
+</plist>
