@@ -93,26 +93,81 @@ def _wait_lock(sec: int = 60) -> bool:
     return not (ROOT / ".git/index.lock").exists()
 
 
+def _gz_ok(path) -> bool:
+    """🔴🔴 티처 #91 C1 (2026-08-12) --- 이 데몬이 **쓰는 중인 gz 를 그대로 커밋**해
+    `data/ingest/wiki_daily/` 넷을 main 에서 잘랐다(`만화` 는 **0 바이트**).
+    「파일이 있다」와 「읽힌다」는 둘이다(조항 59). 끝까지 읽히는 것만 참."""
+    p = Path(path)
+    if not p.exists() or p.stat().st_size == 0:
+        return False
+    try:
+        import gzip
+        with gzip.open(p, "rb") as f:
+            while f.read(1 << 20):
+                pass
+        return True
+    except Exception:                                             # noqa: BLE001
+        return False
+
+
+def _broken_gz(rels) -> list:
+    return [r for r in rels if r.endswith(".gz") and not _gz_ok(ROOT / r)]
+
+
 def _commit(msg: str) -> str:
     if not _wait_lock():
         return "잠금 --- 안 커밋했다(다음 회차 재시도)"
     if _sh(["git", "-c", "core.quotePath=false", "add", "--"] + PATHS)[0] != 0:
         return "add 실패"
-    if not _sh(["git", "-c", "core.quotePath=false", "diff", "--cached", "--name-only"])[1].strip():
+    staged = [x for x in _sh(["git", "-c", "core.quotePath=false", "diff", "--cached",
+                              "--name-only"])[1].split("\n") if x.strip()]
+    if not staged:
         return "바뀐 것 없음"
+    # 🔴 쓰는 중인 gz 는 스테이지에서 뺀다 --- 다음 회차에 온전해지면 담긴다
+    bad = _broken_gz(staged)
+    if bad:
+        _sh(["git", "-c", "core.quotePath=false", "reset", "-q", "HEAD", "--"] + bad)
+        staged = [x for x in staged if x not in bad]
+        if not staged:
+            return "안 커밋했다 --- 쓰는 중인 gz %d개뿐(%s)" % (len(bad), bad[0].split("/")[-1])
     mf = Path("/Users/ax/wm_harvest/_msg.txt")
-    mf.write_text(msg, encoding="utf-8")
-    c, o = _sh(["git", "commit", "-F", str(mf), "--"] + PATHS)
-    return "커밋함" if c == 0 else "commit 실패: " + o[:200]
+    mf.write_text(msg + ("\n🔴 쓰는 중이라 뺀 gz %d개\n" % len(bad) if bad else ""), encoding="utf-8")
+    c, o = _sh(["git", "commit", "-F", str(mf), "--"] + staged)
+    return ("커밋함" + (" (gz %d개 보류)" % len(bad) if bad else "")) if c == 0 \
+        else "commit 실패: " + o[:200]
 
 
 def _revert_noise() -> str:
     """🔴 성장 0 일 때만 부른다. **추적 파일의 수정분만** 되돌린다.
-    새 파일(untracked)은 **건드리지 않는다** --- 그건 진짜 새 자료일 수 있다."""
+    새 파일(untracked)은 **건드리지 않는다** --- 그건 진짜 새 자료일 수 있다.
+
+    🔴🔴 티처 #91 C1: 예전엔 여기서 무조건 `git checkout` 을 돌려 **디스크의 온전한
+    파일을 HEAD 의 잘린 blob 으로 되돌렸다.** 되돌리기는 **HEAD 쪽이 읽히는 경우에만**
+    한다 --- 좋은 것을 나쁜 것으로 바꾸지 않는다."""
     if not _wait_lock():
         return "잠금 --- 안 되돌렸다"
-    c, o = _sh(["git", "-c", "core.quotePath=false", "checkout", "--"] + PATHS)
-    return "되돌렸다(타임스탬프 잡음)" if c == 0 else "되돌리기 실패: " + o[:150]
+    dirty = [x[3:] for x in _sh(["git", "-c", "core.quotePath=false", "status",
+                                 "--porcelain", "--"] + PATHS)[1].split("\n") if x.strip()]
+    keep = []
+    for r in dirty:
+        if not r.endswith(".gz"):
+            continue
+        b = subprocess.run(["git", "show", "HEAD:" + r], cwd=str(ROOT),
+                           capture_output=True).stdout
+        try:
+            import gzip, io
+            with gzip.GzipFile(fileobj=io.BytesIO(b)) as f:
+                while f.read(1 << 20):
+                    pass
+        except Exception:                                         # noqa: BLE001
+            keep.append(r)          # 🔴 HEAD 가 잘렸다 --- 디스크를 지키자
+    tgt = [p for p in PATHS] if not keep else \
+        [x for x in dirty if x not in keep]
+    if keep and not tgt:
+        return "안 되돌렸다 --- HEAD 쪽이 잘린 gz %d개(디스크를 지킨다)" % len(keep)
+    c, o = _sh(["git", "-c", "core.quotePath=false", "checkout", "--"] + tgt)
+    tail = (" · HEAD 가 잘려 지킨 것 %d" % len(keep)) if keep else ""
+    return ("되돌렸다(타임스탬프 잡음)" + tail) if c == 0 else "되돌리기 실패: " + o[:150]
 
 
 def once() -> dict:
@@ -147,7 +202,11 @@ def once() -> dict:
         "브랜치": _sh(["git", "rev-parse", "--abbrev-ref", "HEAD"])[1].strip(),
         "꼬리": out.strip()[-400:],
     }
-    rec["처리"] = (_commit("[수집] 상시 데몬 %s — %s\n\n종료코드 %s\n" % (rec["시각"], why, code))
+    # 🔴 953 --- 접두를 `[수집]` 에서 `[데몬]` 으로. `docs/루프.md` 레인 규칙 6:
+    #    레인은 **판정·탐색·수리 셋뿐**이고 `[수집]` 은 레인이 아니다. 그리고 데몬의
+    #    자동 커밋은 애초에 **시도가 아니라 기계 기록**이라 레인을 가질 물건이 아니다.
+    #    (티처 #91 C4 가 「`grep 수집` 레인 용례」를 셀 때 이 자동 커밋들이 분모에 섞였다.)
+    rec["처리"] = (_commit("[데몬] 상시 수집 %s — %s\n\n종료코드 %s\n" % (rec["시각"], why, code))
                  if real else _revert_noise())
     with LOG.open("a", encoding="utf-8") as f:
         f.write(json.dumps(rec, ensure_ascii=False) + "\n")

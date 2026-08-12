@@ -76,8 +76,49 @@ OUT_DEFAULT = ROOT / "runners/out902b_fiveprime.json"
 STAMP_CODE = ["runners/fiveprime902.py", "runners/quote901.py",
               "lab/gitcall.py", "lab/keyspace.py"]
 
-#: 판정 키 감사의 **필수** 대상. 남의 소유라 고치지 않고 **읽는 쪽에서** 「모른다」로 센다.
-KEYAUDIT_MUST = ["runners/out899a_gates.json"]
+#: 🔴 **953 --- 이 한 줄이 22 사이클 붉음의 원인이었다**(티처 #90 처방 · #91 이 확정).
+#:
+#: 옛 값은 ``["runners/out899a_gates.json"]`` --- **파일 하나 하드코딩**이었다. 그 파일은
+#: ① 절 5 중 `통과` 키가 **0** 이고 ② **남의 소유라 「고치지 않고 센다」**로 이 검사가 스스로
+#: 선언했고 ③ 생산자는 「다른 팔 소유」라 **돌리는 것이 금지**돼 있다.
+#: 🔴 **즉 초록이 도달 불가능하게 정의돼 있었다.** `3 판정 키 규약` **22/22 붉음**은
+#: 게으름이 아니라 **정의의 기록**이었고, 스물세 번째로 세는 것은 이제 정보가 아니다.
+#:
+#: 🔴 **끈 것이 아니라 자리를 옮겼다.** 대상은 이제 **이 사이클이 찍은 산출물**
+#: (`--base`..작업트리에서 바뀐 `runners/out*.json`)이고, 그건 **내가 고칠 수 있는 것**이다 ---
+#: 규약(「모든 절이 `통과` 키를 갖는다」)은 **자기 산출물에 걸릴 때만** 자다.
+#: 옛 파일은 ``--keyaudit runners/out899a_gates.json`` 로 언제든 다시 넣을 수 있다.
+KEYAUDIT_MUST: list = []
+
+#: 🔴 대상에서 **빼는** 것: 이 러너 자신의 산출물(자기 자신을 채점하는 순환)과 도장 파일.
+KEYAUDIT_SKIP = ("out902b_fiveprime", "out952_docstamp", "out953_docstamp")
+
+
+def keyaudit_targets(base: str, head: str) -> dict:
+    """🔴 **이 사이클이 찍은 산출물**을 대상으로 삼는다(953 · 티처 #90 처방).
+
+    분모를 나란히 박는다(조항 60): 바뀐 경로 · 그중 `runners/out*.json` · 뺀 것 · 남은 것.
+    🔴 `-c core.quotepath=false` 를 쓴다 --- 946 이 잡은 병(이스케이프 바늘은 **종료 0** 으로
+    「0개」를 낸다)이 여기서도 그대로 돈다.
+    """
+    rc, out, err = _git(["-c", "core.quotepath=false", "diff", "--name-only", "-z",
+                         "%s..%s" % (base, head)])
+    committed = sorted(p for p in out.split("\0") if p) if rc == 0 else []
+    rc2, out2, _ = _git(["-c", "core.quotepath=false", "status", "--porcelain", "-z"])
+    worktree = sorted(x[3:] for x in out2.split("\0") if len(x) > 3) if rc2 == 0 else []
+    changed = sorted(set(committed) | set(worktree))
+    cand = [p for p in changed
+            if p.startswith("runners/out") and p.endswith(".json")]
+    keep = [p for p in cand if not any(s in p for s in KEYAUDIT_SKIP)]
+    return {
+        "🔴 왜 이 대상인가": ("옛 하드코딩(`out899a_gates.json`)은 **고칠 수 없는 남의 파일**이라 "
+                       "초록이 도달 불가능했다. 자는 **자기 산출물**에 걸어야 자다"),
+        "바뀐 경로(커밋+작업트리)": len(changed),
+        "그중 runners/out*.json": len(cand),
+        "🔴 뺀 것(자기 채점 순환·도장)": sorted(set(cand) - set(keep)) or "없음",
+        "🔴 대상": keep,
+        "🔴 git 오류": err[:200] if rc != 0 else "없음",
+    }
 
 
 # ── 도장 ────────────────────────────────────────────────────────────────
@@ -592,15 +633,16 @@ def run_gates(do_run, tree, consumers, ran_hand=(), exempt=None) -> dict:
 
 
 # ── 3 판정 키 규약 ──────────────────────────────────────────────────────
-def keyaudit(extra) -> dict:
+def keyaudit(extra, targets=None) -> dict:
     """🔴 **`통과` 키가 없는 절을 「모른다」로 세어 드러낸다**(`docs/루프.md:256-258`).
 
     대상 파일은 **남의 소유라 고치지 않는다.** 고치는 대신 **읽는 쪽에서** 센다 ---
     900 의 첫 훑기가 동적 게이트 다섯에서 전부 `None` 을 받고도 초록이었던 길이 그것이다.
     🔴 `None` 은 「통과」가 아니라 **「모른다」**다(조항 59).
     """
+    tg = targets or {}
     per, tot, has, unk = {}, 0, 0, 0
-    for rel in list(dict.fromkeys(KEYAUDIT_MUST + list(extra))):
+    for rel in list(dict.fromkeys(KEYAUDIT_MUST + list(tg.get("🔴 대상") or []) + list(extra))):
         p = ROOT / rel
         if not p.exists():
             per[rel] = {"🔴": "그 파일이 없다(「절이 없다」가 아니다)"}
@@ -634,13 +676,20 @@ def keyaudit(extra) -> dict:
         unk += len(no)
     return {
         "검사": "3 판정 키 규약 --- `통과` 하나로 규약화됐나",
-        "🔴 왜 읽는 쪽에서 하나": "대상 산출물은 남의 소유다. 고치지 않고 **세어 드러낸다**",
+        "🔴 953 --- 대상이 바뀌었다": (
+            "옛 대상은 `out899a_gates.json` **하나 하드코딩**이었고 그건 **고칠 수 없는 남의 파일**이라 "
+            "**초록이 도달 불가능**했다(22/22 붉음 = 정의의 기록 · 티처 #90·#91). "
+            "이제 대상은 **이 사이클이 찍은 산출물**이다 --- 자는 자기 산출물에 걸릴 때만 자다"),
+        "🔴 대상 고르기": tg or "🔴 안 넘어왔다(옛 방식)",
+        "🔴 왜 읽는 쪽에서 하나": "남의 산출물을 소비할 땐 고치지 않고 **세어 드러낸다**(그 규율은 그대로다)",
         "🔴 절 수 합(분모)": tot,
         "`통과` 키가 있는 절 합": has,
         "🔴 모른다(=`통과` 키 없음) 합": unk,
         "파일별": per,
         "통과": (tot > 0 and unk == 0),
         "⚠ 통과의 뜻": "🔴 `통과 == False` 는 「게이트가 실패했다」가 아니라 **「판정을 못 읽는다」**다",
+        "⚠ 대상이 0 이면": ("`통과` 는 **False** 다. 「검사할 게 없다」가 아니라 "
+                       "**「이 사이클이 산출물을 안 찍었다」**로 읽는다(조항 59)"),
     }
 
 
@@ -969,7 +1018,9 @@ def main(argv=None):
     for e in a.exempt:
         k, _, v = e.partition("=")
         exempt[k.strip()] = v.strip() or "🔴 사유가 비었다"
-    st = stamp(KEYAUDIT_MUST + list(a.keyaudit))       # 🔴 시작에서 찍는다
+    # 🔴 953 --- 대상을 **이 사이클이 찍은 산출물**로 정한다(옛 하드코딩 한 줄을 대신한다)
+    ka = keyaudit_targets(a.base, a.head)
+    st = stamp(KEYAUDIT_MUST + list(ka["🔴 대상"]) + list(a.keyaudit))   # 🔴 시작에서 찍는다
 
     ran = list(a.ran)
     if a.gates:
@@ -1009,7 +1060,7 @@ def main(argv=None):
     res["2 게이트"] = run_gates(a.gates, a.tree,
                              _cons if isinstance(_cons, list) else [], ran,
                              exempt=exempt)
-    res["3 판정 키 규약"] = keyaudit(a.keyaudit)
+    res["3 판정 키 규약"] = keyaudit(a.keyaudit, ka)
     res["4 도장 확인"] = stamp_audit()
     res["5 quote901 무변"] = quote_regress(a.quote_ref, a.quote_now)
     res["5-나 무변 시험의 검정력(심어서 확인)"] = quote_power(a.quote_ref)
