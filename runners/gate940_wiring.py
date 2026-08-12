@@ -30,6 +30,7 @@ ROOT = Path("/Users/ax/world_model")
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from lab import keyspace as ks                                 # noqa: E402
 from state import ratio940                                    # noqa: E402
 
 OUT = ROOT / "runners/out940_gate.json"
@@ -249,7 +250,12 @@ def part4() -> dict:
 
 # ══════════════════════════════════════════════ 5 · 작업 트리 (섞지 않고 따로)
 def part5(rev: str) -> dict:
-    dirty = [x for x in git("status", "--porcelain").split("\n") if x.strip()]
+    # 🔴🔴 **949 수리 (티처 #88 C1 · 순㉯)** --- 여기는 947~948 이 「원리상 못 고친다(㉮)」로
+    #    분류한 자리였다. 근거는 「이 파일의 sha 를 산출물이 인용한다」였는데 그 인용은
+    #    **도장**이지 **대조**가 아니다(HEAD 전량에서 이 파일을 대조하는 `.py` 는 **0**).
+    #    막는 것이 아무것도 없으므로 **오늘 고친다** --- 정본 판독기를 지난다.
+    dirty = [x for x in sorted(ks.git_paths("status", "--porcelain", root=ROOT))
+             if x.strip()]
     return {
         "무엇": "🔴 작업 트리는 **커밋된 트리와 안 섞는다**(규약 60) — 여기서 따로 잰다",
         "git status --porcelain 줄 수": len(dirty),

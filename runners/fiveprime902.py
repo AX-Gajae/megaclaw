@@ -252,12 +252,19 @@ def backref(base, head, tree, ran, exempt) -> dict:
     #    `diff62` 를 걸고 **원래 절 1·2 는 안 걸었다**. 여기가 그 둘 중 하나다.
     #    🔴 이 자리는 진짜로 위험하다 --- A(소비자)는 `git grep -z` 가 낸 **참 이름**이고
     #    B(`--ran`)는 **사람이 손으로 친 문자열**이라 두 인코딩이 갈릴 수 있다.
-    d62_notrun = gc.diff62("역참조 소비자(전량)", set(consumers),
+    d62_notrun = gc.diff62_guarded("역참조 소비자(전량)", set(consumers),
                            "돌렸다(--ran)", set(ran),
                            probe=ks.octal_escape, seed_pad=gc.CONTROL_SEED)
-    d62_noreason = gc.diff62("안 돌린 .py", set(notrun_py),
+    d62_noreason = gc.diff62_guarded("안 돌린 .py", set(notrun_py),
                              "사유가 등록된 것(--exempt)", set(exempt),
                              probe=ks.octal_escape, seed_pad=gc.CONTROL_SEED)
+    # 🔴🔴 **949 (티처 #88 ㄷ·ㄹ)** --- 사유에 **자**를 붙인다. 문자열이 아니라 값이다.
+    rulers = gc.exempt_rulers({k: v for k, v in exempt.items() if k in set(notrun_py)},
+                              consumers=consumers)
+    ruled = {k for k, v in rulers.items() if v["🔴 자가 냈나"]}
+    d62_ruled = gc.diff62_guarded(
+        "안 돌린 .py", set(notrun_py), "🔴 사유가 **자를 통과한** 것", set(ruled),
+        probe=ks.octal_escape, seed_pad=gc.CONTROL_SEED)
 
     return {
         "검사": "1 소비자 역참조 --- 🔴 사람이 고르지 않는다(`docs/루프.md:249-253`)",
@@ -294,8 +301,22 @@ def backref(base, head, tree, ran, exempt) -> dict:
         "🔴 사유 없이 안 돌린 .py": no_reason,
         "🔴 조항 62 ㉠ 안 돌린 것(= 소비자 − 돌린 것)": d62_notrun,
         "🔴 조항 62 ㉡ 사유 없이 안 돌린 .py(= 안 돌린 .py − 사유 등록)": d62_noreason,
+        # 🔴 949 --- 사유의 **자**. 「사유가 있다」와 「사유가 참이다」는 둘이다
+        "🔴 사유의 자(949 · 티처 #88 ㄷ)": {
+            "🔴 자가 붙은 사유 수": len([v for v in rulers.values()
+                                if not v["자"].startswith("🔴 자가 없다")]),
+            "🔴 자가 없는 사유 수": len([v for v in rulers.values()
+                                if v["자"].startswith("🔴 자가 없다")]),
+            "🔴 자를 통과한 사유 수": len(ruled),
+            "사유별": rulers,
+        },
+        "🔴 조항 62 ㉡′ 자를 통과한 사유만 B 로(949 · ㉡ 은 구성상 항등이라 자를 바꿨다)":
+            d62_ruled,
+        "🔴 사유가 **자를 못 넘은** 안 돌린 .py": sorted(set(notrun_py) - ruled),
         # 🔴 티처 #87 M4 --- `diff62` 가 낸 판정을 **바깥에서 감싸지 않는다**
-        "통과": (not no_reason) and d62_notrun["통과"] and d62_noreason["통과"],
+        # 🔴 949 --- 「사유가 있다」가 아니라 **「사유가 참이다」**를 요구한다(티처 #88 ㄷ)
+        "통과": ((not no_reason) and d62_notrun["통과"] and d62_noreason["통과"]
+                and not (set(notrun_py) - ruled)),
         "⚠ 통과의 뜻": ("역참조 소비자 중 **실행 가능한 `.py` 가 전부 다시 돌았거나 "
                    "사유가 등록됐나**. 「안 돌렸다」가 하나라도 사유 없이 남으면 실패다. "
                    "🔴 **그리고 위 조항 62 대조 둘이 「모른다」가 아니어야 한다**(티처 #87 M3·M4)"),
@@ -336,8 +357,12 @@ def grepl_regress(base, head, tree=None) -> dict:
                 "통과": False}
     new, _m = _grep_l(needles, tree)
     old = _grep_l_old(needles, tree)
-    rep = gc.diff62("새 판독(`-z`+quotePath=false)", set(new),
-                    "946 판독(날 것)", set(old), probe=ks.octal_escape)
+    #: 🔴🔴 **949 (티처 #88 C3 --- #87 M4 의 재발)**: ① `seed_pad` 를 **넘긴다**
+    #:    ② 아래 `통과` 를 이 대조의 `통과` 와 **AND 로 엮는다**. 948 은 이 절만
+    #:    감싸기를 안 풀었고, 그래서 「조항 62 가 모른다」인데 절이 초록이었다.
+    rep = gc.diff62_guarded("새 판독(`-z`+quotePath=false)", set(new),
+                            "946 판독(날 것)", set(old), probe=ks.octal_escape,
+                            seed_pad=gc.CONTROL_SEED)
 
     #: 🔴 **심은 키 --- `.py` 재분류가 실제로 일어나나**(티처 #86 C2 의 잠복 결함).
     fx = "lab/fixtures/한글이름_고정물.py"
@@ -361,9 +386,17 @@ def grepl_regress(base, head, tree=None) -> dict:
             "⚠": ("이 심은 키가 없으면 이 검사는 **영원히 초록**이다 --- 946 당시 "
                   "추적 `.py` 754 중 비-ASCII 이름이 **0** 이었다"),
         },
-        "통과": (len([x for x in new if x.startswith('"')]) == 0),
-        "⚠ 통과의 뜻": "🔴 **새 판독의 출력에 가짜 이름이 하나도 없나.** 두 판독이 "
-                  "같은지가 아니다 --- 다른 것이 정상이다(그게 이 수리의 내용이다)",
+        "🔴 새 판독 출력에 가짜 이름이 0 인가(이 절의 실질 주장)":
+            len([x for x in new if x.startswith('"')]) == 0,
+        "🔴 조항 62 대조가 수를 냈나": rep["통과"],
+        # 🔴 949 --- `rep["통과"]` 를 **읽는다**(948 은 한 번도 안 읽었다 · 티처 #88 C3)
+        "통과": (len([x for x in new if x.startswith('"')]) == 0) and rep["통과"],
+        "⚠ 통과의 뜻": ("🔴 **둘의 AND** --- ① 새 판독 출력에 가짜 이름이 0 이고 "
+                  "② 조항 62 대조가 「모른다」가 아니어야 한다. "
+                  "🔴 오늘 ② 는 **구조적으로 붉다**: 이 절은 두 판독을 일부러 견주므로 "
+                  "`A−B` 가 **두 이름**으로 가득하고, 조항 62 는 그럴 때 **수를 안 낸다**. "
+                  "**그것이 옳다** --- 그래도 ① 은 위 칸에 따로 있으니 정보는 안 잃는다. "
+                  "이 절을 초록으로 만들려면 **자를 바꿔야 한다**(정규화 대조). 949 는 안 했다"),
     }
 
 
@@ -396,7 +429,9 @@ def run_gates(do_run, tree, consumers, ran_hand=(), exempt=None) -> dict:
     # 🔴 무엇을 왜 안 돌리는지 **여기 적는다**. 안 적으면 「없다」가 된다.
     #    🔴 사유 하나는 **기계로 나온다**: 이번 취합의 역참조에 안 걸린 게이트는
     #    ⑤′ 의 대상이 아니다. 사람이 손으로 봐주는 사유가 아니라 1 절의 결과다.
-    skip = {p: "이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)"
+    # 🔴 949 --- 기계 사유에도 **자 표지**를 붙인다(`[자:소비자아님]`). 그래야
+    #    아래 ㉡′ 가 「사유가 있다」와 「사유가 참이다」를 가를 수 있다.
+    skip = {p: "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)"
             for p in roster if p not in set(consumers)}
     skip.update({
         "runners/out899a_gates.py": (
@@ -433,12 +468,21 @@ def run_gates(do_run, tree, consumers, ran_hand=(), exempt=None) -> dict:
     # ── 🔴 조항 62 --- 「안 돌린 40 · 사유 없이 9」는 **차집합 개수**다 (티처 #87 M3)
     #    947 은 이 러너를 143줄 고치면서 **새 절 셋에만** `diff62` 를 걸고
     #    원래 절 1·2 는 안 걸었다. 여기가 그 둘 중 하나다.
-    d62_notrun = gc.diff62("게이트 명부(roster)", set(roster),
+    d62_notrun = gc.diff62_guarded("게이트 명부(roster)", set(roster),
                            "돌렸다(ran)", set(ran),
                            probe=ks.octal_escape, seed_pad=gc.CONTROL_SEED)
-    d62_noreason = gc.diff62("안 돌린 게이트", set(notrun),
+    d62_noreason = gc.diff62_guarded("안 돌린 게이트", set(notrun),
                              "사유가 등록된 것(skip)", set(skip),
                              probe=ks.octal_escape, seed_pad=gc.CONTROL_SEED)
+    # 🔴🔴 **949 (티처 #88 ㄹ)** --- 위 ㉡ 은 `skip = roster − ran` 이라 `notrun` 과
+    #    **구성상 항등**이고 **원리상 0/0 말고 다른 값을 못 낸다**. 자를 바꾼다:
+    #    B 를 「사유가 **자를 통과한** 것」으로. 그러면 이 대조가 처음으로 값을 낸다.
+    rulers = gc.exempt_rulers({k: v for k, v in skip.items() if k in set(notrun)},
+                              consumers=consumers)
+    ruled = {k for k, v in rulers.items() if v["🔴 자가 냈나"]}
+    d62_ruled = gc.diff62_guarded(
+        "안 돌린 게이트", set(notrun), "🔴 사유가 **자를 통과한** 것", set(ruled),
+        probe=ks.octal_escape, seed_pad=gc.CONTROL_SEED)
     return {
         "검사": "2 게이트 --- 🔴 명부를 기계로 뽑는다(손 나열 금지)",
         "명부를 어떻게 뽑았나": '`git grep -lF -e \'"통과":\'` 로 **`통과` 를 키로 내는 `.py` 전량**',
@@ -461,13 +505,28 @@ def run_gates(do_run, tree, consumers, ran_hand=(), exempt=None) -> dict:
         },
         "🔴 조항 62 ㉠ 안 돌린 것(= 명부 − 돌린 것)": d62_notrun,
         "🔴 조항 62 ㉡ 사유 없이 안 돌린 것(= 안 돌린 것 − 사유 등록)": d62_noreason,
+        "⚠ 위 ㉡ 은 구성상 항등이다(949 · 티처 #88 C4)":
+            "`skip = roster − ran` 이고 `notrun = roster − ran` 이라 **원리상 0/0 말고 "
+            "다른 값을 못 낸다**. 아래 ㉡′ 가 그것을 갈음한다",
+        "🔴 사유의 자(949 · 티처 #88 ㄷ)": {
+            "🔴 자가 붙은 사유 수": len([v for v in rulers.values()
+                                if not v["자"].startswith("🔴 자가 없다")]),
+            "🔴 자가 없는 사유 수": len([v for v in rulers.values()
+                                if v["자"].startswith("🔴 자가 없다")]),
+            "🔴 자를 통과한 사유 수": len(ruled),
+            "사유별": rulers,
+        },
+        "🔴 조항 62 ㉡ 자를 통과한 사유만 B 로(949)": d62_ruled,
         "돌린 게이트의 절별 판정": results or "안 돌렸다(--gates 를 안 줬다)",
         "🔴 실패한 절": failed or "없음",
         "🔴 예외": exc or "없음",
         # 🔴 티처 #87 M4 --- `diff62` 가 「모른다」·`통과 False` 를 낸 절을
         #    **바깥에서 `통과 True` 로 감싸지 않는다**. 그래서 AND 로 엮는다.
+        "🔴 사유가 **자를 못 넘은** 안 돌린 게이트": sorted(set(notrun) - ruled),
+        # 🔴 949 --- 「사유가 있다」가 아니라 **「사유가 참이다」**를 요구한다(티처 #88 ㄷ·C4)
         "통과": (bool(do_run) and (not failed) and (not exc) and (not no_reason)
-                and d62_notrun["통과"] and d62_noreason["통과"]),
+                and d62_notrun["통과"] and d62_noreason["통과"]
+                and not (set(notrun) - ruled)),
         "🔴 통과의 뜻": ("게이트를 돌렸고 · 실패한 절이 없고 · 예외가 없고 · 사유 없이 안 "
                    "돌린 것이 없고 · 🔴 **위 조항 62 대조 둘이 「모른다」가 아니어야** 통과"),
     }
@@ -833,6 +892,10 @@ def main(argv=None):
     ap.add_argument("--quote-now", default=None,
                     help="🔴 작업본 대신 이 파일을 견준다 --- **심어서 검정력을 재는** 자리")
     ap.add_argument("--out", default=str(OUT_DEFAULT))
+    # 🔴 949 --- 45 개 사유를 손으로 치면 **증거가 셸 히스토리에만 남는다**.
+    #    사유를 커밋된 JSON 으로 받는다(`{경로: 사유}`). 사유는 `[자:<이름>]` 으로 시작한다.
+    ap.add_argument("--exempt-file", default=None,
+                    help="🔴 면제 사유를 담은 JSON(`{경로: \"[자:…] 사유\"}`)")
     a = ap.parse_args(argv)
 
     if a.quote_ref is None:
@@ -840,6 +903,8 @@ def main(argv=None):
 
     t0 = time.time()
     exempt = {}
+    if a.exempt_file:
+        exempt.update(json.loads((ROOT / a.exempt_file).read_text(encoding="utf-8")))
     for e in a.exempt:
         k, _, v = e.partition("=")
         exempt[k.strip()] = v.strip() or "🔴 사유가 비었다"
@@ -850,6 +915,10 @@ def main(argv=None):
         ran.append("ingest/audit.py")
 
     res = {"무엇": "⑤′ 취합 검사 러너 --- 이슈 #140 M3·M4·M6",
+           # 🔴 949 --- **인자를 산출물에 남긴다**. 948 은 45 개 `--exempt` 를 손으로 쳤는데
+           #    그 문자열이 어디에도 안 남아 다음 세션이 재현할 수 없었다(티처 #88 C4).
+           "🔴 인자(argv)": list(argv if argv is not None else sys.argv[1:]),
+           "🔴 사유 파일": a.exempt_file or "없음",
            "🔴 규약": [
                "① 소비자는 **기계 역참조**로 뽑고 **목록을 이 파일에 남긴다**",
                "② 🔴 분모 넷을 나란히 박는다 --- 바뀐 경로 · 역참조 소비자 · 돌린 것 · **안 돌린 것**",

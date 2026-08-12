@@ -29,6 +29,7 @@ ROOT = Path("/Users/ax/world_model")
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from lab import keyspace as ks               # noqa: E402
 from lab import pairboot                     # noqa: E402
 from state import gate939, ratio940          # noqa: E402
 
@@ -73,10 +74,14 @@ def part0() -> dict:
             dt.datetime.fromisoformat(st["이 stamp 를 쓴 시각(UTC)"]) < now,
         "🔴 사전등록만 담은 커밋": git("log", "--oneline", "-1", "--",
                             str(PREREG)).strip(),
+        # 🔴🔴 **949 수리 (티처 #88 C1 · 순㉯)** --- 947~948 이 「원리상 못 고친다(㉮)」로
+        #    덮었던 자리. 근거였던 sha 인용은 **도장**이고, 이 파일을 **대조**하는
+        #    `.py` 는 HEAD 전량에 **0** 이다. 막는 것이 없으므로 오늘 고친다.
         "🔴 그 커밋에 측정 러너가 들어 있었나":
-            "runners/ratio940_run.py" in git(
-                "show", "--name-only", "--pretty=format:",
-                git("log", "-1", "--format=%H", "--", str(PREREG)).strip()),
+            "runners/ratio940_run.py" in ks.git_paths(
+                "show", "--pretty=format:",
+                git("log", "-1", "--format=%H", "--", str(PREREG)).strip(),
+                root=ROOT),
         "🔴 os.utime 을 썼나": False,
         "🔴 남의 파일이 안 바뀌었나(스탬프 대조)": {
             f: {"stamp": r["sha256"], "지금": sha(ROOT / f),
