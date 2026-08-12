@@ -127,54 +127,151 @@ def _kobis_obs(d: dict) -> int:
     return 0
 
 
-# 수집기 명세.
-#   이름 · 실행 명령 · 산출물 크기를 내는 함수 · 무엇이 자라는가(사람이 읽을 말)
+# ─────────────────────────────────────────────────────────────────────────
+# 🔴 노트 952 — **수집기 명세를 코드에서 등기부로 옮겼다.**
 #
-# **`측정` 은 산출물을 직접 센다** — 프로세스가 뭘 출력했는지가 아니라
+# 왜. 초판은 이 자리에 파이썬 리스트가 있었고 원천이 **셋**이었다(popupsnap ·
+# yt_poll · kobis). 그런데 노트 941 이 실제로 받아 온 것 둘(위키 일별 · Steam
+# 리뷰)은 **이 목록 밖**이라 상시 수집에 한 번도 안 들어갔다 — 🔴 **받아 놓고
+# 안 도는 원천**이 있었다는 뜻이고, 아무도 20사이클 동안 몰랐다.
+#
+# 진짜 원인은 「누가 빼먹었다」가 아니라 **새 원천을 붙이는 일이 「파이썬을
+# 고친다」였다**는 것이다. 그래서 등기부로 내린다 — 이제 새 원천 붙이기는
+# **`data/lab/sources.json` 에 항목 하나**다. 다음 사이클이 실제로 붙이게.
+#
+# 덤으로 **라이선스가 원천 옆에 산다.** 상업 IP 모델이라 출처를 못 대는 데이터는
+# 나중에 전부 버려야 하는데, 라이선스가 코드 주석에만 있으면 버릴 때 못 찾는다.
+#
+# **`측정` 은 여전히 산출물을 직접 센다** — 프로세스가 뭘 출력했는지가 아니라
 # 디스크에 뭐가 남았는지다. 그게 이 모듈의 전부다.
-COLLECTORS = [
-    {
-        "이름": "popupsnap",
-        "cmd": [sys.executable, "-m", "ingest.popupsnap"],
-        "측정": lambda: _lines(ROOT / "data/state/popup_visitor_daily.jsonl"),
-        "단위": "행",
-        "무엇": "core.popup_visitor_daily 일일 스냅샷(BQ 읽기 전용)",
-        # **아는 정체는 경고가 아니다.** 이걸 안 적으면 매 사이클 같은 ⚠ 가 뜨고,
-        # 세 번째 사이클부터는 아무도 안 본다 --- 그러면 **진짜 정체를 놓친다**.
-        "정체사유": "원천이 2026-08-05 04:47~05:08 **21분 단일 소급 적재** 이후 안 늘었다"
-                    "(노트 673 · 48행 고정). 늘기 시작하면 그게 사건이다.",
-    },
-    {
-        "이름": "yt_poll",
-        "cmd": [sys.executable, "-m", "ingest.yt_poll"],
-        "측정": lambda: _obs(ROOT / "data/ingest/youtube_poll", _yt_obs),
-        "단위": "영상관측",
-        # 채널 17개 × 영상마다 조회수를 읽는다. 242초~10분+ 로 요동친다(원격 의존).
-        "제한": 1500,
-        "정체사유": "산출이 **로컬 날짜 파일**(`YYYY-MM-DD.json`)이라 **하루 첫 실행에만** 는다"
-                    "(17채널 × 255관측/일). 같은 날 다시 돌리면 같은 파일을 덮어쓸 뿐이다 --- 정상이다. "
-                    "**날이 바뀌었는데도 안 늘면** 그때가 진짜 정체다.",
-        # 같은 날 두 번째부터는 **안 돌린다**. 2026-08-10 실측: 7회 중 성장 2회이고
-        # 나머지 5회가 각 12분씩 헛돌았다. 더 나쁜 것은 **덮어쓰기라 앞선 스냅샷이
-        # 사라진다**는 점이다 --- 조회수 차분을 촘촘히 하려면 하루 여러 점이 필요한데
-        # 지금 구조는 **하루 한 점만 남긴다**(설계 한계 · T7 에 등재).
-        "건너뜀": lambda: (ROOT / "data/ingest/youtube_poll" /
-                          (dt.date.today().isoformat() + ".json")).exists(),
-        "건너뜀사유": "오늘 자 스냅샷이 이미 있다(하루 1점 설계)",
-        "무엇": "유튜브 채널 17개의 영상별 누적 조회수 — 일 단위 차분 곡선의 재료",
-    },
-    {
-        "이름": "kobis",
-        "cmd": [sys.executable, "-m", "ingest.kobis"],
-        "측정": lambda: _obs(ROOT / "data/ingest/kobis", _kobis_obs,
-                            skip=("backfill", "threshold", "axes_raw")),
-        "단위": "흥행행",
-        "무엇": "KOBIS 일별 박스오피스 — 12번째 도메인(영화)의 전향 실측",
-        "정체사유": "KOBIS 는 **전날 자**를 하루 한 번 낸다. 같은 날 두 번 돌리면 "
-                    "같은 날짜 파일을 덮어쓸 뿐이라 관측이 안 는다 --- 정상이다. "
-                    "**날이 바뀌었는데도 안 늘면** 그때가 진짜 정체다.",
-    },
-]
+# ─────────────────────────────────────────────────────────────────────────
+REGISTRY = ROOT / "data/lab/sources.json"
+
+
+def _gz_lines(d: Path) -> int:
+    """디렉터리 안 `*.jsonl.gz` 의 줄 수 합."""
+    import gzip
+    if not d.is_dir():
+        return 0
+    n = 0
+    for f in sorted(d.glob("*.jsonl.gz")):
+        try:
+            with gzip.open(f, "rt", encoding="utf-8") as fh:
+                n += sum(1 for _ in fh)
+        except Exception:
+            pass
+    return n
+
+
+def _dir_bytes(d: Path, pat: str) -> int:
+    if not d.is_dir():
+        return 0
+    return sum(f.stat().st_size for f in d.glob(pat) if f.is_file())
+
+
+#: 측정꼴 이름 → 함수. 🔴 **JSON 이 코드를 못 부르게 한다** — 꼴은 여기 있는 것만
+#: 쓸 수 있고, 모르는 꼴은 조용히 0 을 내지 않고 **터진다**(조항 59).
+_COUNTERS = {"yt": _yt_obs, "kobis": _kobis_obs}
+
+
+def _measure_fn(spec: dict | None):
+    if not spec:
+        return lambda: 0
+    k = spec.get("꼴")
+    if k == "jsonl행":
+        p = ROOT / spec["경로"]
+        return lambda: _lines(p)
+    if k == "jsonl_gz행합":
+        d = ROOT / spec["디렉터리"]
+        return lambda: _gz_lines(d)
+    if k == "디렉터리관측":
+        d = ROOT / spec["디렉터리"]
+        fn = _COUNTERS[spec["세는이"]]
+        skip = tuple(spec.get("건너뛸접두") or ())
+        return lambda: _obs(d, fn, skip=skip)
+    if k == "디렉터리바이트":
+        d = ROOT / spec["디렉터리"]
+        pat = spec.get("유리", "*")
+        return lambda: _dir_bytes(d, pat)
+    raise KeyError("모르는 측정꼴: %r (등기부 `측정꼴` 절에 없다)" % (k,))
+
+
+def _last_success(name: str):
+    """장부에서 이 원천이 **마지막으로 성장한** 시각. 없으면 None."""
+    if not LOG.exists():
+        return None
+    for ln in reversed(LOG.read_text(encoding="utf-8").splitlines()):
+        try:
+            r = json.loads(ln)
+        except Exception:
+            continue
+        if r.get("이름") == name and r.get("판정") == "성장":
+            try:
+                return dt.datetime.fromisoformat(r["시각(UTC)"])
+            except Exception:
+                return None
+    return None
+
+
+def _last_run(name: str):
+    """마지막으로 **돌린** 시각(성장이든 아니든). 최소간격을 재는 자."""
+    if not LOG.exists():
+        return None
+    for ln in reversed(LOG.read_text(encoding="utf-8").splitlines()):
+        try:
+            r = json.loads(ln)
+        except Exception:
+            continue
+        if r.get("이름") == name and r.get("판정") != "건너뜀":
+            try:
+                return dt.datetime.fromisoformat(r["시각(UTC)"])
+            except Exception:
+                return None
+    return None
+
+
+def load_registry(path: Path | None = None) -> list:
+    """등기부를 읽어 수집기 명세로 바꾼다. 🔴 `켬:false` 는 아예 안 싣는다."""
+    p = path or REGISTRY
+    if not p.exists():
+        raise FileNotFoundError(
+            "등기부가 없다: %s — 🔴 「원천이 없다」가 아니라 「등기부를 못 찾았다」다" % p)
+    reg = json.loads(p.read_text(encoding="utf-8"))
+    out = []
+    for s in reg.get("원천", []):
+        if not s.get("켬"):
+            continue
+        if not s.get("모듈"):
+            continue
+        gap = s.get("최소간격초")
+
+        def _skip(name=s["이름"], gap=gap):
+            if not gap:
+                return False
+            last = _last_run(name)
+            if last is None:
+                return False
+            age = (dt.datetime.now(dt.timezone.utc) - last).total_seconds()
+            return age < gap
+
+        out.append({
+            "이름": s["이름"],
+            "cmd": [sys.executable, "-m", s["모듈"]],
+            "측정": _measure_fn(s.get("측정")),
+            "단위": s.get("단위", "관측"),
+            "무엇": s.get("무엇", ""),
+            "제한": s.get("제한초", 900),
+            "정체사유": s.get("정체사유"),
+            "건너뜀": _skip,
+            "건너뜀사유": "최소간격 %s초가 아직 안 지났다(등기부)" % gap,
+            "라이선스": s.get("라이선스", "🔴 모른다"),
+        })
+    return out
+
+
+#: 🔴 모듈 적재 시점에 등기부를 읽는다. 없으면 **여기서 터진다** — 조용히 빈
+#: 목록으로 도는 것이 이 모듈이 막으려는 병 그 자체다(노트 359 계열).
+COLLECTORS = load_registry()
 
 
 def _run_one(c: dict, timeout: int | None = None) -> dict:
