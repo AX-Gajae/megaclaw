@@ -237,6 +237,7 @@ def _series_only(a) -> int:
                "「자료가 없다」가 아니라 **자가 0 을 낸 것**이다(조항 59)"),
         "🔴 안 다시 잰 절": ["1 공연 목록", "2 상세 표본", "3 공연장", "4-가 boxoffice"],
         "🔴 그래서": "위 넷의 수는 **앞 주행의 것**이고 시각이 다르다. 이어 붙여 읽지 마라(조항 60)",
+        "통과": True,
     }
     series, serr = [], []
     for (s_, e_) in _windows(start, end):
@@ -274,6 +275,7 @@ def _series_only(a) -> int:
         st[op_] = {"루트 태그": root.tag, "🔴 기대 루트": SHAPE[op_][0], "행": len(rs),
                    "첫 행 키": sorted(rs[0].keys()) if rs else "없음",
                    "통과": len(rs) > 0}
+    st["통과"] = all(v.get("통과") for k, v in st.items() if isinstance(v, dict))
     st["🔴 부기"] = res["5 통계(prfsts*)"].get("🔴 부기", "")
     res["5 통계(prfsts*)"] = st
     op.write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -286,7 +288,9 @@ def main(argv=None) -> int:
     ap.add_argument("--backfill", nargs=2, metavar=("STDATE", "EDDATE"))
     ap.add_argument("--detail-sample", type=int, default=200)
     ap.add_argument("--box-days", type=int, default=60)
-    ap.add_argument("--out", default="runners/out953_kopis.json")
+    # 🔴 953 자가 적발 --- 기본값이 `runners/out953_kopis.json` 이었고 **상시 데몬이 그 자리를 덮어썼다**.
+    #    `runners/out*.json` 은 **사이클의 측정 증거물**이다. 소유자가 둘인 파일은 언젠가 덮어써진다.
+    ap.add_argument("--out", default="data/state/kopis953_last.json")
     ap.add_argument("--only-series", action="store_true",
                     help="🔴 절 4-나·5 만 다시 잰다(자가 적발 뒤 재측정 · 앞 절은 기존 산출물에서 이어받는다)")
     a = ap.parse_args(argv)
@@ -309,7 +313,8 @@ def main(argv=None) -> int:
     else:                         # 증분 --- 최근 31일
         end = dt.date.today().strftime("%Y%m%d")
         start = (dt.date.today() - dt.timedelta(days=30)).strftime("%Y%m%d")
-    res["창"] = {"시작": start, "끝": end, "31일 창 수": len(_windows(start, end))}
+    res["창"] = {"시작": start, "끝": end, "31일 창 수": len(_windows(start, end)),
+                "통과": True}      # 🔴 953 --- 모든 절이 `통과` 키를 갖는다(루프.md:256)
 
     # ── 1 공연 목록 ────────────────────────────────────────────────
     log = []
@@ -464,6 +469,7 @@ def main(argv=None) -> int:
         st[op] = {"루트 태그": root.tag, "🔴 기대 루트": SHAPE[op][0], "행": len(rs),
                   "첫 행 키": sorted(rs[0].keys()) if rs else "없음",
                   "통과": len(rs) > 0}
+    st["통과"] = all(v.get("통과") for k, v in st.items() if isinstance(v, dict))
     st["🔴 부기"] = ("주 세션의 자는 `root.tag.startswith('db')` 라 `prfstsCate`·`prfstsArea` 를 "
                    "붉게 찍었다. **행은 멀쩡히 있다** — 「자가 붉다」와 「자료가 없다」는 둘이다(조항 59)")
     res["5 통계(prfsts*)"] = st

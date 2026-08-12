@@ -94,9 +94,9 @@ def _sao_count() -> dict:
             with gzip.open(SAO, "rt", encoding="utf-8") as f:
                 n = sum(1 for _ in f)
         except Exception as e:                                    # noqa: BLE001
-            return {"수": None, "🔴 못 읽었다": str(e)[:120]}
+            return {"수": None, "🔴 못 읽었다": str(e)[:120], "통과": False}
     else:
-        return {"수": None, "🔴 못 찾았다": str(SAO)}
+        return {"수": None, "🔴 못 찾았다": str(SAO), "통과": False}
     extra = {}
     cnt = ROOT / "runners/out952_count.json"
     if cnt.exists():
@@ -105,7 +105,7 @@ def _sao_count() -> dict:
             extra["952 후보(steam_games)"] = d["steam"]["🔴 새 (s,a,o) 후보"]["수"]
         except Exception:
             extra["952 후보(steam_games)"] = "🔴 못 읽었다"
-    return {"수": n, "파일": str(SAO.relative_to(ROOT)),
+    return {"수": n, "파일": str(SAO.relative_to(ROOT)), "통과": True,
             "🔴 이것은 재고다": "아래 후보와 **이어 붙이지 않는다** --- 후보는 아직 판에 안 붙었다",
             "후보": extra}
 
@@ -143,6 +143,9 @@ def _source_rows() -> dict:
         "🔴 측정꼴이 없는 원천": nospec or "없음",
         "🔴 자": "등기부 `측정꼴` → `ingest/collect.py:_measure_fn` --- 두 벌로 안 만든다",
         "🔴 「0」과 「못 쟀다」는 둘이다": "깨진 gz 는 `수: None` 이다. 0 이 아니다(조항 59)",
+        # 🔴 953 --- `docs/루프.md:256` 「모든 절이 `통과` 키를 갖는다」. ⑤′ 의 새 대상이
+        #    **이 사이클 산출물**이 되면서 이 자가 **자기 산출물에 걸리기 시작했다**.
+        "통과": all(r["수"] is not None for r in per),
     }
 
 
@@ -270,6 +273,7 @@ def judge(cur: dict, prev: dict | None) -> dict:
                     % (len(v["② 2일 넘은 원천"]), STALE_HOURS, ", ".join(v["② 2일 넘은 원천"])))
     v["🔴 붉은 항목"] = reds
     v["초록인가"] = (not reds)
+    v["통과"] = (not reds)          # 🔴 953 --- 키 이름을 규약(`통과`)에 맞춘다
     v["🔴 부기"] = ("붉은 채로 싣는다. 🔴 **붉음을 없애려고 문턱을 올리지 마라** --- "
                    "그건 자를 고치는 게 아니라 자를 버리는 것이다")
     return v
