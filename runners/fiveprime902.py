@@ -411,6 +411,56 @@ def gate_roster(tree) -> dict:
     return sorted(p for p in got if p.endswith(".py")), meta
 
 
+#: 🔴 **950 --- 문서에 도장 말고 대조를 박는다**(티처 #89 M1 · 3순위).
+DOCSTAMP = "runners/out950_docstamp.json"
+
+
+def doc_check() -> dict:
+    """🔴 **대조** --- 찍힌 문서의 **입력 sha 를 지금 다시 계산해 견준다**.
+
+    `CHECK_CRITERIA` 셋을 그대로 채운다: ① `runners/out950_docstamp.json` 을 **읽고**
+    ② 그 안에 **기록된 sha 를 꺼내어** ③ **지금 파일에서 다시 계산한 sha** 와 견준다.
+
+    🔴 **이것이 M1 의 재발을 막는 자다** --- 949 는 `exp949_harm.json` 이 107줄 바뀌고도
+    `docs/판정/949_수.md` 를 다시 안 찍었는데 **아무것도 안 붉어졌다.**
+    ⚠ **한계(조항 61)**: 낡음만 잡는다. **문서의 수가 옳은지는 안 본다.**
+    """
+    p = ROOT / DOCSTAMP
+    if not p.exists():
+        return {"검사": "7 문서 대조", "통과": False,
+                "🔴": "모른다 --- `%s` 가 없다(「대조가 초록」이 아니다 · 조항 59)" % DOCSTAMP}
+    st = json.loads(p.read_text(encoding="utf-8"))
+    rows, bad, unknown = {}, [], []
+    want = dict(st.get("🔴 입력별 sha256(대조의 기록 쪽)", {}))
+    want.update(st.get("🔴 문서 sha256", {}))
+    want.update(st.get("🔴 생산기 sha256", {}))
+    for rel, rec in sorted(want.items()):
+        f = ROOT / rel
+        if not f.exists():
+            rows[rel] = {"🔴": "모른다 --- 파일이 없다(「같다」가 아니다)"}
+            unknown.append(rel)
+            continue
+        now = hashlib.sha256(f.read_bytes()).hexdigest()
+        same = (now == rec)
+        rows[rel] = {"기록된 sha256": rec, "🔴 지금 다시 계산한 sha256": now, "같은가": same}
+        if not same:
+            bad.append(rel)
+    return {
+        "검사": "7 🔴 문서 대조 --- 찍힌 문서의 **입력이 그 뒤로 바뀌었나**(티처 #89 M1)",
+        "읽은 트리": "🔴 **작업 트리**(지금 파일을 다시 해싱한다)",
+        "자": gc.CHECK_CRITERIA,
+        "도장 파일": DOCSTAMP,
+        "🔴 견준 수(분모)": len(want),
+        "🔴 다른 것": bad or "없음",
+        "🔴 모르는 것": unknown or "없음",
+        "파일별": rows,
+        "통과": (not bad) and (not unknown) and len(want) > 0,
+        "🔴 통과의 뜻": ("찍힌 문서의 입력·생산기·문서 자신이 **그 뒤로 한 바이트도 안 바뀌었다**. "
+                   "🔴 하나라도 바뀌었으면 **문서를 다시 찍어야 한다** --- 949 가 안 한 그것이다"),
+        "⚠ 한계(조항 61)": "낡음만 잡는다. **문서의 수가 옳은지는 안 본다**",
+    }
+
+
 def run_gates(do_run, tree, consumers, ran_hand=(), exempt=None) -> dict:
     """🔴🔴 **948 수리 (티처 #87 M2)** --- `exempt` 를 **받는다**.
 
@@ -953,6 +1003,11 @@ def main(argv=None):
     res["5 quote901 무변"] = quote_regress(a.quote_ref, a.quote_now)
     res["5-나 무변 시험의 검정력(심어서 확인)"] = quote_power(a.quote_ref)
     res["6 D1 실측"] = d1_census()
+    try:
+        res["7 🔴 문서 대조(950 · 티처 #89 M1)"] = doc_check()
+    except Exception as e:                                        # noqa: BLE001
+        res["7 🔴 문서 대조(950 · 티처 #89 M1)"] = {
+            "🔴 예외": "%s: %s" % (type(e).__name__, e), "통과": False}
 
     secs = {k: v for k, v in res.items() if isinstance(v, dict) and "통과" in v}
     fail = sorted(k for k, v in secs.items() if not v["통과"])
