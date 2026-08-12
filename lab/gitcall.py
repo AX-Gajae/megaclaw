@@ -56,9 +56,13 @@
 from __future__ import annotations
 
 import ast
+import json
+import os
 import re
 import shlex
 import subprocess
+import sys
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -1077,32 +1081,369 @@ def board_imports(rels, root: Path = ROOT) -> dict:
 #: 이 실행 안에서 돌린다. 없으면 ``🔴 자가 없다`` --- **그 자체가 신고할 값이다**.
 RULER_MARK = re.compile(r"^\s*\[자:([^\]]+)\]\s*")
 
+#: 🔴 **950 --- 자를 여럿 붙일 수 있다**: ``[자:동결산출물][자:재실행무해]``.
+#: **전부 참이어야** ``자가 냈나`` 가 참이다. 🔴 자 하나짜리 사유의 동작은 안 바뀐다
+#: (``_ruler_tags`` 가 하나만 찾으면 949 와 똑같은 길로 간다).
+RULER_TAGS = re.compile(r"\[자:([^\]]+)\]")
 
-def exempt_rulers(exempt: dict, *, consumers=(), root: Path = ROOT) -> dict:
+#: 원장 --- ``기록기`` 자가 「여기에 쓰나」를 본다.
+LEDGER_REL = "data/lab/denominator.json"
+
+#: 쓰기로 세는 호출.
+WRITE_CALLS = ("write_text", "write_bytes", "dump", "writelines", "write")
+
+#: 격리 재실행의 한 실행 한도(초). 🔴 ``timeout`` **명령**은 이 환경에 없다 ---
+#: 파이썬 ``subprocess`` 의 인자를 쓴다(`docs/루프.md` ⑤′ 4).
+RERUN_TIMEOUT = 900
+
+_RERUN_CACHE: dict = {}
+
+
+def _ruler_tags(v: str) -> list:
+    """사유 **머리**에 붙은 ``[자:…]`` 표지를 순서대로 낸다(0 개면 빈 목록)."""
+    s, out = (v or "").lstrip(), []
+    while True:
+        m = RULER_TAGS.match(s)
+        if not m:
+            break
+        out.append(m.group(1).strip())
+        s = s[m.end():].lstrip()
+    return out
+
+
+def _mod_consts(rel: str, root: Path = ROOT):
+    """모듈의 **이름 → 경로 상수** 표와 AST. 못 읽으면 ``(None, 사유)``."""
+    p = root / rel
+    if not p.exists():
+        return None, "🔴 파일 없음 --- 「자가 참이다」가 아니다(조항 59)"
+    try:
+        t = ast.parse(p.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, SyntaxError) as e:
+        return None, "🔴 못 읽었다: %s --- 「없다」가 아니다(조항 59)" % type(e).__name__
+    consts: dict = {}
+    for n in ast.walk(t):
+        if isinstance(n, ast.Assign) and len(n.targets) == 1 and \
+                isinstance(n.targets[0], ast.Name):
+            s = _rel(_pathish(n.value, consts), root)
+            if s and ("/" in s or s.endswith((".py", ".json", ".md"))):
+                consts[n.targets[0].id] = s
+    return (t, consts), None
+
+
+def ledger_writer(rel: str, root: Path = ROOT) -> dict:
+    """🔴 자 **`기록기`** --- 이 모듈이 **원장에 쓰나**(AST · 작업 트리).
+
+    ⚠ **증거력의 한계**: 정적이다. 경로를 f-string·변수로 **조립**하면 못 본다.
+    못 본 것은 「없다」가 아니다 --- ``🔴 원장 상수를 못 찾았다`` 로 따로 낸다.
+    """
+    got, why = _mod_consts(rel, root)
+    if got is None:
+        return {"🔴 자가 냈나": False, "왜": why}
+    t, consts = got
+    names = {k for k, v in consts.items() if v.endswith(LEDGER_REL)}
+    #: 상수를 안 거치고 리터럴로 바로 쓰는 꼴도 본다.
+    lit = any(isinstance(n, ast.Constant) and isinstance(n.value, str)
+              and n.value.endswith(LEDGER_REL) for n in ast.walk(t))
+    writes = []
+    for n in ast.walk(t):
+        if not isinstance(n, ast.Call):
+            continue
+        fn = getattr(n.func, "attr", None) or getattr(n.func, "id", None)
+        if fn not in WRITE_CALLS and fn != "open":
+            continue
+        #: 이 호출이 **원장을 겨냥하나** --- 수신자·인자 어디든 원장 이름이 보이면 센다.
+        tgt = [getattr(n.func, "value", None)] + list(n.args)
+        hit = False
+        for a in tgt:
+            if a is None:
+                continue
+            for x in ast.walk(a):
+                if isinstance(x, ast.Name) and x.id in names:
+                    hit = True
+                if isinstance(x, ast.Constant) and isinstance(x.value, str) \
+                        and x.value.endswith(LEDGER_REL):
+                    hit = True
+        if not hit:
+            continue
+        if fn == "open":
+            mode = next((a.value for a in n.args[1:]
+                         if isinstance(a, ast.Constant) and isinstance(a.value, str)), "r")
+            mode = next((k.value.value for k in n.keywords
+                         if k.arg == "mode" and isinstance(k.value, ast.Constant)), mode)
+            if not any(c in mode for c in "wax+"):
+                continue
+        writes.append("%s:%d `%s`" % (rel, n.lineno, fn))
+    return {
+        "🔴 자가 냈나": bool(writes),
+        "자": "다시 돌리면 **원장 `%s` 에 쓰나**(AST · 작업 트리)" % LEDGER_REL,
+        "원장 경로 상수": sorted(names) or ("리터럴로만" if lit else
+                                     "🔴 원장 상수를 못 찾았다"),
+        "🔴 쓰기 자리": writes or "없다 --- **이 모듈은 원장에 안 쓴다**",
+        "⚠ 한계": "정적 AST 다. 경로를 조립하면 못 본다(조항 59 --- 「없다」가 아니다)",
+    }
+
+
+def out_const(rel: str, root: Path = ROOT):
+    """모듈의 출력 경로 상수(``OUT``/``OUTP``/``DEST``/``OUT_JSON``)를 rel 로."""
+    got, why = _mod_consts(rel, root)
+    if got is None:
+        return None, why
+    _t, consts = got
+    for k in ("OUT", "OUT_JSON", "OUTP", "DEST", "OUTFILE"):
+        if k in consts:
+            return consts[k], k
+    return None, "🔴 출력 경로 상수를 못 찾았다(`OUT` 꼴이 없다) --- 「없다」가 아니다"
+
+
+#: 옛 사이클 산출물의 이름 꼴 --- ``out946_recount.json`` · ``exp947_npzflow.json``.
+CYCLE_OUT = re.compile(r"^(?:out|exp)(\d{3})")
+
+#: 이 사이클 번호. 이보다 **작은** 번호의 커밋된 산출물은 「옛 사이클의 증거」다.
+THIS_CYCLE = 950
+
+
+def frozen_output(rel: str, root: Path = ROOT, tracked: set | None = None) -> dict:
+    """🔴 자 **`동결산출물`** --- ``OUT`` 이 **커밋된 옛 사이클 산출물**을 가리키나(HEAD).
+
+    참이면 「다시 돌리면 그 사이클의 증거를 덮어쓴다」가 **값으로** 참이다.
+    """
+    o, why = out_const(rel, root)
+    if o is None:
+        return {"🔴 자가 냈나": False, "왜": why}
+    if tracked is None:
+        tracked = _tracked(root, "HEAD")
+    m = CYCLE_OUT.match(Path(o).name)
+    num = int(m.group(1)) if m else None
+    ok = bool(m) and num < THIS_CYCLE and o in tracked
+    return {
+        "🔴 자가 냈나": ok,
+        "자": "`OUT` 이 **커밋된 옛 사이클 산출물**을 가리키나(HEAD `ls-tree`)",
+        "OUT": o, "사이클 번호": num,
+        "HEAD 에 커밋됐나": o in tracked,
+        "⚠ 한계": "이름 꼴(`out<번호>`·`exp<번호>`)에 기댄다. 이름이 다르면 못 본다",
+    }
+
+
+def _passfail(obj, pre="") -> dict:
+    """중첩 어디에 있든 ``통과`` 키를 **경로째** 걷는다(조항 62 --- 깊이가 두 번째 인코딩)."""
+    out = {}
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            p = "%s/%s" % (pre, k) if pre else str(k)
+            if k == "통과":
+                out[pre or "/"] = v
+            else:
+                out.update(_passfail(v, p))
+    elif isinstance(obj, list):
+        for i, v in enumerate(obj):
+            out.update(_passfail(v, "%s[%d]" % (pre, i)))
+    return out
+
+
+_ISO_DRIVER = r'''
+import builtins, importlib.util, json, os, pathlib, sys, traceback
+
+REPO, SCRATCH, REL = sys.argv[1], sys.argv[2], sys.argv[3]
+repo = os.path.realpath(REPO)
+scr = os.path.realpath(SCRATCH)
+os.makedirs(scr, exist_ok=True)
+BLOCKED = []
+
+
+def _bad(p):
+    try:
+        rp = os.path.realpath(str(p))
+    except Exception:
+        return False
+    return rp.startswith(repo + os.sep) and not rp.startswith(scr + os.sep)
+
+
+def _guard(p, what):
+    if _bad(p):
+        BLOCKED.append("%s %s" % (what, p))
+        raise PermissionError("[격리] 저장소 쓰기 차단: %s" % p)
+
+
+_wt, _wb, _op, _un, _mk = (pathlib.Path.write_text, pathlib.Path.write_bytes,
+                           builtins.open, pathlib.Path.unlink, os.remove)
+pathlib.Path.write_text = lambda s, *a, **k: (_guard(s, "write_text"), _wt(s, *a, **k))[1]
+pathlib.Path.write_bytes = lambda s, *a, **k: (_guard(s, "write_bytes"), _wb(s, *a, **k))[1]
+pathlib.Path.unlink = lambda s, *a, **k: (_guard(s, "unlink"), _un(s, *a, **k))[1]
+os.remove = lambda p, *a, **k: (_guard(p, "os.remove"), _mk(p, *a, **k))[1]
+
+
+def _open(f, mode="r", *a, **k):
+    if any(c in str(mode) for c in "wax+"):
+        _guard(f, "open(%s)" % mode)
+    return _op(f, mode, *a, **k)
+
+
+builtins.open = _open
+
+if repo not in sys.path:
+    sys.path.insert(0, repo)
+res = {"경로": REL, "차단된 저장소 쓰기": BLOCKED}
+try:
+    spec = importlib.util.spec_from_file_location("_iso_" + REL.replace("/", "_")[:-3],
+                                                  os.path.join(repo, REL))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    moved = {}
+    for name in dir(mod):
+        v = getattr(mod, name)
+        # 🔴 **출력 상수만** 갈아끼운다. 입력 캐시(`CACHEMAP_OLD` 꼴)까지 갈아끼우면
+        #    러너의 입력을 바꾸는 것이라 「다시 돌려도 같나」를 재는 게 아니게 된다.
+        #    그래서 안 갈아끼운 자리가 저장소를 쓰려 들면 **가드가 막고 그것을 신고한다.**
+        outish = (name == "OUT" or name.startswith("OUT")
+                  or name.endswith("_OUT") or name in ("DEST", "OUTFILE"))
+        if outish and isinstance(v, pathlib.Path) and _bad(v) and str(v).endswith(".json"):
+            new = pathlib.Path(scr) / (REL.replace("/", "_") + "." + v.name)
+            setattr(mod, name, new)
+            moved[name] = {"원래": os.path.relpath(str(v), repo), "갈아끼움": str(new)}
+    res["갈아끼운 출력 상수"] = moved
+    if not moved:
+        res["🔴 결과"] = "모른다 --- 갈아끼울 출력 경로 상수가 없다(「무해하다」가 아니다)"
+    elif not hasattr(mod, "main"):
+        res["🔴 결과"] = "모른다 --- `main()` 이 없다"
+    else:
+        mod.main()
+        res["🔴 결과"] = "돌았다"
+        got = {}
+        for name, info in moved.items():
+            np = pathlib.Path(info["갈아끼움"])
+            if np.exists():
+                try:
+                    got[info["원래"]] = json.loads(np.read_text(encoding="utf-8"))
+                except Exception as e:
+                    got[info["원래"]] = {"🔴 못 읽었다": type(e).__name__}
+        res["새 산출물"] = got
+except BaseException as e:
+    res["🔴 결과"] = "모른다 --- 예외 %s: %s" % (type(e).__name__, e)
+    res["역추적"] = traceback.format_exc()[-1200:]
+res["차단된 저장소 쓰기"] = BLOCKED
+sys.stderr.write("\n<<<ISO>>>" + json.dumps(res, ensure_ascii=False) + "<<<ISO>>>\n")
+'''
+
+
+def rerun_isolated(rel: str, root: Path = ROOT, *, scratch: str | None = None,
+                   timeout: int = RERUN_TIMEOUT) -> dict:
+    """🔴 자 **`재실행무해`** --- **격리 재실행**으로 「다시 돌려도 절 판정이 같나」를 잰다.
+
+    티처 #88 의 「안 쟀다」 ②(*"동결 러너를 다시 돌리면 정말 산출물이 안 바뀌는지"*)를
+    닫는 자다. **하는 일**:
+
+    1. 별도 프로세스에서 모듈을 import 하고 **``pathlib.Path`` 인 출력 상수만**
+       스크래치패드로 갈아끼운다
+    2. 🔴 **저장소 쓰기를 가드로 막는다** --- ``write_text``/``write_bytes``/``open(w)``/
+       ``unlink``/``os.remove`` 가 저장소를 겨냥하면 **예외를 던지고 그 사실을 싣는다**.
+       **저장소 산출물은 한 바이트도 안 바뀐다**
+    3. ``main()`` 을 돌리고, 새 산출물의 **``통과`` 키(중첩 전량)** 를 커밋된 산출물의 것과 견준다
+
+    ⚠ **한계(조항 61)**: 「오늘 이 실행에서 절 판정이 같았다」만 낸다. 시각·난수·외부 트리에
+    의존하면 다음에 다를 수 있다. **「무해하다」로 읽지 마라.**
+    """
+    key = (rel, str(root))
+    if key in _RERUN_CACHE:
+        return _RERUN_CACHE[key]
+    sc = scratch or os.environ.get("WM_SCRATCH") or "/tmp/wm950_iso"
+    drv = Path(sc) / "_iso_driver.py"
+    drv.parent.mkdir(parents=True, exist_ok=True)
+    drv.write_text(_ISO_DRIVER, encoding="utf-8")
+    t0 = time.time()
+    try:
+        r = subprocess.run([sys.executable, str(drv), str(root), sc, rel],
+                           capture_output=True, text=True, timeout=timeout, cwd=str(root))
+        raw = r.stderr
+    except subprocess.TimeoutExpired:
+        out = {"🔴 자가 냈나": False,
+               "자": "격리 재실행 --- 절 판정이 커밋된 산출물과 같나",
+               "🔴 결과": "모른다 --- %d 초 안에 안 끝났다(「무해하다」가 아니다)" % timeout}
+        _RERUN_CACHE[key] = out
+        return out
+    dt = round(time.time() - t0, 1)
+    try:
+        body = raw.split("<<<ISO>>>")[1]
+        res = json.loads(body)
+    except (IndexError, ValueError):
+        out = {"🔴 자가 냈나": False,
+               "자": "격리 재실행 --- 절 판정이 커밋된 산출물과 같나",
+               "🔴 결과": "모른다 --- 드라이버 응답을 못 읽었다",
+               "stderr(끝)": raw[-500:], "초": dt}
+        _RERUN_CACHE[key] = out
+        return out
+    cmp_rows, same, diff, unknown = {}, 0, 0, 0
+    for orig, newobj in (res.get("새 산출물") or {}).items():
+        old = None
+        rr = subprocess.run(["git", "-C", str(root), "cat-file", "blob", "HEAD:%s" % orig],
+                            capture_output=True)
+        if rr.returncode == 0:
+            try:
+                old = json.loads(rr.stdout.decode("utf-8"))
+            except ValueError:
+                old = None
+        a = _passfail(old) if isinstance(old, (dict, list)) else None
+        b = _passfail(newobj) if isinstance(newobj, (dict, list)) else None
+        if a is None or b is None:
+            cmp_rows[orig] = {"🔴": "모른다 --- 커밋된 산출물을 못 읽었다(조항 59)"}
+            unknown += 1
+            continue
+        d = sorted(k for k in set(a) | set(b) if a.get(k, "없음") != b.get(k, "없음"))
+        cmp_rows[orig] = {"🔴 커밋된 절 수": len(a), "🔴 새 절 수": len(b),
+                          "🔴 다른 절": d or "없음"}
+        if d:
+            diff += 1
+        else:
+            same += 1
+    ok = (res.get("🔴 결과") == "돌았다" and not res.get("차단된 저장소 쓰기")
+          and same > 0 and diff == 0 and unknown == 0)
+    out = {
+        "🔴 자가 냈나": bool(ok),
+        "자": "🔴 격리 재실행 --- 절(`통과` 키) 판정이 **커밋된 산출물과 같나**",
+        "🔴 실행 결과": res.get("🔴 결과"),
+        "갈아끼운 출력 상수": res.get("갈아끼운 출력 상수") or "없음",
+        "🔴 저장소 쓰기 차단": res.get("차단된 저장소 쓰기") or "없음(한 바이트도 안 썼다)",
+        "산출물별 절 대조": cmp_rows or "없음",
+        "🔴 같은 산출물 수": same, "🔴 다른 산출물 수": diff, "🔴 모르는 산출물 수": unknown,
+        "초": dt,
+        "역추적": res.get("역추적", "없음"),
+        "⚠ 한계": ("「오늘 이 실행에서 절 판정이 같았다」만 낸다. 시각·난수·외부 트리 의존이면 "
+                 "다음에 다를 수 있다 --- **「무해하다」로 읽지 마라**(조항 61)"),
+    }
+    _RERUN_CACHE[key] = out
+    return out
+
+
+def exempt_rulers(exempt: dict, *, consumers=(), root: Path = ROOT,
+                  rerun: bool = True) -> dict:
     """면제 사유마다 **자를 돌려** 참/거짓을 낸다(티처 #88 ㄷ · ㄹ).
 
     낸다: ``{경로: {"사유", "자", "🔴 자가 냈나"}}``. ``🔴 자가 냈나`` 가 ``True`` 인
     것만 「사유가 등록됐다」로 세야 한다 --- 그것이 ㉡ 대조의 새 ``B`` 다.
+
+    🔴🔴 **950 (티처 #89 1순위)** --- 자 셋을 더했다: ``기록기`` · ``동결산출물`` ·
+    ``재실행무해``. 그리고 **자를 여럿 붙일 수 있다**(``[자:a][자:b]`` --- 전부 참이어야 참).
+    🔴 949 가 「자가 없다」로 센 **56** 중 **50** 은 「자가 없는 것」이 아니라
+    **「이미 있는 자를 안 붙인 것」**이었다.
     """
     cons = set(consumers)
+    tags = {p: _ruler_tags(v) for p, v in exempt.items()}
+
     def _tag(v):
         m = RULER_MARK.match(v or "")
         return m.group(1).strip() if m else None
 
-    need = [p for p, v in exempt.items() if _tag(v) == "판import0"]
+    need = [p for p, t in tags.items() if "판import0" in t]
     imp = board_imports(need, root)
-    out: dict = {}
-    for p, v in sorted(exempt.items()):
-        name = _tag(v)
+    tracked = _tracked(root, "HEAD") if any("동결산출물" in t for t in tags.values()) else set()
+
+    def _one(p, v, name):
+        """자 하나를 돌려 ``{"자", "실측", "🔴 자가 냈나"}`` 를 낸다."""
         if name == "판import0":
             got = imp.get(p)
-            ok = isinstance(got, list) and not got
-            out[p] = {"사유": v, "자": "판 계산 모듈 import 0(AST · **이 실행 안에서**)",
-                      "실측": got, "🔴 자가 냈나": bool(ok)}
-        elif name == "모듈":
-            #: 🔴 실행 진입점이 없으면 「안 돌렸다」가 아니라 **「돌릴 수 없다」**다.
-            #: 🔴 문자열 검색이면 **자기 소스에 그 낱말을 적은 파일**이 걸린다
-            #:    (첫 판이 `lab/gitcall.py` 에서 실제로 그렇게 샜다). AST 로 본다.
+            return {"자": "판 계산 모듈 import 0(AST · **이 실행 안에서**)",
+                    "실측": got,
+                    "🔴 자가 냈나": bool(isinstance(got, list) and not got)}
+        if name == "모듈":
             has = True
             try:
                 tt = ast.parse((root / p).read_text(encoding="utf-8"))
@@ -1110,14 +1451,41 @@ def exempt_rulers(exempt: dict, *, consumers=(), root: Path = ROOT) -> dict:
                           for x in tt.body)
             except (OSError, UnicodeDecodeError, SyntaxError):
                 pass
-            out[p] = {"사유": v, "자": "실행 진입점(`__main__`)이 없다 --- 모듈이다",
-                      "실측": {"`__main__` 이 있나": has}, "🔴 자가 냈나": not has}
-        elif name == "자기자신":
-            out[p] = {"사유": v, "자": "이 실행 자신이다(지금 도는 러너)",
-                      "실측": p, "🔴 자가 냈나": True}
-        elif name == "소비자아님":
-            out[p] = {"사유": v, "자": "1 절 역참조 소비자 목록에 없다",
-                      "실측": p in cons, "🔴 자가 냈나": p not in cons}
+            return {"자": "실행 진입점(`__main__`)이 없다 --- 모듈이다",
+                    "실측": {"`__main__` 이 있나": has}, "🔴 자가 냈나": not has}
+        if name == "자기자신":
+            return {"자": "이 실행 자신이다(지금 도는 러너)", "실측": p, "🔴 자가 냈나": True}
+        if name == "소비자아님":
+            return {"자": "1 절 역참조 소비자 목록에 없다",
+                    "실측": {"소비자 목록에 있나": p in cons, "소비자 목록 크기(분모)": len(cons)},
+                    "🔴 자가 냈나": p not in cons}
+        if name == "기록기":
+            return ledger_writer(p, root)
+        if name == "동결산출물":
+            return frozen_output(p, root, tracked)
+        if name == "재실행무해":
+            if not rerun:
+                return {"자": "격리 재실행", "🔴 자가 냈나": False,
+                        "🔴 결과": "모른다 --- 이 실행에서는 안 돌렸다(`rerun=False`)"}
+            return rerun_isolated(p, root)
+        return {"자": "🔴 모르는 자 이름 `%s` --- 등기부에 없다" % name,
+                "🔴 자가 냈나": False}
+
+    out: dict = {}
+    for p, v in sorted(exempt.items()):
+        names = tags[p]
+        if len(names) > 1:
+            per = {n: _one(p, v, n) for n in names}
+            out[p] = {"사유": v,
+                      "자": " + ".join("`%s`" % n for n in names),
+                      "자별": per,
+                      "🔴 자가 냈나": all(d["🔴 자가 냈나"] for d in per.values()),
+                      "⚠": "🔴 자가 여럿이면 **전부 참이어야** 참이다(950)"}
+            continue
+        name = names[0] if names else None
+        if name:
+            d = _one(p, v, name)
+            out[p] = {"사유": v, **d}
         else:
             out[p] = {"사유": v,
                       "자": "🔴 자가 없다 --- 사유는 문자열일 뿐이고 아무것도 안 잰다",
@@ -1368,9 +1736,20 @@ def diff62(a_name, A, b_name, B, *, seed_pad: str = "", **kw) -> dict:
     **① `seed_pad`** --- ``diff_report`` 의 ④ 심은 키는 **``A∩B`` 에 두 인코딩이
     갈리는 원소가 있어야** 심을 수 있다. 없으면 그 절은 영원히 ``모른다`` 를 내고,
     그러면 **구조적으로 영원히 붉은 절**이 하나 는다(티처 #87 M2 가 규탄한 모양).
-    🔴 그래서 **같은 원소를 양쪽에 하나 넣는다** --- 집합 항등으로
-    ``A−B`` 와 ``B−A`` 는 **한 원소도 안 바뀐다.** 바뀌는 것은 ``|A|``·``|B|``
-    각각 **+1** 뿐이고, 그 사실을 산출물에 적는다. 판정에 쓰는 차집합은 그대로다.
+    🔴 그래서 **같은 원소를 양쪽에 하나 넣는다.**
+
+    🔴🔴 **정정 (950 · 티처 #89 M7 · 뿌리 ②)** --- 948 이 여기 적어 둔
+    *"집합 항등으로 ``A−B`` 와 ``B−A`` 는 한 원소도 안 바뀐다 … 판정에 쓰는 차집합은
+    그대로다"* 는 **조건부로만 참인데 무조건으로 읽힌다.** 참인 명제는
+
+        ``(A∪{s}) − (B∪{s}) = (A−B) − {s}``
+
+    이므로 🔴 **``s ∉ A△B`` 일 때만** 차집합이 그대로다. ``s ∈ A△B`` 면
+    **원소 하나가 조용히 사라진다** --- 948 이 실제로 판정용 차집합을 **162 → 161** 로
+    바꿨다. 949 가 그 경우 ``SeedPadError`` 를 던지게 했고 부르는 쪽은
+    ``diff62_guarded`` 를 쓴다. **뿌리 ①(``FROZEN_PREFIX`` 주석)은 949 가,
+    이 뿌리 ②는 950 이 정정한다** --- 949 는 ①만 고치고 이 문장을 그대로 뒀다.
+    바뀌는 것은 ``|A|``·``|B|`` 각각 **+1** 이고, 그 사실을 산출물에 적는다.
 
     **② ``모른다`` 문안의 정정** --- ``keyspace`` 의 ``UNKNOWN`` 은
     *"심은 키를 못 찾았다(검출기가 두 번째 인코딩을 못 본다)"* 한 문장인데,

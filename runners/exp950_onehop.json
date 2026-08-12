@@ -1,0 +1,69 @@
+{
+ "무엇": "[탐색] 950 --- 🔴 **판정이 아니다**(레인 규칙 1). 다음 사이클의 후보다",
+ "🔴 규칙 1": "여기 나온 수는 이 사이클의 결론·원장 표제·커밋/PR 제목에 **안 들어간다**",
+ "ㄱ 한 홉 변수": {
+  "무엇": "ㄱ 🔴 「한 홉 변수」까지 넓히면 무엇이 더 들어오나",
+  "읽은 트리": "🔴 **HEAD**(`git ls-tree` + `cat-file --batch`) --- 한 트리만 읽는다",
+  "🔴 훑은 `.py`(분모)": 765,
+  "🔴 지금 자가 보는 비교 자리": 7,
+  "🔴 한 홉까지 넓히면": 21,
+  "🔴 새로 들어오는 자리 수": 14,
+  "그중 `runners/out946_recount.py`": [
+   "runners/out946_recount.py:342"
+  ],
+  "🔴 티처 #89 C2 의 자리가 들어오나": true,
+  "새로 들어오는 자리(전량)": {
+   "runners/dose113.py:536": "\"복구됨\": before == after},",
+   "runners/era870.py:84": "if fp != FP852:",
+   "runners/gap869.py:44": "if len(ev) != 322 or fp != FP852:",
+   "runners/general853.py:83": "assert fpK == \"adb00d2827b0\", f\"KR 지문 불일치 {fpK}\"",
+   "runners/knock894.py:101": "if len(p) == 3:",
+   "runners/out946_recount.py:342": "rows[rel] = {\"작업 트리 sha256\": w, \"커밋된 sha256\": c, \"같은가\": w == c}",
+   "runners/preflight928.py:51": "drift = {k: {\"동결 시점\": exp[k], \"지금\": now[k]} for k in exp if exp.get(k) != now.get(k)}",
+   "runners/quotecheck905.py:174": "and out[\"🔴 검정력(일부러 틀린 값을 넣었다)\"][\"🔴 도구가 붉어진 수(종료 6)\"] == len(pw)",
+   "runners/quotecheck905.py:175": "and out[\"🔴 조항 59 — 없는 키는 종료 4 로 죽는가\"][\"🔴 종료 4 로 죽은 수\"] == len(nk))",
+   "runners/quotecheck906.py:349": "and out[\"🔴 검정력(일부러 틀린 값을 넣었다)\"][\"🔴 도구가 붉어진 수(종료 6)\"] == len(pw)",
+   "runners/quotecheck906.py:350": "and out[\"🔴 조항 59 — 없는 키는 종료 4 로 죽는가\"][\"🔴 종료 4 로 죽은 수\"] == len(nk)",
+   "runners/servaudit855.py:82": "same_fb = h_reg == h_fb",
+   "runners/ssl909_pretext.py:690": "\"sha 1\": sha_on, \"sha 2\": sha_again, \"비트 동일\": sha_on == sha_again},",
+   "serve/research.py:479": "\"**봉인 그대로인가**\": reseal == pre[\"봉인\"],"
+  },
+  "파일별 새 자리 수": {
+   "runners/dose113.py": 1,
+   "runners/era870.py": 1,
+   "runners/gap869.py": 1,
+   "runners/general853.py": 1,
+   "runners/knock894.py": 1,
+   "runners/out946_recount.py": 1,
+   "runners/preflight928.py": 1,
+   "runners/quotecheck905.py": 2,
+   "runners/quotecheck906.py": 2,
+   "runners/servaudit855.py": 1,
+   "runners/ssl909_pretext.py": 1,
+   "serve/research.py": 1
+  },
+  "⚠ 지금 자의 분해(대조로 세느냐 rev 로 세느냐는 **다음 사이클**)": {
+   "`checkers()` 의 대조 자리": 6,
+   "`checkers()` 의 rev 갈래": 1,
+   "🔴 새 자리 중 지금 대조 자리와 겹치는 것": 0,
+   "🔴 새 자리 중 지금 rev 갈래와 겹치는 것": 0
+  },
+  "🔴 이 절이 안 하는 것": "**판정을 안 한다.** 새로 들어온 자리가 「대조」인지 「rev 갈래」인지 가르는 일도, ㉮ 가 몇이 되는지도 **다음 사이클**이다(레인 규칙 1·2)"
+ },
+ "ㄴ 집합으로 눌린 자리": {
+  "무엇": "ㄴ 🔴 호출 자리 수 대 `|자 A|` --- **같은 줄에 둘이면 하나로 눌린다**",
+  "읽은 트리": "🔴 **작업 트리/색인**(`git ls-files`) --- ㄱ 과 **다른 트리다**",
+  "🔴 `sites_ast` 가 낸 행 수(호출 자리)": 194,
+  "🔴 `파일:줄` 로 누른 뒤(= `|자 A|`)": 191,
+  "🔴 삼켜진 수": 3,
+  "🔴 같은 줄에 둘 이상인 자리": {
+   "runners/out944b_obstime.py:143": 2,
+   "runners/out945_obstime.py:120": 2,
+   "runners/out947_rawgit.py:211": 2
+  },
+  "🔴 뜻": "티처 #88 M4 가 지목한 「51 대 49」의 정체다. **자가 틀린 게 아니라 키가 `파일:줄` 이라 같은 줄의 둘이 하나로 눌린다.** 어느 쪽이 옳은 분모인지는 **다음 사이클**이 정한다 --- 여기서는 **세기만** 한다"
+ },
+ "시각(UTC)": "2026-08-12T03:19:32Z",
+ "🔴 코드 sha256": "345372ddc863c7d698c6db6bf07bbfcabc0bdc1a684a2878ca1c75853f69bb01",
+ "초": 23.1
+}

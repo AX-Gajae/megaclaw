@@ -1,0 +1,757 @@
+{
+ "무엇": "노트 950 [수리] --- 「자가 없는 사유 56」을 자로 가른다(티처 #89 1순위)",
+ "🔴 어느 트리를 읽나(티처 #89 C3)": {
+  "사유 파일 · AST": "작업 트리",
+  "`동결산출물` 의 「커밋됐나」": "HEAD(`git ls-tree`)",
+  "`재실행무해` 의 견주는 상대": "HEAD(`git cat-file blob HEAD:…`)",
+  "절 6 의 입력": "949 의 커밋된 산출물",
+  "⚠": "🔴 **한 실행 안에서 두 트리를 섞는다 --- 그래서 절마다 적는다**"
+ },
+ "1 56 가르기": {
+  "검사": "1 🔴 949 의 「자가 없는 사유 56」을 가른다",
+  "읽은 트리": "작업 트리(두 사유 파일은 커밋된 입력이다)",
+  "🔴 분모 --- `exempt949.json` 항목 수": 72,
+  "949 에서 자가 붙어 있던 것": 16,
+  "🔴 949 에서 자가 없던 것(= 이 절의 분모)": 56,
+  "🔴 950 이 자를 붙인 것": 50,
+  "🔴 950 뒤에도 자가 없는 것": 6,
+  "자별 분해": {
+   "기록기": {
+    "수": 13,
+    "목록": [
+     "runners/knock894.py",
+     "runners/ledger892.py",
+     "runners/ledger899.py",
+     "runners/ledgeraudit878.py",
+     "runners/ledgeraudit878b.py",
+     "runners/ledgeraudit879.py",
+     "runners/ledgeraudit880.py",
+     "runners/ledgeraudit881.py",
+     "runners/ledgeraudit882.py",
+     "runners/note892_ledger.py",
+     "runners/note893_ledger.py",
+     "runners/note893_prereg.py",
+     "runners/pilot893.py"
+    ]
+   },
+   "동결산출물": {
+    "수": 2,
+    "목록": [
+     "runners/ratio940_addendum.py",
+     "runners/ratio940_stamp.py"
+    ]
+   },
+   "동결산출물+재실행무해": {
+    "수": 6,
+    "목록": [
+     "runners/exp947_npzflow.py",
+     "runners/out899a_gates.py",
+     "runners/out945_stampscan.py",
+     "runners/out946_quotefix.py",
+     "runners/out946_recount.py",
+     "runners/out947_rawgit.py"
+    ]
+   },
+   "모듈": {
+    "수": 1,
+    "목록": [
+     "lab/fixtures/한글이름_고정물.py"
+    ]
+   },
+   "소비자아님": {
+    "수": 28,
+    "목록": [
+     "event/census.py",
+     "runners/board898.py",
+     "runners/calpanel933_run.py",
+     "runners/dose113.py",
+     "runners/dose896.py",
+     "runners/event910_run.py",
+     "runners/geo919_link.py",
+     "runners/geo919_pubapi.py",
+     "runners/grid915_link.py",
+     "runners/interval918_run.py",
+     "runners/interval918_wire.py",
+     "runners/inv901.py",
+     "runners/nn908b_semtoken.py",
+     "runners/out943_recount.py",
+     "runners/out946_keymap.py",
+     "runners/paired928_run.py",
+     "runners/perm922_run.py",
+     "runners/preflight928.py",
+     "runners/quotecheck906.py",
+     "runners/rawpanel935_run.py",
+     "runners/shape824.py",
+     "runners/snapcheck.py",
+     "runners/ssl909_pretext.py",
+     "serve/layers.py",
+     "serve/test_harness.py",
+     "serve/test_trainlog.py",
+     "serve/trainlog_svc.py",
+     "state/perm922.py"
+    ]
+   },
+   "🔴 자가 없다": {
+    "수": 6,
+    "목록": [
+     "ingest/kobis_api908.py",
+     "paper/program.py",
+     "runners/exp948_gitcall_map.py",
+     "runners/out948_ab.py",
+     "runners/ratio940_run.py",
+     "serve/registry.py"
+    ]
+   }
+  },
+  "🔴 자가 없는 것(전량 · 하나씩 적는다)": {
+   "ingest/kobis_api908.py": {
+    "사유": "외부 수집 러너 --- 네트워크 경로이고 이번 변경(`lab/gitcall.py`·`ingest/audit.py` 의 래칫 등록)과 배선이 없다  🔴 **자가 절반만 있다** — 「이번 변경과 배선이 없다」는 AST 로 잴 수 있으나 「네트워크 경로라 안 돈다」는 **이 실행에서 못 잰다**(유료/외부 호출 금지). 반쪽 자는 안 붙인다",
+    "🔴 원리상·환경상 못 재나": "🔴 **절반** --- AST 는 되고 네트워크는 이 실행에서 못 잰다"
+   },
+   "paper/program.py": {
+    "사유": "논문 하네스 --- 이번 사이클은 **[수리] 레인**이라 ⑥(논문)을 안 낸다(`docs/루프.md` 레인 표)  🔴 **자가 없다** — 「이번 사이클은 [수리] 레인이라 ⑥ 을 안 낸다」는 **레인 선언**이지 파일의 성질이 아니다. 레인을 읽는 자가 없다",
+    "🔴 원리상·환경상 못 재나": "아니다 --- **아직 안 잰 것**이다"
+   },
+   "runners/exp948_gitcall_map.py": {
+    "사유": "[탐색] 팔이 이 사이클에 **돌렸고** `runners/exp948_gitcall_map.json` 을 냈다(규칙 1 --- 그 수는 이 사이클 결론에 안 들어간다). 🔴 그 뒤 `lab/gitcall.py` 가 또 바뀌었으므로 **지금 코드로는 안 돌렸다**  🔴 **자가 없다** — 「그 뒤 `lab/gitcall.py` 가 또 바뀌었으므로 지금 코드로는 안 돌렸다」를 재려면 **탐색 산출물의 도장과 지금 sha 를 견주는 대조**가 있어야 하는데 없다",
+    "🔴 원리상·환경상 못 재나": "아니다 --- **아직 안 잰 것**이다"
+   },
+   "runners/out948_ab.py": {
+    "사유": "🔴 **⑤′ 뒤에 돈다** --- 이 러너가 ⑤′ 산출물(`runners/out948_fiveprime.json`)을 **입력으로 읽기** 때문이다. 결과는 `runners/out948_ab.json` 에 있다  🔴 **자가 없다** — 「⑤′ 뒤에 돈다」는 **순서 선언**이다. 순서를 재는 자가 없다",
+    "🔴 원리상·환경상 못 재나": "아니다 --- **아직 안 잰 것**이다"
+   },
+   "runners/ratio940_run.py": {
+    "사유": "949 가 **고친 파일**이고 `runners/out949_refix.py` 가 **고친 줄이 든 `part0()` 을 실제로 돌렸다**(그 산출물이 증거). 전체는 판 계산이라 안 돈다(사전등록 P11). 「부분 실행」을 재는 자는 **아직 없다**  🔴 **자가 없다** — 「`part0()` 만 돌았다」는 **부분 실행**이고, 부분 실행을 재는 자가 없다(`재실행무해` 는 `main()` 전량만 잰다)",
+    "🔴 원리상·환경상 못 재나": "아니다 --- **아직 안 잰 것**이다"
+   },
+   "serve/registry.py": {
+    "사유": "웹 서비스 --- ⚠ **8791·8792 포트에 사용자 서버가 돈다.** 돌리면 그 서버를 흔든다. 안 돌린다  🔴 **환경상 못 잰다** — 8791·8792 포트에 사용자 서버가 돈다. 돌리면 흔든다. **자를 만들 수 있어도 이 환경에서 못 돌린다**",
+    "🔴 원리상·환경상 못 재나": "🔴 **환경상** --- 8791·8792 포트 서버를 흔든다"
+   }
+  },
+  "🔴 원리상·환경상 못 재는 것 수": 2,
+  "🔴 아직 안 잰 것 수": 4,
+  "통과": true,
+  "⚠ 통과의 뜻": "🔴 **이 절의 통과는 「다 닫았다」가 아니다** --- 「자가 없는 것이 손으로 셀 수 있는 수로 줄었다」뿐이다. 남은 것은 위 칸에 **전량** 있다"
+ },
+ "2 자 `기록기`": {
+  "검사": "2 🔴 자 `기록기` --- 다시 돌리면 원장에 **쓰나**",
+  "읽은 트리": "작업 트리(AST)",
+  "자": "`data/lab/denominator.json` 을 겨냥한 **쓰기 호출**이 있나(AST)",
+  "🔴 분모": 13,
+  "🔴 자가 참을 낸 것": 4,
+  "🔴 자가 **거짓**을 낸 것": 9,
+  "🔴 거짓 목록 --- **사유가 틀렸다는 발견이다**": [
+   "runners/knock894.py",
+   "runners/ledger892.py",
+   "runners/ledgeraudit878.py",
+   "runners/ledgeraudit878b.py",
+   "runners/ledgeraudit879.py",
+   "runners/ledgeraudit880.py",
+   "runners/ledgeraudit881.py",
+   "runners/ledgeraudit882.py",
+   "runners/pilot893.py"
+  ],
+  "파일별": {
+   "runners/knock894.py": {
+    "🔴 자가 냈나": false,
+    "자": "다시 돌리면 **원장 `data/lab/denominator.json` 에 쓰나**(AST · 작업 트리)",
+    "원장 경로 상수": "🔴 원장 상수를 못 찾았다",
+    "🔴 쓰기 자리": "없다 --- **이 모듈은 원장에 안 쓴다**",
+    "⚠ 한계": "정적 AST 다. 경로를 조립하면 못 본다(조항 59 --- 「없다」가 아니다)"
+   },
+   "runners/ledger892.py": {
+    "🔴 자가 냈나": false,
+    "자": "다시 돌리면 **원장 `data/lab/denominator.json` 에 쓰나**(AST · 작업 트리)",
+    "원장 경로 상수": [
+     "LED"
+    ],
+    "🔴 쓰기 자리": "없다 --- **이 모듈은 원장에 안 쓴다**",
+    "⚠ 한계": "정적 AST 다. 경로를 조립하면 못 본다(조항 59 --- 「없다」가 아니다)"
+   },
+   "runners/ledger899.py": {
+    "🔴 자가 냈나": true,
+    "자": "다시 돌리면 **원장 `data/lab/denominator.json` 에 쓰나**(AST · 작업 트리)",
+    "원장 경로 상수": [
+     "DEN"
+    ],
+    "🔴 쓰기 자리": [
+     "runners/ledger899.py:211 `write_text`"
+    ],
+    "⚠ 한계": "정적 AST 다. 경로를 조립하면 못 본다(조항 59 --- 「없다」가 아니다)"
+   },
+   "runners/ledgeraudit878.py": {
+    "🔴 자가 냈나": false,
+    "자": "다시 돌리면 **원장 `data/lab/denominator.json` 에 쓰나**(AST · 작업 트리)",
+    "원장 경로 상수": "리터럴로만",
+    "🔴 쓰기 자리": "없다 --- **이 모듈은 원장에 안 쓴다**",
+    "⚠ 한계": "정적 AST 다. 경로를 조립하면 못 본다(조항 59 --- 「없다」가 아니다)"
+   },
+   "runners/ledgeraudit878b.py": {
+    "🔴 자가 냈나": false,
+    "자": "다시 돌리면 **원장 `data/lab/denominator.json` 에 쓰나**(AST · 작업 트리)",
+    "원장 경로 상수": "리터럴로만",
+    "🔴 쓰기 자리": "없다 --- **이 모듈은 원장에 안 쓴다**",
+    "⚠ 한계": "정적 AST 다. 경로를 조립하면 못 본다(조항 59 --- 「없다」가 아니다)"
+   },
+   "runners/ledgeraudit879.py": {
+    "🔴 자가 냈나": false,
+    "자": "다시 돌리면 **원장 `data/lab/denominator.json` 에 쓰나**(AST · 작업 트리)",
+    "원장 경로 상수": "리터럴로만",
+    "🔴 쓰기 자리": "없다 --- **이 모듈은 원장에 안 쓴다**",
+    "⚠ 한계": "정적 AST 다. 경로를 조립하면 못 본다(조항 59 --- 「없다」가 아니다)"
+   },
+   "runners/ledgeraudit880.py": {
+    "🔴 자가 냈나": false,
+    "자": "다시 돌리면 **원장 `data/lab/denominator.json` 에 쓰나**(AST · 작업 트리)",
+    "원장 경로 상수": "리터럴로만",
+    "🔴 쓰기 자리": "없다 --- **이 모듈은 원장에 안 쓴다**",
+    "⚠ 한계": "정적 AST 다. 경로를 조립하면 못 본다(조항 59 --- 「없다」가 아니다)"
+   },
+   "runners/ledgeraudit881.py": {
+    "🔴 자가 냈나": false,
+    "자": "다시 돌리면 **원장 `data/lab/denominator.json` 에 쓰나**(AST · 작업 트리)",
+    "원장 경로 상수": "리터럴로만",
+    "🔴 쓰기 자리": "없다 --- **이 모듈은 원장에 안 쓴다**",
+    "⚠ 한계": "정적 AST 다. 경로를 조립하면 못 본다(조항 59 --- 「없다」가 아니다)"
+   },
+   "runners/ledgeraudit882.py": {
+    "🔴 자가 냈나": false,
+    "자": "다시 돌리면 **원장 `data/lab/denominator.json` 에 쓰나**(AST · 작업 트리)",
+    "원장 경로 상수": "리터럴로만",
+    "🔴 쓰기 자리": "없다 --- **이 모듈은 원장에 안 쓴다**",
+    "⚠ 한계": "정적 AST 다. 경로를 조립하면 못 본다(조항 59 --- 「없다」가 아니다)"
+   },
+   "runners/note892_ledger.py": {
+    "🔴 자가 냈나": true,
+    "자": "다시 돌리면 **원장 `data/lab/denominator.json` 에 쓰나**(AST · 작업 트리)",
+    "원장 경로 상수": [
+     "LED"
+    ],
+    "🔴 쓰기 자리": [
+     "runners/note892_ledger.py:225 `write_text`"
+    ],
+    "⚠ 한계": "정적 AST 다. 경로를 조립하면 못 본다(조항 59 --- 「없다」가 아니다)"
+   },
+   "runners/note893_ledger.py": {
+    "🔴 자가 냈나": true,
+    "자": "다시 돌리면 **원장 `data/lab/denominator.json` 에 쓰나**(AST · 작업 트리)",
+    "원장 경로 상수": [
+     "LEDGER"
+    ],
+    "🔴 쓰기 자리": [
+     "runners/note893_ledger.py:203 `write_text`"
+    ],
+    "⚠ 한계": "정적 AST 다. 경로를 조립하면 못 본다(조항 59 --- 「없다」가 아니다)"
+   },
+   "runners/note893_prereg.py": {
+    "🔴 자가 냈나": true,
+    "자": "다시 돌리면 **원장 `data/lab/denominator.json` 에 쓰나**(AST · 작업 트리)",
+    "원장 경로 상수": [
+     "LEDGER"
+    ],
+    "🔴 쓰기 자리": [
+     "runners/note893_prereg.py:153 `write_text`"
+    ],
+    "⚠ 한계": "정적 AST 다. 경로를 조립하면 못 본다(조항 59 --- 「없다」가 아니다)"
+   },
+   "runners/pilot893.py": {
+    "🔴 자가 냈나": false,
+    "자": "다시 돌리면 **원장 `data/lab/denominator.json` 에 쓰나**(AST · 작업 트리)",
+    "원장 경로 상수": "🔴 원장 상수를 못 찾았다",
+    "🔴 쓰기 자리": "없다 --- **이 모듈은 원장에 안 쓴다**",
+    "⚠ 한계": "정적 AST 다. 경로를 조립하면 못 본다(조항 59 --- 「없다」가 아니다)"
+   }
+  },
+  "통과": false,
+  "🔴 통과의 뜻": "전부 참이어야 통과. **거짓이 나오면 그것은 「고칠 것」이 아니라 「사유가 거짓이다」는 발견**이다 --- 사유를 통과하는 문장으로 바꿔 적지 않는다(사전등록 §0-5)"
+ },
+ "3 자 `동결산출물`": {
+  "검사": "3 🔴 자 `동결산출물` --- `OUT` 이 **커밋된 옛 사이클 산출물**인가",
+  "읽은 트리": "코드는 작업 트리(AST) · 「커밋됐나」는 **HEAD**(`ls-tree`)",
+  "🔴 분모": 8,
+  "🔴 자가 참을 낸 것": 8,
+  "🔴 거짓 목록": "없음",
+  "파일별": {
+   "runners/exp947_npzflow.py": {
+    "🔴 자가 냈나": true,
+    "자": "`OUT` 이 **커밋된 옛 사이클 산출물**을 가리키나(HEAD `ls-tree`)",
+    "OUT": "runners/exp947_npzflow.json",
+    "사이클 번호": 947,
+    "HEAD 에 커밋됐나": true,
+    "⚠ 한계": "이름 꼴(`out<번호>`·`exp<번호>`)에 기댄다. 이름이 다르면 못 본다"
+   },
+   "runners/out899a_gates.py": {
+    "🔴 자가 냈나": true,
+    "자": "`OUT` 이 **커밋된 옛 사이클 산출물**을 가리키나(HEAD `ls-tree`)",
+    "OUT": "runners/out899a_gates.json",
+    "사이클 번호": 899,
+    "HEAD 에 커밋됐나": true,
+    "⚠ 한계": "이름 꼴(`out<번호>`·`exp<번호>`)에 기댄다. 이름이 다르면 못 본다"
+   },
+   "runners/out945_stampscan.py": {
+    "🔴 자가 냈나": true,
+    "자": "`OUT` 이 **커밋된 옛 사이클 산출물**을 가리키나(HEAD `ls-tree`)",
+    "OUT": "runners/out945_stampscan.json",
+    "사이클 번호": 945,
+    "HEAD 에 커밋됐나": true,
+    "⚠ 한계": "이름 꼴(`out<번호>`·`exp<번호>`)에 기댄다. 이름이 다르면 못 본다"
+   },
+   "runners/out946_quotefix.py": {
+    "🔴 자가 냈나": true,
+    "자": "`OUT` 이 **커밋된 옛 사이클 산출물**을 가리키나(HEAD `ls-tree`)",
+    "OUT": "runners/out946_quotefix.json",
+    "사이클 번호": 946,
+    "HEAD 에 커밋됐나": true,
+    "⚠ 한계": "이름 꼴(`out<번호>`·`exp<번호>`)에 기댄다. 이름이 다르면 못 본다"
+   },
+   "runners/out946_recount.py": {
+    "🔴 자가 냈나": true,
+    "자": "`OUT` 이 **커밋된 옛 사이클 산출물**을 가리키나(HEAD `ls-tree`)",
+    "OUT": "runners/out946_recount.json",
+    "사이클 번호": 946,
+    "HEAD 에 커밋됐나": true,
+    "⚠ 한계": "이름 꼴(`out<번호>`·`exp<번호>`)에 기댄다. 이름이 다르면 못 본다"
+   },
+   "runners/out947_rawgit.py": {
+    "🔴 자가 냈나": true,
+    "자": "`OUT` 이 **커밋된 옛 사이클 산출물**을 가리키나(HEAD `ls-tree`)",
+    "OUT": "runners/out947_rawgit.json",
+    "사이클 번호": 947,
+    "HEAD 에 커밋됐나": true,
+    "⚠ 한계": "이름 꼴(`out<번호>`·`exp<번호>`)에 기댄다. 이름이 다르면 못 본다"
+   },
+   "runners/ratio940_addendum.py": {
+    "🔴 자가 냈나": true,
+    "자": "`OUT` 이 **커밋된 옛 사이클 산출물**을 가리키나(HEAD `ls-tree`)",
+    "OUT": "runners/out940_addendum.json",
+    "사이클 번호": 940,
+    "HEAD 에 커밋됐나": true,
+    "⚠ 한계": "이름 꼴(`out<번호>`·`exp<번호>`)에 기댄다. 이름이 다르면 못 본다"
+   },
+   "runners/ratio940_stamp.py": {
+    "🔴 자가 냈나": true,
+    "자": "`OUT` 이 **커밋된 옛 사이클 산출물**을 가리키나(HEAD `ls-tree`)",
+    "OUT": "runners/out940_prereg_stamp.json",
+    "사이클 번호": 940,
+    "HEAD 에 커밋됐나": true,
+    "⚠ 한계": "이름 꼴(`out<번호>`·`exp<번호>`)에 기댄다. 이름이 다르면 못 본다"
+   }
+  },
+  "통과": true
+ },
+ "4 자 `재실행무해`": {
+  "검사": "4 🔴 자 `재실행무해` --- **격리 재실행**으로 절 판정을 견준다",
+  "읽은 트리": "코드는 **작업 트리** · 견주는 상대는 **HEAD 의 커밋된 산출물**",
+  "🔴 이것이 티처 #88 의 「안 쟀다」 ② 다": "*「동결 러너를 다시 돌리면 정말 산출물이 안 바뀌는지」* --- 이 절이 그것을 잰다",
+  "🔴 분모": 6,
+  "🔴 절 판정이 같은 것": 2,
+  "🔴 **다르다**(다시 돌리면 절 판정이 바뀐다)": 1,
+  "🔴 모른다(「무해하다」가 아니다 · 조항 59)": 2,
+  "🔴 갈래별": {
+   "runners/exp947_npzflow.py": "✅ 같다 --- 절 판정이 커밋된 산출물과 같다",
+   "runners/out899a_gates.py": "🔴 모른다 --- - 예외 TypeError: main() missing 1 required positional argument: 'full'(「무해하다」가 아니다 · 조항 59)",
+   "runners/out945_stampscan.py": "✅ 같다 --- 절 판정이 커밋된 산출물과 같다",
+   "runners/out946_quotefix.py": "🔴 **저장소를 쓰려 들었다** --- 가드가 막았다. 「다시 돌리면 저장소가 바뀐다」가 **값으로 참**이다",
+   "runners/out946_recount.py": "🔴 모른다 --- **이 자의 한계다**. 출력 경로를 스크래치패드로 갈아끼웠더니 러너가 그 경로를 `relative_to(ROOT)` 로 다시 풀다 죽었다. **러너의 흠이 아니다**",
+   "runners/out947_rawgit.py": "🔴 **다르다** --- 다시 돌리니 절 판정이 **바뀐다**"
+  },
+  "🔴 같지 않거나 모르는 것": [
+   "runners/out899a_gates.py",
+   "runners/out946_quotefix.py",
+   "runners/out946_recount.py",
+   "runners/out947_rawgit.py"
+  ],
+  "🔴 저장소 쓰기를 시도한 것": {
+   "runners/out946_quotefix.py": [
+    "write_text /Users/ax/world_model/data/state/obs_time946_cachemap.json"
+   ]
+  },
+  "🔴 티처 #88 「안 쟀다」 ② 의 답": "*「동결 러너를 다시 돌리면 정말 산출물이 안 바뀌는지」* --- **쟀다.** 6 중 같은 것 2 · **다른 것 1** · 모른다 2 · 저장소를 쓰려 든 것 1. 🔴 **「안 바뀐다」는 전부에 대해 참이 아니다**",
+  "파일별": {
+   "runners/exp947_npzflow.py": {
+    "🔴 자가 냈나": true,
+    "자": "🔴 격리 재실행 --- 절(`통과` 키) 판정이 **커밋된 산출물과 같나**",
+    "🔴 실행 결과": "돌았다",
+    "갈아끼운 출력 상수": {
+     "OUT": {
+      "원래": "runners/exp947_npzflow.json",
+      "갈아끼움": "/private/tmp/claude-501/-Users-ax-world-model/511dc308-36bf-409d-9afe-b82a8bb5d7ae/scratchpad/wm950/runners_exp947_npzflow.py.exp947_npzflow.json"
+     }
+    },
+    "🔴 저장소 쓰기 차단": "없음(한 바이트도 안 썼다)",
+    "산출물별 절 대조": {
+     "runners/exp947_npzflow.json": {
+      "🔴 커밋된 절 수": 4,
+      "🔴 새 절 수": 4,
+      "🔴 다른 절": "없음"
+     }
+    },
+    "🔴 같은 산출물 수": 1,
+    "🔴 다른 산출물 수": 0,
+    "🔴 모르는 산출물 수": 0,
+    "초": 0.2,
+    "역추적": "없음",
+    "⚠ 한계": "「오늘 이 실행에서 절 판정이 같았다」만 낸다. 시각·난수·외부 트리 의존이면 다음에 다를 수 있다 --- **「무해하다」로 읽지 마라**(조항 61)"
+   },
+   "runners/out899a_gates.py": {
+    "🔴 자가 냈나": false,
+    "자": "🔴 격리 재실행 --- 절(`통과` 키) 판정이 **커밋된 산출물과 같나**",
+    "🔴 실행 결과": "모른다 --- 예외 TypeError: main() missing 1 required positional argument: 'full'",
+    "갈아끼운 출력 상수": {
+     "OUT": {
+      "원래": "runners/out899a_gates.json",
+      "갈아끼움": "/private/tmp/claude-501/-Users-ax-world-model/511dc308-36bf-409d-9afe-b82a8bb5d7ae/scratchpad/wm950/runners_out899a_gates.py.out899a_gates.json"
+     }
+    },
+    "🔴 저장소 쓰기 차단": "없음(한 바이트도 안 썼다)",
+    "산출물별 절 대조": "없음",
+    "🔴 같은 산출물 수": 0,
+    "🔴 다른 산출물 수": 0,
+    "🔴 모르는 산출물 수": 0,
+    "초": 0.4,
+    "역추적": "Traceback (most recent call last):\n  File \"/private/tmp/claude-501/-Users-ax-world-model/511dc308-36bf-409d-9afe-b82a8bb5d7ae/scratchpad/wm950/_iso_driver.py\", line 67, in <module>\n    mod.main()\nTypeError: main() missing 1 required positional argument: 'full'\n",
+    "⚠ 한계": "「오늘 이 실행에서 절 판정이 같았다」만 낸다. 시각·난수·외부 트리 의존이면 다음에 다를 수 있다 --- **「무해하다」로 읽지 마라**(조항 61)"
+   },
+   "runners/out945_stampscan.py": {
+    "🔴 자가 냈나": true,
+    "자": "🔴 격리 재실행 --- 절(`통과` 키) 판정이 **커밋된 산출물과 같나**",
+    "🔴 실행 결과": "돌았다",
+    "갈아끼운 출력 상수": {
+     "OUT": {
+      "원래": "runners/out945_stampscan.json",
+      "갈아끼움": "/private/tmp/claude-501/-Users-ax-world-model/511dc308-36bf-409d-9afe-b82a8bb5d7ae/scratchpad/wm950/runners_out945_stampscan.py.out945_stampscan.json"
+     }
+    },
+    "🔴 저장소 쓰기 차단": "없음(한 바이트도 안 썼다)",
+    "산출물별 절 대조": {
+     "runners/out945_stampscan.json": {
+      "🔴 커밋된 절 수": 0,
+      "🔴 새 절 수": 0,
+      "🔴 다른 절": "없음"
+     }
+    },
+    "🔴 같은 산출물 수": 1,
+    "🔴 다른 산출물 수": 0,
+    "🔴 모르는 산출물 수": 0,
+    "초": 0.1,
+    "역추적": "없음",
+    "⚠ 한계": "「오늘 이 실행에서 절 판정이 같았다」만 낸다. 시각·난수·외부 트리 의존이면 다음에 다를 수 있다 --- **「무해하다」로 읽지 마라**(조항 61)"
+   },
+   "runners/out946_quotefix.py": {
+    "🔴 자가 냈나": false,
+    "자": "🔴 격리 재실행 --- 절(`통과` 키) 판정이 **커밋된 산출물과 같나**",
+    "🔴 실행 결과": "모른다 --- 예외 PermissionError: [격리] 저장소 쓰기 차단: /Users/ax/world_model/data/state/obs_time946_cachemap.json",
+    "갈아끼운 출력 상수": {
+     "OUT": {
+      "원래": "runners/out946_quotefix.json",
+      "갈아끼움": "/private/tmp/claude-501/-Users-ax-world-model/511dc308-36bf-409d-9afe-b82a8bb5d7ae/scratchpad/wm950/runners_out946_quotefix.py.out946_quotefix.json"
+     }
+    },
+    "🔴 저장소 쓰기 차단": [
+     "write_text /Users/ax/world_model/data/state/obs_time946_cachemap.json"
+    ],
+    "산출물별 절 대조": "없음",
+    "🔴 같은 산출물 수": 0,
+    "🔴 다른 산출물 수": 0,
+    "🔴 모르는 산출물 수": 0,
+    "초": 25.1,
+    "역추적": "Traceback (most recent call last):\n  File \"/private/tmp/claude-501/-Users-ax-world-model/511dc308-36bf-409d-9afe-b82a8bb5d7ae/scratchpad/wm950/_iso_driver.py\", line 67, in <module>\n    mod.main()\n  File \"/Users/ax/world_model/runners/out946_quotefix.py\", line 699, in main\n    s3 = sec3(disk)\n  File \"/Users/ax/world_model/runners/out946_quotefix.py\", line 507, in sec3\n    CACHEMAP_NEW.write_text(json.dumps({\n  File \"/private/tmp/claude-501/-Users-ax-world-model/511dc308-36bf-409d-9afe-b82a8bb5d7ae/scratchpad/wm950/_iso_driver.py\", line 27, in <lambda>\n    pathlib.Path.write_text = lambda s, *a, **k: (_guard(s, \"write_text\"), _wt(s, *a, **k))[1]\n  File \"/private/tmp/claude-501/-Users-ax-world-model/511dc308-36bf-409d-9afe-b82a8bb5d7ae/scratchpad/wm950/_iso_driver.py\", line 22, in _guard\n    raise PermissionError(\"[격리] 저장소 쓰기 차단: %s\" % p)\nPermissionError: [격리] 저장소 쓰기 차단: /Users/ax/world_model/data/state/obs_time946_cachemap.json\n",
+    "⚠ 한계": "「오늘 이 실행에서 절 판정이 같았다」만 낸다. 시각·난수·외부 트리 의존이면 다음에 다를 수 있다 --- **「무해하다」로 읽지 마라**(조항 61)"
+   },
+   "runners/out946_recount.py": {
+    "🔴 자가 냈나": false,
+    "자": "🔴 격리 재실행 --- 절(`통과` 키) 판정이 **커밋된 산출물과 같나**",
+    "🔴 실행 결과": "모른다 --- 예외 ValueError: '/private/tmp/claude-501/-Users-ax-world-model/511dc308-36bf-409d-9afe-b82a8bb5d7ae/scratchpad/wm950/runners_out946_recount.py.out946_recount.json' is not in the subpath of '/Users/ax/world_model' OR one path is relative and the other is absolute.",
+    "갈아끼운 출력 상수": {
+     "OUT": {
+      "원래": "runners/out946_recount.json",
+      "갈아끼움": "/private/tmp/claude-501/-Users-ax-world-model/511dc308-36bf-409d-9afe-b82a8bb5d7ae/scratchpad/wm950/runners_out946_recount.py.out946_recount.json"
+     }
+    },
+    "🔴 저장소 쓰기 차단": "없음(한 바이트도 안 썼다)",
+    "산출물별 절 대조": "없음",
+    "🔴 같은 산출물 수": 0,
+    "🔴 다른 산출물 수": 0,
+    "🔴 모르는 산출물 수": 0,
+    "초": 3.4,
+    "역추적": "Traceback (most recent call last):\n  File \"/private/tmp/claude-501/-Users-ax-world-model/511dc308-36bf-409d-9afe-b82a8bb5d7ae/scratchpad/wm950/_iso_driver.py\", line 67, in <module>\n    mod.main()\n  File \"/Users/ax/world_model/runners/out946_recount.py\", line 322, in main\n    print(\"→\", OUT.relative_to(ROOT), \"· 통과\", doc[\"통과\"], \"· 실패\", doc[\"🔴 실패한 절\"])\n  File \"/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/pathlib.py\", line 929, in relative_to\n    raise ValueError(\"{!r} is not in the subpath of {!r}\"\nValueError: '/private/tmp/claude-501/-Users-ax-world-model/511dc308-36bf-409d-9afe-b82a8bb5d7ae/scratchpad/wm950/runners_out946_recount.py.out946_recount.json' is not in the subpath of '/Users/ax/world_model' OR one path is relative and the other is absolute.\n",
+    "⚠ 한계": "「오늘 이 실행에서 절 판정이 같았다」만 낸다. 시각·난수·외부 트리 의존이면 다음에 다를 수 있다 --- **「무해하다」로 읽지 마라**(조항 61)"
+   },
+   "runners/out947_rawgit.py": {
+    "🔴 자가 냈나": false,
+    "자": "🔴 격리 재실행 --- 절(`통과` 키) 판정이 **커밋된 산출물과 같나**",
+    "🔴 실행 결과": "돌았다",
+    "갈아끼운 출력 상수": {
+     "OUT": {
+      "원래": "runners/out947_rawgit.json",
+      "갈아끼움": "/private/tmp/claude-501/-Users-ax-world-model/511dc308-36bf-409d-9afe-b82a8bb5d7ae/scratchpad/wm950/runners_out947_rawgit.py.out947_rawgit.json"
+     }
+    },
+    "🔴 저장소 쓰기 차단": "없음(한 바이트도 안 썼다)",
+    "산출물별 절 대조": {
+     "runners/out947_rawgit.json": {
+      "🔴 커밋된 절 수": 10,
+      "🔴 새 절 수": 10,
+      "🔴 다른 절": [
+       "/",
+       "1 날 것 git 호출 전수"
+      ]
+     }
+    },
+    "🔴 같은 산출물 수": 0,
+    "🔴 다른 산출물 수": 1,
+    "🔴 모르는 산출물 수": 0,
+    "초": 77.2,
+    "역추적": "없음",
+    "⚠ 한계": "「오늘 이 실행에서 절 판정이 같았다」만 낸다. 시각·난수·외부 트리 의존이면 다음에 다를 수 있다 --- **「무해하다」로 읽지 마라**(조항 61)"
+   }
+  },
+  "통과": false,
+  "⚠ 한계(조항 61)": "「오늘 이 실행에서 절 판정이 같았다」만 낸다. **「무해하다」가 아니다** --- 시각·난수·외부 트리 의존이면 다음에 다를 수 있다"
+ },
+ "5 검정력(심어서 확인)": {
+  "검사": "5 🔴 새 자 셋의 **검정력** --- 심어서 확인(말이 아니라 발화)",
+  "읽은 트리": "심은 파일은 스크래치패드 · 견주는 상대는 HEAD",
+  "🔴 심은 수(분모)": 7,
+  "🔴 맞은 수": 7,
+  "🔴 빗나간 수": 0,
+  "심은 것별": {
+   "양성 ① 기록기 --- 원장에 write_text 한다": {
+    "자": "기록기",
+    "기대": true,
+    "🔴 실측": true,
+    "🔴 맞았나": true
+   },
+   "음성 ① 기록기 --- 원장을 **읽기만** 한다": {
+    "자": "기록기",
+    "기대": false,
+    "🔴 실측": false,
+    "🔴 맞았나": true
+   },
+   "양성 ② 동결산출물 --- OUT 이 커밋된 out946": {
+    "자": "동결산출물",
+    "기대": true,
+    "🔴 실측": true,
+    "🔴 맞았나": true
+   },
+   "음성 ② 동결산출물 --- OUT 이 안 커밋된 새 파일": {
+    "자": "동결산출물",
+    "기대": false,
+    "🔴 실측": false,
+    "🔴 맞았나": true
+   },
+   "양성 ③ 재실행무해 --- 커밋된 내용을 그대로 다시 쓴다": {
+    "자": "재실행무해",
+    "기대": true,
+    "🔴 실측": true,
+    "🔴 맞았나": true,
+    "저장소 쓰기 차단": "없음(한 바이트도 안 썼다)",
+    "산출물별 절 대조": {
+     "runners/out946_recount.json": {
+      "🔴 커밋된 절 수": 7,
+      "🔴 새 절 수": 7,
+      "🔴 다른 절": "없음"
+     }
+    }
+   },
+   "음성 ③ 재실행무해 --- 절 판정을 **뒤집어** 쓴다": {
+    "자": "재실행무해",
+    "기대": false,
+    "🔴 실측": false,
+    "🔴 맞았나": true,
+    "저장소 쓰기 차단": "없음(한 바이트도 안 썼다)",
+    "산출물별 절 대조": {
+     "runners/out946_recount.json": {
+      "🔴 커밋된 절 수": 7,
+      "🔴 새 절 수": 7,
+      "🔴 다른 절": [
+       "/",
+       "가 · 트리 객체 원 바이트",
+       "나 · 🔴 결함 공유 시험",
+       "다 · census 재계수",
+       "라 · 지도 대조",
+       "마 · 첫 경로와 수 대조",
+       "바 · 🔴 커밋된 실물과 대조"
+      ]
+     }
+    }
+   },
+   "🔴 음성 ④ 쓰기 가드 --- **저장소를 직접 쓰려 든다**": {
+    "자": "재실행무해",
+    "기대": false,
+    "🔴 실측": false,
+    "🔴 맞았나": true,
+    "저장소 쓰기 차단": [
+     "write_text /Users/ax/world_model/runners/out946_recount.json"
+    ],
+    "산출물별 절 대조": "없음"
+   }
+  },
+  "🔴 쓰기 가드가 실제로 막았나": [
+   "write_text /Users/ax/world_model/runners/out946_recount.json"
+  ],
+  "통과": true,
+  "🔴 통과의 뜻": "심은 것을 전부 맞히고 **쓰기 가드가 실제로 발화**해야 통과. 가드가 안 터지면 「저장소를 안 건드렸다」는 **안 잰 것**이다(조항 59)"
+ },
+ "6 M3 분모와 겹침": {
+  "검사": "6 🔴 M3 --- 두 수를 이을 때 **분모를 적는다**(조항 60 후단)",
+  "읽은 트리": "949 의 커밋된 산출물 `runners/out949_fiveprime.json`",
+  "절별": {
+   "1 소비자 역참조": {
+    "🔴 자가 없는 사유": [
+     "ingest/kobis_api908.py",
+     "lab/fixtures/한글이름_고정물.py",
+     "paper/program.py",
+     "runners/exp947_npzflow.py",
+     "runners/exp948_gitcall_map.py",
+     "runners/knock894.py",
+     "runners/ledger892.py",
+     "runners/ledger899.py",
+     "runners/ledgeraudit878.py",
+     "runners/ledgeraudit878b.py",
+     "runners/ledgeraudit879.py",
+     "runners/ledgeraudit880.py",
+     "runners/ledgeraudit881.py",
+     "runners/ledgeraudit882.py",
+     "runners/note892_ledger.py",
+     "runners/note893_ledger.py",
+     "runners/note893_prereg.py",
+     "runners/out899a_gates.py",
+     "runners/out945_stampscan.py",
+     "runners/out946_quotefix.py",
+     "runners/out946_recount.py",
+     "runners/out947_rawgit.py",
+     "runners/out948_ab.py",
+     "runners/pilot893.py",
+     "runners/ratio940_addendum.py",
+     "runners/ratio940_run.py",
+     "runners/ratio940_stamp.py",
+     "serve/registry.py"
+    ],
+    "수": 28,
+    "🔴 분모(그 절의 사유 수)": 43,
+    "산출물이 적은 수": 28,
+    "🔴 재현되나": true
+   },
+   "2 게이트": {
+    "🔴 자가 없는 사유": [
+     "event/census.py",
+     "runners/board898.py",
+     "runners/calpanel933_run.py",
+     "runners/dose113.py",
+     "runners/dose896.py",
+     "runners/event910_run.py",
+     "runners/exp947_npzflow.py",
+     "runners/geo919_link.py",
+     "runners/geo919_pubapi.py",
+     "runners/grid915_link.py",
+     "runners/interval918_run.py",
+     "runners/interval918_wire.py",
+     "runners/inv901.py",
+     "runners/nn908b_semtoken.py",
+     "runners/note893_ledger.py",
+     "runners/out899a_gates.py",
+     "runners/out943_recount.py",
+     "runners/out946_keymap.py",
+     "runners/out946_quotefix.py",
+     "runners/out946_recount.py",
+     "runners/out947_rawgit.py",
+     "runners/out948_ab.py",
+     "runners/paired928_run.py",
+     "runners/perm922_run.py",
+     "runners/pilot893.py",
+     "runners/preflight928.py",
+     "runners/quotecheck906.py",
+     "runners/rawpanel935_run.py",
+     "runners/shape824.py",
+     "runners/snapcheck.py",
+     "runners/ssl909_pretext.py",
+     "serve/layers.py",
+     "serve/registry.py",
+     "serve/test_harness.py",
+     "serve/test_trainlog.py",
+     "serve/trainlog_svc.py",
+     "state/perm922.py"
+    ],
+    "수": 37,
+    "🔴 분모(그 절의 사유 수)": 45,
+    "산출물이 적은 수": 37,
+    "🔴 재현되나": true
+   }
+  },
+  "🔴 §1 의 수 / 분모": "28 / 43",
+  "🔴 §2 의 수 / 분모": "37 / 45",
+  "🔴 교집합": 9,
+  "🔴 합집합(= 서로 다른 파일 수)": 56,
+  "교집합 목록": [
+   "runners/exp947_npzflow.py",
+   "runners/note893_ledger.py",
+   "runners/out899a_gates.py",
+   "runners/out946_quotefix.py",
+   "runners/out946_recount.py",
+   "runners/out947_rawgit.py",
+   "runners/out948_ab.py",
+   "runners/pilot893.py",
+   "serve/registry.py"
+  ],
+  "🔴 949 가 안 적은 것": "949 는 28 과 37 을 나란히 적고 **겹침을 어디에도 안 적었다**. 두 수는 **분모가 다르고**(43 대 45) 겹치는 파일이 있다",
+  "통과": true
+ },
+ "7 남은 것": {
+  "검사": "7 🔴 **남은 것** --- 줄었다고 초록이 되는 게 아니다",
+  "🔴 남은 것(전량)": {
+   "ingest/kobis_api908.py": {
+    "사유": "외부 수집 러너 --- 네트워크 경로이고 이번 변경(`lab/gitcall.py`·`ingest/audit.py` 의 래칫 등록)과 배선이 없다  🔴 **자가 절반만 있다** — 「이번 변경과 배선이 없다」는 AST 로 잴 수 있으나 「네트워크 경로라 안 돈다」는 **이 실행에서 못 잰다**(유료/외부 호출 금지). 반쪽 자는 안 붙인다",
+    "🔴 원리상·환경상 못 재나": "🔴 **절반** --- AST 는 되고 네트워크는 이 실행에서 못 잰다"
+   },
+   "paper/program.py": {
+    "사유": "논문 하네스 --- 이번 사이클은 **[수리] 레인**이라 ⑥(논문)을 안 낸다(`docs/루프.md` 레인 표)  🔴 **자가 없다** — 「이번 사이클은 [수리] 레인이라 ⑥ 을 안 낸다」는 **레인 선언**이지 파일의 성질이 아니다. 레인을 읽는 자가 없다",
+    "🔴 원리상·환경상 못 재나": "아니다 --- **아직 안 잰 것**이다"
+   },
+   "runners/exp948_gitcall_map.py": {
+    "사유": "[탐색] 팔이 이 사이클에 **돌렸고** `runners/exp948_gitcall_map.json` 을 냈다(규칙 1 --- 그 수는 이 사이클 결론에 안 들어간다). 🔴 그 뒤 `lab/gitcall.py` 가 또 바뀌었으므로 **지금 코드로는 안 돌렸다**  🔴 **자가 없다** — 「그 뒤 `lab/gitcall.py` 가 또 바뀌었으므로 지금 코드로는 안 돌렸다」를 재려면 **탐색 산출물의 도장과 지금 sha 를 견주는 대조**가 있어야 하는데 없다",
+    "🔴 원리상·환경상 못 재나": "아니다 --- **아직 안 잰 것**이다"
+   },
+   "runners/out948_ab.py": {
+    "사유": "🔴 **⑤′ 뒤에 돈다** --- 이 러너가 ⑤′ 산출물(`runners/out948_fiveprime.json`)을 **입력으로 읽기** 때문이다. 결과는 `runners/out948_ab.json` 에 있다  🔴 **자가 없다** — 「⑤′ 뒤에 돈다」는 **순서 선언**이다. 순서를 재는 자가 없다",
+    "🔴 원리상·환경상 못 재나": "아니다 --- **아직 안 잰 것**이다"
+   },
+   "runners/ratio940_run.py": {
+    "사유": "949 가 **고친 파일**이고 `runners/out949_refix.py` 가 **고친 줄이 든 `part0()` 을 실제로 돌렸다**(그 산출물이 증거). 전체는 판 계산이라 안 돈다(사전등록 P11). 「부분 실행」을 재는 자는 **아직 없다**  🔴 **자가 없다** — 「`part0()` 만 돌았다」는 **부분 실행**이고, 부분 실행을 재는 자가 없다(`재실행무해` 는 `main()` 전량만 잰다)",
+    "🔴 원리상·환경상 못 재나": "아니다 --- **아직 안 잰 것**이다"
+   },
+   "serve/registry.py": {
+    "사유": "웹 서비스 --- ⚠ **8791·8792 포트에 사용자 서버가 돈다.** 돌리면 그 서버를 흔든다. 안 돌린다  🔴 **환경상 못 잰다** — 8791·8792 포트에 사용자 서버가 돈다. 돌리면 흔든다. **자를 만들 수 있어도 이 환경에서 못 돌린다**",
+    "🔴 원리상·환경상 못 재나": "🔴 **환경상** --- 8791·8792 포트 서버를 흔든다"
+   }
+  },
+  "🔴 이 사이클이 **안 한 것**": [
+   "티처 #89 **C2** --- `checkers()` 의 「한 홉 변수」 사각지대. **[탐색]로만 쟀고 판정은 안 했다**(`docs/탐색/950.md` · 규칙 1)",
+   "티처 #89 **M4·M5·m1~m6** --- 안 했다",
+   "티처 #88 **M3**(`3 판정 키 규약` 범위) · **M4**(호출 자리 51 대 |자 A| 49) · **m2**(16자리 축약 sha) · 「안 쟀다」 **①④** --- 안 했다",
+   "티처 #86·#87 의 잔여 --- **여전히 하나도 안 갚았다**(949 의 자기 신고 그대로)",
+   "⑤′ 의 `1-라`·`3 판정 키 규약` --- 이 사이클이 안 건드렸다(붉은 채로 싣는다)"
+  ],
+  "통과": true,
+  "⚠": "이 절은 **목록**이다. `통과 True` 는 「목록을 적었다」는 뜻이지 「갚았다」가 아니다"
+ },
+ "🔴 절 수(분모)": 7,
+ "🔴 실패한 절": [
+  "2 자 `기록기`",
+  "4 자 `재실행무해`"
+ ],
+ "통과": false,
+ "시각(UTC · 시작)": "2026-08-12T03:18:34Z",
+ "시각(UTC · 끝)": "2026-08-12T03:20:21Z",
+ "🔴 코드 sha256(이게 자다)": {
+  "runners/out950_rulers.py": "345f3c0fca2e4460991d5124590219b13b848ef0052abba090bde746e5929245",
+  "lab/gitcall.py": "cc190833a560b5ce2bb2839df33f4b504661aa896fb64ce3368a3c7163f60b65"
+ },
+ "🔴 입력 산출물 sha256": {
+  "data/lab/exempt949.json": "061a3f2e64356276c2b042c520c57889f1c0d9e06ac33056ae82f380dec7e791",
+  "data/lab/exempt950.json": "85b36d593f970048bc57aacae3308d0e3f9e6603cb0f1b77cbd09c14e3744dcf",
+  "runners/out949_fiveprime.json": "0933ef194848aef920ff8d29aca73691f2cf01a060f90dbfd081eda31fe845f8"
+ },
+ "초": 106.6
+}
