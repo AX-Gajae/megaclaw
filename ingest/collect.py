@@ -148,18 +148,55 @@ def _kobis_obs(d: dict) -> int:
 REGISTRY = ROOT / "data/lab/sources.json"
 
 
+class 못읽었다(Exception):
+    """🔴 「0 행」과 「못 읽었다」를 가르는 예외 (조항 59 · 952 신설)."""
+
+
 def _gz_lines(d: Path) -> int:
-    """디렉터리 안 `*.jsonl.gz` 의 줄 수 합."""
+    """디렉터리 안 `*.jsonl.gz` 의 줄 수 합.
+
+    🔴 **952 자가 적발 --- 초판이 바로 이 모듈이 막으려는 병에 걸렸다.**
+
+    초판은 이렇게 썼다::
+
+        try:
+            ... 줄을 센다 ...
+        except Exception:
+            pass          # 🔴 깨진 파일이 조용히 **0 행**이 된다
+
+    실측(2026-08-12): 등기부가 새로 들인 `wiki_daily` 가 처음 돌았을 때 장부가
+    **「무성장 · 델타 -140」**을 찍었다. 자료가 140행 사라진 것처럼 보였다.
+    **사라지지 않았다.** 산수가 정확히 맞는다::
+
+        지금 읽히는 합계                       812
+        측정 순간 못 읽힌 파일 4개의 행 수       142   (게임80·도서28·만화3·모바일31)
+        812 - 142 =                          670   ← `after` 에 찍힌 값 그대로
+        커밋된 before 810 - 670 =            140   ← 장부의 「손실」
+
+    🔴 **원천은 오히려 810 → 812 로 늘었다.** 「손실 140」은 **자가 만든 유령**이다.
+    깨진 파일 넷을 **0 으로 세고 아무 말도 안 했기 때문**이다.
+
+    이 저장소가 네 번 앓은 그 병이고(359·636·673·887), 이 모듈의 독스트링이
+    *「산출물을 안 보고 신호를 봤기 때문」*이라 적어 둔 바로 그것이다.
+    🔴 **그 병을 막으려고 만든 모듈에 952 가 같은 병을 새로 넣었다.**
+
+    그래서 **삼키지 않는다.** 못 읽으면 `못읽었다` 를 던지고, 부르는 쪽이
+    **「모른다」**로 판정한다 --- 「0」도 「줄었다」도 아니다.
+    """
     import gzip
     if not d.is_dir():
         return 0
     n = 0
+    bad = []
     for f in sorted(d.glob("*.jsonl.gz")):
         try:
             with gzip.open(f, "rt", encoding="utf-8") as fh:
                 n += sum(1 for _ in fh)
-        except Exception:
-            pass
+        except Exception as e:                                    # noqa: BLE001
+            bad.append("%s(%s)" % (f.name, type(e).__name__))
+    if bad:
+        # 🔴 **왜 「부분 합」을 안 내놓나**: 그러면 「줄었다」와 구별이 안 된다.
+        raise 못읽었다("못 읽은 파일 %d개: %s" % (len(bad), ", ".join(bad[:6])))
     return n
 
 
@@ -281,7 +318,14 @@ def _run_one(c: dict, timeout: int | None = None) -> dict:
     # `code=-9` 라 `🔴 실패` 로 찍히는데, 그건 **느린 것을 고장이라 부르는 것**이고
     # 진짜 고장과 섞이면 장부가 못 쓰게 된다. 판정을 따로 세우고 제한도 수집기별로 둔다.
     timeout = timeout or int(c.get("제한", 900))
-    before = c["측정"]()
+    # 🔴 952 --- 재는 것 자체가 실패할 수 있다. 「못 쟀다」를 「0」으로 안 읽는다
+    try:
+        before = c["측정"]()
+    except 못읽었다 as e:
+        return {"이름": c["이름"], "판정": "🔴 모른다(측정불가)", "델타": 0,
+                "before": None, "after": None, "단위": c["단위"], "종료코드": 0,
+                "서명": [], "초": 0.0, "출력끝": "",
+                "사유": "돌리기 **전** 측정이 실패했다: %s" % e}
     # **안 돌려도 되는 것은 안 돌린다.** 판정은 `건너뜀` --- 무성장과 섞지 않는다
     # (무성장은 '돌렸는데 안 늘었다' 이고 이쪽은 '돌릴 필요가 없었다' 다).
     skip = c.get("건너뜀")
@@ -302,7 +346,17 @@ def _run_one(c: dict, timeout: int | None = None) -> dict:
         out = (e.stdout or b"").decode("utf-8", "ignore") if isinstance(e.stdout, bytes) \
             else (e.stdout or "")
         out += f"\n시간초과 {timeout}s"
-    after = c["측정"]()
+    # 🔴 952 --- 뒤 측정도 실패할 수 있다
+    try:
+        after = c["측정"]()
+    except 못읽었다 as e:
+        return {"이름": c["이름"], "판정": "🔴 모른다(측정불가)", "델타": 0,
+                "before": before, "after": None, "단위": c["단위"],
+                "종료코드": code, "서명": [],
+                "초": round((dt.datetime.now() - t0).total_seconds(), 1),
+                "출력끝": out[-700:],
+                "사유": ("돌린 **뒤** 측정이 실패했다: %s --- 🔴 **「줄었다」가 아니다.** "
+                        "수집기가 아직 파일을 쓰는 중일 수 있다" % e)}
     delta = after - before
 
     hits = [s for s in QUIET_FAIL if s in out]
@@ -315,6 +369,18 @@ def _run_one(c: dict, timeout: int | None = None) -> dict:
         판정 = "🔴 조용한실패"          # ← 크론이 구조적으로 못 잡는 자리
     elif delta > 0:
         판정 = "성장"
+    elif delta < 0:
+        # 🔴 **952 신설 --- 이 갈래가 없었다.**
+        #
+        # 초판의 판정은 넷(성장·무성장·실패·조용한실패)이고 `delta < 0` 은
+        # **`else` 로 떨어져 「무성장」**이었다. 즉 **140행을 잃은 원천과 아무것도
+        # 안 바뀐 원천이 장부에서 같은 글자**였다.
+        #
+        # 🔴 더 나쁜 것: 이 모듈의 `_obs()` 독스트링이 이미 이렇게 적어 두었다 ---
+        # *「총합이 줄어드는 것으로 드러난다(append-only 원천에서 총합이 줄면 그
+        # 자체가 신호다)」*. **신호가 있다고 적어 놓고 그 신호를 읽는 판정이 없었다.**
+        # 코드가 자기 주석을 안 지킨 자리다.
+        판정 = "🔴 줄었다"
     else:
         판정 = "무성장"
 
