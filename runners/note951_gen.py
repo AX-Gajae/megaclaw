@@ -70,7 +70,8 @@ def build() -> str:
     fail = fp["🔴 실패한 절"]
     fail = fail if isinstance(fail, list) else []
     gate = fp["2 게이트"]
-    cli = gate.get("🔴 CLI 사유(`--exempt`)로 닫힌 게이트 수", "🔴 그 키가 없다")
+    src = gate.get("🔴 사유의 출처(948 신설 · 티처 #87 M2 가 연 길의 구멍을 센다)", {})
+    cli = src.get("🔴 CLI 사유(`--exempt`)로 닫힌 게이트 수", "🔴 그 키가 없다")
     notrun = gate.get("🔴 안 돌린 수", "🔴 그 키가 없다")
     ages = s6["절 이름별 나이"]
     props = s6["🔴 성질(951 이 적는다)"]

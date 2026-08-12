@@ -1214,7 +1214,7 @@ def out_const(rel: str, root: Path = ROOT):
 CYCLE_OUT = re.compile(r"^(?:out|exp)(\d{3})")
 
 #: 이 사이클 번호. 이보다 **작은** 번호의 커밋된 산출물은 「옛 사이클의 증거」다.
-THIS_CYCLE = 950
+THIS_CYCLE = 951
 
 
 def frozen_output(rel: str, root: Path = ROOT, tracked: set | None = None) -> dict:
