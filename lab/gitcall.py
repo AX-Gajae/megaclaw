@@ -1099,6 +1099,22 @@ def exempt_rulers(exempt: dict, *, consumers=(), root: Path = ROOT) -> dict:
             ok = isinstance(got, list) and not got
             out[p] = {"사유": v, "자": "판 계산 모듈 import 0(AST · **이 실행 안에서**)",
                       "실측": got, "🔴 자가 냈나": bool(ok)}
+        elif name == "모듈":
+            #: 🔴 실행 진입점이 없으면 「안 돌렸다」가 아니라 **「돌릴 수 없다」**다.
+            #: 🔴 문자열 검색이면 **자기 소스에 그 낱말을 적은 파일**이 걸린다
+            #:    (첫 판이 `lab/gitcall.py` 에서 실제로 그렇게 샜다). AST 로 본다.
+            has = True
+            try:
+                tt = ast.parse((root / p).read_text(encoding="utf-8"))
+                has = any(isinstance(x, ast.If) and "__main__" in ast.dump(x.test)
+                          for x in tt.body)
+            except (OSError, UnicodeDecodeError, SyntaxError):
+                pass
+            out[p] = {"사유": v, "자": "실행 진입점(`__main__`)이 없다 --- 모듈이다",
+                      "실측": {"`__main__` 이 있나": has}, "🔴 자가 냈나": not has}
+        elif name == "자기자신":
+            out[p] = {"사유": v, "자": "이 실행 자신이다(지금 도는 러너)",
+                      "실측": p, "🔴 자가 냈나": True}
         elif name == "소비자아님":
             out[p] = {"사유": v, "자": "1 절 역참조 소비자 목록에 없다",
                       "실측": p in cons, "🔴 자가 냈나": p not in cons}
