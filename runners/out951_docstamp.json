@@ -9,19 +9,19 @@
  "🔴 입력별 sha256(대조의 기록 쪽)": {
   "runners/exp951_home.json": "d484993bbc2ba26f099157f3055c222f6802df92c7cefa54bf7d6e9799054966",
   "runners/out950_fiveprime.json": "4ee6e6eb9c627ee8b09b56ccbfdfbee62ca049d7e5b0e5d0241e6a90786c70ab",
-  "runners/out951_fiveprime.json": "24e44b8d94c38785cf04360c8c21018f9e4462fbaea17ec3867c02ec022bf435",
+  "runners/out951_fiveprime.json": "e45c32d253766b245e727c3ae49d0f32fb45a30c82159d71d45631c38ae84f54",
   "runners/out951_guard.json": "5ff2b1f3ed658782f2ad7fd1db85fde017b78004a351e6743ee603b0bb91b41f",
-  "runners/out951_score.json": "7034e756611ab417b7a7ac70dfacd2e2bd340b5693a2defbeb6b1a909c959898"
+  "runners/out951_score.json": "d0aebfec280facc224febe641641bf51d15a7d1f79e9f3fa4e6b3cec8c060b09"
  },
  "🔴 생산기 sha256": {
   "runners/note951_gen.py": "64cd2badf467d1b6cba81248c03eeed3e0558a4d83eb57f2463866f769460e35"
  },
  "🔴 문서 sha256": {
-  "docs/수리/951.md": "467355252fdca1175696f58c028081e0bb8634930025df9157a15787972ec656"
+  "docs/수리/951.md": "5327ad83c10e5b815afbe3c6930a468fbbcf6e317fdeabbb72791c94bc13cdee"
  },
  "⚠ 증거력의 한계(조항 61)": "이 대조는 **낡음만** 잡는다. 🔴 **문서의 수가 옳은지는 안 본다** --- 입력 산출물 자체가 틀렸으면 초록인 채로 틀린 수를 나른다",
  "🔴 순환에 대하여": "`runners/out951_fiveprime.json` 도 입력이다. ⑤′ 를 **두 번** 돌린다 --- 첫 판으로 이 문서를 찍고, 문서·도장을 커밋한 뒤 둘째 판을 돌리고, **둘째 판으로 이 문서를 다시 찍어** 도장이 disk 와 맞는 고정점에서 멈춘다",
- "시각(UTC)": "2026-08-12T04:34:29Z",
+ "시각(UTC)": "2026-08-12T04:39:11Z",
  "초": 0.0,
  "통과": true,
  "🔴 통과의 뜻": "이 러너는 **찍는 쪽**이다. 견주는 쪽은 ⑤′ 의 `7 문서 대조` 다"
