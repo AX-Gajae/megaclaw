@@ -247,6 +247,18 @@ def backref(base, head, tree, ran, exempt) -> dict:
     notrun_other = [c for c in notrun if not c.endswith(".py")]
     no_reason = [c for c in notrun_py if c not in exempt]
 
+    # ── 🔴 조항 62 --- 「안 돌린 172 · .py 30 · 사유 없이 0」은 **차집합 개수**다.
+    #    티처 #87 M3: 947 은 `fiveprime902.py` 를 143줄 고치면서 **새 절 셋에만**
+    #    `diff62` 를 걸고 **원래 절 1·2 는 안 걸었다**. 여기가 그 둘 중 하나다.
+    #    🔴 이 자리는 진짜로 위험하다 --- A(소비자)는 `git grep -z` 가 낸 **참 이름**이고
+    #    B(`--ran`)는 **사람이 손으로 친 문자열**이라 두 인코딩이 갈릴 수 있다.
+    d62_notrun = gc.diff62("역참조 소비자(전량)", set(consumers),
+                           "돌렸다(--ran)", set(ran),
+                           probe=ks.octal_escape, seed_pad=gc.CONTROL_SEED)
+    d62_noreason = gc.diff62("안 돌린 .py", set(notrun_py),
+                             "사유가 등록된 것(--exempt)", set(exempt),
+                             probe=ks.octal_escape, seed_pad=gc.CONTROL_SEED)
+
     return {
         "검사": "1 소비자 역참조 --- 🔴 사람이 고르지 않는다(`docs/루프.md:249-253`)",
         "취합 시작(base)": base, "머리(head)": head,
@@ -280,9 +292,13 @@ def backref(base, head, tree, ran, exempt) -> dict:
         "안 돌렸다(비 .py · 실행 대상 아님)": notrun_other,
         "안 돌린 .py 의 사유": {k: v for k, v in exempt.items() if k in set(notrun_py)},
         "🔴 사유 없이 안 돌린 .py": no_reason,
-        "통과": (not no_reason),
+        "🔴 조항 62 ㉠ 안 돌린 것(= 소비자 − 돌린 것)": d62_notrun,
+        "🔴 조항 62 ㉡ 사유 없이 안 돌린 .py(= 안 돌린 .py − 사유 등록)": d62_noreason,
+        # 🔴 티처 #87 M4 --- `diff62` 가 낸 판정을 **바깥에서 감싸지 않는다**
+        "통과": (not no_reason) and d62_notrun["통과"] and d62_noreason["통과"],
         "⚠ 통과의 뜻": ("역참조 소비자 중 **실행 가능한 `.py` 가 전부 다시 돌았거나 "
-                   "사유가 등록됐나**. 「안 돌렸다」가 하나라도 사유 없이 남으면 실패다"),
+                   "사유가 등록됐나**. 「안 돌렸다」가 하나라도 사유 없이 남으면 실패다. "
+                   "🔴 **그리고 위 조항 62 대조 둘이 「모른다」가 아니어야 한다**(티처 #87 M3·M4)"),
     }
 
 
@@ -362,7 +378,20 @@ def gate_roster(tree) -> dict:
     return sorted(p for p in got if p.endswith(".py")), meta
 
 
-def run_gates(do_run, tree, consumers, ran_hand=()) -> dict:
+def run_gates(do_run, tree, consumers, ran_hand=(), exempt=None) -> dict:
+    """🔴🔴 **948 수리 (티처 #87 M2)** --- `exempt` 를 **받는다**.
+
+    947 은 이 절이 「`--gate-exempt` CLI 가 없어서 **구조적으로 영원히 붉다**」고
+    적었다. **거짓이었다** --- 사유 딕셔너리는 같은 실행 안에 **이미 만들어져 있었고**
+    이 함수가 그것을 **파라미터로 안 받았을 뿐**이다. 실측(티처가 두 절을 교차해 셌다):
+    `2 게이트` 의 「사유 없이 안 돌린 **9**」가 **9/9 전부 절 1 에 이미 사유가 달려 있다**.
+    티처 #80 의 *"「배선을 못 넣었다」가 거짓이었다 --- 길은 3줄"* 이 같은 러너에서 재발했다.
+
+    🔴 **그리고 그 길을 열면 구멍이 하나 생긴다**: 사유를 넘겨 게이트를 끌 수 있다.
+    그래서 **CLI 사유로 닫힌 수를 따로 센다**(`🔴 그중 CLI 사유(`--exempt`)로 닫힌 수`).
+    안 세면 「사유 없이 안 돌린 것 0」이 무슨 뜻인지 다음 세션이 못 읽는다.
+    """
+    exempt = dict(exempt or {})
     roster, meta = gate_roster(tree)
     # 🔴 무엇을 왜 안 돌리는지 **여기 적는다**. 안 적으면 「없다」가 된다.
     #    🔴 사유 하나는 **기계로 나온다**: 이번 취합의 역참조에 안 걸린 게이트는
@@ -374,6 +403,9 @@ def run_gates(do_run, tree, consumers, ran_hand=()) -> dict:
             "다른 팔 소유 · 돌리면 `runners/out899a_gates.json` 을 덮어써서 동시에 도는 팔의 "
             "산출물을 깨뜨린다. 대신 **3 절이 그 산출물을 읽어 판정 키를 감사한다**"),
     })
+    # 🔴 CLI 사유가 **더 구체적**이므로 기계 사유를 덮는다(어느 쪽인지 아래에서 센다).
+    from_cli = sorted(p for p in roster if p in exempt)
+    skip.update({p: exempt[p] for p in from_cli})
     # 손으로 다시 돌린 게이트(`--ran`)도 「돌렸다」다 --- 안 세면 「안 돌렸다」가 부풀고,
     # 부푼 분모도 분모 바꿔치기다(조항 60).
     ran = [p for p in ran_hand if p in set(roster)]
@@ -398,6 +430,15 @@ def run_gates(do_run, tree, consumers, ran_hand=()) -> dict:
     notrun = [p for p in roster if p not in set(ran)]
     no_reason = [p for p in notrun if p not in skip]
     failed = [k for k, v in results.items() if v is False]
+    # ── 🔴 조항 62 --- 「안 돌린 40 · 사유 없이 9」는 **차집합 개수**다 (티처 #87 M3)
+    #    947 은 이 러너를 143줄 고치면서 **새 절 셋에만** `diff62` 를 걸고
+    #    원래 절 1·2 는 안 걸었다. 여기가 그 둘 중 하나다.
+    d62_notrun = gc.diff62("게이트 명부(roster)", set(roster),
+                           "돌렸다(ran)", set(ran),
+                           probe=ks.octal_escape, seed_pad=gc.CONTROL_SEED)
+    d62_noreason = gc.diff62("안 돌린 게이트", set(notrun),
+                             "사유가 등록된 것(skip)", set(skip),
+                             probe=ks.octal_escape, seed_pad=gc.CONTROL_SEED)
     return {
         "검사": "2 게이트 --- 🔴 명부를 기계로 뽑는다(손 나열 금지)",
         "명부를 어떻게 뽑았나": '`git grep -lF -e \'"통과":\'` 로 **`통과` 를 키로 내는 `.py` 전량**',
@@ -409,10 +450,26 @@ def run_gates(do_run, tree, consumers, ran_hand=()) -> dict:
         "🔴 안 돌렸다(= 「없다」가 아니다)": notrun,
         "안 돌린 사유": {k: v for k, v in skip.items() if k in set(notrun)},
         "🔴 사유 없이 안 돌린 것": no_reason,
+        # 🔴 948 --- 사유의 **출처**를 센다. 안 세면 「0」이 무슨 뜻인지 못 읽는다
+        "🔴 사유의 출처(948 신설 · 티처 #87 M2 가 연 길의 구멍을 센다)": {
+            "🔴 CLI 사유(`--exempt`)로 닫힌 게이트 수": len([p for p in notrun if p in set(from_cli)]),
+            "그 목록": [p for p in notrun if p in set(from_cli)],
+            "기계 사유(1 절 역참조에 안 걸렸다)로 닫힌 수":
+                len([p for p in notrun if p in skip and p not in set(from_cli)]),
+            "⚠": ("🔴 CLI 사유는 **사람이 넘긴 것**이다 --- 이 수가 크면 이 절은 "
+                  "「검사」가 아니라 「장식」에 가까워진다. **그 판단을 하려고 센다**"),
+        },
+        "🔴 조항 62 ㉠ 안 돌린 것(= 명부 − 돌린 것)": d62_notrun,
+        "🔴 조항 62 ㉡ 사유 없이 안 돌린 것(= 안 돌린 것 − 사유 등록)": d62_noreason,
         "돌린 게이트의 절별 판정": results or "안 돌렸다(--gates 를 안 줬다)",
         "🔴 실패한 절": failed or "없음",
         "🔴 예외": exc or "없음",
-        "통과": bool(do_run) and (not failed) and (not exc) and (not no_reason),
+        # 🔴 티처 #87 M4 --- `diff62` 가 「모른다」·`통과 False` 를 낸 절을
+        #    **바깥에서 `통과 True` 로 감싸지 않는다**. 그래서 AND 로 엮는다.
+        "통과": (bool(do_run) and (not failed) and (not exc) and (not no_reason)
+                and d62_notrun["통과"] and d62_noreason["통과"]),
+        "🔴 통과의 뜻": ("게이트를 돌렸고 · 실패한 절이 없고 · 예외가 없고 · 사유 없이 안 "
+                   "돌린 것이 없고 · 🔴 **위 조항 62 대조 둘이 「모른다」가 아니어야** 통과"),
     }
 
 
@@ -818,8 +875,10 @@ def main(argv=None):
             "🔴 예외": "%s: %s" % (type(e).__name__, e), "통과": False}
 
     _cons = res["1 소비자 역참조"].get("역참조 소비자(전량)", [])
+    # 🔴 948 (티처 #87 M2) --- `exempt` 를 **넘긴다**. 947 은 이미 만들어 놓고 안 넘겼다.
     res["2 게이트"] = run_gates(a.gates, a.tree,
-                             _cons if isinstance(_cons, list) else [], ran)
+                             _cons if isinstance(_cons, list) else [], ran,
+                             exempt=exempt)
     res["3 판정 키 규약"] = keyaudit(a.keyaudit)
     res["4 도장 확인"] = stamp_audit()
     res["5 quote901 무변"] = quote_regress(a.quote_ref, a.quote_now)
