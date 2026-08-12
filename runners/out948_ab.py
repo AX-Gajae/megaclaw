@@ -47,9 +47,22 @@ def stamp(inputs) -> dict:
     }
 
 
-def _old_ratchet():
-    """`HEAD` 의 **옛** 래칫 등록을 읽는다 --- P9 를 재현 가능하게 재려고."""
-    r = subprocess.run(["git", "-C", str(ROOT), "show", "HEAD:ingest/audit.py"],
+#: 🔴 **수리 전 rev**(티처 #87 원장 항목 = 이 사이클이 손대기 전 트리).
+PRE_REV = "3d2e66fa3"
+
+
+def _old_ratchet(rev: str = PRE_REV):
+    """`rev` 의 **옛** 래칫 등록을 읽는다 --- P9 를 재현 가능하게 재려고.
+
+    🔴🔴 **채점기 정정(같은 세션 · 자백)**: 초판은 `HEAD` 를 읽었다. 그런데 이 러너는
+    **수리를 커밋한 뒤에** 도므로 `HEAD` 에는 **이미 새 등록표가 들어 있다** ---
+    「옛 등록으로 재면 넘치나」를 **새 등록으로 재고 있었다.** 그래서 P9 가 `false` 로
+    채점됐는데 그것은 **예측의 반증이 아니라 자의 고장**이다(조항 59).
+    자가 **가리키는 곳**을 고쳤고 **자 자체는 안 갈았다** --- 그리고 고치기 전 값
+    (`HEAD` 로 읽은 것)을 **같은 산출물에 나란히 싣는다**. 🔴 감추면 그것이 티처 #87 M1 이
+    잡은 「측정이 자를 갈아 끼웠다」와 같은 짓이 된다.
+    """
+    r = subprocess.run(["git", "-C", str(ROOT), "show", "%s:ingest/audit.py" % rev],
                        capture_output=True, text=True)
     if r.returncode != 0:
         return None, None
@@ -135,20 +148,34 @@ def main():
 
     # ── 절 2 --- 죽은 숫자 게이트 -----------------------------------------
     dn = audit.dead_numbers()
-    old_debt, old_by = _old_ratchet()
-    if old_debt is None:
-        p9 = {"🔴 안 쟀다": "`git show HEAD:ingest/audit.py` 를 못 읽었다"}
-    else:
-        aged = dn["역사 기록(래칫)"]["문서별"]
-        grew_old = {d: [n, old_by.get(d)] for d, n in aged.items()
-                    if d in old_by and n > old_by[d]}
-        p9 = {"옛 등록 총합": old_debt, "옛 등록표 합": sum(old_by.values()),
-              "⚠ 옛 등록은 자기와 어긋나 있었다(표 합 != 상수)":
-                  sum(old_by.values()) != old_debt,
-              "지금 실측 총합": dn["역사 기록(래칫)"]["수"],
-              "옛 등록으로 재면 넘치나": (dn["역사 기록(래칫)"]["수"] > old_debt
-                                or bool(grew_old)),
-              "옛 등록으로 재면 늘어난 문서": grew_old or "없음"}
+    aged = dn["역사 기록(래칫)"]["문서별"]
+
+    def _p9(rev):
+        debt, by = _old_ratchet(rev)
+        if debt is None:
+            return {"🔴 못 읽었다": "`git show %s:ingest/audit.py` --- 「없다」가 아니다" % rev}
+        grew_old = {d: [n, by.get(d)] for d, n in aged.items()
+                    if d in by and n > by[d]}
+        return {"자(rev)": rev, "등록 총합": debt, "등록표 합": sum(by.values()),
+                "⚠ 등록이 자기와 어긋나나(표 합 != 상수)": sum(by.values()) != debt,
+                "지금 실측 총합": dn["역사 기록(래칫)"]["수"],
+                "이 등록으로 재면 넘치나": (dn["역사 기록(래칫)"]["수"] > debt
+                                  or bool(grew_old)),
+                "이 등록으로 재면 늘어난 문서": grew_old or "없음"}
+
+    p9 = _p9(PRE_REV)
+    p9_head = _p9("HEAD")
+    old_debt = p9.get("등록 총합")
+    p9["🔴 채점기 정정(자백) --- 초판이 읽던 곳"] = {
+        "무엇": ("초판 채점기는 `HEAD` 를 읽었다. 이 러너는 **수리를 커밋한 뒤에** 돌므로 "
+               "`HEAD` 에는 **이미 새 등록표**가 있다 --- 「옛 등록으로 재면」을 "
+               "**새 등록으로 재고 있었다.** P9 가 `false` 로 채점됐고 그것은 "
+               "**예측의 반증이 아니라 자의 고장**이다(조항 59)"),
+        "🔴 자를 갈아 끼운 것이 아니다": ("고친 것은 자가 **가리키는 rev** 하나이고 판정식은 "
+                             "그대로다. 그리고 고치기 전 값을 **여기 나란히 싣는다** --- "
+                             "감추면 티처 #87 M1 이 잡은 「측정이 자를 갈아 끼웠다」가 된다"),
+        "초판(HEAD)으로 읽은 값": p9_head,
+    }
     res["2 🔴 죽은 숫자 게이트"] = {
         "검사": "2 🔴 `ingest.audit.dead_numbers()` --- 947 이 되살린 은퇴값",
         "🔴 경성 걸린 곳": dn["걸린 곳"],
@@ -199,6 +226,13 @@ def main():
             "🔴 CLI 사유(`--exempt`)로 닫힌 수": cli_n,
             "🔴 exempt 를 안 넘겼다면 사유 없이 안 돌렸을 것(= 947 의 9)": len(would),
             "그 목록": would,
+            "🔴 P7 의 「9」는 **남의 실행의 수**다(자백 · 조항 60)": (
+                "사전등록 P7 은 「9 → 0」이라 적었다. 그 **9 는 947 의 ⑤′ 실행**"
+                "(다른 `--base` · 다른 `--ran` · 다른 트리)에서 나온 수다. "
+                "**이 실행의 같은 수는 %d** 다 --- 🔴 **분모가 다른 두 수를 이어 붙인 것**이고, "
+                "그것은 내가 이 사이클에 갚기로 한 티처 #87 M6 그 자체다. "
+                "**기제 주장(사유는 이미 있었고 함수가 안 받았을 뿐)은 이 실행 안에서 서고, "
+                "상수 9 는 안 선다.**" % len(would)),
             "🔴 이 A/B 가 무엇을 갈랐나": (
                 "947 은 이 절을 「`--gate-exempt` CLI 가 없어서 **구조적으로 영원히 붉다**」로 "
                 "닫았다. 같은 실행 안의 두 수(%d → %d)가 그 문장을 **거짓으로** 만든다 --- "
@@ -242,7 +276,7 @@ def main():
                  "🔴 exempt 를 안 넘겼다면 사유 없이 안 돌렸을 것(= 947 의 9)"] == 9)),
         "P8 죽은 숫자 경성 걸린 곳 1 → 0": (res["2 🔴 죽은 숫자 게이트"]["🔴 경성 걸린 곳 수"] == 0),
         "P9 947.md 만으로는 통과 못 한다(래칫이 이미 넘쳤다)": (
-            NOTMEASURED if old_debt is None else p9["옛 등록으로 재면 넘치나"]),
+            NOTMEASURED if old_debt is None else p9["이 등록으로 재면 넘치나"]),
         "P10 조항 62 심은 키가 절 1·2 에서 발화한다": (
             NOTMEASURED if five is None else
             (bool(d62) and all(v["🔴 발화했나"] for v in d62.values()))),
