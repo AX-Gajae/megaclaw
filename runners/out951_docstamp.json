@@ -9,9 +9,9 @@
  "🔴 입력별 sha256(대조의 기록 쪽)": {
   "runners/exp951_home.json": "d484993bbc2ba26f099157f3055c222f6802df92c7cefa54bf7d6e9799054966",
   "runners/out950_fiveprime.json": "4ee6e6eb9c627ee8b09b56ccbfdfbee62ca049d7e5b0e5d0241e6a90786c70ab",
-  "runners/out951_fiveprime.json": "e45c32d253766b245e727c3ae49d0f32fb45a30c82159d71d45631c38ae84f54",
+  "runners/out951_fiveprime.json": "8f722dcfdfa0fa0a6680b3bf6e6ab3cd49a714e69d21d63bf7cbe70f33ffdaba",
   "runners/out951_guard.json": "169a990a3517e0c18fe6d513373bbea8232e93ebe792dcb4a82b51a273536fb4",
-  "runners/out951_score.json": "0cb33097fd24a71ac29dcb7f46555a0049d63074c7f4932f5ffe89471adcd8bf"
+  "runners/out951_score.json": "f1246ea1caff25c98333b91d5c9d18d8697e8d61a05a8a0140b245e33ad63688"
  },
  "🔴 생산기 sha256": {
   "runners/note951_gen.py": "74b721c85f0166aea4540b1ed677d59676f676791f9ab02c73725879cfadc2bb"
@@ -21,7 +21,7 @@
  },
  "⚠ 증거력의 한계(조항 61)": "이 대조는 **낡음만** 잡는다. 🔴 **문서의 수가 옳은지는 안 본다** --- 입력 산출물 자체가 틀렸으면 초록인 채로 틀린 수를 나른다",
  "🔴 순환에 대하여": "`runners/out951_fiveprime.json` 도 입력이다. ⑤′ 를 **두 번** 돌린다 --- 첫 판으로 이 문서를 찍고, 문서·도장을 커밋한 뒤 둘째 판을 돌리고, **둘째 판으로 이 문서를 다시 찍어** 도장이 disk 와 맞는 고정점에서 멈춘다",
- "시각(UTC)": "2026-08-12T04:47:45Z",
+ "시각(UTC)": "2026-08-12T04:52:29Z",
  "초": 0.0,
  "통과": true,
  "🔴 통과의 뜻": "이 러너는 **찍는 쪽**이다. 견주는 쪽은 ⑤′ 의 `7 문서 대조` 다"
