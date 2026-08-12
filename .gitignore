@@ -35,3 +35,10 @@ data/ingest/hplt_ko/*.parquet
 data/ingest/steam_games/archive.zip
 data/ingest/steam_games/*.csv
 data/ingest/steam_games/*.json.raw
+
+# 🔴 952 — wikidaily941 이 쓰는 중인 조각. 다 쓰면 os.replace 로 갈아 끼운다
+data/ingest/wiki_daily/*.jsonl.gz.part
+data/ingest/steam_reviews/*.jsonl.gz.part
+
+# 🔴 티처 #91 m6 — zip 을 풀면 games.json 이 918MB 다. 스테이지에 뜨면 안 된다
+data/ingest/steam_games/*.json

@@ -42,6 +42,7 @@ from __future__ import annotations
 import argparse
 import gzip
 import json
+import os
 import time
 import urllib.error
 import urllib.parse
@@ -174,7 +175,23 @@ def main() -> dict:
             hi_all = max(hi_all, days[-1][0])
             d = t["도메인"]
             if d not in fh:
-                fh[d] = gzip.open(OUTDIR / f"{d}.jsonl.gz", "wt", encoding="utf-8")
+                # 🔴 **952 수리 --- 초판은 최종 파일을 바로 `"wt"` 로 열었다.**
+                #
+                # `"wt"` 는 **여는 순간 자른다**. 그리고 이 러너는 손잡이를
+                # **43분 내내 열어 둔 채** 마지막에야 닫는다. 그 사이:
+                #   ① 파일은 끝 표시가 없는 **깨진 gzip** 이라 아무도 못 읽는다
+                #   ② 러너가 중간에 죽으면 그 도메인 자료는 **사라진다**
+                #      (백업이 아니라 원본을 잘라 놓았으므로)
+                #
+                # 실측(2026-08-12): 이 러너가 도는 동안 `ingest.collect` 가
+                # `wiki_daily` 를 재서 **「무성장 · 델타 -140」**을 찍었다. 자료는
+                # 하나도 안 없어졌고(810 → 812) 깨진 파일 넷을 0 으로 센 것이었다.
+                # 🔴 **자를 고쳤지만 유령을 만든 쪽은 이 줄이다.**
+                #
+                # 그래서 **`.part` 에 쓰고 마지막에 갈아 끼운다**(같은 파일계라
+                # `os.replace` 가 원자적이다). 러너가 죽으면 `.part` 만 남고
+                # **옛 파일은 멀쩡히 살아 있다.**
+                fh[d] = gzip.open(OUTDIR / f"{d}.jsonl.gz.part", "wt", encoding="utf-8")
             fh[d].write(json.dumps({
                 "키": t["키"], "도메인": d, "문서": t["문서"], "언어": t["언어"],
                 "시작일": t["시작일"], "첫날": days[0][0], "끝날": days[-1][0],
@@ -198,6 +215,13 @@ def main() -> dict:
         time.sleep(a.sleep)
     for f in fh.values():
         f.close()
+    # 🔴 952 --- 다 쓰고 **한 번에** 갈아 끼운다. 이 줄 전까지 옛 파일은 그대로다.
+    swapped = []
+    for d in fh:
+        part = OUTDIR / f"{d}.jsonl.gz.part"
+        if part.exists():
+            os.replace(str(part), str(OUTDIR / f"{d}.jsonl.gz"))
+            swapped.append(d)
 
     size = {p.name: p.stat().st_size for p in sorted(OUTDIR.glob("*.jsonl.gz"))}
     res = {

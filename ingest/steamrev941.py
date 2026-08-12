@@ -38,6 +38,7 @@ from __future__ import annotations
 
 import argparse
 import gzip
+import os
 import json
 import time
 import urllib.error
@@ -111,7 +112,24 @@ def main() -> dict:
     tg = targets(a.holdout_only)
     OUTDIR.mkdir(parents=True, exist_ok=True)
     t0 = time.time()
-    fp = gzip.open(OUTDIR / "reviews.jsonl.gz", "wt", encoding="utf-8")
+    # 🔴 **952 수리 --- `wikidaily941` 과 **똑같은 병**이었다(티처 #91 C1 이 wiki 쪽만 잡았다).
+    #
+    # 초판은 최종 파일을 `"wt"` 로 열었다. `"wt"` 는 **여는 순간 자른다**. 그리고 이
+    # 러너는 손잡이를 **30분 내내** 쥐고 마지막에야 닫는다. 그 사이:
+    #   ① 파일은 끝 표시 없는 **깨진 gzip** 이라 아무도 못 읽는다
+    #   ② 러너가 중간에 죽으면 **15,259,979 B / 94,484행이 사라진다**
+    #      (백업이 아니라 원본을 잘라 놓았으므로)
+    #
+    # 🔴 **실제로 일어났다**: 커밋 `2314a0b15` 에 이 파일이 **1,632,764 B · 못 읽는 상태**로
+    # 실렸다. 온전한 판은 `26c645da9`(15,259,979 B · 94,484행)에 있다.
+    # 그 커밋은 **wiki_daily 잘림을 고치러 온 hotfix** 였는데 **같은 병을 steam 쪽에서
+    # 그대로 저질렀다** --- 병이 파일이 아니라 **쓰기 방식**에 있었기 때문이다.
+    #
+    # 그래서 **`.part` 에 쓰고 마지막에 갈아 끼운다**(같은 파일계라 `os.replace` 는 원자적).
+    # 러너가 죽으면 `.part` 만 남고 **옛 파일은 멀쩡히 살아 있다.**
+    _final = OUTDIR / "reviews.jsonl.gz"
+    _part = OUTDIR / "reviews.jsonl.gz.part"
+    fp = gzip.open(_part, "wt", encoding="utf-8")
 
     n_req = n_ok = n_bad = 0
     n_rev = n_body = 0
@@ -165,6 +183,8 @@ def main() -> dict:
             print(f"  {i}/{len(tg)} req={n_req} 리뷰={n_rev} 본문={n_body} "
                   f"{time.time()-t0:.0f}s", flush=True)
     fp.close()
+    # 🔴 952 --- 다 쓰고 **한 번에** 갈아 끼운다. 이 줄 전까지 옛 파일은 그대로다.
+    os.replace(str(_part), str(_final))
 
     def iso(t):
         return time.strftime("%Y-%m-%d", time.gmtime(t)) if t else None

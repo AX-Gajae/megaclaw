@@ -8,7 +8,7 @@
  "🔴 입력 수(분모)": 9,
  "🔴 입력별 sha256(대조의 기록 쪽)": {
   "data/lab/harvest_ratchet.json": "ce15bb204f140a6bfe4ad01ed9ccac7affa65fba36317a51332a1b91dd8a0b5f",
-  "data/lab/sources.json": "bb930b6475833572637d8f8d4370852d7fb4258e082af210e1397a4d3a7f9334",
+  "data/lab/sources.json": "1a742a1de417495f7056b32ce6659a0b5dc6c83a488525aa23954ebcdd35b349",
   "runners/out952_count.json": "6ace9bcc929d44cbab4310f0cbaaf6dbdc95483ec296ee738a35d17a029104f4",
   "runners/out952_diag.json": "46b1d615f4e652e57d9a70a16feae66fa71118b57c42c90ff04aaed0d011ea5b",
   "runners/out952_fiveprime.json": "07d14d4ac991fa6a3a587df66200a26d3f6d17decb5cbecea47754697254b826",
@@ -18,15 +18,15 @@
   "runners/out952_wiring.json": "230e14745612d1c8d554aea2d7cdceee0a30a42904a79d166ef620d4daf54dc4"
  },
  "🔴 생산기 sha256": {
-  "runners/note952_gen.py": "9f7113640a9c4cf4f3d248359e371cb795b2b3ee05d6a87d547503f28e736c31"
+  "runners/note952_gen.py": "7f21b05d3d3d071f29d0a7e54daa4af29da858632adb48b08cf75bd4f98d4350"
  },
  "🔴 문서 sha256": {
-  "docs/수집/952.md": "1332243dc7469add39d8dfb83d26cd4982e6c77a2ae80340bde3ce440bddd89c"
+  "docs/수집/952.md": "d02d4291bf8eeae7d81cf9000cbf683bd3780e9793b11129af78e951db34dae6"
  },
  "⚠ 증거력의 한계(조항 61)": "이 대조는 **낡음만** 잡는다. 🔴 **문서의 수가 옳은지는 안 본다** --- 입력 산출물 자체가 틀렸으면 초록인 채로 틀린 수를 나른다",
  "🔴 순환에 대하여": "`runners/out952_fiveprime.json` 도 입력이다. ⑤′ 를 **두 번** 돌린다 --- 첫 판으로 문서를 찍고, 커밋한 뒤 둘째 판을 돌리고, 둘째 판으로 다시 찍는다",
- "시각(UTC)": "2026-08-12T05:40:41Z",
- "초": 0.1,
+ "시각(UTC)": "2026-08-12T06:14:05Z",
+ "초": 0.0,
  "통과": true,
  "🔴 통과의 뜻": "이 러너는 **찍는 쪽**이다. 견주는 쪽은 ⑤′ 의 `7 문서 대조` 다"
 }
