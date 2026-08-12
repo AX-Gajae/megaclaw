@@ -56,6 +56,8 @@
 from __future__ import annotations
 
 import ast
+import hashlib
+import io
 import json
 import os
 import re
@@ -1173,12 +1175,25 @@ def ledger_writer(rel: str, root: Path = ROOT) -> dict:
             if not any(c in mode for c in "wax+"):
                 continue
         writes.append("%s:%d `%s`" % (rel, n.lineno, fn))
+    # 🔴 **951 (티처 #90 M8)** --- 950 판은 「원장 상수를 **못 찾았다**」를 「안 쓴다」로 냈다.
+    #    셋을 가른다: **쓴다** / **안 쓴다**(원장을 가리키는 이름이 있는데 쓰기 자리가 0) /
+    #    🔴 **모른다**(원장을 가리키는 이름 자체가 없다 --- 이 자가 못 본 것이다).
+    #    ⚠ 티처가 손으로 열어 확인한 결론(`knock894.py`·`pilot893.py` 는 안 쓴다)은 **맞다**.
+    #    **답이 맞은 것과 자가 옳은 것은 둘이다** --- 그래서 자를 고친다.
+    if writes:
+        verdict = "쓴다"
+    elif names or lit:
+        verdict = "안 쓴다 --- 원장을 가리키는 이름이 있는데 **쓰기 자리가 0**이다"
+    else:
+        verdict = ("🔴 모른다 --- **원장을 가리키는 이름 자체가 없다**. "
+                   "「안 쓴다」가 아니라 **이 자가 못 본 것**이다(조항 59)")
     return {
         "🔴 자가 냈나": bool(writes),
+        "🔴 갈래(951)": verdict,
         "자": "다시 돌리면 **원장 `%s` 에 쓰나**(AST · 작업 트리)" % LEDGER_REL,
         "원장 경로 상수": sorted(names) or ("리터럴로만" if lit else
                                      "🔴 원장 상수를 못 찾았다"),
-        "🔴 쓰기 자리": writes or "없다 --- **이 모듈은 원장에 안 쓴다**",
+        "🔴 쓰기 자리": writes or "없다",
         "⚠ 한계": "정적 AST 다. 경로를 조립하면 못 본다(조항 59 --- 「없다」가 아니다)",
     }
 
@@ -1241,7 +1256,7 @@ def _passfail(obj, pre="") -> dict:
 
 
 _ISO_DRIVER = r'''
-import builtins, importlib.util, json, os, pathlib, sys, traceback
+import builtins, importlib.util, io, json, os, pathlib, shutil, sys, traceback
 
 REPO, SCRATCH, REL = sys.argv[1], sys.argv[2], sys.argv[3]
 repo = os.path.realpath(REPO)
@@ -1252,6 +1267,8 @@ BLOCKED = []
 
 def _bad(p):
     try:
+        if isinstance(p, int):        # os.open 의 fd 재사용 꼴 --- 경로가 아니다
+            return False
         rp = os.path.realpath(str(p))
     except Exception:
         return False
@@ -1264,21 +1281,99 @@ def _guard(p, what):
         raise PermissionError("[격리] 저장소 쓰기 차단: %s" % p)
 
 
-_wt, _wb, _op, _un, _mk = (pathlib.Path.write_text, pathlib.Path.write_bytes,
-                           builtins.open, pathlib.Path.unlink, os.remove)
-pathlib.Path.write_text = lambda s, *a, **k: (_guard(s, "write_text"), _wt(s, *a, **k))[1]
-pathlib.Path.write_bytes = lambda s, *a, **k: (_guard(s, "write_bytes"), _wb(s, *a, **k))[1]
-pathlib.Path.unlink = lambda s, *a, **k: (_guard(s, "unlink"), _un(s, *a, **k))[1]
-os.remove = lambda p, *a, **k: (_guard(p, "os.remove"), _mk(p, *a, **k))[1]
+# ── 🔴 951 (티처 #90 C1) --- 950 은 여기서 **둘**만 갈아끼웠다.
+#    티처가 여섯을 심으니 `io.open`·`Path.open(w)`·`os.open(O_CREAT)`·`subprocess` 넷이
+#    **파일을 실제로 만들었는데** 산출물엔 「한 바이트도 안 썼다」로 적혔다.
+#    ⚠ `io.open is builtins.open` 이 True 라도 **모듈 속성을 갈아야** io.open 이 막힌다.
+#    ⚠ `os.remove is os.unlink` 는 이 환경에서 **False** 다 --- 둘 다 갈아야 한다.
+#    🔴 그리고 **하위 프로세스는 이 몽키패치를 안 물려받는다** --- 그건 원리상 못 잡고
+#       부모의 **지문 대조**(`repo_fingerprint`)가 잡는다.
+_orig = {
+    "Path.write_text": pathlib.Path.write_text,
+    "Path.write_bytes": pathlib.Path.write_bytes,
+    "Path.unlink": pathlib.Path.unlink,
+    "Path.open": pathlib.Path.open,
+    "Path.mkdir": pathlib.Path.mkdir,
+    "Path.touch": pathlib.Path.touch,
+    "Path.rename": pathlib.Path.rename,
+    "Path.replace": pathlib.Path.replace,
+    "Path.rmdir": pathlib.Path.rmdir,
+    "builtins.open": builtins.open,
+    "io.open": io.open,
+    "os.open": os.open,
+    "os.remove": os.remove,
+    "os.unlink": os.unlink,
+    "os.rename": os.rename,
+    "os.replace": os.replace,
+    "os.mkdir": os.mkdir,
+    "os.makedirs": os.makedirs,
+    "os.rmdir": os.rmdir,
+    "os.truncate": os.truncate,
+    "shutil.rmtree": shutil.rmtree,
+    "shutil.copyfile": shutil.copyfile,
+    "shutil.move": shutil.move,
+}
+WRITE_MODE = "wax+"
 
 
-def _open(f, mode="r", *a, **k):
-    if any(c in str(mode) for c in "wax+"):
-        _guard(f, "open(%s)" % mode)
-    return _op(f, mode, *a, **k)
+def _mk1(name, fn, argi=0):
+    """``argi`` 가 int 면 그 인자만, tuple 이면 **그 전부**를 겨냥으로 본다.
+
+    🔴 ``rename``/``replace``/``move`` 는 **원본이 사라지고 대상이 생긴다** --- 둘 다 쓰기다.
+    """
+    idx = argi if isinstance(argi, tuple) else (argi,)
+
+    def w(*a, **k):
+        for i in idx:
+            if len(a) > i:
+                _guard(a[i], name)
+        return fn(*a, **k)
+    return w
 
 
-builtins.open = _open
+def _mk_open(name, fn):
+    def w(f, mode="r", *a, **k):
+        if any(c in str(mode) for c in WRITE_MODE):
+            _guard(f, "%s(%s)" % (name, mode))
+        return fn(f, mode, *a, **k)
+    return w
+
+
+def _mk_osopen(fn):
+    wflags = 0
+    for nm in ("O_CREAT", "O_WRONLY", "O_RDWR", "O_APPEND", "O_TRUNC"):
+        wflags |= getattr(os, nm, 0)
+
+    def w(path, flags, *a, **k):
+        if flags & wflags:
+            _guard(path, "os.open(flags=%d)" % flags)
+        return fn(path, flags, *a, **k)
+    return w
+
+
+pathlib.Path.write_text = _mk1("Path.write_text", _orig["Path.write_text"])
+pathlib.Path.write_bytes = _mk1("Path.write_bytes", _orig["Path.write_bytes"])
+pathlib.Path.unlink = _mk1("Path.unlink", _orig["Path.unlink"])
+pathlib.Path.mkdir = _mk1("Path.mkdir", _orig["Path.mkdir"])
+pathlib.Path.touch = _mk1("Path.touch", _orig["Path.touch"])
+pathlib.Path.rmdir = _mk1("Path.rmdir", _orig["Path.rmdir"])
+pathlib.Path.rename = _mk1("Path.rename", _orig["Path.rename"], (0, 1))
+pathlib.Path.replace = _mk1("Path.replace", _orig["Path.replace"], (0, 1))
+pathlib.Path.open = _mk_open("Path.open", _orig["Path.open"])
+builtins.open = _mk_open("builtins.open", _orig["builtins.open"])
+io.open = _mk_open("io.open", _orig["io.open"])
+os.open = _mk_osopen(_orig["os.open"])
+os.remove = _mk1("os.remove", _orig["os.remove"])
+os.unlink = _mk1("os.unlink", _orig["os.unlink"])
+os.rmdir = _mk1("os.rmdir", _orig["os.rmdir"])
+os.mkdir = _mk1("os.mkdir", _orig["os.mkdir"])
+os.makedirs = _mk1("os.makedirs", _orig["os.makedirs"])
+os.truncate = _mk1("os.truncate", _orig["os.truncate"])
+os.rename = _mk1("os.rename", _orig["os.rename"], (0, 1))
+os.replace = _mk1("os.replace", _orig["os.replace"], (0, 1))
+shutil.rmtree = _mk1("shutil.rmtree", _orig["shutil.rmtree"])
+shutil.copyfile = _mk1("shutil.copyfile", _orig["shutil.copyfile"], 1)
+shutil.move = _mk1("shutil.move", _orig["shutil.move"], (0, 1))
 
 if repo not in sys.path:
     sys.path.insert(0, repo)
@@ -1325,8 +1420,68 @@ sys.stderr.write("\n<<<ISO>>>" + json.dumps(res, ensure_ascii=False) + "<<<ISO>>
 '''
 
 
+#: 🔴 **951 (티처 #90 C1)** --- 지문 자가 훑는 세 칸. 몽키패치는 채널마다 뚫리지만
+#: **전후 지문 대조는 채널과 무관하다**. ``.gitignore`` 경로는 `git status` 가 원리상
+#: 못 보므로(티처 #90 m6) **따로** (크기, mtime_ns) 로 잰다.
+def repo_fingerprint(root: Path = ROOT) -> dict:
+    """🔴 저장소의 **지문** --- 추적 sha256 · 미추적 경로 · 무시 경로의 (크기, mtime_ns).
+
+    ⚠ **한계(조항 61)**: 쓰고 나서 **똑같이 되돌린** 쓰기는 못 본다(sha 가 같다).
+    그건 「없다」가 아니라 **「이 자로는 못 본다」**다.
+    """
+    def _ls(*flags):
+        r = subprocess.run(["git", "-C", str(root), "-c", "core.quotePath=false",
+                            "ls-files", "-z"] + list(flags), capture_output=True)
+        return [p for p in r.stdout.decode("utf-8", "surrogateescape").split("\0") if p]
+
+    tracked = {}
+    for rel in _ls():
+        f = root / rel
+        try:
+            h = hashlib.sha256()
+            with io.open(str(f), "rb") as fh:
+                for b in iter(lambda: fh.read(1 << 20), b""):
+                    h.update(b)
+            tracked[rel] = h.hexdigest()
+        except OSError:
+            tracked[rel] = "🔴 못 읽었다(없거나 권한)"
+    ign = {}
+    for rel in _ls("--others", "--ignored", "--exclude-standard"):
+        try:
+            st = os.stat(str(root / rel))
+            ign[rel] = [st.st_size, st.st_mtime_ns]
+        except OSError:
+            ign[rel] = "🔴 못 읽었다"
+    return {"추적": tracked,
+            "미추적": sorted(_ls("--others", "--exclude-standard")),
+            "무시": ign}
+
+
+def fingerprint_diff(a: dict, b: dict) -> dict:
+    """지문 둘의 차. 🔴 **비어야 「한 바이트도 안 썼다」를 말할 수 있다**."""
+    at, bt = a["추적"], b["추적"]
+    changed = sorted(k for k in set(at) | set(bt) if at.get(k) != bt.get(k))
+    ai, bi = a["무시"], b["무시"]
+    ich = sorted(k for k in set(ai) | set(bi) if ai.get(k) != bi.get(k))
+    new = sorted(set(b["미추적"]) - set(a["미추적"]))
+    gone = sorted(set(a["미추적"]) - set(b["미추적"]))
+    n = len(changed) + len(ich) + len(new) + len(gone)
+    return {
+        "🔴 바뀐 추적 파일": changed[:50] or "없음",
+        "🔴 바뀐 추적 파일 수": len(changed),
+        "🔴 새/사라진 미추적 파일": (new + ["(사라짐) " + g for g in gone])[:50] or "없음",
+        "🔴 새/사라진 미추적 파일 수": len(new) + len(gone),
+        "🔴 바뀐 무시(.gitignore) 경로": ich[:50] or "없음",
+        "🔴 바뀐 무시(.gitignore) 경로 수": len(ich),
+        "🔴 분모(추적 파일 수)": len(bt),
+        "🔴 분모(무시 경로 수)": len(bi),
+        "🔴 전부 합": n,
+        "🔴 깨끗한가": n == 0,
+    }
+
+
 def rerun_isolated(rel: str, root: Path = ROOT, *, scratch: str | None = None,
-                   timeout: int = RERUN_TIMEOUT) -> dict:
+                   timeout: int = RERUN_TIMEOUT, fingerprint: bool = True) -> dict:
     """🔴 자 **`재실행무해`** --- **격리 재실행**으로 「다시 돌려도 절 판정이 같나」를 잰다.
 
     티처 #88 의 「안 쟀다」 ②(*"동결 러너를 다시 돌리면 정말 산출물이 안 바뀌는지"*)를
@@ -1334,13 +1489,19 @@ def rerun_isolated(rel: str, root: Path = ROOT, *, scratch: str | None = None,
 
     1. 별도 프로세스에서 모듈을 import 하고 **``pathlib.Path`` 인 출력 상수만**
        스크래치패드로 갈아끼운다
-    2. 🔴 **저장소 쓰기를 가드로 막는다** --- ``write_text``/``write_bytes``/``open(w)``/
-       ``unlink``/``os.remove`` 가 저장소를 겨냥하면 **예외를 던지고 그 사실을 싣는다**.
-       **저장소 산출물은 한 바이트도 안 바뀐다**
-    3. ``main()`` 을 돌리고, 새 산출물의 **``통과`` 키(중첩 전량)** 를 커밋된 산출물의 것과 견준다
+    2. 🔴 **저장소 쓰기를 가드로 막는다** --- 951 에서 채널을 **둘에서 스물셋으로** 넓혔다
+       (``io.open``·``Path.open``·``os.open``·``os.unlink``/``os.remove``·``rename``/``replace``·
+       ``mkdir``/``touch``/``rmtree`` …). 🔴 **950 판은 여섯 채널 중 둘만 잡았고**
+       나머지 넷은 **파일이 실제로 생겼는데** 「한 바이트도 안 썼다」로 적혔다(티처 #90 C1)
+    3. 🔴 **채널과 무관한 자를 같이 쓴다** --- ``repo_fingerprint()`` 로 실행 **전후**의
+       추적 파일 sha256 · 미추적 경로 · **``.gitignore`` 경로**를 떠서 견준다.
+       몽키패치가 원리상 못 잡는 **하위 프로세스**를 이것이 잡는다
+    4. ``main()`` 을 돌리고, 새 산출물의 **``통과`` 키(중첩 전량)** 를 커밋된 산출물의 것과 견준다.
+       🔴 **951** --- 견준 절이 **0 개**면 「같다」가 아니라 **「모른다」**다(티처 #90 C2)
 
     ⚠ **한계(조항 61)**: 「오늘 이 실행에서 절 판정이 같았다」만 낸다. 시각·난수·외부 트리에
-    의존하면 다음에 다를 수 있다. **「무해하다」로 읽지 마라.**
+    의존하면 다음에 다를 수 있다. **「무해하다」로 읽지 마라.** 지문은 **쓰고 나서 똑같이
+    되돌린** 쓰기를 못 본다.
     """
     key = (rel, str(root))
     if key in _RERUN_CACHE:
@@ -1350,17 +1511,29 @@ def rerun_isolated(rel: str, root: Path = ROOT, *, scratch: str | None = None,
     drv.parent.mkdir(parents=True, exist_ok=True)
     drv.write_text(_ISO_DRIVER, encoding="utf-8")
     t0 = time.time()
+    # 🔴 951 --- **채널과 무관한 자**. 몽키패치 밖(하위 프로세스·C 확장)으로 새는 쓰기를
+    #    전후 지문 대조가 잡는다(티처 #90 C1 처방 1).
+    fp0 = repo_fingerprint(root) if fingerprint else None
     try:
+        # 🔴 951 --- `__pycache__` 는 **지문에 잡히는 진짜 쓰기**다(`.gitignore` 경로).
+        #    격리 재실행이 재려는 것은 러너의 쓰기지 바이트코드 캐시가 아니므로 끈다.
+        env = dict(os.environ, PYTHONDONTWRITEBYTECODE="1")
         r = subprocess.run([sys.executable, str(drv), str(root), sc, rel],
-                           capture_output=True, text=True, timeout=timeout, cwd=str(root))
+                           capture_output=True, text=True, timeout=timeout, cwd=str(root),
+                           env=env)
         raw = r.stderr
     except subprocess.TimeoutExpired:
         out = {"🔴 자가 냈나": False,
                "자": "격리 재실행 --- 절 판정이 커밋된 산출물과 같나",
-               "🔴 결과": "모른다 --- %d 초 안에 안 끝났다(「무해하다」가 아니다)" % timeout}
+               "🔴 결과": "모른다 --- %d 초 안에 안 끝났다(「무해하다」가 아니다)" % timeout,
+               "🔴 지문 대조(전후)": (fingerprint_diff(fp0, repo_fingerprint(root))
+                               if fingerprint else "안 떴다")}
         _RERUN_CACHE[key] = out
         return out
     dt = round(time.time() - t0, 1)
+    fpd = fingerprint_diff(fp0, repo_fingerprint(root)) if fingerprint else {
+        "🔴 깨끗한가": None, "🔴 전부 합": None,
+        "🔴": "모른다 --- 지문을 안 떴다(`fingerprint=False`)"}
     try:
         body = raw.split("<<<ISO>>>")[1]
         res = json.loads(body)
@@ -1368,10 +1541,12 @@ def rerun_isolated(rel: str, root: Path = ROOT, *, scratch: str | None = None,
         out = {"🔴 자가 냈나": False,
                "자": "격리 재실행 --- 절 판정이 커밋된 산출물과 같나",
                "🔴 결과": "모른다 --- 드라이버 응답을 못 읽었다",
+               "🔴 지문 대조(전후)": fpd,
                "stderr(끝)": raw[-500:], "초": dt}
         _RERUN_CACHE[key] = out
         return out
     cmp_rows, same, diff, unknown = {}, 0, 0, 0
+    cmp_secs = 0          # 🔴 951 (티처 #90 C2) --- **견준 절 수**. 산출물 수가 아니다.
     for orig, newobj in (res.get("새 산출물") or {}).items():
         old = None
         rr = subprocess.run(["git", "-C", str(root), "cat-file", "blob", "HEAD:%s" % orig],
@@ -1388,21 +1563,34 @@ def rerun_isolated(rel: str, root: Path = ROOT, *, scratch: str | None = None,
             unknown += 1
             continue
         d = sorted(k for k in set(a) | set(b) if a.get(k, "없음") != b.get(k, "없음"))
+        n_sec = len(set(a) | set(b))
         cmp_rows[orig] = {"🔴 커밋된 절 수": len(a), "🔴 새 절 수": len(b),
-                          "🔴 다른 절": d or "없음"}
+                          "🔴 견준 절 수": n_sec, "🔴 다른 절": d or "없음"}
+        cmp_secs += n_sec
         if d:
             diff += 1
+        elif n_sec == 0:
+            # 🔴 **951 (티처 #90 C2)** --- 0 개를 0 개와 견준 것은 「같다」가 아니라
+            #    **「모른다 --- 견줄 절이 없다」**다. 950 의 「✅ 같다 2」 중 하나가 이것이었다.
+            cmp_rows[orig]["🔴"] = ("모른다 --- **견줄 `통과` 절이 0 개다**(공 통과 · 조항 59). "
+                                   "「같다」가 아니다")
+            unknown += 1
         else:
             same += 1
+    #: 🔴 **951** --- 판정식의 `same > 0` 을 **`견준 절 수 합 > 0`** 으로 바꿨다.
+    #: `same` 은 **산출물 수**지 절 수가 아니어서 절 0 개짜리 산출물이 「같다」로 셌다.
+    fp_clean = fpd.get("🔴 깨끗한가")
     ok = (res.get("🔴 결과") == "돌았다" and not res.get("차단된 저장소 쓰기")
-          and same > 0 and diff == 0 and unknown == 0)
+          and cmp_secs > 0 and diff == 0 and unknown == 0 and fp_clean is not False)
     out = {
         "🔴 자가 냈나": bool(ok),
         "자": "🔴 격리 재실행 --- 절(`통과` 키) 판정이 **커밋된 산출물과 같나**",
         "🔴 실행 결과": res.get("🔴 결과"),
         "갈아끼운 출력 상수": res.get("갈아끼운 출력 상수") or "없음",
         "🔴 저장소 쓰기 차단": res.get("차단된 저장소 쓰기") or "없음(한 바이트도 안 썼다)",
+        "🔴 지문 대조(전후 · 채널과 무관한 자)": fpd,
         "산출물별 절 대조": cmp_rows or "없음",
+        "🔴 견준 절 수 합(판정식의 분모)": cmp_secs,
         "🔴 같은 산출물 수": same, "🔴 다른 산출물 수": diff, "🔴 모르는 산출물 수": unknown,
         "초": dt,
         "역추적": res.get("역추적", "없음"),

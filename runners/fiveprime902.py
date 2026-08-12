@@ -82,11 +82,17 @@ KEYAUDIT_MUST = ["runners/out899a_gates.json"]
 
 # ── 도장 ────────────────────────────────────────────────────────────────
 def sha(p: Path) -> str:
+    """🔴 **951** --- 64자리 전량을 낸다.
+
+    947~950 은 ``[:16]`` 로 잘랐다(티처 #87 m5 · #88 m2 · #90 m5 --- **세 번 지적**).
+    🔴 950 은 **바로 이 러너를 고치면서** 이 줄을 안 고쳤다. 축약 sha 는 도장의 값을
+    깎는다 --- 견주는 쪽(`doc_check`)은 이미 64자리를 쓰고 있어 **두 자리가 달랐다**.
+    """
     h = hashlib.sha256()
     with open(p, "rb") as f:
         for b in iter(lambda: f.read(1 << 20), b""):
             h.update(b)
-    return h.hexdigest()[:16]
+    return h.hexdigest()
 
 
 def stamp(inputs) -> dict:
@@ -412,10 +418,12 @@ def gate_roster(tree) -> dict:
 
 
 #: 🔴 **950 --- 문서에 도장 말고 대조를 박는다**(티처 #89 M1 · 3순위).
-DOCSTAMP = "runners/out950_docstamp.json"
+#: 🔴 **951** --- 950 은 이 상수를 하드코딩했다. 매 사이클 자기 도장 파일을 가리켜야
+#: 하므로 CLI 로 받는다(기본은 이번 사이클 것).
+DOCSTAMP = "runners/out951_docstamp.json"
 
 
-def doc_check() -> dict:
+def doc_check(docstamp: str = None) -> dict:
     """🔴 **대조** --- 찍힌 문서의 **입력 sha 를 지금 다시 계산해 견준다**.
 
     `CHECK_CRITERIA` 셋을 그대로 채운다: ① `runners/out950_docstamp.json` 을 **읽고**
@@ -425,10 +433,11 @@ def doc_check() -> dict:
     `docs/판정/949_수.md` 를 다시 안 찍었는데 **아무것도 안 붉어졌다.**
     ⚠ **한계(조항 61)**: 낡음만 잡는다. **문서의 수가 옳은지는 안 본다.**
     """
-    p = ROOT / DOCSTAMP
+    ds = docstamp or DOCSTAMP
+    p = ROOT / ds
     if not p.exists():
         return {"검사": "7 문서 대조", "통과": False,
-                "🔴": "모른다 --- `%s` 가 없다(「대조가 초록」이 아니다 · 조항 59)" % DOCSTAMP}
+                "🔴": "모른다 --- `%s` 가 없다(「대조가 초록」이 아니다 · 조항 59)" % ds}
     st = json.loads(p.read_text(encoding="utf-8"))
     rows, bad, unknown = {}, [], []
     want = dict(st.get("🔴 입력별 sha256(대조의 기록 쪽)", {}))
@@ -449,7 +458,7 @@ def doc_check() -> dict:
         "검사": "7 🔴 문서 대조 --- 찍힌 문서의 **입력이 그 뒤로 바뀌었나**(티처 #89 M1)",
         "읽은 트리": "🔴 **작업 트리**(지금 파일을 다시 해싱한다)",
         "자": gc.CHECK_CRITERIA,
-        "도장 파일": DOCSTAMP,
+        "도장 파일": ds,
         "🔴 견준 수(분모)": len(want),
         "🔴 다른 것": bad or "없음",
         "🔴 모르는 것": unknown or "없음",
@@ -942,6 +951,8 @@ def main(argv=None):
     ap.add_argument("--quote-now", default=None,
                     help="🔴 작업본 대신 이 파일을 견준다 --- **심어서 검정력을 재는** 자리")
     ap.add_argument("--out", default=str(OUT_DEFAULT))
+    ap.add_argument("--docstamp", default=DOCSTAMP,
+                    help="🔴 문서 대조가 읽을 도장 파일(기본: %s)" % DOCSTAMP)
     # 🔴 949 --- 45 개 사유를 손으로 치면 **증거가 셸 히스토리에만 남는다**.
     #    사유를 커밋된 JSON 으로 받는다(`{경로: 사유}`). 사유는 `[자:<이름>]` 으로 시작한다.
     ap.add_argument("--exempt-file", default=None,
@@ -1004,7 +1015,7 @@ def main(argv=None):
     res["5-나 무변 시험의 검정력(심어서 확인)"] = quote_power(a.quote_ref)
     res["6 D1 실측"] = d1_census()
     try:
-        res["7 🔴 문서 대조(950 · 티처 #89 M1)"] = doc_check()
+        res["7 🔴 문서 대조(950 · 티처 #89 M1)"] = doc_check(a.docstamp)
     except Exception as e:                                        # noqa: BLE001
         res["7 🔴 문서 대조(950 · 티처 #89 M1)"] = {
             "🔴 예외": "%s: %s" % (type(e).__name__, e), "통과": False}
