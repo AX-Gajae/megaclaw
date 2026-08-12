@@ -202,7 +202,11 @@ def once() -> dict:
         "브랜치": _sh(["git", "rev-parse", "--abbrev-ref", "HEAD"])[1].strip(),
         "꼬리": out.strip()[-400:],
     }
-    rec["처리"] = (_commit("[수집] 상시 데몬 %s — %s\n\n종료코드 %s\n" % (rec["시각"], why, code))
+    # 🔴 953 --- 접두를 `[수집]` 에서 `[데몬]` 으로. `docs/루프.md` 레인 규칙 6:
+    #    레인은 **판정·탐색·수리 셋뿐**이고 `[수집]` 은 레인이 아니다. 그리고 데몬의
+    #    자동 커밋은 애초에 **시도가 아니라 기계 기록**이라 레인을 가질 물건이 아니다.
+    #    (티처 #91 C4 가 「`grep 수집` 레인 용례」를 셀 때 이 자동 커밋들이 분모에 섞였다.)
+    rec["처리"] = (_commit("[데몬] 상시 수집 %s — %s\n\n종료코드 %s\n" % (rec["시각"], why, code))
                  if real else _revert_noise())
     with LOG.open("a", encoding="utf-8") as f:
         f.write(json.dumps(rec, ensure_ascii=False) + "\n")
