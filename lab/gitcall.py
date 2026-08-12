@@ -519,11 +519,27 @@ def _run_both(vec: list[str], root: Path = ROOT) -> dict:
                 sorted(x for x in a if x.startswith('"'))[:5]}
 
 
-def _sha_cited(rel: str, root: Path = ROOT) -> list[str]:
-    """이 파일의 **지금 sha256** 을 인용하는 커밋된 산출물(㉮ 판정의 근거).
+#: 🔴 948 --- 947 이 쓰던 **좁은 자**. 이제 **음성 대조 전용**이다(판정에 쓰지 마라).
+#: 티처 #87 m8: 이 pathspec 은 ``docs/**`` 의 sha 인용을 **원리상 안 본다**.
+NARROW_CITE_PATHSPEC = ("runners/*.json", "data/lab/*.json")
+
+
+def sha_cited(rel: str, root: Path = ROOT, *, tree: str = "HEAD",
+              pathspec=()) -> list[str]:
+    """이 파일의 **지금 sha256** 을 인용하는 **커밋된** 파일(㉮ 판정의 **유일한 증거원**).
 
     🔴 946 의 같은 함수는 ``git grep -lF`` 를 **날 것으로** 불렀다(티처 #86 C1).
-    여기서는 ``lab.keyspace`` 정본을 지난다.
+    여기서는 ``lab.gitcall.grep_files`` 정본을 지난다.
+
+    🔴🔴 **948 이 둘을 고쳤다** (티처 #87 C3 · m8):
+
+    * **범위** --- 947 은 ``runners/*.json``·``data/lab/*.json`` 만 봤다.
+      그 pathspec 은 ``docs/**`` 의 sha 인용을 **원리상 안 본다** ---
+      「안 걸렸다」가 「못 걸린다」와 구별이 안 되는 자리다(조항 59).
+      기본값을 **HEAD 전량**으로 넓힌다. 좁은 자는 ``NARROW_CITE_PATHSPEC`` 으로
+      남겨 **음성 대조**에만 쓴다.
+    * **트리** --- 947 은 인덱스/작업 트리를 봤다. 낱말이 「**커밋된** 산출물」이므로
+      ``HEAD`` 를 본다(규약 60 --- 인덱스와 작업 트리를 섞어 읽는 계수 금지).
     """
     import hashlib
     p = root / rel
@@ -531,10 +547,20 @@ def _sha_cited(rel: str, root: Path = ROOT) -> list[str]:
         return []
     h = hashlib.sha256(p.read_bytes()).hexdigest()
     try:
-        return sorted(grep_files([h], root=root,
-                                 pathspec=("runners/*.json", "data/lab/*.json")))
+        return sorted(grep_files([h], root=root, tree=tree, pathspec=pathspec))
     except ks.GitError:
         return []
+
+
+#: 뒤 이름(947 판). 남의 코드가 부르면 **넓은 자**가 나가도록 이름만 남긴다.
+_sha_cited = sha_cited
+
+
+def last_commit(rel: str, root: Path = ROOT) -> str:
+    """이 경로의 **마지막 커밋 시각**(ISO). 래칫의 방향을 재는 자."""
+    r = subprocess.run(["git", "-C", str(root), "log", "-1", "--format=%cI",
+                        "--", rel], capture_output=True, text=True)
+    return (r.stdout.strip() or "🔴 못 읽었다") if r.returncode == 0 else "🔴 못 읽었다"
 
 
 def grep_files(needles, *, root: Path = ROOT, tree: str | None = None,
@@ -576,6 +602,7 @@ def census(root: Path = ROOT, *, harm: bool = True) -> dict:
     """🔴 **경로를 내는 git 호출 전수** --- 자 둘 · 조항 62 로 차를 낸다."""
     pys = sorted(ks.git_paths("ls-files", "--", "*.py", root=root))
     src_cache: dict[str, list[str]] = {}
+    cite_cache: dict[str, tuple] = {}
     sites = []
     for rel, line, vec, kind in sites_ast(pys, root):
         ok, why = emits_paths(vec)
@@ -585,7 +612,18 @@ def census(root: Path = ROOT, *, harm: bool = True) -> dict:
         has_z, has_q = safety(vec)
         frozen = rel.startswith(FROZEN_PREFIX)
         intent = INTENTIONAL.get((rel, line)) or _marked(rel, line, root, src_cache)
-        cited = [] if (has_z or has_q or canon) else _sha_cited(rel, root)
+        # 🔴🔴 **948 --- 증거를 먼저 본다**(티처 #87 C3).
+        #    947 은 `frozen`(이름 접두사)을 `cited`(증거)보다 **먼저** 판정했다.
+        #    그래서 **동결 접두사만 맞으면 증거를 안 보고 ㉮**(원리상 못 고친다)가 됐고
+        #    ㉯ 가 이름만으로 0 이 됐다. 순서를 뒤집는다.
+        if (has_z or has_q or canon):
+            cited, cited_narrow = [], []
+        else:
+            if rel not in cite_cache:
+                cite_cache[rel] = (sha_cited(rel, root),
+                                   sha_cited(rel, root,
+                                             pathspec=NARROW_CITE_PATHSPEC))
+            cited, cited_narrow = cite_cache[rel]
         sites.append({
             "파일:줄": f"{rel}:{line}", "자리": kind, "인자": vec,
             "왜 경로를 내나": why,
@@ -597,11 +635,21 @@ def census(root: Path = ROOT, *, harm: bool = True) -> dict:
                    "🔴 의도적 날 것(음성 대조)" if intent else "🔴 날 것"),
             "동결(941~946)": frozen,
             "사유": intent,
-            "🔴 지금 sha 를 인용하는 산출물": cited,
-            "🔴 ㉮/㉯": (None if (has_z or has_q or intent or canon) else
-                     "㉮ 원리상 못 고친다 --- 941~946 동결" if frozen else
-                     "㉮ 원리상 못 고친다 --- 이 파일의 지금 sha 를 산출물 %d 개가 "
-                     "인용한다" % len(cited) if cited else "🔴 ㉯ 고칠 수 있다"),
+            "🔴 지금 sha 를 인용하는 커밋된 파일(HEAD 전량)": cited,
+            "⚠ 947 의 좁은 자로 세면(음성 대조 · 판정에 쓰지 마라)": cited_narrow,
+            # 🔴🔴 **낱말을 셋으로 가른다**(티처 #87 C3).
+            #    ㉮ = **원리상** 못 고친다(증거: sha 인용 ≥1 --- 고치면 대조가 깨진다)
+            #    ㉲ = **규약상** 안 고친다(동결물 수정 금지 --- 그러나 깨지는 대조는 없다)
+            #    ㉯ = 고칠 수 있다. 🔴 **㉲ 는 ㉯ 의 부분집합이다** --- 분모에서 안 뺀다.
+            #    「규약이 막는다」는 **사유**이지 **불가능**이 아니다.
+            "🔴 ㉮/㉯/㉲": (
+                None if (has_z or has_q or intent or canon) else
+                "㉮ 원리상 못 고친다 --- 이 파일의 지금 sha 를 커밋된 파일 %d 개가 "
+                "인용한다(고치면 그 대조가 깨진다)" % len(cited) if cited else
+                "🔴 ㉯-㉲ 규약상 안 고친다 --- 941~946 동결이라 「동결물 수정 금지」가 "
+                "막는다. 🔴 **그러나 sha 인용은 0 이라 고쳐도 깨지는 대조가 없다** "
+                "--- 원리상 못 고치는 것이 아니다(티처 #87 C3)" if frozen else
+                "🔴 ㉯ 고칠 수 있다 --- 막는 것이 아무것도 없다"),
             "🔴 실해": (_run_both(vec, root)
                     if (harm and not (has_z or has_q or canon))
                     else "해당 없음(안전한 자리)"),
@@ -610,8 +658,23 @@ def census(root: Path = ROOT, *, harm: bool = True) -> dict:
     raw = [s for s in sites if s["갈래"] == "🔴 날 것"]
     intent = [s for s in sites if s["갈래"].startswith("🔴 의도적")]
     safe = [s for s in sites if s["갈래"].startswith("안전")]
-    raw_b = [s for s in raw if s["🔴 ㉮/㉯"].startswith("🔴 ㉯")]
-    raw_a = [s for s in raw if s["🔴 ㉮/㉯"].startswith("㉮")]
+    raw_b = [s for s in raw if s["🔴 ㉮/㉯/㉲"].startswith("🔴 ㉯")]      # ㉯ 전량(㉲ 포함)
+    raw_a = [s for s in raw if s["🔴 ㉮/㉯/㉲"].startswith("㉮")]
+    raw_d = [s for s in raw_b if s["🔴 ㉮/㉯/㉲"].startswith("🔴 ㉯-㉲")]  # ㉯ 안의 ㉲
+    raw_pure = [s for s in raw_b if s not in raw_d]
+
+    # ── 🔴🔴 래칫 --- 티처 #87 C3 이 「그 성질이 산출물 어디에도 안 적혔다」로 잡은 것
+    ratchet = {}
+    for s in raw:
+        rel = s["파일:줄"].rsplit(":", 1)[0]
+        if rel in ratchet:
+            continue
+        cs = s["🔴 지금 sha 를 인용하는 커밋된 파일(HEAD 전량)"]
+        ratchet[rel] = {
+            "인용 수": len(cs), "인용한 파일": cs,
+            "이 소스의 마지막 커밋": last_commit(rel, root),
+            "인용 파일의 마지막 커밋": {c: last_commit(c, root) for c in cs},
+        }
 
     # ── 🔴 자 둘의 차 --- 조항 62 (혼자 못 실린다) ──────────────────────
     a_set = {s["파일:줄"] for s in sites}
@@ -636,10 +699,42 @@ def census(root: Path = ROOT, *, harm: bool = True) -> dict:
         "🔴 분모 ② 자 A 호출 자리(경로를 내는 것만)": len(sites),
         "🔴 분모 ③ 자 B 줄 히트": len(b_set),
         "🔴 분모 ④ 날 것": len(raw),
-        "🔴 분모 ④-㉮ 원리상 못 고친다": len(raw_a),
+        "🔴 분모 ④-㉮ 원리상 못 고친다(sha 인용 ≥ 1)": len(raw_a),
         "🔴 분모 ④-㉯ 고칠 수 있다(🔴 이 수가 0 이어야 통과)": len(raw_b),
-        "🔴 ㉯ 목록": [s["파일:줄"] for s in raw_b],
-        "㉮ 목록과 사유": {s["파일:줄"]: s["🔴 ㉮/㉯"] for s in raw_a},
+        "🔴 분모 ④-㉲ 그중 규약상 안 고친다(동결 · ㉯ 의 부분집합)": len(raw_d),
+        "🔴 분모 ④-순㉯ 막는 것이 아무것도 없는 것": len(raw_pure),
+        "🔴 ㉯ 목록(㉲ 포함)": [s["파일:줄"] for s in raw_b],
+        # 🔴 **dict 가 아니라 목록이다**(티처 #87 M8). 같은 `파일:줄` 이 두 갈래로
+        #    잡히면 dict 는 **조용히 하나를 삼킨다** --- 947 실물: 날 것 15 대 dict 13.
+        "㉮ 목록과 사유": [{"파일:줄": s["파일:줄"], "자리": s["자리"],
+                      "사유": s["🔴 ㉮/㉯/㉲"]} for s in raw_a],
+        "🔴 ㉯/㉲ 목록과 사유": [{"파일:줄": s["파일:줄"], "자리": s["자리"],
+                          "사유": s["🔴 ㉮/㉯/㉲"]} for s in raw_b],
+        "🔴🔴 래칫(티처 #87 C3 --- 이 성질을 산출물에 적는다)": {
+            "무엇": ("㉮ 의 유일한 증거는 **sha 인용**이고, 인용은 산출물이 커밋될 때마다 "
+                   "**늘기만 한다**. 그러므로 ㉮ 는 **단조 증가**하고 되돌아오는 길이 "
+                   "없다 --- 🔴 **고칠수록 못 고칠 자리가 는다**"),
+            "🔴 왜 되돌아오는 길이 없나": (
+                "인용을 지우려면 **커밋된 산출물을 고쳐야** 하는데 산출물은 증거물이라 "
+                "안 고친다. 그래서 ㉮ → ㉯ 로 가는 문은 **규약상 닫혀 있다**"),
+            "🔴 그런데 그 인용의 절반은 「대조」가 아니라 「도장」이다": (
+                "산출물에 박힌 코드 sha256 은 **「이 코드가 이 산출물을 냈다」는 기록**이지 "
+                "**「이 코드가 안 바뀌었다」는 대조**가 아니다. 소스를 고쳐도 그 기록은 "
+                "여전히 참이다(그때의 sha 를 적은 것이므로). 🔴 **948 은 둘을 안 갈랐다** "
+                "--- 947 의 자를 그대로 쓰고 순서만 뒤집었다. **가르는 것은 다음 사이클**"),
+            "🔴 오늘의 눈금": {
+                "날 것 자리 수": len(raw),
+                "인용 ≥ 1 인 소스 파일 수": len([r for r in ratchet.values() if r["인용 수"]]),
+                "인용 0 인 소스 파일 수": len([r for r in ratchet.values() if not r["인용 수"]]),
+                "소스 파일 수(분모)": len(ratchet),
+                "인용 총 수": sum(r["인용 수"] for r in ratchet.values()),
+            },
+            "파일별": ratchet,
+            "🔴 안 쟀다": ("옛 트리들에서 이 눈금을 다시 재면 **래칫이 실제로 단조 증가했는지**를 "
+                       "보일 수 있다. 오늘은 **안 쟀다**(한 트리의 한 값뿐이다 --- 조항 60: "
+                       "한 표본으로 원천의 성질을 말하지 마라). **「단조 증가한다」는 기제의 "
+                       "주장이지 오늘 잰 값이 아니다**"),
+        },
         "분모 ⑤ 의도적 날 것(음성 대조)": len(intent),
         "분모 ⑥ 안전": len(safe),
         "🔴 자 A 와 자 B 의 차(조항 62 --- 혼자 못 싣는다)": rep,
@@ -647,7 +742,9 @@ def census(root: Path = ROOT, *, harm: bool = True) -> dict:
         "의도적 날 것(목록)": intent,
         "안전(목록)": safe,
         "통과": len(raw_b) == 0,
-        "🔴 통과의 뜻": "**㉯(고칠 수 있는데 안 고친 것)가 0** 이면 통과. ㉮ 는 분모에 남는다",
+        "🔴 통과의 뜻": ("**㉯(고칠 수 있는데 안 고친 것)가 0** 이면 통과. ㉮ 는 분모에 남는다. "
+                   "🔴 **㉲(규약상 안 고친다)는 ㉯ 안에 있다** --- 947 은 그것을 ㉮ 로 "
+                   "옮겨 분모를 비웠고, 그것이 티처 #87 C3 이 잡은 것이다"),
     }
 
 
@@ -668,9 +765,60 @@ def census(root: Path = ROOT, *, harm: bool = True) -> dict:
 ARTICLE62 = "🔴 조항 62 --- 차집합은 홀로 못 선다(반대 방향 · 예시 다섯 · 심은 키)"
 
 
-def diff62(*args, **kw) -> dict:
-    """`lab.keyspace.diff_report` 를 그대로 부르고 **번호만 62 로 고쳐** 낸다."""
-    rep = ks.diff_report(*args, **kw)
+#: 🔴 **양쪽에 넣는 대조 원소.** 두 인코딩이 갈리는(비-ASCII) 추적 경로 하나 ---
+#: 947 이 이 검사를 위해 분모를 0 → 1 로 올린 그 파일이다.
+CONTROL_SEED = "lab/fixtures/한글이름_고정물.py"
+
+
+def diff62(a_name, A, b_name, B, *, seed_pad: str = "", **kw) -> dict:
+    """`lab.keyspace.diff_report` 를 부르고 **번호만 62 로 고쳐** 낸다.
+
+    🔴 **948 이 더한 것 둘** (티처 #87 M3 · m3):
+
+    **① `seed_pad`** --- ``diff_report`` 의 ④ 심은 키는 **``A∩B`` 에 두 인코딩이
+    갈리는 원소가 있어야** 심을 수 있다. 없으면 그 절은 영원히 ``모른다`` 를 내고,
+    그러면 **구조적으로 영원히 붉은 절**이 하나 는다(티처 #87 M2 가 규탄한 모양).
+    🔴 그래서 **같은 원소를 양쪽에 하나 넣는다** --- 집합 항등으로
+    ``A−B`` 와 ``B−A`` 는 **한 원소도 안 바뀐다.** 바뀌는 것은 ``|A|``·``|B|``
+    각각 **+1** 뿐이고, 그 사실을 산출물에 적는다. 판정에 쓰는 차집합은 그대로다.
+
+    **② ``모른다`` 문안의 정정** --- ``keyspace`` 의 ``UNKNOWN`` 은
+    *"심은 키를 못 찾았다(검출기가 두 번째 인코딩을 못 본다)"* 한 문장인데,
+    ③ 이 두 이름을 **잡았을 때도** 그 문장이 찍힌다(947 산출물에 **세 번** 찍혔다).
+    🔴 **잡은 것을 「못 본다」로 인쇄하는 것**이라 뜻이 반대다. 글자(``lab/keyspace.py``)는
+    그 sha 를 946·947 산출물 셋이 인용해서 못 고치므로 **이 껍데기에서 덮어쓴다** ---
+    947 이 **번호에는 쓴 길을 뜻에는 안 썼다**(티처 #87 m3).
+    """
+    A, B = set(A), set(B)
+    pad = None
+    if seed_pad:
+        pad = {"🔴 무엇": ("④ 심은 키를 심을 자리(`A∩B` 안의 두 인코딩이 갈리는 원소)가 "
+                        "없어서 **대조 원소 하나를 양쪽에** 넣었다"),
+               "원소": seed_pad,
+               "🔴 A−B · B−A 가 바뀌나": "아니다 --- 양쪽에 같은 원소를 넣으면 집합 항등이다",
+               "⚠ |A|·|B| 는 각각 +1 이다": True,
+               "이미 A 에 있었나": seed_pad in A, "이미 B 에 있었나": seed_pad in B}
+        A = A | {seed_pad}
+        B = B | {seed_pad}
+    rep = ks.diff_report(a_name, A, b_name, B, **kw)
+    if pad is not None:
+        rep["🔴 양쪽에 넣은 대조 원소"] = pad
+    # ── ② 「모른다」 문안 정정 -------------------------------------------
+    seen = rep.get("③ 두 이름 대조")
+    twins = (isinstance(seen, dict) and
+             (seen.get("🔴 A − B 중 B 에 두 번째 인코딩으로 있는 것", 0) or
+              seen.get("🔴 B − A 중 A 에 첫 인코딩으로 있는 것", 0)))
+    plant = rep.get("④ 심은 키")
+    fired = isinstance(plant, dict) and bool(plant.get("🔴 발화했나"))
+    if twins:
+        fixed = ("🔴 모른다 --- **검출기는 두 번째 인코딩을 봤다**(③ 이 잡았다%s). "
+                 "수를 안 내는 이유는 이 차집합이 「없는 원소」가 아니라 **두 이름**이기 "
+                 "때문이다 --- 947 은 여기에 「검출기가 못 본다」를 찍었다(티처 #87 m3)"
+                 % (" · ④ 심은 키도 발화했다" if fired else
+                    " · 🔴 다만 ④ 심은 키는 **발화 안 했다** --- 눈이 있는지는 모른다"))
+        for k, v in list(rep.items()):
+            if v == ks.UNKNOWN:
+                rep[k] = fixed
     rep["조항"] = ARTICLE62
     rep["⚠ 옛 이름"] = ("이 조항은 946 이 **조항 61** 로 신설했고 947 이 **조항 62** 로 "
                    "옮겼다(티처 #86 M1 --- 「조항 61」이 세 뜻으로 쓰이고 있었다). "

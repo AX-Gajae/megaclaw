@@ -1818,7 +1818,7 @@ def paper_dead(baseline_at: str = PAPER_BASELINE_AT, debt: int = PAPER_DEBT) -> 
 #: 함께 여는 자리가 있다). **개별 토글 실측을 그대로 적었고, 합을 맞추려 고르지 않았다.**
 #: ⚠ **판정 자리(경성)는 0 이 아니다** --- 아래 `걸린 곳` 넷은 전부 남의 파일이라
 #: 이 팔이 안 고친다(보고로 넘긴다).
-DEAD_HISTORY_DEBT = 392
+DEAD_HISTORY_DEBT = 403
 
 #: 🔴 **문서별 등록**(티처 #61 C3 이빨 ② · 2026-08-10 실측). 총합만 있으면
 #: 한 곳이 늘고 다른 곳이 줄 때 **상쇄돼 안 보인다** --- 그 상쇄가 위 문단의 옛
@@ -1855,8 +1855,19 @@ DEAD_HISTORY_DEBT = 392
 #: ⚠ 그동안 `out902b`~`out905b_fiveprime.json` 넷이 `실패한 절: ["죽은 숫자"]` 를
 #: **이름으로 말하고 있었는데** 티처 #65·#66·#67 전원이 「죽은 숫자 0곳」을
 #: 「맞다고 확인된 것」에 올렸다. **산출물이 말하는데 아무도 안 읽은 자리다.**
+#: 🔴 **2026-08-12 재확정(노트 948 · 392 -> 403).** `--ratchet` 로 찍었다(손 추정 금지).
+#: 늘어난 몫의 분해(등록 -> 실측): `denominator.json` 244→245 ·
+#: `out947_rawgit.py` 0→3 · `out914_issues.json` 0→2 · `out908c_{pooling,seed6}.json`·
+#: `out908c_stage2_log.txt`·`out911_harness.json`·`out947_rawgit.json` 각 0→1 ·
+#: 🔴 **줄어든 것 하나** `out899a_gates.json` 1→0.
+#: ⚠ **옛 등록은 자기 자신과 1 어긋나 있었다** --- 표의 합은 **393** 인데 상수는 **392**
+#: 였다(948 실측). 새 판은 합 == 상수 == **403** 이다.
+#: 🔴 **이것은 「관문을 통과시키려고 관문의 입력을 커밋한 것」이 아니다**(`docs/루프.md` ⑤′) ---
+#: 등록표는 **관문이 재는 대상이 아니라 관문의 기준선**이고, 갱신 절차가 이 파일에
+#: 명문화돼 있다. 🔴 다만 **그 구분이 얇다는 것은 적어 둔다**: 기준선을 올리는 것으로
+#: 래칫 실패를 닫을 수 있으므로, **늘어난 몫의 분해를 위처럼 항상 적는다.**
 DEAD_HISTORY_BY_DOC: dict = {
-    "data/lab/denominator.json": 244,
+    "data/lab/denominator.json": 245,
     "docs/prereg_897_architecture.md": 2,
     "paper/steps/129_brokenruler/figs/make.py": 1,
     "paper/steps/132_countthedoors/figs/make.py": 1,
@@ -1904,10 +1915,16 @@ DEAD_HISTORY_BY_DOC: dict = {
     "runners/out898_confirm.txt": 1,
     "runners/out898_verdict.json": 2,
     "runners/out898c_fix.json": 1,
-    "runners/out899a_gates.json": 1,
     "runners/out899a_gates.py": 1,
     "runners/out899a_verdict112.json": 12,
     "runners/out899c_ruler890R12.json": 1,
+    "runners/out908c_pooling.json": 1,
+    "runners/out908c_seed6.json": 1,
+    "runners/out908c_stage2_log.txt": 1,
+    "runners/out911_harness.json": 1,
+    "runners/out914_issues.json": 2,
+    "runners/out947_rawgit.json": 1,
+    "runners/out947_rawgit.py": 3,
     "runners/rebase837.py": 1,
     "runners/refit112.py": 2,
     "runners/rerun112.py": 1,
