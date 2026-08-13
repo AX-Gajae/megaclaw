@@ -54,13 +54,28 @@ GAMBLE_PAT = re.compile(
     ]).encode("utf-8"))
 
 # 뉴스·연예형 host --- 역시 내 자다(어제의 8.9% 는 남의 자다 · 직접 빼지 않는다)
-NEWS_PAT = re.compile(
-    r"(?:^|\.)(?:news|newsis|yna|yonhapnews|chosun|donga|joins|joongang|hani|khan|"
+#
+# 🔴 955 수리(티처 #93 m6): 954 판은 끝이 **앵커 없는 `|news`** 였다 --- host 문자열 안
+#    아무 데나 `news` 가 있으면 잡는다. 티처는 이것을 *「P7 빗나감의 진짜 원인」* 이라 했다.
+#    🔴 **955 가 464 shard 의 host 빈도표 전량(38,866,835 문서 · host 1,086,484)으로 직접 쟀다**:
+#      · 954 판(앵커 없음)          5,425,404 문서 = 13.9590%
+#      · 아래 라벨 판               5,425,393 문서 = 13.9589%
+#      · 차이 = **11 문서 · host 2개**, 그리고 그 둘은 `mailto:news@thegear.co.kr` ·
+#        `mailto:cjnews@jejunews.com` --- **host 가 아니라 mailto 주소다**
+#    🔴 **그래서 티처 m6 의 진단은 반증됐다** --- 앵커를 박아도 P7 은 안 움직인다(0.00003%p).
+#    ⚠ 그리고 `news` 를 **통째로 빼고** 브랜드 목록만 앵커로 남기면 3,387,360 = 8.7153% 로
+#      떨어지는데, 그때 빠지는 5,952 host 는 `newscj.com`·`inews365.com`·`newscham.net`
+#      같은 **진짜 언론사**다. **그 자가 더 나쁘다.**
+#    → 고침은 「`news` 를 host **라벨 안**에서만 찾는다」이고, 얼린 954 수치를 11문서만 움직인다.
+#      `runners/out954_hplt_full.json` 은 **옛 판으로 찍혔다**(다시 안 찍는다 · 얼린 증거물).
+_NEWS_BODY = (
+    r"news|newsis|yna|yonhapnews|chosun|donga|joins|joongang|hani|khan|"
     r"mk|mt|edaily|etnews|inews24|nocutnews|ohmynews|pressian|seoul|segye|kmib|kukinews|"
     r"hankookilbo|hankyung|sedaily|fnnews|asiae|ajunews|newdaily|dailian|breaknews|"
     r"osen|dispatch|xportsnews|tvreport|starnews|isplus|sportsseoul|sportschosun|"
-    r"sportsq|mydaily|newsen|tenasia|wowtv|heraldcorp|imbc|sbs|kbs|jtbc|ytn|mbn|tvchosun)"
-    r"(?:\.|$)|news")
+    r"sportsq|mydaily|newsen|tenasia|wowtv|heraldcorp|imbc|sbs|kbs|jtbc|ytn|mbn|tvchosun")
+NEWS_PAT = re.compile(
+    r"(?:^|\.)(?:%s)(?:\.|$)|(?:^|\.)[a-z0-9-]*news[a-z0-9-]*(?:\.|$)" % _NEWS_BODY)
 
 
 def norm_url(u):
