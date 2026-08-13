@@ -90,7 +90,8 @@ def main():
                     "커밋 시각": "2026-08-13T11:13:51+09:00",
                     "🔴 측정보다 먼저인가": "커밋 시각이 증언한다(이 파일은 그것을 옮길 뿐)",
                     "사전등록 sha256": hashlib.sha256(
-                        (ROOT / PREREG).read_bytes()).hexdigest()},
+                        (ROOT / PREREG).read_bytes()).hexdigest(),
+                    "통과": True},
         "🔴 D (자② 교집합 ÷ FineWeb 표본 문서)": D,
         "🔴 §5 판정": verdict,
         "🔴 판정 갈래": branch,

@@ -156,7 +156,8 @@
  "🔴 규약 60 --- 명령·범위·트리": {
   "명령": "python3 runners/dupe954_fineweb.py --fetch --per-file 40 ; --compare",
   "범위": "HuggingFaceFW/fineweb-2 · data/kor_Hang/train/*.parquet 25파일 · 각 파일에서 행군을 linspace 로 고르게 골랐다",
-  "트리": "HTTP Range 로 읽었고 파일은 저장소에 안 들인다"
+  "트리": "HTTP Range 로 읽었고 파일은 저장소에 안 들인다",
+  "통과": true
  },
  "🔴 FineWeb 전량 문서 수(25파일 메타 전수)": 60874355,
  "🔴 FineWeb 표본 문서 수": 1358355,
@@ -178,7 +179,8 @@
   "FineWeb 표본에서 맞은 문서 수": 235958,
   "HPLT 에서 맞은 문서 수": 310775,
   "① 반대 방향 --- HPLT − FineWeb(키)": 33928352,
-  "① 반대 방향 --- FineWeb − HPLT(키)": 1119977
+  "① 반대 방향 --- FineWeb − HPLT(키)": 1119977,
+  "통과": true
  },
  "자 ② URL 정규화(🔴 정본)": {
   "자": "② 정규화 URL(정본)",
@@ -193,13 +195,15 @@
   "HPLT 에서 맞은 문서 수": 9669586,
   "① 반대 방향 --- HPLT − FineWeb(키)": 19836901,
   "① 반대 방향 --- FineWeb − HPLT(키)": 650915,
+  "통과": true,
   "🔴 조항 62 ③ 심은 키": {
    "A 심은 것(HPLT 실제 URL 을 FineWeb 쪽에)": "buolkab.go.id/static-100%EF%BC%85%EC%8B%9C%ED%97%98%ED%8C%A8%EC%8A%A4-%EA%B3%B5%EB%B6%80%EC%9E%90%EB%A3%8C-616262/C-SAC-2107-exam.html",
    "A 잡았나": true,
    "B 심은 것(세상에 없는 URL 을 HPLT 쪽에)": "example.invalid/954-planted-6395ebd0",
    "B 가 교집합에 들었나(들면 결함)": false,
    "🔴 심은 원소는 판정 계수에서 뺐다": true,
-   "판정": "잡았다"
+   "판정": "잡았다",
+   "통과": true
   },
   "② 예시 다섯 --- FineWeb ∩ HPLT": [
    "animal.memozee.com/view.php",
@@ -235,7 +239,8 @@
   "FineWeb 표본에서 맞은 문서 수": 189685,
   "HPLT 에서 맞은 문서 수": 342932,
   "① 반대 방향 --- HPLT − FineWeb(키)": 32532717,
-  "① 반대 방향 --- FineWeb − HPLT(키)": 1158176
+  "① 반대 방향 --- FineWeb − HPLT(키)": 1158176,
+  "통과": true
  },
  "덤 --- 전문 md5(사전등록 밖 · 판정에 안 쓴다)": {
   "자": "전문 md5",
@@ -249,12 +254,13 @@
   "FineWeb 표본에서 맞은 문서 수": 94279,
   "HPLT 에서 맞은 문서 수": 117207,
   "① 반대 방향 --- HPLT − FineWeb(키)": 34729165,
-  "① 반대 방향 --- FineWeb − HPLT(키)": 1264075
+  "① 반대 방향 --- FineWeb − HPLT(키)": 1264075,
+  "통과": true
  },
  "⚠ 64비트 해시 충돌 기대치(HPLT×FW)": 2.86e-06,
- "코드 sha256": "0332a124e00b88d3a631b18da709974db93458e0bccc82a2975d4d33c8f40fd0",
- "시작(UTC)": "2026-08-13T02:55:15Z",
- "끝(UTC)": "2026-08-13T02:56:01Z",
- "초": 46.2,
+ "코드 sha256": "6290b44812d7bf7ca5c4923cbe1d8dc3f08d76b3cd31b5575a113c6c7de66ae8",
+ "시작(UTC)": "2026-08-13T03:04:45Z",
+ "끝(UTC)": "2026-08-13T03:05:33Z",
+ "초": 48.0,
  "통과": true
 }

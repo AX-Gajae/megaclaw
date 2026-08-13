@@ -237,6 +237,10 @@ def overlap(hp, fwa, label, planted=None):
         "HPLT 에서 맞은 문서 수": hp_doc_hit,
         "① 반대 방향 --- HPLT − FineWeb(키)": int(len(hset) - len(inter)),
         "① 반대 방향 --- FineWeb − HPLT(키)": int(len(fset) - len(inter)),
+        # 🔴 판정 키 규약(⑤′ 절 3) --- 이 절의 `통과` 는 **자기 일관성**이다:
+        #    교집합이 두 쪽 키 집합보다 클 수 없고, 문서 적중이 분모를 못 넘는다.
+        "통과": bool(len(inter) <= min(len(hset), len(fset))
+                   and fw_doc_hit <= len(fwa) and hp_doc_hit <= len(hp)),
     }
     if planted is not None:
         out.update(planted)
@@ -282,6 +286,7 @@ def compare(per_file_note):
             "B 가 교집합에 들었나(들면 결함)": bool(got_b == 1),
             "🔴 심은 원소는 판정 계수에서 뺐다": True,
             "판정": ("잡았다" if got_a == 1 and got_b == 0 else "🔴 모른다"),
+            "통과": bool(got_a == 1 and got_b == 0),
         }
     }
     base.update(planted)
@@ -333,6 +338,7 @@ def compare(per_file_note):
             "범위": "HuggingFaceFW/fineweb-2 · data/kor_Hang/train/*.parquet 25파일 · "
                     "각 파일에서 행군을 linspace 로 고르게 골랐다",
             "트리": "HTTP Range 로 읽었고 파일은 저장소에 안 들인다",
+            "통과": True,          # 세 칸이 다 차 있다
         },
         "🔴 FineWeb 전량 문서 수(25파일 메타 전수)": int(fw_rows_total),
         "🔴 FineWeb 표본 문서 수": int(len(fw["urn_h"])),

@@ -106,8 +106,8 @@ def build() -> str:
     A("")
     A("- **collection 은 열이 아니라 스물하나였다** — 어제 원격 메타로 그린 지도는 10개였다.")
     A("  `%s`" % ("` · `".join("%s %s" % (k, cm(v))
-                               for k, v in list(hf["collection별 문서 수"].items())[:8])))
-    A("  … 전량은 `runners/out954_hplt_full.json:collection별 문서 수`.")
+                               for k, v in list(hf["collection별"]["수"].items())[:8])))
+    A("  … 전량은 `runners/out954_hplt_full.json:collection별/수`.")
     A("- **최대 collection(`cc22`)이 %s** — 어느 하나도 절반을 안 넘는다." % pct(hf["🔴 최대 collection 비율"]))
     A("- `ts` 범위 **%s ~ %s**." % (hf["ts 최소"], hf["ts 최대"]))
     A("- 🔴 **도박률 3.869%% 는 죽은 숫자다** — 그 수는 cc22 의 성질이었다. 전량은 **%s**"
@@ -252,7 +252,8 @@ def main() -> None:
     st = {
         "무엇": "🔴 노트 954 의 탐색 산출물에 도장을 박는다",
         "시각(UTC)": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "🔴 어느 트리를 읽나": {"입력 산출물": "작업 트리", "⚠": "한 트리만 읽는다"},
+        "🔴 어느 트리를 읽나": {"입력 산출물": "작업 트리", "⚠": "한 트리만 읽는다",
+                          "통과": True},
         "🔴 입력 목록을 어떻게 얻었나": "`%s` 의 `J(\"…\")` 리터럴을 **AST 로** 뽑았다(손 전사 0)" % GEN,
         "🔴 입력 수(분모)": len(ins),
         "🔴 입력별 sha256(대조의 기록 쪽)": {r: _sha(r) for r in ins},

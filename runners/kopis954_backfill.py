@@ -77,7 +77,9 @@ def main():
         cp.unlink()
         neg = {"사본 전 행": n_before, "옛 코드(_write_gz)로 쓴 뒤 행": n_after,
                "🔴 옛 코드가 잘랐나": n_after < n_before,
-               "🔴 이 대조는 진짜 파일을 안 건드린다": True}
+               "🔴 이 대조는 진짜 파일을 안 건드린다": True,
+               # `통과` = 이 음성 대조가 **발화했나**(옛 코드가 실제로 잘랐나)
+               "통과": bool(n_after < n_before)}
 
     merged = K._merge_write(K.OUTDIR / "prfsts_day.jsonl.gz", series, "prfdt")
     after_rows, after_days = count_file()
@@ -89,6 +91,7 @@ def main():
             "명령": "python3 runners/kopis954_backfill.py --start %s --end %s" % (a.start, a.end),
             "범위": "data/ingest/kopis/prfsts_day.jsonl.gz 한 파일 · 절 4-나만",
             "트리": "작업 트리(그리고 이 커밋이 실는다)",
+            "통과": True,
         },
         "🔴 고친 자리": ["ingest/kopis953.py `_series_only` --- _write_gz → _merge_write(key='prfdt')",
                     "ingest/kopis953.py `main` --- 같은 고침(티처가 인용한 :459 자리)"],
@@ -96,7 +99,7 @@ def main():
         "🔴 실패한 창": len(serr),
         "실패 예": serr[:3] or "없음",
         "받은 행": len(series),
-        "합치기": merged,
+        "합치기": dict(merged, **{"통과": bool(merged["합친 뒤"] >= merged["기존"])}),
         "전 --- 행": before_rows, "전 --- 서로다른 prfdt": len(before_days),
         "전 --- 첫 날": before_days[0] if before_days else "없음",
         "전 --- 끝 날": before_days[-1] if before_days else "없음",

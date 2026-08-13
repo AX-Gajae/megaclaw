@@ -307,6 +307,9 @@ def merge():
             "초과분(=문서-군)": excess,
             "초과분 비율": round(excess / len(a), 6),
             "⚠ 두 정의는 다르다": "「군에 속한 문서」와 「초과분」을 이어 붙이지 마라(원장 998)",
+            # 🔴 판정 키 규약(⑤′ 절 3) --- 이 절의 `통과` 는 **자기 일관성**이다:
+            #    군에 속한 문서 ≥ 군 수 이고, 두 수가 분모를 안 넘는가.
+            "통과": bool(docs_in >= n_groups and docs_in <= len(a)),
         }
         if with_cross:
             c = cid[order]
@@ -321,6 +324,7 @@ def merge():
             out["🔴 교차 collection 군 수"] = int(cross_g)
             out["🔴 교차 collection 군의 문서 수"] = int(cross_docs)
             out["🔴 교차 collection 문서 비율"] = round(cross_docs / len(a), 6)
+            out["통과"] = bool(out["통과"] and cross_docs <= docs_in and cross_g <= n_groups)
         return out
 
     res = {
@@ -330,11 +334,18 @@ def merge():
             "명령": "python3 runners/dupe954_hplt_scan.py --workers N ; --merge",
             "범위": "data/ingest/hplt_ko/train-*-of-00464.parquet (git 비추적 · .gitignore:33)",
             "트리": "작업 트리 디스크 파일",
+            "통과": True,          # 세 칸이 다 차 있다
         },
         "🔴 분모 --- 연 shard": len(recs),
         "🔴 분모 --- 못 연 shard": missing,
         "🔴 분모 --- 문서 전량": int(N),
-        "collection별 문서 수": dict(coll_tot.most_common()),
+        # 🔴 자료 지도는 절 안에 넣고 절에 `통과`(합 == 분모)를 단다 --- ⑤′ 절 3
+        "collection별": {
+            "수": dict(coll_tot.most_common()),
+            "🔴 합": int(sum(coll_tot.values())),
+            "🔴 분모(문서 전량)": int(N),
+            "통과": bool(sum(coll_tot.values()) == N),
+        },
         "collection 수": len(coll_tot),
         "🔴 최대 collection 비율": round(max(coll_tot.values()) / N, 6),
         "도박(내 자)": {
@@ -343,17 +354,22 @@ def merge():
             "🔴 cc22 분모": int(N4),
             "cc22 비율": round(sum(r["도박"] for r in cc22) / N4, 6),
             "⚠": "어제의 3.869%/3.818% 와 직접 빼지 마라 --- 정규식이 다르다(조항 60)",
+            "통과": bool(gam <= N and sum(r["도박"] for r in cc22) <= N4),
         },
         "뉴스형 host(내 자)": {
             "전량 적중": int(news), "🔴 분모": int(N), "비율": round(news / N, 6),
             "cc22 적중": int(sum(r["뉴스형host"] for r in cc22)),
             "🔴 cc22 분모": int(N4),
             "cc22 비율": round(sum(r["뉴스형host"] for r in cc22) / N4, 6),
+            "통과": bool(news <= N and sum(r["뉴스형host"] for r in cc22) <= N4),
         },
         "host 상위 60": [{"host": h, "문서": c, "비율": round(c / N, 6)} for h, c in top],
         "🔴 kin.naver.com 순위": ({"순위": kin_rank[0], "문서": kin_rank[1],
-                                   "비율": round(kin_rank[1] / N, 6)}
-                                  if kin_rank else "없다"),
+                                   "비율": round(kin_rank[1] / N, 6),
+                                   "통과": True}      # 찾았다
+                                  if kin_rank else {"🔴": "없다 --- 「못 찾았다」가 아니라 "
+                                                          "전량 host 목록에 없다",
+                                                    "통과": False}),
         "서로 다른 host 수": len(hosts),
         "정확중복 --- 전문": dup_stats(txt, "전문 md5 앞 8바이트"),
         "정확중복 --- 정규화 URL": dup_stats(urn, "정규화 URL md5 앞 8바이트"),
