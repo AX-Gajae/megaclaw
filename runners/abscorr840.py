@@ -53,5 +53,10 @@ elif max(abs(r1), abs(r2)) >= 0.75:
 else:
     OUT["판정"] = f"없 — 드리프트 {r1:.3f} · 왜도 {r2:.3f} 둘 다 <0.75 → 문패 종결"
 OUT["초"] = round(time.time() - t0, 1)
-print(json.dumps(OUT, ensure_ascii=False, indent=1), flush=True)
-json.dump(OUT, open("/private/tmp/claude-501/-Users-ax-world-model/ab2920c3-279e-40cd-b648-7c58d9b12d79/scratchpad/out840.json", "w"), ensure_ascii=False, indent=1)
+# 🔴🔴 965 수리 (964 §4 · 티처 #103 4순위) — **임포트만 해도 쓰던 것을 가드 안으로 넣는다.**
+#   964 가 이 줄을 찾아 놓고 못 고쳤다(수리 레인 상한). ⑤′ 의 소비자 스모크가 이 파일을
+#   임포트하면 **저장소 밖 scratchpad 에 파일을 썼다** — 쓰는 곳이 저장소 밖이라 해가 0 이었으나
+#   🔴 「임포트가 부작용을 낸다」는 사실 자체가 소비자 전수 감사를 원리상 오염시킨다.
+if __name__ == "__main__":
+    print(json.dumps(OUT, ensure_ascii=False, indent=1), flush=True)
+    json.dump(OUT, open("/private/tmp/claude-501/-Users-ax-world-model/ab2920c3-279e-40cd-b648-7c58d9b12d79/scratchpad/out840.json", "w"), ensure_ascii=False, indent=1)
