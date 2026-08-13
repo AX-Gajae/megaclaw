@@ -6,9 +6,9 @@
 """
 from __future__ import annotations
 
+import hashlib
 import json
 import re
-import subprocess
 import sys
 import datetime as dt
 from pathlib import Path
@@ -31,8 +31,21 @@ table = "\n".join(
         ("`%s`" % ", ".join(r["🔴 뿌리"])) if r.get("🔴 뿌리") else "—")
     for r in rows)
 
-sha = subprocess.run(["git", "rev-parse", "HEAD"], cwd=str(ROOT),
-                     capture_output=True, text=True).stdout.strip()
+#: 🔴 **R1(노트 966 · 티처 #104 C5) — `git rev-parse HEAD` 도장을 뗐다.**
+#: `docs/루프.md:532` 가 이미 폐기한 규칙이다: 긴 러너에서 그 sha 는 원리상
+#: **「시작 시점」**이고, 965 판정문 첫 판이 실제로 `150837dec`(= 사전등록 커밋
+#: = 시작 시점)를 도장으로 적었다. **규칙이 예고한 그 실패가 그대로 났다.**
+#: 대신 **끝 시각 + 코드 sha256** 을 쓴다 --- 둘 다 「지금 이 파일이 무엇인가」를
+#: 가리키고 커밋 순서에 안 흔들린다.
+def _code_sha() -> str:
+    h = hashlib.sha256()
+    for p in sorted((ROOT / "runners").glob("*965*.py")):
+        h.update(p.read_bytes())
+    return h.hexdigest()
+
+
+sha = "코드 sha256 %s · 끝 시각 %sZ" % (
+    _code_sha()[:16], dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S"))
 
 V = {
     "SITES_N": S1["🔴 분모 ② `통과` 자리 + 위임 자리"],
