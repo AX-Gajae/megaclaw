@@ -65,6 +65,10 @@ REGISTERED = [
     "runners/meta965.py",
 ]
 
+#: 🔴 **§4 F1 의 「내가 새로 만든 것」 집합.** 965 는 이것을 코드 안에 박아 뒀다 —
+#: 그래서 **966 이 자기 러너에 F1 을 걸 수 없었다.** 이제 목록이고 `--mine` 로 바꾼다.
+MINE = ["runners/meta965.py", "runners/checks965.py"]
+
 # 산출물(있으면 `통과` 키를 전수로 센다 — 원문 대조용 분모)
 REGISTERED_OUT = [
     "runners/out961_curve.json",
@@ -81,6 +85,20 @@ CALL_SEC = 2           # 🔴 슬라이스 한 번의 상한(초) — 넘으면 
 N_DRAWS = 200          # 자 B 동시 변조 뽑기 수
 N_PER_ROOT = 60        # 자 B 뿌리별 감도 뽑기 수
 N_MIN_OK = 20          # 🔴 성공 호출이 이보다 적으면 「모른다」 — `통과` 를 안 낸다
+#: 🔴 **R2(노트 966 · 티처 #104 C4)** — 4단계(전역 변조)의 성공 호출이 이보다 적으면
+#: 「전역이 판정을 무나」를 **못 갈랐다**로 떨어뜨린다. 이 상수가 없어서
+#: `glob_bites = len(gseen2) > 1` 이 **공집합에서 False** 로 떨어졌고, 티처 #104 가
+#: 잰 4단계 실측 판별력이 **1 / 125** 였다.
+N_MIN_G = 20
+#: 🔴 **R3(노트 966 · 티처 #104 C3)** — F1 분모에서 빼는 자리. 이 셋은 검사가 아니라
+#: **자 B 의 무작위 생성기가 만드는 표본**의 리터럴이다(`"통과": rng.choice([...])`).
+#: 분모에 넣으면 「내가 새로 만든 검사」를 3 만큼 부풀린다(조항 60).
+#: 🔴 **진짜 새 검사 자리는 22 가 아니라 19 다.**
+#: 🔴 **줄 번호로 걸지 않는다** — 줄은 편집으로 밀린다(티처 #104 가 준 447·451·457 은
+#: 이 주석을 넣은 순간 이미 461·465·471 로 밀렸다). **감싸는 함수 이름**으로 건다.
+F1_DENOM_EXEMPT_FUNCS = {
+    "_gen_pool": "자 B 의 무작위 생성기가 만드는 **표본**의 리터럴 — 검사가 아니다",
+}
 SEED = 965
 
 
@@ -643,9 +661,20 @@ def ruler_B(site, modns, rng, keypool=(), str_pool=()):
                 continue
             g_ok += 1
             gseen2[repr(v)] += 1
-    glob_bites = len(gseen2) > 1
+    #: 🔴🔴 **R2(노트 966 · 티처 #104 C4) — 공집합에서 False 로 떨어지던 자리.**
+    #: `len(gseen2) > 1` 은 **성공 호출이 0 이어도 False** 다. 그러면 「전역을 물어
+    #: 봤는데 안 물었다」와 「전역을 아예 못 물어봤다」가 같은 값이 된다 --- 조항 59 가
+    #: 금지하는 바로 그 섞임이다. 티처 #104 실측: 4단계에 도달한 9 자리 중 **다섯이
+    #: `g_ok = 0`** 이었고(`curve961:664` · `triples962:577` · `checks964:1252` ·
+    #: `fiveprime902:562`·`:770`), 그중 넷이 「항진명제」로 **확정**됐다.
+    #: **그 단계의 실측 판별력은 1 / 125 였다.**
+    #: 이제 **`g_ok < N_MIN_G` 면 「모른다」** 로 떨어진다 --- 항진명제로도, 떨어진다로도
+    #: 안 센다.
+    g_enough = g_ok >= N_MIN_G
+    glob_bites = g_enough and len(gseen2) > 1
+    glob_unknown = bool(len(seen) == 1 and globals_seen and not g_enough)
 
-    const = len(seen) == 1 and not glob_bites
+    const = len(seen) == 1 and not glob_bites and not glob_unknown
     only = None
     if const:
         try:
@@ -656,12 +685,16 @@ def ruler_B(site, modns, rng, keypool=(), str_pool=()):
     #    한 번도 못 닿았을 수 있다 — 「못 봤다」와 「없다」는 둘이다(조항 59).
     taut = bool(const and only not in (False, None, 0))
     return {"🔴 전역 변조": {"전역 이름": globals_seen, "성공 호출": g_ok,
+                       "🔴 최소 성공 호출(R2)": N_MIN_G,
+                       "🔴 성공 호출이 모자라 못 갈랐나": glob_unknown,
                        "서로 다른 값": len(gseen2),
                        "🔴 전역이 판정을 무나": glob_bites},
             "판정": ("항진명제" if taut else
+                   ("🔴 전역 변조 성공 호출 %d < %d — 모른다(R2)" % (g_ok, N_MIN_G)
+                    if glob_unknown else
                    ("🔴 전역이 망가지면 떨어진다(뿌리는 상수 · 항진명제 아님)" if glob_bites else
                    ("🔴 상수 False — 모른다(생성기가 유효 입력을 못 만들었을 수 있다)"
-                    if const else "떨어진다"))),
+                    if const else "떨어진다")))),
             "항진명제": taut,
             "🔴 뿌리 변조에서 상수인가": len(seen) == 1,
             "🔴 상수인가": const, "🔴 그 상수": only,
@@ -1116,8 +1149,12 @@ def main():
     }
 
     # ── §4 🔴 V4 자기 적용 — 내가 새로 만든 `통과` 키가 상수인가 (F1) ────────
-    mine = [r for r in all_rows
-            if r["파일"] in ("runners/meta965.py", "runners/checks965.py")]
+    mine_all = [r for r in all_rows if r["파일"] in tuple(MINE)]
+    #: 🔴 **R3(노트 966 · 티처 #104 C3)** — 분모에서 **자 B 의 무작위 생성기 리터럴**을 뺀다.
+    #: `_gen_pool` 안의 `"통과": rng.choice([...])` 는 **검사가 아니라 생성기가 만드는
+    #: 표본**이다. 분모에 넣으면 「내가 새로 만든 검사」를 3 만큼 부풀린다(조항 60).
+    mine_exempt = [r for r in mine_all if r["함수"] in F1_DENOM_EXEMPT_FUNCS]
+    mine = [r for r in mine_all if r["함수"] not in F1_DENOM_EXEMPT_FUNCS]
     mine_taut = [r for r in mine if r["🔴 항진명제인가"]]
     mine_unk = [r for r in mine if not r["🔴 항진명제인가"]
                 and r["자 B"].get("판정") == "모른다"]
@@ -1125,6 +1162,11 @@ def main():
         "🔴 무엇": ("사전등록 §2 F1: **내가 새로 만든 `통과` 키 중 하나라도 변조에서 상수를 내면 "
                  "이 사이클은 실패다.** 분모는 `meta965.py` + `checks965.py` 의 `통과` 키 전량"),
         "🔴 분모: 내 `통과` 자리": len(mine),
+        "🔴 R3 뺀 자리(생성기 리터럴 · 검사가 아니다)": {
+            "수": len(mine_exempt),
+            "자리": [r["자리"] for r in mine_exempt] or "없음",
+            "왜": F1_DENOM_EXEMPT_FUNCS},
+        "🔴 빼기 전 분모": len(mine_all),
         "🔴 분자: 상수인 자리": len(mine_taut),
         "🔴 상수인 자리 목록": [r["자리"] for r in mine_taut] or "없음",
         "🔴 모른다": [r["자리"] for r in mine_unk] or "없음",
@@ -1178,7 +1220,15 @@ def main():
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=str(OUT))
+    #: 🔴 **노트 966** — 966 이 자기 러너에 F1 을 걸려면 분모와 「내 것」 집합을 바꿔야 한다.
+    #: 🔴 **기본값은 965 그대로다** — 옛 산출물의 뜻이 조용히 갈리면 안 된다(노트 898 규칙).
+    ap.add_argument("--only", default="", help="쉼표로 구분한 러너 목록으로 분모를 좁힌다")
+    ap.add_argument("--mine", default="", help="쉼표로 구분한 「내가 새로 만든」 파일(§4 F1)")
     a = ap.parse_args()
+    if a.only:
+        REGISTERED[:] = [s.strip() for s in a.only.split(",") if s.strip()]
+    if a.mine:
+        MINE[:] = [s.strip() for s in a.mine.split(",") if s.strip()]
     res = main()
     Path(a.out).write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
     print("wrote", a.out)
