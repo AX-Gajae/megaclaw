@@ -30,12 +30,23 @@ data/state/eventline910.jsonl
 # 🔴 노트 952 [수집] — 원본 대용량은 git 에 안 넣는다(100MB 한도).
 # **표본과 계수 결과 JSON 만** 커밋한다: runners/out952_count.json · data/ingest/*/sample*.jsonl
 # HPLT 2.0 kor_Hang parquet (464 shard 중 4개 ≈ 1.05GB · CC0-1.0)
-data/ingest/hplt_ko/*.parquet
+# 🔴 m4 --- 자리를 `hplt_ko/` 한 폴더에서 `data/ingest/` **아래 어디든**으로 넓혔다.
+#    좁은 규칙은 `data/ingest/ZZZTEST4.parquet`(폴더 없이 바로 아래)를 **안 잡았다**.
+#    🔴 왜 넓히나: 2026-08-12 에 100~267MB 짜리 parquet 조각이 git 에 들어가
+#    **19시간 동안 GitHub push 가 거부됐다**(pre-receive). 그리고 곧 FineWeb-2 parquet 을
+#    더 받는다 --- 새 자료마다 폴더 이름을 한 줄씩 더하는 방식은 **사고가 난 뒤에야** 는다.
+#    `**/` 는 「디렉터리 0개 이상」이라 바로 아래와 깊은 곳을 **둘 다** 잡는다(심어서 확인).
+data/ingest/**/*.parquet
 # 🔴 954 --- 내려받기 임시 파일(`runners/hplt_fetch.py:89` 의 `p.with_suffix(".part")`)
 #    이름이 `train-00292-of-00464.part` 라 위 `*.parquet` 규칙에 **안 걸린다**.
 #    그래서 상시 데몬이 100~200MB 짜리를 13커밋에 걸쳐 git 에 넣었고
 #    🔴 **그 때문에 2026-08-12 18:58 부터 저장소가 GitHub 에 못 올라갔다**(pre-receive 거부).
-data/ingest/**/*.part
+# 🔴 m3 --- 여기 있던 `data/ingest/**/*.part` 를 **지웠다**(남기는 대신 지운 이유):
+#    git 은 **마지막에 맞는 규칙**을 쓰는데, 바로 아래 `*.part` 가 저장소 어디의 `.part` 든
+#    이미 전부 잡으므로 그 좁은 줄은 **한 번도 판정을 바꾼 적 없는 죽은 줄**이었다
+#    (심어서 확인: `data/ingest/…parquet.part` 는 `.gitignore:*.part` 에 잡힌다).
+#    죽은 줄을 남기면 「좁은 줄이 일하고 있다」고 잘못 읽혀, 다음 사람이 `.part` 사고를
+#    막는 진짜 줄이 어느 것인지 헷갈린다. 넓은 쪽 **한 줄만** 남긴다.
 *.part
 # Kaggle fronkongames/steam-games-dataset (309.8MB zip · MIT 업로더 신고)
 data/ingest/steam_games/archive.zip

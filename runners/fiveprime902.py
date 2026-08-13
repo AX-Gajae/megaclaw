@@ -43,13 +43,29 @@ v3.2 의 첫 정식 운용(커밋 `765c7e6f6`)에서 티처 #64 M3 가 센 것:
 ## 쓰기
 
     python3 runners/fiveprime902.py --base <취합 시작 rev> [--head HEAD]
-        [--tree <rev>]            # 역참조를 이 rev 의 트리에서 한다(기본: 작업 트리)
+        [--tree <rev>]            # 🔴 기본은 **커밋된 트리**(= --head) · `작업트리` 로 옛 동작
         [--ran <경로> ...]        # 이번에 실제로 다시 돌린 소비자
         [--exempt <경로>=<사유>]  # 🔴 안 돌린 `.py` 에 사유를 단다(사유 없으면 실패다)
         [--gates]                 # 게이트를 실제로 돌린다(안 주면 「안 돌렸다」로 적는다)
+        [--expected-repairs N]    # 🔴 955 R6 · 사전등록이 예고한 `[수리]` 레인 수
+        [--prereg docs/prereg_955_D.md]   # 그 수를 §8 표에서 읽는다(인자가 이긴다)
         [--out runners/out902b_fiveprime.json]
 
 🔴 **`timeout` 은 이 환경에 없다(rc=127).** 이 러너는 `subprocess` 의 `timeout=` 만 쓴다.
+
+## 🔴 955 수리 셋 (티처 #93)
+
+- **R4 (C3)** --- ⑤′ 가 **자기 산출물**(`out*_fiveprime.json`)을 자기 채점에 넣었다.
+  954 실측: 원장 **18/27**(66.7%) 이 커밋 제목엔 **30/39**(76.9%) --- 차이는 통째로
+  `out954_fiveprime.json` 자기 자신(절 12 · 전부 `통과`)이었다. 이제 **이름으로 뺀다**
+  (`SELF_OUT_RE`) 그리고 **「뺀 것」 칸에 그 사실을 적는다**(954 엔 「없음」이라 적혀 있었다).
+- **R5 (M5)** --- `docs/루프.md:148`(v3.2) 은 **커밋된 트리**를 되짚으라고 적는데 ⑤′ 가
+  작업 트리를 봤다(티처 #63 C1 이 v3.1 에서 고친 병의 재발). 이제 절 3·4·7·8 이
+  `git ls-tree -r` + `git cat-file blob` 으로 읽고, **커밋 안 된 파일은 「없다」가 아니라
+  「커밋 안 됨」으로 따로 센다**(조항 59). 어느 트리·어느 sha 인지를 산출물에 박는다.
+- **R6 (C4·㉤)** --- 954 는 「수리 레인 하나를 썼다」고 적고 `[수리]` 커밋을 **셋** 했다.
+  이제 **절 8** 이 `git log <merge-base main HEAD>..HEAD` 에서 그 수를 세고 **명령·범위·
+  트리를 같이 적고**(규약 60) 사전등록 §8 의 예고 수와 견준다.
 """
 import argparse
 import ast
@@ -93,6 +109,60 @@ KEYAUDIT_MUST: list = []
 #: 🔴 대상에서 **빼는** 것: 이 러너 자신의 산출물(자기 자신을 채점하는 순환)과 도장 파일.
 KEYAUDIT_SKIP = ("out902b_fiveprime", "out952_docstamp", "out953_docstamp")
 
+#: 🔴🔴 **955 R4 (티처 #93 C3)** --- **이 러너 자신의 산출물을 이름으로 배제한다.**
+#:
+#: 954 실측: 커밋 제목은 `0/27 → 30/39`, 원장은 `0/27 → 18/27` 이었고 **원장이 맞았다.**
+#: 차이의 정체는 `runners/out954_fiveprime.json` **자기 자신**이 대상에 들어간 것이다 ---
+#: 그 파일은 절 12 를 갖고 그 12 가 **전부 `통과`** 라서 분자·분모가 **동시에** 부풀었다
+#: (18+12=30 · 27+12=39). 즉 **66.7% 가 76.9% 로 보였다.**
+#: 🔴 이름 하나(`out902b_fiveprime`)를 하드코딩하던 위 `KEYAUDIT_SKIP` 으로는 못 막는다 ---
+#: `--out` 이 사이클마다 바뀌기 때문이다(`out954_fiveprime.json`). **꼴로 배제한다.**
+#: ⚠ 꼬리를 열어 둔다(`out902b_fiveprime_901.json` 같은 **보관본**도 자기 산출물이다).
+SELF_OUT_RE = re.compile(r"(?:^|/)out[^/]*_fiveprime[^/]*\.json$")
+
+
+def is_self_out(rel: str) -> bool:
+    """🔴 이 러너 자신의 산출물인가(`out*_fiveprime.json`) --- **이름으로만** 판정한다."""
+    return bool(SELF_OUT_RE.search(str(rel)))
+
+
+# ── 🔴 커밋된 트리 판독기 (955 R5 · `docs/루프.md` v3.2 §148) ─────────────
+#: `docs/루프.md:148` 은 ⑤′ 를 **「커밋된 트리에서」** 되짚으라고 적는다. 954 까지 이 러너는
+#: 절 3·4·7 에서 **작업 트리**를 읽었다(티처 #63 C1 이 v3.1 에서 고친 병의 재발 · #93 M5).
+#: 🔴 **「커밋 안 됨」은 「없다」가 아니다**(조항 59) --- 아래 판독기는 셋을 **갈라서** 낸다.
+TREE_READ = ("읽었다", "커밋 안 됨", "없다", "못 읽었다")
+
+
+def tree_paths(tree: str = "HEAD") -> tuple:
+    """커밋된 트리의 경로 전량. 🔴 `-z` + `core.quotepath=false`(946 이 잡은 병)."""
+    rc, out, err = _git(["-c", "core.quotepath=false", "ls-tree", "-r", "--name-only",
+                         "-z", tree])
+    if rc != 0:
+        return set(), err[:200]
+    return {p for p in out.split("\0") if p}, "없음"
+
+
+def tree_blob(rel: str, tree: str = "HEAD", known=None):
+    """🔴 커밋된 트리에서 **바이트**를 꺼낸다 --- `(상태, bytes|None)`.
+
+    상태는 넷 중 하나다(조항 59): `읽었다` · **`커밋 안 됨`**(작업 트리엔 있는데 그 트리엔
+    없다) · `없다`(양쪽 다 없다) · `못 읽었다`(git 이 화냈다).
+    """
+    if known is not None and rel not in known:
+        return ("커밋 안 됨" if (ROOT / rel).exists() else "없다"), None
+    r = subprocess.run(["git", "-C", str(ROOT), "cat-file", "blob",
+                        "%s:%s" % (tree, rel)], capture_output=True, timeout=600)
+    if r.returncode != 0:
+        if (ROOT / rel).exists():
+            return "커밋 안 됨", None
+        return "없다", None
+    return "읽었다", r.stdout
+
+
+def tree_text(rel: str, tree: str = "HEAD", known=None):
+    st, b = tree_blob(rel, tree, known)
+    return st, (None if b is None else b.decode("utf-8", "surrogateescape"))
+
 
 def keyaudit_targets(base: str, head: str) -> dict:
     """🔴 **이 사이클이 찍은 산출물**을 대상으로 삼는다(953 · 티처 #90 처방).
@@ -100,6 +170,10 @@ def keyaudit_targets(base: str, head: str) -> dict:
     분모를 나란히 박는다(조항 60): 바뀐 경로 · 그중 `runners/out*.json` · 뺀 것 · 남은 것.
     🔴 `-c core.quotepath=false` 를 쓴다 --- 946 이 잡은 병(이스케이프 바늘은 **종료 0** 으로
     「0개」를 낸다)이 여기서도 그대로 돈다.
+
+    🔴 **955 R4** --- 후보에서 `out*_fiveprime.json`(자기 산출물)을 **이름으로 뺀다.**
+    🔴 **955 R5** --- 대상은 **커밋된 것만**이다. 작업 트리에만 있는 후보는 「없다」로 세지
+    않고 **「커밋 안 됨」으로 따로 센다**(조항 59).
     """
     rc, out, err = _git(["-c", "core.quotepath=false", "diff", "--name-only", "-z",
                          "%s..%s" % (base, head)])
@@ -107,16 +181,37 @@ def keyaudit_targets(base: str, head: str) -> dict:
     rc2, out2, _ = _git(["-c", "core.quotepath=false", "status", "--porcelain", "-z"])
     worktree = sorted(x[3:] for x in out2.split("\0") if len(x) > 3) if rc2 == 0 else []
     changed = sorted(set(committed) | set(worktree))
-    cand = [p for p in changed
-            if p.startswith("runners/out") and p.endswith(".json")]
-    keep = [p for p in cand if not any(s in p for s in KEYAUDIT_SKIP)]
+
+    def _cand(paths):
+        return [p for p in paths if p.startswith("runners/out") and p.endswith(".json")]
+
+    cand = _cand(changed)
+    cand_committed = _cand(committed)
+    self_out = sorted(p for p in cand if is_self_out(p))
+    by_name = sorted(p for p in cand
+                     if not is_self_out(p) and any(s in p for s in KEYAUDIT_SKIP))
+    dropped = set(self_out) | set(by_name)
+    keep = [p for p in cand_committed if p not in dropped]
+    uncommitted = sorted(p for p in cand if p not in dropped and p not in set(committed))
     return {
         "🔴 왜 이 대상인가": ("옛 하드코딩(`out899a_gates.json`)은 **고칠 수 없는 남의 파일**이라 "
                        "초록이 도달 불가능했다. 자는 **자기 산출물**에 걸어야 자다"),
+        "🔴 어느 트리인가(955 R5)": "**커밋된 트리** `%s` --- 대상은 커밋된 것만이다" % head,
         "바뀐 경로(커밋+작업트리)": len(changed),
         "그중 runners/out*.json": len(cand),
-        "🔴 뺀 것(자기 채점 순환·도장)": sorted(set(cand) - set(keep)) or "없음",
+        # 🔴 955 R4 --- 이 칸이 954 에 「없음」이라 적혀 있었다. **무엇을 왜 뺐는지 적는다.**
+        "🔴 뺀 것(자기 채점 순환·도장)": {
+            "🔴 뺀 수(분자) / 후보 수(분모)": "%d / %d" % (len(dropped), len(cand)),
+            "🔴 자기 산출물(`out*_fiveprime.json` · 이름으로 뺐다 · 955 R4)": self_out or "없음",
+            "이름 목록(`KEYAUDIT_SKIP`)으로 뺀 것": by_name or "없음",
+            "🔴 왜": ("954 는 `runners/out954_fiveprime.json` **자기 자신**을 대상에 넣었다 --- "
+                   "그 파일의 절 12 가 **전부 `통과`** 라 분자·분모가 동시에 부풀어 "
+                   "**18/27(66.7%) 이 30/39(76.9%) 로** 보였다(티처 #93 C3)"),
+        },
+        "🔴 커밋 안 된 후보(= 「없다」가 아니다 · 조항 59 · 955 R5)": uncommitted or "없음",
+        "🔴 커밋 안 된 후보 수": len(uncommitted),
         "🔴 대상": keep,
+        "🔴 대상 수": len(keep),
         "🔴 git 오류": err[:200] if rc != 0 else "없음",
     }
 
@@ -164,6 +259,12 @@ def _git(args, timeout=600):
     r = subprocess.run(["git", "-C", str(ROOT)] + args,
                        capture_output=True, text=True, timeout=timeout)
     return r.returncode, r.stdout, r.stderr
+
+
+def _rev(ref: str) -> str:
+    """🔴 **어느 커밋을 읽었나** --- 955 R5 는 이 sha 를 산출물에 박으라고 요구한다."""
+    rc, out, _ = _git(["rev-parse", ref])
+    return out.strip() if rc == 0 else "🔴 모른다(`git rev-parse %s` 가 죽었다)" % ref
 
 
 # ── ⓪ 관문 ──────────────────────────────────────────────────────────────
@@ -464,7 +565,7 @@ def gate_roster(tree) -> dict:
 DOCSTAMP = "runners/out951_docstamp.json"
 
 
-def doc_check(docstamp: str = None) -> dict:
+def doc_check(docstamp: str = None, tree: str = "HEAD") -> dict:
     """🔴 **대조** --- 찍힌 문서의 **입력 sha 를 지금 다시 계산해 견준다**.
 
     `CHECK_CRITERIA` 셋을 그대로 채운다: ① `runners/out950_docstamp.json` 을 **읽고**
@@ -475,36 +576,54 @@ def doc_check(docstamp: str = None) -> dict:
     ⚠ **한계(조항 61)**: 낡음만 잡는다. **문서의 수가 옳은지는 안 본다.**
     """
     ds = docstamp or DOCSTAMP
-    p = ROOT / ds
-    if not p.exists():
+    known, ls_err = tree_paths(tree)
+    st_state, st_txt = tree_text(ds, tree, known)
+    if st_state != "읽었다":
         return {"검사": "7 문서 대조", "통과": False,
-                "🔴": "모른다 --- `%s` 가 없다(「대조가 초록」이 아니다 · 조항 59)" % ds}
-    st = json.loads(p.read_text(encoding="utf-8"))
-    rows, bad, unknown = {}, [], []
+                "🔴 읽은 트리(955 R5)": {"기준": "커밋된 트리", "트리": tree,
+                                  "커밋 sha": _rev(tree)},
+                "🔴": "모른다 --- `%s` 를 **%s**(「대조가 초록」이 아니다 · 조항 59)" % (ds, st_state)}
+    st = json.loads(st_txt)
+    rows, bad, unknown, nocommit = {}, [], [], []
     want = dict(st.get("🔴 입력별 sha256(대조의 기록 쪽)", {}))
     want.update(st.get("🔴 문서 sha256", {}))
     want.update(st.get("🔴 생산기 sha256", {}))
     for rel, rec in sorted(want.items()):
-        f = ROOT / rel
-        if not f.exists():
+        state, blob = tree_blob(rel, tree, known)
+        if state == "커밋 안 됨":
+            # 🔴 955 R5 --- 「커밋 안 됨」은 「없다」가 아니다(조항 59)
+            rows[rel] = {"🔴 커밋 안 됨": "작업 트리엔 있는데 `%s` 에 없다 --- 견줄 수 없다" % tree}
+            nocommit.append(rel)
+            continue
+        if state != "읽었다":
             rows[rel] = {"🔴": "모른다 --- 파일이 없다(「같다」가 아니다)"}
             unknown.append(rel)
             continue
-        now = hashlib.sha256(f.read_bytes()).hexdigest()
+        now = hashlib.sha256(blob).hexdigest()
         same = (now == rec)
-        rows[rel] = {"기록된 sha256": rec, "🔴 지금 다시 계산한 sha256": now, "같은가": same}
+        rows[rel] = {"기록된 sha256": rec, "🔴 커밋된 트리에서 다시 계산한 sha256": now,
+                     "같은가": same}
         if not same:
             bad.append(rel)
     return {
         "검사": "7 🔴 문서 대조 --- 찍힌 문서의 **입력이 그 뒤로 바뀌었나**(티처 #89 M1)",
-        "읽은 트리": "🔴 **작업 트리**(지금 파일을 다시 해싱한다)",
+        # 🔴 955 R5 (티처 #93 M5) --- 954 까지 이 절은 **작업 트리**를 해싱했다.
+        #    `docs/루프.md:148` 은 ⑤′ 를 **커밋된 트리**에서 하라고 적는다.
+        "🔴 읽은 트리(955 R5)": {
+            "기준": "🔴 **커밋된 트리**(`git cat-file blob <tree>:<경로>` 를 해싱한다)",
+            "트리": tree, "커밋 sha": _rev(tree),
+            "🔴 `git ls-tree` 오류": ls_err,
+            "⚠ 954 까지": "작업 트리를 해싱했다 --- 커밋 안 된 편집이 이 절을 붉히거나 숨겼다",
+        },
         "자": gc.CHECK_CRITERIA,
         "도장 파일": ds,
         "🔴 견준 수(분모)": len(want),
         "🔴 다른 것": bad or "없음",
         "🔴 모르는 것": unknown or "없음",
+        "🔴 커밋 안 된 것(= 「없다」가 아니다 · 조항 59)": nocommit or "없음",
+        "🔴 커밋 안 된 것 수": len(nocommit),
         "파일별": rows,
-        "통과": (not bad) and (not unknown) and len(want) > 0,
+        "통과": (not bad) and (not unknown) and (not nocommit) and len(want) > 0,
         "🔴 통과의 뜻": ("찍힌 문서의 입력·생산기·문서 자신이 **그 뒤로 한 바이트도 안 바뀌었다**. "
                    "🔴 하나라도 바뀌었으면 **문서를 다시 찍어야 한다** --- 949 가 안 한 그것이다"),
         "⚠ 한계(조항 61)": "낡음만 잡는다. **문서의 수가 옳은지는 안 본다**",
@@ -633,24 +752,44 @@ def run_gates(do_run, tree, consumers, ran_hand=(), exempt=None) -> dict:
 
 
 # ── 3 판정 키 규약 ──────────────────────────────────────────────────────
-def keyaudit(extra, targets=None) -> dict:
+def keyaudit(extra, targets=None, tree="HEAD") -> dict:
     """🔴 **`통과` 키가 없는 절을 「모른다」로 세어 드러낸다**(`docs/루프.md:256-258`).
 
     대상 파일은 **남의 소유라 고치지 않는다.** 고치는 대신 **읽는 쪽에서** 센다 ---
     900 의 첫 훑기가 동적 게이트 다섯에서 전부 `None` 을 받고도 초록이었던 길이 그것이다.
     🔴 `None` 은 「통과」가 아니라 **「모른다」**다(조항 59).
+
+    🔴 **955 R5** --- 파일을 **커밋된 트리**에서 읽는다(`git cat-file blob <tree>:<경로>`).
+    작업 트리에만 있는 파일은 「없다」가 아니라 **「커밋 안 됨」**으로 따로 센다(조항 59).
+    🔴 **955 R4** --- `out*_fiveprime.json`(자기 산출물)은 **이름으로 뺀다.** `--keyaudit`
+    으로 손수 넣어도 뺀다 --- 자기 채점 순환은 인자로도 열지 않는다.
     """
     tg = targets or {}
     per, tot, has, unk = {}, 0, 0, 0
+    nocommit, missing, unread, selfskip = [], [], [], []
+    known, ls_err = tree_paths(tree)
     for rel in list(dict.fromkeys(KEYAUDIT_MUST + list(tg.get("🔴 대상") or []) + list(extra))):
-        p = ROOT / rel
-        if not p.exists():
+        if is_self_out(rel):
+            # 🔴 955 R4 --- 자기 산출물은 대상이 아니다. **뺐다는 사실을 남긴다.**
+            selfskip.append(rel)
+            per[rel] = {"🔴 뺐다(955 R4)": "이 러너 자신의 산출물(`out*_fiveprime.json`)이다 "
+                                       "--- 자기 채점 순환(티처 #93 C3)"}
+            continue
+        st, txt = tree_text(rel, tree, known)
+        if st == "커밋 안 됨":
+            per[rel] = {"🔴 커밋 안 됨": "작업 트리엔 있는데 `%s` 에 없다 --- 「없다」가 "
+                                   "아니라 **「못 봤다」**다(조항 59)" % tree}
+            nocommit.append(rel)
+            continue
+        if st == "없다":
             per[rel] = {"🔴": "그 파일이 없다(「절이 없다」가 아니다)"}
+            missing.append(rel)
             continue
         try:
-            d = json.loads(p.read_text(encoding="utf-8"))
+            d = json.loads(txt)
         except Exception as e:                                    # noqa: BLE001
             per[rel] = {"🔴": "못 읽었다: %s" % e}
+            unread.append(rel)
             continue
         # 🔴 957 --- 최상위가 dict 가 아닌 산출물(목록 등)에서 죽지 않는다.
         #    「죽었다」와 「절이 없다」와 「통과」는 셋이다(조항 59).
@@ -688,11 +827,26 @@ def keyaudit(extra, targets=None) -> dict:
             "이제 대상은 **이 사이클이 찍은 산출물**이다 --- 자는 자기 산출물에 걸릴 때만 자다"),
         "🔴 대상 고르기": tg or "🔴 안 넘어왔다(옛 방식)",
         "🔴 왜 읽는 쪽에서 하나": "남의 산출물을 소비할 땐 고치지 않고 **세어 드러낸다**(그 규율은 그대로다)",
+        # 🔴 955 R5 --- 어느 기준으로 읽었는지 **산출물에 박는다**
+        "🔴 읽은 트리(955 R5)": {
+            "기준": "커밋된 트리(`git cat-file blob <tree>:<경로>`)",
+            "트리": tree,
+            "커밋 sha": _rev(tree),
+            "그 트리의 경로 수(분모)": len(known),
+            "🔴 `git ls-tree` 오류": ls_err,
+        },
+        # 🔴 955 R4 --- 자기 배제를 **여기서도** 센다(대상 고르기 밖으로 들어온 길을 막는다)
+        "🔴 자기 산출물이라 뺀 것(955 R4)": selfskip or "없음",
+        "🔴 파일 수(분모)": len(per),
+        "🔴 커밋 안 된 파일(= 「없다」가 아니다 · 조항 59)": nocommit or "없음",
+        "🔴 커밋 안 된 파일 수": len(nocommit),
+        "🔴 커밋된 트리에도 작업 트리에도 없는 파일": missing or "없음",
+        "🔴 못 읽은 파일(JSON 이 아니다)": unread or "없음",
         "🔴 절 수 합(분모)": tot,
         "`통과` 키가 있는 절 합": has,
         "🔴 모른다(=`통과` 키 없음) 합": unk,
         "파일별": per,
-        "통과": (tot > 0 and unk == 0),
+        "통과": (tot > 0 and unk == 0 and not nocommit and not missing and not unread),
         "⚠ 통과의 뜻": "🔴 `통과 == False` 는 「게이트가 실패했다」가 아니라 **「판정을 못 읽는다」**다",
         "⚠ 대상이 0 이면": ("`통과` 는 **False** 다. 「검사할 게 없다」가 아니라 "
                        "**「이 사이클이 산출물을 안 찍었다」**로 읽는다(조항 59)"),
@@ -700,14 +854,29 @@ def keyaudit(extra, targets=None) -> dict:
 
 
 # ── 4 도장 확인 ─────────────────────────────────────────────────────────
-def stamp_audit() -> dict:
-    """🔴 `git HEAD` 스탬프는 판정에 쓰지 않는다(v3.2 가 폐기). 도장 넷을 본다."""
+def stamp_audit(tree="HEAD") -> dict:
+    """🔴 `git HEAD` 스탬프는 판정에 쓰지 않는다(v3.2 가 폐기). 도장 넷을 본다.
+
+    🔴 **955 R5** --- 훑는 목록도 읽는 내용도 **커밋된 트리**에서 온다(`git ls-tree -r` +
+    `git cat-file blob`). 작업 트리에만 있는 산출물은 「없다」가 아니라 **「커밋 안 됨」**
+    으로 따로 센다(조항 59).
+    🔴 **955 R4** --- `out*_fiveprime.json`(자기 산출물)은 **이름으로 뺀다**(티처 #93 C3).
+    """
     want = ("시각", "sha256")
+    known, ls_err = tree_paths(tree)
+    in_tree = sorted(p for p in known
+                     if p.startswith("runners/out") and p.endswith(".json"))
+    on_disk = sorted((q.relative_to(ROOT).as_posix())
+                     for q in (ROOT / "runners").glob("out*.json"))
+    selfskip = sorted(p for p in set(in_tree) | set(on_disk) if is_self_out(p))
+    scan = [p for p in in_tree if not is_self_out(p)]
+    nocommit = sorted(p for p in on_disk
+                      if p not in known and not is_self_out(p))
     rows, nost, bad = {}, [], []
-    for p in sorted((ROOT / "runners").glob("out*.json")):
-        rel = p.relative_to(ROOT).as_posix()
+    for rel in scan:
+        st, txt = tree_blob(rel, tree, known)
         try:
-            d = json.loads(p.read_text(encoding="utf-8"))
+            d = json.loads(txt.decode("utf-8", "surrogateescape"))
         except Exception as e:                                    # noqa: BLE001
             rows[rel] = {"🔴": "못 읽었다: %s" % type(e).__name__}
             bad.append(rel)
@@ -737,7 +906,19 @@ def stamp_audit() -> dict:
     short = [k for k, v in rows.items() if v.get("시작<끝") is False and not _long(v)]
     return {
         "검사": "4 도장 확인 --- ① 시작 ② 끝 ③ 입력 sha ④ 코드 sha",
-        "🔴 훑은 산출물 수(분모)": len(list((ROOT / "runners").glob("out*.json"))),
+        # 🔴 955 R5 --- 어느 트리를 훑었는지 박는다
+        "🔴 훑은 트리(955 R5)": {
+            "기준": "커밋된 트리(`git ls-tree -r <tree>` + `git cat-file blob`)",
+            "트리": tree, "커밋 sha": _rev(tree),
+            "🔴 `git ls-tree` 오류": ls_err,
+        },
+        "🔴 훑은 산출물 수(분모)": len(scan),
+        "⚠ 그 트리의 `runners/out*.json` 전량": len(in_tree),
+        # 🔴 955 R4 --- 자기 산출물을 뺐다는 사실을 **수와 목록으로** 남긴다
+        "🔴 뺀 것(자기 산출물 · 955 R4)": selfskip or "없음",
+        "🔴 뺀 수": len(selfskip),
+        "🔴 커밋 안 된 산출물(= 「없다」가 아니다 · 조항 59)": nocommit or "없음",
+        "🔴 커밋 안 된 산출물 수": len(nocommit),
         "도장이 있는 산출물 수": len(rows) - len(bad),
         "🔴 도장이 하나도 없는 산출물 수": len(nost),
         "🔴 도장이 하나도 없는 산출물": nost,
@@ -984,12 +1165,149 @@ def d1_census() -> dict:
     }
 
 
+# ── 8 🔴 [수리] 레인 계수 (955 R6 · 티처 #93 C4·㉤) ─────────────────────
+#: 🔴 954 는 원장·노트·인계 카드 **셋 다**에 *「수리 레인은 한 사이클에 하나이고 그 하나를
+#: 썼다」* 고 적고 실제로는 `[수리]` 커밋을 **셋** 했다. 말로 적는 한 또 어긋난다 ---
+#: **기계가 센다.** 사전등록(`docs/prereg_9NN_*.md` §8 표)이 예고한 수와 견준다.
+REPAIR_TAG = "[수리]"
+#: §8 표의 레인 줄: `| R1 | 무엇 | 파일 |`
+PREREG_ROW = re.compile(r"^\|\s*R(\d+)\s*\|", re.M)
+#: §8 의 머리(다른 절의 표를 세지 않게 §8 안으로만 자른다).
+PREREG_SEC = re.compile(r"^##\s*8\.", re.M)
+
+
+def prereg_expected(prereg: str, tree: str = "HEAD", known=None) -> dict:
+    """🔴 사전등록 §8 표에서 **예고한 [수리] 레인 수**를 읽는다(955 R6).
+
+    🔴 못 읽으면 **「모른다」**를 낸다. **0 을 내지 않는다**(조항 59) --- 0 은
+    「레인을 안 열었다」는 **주장**이고, 못 읽은 것은 **주장이 아니다**.
+    """
+    if not prereg:
+        return {"수": None, "🔴": "사전등록을 안 줬다(`--prereg`) --- 「모른다」다"}
+    st, txt = tree_text(prereg, tree, known)
+    if st != "읽었다":
+        return {"수": None, "🔴": "`%s` 를 **%s**(「0 개」가 아니다)" % (prereg, st), "상태": st}
+    m = PREREG_SEC.search(txt)
+    if not m:
+        return {"수": None, "🔴": "`%s` 에서 `## 8.` 절을 못 찾았다" % prereg}
+    body = txt[m.end():]
+    nxt = re.search(r"^##\s", body, re.M)
+    body = body[:nxt.start()] if nxt else body
+    ids = PREREG_ROW.findall(body)
+    if not ids:
+        return {"수": None, "🔴": "`## 8.` 안에서 `| R<n> |` 줄을 하나도 못 찾았다"}
+    return {"수": len(ids), "레인 번호": ["R%s" % i for i in ids],
+            "출처": "%s §8 표(`| R<n> |` 줄)" % prereg, "트리": tree}
+
+
+def repair_lanes(base, head, expected=None, prereg=None, mainref="main",
+                 tree="HEAD") -> dict:
+    """🔴 **이 가지에서 연 `[수리]` 커밋을 센다**(955 R6 · 티처 #93 C4).
+
+    🔴 규약 60 --- **명령 · 범위 · 트리 셋을 같이 적는다.** 수만 적으면 다음 사람이
+    「무엇을 센 수인지」를 못 읽고, 그러면 이 절도 954 의 그 문장과 같아진다.
+    """
+    head_sha = _rev(head)
+    rc_m, mb_out, mb_err = _git(["merge-base", mainref, head])
+    mb = mb_out.strip()
+    why = ""
+    if rc_m != 0 or not mb:
+        rng = _rev(base)
+        why = ("🔴 `git merge-base %s %s` 가 죽었다(%s) --- 범위를 취합 시작(`--base`)으로 "
+               "갈음했다" % (mainref, head, (mb_err or "").strip()[:120]))
+    elif mb == head_sha:
+        rng = _rev(base)
+        why = ("🔴 `git merge-base %s %s` 가 **머리 자신**이다 --- 머리가 `%s` 위에 있다"
+               "(가지를 이미 머지했거나 `%s` 에서 돌린다). 그러면 가지 범위가 빈다 · "
+               "범위를 **취합 시작(`--base`)**으로 갈음했다" % (mainref, head, mainref, mainref))
+    else:
+        rng = mb
+        why = "`git merge-base %s %s` --- 이 가지가 갈라진 자리" % (mainref, head)
+    cmd_mb = "git merge-base %s %s" % (mainref, head)
+    cmd_log = "git log --format=%%s %s..%s" % (rng[:9], head_sha[:9])
+    rc, out, err = _git(["log", "--format=%H%x1f%s", "%s..%s" % (rng, head)])
+    if rc != 0:
+        return {"검사": "8 🔴 `[수리]` 레인 계수(955 R6)", "통과": False,
+                "🔴 명령": [cmd_mb, cmd_log],
+                "🔴": "모른다 --- `git log` 가 종료 %d 다: %s" % (rc, err[:200])}
+    rows = [l.split("\x1f", 1) for l in out.split("\n") if l.strip()]
+    subs = [(r[0], r[1] if len(r) > 1 else "") for r in rows]
+    repairs = [(h, s) for h, s in subs if s.startswith(REPAIR_TAG)]
+    # 🔴 955 R6 --- 커밋 제목에서 **레인 표지 `R<n>`** 를 뽑는다(`[수리] R7·R8 …`).
+    #    `\bR\d+\b` 를 제목 **앞부분**에서만 찾는다(본문 인용의 `R5` 같은 것을 안 센다).
+    lanes = set()
+    untagged = []
+    for _h, s in repairs:
+        head_part = s.split("—")[0].split("---")[0]
+        found = re.findall(r"\bR(\d+)\b", head_part)
+        if found:
+            lanes.update("R%s" % i for i in found)
+        else:
+            untagged.append(s)
+    tags = {}
+    for _h, s in subs:
+        t = s.split("]")[0] + "]" if s.startswith("[") and "]" in s else "(표지 없음)"
+        tags[t] = tags.get(t, 0) + 1
+    src = "--expected-repairs"
+    pre = prereg_expected(prereg, tree) if expected is None else None
+    exp = expected if expected is not None else (pre or {}).get("수")
+    if expected is None:
+        src = (pre or {}).get("출처") or "🔴 못 읽었다"
+    n = len(repairs)
+    return {
+        "검사": "8 🔴 `[수리]` 레인 계수 --- 기계가 센다(955 R6 · 티처 #93 C4·㉤)",
+        "🔴 왜": ("954 는 원장·노트·카드 **셋 다**에 「수리 레인 하나를 썼다」고 적고 실제로 "
+               "`[수리]` 커밋을 **셋** 했다. 말로 적으면 또 어긋난다"),
+        # 🔴 규약 60 --- 명령 · 범위 · 트리 셋
+        "🔴 명령": [cmd_mb, cmd_log],
+        "🔴 범위": "%s..%s" % (rng, head_sha),
+        "🔴 범위의 기준(base)": {"rev": rng, "왜": why, "mainref": mainref,
+                          "취합 시작(--base)": _rev(base)},
+        "🔴 트리": {"기준": "커밋된 트리", "머리": head, "커밋 sha": head_sha},
+        "🔴 이 범위의 커밋 수(분모)": len(subs),
+        "🔴 그중 `[수리]` 커밋 수(분자)": n,
+        "🔴 `[수리]` 커밋 제목": [s for _h, s in repairs] or "없음",
+        "`[수리]` 커밋 sha": [h[:9] for h, _s in repairs] or "없음",
+        "표지별 커밋 수": dict(sorted(tags.items())),
+        # 🔴🔴 **레인 ≠ 커밋**. 한 커밋이 레인 둘을 나를 수 있고(`R7·R8`), 한 레인이
+        #    커밋 둘로 갈릴 수도 있다. 954 의 병은 「레인 하나」라 적고 커밋 셋을 한 것인데,
+        #    커밋만 세면 그 병을 **뒤집어서** 다시 못 잡는다.
+        #    → 커밋 제목의 **`R<n>` 표지**를 세어 **레인을 직접** 센다.
+        "🔴🔴 레인 표지(`R<n>`)로 센 레인": sorted(lanes, key=lambda x: int(x[1:])) or "없음",
+        "🔴🔴 레인 수(분자 --- 이것이 「수리 레인」의 수다)": len(lanes),
+        "🔴 표지 없는 `[수리]` 커밋(레인을 못 센다)": [s for s in untagged] or "없음",
+        "🔴 사전등록이 예고한 레인 수": (exp if exp is not None else
+                            "🔴 모른다 --- `--expected-repairs` 도 `--prereg` 도 못 읽었다"
+                            "(**0 이 아니다** · 조항 59)"),
+        "예고 수의 출처": src,
+        "예고한 레인 번호": (pre or {}).get("레인 번호", "안 읽었다"),
+        "🔴 예고했는데 안 연 레인": sorted(set((pre or {}).get("레인 번호", [])) - lanes,
+                                key=lambda x: int(x[1:])) or "없음",
+        "🔴 안 예고했는데 연 레인": sorted(lanes - set((pre or {}).get("레인 번호", [])),
+                                key=lambda x: int(x[1:])) or "없음",
+        "사전등록 파싱": pre or "안 했다(`--expected-repairs` 를 받았다)",
+        "🔴 센 레인 − 예고 레인": (len(lanes) - exp) if exp is not None else "🔴 모른다",
+        "🔴 센 커밋 − 예고 레인(참고 --- 954 가 어긴 자리)":
+            (n - exp) if exp is not None else "🔴 모른다",
+        "통과": (exp is not None) and (len(lanes) == exp) and not untagged,
+        "🔴 통과의 뜻": ("**`R<n>` 표지로 센 레인 수 == 사전등록 §8 이 예고한 레인 수**이고 "
+                   "**표지 없는 `[수리]` 커밋이 0** 이다. 🔴 커밋 수가 아니라 **레인 수**로 "
+                   "판정한다 --- 한 커밋이 레인 둘을 나를 수 있다(`R7·R8`). "
+                   "예고 수를 모르면 **통과가 아니다** --- 「모른다」는 「0」이 아니다"),
+    }
+
+
 # ── 엮기 ────────────────────────────────────────────────────────────────
 def main(argv=None):
     ap = argparse.ArgumentParser(prog="fiveprime902.py", description=__doc__.split("\n")[0])
     ap.add_argument("--base", required=True, help="취합 시작 rev")
     ap.add_argument("--head", default="HEAD")
-    ap.add_argument("--tree", default=None, help="역참조를 이 rev 트리에서 한다(기본 작업 트리)")
+    # 🔴 **955 R5** --- 기본을 **커밋된 트리**로 바꿨다(`docs/루프.md:148` v3.2 · 티처 #93 M5).
+    #    954 까지 기본이 「작업 트리」라 ⑤′ 가 **커밋 안 된 편집**을 검사했다.
+    #    작업 트리를 일부러 보고 싶으면 `--tree 작업트리`(또는 `worktree`).
+    ap.add_argument("--tree", default=None,
+                    help="역참조·읽기를 이 rev 트리에서 한다(기본: --head = **커밋된 트리** · "
+                         "`작업트리`/`worktree` 를 주면 옛 동작)")
     ap.add_argument("--ran", action="append", default=[], help="이번에 실제로 다시 돌린 소비자 경로")
     ap.add_argument("--exempt", action="append", default=[], help="경로=사유")
     ap.add_argument("--keyaudit", action="append", default=[], help="판정 키를 감사할 산출물 추가")
@@ -1015,10 +1333,26 @@ def main(argv=None):
                     help="🔴 산문 주장 목록 모듈(예: runners.prose_check)")
     ap.add_argument("--exempt-file", default=None,
                     help="🔴 면제 사유를 담은 JSON(`{경로: \"[자:…] 사유\"}`)")
+    # ── 🔴 955 R6 --- `[수리]` 레인을 **기계가 센다**(티처 #93 C4·㉤)
+    ap.add_argument("--expected-repairs", type=int, default=None,
+                    help="🔴 사전등록이 예고한 `[수리]` 레인 수. 안 주면 `--prereg` 에서 읽고, "
+                         "그것도 없으면 **「모른다」**를 낸다(0 이 아니다)")
+    ap.add_argument("--prereg", default=None,
+                    help="🔴 사전등록 파일(§8 표의 `| R<n> |` 줄을 센다 · 예: docs/prereg_955_D.md)")
+    ap.add_argument("--repair-main", default="main",
+                    help="`[수리]` 계수 범위의 기준 가지(`git merge-base <이것> <head>`)")
     a = ap.parse_args(argv)
 
     if a.quote_ref is None:
         a.quote_ref = a.base          # 🔴 위 주석 참조 --- HEAD 는 자기 자신이다
+    # 🔴 955 R5 --- 「어느 트리를 되짚나」를 여기서 한 번에 정한다.
+    #    `docs/루프.md:148`(v3.2): ⑤′ 는 **커밋된 트리**에서 되짚는다.
+    worktree_mode = str(a.tree).lower() in ("작업트리", "worktree", "work", "none")
+    if a.tree is None:
+        a.tree = a.head               # 🔴 기본이 커밋된 트리다
+    elif worktree_mode:
+        a.tree = None                 # 옛 동작(작업 트리) --- 일부러 준 때만
+    read_tree = a.head if a.tree is None else a.tree
 
     t0 = time.time()
     exempt = {}
@@ -1040,6 +1374,17 @@ def main(argv=None):
            #    그 문자열이 어디에도 안 남아 다음 세션이 재현할 수 없었다(티처 #88 C4).
            "🔴 인자(argv)": list(argv if argv is not None else sys.argv[1:]),
            "🔴 사유 파일": a.exempt_file or "없음",
+           # 🔴 955 R5 --- **어느 기준을 썼는지 산출물에 박는다**(티처 #93 M5)
+           "🔴 되짚은 기준(955 R5 · `docs/루프.md:148` v3.2)": {
+               "기준": "🔴 **커밋된 트리**",
+               "읽기·해싱 트리(절 3·4·7·8)": read_tree,
+               "그 커밋 sha": _rev(read_tree),
+               "역참조(grep) 트리(절 1·2)": a.tree or "🔴 작업 트리(`--tree 작업트리` 를 줬다)",
+               "머리(--head)": "%s = %s" % (a.head, _rev(a.head)),
+               "취합 시작(--base)": "%s = %s" % (a.base, _rev(a.base)),
+               "⚠ 954 까지": "작업 트리를 되짚었다 --- 커밋 안 된 편집이 검사에 섞였다",
+               "🔴 「커밋 안 됨」은 「없다」가 아니다": "절 3·4·7 이 그것을 **따로 센다**(조항 59)",
+           },
            "🔴 규약": [
                "① 소비자는 **기계 역참조**로 뽑고 **목록을 이 파일에 남긴다**",
                "② 🔴 분모 넷을 나란히 박는다 --- 바뀐 경로 · 역참조 소비자 · 돌린 것 · **안 돌린 것**",
@@ -1069,15 +1414,22 @@ def main(argv=None):
     res["2 게이트"] = run_gates(a.gates, a.tree,
                              _cons if isinstance(_cons, list) else [], ran,
                              exempt=exempt)
-    res["3 판정 키 규약"] = keyaudit(a.keyaudit, ka)
-    res["4 도장 확인"] = stamp_audit()
+    res["3 판정 키 규약"] = keyaudit(a.keyaudit, ka, read_tree)
+    res["4 도장 확인"] = stamp_audit(read_tree)
     res["5 quote901 무변"] = quote_regress(a.quote_ref, a.quote_now)
     res["5-나 무변 시험의 검정력(심어서 확인)"] = quote_power(a.quote_ref)
     res["6 D1 실측"] = d1_census()
     try:
-        res["7 🔴 문서 대조(950 · 티처 #89 M1)"] = doc_check(a.docstamp)
+        res["7 🔴 문서 대조(950 · 티처 #89 M1)"] = doc_check(a.docstamp, read_tree)
     except Exception as e:                                        # noqa: BLE001
         res["7 🔴 문서 대조(950 · 티처 #89 M1)"] = {
+            "🔴 예외": "%s: %s" % (type(e).__name__, e), "통과": False}
+    # 🔴 955 R6 --- `[수리]` 레인을 기계가 센다(티처 #93 C4·㉤)
+    try:
+        res["8 🔴 `[수리]` 레인 계수(955 R6)"] = repair_lanes(
+            a.base, a.head, a.expected_repairs, a.prereg, a.repair_main, read_tree)
+    except Exception as e:                                        # noqa: BLE001
+        res["8 🔴 `[수리]` 레인 계수(955 R6)"] = {
             "🔴 예외": "%s: %s" % (type(e).__name__, e), "통과": False}
 
     # 🔴🔴 957 (티처 #95 C1) --- **도장은 수만 보고 산문은 원리상 안 본다.**

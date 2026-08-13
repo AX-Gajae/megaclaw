@@ -1,10 +1,18 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""954 수리 --- 티처 #92 **C1**: `prfsts_day.jsonl.gz` 의 **376일을 되찾는다**.
+"""954 수리 --- 티처 #92 **C1**: `prfsts_day.jsonl.gz` 의 **잃은 날 347일을 되찾는다**.
+
+🔴 수 --- **어느 수가 무엇의 분모인지**(조항 60. 옛 독스트링의 **376** 은 죽은 수였다):
+  · **378 행** --- 되찾은 뒤 파일을 **다시 열어 센 행 수**. 분모는 파일 전체다.
+  · **서로 다른 prfdt 378** --- 그 378행의 **서로 다른 날 수**. 행 하나가 날 하나(1:1)라
+    행 수와 날 수가 같다. 분모는 위의 378행이다.
+  · **되찾은 날 347** = 378 − 31. 분모는 **되찾은 뒤의 378일**이다. 옛 31일이 새 378일의
+    **진부분집합**이라 「늘어난 날」과 「되찾은 날」이 같은 수로 떨어진다.
+  · **31 행** --- 수리 **전** 디스크·HEAD 의 행 수. 상시 데몬의 **31일 증분 창** 한 판이다.
 
 무엇이 있었나: `ingest/kopis953.py` 가 이 파일만 `_write_gz`(**덮어쓰기**)로 썼고
-(형제 셋은 `_merge_write`), 상시 데몬의 **31일 증분 창**이 매 주행 376일을 갈아엎었다.
-디스크·HEAD 둘 다 **31행**이었고 376행짜리 판은 **어느 커밋에도 없다**(티처가 세었고
+(형제 셋은 `_merge_write`), 상시 데몬의 **31일 증분 창**이 매 주행 나머지 날을 갈아엎었다.
+디스크·HEAD 둘 다 **31행**이었고 378행짜리 판은 **어느 커밋에도 없다**(티처가 세었고
 주 세션이 독립 재계수해 일치).
 
 수리 둘:
@@ -66,18 +74,33 @@ def main():
         series.extend(K.rows(root, "prfstsTotal"))
 
     # 🔴 음성 대조 먼저 --- **사본에** 옛 코드(`_write_gz`)를 그대로 물린다.
+    # 🔴 R7 --- 사본 자리를 `K.OUTDIR`(= `data/ingest/kopis/`) **밖**, `/tmp` 로 뺐다.
+    #    `data/ingest/` 는 상시 데몬이 60초마다 훑어 **자동 커밋**하는 구역인데, 이 대조는
+    #    **일부러 자료를 망가뜨려** 옛 코드가 정말 자르는지 보는 시험이다. 틱이 겹치면
+    #    일부러 망가뜨린 판이 그대로 커밋된다(안 터졌을 뿐, 막힌 적은 없었다).
+    #    🔴 옮겨도 시험의 뜻은 안 죽는다 --- 우회한 게 없다. 무는 것은 여전히 **소스의
+    #    실제 함수** `K._write_gz` 이고, 그 함수가 `_write_gz(path, records)` 로 **경로를
+    #    인자로 받기** 때문에 사본이 어디 있든 물리는 코드 경로는 한 글자도 안 바뀐다.
+    #    덤: `_write_gz` 가 내부에서 만드는 `.part` 도 사본 옆에 생기므로 같이 /tmp 로 빠진다.
     neg = None
     if a.negative_control:
         import shutil
-        cp = K.OUTDIR / "prfsts_day.음성대조사본.jsonl.gz"
-        shutil.copy2(K.OUTDIR / "prfsts_day.jsonl.gz", cp)
-        n_before = len(K._read_gz(cp))
-        K._write_gz(cp, series)              # 옛 코드가 하던 그대로
-        n_after = len(K._read_gz(cp))
-        cp.unlink()
+        import tempfile
+        td = tempfile.mkdtemp(prefix="kopis954_neg_")
+        cp = pathlib.Path(td) / "prfsts_day.음성대조사본.jsonl.gz"
+        try:
+            shutil.copy2(K.OUTDIR / "prfsts_day.jsonl.gz", cp)
+            n_before = len(K._read_gz(cp))
+            K._write_gz(cp, series)          # 옛 코드가 하던 그대로
+            n_after = len(K._read_gz(cp))
+        finally:
+            # 🔴 터지든 말든 사본을 치운다(옛 코드는 예외를 던질 수 있다)
+            shutil.rmtree(td, ignore_errors=True)
         neg = {"사본 전 행": n_before, "옛 코드(_write_gz)로 쓴 뒤 행": n_after,
                "🔴 옛 코드가 잘랐나": n_after < n_before,
                "🔴 이 대조는 진짜 파일을 안 건드린다": True,
+               "🔴 사본 자리(저장소 밖 --- 데몬 감시 구역 아님)": td,
+               "🔴 문 것": "소스의 실제 K._write_gz(path, records) --- 경로만 인자로 바꿨다",
                # `통과` = 이 음성 대조가 **발화했나**(옛 코드가 실제로 잘랐나)
                "통과": bool(n_after < n_before)}
 
