@@ -1,0 +1,89 @@
+{
+ "노트": 959,
+ "레인": "배선",
+ "논문 스텝": 502,
+ "사전등록": "docs/prereg_959_reach.md (커밋 4212af9ab)",
+ "🔴 배선 검사": {
+  "W1 넓힌 표적이 문서 해결 수와 같은가": {
+   "분자: 넓힌 표적": 3933,
+   "분모: 문서가 해결된 개체": 3933,
+   "접두사를 모르는 개체": 0,
+   "시작일 없는 표적": 0,
+   "옛 표적(유보 잠금)": 815,
+   "🔴 잠금 배수": 4.825766871165644,
+   "통과": true
+  },
+  "W2 판 라벨을 여는가": {
+   "🔴 자": "경로처럼 생긴 문자열 리터럴만 본다(초판은 낱말을 봐서 거짓 붉음을 냈다)",
+   "assert_no_label_files 통과": true,
+   "예외": null,
+   "분모: 경로 리터럴": 14,
+   "경로 리터럴": [
+    "  {i}/{len(tg)}  성공 {n_ok} 실패 {n_bad}  ",
+    ", OUTDIR / f",
+    "/Users/ax/world_model",
+    ": n_ok / len(tg) if tg else float(",
+    ": ok / tot if tot else float(",
+    "data/ingest/sao941/pairs.jsonl.gz",
+    "data/ingest/sao959",
+    "data/ingest/wiki_daily",
+    "data/ingest/wiki_daily959",
+    "data/state/wiki_views",
+    "docs/prereg_959_reach.md (커밋 4212af9ab · 측정 전 · 파일 하나)",
+    "runners/out959_harvest.json",
+    "runners/out959_pairs.json",
+    "개봉/발매/개최"
+   ],
+   "🔴 라벨 경로": [],
+   "통과": true
+  },
+  "W3 쌍을 읽는 코드에 판 하네스가 있나": {
+   "명령": "git -c core.quotePath=false grep -l -e sao941 -e sao959 -e pairs.jsonl HEAD -- '*.py'",
+   "분모: 쌍을 읽는 .py": 6,
+   "파일": [
+    "ingest/harvest_ratchet.py",
+    "runners/layers957.py",
+    "runners/out941_sao.py",
+    "runners/out942_stock.py",
+    "runners/out952_wiring.py",
+    "runners/plant953_ratchet.py"
+   ],
+   "🔴 그중 harness/ 또는 lab/": [],
+   "통과": true
+  },
+  "W4 옛 wiki_daily 기준 sha256(앞16)": {
+   "파일별": {
+    "게임.jsonl.gz": "c10712fbe22895ff",
+    "도서.jsonl.gz": "ef965470d766fcfd",
+    "만화.jsonl.gz": "e2e6fe6c7847fa35",
+    "모바일.jsonl.gz": "b72016a9d312963c",
+    "세계애니.jsonl.gz": "17888c6186267cfa",
+    "시장팝업.jsonl.gz": "69dd580bfdce6684",
+    "아이돌.jsonl.gz": "cb4794f3ff44d68d",
+    "애니.jsonl.gz": "71e2e3348492d07c",
+    "웹툰.jsonl.gz": "8c21061b8cc15a49",
+    "팝업.jsonl.gz": "02f26d2b671ea057",
+    "펀딩.jsonl.gz": "c4853948573c6063"
+   },
+   "분모: 파일": 11,
+   "통과": true
+  },
+  "W5 941 쌍 기준 sha256(앞16)": {
+   "값": "50eacbe4468cf86f",
+   "통과": true
+  },
+  "W8 얼린 957 입력": {
+   "분자: 맞은 파일": 15,
+   "분모: 명세의 파일": 15,
+   "어긋난 것": [],
+   "통과": true
+  },
+  "W9 데몬 상태": {
+   "재웠나": true,
+   "통과": true
+  }
+ },
+ "🔴 분자: 통과한 검사": 7,
+ "🔴 분모: 돌린 검사": 7,
+ "🔴 전부 통과": true
+}
