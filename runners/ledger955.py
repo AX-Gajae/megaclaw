@@ -76,7 +76,7 @@ def fetch_snapshot():
 def main():
     d = J("runners/out955_D.json")
     ds = J("runners/out955_docstamp.json")
-    fp = J("runners/out902b_fiveprime.json")
+    fp = J("runners/out955_fiveprime.json")
     fs = fetch_snapshot()
 
     v = d["🔴🔴 판정(사전등록 §6)"]
@@ -311,7 +311,7 @@ def main():
 
         ("🔴 ⑤′ 취합 검사", {"통과": fp.get("통과"),
                        "절 수": len(fp.get("절", [])) if isinstance(fp.get("절"), list) else "?",
-                       "⚠": "낱개는 `runners/out902b_fiveprime.json` 에 있다"}),
+                       "⚠": "낱개는 `runners/out955_fiveprime.json` 에 있다"}),
 
         ("🔴 안 한 것 · 못 한 것 (갈라 적는다)",
          ["**안 했다** --- 표본을 다시 안 떴다(954 의 npz 를 그대로 읽었다 · 사전등록 §7)",
