@@ -231,8 +231,19 @@ def overlap(hp, fwa, label, planted=None):
         "🔴 분모 ③ HPLT 서로 다른 키": int(len(hset)),
         "🔴 분모 ④ FineWeb 표본 서로 다른 키": int(len(fset)),
         "교집합(서로 다른 키)": int(len(inter)),
-        "🔴 교집합 ÷ FineWeb 표본 문서": round(fw_doc_hit / len(fwa), 6),
-        "🔴 교집합 ÷ HPLT 문서 전량": round(hp_doc_hit / len(hp), 6),
+        # 🔴🔴 955 수리(티처 #93 C1 · 사전등록 `docs/prereg_955_D.md` §2-B)
+        #    옛 이름은 「🔴 교집합 ÷ FineWeb 표본 문서」였는데 **분자가 교집합이 아니라
+        #    `fw_doc_hit`(맞은 FineWeb 문서 수)** 였다. 이름과 계산이 달랐고 그 이름이
+        #    표·PR·원장·인계 카드로 자동 전파돼 **판정을 뒤집었다**(D 49.593% → 「보류」.
+        #    이름대로 나누면 17.916% → 「전량 받는다」).
+        #    🔴 **이름을 계산에 맞췄다**(계산은 안 바꿨다 --- 954 의 얼린 수를 보존한다).
+        #    그리고 이름이 뜻하던 값(키÷문서)과 제대로 된 키÷키 를 **새 키로 같이 싣는다**.
+        "🔴 D_문서 = 맞은 FineWeb 문서 ÷ FineWeb 표본 문서": round(fw_doc_hit / len(fwa), 6),
+        "🔴 E_문서 = 맞은 HPLT 문서 ÷ HPLT 문서 전량": round(hp_doc_hit / len(hp), 6),
+        "🔴 D_키 = 교집합 키 ÷ FineWeb 표본 서로 다른 키": round(len(inter) / len(fset), 6),
+        "🔴 E_키 = 교집합 키 ÷ HPLT 서로 다른 키": round(len(inter) / len(hset), 6),
+        "🔴 D_954글자 = 교집합 키 ÷ FineWeb 표본 문서(🔴 키÷문서 --- 단위가 다르다)":
+            round(len(inter) / len(fwa), 6),
         "FineWeb 표본에서 맞은 문서 수": fw_doc_hit,
         "HPLT 에서 맞은 문서 수": hp_doc_hit,
         "① 반대 방향 --- HPLT − FineWeb(키)": int(len(hset) - len(inter)),
@@ -365,9 +376,12 @@ def compare(per_file_note):
     with out.open("w", encoding="utf-8") as f:
         json.dump(res, f, ensure_ascii=False, indent=1)
     print(json.dumps({
-        "D(자② 교집합÷FineWeb 표본)": base["🔴 교집합 ÷ FineWeb 표본 문서"],
-        "자① ÷FW": res["자 ① URL 정확"]["🔴 교집합 ÷ FineWeb 표본 문서"],
-        "자③ ÷FW": res["자 ③ 본문 앞 200자"]["🔴 교집합 ÷ FineWeb 표본 문서"],
+        # 🔴 955 수리 --- 이름을 계산에 맞춘 뒤의 키를 읽는다. 그리고 **둘 다 찍는다**
+        "자② D_문서": base["🔴 D_문서 = 맞은 FineWeb 문서 ÷ FineWeb 표본 문서"],
+        "자② D_키": base["🔴 D_키 = 교집합 키 ÷ FineWeb 표본 서로 다른 키"],
+        "자① D_문서": res["자 ① URL 정확"]["🔴 D_문서 = 맞은 FineWeb 문서 ÷ FineWeb 표본 문서"],
+        "자① D_키": res["자 ① URL 정확"]["🔴 D_키 = 교집합 키 ÷ FineWeb 표본 서로 다른 키"],
+        "자③ D_문서": res["자 ③ 본문 앞 200자"]["🔴 D_문서 = 맞은 FineWeb 문서 ÷ FineWeb 표본 문서"],
         "심은 키": base["🔴 조항 62 ③ 심은 키"]["판정"],
     }, ensure_ascii=False))
     return 0
