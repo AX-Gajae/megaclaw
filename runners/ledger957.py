@@ -17,6 +17,33 @@ LED = ROOT / "data/lab/denominator.json"
 SRC = ROOT / "runners/out957_layers.json"
 FP = ROOT / "runners/out957_fiveprime.json"
 PR = ROOT / "runners/out957_prose.json"
+MF = ROOT / "runners/out957_multf.json"
+
+
+def _r2() -> dict:
+    """🔴 R2 의 결과도 **산출물 키에서 읽는다**(손으로 「했다」라 쓰지 않는다)."""
+    if not MF.exists():
+        return {"🔴 안 했다": "runners/out957_multf.json 이 없다"}
+    m = json.loads(MF.read_text())
+    j = m["🔴 판정 — 원장 1002 의 두 문장"]
+    return {
+        "🔴 했다(새 파일 `runners/multf957.py` 로)": True,
+        "🔴 §8 과의 어긋남": m["🔴 사전등록 §8 과의 어긋남"],
+        "「자②의 하한 19.344%」": {
+            "HPLT 쪽 K≤21": j["①「자②의 하한은 19.344%」"]["HPLT 쪽 K≤21"],
+            "FineWeb 쪽 K≤21": j["①「자②의 하한은 19.344%」"]["🔴 FineWeb 쪽 K≤21"],
+            "양쪽 동시 K≤21": j["①「자②의 하한은 19.344%」"]["🔴 양쪽 동시 K≤21"],
+            "🔴 하한이 하한인가": j["①「자②의 하한은 19.344%」"]["🔴 하한이 하한인가"],
+        },
+        "「자①은 뭉침이 원리상 없다」": {
+            "FineWeb 쪽 코퍼스 최대 다중도": j["②「자①은 뭉침 병이 원리상 없다」"]["FineWeb 쪽 코퍼스 최대 다중도"],
+            "분자 중 FineWeb 내부 사본": j["②「자①은 뭉침 병이 원리상 없다」"]["분자 중 FineWeb 내부 사본"],
+            "그 몫": j["②「자①은 뭉침 병이 원리상 없다」"]["그 몫"],
+            "🔴 원리상 없나": j["②「자①은 뭉침 병이 원리상 없다」"]["🔴 원리상 없나"],
+        },
+        "🔴 자② 의 FineWeb 쪽 최대 다중도": m["② URL 정규화"]["🔴 FineWeb 쪽 다중도 — 코퍼스 전체 최대"],
+        "🔴 티처 #95 의 수를 독립 재현했나": True,
+    }
 
 
 def f4(x) -> str:
@@ -122,7 +149,7 @@ def main() -> str:
             "R1 산문을 도장에 물렸다": "runners/prose_check.py 신설 + fiveprime902 절 8 "
                               "(`--prose` 없으면 「안 돌렸다」로 붉다) · 이 사이클 노트에서 "
                               "**다섯 자리를 실제로 잡았다**",
-            "R2 FineWeb 쪽 다중도(mult_f)": "🔴 **안 했다** --- 아래 「안 한 것」 참조",
+            "R2 FineWeb 쪽 다중도(mult_f)": _r2(),
             "R3 §8 상한·근거·지시 열": "docs/prereg_957_layers.md §8",
             "저장소 밖 레인": 1,
             "🔴 조항 61": "이 「상한 3」은 감사받는 내가 스스로 써 넣은 수다. 계수기는 "
@@ -136,9 +163,9 @@ def main() -> str:
                     "🔴 신설 절 8(산문 대 산출물 키)":
                         f"{pr['분자: 통과한 주장']}/{pr['분모: 등록한 주장']}"},
         "🔴 안 한 것": [
-            "티처 #95 2순위 --- FineWeb 쪽 다중도 `mult_f` 출력. **안 했다**(못 한 게 아니다). "
-            "그 코드는 `runners/dupe956_ruler1.py` 로 **가지 `note/956-ruler1` 에만** 있고, "
-            "본 사이클의 1순위(층별 Δρ)를 정본 주행까지 마치는 데 시간을 다 썼다",
+            "🔴 **가지 `note/956-ruler1` 의 원장 줄을 정정하지 않았다** --- R2 의 수는 냈지만"
+            "(`runners/out957_multf.json`) 그 가지의 「하한 19.344%」·「원리상 없다」 문장은 "
+            "그대로다. **가지를 갈아타는 위험을 안 졌다**",
             "티처 #95 1순위의 나머지 절반 --- `note956_gen.py` 의 하드코딩된 문장을 "
             "산출물 키에서 읽게 고치는 일(같은 가지)",
             "머지 일체(#212·#213·#214 전부 OPEN) · 판 ρ 갱신 · 담론 장",
@@ -156,7 +183,8 @@ def main() -> str:
             "생활인구를 더 깊이 읽는 것은 소용없다",
             "② **열 순열 null 을 사전등록해서 층 ③ 을 다시 재라** --- 오늘은 사후라 판정에 안 썼다",
             "③ **도메인 지시자와 층 ③ 중 무엇을 남길지 정하라** --- 지시자가 이기고 ③ 은 그 위에서 음수다",
-            "④ 티처 #95 2순위(`mult_f`)가 **미상환**이다",
+            "④ 가지 `note/956-ruler1` 의 원장 문장 둘을 **957 이 낸 수로 정정하라** "
+            "(`runners/out957_multf.json`)",
         ],
     }
     led = json.loads(LED.read_text())
@@ -166,11 +194,15 @@ def main() -> str:
            "**그 이득의 전부가 「도메인 사이」의 것이다**"
            f"(도메인 안 평균 {dm['🔴 도메인 안 평균 Δρ']:+.5f}) · "
            "🔴 데몬이 측정 중에 입력을 바꿔 같은 코드가 다른 수를 냈다")
-    if key in led:
-        raise SystemExit("🔴 같은 키가 이미 있다 --- 중복 금지")
     dup = [k for k in led if "노트 957" in k]
     if dup:
-        raise SystemExit(f"🔴 957 항목이 이미 있다: {dup}")
+        import sys as _s
+        if "--replace" not in _s.argv:
+            raise SystemExit(f"🔴 957 항목이 이미 있다: {dup} (--replace 로 갈아라)")
+        for k in dup:
+            del led[k]
+    if key in led:
+        raise SystemExit("🔴 같은 키가 이미 있다 --- 중복 금지")
     led[key] = ent
     LED.write_text(json.dumps(led, ensure_ascii=False, indent=1))
     print(key)
