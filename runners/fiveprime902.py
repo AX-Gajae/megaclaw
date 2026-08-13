@@ -1341,9 +1341,16 @@ def repair_lanes(base, head, expected=None, prereg=None, mainref="main",
             outside_touched.append({"파일": p, "🔴": "못 읽었다(「안 바뀌었다」가 아니다)"})
             continue
         if base_epoch is not None and mt > base_epoch:
+            try:
+                sha = hashlib.sha256(open(p, "rb").read()).hexdigest()
+            except OSError:
+                sha = "🔴 못 읽었다"
             outside_touched.append({
                 "파일": p, "mtime(UTC)": dt.datetime.utcfromtimestamp(mt).strftime(
                     "%Y-%m-%dT%H:%M:%SZ"),
+                # 🔴 다음 사이클이 **내용**으로 견줄 수 있게 sha 를 남긴다.
+                #    mtime 만으로는 「내가 안 고쳤다」와 「안 바뀌었다」를 못 가른다.
+                "sha256(다음 사이클의 대조 기준)": sha,
                 "🔴 이 가지가 갈라진 뒤에 바뀌었다": True})
     outside_unreported = (len(outside_touched) > 0 and not outside_declared)
 
