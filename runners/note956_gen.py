@@ -62,6 +62,8 @@ def crosscheck(d):
     rows = []
     for pan in (G, N):
         for label, r in d[pan].items():
+            if label == "통과":
+                continue
             a = r["분자 ⓐ 교집합(서로 다른 키)"]
             b = r["분자 ⓑ 맞은 FineWeb 문서"]
             c = r["분자 ⓒ 맞은 HPLT 문서"]
@@ -185,6 +187,8 @@ def build():
     A("| 자 | ⓐ 교집합 키 | ⓑ 맞은 FW 문서 | ② FW 문서 | D_문서 = ⓑ÷② | D_키 = ⓐ÷④ |")
     A("|---|---|---|---|---|---|")
     for label, r in d[N].items():
+        if label == "통과":
+            continue
         A("| %s | %s | %s | %s | **%s** | %s |"
           % (label, cm(r["분자 ⓐ 교집합(서로 다른 키)"]), cm(r["분자 ⓑ 맞은 FineWeb 문서"]),
              cm(r["분모 ② FineWeb 문서"]), pct(r["🔴 D_문서 = ⓑ ÷ ②"]),
@@ -195,6 +199,8 @@ def build():
     A("| 자 | ⓐ 교집합 키 | ⓑ 맞은 FW 문서 | ② FW 문서 | D_문서 = ⓑ÷② | D_키 = ⓐ÷④ |")
     A("|---|---|---|---|---|---|")
     for label, r in d[G].items():
+        if label == "통과":
+            continue
         A("| %s | %s | %s | %s | %s | %s |"
           % (label, cm(r["분자 ⓐ 교집합(서로 다른 키)"]), cm(r["분자 ⓑ 맞은 FineWeb 문서"]),
              cm(r["분모 ② FineWeb 문서"]), pct(r["🔴 D_문서 = ⓑ ÷ ②"]),

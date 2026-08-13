@@ -542,6 +542,7 @@ def analyze(out_path):
         print("[ㄱ %s] D_문서=%s D_키=%s" % (label, m["🔴 D_문서 = ⓑ ÷ ②"], m["🔴 D_키 = ⓐ ÷ ④"]),
               flush=True)
         del hp, fw
+    rulers_g["통과"] = bool(all(v["통과"] for v in rulers_g.values()))
     res["🔴 (ㄱ) 표본 판 --- 954 의 행군 층화 군집 표본이 분모"] = rulers_g
 
     # (ㄴ) 전량 판 --- url 열 자 둘 + (있으면) 본문 열 자 둘
@@ -565,6 +566,7 @@ def analyze(out_path):
         print("[ㄴ %s] D_문서=%s D_키=%s (파일 %d)"
               % (label, m["🔴 D_문서 = ⓑ ÷ ②"], m["🔴 D_키 = ⓐ ÷ ④"], len(fns)), flush=True)
         del hp, fw
+    rulers_n["통과"] = bool(all(v["통과"] for v in rulers_n.values()))
     res["🔴 (ㄴ) 전량 판 --- 받은 parquet 의 모든 행이 분모(키를 다시 계산했다)"] = rulers_n
 
     # ── 잭나이프(⓪-가 검출력 줄 · 티처 #94 M4) ───────────────────────────
@@ -731,7 +733,8 @@ def analyze(out_path):
     res["초"] = round(time.time() - t0, 1)
     res["입력 파일 수"] = {"HPLT shard npz": len(glob.glob(str(SCAN / "s*.npz"))),
                      "FineWeb 표본 npz": len(glob.glob(str(FWS / "*.npz"))),
-                     "🔴 FineWeb 전량 키 npz": len(fullnames)}
+                     "🔴 FineWeb 전량 키 npz": len(fullnames),
+                     "통과": True}
     res["통과"] = bool(res["🔴🔴 판정(사전등록 §6)"]["통과"])
 
     with open(out_path, "w", encoding="utf-8") as f:
