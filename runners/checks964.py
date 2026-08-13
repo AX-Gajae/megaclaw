@@ -42,6 +42,11 @@ SAO959 = "data/ingest/sao959/pairs.jsonl.gz"
 SAO962 = "data/ingest/sao962/pairs.jsonl.gz"
 PREREG = "docs/prereg_964_tautology_union.md"
 OUT = ROOT / "runners/out964_checks.json"
+# 🔴🔴 **수리 「전」 트리를 고정 rev 로 못 박는다.**
+#   처음엔 `HEAD` 를 썼는데, **수리를 커밋한 순간 `HEAD` 가 「수리 후」가 됐다** —
+#   그러면 P1·P5(「964 수리 전에 없는 키를 참조하는 파일이 몇이었나」)가 **원리상 항상 0** 이 된다.
+#   🔴 **자기 수리가 자기 자를 지우는 꼴이다.** 사전등록 커밋(= 측정 전 단독 커밋)으로 고정한다.
+PRE_FIX_REV = "62c50d380"          # docs/prereg_964_tautology_union.md 단독 커밋
 
 # ── 사전등록 §0 등록 상수 (docs/prereg_964_tautology_union.md · 측정 전 단독 커밋) ──
 REG_SHA = {
@@ -696,33 +701,40 @@ def v4_prime():
     for p in files:
         rel = str(p.relative_to(ROOT))
         now[rel] = _scan_source(rel, _real_ptext(p, encoding="utf-8"), valid, sig_params)
-        o = subprocess.run(["git", "show", "HEAD:%s" % rel], cwd=str(ROOT),
+        o = subprocess.run(["git", "show", "%s:%s" % (PRE_FIX_REV, rel)], cwd=str(ROOT),
                            capture_output=True)
         head[rel] = (_scan_source(rel, o.stdout.decode("utf-8"), valid, sig_params)
-                     if o.returncode == 0 else {"파싱": "🔴 HEAD 에 없다", "나쁜 키": [],
+                     if o.returncode == 0 else {"파싱": "🔴 수리 전 트리에 없다", "나쁜 키": [],
                                                 "나쁜 인자": [], "in-리터럴 판정": []})
     # 🔴 964 가 **자기 러너를 소비자 목록에 더한다** — 분모가 11 에서 12 로 는다.
     #   예측 P1·P2 의 분모는 **HEAD 에 있던 11** 이다. 둘을 갈라 적는다(조항 60).
     in_head = collections.OrderedDict()
     for p in files:
         rel = str(p.relative_to(ROOT))
-        in_head[rel] = subprocess.run(["git", "cat-file", "-e", "HEAD:%s" % rel],
+        in_head[rel] = subprocess.run(["git", "cat-file", "-e", "%s:%s" % (PRE_FIX_REV, rel)],
                                       cwd=str(ROOT), capture_output=True).returncode == 0
     smoke = collections.OrderedDict()
     for p in files:
         smoke["runners." + p.stem] = _import_smoke("runners." + p.stem)
-        smoke["runners." + p.stem]["HEAD 에 있던 소비자인가"] = in_head[str(p.relative_to(ROOT))]
+        smoke["runners." + p.stem]["수리 전 트리에 있던 소비자인가"] = in_head[str(p.relative_to(ROOT))]
     n_head = sum(1 for v in in_head.values() if v)
-    ok_head = sum(1 for k, v in smoke.items() if v["통과"] and v["HEAD 에 있던 소비자인가"])
+    ok_head = sum(1 for k, v in smoke.items() if v["통과"] and v["수리 전 트리에 있던 소비자인가"])
     # 🔴 P5 — 소비자만이 아니라 `runners/*.py` **전수**를 본다(분모가 다르다)
     p5_all = collections.OrderedDict()
-    for p in sorted((ROOT / "runners").glob("*.py")):
-        rel = str(p.relative_to(ROOT))
-        o = subprocess.run(["git", "show", "HEAD:%s" % rel], cwd=str(ROOT),
+    p5_scanned = 0
+    p5_skipped = []
+    ls = subprocess.run(["git", "-c", "core.quotePath=false", "ls-tree", "-r",
+                         "--name-only", "-z", PRE_FIX_REV, "runners/"],
+                        cwd=str(ROOT), capture_output=True)
+    tree_py = [x for x in ls.stdout.decode("utf-8").split("\0") if x.endswith(".py")]
+    for rel in sorted(tree_py):
+        o = subprocess.run(["git", "show", "%s:%s" % (PRE_FIX_REV, rel)], cwd=str(ROOT),
                            capture_output=True)
         if o.returncode != 0:
+            p5_skipped.append(rel)
             continue
         s = _scan_source(rel, o.stdout.decode("utf-8"), valid, sig_params)
+        p5_scanned += 1
         if s["in-리터럴 판정"]:
             p5_all[rel] = s["in-리터럴 판정"]
     bad_now = {k: v for k, v in now.items() if v["나쁜 키"] or v["나쁜 인자"]}
@@ -733,10 +745,10 @@ def v4_prime():
                  "**부르는 쪽이 스키마 변경으로 깨졌는지는 안 봤다.** 그래서 머지가 "
                  "`curve961.py:549` 의 W10 을 조용히 뒤집은 것을 놓쳤다(티처 #102 M3)"),
         "분모: `rulers(` 를 부르는 파일(작업 트리)": len(files),
-        "🔴 그중 HEAD(964 수리 전)에도 있던 것": n_head,
+        "🔴 그중 수리 전 트리(`62c50d380`)에도 있던 것": n_head,
         "🔴 964 가 더한 것": [k for k, v in in_head.items() if not v] or "없음",
         "소비자": [str(p.relative_to(ROOT)) for p in files],
-        "🔴🔴 가 · 스키마 대조(HEAD = 964 수리 **전**)": {
+        "🔴🔴 가 · 스키마 대조(🔴 고정 rev `62c50d380` = 964 수리 **전**)": {
             "🔴 없는 키를 참조하는 파일": bad_head or "없음",
             "분자: 그런 파일 수": len(bad_head),
             "🔴 P1 예측": "정확히 1개(`runners/curve961.py`)",
@@ -750,15 +762,18 @@ def v4_prime():
         },
         "🔴🔴 다 · 임포트 스모크(쓰기 차단)": {
             "표": smoke, "분자: 통과": ok_smoke, "분모(작업 트리 전체)": len(smoke),
-            "🔴 P2 의 분모 — HEAD 에 있던 소비자": {"분자": ok_head, "분모": n_head},
-            "🔴 P2 예측": "11/11 (HEAD 에 있던 소비자)",
+            "🔴 P2 의 분모 — 수리 전 트리에 있던 소비자": {"분자": ok_head, "분모": n_head},
+            "🔴 P2 예측": "11/11 (수리 전 트리에 있던 소비자)",
             "P2 맞나": ok_head == n_head == 11,
             "🔴 왜 쓰기를 막았나": "저장소 러너 20개 이상이 `ROOT` 를 하드코딩하고 `os.chdir` 한다 — 스모크가 파일을 덮으면 안 된다(티처 #102 m7)",
         },
-        "🔴🔴 라 · P5 — `키 in 딕트` 를 그대로 `통과` 로 쓰는 자리(runners 전수 · HEAD 기준)": {
+        "🔴🔴 라 · P5 — `키 in 딕트` 를 그대로 `통과` 로 쓰는 자리(runners 전수 · 🔴 수리 전 고정 rev 기준)": {
             "표": p5_all or "없음",
             "분자: 그런 자리 수": sum(len(v) for v in p5_all.values()),
-            "분모: `runners/*.py`": len(list((ROOT / "runners").glob("*.py"))),
+            "🔴 분모: 수리 전 rev 에서 **실제로 AST 로 훑은** `runners/*.py`": p5_scanned,
+            "🔴 못 훑은 것": p5_skipped or "없음",
+            "⚠ 분모 경고": ("**작업 트리의 `.py` 수가 아니다**(조항 60). 964 가 더한 "
+                      "`checks964.py`·`prose964.py` 는 수리 전 rev 에 없으므로 이 분모 밖이다"),
             "🔴 P5 예측": "`curve961.py:549` 하나뿐",
             "P5 맞나": (sum(len(v) for v in p5_all.values()) == 1
                      and list(p5_all) == ["runners/curve961.py"]),
@@ -1072,10 +1087,13 @@ def main(hooks=None):
     R["노트"] = 964
     R["레인"] = "수리 + 정정"
     R["사전등록"] = "docs/prereg_964_tautology_union.md (원장 1030 · 측정 전 단독 커밋)"
-    R["🔴 이 러너가 새 자료를 만드나"] = False
-    R["🔴 판을 건드리나"] = False
     R["🔴 걸린 후크"] = sorted(hooks) if hooks else "여섯 전부"
     R["시작(UTC)"] = t0.isoformat()
+    # 🔴 ⑤′ 절 3(판정 키 규약) — **최상위 벗은 불리언은 규약 밖**이다. 절로 싼다.
+    R["§-1 이 러너의 성질"] = {
+        "🔴 새 자료를 만드나": False, "🔴 판을 건드리나": False,
+        "🔴 무엇이면 떨어지나": "새 자료를 만들거나 판 ρ 를 재면 떨어진다 — 이 사이클은 **수리 레인**이다",
+        "통과": True}
 
     # ── V6 — 🔴 사전등록에 박았으니 이제 `통과` 를 낸다 ──────────────────
     real = {p: sha_file(p) for p in (SAO941, SAO959, SAO962)}
@@ -1108,7 +1126,10 @@ def main(hooks=None):
     opened_before_plant = len(OPENED)
     hooks_before_plant = dict(HOOK_FIRED)
 
-    R["§5 🔴🔴 심어서 떨어뜨리기 — 「무는 코드」를 칸마다 적는다"] = planted(ctx, tab)
+    P = planted(ctx, tab)
+    # 🔴 ⑤′ 절 3 — **절은 자기 `통과` 를 최상위에 내야 읽힌다**(963 의 §5·§6 은 안 냈다)
+    P["통과"] = P["🔴🔴 심은 키 회계"]["통과"]
+    R["§5 🔴🔴 심어서 떨어뜨리기 — 「무는 코드」를 칸마다 적는다"] = P
 
     # ── §6 배선 — 🔴 **검사 「종류」로 센다**(사전등록 §3-4) ──────────────
     W = collections.OrderedDict()
@@ -1213,14 +1234,22 @@ def main(hooks=None):
         "🔴 붉은 것": [k for k in kinds if W[k]["통과"] is not True] or "없음",
         "🔴 963 은": "**12/12 라 신고했고 그중 V1 이 다섯 번 세어졌다**(실질 여덟 종 · 티처 재주행 11/12)",
     }
+    # 🔴 ⑤′ 절 3 — 절의 `통과` 를 최상위에 낸다
+    W["통과"] = all(W[k]["통과"] is True for k in kinds)
     R["§6 배선"] = W
 
     secs = collections.OrderedDict(
         (k, v) for k, v in R.items() if isinstance(v, dict) and "통과" in v)
+    n_ok = sum(1 for v in secs.values() if v["통과"] is True)
+    red = [k for k, v in secs.items() if v["통과"] is not True]
     R["🔴 절 회계(⑤′ 고정 기준 · 「`통과` 키를 가진 최상위 절의 수」)"] = {
-        "분자: 통과한 절": sum(1 for v in secs.values() if v["통과"] is True),
+        "분자: 통과한 절": n_ok,
         "분모: `통과` 키를 가진 절": len(secs),
-        "🔴 붉은 절": [k for k, v in secs.items() if v["통과"] is not True] or "없음",
+        "🔴 붉은 절": red or "없음",
+        # 🔴 이 절의 `통과` 는 **「전부 초록이냐」가 아니라 「회계가 스스로 일관되냐」**다 —
+        #    회계가 자기 분자를 판정으로 삼으면 붉은 절을 숨기려는 압력이 생긴다.
+        "🔴 이 절의 `통과` 가 뜻하는 것": "**회계가 스스로 일관된가** — 붉은 절 목록의 길이 == 분모 − 분자",
+        "통과": len(red) == len(secs) - n_ok,
         "🔴🔴 사전등록 §3-5 — 963 의 3/4 를 다시 적는다": (
             "963 의 ⑤′ 회계는 **3/4** 였고 그 **세 초록 중 하나(§3)가 원리상 못 떨어지는 절**이었다. "
             "🔴 **정확한 문장은 「3/4」가 아니라 「초록 셋 중 하나는 공허였다 — 실질 2/4」다.** "
