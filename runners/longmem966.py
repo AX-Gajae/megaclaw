@@ -25,6 +25,15 @@
 
 🔴 **산출물 자리는 ``--out`` 으로 옮길 수 있고, 그 밖의 쓰기는 ``_NoWrite`` 가 막는다**
 (노트 965 가 세운 꼴 --- 러너 320개가 ``ROOT`` 를 하드코딩하고 ``os.chdir`` 하므로).
+
+🔴🔴 **수리 (2026-08-14 · 노트 967 · 티처 #105 M4) --- 위 문장은 966 판에서 거짓이었다.**
+초판은 ``with _NoWrite(allow=[outp]): pass`` 라 **``with`` 본문이 비어 있었고 실제 쓰기는
+``with`` 밖**에서 났다. 문지기는 **한 번도 아무것도 안 막았다** --- 죽은 코드였다.
+967 이 쓰기를 문지기 **안**으로 옮겼다. ⚠ **이 수리로 이 파일의 sha256 이 바뀐다.**
+``runners/out966_longmem.json`` 의 ``🔴 코드 sha256`` 은 **수리 전** 값
+``b6f9ce09bac65a9d3e6bec3be2fbc37792ede1f7377b95d923a2531e90a3939c`` 이고,
+967 이 그 값을 ``runners/out967_narrow.json`` 의 ``🔴 966 러너 sha256`` 에
+**수리 전에 재서** 실었다(조항 60 --- 두 수의 분모가 같음을 확인했다).
 """
 from __future__ import annotations
 
@@ -501,9 +510,10 @@ def main() -> dict:
 
     R["초"] = round(time.time() - t0, 1)
     R["🔴 끝 시각(UTC)"] = dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
+    # 🔴 967 수리(티처 #105 M4) --- 쓰기를 문지기 **안**으로 옮겼다.
+    #    초판은 `with _NoWrite(allow=[outp]): pass` 라 본문이 비었고 이 줄이 밖에 있었다.
     with _NoWrite(allow=[outp]):
-        pass
-    outp.write_text(json.dumps(R, ensure_ascii=False, indent=1), encoding="utf-8")
+        outp.write_text(json.dumps(R, ensure_ascii=False, indent=1), encoding="utf-8")
     print(json.dumps(R, ensure_ascii=False, indent=1)[:4000])
     return R
 
