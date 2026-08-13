@@ -174,6 +174,37 @@ RULERS_T3 = ("참", "거짓", "모른다")
 RULERS_3VAL_KEYS = ("🔴 ㉡ ⊂ ㉠ (관측 기준)", "🔴 ㉢ ⊂ ㉠ (관측 기준)")
 
 
+W10_SEC = "🔴 W10 자 사이 포함관계"
+# 🔴 `w10_check()` 자신이 내는 키 — 산출물에서 `rulers()` 의 같은 이름 키를 덮으므로
+#   ② 배선 대조의 분모에서 뺀다(965).
+W10_OWN_KEYS = ("🔴 무엇", "① 분모: 있어야 할 키", "① 분자: 실제로 있는 키", "① 🔴 빠진 키",
+                "② 분모: 다시 부른 판의 키", "② 분자: 값이 같은 키", "② 🔴 값이 다른 키",
+                "③ 🔴 3값 밖의 값을 실은 키", "② 🔴 분모에서 뺀 키(이 검사가 스스로 내는 키)",
+                "🔴 무엇이면 떨어지나", "통과")
+
+
+def w10_disk(section: str = W10_SEC):
+    """🔴🔴 **965 수리 (티처 #103 C3)** — 견줄 왼쪽을 **커밋된 산출물에서 다시 읽는다.**
+
+    964 판은 `w10_check(rt, lambda: rulers(<rt 와 완전히 같은 인자>))` 였다.
+    `rt` 는 같은 함수를 **같은 인자로** 부른 반환값 그 자체라 ①스키마 ②배선 ③3값이
+    **셋 다 원리상 통과**한다 — 티처 #103 이 **딕트를 안 건드린 생산 경로 5,000회에서
+    True 5,000 / False 0** 으로 못 박았다.
+
+    🔴 **고치는 법도 티처가 줬다: `rt` 를 넘기지 말고 `out961_curve.json` 을 다시 읽어라.**
+    그러면 ② 가 「지금 코드가 낸 값이 **디스크에 실린 산출물**과 같나」라는 **진짜 배선 검사**가 된다.
+
+    ⚠ 산출물이 없으면 **「모른다」** 다 — 그때는 `통과` 키를 아예 안 낸다(조항 59).
+    """
+    if not OUT.exists():
+        return None, "산출물 `%s` 가 아직 없다 — 견줄 왼쪽이 없다" % OUT.name
+    try:
+        prev = json.loads(OUT.read_text(encoding="utf-8"))
+        return prev["§5 배선 검사"][section], None
+    except Exception as e:                                          # noqa: BLE001
+        return None, "산출물을 못 읽었다: %s: %s" % (type(e).__name__, e)
+
+
 def w10_check(rt: dict, recall) -> dict:
     """🔴🔴 **964 수리 (티처 #102 M3)** — W10 은 `키 in 딕트` 였다.
 
@@ -199,7 +230,11 @@ def w10_check(rt: dict, recall) -> dict:
     missing = [k for k in RULERS_NEED if k not in rt]
     again = recall()
     _S = "🔴 이 키가 없다"
-    diff = [k for k in again if rt.get(k, _S) != again[k]]
+    # 🔴🔴 965 — 산출물은 `{**rt, **w10_check(...)}` 로 **합쳐서** 실린다. 그래서 이 검사가
+    #   자기 키(`🔴 무엇` 등)로 `rulers()` 의 같은 이름 키를 **덮어쓴다.** 디스크를 다시 읽어
+    #   견줄 때 그 칸은 **원리상 늘 다르다** — 그건 배선 결함이 아니라 **합침의 부작용**이다.
+    #   🔴 그러므로 이 검사가 스스로 내는 키는 ② 의 분모에서 **뺀다**(뺀 것을 신고한다).
+    diff = [k for k in again if k not in W10_OWN_KEYS and rt.get(k, _S) != again[k]]
     bad3 = [k for k in RULERS_3VAL_KEYS if k in rt and rt[k] not in RULERS_T3]
     return {
         "🔴 무엇": ("① 스키마(키 여섯) · ② 배선(`rulers()` 를 다시 불러 키별 대조) · "
@@ -207,9 +242,11 @@ def w10_check(rt: dict, recall) -> dict:
         "① 분모: 있어야 할 키": len(RULERS_NEED),
         "① 분자: 실제로 있는 키": len(RULERS_NEED) - len(missing),
         "① 🔴 빠진 키": missing or "없음",
-        "② 분모: 다시 부른 판의 키": len(again),
-        "② 분자: 값이 같은 키": len(again) - len(diff),
+        "② 분모: 다시 부른 판의 키": len([k for k in again if k not in W10_OWN_KEYS]),
+        "② 분자: 값이 같은 키": len([k for k in again if k not in W10_OWN_KEYS]) - len(diff),
         "② 🔴 값이 다른 키": diff or "없음",
+        "② 🔴 분모에서 뺀 키(이 검사가 스스로 내는 키)":
+            sorted(set(again) & set(W10_OWN_KEYS)),
         "③ 🔴 3값 밖의 값을 실은 키": bad3 or "없음",
         "🔴 무엇이면 떨어지나": ("키를 하나 지우거나 이름을 갈면 ① 이 · 값을 바꿔치기하면 ② 가 · "
                         "3값 밖의 값을 실으면 ③ 이 떨어진다. **셋 다 자료를 실제로 읽는다**"),
@@ -598,10 +635,18 @@ def main(part: str | None = None) -> dict:
             layer_on_alt_T=on_T_e, **three).items()))}
     # 🔴🔴 964 수리 (티처 #102 M3) — 옛 판은 `bool("<961 시대 키 리터럴>" in rt)` 였다:
     #   961 가지에선 항진명제(항상 True) · 963 머지 뒤엔 항상 False. **둘 다 자료를 안 읽는다.**
-    W["🔴 W10 자 사이 포함관계"] = {**rt, **w10_check(rt, lambda: rulers(
-        sum_delta=drho, sum_T=T_e3, sub_delta=s13 - s1, sub_T=T_of(bsub["SE"]),
-        perm_obs=perm["🔴 관측 Δρ(씨앗 0)"], perm_p95=perm["상위 5% 지점"],
-        card_T=L.CARD_T))}
+    # 🔴🔴 965 수리 (티처 #103 C3) — **`rt` 를 안 넘긴다.** 커밋된 산출물을 다시 읽어
+    #   견준다. 그래야 ② 가 진짜 배선 검사다. 없으면 `통과` 키를 안 낸다(「모른다」).
+    _prev, _why = w10_disk()
+    W["🔴 W10 자 사이 포함관계"] = {**rt, **(
+        w10_check(_prev, lambda: rulers(
+            sum_delta=drho, sum_T=T_e3, sub_delta=s13 - s1, sub_T=T_of(bsub["SE"]),
+            perm_obs=perm["🔴 관측 Δρ(씨앗 0)"], perm_p95=perm["상위 5% 지점"],
+            card_T=L.CARD_T))
+        if _prev is not None else
+        {"🔴 무엇": ("① 스키마 · ② 배선(**디스크의 산출물** 대 지금 부른 `rulers()`) · ③ 3값 영역"),
+         "🔴 왜 `통과` 키를 안 내나": _why,
+         "🔴 조항 59": "「떨어졌다」가 아니라 **「모른다」**다 — 견줄 왼쪽이 없다"})}
     W["W7 부트 회계"] = {
         "분자: 회계가 맞는 호출": sum(1 for c in BOOT_CALLS if c["요청"] == BOOT),
         "분모: 부트 호출": len(BOOT_CALLS),
