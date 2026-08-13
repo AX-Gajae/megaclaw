@@ -120,16 +120,37 @@ def targets_wide() -> tuple[list, dict]:
 
 # ── ㄱ 수확 ─────────────────────────────────────────────────────────────────
 def cmd_harvest(a) -> dict:
+    """🔴🔴 **960 수리 — 959 가 방금 고친 병을 자기 새 수확기에 다시 만들었다.**
+
+    959 는 `ingest/wikidaily941.py` 의 「파일을 통째로 다시 쓴다」를 고치면서
+    **못 받은 키의 옛 행을 이어싣는** 블록과 `--keys`·`--no-merge` 를 새로 넣었다.
+    🔴 **그런데 같은 사이클에 쓴 이 수확기에는 그 블록이 없었다**(티처 #98 치명 ⑨).
+    지금 **37건이 timeout 실패 상태**라 다시 돌리면 그 37개의 옛 행이 죽는다.
+
+    그래서 이 함수는 이제
+
+      ① 도메인 파일을 다시 쓰되 **이번에 안 쓴 키의 옛 행을 이어싣는다**
+         (요청 안 한 키 · 요청했지만 **실패한** 키 둘 다)
+      ② `--keys` 로 **부분 주행**을 할 수 있고, 부분 주행의 집계는 **별 파일**로 낸다
+      ③ `--no-merge` 로 이어싣기를 **일부러** 끌 수 있다(끄면 산출물이 그 사실을 신고한다)
+    """
     t0 = time.time()
     before = sha_dir(OLDDIR)
     tg, meta = targets_wide()
+    n_all = len(tg)
+    if a.keys:
+        want = {k.strip() for k in a.keys.split(",") if k.strip()}
+        tg = [t for t in tg if t["키"] in want]
     if a.limit:
         tg = tg[:a.limit]
+    partial = len(tg) < n_all
+    merge = not a.no_merge
     OUTDIR.mkdir(parents=True, exist_ok=True)
     hi = (date.today() - timedelta(days=2)).strftime("%Y%m%d")
 
     fh: dict = {}
     per: dict = {}
+    written: dict = {}          # 도메인 → 이번 주행이 실제로 쓴 키
     n_ok = n_bad = rows = 0
     why: Counter = Counter()
     lock = threading.Lock()
@@ -159,6 +180,7 @@ def cmd_harvest(a) -> dict:
                     if d not in fh:
                         fh[d] = gzip.open(OUTDIR / f"{d}.jsonl.gz.part", "wt",
                                           encoding="utf-8")
+                    written.setdefault(d, set()).add(t["키"])
                     fh[d].write(json.dumps({
                         "키": t["키"], "도메인": d, "문서": t["문서"], "언어": t["언어"],
                         "시작일": t["시작일"], "첫날": days[0][0], "끝날": days[-1][0],
@@ -169,7 +191,28 @@ def cmd_harvest(a) -> dict:
                 if done[0] % 100 == 0:
                     print(f"  {done[0]}/{len(tg)}  성공 {n_ok} 실패 {n_bad}  "
                           f"{time.time()-t0:.0f}s", flush=True)
+    # 🔴🔴 **960 수리 — 이어싣기.** 이번에 안 쓴 키(요청 안 함 · 요청했으나 실패)의
+    # 옛 행을 같은 `.part` 에 그대로 옮긴 **뒤에** 갈아 끼운다.
+    carried = 0
+    carried_keys: dict = {}
     for d, f in fh.items():
+        old = OUTDIR / f"{d}.jsonl.gz"
+        if merge and old.exists():
+            got = written.get(d, set())
+            ks = set()
+            with gzip.open(old, "rt", encoding="utf-8") as g:
+                for line in g:
+                    try:
+                        k = json.loads(line)["키"]
+                    except (json.JSONDecodeError, KeyError):
+                        continue
+                    if k in got:
+                        continue
+                    f.write(line if line.endswith("\n") else line + "\n")
+                    carried += 1
+                    ks.add(k)
+            if ks:
+                carried_keys[d] = len(ks)
         f.close()
         os.replace(OUTDIR / f"{d}.jsonl.gz.part", OUTDIR / f"{d}.jsonl.gz")
 
@@ -195,7 +238,13 @@ def cmd_harvest(a) -> dict:
         "도메인별": per,
         "🔴 다시 열어 센 개체(파일별)": reread,
         "🔴 다시 열어 센 개체 합": tot,
-        "🔴 쓴 것 == 다시 센 것": tot == n_ok,
+        # 🔴 960 수리 — 이어싣기가 켜지면 「쓴 것」과 「파일 안의 것」은 **다른 수다**
+        "🔴 이번에 새로 쓴 것 + 이어실은 것 == 파일 안의 것": tot == n_ok + carried,
+        "🔴 이어실은 옛 개체": carried,
+        "🔴 이어실은 옛 개체(도메인별)": carried_keys,
+        "🔴 이어싣기를 껐나(--no-merge)": bool(a.no_merge),
+        "🔴 부분 주행인가": partial,
+        "🔴 표적 / 전량": [len(tg), n_all],
         "W4 옛 wiki_daily 를 안 건드렸나": {
             "전 sha256(앞16)": before, "후 sha256(앞16)": after,
             "통과": before == after},
@@ -205,8 +254,14 @@ def cmd_harvest(a) -> dict:
         "🔴 사전등록에 없던 것(신고)": {"일꾼": a.workers, "간격(초)": a.sleep,
                             "왜": "개체당 3.5초 × 3,933 = 4시간. 자료는 안 바뀐다"},
     }
-    (ROOT / "runners/out959_harvest.json").write_text(
-        json.dumps(R, ensure_ascii=False, indent=1))
+    # 🔴🔴 **960 수리 — 부분 주행의 집계는 별 파일로.**
+    # 959 의 수리 ⑤가 `--keys` 5키 주행으로 `out941_wikidaily.json` 을
+    # 「요청 5 · 3도메인 · 10,001행」으로 파괴했다(실제는 815행 표적 · 810 성공 · 1,366,034행).
+    # **부분 주행의 수가 전량 주행의 회계를 덮으면 그 수를 인용한 문서가 통째로 틀린다.**
+    _rep = ROOT / ("runners/out959_harvest_part.json" if partial
+                   else "runners/out959_harvest.json")
+    R["🔴 이 집계를 어디에 썼나"] = str(_rep.relative_to(ROOT))
+    _rep.write_text(json.dumps(R, ensure_ascii=False, indent=1))
     print(json.dumps({k: v for k, v in R.items() if k != "도메인별"},
                      ensure_ascii=False, indent=1)[:4000])
     return R
@@ -597,6 +652,11 @@ def main():
     h.add_argument("--limit", type=int, default=None)
     h.add_argument("--sleep", type=float, default=SLEEP)
     h.add_argument("--workers", type=int, default=WORKERS)
+    # 🔴 960 수리 — 부분 주행과 이어싣기
+    h.add_argument("--keys", default=None,
+                   help="쉼표로 나눈 키 부분집합. 🔴 부분 주행이다 — 집계는 별 파일로 간다")
+    h.add_argument("--no-merge", action="store_true",
+                   help="🔴 이어싣기를 끈다. 이번에 못 받은 키의 **옛 행이 죽는다**")
     h.set_defaults(fn=cmd_harvest)
     p = sub.add_parser("pairs")
     p.set_defaults(fn=cmd_pairs)
