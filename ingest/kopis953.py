@@ -255,7 +255,9 @@ def _series_only(a) -> int:
         "첫 날": days[0] if days else "없음", "끝 날": days[-1] if days else "없음",
         "열이름": sorted(series[0].keys()) if series else "없음",
         "표본(첫 행)": series[0] if series else "없음",
-        "쓴 행": _write_gz(OUTDIR / "prfsts_day.jsonl.gz", series),
+        # 🔴 954 수리(티처 #92 C1): `_write_gz`(덮어쓰기) → `_merge_write(key="prfdt")`.
+        #    증분 창(31일)이 매 주행 376일을 갈아엎던 자리다. 형제 셋은 처음부터 합쳐 썼다.
+        "🔴 파일(합쳐서 쓴다)": _merge_write(OUTDIR / "prfsts_day.jsonl.gz", series, "prfdt"),
         "🔴 이것이 왜 (a→o) 인가": ("`prfdt`(날)마다 `prfcnt`(공연 수)·`prfprocnt`(작품 수)·"
                             "`amount`(판매액)·`nmrs`(관객수)가 있다 --- **결과가 시간 위에 있다**"),
         "🔴 한계": "공연 **한 건별**이 아니라 **전국 합계**다. 개체별 (a→o) 는 아직 못 받았다",
@@ -447,7 +449,8 @@ def main(argv=None) -> int:
         "받은 행": len(series), "서로다른 날": len(days),
         "첫 날": days[0] if days else "없음", "끝 날": days[-1] if days else "없음",
         "열이름": sorted(series[0].keys()) if series else "없음",
-        "쓴 행": _write_gz(OUTDIR / "prfsts_day.jsonl.gz", series),
+        # 🔴 954 수리(티처 #92 C1) --- 위 `_series_only` 와 같은 자리. 둘 다 고쳤다.
+        "🔴 파일(합쳐서 쓴다)": _merge_write(OUTDIR / "prfsts_day.jsonl.gz", series, "prfdt"),
         "🔴 이것이 왜 (a→o) 인가": ("`prfdt`(날)마다 `prfcnt`(공연 수)·`prfprocnt`(작품 수)·"
                             "`amount`(판매액)·`nmrs`(관객수)가 있다 --- **결과가 시간 위에 있다**"),
         "🔴 한계": "공연 **한 건별**이 아니라 **전국 합계**다. 개체별 (a→o) 는 아직 못 받았다",
