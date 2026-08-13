@@ -89,7 +89,27 @@ def _lang_of(rid: str, cached: dict) -> str:
 
 
 def targets(limit: int | None = None) -> list:
-    """(도메인, record_id, 문서, 언어, 시작일) --- 유보 안에서만."""
+    """(도메인, record_id, 문서, 언어, 시작일) --- 🔴 **유보 안에서만**.
+
+    🔴🔴 **959 경고 — 이 한 줄이 표적 표를 세 사이클 동안 잠갔다.**
+
+    이 함수의 첫 줄이 `HOLD["유보키"]` 라서 수확 표적이 **판 유보**로 묶인다.
+    959 가 세었다: **위키 문서가 해결된 개체 3,933** 중 이 함수가 보는 것은
+    **815(20.7%)** 뿐이고, 수확기는 그 815 중 **810 을 이미 다 돌았다**.
+    🔴 **표가 464행에서 안 자란 것은 수집이 게을러서가 아니라 이 줄 때문이다.**
+    그리고 **이 파일의 독스트링이 「옛 자(판 유보 3,775 에 몇 행 붙나)는 이 사이클의
+    자가 아니다」라고 적어 놓고** 표적 선택에는 그 옛 자를 남겼다 --- **선언과 배선이
+    어긋난 자리**다.
+
+    🔴 **그런데 이 함수를 고치지 않는다.** 유보 잠금은 **판 실험의 규율**이기도 하고,
+    이 함수를 넓히면 `runners/out941_wikidaily.json` 의 분모가 조용히 바뀐다.
+    대신 **넓힌 표적은 다른 진입점**에 둔다:
+
+        runners/grow959.py :: targets_wide()      # 문서가 해결된 개체 전량(3,933)
+        data/ingest/wiki_daily959/                # 그 수확물(옛 디렉터리를 안 건드린다)
+
+    「좁은 자」와 「넓은 자」를 **한 함수에 섞지 않는다**(조항 60).
+    """
     hold = json.loads(HOLD.read_text())["유보키"]
     out = []
     for dom, keys in sorted(hold.items()):
@@ -146,10 +166,17 @@ def main() -> dict:
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--sleep", type=float, default=SLEEP)
+    ap.add_argument("--keys", default=None,
+                    help="쉼표로 나눈 record_id 만 받는다(959 — 잃은 행 되살리기용)")
+    ap.add_argument("--no-merge", action="store_true",
+                    help="🔴 옛 행을 이어 싣지 않는다(959 이전의 덮어쓰기 행태)")
     a = ap.parse_args()
 
     hi = (date.today() - timedelta(days=2)).strftime("%Y%m%d")
     tg = targets(a.limit)
+    if a.keys:
+        want = {k.strip() for k in a.keys.split(",") if k.strip()}
+        tg = [t for t in tg if t["키"] in want]
     OUTDIR.mkdir(parents=True, exist_ok=True)
     t0 = time.time()
 
@@ -215,6 +242,42 @@ def main() -> dict:
         time.sleep(a.sleep)
     for f in fh.values():
         f.close()
+
+    # ── 🔴🔴 959 수리 --- **덮어쓰기가 조용히 행을 지운다** ──────────────────
+    #
+    # 티처 #97 F2 는 「PR #215 머지가 자료 5줄을 잃었다」고 적었다. 🔴 **머지가 아니다.**
+    # 959 가 세어 보니 사라진 다섯(WA-151799 · WA-198409 · MKT-2025-0031 ·
+    # AN-42128 · AN-42736)은 **좁은 표적 815 안에 있으면서 살아 있는 파일에 없는 개체 5**
+    # 와 **정확히 같은 집합**이다. 즉 마지막 주행에서 **그 다섯의 요청이 실패했고**,
+    # 이 러너가 파일을 **통째로 다시 쓰기 때문에** 옛 행까지 같이 사라진 것이다.
+    # 🔴 **머지는 증상이 드러난 자리였을 뿐 원인이 아니다.**
+    #
+    # 같은 병을 954 가 `ingest/kopis953.py` 에서 이미 고쳤다(`_write_gz` → `_merge_write`).
+    # 🔴 **형제 파일에서 고친 병을 이 파일에서 아무도 안 봤다.**
+    #
+    # 그래서 갈아 끼우기 **전에** 옛 파일의 행을 읽어 **이번에 못 받은 키만 이어 싣는다**.
+    # 「받았다」가 이기고, 「못 받았다」는 옛 행을 지우지 않는다.
+    carried: dict = {}
+    if not a.no_merge:
+        got = {d: set() for d in fh}
+        for d in fh:
+            part = OUTDIR / f"{d}.jsonl.gz.part"
+            if part.exists():
+                with gzip.open(part, "rt", encoding="utf-8") as f:
+                    for line in f:
+                        got[d].add(json.loads(line)["키"])
+            old = OUTDIR / f"{d}.jsonl.gz"
+            keep = []
+            if old.exists():
+                with gzip.open(old, "rt", encoding="utf-8") as f:
+                    for line in f:
+                        if json.loads(line)["키"] not in got[d]:
+                            keep.append(line)
+            if keep:
+                with gzip.open(part, "at", encoding="utf-8") as f:
+                    f.writelines(keep)
+            carried[d] = len(keep)
+
     # 🔴 952 --- 다 쓰고 **한 번에** 갈아 끼운다. 이 줄 전까지 옛 파일은 그대로다.
     swapped = []
     for d in fh:
@@ -242,6 +305,9 @@ def main() -> dict:
         "도메인별": per,
         "파일 크기(바이트)": size, "파일 크기 합": sum(size.values()),
         "출력 디렉터리": str(OUTDIR.relative_to(ROOT)),
+        "🔴 959 이어 실은 옛 행(파일별)": carried,
+        "🔴 959 이어 싣기를 껐나": bool(a.no_merge),
+        "🔴 이번에 준 --keys": a.keys,
     }
     (ROOT / "runners/out941_wikidaily.json").write_text(
         json.dumps(res, ensure_ascii=False, indent=1))
