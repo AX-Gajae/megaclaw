@@ -1,0 +1,25 @@
+{
+ "무엇": "🔴 노트 954 의 탐색 산출물에 도장을 박는다",
+ "시각(UTC)": "2026-08-13T02:58:14+00:00",
+ "🔴 어느 트리를 읽나": {
+  "입력 산출물": "작업 트리",
+  "⚠": "한 트리만 읽는다"
+ },
+ "🔴 입력 목록을 어떻게 얻었나": "`runners/note954_gen.py` 의 `J(\"…\")` 리터럴을 **AST 로** 뽑았다(손 전사 0)",
+ "🔴 입력 수(분모)": 5,
+ "🔴 입력별 sha256(대조의 기록 쪽)": {
+  "runners/out954_dupe.json": "7ff2b6de48ca0fd5f069816d823d52b3383de725b15dae6e7afa247311f74294",
+  "runners/out954_hplt_full.json": "6739d0d21322301f2858e9404fbbdb8b305e9c8f2aa71987fa3503bfdc671674",
+  "runners/out954_kopis_c1.json": "b9af466daf4ecf573c5bb9fac1d4ee7427d5e3e2b847c74bd06798276e821d6a",
+  "runners/out954_kopis_c1_regress.json": "7bef66e418d4ea6182543c8244c07a8a5dce41fdd00d8f197db010e71694aa66",
+  "runners/out954_score.json": "dc5743d9669ab44ed56d103d60a344c471c4a788fce21f14ccb790d2c9485525"
+ },
+ "🔴 생산기 sha256": {
+  "runners/note954_gen.py": "8167446eab6ea94711242a100e4fd4cef6db9386e5c5eb868c6a0e6ddc668d80"
+ },
+ "🔴 문서 sha256": {
+  "docs/탐색/954.md": "2a914ce9a8289a37c32c2376e8e6eb77298c34636604686d3916d5b4507a62ca"
+ },
+ "⚠ 한계(조항 61)": "대조는 **낡음만** 잡는다. 문서의 **수가 옳은지는 안 본다**",
+ "통과": true
+}
