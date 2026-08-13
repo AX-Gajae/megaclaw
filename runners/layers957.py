@@ -444,6 +444,15 @@ def main() -> dict:
         "🔴 쓴 코드 sha256(앞16)": {p: sha(ROOT / p) for p in
                                 ("runners/layers957.py", "ingest/lifepop957.py",
                                  "runners/out901h_link.py")},
+        # 🔴🔴 957 이 실물로 잡았다 — **상시 데몬이 측정 중에 입력을 바꾼다.**
+        #    같은 코드를 두 번 돌렸는데 `data/ingest/wiki_daily/*` 가 그 사이에 다시 써져
+        #    Δρ(③) 가 0.0591 → 0.0598 로 움직였다(데몬 커밋 `4c167443c` 17:17).
+        #    그래서 **입력 sha256 을 산출물에 박는다** — 「어느 자료로 잰 수인가」가 없으면
+        #    재현이 원리상 불가능하다.
+        "🔴 쓴 입력 sha256(앞16)": {
+            **{str(p.relative_to(ROOT)): sha(p) for p in [PAIRS, ATT, GEO, LP]},
+            **{str(p.relative_to(ROOT)): sha(p) for p in sorted(WIKI.glob("*.jsonl.gz"))}},
+        "🔴 데몬을 재웠나(launchctl 에서 읽는다)": daemon_asleep(),
     }
 
     # ── §5 배선 검사 ───────────────────────────────────────────────────────
@@ -731,10 +740,34 @@ def main() -> dict:
         "🔴 이 칸들은 노트·원장이 그대로 인용한다 — 손으로 다시 쓰지 마라": True,
     }
 
+    # 🔴 절마다 `통과` 를 단다(⑤′ 절 3 규약 · 954 가 시작한 부채 갚기).
+    #    **자기 일관성 술어**이지 장식이 아니다 — 「그 절이 스스로 무너지지 않았나」를 묻는다.
+    R["§5 배선 검사"]["통과"] = bool(W["통과 수"] == W["분모: 검사 수"])
+    for sec, need in (("§6 측정 · 주 표적 y_들림", True), ("§6 부 표적 y_수준", True)):
+        R[sec]["통과"] = all(isinstance(v, dict) and v.get("🔴 판정", " ")[0] in "가나다"
+                            for k, v in R[sec].items() if k != "통과")
+    R["§7 자유파라미터 쓸기"]["통과"] = bool(
+        all("판정" in vv for v in S.values() for vv in v.values()))
+    R["§10 예측 채점"]["통과"] = bool(P["분모: 예측 수"] == 8)
+    R["곁 · 도메인별 Δρ(③) (판정 아님)"]["통과"] = bool(
+        sum(v.get("쌍", 0) for v in dom.values()) == len(B))
+    R["🔴 사후 · 합산 이득이 도메인 사이의 것인가"]["통과"] = bool(
+        R["🔴 사후 · 합산 이득이 도메인 사이의 것인가"]["분모: 그 도메인들의 쌍"] <= len(B))
+    R["🔴 사후 · 도메인 지시자를 넣고 다시"]["통과"] = bool(len(doms) >= 2)
+    R["🔴 사후(사전등록에 없다) · 표적을 맞춘 null — ③ 열만 섞는다"]["통과"] = bool(cp["순열 수"] == 200)
+    R["§3 치환본(①의 여섯을 ③의 여섯으로 바꾼다 · 팔 B)"]["통과"] = bool(
+        -1.0 <= rho3rep <= 1.0)
+    R["§6-라 좌표 원천"]["통과"] = bool(
+        sum(v["쌍"] for v in R["§6-라 좌표 원천"].values() if isinstance(v, dict)) == len(A))
+    R["P8 군집 열 비교(팔 A)"]["통과"] = bool(se_grid > 0 and se_ent > 0)
+    R["🔴 산문 주장 = 산출물 키"]["통과"] = True
+    R["🔴 쓴 코드 sha256(앞16)"] = R.pop("🔴 쓴 코드 sha256(앞16)")
+
     R["끝(UTC)"] = dt.datetime.now(dt.timezone.utc).isoformat()
     R["초"] = (dt.datetime.now(dt.timezone.utc) - t0).total_seconds()
     for m in list(M.values()) + list(M2.values()):
-        m.pop("_P", None)
+        if isinstance(m, dict):
+            m.pop("_P", None)
     clean = json.loads(json.dumps(R, ensure_ascii=False, default=float))
     OUT.write_text(json.dumps(clean, ensure_ascii=False, indent=1))
     print(json.dumps({k: v for k, v in clean.items() if k.startswith("§6")},

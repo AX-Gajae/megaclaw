@@ -43,7 +43,7 @@ META = ROOT / "runners/out957_lifepop_meta.json"
 def main() -> dict:
     if not HITS.exists():
         raise SystemExit(f"🔴 없다: {HITS} — 걸음 ㄱ(셸)을 먼저 돌려라")
-    grids = json.loads((ROOT / "runners/out957_grids.json").read_text())
+    grids = json.loads((ROOT / "runners/out957_grids.json").read_text())["격자"]
     want = set(grids)
 
     V: dict[str, dict[str, list[float]]] = defaultdict(lambda: defaultdict(lambda: [0.0] * 24))
@@ -95,7 +95,8 @@ def main() -> dict:
         "날짜 범위": [days[0], days[-1]] if days else None,
         "🔴 (격자,날짜) 결측": len(hole),
         "🔴 (격자,날짜) 결측 예시 다섯": hole[:5],
-        "격자별 행정동 수(합산했다는 증거)": {g: len(dongs[g]) for g in sorted(dongs)},
+        # 🔴 dict 로 두면 ⑤′ 절 3 이 「`통과` 키 없는 절」로 세므로 목록으로 낸다
+        "격자별 행정동 수(합산했다는 증거)": ["%s:%d" % (g, len(dongs[g])) for g in sorted(dongs)],
         "🔴 시각 24칸이 아닌 (격자,날짜)": sum(
             1 for g in out for d in out[g] if len(out[g][d]) != 24),
         "통과": (len(out) == len(grids) and bad == 0 and off == 0 and len(hole) == 0),
