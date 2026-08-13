@@ -309,9 +309,26 @@ def main():
          % (cc["분자 = 맞은 대조"], cc["분모 = 대조 전량"],
             list(ds["🔴 문서 sha256"].values())[0][:12])),
 
-        ("🔴 ⑤′ 취합 검사", {"통과": fp.get("통과"),
-                       "절 수": len(fp.get("절", [])) if isinstance(fp.get("절"), list) else "?",
-                       "⚠": "낱개는 `runners/out955_fiveprime.json` 에 있다"}),
+        ("🔴 ⑤′ 취합 검사", {
+            "통과": fp.get("통과"),
+            "🔴 분자 = 초록 절": sum(1 for k, s in fp.items()
+                              if isinstance(s, dict) and s.get("통과") is True
+                              and isinstance(s.get("검사"), str)),
+            "🔴 분모 = 절 전량": sum(1 for k, s in fp.items()
+                             if isinstance(s, dict) and isinstance(s.get("검사"), str)),
+            "🟢 초록": [k for k, s in fp.items()
+                     if isinstance(s, dict) and isinstance(s.get("검사"), str)
+                     and s.get("통과") is True],
+            "🔴 붉은": [k for k, s in fp.items()
+                     if isinstance(s, dict) and isinstance(s.get("검사"), str)
+                     and s.get("통과") is not True],
+            "🔴🔴 ⓪ 관문이 **처음으로 비었다**":
+                ("954 는 *「데몬이 도는 한 **원리상** 못 비운다」*고 적었다. "
+                 "🔴 **그 주장이 반증됐다** — ⑤′ 자기 산출물을 **먼저 커밋**하고 다음 주행을 "
+                 "돌리면 관문이 빈다(데몬은 이력 수술 동안 재워 뒀다). 더러운 경로 **%s**"
+                 % fp["⓪ 관문(작업 트리)"]["더러운 경로 수"])
+                if fp.get("⓪ 관문(작업 트리)", {}).get("통과") else "🔴 아직 붉다",
+            "⚠": "낱개는 `runners/out955_fiveprime.json` 에 있다"}),
 
         ("🔴 안 한 것 · 못 한 것 (갈라 적는다)",
          ["**안 했다** --- 표본을 다시 안 떴다(954 의 npz 를 그대로 읽었다 · 사전등록 §7)",
