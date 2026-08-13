@@ -652,6 +652,12 @@ def keyaudit(extra, targets=None) -> dict:
         except Exception as e:                                    # noqa: BLE001
             per[rel] = {"🔴": "못 읽었다: %s" % e}
             continue
+        # 🔴 957 --- 최상위가 dict 가 아닌 산출물(목록 등)에서 죽지 않는다.
+        #    「죽었다」와 「절이 없다」와 「통과」는 셋이다(조항 59).
+        if not isinstance(d, dict):
+            per[rel] = {"🔴": "최상위가 dict 가 아니다(%s) --- 절 규약 밖" % type(d).__name__,
+                        "통과": False}
+            continue
         # 🔴 **도장은 절이 아니다.** `코드 sha256`·`시각` 같은 도장 dict 를 절로 세면
         #    분모가 부풀고, 그러면 「모른다 10/10」이 티처가 손으로 센 **9** 와 어긋난다.
         #    분모를 부풀리는 것도 분모 바꿔치기다(조항 60).
@@ -1004,6 +1010,9 @@ def main(argv=None):
                     help="🔴 문서 대조가 읽을 도장 파일(기본: %s)" % DOCSTAMP)
     # 🔴 949 --- 45 개 사유를 손으로 치면 **증거가 셸 히스토리에만 남는다**.
     #    사유를 커밋된 JSON 으로 받는다(`{경로: 사유}`). 사유는 `[자:<이름>]` 으로 시작한다.
+    # 🔴 957 (티처 #95 C1) --- 산문 주장을 산출물 키에 물린다. 모듈이 `CLAIMS` 를 갖는다.
+    ap.add_argument("--prose", default=None,
+                    help="🔴 산문 주장 목록 모듈(예: runners.prose_check)")
     ap.add_argument("--exempt-file", default=None,
                     help="🔴 면제 사유를 담은 JSON(`{경로: \"[자:…] 사유\"}`)")
     a = ap.parse_args(argv)
@@ -1070,6 +1079,26 @@ def main(argv=None):
     except Exception as e:                                        # noqa: BLE001
         res["7 🔴 문서 대조(950 · 티처 #89 M1)"] = {
             "🔴 예외": "%s: %s" % (type(e).__name__, e), "통과": False}
+
+    # 🔴🔴 957 (티처 #95 C1) --- **도장은 수만 보고 산문은 원리상 안 본다.**
+    #    956 에서 원장·노트가 「안 했다」고 적은 일을 실제로는 했고, 도장은 그걸 못 봤다
+    #    (도장 자신이 *「산출물의 수 자체가 옳은지는 안 본다」* 고 적는다).
+    #    이 절은 **문서의 문장**과 **산출물의 키**를 맞댄다.
+    if a.prose:
+        try:
+            import importlib
+            mod = importlib.import_module(a.prose)
+            from runners.prose_check import check as _pcheck
+            r8 = _pcheck(getattr(mod, "CLAIMS"), stdout=False)
+            r8["🔴 주장 목록 모듈"] = a.prose
+            res["8 🔴 산문 주장 대 산출물 키(957 · 티처 #95 C1)"] = r8
+        except Exception as e:                                    # noqa: BLE001
+            res["8 🔴 산문 주장 대 산출물 키(957 · 티처 #95 C1)"] = {
+                "🔴 예외": "%s: %s" % (type(e).__name__, e), "통과": False}
+    else:
+        res["8 🔴 산문 주장 대 산출물 키(957 · 티처 #95 C1)"] = {
+            "🔴 안 돌렸다": "`--prose <모듈>` 을 안 줬다 --- 「없다」가 아니라 「안 돌렸다」다(조항 59)",
+            "통과": False}
 
     secs = {k: v for k, v in res.items() if isinstance(v, dict) and "통과" in v}
     fail = sorted(k for k, v in secs.items() if not v["통과"])

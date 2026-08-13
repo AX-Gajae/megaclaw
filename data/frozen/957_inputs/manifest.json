@@ -1,0 +1,148 @@
+{
+ "무엇": "🔴 957 이 실제로 측정에 쓴 입력 — 가지 note/957-layers 의 blob 을 파일로 받아 얼렸다",
+ "왜": "그 11개(wiki_daily)가 가지에만 있었다. 가지가 사라져도 957·958 이 재현되게 한다",
+ "언제(UTC)": "2026-08-13T09:29:27.794926+00:00",
+ "가지": "note/957-layers",
+ "항목": {
+  "pairs.jsonl.gz": {
+   "원래 자리": "data/ingest/sao941/pairs.jsonl.gz",
+   "얼린 자리": null,
+   "바이트": 13343764,
+   "🔴 내용 sha256(압축을 푼 것 · 정본)": "8627b6f0ca94af45d27b08a3d01eadefea63787e7e4002f32f1b3b38359e1bff",
+   "gzip 바이트 sha256(참고 · mtime 을 포함한다)": "50eacbe4468cf86f561535e3eea7aec31f0151679a33018b7eb12627d1cbbd83",
+   "머지 전 main 의 내용 sha256": "8627b6f0ca94af45d27b08a3d01eadefea63787e7e4002f32f1b3b38359e1bff",
+   "🔴 머지 전 main 과 내용이 같은가": true,
+   "🔴 안 얼린 이유": "머지 뒤 main 의 `data/ingest/sao941/pairs.jsonl.gz` 와 **바이트가 같다**(위 해시로 확인) — 13MB/1.2MB 를 두 번 두지 않는다. 해시가 어긋나면 재현 불가로 신고하라"
+  },
+  "grid915_attach.json": {
+   "원래 자리": "data/state/grid915_attach.json",
+   "얼린 자리": "data/frozen/957_inputs/grid915_attach.json",
+   "바이트": 19117,
+   "🔴 내용 sha256(압축을 푼 것 · 정본)": "4d31fe3dab6a74bc9cefbe5964294b24697506f05cd0c367f9fc2811e5701573",
+   "gzip 바이트 sha256(참고 · mtime 을 포함한다)": "4d31fe3dab6a74bc9cefbe5964294b24697506f05cd0c367f9fc2811e5701573",
+   "머지 전 main 의 내용 sha256": "4d31fe3dab6a74bc9cefbe5964294b24697506f05cd0c367f9fc2811e5701573",
+   "🔴 머지 전 main 과 내용이 같은가": true
+  },
+  "geo919_coords.json": {
+   "원래 자리": "data/state/geo919_coords.json",
+   "얼린 자리": "data/frozen/957_inputs/geo919_coords.json",
+   "바이트": 7871,
+   "🔴 내용 sha256(압축을 푼 것 · 정본)": "5d62429b92684f52a3861c375b99072bcb6e3d0222c2058b57811dde3f7a2ecf",
+   "gzip 바이트 sha256(참고 · mtime 을 포함한다)": "5d62429b92684f52a3861c375b99072bcb6e3d0222c2058b57811dde3f7a2ecf",
+   "머지 전 main 의 내용 sha256": "5d62429b92684f52a3861c375b99072bcb6e3d0222c2058b57811dde3f7a2ecf",
+   "🔴 머지 전 main 과 내용이 같은가": true
+  },
+  "out957_lifepop.json.gz": {
+   "원래 자리": "runners/out957_lifepop.json.gz",
+   "얼린 자리": null,
+   "바이트": 1285300,
+   "🔴 내용 sha256(압축을 푼 것 · 정본)": "12f2bbe9d395347870845d3f79e03dc8af30d30cf8ad4d0ad590c046becfbecd",
+   "gzip 바이트 sha256(참고 · mtime 을 포함한다)": "d00c503d3bd8d23ce2bf9fc30485bbbe71d053e6a4aa20e21f57e6c1973614d5",
+   "머지 전 main 의 내용 sha256": null,
+   "🔴 머지 전 main 과 내용이 같은가": null,
+   "🔴 안 얼린 이유": "머지 뒤 main 의 `runners/out957_lifepop.json.gz` 와 **바이트가 같다**(위 해시로 확인) — 13MB/1.2MB 를 두 번 두지 않는다. 해시가 어긋나면 재현 불가로 신고하라"
+  },
+  "wiki_daily/게임.jsonl.gz": {
+   "원래 자리": "data/ingest/wiki_daily/게임.jsonl.gz",
+   "얼린 자리": "data/frozen/957_inputs/wiki_daily/게임.jsonl.gz",
+   "바이트": 354385,
+   "🔴 내용 sha256(압축을 푼 것 · 정본)": "3a08aa49ac381cc0fb76133850cde42742c4b5244830c0d5b2f133a3ea93ff3a",
+   "gzip 바이트 sha256(참고 · mtime 을 포함한다)": "c10712fbe22895ff6358bc70ea9a9bb363300f75169803d4c128f10317fa85ff",
+   "머지 전 main 의 내용 sha256": "3a08aa49ac381cc0fb76133850cde42742c4b5244830c0d5b2f133a3ea93ff3a",
+   "🔴 머지 전 main 과 내용이 같은가": true
+  },
+  "wiki_daily/도서.jsonl.gz": {
+   "원래 자리": "data/ingest/wiki_daily/도서.jsonl.gz",
+   "얼린 자리": "data/frozen/957_inputs/wiki_daily/도서.jsonl.gz",
+   "바이트": 300060,
+   "🔴 내용 sha256(압축을 푼 것 · 정본)": "a473c3540995c7c037db76662ab5fc06014eec5520ac2cc4dc4ab97052e2433d",
+   "gzip 바이트 sha256(참고 · mtime 을 포함한다)": "ef965470d766fcfdd4c1ba819782f99246e4b5e2386ddc75a8792c9fa1f7438e",
+   "머지 전 main 의 내용 sha256": "a473c3540995c7c037db76662ab5fc06014eec5520ac2cc4dc4ab97052e2433d",
+   "🔴 머지 전 main 과 내용이 같은가": true
+  },
+  "wiki_daily/만화.jsonl.gz": {
+   "원래 자리": "data/ingest/wiki_daily/만화.jsonl.gz",
+   "얼린 자리": "data/frozen/957_inputs/wiki_daily/만화.jsonl.gz",
+   "바이트": 2214,
+   "🔴 내용 sha256(압축을 푼 것 · 정본)": "60e8b962507e27e987f70f325698c7dbc8b585603efe298f2030e1d7a75524ef",
+   "gzip 바이트 sha256(참고 · mtime 을 포함한다)": "e2e6fe6c7847fa35fd5899837d21cb2e76f288aebcdaad15143e390df6695f38",
+   "머지 전 main 의 내용 sha256": "60e8b962507e27e987f70f325698c7dbc8b585603efe298f2030e1d7a75524ef",
+   "🔴 머지 전 main 과 내용이 같은가": true
+  },
+  "wiki_daily/모바일.jsonl.gz": {
+   "원래 자리": "data/ingest/wiki_daily/모바일.jsonl.gz",
+   "얼린 자리": "data/frozen/957_inputs/wiki_daily/모바일.jsonl.gz",
+   "바이트": 246003,
+   "🔴 내용 sha256(압축을 푼 것 · 정본)": "d5909449e0d3c66c0a9bd1214a1ef34129f4ff32f85e2a945499f2c2267c1ffc",
+   "gzip 바이트 sha256(참고 · mtime 을 포함한다)": "b72016a9d312963cc910ad35318f3882fac560ddcfce0c79f0e403b9d92c5c28",
+   "머지 전 main 의 내용 sha256": "d5909449e0d3c66c0a9bd1214a1ef34129f4ff32f85e2a945499f2c2267c1ffc",
+   "🔴 머지 전 main 과 내용이 같은가": true
+  },
+  "wiki_daily/세계애니.jsonl.gz": {
+   "원래 자리": "data/ingest/wiki_daily/세계애니.jsonl.gz",
+   "얼린 자리": "data/frozen/957_inputs/wiki_daily/세계애니.jsonl.gz",
+   "바이트": 1271859,
+   "🔴 내용 sha256(압축을 푼 것 · 정본)": "1a3832fde45384c6a7bd055109a3a97ac63653c0af3d8ca76428513b0cc3f667",
+   "gzip 바이트 sha256(참고 · mtime 을 포함한다)": "17888c6186267cfad1e6cc83d8b7446d38d0d3aa2375cd85237d441128bc646f",
+   "머지 전 main 의 내용 sha256": "381814b049941bb2589a993ce1ef9cf834e04f635b803b6e7801dc2a7fbb54ba",
+   "🔴 머지 전 main 과 내용이 같은가": false
+  },
+  "wiki_daily/시장팝업.jsonl.gz": {
+   "원래 자리": "data/ingest/wiki_daily/시장팝업.jsonl.gz",
+   "얼린 자리": "data/frozen/957_inputs/wiki_daily/시장팝업.jsonl.gz",
+   "바이트": 478300,
+   "🔴 내용 sha256(압축을 푼 것 · 정본)": "ea34d1835e340ee20a52e385834f4ffb1fd41d5677f6e9114ca252b6f5e7b253",
+   "gzip 바이트 sha256(참고 · mtime 을 포함한다)": "69dd580bfdce6684005d9998353b53b32b4ad3cfe4df403d6c9e5d8b7e861caa",
+   "머지 전 main 의 내용 sha256": "0e7d9048f6ec3c32282812982de95cdff4a5441239913ea8afcc99864df3a799",
+   "🔴 머지 전 main 과 내용이 같은가": false
+  },
+  "wiki_daily/아이돌.jsonl.gz": {
+   "원래 자리": "data/ingest/wiki_daily/아이돌.jsonl.gz",
+   "얼린 자리": "data/frozen/957_inputs/wiki_daily/아이돌.jsonl.gz",
+   "바이트": 64215,
+   "🔴 내용 sha256(압축을 푼 것 · 정본)": "2c93a89447c882809f459803e56ba2cda1f942ccd3f16901ad733c820e17e29a",
+   "gzip 바이트 sha256(참고 · mtime 을 포함한다)": "cb4794f3ff44d68d54d92d13da567ef3d06f3c9e62a79e4a999adabbe8204f00",
+   "머지 전 main 의 내용 sha256": "428dbe9019aa7fa58da34e35e2ee7441ce66786badb9628ce7f227f1c9873c6c",
+   "🔴 머지 전 main 과 내용이 같은가": false
+  },
+  "wiki_daily/애니.jsonl.gz": {
+   "원래 자리": "data/ingest/wiki_daily/애니.jsonl.gz",
+   "얼린 자리": "data/frozen/957_inputs/wiki_daily/애니.jsonl.gz",
+   "바이트": 910593,
+   "🔴 내용 sha256(압축을 푼 것 · 정본)": "8c5d555c129838453817187dc0c79c1a1866ce1a96d18f5bd627370241b257b4",
+   "gzip 바이트 sha256(참고 · mtime 을 포함한다)": "71e2e3348492d07cb283e98f09fb3a0e833aff60f473d19ea3285b9aee4f2ebc",
+   "머지 전 main 의 내용 sha256": "0184af0b34d1e62cce48d5e6a375c5aeaf19ba898e204b3a77ba0b32fd34532d",
+   "🔴 머지 전 main 과 내용이 같은가": false
+  },
+  "wiki_daily/웹툰.jsonl.gz": {
+   "원래 자리": "data/ingest/wiki_daily/웹툰.jsonl.gz",
+   "얼린 자리": "data/frozen/957_inputs/wiki_daily/웹툰.jsonl.gz",
+   "바이트": 389797,
+   "🔴 내용 sha256(압축을 푼 것 · 정본)": "f12ac870e95ad49d6a21fc30c2dd16bd611a6ac0294d1c9a40455b6b7b45463e",
+   "gzip 바이트 sha256(참고 · mtime 을 포함한다)": "8c21061b8cc15a490a8b5e768e218e44c7b1818ce93849d48e8bf3b247e44599",
+   "머지 전 main 의 내용 sha256": "f12ac870e95ad49d6a21fc30c2dd16bd611a6ac0294d1c9a40455b6b7b45463e",
+   "🔴 머지 전 main 과 내용이 같은가": true
+  },
+  "wiki_daily/팝업.jsonl.gz": {
+   "원래 자리": "data/ingest/wiki_daily/팝업.jsonl.gz",
+   "얼린 자리": "data/frozen/957_inputs/wiki_daily/팝업.jsonl.gz",
+   "바이트": 340831,
+   "🔴 내용 sha256(압축을 푼 것 · 정본)": "da31e256d2b6527463ba394d35a1d324be11f35b4d9cc429ceb974f97d49abc8",
+   "gzip 바이트 sha256(참고 · mtime 을 포함한다)": "02f26d2b671ea057045b13a8217ddc0d920b6ea46e5dfcf17a1e6a7952e46f82",
+   "머지 전 main 의 내용 sha256": "da31e256d2b6527463ba394d35a1d324be11f35b4d9cc429ceb974f97d49abc8",
+   "🔴 머지 전 main 과 내용이 같은가": true
+  },
+  "wiki_daily/펀딩.jsonl.gz": {
+   "원래 자리": "data/ingest/wiki_daily/펀딩.jsonl.gz",
+   "얼린 자리": "data/frozen/957_inputs/wiki_daily/펀딩.jsonl.gz",
+   "바이트": 27712,
+   "🔴 내용 sha256(압축을 푼 것 · 정본)": "ed2c904400813307061fe15c510777eb364deed10ead04863b9756c9c65dc2b2",
+   "gzip 바이트 sha256(참고 · mtime 을 포함한다)": "c4853948573c60634ca72580818eb67af3824038d4b2454c162ad2510e1d154b",
+   "머지 전 main 의 내용 sha256": "ed2c904400813307061fe15c510777eb364deed10ead04863b9756c9c65dc2b2",
+   "🔴 머지 전 main 과 내용이 같은가": true
+  }
+ },
+ "🔴 머지 전 main 과 내용이 다른 파일 수": 4,
+ "분모: 얼린 파일": 13,
+ "분모: 해시만 박은 파일": 2
+}
