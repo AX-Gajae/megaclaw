@@ -31,6 +31,12 @@ data/state/eventline910.jsonl
 # **표본과 계수 결과 JSON 만** 커밋한다: runners/out952_count.json · data/ingest/*/sample*.jsonl
 # HPLT 2.0 kor_Hang parquet (464 shard 중 4개 ≈ 1.05GB · CC0-1.0)
 data/ingest/hplt_ko/*.parquet
+# 🔴 954 --- 내려받기 임시 파일(`runners/hplt_fetch.py:89` 의 `p.with_suffix(".part")`)
+#    이름이 `train-00292-of-00464.part` 라 위 `*.parquet` 규칙에 **안 걸린다**.
+#    그래서 상시 데몬이 100~200MB 짜리를 13커밋에 걸쳐 git 에 넣었고
+#    🔴 **그 때문에 2026-08-12 18:58 부터 저장소가 GitHub 에 못 올라갔다**(pre-receive 거부).
+data/ingest/**/*.part
+*.part
 # Kaggle fronkongames/steam-games-dataset (309.8MB zip · MIT 업로더 신고)
 data/ingest/steam_games/archive.zip
 data/ingest/steam_games/*.csv
