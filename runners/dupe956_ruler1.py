@@ -40,7 +40,8 @@ SCRATCH954 = pathlib.Path("/Users/ax/wm_harvest/954")
 SCAN = SCRATCH954 / "scan"          # HPLT 464 shard npz (954)
 FWS = SCRATCH954 / "fw"             # FineWeb 행군 층화 표본 npz (954) = (ㄱ) 판
 RECV = pathlib.Path("/Users/ax/wm_harvest/fineweb2_ko")     # 955 가 받는 중인 전량
-FULL = pathlib.Path("/Users/ax/wm_harvest/956/full")        # (ㄴ) 판 키 저장소
+FULL = pathlib.Path("/Users/ax/wm_harvest/956/full")        # (ㄴ) 판 url 키 저장소
+FULLT = pathlib.Path("/Users/ax/wm_harvest/956/fulltext")   # (ㄴ) 판 본문 키 저장소
 HPLT_DIR = REPO / "data/ingest/hplt_ko"
 
 NAMES = ["%03d_%05d.parquet" % (g, k) for g in range(5) for k in range(5)]
@@ -49,6 +50,52 @@ K_PAIR = 21                                          # 자②의 하한을 만�
 
 
 # ─────────────────────────────────────────────────── (ㄴ) 받은 parquet → 키
+
+def extract_text(force=False):
+    """🔴 **사전등록 §7 은 이것을 「안 한다」로 적었다. 그런데 했다.**
+
+    사유: §7 이 댄 근거는 *「`text` 열은 코퍼스 105GB 를 흘려야 한다」* 였는데
+    **실측이 그 추정을 뒤집었다** --- 88,000 행/초 · 전량 ≈ 11.5분이다.
+    🔴 **「안 한다」를 「했다」로 바꾸는 것은 판정을 못 뒤집는다** --- 판정 규칙(§6)은
+    안 바뀌었고 「강함」의 (나)는 이미 거짓이다. 바뀌는 것은 부칙 2′(다)의 **분모가
+    같아진다**는 것뿐이고, **(ㄱ) 값도 그대로 같이 싣는다**.
+    """
+    import pyarrow.compute as pc
+    import pyarrow.parquet as pq
+    FULLT.mkdir(parents=True, exist_ok=True)
+    md5 = hashlib.md5
+    done = []
+    for name in NAMES:
+        src = RECV / name
+        out = FULLT / (name.replace(".parquet", ".npz"))
+        if not src.exists():
+            continue
+        if out.exists() and not force:
+            done.append(name)
+            continue
+        t0 = time.time()
+        pf = pq.ParquetFile(src)
+        n = pf.metadata.num_rows
+        hed_h = np.empty(n, dtype=np.uint64)
+        txt_h = np.empty(n, dtype=np.uint64)
+        i = 0
+        for b in pf.iter_batches(batch_size=32768, columns=["text"]):
+            for t in pc.cast(b.column("text"), "binary").to_pylist():
+                t = t or b""
+                s = t.strip()
+                hed_h[i] = int.from_bytes(md5(
+                    s[:800].decode("utf-8", "ignore")[:200].encode("utf-8")
+                ).digest()[:8], "little")
+                txt_h[i] = int.from_bytes(md5(t).digest()[:8], "little")
+                i += 1
+        assert i == n, "행 수가 메타와 다르다: %d != %d" % (i, n)
+        tmp = out.with_name(out.stem + ".tmp.npz")
+        np.savez(tmp, hed_h=hed_h, txt_h=txt_h)
+        os.replace(tmp, out)
+        done.append(name)
+        print("본문추출 %s · 행 %d · %.1fs" % (name, n, time.time() - t0), flush=True)
+    return done
+
 
 def extract(force=False):
     """🔴 받은 parquet 의 `url` 열을 **전량** 읽어 자①·자② 키를 **다시 계산**한다.
@@ -205,7 +252,9 @@ def jackknife_files(per_file_fw, hset):
         "파일별 D": [{"파일": per_file_fw[i][0], "분자 = 맞은 문서": hits[i],
                    "분모 = 문서": tots[i], "D": round(hits[i] / tots[i], 6)} for i in range(n)],
         "⚠ 뜻": ("이항 SE 가 아니다. 파일이 군집이므로 **파일을 하나씩 빼서** 잰다. "
-               "25/25 를 받으면 이 군집도 사라지고 SE 는 0 으로 간다(전수이므로)."),
+               "🔴 **25/25 를 받으면 이것은 더 이상 표집오차가 아니다** --- 전수이므로 "
+               "표집오차가 0 이고, 이 수는 그때 **파일 사이의 이질성**을 재는 것이 된다. "
+               "부분 수신일 때만 「남은 파일이 다르면 D 가 얼마나 움직일 수 있나」로 읽어라."),
         "통과": True,
     }
 
@@ -495,11 +544,19 @@ def analyze(out_path):
         del hp, fw
     res["🔴 (ㄱ) 표본 판 --- 954 의 행군 층화 군집 표본이 분모"] = rulers_g
 
-    # (ㄴ) 전량 판 --- url 열 자 둘
-    for label, key, curve in (("① URL 정확", "url_h", False),
-                              ("② URL 정규화", "urn_h", True)):
+    # (ㄴ) 전량 판 --- url 열 자 둘 + (있으면) 본문 열 자 둘
+    have_text = bool(sorted(FULLT.glob("*.npz")))
+    nfull_url = len(sorted(FULL.glob("*.npz")))
+    nfull_txt = len(sorted(FULLT.glob("*.npz")))
+    jobs = [("① URL 정확", "url_h", True, FULL), ("② URL 정규화", "urn_h", True, FULL)]
+    if have_text and nfull_txt == nfull_url:
+        # 🔴 사전등록 §7 은 이것을 「안 한다」로 적었다. 실측이 그 근거(비용)를 뒤집어서 했다.
+        jobs += [("③ 본문 앞 200자", "hed_h", False, FULLT),
+                 ("덤 --- 전문 md5", "txt_h", False, FULLT)]
+    for label, key, curve, src in jobs:
+        curve = (label == "② URL 정규화")
         hp, shards = load_concat(SCAN, key, "s*.npz")
-        fw, fns = load_concat(FULL, key, "*.npz")
+        fw, fns = load_concat(src, key, "*.npz")
         m, aux = measure(label, hp, fw, want_curve=curve)
         m["읽은 HPLT shard"] = len(shards)
         m["🔴 읽은 FineWeb parquet 파일"] = len(fns)
@@ -572,11 +629,20 @@ def analyze(out_path):
     curve_one = len(set(curve_cells.values())) == 1
 
     # 🔴 부칙 2′(다) --- 입력 열로 계열을 센다
+    n3 = rulers_n.get("③ 본문 앞 200자")
+    if n3 is not None:
+        text_row = {"값": n3["🔴 D_문서 = ⓑ ÷ ②"], "칸": cell(n3["🔴 D_문서 = ⓑ ÷ ②"]),
+                    "분모": "🔴 (ㄴ) 받은 파일 전량 --- **같은 분모다**",
+                    "⚠ 사전등록 §7 은 이것을 「안 한다」로 적었다":
+                        ("근거가 비용 추정이었는데 **실측이 그것을 뒤집었다**(88,000행/초). "
+                         "🔴 판정 규칙은 안 바꿨고 (나)는 이미 거짓이라 「강함」은 그대로 못 쓴다. "
+                         "**(ㄱ) 표본 값도 같이 싣는다**: %s" % g3["🔴 D_문서 = ⓑ ÷ ②"])}
+    else:
+        text_row = {"값": g3["🔴 D_문서 = ⓑ ÷ ②"], "칸": cell(g3["🔴 D_문서 = ⓑ ÷ ②"]),
+                    "분모": "🔴 (ㄱ) 표본 --- text 열은 전량을 안 읽었다(§7)"}
     fam = {
-        "url 계열((ㄴ) 자① D_문서)": {"값": D, "칸": cell(D), "분모": "(ㄴ) 받은 파일 전량"},
-        "text 계열((ㄱ) 자③ D_문서)": {"값": g3["🔴 D_문서 = ⓑ ÷ ②"],
-                                "칸": cell(g3["🔴 D_문서 = ⓑ ÷ ②"]),
-                                "분모": "🔴 (ㄱ) 표본 --- text 열은 전량을 안 읽었다(§7)"},
+        "url 계열(자① D_문서)": {"값": D, "칸": cell(D), "분모": "(ㄴ) 받은 파일 전량"},
+        "text 계열(자③ D_문서)": text_row,
     }
     fam_cells = {k: v["칸"] for k, v in fam.items()}
     fam_same = len(set(fam_cells.values())) == 1
@@ -683,13 +749,17 @@ def analyze(out_path):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["extract", "analyze"])
+    ap.add_argument("cmd", choices=["extract", "extract-text", "analyze"])
     ap.add_argument("--out", default="runners/out956_ruler1.json")
     ap.add_argument("--force", action="store_true")
     a = ap.parse_args()
     if a.cmd == "extract":
         d = extract(force=a.force)
         print(json.dumps({"추출된 파일": len(d), "분모": 25}, ensure_ascii=False))
+        return 0
+    if a.cmd == "extract-text":
+        d = extract_text(force=a.force)
+        print(json.dumps({"본문 추출된 파일": len(d), "분모": 25}, ensure_ascii=False))
         return 0
     return analyze(a.out)
 
