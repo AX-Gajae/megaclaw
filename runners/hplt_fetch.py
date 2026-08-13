@@ -86,7 +86,12 @@ def main():
         if gz_ok(p):
             have += 1
             continue
-        part = p.with_suffix(".part")
+        # 🔴 954 가 잡은 사고: `p.with_suffix(".part")` 는 `.parquet` 를 **갈아치워**
+        #    `train-00292-of-00464.part` 가 된다 --- `.gitignore` 의 `*.parquet`
+        #    규칙에 **안 걸린다**. 그래서 상시 데몬이 100~267MB 짜리를 13커밋에
+        #    걸쳐 git 에 넣었고 2026-08-12 18:58 부터 push 가 막혔다.
+        #    이제 **덧붙여서** `…-00464.parquet.part` 로 만든다(둘 다에 걸린다).
+        part = p.with_name(p.name + ".part")
         url = "%s/%04d.parquet" % (BASE, i)
         r = subprocess.run(
             ["curl", "-sSL", "--fail", "--retry", "5", "--retry-delay", "3",
