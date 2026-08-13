@@ -87,7 +87,19 @@ def main() -> int:
     else:
         recs = [json.loads(l) for l in open(RAW)]
     cache: dict = {}
-    out = open(OUT, "w")
+    # 🔴 **960 수리 --- `open(OUT, "w")` 는 여는 순간 자른다.**
+    #
+    # 이 함수는 그 손잡이를 쥔 채 **수백 번의 HTTP 요청**을 돈다(도메인마다 1초 대기).
+    # 그 사이 파일은 **비어 있고**, 러너가 중간에 죽으면 옛 결과가 통째로 사라진다.
+    # `kopis953`(954 수리) · `wikidaily941`(959 수리) · `steamrev941`(952 수리) 과
+    # **같은 병**이고, 티처 #98 이 세 번째 자리로 이것을 지목했다.
+    #
+    # 🔴 그래서 **`.part` 에 쓰고 끝에 갈아 끼운다**(같은 파일계라 `os.replace` 는 원자적).
+    # 러너가 죽으면 `.part` 만 남고 **옛 결과는 멀쩡히 살아 있다.**
+    _final = Path(OUT)
+    _part = _final.with_suffix(_final.suffix + ".part")
+    _final.parent.mkdir(parents=True, exist_ok=True)
+    out = open(_part, "w")
     counts: dict = {}
     last_domain_hit: dict = {}
     for i, r in enumerate(recs):
@@ -118,7 +130,12 @@ def main() -> int:
         if (i + 1) % 50 == 0:
             print(f"{i+1}/{len(recs)} … {counts}", flush=True)
     out.close()
-    print(json.dumps(counts, ensure_ascii=False), flush=True)
+    import os as _os
+    _os.replace(_part, _final)                   # 🔴 원자적 갈아 끼우기(960 수리)
+    n = sum(1 for _ in open(_final))             # 🔴 「썼다」가 아니라 다시 열어 센다(조항 59)
+    print(json.dumps({**counts, "🔴 다시 열어 센 줄": n,
+                      "🔴 쓴 것 == 다시 센 것": n == sum(counts.values())},
+                     ensure_ascii=False), flush=True)
     return 0
 
 
