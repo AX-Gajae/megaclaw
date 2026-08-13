@@ -107,9 +107,30 @@ def main() -> dict:
     ap.add_argument("--pages", type=int, default=2, help="앱마다 최대 페이지")
     ap.add_argument("--holdout-only", action="store_true")
     ap.add_argument("--sleep", type=float, default=SLEEP)
+    # 🔴 **960 수리** — 아래 §「부분 주행」 주석을 읽어라.
+    ap.add_argument("--keys", default=None,
+                    help="쉼표로 나눈 키 부분집합. 🔴 부분 주행이다 — 이어싣기가 켜진다")
+    ap.add_argument("--no-merge", action="store_true",
+                    help="🔴 이어싣기를 끈다. 부분 주행이면 **옛 행이 죽는다**. 일부러 쓸 때만")
     a = ap.parse_args()
 
     tg = targets(a.holdout_only)
+    if a.keys:
+        want = {k.strip() for k in a.keys.split(",") if k.strip()}
+        tg = [t for t in tg if t[0] in want]
+    # 🔴🔴 **960 수리 — 부분 주행이 전량을 덮는 병.**
+    #
+    # 952 가 「자르고 쓰기」는 고쳤지만 **표적이 부분집합일 때**는 여전히 최종 파일을
+    # 부분집합으로 **통째로 갈아 끼웠다**. `--holdout-only` 는 게임 축 전량 중 유보만
+    # 받는데, 다 받고 나면 `reviews.jsonl.gz` 에는 **유보분만** 남는다.
+    # 🔴 `kopis953`(954) · `wikidaily941`(959) 과 **같은 병의 세 번째 자리**다(티처 #98 치명 ⑨).
+    #
+    # 그래서 **요청한 키 밖의 옛 행을 그대로 이어싣는다**. 그리고 부분 주행의 집계는
+    # **별 파일**로 낸다 — 5키 주행의 「요청 5 · 성공 5」가 전량 주행의 회계를 덮으면
+    # 그 수를 인용한 논문이 통째로 틀린다(959 의 수리 ⑤가 실제로 그렇게 파괴했다).
+    _all = targets(False)
+    partial = len(tg) < len(_all)
+    merge = partial and not a.no_merge
     OUTDIR.mkdir(parents=True, exist_ok=True)
     t0 = time.time()
     # 🔴 **952 수리 --- `wikidaily941` 과 **똑같은 병**이었다(티처 #91 C1 이 wiki 쪽만 잡았다).
@@ -182,6 +203,25 @@ def main() -> dict:
         if i % 50 == 0:
             print(f"  {i}/{len(tg)} req={n_req} 리뷰={n_rev} 본문={n_body} "
                   f"{time.time()-t0:.0f}s", flush=True)
+
+    # 🔴🔴 **960 수리 — 이어싣기.** 이번에 **요청하지 않은** 키의 옛 행을 그대로 옮긴다.
+    # 이 블록이 없으면 부분 주행이 전량 파일을 부분집합으로 갈아 끼운다.
+    want = {k for k, _ in tg}
+    carried = carried_keys = 0
+    if merge and _final.exists():
+        with gzip.open(_final, "rt", encoding="utf-8") as f:
+            seen_keys = set()
+            for line in f:
+                try:
+                    r = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                if r.get("키") in want:
+                    continue
+                fp.write(line if line.endswith("\n") else line + "\n")
+                carried += 1
+                seen_keys.add(r.get("키"))
+            carried_keys = len(seen_keys)
     fp.close()
     # 🔴 952 --- 다 쓰고 **한 번에** 갈아 끼운다. 이 줄 전까지 옛 파일은 그대로다.
     os.replace(str(_part), str(_final))
@@ -209,9 +249,20 @@ def main() -> dict:
         "언어 가짓수": len(lang),
         "파일": str((OUTDIR / "reviews.jsonl.gz").relative_to(ROOT)),
         "파일 바이트": sz,
+        # 🔴 960 수리 — 부분 주행임을 **산출물이 스스로 신고한다**
+        "🔴 부분 주행인가": partial,
+        "🔴 표적 / 전량": [len(tg), len(_all)],
+        "🔴 이어실은 옛 행": carried, "🔴 이어실은 옛 키": carried_keys,
+        "🔴 이어싣기를 껐나(--no-merge)": bool(a.no_merge),
+        "🔴 다시 열어 센 줄": sum(1 for _ in gzip.open(_final, "rt", encoding="utf-8")),
     }
-    (ROOT / "runners/out941_steamrev.json").write_text(
-        json.dumps(res, ensure_ascii=False, indent=1))
+    # 🔴🔴 **960 수리 — 부분 주행의 집계는 별 파일로.**
+    # 5키 주행의 「요청 5 · 성공 5」가 전량 주행의 회계를 덮으면 그 수를 인용한 문서가
+    # 통째로 틀린다(959 의 수리 ⑤가 `out941_wikidaily.json` 을 실제로 그렇게 파괴했다).
+    _rep = ROOT / ("runners/out941_steamrev_part.json" if partial
+                   else "runners/out941_steamrev.json")
+    res["🔴 이 집계를 어디에 썼나"] = str(_rep.relative_to(ROOT))
+    _rep.write_text(json.dumps(res, ensure_ascii=False, indent=1))
     print(json.dumps(res, ensure_ascii=False, indent=1))
     return res
 
