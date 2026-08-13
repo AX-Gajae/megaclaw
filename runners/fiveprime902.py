@@ -505,12 +505,23 @@ def grepl_regress(base, head, tree=None) -> dict:
                 "통과": False}
     new, _m = _grep_l(needles, tree)
     old = _grep_l_old(needles, tree)
-    #: 🔴🔴 **949 (티처 #88 C3 --- #87 M4 의 재발)**: ① `seed_pad` 를 **넘긴다**
-    #:    ② 아래 `통과` 를 이 대조의 `통과` 와 **AND 로 엮는다**. 948 은 이 절만
-    #:    감싸기를 안 풀었고, 그래서 「조항 62 가 모른다」인데 절이 초록이었다.
+    #: 🔴🔴 **956 R3 --- 자를 바꿨다**(949·953·954·955 네 사이클 미상환 · 티처 #92 가
+    #:    「유일하게 참으로 구조적」이라 한 절). 옛 자는 **날 것 판독**과 **새 판독**을
+    #:    그대로 견줬는데, 두 판독은 **인코딩이 다르므로** `A−B` 가 **같은 파일의 두 이름**
+    #:    으로 가득 찬다 --- 조항 62 는 그럴 때 옳게도 **수를 안 낸다**. 그래서 이 절은
+    #:    **구조적으로 붉었다**. 러너 자신이 독스트링에 *「정규화 대조로 바꿔야 한다」* 고
+    #:    적어 두고 네 사이클을 안 했다.
+    #:    🔴 **고침**: 옛 판독을 `octal_unescape` 로 **같은 자리에 놓고** 견준다.
+    #:    그러면 조항 62 가 **수를 낼 수 있고**, 「가짜 이름이 0 인가」라는 실질 주장은
+    #:    아래 칸에 **그대로 따로** 남는다(정보를 안 잃는다).
+    old_norm = {ks.octal_unescape(x) for x in old}
     rep = gc.diff62_guarded("새 판독(`-z`+quotePath=false)", set(new),
-                            "946 판독(날 것)", set(old), probe=ks.octal_escape,
+                            "946 판독(날 것) --- 🔴 956 R3: `octal_unescape` 로 정규화했다",
+                            old_norm, probe=ks.octal_escape,
                             seed_pad=gc.CONTROL_SEED)
+    #: 🔴 옛 자를 **버리지 않는다** --- 정규화 전 대조도 같이 낸다(무엇이 바뀌었는지 보이게).
+    rep_raw = gc.diff62_guarded("새 판독", set(new), "946 판독(정규화 안 함)", set(old),
+                                probe=ks.octal_escape, seed_pad=gc.CONTROL_SEED)
 
     #: 🔴 **심은 키 --- `.py` 재분류가 실제로 일어나나**(티처 #86 C2 의 잠복 결함).
     fx = "lab/fixtures/한글이름_고정물.py"
@@ -525,7 +536,17 @@ def grepl_regress(base, head, tree=None) -> dict:
         "🔴 946 판독 중 `\"` 로 시작하는 가짜 이름": len([x for x in old if x.startswith('"')]),
         "🔴 새 판독 중 `\"` 로 시작하는 가짜 이름": len([x for x in new if x.startswith('"')]),
         "🔴 새 판독 중 비-ASCII 참 이름": len([x for x in new if not x.isascii()]),
-        "조항 62 대조": rep,
+        "🔴🔴 956 R3 --- 자를 바꿨다(정규화 대조)": {
+            "무엇": ("옛 자는 인코딩이 다른 두 판독을 그대로 견줬다 --- `A−B` 가 **같은 파일의 "
+                   "두 이름**으로 가득 차서 조항 62 가 옳게도 수를 안 냈다. **구조적으로 붉었다**"),
+            "고침": "옛 판독을 `lab.keyspace.octal_unescape` 로 정규화해 같은 자리에 놓는다",
+            "정규화 전 946 판독 수": len(old),
+            "정규화 후 946 판독 수": len(old_norm),
+            "🔴 정규화가 실제로 바꾼 이름 수": len(set(old) - old_norm),
+            "미상환 사이클": "949 · 953 · 954 · 955 --- 956 이 갚는다",
+        },
+        "조항 62 대조(🔴 정규화 대조 --- 956 R3)": rep,
+        "조항 62 대조(정규화 안 함 --- 옛 자 · 비교용)": rep_raw,
         "🔴 심은 키 --- `endswith('.py')` 재분류": {
             "심은 것": fx, "두 번째 인코딩": fx_esc,
             "새 판독은 `.py` 로 보나": fx.endswith(".py"),
@@ -541,10 +562,13 @@ def grepl_regress(base, head, tree=None) -> dict:
         "통과": (len([x for x in new if x.startswith('"')]) == 0) and rep["통과"],
         "⚠ 통과의 뜻": ("🔴 **둘의 AND** --- ① 새 판독 출력에 가짜 이름이 0 이고 "
                   "② 조항 62 대조가 「모른다」가 아니어야 한다. "
-                  "🔴 오늘 ② 는 **구조적으로 붉다**: 이 절은 두 판독을 일부러 견주므로 "
-                  "`A−B` 가 **두 이름**으로 가득하고, 조항 62 는 그럴 때 **수를 안 낸다**. "
-                  "**그것이 옳다** --- 그래도 ① 은 위 칸에 따로 있으니 정보는 안 잃는다. "
-                  "이 절을 초록으로 만들려면 **자를 바꿔야 한다**(정규화 대조). 949 는 안 했다"),
+                  "🔴🔴 **956 R3 로 ② 의 자를 바꿨다** --- 옛 자는 인코딩이 다른 두 판독을 "
+                  "그대로 견줘서 `A−B` 가 **같은 파일의 두 이름**으로 가득 찼고, 조항 62 는 "
+                  "그럴 때 **옳게도** 수를 안 냈다. 그래서 이 절은 **구조적으로 붉었다**"
+                  "(949·953·954·955 네 사이클). 이제 옛 판독을 `octal_unescape` 로 "
+                  "**같은 자리에 놓고** 견준다. 🔴 **정규화 안 한 대조도 같이 싣는다** --- "
+                  "자를 바꿔서 초록이 된 것이지 자료가 바뀐 것이 아니라는 사실을 "
+                  "다음 사람이 보게 하려고"),
     }
 
 
@@ -1171,9 +1195,19 @@ def d1_census() -> dict:
 #: **기계가 센다.** 사전등록(`docs/prereg_9NN_*.md` §8 표)이 예고한 수와 견준다.
 REPAIR_TAG = "[수리]"
 #: §8 표의 레인 줄: `| R1 | 무엇 | 파일 |`
-PREREG_ROW = re.compile(r"^\|\s*R(\d+)\s*\|", re.M)
+PREREG_ROW = re.compile(r"^\|\s*\*{0,2}R(\d+)\*{0,2}\s*\|", re.M)
 #: §8 의 머리(다른 절의 표를 세지 않게 §8 안으로만 자른다).
 PREREG_SEC = re.compile(r"^##\s*8\.", re.M)
+#: 🔴🔴 **956 R2** --- 개정된 `docs/루프.md` 레인 규칙 4 의 **상한**을 사전등록 §8 에서 읽는다.
+#:    「상한: N」 줄이 없으면 **「모른다」**다 --- **규칙 기본 1 을 조용히 넣지 않는다**(조항 59).
+PREREG_CAP = re.compile(r"^\s*[>*\-|\s]*상한\s*[:：]\s*(\d+)", re.M)
+#: 🔴 **저장소 밖 레인 신고** --- 955 가 인계 카드를 고쳤는데 계수기가 원리상 못 봤다(티처 #94 C4).
+PREREG_OUTSIDE = re.compile(r"저장소 밖 레인\s*[:：]\s*(\d+)", re.M)
+#: 🔴 계수기가 눈으로 보는 **저장소 밖** 파일(고치면 레인이다).
+OUTSIDE_FILES = [
+    os.path.expanduser(
+        "~/.claude/projects/-Users-ax-world-model/memory/project-lab-state.md"),
+]
 
 
 def prereg_expected(prereg: str, tree: str = "HEAD", known=None) -> dict:
@@ -1196,7 +1230,30 @@ def prereg_expected(prereg: str, tree: str = "HEAD", known=None) -> dict:
     ids = PREREG_ROW.findall(body)
     if not ids:
         return {"수": None, "🔴": "`## 8.` 안에서 `| R<n> |` 줄을 하나도 못 찾았다"}
+    # 🔴🔴 956 R2 --- 예고한 **파일**도 같이 읽는다(레인 줄의 마지막 칸).
+    #    「커밋 제목 문자열이 아니라 실제 바뀐 파일을 세라」(티처 #94 C4) 의 자다.
+    files = set()
+    for line in body.split("\n"):
+        if not PREREG_ROW.match(line):
+            continue
+        cells = [c.strip() for c in line.strip().strip("|").split("|")]
+        if len(cells) >= 3:
+            for tok in re.findall(r"`([^`]+)`", cells[-1]):
+                if "/" in tok or tok.startswith("."):
+                    files.add(tok)
+    cap = PREREG_CAP.search(body)
+    outside = PREREG_OUTSIDE.search(body)
     return {"수": len(ids), "레인 번호": ["R%s" % i for i in ids],
+            "🔴 예고한 파일": sorted(files) or "없음",
+            "🔴 상한(사전등록 §8 의 「상한: N」 줄)":
+                int(cap.group(1)) if cap else None,
+            "🔴 상한을 못 읽었을 때": ("🔴 모른다 --- §8 에 「상한: N」 줄이 없다. "
+                            "**규칙 기본 1 을 조용히 넣지 않는다**(조항 59). "
+                            "`docs/루프.md` 레인 규칙 4 는 「지시가 시킨 건수」를 상한으로 "
+                            "삼으라 하고, 그 수는 사람이 §8 에 적어야 기계가 읽는다"
+                            if not cap else "읽었다"),
+            "🔴 저장소 밖 레인 신고(§8 의 「저장소 밖 레인: N」 줄)":
+                int(outside.group(1)) if outside else None,
             "출처": "%s §8 표(`| R<n> |` 줄)" % prereg, "트리": tree}
 
 
@@ -1248,14 +1305,63 @@ def repair_lanes(base, head, expected=None, prereg=None, mainref="main",
     for _h, s in subs:
         t = s.split("]")[0] + "]" if s.startswith("[") and "]" in s else "(표지 없음)"
         tags[t] = tags.get(t, 0) + 1
+
+    # 🔴🔴 **956 R2 (티처 #94 C4)** --- 「커밋 제목 문자열」이 아니라 **실제 바뀐 파일**을 센다.
+    #    ① 표지 없는 `[수리]` 커밋도 **파일로는 세어진다** ② 예고한 파일과 실제 바꾼 파일을
+    #    대조한다 ③ 데몬 커밋(`[데몬]`·`[수집]`)이 만진 자료 경로는 레인이 아니므로 뺀다.
+    def _files_of(sha):
+        rc2, o2, _e2 = _git(["-c", "core.quotePath=false", "diff-tree", "--no-commit-id",
+                             "--name-only", "-r", "-z", sha])
+        return {p for p in o2.split("\0") if p.strip()} if rc2 == 0 else set()
+
+    DATA_PREFIX = ("data/ingest/", "data/state/")
+    repair_files, per_commit_files = set(), []
+    for h, s in repairs:
+        fs = _files_of(h)
+        per_commit_files.append({"sha": h[:9], "제목": s,
+                                 "🔴 바꾼 파일": sorted(fs) or "없음",
+                                 "바꾼 파일 수": len(fs)})
+        repair_files |= {f for f in fs if not f.startswith(DATA_PREFIX)}
+
     src = "--expected-repairs"
     pre = prereg_expected(prereg, tree) if expected is None else None
     exp = expected if expected is not None else (pre or {}).get("수")
     if expected is None:
         src = (pre or {}).get("출처") or "🔴 못 읽었다"
     n = len(repairs)
+
+    # 🔴 956 R2 --- 상한 · 예고 파일 · 저장소 밖 레인
+    cap = (pre or {}).get("🔴 상한(사전등록 §8 의 「상한: N」 줄)")
+    want_files = set((pre or {}).get("🔴 예고한 파일") or [])
+    if want_files == {"없음"}:
+        want_files = set()
+    outside_declared = (pre or {}).get("🔴 저장소 밖 레인 신고(§8 의 「저장소 밖 레인: N」 줄)")
+    # 🔴 저장소 밖 파일이 이 가지의 첫 커밋 뒤에 바뀌었나(955 가 인계 카드를 고쳤다 · 티처 #94 C4)
+    rc_t, t_out, _ = _git(["log", "--format=%ct", "-1", rng])
+    base_epoch = int(t_out.strip()) if rc_t == 0 and t_out.strip() else None
+    outside_touched = []
+    for p in OUTSIDE_FILES:
+        try:
+            mt = os.path.getmtime(p)
+        except OSError:
+            outside_touched.append({"파일": p, "🔴": "못 읽었다(「안 바뀌었다」가 아니다)"})
+            continue
+        if base_epoch is not None and mt > base_epoch:
+            try:
+                sha = hashlib.sha256(open(p, "rb").read()).hexdigest()
+            except OSError:
+                sha = "🔴 못 읽었다"
+            outside_touched.append({
+                "파일": p, "mtime(UTC)": dt.datetime.utcfromtimestamp(mt).strftime(
+                    "%Y-%m-%dT%H:%M:%SZ"),
+                # 🔴 다음 사이클이 **내용**으로 견줄 수 있게 sha 를 남긴다.
+                #    mtime 만으로는 「내가 안 고쳤다」와 「안 바뀌었다」를 못 가른다.
+                "sha256(다음 사이클의 대조 기준)": sha,
+                "🔴 이 가지가 갈라진 뒤에 바뀌었다": True})
+    outside_unreported = (len(outside_touched) > 0 and not outside_declared)
+
     return {
-        "검사": "8 🔴 `[수리]` 레인 계수 --- 기계가 센다(955 R6 · 티처 #93 C4·㉤)",
+        "검사": "8 🔴 `[수리]` 레인 계수 --- 기계가 센다(955 R6 · 🔴 956 R2 로 자를 바꿨다)",
         "🔴 왜": ("954 는 원장·노트·카드 **셋 다**에 「수리 레인 하나를 썼다」고 적고 실제로 "
                "`[수리]` 커밋을 **셋** 했다. 말로 적으면 또 어긋난다"),
         # 🔴 규약 60 --- 명령 · 범위 · 트리 셋
@@ -1289,11 +1395,50 @@ def repair_lanes(base, head, expected=None, prereg=None, mainref="main",
         "🔴 센 레인 − 예고 레인": (len(lanes) - exp) if exp is not None else "🔴 모른다",
         "🔴 센 커밋 − 예고 레인(참고 --- 954 가 어긴 자리)":
             (n - exp) if exp is not None else "🔴 모른다",
-        "통과": (exp is not None) and (len(lanes) == exp) and not untagged,
-        "🔴 통과의 뜻": ("**`R<n>` 표지로 센 레인 수 == 사전등록 §8 이 예고한 레인 수**이고 "
-                   "**표지 없는 `[수리]` 커밋이 0** 이다. 🔴 커밋 수가 아니라 **레인 수**로 "
-                   "판정한다 --- 한 커밋이 레인 둘을 나를 수 있다(`R7·R8`). "
-                   "예고 수를 모르면 **통과가 아니다** --- 「모른다」는 「0」이 아니다"),
+
+        # ── 🔴🔴 956 R2 --- 실제 바뀐 파일 · 규칙 상한 · 저장소 밖 ──────────────
+        "🔴🔴 956 R2 ㉠ 실제 바뀐 파일로 센다(커밋 제목 문자열이 아니다)": {
+            "커밋별": per_commit_files or "없음",
+            "🔴 `[수리]` 가 바꾼 파일 전량(자료 경로 제외)": sorted(repair_files) or "없음",
+            "🔴 파일 수": len(repair_files),
+            "🔴 예고한 파일": sorted(want_files) or "🔴 못 읽었다",
+            "🔴 예고했는데 안 바꾼 파일": sorted(want_files - repair_files) or "없음",
+            "🔴 예고 안 했는데 바꾼 파일": sorted(repair_files - want_files) or "없음",
+            "⚠ 뺀 것": "`data/ingest/` · `data/state/`(상시 데몬 감시 구역 --- 레인이 아니다)",
+            "통과": bool(want_files and not (want_files - repair_files)
+                       and not (repair_files - want_files)),
+        },
+        "🔴🔴 956 R2 ㉡ 규칙 상한(`docs/루프.md` 레인 규칙 4 · v3.10)": {
+            "🔴 상한": cap if cap is not None else
+                     "🔴 모른다 --- 사전등록 §8 에 「상한: N」 줄이 없다(**0 도 1 도 아니다**)",
+            "🔴 왜 기본값을 안 넣나": ("954·955 의 통과 조건이 `센 레인 == 자기 예고` 라 "
+                              "**규칙이 아니라 자기 예고를 자로 삼았다**(티처 #94 C4). "
+                              "여기서 규칙 기본 1 을 조용히 넣으면 같은 병의 다른 얼굴이 된다 --- "
+                              "**사람이 §8 에 근거와 함께 적어야 기계가 읽는다**"),
+            "센 레인 수": len(lanes),
+            "🔴 상한 안인가": (None if cap is None else bool(len(lanes) <= cap)),
+            "통과": bool(cap is not None and len(lanes) <= cap),
+        },
+        "🔴🔴 956 R2 ㉢ 저장소 밖 레인(955 가 인계 카드를 고쳤고 계수기가 원리상 못 봤다)": {
+            "본 파일": OUTSIDE_FILES,
+            "🔴 이 가지가 갈라진 뒤 바뀐 것": outside_touched or "없음",
+            "🔴 §8 이 신고한 저장소 밖 레인 수": (outside_declared if outside_declared is not None
+                                    else "🔴 신고 없음"),
+            "🔴 미신고 저장소 밖 수리": outside_unreported,
+            "⚠ 자의 한계": ("mtime 만 본다 --- **무엇이 바뀌었는지는 안 본다**. "
+                       "git 밖이라 내용 대조를 할 자가 없다(조항 61)"),
+            "통과": bool(not outside_unreported),
+        },
+
+        "통과": bool((exp is not None) and (len(lanes) == exp) and not untagged
+                   and cap is not None and len(lanes) <= cap
+                   and not outside_unreported),
+        "🔴 통과의 뜻": ("🔴 **956 R2 로 자를 바꿨다.** 넷을 전부 만족해야 통과다 --- "
+                   "① `R<n>` 레인 수 == 사전등록 §8 예고 · ② 표지 없는 `[수리]` 커밋 0 · "
+                   "🔴 ③ **개정된 규칙(`docs/루프.md` 레인 규칙 4 · v3.10)의 상한 안** "
+                   "(상한을 못 읽으면 **불통과** --- 「모른다」는 「통과」가 아니다) · "
+                   "🔴 ④ **저장소 밖 수리가 있으면 §8 이 신고했을 것**. "
+                   "954·955 는 ①만 봤고 그래서 **자기 예고가 곧 자였다**"),
     }
 
 
