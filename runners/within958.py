@@ -39,6 +39,7 @@ sys.path.insert(0, str(ROOT))
 np.seterr(all="ignore")
 
 import runners.layers957 as L                                   # noqa: E402
+from lab.adopt import adopt                                     # noqa: E402
 
 FROZEN = ROOT / "data/frozen/957_inputs"
 OUT = ROOT / "runners/out958_within.json"
@@ -361,6 +362,21 @@ def main() -> dict:
                           and cp["🔴 관측이 상위 5% 밖인가"]),
         "🔴 자를 바꿔 초록이 됐나": bool(cp["🔴 관측이 상위 5% 밖인가"]
                               and not b957["㉢ 순열 상위 5% 밖"]),
+        # ── 🔴🔴 961 R3 — `lab.adopt.adopt` 배선 ───────────────────────────
+        # 959 가 경고했다: *「`within958.py` 를 `lab.adopt.adopt` 에 배선하라 —
+        # 안 하면 `채택=true` 가 머지로 되살아난다」*. 🔴 **그 경고대로 됐다**:
+        # #216 이 머지되며 위의 `채택(㉠㉡㉢) = true` 가 main 에 올라왔다.
+        # 이 파일은 **㉰ 도메인 지시자를 이미 재 놓고도**(위 §6 ㉰) 그 값을
+        # 채택 판정에 안 먹였다 — ㉣(더 싼 대체물)이 원리상 안 걸렸다.
+        # 🔴 961 의 `adopt()` 는 3값이라 「못 가른다」가 「통과」로 안 샌다(조항 59).
+        "🔴🔴 채택(㉠㉡㉢㉣) — lab.adopt.adopt": adopt(
+            sum_pass=bool(b957["㉠ Δρ > T"]),
+            sub_sign_pass=bool(b957["㉡ 부 표적에서 부호가 안 뒤집힌다"]),
+            perm_pass=bool(cp["🔴 관측이 상위 5% 밖인가"]),
+            alt_delta=d2a["Δρ"], alt_T=d2a["T"],
+            layer_on_alt_delta=d2b["Δρ"], layer_on_alt_T=d2b["T"]),
+        "🔴 위 「채택(㉠㉡㉢)」은 ㉣ 을 안 본 옛 값이다": (
+            "인용하지 마라 — 정본은 바로 위 `채택(㉠㉡㉢㉣)` 이다(조항 62: 부르는 쪽이 답을 키로 낸다)"),
     }
 
     # ── §7 곁들이 · 표본 크기 실험 (= 957 의 수) ────────────────────────────
