@@ -167,6 +167,56 @@ def w0_const_check(pc: dict, code: dict) -> dict:
             "어긋난 것": bad, "표": rows, "통과": not bad}
 
 
+RULERS_NEED = ("㉠ 통과", "㉡ 통과(관측을 실제로 읽었다)", "㉢ 통과(관측을 실제로 읽었다)",
+               "🔴 ㉡ ⊂ ㉠ (관측 기준)", "🔴 ㉢ ⊂ ㉠ (관측 기준)",
+               "🔴 독립된 자의 수(관측 기준)")
+RULERS_T3 = ("참", "거짓", "모른다")
+RULERS_3VAL_KEYS = ("🔴 ㉡ ⊂ ㉠ (관측 기준)", "🔴 ㉢ ⊂ ㉠ (관측 기준)")
+
+
+def w10_check(rt: dict, recall) -> dict:
+    """🔴🔴 **964 수리 (티처 #102 M3)** — W10 은 `키 in 딕트` 였다.
+
+    961 판::
+
+        W["🔴 W10 자 사이 포함관계"] = {**rt, "통과": bool("🔴🔴 ㉢ ⊂ ㉠ (㉠ 통과 ⟹ ㉢ 통과)" in rt)}
+
+    🔴 **`key in dict` 는 자가 아니다.** 그 리터럴은 **961 시대의 키 이름**이고,
+    961 가지에서는 `rulers()` 가 그 이름을 냈으므로 **어떤 입력에서도 True**(항진명제)였다.
+    🔴 그리고 **963 이 #219 와 #220 을 흡수하면서 `rulers()` 를 962 관측판으로 갈았고**,
+    새 판은 그 키를 안 낸다 — 그래서 **머지 뒤에는 어떤 입력에서도 False** 가 됐다.
+    **둘 다 자료를 한 번도 안 읽는다.** 티처 #102 가 무작위 2,000회 전수로 확인했다.
+
+    **964 가 무엇으로 바꿨나 — 셋을 실제로 견준다.**
+
+      ① **스키마**   : `rulers()` 가 내야 할 키 여섯이 다 있나(리터럴 하나가 아니다)
+      ② **배선**     : 산출물에 실은 값이 `rulers()` 를 **다시 불러** 얻은 값과 키별로 같나
+      ③ **값 영역**  : 3값 키가 정말 참/거짓/모른다 셋 중 하나인가
+
+    🔴 셋 중 하나라도 깨지면 떨어진다 — **키 이름을 갈아도, 값을 바꿔치기해도, 3값 밖의
+    값을 실어도 빨개진다.** `recall` 은 「`rulers()` 를 같은 인자로 다시 부르는 함수」다.
+    """
+    missing = [k for k in RULERS_NEED if k not in rt]
+    again = recall()
+    _S = "🔴 이 키가 없다"
+    diff = [k for k in again if rt.get(k, _S) != again[k]]
+    bad3 = [k for k in RULERS_3VAL_KEYS if k in rt and rt[k] not in RULERS_T3]
+    return {
+        "🔴 무엇": ("① 스키마(키 여섯) · ② 배선(`rulers()` 를 다시 불러 키별 대조) · "
+                 "③ 3값 영역 — 셋을 **실제로 견준다**. 🔴 `키 in 딕트` 가 아니다"),
+        "① 분모: 있어야 할 키": len(RULERS_NEED),
+        "① 분자: 실제로 있는 키": len(RULERS_NEED) - len(missing),
+        "① 🔴 빠진 키": missing or "없음",
+        "② 분모: 다시 부른 판의 키": len(again),
+        "② 분자: 값이 같은 키": len(again) - len(diff),
+        "② 🔴 값이 다른 키": diff or "없음",
+        "③ 🔴 3값 밖의 값을 실은 키": bad3 or "없음",
+        "🔴 무엇이면 떨어지나": ("키를 하나 지우거나 이름을 갈면 ① 이 · 값을 바꿔치기하면 ② 가 · "
+                        "3값 밖의 값을 실으면 ③ 이 떨어진다. **셋 다 자료를 실제로 읽는다**"),
+        "통과": bool(not missing and not diff and not bad3),
+    }
+
+
 def w0_call_audit(calls: list, want: int, want_key: str) -> dict:
     """🔴 **W0-나 — 상수가 아니라 「실제로 몇 번 요청했나」를 본다**(티처 #99 C6)."""
     reqs = sorted({c["요청"] for c in calls})
@@ -546,7 +596,12 @@ def main(part: str | None = None) -> dict:
         "통과": bool(all(carried.get(k) == v for k, v in adopt(
             alt_delta=ra_full - r1, alt_T=alt_T_e, layer_on_alt_delta=d_full,
             layer_on_alt_T=on_T_e, **three).items()))}
-    W["🔴 W10 자 사이 포함관계"] = {**rt, "통과": bool("🔴🔴 ㉢ ⊂ ㉠ (㉠ 통과 ⟹ ㉢ 통과)" in rt)}
+    # 🔴🔴 964 수리 (티처 #102 M3) — 옛 판은 `bool("<961 시대 키 리터럴>" in rt)` 였다:
+    #   961 가지에선 항진명제(항상 True) · 963 머지 뒤엔 항상 False. **둘 다 자료를 안 읽는다.**
+    W["🔴 W10 자 사이 포함관계"] = {**rt, **w10_check(rt, lambda: rulers(
+        sum_delta=drho, sum_T=T_e3, sub_delta=s13 - s1, sub_T=T_of(bsub["SE"]),
+        perm_obs=perm["🔴 관측 Δρ(씨앗 0)"], perm_p95=perm["상위 5% 지점"],
+        card_T=L.CARD_T))}
     W["W7 부트 회계"] = {
         "분자: 회계가 맞는 호출": sum(1 for c in BOOT_CALLS if c["요청"] == BOOT),
         "분모: 부트 호출": len(BOOT_CALLS),
