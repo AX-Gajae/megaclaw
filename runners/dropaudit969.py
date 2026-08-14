@@ -687,6 +687,52 @@ def prop(data, ids, F, tag, draws=DRAWS) -> dict:
     }
 
 
+def compare(pc: dict, pd: dict) -> dict:
+    """🔴🔴 **§E · P7** --- 통제를 되살리면 개별 ρ 가 얼마나 움직이나.
+
+    🔴 **두 이름을 둘 다 낸다**(긴 띠 = 사전등록이 정한 주 이름 · 들뜸 = 병기).
+    `|Δρ| 최대` 는 **둘 중 큰 쪽**이다 --- 그 수 하나만 인용하면 주 이름의 수가
+    가려진다(조항 60 · 어느 이름의 수인지 반드시 같이 적어라).
+    """
+    per, alive = {}, []
+    for d in sorted(pc["도메인별"]):
+        a = pc["도메인별"][d]
+        b = pd["도메인별"].get(d)
+        if not b:
+            continue
+        ca, cb = list(a["🔴 쓴 통제"]), list(b["🔴 쓴 통제"])
+        gl = round(b["🔴 긴 띠 ρ"] - a["🔴 긴 띠 ρ"], 6)
+        ge = round(b["🔴 들뜸 ρ"] - a["🔴 들뜸 ρ"], 6)
+        liv = bool(set(cb) - set(ca))
+        per[d] = {
+            "n(현행/비움)": [a["n"], b["n"]],
+            "🔴 통제(현행)": ca,
+            "🔴 통제(비움)": cb,
+            "🔴 통제가 살아났나": liv,
+            "긴 띠 ρ(현행 → 비움)": [a["🔴 긴 띠 ρ"], b["🔴 긴 띠 ρ"]],
+            "🔴 긴 띠 Δρ": gl,
+            "들뜸 ρ(현행 → 비움)": [a["🔴 들뜸 ρ"], b["🔴 들뜸 ρ"]],
+            "🔴 들뜸 Δρ": ge,
+            "🔴 |Δρ| 최대": round(max(abs(gl), abs(ge)), 6),
+        }
+        if liv:
+            alive.append(d)
+    mx = max([per[d]["🔴 |Δρ| 최대"] for d in alive], default=0.0)
+    return {
+        "도메인별": per,
+        "🔴🔴 Holm 통과 수 전후": {
+            "긴 띠": {"현행": pc["🔴 통과 수(긴 띠)"], "비움": pd["🔴 통과 수(긴 띠)"],
+                    "🔴 변했나": bool(pc["🔴 통과 수(긴 띠)"] != pd["🔴 통과 수(긴 띠)"])},
+            "들뜸": {"현행": pc["🔴 통과 수(들뜸)"], "비움": pd["🔴 통과 수(들뜸)"],
+                   "🔴 변했나": bool(pc["🔴 통과 수(들뜸)"] != pd["🔴 통과 수(들뜸)"])}},
+        "🔴 통제가 살아난 도메인": alive,
+        "🔴 그 수": len(alive),
+        "🔴 그 도메인들의 |Δρ| 최대": mx,
+        "🔴 P7 예측(내 것)": "통제가 살아난 도메인에서 |Δρ| > 0.01",
+        "🔴 P7 판정": "맞다" if mx > 0.01 else "🔴 틀리다",
+    }
+
+
 # ── §W 배선 검사 --- 🔴 입력은 전부 `probes`(인자)에서 온다 ──────────
 def probe_pack() -> dict:
     """🔴 티처 #107 의 진단(「뿌리가 0 --- 자유 이름이 전부 모듈 전역」)에 대한 공학적 답.
@@ -937,7 +983,10 @@ def main():
                 R["🔴🔴 §H 사료 --- WIKI_DROP 은 왜 있나(F1)"] = history()
             elif a.stage == "prop":
                 R["🔴 §C 명제 --- 현행(WIKI_DROP 그대로)"] = prop(don, ids, F, "현행", a.draws)
-                R["🔴🔴 §D 명제 --- WIKI_DROP 비움"] = prop(doff, ids, F, "WIKI_DROP=() · TREND_DROP=()", a.draws)
+                pc = R["🔴 §C 명제 --- 현행(WIKI_DROP 그대로)"]
+                pd = R["🔴🔴 §D 명제 --- WIKI_DROP 비움"] = prop(
+                    doff, ids, F, "WIKI_DROP=() · TREND_DROP=()", a.draws)
+                R["🔴🔴 §E 전후 대조(P7)"] = compare(pc, pd)
             elif a.stage == "game":
                 R["🔴 §G 게임 --- 현행"] = game_close(don, ids, F, a.draws)
                 R["🔴🔴 §G2 게임 --- DROP 비움"] = game_close(doff, ids, F, a.draws)
