@@ -164,36 +164,51 @@ def ran_vs_blob(ref: str) -> dict:
 
 
 # ── §P 0.5 채움 전수 ─────────────────────────────────────────────────
-FILL_PAT = re.compile(r"(np\.full\s*\([^)]*?,\s*\.?5\b|np\.full\s*\([^)]*?,\s*0\.5\b|"
-                      r"np\.where\s*\([^\n]*?,\s*0\.5\s*\)|np\.where\s*\([^\n]*?,\s*\.5\s*\))")
+#: 🔴 **좁은 자** --- 채움 호출(`np.full`/`np.where`/`np.full_like`/`nan_to_num`)에
+#: 0.5 리터럴이 인자로 붙은 줄. 🔴 **첫 판이 `[^)]*?` 라 `np.full(len(A), 0.5)` 의
+#: 중첩 괄호를 못 넘었고, 배선 W1 이 그것을 잡았다**(지우지 않고 신고한다).
+FILL_CALL = re.compile(r"np\.(?:full|where|full_like|nan_to_num)\s*\(")
+#: 🔴 **넓은 자** --- 주석 아닌 줄의 홀로 선 `0.5`/`.5` 리터럴 전부(문턱·곱셈 포함).
+NUM05 = re.compile(r"(?<![\w.])(?:0\.5|\.5)(?![\w.])")
 
 
-def fill05_static(text: str) -> list:
-    """🔴 **주어진 소스 문자열**에서 0.5 **채움** 자리를 찾는다(인자에서만 온다)."""
+def fill05_static(text: str, mode: str = "narrow") -> list:
+    """🔴 **주어진 소스 문자열**에서 0.5 자리를 찾는다(인자에서만 온다).
+
+    `narrow` = 채움 호출 + 0.5 리터럴 · `broad` = 0.5 리터럴 전부.
+    🔴 **이 자는 한 줄만 본다** --- 여러 줄로 쪼갠 호출은 못 본다(알려진 한계).
+    """
     out = []
     for i, ln in enumerate(text.splitlines()):
         s = ln.strip()
-        if s.startswith("#"):
+        if s.startswith("#") or not NUM05.search(ln):
             continue
-        if FILL_PAT.search(ln):
-            out.append({"줄": i + 1, "원문": s})
+        if mode == "narrow" and not FILL_CALL.search(ln):
+            continue
+        out.append({"줄": i + 1, "원문": s[:200]})
     return out
 
 
 def census_static() -> dict:
     """🔴 `lab/` **전량**을 훑는다. 969 는 세 파일만 하드코딩 grep 했다(티처 #108 M4)."""
-    per, tot = {}, 0
-    for p in sorted(glob.glob(str(ROOT / "lab/*.py"))):
-        t = Path(p).read_text(encoding="utf-8")
-        hits = fill05_static(t)
-        if hits:
-            per[str(Path(p).relative_to(ROOT))] = hits
-            tot += len(hits)
-    return {"파일별": per, "🔴 파일 수": len(per), "🔴 자리 수": tot,
-            "🔴 969 가 훑은 파일": ["lab/wikiaxes.py", "lab/harness.py", "lab/forms.py"],
-            "🔴 969 가 안 훑은 파일 중 자리가 있는 것":
-                sorted(k for k in per if k not in
-                       ("lab/wikiaxes.py", "lab/harness.py", "lab/forms.py"))}
+    SEEN = ("lab/wikiaxes.py", "lab/harness.py", "lab/forms.py")
+    out = {}
+    for mode, tag in (("narrow", "좁은 자(채움 호출 + 0.5)"), ("broad", "넓은 자(0.5 리터럴 전부)")):
+        per, tot = {}, 0
+        for p in sorted(glob.glob(str(ROOT / "lab/*.py"))):
+            t = Path(p).read_text(encoding="utf-8")
+            hits = fill05_static(t, mode)
+            if hits:
+                per[str(Path(p).relative_to(ROOT))] = hits
+                tot += len(hits)
+        out[tag] = {"파일별": per, "🔴 파일 수": len(per), "🔴 자리 수": tot,
+                    "🔴 969 가 안 훑은 파일 중 자리가 있는 것":
+                        sorted(k for k in per if k not in SEEN)}
+    out["🔴 969 가 훑은 파일"] = list(SEEN)
+    out["🔴 알려진 한계"] = (
+        "이 자는 **한 줄**만 본다. 여러 줄로 쪼갠 호출과 `v[~ok] = 0.5` 꼴의 "
+        "**직접 대입 채움**은 좁은 자가 못 잡는다 --- 넓은 자가 그것까지 센다")
+    return out
 
 
 class Sentinel:
@@ -390,14 +405,19 @@ def wiring(P) -> dict:
     """🔴 **자유 이름 0** --- 전부 `P` 에서 온다(조항 66-④ · 968 R1 이 잡은 병)."""
     W = {}
 
-    n_yes = len(fill05_static(P["0.5 있는 소스"]))
-    n_no = len(fill05_static(P["0.5 없는 소스"]))
-    n_cm = len(fill05_static(P["주석뿐인 소스"]))
+    n_yes = len(fill05_static(P["0.5 있는 소스"], "narrow"))
+    n_no = len(fill05_static(P["0.5 없는 소스"], "narrow"))
+    n_cm = len(fill05_static(P["주석뿐인 소스"], "narrow"))
+    b_yes = len(fill05_static(P["0.5 있는 소스"], "broad"))
+    b_no = len(fill05_static(P["0.5 없는 소스"], "broad"))
     W["W1 0.5 채움 탐지기"] = {
-        "🔴 분자/분모": {"있는 소스에서 찾은 줄": n_yes, "없는 소스": n_no, "주석뿐": n_cm},
+        "🔴 분자/분모(좁은 자)": {"있는 소스": n_yes, "없는 소스": n_no, "주석뿐": n_cm},
+        "🔴 분자/분모(넓은 자)": {"있는 소스": b_yes, "없는 소스": b_no},
         "🔴 어떤 입력이면 떨어지나":
-            "`np.full(...,0.0)` 이나 `A*0.5` 를 **채움으로 세면** 없는 소스가 0 이 아니게 된다",
-        "통과": bool(n_yes == 2 and n_no == 0 and n_cm == 0),
+            ("`np.full(len(A), 0.5)` 는 **중첩 괄호**가 있다 --- `[^)]*?` 로 짠 자는 "
+             "여기서 1 을 내고 떨어진다(첫 판이 실제로 그랬고 이 자리가 잡았다). "
+             "`A * 0.5` 를 채움으로 세면 넓은 자와 좁은 자가 같은 수를 내며 떨어진다"),
+        "통과": bool(n_yes == 2 and n_no == 0 and n_cm == 0 and b_yes == 2 and b_no == 1),
     }
 
     s_eq, s_ne = P["sha 짝(같다)"], P["sha 짝(다르다)"]
@@ -465,12 +485,16 @@ def main():
             doff = build(drop_wiki=False, drop_trend=False)
             stat = census_static()
             live = dict(sorted(sen.hits.items()))
-            allstat = sorted("%s:%d" % (f, h["줄"])
-                             for f, hs in stat["파일별"].items() for h in hs)
+            nar = stat["좁은 자(채움 호출 + 0.5)"]["파일별"]
+            allstat = sorted("%s:%d" % (f, h["줄"]) for f, hs in nar.items() for h in hs)
             R["🔴🔴 §P 0.5 채움 --- 정적 전수(lab 전량)"] = stat
             R["🔴🔴 §P2 0.5 채움 --- 챔피언 판에서 **실제로 돈 줄**"] = {
                 "🔴 파수병": ("`np.full`/`np.where` 를 감싸 채움값이 0.5 일 때 **호출한 줄**을 "
                           "센다. 자료 짓기 + 챔피언 한 주행(씨앗 0)을 덮는다"),
+                "🔴 이 자가 못 보는 것(알려진 한계 · 조항 63)": (
+                    "① `v[~ok] = 0.5` 꼴의 **직접 대입 채움** ② `np.full_like`·"
+                    "`nan_to_num(nan=0.5)` ③ 씨앗 0 한 주행이 안 지나는 가지. "
+                    "🔴 **「안 돈 줄」 목록은 「원리상 안 돈다」가 아니라 「이 주행에서 안 돌았다」다**"),
                 "🔴 돈 줄": live,
                 "🔴 분자/분모": "%d / %d" % (len(live), len(allstat)),
                 "🔴 정적으로는 있는데 **안 돈 줄**": [x for x in allstat if x not in live],
