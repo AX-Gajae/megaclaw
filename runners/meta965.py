@@ -406,7 +406,15 @@ def backward_slice(func, target_expr):
         #: 🔴 **티처 #106 은 「모른다」의 원인을 「생성기가 numpy·`Data` 를 못 만들어서」라
         #: 했는데, 968 이 `--genver 2` 로 그 생성기를 실제로 달았을 때 「모른다」는
         #: 8/9 그대로였다. 원인은 생성기가 아니라 이 슬라이서 결함이었다.**
-        need -= (asg - mutated - rhs)
+        #: 🔴🔴 **R3-나 (노트 969 · 티처 #107 2순위-③)** — **구판을 지우지 않고 남긴다.**
+        #:   「자기 자를 자기가 고치는」 자리에서는 **구판·신판을 같은 대상에 걸어 전후를
+        #:   반드시 실어야 한다.** 968 은 R1 으로 §4 F1 「모른다」를 66.7% → 44.4% 로
+        #:   옮겨 **절반선을 넘겼는데 한 번도 안 쟀다.** `--slicer old` 로 옛 판을 되살린다.
+        #:   🔴 **기본값은 `new`(R1 적용)** --- 옛 산출물의 뜻이 조용히 갈리면 안 된다.
+        if globals().get("SLICER", "new") == "old":
+            need -= (asg - mutated)          # 🔴 968 이전 판(결함 있음 · 대조용)
+        else:
+            need -= (asg - mutated - rhs)    # 🔴 R1
     keep.reverse()
     return keep, sorted(need), None
 
@@ -1290,6 +1298,32 @@ def main():
     R["끝(UTC)"] = dt.datetime.now(dt.timezone.utc).isoformat()
     R["코드 sha256"] = hashlib.sha256(self_src.encode("utf-8")).hexdigest()
 
+    # ── 🔴🔴 R3 (노트 969 · 티처 #107 2순위-①) ─────────────────────────────
+    #   **자가 「자기가 잰 소스의 sha」를 산출물에 박는다.**
+    #   왜: 968 의 산출물은 `genver: 2` 라 적혀 있는데 그 수는 genver 1 이 낸다. 원인은
+    #   **그 실행이 판 주행 도중이라 러너가 중간판**이었던 것인데, 산출물에 「잰 대상의
+    #   sha」가 없어서 **원리상 사후에 가릴 수 없었다.** 이제 박는다 —
+    #   커밋된 blob sha 와 대조하면 「커밋본에서 재현되나」가 **한 줄로** 판정된다.
+    def _sha_rel(rel):
+        p = ROOT / rel
+        if not p.is_file():
+            return None
+        return hashlib.sha256(p.read_bytes()).hexdigest()   # 🔴 자르지 않는다
+
+    R["🔴🔴 잰 소스 sha256 (R3 · 969)"] = {
+        "🔴 자기 자신": {"runners/meta965.py": R["코드 sha256"]},
+        "🔴 분모 ① 등록 러너": {rel: _sha_rel(rel) for rel in REGISTERED},
+        "🔴 분모 ② 등록 산출물": {rel: _sha_rel(rel) for rel in REGISTERED_OUT},
+        "🔴 「내 것」(§4 F1)": {rel: _sha_rel(rel) for rel in MINE},
+        "🔴 합친 sha256": hashlib.sha256(json.dumps(
+            {rel: _sha_rel(rel) for rel in sorted(set(REGISTERED) | set(MINE))},
+            sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest(),
+        "🔴 뜻": ("이 산출물의 수는 **위 sha 를 가진 바이트**에서 나왔다. "
+                "`git hash-object` 가 아니라 **파일 내용의 sha256** 이다 --- "
+                "`git show <ref>:<path> | shasum -a 256` 으로 대조하라. "
+                "🔴 하나라도 커밋본과 다르면 **그 수는 커밋된 소스에서 재현 안 된다**"),
+    }
+
     secs = collections.OrderedDict(
         (k, v) for k, v in R.items() if isinstance(v, dict) and "통과" in v)
     R["🔴 절 회계"] = {
@@ -1314,8 +1348,13 @@ if __name__ == "__main__":
     #: 🔴 **노트 968** — 생성기 판. 1 = 965 그대로(기본) · 2 = numpy 배열 · 판 `Data` 추가.
     ap.add_argument("--genver", type=int, default=1, choices=[1, 2],
                     help="자 B 생성기 판(1 = 965 그대로 · 2 = numpy·Data 추가)")
+    #: 🔴 **노트 969** — 슬라이서 판. `new` = R1 적용(기본) · `old` = 968 이전(결함 판).
+    #: 🔴 **자를 고치면 구판·신판을 같은 대상에 걸어 전후를 싣기 위한 것이다.**
+    ap.add_argument("--slicer", default="new", choices=["new", "old"],
+                    help="역슬라이서 판(new = R1 적용 · old = 968 이전 결함 판 · 대조용)")
     a = ap.parse_args()
     globals()["GENVER"] = a.genver
+    globals()["SLICER"] = a.slicer
     if a.only:
         REGISTERED[:] = [s.strip() for s in a.only.split(",") if s.strip()]
     if a.mine:
@@ -1326,5 +1365,10 @@ if __name__ == "__main__":
         "뜻": ("1 = 965·966·967 과 비트로 같다 · 2 = numpy 배열 · 판 `Data` "
               "생성기가 붙는다(노트 968 · 티처 #106 2순위)"),
         "🔴 기본값을 안 바꿨다": bool(GENVER == a.genver and ap.get_default("genver") == 1)}
+    res["🔴🔴 역슬라이서 판(969)"] = {
+        "slicer": a.slicer,
+        "뜻": ("new = R1 적용(968 이 고친 것) · old = 968 이전 결함 판. "
+              "🔴 **같은 대상에 둘 다 걸어 전후를 실어야 한다** --- 968 은 안 했다"),
+        "🔴 기본값을 안 바꿨다": bool(ap.get_default("slicer") == "new")}
     Path(a.out).write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
     print("wrote", a.out)
