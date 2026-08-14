@@ -1,5 +1,5 @@
 {
- "🔴 낸 때(UTC)": "2026-08-14T02:20:21Z",
+ "🔴 낸 때(UTC)": "2026-08-14T03:22:21Z",
  "🔴 사전등록": "docs/prereg_969_dropped.md",
  "🔴 대상": "runners/colaudit968.py (968 의 러너 · 커밋본)",
  "판별 표": [
@@ -100,7 +100,7 @@
   "genver": 2,
   "slicer": "new",
   "🔴 잰 소스 sha256": {
-   "runners/dropaudit969.py": "cc4244b177fee681b579fea73ced55c5f4c010deaebb6ed6a666b959b774ccf1"
+   "runners/dropaudit969.py": "fc1153edded5dd11a2384b0b57a189607d4523664528c1faa2e0c35704243f67"
   },
   "§1 분모": 7,
   "🔴 §1 모른다": 2,
@@ -109,14 +109,14 @@
   "§1 떨어진다": 4,
   "🔴 상수 False 자리 수": 2,
   "🔴 상수 False 자리": [
-   "runners/dropaudit969.py:779",
-   "runners/dropaudit969.py:795"
+   "runners/dropaudit969.py:796",
+   "runners/dropaudit969.py:812"
   ],
   "§4 F1 분모": 7,
   "🔴 §4 F1 모른다": 0,
   "🔴 §4 F1 모른다 %": 0.0,
   "🔴 §4 F1 상수인 자리": [
-   "runners/dropaudit969.py:893"
+   "runners/dropaudit969.py:910"
   ],
   "🔴 절반을 넘었나(루프.md:994)": false
  },
@@ -188,7 +188,7 @@
   "🔴🔴 그러나 자가 나를 물었다": {
    "§1 항진명제": 1,
    "🔴 §4 F1 상수인 자리": [
-    "runners/dropaudit969.py:893"
+    "runners/dropaudit969.py:910"
    ],
    "🔴 무엇인가": "`runners/dropaudit969.py:893` --- 배선 **W6(저장소 무변)** 의 통과식이다. `before == after` 는 **같은 순수함수를 같은 인자로 두 번 부른 것**이고 그 사이에 아무 일도 안 일어난다 --- **조항 64 가 금지한 꼴 그대로다.** 🔴 **자가 옳다.** 진짜 대조는 §Z(주행 시작/끝 `code_stamp`)가 하고 있고 W6 은 그것의 **미니어처라서 항진명제**다. 지우지 않고 신고한다"
   }
