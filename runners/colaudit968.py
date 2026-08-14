@@ -954,11 +954,66 @@ def board_drop_dead(data) -> dict:
             "초": {"기준선": round(t1 - t0, 1), "처리": round(t2 - t1, 1)}}
 
 
+def board_arm_diag(data) -> dict:
+    """🔴🔴 **P9 의 팔이 무엇을 쟀는지 사후 진단한다** --- 판 주행 없이.
+
+    실측(주행 1): 배선이 죽은 301 칸을 빼니 판이 **0.470343 → 0.264062
+    (Δρ = −0.206281)** 로 무너졌다. 사전등록은 `|Δρ| < SE` 를 예측했다.
+    🔴 **그러나 이것은 「죽은 열이 정보를 나른다」가 아니다.**
+
+    `lab/forms.py:197` 의 `AXIS_MODE = "common"` 때문에 축 목록은
+    **전 도메인 이름의 교집합**이다. 도메인마다 **다른** 열을 빼면 교집합이 무너진다.
+    🔴 **내 팔은 「죽은 열을 뺐다」가 아니라 「축 목록을 무너뜨렸다」였다 --- 조항 62.**
+
+    그리고 **옳은 팔(전 도메인에서 같은 열을 뺀다)은 뺄 것이 0 개다** ---
+    12 도메인 전부에서 잰 행이 0 인 열 이름이 **하나도 없다.**
+    → **판에서 「죽은 열을 빼는」 실험은 이 판의 구조상 못 한다. 그것이 답이다.**
+    """
+    from lab import forms as FM
+    from lab.harness import Data
+    aud = audit_all_columns(data)
+    drop = {d: set(aud["도메인별"][d]["🔴 배선이 죽은 열"]) for d in aud["도메인별"]}
+    before = FM.axis_order(data)
+    names2 = {d: [n for n in (data.names.get(d) or []) if n not in drop.get(d, set())]
+              for d in data.dom}
+    d2 = Data(dom=dict(data.dom), names=names2)
+    after = FM.axis_order(d2)
+    allnames = set()
+    for d in data.dom:
+        allnames |= set(data.names.get(d) or [])
+    gone = sorted(n for n in allnames
+                  if all(n in drop.get(d, set()) or n not in (data.names.get(d) or [])
+                         for d in data.dom))
+    return {
+        "🔴 lab/forms.py 의 AXIS_MODE": FM.AXIS_MODE,
+        "🔴 뜻": ("`common` 이면 축 목록은 **전 도메인 이름의 교집합**이다. "
+               "도메인마다 다른 열을 빼면 교집합이 무너진다"),
+        "🔴 공통 축 수(원판)": len(before),
+        "🔴 공통 축 수(배선 죽은 열을 뺀 뒤)": len(after),
+        "공통 축(뺀 뒤)": after,
+        "🔴🔴 그래서 P9 의 팔은 무엇을 쟀나":
+            ("「죽은 열을 뺐을 때의 Δρ」가 **아니다.** 「공통 축이 36 에서 %d 로 "
+             "줄었을 때의 Δρ」다. 사전등록이 선언한 것과 코드가 잰 것이 다르다 --- "
+             "**조항 62. 내가 나에게서 잡았다**" % len(after)),
+        "🔴🔴 옳은 팔은 뺄 것이 0 개다": {
+            "12 도메인 전부에서 잰 행이 0 인 열 이름": gone,
+            "그 수": len(gone),
+            "🔴 뜻": ("모든 열은 **적어도 한 도메인에서는 살아 있다.** "
+                   "그러므로 「전 도메인에서 같은 죽은 열을 뺀다」는 팔은 "
+                   "**아무것도 안 빼는 팔**이고, 그것을 돌리는 것은 항진명제다(조항 64). "
+                   "🔴 **판에서 「죽은 열을 빼는」 실험은 이 판의 구조상 못 한다.**")},
+        "🔴 P9 판정": ("**틀렸다 --- 그리고 못 잰다.** 예측은 `|Δρ| < SE` 였고 실측은 "
+                   "Δρ = −0.206281 이지만, 그 수는 죽은 열의 값이 아니라 "
+                   "**축 목록 붕괴의 값**이다. 이 물음은 이 판에서 원리상 못 묻는다"),
+    }
+
+
 # ── 본선 ──────────────────────────────────────────────────────────────
 def main() -> dict:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", required=True)
-    ap.add_argument("--stage", default="prop", choices=["wiring", "prop", "board"])
+    ap.add_argument("--stage", default="prop",
+                    choices=["wiring", "prop", "board", "boarddiag"])
     ap.add_argument("--draws", type=int, default=DRAWS)
     a = ap.parse_args()
     outp = Path(a.out).resolve()
@@ -998,6 +1053,8 @@ def main() -> dict:
         R["§G NaN 회계(M6 · 조항 60)"] = nan_ledger(data, ids, F)
     if a.stage == "board":
         R["🔴 §H 판(P9)"] = board_drop_dead(data)
+    if a.stage == "boarddiag":
+        R["🔴🔴 §H2 P9 의 팔이 무엇을 쟀나(사후 진단)"] = board_arm_diag(data)
 
     # 🔴 F6 --- 끝에서 sha 를 **다시 떠** 시작 값과 대조한다(티처 #106 M7)
     end_src, end_code = src_stamp(), code_stamp()
