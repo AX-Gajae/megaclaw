@@ -388,6 +388,16 @@ def audit_cells(don, doff) -> dict:
                               key=lambda z: -z["🔴 살아나는 행"]),
         "🔴🔴 버린 실측 행 합": int(sum(r[3] for r in b_drop)),
         "🔴 P3 예측(티처 #107)": {"잰 행 0 인 칸": 301, "버린 칸": 21, "버린 행": 3279},
+        "🔴🔴 티처 #107 의 21 · 3,279 와 다른 이유(조항 60)": (
+            "🔴 **잰 행 0 인 칸 301 은 재현된다.** 그러나 「버린 칸」은 **18** 이고 「버린 "
+            "행」은 **2,052** 다. 21 = **가짓수 1 인 도메인 7 × 축 3** 인데, 그 7 에는 "
+            "**영화**(`WA._ids()` 에 없다)와 **펀딩**(`wikiaxes.py:189` 의 `<20` 게이트)이 "
+            "들어 있고 **그 둘은 `WIKI_DROP` 이 버린 게 아니다** --- 비워도 실측이 **0** "
+            "이다. 🔴 **티처가 「가짓수 1 인 칸」과 「버린 칸」을 이어 붙였다.** 그리고 "
+            "티처의 표는 **네 도메인**인데 실제 위키 버린 도메인은 **다섯**이다 --- "
+            "**팝업(47 행 · 47 가지)이 빠져 있다.** 게다가 `TREND_DROP` 이 버린 **팝업 "
+            "trend 3 칸(74 행 · 64 가지)** 은 티처가 아예 안 셌다. 18 = 위키 5 도메인 × 3 "
+            "+ 검색 1 도메인 × 3 · 2,052 = (403+83+74+52+47+25) × 3"),
     }
 
 
@@ -525,24 +535,68 @@ def forms989() -> dict:
 
 
 def history() -> dict:
-    """🔴🔴 **F1** --- `WIKI_DROP` 이 왜 있는지 사료로 확인한다. **지우기 전에 한다.**"""
+    """🔴🔴 **F1** --- `WIKI_DROP` 이 왜 있는지 **사료로** 확인한다. **지우기 전에 한다.**
+
+    🔴 `main` 의 이력은 GitHub 이관 스냅샷 **한 커밋**이라 `-S` 가 그 하나밖에 못
+    짚는다. 진짜 이력은 `archive/pre-github` 에 있다 --- **두 ref 를 다 훑는다.**
+    사료는 넷이다: ① 커밋 ② 원장의 「…잘라내기」 항목 ③ 노트 350 의 사전등록
+    (`data/lab/preregister_bigcut.json`) ④ `lab/loop.py` 의 주석.
+    """
     def _git(*a):
         r = subprocess.run(["git", "-C", str(ROOT), "-c", "core.quotePath=false"] + list(a),
                            capture_output=True)
         return r.stdout.decode("utf-8", "replace")
-    out = {}
+
+    out = {"🔴 주의": ("`main` 의 이력은 **GitHub 이관 스냅샷 하나**로 뭉개져 있다"
+                    "(`56c7d335e` · 노트 1~837 전체가 한 커밋). 🔴 **진짜 이력은 "
+                    "`archive/pre-github` 가지에 있다** --- 거기서 다시 셌다")}
     for name in ("WIKI_DROP", "TREND_DROP"):
-        log = _git("log", "-S", name, "--oneline", "--date=iso", "--", "lab/loop.py")
-        lines = [x for x in log.splitlines() if x.strip()]
-        out[name] = {"도입/변경 커밋 수": len(lines), "커밋": lines[-8:]}
-        if lines:
-            first = lines[-1].split()[0]
-            out[name]["🔴 최초 커밋 전문"] = _git("show", "--stat",
-                                            "--format=%H%n%ci%n%s%n%n%b", first)[:3000]
-    # 원장이 진짜 사료다
+        rec, full = {}, {}
+        for ref in ("HEAD", "archive/pre-github"):
+            log = _git("log", ref, "-S", name, "--oneline", "--", "lab/loop.py")
+            lines = [x for x in log.splitlines() if x.strip()]
+            rec[ref] = {"커밋 수": len(lines), "커밋": lines[-8:]}
+        for ln in rec["archive/pre-github"]["커밋"]:
+            sha = ln.split()[0]
+            full[sha] = _git("show", "-s", "--format=%H%n%ci%n%s%n%n%b", sha)[:3000]
+        rec["🔴🔴 도입 커밋 전문"] = full
+        out[name] = rec
+
+    # 원장이 진짜 사료다 --- 「…잘라내기」 항목 전량
     led = json.loads((ROOT / "data/lab/denominator.json").read_text(encoding="utf-8"))
-    keys = [k for k in led if ("위키" in k and "잘라" in k) or "검색" in k or "달력" in k]
-    out["🔴🔴 원장 항목(사료)"] = {k: led[k] for k in keys[:6]}
+    out["🔴🔴 원장 항목(사료)"] = {k: led[k] for k in led if "잘라내기" in k}
+
+    # 노트 350 의 사전등록 --- 「미리 적는 실패」까지 있다
+    bc = ROOT / "data/lab/preregister_bigcut.json"
+    if bc.is_file():
+        out["🔴🔴 노트 350 의 사전등록(사료)"] = json.loads(bc.read_text(encoding="utf-8"))
+
+    out["🔴🔴🔴 F1 판정 --- WIKI_DROP 은 왜 있나"] = {
+        "도입": ("노트 350(`d30bdd039` · 2026-08-01) --- 웹툰·팝업·애니·시장팝업 넷. "
+               "도서는 노트 351(`8b780606d`)"),
+        "🔴 근거로 든 것": ("**판 ρ 가 올랐다** --- 0.4859 → 0.4931 · Δ +0.0033 · "
+                      "**12 씨앗 중 10 에서 이겼다**"),
+        "🔴 누출 방지인가": "**아니다.** 사전등록·원장·커밋 어디에도 누출·오염 얘기가 없다",
+        "🔴 표본 부족인가": "**아니다.** 표본 게이트는 `wikiaxes.py:189` 의 `<20` 이고 그것과 별개다",
+        "🔴🔴 무엇인가": ("**절제(ablation)에 의한 축 선택이다.** 노트 342 의 「지도」가 그 "
+                    "도메인들에서 위키 축이 **진다**고 적었고, 크게 빼니 판이 올랐다"),
+        "✅ 판에서는 옳았나": ("**옳았다.** 사전등록(`preregister_bigcut.json`)이 있고, 12 씨앗 "
+                        "대조가 있고, 원장에 실렸고, 「미리 적는 실패」까지 적혀 있다. "
+                        "**이 저장소 관례로는 모범적인 결정이다**"),
+        "🔴🔴 그런데 명제 측정에서도 옳은가": (
+            "**아니다. 두 가지 이유로.** ① **목적이 다르다** --- 판은 「이 열이 예측을 돕나」를 "
+            "묻고 버렸다. 통제는 「이 열이 교란인가」를 묻는다. **예측을 안 돕는 열도 교란일 수 "
+            "있다.** 다른 물음의 답을 자로 물려썼다. ② 🔴🔴 **그 설정은 결과(y)를 보고 정해졌다** "
+            "--- 판 ρ 는 **유보 정답으로 채점한 수**다. 그러므로 「어느 도메인에 통제가 살아 "
+            "있나」가 **결과와 상관된 양으로 선택됐다.** 966·967·968 이 막으려던 바로 그 종류의 "
+            "오염이 **통제 집합의 구성**에 들어 있다"),
+        "🔴🔴 966~968 의 「통제」 주장이 무너지는 방식": (
+            "966·967 은 열 도메인 전부에 「통제: wiki_level, recent_term」이라 적었다. "
+            "실제로는 **다섯 도메인에서 wiki_level 이 값 0.5 · 마스크 0 인 채움값**이고, "
+            "968 은 그것을 「모른다 --- 안 쟀다」로 라벨했다. 🔴 **셋 다 틀렸다. 옳은 라벨은 "
+            "「쟀고, 판이 결과를 보고 일부러 버렸다」다.** 966 의 「애니에는 수준이 없다」도 "
+            "틀렸다 --- 애니의 수준은 **403 행 · 372 가지**가 있다"),
+    }
     return out
 
 
