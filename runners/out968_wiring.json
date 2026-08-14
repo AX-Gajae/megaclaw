@@ -1,0 +1,228 @@
+{
+ "노트": 968,
+ "레인": "판정",
+ "사전등록": "docs/prereg_968_deadcontrols.md",
+ "물음": "판과 967 의 규격이 「통제」라고 부른 열이 실제로 통제인가",
+ "단계": "wiring",
+ "🔴 공적 귀속": "방향과 P1~P7 의 예측값은 **티처 #106 이 준 것**이다. 내 것은 P8(자 기계화)·P9(판에서 죽은 열 빼기)와 「마스크/값 가짓수를 가른 정의」뿐이다",
+ "🔴 시작 --- 코드 sha256(자르지 않았다)": {
+  "lab/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "lab/adopt.py": "9f7c8437e2b91ce78aa5b083124363ff5ebb45be995bb807b7af8751e239d7c6",
+  "lab/animeaxes.py": "b0bab9d0515ca2442c18e14eefe806768a6dd327062a3dffaf6f110717d45e85",
+  "lab/autotag.py": "7d85366cecb68b1f97bb622c80eba58abf26da974b5192fd84341fad6e9f48a2",
+  "lab/board.py": "c15688838efc678e64da81781ebf4e72b9984e432dc29bd2b5949d6f1861baa2",
+  "lab/calaxes.py": "8378cdc6c25ad26bbe82a8bc02b93da46618eaf0cd0b5b11d614275b66c403f8",
+  "lab/calib.py": "1b3564037eca6acd65d3316a0ee16418dd90b13fbf25946653768a8f84bc3685",
+  "lab/challenger.py": "3fd75bb834f6e111cf097d2aa0906adcd6ccc30e52f6993257b2e453c405d9b1",
+  "lab/creatoraxes.py": "d5265a75c87af5684a72dfb9393151f59e02849dcecf7b002a0d6089a90192b8",
+  "lab/crowdaxes.py": "ce46f4b9f41c80ff8aa80c2e2183250673abb451f32abad6008ec3f25bb7670d",
+  "lab/curveshape.py": "3f5e196e3893f2ca0295ea338403705c55dd10aa33e33ed6e5b457f89f2024ef",
+  "lab/datehygiene.py": "af7790f31a053dc88e94758946e1a53e937b584c279f8e2009e884ffea992e3e",
+  "lab/decay.py": "fa165390fc823e9f22ad140b1f991f4308200a1dc15e02340b5ebacbd055edcf",
+  "lab/entkey.py": "749fbbae4083d368a78dcd7135d4b15dfe66a25dd2ebe6d7761bb1f8ae192ff2",
+  "lab/eracheck.py": "f713e5bf1d06067bcbc08594cd25ef9d667caf326798711e6b4b7e0e4f81fac2",
+  "lab/fewshot.py": "aab7aae2cc40ca3dacdbd06861b77aeea0922eee5e214a0362e992746d3fcc35",
+  "lab/fixaxes.py": "90f4023e578e8f8ed2dd5c80c68aa60b2e7144697d74aa4003ac8381c5535941",
+  "lab/forms.py": "5cfa890460eab48bc8511c231d2043efce68c298ccd5360825a9c2dcff506fd1",
+  "lab/fundaxes.py": "25e9df5e523b1a0c3a39c9a73d98e25d94017dfc631c0dcfe22d5e992c60c324",
+  "lab/gamedate.py": "ac968cb6be5e11d81a9def38b707171b19949a180c7a42d502c366b6cc1fd825",
+  "lab/gamesearch.py": "30aab480d650cc3d78a1f3b8402278825a18d8e70a85389d57d1a1d66b1233de",
+  "lab/gamew30.py": "4cb2a3a489e96971207683dfe223492af3cf118b211251f4842c5939049d404f",
+  "lab/genaxes.py": "1e24ad423d7f7fec11a44d6be9060c26107412f8d0f4568af7b2403d56fa8d38",
+  "lab/gitcall.py": "b79caadcf6425943f22f6a88a08971f2262227d761d61b1d0c6c614019230ac4",
+  "lab/grpaxes.py": "a261daa9a4b973278005a1577574d69d088f7b62968496c7071197ad87c07e3d",
+  "lab/guards.py": "536289b788577d65ec1d61b566c77fbc003d3d7153704a2146c22f135c4c5411",
+  "lab/harness.py": "0383271fa2f4ba0730e6084193a03a209c644e83379484415567f37323eec1fc",
+  "lab/hearing.py": "3e3779c2f57658d14771c71a8fbcb67f119b3eaaec3ed2f14b329d5ed192b7da",
+  "lab/idolset.py": "25373c860bbef524107e43a7d8d37602b7d048de04d288f99af53b30deccdd10",
+  "lab/ipjoin.py": "f3bad3742b74e00edcaebb3429b970c18dc501b3f17a2fb11b94a9b89159d6d6",
+  "lab/joint.py": "3eed95eac235f80d25b840603439326fc2e4662d37e9d0db726f4b95a2e39fbb",
+  "lab/keyspace.py": "e63c86da248e5255f73442405b27693ee0a11cdcff2dd37d4debcbef0a362657",
+  "lab/langaxes.py": "696eb72b5e43d1ad42075b3e8de44176a4e23fc18f3613c2cb9cc52046dd7732",
+  "lab/lever.py": "4c84849ed241e3663090d23887f62707b0d9f82765a60c393277024ed25378a3",
+  "lab/listaudit.py": "5ab436fdab96409e6b6745c239351dceb1fae2045eb6071c7884a7d0ad9ecaae",
+  "lab/loop.py": "2a99f705f0b6846a1388d78bfa253de75cbe694ecf73838a4c44e40bb2b83507",
+  "lab/marker.py": "2c08667896640ad65c812486b91c29177d7720b7a03363ca4afb323b51c7d97e",
+  "lab/mixture908.py": "bae8687d3c2a36c57fc8e0e4096b08d7280c8d0aeee5c3d38a6562f274ed1c1f",
+  "lab/mktaxes.py": "125a2ca89646c000ab30ba2779b3ba071b2a63b4c275b27c12caed45b701f849",
+  "lab/mktmore.py": "6e1b68e0e187e69ae469ed7ecb2f807852e0b0dfdb4e8a8e9ed3ee3edfd06fbc",
+  "lab/natsaxes.py": "0b64a6078ef2273f8c0181c0101936567e149f35fe36e7db99599d1b2b152bd9",
+  "lab/ordering.py": "cd1e5cb61063137cc2ac07f41a963b63ee717a3a312558d13b0dcc123aa34a4c",
+  "lab/overlap.py": "df6235ef04603b22204f7e2acbd3a0330c3de5de9f322499e7b81b6de1fadc59",
+  "lab/pairboot.py": "8e1e7b2fb00c3bd763e9d6b9b78b1fc11cc60b23defd821c0ebad37e781ea8cc",
+  "lab/pairs.py": "532ce5dc41ea2fa40e2370eb0c901422d1d5eda447dee46218c475300c97cc14",
+  "lab/poolshadow.py": "f4260cd30d96b66a5300941e4ec822c407758fe801bc300c0b8ca6fa583b6fbd",
+  "lab/popaxes.py": "17bcd94ed31065b379653f8f681dd0e129afa73ff2c878eed2c3651cb478f11f",
+  "lab/popupset.py": "3a896e344d86f5e7e30639bd16bc3c3c6ab95d40960c37181a37c8a9c349c7a6",
+  "lab/provenance.py": "b8b9ad9b1e4e9c3d6e89fdff44bee85c13f416472569aadedb932f157c7cee92",
+  "lab/rank.py": "e8c7ef0166e5589558d04eef2cc5aa2bb7a30e36f92c9b6a589752fbedfdc54b",
+  "lab/rawaxes.py": "7cbfb2d6088e02e132829ead1314ad9c95a14f4aef51bcd6c2675bed374a9ae2",
+  "lab/recaxes.py": "7de9ba5b315e395aaa2d8f2011530e88c4515b434b599e6ed0ad92cb9ce59fa9",
+  "lab/recency.py": "b0e7ca755b73d319c53dccd04b378588986a36b82f2aa0473d31dbe93ff096e4",
+  "lab/router.py": "610437bcc818ad4f7240d91752145e9c684ffeb8c4e6f509da6ddf6a04b179e3",
+  "lab/scrambled.py": "07763c61c8c5237545632b25d0ac22623e486c88bcd72c7ab491a456c2db36be",
+  "lab/semtoken908.py": "5a5e50904423337a09b1fbfff650549b9ac7ba12ca64eb192bf58650cff15382",
+  "lab/seqaxes.py": "d35a73c83e6fb7022f01e4ae2d094b7b548fc875a47e5c8fd64d44fd575c8f79",
+  "lab/server.py": "949c224f912487ec9b5ccb1ab9f8088faadeaf057f1c81113559627cc4dc230c",
+  "lab/sideaudit.py": "58c5cd63bb596707051f6cd9cc7f4817a5f3854f0a088655742028bb028e3aa8",
+  "lab/store.py": "e820bad3e794f397fe1f8af6a958b04fa4d13373329eb286918e30acfd31bffc",
+  "lab/tagaxes.py": "249285db668dd7a82e279ba946d1ecf68fb28a56a849d969f4fff37798b6e68e",
+  "lab/textaxes.py": "63ecea2dc29ea72781d8a5845083ee3390c2578fdcfd1a4beb422b9e91010477",
+  "lab/textnn.py": "e7d7ecfe01e325e6fb33fd0fca4dff44cef31235b89c791f5bcd423a08f20cad",
+  "lab/titlekey.py": "85c5d2f9883acfc43c1091b98f36db3555b21d5838458838bd891af3cf5a4258",
+  "lab/trendaxes.py": "42a77feb7eb288bc56d943306e16a5d53382e1a31c3b09f1d3219a362834b8a5",
+  "lab/tune.py": "142e1ed6720f535fe0cf655a41b77a925d0ef1d333cff1f5d565993b613600f8",
+  "lab/visitoraxes.py": "38ae6403666d8510c73b35ebe4e0441cef7b86deacc0c987b35d52f6ab17566e",
+  "lab/weatheraxes.py": "88dc8a48feacb3c417585081f79ad7b7cc414049c7cd554e63c67c935eac0995",
+  "lab/wikiaxes.py": "7b010ddfc1fcc98b06e2fa9697c7a3a6b674341ab87514f9221229c9ad70322b",
+  "lab/wikicat.py": "c3c477ed8bae9f4b99a567a1bdabaaba10acd0ae100fa5e4ade590fdf22371fb",
+  "runners/colaudit968.py": "318f4c33145ef349ff7aeecc9c03fd783508397e3e08b16c93e3bda6c1c623a0",
+  "runners/ff753.py": "744a1273b197b597531962af7717fdd370ae285eace1eac6f0671bc9b732f842",
+  "runners/meta965.py": "d52b9ec3c9b7351749d8bd57ec441b7099c25233a54b5ff3c924090676bc3501",
+  "runners/narrow967.py": "7fc6cb00890aa27ff1f56f35ac68826f7a5fce314178cde36070e97da22ef7f0"
+ },
+ "🔴 시작 --- 원천 sha256": {
+  "wiki_daily/게임.jsonl.gz": "d3b2edf11c8eeb65d0969355e5b95ae4fabbe31016e3fab676f6c18a7e6f6eb4",
+  "wiki_daily/도서.jsonl.gz": "d686e8f199452adc23e82ceb41f7b483b14d6a2cf370335cee8cad66f062254b",
+  "wiki_daily/만화.jsonl.gz": "cd937e0acaee94308f6a52225624f04a90ddd44f2f96810d81a05ea6236c31c6",
+  "wiki_daily/모바일.jsonl.gz": "cad0a2a0f97213816d013c4ffa0aae61133457230559aa4f54ff3bf7b2e3d6fa",
+  "wiki_daily/세계애니.jsonl.gz": "49b750acf168823270c26a05b31cb1b98bb9f34b30427b0a206b4fe1847ab843",
+  "wiki_daily/시장팝업.jsonl.gz": "dbc2ea96d5ae3d967b72fe328517ea96accf54b1cb53d2fa0cbad7063afa5a9d",
+  "wiki_daily/아이돌.jsonl.gz": "26691c8422b64f1d34b42c612787c621b3143511223909e30b1f50df3e1331a0",
+  "wiki_daily/애니.jsonl.gz": "bf42ac60f9310e625f447776be14c7758ad486c14c4dc5edfdfe6eb27cf704f2",
+  "wiki_daily/웹툰.jsonl.gz": "6ed87429d96fabf6283dcd3f76911e6d87c3f485d3f2948bcfebf1bb1414fea4",
+  "wiki_daily/팝업.jsonl.gz": "d2647c9bfcb562aa0f6aca950d800b2b9481ed67d68e2795aa3de40a66b816f4",
+  "wiki_daily/펀딩.jsonl.gz": "9449c2ae4f320e0338143aedfd92cc5108e8a0d87f6cae7a8c4dbeb370cfe7f4",
+  "wiki_daily959/게임.jsonl.gz": "f6adc455cac56e8fcb557d62157fb71f24093a4276c6816a86bd99ec4617b0a8",
+  "wiki_daily959/도서.jsonl.gz": "a0d9e9c3df41700fb499d1f3d48f8fa956f23412a5127689351a209d66ab1e9f",
+  "wiki_daily959/만화.jsonl.gz": "68025ae9c377b3c103789321bbcb5528946e64ebe89d1d31f9ee06f67409f297",
+  "wiki_daily959/모바일.jsonl.gz": "0b867d51be717714fc654fc270ac0c1b9f81fae5c2e47760b74b6f0a53c47fda",
+  "wiki_daily959/세계애니.jsonl.gz": "e43948654f423956c25c7b03926845cd71e930b0abaaecde0ccce4ebc4138bfc",
+  "wiki_daily959/시장팝업.jsonl.gz": "7c37572a1cf66360570e5cc8653ef7d9cadd04bd601f5e2218093f5018450a79",
+  "wiki_daily959/아이돌.jsonl.gz": "7f3ae9455db15fd472b31c4ffe6dc48a594e6082566e07ce11dcd9be60dea60f",
+  "wiki_daily959/애니.jsonl.gz": "24a03f4ee728c13f0703ac43bfc327c5e1f5440488b61df39b7fd83539fa1f28",
+  "wiki_daily959/웹툰.jsonl.gz": "07b4aa36326259deb3e3338d604ebaf2c4c97734b3a0648a4dab036d7ced6f3c",
+  "wiki_daily959/팝업.jsonl.gz": "e270d5428df0272f985bf6ca08e4e6ca209a3c53444624da4c52ed5da47c6ce8",
+  "wiki_daily959/펀딩.jsonl.gz": "58b724852ad8dffdf43997e50a555d26f8285ae11a7188fed4a36ef6df6a815c"
+ },
+ "🔴 시작 시각(UTC)": "2026-08-14T00:55:01Z",
+ "§0 자료": {
+  "원천 개체": 3899,
+  "유효 개체": 3562,
+  "무효 사유": {
+   "긴 띠가 원천 개시일 밖": 337
+  },
+  "규격 D 행(두 띠 모두 실자료)": 2271
+ },
+ "§0 판": {
+  "도메인": 12,
+  "유보 합": 3775,
+  "통과": true
+ },
+ "§W 배선": {
+  "W1 가짓수 자": {
+   "🔴 입력별 값": {
+    "실제(세계애니 wiki_level)": 1214,
+    "빈 배열": 0,
+    "상수 열(0.5 × 100)": 1,
+    "전부 NaN(100)": 0,
+    "난수 100": 100,
+    "두 값만(0.5 · 0.7)": 2
+   },
+   "🔴 어떤 입력이면 떨어지나": "상수 열 · 전부 NaN · 빈 배열 --- 가짓수 ≤ 1. **`probes[\"열\"]` 을 갈면 값이 변한다**",
+   "🔴 분자(입력별)": {
+    "실제(세계애니 wiki_level)": 1214,
+    "빈 배열": 0,
+    "상수 열(0.5 × 100)": 1,
+    "전부 NaN(100)": 0,
+    "난수 100": 100,
+    "두 값만(0.5 · 0.7)": 2
+   },
+   "통과": true
+  },
+  "W2 게이트": {
+   "🔴 입력별 값": {
+    "마스크 상수 · 값 상수 · 잰 행 100": "🔴 죽은 열(마스크도 값도 상수)",
+    "마스크 변함 · 값 상수 · 잰 행 100": "값은 상수 · 마스크가 변한다(있다/없다가 정보다 --- 죽은 열이 아니다)",
+    "마스크 상수 · 값 셋 · 잰 행 100": "산다",
+    "🔴 잰 행 0": "🔴 모른다(잰 행이 0 --- 상수가 아니다 · 조항 59)"
+   },
+   "🔴 어떤 입력이면 떨어지나": "「마스크 변함 · 값 상수」와 「잰 행 0」에서 **죽은 열이 아니다**로 갈린다",
+   "🔴 분자(입력별)": {
+    "사례 수": 4
+   },
+   "통과": true
+  },
+  "W3 두 자": {
+   "🔴 입력별 값": {
+    "상수 열 --- 966 자": 0.5418,
+    "상수 열 --- 동률평균": 0.0,
+    "난수 열 --- 966 자": 0.0789,
+    "난수 열 --- 동률평균": 0.0789,
+    "🔴 빈 입력(길이 2 상수) --- 동률평균": 0.0,
+    "곁: 쓴 열의 가짓수": 1
+   },
+   "🔴 어떤 입력이면 떨어지나": "**상수 열**에서 966 자는 0 에서 멀고 동률평균은 정확히 0 --- 그 차가 이 검사다. `probes[\"상수 열\"]` 을 난수로 갈면 두 자가 같아져 **떨어진다**",
+   "🔴 분자(입력별)": {
+    "상수 열에서 두 자의 차": 0.5418225455636391
+   },
+   "통과": true
+  },
+  "W4 상수 통제는 배선이 죽는다": {
+   "🔴 입력별 값": {
+    "상수+난수 통제": 0.066957,
+    "난수 통제만": 0.066957,
+    "🔴 다른 난수+난수 통제(음성 대조)": 0.062574,
+    "쓴 행": 200
+   },
+   "🔴 어떤 입력이면 떨어지나": "통제 하나를 **난수**로 바꾸면 값이 변한다(음성 대조). **상수**로 바꾸면 안 변한다",
+   "🔴 분자(입력별)": {
+    "|상수+난수 − 난수만|": 1.3877787807814457e-17,
+    "|다른난수+난수 − 난수만|": 0.004383626835060647
+   },
+   "🔴 엄한 자 --- 정확히 같은가(a == b)": false,
+   "🔴 무른 자 --- 기계 오차 이내인가(|a−b| < 1e-12)": true,
+   "🔴🔴 정직 신고": "**이 자리를 측정 뒤에 고쳤다.** 처음 판은 `a == b`(정확히 같음)를 요구했고 **떨어졌다** --- `|a−b| = 1.39e-17`. 967 과 티처 #106 은 `lstsq` 를 써서 **정확히 0** 을 봤는데, 나는 `pinv` 사영을 써서 **1e-17 이 남는다**. 🔴 **「Δ = 0.000000 · 바이트 동일」은 구현에 딸린 성질이다.** 실질은 안 바뀐다(1e-17 은 어떤 눈금에서도 뜻이 없다). 그래서 통과 자를 기계 오차로 무르고 **엄한 자의 결과를 같이 싣는다** --- 지우지 않는다",
+   "통과": true
+  },
+  "W5 판 전량 감사": {
+   "🔴 입력별 값": {
+    "실제 판 --- 죽은 칸 수": 0,
+    "실제 판 --- 배선이 죽은 칸 수": 301,
+    "실제 판 --- 칸 수": 436,
+    "🔴 빈 판(dom={}) --- 칸 수": 0,
+    "🔴 빈 판 --- 배선이 죽은 칸 수": 0
+   },
+   "🔴 어떤 입력이면 떨어지나": "빈 판(`dom={}`)을 먹이면 칸 수도 죽은 칸 수도 **0**. `probes[\"판\"]` 이 뿌리다",
+   "🔴 분자(입력별)": {
+    "실제": 301,
+    "빈 판": 0
+   },
+   "통과": true
+  },
+  "W6 원천 대조": {
+   "🔴 입력별 값": {
+    "같은 sha 둘": true,
+    "🔴 한 글자 심었을 때": false
+   },
+   "🔴 어떤 입력이면 떨어지나": "sha 하나만 바꿔도 대조가 **거짓**이 된다. `probes[\"원천 sha\"]` 가 뿌리다",
+   "🔴 분자(입력별)": {
+    "원천 파일 수": 22
+   },
+   "통과": true
+  },
+  "🔴 자리 수": 6,
+  "🔴 통과 수": 6
+ },
+ "🔴🔴 §Z 단계 사이 원천 대조(F6)": {
+  "원천 파일 수(시작)": 22,
+  "원천 파일 수(끝)": 22,
+  "🔴 원천이 그대로인가": true,
+  "🔴 달라진 원천": [],
+  "🔴 코드가 그대로인가": true,
+  "🔴 달라진 코드": [],
+  "🔴 왜": "966·967 은 도장을 **시작에만** 찍고 끝에서 대조하지 않았다. 967 의 측정 창 안에 데몬 쓰기와 967 자신의 수리 커밋이 둘 다 떨어졌고 **어느 자도 안 물었다**(티처 #106 M7)"
+ },
+ "초": 9.9,
+ "🔴 끝 시각(UTC)": "2026-08-14T00:55:11Z"
+}

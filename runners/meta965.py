@@ -392,8 +392,21 @@ def backward_slice(func, target_expr):
         if asg & mutated:            # 🔴 속이 바뀌는 그릇 → 뿌리로 승격
             continue
         keep.append(st)
-        need |= {n for n in free_names(st.value) if n not in BUILTIN_NAMES} if st.value else set()
-        need -= (asg - mutated)
+        rhs = ({n for n in free_names(st.value) if n not in BUILTIN_NAMES}
+               if st.value else set())
+        need |= rhs
+        #: 🔴🔴 **R1 (노트 968)** — **자기참조 대입이 슬라이스를 끊고 있었다.**
+        #: `P = P if isinstance(P, dict) else {}` 같은 문장에서 옛 판은 `need` 에
+        #: `P` 를 넣었다가 `need -= (asg - mutated)` 로 **바로 다시 뺐다.** 그러면
+        #: 그 앞의 `P = probes.get(...)` 이 `asg & need` 에 안 걸려 **체인이 끊기고**
+        #: 뿌리가 0 이 된다 → 자 B 가 「뿌리가 0 — 자 A 가 볼 자리다」로 흘린다.
+        #: 🔴 게다가 끊긴 슬라이스는 `P` 를 **정의 없이 읽는** 함수를 만든다(NameError).
+        #: 실측(968): 이 한 줄로 `colaudit968.py` 의 자리 셋(`769`·`790`·`889`)이
+        #: 「뿌리가 0 — 안 쟀다」에서 **실제로 슬라이스가 도는 자리**로 바뀌었다.
+        #: 🔴 **티처 #106 은 「모른다」의 원인을 「생성기가 numpy·`Data` 를 못 만들어서」라
+        #: 했는데, 968 이 `--genver 2` 로 그 생성기를 실제로 달았을 때 「모른다」는
+        #: 8/9 그대로였다. 원인은 생성기가 아니라 이 슬라이서 결함이었다.**
+        need -= (asg - mutated - rhs)
     keep.reverse()
     return keep, sorted(need), None
 
@@ -441,8 +454,80 @@ def harvest_strings(tree):
     return out[:600]
 
 
+#: 🔴🔴 **노트 968 신설 — 생성기 판.** 기본은 **1**(965·966·967 과 비트로 같다).
+#: `--genver 2` 를 주면 **numpy 배열과 판 `Data` 객체 생성기**가 붙는다.
+#: 왜: 966 은 자기 `통과` 자리 14 중 **13** 을, 967 은 18 중 **16(88.9%)** 를
+#: 「모른다」로 흘렸고 **그 대부분이 「자 B 가 numpy 배열·판 `Data` 를 못 만들어서」**였다
+#: (티처 #106 2순위 · 966·967 이 두 번 미룬 일).
+#: 🔴 **기본값을 안 바꾼다** — 옛 산출물의 뜻이 조용히 갈리면 안 된다(노트 898 규칙).
+GENVER = 1
+
+
+def _np_pool(rng, pool):
+    """🔴 **968 신설** — 「무거운 입력」 생성기. numpy 배열 · 판 `Data` · 마스크 짝."""
+    import numpy as _np
+
+    def _arr(n=None, kind="uniform"):
+        n = n if n is not None else rng.randint(2, 60)
+        st = _np.random.RandomState(rng.randint(0, 1 << 30))
+        if kind == "uniform":
+            return st.rand(n)
+        if kind == "normal":
+            return st.randn(n)
+        if kind == "const":
+            return _np.full(n, 0.5)
+        if kind == "nan":
+            return _np.full(n, _np.nan)
+        if kind == "binary":
+            return (st.rand(n) > 0.5).astype(float)
+        if kind == "empty":
+            return _np.array([], float)
+        raise ValueError(kind)
+
+    pool["numpy1차원"] = lambda: _arr()
+    pool["numpy정규"] = lambda: _arr(kind="normal")
+    pool["🔴 numpy상수열"] = lambda: _arr(kind="const")
+    pool["🔴 numpy전부NaN"] = lambda: _arr(kind="nan")
+    pool["🔴 numpy빈배열"] = lambda: _arr(kind="empty")
+    pool["numpy이진"] = lambda: _arr(kind="binary")
+    pool["numpy2차원"] = lambda: _np.random.RandomState(
+        rng.randint(0, 1 << 30)).rand(rng.randint(2, 40), rng.randint(1, 6))
+    pool["numpy정수"] = lambda: _np.arange(rng.randint(2, 40), dtype=float)
+
+    def _data(empty=False):
+        """판 `Data` 객체. 🔴 **빈 판(`dom={}`)도 뽑는다**(조항 64 개정 2 ⑦)."""
+        try:
+            from lab.harness import Data
+        except Exception:                                          # noqa: BLE001
+            return None
+        if empty:
+            return Data(dom={}, names={})
+        doms = ["애니", "만화", "세계애니", "게임"][:rng.randint(1, 5)]
+        dom, names = {}, {}
+        for d in doms:
+            n = rng.randint(3, 40)
+            k = rng.randint(1, 5)
+            st = _np.random.RandomState(rng.randint(0, 1 << 30))
+            cols = ["wiki_level", "wiki_momentum", "cal_weekend", "tag_c1_모바일"][:k]
+            A = st.rand(n, k)
+            M = (st.rand(n, k) > 0.3).astype(float)
+            if rng.random() < 0.35:            # 🔴 「죽은 열」을 일부러 섞는다
+                A[:, 0] = 0.5
+                M[:, 0] = 0.0
+            dom[d] = (A, M, st.rand(n), 2020.0 + st.rand(n) * 6)
+            names[d] = cols
+        return Data(dom=dom, names=names)
+
+    pool["🔴 판Data"] = lambda: _data()
+    pool["🔴 판Data(빈 판)"] = lambda: _data(empty=True)
+    return pool
+
+
 def _gen_pool(rng, keypool=(), site_keys=(), str_pool=()):
-    """뿌리에 먹일 무작위 값 생성기 — **꼴이 다른 열다섯**."""
+    """뿌리에 먹일 무작위 값 생성기 — **꼴이 다른 열다섯**.
+
+    🔴 `GENVER == 2` 면 **numpy 배열 · 판 `Data`** 생성기가 더 붙는다(노트 968).
+    """
     sp = list(str_pool)
 
     def scal():
@@ -497,6 +582,8 @@ def _gen_pool(rng, keypool=(), site_keys=(), str_pool=()):
         pool["모듈키딕트목록"] = lambda: [_modkeys() for _ in range(rng.randint(0, 5))]
         pool["모듈키중첩"] = lambda: {rng.choice(kp): _modkeys()
                                 for _ in range(rng.randint(0, 4))}
+    if GENVER >= 2:                     # 🔴 968 — 「무거운 입력」
+        _np_pool(rng, pool)
     return pool
 
 
@@ -1224,11 +1311,20 @@ if __name__ == "__main__":
     #: 🔴 **기본값은 965 그대로다** — 옛 산출물의 뜻이 조용히 갈리면 안 된다(노트 898 규칙).
     ap.add_argument("--only", default="", help="쉼표로 구분한 러너 목록으로 분모를 좁힌다")
     ap.add_argument("--mine", default="", help="쉼표로 구분한 「내가 새로 만든」 파일(§4 F1)")
+    #: 🔴 **노트 968** — 생성기 판. 1 = 965 그대로(기본) · 2 = numpy 배열 · 판 `Data` 추가.
+    ap.add_argument("--genver", type=int, default=1, choices=[1, 2],
+                    help="자 B 생성기 판(1 = 965 그대로 · 2 = numpy·Data 추가)")
     a = ap.parse_args()
+    globals()["GENVER"] = a.genver
     if a.only:
         REGISTERED[:] = [s.strip() for s in a.only.split(",") if s.strip()]
     if a.mine:
         MINE[:] = [s.strip() for s in a.mine.split(",") if s.strip()]
     res = main()
+    res["🔴 자 B 생성기 판(968)"] = {
+        "genver": a.genver,
+        "뜻": ("1 = 965·966·967 과 비트로 같다 · 2 = numpy 배열 · 판 `Data` "
+              "생성기가 붙는다(노트 968 · 티처 #106 2순위)"),
+        "🔴 기본값을 안 바꿨다": bool(GENVER == a.genver and ap.get_default("genver") == 1)}
     Path(a.out).write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
     print("wrote", a.out)
