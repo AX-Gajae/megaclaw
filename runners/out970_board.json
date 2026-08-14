@@ -1,10 +1,10 @@
 {
- "🔴 단계": "census",
- "🔴 시작(UTC)": "2026-08-14T03:23:10Z",
+ "🔴 단계": "board",
+ "🔴 시작(UTC)": "2026-08-14T03:20:22Z",
  "🔴 사전등록": "docs/prereg_970_recommit.md (측정 전 단독 커밋)",
  "🔴🔴 §S 내가 돌린 러너 ↔ 커밋 blob(F1)": {
   "기준 ref": "note/969-dropped-by-design",
-  "기준 커밋": "7da142491437a4ecc4d31ec47aa0c9819d675461",
+  "기준 커밋": "9ff454a9e00589f91cdbaa85b0abfbf670b6df8c",
   "러너별": {
    "runners/dropaudit969.py": {
     "디스크 sha256": "fc1153edded5dd11a2384b0b57a189607d4523664528c1faa2e0c35704243f67",
@@ -32,740 +32,128 @@
   "🔴 F1 통과": true,
   "🔴 어떤 입력이면 떨어지나": "러너 파일을 한 바이트만 고치고 커밋을 안 하면 그 줄이 곧 거짓이 된다"
  },
- "🔴🔴 §P 0.5 채움 --- 정적 전수(lab 전량)": {
-  "좁은 자(채움 호출 + 0.5)": {
-   "파일별": {
-    "lab/calaxes.py": [
-     {
-      "줄": 127,
-      "원문": "v = np.full(len(raw), 0.5)"
-     }
-    ],
-    "lab/challenger.py": [
-     {
-      "줄": 62,
-      "원문": "X = np.nan_to_num(np.hstack([A, M, np.asarray(t, float)[:, None]]), nan=0.5)"
-     }
-    ],
-    "lab/creatoraxes.py": [
-     {
-      "줄": 83,
-      "원문": "v = np.full(len(raw), 0.5)"
-     }
-    ],
-    "lab/fewshot.py": [
-     {
-      "줄": 85,
-      "원문": "v = np.full(len(pred), 0.5)"
-     }
-    ],
-    "lab/fixaxes.py": [
-     {
-      "줄": 36,
-      "원문": "out = np.full(len(v), 0.5)"
-     }
-    ],
-    "lab/forms.py": [
-     {
-      "줄": 163,
-      "원문": "cols.append(np.where(ok, A[:, j], 0.5))"
-     },
-     {
-      "줄": 166,
-      "원문": "cols.append(np.full(len(A), 0.5))"
-     },
-     {
-      "줄": 607,
-      "원문": "v = np.full(len(A), 0.5)"
-     },
-     {
-      "줄": 633,
-      "원문": "s = np.full(len(yr), 0.5)"
-     },
-     {
-      "줄": 989,
-      "원문": "out.append(np.where(M[:, j] > 0, A[:, j], 0.5))"
-     },
-     {
-      "줄": 992,
-      "원문": "out.append(np.full(len(A), 0.5))"
-     },
-     {
-      "줄": 1406,
-      "원문": "cols.append(np.full((len(A), 1), 0.5))"
-     },
-     {
-      "줄": 1428,
-      "원문": "cols.append(np.full((len(A), 1), 0.5))"
-     },
-     {
-      "줄": 1540,
-      "원문": "cols.append(np.where(ok, A[:, j], 0.5))"
-     },
-     {
-      "줄": 1542,
-      "원문": "cols.append(np.full(len(A), 0.5))"
-     },
-     {
-      "줄": 1751,
-      "원문": "base.append((np.where(ok, A[:, j], 0.5), ok.astype(float)))"
-     },
-     {
-      "줄": 1753,
-      "원문": "base.append((np.full(len(A), 0.5), np.zeros(len(A))))"
-     }
-    ],
-    "lab/harness.py": [
-     {
-      "줄": 241,
-      "원문": "cols.append(np.full((len(A), 1), 0.5))"
-     }
-    ],
-    "lab/idolset.py": [
-     {
-      "줄": 187,
-      "원문": "v = np.full(len(raw), 0.5)"
-     },
-     {
-      "줄": 197,
-      "원문": "out[f\"wiki_{f}\"] = (np.full(len(v), 0.5), ok.astype(float))"
-     },
-     {
-      "줄": 224,
-      "원문": "v = np.full(len(raw), 0.5)"
-     }
-    ],
-    "lab/loop.py": [
-     {
-      "줄": 612,
-      "원문": "pcols.append(np.full((len(pA), 1), .5))"
-     },
-     {
-      "줄": 683,
-      "원문": "vv, oo = np.full(len(A), 0.5), np.zeros(len(A))"
-     },
-     {
-      "줄": 959,
-      "원문": "cols.append(np.full((len(A), 1), .5))"
-     }
-    ],
-    "lab/mktmore.py": [
-     {
-      "줄": 90,
-      "원문": "v = np.full(len(raw), 0.5, np.float32)"
-     }
-    ],
-    "lab/overlap.py": [
-     {
-      "줄": 50,
-      "원문": "V = np.where(M[:, cols] > .5, A[:, cols], 0.5)"
-     }
-    ],
-    "lab/pairs.py": [
-     {
-      "줄": 136,
-      "원문": "A = np.full((n, m), 0.5, float)"
-     }
-    ],
-    "lab/rawaxes.py": [
-     {
-      "줄": 85,
-      "원문": "out = np.full(len(v), 0.5)"
-     }
-    ],
-    "lab/recaxes.py": [
-     {
-      "줄": 76,
-      "원문": "p = np.full(len(v), 0.5)"
-     }
-    ],
-    "lab/scrambled.py": [
-     {
-      "줄": 50,
-      "원문": "idx = np.where(np.asarray(o, float) > .5)[0]"
-     }
-    ],
-    "lab/tagaxes.py": [
-     {
-      "줄": 211,
-      "원문": "p = np.full(len(v), 0.5)"
-     }
-    ],
-    "lab/textaxes.py": [
-     {
-      "줄": 335,
-      "원문": "val = np.full(len(out_ts), 0.5, np.float32)"
-     }
-    ],
-    "lab/trendaxes.py": [
-     {
-      "줄": 54,
-      "원문": "v = np.full(len(raw), 0.5)"
-     }
-    ],
-    "lab/wikiaxes.py": [
-     {
-      "줄": 192,
-      "원문": "v = np.full(len(raw), 0.5)"
-     }
-    ]
-   },
-   "🔴 파일 수": 19,
-   "🔴 자리 수": 34,
-   "🔴 969 가 안 훑은 파일 중 자리가 있는 것": [
-    "lab/calaxes.py",
-    "lab/challenger.py",
-    "lab/creatoraxes.py",
-    "lab/fewshot.py",
-    "lab/fixaxes.py",
-    "lab/idolset.py",
-    "lab/loop.py",
-    "lab/mktmore.py",
-    "lab/overlap.py",
-    "lab/pairs.py",
-    "lab/rawaxes.py",
-    "lab/recaxes.py",
-    "lab/scrambled.py",
-    "lab/tagaxes.py",
-    "lab/textaxes.py",
-    "lab/trendaxes.py"
-   ]
-  },
-  "넓은 자(0.5 리터럴 전부)": {
-   "파일별": {
-    "lab/animeaxes.py": [
-     {
-      "줄": 65,
-      "원문": "v = np.array([pos.get(x, 0.5) for x in raw], np.float32)"
-     }
-    ],
-    "lab/calaxes.py": [
-     {
-      "줄": 127,
-      "원문": "v = np.full(len(raw), 0.5)"
-     }
-    ],
-    "lab/calib.py": [
-     {
-      "줄": 22,
-      "원문": "inv_quantile     τ=0.5 로 중앙값 · τ=0.1·0.9 로 구간"
-     },
-     {
-      "줄": 106,
-      "원문": "on_nan=\"mask\") - 0.5) / len(ptr)"
-     },
-     {
-      "줄": 129,
-      "원문": "pct = (safe_rank(p, where=\"calib.inv_holdout_pct\") - 0.5) / len(p)"
-     },
-     {
-      "줄": 177,
-      "원문": "a += 0.5 * float(g.mean())"
-     },
-     {
-      "줄": 178,
-      "원문": "b += 0.5 * float((g * u).mean())"
-     },
-     {
-      "줄": 183,
-      "원문": "def inv_quantile(ptr, ytr, p, taus=(QLO, 0.5, QHI)):"
-     },
-     {
-      "줄": 184,
-      "원문": "\"\"\"τ=0.5 로 중앙값 · τ=0.1·0.9 로 구간. **셋 다 학습에서 배운다.**\"\"\""
-     },
-     {
-      "줄": 189,
-      "원문": "return out[0.5], out"
-     }
-    ],
-    "lab/challenger.py": [
-     {
-      "줄": 62,
-      "원문": "X = np.nan_to_num(np.hstack([A, M, np.asarray(t, float)[:, None]]), nan=0.5)"
-     }
-    ],
-    "lab/creatoraxes.py": [
-     {
-      "줄": 83,
-      "원문": "v = np.full(len(raw), 0.5)"
-     }
-    ],
-    "lab/curveshape.py": [
-     {
-      "줄": 220,
-      "원문": "ratio = m1 / (m1 + m2) if (m1 + m2) > 0 else 0.5"
-     },
-     {
-      "줄": 261,
-      "원문": "scale = rng.uniform(0.5, 2.0)             # 레코드 규모 다양성"
-     }
-    ],
-    "lab/fewshot.py": [
-     {
-      "줄": 59,
-      "원문": "MIN_COV = 0.5            # 짝에서 이만큼도 관측 안 된 축은 안 쓴다"
-     },
-     {
-      "줄": 85,
-      "원문": "v = np.full(len(pred), 0.5)"
-     }
-    ],
-    "lab/fixaxes.py": [
-     {
-      "줄": 36,
-      "원문": "out = np.full(len(v), 0.5)"
-     }
-    ],
-    "lab/forms.py": [
-     {
-      "줄": 163,
-      "원문": "cols.append(np.where(ok, A[:, j], 0.5))"
-     },
-     {
-      "줄": 166,
-      "원문": "cols.append(np.full(len(A), 0.5))"
-     },
-     {
-      "줄": 592,
-      "원문": "🔴 **폭은 언제나 2K 다**(노트 888 병 자백 예약). 픽이 없는 칸도 0.5/0 으로"
-     },
-     {
-      "줄": 607,
-      "원문": "v = np.full(len(A), 0.5)"
-     },
-     {
-      "줄": 633,
-      "원문": "s = np.full(len(yr), 0.5)"
-     },
-     {
-      "줄": 689,
-      "원문": "wrow = wrow * np.power(0.5, np.maximum(age, 0.0) / float(self.TRAINR))"
-     },
-     {
-      "줄": 862,
-      "원문": "TRAINCAP = {\"만화\": 0.5}"
-     },
-     {
-      "줄": 981,
-      "원문": "자리는 중립(0.5)과 표시자 0 으로 채운다."
-     },
-     {
-      "줄": 989,
-      "원문": "out.append(np.where(M[:, j] > 0, A[:, j], 0.5))"
-     },
-     {
-      "줄": 992,
-      "원문": "out.append(np.full(len(A), 0.5))"
-     },
-     {
-      "줄": 1204,
-      "원문": "GRID = (0.0, 0.25, 0.5, 0.75, 1.0)"
-     },
-     {
-      "줄": 1360,
-      "원문": "for mid in np.arange(2021.5, float(np.nanmax(u)) + .01, .5):"
-     },
-     {
-      "줄": 1406,
-      "원문": "cols.append(np.full((len(A), 1), 0.5))"
-     },
-     {
-      "줄": 1428,
-      "원문": "cols.append(np.full((len(A), 1), 0.5))"
-     },
-     {
-      "줄": 1517,
-      "원문": "GRID = (0.0, 0.25, 0.5, 0.75, 1.0)"
-     },
-     {
-      "줄": 1540,
-      "원문": "cols.append(np.where(ok, A[:, j], 0.5))"
-     },
-     {
-      "줄": 1542,
-      "원문": "cols.append(np.full(len(A), 0.5))"
-     },
-     {
-      "줄": 1751,
-      "원문": "base.append((np.where(ok, A[:, j], 0.5), ok.astype(float)))"
-     },
-     {
-      "줄": 1753,
-      "원문": "base.append((np.full(len(A), 0.5), np.zeros(len(A))))"
-     },
-     {
-      "줄": 1761,
-      "원문": "out.append((vi - .5) * (vk - .5) + .5)"
-     },
-     {
-      "줄": 1876,
-      "원문": "(봉우리 $\\\\ge$ 0.5 또는 단조 $\\\\ge$ 0.8)을 통과해야 쓴다."
-     },
-     {
-      "줄": 2108,
-      "원문": "**무게는 안쪽에서 정했다**(노트 216) --- 안쪽 분할 다섯 중 넷이 0.5 를"
-     },
-     {
-      "줄": 2114,
-      "원문": "def __init__(self, w: float = 0.5, a: str = \"F21_recentpick\","
-     }
-    ],
-    "lab/fundaxes.py": [
-     {
-      "줄": 61,
-      "원문": "v = np.array([pos.get(x, 0.5) for x in raw], np.float32)"
-     }
-    ],
-    "lab/genaxes.py": [
-     {
-      "줄": 108,
-      "원문": "v.append(0.5); o.append(0.0)"
-     }
-    ],
-    "lab/grpaxes.py": [
-     {
-      "줄": 73,
-      "원문": "v = np.array([pos.get(u, 0.5) for u in raw], float)"
-     },
-     {
-      "줄": 139,
-      "원문": "col[dom] = (np.array([pos.get(u, 0.5) for u in raw], float),"
-     }
-    ],
-    "lab/guards.py": [
-     {
-      "줄": 138,
-      "원문": "방향도 |rho| 0.5 를 예사로 낸다. 한 번 뽑고 판정한 것 자체가 틀렸다."
-     },
-     {
-      "줄": 404,
-      "원문": "그랬다). 참 rho 0.5 · n 59 면 기대 차가 0.17 쯤이다.\"\"\""
-     },
-     {
-      "줄": 568,
-      "원문": "A2[:, j] = 0.5"
-     }
-    ],
-    "lab/harness.py": [
-     {
-      "줄": 241,
-      "원문": "cols.append(np.full((len(A), 1), 0.5))"
-     }
-    ],
-    "lab/idolset.py": [
-     {
-      "줄": 105,
-      "원문": "ok = M[:, j] > .5"
-     },
-     {
-      "줄": 187,
-      "원문": "v = np.full(len(raw), 0.5)"
-     },
-     {
-      "줄": 197,
-      "원문": "out[f\"wiki_{f}\"] = (np.full(len(v), 0.5), ok.astype(float))"
-     },
-     {
-      "줄": 224,
-      "원문": "v = np.full(len(raw), 0.5)"
-     }
-    ],
-    "lab/joint.py": [
-     {
-      "줄": 71,
-      "원문": "steps: int = 900, lr: float = 0.05, ridge: float = 0.5,"
-     }
-    ],
-    "lab/lever.py": [
-     {
-      "줄": 71,
-      "원문": "이진 열(0/1)에 0.25 를 밀면 트리는 분기(대개 0.5)를 못 넘어 예측이 한"
-     },
-     {
-      "줄": 94,
-      "원문": "sel = rng.random(len(A)) < 0.5"
-     },
-     {
-      "줄": 134,
-      "원문": "if M[:, j].mean() < .5:"
-     }
-    ],
-    "lab/loop.py": [
-     {
-      "줄": 273,
-      "원문": "keep |= X[:, cols.index(\"trust_%s\" % g)] > 0.5"
-     },
-     {
-      "줄": 285,
-      "원문": "떨어뜨리고 중립 0.5 · 표시자 0 을 채운다 --- 열은 목록에 남아 있는데"
-     },
-     {
-      "줄": 456,
-      "원문": "if mode > 0.5 or many < 40:"
-     },
-     {
-      "줄": 612,
-      "원문": "pcols.append(np.full((len(pA), 1), .5))"
-     },
-     {
-      "줄": 683,
-      "원문": "vv, oo = np.full(len(A), 0.5), np.zeros(len(A))"
-     },
-     {
-      "줄": 959,
-      "원문": "cols.append(np.full((len(A), 1), .5))"
-     }
-    ],
-    "lab/marker.py": [
-     {
-      "줄": 58,
-      "원문": "obs = (M[:, cols].max(1) > .5)"
-     }
-    ],
-    "lab/mktaxes.py": [
-     {
-      "줄": 61,
-      "원문": "v = np.array([pos.get(x, 0.5) for x in raw], np.float32)"
-     }
-    ],
-    "lab/mktmore.py": [
-     {
-      "줄": 80,
-      "원문": "v = np.array([pos.get(x, 0.5) for x in raw], np.float32)"
-     },
-     {
-      "줄": 90,
-      "원문": "v = np.full(len(raw), 0.5, np.float32)"
-     },
-     {
-      "줄": 92,
-      "원문": "v[o] = ((rankdata(vals) - 0.5) / o.sum()).astype(np.float32)"
-     }
-    ],
-    "lab/ordering.py": [
-     {
-      "줄": 31,
-      "원문": "return 0.5 * (1.0 + math.erf(z / math.sqrt(2.0)))"
-     },
-     {
-      "줄": 38,
-      "원문": "return 1.0 if d_i > d_j else (0.0 if d_i < d_j else 0.5)"
-     },
-     {
-      "줄": 57,
-      "원문": "if p < 0.5:"
-     }
-    ],
-    "lab/overlap.py": [
-     {
-      "줄": 50,
-      "원문": "V = np.where(M[:, cols] > .5, A[:, cols], 0.5)"
-     },
-     {
-      "줄": 51,
-      "원문": "I = (M[:, cols] > .5).astype(float)"
-     },
-     {
-      "줄": 75,
-      "원문": "obs = (M[:, j] > .5) & np.isfinite(y)"
-     }
-    ],
-    "lab/pairs.py": [
-     {
-      "줄": 124,
-      "원문": "짝은 ALL5 축만 갖는다(노트 577). 나머지 열은 **0.5 · 마스크 0** 으로 둔다 ---"
-     },
-     {
-      "줄": 136,
-      "원문": "A = np.full((n, m), 0.5, float)"
-     }
-    ],
-    "lab/popupset.py": [
-     {
-      "줄": 55,
-      "원문": "keep |= X[:, j] > 0.5"
-     }
-    ],
-    "lab/rawaxes.py": [
-     {
-      "줄": 74,
-      "원문": "v = np.array([pos.get(x, 0.5) for x in raw], np.float32)"
-     },
-     {
-      "줄": 85,
-      "원문": "out = np.full(len(v), 0.5)"
-     },
-     {
-      "줄": 119,
-      "원문": "f\" · 값 {len(np.unique(val[msk > .5])):>4}가지\")"
-     }
-    ],
-    "lab/recaxes.py": [
-     {
-      "줄": 76,
-      "원문": "p = np.full(len(v), 0.5)"
-     },
-     {
-      "줄": 79,
-      "원문": "p[o] = (rankdata(v[o]) - 0.5) / o.sum()"
-     }
-    ],
-    "lab/scrambled.py": [
-     {
-      "줄": 50,
-      "원문": "idx = np.where(np.asarray(o, float) > .5)[0]"
-     }
-    ],
-    "lab/sideaudit.py": [
-     {
-      "줄": 560,
-      "원문": "pure = float(max(b.std(ddof=1) ** 2 - v.std(ddof=1) ** 2, 0.0)) ** 0.5"
-     }
-    ],
-    "lab/tagaxes.py": [
-     {
-      "줄": 211,
-      "원문": "p = np.full(len(v), 0.5)"
-     },
-     {
-      "줄": 213,
-      "원문": "p[ok] = (rankdata(v[ok]) - 0.5) / ok.sum()"
-     }
-    ],
-    "lab/textaxes.py": [
-     {
-      "줄": 295,
-      "원문": "값     그 집합 안 백분위(0~1) · 예측 못 한 자리는 0.5"
-     },
-     {
-      "줄": 335,
-      "원문": "val = np.full(len(out_ts), 0.5, np.float32)"
-     }
-    ],
-    "lab/trendaxes.py": [
-     {
-      "줄": 52,
-      "원문": "\"\"\"순위 정규화 + 관측 표시자. 값이 없는 행은 중립 0.5 · 표시자 0.\"\"\""
-     },
-     {
-      "줄": 54,
-      "원문": "v = np.full(len(raw), 0.5)"
-     },
-     {
-      "줄": 124,
-      "원문": "keep |= X[:, cols.index(f\"trust_{g}\")] > 0.5"
-     }
-    ],
-    "lab/tune.py": [
-     {
-      "줄": 22,
-      "원문": "ALPHAS = (0.5, 1.0, 2.0, 5.0, 20.0, 100.0, 500.0)"
-     },
-     {
-      "줄": 25,
-      "원문": "PEAK_MIN = 0.5"
-     },
-     {
-      "줄": 112,
-      "원문": "가운데라 지수가 0.5 를 못 넘는다. 그런데 단조는 약한 신호가 아니라"
-     }
-    ],
-    "lab/wikiaxes.py": [
-     {
-      "줄": 192,
-      "원문": "v = np.full(len(raw), 0.5)"
-     }
-    ]
-   },
-   "🔴 파일 수": 34,
-   "🔴 자리 수": 94,
-   "🔴 969 가 안 훑은 파일 중 자리가 있는 것": [
-    "lab/animeaxes.py",
-    "lab/calaxes.py",
-    "lab/calib.py",
-    "lab/challenger.py",
-    "lab/creatoraxes.py",
-    "lab/curveshape.py",
-    "lab/fewshot.py",
-    "lab/fixaxes.py",
-    "lab/fundaxes.py",
-    "lab/genaxes.py",
-    "lab/grpaxes.py",
-    "lab/guards.py",
-    "lab/idolset.py",
-    "lab/joint.py",
-    "lab/lever.py",
-    "lab/loop.py",
-    "lab/marker.py",
-    "lab/mktaxes.py",
-    "lab/mktmore.py",
-    "lab/ordering.py",
-    "lab/overlap.py",
-    "lab/pairs.py",
-    "lab/popupset.py",
-    "lab/rawaxes.py",
-    "lab/recaxes.py",
-    "lab/scrambled.py",
-    "lab/sideaudit.py",
-    "lab/tagaxes.py",
-    "lab/textaxes.py",
-    "lab/trendaxes.py",
-    "lab/tune.py"
-   ]
-  },
-  "🔴 969 가 훑은 파일": [
-   "lab/wikiaxes.py",
-   "lab/harness.py",
-   "lab/forms.py"
+ "🔴🔴 §B 판 --- 되살린 통제로 24 주행": {
+  "주행 수": 24,
+  "씨앗": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11
   ],
-  "🔴 알려진 한계": "이 자는 **한 줄**만 본다. 여러 줄로 쪼갠 호출과 `v[~ok] = 0.5` 꼴의 **직접 대입 채움**은 좁은 자가 못 잡는다 --- 넓은 자가 그것까지 센다"
- },
- "🔴🔴 §P2 0.5 채움 --- 챔피언 판에서 **실제로 돈 줄**": {
-  "🔴 파수병": "`np.full`/`np.where` 를 감싸 채움값이 0.5 일 때 **호출한 줄**을 센다. 자료 짓기 + 챔피언 한 주행(씨앗 0)을 덮는다",
-  "🔴 이 자가 못 보는 것(알려진 한계 · 조항 63)": "① `v[~ok] = 0.5` 꼴의 **직접 대입 채움** ② `np.full_like`·`nan_to_num(nan=0.5)` ③ 씨앗 0 한 주행이 안 지나는 가지. 🔴 **「안 돈 줄」 목록은 「원리상 안 돈다」가 아니라 「이 주행에서 안 돌았다」다**",
-  "🔴 돈 줄": {
-   "lab/calaxes.py:127": 66,
-   "lab/fixaxes.py:36": 1,
-   "lab/forms.py:163": 864,
-   "lab/forms.py:607": 24,
-   "lab/forms.py:633": 24,
-   "lab/harness.py:241": 289,
-   "lab/idolset.py:187": 4,
-   "lab/idolset.py:224": 4,
-   "lab/loop.py:612": 31,
-   "lab/loop.py:683": 19,
-   "lab/rawaxes.py:85": 4,
-   "lab/tagaxes.py:211": 12,
-   "lab/trendaxes.py:54": 80,
-   "lab/wikiaxes.py:192": 40
-  },
-  "🔴 분자/분모": "14 / 34",
-  "🔴 정적으로는 있는데 **안 돈 줄**": [
-   "lab/challenger.py:62",
-   "lab/creatoraxes.py:83",
-   "lab/fewshot.py:85",
-   "lab/forms.py:1406",
-   "lab/forms.py:1428",
-   "lab/forms.py:1540",
-   "lab/forms.py:1542",
-   "lab/forms.py:166",
-   "lab/forms.py:1751",
-   "lab/forms.py:1753",
-   "lab/forms.py:989",
-   "lab/forms.py:992",
-   "lab/idolset.py:197",
-   "lab/loop.py:959",
-   "lab/mktmore.py:90",
-   "lab/overlap.py:50",
-   "lab/pairs.py:136",
-   "lab/recaxes.py:76",
-   "lab/scrambled.py:50",
-   "lab/textaxes.py:335"
+  "짝별": [
+   {
+    "씨앗": 0,
+    "기준선(현행)": 0.473106,
+    "처리(DROP 비움)": 0.466917,
+    "차": -0.006189
+   },
+   {
+    "씨앗": 1,
+    "기준선(현행)": 0.467502,
+    "처리(DROP 비움)": 0.467779,
+    "차": 0.000277
+   },
+   {
+    "씨앗": 2,
+    "기준선(현행)": 0.466395,
+    "처리(DROP 비움)": 0.469094,
+    "차": 0.002699
+   },
+   {
+    "씨앗": 3,
+    "기준선(현행)": 0.469931,
+    "처리(DROP 비움)": 0.46775,
+    "차": -0.002181
+   },
+   {
+    "씨앗": 4,
+    "기준선(현행)": 0.471585,
+    "처리(DROP 비움)": 0.470078,
+    "차": -0.001507
+   },
+   {
+    "씨앗": 5,
+    "기준선(현행)": 0.469515,
+    "처리(DROP 비움)": 0.467646,
+    "차": -0.001869
+   },
+   {
+    "씨앗": 6,
+    "기준선(현행)": 0.470346,
+    "처리(DROP 비움)": 0.461384,
+    "차": -0.008962
+   },
+   {
+    "씨앗": 7,
+    "기준선(현행)": 0.469587,
+    "처리(DROP 비움)": 0.46589,
+    "차": -0.003698
+   },
+   {
+    "씨앗": 8,
+    "기준선(현행)": 0.472204,
+    "처리(DROP 비움)": 0.465663,
+    "차": -0.006541
+   },
+   {
+    "씨앗": 9,
+    "기준선(현행)": 0.473324,
+    "처리(DROP 비움)": 0.471048,
+    "차": -0.002276
+   },
+   {
+    "씨앗": 10,
+    "기준선(현행)": 0.46947,
+    "처리(DROP 비움)": 0.469825,
+    "차": 0.000355
+   },
+   {
+    "씨앗": 11,
+    "기준선(현행)": 0.471146,
+    "처리(DROP 비움)": 0.465492,
+    "차": -0.005654
+   }
   ],
-  "곁: 그 주행의 판 점수(씨앗 0)": 0.473106
+  "기준선(현행)": {
+   "판": 0.47034252170476804,
+   "SD": 0.0020895040456506836,
+   "SE": 0.0006031878616146171
+  },
+  "처리(DROP 비움)": {
+   "판": 0.4673804177736398,
+   "SD": 0.0026096371160400657,
+   "SE": 0.0007533373457164854
+  },
+  "🔴 기준선이 정본 0.47034 를 재현하나": {
+   "정본": 0.47034252170476804,
+   "실측": 0.470343,
+   "차": 0.0,
+   "통과": true
+  },
+  "🔴🔴 Δρ(짝지은 C-B)": -0.002962,
+  "🔴 짝 SD": 0.00337,
+  "🔴 짝 SE": 0.000973,
+  "🔴🔴 판정(Δρ ± 짝 SE)": "-0.002962 ± 0.000973",
+  "🔴 이긴 씨앗": "3 / 12",
+  "🔴 |Δρ| 가 짝 SE 의 몇 배인가": 3.04,
+  "🔴 채택 크기": "**못 정했다**(`docs/목표.md:138` 은 공동주어다). 0.01055(잡음 바닥)·0.00353(운영 문턱)은 **둘 다 진단 수치**다",
+  "곁: 진단 수치": {
+   "잡음 바닥": 0.01055,
+   "운영 문턱": 0.00353,
+   "판 SE 정본": 0.000603
+  },
+  "🔴 노트 350 이 잰 것과의 대조": "노트 350 은 **빼는 방향**으로 C-B = **+0.0033(SD 0.0042 · 10/12)** 을 얻었다. 이 팔은 **되살리는 방향**이라 부호가 뒤집혀야 한다. 🔴 그러나 노트 350 은 위키 **넷**만 뺐고 도서·검색@팝업은 노트 351 이라 **분모가 다르다**(조항 60) --- 여기는 위키 다섯 + 검색 하나를 한꺼번에 되살린다",
+  "초": 1797.8
  },
- "🔴🔴 §X AXIS_MODE 전수(여덟째 손잡이)": {
+ "🔴 §X 축 이름이 안 바뀌는가(이 팔이 물을 수 있는 물음인 근거)": {
   "현행(WIKI_DROP 그대로)": {
    "도메인 수": 12,
    "도메인별 축 수": {
@@ -1038,6 +426,36 @@
     "원문": "\"`lab/forms.py:200 axis_order(mode='common')` 의 `lab/forms.py:224` \""
    },
    {
+    "파일": "runners/ledger970.py",
+    "줄": 44,
+    "원문": "X = C70[\"🔴🔴 §X AXIS_MODE 전수(여덟째 손잡이)\"]"
+   },
+   {
+    "파일": "runners/ledger970.py",
+    "줄": 143,
+    "원문": "\"`AXIS_MODE=\\\"common\\\"` 이 `order ⊆ names` 를 보장해 `_feat` 의 `else` 가 **원리상 도달 불가**다. \""
+   },
+   {
+    "파일": "runners/ledger970.py",
+    "줄": 150,
+    "원문": "L[\"🔴🔴 970 — 여덟째 손잡이 `forms.AXIS_MODE` · 그리고 그 손잡이는 이미 쟀다(노트 900)\"] = {"
+   },
+   {
+    "파일": "runners/ledger970.py",
+    "줄": 151,
+    "원문": "\"무엇\": (\"969 의 「손잡이 일곱 전수」에 **여덟째가 빠졌다** --- `forms.AXIS_MODE` \""
+   },
+   {
+    "파일": "runners/ledger970.py",
+    "줄": 288,
+    "원문": "\"「없어진 83 줄이 §H 사료」 진단 · 조항 60 자기위반 · `forms.AXIS_MODE` 여덟째 손잡이 · \""
+   },
+   {
+    "파일": "runners/ledger970.py",
+    "줄": 295,
+    "원문": "\"④ `AXIS_MODE` 전수 --- 대입 자리 하나 · `\\\"union\\\"` 밖은 조용히 `common` · **노트 900 이 이미 쟀다**(−0.001231)\","
+   },
+   {
     "파일": "runners/levers900.py",
     "줄": 10,
     "원문": "A_common   오늘 챔피언. `AXIS_MODE=\"common\"` --- 게임 4열이 안 닿는다. 설계 88열"
@@ -1176,8 +594,8 @@
   "🔴🔴 뜻": "`AXIS_MODE` 는 저장소에서 **`lab/forms.py` 한 곳에서만** 대입되고 값은 둘뿐이다(`common`·`union`). `common` 은 **전 도메인 이름의 교집합**이라 **게임 전용 축 넷(가격·연령등급·램·카테고리 수)을 모든 도메인의 설계행렬에서 조용히 뺀다**(`axis_order` 독스트링이 그렇게 적고 있다). 🔴 **`WIKI_DROP` 과 같은 종이고 표면은 더 넓다 --- 티처 #108.**"
  },
  "🔴 문지기가 막은 쓰기": [],
- "🔴 끝(UTC)": "2026-08-14T03:28:53Z",
- "🔴 걸린 초": 343.3,
+ "🔴 끝(UTC)": "2026-08-14T03:50:28Z",
+ "🔴 걸린 초": 1806.8,
  "🔴🔴 §Z 소스 대조": {
   "시작 code_stamp 요약": "386a1750ed11ac4286bb37c66df5f659a9535aa604e056bd1ca454b657526863",
   "끝 code_stamp 요약": "386a1750ed11ac4286bb37c66df5f659a9535aa604e056bd1ca454b657526863",
