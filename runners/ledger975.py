@@ -230,8 +230,6 @@ def stage_f5(ref: str) -> dict:
     num = den = 0
     for p in sorted(glob.glob(str(OUT / ART))):
         name = Path(p).name
-        if name == "out975_slots.json":
-            continue
         try:
             d = json.loads(Path(p).read_text(encoding="utf-8"))
         except Exception as e:                                     # noqa: BLE001

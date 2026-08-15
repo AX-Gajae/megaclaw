@@ -14,8 +14,12 @@
 import argparse
 import collections
 import datetime as dt
+import glob
+import hashlib
 import json
 import os
+import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -24,7 +28,9 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 import runners.ledger975 as LG                    # noqa: E402
+import runners.predict971 as P                    # noqa: E402
 
+RAN = ("runners/note975_gen.py", "runners/ledger975.py", "runners/predict971.py")
 OUT = ROOT / "runners"
 FAC = "out975_factors.json"
 PRE = "out975_precfix.json"
@@ -586,7 +592,44 @@ TARGETS = [
 ]
 
 
-def stage_gen() -> dict:
+def code_stamp():
+    files = sorted(glob.glob(str(ROOT / "lab/*.py")))
+    files += [str(ROOT / r) for r in RAN]
+    return {str(Path(p).relative_to(ROOT)): P._sha_file(p)
+            for p in sorted(set(files)) if Path(p).is_file()}
+
+
+def stamp_block(ref, cs0, cs1, t0):
+    runner, ok = {}, 0
+    for r in RAN:
+        disk = P._sha_file(str(ROOT / r))
+        try:
+            cm = hashlib.sha256(subprocess.check_output(
+                ["git", "show", "%s:%s" % (ref, r)], cwd=str(ROOT))).hexdigest()
+        except Exception:                                          # noqa: BLE001
+            cm = None
+        runner[r] = {"디스크 sha256": disk, "커밋 blob sha256": cm, "일치": disk == cm}
+        ok += 1 if disk == cm else 0
+    return {
+        "언제(시작)": t0,
+        "언제(끝)": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "시작 code_stamp 요약": hashlib.sha256(
+            json.dumps(cs0, sort_keys=True).encode()).hexdigest(),
+        "끝 code_stamp 요약": hashlib.sha256(
+            json.dumps(cs1, sort_keys=True).encode()).hexdigest(),
+        "🔴 시작=끝": cs0 == cs1, "분모: 도장이 덮는 파일": len(cs1),
+        "🔴 F1 기준 ref(준 대로)": ref,
+        "🔴 40자 고정 sha 인가": bool(re.fullmatch(r"[0-9a-f]{40}", ref or "")),
+        "🔴 기준 ref 가 0000…0000 인가": bool(re.fullmatch(r"0{40}", ref or "")),
+        "러너별": runner, "🔴 분자/분모": "%d / %d" % (ok, len(RAN)),
+        "🔴 F5 통과": ok == len(RAN) and bool(re.fullmatch(r"[0-9a-f]{40}", ref or ""))
+        and not re.fullmatch(r"0{40}", ref or ""),
+    }
+
+
+def stage_gen(ref: str = "") -> dict:
+    t0 = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    cs0 = code_stamp()
     man = collections.OrderedDict()
     for rel, fn in TARGETS:
         d = Doc()
@@ -600,6 +643,7 @@ def stage_gen() -> dict:
            "🔴 대상": [t[0] for t in TARGETS],
            "🔴 슬롯 합": sum(v["슬롯 수"] for v in man.values()),
            "파일별": man}
+    out["🔴 도장"] = stamp_block(ref, cs0, code_stamp(), t0)
     (OUT / "out975_slots.json").write_text(
         json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
     return {k: v for k, v in out.items() if k != "파일별"}
@@ -617,8 +661,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--stage", required=True, choices=["gen", "cardcheck"])
     ap.add_argument("--card", default="")
+    ap.add_argument("--ref", default="")
     a = ap.parse_args()
-    r = stage_gen() if a.stage == "gen" else stage_cardcheck(a.card)
+    r = stage_gen(a.ref) if a.stage == "gen" else stage_cardcheck(a.card)
     print(json.dumps(r, ensure_ascii=False, indent=1))
     return 0
 
