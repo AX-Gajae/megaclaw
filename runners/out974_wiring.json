@@ -1,0 +1,75 @@
+{
+ "무엇": "974 --- 배선 W1~W8 · 파괴 대조 D1~D5",
+ "사전등록": "docs/prereg_974_precision.md",
+ "W": {
+  "W1 층이 토큰 수에 매인다": true,
+  "W2 층이 언어에 매인다": true,
+  "W3 없는 제목엔 자리 0": true,
+  "W4 있는 제목엔 자리 ≥1": true,
+  "W5 자리가 원문과 같다": false,
+  "W6 토큰열이 973 과 같다": true,
+  "W7 조사 벗기기가 문다": true,
+  "W8 CP 끝값": true
+ },
+ "🔴 W 분자/분모": "7 / 8",
+ "D": {
+  "D1 TOKPAT 부수면 W4 죽나": true,
+  "D2 문턱 99 면 제목 자격이 죽나": true,
+  "D3 조사 없애면 W7 죽나": true,
+  "D4 빈 제목엔 자리 0": true,
+  "D5 CP 가 분모 0 에서 죽나": true
+ },
+ "🔴 D 분자/분모": "5 / 5",
+ "🔴 W6 분모": 2000,
+ "🔴 W6 분자": 2000,
+ "🔴 도장": {
+  "언제(시작)": "2026-08-15T16:42:58Z",
+  "언제(끝)": "2026-08-15T16:42:58Z",
+  "시작 code_stamp 요약": "16843eed75c9d71f85b76a7a2280c4d8306cb48017a8a547da7334aaf9642024",
+  "끝 code_stamp 요약": "16843eed75c9d71f85b76a7a2280c4d8306cb48017a8a547da7334aaf9642024",
+  "🔴 시작=끝": true,
+  "분모: 도장이 덮는 파일": 74,
+  "🔴 자료 지문": {
+   "sao973_hplt/pairs.jsonl.gz": "67de3062bad60e122c446fccb0b96d2c3a36c0ee2deafa40324a22dcad6c09a2",
+   "wiki_daily959/게임.jsonl.gz": "f6adc455cac56e8fcb557d62157fb71f24093a4276c6816a86bd99ec4617b0a8",
+   "wiki_daily959/도서.jsonl.gz": "a0d9e9c3df41700fb499d1f3d48f8fa956f23412a5127689351a209d66ab1e9f",
+   "wiki_daily959/만화.jsonl.gz": "68025ae9c377b3c103789321bbcb5528946e64ebe89d1d31f9ee06f67409f297",
+   "wiki_daily959/모바일.jsonl.gz": "0b867d51be717714fc654fc270ac0c1b9f81fae5c2e47760b74b6f0a53c47fda",
+   "wiki_daily959/세계애니.jsonl.gz": "e43948654f423956c25c7b03926845cd71e930b0abaaecde0ccce4ebc4138bfc",
+   "wiki_daily959/시장팝업.jsonl.gz": "7c37572a1cf66360570e5cc8653ef7d9cadd04bd601f5e2218093f5018450a79",
+   "wiki_daily959/아이돌.jsonl.gz": "7f3ae9455db15fd472b31c4ffe6dc48a594e6082566e07ce11dcd9be60dea60f",
+   "wiki_daily959/애니.jsonl.gz": "24a03f4ee728c13f0703ac43bfc327c5e1f5440488b61df39b7fd83539fa1f28",
+   "wiki_daily959/웹툰.jsonl.gz": "07b4aa36326259deb3e3338d604ebaf2c4c97734b3a0648a4dab036d7ced6f3c",
+   "wiki_daily959/팝업.jsonl.gz": "e270d5428df0272f985bf6ca08e4e6ca209a3c53444624da4c52ed5da47c6ce8",
+   "wiki_daily959/펀딩.jsonl.gz": "58b724852ad8dffdf43997e50a555d26f8285ae11a7188fed4a36ef6df6a815c"
+  },
+  "분모: 연 자료 파일": 12,
+  "🔴 F1 기준 ref(준 대로)": "6ee9366ae7520482144223611a107b5009e9f28b",
+  "🔴 40자 고정 sha 인가": true,
+  "🔴 기준 ref 가 0000…0000 인가": false,
+  "러너별": {
+   "runners/precision974.py": {
+    "디스크 sha256": "829b93e95b74d7458bc4f4039664e3b8dbb816d08765287e03c238041175d887",
+    "커밋 blob sha256": "829b93e95b74d7458bc4f4039664e3b8dbb816d08765287e03c238041175d887",
+    "일치": true
+   },
+   "runners/hplt973.py": {
+    "디스크 sha256": "1d5a73f8c753c8234d26ee332a6b4f366e8c55727be6557d20a5623fc184bb48",
+    "커밋 blob sha256": "1d5a73f8c753c8234d26ee332a6b4f366e8c55727be6557d20a5623fc184bb48",
+    "일치": true
+   },
+   "runners/dupe954_hplt_scan.py": {
+    "디스크 sha256": "36d53661952f558c9d8ad1ebf5571a237964a7a13c26f72ddc81097cee89205b",
+    "커밋 blob sha256": "36d53661952f558c9d8ad1ebf5571a237964a7a13c26f72ddc81097cee89205b",
+    "일치": true
+   },
+   "runners/predict971.py": {
+    "디스크 sha256": "c870fe5d8bf72424fd86203e4585b8d234b4d06b800a78fa074d7f9401738c3f",
+    "커밋 blob sha256": "c870fe5d8bf72424fd86203e4585b8d234b4d06b800a78fa074d7f9401738c3f",
+    "일치": true
+   }
+  },
+  "🔴 분자/분모": "4 / 4",
+  "🔴 F5 통과": true
+ }
+}
