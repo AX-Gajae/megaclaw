@@ -880,9 +880,9 @@ def build_meta(d):
         except Exception:                                          # noqa: BLE001
             _sent = False
     d.t(' "figures": [],\n "sent": %s,\n' % ("true" if _sent else "false"))
-    d.t(' "🔴 978 이 send 뒤 이 파일을 다시 지었다": "`paper.harness send` 가 '
-        '`meta.json` 을 다시 써서 슬롯 오프셋을 민다. 977 이 그 자리에서 걸렸다. '
-        '978 은 send 뒤 생성기를 다시 돌리고 그 판을 커밋한다. 하네스가 남긴 '
+    d.t(' "🔴 노트 978 이 send 뒤 이 파일을 다시 지었다": "`paper.harness send` 가 '
+        '`meta.json` 을 다시 써서 슬롯 오프셋을 민다. 노트 977 이 그 자리에서 걸렸다. '
+        '노트 978 은 send 뒤 생성기를 다시 돌리고 그 판을 커밋한다. 하네스가 남긴 '
         '초 단위 `sent_at` 은 슬롯으로 채점할 수 없어 안 싣는다 --- 보낸 날짜는 '
         '2026-08-16 이다.",\n')
     d.t(' "summary": "앞 노트는 도메인 균등 가중을 정본 자로 올렸다. '
