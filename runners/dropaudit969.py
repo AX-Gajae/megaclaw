@@ -773,6 +773,59 @@ def _arr(v, fb):
         return np.asarray(fb, float)
 
 
+def w6_old(before, after, inside, restored, keep):
+    """🔴 **W6 구판(968~970).** 조항 66-③ 이 「구판을 지우지 말고 플래그로 남겨라」 한다.
+
+    🔴🔴 **이 식은 항진명제다 --- 그러나 항진명제는 식이 아니라 「부르는 자리」에 있다.**
+    `before` 와 `after` 는 **그 사이에 쓰기가 한 줄도 없는** 같은 파일의 sha 라
+    `before == after` 가 **어떤 자료에서도 참**이다. 티처 #107·#108·#109 가
+    **세 사이클 연속** 신고했고 그때마다 신고만 하고 안 고쳤다.
+    """
+    return {
+        "🔴 입력별 값": {"주행 전 lab/loop.py sha256": before,
+                    "주행 후 lab/loop.py sha256": after,
+                    "메모리 안에서 비웠을 때": list(inside), "되돌린 뒤": list(restored)},
+        "🔴 분자(입력별)": {"sha 같은가": bool(before == after)},
+        "🔴🔴 자기 신고 --- 왜 항진명제인가": (
+            "`before` 와 `after` 사이에 **쓰기가 없다**. 두 sha 는 같을 수밖에 없고 "
+            "**자가 갈릴 수 있는 입력이 원리상 없다**(조항 64). "
+            "🔴 파라미터로 옮기는 것은 **자 A 의 눈만 속인다** --- 진짜 고침은 "
+            "**갈릴 수 있는 입력을 실제로 먹이는 것**이고 그것이 `w6_new` 의 `probe_diff` 다"),
+        "🔴 어떤 입력이면 떨어지나":
+            "🔴 **없다 --- 그것이 이 자리의 병이다.** `lab/loop.py` 를 주행 중에 고치면 "
+            "갈리겠지만 이 러너는 그런 자리를 지나지 않는다",
+        "통과": bool(before == after and inside == () and restored == keep
+                    and len(keep) == 5),
+    }
+
+
+def w6_new(before, after, probe_same, probe_diff, inside, restored, keep):
+    """🔴🔴🔴 **W6 신판(971).** 양성 대조를 먹여 **자가 갈릴 수 있음을 보인다.**
+
+    `probe_diff` 는 같은 소스에 **한 줄을 더한** 바이트의 sha 다. 이 자가 진짜
+    내용을 본다면 `probe_same != probe_diff` 여야 하고, sha 를 잘라 비교하거나
+    상수를 돌려주는 자로 바꾸면 **그 자리에서 떨어진다**.
+    """
+    return {
+        "🔴 입력별 값": {"주행 전 lab/loop.py sha256": before,
+                    "주행 후 lab/loop.py sha256": after,
+                    "🔴 양성 대조 --- 같은 바이트의 sha": probe_same,
+                    "🔴 양성 대조 --- 한 줄 더한 바이트의 sha": probe_diff,
+                    "메모리 안에서 비웠을 때": list(inside), "되돌린 뒤": list(restored)},
+        "🔴 분자(입력별)": {"sha 같은가(저장소 무변)": bool(before == after),
+                     "🔴 자가 갈리나(양성 대조)": bool(probe_same != probe_diff),
+                     "🔴 자가 같은 바이트를 같다고 하나": bool(probe_same == before)},
+        "🔴 어떤 입력이면 떨어지나": (
+            "① `lab/loop.py` 를 주행 중에 고치면 `before != after` 로 떨어진다 · "
+            "🔴🔴 ② **sha 를 앞 12 자로 자르거나 상수를 돌려주는 자로 바꾸면 "
+            "`probe_same == probe_diff` 가 되어 떨어진다** --- 구판에는 이 갈래가 없었다 · "
+            "③ `WIKI_DROP` 을 안 되돌리면 `restored != keep` 으로 떨어진다"),
+        "통과": bool(before == after and probe_same != probe_diff
+                    and probe_same == before and inside == ()
+                    and restored == keep and len(keep) == 5),
+    }
+
+
 def wiring(probes) -> dict:
     """조항 64 개정 2 · 65. 🔴 **자리마다 「어떤 입력이면 떨어지나」 + 그 입력의 값.**"""
     W = {}
@@ -899,17 +952,24 @@ def wiring(probes) -> dict:
     finally:
         L.WIKI_DROP = keep
     after = _sha_file(ROOT / "lab/loop.py")
-    W["W6 저장소 무변"] = {
-        "🔴 입력별 값": {"주행 전 lab/loop.py sha256": before,
-                    "주행 후 lab/loop.py sha256": after,
-                    "메모리 안에서 비웠을 때": list(inside),
-                    "되돌린 뒤": list(L.WIKI_DROP)},
-        "🔴 분자(입력별)": {"sha 같은가": bool(before == after)},
-        "🔴 어떤 입력이면 떨어지나":
-            "`lab/loop.py` 를 실제로 고치면 두 sha 가 갈려 떨어진다(F5)",
-        "통과": bool(before == after and inside == () and tuple(L.WIKI_DROP) == keep
-                    and len(keep) == 5),
-    }
+    #: 🔴🔴🔴 **971 · 양성 대조** --- 항진명제는 식이 아니라 **부르는 자리**에 있었다.
+    #: `before` 와 `after` 사이에 **쓰기가 한 줄도 없으므로** `before == after` 는
+    #: 어떤 자료에서도 참이다(티처 #107·#108·#109 가 세 사이클 연속 신고).
+    #: 자를 파라미터로 옮기는 것만으로는 **자 A 의 눈만 속인다** --- 진짜 고침은
+    #: **자가 갈릴 수 있는 입력을 실제로 먹이는 것**이다.
+    src_bytes = (ROOT / "lab/loop.py").read_bytes()
+    probe_same = hashlib.sha256(src_bytes).hexdigest()
+    probe_diff = hashlib.sha256(
+        src_bytes + "# 971 양성 대조\n".encode("utf-8")).hexdigest()
+    if globals().get("W6VER", "new") == "old":
+        W["W6 저장소 무변"] = w6_old(before, after, inside, tuple(L.WIKI_DROP), keep)
+        W["W6′ 신판(971 · 양성 대조 · 대조용)"] = w6_new(
+            before, after, probe_same, probe_diff, inside, tuple(L.WIKI_DROP), keep)
+    else:
+        W["W6 저장소 무변"] = w6_new(
+            before, after, probe_same, probe_diff, inside, tuple(L.WIKI_DROP), keep)
+        W["W6′ 구판(968~970 그대로 · 조항 66-③ 이 지우지 말라 한다)"] = w6_old(
+            before, after, inside, tuple(L.WIKI_DROP), keep)
 
     W["🔴 통과 수"] = sum(1 for k, v in W.items()
                        if isinstance(v, dict) and v.get("통과") is True)
@@ -955,7 +1015,12 @@ def main():
                     choices=["wiring", "drop", "prop", "game"])
     ap.add_argument("--out", required=True)
     ap.add_argument("--draws", type=int, default=DRAWS)
+    #: 🔴🔴 **노트 971** — W6 판. `new` = 양성 대조를 먹인 판(기본) ·
+    #: `old` = 968~970 그대로(항진명제 · 조항 66-③ 대조용). **둘 다 늘 산출물에 실린다.**
+    ap.add_argument("--w6", default="new", choices=["new", "old"],
+                    help="W6 판(new = 971 양성 대조 · old = 968~970 항진명제 판 · 대조용)")
     a = ap.parse_args()
+    globals()["W6VER"] = a.w6
 
     out_path = Path(a.out)
     if not out_path.is_absolute():

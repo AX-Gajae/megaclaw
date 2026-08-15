@@ -208,22 +208,74 @@ class Site:
         self.key = "%s:%d" % (rel, lineno)
 
 
+#: 🔴🔴 **노트 971 신설 (티처 #109 m3)** — 자의 분모가 `"통과"` **정확 일치**만 세서
+#: `"🔴 F1 통과"` 같은 키가 **분모 밖**에 있었다. 969 에서 물려받은 구멍이고,
+#: 970 에서는 **그 사이클의 가장 중요한 검사(F1 — 내가 돌린 러너 ↔ 커밋 blob)가
+#: 통째로 자의 사각지대**였다.
+#: 🔴 **기본값은 `exact`(965 그대로)** — 옛 산출물의 뜻이 조용히 갈리면 안 된다(노트 898 규칙).
+#: `suffix` 는 **접두어를 허용**한다(`k.endswith("통과")`). 🔴 `"🔴 통과 수"` 같은
+#: **계수 키는 여전히 분모 밖**이다 — 그건 검사가 아니라 회계다.
+PASSKEY = "exact"
+
+
+def is_pass_key(k) -> bool:
+    """🔴 `통과` 키인가. `exact` = 965 그대로 · `suffix` = 접두어 허용(971)."""
+    if not isinstance(k, str):
+        return False
+    if globals().get("PASSKEY", "exact") == "suffix":
+        return k.endswith("통과")
+    return k == "통과"
+
+
 def collect_sites(rel, tree, parents):
-    """`{"통과": <expr>}` 와 `X["통과"] = <expr>` 를 **전수로** 뽑는다."""
+    """`{"통과": <expr>}` 와 `X["통과"] = <expr>` 를 **전수로** 뽑는다.
+
+    🔴 **971** — 키 일치 규칙이 `PASSKEY` 에서 온다(`exact`|`suffix`).
+    """
     sites = []
     for node in ast.walk(tree):
         if isinstance(node, ast.Dict):
             for k, v in zip(node.keys, node.values):
-                if isinstance(k, ast.Constant) and k.value == "통과":
+                if isinstance(k, ast.Constant) and is_pass_key(k.value):
                     sites.append(Site(rel, v.lineno, v,
                                       _enclosing_func(node, parents), "딕트 리터럴"))
         elif isinstance(node, ast.Assign):
             for t in node.targets:
                 if (isinstance(t, ast.Subscript) and isinstance(t.slice, ast.Constant)
-                        and t.slice.value == "통과"):
+                        and is_pass_key(t.slice.value)):
                     sites.append(Site(rel, node.value.lineno, node.value,
                                       _enclosing_func(node, parents), "첨자 대입"))
     return sites
+
+
+def passkey_census(rel, tree) -> dict:
+    """🔴🔴 **971 신설 · 조항 66-③** — 구판(정확 일치)·신판(접미 일치)을 **한 산출물에** 싣는다.
+
+    자를 고치면 전후를 반드시 같이 실어야 한다. 968 은 R1 으로 자기 점수를
+    66.7% → 44.4% 로 옮겨 절반선을 넘겼는데 **한 번도 안 쟀다**.
+    """
+    exact, suffix = [], []
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Dict):
+            for k, v in zip(node.keys, node.values):
+                if isinstance(k, ast.Constant) and isinstance(k.value, str):
+                    if k.value == "통과":
+                        exact.append((v.lineno, k.value))
+                    if k.value.endswith("통과"):
+                        suffix.append((v.lineno, k.value))
+        elif isinstance(node, ast.Assign):
+            for t in node.targets:
+                if (isinstance(t, ast.Subscript) and isinstance(t.slice, ast.Constant)
+                        and isinstance(t.slice.value, str)):
+                    if t.slice.value == "통과":
+                        exact.append((node.value.lineno, t.slice.value))
+                    if t.slice.value.endswith("통과"):
+                        suffix.append((node.value.lineno, t.slice.value))
+    only = sorted({(ln, nm) for ln, nm in suffix} - {(ln, nm) for ln, nm in exact})
+    return {"🔴 분모(정확 일치 · 965 판)": len(exact),
+            "🔴 분모(접미 일치 · 971 판)": len(suffix),
+            "🔴 접미로만 잡히는 자리": ["%s:%d %s" % (rel, ln, nm) for ln, nm in only],
+            "🔴 늘어난 수": len(suffix) - len(exact)}
 
 
 def collect_delegations(rel, tree, parents):
@@ -1021,7 +1073,7 @@ def count_pass_keys(obj, path="", acc=None):
     acc = [] if acc is None else acc
     if isinstance(obj, dict):
         for k, v in obj.items():
-            if k == "통과":
+            if is_pass_key(k):                     # 🔴 971 — 접미 일치(티처 #109 m3)
                 acc.append((path or "<루트>", v))
             count_pass_keys(v, path + "/" + str(k), acc)
     elif isinstance(obj, list):
@@ -1114,6 +1166,9 @@ def main():
                      and not r["자 B"].get("항진명제")]),
             "모른다": len([r for r in rows if str(r["자 B"].get("판정", "")).startswith("모른다")
                        and not r["🔴 항진명제인가"]]),
+            #: 🔴🔴 **971 · 조항 66-③** — 구판(정확)·신판(접미)을 같은 자리에 싣는다
+            "🔴🔴 통과 키 분모(정확 일치 vs 접미 일치)":
+                passkey_census(rel, ast.parse(src_txt)),
         }
 
     taut = [r for r in all_rows if r["🔴 항진명제인가"]]
@@ -1352,9 +1407,14 @@ if __name__ == "__main__":
     #: 🔴 **자를 고치면 구판·신판을 같은 대상에 걸어 전후를 싣기 위한 것이다.**
     ap.add_argument("--slicer", default="new", choices=["new", "old"],
                     help="역슬라이서 판(new = R1 적용 · old = 968 이전 결함 판 · 대조용)")
+    #: 🔴🔴 **노트 971 (티처 #109 m3)** — `통과` 키 일치 규칙.
+    #: `exact` = 965 그대로(기본) · `suffix` = 접두어 허용(`"🔴 F1 통과"` 를 분모에 넣는다).
+    ap.add_argument("--passkey", default="exact", choices=["exact", "suffix"],
+                    help="통과 키 일치 규칙(exact = 965 그대로 · suffix = 접두어 허용 · 971)")
     a = ap.parse_args()
     globals()["GENVER"] = a.genver
     globals()["SLICER"] = a.slicer
+    globals()["PASSKEY"] = a.passkey
     if a.only:
         REGISTERED[:] = [s.strip() for s in a.only.split(",") if s.strip()]
     if a.mine:
@@ -1370,5 +1430,13 @@ if __name__ == "__main__":
         "뜻": ("new = R1 적용(968 이 고친 것) · old = 968 이전 결함 판. "
               "🔴 **같은 대상에 둘 다 걸어 전후를 실어야 한다** --- 968 은 안 했다"),
         "🔴 기본값을 안 바꿨다": bool(ap.get_default("slicer") == "new")}
+    res["🔴🔴🔴 통과 키 일치 규칙(971 · 티처 #109 m3)"] = {
+        "passkey": a.passkey,
+        "뜻": ("exact = 965·966·967·968·969·970 과 비트로 같다(`k == \"통과\"`) · "
+              "suffix = **접두어를 허용**한다(`k.endswith(\"통과\")`). "
+              "🔴 970 에서는 그 사이클의 **가장 중요한 검사**인 `\"🔴 F1 통과\"`(내가 돌린 "
+              "러너 ↔ 커밋 blob)가 **자의 분모 밖**에 있었다 --- 969 에서 물려받은 구멍이다"),
+        "🔴 계수 키는 여전히 분모 밖": "`\"🔴 통과 수\"` 는 검사가 아니라 회계라 접미로도 안 잡힌다",
+        "🔴 기본값을 안 바꿨다": bool(ap.get_default("passkey") == "exact")}
     Path(a.out).write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
     print("wrote", a.out)
