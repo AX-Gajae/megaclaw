@@ -868,7 +868,23 @@ def build_meta(d):
     d.s([SZ, LOSO, UB, "팔별", "−hplt_ko", R1, "🔴 |Δ|/SE"])
     d.t(' 배로 문턱 근처에도 없다 --- 빼면 나아진다는 아직 못 세운다"\n')
     d.t(" ],\n")
-    d.t(' "figures": [],\n "sent": false,\n')
+    #: 🔴🔴 **`paper.harness send` 가 `meta.json` 을 통째로 다시 쓴다** — 그러면 슬롯
+    #: 오프셋이 밀려서 **채점이 깨진다**(977 이 그렇게 걸렸다). 🔴 **978 은 send 뒤에
+    #: 이 생성기를 다시 돌린다.** `sent` 는 하네스가 쓴 값을 그대로 읽어서 싣고,
+    #: 초 단위 시각은 **슬롯으로 채점할 수 없어서 안 싣는다**(날짜만 남긴다).
+    _mp = ROOT / "paper/steps/978_ruler/meta.json"
+    _sent = False
+    if _mp.is_file():
+        try:
+            _sent = bool(json.loads(_mp.read_text(encoding="utf-8")).get("sent"))
+        except Exception:                                          # noqa: BLE001
+            _sent = False
+    d.t(' "figures": [],\n "sent": %s,\n' % ("true" if _sent else "false"))
+    d.t(' "🔴 978 이 send 뒤 이 파일을 다시 지었다": "`paper.harness send` 가 '
+        '`meta.json` 을 다시 써서 슬롯 오프셋을 민다. 977 이 그 자리에서 걸렸다. '
+        '978 은 send 뒤 생성기를 다시 돌리고 그 판을 커밋한다. 하네스가 남긴 '
+        '초 단위 `sent_at` 은 슬롯으로 채점할 수 없어 안 싣는다 --- 보낸 날짜는 '
+        '2026-08-16 이다.",\n')
     d.t(' "summary": "앞 노트는 도메인 균등 가중을 정본 자로 올렸다. '
         '그 채택 규칙은 부호만 물었다. 이 노트는 거기에 크기를 넣어 다시 묻는다. '
         '균등 가중은 학습 라벨을 전량 부수어도 자기 표준오차의 두 배를 못 넘고 '
