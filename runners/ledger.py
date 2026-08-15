@@ -48,6 +48,15 @@ import runners.predict971 as P                    # noqa: E402
 OUT = ROOT / "runners"
 NUMPAT = re.compile(r"-?\d[\d,]*(?:\.\d+)?")
 
+#: 🔴🔴 **977 수리 4** — 규칙 C 는 도장에 **자료 지문**을 요구한다. 976 은 이 파일의
+#: 네 stage 에서 `stamp_block(..., data=…)` 를 안 채워 **산출물 8 중 5 의 자료 지문이 0**
+#: 이었다. 여기 한 자리에 두고 넷이 같이 쓴다.
+DATA = collections.OrderedDict([
+    ("sao941", "data/ingest/sao941/pairs.jsonl.gz"),
+    ("sao959", "data/ingest/sao959/pairs.jsonl.gz"),
+    ("hplt_ko", "data/ingest/sao973_hplt/pairs.jsonl.gz"),
+])
+
 #: 🔴 **975 판 면제 규칙** — 대조용으로 남긴다(조항 66-③: 자를 고치면 전후를 같이 싣는다).
 ALLOW_CTX_975 = (
     ("노트 번호·사이클 번호", re.compile(r"(?:노트|티처 #|사이클|PR #|#)\s*\d+")),
@@ -447,7 +456,7 @@ def stage_f5(ref, cycle, ran) -> dict:
            "🔴🔴 F5 분자/분모(전량)": "%d / %d" % (num, den),
            "🔴 전량 통과인가": num == den,
            "산출물별": rows}
-    out["🔴 도장"] = stamp_block(ref, cs0, code_stamp(ran), t0, ran)
+    out["🔴 도장"] = stamp_block(ref, cs0, code_stamp(ran), t0, ran, DATA)
     (OUT / ("out%s_f5.json" % cycle)).write_text(
         json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
     return out
@@ -458,10 +467,12 @@ def stage_numaudit(ref, cycle, ran) -> dict:
     cs0 = code_stamp(ran)
     S = artifact_numbers("out%s_*.json" % cycle)
     sf = OUT / ("out%s_slots.json" % cycle)
-    #: 🔴 슬롯 대장이 아직 없으면 **빈 대장**으로 돈다 — 생성기와 채점기가 서로를
-    #: 인용하므로 첫 바퀴를 돌리려면 이 자리가 필요하다(뒤 바퀴에서 진짜 값이 든다).
+    #: 🔴🔴 **977 수리 3 — fail-open 을 닫는다.** 976 판은 슬롯 대장이 없으면 `{}` 로 돌아
+    #: `files` 가 비고 `통과 = (miss_new == 0)` 이 **자료 없이 참**이 됐다.
+    #: 🔴 **대장이 없으면 실패다.** 첫 바퀴 문제는 「생성기를 먼저 돌려라」로 푼다.
     man = json.loads(sf.read_text(encoding="utf-8")) if sf.is_file() else {}
     files = man.get("파일별", {})
+    fail_open = (not files)
     per = collections.OrderedDict()
     tot = miss_old = miss_new = exempt_new = exempt_975 = bad_slot = 0
     for rel, info in files.items():
@@ -497,7 +508,9 @@ def stage_numaudit(ref, cycle, ran) -> dict:
         "🔴 산출물에서 모은 수의 가짓수(974 판 허용집합)": len(S),
         "🔴🔴 974 판 분자/분모": "%d / %d" % (miss_old, tot),
         "🔴🔴🔴 976 판 분자/분모(본문이 출처를 못 대는 수 / 센 수)": "%d / %d" % (miss_new, tot),
-        "🔴 통과(976 판 · 하나도 없어야 한다)": miss_new == 0,
+        "🔴🔴 977 수리 3 — 슬롯 대장이 없거나 비었나(fail-open 자리)": bool(fail_open),
+        "🔴 통과(976 판 · 하나도 없어야 한다)": bool((not fail_open) and miss_new == 0),
+        "통과": bool((not fail_open) and miss_new == 0 and tot > 0),
         "🔴🔴 키 경로와 본문이 다른 슬롯(전체)": bad_slot,
         "🔴🔴 수리 4 — 면제 자리(안 세는 자리)": {
             "🔴 976 판 면제 자리": exempt_new,
@@ -509,7 +522,7 @@ def stage_numaudit(ref, cycle, ran) -> dict:
         },
         "파일별": per,
     }
-    out["🔴 도장"] = stamp_block(ref, cs0, code_stamp(ran), t0, ran)
+    out["🔴 도장"] = stamp_block(ref, cs0, code_stamp(ran), t0, ran, DATA)
     (OUT / ("out%s_numaudit.json" % cycle)).write_text(
         json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
     return out
@@ -521,10 +534,11 @@ def stage_control(ref, cycle, ran) -> dict:
     cs0 = code_stamp(ran)
     S = artifact_numbers("out%s_*.json" % cycle)
     sf = OUT / ("out%s_slots.json" % cycle)
-    #: 🔴 슬롯 대장이 아직 없으면 **빈 대장**으로 돈다 — 생성기와 채점기가 서로를
-    #: 인용하므로 첫 바퀴를 돌리려면 이 자리가 필요하다(뒤 바퀴에서 진짜 값이 든다).
+    #: 🔴🔴 **977 수리 3 — fail-open 을 닫는다.** 대장이 없으면 심은 수가 0 이 되고
+    #: `무리 A 는 전부 잡아야 한다` 가 `0 == 0` 으로 **자료 없이 참**이 됐다.
     man = json.loads(sf.read_text(encoding="utf-8")) if sf.is_file() else {}
     files = man.get("파일별", {})
+    fail_open = (not files)
     per = collections.OrderedDict()
     agg = collections.Counter()
     for rel, info in files.items():
@@ -563,15 +577,21 @@ def stage_control(ref, cycle, ran) -> dict:
             sum(agg["975/" + g] for g in groups), n_all),
         "🔴 974 판 전체": "%d / %d" % (
             sum(agg["974/" + g] for g in groups), n_all),
-        "🔴 무리 A 는 976 판이 전부 잡아야 한다": (
-            agg["976/A(슬롯 안)"] == agg["심음/A(슬롯 안)"]),
-        "🔴 무리 B 는 976 판이 전부 잡아야 한다": (
-            agg["976/B(슬롯 밖)"] == agg["심음/B(슬롯 밖)"]),
-        "🔴 무리 C 는 아무도 못 잡는 것이 정상(선언된 사각지대)": (
-            agg["976/C(면제 자리)"] == 0),
+        "🔴🔴 977 수리 3 — 슬롯 대장이 없거나 비었나(fail-open 자리)": bool(fail_open),
+        "🔴 무리 A 는 976 판이 전부 잡아야 한다": bool(
+            (not fail_open) and agg["심음/A(슬롯 안)"] > 0
+            and agg["976/A(슬롯 안)"] == agg["심음/A(슬롯 안)"]),
+        "🔴 무리 B 는 976 판이 전부 잡아야 한다": bool(
+            (not fail_open) and agg["심음/B(슬롯 밖)"] > 0
+            and agg["976/B(슬롯 밖)"] == agg["심음/B(슬롯 밖)"]),
+        "🔴 무리 C 는 아무도 못 잡는 것이 정상(선언된 사각지대)": bool(
+            (not fail_open) and agg["976/C(면제 자리)"] == 0),
+        "통과": bool((not fail_open) and n_all > 0
+                   and agg["976/A(슬롯 안)"] == agg["심음/A(슬롯 안)"]
+                   and agg["976/B(슬롯 밖)"] == agg["심음/B(슬롯 밖)"]),
         "파일별": per,
     }
-    out["🔴 도장"] = stamp_block(ref, cs0, code_stamp(ran), t0, ran)
+    out["🔴 도장"] = stamp_block(ref, cs0, code_stamp(ran), t0, ran, DATA)
     (OUT / ("out%s_control.json" % cycle)).write_text(
         json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
     return out
