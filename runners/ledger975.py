@@ -165,30 +165,46 @@ def render(v):
 
 # ══════════════════════════════════════════════════════════════════════
 def keypath_control() -> dict:
-    """🔴 **수리 2 의 양성 대조** --- `525 → 524` 를 두 채점기에 걸어 본다."""
-    S = artifact_numbers()
+    """🔴 **수리 2 의 양성 대조** --- `525 → 524` 를 두 채점기에 걸어 본다.
+
+    🔴 **허용집합은 「어느 산출물 묶음을 보느냐」에 매인다.** 티처 #113 은 **974 의 산출물
+    열한 개**로 재서 **정수 0~999 의 90.1%** 를 얻었다. 그래서 두 묶음을 **같이** 싣는다.
+    """
+    S974 = artifact_numbers("out974_*.json")
+    S975 = artifact_numbers("out975_*.json")
     ints = [str(i) for i in range(1000)]
-    in_S = sum(1 for i in ints if i in S)
-    # 974 판: 값이 집합에 있으면 통과
-    old_catches = "524" not in S
-    # 975 판: 그 자리가 선언한 키 경로의 값과 견준다
+
+    def cover(S):
+        return sum(1 for i in ints if i in S)
+
     path = ["out974_precision.json", "🔴🔴 ① 층화 표본 전체(층 무시)", "참"]
     val, err = resolve(path)
     new_ok = (err is None and render(val) == "525")
     new_catches = (err is None and render(val) != "524")
-    return {
-        "🔴 정수 0~999 중 허용집합에 든 것": in_S,
-        "분모": len(ints),
-        "🔴 비율": round(in_S / float(len(ints)), 4),
-        "🔴 티처 #113 이 신고한 비율": 0.901,
-        "🔴 `524` 가 허용집합에 있나": "524" in S,
-        "🔴🔴 974 판(값 집합 일치)이 `525 → 524` 를 잡나": old_catches,
-        "🔴 975 판이 쓰는 키 경로": path,
-        "🔴 그 경로가 실제로 내는 값": render(val) if err is None else err,
-        "🔴 그 값이 `525` 인가": new_ok,
-        "🔴🔴 975 판(출처 키 경로 일치)이 `525 → 524` 를 잡나": new_catches,
-        "🔴🔴 고침이 물었나": bool(new_catches and not old_catches),
-    }
+    r = collections.OrderedDict()
+    for name, S in (("974 산출물 묶음(티처가 잰 것)", S974),
+                    ("975 산출물 묶음", S975)):
+        c = cover(S)
+        r[name] = {
+            "🔴 산출물에서 모은 수의 가짓수": len(S),
+            "🔴 정수 0~999 중 허용집합에 든 것": c,
+            "분모": len(ints),
+            "🔴 비율": round(c / float(len(ints)), 4),
+            "🔴 `524` 가 허용집합에 있나": "524" in S,
+            "🔴 `525` 가 허용집합에 있나": "525" in S,
+            "🔴🔴 974 판(값 집합 일치)이 `525 → 524` 를 잡나": "524" not in S,
+        }
+    r["🔴 티처 #113 이 신고한 비율(974 묶음)"] = 0.901
+    r["🔴 975 판이 쓰는 키 경로"] = path
+    r["🔴 그 경로가 실제로 내는 값"] = render(val) if err is None else err
+    r["🔴 그 값이 `525` 인가"] = new_ok
+    r["🔴🔴 975 판(출처 키 경로 일치)이 `525 → 524` 를 잡나"] = new_catches
+    r["🔴🔴 고침이 무는 자리(974 묶음)"] = bool(
+        new_catches and "524" in S974)
+    r["🔴 뜻"] = ("🔴 **974 판은 묶음에 매인다** --- 같은 오식(`525 → 524`)이 "
+                "묶음에 따라 잡히기도 하고 안 잡히기도 한다. "
+                "975 판은 **그 자리가 선언한 키 경로**만 보므로 묶음과 무관하다.")
+    return r
 
 
 # ══════════════════════════════════════════════════════════════════════
