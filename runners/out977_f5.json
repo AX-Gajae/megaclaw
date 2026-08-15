@@ -1,0 +1,120 @@
+{
+ "무엇": "977 — F5 를 산출물 전량에 채점한다(공유 `ledger.py`)",
+ "🔴 채점 대상 글롭": "out977_*.json",
+ "🔴🔴 F5 분자/분모(전량)": "9 / 9",
+ "🔴 전량 통과인가": true,
+ "산출물별": {
+  "out977_control.json": {
+   "F5": true,
+   "분자/분모": "2 / 2",
+   "기준 ref": "eec6c7339c219ad55b89f0f7d3f6bd191af5eff1",
+   "40자 고정 sha 인가": true,
+   "🔴 0000…0000 인가": false,
+   "시작=끝": true,
+   "도장이 덮는 파일": 72
+  },
+  "out977_destroy.json": {
+   "F5": true,
+   "분자/분모": "5 / 5",
+   "기준 ref": "eec6c7339c219ad55b89f0f7d3f6bd191af5eff1",
+   "40자 고정 sha 인가": true,
+   "🔴 0000…0000 인가": false,
+   "시작=끝": true,
+   "도장이 덮는 파일": 75
+  },
+  "out977_f5.json": {
+   "F5": true,
+   "분자/분모": "2 / 2",
+   "기준 ref": "eec6c7339c219ad55b89f0f7d3f6bd191af5eff1",
+   "40자 고정 sha 인가": true,
+   "🔴 0000…0000 인가": false,
+   "시작=끝": true,
+   "도장이 덮는 파일": 72
+  },
+  "out977_grid.json": {
+   "F5": true,
+   "분자/분모": "5 / 5",
+   "기준 ref": "eec6c7339c219ad55b89f0f7d3f6bd191af5eff1",
+   "40자 고정 sha 인가": true,
+   "🔴 0000…0000 인가": false,
+   "시작=끝": true,
+   "도장이 덮는 파일": 75
+  },
+  "out977_ladder.json": {
+   "F5": true,
+   "분자/분모": "5 / 5",
+   "기준 ref": "eec6c7339c219ad55b89f0f7d3f6bd191af5eff1",
+   "40자 고정 sha 인가": true,
+   "🔴 0000…0000 인가": false,
+   "시작=끝": true,
+   "도장이 덮는 파일": 75
+  },
+  "out977_numaudit.json": {
+   "F5": true,
+   "분자/분모": "2 / 2",
+   "기준 ref": "eec6c7339c219ad55b89f0f7d3f6bd191af5eff1",
+   "40자 고정 sha 인가": true,
+   "🔴 0000…0000 인가": false,
+   "시작=끝": true,
+   "도장이 덮는 파일": 72
+  },
+  "out977_scorefix.json": {
+   "F5": true,
+   "분자/분모": "4 / 4",
+   "기준 ref": "eec6c7339c219ad55b89f0f7d3f6bd191af5eff1",
+   "40자 고정 sha 인가": true,
+   "🔴 0000…0000 인가": false,
+   "시작=끝": true,
+   "도장이 덮는 파일": 74
+  },
+  "out977_slots.json": {
+   "F5": true,
+   "분자/분모": "3 / 3",
+   "기준 ref": "eec6c7339c219ad55b89f0f7d3f6bd191af5eff1",
+   "40자 고정 sha 인가": true,
+   "🔴 0000…0000 인가": false,
+   "시작=끝": true,
+   "도장이 덮는 파일": 73
+  },
+  "out977_wiring.json": {
+   "F5": true,
+   "분자/분모": "5 / 5",
+   "기준 ref": "eec6c7339c219ad55b89f0f7d3f6bd191af5eff1",
+   "40자 고정 sha 인가": true,
+   "🔴 0000…0000 인가": false,
+   "시작=끝": true,
+   "도장이 덮는 파일": 75
+  }
+ },
+ "🔴 도장": {
+  "언제(시작)": "2026-08-15T21:34:40Z",
+  "언제(끝)": "2026-08-15T21:34:40Z",
+  "시작 code_stamp 요약": "b6186c040a5adf128479e64be2ef1dd13ca22cc0ec7afacab91433b8e0a36db8",
+  "끝 code_stamp 요약": "b6186c040a5adf128479e64be2ef1dd13ca22cc0ec7afacab91433b8e0a36db8",
+  "🔴 시작=끝": true,
+  "분모: 도장이 덮는 파일": 72,
+  "🔴 자료 지문": {
+   "sao941": "50eacbe4468cf86f561535e3eea7aec31f0151679a33018b7eb12627d1cbbd83",
+   "sao959": "273e4bad06c9f073be89ae3477b89acf9a4973f2c77c66e21aa571a4b5d56728",
+   "hplt_ko": "67de3062bad60e122c446fccb0b96d2c3a36c0ee2deafa40324a22dcad6c09a2"
+  },
+  "분모: 연 자료 파일": 3,
+  "🔴 F1 기준 ref(준 대로)": "eec6c7339c219ad55b89f0f7d3f6bd191af5eff1",
+  "🔴 40자 고정 sha 인가": true,
+  "🔴 기준 ref 가 0000…0000 인가": false,
+  "러너별": {
+   "runners/ledger.py": {
+    "디스크 sha256": "51c89035f14f3dc62389a0d105667ed085e264dc26cfda8b6b58011782e846e1",
+    "커밋 blob sha256": "51c89035f14f3dc62389a0d105667ed085e264dc26cfda8b6b58011782e846e1",
+    "일치": true
+   },
+   "runners/predict971.py": {
+    "디스크 sha256": "c870fe5d8bf72424fd86203e4585b8d234b4d06b800a78fa074d7f9401738c3f",
+    "커밋 blob sha256": "c870fe5d8bf72424fd86203e4585b8d234b4d06b800a78fa074d7f9401738c3f",
+    "일치": true
+   }
+  },
+  "🔴 분자/분모": "2 / 2",
+  "🔴 F5 통과": true
+ }
+}
