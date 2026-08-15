@@ -1,0 +1,486 @@
+{
+ "🔴 노트": 973,
+ "🔴 레인": "판정",
+ "🔴🔴🔴 축": "C3 (data spec · mixture · filtering)",
+ "🔴 시작(UTC)": "2026-08-15T15:34:22Z",
+ "🔴 사전등록": "docs/prereg_973_hplt_c3.md (측정 전 단독 커밋 6b6ed2b9f)",
+ "🔴 측정 전 출발점(사전등록 §1)": {
+  "기존 삼중쌍": 40007,
+  "기존 최대 도메인 행": 37074,
+  "HPLT 문서 전량(954 실측)": 38866835,
+  "HPLT shard": 464,
+  "🔴 HPLT 정제 실주행": 0,
+  "🔴 HPLT 삼중쌍": 0
+ },
+ "🔴🔴 §S 돌린 러너 ↔ 커밋 blob(F5)": {
+  "기준 ref(준 대로)": "cb176060f14be8a3848583c97e0be2ce0d02cc33",
+  "🔴 40자 고정 sha 인가": true,
+  "러너별": {
+   "runners/ledger973.py": {
+    "디스크 sha256": "dc5c709e444dc19aaf8f6feca1ec52d42dadf51055cf40d0533b162e15279363",
+    "커밋 blob sha256": "dc5c709e444dc19aaf8f6feca1ec52d42dadf51055cf40d0533b162e15279363",
+    "일치": true
+   },
+   "runners/hplt973.py": {
+    "디스크 sha256": "1d5a73f8c753c8234d26ee332a6b4f366e8c55727be6557d20a5623fc184bb48",
+    "커밋 blob sha256": "1d5a73f8c753c8234d26ee332a6b4f366e8c55727be6557d20a5623fc184bb48",
+    "일치": true
+   },
+   "runners/rulerfix973.py": {
+    "디스크 sha256": "2915d57b752e90ff1091b2690a392a6f5d004e3daa467f35b56a1a41bc0e295b",
+    "커밋 blob sha256": "2915d57b752e90ff1091b2690a392a6f5d004e3daa467f35b56a1a41bc0e295b",
+    "일치": true
+   },
+   "runners/predict971.py": {
+    "디스크 sha256": "c870fe5d8bf72424fd86203e4585b8d234b4d06b800a78fa074d7f9401738c3f",
+    "커밋 blob sha256": "c870fe5d8bf72424fd86203e4585b8d234b4d06b800a78fa074d7f9401738c3f",
+    "일치": true
+   },
+   "runners/dupe954_hplt_scan.py": {
+    "디스크 sha256": "36d53661952f558c9d8ad1ebf5571a237964a7a13c26f72ddc81097cee89205b",
+    "커밋 blob sha256": "36d53661952f558c9d8ad1ebf5571a237964a7a13c26f72ddc81097cee89205b",
+    "일치": true
+   }
+  },
+  "🔴 분자/분모": "5 / 5",
+  "🔴 어긋난 러너": [],
+  "🔴 F5 통과": true
+ },
+ "🔴🔴🔴 §A 채택 문턱 A1~A5": {
+  "칸별": {
+   "A1 HPLT 삼중쌍 행": {
+    "문턱": "≥ 1000",
+    "실측": 35641,
+    "🔴 넘었나": true
+   },
+   "A2 그 행이 덮는 도메인": {
+    "문턱": "≥ 5",
+    "실측": 10,
+    "🔴 넘었나": true
+   },
+   "A3 합친 코퍼스 최대 도메인 점유율": {
+    "문턱": "≤ 0.85",
+    "실측": 0.498242,
+    "🔴 넘었나": true
+   },
+   "A4 원천 태그 비율": {
+    "문턱": "= 1.0",
+    "실측": 1.0,
+    "🔴 분자/분모": "35641 / 35641",
+    "🔴 넘었나": true
+   },
+   "A5 산출물 크기 MB": {
+    "문턱": "≤ 50.0",
+    "실측": 6.953,
+    "🔴 넘었나": true
+   }
+  },
+  "🔴🔴 분자/분모": "5 / 5",
+  "🔴🔴 채택하나": true,
+  "🔴 사전등록 §6 문장": "다섯을 전부 넘어야 「이 파이프라인을 채택한다」이고, 하나라도 미달이면 「이 자를 못 넘었다」로 적는다"
+ },
+ "🔴🔴🔴 §P 사전등록 예측 P1~P12": {
+  "채점표": {
+   "P1": {
+    "예측": "정제 게이트를 다 통과하는 문서 비율은 10% 이상 60% 이하다",
+    "🔴 판정": "✗ 반증됐다",
+    "🔴 실측": "G7 0.625369 (분모 670118)"
+   },
+   "P2": {
+    "예측": "G6(정규화 URL 중복)에서 떨어지는 비율은 1% 이상이다",
+    "🔴 판정": "✅ 맞다",
+    "🔴 실측": "0.262566 (분모 670118)"
+   },
+   "P3": {
+    "예측": "G4(도박)에서 떨어지는 비율은 0.5% 이상 6% 이하다",
+    "🔴 판정": "✅ 맞다",
+    "🔴 실측": "0.017736 (분모 670118)"
+   },
+   "P4": {
+    "예측": "HPLT 삼중쌍은 0 행이 아니다",
+    "🔴 판정": "✅ 맞다",
+    "🔴 실측": "35641 행"
+   },
+   "P5": {
+    "예측": "HPLT 삼중쌍이 덮는 도메인은 5 개 이상이다",
+    "🔴 판정": "✅ 맞다",
+    "🔴 실측": "10 도메인"
+   },
+   "P6": {
+    "예측": "HPLT 삼중쌍의 최대 도메인은 「게임」이 아니다",
+    "🔴 판정": "✅ 맞다",
+    "🔴 실측": "최대 도메인 시장팝업 (13733 / 35641)"
+   },
+   "P7": {
+    "예측": "합친 코퍼스의 최대 도메인 점유율이 내려간다",
+    "🔴 판정": "✅ 맞다",
+    "🔴 실측": "0.926688 → 0.498242"
+   },
+   "P8": {
+    "예측": "일반어 의심 제목은 1 개 이상 50 개 이하다",
+    "🔴 판정": "✅ 맞다",
+    "🔴 실측": "4 (분모: 맞은 제목 788)"
+   },
+   "P9": {
+    "예측": "산출물 .jsonl.gz 는 50 MB 이하다",
+    "🔴 판정": "✅ 맞다",
+    "🔴 실측": "6.953 MB"
+   },
+   "P10": {
+    "예측": "G9(위키 창 덮기)에서 떨어지는 짝이 있다",
+    "🔴 판정": "✅ 맞다",
+    "🔴 실측": "38141 / 73782"
+   },
+   "P11": {
+    "예측": "8 shard 의 collection 은 2 종 이상이다",
+    "🔴 판정": "✅ 맞다",
+    "🔴 실측": "7 종 --- ['cc22', 'wide12', 'cc21', 'cc18', 'wide11', 'cc17', 'wide16']"
+   },
+   "P12": {
+    "예측": "채택 문턱 A1~A5 전부를 넘는다",
+    "🔴 판정": "✅ 맞다",
+    "🔴 실측": "5 / 5"
+   }
+  },
+  "🔴 분자/분모": "맞다 11 / 12"
+ },
+ "🔴🔴 §F 반증조건 F1~F10 자기판정": {
+  "F1 HPLT 삼중쌍 0 행이면 실패": {
+   "🔴 실측": "35641 행",
+   "🔴 판정": "✅ 안 걸렸다"
+  },
+  "F2 원천 태그가 행에 안 박히면 실패": {
+   "🔴 실측": "35641 / 35641",
+   "🔴 판정": "✅ 안 걸렸다"
+  },
+  "F3 도메인 수를 행 수와 같이 안 적으면 실패": {
+   "🔴 실측": "행 35641 · 도메인 10 --- 같은 자리에 적었다",
+   "🔴 판정": "✅ 안 걸렸다"
+  },
+  "F4 산출물이 안 내는 수를 적으면 실패": {
+   "🔴 실측": "치환표 아래 §T · 라벨 검사까지 건다",
+   "🔴 판정": "아래 §T 가 판정한다"
+  },
+  "F5 돌린 러너 sha ≠ 커밋 blob 이면 실패": {
+   "🔴 실측": "3 / 3",
+   "🔴 판정": "✅ 안 걸렸다"
+  },
+  "F6 도장이 시작·끝·러너 전부·고정 ref·자료 지문을 못 덮으면 실패": {
+   "🔴 실측": {
+    "시작=끝": true,
+    "돌린 러너를 덮나": {
+     "runners/hplt973.py": true,
+     "runners/dupe954_hplt_scan.py": true,
+     "runners/predict971.py": true
+    },
+    "자료 파일": 19,
+    "40자 고정 ref": true
+   },
+   "🔴 판정": "✅ 안 걸렸다"
+  },
+  "F7 원장을 checkout 으로 건드리면 실패": {
+   "🔴 실측": "배관만 썼다(hash-object → GIT_INDEX_FILE → write-tree → commit-tree)",
+   "🔴 판정": "✅ 안 걸렸다"
+  },
+  "F8 데몬을 재우면 실패": {
+   "🔴 실측": "PID 70251 · 재움 0 회",
+   "🔴 판정": "✅ 안 걸렸다"
+  },
+  "F9 100MB 넘는 파일 반입이면 실패": {
+   "🔴 실측": "6.953 MB",
+   "🔴 판정": "✅ 안 걸렸다"
+  },
+  "F10 게이트 비율을 분모 없이 적으면 실패": {
+   "🔴 실측": "게이트 9 칸 전부에 「🔴 분모(읽은 문서)」가 붙어 있다",
+   "🔴 판정": "✅ 안 걸렸다"
+  }
+ },
+ "🔴🔴🔴 §R 수리 다섯(상한 5)": {
+  "수리 1 --- 치-1 4 칸 전부 채점 + Fisher": "1 / 4",
+  "수리 2 --- 치-2 「낙하 n 도 매여 있다」 철회": "0 / 18",
+  "수리 3 --- 치-4 「48 줄」 실측 + 치환표 라벨 검사": false,
+  "수리 4 --- 972 산출물 기록 정정(치-5 `_sha_file` 복원 + 치-6 meta965 스키마·:1385)": {
+   "🔴 두 항목을 하나로 묶었다": true,
+   "치-5": "9 / 9",
+   "치-6": "6 / 6"
+  },
+  "🔴🔴 수리 5 --- 사고 대응(규칙 A 한 줄 + 데몬 PATHS 두 겹)": {
+   "🔴 사고가 PATHS 밖을 건드렸나": "1 / 4",
+   "🔴 심어서 재현 --- 옛 판이 PATHS 밖을 끌어들이나": true,
+   "🔴 심어서 재현 --- 새 판이 끌어들이나": false,
+   "🔴 원장이 옛 값으로 되돌아갔나(옛 판)": true,
+   "🔴 고침이 소스에 있나": {
+    "파일": "runners/harvest_daemon.py",
+    "🔴 `diff --cached` 에 경로 제한이 붙었나": true,
+    "그 자리 원문": "\"diff\", \"--cached\",\n                              \"--name-only\", \"--\"] + PATHS)",
+    "🔴 `staged` 를 PATHS 로 한 번 더 거르나": true,
+    "sha256": "5023567949200a9147e38919bb78c35502db0ef7576c66cad1724e9c5b1cea7f"
+   }
+  },
+  "🔴 수리 항목 수": 5,
+  "🔴 상한": 5,
+  "🔴 묶음 신고": "치-5 와 치-6 을 「972 산출물 기록 정정」 하나로 묶었다. 묶지 않으면 사고 대응까지 여섯이라 상한을 넘는다. 🔴 **묶었다는 사실을 여기 적는다** --- 숨기면 계수를 부풀린 것이다"
+ },
+ "🔴🔴 §L 내가 봤을 때의 원장(실측)": {
+  "main": {
+   "최상위 키": 1122,
+   "🔴 중복 키(모든 중첩)": 0,
+   "커밋": "35227f44e2fae1891eed04cfda16569e0676af9c"
+  },
+  "note/973-hplt-c3": {
+   "최상위 키": 1122,
+   "🔴 중복 키(모든 중첩)": 0,
+   "커밋": "cb176060f14be8a3848583c97e0be2ce0d02cc33"
+  },
+  "디스크": {
+   "최상위 키": 1122
+  },
+  "🔴 HEAD 와 디스크가 같나": true
+ },
+ "🔴🔴🔴 §T 치환표 --- **판정문·카드·논문은 이 값만 쓴다**": {
+  "읽은 HPLT 문서": 670118,
+  "읽은 shard": 8,
+  "분모: HPLT shard 전량": 464,
+  "collection 종 수": 7,
+  "ts 범위": [
+   "2014-06-25",
+   "2022-12-10"
+  ],
+  "도박 게이트에서 떨어진 문서": 11885,
+  "URL 정규화 중복으로 떨어진 문서": 175950,
+  "본문 중복으로 떨어진 문서": 147,
+  "정제를 통과한 문서": 419071,
+  "정제 통과 비율": 0.625369,
+  "개체를 언급한 문서": 44100,
+  "문서-개체 후보 짝": 73782,
+  "위키 창을 못 덮어 떨어진 짝": 38141,
+  "🔴🔴 HPLT 삼중쌍 행": 35641,
+  "🔴🔴 그 행이 덮는 도메인": 10,
+  "HPLT 도메인별 행": {
+   "시장팝업": 13733,
+   "웹툰": 4776,
+   "팝업": 4751,
+   "모바일": 4408,
+   "애니": 3237,
+   "세계애니": 1582,
+   "도서": 1362,
+   "만화": 825,
+   "게임": 617,
+   "아이돌": 350
+  },
+  "HPLT 가 덮는 개체": 704,
+  "분모: 위키 개체 전량": 3896,
+  "일반어 의심 제목": 4,
+  "일반어 의심으로 표시된 행": 10240,
+  "산출물 크기 MB": 6.953,
+  "산출물 sha": "67de3062bad60e122c446fccb0b96d2c3a36c0ee2deafa40324a22dcad6c09a2",
+  "코퍼스 행 before": 40007,
+  "코퍼스 행 after": 75648,
+  "🔴 Δ 행": 35641,
+  "코퍼스 도메인 before": 11,
+  "코퍼스 도메인 after": 11,
+  "🔴 Δ 도메인": 0,
+  "최대 도메인 점유율 before": 0.926688,
+  "🔴🔴 최대 도메인 점유율 after": 0.498242,
+  "🔴 Δ 최대 도메인 점유율": -0.428446,
+  "leave-one-source-out(도메인 수 Δ)": {
+   "sao941": 0,
+   "sao959": 0,
+   "sao962": 0,
+   "hplt_ko": 0
+  },
+  "leave-one-source-out(최대 점유율 Δ)": {
+   "sao941": -0.000112,
+   "sao959": 0.015305,
+   "sao962": -0.145311,
+   "hplt_ko": 0.428446
+  },
+  "배선 분자/분모": "12 / 12",
+  "파괴 대조 분자/분모": "9 / 9",
+  "치① 밑값을 넘는 칸": "1 / 4",
+  "치① 넘는 칸 이름": [
+   "func · 정확"
+  ],
+  "치① 칸별 Fisher p": {
+   "file · 접미": 0.586791,
+   "file · 정확": 1.0,
+   "func · 접미": 1.0,
+   "func · 정확": 1.0
+  },
+  "치① 칸별 앞 러너 대 밑값": {
+   "file · 접미": [
+    "2 / 13",
+    "2 / 7",
+    "아니다"
+   ],
+   "file · 정확": [
+    "2 / 12",
+    "1 / 6",
+    "같다"
+   ],
+   "func · 접미": [
+    "3 / 13",
+    "2 / 7",
+    "아니다"
+   ],
+   "func · 정확": [
+    "3 / 12",
+    "1 / 6",
+    "🔴 넘는다"
+   ]
+  },
+  "치② 낙하가 흔들린 자리": "0 / 18",
+  "치④ 작은 꼬리 실측 줄 수": [
+   37
+  ],
+  "치④ 큰 꼬리 실측 줄 수": [
+   437
+  ],
+  "치④ 주석만 갈래 실측 줄 수": [
+   49
+  ],
+  "치④ 앞 노트의 작은 꼬리 줄 수 주장이 참인가": false,
+  "치⑤ 파괴 대조 산출물 행": 8,
+  "치⑤ 생산 함수 전량": 9,
+  "치⑤ 사라진 행": [
+   "_sha_file"
+  ],
+  "치⑤ 복원 뒤 분자/분모": "9 / 9",
+  "치⑥ meta 자의 더해진 열쇠": [
+   "🔴🔴🔴 자 B 풀 범위(972 · 티처 #110 치명 1)"
+  ],
+  "치⑥ meta 그 자리가 잡힌 칸": "6 / 6",
+  "사고 커밋": "1ea516fbad8d8b398a02a57a730f99484e973d00",
+  "사고 때": "2026-08-16T00:10:02+09:00",
+  "사고가 건드린 파일": [
+   {
+    "더한 줄": "3099",
+    "지운 줄": "0",
+    "경로": "data/ingest/kobis/2026-08-15.json"
+   },
+   {
+    "더한 줄": "2133",
+    "지운 줄": "0",
+    "경로": "data/ingest/youtube_poll/2026-08-15T151000Z.json"
+   },
+   {
+    "더한 줄": "0",
+    "지운 줄": "11",
+    "경로": "data/lab/denominator.json"
+   },
+   {
+    "더한 줄": "6",
+    "지운 줄": "0",
+    "경로": "data/state/collect_log.jsonl"
+   }
+  ],
+  "사고가 건드린 데몬 경로 밖 파일": "1 / 4",
+  "데몬 경로": [
+   "data/ingest",
+   "data/state"
+  ],
+  "심어서 잰 것 --- 옛 판이 경로 밖을 끌어들이나": true,
+  "심어서 잰 것 --- 새 판이 끌어들이나": false,
+  "심어서 잰 것 --- 원장이 옛 값으로 되돌아갔나": true,
+  "데몬 고침이 소스에 있나": true
+ },
+ "🔴🔴 §T2 치환표 자기검사": {
+  "🔴 자 ㉠(973 이 죈 것)": "치환표 **열쇠에 아라비아 숫자가 없어야 한다**",
+  "🔴 자 ㉡(곁 자)": "그래도 남은 수는 **그 열쇠 자신의 값**에서 와야 한다",
+  "🔴 왜": "972 의 「48 줄」은 값 검사를 통과하고 **열쇠 라벨로** 샜다",
+  "🔴 분모: 치환표 열쇠": 59,
+  "🔴 ㉠ 어긋난 열쇠": {
+   "수": 0,
+   "목록": []
+  },
+  "🔴 ㉡ 어긋난 열쇠": {
+   "수": 0,
+   "목록": []
+  },
+  "🔴 통과": true
+ },
+ "🔴 끝(UTC)": "2026-08-15T15:34:22Z",
+ "🔴🔴 §Z 소스 대조": {
+  "시작 code_stamp 요약": "e5169a59ccda5b54effb49ca96ccbc2e115ae747c2dd67a56f8f057e7dfac65d",
+  "끝 code_stamp 요약": "e5169a59ccda5b54effb49ca96ccbc2e115ae747c2dd67a56f8f057e7dfac65d",
+  "🔴 주행 중 소스가 바뀌었나": false,
+  "분모: 도장이 덮는 파일": 75,
+  "🔴 잰 소스 sha(전량 · 자르지 않았다)": {
+   "lab/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "lab/adopt.py": "9f7c8437e2b91ce78aa5b083124363ff5ebb45be995bb807b7af8751e239d7c6",
+   "lab/animeaxes.py": "b0bab9d0515ca2442c18e14eefe806768a6dd327062a3dffaf6f110717d45e85",
+   "lab/autotag.py": "7d85366cecb68b1f97bb622c80eba58abf26da974b5192fd84341fad6e9f48a2",
+   "lab/board.py": "c15688838efc678e64da81781ebf4e72b9984e432dc29bd2b5949d6f1861baa2",
+   "lab/calaxes.py": "8378cdc6c25ad26bbe82a8bc02b93da46618eaf0cd0b5b11d614275b66c403f8",
+   "lab/calib.py": "1b3564037eca6acd65d3316a0ee16418dd90b13fbf25946653768a8f84bc3685",
+   "lab/challenger.py": "3fd75bb834f6e111cf097d2aa0906adcd6ccc30e52f6993257b2e453c405d9b1",
+   "lab/creatoraxes.py": "d5265a75c87af5684a72dfb9393151f59e02849dcecf7b002a0d6089a90192b8",
+   "lab/crowdaxes.py": "ce46f4b9f41c80ff8aa80c2e2183250673abb451f32abad6008ec3f25bb7670d",
+   "lab/curveshape.py": "3f5e196e3893f2ca0295ea338403705c55dd10aa33e33ed6e5b457f89f2024ef",
+   "lab/datehygiene.py": "af7790f31a053dc88e94758946e1a53e937b584c279f8e2009e884ffea992e3e",
+   "lab/decay.py": "fa165390fc823e9f22ad140b1f991f4308200a1dc15e02340b5ebacbd055edcf",
+   "lab/entkey.py": "749fbbae4083d368a78dcd7135d4b15dfe66a25dd2ebe6d7761bb1f8ae192ff2",
+   "lab/eracheck.py": "f713e5bf1d06067bcbc08594cd25ef9d667caf326798711e6b4b7e0e4f81fac2",
+   "lab/fewshot.py": "aab7aae2cc40ca3dacdbd06861b77aeea0922eee5e214a0362e992746d3fcc35",
+   "lab/fixaxes.py": "90f4023e578e8f8ed2dd5c80c68aa60b2e7144697d74aa4003ac8381c5535941",
+   "lab/forms.py": "5cfa890460eab48bc8511c231d2043efce68c298ccd5360825a9c2dcff506fd1",
+   "lab/fundaxes.py": "25e9df5e523b1a0c3a39c9a73d98e25d94017dfc631c0dcfe22d5e992c60c324",
+   "lab/gamedate.py": "ac968cb6be5e11d81a9def38b707171b19949a180c7a42d502c366b6cc1fd825",
+   "lab/gamesearch.py": "30aab480d650cc3d78a1f3b8402278825a18d8e70a85389d57d1a1d66b1233de",
+   "lab/gamew30.py": "4cb2a3a489e96971207683dfe223492af3cf118b211251f4842c5939049d404f",
+   "lab/genaxes.py": "1e24ad423d7f7fec11a44d6be9060c26107412f8d0f4568af7b2403d56fa8d38",
+   "lab/gitcall.py": "b79caadcf6425943f22f6a88a08971f2262227d761d61b1d0c6c614019230ac4",
+   "lab/grpaxes.py": "a261daa9a4b973278005a1577574d69d088f7b62968496c7071197ad87c07e3d",
+   "lab/guards.py": "536289b788577d65ec1d61b566c77fbc003d3d7153704a2146c22f135c4c5411",
+   "lab/harness.py": "0383271fa2f4ba0730e6084193a03a209c644e83379484415567f37323eec1fc",
+   "lab/hearing.py": "3e3779c2f57658d14771c71a8fbcb67f119b3eaaec3ed2f14b329d5ed192b7da",
+   "lab/idolset.py": "25373c860bbef524107e43a7d8d37602b7d048de04d288f99af53b30deccdd10",
+   "lab/ipjoin.py": "f3bad3742b74e00edcaebb3429b970c18dc501b3f17a2fb11b94a9b89159d6d6",
+   "lab/joint.py": "3eed95eac235f80d25b840603439326fc2e4662d37e9d0db726f4b95a2e39fbb",
+   "lab/keyspace.py": "e63c86da248e5255f73442405b27693ee0a11cdcff2dd37d4debcbef0a362657",
+   "lab/langaxes.py": "696eb72b5e43d1ad42075b3e8de44176a4e23fc18f3613c2cb9cc52046dd7732",
+   "lab/lever.py": "4c84849ed241e3663090d23887f62707b0d9f82765a60c393277024ed25378a3",
+   "lab/listaudit.py": "5ab436fdab96409e6b6745c239351dceb1fae2045eb6071c7884a7d0ad9ecaae",
+   "lab/loop.py": "2a99f705f0b6846a1388d78bfa253de75cbe694ecf73838a4c44e40bb2b83507",
+   "lab/marker.py": "2c08667896640ad65c812486b91c29177d7720b7a03363ca4afb323b51c7d97e",
+   "lab/mixture908.py": "bae8687d3c2a36c57fc8e0e4096b08d7280c8d0aeee5c3d38a6562f274ed1c1f",
+   "lab/mktaxes.py": "125a2ca89646c000ab30ba2779b3ba071b2a63b4c275b27c12caed45b701f849",
+   "lab/mktmore.py": "6e1b68e0e187e69ae469ed7ecb2f807852e0b0dfdb4e8a8e9ed3ee3edfd06fbc",
+   "lab/natsaxes.py": "0b64a6078ef2273f8c0181c0101936567e149f35fe36e7db99599d1b2b152bd9",
+   "lab/ordering.py": "cd1e5cb61063137cc2ac07f41a963b63ee717a3a312558d13b0dcc123aa34a4c",
+   "lab/overlap.py": "df6235ef04603b22204f7e2acbd3a0330c3de5de9f322499e7b81b6de1fadc59",
+   "lab/pairboot.py": "8e1e7b2fb00c3bd763e9d6b9b78b1fc11cc60b23defd821c0ebad37e781ea8cc",
+   "lab/pairs.py": "532ce5dc41ea2fa40e2370eb0c901422d1d5eda447dee46218c475300c97cc14",
+   "lab/poolshadow.py": "f4260cd30d96b66a5300941e4ec822c407758fe801bc300c0b8ca6fa583b6fbd",
+   "lab/popaxes.py": "17bcd94ed31065b379653f8f681dd0e129afa73ff2c878eed2c3651cb478f11f",
+   "lab/popupset.py": "3a896e344d86f5e7e30639bd16bc3c3c6ab95d40960c37181a37c8a9c349c7a6",
+   "lab/provenance.py": "b8b9ad9b1e4e9c3d6e89fdff44bee85c13f416472569aadedb932f157c7cee92",
+   "lab/rank.py": "e8c7ef0166e5589558d04eef2cc5aa2bb7a30e36f92c9b6a589752fbedfdc54b",
+   "lab/rawaxes.py": "7cbfb2d6088e02e132829ead1314ad9c95a14f4aef51bcd6c2675bed374a9ae2",
+   "lab/recaxes.py": "7de9ba5b315e395aaa2d8f2011530e88c4515b434b599e6ed0ad92cb9ce59fa9",
+   "lab/recency.py": "b0e7ca755b73d319c53dccd04b378588986a36b82f2aa0473d31dbe93ff096e4",
+   "lab/router.py": "610437bcc818ad4f7240d91752145e9c684ffeb8c4e6f509da6ddf6a04b179e3",
+   "lab/scrambled.py": "07763c61c8c5237545632b25d0ac22623e486c88bcd72c7ab491a456c2db36be",
+   "lab/semtoken908.py": "5a5e50904423337a09b1fbfff650549b9ac7ba12ca64eb192bf58650cff15382",
+   "lab/seqaxes.py": "d35a73c83e6fb7022f01e4ae2d094b7b548fc875a47e5c8fd64d44fd575c8f79",
+   "lab/server.py": "949c224f912487ec9b5ccb1ab9f8088faadeaf057f1c81113559627cc4dc230c",
+   "lab/sideaudit.py": "58c5cd63bb596707051f6cd9cc7f4817a5f3854f0a088655742028bb028e3aa8",
+   "lab/store.py": "e820bad3e794f397fe1f8af6a958b04fa4d13373329eb286918e30acfd31bffc",
+   "lab/tagaxes.py": "249285db668dd7a82e279ba946d1ecf68fb28a56a849d969f4fff37798b6e68e",
+   "lab/textaxes.py": "63ecea2dc29ea72781d8a5845083ee3390c2578fdcfd1a4beb422b9e91010477",
+   "lab/textnn.py": "e7d7ecfe01e325e6fb33fd0fca4dff44cef31235b89c791f5bcd423a08f20cad",
+   "lab/titlekey.py": "85c5d2f9883acfc43c1091b98f36db3555b21d5838458838bd891af3cf5a4258",
+   "lab/trendaxes.py": "42a77feb7eb288bc56d943306e16a5d53382e1a31c3b09f1d3219a362834b8a5",
+   "lab/tune.py": "142e1ed6720f535fe0cf655a41b77a925d0ef1d333cff1f5d565993b613600f8",
+   "lab/visitoraxes.py": "38ae6403666d8510c73b35ebe4e0441cef7b86deacc0c987b35d52f6ab17566e",
+   "lab/weatheraxes.py": "88dc8a48feacb3c417585081f79ad7b7cc414049c7cd554e63c67c935eac0995",
+   "lab/wikiaxes.py": "7b010ddfc1fcc98b06e2fa9697c7a3a6b674341ab87514f9221229c9ad70322b",
+   "lab/wikicat.py": "c3c477ed8bae9f4b99a567a1bdabaaba10acd0ae100fa5e4ade590fdf22371fb",
+   "runners/dupe954_hplt_scan.py": "36d53661952f558c9d8ad1ebf5571a237964a7a13c26f72ddc81097cee89205b",
+   "runners/hplt973.py": "1d5a73f8c753c8234d26ee332a6b4f366e8c55727be6557d20a5623fc184bb48",
+   "runners/ledger973.py": "dc5c709e444dc19aaf8f6feca1ec52d42dadf51055cf40d0533b162e15279363",
+   "runners/predict971.py": "c870fe5d8bf72424fd86203e4585b8d234b4d06b800a78fa074d7f9401738c3f",
+   "runners/rulerfix973.py": "2915d57b752e90ff1091b2690a392a6f5d004e3daa467f35b56a1a41bc0e295b"
+  }
+ }
+}
