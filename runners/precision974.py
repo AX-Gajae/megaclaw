@@ -232,7 +232,7 @@ def locate(text: str, want_titles: set):
         w = toks[i]
         cands = (w,) if H.strip_josa(w) == w else (w, H.strip_josa(w))
         for c in cands:
-            for rest, title in idx.get(c, ()):
+            for rest, title in (idx.get(c) or ()):
                 n = len(rest)
                 if n == 0:
                     found[title].append((spans[i][0], spans[i][1]))
@@ -265,7 +265,7 @@ def stage_context(ref: str) -> dict:
     only3 = {}                                # 3 판에만 있는 제목 -> 키
     for first, lst in idx3.items():
         for rest, title, key in lst:
-            hit = any(r2 == rest and t2 == title for r2, t2, _ in idx4.get(first, ()))
+            hit = any(r2 == rest and t2 == title for r2, t2, _ in (idx4.get(first) or ()))
             if not hit:
                 only3[title] = key
 
@@ -426,62 +426,57 @@ def stage_wiring(ref: str) -> dict:
 # ══════════════════════════════════════════════════════════════════════
 # 이항 구간 --- Clopper-Pearson (정확)
 # ══════════════════════════════════════════════════════════════════════
-def _betainc_inv(a, b, p):
-    """이분법으로 역 불완전베타. scipy 없이 판다(파이썬 3.9 · numpy 만)."""
-    lo, hi = 0.0, 1.0
+def _log_binom_pmf(i, n, p):
+    if p <= 0.0:
+        return 0.0 if i == 0 else float("-inf")
+    if p >= 1.0:
+        return 0.0 if i == n else float("-inf")
+    return (math.lgamma(n + 1) - math.lgamma(i + 1) - math.lgamma(n - i + 1)
+            + i * math.log(p) + (n - i) * math.log1p(-p))
+
+
+def binom_cdf(k, n, p):
+    """P(X ≤ k) --- 곧바로 더한다(n ≤ 수천이라 넉넉하다)."""
+    if k < 0:
+        return 0.0
+    if k >= n:
+        return 1.0
+    return min(1.0, sum(math.exp(_log_binom_pmf(i, n, p)) for i in range(0, k + 1)))
+
+
+def binom_sf(k, n, p):
+    """P(X ≥ k)."""
+    if k <= 0:
+        return 1.0
+    if k > n:
+        return 0.0
+    return min(1.0, sum(math.exp(_log_binom_pmf(i, n, p)) for i in range(k, n + 1)))
+
+
+def _bisect(f, target, lo, hi, inc):
+    """f 가 단조일 때 f(p) = target 인 p 를 이분법으로. inc=True 면 증가함수."""
     for _ in range(200):
         mid = (lo + hi) / 2.0
-        if _betainc(a, b, mid) < p:
+        v = f(mid)
+        if (v < target) == inc:
             lo = mid
         else:
             hi = mid
     return (lo + hi) / 2.0
 
 
-def _betainc(a, b, x):
-    """정규화 불완전베타 I_x(a,b) --- 연분수(Numerical Recipes)."""
-    if x <= 0:
-        return 0.0
-    if x >= 1:
-        return 1.0
-    lbeta = math.lgamma(a + b) - math.lgamma(a) - math.lgamma(b)
-    front = math.exp(lbeta + a * math.log(x) + b * math.log(1 - x))
-    if x < (a + 1) / (a + b + 2):
-        return front * _cf(a, b, x) / a
-    return 1.0 - math.exp(lbeta + b * math.log(1 - x) + a * math.log(x)) \
-        * _cf(b, a, 1 - x) / b
-
-
-def _cf(a, b, x):
-    tiny = 1e-30
-    f, c, d = 1.0, 1.0, 0.0
-    for i in range(1, 300):
-        m = i // 2
-        if i == 1:
-            num = 1.0
-        elif i % 2 == 0:
-            num = (m * (b - m) * x) / ((a + 2.0 * m - 1) * (a + 2.0 * m))
-        else:
-            num = -((a + m) * (a + b + m) * x) / ((a + 2.0 * m) * (a + 2.0 * m + 1))
-        d = 1.0 + num * d
-        if abs(d) < tiny:
-            d = tiny
-        d = 1.0 / d
-        c = 1.0 + num / c
-        if abs(c) < tiny:
-            c = tiny
-        f *= c * d
-        if abs(1.0 - c * d) < 1e-12:
-            break
-    return f - 1.0
-
-
 def cp_ci(k, n, alpha=0.05):
-    """Clopper-Pearson 95% --- 분모 0 이면 (0,1)."""
+    """Clopper-Pearson 95% --- 이항 합을 직접 뒤집는다. 분모 0 이면 (0,1).
+
+    아래끝: P(X ≥ k | p) = alpha/2 를 푸는 p --- k=0 이면 0.
+    위끝  : P(X ≤ k | p) = alpha/2 를 푸는 p --- k=n 이면 1.
+    """
     if n <= 0:
         return (0.0, 1.0)
-    lo = 0.0 if k == 0 else _betainc_inv(k, n - k + 1, alpha / 2.0)
-    hi = 1.0 if k == n else _betainc_inv(k + 1, n - k, 1 - alpha / 2.0)
+    lo = 0.0 if k <= 0 else _bisect(lambda p: binom_sf(k, n, p),
+                                    alpha / 2.0, 0.0, 1.0, True)
+    hi = 1.0 if k >= n else _bisect(lambda p: binom_cdf(k, n, p),
+                                    alpha / 2.0, 0.0, 1.0, False)
     return (round(lo, 6), round(hi, 6))
 
 
@@ -516,19 +511,24 @@ def stage_score(ref: str) -> dict:
     strat_all = smp["🔴 층별 전량"]
     N = smp["🔴 분모: 973 이 낸 행 전량"]
 
+    GEN = "거짓·일반어(그 문서의 일반어 뜻)"
+
     def tally(ids):
         c = collections.Counter(L.get(i, "라벨없음") for i in ids)
         n = sum(c.values())
-        k = c.get("참", 0)
-        kk = c.get("참", 0) + c.get("거짓", 0)
+        k = c.get("참", 0)                       # 개체 정밀도의 분자
+        kd = k + c.get(GEN, 0)                   # 문서(페이지) 정밀도의 분자
+        nn = n - c.get("모름", 0)                 # 모름을 뺀 분모
         return {
             "분모: 라벨한 행": n,
-            "참": c.get("참", 0), "거짓": c.get("거짓", 0), "모름": c.get("모름", 0),
+            "참": k, "거짓·일반어": c.get(GEN, 0),
+            "거짓": c.get("거짓", 0), "모름": c.get("모름", 0),
             "라벨없음": c.get("라벨없음", 0),
-            "🔴 주 자(모름=실패)": round(k / float(n), 6) if n else None,
-            "🔴 주 자 95% CP": cp_ci(k, n),
-            "곁 자(모름 뺌)": round(k / float(kk), 6) if kk else None,
-            "곁 자 95% CP": cp_ci(k, kk),
+            "🔴 주 자 = 개체 정밀도(모름=실패)": round(k / float(n), 6) if n else None,
+            "🔴 개체 정밀도 95% CP": cp_ci(k, n),
+            "🔴 문서(페이지) 정밀도": round(kd / float(n), 6) if n else None,
+            "🔴 문서 정밀도 95% CP": cp_ci(kd, n),
+            "곁 자: 개체 정밀도(모름 뺌)": round(k / float(nn), 6) if nn else None,
         }
 
     strat_ids = collections.defaultdict(list)
@@ -552,7 +552,7 @@ def stage_score(ref: str) -> dict:
     # ② 유효 삼중쌍 --- 층 가중
     eff = 0.0
     for h, v in per.items():
-        p = v["🔴 주 자(모름=실패)"]
+        p = v["🔴 주 자 = 개체 정밀도(모름=실패)"]
         n_h = strat_all.get(h, {}).get("전량 행", 0)
         if p is not None:
             eff += n_h * p
@@ -591,8 +591,8 @@ def stage_score(ref: str) -> dict:
                 "비율": round(full_flags.get(k, 0) / float(tot), 6),
                 "표본에서 무는 행의 정밀도": tally(ids_in),
                 "표본에서 남는 행의 정밀도": tally(ids_out)}
-        a = G[k]["표본에서 무는 행의 정밀도"]["🔴 주 자(모름=실패)"]
-        b = G[k]["표본에서 남는 행의 정밀도"]["🔴 주 자(모름=실패)"]
+        a = G[k]["표본에서 무는 행의 정밀도"]["🔴 주 자 = 개체 정밀도(모름=실패)"]
+        b = G[k]["표본에서 남는 행의 정밀도"]["🔴 주 자 = 개체 정밀도(모름=실패)"]
         G[k]["🔴 무는 쪽이 더 낮은가(게이트 성립)"] = (
             None if a is None or b is None else a < b)
 
@@ -626,6 +626,11 @@ def stage_score(ref: str) -> dict:
             "표본에서 남는 쪽 정밀도": tally(ids_kept),
         },
     }
+    # 🔴 라벨 파일에도 도장을 찍는다 --- F5 를 **산출물 전량**에 걸 수 있게(티처 #112 2순위②)
+    lp = OUT / "out974_labels.json"
+    lab["🔴 도장"] = stamp_block(ref, cs0, code_stamp(), t0)
+    lp.write_text(json.dumps(lab, ensure_ascii=False, indent=1), encoding="utf-8")
+
     out["🔴 도장"] = stamp_block(ref, cs0, code_stamp(), t0)
     (OUT / "out974_precision.json").write_text(
         json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
