@@ -977,7 +977,8 @@ def main():
     t_end = _now()
     R["🔴 끝(UTC)"] = t_end
     R["🔴 걸린 초"] = round(time.time() - t0, 1)
-    R["🔴🔴 §D 자료 입력 지문(규칙 C · 971 은 0 개였다)"] = data_seal()
+    seal = data_seal()
+    R["🔴🔴 §D 자료 입력 지문(규칙 C · 971 은 0 개였다)"] = seal
     R["🔴🔴 §Z 소스 대조"] = {
         "시작 code_stamp 요약": P.stamp_digest(cs0),
         "끝 code_stamp 요약": P.stamp_digest(cs1),
@@ -991,11 +992,11 @@ def main():
             "통과": bool(all(r in cs1 for r in RAN)),
         },
         "🔴🔴 F3 --- 도장이 **자료 입력**을 덮는가(규칙 C · 971 은 0 개)": {
-            "자료 파일 수": len(dat),
-            "자료 파일": sorted(dat),
+            "자료 파일 수": seal["🔴 분모: 자료 파일 수"],
+            "합친 요약": seal["🔴🔴 합친 요약(전량을 덮는다)"],
             "🔴 어떤 입력이면 떨어지나":
                 "`ReadTap` 을 안 걸거나 `data/` 밖만 읽으면 0 이 되어 떨어진다",
-            "통과": bool(len(dat) > 0),
+            "통과": bool(seal["🔴 분모: 자료 파일 수"] > 0),
         },
     }
 
