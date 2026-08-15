@@ -48,6 +48,20 @@ import runners.predict971 as P                    # noqa: E402
 OUT = ROOT / "runners"
 NUMPAT = re.compile(r"-?\d[\d,]*(?:\.\d+)?")
 
+#: 🔴🔴 **978 수리 4 — 한글 수사(數詞)를 채점 대상에 넣는다.**
+#: 977 의 「본문 **넷** 0 / 370」이 **판정문·카드·원장 셋을 그대로 통과**했다.
+#: 실제 `numaudit` 분모는 **다섯**(194+71+51+25+29 = 370)이었다. `NUMPAT` 은 아라비아
+#: 숫자만 보므로 **한글로 적은 수는 원리상 안 세었다** — 규칙 D 의 구멍이다.
+#: 🔴 낱말 목록을 여기 **등록해 두고 산출물이 그대로 싣는다**(분모를 숨기지 않는다).
+KOR_NUM = collections.OrderedDict([
+    ("하나", 1), ("둘", 2), ("셋", 3), ("넷", 4), ("다섯", 5), ("여섯", 6),
+    ("일곱", 7), ("여덟", 8), ("아홉", 9), ("열", 10), ("스물", 20),
+])
+#: 🔴 `둘러`·`열쇠`·`열린` 처럼 수사가 아닌 자리를 뺀다. **뺀 규칙을 적는다.**
+KNUM_NOT = re.compile(r"둘(?=러|레|리|russ)|열(?=쇠|린|리|어|고|다|자|중|한|은|을|린)")
+KNUMPAT = re.compile(
+    r"(?<![가-힣])(하나|둘|셋|넷|다섯|여섯|일곱|여덟|아홉|열|스물)")
+
 #: 🔴🔴 **977 수리 4** — 규칙 C 는 도장에 **자료 지문**을 요구한다. 976 은 이 파일의
 #: 네 stage 에서 `stamp_block(..., data=…)` 를 안 채워 **산출물 8 중 5 의 자료 지문이 0**
 #: 이었다. 여기 한 자리에 두고 넷이 같이 쓴다.
@@ -278,6 +292,48 @@ def audit_text(src, slots, S, rules=ALLOW_CTX):
             "🔴🔴 976 판이 못 찾는 수": miss_new}
 
 
+def audit_korean(src, counts):
+    """🔴🔴 **978 수리 4** — 본문의 **한글 수사**를 세고, 등록된 셈과 대조한다.
+
+    `counts` = `{앞말: 참값}` (예: `{"본문": 5, "산출물": 9}`). 앞말 바로 뒤에 오는
+    수사는 **그 참값과 같아야 한다.**
+
+    🔴 977 이 걸린 자리가 정확히 이것이다 — 「본문 **넷**」인데 참값은 **다섯**이었고,
+    `NUMPAT` 이 아라비아 숫자만 봐서 **세 문서가 그대로 통과했다.**
+    """
+    hits, bad = [], []
+    for m in KNUMPAT.finditer(src):
+        if KNUM_NOT.match(src, m.start()):
+            continue
+        word = m.group()
+        ctx = re.sub(r"\s+", " ", src[max(0, m.start() - 30):m.end() + 20])
+        row = {"수사": word, "값": KOR_NUM[word], "자리": m.start(), "맥락": ctx}
+        hits.append(row)
+        head = src[max(0, m.start() - 12):m.start()]
+        for name, want in counts.items():
+            if re.search(re.escape(name) + r"(?:의)?\s*$", head):
+                row["앞말"] = name
+                row["등록된 참값"] = want
+                row["맞나"] = bool(KOR_NUM[word] == want)
+                if not row["맞나"]:
+                    bad.append(row)
+    tied = [h for h in hits if "앞말" in h]
+    return {
+        "🔴 등록한 수사 낱말": dict(KOR_NUM),
+        "🔴 뺀 규칙(수사가 아닌 자리)": KNUM_NOT.pattern,
+        "🔴 대조한 앞말과 참값": dict(counts),
+        "🔴 센 한글 수사": len(hits),
+        "🔴 앞말이 걸린 수사": len(tied),
+        "🔴🔴 등록된 참값과 다른 수사": len(bad),
+        "🔴 어긋난 자리": bad[:20],
+        "수사별": collections.Counter([h["수사"] for h in hits]),
+        "통과": bool(len(bad) == 0 and len(hits) > 0),
+        "🔴 이 절의 `통과` 가 뜻하는 것": (
+            "본문의 한글 수사가 **하나도 등록된 셈과 안 어긋난다**. "
+            "🔴 분모가 0 이면 실패다 — 「안 세었다」와 「없다」는 둘이다"),
+    }
+
+
 def audit_975(src, slots, S, rules=ALLOW_CTX_975):
     """🔴 **975 판 그대로** — 슬롯 판정이 `render(resolve(키경로)) == 매니페스트["값"]`.
 
@@ -473,6 +529,12 @@ def stage_numaudit(ref, cycle, ran) -> dict:
     man = json.loads(sf.read_text(encoding="utf-8")) if sf.is_file() else {}
     files = man.get("파일별", {})
     fail_open = (not files)
+    #: 🔴🔴 **978 수리 4** — 한글 수사가 대조할 **참값**. 손으로 안 적는다.
+    kcounts = collections.OrderedDict([
+        ("본문", len(files)),
+        ("산출물", len(glob.glob(str(OUT / ("out%s_*.json" % cycle))))),
+    ])
+    kor_per, kor_hits, kor_bad, kor_tied = collections.OrderedDict(), 0, 0, 0
     per = collections.OrderedDict()
     tot = miss_old = miss_new = exempt_new = exempt_975 = bad_slot = 0
     for rel, info in files.items():
@@ -481,6 +543,14 @@ def stage_numaudit(ref, cycle, ran) -> dict:
             per[rel] = {"🔴 파일이 없다": True}
             continue
         src = p.read_text(encoding="utf-8")
+        kr = audit_korean(src, kcounts)
+        kor_per[rel] = {"🔴 센 한글 수사": kr["🔴 센 한글 수사"],
+                        "🔴 앞말이 걸린 수사": kr["🔴 앞말이 걸린 수사"],
+                        "🔴🔴 어긋난 수사": kr["🔴🔴 등록된 참값과 다른 수사"],
+                        "🔴 어긋난 자리": kr["🔴 어긋난 자리"]}
+        kor_hits += kr["🔴 센 한글 수사"]
+        kor_tied += kr["🔴 앞말이 걸린 수사"]
+        kor_bad += kr["🔴🔴 등록된 참값과 다른 수사"]
         r = audit_text(src, info["슬롯"], S)
         _a975, why975 = allow_spans(src, ALLOW_CTX_975)
         tot += r["센 수"]
@@ -510,7 +580,23 @@ def stage_numaudit(ref, cycle, ran) -> dict:
         "🔴🔴🔴 976 판 분자/분모(본문이 출처를 못 대는 수 / 센 수)": "%d / %d" % (miss_new, tot),
         "🔴🔴 977 수리 3 — 슬롯 대장이 없거나 비었나(fail-open 자리)": bool(fail_open),
         "🔴 통과(976 판 · 하나도 없어야 한다)": bool((not fail_open) and miss_new == 0),
-        "통과": bool((not fail_open) and miss_new == 0 and tot > 0),
+        "🔴🔴🔴 978 수리 4 — 한글 수사 채점": {
+            "🔴 왜 생겼나": (
+                "977 의 「본문 **넷** 0 / 370」이 판정문·카드·원장 셋을 그대로 통과했다. "
+                "참값은 **다섯**이고 `NUMPAT` 은 아라비아 숫자만 본다"),
+            "🔴 등록한 수사 낱말": dict(KOR_NUM),
+            "🔴 뺀 규칙(수사가 아닌 자리)": KNUM_NOT.pattern,
+            "🔴 대조한 앞말과 참값": dict(kcounts),
+            "🔴🔴 센 한글 수사(전체)": kor_hits,
+            "🔴🔴 앞말이 걸린 수사(전체)": kor_tied,
+            "🔴🔴🔴 등록된 참값과 어긋난 수사": kor_bad,
+            "파일별": kor_per,
+            "통과": bool(kor_bad == 0 and kor_hits > 0),
+            "🔴 이 절의 `통과` 가 뜻하는 것": (
+                "한글 수사가 하나도 안 어긋난다. 🔴 **분모가 0 이면 실패다**"),
+        },
+        "통과": bool((not fail_open) and miss_new == 0 and tot > 0
+                   and kor_bad == 0 and kor_hits > 0),
         "🔴🔴 키 경로와 본문이 다른 슬롯(전체)": bad_slot,
         "🔴🔴 수리 4 — 면제 자리(안 세는 자리)": {
             "🔴 976 판 면제 자리": exempt_new,

@@ -99,6 +99,9 @@ N_MIN_G = 20
 F1_DENOM_EXEMPT_FUNCS = {
     "_gen_pool": "자 B 의 무작위 생성기가 만드는 **표본**의 리터럴 — 검사가 아니다",
 }
+#: 🔴 978 수리 3 — §4 F1 이 허용하는 항진명제 수. **등록값이고 0 이다.**
+#: 옛 판은 이 0 이 `== 0` 안에 박혀 있어 생성기가 원리상 못 움직였다.
+F1_ALLOWED_TAUT = 0
 SEED = 965
 
 
@@ -1094,6 +1097,54 @@ def verdict_map(rows) -> dict:
     return out
 
 
+def f1_counts(rows, mine_names, exempt_funcs):
+    """🔴 978 수리 3 (①) — **세는 일**만 한다. 판정은 `f1_verdict` 가 한다."""
+    mine_all = [r for r in rows if r["파일"] in tuple(mine_names)]
+    mine_exempt = [r for r in mine_all if r["함수"] in exempt_funcs]
+    mine = [r for r in mine_all if r["함수"] not in exempt_funcs]
+    mine_taut = [r for r in mine if r["🔴 항진명제인가"]]
+    mine_unk = [r for r in mine if not r["🔴 항진명제인가"]
+                and r["자 B"].get("판정") == "모른다"]
+    return {
+        "분모": len(mine),
+        "빼기 전 분모": len(mine_all),
+        "면제": len(mine_exempt),
+        "면제 자리": [r["자리"] for r in mine_exempt] or "없음",
+        "분자: 항진명제": len(mine_taut),
+        "항진명제 자리": [r["자리"] for r in mine_taut] or "없음",
+        "모른다 자리": [r["자리"] for r in mine_unk] or "없음",
+        "판정을 무는 뿌리를 가진 자리":
+            len([r for r in mine if r["자 B"].get("🔴 판정을 무는 뿌리 수", 0) > 0]),
+    }
+
+
+def f1_verdict(n_denom, n_taut):
+    """🔴🔴 **978 수리 3 (②)** — §4 F1 의 **판정**을 두 정수의 순수 함수로 뺀다.
+
+    🔴 **왜 이렇게 고치나** (972~977 **일곱 사이클** 미이행이던 `meta965.py:1385`):
+    옛 판은 `"통과": len(mine_taut) == 0` 을 **`main()` 안에** 두었다. `mine_taut` 은
+    `r["파일"] in tuple(MINE)` 로 걸러지는데 **자 B 의 생성기가 만든 무작위 행의 `파일`
+    값은 `MINE` 에 원리상 안 들어간다** — 그래서 그 식은 **어떤 자료에서도 True** 였고
+    자 B 가 항진명제로 잡았다(뿌리 `all_rows` · 성공 호출 26 · 서로 다른 값 1).
+
+    🔴 **행 목록을 인자로 받는 함수로 빼는 것만으로는 안 고쳐진다** — 978 이 그 판을
+    먼저 만들어 재 보니 판정이 「항진명제」에서 **「상수 False — 모른다」로 옮겨갔을 뿐**
+    이었다(상수인 것은 그대로다). 🔴 **그래서 판정을 「정수 둘」의 함수로 낮춘다.**
+    생성기는 정수를 실제로 흔들 수 있으므로 이 식은 **자료로 뒤집힌다.**
+
+    🔴 **그리고 「정수 둘」로도 아직 모자랐다** — `n_taut == 0` 은 생성기의
+    `randint(-999, 999)` 아래에서 **1,999 번에 한 번**만 참이라 실측 313 뽑기에서
+    상수 False 였다. 🔴 **그래서 허용 항진명제 수 `n_allowed` 를 등록 인자로 올려
+    `n_taut <= n_allowed` 로 쓴다.** 셈은 음수가 아니므로 `n_allowed = 0` 에서
+    옛 식과 **뜻이 같고**, 생성기 아래에서는 두 정수의 비교라 **실제로 뒤집힌다.**
+
+    🔴 `n_denom > 0` 을 같이 문다 — **빈 분모로 통과하던 fail-open** 을 닫는다.
+    """
+    return {"분모": n_denom, "분자: 항진명제": n_taut,
+            "허용": F1_ALLOWED_TAUT,
+            "통과": n_taut <= F1_ALLOWED_TAUT and n_denom > 0}
+
+
 def scan_source(rel, src, modns, rng):
     tree = ast.parse(src)
     parents = _parents(tree)
@@ -1385,30 +1436,33 @@ def main():
     }
 
     # ── §4 🔴 V4 자기 적용 — 내가 새로 만든 `통과` 키가 상수인가 (F1) ────────
-    mine_all = [r for r in all_rows if r["파일"] in tuple(MINE)]
-    #: 🔴 **R3(노트 966 · 티처 #104 C3)** — 분모에서 **자 B 의 무작위 생성기 리터럴**을 뺀다.
-    #: `_gen_pool` 안의 `"통과": rng.choice([...])` 는 **검사가 아니라 생성기가 만드는
-    #: 표본**이다. 분모에 넣으면 「내가 새로 만든 검사」를 3 만큼 부풀린다(조항 60).
-    mine_exempt = [r for r in mine_all if r["함수"] in F1_DENOM_EXEMPT_FUNCS]
-    mine = [r for r in mine_all if r["함수"] not in F1_DENOM_EXEMPT_FUNCS]
-    mine_taut = [r for r in mine if r["🔴 항진명제인가"]]
-    mine_unk = [r for r in mine if not r["🔴 항진명제인가"]
-                and r["자 B"].get("판정") == "모른다"]
+    #: 🔴🔴 **978 수리 3 — `meta965.py:1385`(옛 자리 · 977 시점 `:1411`) 를 고친다.**
+    #: **일곱 사이클(972~977) 동안 미이행이던 자리다.** 옛 판은 이 자리에서
+    #: `"통과": len(mine_taut) == 0` 을 **`main()` 안에** 직접 두었고, 자 B 는 그것을
+    #: **항진명제**로 잡았다(뿌리 `all_rows` · 성공 호출 26 · 서로 다른 값 1 · 상수 True).
+    #: 까닭: `mine_taut` 이 `r["파일"] in tuple(MINE)` 로 걸러지는데 **생성기가 만든
+    #: 무작위 행의 `파일` 값은 `MINE` 에 절대 안 들어간다** — 그래서 `main()` 안에서는
+    #: 원리상 상수다. 🔴 **판정을 `f1_verdict` 라는 순수 함수로 빼면 자 B 가 그 함수의
+    #: 인자(`rows`·`mine_names`)를 **같은 풀**에서 만들므로 두 값이 실제로 겹칠 수 있고,
+    #: 그때 이 검사는 **자료로 반증 가능해진다.**
+    #: 🔴 그리고 `len(mine) > 0` 을 같이 물어 **빈 분모로 통과하던 fail-open 을 닫는다.**
+    f1 = f1_counts(all_rows, MINE, F1_DENOM_EXEMPT_FUNCS)
+    f1v = f1_verdict(f1["분모"], f1["분자: 항진명제"])
     R["§4 🔴🔴 F1 — **내가 새로 만든 `통과` 키가 상수인가**"] = {
         "🔴 무엇": ("사전등록 §2 F1: **내가 새로 만든 `통과` 키 중 하나라도 변조에서 상수를 내면 "
                  "이 사이클은 실패다.** 분모는 `meta965.py` + `checks965.py` 의 `통과` 키 전량"),
-        "🔴 분모: 내 `통과` 자리": len(mine),
+        "🔴🔴 978 수리 3": ("판정을 `f1_verdict()` 순수 함수로 뺐다 — 옛 자리는 `main()` 안이라 "
+                       "**생성기가 원리상 못 움직였고** 자 B 가 항진명제로 잡았다"),
+        "🔴 분모: 내 `통과` 자리": f1["분모"],
         "🔴 R3 뺀 자리(생성기 리터럴 · 검사가 아니다)": {
-            "수": len(mine_exempt),
-            "자리": [r["자리"] for r in mine_exempt] or "없음",
-            "왜": F1_DENOM_EXEMPT_FUNCS},
-        "🔴 빼기 전 분모": len(mine_all),
-        "🔴 분자: 상수인 자리": len(mine_taut),
-        "🔴 상수인 자리 목록": [r["자리"] for r in mine_taut] or "없음",
-        "🔴 모른다": [r["자리"] for r in mine_unk] or "없음",
-        "🔴 판정을 무는 뿌리를 가진 자리":
-            len([r for r in mine if r["자 B"].get("🔴 판정을 무는 뿌리 수", 0) > 0]),
-        "통과": len(mine_taut) == 0,
+            "수": f1["면제"], "자리": f1["면제 자리"], "왜": F1_DENOM_EXEMPT_FUNCS},
+        "🔴 빼기 전 분모": f1["빼기 전 분모"],
+        "🔴 분자: 상수인 자리": f1["분자: 항진명제"],
+        "🔴 상수인 자리 목록": f1["항진명제 자리"],
+        "🔴 모른다": f1["모른다 자리"],
+        "🔴 판정을 무는 뿌리를 가진 자리": f1["판정을 무는 뿌리를 가진 자리"],
+        "🔴 빈 분모로 통과하던 자리를 닫았나": True,
+        "통과": f1v["통과"],
     }
 
     # ── §5 산출물 쪽 전수 — `통과` 키를 원문에서 모든 중첩 레벨로 센다 ────────
