@@ -133,24 +133,45 @@ def _only_paths(rels) -> list:
     return keep
 
 
-def head_vs_disk(rel: str = "data/lab/denominator.json") -> dict:
+def head_vs_disk(rel: str = "data/lab/denominator.json", root=None) -> dict:
     """🔴 974 신설 --- **규칙 A-2 를 강제하는 게이트**.
 
     `HEAD` 의 blob 과 디스크 파일이 **바이트로 같은가**를 잰다. 다르면 붉게 적는다.
     티처 #112: *「A-2 를 강제하는 러너가 0 이다」*.
     """
     import hashlib
-    c, o = _sh(["git", "rev-parse", "HEAD"])
+    rt = Path(root) if root else ROOT        # 🔴 975 --- 대조를 위해 뿌리를 인자로 받는다
+    c, o = _sh(["git", "rev-parse", "HEAD"], cwd=rt)
     head = o.strip() if c == 0 else None
-    blob = subprocess.run(["git", "show", "HEAD:" + rel], cwd=str(ROOT),
+    blob = subprocess.run(["git", "show", "HEAD:" + rel], cwd=str(rt),
                           capture_output=True).stdout
-    disk = (ROOT / rel).read_bytes() if (ROOT / rel).is_file() else b""
-    same = bool(blob) and blob == disk
+    on_disk = (rt / rel).is_file()
+    disk = (rt / rel).read_bytes() if on_disk else b""
+    in_head = bool(blob)
+    # 🔴🔴 975 수리 --- 974 판은 `same = bool(blob) and blob == disk` 이라
+    # **양쪽 다 없음**에서도 「위반」으로 발화했다(음성 대조가 그 자리에서 통과했고,
+    # 그래서 **진짜 기전 --- 양쪽에 있고 바이트가 다름 --- 을 한 번도 안 걸었다**).
+    # 이제 상태를 다섯으로 가르고, **A-2 위반은 「양쪽에 있고 다름」에서만** 낸다.
+    if not in_head and not on_disk:
+        state = "양쪽 다 없음"
+    elif in_head and not on_disk:
+        state = "HEAD 에만 있다"
+    elif on_disk and not in_head:
+        state = "디스크에만 있다"
+    elif blob == disk:
+        state = "양쪽에 있고 바이트가 같다"
+    else:
+        state = "🔴 양쪽에 있고 바이트가 다르다"
+    same = in_head and on_disk and blob == disk
     return {"경로": rel, "HEAD": head,
             "HEAD blob sha256": hashlib.sha256(blob).hexdigest() if blob else None,
             "디스크 sha256": hashlib.sha256(disk).hexdigest() if disk else None,
+            "🔴 상태": state,
+            "HEAD 에 있나": in_head, "디스크에 있나": on_disk,
             "🔴 바이트 동일": same,
-            "🔴 A-2 위반": not same}
+            "🔴 A-2 위반": state == "🔴 양쪽에 있고 바이트가 다르다",
+            "🔴 잴 수 없음(한쪽이 없다)": state in ("양쪽 다 없음", "HEAD 에만 있다",
+                                             "디스크에만 있다")}
 
 
 def _commit(msg: str) -> str:
@@ -271,9 +292,26 @@ def once() -> dict:
     return rec
 
 
+def a2_gate_tick() -> dict:
+    """🔴 975 수리 --- **게이트를 실제로 부른다.** 974 는 함수만 있고 부르는 자리가 0 이었다.
+
+    위반일 때만 `data/state/a2_gate.jsonl` 에 한 줄 적는다(안 그러면 60초마다 커밋이 는다).
+    """
+    g = head_vs_disk()
+    if g.get("🔴 A-2 위반"):
+        line = json.dumps({"언제": dt.datetime.now(dt.timezone.utc).strftime(
+            "%Y-%m-%dT%H:%M:%SZ"), **g}, ensure_ascii=False)
+        with open(str(ROOT / "data/state/a2_gate.jsonl"), "a", encoding="utf-8") as f:
+            f.write(line + "\n")
+    return g
+
+
 def main() -> int:
     while True:
         try:
+            g = a2_gate_tick()
+            if g.get("🔴 A-2 위반"):
+                print("🔴 A-2 위반:", g["경로"], g["🔴 상태"], flush=True)
             r = once()
             print(r["시각"], "실질성장" if r["🔴 실질 성장인가"] else "잡음", r["처리"], flush=True)
         except Exception as e:                                    # noqa: BLE001
