@@ -1,0 +1,164 @@
+{
+ "무엇": "974 --- 데몬 수리 둘을 심어서 재현(`_only_paths` 경로 정규화 · A-2 강제 게이트)",
+ "🔴 근거": "티처 #112 중대 --- 「문자열 접두 검사라 `../` 가 통과한다」 · 「A-2 를 강제하는 러너 0」",
+ "PATHS": [
+  "data/ingest",
+  "data/state"
+ ],
+ "🔴 심은 경로": 10,
+ "🔴 973 판 맞은 칸": "7 / 10",
+ "🔴🔴 974 판 맞은 칸": "10 / 10",
+ "🔴🔴 974 가 새로 막은 구멍": [
+  "data/ingest/../lab/denominator.json",
+  "data/state/../lab/denominator.json",
+  "data/ingest/../../etc/passwd"
+ ],
+ "🔴 그 수": 3,
+ "칸별": [
+  {
+   "경로": "data/ingest/x.json",
+   "통과해야 하나": true,
+   "왜": "PATHS 안 --- 통과해야 한다",
+   "973 판이 통과시켰나": true,
+   "974 판이 통과시켰나": true,
+   "🔴 973 이 틀렸나": false,
+   "🔴 974 가 틀렸나": false
+  },
+  {
+   "경로": "data/state/y.jsonl",
+   "통과해야 하나": true,
+   "왜": "PATHS 안 --- 통과해야 한다",
+   "973 판이 통과시켰나": true,
+   "974 판이 통과시켰나": true,
+   "🔴 973 이 틀렸나": false,
+   "🔴 974 가 틀렸나": false
+  },
+  {
+   "경로": "data/lab/denominator.json",
+   "통과해야 하나": false,
+   "왜": "🔴 원장 --- 막아야 한다",
+   "973 판이 통과시켰나": false,
+   "974 판이 통과시켰나": false,
+   "🔴 973 이 틀렸나": false,
+   "🔴 974 가 틀렸나": false
+  },
+  {
+   "경로": "data/ingest/../lab/denominator.json",
+   "통과해야 하나": false,
+   "왜": "🔴🔴 티처 #112 가 잡은 그 구멍 --- `..` 로 원장에 닿는다",
+   "973 판이 통과시켰나": true,
+   "974 판이 통과시켰나": false,
+   "🔴 973 이 틀렸나": true,
+   "🔴 974 가 틀렸나": false
+  },
+  {
+   "경로": "data/state/../lab/denominator.json",
+   "통과해야 하나": false,
+   "왜": "🔴 같은 구멍(다른 뿌리)",
+   "973 판이 통과시켰나": true,
+   "974 판이 통과시켰나": false,
+   "🔴 973 이 틀렸나": true,
+   "🔴 974 가 틀렸나": false
+  },
+  {
+   "경로": "data/ingest/../../etc/passwd",
+   "통과해야 하나": false,
+   "왜": "🔴 저장소 밖",
+   "973 판이 통과시켰나": true,
+   "974 판이 통과시켰나": false,
+   "🔴 973 이 틀렸나": true,
+   "🔴 974 가 틀렸나": false
+  },
+  {
+   "경로": "/etc/passwd",
+   "통과해야 하나": false,
+   "왜": "🔴 절대 경로",
+   "973 판이 통과시켰나": false,
+   "974 판이 통과시켰나": false,
+   "🔴 973 이 틀렸나": false,
+   "🔴 974 가 틀렸나": false
+  },
+  {
+   "경로": "../outside.json",
+   "통과해야 하나": false,
+   "왜": "🔴 뿌리 위",
+   "973 판이 통과시켰나": false,
+   "974 판이 통과시켰나": false,
+   "🔴 973 이 틀렸나": false,
+   "🔴 974 가 틀렸나": false
+  },
+  {
+   "경로": "data/ingestX/z.json",
+   "통과해야 하나": false,
+   "왜": "🔴 접두만 같은 다른 디렉터리",
+   "973 판이 통과시켰나": false,
+   "974 판이 통과시켰나": false,
+   "🔴 973 이 틀렸나": false,
+   "🔴 974 가 틀렸나": false
+  },
+  {
+   "경로": "data/ingest/./sub/a.json",
+   "통과해야 하나": true,
+   "왜": "`./` 는 정규화하면 PATHS 안이다",
+   "973 판이 통과시켰나": true,
+   "974 판이 통과시켰나": true,
+   "🔴 973 이 틀렸나": false,
+   "🔴 974 가 틀렸나": false
+  }
+ ],
+ "🔴🔴 A-2 강제 게이트(원장)": {
+  "경로": "data/lab/denominator.json",
+  "HEAD": "49505033b0b774765ddd4cb6f162544e44054b0f",
+  "HEAD blob sha256": "0faee6314d83482668c1752c146b64d8f1ec2844052893e5930cc63a387315a3",
+  "디스크 sha256": "0faee6314d83482668c1752c146b64d8f1ec2844052893e5930cc63a387315a3",
+  "🔴 바이트 동일": true,
+  "🔴 A-2 위반": false
+ },
+ "🔴 A-2 게이트 음성 대조(없는 파일)": {
+  "경로": "data/ingest/이런파일은없다.json",
+  "HEAD": "49505033b0b774765ddd4cb6f162544e44054b0f",
+  "HEAD blob sha256": null,
+  "디스크 sha256": null,
+  "🔴 바이트 동일": false,
+  "🔴 A-2 위반": true
+ },
+ "🔴 게이트가 음성 대조에서 위반을 외치나(외쳐야 한다)": true,
+ "🔴 도는 데몬은 아직 옛 코드인가": {
+  "왜": "규칙 B --- 데몬을 안 죽인다. 고침은 **다음 기동부터** 문다.",
+  "디스크 harvest_daemon.py sha256": "d8af2090c431c6b16760af4bf6c9366315fe61d3e69963df0040c7cd80b96b57"
+ },
+ "🔴 도장": {
+  "언제(시작)": "2026-08-15T16:43:51Z",
+  "언제(끝)": "2026-08-15T16:43:51Z",
+  "시작 code_stamp 요약": "91b6318e588841e52594668432dcffdf14c277f19cff1521ec4b6a1e232058d4",
+  "끝 code_stamp 요약": "91b6318e588841e52594668432dcffdf14c277f19cff1521ec4b6a1e232058d4",
+  "🔴 시작=끝": true,
+  "분모: 도장이 덮는 파일": 73,
+  "🔴 자료 지문": {
+   "(자료 안 읽는 러너다)": null
+  },
+  "분모: 연 자료 파일": 0,
+  "🔴 F1 기준 ref(준 대로)": "6ee9366ae7520482144223611a107b5009e9f28b",
+  "🔴 40자 고정 sha 인가": true,
+  "🔴 기준 ref 가 0000…0000 인가": false,
+  "러너별": {
+   "runners/daemonfix974.py": {
+    "디스크 sha256": "691401f65641f0bdce5eb3e7815b342772967f7e5fbab1a4c9b825f655b3ef06",
+    "커밋 blob sha256": "691401f65641f0bdce5eb3e7815b342772967f7e5fbab1a4c9b825f655b3ef06",
+    "일치": true
+   },
+   "runners/harvest_daemon.py": {
+    "디스크 sha256": "d8af2090c431c6b16760af4bf6c9366315fe61d3e69963df0040c7cd80b96b57",
+    "커밋 blob sha256": "d8af2090c431c6b16760af4bf6c9366315fe61d3e69963df0040c7cd80b96b57",
+    "일치": true
+   },
+   "runners/predict971.py": {
+    "디스크 sha256": "c870fe5d8bf72424fd86203e4585b8d234b4d06b800a78fa074d7f9401738c3f",
+    "커밋 blob sha256": "c870fe5d8bf72424fd86203e4585b8d234b4d06b800a78fa074d7f9401738c3f",
+    "일치": true
+   }
+  },
+  "🔴 분자/분모": "3 / 3",
+  "🔴 F5 통과": true
+ }
+}

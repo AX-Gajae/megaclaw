@@ -1,0 +1,68 @@
+{
+ "무엇": "974 --- LOSO 배선 V1~V7 · 파괴 대조 E1~E5",
+ "V": {
+  "V1 적합이 신호를 잡는다": true,
+  "V2 유보 정답이 예측에 못 샌다": true,
+  "V3 순위상관은 단조변환에 안 흔들린다": true,
+  "V4 y 를 섞으면 상관이 죽는다": true,
+  "V5 s·o 가 다 있으면 행이 난다": true,
+  "V6 o 값이 없으면 행이 안 난다": true,
+  "V7 y 는 o 가 커지면 커진다": true
+ },
+ "🔴 V 분자/분모": "7 / 7",
+ "E": {
+  "E1 학습 짝을 깨면 상관이 죽나": true,
+  "E1b 참고: λ=1e12 로는 순위가 안 죽는다(능형의 성질)": true,
+  "E2 x 를 상수로 부수면 상관이 죽나": true,
+  "E3 나눔 날짜가 실제로 자른다": true,
+  "E4 도메인 열이 실제로 붙는다": true,
+  "E5 게이트가 실제로 문다": true
+ },
+ "🔴 E 분자/분모": "6 / 6",
+ "🔴 도장": {
+  "언제(시작)": "2026-08-15T16:43:04Z",
+  "언제(끝)": "2026-08-15T16:43:04Z",
+  "시작 code_stamp 요약": "1476489150d8796c33287b87502149ead648cc1a9a7938ce262a794ef410acde",
+  "끝 code_stamp 요약": "1476489150d8796c33287b87502149ead648cc1a9a7938ce262a794ef410acde",
+  "🔴 시작=끝": true,
+  "분모: 도장이 덮는 파일": 75,
+  "🔴 자료 지문": {
+   "sao941": "50eacbe4468cf86f561535e3eea7aec31f0151679a33018b7eb12627d1cbbd83",
+   "sao959": "273e4bad06c9f073be89ae3477b89acf9a4973f2c77c66e21aa571a4b5d56728",
+   "hplt_ko": "67de3062bad60e122c446fccb0b96d2c3a36c0ee2deafa40324a22dcad6c09a2"
+  },
+  "분모: 연 자료 파일": 3,
+  "🔴 F1 기준 ref(준 대로)": "6ee9366ae7520482144223611a107b5009e9f28b",
+  "🔴 40자 고정 sha 인가": true,
+  "🔴 기준 ref 가 0000…0000 인가": false,
+  "러너별": {
+   "runners/loso974.py": {
+    "디스크 sha256": "f40b4aacfac9afab6413a2f5706402b6d998a574caa6b3341221b02eb07d3f9a",
+    "커밋 blob sha256": "f40b4aacfac9afab6413a2f5706402b6d998a574caa6b3341221b02eb07d3f9a",
+    "일치": true
+   },
+   "runners/precision974.py": {
+    "디스크 sha256": "829b93e95b74d7458bc4f4039664e3b8dbb816d08765287e03c238041175d887",
+    "커밋 blob sha256": "829b93e95b74d7458bc4f4039664e3b8dbb816d08765287e03c238041175d887",
+    "일치": true
+   },
+   "runners/layers957.py": {
+    "디스크 sha256": "09e4255b6a7021bcb53dcfa2a2bea8da1b05d34abca05379e0c9c2280c6a9529",
+    "커밋 blob sha256": "09e4255b6a7021bcb53dcfa2a2bea8da1b05d34abca05379e0c9c2280c6a9529",
+    "일치": true
+   },
+   "runners/predict971.py": {
+    "디스크 sha256": "c870fe5d8bf72424fd86203e4585b8d234b4d06b800a78fa074d7f9401738c3f",
+    "커밋 blob sha256": "c870fe5d8bf72424fd86203e4585b8d234b4d06b800a78fa074d7f9401738c3f",
+    "일치": true
+   },
+   "runners/predict972.py": {
+    "디스크 sha256": "887e2b7351bf9cc42e98ccaba9be4843c23630a7c9bfd4d32f5c87815570e35d",
+    "커밋 blob sha256": "887e2b7351bf9cc42e98ccaba9be4843c23630a7c9bfd4d32f5c87815570e35d",
+    "일치": true
+   }
+  },
+  "🔴 분자/분모": "5 / 5",
+  "🔴 F5 통과": true
+ }
+}

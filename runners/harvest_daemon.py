@@ -115,8 +115,42 @@ def _broken_gz(rels) -> list:
 
 
 def _only_paths(rels) -> list:
-    """🔴 973 신설 --- `PATHS` 밖의 경로를 **커밋 목록에서 뺀다**(둘째 겹)."""
-    return [r for r in rels if any(r == p or r.startswith(p + "/") for p in PATHS)]
+    """🔴 973 신설 · **974 수리** --- `PATHS` 밖의 경로를 **커밋 목록에서 뺀다**(둘째 겹).
+
+    🔴🔴 **974 가 고친 것**: 973 판은 **문자열 접두 검사**여서
+    `data/ingest/../lab/x.json` 이 **통과했다**(티처 #112 가 실측으로 잡았다).
+    이제 **경로를 정규화해서** 견준다 --- `os.path.normpath` 로 `..` 을 접고,
+    저장소 뿌리 밖으로 나가면 무조건 뺀다. `runners/daemonfix974.py` 가 심어서 재현한다.
+    """
+    keep = []
+    roots = [os.path.normpath(p) for p in PATHS]
+    for r in rels:
+        n = os.path.normpath(r)
+        if n.startswith("/") or n == ".." or n.startswith("../"):
+            continue                      # 🔴 뿌리 밖 --- 무조건 뺀다
+        if any(n == p or n.startswith(p + os.sep) for p in roots):
+            keep.append(r)
+    return keep
+
+
+def head_vs_disk(rel: str = "data/lab/denominator.json") -> dict:
+    """🔴 974 신설 --- **규칙 A-2 를 강제하는 게이트**.
+
+    `HEAD` 의 blob 과 디스크 파일이 **바이트로 같은가**를 잰다. 다르면 붉게 적는다.
+    티처 #112: *「A-2 를 강제하는 러너가 0 이다」*.
+    """
+    import hashlib
+    c, o = _sh(["git", "rev-parse", "HEAD"])
+    head = o.strip() if c == 0 else None
+    blob = subprocess.run(["git", "show", "HEAD:" + rel], cwd=str(ROOT),
+                          capture_output=True).stdout
+    disk = (ROOT / rel).read_bytes() if (ROOT / rel).is_file() else b""
+    same = bool(blob) and blob == disk
+    return {"경로": rel, "HEAD": head,
+            "HEAD blob sha256": hashlib.sha256(blob).hexdigest() if blob else None,
+            "디스크 sha256": hashlib.sha256(disk).hexdigest() if disk else None,
+            "🔴 바이트 동일": same,
+            "🔴 A-2 위반": not same}
 
 
 def _commit(msg: str) -> str:
