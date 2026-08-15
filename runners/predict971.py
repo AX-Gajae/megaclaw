@@ -643,16 +643,50 @@ def stage_predict(seeds_unused=None) -> dict:
 # ══════════════════════════════════════════════════════════════════════
 # §B 판 --- 🔴 970 이 버린 `sc` 를 안 버린다
 # ══════════════════════════════════════════════════════════════════════
+def build_clean(drop_wiki: bool, drop_trend: bool):
+    """🔴🔴🔴 **판 팔 전용 자료 짓기 --- 곁수효가 없다.**
+
+    🔴 **왜 `dropaudit969.build()` 를 안 쓰나 (971 자가 적발).**
+    `dropaudit969.build()` 는 자료를 지은 **뒤에** `trendaxes.set_wide(False)` 와
+    `set_grades(("A","B","C","D","E"))` 를 부른다(규격 D 의 `ids` 를 만들려고).
+    그래서 **그 함수를 두 번 부르면 두 번째 자료가 첫 번째와 다른 설정에서 지어진다.**
+    실측(`fingerprint(data)["_전체"]`):
+
+    - 현행(`WIKI_DROP` 그대로) --- `dropaudit969` `721a7b7e0d15` ·
+      `recommit970` `721a7b7e0d15` → **같다**
+    - 🔴 **DROP 비움 --- `dropaudit969` `83496c04e499` · `recommit970` `8a49c4ea961e`
+      → 다르다**
+
+    까닭: 현행 팔은 `TREND_DROP` 이 트렌드 축을 버려서 `TA` 상태가 **안 닿는다**.
+    비움 팔은 그 축을 되살리므로 **`TA` 상태가 자료에 들어간다.**
+    🔴 **즉 곁수효가 「처리 팔에만」 붙는다 --- 대조를 원리상 오염시키는 꼴이다.**
+    이 함수는 `recommit970.build()` 와 같은 몸이고 `TA`·`ids` 를 안 건드린다.
+    """
+    import ff753 as FF
+    from lab import loop as L
+    keep = (tuple(L.WIKI_DROP), tuple(L.TREND_DROP))
+    try:
+        if not drop_wiki:
+            L.WIKI_DROP = ()
+        if not drop_trend:
+            L.TREND_DROP = ()
+        data = FF.shell(FF.base())
+    finally:
+        L.WIKI_DROP, L.TREND_DROP = keep
+    return data
+
+
 def stage_board(seeds=SEEDS) -> dict:
     """🔴🔴 970 의 `board_pair()` 는 `evaluate()` 의 `sc` 를 `pooled()` 에 인라인으로
     넣고 **버렸다**(970 자기 적발). 여기서는 팔별·도메인별로 남긴다.
     """
-    import dropaudit969 as D9
-    from lab.harness import evaluate
+    from lab.harness import evaluate, fingerprint
     from lab import forms as FM
     t0 = time.time()
-    don, _ = D9.build(drop_wiki=True, drop_trend=True)
-    doff, _ = D9.build(drop_wiki=False, drop_trend=False)
+    don = build_clean(drop_wiki=True, drop_trend=True)
+    doff = build_clean(drop_wiki=False, drop_trend=False)
+    fp = {"현행(WIKI_DROP 그대로)": fingerprint(don)["_전체"],
+          "DROP 비움": fingerprint(doff)["_전체"]}
     cls = FM.REGISTRY["F18_bagboost"]["cls"]
     a0, a1, rows = [], [], []
     p0, p1 = {}, {}
@@ -699,6 +733,16 @@ def stage_board(seeds=SEEDS) -> dict:
             zero.append(k)
     return {
         "주행 수": 2 * seeds,
+        "🔴🔴 자료 지문(곁수효 없는 build_clean 으로 지었다)": {
+            "지문": fp,
+            "🔴 970 의 `recommit970.build` 와 대조": {
+                "현행": "721a7b7e0d15 (같다)", "DROP 비움": "8a49c4ea961e (같다)"},
+            "🔴🔴 971 이 버린 첫 주행": (
+                "첫 주행은 `dropaudit969.build()` 를 썼고 그 함수의 곁수효"
+                "(`trendaxes.set_wide`·`set_grades`)가 **처리 팔에만** 붙어 "
+                "**지문 `83496c04e499`** 로 갈렸다. 그 주행의 Δρ 는 **−0.001395 ± 0.000639** "
+                "였고 **버렸다** --- 970 과 다른 처리를 잰 것이기 때문이다"),
+        },
         "짝별": rows,
         "기준선(현행)": {"판": float(x0.mean()), "SD": float(x0.std(ddof=1)),
                    "SE": float(x0.std(ddof=1) / np.sqrt(len(x0)))},
