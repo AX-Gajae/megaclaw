@@ -120,6 +120,38 @@ def data_inputs() -> dict:
     return out
 
 
+DATA_LIST_CAP = 1000     # 🔴 이보다 많으면 파일별 목록 대신 **디렉터리 롤업**을 싣는다
+
+
+def data_seal() -> dict:
+    """🔴 규칙 C 의 자료 지문. **합친 요약은 전량을 덮고**, 목록은 크기를 지킨다.
+
+    🔴 첫 판은 파일별 sha 를 전량 실었고 **산출물 하나가 1.7 MB** 였다(자료 **11,303** 개 ---
+    `data/state/wiki_views` 만 10,960 개). **대용량 git 반입 금지** 제약에 걸린다.
+    그래서 **합친 요약(전량을 덮는다) + 디렉터리 롤업**으로 바꾸고, 파일별 전량은
+    `DATA_LIST_CAP` 아래일 때만 싣는다. 🔴 **덮는 범위는 안 줄었다 --- 싣는 꼴만 줄었다.**
+    """
+    dat = data_inputs()
+    roll = {}
+    for k in sorted(dat):
+        d = "/".join(k.split("/")[:2]) if k.count("/") >= 2 else k
+        roll.setdefault(d, []).append(dat[k])
+    return {
+        "🔴 무엇": ("주행 중 **실제로 열린** `data/` 파일 전량의 sha256. "
+               "🔴 목록을 추측으로 안 적는다 --- `open`·`Path.open`·`np.load` 를 잡아 "
+               "**열리는 것을 기록**한다"),
+        "🔴 분모: 자료 파일 수": len(dat),
+        "🔴🔴 합친 요약(전량을 덮는다)": P.stamp_digest(dat),
+        "🔴 디렉터리별 롤업": {d: {"파일 수": len(v), "합친 sha256":
+                                hashlib.sha256("".join(sorted(v)).encode()).hexdigest()}
+                       for d, v in sorted(roll.items())},
+        "파일별 sha256(자르지 않았다)":
+            (dat if len(dat) <= DATA_LIST_CAP else
+             "🔴 %d 개라 안 싣는다(상한 %d) --- 위 「합친 요약」이 전량을 덮는다"
+             % (len(dat), DATA_LIST_CAP)),
+    }
+
+
 def code_stamp() -> dict:
     """🔴 **F2 확대** --- `lab/*.py` 전량 + **내가 돌린 러너 전부**.
 
@@ -945,15 +977,7 @@ def main():
     t_end = _now()
     R["🔴 끝(UTC)"] = t_end
     R["🔴 걸린 초"] = round(time.time() - t0, 1)
-    dat = data_inputs()
-    R["🔴🔴 §D 자료 입력 지문(규칙 C · 971 은 0 개였다)"] = {
-        "🔴 무엇": ("주행 중 **실제로 열린** `data/` 파일 전량의 sha256. "
-               "🔴 목록을 추측으로 안 적는다 --- `open`·`Path.open`·`np.load` 를 잡아 "
-               "**열리는 것을 기록**한다"),
-        "🔴 분모: 자료 파일 수": len(dat),
-        "🔴 합친 요약": P.stamp_digest(dat),
-        "파일별 sha256(자르지 않았다)": dat,
-    }
+    R["🔴🔴 §D 자료 입력 지문(규칙 C · 971 은 0 개였다)"] = data_seal()
     R["🔴🔴 §Z 소스 대조"] = {
         "시작 code_stamp 요약": P.stamp_digest(cs0),
         "끝 code_stamp 요약": P.stamp_digest(cs1),

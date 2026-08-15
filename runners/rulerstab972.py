@@ -227,7 +227,7 @@ def main():
         cs1 = PZ.code_stamp()
 
     t_end = dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
-    dat = PZ.data_inputs()   # 🔴 규칙 C --- 자료 지문은 **끝에 한 번**
+    seal = PZ.data_seal()    # 🔴 규칙 C --- 자료 지문은 **끝에 한 번**
     R["🔴 끝(UTC)"] = t_end
     R["🔴 걸린 초"] = round(time.time() - t0, 1)
     R["🔴🔴 §Z 소스 대조"] = {
@@ -236,8 +236,7 @@ def main():
         "🔴 주행 중 소스가 바뀌었나": bool(cs0 != cs1),
         "🔴 바뀐 파일": sorted(k for k in set(cs0) | set(cs1) if cs0.get(k) != cs1.get(k)),
         "🔴 잰 소스 sha(전량 · 자르지 않았다)": cs1,
-        "🔴 자료 입력 수": len(dat),
-        "🔴 자료 입력 sha256(자르지 않았다)": dat,
+        "🔴🔴 §D 자료 입력 지문(규칙 C)": seal,
     }
     Path(out_path).write_text(json.dumps(R, ensure_ascii=False, indent=1),
                               encoding="utf-8")

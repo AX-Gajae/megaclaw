@@ -273,7 +273,7 @@ def main():
             "🔴 972 재주행(func 범위 · 972 수리)": META["func"],
         }
         cs1 = PZ.code_stamp()
-    dat = PZ.data_inputs()   # 🔴 규칙 C --- 자료 지문은 **끝에 한 번**
+    seal = PZ.data_seal()    # 🔴 규칙 C --- 자료 지문은 **끝에 한 번**
     R["🔴 끝(UTC)"] = dt.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
     R["🔴 걸린 초"] = round(time.time() - t0, 1)
     R["🔴🔴 §Z 소스 대조"] = {
@@ -281,8 +281,7 @@ def main():
         "끝 code_stamp 요약": PZ.P.stamp_digest(cs1),
         "🔴 주행 중 소스가 바뀌었나": bool(cs0 != cs1),
         "🔴 잰 소스 sha(전량 · 자르지 않았다)": cs1,
-        "🔴 자료 입력 수": len(dat),
-        "🔴 자료 입력 sha256(자르지 않았다)": dat,
+        "🔴🔴 §D 자료 입력 지문(규칙 C)": seal,
     }
     Path(a.out if os.path.isabs(a.out) else str(ROOT / "runners" / a.out)).write_text(
         json.dumps(R, ensure_ascii=False, indent=1), encoding="utf-8")
