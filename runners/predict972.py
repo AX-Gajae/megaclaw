@@ -706,7 +706,13 @@ def perm_null(per, B=PERM_B, seed=PERM_SEED) -> dict:
     a = np.array(dd, float)
     ge = int((a >= obs).sum())
     p = (ge + 1) / float(len(a) + 1)
-    p_sign = (allpos + 1) / float(len(a) + 1)
+    # 🔴🔴 975 수리 --- 974 판은 `p_sign = (allpos + 1) / (B + 1)` 이었다.
+    # 그것은 **귀무가 7/7 을 낼 확률**이고 **관측 양수 수(4/7)를 한 번도 안 본다** ---
+    # 자료와 무관하게 통과한다(티처 #113 중대). 이제 **관측 이상인 뽑기**를 센다.
+    npos_a = np.array(npos)
+    ge_pos = int((npos_a >= obs_pos).sum())
+    p_sign = (ge_pos + 1) / float(len(a) + 1)
+    p_sign_974 = (allpos + 1) / float(len(a) + 1)
     ge5 = int((np.array(npos) >= 5).sum())
     return {
         "🔴 실측 묶음 Δ": round(float(obs), 6),
@@ -719,8 +725,12 @@ def perm_null(per, B=PERM_B, seed=PERM_SEED) -> dict:
         "🔴🔴🔴 순열 p(단측 · 사전등록 §3-가 정본 자)": round(p, 6),
         "🔴🔴 채택(p ≤ 0.05)": bool(p <= 0.05),
         "🔴🔴 부호 일관성 --- 전 도메인 양수인 뽑기": allpos,
-        "🔴🔴🔴 부호 일관성 p(사전등록 §3-나)": round(p_sign, 6),
+        "🔴 부호 일관성 --- 관측(%d) 이상 양수인 뽑기" % obs_pos: ge_pos,
+        "🔴🔴🔴 부호 일관성 p(975 수리 · 관측 양수 수를 본다)": round(p_sign, 6),
         "🔴🔴 부호 일관성 채택(p ≤ 0.05)": bool(p_sign <= 0.05),
+        "🔴 974 판 부호 일관성 p(전 도메인 양수 · 자료와 무관)": round(p_sign_974, 6),
+        "🔴 974 판이 냈을 채택": bool(p_sign_974 <= 0.05),
+        "🔴 975 수리가 판정을 뒤집었나": bool((p_sign <= 0.05) != (p_sign_974 <= 0.05)),
         "🔴 참고: 971 의 조건 ⑤(≥5 양수)가 귀무에서 통과하는 비율":
             round(100.0 * ge5 / float(len(a)), 1),
         "🔴 뜻": ("971 은 ⑤를 「7 중 ≥5」로 못 박았다. 🔴 **그 문턱은 귀무에서 위 비율로 "

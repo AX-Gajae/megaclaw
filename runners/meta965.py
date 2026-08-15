@@ -219,10 +219,21 @@ PASSKEY = "exact"
 
 
 def is_pass_key(k) -> bool:
-    """🔴 `통과` 키인가. `exact` = 965 그대로 · `suffix` = 접두어 허용(971)."""
+    """🔴 `통과` 키인가. `exact` = 965 그대로 · `suffix` = 접미 허용(971) ·
+    🔴 `contains` = **975 신설**(`"통과" in k`).
+
+    🔴🔴 **975 가 이 갈래를 왜 더했나**(티처 #113 3순위 ⓒ): 974 의 러너 1,917 줄에
+    `exact` 분모가 **0** 이었다(973 은 1). **분모 0 이면 그 채점은 죽은 것이다** ---
+    항진명제 0 이 「깨끗하다」가 아니라 「아무것도 안 봤다」라는 뜻이 된다.
+    러너들은 `"🔴 F5 통과"`·`"🔴 통과"`·`"🔴 A-2 위반"` 처럼 **꾸민 키**를 쓴다.
+    🔴 **기본값은 여전히 `exact`** --- 옛 산출물의 뜻을 조용히 안 바꾼다(노트 898).
+    """
     if not isinstance(k, str):
         return False
-    if globals().get("PASSKEY", "exact") == "suffix":
+    mode = globals().get("PASSKEY", "exact")
+    if mode == "contains":
+        return "통과" in k
+    if mode == "suffix":
         return k.endswith("통과")
     return k == "통과"
 
@@ -254,7 +265,7 @@ def passkey_census(rel, tree) -> dict:
     자를 고치면 전후를 반드시 같이 실어야 한다. 968 은 R1 으로 자기 점수를
     66.7% → 44.4% 로 옮겨 절반선을 넘겼는데 **한 번도 안 쟀다**.
     """
-    exact, suffix = [], []
+    exact, suffix, contains = [], [], []
     for node in ast.walk(tree):
         if isinstance(node, ast.Dict):
             for k, v in zip(node.keys, node.values):
@@ -263,6 +274,8 @@ def passkey_census(rel, tree) -> dict:
                         exact.append((v.lineno, k.value))
                     if k.value.endswith("통과"):
                         suffix.append((v.lineno, k.value))
+                    if "통과" in k.value:
+                        contains.append((v.lineno, k.value))
         elif isinstance(node, ast.Assign):
             for t in node.targets:
                 if (isinstance(t, ast.Subscript) and isinstance(t.slice, ast.Constant)
@@ -271,11 +284,19 @@ def passkey_census(rel, tree) -> dict:
                         exact.append((node.value.lineno, t.slice.value))
                     if t.slice.value.endswith("통과"):
                         suffix.append((node.value.lineno, t.slice.value))
+                    if "통과" in t.slice.value:
+                        contains.append((node.value.lineno, t.slice.value))
     only = sorted({(ln, nm) for ln, nm in suffix} - {(ln, nm) for ln, nm in exact})
+    only_c = sorted({(ln, nm) for ln, nm in contains} - {(ln, nm) for ln, nm in suffix})
     return {"🔴 분모(정확 일치 · 965 판)": len(exact),
             "🔴 분모(접미 일치 · 971 판)": len(suffix),
+            "🔴 분모(포함 일치 · 975 판)": len(contains),
             "🔴 접미로만 잡히는 자리": ["%s:%d %s" % (rel, ln, nm) for ln, nm in only],
-            "🔴 늘어난 수": len(suffix) - len(exact)}
+            "🔴 포함으로만 잡히는 자리": ["%s:%d %s" % (rel, ln, nm) for ln, nm in only_c],
+            "🔴 늘어난 수": len(suffix) - len(exact),
+            "🔴🔴 정확 일치 분모가 0 인가(= 이 파일에서 965 판 채점은 죽었다)":
+                len(exact) == 0,
+            "🔴🔴 포함 일치 분모도 0 인가": len(contains) == 0}
 
 
 def collect_delegations(rel, tree, parents):
@@ -1049,6 +1070,11 @@ def tally(rows) -> dict:
         "🔴 증명된 낙하": drop,
         "🔴 증명된 낙하 %": round(100.0 * drop / tot, 1) if tot else None,
         "🔴 분모": tot,
+        # 🔴🔴 975 수리 --- **분모 0 이면 그 채점은 죽은 것이다.**
+        # 974 실측: 러너 넷 전부에서 `exact` 분모가 0 이었는데 산출물은 「항진명제 0」을
+        # 냈다. 그것은 「깨끗하다」가 아니라 **「아무것도 안 봤다」**다.
+        "🔴🔴 분모 0 --- 이 채점은 죽었다": tot == 0,
+        "🔴🔴 판정": ("모른다 --- 분모 0" if tot == 0 else "잰다"),
     }
 
 
@@ -1469,7 +1495,8 @@ if __name__ == "__main__":
                     help="역슬라이서 판(new = R1 적용 · old = 968 이전 결함 판 · 대조용)")
     #: 🔴🔴 **노트 971 (티처 #109 m3)** — `통과` 키 일치 규칙.
     #: `exact` = 965 그대로(기본) · `suffix` = 접두어 허용(`"🔴 F1 통과"` 를 분모에 넣는다).
-    ap.add_argument("--passkey", default="exact", choices=["exact", "suffix"],
+    ap.add_argument("--passkey", default="exact",
+                    choices=["exact", "suffix", "contains"],
                     help="통과 키 일치 규칙(exact = 965 그대로 · suffix = 접두어 허용 · 971)")
     #: 🔴🔴🔴 **노트 972 (티처 #110 치명 1)** — 자 B 생성기 풀의 범위.
     #: 🔴 **기본값을 `func` 로 바꿨다** — `file` 은 원리상 틀린 자다(위 POOLSCOPE 주석).
