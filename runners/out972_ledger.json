@@ -1,0 +1,529 @@
+{
+ "🔴 노트": 972,
+ "🔴 레인": "판정",
+ "🔴 축": "C1 상태→예측",
+ "🔴 시작(UTC)": "2026-08-15T14:19:46Z",
+ "🔴 사전등록": "docs/prereg_972_c1null.md (측정 전 단독 커밋 8675748ed · 2026-08-15T13:44:57Z)",
+ "🔴🔴 §S 내가 돌린 러너 ↔ 커밋 blob(F1)": {
+  "기준 ref(준 대로)": "b57ba412c254060a4807e65826657dca26ba3ba8",
+  "🔴 F11 --- ref 가 고정 sha 인가": true,
+  "기준 커밋": "b57ba412c254060a4807e65826657dca26ba3ba8",
+  "러너별": {
+   "runners/predict972.py": {
+    "디스크 sha256": "887e2b7351bf9cc42e98ccaba9be4843c23630a7c9bfd4d32f5c87815570e35d",
+    "커밋 blob sha256": "887e2b7351bf9cc42e98ccaba9be4843c23630a7c9bfd4d32f5c87815570e35d",
+    "일치": true
+   },
+   "runners/rulerstab972.py": {
+    "디스크 sha256": "bd4d69823db859bd128bd05e204a6e2c3d9c4e73d56060aef1b4f31d058af873",
+    "커밋 blob sha256": "bd4d69823db859bd128bd05e204a6e2c3d9c4e73d56060aef1b4f31d058af873",
+    "일치": true
+   },
+   "runners/ledger972.py": {
+    "디스크 sha256": "f4e3d17d5da8cbd1a8bb9063d7d2a81aa6ea46a704dea94c75a4255efe787a71",
+    "커밋 blob sha256": "f4e3d17d5da8cbd1a8bb9063d7d2a81aa6ea46a704dea94c75a4255efe787a71",
+    "일치": true
+   },
+   "runners/meta965.py": {
+    "디스크 sha256": "e0454c9e6d649e94a1c3c3e1e73b6a85cfa084e15b38910d708a3f956d1fca05",
+    "커밋 blob sha256": "e0454c9e6d649e94a1c3c3e1e73b6a85cfa084e15b38910d708a3f956d1fca05",
+    "일치": true
+   },
+   "runners/predict971.py": {
+    "디스크 sha256": "c870fe5d8bf72424fd86203e4585b8d234b4d06b800a78fa074d7f9401738c3f",
+    "커밋 blob sha256": "c870fe5d8bf72424fd86203e4585b8d234b4d06b800a78fa074d7f9401738c3f",
+    "일치": true
+   },
+   "runners/dropaudit969.py": {
+    "디스크 sha256": "f9b8f5b103463b6270f3f4bc69a39b7b8880243145d50c0d74a1e5f529862acf",
+    "커밋 blob sha256": "f9b8f5b103463b6270f3f4bc69a39b7b8880243145d50c0d74a1e5f529862acf",
+    "일치": true
+   },
+   "runners/recommit970.py": {
+    "디스크 sha256": "373254034c6a4cd6b7db77c4f829469aaa38523c4ad119d1624217d0eb3c2e6a",
+    "커밋 blob sha256": "373254034c6a4cd6b7db77c4f829469aaa38523c4ad119d1624217d0eb3c2e6a",
+    "일치": true
+   }
+  },
+  "🔴 분자/분모": "7 / 7",
+  "🔴 어긋난 러너": [],
+  "🔴 F1 통과": true,
+  "🔴 어떤 입력이면 떨어지나": "러너를 한 바이트만 고치고 커밋을 안 하면 그 줄이 곧 거짓이 된다. `--ref` 에 가지 이름을 주면 F11 이 떨어진다"
+ },
+ "🔴🔴🔴 §P 사전등록 P1~P14 채점표": {
+  "채점표": {
+   "P1": {
+    "예측": "낙하 ≠ 4",
+    "🔴 판정": "✅ 맞다",
+    "🔴 실측": "2 / 13 (15.4%)"
+   },
+   "P2": {
+    "예측": "밑값(recommit970)보다 나쁘거나 같다",
+    "🔴 판정": "✅ 맞다",
+    "🔴 실측": "predict971 15.4% vs recommit970 28.6%"
+   },
+   "P3": {
+    "예측": "티처 #110 의 2(15.4%) 를 재현",
+    "🔴 판정": "✅ 맞다",
+    "🔴 실측": "2 (15.4%)"
+   },
+   "P4": {
+    "예측": "file 범위에서 하나 이상 뒤집힌다",
+    "🔴 판정": "✅ 맞다",
+    "🔴 실측": "뒤집힌 판 36 --- 갈래별 작은 12 / 36 · 큰 24 / 36 · **음성 대조(주석만) 0 / 36**"
+   },
+   "P5": {
+    "예측": "func 범위에서 하나도 안 뒤집힌다",
+    "🔴 판정": "✅ 맞다",
+    "🔴 실측": "뒤집힌 판 0 --- 갈래별 작은 0 / 36 · 큰 0 / 36 · 0 / 36"
+   },
+   "P6": {
+    "예측": "유보 순열 p 는 0.05 를 못 넘는다(채택 실패)",
+    "🔴 판정": "✅ 맞다",
+    "🔴 실측": "p = 0.102474"
+   },
+   "P7": {
+    "예측": "부호 일관성 p 는 0.05 를 넘는다(채택)",
+    "🔴 판정": "✅ 맞다",
+    "🔴 실측": "p = 0.008998"
+   },
+   "P8": {
+    "예측": "이중 붓스트랩 SD > 0.030",
+    "🔴 판정": "✗ 반증됐다",
+    "🔴 실측": "SD = 0.027010 (971 유보-only 0.021669)"
+   },
+   "P9": {
+    "예측": "최대 기여 = 시장팝업 · 기여 > 40%",
+    "🔴 판정": "✅ 맞다",
+    "🔴 실측": "시장팝업 · 42.8%"
+   },
+   "P10": {
+    "예측": "그 하나를 빼면 팔 R 95 분위 아래",
+    "🔴 판정": "✅ 맞다",
+    "🔴 실측": "최소값 0.015846 vs 바닥 0.017991"
+   },
+   "P11": {
+    "예측": "팔 R 2000 뽑기 95 분위 > 0.016593",
+    "🔴 판정": "✅ 맞다",
+    "🔴 실측": "0.017991"
+   },
+   "P12": {
+    "예측": "부호 살린 배수 < 2",
+    "🔴 판정": "✅ 맞다",
+    "🔴 실측": "1.06 배 (abs 판 5.70 배)"
+   },
+   "P13": {
+    "예측": "갈리는 도메인 3 · 도서·세계애니 없음",
+    "🔴 판정": "✅ 맞다",
+    "🔴 실측": "모바일, 시장팝업, 웹툰 (3 개)"
+   },
+   "P14": {
+    "예측": "MIN_TRAIN=15 곁 팔이 도메인을 8 이상으로",
+    "🔴 판정": "✅ 맞다",
+    "🔴 실측": "8 도메인 (새로 들어온 것: 팝업)"
+   }
+  },
+  "🔴 분자/분모": "맞다 13 / 14"
+ },
+ "🔴🔴 §C 971 산출물 전수(조항 66-② 신고)": {
+  "🔴 분모: 971 산출물": 8,
+  "산출물별": {
+   "runners/out971_wiring.json": {
+    "§Z 있나": true,
+    "요약 키 꼴": [
+     "분자/분모",
+     "🔴 분자/분모",
+     "🔴 분자/분모(요약)"
+    ],
+    "sha256": "1374a6a3249c1ee06f88721da096381534f304fb54e8bff370e5e6a50752ddea"
+   },
+   "runners/out971_predict.json": {
+    "§Z 있나": true,
+    "요약 키 꼴": [
+     "분자/분모",
+     "🔴 분자/분모"
+    ],
+    "sha256": "e75a93ca13db92663827bd5f3f05bcd6f1ed2ee06eeb7715183e192e999d041d"
+   },
+   "runners/out971_board.json": {
+    "§Z 있나": true,
+    "요약 키 꼴": [
+     "분자/분모",
+     "🔴 분자/분모"
+    ],
+    "sha256": "59ca00666a3262b6fc2447231424c0de3dccbe4d7306008046197fb5b7b0e2df"
+   },
+   "runners/out971_meta.json": {
+    "§Z 있나": false,
+    "요약 키 꼴": [],
+    "sha256": "f6959d89f5dece0e9dbd76c1eb96cebe1484c9d42ea43630c7850d7e58919a86"
+   },
+   "runners/out971_meta_exact.json": {
+    "§Z 있나": false,
+    "요약 키 꼴": [],
+    "sha256": "6a82a4c0e4382956d1972d3f5b3c0c5ba1c8b1810bd7eb0c7492e1555b1c7c96"
+   },
+   "runners/out971_tautprobe.json": {
+    "§Z 있나": false,
+    "요약 키 꼴": [],
+    "sha256": "dee94e119a765c9270a85af3e0346592999faf54ff25880b9e00503b5e404231"
+   },
+   "runners/out971_w6.json": {
+    "§Z 있나": true,
+    "요약 키 꼴": [],
+    "sha256": "abdbec7cf8373d6c54e82209671ab6e619a812d7bc944b1d3457d05f8122d7fd"
+   },
+   "runners/out971_design_census.json": {
+    "§Z 있나": false,
+    "요약 키 꼴": [],
+    "sha256": "6467ccdbd786dc07f70fd51e75c672543f6e18d7f5bdb140248482701d6c3778"
+   }
+  },
+  "🔴🔴 요약 키 꼴(종수)": {
+   "종수": 3,
+   "꼴별 자리 수": {
+    "분자/분모": 3,
+    "🔴 분자/분모": 3,
+    "🔴 분자/분모(요약)": 1
+   }
+  },
+  "🔴🔴 §Z 없는 산출물": {
+   "목록": [
+    "runners/out971_meta.json",
+    "runners/out971_meta_exact.json",
+    "runners/out971_tautprobe.json",
+    "runners/out971_design_census.json"
+   ],
+   "🔴 분자/분모": "4 / 8"
+  },
+  "🔴 조항 66-② 신고": "한 사이클 한 요약이 원칙인데 971 의 실측 요약 키 꼴은 위 종수다. 🔴 **971 은 이것을 세지도 신고하지도 않았다** --- 972 가 신고한다"
+ },
+ "🔴🔴🔴 §T 치환표 --- **판정문·카드·논문은 이 값만 쓴다**": {
+  "묶음 Δρ_pred": 0.025527,
+  "971 과의 차": 2.25e-07,
+  "분모 ② 게이트 통과 도메인": 7,
+  "분모 ③ 유보 행 합": 532,
+  "분모 ④ 학습 행 합": 1525,
+  "🔴 순열 p(정본 자)": 0.102474,
+  "🔴 순열 채택": false,
+  "🔴 부호 일관성 p": 0.008998,
+  "🔴 부호 일관성 채택": true,
+  "🔴 971 조건 ⑤(≥5)가 귀무에서 통과하는 %": 22.4,
+  "귀무 중심": -1e-05,
+  "붓스트랩 SD 유보만": 0.020436,
+  "붓스트랩 SD 학습만": 0.012912,
+  "🔴 붓스트랩 SD 이중": 0.02701,
+  "🔴 이중 95% 구간": [
+   -0.023747,
+   0.084299
+  ],
+  "🔴 최대 기여 도메인": "시장팝업",
+  "🔴 그 기여 %": 42.8,
+  "🔴 잎-하나-빼기 최소값": 0.015846,
+  "🔴 팔 R 2000 95 분위": 0.017991,
+  "팔 R 첫 50 재현": 0.016593,
+  "🔴 유보 가중 연관(부호 있음)": 0.027166,
+  "🔴 유보 가중 |연관|(971 판)": 0.145443,
+  "🔴 연관÷예측 abs 판(971 헤드라인)": 5.7,
+  "🔴🔴 연관÷예측 부호 판(정정)": 1.06,
+  "🔴 유보 연관 음수 도메인 수": 3,
+  "🔴 그 도메인 유보 행 %": 56.2,
+  "🔴🔴 부호 갈리는 도메인(정정)": [
+   "모바일",
+   "시장팝업",
+   "웹툰"
+  ],
+  "🔴 그 수": 3,
+  "🔴 묶음 2SE 실값(원장의 「약 0.090」)": 0.087292,
+  "곁 팔 MIN_TRAIN=15 도메인": 8,
+  "곁 팔 새 도메인": [
+   "팝업"
+  ],
+  "곁 팔 묶음 Δ": 0.020581,
+  "🔴 배선 분자/분모": "11 / 11",
+  "🔴 배선 붉은 자리": [],
+  "🔴 파괴 대조 분자/분모": "9 / 9",
+  "🔴 자 file 범위 뒤집힌 판(작은 꼬리 48줄)": "12 / 36",
+  "🔴 자 file 범위 뒤집힌 판(큰 꼬리 · 풀 잘림 넘김)": "24 / 36",
+  "🔴 자 file 범위 음성 대조(주석만)": "0 / 36",
+  "🔴 자 func 범위 뒤집힌 판(작은)": "0 / 36",
+  "🔴 자 func 범위 뒤집힌 판(큰)": "0 / 36",
+  "🔴 자 func 범위 음성 대조(주석만)": "0 / 36",
+  "🔴 범위만 바꿔도 낙하가 갈리나": {
+   "runners/predict971.py": {
+    "file": 2,
+    "func": 3
+   },
+   "runners/recommit970.py": {
+    "file": 2,
+    "func": 2
+   },
+   "runners/meta965.py": {
+    "file": 5,
+    "func": 5
+   }
+  },
+  "🔴 predict971 낙하(file · 커밋본)": 2,
+  "🔴 predict971 낙하 %(file)": 15.4,
+  "🔴 predict971 분모": 13,
+  "🔴 predict971 낙하(func)": 3,
+  "🔴 predict971 낙하 %(func)": 23.1,
+  "🔴 recommit970 낙하 %(밑값)": 28.6,
+  "🔴 971 이 적은 낙하": "4 / 13 (30.8%)",
+  "🔴 971 요약 키 꼴 종수": 3,
+  "🔴 971 §Z 없는 산출물": "4 / 8"
+ },
+ "🔴🔴 §M 자 팔 --- 커밋본 재주행": {
+  "🔴 무엇": "971 의 `out971_meta.json` 은 `predict971.py` sha `7a0f3f65…` 에서 났는데 커밋된 blob 은 `c870fe5d…` 다. **자 팔이 돈 뒤 그 파일이 +48/−4 고쳐졌고 산출물을 다시 안 냈다**(티처 #110 치명 1)",
+  "🔴 971 이 적은 것": "predict971 낙하 4 / 13 (30.8%) --- 밑값 recommit970 1/6 (16.7%)",
+  "🔴 972 재주행(file 범위 · 965~971 과 같은 자)": {
+   "predict971": {
+    "`통과` 자리": 13,
+    "위임 자리": 0,
+    "🔴 항진명제": [],
+    "조건부 리터럴(가지가 자다)": 0,
+    "🔴 상수 False(모른다)": 10,
+    "모른다": 1,
+    "🔴 증명된 낙하": 2,
+    "🔴 증명된 낙하 %": 15.4,
+    "🔴 분모": 13,
+    "🔴🔴 통과 키 분모(정확 일치 vs 접미 일치)": {
+     "🔴 분모(정확 일치 · 965 판)": 12,
+     "🔴 분모(접미 일치 · 971 판)": 13,
+     "🔴 접미로만 잡히는 자리": [
+      "runners/predict971.py:175 🔴 F1 통과"
+     ],
+     "🔴 늘어난 수": 1
+    }
+   },
+   "dropaudit969": {
+    "`통과` 자리": 9,
+    "위임 자리": 0,
+    "🔴 항진명제": [],
+    "조건부 리터럴(가지가 자다)": 0,
+    "🔴 상수 False(모른다)": 4,
+    "모른다": 0,
+    "🔴 증명된 낙하": 5,
+    "🔴 증명된 낙하 %": 55.6,
+    "🔴 분모": 9,
+    "🔴🔴 통과 키 분모(정확 일치 vs 접미 일치)": {
+     "🔴 분모(정확 일치 · 965 판)": 8,
+     "🔴 분모(접미 일치 · 971 판)": 9,
+     "🔴 접미로만 잡히는 자리": [
+      "runners/dropaudit969.py:1008 Holm 3위 문턱 0.00625 통과"
+     ],
+     "🔴 늘어난 수": 1
+    }
+   },
+   "recommit970": {
+    "`통과` 자리": 7,
+    "위임 자리": 0,
+    "🔴 항진명제": [],
+    "조건부 리터럴(가지가 자다)": 0,
+    "🔴 상수 False(모른다)": 0,
+    "모른다": 5,
+    "🔴 증명된 낙하": 2,
+    "🔴 증명된 낙하 %": 28.6,
+    "🔴 분모": 7,
+    "🔴🔴 통과 키 분모(정확 일치 vs 접미 일치)": {
+     "🔴 분모(정확 일치 · 965 판)": 6,
+     "🔴 분모(접미 일치 · 971 판)": 7,
+     "🔴 접미로만 잡히는 자리": [
+      "runners/recommit970.py:161 🔴 F1 통과"
+     ],
+     "🔴 늘어난 수": 1
+    }
+   },
+   "meta965": {
+    "`통과` 자리": 10,
+    "위임 자리": 0,
+    "🔴 항진명제": [
+     "runners/meta965.py:1385"
+    ],
+    "조건부 리터럴(가지가 자다)": 0,
+    "🔴 상수 False(모른다)": 1,
+    "모른다": 3,
+    "🔴 증명된 낙하": 5,
+    "🔴 증명된 낙하 %": 50.0,
+    "🔴 분모": 10,
+    "🔴🔴 통과 키 분모(정확 일치 vs 접미 일치)": {
+     "🔴 분모(정확 일치 · 965 판)": 10,
+     "🔴 분모(접미 일치 · 971 판)": 10,
+     "🔴 접미로만 잡히는 자리": [],
+     "🔴 늘어난 수": 0
+    }
+   }
+  },
+  "🔴 972 재주행(func 범위 · 972 수리)": {
+   "predict971": {
+    "`통과` 자리": 13,
+    "위임 자리": 0,
+    "🔴 항진명제": [],
+    "조건부 리터럴(가지가 자다)": 0,
+    "🔴 상수 False(모른다)": 9,
+    "모른다": 1,
+    "🔴 증명된 낙하": 3,
+    "🔴 증명된 낙하 %": 23.1,
+    "🔴 분모": 13,
+    "🔴🔴 통과 키 분모(정확 일치 vs 접미 일치)": {
+     "🔴 분모(정확 일치 · 965 판)": 12,
+     "🔴 분모(접미 일치 · 971 판)": 13,
+     "🔴 접미로만 잡히는 자리": [
+      "runners/predict971.py:175 🔴 F1 통과"
+     ],
+     "🔴 늘어난 수": 1
+    }
+   },
+   "dropaudit969": {
+    "`통과` 자리": 9,
+    "위임 자리": 0,
+    "🔴 항진명제": [],
+    "조건부 리터럴(가지가 자다)": 0,
+    "🔴 상수 False(모른다)": 4,
+    "모른다": 0,
+    "🔴 증명된 낙하": 5,
+    "🔴 증명된 낙하 %": 55.6,
+    "🔴 분모": 9,
+    "🔴🔴 통과 키 분모(정확 일치 vs 접미 일치)": {
+     "🔴 분모(정확 일치 · 965 판)": 8,
+     "🔴 분모(접미 일치 · 971 판)": 9,
+     "🔴 접미로만 잡히는 자리": [
+      "runners/dropaudit969.py:1008 Holm 3위 문턱 0.00625 통과"
+     ],
+     "🔴 늘어난 수": 1
+    }
+   },
+   "recommit970": {
+    "`통과` 자리": 7,
+    "위임 자리": 0,
+    "🔴 항진명제": [],
+    "조건부 리터럴(가지가 자다)": 0,
+    "🔴 상수 False(모른다)": 0,
+    "모른다": 5,
+    "🔴 증명된 낙하": 2,
+    "🔴 증명된 낙하 %": 28.6,
+    "🔴 분모": 7,
+    "🔴🔴 통과 키 분모(정확 일치 vs 접미 일치)": {
+     "🔴 분모(정확 일치 · 965 판)": 6,
+     "🔴 분모(접미 일치 · 971 판)": 7,
+     "🔴 접미로만 잡히는 자리": [
+      "runners/recommit970.py:161 🔴 F1 통과"
+     ],
+     "🔴 늘어난 수": 1
+    }
+   },
+   "meta965": {
+    "`통과` 자리": 10,
+    "위임 자리": 0,
+    "🔴 항진명제": [
+     "runners/meta965.py:1385"
+    ],
+    "조건부 리터럴(가지가 자다)": 0,
+    "🔴 상수 False(모른다)": 1,
+    "모른다": 3,
+    "🔴 증명된 낙하": 5,
+    "🔴 증명된 낙하 %": 50.0,
+    "🔴 분모": 10,
+    "🔴🔴 통과 키 분모(정확 일치 vs 접미 일치)": {
+     "🔴 분모(정확 일치 · 965 판)": 10,
+     "🔴 분모(접미 일치 · 971 판)": 10,
+     "🔴 접미로만 잡히는 자리": [],
+     "🔴 늘어난 수": 0
+    }
+   }
+  }
+ },
+ "🔴 끝(UTC)": "2026-08-15T14:19:46Z",
+ "🔴 걸린 초": 0.1,
+ "🔴🔴 §Z 소스 대조": {
+  "시작 code_stamp 요약": "809dcf379edb4d6855878fb312972382b96bb1bba63c621d4b86ba328a5c4174",
+  "끝 code_stamp 요약": "809dcf379edb4d6855878fb312972382b96bb1bba63c621d4b86ba328a5c4174",
+  "🔴 주행 중 소스가 바뀌었나": false,
+  "🔴 잰 소스 sha(전량 · 자르지 않았다)": {
+   "lab/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "lab/adopt.py": "9f7c8437e2b91ce78aa5b083124363ff5ebb45be995bb807b7af8751e239d7c6",
+   "lab/animeaxes.py": "b0bab9d0515ca2442c18e14eefe806768a6dd327062a3dffaf6f110717d45e85",
+   "lab/autotag.py": "7d85366cecb68b1f97bb622c80eba58abf26da974b5192fd84341fad6e9f48a2",
+   "lab/board.py": "c15688838efc678e64da81781ebf4e72b9984e432dc29bd2b5949d6f1861baa2",
+   "lab/calaxes.py": "8378cdc6c25ad26bbe82a8bc02b93da46618eaf0cd0b5b11d614275b66c403f8",
+   "lab/calib.py": "1b3564037eca6acd65d3316a0ee16418dd90b13fbf25946653768a8f84bc3685",
+   "lab/challenger.py": "3fd75bb834f6e111cf097d2aa0906adcd6ccc30e52f6993257b2e453c405d9b1",
+   "lab/creatoraxes.py": "d5265a75c87af5684a72dfb9393151f59e02849dcecf7b002a0d6089a90192b8",
+   "lab/crowdaxes.py": "ce46f4b9f41c80ff8aa80c2e2183250673abb451f32abad6008ec3f25bb7670d",
+   "lab/curveshape.py": "3f5e196e3893f2ca0295ea338403705c55dd10aa33e33ed6e5b457f89f2024ef",
+   "lab/datehygiene.py": "af7790f31a053dc88e94758946e1a53e937b584c279f8e2009e884ffea992e3e",
+   "lab/decay.py": "fa165390fc823e9f22ad140b1f991f4308200a1dc15e02340b5ebacbd055edcf",
+   "lab/entkey.py": "749fbbae4083d368a78dcd7135d4b15dfe66a25dd2ebe6d7761bb1f8ae192ff2",
+   "lab/eracheck.py": "f713e5bf1d06067bcbc08594cd25ef9d667caf326798711e6b4b7e0e4f81fac2",
+   "lab/fewshot.py": "aab7aae2cc40ca3dacdbd06861b77aeea0922eee5e214a0362e992746d3fcc35",
+   "lab/fixaxes.py": "90f4023e578e8f8ed2dd5c80c68aa60b2e7144697d74aa4003ac8381c5535941",
+   "lab/forms.py": "5cfa890460eab48bc8511c231d2043efce68c298ccd5360825a9c2dcff506fd1",
+   "lab/fundaxes.py": "25e9df5e523b1a0c3a39c9a73d98e25d94017dfc631c0dcfe22d5e992c60c324",
+   "lab/gamedate.py": "ac968cb6be5e11d81a9def38b707171b19949a180c7a42d502c366b6cc1fd825",
+   "lab/gamesearch.py": "30aab480d650cc3d78a1f3b8402278825a18d8e70a85389d57d1a1d66b1233de",
+   "lab/gamew30.py": "4cb2a3a489e96971207683dfe223492af3cf118b211251f4842c5939049d404f",
+   "lab/genaxes.py": "1e24ad423d7f7fec11a44d6be9060c26107412f8d0f4568af7b2403d56fa8d38",
+   "lab/gitcall.py": "b79caadcf6425943f22f6a88a08971f2262227d761d61b1d0c6c614019230ac4",
+   "lab/grpaxes.py": "a261daa9a4b973278005a1577574d69d088f7b62968496c7071197ad87c07e3d",
+   "lab/guards.py": "536289b788577d65ec1d61b566c77fbc003d3d7153704a2146c22f135c4c5411",
+   "lab/harness.py": "0383271fa2f4ba0730e6084193a03a209c644e83379484415567f37323eec1fc",
+   "lab/hearing.py": "3e3779c2f57658d14771c71a8fbcb67f119b3eaaec3ed2f14b329d5ed192b7da",
+   "lab/idolset.py": "25373c860bbef524107e43a7d8d37602b7d048de04d288f99af53b30deccdd10",
+   "lab/ipjoin.py": "f3bad3742b74e00edcaebb3429b970c18dc501b3f17a2fb11b94a9b89159d6d6",
+   "lab/joint.py": "3eed95eac235f80d25b840603439326fc2e4662d37e9d0db726f4b95a2e39fbb",
+   "lab/keyspace.py": "e63c86da248e5255f73442405b27693ee0a11cdcff2dd37d4debcbef0a362657",
+   "lab/langaxes.py": "696eb72b5e43d1ad42075b3e8de44176a4e23fc18f3613c2cb9cc52046dd7732",
+   "lab/lever.py": "4c84849ed241e3663090d23887f62707b0d9f82765a60c393277024ed25378a3",
+   "lab/listaudit.py": "5ab436fdab96409e6b6745c239351dceb1fae2045eb6071c7884a7d0ad9ecaae",
+   "lab/loop.py": "2a99f705f0b6846a1388d78bfa253de75cbe694ecf73838a4c44e40bb2b83507",
+   "lab/marker.py": "2c08667896640ad65c812486b91c29177d7720b7a03363ca4afb323b51c7d97e",
+   "lab/mixture908.py": "bae8687d3c2a36c57fc8e0e4096b08d7280c8d0aeee5c3d38a6562f274ed1c1f",
+   "lab/mktaxes.py": "125a2ca89646c000ab30ba2779b3ba071b2a63b4c275b27c12caed45b701f849",
+   "lab/mktmore.py": "6e1b68e0e187e69ae469ed7ecb2f807852e0b0dfdb4e8a8e9ed3ee3edfd06fbc",
+   "lab/natsaxes.py": "0b64a6078ef2273f8c0181c0101936567e149f35fe36e7db99599d1b2b152bd9",
+   "lab/ordering.py": "cd1e5cb61063137cc2ac07f41a963b63ee717a3a312558d13b0dcc123aa34a4c",
+   "lab/overlap.py": "df6235ef04603b22204f7e2acbd3a0330c3de5de9f322499e7b81b6de1fadc59",
+   "lab/pairboot.py": "8e1e7b2fb00c3bd763e9d6b9b78b1fc11cc60b23defd821c0ebad37e781ea8cc",
+   "lab/pairs.py": "532ce5dc41ea2fa40e2370eb0c901422d1d5eda447dee46218c475300c97cc14",
+   "lab/poolshadow.py": "f4260cd30d96b66a5300941e4ec822c407758fe801bc300c0b8ca6fa583b6fbd",
+   "lab/popaxes.py": "17bcd94ed31065b379653f8f681dd0e129afa73ff2c878eed2c3651cb478f11f",
+   "lab/popupset.py": "3a896e344d86f5e7e30639bd16bc3c3c6ab95d40960c37181a37c8a9c349c7a6",
+   "lab/provenance.py": "b8b9ad9b1e4e9c3d6e89fdff44bee85c13f416472569aadedb932f157c7cee92",
+   "lab/rank.py": "e8c7ef0166e5589558d04eef2cc5aa2bb7a30e36f92c9b6a589752fbedfdc54b",
+   "lab/rawaxes.py": "7cbfb2d6088e02e132829ead1314ad9c95a14f4aef51bcd6c2675bed374a9ae2",
+   "lab/recaxes.py": "7de9ba5b315e395aaa2d8f2011530e88c4515b434b599e6ed0ad92cb9ce59fa9",
+   "lab/recency.py": "b0e7ca755b73d319c53dccd04b378588986a36b82f2aa0473d31dbe93ff096e4",
+   "lab/router.py": "610437bcc818ad4f7240d91752145e9c684ffeb8c4e6f509da6ddf6a04b179e3",
+   "lab/scrambled.py": "07763c61c8c5237545632b25d0ac22623e486c88bcd72c7ab491a456c2db36be",
+   "lab/semtoken908.py": "5a5e50904423337a09b1fbfff650549b9ac7ba12ca64eb192bf58650cff15382",
+   "lab/seqaxes.py": "d35a73c83e6fb7022f01e4ae2d094b7b548fc875a47e5c8fd64d44fd575c8f79",
+   "lab/server.py": "949c224f912487ec9b5ccb1ab9f8088faadeaf057f1c81113559627cc4dc230c",
+   "lab/sideaudit.py": "58c5cd63bb596707051f6cd9cc7f4817a5f3854f0a088655742028bb028e3aa8",
+   "lab/store.py": "e820bad3e794f397fe1f8af6a958b04fa4d13373329eb286918e30acfd31bffc",
+   "lab/tagaxes.py": "249285db668dd7a82e279ba946d1ecf68fb28a56a849d969f4fff37798b6e68e",
+   "lab/textaxes.py": "63ecea2dc29ea72781d8a5845083ee3390c2578fdcfd1a4beb422b9e91010477",
+   "lab/textnn.py": "e7d7ecfe01e325e6fb33fd0fca4dff44cef31235b89c791f5bcd423a08f20cad",
+   "lab/titlekey.py": "85c5d2f9883acfc43c1091b98f36db3555b21d5838458838bd891af3cf5a4258",
+   "lab/trendaxes.py": "42a77feb7eb288bc56d943306e16a5d53382e1a31c3b09f1d3219a362834b8a5",
+   "lab/tune.py": "142e1ed6720f535fe0cf655a41b77a925d0ef1d333cff1f5d565993b613600f8",
+   "lab/visitoraxes.py": "38ae6403666d8510c73b35ebe4e0441cef7b86deacc0c987b35d52f6ab17566e",
+   "lab/weatheraxes.py": "88dc8a48feacb3c417585081f79ad7b7cc414049c7cd554e63c67c935eac0995",
+   "lab/wikiaxes.py": "7b010ddfc1fcc98b06e2fa9697c7a3a6b674341ab87514f9221229c9ad70322b",
+   "lab/wikicat.py": "c3c477ed8bae9f4b99a567a1bdabaaba10acd0ae100fa5e4ade590fdf22371fb",
+   "runners/dropaudit969.py": "f9b8f5b103463b6270f3f4bc69a39b7b8880243145d50c0d74a1e5f529862acf",
+   "runners/ledger972.py": "f4e3d17d5da8cbd1a8bb9063d7d2a81aa6ea46a704dea94c75a4255efe787a71",
+   "runners/meta965.py": "e0454c9e6d649e94a1c3c3e1e73b6a85cfa084e15b38910d708a3f956d1fca05",
+   "runners/predict971.py": "c870fe5d8bf72424fd86203e4585b8d234b4d06b800a78fa074d7f9401738c3f",
+   "runners/predict972.py": "887e2b7351bf9cc42e98ccaba9be4843c23630a7c9bfd4d32f5c87815570e35d",
+   "runners/recommit970.py": "373254034c6a4cd6b7db77c4f829469aaa38523c4ad119d1624217d0eb3c2e6a",
+   "runners/rulerstab972.py": "bd4d69823db859bd128bd05e204a6e2c3d9c4e73d56060aef1b4f31d058af873"
+  },
+  "🔴🔴 §D 자료 입력 지문(규칙 C)": {
+   "🔴 무엇": "주행 중 **실제로 열린** `data/` 파일 전량의 sha256. 🔴 목록을 추측으로 안 적는다 --- `open`·`Path.open`·`np.load` 를 잡아 **열리는 것을 기록**한다",
+   "🔴 분모: 자료 파일 수": 0,
+   "🔴🔴 합친 요약(전량을 덮는다)": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+   "🔴 디렉터리별 롤업": {},
+   "파일별 sha256(자르지 않았다)": {}
+  }
+ }
+}
