@@ -1,0 +1,107 @@
+{
+ "무엇": "976 — F5 를 산출물 전량에 채점한다(공유 `ledger.py`)",
+ "🔴 채점 대상 글롭": "out976_*.json",
+ "🔴🔴 F5 분자/분모(전량)": "8 / 8",
+ "🔴 전량 통과인가": true,
+ "산출물별": {
+  "out976_control.json": {
+   "F5": true,
+   "분자/분모": "2 / 2",
+   "기준 ref": "9e2ae5a133d63dddd00f88d1996c25bcd16fca6d",
+   "40자 고정 sha 인가": true,
+   "🔴 0000…0000 인가": false,
+   "시작=끝": true,
+   "도장이 덮는 파일": 72
+  },
+  "out976_f5.json": {
+   "F5": true,
+   "분자/분모": "2 / 2",
+   "기준 ref": "9e2ae5a133d63dddd00f88d1996c25bcd16fca6d",
+   "40자 고정 sha 인가": true,
+   "🔴 0000…0000 인가": false,
+   "시작=끝": true,
+   "도장이 덮는 파일": 72
+  },
+  "out976_factors.json": {
+   "F5": true,
+   "분자/분모": "6 / 6",
+   "기준 ref": "9e2ae5a133d63dddd00f88d1996c25bcd16fca6d",
+   "40자 고정 sha 인가": true,
+   "🔴 0000…0000 인가": false,
+   "시작=끝": true,
+   "도장이 덮는 파일": 76
+  },
+  "out976_numaudit.json": {
+   "F5": true,
+   "분자/분모": "2 / 2",
+   "기준 ref": "9e2ae5a133d63dddd00f88d1996c25bcd16fca6d",
+   "40자 고정 sha 인가": true,
+   "🔴 0000…0000 인가": false,
+   "시작=끝": true,
+   "도장이 덮는 파일": 72
+  },
+  "out976_scaling.json": {
+   "F5": true,
+   "분자/분모": "6 / 6",
+   "기준 ref": "9e2ae5a133d63dddd00f88d1996c25bcd16fca6d",
+   "40자 고정 sha 인가": true,
+   "🔴 0000…0000 인가": false,
+   "시작=끝": true,
+   "도장이 덮는 파일": 76
+  },
+  "out976_scorefix.json": {
+   "F5": true,
+   "분자/분모": "4 / 4",
+   "기준 ref": "9e2ae5a133d63dddd00f88d1996c25bcd16fca6d",
+   "40자 고정 sha 인가": true,
+   "🔴 0000…0000 인가": false,
+   "시작=끝": true,
+   "도장이 덮는 파일": 74
+  },
+  "out976_slots.json": {
+   "F5": true,
+   "분자/분모": "3 / 3",
+   "기준 ref": "9e2ae5a133d63dddd00f88d1996c25bcd16fca6d",
+   "40자 고정 sha 인가": true,
+   "🔴 0000…0000 인가": false,
+   "시작=끝": true,
+   "도장이 덮는 파일": 73
+  },
+  "out976_wiring.json": {
+   "F5": true,
+   "분자/분모": "6 / 6",
+   "기준 ref": "9e2ae5a133d63dddd00f88d1996c25bcd16fca6d",
+   "40자 고정 sha 인가": true,
+   "🔴 0000…0000 인가": false,
+   "시작=끝": true,
+   "도장이 덮는 파일": 76
+  }
+ },
+ "🔴 도장": {
+  "언제(시작)": "2026-08-15T19:52:06Z",
+  "언제(끝)": "2026-08-15T19:52:06Z",
+  "시작 code_stamp 요약": "9d5edc90244cd9814663f20f54b7a1bda631b5dfb64d1570b5e36c25058f15cd",
+  "끝 code_stamp 요약": "9d5edc90244cd9814663f20f54b7a1bda631b5dfb64d1570b5e36c25058f15cd",
+  "🔴 시작=끝": true,
+  "분모: 도장이 덮는 파일": 72,
+  "🔴 자료 지문": {},
+  "분모: 연 자료 파일": 0,
+  "🔴 F1 기준 ref(준 대로)": "9e2ae5a133d63dddd00f88d1996c25bcd16fca6d",
+  "🔴 40자 고정 sha 인가": true,
+  "🔴 기준 ref 가 0000…0000 인가": false,
+  "러너별": {
+   "runners/ledger.py": {
+    "디스크 sha256": "2c029b84ba3b488d1d8b254bcd83e9960d6b58b9d69b47c7d0b76eafa06eef5c",
+    "커밋 blob sha256": "2c029b84ba3b488d1d8b254bcd83e9960d6b58b9d69b47c7d0b76eafa06eef5c",
+    "일치": true
+   },
+   "runners/predict971.py": {
+    "디스크 sha256": "c870fe5d8bf72424fd86203e4585b8d234b4d06b800a78fa074d7f9401738c3f",
+    "커밋 blob sha256": "c870fe5d8bf72424fd86203e4585b8d234b4d06b800a78fa074d7f9401738c3f",
+    "일치": true
+   }
+  },
+  "🔴 분자/분모": "2 / 2",
+  "🔴 F5 통과": true
+ }
+}
