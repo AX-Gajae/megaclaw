@@ -1045,13 +1045,19 @@ def stage_wiring(ref):
     arms = {"D4": (WRECKS_Y["D4 학습 y 전량(둘 다)"], None)}
     se_a = se_double(pool, R, ALPHA_BASE, lam, arms, boot=50)
     se_b = se_double(pool, R, ALPHA_BASE, lam, arms, boot=100)
+    #: 🔴 **변이체 — 뽑기를 2 → 3 으로 두면 수렴했다고 말할 수 없어야 한다.**
+    se_m1 = se_double(pool, R, ALPHA_BASE, lam, arms, boot=2)
+    se_m2 = se_double(pool, R, ALPHA_BASE, lam, arms, boot=3)
     ra = se_a["D4"]["R_eq 균등"]
     rb = se_b["D4"]["R_eq 균등"]
+    ma = se_m1["D4"]["R_eq 균등"]
+    mb = se_m2["D4"]["R_eq 균등"]
     add("W7 SE 가 뽑기 수 50 → 100 에서 10% 안으로 수렴한다",
         bool(ra and rb and abs(rb - ra) / ra < 0.10),
-        bool(ra and abs(ra - ra) / ra < 0.10),
-        "같은 뽑기 수를 두 번 넣어 견준다 — 그때도 통과하면 검사가 수렴을 안 본다",
+        bool(ma and mb and abs(mb - ma) / ma < 0.10),
+        "🔴 뽑기 2 → 3 짜리 SE 에 같은 검사를 건다 — 그때도 통과하면 검사가 수렴을 안 본다",
         {"🔴 뽑기 50 의 SE(균등)": ra, "🔴 뽑기 100 의 SE(균등)": rb,
+         "🔴 변이체 뽑기 2 의 SE": ma, "🔴 변이체 뽑기 3 의 SE": mb,
          "🔴 등록한 뽑기 수": BOOT})
 
     # ── W8 🔴 `wreck_x` 가 학습 X 를 바꾸고 유보 X 는 안 바꾼다 ──
@@ -1075,13 +1081,21 @@ def stage_wiring(ref):
     pred_sd = {d: 1.0 / np.sqrt(max(int(pool.ho_mask[d].sum()) - 1, 1))
                for d in pool.gated}
     rel = max(abs(R.sd[d] - pred_sd[d]) / pred_sd[d] for d in pool.gated)
+    #: 🔴 **변이체 — 모든 도메인에 같은 상수 SD 를 주면 이 검사는 떨어져야 한다.**
+    const_sd = float(np.mean(list(R.sd.values())))
+    ns_m = sorted([(d, int(pool.ho_mask[d].sum()), const_sd) for d in pool.gated],
+                  key=lambda z: z[1])
+    mono_m = all(ns_m[i][2] > ns_m[i + 1][2] for i in range(len(ns_m) - 1))
+    rel_m = max(abs(const_sd - pred_sd[d]) / pred_sd[d] for d in pool.gated)
     add("W9 도메인 안 순열 귀무 SD 가 **행 수가 커질수록 작아지고 1/√(n−1) 에 붙는다**",
-        bool(mono and rel < 0.25), bool(rel < 0.25 and rel < 0.25),
-        "같은 조건을 두 번 걸어 본다 — 그때도 통과하면 검사가 단조를 안 본다",
+        bool(mono and rel < 0.25), bool(mono_m and rel_m < 0.25),
+        "🔴 모든 도메인에 **같은 상수 SD** 를 주고 같은 검사를 건다 — 그때도 통과하면 "
+        "검사가 행 수를 안 본다",
         {"🔴 행 수 오름차순 (도메인, 행, 귀무 SD)":
              [[z[0], z[1], _r(z[2])] for z in ns],
          "🔴 단조 감소인가": bool(mono),
          "🔴 1/√(n−1) 과의 최대 상대오차": _r(rel, 4),
+         "🔴 변이체(상수 SD)의 최대 상대오차": _r(rel_m, 4),
          "🔴 상관(참고)": _r(corr, 4)})
 
     # ── W10 🔴 자 넷이 **모든 stage 에서 같이 나온다**(반증조건 4) ──
