@@ -395,7 +395,11 @@ def stage_fix(ref):
     #: **먼저** 도므로 그때 있던 파일만 본다 — 그것은 순서 때문에 생기는 구멍이다.
     #: 🔴 이 절은 `scorefix` 가 **마지막에** 돌면서 산출물 전량을 다시 읽는다.
     RULER_NAMES = ("R_pool 묶음", "R_eq 균등", "R_z 순열SE 역가중", "R_iv SE² 역가중")
-    fc4 = collections.OrderedDict()
+    #: 🔴 **등록된 분모는 측정 stage 다섯이다**(사전등록 §6-4 가 이름을 적었다).
+    #: 배선 산출물은 등록 분모 밖이라 **따로 적는다** — 분모를 몰래 넓히거나 좁히지 않는다.
+    FC4_REG = ("out978_ruler.json", "out978_cond3.json", "out978_size.json",
+               "out978_xdestroy.json", "out978_alphafine.json")
+    fc4, fc4_out = collections.OrderedDict(), collections.OrderedDict()
     n_all = n_ok4 = 0
     for p in sorted((ROOT / "runners").glob("out978_*.json")):
         if p.name in ("out978_slots.json", "out978_f5.json",
@@ -403,18 +407,28 @@ def stage_fix(ref):
                       "out978_scorefix.json"):
             continue
         txt = p.read_text(encoding="utf-8")
-        got = sum(1 for nm in RULER_NAMES if nm in txt)
-        fc4[p.name] = "%d / %d" % (got, len(RULER_NAMES))
-        n_all += 1
-        n_ok4 += 1 if got == len(RULER_NAMES) else 0
+        got = "%d / %d" % (sum(1 for nm in RULER_NAMES if nm in txt),
+                           len(RULER_NAMES))
+        if p.name in FC4_REG:
+            fc4[p.name] = got
+            n_all += 1
+            n_ok4 += 1 if got == "4 / 4" else 0
+        else:
+            fc4_out[p.name] = got
     r5 = {
         "🔴🔴🔴 반증조건 4 — 자 넷이 격자 stage 밖에서도 다 나오나(측정 뒤 재채점)": {
+            "🔴 등록된 분모(사전등록 §6-4 가 이름을 적은 stage)": list(FC4_REG),
             "산출물별": fc4,
             "🔴 분자/분모": "%d / %d" % (n_ok4, n_all),
+            "🔴 등록 분모 밖(배선 산출물 · 참고로만 적는다)": fc4_out,
+            "🔴🔴 자기 적발": (
+                "🔴 **배선 산출물은 자 넷의 이름을 다 안 싣는다.** 등록 분모 밖이라 "
+                "실패는 아니지만 **다음 사이클이 고쳐야 할 자리**다 — 배선이 자 넷을 "
+                "쓰면서 이름을 안 적으면 그 절만 한 자로 읽힌다"),
             "🔴 왜 여기서 다시 세나": (
                 "배선은 측정보다 **먼저** 도므로 W10 은 그때 있던 파일만 본다. "
                 "이 절은 `scorefix` 가 **마지막에** 돌면서 전량을 다시 읽는다"),
-            "통과": bool(n_all > 0 and n_ok4 == n_all),
+            "통과": bool(n_all == len(FC4_REG) and n_ok4 == n_all),
         },
         "🔴 977 W 분자/분모": w977.get("🔴 W 분자/분모(통과)"),
         "🔴 977 구성상 참인 검사": w977.get("🔴🔴🔴 W 구성상 참인 검사 분자/분모"),
