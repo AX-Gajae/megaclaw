@@ -301,9 +301,16 @@ def audit_korean(src, counts):
     🔴 977 이 걸린 자리가 정확히 이것이다 — 「본문 **넷**」인데 참값은 **다섯**이었고,
     `NUMPAT` 이 아라비아 숫자만 봐서 **세 문서가 그대로 통과했다.**
     """
-    hits, bad = [], []
+    #: 🔴 **인라인 코드 안은 안 센다** — 976 의 `ALLOW_CTX` 가 아라비아 숫자에 준 것과
+    #: 같은 면제다. 🔴 **정정 문장이 「틀린 수」를 인용해야 할 때 쓰는 자리이고,
+    #: 면제한 자리 수를 산출물에 적는다**(안 세는 자리를 숨기지 않는다).
+    code = [(m.start(), m.end()) for m in re.finditer(r"`[^`\n]*`", src)]
+    hits, bad, exempt = [], [], 0
     for m in KNUMPAT.finditer(src):
         if KNUM_NOT.match(src, m.start()):
+            continue
+        if any(a <= m.start() and m.end() <= b for a, b in code):
+            exempt += 1
             continue
         word = m.group()
         ctx = re.sub(r"\s+", " ", src[max(0, m.start() - 30):m.end() + 20])
@@ -323,6 +330,7 @@ def audit_korean(src, counts):
         "🔴 뺀 규칙(수사가 아닌 자리)": KNUM_NOT.pattern,
         "🔴 대조한 앞말과 참값": dict(counts),
         "🔴 센 한글 수사": len(hits),
+        "🔴 면제한 수사(인라인 코드 안)": exempt,
         "🔴 앞말이 걸린 수사": len(tied),
         "🔴🔴 등록된 참값과 다른 수사": len(bad),
         "🔴 어긋난 자리": bad[:20],
@@ -534,7 +542,8 @@ def stage_numaudit(ref, cycle, ran) -> dict:
         ("본문", len(files)),
         ("산출물", len(glob.glob(str(OUT / ("out%s_*.json" % cycle))))),
     ])
-    kor_per, kor_hits, kor_bad, kor_tied = collections.OrderedDict(), 0, 0, 0
+    kor_per, kor_hits, kor_bad, kor_tied, kor_ex = (
+        collections.OrderedDict(), 0, 0, 0, 0)
     per = collections.OrderedDict()
     tot = miss_old = miss_new = exempt_new = exempt_975 = bad_slot = 0
     for rel, info in files.items():
@@ -545,9 +554,11 @@ def stage_numaudit(ref, cycle, ran) -> dict:
         src = p.read_text(encoding="utf-8")
         kr = audit_korean(src, kcounts)
         kor_per[rel] = {"🔴 센 한글 수사": kr["🔴 센 한글 수사"],
+                        "🔴 면제한 수사(인라인 코드 안)": kr["🔴 면제한 수사(인라인 코드 안)"],
                         "🔴 앞말이 걸린 수사": kr["🔴 앞말이 걸린 수사"],
                         "🔴🔴 어긋난 수사": kr["🔴🔴 등록된 참값과 다른 수사"],
                         "🔴 어긋난 자리": kr["🔴 어긋난 자리"]}
+        kor_ex += kr["🔴 면제한 수사(인라인 코드 안)"]
         kor_hits += kr["🔴 센 한글 수사"]
         kor_tied += kr["🔴 앞말이 걸린 수사"]
         kor_bad += kr["🔴🔴 등록된 참값과 다른 수사"]
@@ -588,6 +599,7 @@ def stage_numaudit(ref, cycle, ran) -> dict:
             "🔴 뺀 규칙(수사가 아닌 자리)": KNUM_NOT.pattern,
             "🔴 대조한 앞말과 참값": dict(kcounts),
             "🔴🔴 센 한글 수사(전체)": kor_hits,
+            "🔴 면제한 수사(인라인 코드 안 · 안 세는 자리)": kor_ex,
             "🔴🔴 앞말이 걸린 수사(전체)": kor_tied,
             "🔴🔴🔴 등록된 참값과 어긋난 수사": kor_bad,
             "파일별": kor_per,

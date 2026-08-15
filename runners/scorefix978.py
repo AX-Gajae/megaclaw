@@ -391,7 +391,31 @@ def stage_fix(ref):
     # ── 수리 5 — 배선 W 를 `select()` 밖으로 ──────────────────
     w = _load("out978_wiring.json")
     w977 = _load("out977_wiring.json")
+    #: 🔴🔴 **반증조건 4 를 측정이 다 끝난 뒤에 다시 센다.** 배선의 W10 은 배선이
+    #: **먼저** 도므로 그때 있던 파일만 본다 — 그것은 순서 때문에 생기는 구멍이다.
+    #: 🔴 이 절은 `scorefix` 가 **마지막에** 돌면서 산출물 전량을 다시 읽는다.
+    RULER_NAMES = ("R_pool 묶음", "R_eq 균등", "R_z 순열SE 역가중", "R_iv SE² 역가중")
+    fc4 = collections.OrderedDict()
+    n_all = n_ok4 = 0
+    for p in sorted((ROOT / "runners").glob("out978_*.json")):
+        if p.name in ("out978_slots.json", "out978_f5.json",
+                      "out978_numaudit.json", "out978_control.json",
+                      "out978_scorefix.json"):
+            continue
+        txt = p.read_text(encoding="utf-8")
+        got = sum(1 for nm in RULER_NAMES if nm in txt)
+        fc4[p.name] = "%d / %d" % (got, len(RULER_NAMES))
+        n_all += 1
+        n_ok4 += 1 if got == len(RULER_NAMES) else 0
     r5 = {
+        "🔴🔴🔴 반증조건 4 — 자 넷이 격자 stage 밖에서도 다 나오나(측정 뒤 재채점)": {
+            "산출물별": fc4,
+            "🔴 분자/분모": "%d / %d" % (n_ok4, n_all),
+            "🔴 왜 여기서 다시 세나": (
+                "배선은 측정보다 **먼저** 도므로 W10 은 그때 있던 파일만 본다. "
+                "이 절은 `scorefix` 가 **마지막에** 돌면서 전량을 다시 읽는다"),
+            "통과": bool(n_all > 0 and n_ok4 == n_all),
+        },
         "🔴 977 W 분자/분모": w977.get("🔴 W 분자/분모(통과)"),
         "🔴 977 구성상 참인 검사": w977.get("🔴🔴🔴 W 구성상 참인 검사 분자/분모"),
         "🔴 977 정직한 W": w977.get("🔴🔴 정직한 W 분자/분모(구성상 참을 뺀다)"),
@@ -419,7 +443,10 @@ def stage_fix(ref):
         p = ROOT / rel
         txt = p.read_text(encoding="utf-8") if p.is_file() else ""
         hit37[rel] = sum(txt.count(z) for z in ("37,535", "37535", "37,531", "37531"))
-    meta977 = _load(str(ROOT / "paper/steps/977_alpha/meta.json"))
+    #: 🔴 **977 이 커밋한 판**에서 읽는다 — 978 이 이 파일을 고쳐도 「고치기 전」이 안 흔들린다.
+    _mb = _blob(BEFORE_REF, "paper/steps/977_alpha/meta.json")
+    meta977 = json.loads(_mb) if _mb else {}
+    meta977_disk = _load(str(ROOT / "paper/steps/977_alpha/meta.json"))
     claims = meta977.get("claims") or []
     corr = collections.OrderedDict()
     corr["정정 1 — 「본문 넷」 → 「다섯」"] = {
@@ -461,6 +488,8 @@ def stage_fix(ref):
     }
     corr["정정 4 — 논문 `meta.json` 의 `sent`"] = {
         "🔴 저장소가 적은 값": meta977.get("sent"),
+        "🔴 그 값을 어디서 읽었나": "%s:paper/steps/977_alpha/meta.json" % BEFORE_REF,
+        "🔴 978 이 고친 뒤 디스크 값": meta977_disk.get("sent"),
         "🔴 실제로 나갔나": True,
         "🔴 왜 갈렸나": ("`paper.harness send` 가 `meta.json` 을 통째로 다시 쓰면서 "
                     "슬롯 오프셋을 밀어서, 977 은 **채점된 판을 커밋하고 send 가 덧쓴 "
