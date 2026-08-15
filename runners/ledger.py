@@ -57,7 +57,7 @@ ALLOW_CTX_975 = (
     ("🔴 975 신설: 사이클 번호(9xx)", re.compile(r"(?<![\d.,])9[0-9]{2}(?![\d.,])")),
     ("🔴 975 신설: 신뢰수준", re.compile(r"95\s*\\?%")),
     ("🔴 975 신설: 목록·표의 차례 번호",
-     re.compile(r"(?m)^\s*\d+\.\s|\|\s*\d+\s*\||(?m)^\s*\d+\s*&")),
+     re.compile(r"(?m)^\s*\d+\.\s|\|\s*\d+\s*\||^\s*\d+\s*&")),
     ("🔴 975 신설: 순위 낱말", re.compile(r"\d+\s*(?:순위|위)")),
     ("🔴 975 신설: 수리·문항 번호",
      re.compile(r"(?:수리|예측|반증조건)\s*\d+|[PAHWVDERCF]\d+|A-\d")),
@@ -78,7 +78,7 @@ ALLOW_CTX = (
      re.compile(r"(?<![0-9A-Za-z])(?:P|W|E|C|R|F|V|D|H)\d{1,2}(?![0-9])")),
     ("신뢰수준", re.compile(r"95\s*\\?%")),
     ("목록·표의 차례 번호",
-     re.compile(r"(?m)^\s*\d+\.\s|\|\s*\d+\s*\||(?m)^\s*\d+\s*&")),
+     re.compile(r"(?m)^\s*\d+\.\s|\|\s*\d+\s*\||^\s*\d+\s*&")),
     ("순위 낱말", re.compile(r"\d+\s*(?:순위|위)")),
     ("수리·문항 번호", re.compile(r"(?:수리|정정|예측|반증조건)\s*\d+|A-\d")),
     ("인라인 코드(글자가 든 것만)",
@@ -343,9 +343,10 @@ def plant_control(src, slots, S, n_a=3, n_b=6, n_c=6, seed=976):
     b_src = a_src
     b_planted = []
     tail = ["8675309", "4815162", "9128374", "6203945", "7391026", "5847213"]
+    head = "\n대조 삽입 값은 "
     for j in range(min(n_b, len(tail))):
-        add = "\n대조 삽입 값은 %s 이다\n" % tail[j]
-        b_planted.append({"무리": "B(슬롯 밖)", "자리": len(b_src),
+        add = head + tail[j] + " 이다\n"
+        b_planted.append({"무리": "B(슬롯 밖)", "자리": len(b_src) + len(head),
                           "원래": "", "심은 것": tail[j]})
         b_src = b_src + add
 
@@ -380,8 +381,8 @@ def plant_control(src, slots, S, n_a=3, n_b=6, n_c=6, seed=976):
         rows = []
         for pl in planted:
             lo, hi = pl["자리"], pl["자리"] + max(1, len(pl["심은 것"]))
-            hit_new = any(lo - 2 <= p <= hi + 4 for p in pos_new)
-            hit_975 = any(lo - 2 <= p <= hi + 4 for p in pos_975)
+            hit_new = any(lo <= p < hi for p in pos_new)
+            hit_975 = any(lo <= p < hi for p in pos_975)
             digits = _norm(re.sub(r"[^\d.,-]", "", pl["심은 것"]) or "0")
             hit_old = num_old.get(digits, 0) > 0
             rows.append(dict(pl, **{"🔴 976 판이 잡았나": bool(hit_new),
@@ -456,7 +457,10 @@ def stage_numaudit(ref, cycle, ran) -> dict:
     t0 = now()
     cs0 = code_stamp(ran)
     S = artifact_numbers("out%s_*.json" % cycle)
-    man = json.loads((OUT / ("out%s_slots.json" % cycle)).read_text(encoding="utf-8"))
+    sf = OUT / ("out%s_slots.json" % cycle)
+    #: 🔴 슬롯 대장이 아직 없으면 **빈 대장**으로 돈다 — 생성기와 채점기가 서로를
+    #: 인용하므로 첫 바퀴를 돌리려면 이 자리가 필요하다(뒤 바퀴에서 진짜 값이 든다).
+    man = json.loads(sf.read_text(encoding="utf-8")) if sf.is_file() else {}
     files = man.get("파일별", {})
     per = collections.OrderedDict()
     tot = miss_old = miss_new = exempt_new = exempt_975 = bad_slot = 0
@@ -516,7 +520,10 @@ def stage_control(ref, cycle, ran) -> dict:
     t0 = now()
     cs0 = code_stamp(ran)
     S = artifact_numbers("out%s_*.json" % cycle)
-    man = json.loads((OUT / ("out%s_slots.json" % cycle)).read_text(encoding="utf-8"))
+    sf = OUT / ("out%s_slots.json" % cycle)
+    #: 🔴 슬롯 대장이 아직 없으면 **빈 대장**으로 돈다 — 생성기와 채점기가 서로를
+    #: 인용하므로 첫 바퀴를 돌리려면 이 자리가 필요하다(뒤 바퀴에서 진짜 값이 든다).
+    man = json.loads(sf.read_text(encoding="utf-8")) if sf.is_file() else {}
     files = man.get("파일별", {})
     per = collections.OrderedDict()
     agg = collections.Counter()

@@ -541,7 +541,7 @@ def stage_factors(ref):
     n_pass = n_lev = 0
     for fac, lst in lv.items():
         rows = collections.OrderedDict()
-        for nm, u, _cfg in lst:
+        for nm, u, _c2 in lst:
             a = acc[(fac, nm)]
             se_h = float(np.std(a["유보"], ddof=1))
             se_t = float(np.std(a["학습"], ddof=1))
