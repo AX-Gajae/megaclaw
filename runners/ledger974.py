@@ -37,7 +37,7 @@ OUT = ROOT / "runners"
 ART = "out974_*.json"
 
 # 🔴 「수」로 안 세는 것 --- 측정 전에 못 박고, **분모와 함께 적는다**
-NUMPAT = re.compile(r"\d[\d,]*(?:\.\d+)?")
+NUMPAT = re.compile(r"-?\d[\d,]*(?:\.\d+)?")   # 🔴 974 수리: 부호를 같이 본다
 ALLOW_CTX = (
     ("노트 번호·사이클 번호", re.compile(r"(?:노트|티처 #|사이클|PR #|#)\s*\d+")),
     ("연도·날짜·시각", re.compile(r"\d{4}-\d{2}-\d{2}|\d{4}년|\d{2}:\d{2}")),
