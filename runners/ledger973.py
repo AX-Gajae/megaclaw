@@ -166,8 +166,9 @@ def falsifiers(B, C, RF, W, ref) -> dict:
         ("F4 산출물이 안 내는 수를 적으면 실패",
          {"🔴 실측": "치환표 아래 §T · 라벨 검사까지 건다", "🔴 판정": "아래 §T 가 판정한다"}),
         ("F5 돌린 러너 sha ≠ 커밋 blob 이면 실패",
-         {"🔴 실측": f1["🔴 분자/분모"], "🔴 판정": "✅ 안 걸렸다" if f1["🔴 F5 통과"]
-          if "🔴 F5 통과" in f1 else f1.get("🔴 F1 통과") else "🔴 걸렸다"}),
+         {"🔴 실측": f1["🔴 분자/분모"],
+          "🔴 판정": "✅ 안 걸렸다" if f1.get("🔴 F5 통과", f1.get("🔴 F1 통과"))
+          else "🔴 걸렸다"}),
         ("F6 도장이 시작·끝·러너 전부·고정 ref·자료 지문을 못 덮으면 실패",
          {"🔴 실측": {"시작=끝": B["🔴 도장"]["🔴 시작=끝"],
                   "돌린 러너를 덮나": B["🔴 도장"]["🔴 돌린 러너 전부를 덮나"],
@@ -260,6 +261,69 @@ def substitutions(B, C, RF, W) -> dict:
     ])
 
 
+def ledger_state() -> dict:
+    """🔴 「내가 봤을 때 main 원장이 몇이었나」 --- 실측(손 전사 아님)."""
+    import subprocess
+    out = collections.OrderedDict()
+    for ref in ("main", "note/973-hplt-c3"):
+        try:
+            raw = subprocess.check_output(["git", "-C", str(ROOT), "show",
+                                           "%s:data/lab/denominator.json" % ref])
+            dups = []
+
+            def hook(pairs):
+                seen = set()
+                for k, _ in pairs:
+                    if k in seen:
+                        dups.append(k)
+                    seen.add(k)
+                return dict(pairs)
+            d = json.loads(raw, object_pairs_hook=hook)
+            out[ref] = {"최상위 키": len(d), "🔴 중복 키(모든 중첩)": len(dups),
+                        "커밋": subprocess.check_output(
+                            ["git", "-C", str(ROOT), "rev-parse", ref]).decode().strip()}
+        except Exception as e:                                     # noqa: BLE001
+            out[ref] = "🔴 못 읽었다: %s" % e
+    disk = json.loads((ROOT / "data/lab/denominator.json").read_text(encoding="utf-8"))
+    out["디스크"] = {"최상위 키": len(disk)}
+    out["🔴 HEAD 와 디스크가 같나"] = bool(
+        out.get("main", {}).get("최상위 키") == len(disk))
+    return out
+
+
+def repairs(RF, DG) -> dict:
+    """🔴 수리 다섯(상한 5). 🔴 **묶은 것을 묶었다고 적는다.**"""
+    return collections.OrderedDict([
+        ("수리 1 --- 치-1 4 칸 전부 채점 + Fisher",
+         RF["🔴🔴🔴 치-1 4 칸 전부 채점 + Fisher"]["🔴🔴 밑값을 넘는 칸"]["🔴 분자/분모"]),
+        ("수리 2 --- 치-2 「낙하 n 도 매여 있다」 철회",
+         RF["🔴🔴🔴 치-2 「낙하 n 도 매여 있다」 철회"][
+             "🔴 972 자신의 키(`🔴 낙하가 흔들렸나`)"]["🔴 분자/분모(True)"]),
+        ("수리 3 --- 치-4 「48 줄」 실측 + 치환표 라벨 검사",
+         RF["🔴🔴🔴 치-4 「48 줄」 실측 + 치환표 규칙 D 우회 검사"][
+             "🔴🔴 「48 줄」 직접 검정"]["🔴🔴 주장이 참인가"]),
+        ("수리 4 --- 972 산출물 기록 정정(치-5 `_sha_file` 복원 + 치-6 meta965 스키마·:1385)",
+         {"🔴 두 항목을 하나로 묶었다": True,
+          "치-5": RF["🔴🔴🔴 치-5 `_sha_file` 행 복원"]["🔴 복원 뒤 분자/분모"],
+          "치-6": RF["🔴🔴🔴 치-6 meta965 스키마 · :1385"]["🔴🔴 meta965.py:1385"]["🔴 분자/분모"]}),
+        ("🔴🔴 수리 5 --- 사고 대응(규칙 A 한 줄 + 데몬 PATHS 두 겹)",
+         {"🔴 사고가 PATHS 밖을 건드렸나":
+              DG["🔴🔴 §I 사고 실측"]["🔴🔴 PATHS 밖 파일"]["🔴 분자/분모"],
+          "🔴 심어서 재현 --- 옛 판이 PATHS 밖을 끌어들이나":
+              DG["🔴🔴🔴 §X 심어서 재현"]["🔴🔴 ② 옛 판이 PATHS 밖을 끌어들이나"],
+          "🔴 심어서 재현 --- 새 판이 끌어들이나":
+              DG["🔴🔴🔴 §X 심어서 재현"]["🔴🔴 ② 새 판이 PATHS 밖을 끌어들이나"],
+          "🔴 원장이 옛 값으로 되돌아갔나(옛 판)":
+              DG["🔴🔴🔴 §X 심어서 재현"]["🔴🔴🔴 ③ 원장이 옛 값으로 되돌아갔나"],
+          "🔴 고침이 소스에 있나": DG["🔴🔴 §G 고침이 소스에 있나"]}),
+        ("🔴 수리 항목 수", 5),
+        ("🔴 상한", 5),
+        ("🔴 묶음 신고", ("치-5 와 치-6 을 「972 산출물 기록 정정」 하나로 묶었다. "
+                    "묶지 않으면 사고 대응까지 여섯이라 상한을 넘는다. "
+                    "🔴 **묶었다는 사실을 여기 적는다** --- 숨기면 계수를 부풀린 것이다")),
+    ])
+
+
 def sub_audit(sub: dict, outs: list) -> dict:
     """🔴🔴 **973 이 죈 자** --- 치환표 열쇠 라벨 안의 수도 그 열쇠 값에서 와야 한다."""
     bad = []
@@ -287,6 +351,7 @@ def main():
     C = J(SCRATCH / "out973_census.json")
     RF = J(SCRATCH / "out973_rulerfix.json")
     W = J(SCRATCH / "out973_wiring.json")
+    DG = J(SCRATCH / "out973_daemonguard.json")
 
     sub = substitutions(B, C, RF, W)
     R = collections.OrderedDict()
@@ -300,6 +365,8 @@ def main():
     R["🔴🔴🔴 §A 채택 문턱 A1~A5"] = adopt(B, C)
     R["🔴🔴🔴 §P 사전등록 예측 P1~P12"] = predictions(B, C, RF)
     R["🔴🔴 §F 반증조건 F1~F10 자기판정"] = falsifiers(B, C, RF, W, a.ref)
+    R["🔴🔴🔴 §R 수리 다섯(상한 5)"] = repairs(RF, DG)
+    R["🔴🔴 §L 내가 봤을 때의 원장(실측)"] = ledger_state()
     R["🔴🔴🔴 §T 치환표 --- **판정문·카드·논문은 이 값만 쓴다**"] = sub
     R["🔴🔴 §T2 치환표 자기검사"] = sub_audit(sub, [])
     cs1 = code_stamp()
