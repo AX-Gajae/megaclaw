@@ -1011,13 +1011,82 @@ NEGATIVE = ["negA_threshold", "negB_coverage", "negC_recompute_diff", "negD_disk
 # ══════════════════════════════════════════════════════════════════════════
 # 훑기 한 파일
 # ══════════════════════════════════════════════════════════════════════════
+#: 🔴🔴🔴 **노트 972 신설 — 자 B 생성기 풀의 범위.** 티처 #110 치명 1.
+#: `file` = 965~971 그대로. 풀을 **파일 전체 AST** 에서 거둔다 —
+#:   🔴 **무관한 48 줄이 남의 자리 판정을 뒤집는다.** 971 의 「낙하 4(30.8%)」가
+#:   커밋본에서 **2(15.4%)** 로 갈린 뿌리가 이것이다.
+#: `func` = **972 수리**. 자리를 **감싸는 함수의 AST** 에서만 거둔다.
+#: 🔴 **기본값을 `func` 로 바꿨다**(노트 898 의 「기본값 보존」과 정면으로 부딪힌다).
+#:   까닭: `file` 은 편의가 아니라 **원리상 틀린 자**다 — 판정이 그 자리의 코드가 아니라
+#:   **파일의 나머지 내용**에 매인다. `file` 은 인자로 남겨 전후를 나란히 싣는다.
+POOLSCOPE = "func"
+
+
+def tally(rows) -> dict:
+    """🔴 **972 신설 — 자 계수를 내는 생산 함수 하나.**
+
+    965~971 은 이 계수를 `main()` 안에 인라인으로 적었다. 그래서 **다른 러너가 같은
+    계수를 내려면 다시 쓸 수밖에 없었고**, 다시 쓴 자는 죽은 자다(v4.0 §3).
+    `main()` 과 `rulerstab972.py` 가 **둘 다 이 함수를 부른다.**
+    """
+    n_site = len([r for r in rows if r["꼴"] != "위임 `{**f(...)}`"])
+    n_deleg = len([r for r in rows if r["꼴"] == "위임 `{**f(...)}`"])
+    taut = [r["자리"] for r in rows if r["🔴 항진명제인가"]]
+    constF = len([r for r in rows if r["자 B"].get("🔴 상수인가")
+                  and not r["자 B"].get("항진명제")])
+    unk = len([r for r in rows if str(r["자 B"].get("판정", "")).startswith("모른다")
+               and not r["🔴 항진명제인가"]])
+    tot = n_site + n_deleg
+    drop = tot - len(taut) - constF - unk
+    return {
+        "`통과` 자리": n_site,
+        "위임 자리": n_deleg,
+        "🔴 항진명제": taut,
+        "조건부 리터럴(가지가 자다)":
+            len([r for r in rows if r["자 A"].get("🔴 조건부 리터럴")]),
+        "🔴 상수 False(모른다)": constF,
+        "모른다": unk,
+        "🔴 증명된 낙하": drop,
+        "🔴 증명된 낙하 %": round(100.0 * drop / tot, 1) if tot else None,
+        "🔴 분모": tot,
+    }
+
+
+def verdict_map(rows) -> dict:
+    """🔴 **972 신설** --- 자리 → 한 글자 판정. 안정성 대조가 **이 사전을 견준다.**"""
+    out = {}
+    for r in rows:
+        if r["🔴 항진명제인가"]:
+            v = "항진명제"
+        elif r["자 B"].get("🔴 상수인가"):
+            v = "상수False"
+        elif str(r["자 B"].get("판정", "")).startswith("모른다"):
+            v = "모른다"
+        else:
+            v = "낙하"
+        out[r["자리"]] = v
+    return out
+
+
 def scan_source(rel, src, modns, rng):
     tree = ast.parse(src)
     parents = _parents(tree)
     keypool = harvest_keys(tree)
     strpool = harvest_strings(tree)
+    #: 🔴 972 --- 범위별 풀. `func` 면 **감싸는 함수 AST** 에서만 거둔다.
+    _pcache = {}
+
+    def _pools(site):
+        if POOLSCOPE != "func" or site.func is None:
+            return keypool, strpool
+        k = id(site.func)
+        if k not in _pcache:
+            _pcache[k] = (harvest_keys(site.func), harvest_strings(site.func))
+        return _pcache[k]
+
     rows = []
     for s in collect_sites(rel, tree, parents):
+        keypool_s, strpool_s = _pools(s)
         a = ruler_A(s, parents)
         # 🔴🔴 **자리마다 자기 씨앗을 준다.** 뽑기 흐름 하나를 온 훑기가 나눠 쓰면
         #   **분모(훑는 파일 집합)가 바뀔 때 남의 자리 판정까지 흔들린다.**
@@ -1025,7 +1094,7 @@ def scan_source(rel, src, modns, rng):
         #   `meta965.py` 의 한 자리가 **「항진명제」에서 「모른다」로 바뀌었다.**
         #   🔴 자리 씨앗 = `SEED|<파일:줄>` — 이제 그 자리의 판정은 **훑는 순서와 무관**하다.
         srng = random.Random("%d|%s" % (SEED, s.key))
-        b = (ruler_B(s, modns, srng, keypool, strpool) if not a["항진명제"]
+        b = (ruler_B(s, modns, srng, keypool_s, strpool_s) if not a["항진명제"]
              else {"판정": "안 쟀다(자 A 가 이미 잡았다)"})
         c = ruler_C_site(s)
         rows.append({
@@ -1155,21 +1224,12 @@ def main():
         for r in rows:
             r["파일"] = rel
         all_rows.extend(rows)
-        per_file[rel] = {
-            "`통과` 자리": len([r for r in rows if r["꼴"] != "위임 `{**f(...)}`"]),
-            "위임 자리": len([r for r in rows if r["꼴"] == "위임 `{**f(...)}`"]),
-            "🔴 항진명제": [r["자리"] for r in rows if r["🔴 항진명제인가"]],
-            "조건부 리터럴(가지가 자다)":
-                len([r for r in rows if r["자 A"].get("🔴 조건부 리터럴")]),
-            "🔴 상수 False(모른다)":
-                len([r for r in rows if r["자 B"].get("🔴 상수인가")
-                     and not r["자 B"].get("항진명제")]),
-            "모른다": len([r for r in rows if str(r["자 B"].get("판정", "")).startswith("모른다")
-                       and not r["🔴 항진명제인가"]]),
-            #: 🔴🔴 **971 · 조항 66-③** — 구판(정확)·신판(접미)을 같은 자리에 싣는다
-            "🔴🔴 통과 키 분모(정확 일치 vs 접미 일치)":
-                passkey_census(rel, ast.parse(src_txt)),
-        }
+        #: 🔴 **972** --- 인라인 계수를 **생산 함수 `tally()` 로 옮겼다.**
+        #: `rulerstab972.py` 가 같은 함수를 부른다 --- 다시 쓴 자는 죽은 자다.
+        per_file[rel] = dict(tally(rows))
+        #: 🔴🔴 **971 · 조항 66-③** — 구판(정확)·신판(접미)을 같은 자리에 싣는다
+        per_file[rel]["🔴🔴 통과 키 분모(정확 일치 vs 접미 일치)"] = \
+            passkey_census(rel, ast.parse(src_txt))
 
     taut = [r for r in all_rows if r["🔴 항진명제인가"]]
     unk = [r for r in all_rows if not r["🔴 항진명제인가"]
@@ -1411,10 +1471,15 @@ if __name__ == "__main__":
     #: `exact` = 965 그대로(기본) · `suffix` = 접두어 허용(`"🔴 F1 통과"` 를 분모에 넣는다).
     ap.add_argument("--passkey", default="exact", choices=["exact", "suffix"],
                     help="통과 키 일치 규칙(exact = 965 그대로 · suffix = 접두어 허용 · 971)")
+    #: 🔴🔴🔴 **노트 972 (티처 #110 치명 1)** — 자 B 생성기 풀의 범위.
+    #: 🔴 **기본값을 `func` 로 바꿨다** — `file` 은 원리상 틀린 자다(위 POOLSCOPE 주석).
+    ap.add_argument("--poolscope", default="func", choices=["file", "func"],
+                    help="자 B 풀 범위(file = 965~971 그대로 · func = 972 수리 · 기본)")
     a = ap.parse_args()
     globals()["GENVER"] = a.genver
     globals()["SLICER"] = a.slicer
     globals()["PASSKEY"] = a.passkey
+    globals()["POOLSCOPE"] = a.poolscope
     if a.only:
         REGISTERED[:] = [s.strip() for s in a.only.split(",") if s.strip()]
     if a.mine:
@@ -1438,5 +1503,17 @@ if __name__ == "__main__":
               "러너 ↔ 커밋 blob)가 **자의 분모 밖**에 있었다 --- 969 에서 물려받은 구멍이다"),
         "🔴 계수 키는 여전히 분모 밖": "`\"🔴 통과 수\"` 는 검사가 아니라 회계라 접미로도 안 잡힌다",
         "🔴 기본값을 안 바꿨다": bool(ap.get_default("passkey") == "exact")}
+    res["🔴🔴🔴 자 B 풀 범위(972 · 티처 #110 치명 1)"] = {
+        "poolscope": a.poolscope,
+        "뜻": ("file = 965~971 그대로 --- 풀을 **파일 전체 AST** 에서 거둔다. "
+              "func = 972 수리 --- **감싸는 함수 AST** 에서만 거둔다"),
+        "🔴🔴 기본값을 바꿨다": bool(ap.get_default("poolscope") == "func"),
+        "🔴 왜 바꿨나": ("`file` 은 **원리상 틀린 자**다 --- 한 자리의 판정이 그 자리의 코드가 "
+                  "아니라 **파일의 나머지 내용**에 매인다. 971 의 「낙하 4(30.8%)」가 "
+                  "커밋본에서 갈린 뿌리가 이것이다(티처 #110 치명 1). "
+                  "🔴 **노트 898 의 「기본값 보존」 규칙을 일부러 어겼고 그 사실을 여기에 적는다.**"),
+        "🔴 옛 산출물": ("965~971 의 `out*_meta.json` 은 전부 `file` 범위다. "
+                   "972 는 `file`·`func` 를 **둘 다** 내서 나란히 싣는다"),
+    }
     Path(a.out).write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
     print("wrote", a.out)

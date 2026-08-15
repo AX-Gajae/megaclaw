@@ -318,11 +318,24 @@ def build(drop_wiki: bool, drop_trend: bool):
     ids = WA._ids()
     ids["영화"] = list(json.loads((ROOT / "data/state/kobis_axes.json")
                                  .read_text(encoding="utf-8")))
-    TA.set_wide(False)
-    TA.set_grades(("A", "B", "C", "D", "E"))
-    ids["팝업"] = list(TA._popup_ids())
-    ids["아이돌"] = [r.get("record_id") or r.get("id")
-                  for r in IS._rows(mode_wide=True, wide_post=True)]
+    # 🔴🔴🔴 **노트 972 수리 (티처 #110 중대 · 971 자가 적발의 뿌리).**
+    # 971 은 이 두 줄의 **곁수효**를 문서로 적발하고 지뢰는 그대로 뒀다.
+    # `TA.set_wide(False)`·`set_grades(...)` 가 **복원 없이** 남아서
+    # 이 함수를 부른 **뒤의 모든 자료 짓기**가 다른 설정에서 지어졌다 ---
+    # 971 의 판 팔 첫 주행이 그래서 **처리 팔에만** 오염돼 지문이 `83496c04e499` 로 갈렸다.
+    # 🔴 **이제 부르기 전 상태를 저장하고 `finally` 에서 되돌린다.**
+    #    `set_wide`/`set_grades` 는 값이 실제로 갈릴 때만 캐시를 비우므로,
+    #    같은 값으로 되돌리면 캐시도 원래대로 선다.
+    _keep_wide, _keep_grades = TA.WIDE, tuple(TA.GRADES)
+    try:
+        TA.set_wide(False)
+        TA.set_grades(("A", "B", "C", "D", "E"))
+        ids["팝업"] = list(TA._popup_ids())
+        ids["아이돌"] = [r.get("record_id") or r.get("id")
+                      for r in IS._rows(mode_wide=True, wide_post=True)]
+    finally:
+        TA.set_grades(_keep_grades)
+        TA.set_wide(_keep_wide)
     return data, ids
 
 
