@@ -37,11 +37,26 @@ ART = "out975_*.json"
 SLOTS = OUT / "out975_slots.json"
 
 NUMPAT = re.compile(r"-?\d[\d,]*(?:\.\d+)?")
+#: 🔴 **수로 안 세는 것 --- 측정 전에 못 박고, 분류별 분모를 산출물에 적는다.**
+#: 🔴 975 가 더한 넷은 전부 **측정값이 아니라 이름표**다(사이클 번호 · 신뢰수준 ·
+#: 목록 차례 · 순위 낱말). 🔴 **한 자리 정수를 통째로 허용하지 않는다** ---
+#: 그것이 바로 974 판이 앓은 병이다(정수 0~999 의 90.1% 가 그냥 통과했다).
 ALLOW_CTX = (
     ("노트 번호·사이클 번호", re.compile(r"(?:노트|티처 #|사이클|PR #|#)\s*\d+")),
     ("연도·날짜·시각", re.compile(r"\d{4}-\d{2}-\d{2}|\d{4}년|\d{2}:\d{2}")),
     ("절 번호", re.compile(r"§\s*\d+(?:\.\d+)?|v\d+\.\d+")),
     ("사전등록 딱지", re.compile(r"[PAHWVDERC]\d+")),
+    ("🔴 975 신설: 사이클 번호(9xx)", re.compile(r"(?<![\d.,])9[0-9]{2}(?![\d.,])")),
+    ("🔴 975 신설: 신뢰수준", re.compile(r"95\s*\\?%")),
+    ("🔴 975 신설: 목록·표의 차례 번호",
+     re.compile(r"(?m)^\s*\d+\.\s|\|\s*\d+\s*\||(?m)^\s*\d+\s*&")),
+    ("🔴 975 신설: 순위 낱말", re.compile(r"\d+\s*(?:순위|위)")),
+    ("🔴 975 신설: 수리·문항 번호",
+     re.compile(r"(?:수리|예측|반증조건)\s*\d+|[PAHWVDERCF]\d+|A-\d")),
+    # 🔴 **글자가 든 인라인 코드만** 허용한다 --- 파일·키·식별자 이름이다.
+    #    `0.1` 처럼 **수만 든 백틱은 허용 안 한다**(그건 값이다).
+    ("🔴 975 신설: 인라인 코드(글자가 든 것만)",
+     re.compile(r"`[^`\n]*[A-Za-z가-힣][^`\n]*`")),
 )
 
 
@@ -274,10 +289,11 @@ def stage_numaudit(ref: str) -> dict:
             if not ok:
                 bad_slot += 1
             spans.append((sl["시작"], sl["끝"], ok, sl))
-        allow = []
+        allow, why_n = [], collections.Counter()
         for _why, pat in ALLOW_CTX:
             for m in pat.finditer(src):
                 allow.append((m.start(), m.end()))
+                why_n[_why] += 1
         found, m_old, m_new = 0, [], []
         for m in NUMPAT.finditer(src):
             if any(a <= m.start() and m.end() <= b for a, b in allow):

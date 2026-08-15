@@ -213,7 +213,7 @@ def stage_scorefix(ref: str) -> dict:
             "🔴 이 사이클의 수리": [
                 "1. numaudit 대상을 넷 전부로(판정문·논문·카드·원장)",
                 "2. 정수 오탐 --- 값 일치 → 출처 키 경로 일치",
-                "3. `meta965` 의 `통과` 키 규칙 + 분모 0 게이트",
+                "3. `meta965` 의 `통과` 키 규칙 + 분모가 빈 경우의 게이트",
                 "4. `predict972.perm_null` 의 부호 일관성 p",
                 "5. `harvest_daemon.head_vs_disk` --- 상태 다섯 + 데몬이 부른다",
             ],
