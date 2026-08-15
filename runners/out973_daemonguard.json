@@ -1,0 +1,91 @@
+{
+ "🔴 노트": 973,
+ "🔴 레인": "수리",
+ "🔴🔴🔴 무엇": "🔴 **v4.0 규칙 A 가 증거를 파괴했다.** 규칙 A(배관만·checkout 금지)를 지키면 HEAD 와 디스크·인덱스가 갈리고, 데몬의 `_commit()` 이 그 차이를 쓸어 담는다. **v4.0 이 등록된 지 두 사이클 만에 자기 규칙이 물었다.**",
+ "🔴 시작(UTC)": "2026-08-15T15:25:51Z",
+ "🔴🔴 §S 돌린 러너 ↔ 커밋 blob(F5)": {
+  "기준 ref(준 대로)": "0d03459c92df6de662191d0907fc8a432caa5877",
+  "🔴 40자 고정 sha 인가": true,
+  "러너별": {
+   "runners/daemonguard973.py": {
+    "디스크 sha256": "e1af72b4ecd55577d93f9782c6c5c434076662cb1ff041753f3dd092dff1da96",
+    "커밋 blob sha256": "e1af72b4ecd55577d93f9782c6c5c434076662cb1ff041753f3dd092dff1da96",
+    "일치": true
+   },
+   "runners/predict971.py": {
+    "디스크 sha256": "c870fe5d8bf72424fd86203e4585b8d234b4d06b800a78fa074d7f9401738c3f",
+    "커밋 blob sha256": "c870fe5d8bf72424fd86203e4585b8d234b4d06b800a78fa074d7f9401738c3f",
+    "일치": true
+   }
+  },
+  "🔴 분자/분모": "2 / 2",
+  "🔴 어긋난 러너": [],
+  "🔴 F5 통과": true
+ },
+ "🔴🔴 §I 사고 실측": {
+  "🔴 사고 커밋": "1ea516fbad8d8b398a02a57a730f99484e973d00",
+  "언제": "2026-08-16T00:10:02+09:00",
+  "메시지": "[데몬] 상시 수집 2026-08-16T00:10:02 — 성장 2 · 새 파일 2",
+  "건드린 파일": [
+   {
+    "더한 줄": "3099",
+    "지운 줄": "0",
+    "경로": "data/ingest/kobis/2026-08-15.json"
+   },
+   {
+    "더한 줄": "2133",
+    "지운 줄": "0",
+    "경로": "data/ingest/youtube_poll/2026-08-15T151000Z.json"
+   },
+   {
+    "더한 줄": "0",
+    "지운 줄": "11",
+    "경로": "data/lab/denominator.json"
+   },
+   {
+    "더한 줄": "6",
+    "지운 줄": "0",
+    "경로": "data/state/collect_log.jsonl"
+   }
+  ],
+  "🔴 데몬 PATHS": [
+   "data/ingest",
+   "data/state"
+  ],
+  "🔴🔴 PATHS 밖 파일": {
+   "목록": [
+    "data/lab/denominator.json"
+   ],
+   "🔴 분자/분모": "1 / 4"
+  }
+ },
+ "🔴🔴🔴 §X 심어서 재현": {
+  "① 배관 쓰기 뒤 HEAD 의 원장": "NEW",
+  "① 디스크의 원장": "OLD",
+  "🔴 ① HEAD 와 디스크가 갈렸나": true,
+  "② 옛 판(`diff --cached --name-only`)이 커밋에 넘기는 목록": [
+   "data/ingest/b.json",
+   "data/lab/ledger.json"
+  ],
+  "② 새 판(같은 명령 + `-- PATHS`)이 넘기는 목록": [
+   "data/ingest/b.json"
+  ],
+  "🔴🔴 ② 옛 판이 PATHS 밖을 끌어들이나": true,
+  "🔴🔴 ② 새 판이 PATHS 밖을 끌어들이나": false,
+  "③ 옛 판으로 커밋한 뒤 HEAD 의 원장": "OLD",
+  "🔴🔴🔴 ③ 원장이 옛 값으로 되돌아갔나": true
+ },
+ "🔴🔴 §G 고침이 소스에 있나": {
+  "파일": "runners/harvest_daemon.py",
+  "🔴 `diff --cached` 에 경로 제한이 붙었나": true,
+  "그 자리 원문": "\"diff\", \"--cached\",\n                              \"--name-only\", \"--\"] + PATHS)",
+  "🔴 `staged` 를 PATHS 로 한 번 더 거르나": true,
+  "sha256": "5023567949200a9147e38919bb78c35502db0ef7576c66cad1724e9c5b1cea7f"
+ },
+ "🔴 고침 둘": {
+  "① `docs/루프.md` 규칙 A": "「배관으로 원장을 쓴 뒤 디스크 사본을 그 커밋본으로 되맞춘다」를 더한다",
+  "② `runners/harvest_daemon.py`": "`git diff --cached --name-only` 에 `-- PATHS` 를 물리고, `staged` 를 PATHS 로 **한 번 더** 거른다(두 겹)",
+  "🔴 못 한 것": "돌고 있는 데몬(PID 70251)은 **옛 코드를 메모리에 들고 있다** --- 규칙 B 때문에 안 죽였다. 고침은 **다음 기동부터** 문다. 🔴 그때까지는 「배관으로 main 을 움직인 뒤 디스크를 되맞춘다」가 유일한 방패다"
+ },
+ "🔴 끝(UTC)": "2026-08-15T15:25:51Z"
+}
