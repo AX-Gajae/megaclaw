@@ -114,13 +114,34 @@ def _broken_gz(rels) -> list:
     return [r for r in rels if r.endswith(".gz") and not _gz_ok(ROOT / r)]
 
 
+def _only_paths(rels) -> list:
+    """🔴 973 신설 --- `PATHS` 밖의 경로를 **커밋 목록에서 뺀다**(둘째 겹)."""
+    return [r for r in rels if any(r == p or r.startswith(p + "/") for p in PATHS)]
+
+
 def _commit(msg: str) -> str:
+    """🔴🔴 973 수리 --- **`PATHS` 가 `add` 에만 물고 `commit` 목록에는 안 물었다.**
+
+    2026-08-16T00:10:02 의 데몬 커밋 `1ea516fba` 가 `data/lab/denominator.json` 에서
+    **11 줄을 지웠다**(원장 1121 → 1120 · 티처 #111 항목 소실). 기전은:
+      ① v4.0 **규칙 A**(원장은 배관으로만 · `checkout` 금지)를 지키면
+         **HEAD 만 앞서고 디스크·인덱스는 옛 blob** 으로 남는다.
+      ② `git add -- data/ingest data/state` 는 PATHS 만 스테이지하지만,
+         🔴 **다음 줄의 `git diff --cached --name-only` 에는 경로 제한이 없었다.**
+         그 명령은 **인덱스 ↔ HEAD 전량**을 견주므로 `data/lab/…` 이 목록에 끼어든다.
+      ③ 그 목록이 그대로 `git commit -- <목록>` 에 들어가 **옛 blob 이 커밋된다.**
+    🔴 고침은 **두 겹**이다 --- `diff --cached` 에 `-- PATHS` 를 물리고, 그 뒤에
+    `_only_paths()` 로 한 번 더 거른다. `runners/daemonguard973.py` 가 **심어서 재현**했다.
+    """
     if not _wait_lock():
         return "잠금 --- 안 커밋했다(다음 회차 재시도)"
     if _sh(["git", "-c", "core.quotePath=false", "add", "--"] + PATHS)[0] != 0:
         return "add 실패"
     staged = [x for x in _sh(["git", "-c", "core.quotePath=false", "diff", "--cached",
-                              "--name-only"])[1].split("\n") if x.strip()]
+                              "--name-only", "--"] + PATHS)[1].split("\n") if x.strip()]
+    outside = [x for x in staged if x not in _only_paths(staged)]
+    if outside:                       # 🔴 원리상 여기 오면 안 된다 --- 오면 기록하고 뺀다
+        staged = _only_paths(staged)
     if not staged:
         return "바뀐 것 없음"
     # 🔴 쓰는 중인 gz 는 스테이지에서 뺀다 --- 다음 회차에 온전해지면 담긴다
@@ -131,7 +152,9 @@ def _commit(msg: str) -> str:
         if not staged:
             return "안 커밋했다 --- 쓰는 중인 gz %d개뿐(%s)" % (len(bad), bad[0].split("/")[-1])
     mf = Path("/Users/ax/wm_harvest/_msg.txt")
-    mf.write_text(msg + ("\n🔴 쓰는 중이라 뺀 gz %d개\n" % len(bad) if bad else ""), encoding="utf-8")
+    mf.write_text(msg + ("\n🔴 쓰는 중이라 뺀 gz %d개\n" % len(bad) if bad else "")
+                  + ("\n🔴 PATHS 밖이라 뺀 것 %d개: %s\n" % (len(outside), outside)
+                     if outside else ""), encoding="utf-8")
     c, o = _sh(["git", "commit", "-F", str(mf), "--"] + staged)
     return ("커밋함" + (" (gz %d개 보류)" % len(bad) if bad else "")) if c == 0 \
         else "commit 실패: " + o[:200]
