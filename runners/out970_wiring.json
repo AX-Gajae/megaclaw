@@ -1,14 +1,14 @@
 {
  "🔴 단계": "wiring",
- "🔴 시작(UTC)": "2026-08-14T03:14:20Z",
+ "🔴 시작(UTC)": "2026-08-14T03:23:10Z",
  "🔴 사전등록": "docs/prereg_970_recommit.md (측정 전 단독 커밋)",
  "🔴🔴 §S 내가 돌린 러너 ↔ 커밋 blob(F1)": {
   "기준 ref": "note/969-dropped-by-design",
-  "기준 커밋": "11a919bc0332479a0e8f59cafe027147707b08ac",
+  "기준 커밋": "7da142491437a4ecc4d31ec47aa0c9819d675461",
   "러너별": {
    "runners/dropaudit969.py": {
-    "디스크 sha256": "04ac50ea605aeae746db54a4a9141174567c2ee8c020fe4412b22d4f03227fc9",
-    "커밋 blob sha256": "04ac50ea605aeae746db54a4a9141174567c2ee8c020fe4412b22d4f03227fc9",
+    "디스크 sha256": "fc1153edded5dd11a2384b0b57a189607d4523664528c1faa2e0c35704243f67",
+    "커밋 blob sha256": "fc1153edded5dd11a2384b0b57a189607d4523664528c1faa2e0c35704243f67",
     "일치": true
    },
    "runners/metacmp969.py": {
@@ -767,11 +767,11 @@
   "🔴 알려진 한계": "이 자는 **한 줄**만 본다. 여러 줄로 쪼갠 호출과 `v[~ok] = 0.5` 꼴의 **직접 대입 채움**은 좁은 자가 못 잡는다 --- 넓은 자가 그것까지 센다"
  },
  "🔴 문지기가 막은 쓰기": [],
- "🔴 끝(UTC)": "2026-08-14T03:14:20Z",
+ "🔴 끝(UTC)": "2026-08-14T03:23:10Z",
  "🔴 걸린 초": 0.1,
  "🔴🔴 §Z 소스 대조": {
-  "시작 code_stamp 요약": "b9a8884ecf7545a7ee6e4340f289b87bb091760eb0b9d7db66dbfe7f49160efe",
-  "끝 code_stamp 요약": "b9a8884ecf7545a7ee6e4340f289b87bb091760eb0b9d7db66dbfe7f49160efe",
+  "시작 code_stamp 요약": "386a1750ed11ac4286bb37c66df5f659a9535aa604e056bd1ca454b657526863",
+  "끝 code_stamp 요약": "386a1750ed11ac4286bb37c66df5f659a9535aa604e056bd1ca454b657526863",
   "🔴 주행 중 소스가 바뀌었나": false,
   "🔴 바뀐 파일": [],
   "🔴 잰 소스 sha(전량 · 자르지 않았다)": {
@@ -845,7 +845,7 @@
    "lab/weatheraxes.py": "88dc8a48feacb3c417585081f79ad7b7cc414049c7cd554e63c67c935eac0995",
    "lab/wikiaxes.py": "7b010ddfc1fcc98b06e2fa9697c7a3a6b674341ab87514f9221229c9ad70322b",
    "lab/wikicat.py": "c3c477ed8bae9f4b99a567a1bdabaaba10acd0ae100fa5e4ade590fdf22371fb",
-   "runners/dropaudit969.py": "04ac50ea605aeae746db54a4a9141174567c2ee8c020fe4412b22d4f03227fc9",
+   "runners/dropaudit969.py": "fc1153edded5dd11a2384b0b57a189607d4523664528c1faa2e0c35704243f67",
    "runners/meta965.py": "6fa07b4c9a7455c7c2be7cb09ba6b91eb8a638587c415a61d28bcd2e04a27dc0",
    "runners/metacmp969.py": "f6d24ddd35558148b60263078d82763f7f34b29e0309be19d6824b41825f336d",
    "runners/recommit970.py": "373254034c6a4cd6b7db77c4f829469aaa38523c4ad119d1624217d0eb3c2e6a"
