@@ -287,20 +287,33 @@ def se_matched(pool, R, alpha, lam, arms, boot=BOOT, nwreck=N_WRECK, tag=""):
       평균한 Δ 의 SD, 복제 `보트` 개. 🔴 **등록 조건 ②의 분모다.**
 
     `arms` = {이름: (wreck, wreck_x)}. `wreck` 이 둘 다 `None` 인 팔(LOSO 등)은
-    섞기 씨앗이 없으므로 셋이 같은 수로 나온다 — 그 사실도 산출물이 적는다.
+    섞기 씨앗이 없으므로 구판과 5벌이 같은 수로 나온다 — 그 사실도 산출물이 적는다.
+
+    🔴🔴 **유보 재표집을 복제마다 하나로 고정한다(979 자기 적발).**
+    `alpha977.ho_draw(pool, b)` 는 `pool.seed` 를 물어서, 같은 뽑기 `b` 라도 겹 씨앗이
+    바뀌면 **다른 유보 재표집**이 나온다. 그대로 25 벌을 평균하면 한 복제 안에서
+    **유보 재표집 다섯 개를 평균**하게 되어 SE 가 √5 만큼 거짓으로 좁아진다.
+    🔴 그래서 정합 팔은 **복제 `b` 마다 유보 재표집을 하나(`hi_b`)로 고정**하고,
+    구판 팔은 **978 그대로 겹 씨앗마다 다시 뽑은 `hi_s`** 를 쓴다.
+    예측은 유보 재표집과 무관하므로 **한 번 낸 예측을 두 유보에 채점**한다(공짜다).
     """
-    a1 = {a: {nm: [] for nm in RULERS} for a in arms}      # ws=0
-    a5 = {a: {nm: [] for nm in RULERS} for a in arms}      # mean over ws
-    a25 = {a: {nm: [] for nm in RULERS} for a in arms}     # mean over (s, ws)
+    a1 = {a: {nm: [] for nm in RULERS} for a in arms}      # ws=0 · hi_s (978 판)
+    a5 = {a: {nm: [] for nm in RULERS} for a in arms}      # mean over ws · hi_s
+    a25 = {a: {nm: [] for nm in RULERS} for a in arms}     # mean over (s, ws) · hi_b
+    a25s = {a: {nm: [] for nm in RULERS} for a in arms}    # 🔴 잘못된 판(대조용)
     drops = {a: arms[a][2] if len(arms[a]) > 2 else () for a in arms}
     t0 = time.time()
     for b in range(boot):
         buf = {a: {nm: [] for nm in RULERS} for a in arms}
+        bufs = {a: {nm: [] for nm in RULERS} for a in arms}
+        pool.reseed(SEEDS[0])
+        hi_b = A.ho_draw(pool, b)          # 🔴 복제 하나에 유보 재표집 하나
         for s in SEEDS:
             pool.reseed(s)
-            hi = A.ho_draw(pool, b)
-            v0, _p = score6(pool, R, R8.oof978(pool, alpha, lam,
-                                               tr_boot=b)["예측"], hi)
+            hi_s = A.ho_draw(pool, b)      # 🔴 978 판(겹 씨앗마다 다시 뽑는다)
+            pr0 = R8.oof978(pool, alpha, lam, tr_boot=b)["예측"]
+            v0s, _p = score6(pool, R, pr0, hi_s)
+            v0b, _p = score6(pool, R, pr0, hi_b)
             for a in arms:
                 wr, wx = arms[a][0], arms[a][1]
                 ns = nwreck if (wr is not None or wx is not None) else 1
@@ -308,18 +321,21 @@ def se_matched(pool, R, alpha, lam, arms, boot=BOOT, nwreck=N_WRECK, tag=""):
                 for ws in range(ns):
                     w1 = None if wr is None else dict(wr, seed=WRECK_SEED0 + ws * 97)
                     w2 = None if wx is None else dict(wx, seed=WRECK_SEED0 + ws * 97)
-                    v, _p = score6(pool, R, R8.oof978(
-                        pool, alpha, lam, tr_boot=b, drop_src=drops[a],
-                        wreck=w1, wreck_x_=w2)["예측"], hi)
+                    pr = R8.oof978(pool, alpha, lam, tr_boot=b, drop_src=drops[a],
+                                   wreck=w1, wreck_x_=w2)["예측"]
+                    vs, _p = score6(pool, R, pr, hi_s)
+                    vb, _p = score6(pool, R, pr, hi_b)
                     for nm in RULERS:
-                        per_ws[nm].append(v[nm] - v0[nm])
+                        per_ws[nm].append(vs[nm] - v0s[nm])
+                        buf[a][nm].append(vb[nm] - v0b[nm])
                 for nm in RULERS:
                     a1[a][nm].append(per_ws[nm][0])
                     a5[a][nm].append(float(np.mean(per_ws[nm])))
-                    buf[a][nm] += per_ws[nm]
+                    bufs[a][nm] += per_ws[nm]
         for a in arms:
             for nm in RULERS:
                 a25[a][nm].append(float(np.mean(buf[a][nm])))
+                a25s[a][nm].append(float(np.mean(bufs[a][nm])))
         if (b + 1) % 50 == 0:
             _prog("    %s SE 뽑기 %d/%d (%.0fs)" % (tag, b + 1, boot,
                                                   time.time() - t0))
@@ -334,11 +350,16 @@ def se_matched(pool, R, alpha, lam, arms, boot=BOOT, nwreck=N_WRECK, tag=""):
                 ("🔴 SE_5벌", _r(float(np.std(a5[a][nm], ddof=1)))),
                 ("🔴🔴 SE_25벌(정합 · 등록 조건 ②의 분모)",
                  _r(float(np.std(a25[a][nm], ddof=1)))),
+                ("🔴 SE_25벌(유보 재표집을 복제 안에서 다섯 개 평균한 잘못된 판 · 대조용)",
+                 _r(float(np.std(a25s[a][nm], ddof=1)))),
             ])
         row["🔴 복제 수(구판·5벌)"] = len(a1[a][RULERS[0]])
         row["🔴 복제 수(25벌 정합)"] = len(a25[a][RULERS[0]])
         row["🔴 이 팔의 섞기 씨앗 수"] = ns
         row["🔴 섞기 씨앗이 없는 팔인가(그러면 구판=5벌 이다)"] = bool(ns == 1)
+        row["🔴🔴 유보 재표집 규약"] = (
+            "정합 팔 = 복제마다 유보 재표집 **하나**(`hi_b`) · "
+            "구판 팔 = 겹 씨앗마다 다시 뽑는다(`hi_s` · 978 판)")
         out[a] = row
     return out
 
@@ -563,25 +584,31 @@ def size_paired(pool, R, alpha, lam, w2, w3, boot=BOOT, nwreck=N_WRECK, tag=""):
     for b in range(boot):
         buf2 = {nm: [] for nm in RULERS}
         buf3 = {nm: [] for nm in RULERS}
+        pool.reseed(SEEDS[0])
+        hi_b = A.ho_draw(pool, b)          # 🔴 복제 하나에 유보 재표집 하나
         for s in SEEDS:
             pool.reseed(s)
-            hi = A.ho_draw(pool, b)
-            v0, _p = score6(pool, R, R8.oof978(pool, alpha, lam,
-                                               tr_boot=b)["예측"], hi)
+            hi_s = A.ho_draw(pool, b)      # 🔴 978 판
+            pr0 = R8.oof978(pool, alpha, lam, tr_boot=b)["예측"]
+            v0s, _p = score6(pool, R, pr0, hi_s)
+            v0b, _p = score6(pool, R, pr0, hi_b)
             for ws in range(nwreck):
-                a2, _p = score6(pool, R, R8.oof978(
-                    pool, alpha, lam, tr_boot=b,
-                    wreck=dict(w2, seed=WRECK_SEED0 + ws * 97))["예측"], hi)
-                a3, _p = score6(pool, R, R8.oof978(
-                    pool, alpha, lam, tr_boot=b,
-                    wreck=dict(w3, seed=WRECK_SEED0 + ws * 97))["예측"], hi)
+                p2_ = R8.oof978(pool, alpha, lam, tr_boot=b,
+                                wreck=dict(w2, seed=WRECK_SEED0 + ws * 97))["예측"]
+                p3_ = R8.oof978(pool, alpha, lam, tr_boot=b,
+                                wreck=dict(w3, seed=WRECK_SEED0 + ws * 97))["예측"]
+                b2, _p = score6(pool, R, p2_, hi_b)
+                b3, _p = score6(pool, R, p3_, hi_b)
                 for nm in RULERS:
-                    buf2[nm].append(a2[nm] - v0[nm])
-                    buf3[nm].append(a3[nm] - v0[nm])
-                    if ws == 0:
-                        d2o[nm].append(a2[nm] - v0[nm])
-                        d3o[nm].append(a3[nm] - v0[nm])
-                        dfo[nm].append(abs(a2[nm] - v0[nm]) - abs(a3[nm] - v0[nm]))
+                    buf2[nm].append(b2[nm] - v0b[nm])
+                    buf3[nm].append(b3[nm] - v0b[nm])
+                if ws == 0:
+                    s2, _p = score6(pool, R, p2_, hi_s)
+                    s3, _p = score6(pool, R, p3_, hi_s)
+                    for nm in RULERS:
+                        d2o[nm].append(s2[nm] - v0s[nm])
+                        d3o[nm].append(s3[nm] - v0s[nm])
+                        dfo[nm].append(abs(s2[nm] - v0s[nm]) - abs(s3[nm] - v0s[nm]))
         for nm in RULERS:
             m2 = float(np.mean(buf2[nm]))
             m3 = float(np.mean(buf3[nm]))
@@ -1632,16 +1659,23 @@ def stage_wiring(ref):
 
     # ── W12 🔴 반증조건 4 의 분모가 사전등록 본문에 있나 ──
     pre = (ROOT / "docs/prereg_979_denominator.md").read_text(encoding="utf-8")
+    #: 사전등록 §6-4 가 **이름을 나열한 그 줄**만 본다(문서 아무 데나가 아니다).
+    line = ""
+    for ln in pre.split("\n"):
+        if "`sd`" in ln and "`rescore`" in ln:
+            line = ln
     inpre = [f.replace("out979_", "").replace(".json", "") for f in FC4_REG_979]
-    ok12 = all(nm in pre for nm in inpre)
-    fake = "cond3"
-    add("W12 반증조건 4 의 분모 다섯이 **사전등록 본문에 이름으로 있다**(측정 뒤 못 좁힌다)",
-        bool(ok12 and fake not in pre),
-        bool(ok12 and fake in pre),
-        "🔴 사전등록에 **없는 이름**(`cond3`)을 분모에 넣은 판에 같은 검사를 건다 — "
-        "🔴 978 이 실제로 한 일이다",
+    ok12 = bool(line) and all(("`%s`" % nm) in line for nm in inpre)
+    mut = list(inpre) + ["ladder"]
+    ok12_m = bool(line) and all(("`%s`" % nm) in line for nm in mut)
+    add("W12 반증조건 4 의 분모 다섯이 **사전등록 §6-4 의 그 줄에 이름으로 있다**(측정 뒤 못 좁힌다)",
+        bool(ok12), bool(ok12_m),
+        "🔴 사전등록에 **없는 이름**(`ladder`)을 분모에 하나 더 넣은 판에 같은 검사를 건다 — "
+        "🔴 노트 978 은 이름 없던 `cond3` 을 넣고 stage 인 `wiring` 을 뺐다",
         {"🔴 분모(코드 상수)": list(FC4_REG_979),
+         "🔴 사전등록 §6-4 의 그 줄": line.strip()[:200],
          "🔴 사전등록 본문에 다 있나": bool(ok12),
+         "🔴 변이체(없는 이름 하나를 더한 분모)도 통과하나": bool(ok12_m),
          "🔴 분모 밖이라고 미리 적은 stage": list(FC4_OUT_979)})
 
     n_ok = sum(1 for v in W.values() if v["통과"])
