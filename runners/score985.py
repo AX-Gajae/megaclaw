@@ -321,18 +321,32 @@ def six_places(five):
     places = collections.OrderedDict()
     for p in BODY:
         places[p] = _text(p)
+    #: 🔴 「저장소 안 넷」의 넷째 --- 사전등록. 984 의 C1 이 여기까지 걸렸다.
+    places[PREREG] = _text(PREREG)
     places["원장 `%s` 항목" % LEDGER_KEY] = _ledger_entry_text()
     places["🔴 메모리 카드(저장소 «밖»)"] = _text(CARD_OUT)
-    rows, bad = collections.OrderedDict(), []
+    #: 🔴 **엄격 변이체(진단)** --- 그 수가 «그 이름 곁» ±80 자 안에 있나.
+    LABEL = {"`⑤′` 실패 수": "실패", "예측 분자": "예측", "`⑤′` 분모": "분모"}
+    rows, bad, strict = collections.OrderedDict(), [], collections.OrderedDict()
     for name, txt in places.items():
         if txt is None:
             rows[name] = {"🔴": "🔴 못 읽었다 --- 「같다」가 아니다(조항 59)"}
             bad.append(name)
             continue
-        cell = {}
+        cell, scell = {}, {}
         for nm, v in needles.items():
             cell[nm] = (str(v) in txt) if v is not None else None
+            if v is None:
+                scell[nm] = None
+                continue
+            lab, hit = LABEL[nm], False
+            for m in re.finditer(re.escape(str(v)), txt):
+                if lab in txt[max(0, m.start() - 80):m.end() + 80]:
+                    hit = True
+                    break
+            scell[nm] = hit
         rows[name] = cell
+        strict[name] = scell
         if any(x is not True for x in cell.values()):
             bad.append(name)
     return collections.OrderedDict([
@@ -340,6 +354,13 @@ def six_places(five):
         ("🔴 바늘(세 수)", dict(needles)),
         ("🔴 분모(자리 수)", len(places)),
         ("🔴 자리별", rows),
+        ("⚠ 이 자의 한계(조항 61) — 등록한 것은 «부분 문자열» 검사다",
+         "🔴 **작은 수(`3`·`4`·`16`)는 어느 긴 문서에나 우연히 있다** --- 그러므로 이 조건은 "
+         "「같은 수를 적었다」의 **필요조건**일 뿐이다. 아래 「엄격 변이체」가 그 한계를 "
+         "재지만 **판정은 등록한 자로 한다**(조항 60-다). 🔴 **986 은 엄격 변이체로 등록하라**"),
+        ("🔴🔴 엄격 변이체(진단 · 그 수가 «그 이름 곁» ±80 자 안에 있나)", strict),
+        ("🔴🔴 엄격 변이체로 재면 못 채우는 자리",
+         [k for k, v in strict.items() if any(x is not True for x in v.values())] or "없음"),
         ("🔴🔴 세 수가 다 없는 자리", bad or "없음"),
         ("🔴 왜 이 조건이 있나",
          "🔴 **규칙 D: 저장소 안 문서와 메모리 카드가 「다른 사실」을 적으면 실패다.** "
