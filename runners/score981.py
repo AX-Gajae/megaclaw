@@ -78,11 +78,14 @@ def stage_score(ref):
 
     # 2 자기 관문의 구판·신판을 둘 다 실었나
     s4 = (fp or {}).get("4 도장 확인", {})
-    has_both = bool("🔴 구판 절 4 통과(980 판 --- 도장의 «존재»와 시각만 본다)" in s4
-                    and "🔴🔴 신판 절 4 통과(981 판 --- 도장의 «판정»을 읽는다)" in s4)
+    k_old = [k for k in s4 if k.startswith("🔴 구판 절 4 통과")]
+    k_new = [k for k in s4 if k.startswith("🔴🔴 신판 절 4 통과")]
+    has_both = bool(k_old and k_new)
     C["2 신설한 관문을 구판·신판 둘 다로 채점했나"] = collections.OrderedDict([
-        ("구판 키가 있나", bool("🔴 구판 절 4 통과(980 판 --- 도장의 «존재»와 시각만 본다)" in s4)),
-        ("신판 키가 있나", bool("🔴🔴 신판 절 4 통과(981 판 --- 도장의 «판정»을 읽는다)" in s4)),
+        ("구판 키가 있나", bool(k_old)), ("구판 값", s4.get(k_old[0]) if k_old else None),
+        ("신판 키가 있나", bool(k_new)), ("신판 값", s4.get(k_new[0]) if k_new else None),
+        ("🔴 구판과 신판이 갈리나", s4.get("🔴 구판과 신판이 갈리나")),
+        ("🔴 신판이 무는 산출물", s4.get("🔴🔴🔴 도장 판정이 실패인 산출물")),
         ("⚠ `⑤′` 를 아직 안 돌렸으면 모른다", bool(not fp)),
         ("통과", has_both)])
 
