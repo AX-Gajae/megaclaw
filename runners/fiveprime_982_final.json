@@ -41,9 +41,9 @@
  "🔴 되짚은 기준(955 R5 · `docs/루프.md:148` v3.2)": {
   "기준": "🔴 **커밋된 트리**",
   "읽기·해싱 트리(절 3·4·7·8)": "note/982-time-forward-holdout",
-  "그 커밋 sha": "b1932282ba0aaef5a89fc064d4bb1e516228d4f6",
+  "그 커밋 sha": "ac8e36faf42a1cacdd2654bc1171e94f025c668f",
   "역참조(grep) 트리(절 1·2)": "note/982-time-forward-holdout",
-  "머리(--head)": "note/982-time-forward-holdout = b1932282ba0aaef5a89fc064d4bb1e516228d4f6",
+  "머리(--head)": "note/982-time-forward-holdout = ac8e36faf42a1cacdd2654bc1171e94f025c668f",
   "취합 시작(--base)": "8b79e88ca5a8fa6fe56893a2e354bdd0f4fce4d0 = 8b79e88ca5a8fa6fe56893a2e354bdd0f4fce4d0",
   "⚠ 954 까지": "작업 트리를 되짚었다 --- 커밋 안 된 편집이 검사에 섞였다",
   "🔴 「커밋 안 됨」은 「없다」가 아니다": "절 3·4·7 이 그것을 **따로 센다**(조항 59)"
@@ -103,8 +103,8 @@
  "⓪ 관문(가지의 커밋된 트리 · 🔴 정본)": {
   "검사": "🔴🔴 ⓪ 관문(정본 · 980 · 🔴 982 R3 로 자기 산출물을 뺐다) --- 작업 트리가 **가지의 커밋된 트리**와 같은가",
   "🔴 견준 가지": "note/982-time-forward-holdout",
-  "🔴 가지 sha": "b1932282ba0aaef5a89fc064d4bb1e516228d4f6",
-  "🔴 분모: 갈린 경로 전량": 6,
+  "🔴 가지 sha": "ac8e36faf42a1cacdd2654bc1171e94f025c668f",
+  "🔴 분모: 갈린 경로 전량": 7,
   "🔴 데몬(규칙 B) 면제 경로 수": 6,
   "🔴 면제 규칙의 출처": [
    "data/ingest",
@@ -118,10 +118,12 @@
    "data/state/collect_log.jsonl",
    "data/state/popup_visitor_daily_log.jsonl"
   ],
-  "🔴🔴🔴 982 R3 --- 자기 산출물이라 이름으로 뺀 경로": "없음",
-  "🔴 그 수": 0,
+  "🔴🔴🔴 982 R3 --- 자기 산출물이라 이름으로 뺀 경로": [
+   "runners/fiveprime_982_final.json"
+  ],
+  "🔴 그 수": 1,
   "🔴 왜 빼나(982 R3)": "🔴 `*_fiveprime*.json` 은 **이 절이 도는 중에 이 러너가 쓰는 파일**이라 관문이 도는 순간 커밋돼 있을 수 없다 --- **원리상 못 지나가는 자리**다. 🔴 절 3·4 는 이미 `SELF_OUT_RE` 로 같은 것을 한다. 🔴 통과시키려고 **커밋하는** 길(939·980)이 아니라 **분모에서 이름으로 빼는** 길로 고친다 --- 빼는 것과 그 목록을 산출물이 적으므로 숨겨지지 않는다",
-  "⚠ 구판(982 R3 앞) 분자 --- 자기 산출물을 안 뺐을 때": 0,
+  "⚠ 구판(982 R3 앞) 분자 --- 자기 산출물을 안 뺐을 때": 1,
   "🔴🔴 분자: 면제 밖에서 갈린 경로": 0,
   "🔴 그 경로": "없음",
   "🔴 왜 이 절이 정본인가": "🔴 규칙 A 는 `checkout` 을 금지하므로 `HEAD` 는 `main` 이고 사이클 커밋은 가지에만 있다. 규칙 B 는 데몬을 재우지 말라 하므로 `data/ingest`·`data/state` 는 60 초마다 움직인다. **작업 트리 대 `HEAD`** 를 물으면 두 규칙이 서로를 막는다 --- 967 이 12 사이클 전에 물은 그 물음의 답이다",
@@ -5106,7 +5108,7 @@
    "죽은 숫자": false,
    "죽은 숫자(1 ULP 짝)": true,
    "죽은 숫자(논문)": true,
-   "_초": 51.1
+   "_초": 51.4
   },
   "🔴 실패한 절": [
    "죽은 숫자"
@@ -5213,7 +5215,7 @@
   "🔴 읽은 트리(955 R5)": {
    "기준": "커밋된 트리(`git cat-file blob <tree>:<경로>`)",
    "트리": "note/982-time-forward-holdout",
-   "커밋 sha": "b1932282ba0aaef5a89fc064d4bb1e516228d4f6",
+   "커밋 sha": "ac8e36faf42a1cacdd2654bc1171e94f025c668f",
    "그 트리의 경로 수(분모)": 77322,
    "🔴 `git ls-tree` 오류": "없음"
   },
@@ -5396,7 +5398,7 @@
   "🔴 훑은 트리(955 R5)": {
    "기준": "커밋된 트리(`git ls-tree -r <tree>` + `git cat-file blob`)",
    "트리": "note/982-time-forward-holdout",
-   "커밋 sha": "b1932282ba0aaef5a89fc064d4bb1e516228d4f6",
+   "커밋 sha": "ac8e36faf42a1cacdd2654bc1171e94f025c668f",
    "🔴 `git ls-tree` 오류": "없음"
   },
   "🔴 훑은 산출물 수(분모)": 479,
@@ -8651,7 +8653,7 @@
     "🔴 분자/분모": "4 / 4",
     "🔴 40자 고정 sha 인가": true,
     "🔴 기준 ref 가 0000…0000 인가": false,
-    "🔴 기준 ref": "0ee2e5c62459cfc25cef28be39a04005e1b93e86",
+    "🔴 기준 ref": "516cbed57e221e413e55a61c0acf00b5dd1e2b18",
     "🔴🔴 판정 통과": true
    },
    "runners/out982_r4.json": {
@@ -8667,7 +8669,7 @@
     "🔴 분자/분모": "3 / 3",
     "🔴 40자 고정 sha 인가": true,
     "🔴 기준 ref 가 0000…0000 인가": false,
-    "🔴 기준 ref": "0ee2e5c62459cfc25cef28be39a04005e1b93e86",
+    "🔴 기준 ref": "516cbed57e221e413e55a61c0acf00b5dd1e2b18",
     "🔴🔴 판정 통과": true
    },
    "runners/out982_table.json": {
@@ -8675,7 +8677,7 @@
     "🔴 분자/분모": "3 / 3",
     "🔴 40자 고정 sha 인가": true,
     "🔴 기준 ref 가 0000…0000 인가": false,
-    "🔴 기준 ref": "0ee2e5c62459cfc25cef28be39a04005e1b93e86",
+    "🔴 기준 ref": "516cbed57e221e413e55a61c0acf00b5dd1e2b18",
     "🔴🔴 판정 통과": true
    },
    "runners/out982_tfwd.json": {
@@ -8957,7 +8959,7 @@
   "🔴 읽은 트리(955 R5)": {
    "기준": "🔴 **커밋된 트리**(`git cat-file blob <tree>:<경로>` 를 해싱한다)",
    "트리": "note/982-time-forward-holdout",
-   "커밋 sha": "b1932282ba0aaef5a89fc064d4bb1e516228d4f6",
+   "커밋 sha": "ac8e36faf42a1cacdd2654bc1171e94f025c668f",
    "🔴 `git ls-tree` 오류": "없음",
    "⚠ 954 까지": "작업 트리를 해싱했다 --- 커밋 안 된 편집이 이 절을 붉히거나 숨겼다"
   },
@@ -9014,9 +9016,9 @@
   "🔴 왜": "954 는 원장·노트·카드 **셋 다**에 「수리 레인 하나를 썼다」고 적고 실제로 `[수리]` 커밋을 **셋** 했다. 말로 적으면 또 어긋난다",
   "🔴 명령": [
    "git merge-base main note/982-time-forward-holdout",
-   "git log --format=%s 8b79e88ca..b1932282b"
+   "git log --format=%s 8b79e88ca..ac8e36faf"
   ],
-  "🔴 범위": "8b79e88ca5a8fa6fe56893a2e354bdd0f4fce4d0..b1932282ba0aaef5a89fc064d4bb1e516228d4f6",
+  "🔴 범위": "8b79e88ca5a8fa6fe56893a2e354bdd0f4fce4d0..ac8e36faf42a1cacdd2654bc1171e94f025c668f",
   "🔴 범위의 기준(base)": {
    "rev": "8b79e88ca5a8fa6fe56893a2e354bdd0f4fce4d0",
    "왜": "`git merge-base main note/982-time-forward-holdout` --- 이 가지가 갈라진 자리",
@@ -9026,9 +9028,9 @@
   "🔴 트리": {
    "기준": "커밋된 트리",
    "머리": "note/982-time-forward-holdout",
-   "커밋 sha": "b1932282ba0aaef5a89fc064d4bb1e516228d4f6"
+   "커밋 sha": "ac8e36faf42a1cacdd2654bc1171e94f025c668f"
   },
-  "🔴 이 범위의 커밋 수(분모)": 19,
+  "🔴 이 범위의 커밋 수(분모)": 22,
   "🔴 그중 `[수리]` 커밋 수(분자)": 3,
   "🔴 `[수리]` 커밋 제목": [
    "[수리] R3 982 — `⑤′` ⓪ 관문이 **자기 산출물을 이름으로 뺀다**",
@@ -9041,12 +9043,12 @@
    "2a7a20ac3"
   ],
   "표지별 커밋 수": {
-   "[배선]": 7,
+   "[배선]": 8,
    "[사전등록]": 1,
    "[수리]": 3,
    "[정정]": 2,
    "[측정]": 2,
-   "[판정]": 4
+   "[판정]": 6
   },
   "🔴🔴 레인 표지(`R<n>`)로 센 레인": [
    "R1",
@@ -9430,7 +9432,7 @@
   "3 판정 키 규약"
  ],
  "통과": false,
- "시각(UTC · 시작)": "2026-08-16T18:52:39+00:00",
+ "시각(UTC · 시작)": "2026-08-16T18:59:06+00:00",
  "🔴 코드 sha256(이게 자다)": {
   "runners/fiveprime902.py": "8237fd2d359d6e60d07c9c238f2b3eba873635710ddfe941f4f95dfc7a38eefc",
   "runners/quote901.py": "1778c5659dcd3f8cc15e48d7c4760ba581ccdb809d7144b3376911f2882b3b30",
@@ -9441,14 +9443,14 @@
   "runners/out982_house.json": "5cbeeeabec260f2a168371d7ad6a843bb6c588646161367a0a09f64525be8bde",
   "runners/out982_mde.json": "82b4b9f9ba96c53682f1ee6a0954efb519603b138c5e1e4033f187fc213575fc",
   "runners/out982_mech.json": "acaa8fa115ed6fbc9b659ab49c616216ef4c0ad33dc88ba6ac484e51841158f5",
-  "runners/out982_prose.json": "08263512c3ed05f092661f06f7ac0eb51e4219c2869aa5edbb8603d8a5da8283",
+  "runners/out982_prose.json": "b5f33d2b870aa25d159015b2b677ce8237e0ceb842e3d660500c570493a091f6",
   "runners/out982_r4.json": "13ea5c31ce838ad7edee74f76cfad74d1c4e9756d52b0631625b54841417c234",
-  "runners/out982_score.json": "3d6e2b67373b930d5193da2802ed38be4cb776fca7591619deb7a1d9b5724260",
-  "runners/out982_table.json": "32c1e8ce89e78b1b2d1230a830c76c97b9055c08f13530239730004a6dc3ba43",
+  "runners/out982_score.json": "fc7e9ec0c2652b2cd123aef8ed17176a551c6e61e6bcfec3d2babf09ed2036d3",
+  "runners/out982_table.json": "437f703689cbf8f05a2af4d4780dff57d03bcb32b552e9df5d40c641c8783242",
   "runners/out982_tfwd.json": "1aa42f4a90095329ab67b3ae17bc90060f255d73686c1e7a8365e1cbb540e7ed",
   "runners/out982_wiring.json": "91b7c329e8418d98aa1914ca03203ecf48b1fe01e4c7e65c1fecc9031c597a91"
  },
  "⚠ git HEAD(시작 시점 · 판정에 쓰지 마라)": "d53e6efa04e58c07c964a74fa0d6ba23639c16eb",
- "시각(UTC · 끝)": "2026-08-16T18:54:53+00:00",
- "초": 134.3
+ "시각(UTC · 끝)": "2026-08-16T19:01:21+00:00",
+ "초": 135.2
 }
