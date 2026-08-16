@@ -714,8 +714,8 @@
   "🔴🔴 분모가 못 덮은 `RAN_ALL` 항목(= 「없다」가 아니다 · 조항 59)": "없음",
   "🔴🔴🔴 측정 창 안에 바뀐 파일": "없음",
   "🔴🔴🔴 측정 창 안에 러너를 고쳤나": false,
-  "🔴 시작 요약": "dace1c6540b9fd77c0fae8af7bdd986e7e2585e6ee53c56dda993197eeb794e4",
-  "🔴 끝 요약": "dace1c6540b9fd77c0fae8af7bdd986e7e2585e6ee53c56dda993197eeb794e4",
+  "🔴 시작 요약": "f41b9b00bada065c8b5592102aac0f289d1a86897135082cba39ceedb6313c35",
+  "🔴 끝 요약": "f41b9b00bada065c8b5592102aac0f289d1a86897135082cba39ceedb6313c35",
   "⚠ 983 이 어떻게 놓쳤나": "🔴 `d1877cee0`(05:15)가 측정 창(04:57–05:26) 한가운데서 러너 다섯을 고쳤는데 그 산출물의 `code_stamp` 분모가 **그 파일들을 안 덮어** 「시작=끝 true」가 나왔다. **가드가 자기가 잡아야 할 위반에 눈이 멀었다**(티처 #122 M9)",
   "통과": true,
   "🔴 이 절의 `통과`": "🔴 **측정 창 안에 바뀐 러너가 0 이고 «분모가 `RAN_ALL` 을 전부 덮었을 때»만 참이다.** 983 은 뒤 조건이 거짓인 채로 앞만 보고 「시작=끝 true」를 실었다"
@@ -728,10 +728,10 @@
   "runners/out981_decomp.json": "133887c4ff279572a8938a8388d759e2adf3ad402951cd985b04de178a620dc6"
  },
  "🔴 도장": {
-  "언제(시작)": "2026-08-16T21:49:31Z",
-  "언제(끝)": "2026-08-16T21:49:31Z",
-  "시작 code_stamp 요약": "dace1c6540b9fd77c0fae8af7bdd986e7e2585e6ee53c56dda993197eeb794e4",
-  "끝 code_stamp 요약": "dace1c6540b9fd77c0fae8af7bdd986e7e2585e6ee53c56dda993197eeb794e4",
+  "언제(시작)": "2026-08-16T21:56:00Z",
+  "언제(끝)": "2026-08-16T21:56:00Z",
+  "시작 code_stamp 요약": "f41b9b00bada065c8b5592102aac0f289d1a86897135082cba39ceedb6313c35",
+  "끝 code_stamp 요약": "f41b9b00bada065c8b5592102aac0f289d1a86897135082cba39ceedb6313c35",
   "🔴 시작=끝": true,
   "분모: 도장이 덮는 파일": 92,
   "🔴 자료 지문": {
@@ -740,7 +740,7 @@
    "hplt_ko": "67de3062bad60e122c446fccb0b96d2c3a36c0ee2deafa40324a22dcad6c09a2"
   },
   "분모: 연 자료 파일": 3,
-  "🔴 F1 기준 ref(준 대로)": "46f44d6d1f97f133b94cd7dc8d0420d13e8c0f02",
+  "🔴 F1 기준 ref(준 대로)": "c4eae11bf277efc1b4c274232c8cdecc9dda54b4",
   "🔴 40자 고정 sha 인가": true,
   "🔴 기준 ref 가 0000…0000 인가": false,
   "러너별": {
@@ -750,8 +750,8 @@
     "일치": true
    },
    "runners/house984.py": {
-    "디스크 sha256": "097738ab3e4db86843edabcd88b2c55e616ca61d9a8f8eb06b30a1b6d0259d9b",
-    "커밋 blob sha256": "097738ab3e4db86843edabcd88b2c55e616ca61d9a8f8eb06b30a1b6d0259d9b",
+    "디스크 sha256": "54d18a885cdc9c191a13114a28a1faf81ca8c63615c30f6b9a0653e003ac8d8f",
+    "커밋 blob sha256": "54d18a885cdc9c191a13114a28a1faf81ca8c63615c30f6b9a0653e003ac8d8f",
     "일치": true
    },
    "runners/leak984.py": {
@@ -765,18 +765,18 @@
     "일치": true
    },
    "runners/score984.py": {
-    "디스크 sha256": "b61b6d44920defe7f2c2b11123d37d82be9980107fc9dd85b1e28823bb9e348e",
-    "커밋 blob sha256": "b61b6d44920defe7f2c2b11123d37d82be9980107fc9dd85b1e28823bb9e348e",
+    "디스크 sha256": "ab0d5e29038e8f24081819b85da2cc7f30e4102be33003f876e0695be5527ed2",
+    "커밋 blob sha256": "ab0d5e29038e8f24081819b85da2cc7f30e4102be33003f876e0695be5527ed2",
     "일치": true
    },
    "runners/note984_gen.py": {
-    "디스크 sha256": "5c4197c0cfa7e5efa7ff56bd340ca43986681c8782f7d1727841d5b222a8071c",
-    "커밋 blob sha256": "5c4197c0cfa7e5efa7ff56bd340ca43986681c8782f7d1727841d5b222a8071c",
+    "디스크 sha256": "c18ad55831cc5d405ccbc518d33a511a347933baa0be2acc3cd2a5f2abf983da",
+    "커밋 blob sha256": "c18ad55831cc5d405ccbc518d33a511a347933baa0be2acc3cd2a5f2abf983da",
     "일치": true
    },
    "runners/prose984.py": {
-    "디스크 sha256": "d892cbb7d18f097afe64574df0b9e301899db622ea21155e109e75e2747688cf",
-    "커밋 blob sha256": "d892cbb7d18f097afe64574df0b9e301899db622ea21155e109e75e2747688cf",
+    "디스크 sha256": "0a6fe0f11c4be701f20bea26b6fe3d34d431822be13d4110805fe86409c11696",
+    "커밋 blob sha256": "0a6fe0f11c4be701f20bea26b6fe3d34d431822be13d4110805fe86409c11696",
     "일치": true
    },
    "runners/fixpoint984.py": {
