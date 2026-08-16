@@ -1034,8 +1034,14 @@ def stamp_audit(tree="HEAD") -> dict:
     #    🔴 조항 66: **자가 자기 출처를 못 대면 자가 아니다.**
     #    ⚠ 이 절은 **구판 판정도 같이 낸다**(개정 잠금 조항 981 확장 --- 자기 관문을
     #    신설한 사이클은 옛 관문으로도 채점하고 둘 다 싣는다).
+    #: 🔴 **일부러 남긴 「깨진 도장」 증거물은 분모 밖이다.** 981 이 `out980_funnel.json` 을
+    #: 고쳐 다시 내면서 구판을 `*_badstamp.json` 으로 남겼다 — 그 파일의 «존재 이유»가
+    #: 「도장이 깨져 있었다」는 증거다. 🔴 **면제한 목록과 수를 나란히 낸다**(조항 59).
+    evid = sorted(p for p in scan if "_badstamp" in p)
     verd, f5fail = {}, []
     for rel in scan:
+        if rel in evid:
+            continue
         st, txt = tree_blob(rel, tree, known)
         try:
             d = json.loads(txt.decode("utf-8", "surrogateescape"))
@@ -1086,6 +1092,8 @@ def stamp_audit(tree="HEAD") -> dict:
         "⚠ 시작 == 끝 이지만 1.5초 안에 끝난 산출물(병 아님)": short or "없음",
         "도장별": rows,
         # 🔴🔴 981 신설 --- 도장의 **판정**
+        "🔴 면제: 일부러 남긴 「깨진 도장」 증거물": evid or "없음",
+        "🔴 면제한 수": len(evid),
         "🔴🔴 도장 판정을 읽은 산출물 수(분모)": len(verd),
         "🔴🔴🔴 도장 판정이 실패인 산출물": f5fail or "없음",
         "🔴🔴 도장 판정이 실패인 산출물 수": len(f5fail),

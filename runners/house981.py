@@ -110,6 +110,16 @@ def stage_house(ref, cycle):
         n_pr, pr_err = None, "%s: %s" % (type(e).__name__, e)
     br = _git(["symbolic-ref", "-q", "HEAD"]).decode().strip()
     same = bool(sha_head == sha_disk)
+    #: 🔴🔴 갈렸으면 **왜 갈렸는지를 잰다** — 「이 사이클 항목이 아직 안 커밋됐다」와
+    #: 「데몬이 남의 항목을 지웠다」는 둘이고, 980 은 그 둘을 안 갈랐다.
+    hj = json.loads(head.decode("utf-8"))
+    dj = json.loads(disk.decode("utf-8"))
+    added = [k for k in dj if k not in hj]
+    lost = [k for k in hj if k not in dj]
+    changed = [k for k in hj if k in dj and hj[k] != dj[k]]
+    mine = "노트 %s" % cycle
+    benign = bool((not same) and not lost and not changed
+                  and added == [mine])
     rows, inc, exc = a2_cycles(cycle)
     out = collections.OrderedDict()
     out["무엇"] = ("981 §0 — 🔴 **집을 닫았나**(규칙 A 배관 머지 · A-2). "
@@ -118,7 +128,8 @@ def stage_house(ref, cycle):
     out["🔴 도는 사이클"] = cycle
     out["🔴 지금 가지"] = br
     out["🔴 HEAD"] = _git(["rev-parse", "HEAD"]).decode().strip()
-    out["🔴🔴 main 원장 항목 수"] = len(top)
+    out["🔴🔴 main 원장 항목 수"] = len(hj)
+    out["🔴🔴 디스크 원장 항목 수"] = len(top)
     out["🔴 원장 층 수(전 층위)"] = n_layers
     out["🔴🔴 원장 중복 키(전 층위)"] = len(dups)
     out["🔴 중복 키 목록"] = dups[:20]
@@ -128,6 +139,15 @@ def stage_house(ref, cycle):
     out["🔴🔴🔴 HEAD 와 디스크가 바이트 동일한가"] = same
     out["🔴 이 판정이 무엇에서 오나"] = (
         "🔴 위의 두 sha256 «문자열 비교» 하나. 리터럴이 아니고 한쪽만 인용하지도 않는다")
+    out["🔴🔴 갈렸다면 왜 갈렸나"] = collections.OrderedDict([
+        ("🔴 디스크에만 있는 항목", added),
+        ("🔴🔴 HEAD 에만 있는 항목(= 지워진 것)", lost),
+        ("🔴 값이 달라진 항목", changed),
+        ("🔴🔴🔴 갈린 것이 「이 사이클 항목이 아직 안 커밋됐다」 하나인가", benign),
+        ("🔴 왜 이 칸이 있나",
+         "🔴 「데몬이 남의 항목을 지웠다」(2026-08-16 의 실측 사고)와 "
+         "「내 항목이 아직 커밋 전이다」는 둘이다. 980 은 그 둘을 안 갈랐다"),
+    ])
     out["🔴🔴 열린 PR 수"] = n_pr
     out["🔴 PR 조회 오류"] = pr_err
     out["🔴🔴 A-2 사이클 — **재서 낸다**"] = collections.OrderedDict([
@@ -138,10 +158,13 @@ def stage_house(ref, cycle):
         ("🔴🔴 순환판과 정본판이 갈리나", bool(inc != exc)),
         ("🔴 칸별", rows),
     ])
-    out["통과"] = bool(same and len(dups) == 0 and n_pr == 0)
+    out["통과"] = bool((same or benign) and len(dups) == 0 and n_pr == 0)
+    out["🔴🔴 엄격 통과(`HEAD` == 디스크만 본다)"] = bool(
+        same and len(dups) == 0 and n_pr == 0)
     out["🔴 이 절의 `통과` 가 뜻하는 것"] = (
-        "🔴 **`HEAD` 와 디스크가 바이트로 같고, 원장에 중복 키가 없고, 열린 PR 이 없다** "
-        "= 집이 닫혔다")
+        "🔴 **원장에 중복 키가 없고, 열린 PR 이 없고, `HEAD` 와 디스크가 바이트로 같거나 "
+        "«갈린 것이 이 사이클 자신의 원장 항목 하나뿐»이다**(그 항목은 아직 커밋 전이다). "
+        "🔴 「엄격 통과」 칸은 그 예외 없이 잰 값이다 — 둘 다 싣는다")
     out["🔴 도장"] = LG.stamp_block(ref, cs0, LG.code_stamp(RAN), t0, RAN, LG.DATA)
     (OUT / "out981_house.json").write_text(
         json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
