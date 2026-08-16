@@ -289,7 +289,72 @@ def gate_worktree() -> dict:
         "더러운 경로": dirty or "없음",
         "⚠": ("🔴 안 비었다 --- ⑤′ 는 실패다. 이 목록을 보고서에 그대로 싣는다"
               if dirty else "비었다"),
+        "🔴🔴 980 개정": ("🔴 **이 절은 이제 진단이다.** 규칙 A(`checkout` 금지) 아래에서 "
+                     "`HEAD` 는 언제나 `main` 이고 사이클 커밋은 가지에만 있으므로 "
+                     "작업 트리가 `HEAD` 와 같을 수 없고, 규칙 B(데몬)가 60 초마다 "
+                     "`data/` 를 건드린다. 🔴 **판정은 `⓪ 관문(가지의 커밋된 트리)` 이 진다.**"),
         "통과": (rc == 0) and (not dirty),
+    }
+
+
+#: 🔴🔴🔴 **980 수리 2 — ⓪ 관문을 「가지의 커밋된 트리」에 건다.**
+#: 967 이 12 사이클 전에 「⑤′ 의 ⓪ 관문과 checkout 안 하는 절차는 서로 못 산다」고 물었고
+#: 아무도 안 정했다. 979 의 ⑤′ 는 이 관문 때문에 **원리상** 못 지나갔고, 그 실패의
+#: 「구조적 이유」를 규칙 B(데몬) 탓으로 적었는데 **더러운 28 중 데몬은 1 줄**이었다.
+#: 🔴 진짜 기전은 **규칙 A** 다 --- ⑤′ 가 사이클 커밋이 하나도 없는 `main` 에서 돌았다.
+def _daemon_paths():
+    """🔴 면제 경로를 **하드코드하지 않고 데몬 소스에서 읽는다**(규칙 D)."""
+    src = (ROOT / "runners/harvest_daemon.py").read_text(encoding="utf-8")
+    m = re.search(r"^PATHS\s*=\s*\[(.*?)\]", src, re.M | re.S)
+    if not m:
+        return [], "🔴 못 읽었다 --- `harvest_daemon.PATHS` 를 못 찾았다"
+    return re.findall(r"[\"']([^\"']+)[\"']", m.group(1)), None
+
+
+def gate_committed_tree(branch=None) -> dict:
+    """🔴🔴 **ⓞ 관문의 정본(980)** --- 작업 트리가 **가지의 커밋된 트리**와 같은가.
+
+    ⑤′ 는 커밋된 트리를 검사한다. 그러니 물어야 할 것은 「작업 트리 = `HEAD`」가 아니라
+    **「작업 트리 = 이 사이클 가지의 트리」**다.
+
+    🔴 **면제는 데몬 경로뿐이고 그 목록은 `harvest_daemon.PATHS` 에서 읽는다.**
+    면제한 경로 수를 **분모와 함께** 낸다(조항 59: 면제는 숨기는 것이 아니라 세는 것이다).
+    """
+    if branch is None:
+        rc, out, _ = _git(["for-each-ref", "--format=%(refname:short)",
+                           "refs/heads/note/*"])
+        cands = sorted([x.strip() for x in out.split("\n") if x.strip()])
+        branch = cands[-1] if cands else "HEAD"
+    dpaths, derr = _daemon_paths()
+    rc, out, err = _git(["-c", "core.quotePath=false", "diff", "--name-only",
+                         "-z", branch])
+    changed = [l for l in out.split("\0") if l.strip()]
+    rc2, out2, _ = _git(["-c", "core.quotePath=false", "ls-files", "-z",
+                         "--others", "--exclude-standard"])
+    untracked = [l for l in out2.split("\0") if l.strip()]
+    allp = sorted(set(changed) | set(untracked))
+
+    def _exempt(p):
+        n = os.path.normpath(p)
+        return any(n == d or n.startswith(d + os.sep) for d in dpaths)
+    exempt = [p for p in allp if _exempt(p)]
+    live = [p for p in allp if not _exempt(p)]
+    return {
+        "검사": "🔴🔴 ⓪ 관문(정본 · 980) --- 작업 트리가 **가지의 커밋된 트리**와 같은가",
+        "🔴 견준 가지": branch,
+        "🔴 가지 sha": _rev(branch),
+        "🔴 분모: 갈린 경로 전량": len(allp),
+        "🔴 데몬(규칙 B) 면제 경로 수": len(exempt),
+        "🔴 면제 규칙의 출처": dpaths or derr,
+        "🔴 면제한 경로": exempt[:40] or "없음",
+        "🔴🔴 분자: 면제 밖에서 갈린 경로": len(live),
+        "🔴 그 경로": live[:40] or "없음",
+        "🔴 왜 이 절이 정본인가": (
+            "🔴 규칙 A 는 `checkout` 을 금지하므로 `HEAD` 는 `main` 이고 사이클 커밋은 "
+            "가지에만 있다. 규칙 B 는 데몬을 재우지 말라 하므로 `data/ingest`·`data/state` 는 "
+            "60 초마다 움직인다. **작업 트리 대 `HEAD`** 를 물으면 두 규칙이 서로를 막는다 "
+            "--- 967 이 12 사이클 전에 물은 그 물음의 답이다"),
+        "통과": (rc == 0) and (not live),
     }
 
 
@@ -1447,6 +1512,9 @@ def main(argv=None):
     ap = argparse.ArgumentParser(prog="fiveprime902.py", description=__doc__.split("\n")[0])
     ap.add_argument("--base", required=True, help="취합 시작 rev")
     ap.add_argument("--head", default="HEAD")
+    #: 🔴🔴 980 수리 2 --- ⓪ 관문이 견줄 **가지**. 안 주면 `refs/heads/note/*` 의 마지막.
+    ap.add_argument("--branch", default=None,
+                    help="🔴 ⓪ 관문(정본)이 견줄 가지 ref --- 이 사이클의 마지막 커밋")
     # 🔴 **955 R5** --- 기본을 **커밋된 트리**로 바꿨다(`docs/루프.md:148` v3.2 · 티처 #93 M5).
     #    954 까지 기본이 「작업 트리」라 ⑤′ 가 **커밋 안 된 편집**을 검사했다.
     #    작업 트리를 일부러 보고 싶으면 `--tree 작업트리`(또는 `worktree`).
@@ -1536,7 +1604,20 @@ def main(argv=None):
                "③ 모든 절이 `통과` 키를 갖는다. 없는 절을 소비할 땐 **「모른다」로 센다**",
                "④ 「안 돌렸다」는 「없다」가 아니다(조항 59)",
            ]}
-    res["⓪ 관문(작업 트리)"] = gate_worktree()
+    #: 🔴🔴 **980 수리 2** --- 작업 트리 관문은 **진단으로 내린다**(`통과` 키를 뺀다 ---
+    #: 리터럴 `True` 로 통과시키지 않는다. 절 분모에서 빠지고 그 사실을 아래에 적는다).
+    _wt = gate_worktree()
+    _wt["🔴🔴 980: 이 절은 절 분모 밖이다"] = (
+        "🔴 `통과` 키를 **뺐다**. 리터럴 `True` 로 통과시키면 그게 항진명제다 --- "
+        "판정은 아래 「가지의 커밋된 트리」 절이 진다")
+    _wt["🔴 이 절이 잰 날 것"] = {"더러운 경로 수": _wt["더러운 경로 수"],
+                          "통과였을 값": _wt.pop("통과")}
+    res["⓪ 관문(작업 트리 · 🔴 980 부터 진단 · 절 분모 밖)"] = _wt
+    try:
+        res["⓪ 관문(가지의 커밋된 트리 · 🔴 정본)"] = gate_committed_tree(a.branch)
+    except Exception as e:                                        # noqa: BLE001
+        res["⓪ 관문(가지의 커밋된 트리 · 🔴 정본)"] = {
+            "🔴 예외": "%s: %s" % (type(e).__name__, e), "통과": False}
     try:
         res["1 소비자 역참조"] = backref(a.base, a.head, a.tree, ran, exempt)
     except Exception as e:                                        # noqa: BLE001
