@@ -22694,27 +22694,32 @@
    "🔴 순위 역순"
   ],
   "🔴 반증조건 — 통과 / 분모 / 사전등록 분모": [
-   11,
+   13,
    14,
    14
   ],
   "🔴 예측 — 맞음 / 분모": [
-   5,
+   4,
    6
   ],
   "🔴 규칙 D — 표 밖 / 분모(984 R5 로 셋 → 다섯)": [
-   2,
+   0,
    5
   ],
   "🔴 `⑤′` — 통과 / 실패 / 절 수 / 사전등록 분모": [
-   null,
-   null,
-   null,
-   null
+   false,
+   4,
+   16,
+   16
   ],
-  "🔴 `⑤′` 실패 절": null,
+  "🔴 `⑤′` 실패 절": [
+   "1 소비자 역참조",
+   "1-나 🔴 날 것 git 호출 전수(947 상설)",
+   "2 게이트",
+   "8 🔴 산문 주장 대 산출물 키(957 · 티처 #95 C1)"
+  ],
   "🔴🔴🔴 `⑤′` 고정점 — 반복 횟수 / 수렴": [
-   0,
+   1,
    false
   ],
   "🔴🔴 원장 항목 수(main / 디스크 / 가지)": [
@@ -22741,11 +22746,13 @@
    "runners/out984_leak.json",
    "runners/out984_prose.json",
    "runners/out984_score.json",
-   "runners/out984_table.json"
+   "runners/out984_table.json",
+   "runners/fiveprime_984.json",
+   "runners/fiveprime_984_p1.json"
   ],
   "🔴 치환표": [
    "runners/out984_table.json",
-   "6ca50f5bcebf4c7e756612ce121da746984ebd090663e587339e396a8adaaabc",
+   "6a38fe380c8359ef34f8b524e3c9ebb1f4c61318b627665d235e46991c68ce79",
    163
   ],
   "🔴 사전등록": "docs/prereg_984_leak_or_coupling.md",
