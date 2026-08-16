@@ -119,7 +119,10 @@ KEYAUDIT_SKIP = ("out902b_fiveprime", "out952_docstamp", "out953_docstamp")
 #: 🔴 이름 하나(`out902b_fiveprime`)를 하드코딩하던 위 `KEYAUDIT_SKIP` 으로는 못 막는다 ---
 #: `--out` 이 사이클마다 바뀌기 때문이다(`out954_fiveprime.json`). **꼴로 배제한다.**
 #: ⚠ 꼬리를 열어 둔다(`out902b_fiveprime_901.json` 같은 **보관본**도 자기 산출물이다).
-SELF_OUT_RE = re.compile(r"(?:^|/)out[^/]*_fiveprime[^/]*\.json$")
+SELF_OUT_RE = re.compile(r"(?:^|/)(?:out[^/]*_fiveprime[^/]*|fiveprime[^/]*)\.json$")
+#: 🔴🔴 **982 수리 R3** --- 구판 꼴은 `out<n>_fiveprime.json` 만 잡았다.
+#:    979~981 이 쓴 이름은 **`fiveprime_<n>.json`**(앞에 `out` 이 없다)이라
+#:    **이름으로 빼는 자가 원리상 그 셋을 못 봤다.** 두 꼴을 다 잡는다.
 
 
 def is_self_out(rel: str) -> bool:
@@ -365,15 +368,33 @@ def gate_committed_tree(branch=None) -> dict:
         n = os.path.normpath(p)
         return any(n == d or n.startswith(d + os.sep) for d in dpaths)
     exempt = [p for p in allp if _exempt(p)]
-    live = [p for p in allp if not _exempt(p)]
+    #: 🔴🔴🔴 **982 수리 R3** --- ⓪ 관문이 **자기 산출물**(`*_fiveprime*.json`)에 걸렸다.
+    #: 그 파일은 ⑤′ 가 «도는 중에» 쓰므로 관문이 도는 순간 원리상 커밋돼 있을 수 없다.
+    #: 979·980·981 세 사이클이 같은 자리에서 떨어졌고, 981 은 **통과시키려고 커밋하지
+    #: 않는 쪽**을 골라 불통과를 게재했다(939·980 이 한 일을 안 했다 --- 옳았다).
+    #: 🔴 절 3·4 는 이미 `SELF_OUT_RE` 로 자기 산출물을 이름으로 뺀다. **여기만 안 뺐다.**
+    #: 🔴 **면제가 아니라 「분모에서 이름으로 뺀다」다** --- 뺀 목록과 수를 나란히 낸다.
+    live0 = [p for p in allp if not _exempt(p)]
+    selfout = [p for p in live0 if is_self_out(p)]
+    live = [p for p in live0 if not is_self_out(p)]
     return {
-        "검사": "🔴🔴 ⓪ 관문(정본 · 980) --- 작업 트리가 **가지의 커밋된 트리**와 같은가",
+        "검사": "🔴🔴 ⓪ 관문(정본 · 980 · 🔴 982 R3 로 자기 산출물을 뺐다) --- "
+              "작업 트리가 **가지의 커밋된 트리**와 같은가",
         "🔴 견준 가지": branch,
         "🔴 가지 sha": _rev(branch),
         "🔴 분모: 갈린 경로 전량": len(allp),
         "🔴 데몬(규칙 B) 면제 경로 수": len(exempt),
         "🔴 면제 규칙의 출처": dpaths or derr,
         "🔴 면제한 경로": exempt[:40] or "없음",
+        "🔴🔴🔴 982 R3 --- 자기 산출물이라 이름으로 뺀 경로": selfout or "없음",
+        "🔴 그 수": len(selfout),
+        "🔴 왜 빼나(982 R3)": (
+            "🔴 `*_fiveprime*.json` 은 **이 절이 도는 중에 이 러너가 쓰는 파일**이라 "
+            "관문이 도는 순간 커밋돼 있을 수 없다 --- **원리상 못 지나가는 자리**다. "
+            "🔴 절 3·4 는 이미 `SELF_OUT_RE` 로 같은 것을 한다. "
+            "🔴 통과시키려고 **커밋하는** 길(939·980)이 아니라 **분모에서 이름으로 빼는** 길로 "
+            "고친다 --- 빼는 것과 그 목록을 산출물이 적으므로 숨겨지지 않는다"),
+        "⚠ 구판(982 R3 앞) 분자 --- 자기 산출물을 안 뺐을 때": len(live0),
         "🔴🔴 분자: 면제 밖에서 갈린 경로": len(live),
         "🔴 그 경로": live[:40] or "없음",
         "🔴 왜 이 절이 정본인가": (
