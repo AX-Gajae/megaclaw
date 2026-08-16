@@ -769,11 +769,17 @@ def stage_wiring(ref):
 
     # W12 — 🔴 선택 규칙(v2.2)을 이 사이클이 개정했나 (반증조건 7)
     #    변이체 = **979 시대의 `docs/목표.md`**(자 이름이 포인터였던 판) — 진짜 다른 파일이다
+    #: 🔴 규칙 A 라 `checkout` 을 안 한다 — `HEAD` 는 `main` 이고 이 사이클 커밋은
+    #: **가지에만** 있다. 그러므로 **가지 ref 에서 찾는다.**
     pre = "docs/prereg_980_mixture.md"
     pre_commit = mut_commit = None
     goal_at_pre = goal_mut = b""
     try:
-        pre_commit = _git("log", "--format=%H", "-1", "--", pre).strip()
+        refs = [x.strip() for x in _git(
+            "for-each-ref", "--format=%(refname:short)",
+            "refs/heads/note/980-*").split("\n") if x.strip()]
+        base = (refs[0] if refs else "HEAD")
+        pre_commit = _git("log", "--format=%H", "-1", base, "--", pre).strip()
         goal_at_pre = subprocess.check_output(
             ["git", "show", "%s:docs/목표.md" % pre_commit], cwd=str(ROOT))
         mut_commit = _git("log", "--format=%H", "-1", "%s^" % pre_commit,
