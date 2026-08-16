@@ -1,0 +1,134 @@
+{
+ "무엇": "979 §4-S9 — 🔴 **산출물 덮임 검사를 배선에서 떼어 측정 뒤로 옮기고 fail-closed 로 닫는다.** 노트 978 의 W10 은 빈 `all()` 로 **무조건 통과**했고 **배선이 측정보다 먼저 돌아 직전 주행 파일을 읽었다**",
+ "🔴 축": "자기 자(수리 레인)",
+ "🔴 이 stage 는 자 값을 안 낸다(반증조건 4 분모 밖 · 측정 전에 적었다)": true,
+ "🔴🔴🔴 반증조건 4 분모(사전등록이 이름 적은 다섯)": [
+  "out979_sd.json",
+  "out979_rescore.json",
+  "out979_sizeloso.json",
+  "out979_alphapair.json",
+  "out979_gate.json"
+ ],
+ "🔴 분모 밖이라고 사전등록에 적은 넷": [
+  "out979_wiring.json",
+  "out979_srcmix.json",
+  "out979_score978.json",
+  "out979_recheck.json"
+ ],
+ "🔴 분모 안 — 파일별": {
+  "out979_sd.json": {
+   "🔴 파일이 있나": true,
+   "자 가짓수": "6 / 6",
+   "🔴 배선보다 나중에 났나": true,
+   "🔴 mtime": "2026-08-16T13:36:05Z",
+   "🔴 통과": true
+  },
+  "out979_rescore.json": {
+   "🔴 파일이 있나": true,
+   "자 가짓수": "6 / 6",
+   "🔴 배선보다 나중에 났나": true,
+   "🔴 mtime": "2026-08-16T14:09:56Z",
+   "🔴 통과": true
+  },
+  "out979_sizeloso.json": {
+   "🔴 파일이 있나": true,
+   "자 가짓수": "6 / 6",
+   "🔴 배선보다 나중에 났나": true,
+   "🔴 mtime": "2026-08-16T14:20:16Z",
+   "🔴 통과": true
+  },
+  "out979_alphapair.json": {
+   "🔴 파일이 있나": true,
+   "자 가짓수": "6 / 6",
+   "🔴 배선보다 나중에 났나": true,
+   "🔴 mtime": "2026-08-16T13:36:20Z",
+   "🔴 통과": true
+  },
+  "out979_gate.json": {
+   "🔴 파일이 있나": true,
+   "자 가짓수": "6 / 6",
+   "🔴 배선보다 나중에 났나": true,
+   "🔴 mtime": "2026-08-16T14:20:29Z",
+   "🔴 통과": true
+  }
+ },
+ "🔴 분모 밖 — 파일별": {
+  "out979_wiring.json": {
+   "🔴 파일이 있나": true,
+   "🔴 분모 밖이라고 사전등록에 적었나": true
+  },
+  "out979_srcmix.json": {
+   "🔴 파일이 있나": true,
+   "🔴 분모 밖이라고 사전등록에 적었나": true
+  },
+  "out979_score978.json": {
+   "🔴 파일이 있나": true,
+   "🔴 분모 밖이라고 사전등록에 적었나": true
+  },
+  "out979_recheck.json": {
+   "🔴 파일이 있나": false,
+   "🔴 분모 밖이라고 사전등록에 적었나": true
+  }
+ },
+ "🔴🔴🔴 반증조건 4 분자/분모": "5 / 5",
+ "🔴🔴 다섯이 다 있나(fail-closed)": true,
+ "🔴 978 판이었다면 어떻게 되나": "🔴 파일이 하나도 없으면 `all([])` 이 **참**이라 통과로 적힌다 — 979 는 `파일이 없다 = 거짓` 이다",
+ "통과": true,
+ "🔴 이 절의 `통과` 가 뜻하는 것": "🔴 **등록 분모 다섯이 전부 실재하고, 전부 자 여섯을 다 내고, 전부 배선보다 나중에 났다**",
+ "🔴 도장": {
+  "언제(시작)": "2026-08-16T14:20:30Z",
+  "언제(끝)": "2026-08-16T14:20:30Z",
+  "시작 code_stamp 요약": "7d5893664a4791c49b1e630069504a24cbbf3da1a016f892201f509ee9f17cc3",
+  "끝 code_stamp 요약": "7d5893664a4791c49b1e630069504a24cbbf3da1a016f892201f509ee9f17cc3",
+  "🔴 시작=끝": true,
+  "분모: 도장이 덮는 파일": 77,
+  "🔴 자료 지문": {
+   "sao941": "50eacbe4468cf86f561535e3eea7aec31f0151679a33018b7eb12627d1cbbd83",
+   "sao959": "273e4bad06c9f073be89ae3477b89acf9a4973f2c77c66e21aa571a4b5d56728",
+   "hplt_ko": "67de3062bad60e122c446fccb0b96d2c3a36c0ee2deafa40324a22dcad6c09a2"
+  },
+  "분모: 연 자료 파일": 3,
+  "🔴 F1 기준 ref(준 대로)": "fcfdbe2ab7016b594369da8173ff6596ec2bc121",
+  "🔴 40자 고정 sha 인가": true,
+  "🔴 기준 ref 가 0000…0000 인가": false,
+  "러너별": {
+   "runners/ruler979.py": {
+    "디스크 sha256": "2e4d4e96093a12188ec4a7a836b6f2c9932bea9d70a61a7bc217355e6844e67f",
+    "커밋 blob sha256": "2e4d4e96093a12188ec4a7a836b6f2c9932bea9d70a61a7bc217355e6844e67f",
+    "일치": true
+   },
+   "runners/ruler978.py": {
+    "디스크 sha256": "95b85fa3372da0503557ead094a2759e6ae94f5962b670a389882b140dde2777",
+    "커밋 blob sha256": "95b85fa3372da0503557ead094a2759e6ae94f5962b670a389882b140dde2777",
+    "일치": true
+   },
+   "runners/alpha977.py": {
+    "디스크 sha256": "42c4c6b3797a75bdf9f681ea29facbdb41936b088cf6519339825ccc6db527d3",
+    "커밋 blob sha256": "42c4c6b3797a75bdf9f681ea29facbdb41936b088cf6519339825ccc6db527d3",
+    "일치": true
+   },
+   "runners/ledger.py": {
+    "디스크 sha256": "9dfdbadb743b6a5d999e7ebc17ec770919a474b2eec5d87652592ed964439bcd",
+    "커밋 blob sha256": "9dfdbadb743b6a5d999e7ebc17ec770919a474b2eec5d87652592ed964439bcd",
+    "일치": true
+   },
+   "runners/layers957.py": {
+    "디스크 sha256": "09e4255b6a7021bcb53dcfa2a2bea8da1b05d34abca05379e0c9c2280c6a9529",
+    "커밋 blob sha256": "09e4255b6a7021bcb53dcfa2a2bea8da1b05d34abca05379e0c9c2280c6a9529",
+    "일치": true
+   },
+   "runners/predict971.py": {
+    "디스크 sha256": "c870fe5d8bf72424fd86203e4585b8d234b4d06b800a78fa074d7f9401738c3f",
+    "커밋 blob sha256": "c870fe5d8bf72424fd86203e4585b8d234b4d06b800a78fa074d7f9401738c3f",
+    "일치": true
+   },
+   "runners/loso974.py": {
+    "디스크 sha256": "f40b4aacfac9afab6413a2f5706402b6d998a574caa6b3341221b02eb07d3f9a",
+    "커밋 blob sha256": "f40b4aacfac9afab6413a2f5706402b6d998a574caa6b3341221b02eb07d3f9a",
+    "일치": true
+   }
+  },
+  "🔴 분자/분모": "7 / 7",
+  "🔴 F5 통과": true
+ }
+}
