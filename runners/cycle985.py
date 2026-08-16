@@ -118,8 +118,9 @@ WINDOW = "runners/out985_window.json"
 
 #: 🔴🔴 **산출물 → 그것을 «낸» 러너.** 「값을 낸 뒤에 그 값을 내는 러너를 고치고
 #: «안 다시 돌렸나»」를 이 표로 잰다(반증조건 5). 🔴 `RAN_ALL` 전량으로 재면
-#: 아무 러너 하나만 고쳐도 모든 산출물이 낡은 것이 되어 **자가 못 쓰게 된다** --- 그래서
-#: **생산자 한 명**(+ 공용 배관 `cycle985.py`·`ledger.py`)만 본다.
+#: 984 러너를 한 줄만 고쳐도 985 의 모든 산출물이 낡은 것이 되어 **자가 못 쓰게 된다** ---
+#: 그래서 **생산자 한 명 + 공용 배관 둘**(`SHARED`)만 본다.
+SHARED = ("runners/cycle985.py", "runners/ledger.py")
 PRODUCER = {
     "runners/out985_house.json": "runners/house985.py",
     "runners/out985_audit.json": "runners/audit985.py",
@@ -193,18 +194,25 @@ def stale_outputs():
             unread.append(out)
             continue
         st = d.get(LG.STAMP_KEY) or {}
-        per = (st.get("러너별") or {}).get(prod) or {}
-        was = per.get("디스크 sha256")
-        cur = _sha_file(prod)
-        if was is None:
-            rows[out] = {"생산자": prod,
-                         "🔴": "🔴 도장에 그 생산자가 없다 --- 「안 바뀌었다」가 아니다"}
+        per_r = st.get("러너별") or {}
+        watch = [prod] + [x for x in SHARED if x != prod]
+        cells, miss, moved = {}, [], []
+        for w in watch:
+            was = (per_r.get(w) or {}).get("디스크 sha256")
+            cur = _sha_file(w)
+            if was is None:
+                miss.append(w)
+                continue
+            cells[w] = {"낼 때 sha256": was, "지금 sha256": cur, "같은가": bool(was == cur)}
+            if was != cur:
+                moved.append(w)
+        rows[out] = {"생산자": prod, "🔴 같이 보는 공용 배관": list(SHARED),
+                     "🔴 파일별": cells,
+                     "🔴 도장에 없어 못 본 것(= 「안 바뀌었다」가 아니다)": miss or "없음",
+                     "🔴🔴 낼 때와 달라진 파일": moved or "없음"}
+        if miss:
             unread.append(out)
-            continue
-        same = bool(was == cur)
-        rows[out] = {"생산자": prod, "낼 때 sha256": was, "지금 sha256": cur,
-                     "🔴 같은가": same}
-        if not same:
+        if moved:
             stale.append(out)
     return {
         "🔴🔴 무엇": ("🔴 **값을 낸 뒤에 그 값을 내는 러너를 고치고 «안 다시 돌린» 산출물** --- "
