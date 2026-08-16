@@ -1,0 +1,112 @@
+{
+ "무엇": "🔴 980 §S6 — 산출물 덮임 검사(측정 뒤 · fail-closed)",
+ "🔴 칸": {
+  "out980_mixarm.json": {
+   "🔴 있나": true,
+   "🔴 mtime(UTC)": "2026-08-16T15:30:02Z",
+   "🔴 자 이름이 몇 개 나오나": 6,
+   "🔴 등록된 분모 안인가": true,
+   "통과": true
+  },
+  "out980_budget.json": {
+   "🔴 있나": true,
+   "🔴 mtime(UTC)": "2026-08-16T15:37:20Z",
+   "🔴 자 이름이 몇 개 나오나": 6,
+   "🔴 등록된 분모 안인가": true,
+   "통과": true
+  },
+  "out980_wiring.json": {
+   "🔴 있나": true,
+   "🔴 mtime(UTC)": "2026-08-16T15:47:35Z",
+   "🔴 자 이름이 몇 개 나오나": 0,
+   "🔴 등록된 분모 안인가": false,
+   "통과": true
+  },
+  "out980_funnel.json": {
+   "🔴 있나": true,
+   "🔴 mtime(UTC)": "2026-08-16T15:26:07Z",
+   "🔴 자 이름이 몇 개 나오나": 0,
+   "🔴 등록된 분모 안인가": false,
+   "통과": true
+  },
+  "out980_score979.json": {
+   "🔴 있나": true,
+   "🔴 mtime(UTC)": "2026-08-16T15:30:38Z",
+   "🔴 자 이름이 몇 개 나오나": 0,
+   "🔴 등록된 분모 안인가": false,
+   "통과": true
+  },
+  "out980_recheck.json": {
+   "🔴 있나": true,
+   "🔴 mtime(UTC)": "2026-08-16T15:47:46Z",
+   "🔴 자 이름이 몇 개 나오나": 0,
+   "🔴 등록된 분모 안인가": false,
+   "통과": true
+  }
+ },
+ "🔴 분자/분모": "6 / 6",
+ "🔴🔴 반증조건 4 채점(자 값을 내는 stage 둘이 자 여섯을 다 내나)": "2 / 2",
+ "통과": true,
+ "🔴 이 절의 `통과` 가 뜻하는 것": "🔴 등록된 산출물이 **전부 있고**, 자 값을 내는 둘은 자 여섯을 다 낸다. 🔴 파일이 하나라도 없으면 거짓이다(fail-closed)",
+ "🔴 도장": {
+  "언제(시작)": "2026-08-16T15:47:47Z",
+  "언제(끝)": "2026-08-16T15:47:47Z",
+  "시작 code_stamp 요약": "1219cc569533958aae4711e98af7b4d5596a4a29dcf09233a6286520add71d19",
+  "끝 code_stamp 요약": "1219cc569533958aae4711e98af7b4d5596a4a29dcf09233a6286520add71d19",
+  "🔴 시작=끝": true,
+  "분모: 도장이 덮는 파일": 78,
+  "🔴 자료 지문": {
+   "sao941": "50eacbe4468cf86f561535e3eea7aec31f0151679a33018b7eb12627d1cbbd83",
+   "sao959": "273e4bad06c9f073be89ae3477b89acf9a4973f2c77c66e21aa571a4b5d56728",
+   "hplt_ko": "67de3062bad60e122c446fccb0b96d2c3a36c0ee2deafa40324a22dcad6c09a2"
+  },
+  "분모: 연 자료 파일": 3,
+  "🔴 F1 기준 ref(준 대로)": "f56fb0794adc8a9c102e7f06fc20a4fa0b91a2f5",
+  "🔴 40자 고정 sha 인가": true,
+  "🔴 기준 ref 가 0000…0000 인가": false,
+  "러너별": {
+   "runners/mix980.py": {
+    "디스크 sha256": "8f89c3fe4dc6e544f7c474c6351c1ddf33cf784176f94bee596e8281f5ac669a",
+    "커밋 blob sha256": "8f89c3fe4dc6e544f7c474c6351c1ddf33cf784176f94bee596e8281f5ac669a",
+    "일치": true
+   },
+   "runners/ruler979.py": {
+    "디스크 sha256": "2e4d4e96093a12188ec4a7a836b6f2c9932bea9d70a61a7bc217355e6844e67f",
+    "커밋 blob sha256": "2e4d4e96093a12188ec4a7a836b6f2c9932bea9d70a61a7bc217355e6844e67f",
+    "일치": true
+   },
+   "runners/ruler978.py": {
+    "디스크 sha256": "95b85fa3372da0503557ead094a2759e6ae94f5962b670a389882b140dde2777",
+    "커밋 blob sha256": "95b85fa3372da0503557ead094a2759e6ae94f5962b670a389882b140dde2777",
+    "일치": true
+   },
+   "runners/alpha977.py": {
+    "디스크 sha256": "42c4c6b3797a75bdf9f681ea29facbdb41936b088cf6519339825ccc6db527d3",
+    "커밋 blob sha256": "42c4c6b3797a75bdf9f681ea29facbdb41936b088cf6519339825ccc6db527d3",
+    "일치": true
+   },
+   "runners/ledger.py": {
+    "디스크 sha256": "9dfdbadb743b6a5d999e7ebc17ec770919a474b2eec5d87652592ed964439bcd",
+    "커밋 blob sha256": "9dfdbadb743b6a5d999e7ebc17ec770919a474b2eec5d87652592ed964439bcd",
+    "일치": true
+   },
+   "runners/layers957.py": {
+    "디스크 sha256": "09e4255b6a7021bcb53dcfa2a2bea8da1b05d34abca05379e0c9c2280c6a9529",
+    "커밋 blob sha256": "09e4255b6a7021bcb53dcfa2a2bea8da1b05d34abca05379e0c9c2280c6a9529",
+    "일치": true
+   },
+   "runners/predict971.py": {
+    "디스크 sha256": "c870fe5d8bf72424fd86203e4585b8d234b4d06b800a78fa074d7f9401738c3f",
+    "커밋 blob sha256": "c870fe5d8bf72424fd86203e4585b8d234b4d06b800a78fa074d7f9401738c3f",
+    "일치": true
+   },
+   "runners/loso974.py": {
+    "디스크 sha256": "f40b4aacfac9afab6413a2f5706402b6d998a574caa6b3341221b02eb07d3f9a",
+    "커밋 blob sha256": "f40b4aacfac9afab6413a2f5706402b6d998a574caa6b3341221b02eb07d3f9a",
+    "일치": true
+   }
+  },
+  "🔴 분자/분모": "8 / 8",
+  "🔴 F5 통과": true
+ }
+}
