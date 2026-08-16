@@ -1626,6 +1626,120 @@ def repair_lanes(base, head, expected=None, prereg=None, mainref="main",
 
 
 # ── 엮기 ────────────────────────────────────────────────────────────────
+# ══════════════════════════════════════════════════════════════════════
+# 🔴🔴🔴 **983 R1·R2 --- 리터럴 관문을 AST 로 금지한다**
+#
+# 🔴 **왜.** 982 의 반증조건 12 는 `score982.py:337-343` 이 **산문 세 줄과
+#    리터럴 `("통과", True)`** 였다 --- 아무것도 안 쟀다. 저장소 채점기에서 이 꼴은
+#    `score981.py:209` 와 **둘뿐**이었고 둘 다 같은 조항이다. 🔴 **하필 그 조항이
+#    982 의 두 수리를 심판해야 하는 유일한 자리였다.**
+# 🔴 그리고 982 의 치환표 생성기 `note982_gen.py:129·170` 에 **손으로 친 수가 둘** 있었고
+#    그중 하나가 헤드라인 `20.95` 의 **분모**였다(규칙 D 위반).
+#
+# 🔴 **분자는 「이 사이클이 건드린 파일」이다** --- 얼어붙은 옛 산출물을 다시 벌하지 않는다.
+#    저장소 전수는 **진단**으로 같이 낸다(조항 59: 안 세는 자리를 숨기지 않는다).
+# ══════════════════════════════════════════════════════════════════════
+def _const_str(n):
+    return n.value if (isinstance(n, ast.Constant) and isinstance(n.value, str)) else None
+
+
+def _const_bool(n):
+    return isinstance(n, ast.Constant) and isinstance(n.value, bool)
+
+
+def _const_num(n):
+    if isinstance(n, ast.Constant) and isinstance(n.value, (int, float)) \
+            and not isinstance(n.value, bool):
+        return True
+    return bool(isinstance(n, ast.UnaryOp) and isinstance(n.op, (ast.USub, ast.UAdd))
+                and _const_num(n.operand))
+
+
+def literal_pass_hits(src, path=""):
+    """🔴 `("통과", True)` / `{"통과": True}` 꼴의 **리터럴 판정**을 AST 로 찾는다."""
+    hits = []
+    try:
+        tree = ast.parse(src)
+    except SyntaxError as e:                                       # noqa: BLE001
+        return [{"파일": path, "🔴 파싱 실패": str(e)}]
+    for n in ast.walk(tree):
+        if isinstance(n, ast.Tuple) and len(n.elts) == 2:
+            k, v = n.elts
+            ks_ = _const_str(k)
+            if ks_ is not None and "통과" in ks_ and _const_bool(v):
+                hits.append({"파일": path, "줄": n.lineno, "꼴": "튜플",
+                             "키": ks_, "값": v.value})
+        if isinstance(n, ast.Dict):
+            for k, v in zip(n.keys, n.values):
+                ks_ = _const_str(k) if k is not None else None
+                if ks_ is not None and "통과" in ks_ and _const_bool(v):
+                    hits.append({"파일": path, "줄": getattr(k, "lineno", None),
+                                 "꼴": "사전", "키": ks_, "값": v.value})
+    return hits
+
+
+def table_literal_hits(src, path="", names=("T",)):
+    """🔴 치환표 생성기의 `T[...] = <숫자 리터럴>` 을 AST 로 찾는다."""
+    hits = []
+    try:
+        tree = ast.parse(src)
+    except SyntaxError as e:                                       # noqa: BLE001
+        return [{"파일": path, "🔴 파싱 실패": str(e)}]
+    for n in ast.walk(tree):
+        if not isinstance(n, ast.Assign):
+            continue
+        for tgt in n.targets:
+            if isinstance(tgt, ast.Subscript) and isinstance(tgt.value, ast.Name) \
+                    and tgt.value.id in names and _const_num(n.value):
+                hits.append({"파일": path, "줄": n.lineno,
+                             "슬롯": ast.dump(tgt.slice)[:80]})
+    return hits
+
+
+def _changed_py(base, head):
+    rc, out, _ = _git(["diff", "-z", "--name-only", "%s...%s" % (base, head)])
+    if rc != 0:
+        return []
+    return [x for x in out.split("\0") if x.endswith(".py")]
+
+
+def ast_literal_gate(base, head, kind):
+    """🔴🔴 `kind` = "판정" (리터럴 통과) 또는 "치환표" (손으로 친 수)."""
+    if kind == "판정":
+        pat, fn, why = "runners/score*.py", literal_pass_hits, (
+            "🔴 채점기가 리터럴 `(\"통과\", True)` 로 자기를 통과시키는 자리")
+    else:
+        pat, fn, why = "runners/note*_gen.py", table_literal_hits, (
+            "🔴 치환표 생성기가 `T[...] = <숫자 리터럴>` 로 손 전사하는 자리")
+    allf = sorted(str(q.relative_to(ROOT)) for q in ROOT.glob(pat))
+    changed = [f for f in _changed_py(base, head) if f in allf]
+    def scan(files):
+        got = []
+        for f in files:
+            q = ROOT / f
+            if q.is_file():
+                got += fn(q.read_text(encoding="utf-8", errors="replace"), f)
+        return got
+    now_hits, all_hits = scan(changed), scan(allf)
+    return {
+        "검사": "🔴🔴 **983 R%s --- AST 로 %s 를 금지한다**" % (
+            "1" if kind == "판정" else "2", why),
+        "🔴 무엇을 잡나": why,
+        "🔴 훑은 유형": pat,
+        "🔴 분모 (이 사이클이 건드린 그 유형의 파일)": changed or "없음",
+        "🔴 분모 수": len(changed),
+        "🔴🔴🔴 이 사이클 파일의 리터럴 수(분자)": len(now_hits),
+        "🔴 걸린 자리(이 사이클)": now_hits[:20],
+        "⚠ 저장소 전수(진단 · 얼어붙은 옛 파일 포함)": len(all_hits),
+        "⚠ 전수 파일 수": len(allf),
+        "⚠ 전수에서 걸린 자리": all_hits[:20],
+        "🔴 왜 분자가 「이 사이클」인가": (
+            "🔴 얼어붙은 옛 산출물을 다시 벌하지 않는다. 🔴 **저장소 전수를 진단으로 "
+            "같이 내므로 안 세는 자리를 숨기지 않는다**(조항 59)"),
+        "통과": bool(not now_hits),
+    }
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(prog="fiveprime902.py", description=__doc__.split("\n")[0])
     ap.add_argument("--base", required=True, help="취합 시작 rev")
@@ -1655,6 +1769,10 @@ def main(argv=None):
     ap.add_argument("--quote-now", default=None,
                     help="🔴 작업본 대신 이 파일을 견준다 --- **심어서 검정력을 재는** 자리")
     ap.add_argument("--out", default=str(OUT_DEFAULT))
+    # 🔴🔴 983 R4 --- 규칙 C: `⑤′` 산출물도 도장을 박는다(티처 #121 3순위 R4)
+    ap.add_argument("--stamp-ref", default=None,
+                    help="🔴 규칙 C 도장의 40자 고정 ref --- 안 주면 도장 없이 쓰고 "
+                         "그 사실을 산출물에 적는다")
     ap.add_argument("--docstamp", default=DOCSTAMP,
                     help="🔴 문서 대조가 읽을 도장 파일(기본: %s)" % DOCSTAMP)
     # 🔴 949 --- 45 개 사유를 손으로 치면 **증거가 셸 히스토리에만 남는다**.
@@ -1725,12 +1843,17 @@ def main(argv=None):
     #: 🔴🔴 **980 수리 2** --- 작업 트리 관문은 **진단으로 내린다**(`통과` 키를 뺀다 ---
     #: 리터럴 `True` 로 통과시키지 않는다. 절 분모에서 빠지고 그 사실을 아래에 적는다).
     _wt = gate_worktree()
-    _wt["🔴🔴 980: 이 절은 절 분모 밖이다"] = (
-        "🔴 `통과` 키를 **뺐다**. 리터럴 `True` 로 통과시키면 그게 항진명제다 --- "
-        "판정은 아래 「가지의 커밋된 트리」 절이 진다")
-    _wt["🔴 이 절이 잰 날 것"] = {"더러운 경로 수": _wt["더러운 경로 수"],
-                          "통과였을 값": _wt.pop("통과")}
-    res["⓪ 관문(작업 트리 · 🔴 980 부터 진단 · 절 분모 밖)"] = _wt
+    #: 🔴🔴🔴 **983 R4 (티처 #121 즉시 정정 7)** --- 980 이 이 절의 `통과` 키를 **뺐다.**
+    #: 그래서 「판정 대상은 15 인데 절 수는 14」가 됐다 --- **분모 바꿔치기(조항 60)** 다.
+    #: 🔴 983 이 되돌린다. `통과` 는 **리터럴이 아니라 잰 값**(`더러운 경로 수 == 0`)이고,
+    #: 🔴 **데몬이 도는 한 이 절은 언제나 실패한다** --- 그 사실을 숨기지 않는다.
+    #: 정본 판정은 여전히 아래 「가지의 커밋된 트리」 절이 진다.
+    _wt["🔴🔴🔴 983: 이 절을 분모 «안»으로 되돌렸다"] = (
+        "🔴 980 이 뺐고 983 이 되돌린다. **분모를 좁히는 것도 분모 바꿔치기다**(조항 60). "
+        "🔴 `통과` 는 잰 값이지 리터럴이 아니다 --- `더러운 경로 수 == 0`. "
+        "🔴 **규칙 B 때문에 데몬을 못 재우므로 이 절은 구조적으로 실패한다**")
+    _wt["🔴 이 절이 잰 날 것"] = {"더러운 경로 수": _wt["더러운 경로 수"]}
+    res["⓪ 관문(작업 트리 · 🔴 983 부터 절 분모 «안»)"] = _wt
     try:
         res["⓪ 관문(가지의 커밋된 트리 · 🔴 정본)"] = gate_committed_tree(a.branch)
     except Exception as e:                                        # noqa: BLE001
@@ -1796,15 +1919,45 @@ def main(argv=None):
             "🔴 안 돌렸다": "`--prose <모듈>` 을 안 줬다 --- 「없다」가 아니라 「안 돌렸다」다(조항 59)",
             "통과": False}
 
+    # 🔴🔴 983 R1·R2 --- 리터럴 관문을 AST 로 금지한다
+    for key, kind in (("9 🔴🔴 리터럴 `통과` 금지(983 R1 · AST)", "판정"),
+                      ("10 🔴🔴 치환표 손 전사 금지(983 R2 · AST)", "치환표")):
+        try:
+            res[key] = ast_literal_gate(a.base, a.head, kind)
+        except Exception as e:                                    # noqa: BLE001
+            res[key] = {"🔴 예외": "%s: %s" % (type(e).__name__, e), "통과": False}
+
     secs = {k: v for k, v in res.items() if isinstance(v, dict) and "통과" in v}
     fail = sorted(k for k, v in secs.items() if not v["통과"])
     res["🔴 절 수(분모)"] = len(secs)
     res["🔴 `통과` 키를 가진 절"] = len(secs)
+    #: 🔴🔴 **조항 60 --- 분모의 내력을 갈라 적는다**(티처 #121 즉시 정정 7)
+    res["🔴🔴 분모의 내력"] = {
+        "⚠ 982 판 분모": 14,
+        "🔴 ⓪ 작업 트리 절을 되돌려 넣은 분모": 15,
+        "🔴 983 이 신설한 AST 절 둘을 더한 분모": 17,
+        "🔴🔴 이 주행의 실제 분모": len(secs),
+        "🔴 왜 갈라 적나": (
+            "🔴 982 는 「판정 대상 15 · 절 수 14」였다 --- **분모가 하나 조용히 빠졌다**. "
+            "🔴 분모를 넓히는 것도 좁히는 것도 분모 바꿔치기다(조항 60)"),
+    }
     res["🔴 실패한 절"] = fail or "없음"
     res["통과"] = (not fail)
     res.update(stamp_close(st, t0))
 
-    Path(a.out).write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
+    #: 🔴🔴 **983 R4** --- `⑤′` 산출물에도 규칙 C 도장을 박는다(`--stamp-ref` 필수).
+    if a.stamp_ref:
+        sys.path.insert(0, str(ROOT / "runners"))
+        import ledger as _LG                                       # noqa: E402
+        _RAN = ("runners/fiveprime902.py", "runners/ledger.py",
+                "runners/predict971.py")
+        _t0 = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        _LG.write_stamped(a.out, res, a.stamp_ref,
+                          _LG.code_stamp(_RAN), _t0, _RAN, _LG.DATA)
+    else:
+        res["🔴 도장"] = {"🔴 안 찍었다": "`--stamp-ref <40자 sha>` 를 안 줬다 --- "
+                                  "「없다」가 아니라 「안 찍었다」다(조항 59 · 규칙 C 위반)"}
+        Path(a.out).write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
     # 화면 요약은 **절만** 줄인다(도장 dict 를 줄이면 도장이 빈 것처럼 보인다)
     print(json.dumps({k: ({kk: vv for kk, vv in v.items()
                            if kk.startswith(("🔴", "통과", "검사"))}
