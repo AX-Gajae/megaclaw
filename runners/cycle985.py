@@ -105,6 +105,32 @@ FEEDS_IN = (
 SEAL_SKIP_DEFAULT = ("🔴🔴 치환표",)
 
 
+#: 🔴🔴🔴 **985 R5 (티처 #123 3순위 ③)** --- **조항 66-② 의 창을 「사이클 단위」로 넓힌다.**
+#:
+#: 🔴 **왜.** 984 판의 창은 한 러너의 `t0` ~ `write()` 사이라 **0~1 초**였다. 그러면
+#: **단계와 단계 «사이»의 수정은 원리상 못 잡는다** --- 984 자신의 러너도 `06:35 ~ 07:07`
+#: 에 걸쳐 고쳐졌는데 모든 산출물이 「시작=끝 true」를 냈다. **가드가 자기가 잡아야 할
+#: 위반에 눈이 멀었다**는 984 의 자기 진단이 984 자신에게도 그대로 걸린다.
+#:
+#: 🔴 **985 판**: 사이클 «첫 단계»가 `begin()` 으로 이 파일에 시작 도장을 박고,
+#: **모든 산출물이 그 파일과 견준다.** 창 = **첫 단계 시작 ~ 마지막 단계 끝**.
+WINDOW = "runners/out985_window.json"
+
+#: 🔴🔴 **산출물 → 그것을 «낸» 러너.** 「값을 낸 뒤에 그 값을 내는 러너를 고치고
+#: «안 다시 돌렸나»」를 이 표로 잰다(반증조건 5). 🔴 `RAN_ALL` 전량으로 재면
+#: 아무 러너 하나만 고쳐도 모든 산출물이 낡은 것이 되어 **자가 못 쓰게 된다** --- 그래서
+#: **생산자 한 명**(+ 공용 배관 `cycle985.py`·`ledger.py`)만 본다.
+PRODUCER = {
+    "runners/out985_house.json": "runners/house985.py",
+    "runners/out985_audit.json": "runners/audit985.py",
+    "runners/out985_power.json": "runners/power985.py",
+    "runners/out985_score.json": "runners/score985.py",
+    "runners/out985_table.json": "runners/note985_gen.py",
+    "runners/out985_certify.json": "runners/certify985.py",
+    "runners/out985_prose.json": "runners/prose985.py",
+}
+
+
 def now():
     return dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
@@ -121,21 +147,116 @@ def code_stamp():
     return LG.code_stamp(RAN_ALL)
 
 
-def clause66_2(cs0, cs1):
-    """🔴🔴 **조항 66-② 신고** --- 측정 창 «안»에 바뀐 러너를 이름으로 낸다."""
-    keys = sorted(set(cs0) | set(cs1))
-    moved = [k for k in keys if cs0.get(k) != cs1.get(k)]
-    missing = [r for r in RAN_ALL if r not in cs1]
+def begin(ref, force=False):
+    """🔴🔴 **사이클 창을 «연다»** --- 첫 단계가 한 번 부른다. 두 번째부터는 안 덮어쓴다."""
+    p = ROOT / WINDOW
+    if p.is_file() and not force:
+        return json.loads(p.read_text(encoding="utf-8"))
+    d = {
+        "무엇": "🔴🔴🔴 985 R5 --- **사이클 단위 측정 창**의 시작 도장",
+        "🔴 왜": ("984 판 창은 한 러너의 `t0`~`write()` 사이라 **0~1 초**였다. "
+                "단계와 단계 «사이»의 수정은 원리상 못 잡는다 --- 984 자신의 러너도 "
+                "`06:35~07:07` 에 걸쳐 고쳐졌는데 모든 산출물이 「시작=끝 true」를 냈다"),
+        "🔴 사이클 시작(UTC)": now(),
+        "🔴 기준 ref": ref,
+        "🔴 시작 code_stamp": code_stamp(),
+    }
+    p.write_text(json.dumps(d, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    return d
+
+
+def cycle_start():
+    """🔴 사이클 시작 도장을 읽는다. 없으면 **「모른다」**를 낸다(0 이 아니다 · 조항 59)."""
+    p = ROOT / WINDOW
+    if not p.is_file():
+        return None
+    return json.loads(p.read_text(encoding="utf-8"))
+
+
+def stale_outputs():
+    """🔴🔴 **「값을 낸 뒤에 그 값을 내는 러너를 고치고 «안 다시 돌렸나»」**를 잰다.
+
+    산출물의 도장에 박힌 **그 생산자의 디스크 sha256** 과 **지금 디스크의 sha256** 을
+    견준다. 다르면 **그 산출물은 지금 코드가 낸 값이 아니다.**
+    🔴 「없다」와 「못 읽었다」를 가른다(조항 59).
+    """
+    rows, stale, unread = {}, [], []
+    for out, prod in sorted(PRODUCER.items()):
+        q = ROOT / out
+        if not q.is_file():
+            rows[out] = {"🔴": "🔴 산출물이 아직 없다(= 「낡지 않았다」가 아니다)"}
+            continue
+        try:
+            d = json.loads(q.read_text(encoding="utf-8"))
+        except Exception as e:                                     # noqa: BLE001
+            rows[out] = {"🔴": "🔴 못 읽었다: %s" % e}
+            unread.append(out)
+            continue
+        st = d.get(LG.STAMP_KEY) or {}
+        per = (st.get("러너별") or {}).get(prod) or {}
+        was = per.get("디스크 sha256")
+        cur = _sha_file(prod)
+        if was is None:
+            rows[out] = {"생산자": prod,
+                         "🔴": "🔴 도장에 그 생산자가 없다 --- 「안 바뀌었다」가 아니다"}
+            unread.append(out)
+            continue
+        same = bool(was == cur)
+        rows[out] = {"생산자": prod, "낼 때 sha256": was, "지금 sha256": cur,
+                     "🔴 같은가": same}
+        if not same:
+            stale.append(out)
     return {
-        "🔴🔴 조항 66-② 신고": "측정 창 안에서 러너를 고쳤나",
+        "🔴🔴 무엇": ("🔴 **값을 낸 뒤에 그 값을 내는 러너를 고치고 «안 다시 돌린» 산출물** --- "
+                  "조항 66-② 를 「창」이 아니라 «상태»로 잰다. 창은 넓혀도 「고친 뒤 다시 "
+                  "돌렸나」를 못 묻는데, 이 자는 그것을 직접 묻는다"),
+        "🔴 분모: 생산자 표에 든 산출물": len(PRODUCER),
+        "🔴 산출물별": rows,
+        "🔴🔴🔴 낡은 산출물(고치고 안 다시 돌렸다)": stale or "없음",
+        "🔴 못 읽은 것(= 「없다」가 아니다)": unread or "없음",
+        "🔴🔴🔴 낡은 것이 있나": bool(stale),
+    }
+
+
+def clause66_2(cs0, cs1):
+    """🔴🔴 **조항 66-② 신고** --- 🔴 **985 R5: 창을 「사이클 단위」로 넓혔다.**
+
+    `cs0` 는 이 러너의 `t0` 도장이지만, **판정에 쓰는 것은 «사이클 시작» 도장**이다
+    (`out985_window.json`). 둘을 **나란히** 싣는다 --- 좁은 창이 무엇을 놓치는지가
+    그 차이에 그대로 보인다(조항 66-③: 자를 바꾸면 전후를 같이 싣는다).
+    """
+    keys = sorted(set(cs0) | set(cs1))
+    moved_narrow = [k for k in keys if cs0.get(k) != cs1.get(k)]
+    missing = [r for r in RAN_ALL if r not in cs1]
+    win = cycle_start()
+    csw = (win or {}).get("🔴 시작 code_stamp") or {}
+    if win is None:
+        moved_wide, wide_known = None, False
+    else:
+        wide_known = True
+        moved_wide = [k for k in sorted(set(csw) | set(cs1))
+                      if csw.get(k) != cs1.get(k)]
+    return {
+        "🔴🔴 조항 66-② 신고": "🔴 **985 R5 --- 창은 「사이클 단위」다**(첫 단계 시작 ~ 지금)",
         "🔴 분모: `code_stamp` 가 덮는 파일 수": len(cs1),
         "🔴 분모: `RAN_ALL` 러너 수": len(RAN_ALL),
         "🔴🔴 분모가 못 덮은 `RAN_ALL` 항목(= 「없다」가 아니다 · 조항 59)":
             missing or "없음",
-        "🔴🔴🔴 측정 창 안에 바뀐 파일": moved or "없음",
-        "🔴🔴🔴 측정 창 안에 러너를 고쳤나": bool(moved),
-        "🔴 시작 요약": hashlib.sha256(
+        "🔴 사이클 시작(UTC)": (win or {}).get("🔴 사이클 시작(UTC)")
+        or "🔴 모른다 --- `out985_window.json` 이 없다(0 이 아니다)",
+        "⚠ 좁은 창(984 판 · 이 러너의 t0~지금)에서 바뀐 파일": moved_narrow or "없음",
+        "🔴🔴🔴 넓은 창(985 판 · 사이클 시작~지금)에서 바뀐 파일":
+            (moved_wide or "없음") if wide_known else
+            "🔴 모른다 --- 사이클 시작 도장이 없다",
+        "🔴🔴🔴 측정 창 안에 러너를 고쳤나": (bool(moved_wide) if wide_known else None),
+        "🔴🔴 좁은 창이 놓친 파일 수(= 984 판이 못 본 것)":
+            (len(set(moved_wide or []) - set(moved_narrow)) if wide_known else None),
+        "🔴🔴🔴 값을 낸 뒤 고치고 «안 다시 돌린» 산출물": stale_outputs(),
+        "🔴 시작 요약(좁은 창)": hashlib.sha256(
             json.dumps(cs0, sort_keys=True).encode()).hexdigest(),
+        "🔴 시작 요약(넓은 창)": hashlib.sha256(
+            json.dumps(csw, sort_keys=True).encode()).hexdigest() if wide_known
+        else "🔴 모른다",
         "🔴 끝 요약": hashlib.sha256(
             json.dumps(cs1, sort_keys=True).encode()).hexdigest(),
     }
@@ -177,11 +298,17 @@ def seal_sections(obj, skip=SEAL_SKIP_DEFAULT):
             v["🔴 이 절의 `통과`"] = "도장의 `🔴 F5 통과` 그 값이다(리터럴이 아니다)"
         elif "🔴🔴🔴 측정 창 안에 러너를 고쳤나" in v:
             _miss = [k2 for k2 in v if k2.startswith("🔴🔴 분모가 못 덮은")]
-            v["통과"] = bool(not v["🔴🔴🔴 측정 창 안에 러너를 고쳤나"]
+            _known = v["🔴🔴🔴 측정 창 안에 러너를 고쳤나"] is not None
+            _stale = (v.get("🔴🔴🔴 값을 낸 뒤 고치고 «안 다시 돌린» 산출물")
+                      or {}).get("🔴🔴🔴 낡은 것이 있나")
+            v["통과"] = bool(_known and _stale is False
                             and _miss and v[_miss[0]] == "없음")
             v["🔴 이 절의 `통과`"] = (
-                "🔴 **측정 창 안에 바뀐 러너가 0 이고 «분모가 `RAN_ALL` 을 전부 덮었을 때»만 "
-                "참이다.**")
+                "🔴🔴 **985 R5 --- `통과` 는 「창 안에 아무것도 안 고쳤나」가 아니라 "
+                "「고친 러너를 «다시 돌렸나»」다.** 사이클 창은 몇 시간이라 러너 수정은 "
+                "정상이고, 위반은 **고치고 안 다시 돌린 것**이다. 조건 셋: "
+                "① 사이클 시작 도장을 읽었다(「모른다」가 아니다) · "
+                "② 낡은 산출물 0 · ③ 분모가 `RAN_ALL` 을 전부 덮었다")
         else:
             v["통과"] = False
             v["🔴 이 절의 `통과`"] = (
@@ -220,6 +347,11 @@ def write(path, obj, ref, cs0, t0, seal_skip=SEAL_SKIP_DEFAULT):
 
 
 if __name__ == "__main__":
+    if len(sys.argv) > 2 and sys.argv[1] == "--begin":
+        print(json.dumps(begin(sys.argv[2],
+                               force=("--force" in sys.argv)),
+                         ensure_ascii=False)[:400])
+        sys.exit(0)
     cs = code_stamp()
     print(json.dumps({
         "RAN_ALL": len(RAN_ALL),
