@@ -970,6 +970,21 @@ def keyaudit(extra, targets=None, tree="HEAD") -> dict:
 
 
 # ── 4 도장 확인 ─────────────────────────────────────────────────────────
+def _stamp_of(d):
+    """🔴 981 --- 산출물 안의 **도장 블록**을 찾는다(최상위 또는 한 겹 아래).
+
+    `ledger.stamp_block()` 이 낸 dict 는 `🔴 F5 통과` 키를 갖는다. 그것이 표지다.
+    """
+    if not isinstance(d, dict):
+        return None
+    if "🔴 F5 통과" in d:
+        return d
+    for v in d.values():
+        if isinstance(v, dict) and "🔴 F5 통과" in v:
+            return v
+    return None
+
+
 def stamp_audit(tree="HEAD") -> dict:
     """🔴 `git HEAD` 스탬프는 판정에 쓰지 않는다(v3.2 가 폐기). 도장 넷을 본다.
 
@@ -1012,6 +1027,34 @@ def stamp_audit(tree="HEAD") -> dict:
                      "끝 시각": (d[t_shut[0]] if t_shut else "🔴 없다"),
                      "초": d.get("초", "모른다"),
                      "시작<끝": ((d[t_open[0]] < d[t_shut[0]]) if (t_open and t_shut) else None)}
+    # 🔴🔴 **981 신설 --- 절 4 가 도장의 「존재」가 아니라 「판정」을 읽는다.**
+    #    980 의 `out980_funnel.json` 은 **기준 ref 가 40자 전부 0 · 분자/분모 `0 / 8` ·
+    #    `F5 통과` 가 `false`** 인 채로 이 절을 지나갔다(티처 #119 치명 2). 그 파일이
+    #    논문 제목·claim #1·판정문 §1·카드 헤드라인·반증조건을 냈다.
+    #    🔴 조항 66: **자가 자기 출처를 못 대면 자가 아니다.**
+    #    ⚠ 이 절은 **구판 판정도 같이 낸다**(개정 잠금 조항 981 확장 --- 자기 관문을
+    #    신설한 사이클은 옛 관문으로도 채점하고 둘 다 싣는다).
+    verd, f5fail = {}, []
+    for rel in scan:
+        st, txt = tree_blob(rel, tree, known)
+        try:
+            d = json.loads(txt.decode("utf-8", "surrogateescape"))
+        except Exception:                                         # noqa: BLE001
+            continue
+        s = _stamp_of(d)
+        if s is None:
+            continue
+        v = {"🔴 F5 통과": s.get("🔴 F5 통과"),
+             "🔴 분자/분모": s.get("🔴 분자/분모"),
+             "🔴 40자 고정 sha 인가": s.get("🔴 40자 고정 sha 인가"),
+             "🔴 기준 ref 가 0000…0000 인가": s.get("🔴 기준 ref 가 0000…0000 인가"),
+             "🔴 기준 ref": s.get("🔴 F1 기준 ref(준 대로)")}
+        v["🔴🔴 판정 통과"] = bool(v["🔴 F5 통과"] is True
+                               and v["🔴 40자 고정 sha 인가"] is True
+                               and v["🔴 기준 ref 가 0000…0000 인가"] is False)
+        verd[rel] = v
+        if not v["🔴🔴 판정 통과"]:
+            f5fail.append(rel)
     # 🔴 **초 단위 도장에서 「시작 == 끝」은 두 가지다**: ① 901 의 그 병(긴 실행인데 끝에서
     #    둘 다 찍었다) ② 진짜로 1초 안에 끝난 실행. 둘을 갈라 센다 --- 안 가르면 이 절이
     #    영구 False 게이트가 되고, 그러면 아무도 안 본다.
@@ -1042,7 +1085,22 @@ def stamp_audit(tree="HEAD") -> dict:
         "🔴 시작 == 끝 인데 초 > 1.5 인 산출물(901 의 그 병)": same or "없음",
         "⚠ 시작 == 끝 이지만 1.5초 안에 끝난 산출물(병 아님)": short or "없음",
         "도장별": rows,
-        "통과": (not same) and (not bad),
+        # 🔴🔴 981 신설 --- 도장의 **판정**
+        "🔴🔴 도장 판정을 읽은 산출물 수(분모)": len(verd),
+        "🔴🔴🔴 도장 판정이 실패인 산출물": f5fail or "없음",
+        "🔴🔴 도장 판정이 실패인 산출물 수": len(f5fail),
+        "🔴 도장 판정별": verd,
+        "🔴 구판 절 4 통과(980 판 --- 도장의 «존재»와 시각만 본다)":
+            (not same) and (not bad),
+        "🔴🔴 신판 절 4 통과(981 판 --- 도장의 «판정»을 읽는다)":
+            (not same) and (not bad) and (not f5fail),
+        "🔴 구판과 신판이 갈리나": bool(bool((not same) and (not bad))
+                                != bool((not same) and (not bad) and (not f5fail))),
+        "통과": (not same) and (not bad) and (not f5fail),
+        "🔴 이 절의 `통과` 가 뜻하는 것":
+            "🔴 981 개정 --- ① 시작==끝인데 긴 실행이 없다 ② 못 읽은 산출물이 없다 "
+            "③ 🔴 **도장 판정(`F5 통과`·40자 고정 sha·기준 ref 가 0000…이 아님)이 "
+            "실패인 산출물이 없다**",
         "⚠": ("도장 없음을 「실패」로 세지 않는다 --- 옛 산출물이 많다. **수를 드러내는 것**이 이 절의 일이다"),
     }
 
