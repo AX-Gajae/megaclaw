@@ -262,6 +262,37 @@ def stamp_block(ref, cs0, cs1, t0, ran, data=None) -> dict:
     }
 
 
+#: 🔴🔴🔴 **982 수리 R2** — 도장 «없이» 산출물을 못 쓰게 한다 (조항 66 · 티처 #120 M8).
+STAMP_KEY = "🔴 도장"
+
+
+def write_stamped(path, obj, ref, cs0, t0, ran, data=None, key=STAMP_KEY):
+    """🔴🔴 산출물을 **도장과 «같이»** 쓴다 — 도장 없이 쓰는 길을 없앤다.
+
+    🔴 **왜 생겼나.** 981 의 치환표(`out981_table.json`)와 산문 대조(`out981_prose.json`)에
+    **도장이 없었다**(티처 #120 M8). 🔴 **「모든 수의 유일한 출처」인 파일이 자기 출처를
+    못 댔다** — 조항 66 이 금지하는 바로 그 꼴이다. 뿌리는 「도장을 «따로» 붙여야 한다」는
+    데 있었고, 붙이는 것을 잊으면 아무도 안 물었다.
+
+    🔴 그래서 **쓰기를 도장에 묶는다.** 이 함수 말고 다른 길로 쓰면 규칙 C 위반이고,
+    `ref` 가 40자 고정 sha 가 아니면 **여기서 터진다**(fail-closed).
+
+    돌려주는 값: 실제로 박힌 도장 블록(호출자가 판정에 쓸 수 있다).
+    """
+    if not re.fullmatch(r"[0-9a-f]{40}", str(ref or "")):
+        raise SystemExit(
+            "🔴 규칙 C — `%s` 를 쓰려는데 기준 ref 가 40자 고정 sha 가 아니다: %r" %
+            (path, ref))
+    st = stamp_block(ref, cs0, code_stamp(ran), t0, ran, data)
+    if isinstance(obj, collections.OrderedDict) or isinstance(obj, dict):
+        obj[key] = st
+    else:                                                          # noqa: RET506
+        raise SystemExit("🔴 `write_stamped` 는 dict 만 쓴다: %r" % type(obj))
+    Path(path).write_text(json.dumps(obj, ensure_ascii=False, indent=1),
+                          encoding="utf-8")
+    return st
+
+
 # ══════════════════════════════════════════════════════════════════════
 # 산출물 값 읽기 / 그리기
 # ══════════════════════════════════════════════════════════════════════
