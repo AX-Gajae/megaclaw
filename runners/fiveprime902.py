@@ -326,12 +326,30 @@ def gate_committed_tree(branch=None) -> dict:
         cands = sorted([x.strip() for x in out.split("\n") if x.strip()])
         branch = cands[-1] if cands else "HEAD"
     dpaths, derr = _daemon_paths()
-    rc, out, err = _git(["-c", "core.quotePath=false", "diff", "--name-only",
-                         "-z", branch])
-    changed = [l for l in out.split("\0") if l.strip()]
+    #: 🔴🔴 **인덱스를 안 쓴다.** 규칙 A 아래에서 인덱스는 `main` 것이라 낡아 있고,
+    #: `git diff <가지>` 는 낡은 인덱스 때문에 **커밋된 파일을 「지워졌다」로 읽는다**
+    #: (980 이 실측으로 잡았다). 그래서 **가지 트리의 blob sha 를 작업 파일과 직접** 견준다.
+    rc, out, err = _git(["-c", "core.quotePath=false", "ls-tree", "-r", "-z", branch])
+    tree = {}
+    for ent in out.split("\0"):
+        if not ent.strip():
+            continue
+        meta, _tab, path = ent.partition("\t")
+        parts = meta.split()
+        if len(parts) >= 3:
+            tree[path] = parts[2]
+    changed = []
+    for path, sha in tree.items():
+        f = ROOT / path
+        if not f.is_file():
+            changed.append(path)
+            continue
+        rc3, o3, _ = _git(["hash-object", "--", path])
+        if rc3 != 0 or o3.strip() != sha:
+            changed.append(path)
     rc2, out2, _ = _git(["-c", "core.quotePath=false", "ls-files", "-z",
                          "--others", "--exclude-standard"])
-    untracked = [l for l in out2.split("\0") if l.strip()]
+    untracked = [l for l in out2.split("\0") if l.strip() and l not in tree]
     allp = sorted(set(changed) | set(untracked))
 
     def _exempt(p):
