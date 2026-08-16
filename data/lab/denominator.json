@@ -22433,24 +22433,24 @@
    0.050614,
    0.05792
   ],
-  "🔴 반증조건": "13 / 16",
+  "🔴 반증조건": "15 / 16",
   "🔴 예측": "7 / 10",
-  "🔴 반증조건 7(옛 12) 배선 — 교집합 / 뒤집힌 경로": [
+  "🔴 반증조건 7(옛 반증조건 12) 배선 — 교집합 / 뒤집힌 경로": [
    15,
    0
   ],
   "🔴 규칙 D 표 밖 — 현행 / 구판": [
    0,
-   42
+   35
   ],
-  "🔴 `⑤′` 통과": null,
+  "🔴 `⑤′` 통과": false,
   "🔴 `⑤′` 실패 / 절 수": [
-   null,
-   null
+   6,
+   17
   ],
   "🔴 `⑤′` 분모 — 982 판 / ⓪ 포함": [
-   null,
-   null
+   14,
+   15
   ],
   "🔴🔴 HEAD 판 sha256": "ee7c83287ae2beaa2802e8b1e99d75313cb395afb4437e6dd03cef0a6ad1db23",
   "🔴🔴 디스크 판 sha256": "ee7c83287ae2beaa2802e8b1e99d75313cb395afb4437e6dd03cef0a6ad1db23",
@@ -22469,11 +22469,12 @@
    "runners/out983_score.json",
    "runners/out983_stat.json",
    "runners/out983_table.json",
-   "runners/out983_wire.json"
+   "runners/out983_wire.json",
+   "runners/fiveprime_983.json"
   ],
   "🔴 치환표": [
    "runners/out983_table.json",
-   "94641f9067838f9a0e6602f0d7d4ebee79deb86dcc872458af7b94e6215e5488"
+   "70fde1347ea10de570c8609c98c0da9be4d12d2f08c058d3ca215b7eef9f81e4"
   ],
   "🔴 사전등록": "docs/prereg_983_holdout_registry.md",
   "🔴 러너": [
