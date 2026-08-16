@@ -233,6 +233,35 @@ def stage_score(ref):
     C["10-나 본문의 한자어 자릿수 수사(만·억·조)가 치환표 안인가"] = \
         LG.audit_korean_magnitude(body, SA)
 
+    # 🔴🔴 9-나 — **표 «안» 값이 1 벌짜리인가**를 아무도 안 물었다(티처 #120 M9).
+    #    「치환표 칸인가」는 «어디서 왔나»만 보고 «몇 벌인가»는 안 본다.
+    def _vats(o, path=()):
+        """산출물에서 「벌 수」·「복제 수」 키를 전수로 긁는다."""
+        got = []
+        if isinstance(o, dict):
+            for k, v in o.items():
+                if isinstance(v, int) and ("벌 수" in k or "복제 수" in k):
+                    got.append((" / ".join(path + (k,)), v))
+                got += _vats(v, path + (str(k),))
+        elif isinstance(o, list):
+            for i, v in enumerate(o):
+                got += _vats(v, path + ("[%d]" % i,))
+        return got
+    vats = []
+    for f in ("out982_tfwd.json", "out982_mde.json", "out982_wiring.json"):
+        vats += _vats(_load(f), (f,))
+    ones = [(k, v) for k, v in vats if v <= 1]
+    C["9-나 🔴🔴 치환표 «안» 값이 1 벌짜리가 아닌가 (내용 검사)"] = collections.OrderedDict([
+        ("🔴 왜 이 칸이 있나",
+         "🔴 티처 #120 M9 — 981 은 반증조건 6·10 을 한 칸으로 합치고 「치환표 칸인가」만 봤다. "
+         "**표 «안» 값이 씨앗 하나짜리인지는 아무도 안 물었다**. 그건 «출처» 검사이지 "
+         "«내용» 검사가 아니다"),
+        ("🔴 분모: 산출물이 신고한 「벌 수」·「복제 수」 칸", len(vats)),
+        ("🔴 그 최솟값", min([v for _k, v in vats]) if vats else None),
+        ("🔴🔴 1 이하인 칸", ones or "없음"),
+        ("🔴 등록된 벌 수", {"D 팔": 25, "M 팔": 5, "짝SE 복제": 200, "MDE 재측정 복제": 800}),
+        ("통과", bool(vats and not ones))])
+
     # 5 인계 카드가 슬롯 생성물인가
     hand = ROOT / "docs/handoff_982.md"
     C["5 🔴🔴 인계 카드가 «슬롯 생성물» 인가"] = collections.OrderedDict([

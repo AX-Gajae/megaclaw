@@ -57,6 +57,12 @@ PROG = OUT / "out982_progress.txt"
 RULERS = R9.RULERS
 NB_GRID = list(M8.NB_GRID)
 U_REG = A.U_REG
+#: 🔴🔴🔴 **982 자가 적발** — `mix981._prog()` 의 `PROG` 가 `out981_progress.txt` 라
+#:    이 러너가 `M9.se_multi()` 를 부르는 순간 **981 의 측정 로그에 덧쓴다.**
+#:    ⑤′ 의 ⓪ 관문이 그 파일을 「갈린 경로」로 잡아 줬다(자가 적발의 출처).
+#:    🔴 **남의 사이클 증거물에 쓰지 않는다** — 이 러너의 로그로 돌린다.
+M9.PROG = PROG
+
 SRC = "runners/out981_decomp.json"
 SRC_T = "runners/out981_target.json"
 BOOT_HI = 800                    # §1 재측정 복제(사전등록 §8-2)
