@@ -340,10 +340,27 @@ def literal_claim_census(rel, tree) -> dict:
             lit.append((lineno, key, bool(node.value), _cond(owner)))
             if "통과" in key:
                 lit_pass.append(row)
+    #: 🔴🔴🔴 **980 수리 1 — `OrderedDict([(k, True)])` 를 못 봤다.**
+    #: 옛 자는 `ast.Dict` 와 `ast.Assign(Subscript)` 만 걸었다. 그런데
+    #: `collections.OrderedDict([("키", True), …])` 는 **`ast.Call` 안의 2-튜플**이라
+    #: 원리상 안 걸렸고, 🔴 **그 꼴이 `ruler979.py` 의 주 관용구**다.
+    #: 그래서 979 는 자기 계수를 **2.8 배 과소신고**했다(신고 14/5 · 실측 23/14).
+    seen = set()
+
+    def _once(key, vnode, owner):
+        ln = getattr(vnode, "lineno", getattr(owner, "lineno", 0))
+        col = getattr(vnode, "col_offset", -1)
+        if (ln, col, key) in seen:
+            return False
+        seen.add((ln, col, key))
+        return True
+
     for node in ast.walk(tree):
         if isinstance(node, ast.Dict):
             for k, v in zip(node.keys, node.values):
                 if isinstance(k, ast.Constant) and isinstance(k.value, str):
+                    if not _once(k.value, v, node):
+                        continue
                     allkeys += 1
                     _take(k.value, v, getattr(v, "lineno", getattr(node, "lineno", 0)),
                           node)
@@ -351,8 +368,27 @@ def literal_claim_census(rel, tree) -> dict:
             for t in node.targets:
                 if (isinstance(t, ast.Subscript) and isinstance(t.slice, ast.Constant)
                         and isinstance(t.slice.value, str)):
+                    if not _once(t.slice.value, node.value, node):
+                        continue
                     allkeys += 1
                     _take(t.slice.value, node.value, node.value.lineno, node)
+        elif isinstance(node, ast.Call):
+            #: 🔴 `OrderedDict([(k, v), …])` · `dict([(k, v)])` · `OrderedDict((…))`
+            for arg in node.args:
+                if not isinstance(arg, (ast.List, ast.Tuple)):
+                    continue
+                for el in arg.elts:
+                    if not (isinstance(el, ast.Tuple) and len(el.elts) == 2):
+                        continue
+                    kk = el.elts[0]
+                    if not (isinstance(kk, ast.Constant)
+                            and isinstance(kk.value, str)):
+                        continue
+                    if not _once(kk.value, el.elts[1], el):
+                        continue
+                    allkeys += 1
+                    _take(kk.value, el.elts[1],
+                          getattr(el.elts[1], "lineno", el.lineno), el)
     blind = [r for r in lit if "통과" not in r[1]]
     blind_true = [r for r in blind if r[2]]
     uncond = [r for r in blind_true if not r[3]]
