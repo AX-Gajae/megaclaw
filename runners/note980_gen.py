@@ -26,6 +26,10 @@ OUT = ROOT / "runners"
 DEN = ROOT / "data/lab/denominator.json"
 
 
+def _r(x, n=6):
+    return None if x is None else round(float(x), n)
+
+
 def _load(name):
     p = OUT / name
     return json.loads(p.read_text(encoding="utf-8")) if p.is_file() else {}
@@ -96,6 +100,24 @@ def table():
             T["SE(N_B=%d,u=%d)" % (nb, u)] = \
                 cc.get("🔴🔴 Δ = ㉮ − ㉯", {}).get("🔴🔴 짝 SE(5 벌 정합)")
 
+    #: 🔴 규칙 D — 판정문이 쓰는 수는 **전부** 이 표에 있어야 한다.
+    #: 그래서 자 여섯 × λ 둘의 배수·Δ·SE 를 통째로 넣고, 백분율 꼴도 같이 낸다.
+    g6 = mx.get("🔴🔴 게이트 — 자 여섯 전부", {})
+    for u in (0, 3):
+        for nm, row in g6.get("λ u=%d" % u, {}).items():
+            T["Δ %s(u=%d)" % (nm, u)] = row.get("Δ")
+            T["SE %s(u=%d)" % (nm, u)] = row.get("🔴🔴 짝 SE(5 벌 정합)")
+            T["배수 %s(u=%d)" % (nm, u)] = row.get("🔴🔴 |Δ| / 짝SE")
+    T["②/① 백분율"] = _r((T["②/①"] or 0) * 100, 6)
+    T["③/① 백분율"] = _r((T["③/①"] or 0) * 100, 4)
+    T["④/① 백분율"] = _r((T["④/①"] or 0) * 100, 4)
+    w10 = wr.get("🔴 W", {}).get("W10", {})
+    T["W10 짝SE(정본 자 · 복제 20)"] = w10.get("🔴 짝 SE(정본 자 · λ=1 · 복제 20)")
+    T["W10 변이체(벌 3) 짝SE"] = w10.get("🔴 변이체(벌 3)의 짝 SE")
+    w6 = wr.get("🔴 W", {}).get("W6", {})
+    T["W6 층화 r(씨앗 976)"] = w6.get("🔴 층화 r")
+    T["W6 대조 r(씨앗 976)"] = w6.get("🔴 대조 r")
+    T["W6 변이체 r"] = w6.get("🔴 변이체(목표를 뒤집어 짝지은 층화) r")
     T["W 통과"] = wr.get("🔴 분자/분모(통과)")
     T["W 변이체 정직"] = wr.get("🔴🔴 변이체에서 떨어진 검사(정직한 검사)")
     T["W 구성상 참"] = wr.get("🔴🔴 구성상 참인 검사")
@@ -116,6 +138,54 @@ def table():
     a2 = hs.get("🔴🔴 A-2 사이클 — **재서 낸다**", {})
     T["A-2 분모"] = a2.get("🔴 분모: A-2 신설(974) 이후 판정문이 있는 사이클")
     T["A-2 분자"] = a2.get("🔴🔴 분자: A-2 를 글자로 담은 사이클")
+
+    #: 🔴🔴 **티처 #118 이 잰 수는 980 의 산출물이 아니다** — 그러나 판정문·카드·논문이
+    #: 인용하므로 **원장의 그 항목에서 기계로 끌어온다**(손 전사 금지 · 규칙 D).
+    try:
+        led = json.loads(DEN.read_text(encoding="utf-8"))
+    except Exception:                                              # noqa: BLE001
+        led = {}
+    t118 = None
+    for k, v in led.items():
+        if "티처 #118" in k:
+            t118 = v
+            break
+    flat = {}
+
+    def _walk(o, path=""):
+        if isinstance(o, dict):
+            for kk, vv in o.items():
+                _walk(vv, path + "/" + kk)
+        elif isinstance(o, list):
+            for i, vv in enumerate(o):
+                _walk(vv, "%s[%d]" % (path, i))
+        else:
+            flat[path] = o
+    _walk(t118 or {})
+    import re as _re
+    for key, tag in (("갈라놓은 차", "티처118 갈라놓은 차"),
+                     ("뽑기 잡음(|R_iv − R_iv*| 최대)", "티처118 뽑기 잡음"),
+                     ("비", "티처118 비")):
+        for p, v in flat.items():
+            if p.endswith(key):
+                T[tag] = v
+                break
+    #: 🔴 `R_iv*` 의 검정력은 티처가 「헤드라인 표 독립 재현」 줄에 **여섯 개를 슬래시로**
+    #: 적었다. 그 줄에서 **여섯째**를 기계로 뽑는다(손 전사 금지).
+    for p, v in flat.items():
+        if p.endswith("헤드라인 표 독립 재현") and isinstance(v, str):
+            m = _re.search(r"검정력\s+([0-9./]+)", v)
+            if m:
+                xs = m.group(1).split("/")
+                T["티처118 검정력 여섯"] = xs
+                if len(xs) >= 6:
+                    T["티처118 R_iv 검정력"] = xs[3]
+                    T["티처118 R_iv* 검정력"] = xs[5]
+            break
+    T["🔴 티처 #118 항목의 잎 수(분모)"] = len(flat)
+    T["🔴 티처 #118 항목에서 끌어온 수"] = {
+        k: T[k] for k in ("티처118 갈라놓은 차", "티처118 뽑기 잡음", "티처118 비",
+                          "티처118 R_iv 검정력", "티처118 R_iv* 검정력") if k in T}
     return T
 
 

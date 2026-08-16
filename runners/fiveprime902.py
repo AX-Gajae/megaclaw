@@ -76,6 +76,7 @@ import os
 import re
 import shutil
 import subprocess
+import tempfile
 import sys
 import time
 from pathlib import Path
@@ -326,30 +327,38 @@ def gate_committed_tree(branch=None) -> dict:
         cands = sorted([x.strip() for x in out.split("\n") if x.strip()])
         branch = cands[-1] if cands else "HEAD"
     dpaths, derr = _daemon_paths()
-    #: 🔴🔴 **인덱스를 안 쓴다.** 규칙 A 아래에서 인덱스는 `main` 것이라 낡아 있고,
+    #: 🔴🔴 **저장소 인덱스를 안 쓴다.** 규칙 A 아래에서 그 인덱스는 `main` 것이라 낡아 있고,
     #: `git diff <가지>` 는 낡은 인덱스 때문에 **커밋된 파일을 「지워졌다」로 읽는다**
-    #: (980 이 실측으로 잡았다). 그래서 **가지 트리의 blob sha 를 작업 파일과 직접** 견준다.
-    rc, out, err = _git(["-c", "core.quotePath=false", "ls-tree", "-r", "-z", branch])
-    tree = {}
-    for ent in out.split("\0"):
-        if not ent.strip():
-            continue
-        meta, _tab, path = ent.partition("\t")
-        parts = meta.split()
-        if len(parts) >= 3:
-            tree[path] = parts[2]
-    changed = []
-    for path, sha in tree.items():
-        f = ROOT / path
-        if not f.is_file():
-            changed.append(path)
-            continue
-        rc3, o3, _ = _git(["hash-object", "--", path])
-        if rc3 != 0 or o3.strip() != sha:
-            changed.append(path)
-    rc2, out2, _ = _git(["-c", "core.quotePath=false", "ls-files", "-z",
-                         "--others", "--exclude-standard"])
-    untracked = [l for l in out2.split("\0") if l.strip() and l not in tree]
+    #: (980 이 실측으로 잡았다).
+    #: 🔴🔴 **대신 «임시» 인덱스를 가지 트리로 채워서 견준다**(규칙 A 의 배관 그대로).
+    #: 🔴 980 자가 적발 둘째 --- 첫 고침은 파일마다 `git hash-object` 를 불러서
+    #: **77,261 번 프로세스를 띄웠다**(원리상 맞지만 못 쓸 만큼 느리다).
+    env = dict(os.environ)
+    fd, tmpidx = tempfile.mkstemp(prefix="fiveprime980idx")
+    os.close(fd)
+    os.unlink(tmpidx)
+    env["GIT_INDEX_FILE"] = tmpidx
+    try:
+        for args in (["read-tree", branch],
+                     ["update-index", "-q", "--refresh"]):
+            subprocess.run(["git"] + args, cwd=str(ROOT), env=env,
+                           stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        p1 = subprocess.run(["git", "-c", "core.quotePath=false", "diff-index",
+                             "--name-only", "-z", branch],
+                            cwd=str(ROOT), env=env, stdout=subprocess.PIPE,
+                            stderr=subprocess.PIPE)
+        rc = p1.returncode
+        changed = [l for l in p1.stdout.decode("utf-8", "replace").split("\0")
+                   if l.strip()]
+        p2 = subprocess.run(["git", "-c", "core.quotePath=false", "ls-files",
+                             "-z", "--others", "--exclude-standard"],
+                            cwd=str(ROOT), env=env, stdout=subprocess.PIPE,
+                            stderr=subprocess.PIPE)
+        untracked = [l for l in p2.stdout.decode("utf-8", "replace").split("\0")
+                     if l.strip()]
+    finally:
+        if os.path.exists(tmpidx):
+            os.unlink(tmpidx)
     allp = sorted(set(changed) | set(untracked))
 
     def _exempt(p):
