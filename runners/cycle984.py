@@ -43,6 +43,7 @@ RAN_ALL = (
     "runners/score984.py",
     "runners/note984_gen.py",
     "runners/prose984.py",
+    "runners/fixpoint984.py",
     "runners/fiveprime902.py",
     # ㉡ 984 가 값을 읽는다 --- 🔴 조항 66-① 「잰 소스의 sha 를 산출물에 박는다」
     "runners/stat983.py",
