@@ -1,0 +1,92 @@
+{
+ "무엇": "982 §3-1 — 🔴🔴 **관문의 MDE 를 먼저 싣고, 「복제를 늘리면 MDE 가 주는가」를 «주장하지 않고 잰다»**",
+ "🔴 축": "C3",
+ "사전등록": "docs/prereg_982_timeforward.md §3-1",
+ "🔴 다시 잰 칸": "N_B=450 · u=3 · 정본 자 R_pool 묶음",
+ "🔴 복제 수(981)": 200,
+ "🔴 복제 수(982 재측정)": 800,
+ "🔴🔴 짝SE — ㉱ 위약 팔": {
+  "복제 200": 0.025307,
+  "복제 800": 0.02896,
+  "🔴 줄어든 비율": -0.1443,
+  "🔴🔴 10% 이상 줄었나(P10 의 반대)": false
+ },
+ "🔴 짝SE — ㉮ 층화 팔": {
+  "복제 200": 0.027941,
+  "복제 800": 0.029104,
+  "🔴 줄어든 비율": -0.0416
+ },
+ "🔴🔴🔴 그래서 무엇인가": "🔴 짝SE 는 **학습 붓스트랩 Δ 의 SD** 이지 「평균의 SE」가 아니다. 복제를 늘리면 **그 SD 의 몬테카를로 오차**만 줄고 **MDE 는 안 준다**. 🔴 **「복제를 늘려라」는 이 관문에 안 듣는다** — 검출력을 올리려면 유보를 키우거나 **격자 전체를 하나의 검정으로 묶어야** 한다(§3-2)",
+ "🔴 몬테카를로 오차의 이론값 1/√(2(B−1))": {
+  "복제 200": 0.05013,
+  "복제 800": 0.02502
+ },
+ "통과": true,
+ "🔴 이 절의 `통과` 가 뜻하는 것": "🔴 **복제 800 짝SE 를 실제로 다시 쟀다**(주장이 아니다). `통과` 는 「MDE 가 줄었다」가 **아니다** — 그 답은 위 칸에 있다",
+ "🔴 도장": {
+  "언제(시작)": "2026-08-16T18:42:23Z",
+  "언제(끝)": "2026-08-16T18:43:52Z",
+  "시작 code_stamp 요약": "9f8edc80df425d8a7dedc962362dd46338de4a363c2fac9aec5c818b426d6934",
+  "끝 code_stamp 요약": "9f8edc80df425d8a7dedc962362dd46338de4a363c2fac9aec5c818b426d6934",
+  "🔴 시작=끝": true,
+  "분모: 도장이 덮는 파일": 79,
+  "🔴 자료 지문": {
+   "sao941": "50eacbe4468cf86f561535e3eea7aec31f0151679a33018b7eb12627d1cbbd83",
+   "sao959": "273e4bad06c9f073be89ae3477b89acf9a4973f2c77c66e21aa571a4b5d56728",
+   "hplt_ko": "67de3062bad60e122c446fccb0b96d2c3a36c0ee2deafa40324a22dcad6c09a2"
+  },
+  "분모: 연 자료 파일": 3,
+  "🔴 F1 기준 ref(준 대로)": "2c7b629192846c144c21286f3f793d6eac59ace6",
+  "🔴 40자 고정 sha 인가": true,
+  "🔴 기준 ref 가 0000…0000 인가": false,
+  "러너별": {
+   "runners/mech982.py": {
+    "디스크 sha256": "0a25168df3dd8dc834692c2afe0c8dab9c325c188e4716195d56b259c08cb40e",
+    "커밋 blob sha256": "0a25168df3dd8dc834692c2afe0c8dab9c325c188e4716195d56b259c08cb40e",
+    "일치": true
+   },
+   "runners/mix981.py": {
+    "디스크 sha256": "a81c4df70db23dd7e9396a637c46d7d52902b65d8f333c3c2c792675e34fbd97",
+    "커밋 blob sha256": "a81c4df70db23dd7e9396a637c46d7d52902b65d8f333c3c2c792675e34fbd97",
+    "일치": true
+   },
+   "runners/mix980.py": {
+    "디스크 sha256": "8f89c3fe4dc6e544f7c474c6351c1ddf33cf784176f94bee596e8281f5ac669a",
+    "커밋 blob sha256": "8f89c3fe4dc6e544f7c474c6351c1ddf33cf784176f94bee596e8281f5ac669a",
+    "일치": true
+   },
+   "runners/ruler979.py": {
+    "디스크 sha256": "2e4d4e96093a12188ec4a7a836b6f2c9932bea9d70a61a7bc217355e6844e67f",
+    "커밋 blob sha256": "2e4d4e96093a12188ec4a7a836b6f2c9932bea9d70a61a7bc217355e6844e67f",
+    "일치": true
+   },
+   "runners/alpha977.py": {
+    "디스크 sha256": "42c4c6b3797a75bdf9f681ea29facbdb41936b088cf6519339825ccc6db527d3",
+    "커밋 blob sha256": "42c4c6b3797a75bdf9f681ea29facbdb41936b088cf6519339825ccc6db527d3",
+    "일치": true
+   },
+   "runners/ledger.py": {
+    "디스크 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+    "커밋 blob sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+    "일치": true
+   },
+   "runners/layers957.py": {
+    "디스크 sha256": "09e4255b6a7021bcb53dcfa2a2bea8da1b05d34abca05379e0c9c2280c6a9529",
+    "커밋 blob sha256": "09e4255b6a7021bcb53dcfa2a2bea8da1b05d34abca05379e0c9c2280c6a9529",
+    "일치": true
+   },
+   "runners/predict971.py": {
+    "디스크 sha256": "c870fe5d8bf72424fd86203e4585b8d234b4d06b800a78fa074d7f9401738c3f",
+    "커밋 blob sha256": "c870fe5d8bf72424fd86203e4585b8d234b4d06b800a78fa074d7f9401738c3f",
+    "일치": true
+   },
+   "runners/loso974.py": {
+    "디스크 sha256": "f40b4aacfac9afab6413a2f5706402b6d998a574caa6b3341221b02eb07d3f9a",
+    "커밋 blob sha256": "f40b4aacfac9afab6413a2f5706402b6d998a574caa6b3341221b02eb07d3f9a",
+    "일치": true
+   }
+  },
+  "🔴 분자/분모": "9 / 9",
+  "🔴 F5 통과": true
+ }
+}
