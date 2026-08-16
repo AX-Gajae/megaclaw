@@ -387,7 +387,7 @@ def stage_score(ref):
     try:
         import note983_gen as NG                              # noqa: E402
         try:
-            NG.fill("{{X}}", {"X": None})
+            NG.fill("⟦X⟧", {"X": None})
             fail_closed = False
             err = "🔴 안 터졌다"
         except SystemExit as e:                               # noqa: BLE001
@@ -396,7 +396,7 @@ def stage_score(ref):
         fail_closed, err = False, "%s: %s" % (type(e).__name__, e)
     C["13 🔴🔴 `fill()` 이 `None` 을 만나면 터지나 (fail-closed)"] = \
         collections.OrderedDict([
-            ("🔴 심어서 잰다", "`fill('{{X}}', {'X': None})`"),
+            ("🔴 심어서 잰다", "`fill('⟦X⟧', {'X': None})`"),
             ("🔴 터졌나", fail_closed), ("🔴 무엇이라 터졌나", err),
             ("🔴 왜",
              "🔴 982 는 `None` 을 `\"없음\"` 으로 삼켜 «키 오타 하나»로 「산문 주장 18/18」이 "

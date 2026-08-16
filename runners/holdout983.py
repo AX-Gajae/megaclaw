@@ -110,7 +110,7 @@ def stage_holdout(ref):
     for nm in RULERS:
         a = PK._nor({d: TR.all_w()[nm][d] for d in doms}, doms)
         b = PK._nor({d: ER.all_w()[nm][d] for d in doms}, doms)
-        l1[nm] = _r(sum(abs(a[i] - b[i]) for i in range(len(doms))))
+        l1[nm] = _r(PK.l1(a, b, doms))
 
     out = collections.OrderedDict()
     out["무엇"] = ("983 §2-1 ⓐ — 🔴🔴🔴 **「어느 유보에서 재나」를 잰다.** "

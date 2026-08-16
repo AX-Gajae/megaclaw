@@ -339,7 +339,7 @@ def axis_shuffle(tg):
 # ══════════════════════════════════════════════════════════════════════
 # §3 🔴 「20.95 배」의 프레이밍 — 사이클별 이동 넷을 «같이» 싣는다
 # ══════════════════════════════════════════════════════════════════════
-def framing(pk, wi):
+def framing(pk, ho):
     L1 = pk["🔴🔴 §4 자 전쟁 L1 결산"]
     steps = collections.OrderedDict(
         [(k, float(v)) for k, v in L1.items()
@@ -348,7 +348,7 @@ def framing(pk, wi):
     for k, v in L1.items():
         if isinstance(v, (int, float)) and "대" in k:
             net = float(v)
-    hold = float(wi["🔴🔴🔴 자별 가중 L1(시간 방향 대 개체 묶음)"][CANON])
+    hold = float(ho["🔴🔴🔴 유보를 바꿨을 때 자 가중이 움직인 L1"]["🔴 자별 L1"][CANON])
     biggest = max(steps.items(), key=lambda kv: kv[1])
     return collections.OrderedDict([
         ("🔴 무엇", "🔴🔴 **「유보 정의를 바꾼 것이 자 전쟁보다 20.95 배 크다」의 프레이밍을 고친다**"),
@@ -381,7 +381,6 @@ def stage_stat(ref):
     tg = _load("out981_target.json")
     pk = _load("out981_pick.json")
     md = _load("out982_mde.json")
-    wi = _load("out983_wire.json", must=False) or _load("out982_wiring.json")
     gr = _load("out983_grid.json", must=False)
     C = dc["🔴🔴🔴 칸"]
     nb = [float(n) for n in NB_GRID]
@@ -466,7 +465,7 @@ def stage_stat(ref):
     out["🔴🔴🔴 §3-3 헤드라인 축 — 엄격 계수 + 무작위 섞기 변이체"] = axis_shuffle(tg)
 
     # ── §2-1 ⓔ 프레이밍 ──────────────────────────────────────────
-    out["🔴🔴🔴 §2-1 ⓔ 「20.95 배」의 프레이밍"] = framing(pk, wi)
+    out["🔴🔴🔴 §2-1 ⓔ 「20.95 배」의 프레이밍"] = framing(pk, _load("out983_holdout.json"))
 
     # ── §7-2 MDE 정정 ────────────────────────────────────────────
     se200 = md["🔴🔴 짝SE — ㉱ 위약 팔"]["복제 200"]
