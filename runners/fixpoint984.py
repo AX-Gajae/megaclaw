@@ -17,6 +17,7 @@
 import argparse
 import collections
 import datetime as dt
+import hashlib
 import json
 import os
 import sys
@@ -46,6 +47,51 @@ def _sig(path):
         ("⚠ 참고: 코드 sha256(수렴 판별에 안 쓴다)",
          (d.get("🔴 코드 sha256") or {}).get("runners/fiveprime902.py")),
         ("⚠ 참고: 끝 시각", d.get("시각(UTC · 끝)")),
+    ])
+
+
+#: 🔴🔴🔴 **983 의 `⑤′` 가 고정점이었나 --- 산문이 아니라 «잰다».**
+#:  `fiveprime_983_final.json` 이 박은 「입력 산출물 sha256」을 지금 디스크와 견준다.
+#:  하나라도 다르면 **그 판이 인증한 트리는 사라진 것**이다.
+FP983 = "runners/fiveprime_983_final.json"
+
+
+def audit_983():
+    q = ROOT / FP983
+    if not q.is_file():
+        return collections.OrderedDict([
+            ("🔴", "🔴 `%s` 를 못 읽었다 --- 「고정점이었다」가 아니다(조항 59)" % FP983),
+            ("🔴🔴🔴 983 의 `⑤′` 가 고정점이었나", None),
+            ("통과", False)])
+    f = json.loads(q.read_text(encoding="utf-8"))
+    ins = f.get("🔴 입력 산출물 sha256") or {}
+    rows, moved = collections.OrderedDict(), []
+    for k, v in sorted(ins.items()):
+        rel = k if k.startswith("runners/") else "runners/" + k
+        pp = ROOT / rel
+        cur = (hashlib.sha256(pp.read_bytes()).hexdigest() if pp.is_file() else None)
+        same = bool(cur is not None and cur == v)
+        rows[rel] = collections.OrderedDict([
+            ("`⑤′` 가 인증한 sha256", v), ("지금 디스크 sha256", cur), ("같은가", same)])
+        if not same:
+            moved.append(rel)
+    return collections.OrderedDict([
+        ("🔴 무엇", "🔴🔴🔴 **983 의 `⑤′` 마지막 판이 인증한 트리가 아직 있나 --- 잰다**"),
+        ("🔴 출처", FP983),
+        ("🔴 분모: 그 판이 박은 입력 산출물 수", len(ins)),
+        ("🔴 산출물별", rows),
+        ("🔴🔴🔴 `⑤′` 뒤에 다시 지어진 입력", moved or "없음"),
+        ("🔴🔴🔴 그 수", len(moved)),
+        ("🔴🔴🔴 983 의 `⑤′` 가 고정점이었나", bool(len(ins) > 0 and not moved)),
+        ("🔴 무엇을 뜻하나",
+         "🔴 **`⑤′` 가 인증한 입력이 그 뒤에 다시 지어졌으면 그 인증은 사라진 트리의 "
+         "것이다.** 983 의 경우 그 재주행이 **반증조건 11 을 `false → true` 로 뒤집어 "
+         "자기 점수를 올렸다** --- 자기가 채점할 대상을 만들어 놓고 다시 채점한 값이다"
+         "(티처 #122 C1)"),
+        ("통과", bool(len(ins) > 0)),
+        ("🔴 이 절의 `통과` 가 뜻하는 것",
+         "🔴 **잴 수 있었는가** 하나다. 「고정점이었나」의 답은 위 칸이고 그것은 판정이 아니라 "
+         "잰 값이다"),
     ])
 
 
@@ -91,6 +137,11 @@ def stage(ref, runs):
     out["무엇"] = "984 §2-5 — 🔴 **`⑤′` 고정점 기록**"
     out["🔴 축"] = "자기 자(절차)"
     out["§2-5 🔴🔴🔴 `⑤′` 고정점"] = body
+    a983 = audit_983()
+    out["§2-5-나 🔴🔴🔴 983 의 `⑤′` 가 고정점이었나(잰다)"] = a983
+    out["🔴🔴🔴 983 의 `⑤′` 가 고정점이었나"] = a983.get(
+        "🔴🔴🔴 983 의 `⑤′` 가 고정점이었나")
+    out["🔴 983 에서 `⑤′` 뒤에 다시 지어진 입력 수"] = a983.get("🔴🔴🔴 그 수")
     out["🔴🔴 반복 횟수"] = len(got)
     out["🔴 판별"] = why
     out["🔴🔴🔴 수렴했나"] = conv
