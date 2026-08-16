@@ -42,7 +42,18 @@ import cycle985 as CY                                   # noqa: E402
 
 OUT = "runners/out985_certify.json"
 TABLE_KEY = "🔴🔴 치환표"
+#: 🔴 985 는 표를 «한 겹 감싼다**(`["🔴🔴 치환표"]["🔴 칸"]`) --- 984 는 안 감쌌다.
+#:  해싱 대상은 **언제나 칸 dict 하나**이고 이 함수가 그 자리를 정한다.
+CELLS_KEY = "🔴 칸"
 DEN = "data/lab/denominator.json"
+
+
+def _cells(tb):
+    """🔴 985 는 표를 감쌌고 984 는 안 감쌌다 --- 해싱 대상 자리를 여기서 하나로 정한다."""
+    t = (tb or {}).get(TABLE_KEY)
+    if isinstance(t, dict) and CELLS_KEY in t:
+        return t[CELLS_KEY], t.get("🔴 칸 수")
+    return t, None
 
 SPEC = {
     985: {"table": "runners/out985_table.json",
@@ -107,7 +118,7 @@ def certify(cycle):
             bad.append(p)
 
     # ── 4 치환표 칸 수 ────────────────────────────────────────────
-    T = (tb or {}).get(TABLE_KEY)
+    T, _inner_n = _cells(tb)
     live_n = len(T) if isinstance(T, dict) else None
     decl_n = (tb or {}).get("🔴🔴 칸 수")
     cert_n = rd.get("🔴 치환표 칸 수")

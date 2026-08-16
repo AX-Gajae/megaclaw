@@ -160,7 +160,9 @@ def begin(ref, force=False):
                 "`06:35~07:07` 에 걸쳐 고쳐졌는데 모든 산출물이 「시작=끝 true」를 냈다"),
         "🔴 사이클 시작(UTC)": now(),
         "🔴 기준 ref": ref,
-        "🔴 시작 code_stamp": code_stamp(),
+        #: 🔴 키에 `sha256` 을 넣는 것은 «도장»임을 밝히는 것이다 --- `⑤′` 절 3 은
+        #:  `sha256`·`시각` 이 든 키를 **절이 아니라 도장**으로 센다(그 자의 문언).
+        "🔴 시작 code_stamp(파일별 sha256)": code_stamp(),
     }
     p.write_text(json.dumps(d, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     return d
@@ -237,7 +239,7 @@ def clause66_2(cs0, cs1):
     moved_narrow = [k for k in keys if cs0.get(k) != cs1.get(k)]
     missing = [r for r in RAN_ALL if r not in cs1]
     win = cycle_start()
-    csw = (win or {}).get("🔴 시작 code_stamp") or {}
+    csw = (win or {}).get("🔴 시작 code_stamp(파일별 sha256)") or {}
     if win is None:
         moved_wide, wide_known = None, False
     else:
@@ -348,7 +350,19 @@ def write(path, obj, ref, cs0, t0, seal_skip=SEAL_SKIP_DEFAULT):
     raw = json.loads((ROOT / path).read_text(encoding="utf-8"),
                      object_pairs_hook=_c.OrderedDict)
     audit = seal_sections(raw, seal_skip)
-    raw["🔴🔴🔴 985 R4 봉인 감사(무엇을 봉했고 무엇을 뺐나)"] = audit
+    KEY = "🔴🔴🔴 985 R4 봉인 감사(무엇을 봉했고 무엇을 뺐나)"
+    raw[KEY] = audit
+    #: 🔴🔴 **이 절 자신도 절이다** --- 리터럴 `True` 를 안 넣는다.
+    #:  봉인 «뒤»에도 `통과` 가 없는 최상위 절이 남았나를 **세어** 판정한다.
+    left = [k for k, v in raw.items()
+            if isinstance(v, dict) and "통과" not in v and k != KEY
+            and k not in seal_skip and not any(w in k for w in ("sha256", "시각"))]
+    audit["🔴🔴 봉인 뒤에도 `통과` 가 없는 절(= `⑤′` 절 3 이 「모른다」로 셀 자리)"] = \
+        left or "없음"
+    audit["통과"] = bool(not left)
+    audit["🔴 이 절의 `통과`"] = (
+        "🔴 **봉인 뒤에 `통과` 키가 없는 최상위 절이 0 인가** --- 봉인 제외 키와 "
+        "도장(`sha256`·`시각`)은 절이 아니라 세지 않는다. 🔴 이 자는 떨어질 수 있다")
     (ROOT / path).write_text(
         json.dumps(raw, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     return raw

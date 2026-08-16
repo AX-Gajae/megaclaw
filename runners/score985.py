@@ -100,9 +100,15 @@ def registered_denominators():
 # ══════════════════════════════════════════════════════════════════════
 # 🔴 규칙 D — 채점 분모 **다섯**
 # ══════════════════════════════════════════════════════════════════════
+def _cells(tb):
+    """🔴 985 는 표를 «한 겹 감싼다**(`["🔴🔴 치환표"]["🔴 칸"]`)."""
+    t = (tb or {}).get("🔴🔴 치환표") or {}
+    return t.get("🔴 칸", t) if isinstance(t, dict) else {}
+
+
 def _table_set(tb):
     S = set()
-    for _k, v in (tb.get("🔴🔴 치환표", {}) or {}).items():
+    for _k, v in (_cells(tb) or {}).items():
         S.add(LG._norm(str(v)))
         if isinstance(v, float):
             for n in range(0, 7):
@@ -160,7 +166,7 @@ def rule_d(tb, rules):
         rows[name] = {"표 밖": n, "보기": ex or "없음", "글자 수": len(txt)}
         tot += n
     unread = [k for k, v in rows.items() if v.get("표 밖") is None]
-    T = tb.get("🔴🔴 치환표", {}) or {}
+    T = _cells(tb) or {}
     return collections.OrderedDict([
         ("🔴 무엇", "🔴 **규칙 D --- 치환표에 없는 수를 본문에 못 쓴다**"),
         ("🔴🔴 채점 분모", len(targets)),
@@ -311,7 +317,7 @@ def six_places(five):
     n_fail = len(fails) if isinstance(fails, list) else 0
     n_den = five.get("🔴 절 수(분모)")
     tb = _load(TBL)
-    T = tb.get("🔴🔴 치환표", {}) or {}
+    T = _cells(tb) or {}
     n_hit = T.get("채.예측분자")
     needles = collections.OrderedDict([
         ("`⑤′` 실패 수", n_fail),

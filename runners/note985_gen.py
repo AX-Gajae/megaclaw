@@ -913,18 +913,31 @@ def stage_all(ref):
          "**파일을 쓴 뒤 다시 읽어** 채운다 --- 검증자가 같은 값을 얻는다"),
         ("🔴🔴 칸 수", len(T)),
         ("🔴🔴 표 sha256", sha),
-        ("🔴🔴 치환표", T),
+        #: 🔴🔴🔴 **985 R4** --- 표를 **한 겹 감싸** `통과` 를 «절»에 두고 **칸은 안 건드린다**.
+        #:  984 는 표 dict 자신에 `통과` 두 키가 주입돼 칸 수와 sha 가 거짓이 됐다.
+        #:  🔴 해싱 대상은 언제나 `["🔴🔴 치환표"]["🔴 칸"]` 하나다.
+        ("🔴🔴 치환표", collections.OrderedDict([
+            ("🔴 칸 수", len(T)),
+            ("🔴 값이 없는 칸(None · = 「아직 안 돌았다」)",
+             [k for k, v in T.items() if v is None] or "없음"),
+            ("🔴 칸", T),
+            ("통과", bool(T and not [k for k, v in T.items() if v is None])),
+            ("🔴 이 절의 `통과`",
+             "🔴 **칸이 하나라도 있고 «값이 없는 칸(None)이 0» 인가.** "
+             "🔴 리터럴이 아니라 잰 값이다 --- 아직 안 돈 단계가 있으면 여기서 떨어진다"),
+        ])),
     ])
     CY.write("runners/out985_table.json", tb, ref, cs0, t0)
     #: 🔴🔴🔴 **985 R4** --- 봉인 «뒤»에 파일을 다시 읽어 **디스크의 표**로 두 칸을 고친다.
     raw = json.loads(TBL.read_text(encoding="utf-8"),
                      object_pairs_hook=collections.OrderedDict)
-    T_disk = raw["🔴🔴 치환표"]
+    T_disk = raw["🔴🔴 치환표"]["🔴 칸"]
     raw["🔴🔴 칸 수"] = len(T_disk)
+    raw["🔴🔴 치환표"]["🔴 칸 수"] = len(T_disk)
     raw["🔴🔴 표 sha256"] = table_sha(T_disk)
     TBL.write_text(json.dumps(raw, ensure_ascii=False, indent=1) + "\n",
                    encoding="utf-8")
-    T2 = json.loads(TBL.read_text(encoding="utf-8"))["🔴🔴 치환표"]
+    T2 = json.loads(TBL.read_text(encoding="utf-8"))["🔴🔴 치환표"]["🔴 칸"]
     sha2 = table_sha(T2)
     VERD.write_text(fill(VERDICT_MD, T), encoding="utf-8")
     CARD.write_text(fill(CARD_MD, T), encoding="utf-8")
