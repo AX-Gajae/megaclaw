@@ -351,7 +351,10 @@ def stage_score(ref):
         ("통과", bool(not (paper and not (fp or {}).get("통과"))))])
 
     # 14 🔴 ⑤′ 를 문서 재생성 «뒤에» 다시 돌렸나
-    fp_t = (fp or {}).get("시각(UTC · 끝)")
+    #: 🔴🔴 **마지막 주행은 별도 산출물로 낸다** — 같은 파일에 덮으면 그 값이 다시 문서로
+    #:    들어가고 **고정점이 없다**(981 이 그 고리에 걸렸다).
+    fpf = _load("fiveprime_982_final.json") or fp
+    fp_t = (fpf or {}).get("시각(UTC · 끝)")
     doc_t = None
     for p in BODY:
         q = ROOT / p
@@ -359,11 +362,21 @@ def stage_score(ref):
             s = dt.datetime.utcfromtimestamp(q.stat().st_mtime).strftime(
                 "%Y-%m-%dT%H:%M:%SZ")
             doc_t = s if doc_t is None or s > doc_t else doc_t
+    same_fail = bool((fp or {}).get("🔴 실패한 절") == (fpf or {}).get("🔴 실패한 절"))
     C["14 🔴 `⑤′` 를 문서 재생성 «뒤에» 다시 돌렸나"] = collections.OrderedDict([
-        ("`⑤′` 끝 시각", fp_t),
+        ("🔴 문서에 실린 판(`fiveprime_982.json`) 끝 시각", (fp or {}).get("시각(UTC · 끝)")),
+        ("🔴🔴 마지막 판(`fiveprime_982_final.json`) 끝 시각", fp_t),
         ("문서 셋의 마지막 mtime", doc_t),
-        ("🔴 981 이 어긴 자리", "🔴 981 은 `⑤′` 뒤에 판정문·카드·원장·치환표를 다시 지었다"),
-        ("통과", bool(fp_t and doc_t and fp_t >= doc_t))])
+        ("🔴🔴 두 판의 «실패한 절» 이 같은가", same_fail),
+        ("🔴 문서에 실린 판의 실패 절", (fp or {}).get("🔴 실패한 절")),
+        ("🔴 마지막 판의 실패 절", (fpf or {}).get("🔴 실패한 절")),
+        ("🔴 981 이 어긴 자리", "🔴 981 은 `⑤′` 뒤에 판정문·카드·원장·치환표를 다시 지었다 — "
+                        "「산문 주장 전부 통과」가 폐기된 판에 대한 값이었다"),
+        ("🔴 왜 산출물을 둘로 나누나",
+         "🔴 같은 파일에 덮으면 그 값이 다시 문서 슬롯으로 들어가서 **고정점이 없다**. "
+         "🔴 문서는 «앞 판»을 싣고, «마지막 판»은 그 문서가 지어진 뒤에 돌아서 "
+         "**「문서를 지은 뒤에도 판정이 안 바뀐다」를 확인한다**"),
+        ("통과", bool(fp_t and doc_t and fp_t >= doc_t and same_fail))])
 
     # 15 수리 계수 — 고친 코드가 있는 것만
     rep = collections.OrderedDict([
