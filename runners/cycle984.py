@@ -124,13 +124,55 @@ def feeds_in():
     return {p: _sha_file(p) for p in FEEDS_IN}
 
 
+#: 🔴🔴 `⑤′` 절 3 「판정 키 규약」이 **절**로 세는 것 --- 최상위 dict 중
+#: 키에 `sha256`·`시각` 이 안 든 것 전부(`fiveprime902.keyaudit:940-943`).
+#: 🔴 983 의 산출물 아홉은 그 규약을 **한 절도** 안 지켜 절 38 중 34 가 「모른다」였다.
+def seal_sections(obj):
+    """🔴 **모든 절에 `통과` 키가 있게 한다**(`⑤′` 절 3 · `docs/루프.md:256-258`).
+
+    🔴 **리터럴 `True` 를 심지 않는다.** 절이 이미 `통과` 를 가지면 안 건드리고,
+    없으면 그 절이 «잰 값»에서 만든다 --- 도장은 `🔴 F5 통과`, 조항 66-② 는
+    「측정 창 안에 러너를 고쳤나」의 **부정**. 그 둘 밖의 절이 `통과` 없이 오면
+    **`False` 를 넣고 왜 못 재는지 적는다**(조항 59: 「모른다」는 「통과」가 아니다).
+    """
+    for k, v in list(obj.items()):
+        if not isinstance(v, dict):
+            continue
+        if "sha256" in k or "시각" in k:
+            continue
+        if "통과" in v:
+            continue
+        if "🔴 F5 통과" in v:
+            v["통과"] = bool(v["🔴 F5 통과"])
+            v["🔴 이 절의 `통과`"] = "도장의 `🔴 F5 통과` 그 값이다(리터럴이 아니다)"
+        elif "🔴🔴🔴 측정 창 안에 러너를 고쳤나" in v:
+            _miss = [k2 for k2 in v if k2.startswith("🔴🔴 분모가 못 덮은")]
+            v["통과"] = bool(not v["🔴🔴🔴 측정 창 안에 러너를 고쳤나"]
+                            and _miss and v[_miss[0]] == "없음")
+            v["🔴 이 절의 `통과`"] = (
+                "🔴 **측정 창 안에 바뀐 러너가 0 이고 «분모가 `RAN_ALL` 을 전부 덮었을 때»만 "
+                "참이다.** 983 은 뒤 조건이 거짓인 채로 앞만 보고 「시작=끝 true」를 실었다")
+        else:
+            v["통과"] = False
+            v["🔴 이 절의 `통과`"] = (
+                "🔴 **이 절은 `통과` 를 안 만들었다 --- 「모른다」다**(조항 59). "
+                "`False` 로 센다. 「검사할 게 없다」가 아니다")
+    return obj
+
+
 def write(path, obj, ref, cs0, t0):
     """🔴 도장 + 조항 66-② 신고를 **같이** 붙여 쓴다(도장 없이 쓰는 길을 없앤다)."""
     cs1 = code_stamp()
     obj["🔴🔴 조항 66-② (984 R2)"] = clause66_2(cs0, cs1)
     obj["🔴 984 가 읽은 산출물 sha256"] = feeds_in()
     LG.write_stamped(str(ROOT / path), obj, ref, cs0, t0, RAN_ALL, DATA)
-    return obj
+    #: 🔴 `write_stamped` 가 도장을 얹은 «뒤»에 절을 봉한다 --- 도장 자신도 절이다
+    raw = json.loads((ROOT / path).read_text(encoding="utf-8"),
+                     object_pairs_hook=__import__("collections").OrderedDict)
+    seal_sections(raw)
+    (ROOT / path).write_text(
+        json.dumps(raw, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    return raw
 
 
 if __name__ == "__main__":
