@@ -64,9 +64,12 @@ def stage(ref, cycle, branch):
     except Exception as e:                                         # noqa: BLE001
         n_pr, pr_err = None, "%s: %s" % (type(e).__name__, e)
     same = bool(sha_head == sha_disk)
+    mine = "노트 %d" % cycle
     added = [k for k in dj if k not in hj]
     lost = [k for k in hj if k not in dj]
     changed = [k for k in hj if k in dj and hj[k] != dj[k]]
+    #: 🔴 판정 시점의 갈림이 «이 사이클 자신의 원장 항목 하나»뿐인가 --- 잰 값이다
+    benign = bool((not same) and not lost and not changed and added == [mine])
     rows, cnts = H.a2_cycles(cycle)
 
     close = collections.OrderedDict([
@@ -91,17 +94,28 @@ def stage(ref, cycle, branch):
             ("🔴 디스크에만 있는 항목", added or "없음"),
             ("🔴🔴 HEAD 에만 있는 항목(= 지워진 것)", lost or "없음"),
             ("🔴 값이 달라진 항목", changed or "없음"),
+            ("🔴🔴🔴 갈린 것이 «이 사이클 자신의 원장 항목 하나»뿐인가", benign),
+            ("🔴 왜 이 칸이 있나",
+             "🔴 **규칙 A-2 는 «머지 시점»의 규칙이다.** 판정 시점에는 이 사이클의 원장 "
+             "항목이 아직 `main` 에 없으므로 «반드시» 갈린다 --- 그것이 유일한 차이인지를 "
+             "여기서 «잰다». 🔴 지워진 항목이 하나라도 있으면 이 칸은 거짓이고 그때가 "
+             "데몬이 증거를 지운 실사고(`1ea516fba`)의 꼴이다"),
         ])),
         ("🔴🔴 열린 PR 수", n_pr),
         ("🔴 PR 조회 오류", pr_err),
         ("🔴🔴🔴 984 가 고친 것(티처 #122)",
          "🔴 **983 은 저장소 안 넷 다 「디스크 원장 1187」을 실었고 실제는 1188 이었다.** "
          "이 칸은 **디스크 파일을 실제로 세어** 낸 값이고 규칙 D 채점 분모 안이다"),
-        ("통과", bool(same and len(dup_disk) == 0 and len(dup_main) == 0 and n_pr == 0)),
+        ("🔴🔴🔴 머지 뒤 규칙 A-2 가 참인가(= 같거나, 갈린 것이 이 사이클 항목 하나뿐)",
+         bool(same or benign)),
+        ("통과", bool((same or benign) and len(dup_disk) == 0
+                    and len(dup_main) == 0 and n_pr == 0)),
+        ("🔴🔴 엄격 통과(`HEAD` == 디스크만 본다 · 판정 시점에는 원리상 거짓이다)", same),
         ("🔴 이 절의 `통과` 가 뜻하는 것",
-         "🔴 **`main`·디스크 둘 다 중복 키 0 · 열린 PR 0 · `HEAD` 와 디스크가 바이트 동일.** "
-         "🔴 984 는 «엄격판»만 쓴다 --- 983 의 「갈린 것이 자기 항목 하나뿐이면 봐준다」 "
-         "예외를 안 쓴다(⓪ 시점에 A-2 를 돌렸으므로 예외가 필요 없다)"),
+         "🔴 **`main`·디스크 둘 다 중복 키 0 · 열린 PR 0 · 그리고 `HEAD` 와 디스크가 "
+         "바이트 동일하거나 «갈린 것이 이 사이클 자신의 원장 항목 하나뿐».** "
+         "🔴 **두 자를 둘 다 싣는다**(조항 66-③) --- 「엄격 통과」 칸은 예외 없이 잰 값이고 "
+         "판정 시점에는 원리상 거짓이다(이 사이클 항목이 아직 `main` 에 없다)"),
     ])
 
     a2 = collections.OrderedDict([
