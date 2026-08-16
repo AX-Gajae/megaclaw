@@ -316,13 +316,28 @@ def literal_claim_census(rel, tree) -> dict:
     전수로 세고, 그중 **`통과` 계열이 아닌 자리**를 따로 낸다 --- 옛 census 의 사각지대다.
     🔴 **계수 키(`"🔴 분자/분모"` 같은 문자열 값)는 분모 밖이다** --- 값이 참/거짓일 때만 센다.
     """
+    #: 🔴 **조건 가지 안의 리터럴은 가르되 분모에서 빼지 않는다**(조항 60).
+    #: `if p.is_file(): out = {"🔴 파일이 있나": True}` 는 **가지가 자다** —
+    #: 무조건 자리와 **둘 다 센다**. 🔴 분모를 줄여서 붉은 수를 없애면 그게 부풀림이다.
+    parents = _parents(tree)
+
+    def _cond(node):
+        cur = node
+        while cur in parents:
+            cur = parents[cur]
+            if isinstance(cur, (ast.If, ast.While, ast.For, ast.Try,
+                                ast.ExceptHandler, ast.IfExp)):
+                return True
+        return False
+
     lit, lit_pass, allkeys = [], [], 0
-    def _take(key, node, lineno):
+
+    def _take(key, node, lineno, owner):
         if not isinstance(key, str):
             return
         if isinstance(node, ast.Constant) and isinstance(node.value, bool):
             row = "%s:%d %s = %s" % (rel, lineno, key, node.value)
-            lit.append((lineno, key, bool(node.value)))
+            lit.append((lineno, key, bool(node.value), _cond(owner)))
             if "통과" in key:
                 lit_pass.append(row)
     for node in ast.walk(tree):
@@ -330,22 +345,29 @@ def literal_claim_census(rel, tree) -> dict:
             for k, v in zip(node.keys, node.values):
                 if isinstance(k, ast.Constant) and isinstance(k.value, str):
                     allkeys += 1
-                    _take(k.value, v, getattr(v, "lineno", getattr(node, "lineno", 0)))
+                    _take(k.value, v, getattr(v, "lineno", getattr(node, "lineno", 0)),
+                          node)
         elif isinstance(node, ast.Assign):
             for t in node.targets:
                 if (isinstance(t, ast.Subscript) and isinstance(t.slice, ast.Constant)
                         and isinstance(t.slice.value, str)):
                     allkeys += 1
-                    _take(t.slice.value, node.value, node.value.lineno)
-    blind = [(ln, k, v) for ln, k, v in lit if "통과" not in k]
-    blind_true = [(ln, k, v) for ln, k, v in blind if v]
+                    _take(t.slice.value, node.value, node.value.lineno, node)
+    blind = [r for r in lit if "통과" not in r[1]]
+    blind_true = [r for r in blind if r[2]]
+    uncond = [r for r in blind_true if not r[3]]
+    cond = [r for r in blind_true if r[3]]
     return {
         "🔴 분모: 문자열 키를 가진 딕트 자리": allkeys,
         "🔴 분자: 값이 맨 리터럴 참/거짓인 자리": len(lit),
         "🔴🔴 그중 `통과` 계열이 아닌 자리(옛 census 의 사각지대)": len(blind),
         "🔴🔴🔴 그중 값이 리터럴 `True` 인 자리(= 근거 없는 주장 후보)": len(blind_true),
+        "🔴🔴🔴 그중 **조건 가지 밖**(무조건 참) 자리": len(uncond),
+        "🔴 그중 조건 가지 안(가지가 자다) 자리": len(cond),
         "🔴 그 자리 목록": ["%s:%d %s = True" % (rel, ln, k)
-                       for ln, k, _v in blind_true][:40],
+                       for ln, k, _v, _c in blind_true][:40],
+        "🔴 무조건 참 자리 목록": ["%s:%d %s = True" % (rel, ln, k)
+                          for ln, k, _v, _c in uncond][:40],
         "🔴 `통과` 계열의 리터럴 자리": lit_pass[:20],
         "🔴 이 자가 왜 생겼나": (
             "🔴 `ruler978.py:444·792·878` 의 「🔴 유보는 한 줄도 안 만졌다 = True」 셋을 "
@@ -1406,7 +1428,7 @@ def main():
 
     # ── §1′ 🔴🔴🔴 979 수리 3 — 리터럴 주장 census (`통과` 키 **밖**) ────────
     LCK = "🔴🔴🔴 979 — 리터럴 주장 census(키 이름을 안 본다)"
-    BL = "🔴🔴🔴 그중 값이 리터럴 `True` 인 자리(= 근거 없는 주장 후보)"
+    BL = "🔴🔴🔴 그중 **조건 가지 밖**(무조건 참) 자리"
     BLA = "🔴🔴 그중 `통과` 계열이 아닌 자리(옛 census 의 사각지대)"
     n_blind = sum(per_file[r][LCK][BL] for r in per_file if LCK in per_file[r])
     n_all = sum(per_file[r][LCK][BLA] for r in per_file if LCK in per_file[r])
