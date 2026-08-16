@@ -571,33 +571,55 @@ def stage_tfwd(ref):
         cells["u=%d" % u] = cell
 
     # ── §2-4 ⓒ : `v2.2` 를 시간 방향 `D4` 입력에 그대로 물린다 ────────
+    #: 🔴 **`pick981.stage_pick` 의 체제 셋을 «글자까지 같게» 다시 만든다** —
+    #: 갈리는지 물으려면 981 과 «같은 규칙»을 시간 방향 입력에 물려야 한다.
     d4 = "D4 학습 y 전량(둘 다)"
-    rows_B = collections.OrderedDict()
-    share_cf = {}
     tbl = R.table()["자별 가중"]
-    for nm in RULERS:
-        share_cf[nm] = tbl[nm]["🔴🔴 가장 큰 도메인의 몫"]
+    share_raw = collections.OrderedDict(
+        [(nm, tbl[nm]["🔴🔴 가장 큰 도메인의 몫"]) for nm in RULERS])
+    twin = {R9.R3: R9.R5, R9.R4: R9.R6}
+    share_true = collections.OrderedDict(
+        [(nm, share_raw[twin.get(nm, nm)]) for nm in RULERS])
+    passed, power = collections.OrderedDict(), collections.OrderedDict()
     for nm in RULERS:
         pw, ok = [], True
         for u in U_REG:
             g = cells["u=%d" % u]["🔴 D 팔"][d4]["🔴🔴 자별 판정"][nm]
             ok = ok and bool(g["🔴🔴 Δ < 0 (파괴 조건 ①)"] and g["🔴🔴 |Δ| ≥ 2·짝SE (조건 ②)"])
             pw.append(g["🔴🔴 |Δ|/짝SE"] or 0.0)
-        rows_B[nm] = {"통과": ok, "검정력": min(pw), "몫": share_cf[nm]}
-    #: 🔴 체제 B = 980 이 `docs/목표.md` 에 «글자로 선언한» 판(닫힌꼴 몫 · 뽑기판을 접는다)
-    picked = PK.pick(rows_B, BAND)
-    out["🔴🔴🔴 §2-4 ⓒ — 시간 방향 `D4` 에 `v2.2` 를 물린 결과(체제 B)"] = \
+        passed[nm], power[nm] = ok, min(pw)
+
+    def rows_of(names, share):
+        return collections.OrderedDict(
+            [(nm, {"통과": passed[nm], "검정력": power[nm], "몫": share[nm]})
+             for nm in names])
+
+    KA = "체제 A · 979 판 (여섯을 서로 다른 자로 본다 · 몫은 각자 것)"
+    KB = "체제 B · 980 선언판 (R_iv≡R_iv* · R_z≡R_z* 로 접는다 · 닫힌꼴 몫)"
+    KC = "체제 C · 잡음 제거판 (여섯을 다 두되 몫을 전부 참값으로)"
+    FOLD = (R9.R1, R9.R2, R9.R5, R9.R6)
+    regimes = collections.OrderedDict()
+    regimes[KA] = PK.pick(rows_of(RULERS, share_raw), BAND)
+    regimes[KB] = PK.pick(rows_of(FOLD, share_true), BAND)
+    regimes[KC] = PK.pick(rows_of(RULERS, share_true), BAND)
+    #: 🔴 981 이 개체 묶음 유보에서 얻은 답(같은 규칙 · 다른 유보)
+    PREV = collections.OrderedDict([(KA, "R_iv SE² 역가중"), (KB, "R_pool 묶음"),
+                                    (KC, "R_pool 묶음")])
+    diff_by = collections.OrderedDict(
+        [(k, bool(regimes[k]["🔴🔴🔴 고른 자"] != PREV[k])) for k in regimes])
+    out["🔴🔴🔴 §2-4 ⓒ — 시간 방향 `D4` 에 `v2.2` 를 물린 결과(체제 셋)"] = \
         collections.OrderedDict([
-            ("🔴 입력(자별 통과·검정력·몫)", collections.OrderedDict(
+            ("🔴 입력(자별 `v2.2` 통과·검정력)", collections.OrderedDict(
                 [(nm, collections.OrderedDict([
-                    ("통과", rows_B[nm]["통과"]),
-                    ("검정력", _r(rows_B[nm]["검정력"], 4)),
-                    ("몫", _r(rows_B[nm]["몫"]))])) for nm in RULERS])),
-            ("🔴 `pick()` 산출물", picked),
-            ("🔴🔴🔴 시간 방향이 고른 자", picked["🔴🔴🔴 고른 자"]),
-            ("🔴🔴 개체 묶음 판(981 체제 B)이 고른 자", "R_pool 묶음"),
-            ("🔴🔴🔴 ⓒ 선택이 갈리나",
-             bool(picked["🔴🔴🔴 고른 자"] != "R_pool 묶음")),
+                    ("통과", passed[nm]), ("검정력", _r(power[nm], 4)),
+                    ("몫(각자 것)", _r(share_raw[nm])),
+                    ("몫(참값·닫힌꼴)", _r(share_true[nm]))])) for nm in RULERS])),
+            ("🔴 체제 셋의 `pick()` 산출물", regimes),
+            ("🔴🔴🔴 시간 방향이 고른 자(등록 판정 = 체제 B)",
+             regimes[KB]["🔴🔴🔴 고른 자"]),
+            ("🔴🔴 개체 묶음 판(981)이 고른 자", PREV),
+            ("🔴 체제별 갈리나", diff_by),
+            ("🔴🔴🔴 ⓒ 선택이 갈리나", bool(any(diff_by.values()))),
         ])
 
     # ── 🔴🔴🔴 등록 판정 ────────────────────────────────────────────
@@ -623,7 +645,7 @@ def stage_tfwd(ref):
         gate_any |= dv["🔴🔴 ⓑ 관문이 자에 따라 갈리나"]
         if dv["🔴🔴 분기비 = 폭 / 짝SE 중앙값"] is not None:
             ratios.append(dv["🔴🔴 분기비 = 폭 / 짝SE 중앙값"])
-    pick_diff = out["🔴🔴🔴 §2-4 ⓒ — 시간 방향 `D4` 에 `v2.2` 를 물린 결과(체제 B)"][
+    pick_diff = out["🔴🔴🔴 §2-4 ⓒ — 시간 방향 `D4` 에 `v2.2` 를 물린 결과(체제 셋)"][
         "🔴🔴🔴 ⓒ 선택이 갈리나"]
     diverged = bool(sign_any or gate_any or pick_diff)
     out["🔴🔴🔴 §2-4 등록 판정 — 자가 시간 방향에서 갈리나"] = collections.OrderedDict([
