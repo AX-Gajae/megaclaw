@@ -62,6 +62,114 @@ KNUM_NOT = re.compile(r"둘(?=러|레|리|russ)|열(?=쇠|린|리|어|고|다|�
 KNUMPAT = re.compile(
     r"(?<![가-힣])(하나|둘|셋|넷|다섯|여섯|일곱|여덟|아홉|열|스물)")
 
+# ══════════════════════════════════════════════════════════════════════
+# 🔴🔴 **981 수리 R4 — 규칙 D 가 「한자어 자릿수 수사」를 원리상 못 봤다.**
+#
+# 980 논문의 **제목**이 「**천이백만** 배를 버리는 관」이고 초록이 「디스크의
+# **이천이백만** 행」인데, 그 두 양은 **어느 산출물에도 없다**(디스크는 38,866,835 행 ·
+# 「몇 행 중 1 행」은 22,729.1). 🔴 **규칙 D 는 소수 넷째 자리 이상의 «아라비아 숫자»만
+# 보고, `audit_korean` 은 하나~스물의 «고유어 수사»만 봤다.** 그 사이에
+# **자릿수 한자어 수사(만·억·조)** 가 통째로 비어 있었다.
+#
+# 🔴 오검을 줄이는 세 조건(전부 산출물에 적는다):
+#   ① 첫 덩이가 **두 글자 이상**이어야 한다(「이 조」·「만 이」 같은 산문 조각을 뺀다)
+#   ② **자릿수 글자(백·천·만·억·조)를 하나라도** 담아야 한다
+#   ③ 🔴 뒤에 **등록된 셈낱말**이 와야 한다(「천이백만 **배**」·「이만 이천칠백여 **행**」)
+# ══════════════════════════════════════════════════════════════════════
+KMAG_DIG = collections.OrderedDict([
+    ("영", 0), ("일", 1), ("이", 2), ("삼", 3), ("사", 4), ("오", 5),
+    ("육", 6), ("륙", 6), ("칠", 7), ("팔", 8), ("구", 9)])
+KMAG_UNIT = collections.OrderedDict([("십", 10), ("백", 100), ("천", 1000)])
+KMAG_BIG = collections.OrderedDict([("만", 10 ** 4), ("억", 10 ** 8), ("조", 10 ** 12)])
+KMAG_SET = "".join(list(KMAG_DIG) + list(KMAG_UNIT) + list(KMAG_BIG))
+#: 🔴 등록된 셈낱말 — 이 목록 밖에서는 안 센다(안 세는 자리를 숨기지 않는다)
+KMAG_CNT = ("배|행|개|건|명|원|번|쪽|자리|칸|줄|문서|삼중쌍|년|달|일|시간|회|편|"
+            "가지|도메인|사이클|벌|복제|씨앗|샤드|shard")
+KMAGPAT = re.compile(
+    r"(?<![가-힣])([%s]{2,}(?:\s[%s]+)*)(?:여|남짓)?\s*(?=(?:%s))"
+    % (KMAG_SET, KMAG_SET, KMAG_CNT))
+#: 🔴 수사가 아닌 자리 — **뺀 규칙과 뺀 수를 적는다**(조항 59)
+KMAG_NOT = re.compile(r"^(?:구조|조사|조작|조절|조건|조항|조금|조차|만일|만약|만족|"
+                      r"천천|만만|십중팔구)$")
+
+
+def kmag_value(tok):
+    """🔴 한자어 자릿수 수사를 정수로 읽는다. 「천이백만」 → 12000000."""
+    s = tok.replace(" ", "")
+    tot = sec = cur = 0
+    for ch in s:
+        if ch in KMAG_DIG:
+            cur = KMAG_DIG[ch]
+        elif ch in KMAG_UNIT:
+            sec += (cur if cur else 1) * KMAG_UNIT[ch]
+            cur = 0
+        elif ch in KMAG_BIG:
+            sec += cur
+            cur = 0
+            tot += (sec if sec else 1) * KMAG_BIG[ch]
+            sec = 0
+    return tot + sec + cur
+
+
+def audit_korean_magnitude(src, S, tol=0.005):
+    """🔴🔴 **981 수리 R4** — 본문의 한자어 자릿수 수사를 **치환표와 대조한다**.
+
+    `S` = 치환표(또는 산출물)에서 온 **허용된 수의 집합**(문자열).
+    수사 하나마다 `S` 안의 가장 가까운 수를 찾아 **상대오차**를 적는다.
+    🔴 상대오차가 `tol`(기본 0.5%) 안이면 「반올림한 인용」으로 통과, 밖이면 **어긋남**이다.
+    🔴 **분모가 0 이면 실패다** — 「안 세었다」와 「없다」는 둘이다(조항 59).
+    """
+    nums = []
+    for v in S:
+        try:
+            nums.append(float(str(v).replace(",", "")))
+        except (TypeError, ValueError):
+            continue
+    code = [(m.start(), m.end()) for m in re.finditer(r"`[^`\n]*`", src)]
+    hits, bad, exempt, notnum = [], [], 0, 0
+    for m in KMAGPAT.finditer(src):
+        tok = m.group(1)
+        if not any(c in tok for c in "백천만억조"):
+            continue
+        if KMAG_NOT.match(tok.replace(" ", "")):
+            notnum += 1
+            continue
+        if any(a <= m.start() and m.end() <= b for a, b in code):
+            exempt += 1
+            continue
+        val = kmag_value(tok)
+        near, rel = None, None
+        for x in nums:
+            if x == 0:
+                continue
+            r = abs(val - x) / abs(x)
+            if rel is None or r < rel:
+                near, rel = x, r
+        row = {"수사": tok, "값": val, "가장 가까운 치환표 값": near,
+               "상대오차": (None if rel is None else round(rel, 6)),
+               "맞나": bool(rel is not None and rel <= tol),
+               "맥락": re.sub(r"\s+", " ", src[max(0, m.start() - 25):m.end() + 25])}
+        hits.append(row)
+        if not row["맞나"]:
+            bad.append(row)
+    return {
+        "🔴 무엇": "🔴🔴 981 수리 R4 — 한자어 자릿수 수사(만·억·조)를 치환표와 대조한다",
+        "🔴 등록한 셈낱말": KMAG_CNT,
+        "🔴 뺀 규칙(수사가 아닌 자리)": KMAG_NOT.pattern,
+        "🔴 허용 상대오차(반올림 인용)": tol,
+        "🔴 대조한 치환표 수의 개수": len(nums),
+        "🔴 센 한자어 수사": len(hits),
+        "🔴 면제한 수사(인라인 코드 안)": exempt,
+        "🔴 수사가 아니라고 뺀 것": notnum,
+        "🔴🔴🔴 치환표에 없는 수사": len(bad),
+        "🔴 어긋난 자리": bad[:20],
+        "수사별": collections.Counter([h["수사"] for h in hits]),
+        "통과": bool(len(bad) == 0),
+        "🔴 이 절의 `통과` 가 뜻하는 것": (
+            "본문의 한자어 자릿수 수사가 **전부 치환표의 어떤 수의 반올림**이다. "
+            "🔴 980 의 「천이백만 배」는 이 검사에서 떨어진다"),
+    }
+
 #: 🔴🔴 **977 수리 4** — 규칙 C 는 도장에 **자료 지문**을 요구한다. 976 은 이 파일의
 #: 네 stage 에서 `stamp_block(..., data=…)` 를 안 채워 **산출물 8 중 5 의 자료 지문이 0**
 #: 이었다. 여기 한 자리에 두고 넷이 같이 쓴다.
