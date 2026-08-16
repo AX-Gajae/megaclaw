@@ -24,8 +24,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--branch", required=True)
     ap.add_argument("--msg", required=True)
+    ap.add_argument("--map", action="append", default=[],
+                    help="저장소경로=디스크밖원본 — 🔴 **작업 트리를 안 건드리고** 가지에만 "
+                         "얹는다(`data/lab/denominator.json` 용)")
     ap.add_argument("paths", nargs="+")
     a = ap.parse_args()
+    amap = dict(x.split("=", 1) for x in a.map)
     ref = "refs/heads/" + a.branch
     parent = g("rev-parse", ref).decode().strip()
     idx = tempfile.NamedTemporaryFile(suffix=".idx", delete=False).name
@@ -33,7 +37,7 @@ def main():
     env = dict(os.environ, GIT_INDEX_FILE=idx)
     g("read-tree", parent, env=env)
     for p in a.paths:
-        full = os.path.join(ROOT, p)
+        full = amap.get(p) or os.path.join(ROOT, p)
         if not os.path.isfile(full):
             g("update-index", "--force-remove", p, env=env)
             continue
