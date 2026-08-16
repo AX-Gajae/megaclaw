@@ -126,13 +126,27 @@ def stage_score(ref):
         if isinstance(v, float):
             for n in range(0, 7):
                 S.add(LG._norm("%.*f" % (n, v)))
+        #: 🔴 `"4 / 7"` 같은 **분자/분모 칸**은 한 칸이지만 본문에서는 두 수로 읽힌다.
+        #: 그 두 수도 **그 칸에서 온 것**이므로 같이 넣는다(칸 밖에서 온 수는 아니다).
+        for m in LG.NUMPAT.finditer(str(v)):
+            S.add(LG._norm(m.group()))
     body = "\n".join((ROOT / p).read_text(encoding="utf-8") for p in BODY)
     outside = []
     #: 🔴 sha256·40자 ref 는 수가 아니다 — **면제 규칙을 글자로 적고 면제 수를 낸다**(조항 59)
-    rules = LG.ALLOW_CTX + (
-        ("🔴 981 신설: sha256 · 40자 고정 ref", re.compile(r"\b[0-9a-f]{40,64}\b")),)
+    NEW = (
+        ("🔴 981 신설: sha256 · 40자 고정 ref", re.compile(r"\b[0-9a-f]{40,64}\b")),
+        ("🔴 981 신설: 사이클 번호 — 화살표 쌍 · 인라인 코드 · 「노트/체제」 딱지",
+         re.compile(r"9\d{2}\s*→\s*9\d{2}|`9\d{2}`|(?<![\d.,])9[7-8]\d(?![\d.,])")),
+        ("🔴 981 신설: 절 번호의 가지(`§1-2` 꼴)", re.compile(r"§\s*\d+-\d+|`§\d+-\d+`")),
+    )
+    rules = LG.ALLOW_CTX + NEW
     spans, why = LG.allow_spans(body, rules)
+    old_spans, old_why = LG.allow_spans(body, LG.ALLOW_CTX)
+    old_outside = 0
     for m in LG.NUMPAT.finditer(body):
+        if not any(x <= m.start() and m.end() <= y for x, y in old_spans) \
+                and LG._norm(m.group()) not in S:
+            old_outside += 1
         if any(x <= m.start() and m.end() <= y for x, y in spans):
             continue
         if LG._norm(m.group()) not in S:
@@ -142,6 +156,11 @@ def stage_score(ref):
         ("🔴 채점 범위", "판정문·카드 «본문에 나오는 모든 수». ρ·Δ 로 좁히지 않는다"),
         ("치환표 칸", len(tb.get("🔴🔴 치환표", {}) or {})),
         ("🔴 면제 규칙별 자리 수", dict(why)),
+        ("🔴🔴 구판 면제 규칙(976 판)으로 재면 표 밖 수", old_outside),
+        ("🔴 왜 둘을 다 싣나",
+         "🔴 981 이 면제 규칙 셋을 신설했다(sha256 · 사이클 번호 · 절 번호의 가지). "
+         "면제 규칙도 이 사이클이 자기 판정에 쓰는 «잣대»이므로 개정 잠금 조항 981 확장에 "
+         "걸린다 — **구판·신판 둘 다로 재서 둘 다 싣는다**"),
         ("표 밖 수", len(outside)), ("어긋난 자리", outside[:15]),
         ("통과", bool(not outside))])
 
