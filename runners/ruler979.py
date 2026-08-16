@@ -935,11 +935,11 @@ def stage_srcmix(ref):
         ("🔴 스피어만 (같은 짝)", _r(r_s, 4)),
         ("🔴 피어슨 r (hplt 전량 몫 대 유보 몫 · 978 이 잰 층)", _r(r_all, 4)),
         ("🔴🔴 유보에서 가장 큰 도메인", top_ho),
-        ("🔴🔴 그 도메인의 hplt 학습 몫", _r(sh[top_ho])),
-        ("🔴🔴 그 도메인의 유보 몫", _r(sb[top_ho])),
+        ("🔴🔴 유보 최대 도메인의 hplt 학습 몫", _r(sh[top_ho])),
+        ("🔴🔴 유보 최대 도메인의 유보 몫", _r(sb[top_ho])),
         ("🔴🔴 hplt 학습에서 가장 큰 도메인", top_tr),
-        ("🔴🔴 그 도메인의 유보 몫", _r(sb[top_tr])),
-        ("🔴🔴 그 도메인의 hplt 학습 몫", _r(sh[top_tr])),
+        ("🔴🔴 학습 최대 도메인의 유보 몫", _r(sb[top_tr])),
+        ("🔴🔴 학습 최대 도메인의 hplt 학습 몫", _r(sh[top_tr])),
         ("🔴🔴🔴 뜻", "🔴 **정본 자 무게의 절반 이상을 지는 도메인이 hplt 학습에서 "
                   "거의 안 나오고, hplt 학습을 지배하는 도메인이 유보에서 거의 안 나온다.** "
                   "「HPLT 가 왜 안 쓰이나」의 답은 SMD 가 아니라 여기일 수 있다"),
@@ -1322,10 +1322,10 @@ def stage_score978(ref):
         ("🔴🔴 사전등록이 이름 적은 stage 수", 4),
         ("🔴🔴 사전등록이 덧붙인 말", "모든 stage"),
         ("🔴🔴🔴 등록 문언대로의 분모(이름 넷 + stage 인 wiring·cond3)", list(FC4_978_TEXT)),
-        ("🔴 그 분모의 파일별 자 가짓수", rows_txt),
+        ("🔴 등록 문언 판 — 파일별 자 가짓수", rows_txt),
         ("🔴🔴🔴 등록 문언 판 분자/분모", "%d / %d" % (num_txt, len(FC4_978_TEXT))),
         ("🔴 978 이 실제로 쓴 분모(`FC4_REG` 다섯)", list(FC4_978_USED)),
-        ("🔴 그 분모의 파일별 자 가짓수", rows_used),
+        ("🔴 978 이 쓴 판 — 파일별 자 가짓수", rows_used),
         ("🔴 978 이 신고한 분자/분모", "%d / %d" % (num_used, len(FC4_978_USED))),
         ("🔴🔴🔴 분모를 언제 좁혔나",
          collections.OrderedDict([
@@ -1444,6 +1444,37 @@ def stage_score978(ref):
 # ══════════════════════════════════════════════════════════════════════
 # §4-S1 `wiring` — 🔴 배선 W (수리 2 · **변이체를 진짜로 만든다**)
 # ══════════════════════════════════════════════════════════════════════
+def dup_keys(path):
+    """🔴 **979 신설** — 파이썬 딕트 리터럴의 **중복 문자열 키**를 전수로 센다.
+
+    `ruler978.py:1028-1029` 의 `"그 행 수"` 두 번이 그 병이다 — 커밋본이
+    「가장 작은 도메인 아이돌 · 그 행 수 **1288**」로 읽힌다(21 이 사라졌다).
+    🔴 **파이썬은 조용히 뒤 값을 남기므로 산출물만 봐서는 못 잡는다.**
+    """
+    import ast as _ast                                          # noqa: PLC0415
+    tree = _ast.parse(Path(path).read_text(encoding="utf-8"))
+    hits = []
+    for node in _ast.walk(tree):
+        keys = None
+        if isinstance(node, _ast.Dict):
+            keys = [k.value for k in node.keys
+                    if isinstance(k, _ast.Constant) and isinstance(k.value, str)]
+        elif (isinstance(node, _ast.Call)
+              and getattr(node.func, "attr", "") == "OrderedDict"):
+            for a in node.args:
+                if isinstance(a, _ast.List):
+                    keys = [e.elts[0].value for e in a.elts
+                            if isinstance(e, _ast.Tuple) and e.elts
+                            and isinstance(e.elts[0], _ast.Constant)
+                            and isinstance(e.elts[0].value, str)]
+        if keys:
+            c = collections.Counter(keys)
+            for k, v in c.items():
+                if v > 1:
+                    hits.append("%s:%d %s ×%d" % (Path(path).name, node.lineno, k, v))
+    return hits
+
+
 class _MutRulers(Rulers6):
     """🔴 **진짜 변이체** — `R_eq 균등` 의 가중을 몰래 행 수로 갈아 끼운다."""
 
@@ -1677,6 +1708,20 @@ def stage_wiring(ref):
          "🔴 사전등록 본문에 다 있나": bool(ok12),
          "🔴 변이체(없는 이름 하나를 더한 분모)도 통과하나": bool(ok12_m),
          "🔴 분모 밖이라고 미리 적은 stage": list(FC4_OUT_979)})
+
+    # ── W13 🔴 딕트 중복 키 (🔴 979 자기 적발에서 나왔다) ────
+    mine_dup = dup_keys(ROOT / "runners/ruler979.py")
+    their_dup = dup_keys(ROOT / "runners/ruler978.py")
+    add("W13 이 사이클 러너에 **파이썬 딕트 중복 키가 0** 이다",
+        bool(len(mine_dup) == 0 and len(their_dup) > 0),
+        bool(len(their_dup) == 0),
+        "🔴 **노트 978 러너**에 같은 자를 건다 — 거기서 0 이 나오면 이 자가 중복 키를 "
+        "원리상 못 보는 것이다",
+        {"🔴 979 러너의 중복 키": mine_dup,
+         "🔴🔴 978 러너의 중복 키": their_dup,
+         "🔴 왜 이 자가 생겼나":
+         "🔴 **979 가 자기 산출물에서 먼저 걸렸다** — `srcmix` 의 「그 도메인의 hplt 학습 "
+         "몫」이 두 번이라 앞 값이 조용히 사라졌다. 자를 만들어 셋을 다 고쳤다"})
 
     n_ok = sum(1 for v in W.values() if v["통과"])
     n_const = sum(1 for v in W.values() if v["🔴🔴 구성상 참인 검사인가"])
