@@ -68,41 +68,49 @@
      "audit": {
       "넓은 창에서 바뀐 파일": [
        "runners/audit985.py",
+       "runners/certify985.py",
+       "runners/cycle985.py",
        "runners/note985_gen.py",
        "runners/power985.py",
        "runners/score985.py"
       ],
-      "좁은 창이 놓친 파일 수": 4,
+      "좁은 창이 놓친 파일 수": 6,
       "낡은 산출물": "없음"
      },
      "power": {
       "넓은 창에서 바뀐 파일": [
        "runners/audit985.py",
+       "runners/certify985.py",
+       "runners/cycle985.py",
        "runners/note985_gen.py",
        "runners/power985.py",
        "runners/score985.py"
       ],
-      "좁은 창이 놓친 파일 수": 4,
+      "좁은 창이 놓친 파일 수": 6,
       "낡은 산출물": "없음"
      },
      "house": {
       "넓은 창에서 바뀐 파일": [
        "runners/audit985.py",
+       "runners/certify985.py",
+       "runners/cycle985.py",
        "runners/note985_gen.py",
        "runners/power985.py",
        "runners/score985.py"
       ],
-      "좁은 창이 놓친 파일 수": 4,
+      "좁은 창이 놓친 파일 수": 6,
       "낡은 산출물": "없음"
      },
      "certify": {
       "넓은 창에서 바뀐 파일": [
        "runners/audit985.py",
+       "runners/certify985.py",
+       "runners/cycle985.py",
        "runners/note985_gen.py",
        "runners/power985.py",
        "runners/score985.py"
       ],
-      "좁은 창이 놓친 파일 수": 4,
+      "좁은 창이 놓친 파일 수": 6,
       "낡은 산출물": "없음"
      }
     },
@@ -137,8 +145,8 @@
    "8 🔴🔴 인증한 문서와 실린 문서가 다른가": {
     "🔴 다섯 칸": {
      "docs/판정_985.md": {
-      "🔴 인증한 글자 수(채점기가 본 것)": 10078,
-      "🔴 실린 글자 수(디스크 실측)": 10078,
+      "🔴 인증한 글자 수(채점기가 본 것)": 10085,
+      "🔴 실린 글자 수(디스크 실측)": 10085,
       "🔴 같은가": true
      },
      "docs/card_985.md": {
@@ -147,8 +155,8 @@
       "🔴 같은가": true
      },
      "docs/handoff_985.md": {
-      "🔴 인증한 글자 수(채점기가 본 것)": 2563,
-      "🔴 실린 글자 수(디스크 실측)": 2563,
+      "🔴 인증한 글자 수(채점기가 본 것)": 2570,
+      "🔴 실린 글자 수(디스크 실측)": 2570,
       "🔴 같은가": true
      },
      "치환표 칸 수": {
@@ -158,9 +166,9 @@
       "🔴 셋이 같은가": true
      },
      "표 sha256": {
-      "🔴 표가 스스로 적은 sha": "d5a74def2fd972ab2b3121fd7d35fb476a2a6bc715f9ad6c3e26ab331ca80dae",
-      "🔴 채점기가 인증한 sha": "d5a74def2fd972ab2b3121fd7d35fb476a2a6bc715f9ad6c3e26ab331ca80dae",
-      "🔴🔴 디스크의 표를 다시 해시한 값(= 검증자가 얻는 값)": "d5a74def2fd972ab2b3121fd7d35fb476a2a6bc715f9ad6c3e26ab331ca80dae",
+      "🔴 표가 스스로 적은 sha": "4b0052f09f469ea82bba76f28951ed17bf92a2a3185d6ee13164841a411ad72c",
+      "🔴 채점기가 인증한 sha": "4b0052f09f469ea82bba76f28951ed17bf92a2a3185d6ee13164841a411ad72c",
+      "🔴🔴 디스크의 표를 다시 해시한 값(= 검증자가 얻는 값)": "4b0052f09f469ea82bba76f28951ed17bf92a2a3185d6ee13164841a411ad72c",
       "🔴 셋이 같은가": true,
       "⚠ 자": "`json.dumps(T, ensure_ascii=False, sort_keys=True)` 를 sha256 --- `note98*_gen.table_sha` 와 «같은» 정규화"
      }
@@ -367,13 +375,13 @@
    "🔴 원장 `노트 985` 항목": {
     "표 밖": 0,
     "보기": "없음",
-    "글자 수": 5098
+    "글자 수": 5133
    }
   },
   "🔴🔴 표 밖 합": 0,
   "🔴 못 읽은 대상": "없음",
   "🔴 치환표 칸 수": 157,
-  "🔴 치환표 sha256": "6620fd3c54817b02e47328cedab106898bca56127c677cb81cdbf4bfc23ccdf0",
+  "🔴 치환표 sha256": "4b0052f09f469ea82bba76f28951ed17bf92a2a3185d6ee13164841a411ad72c",
   "통과": true
  },
  "§68 🔴 조항 68 모양 주장 감사": {
@@ -590,12 +598,14 @@
   "⚠ 좁은 창(984 판 · 이 러너의 t0~지금)에서 바뀐 파일": "없음",
   "🔴🔴🔴 넓은 창(985 판 · 사이클 시작~지금)에서 바뀐 파일": [
    "runners/audit985.py",
+   "runners/certify985.py",
+   "runners/cycle985.py",
    "runners/note985_gen.py",
    "runners/power985.py",
    "runners/score985.py"
   ],
   "🔴🔴🔴 측정 창 안에 러너를 고쳤나": true,
-  "🔴🔴 좁은 창이 놓친 파일 수(= 984 판이 못 본 것)": 4,
+  "🔴🔴 좁은 창이 놓친 파일 수(= 984 판이 못 본 것)": 6,
   "🔴🔴🔴 값을 낸 뒤 고치고 «안 다시 돌린» 산출물": {
    "🔴🔴 무엇": "🔴 **값을 낸 뒤에 그 값을 내는 러너를 고치고 «안 다시 돌린» 산출물** --- 조항 66-② 를 「창」이 아니라 «상태»로 잰다. 창은 넓혀도 「고친 뒤 다시 돌렸나」를 못 묻는데, 이 자는 그것을 직접 묻는다",
    "🔴 분모: 생산자 표에 든 산출물": 7,
@@ -613,8 +623,8 @@
        "같은가": true
       },
       "runners/cycle985.py": {
-       "낼 때 sha256": "72824c1a21a17674bb38aec2aca71911ffb200d8cf0e4a8c7c6b8e7544cdedf2",
-       "지금 sha256": "72824c1a21a17674bb38aec2aca71911ffb200d8cf0e4a8c7c6b8e7544cdedf2",
+       "낼 때 sha256": "d8a05a1d259865f390a9b110ef5b9ec6c47ebe8f60056f7d813b533b8cb36e61",
+       "지금 sha256": "d8a05a1d259865f390a9b110ef5b9ec6c47ebe8f60056f7d813b533b8cb36e61",
        "같은가": true
       },
       "runners/ledger.py": {
@@ -634,13 +644,13 @@
      ],
      "🔴 파일별": {
       "runners/certify985.py": {
-       "낼 때 sha256": "a51567a0782b429a73e8bda91bd43af6eb944840c803117981f6d9047fff72f6",
-       "지금 sha256": "a51567a0782b429a73e8bda91bd43af6eb944840c803117981f6d9047fff72f6",
+       "낼 때 sha256": "353cb62b270b3c0f3c2eac4cac7a78535ac09230437d9d4205e9e959f68a6a66",
+       "지금 sha256": "353cb62b270b3c0f3c2eac4cac7a78535ac09230437d9d4205e9e959f68a6a66",
        "같은가": true
       },
       "runners/cycle985.py": {
-       "낼 때 sha256": "72824c1a21a17674bb38aec2aca71911ffb200d8cf0e4a8c7c6b8e7544cdedf2",
-       "지금 sha256": "72824c1a21a17674bb38aec2aca71911ffb200d8cf0e4a8c7c6b8e7544cdedf2",
+       "낼 때 sha256": "d8a05a1d259865f390a9b110ef5b9ec6c47ebe8f60056f7d813b533b8cb36e61",
+       "지금 sha256": "d8a05a1d259865f390a9b110ef5b9ec6c47ebe8f60056f7d813b533b8cb36e61",
        "같은가": true
       },
       "runners/ledger.py": {
@@ -665,8 +675,8 @@
        "같은가": true
       },
       "runners/cycle985.py": {
-       "낼 때 sha256": "72824c1a21a17674bb38aec2aca71911ffb200d8cf0e4a8c7c6b8e7544cdedf2",
-       "지금 sha256": "72824c1a21a17674bb38aec2aca71911ffb200d8cf0e4a8c7c6b8e7544cdedf2",
+       "낼 때 sha256": "d8a05a1d259865f390a9b110ef5b9ec6c47ebe8f60056f7d813b533b8cb36e61",
+       "지금 sha256": "d8a05a1d259865f390a9b110ef5b9ec6c47ebe8f60056f7d813b533b8cb36e61",
        "같은가": true
       },
       "runners/ledger.py": {
@@ -691,8 +701,8 @@
        "같은가": true
       },
       "runners/cycle985.py": {
-       "낼 때 sha256": "72824c1a21a17674bb38aec2aca71911ffb200d8cf0e4a8c7c6b8e7544cdedf2",
-       "지금 sha256": "72824c1a21a17674bb38aec2aca71911ffb200d8cf0e4a8c7c6b8e7544cdedf2",
+       "낼 때 sha256": "d8a05a1d259865f390a9b110ef5b9ec6c47ebe8f60056f7d813b533b8cb36e61",
+       "지금 sha256": "d8a05a1d259865f390a9b110ef5b9ec6c47ebe8f60056f7d813b533b8cb36e61",
        "같은가": true
       },
       "runners/ledger.py": {
@@ -717,8 +727,8 @@
        "같은가": true
       },
       "runners/cycle985.py": {
-       "낼 때 sha256": "72824c1a21a17674bb38aec2aca71911ffb200d8cf0e4a8c7c6b8e7544cdedf2",
-       "지금 sha256": "72824c1a21a17674bb38aec2aca71911ffb200d8cf0e4a8c7c6b8e7544cdedf2",
+       "낼 때 sha256": "d8a05a1d259865f390a9b110ef5b9ec6c47ebe8f60056f7d813b533b8cb36e61",
+       "지금 sha256": "d8a05a1d259865f390a9b110ef5b9ec6c47ebe8f60056f7d813b533b8cb36e61",
        "같은가": true
       },
       "runners/ledger.py": {
@@ -738,13 +748,13 @@
      ],
      "🔴 파일별": {
       "runners/score985.py": {
-       "낼 때 sha256": "5e4b17b7e9fd6c043482755775342cf3663122db77ada55a08998e50dbb19259",
-       "지금 sha256": "5e4b17b7e9fd6c043482755775342cf3663122db77ada55a08998e50dbb19259",
+       "낼 때 sha256": "7057c3d37bb09f3dc918211e4e14afb4984da30d512b3457c7d77978703dbc7c",
+       "지금 sha256": "7057c3d37bb09f3dc918211e4e14afb4984da30d512b3457c7d77978703dbc7c",
        "같은가": true
       },
       "runners/cycle985.py": {
-       "낼 때 sha256": "72824c1a21a17674bb38aec2aca71911ffb200d8cf0e4a8c7c6b8e7544cdedf2",
-       "지금 sha256": "72824c1a21a17674bb38aec2aca71911ffb200d8cf0e4a8c7c6b8e7544cdedf2",
+       "낼 때 sha256": "d8a05a1d259865f390a9b110ef5b9ec6c47ebe8f60056f7d813b533b8cb36e61",
+       "지금 sha256": "d8a05a1d259865f390a9b110ef5b9ec6c47ebe8f60056f7d813b533b8cb36e61",
        "같은가": true
       },
       "runners/ledger.py": {
@@ -764,13 +774,13 @@
      ],
      "🔴 파일별": {
       "runners/note985_gen.py": {
-       "낼 때 sha256": "300d95bf3f61f4c8caed9f7884ea005f1c22ce5a6aff703b9ae9a28525f4b538",
-       "지금 sha256": "300d95bf3f61f4c8caed9f7884ea005f1c22ce5a6aff703b9ae9a28525f4b538",
+       "낼 때 sha256": "cdcc6b3766d8ac284fbee02dd28478206cb8d9ea9ca306d26f8b2a974934f408",
+       "지금 sha256": "cdcc6b3766d8ac284fbee02dd28478206cb8d9ea9ca306d26f8b2a974934f408",
        "같은가": true
       },
       "runners/cycle985.py": {
-       "낼 때 sha256": "72824c1a21a17674bb38aec2aca71911ffb200d8cf0e4a8c7c6b8e7544cdedf2",
-       "지금 sha256": "72824c1a21a17674bb38aec2aca71911ffb200d8cf0e4a8c7c6b8e7544cdedf2",
+       "낼 때 sha256": "d8a05a1d259865f390a9b110ef5b9ec6c47ebe8f60056f7d813b533b8cb36e61",
+       "지금 sha256": "d8a05a1d259865f390a9b110ef5b9ec6c47ebe8f60056f7d813b533b8cb36e61",
        "같은가": true
       },
       "runners/ledger.py": {
@@ -787,9 +797,9 @@
    "🔴 못 읽은 것(= 「없다」가 아니다)": "없음",
    "🔴🔴🔴 낡은 것이 있나": false
   },
-  "🔴 시작 요약(좁은 창)": "f8bece57d6e79e343973a1eb064f75043655899efb47a774e7c52336d5b036b8",
+  "🔴 시작 요약(좁은 창)": "24a1d1f46b9856755beb1921afd204a0a59bd97a1ac7a5e3420e468ef603231c",
   "🔴 시작 요약(넓은 창)": "0811706baad3d4d09f95a16c7f5e6b60f27e598b74261126d7655a72622bbc5d",
-  "🔴 끝 요약": "f8bece57d6e79e343973a1eb064f75043655899efb47a774e7c52336d5b036b8",
+  "🔴 끝 요약": "24a1d1f46b9856755beb1921afd204a0a59bd97a1ac7a5e3420e468ef603231c",
   "통과": true,
   "🔴 이 절의 `통과`": "🔴🔴 **985 R5 --- `통과` 는 「창 안에 아무것도 안 고쳤나」가 아니라 「고친 러너를 «다시 돌렸나»」다.** 사이클 창은 몇 시간이라 러너 수정은 정상이고, 위반은 **고치고 안 다시 돌린 것**이다. 조건 셋: ① 사이클 시작 도장을 읽었다(「모른다」가 아니다) · ② 낡은 산출물 0 · ③ 분모가 `RAN_ALL` 을 전부 덮었다"
  },
@@ -803,10 +813,10 @@
   "runners/fiveprime_984_cert.json": "cec688509f193b2a783d5166d89233e35ea33b1b2c6a2d3a3c149620a13722d3"
  },
  "🔴 도장": {
-  "언제(시작)": "2026-08-16T23:53:11Z",
-  "언제(끝)": "2026-08-16T23:53:12Z",
-  "시작 code_stamp 요약": "f8bece57d6e79e343973a1eb064f75043655899efb47a774e7c52336d5b036b8",
-  "끝 code_stamp 요약": "f8bece57d6e79e343973a1eb064f75043655899efb47a774e7c52336d5b036b8",
+  "언제(시작)": "2026-08-17T00:03:38Z",
+  "언제(끝)": "2026-08-17T00:03:39Z",
+  "시작 code_stamp 요약": "24a1d1f46b9856755beb1921afd204a0a59bd97a1ac7a5e3420e468ef603231c",
+  "끝 code_stamp 요약": "24a1d1f46b9856755beb1921afd204a0a59bd97a1ac7a5e3420e468ef603231c",
   "🔴 시작=끝": true,
   "분모: 도장이 덮는 파일": 94,
   "🔴 자료 지문": {
@@ -815,13 +825,13 @@
    "hplt_ko": "67de3062bad60e122c446fccb0b96d2c3a36c0ee2deafa40324a22dcad6c09a2"
   },
   "분모: 연 자료 파일": 3,
-  "🔴 F1 기준 ref(준 대로)": "623c7748f2e41b451e7336893a62adac816157de",
+  "🔴 F1 기준 ref(준 대로)": "bcdaeee1e85423dc6ae86afaa684c246b1e61660",
   "🔴 40자 고정 sha 인가": true,
   "🔴 기준 ref 가 0000…0000 인가": false,
   "러너별": {
    "runners/cycle985.py": {
-    "디스크 sha256": "72824c1a21a17674bb38aec2aca71911ffb200d8cf0e4a8c7c6b8e7544cdedf2",
-    "커밋 blob sha256": "72824c1a21a17674bb38aec2aca71911ffb200d8cf0e4a8c7c6b8e7544cdedf2",
+    "디스크 sha256": "d8a05a1d259865f390a9b110ef5b9ec6c47ebe8f60056f7d813b533b8cb36e61",
+    "커밋 blob sha256": "d8a05a1d259865f390a9b110ef5b9ec6c47ebe8f60056f7d813b533b8cb36e61",
     "일치": true
    },
    "runners/house985.py": {
@@ -840,18 +850,18 @@
     "일치": true
    },
    "runners/score985.py": {
-    "디스크 sha256": "5e4b17b7e9fd6c043482755775342cf3663122db77ada55a08998e50dbb19259",
-    "커밋 blob sha256": "5e4b17b7e9fd6c043482755775342cf3663122db77ada55a08998e50dbb19259",
+    "디스크 sha256": "7057c3d37bb09f3dc918211e4e14afb4984da30d512b3457c7d77978703dbc7c",
+    "커밋 blob sha256": "7057c3d37bb09f3dc918211e4e14afb4984da30d512b3457c7d77978703dbc7c",
     "일치": true
    },
    "runners/note985_gen.py": {
-    "디스크 sha256": "300d95bf3f61f4c8caed9f7884ea005f1c22ce5a6aff703b9ae9a28525f4b538",
-    "커밋 blob sha256": "300d95bf3f61f4c8caed9f7884ea005f1c22ce5a6aff703b9ae9a28525f4b538",
+    "디스크 sha256": "cdcc6b3766d8ac284fbee02dd28478206cb8d9ea9ca306d26f8b2a974934f408",
+    "커밋 blob sha256": "cdcc6b3766d8ac284fbee02dd28478206cb8d9ea9ca306d26f8b2a974934f408",
     "일치": true
    },
    "runners/certify985.py": {
-    "디스크 sha256": "a51567a0782b429a73e8bda91bd43af6eb944840c803117981f6d9047fff72f6",
-    "커밋 blob sha256": "a51567a0782b429a73e8bda91bd43af6eb944840c803117981f6d9047fff72f6",
+    "디스크 sha256": "353cb62b270b3c0f3c2eac4cac7a78535ac09230437d9d4205e9e959f68a6a66",
+    "커밋 blob sha256": "353cb62b270b3c0f3c2eac4cac7a78535ac09230437d9d4205e9e959f68a6a66",
     "일치": true
    },
    "runners/prose985.py": {
@@ -965,6 +975,9 @@
   ],
   "🔴 제외 목록(인자로 받은 것)": [
    "🔴🔴 치환표"
-  ]
+  ],
+  "🔴🔴 봉인 뒤에도 `통과` 가 없는 절(= `⑤′` 절 3 이 「모른다」로 셀 자리)": "없음",
+  "통과": true,
+  "🔴 이 절의 `통과`": "🔴 **봉인 뒤에 `통과` 키가 없는 최상위 절이 0 인가** --- 봉인 제외 키와 도장(`sha256`·`시각`)은 절이 아니라 세지 않는다. 🔴 이 자는 떨어질 수 있다"
  }
 }
