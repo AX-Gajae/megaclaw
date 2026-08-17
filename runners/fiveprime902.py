@@ -1217,8 +1217,14 @@ def stamp_audit(tree="HEAD", exempt=None) -> dict:
     evid = sorted(p for p in scan if "_badstamp" in p)
     # 🔴🔴🔴 **991 `R1`** --- `--exempt-file` 로 «등기된» 사유가 있는 도장은 분모 «밖»이다.
     #    🔴 면제는 숨기는 것이 아니라 **세는 것**이다(조항 59) --- 목록·수·사유를 나란히 낸다.
+    # 🔴🔴🔴 **992 `R5`** --- 🔴 **사유 «꼬리표»를 검사한다.** 991 판은 `p in exempt` 뿐이라
+    #    **절 1 이 `out*.json` 하나를 `[자:모듈]` 로 면제하는 날 절 4 의 도장이 «조용히»
+    #    면제된다**(조항 66 위반). 이제 절 4 는 **`[자:동결산출물]` 꼬리표가 붙은 사유만** 받는다.
     exempt = dict(exempt or {})
-    reg = sorted(p for p in scan if p in exempt and p not in evid)
+    S4_TAG = "[자:동결산출물]"
+    cand = sorted(p for p in scan if p in exempt and p not in evid)
+    reg = [p for p in cand if S4_TAG in str(exempt.get(p) or "")]
+    reg_rejected = [p for p in cand if p not in reg]
     evid = sorted(set(evid) | set(reg))
     verd, f5fail = {}, []
     for rel in scan:
@@ -1243,6 +1249,28 @@ def stamp_audit(tree="HEAD", exempt=None) -> dict:
         verd[rel] = v
         if not v["🔴🔴 판정 통과"]:
             f5fail.append(rel)
+    # 🔴🔴🔴 **992 `R5`** --- **「면제 없는 판」**. 등기 사유로 «뺀» 것을 «도로 넣고» 다시 센다.
+    #    🔴 991 의 「엄한 판 첫 통과」는 «면제로 산 것»이었다 --- 면제한 셋이 988·989·990 에서
+    #    신판을 떨어뜨린 «바로 그 셋»이다. 🔴 면제를 만든 사이클은 «면제 없는 판»을 나란히 낸다.
+    verd_ne, f5fail_ne = {}, list(f5fail)
+    for rel in reg:
+        st, txt = tree_blob(rel, tree, known)
+        try:
+            d = json.loads(txt.decode("utf-8", "surrogateescape"))
+        except Exception:                                         # noqa: BLE001
+            continue
+        s = _stamp_of(d)
+        if s is None:
+            continue
+        ok = bool(s.get("🔴 F5 통과") is True
+                  and s.get("🔴 40자 고정 sha 인가") is True
+                  and s.get("🔴 기준 ref 가 0000…0000 인가") is False)
+        verd_ne[rel] = {"🔴 F5 통과": s.get("🔴 F5 통과"),
+                        "🔴 40자 고정 sha 인가": s.get("🔴 40자 고정 sha 인가"),
+                        "🔴 기준 ref 가 0000…0000 인가": s.get("🔴 기준 ref 가 0000…0000 인가"),
+                        "🔴🔴 판정 통과": ok}
+        if not ok:
+            f5fail_ne.append(rel)
     # 🔴 **초 단위 도장에서 「시작 == 끝」은 두 가지다**: ① 901 의 그 병(긴 실행인데 끝에서
     #    둘 다 찍었다) ② 진짜로 1초 안에 끝난 실행. 둘을 갈라 센다 --- 안 가르면 이 절이
     #    영구 False 게이트가 되고, 그러면 아무도 안 본다.
@@ -1279,6 +1307,24 @@ def stamp_audit(tree="HEAD", exempt=None) -> dict:
         "🔴🔴🔴 991 R1 — `--exempt-file` 로 «등기된» 사유로 뺀 것": reg or "없음",
         "🔴🔴 그 수": len(reg),
         "🔴🔴 그 사유": {k: exempt[k] for k in reg} or "없음",
+        # 🔴🔴🔴 **992 R5** --- 사유 꼬리표 검사 · 면제 없는 판
+        "🔴🔴🔴 992 R5 — 절 4 가 받는 사유 꼬리표": S4_TAG,
+        "🔴🔴🔴 992 R5 — 사유 꼬리표가 «절 4 용»이 아니라 «안» 뺀 수": len(reg_rejected),
+        "🔴🔴 그 목록(면제표에 있지만 꼬리표가 달라 «안» 뺐다)": reg_rejected[:20] or "없음",
+        "🔴🔴🔴 992 R5 — «면제 없는» 판의 도장 판정이 실패인 산출물": sorted(f5fail_ne) or "없음",
+        "🔴🔴🔴 992 R5 — «면제 없는» 판의 실패 수": len(f5fail_ne),
+        "🔴 «면제 없는» 판의 도장 판정별(되넣은 것만)": verd_ne or "없음",
+        "🔴🔴🔴 992 R5 — «면제 없는» 신판 절 4 통과":
+            (not same) and (not bad) and (not f5fail_ne),
+        "🔴🔴🔴 992 R5 — 면제가 «판정을 바꾸나»":
+            bool(bool(not f5fail) != bool(not f5fail_ne)),
+        "🔴 왜 이 칸이 생겼나(992 R5)": (
+            "🔴 **991 의 「엄한 판 첫 통과」는 «면제로 산 것»이었다** --- 면제한 셋"
+            "(`out973_daemonguard`·`ledger`·`rulerfix`)이 988·989·990 에서 신판을 떨어뜨린 "
+            "«바로 그 셋»이고 빼면 991 의 신판도 실패다. ✅ 면제는 «측정 전에» 등기됐으니 "
+            "「조용한 좁힘」이 아니다 --- **「엄한 짝을 안 낸 것」**이다. "
+            "🔴 그리고 991 판은 `p in exempt` 뿐이라 **절 1 의 `[자:모듈]` 면제가 절 4 의 도장을 "
+            "«조용히» 면제할 수 있었다**(조항 66)"),
         "🔴 `_badstamp` 로 뺀 것": sorted(p for p in evid if p not in reg) or "없음",
         "🔴🔴 도장 판정을 읽은 산출물 수(분모)": len(verd),
         "🔴🔴🔴 도장 판정이 실패인 산출물": f5fail or "없음",
@@ -1296,12 +1342,16 @@ def stamp_audit(tree="HEAD", exempt=None) -> dict:
         #    조인다/푼다와 무관하게 «둘 다» 채점하고, `통과` 로 게재하는 값은 «더 엄한 쪽»이다.」
         #    🔴🔴 **981 판은 「982 부터 문다」고 못 박았는데 990 까지 «여덟 사이클째» 안 물었다.**
         #    🔴 그래서 `통과 = 구판 and 신판` 이다. 두 값은 위 두 칸에 «그대로» 남는다.
-        "통과": ((not same) and (not bad)) and (
-            (not same) and (not bad) and (not f5fail)),
+        # 🔴🔴🔴 **992 `R5`** --- `통과 = 구판 and 신판 and 면제없는신판`.
+        "통과": (((not same) and (not bad))
+               and ((not same) and (not bad) and (not f5fail))
+               and ((not same) and (not bad) and (not f5fail_ne))),
         "🔴🔴🔴 991 R1 — `조항 3-나` 집행": {
             "옛 게재값(구판만)": (not same) and (not bad),
-            "새 게재값(구판 and 신판)": ((not same) and (not bad)
+            "991 게재값(구판 and 신판)": ((not same) and (not bad)
                                    and (not f5fail)),
+            "🔴🔴🔴 992 게재값(구판 and 신판 and 면제없는신판)":
+                ((not same) and (not bad) and (not f5fail) and (not f5fail_ne)),
             "🔴 더 엄한 쪽을 게재한다": True,
             "🔴 무엇이 엄한가": "🔴 «통과를 더 적게 내는 판» --- 여기서는 신판(도장 «판정»을 읽는다)",
             "🔴 몇 사이클째 안 물었나": "🔴 981 판이 「982 부터 문다」고 못 박았고 990 까지 여덟",
@@ -2235,6 +2285,15 @@ def main(argv=None):
             "`통과` 키의 «유무»가 분모를 못 바꾼다"),
     }
     res["🔴 실패한 절"] = fail or "없음"
+    #: 🔴🔴🔴 **992 `R5`** --- **표기를 한 방향으로 통일한다.** 991 은 같은 보고서에
+    #: 「⑤′ 12/16」(통과 기준)과 「988 5/16 · 989 6/16 · 990 5/16」(실패 기준)을 나란히 썼다.
+    #: 🔴 **두 칸을 «둘 다» 만들고, 보고는 「실패 n / 분모 m」으로 한다.**
+    res["🔴🔴🔴 실패한 절 수"] = len(fail)
+    res["🔴🔴🔴 통과한 절 수"] = len(SECTION_ROSTER) - len(fail)
+    res["🔴🔴🔴 게재 꼴(992 R5)"] = (
+        "🔴 **「실패 %d / 분모 %d」** --- 「통과 %d」과 «같은 수의 다른 방향»이다. "
+        "🔴 991 은 한 보고서에 두 방향을 섞어 썼다(「⑤′ 12/16」과 「990 5/16」)"
+        % (len(fail), len(SECTION_ROSTER), len(SECTION_ROSTER) - len(fail)))
     res["통과"] = (not fail)
     res.update(stamp_close(st, t0))
 
