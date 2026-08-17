@@ -304,7 +304,7 @@ def self_perturb():
     txt = _read(doc)
     if txt is None:
         return {"🔴": "🔴 판정문이 아직 없다 --- 「떨어졌다」가 아니라 「모른다」다",
-                "통과": False}
+                "통과": bool(txt)}
     cert = (per.get(doc) or {}).get("글자 수")
     live = len(txt)
     live_plus = len(txt + "​")

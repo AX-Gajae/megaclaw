@@ -75,6 +75,9 @@ PKEY = "🔴 전수 순열 p(잔차 순열)"
 RKEY = "🔴 부분상관(잔차 피어슨)"
 FIRE_YES, FIRE_NO, UNUSABLE = 1, 0, -1
 
+#: 🔴 이 사이클이 «새로» 학습한 자료 --- 없다(격자·복제는 983 산출물을 다시 읽는다)
+NEW_DATA = ()
+
 
 def _r(x, n=6):
     return None if x is None else round(float(x), n)
@@ -532,13 +535,16 @@ def stage(ref):
     out["🔴 축"] = "C1 상태→예측(몸통) · 곁 C3"
     out["🔴 출처"] = ["runners/out983_grid.json", "runners/out983_reps.json",
                    "runners/out984_grid.json"]
-    out["🔴 새 자료 학습"] = 0
+    out["🔴 새 자료 학습"] = len(NEW_DATA)
     out["🔴 격자·복제(986 과 «같다»)"] = {
         "격자 칸 수": len(NB_GRID), "N_B": NB_GRID,
         "복제 수": base["u=0"]["복제 수"],
         "δ 격자 단계": len(DELTAS),
+        "🔴 부트스트랩 복제 수 B": B,
+        "🔴 씨앗": SEED,
+        "🔴 δ 격자 최대": DELTAS[-1],
         "🔴 987 이 바꾼 것": "**격자를 안 바꿨다** --- 바꾼 것은 «발화 규칙»과 «판정 규칙»뿐이다",
-        "통과": True,
+        "통과": bool(len(NB_GRID) and base["u=0"]["복제 수"] and len(DELTAS)),
         "🔴 이 절의 `통과`": "🔴 격자·복제를 986 과 같게 «썼는가»(새로 안 뽑았다)",
     }
     out["§1 🔴🔴🔴 천장은 항등식이다 — `P(¬㉰ 선다)`"] = ident
