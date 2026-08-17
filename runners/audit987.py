@@ -333,6 +333,8 @@ def sec3_fixed_roster():
     _r6, f986 = CY.fixed_ref_json(REF_986, "runners/fiveprime_986.json")
     t985, p985 = _sec3_targets(f985)
     t986, p986 = _sec3_targets(f986)
+    fail986 = (f986 or {}).get("🔴 실패한 절")
+    fail985 = (f985 or {}).get("🔴 실패한 절")
     dae = collections.OrderedDict()
     for rel in DAEMON_OUT:
         ok, n = _pass_keys(rel)
@@ -352,6 +354,9 @@ def sec3_fixed_roster():
         ("🔴 986 대상", t986 or "없음"),
         ("🔴🔴 985 에 있고 986 에 «없는» 대상", sorted(set(t985) - set(t986)) or "없음"),
         ("🔴 985 절 3 통과 / 986 절 3 통과", [p985, p986]),
+        ("🔴🔴 985 `⑤′` 실패 절 수(고정 ref)", len(fail985) if isinstance(fail985, list) else None),
+        ("🔴🔴 986 `⑤′` 실패 절 수(고정 ref)", len(fail986) if isinstance(fail986, list) else None),
+        ("🔴 986 `⑤′` 실패 절(고정 ref)", fail986 or "못 읽었다"),
         ("🔴🔴🔴 그래서 986 의 §3 초록은 «조용한 좁힘»의 산물이다",
          "🔴 **분모·명부는 985 와 완전히 같고 열린 것은 §3 하나인데, 그 §3 은 "
          "「대상 파일이 %d → %d 로 줄어」 초록이 됐다.** 데몬 산출물이 그 순간 "
