@@ -1,0 +1,1196 @@
+{
+ "무엇": "986 §1·§4 — 🔴🔴🔴 **985 의 세 오기를 다시 재고 손 전사 자의 분모를 넓힌다**",
+ "🔴 축": "자기 자(채점 ↔ 문서 고리)",
+ "§A 🔴🔴🔴 985 의 세 오기": {
+  "🔴 무엇": "🔴🔴🔴 **985 의 세 오기를 «잰다»** --- 되돌리지 않고 정정으로 얹는다",
+  "① 반증조건": {
+   "🔴🔴🔴 정본(`out985_score.json` §6)": "14 / 14",
+   "🔴🔴 정본의 「반증된 조건」": "없음",
+   "🔴 985 문서가 실은 값": "13 / 14",
+   "🔴 문서별": {
+    "docs/판정_985.md": {
+     "「13 / 14」가 있나": true,
+     "「14 / 14」가 있나": true
+    },
+    "docs/card_985.md": {
+     "「13 / 14」가 있나": true,
+     "「14 / 14」가 있나": true
+    },
+    "docs/handoff_985.md": {
+     "「13 / 14」가 있나": true,
+     "「14 / 14」가 있나": true
+    }
+   },
+   "🔴🔴 「13 / 14」를 실은 문서 수": 3,
+   "🔴🔴🔴 어긋나나": true,
+   "🔴 기전": "🔴 **`note985_gen` 이 `09:40:04` 에 표·문서를 찍고 `score985` 가 `09:40:06` 에 다시 돌았는데 아무도 문서를 다시 안 찍었다.** 🔴 **986 의 `cycle986.stale_docs` 가 정확히 이것을 잡는다**"
+  },
+  "② 「끊은 자리」": {
+   "🔴 통과로 «실제로» 바뀐 수": 2,
+   "🔴 분모에서 «뺀» 수": 1,
+   "🔴 다시 재니 «거짓»인 수": 1,
+   "🔴🔴🔴 셋의 실제 합": 4,
+   "🔴🔴 `out985_audit.json` 이 실은 문자열": "🔴 **통과 2 + 분모 제거 1 + 거짓 1 = 3**",
+   "🔴🔴 그 문자열이 못 박은 수": 3,
+   "🔴🔴🔴 어긋나나": true,
+   "🔴 PR #243 본문이 실은 통과 수": 1,
+   "🔴🔴 정본 통과 수": 2
+  },
+  "③ `⑤′` 절 1 소비자": {
+   "🔴🔴🔴 정본 소비자 수(`fiveprime_985_cert.json` 에서 읽었다)": 415,
+   "🔴 그중 .py": 139,
+   "🔴🔴🔴 원장을 뺀 판": 414,
+   "🔴 원장을 뺀 판의 .py": 139,
+   "🔴 PR #243 본문이 실은 값": "447 → 350",
+   "🔴 PR #243 본문이 실은 값(.py)": ".py 147 → 103",
+   "🔴 그 값의 정체": "🔴 **사전등록 §4-6 의 「측정 «전»」 탐색값이다** --- 985 의 어디에도 왜 달라졌는지가 없다(티처 #124 C2)",
+   "🔴🔴🔴 어긋나나": true
+  },
+  "통과": true,
+  "🔴 이 절의 `통과` 가 뜻하는 것": "🔴 **세 오기의 «정본 값»을 셋 다 산출물에서 읽었는가.** 하나라도 못 읽으면 「0 이다」가 아니라 「모른다」라 불통과다(조항 59)"
+ },
+ "§B 🔴🔴 PR #243 본문 대 985 문서": {
+  "🔴 무엇": "🔴🔴 **PR #243 본문이 문서와 다른가**(티처 #124 C2)",
+  "🔴 PR 본문 글자 수": 3653,
+  "🔴 985 문서 셋 글자 수 합": 16459,
+  "🔴 자리별": {
+   "반증조건 분자/분모": {
+    "PR 본문에 `반증조건 14 / 14` 가 있나": true,
+    "985 문서에 `13 / 14` 가 있나": true,
+    "🔴 어긋나나": true
+   },
+   "「끊은 자리」 통과 수": {
+    "PR 본문에 `통과 1 + 분모 제거 1` 가 있나": true,
+    "985 문서에 `2 / 1 / 1` 가 있나": true,
+    "🔴 어긋나나": true
+   },
+   "소비자 분모": {
+    "PR 본문에 `447 → 350` 가 있나": true,
+    "985 문서에 `446` 가 있나": true,
+    "🔴 어긋나나": true
+   },
+   "소비자 분모 · `.py`": {
+    "PR 본문에 `.py 147 → 103` 가 있나": true,
+    "985 문서에 `349` 가 있나": true,
+    "🔴 어긋나나": true
+   }
+  },
+  "🔴🔴🔴 어긋난 자리 수": 4,
+  "🔴🔴 어긋난 자리": [
+   "반증조건 분자/분모",
+   "「끊은 자리」 통과 수",
+   "소비자 분모",
+   "소비자 분모 · `.py`"
+  ],
+  "🔴🔴🔴 그래서 986 이 하는 것": "🔴 **PR 본문을 규칙 D 분모에 넣고 «치환표에서 짓는다»**(사전등록 §2-2). 985 는 다섯 자리를 완벽히 고쳤는데 **어떤 자도 안 덮는 여섯째 자리**를 남겼다",
+  "통과": true,
+  "🔴 이 절의 `통과` 가 뜻하는 것": "🔴 **PR 본문을 읽고 «등록한 네 자리를 전부» 쟀는가** 하나다 --- 어긋난 자리가 몇이든 무관하다(판정은 위 「어긋난 자리 수」가 진다)"
+ },
+ "§C 🔴🔴🔴 R3 손 전사 자의 분모": {
+  "🔴 무엇": "🔴🔴🔴 **`[수리] R3` --- 손 전사(AST) 자의 분모를 「이 사이클 러너 전량」으로**",
+  "🔴 왜": "🔴 **`out985_audit.json` §B 의 `「통과 2 + 분모 제거 1 + 거짓 1 = 3」` 이 하드코딩 리터럴이고 실제 합은 4 다**(`audit985.py:170` 의 `= 3` 이 문자열). 🔴 **985 자신이 983 R2·반증조건 13 으로 잡으려던 형태인데 AST 자가 「치환표 생성기만」 훑어 감사 러너를 원리상 못 봤다**",
+  "🔴 신판 자": "**서식 자리표가 있는 문자열 안의 «산술 자리» 맨 수**(`= 3` · `+ 1` · `/ 17`). 독스트링은 뺀다",
+  "⚠ 구판 자": "**`T[...] = <수>` 대입 하나**(985 R2) --- 치환표 생성기에만 걸린다",
+  "🔴 신판 분모(이 사이클 러너 전량)": 9,
+  "⚠ 구판 분모(치환표 생성기 하나)": 1,
+  "🔴 신판 --- 986 러너별": {
+   "runners/cycle986.py": {
+    "자리 수": 0,
+    "자리": "없음"
+   },
+   "runners/house986.py": {
+    "자리 수": 0,
+    "자리": "없음"
+   },
+   "runners/audit986.py": {
+    "자리 수": 0,
+    "자리": "없음"
+   },
+   "runners/power986.py": {
+    "자리 수": 0,
+    "자리": "없음"
+   },
+   "runners/score986.py": {
+    "자리 수": 0,
+    "자리": "없음"
+   },
+   "runners/note986_gen.py": {
+    "자리 수": 0,
+    "자리": "없음"
+   },
+   "runners/certify986.py": {
+    "자리 수": 0,
+    "자리": "없음"
+   },
+   "runners/prose986.py": {
+    "자리 수": 0,
+    "자리": "없음"
+   },
+   "runners/plumb986.py": {
+    "자리 수": 0,
+    "자리": "없음"
+   }
+  },
+  "🔴🔴🔴 신판 --- 986 러너의 손 전사 자리 수": 0,
+  "⚠ 구판 --- 985 치환표 생성기": {
+   "runners/note985_gen.py": {
+    "자리 수": 0,
+    "자리": "없음"
+   }
+  },
+  "🔴 못 읽은 러너(= 「0 이다」가 아니다 · 조항 59)": "없음",
+  "🔴🔴 검정력 시연(조항 64) — 같은 신판 자를 985 의 러너 전량에 문다": {
+   "🔴 분모": 8,
+   "🔴🔴🔴 985 러너의 손 전사 자리 수": 4,
+   "🔴🔴🔴 `audit985.py` 의 `= 3` 을 잡았나": true,
+   "🔴 그 자리": [
+    {
+     "줄": 170,
+     "부호": "=",
+     "맨 수": "3",
+     "보기": "🔴 **통과 %d + 분모 제거 1 + 거짓 %d = 3**"
+    }
+   ],
+   "🔴 러너별": {
+    "runners/cycle985.py": {
+     "자리 수": 0,
+     "보기": "없음"
+    },
+    "runners/house985.py": {
+     "자리 수": 0,
+     "보기": "없음"
+    },
+    "runners/audit985.py": {
+     "자리 수": 4,
+     "보기": [
+      {
+       "줄": 170,
+       "부호": "=",
+       "맨 수": "3",
+       "보기": "🔴 **통과 %d + 분모 제거 1 + 거짓 %d = 3**"
+      },
+      {
+       "줄": 177,
+       "부호": "/",
+       "맨 수": "17",
+       "보기": "%d / 17"
+      },
+      {
+       "줄": 179,
+       "부호": "/",
+       "맨 수": "17",
+       "보기": "%d / 17"
+      }
+     ]
+    },
+    "runners/power985.py": {
+     "자리 수": 0,
+     "보기": "없음"
+    },
+    "runners/score985.py": {
+     "자리 수": 0,
+     "보기": "없음"
+    },
+    "runners/note985_gen.py": {
+     "자리 수": 0,
+     "보기": "없음"
+    },
+    "runners/certify985.py": {
+     "자리 수": 0,
+     "보기": "없음"
+    },
+    "runners/prose985.py": {
+     "자리 수": 0,
+     "보기": "없음"
+    }
+   },
+   "🔴 왜 이 절이 있나": "🔴 **자가 «남의 파일에서 떨어져야» 자다**(조항 64). 985 의 러너에서 0 이 나오면 이 자는 항진명제다"
+  },
+  "통과": true,
+  "🔴 이 절의 `통과` 가 뜻하는 것": "🔴 **① 986 러너를 전량 읽었고 ② 신판 자가 985 의 `= 3` 을 «실제로» 잡았는가.** 🔴 986 러너의 자리 수가 0 인지 아닌지는 **반증조건 14 가** 진다"
+ },
+ "§D 🔴🔴 R1 소비자 구판/신판": {
+  "🔴 무엇": "🔴🔴🔴 **`[수리] R1` --- `⑤′` 절 1 의 「소비자」를 「코드 리터럴로 «쓴» 파일」로 바꾼다**",
+  "🔴 범위": "15dea0500..3fe183d29 (트리 note/986-sixth-cell-power-ci)",
+  "🔴 바뀐 경로 수": 44,
+  "🔴🔴 요건 ② --- 구판 분모와 신판 분모를 «같이» 싣는다(조항 60-나 개정판)": {
+   "⚠ 구판 분모(「그 이름을 아무 데서나 «언급»한 파일」)": 454,
+   "⚠ 구판 분모 중 .py": 152,
+   "🔴🔴🔴 신판 분모(「코드 리터럴로 «쓴» 파일」)": 133,
+   "🔴 줄어드는 수": 321
+  },
+  "🔴🔴 요건 ③ --- 뺀 것의 「잰 날 것」을 전량 싣는다(= 「안 잰 것」이 아니다)": {
+   "🔴 비 `.py`(실행 대상이 아니다) 수": 302,
+   "🔴 비 `.py` 전량": [
+    "README.md",
+    "data/ingest/kopis/detail.jsonl.gz",
+    "data/ingest/kopis/pblprfr.jsonl.gz",
+    "data/ingest/kopis/prfplc.jsonl.gz",
+    "data/ingest/kopis/prfsts_day.jsonl.gz",
+    "data/ingest/steam_reviews/reviews.jsonl.gz",
+    "data/lab/denominator.json",
+    "data/lab/exempt949.json",
+    "data/lab/exempt950.json",
+    "data/lab/exempt951.json",
+    "data/lab/exempt952.json",
+    "data/lab/harvest_ratchet.json",
+    "data/lab/preregister_idolpromote.json",
+    "data/lab/program.json",
+    "data/state/collect_log.jsonl",
+    "docs/card_980.md",
+    "docs/handoff_986.md",
+    "docs/pr_986.md",
+    "docs/prereg_897_architecture.md",
+    "docs/prereg_898_oneruler.md",
+    "docs/prereg_899_axesdie.md",
+    "docs/prereg_900_levers.md",
+    "docs/prereg_901_intervention.md",
+    "docs/prereg_902_identify.md",
+    "docs/prereg_903_effect.md",
+    "docs/prereg_904_xtab.md",
+    "docs/prereg_905_cond.md",
+    "docs/prereg_906_grade.md",
+    "docs/prereg_907_docgate.md",
+    "docs/prereg_908b_semtoken.md",
+    "docs/prereg_910_event.md",
+    "docs/prereg_915_grid.md",
+    "docs/prereg_933_calpanel.md",
+    "docs/prereg_935_rawpanel.md",
+    "docs/prereg_937_repair.md",
+    "docs/prereg_939_threshold.md",
+    "docs/prereg_940_ratio.md",
+    "docs/prereg_943_actiontime.md",
+    "docs/prereg_944_famgrade.md",
+    "docs/prereg_947_rawgit.md",
+    "docs/prereg_948_evidence.md",
+    "docs/prereg_950_rulers.md",
+    "docs/prereg_952_harvest.md",
+    "docs/prereg_953_ratchet.md",
+    "docs/prereg_954_dupe.md",
+    "docs/prereg_955_D.md",
+    "docs/prereg_956_ruler1.md",
+    "docs/prereg_957_layers.md",
+    "docs/prereg_958_within.md",
+    "docs/prereg_959_reach.md",
+    "docs/prereg_960_cluster.md",
+    "docs/prereg_961_curve.md",
+    "docs/prereg_962_triples.md",
+    "docs/prereg_963_housekeeping.md",
+    "docs/prereg_964_tautology_union.md",
+    "docs/prereg_965_metataut.md",
+    "docs/prereg_966_longmemory.md",
+    "docs/prereg_968_deadcontrols.md",
+    "docs/prereg_971_holdout.md",
+    "docs/prereg_973_hplt_c3.md",
+    "docs/prereg_974_precision.md",
+    "docs/prereg_975_c4.md",
+    "docs/prereg_977_alpha.md",
+    "docs/prereg_980_mixture.md",
+    "docs/prereg_981_pick.md",
+    "docs/prereg_982_timeforward.md",
+    "docs/prereg_983_holdout_registry.md",
+    "docs/prereg_984_leak_or_coupling.md",
+    "docs/prereg_985_specificity_power.md",
+    "docs/prereg_986_sixth_cell_power_ci.md",
+    "docs/primer/10.html",
+    "docs/program-report.html",
+    "docs/worldmodel-primer.html",
+    "docs/루프.md",
+    "docs/목표.md",
+    "docs/방향.md",
+    "docs/수리/942.md",
+    "docs/수리/943.md",
+    "docs/수리/944.md",
+    "docs/수리/945.md",
+    "docs/수리/946.md",
+    "docs/수리/947.md",
+    "docs/수리/948.md",
+    "docs/수리/951.md",
+    "docs/수집/952.md",
+    "docs/수집계획.md",
+    "docs/아키텍처.md",
+    "docs/용어.md",
+    "docs/지평/902.md",
+    "docs/탐색/898.md",
+    "docs/탐색/899.md",
+    "docs/탐색/900.md",
+    "docs/탐색/901.md",
+    "docs/탐색/902.md",
+    "docs/탐색/905.md",
+    "docs/탐색/906.md",
+    "docs/탐색/941.md",
+    "docs/탐색/943.md",
+    "docs/탐색/944.md",
+    "docs/탐색/945.md",
+    "docs/탐색/946.md",
+    "docs/탐색/948.md",
+    "docs/탐색/949.md",
+    "docs/탐색/950.md",
+    "docs/탐색/951.md",
+    "docs/탐색/953.md",
+    "docs/탐색/954.md",
+    "docs/판정/949.md",
+    "docs/판정/958.md",
+    "docs/판정/961.md",
+    "docs/판정/962.md",
+    "docs/판정/963.md",
+    "docs/판정/964.md",
+    "docs/판정/965.md",
+    "docs/판정/966.md",
+    "docs/판정/967.md",
+    "docs/판정/968.md",
+    "docs/판정_974.md",
+    "docs/판정_975.md",
+    "docs/판정_976.md",
+    "docs/판정_977.md",
+    "docs/판정_979.md",
+    "docs/판정_980.md",
+    "docs/판정_981.md",
+    "docs/판정_984.md",
+    "docs/판정_985.md",
+    "docs/판정_986.md",
+    "paper/ledger.json",
+    "paper/steps/110_onemarker/main.tex",
+    "paper/steps/128_scrapedafter/main.tex",
+    "paper/steps/168_ninetyfourrows/main.tex",
+    "paper/steps/486_nolever/meta.json",
+    "paper/steps/488_zerobits/meta.json",
+    "paper/steps/490_whenobserved/main.tex",
+    "paper/steps/490_whenobserved/meta.json",
+    "paper/steps/491_gradebits/meta.json",
+    "paper/steps/970_recommit/main.tex",
+    "paper/steps/970_recommit/meta.json",
+    "runners/com.sweetspot.wm.harvest.plist",
+    "runners/exp948_gitcall_map.json",
+    "runners/exp951_home.json",
+    "runners/fiveprime_979.json",
+    "runners/fiveprime_980.json",
+    "runners/fiveprime_980_firstpass.json",
+    "runners/fiveprime_981.json",
+    "runners/fiveprime_982.json",
+    "runners/fiveprime_982_final.json",
+    "runners/fiveprime_983.json",
+    "runners/fiveprime_983_final.json",
+    "runners/fiveprime_984.json",
+    "runners/fiveprime_984_cert.json",
+    "runners/fiveprime_984_final.json",
+    "runners/fiveprime_984_p1.json",
+    "runners/fiveprime_984_p2.json",
+    "runners/fiveprime_984_p3.json",
+    "runners/fiveprime_984_p4.json",
+    "runners/fiveprime_985.json",
+    "runners/fiveprime_985_cert.json",
+    "runners/fiveprime_985_p1.json",
+    "runners/fiveprime_985_p2.json",
+    "runners/fiveprime_985_p3.json",
+    "runners/fiveprime_986.json",
+    "runners/fiveprime_986_cert.json",
+    "runners/out892_floor.json",
+    "runners/out892_log.txt",
+    "runners/out892_stdout.txt",
+    "runners/out898_verdict.json",
+    "runners/out899a_gates.json",
+    "runners/out902b_fiveprime.json",
+    "runners/out902b_fiveprime_901.json",
+    "runners/out902h_snap.json",
+    "runners/out903b_fiveprime.json",
+    "runners/out904b_fiveprime.json",
+    "runners/out905_cond.json",
+    "runners/out905b_fiveprime.json",
+    "runners/out906_grade.json",
+    "runners/out906b_fiveprime.json",
+    "runners/out907_gate.json",
+    "runners/out908d_kobis.json",
+    "runners/out909_fuel.json",
+    "runners/out909_pretext.json",
+    "runners/out909_ssl.json",
+    "runners/out911_harness.json",
+    "runners/out913_viewer.json",
+    "runners/out914_issues.json",
+    "runners/out914b_fiveprime.json",
+    "runners/out915b_fiveprime.json",
+    "runners/out916_teacher.json",
+    "runners/out916b_fiveprime.json",
+    "runners/out920_teacher.json",
+    "runners/out923_teacher.json",
+    "runners/out928_fiveprime.json",
+    "runners/out936_teacher.json",
+    "runners/out937_repair.json",
+    "runners/out938_teacher.json",
+    "runners/out939_fiveprime.json",
+    "runners/out939_threshold.json",
+    "runners/out940_fiveprime.json",
+    "runners/out940_gate.json",
+    "runners/out940_ratio.json",
+    "runners/out941_steamrev.json",
+    "runners/out941_steamrev.log",
+    "runners/out943_fiveprime.json",
+    "runners/out944_famgrade.json",
+    "runners/out944_fiveprime.json",
+    "runners/out945_colcensus.json",
+    "runners/out945_fiveprime.json",
+    "runners/out945_stampscan.json",
+    "runners/out946_fiveprime.json",
+    "runners/out946_keymap.json",
+    "runners/out946_quotefix.json",
+    "runners/out946_recount.json",
+    "runners/out947_fiveprime.json",
+    "runners/out947_rawgit.json",
+    "runners/out948_ab.json",
+    "runners/out948_fiveprime.json",
+    "runners/out949_fiveprime.json",
+    "runners/out949_stamp_after.json",
+    "runners/out949_stamp_before.json",
+    "runners/out950_fiveprime.json",
+    "runners/out950_rulers.json",
+    "runners/out951_fiveprime.json",
+    "runners/out951_guard.json",
+    "runners/out952_fiveprime.json",
+    "runners/out953_fiveprime.json",
+    "runners/out953_kopis.json",
+    "runners/out953_ratchet.json",
+    "runners/out953_score.json",
+    "runners/out954_fiveprime.json",
+    "runners/out954_kopis_c1.json",
+    "runners/out954_kopis_c1_regress.json",
+    "runners/out955_fiveprime.json",
+    "runners/out956_fiveprime.json",
+    "runners/out957_fiveprime.json",
+    "runners/out957_layers.json",
+    "runners/out958_fiveprime.json",
+    "runners/out958_prose.json",
+    "runners/out959_fiveprime.json",
+    "runners/out960_fiveprime.json",
+    "runners/out961_curve.json",
+    "runners/out961_fiveprime.json",
+    "runners/out962_triples.json",
+    "runners/out963_checks.json",
+    "runners/out964_checks.json",
+    "runners/out964_fiveprime.json",
+    "runners/out965_checks.json",
+    "runners/out965_fiveprime.json",
+    "runners/out965_meta.json",
+    "runners/out965_prose.json",
+    "runners/out966_kopis.json",
+    "runners/out966_longmem.json",
+    "runners/out966_meta.json",
+    "runners/out967_fiveprime.json",
+    "runners/out967_stamp.json",
+    "runners/out968_meta.json",
+    "runners/out969_meta.json",
+    "runners/out969_meta968_g1new.json",
+    "runners/out969_meta968_g1old.json",
+    "runners/out969_meta968_g2new.json",
+    "runners/out969_meta968_g2old.json",
+    "runners/out969_metacmp.json",
+    "runners/out971_meta.json",
+    "runners/out971_meta_exact.json",
+    "runners/out971_tautprobe.json",
+    "runners/out972_meta_file.json",
+    "runners/out972_meta_file_exact.json",
+    "runners/out972_meta_func.json",
+    "runners/out972_meta_func_exact.json",
+    "runners/out972_meta_g1_file.json",
+    "runners/out972_meta_g1_func.json",
+    "runners/out973_daemonguard.json",
+    "runners/out973_ledger.json",
+    "runners/out974_daemonfix.json",
+    "runners/out975_scorefix.json",
+    "runners/out981_score.json",
+    "runners/out982_score.json",
+    "runners/out983_score.json",
+    "runners/out984_fixpoint.json",
+    "runners/out984_grid.json",
+    "runners/out984_house.json",
+    "runners/out984_leak.json",
+    "runners/out984_prose.json",
+    "runners/out984_score.json",
+    "runners/out984_table.json",
+    "runners/out985_audit.json",
+    "runners/out985_certify.json",
+    "runners/out985_house.json",
+    "runners/out985_power.json",
+    "runners/out985_prose.json",
+    "runners/out985_score.json",
+    "runners/out985_table.json",
+    "runners/out985_window.json",
+    "runners/out986_audit.json",
+    "runners/out986_certify.json",
+    "runners/out986_house.json",
+    "runners/out986_power.json",
+    "runners/out986_prose.json",
+    "runners/out986_score.json",
+    "runners/out986_table.json",
+    "runners/out986_window.json",
+    "runners/pipe981.sh",
+    "runners/pipe982.sh"
+   ],
+   "🔴 산문만(주석·독스트링) 수": 19,
+   "🔴 산문만 전량": [
+    "lab/fixtures/한글이름_고정물.py",
+    "lab/keyspace.py",
+    "paper/harness.py",
+    "runners/exp949_harm.py",
+    "runners/exp950_onehop.py",
+    "runners/exp951_home.py",
+    "runners/knock894.py",
+    "runners/nn908b_semtoken.py",
+    "runners/out943_axis.py",
+    "runners/out943b_d2time.py",
+    "runners/out944b_obstime.py",
+    "runners/out945_colcensus.py",
+    "runners/pilot893.py",
+    "runners/plumb986.py",
+    "runners/prose958.py",
+    "runners/quote901.py",
+    "runners/ruler890.py",
+    "runners/ruler978.py",
+    "runners/thresh891.py"
+   ],
+   "🔴 왜 이것이 「분모 밖에서 잰 것」인가": "🔴 **주석 한 줄이나 독스트링의 인용은 「그 파일을 다시 돌릴 이유」가 아니다.** 그래도 «셌고» 목록을 여기 남긴다 --- 조용히 사라지는 것이 축소다(조항 59)"
+  },
+  "🔴🔴🔴 신판 소비자 전량(코드 리터럴)": [
+   "ingest/audit.py",
+   "ingest/collect.py",
+   "ingest/harvest_ratchet.py",
+   "ingest/kobis_api908.py",
+   "ingest/kopis953.py",
+   "ingest/popupsnap.py",
+   "ingest/steamrev941.py",
+   "lab/gitcall.py",
+   "lab/guards.py",
+   "paper/program.py",
+   "runners/audit985.py",
+   "runners/audit986.py",
+   "runners/certify985.py",
+   "runners/certify986.py",
+   "runners/checks963.py",
+   "runners/checks964.py",
+   "runners/checks965.py",
+   "runners/cond905.py",
+   "runners/curve961.py",
+   "runners/cycle984.py",
+   "runners/cycle985.py",
+   "runners/cycle986.py",
+   "runners/daemonfix974.py",
+   "runners/daemonguard973.py",
+   "runners/dropaudit969.py",
+   "runners/dupe956_ruler1.py",
+   "runners/effect903.py",
+   "runners/exp948_gitcall_map.py",
+   "runners/fill965.py",
+   "runners/fill966.py",
+   "runners/fiveprime902.py",
+   "runners/fixpoint984.py",
+   "runners/floor892.py",
+   "runners/gate907.py",
+   "runners/grade906.py",
+   "runners/harvest_daemon.py",
+   "runners/house979.py",
+   "runners/house980.py",
+   "runners/house981.py",
+   "runners/house982.py",
+   "runners/house983.py",
+   "runners/house984.py",
+   "runners/house985.py",
+   "runners/house986.py",
+   "runners/kopis954_backfill.py",
+   "runners/layers957.py",
+   "runners/ledger892.py",
+   "runners/ledger899.py",
+   "runners/ledger952.py",
+   "runners/ledger953.py",
+   "runners/ledger954.py",
+   "runners/ledger955.py",
+   "runners/ledger956.py",
+   "runners/ledger957.py",
+   "runners/ledger958.py",
+   "runners/ledger959.py",
+   "runners/ledger965.py",
+   "runners/ledger966.py",
+   "runners/ledger967.py",
+   "runners/ledger968.py",
+   "runners/ledger969.py",
+   "runners/ledger970.py",
+   "runners/ledger971.py",
+   "runners/ledger973.py",
+   "runners/ledger980_fiveprime.py",
+   "runners/ledgeraudit878.py",
+   "runners/ledgeraudit878b.py",
+   "runners/ledgeraudit879.py",
+   "runners/ledgeraudit880.py",
+   "runners/ledgeraudit881.py",
+   "runners/ledgeraudit882.py",
+   "runners/meta965.py",
+   "runners/metacmp969.py",
+   "runners/note892_ledger.py",
+   "runners/note893_ledger.py",
+   "runners/note893_prereg.py",
+   "runners/note951_gen.py",
+   "runners/note952_gen.py",
+   "runners/note953_gen.py",
+   "runners/note954_gen.py",
+   "runners/note973_gen.py",
+   "runners/note974_gen.py",
+   "runners/note975_gen.py",
+   "runners/note976_gen.py",
+   "runners/note977_gen.py",
+   "runners/note979_gen.py",
+   "runners/note980_gen.py",
+   "runners/note981_gen.py",
+   "runners/note982_gen.py",
+   "runners/note983_gen.py",
+   "runners/note984_gen.py",
+   "runners/note985_gen.py",
+   "runners/note986_gen.py",
+   "runners/out899a_gates.py",
+   "runners/out902h_snap.py",
+   "runners/out941_sao.py",
+   "runners/out945_stampscan.py",
+   "runners/out946_keymap.py",
+   "runners/out946_quotefix.py",
+   "runners/out946_recount.py",
+   "runners/out947_rawgit.py",
+   "runners/out948_ab.py",
+   "runners/out950_rulers.py",
+   "runners/out951_guard.py",
+   "runners/out952_count.py",
+   "runners/out952_wiring.py",
+   "runners/out953_sao.py",
+   "runners/out953_score.py",
+   "runners/plant953_ratchet.py",
+   "runners/plumb979.py",
+   "runners/power986.py",
+   "runners/prose964.py",
+   "runners/prose965.py",
+   "runners/prose985.py",
+   "runners/prose986.py",
+   "runners/prose_check.py",
+   "runners/ratio940_run.py",
+   "runners/repair937_run.py",
+   "runners/repair959.py",
+   "runners/repair960.py",
+   "runners/score981.py",
+   "runners/score982.py",
+   "runners/score983.py",
+   "runners/score984.py",
+   "runners/score985.py",
+   "runners/score986.py",
+   "runners/scorefix975.py",
+   "runners/ssl909_pretext.py",
+   "runners/triples962.py",
+   "runners/wiring959.py",
+   "runners/xtab904.py",
+   "serve/registry.py",
+   "state/grid915.py"
+  ],
+  "🔴 갈래별 수": {
+   "비 .py": 302,
+   "코드 리터럴": 133,
+   "산문만(주석·독스트링)": 19
+  },
+  "🔴🔴 원장(`data/lab/denominator.json`)을 빼는 길은 «안» 쓴다": "🔴 **티처 #124 가 다시 세어 「원장을 빼도 안 열린다」를 확인했고 985 의 판단이 옳다.** 🔴 **열쇠는 「언급」을 「사용」으로 바꾸는 것**이다",
+  "통과": true,
+  "🔴 이 절의 `통과` 가 뜻하는 것": "🔴 **구판 자가 소비자를 «하나라도» 냈는가.** 0 이면 역참조가 죽은 것이라 두 분모를 견줄 수 없다(조항 59)"
+ },
+ "§E 🔴 즉시 정정": {
+  "🔴 무엇": "🔴 **즉시 정정(수리로 안 센다)** --- 잴 수 있는 것만 «잰다»",
+  "① `조항 60-나` 「개정」이 덧붙임이다": {
+   "🔴 원문을 찾았나": true,
+   "🔴 원문 뒤 400 자 안에 개정 포인터가 있나": true,
+   "🔴🔴🔴 그래서 986 이 하는 것": "🔴 **원 본문에 「→ 60-나 개정 참조」 한 줄을 넣는다** --- 그게 「문언을 고친다」의 최소치다(티처 #124 즉시정정)"
+  },
+  "② F5 도장 분모": {
+   "🔴 985 가 쓴 분모(인용된 산출물)": 7,
+   "🔴🔴 원장 `노트 985` 항목이 «싣는» 산출물 수": 13,
+   "🔴 원장이 싣는 산출물": [
+    "fiveprime_985.json",
+    "fiveprime_985_cert.json",
+    "fiveprime_985_p1.json",
+    "fiveprime_985_p2.json",
+    "fiveprime_985_p3.json",
+    "out985_audit.json",
+    "out985_certify.json",
+    "out985_house.json",
+    "out985_power.json",
+    "out985_prose.json",
+    "out985_score.json",
+    "out985_table.json",
+    "out985_window.json"
+   ],
+   "🔴🔴🔴 인용 안 해서 도장 검사를 «피한» 산출물": [
+    "fiveprime_985_cert.json",
+    "fiveprime_985_p1.json",
+    "fiveprime_985_p2.json",
+    "fiveprime_985_p3.json",
+    "out985_window.json"
+   ],
+   "🔴🔴 그 수": 5,
+   "🔴 왜 문제인가": "🔴 **인용을 안 하면 도장 검사를 피한다** --- 986 은 분모를 「원장이 싣는 산출물 전량」으로 한다(반증조건 12)"
+  },
+  "③ `docs/판정_985.md` 표 칸 깨짐": {
+   "🔴 깨진 줄 수": 0,
+   "🔴 줄": "없음"
+  },
+  "④ 요건 수가 갈렸다": {
+   "🔴 사전등록 §4-2 가 등록한 요건 수": 2,
+   "🔴 `루프.md`·판정문·PR 이 적은 요건 수": 3,
+   "🔴 사전등록에 「③」이 있나": false,
+   "🔴🔴 그리고 그 새 3 요건을 곧바로 984 에 소급해 스스로 면소했다": true
+  },
+  "⑤ 「984 에 물리면 다섯 칸 어긋난다」의 정체": {
+   "🔴 정본": "4 + 1",
+   "🔴 다섯째의 출처": "🔴 **985 자신의 편집**(PR 본문은 밝혔고 판정문은 안 밝혔다)",
+   "🔴🔴🔴 986 부터의 규율": "🔴 **검정력 시연은 「자기 입력 교란」으로 한다** --- 자기 판정문에 한 바이트를 더해 자가 떨어지는지를 본다(`certify986` §라)"
+  },
+  "통과": true,
+  "🔴 이 절의 `통과` 가 뜻하는 것": "🔴 **`조항 60-나` 원문을 «찾았는가»** 하나다 --- 못 찾으면 포인터를 넣을 자리를 모른다"
+ },
+ "통과": true,
+ "🔴🔴 조항 66-② (986)": {
+  "🔴🔴 조항 66-② 신고": "🔴 **창은 「사이클 단위」다**(첫 단계 시작 ~ 지금)",
+  "🔴 분모: `code_stamp` 가 덮는 파일 수": 93,
+  "🔴 분모: `RAN_ALL` 러너 수": 23,
+  "🔴🔴 분모가 못 덮은 `RAN_ALL` 항목(= 「없다」가 아니다 · 조항 59)": "없음",
+  "🔴 사이클 시작(UTC)": "2026-08-17T01:25:54Z",
+  "⚠ 좁은 창(984 판 · 이 러너의 t0~지금)에서 바뀐 파일": "없음",
+  "🔴🔴🔴 넓은 창(사이클 시작~지금)에서 바뀐 파일": [
+   "runners/audit986.py",
+   "runners/certify986.py",
+   "runners/cycle986.py",
+   "runners/fiveprime902.py",
+   "runners/harvest_daemon.py",
+   "runners/house986.py",
+   "runners/note986_gen.py",
+   "runners/power986.py",
+   "runners/prose986.py",
+   "runners/score986.py"
+  ],
+  "🔴🔴🔴 측정 창 안에 러너를 고쳤나": true,
+  "🔴🔴 좁은 창이 놓친 파일 수(= 984 판이 못 본 것)": 10,
+  "🔴🔴🔴 값을 낸 뒤 고치고 «안 다시 돌린» 산출물": {
+   "🔴🔴 무엇": "🔴 **값을 낸 뒤에 그 값을 내는 러너를 고치고 «안 다시 돌린» 산출물**",
+   "🔴 분모: 생산자 표에 든 산출물": 7,
+   "🔴 산출물별": {
+    "runners/out986_audit.json": {
+     "생산자": "runners/audit986.py",
+     "🔴 같이 보는 공용 배관": [
+      "runners/cycle986.py",
+      "runners/ledger.py"
+     ],
+     "🔴 파일별": {
+      "runners/audit986.py": {
+       "낼 때 sha256": "ca15b88ea722f2d24fb3eb9bed5006e7e64703130cc15704dc7e88d366cefce4",
+       "지금 sha256": "ca15b88ea722f2d24fb3eb9bed5006e7e64703130cc15704dc7e88d366cefce4",
+       "같은가": true
+      },
+      "runners/cycle986.py": {
+       "낼 때 sha256": "7ef8dceaf57028f295e7c1db3f436321865bf396a1f5d4b51649490f872b05bc",
+       "지금 sha256": "7ef8dceaf57028f295e7c1db3f436321865bf396a1f5d4b51649490f872b05bc",
+       "같은가": true
+      },
+      "runners/ledger.py": {
+       "낼 때 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "지금 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "같은가": true
+      }
+     },
+     "🔴 도장에 없어 못 본 것(= 「안 바뀌었다」가 아니다)": "없음",
+     "🔴🔴 낼 때와 달라진 파일": "없음"
+    },
+    "runners/out986_certify.json": {
+     "생산자": "runners/certify986.py",
+     "🔴 같이 보는 공용 배관": [
+      "runners/cycle986.py",
+      "runners/ledger.py"
+     ],
+     "🔴 파일별": {
+      "runners/certify986.py": {
+       "낼 때 sha256": "daca13c5aefc8562401bf518d8ad70ab51224268ae1da676bba18ed3c22a0507",
+       "지금 sha256": "daca13c5aefc8562401bf518d8ad70ab51224268ae1da676bba18ed3c22a0507",
+       "같은가": true
+      },
+      "runners/cycle986.py": {
+       "낼 때 sha256": "7ef8dceaf57028f295e7c1db3f436321865bf396a1f5d4b51649490f872b05bc",
+       "지금 sha256": "7ef8dceaf57028f295e7c1db3f436321865bf396a1f5d4b51649490f872b05bc",
+       "같은가": true
+      },
+      "runners/ledger.py": {
+       "낼 때 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "지금 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "같은가": true
+      }
+     },
+     "🔴 도장에 없어 못 본 것(= 「안 바뀌었다」가 아니다)": "없음",
+     "🔴🔴 낼 때와 달라진 파일": "없음"
+    },
+    "runners/out986_house.json": {
+     "생산자": "runners/house986.py",
+     "🔴 같이 보는 공용 배관": [
+      "runners/cycle986.py",
+      "runners/ledger.py"
+     ],
+     "🔴 파일별": {
+      "runners/house986.py": {
+       "낼 때 sha256": "17aa30bf53b9004f71eb87ba7311bee8f850d0d5bb3c7af0a7fbeb9f674eeb6d",
+       "지금 sha256": "17aa30bf53b9004f71eb87ba7311bee8f850d0d5bb3c7af0a7fbeb9f674eeb6d",
+       "같은가": true
+      },
+      "runners/cycle986.py": {
+       "낼 때 sha256": "7ef8dceaf57028f295e7c1db3f436321865bf396a1f5d4b51649490f872b05bc",
+       "지금 sha256": "7ef8dceaf57028f295e7c1db3f436321865bf396a1f5d4b51649490f872b05bc",
+       "같은가": true
+      },
+      "runners/ledger.py": {
+       "낼 때 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "지금 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "같은가": true
+      }
+     },
+     "🔴 도장에 없어 못 본 것(= 「안 바뀌었다」가 아니다)": "없음",
+     "🔴🔴 낼 때와 달라진 파일": "없음"
+    },
+    "runners/out986_power.json": {
+     "생산자": "runners/power986.py",
+     "🔴 같이 보는 공용 배관": [
+      "runners/cycle986.py",
+      "runners/ledger.py"
+     ],
+     "🔴 파일별": {
+      "runners/power986.py": {
+       "낼 때 sha256": "ae3a86330e3cdbc0639090f8bb98e4a68273c124ed0a0ef1aabd68e53fd948d5",
+       "지금 sha256": "ae3a86330e3cdbc0639090f8bb98e4a68273c124ed0a0ef1aabd68e53fd948d5",
+       "같은가": true
+      },
+      "runners/cycle986.py": {
+       "낼 때 sha256": "7ef8dceaf57028f295e7c1db3f436321865bf396a1f5d4b51649490f872b05bc",
+       "지금 sha256": "7ef8dceaf57028f295e7c1db3f436321865bf396a1f5d4b51649490f872b05bc",
+       "같은가": true
+      },
+      "runners/ledger.py": {
+       "낼 때 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "지금 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "같은가": true
+      }
+     },
+     "🔴 도장에 없어 못 본 것(= 「안 바뀌었다」가 아니다)": "없음",
+     "🔴🔴 낼 때와 달라진 파일": "없음"
+    },
+    "runners/out986_prose.json": {
+     "생산자": "runners/prose986.py",
+     "🔴 같이 보는 공용 배관": [
+      "runners/cycle986.py",
+      "runners/ledger.py"
+     ],
+     "🔴 파일별": {
+      "runners/prose986.py": {
+       "낼 때 sha256": "67c0f6806b025df019881d2d23a890d9bc66a9a333d7496a838db63a343872a1",
+       "지금 sha256": "67c0f6806b025df019881d2d23a890d9bc66a9a333d7496a838db63a343872a1",
+       "같은가": true
+      },
+      "runners/cycle986.py": {
+       "낼 때 sha256": "7ef8dceaf57028f295e7c1db3f436321865bf396a1f5d4b51649490f872b05bc",
+       "지금 sha256": "7ef8dceaf57028f295e7c1db3f436321865bf396a1f5d4b51649490f872b05bc",
+       "같은가": true
+      },
+      "runners/ledger.py": {
+       "낼 때 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "지금 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "같은가": true
+      }
+     },
+     "🔴 도장에 없어 못 본 것(= 「안 바뀌었다」가 아니다)": "없음",
+     "🔴🔴 낼 때와 달라진 파일": "없음"
+    },
+    "runners/out986_score.json": {
+     "생산자": "runners/score986.py",
+     "🔴 같이 보는 공용 배관": [
+      "runners/cycle986.py",
+      "runners/ledger.py"
+     ],
+     "🔴 파일별": {
+      "runners/score986.py": {
+       "낼 때 sha256": "4a9cae0628ebb97d60345769140625c4956b8f92c878f7aa68311fa5cd3d612b",
+       "지금 sha256": "4a9cae0628ebb97d60345769140625c4956b8f92c878f7aa68311fa5cd3d612b",
+       "같은가": true
+      },
+      "runners/cycle986.py": {
+       "낼 때 sha256": "7ef8dceaf57028f295e7c1db3f436321865bf396a1f5d4b51649490f872b05bc",
+       "지금 sha256": "7ef8dceaf57028f295e7c1db3f436321865bf396a1f5d4b51649490f872b05bc",
+       "같은가": true
+      },
+      "runners/ledger.py": {
+       "낼 때 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "지금 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "같은가": true
+      }
+     },
+     "🔴 도장에 없어 못 본 것(= 「안 바뀌었다」가 아니다)": "없음",
+     "🔴🔴 낼 때와 달라진 파일": "없음"
+    },
+    "runners/out986_table.json": {
+     "생산자": "runners/note986_gen.py",
+     "🔴 같이 보는 공용 배관": [
+      "runners/cycle986.py",
+      "runners/ledger.py"
+     ],
+     "🔴 파일별": {
+      "runners/note986_gen.py": {
+       "낼 때 sha256": "6d35e9d80b6ab33602d30e1fcf4555c4176d424252bbac12948b144ba9e28925",
+       "지금 sha256": "6d35e9d80b6ab33602d30e1fcf4555c4176d424252bbac12948b144ba9e28925",
+       "같은가": true
+      },
+      "runners/cycle986.py": {
+       "낼 때 sha256": "7ef8dceaf57028f295e7c1db3f436321865bf396a1f5d4b51649490f872b05bc",
+       "지금 sha256": "7ef8dceaf57028f295e7c1db3f436321865bf396a1f5d4b51649490f872b05bc",
+       "같은가": true
+      },
+      "runners/ledger.py": {
+       "낼 때 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "지금 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "같은가": true
+      }
+     },
+     "🔴 도장에 없어 못 본 것(= 「안 바뀌었다」가 아니다)": "없음",
+     "🔴🔴 낼 때와 달라진 파일": "없음"
+    }
+   },
+   "🔴🔴🔴 낡은 산출물(고치고 안 다시 돌렸다)": "없음",
+   "🔴 못 읽은 것(= 「없다」가 아니다)": "없음",
+   "🔴🔴🔴 낡은 것이 있나": false
+  },
+  "🔴🔴🔴 채점기를 다시 돌리고 «안 다시 찍은» 문서(986 신설)": {
+   "🔴🔴 무엇": "🔴🔴🔴 **채점기를 다시 돌리고 문서(·PR 본문)를 안 다시 찍었나** --- 985 의 R5 를 «문서»로 확장한다(사전등록 §2-3)",
+   "🔴 분모: 문서가 읽는 채점 산출물": 3,
+   "🔴 분모: 이 표가 덮는 문서": 4,
+   "🔴 내용 지문에서 뺀 키(조용히 빼지 않는다 · 조항 60)": [
+    "🔴 도장",
+    "🔴🔴 조항 66-② (986)",
+    "🔴 986 이 읽은 산출물 sha256",
+    "🔴🔴🔴 986 봉인 감사(무엇을 봉했고 무엇을 뺐나)"
+   ],
+   "🔴 입력별": {
+    "runners/out986_score.json": {
+     "문서를 찍을 때 내용 지문": "80bf4aad4d3bd500ae5fe2e1550941e7c3a6ec77c8f9850cc158ed864efe2614",
+     "지금 내용 지문": "216b4ec2c3eeb6b06cdb85e40f22e04bb37b341cf1550bb6fdb093f250477e32",
+     "같은가": false
+    },
+    "runners/out986_audit.json": {
+     "문서를 찍을 때 내용 지문": "fb5fd67fa041bb384c5977734e75a201845cd3d98b3c7b923d311bd23a29b07b",
+     "지금 내용 지문": "fb5fd67fa041bb384c5977734e75a201845cd3d98b3c7b923d311bd23a29b07b",
+     "같은가": true
+    },
+    "runners/out986_power.json": {
+     "문서를 찍을 때 내용 지문": "6f5f6d8963c721ef9435ee3c7bf628c91b3a30c0770184ee8fab8be00fd90c7d",
+     "지금 내용 지문": "6f5f6d8963c721ef9435ee3c7bf628c91b3a30c0770184ee8fab8be00fd90c7d",
+     "같은가": true
+    }
+   },
+   "🔴 문서별": {
+    "docs/card_986.md": {
+     "생산기": "runners/note986_gen.py",
+     "있나": true,
+     "지금 sha256": "98521490453bd54be8cd9849b381550cd4ceb094788f2ebaee78195cb20af73b"
+    },
+    "docs/handoff_986.md": {
+     "생산기": "runners/note986_gen.py",
+     "있나": true,
+     "지금 sha256": "6155924f8f41cd0c841671d44e1acefc066646615789bdeff0c4b375c4d05c10"
+    },
+    "docs/pr_986.md": {
+     "생산기": "runners/note986_gen.py",
+     "있나": true,
+     "지금 sha256": "2ac456f107dca793e3674d6e6110a9f95390f6c1eb993342fcb7050e2b8671cb"
+    },
+    "docs/판정_986.md": {
+     "생산기": "runners/note986_gen.py",
+     "있나": true,
+     "지금 sha256": "cc8f1c2db6c6cafd8dd5db44aba1e9427b3e1f457e6f7e14a9e6ac39d744dca5"
+    }
+   },
+   "🔴 치환표가 sha 를 안 박은 입력(= 「같다」가 아니다 · 조항 59)": "없음",
+   "🔴🔴🔴 문서를 찍은 뒤 달라진 채점 산출물": [
+    "runners/out986_score.json"
+   ],
+   "🔴🔴🔴 낡은 문서가 있나": true,
+   "🔴 이 값이 `None` 이면": "🔴 **「낡지 않았다」가 아니라 「모른다」**다(조항 59)"
+  },
+  "🔴 시작 요약(좁은 창)": "6134e69c63221fc05cc374378c17542da3ab6fcfc875fa2b84f6ac72865b17c3",
+  "🔴 시작 요약(넓은 창)": "a4dbf1b195d295aa9521a90690c376a28fb19e092629ff9139e2db9f7a4804a2",
+  "🔴 끝 요약": "6134e69c63221fc05cc374378c17542da3ab6fcfc875fa2b84f6ac72865b17c3",
+  "통과": false,
+  "🔴 이 절의 `통과`": "🔴🔴 **986 --- 조건 넷**: ① 사이클 시작 도장을 읽었다 · ② 낡은 산출물 0 · ③ **낡은 문서 0**(986 신설) · ④ 분모가 `RAN_ALL` 을 전부 덮었다. 🔴 ③ 이 `None`(모른다)이면 «통과가 아니다»(조항 59)"
+ },
+ "🔴 986 이 읽은 산출물 sha256": {
+  "runners/out983_grid.json": "4715bcc6e49fc30a7bd334bc04546c482710cd130e57af0ea9173a661a42f64e",
+  "runners/out983_reps.json": "ae81925626dc66affff4901f0e33d2f649b4c31650c107a3ced7ea5a67e4cc4f",
+  "runners/out983_stat.json": "7710c6e3bc13d967b7c9e739527753b5f3b922fc1319e3782e3833694cfbd091",
+  "runners/out985_score.json": "841c0c62a3d80fe488013e4d7cf6004ec93abcf4cf6c3420662ba2bce28a985a",
+  "runners/out985_table.json": "bd206529bd98ba2765607732965ca74952166927b122404084c78d6a9868a6a9",
+  "runners/out985_audit.json": "1cff85092f261606b3066222840758b644ecbd55bafa436d53d242b19c49f74f",
+  "runners/out985_power.json": "8467dac644c02e97837dc120670724a8bf5c0b47aa35e351f8bb1c8d3bd2e75d",
+  "runners/out985_certify.json": "8f3285cc39c4554b3f89f0735e5da419757628f48def72d9209ac3c66b4adaa1",
+  "runners/fiveprime_985_cert.json": "59b8ed99992219ea3ed9cc16d507954106395996ff77bcd36c9569c3cd5d696c"
+ },
+ "🔴 도장": {
+  "언제(시작)": "2026-08-17T02:24:10Z",
+  "언제(끝)": "2026-08-17T02:24:21Z",
+  "시작 code_stamp 요약": "6134e69c63221fc05cc374378c17542da3ab6fcfc875fa2b84f6ac72865b17c3",
+  "끝 code_stamp 요약": "6134e69c63221fc05cc374378c17542da3ab6fcfc875fa2b84f6ac72865b17c3",
+  "🔴 시작=끝": true,
+  "분모: 도장이 덮는 파일": 93,
+  "🔴 자료 지문": {
+   "sao941": "50eacbe4468cf86f561535e3eea7aec31f0151679a33018b7eb12627d1cbbd83",
+   "sao959": "273e4bad06c9f073be89ae3477b89acf9a4973f2c77c66e21aa571a4b5d56728",
+   "hplt_ko": "67de3062bad60e122c446fccb0b96d2c3a36c0ee2deafa40324a22dcad6c09a2"
+  },
+  "분모: 연 자료 파일": 3,
+  "🔴 F1 기준 ref(준 대로)": "3fe183d2979c1600239e7c8475261b1f8675817f",
+  "🔴 40자 고정 sha 인가": true,
+  "🔴 기준 ref 가 0000…0000 인가": false,
+  "러너별": {
+   "runners/cycle986.py": {
+    "디스크 sha256": "7ef8dceaf57028f295e7c1db3f436321865bf396a1f5d4b51649490f872b05bc",
+    "커밋 blob sha256": "7ef8dceaf57028f295e7c1db3f436321865bf396a1f5d4b51649490f872b05bc",
+    "일치": true
+   },
+   "runners/house986.py": {
+    "디스크 sha256": "17aa30bf53b9004f71eb87ba7311bee8f850d0d5bb3c7af0a7fbeb9f674eeb6d",
+    "커밋 blob sha256": "17aa30bf53b9004f71eb87ba7311bee8f850d0d5bb3c7af0a7fbeb9f674eeb6d",
+    "일치": true
+   },
+   "runners/audit986.py": {
+    "디스크 sha256": "ca15b88ea722f2d24fb3eb9bed5006e7e64703130cc15704dc7e88d366cefce4",
+    "커밋 blob sha256": "ca15b88ea722f2d24fb3eb9bed5006e7e64703130cc15704dc7e88d366cefce4",
+    "일치": true
+   },
+   "runners/power986.py": {
+    "디스크 sha256": "ae3a86330e3cdbc0639090f8bb98e4a68273c124ed0a0ef1aabd68e53fd948d5",
+    "커밋 blob sha256": "ae3a86330e3cdbc0639090f8bb98e4a68273c124ed0a0ef1aabd68e53fd948d5",
+    "일치": true
+   },
+   "runners/score986.py": {
+    "디스크 sha256": "4a9cae0628ebb97d60345769140625c4956b8f92c878f7aa68311fa5cd3d612b",
+    "커밋 blob sha256": "4a9cae0628ebb97d60345769140625c4956b8f92c878f7aa68311fa5cd3d612b",
+    "일치": true
+   },
+   "runners/note986_gen.py": {
+    "디스크 sha256": "6d35e9d80b6ab33602d30e1fcf4555c4176d424252bbac12948b144ba9e28925",
+    "커밋 blob sha256": "6d35e9d80b6ab33602d30e1fcf4555c4176d424252bbac12948b144ba9e28925",
+    "일치": true
+   },
+   "runners/certify986.py": {
+    "디스크 sha256": "daca13c5aefc8562401bf518d8ad70ab51224268ae1da676bba18ed3c22a0507",
+    "커밋 blob sha256": "daca13c5aefc8562401bf518d8ad70ab51224268ae1da676bba18ed3c22a0507",
+    "일치": true
+   },
+   "runners/prose986.py": {
+    "디스크 sha256": "67c0f6806b025df019881d2d23a890d9bc66a9a333d7496a838db63a343872a1",
+    "커밋 blob sha256": "67c0f6806b025df019881d2d23a890d9bc66a9a333d7496a838db63a343872a1",
+    "일치": true
+   },
+   "runners/plumb986.py": {
+    "디스크 sha256": "ac2ef19580530b3f64a4f6e6bdb551ee90ce67414a24995686675c36de9f67d6",
+    "커밋 blob sha256": "ac2ef19580530b3f64a4f6e6bdb551ee90ce67414a24995686675c36de9f67d6",
+    "일치": true
+   },
+   "runners/fiveprime902.py": {
+    "디스크 sha256": "499c69b119eaec2c26ad8394feba03dfa9e1f4d48633d18a3cda11595eff04ca",
+    "커밋 blob sha256": "499c69b119eaec2c26ad8394feba03dfa9e1f4d48633d18a3cda11595eff04ca",
+    "일치": true
+   },
+   "runners/cycle985.py": {
+    "디스크 sha256": "a1b9c4ce14a1117e67da4bcf999f5921ed4e7b3e41e89a68aac7ff968a866be3",
+    "커밋 blob sha256": "a1b9c4ce14a1117e67da4bcf999f5921ed4e7b3e41e89a68aac7ff968a866be3",
+    "일치": true
+   },
+   "runners/audit985.py": {
+    "디스크 sha256": "11ede41e8e3470755a4654a916ecd7ad1a4c0c67022a7cc4bba820b5e7214c31",
+    "커밋 blob sha256": "11ede41e8e3470755a4654a916ecd7ad1a4c0c67022a7cc4bba820b5e7214c31",
+    "일치": true
+   },
+   "runners/power985.py": {
+    "디스크 sha256": "1fa02927c3ab02bc28773aef2f6bee6668a4b27711a0a0561ab1320235cb9ce5",
+    "커밋 blob sha256": "1fa02927c3ab02bc28773aef2f6bee6668a4b27711a0a0561ab1320235cb9ce5",
+    "일치": true
+   },
+   "runners/score985.py": {
+    "디스크 sha256": "7057c3d37bb09f3dc918211e4e14afb4984da30d512b3457c7d77978703dbc7c",
+    "커밋 blob sha256": "7057c3d37bb09f3dc918211e4e14afb4984da30d512b3457c7d77978703dbc7c",
+    "일치": true
+   },
+   "runners/note985_gen.py": {
+    "디스크 sha256": "d457e2d6d9dca1a551029a4b397b44f82cdbede036f230aeffca2464e24b3512",
+    "커밋 blob sha256": "d457e2d6d9dca1a551029a4b397b44f82cdbede036f230aeffca2464e24b3512",
+    "일치": true
+   },
+   "runners/certify985.py": {
+    "디스크 sha256": "916653e87025f8ca6e8af6f2b63028be87074112d7d1fce330e727137216a696",
+    "커밋 blob sha256": "916653e87025f8ca6e8af6f2b63028be87074112d7d1fce330e727137216a696",
+    "일치": true
+   },
+   "runners/house985.py": {
+    "디스크 sha256": "9cd19fc45c6e5e686e3fd531d64d22e0759f8f3979a11739362f8e314ea29759",
+    "커밋 blob sha256": "9cd19fc45c6e5e686e3fd531d64d22e0759f8f3979a11739362f8e314ea29759",
+    "일치": true
+   },
+   "runners/stat983.py": {
+    "디스크 sha256": "b6c915aba7d8e0705a895d4283d60b736582c775c0a5f2c4915586ae7ed99b59",
+    "커밋 blob sha256": "b6c915aba7d8e0705a895d4283d60b736582c775c0a5f2c4915586ae7ed99b59",
+    "일치": true
+   },
+   "runners/tgrid983.py": {
+    "디스크 sha256": "2788c2927c19895023f1ac557b2e27fd2361e528cbb9da2de2a57d26c2d1c0fb",
+    "커밋 blob sha256": "2788c2927c19895023f1ac557b2e27fd2361e528cbb9da2de2a57d26c2d1c0fb",
+    "일치": true
+   },
+   "runners/ledger.py": {
+    "디스크 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+    "커밋 blob sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+    "일치": true
+   },
+   "runners/alpha977.py": {
+    "디스크 sha256": "42c4c6b3797a75bdf9f681ea29facbdb41936b088cf6519339825ccc6db527d3",
+    "커밋 blob sha256": "42c4c6b3797a75bdf9f681ea29facbdb41936b088cf6519339825ccc6db527d3",
+    "일치": true
+   },
+   "runners/mix980.py": {
+    "디스크 sha256": "8f89c3fe4dc6e544f7c474c6351c1ddf33cf784176f94bee596e8281f5ac669a",
+    "커밋 blob sha256": "8f89c3fe4dc6e544f7c474c6351c1ddf33cf784176f94bee596e8281f5ac669a",
+    "일치": true
+   },
+   "runners/harvest_daemon.py": {
+    "디스크 sha256": "7e75be09fde978e50accbc13044644c4e3928f7121a44abb7f23cf4b35c537a9",
+    "커밋 blob sha256": "7e75be09fde978e50accbc13044644c4e3928f7121a44abb7f23cf4b35c537a9",
+    "일치": true
+   }
+  },
+  "🔴 분자/분모": "23 / 23",
+  "🔴 F5 통과": true,
+  "통과": true,
+  "🔴 이 절의 `통과`": "도장의 `🔴 F5 통과` 그 값이다(리터럴이 아니다)"
+ },
+ "🔴🔴🔴 986 봉인 감사(무엇을 봉했고 무엇을 뺐나)": {
+  "🔴🔴🔴 986 봉인 감사": "🔴 봉인 대상은 «절 명부»이고 제외 키를 산출물에 싣는다(985 R4)",
+  "🔴 봉인한 절": [
+   "🔴🔴 조항 66-② (986)",
+   "🔴 도장"
+  ],
+  "🔴 이미 `통과` 가 있어 안 건드린 절": [
+   "§A 🔴🔴🔴 985 의 세 오기",
+   "§B 🔴🔴 PR #243 본문 대 985 문서",
+   "§C 🔴🔴🔴 R3 손 전사 자의 분모",
+   "§D 🔴🔴 R1 소비자 구판/신판",
+   "§E 🔴 즉시 정정"
+  ],
+  "🔴🔴 봉인에서 «명시적으로» 뺀 키(= 절이 아니라 자료다)": [
+   "🔴 986 이 읽은 산출물 sha256"
+  ],
+  "🔴 제외 목록(인자로 받은 것)": [
+   "🔴🔴 치환표"
+  ],
+  "🔴🔴 봉인 뒤에도 `통과` 가 없는 절": "없음",
+  "통과": true,
+  "🔴 이 절의 `통과`": "🔴 **봉인 뒤에 `통과` 키가 없는 최상위 절이 0 인가** --- 이 자는 떨어질 수 있다"
+ }
+}

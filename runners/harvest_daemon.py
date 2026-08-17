@@ -30,7 +30,19 @@ ROOT = Path("/Users/ax/world_model")
 LOG = Path("/Users/ax/wm_harvest/harvest.jsonl")
 STATE = Path("/Users/ax/wm_harvest/state.json")
 INTERVAL = int(os.environ.get("WM_HARVEST_INTERVAL", "60"))
-PATHS = ["data/ingest", "data/state"]   # 🔴 951 머지가 data/state 로그로 막혔다(2026-08-12)
+#: 🔴🔴 **986 R2** --- `runners/out941_*.json` 셋을 커밋 경로에 «넣는다**.
+#:  판정문 985 가 준 선택지 셋 중 ① 을 사전등록 §4-3 이 등록했다.
+#:  🔴 **왜.** `ingest.collect` 가 이 셋을 쓰는데 커밋 경로가 `data/` 뿐이라
+#:  **영구히 더럽다**(노트 954 가 이미 적었다). 그래서 사이클마다 ⓪ 관문 때문에
+#:  «그 사이클»이 남의 산출물을 커밋하고, 그러면 `⑤′` 절 3(판정 키 규약)의 대상이
+#:  **남의 파일**이 된다(985 가 그렇게 붉어졌다).
+#:  🔴 **자(`fiveprime902`)는 한 글자도 안 고친다** --- 원인 쪽을 고친다.
+#:  ⚠ **효과는 «다음 데몬 기동»부터다** --- 도는 프로세스는 옛 코드를 메모리에 들고 있고
+#:  **규칙 B 때문에 안 죽인다.**
+PATHS = ["data/ingest", "data/state",   # 🔴 951 머지가 data/state 로그로 막혔다(2026-08-12)
+         "runners/out941_wikidaily.json",
+         "runners/out941_steamrev.json",
+         "runners/out941_robots.json"]
 
 
 def _env() -> dict:
