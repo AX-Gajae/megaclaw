@@ -9,12 +9,16 @@
 씀:  python3 runners/note994_gen.py
 """
 import collections
+import hashlib
 import json
 import re
 from pathlib import Path
 
 ROOT = Path("/Users/ax/world_model")
 S = json.loads((ROOT / "runners/out994_score.json").read_text(encoding="utf-8"))
+_FPP = ROOT / "runners/fiveprime_994.json"
+#: 🔴 `⑤′` 산출물 --- 아직 «안 돌렸으면» `None` 이다(「없다」가 아니다 · 조항 59)
+FP = json.loads(_FPP.read_text(encoding="utf-8")) if _FPP.is_file() else None
 SLOTS = []
 
 
@@ -26,24 +30,34 @@ def V(*path):
 
 
 def n(*path, **kw):
-    """🔴 산출물 «칸»에서 수를 꺼내 문자로 찍는다 --- 슬롯에 자리를 남긴다."""
+    """🔴 산출물 «칸»에서 수를 꺼내 문자로 찍는다 --- 슬롯에 자리와 «형식»을 남긴다.
+
+    🔴 `형식` 은 `prose994.CLAIMS` 가 «손 없이» 재구성하는 데 쓴다.
+    """
     nd = kw.get("nd", 6)
     v = V(*path)
+    fmt = None
     if isinstance(v, bool):
         t = "참" if v else "거짓"
     elif isinstance(v, int):
-        t = "{:,}".format(v)
+        fmt = "{:,}"
+        t = fmt.format(v)
     elif isinstance(v, float):
-        t = ("%%.%df" % nd) % v
-        if kw.get("sign") and v > 0:
-            t = "+" + t
         if kw.get("sci"):
-            t = "%.3e" % v
+            fmt = "{:.3e}"
+        elif kw.get("sign"):
+            fmt = "{:+.%df}" % nd
+        else:
+            fmt = "{:.%df}" % nd
+        t = fmt.format(v)
     elif isinstance(v, list):
         t = ", ".join(str(x) for x in v)
     else:
         t = str(v)
-    SLOTS.append(collections.OrderedDict([("문자", t), ("키 경로", list(path))]))
+    SLOTS.append(collections.OrderedDict([
+        ("문자", t), ("키 경로", list(path)),
+        ("형식", fmt), ("갈래", type(v).__name__),
+        ("기대", v if isinstance(v, bool) else None)]))
     return t
 
 
@@ -569,6 +583,68 @@ def verdict():
     for x in V(K10, "🔴🔴🔴 그래도 이 사이클이 «번» 것"):
         a("- %s" % x)
     a("")
+    a("## §12 `⑤′` 취합 검사")
+    a("")
+    if FP is None:
+        a("🔴 **아직 안 돌렸다** — 「없다」가 아니라 「안 돌렸다」다(조항 59).")
+    else:
+        a("> 🔴 **가지 끝 트리**에서 돌렸다(조항 73-사) — `--tree %s`."
+          % FP["🔴 되짚은 기준(955 R5 · `docs/루프.md:148` v3.2)"]["읽기·해싱 트리(절 3·4·7·8)"])
+        a("")
+        a("**%s**" % FP["🔴🔴🔴 게재 꼴(992 R5)"].replace("🔴 ", ""))
+        a("")
+        a("| 절 | 통과 |")
+        a("|---|---|")
+        for k, v in FP.items():
+            if isinstance(v, dict) and "통과" in v and v["통과"] is not None:
+                a("| %s | %s |" % (k, "참" if v["통과"] else "**거짓**"))
+        a("")
+        a("- 절 수(분모) **%s** · 통과 **%s** · 실패 **%s** · 최상위 통과 **%s**"
+          % ("{:,}".format(FP["🔴 절 수(분모)"]),
+             "{:,}".format(FP["🔴🔴🔴 통과한 절 수"]),
+             "{:,}".format(FP["🔴🔴🔴 실패한 절 수"]),
+             "참" if FP["통과"] else "거짓"))
+        a("")
+        a("### 🔴 붉은 절의 「분모 · 분자 · 왜」 (조항 73-바)")
+        a("")
+        z = FP["⓪ 관문(가지의 커밋된 트리 · 🔴 정본)"]
+        a("- **⓪ 관문** — 갈린 경로 전량 %s · 데몬(규칙 B) 면제 %s · "
+          "**면제 밖에서 갈린 경로 %s**(%s). 🔴 `--tree` 가 가지 끝인가 %s."
+          % ("{:,}".format(z["🔴 분모: 갈린 경로 전량"]),
+             "{:,}".format(z["🔴 데몬(규칙 B) 면제 경로 수"]),
+             "{:,}".format(z["🔴🔴 분자: 면제 밖에서 갈린 경로"]),
+             z["🔴 그 경로"] if isinstance(z["🔴 그 경로"], str)
+             else ", ".join(z["🔴 그 경로"]),
+             "참" if z["🔴🔴🔴 993 R3 --- `--tree` 가 「가지 tip」인가"]["통과"] else "거짓"))
+        r8 = FP["8 🔴 `[수리]` 레인 계수(955 R6)"]
+        a("- 🔴🔴🔴 **절 8(`[수리]` 레인 계수)은 「동결 사이클」을 «원리상» 통과시키지 못한다** — "
+          "이 사이클의 `[수리]` 커밋 %s · 레인 %s 인데, 통과 조건이 "
+          "**「사전등록에 「수리 레인」이라는 «이름»의 `##` 절이 있고 그 안에 「상한: N」 줄이 있을 것」**을 "
+          "요구한다. 994 사전등록은 **수리를 «한 건도» 안 열기로 등기했으므로 그 절이 «없다»**. "
+          "🔴 **사전등록은 측정 «전»에 얼었으므로 지금 고치지 않는다** — 신고만 한다."
+          % ("{:,}".format(r8["🔴 그중 `[수리]` 커밋 수(분자)"]),
+             "{:,}".format(r8["🔴🔴 레인 수(분자 --- 이것이 「수리 레인」의 수다)"])))
+        r9 = FP["9 🔴🔴 리터럴 `통과` 금지(983 R1 · AST)"]
+        a("- **절 9(리터럴 `통과` 금지 · AST)** — 이 사이클 파일의 리터럴 수 %s / 분모 %s. "
+          "🔴 첫 주행이 `score994.py` 에서 넷을 잡았고 **넷 다 «계산»으로 바꿨다**."
+          % ("{:,}".format(r9["🔴🔴🔴 이 사이클 파일의 리터럴 수(분자)"]),
+             "{:,}".format(r9["🔴 분모 수"])))
+        r11 = FP["11 🔴🔴🔴 표를 고친 커밋은 문서를 다시 찍었나(993 R3 신설)"]
+        a("- **절 11(표를 고친 커밋은 문서를 다시 찍었나)** — 표 sha 가 같은가 %s · "
+          "어긋난 자리 %s."
+          % ("참" if r11["🔴🔴🔴 표 sha 대조"]["🔴🔴🔴 같은가"] else "거짓",
+             r11["🔴🔴🔴 분자: 어긋난 자리"] if isinstance(r11["🔴🔴🔴 분자: 어긋난 자리"], str)
+             else ", ".join(r11["🔴🔴🔴 분자: 어긋난 자리"])))
+        a("- 🔴 **만성 절**(993 도 떨어뜨린 것): "
+          "`1 소비자 역참조` · `1-나 날 것 git 호출 전수` · `2 게이트` · "
+          "`3 판정 키 규약` · `4 도장 확인` — 994 는 **동결**이라 이 자들을 «안 고쳤다**.")
+        r8b = FP["8 🔴 산문 주장 대 산출물 키(957 · 티처 #95 C1)"]
+        if "분모: 등록한 주장" in r8b:
+            a("- **절 8(산문 주장 대 산출물 키)** — 등록한 주장 %s · 통과 %s. "
+              "🔴 `runners/prose994.py` 가 **슬롯 대장에서 «기계로»** 만들었다(손으로 안 적었다)."
+              % ("{:,}".format(r8b["분모: 등록한 주장"]),
+                 "{:,}".format(r8b["분자: 통과한 주장"])))
+    a("")
     a("## 🔴 이 사이클의 러너 명부")
     a("")
     a("`runners/beta994_common.py` · `runners/beta994_tf.py` · `runners/beta994_org.py` · "
@@ -704,6 +780,27 @@ def main():
     for p, t in docs.items():
         (ROOT / p).write_text(t, encoding="utf-8")
 
+    # ── 🔴 슬롯을 «문서 자리»에 앉힌다(어느 문서 · 어느 줄) ──────────────
+    def _line(txt, pos):
+        a = txt.rfind("\n", 0, pos) + 1
+        b = txt.find("\n", pos)
+        return txt[a:(b if b >= 0 else len(txt))]
+
+    byfile = collections.OrderedDict([(p, []) for p in docs])
+    lost = []
+    for sl in SLOTS:
+        put = False
+        for p, t in docs.items():
+            i = t.find(sl["문자"])
+            if i >= 0:
+                r = collections.OrderedDict(sl)
+                r["문서"] = p
+                r["문장"] = _line(t, i)
+                byfile[p].append(r)
+                put = True
+        if not put:
+            lost.append(sl)
+
     # ── 🔴 `F09` --- 찍은 문서를 되짚어 «손 전사»를 센다 ────────────────
     seen = set(s["문자"] for s in SLOTS)
     seen |= set(s["문자"].replace(",", "") for s in SLOTS)
@@ -728,12 +825,36 @@ def main():
         ("🔴🔴🔴 F09 --- 슬롯에 «없는» 수(= 손 전사)", nbad),
         ("🔴 문서별", hand),
         ("🔴🔴🔴 F09 통과", bool(nbad == 0)),
+        ("🔴 문서에서 못 찾은 슬롯 수(조항 59 --- 「0」이 아니라 「못 앉혔다」)", len(lost)),
+        ("🔴 못 찾은 슬롯", lost),
+        ("파일별", collections.OrderedDict(
+            [(p, collections.OrderedDict([("슬롯 수", len(v)), ("슬롯", v)]))
+             for p, v in byfile.items()])),
         ("슬롯", SLOTS),
     ])
-    (ROOT / "runners/out994_slots.json").write_text(
-        json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
-    print("문서 %d · 슬롯 %d · 훑은 리터럴 %d · 손 전사 %d"
-          % (len(docs), len(SLOTS), tot, nbad))
+    slp = ROOT / "runners/out994_slots.json"
+    slp.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+
+    # ── 🔴 도장 --- `⑤′` 절 11 이 «커밋된 트리»에서 다시 잰다 ─────────────
+    def _sha(rel):
+        return hashlib.sha256((ROOT / rel).read_bytes()).hexdigest()
+
+    ds = collections.OrderedDict([
+        ("무엇", "🔴 노트 994 문서 sha256 --- `⑤′` 절 11 이 «커밋된 트리»에서 다시 잰다. "
+                "🔴 «표 sha»(치환표 = 슬롯 대장)를 «같이» 남긴다(993 R3)"),
+        ("🔴🔴🔴 표 경로", "runners/out994_slots.json"),
+        ("🔴🔴🔴 표 sha256(993 R3 신설)", _sha("runners/out994_slots.json")),
+        ("파일별", collections.OrderedDict([(p, _sha(p)) for p in docs])),
+        ("🔴 걸린 자리(= 자가 «비교»를 «수행»한 회수)", 1 + len(docs)),
+        ("🔴 이 도장이 덮는 것", "🔴 문서 넷 + 치환표 하나. "
+                          "🔴 **표를 고치면 문서를 다시 찍어야 이 도장이 맞는다**"),
+    ])
+    (ROOT / "runners/out994_docsha.json").write_text(
+        json.dumps(ds, ensure_ascii=False, indent=1), encoding="utf-8")
+
+    print("문서 %d · 슬롯 %d · 앉힌 슬롯 %d · 못 앉힌 %d · 훑은 리터럴 %d · 손 전사 %d"
+          % (len(docs), len(SLOTS), sum(len(v) for v in byfile.values()),
+             len(lost), tot, nbad))
     for p, v in hand.items():
         if v:
             print("  🔴 %s: %s" % (p, v))
