@@ -131,12 +131,13 @@
    "runners/audit985.py",
    "runners/certify985.py",
    "runners/cycle985.py",
+   "runners/house985.py",
    "runners/note985_gen.py",
    "runners/power985.py",
    "runners/score985.py"
   ],
   "🔴🔴🔴 측정 창 안에 러너를 고쳤나": true,
-  "🔴🔴 좁은 창이 놓친 파일 수(= 984 판이 못 본 것)": 6,
+  "🔴🔴 좁은 창이 놓친 파일 수(= 984 판이 못 본 것)": 7,
   "🔴🔴🔴 값을 낸 뒤 고치고 «안 다시 돌린» 산출물": {
    "🔴🔴 무엇": "🔴 **값을 낸 뒤에 그 값을 내는 러너를 고치고 «안 다시 돌린» 산출물** --- 조항 66-② 를 「창」이 아니라 «상태»로 잰다. 창은 넓혀도 「고친 뒤 다시 돌렸나」를 못 묻는데, 이 자는 그것을 직접 묻는다",
    "🔴 분모: 생산자 표에 든 산출물": 7,
@@ -201,8 +202,8 @@
      ],
      "🔴 파일별": {
       "runners/house985.py": {
-       "낼 때 sha256": "46d57ea9ce74cef895b0bd5d52f6427c6717cfc33b60617b5c1f3f0312b0a3c3",
-       "지금 sha256": "46d57ea9ce74cef895b0bd5d52f6427c6717cfc33b60617b5c1f3f0312b0a3c3",
+       "낼 때 sha256": "9cd19fc45c6e5e686e3fd531d64d22e0759f8f3979a11739362f8e314ea29759",
+       "지금 sha256": "9cd19fc45c6e5e686e3fd531d64d22e0759f8f3979a11739362f8e314ea29759",
        "같은가": true
       },
       "runners/cycle985.py": {
@@ -305,8 +306,8 @@
      ],
      "🔴 파일별": {
       "runners/note985_gen.py": {
-       "낼 때 sha256": "4f39af7537b5be62501acdf8d3bf28373e8dc685644441553b02f8d2c5bc3b46",
-       "지금 sha256": "4f39af7537b5be62501acdf8d3bf28373e8dc685644441553b02f8d2c5bc3b46",
+       "낼 때 sha256": "d457e2d6d9dca1a551029a4b397b44f82cdbede036f230aeffca2464e24b3512",
+       "지금 sha256": "d457e2d6d9dca1a551029a4b397b44f82cdbede036f230aeffca2464e24b3512",
        "같은가": true
       },
       "runners/cycle985.py": {
@@ -328,9 +329,9 @@
    "🔴 못 읽은 것(= 「없다」가 아니다)": "없음",
    "🔴🔴🔴 낡은 것이 있나": false
   },
-  "🔴 시작 요약(좁은 창)": "19fca7a24a87a1d94685dcb2165dac330577ea93ff8ca52a8fbb17fd0c454a5a",
+  "🔴 시작 요약(좁은 창)": "f835a8f13deba209309e2d5152ca269fab39f3dc1229b762262d12ee5d05a763",
   "🔴 시작 요약(넓은 창)": "0811706baad3d4d09f95a16c7f5e6b60f27e598b74261126d7655a72622bbc5d",
-  "🔴 끝 요약": "19fca7a24a87a1d94685dcb2165dac330577ea93ff8ca52a8fbb17fd0c454a5a",
+  "🔴 끝 요약": "f835a8f13deba209309e2d5152ca269fab39f3dc1229b762262d12ee5d05a763",
   "통과": true,
   "🔴 이 절의 `통과`": "🔴🔴 **985 R5 --- `통과` 는 「창 안에 아무것도 안 고쳤나」가 아니라 「고친 러너를 «다시 돌렸나»」다.** 사이클 창은 몇 시간이라 러너 수정은 정상이고, 위반은 **고치고 안 다시 돌린 것**이다. 조건 셋: ① 사이클 시작 도장을 읽었다(「모른다」가 아니다) · ② 낡은 산출물 0 · ③ 분모가 `RAN_ALL` 을 전부 덮었다"
  },
@@ -344,10 +345,10 @@
   "runners/fiveprime_984_cert.json": "cec688509f193b2a783d5166d89233e35ea33b1b2c6a2d3a3c149620a13722d3"
  },
  "🔴 도장": {
-  "언제(시작)": "2026-08-17T00:19:42Z",
-  "언제(끝)": "2026-08-17T00:19:42Z",
-  "시작 code_stamp 요약": "19fca7a24a87a1d94685dcb2165dac330577ea93ff8ca52a8fbb17fd0c454a5a",
-  "끝 code_stamp 요약": "19fca7a24a87a1d94685dcb2165dac330577ea93ff8ca52a8fbb17fd0c454a5a",
+  "언제(시작)": "2026-08-17T00:27:44Z",
+  "언제(끝)": "2026-08-17T00:27:44Z",
+  "시작 code_stamp 요약": "f835a8f13deba209309e2d5152ca269fab39f3dc1229b762262d12ee5d05a763",
+  "끝 code_stamp 요약": "f835a8f13deba209309e2d5152ca269fab39f3dc1229b762262d12ee5d05a763",
   "🔴 시작=끝": true,
   "분모: 도장이 덮는 파일": 94,
   "🔴 자료 지문": {
@@ -356,7 +357,7 @@
    "hplt_ko": "67de3062bad60e122c446fccb0b96d2c3a36c0ee2deafa40324a22dcad6c09a2"
   },
   "분모: 연 자료 파일": 3,
-  "🔴 F1 기준 ref(준 대로)": "30203e3c0297d6fdde09616865336714456ad2e5",
+  "🔴 F1 기준 ref(준 대로)": "39b7c54822e902d8612a1a969da36957cad42325",
   "🔴 40자 고정 sha 인가": true,
   "🔴 기준 ref 가 0000…0000 인가": false,
   "러너별": {
@@ -366,8 +367,8 @@
     "일치": true
    },
    "runners/house985.py": {
-    "디스크 sha256": "46d57ea9ce74cef895b0bd5d52f6427c6717cfc33b60617b5c1f3f0312b0a3c3",
-    "커밋 blob sha256": "46d57ea9ce74cef895b0bd5d52f6427c6717cfc33b60617b5c1f3f0312b0a3c3",
+    "디스크 sha256": "9cd19fc45c6e5e686e3fd531d64d22e0759f8f3979a11739362f8e314ea29759",
+    "커밋 blob sha256": "9cd19fc45c6e5e686e3fd531d64d22e0759f8f3979a11739362f8e314ea29759",
     "일치": true
    },
    "runners/audit985.py": {
@@ -386,8 +387,8 @@
     "일치": true
    },
    "runners/note985_gen.py": {
-    "디스크 sha256": "4f39af7537b5be62501acdf8d3bf28373e8dc685644441553b02f8d2c5bc3b46",
-    "커밋 blob sha256": "4f39af7537b5be62501acdf8d3bf28373e8dc685644441553b02f8d2c5bc3b46",
+    "디스크 sha256": "d457e2d6d9dca1a551029a4b397b44f82cdbede036f230aeffca2464e24b3512",
+    "커밋 blob sha256": "d457e2d6d9dca1a551029a4b397b44f82cdbede036f230aeffca2464e24b3512",
     "일치": true
    },
    "runners/certify985.py": {
