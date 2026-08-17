@@ -3,15 +3,32 @@
  "🔴 명부의 출처": "글롭 `runners/*992*.py` · `runners/*992*` --- 손으로 안 골랐다",
  "🔴 지도의 출처": "🔴 **지도를 «안 만든다».** ① 생산자는 산출물이 «자기 도장에» 적은 코드 sha 로 알고 ② 소비 관계는 러너의 **AST 문자열 상수**에서 뽑는다",
  "🔴 산출물별 도장이 적은 러너": {
+  "runners/fiveprime_992.json": [
+   "lab/gitcall.py",
+   "lab/keyspace.py",
+   "runners/fiveprime902.py",
+   "runners/quote901.py"
+  ],
   "runners/out992_audit.json": [
    "runners/audit992.py"
   ],
+  "runners/out992_fix.json": [
+   "runners/fix992.py"
+  ],
   "runners/out992_last.json": [
    "runners/audit992.py",
+   "runners/fix992.py",
    "runners/last992.py",
+   "runners/ledger992.py",
    "runners/mut992.py",
+   "runners/note992_gen.py",
+   "runners/paper992.py",
+   "runners/prose992.py",
    "runners/score992.py",
    "runners/world992.py"
+  ],
+  "runners/out992_ledger.json": [
+   "runners/ledger992.py"
   ],
   "runners/out992_mut.json": [
    "runners/alpha977.py",
@@ -25,6 +42,9 @@
    "runners/predict971.py",
    "runners/world992.py"
   ],
+  "runners/out992_paper.json": [
+   "runners/paper992.py"
+  ],
   "runners/out992_wiring.json": [
    "runners/alpha977.py",
    "runners/ff753.py",
@@ -34,31 +54,35 @@
   ]
  },
  "🔴 이 사이클 산출물 전량": [
+  "runners/fiveprime_992.json",
   "runners/out992_audit.json",
+  "runners/out992_docsha.json",
+  "runners/out992_fix.json",
   "runners/out992_last.json",
+  "runners/out992_ledger.json",
   "runners/out992_mut.json",
   "runners/out992_order.json",
+  "runners/out992_paper.json",
   "runners/out992_progress.txt",
+  "runners/out992_score.json",
+  "runners/out992_slots.json",
+  "runners/out992_table.json",
   "runners/out992_wiring.json"
  ],
- "🔴 산출물 수": 6,
+ "🔴 산출물 수": 14,
  "🔴🔴 도장이 «없는» 산출물(= 이 자가 원리상 못 본다 · 「깨끗함」이 아니다)": [
-  "runners/out992_progress.txt"
+  "runners/out992_docsha.json",
+  "runners/out992_progress.txt",
+  "runners/out992_score.json",
+  "runners/out992_slots.json",
+  "runners/out992_table.json"
  ],
- "🔴🔴🔴 도장 sha ≠ 디스크 sha 인 자리(= 고치고 안 다시 돌렸다)": [
-  {
-   "산출물": "runners/out992_last.json",
-   "러너": "runners/last992.py",
-   "도장이 적은 sha256": "086910228941645b49140875a52ea7ab77cf5c67335c110c2092c2e5b29e4e92",
-   "지금 디스크 sha256": "420e94e5900f83696647dbfd0e93d2c2c75d3a0a63a44b3361143e6707c29366",
-   "🔴": "🔴 **고치고 안 다시 돌렸다**(조항 66-②)"
-  }
- ],
- "🔴 그 수": 1,
+ "🔴🔴🔴 도장 sha ≠ 디스크 sha 인 자리(= 고치고 안 다시 돌렸다)": "없음",
+ "🔴 그 수": 0,
  "🔴🔴🔴 992 신설 — 도장 위상 정렬": {
   "무엇": "🔴🔴🔴 992 자신 — 도장 위상 정렬 전수",
-  "🔴 산출물 수": 6,
-  "🔴 러너 수": 5,
+  "🔴 산출물 수": 14,
+  "🔴 러너 수": 10,
   "🔴 러너별 «쓰는/읽는» 산출물(AST)": {
    "runners/audit992.py": {
     "쓴다": [
@@ -71,6 +95,18 @@
      "out992_slots.json"
     ]
    },
+   "runners/fix992.py": {
+    "쓴다": [
+     "out992_fix.json"
+    ],
+    "읽는다": [
+     "out991_audit.json",
+     "out991_fix.json",
+     "out992_audit.json",
+     "out992_mut.json",
+     "out992_order.json"
+    ]
+   },
    "runners/last992.py": {
     "쓴다": [
      "out992_last.json"
@@ -80,11 +116,62 @@
      "out991_fix.json"
     ]
    },
+   "runners/ledger992.py": {
+    "쓴다": [
+     "out992_ledger.json"
+    ],
+    "읽는다": [
+     "fiveprime_992.json",
+     "out992_audit.json",
+     "out992_last.json",
+     "out992_mut.json",
+     "out992_order.json",
+     "out992_paper.json",
+     "out992_score.json",
+     "out992_wiring.json"
+    ]
+   },
    "runners/mut992.py": {
     "쓴다": [
      "out992_mut.json"
     ],
     "읽는다": []
+   },
+   "runners/note992_gen.py": {
+    "쓴다": [
+     "out992_docsha.json",
+     "out992_slots.json",
+     "out992_table.json"
+    ],
+    "읽는다": [
+     "fiveprime_992.json",
+     "out992_audit.json",
+     "out992_last.json",
+     "out992_ledger.json",
+     "out992_mut.json",
+     "out992_order.json",
+     "out992_paper.json",
+     "out992_score.json",
+     "out992_wiring.json"
+    ]
+   },
+   "runners/paper992.py": {
+    "쓴다": [
+     "out992_paper.json"
+    ],
+    "읽는다": [
+     "out992_audit.json",
+     "out992_mut.json",
+     "out992_order.json",
+     "out992_score.json",
+     "out992_wiring.json"
+    ]
+   },
+   "runners/prose992.py": {
+    "쓴다": [],
+    "읽는다": [
+     "out992_slots.json"
+    ]
    },
    "runners/score992.py": {
     "쓴다": [
@@ -115,35 +202,533 @@
    }
   },
   "🔴 산출물별 끝 도장 시각": {
-   "runners/out992_audit.json": "2026-08-17T11:46:42Z",
-   "runners/out992_last.json": "2026-08-17T11:52:20Z",
+   "runners/fiveprime_992.json": "2026-08-17T12:11:14Z",
+   "runners/out992_audit.json": "2026-08-17T12:20:45Z",
+   "runners/out992_docsha.json": "2026-08-17T12:20:46Z",
+   "runners/out992_fix.json": "2026-08-17T12:20:10Z",
+   "runners/out992_last.json": "2026-08-17T12:20:09Z",
+   "runners/out992_ledger.json": "2026-08-17T12:20:10Z",
    "runners/out992_mut.json": "2026-08-17T11:42:25Z",
    "runners/out992_order.json": "2026-08-17T11:38:56Z",
+   "runners/out992_paper.json": "2026-08-17T12:20:09Z",
    "runners/out992_progress.txt": null,
+   "runners/out992_score.json": "2026-08-17T12:20:10Z",
+   "runners/out992_slots.json": "2026-08-17T12:20:46Z",
+   "runners/out992_table.json": null,
    "runners/out992_wiring.json": "2026-08-17T11:38:24Z"
   },
-  "🔴🔴 산출물 그래프의 «고리»(SCC · 크기 2 이상)": "없음",
-  "🔴 견준 «생산자 → 소비자» 짝 수": 1,
-  "🔴🔴🔴 위상 어긋남(소비자 < 생산자 · 🔴 고리 «밖»)": "없음",
-  "🔴🔴🔴 소비자 도장이 «생산자보다 앞선» 자리 수": 0,
-  "🔴🔴 고리 «안»의 어긋남(= `F10` 이 «수렴»으로 푼다)": "없음",
-  "🔴🔴 그 수(고리 안)": 0,
+  "🔴🔴 산출물 그래프의 «고리»(SCC · 크기 2 이상)": {
+   "1": [
+    "runners/out992_audit.json",
+    "runners/out992_docsha.json",
+    "runners/out992_ledger.json",
+    "runners/out992_paper.json",
+    "runners/out992_score.json",
+    "runners/out992_slots.json",
+    "runners/out992_table.json"
+   ]
+  },
+  "🔴 견준 «생산자 → 소비자» 짝 수": 45,
+  "🔴🔴🔴 위상 어긋남(소비자 < 생산자 · 🔴 고리 «밖»)": [
+   {
+    "소비자 산출물": "runners/out992_fix.json",
+    "낸 러너": "runners/fix992.py",
+    "생산자 산출물": "runners/out992_audit.json",
+    "소비자 끝 시각": "2026-08-17T12:20:10Z",
+    "생산자 끝 시각": "2026-08-17T12:20:45Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false
+   }
+  ],
+  "🔴🔴🔴 소비자 도장이 «생산자보다 앞선» 자리 수": 1,
+  "🔴🔴 고리 «안»의 어긋남(= `F10` 이 «수렴»으로 푼다)": [
+   {
+    "소비자 산출물": "runners/out992_audit.json",
+    "낸 러너": "runners/audit992.py",
+    "생산자 산출물": "runners/out992_slots.json",
+    "소비자 끝 시각": "2026-08-17T12:20:45Z",
+    "생산자 끝 시각": "2026-08-17T12:20:46Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true
+   },
+   {
+    "소비자 산출물": "runners/out992_ledger.json",
+    "낸 러너": "runners/ledger992.py",
+    "생산자 산출물": "runners/out992_audit.json",
+    "소비자 끝 시각": "2026-08-17T12:20:10Z",
+    "생산자 끝 시각": "2026-08-17T12:20:45Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true
+   },
+   {
+    "소비자 산출물": "runners/out992_paper.json",
+    "낸 러너": "runners/paper992.py",
+    "생산자 산출물": "runners/out992_audit.json",
+    "소비자 끝 시각": "2026-08-17T12:20:09Z",
+    "생산자 끝 시각": "2026-08-17T12:20:45Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true
+   },
+   {
+    "소비자 산출물": "runners/out992_paper.json",
+    "낸 러너": "runners/paper992.py",
+    "생산자 산출물": "runners/out992_score.json",
+    "소비자 끝 시각": "2026-08-17T12:20:09Z",
+    "생산자 끝 시각": "2026-08-17T12:20:10Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true
+   },
+   {
+    "소비자 산출물": "runners/out992_score.json",
+    "낸 러너": "runners/score992.py",
+    "생산자 산출물": "runners/out992_audit.json",
+    "소비자 끝 시각": "2026-08-17T12:20:10Z",
+    "생산자 끝 시각": "2026-08-17T12:20:45Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true
+   },
+   {
+    "소비자 산출물": "runners/out992_score.json",
+    "낸 러너": "runners/score992.py",
+    "생산자 산출물": "runners/out992_docsha.json",
+    "소비자 끝 시각": "2026-08-17T12:20:10Z",
+    "생산자 끝 시각": "2026-08-17T12:20:46Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true
+   },
+   {
+    "소비자 산출물": "runners/out992_score.json",
+    "낸 러너": "runners/score992.py",
+    "생산자 산출물": "runners/out992_slots.json",
+    "소비자 끝 시각": "2026-08-17T12:20:10Z",
+    "생산자 끝 시각": "2026-08-17T12:20:46Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true
+   }
+  ],
+  "🔴🔴 그 수(고리 안)": 7,
   "🔴 짝 전량": [
    {
     "소비자 산출물": "runners/out992_audit.json",
     "낸 러너": "runners/audit992.py",
     "생산자 산출물": "runners/out992_mut.json",
-    "소비자 끝 시각": "2026-08-17T11:46:42Z",
+    "소비자 끝 시각": "2026-08-17T12:20:45Z",
     "생산자 끝 시각": "2026-08-17T11:42:25Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_audit.json",
+    "낸 러너": "runners/audit992.py",
+    "생산자 산출물": "runners/out992_slots.json",
+    "소비자 끝 시각": "2026-08-17T12:20:45Z",
+    "생산자 끝 시각": "2026-08-17T12:20:46Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true
+   },
+   {
+    "소비자 산출물": "runners/out992_docsha.json",
+    "낸 러너": "runners/note992_gen.py",
+    "생산자 산출물": "runners/fiveprime_992.json",
+    "소비자 끝 시각": "2026-08-17T12:20:46Z",
+    "생산자 끝 시각": "2026-08-17T12:11:14Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_docsha.json",
+    "낸 러너": "runners/note992_gen.py",
+    "생산자 산출물": "runners/out992_audit.json",
+    "소비자 끝 시각": "2026-08-17T12:20:46Z",
+    "생산자 끝 시각": "2026-08-17T12:20:45Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true
+   },
+   {
+    "소비자 산출물": "runners/out992_docsha.json",
+    "낸 러너": "runners/note992_gen.py",
+    "생산자 산출물": "runners/out992_last.json",
+    "소비자 끝 시각": "2026-08-17T12:20:46Z",
+    "생산자 끝 시각": "2026-08-17T12:20:09Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_docsha.json",
+    "낸 러너": "runners/note992_gen.py",
+    "생산자 산출물": "runners/out992_ledger.json",
+    "소비자 끝 시각": "2026-08-17T12:20:46Z",
+    "생산자 끝 시각": "2026-08-17T12:20:10Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true
+   },
+   {
+    "소비자 산출물": "runners/out992_docsha.json",
+    "낸 러너": "runners/note992_gen.py",
+    "생산자 산출물": "runners/out992_mut.json",
+    "소비자 끝 시각": "2026-08-17T12:20:46Z",
+    "생산자 끝 시각": "2026-08-17T11:42:25Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_docsha.json",
+    "낸 러너": "runners/note992_gen.py",
+    "생산자 산출물": "runners/out992_order.json",
+    "소비자 끝 시각": "2026-08-17T12:20:46Z",
+    "생산자 끝 시각": "2026-08-17T11:38:56Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_docsha.json",
+    "낸 러너": "runners/note992_gen.py",
+    "생산자 산출물": "runners/out992_paper.json",
+    "소비자 끝 시각": "2026-08-17T12:20:46Z",
+    "생산자 끝 시각": "2026-08-17T12:20:09Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true
+   },
+   {
+    "소비자 산출물": "runners/out992_docsha.json",
+    "낸 러너": "runners/note992_gen.py",
+    "생산자 산출물": "runners/out992_score.json",
+    "소비자 끝 시각": "2026-08-17T12:20:46Z",
+    "생산자 끝 시각": "2026-08-17T12:20:10Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true
+   },
+   {
+    "소비자 산출물": "runners/out992_docsha.json",
+    "낸 러너": "runners/note992_gen.py",
+    "생산자 산출물": "runners/out992_wiring.json",
+    "소비자 끝 시각": "2026-08-17T12:20:46Z",
+    "생산자 끝 시각": "2026-08-17T11:38:24Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_fix.json",
+    "낸 러너": "runners/fix992.py",
+    "생산자 산출물": "runners/out992_audit.json",
+    "소비자 끝 시각": "2026-08-17T12:20:10Z",
+    "생산자 끝 시각": "2026-08-17T12:20:45Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_fix.json",
+    "낸 러너": "runners/fix992.py",
+    "생산자 산출물": "runners/out992_mut.json",
+    "소비자 끝 시각": "2026-08-17T12:20:10Z",
+    "생산자 끝 시각": "2026-08-17T11:42:25Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_fix.json",
+    "낸 러너": "runners/fix992.py",
+    "생산자 산출물": "runners/out992_order.json",
+    "소비자 끝 시각": "2026-08-17T12:20:10Z",
+    "생산자 끝 시각": "2026-08-17T11:38:56Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_ledger.json",
+    "낸 러너": "runners/ledger992.py",
+    "생산자 산출물": "runners/fiveprime_992.json",
+    "소비자 끝 시각": "2026-08-17T12:20:10Z",
+    "생산자 끝 시각": "2026-08-17T12:11:14Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_ledger.json",
+    "낸 러너": "runners/ledger992.py",
+    "생산자 산출물": "runners/out992_audit.json",
+    "소비자 끝 시각": "2026-08-17T12:20:10Z",
+    "생산자 끝 시각": "2026-08-17T12:20:45Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true
+   },
+   {
+    "소비자 산출물": "runners/out992_ledger.json",
+    "낸 러너": "runners/ledger992.py",
+    "생산자 산출물": "runners/out992_last.json",
+    "소비자 끝 시각": "2026-08-17T12:20:10Z",
+    "생산자 끝 시각": "2026-08-17T12:20:09Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_ledger.json",
+    "낸 러너": "runners/ledger992.py",
+    "생산자 산출물": "runners/out992_mut.json",
+    "소비자 끝 시각": "2026-08-17T12:20:10Z",
+    "생산자 끝 시각": "2026-08-17T11:42:25Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_ledger.json",
+    "낸 러너": "runners/ledger992.py",
+    "생산자 산출물": "runners/out992_order.json",
+    "소비자 끝 시각": "2026-08-17T12:20:10Z",
+    "생산자 끝 시각": "2026-08-17T11:38:56Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_ledger.json",
+    "낸 러너": "runners/ledger992.py",
+    "생산자 산출물": "runners/out992_paper.json",
+    "소비자 끝 시각": "2026-08-17T12:20:10Z",
+    "생산자 끝 시각": "2026-08-17T12:20:09Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true
+   },
+   {
+    "소비자 산출물": "runners/out992_ledger.json",
+    "낸 러너": "runners/ledger992.py",
+    "생산자 산출물": "runners/out992_score.json",
+    "소비자 끝 시각": "2026-08-17T12:20:10Z",
+    "생산자 끝 시각": "2026-08-17T12:20:10Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true
+   },
+   {
+    "소비자 산출물": "runners/out992_ledger.json",
+    "낸 러너": "runners/ledger992.py",
+    "생산자 산출물": "runners/out992_wiring.json",
+    "소비자 끝 시각": "2026-08-17T12:20:10Z",
+    "생산자 끝 시각": "2026-08-17T11:38:24Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_paper.json",
+    "낸 러너": "runners/paper992.py",
+    "생산자 산출물": "runners/out992_audit.json",
+    "소비자 끝 시각": "2026-08-17T12:20:09Z",
+    "생산자 끝 시각": "2026-08-17T12:20:45Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true
+   },
+   {
+    "소비자 산출물": "runners/out992_paper.json",
+    "낸 러너": "runners/paper992.py",
+    "생산자 산출물": "runners/out992_mut.json",
+    "소비자 끝 시각": "2026-08-17T12:20:09Z",
+    "생산자 끝 시각": "2026-08-17T11:42:25Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_paper.json",
+    "낸 러너": "runners/paper992.py",
+    "생산자 산출물": "runners/out992_order.json",
+    "소비자 끝 시각": "2026-08-17T12:20:09Z",
+    "생산자 끝 시각": "2026-08-17T11:38:56Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_paper.json",
+    "낸 러너": "runners/paper992.py",
+    "생산자 산출물": "runners/out992_score.json",
+    "소비자 끝 시각": "2026-08-17T12:20:09Z",
+    "생산자 끝 시각": "2026-08-17T12:20:10Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true
+   },
+   {
+    "소비자 산출물": "runners/out992_paper.json",
+    "낸 러너": "runners/paper992.py",
+    "생산자 산출물": "runners/out992_wiring.json",
+    "소비자 끝 시각": "2026-08-17T12:20:09Z",
+    "생산자 끝 시각": "2026-08-17T11:38:24Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_score.json",
+    "낸 러너": "runners/score992.py",
+    "생산자 산출물": "runners/fiveprime_992.json",
+    "소비자 끝 시각": "2026-08-17T12:20:10Z",
+    "생산자 끝 시각": "2026-08-17T12:11:14Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_score.json",
+    "낸 러너": "runners/score992.py",
+    "생산자 산출물": "runners/out992_audit.json",
+    "소비자 끝 시각": "2026-08-17T12:20:10Z",
+    "생산자 끝 시각": "2026-08-17T12:20:45Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true
+   },
+   {
+    "소비자 산출물": "runners/out992_score.json",
+    "낸 러너": "runners/score992.py",
+    "생산자 산출물": "runners/out992_docsha.json",
+    "소비자 끝 시각": "2026-08-17T12:20:10Z",
+    "생산자 끝 시각": "2026-08-17T12:20:46Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true
+   },
+   {
+    "소비자 산출물": "runners/out992_score.json",
+    "낸 러너": "runners/score992.py",
+    "생산자 산출물": "runners/out992_last.json",
+    "소비자 끝 시각": "2026-08-17T12:20:10Z",
+    "생산자 끝 시각": "2026-08-17T12:20:09Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_score.json",
+    "낸 러너": "runners/score992.py",
+    "생산자 산출물": "runners/out992_mut.json",
+    "소비자 끝 시각": "2026-08-17T12:20:10Z",
+    "생산자 끝 시각": "2026-08-17T11:42:25Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_score.json",
+    "낸 러너": "runners/score992.py",
+    "생산자 산출물": "runners/out992_order.json",
+    "소비자 끝 시각": "2026-08-17T12:20:10Z",
+    "생산자 끝 시각": "2026-08-17T11:38:56Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_score.json",
+    "낸 러너": "runners/score992.py",
+    "생산자 산출물": "runners/out992_paper.json",
+    "소비자 끝 시각": "2026-08-17T12:20:10Z",
+    "생산자 끝 시각": "2026-08-17T12:20:09Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true
+   },
+   {
+    "소비자 산출물": "runners/out992_score.json",
+    "낸 러너": "runners/score992.py",
+    "생산자 산출물": "runners/out992_slots.json",
+    "소비자 끝 시각": "2026-08-17T12:20:10Z",
+    "생산자 끝 시각": "2026-08-17T12:20:46Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true
+   },
+   {
+    "소비자 산출물": "runners/out992_score.json",
+    "낸 러너": "runners/score992.py",
+    "생산자 산출물": "runners/out992_wiring.json",
+    "소비자 끝 시각": "2026-08-17T12:20:10Z",
+    "생산자 끝 시각": "2026-08-17T11:38:24Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_slots.json",
+    "낸 러너": "runners/note992_gen.py",
+    "생산자 산출물": "runners/fiveprime_992.json",
+    "소비자 끝 시각": "2026-08-17T12:20:46Z",
+    "생산자 끝 시각": "2026-08-17T12:11:14Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_slots.json",
+    "낸 러너": "runners/note992_gen.py",
+    "생산자 산출물": "runners/out992_audit.json",
+    "소비자 끝 시각": "2026-08-17T12:20:46Z",
+    "생산자 끝 시각": "2026-08-17T12:20:45Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true
+   },
+   {
+    "소비자 산출물": "runners/out992_slots.json",
+    "낸 러너": "runners/note992_gen.py",
+    "생산자 산출물": "runners/out992_last.json",
+    "소비자 끝 시각": "2026-08-17T12:20:46Z",
+    "생산자 끝 시각": "2026-08-17T12:20:09Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_slots.json",
+    "낸 러너": "runners/note992_gen.py",
+    "생산자 산출물": "runners/out992_ledger.json",
+    "소비자 끝 시각": "2026-08-17T12:20:46Z",
+    "생산자 끝 시각": "2026-08-17T12:20:10Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true
+   },
+   {
+    "소비자 산출물": "runners/out992_slots.json",
+    "낸 러너": "runners/note992_gen.py",
+    "생산자 산출물": "runners/out992_mut.json",
+    "소비자 끝 시각": "2026-08-17T12:20:46Z",
+    "생산자 끝 시각": "2026-08-17T11:42:25Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_slots.json",
+    "낸 러너": "runners/note992_gen.py",
+    "생산자 산출물": "runners/out992_order.json",
+    "소비자 끝 시각": "2026-08-17T12:20:46Z",
+    "생산자 끝 시각": "2026-08-17T11:38:56Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false
+   },
+   {
+    "소비자 산출물": "runners/out992_slots.json",
+    "낸 러너": "runners/note992_gen.py",
+    "생산자 산출물": "runners/out992_paper.json",
+    "소비자 끝 시각": "2026-08-17T12:20:46Z",
+    "생산자 끝 시각": "2026-08-17T12:20:09Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true
+   },
+   {
+    "소비자 산출물": "runners/out992_slots.json",
+    "낸 러너": "runners/note992_gen.py",
+    "생산자 산출물": "runners/out992_score.json",
+    "소비자 끝 시각": "2026-08-17T12:20:46Z",
+    "생산자 끝 시각": "2026-08-17T12:20:10Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true
+   },
+   {
+    "소비자 산출물": "runners/out992_slots.json",
+    "낸 러너": "runners/note992_gen.py",
+    "생산자 산출물": "runners/out992_wiring.json",
+    "소비자 끝 시각": "2026-08-17T12:20:46Z",
+    "생산자 끝 시각": "2026-08-17T11:38:24Z",
     "🔴 앞서나": false,
     "🔴 고리 안인가": false
    }
   ],
-  "🔴 걸린 자리(= 비교를 «수행»한 회수)": 3
+  "🔴 걸린 자리(= 비교를 «수행»한 회수)": 57
  },
- "🔴🔴🔴 소비자 도장이 «생산자보다 앞선» 자리 수": 0,
- "🔴🔴🔴 위상 어긋남(소비자 < 생산자 · 고리 밖)": "없음",
- "🔴🔴 고리 «안»의 어긋남(= `F10` 이 수렴으로 푼다) 수": 0,
+ "🔴🔴🔴 소비자 도장이 «생산자보다 앞선» 자리 수": 1,
+ "🔴🔴🔴 위상 어긋남(소비자 < 생산자 · 고리 밖)": [
+  {
+   "소비자 산출물": "runners/out992_fix.json",
+   "낸 러너": "runners/fix992.py",
+   "생산자 산출물": "runners/out992_audit.json",
+   "소비자 끝 시각": "2026-08-17T12:20:10Z",
+   "생산자 끝 시각": "2026-08-17T12:20:45Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": false
+  }
+ ],
+ "🔴🔴 고리 «안»의 어긋남(= `F10` 이 수렴으로 푼다) 수": 7,
  "🔴🔴 구판/신판 전후 — 991 에 같은 자를 물리면": {
   "🔴🔴🔴 991 의 위상 어긋남 수": 7,
   "🔴 그 자리": [
@@ -216,38 +801,26 @@
   "🔴🔴🔴 구판/신판이 갈리나": true,
   "🔴 이것이 이 자의 «검정력 증거»다": "🔴 **새 자는 991 의 실제 사고(`fix991` 이 `audit991` 보다 11 분 먼저 돌고 다시 안 돌았다)를 «잡는다».** 구판은 못 잡았다"
  },
- "🔴 산출물보다 «오래된» 문서(= 다시 안 찍었다)": [
-  {
-   "문서": "docs/판정_992.md",
-   "🔴": "없다"
-  },
-  {
-   "문서": "docs/card_992.md",
-   "🔴": "없다"
-  },
-  {
-   "문서": "docs/handoff_992.md",
-   "🔴": "없다"
-  },
-  {
-   "문서": "docs/pr_992.md",
-   "🔴": "없다"
-  }
- ],
+ "🔴 산출물보다 «오래된» 문서(= 다시 안 찍었다)": "없음",
  "🔴🔴🔴 F09 반증됐나": true,
- "🔴 걸린 자리(= 비교를 «수행»한 회수)": 63,
+ "🔴 걸린 자리(= 비교를 «수행»한 회수)": 129,
  "통과": false,
  "🔴 이 절의 통과가 뜻하는 것": "🔴 ① 어떤 러너도 자기 산출물보다 새롭지 않고 ② **어떤 소비자 산출물도 자기가 읽는 생산자 산출물보다 «먼저» 찍히지 않았다**",
  "🔴 도장": {
   "ref(부른 쪽이 준 40자 sha)": "cc8f67b05718812d4d437b8f0d0b697c1672854a",
   "🔴 코드 sha256": {
-   "runners/audit992.py": "26e5642b6366335d5e96d1eacbc99ffc7eb3ad1d59d77cfa301c81196f72fb79",
+   "runners/audit992.py": "98ffe09603384e4c693a0ddbdd5f0233ec1dc0e761d39ad5249473e99cb1ab06",
+   "runners/fix992.py": "c95176bb2a50a85c1df14b40b0aba39843e8543c8e8e631a61fc1556681b4097",
    "runners/last992.py": "420e94e5900f83696647dbfd0e93d2c2c75d3a0a63a44b3361143e6707c29366",
+   "runners/ledger992.py": "5af2208bfc2f9ca23837991b000237f6bdab53ddf4bc628c0421bd9ad53c281e",
    "runners/mut992.py": "2e2c6c69b8d31ef8ec7cdcd17a14223f7500c79c24e55c1bdb00a57eceb9c154",
-   "runners/score992.py": "d2cf19da4f4dfff994838750ecef3b4c6b639b4ee84354da85dd124d7abe90f4",
+   "runners/note992_gen.py": "d335c59fe1eaec8b8bebfc9ac47ad9c5d00d67b6a78b9ce98f67e0b4ed6e8f41",
+   "runners/paper992.py": "0379e50fc4f74a0d8cdd964c2b56ffef4a1e98767432561c758ada6f4ee02f05",
+   "runners/prose992.py": "4c4dcbaaf6cf94a468712b839b8e19061854602d43846e6df46bbe4a12cdb911",
+   "runners/score992.py": "8a29c1b0532c0dc9da3801db64dae17a58381c4c1320cff63aa33fd1c95d4476",
    "runners/world992.py": "b3ce5c099670e0459cbc0c75b3bdc43bcb87cb70727d12b10473a8bad69a17a7"
   },
-  "시작(UTC)": "2026-08-17T11:55:35Z",
-  "끝(UTC)": "2026-08-17T11:55:35Z"
+  "시작(UTC)": "2026-08-17T12:20:46Z",
+  "끝(UTC)": "2026-08-17T12:20:46Z"
  }
 }

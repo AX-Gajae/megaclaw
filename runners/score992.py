@@ -462,7 +462,10 @@ def j_F09():
         ("🔴 도장 sha ≠ 디스크 sha 인 자리 수", L.get("🔴 그 수")),
         ("🔴🔴🔴 소비자 도장이 «생산자보다 앞선» 자리 수",
          L.get("🔴🔴🔴 소비자 도장이 «생산자보다 앞선» 자리 수")),
-        ("🔴🔴🔴 그 자리", L.get("🔴🔴🔴 위상 어긋남(소비자 < 생산자)")),
+        ("🔴🔴🔴 그 자리",
+         L.get("🔴🔴🔴 위상 어긋남(소비자 < 생산자 · 고리 밖)")),
+        ("🔴🔴 고리 «안»의 어긋남 수(= `F10` 이 수렴으로 푼다)",
+         L.get("🔴🔴 고리 «안»의 어긋남(= `F10` 이 수렴으로 푼다) 수")),
         ("🔴 그 러너의 걸린 자리", L.get("🔴 걸린 자리(= 비교를 «수행»한 회수)")),
         ("🔴 아직 안 돌았나", bool(not L)),
     ]), (1 if L else 0)
@@ -541,8 +544,8 @@ def j_F12():
     A = _load("runners/out992_audit.json")
     D = A.get("§D 🔴🔴 규칙 D — 992 자신") or {}
     D9 = A.get("§D-나 🔴 규칙 D — 991 을 같은 자로 다시 센다") or {}
-    if D.get("🔴🔴🔴 슬롯 대장이 «없다» --- 이 사이클은 규칙 D 를 «잴 수가 없다»"):
-        return True, {"🔴🔴🔴 슬롯 대장이 없다": True}, 0
+    if D.get("🔴🔴🔴 못 쟀다(대장이 없다)") is not False:
+        return True, {"🔴🔴🔴 슬롯 대장이 없다(= 「깨끗함」이 «아니다»)": True}, 0
     hits = int(D.get("🔴 걸린 자리(= 자가 «비교»를 «수행»한 회수)") or 0)
     meas = D.get("🔴🔴🔴 ㉰ 측정치(= 판정에 «무는» 것)만의 수")
     sig = D.get("🔴🔴🔴 유효숫자가 어긋난 슬롯 수")
@@ -679,16 +682,26 @@ def j_F14():
                 hits += 1
                 nm = LG._norm(repr(t.value))
                 line = lines[t.lineno - 1] if 0 < t.lineno <= len(lines) else ""
-                if nm in S_pub and _REPRO_TAG not in line:
+                seg = line[getattr(t, "col_offset", 0):
+                           getattr(t, "end_col_offset", 0)] or repr(t.value)
+                # 🔴 «정밀한 수»(소수점 아래 «세 자리 이상»)만 「손 전사」 후보다 ---
+                #   `1.0`·`0.95`·`5e-4` 같은 인자·허용오차는 «옮겨 적은 측정치»가 아니다.
+                precise = bool(re.search(r"\.\d{3,}", seg))
+                if precise and nm in S_pub and nm not in consts \
+                        and _REPRO_TAG not in line:
                     hand_float.append({"파일": rel, "줄": t.lineno,
-                                       "값": t.value, "줄 내용": line.strip()[:120]})
-                elif nm not in S_pub and nm not in consts and nm not in S_self:
+                                       "값": t.value, "소스": seg,
+                                       "줄 내용": line.strip()[:120]})
+                elif precise and nm not in S_pub and nm not in consts \
+                        and nm not in S_self:
                     undeclared.append({"파일": rel, "줄": t.lineno, "값": t.value})
     return bool(pass_lit or tpl_hand or hand_float), collections.OrderedDict([
         ("🔴 분모 `RAN_992`(글롭 --- `prose*`·`fix*`·`docs/tpl/*.tpl` 이 «든다»)", ran),
         ("🔴 분모 크기", len(ran)),
         ("🔴🔴🔴 리터럴 `(\"통과\", True)` 자리", pass_lit or "없음"),
         ("🔴🔴🔴 훑은 «부동소수 리터럴» 수(992 가 넓힌 분모)", scanned_lit),
+        ("🔴 판정 꼴", "🔴 **소수점 아래 «세 자리 이상»인 리터럴 ∧ 옛 사이클 산출물이 낸 수 ∧ "
+                  "사전등록 §7 이 «안» 신고한 수 ∧ `%s` 꼬리표가 «없는» 줄**" % _REPRO_TAG),
         ("🔴🔴🔴 «손 전사» 부동소수 리터럴(옛 사이클 산출물이 «낸» 수를 소스에 박았다)",
          hand_float or "없음"),
         ("🔴🔴🔴 그 수", len(hand_float)),
@@ -783,7 +796,8 @@ def main():
         ("🔴🔴🔴 치환표(out992_table) — 못 읽은 슬롯 0", bool(table.get("통과"))),
         # 🔴🔴🔴 **992 `R3`** --- 규칙 D 의 「키 경로와 본문이 다른 슬롯 0」을 «최상위»에 문다.
         ("🔴🔴🔴 규칙 D — 키 경로와 본문이 다른 슬롯 0",
-         bool(D.get("🔴🔴🔴 키 경로와 본문이 다른 슬롯 합") == 0)),
+         bool(D.get("🔴🔴🔴 키 경로와 본문이 다른 슬롯 합") == 0
+              and D.get("🔴🔴🔴 못 쟀다(대장이 없다)") is False)),
         ("🔴 논문 한 스텝(out992_paper)", bool(paper.get("통과"))),
     ])
 

@@ -169,8 +169,8 @@ def main():
         r = A.oof(pool, 0.95, 10.0 ** U_REG, KGRID)
         p_, _e, _pr = A.score(pool, r["예측"])
         vals.append(float(p_))
-        b.append(abs(float(p_) - 0.3596) <= 5e-4)
-        m.append(abs(float(p_) - 0.4596) <= 5e-4)
+        b.append(abs(float(p_) - 0.3596) <= 5e-4)   # [손전사:재현] 990 의 자를 그대로
+        m.append(abs(float(p_) - 0.4596) <= 5e-4)   # [손전사:재현] 990 의 변이체를 그대로
     put("W4 977 의 `u=0|α=0.95` 묶음 ρ 를 다시 내면 공표값과 같다", b, m,
         "씨앗 %d(990 이 실제로 돈 격자 --- `A.SEEDS`)" % len(A.SEEDS),
         "🔴 변이체 = «공표값 + 0.1». 허용오차가 `5e-4` 라 `0.1` 만큼 옮긴 값은 "
