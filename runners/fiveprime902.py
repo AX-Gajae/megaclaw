@@ -482,14 +482,18 @@ def _tree_is_tip(branch, read_tree):
     got = _rev(read_tree) if read_tree else None
     if not read_tree:
         return {"통과": False, "🔴": "`--tree` 를 «안 줬다** --- 「모른다」다(0 이 아니다)",
-                "가지": branch, "가지 tip": tip}
+                "🔴 가지": branch, "🔴 가지 tip": tip, "🔴 `--tree` 가 가리킨 커밋": None,
+                "🔴🔴🔴 `--tree` 가 가지 끝보다 «몇 커밋 뒤»인가": "🔴 못 쟀다"}
     ok = bool(tip and got and len(tip) == 40 and tip == got)
-    behind = None
+    # 🔴 통과면 «0 커밋 뒤»다 --- 「모른다」와 «가른다**(칸이 None 이면 아무도 못 읽는다)
+    behind = 0 if ok else "🔴 못 쟀다"
     if tip and got and not ok and len(tip) == 40 and len(got) == 40:
         rc_, out_, _e = _git(["rev-list", "--count", "%s..%s" % (got, tip)])
-        behind = int(out_.strip()) if rc_ == 0 and out_.strip().isdigit() else None
+        behind = int(out_.strip()) if rc_ == 0 and out_.strip().isdigit() else "🔴 못 쟀다"
     return {
         "통과": ok,
+        # 🔴 993 --- 「걸린 자리」 칸(`F08` 이 「미측정」으로 세지 않게)
+        "🔴 걸린 자리(= 이 검사가 «비교»를 «수행»한 회수)": 2,
         "🔴 가지": branch,
         "🔴 가지 tip": tip,
         "🔴 `--tree` 가 가리킨 커밋": got,
@@ -922,21 +926,34 @@ def docsha_table_check(docsha: str = None, tree: str = "HEAD") -> dict:
     993 판: 생성기가 `out99x_docsha.json` 에 **「표 sha256」**을 «같이» 남기고,
     이 절이 **커밋된 트리**에서 ① 표 sha ② 문서 sha 를 «다시 계산해» 견준다.
     """
+    def _blank(why, **extra):
+        """🔴 「모른다」도 «같은 칸 꼴»로 낸다 --- 칸이 사라지면 그 수를 아무도 못 읽는다."""
+        d0 = collections.OrderedDict([
+            ("검사", "11 🔴🔴🔴 표를 고친 커밋은 문서를 다시 찍었나(993 R3 신설)"),
+            ("🔴 도장 파일", docsha),
+            ("🔴🔴🔴 표 sha 대조", collections.OrderedDict([
+                ("🔴 표 경로", None), ("🔴 도장이 적은 표 sha256", None),
+                ("🔴 지금 «커밋된 트리»의 표 sha256", None),
+                ("🔴🔴🔴 같은가", False)])),
+            ("🔴 문서별", collections.OrderedDict()),
+            ("🔴🔴🔴 분자: 어긋난 자리", "🔴 못 쟀다"),
+            ("🔴 그 수", "🔴 못 쟀다"),
+            ("🔴 걸린 자리(= 이 절이 «비교»를 «수행»한 회수)", 0),
+            ("🔴", why), ("통과", False),
+        ])
+        d0.update(extra)
+        return d0
+
     if not docsha:
-        return {"검사": "11 🔴🔴🔴 표 ↔ 문서 도장(993 R3)", "통과": False,
-                "🔴": "`--docsha` 를 «안 줬다** --- 「모른다」다(0 이 아니다 · 조항 59)"}
+        return _blank("`--docsha` 를 «안 줬다** --- 「모른다」다(0 이 아니다 · 조항 59)")
     known, ls_err = tree_paths(tree)
     st, txt = tree_text(docsha, tree, known)
     if st != "읽었다":
-        return {"검사": "11 🔴🔴🔴 표 ↔ 문서 도장(993 R3)", "통과": False,
-                "🔴 도장 파일": docsha, "🔴 상태": st,
-                "🔴": "`%s` 를 **%s**(「깨끗함」이 «아니다»)" % (docsha, st),
-                "🔴 읽은 트리": {"기준": "커밋된 트리", "트리": tree, "커밋 sha": _rev(tree)}}
+        return _blank("`%s` 를 **%s**(「깨끗함」이 «아니다»)" % (docsha, st), **{"🔴 상태": st})
     try:
         d = json.loads(txt)
     except Exception as e:                                          # noqa: BLE001
-        return {"검사": "11 🔴🔴🔴 표 ↔ 문서 도장(993 R3)", "통과": False,
-                "🔴": "JSON 이 아니다: %s" % str(e)[:200]}
+        return _blank("JSON 이 아니다: %s" % str(e)[:200])
 
     def _tree_sha(rel):
         st2, t2 = tree_text(rel, tree, known)
@@ -975,7 +992,7 @@ def docsha_table_check(docsha: str = None, tree: str = "HEAD") -> dict:
         "🔴 읽은 트리(955 R5)": {"기준": "커밋된 트리", "트리": tree, "커밋 sha": _rev(tree)},
         "🔴🔴🔴 표 sha 대조": tbl,
         "🔴 문서별": rows,
-        "🔴 분모: 견준 자리(표 1 + 문서 %d)" % len(rows): 1 + len(rows),
+        "🔴 분모: 견준 자리(표 1 + 문서)": 1 + len(rows),
         "🔴🔴🔴 분자: 어긋난 자리": bad or "없음",
         "🔴 그 수": len(bad),
         "🔴 걸린 자리(= 이 절이 «비교»를 «수행»한 회수)": 1 + len(rows),
@@ -2302,7 +2319,7 @@ def main(argv=None):
     _wt["🔴 이 절이 잰 날 것"] = {"더러운 경로 수": _wt["더러운 경로 수"]}
     res["⓪ 관문(작업 트리 · 🔴 984 부터 절 분모 «밖» 진단)"] = _wt
     try:
-        res["⓪ 관문(가지의 커밋된 트리 · 🔴 정본)"] = gate_committed_tree(a.branch)
+        res["⓪ 관문(가지의 커밋된 트리 · 🔴 정본)"] = gate_committed_tree(a.branch, read_tree)
     except Exception as e:                                        # noqa: BLE001
         res["⓪ 관문(가지의 커밋된 트리 · 🔴 정본)"] = {
             "🔴 예외": "%s: %s" % (type(e).__name__, e), "통과": False}

@@ -93,7 +93,7 @@ def _count_of(ref):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--ref", required=True)
-    ap.add_argument("--branch", default="note/993-wire-the-rulers")
+    ap.add_argument("--branch", default="note/993-straighten-the-rulers")
     a = ap.parse_args()
     if len(a.ref) != 40:
         raise SystemExit("🔴 --ref 는 40자 sha 여야 한다")
