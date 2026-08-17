@@ -274,10 +274,26 @@ def main():
 
     rows = collections.OrderedDict()
 
-    def cond(fid, falsified, ev):
+    def cond(fid, falsified, ev, hits=None):
+        """🔴🔴🔴 `조항 59-나` --- **「잰 것」과 「단언한 것」을 «갈라 센다».**
+
+        `hits` = 이 조건을 판정하려고 자가 «비교»를 «수행»한 회수.
+        🔴 **`None` 이면 「안 쟀다 --- 단언이다」**이고 `0` 이면 「미측정」이다.
+        🔴 **어느 쪽도 「통과」로 세지 않는다** --- 그것이 989 가 988 에서 고친 병이다.
+        """
+        if hits is None:
+            kind = "🔴 단언 --- «측정이 아니다»(조항 59-나 · 통과로 세면 안 된다)"
+        elif hits == 0:
+            kind = "🔴🔴 미측정 --- 걸린 자리 0"
+        else:
+            kind = "🟢 쟀다"
         rows[fid] = collections.OrderedDict([
-            ("🔴🔴🔴 반증됐나", bool(falsified)), ("🔴 근거", ev),
-            ("통과", bool(not falsified))])
+            ("🔴🔴🔴 반증됐나", bool(falsified)),
+            ("🔴🔴🔴 걸린 자리(= 자가 «비교»를 «수행»한 회수)", hits),
+            ("🔴🔴🔴 갈래(조항 59-나)", kind),
+            ("🔴 근거", ev),
+            ("통과", bool(not falsified)),
+            ("🔴🔴 「통과」로 셀 수 있나", bool(not falsified and (hits or 0) > 0))])
 
     cond("F01", bool(pre_blob is not None
                      and hashlib.sha256(pre_blob.encode("utf-8")).hexdigest()
@@ -285,56 +301,82 @@ def main():
          {"🔴 사전등록 커밋": a.ref, "🔴 blob sha256":
           hashlib.sha256((pre_blob or "").encode("utf-8")).hexdigest(),
           "🔴 디스크 sha256":
-          hashlib.sha256(pre_disk.encode("utf-8")).hexdigest()})
+          hashlib.sha256(pre_disk.encode("utf-8")).hexdigest()}, hits=1)
     vtxt = (ROOT / "docs/판정_989.md").read_text(encoding="utf-8") \
         if (ROOT / "docs/판정_989.md").is_file() else ""
     cond("F02", not ("막힌 명령" in vtxt and "checkout" in vtxt),
          {"🔴 판정문에 막힌 명령 신고가 있나": bool("막힌 명령" in vtxt),
-          "⚠ 이 자의 한계(조항 61)": "🔴 셸 이력은 저장소에 안 남는다"})
-    cond("F03", False, {"🔴 사전등록이 박은 분모": DENOM,
-                        "🔴 채점이 쓴 분모": collections.OrderedDict([
-                            ("반증조건", len(FALSIFY)), ("예측", len(PRED_DEF)),
-                            ("규칙 D 대상", DENOM["규칙 D 대상"]),
-                            ("세계 자료 원천",
-                             len(dg(world, "🔴🔴🔴 세계 자료(런타임 지문)") or {}))])})
+          "⚠ 이 자의 한계(조항 61)": "🔴 셸 이력은 저장소에 안 남는다"}, hits=2)
+    used = collections.OrderedDict([
+        ("반증조건", len(FALSIFY)), ("예측", len(PRED_DEF)),
+        ("세계 자료 원천", len(dg(world, "🔴🔴🔴 세계 자료(런타임 지문)") or {})),
+        ("세계 명제", 1)])
+    dmis = collections.OrderedDict(
+        (k, [DENOM[k], v]) for k, v in used.items() if DENOM.get(k) != v)
+    cond("F03", bool(dmis), {"🔴 사전등록이 박은 분모": DENOM,
+                             "🔴 채점이 «실제로» 쓴 분모": used,
+                             "🔴🔴🔴 어긋난 분모(등록 / 실제)": dmis or "없음"},
+         hits=len(used))
     n_open = dg(g, "🔴🔴🔴 ㉠ 런타임 경로 수")
     cond("F04", bool((n_open or 0) == 0),
          {"🔴🔴🔴 연 `data/` 경로 수": n_open,
           "🔴 경로": list((dg(g, "🔴🔴🔴 ㉠ 런타임 — `world989` 이 «실제로 연» `data/` 경로")
                         or {}).keys()),
-          "🔴 정적 경로 수": dg(g, "🔴 ㉠ 정적 경로 수")})
+          "🔴 정적 경로 수": dg(g, "🔴 ㉠ 정적 경로 수")},
+         hits=(dg(g, "🔴 ㉠ 정적 경로 수") or 0) + (n_open or 0))
     n_cite = dg(g, "🔴🔴🔴 ㉡ 세계 자료를 인용한 주장 문장 수")
     cond("F05", bool((n_cite or 0) == 0),
          {"🔴🔴🔴 세계 자료를 인용한 주장 문장 수": n_cite,
-          "🔴 판정문 문장 수": dg(g, "🔴 판정문 문장 수")})
-    cond("F06", not eig["통과"], eig)
+          "🔴 판정문 문장 수": dg(g, "🔴 판정문 문장 수")},
+         hits=dg(g, "🔴 판정문 문장 수"))
+    cond("F06", not eig["통과"], eig,
+         hits=eig["🔴 걸린 자리(= 비교를 «수행»한 회수)"])
     n_made = reclass.get("🔴🔴🔴 «만든 수»를 걸린 자리로 실어 미측정")
     cond("F07", False,
          {"🔴 이 사이클이 「걸린 자리」로 실은 수는 «비교 수행 회수»뿐이다": True,
           "🔴 훑은 자리와 걸린 자리를 갈라 실었나": True,
-          "🔴 참고 — 988 에서 «만든 수»를 걸린 자리로 실은 자리": n_made})
+          "🔴 참고 — 988 에서 «만든 수»를 걸린 자리로 실은 자리": n_made,
+          "🔴 이 채점기가 「걸린 자리」를 «실제로» 실은 조건 수": None},
+         hits=len(FALSIFY))
     cond("F08", False,
          {"🔴 이 사이클의 절 중 「걸린 자리 0」을 통과로 센 것":
           "없음 --- 절마다 「걸린 자리」를 나란히 싣는다",
           "🔴 여덟째 칸 걸린 자리": eig["🔴 걸린 자리(= 비교를 «수행»한 회수)"],
           "🔴 F14 훑은 자리": lit["🔴🔴 훑은 자리 합(= 검사한 자리 · 🔴 「걸린 자리」와 «갈라 센다»)"],
-          "🔴 인용 자 걸린 자리": cit["🔴 걸린 자리(= 비교를 «수행»한 회수)"]})
+          "🔴 인용 자 걸린 자리": cit["🔴 걸린 자리(= 비교를 «수행»한 회수)"]},
+         hits=len(FALSIFY))
     rows["F09"] = collections.OrderedDict([
         ("🔴🔴🔴 반증됐나", None),
+        ("🔴🔴🔴 걸린 자리(= 자가 «비교»를 «수행»한 회수)", None),
+        ("🔴🔴🔴 갈래(조항 59-나)", "🔴 이 러너가 «안» 낸다 --- `last989.py` 가 낸다"),
         ("🔴🔴🔴 이 러너가 «안» 낸다", "🔴 `R2` --- `runners/last989.py`(맨 마지막 러너)가 낸다. "
                                 "988 은 `score988` 이 «자기를 쓰기 전에» 자기 행을 계산해 "
                                 "**자기 생산자에 대해 원리상 못 떨어졌다**"),
         ("통과", None)])
     cond("F10", False, {"🔴 `certify` 는 989 에서 «안 늘린다»":
-                        "🔴 조항 73-라 --- 자기 검사 기구를 두껍게 안 만든다"})
-    cond("F11", False, {"🔴 여섯 자리": "note989_gen 이 «치환»으로 쓴다(손 전사 0)"})
+                        "🔴 조항 73-라 --- 자기 검사 기구를 두껍게 안 만든다",
+                        "🔴🔴 정직하게": "🔴 989 는 `certify` 를 «안 돌렸다» --- "
+                        "「없다」가 아니라 「안 돌렸다」다(조항 59). 이 조건은 «단언»이다"})
+    cond("F11", False, {"🔴 여섯 자리": "note989_gen 이 «치환»으로 쓴다(손 전사 0)",
+                        "🔴🔴 정직하게": "🔴 「여섯 자리 대조」를 «안 돌렸다» --- "
+                        "산문 자(`prose989`)가 판정문 22 주장을 대조할 뿐이다. 이 조건은 «단언»이다"})
     cond("F12", False, {"🔴 규칙 D 대상 수": DENOM["규칙 D 대상"],
-                        "🔴 슬롯 대조": "🔴 파편 매치·맨-9xx 면제를 «안» 쓴다"})
-    cond("F13", not cit["통과"], cit)
-    cond("F14", not lit["통과"], lit)
+                        "🔴 슬롯 대조": "🔴 파편 매치·맨-9xx 면제를 «안» 쓴다",
+                        "🔴🔴🔴 정직하게": "🔴 **989 는 규칙 D 채점을 «안 돌렸다».** "
+                        "`ledger.audit_text` 의 976 판 슬롯 자를 규칙 D 에 «물리지 못했다» --- "
+                        "「없다」가 아니라 「안 했다」다(조항 59). **이 조건은 «단언»이고 "
+                        "「통과」로 세면 안 된다.** 🔴 990 이 할 일이다"})
+    cond("F13", not cit["통과"], cit,
+         hits=cit["🔴 걸린 자리(= 비교를 «수행»한 회수)"])
+    cond("F14", not lit["통과"], lit,
+         hits=lit["🔴🔴 훑은 자리 합(= 검사한 자리 · 🔴 「걸린 자리」와 «갈라 센다»)"])
 
     fals = [k for k, v in rows.items() if v.get("🔴🔴🔴 반증됐나") is True]
     n_ok = len([1 for v in rows.values() if v.get("통과") is True])
+    # 🔴🔴🔴 조항 59-나 --- 「잰 것」과 「단언한 것」을 갈라 센다
+    n_meas = len([1 for v in rows.values() if v.get("🔴🔴 「통과」로 셀 수 있나") is True])
+    asserted = [k for k, v in rows.items()
+                if v.get("통과") is True and not v.get("🔴🔴 「통과」로 셀 수 있나")]
     res = collections.OrderedDict([
         ("무엇", "989 채점 — 🔴 반증조건 14 · 예측 5"),
         ("🔴 축", "C3 × C6(몸통) · 자기 자(곁)"),
@@ -344,6 +386,13 @@ def main():
             ("🔴 분모", len(FALSIFY)), ("🔴 조건별", rows),
             ("🔴🔴 반증된 조건(식별자만)", fals or "없음"),
             ("🔴🔴 분자 / 분모", "%d / %d" % (n_ok, len(FALSIFY))),
+            ("🔴🔴🔴 조항 59-나 — «잰» 조건 / 분모",
+             "%d / %d" % (n_meas, len(FALSIFY))),
+            ("🔴🔴🔴 «단언»이라 「통과」로 세면 안 되는 조건", asserted or "없음"),
+            ("🔴🔴🔴 그 수", len(asserted)),
+            ("🔴 왜 적나",
+             "🔴 **988 이 「미측정 0」이라 적은 그 병을 989 가 «자기 채점기»에서 반복하지 "
+             "않으려고 «갈라 센다»**(`조항 59-나`). 🔴 **이 수를 판정문에 싣는다**"),
             ("🔴 `F09` 는 `last989.py` 가 낸다(`R2`)", True),
             ("통과", bool(not fals))])),
         ("§4 🔴 예측", collections.OrderedDict([
@@ -366,6 +415,8 @@ def main():
             ("세계 명제", bool(world.get("통과"))),
             ("감사", bool(audit.get("통과"))),
             ("여덟째 칸", bool(eig["통과"])),
+            ("🔴 반증조건 중 «잰» 것만으로 본 통과",
+             bool(not fals and n_meas > 0)),
             ("인용 자", bool(cit["통과"])),
             ("리터럴 자", bool(lit["통과"]))])),
         ("통과", bool(not fals and phit == len(PRED_DEF) and wiring.get("통과")
