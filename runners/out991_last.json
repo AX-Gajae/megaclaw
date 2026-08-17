@@ -1,0 +1,101 @@
+{
+ "무엇": "991 `F09` — 🔴 **맨 마지막 러너가 판정한다**(`조항 66-②` · 989 `R2` 승계)",
+ "🔴 명부의 출처": "글롭 `runners/*991*.py` · `runners/*991*` --- 손으로 안 골랐다",
+ "🔴 지도의 출처": "🔴 **지도를 «안 만든다».** 산출물이 «자기 도장에» 적은 코드 sha256 을 지금 디스크의 sha 와 견준다 --- 989 의 손 `PRODUCES` 는 틀렸었다",
+ "🔴 산출물별 도장이 적은 러너": {
+  "runners/fiveprime_991.json": [
+   "lab/gitcall.py",
+   "lab/keyspace.py",
+   "runners/fiveprime902.py",
+   "runners/quote901.py"
+  ],
+  "runners/out991_audit.json": [
+   "runners/audit991.py"
+  ],
+  "runners/out991_fix.json": [
+   "runners/fix991.py"
+  ],
+  "runners/out991_last.json": [
+   "runners/audit991.py",
+   "runners/fix991.py",
+   "runners/last991.py",
+   "runners/ledger991.py",
+   "runners/note991_gen.py",
+   "runners/prose991.py",
+   "runners/score991.py",
+   "runners/world991.py"
+  ],
+  "runners/out991_ledger.json": [
+   "runners/ledger991.py"
+  ],
+  "runners/out991_order.json": [
+   "runners/alpha977.py",
+   "runners/ff753.py",
+   "runners/layers957.py",
+   "runners/predict971.py",
+   "runners/world991.py"
+  ],
+  "runners/out991_wiring.json": [
+   "runners/alpha977.py",
+   "runners/ff753.py",
+   "runners/layers957.py",
+   "runners/predict971.py",
+   "runners/world991.py"
+  ]
+ },
+ "🔴 이 사이클 산출물 전량": [
+  "runners/fiveprime_991.json",
+  "runners/out991_audit.json",
+  "runners/out991_docsha.json",
+  "runners/out991_fix.json",
+  "runners/out991_last.json",
+  "runners/out991_ledger.json",
+  "runners/out991_order.json",
+  "runners/out991_progress.txt",
+  "runners/out991_score.json",
+  "runners/out991_slots.json",
+  "runners/out991_table.json",
+  "runners/out991_wiring.json"
+ ],
+ "🔴 산출물 수": 12,
+ "🔴🔴 도장이 «없는» 산출물(= 이 자가 원리상 못 본다 · 「깨끗함」이 아니다)": [
+  "runners/out991_docsha.json",
+  "runners/out991_progress.txt",
+  "runners/out991_score.json",
+  "runners/out991_slots.json",
+  "runners/out991_table.json"
+ ],
+ "🔴🔴🔴 도장 sha ≠ 디스크 sha 인 자리(= 고치고 안 다시 돌렸다)": "없음",
+ "🔴 그 수": 8,
+ "🔴🔴 이 러너보다 «새로운» 산출물(= 이 러너가 마지막이 아니다)": [
+  "runners/fiveprime_991.json",
+  "runners/out991_audit.json",
+  "runners/out991_docsha.json",
+  "runners/out991_fix.json",
+  "runners/out991_ledger.json",
+  "runners/out991_score.json",
+  "runners/out991_slots.json",
+  "runners/out991_table.json"
+ ],
+ "🔴 산출물보다 «오래된» 문서(= 다시 안 찍었다)": "없음",
+ "🔴🔴🔴 F09 반증됐나": false,
+ "🔴 걸린 자리(= 비교를 «수행»한 회수)": 41,
+ "통과": true,
+ "🔴 이 절의 통과가 뜻하는 것": "🔴 이 사이클의 «어떤 러너도» 자기 산출물보다 새롭지 않다 --- 고치고 안 다시 돌린 자리가 없다",
+ "⚠ 989 가 어긴 자리": "🔴 `last989.py` 의 `OUTPUTS` 가 «넷»이라 `out989_last.json`·`out989_table.json`·`fiveprime_989.json` 이 감시 «밖»이었고, `PRODUCES` 가 손으로 적혀 틀렸다",
+ "🔴 도장": {
+  "ref(부른 쪽이 준 40자 sha)": "e54f389d56a7b04627d24dbb7df1cfd327817e5f",
+  "🔴 코드 sha256": {
+   "runners/audit991.py": "cbe7ecf70b59f61481bf4ff7e4266c467ad860025aaffff9e762871b43dcc53b",
+   "runners/fix991.py": "3ba155416f6ffd230944de94e2fba96fda5eaa32a75b84180774c1554d127f11",
+   "runners/last991.py": "3e985f8360d6bf5654640aab4e624eb4460cf76121b00e19e8223b9a1c8dbdd5",
+   "runners/ledger991.py": "fffed181dcd66e7297b630260e199ac98bb7ac2588e424867fb325657bb1f7dc",
+   "runners/note991_gen.py": "7c2a03dc2aabbb28de1866b20585196f1377243b69d9903477eb55850b94ad03",
+   "runners/prose991.py": "84cc9b1e5945c135bccf97c763c8bae647c7d8379ecfbe0516ea3b6c8a85c94b",
+   "runners/score991.py": "12177e83a9cc4b075a3e1e6567430bc9a74fbe78e84f58148a98b711140b9523",
+   "runners/world991.py": "9a9d398de940f433edf70841ddee1b4435cad8b2a989ab3d2415498e23131480"
+  },
+  "시작(UTC)": "2026-08-17T10:52:55Z",
+  "끝(UTC)": "2026-08-17T10:52:55Z"
+ }
+}
