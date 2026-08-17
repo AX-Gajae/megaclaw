@@ -264,11 +264,30 @@ def table():
     hd = (ROOT / "runners/harvest_daemon.py").read_text(encoding="utf-8")
     m = re.search(r"^PATHS\s*=\s*\[(.*?)\]", hd, re.M | re.S)
     T["데몬.경로"] = re.findall(r"[\"']([^\"']+)[\"']", m.group(1)) if m else NOTYET
-    T["데몬.PID"] = 70251
-    #: 🔴 이 사이클이 무는 PR 번호와 티처 번호 --- 원장·판정문이 쓴다
-    T["번.PR985"] = 243
-    T["번.티처"] = 124
-    T["번.노트"] = 986
+    #: 🔴 데몬 PID --- **도는 프로세스에게 물어서** 낸다(리터럴이 아니다 · 983 R2)
+    import subprocess as _sp
+    _p = _sp.run(["pgrep", "-f", "runners/harvest_daemon.py"],
+                 capture_output=True, text=True)
+    _pids = [int(x) for x in _p.stdout.split() if x.strip().isdigit()]
+    T["데몬.PID"] = _pids[0] if _pids else "🔴 못 읽었다(= 「죽었다」가 아니다 · 조항 59)"
+    T["데몬.살아있나"] = bool(_pids)
+    #: 🔴 PR 번호·티처 번호·노트 번호 --- **읽어서** 낸다(손 전사 0 · 983 R2)
+    import audit986 as _A6
+    T["번.PR985"] = _A6.PR985
+    T["번.티처"] = int(re.search(r"티처 #(\d+)", (ROOT / "docs/prereg_986_sixth_cell_power_ci.md")
+                               .read_text(encoding="utf-8")).group(1))
+    T["번.노트"] = int(re.search(r"note/(\d+)-", _sp.run(
+        ["git", "rev-parse", "--abbrev-ref", "--symbolic-full-name",
+         "note/986-sixth-cell-power-ci"], cwd=str(ROOT), capture_output=True,
+        text=True).stdout.strip() or "note/986-x").group(1))
+
+    # ── 🔴 등록 주장 문장 --- `prose986.CLAIMS` 에서 «읽어» 넣는다 ────────
+    #    🔴 **이것이 「산문 8/8」이 초록인 «기전»이다** --- 문장을 생성기가 넣으므로
+    #    절 8 은 원리상 초록이다. 🔴 **그 사실을 문서에 적고**, 진짜 자는
+    #    `prose986` §B(뒤집은 자 · 분모를 문서가 정한다)에 둔다.
+    import prose986 as _P6
+    T["산.등록문장"] = "\n".join("- %s" % c["문장"] for c in _P6.CLAIMS)
+    T["산.등록수"] = len(_P6.CLAIMS)
 
     # ── 러너 목록 ───────────────────────────────────────────────
     T["러.목록"] = sorted(p.name for p in OUT.glob("*986*.py"))
@@ -424,6 +443,17 @@ VERDICT_MD = """# 판정 — 노트 986 · **채점기와 문서를 잇는 여�
 - 중복 키 — `main` ⟦집.중복main⟧ / 디스크 ⟦집.중복디스크⟧ · 열린 PR ⟦집.열린PR⟧
 - `HEAD` == 디스크 **⟦집.HEAD디스크동일⟧** · 규칙 A-2 가 참인가 **⟦집.A2참⟧**
 - 🔴 원장 sha256(자기 항목 제외 · 고정점) — `⟦집.고정점sha⟧`
+
+## 🔴 등록 주장 (⟦산.등록수⟧ 개 · `runners/prose986.CLAIMS` 에서 «읽어» 넣었다)
+
+> 🔴🔴🔴 **이 절이 「산문 ⟦산.등록수⟧ / ⟦산.등록수⟧」가 초록인 «기전»이다.**
+> 등록 문장을 **생성기가 여기 넣으므로** `⑤′` 절 8 은 **원리상 초록**이다 ---
+> 985 도 같은 방식이었고 **커밋 메시지에만 적었다**(티처 #124 즉시정정 ⑤).
+> 🔴 **986 은 그 사실을 «문서 본문»에 적는다.** 진짜 자는 아래 「뒤집은 자」다 ---
+> 판정문의 주장 문장 **⟦산.주장문장⟧** 중 **등록 안 된 것이 ⟦산.등록안된⟧** 이고
+> 덮은 비율은 **⟦산.덮은비율⟧** 다.
+
+⟦산.등록문장⟧
 
 ## 🔴 986 이 «안» 한 것 (조항 59)
 
