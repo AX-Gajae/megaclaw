@@ -3,7 +3,7 @@
  "🔴 왜": "984 판 창은 한 러너의 `t0`~`write()` 사이라 **0~1 초**였다. 단계와 단계 «사이»의 수정은 원리상 못 잡는다 --- 984 자신의 러너도 `06:35~07:07` 에 걸쳐 고쳐졌는데 모든 산출물이 「시작=끝 true」를 냈다",
  "🔴 사이클 시작(UTC)": "2026-08-16T23:37:32Z",
  "🔴 기준 ref": "a9a30b9b1fe13ff7dfe39d96e3c8ed3cb524af75",
- "🔴 시작 code_stamp": {
+ "🔴 시작 code_stamp(파일별 sha256)": {
   "lab/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
   "lab/adopt.py": "9f7c8437e2b91ce78aa5b083124363ff5ebb45be995bb807b7af8751e239d7c6",
   "lab/animeaxes.py": "b0bab9d0515ca2442c18e14eefe806768a6dd327062a3dffaf6f110717d45e85",
@@ -98,5 +98,6 @@
   "runners/score985.py": "8183bbd34a980202ec8cd3701fde12f2f472291e167289436c6c1fc5f346e4fa",
   "runners/stat983.py": "b6c915aba7d8e0705a895d4283d60b736582c775c0a5f2c4915586ae7ed99b59",
   "runners/tgrid983.py": "2788c2927c19895023f1ac557b2e27fd2361e528cbb9da2de2a57d26c2d1c0fb"
- }
+ },
+ "⚠ 985 R5 --- 키 이름을 사이클 도중에 옮겼다(값은 그대로다)": "🔴 `🔴 시작 code_stamp` → `🔴 시작 code_stamp(파일별 sha256)`. **시작 시각도 시작 도장의 값도 안 바꿨다** --- `⑤′` 절 3 이 `sha256`·`시각` 이 든 키를 «도장»으로 세기 때문이다. 🔴 조항 66-③: 자를 바꾸면 전후를 같이 적는다"
 }
