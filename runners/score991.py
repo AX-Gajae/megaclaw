@@ -824,20 +824,24 @@ def main():
     ])
     # 🔴🔴🔴 **991** --- 990 `R4` 가 «이름만» 만든 계수 상수를 `통과` 연언에 «실제로» 문다.
     #    「이름을 붙이고 안 읽는 것」과 「읽고 안 무는 것」의 거리가 멀지 않다(티처 #129).
-    s8 = five.get("8 🔴 수리 레인(4-나)") or {}
+    s8 = {}
     for k, v in five.items():
-        if isinstance(v, dict) and k.startswith("8 ") and "수리" in k:
+        if isinstance(v, dict) and k.startswith("8 ") and "레인" in k:
             s8 = v
-    lane_cap = s8.get("🔴 상한(사전등록 `> 상한: N`)")
-    outside = s8.get("🔴 저장소 밖 레인(사전등록 `> 저장소 밖 레인: N`)")
+    lane_cap, outside = None, None
     for k, v in s8.items():
-        if "상한" in k and isinstance(v, int):
-            lane_cap = v
-        if "저장소 밖" in k and isinstance(v, int):
+        if isinstance(v, dict) and "상한" in k:
+            lane_cap = v.get("🔴 상한")
+        if isinstance(v, dict) and "저장소 밖" in k:
             outside = v
-    parts["🔴 ⑤′ 절 8 — 레인 상한이 «읽혔나**(LANE_CAP)"] = bool(lane_cap is not None)
-    parts["🔴 ⑤′ 절 8 — 저장소 밖 레인이 «읽혔나**(OUTSIDE_LANE)"] = bool(
-        outside is not None)
+    # 🔴🔴🔴 **991** --- 990 `R4` 가 «이름만» 만든 계수 상수를 `통과` 연언에 «실제로» 문다.
+    #    「이름을 붙이고 안 읽는 것」과 「읽고 안 무는 것」의 거리가 멀지 않다(티처 #129).
+    parts["🔴 ⑤′ 절 8 — 레인 상한(LANE_CAP)이 읽혔고 레인이 그 안인가"] = bool(
+        lane_cap is not None
+        and (s8.get("🔴🔴 레인 수(분자 --- 이것이 「수리 레인」의 수다)") or 0) <= lane_cap)
+    parts["🔴 ⑤′ 절 8 — 저장소 밖 레인(OUTSIDE_LANE)이 읽혔고 미신고가 없나"] = bool(
+        isinstance(outside, dict)
+        and not outside.get("🔴🔴🔴 미신고 저장소 밖 수리가 있나", False))
 
     res = collections.OrderedDict()
     res["무엇"] = "991 채점 — 🔴 **모든 「걸린 자리」를 «판정 함수»가 스스로 낸다**"
