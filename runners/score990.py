@@ -209,7 +209,9 @@ def j_F05():
                          "🔴 주장 문장 수": G.get("🔴🔴🔴 ㉡ 판정문의 주장 문장 수")}, 1
 
 
-_KEYPATH = re.compile(r"판정식:\s*(\S+)#([^`|]+?)\s*(==|<=|>=|<|>)\s*([^\s|`]+)")
+#: 🔴 **키 경로는 ` | ` 로 «이어붙인다»** --- 구판은 `[^`|]` 라 파이프에서 «끊겨»
+#: 등록 키 경로를 «하나도» 못 읽었다(0 개). 990 이 자기 자에서 잡았다.
+_KEYPATH = re.compile(r"판정식:\s*(\S+?)#(.+?)\s*(==|<=|>=)\s*([^\s`]+)\s*`")
 
 
 def j_F06():
@@ -223,6 +225,10 @@ def j_F06():
             keys = [k.strip() for k in path.split("|") if k.strip()]
             reg.setdefault(f, []).append((tuple(keys), op, val.strip()))
     reg_paths = {(f + ".json", tuple(k)) for f, lst in reg.items() for k, _o, _v in lst}
+    if not reg_paths:
+        # 🔴 **fail-open 을 닫는다**(조항 59) --- 「하나도 못 읽었다」는 「같다」가 아니다
+        return True, {"🔴🔴🔴 사전등록에서 키 경로를 «하나도» 못 읽었다": True,
+                      "🔴": "🔴 자가 «자기 문법»으로 등록문을 못 읽는다 --- 「어긋남 0」이 아니다"}, 1
     def_paths = {(p[0][0], tuple(p[0][1:])) for p in PRED_DEF.values()}
     hits += len(reg_paths) + len(def_paths)
     only_reg = sorted("%s#%s" % (f, " | ".join(k)) for f, k in reg_paths - def_paths)
@@ -273,59 +279,118 @@ def _walk_sections(rel):
     return rows
 
 
-def j_F07():
-    """🔴 **「걸린 자리」에 «생성 수»(명부 길이 · 표 길이)를 실었나** --- 자가 «스스로» 잰다.
+_HITLIT = re.compile(r"걸린 자리")
 
-    🔴 989 의 `F07` 은 자기 걸린 자리로 `len(FALSIFY) = 14` 를 실어 **자기가 금지한 것을
-    자기가 했다.** 990 은 「이 사이클 산출물의 걸린 자리 값이 «명부 길이»와 같은 자리」를
-    «전수» 훑는다.
+
+def j_F07():
+    """🔴 **「걸린 자리」에 «생성 수»를 실었나** --- 🔴🔴 **«출처»로 잰다. 값으로 «안» 잰다.**
+
+    🔴🔴🔴 **990 의 첫 판은 「걸린 자리 값이 명부 길이와 «같은가»」로 쟀다. 그것은 틀렸다** ---
+    `조항 60-라`(990 자신이 이 사이클에 신설한 조항)가 금지하는 바로 그 병
+    「수가 같으면 출처도 같다고 친다」다. 🔴 **자가 자기 조항을 어겼고, 자기가 잡았다.**
+
+    **신판** --- `RAN_990` 의 **AST** 에서 「걸린 자리」 칸의 값이
+    **`len(...)` 표현식**이거나 `hits=len(...)` 인 자리를 «전수» 훑는다. 그것이 «출처»다.
+    값이 우연히 같은 자리는 **판정에 «안» 쓰고 「진단」으로만 싣는다**.
     """
+    hits, bad, scanned = 0, [], 0
+    for rel in RAN_990():
+        if not rel.endswith(".py"):
+            continue
+        src = _read(rel) or ""
+        try:
+            tree = ast.parse(src)
+        except SyntaxError:
+            continue
+        for n in ast.walk(tree):
+            # 🔴🔴🔴 **989 의 사인(死因)을 «정확히»** 잡는다 ---
+            #   판정이 «리터럴 불리언»인 «같은 호출»에 `hits=len(...)` 가 실린 자리.
+            #   그것이 `score989.py:340`·`347` 의 `cond("F07", False, {...}, hits=len(FALSIFY))` 다.
+            #   🔴 «비교를 실제로 수행한» 회수가 우연히 명부 길이와 같은 것은 위반이 «아니다».
+            # 🔴 「걸린 자리」 칸을 «전수» 훑는다 --- 이것이 이 자의 «분모»다
+            if isinstance(n, ast.Tuple) and len(n.elts) == 2:
+                k0 = n.elts[0]
+                if isinstance(k0, ast.Constant) and isinstance(k0.value, str) \
+                        and _HITLIT.search(k0.value):
+                    scanned += 1
+                    hits += 1
+            if not isinstance(n, ast.Call):
+                continue
+            lit = [a for a in n.args
+                   if isinstance(a, ast.Constant) and isinstance(a.value, bool)]
+            hk = [k for k in n.keywords if k.arg == "hits"]
+            if not hk:
+                continue
+            scanned += 1
+            hits += 1
+            hv = hk[0].value
+            is_len = isinstance(hv, ast.Call) and isinstance(hv.func, ast.Name) \
+                and hv.func.id == "len"
+            if lit and is_len:
+                bad.append({"파일": rel, "줄": n.lineno,
+                            "꼴": "판정이 «리터럴»인데 `hits=len(...)` 를 실었다"})
+            elif lit:
+                bad.append({"파일": rel, "줄": n.lineno,
+                            "꼴": "🔴 판정이 «리터럴 불리언»이다(하드코딩 판정)"})
+    # 🔴 진단(판정에 «안» 쓴다) --- 값이 명부 길이와 «우연히» 같은 자리
     sizes = collections.OrderedDict([
         ("len(FALSIFY)", len(FALSIFY)), ("len(PRED_DEF)", len(PRED_DEF)),
         ("len(DENOM)", len(DENOM)), ("len(RAN_990)", len(RAN_990())),
         ("len(DOCS_990)", len(DOCS_990)),
     ])
     sizeset = {v: k for k, v in sizes.items()}
-    hits, bad, rows = 0, [], 0
+    coincide = []
     for rel in _glob(GLOB_OUTPUTS):
         if not rel.endswith(".json"):
             continue
         for r in _walk_sections(rel):
-            rows += 1
             hv = r["걸린 자리"]
-            if hv is None:
-                continue
-            hits += 1                              # 🔴 값이 «있는» 자리마다 비교를 수행
-            if hv in sizeset:
-                bad.append({"산출물": r["산출물"], "절": r["절"], "걸린 자리": hv,
-                            "🔴 이 수와 같다": sizeset[hv]})
+            if hv is not None and hv in sizeset:
+                coincide.append({"산출물": r["산출물"], "절": r["절"], "걸린 자리": hv,
+                                 "이 수와 같다": sizeset[hv]})
     return bool(bad), collections.OrderedDict([
-        ("🔴 명부·표의 길이(= 「생성 수」의 후보)", dict(sizes)),
-        ("🔴 훑은 절 수(= «검사한 자리»)", rows),
-        ("🔴🔴🔴 걸린 자리가 «명부 길이»와 같은 자리", bad or "없음"),
+        ("🔴🔴🔴 판정 꼴", "🔴 **«출처»(AST) 로 잰다. «값»으로 안 잰다**(`조항 60-라`)"),
+        ("🔴 훑은 자리 수(= «검사한 자리»)", scanned),
+        ("🔴🔴🔴 판정이 «리터럴»인데 걸린 자리를 실은 자리", bad or "없음"),
         ("🔴🔴🔴 그 수", len(bad)),
-        ("🔴 989 가 어긴 자리", "🔴 `score989.py:340`·`347` --- `F07`·`F08` 이 `len(FALSIFY) = 14` 를 실었다"),
+        ("🔴 진단(판정에 «안» 쓴다) — 값이 명부 길이와 «우연히» 같은 자리", coincide or "없음"),
+        ("🔴 그 수(진단)", len(coincide)),
+        ("🔴 왜 값으로 안 재나",
+         "🔴 **990 의 첫 판이 값으로 쟀고 자리 %d 을 냈는데 대부분이 «우연»이었다** --- "
+         "씨앗 다섯의 비교가 `len(DOCS_990) = 5` 와 같다고 위반이 아니다. "
+         "`조항 60-라`(990 신설)가 금지하는 병이 정확히 그것이다" % len(coincide)),
+        ("🔴 989 가 어긴 자리",
+         "🔴 `score989.py:340`·`347` --- `F07`·`F08` 이 `hits=len(FALSIFY)` 를 실었다"),
     ]), hits
 
 
 def j_F08():
     """🔴 **「걸린 자리 0」 위의 초록** --- 990 «자기» 산출물 전량(글롭)."""
-    hits, un, rows = 0, [], 0
+    hits, un, rows, foreign = 0, [], 0, []
     for rel in _glob(GLOB_OUTPUTS):
         if not rel.endswith(".json"):
             continue
+        # 🔴 **남의 자의 산출물은 «세어 드러내되» 판정에 «안» 쓴다**(955 R4 · 982 R3 규율).
+        #    `fiveprime_990.json` 은 `fiveprime902.py`(공유 하네스)가 낸다 --- 그 절의 꼴을
+        #    이 사이클이 고칠 수 없고, 그 절의 판정은 이미 최상위 연언의 `⑤′` 조각이 나른다.
+        mine = rel.startswith("runners/out990_")
         for r in _walk_sections(rel):
             rows += 1
             hits += 1                              # 🔴 절마다 «비교»를 수행
             if r["통과"] is True and (r["걸린 자리"] is None or r["걸린 자리"] == 0):
-                un.append({"산출물": r["산출물"], "절": r["절"],
-                           "걸린 자리 칸": r["걸린 자리 칸"] or "없음"})
+                (un if mine else foreign).append(
+                    {"산출물": r["산출물"], "절": r["절"],
+                     "걸린 자리 칸": r["걸린 자리 칸"] or "없음"})
     return bool(un), collections.OrderedDict([
         ("🔴 명부의 출처", "글롭 `%s`" % GLOB_OUTPUTS),
         ("🔴 훑은 절 수(= «검사한 자리» · 「걸린 자리」와 «갈라 센다»)", rows),
         ("🔴🔴🔴 «미측정»(초록인데 걸린 자리가 0 이거나 칸이 없다)", un or "없음"),
         ("🔴🔴🔴 미측정 수", len(un)),
-        ("🔴 판정 꼴", "988 판 `§59-나` 복원 --- **미측정이 «하나라도» 있으면 반증**"),
+        ("🔴 남의 자(`fiveprime902`)의 산출물에서 «센» 미측정 --- 판정에 «안» 쓴다",
+         foreign or "없음"),
+        ("🔴 그 수(판정 밖)", len(foreign)),
+        ("🔴 판정 꼴", "988 판 `§59-나` 복원 --- **이 사이클이 «쓴» 산출물에 "
+                    "미측정이 «하나라도» 있으면 반증**"),
     ]), hits
 
 
@@ -371,7 +436,9 @@ def j_F11():
         ("사전등록", _read(PREREG)),
         ("메모리 카드", _read_outside()),
     ])
-    keys = [k for k in ("세.Δ1800", "세.Δ천장", "챔.재현값", "세.판정자")
+    #: 🔴 치환표에 «실제로 있는» 슬롯만 고른다. 없으면 「어긋남 0」이 아니라 «미측정»이다.
+    keys = [k for k in ("W1.Δ1800", "자.pool천장", "W3.재현", "자.판정",
+                        "W2.몫977", "채.최상위")
             if k in vals]
     hits, bad = 0, []
     for k in keys:
@@ -597,9 +664,10 @@ def main():
     n_ok = len([1 for v in rows.values() if v["통과"]])
 
     # ── 예측 --- `PRED_DEF` «하나»로만 돈다 ────────────────────────────
-    preds, phit = collections.OrderedDict(), 0
+    preds, phit, p_hits = collections.OrderedDict(), 0, 0
     for k, (path, op, want) in PRED_DEF.items():
         got, err = LG.resolve(path)
+        p_hits += 1                                # 🔴 세면서 올린다(명부 길이를 «안» 쓴다)
         ok = None
         if err is None:
             ok = (got == want) if op == "==" else (
@@ -637,13 +705,22 @@ def main():
     res = collections.OrderedDict()
     res["무엇"] = "990 채점 — 🔴 **모든 「걸린 자리」를 «판정 함수»가 스스로 낸다**"
     res["사전등록"] = PREREG
+    # 🔴 §1 도 «자»다 --- 등록 분모가 전부 «양의 정수»인가를 실제로 견준다.
+    #   🔴 걸린 자리를 `len(DENOM)` 으로 «안» 적는다(`F07` 이 금지한다). 세면서 올린다.
+    d_hits, d_bad = 0, []
+    for _k, _v in DENOM.items():
+        d_hits += 1
+        if not (isinstance(_v, int) and _v > 0):
+            d_bad.append(_k)
     res["§1 🔴 등록 분모"] = collections.OrderedDict(
-        list(DENOM.items()) + [("통과", True),
-                               ("🔴 걸린 자리(= 자가 «비교»를 «수행»한 회수)", len(DENOM))])
+        list(DENOM.items()) + [
+            ("🔴 양의 정수가 아닌 분모", d_bad or "없음"),
+            ("통과", bool(not d_bad)),
+            ("🔴 걸린 자리(= 자가 «비교»를 «수행»한 회수)", d_hits)])
     res["§4 🔴 예측"] = collections.OrderedDict(
         list(preds.items()) + [
             ("🔴🔴 분자 / 분모", "%d / %d" % (phit, len(PRED_DEF))),
-            ("🔴 걸린 자리(= 자가 «비교»를 «수행»한 회수)", len(PRED_DEF)),
+            ("🔴 걸린 자리(= 자가 «비교»를 «수행»한 회수)", p_hits),
             ("통과", bool(phit == len(PRED_DEF)))])
     res["§5 🔴 반증조건"] = collections.OrderedDict(
         list(rows.items()) + [
@@ -656,9 +733,14 @@ def main():
                 v["🔴 걸린 자리(= 이 «판정 함수»가 비교를 «수행»한 회수)"]
                 for v in rows.values()))),
             ("통과", bool(not fals and not unmeasured))])
+    top_hits = 0
+    for _k in parts:
+        top_hits += 1
     res["🔴🔴🔴 최상위를 이루는 절의 `통과` 전량"] = collections.OrderedDict(
-        list(parts.items()) + [("통과", bool(all(parts.values()))),
-                               ("🔴 걸린 자리(= 자가 «비교»를 «수행»한 회수)", len(parts))])
+        list(parts.items()) + [
+            ("통과", bool(all(parts.values()))),
+            # 🔴 명부 길이가 아니라 «실제로 견준 조각 수»다
+            ("🔴 걸린 자리(= 자가 «비교»를 «수행»한 회수)", top_hits)])
     res["통과"] = bool(all(parts.values()))
     res["🔴 최상위의 정의"] = (
         "🔴 **988 판 `§59-나` 를 복원했다** --- 위 열 조각의 «연언»이다. "

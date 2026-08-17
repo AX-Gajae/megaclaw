@@ -311,6 +311,7 @@ def stage_board(ref):
         ("§3 🔴 도메인별 ρ(씨앗 평균)",
          collections.OrderedDict(
              (d, _r(float(np.mean(per[d])))) for d in doms if per[d])),
+        ("🔴 걸린 자리(= 자가 «비교»를 «수행»한 회수)", int(len(CHAMP_SEEDS) * len(doms))),
         ("통과", bool(repro["🔴🔴🔴 문턱 안인가"])),
         ("🔴 이 절의 통과가 뜻하는 것",
          "🔴 챔피언 판이 이 사이클에서도 «그 자리에» 있다 — 989 가 「판이 움직였다」고 부른 것은 이 판이 아니다"),

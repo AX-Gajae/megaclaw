@@ -940,6 +940,7 @@ def stage_arms(ref):
                 1 for v in decomp.values() for x in v.values()
                 if x["🔴 잔차 |A + S − Δ|"] is None))),
         ])),
+        ("🔴 걸린 자리(= 자가 «비교»를 «수행»한 회수)", int(ncell + nexplore_cell[0])),
         ("통과", bool(
             all(x["🔴 잔차 |A + S − Δ|"] is not None
                 and x["🔴 잔차 |A + S − Δ|"] < 1e-9

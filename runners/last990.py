@@ -69,9 +69,13 @@ def stamped_by(art):
             return
         for k, v in o.items():
             if isinstance(v, dict):
-                if "sha256" in k and all(
+                # 🔴 «코드» 도장만 본다 --- 키가 `.py` 경로여야 한다.
+                #   `fiveprime_990.json` 의 「입력 산출물 sha256」은 «산출물»→sha 라
+                #   그것을 코드 도장으로 읽으면 「러너가 out990_audit.json」이라는 헛것이 된다.
+                if "sha256" in k and v and all(
                         isinstance(x, str) and len(x) == 64 for x in v.values()) \
-                        and v:
+                        and all(isinstance(r, str) and r.endswith(".py")
+                                for r in v.keys()):
                     for r, s in v.items():
                         found[r] = s
                 else:
