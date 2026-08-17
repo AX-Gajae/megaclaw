@@ -38,7 +38,7 @@
   "--prose",
   "runners.prose988",
   "--stamp-ref",
-  "02aa926d2a62d03f83f55b8cc99a31b55ad262eb",
+  "fc6b1a12eb247697d5eed3f132e247596090cb01",
   "--gates",
   "--out",
   "runners/fiveprime_988.json"
@@ -47,9 +47,9 @@
  "🔴 되짚은 기준(955 R5 · `docs/루프.md:148` v3.2)": {
   "기준": "🔴 **커밋된 트리**",
   "읽기·해싱 트리(절 3·4·7·8)": "note/988-registered-predicate",
-  "그 커밋 sha": "02aa926d2a62d03f83f55b8cc99a31b55ad262eb",
+  "그 커밋 sha": "fc6b1a12eb247697d5eed3f132e247596090cb01",
   "역참조(grep) 트리(절 1·2)": "note/988-registered-predicate",
-  "머리(--head)": "note/988-registered-predicate = 02aa926d2a62d03f83f55b8cc99a31b55ad262eb",
+  "머리(--head)": "note/988-registered-predicate = fc6b1a12eb247697d5eed3f132e247596090cb01",
   "취합 시작(--base)": "35fba59115b6dfa24043612f028299c7c7994e24 = 35fba59115b6dfa24043612f028299c7c7994e24",
   "⚠ 954 까지": "작업 트리를 되짚었다 --- 커밋 안 된 편집이 검사에 섞였다",
   "🔴 「커밋 안 됨」은 「없다」가 아니다": "절 3·4·7 이 그것을 **따로 센다**(조항 59)"
@@ -63,21 +63,33 @@
  "⓪ 관문(작업 트리 · 🔴 984 부터 절 분모 «밖» 진단)": {
   "검사": "⓪ 관문 --- 작업 트리가 비었나(⑤′ 는 커밋된 트리를 검사한다)",
   "git status --porcelain 종료": 0,
-  "더러운 경로 수": 18,
+  "더러운 경로 수": 30,
   "더러운 경로": [
-   " M data/state/collect_log.jsonl",
-   " M data/state/popup_visitor_daily_log.jsonl",
+   " M data/lab/denominator.json",
+   " M docs/card_987.md",
+   " M docs/handoff_987.md",
+   " M docs/pr_987.md",
+   " M docs/루프.md",
+   " M docs/판정_987.md",
    " M runners/daemonguard973.py",
    " M runners/fiveprime902.py",
    " M runners/out941_steamrev.json",
+   "?? docs/card_988.md",
+   "?? docs/handoff_988.md",
+   "?? docs/pr_988.md",
    "?? docs/prereg_988_registered_predicate.md",
+   "?? docs/판정_988.md",
    "?? runners/audit988.py",
    "?? runners/certify988.py",
    "?? runners/cycle988.py",
+   "?? runners/fiveprime_988.json",
    "?? runners/house988.py",
    "?? runners/note988_gen.py",
    "?? runners/out988_audit.json",
+   "?? runners/out988_certify.json",
    "?? runners/out988_house.json",
+   "?? runners/out988_prose.json",
+   "?? runners/out988_score.json",
    "?? runners/out988_table.json",
    "?? runners/out988_window.json",
    "?? runners/plumb988.py",
@@ -88,15 +100,15 @@
   "🔴🔴 980 개정": "🔴 **이 절은 이제 진단이다.** 규칙 A(`checkout` 금지) 아래에서 `HEAD` 는 언제나 `main` 이고 사이클 커밋은 가지에만 있으므로 작업 트리가 `HEAD` 와 같을 수 없고, 규칙 B(데몬)가 60 초마다 `data/` 를 건드린다. 🔴 **판정은 `⓪ 관문(가지의 커밋된 트리)` 이 진다.**",
   "🔴🔴🔴 984 R1: 이 절을 분모 «밖» 진단으로 내렸다": "🔴 **`통과` 키를 뺐다 --- 리터럴 `True` 로 통과시키지 않는다.** 규칙 A(`checkout` 금지) + 규칙 B(데몬을 못 재운다) 아래서 이 절은 **원리상 통과 불가**다. 그 사실을 `prereg_984 §4-1` 에 «사전»에 등록하고 분모에서 뺐다. 🔴 **뺐다는 사실과 잰 날 것을 여기 그대로 싣는다**(조항 59)",
   "🔴 이 절이 잰 날 것": {
-   "더러운 경로 수": 18
+   "더러운 경로 수": 30
   }
  },
  "⓪ 관문(가지의 커밋된 트리 · 🔴 정본)": {
   "검사": "🔴🔴 ⓪ 관문(정본 · 980 · 🔴 982 R3 로 자기 산출물을 뺐다) --- 작업 트리가 **가지의 커밋된 트리**와 같은가",
   "🔴 견준 가지": "note/988-registered-predicate",
-  "🔴 가지 sha": "02aa926d2a62d03f83f55b8cc99a31b55ad262eb",
+  "🔴 가지 sha": "fc6b1a12eb247697d5eed3f132e247596090cb01",
   "🔴 분모: 갈린 경로 전량": 9,
-  "🔴 데몬(규칙 B) 면제 경로 수": 7,
+  "🔴 데몬(규칙 B) 면제 경로 수": 8,
   "🔴 면제 규칙의 출처": [
    "data/ingest",
    "data/state",
@@ -109,21 +121,21 @@
    "data/ingest/youtube_poll/2026-08-17T044303Z.json",
    "data/ingest/youtube_poll/2026-08-17T045936Z.json",
    "data/ingest/youtube_poll/2026-08-17T051400Z.json",
+   "data/ingest/youtube_poll/2026-08-17T052957Z.json",
    "data/state/collect_log.jsonl",
    "data/state/popup_visitor_daily_log.jsonl",
    "runners/out941_steamrev.json"
   ],
-  "🔴🔴🔴 982 R3 --- 자기 산출물이라 이름으로 뺀 경로": "없음",
-  "🔴 그 수": 0,
-  "🔴 왜 빼나(982 R3)": "🔴 `*_fiveprime*.json` 은 **이 절이 도는 중에 이 러너가 쓰는 파일**이라 관문이 도는 순간 커밋돼 있을 수 없다 --- **원리상 못 지나가는 자리**다. 🔴 절 3·4 는 이미 `SELF_OUT_RE` 로 같은 것을 한다. 🔴 통과시키려고 **커밋하는** 길(939·980)이 아니라 **분모에서 이름으로 빼는** 길로 고친다 --- 빼는 것과 그 목록을 산출물이 적으므로 숨겨지지 않는다",
-  "⚠ 구판(982 R3 앞) 분자 --- 자기 산출물을 안 뺐을 때": 2,
-  "🔴🔴 분자: 면제 밖에서 갈린 경로": 2,
-  "🔴 그 경로": [
-   "runners/note988_gen.py",
-   "runners/out988_table.json"
+  "🔴🔴🔴 982 R3 --- 자기 산출물이라 이름으로 뺀 경로": [
+   "runners/fiveprime_988.json"
   ],
+  "🔴 그 수": 1,
+  "🔴 왜 빼나(982 R3)": "🔴 `*_fiveprime*.json` 은 **이 절이 도는 중에 이 러너가 쓰는 파일**이라 관문이 도는 순간 커밋돼 있을 수 없다 --- **원리상 못 지나가는 자리**다. 🔴 절 3·4 는 이미 `SELF_OUT_RE` 로 같은 것을 한다. 🔴 통과시키려고 **커밋하는** 길(939·980)이 아니라 **분모에서 이름으로 빼는** 길로 고친다 --- 빼는 것과 그 목록을 산출물이 적으므로 숨겨지지 않는다",
+  "⚠ 구판(982 R3 앞) 분자 --- 자기 산출물을 안 뺐을 때": 1,
+  "🔴🔴 분자: 면제 밖에서 갈린 경로": 0,
+  "🔴 그 경로": "없음",
   "🔴 왜 이 절이 정본인가": "🔴 규칙 A 는 `checkout` 을 금지하므로 `HEAD` 는 `main` 이고 사이클 커밋은 가지에만 있다. 규칙 B 는 데몬을 재우지 말라 하므로 `data/ingest`·`data/state` 는 60 초마다 움직인다. **작업 트리 대 `HEAD`** 를 물으면 두 규칙이 서로를 막는다 --- 967 이 12 사이클 전에 물은 그 물음의 답이다",
-  "통과": false
+  "통과": true
  },
  "1 소비자 역참조": {
   "검사": "1 소비자 역참조 --- 🔴 사람이 고르지 않는다(`docs/루프.md:249-253`)",
@@ -131,19 +143,19 @@
   "머리(head)": "note/988-registered-predicate",
   "역참조한 트리": "note/988-registered-predicate",
   "🔴🔴 분모의 내력(구판/신판을 «같이» 싣는다 · 986 R1)": {
-   "⚠ 구판 분모(「그 이름을 아무 데서나 «언급»한 파일」)": 198,
-   "⚠ 구판 분모 중 .py": 43,
-   "🔴🔴🔴 신판 분모(「코드 리터럴로 «쓴» 파일」)": 35,
-   "🔴 신판 분모 중 .py": 35,
-   "🔴 줄어드는 수": 163,
+   "⚠ 구판 분모(「그 이름을 아무 데서나 «언급»한 파일」)": 455,
+   "⚠ 구판 분모 중 .py": 149,
+   "🔴🔴🔴 신판 분모(「코드 리터럴로 «쓴» 파일」)": 128,
+   "🔴 신판 분모 중 .py": 128,
+   "🔴 줄어드는 수": 327,
    "🔴 갈래별 수": {
-    "비 .py": 155,
-    "산문만(주석·독스트링)": 8,
-    "코드 리터럴": 35
+    "비 .py": 306,
+    "코드 리터럴": 128,
+    "산문만(주석·독스트링)": 21
    },
    "🔴 왜 좁히나(사전등록 §4-2 가 «측정 전»에 등록했다)": "🔴 **구판 자는 `git grep -l` 이라 주석·독스트링의 「언급」도 소비자로 센다.** 그 파일들은 **다시 돌릴 이유가 없다** --- 그래서 절 1 이 네 사이클째 붉었다. 🔴 **원장을 빼는 길은 안 쓴다**(빼도 안 열린다)",
    "🔴🔴 요건 ③ --- 뺀 것의 「잰 날 것」(= 「안 잰 것」이 아니라 「분모 밖에서 잰 것」)": {
-    "비 .py 수": 155,
+    "비 .py 수": 306,
     "비 .py 전량": [
      "README.md",
      "data/lab/denominator.json",
@@ -151,15 +163,61 @@
      "data/lab/exempt950.json",
      "data/lab/exempt951.json",
      "data/lab/exempt952.json",
+     "data/lab/preregister_idolpromote.json",
+     "data/lab/program.json",
+     "docs/card_980.md",
+     "docs/card_987.md",
+     "docs/handoff_987.md",
+     "docs/handoff_988.md",
+     "docs/pr_987.md",
+     "docs/pr_988.md",
+     "docs/prereg_897_architecture.md",
+     "docs/prereg_898_oneruler.md",
+     "docs/prereg_899_axesdie.md",
+     "docs/prereg_900_levers.md",
+     "docs/prereg_901_intervention.md",
+     "docs/prereg_902_identify.md",
+     "docs/prereg_903_effect.md",
+     "docs/prereg_904_xtab.md",
+     "docs/prereg_905_cond.md",
      "docs/prereg_906_grade.md",
+     "docs/prereg_907_docgate.md",
+     "docs/prereg_908b_semtoken.md",
+     "docs/prereg_910_event.md",
+     "docs/prereg_915_grid.md",
+     "docs/prereg_933_calpanel.md",
+     "docs/prereg_935_rawpanel.md",
+     "docs/prereg_937_repair.md",
+     "docs/prereg_939_threshold.md",
+     "docs/prereg_940_ratio.md",
+     "docs/prereg_943_actiontime.md",
+     "docs/prereg_944_famgrade.md",
      "docs/prereg_947_rawgit.md",
      "docs/prereg_948_evidence.md",
+     "docs/prereg_950_rulers.md",
+     "docs/prereg_952_harvest.md",
      "docs/prereg_953_ratchet.md",
+     "docs/prereg_954_dupe.md",
      "docs/prereg_955_D.md",
      "docs/prereg_956_ruler1.md",
      "docs/prereg_957_layers.md",
+     "docs/prereg_958_within.md",
+     "docs/prereg_959_reach.md",
+     "docs/prereg_960_cluster.md",
+     "docs/prereg_961_curve.md",
+     "docs/prereg_962_triples.md",
+     "docs/prereg_963_housekeeping.md",
+     "docs/prereg_964_tautology_union.md",
      "docs/prereg_965_metataut.md",
      "docs/prereg_966_longmemory.md",
+     "docs/prereg_968_deadcontrols.md",
+     "docs/prereg_971_holdout.md",
+     "docs/prereg_973_hplt_c3.md",
+     "docs/prereg_974_precision.md",
+     "docs/prereg_975_c4.md",
+     "docs/prereg_977_alpha.md",
+     "docs/prereg_980_mixture.md",
+     "docs/prereg_981_pick.md",
      "docs/prereg_982_timeforward.md",
      "docs/prereg_983_holdout_registry.md",
      "docs/prereg_984_leak_or_coupling.md",
@@ -167,7 +225,13 @@
      "docs/prereg_986_sixth_cell_power_ci.md",
      "docs/prereg_987_ceiling_identity_fixed_ref.md",
      "docs/prereg_988_registered_predicate.md",
+     "docs/primer/10.html",
+     "docs/program-report.html",
+     "docs/worldmodel-primer.html",
      "docs/루프.md",
+     "docs/목표.md",
+     "docs/방향.md",
+     "docs/수리/942.md",
      "docs/수리/943.md",
      "docs/수리/944.md",
      "docs/수리/945.md",
@@ -175,18 +239,59 @@
      "docs/수리/947.md",
      "docs/수리/948.md",
      "docs/수리/951.md",
+     "docs/수집계획.md",
+     "docs/아키텍처.md",
+     "docs/용어.md",
+     "docs/탐색/898.md",
+     "docs/탐색/899.md",
+     "docs/탐색/900.md",
+     "docs/탐색/901.md",
+     "docs/탐색/902.md",
+     "docs/탐색/906.md",
+     "docs/탐색/941.md",
+     "docs/탐색/943.md",
+     "docs/탐색/944.md",
+     "docs/탐색/945.md",
+     "docs/탐색/946.md",
      "docs/탐색/948.md",
+     "docs/탐색/949.md",
+     "docs/탐색/950.md",
+     "docs/탐색/951.md",
+     "docs/탐색/953.md",
+     "docs/탐색/954.md",
      "docs/판정/949.md",
+     "docs/판정/958.md",
+     "docs/판정/961.md",
+     "docs/판정/962.md",
      "docs/판정/963.md",
      "docs/판정/964.md",
      "docs/판정/965.md",
      "docs/판정/966.md",
      "docs/판정/967.md",
+     "docs/판정/968.md",
+     "docs/판정_974.md",
+     "docs/판정_975.md",
+     "docs/판정_976.md",
+     "docs/판정_977.md",
      "docs/판정_979.md",
+     "docs/판정_980.md",
+     "docs/판정_981.md",
+     "docs/판정_984.md",
      "docs/판정_985.md",
+     "docs/판정_986.md",
      "docs/판정_987.md",
+     "docs/판정_988.md",
+     "paper/ledger.json",
+     "paper/steps/110_onemarker/main.tex",
+     "paper/steps/128_scrapedafter/main.tex",
+     "paper/steps/168_ninetyfourrows/main.tex",
+     "paper/steps/486_nolever/meta.json",
+     "paper/steps/488_zerobits/meta.json",
+     "paper/steps/490_whenobserved/main.tex",
      "paper/steps/490_whenobserved/meta.json",
      "paper/steps/491_gradebits/meta.json",
+     "paper/steps/970_recommit/main.tex",
+     "paper/steps/970_recommit/meta.json",
      "runners/exp948_gitcall_map.json",
      "runners/exp951_home.json",
      "runners/fiveprime_979.json",
@@ -212,20 +317,43 @@
      "runners/fiveprime_986.json",
      "runners/fiveprime_986_cert.json",
      "runners/fiveprime_987.json",
+     "runners/fiveprime_988.json",
+     "runners/out892_floor.json",
+     "runners/out892_log.txt",
+     "runners/out892_stdout.txt",
+     "runners/out898_verdict.json",
+     "runners/out899a_gates.json",
      "runners/out902b_fiveprime.json",
      "runners/out902b_fiveprime_901.json",
      "runners/out903b_fiveprime.json",
      "runners/out904b_fiveprime.json",
+     "runners/out905_cond.json",
      "runners/out905b_fiveprime.json",
      "runners/out906_grade.json",
      "runners/out906b_fiveprime.json",
+     "runners/out907_gate.json",
+     "runners/out908d_kobis.json",
+     "runners/out909_fuel.json",
+     "runners/out909_pretext.json",
+     "runners/out909_ssl.json",
+     "runners/out911_harness.json",
+     "runners/out913_viewer.json",
      "runners/out914_issues.json",
      "runners/out914b_fiveprime.json",
      "runners/out915b_fiveprime.json",
+     "runners/out916_teacher.json",
      "runners/out916b_fiveprime.json",
+     "runners/out920_teacher.json",
+     "runners/out923_teacher.json",
      "runners/out928_fiveprime.json",
+     "runners/out936_teacher.json",
+     "runners/out937_repair.json",
+     "runners/out938_teacher.json",
      "runners/out939_fiveprime.json",
+     "runners/out939_threshold.json",
      "runners/out940_fiveprime.json",
+     "runners/out940_gate.json",
+     "runners/out940_ratio.json",
      "runners/out943_fiveprime.json",
      "runners/out944_famgrade.json",
      "runners/out944_fiveprime.json",
@@ -244,6 +372,7 @@
      "runners/out949_stamp_after.json",
      "runners/out949_stamp_before.json",
      "runners/out950_fiveprime.json",
+     "runners/out950_rulers.json",
      "runners/out951_fiveprime.json",
      "runners/out951_guard.json",
      "runners/out952_fiveprime.json",
@@ -255,17 +384,45 @@
      "runners/out957_fiveprime.json",
      "runners/out957_layers.json",
      "runners/out958_fiveprime.json",
+     "runners/out958_prose.json",
      "runners/out959_fiveprime.json",
      "runners/out960_fiveprime.json",
+     "runners/out961_curve.json",
      "runners/out961_fiveprime.json",
+     "runners/out962_triples.json",
+     "runners/out963_checks.json",
+     "runners/out964_checks.json",
      "runners/out964_fiveprime.json",
+     "runners/out965_checks.json",
      "runners/out965_fiveprime.json",
      "runners/out965_meta.json",
+     "runners/out965_prose.json",
+     "runners/out966_meta.json",
      "runners/out967_fiveprime.json",
      "runners/out967_stamp.json",
+     "runners/out968_meta.json",
+     "runners/out969_meta.json",
+     "runners/out969_meta968_g1new.json",
+     "runners/out969_meta968_g1old.json",
+     "runners/out969_meta968_g2new.json",
+     "runners/out969_meta968_g2old.json",
+     "runners/out969_metacmp.json",
+     "runners/out971_meta.json",
+     "runners/out971_meta_exact.json",
+     "runners/out971_tautprobe.json",
+     "runners/out972_meta_file.json",
+     "runners/out972_meta_file_exact.json",
+     "runners/out972_meta_func.json",
+     "runners/out972_meta_func_exact.json",
+     "runners/out972_meta_g1_file.json",
+     "runners/out972_meta_g1_func.json",
      "runners/out973_daemonguard.json",
+     "runners/out973_ledger.json",
+     "runners/out974_daemonfix.json",
+     "runners/out975_scorefix.json",
      "runners/out981_score.json",
      "runners/out982_score.json",
+     "runners/out983_score.json",
      "runners/out984_fixpoint.json",
      "runners/out984_grid.json",
      "runners/out984_house.json",
@@ -298,49 +455,83 @@
      "runners/out987_table.json",
      "runners/out987_window.json",
      "runners/out988_audit.json",
+     "runners/out988_certify.json",
      "runners/out988_house.json",
-     "runners/out988_window.json"
+     "runners/out988_prose.json",
+     "runners/out988_score.json",
+     "runners/out988_table.json",
+     "runners/out988_window.json",
+     "runners/pipe981.sh",
+     "runners/pipe982.sh"
     ],
-    "산문만 수": 8,
+    "산문만 수": 21,
     "산문만 전량": [
+     "ingest/harvest_ratchet.py",
+     "ingest/kopis953.py",
      "lab/fixtures/한글이름_고정물.py",
      "lab/keyspace.py",
-     "runners/checks965.py",
-     "runners/daemonfix974.py",
-     "runners/harvest_daemon.py",
+     "paper/harness.py",
+     "runners/exp949_harm.py",
+     "runners/exp950_onehop.py",
+     "runners/exp951_home.py",
+     "runners/knock894.py",
+     "runners/nn908b_semtoken.py",
+     "runners/out943_axis.py",
+     "runners/out943b_d2time.py",
+     "runners/out944b_obstime.py",
+     "runners/out945_colcensus.py",
+     "runners/pilot893.py",
      "runners/plumb988.py",
      "runners/prose958.py",
-     "runners/quote901.py"
+     "runners/quote901.py",
+     "runners/ruler890.py",
+     "runners/ruler978.py",
+     "runners/thresh891.py"
     ],
     "🔴 못 읽었다(= 「산문만」이 아니다 · 조항 59)": "없음"
    }
   },
-  "🔴 분모 ① 바뀐 경로 수": 14,
-  "🔴 분모 ② 역참조 소비자 수": 35,
-  "🔴 분모 ②-py 역참조 소비자 중 .py": 35,
-  "🔴 분모 ③ 실제로 돌린 수": 8,
-  "🔴 분모 ④ 안 돌린 수": 27,
-  "🔴 분모 ④-py 안 돌린 .py 수": 27,
-  "🔴 분모 ④-사유없음 안 돌린 .py 중 사유 없는 것": 27,
-  "⚠ 분모 ① 과 ② 는 다른 자다": "「돌린 셋 / 바뀐 경로 14」과 「돌린 셋 / 소비자 35」는 다른 문장이다. ⑤′ 의 대상은 ② 다(티처 #64 M3 나).",
+  "🔴 분모 ① 바뀐 경로 수": 29,
+  "🔴 분모 ② 역참조 소비자 수": 128,
+  "🔴 분모 ②-py 역참조 소비자 중 .py": 128,
+  "🔴 분모 ③ 실제로 돌린 수": 9,
+  "🔴 분모 ④ 안 돌린 수": 119,
+  "🔴 분모 ④-py 안 돌린 .py 수": 119,
+  "🔴 분모 ④-사유없음 안 돌린 .py 중 사유 없는 것": 119,
+  "⚠ 분모 ① 과 ② 는 다른 자다": "「돌린 셋 / 바뀐 경로 29」과 「돌린 셋 / 소비자 128」는 다른 문장이다. ⑤′ 의 대상은 ② 다(티처 #64 M3 나).",
   "🔴 음성 대조(quotepath 를 안 끈 바늘)": {
    "왜": "`git diff --name-only` 는 한글 경로를 이스케이프한다 --- 그 바늘은 한 곳도 안 맞는데 **종료 0** 이 난다(조항 59 그 자체)",
-   "이스케이프된 경로 수": 0,
-   "이스케이프 바늘로 센 소비자 수": 173,
-   "정상 바늘(전체 경로)로 센 소비자 수": 173,
-   "🔴 차(이스케이프 때문에 사라지는 소비자 수)": 0
+   "이스케이프된 경로 수": 3,
+   "이스케이프 바늘로 센 소비자 수": 338,
+   "정상 바늘(전체 경로)로 센 소비자 수": 429,
+   "🔴 차(이스케이프 때문에 사라지는 소비자 수)": 91
   },
   "바뀐 경로": [
+   "data/lab/denominator.json",
+   "docs/card_987.md",
+   "docs/card_988.md",
+   "docs/handoff_987.md",
+   "docs/handoff_988.md",
+   "docs/pr_987.md",
+   "docs/pr_988.md",
    "docs/prereg_988_registered_predicate.md",
+   "docs/루프.md",
+   "docs/판정_987.md",
+   "docs/판정_988.md",
    "runners/audit988.py",
    "runners/certify988.py",
    "runners/cycle988.py",
    "runners/daemonguard973.py",
    "runners/fiveprime902.py",
+   "runners/fiveprime_988.json",
    "runners/house988.py",
    "runners/note988_gen.py",
    "runners/out988_audit.json",
+   "runners/out988_certify.json",
    "runners/out988_house.json",
+   "runners/out988_prose.json",
+   "runners/out988_score.json",
+   "runners/out988_table.json",
    "runners/out988_window.json",
    "runners/plumb988.py",
    "runners/prose988.py",
@@ -348,63 +539,156 @@
   ],
   "자별 역참조": {
    "전체 경로": {
-    "바늘 수": 14,
-    "소비자 수": 173,
-    "그중 .py": 32,
+    "바늘 수": 29,
+    "소비자 수": 429,
+    "그중 .py": 140,
     "rc": 0,
     "판독기": "lab.gitcall.grep_files(`-z` + core.quotePath=false)"
    },
    "파일명": {
-    "바늘 수": 14,
-    "소비자 수": 197,
-    "그중 .py": 43,
+    "바늘 수": 29,
+    "소비자 수": 455,
+    "그중 .py": 149,
     "rc": 0,
     "판독기": "lab.gitcall.grep_files(`-z` + core.quotePath=false)"
    },
    "모듈 점경로": {
     "바늘 수": 10,
-    "소비자 수": 46,
+    "소비자 수": 47,
     "그중 .py": 1,
     "rc": 0,
     "판독기": "lab.gitcall.grep_files(`-z` + core.quotePath=false)"
    }
   },
   "역참조 소비자(전량 · 🔴 신판 = 코드 리터럴)": [
+   "ingest/audit.py",
+   "ingest/kobis_api908.py",
    "lab/gitcall.py",
+   "lab/guards.py",
+   "paper/program.py",
    "runners/audit985.py",
+   "runners/audit986.py",
+   "runners/audit987.py",
    "runners/audit988.py",
+   "runners/certify985.py",
+   "runners/certify986.py",
+   "runners/certify987.py",
    "runners/certify988.py",
+   "runners/checks963.py",
+   "runners/checks964.py",
+   "runners/checks965.py",
+   "runners/cond905.py",
+   "runners/curve961.py",
    "runners/cycle984.py",
    "runners/cycle985.py",
    "runners/cycle986.py",
    "runners/cycle987.py",
    "runners/cycle988.py",
+   "runners/daemonfix974.py",
    "runners/daemonguard973.py",
+   "runners/dropaudit969.py",
+   "runners/effect903.py",
    "runners/exp948_gitcall_map.py",
+   "runners/fill965.py",
+   "runners/fill966.py",
    "runners/fiveprime902.py",
    "runners/fixpoint984.py",
+   "runners/floor892.py",
+   "runners/gate907.py",
    "runners/grade906.py",
+   "runners/harvest_daemon.py",
+   "runners/house979.py",
+   "runners/house980.py",
+   "runners/house981.py",
+   "runners/house982.py",
+   "runners/house983.py",
+   "runners/house984.py",
+   "runners/house985.py",
+   "runners/house986.py",
+   "runners/house987.py",
    "runners/house988.py",
+   "runners/layers957.py",
+   "runners/ledger892.py",
+   "runners/ledger899.py",
+   "runners/ledger952.py",
    "runners/ledger953.py",
+   "runners/ledger954.py",
+   "runners/ledger955.py",
    "runners/ledger956.py",
+   "runners/ledger957.py",
+   "runners/ledger958.py",
+   "runners/ledger959.py",
+   "runners/ledger965.py",
+   "runners/ledger966.py",
    "runners/ledger967.py",
+   "runners/ledger968.py",
+   "runners/ledger969.py",
+   "runners/ledger970.py",
+   "runners/ledger971.py",
+   "runners/ledger973.py",
+   "runners/ledger980_fiveprime.py",
+   "runners/ledgeraudit878.py",
+   "runners/ledgeraudit878b.py",
+   "runners/ledgeraudit879.py",
+   "runners/ledgeraudit880.py",
+   "runners/ledgeraudit881.py",
+   "runners/ledgeraudit882.py",
    "runners/meta965.py",
+   "runners/metacmp969.py",
+   "runners/note892_ledger.py",
+   "runners/note893_ledger.py",
+   "runners/note893_prereg.py",
    "runners/note951_gen.py",
+   "runners/note953_gen.py",
+   "runners/note954_gen.py",
    "runners/note973_gen.py",
+   "runners/note974_gen.py",
+   "runners/note975_gen.py",
+   "runners/note976_gen.py",
+   "runners/note977_gen.py",
    "runners/note979_gen.py",
+   "runners/note980_gen.py",
+   "runners/note981_gen.py",
+   "runners/note982_gen.py",
+   "runners/note983_gen.py",
+   "runners/note984_gen.py",
    "runners/note985_gen.py",
+   "runners/note986_gen.py",
    "runners/note987_gen.py",
    "runners/note988_gen.py",
+   "runners/out899a_gates.py",
    "runners/out945_stampscan.py",
+   "runners/out946_keymap.py",
    "runners/out946_quotefix.py",
    "runners/out946_recount.py",
    "runners/out947_rawgit.py",
    "runners/out948_ab.py",
+   "runners/out950_rulers.py",
    "runners/out953_score.py",
+   "runners/plumb979.py",
+   "runners/prose964.py",
+   "runners/prose965.py",
+   "runners/prose987.py",
    "runners/prose988.py",
+   "runners/prose_check.py",
+   "runners/ratio940_run.py",
+   "runners/repair937_run.py",
+   "runners/repair959.py",
    "runners/score981.py",
    "runners/score982.py",
-   "runners/score988.py"
+   "runners/score983.py",
+   "runners/score984.py",
+   "runners/score985.py",
+   "runners/score986.py",
+   "runners/score987.py",
+   "runners/score988.py",
+   "runners/scorefix975.py",
+   "runners/ssl909_pretext.py",
+   "runners/triples962.py",
+   "runners/wiring959.py",
+   "runners/xtab904.py",
+   "serve/registry.py",
+   "state/grid915.py"
   ],
   "⚠ 역참조 소비자(전량 · 구판 = 언급)": [
    "README.md",
@@ -413,15 +697,61 @@
    "data/lab/exempt950.json",
    "data/lab/exempt951.json",
    "data/lab/exempt952.json",
+   "data/lab/preregister_idolpromote.json",
+   "data/lab/program.json",
+   "docs/card_980.md",
+   "docs/card_987.md",
+   "docs/handoff_987.md",
+   "docs/handoff_988.md",
+   "docs/pr_987.md",
+   "docs/pr_988.md",
+   "docs/prereg_897_architecture.md",
+   "docs/prereg_898_oneruler.md",
+   "docs/prereg_899_axesdie.md",
+   "docs/prereg_900_levers.md",
+   "docs/prereg_901_intervention.md",
+   "docs/prereg_902_identify.md",
+   "docs/prereg_903_effect.md",
+   "docs/prereg_904_xtab.md",
+   "docs/prereg_905_cond.md",
    "docs/prereg_906_grade.md",
+   "docs/prereg_907_docgate.md",
+   "docs/prereg_908b_semtoken.md",
+   "docs/prereg_910_event.md",
+   "docs/prereg_915_grid.md",
+   "docs/prereg_933_calpanel.md",
+   "docs/prereg_935_rawpanel.md",
+   "docs/prereg_937_repair.md",
+   "docs/prereg_939_threshold.md",
+   "docs/prereg_940_ratio.md",
+   "docs/prereg_943_actiontime.md",
+   "docs/prereg_944_famgrade.md",
    "docs/prereg_947_rawgit.md",
    "docs/prereg_948_evidence.md",
+   "docs/prereg_950_rulers.md",
+   "docs/prereg_952_harvest.md",
    "docs/prereg_953_ratchet.md",
+   "docs/prereg_954_dupe.md",
    "docs/prereg_955_D.md",
    "docs/prereg_956_ruler1.md",
    "docs/prereg_957_layers.md",
+   "docs/prereg_958_within.md",
+   "docs/prereg_959_reach.md",
+   "docs/prereg_960_cluster.md",
+   "docs/prereg_961_curve.md",
+   "docs/prereg_962_triples.md",
+   "docs/prereg_963_housekeeping.md",
+   "docs/prereg_964_tautology_union.md",
    "docs/prereg_965_metataut.md",
    "docs/prereg_966_longmemory.md",
+   "docs/prereg_968_deadcontrols.md",
+   "docs/prereg_971_holdout.md",
+   "docs/prereg_973_hplt_c3.md",
+   "docs/prereg_974_precision.md",
+   "docs/prereg_975_c4.md",
+   "docs/prereg_977_alpha.md",
+   "docs/prereg_980_mixture.md",
+   "docs/prereg_981_pick.md",
    "docs/prereg_982_timeforward.md",
    "docs/prereg_983_holdout_registry.md",
    "docs/prereg_984_leak_or_coupling.md",
@@ -429,7 +759,13 @@
    "docs/prereg_986_sixth_cell_power_ci.md",
    "docs/prereg_987_ceiling_identity_fixed_ref.md",
    "docs/prereg_988_registered_predicate.md",
+   "docs/primer/10.html",
+   "docs/program-report.html",
+   "docs/worldmodel-primer.html",
    "docs/루프.md",
+   "docs/목표.md",
+   "docs/방향.md",
+   "docs/수리/942.md",
    "docs/수리/943.md",
    "docs/수리/944.md",
    "docs/수리/945.md",
@@ -437,25 +773,82 @@
    "docs/수리/947.md",
    "docs/수리/948.md",
    "docs/수리/951.md",
+   "docs/수집계획.md",
+   "docs/아키텍처.md",
+   "docs/용어.md",
+   "docs/탐색/898.md",
+   "docs/탐색/899.md",
+   "docs/탐색/900.md",
+   "docs/탐색/901.md",
+   "docs/탐색/902.md",
+   "docs/탐색/906.md",
+   "docs/탐색/941.md",
+   "docs/탐색/943.md",
+   "docs/탐색/944.md",
+   "docs/탐색/945.md",
+   "docs/탐색/946.md",
    "docs/탐색/948.md",
+   "docs/탐색/949.md",
+   "docs/탐색/950.md",
+   "docs/탐색/951.md",
+   "docs/탐색/953.md",
+   "docs/탐색/954.md",
    "docs/판정/949.md",
+   "docs/판정/958.md",
+   "docs/판정/961.md",
+   "docs/판정/962.md",
    "docs/판정/963.md",
    "docs/판정/964.md",
    "docs/판정/965.md",
    "docs/판정/966.md",
    "docs/판정/967.md",
+   "docs/판정/968.md",
+   "docs/판정_974.md",
+   "docs/판정_975.md",
+   "docs/판정_976.md",
+   "docs/판정_977.md",
    "docs/판정_979.md",
+   "docs/판정_980.md",
+   "docs/판정_981.md",
+   "docs/판정_984.md",
    "docs/판정_985.md",
+   "docs/판정_986.md",
    "docs/판정_987.md",
+   "docs/판정_988.md",
+   "ingest/audit.py",
+   "ingest/harvest_ratchet.py",
+   "ingest/kobis_api908.py",
+   "ingest/kopis953.py",
    "lab/fixtures/한글이름_고정물.py",
    "lab/gitcall.py",
+   "lab/guards.py",
    "lab/keyspace.py",
+   "paper/harness.py",
+   "paper/ledger.json",
+   "paper/program.py",
+   "paper/steps/110_onemarker/main.tex",
+   "paper/steps/128_scrapedafter/main.tex",
+   "paper/steps/168_ninetyfourrows/main.tex",
+   "paper/steps/486_nolever/meta.json",
+   "paper/steps/488_zerobits/meta.json",
+   "paper/steps/490_whenobserved/main.tex",
    "paper/steps/490_whenobserved/meta.json",
    "paper/steps/491_gradebits/meta.json",
+   "paper/steps/970_recommit/main.tex",
+   "paper/steps/970_recommit/meta.json",
    "runners/audit985.py",
+   "runners/audit986.py",
+   "runners/audit987.py",
    "runners/audit988.py",
+   "runners/certify985.py",
+   "runners/certify986.py",
+   "runners/certify987.py",
    "runners/certify988.py",
+   "runners/checks963.py",
+   "runners/checks964.py",
    "runners/checks965.py",
+   "runners/cond905.py",
+   "runners/curve961.py",
    "runners/cycle984.py",
    "runners/cycle985.py",
    "runners/cycle986.py",
@@ -463,9 +856,16 @@
    "runners/cycle988.py",
    "runners/daemonfix974.py",
    "runners/daemonguard973.py",
+   "runners/dropaudit969.py",
+   "runners/effect903.py",
    "runners/exp948_gitcall_map.json",
    "runners/exp948_gitcall_map.py",
+   "runners/exp949_harm.py",
+   "runners/exp950_onehop.py",
    "runners/exp951_home.json",
+   "runners/exp951_home.py",
+   "runners/fill965.py",
+   "runners/fill966.py",
    "runners/fiveprime902.py",
    "runners/fiveprime_979.json",
    "runners/fiveprime_980.json",
@@ -490,43 +890,124 @@
    "runners/fiveprime_986.json",
    "runners/fiveprime_986_cert.json",
    "runners/fiveprime_987.json",
+   "runners/fiveprime_988.json",
    "runners/fixpoint984.py",
+   "runners/floor892.py",
+   "runners/gate907.py",
    "runners/grade906.py",
    "runners/harvest_daemon.py",
+   "runners/house979.py",
+   "runners/house980.py",
+   "runners/house981.py",
+   "runners/house982.py",
+   "runners/house983.py",
+   "runners/house984.py",
+   "runners/house985.py",
+   "runners/house986.py",
+   "runners/house987.py",
    "runners/house988.py",
+   "runners/knock894.py",
+   "runners/layers957.py",
+   "runners/ledger892.py",
+   "runners/ledger899.py",
+   "runners/ledger952.py",
    "runners/ledger953.py",
+   "runners/ledger954.py",
+   "runners/ledger955.py",
    "runners/ledger956.py",
+   "runners/ledger957.py",
+   "runners/ledger958.py",
+   "runners/ledger959.py",
+   "runners/ledger965.py",
+   "runners/ledger966.py",
    "runners/ledger967.py",
+   "runners/ledger968.py",
+   "runners/ledger969.py",
+   "runners/ledger970.py",
+   "runners/ledger971.py",
+   "runners/ledger973.py",
+   "runners/ledger980_fiveprime.py",
+   "runners/ledgeraudit878.py",
+   "runners/ledgeraudit878b.py",
+   "runners/ledgeraudit879.py",
+   "runners/ledgeraudit880.py",
+   "runners/ledgeraudit881.py",
+   "runners/ledgeraudit882.py",
    "runners/meta965.py",
+   "runners/metacmp969.py",
+   "runners/nn908b_semtoken.py",
+   "runners/note892_ledger.py",
+   "runners/note893_ledger.py",
+   "runners/note893_prereg.py",
    "runners/note951_gen.py",
+   "runners/note953_gen.py",
+   "runners/note954_gen.py",
    "runners/note973_gen.py",
+   "runners/note974_gen.py",
+   "runners/note975_gen.py",
+   "runners/note976_gen.py",
+   "runners/note977_gen.py",
    "runners/note979_gen.py",
+   "runners/note980_gen.py",
+   "runners/note981_gen.py",
+   "runners/note982_gen.py",
+   "runners/note983_gen.py",
+   "runners/note984_gen.py",
    "runners/note985_gen.py",
+   "runners/note986_gen.py",
    "runners/note987_gen.py",
    "runners/note988_gen.py",
+   "runners/out892_floor.json",
+   "runners/out892_log.txt",
+   "runners/out892_stdout.txt",
+   "runners/out898_verdict.json",
+   "runners/out899a_gates.json",
+   "runners/out899a_gates.py",
    "runners/out902b_fiveprime.json",
    "runners/out902b_fiveprime_901.json",
    "runners/out903b_fiveprime.json",
    "runners/out904b_fiveprime.json",
+   "runners/out905_cond.json",
    "runners/out905b_fiveprime.json",
    "runners/out906_grade.json",
    "runners/out906b_fiveprime.json",
+   "runners/out907_gate.json",
+   "runners/out908d_kobis.json",
+   "runners/out909_fuel.json",
+   "runners/out909_pretext.json",
+   "runners/out909_ssl.json",
+   "runners/out911_harness.json",
+   "runners/out913_viewer.json",
    "runners/out914_issues.json",
    "runners/out914b_fiveprime.json",
    "runners/out915b_fiveprime.json",
+   "runners/out916_teacher.json",
    "runners/out916b_fiveprime.json",
+   "runners/out920_teacher.json",
+   "runners/out923_teacher.json",
    "runners/out928_fiveprime.json",
+   "runners/out936_teacher.json",
+   "runners/out937_repair.json",
+   "runners/out938_teacher.json",
    "runners/out939_fiveprime.json",
+   "runners/out939_threshold.json",
    "runners/out940_fiveprime.json",
+   "runners/out940_gate.json",
+   "runners/out940_ratio.json",
+   "runners/out943_axis.py",
    "runners/out943_fiveprime.json",
+   "runners/out943b_d2time.py",
    "runners/out944_famgrade.json",
    "runners/out944_fiveprime.json",
+   "runners/out944b_obstime.py",
    "runners/out945_colcensus.json",
+   "runners/out945_colcensus.py",
    "runners/out945_fiveprime.json",
    "runners/out945_stampscan.json",
    "runners/out945_stampscan.py",
    "runners/out946_fiveprime.json",
    "runners/out946_keymap.json",
+   "runners/out946_keymap.py",
    "runners/out946_quotefix.json",
    "runners/out946_quotefix.py",
    "runners/out946_recount.json",
@@ -541,6 +1022,8 @@
    "runners/out949_stamp_after.json",
    "runners/out949_stamp_before.json",
    "runners/out950_fiveprime.json",
+   "runners/out950_rulers.json",
+   "runners/out950_rulers.py",
    "runners/out951_fiveprime.json",
    "runners/out951_guard.json",
    "runners/out952_fiveprime.json",
@@ -553,17 +1036,45 @@
    "runners/out957_fiveprime.json",
    "runners/out957_layers.json",
    "runners/out958_fiveprime.json",
+   "runners/out958_prose.json",
    "runners/out959_fiveprime.json",
    "runners/out960_fiveprime.json",
+   "runners/out961_curve.json",
    "runners/out961_fiveprime.json",
+   "runners/out962_triples.json",
+   "runners/out963_checks.json",
+   "runners/out964_checks.json",
    "runners/out964_fiveprime.json",
+   "runners/out965_checks.json",
    "runners/out965_fiveprime.json",
    "runners/out965_meta.json",
+   "runners/out965_prose.json",
+   "runners/out966_meta.json",
    "runners/out967_fiveprime.json",
    "runners/out967_stamp.json",
+   "runners/out968_meta.json",
+   "runners/out969_meta.json",
+   "runners/out969_meta968_g1new.json",
+   "runners/out969_meta968_g1old.json",
+   "runners/out969_meta968_g2new.json",
+   "runners/out969_meta968_g2old.json",
+   "runners/out969_metacmp.json",
+   "runners/out971_meta.json",
+   "runners/out971_meta_exact.json",
+   "runners/out971_tautprobe.json",
+   "runners/out972_meta_file.json",
+   "runners/out972_meta_file_exact.json",
+   "runners/out972_meta_func.json",
+   "runners/out972_meta_func_exact.json",
+   "runners/out972_meta_g1_file.json",
+   "runners/out972_meta_g1_func.json",
    "runners/out973_daemonguard.json",
+   "runners/out973_ledger.json",
+   "runners/out974_daemonfix.json",
+   "runners/out975_scorefix.json",
    "runners/out981_score.json",
    "runners/out982_score.json",
+   "runners/out983_score.json",
    "runners/out984_fixpoint.json",
    "runners/out984_grid.json",
    "runners/out984_house.json",
@@ -596,17 +1107,48 @@
    "runners/out987_table.json",
    "runners/out987_window.json",
    "runners/out988_audit.json",
+   "runners/out988_certify.json",
    "runners/out988_house.json",
+   "runners/out988_prose.json",
+   "runners/out988_score.json",
+   "runners/out988_table.json",
    "runners/out988_window.json",
+   "runners/pilot893.py",
+   "runners/pipe981.sh",
+   "runners/pipe982.sh",
+   "runners/plumb979.py",
    "runners/plumb988.py",
    "runners/prose958.py",
+   "runners/prose964.py",
+   "runners/prose965.py",
+   "runners/prose987.py",
    "runners/prose988.py",
+   "runners/prose_check.py",
    "runners/quote901.py",
+   "runners/ratio940_run.py",
+   "runners/repair937_run.py",
+   "runners/repair959.py",
+   "runners/ruler890.py",
+   "runners/ruler978.py",
    "runners/score981.py",
    "runners/score982.py",
-   "runners/score988.py"
+   "runners/score983.py",
+   "runners/score984.py",
+   "runners/score985.py",
+   "runners/score986.py",
+   "runners/score987.py",
+   "runners/score988.py",
+   "runners/scorefix975.py",
+   "runners/ssl909_pretext.py",
+   "runners/thresh891.py",
+   "runners/triples962.py",
+   "runners/wiring959.py",
+   "runners/xtab904.py",
+   "serve/registry.py",
+   "state/grid915.py"
   ],
   "돌렸다": [
+   "ingest/audit.py",
    "runners/audit988.py",
    "runners/certify988.py",
    "runners/cycle988.py",
@@ -617,86 +1159,268 @@
    "runners/score988.py"
   ],
   "⚠ 돌렸다고 적었지만 소비자 목록에 없는 것": [
-   "ingest/audit.py",
    "runners/plumb988.py"
   ],
   "🔴 안 돌렸다(= 「없다」가 아니다 · 조항 59)": [
+   "ingest/kobis_api908.py",
    "lab/gitcall.py",
+   "lab/guards.py",
+   "paper/program.py",
    "runners/audit985.py",
+   "runners/audit986.py",
+   "runners/audit987.py",
+   "runners/certify985.py",
+   "runners/certify986.py",
+   "runners/certify987.py",
+   "runners/checks963.py",
+   "runners/checks964.py",
+   "runners/checks965.py",
+   "runners/cond905.py",
+   "runners/curve961.py",
    "runners/cycle984.py",
    "runners/cycle985.py",
    "runners/cycle986.py",
    "runners/cycle987.py",
+   "runners/daemonfix974.py",
    "runners/daemonguard973.py",
+   "runners/dropaudit969.py",
+   "runners/effect903.py",
    "runners/exp948_gitcall_map.py",
+   "runners/fill965.py",
+   "runners/fill966.py",
    "runners/fixpoint984.py",
+   "runners/floor892.py",
+   "runners/gate907.py",
    "runners/grade906.py",
+   "runners/harvest_daemon.py",
+   "runners/house979.py",
+   "runners/house980.py",
+   "runners/house981.py",
+   "runners/house982.py",
+   "runners/house983.py",
+   "runners/house984.py",
+   "runners/house985.py",
+   "runners/house986.py",
+   "runners/house987.py",
+   "runners/layers957.py",
+   "runners/ledger892.py",
+   "runners/ledger899.py",
+   "runners/ledger952.py",
    "runners/ledger953.py",
+   "runners/ledger954.py",
+   "runners/ledger955.py",
    "runners/ledger956.py",
+   "runners/ledger957.py",
+   "runners/ledger958.py",
+   "runners/ledger959.py",
+   "runners/ledger965.py",
+   "runners/ledger966.py",
    "runners/ledger967.py",
+   "runners/ledger968.py",
+   "runners/ledger969.py",
+   "runners/ledger970.py",
+   "runners/ledger971.py",
+   "runners/ledger973.py",
+   "runners/ledger980_fiveprime.py",
+   "runners/ledgeraudit878.py",
+   "runners/ledgeraudit878b.py",
+   "runners/ledgeraudit879.py",
+   "runners/ledgeraudit880.py",
+   "runners/ledgeraudit881.py",
+   "runners/ledgeraudit882.py",
    "runners/meta965.py",
+   "runners/metacmp969.py",
+   "runners/note892_ledger.py",
+   "runners/note893_ledger.py",
+   "runners/note893_prereg.py",
    "runners/note951_gen.py",
+   "runners/note953_gen.py",
+   "runners/note954_gen.py",
    "runners/note973_gen.py",
+   "runners/note974_gen.py",
+   "runners/note975_gen.py",
+   "runners/note976_gen.py",
+   "runners/note977_gen.py",
    "runners/note979_gen.py",
+   "runners/note980_gen.py",
+   "runners/note981_gen.py",
+   "runners/note982_gen.py",
+   "runners/note983_gen.py",
+   "runners/note984_gen.py",
    "runners/note985_gen.py",
+   "runners/note986_gen.py",
    "runners/note987_gen.py",
+   "runners/out899a_gates.py",
    "runners/out945_stampscan.py",
+   "runners/out946_keymap.py",
    "runners/out946_quotefix.py",
    "runners/out946_recount.py",
    "runners/out947_rawgit.py",
    "runners/out948_ab.py",
+   "runners/out950_rulers.py",
    "runners/out953_score.py",
+   "runners/plumb979.py",
+   "runners/prose964.py",
+   "runners/prose965.py",
+   "runners/prose987.py",
+   "runners/prose_check.py",
+   "runners/ratio940_run.py",
+   "runners/repair937_run.py",
+   "runners/repair959.py",
    "runners/score981.py",
-   "runners/score982.py"
+   "runners/score982.py",
+   "runners/score983.py",
+   "runners/score984.py",
+   "runners/score985.py",
+   "runners/score986.py",
+   "runners/score987.py",
+   "runners/scorefix975.py",
+   "runners/ssl909_pretext.py",
+   "runners/triples962.py",
+   "runners/wiring959.py",
+   "runners/xtab904.py",
+   "serve/registry.py",
+   "state/grid915.py"
   ],
   "안 돌렸다(비 .py · 실행 대상 아님)": [],
   "안 돌린 .py 의 사유": {},
   "🔴 사유 없이 안 돌린 .py": [
+   "ingest/kobis_api908.py",
    "lab/gitcall.py",
+   "lab/guards.py",
+   "paper/program.py",
    "runners/audit985.py",
+   "runners/audit986.py",
+   "runners/audit987.py",
+   "runners/certify985.py",
+   "runners/certify986.py",
+   "runners/certify987.py",
+   "runners/checks963.py",
+   "runners/checks964.py",
+   "runners/checks965.py",
+   "runners/cond905.py",
+   "runners/curve961.py",
    "runners/cycle984.py",
    "runners/cycle985.py",
    "runners/cycle986.py",
    "runners/cycle987.py",
+   "runners/daemonfix974.py",
    "runners/daemonguard973.py",
+   "runners/dropaudit969.py",
+   "runners/effect903.py",
    "runners/exp948_gitcall_map.py",
+   "runners/fill965.py",
+   "runners/fill966.py",
    "runners/fixpoint984.py",
+   "runners/floor892.py",
+   "runners/gate907.py",
    "runners/grade906.py",
+   "runners/harvest_daemon.py",
+   "runners/house979.py",
+   "runners/house980.py",
+   "runners/house981.py",
+   "runners/house982.py",
+   "runners/house983.py",
+   "runners/house984.py",
+   "runners/house985.py",
+   "runners/house986.py",
+   "runners/house987.py",
+   "runners/layers957.py",
+   "runners/ledger892.py",
+   "runners/ledger899.py",
+   "runners/ledger952.py",
    "runners/ledger953.py",
+   "runners/ledger954.py",
+   "runners/ledger955.py",
    "runners/ledger956.py",
+   "runners/ledger957.py",
+   "runners/ledger958.py",
+   "runners/ledger959.py",
+   "runners/ledger965.py",
+   "runners/ledger966.py",
    "runners/ledger967.py",
+   "runners/ledger968.py",
+   "runners/ledger969.py",
+   "runners/ledger970.py",
+   "runners/ledger971.py",
+   "runners/ledger973.py",
+   "runners/ledger980_fiveprime.py",
+   "runners/ledgeraudit878.py",
+   "runners/ledgeraudit878b.py",
+   "runners/ledgeraudit879.py",
+   "runners/ledgeraudit880.py",
+   "runners/ledgeraudit881.py",
+   "runners/ledgeraudit882.py",
    "runners/meta965.py",
+   "runners/metacmp969.py",
+   "runners/note892_ledger.py",
+   "runners/note893_ledger.py",
+   "runners/note893_prereg.py",
    "runners/note951_gen.py",
+   "runners/note953_gen.py",
+   "runners/note954_gen.py",
    "runners/note973_gen.py",
+   "runners/note974_gen.py",
+   "runners/note975_gen.py",
+   "runners/note976_gen.py",
+   "runners/note977_gen.py",
    "runners/note979_gen.py",
+   "runners/note980_gen.py",
+   "runners/note981_gen.py",
+   "runners/note982_gen.py",
+   "runners/note983_gen.py",
+   "runners/note984_gen.py",
    "runners/note985_gen.py",
+   "runners/note986_gen.py",
    "runners/note987_gen.py",
+   "runners/out899a_gates.py",
    "runners/out945_stampscan.py",
+   "runners/out946_keymap.py",
    "runners/out946_quotefix.py",
    "runners/out946_recount.py",
    "runners/out947_rawgit.py",
    "runners/out948_ab.py",
+   "runners/out950_rulers.py",
    "runners/out953_score.py",
+   "runners/plumb979.py",
+   "runners/prose964.py",
+   "runners/prose965.py",
+   "runners/prose987.py",
+   "runners/prose_check.py",
+   "runners/ratio940_run.py",
+   "runners/repair937_run.py",
+   "runners/repair959.py",
    "runners/score981.py",
-   "runners/score982.py"
+   "runners/score982.py",
+   "runners/score983.py",
+   "runners/score984.py",
+   "runners/score985.py",
+   "runners/score986.py",
+   "runners/score987.py",
+   "runners/scorefix975.py",
+   "runners/ssl909_pretext.py",
+   "runners/triples962.py",
+   "runners/wiring959.py",
+   "runners/xtab904.py",
+   "serve/registry.py",
+   "state/grid915.py"
   ],
   "🔴 조항 62 ㉠ 안 돌린 것(= 소비자 − 돌린 것)": {
    "조항": "🔴 조항 62 --- 차집합은 홀로 못 선다(반대 방향 · 예시 다섯 · 심은 키)",
    "A": "역참조 소비자(전량)",
    "B": "돌렸다(--ran)",
-   "|역참조 소비자(전량)|": 36,
+   "|역참조 소비자(전량)|": 129,
    "|돌렸다(--ran)|": 11,
-   "🔴 A − B": 27,
-   "🔴 B − A": 2,
+   "🔴 A − B": 119,
+   "🔴 B − A": 1,
    "A − B 예시 다섯": [
+    "ingest/kobis_api908.py",
     "lab/gitcall.py",
-    "runners/audit985.py",
-    "runners/cycle984.py",
-    "runners/cycle985.py",
-    "runners/cycle986.py"
+    "lab/guards.py",
+    "paper/program.py",
+    "runners/audit985.py"
    ],
    "B − A 예시 다섯": [
-    "ingest/audit.py",
     "runners/plumb988.py"
    ],
    "🔴 두 크기가 같은가": false,
@@ -712,7 +1436,7 @@
     "심은 것(두 번째 인코딩)": "\"lab/fixtures/\\355\\225\\234\\352\\270\\200\\354\\235\\264\\353\\246\\204_\\352\\263\\240\\354\\240\\225\\353\\254\\274.py\"",
     "🔴 심었나": true,
     "🔴 발화했나": true,
-    "심은 뒤 순 A − B(대조 전)": 28
+    "심은 뒤 순 A − B(대조 전)": 120
    },
    "🔴 검출기가 두 번째 인코딩을 보나": "✅ 본다 --- 심은 키를 ③ 이 잡았다",
    "통과": true,
@@ -731,16 +1455,16 @@
    "조항": "🔴 조항 62 --- 차집합은 홀로 못 선다(반대 방향 · 예시 다섯 · 심은 키)",
    "A": "안 돌린 .py",
    "B": "사유가 등록된 것(--exempt)",
-   "|안 돌린 .py|": 28,
+   "|안 돌린 .py|": 120,
    "|사유가 등록된 것(--exempt)|": 1,
-   "🔴 A − B": 27,
+   "🔴 A − B": 119,
    "🔴 B − A": 0,
    "A − B 예시 다섯": [
+    "ingest/kobis_api908.py",
     "lab/gitcall.py",
-    "runners/audit985.py",
-    "runners/cycle984.py",
-    "runners/cycle985.py",
-    "runners/cycle986.py"
+    "lab/guards.py",
+    "paper/program.py",
+    "runners/audit985.py"
    ],
    "B − A 예시 다섯": [],
    "🔴 두 크기가 같은가": false,
@@ -756,7 +1480,7 @@
     "심은 것(두 번째 인코딩)": "\"lab/fixtures/\\355\\225\\234\\352\\270\\200\\354\\235\\264\\353\\246\\204_\\352\\263\\240\\354\\240\\225\\353\\254\\274.py\"",
     "🔴 심었나": true,
     "🔴 발화했나": true,
-    "심은 뒤 순 A − B(대조 전)": 28
+    "심은 뒤 순 A − B(대조 전)": 120
    },
    "🔴 검출기가 두 번째 인코딩을 보나": "✅ 본다 --- 심은 키를 ③ 이 잡았다",
    "통과": true,
@@ -781,16 +1505,16 @@
    "조항": "🔴 조항 62 --- 차집합은 홀로 못 선다(반대 방향 · 예시 다섯 · 심은 키)",
    "A": "안 돌린 .py",
    "B": "🔴 사유가 **자를 통과한** 것",
-   "|안 돌린 .py|": 28,
+   "|안 돌린 .py|": 120,
    "|🔴 사유가 **자를 통과한** 것|": 1,
-   "🔴 A − B": 27,
+   "🔴 A − B": 119,
    "🔴 B − A": 0,
    "A − B 예시 다섯": [
+    "ingest/kobis_api908.py",
     "lab/gitcall.py",
-    "runners/audit985.py",
-    "runners/cycle984.py",
-    "runners/cycle985.py",
-    "runners/cycle986.py"
+    "lab/guards.py",
+    "paper/program.py",
+    "runners/audit985.py"
    ],
    "B − A 예시 다섯": [],
    "🔴 두 크기가 같은가": false,
@@ -806,7 +1530,7 @@
     "심은 것(두 번째 인코딩)": "\"lab/fixtures/\\355\\225\\234\\352\\270\\200\\354\\235\\264\\353\\246\\204_\\352\\263\\240\\354\\240\\225\\353\\254\\274.py\"",
     "🔴 심었나": true,
     "🔴 발화했나": true,
-    "심은 뒤 순 A − B(대조 전)": 28
+    "심은 뒤 순 A − B(대조 전)": 120
    },
    "🔴 검출기가 두 번째 인코딩을 보나": "✅ 본다 --- 심은 키를 ③ 이 잡았다",
    "통과": true,
@@ -822,33 +1546,125 @@
    "⚠ 옛 이름": "이 조항은 946 이 **조항 61** 로 신설했고 947 이 **조항 62** 로 옮겼다(티처 #86 M1 --- 「조항 61」이 세 뜻으로 쓰이고 있었다). 구현 파일 `lab/keyspace.py` 의 글자는 그 sha 를 946 산출물 둘이 인용해서 못 고친다(㉮) --- 이 껍데기가 번호를 갈음한다"
   },
   "🔴 사유가 **자를 못 넘은** 안 돌린 .py": [
+   "ingest/kobis_api908.py",
    "lab/gitcall.py",
+   "lab/guards.py",
+   "paper/program.py",
    "runners/audit985.py",
+   "runners/audit986.py",
+   "runners/audit987.py",
+   "runners/certify985.py",
+   "runners/certify986.py",
+   "runners/certify987.py",
+   "runners/checks963.py",
+   "runners/checks964.py",
+   "runners/checks965.py",
+   "runners/cond905.py",
+   "runners/curve961.py",
    "runners/cycle984.py",
    "runners/cycle985.py",
    "runners/cycle986.py",
    "runners/cycle987.py",
+   "runners/daemonfix974.py",
    "runners/daemonguard973.py",
+   "runners/dropaudit969.py",
+   "runners/effect903.py",
    "runners/exp948_gitcall_map.py",
+   "runners/fill965.py",
+   "runners/fill966.py",
    "runners/fixpoint984.py",
+   "runners/floor892.py",
+   "runners/gate907.py",
    "runners/grade906.py",
+   "runners/harvest_daemon.py",
+   "runners/house979.py",
+   "runners/house980.py",
+   "runners/house981.py",
+   "runners/house982.py",
+   "runners/house983.py",
+   "runners/house984.py",
+   "runners/house985.py",
+   "runners/house986.py",
+   "runners/house987.py",
+   "runners/layers957.py",
+   "runners/ledger892.py",
+   "runners/ledger899.py",
+   "runners/ledger952.py",
    "runners/ledger953.py",
+   "runners/ledger954.py",
+   "runners/ledger955.py",
    "runners/ledger956.py",
+   "runners/ledger957.py",
+   "runners/ledger958.py",
+   "runners/ledger959.py",
+   "runners/ledger965.py",
+   "runners/ledger966.py",
    "runners/ledger967.py",
+   "runners/ledger968.py",
+   "runners/ledger969.py",
+   "runners/ledger970.py",
+   "runners/ledger971.py",
+   "runners/ledger973.py",
+   "runners/ledger980_fiveprime.py",
+   "runners/ledgeraudit878.py",
+   "runners/ledgeraudit878b.py",
+   "runners/ledgeraudit879.py",
+   "runners/ledgeraudit880.py",
+   "runners/ledgeraudit881.py",
+   "runners/ledgeraudit882.py",
    "runners/meta965.py",
+   "runners/metacmp969.py",
+   "runners/note892_ledger.py",
+   "runners/note893_ledger.py",
+   "runners/note893_prereg.py",
    "runners/note951_gen.py",
+   "runners/note953_gen.py",
+   "runners/note954_gen.py",
    "runners/note973_gen.py",
+   "runners/note974_gen.py",
+   "runners/note975_gen.py",
+   "runners/note976_gen.py",
+   "runners/note977_gen.py",
    "runners/note979_gen.py",
+   "runners/note980_gen.py",
+   "runners/note981_gen.py",
+   "runners/note982_gen.py",
+   "runners/note983_gen.py",
+   "runners/note984_gen.py",
    "runners/note985_gen.py",
+   "runners/note986_gen.py",
    "runners/note987_gen.py",
+   "runners/out899a_gates.py",
    "runners/out945_stampscan.py",
+   "runners/out946_keymap.py",
    "runners/out946_quotefix.py",
    "runners/out946_recount.py",
    "runners/out947_rawgit.py",
    "runners/out948_ab.py",
+   "runners/out950_rulers.py",
    "runners/out953_score.py",
+   "runners/plumb979.py",
+   "runners/prose964.py",
+   "runners/prose965.py",
+   "runners/prose987.py",
+   "runners/prose_check.py",
+   "runners/ratio940_run.py",
+   "runners/repair937_run.py",
+   "runners/repair959.py",
    "runners/score981.py",
-   "runners/score982.py"
+   "runners/score982.py",
+   "runners/score983.py",
+   "runners/score984.py",
+   "runners/score985.py",
+   "runners/score986.py",
+   "runners/score987.py",
+   "runners/scorefix975.py",
+   "runners/ssl909_pretext.py",
+   "runners/triples962.py",
+   "runners/wiring959.py",
+   "runners/xtab904.py",
+   "serve/registry.py",
+   "state/grid915.py"
   ],
   "통과": false,
   "⚠ 통과의 뜻": "역참조 소비자 중 **실행 가능한 `.py` 가 전부 다시 돌았거나 사유가 등록됐나**. 「안 돌렸다」가 하나라도 사유 없이 남으면 실패다. 🔴 **그리고 위 조항 62 대조 둘이 「모른다」가 아니어야 한다**(티처 #87 M3·M4)"
@@ -1218,10 +2034,10 @@
     "⚠ 947 의 좁은 자로 세면(음성 대조 · 판정에 쓰지 마라)": [],
     "🔴 ㉮/㉯/㉲": "🔴 ㉯-㉲ 규약상 안 고친다 --- 941~946 동결이라 「동결물 수정 금지」가 막는다. 🔴 **그러나 깨지는 대조는 0 이다**(도장 0 개는 대조가 아니다) --- 원리상 못 고치는 것이 아니다(티처 #87 C3 · #88 C1)",
     "🔴 실해": {
-     "날 것이 낸 수": 18,
-     "정본이 낸 수": 18,
-     "🔴 날것 − 정본": 0,
-     "🔴 정본 − 날것": 0,
+     "날 것이 낸 수": 31,
+     "정본이 낸 수": 31,
+     "🔴 날것 − 정본": 3,
+     "🔴 정본 − 날것": 3,
      "🔴 날 것에서 이름이 바뀌는 예시 다섯": []
     }
    },
@@ -1248,10 +2064,10 @@
     ],
     "🔴 ㉮/㉯/㉲": "🔴 ㉯-㉲ 규약상 안 고친다 --- 941~946 동결이라 「동결물 수정 금지」가 막는다. 🔴 **그러나 깨지는 대조는 0 이다**(도장 1 개는 대조가 아니다) --- 원리상 못 고치는 것이 아니다(티처 #87 C3 · #88 C1)",
     "🔴 실해": {
-     "날 것이 낸 수": 18,
-     "정본이 낸 수": 18,
-     "🔴 날것 − 정본": 0,
-     "🔴 정본 − 날것": 0,
+     "날 것이 낸 수": 31,
+     "정본이 낸 수": 31,
+     "🔴 날것 − 정본": 3,
+     "🔴 정본 − 날것": 3,
      "🔴 날 것에서 이름이 바뀌는 예시 다섯": []
     }
    },
@@ -3088,26 +3904,26 @@
  "1-라 🔴 `_grep_l` 건초더미 대조(947)": {
   "검사": "1-라 🔴 `_grep_l` 건초더미 대조 --- 새 판독 대 946 판독(조항 62)",
   "🔴 왜": "946 은 **바늘 쪽** 음성 대조만 보고 이겼다고 했다. **출력 쪽은 아무도 안 봤다** --- 소비자 154 중 22 가 이스케이프된 가짜 이름이었다",
-  "🔴 바늘 수": 14,
-  "🔴 새 판독이 낸 소비자 수": 173,
-  "🔴 946 판독이 낸 소비자 수": 173,
-  "🔴 946 판독 중 `\"` 로 시작하는 가짜 이름": 13,
+  "🔴 바늘 수": 29,
+  "🔴 새 판독이 낸 소비자 수": 429,
+  "🔴 946 판독이 낸 소비자 수": 429,
+  "🔴 946 판독 중 `\"` 로 시작하는 가짜 이름": 50,
   "🔴 새 판독 중 `\"` 로 시작하는 가짜 이름": 0,
-  "🔴 새 판독 중 비-ASCII 참 이름": 13,
+  "🔴 새 판독 중 비-ASCII 참 이름": 50,
   "🔴🔴 956 R3 --- 자를 바꿨다(정규화 대조)": {
    "무엇": "옛 자는 인코딩이 다른 두 판독을 그대로 견줬다 --- `A−B` 가 **같은 파일의 두 이름**으로 가득 차서 조항 62 가 옳게도 수를 안 냈다. **구조적으로 붉었다**",
    "고침": "옛 판독을 `lab.keyspace.octal_unescape` 로 정규화해 같은 자리에 놓는다",
-   "정규화 전 946 판독 수": 173,
-   "정규화 후 946 판독 수": 173,
-   "🔴 정규화가 실제로 바꾼 이름 수": 13,
+   "정규화 전 946 판독 수": 429,
+   "정규화 후 946 판독 수": 429,
+   "🔴 정규화가 실제로 바꾼 이름 수": 50,
    "미상환 사이클": "949 · 953 · 954 · 955 --- 956 이 갚는다"
   },
   "조항 62 대조(🔴 정규화 대조 --- 956 R3)": {
    "조항": "🔴 조항 62 --- 차집합은 홀로 못 선다(반대 방향 · 예시 다섯 · 심은 키)",
    "A": "새 판독(`-z`+quotePath=false)",
    "B": "946 판독(날 것) --- 🔴 956 R3: `octal_unescape` 로 정규화했다",
-   "|새 판독(`-z`+quotePath=false)|": 174,
-   "|946 판독(날 것) --- 🔴 956 R3: `octal_unescape` 로 정규화했다|": 174,
+   "|새 판독(`-z`+quotePath=false)|": 430,
+   "|946 판독(날 것) --- 🔴 956 R3: `octal_unescape` 로 정규화했다|": 430,
    "🔴 A − B": 0,
    "🔴 B − A": 0,
    "A − B 예시 다섯": [],
@@ -3144,36 +3960,36 @@
    "조항": "🔴 조항 62 --- 차집합은 홀로 못 선다(반대 방향 · 예시 다섯 · 심은 키)",
    "A": "새 판독",
    "B": "946 판독(정규화 안 함)",
-   "|새 판독|": 174,
-   "|946 판독(정규화 안 함)|": 174,
+   "|새 판독|": 430,
+   "|946 판독(정규화 안 함)|": 430,
    "🔴 A − B": "🔴 모른다 --- **검출기는 두 번째 인코딩을 봤다**(③ 이 잡았다 · ④ 심은 키도 발화했다). 수를 안 내는 이유는 이 차집합이 「없는 원소」가 아니라 **두 이름**이기 때문이다 --- 947 은 여기에 「검출기가 못 본다」를 찍었다(티처 #87 m3)",
    "🔴 B − A": "🔴 모른다 --- **검출기는 두 번째 인코딩을 봤다**(③ 이 잡았다 · ④ 심은 키도 발화했다). 수를 안 내는 이유는 이 차집합이 「없는 원소」가 아니라 **두 이름**이기 때문이다 --- 947 은 여기에 「검출기가 못 본다」를 찍었다(티처 #87 m3)",
    "A − B 예시 다섯": [
     "docs/루프.md",
-    "docs/수리/943.md",
-    "docs/수리/944.md",
-    "docs/수리/945.md",
-    "docs/수리/947.md"
+    "docs/목표.md",
+    "docs/방향.md",
+    "docs/수리/942.md",
+    "docs/수리/943.md"
    ],
    "B − A 예시 다섯": [
     "\"docs/\\353\\243\\250\\355\\224\\204.md\"",
-    "\"docs/\\354\\210\\230\\353\\246\\254/943.md\"",
-    "\"docs/\\354\\210\\230\\353\\246\\254/944.md\"",
-    "\"docs/\\354\\210\\230\\353\\246\\254/945.md\"",
-    "\"docs/\\354\\210\\230\\353\\246\\254/947.md\""
+    "\"docs/\\353\\252\\251\\355\\221\\234.md\"",
+    "\"docs/\\353\\260\\251\\355\\226\\245.md\"",
+    "\"docs/\\354\\210\\230\\353\\246\\254/942.md\"",
+    "\"docs/\\354\\210\\230\\353\\246\\254/943.md\""
    ],
    "🔴 두 크기가 같은가": true,
    "🔴 양쪽 차가 같은가": true,
    "🔴 경보(두 이름 의심 · 크기와 양쪽 차가 같다)": true,
    "③ 두 이름 대조": {
-    "🔴 A − B 중 B 에 두 번째 인코딩으로 있는 것": 13,
+    "🔴 A − B 중 B 에 두 번째 인코딩으로 있는 것": 50,
     "🔴 B − A 중 A 에 첫 인코딩으로 있는 것": 0,
     "예시 다섯": [
      "docs/루프.md",
-     "docs/수리/943.md",
-     "docs/수리/944.md",
-     "docs/수리/945.md",
-     "docs/수리/947.md"
+     "docs/목표.md",
+     "docs/방향.md",
+     "docs/수리/942.md",
+     "docs/수리/943.md"
     ]
    },
    "④ 심은 키": {
@@ -3181,12 +3997,12 @@
     "심은 것(두 번째 인코딩)": "\"lab/fixtures/\\355\\225\\234\\352\\270\\200\\354\\235\\264\\353\\246\\204_\\352\\263\\240\\354\\240\\225\\353\\254\\274.py\"",
     "🔴 심었나": true,
     "🔴 발화했나": true,
-    "심은 뒤 순 A − B(대조 전)": 14
+    "심은 뒤 순 A − B(대조 전)": 51
    },
    "🔴 검출기가 두 번째 인코딩을 보나": "✅ 본다 --- 심은 키를 ③ 이 잡았다",
-   "🔴 왜 수를 안 내나": "③ 이 두 이름을 13 개 잡았다 --- 이 차집합은 「없는 원소」가 아니라 **두 이름**이다",
-   "순 A − B(참고 · 판정에 쓰지 마라)": 13,
-   "순 B − A(참고 · 판정에 쓰지 마라)": 13,
+   "🔴 왜 수를 안 내나": "③ 이 두 이름을 50 개 잡았다 --- 이 차집합은 「없는 원소」가 아니라 **두 이름**이다",
+   "순 A − B(참고 · 판정에 쓰지 마라)": 50,
+   "순 B − A(참고 · 판정에 쓰지 마라)": 50,
    "통과": false,
    "🔴 양쪽에 넣은 대조 원소": {
     "🔴 무엇": "④ 심은 키를 심을 자리(`A∩B` 안의 두 인코딩이 갈리는 원소)가 없어서 **대조 원소 하나를 양쪽에** 넣었다",
@@ -3216,7 +4032,7 @@
   "검사": "2 게이트 --- 🔴 명부를 기계로 뽑는다(손 나열 금지)",
   "명부를 어떻게 뽑았나": "`git grep -lF -e '\"통과\":'` 로 **`통과` 를 키로 내는 `.py` 전량**",
   "🔴 게이트 생산자 수(분모)": 159,
-  "🔴 그중 이번 취합의 소비자인 것": 17,
+  "🔴 그중 이번 취합의 소비자인 것": 66,
   "게이트 생산자": [
    "event/census.py",
    "ingest/audit.py",
@@ -3551,23 +4367,12 @@
    "lab/adopt.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/alpha977.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/arms960.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/audit986.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/audit987.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/board898.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/calpanel933_run.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/certify985.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/certify986.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/certify987.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/checks963.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/checks964.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/checks965.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/colaudit968.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/cond905.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/curve961.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/d3_959.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/dose113.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/dose896.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/dropaudit969.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/dupe954_fineweb.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/dupe954_hplt_scan.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/dupe955_D.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
@@ -3576,32 +4381,19 @@
    "runners/exp947_npzflow.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/exp949_harm.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/fineweb955_fetch.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/gate907.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/gate940_wiring.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/geo919_link.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/geo919_pubapi.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/grid915_link.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/grow959.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/holdout983.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/house981.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/house982.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/house983.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/house984.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/house985.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/house986.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/house987.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/hplt973.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/interval918_run.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/interval918_wire.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/inv901.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/kopis954_backfill.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/layers957.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/leak984.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/ledger.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/ledger955.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/ledger965.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/ledger969.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/ledger971.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/longmem966.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/mech982.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/mix980.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
@@ -3610,23 +4402,14 @@
    "runners/nanfix115.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/narrow967.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/nn908b_semtoken.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/note893_ledger.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/note950_gen.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/note952_gen.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/note953_gen.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/note954_gen.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/note955_gen.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/note956_gen.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/note977_gen.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/note978_gen.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/note981_gen.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/note982_gen.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/out899a_gates.py": "다른 팔 소유 · 돌리면 `runners/out899a_gates.json` 을 덮어써서 동시에 도는 팔의 산출물을 깨뜨린다. 대신 **3 절이 그 산출물을 읽어 판정 키를 감사한다**",
    "runners/out943_recount.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/out946_keymap.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/out949_refix.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/out949_stamp.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/out950_rulers.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/out950_score.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/out951_guard.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/out951_score.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
@@ -3645,64 +4428,97 @@
    "runners/prose959.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/prose960.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/prose961.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/prose964.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/prose965.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/prose985.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/prose986.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/prose987.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/prose_check.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/quote901.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/quotecheck906.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/r4audit982.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/rawpanel935_run.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/recommit970.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/regrid984.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/repair959.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/repair960.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/ruler978.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/score954.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/score983.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/score984.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/score985.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/score986.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/score987.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/scorefix977.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/scorefix978.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/shape824.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/snapcheck.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/ssl909_pretext.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/stat983.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/tautprobe971.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/tfwd982.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/tgrid983.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/triples962.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/wiring959.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "runners/within958.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "runners/xtab904.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "serve/layers.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "serve/registry.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "serve/test_harness.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "serve/test_trainlog.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
    "serve/trainlog_svc.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-   "state/perm922.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)"
+   "state/perm922.py": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
+   "runners/out899a_gates.py": "다른 팔 소유 · 돌리면 `runners/out899a_gates.json` 을 덮어써서 동시에 도는 팔의 산출물을 깨뜨린다. 대신 **3 절이 그 산출물을 읽어 판정 키를 감사한다**"
   },
   "🔴 사유 없이 안 돌린 것": [
    "lab/gitcall.py",
    "runners/audit985.py",
+   "runners/audit986.py",
+   "runners/audit987.py",
+   "runners/certify985.py",
+   "runners/certify986.py",
+   "runners/certify987.py",
+   "runners/checks963.py",
+   "runners/checks964.py",
+   "runners/checks965.py",
+   "runners/cond905.py",
+   "runners/curve961.py",
+   "runners/dropaudit969.py",
+   "runners/gate907.py",
    "runners/grade906.py",
+   "runners/house981.py",
+   "runners/house982.py",
+   "runners/house983.py",
+   "runners/house984.py",
+   "runners/house985.py",
+   "runners/house986.py",
+   "runners/house987.py",
+   "runners/layers957.py",
+   "runners/ledger955.py",
+   "runners/ledger965.py",
+   "runners/ledger969.py",
+   "runners/ledger971.py",
    "runners/meta965.py",
+   "runners/note893_ledger.py",
    "runners/note951_gen.py",
+   "runners/note953_gen.py",
+   "runners/note954_gen.py",
+   "runners/note977_gen.py",
    "runners/note979_gen.py",
+   "runners/note981_gen.py",
+   "runners/note982_gen.py",
+   "runners/out946_keymap.py",
    "runners/out946_quotefix.py",
    "runners/out946_recount.py",
    "runners/out947_rawgit.py",
    "runners/out948_ab.py",
-   "runners/out953_score.py"
+   "runners/out950_rulers.py",
+   "runners/out953_score.py",
+   "runners/prose964.py",
+   "runners/prose965.py",
+   "runners/prose987.py",
+   "runners/prose_check.py",
+   "runners/repair959.py",
+   "runners/score983.py",
+   "runners/score984.py",
+   "runners/score985.py",
+   "runners/score986.py",
+   "runners/score987.py",
+   "runners/ssl909_pretext.py",
+   "runners/triples962.py",
+   "runners/wiring959.py",
+   "runners/xtab904.py",
+   "serve/registry.py"
   ],
   "🔴 사유의 출처(948 신설 · 티처 #87 M2 가 연 길의 구멍을 센다)": {
    "🔴 CLI 사유(`--exempt`)로 닫힌 게이트 수": 0,
    "그 목록": [],
-   "기계 사유(1 절 역참조에 안 걸렸다)로 닫힌 수": 141,
+   "기계 사유(1 절 역참조에 안 걸렸다)로 닫힌 수": 94,
    "⚠": "🔴 CLI 사유는 **사람이 넘긴 것**이다 --- 이 수가 크면 이 절은 「검사」가 아니라 「장식」에 가까워진다. **그 판단을 하려고 센다**"
   },
   "🔴 조항 62 ㉠ 안 돌린 것(= 명부 − 돌린 것)": {
@@ -3754,19 +4570,17 @@
    "A": "안 돌린 게이트",
    "B": "사유가 등록된 것(skip)",
    "|안 돌린 게이트|": 153,
-   "|사유가 등록된 것(skip)|": 143,
-   "🔴 A − B": 11,
-   "🔴 B − A": 1,
+   "|사유가 등록된 것(skip)|": 95,
+   "🔴 A − B": 58,
+   "🔴 B − A": 0,
    "A − B 예시 다섯": [
     "lab/gitcall.py",
     "runners/audit985.py",
-    "runners/grade906.py",
-    "runners/meta965.py",
-    "runners/note951_gen.py"
+    "runners/audit986.py",
+    "runners/audit987.py",
+    "runners/certify985.py"
    ],
-   "B − A 예시 다섯": [
-    "ingest/audit.py"
-   ],
+   "B − A 예시 다섯": [],
    "🔴 두 크기가 같은가": false,
    "🔴 양쪽 차가 같은가": false,
    "🔴 경보(두 이름 의심 · 크기와 양쪽 차가 같다)": false,
@@ -3780,7 +4594,7 @@
     "심은 것(두 번째 인코딩)": "\"lab/fixtures/\\355\\225\\234\\352\\270\\200\\354\\235\\264\\353\\246\\204_\\352\\263\\240\\354\\240\\225\\353\\254\\274.py\"",
     "🔴 심었나": true,
     "🔴 발화했나": true,
-    "심은 뒤 순 A − B(대조 전)": 12
+    "심은 뒤 순 A − B(대조 전)": 59
    },
    "🔴 검출기가 두 번째 인코딩을 보나": "✅ 본다 --- 심은 키를 ③ 이 잡았다",
    "통과": true,
@@ -3797,16 +4611,16 @@
   },
   "⚠ 위 ㉡ 은 구성상 항등이다(949 · 티처 #88 C4)": "`skip = roster − ran` 이고 `notrun = roster − ran` 이라 **원리상 0/0 말고 다른 값을 못 낸다**. 아래 ㉡′ 가 그것을 갈음한다",
   "🔴 사유의 자(949 · 티처 #88 ㄷ)": {
-   "🔴 자가 붙은 사유 수": 140,
+   "🔴 자가 붙은 사유 수": 93,
    "🔴 자가 없는 사유 수": 1,
-   "🔴 자를 통과한 사유 수": 140,
+   "🔴 자를 통과한 사유 수": 93,
    "사유별": {
     "event/census.py": {
      "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -3815,7 +4629,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -3824,7 +4638,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -3833,7 +4647,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -3842,7 +4656,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -3851,7 +4665,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -3860,25 +4674,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/audit986.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/audit987.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -3887,7 +4683,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -3896,61 +4692,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/certify985.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/certify986.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/certify987.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/checks963.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/checks964.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/checks965.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -3959,25 +4701,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/cond905.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/curve961.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -3986,7 +4710,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -3995,7 +4719,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4004,16 +4728,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/dropaudit969.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4022,7 +4737,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4031,7 +4746,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4040,7 +4755,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4049,7 +4764,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4058,7 +4773,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4067,7 +4782,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4076,7 +4791,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4085,16 +4800,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/gate907.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4103,7 +4809,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4112,7 +4818,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4121,7 +4827,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4130,7 +4836,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4139,7 +4845,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4148,70 +4854,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/house981.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/house982.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/house983.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/house984.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/house985.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/house986.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/house987.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4220,7 +4863,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4229,7 +4872,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4238,7 +4881,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4247,7 +4890,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4256,16 +4899,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/layers957.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4274,7 +4908,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4283,43 +4917,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/ledger955.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/ledger965.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/ledger969.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/ledger971.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4328,7 +4926,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4337,7 +4935,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4346,7 +4944,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4355,7 +4953,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4364,7 +4962,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4373,7 +4971,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4382,7 +4980,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4391,16 +4989,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/note893_ledger.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4409,7 +4998,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4418,25 +5007,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/note953_gen.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/note954_gen.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4445,7 +5016,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4454,16 +5025,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/note977_gen.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4472,25 +5034,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/note981_gen.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/note982_gen.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4504,16 +5048,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/out946_keymap.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4522,7 +5057,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4531,16 +5066,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/out950_rulers.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4549,7 +5075,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4558,7 +5084,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4567,7 +5093,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4576,7 +5102,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4585,7 +5111,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4594,7 +5120,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4603,7 +5129,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4612,7 +5138,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4621,7 +5147,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4630,7 +5156,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4639,7 +5165,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4648,7 +5174,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4657,7 +5183,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4666,7 +5192,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4675,7 +5201,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4684,7 +5210,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4693,7 +5219,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4702,25 +5228,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/prose964.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/prose965.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4729,7 +5237,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4738,25 +5246,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/prose987.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/prose_check.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4765,7 +5255,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4774,7 +5264,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4783,7 +5273,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4792,7 +5282,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4801,7 +5291,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4810,16 +5300,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/repair959.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4828,7 +5309,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4837,7 +5318,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4846,52 +5327,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/score983.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/score984.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/score985.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/score986.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/score987.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4900,7 +5336,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4909,7 +5345,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4918,7 +5354,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4927,16 +5363,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/ssl909_pretext.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4945,7 +5372,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4954,7 +5381,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4963,7 +5390,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4972,25 +5399,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/triples962.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/wiring959.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -4999,16 +5408,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "runners/xtab904.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -5017,16 +5417,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
-     },
-     "🔴 자가 냈나": true
-    },
-    "serve/registry.py": {
-     "사유": "[자:소비자아님] 이번 취합의 소비자가 아니다(1 절 역참조에 안 걸렸다)",
-     "자": "1 절 역참조 소비자 목록에 없다",
-     "실측": {
-      "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -5035,7 +5426,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -5044,7 +5435,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -5053,7 +5444,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     },
@@ -5062,7 +5453,7 @@
      "자": "1 절 역참조 소비자 목록에 없다",
      "실측": {
       "소비자 목록에 있나": false,
-      "소비자 목록 크기(분모)": 35
+      "소비자 목록 크기(분모)": 128
      },
      "🔴 자가 냈나": true
     }
@@ -5073,15 +5464,15 @@
    "A": "안 돌린 게이트",
    "B": "🔴 사유가 **자를 통과한** 것",
    "|안 돌린 게이트|": 153,
-   "|🔴 사유가 **자를 통과한** 것|": 141,
-   "🔴 A − B": 12,
+   "|🔴 사유가 **자를 통과한** 것|": 94,
+   "🔴 A − B": 59,
    "🔴 B − A": 0,
    "A − B 예시 다섯": [
     "lab/gitcall.py",
     "runners/audit985.py",
-    "runners/grade906.py",
-    "runners/meta965.py",
-    "runners/note951_gen.py"
+    "runners/audit986.py",
+    "runners/audit987.py",
+    "runners/certify985.py"
    ],
    "B − A 예시 다섯": [],
    "🔴 두 크기가 같은가": false,
@@ -5097,7 +5488,7 @@
     "심은 것(두 번째 인코딩)": "\"lab/fixtures/\\355\\225\\234\\352\\270\\200\\354\\235\\264\\353\\246\\204_\\352\\263\\240\\354\\240\\225\\353\\254\\274.py\"",
     "🔴 심었나": true,
     "🔴 발화했나": true,
-    "심은 뒤 순 A − B(대조 전)": 13
+    "심은 뒤 순 A − B(대조 전)": 60
    },
    "🔴 검출기가 두 번째 인코딩을 보나": "✅ 본다 --- 심은 키를 ③ 이 잡았다",
    "통과": true,
@@ -5119,7 +5510,7 @@
    "죽은 숫자": false,
    "죽은 숫자(1 ULP 짝)": true,
    "죽은 숫자(논문)": true,
-   "_초": 58.5
+   "_초": 59.6
   },
   "🔴 실패한 절": [
    "죽은 숫자"
@@ -5128,16 +5519,63 @@
   "🔴 사유가 **자를 못 넘은** 안 돌린 게이트": [
    "lab/gitcall.py",
    "runners/audit985.py",
+   "runners/audit986.py",
+   "runners/audit987.py",
+   "runners/certify985.py",
+   "runners/certify986.py",
+   "runners/certify987.py",
+   "runners/checks963.py",
+   "runners/checks964.py",
+   "runners/checks965.py",
+   "runners/cond905.py",
+   "runners/curve961.py",
+   "runners/dropaudit969.py",
+   "runners/gate907.py",
    "runners/grade906.py",
+   "runners/house981.py",
+   "runners/house982.py",
+   "runners/house983.py",
+   "runners/house984.py",
+   "runners/house985.py",
+   "runners/house986.py",
+   "runners/house987.py",
+   "runners/layers957.py",
+   "runners/ledger955.py",
+   "runners/ledger965.py",
+   "runners/ledger969.py",
+   "runners/ledger971.py",
    "runners/meta965.py",
+   "runners/note893_ledger.py",
    "runners/note951_gen.py",
+   "runners/note953_gen.py",
+   "runners/note954_gen.py",
+   "runners/note977_gen.py",
    "runners/note979_gen.py",
+   "runners/note981_gen.py",
+   "runners/note982_gen.py",
    "runners/out899a_gates.py",
+   "runners/out946_keymap.py",
    "runners/out946_quotefix.py",
    "runners/out946_recount.py",
    "runners/out947_rawgit.py",
    "runners/out948_ab.py",
-   "runners/out953_score.py"
+   "runners/out950_rulers.py",
+   "runners/out953_score.py",
+   "runners/prose964.py",
+   "runners/prose965.py",
+   "runners/prose987.py",
+   "runners/prose_check.py",
+   "runners/repair959.py",
+   "runners/score983.py",
+   "runners/score984.py",
+   "runners/score985.py",
+   "runners/score986.py",
+   "runners/score987.py",
+   "runners/ssl909_pretext.py",
+   "runners/triples962.py",
+   "runners/wiring959.py",
+   "runners/xtab904.py",
+   "serve/registry.py"
   ],
   "통과": false,
   "🔴 통과의 뜻": "게이트를 돌렸고 · 실패한 절이 없고 · 예외가 없고 · 사유 없이 안 돌린 것이 없고 · 🔴 **위 조항 62 대조 둘이 「모른다」가 아니어야** 통과"
@@ -5148,43 +5586,46 @@
   "🔴 대상 고르기": {
    "🔴 왜 이 대상인가": "옛 하드코딩(`out899a_gates.json`)은 **고칠 수 없는 남의 파일**이라 초록이 도달 불가능했다. 자는 **자기 산출물**에 걸어야 자다",
    "🔴 어느 트리인가(955 R5)": "**커밋된 트리** `note/988-registered-predicate` --- 대상은 커밋된 것만이다",
-   "바뀐 경로(커밋+작업트리)": 18,
-   "그중 runners/out*.json": 5,
+   "바뀐 경로(커밋+작업트리)": 30,
+   "그중 runners/out*.json": 8,
    "🔴 뺀 것(자기 채점 순환·도장)": {
-    "🔴 뺀 수(분자) / 후보 수(분모)": "0 / 5",
+    "🔴 뺀 수(분자) / 후보 수(분모)": "0 / 8",
     "🔴 자기 산출물(`out*_fiveprime.json` · 이름으로 뺐다 · 955 R4)": "없음",
     "이름 목록(`KEYAUDIT_SKIP`)으로 뺀 것": "없음",
     "🔴 왜": "954 는 `runners/out954_fiveprime.json` **자기 자신**을 대상에 넣었다 --- 그 파일의 절 12 가 **전부 `통과`** 라 분자·분모가 동시에 부풀어 **18/27(66.7%) 이 30/39(76.9%) 로** 보였다(티처 #93 C3)"
    },
    "🔴 커밋 안 된 후보(= 「없다」가 아니다 · 조항 59 · 955 R5)": [
-    "runners/out941_steamrev.json",
-    "runners/out988_table.json"
+    "runners/out941_steamrev.json"
    ],
-   "🔴 커밋 안 된 후보 수": 2,
+   "🔴 커밋 안 된 후보 수": 1,
    "🔴 대상": [
     "runners/out988_audit.json",
+    "runners/out988_certify.json",
     "runners/out988_house.json",
+    "runners/out988_prose.json",
+    "runners/out988_score.json",
+    "runners/out988_table.json",
     "runners/out988_window.json"
    ],
-   "🔴 대상 수": 3,
+   "🔴 대상 수": 7,
    "🔴 git 오류": "없음"
   },
   "🔴 왜 읽는 쪽에서 하나": "남의 산출물을 소비할 땐 고치지 않고 **세어 드러낸다**(그 규율은 그대로다)",
   "🔴 읽은 트리(955 R5)": {
    "기준": "커밋된 트리(`git cat-file blob <tree>:<경로>`)",
    "트리": "note/988-registered-predicate",
-   "커밋 sha": "02aa926d2a62d03f83f55b8cc99a31b55ad262eb",
-   "그 트리의 경로 수(분모)": 77489,
+   "커밋 sha": "fc6b1a12eb247697d5eed3f132e247596090cb01",
+   "그 트리의 경로 수(분모)": 77498,
    "🔴 `git ls-tree` 오류": "없음"
   },
   "🔴 자기 산출물이라 뺀 것(955 R4)": "없음",
-  "🔴 파일 수(분모)": 6,
+  "🔴 파일 수(분모)": 10,
   "🔴 커밋 안 된 파일(= 「없다」가 아니다 · 조항 59)": "없음",
   "🔴 커밋 안 된 파일 수": 0,
   "🔴 커밋된 트리에도 작업 트리에도 없는 파일": "없음",
   "🔴 못 읽은 파일(JSON 이 아니다)": "없음",
-  "🔴 절 수 합(분모)": 27,
-  "`통과` 키가 있는 절 합": 18,
+  "🔴 절 수 합(분모)": 69,
+  "`통과` 키가 있는 절 합": 60,
   "🔴 모른다(=`통과` 키 없음) 합": 9,
   "파일별": {
    "runners/out988_audit.json": {
@@ -5201,6 +5642,29 @@
      "§H 🔴 즉시 정정",
      "§I 🔴 데몬(규칙 B)",
      "🔴 고정 ref 셋",
+     "🔴 도장",
+     "🔴🔴 조항 66-② (988)",
+     "🔴🔴🔴 988 봉인 감사(무엇을 봉했고 무엇을 뺐나)"
+    ],
+    "🔴 `통과` 키가 없는 절 = 모른다": 0,
+    "모른다 목록": [],
+    "⚠ 절 밖의 최상위 판정 불리언(규약 밖)": [
+     "통과"
+    ],
+    "⚠ 절로 세지 않은 도장 dict": [
+     "🔴 988 이 읽은 산출물 sha256"
+    ],
+    "통과": true
+   },
+   "runners/out988_certify.json": {
+    "🔴 절 수(분모)": 8,
+    "`통과` 키가 있는 절": 8,
+    "그 목록": [
+     "§가 🔴🔴🔴 988 자신",
+     "§나 🔴🔴 검정력 시연 — 같은 여덟 칸 자를 987·986·985 에 문다(조항 64)",
+     "§다 🔴 원장 고정점 지문",
+     "§라 🔴🔴 자기 입력 교란",
+     "§마 🔴🔴🔴 ⑧ 등록한 판정식 == 채점기가 평가한 식(988 신설)",
      "🔴 도장",
      "🔴🔴 조항 66-② (988)",
      "🔴🔴🔴 988 봉인 감사(무엇을 봉했고 무엇을 뺐나)"
@@ -5235,10 +5699,88 @@
     ],
     "통과": true
    },
+   "runners/out988_prose.json": {
+    "🔴 절 수(분모)": 5,
+    "`통과` 키가 있는 절": 5,
+    "그 목록": [
+     "§A 🔴 등록 주장 대 산출물 키",
+     "§B 🔴🔴 뒤집은 자 — 분모를 «문서»가 정한다",
+     "🔴 도장",
+     "🔴🔴 조항 66-② (988)",
+     "🔴🔴🔴 988 봉인 감사(무엇을 봉했고 무엇을 뺐나)"
+    ],
+    "🔴 `통과` 키가 없는 절 = 모른다": 0,
+    "모른다 목록": [],
+    "⚠ 절 밖의 최상위 판정 불리언(규약 밖)": [
+     "통과"
+    ],
+    "⚠ 절로 세지 않은 도장 dict": [
+     "🔴 988 이 읽은 산출물 sha256"
+    ],
+    "통과": true
+   },
+   "runners/out988_score.json": {
+    "🔴 절 수(분모)": 19,
+    "`통과` 키가 있는 절": 19,
+    "그 목록": [
+     "§12 🔴🔴🔴 지연 없는 여섯째 칸",
+     "§16 🔴🔴 넓힌 「전」 바늘 감사",
+     "§17 🔴🔴🔴 지연 없는 일곱째 칸(사전등록 정본)",
+     "§5 🔴 예측",
+     "§59나 🔴🔴🔴 조항 59-나 — 「자리 0」 감사",
+     "§6 🔴 반증조건",
+     "§68 🔴 조항 68 모양 주장 감사",
+     "§9 🔴🔴 여섯 자리가 같은 수를 적나",
+     "§AST 🔴 리터럴 `통과` 금지",
+     "§D 🔴 규칙 D 감사(분모 여섯)",
+     "§F5 🔴 인용 산출물 도장",
+     "§K 🔴🔴 규칙 D — 한글 수사(자 «둘»)",
+     "§R3 🔴 손 전사 수 리터럴 금지",
+     "🔴 `⑤′` 반복",
+     "🔴 도장",
+     "🔴🔴 조항 60-다 · 사전등록이 박은 분모",
+     "🔴🔴 조항 66-② (988)",
+     "🔴🔴🔴 988 봉인 감사(무엇을 봉했고 무엇을 뺐나)",
+     "🔴🔴🔴 최상위 `통과` 의 정의"
+    ],
+    "🔴 `통과` 키가 없는 절 = 모른다": 0,
+    "모른다 목록": [],
+    "⚠ 절 밖의 최상위 판정 불리언(규약 밖)": [
+     "통과"
+    ],
+    "⚠ 절로 세지 않은 도장 dict": [
+     "🔴 988 이 읽은 산출물 sha256"
+    ],
+    "통과": true
+   },
+   "runners/out988_table.json": {
+    "🔴 절 수(분모)": 8,
+    "`통과` 키가 있는 절": 8,
+    "그 목록": [
+     "🔴 도장",
+     "🔴🔴 `DOC_INPUTS` 에서 «명시적으로» 뺀 것과 사유(조항 60)",
+     "🔴🔴 조항 66-② (988)",
+     "🔴🔴 치환표",
+     "🔴🔴🔴 988 봉인 감사(무엇을 봉했고 무엇을 뺐나)",
+     "🔴🔴🔴 문서를 찍을 때 읽은 산출물 내용 지문(분모 5)",
+     "🔴🔴🔴 여섯째 칸의 상수(`cycle988.SCORE_CELLS`)",
+     "🔴🔴🔴 일곱째 칸의 상수(`cycle988.PREREG_CANON`)"
+    ],
+    "🔴 `통과` 키가 없는 절 = 모른다": 0,
+    "모른다 목록": [],
+    "⚠ 절 밖의 최상위 판정 불리언(규약 밖)": "없음",
+    "⚠ 절로 세지 않은 도장 dict": [
+     "🔴 988 이 읽은 산출물 sha256"
+    ],
+    "통과": true
+   },
    "runners/out988_window.json": {
-    "🔴 절 수(분모)": 0,
-    "`통과` 키가 있는 절": 0,
-    "그 목록": "없음",
+    "🔴 절 수(분모)": 2,
+    "`통과` 키가 있는 절": 2,
+    "그 목록": [
+     "🔴 도장",
+     "🔴🔴🔴 988 봉인 감사(무엇을 봉했고 무엇을 뺐나)"
+    ],
     "🔴 `통과` 키가 없는 절 = 모른다": 0,
     "모른다 목록": [],
     "⚠ 절 밖의 최상위 판정 불리언(규약 밖)": "없음",
@@ -5309,11 +5851,11 @@
   "🔴 훑은 트리(955 R5)": {
    "기준": "커밋된 트리(`git ls-tree -r <tree>` + `git cat-file blob`)",
    "트리": "note/988-registered-predicate",
-   "커밋 sha": "02aa926d2a62d03f83f55b8cc99a31b55ad262eb",
+   "커밋 sha": "fc6b1a12eb247697d5eed3f132e247596090cb01",
    "🔴 `git ls-tree` 오류": "없음"
   },
-  "🔴 훑은 산출물 수(분모)": 522,
-  "⚠ 그 트리의 `runners/out*.json` 전량": 556,
+  "🔴 훑은 산출물 수(분모)": 526,
+  "⚠ 그 트리의 `runners/out*.json` 전량": 560,
   "🔴 뺀 것(자기 산출물 · 955 R4)": [
    "runners/out902b_fiveprime.json",
    "runners/out902b_fiveprime_901.json",
@@ -5351,11 +5893,9 @@
    "runners/out967_fiveprime.json"
   ],
   "🔴 뺀 수": 34,
-  "🔴 커밋 안 된 산출물(= 「없다」가 아니다 · 조항 59)": [
-   "runners/out988_table.json"
-  ],
-  "🔴 커밋 안 된 산출물 수": 1,
-  "도장이 있는 산출물 수": 266,
+  "🔴 커밋 안 된 산출물(= 「없다」가 아니다 · 조항 59)": "없음",
+  "🔴 커밋 안 된 산출물 수": 0,
+  "도장이 있는 산출물 수": 270,
   "🔴 도장이 하나도 없는 산출물 수": 256,
   "🔴 도장이 하나도 없는 산출물": [
    "runners/out112_board.json",
@@ -8200,8 +8740,45 @@
     "초": "모른다",
     "시작<끝": null
    },
+   "runners/out988_certify.json": {
+    "도장 키": [
+     "🔴 988 이 읽은 산출물 sha256"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
    "runners/out988_house.json": {
     "도장 키": [
+     "🔴 988 이 읽은 산출물 sha256"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out988_prose.json": {
+    "도장 키": [
+     "🔴 988 이 읽은 산출물 sha256"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out988_score.json": {
+    "도장 키": [
+     "🔴 988 이 읽은 산출물 sha256"
+    ],
+    "시작 시각": "🔴 없다",
+    "끝 시각": "🔴 없다",
+    "초": "모른다",
+    "시작<끝": null
+   },
+   "runners/out988_table.json": {
+    "도장 키": [
+     "🔴🔴 표 sha256",
      "🔴 988 이 읽은 산출물 sha256"
     ],
     "시작 시각": "🔴 없다",
@@ -8250,7 +8827,7 @@
    "runners/out980_funnel_badstamp.json"
   ],
   "🔴 면제한 수": 1,
-  "🔴🔴 도장 판정을 읽은 산출물 수(분모)": 127,
+  "🔴🔴 도장 판정을 읽은 산출물 수(분모)": 132,
   "🔴🔴🔴 도장 판정이 실패인 산출물": [
    "runners/out973_daemonguard.json",
    "runners/out973_ledger.json",
@@ -9263,7 +9840,15 @@
     "🔴 분자/분모": "28 / 28",
     "🔴 40자 고정 sha 인가": true,
     "🔴 기준 ref 가 0000…0000 인가": false,
-    "🔴 기준 ref": "3980af8250a02c5ced81bb7f9eb2502f0883c102",
+    "🔴 기준 ref": "e9d8f978f8203c750cc545dfa58b00216c5ceeef",
+    "🔴🔴 판정 통과": true
+   },
+   "runners/out988_certify.json": {
+    "🔴 F5 통과": true,
+    "🔴 분자/분모": "28 / 28",
+    "🔴 40자 고정 sha 인가": true,
+    "🔴 기준 ref 가 0000…0000 인가": false,
+    "🔴 기준 ref": "e9d8f978f8203c750cc545dfa58b00216c5ceeef",
     "🔴🔴 판정 통과": true
    },
    "runners/out988_house.json": {
@@ -9271,7 +9856,39 @@
     "🔴 분자/분모": "28 / 28",
     "🔴 40자 고정 sha 인가": true,
     "🔴 기준 ref 가 0000…0000 인가": false,
-    "🔴 기준 ref": "3980af8250a02c5ced81bb7f9eb2502f0883c102",
+    "🔴 기준 ref": "e9d8f978f8203c750cc545dfa58b00216c5ceeef",
+    "🔴🔴 판정 통과": true
+   },
+   "runners/out988_prose.json": {
+    "🔴 F5 통과": true,
+    "🔴 분자/분모": "28 / 28",
+    "🔴 40자 고정 sha 인가": true,
+    "🔴 기준 ref 가 0000…0000 인가": false,
+    "🔴 기준 ref": "e9d8f978f8203c750cc545dfa58b00216c5ceeef",
+    "🔴🔴 판정 통과": true
+   },
+   "runners/out988_score.json": {
+    "🔴 F5 통과": true,
+    "🔴 분자/분모": "28 / 28",
+    "🔴 40자 고정 sha 인가": true,
+    "🔴 기준 ref 가 0000…0000 인가": false,
+    "🔴 기준 ref": "e9d8f978f8203c750cc545dfa58b00216c5ceeef",
+    "🔴🔴 판정 통과": true
+   },
+   "runners/out988_table.json": {
+    "🔴 F5 통과": true,
+    "🔴 분자/분모": "28 / 28",
+    "🔴 40자 고정 sha 인가": true,
+    "🔴 기준 ref 가 0000…0000 인가": false,
+    "🔴 기준 ref": "e9d8f978f8203c750cc545dfa58b00216c5ceeef",
+    "🔴🔴 판정 통과": true
+   },
+   "runners/out988_window.json": {
+    "🔴 F5 통과": true,
+    "🔴 분자/분모": "28 / 28",
+    "🔴 40자 고정 sha 인가": true,
+    "🔴 기준 ref 가 0000…0000 인가": false,
+    "🔴 기준 ref": "e9d8f978f8203c750cc545dfa58b00216c5ceeef",
     "🔴🔴 판정 통과": true
    }
   },
@@ -9537,7 +10154,7 @@
   "🔴 읽은 트리(955 R5)": {
    "기준": "🔴 **커밋된 트리**(`git cat-file blob <tree>:<경로>` 를 해싱한다)",
    "트리": "note/988-registered-predicate",
-   "커밋 sha": "02aa926d2a62d03f83f55b8cc99a31b55ad262eb",
+   "커밋 sha": "fc6b1a12eb247697d5eed3f132e247596090cb01",
    "🔴 `git ls-tree` 오류": "없음",
    "⚠ 954 까지": "작업 트리를 해싱했다 --- 커밋 안 된 편집이 이 절을 붉히거나 숨겼다"
   },
@@ -9594,9 +10211,9 @@
   "🔴 왜": "954 는 원장·노트·카드 **셋 다**에 「수리 레인 하나를 썼다」고 적고 실제로 `[수리]` 커밋을 **셋** 했다. 말로 적으면 또 어긋난다",
   "🔴 명령": [
    "git merge-base main note/988-registered-predicate",
-   "git log --format=%s 35fba5911..02aa926d2"
+   "git log --format=%s 35fba5911..fc6b1a12e"
   ],
-  "🔴 범위": "35fba59115b6dfa24043612f028299c7c7994e24..02aa926d2a62d03f83f55b8cc99a31b55ad262eb",
+  "🔴 범위": "35fba59115b6dfa24043612f028299c7c7994e24..fc6b1a12eb247697d5eed3f132e247596090cb01",
   "🔴 범위의 기준(base)": {
    "rev": "35fba59115b6dfa24043612f028299c7c7994e24",
    "왜": "`git merge-base main note/988-registered-predicate` --- 이 가지가 갈라진 자리",
@@ -9606,9 +10223,9 @@
   "🔴 트리": {
    "기준": "커밋된 트리",
    "머리": "note/988-registered-predicate",
-   "커밋 sha": "02aa926d2a62d03f83f55b8cc99a31b55ad262eb"
+   "커밋 sha": "fc6b1a12eb247697d5eed3f132e247596090cb01"
   },
-  "🔴 이 범위의 커밋 수(분모)": 8,
+  "🔴 이 범위의 커밋 수(분모)": 12,
   "🔴 그중 `[수리]` 커밋 수(분자)": 5,
   "🔴 `[수리]` 커밋 제목": [
    "[수리] R5 — ⑤′ 절 1-나 의 「순㉯」 두 자리를 실제로 고친다 (985·986·987 이 미뤘다)",
@@ -9625,10 +10242,11 @@
    "5f30e595e"
   ],
   "표지별 커밋 수": {
-   "[배선]": 1,
+   "[배선]": 3,
    "[사전등록]": 1,
    "[수리]": 5,
-   "[측정]": 1
+   "[측정]": 1,
+   "[판정]": 2
   },
   "🔴🔴 레인 표지(`R<n>`)로 센 레인": [
    "R1",
@@ -9751,7 +10369,14 @@
    "본 파일": [
     "/Users/ax/.claude/projects/-Users-ax-world-model/memory/project-lab-state.md"
    ],
-   "🔴 이 가지가 갈라진 뒤 바뀐 것": "없음",
+   "🔴 이 가지가 갈라진 뒤 바뀐 것": [
+    {
+     "파일": "/Users/ax/.claude/projects/-Users-ax-world-model/memory/project-lab-state.md",
+     "mtime(UTC)": "2026-08-17T05:31:30Z",
+     "sha256(다음 사이클의 대조 기준)": "1a6f7bab02c11fbdcaeff390a9f9058dae836ce532bc77aefac35e5f6370d1dc",
+     "🔴 이 가지가 갈라진 뒤에 바뀌었다": true
+    }
+   ],
    "🔴 §8 이 신고한 저장소 밖 레인 수": 1,
    "🔴 미신고 저장소 밖 수리": false,
    "⚠ 자의 한계": "mtime 만 본다 --- **무엇이 바뀌었는지는 안 본다**. git 밖이라 내용 대조를 할 자가 없다(조항 61)",
@@ -9761,8 +10386,234 @@
   "🔴 통과의 뜻": "🔴 **956 R2 로 자를 바꿨다.** 넷을 전부 만족해야 통과다 --- ① `R<n>` 레인 수 == 사전등록 §8 예고 · ② 표지 없는 `[수리]` 커밋 0 · 🔴 ③ **개정된 규칙(`docs/루프.md` 레인 규칙 4 · v3.10)의 상한 안** (상한을 못 읽으면 **불통과** --- 「모른다」는 「통과」가 아니다) · 🔴 ④ **저장소 밖 수리가 있으면 §8 이 신고했을 것**. 954·955 는 ①만 봤고 그래서 **자기 예고가 곧 자였다**"
  },
  "8 🔴 산문 주장 대 산출물 키(957 · 티처 #95 C1)": {
-  "🔴 예외": "FileNotFoundError: [Errno 2] No such file or directory: '/Users/ax/world_model/docs/판정_988.md'",
-  "통과": false
+  "무엇": "🔴 산문 주장 대 산출물 키 대조 (티처 #95 C1)",
+  "분자: 통과한 주장": 16,
+  "분모: 등록한 주장": 16,
+  "🔴 이 자가 못 보는 것": "등록 안 한 문장은 원리상 안 본다 — 「전부 초록」이 「거짓이 없다」가 아니다",
+  "주장": [
+   {
+    "문서": "docs/판정_988.md",
+    "키": [
+     "§A 🔴🔴🔴 987 의 최상위 통과를 등록 정의대로 다시 채점한다",
+     "🔴🔴🔴 등록 정의대로의 최상위 통과"
+    ],
+    "문장": "987 의 «최상위 통과»는 등록한 판정식대로 재면 «거짓»이다",
+    "산출물 값": false,
+    "기대": false,
+    "문장이 문서에 있다": true,
+    "결과": "🟢",
+    "통과": true
+   },
+   {
+    "문서": "docs/판정_988.md",
+    "키": [
+     "§A 🔴🔴🔴 987 의 최상위 통과를 등록 정의대로 다시 채점한다",
+     "🔴🔴🔴 최상위 통과가 «뒤집히나»"
+    ],
+    "문장": "«최상위 통과»가 뒤집힌다 --- 987 이 실은 값과 등록 정의대로의 값이 다르다",
+    "산출물 값": true,
+    "기대": true,
+    "문장이 문서에 있다": true,
+    "결과": "🟢",
+    "통과": true
+   },
+   {
+    "문서": "docs/판정_988.md",
+    "키": [
+     "§A 🔴🔴🔴 987 의 최상위 통과를 등록 정의대로 다시 채점한다",
+     "🔴 예측별",
+     "P6 고정 명부로 다시 계산하면 986 의 `⑤′` §3 초록이 뒤집힌다",
+     "🔴🔴 갈리나"
+    ],
+    "문장": "«P6» 하나에서 채점기 값과 등록 정의대로의 값이 갈린다",
+    "산출물 값": true,
+    "기대": true,
+    "문장이 문서에 있다": true,
+    "결과": "🟢",
+    "통과": true
+   },
+   {
+    "문서": "docs/판정_988.md",
+    "키": [
+     "§B 🔴🔴🔴 여덟째 칸 — 등록 판정식 대조",
+     "🔴🔴 988 자신에 문다(㉠ 엄격)",
+     "🔴🔴🔴 ㉠ 두 집합이 같은가"
+    ],
+    "문장": "988 의 «사전등록 키 경로 집합»과 «선언표 키 경로 집합»이 같다",
+    "산출물 값": true,
+    "기대": true,
+    "문장이 문서에 있다": true,
+    "결과": "🟢",
+    "통과": true
+   },
+   {
+    "문서": "docs/판정_988.md",
+    "키": [
+     "§C 🔴🔴 「자리 0」 감사",
+     "🔴 조건별",
+     "987 §K 바늘 대조",
+     "🔴🔴🔴 미측정인가"
+    ],
+    "문장": "987 의 «§K 바늘 대조»는 「깨끗함」이 아니라 «미측정»이다",
+    "산출물 값": true,
+    "기대": true,
+    "문장이 문서에 있다": true,
+    "결과": "🟢",
+    "통과": true
+   },
+   {
+    "문서": "docs/판정_988.md",
+    "키": [
+     "§E 🔴🔴🔴 단조 불변(동어반복) 자",
+     "🔴 변이체별",
+     "V1",
+     "🔴🔴🔴 발화(= 동어반복이다)"
+    ],
+    "문장": "«V1» 은 `h` 를 `h` 에 대해 검정한다 --- 단조 불변 자가 발화한다",
+    "산출물 값": true,
+    "기대": true,
+    "문장이 문서에 있다": true,
+    "결과": "🟢",
+    "통과": true
+   },
+   {
+    "문서": "docs/판정_988.md",
+    "키": [
+     "§E 🔴🔴🔴 단조 불변(동어반복) 자",
+     "🔴 변이체별",
+     "V0",
+     "🔴🔴🔴 발화(= 동어반복이다)"
+    ],
+    "문장": "«V0» 에서는 단조 불변 자가 발화하지 않는다",
+    "산출물 값": false,
+    "기대": false,
+    "문장이 문서에 있다": true,
+    "결과": "🟢",
+    "통과": true
+   },
+   {
+    "문서": "docs/판정_988.md",
+    "키": [
+     "§E 🔴🔴🔴 단조 불변(동어반복) 자",
+     "🔴🔴🔴 심은 자에서 «갈리나»(단조는 발화 · 비단조는 «안» 발화)"
+    ],
+    "문장": "«심은 자»에서 단조 짝은 발화하고 비단조 짝은 발화하지 않는다",
+    "산출물 값": true,
+    "기대": true,
+    "문장이 문서에 있다": true,
+    "결과": "🟢",
+    "통과": true
+   },
+   {
+    "문서": "docs/판정_988.md",
+    "키": [
+     "§F 🔴 `⑤′` 수리 레인 파싱 — 구판 / 신판",
+     "🔴🔴🔴 구판이 987 에서 절을 찾았나"
+    ],
+    "문장": "«구판» 정규식은 987 사전등록에서 수리 레인 절을 못 찾는다",
+    "산출물 값": false,
+    "기대": false,
+    "문장이 문서에 있다": true,
+    "결과": "🟢",
+    "통과": true
+   },
+   {
+    "문서": "docs/판정_988.md",
+    "키": [
+     "§F 🔴 `⑤′` 수리 레인 파싱 — 구판 / 신판",
+     "🔴🔴🔴 신판이 987 에서 절을 찾았나"
+    ],
+    "문장": "«신판» 정규식(절 이름)은 987 사전등록에서 그 절을 찾는다",
+    "산출물 값": true,
+    "기대": true,
+    "문장이 문서에 있다": true,
+    "결과": "🟢",
+    "통과": true
+   },
+   {
+    "문서": "docs/판정_988.md",
+    "키": [
+     "§G 🔴 `⑤′` §3 명부 — 데몬 셋(아는 red)",
+     "🔴🔴🔴 987 과 같은 목록인가"
+    ],
+    "문장": "«데몬 셋» 중 §3 을 떨어뜨리는 파일 목록이 987 이 잰 것과 같다",
+    "산출물 값": true,
+    "기대": true,
+    "문장이 문서에 있다": true,
+    "결과": "🟢",
+    "통과": true
+   },
+   {
+    "문서": "docs/판정_988.md",
+    "키": [
+     "§H 🔴 즉시 정정",
+     "① 🔴🔴 `u=3` 의 마지막 구간 기울기(987 표가 «안 실은» 더 강한 수)",
+     "u=3",
+     "🔴🔴 단조 비감소인가"
+    ],
+    "문장": "«u=3» 은 마지막 구간에서 발화 수가 단조 비감소다(z 근거는 §H 에 있다)",
+    "산출물 값": true,
+    "기대": true,
+    "문장이 문서에 있다": true,
+    "결과": "🟢",
+    "통과": true
+   },
+   {
+    "문서": "docs/판정_988.md",
+    "키": [
+     "§H 🔴 즉시 정정",
+     "② 🔴 「열린 PR 0」은 «측정 시각»의 값이다",
+     "🔴🔴🔴 측정이 PR 생성보다 «먼저»였나"
+    ],
+    "문장": "987 의 «열린 PR 0» 은 측정 시각의 값이고 PR 생성보다 먼저 쟀다",
+    "산출물 값": true,
+    "기대": true,
+    "문장이 문서에 있다": true,
+    "결과": "🟢",
+    "통과": true
+   },
+   {
+    "문서": "docs/판정_988.md",
+    "키": [
+     "§나 🔴🔴 검정력 시연 — 같은 여덟 칸 자를 987·986·985 에 문다(조항 64)",
+     "🔴🔴🔴 여덟째 칸이 987 에서 «떨어지나»"
+    ],
+    "문장": "같은 «여덟째 칸» 자를 987 에 물리면 «떨어진다»",
+    "산출물 값": true,
+    "기대": true,
+    "문장이 문서에 있다": true,
+    "결과": "🟢",
+    "통과": true
+   },
+   {
+    "문서": "docs/판정_988.md",
+    "키": [
+     "§라 🔴🔴 자기 입력 교란",
+     "🔴🔴🔴 가짜 판에서 «떨어지나»"
+    ],
+    "문장": "자기 입력을 한 글자 «교란»하면 자가 떨어진다",
+    "산출물 값": true,
+    "기대": true,
+    "문장이 문서에 있다": true,
+    "결과": "🟢",
+    "통과": true
+   },
+   {
+    "문서": "docs/판정_988.md",
+    "키": [
+     "§0-가 🔴🔴 집을 닫았나",
+     "🔴🔴🔴 머지 뒤 규칙 A-2 가 참인가(= 같거나, 갈린 것이 등록한 것뿐)"
+    ],
+    "문장": "규칙 «A-2» 가 참이다",
+    "산출물 값": true,
+    "기대": true,
+    "문장이 문서에 있다": true,
+    "결과": "🟢",
+    "통과": true
+   }
+  ],
+  "통과": true,
+  "🔴 주장 목록 모듈": "runners.prose988"
  },
  "9 🔴🔴 리터럴 `통과` 금지(983 R1 · AST)": {
   "검사": "🔴🔴 **983 R1 --- AST 로 🔴 채점기가 리터럴 `(\"통과\", True)` 로 자기를 통과시키는 자리 를 금지한다**",
@@ -9894,12 +10745,10 @@
   "1 소비자 역참조",
   "1-나 🔴 날 것 git 호출 전수(947 상설)",
   "2 게이트",
-  "3 판정 키 규약",
-  "8 🔴 산문 주장 대 산출물 키(957 · 티처 #95 C1)",
-  "⓪ 관문(가지의 커밋된 트리 · 🔴 정본)"
+  "3 판정 키 규약"
  ],
  "통과": false,
- "시각(UTC · 시작)": "2026-08-17T05:16:56+00:00",
+ "시각(UTC · 시작)": "2026-08-17T05:31:54+00:00",
  "🔴 코드 sha256(이게 자다)": {
   "runners/fiveprime902.py": "119be842e635cd813ecc5b88eea97fb6508d72350c0f822c4db269555d16dd9b",
   "runners/quote901.py": "1778c5659dcd3f8cc15e48d7c4760ba581ccdb809d7144b3376911f2882b3b30",
@@ -9907,19 +10756,23 @@
   "lab/keyspace.py": "e63c86da248e5255f73442405b27693ee0a11cdcff2dd37d4debcbef0a362657"
  },
  "🔴 입력 산출물 sha256": {
-  "runners/out988_audit.json": "8607e9e943bd17216e456c5934ccccba2e163687b05ded55ca92631727bd5864",
-  "runners/out988_house.json": "c3bdee4745abcc2da95ece412e98d4d7db40e7599b93ec8a19ea0ffa1cbdc211",
-  "runners/out988_window.json": "d76c5e41f0c590928c8bf6ccae2c57f8fc562c7d09541ae4d021c2899254622c",
+  "runners/out988_audit.json": "505f15acd4c266de5d97dd49beefd876c08bda807b4257a34b99fc63417e638e",
+  "runners/out988_certify.json": "9cfa0f175e6f260ed7f4415c17017b0313e9b96be6a7a63740b7f762b1a55184",
+  "runners/out988_house.json": "1f14f6b3646301f82e7bab722feeb1746c3189eb4c1fe8185557886af87198df",
+  "runners/out988_prose.json": "7b992206c6f7935008d58bdefca27ad97ae1e64fb3cdce75217cc5cbacc5dd53",
+  "runners/out988_score.json": "0054013206cdd344a1df1dbb01a818e498197e32ad7b1e41d318b5489e259337",
+  "runners/out988_table.json": "c1da7cb380fe4f0fb475ec5e4cd2397e6bb7fa55c262504c5283d1d554b04801",
+  "runners/out988_window.json": "22f3d52f7f594dacc3692fe9934d374dd8686aa2c3f6837d2743e32b186fcb94",
   "runners/out941_wikidaily.json": "93a4d0d30be5c198c8318be1f9f85e52dc64a6cd770a36c635b79ff2f554ab5e",
   "runners/out941_steamrev.json": "915a9b4550ec836df4eff559c63ababca374abd20a6c7b5bcb6a85c0e16e4276",
   "runners/out941_robots.json": "bb4a19ac5201d14d157d39f6221ec9479bed5d3422a23d7b31d4ff2b3e166266"
  },
- "⚠ git HEAD(시작 시점 · 판정에 쓰지 마라)": "ba731abdd50688fe7b688c825f0b568eccb6a0cd",
- "시각(UTC · 끝)": "2026-08-17T05:19:12+00:00",
- "초": 135.9,
+ "⚠ git HEAD(시작 시점 · 판정에 쓰지 마라)": "25cff300bdad1ec70ccd2d24acf12691bf0b05ab",
+ "시각(UTC · 끝)": "2026-08-17T05:34:19+00:00",
+ "초": 144.8,
  "🔴 도장": {
-  "언제(시작)": "2026-08-17T05:19:12Z",
-  "언제(끝)": "2026-08-17T05:19:12Z",
+  "언제(시작)": "2026-08-17T05:34:19Z",
+  "언제(끝)": "2026-08-17T05:34:19Z",
   "시작 code_stamp 요약": "55ab0094d4b6754ab08270e193a8d7e6efdcbbb6f22fb49172fd204c6b3a7981",
   "끝 code_stamp 요약": "55ab0094d4b6754ab08270e193a8d7e6efdcbbb6f22fb49172fd204c6b3a7981",
   "🔴 시작=끝": true,
@@ -9930,7 +10783,7 @@
    "hplt_ko": "67de3062bad60e122c446fccb0b96d2c3a36c0ee2deafa40324a22dcad6c09a2"
   },
   "분모: 연 자료 파일": 3,
-  "🔴 F1 기준 ref(준 대로)": "02aa926d2a62d03f83f55b8cc99a31b55ad262eb",
+  "🔴 F1 기준 ref(준 대로)": "fc6b1a12eb247697d5eed3f132e247596090cb01",
   "🔴 40자 고정 sha 인가": true,
   "🔴 기준 ref 가 0000…0000 인가": false,
   "러너별": {

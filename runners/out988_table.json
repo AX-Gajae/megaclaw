@@ -1,14 +1,14 @@
 {
  "무엇": "988 치환표 — 🔴 **모든 문서·PR 본문의 수가 여기서 온다**",
- "🔴 언제": "2026-08-17T05:31:30Z",
+ "🔴 언제": "2026-08-17T05:34:46Z",
  "🔴🔴 칸 수": 166,
- "🔴🔴 표 sha256": "66ce81e10f0df77aced90ae1a7104d7db38e3529aab16482bd4cf2d2f65f43a7",
+ "🔴🔴 표 sha256": "d9cf9d74e94a243f69f6f24eea3b2b3ae0d4b6740ef71ddf1c26348c79865ddd",
  "🔴🔴🔴 문서를 찍을 때 읽은 산출물 내용 지문(분모 5)": {
-  "runners/out988_score.json": "8175cfe744b02d8287002ab1d3031714360a7e7c8eee3c56d6a60caf159e1fa3",
+  "runners/out988_score.json": "ace6c28a310b06c2cc75c8bf3835bd2c35b4d695b85ce882db9d2d7e8e7cab81",
   "runners/out988_audit.json": "d6bed71c470637e47ed82c00f6603d2f1111f73102cdbdb041fc4f343f42ecd7",
   "runners/out988_house.json": "58971a158033da0b378a0f3ba7acaea0ad4413d1a3cdb387ac8fa0a404548b28",
   "runners/out988_prose.json": "c7a289f1acada98e79dc13c9057df8c0f4f0f1147e0331cf8d3a87d638e8bd24",
-  "runners/fiveprime_988.json": "ecc58d4662b04d31ec3d0eaf849b6a7c553138c03a791f5a78c16946b0d7c46f",
+  "runners/fiveprime_988.json": "5946e088f6f431cf7d490e978833396e30836ff36d9d3d02b15ba878ebdc50da",
   "통과": false,
   "🔴 이 절의 `통과`": "🔴 **이 절은 `통과` 를 안 만들었다 --- 「모른다」다**(조항 59). `False` 로 센다"
  },
@@ -295,10 +295,9 @@
     "1 소비자 역참조",
     "1-나 🔴 날 것 git 호출 전수(947 상설)",
     "2 게이트",
-    "3 판정 키 규약",
-    "8 🔴 산문 주장 대 산출물 키(957 · 티처 #95 C1)"
+    "3 판정 키 규약"
    ],
-   "오프.실패절수": 5,
+   "오프.실패절수": 4,
    "오프.명부밖": "없음",
    "오프.절3대상수": 10,
    "오프.절3통과": false,
@@ -394,7 +393,7 @@
    "반증.식별자수": 23,
    "막힌명령": "**없었다.** `#245` 머지는 처음부터 규칙 A 배관(`merge-tree --write-tree` → `commit-tree -p -p` → `update-ref` → push)으로 했고 `gh pr merge` 를 한 번도 안 불렀다. 권한·분류기·정책으로 거부된 명령은 이 사이클에 **한 건도 없었다.** 🔴 빈칸이 아니라 「없었다」를 적는다(조항 59).",
    "표.칸수": 166,
-   "표.sha": "8fc133ea16b77c6a2b2424fb02b7eb2662595f4580584ca4a1f7945429217446"
+   "표.sha": "d243c0c5c618306f7304133b18f9a1fcb39eb0f2c1ca259de736ff8b0ef5b516"
   },
   "통과": true,
   "🔴 이 절의 `통과`": "칸이 «하나라도» 있는가"
@@ -611,8 +610,8 @@
    ],
    "🔴 입력별": {
     "runners/out988_score.json": {
-     "문서를 찍을 때 내용 지문": "7b57349ab97e5a2db437f07333a97e8df10a16096641d675e1197b50e9cea848",
-     "지금 내용 지문": "8175cfe744b02d8287002ab1d3031714360a7e7c8eee3c56d6a60caf159e1fa3",
+     "문서를 찍을 때 내용 지문": "e854d20b8acb6f306554202001b3b9722039139caa19f7119b994763c5f10a8b",
+     "지금 내용 지문": "ace6c28a310b06c2cc75c8bf3835bd2c35b4d695b85ce882db9d2d7e8e7cab81",
      "같은가": false
     },
     "runners/out988_audit.json": {
@@ -631,8 +630,8 @@
      "같은가": true
     },
     "runners/fiveprime_988.json": {
-     "문서를 찍을 때 내용 지문": "ecc58d4662b04d31ec3d0eaf849b6a7c553138c03a791f5a78c16946b0d7c46f",
-     "지금 내용 지문": "ecc58d4662b04d31ec3d0eaf849b6a7c553138c03a791f5a78c16946b0d7c46f",
+     "문서를 찍을 때 내용 지문": "5946e088f6f431cf7d490e978833396e30836ff36d9d3d02b15ba878ebdc50da",
+     "지금 내용 지문": "5946e088f6f431cf7d490e978833396e30836ff36d9d3d02b15ba878ebdc50da",
      "같은가": true
     }
    },
@@ -640,22 +639,22 @@
     "docs/card_988.md": {
      "생산기": "runners/note988_gen.py",
      "있나": true,
-     "지금 sha256": "a603a72025d989882ae60008a3ba1826866858b5a63eb257ef17482bb9e2fd27"
+     "지금 sha256": "20968c80bada44ad769a9d89168e3d28b3537492d4ce36703f340610412c54b1"
     },
     "docs/handoff_988.md": {
      "생산기": "runners/note988_gen.py",
      "있나": true,
-     "지금 sha256": "dacaae84490d6de9aaed880e759521757732485ceb5280296788e2114485200e"
+     "지금 sha256": "9355e6fb312547f8138cd01bae7144b3eaa5cf521ae6dc0fa1260d469fd04c47"
     },
     "docs/pr_988.md": {
      "생산기": "runners/note988_gen.py",
      "있나": true,
-     "지금 sha256": "33b4f875c7cb8a3e855093c3867e3d5b8e921693c7dd7c897478940935b1a64b"
+     "지금 sha256": "b3daec32c72fb3d92c7c37708e8e0abe43d13a20b8f3b58ca6c883ca8e73b613"
     },
     "docs/판정_988.md": {
      "생산기": "runners/note988_gen.py",
      "있나": true,
-     "지금 sha256": "532a41e7c06687bb92b695573399270ff400005066548841b46f08238982d801"
+     "지금 sha256": "58a906ab920f5659f150e7c3046853fb08ef96138d0ff6cda34f1563c6f26b9b"
     }
    },
    "🔴 치환표가 sha 를 안 박은 입력(= 「같다」가 아니다 · 조항 59)": "없음",
@@ -685,8 +684,8 @@
   "runners/out983_reps.json": "ae81925626dc66affff4901f0e33d2f649b4c31650c107a3ced7ea5a67e4cc4f"
  },
  "🔴 도장": {
-  "언제(시작)": "2026-08-17T05:31:30Z",
-  "언제(끝)": "2026-08-17T05:31:30Z",
+  "언제(시작)": "2026-08-17T05:34:46Z",
+  "언제(끝)": "2026-08-17T05:34:47Z",
   "시작 code_stamp 요약": "5cbd72a0da05fccd8a2d9f2456a221fb2dbe899598181b3d5797cde17e08f2f8",
   "끝 code_stamp 요약": "5cbd72a0da05fccd8a2d9f2456a221fb2dbe899598181b3d5797cde17e08f2f8",
   "🔴 시작=끝": true,
@@ -697,7 +696,7 @@
    "hplt_ko": "67de3062bad60e122c446fccb0b96d2c3a36c0ee2deafa40324a22dcad6c09a2"
   },
   "분모: 연 자료 파일": 3,
-  "🔴 F1 기준 ref(준 대로)": "e9d8f978f8203c750cc545dfa58b00216c5ceeef",
+  "🔴 F1 기준 ref(준 대로)": "fc6b1a12eb247697d5eed3f132e247596090cb01",
   "🔴 40자 고정 sha 인가": true,
   "🔴 기준 ref 가 0000…0000 인가": false,
   "러너별": {
