@@ -1149,9 +1149,9 @@
        "같은가": true
       },
       "runners/cycle988.py": {
-       "낼 때 sha256": "d1dfa4143a11e47864549b47fb76c0b1b94f13bf1a3133df76d8fe750632ba87",
+       "낼 때 sha256": "67230e6fb2b3e58bf6d1b7adcd8371c2c4355ea47ed07a8c312bd8184aa3772e",
        "지금 sha256": "67230e6fb2b3e58bf6d1b7adcd8371c2c4355ea47ed07a8c312bd8184aa3772e",
-       "같은가": false
+       "같은가": true
       },
       "runners/ledger.py": {
        "낼 때 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
@@ -1160,9 +1160,7 @@
       }
      },
      "🔴 도장에 없어 못 본 것(= 「안 바뀌었다」가 아니다)": "없음",
-     "🔴🔴 낼 때와 달라진 파일": [
-      "runners/cycle988.py"
-     ]
+     "🔴🔴 낼 때와 달라진 파일": "없음"
     },
     "runners/out988_certify.json": {
      "생산자": "runners/certify988.py",
@@ -1203,9 +1201,9 @@
        "같은가": true
       },
       "runners/cycle988.py": {
-       "낼 때 sha256": "d1dfa4143a11e47864549b47fb76c0b1b94f13bf1a3133df76d8fe750632ba87",
+       "낼 때 sha256": "67230e6fb2b3e58bf6d1b7adcd8371c2c4355ea47ed07a8c312bd8184aa3772e",
        "지금 sha256": "67230e6fb2b3e58bf6d1b7adcd8371c2c4355ea47ed07a8c312bd8184aa3772e",
-       "같은가": false
+       "같은가": true
       },
       "runners/ledger.py": {
        "낼 때 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
@@ -1214,9 +1212,7 @@
       }
      },
      "🔴 도장에 없어 못 본 것(= 「안 바뀌었다」가 아니다)": "없음",
-     "🔴🔴 낼 때와 달라진 파일": [
-      "runners/cycle988.py"
-     ]
+     "🔴🔴 낼 때와 달라진 파일": "없음"
     },
     "runners/out988_prose.json": {
      "생산자": "runners/prose988.py",
@@ -1278,8 +1274,8 @@
      ],
      "🔴 파일별": {
       "runners/note988_gen.py": {
-       "낼 때 sha256": "e769c42ba752871824cc366a71b1cf530429f361775a4931a0e99d1ee9f238ea",
-       "지금 sha256": "e769c42ba752871824cc366a71b1cf530429f361775a4931a0e99d1ee9f238ea",
+       "낼 때 sha256": "950ddd5ad81f80dbd267661c38b86cec9ae1e1bd699502a7c163520a7b44a70e",
+       "지금 sha256": "950ddd5ad81f80dbd267661c38b86cec9ae1e1bd699502a7c163520a7b44a70e",
        "같은가": true
       },
       "runners/cycle988.py": {
@@ -1297,12 +1293,9 @@
      "🔴🔴 낼 때와 달라진 파일": "없음"
     }
    },
-   "🔴🔴🔴 낡은 산출물(고치고 안 다시 돌렸다)": [
-    "runners/out988_audit.json",
-    "runners/out988_house.json"
-   ],
+   "🔴🔴🔴 낡은 산출물(고치고 안 다시 돌렸다)": "없음",
    "🔴 못 읽은 것(= 「없다」가 아니다)": "없음",
-   "🔴🔴🔴 낡은 것이 있나": true
+   "🔴🔴🔴 낡은 것이 있나": false
   },
   "🔴🔴🔴 채점기를 다시 돌리고 «안 다시 찍은» 문서": {
    "🔴🔴 무엇": "🔴🔴🔴 **채점기를 다시 돌리고 문서(·PR 본문)를 안 다시 찍었나**",
@@ -1331,9 +1324,9 @@
    ],
    "🔴 입력별": {
     "runners/out988_score.json": {
-     "문서를 찍을 때 내용 지문": "3d2e301263ed12c91747bf075216af0fc81ad2631b6a95ed6ac7951afa0bdd03",
-     "지금 내용 지문": "3d2e301263ed12c91747bf075216af0fc81ad2631b6a95ed6ac7951afa0bdd03",
-     "같은가": true
+     "문서를 찍을 때 내용 지문": "d5cf17a83ca902253c4f283154e43bdc8c619d5a92ed704fcfbd116b457d5061",
+     "지금 내용 지문": "2f6ea51b3c4cf8b331421a9da45bf0416b4724d49de424afc737603b99463c18",
+     "같은가": false
     },
     "runners/out988_audit.json": {
      "문서를 찍을 때 내용 지문": "d6bed71c470637e47ed82c00f6603d2f1111f73102cdbdb041fc4f343f42ecd7",
@@ -1341,18 +1334,18 @@
      "같은가": true
     },
     "runners/out988_house.json": {
-     "문서를 찍을 때 내용 지문": "3c09d2a9654483c25fcab75b5685d4b2062a131a86de2074a1afe69e1d6c24b2",
-     "지금 내용 지문": "3c09d2a9654483c25fcab75b5685d4b2062a131a86de2074a1afe69e1d6c24b2",
+     "문서를 찍을 때 내용 지문": "12f1aaadba09a198301a3eee58599bc44dacffde6dd3a4c66a73a01f143136ee",
+     "지금 내용 지문": "12f1aaadba09a198301a3eee58599bc44dacffde6dd3a4c66a73a01f143136ee",
      "같은가": true
     },
     "runners/out988_prose.json": {
-     "문서를 찍을 때 내용 지문": "8655751df105138de12bd2cb827c574af96e295b79bfdc667203665b8fc6cf87",
-     "지금 내용 지문": "8655751df105138de12bd2cb827c574af96e295b79bfdc667203665b8fc6cf87",
+     "문서를 찍을 때 내용 지문": "c7a289f1acada98e79dc13c9057df8c0f4f0f1147e0331cf8d3a87d638e8bd24",
+     "지금 내용 지문": "c7a289f1acada98e79dc13c9057df8c0f4f0f1147e0331cf8d3a87d638e8bd24",
      "같은가": true
     },
     "runners/fiveprime_988.json": {
-     "문서를 찍을 때 내용 지문": "557c5ef3702e2cdf42b4e1961cfafc3beef29ddeb16ddd0661f539395c482a17",
-     "지금 내용 지문": "557c5ef3702e2cdf42b4e1961cfafc3beef29ddeb16ddd0661f539395c482a17",
+     "문서를 찍을 때 내용 지문": "ecc58d4662b04d31ec3d0eaf849b6a7c553138c03a791f5a78c16946b0d7c46f",
+     "지금 내용 지문": "ecc58d4662b04d31ec3d0eaf849b6a7c553138c03a791f5a78c16946b0d7c46f",
      "같은가": true
     }
    },
@@ -1360,32 +1353,34 @@
     "docs/card_988.md": {
      "생산기": "runners/note988_gen.py",
      "있나": true,
-     "지금 sha256": "6cc71f7451e848738d4ee05d6872502f4350c08edf475f9adec6af9f929004f2"
+     "지금 sha256": "a2a5a4a609986476ef0e4629827cb2ebdeeb4ec1d5770ee09cc228300c2718b0"
     },
     "docs/handoff_988.md": {
      "생산기": "runners/note988_gen.py",
      "있나": true,
-     "지금 sha256": "543f074682ebbe2979bbf41f745cb8c2d429c406c934df7100e8e6f5e39ef541"
+     "지금 sha256": "65e687b2c73a714c0da5c522c5b22c3e1bb628d464d3e1fabd96b4eef07debd8"
     },
     "docs/pr_988.md": {
      "생산기": "runners/note988_gen.py",
      "있나": true,
-     "지금 sha256": "5d11576c256803999302dd04591e1e87dceb3dbda68c2178fc135dd733b401e5"
+     "지금 sha256": "2be5f4da30512ca33f23baf4b219b7367bc6c65d0dad9f5551713244bfc59823"
     },
     "docs/판정_988.md": {
      "생산기": "runners/note988_gen.py",
      "있나": true,
-     "지금 sha256": "e269103e51bb2c82ce5a66495eac49bdf8dcaec7ca7d110493a383c73626effe"
+     "지금 sha256": "5edd84fc8a3d01a183c2d9374a6cf5698f0d681028653f3724ca84e8c16b25b1"
     }
    },
    "🔴 치환표가 sha 를 안 박은 입력(= 「같다」가 아니다 · 조항 59)": "없음",
-   "🔴🔴🔴 문서를 찍은 뒤 달라진 산출물": "없음",
-   "🔴🔴🔴 낡은 문서가 있나": false,
+   "🔴🔴🔴 문서를 찍은 뒤 달라진 산출물": [
+    "runners/out988_score.json"
+   ],
+   "🔴🔴🔴 낡은 문서가 있나": true,
    "🔴 이 값이 `None` 이면": "🔴 **「낡지 않았다」가 아니라 「모른다」**다(조항 59)"
   },
-  "🔴 시작 요약(좁은 창)": "a5e5cd2bef87e987b1bab1098b0e7348f4979233f6f50ab2816eff4454ffd2fa",
+  "🔴 시작 요약(좁은 창)": "5cbd72a0da05fccd8a2d9f2456a221fb2dbe899598181b3d5797cde17e08f2f8",
   "🔴 시작 요약(넓은 창)": "03da3152d226547354f00ea91542c34b716810a04012beb3f601e6eaf5c843c7",
-  "🔴 끝 요약": "a5e5cd2bef87e987b1bab1098b0e7348f4979233f6f50ab2816eff4454ffd2fa",
+  "🔴 끝 요약": "5cbd72a0da05fccd8a2d9f2456a221fb2dbe899598181b3d5797cde17e08f2f8",
   "통과": false,
   "🔴 이 절의 `통과`": "🔴🔴 **조건 넷**: ① 사이클 시작 도장을 읽었다 · ② 낡은 산출물 0 · ③ 낡은 문서 0 · ④ 분모가 `RAN_ALL` 을 전부 덮었다. 🔴 ③ 이 `None`(모른다)이면 «통과가 아니다»(조항 59)"
  },
@@ -1403,10 +1398,10 @@
   "runners/out983_reps.json": "ae81925626dc66affff4901f0e33d2f649b4c31650c107a3ced7ea5a67e4cc4f"
  },
  "🔴 도장": {
-  "언제(시작)": "2026-08-17T05:23:35Z",
-  "언제(끝)": "2026-08-17T05:23:36Z",
-  "시작 code_stamp 요약": "a5e5cd2bef87e987b1bab1098b0e7348f4979233f6f50ab2816eff4454ffd2fa",
-  "끝 code_stamp 요약": "a5e5cd2bef87e987b1bab1098b0e7348f4979233f6f50ab2816eff4454ffd2fa",
+  "언제(시작)": "2026-08-17T05:31:04Z",
+  "언제(끝)": "2026-08-17T05:31:05Z",
+  "시작 code_stamp 요약": "5cbd72a0da05fccd8a2d9f2456a221fb2dbe899598181b3d5797cde17e08f2f8",
+  "끝 code_stamp 요약": "5cbd72a0da05fccd8a2d9f2456a221fb2dbe899598181b3d5797cde17e08f2f8",
   "🔴 시작=끝": true,
   "분모: 도장이 덮는 파일": 98,
   "🔴 자료 지문": {
@@ -1415,7 +1410,7 @@
    "hplt_ko": "67de3062bad60e122c446fccb0b96d2c3a36c0ee2deafa40324a22dcad6c09a2"
   },
   "분모: 연 자료 파일": 3,
-  "🔴 F1 기준 ref(준 대로)": "d845ee33a8a8aedb8e0802c542d563b865ea332b",
+  "🔴 F1 기준 ref(준 대로)": "e9d8f978f8203c750cc545dfa58b00216c5ceeef",
   "🔴 40자 고정 sha 인가": true,
   "🔴 기준 ref 가 0000…0000 인가": false,
   "러너별": {
@@ -1440,8 +1435,8 @@
     "일치": true
    },
    "runners/note988_gen.py": {
-    "디스크 sha256": "e769c42ba752871824cc366a71b1cf530429f361775a4931a0e99d1ee9f238ea",
-    "커밋 blob sha256": "e769c42ba752871824cc366a71b1cf530429f361775a4931a0e99d1ee9f238ea",
+    "디스크 sha256": "950ddd5ad81f80dbd267661c38b86cec9ae1e1bd699502a7c163520a7b44a70e",
+    "커밋 blob sha256": "950ddd5ad81f80dbd267661c38b86cec9ae1e1bd699502a7c163520a7b44a70e",
     "일치": true
    },
    "runners/certify988.py": {
