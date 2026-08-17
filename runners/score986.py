@@ -586,15 +586,20 @@ def stage(ref, prereg_commit, five_name, it):
     astpass = ast_pass_all()
     handlit = hand_lit_all(au)
     n_fail = len(fp.get("🔴 실패한 절") or []) if fp else None
+    ctx_n_falsify = 14
+    #: 🔴 **바늘 셋은 «사전등록이 박은 상수»다** --- 여섯 자리 모두가 원리상 실을 수
+    #:  있는 수여야 자가 산다. 측정값(⑤′ 실패 수)을 바늘로 쓰면 **사전등록은 그것을
+    #:  원리상 못 싣는다**(사전등록은 측정 전에 얼어 있다) --- 985 는 그걸 「부분 문자열」
+    #:  로 덮었고 986 은 **엄격 자로 판정**하므로 바늘을 상수로 바꾼다.
     six = six_places(fp, collections.OrderedDict([
-        ("`⑤′` 실패 수", (n_fail, "실패")),
-        ("`⑤′` 분모", (reg["🔴 `⑤′` 분모"], "분모")),
+        ("반증조건 분모", (ctx_n_falsify, "반증조건")),
+        ("`⑤′` 분모", (reg["🔴 `⑤′` 분모"], "⑤′")),
         ("규칙 D 대상 수", (ruleD["🔴🔴 채점 분모"], "규칙 D")),
     ]))
     ctx = {"prereg_commit": prereg_commit, "reg": reg, "ruleD": ruleD,
            "five": fp, "six": six, "certify": ct, "feeds": feeds,
            "astpass": astpass, "handlit": handlit, "power": pw, "audit": au,
-           "n_falsify": 14, "n_predict": 6, "n_cert": 6}
+           "n_falsify": ctx_n_falsify, "n_predict": 6, "n_cert": 6}
     rows, bad = falsify(ctx)
     prows, hit = predict(ctx)
 

@@ -458,7 +458,33 @@ def resolve(obj, path):
     return True, cur
 
 
+def stamp_window(ref):
+    """🔴🔴 **창 파일에 F5 도장을 «단다»** --- 시작 시각·시작 도장은 한 바이트도 안 바꾼다.
+
+    🔴 **왜.** 반증조건 12 의 분모는 **「원장이 싣는 산출물 전량」**인데
+    `out986_window.json` 은 `begin()` 이 **도장 «이전»에** 쓰는 파일이라
+    도장이 없다. 그러면 그 조건은 **원리상** 못 넘는다.
+    🔴 **면제로 «빼지» 않는다**(그게 985 가 저지른 「인용을 안 해 검사를 피한다」다).
+    대신 **사이클 끝에 도장을 단다** --- 시작 값은 그대로 두고 도장만 얹는다.
+    """
+    p = ROOT / WINDOW
+    if not p.is_file():
+        return {"🔴": "🔴 창 파일이 없다"}
+    d = json.loads(p.read_text(encoding="utf-8"), object_pairs_hook=__import__(
+        "collections").OrderedDict)
+    t0 = d.get("🔴 사이클 시작(UTC)") or now()
+    cs0 = d.get("🔴 시작 code_stamp(파일별 sha256)") or code_stamp()
+    d["⚠ 이 도장은 «사이클 끝»에 얹었다(986)"] = (
+        "🔴 시작 시각과 시작 `code_stamp` 은 한 바이트도 «안» 바꿨다 --- "
+        "반증조건 12 의 분모(원장이 싣는 산출물 전량)를 «면제 없이» 채우기 위해서다")
+    LG.write_stamped(str(p), d, ref, cs0, t0, RAN_ALL, DATA)
+    return {"창": WINDOW, "도장": "얹었다"}
+
+
 if __name__ == "__main__":
+    if len(sys.argv) > 2 and sys.argv[1] == "--stamp":
+        print(json.dumps(stamp_window(sys.argv[2]), ensure_ascii=False))
+        sys.exit(0)
     if len(sys.argv) > 2 and sys.argv[1] == "--begin":
         print(json.dumps(begin(sys.argv[2], force=("--force" in sys.argv)),
                          ensure_ascii=False)[:400])
