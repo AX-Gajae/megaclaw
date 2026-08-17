@@ -6,13 +6,13 @@
   "runners/audit989.py": 1786948857.2,
   "runners/score989.py": 1786948952.5,
   "runners/last989.py": 1786949291.5,
-  "runners/note989_gen.py": 1786949326.0
+  "runners/note989_gen.py": 1786950029.5
  },
  "🔴 산출물 mtime": {
   "runners/out989_wiring.json": 1786949294.4,
   "runners/out989_world.json": 1786948167.9,
-  "runners/out989_audit.json": 1786949330.0,
-  "runners/out989_score.json": 1786949330.1
+  "runners/out989_audit.json": 1786950042.7,
+  "runners/out989_score.json": 1786950042.8
  },
  "🔴🔴 ① «자기가 만드는» 산출물보다 나중에 고쳐진 러너(신판)": "없음",
  "⚠ ① 구판(모든 러너 × 모든 산출물 · 🔴 «생산자가 아닌» 짝까지 센다)": [
@@ -34,12 +34,12 @@
   {
    "러너": "runners/note989_gen.py",
    "산출물": "runners/out989_wiring.json",
-   "🔴 러너가 더 나중": 31.5
+   "🔴 러너가 더 나중": 735.0
   },
   {
    "러너": "runners/note989_gen.py",
    "산출물": "runners/out989_world.json",
-   "🔴 러너가 더 나중": 1158.1
+   "🔴 러너가 더 나중": 1861.6
   }
  ],
  "🔴 러너 → 산출물 지도": {
@@ -81,14 +81,14 @@
  "통과": true,
  "🔴 이 러너 자신의 sha256": "7a5d8c426d488911de31cb8822e35e7198135452ceb27610503b899aaf3d9aee",
  "🔴 도장": {
-  "ref": "f2fbec5f5888fa3c242ed19347ba88afb932e869",
-  "끝(UTC)": "2026-08-17T06:48:50Z",
+  "ref": "adc9eaa264a0f3cae0aaa1c82696222c68509ed0",
+  "끝(UTC)": "2026-08-17T07:00:42Z",
   "🔴 코드 sha256(끝)": {
    "runners/world989.py": "ed2d2f5d5edf13623f21d3840e8f2de8527e3e629cd53f9f7c4375f60b5d1663",
    "runners/audit989.py": "643a6e3ca2e06dd0b6569e423ffc7051a18301e261518be6e6ad7854a029f15c",
    "runners/score989.py": "132f0598949b7aa48d32e5deb4075b4fc83ebec04930b7ffa9f8e442b3b8db88",
    "runners/last989.py": "7a5d8c426d488911de31cb8822e35e7198135452ceb27610503b899aaf3d9aee",
-   "runners/note989_gen.py": "61c86604c1c772cef73cd91df62f884e55a56695f8e774c2bcbc581bcf834c03"
+   "runners/note989_gen.py": "54c861b6a17eff75151a1f8805bdfd114565b38445f638e196256239be153587"
   }
  }
 }

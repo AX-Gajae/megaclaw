@@ -49,6 +49,9 @@ def table(ref):
     S = _load("out989_score.json")
     G = _load("out989_wiring.json")
     L = _load("out989_last.json")
+    P = _load("fiveprime_989.json")
+    _secs = {k: v for k, v in P.items() if isinstance(v, dict) and "통과" in v}
+    _bad = sorted(k for k, v in _secs.items() if v["통과"] is not True)
     J = _dig(W, "§3 🔴🔴🔴 판정") or {}
     F = _dig(W, "🔴 깔때기") or {}
     idA = _dig(A, "§A 🔴🔴🔴 경로 동일성 — 987 (검정력 시연 · 조항 64)") or {}
@@ -154,6 +157,18 @@ def table(ref):
     for r in ("runners/world989.py", "runners/audit989.py", "runners/score989.py",
               "runners/last989.py", "runners/note989_gen.py"):
         t["sha.%s" % Path(r).name] = _sha(r)
+    t["오프.분모"] = len(_secs)
+    t["오프.실패수"] = len(_bad)
+    t["오프.실패절"] = _bad
+    t["오프.통과"] = P.get("통과")
+    t["오프.관문분자"] = _dig(P, "⓪ 관문(가지의 커밋된 트리 · 🔴 정본)",
+                          "🔴🔴 분자: 면제 밖에서 갈린 경로")
+    t["오프.산문분자"] = _dig(P, "8 🔴 산문 주장 대 산출물 키(957 · 티처 #95 C1)",
+                          "분자: 통과한 주장")
+    t["오프.산문분모"] = _dig(P, "8 🔴 산문 주장 대 산출물 키(957 · 티처 #95 C1)",
+                          "분모: 등록한 주장")
+    t["오프.수리분자"] = _dig(P, "8 🔴 `[수리]` 레인 계수(955 R6)",
+                          "🔴🔴 레인 수(분자 --- 이것이 「수리 레인」의 수다)")
     t["절통과"] = json.dumps(_dig(S, "🔴🔴🔴 최상위를 이루는 절의 `통과` 전량") or {},
                           ensure_ascii=False)
     return t
