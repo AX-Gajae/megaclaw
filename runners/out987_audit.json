@@ -1,0 +1,891 @@
+{
+ "무엇": "987 §2 — 🔴🔴🔴 **「전」은 고정 ref 로만 · 한 이름 두 값을 끝낸다**",
+ "🔴 축": "자기 자(측정 규율)",
+ "🔴 고정 ref 둘": {
+  "986 이 끝난 트리": "6b399dfc652b211fc0431bfb5259e2c496ddb757",
+  "985 가 끝난 트리": "582444a856f6c573c7d5ebb34c5579497f5faee6",
+  "통과": false,
+  "🔴 이 절의 `통과`": "🔴 **이 절은 `통과` 를 안 만들었다 --- 「모른다」다**(조항 59). `False` 로 센다"
+ },
+ "§A 🔴🔴🔴 「전」을 고정 ref 로 다시 잰다": {
+  "🔴 무엇": "🔴🔴🔴 **`조항 60-나` 원문 뒤에 개정 포인터가 있나** --- 「전」과 「뒤」를 **둘 다 고정 ref 로** 읽는다",
+  "🔴 전(고정 ref)": {
+   "🔴 이름": "986 이 넣기 «전»(985 가 끝난 트리)",
+   "🔴🔴 고정 ref(= 이 값이 없으면 「전」이 아니다)": "582444a856f6c573c7d5ebb34c5579497f5faee6",
+   "🔴 경로": "docs/루프.md",
+   "🔴🔴🔴 값": {
+    "원문을 찾았나": true,
+    "포인터가 있나": false,
+    "본 창(글자)": 400
+   },
+   "🔴 못 읽었다(= 「없다」가 아니다 · 조항 59)": "없음"
+  },
+  "🔴 뒤(고정 ref)": {
+   "🔴 이름": "986 이 넣은 «뒤»(986 이 끝난 트리)",
+   "🔴🔴 고정 ref(= 이 값이 없으면 「전」이 아니다)": "6b399dfc652b211fc0431bfb5259e2c496ddb757",
+   "🔴 경로": "docs/루프.md",
+   "🔴🔴🔴 값": {
+    "원문을 찾았나": true,
+    "포인터가 있나": true,
+    "본 창(글자)": 400
+   },
+   "🔴 못 읽었다(= 「없다」가 아니다 · 조항 59)": "없음"
+  },
+  "🔴🔴🔴 986 이 넣기 «전» 실측": false,
+  "🔴🔴 986 이 넣은 «뒤» 실측": true,
+  "⚠ 986 이 실은 값": true,
+  "🔴🔴🔴 986 이 실은 값이 틀렸나": true,
+  "🔴 왜 틀렸나": "🔴 **`audit986.py:414` 가 `_text(\"docs/루프.md\")` 로 «고정 ref 없이 디스크»를 읽었다.** 그 시점의 디스크에는 **986 자신이 38 분 전에 넣은 포인터**가 이미 있었다 --- 「잰 값만 적는다」는 절 «안»에서 정반대 라벨로 실렸다",
+  "통과": true,
+  "🔴 이 절의 `통과` 가 뜻하는 것": "🔴 **「전」과 「뒤」를 «둘 다» 고정 ref 에서 읽어 값을 냈는가** 하나다. 🔴 그 값이 `True` 든 `False` 든 통과다 --- 판정은 「986 이 실은 값이 틀렸나」 칸이 진다(조항 59)"
+ },
+ "§A-나 🔴🔴 AST 자 — 디스크에서 「전」을 읽는 자리": {
+  "🔴 무엇": "🔴🔴 **AST 자 --- 디스크 읽기 함수에 `docs/….md` 리터럴을 넘기는 자리**",
+  "🔴 바늘: 디스크 읽기 함수": [
+   "_text",
+   "_read",
+   "read_text",
+   "open",
+   "_load",
+   "_load_text"
+  ],
+  "🔴 바늘: 경로 꼴": "^docs/.*\\.md$",
+  "🔴 분모: `RAN_987` 러너 수": 9,
+  "🔴🔴 등록 면제와 사유(조용히 안 뺀다 · 사전등록 §3-1-가)": {
+   "runners/score987.py": "🔴 규칙 D 는 «지금»의 문서를 읽어야 한다(「전」이 아니다)",
+   "runners/prose987.py": "🔴 산문 자는 «지금»의 판정문을 읽어야 한다",
+   "runners/note987_gen.py": "🔴 문서 생산기는 «지금»의 문서를 쓴다"
+  },
+  "🔴 러너별": {
+   "runners/cycle987.py": {
+    "자리 수": 0,
+    "자리": "없음",
+    "🔴 등록 면제": "없음"
+   },
+   "runners/house987.py": {
+    "자리 수": 0,
+    "자리": "없음",
+    "🔴 등록 면제": "없음"
+   },
+   "runners/audit987.py": {
+    "자리 수": 0,
+    "자리": "없음",
+    "🔴 등록 면제": "없음"
+   },
+   "runners/power987.py": {
+    "자리 수": 0,
+    "자리": "없음",
+    "🔴 등록 면제": "없음"
+   },
+   "runners/score987.py": {
+    "자리 수": 0,
+    "자리": "없음",
+    "🔴 등록 면제": "🔴 규칙 D 는 «지금»의 문서를 읽어야 한다(「전」이 아니다)"
+   },
+   "runners/note987_gen.py": {
+    "자리 수": 0,
+    "자리": "없음",
+    "🔴 등록 면제": "🔴 문서 생산기는 «지금»의 문서를 쓴다"
+   },
+   "runners/certify987.py": {
+    "자리 수": 0,
+    "자리": "없음",
+    "🔴 등록 면제": "없음"
+   },
+   "runners/prose987.py": {
+    "자리 수": 0,
+    "자리": "없음",
+    "🔴 등록 면제": "🔴 산문 자는 «지금»의 판정문을 읽어야 한다"
+   },
+   "runners/plumb987.py": {
+    "자리 수": 0,
+    "자리": "없음",
+    "🔴 등록 면제": "없음"
+   }
+  },
+  "🔴🔴🔴 면제 밖에서 걸린 자리 수(= 반증조건 16 의 분자)": 0,
+  "🔴 걸린 자리": "없음",
+  "🔴🔴 검정력 시연(조항 64) — 같은 자를 `runners/audit986.py`(고정 ref)에 문다": {
+   "🔴 고정 ref": "6b399dfc652b211fc0431bfb5259e2c496ddb757",
+   "🔴🔴🔴 잡은 자리 수": 3,
+   "🔴 잡은 자리": [
+    {
+     "파일": "runners/audit986.py",
+     "줄": 414,
+     "호출": "_text('docs/루프.md')"
+    },
+    {
+     "파일": "runners/audit986.py",
+     "줄": 428,
+     "호출": "_text('docs/판정_985.md')"
+    },
+    {
+     "파일": "runners/audit986.py",
+     "줄": 460,
+     "호출": "_text('docs/prereg_985_specificity_power.md')"
+    }
+   ],
+   "🔴🔴🔴 `:414` 의 `_text(\"docs/루프.md\")` 를 잡았나": true,
+   "🔴 이 값이 0 이면": "🔴 **이 자는 자가 아니다**(항진명제)"
+  },
+  "통과": true,
+  "🔴 이 절의 `통과` 가 뜻하는 것": "🔴 **① 987 러너의 면제 밖 자리가 0 이고 ② 같은 자가 986 에서 «떨어지는가».** ②가 0 이면 통과가 아니다 --- 안 떨어지는 자는 자가 아니다"
+ },
+ "§B 🔴🔴🔴 985 가 한 이름으로 두 범위를 쟀다": {
+  "🔴 무엇": "🔴🔴🔴 **985 가 「🔴 분모 ② 역참조 소비자 수」라는 «한 이름»으로 서로 다른 두 범위를 쟀다**",
+  "🔴 고정 ref(985 가 끝난 트리)": "582444a856f6c573c7d5ebb34c5579497f5faee6",
+  "🔴🔴 986 이 실은 반박": "「티처의 `446/349` 는 985 산출물에 없다」",
+  "🔴🔴🔴 그 반박이 참인가": {
+   "985 치환표 칸 `소.전량`": 446,
+   "985 치환표 칸 `소.원장뺀`": 349,
+   "🔴🔴🔴 `446` 이 985 산출물에 «있나»": true,
+   "🔴🔴🔴 `349` 가 985 산출물에 «있나»": true,
+   "🔴🔴🔴 986 의 반박이 «거짓»인가": true,
+   "🔴 `447`·`350` 은 985 어디에 있나": "🔴 **어디에도 없다** --- 사전등록의 「측정 전」 탐색값이 PR 본문에 실렸다"
+  },
+  "🔴🔴🔴 진짜 병 — 같은 이름 · 다른 범위": {
+   "이름": "🔴 분모 ② 역참조 소비자 수",
+   "🔴 두 산출물이 «같은 이름» 키를 쓰나": true,
+   "`out985_audit.json §C` 의 값": 446,
+   "`out985_audit.json §C` 의 범위": "eba25b8fc..196c9e0ec (트리 196c9e0ec908088464d27c7da4a53d966a204d42)",
+   "`fiveprime_985.json §1` 의 값": 415,
+   "`fiveprime_985.json §1` 의 범위": "91ec43686078a55f7ae48b886dd779585db4f1a4..note/985-specificity-power",
+   "🔴🔴🔴 값이 다른가": true,
+   "🔴🔴🔴 범위가 다른가": true,
+   "🔴 §C 의 범위가 «984 것»인가": true,
+   "🔴🔴 그래서 누가 틀렸나": "🔴 **티처도 986 도 안 틀렸고 985 가 틀렸다** --- **한 이름으로 서로 다른 두 범위를 쟀다**"
+  },
+  "🔴🔴🔴 986 이 «실제로» 실은 두 수(고정 ref `6b399dfc652b211fc0431bfb5259e2c496ddb757` 의 치환표)": {
+   "치환표 칸 `오.소비자정본`": 415,
+   "치환표 칸 `오.소비자원장뺀`": 414,
+   "🔴🔴 986 이 화살표로 이은 두 수가 «전후»인가": false,
+   "🔴 무엇인가": "🔴 **서로 다른 두 양이다** --- 「전체」와 「원장 뺀」이다. 화살표는 «전후»를 뜻하는 기호라 가짜다. 🔴 **원장은 옳게 적었다**",
+   "🔴🔴🔴 986 사전등록이 박은 정본과 다른가": true
+  },
+  "🔴🔴 986 의 반박이 어디 있었나": "🔴 **끝 커밋 메시지에만 있었다**(문서·원장·PR 0) --- **986 이 985 를 그 죄로 쳤던 형태 그대로다**",
+  "🔴🔴🔴 배선으로 고친다 — 계수기가 「범위를 이름 붙은 인자로 받는다」": {
+   "🔴 함수": "cycle987.consumer_count(이름, base, head, tree)",
+   "🔴 반환값이 «반드시» 박는 것": [
+    "🔴🔴 이름",
+    "🔴🔴🔴 범위",
+    "🔴🔴 역참조한 트리"
+   ],
+   "🔴 그래서 무엇이 «불가능»해지나": "🔴 **이름 없는 계수를 만들 수 없다** --- 「분모 ② 역참조 소비자 수」라는 낱말만 있고 범위가 없는 칸은 이 배관에서 «나올 수 없다»"
+  },
+  "통과": true,
+  "🔴 이 절의 `통과` 가 뜻하는 것": "🔴 **네 수(446 · 349 · §C · §1)를 고정 ref 에서 «전부 읽었는가»**"
+ },
+ "§B-나 🔴🔴 986 문서의 한글 수사 「985 의 다섯 문서」": {
+  "🔴 무엇": "🔴🔴 **986 문서의 「985 의 «N» 문서」가 잰 값과 어긋나나** --- **한글 수사**라 `NUMPAT` 이 원리상 못 본다",
+  "🔴 고정 ref": "6b399dfc652b211fc0431bfb5259e2c496ddb757",
+  "🔴🔴🔴 잰 값(`out986_audit §A/①`)": 3,
+  "🔴 바늘": "985\\s*(?:의)?\\s*(하나|둘|셋|넷|다섯|여섯|일곱|여덟|아홉|열)\\s*문서",
+  "🔴 문서별": {
+   "docs/판정_986.md": {
+    "🔴 고정 ref": "6b399dfc652b211fc0431bfb5259e2c496ddb757",
+    "🔴 걸린 수사": [
+     "다섯",
+     "다섯"
+    ],
+    "🔴 등록된 참값": 3,
+    "🔴🔴 어긋난 수사": [
+     "다섯",
+     "다섯"
+    ]
+   },
+   "docs/card_986.md": {
+    "🔴 고정 ref": "6b399dfc652b211fc0431bfb5259e2c496ddb757",
+    "🔴 걸린 수사": "없음",
+    "🔴 등록된 참값": 3,
+    "🔴🔴 어긋난 수사": "없음"
+   },
+   "docs/handoff_986.md": {
+    "🔴 고정 ref": "6b399dfc652b211fc0431bfb5259e2c496ddb757",
+    "🔴 걸린 수사": "없음",
+    "🔴 등록된 참값": 3,
+    "🔴🔴 어긋난 수사": "없음"
+   },
+   "docs/pr_986.md": {
+    "🔴 고정 ref": "6b399dfc652b211fc0431bfb5259e2c496ddb757",
+    "🔴 걸린 수사": [
+     "다섯"
+    ],
+    "🔴 등록된 참값": 3,
+    "🔴🔴 어긋난 수사": [
+     "다섯"
+    ]
+   }
+  },
+  "🔴🔴🔴 어긋난 수사 수(= 예측 P4 의 분자)": 3,
+  "통과": true,
+  "🔴 이 절의 `통과` 가 뜻하는 것": "🔴 **잰 값을 고정 ref 에서 «읽었는가»** 하나다"
+ },
+ "§C 🔴🔴 `⑤′` 절 3 을 고정 명부로 다시 낸다": {
+  "🔴 무엇": "🔴🔴🔴 **`⑤′` 절 3 의 「대상」이 «diff 타이밍»으로 줄었다** --- 986 의 `3/16` 은 개선이 아니다(티처 #125 3순위 ⓐ)",
+  "🔴 985 절 3 대상 수(고정 ref)": 9,
+  "🔴 986 절 3 대상 수(고정 ref)": 8,
+  "🔴🔴🔴 985 → 986 에서 대상이 줄었나": true,
+  "🔴 985 대상": [
+   "runners/out941_wikidaily.json",
+   "runners/out985_audit.json",
+   "runners/out985_certify.json",
+   "runners/out985_house.json",
+   "runners/out985_power.json",
+   "runners/out985_prose.json",
+   "runners/out985_score.json",
+   "runners/out985_table.json",
+   "runners/out985_window.json"
+  ],
+  "🔴 986 대상": [
+   "runners/out986_audit.json",
+   "runners/out986_certify.json",
+   "runners/out986_house.json",
+   "runners/out986_power.json",
+   "runners/out986_prose.json",
+   "runners/out986_score.json",
+   "runners/out986_table.json",
+   "runners/out986_window.json"
+  ],
+  "🔴🔴 985 에 있고 986 에 «없는» 대상": [
+   "runners/out941_wikidaily.json",
+   "runners/out985_audit.json",
+   "runners/out985_certify.json",
+   "runners/out985_house.json",
+   "runners/out985_power.json",
+   "runners/out985_prose.json",
+   "runners/out985_score.json",
+   "runners/out985_table.json",
+   "runners/out985_window.json"
+  ],
+  "🔴 985 절 3 통과 / 986 절 3 통과": [
+   false,
+   true
+  ],
+  "🔴🔴🔴 그래서 986 의 §3 초록은 «조용한 좁힘»의 산물이다": "🔴 **분모·명부는 985 와 완전히 같고 열린 것은 §3 하나인데, 그 §3 은 「대상 파일이 9 → 8 로 줄어」 초록이 됐다.** 데몬 산출물이 그 순간 가지 diff 에 «안 들어간» 타이밍이고 **이유가 어느 문서에도 없었다**",
+  "🔴🔴🔴 `[수리] R1` — 987 의 «고정 명부»": {
+   "🔴 명부(이름으로 박았다)": [
+    "runners/out987_house.json",
+    "runners/out987_audit.json",
+    "runners/out987_power.json",
+    "runners/out987_score.json",
+    "runners/out987_table.json",
+    "runners/out987_certify.json",
+    "runners/out987_prose.json",
+    "runners/out987_window.json"
+   ],
+   "🔴 명부 수": 8,
+   "🔴 `⑤′` 주행에 `--keyaudit` 로 전량 넘긴다": true,
+   "🔴 왜": "🔴 **diff 타이밍이 대상을 못 줄이게 한다** --- 줄어서 초록이 되는 길을 «구성상» 막는다"
+  },
+  "🔴🔴🔴 데몬 산출물 셋 — 실측": {
+   "🔴 파일별": {
+    "runners/out941_wikidaily.json": {
+     "절 수": 5,
+     "`통과` 키가 있는 절": 0,
+     "🔴 있나": true,
+     "🔴🔴 이 파일이 대상에 들면 §3 이 떨어지나": true
+    },
+    "runners/out941_steamrev.json": {
+     "절 수": 3,
+     "`통과` 키가 있는 절": 0,
+     "🔴 있나": true,
+     "🔴🔴 이 파일이 대상에 들면 §3 이 떨어지나": true
+    },
+    "runners/out941_robots.json": {
+     "절 수": 1,
+     "`통과` 키가 있는 절": 0,
+     "🔴 있나": true,
+     "🔴🔴 이 파일이 대상에 들면 §3 이 떨어지나": true
+    }
+   },
+   "🔴🔴🔴 대상에 들면 §3 을 떨어뜨리는 파일": [
+    "runners/out941_wikidaily.json",
+    "runners/out941_steamrev.json",
+    "runners/out941_robots.json"
+   ],
+   "🔴 그래서 R2 때문에 다음 사이클에 되돌아온다": "🔴 **986 R2 가 데몬 커밋 경로에 이 셋을 넣었다** --- 다음 데몬 기동부터 이 셋이 가지 diff 에 들어오고 그때 §3 은 떨어진다"
+  },
+  "통과": true,
+  "🔴 이 절의 `통과` 가 뜻하는 것": "🔴 **985·986 의 절 3 대상을 고정 ref 에서 «둘 다 읽었는가»** 하나다"
+ },
+ "§D 🔴 즉시 정정": {
+  "🔴 무엇": "🔴 **즉시 정정 --- 수리로 안 센다. 잴 수 있는 것만 «잰다»**",
+  "🔴 고정 ref": "6b399dfc652b211fc0431bfb5259e2c496ddb757",
+  "① 985 F5 분모의 산술": {
+   "🔴 티처가 준 값": {
+    "인용 분모": 7,
+    "원장이 싣는 산출물": 13,
+    "피한 것": 5
+   },
+   "🔴🔴 7 + 5": 12,
+   "🔴🔴🔴 안 맞는 이유": "🔴 **사전등록 면제 1 을 안 보여서다** --- 7 + 1 + 5 = 13",
+   "🔴 986 의 F5 분모(고정 ref 실측)": 8
+  },
+  "② 985 재현이 「절반」이다": {
+   "🔴 λ 별 「985 가 실은 값과 같은가」": {
+    "u=0": true,
+    "u=3": false
+   },
+   "🔴🔴🔴 둘 다 참인가": false,
+   "🔴 판정문은 옳게 적었나": "🔴 **판정문은 옳게 적었고 원장·인계·PR 이 `u=3` 쪽을 뺐다**(티처 #125)"
+  },
+  "③ 「소비자 415 → 414」의 화살표": {
+   "🔴🔴🔴 전후인가": false,
+   "🔴 무엇인가": "🔴 **서로 다른 두 양이다** --- 「전체」와 「원장 뺀」이다. 화살표는 **전후를 뜻하는 기호**라 가짜다. 🔴 **원장은 옳게 적었다**"
+  },
+  "④ `certify §나` 의 키 이름": {
+   "🔴 986 이 쓴 키 이름": [
+    "🔴 분모(`SCORE_CELLS` 의 길이)"
+   ],
+   "🔴🔴 실제 뜻": "🔴 **「985 표에서 «풀리는» 칸 수」다** --- `SCORE_CELLS_985` 의 길이(8)이지 986 판 분모(16)가 아니다",
+   "🔴 987 이 고친 이름": "🔴 분모(985 표에서 풀리는 칸 수)"
+  },
+  "⑤ `M2` — 여섯째 칸이 985 를 잡은 그 칸을 면제 목록에 둔다": {
+   "🔴 986 의 `SELF_DEP` 에 든 칸": [
+    "채.반증분자모",
+    "채.반증분모",
+    "채.반증된",
+    "채.반증통과",
+    "채.예측분자모",
+    "채.예측분자",
+    "채.예측통과",
+    "채.최상위통과"
+   ],
+   "🔴🔴🔴 그중 985 를 «잡은» 칸": [
+    "채.반증분자모",
+    "채.반증된"
+   ],
+   "🔴🔴 그래서 무엇이 원리상 안 보이나": "🔴 **사이클 «안»에서 도는 여섯째 칸은 반증 칸을 못 본다** --- 사유는 986 이 적어 놨으나 **자가 그 자리에서 눈을 감는다**는 사실은 남는다. 🔴 **전량 검사는 `certify` 가 그대로 한다**(그것이 정본이다)",
+   "🔴 조건 11 의 지금 값(고정 ref)": "못 읽었다"
+  },
+  "⑥ `R3` 「986 자리 0」이 «범위 산물»이다": {
+   "🔴 986 이 실은 자리 수": null,
+   "🔴🔴🔴 왜 0 인가": "🔴 **`_fmt_literals` 가 「자리표시자 + 산술 리터럴」을 «둘 다» 요구하는데 `note986_gen.py` 의 서식 다섯은 전부 `⟦⟧` 슬롯이라 스캔 자체가 안 된다** --- 0 은 「깨끗하다」가 아니라 **「안 봤다」**다(조항 59)"
+  },
+  "⑦ 「빈 파일 `=` 자백이 끝 커밋 메시지에만 있다」": {
+   "🔴 어디에 있었나": "🔴 **끝 커밋 메시지에만**(문서 0 · 원장 0 · PR 0)",
+   "🔴 987 은 어디에 적나": "🔴 **판정문 · 인계 카드 · PR 본문 · 원장 넷 다**"
+  },
+  "⑧ 「측정 창 안에서 러너 10 개를 고쳤다」": {
+   "🔴 986 의 통과 조건": "🔴 **「낡은 산출물 0」뿐이다**",
+   "🔴🔴🔴 그래서 무엇이 집행 안 되나": "🔴 **`조항 66` 의 「주행 중 소스 수정 금지」 자체는 집행되지 않는다** --- 고치고 «다시 돌리면» 통과다. 🔴 987 도 같은 조건이고 **그 사실을 적는다**"
+  },
+  "통과": true,
+  "🔴 이 절의 `통과` 가 뜻하는 것": "🔴 **986 의 산출물을 고정 ref 에서 «읽었는가»** 하나다"
+ },
+ "§E 🔴 데몬(규칙 B)": {
+  "🔴 무엇": "🔴 **규칙 B --- 데몬을 안 재웠나**",
+  "🔴 PID(`pgrep` 로 물었다)": [
+   "70251"
+  ],
+  "🔴🔴 살아 있나": true,
+  "🔴 데몬 커밋 경로(`harvest_daemon.PATHS` 에서 «읽었다»)": [
+   "data/ingest",
+   "data/state",
+   "runners/out941_wikidaily.json",
+   "runners/out941_steamrev.json",
+   "runners/out941_robots.json"
+  ],
+  "통과": true,
+  "🔴 이 절의 `통과` 가 뜻하는 것": "🔴 **데몬이 살아 있는가** 하나다"
+ },
+ "통과": true,
+ "🔴🔴 조항 66-② (987)": {
+  "🔴🔴 조항 66-② 신고": "🔴 **창은 「사이클 단위」다**(첫 단계 시작 ~ 지금)",
+  "🔴 분모: `code_stamp` 가 덮는 파일 수": 97,
+  "🔴 분모: `RAN_ALL` 러너 수": 27,
+  "🔴🔴 분모가 못 덮은 `RAN_ALL` 항목(= 「없다」가 아니다 · 조항 59)": "없음",
+  "🔴 사이클 시작(UTC)": "2026-08-17T03:41:20Z",
+  "⚠ 좁은 창(이 러너의 t0~지금)에서 바뀐 파일": "없음",
+  "🔴🔴🔴 넓은 창(사이클 시작~지금)에서 바뀐 파일": [
+   "runners/audit987.py",
+   "runners/certify987.py",
+   "runners/note987_gen.py",
+   "runners/power987.py"
+  ],
+  "🔴🔴🔴 측정 창 안에 러너를 고쳤나": true,
+  "🔴🔴 좁은 창이 놓친 파일 수": 4,
+  "🔴🔴🔴 값을 낸 뒤 고치고 «안 다시 돌린» 산출물": {
+   "🔴🔴 무엇": "🔴 **값을 낸 뒤에 그 값을 내는 러너를 고치고 «안 다시 돌린» 산출물**",
+   "🔴 분모: 생산자 표에 든 산출물": 7,
+   "🔴 산출물별": {
+    "runners/out987_audit.json": {
+     "생산자": "runners/audit987.py",
+     "🔴 같이 보는 공용 배관": [
+      "runners/cycle987.py",
+      "runners/ledger.py"
+     ],
+     "🔴 파일별": {
+      "runners/audit987.py": {
+       "낼 때 sha256": "38cb1290e24b4f23ec119f6be00f8c266e1758b71d980c199f59533940353afc",
+       "지금 sha256": "38cb1290e24b4f23ec119f6be00f8c266e1758b71d980c199f59533940353afc",
+       "같은가": true
+      },
+      "runners/cycle987.py": {
+       "낼 때 sha256": "0169ecdef99f568aa27f7ed9280c6b73c52d3816137a93863343c9f2a6eabea8",
+       "지금 sha256": "0169ecdef99f568aa27f7ed9280c6b73c52d3816137a93863343c9f2a6eabea8",
+       "같은가": true
+      },
+      "runners/ledger.py": {
+       "낼 때 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "지금 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "같은가": true
+      }
+     },
+     "🔴 도장에 없어 못 본 것(= 「안 바뀌었다」가 아니다)": "없음",
+     "🔴🔴 낼 때와 달라진 파일": "없음"
+    },
+    "runners/out987_certify.json": {
+     "생산자": "runners/certify987.py",
+     "🔴 같이 보는 공용 배관": [
+      "runners/cycle987.py",
+      "runners/ledger.py"
+     ],
+     "🔴 파일별": {
+      "runners/certify987.py": {
+       "낼 때 sha256": "ad429670c781d5bd194dac1852c0f110b1858e5304004f9657bb82a5ca0ce299",
+       "지금 sha256": "ad429670c781d5bd194dac1852c0f110b1858e5304004f9657bb82a5ca0ce299",
+       "같은가": true
+      },
+      "runners/cycle987.py": {
+       "낼 때 sha256": "0169ecdef99f568aa27f7ed9280c6b73c52d3816137a93863343c9f2a6eabea8",
+       "지금 sha256": "0169ecdef99f568aa27f7ed9280c6b73c52d3816137a93863343c9f2a6eabea8",
+       "같은가": true
+      },
+      "runners/ledger.py": {
+       "낼 때 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "지금 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "같은가": true
+      }
+     },
+     "🔴 도장에 없어 못 본 것(= 「안 바뀌었다」가 아니다)": "없음",
+     "🔴🔴 낼 때와 달라진 파일": "없음"
+    },
+    "runners/out987_house.json": {
+     "생산자": "runners/house987.py",
+     "🔴 같이 보는 공용 배관": [
+      "runners/cycle987.py",
+      "runners/ledger.py"
+     ],
+     "🔴 파일별": {
+      "runners/house987.py": {
+       "낼 때 sha256": "7d7686d10bf2271d0d8b9718558ebbc21c890d228be9282bb9f767604169d214",
+       "지금 sha256": "7d7686d10bf2271d0d8b9718558ebbc21c890d228be9282bb9f767604169d214",
+       "같은가": true
+      },
+      "runners/cycle987.py": {
+       "낼 때 sha256": "0169ecdef99f568aa27f7ed9280c6b73c52d3816137a93863343c9f2a6eabea8",
+       "지금 sha256": "0169ecdef99f568aa27f7ed9280c6b73c52d3816137a93863343c9f2a6eabea8",
+       "같은가": true
+      },
+      "runners/ledger.py": {
+       "낼 때 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "지금 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "같은가": true
+      }
+     },
+     "🔴 도장에 없어 못 본 것(= 「안 바뀌었다」가 아니다)": "없음",
+     "🔴🔴 낼 때와 달라진 파일": "없음"
+    },
+    "runners/out987_power.json": {
+     "생산자": "runners/power987.py",
+     "🔴 같이 보는 공용 배관": [
+      "runners/cycle987.py",
+      "runners/ledger.py"
+     ],
+     "🔴 파일별": {
+      "runners/power987.py": {
+       "낼 때 sha256": "d55139a7db0471933c5f27be14f297bcca6ac65e5bb847030fe151edfd7f8130",
+       "지금 sha256": "d55139a7db0471933c5f27be14f297bcca6ac65e5bb847030fe151edfd7f8130",
+       "같은가": true
+      },
+      "runners/cycle987.py": {
+       "낼 때 sha256": "0169ecdef99f568aa27f7ed9280c6b73c52d3816137a93863343c9f2a6eabea8",
+       "지금 sha256": "0169ecdef99f568aa27f7ed9280c6b73c52d3816137a93863343c9f2a6eabea8",
+       "같은가": true
+      },
+      "runners/ledger.py": {
+       "낼 때 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "지금 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "같은가": true
+      }
+     },
+     "🔴 도장에 없어 못 본 것(= 「안 바뀌었다」가 아니다)": "없음",
+     "🔴🔴 낼 때와 달라진 파일": "없음"
+    },
+    "runners/out987_prose.json": {
+     "생산자": "runners/prose987.py",
+     "🔴 같이 보는 공용 배관": [
+      "runners/cycle987.py",
+      "runners/ledger.py"
+     ],
+     "🔴 파일별": {
+      "runners/prose987.py": {
+       "낼 때 sha256": "ff7e16bab2dc57fac76c2cac4b34db9ba07de187b1126e0366f7eaf073521eba",
+       "지금 sha256": "ff7e16bab2dc57fac76c2cac4b34db9ba07de187b1126e0366f7eaf073521eba",
+       "같은가": true
+      },
+      "runners/cycle987.py": {
+       "낼 때 sha256": "0169ecdef99f568aa27f7ed9280c6b73c52d3816137a93863343c9f2a6eabea8",
+       "지금 sha256": "0169ecdef99f568aa27f7ed9280c6b73c52d3816137a93863343c9f2a6eabea8",
+       "같은가": true
+      },
+      "runners/ledger.py": {
+       "낼 때 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "지금 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "같은가": true
+      }
+     },
+     "🔴 도장에 없어 못 본 것(= 「안 바뀌었다」가 아니다)": "없음",
+     "🔴🔴 낼 때와 달라진 파일": "없음"
+    },
+    "runners/out987_score.json": {
+     "생산자": "runners/score987.py",
+     "🔴 같이 보는 공용 배관": [
+      "runners/cycle987.py",
+      "runners/ledger.py"
+     ],
+     "🔴 파일별": {
+      "runners/score987.py": {
+       "낼 때 sha256": "688379452ee8dc27097eee797593b969e41da669b3e16a377dd4c7d5dce008c9",
+       "지금 sha256": "688379452ee8dc27097eee797593b969e41da669b3e16a377dd4c7d5dce008c9",
+       "같은가": true
+      },
+      "runners/cycle987.py": {
+       "낼 때 sha256": "0169ecdef99f568aa27f7ed9280c6b73c52d3816137a93863343c9f2a6eabea8",
+       "지금 sha256": "0169ecdef99f568aa27f7ed9280c6b73c52d3816137a93863343c9f2a6eabea8",
+       "같은가": true
+      },
+      "runners/ledger.py": {
+       "낼 때 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "지금 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "같은가": true
+      }
+     },
+     "🔴 도장에 없어 못 본 것(= 「안 바뀌었다」가 아니다)": "없음",
+     "🔴🔴 낼 때와 달라진 파일": "없음"
+    },
+    "runners/out987_table.json": {
+     "생산자": "runners/note987_gen.py",
+     "🔴 같이 보는 공용 배관": [
+      "runners/cycle987.py",
+      "runners/ledger.py"
+     ],
+     "🔴 파일별": {
+      "runners/note987_gen.py": {
+       "낼 때 sha256": "b6e11e785726ad4bcc0a5350707fdc16062dd159736cbbda52d3332b108d6505",
+       "지금 sha256": "ab30e83df7ad2ea0226ba031664b8ad972453e55e0b18de81546563c6f7fad74",
+       "같은가": false
+      },
+      "runners/cycle987.py": {
+       "낼 때 sha256": "0169ecdef99f568aa27f7ed9280c6b73c52d3816137a93863343c9f2a6eabea8",
+       "지금 sha256": "0169ecdef99f568aa27f7ed9280c6b73c52d3816137a93863343c9f2a6eabea8",
+       "같은가": true
+      },
+      "runners/ledger.py": {
+       "낼 때 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "지금 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+       "같은가": true
+      }
+     },
+     "🔴 도장에 없어 못 본 것(= 「안 바뀌었다」가 아니다)": "없음",
+     "🔴🔴 낼 때와 달라진 파일": [
+      "runners/note987_gen.py"
+     ]
+    }
+   },
+   "🔴🔴🔴 낡은 산출물(고치고 안 다시 돌렸다)": [
+    "runners/out987_table.json"
+   ],
+   "🔴 못 읽은 것(= 「없다」가 아니다)": "없음",
+   "🔴🔴🔴 낡은 것이 있나": true
+  },
+  "🔴🔴🔴 채점기를 다시 돌리고 «안 다시 찍은» 문서(분모 5 · R2)": {
+   "🔴🔴 무엇": "🔴🔴🔴 **채점기를 다시 돌리고 문서(·PR 본문)를 안 다시 찍었나** --- 🔴 **`[수리] R2`: 분모가 3 → 5 다**",
+   "🔴🔴 분모: 문서가 인용하는 산출물(986 은 3 · 987 은 5)": 5,
+   "🔴 분모의 내력(조항 60)": {
+    "986 판": [
+     "out986_score.json",
+     "out986_audit.json",
+     "out986_power.json"
+    ],
+    "987 판": [
+     "runners/out987_score.json",
+     "runners/out987_audit.json",
+     "runners/out987_power.json",
+     "runners/out987_house.json",
+     "runners/out987_prose.json"
+    ]
+   },
+   "🔴🔴 «명시적으로» 뺀 입력과 사유(조용히 안 뺀다)": {
+    "runners/out987_certify.json": "🔴 `certify` 는 「표 ↔ 채점기 ↔ 디스크 문서」를 «검사»하는 자다. 그 지문을 표에 박으면 문서가 자기 검사자의 지문을 싣는 «자기 참조»가 되어 이 자는 원리상 고정점에 도달 못 한다",
+    "runners/out987_table.json": "🔴 치환표는 문서 «자신»이다 --- 표의 지문을 표 안에 박는 것은 정의상 불가능하다"
+   },
+   "🔴 분모: 이 표가 덮는 문서": 4,
+   "🔴 내용 지문에서 뺀 키(조항 59·60)": [
+    "🔴 도장",
+    "🔴🔴 조항 66-② (987)",
+    "🔴 987 이 읽은 산출물 sha256",
+    "🔴🔴🔴 987 봉인 감사(무엇을 봉했고 무엇을 뺐나)"
+   ],
+   "🔴 입력별": {
+    "runners/out987_score.json": {
+     "문서를 찍을 때 내용 지문": "8cf1a6a33523ba2f9f7a266557ddef39ec78d6053172e9ad15a2869dc8fe6c04",
+     "지금 내용 지문": "81e718d49ed89005cc7c5436f9b9ae67f365f3f3d68ca7466345385b4497ae06",
+     "같은가": false
+    },
+    "runners/out987_audit.json": {
+     "문서를 찍을 때 내용 지문": "a39a5fe7c3e0e619bba5c5524c232b2f32edc13f59381b0ca9090c0b43ed2ae0",
+     "지금 내용 지문": "a39a5fe7c3e0e619bba5c5524c232b2f32edc13f59381b0ca9090c0b43ed2ae0",
+     "같은가": true
+    },
+    "runners/out987_power.json": {
+     "문서를 찍을 때 내용 지문": "62724d19ead6b7ccb8fe9018b6b5a2534603e7da890d4a1bb2fcb0834026ce01",
+     "지금 내용 지문": "62724d19ead6b7ccb8fe9018b6b5a2534603e7da890d4a1bb2fcb0834026ce01",
+     "같은가": true
+    },
+    "runners/out987_house.json": {
+     "문서를 찍을 때 내용 지문": "cd181ef346530a4c05d475ce2bc8253d17dbf0fac2cd4c98891e9ec37a3841d2",
+     "지금 내용 지문": "a85a53185e2b627ca40d9f5bd885b222562cc0f5a0476775962895652839c038",
+     "같은가": false
+    },
+    "runners/out987_prose.json": {
+     "문서를 찍을 때 내용 지문": "2f2cd24374b7ba79358b57a1778342ff5f9067a371b1104b551dcdd8afa27509",
+     "지금 내용 지문": "2f2cd24374b7ba79358b57a1778342ff5f9067a371b1104b551dcdd8afa27509",
+     "같은가": true
+    }
+   },
+   "🔴 문서별": {
+    "docs/card_987.md": {
+     "생산기": "runners/note987_gen.py",
+     "있나": true,
+     "지금 sha256": "eea8d611e8c777c7437b2eefb58227198b69fe48d090afd26e1971347ae5db58"
+    },
+    "docs/handoff_987.md": {
+     "생산기": "runners/note987_gen.py",
+     "있나": true,
+     "지금 sha256": "c574c3a852218018c1cab864a1bc167999ad09a10973072cbda5645c56340eb7"
+    },
+    "docs/pr_987.md": {
+     "생산기": "runners/note987_gen.py",
+     "있나": true,
+     "지금 sha256": "81a65acb102e7d264881c651ef64f842f584dc321739e62ee0bd02f285ce6294"
+    },
+    "docs/판정_987.md": {
+     "생산기": "runners/note987_gen.py",
+     "있나": true,
+     "지금 sha256": "3b1fbbe26d370408cdea4b669c8e4ce73a972f2a4ccc8ddd505f01b0623e0bef"
+    }
+   },
+   "🔴 치환표가 sha 를 안 박은 입력(= 「같다」가 아니다 · 조항 59)": "없음",
+   "🔴🔴🔴 문서를 찍은 뒤 달라진 산출물": [
+    "runners/out987_score.json",
+    "runners/out987_house.json"
+   ],
+   "🔴🔴🔴 낡은 문서가 있나": true,
+   "🔴 이 값이 `None` 이면": "🔴 **「낡지 않았다」가 아니라 「모른다」**다(조항 59)"
+  },
+  "🔴 시작 요약(좁은 창)": "7673de6f5adc0478622d849f21a45eb1b3e2405eb39b5aa3beb06069442f467e",
+  "🔴 시작 요약(넓은 창)": "66874c8510e88a2f5cd18abcc72936fd921f37e8722b619d89a4a184b05f66c0",
+  "🔴 끝 요약": "7673de6f5adc0478622d849f21a45eb1b3e2405eb39b5aa3beb06069442f467e",
+  "통과": false,
+  "🔴 이 절의 `통과`": "🔴🔴 **조건 넷**: ① 사이클 시작 도장을 읽었다 · ② 낡은 산출물 0 · ③ **낡은 문서 0**(분모 5) · ④ 분모가 `RAN_ALL` 을 전부 덮었다. 🔴 ③ 이 `None`(모른다)이면 «통과가 아니다»(조항 59)"
+ },
+ "🔴 987 이 읽은 산출물 sha256": {
+  "runners/out983_grid.json": "4715bcc6e49fc30a7bd334bc04546c482710cd130e57af0ea9173a661a42f64e",
+  "runners/out983_reps.json": "ae81925626dc66affff4901f0e33d2f649b4c31650c107a3ced7ea5a67e4cc4f",
+  "runners/out985_table.json": "bd206529bd98ba2765607732965ca74952166927b122404084c78d6a9868a6a9",
+  "runners/out985_audit.json": "1cff85092f261606b3066222840758b644ecbd55bafa436d53d242b19c49f74f",
+  "runners/fiveprime_985.json": "9e985c2bda76623cf0a9342b31c345ce25c3dee8526bbb245bf13a30f90ac015",
+  "runners/out986_audit.json": "bf824fe39559c521833424cce23673dd301afcb66b1079a1eb66a06fcbd047f4",
+  "runners/out986_power.json": "b419ffcb74cf1502bc7d342fc94378729a902fa405c8cbf811a9a2d045f9a577",
+  "runners/out986_score.json": "3948ac558f241b7bb11f2a97fe66a4c70ecf1e3a98b35ed577e45b2dd1e3ac1e",
+  "runners/out986_table.json": "d5a0bfdb4987ab11b1d693e3d921c5f21cfaf55f085db09de3dcbc25bc25f728",
+  "runners/out986_certify.json": "c35d2a2fc1d432f1fde6ffe81fffbb5ab00a5dbec9094930e70453784d3ff8b2",
+  "runners/fiveprime_986.json": "0737b829e236a154815e5393246642370efe6d1393fd3d6cc3e09f6eb6894872"
+ },
+ "🔴 도장": {
+  "언제(시작)": "2026-08-17T03:51:32Z",
+  "언제(끝)": "2026-08-17T03:51:32Z",
+  "시작 code_stamp 요약": "7673de6f5adc0478622d849f21a45eb1b3e2405eb39b5aa3beb06069442f467e",
+  "끝 code_stamp 요약": "7673de6f5adc0478622d849f21a45eb1b3e2405eb39b5aa3beb06069442f467e",
+  "🔴 시작=끝": true,
+  "분모: 도장이 덮는 파일": 97,
+  "🔴 자료 지문": {
+   "sao941": "50eacbe4468cf86f561535e3eea7aec31f0151679a33018b7eb12627d1cbbd83",
+   "sao959": "273e4bad06c9f073be89ae3477b89acf9a4973f2c77c66e21aa571a4b5d56728",
+   "hplt_ko": "67de3062bad60e122c446fccb0b96d2c3a36c0ee2deafa40324a22dcad6c09a2"
+  },
+  "분모: 연 자료 파일": 3,
+  "🔴 F1 기준 ref(준 대로)": "100ed75eed103fe1c4dc9dc7cef3d9da0ef3949b",
+  "🔴 40자 고정 sha 인가": true,
+  "🔴 기준 ref 가 0000…0000 인가": false,
+  "러너별": {
+   "runners/cycle987.py": {
+    "디스크 sha256": "0169ecdef99f568aa27f7ed9280c6b73c52d3816137a93863343c9f2a6eabea8",
+    "커밋 blob sha256": "0169ecdef99f568aa27f7ed9280c6b73c52d3816137a93863343c9f2a6eabea8",
+    "일치": true
+   },
+   "runners/house987.py": {
+    "디스크 sha256": "7d7686d10bf2271d0d8b9718558ebbc21c890d228be9282bb9f767604169d214",
+    "커밋 blob sha256": "7d7686d10bf2271d0d8b9718558ebbc21c890d228be9282bb9f767604169d214",
+    "일치": true
+   },
+   "runners/audit987.py": {
+    "디스크 sha256": "38cb1290e24b4f23ec119f6be00f8c266e1758b71d980c199f59533940353afc",
+    "커밋 blob sha256": "38cb1290e24b4f23ec119f6be00f8c266e1758b71d980c199f59533940353afc",
+    "일치": true
+   },
+   "runners/power987.py": {
+    "디스크 sha256": "d55139a7db0471933c5f27be14f297bcca6ac65e5bb847030fe151edfd7f8130",
+    "커밋 blob sha256": "d55139a7db0471933c5f27be14f297bcca6ac65e5bb847030fe151edfd7f8130",
+    "일치": true
+   },
+   "runners/score987.py": {
+    "디스크 sha256": "688379452ee8dc27097eee797593b969e41da669b3e16a377dd4c7d5dce008c9",
+    "커밋 blob sha256": "688379452ee8dc27097eee797593b969e41da669b3e16a377dd4c7d5dce008c9",
+    "일치": true
+   },
+   "runners/note987_gen.py": {
+    "디스크 sha256": "ab30e83df7ad2ea0226ba031664b8ad972453e55e0b18de81546563c6f7fad74",
+    "커밋 blob sha256": "ab30e83df7ad2ea0226ba031664b8ad972453e55e0b18de81546563c6f7fad74",
+    "일치": true
+   },
+   "runners/certify987.py": {
+    "디스크 sha256": "ad429670c781d5bd194dac1852c0f110b1858e5304004f9657bb82a5ca0ce299",
+    "커밋 blob sha256": "ad429670c781d5bd194dac1852c0f110b1858e5304004f9657bb82a5ca0ce299",
+    "일치": true
+   },
+   "runners/prose987.py": {
+    "디스크 sha256": "ff7e16bab2dc57fac76c2cac4b34db9ba07de187b1126e0366f7eaf073521eba",
+    "커밋 blob sha256": "ff7e16bab2dc57fac76c2cac4b34db9ba07de187b1126e0366f7eaf073521eba",
+    "일치": true
+   },
+   "runners/plumb987.py": {
+    "디스크 sha256": "a4f36cb88243498ef02bc24e4e70d26dff9e8f3f90e71c9bfe52154d0d1a37bc",
+    "커밋 blob sha256": "a4f36cb88243498ef02bc24e4e70d26dff9e8f3f90e71c9bfe52154d0d1a37bc",
+    "일치": true
+   },
+   "runners/fiveprime902.py": {
+    "디스크 sha256": "499c69b119eaec2c26ad8394feba03dfa9e1f4d48633d18a3cda11595eff04ca",
+    "커밋 blob sha256": "499c69b119eaec2c26ad8394feba03dfa9e1f4d48633d18a3cda11595eff04ca",
+    "일치": true
+   },
+   "runners/cycle986.py": {
+    "디스크 sha256": "7ef8dceaf57028f295e7c1db3f436321865bf396a1f5d4b51649490f872b05bc",
+    "커밋 blob sha256": "7ef8dceaf57028f295e7c1db3f436321865bf396a1f5d4b51649490f872b05bc",
+    "일치": true
+   },
+   "runners/audit986.py": {
+    "디스크 sha256": "ca15b88ea722f2d24fb3eb9bed5006e7e64703130cc15704dc7e88d366cefce4",
+    "커밋 blob sha256": "ca15b88ea722f2d24fb3eb9bed5006e7e64703130cc15704dc7e88d366cefce4",
+    "일치": true
+   },
+   "runners/power986.py": {
+    "디스크 sha256": "ae3a86330e3cdbc0639090f8bb98e4a68273c124ed0a0ef1aabd68e53fd948d5",
+    "커밋 blob sha256": "ae3a86330e3cdbc0639090f8bb98e4a68273c124ed0a0ef1aabd68e53fd948d5",
+    "일치": true
+   },
+   "runners/score986.py": {
+    "디스크 sha256": "4a9cae0628ebb97d60345769140625c4956b8f92c878f7aa68311fa5cd3d612b",
+    "커밋 blob sha256": "4a9cae0628ebb97d60345769140625c4956b8f92c878f7aa68311fa5cd3d612b",
+    "일치": true
+   },
+   "runners/note986_gen.py": {
+    "디스크 sha256": "6d35e9d80b6ab33602d30e1fcf4555c4176d424252bbac12948b144ba9e28925",
+    "커밋 blob sha256": "6d35e9d80b6ab33602d30e1fcf4555c4176d424252bbac12948b144ba9e28925",
+    "일치": true
+   },
+   "runners/certify986.py": {
+    "디스크 sha256": "daca13c5aefc8562401bf518d8ad70ab51224268ae1da676bba18ed3c22a0507",
+    "커밋 blob sha256": "daca13c5aefc8562401bf518d8ad70ab51224268ae1da676bba18ed3c22a0507",
+    "일치": true
+   },
+   "runners/house986.py": {
+    "디스크 sha256": "17aa30bf53b9004f71eb87ba7311bee8f850d0d5bb3c7af0a7fbeb9f674eeb6d",
+    "커밋 blob sha256": "17aa30bf53b9004f71eb87ba7311bee8f850d0d5bb3c7af0a7fbeb9f674eeb6d",
+    "일치": true
+   },
+   "runners/prose986.py": {
+    "디스크 sha256": "67c0f6806b025df019881d2d23a890d9bc66a9a333d7496a838db63a343872a1",
+    "커밋 blob sha256": "67c0f6806b025df019881d2d23a890d9bc66a9a333d7496a838db63a343872a1",
+    "일치": true
+   },
+   "runners/power985.py": {
+    "디스크 sha256": "1fa02927c3ab02bc28773aef2f6bee6668a4b27711a0a0561ab1320235cb9ce5",
+    "커밋 blob sha256": "1fa02927c3ab02bc28773aef2f6bee6668a4b27711a0a0561ab1320235cb9ce5",
+    "일치": true
+   },
+   "runners/score985.py": {
+    "디스크 sha256": "7057c3d37bb09f3dc918211e4e14afb4984da30d512b3457c7d77978703dbc7c",
+    "커밋 blob sha256": "7057c3d37bb09f3dc918211e4e14afb4984da30d512b3457c7d77978703dbc7c",
+    "일치": true
+   },
+   "runners/audit985.py": {
+    "디스크 sha256": "11ede41e8e3470755a4654a916ecd7ad1a4c0c67022a7cc4bba820b5e7214c31",
+    "커밋 blob sha256": "11ede41e8e3470755a4654a916ecd7ad1a4c0c67022a7cc4bba820b5e7214c31",
+    "일치": true
+   },
+   "runners/stat983.py": {
+    "디스크 sha256": "b6c915aba7d8e0705a895d4283d60b736582c775c0a5f2c4915586ae7ed99b59",
+    "커밋 blob sha256": "b6c915aba7d8e0705a895d4283d60b736582c775c0a5f2c4915586ae7ed99b59",
+    "일치": true
+   },
+   "runners/tgrid983.py": {
+    "디스크 sha256": "2788c2927c19895023f1ac557b2e27fd2361e528cbb9da2de2a57d26c2d1c0fb",
+    "커밋 blob sha256": "2788c2927c19895023f1ac557b2e27fd2361e528cbb9da2de2a57d26c2d1c0fb",
+    "일치": true
+   },
+   "runners/ledger.py": {
+    "디스크 sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+    "커밋 blob sha256": "b3669a4d6538632c9690738d4011d8b7f769223bfb7effcf2c563a3e0da5a426",
+    "일치": true
+   },
+   "runners/alpha977.py": {
+    "디스크 sha256": "42c4c6b3797a75bdf9f681ea29facbdb41936b088cf6519339825ccc6db527d3",
+    "커밋 blob sha256": "42c4c6b3797a75bdf9f681ea29facbdb41936b088cf6519339825ccc6db527d3",
+    "일치": true
+   },
+   "runners/mix980.py": {
+    "디스크 sha256": "8f89c3fe4dc6e544f7c474c6351c1ddf33cf784176f94bee596e8281f5ac669a",
+    "커밋 blob sha256": "8f89c3fe4dc6e544f7c474c6351c1ddf33cf784176f94bee596e8281f5ac669a",
+    "일치": true
+   },
+   "runners/harvest_daemon.py": {
+    "디스크 sha256": "7e75be09fde978e50accbc13044644c4e3928f7121a44abb7f23cf4b35c537a9",
+    "커밋 blob sha256": "7e75be09fde978e50accbc13044644c4e3928f7121a44abb7f23cf4b35c537a9",
+    "일치": true
+   }
+  },
+  "🔴 분자/분모": "27 / 27",
+  "🔴 F5 통과": true,
+  "통과": true,
+  "🔴 이 절의 `통과`": "도장의 `🔴 F5 통과` 그 값이다(리터럴이 아니다)"
+ },
+ "🔴🔴🔴 987 봉인 감사(무엇을 봉했고 무엇을 뺐나)": {
+  "🔴🔴🔴 987 봉인 감사": "🔴 봉인 대상은 «절 명부»이고 제외 키를 산출물에 싣는다",
+  "🔴 봉인한 절": [
+   "🔴 고정 ref 둘",
+   "🔴🔴 조항 66-② (987)",
+   "🔴 도장"
+  ],
+  "🔴 이미 `통과` 가 있어 안 건드린 절": [
+   "§A 🔴🔴🔴 「전」을 고정 ref 로 다시 잰다",
+   "§A-나 🔴🔴 AST 자 — 디스크에서 「전」을 읽는 자리",
+   "§B 🔴🔴🔴 985 가 한 이름으로 두 범위를 쟀다",
+   "§B-나 🔴🔴 986 문서의 한글 수사 「985 의 다섯 문서」",
+   "§C 🔴🔴 `⑤′` 절 3 을 고정 명부로 다시 낸다",
+   "§D 🔴 즉시 정정",
+   "§E 🔴 데몬(규칙 B)"
+  ],
+  "🔴🔴 봉인에서 «명시적으로» 뺀 키(= 절이 아니라 자료다)": [
+   "🔴 987 이 읽은 산출물 sha256"
+  ],
+  "🔴 제외 목록(인자로 받은 것)": [
+   "🔴🔴 치환표"
+  ],
+  "🔴🔴 봉인 뒤에도 `통과` 가 없는 절": "없음",
+  "통과": true,
+  "🔴 이 절의 `통과`": "🔴 **봉인 뒤에 `통과` 키가 없는 최상위 절이 0 인가** --- 이 자는 떨어질 수 있다"
+ }
+}
