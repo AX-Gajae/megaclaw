@@ -23,6 +23,7 @@ import collections
 import hashlib
 import json
 import os
+import subprocess
 import sys
 from pathlib import Path
 
@@ -64,11 +65,25 @@ SPEC = {
           "rule_d": "§D 🔴 규칙 D 감사(분모 다섯)",
           "docs": ("docs/판정_985.md", "docs/card_985.md", "docs/handoff_985.md"),
           "cells": SCORE_CELLS_985,
+          #: 🔴🔴🔴 **985 문서는 «985 가 끝난 트리»에서 읽는다**(986 신설).
+          #:  🔴 **왜.** 986 은 985 의 세 오기에 «정정을 얹는다» --- 그러면 985 의
+          #:  문서 글자 수가 바뀌고, 그 어긋남은 **986 자신의 편집**이 만든 것이다.
+          #:  티처 #124 가 985 에 물린 그 병(「다섯 칸 어긋난다」의 정체가 `4 + 1`
+          #:  이고 다섯째는 985 자신의 편집이었다)이 그대로 재발한다.
+          #:  🔴 그래서 **정정 «이전»의 바이트**로 잰다. 그 ref 를 산출물에 박는다.
+          "doc_ref": "582444a856f6c573c7d5ebb34c5579497f5faee6",
           "ledger_key": "노트 985"},
 }
 
 
-def _read(rel):
+def _read(rel, ref=None):
+    """🔴 `ref` 를 주면 **그 커밋된 트리**에서 읽는다(디스크가 아니다 · 조항 59)."""
+    if ref:
+        p = subprocess.run(["git", "show", "%s:%s" % (ref, rel)], cwd=str(ROOT),
+                           capture_output=True)
+        if p.returncode != 0:
+            return None
+        return p.stdout.decode("utf-8", "surrogateescape")
     p = ROOT / rel
     return p.read_text(encoding="utf-8") if p.is_file() else None
 
@@ -141,8 +156,9 @@ def certify(cycle):
     # ── 1~3 문서 글자 수 ──────────────────────────────────────────
     rd = (sc or {}).get(s["rule_d"]) or {}
     per = rd.get("🔴 대상별") or {}
+    dref = s.get("doc_ref")
     for p in s["docs"]:
-        txt = _read(p)
+        txt = _read(p, dref)
         live = len(txt) if txt is not None else None
         cert = (per.get(p) or {}).get("글자 수")
         ok = bool(live is not None and cert is not None and live == cert)
@@ -194,6 +210,11 @@ def certify(cycle):
 
     return collections.OrderedDict([
         ("🔴 사이클", cycle),
+        ("🔴🔴 문서를 어디서 읽었나",
+         ("🔴 **커밋된 트리 `%s`** --- 986 이 «얹은» 정정이 이 자를 흔들지 못하게 "
+          "«정정 이전의 바이트»로 잰다(티처 #124 즉시정정 ③: 985 의 「다섯 칸」의 "
+          "정체는 `4 + 1` 이었고 다섯째는 985 «자신의» 편집이 만들었다)" % dref)
+         if dref else "작업 트리(디스크)"),
         ("🔴 여섯 칸", rows),
         ("🔴🔴 어긋난 칸", bad or "없음"),
         ("🔴🔴🔴 수렴했나(여섯 칸이 전부 같다)", bool(not bad)),
