@@ -12,7 +12,7 @@
   "--out",
   "runners/fiveprime_989.json",
   "--stamp-ref",
-  "adc9eaa264a0f3cae0aaa1c82696222c68509ed0",
+  "89eba98cd2b7df1373a052d867edd71cc47f2c6f",
   "--prose",
   "runners.prose989",
   "--ran",
@@ -32,9 +32,9 @@
  "🔴 되짚은 기준(955 R5 · `docs/루프.md:148` v3.2)": {
   "기준": "🔴 **커밋된 트리**",
   "읽기·해싱 트리(절 3·4·7·8)": "HEAD",
-  "그 커밋 sha": "adc9eaa264a0f3cae0aaa1c82696222c68509ed0",
+  "그 커밋 sha": "89eba98cd2b7df1373a052d867edd71cc47f2c6f",
   "역참조(grep) 트리(절 1·2)": "HEAD",
-  "머리(--head)": "HEAD = adc9eaa264a0f3cae0aaa1c82696222c68509ed0",
+  "머리(--head)": "HEAD = 89eba98cd2b7df1373a052d867edd71cc47f2c6f",
   "취합 시작(--base)": "cdb305785e88ba0745d760bcf16afb1608596eb9 = cdb305785e88ba0745d760bcf16afb1608596eb9",
   "⚠ 954 까지": "작업 트리를 되짚었다 --- 커밋 안 된 편집이 검사에 섞였다",
   "🔴 「커밋 안 됨」은 「없다」가 아니다": "절 3·4·7 이 그것을 **따로 센다**(조항 59)"
@@ -60,7 +60,7 @@
  "⓪ 관문(가지의 커밋된 트리 · 🔴 정본)": {
   "검사": "🔴🔴 ⓪ 관문(정본 · 980 · 🔴 982 R3 로 자기 산출물을 뺐다) --- 작업 트리가 **가지의 커밋된 트리**와 같은가",
   "🔴 견준 가지": "note/989-world-budget",
-  "🔴 가지 sha": "adc9eaa264a0f3cae0aaa1c82696222c68509ed0",
+  "🔴 가지 sha": "89eba98cd2b7df1373a052d867edd71cc47f2c6f",
   "🔴 분모: 갈린 경로 전량": 0,
   "🔴 데몬(규칙 B) 면제 경로 수": 0,
   "🔴 면제 규칙의 출처": [
@@ -5670,7 +5670,7 @@
   "🔴 읽은 트리(955 R5)": {
    "기준": "커밋된 트리(`git cat-file blob <tree>:<경로>`)",
    "트리": "HEAD",
-   "커밋 sha": "adc9eaa264a0f3cae0aaa1c82696222c68509ed0",
+   "커밋 sha": "89eba98cd2b7df1373a052d867edd71cc47f2c6f",
    "그 트리의 경로 수(분모)": 77533,
    "🔴 `git ls-tree` 오류": "없음"
   },
@@ -5829,6 +5829,7 @@
      "세.Nstar창",
      "세.문턱넘음",
      "세.부호뒤집힘",
+     "오프.통과",
      "채.F09",
      "채.최상위"
     ],
@@ -5886,7 +5887,7 @@
   "🔴 훑은 트리(955 R5)": {
    "기준": "커밋된 트리(`git ls-tree -r <tree>` + `git cat-file blob`)",
    "트리": "HEAD",
-   "커밋 sha": "adc9eaa264a0f3cae0aaa1c82696222c68509ed0",
+   "커밋 sha": "89eba98cd2b7df1373a052d867edd71cc47f2c6f",
    "🔴 `git ls-tree` 오류": "없음"
   },
   "🔴 훑은 산출물 수(분모)": 533,
@@ -10220,7 +10221,7 @@
   "🔴 읽은 트리(955 R5)": {
    "기준": "🔴 **커밋된 트리**(`git cat-file blob <tree>:<경로>` 를 해싱한다)",
    "트리": "HEAD",
-   "커밋 sha": "adc9eaa264a0f3cae0aaa1c82696222c68509ed0",
+   "커밋 sha": "89eba98cd2b7df1373a052d867edd71cc47f2c6f",
    "🔴 `git ls-tree` 오류": "없음",
    "⚠ 954 까지": "작업 트리를 해싱했다 --- 커밋 안 된 편집이 이 절을 붉히거나 숨겼다"
   },
@@ -10277,9 +10278,9 @@
   "🔴 왜": "954 는 원장·노트·카드 **셋 다**에 「수리 레인 하나를 썼다」고 적고 실제로 `[수리]` 커밋을 **셋** 했다. 말로 적으면 또 어긋난다",
   "🔴 명령": [
    "git merge-base main HEAD",
-   "git log --format=%s cdb305785..adc9eaa26"
+   "git log --format=%s cdb305785..89eba98cd"
   ],
-  "🔴 범위": "cdb305785e88ba0745d760bcf16afb1608596eb9..adc9eaa264a0f3cae0aaa1c82696222c68509ed0",
+  "🔴 범위": "cdb305785e88ba0745d760bcf16afb1608596eb9..89eba98cd2b7df1373a052d867edd71cc47f2c6f",
   "🔴 범위의 기준(base)": {
    "rev": "cdb305785e88ba0745d760bcf16afb1608596eb9",
    "왜": "`git merge-base main HEAD` --- 이 가지가 갈라진 자리",
@@ -10289,14 +10290,14 @@
   "🔴 트리": {
    "기준": "커밋된 트리",
    "머리": "HEAD",
-   "커밋 sha": "adc9eaa264a0f3cae0aaa1c82696222c68509ed0"
+   "커밋 sha": "89eba98cd2b7df1373a052d867edd71cc47f2c6f"
   },
-  "🔴 이 범위의 커밋 수(분모)": 7,
+  "🔴 이 범위의 커밋 수(분모)": 8,
   "🔴 그중 `[수리]` 커밋 수(분자)": 0,
   "🔴 `[수리]` 커밋 제목": "없음",
   "`[수리]` 커밋 sha": "없음",
   "표지별 커밋 수": {
-   "[노트 989]": 3,
+   "[노트 989]": 4,
    "[데몬]": 3,
    "[사전등록]": 1
   },
@@ -10339,8 +10340,8 @@
    "🔴 이 가지가 갈라진 뒤 바뀐 것": [
     {
      "파일": "/Users/ax/.claude/projects/-Users-ax-world-model/memory/project-lab-state.md",
-     "mtime(UTC)": "2026-08-17T06:52:31Z",
-     "sha256(다음 사이클의 대조 기준)": "15f14c89e694bed64c9f0dc01b431953a5a402f5ae72f019708f752a3ef8a4bb",
+     "mtime(UTC)": "2026-08-17T07:00:53Z",
+     "sha256(다음 사이클의 대조 기준)": "2a523346fed83a01cba42a13f5ffd40815b5b3ce44065c46b579f7695aceff0b",
      "🔴 이 가지가 갈라진 뒤에 바뀌었다": true
     }
    ],
@@ -10796,7 +10797,7 @@
   "8 🔴 `[수리]` 레인 계수(955 R6)"
  ],
  "통과": false,
- "시각(UTC · 시작)": "2026-08-17T06:58:20+00:00",
+ "시각(UTC · 시작)": "2026-08-17T07:01:07+00:00",
  "🔴 코드 sha256(이게 자다)": {
   "runners/fiveprime902.py": "7f3cfbb1c978fe8cd29534eb10e4ec3613a842b1e939ae9552b9b011c1c0a69f",
   "runners/quote901.py": "1778c5659dcd3f8cc15e48d7c4760ba581ccdb809d7144b3376911f2882b3b30",
@@ -10807,20 +10808,20 @@
   "runners/out941_wikidaily.json": "93a4d0d30be5c198c8318be1f9f85e52dc64a6cd770a36c635b79ff2f554ab5e",
   "runners/out941_steamrev.json": "915a9b4550ec836df4eff559c63ababca374abd20a6c7b5bcb6a85c0e16e4276",
   "runners/out941_robots.json": "bb4a19ac5201d14d157d39f6221ec9479bed5d3422a23d7b31d4ff2b3e166266",
-  "runners/out989_audit.json": "45013f5bcc86ee0dafc98a011ecd5d7d96162042291e0b7bccbbd1b28b4c7c2d",
+  "runners/out989_audit.json": "b08acadd4cf9548388cd4115caf888c05294faabbe06408b307d8dccd4990e17",
   "runners/out989_fix.json": "27fd2cb58e46e821cb5b5176c61a6f4828d0e4ad8bc20c0a113885470036601e",
-  "runners/out989_last.json": "a57cc89ddd4139b7110fe7cf54bcfc9c7a3583a37856857d483ef8cfadc810b4",
-  "runners/out989_score.json": "3cf3080cc4f860958745195dab1232b53fb63ef30e24a0036de7e96a0fb3a91f",
-  "runners/out989_table.json": "1d8accf6326ea4e9890be83e7606fcff5df1c85c458266fa5c7483dfc61f1c6c",
+  "runners/out989_last.json": "1748cf371f9e52197c26bec7cdabdd08d05f00ebd5ea1111e70e16f88676d9a7",
+  "runners/out989_score.json": "b2bda5dc4138c1ee3740e0d5d69138d6ba9a8502f99677e3e193924ff4a640a5",
+  "runners/out989_table.json": "2b2b32f633b97872fb4a3c15e3f9d70b85948f9b661f948739a9084f6850be00",
   "runners/out989_wiring.json": "f63c09e38e4b77c591a93acdcf649b1621de788695076ed0bbe0a6ae323dc236",
   "runners/out989_world.json": "ba11d418faf7445b23ca2369b6fdb750b2688f767ee8c9ed5277c5f77ddcce22"
  },
- "⚠ git HEAD(시작 시점 · 판정에 쓰지 마라)": "adc9eaa264a0f3cae0aaa1c82696222c68509ed0",
- "시각(UTC · 끝)": "2026-08-17T06:59:50+00:00",
- "초": 90.6,
+ "⚠ git HEAD(시작 시점 · 판정에 쓰지 마라)": "89eba98cd2b7df1373a052d867edd71cc47f2c6f",
+ "시각(UTC · 끝)": "2026-08-17T07:02:38+00:00",
+ "초": 91.6,
  "🔴 도장": {
-  "언제(시작)": "2026-08-17T06:59:50Z",
-  "언제(끝)": "2026-08-17T06:59:50Z",
+  "언제(시작)": "2026-08-17T07:02:38Z",
+  "언제(끝)": "2026-08-17T07:02:38Z",
   "시작 code_stamp 요약": "3feed933c010e137476d69bb24c5bb2ef21486c3be91800a878556211b0d3bb4",
   "끝 code_stamp 요약": "3feed933c010e137476d69bb24c5bb2ef21486c3be91800a878556211b0d3bb4",
   "🔴 시작=끝": true,
@@ -10831,7 +10832,7 @@
    "hplt_ko": "67de3062bad60e122c446fccb0b96d2c3a36c0ee2deafa40324a22dcad6c09a2"
   },
   "분모: 연 자료 파일": 3,
-  "🔴 F1 기준 ref(준 대로)": "adc9eaa264a0f3cae0aaa1c82696222c68509ed0",
+  "🔴 F1 기준 ref(준 대로)": "89eba98cd2b7df1373a052d867edd71cc47f2c6f",
   "🔴 40자 고정 sha 인가": true,
   "🔴 기준 ref 가 0000…0000 인가": false,
   "러너별": {
