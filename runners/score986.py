@@ -35,6 +35,19 @@ import cycle986 as CY                                  # noqa: E402
 import ledger as LG                                    # noqa: E402
 import score985 as S5                                  # noqa: E402
 import audit986 as A6                                  # noqa: E402
+import certify986 as C6                                # noqa: E402
+
+#: 🔴🔴🔴 **여섯째 칸을 «지연 없이» 재려고 빼는 칸**(조항 60 --- 조용히 안 뺀다).
+#:
+#: 🔴 **왜 빼나.** 반증조건 11 이 «디스크의» `out986_certify.json` 을 읽으면
+#: **한 회 뒤진 값**을 읽는다. 그러면 `채.반증분자모` 가 조건 11 의 결과에 «다시»
+#: 의존해 **주기 4 의 진동**이 생기고 고정점에 원리상 도달 못 한다(986 실측).
+#: 🔴 그래서 조건 11 은 **채점기 자신이 «지금» 계산한 값**과 치환표를 견주고,
+#: **자기 결과에 의존하는 칸 여덟을 뺀다.** 뺀 이름을 여기 박고 산출물에 싣는다.
+#: 🔴 **전량 16 칸 검사는 `certify986` 이 그대로 한다** --- 그것이 정본이고
+#: 985 검정력 시연도 그 자로 낸다.
+SELF_DEP = ("채.반증분자모", "채.반증분모", "채.반증된", "채.반증통과",
+            "채.예측분자모", "채.예측분자", "채.예측통과", "채.최상위통과")
 
 OUT = "runners/out986_score.json"
 PREREG = "docs/prereg_986_sixth_cell_power_ci.md"
@@ -485,14 +498,25 @@ def falsify(ctx):
     sx = ctx["six"]
     items["10 여섯 자리가 같은 수를 적나(엄격 자)"] = (sx, not sx["통과"])
 
-    # 11 문서 고리 수렴 (certify 여섯 칸)
+    # 11 문서 고리 수렴 --- 🔴 **지연 없이** 잰다(위 `SELF_DEP` 주석을 읽어라)
     ct = ctx["certify"] or {}
     mine = ct.get("§가 🔴🔴🔴 986 자신") or {}
+    live = ctx["live_cert"]
     f11 = collections.OrderedDict([
-        ("🔴 어긋난 칸", mine.get("🔴🔴 어긋난 칸")),
-        ("🔴🔴 수렴했나", bool(mine.get("🔴🔴🔴 수렴했나(여섯 칸이 전부 같다)"))),
+        ("🔴🔴🔴 지연 없는 자(채점기가 «지금» 낸 값 대 치환표)", live),
+        ("🔴🔴 뺀 칸(자기 결과에 의존한다 · 조용히 안 뺀다 · 조항 60)", list(SELF_DEP)),
+        ("🔴 왜 뺐나",
+         "🔴 **디스크의 `out986_certify.json` 을 읽으면 한 회 뒤진 값을 읽고, "
+         "그러면 `채.반증분자모` 가 이 조건의 결과에 다시 의존해 «주기 4 의 진동»이 "
+         "생겨 고정점에 원리상 도달 못 한다**(986 실측). 🔴 전량 16 칸 검사는 "
+         "`certify986` 이 그대로 한다"),
+        ("⚠ 디스크 `certify` 가 적은 어긋난 칸(한 회 뒤질 수 있다 · 진단)",
+         mine.get("🔴🔴 어긋난 칸")),
+        ("⚠ 디스크 `certify` 의 수렴", mine.get("🔴🔴🔴 수렴했나(여섯 칸이 전부 같다)")),
+        ("🔴🔴 수렴했나", bool(live["🔴 전부 같은가"])),
     ])
-    items["11 문서 고리가 수렴했나(certify 여섯 칸)"] = (f11, not f11["🔴🔴 수렴했나"])
+    items["11 문서 고리가 수렴했나(certify 여섯 칸 · 지연 없는 자)"] = \
+        (f11, not f11["🔴🔴 수렴했나"])
 
     # 12 F5 도장 --- 분모는 원장이 싣는 산출물 전량
     fs = ctx["feeds"]
@@ -569,6 +593,43 @@ def predict(ctx):
     return rows, hit
 
 
+def live_sixth(tb, ruleD, shape, feeds, six):
+    """🔴🔴🔴 **지연 없는 여섯째 칸** --- 채점기가 «지금» 낸 값과 치환표를 견준다.
+
+    🔴 `SELF_DEP` 여덟 칸은 뺀다(자기 결과에 의존한다 · 이유는 그 상수 곁에 있다).
+    남는 여덟 칸은 **이 함수가 부르는 시점에 이미 «잰» 값**이라 지연이 0 이다.
+    """
+    T = _cells(tb) or {}
+    live = {
+        "채.규칙D표밖": ruleD["🔴🔴 표 밖 합"],
+        "채.규칙D분모": ruleD["🔴🔴 채점 분모"],
+        "채.규칙D통과": ruleD["통과"],
+        "채.68근거없음": shape["🔴🔴 근거 없는 모양 주장 수"],
+        "채.68통과": shape["통과"],
+        "채.F5분모": feeds["🔴 분모"],
+        "채.F5통과": feeds["통과"],
+        "채.여섯자리": six["통과"],
+    }
+    rows, bad, miss = collections.OrderedDict(), [], []
+    for k in sorted(live):
+        if k not in T:
+            miss.append(k)
+            rows[k] = {"🔴": "🔴 치환표에 그 칸이 «없다»", "채점기가 «지금» 낸 값": live[k]}
+            continue
+        ok = bool(T[k] == live[k])
+        rows[k] = {"🔴 치환표의 칸": T[k], "🔴 채점기가 «지금» 낸 값": live[k],
+                   "🔴 같은가": ok}
+        if not ok:
+            bad.append(k)
+    return collections.OrderedDict([
+        ("🔴 분모(`SCORE_CELLS` 16 에서 `SELF_DEP` 8 을 뺀 수)", len(live)),
+        ("🔴 칸별", rows),
+        ("🔴🔴 어긋난 칸", bad or "없음"),
+        ("🔴 치환표에 없는 칸(= 「같다」가 아니다 · 조항 59)", miss or "없음"),
+        ("🔴 전부 같은가", bool(not bad and not miss)),
+    ])
+
+
 def stage(ref, prereg_commit, five_name, it):
     t0 = CY.now()
     CY.begin(ref)
@@ -596,8 +657,10 @@ def stage(ref, prereg_commit, five_name, it):
         ("`⑤′` 분모", (reg["🔴 `⑤′` 분모"], "⑤′")),
         ("규칙 D 대상 수", (ruleD["🔴🔴 채점 분모"], "규칙 D")),
     ]))
+    live_cert = live_sixth(tb, ruleD, shape, feeds, six)
     ctx = {"prereg_commit": prereg_commit, "reg": reg, "ruleD": ruleD,
            "five": fp, "six": six, "certify": ct, "feeds": feeds,
+           "live_cert": live_cert,
            "astpass": astpass, "handlit": handlit, "power": pw, "audit": au,
            "n_falsify": ctx_n_falsify, "n_predict": 6, "n_cert": 6}
     rows, bad = falsify(ctx)
@@ -624,6 +687,13 @@ def stage(ref, prereg_commit, five_name, it):
     out["§68 🔴 조항 68 모양 주장 감사"] = shape
     out["§F5 🔴 인용 산출물 도장"] = feeds
     out["§9 🔴🔴 여섯 자리가 같은 수를 적나"] = six
+    out["§11 🔴🔴🔴 지연 없는 여섯째 칸(986)"] = collections.OrderedDict(
+        list(live_cert.items()) + [
+            ("통과", bool(live_cert["🔴 전부 같은가"])),
+            ("🔴 이 절의 `통과` 가 뜻하는 것",
+             "🔴 **치환표가 «지금» 채점기가 낸 값을 들고 있는가** --- "
+             "985 는 표가 한 회 뒤진 값을 들고 있었고 아무 자도 못 봤다"),
+        ])
     out["§AST 🔴 리터럴 `통과` 금지"] = astpass
     out["§R3 🔴 손 전사 수 리터럴 금지(분모 = 이 사이클 러너 전량)"] = handlit
     # 🔴🔴🔴 **R5 --- 최상위 `통과` 에 `§68`·`§5 예측` 을 넣는다**
