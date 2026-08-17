@@ -503,6 +503,63 @@ def _grep_l_old(needles, tree=None):
     return sorted(set(files))
 
 
+#: 🔴🔴🔴 **986 R1 (티처 #124 3순위 R1 · `조항 60-나` 개정판 요건 셋)** ---
+#:  「소비자」를 **「그 이름을 아무 데서나 «언급»한 파일」에서 「코드 리터럴로 «쓴» 파일」**로.
+#:
+#:  🔴 **왜.** 구판 자는 `git grep -l` 이라 **주석·독스트링의 언급도 소비자로 센다.**
+#:  985 실측(티처 #124 가 다시 세어 확인): 소비자 **446** = 비 `.py` **299** +
+#:  산문만 **29** + 🔴 **코드 리터럴 118**. `.py` **147** 중 코드가 실제로 «쓰는» 것은 **118**.
+#:  🔴 **원장을 빼는 길은 안 쓴다** --- 「원장을 빼도 안 열린다」가 참이다.
+#:
+#:  🔴 **요건 셋을 다 밟는다**: ① 사전등록 §4-2 에 «측정 전» 등록 ·
+#:  ② `🔴🔴 분모의 내력` 에 구판/신판을 «같이» 싣는다 ·
+#:  ③ 뺀 것(비 `.py` · 산문만)의 **목록 전량**을 산출물에 싣는다.
+def _docstring_ids(tree):
+    out = set()
+    for n in ast.walk(tree):
+        if isinstance(n, (ast.Module, ast.ClassDef, ast.FunctionDef,
+                          ast.AsyncFunctionDef)):
+            body = getattr(n, "body", None)
+            if body and isinstance(body[0], ast.Expr) \
+                    and isinstance(body[0].value, ast.Constant) \
+                    and isinstance(body[0].value.value, str):
+                out.add(id(body[0].value))
+    return out
+
+
+def mention_kind(rel, needles, tree_ref):
+    """🔴 **「코드가 쓰나, 산문이 언급하나」**를 AST 로 가른다(986 R1).
+
+    - **코드 리터럴**: 독스트링이 «아닌» 문자열 상수 안에 바늘이 있다 --- 그 파일은
+      그 경로를 **실제로 연다**. 곧 **다시 돌릴 이유가 있다.**
+    - **산문만**: 원문에는 있는데 코드 리터럴에는 없다(주석 · 독스트링).
+      🔴 **「소비자가 아니다」가 아니라 「다시 돌릴 이유가 없다」**다(조항 59).
+    """
+    if not rel.endswith(".py"):
+        return "비 .py"
+    if tree_ref:
+        st, txt = tree_text(rel, tree_ref, None)
+        if st != "읽었다" or txt is None:
+            return "🔴 못 읽었다"
+    else:
+        #: 🔴 트리를 안 줬으면 **작업 트리**에서 읽는다 --- 「없다」와 「못 읽었다」를 가른다
+        p = ROOT / rel
+        if not p.is_file():
+            return "🔴 못 읽었다"
+        txt = p.read_text(encoding="utf-8", errors="surrogateescape")
+    try:
+        tree = ast.parse(txt)
+    except SyntaxError:
+        return "🔴 파싱 실패"
+    docs = _docstring_ids(tree)
+    for n in ast.walk(tree):
+        if isinstance(n, ast.Constant) and isinstance(n.value, str) \
+                and id(n) not in docs:
+            if any(nd in n.value for nd in needles):
+                return "코드 리터럴"
+    return "산문만(주석·독스트링)"
+
+
 def backref(base, head, tree, ran, exempt) -> dict:
     rc, out, err = _git(["-c", "core.quotepath=false", "diff", "--name-only", "-z",
                          "%s..%s" % (base, head)])
@@ -527,7 +584,23 @@ def backref(base, head, tree, ran, exempt) -> dict:
         per[label] = {"바늘 수": len(ns), "소비자 수": len(got),
                       "그중 .py": len([g for g in got if g.endswith(".py")]), **meta}
         cons |= set(got)
-    consumers = sorted(cons)
+    consumers_old = sorted(cons)                    # ⚠ 구판 분모(「언급」)
+    py_old = [c for c in consumers_old if c.endswith(".py")]
+
+    # ── 🔴🔴🔴 986 R1 --- 「언급」을 「사용」으로 ──────────────────────
+    needles_all = sorted(set(sum(nd.values(), [])))
+    kinds, kind_rows = {}, {}
+    for c in consumers_old:
+        k = "비 .py" if not c.endswith(".py") else mention_kind(c, needles_all, tree)
+        kinds[k] = kinds.get(k, 0) + 1
+        kind_rows.setdefault(k, []).append(c)
+    consumers = sorted(kind_rows.get("코드 리터럴", []))
+    #: 🔴 **가른 갈래를 «전량» 싣는다**(요건 ③) --- 조용히 사라지는 것이 축소다
+    dropped_nonpy = sorted(kind_rows.get("비 .py", []))
+    dropped_prose = sorted(kind_rows.get("산문만(주석·독스트링)", []))
+    dropped_unread = sorted(kind_rows.get("🔴 못 읽었다", [])
+                            + kind_rows.get("🔴 파싱 실패", []))
+    cons = set(consumers)
     py = [c for c in consumers if c.endswith(".py")]
 
     ran = sorted(set(ran))
@@ -561,6 +634,24 @@ def backref(base, head, tree, ran, exempt) -> dict:
         "검사": "1 소비자 역참조 --- 🔴 사람이 고르지 않는다(`docs/루프.md:249-253`)",
         "취합 시작(base)": base, "머리(head)": head,
         "역참조한 트리": tree or "작업 트리",
+        # ── 🔴🔴🔴 986 R1 --- 분모의 내력(조항 60-나 개정판 요건 ②) ──────
+        "🔴🔴 분모의 내력(구판/신판을 «같이» 싣는다 · 986 R1)": {
+            "⚠ 구판 분모(「그 이름을 아무 데서나 «언급»한 파일」)": len(consumers_old),
+            "⚠ 구판 분모 중 .py": len(py_old),
+            "🔴🔴🔴 신판 분모(「코드 리터럴로 «쓴» 파일」)": len(consumers),
+            "🔴 신판 분모 중 .py": len(py),
+            "🔴 줄어드는 수": len(consumers_old) - len(consumers),
+            "🔴 갈래별 수": kinds,
+            "🔴 왜 좁히나(사전등록 §4-2 가 «측정 전»에 등록했다)":
+                "🔴 **구판 자는 `git grep -l` 이라 주석·독스트링의 「언급」도 소비자로 센다.** "
+                "그 파일들은 **다시 돌릴 이유가 없다** --- 그래서 절 1 이 네 사이클째 "
+                "붉었다. 🔴 **원장을 빼는 길은 안 쓴다**(빼도 안 열린다)",
+            "🔴🔴 요건 ③ --- 뺀 것의 「잰 날 것」(= 「안 잰 것」이 아니라 「분모 밖에서 잰 것」)": {
+                "비 .py 수": len(dropped_nonpy), "비 .py 전량": dropped_nonpy,
+                "산문만 수": len(dropped_prose), "산문만 전량": dropped_prose,
+                "🔴 못 읽었다(= 「산문만」이 아니다 · 조항 59)": dropped_unread or "없음",
+            },
+        },
         # ── 🔴 분모 넷을 나란히 박는다 (조항 60) ──────────────────────
         "🔴 분모 ① 바뀐 경로 수": len(changed),
         "🔴 분모 ② 역참조 소비자 수": len(consumers),
@@ -583,7 +674,8 @@ def backref(base, head, tree, ran, exempt) -> dict:
         },
         "바뀐 경로": changed,
         "자별 역참조": per,
-        "역참조 소비자(전량)": consumers,
+        "역참조 소비자(전량 · 🔴 신판 = 코드 리터럴)": consumers,
+        "⚠ 역참조 소비자(전량 · 구판 = 언급)": consumers_old,
         "돌렸다": ran_in,
         "⚠ 돌렸다고 적었지만 소비자 목록에 없는 것": ran_out or "없음",
         "🔴 안 돌렸다(= 「없다」가 아니다 · 조항 59)": notrun_py,
@@ -1921,7 +2013,8 @@ def main(argv=None):
         res["1-라 🔴 `_grep_l` 건초더미 대조(947)"] = {
             "🔴 예외": "%s: %s" % (type(e).__name__, e), "통과": False}
 
-    _cons = res["1 소비자 역참조"].get("역참조 소비자(전량)", [])
+    _cons = res["1 소비자 역참조"].get("역참조 소비자(전량 · 🔴 신판 = 코드 리터럴)",
+                                res["1 소비자 역참조"].get("역참조 소비자(전량)", []))
     # 🔴 948 (티처 #87 M2) --- `exempt` 를 **넘긴다**. 947 은 이미 만들어 놓고 안 넘겼다.
     res["2 게이트"] = run_gates(a.gates, a.tree,
                              _cons if isinstance(_cons, list) else [], ran,
@@ -1991,6 +2084,17 @@ def main(argv=None):
         else:
             secs[k] = v
     extra = sorted(k for k in live if k not in SECTION_ROSTER)
+    #: 🔴🔴🔴 **986 R5 (티처 #124 3순위 R5)** --- `extra` 를 **`통과` 키 «유무»와
+    #:  무관하게** 계산한다. 구판은 `live`(= `통과` 키가 있는 절)에서만 골라서
+    #:  **명부 «밖»에 절을 넣고 `통과` 키만 «안» 만들면 감사에 원리상 안 보였다** ---
+    #:  **980 이 저지른 형태 그대로가 반대 방향으로 열려 있었다.**
+    _stampish = {k for k, v in res.items()
+                 if isinstance(v, dict) and any(w in k for w in ("sha256", "시각"))}
+    extra_all = sorted(k for k, v in res.items()
+                       if isinstance(v, dict) and k not in SECTION_ROSTER
+                       and k not in _stampish and not k.startswith("🔴")
+                       and not k.startswith("⚠"))
+    extra_nokey = sorted(k for k in extra_all if k not in live)
     fail = sorted(k for k, v in secs.items() if not v["통과"])
     res["🔴 절 수(분모)"] = len(SECTION_ROSTER)
     res["🔴 `통과` 키를 가진 절"] = len(live)
@@ -2002,6 +2106,15 @@ def main(argv=None):
         "🔴🔴 명부에 있는데 `통과` 키가 «빠진» 것(= 「안 쟀다」로 센다)": nokey or "없음",
         "🔴🔴🔴 명부 «밖»에서 `통과` 키를 든 절(= 분모를 조용히 넓히는 자리)":
             extra or "없음",
+        "🔴🔴🔴 986 R5 — 명부 «밖»의 절 전량(`통과` 키 «유무»와 무관하게)":
+            extra_all or "없음",
+        "🔴🔴 그중 `통과` 키가 «없어» 구판 감사에 «안 보이던» 것":
+            extra_nokey or "없음",
+        "🔴 986 R5 가 고친 것": (
+            "🔴 **구판은 `통과` 키가 있는 절에서만 「명부 밖」을 골랐다** --- 곧 "
+            "**명부 밖에 절을 넣고 `통과` 키만 안 만들면 감사에 «원리상» 안 보인다.** "
+            "980 이 저지른 형태(`통과` 키를 빼서 분모에서 사라진다)가 «반대 방향»으로 "
+            "열려 있었다. 986 부터 두 수를 «둘 다» 싣는다(조항 66-③ 전후)"),
         "🔴 명부": list(SECTION_ROSTER),
         "🔴 왜 이 절이 있나": (
             "🔴 **구판 분모는 `len(secs where '통과' in v)` 라 «동적»이었다** --- "
