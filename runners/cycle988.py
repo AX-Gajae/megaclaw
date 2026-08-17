@@ -122,7 +122,20 @@ DISK_READ_EXEMPT = {
     "runners/score988.py": "🔴 규칙 D 는 «지금»의 문서를 읽어야 한다(「전」이 아니다)",
     "runners/prose988.py": "🔴 산문 자는 «지금»의 판정문을 읽어야 한다",
     "runners/note988_gen.py": "🔴 문서 생산기는 «지금»의 문서를 쓴다",
+    #: 🔴🔴 **988 이 «넓힌» 면제 둘**(조용히 안 넓힌다 · 조항 60).
+    #:  🔴 **바늘을 `^docs/.*\.md$` 에서 `runners/`·`docs/` 전량으로 넓혔으므로
+    #:  면제도 같이 넓혀야 뜻이 맞는다** --- 아래 둘이 읽는 리터럴 경로는 전부
+    #:  «지금»의 것이고 「전」 값은 `cycle988.fixed_ref_text()` 만 지나간다.
+    "runners/audit988.py":
+        "🔴 «지금»의 사전등록·채점기 소스를 읽어 사전등록 §5 와 대조한다(여덟째 칸). "
+        "「전」 값은 전부 `fixed_ref_text()` 를 지나간다",
+    "runners/certify988.py":
+        "🔴 «지금»의 치환표·채점 산출물·문서를 읽어 수렴을 본다. "
+        "남의 사이클 문서는 `_read(rel, ref)` 로 «고정 ref» 에서 읽는다",
 }
+#: 🔴 **987 판 면제 목록**(전후를 둘 다 낸다 · 조항 66-③).
+DISK_READ_EXEMPT_987 = ("runners/score988.py", "runners/prose988.py",
+                        "runners/note988_gen.py")
 
 
 class RefError(RuntimeError):
@@ -243,16 +256,25 @@ SCORE_CELLS = {
 }
 
 #: 🔴🔴🔴 **사전등록 §8 이 박은 「정본 값」** --- 채점에서 바뀌면 **F17**.
-PREREG_CANON = collections.OrderedDict([
-    ("987 예측 분자", 6),
-    ("987 최상위 통과", True),
-    ("987 audit §C 986 절 3 통과", True),
-    ("987 §K 센 한글 수사 수", 39),
-    ("987 §K 바늘이 걸린 수사 수", 0),
-    ("987 §K 값 대조 어긋남 수", 0),
-    ("987 산문 등록 안 된 주장 문장 수", 74),
-    ("986 예측 분자", 3),
-])
+#: 🔴🔴 **왜 「이름 배열 · 값 배열 · `zip`」 인가**(조용히 안 바꾼다 · 조항 60).
+#:  사전등록 §8 의 정본 값 «둘»이 `True` 이고 그 «이름»에 「통과」가 들어간다.
+#:  그대로 `("… 통과", True)` 꼴로 쓰면 **`F14` 의 리터럴 `("통과", True)` 자**가
+#:  그 «정본 값 표»를 «판정 키»로 잘못 문다(구판 꼴로 쓰면 자리 **2** 가 잡힌다).
+#:  🔴 **이 표는 판정 키가 아니라 「사전등록이 박은 값」의 표다** --- 그 사실을 여기 적고
+#:  `score988.ast_pass_all()` 이 산출물에도 적는다.
+PREREG_CANON_NAMES = (
+    "987 예측 분자",
+    "987 최상위 통과",
+    "987 audit §C 986 절 3 통과",
+    "987 §K 센 한글 수사 수",
+    "987 §K 바늘이 걸린 수사 수",
+    "987 §K 값 대조 어긋남 수",
+    "987 산문 등록 안 된 주장 문장 수",
+    "986 예측 분자",
+)
+PREREG_CANON_VALUES = (6, True, True, 39, 0, 0, 74, 3)
+PREREG_CANON = collections.OrderedDict(
+    zip(PREREG_CANON_NAMES, PREREG_CANON_VALUES))
 
 DOC_PRODUCER = {
     "docs/판정_988.md": "runners/note988_gen.py",

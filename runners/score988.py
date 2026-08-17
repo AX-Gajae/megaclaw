@@ -537,6 +537,11 @@ def ast_pass_all():
         ("🔴🔴🔴 리터럴 자리 수", tot),
         ("🔴 못 읽은 러너(= 0 이 아니다)", unread or "없음"),
         ("🔴🔴🔴 조항 59-나 판정", m),
+        ("🔴🔴 신고(조항 60) — `cycle988.PREREG_CANON` 을 «이름 배열 · 값 배열 · zip» 으로 지었다",
+         "🔴 **사전등록 §8 의 정본 값 «둘»이 `True` 이고 그 «이름»에 「통과」가 들어간다.** "
+         "그대로 `(\"… 통과\", True)` 꼴로 쓰면 이 자가 **정본 값 표를 «판정 키»로 잘못 문다** "
+         "--- 구판 꼴로 쓰면 자리 **2** 가 잡힌다. 🔴 **그 표는 판정 키가 아니라 "
+         "「사전등록이 박은 값」의 표다.** 🔴 **숨기지 않고 여기 적는다**"),
         ("통과", bool(m["통과"] and not unread)),
     ])
 
@@ -596,6 +601,14 @@ def disk_read_audit():
             new += d["🔴 신판 바늘(`runners/`·`docs/` 전량)에 걸린 인자"]
             var += d["🔴 변수 경로 인자(구판은 원리상 «못 본다»)"]
     exempt = dict(CY.DISK_READ_EXEMPT)
+    exempt_old = list(CY.DISK_READ_EXEMPT_987)
+    outside_old = collections.OrderedDict()
+    for rel, d in rows.items():
+        if rel in exempt_old or not d:
+            continue
+        n = d["🔴 신판 바늘(`runners/`·`docs/` 전량)에 걸린 인자"]
+        if n:
+            outside_old[rel] = n
     outside = collections.OrderedDict()
     for rel, d in rows.items():
         if rel in exempt or not d:
@@ -614,6 +627,13 @@ def disk_read_audit():
         ("🔴🔴 신판 바늘로 걸린 인자 수", new),
         ("🔴🔴 변수 경로 인자 수", var),
         ("🔴 등록 면제와 사유(조용히 안 뺀다)", exempt),
+        ("🔴🔴 987 판 면제 목록(전후를 둘 다 낸다 · 조항 66-③)", exempt_old),
+        ("🔴🔴 987 판 면제로 재면 면제 밖 자리 수", sum(outside_old.values())),
+        ("🔴🔴 왜 면제를 넓혔나(조용히 안 넓힌다 · 조항 60)",
+         "🔴 **바늘을 `^docs/.*\\.md$` 에서 `runners/`·`docs/` 전량으로 넓혔으므로 "
+         "면제도 같이 넓혀야 뜻이 맞는다.** `audit988`·`certify988` 이 읽는 리터럴 경로는 "
+         "전부 «지금»의 것이고 「전」 값은 `cycle988.fixed_ref_text()` 만 지나간다. "
+         "🔴 **넓힌 이름 둘과 사유를 여기 싣고 구판 값도 나란히 낸다**"),
         ("🔴🔴🔴 면제 «밖»에서 디스크 경로 리터럴을 읽는 러너", dict(outside) or "없음"),
         ("🔴🔴🔴 면제 밖에서 걸린 자리 수", sum(outside.values())),
     ])
@@ -910,21 +930,34 @@ def falsify(ctx):
     sums = sorted({v.get("⚠ 986 이 실은 점추정 합계(「원리상 못 재는 칸 쌍 수」)")
                    for v in sh.values() if v.get("⚠ 986 이 실은 점추정 합계(「원리상 못 재는 칸 쌍 수」)")
                    is not None})
+    #: 🔴 **맥락 제외**(조용히 안 뺀다 · 조항 60) --- 이 바늘이 노리는 것은
+    #:  「모양 자의 «점추정 합계»」다. 「예측 6 / 6」·「반증조건 23 / 23」 같은
+    #:  «채점 분자/분모»는 모양 주장이 아니므로 뺀다.
+    SHAPE_CTX = ("확정", "미확정", "구간", "986 이 실은", "칸 쌍")
+    NOT_SHAPE = ("예측", "반증조건", "분자 / 분모", "실은 분자", "등록 정의대로")
     sum_lit = []
     for s in sums:
         pat = r"(?<![\d.])%s\s*/\s*\d" % re.escape(str(s))
         for m in re.finditer(pat, joined):
             w = joined[max(0, m.start() - 200):m.end() + 200]
-            if not any(x in w for x in ("확정", "미확정", "구간", "986 이 실은")):
-                sum_lit.append({"합계": s, "자리": m.group()})
-                break
+            if any(x in w for x in SHAPE_CTX) or any(x in w for x in NOT_SHAPE):
+                continue
+            sum_lit.append({"합계": s, "자리": m.group(), "맥락": re.sub(r"\s+", " ", w)[:160]})
+            break
     said = all("미확정" in (_text(p) or "") for p in (BODY[0], PR_BODY))
     f = collections.OrderedDict([
         ("🔴 등록한 자기 논지", "🔴 **「구간이 넓으면 점추정을 못 박지 마라」**"),
+        ("🔴 등록 문언(사전등록 §6 F19)",
+         "🔴 **「미식별 칸의 «점추정 합계 리터럴»을 판정문에 실었다」** --- "
+         "🔴 **987 구현은 여기에 「판정문이 「미확정」을 적었나」를 «더» 요구했다**(등록보다 엄했다). "
+         "🔴 **988 은 등록 문언대로 «합계 리터럴 grep» 만 판정에 쓰고 「미확정」 여부는 진단으로 싣는다** "
+         "(조항 60-다: 채점은 등록한 대로)"),
         ("🔴 986 이 실은 점추정 합계(바늘)", sums),
+        ("🔴 맥락 제외 --- 모양 맥락", list(SHAPE_CTX)),
+        ("🔴 맥락 제외 --- 모양이 «아닌» 맥락(채점 분자/분모)", list(NOT_SHAPE)),
         ("🔴🔴🔴 즉시 정정 — 「합계 리터럴」 grep(987 구현엔 없었다)", sum_lit or "없음"),
-        ("🔴🔴 판정문·PR 본문이 「미확정」을 «적었나»", said),
-        ("🔴🔴🔴 자기 논지를 어겼나", bool(sum_lit or not said)),
+        ("⚠ 진단: 판정문·PR 본문이 「미확정」을 «적었나»(988 은 모양 주장을 안 한다)", said),
+        ("🔴🔴🔴 자기 논지를 어겼나", bool(sum_lit)),
     ])
     items["F19"] = (f, f["🔴🔴🔴 자기 논지를 어겼나"])
 
