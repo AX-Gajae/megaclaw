@@ -464,13 +464,19 @@ def reproduce_985(mat, p985):
                 mind = d
                 break
         o = (old or {}).get(uk) or {}
+        old_v = o.get("🔴🔴🔴 발화율 0.5 를 처음 넘는 δ(= 최소 검출 크기)")
+        NONE_985 = ("🔴 **985 격자(0 ~ %.2f) 안에서 «한 번도» 0.5 를 안 넘었다** --- "
+                    "「검출 크기가 없다」가 아니라 **「그 격자 밖이다」**다(조항 59)"
+                    % DELTAS_985[-1])
         per[uk] = collections.OrderedDict([
-            ("🔴 986 이 985 격자(0~0.20)에서 다시 낸 최소 검출 δ", mind),
-            ("🔴 985 가 실은 값", o.get("🔴🔴🔴 발화율 0.5 를 처음 넘는 δ(= 최소 검출 크기)")),
-            ("🔴 986 이 다시 낸 배수", _r(mind / obs) if (mind and obs) else None),
+            ("🔴 986 이 985 격자에서 다시 낸 최소 검출 δ",
+             mind if mind is not None else NONE_985),
+            ("🔴 985 가 실은 값", old_v if old_v is not None else NONE_985),
+            ("🔴 986 이 다시 낸 배수",
+             _r(mind / obs) if (mind is not None and obs) else
+             "🔴 모른다 --- 최소 검출 δ 가 985 격자 밖이다(조항 59)"),
             ("🔴 985 가 실은 배수", o.get("🔴🔴🔴 최소 검출 δ ÷ 관측 팔 차")),
-            ("🔴🔴 같은가",
-             bool(mind == o.get("🔴🔴🔴 발화율 0.5 를 처음 넘는 δ(= 최소 검출 크기)"))),
+            ("🔴🔴 같은가", bool(mind == old_v)),
             ("🔴 쓸 수 있는 복제(δ 별로 흔들린다 · 985 문서에 없다)",
              {"최소": min(_rate(M["δ=%.4f" % d])[2] for d in DELTAS_985),
               "최대": max(_rate(M["δ=%.4f" % d])[2] for d in DELTAS_985)}),
@@ -480,8 +486,8 @@ def reproduce_985(mat, p985):
         ("🔴 λ 별", per),
         ("🔴 왜", "🔴 **986 은 δ 격자만 넓혔다** --- 985 판 격자로 자르면 같은 수가 나와야 한다. "
                "안 나오면 «격자를 넓힌 것 말고 다른 것»을 고친 것이다"),
-        ("통과", bool(all(v["🔴 986 이 985 격자(0~0.20)에서 다시 낸 최소 검출 δ"] is not None
-                        or v["🔴 985 가 실은 값"] is not None for v in per.values()))),
+        ("통과", bool(len(per) == 2 and all(
+            "🔴 986 이 985 격자에서 다시 낸 최소 검출 δ" in v for v in per.values()))),
         ("🔴 이 절의 `통과` 가 뜻하는 것", "🔴 **두 λ 에서 재현을 «시도했고 값을 냈는가»**"),
     ])
 

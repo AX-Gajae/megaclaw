@@ -153,8 +153,8 @@ DOC_PRODUCER = {
     "docs/pr_986.md": "runners/note986_gen.py",
 }
 
-#: 🔴 문서가 「그때 읽은」 채점 산출물. 치환표가 이 셋의 sha256 을 박고
-#:  `stale_docs` 가 지금 디스크의 sha256 과 견준다.
+#: 🔴 문서가 「그때 읽은」 채점 산출물. 치환표가 이 셋의 **내용 지문**을 박고
+#:  `stale_docs` 가 지금 디스크의 내용 지문과 견준다.
 DOC_INPUTS = (
     "runners/out986_score.json",
     "runners/out986_audit.json",
@@ -162,8 +162,34 @@ DOC_INPUTS = (
 )
 
 TABLE = "runners/out986_table.json"
-#: 치환표가 「문서를 찍을 때 읽은 입력의 sha256」을 적는 자리
-DOC_INPUT_KEY = "🔴🔴🔴 문서를 찍을 때 읽은 채점 산출물 sha256(986 신설)"
+#: 치환표가 「문서를 찍을 때 읽은 입력의 내용 지문」을 적는 자리
+DOC_INPUT_KEY = "🔴🔴🔴 문서를 찍을 때 읽은 채점 산출물 내용 지문(986 신설)"
+
+#: 🔴🔴 **내용 지문에서 «빼는» 최상위 키** --- 도장·창 신고는 «돌 때마다» 바뀌므로
+#:  그것까지 지문에 넣으면 이 자는 **원리상 언제나 「낡았다」**를 낸다(= 항진명제의 반대).
+#:  🔴 **빼는 것을 여기 명시하고 산출물에 싣는다**(조용히 빼지 않는다 · 조항 59·60).
+DIGEST_SKIP = ("🔴 도장", "🔴🔴 조항 66-② (986)", "🔴 986 이 읽은 산출물 sha256",
+               "🔴🔴🔴 986 봉인 감사(무엇을 봉했고 무엇을 뺐나)")
+
+
+def content_digest(rel):
+    """🔴🔴🔴 **채점 «내용»의 지문** --- 도장·시각을 뺀 sha256.
+
+    🔴 **왜 파일 sha 가 아닌가.** 산출물은 돌 때마다 도장의 시각이 바뀌어 파일 sha 가
+    반드시 달라진다. 그러면 「채점이 바뀌었나」를 물을 수 없다.
+    🔴 **뺀 키를 `DIGEST_SKIP` 에 명시**하고 산출물에 싣는다(조항 60).
+    """
+    p = ROOT / rel
+    if not p.is_file():
+        return None
+    try:
+        d = json.loads(p.read_text(encoding="utf-8"))
+    except Exception:                                              # noqa: BLE001
+        return None
+    if isinstance(d, dict):
+        d = {k: v for k, v in d.items() if k not in DIGEST_SKIP}
+    return hashlib.sha256(
+        json.dumps(d, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
 
 
 def now():
@@ -281,12 +307,12 @@ def stale_docs():
     rows, moved, miss = {}, [], []
     for rel in DOC_INPUTS:
         w = was.get(rel)
-        cur = sha_file(rel)
+        cur = content_digest(rel)
         if w is None:
             miss.append(rel)
-            rows[rel] = {"🔴": "🔴 치환표가 이 입력의 sha 를 안 박았다(= 「같다」가 아니다)"}
+            rows[rel] = {"🔴": "🔴 치환표가 이 입력의 내용 지문을 안 박았다(= 「같다」가 아니다)"}
             continue
-        rows[rel] = {"문서를 찍을 때 sha256": w, "지금 sha256": cur,
+        rows[rel] = {"문서를 찍을 때 내용 지문": w, "지금 내용 지문": cur,
                      "같은가": bool(w == cur)}
         if w != cur:
             moved.append(rel)
@@ -301,6 +327,7 @@ def stale_docs():
                   "985 의 R5 를 «문서»로 확장한다(사전등록 §2-3)"),
         "🔴 분모: 문서가 읽는 채점 산출물": len(DOC_INPUTS),
         "🔴 분모: 이 표가 덮는 문서": len(DOC_PRODUCER),
+        "🔴 내용 지문에서 뺀 키(조용히 빼지 않는다 · 조항 60)": list(DIGEST_SKIP),
         "🔴 입력별": rows,
         "🔴 문서별": docs,
         "🔴 치환표가 sha 를 안 박은 입력(= 「같다」가 아니다 · 조항 59)": miss or "없음",

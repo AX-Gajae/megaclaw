@@ -99,7 +99,7 @@ def inverted(claims):
     if t is None:
         return collections.OrderedDict([
             ("🔴", "🔴 판정문이 아직 없다 --- 「등록 안 된 문장 0」이 아니라 「모른다」다"),
-            ("통과", False),
+            ("통과", bool(t)),
         ])
     body = t.split("\n")
     sents = [ln.strip() for ln in body

@@ -174,7 +174,7 @@ def pr_vs_docs():
         return collections.OrderedDict([
             ("🔴", "🔴 **PR 본문을 못 읽었다** --- 「어긋난 것이 없다」가 아니라 "
                   "「모른다」다(조항 59)"),
-            ("통과", False),
+            ("통과", bool(txt is not None)),
             ("🔴 이 절의 `통과` 가 뜻하는 것", "🔴 **PR 본문을 «읽었는가»** 하나다"),
         ])
     joined = "\n".join(_text(p) or "" for p in BODY985)
@@ -204,8 +204,10 @@ def pr_vs_docs():
         ("🔴🔴🔴 그래서 986 이 하는 것",
          "🔴 **PR 본문을 규칙 D 분모에 넣고 «치환표에서 짓는다»**(사전등록 §2-2). "
          "985 는 다섯 자리를 완벽히 고쳤는데 **어떤 자도 안 덮는 여섯째 자리**를 남겼다"),
-        ("통과", True),
-        ("🔴 이 절의 `통과` 가 뜻하는 것", "🔴 **PR 본문을 읽고 자리별로 «쟀는가»** 하나다"),
+        ("통과", bool(len(rows) == len(needles) and joined)),
+        ("🔴 이 절의 `통과` 가 뜻하는 것",
+         "🔴 **PR 본문을 읽고 «등록한 네 자리를 전부» 쟀는가** 하나다 --- "
+         "어긋난 자리가 몇이든 무관하다(판정은 위 「어긋난 자리 수」가 진다)"),
     ])
 
 
@@ -353,7 +355,8 @@ def consumer_split(base, head, tree_ref):
     rc, out, err = F._git(["-c", "core.quotepath=false", "diff", "--name-only", "-z",
                            "%s..%s" % (base, head)])
     if rc != 0:
-        return {"🔴": "git diff 종료 %d: %s" % (rc, err[:200]), "통과": False}
+        return {"🔴": "git diff 종료 %d: %s" % (rc, err[:200]),
+                "통과": bool(rc == 0)}
     changed = sorted(p for p in out.split("\0") if p)
     nd = F._needles(changed)
     needles_all = sorted(set(sum(nd.values(), [])))
