@@ -152,7 +152,20 @@ def begin(ref, force=False):
     """🔴🔴 **사이클 창을 «연다»** --- 첫 단계가 한 번 부른다. 두 번째부터는 안 덮어쓴다."""
     p = ROOT / WINDOW
     if p.is_file() and not force:
-        return json.loads(p.read_text(encoding="utf-8"))
+        d0 = json.loads(p.read_text(encoding="utf-8"))
+        #: 🔴 **키 이름만 옮긴다(값은 그대로다).** 창을 «다시 열면» 사이클 시작이 뒤로 밀려
+        #:  자가 약해진다 --- 그래서 시작 시각과 시작 도장을 **한 바이트도 안 바꾸고**
+        #:  키만 `sha256` 이 든 이름으로 옮긴다(`⑤′` 절 3 이 도장을 절로 안 세게).
+        OLD, NEW = "🔴 시작 code_stamp", "🔴 시작 code_stamp(파일별 sha256)"
+        if OLD in d0 and NEW not in d0:
+            d0[NEW] = d0.pop(OLD)
+            d0["⚠ 985 R5 --- 키 이름을 사이클 도중에 옮겼다(값은 그대로다)"] = (
+                "🔴 `%s` → `%s`. **시작 시각도 시작 도장의 값도 안 바꿨다** --- "
+                "`⑤′` 절 3 이 `sha256`·`시각` 이 든 키를 «도장»으로 세기 때문이다. "
+                "🔴 조항 66-③: 자를 바꾸면 전후를 같이 적는다" % (OLD, NEW))
+            p.write_text(json.dumps(d0, ensure_ascii=False, indent=1) + "\n",
+                         encoding="utf-8")
+        return d0
     d = {
         "무엇": "🔴🔴🔴 985 R5 --- **사이클 단위 측정 창**의 시작 도장",
         "🔴 왜": ("984 판 창은 한 러너의 `t0`~`write()` 사이라 **0~1 초**였다. "
