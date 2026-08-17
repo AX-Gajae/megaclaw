@@ -88,7 +88,14 @@ def stage(ref, cycle, branch):
     added = [k for k in dj if k not in hj]
     lost = [k for k in hj if k not in dj]
     changed = [k for k in hj if k in dj and hj[k] != dj[k]]
-    benign = bool((not same) and not lost and not changed and added == [SELF])
+    #: 🔴🔴 **사전등록 §2-1 이 «측정 전»에 등록한 갈림** --- 985 는 티처 #123 1순위 ⓐ 대로
+    #:  **원장 `노트 984` 항목에 정정을 얹는다.** 그래서 `HEAD` 와 디스크는 「이 사이클
+    #:  항목 하나 추가」말고 **「984 항목 하나 수정」**으로도 갈린다.
+    #:  🔴 **엄격 자와 등록 자를 둘 다 싣는다**(조항 66-③) --- 넓힌 사실을 숨기지 않는다.
+    REG_CHANGED = ["노트 984"]
+    strict = bool((not same) and not lost and not changed and added == [SELF])
+    benign = bool((not same) and not lost and added == [SELF]
+                  and set(changed) <= set(REG_CHANGED))
     rows, cnts = H.a2_cycles(cycle)
 
     close = collections.OrderedDict([
@@ -130,7 +137,18 @@ def stage(ref, cycle, branch):
             ("🔴 디스크에만 있는 항목", added or "없음"),
             ("🔴🔴 HEAD 에만 있는 항목(= 지워진 것)", lost or "없음"),
             ("🔴 값이 달라진 항목", changed or "없음"),
+            ("🔴🔴 사전등록 §2-1 이 «측정 전»에 등록한 「값이 달라져도 되는 항목」",
+             REG_CHANGED),
+            ("⚠ 엄격 자(값이 달라진 항목이 «하나도» 없어야 한다)", strict),
             ("🔴🔴🔴 갈린 것이 «이 사이클 자신의 원장 항목 하나»뿐인가", benign),
+            ("🔴 두 자가 갈리나(= 등록한 정정 때문에)", bool(strict != benign)),
+            ("🔴 왜 자를 넓혔나",
+             "🔴 **티처 #123 1순위 ⓐ 가 「판정문·카드·handoff·사전등록·원장 다섯 곳 전부에 "
+             "정정을 «얹어라»」라 했고 사전등록 §2-1 이 그것을 측정 «전»에 박았다.** "
+             "그러면 원장의 `노트 984` 항목이 «반드시» 달라진다 --- 엄격 자로는 원리상 "
+             "통과 불가다. 🔴 **넓힌 사실과 엄격 자의 값을 둘 다 싣는다**(조항 66-③) · "
+             "🔴 **넓힌 것은 «이름 하나»뿐이고 그 이름을 여기 박았다**(조항 60-나 개정판의 "
+             "요건 셋: 사전 등록 ✅ · 전후 병기 ✅ · 잰 날 것 게재 ✅)"),
             ("🔴 왜 이 칸이 있나",
              "🔴 **규칙 A-2 는 «머지 시점»의 규칙이다.** 판정 시점에는 이 사이클의 원장 "
              "항목이 아직 `main` 에 없으므로 «반드시» 갈린다 --- 그것이 유일한 차이인지를 "
