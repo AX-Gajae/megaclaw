@@ -1,0 +1,94 @@
+{
+ "무엇": "989 `R2` — 🔴🔴🔴 **맨 마지막 러너**가 `조항 66-②`(`F09`)를 낸다",
+ "🔴 왜 `score989` 가 «안» 내나": "🔴 988 은 `score988` 이 «자기를 쓰기 전에» 자기 행을 계산해 **자기 생산자에 대해 원리상 못 떨어졌다**",
+ "🔴 러너 mtime": {
+  "runners/world989.py": 1786948149.3,
+  "runners/audit989.py": 1786948857.2,
+  "runners/score989.py": 1786948952.5,
+  "runners/last989.py": 1786949291.5,
+  "runners/note989_gen.py": 1786949326.0
+ },
+ "🔴 산출물 mtime": {
+  "runners/out989_wiring.json": 1786949294.4,
+  "runners/out989_world.json": 1786948167.9,
+  "runners/out989_audit.json": 1786949330.0,
+  "runners/out989_score.json": 1786949330.1
+ },
+ "🔴🔴 ① «자기가 만드는» 산출물보다 나중에 고쳐진 러너(신판)": "없음",
+ "⚠ ① 구판(모든 러너 × 모든 산출물 · 🔴 «생산자가 아닌» 짝까지 센다)": [
+  {
+   "러너": "runners/audit989.py",
+   "산출물": "runners/out989_world.json",
+   "🔴 러너가 더 나중": 689.3
+  },
+  {
+   "러너": "runners/score989.py",
+   "산출물": "runners/out989_world.json",
+   "🔴 러너가 더 나중": 784.6
+  },
+  {
+   "러너": "runners/last989.py",
+   "산출물": "runners/out989_world.json",
+   "🔴 러너가 더 나중": 1123.6
+  },
+  {
+   "러너": "runners/note989_gen.py",
+   "산출물": "runners/out989_wiring.json",
+   "🔴 러너가 더 나중": 31.5
+  },
+  {
+   "러너": "runners/note989_gen.py",
+   "산출물": "runners/out989_world.json",
+   "🔴 러너가 더 나중": 1158.1
+  }
+ ],
+ "🔴 러너 → 산출물 지도": {
+  "runners/world989.py": [
+   "runners/out989_wiring.json",
+   "runners/out989_world.json"
+  ],
+  "runners/audit989.py": [
+   "runners/out989_audit.json"
+  ],
+  "runners/score989.py": [
+   "runners/out989_score.json"
+  ],
+  "runners/last989.py": [],
+  "runners/note989_gen.py": []
+ },
+ "🔴🔴 ② 채점 산출물보다 «먼저» 찍힌 문서": "없음",
+ "🔴🔴 ③ 산출물이 기록한 코드 지문 ↔ 디스크": {
+  "runners/out989_wiring.json": {
+   "🔴 기록한 러너 수": 5,
+   "🔴🔴🔴 지문이 다른 러너": "없음"
+  },
+  "runners/out989_world.json": {
+   "🔴 기록한 러너 수": 5,
+   "🔴🔴🔴 지문이 다른 러너": "없음"
+  },
+  "runners/out989_audit.json": {
+   "🔴 기록한 러너 수": 2,
+   "🔴🔴🔴 지문이 다른 러너": "없음"
+  },
+  "runners/out989_score.json": {
+   "🔴 기록한 러너 수": 5,
+   "🔴🔴🔴 지문이 다른 러너": "없음"
+  }
+ },
+ "🔴🔴🔴 ③ 지문이 다른 러너 수": 0,
+ "🔴 걸린 자리(= 비교를 «수행»한 회수)": 41,
+ "🔴🔴🔴 F09 반증됐나": false,
+ "통과": true,
+ "🔴 이 러너 자신의 sha256": "7a5d8c426d488911de31cb8822e35e7198135452ceb27610503b899aaf3d9aee",
+ "🔴 도장": {
+  "ref": "f2fbec5f5888fa3c242ed19347ba88afb932e869",
+  "끝(UTC)": "2026-08-17T06:48:50Z",
+  "🔴 코드 sha256(끝)": {
+   "runners/world989.py": "ed2d2f5d5edf13623f21d3840e8f2de8527e3e629cd53f9f7c4375f60b5d1663",
+   "runners/audit989.py": "643a6e3ca2e06dd0b6569e423ffc7051a18301e261518be6e6ad7854a029f15c",
+   "runners/score989.py": "132f0598949b7aa48d32e5deb4075b4fc83ebec04930b7ffa9f8e442b3b8db88",
+   "runners/last989.py": "7a5d8c426d488911de31cb8822e35e7198135452ceb27610503b899aaf3d9aee",
+   "runners/note989_gen.py": "61c86604c1c772cef73cd91df62f884e55a56695f8e774c2bcbc581bcf834c03"
+  }
+ }
+}
