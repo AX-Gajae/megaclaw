@@ -730,8 +730,25 @@ def rawgit_gate() -> dict:
     `docs/루프.md:698` 은 그 문장을 **절 제목으로 단언**하는데, 946 까지 ⑤′ 에는
     그 배선이 **없었다**(946 의 게이트는 자기 사이클 러너 안에 있었고 그 러너는
     동결됐다). 이 절이 그 문장을 참으로 만든다.
+
+    🔴🔴 **990 `R4` --- 「이름 붙은 계수」를 «실제로 읽는다»**(`조항 71-다`).
+    989 `R5` 가 `RAW_GIT_LANE_FROZEN` 에 이름과 범위를 붙였으나 **어디서도 안 읽혔다**
+    --- 이름만 있고 자에 «안 물린» 상수는 `조항 71-다` 를 만족하지 않는다.
+    🔴 **판정은 «안» 바꾼다.** 등록된 이름값과 실측이 갈리는지만 나란히 싣는다.
     """
-    return gc.census()
+    r = gc.census()
+    got = r.get("🔴 분모 ④-㉲ 그중 규약상 안 고친다(동결 · ㉯ 의 부분집합)")
+    r["🔴🔴 990 R4 --- 이름 붙은 계수(조항 71-다)를 실제로 읽었다"] = {
+        "🔴 등록된 이름": "RAW_GIT_LANE_FROZEN",
+        "🔴 등록된 값": RAW_GIT_LANE_FROZEN,
+        "🔴 이번 실측 ㉲": got,
+        "🔴 갈리나": bool(got is not None and got != RAW_GIT_LANE_FROZEN),
+        "🔴 구판(989 R5)": "이름과 범위를 붙였으나 **어느 자에서도 안 읽혔다**",
+        "🔴 신판(990 R4)": "이 절이 «읽고» 실측과 나란히 싣는다",
+        "🔴 판정을 바꾸나": False,
+        "🔴 걸린 자리(= 비교를 «수행»한 회수)": 1,
+    }
+    return r
 
 
 def rawgit_power() -> dict:
@@ -1757,6 +1774,24 @@ def repair_lanes(base, head, expected=None, prereg=None, mainref="main",
             "센 레인 수": len(lanes),
             "🔴 상한 안인가": (None if cap is None else bool(len(lanes) <= cap)),
             "통과": bool(cap is not None and len(lanes) <= cap),
+        },
+        # 🔴🔴 **990 `R4`** --- 989 `R5` 가 이름만 만들고 «안 읽은» 계수를 여기서 읽는다.
+        #    🔴 **판정은 안 바꾼다**(기본값을 조용히 넣지 않는다 --- 956 R2 ㉡ 의 규율 그대로).
+        "🔴🔴 990 R4 --- 이름 붙은 계수(조항 71-다)를 실제로 읽었다": {
+            "🔴 LANE_CAP_DEFAULT(등록 이름 · 범위 1..20)": LANE_CAP_DEFAULT,
+            "🔴 사전등록이 실제로 적은 상한": cap,
+            "🔴 둘이 갈리나": bool(cap is not None and cap != LANE_CAP_DEFAULT),
+            "🔴 OUTSIDE_LANE_DEFAULT(등록 이름 · 범위 0..5)": OUTSIDE_LANE_DEFAULT,
+            "🔴 사전등록이 실제로 신고한 저장소 밖 레인": outside_declared,
+            "🔴 둘이 갈리나(저장소 밖)":
+                bool(outside_declared is not None
+                     and outside_declared != OUTSIDE_LANE_DEFAULT),
+            "🔴 FIVEPRIME_71DA_EXCEPTION_CLOSED": FIVEPRIME_71DA_EXCEPTION_CLOSED,
+            "🔴 구판(989 R5)": "세 이름을 만들었으나 **저장소 어디서도 안 읽혔다**",
+            "🔴 신판(990 R4)": "이 절과 절 1-나 가 «읽고» 사전등록 값과 나란히 싣는다",
+            "🔴 판정을 바꾸나": False,
+            "🔴 걸린 자리(= 비교를 «수행»한 회수)": 3,
+            "통과": True,
         },
         "🔴🔴 956 R2 ㉢ 저장소 밖 레인(955 가 인계 카드를 고쳤고 계수기가 원리상 못 봤다)": {
             "본 파일": OUTSIDE_FILES,

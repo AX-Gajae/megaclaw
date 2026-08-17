@@ -1,0 +1,119 @@
+{
+ "무엇": "990 `F09` — 🔴 **맨 마지막 러너가 판정한다**(`조항 66-②` · 989 `R2` 승계)",
+ "🔴 명부의 출처": "글롭 `runners/*990*.py` · `runners/*990*` --- 손으로 안 골랐다",
+ "🔴 지도의 출처": "🔴 **지도를 «안 만든다».** 산출물이 «자기 도장에» 적은 코드 sha256 을 지금 디스크의 sha 와 견준다 --- 989 의 손 `PRODUCES` 는 틀렸었다",
+ "🔴 산출물별 도장이 적은 러너": {
+  "runners/fiveprime_990.json": [
+   "lab/gitcall.py",
+   "lab/keyspace.py",
+   "runners/fiveprime902.py",
+   "runners/quote901.py"
+  ],
+  "runners/out990_arms.json": [
+   "runners/alpha977.py",
+   "runners/ff753.py",
+   "runners/layers957.py",
+   "runners/loso974.py",
+   "runners/predict971.py",
+   "runners/world990.py"
+  ],
+  "runners/out990_audit.json": [
+   "runners/audit990.py"
+  ],
+  "runners/out990_champ.json": [
+   "runners/alpha977.py",
+   "runners/champ990.py",
+   "runners/ff753.py",
+   "runners/text680.py"
+  ],
+  "runners/out990_champw.json": [
+   "runners/alpha977.py",
+   "runners/champ990.py",
+   "runners/ff753.py",
+   "runners/text680.py"
+  ],
+  "runners/out990_fix.json": [
+   "runners/fix990.py"
+  ],
+  "runners/out990_last.json": [
+   "runners/audit990.py",
+   "runners/champ990.py",
+   "runners/exempt990_gen.py",
+   "runners/fix990.py",
+   "runners/last990.py",
+   "runners/ledger990.py",
+   "runners/note990_gen.py",
+   "runners/prose990.py",
+   "runners/score990.py",
+   "runners/world990.py"
+  ],
+  "runners/out990_ledger.json": [
+   "runners/ledger990.py"
+  ],
+  "runners/out990_wiring.json": [
+   "runners/alpha977.py",
+   "runners/ff753.py",
+   "runners/layers957.py",
+   "runners/loso974.py",
+   "runners/predict971.py",
+   "runners/world990.py"
+  ]
+ },
+ "🔴 이 사이클 산출물 전량": [
+  "runners/fiveprime_990.json",
+  "runners/out990_arms.json",
+  "runners/out990_audit.json",
+  "runners/out990_champ.json",
+  "runners/out990_champw.json",
+  "runners/out990_docsha.json",
+  "runners/out990_fix.json",
+  "runners/out990_last.json",
+  "runners/out990_ledger.json",
+  "runners/out990_progress.txt",
+  "runners/out990_score.json",
+  "runners/out990_slots.json",
+  "runners/out990_table.json",
+  "runners/out990_wiring.json"
+ ],
+ "🔴 산출물 수": 14,
+ "🔴🔴 도장이 «없는» 산출물(= 이 자가 원리상 못 본다 · 「깨끗함」이 아니다)": [
+  "runners/out990_docsha.json",
+  "runners/out990_progress.txt",
+  "runners/out990_score.json",
+  "runners/out990_slots.json",
+  "runners/out990_table.json"
+ ],
+ "🔴🔴🔴 도장 sha ≠ 디스크 sha 인 자리(= 고치고 안 다시 돌렸다)": "없음",
+ "🔴 그 수": 6,
+ "🔴🔴 이 러너보다 «새로운» 산출물(= 이 러너가 마지막이 아니다)": [
+  "runners/fiveprime_990.json",
+  "runners/out990_docsha.json",
+  "runners/out990_ledger.json",
+  "runners/out990_score.json",
+  "runners/out990_slots.json",
+  "runners/out990_table.json"
+ ],
+ "🔴 산출물보다 «오래된» 문서(= 다시 안 찍었다)": "없음",
+ "🔴🔴🔴 F09 반증됐나": false,
+ "🔴 걸린 자리(= 비교를 «수행»한 회수)": 55,
+ "통과": true,
+ "🔴 이 절의 통과가 뜻하는 것": "🔴 이 사이클의 «어떤 러너도» 자기 산출물보다 새롭지 않다 --- 고치고 안 다시 돌린 자리가 없다",
+ "⚠ 989 가 어긴 자리": "🔴 `last989.py` 의 `OUTPUTS` 가 «넷»이라 `out989_last.json`·`out989_table.json`·`fiveprime_989.json` 이 감시 «밖»이었고, `PRODUCES` 가 손으로 적혀 틀렸다",
+ "🔴 도장": {
+  "ref(부른 쪽이 준 40자 sha)": "0b19d29d4c19146d0fbefcd6796fc4f7afa185ba",
+  "🔴 코드 sha256": {
+   "runners/audit990.py": "37ca13e9895bc69b878fb26a5cb79212abf0d42821d3fc92f4b01c409138dfe5",
+   "runners/champ990.py": "56eddf708eb8dc447474c4c9b9738e6c53336eadc6a8c08ba62964f85d5a5b51",
+   "runners/exempt990_gen.py": "fde5b475cae2b4afc0684f3bf040217edc64b9f3aa86c8d49a6cc230ae69d6a1",
+   "runners/fix990.py": "d7e58f36cd6058ac6cddb77d87b177965e98a4cdc3a84837c075384d2e4f7e09",
+   "runners/last990.py": "4d6f1e1e9640237917ebebc0fbfea5ad58cc246433adfe8dcd574224557f388a",
+   "runners/ledger990.py": "57943b3137b27fc7095569623ead08b7ed7fd3e40cd2b157b1b2d672349f09c9",
+   "runners/note990_gen.py": "36bc668eb5291586544334fd0ef9121d89a5f72978477f2b41e52efc9c95776e",
+   "runners/prose990.py": "c34f8429f8a1138114ff8808d473f9977e7b515c6401f4334de4c10f6f7f821a",
+   "runners/score990.py": "aadcd46fb0a74a30efa2b9175bd8f9a794aa3e55b347ed5faed1764cf89269cf",
+   "runners/world990.py": "7033c24f5c1d71bcce2a5847f1647d74e82b9f48ad1e6241593e1f8b33be8bb0"
+  },
+  "시작(UTC)": "2026-08-17T09:14:45Z",
+  "끝(UTC)": "2026-08-17T09:14:45Z"
+ }
+}
