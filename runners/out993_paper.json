@@ -1,0 +1,73 @@
+{
+ "무엇": "993 ⑥ 논문 — 🔴 **아홉 사이클 공백을 «한 스텝»으로 끊는다**",
+ "🔴 마지막으로 `paper/` 를 만진 커밋": "abacd2c333714c0e7ed6f9e1bc1802cc625bcb5b",
+ "🔴 그 커밋 시각": "2026-08-17T21:08:28+09:00",
+ "🔴 그 노트 번호": 992,
+ "🔴 그 번호의 «출처»": "🔴 커밋 제목에 `9\\d\\d` 가 «없어** `paper/ledger.json` 의 «최대 스텝 n»으로 갈음했다",
+ "🔴🔴🔴 `paper/` 공백 사이클 수": 0,
+ "⚠ 991 카드가 손으로 박은 수": 11,
+ "🔴🔴 그 수가 «틀렸나»": true,
+ "🔴 이 사이클이 «쓴» 스텝": "993_wiring",
+ "🔴 스텝 경로": "paper/steps/993_wiring",
+ "🔴 주장 수": 7,
+ "🔴 본문의 수가 온 칸": {
+  "격자칸수": 8,
+  "최적집합수": 7,
+  "이분값": 0.109682,
+  "이분SE": 0.043888,
+  "이분t": 2.499153,
+  "이분넘나": true,
+  "이분t균": -0.096985,
+  "이분t챔": 0.288452,
+  "상호판정t": 1.467108,
+  "상호챔t": 2.226044,
+  "차상호값": 0.033131,
+  "차상호SE": 0.017732,
+  "차상호t": 1.868389,
+  "차W5선다": false,
+  "배선수": 7,
+  "검정력": 1,
+  "구성거짓": 6,
+  "992널포함검정력": 7,
+  "널있는검사": 7,
+  "991거짓": 6,
+  "991널포함검정력": 6,
+  "990거짓": 7,
+  "990널포함검정력": 5,
+  "990널있는": 5,
+  "F09_992구자어긋남": 0,
+  "F09_991구자어긋남": 7,
+  "F09_992구자고리안": 8,
+  "F09끈두수": [
+   8,
+   8
+  ],
+  "F09면제가만든": true,
+  "최상위": false
+ },
+ "🔴 못 읽은 칸": "없음",
+ "🔴🔴🔴 컴파일 — «실제로 돌렸다**": {
+  "🔴 돌렸나": true,
+  "🔴 도구": "tectonic",
+  "🔴 명령": "tectonic main.tex",
+  "🔴 종료 코드": 0,
+  "🔴🔴🔴 컴파일했나": true,
+  "🔴 PDF 바이트": 83022,
+  "🔴 마지막 출력(1,200자)": "note: Running TeX ...\nnote: Rerunning TeX because \"main.out\" changed ...\nnote: Running xdvipdfmx ...\nnote: Writing `main.pdf` (81.076171875 KiB)\nnote: Skipped writing 2 intermediate files (use --keep-intermediates to keep them)\nwarning: accessing absolute path `/System/Library/AssetsV2/com_apple_MobileAsset_Font8/4c932c71d74fc9e4c1bd9cbf270374b0b3ee7519.asset/AssetData/NanumMyeongjo.ttc`; build may not be reproducible in other environments\nwarning: accessing absolute path `/System/Library/AssetsV2/com_apple_MobileAsset_Font8/7a0b5c0f3c1d41c4c52a33343496c9c65ad52c50.asset/AssetData/NanumGothic.ttc`; build may not be reproducible in other environments\nwarning: accessing absolute path `/System/Library/Fonts/Menlo.ttc`; build may not be reproducible in other environments\n"
+ },
+ "🔴🔴🔴 컴파일했나(실행 판정)": true,
+ "🔴 `icmlko.sty` 를 스텝에 넣었나": true,
+ "🔴🔴 992 의 「컴파일 거짓」은 무엇이었나": "🔴 **「안 했다」가 아니라 「이 자리에선 «못 한다»」였다** --- `main.tex` 가 `\\usepackage{icmlko}` 를 부르는데 `.sty` 가 스텝 안에 «없었다**",
+ "🔴 보냈나(전송)": false,
+ "🔴 규율과의 화해": "🔴 `docs/루프.md ⑥` 은 「한 스텝 «개선되거나 반증되면»」이지 `⑤′` 통과 조건이 «아니다». 993 는 「한 스텝」을 «반증 쪽»으로 썼다 --- 사전등록 §8 에 «측정 전»에 적었다",
+ "🔴 걸린 자리(= 자가 «비교»를 «수행»한 회수)": 38,
+ "통과": true,
+ "🔴 도장": {
+  "ref(부른 쪽이 준 40자 sha)": "b3a5a55e718c684b24289633ea807a4a188561d2",
+  "🔴 코드 sha256": {
+   "runners/paper993.py": "d4904b3f7a443b24a4d78c61a0f8ca9c4c2b5171db154c5ee43345742de2282f"
+  },
+  "시각(UTC · 시작)": "2026-08-17T14:57:59Z",
+  "시각(UTC · 끝)": "2026-08-17T14:58:02Z"
+ }
+}

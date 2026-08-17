@@ -1,0 +1,3803 @@
+{
+ "무엇": "993 `F09` — 🔴🔴🔴 **도장 «위상 정렬» 전수**(맨 마지막 러너 하나가 아니다)",
+ "🔴 명부의 출처": "글롭 `runners/*993*.py` · `runners/*993*` --- 손으로 안 골랐다",
+ "🔴 지도의 출처": "🔴 **지도를 «안 만든다».** ① 생산자는 산출물이 «자기 도장에» 적은 코드 sha 로 알고 ② 소비 관계는 러너의 **AST 문자열 상수**에서 뽑는다",
+ "🔴 산출물별 도장이 적은 러너": {
+  "runners/fiveprime_993.json": [
+   "lab/gitcall.py",
+   "lab/keyspace.py",
+   "runners/fiveprime902.py",
+   "runners/quote901.py"
+  ],
+  "runners/out993_audit.json": [
+   "runners/audit993.py"
+  ],
+  "runners/out993_fix.json": [
+   "runners/fix993.py"
+  ],
+  "runners/out993_last.json": [
+   "runners/audit993.py",
+   "runners/fix993.py",
+   "runners/last993.py",
+   "runners/ledger993.py",
+   "runners/mut993.py",
+   "runners/note993_gen.py",
+   "runners/paper993.py",
+   "runners/prose993.py",
+   "runners/score993.py",
+   "runners/world993.py"
+  ],
+  "runners/out993_ledger.json": [
+   "runners/ledger993.py"
+  ],
+  "runners/out993_mut.json": [
+   "runners/alpha977.py",
+   "runners/mut993.py",
+   "runners/world993.py"
+  ],
+  "runners/out993_order.json": [
+   "runners/alpha977.py",
+   "runners/ff753.py",
+   "runners/layers957.py",
+   "runners/predict971.py",
+   "runners/world993.py"
+  ],
+  "runners/out993_paper.json": [
+   "runners/paper993.py"
+  ],
+  "runners/out993_wiring.json": [
+   "runners/alpha977.py",
+   "runners/ff753.py",
+   "runners/layers957.py",
+   "runners/predict971.py",
+   "runners/world993.py"
+  ]
+ },
+ "🔴 이 사이클 산출물 전량": [
+  "runners/fiveprime_993.json",
+  "runners/out993_audit.json",
+  "runners/out993_docsha.json",
+  "runners/out993_fix.json",
+  "runners/out993_last.json",
+  "runners/out993_ledger.json",
+  "runners/out993_mut.json",
+  "runners/out993_order.json",
+  "runners/out993_paper.json",
+  "runners/out993_progress.txt",
+  "runners/out993_score.json",
+  "runners/out993_slots.json",
+  "runners/out993_table.json",
+  "runners/out993_wiring.json"
+ ],
+ "🔴 산출물 수": 14,
+ "🔴🔴 도장이 «없는» 산출물(= 이 자가 원리상 못 본다 · 「깨끗함」이 아니다)": [
+  "runners/out993_docsha.json",
+  "runners/out993_progress.txt",
+  "runners/out993_score.json",
+  "runners/out993_slots.json",
+  "runners/out993_table.json"
+ ],
+ "🔴🔴🔴 도장 sha ≠ 디스크 sha 인 자리(= 고치고 안 다시 돌렸다)": "없음",
+ "🔴 그 수": 0,
+ "🔴🔴🔴 993 신설 — 도장 위상 정렬": {
+  "무엇": "🔴🔴🔴 993 자신 — 도장 위상 정렬 전수",
+  "🔴🔴🔴 993 — 「읽는다」 간선의 자(글롭을 «펼쳤나»)": "🔴 993 판(글롭 «펼침»)",
+  "🔴 산출물 수": 14,
+  "🔴 러너 수": 10,
+  "🔴 러너별 «쓰는/읽는» 산출물(AST · 🔴 993 은 글롭을 «펼친다»)": {
+   "runners/audit993.py": {
+    "쓴다": [
+     "out993_audit.json"
+    ],
+    "⚠ 읽는다(992 판 · 이름 상수만)": [
+     "fiveprime_992.json",
+     "out992_slots.json",
+     "out993_mut.json",
+     "out993_slots.json"
+    ],
+    "🔴🔴🔴 읽는다(993 판 · 글롭을 «펼쳤다»)": [
+     "fiveprime_992.json",
+     "fiveprime_993.json",
+     "out992_audit.json",
+     "out992_docsha.json",
+     "out992_fix.json",
+     "out992_last.json",
+     "out992_ledger.json",
+     "out992_mut.json",
+     "out992_order.json",
+     "out992_paper.json",
+     "out992_progress.txt",
+     "out992_score.json",
+     "out992_slots.json",
+     "out992_table.json",
+     "out992_wiring.json",
+     "out993_docsha.json",
+     "out993_fix.json",
+     "out993_last.json",
+     "out993_ledger.json",
+     "out993_mut.json",
+     "out993_order.json",
+     "out993_paper.json",
+     "out993_progress.txt",
+     "out993_score.json",
+     "out993_slots.json",
+     "out993_table.json",
+     "out993_wiring.json"
+    ],
+    "🔴🔴🔴 글롭이 «되살린» 간선 수": 23,
+    "🔴🔴 992 판이 이 러너를 «원리상 못 봤나»(이름 상수 0)": false
+   },
+   "runners/fix993.py": {
+    "쓴다": [
+     "out993_fix.json"
+    ],
+    "⚠ 읽는다(992 판 · 이름 상수만)": [
+     "out991_audit.json",
+     "out991_fix.json",
+     "out992_docsha.json",
+     "out992_table.json",
+     "out993_last.json",
+     "out993_mut.json",
+     "out993_order.json",
+     "out993_score.json",
+     "out993_wiring.json"
+    ],
+    "🔴🔴🔴 읽는다(993 판 · 글롭을 «펼쳤다»)": [
+     "out991_audit.json",
+     "out991_fix.json",
+     "out992_docsha.json",
+     "out992_table.json",
+     "out993_last.json",
+     "out993_mut.json",
+     "out993_order.json",
+     "out993_score.json",
+     "out993_wiring.json"
+    ],
+    "🔴🔴🔴 글롭이 «되살린» 간선 수": 0,
+    "🔴🔴 992 판이 이 러너를 «원리상 못 봤나»(이름 상수 0)": false
+   },
+   "runners/last993.py": {
+    "쓴다": [
+     "out993_last.json"
+    ],
+    "⚠ 읽는다(992 판 · 이름 상수만)": [
+     "out991_audit.json",
+     "out991_fix.json"
+    ],
+    "🔴🔴🔴 읽는다(993 판 · 글롭을 «펼쳤다»)": [
+     "fiveprime_991.json",
+     "fiveprime_992.json",
+     "fiveprime_993.json",
+     "out991_audit.json",
+     "out991_docsha.json",
+     "out991_fix.json",
+     "out991_last.json",
+     "out991_ledger.json",
+     "out991_order.json",
+     "out991_progress.txt",
+     "out991_score.json",
+     "out991_slots.json",
+     "out991_table.json",
+     "out991_wiring.json",
+     "out992_audit.json",
+     "out992_docsha.json",
+     "out992_fix.json",
+     "out992_last.json",
+     "out992_ledger.json",
+     "out992_mut.json",
+     "out992_order.json",
+     "out992_paper.json",
+     "out992_progress.txt",
+     "out992_score.json",
+     "out992_slots.json",
+     "out992_table.json",
+     "out992_wiring.json",
+     "out993_audit.json",
+     "out993_docsha.json",
+     "out993_fix.json",
+     "out993_ledger.json",
+     "out993_mut.json",
+     "out993_order.json",
+     "out993_paper.json",
+     "out993_progress.txt",
+     "out993_score.json",
+     "out993_slots.json",
+     "out993_table.json",
+     "out993_wiring.json"
+    ],
+    "🔴🔴🔴 글롭이 «되살린» 간선 수": 37,
+    "🔴🔴 992 판이 이 러너를 «원리상 못 봤나»(이름 상수 0)": false
+   },
+   "runners/ledger993.py": {
+    "쓴다": [
+     "out993_ledger.json"
+    ],
+    "⚠ 읽는다(992 판 · 이름 상수만)": [
+     "fiveprime_993.json",
+     "out993_audit.json",
+     "out993_last.json",
+     "out993_mut.json",
+     "out993_order.json",
+     "out993_paper.json",
+     "out993_score.json",
+     "out993_wiring.json"
+    ],
+    "🔴🔴🔴 읽는다(993 판 · 글롭을 «펼쳤다»)": [
+     "fiveprime_993.json",
+     "out993_audit.json",
+     "out993_last.json",
+     "out993_mut.json",
+     "out993_order.json",
+     "out993_paper.json",
+     "out993_score.json",
+     "out993_wiring.json"
+    ],
+    "🔴🔴🔴 글롭이 «되살린» 간선 수": 0,
+    "🔴🔴 992 판이 이 러너를 «원리상 못 봤나»(이름 상수 0)": false
+   },
+   "runners/mut993.py": {
+    "쓴다": [
+     "out993_mut.json"
+    ],
+    "⚠ 읽는다(992 판 · 이름 상수만)": [],
+    "🔴🔴🔴 읽는다(993 판 · 글롭을 «펼쳤다»)": [],
+    "🔴🔴🔴 글롭이 «되살린» 간선 수": 0,
+    "🔴🔴 992 판이 이 러너를 «원리상 못 봤나»(이름 상수 0)": false
+   },
+   "runners/note993_gen.py": {
+    "쓴다": [
+     "out993_docsha.json",
+     "out993_slots.json",
+     "out993_table.json"
+    ],
+    "⚠ 읽는다(992 판 · 이름 상수만)": [
+     "fiveprime_993.json",
+     "out993_audit.json",
+     "out993_last.json",
+     "out993_ledger.json",
+     "out993_mut.json",
+     "out993_order.json",
+     "out993_paper.json",
+     "out993_score.json",
+     "out993_wiring.json"
+    ],
+    "🔴🔴🔴 읽는다(993 판 · 글롭을 «펼쳤다»)": [
+     "fiveprime_993.json",
+     "out993_audit.json",
+     "out993_last.json",
+     "out993_ledger.json",
+     "out993_mut.json",
+     "out993_order.json",
+     "out993_paper.json",
+     "out993_score.json",
+     "out993_wiring.json"
+    ],
+    "🔴🔴🔴 글롭이 «되살린» 간선 수": 0,
+    "🔴🔴 992 판이 이 러너를 «원리상 못 봤나»(이름 상수 0)": false
+   },
+   "runners/paper993.py": {
+    "쓴다": [
+     "out993_paper.json"
+    ],
+    "⚠ 읽는다(992 판 · 이름 상수만)": [
+     "out993_audit.json",
+     "out993_last.json",
+     "out993_mut.json",
+     "out993_order.json",
+     "out993_score.json",
+     "out993_wiring.json"
+    ],
+    "🔴🔴🔴 읽는다(993 판 · 글롭을 «펼쳤다»)": [
+     "out993_audit.json",
+     "out993_last.json",
+     "out993_mut.json",
+     "out993_order.json",
+     "out993_score.json",
+     "out993_wiring.json"
+    ],
+    "🔴🔴🔴 글롭이 «되살린» 간선 수": 0,
+    "🔴🔴 992 판이 이 러너를 «원리상 못 봤나»(이름 상수 0)": false
+   },
+   "runners/prose993.py": {
+    "쓴다": [],
+    "⚠ 읽는다(992 판 · 이름 상수만)": [
+     "out993_slots.json"
+    ],
+    "🔴🔴🔴 읽는다(993 판 · 글롭을 «펼쳤다»)": [
+     "out993_slots.json"
+    ],
+    "🔴🔴🔴 글롭이 «되살린» 간선 수": 0,
+    "🔴🔴 992 판이 이 러너를 «원리상 못 봤나»(이름 상수 0)": false
+   },
+   "runners/score993.py": {
+    "쓴다": [
+     "out993_score.json"
+    ],
+    "⚠ 읽는다(992 판 · 이름 상수만)": [
+     "fiveprime_993.json",
+     "out992_order.json",
+     "out993_audit.json",
+     "out993_docsha.json",
+     "out993_last.json",
+     "out993_mut.json",
+     "out993_order.json",
+     "out993_paper.json",
+     "out993_slots.json",
+     "out993_table.json",
+     "out993_wiring.json"
+    ],
+    "🔴🔴🔴 읽는다(993 판 · 글롭을 «펼쳤다»)": [
+     "fiveprime_993.json",
+     "out992_order.json",
+     "out993_audit.json",
+     "out993_docsha.json",
+     "out993_fix.json",
+     "out993_last.json",
+     "out993_ledger.json",
+     "out993_mut.json",
+     "out993_order.json",
+     "out993_paper.json",
+     "out993_progress.txt",
+     "out993_slots.json",
+     "out993_table.json",
+     "out993_wiring.json"
+    ],
+    "🔴🔴🔴 글롭이 «되살린» 간선 수": 3,
+    "🔴🔴 992 판이 이 러너를 «원리상 못 봤나»(이름 상수 0)": false
+   },
+   "runners/world993.py": {
+    "쓴다": [
+     "out993_order.json",
+     "out993_progress.txt",
+     "out993_wiring.json"
+    ],
+    "⚠ 읽는다(992 판 · 이름 상수만)": [],
+    "🔴🔴🔴 읽는다(993 판 · 글롭을 «펼쳤다»)": [],
+    "🔴🔴🔴 글롭이 «되살린» 간선 수": 0,
+    "🔴🔴 992 판이 이 러너를 «원리상 못 봤나»(이름 상수 0)": false
+   }
+  },
+  "🔴🔴🔴 993 — 992 판이 «원리상 못 보던» 러너(이름 상수 0 · 글롭 입력)": "없음",
+  "🔴🔴🔴 993 — 글롭이 «되살린» 간선 수 합": 63,
+  "🔴 산출물별 끝 도장 시각": {
+   "runners/fiveprime_993.json": "2026-08-17T14:59:43Z",
+   "runners/out993_audit.json": "2026-08-17T15:00:21Z",
+   "runners/out993_docsha.json": "2026-08-17T14:59:43Z",
+   "runners/out993_fix.json": "2026-08-17T14:57:59Z",
+   "runners/out993_last.json": "2026-08-17T14:56:51Z",
+   "runners/out993_ledger.json": "2026-08-17T14:57:59Z",
+   "runners/out993_mut.json": "2026-08-17T14:57:58Z",
+   "runners/out993_order.json": "2026-08-17T14:57:49Z",
+   "runners/out993_paper.json": "2026-08-17T14:58:02Z",
+   "runners/out993_progress.txt": null,
+   "runners/out993_score.json": "2026-08-17T14:55:21Z",
+   "runners/out993_slots.json": "2026-08-17T14:59:43Z",
+   "runners/out993_table.json": null,
+   "runners/out993_wiring.json": "2026-08-17T14:57:38Z"
+  },
+  "🔴🔴 산출물 그래프의 «고리»(SCC · 크기 2 이상)": {
+   "1": [
+    "runners/out993_audit.json",
+    "runners/out993_docsha.json",
+    "runners/out993_fix.json",
+    "runners/out993_last.json",
+    "runners/out993_ledger.json",
+    "runners/out993_paper.json",
+    "runners/out993_score.json",
+    "runners/out993_slots.json",
+    "runners/out993_table.json"
+   ]
+  },
+  "🔴 견준 «생산자 → 소비자» 짝 수": 70,
+  "🔴🔴🔴 위상 어긋남(소비자 < 생산자 · 🔴 고리 «밖»)": [
+   {
+    "소비자 산출물": "runners/out993_docsha.json",
+    "낸 러너": "runners/note993_gen.py",
+    "생산자 산출물": "runners/out993_audit.json",
+    "소비자 끝 시각": "2026-08-17T14:59:43Z",
+    "생산자 끝 시각": "2026-08-17T15:00:21Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/fiveprime_993.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_audit.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T15:00:21Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_docsha.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_fix.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:57:59Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_ledger.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:57:59Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_mut.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:57:58Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_order.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:57:49Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_paper.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:58:02Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_slots.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_wiring.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:57:38Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_ledger.json",
+    "낸 러너": "runners/ledger993.py",
+    "생산자 산출물": "runners/fiveprime_993.json",
+    "소비자 끝 시각": "2026-08-17T14:57:59Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_ledger.json",
+    "낸 러너": "runners/ledger993.py",
+    "생산자 산출물": "runners/out993_audit.json",
+    "소비자 끝 시각": "2026-08-17T14:57:59Z",
+    "생산자 끝 시각": "2026-08-17T15:00:21Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_ledger.json",
+    "낸 러너": "runners/ledger993.py",
+    "생산자 산출물": "runners/out993_paper.json",
+    "소비자 끝 시각": "2026-08-17T14:57:59Z",
+    "생산자 끝 시각": "2026-08-17T14:58:02Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_paper.json",
+    "낸 러너": "runners/paper993.py",
+    "생산자 산출물": "runners/out993_audit.json",
+    "소비자 끝 시각": "2026-08-17T14:58:02Z",
+    "생산자 끝 시각": "2026-08-17T15:00:21Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/fiveprime_993.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_audit.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T15:00:21Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_docsha.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_fix.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:57:59Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_last.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:56:51Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_ledger.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:57:59Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_mut.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:57:58Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_order.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:57:49Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_paper.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:58:02Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_slots.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_wiring.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:57:38Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_slots.json",
+    "낸 러너": "runners/note993_gen.py",
+    "생산자 산출물": "runners/out993_audit.json",
+    "소비자 끝 시각": "2026-08-17T14:59:43Z",
+    "생산자 끝 시각": "2026-08-17T15:00:21Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   }
+  ],
+  "🔴🔴🔴 소비자 도장이 «생산자보다 앞선» 자리 수": 27,
+  "🔴🔴 고리 «안»의 어긋남(= `F10` 이 «수렴»으로 푼다)": "없음",
+  "🔴🔴 그 수(고리 안)": 0,
+  "🔴🔴🔴 993 — SCC 면제 상한(= 산출물 수 // 3)": 4,
+  "🔴 상한을 «걸었나»(`cap_div`)": 3,
+  "🔴🔴🔴 993 — 상한을 «넘은» SCC 의 크기": [
+   9
+  ],
+  "🔴🔴🔴 993 — 상한을 넘어 «면제를 못 받은» 어긋남 수": 18,
+  "🔴🔴🔴 993 — «면제 없는» 어긋남 수(SCC 면제를 «전부 끈» 판)": 27,
+  "🔴🔴🔴 993 — «면제 있는» 어긋남 수(= 위 「고리 밖」 수)": 27,
+  "🔴🔴🔴 993 — 면제가 «판정을 바꾸나»": false,
+  "🔴 «면제 없는» 어긋남 전량": [
+   {
+    "소비자 산출물": "runners/out993_docsha.json",
+    "낸 러너": "runners/note993_gen.py",
+    "생산자 산출물": "runners/out993_audit.json",
+    "소비자 끝 시각": "2026-08-17T14:59:43Z",
+    "생산자 끝 시각": "2026-08-17T15:00:21Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/fiveprime_993.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_audit.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T15:00:21Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_docsha.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_fix.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:57:59Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_ledger.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:57:59Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_mut.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:57:58Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_order.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:57:49Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_paper.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:58:02Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_slots.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_wiring.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:57:38Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_ledger.json",
+    "낸 러너": "runners/ledger993.py",
+    "생산자 산출물": "runners/fiveprime_993.json",
+    "소비자 끝 시각": "2026-08-17T14:57:59Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_ledger.json",
+    "낸 러너": "runners/ledger993.py",
+    "생산자 산출물": "runners/out993_audit.json",
+    "소비자 끝 시각": "2026-08-17T14:57:59Z",
+    "생산자 끝 시각": "2026-08-17T15:00:21Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_ledger.json",
+    "낸 러너": "runners/ledger993.py",
+    "생산자 산출물": "runners/out993_paper.json",
+    "소비자 끝 시각": "2026-08-17T14:57:59Z",
+    "생산자 끝 시각": "2026-08-17T14:58:02Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_paper.json",
+    "낸 러너": "runners/paper993.py",
+    "생산자 산출물": "runners/out993_audit.json",
+    "소비자 끝 시각": "2026-08-17T14:58:02Z",
+    "생산자 끝 시각": "2026-08-17T15:00:21Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/fiveprime_993.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_audit.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T15:00:21Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_docsha.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_fix.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:57:59Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_last.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:56:51Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_ledger.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:57:59Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_mut.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:57:58Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_order.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:57:49Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_paper.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:58:02Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_slots.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_wiring.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:57:38Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_slots.json",
+    "낸 러너": "runners/note993_gen.py",
+    "생산자 산출물": "runners/out993_audit.json",
+    "소비자 끝 시각": "2026-08-17T14:59:43Z",
+    "생산자 끝 시각": "2026-08-17T15:00:21Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   }
+  ],
+  "🔴 짝 전량": [
+   {
+    "소비자 산출물": "runners/out993_audit.json",
+    "낸 러너": "runners/audit993.py",
+    "생산자 산출물": "runners/fiveprime_993.json",
+    "소비자 끝 시각": "2026-08-17T15:00:21Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_audit.json",
+    "낸 러너": "runners/audit993.py",
+    "생산자 산출물": "runners/out993_docsha.json",
+    "소비자 끝 시각": "2026-08-17T15:00:21Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_audit.json",
+    "낸 러너": "runners/audit993.py",
+    "생산자 산출물": "runners/out993_fix.json",
+    "소비자 끝 시각": "2026-08-17T15:00:21Z",
+    "생산자 끝 시각": "2026-08-17T14:57:59Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_audit.json",
+    "낸 러너": "runners/audit993.py",
+    "생산자 산출물": "runners/out993_last.json",
+    "소비자 끝 시각": "2026-08-17T15:00:21Z",
+    "생산자 끝 시각": "2026-08-17T14:56:51Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_audit.json",
+    "낸 러너": "runners/audit993.py",
+    "생산자 산출물": "runners/out993_ledger.json",
+    "소비자 끝 시각": "2026-08-17T15:00:21Z",
+    "생산자 끝 시각": "2026-08-17T14:57:59Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_audit.json",
+    "낸 러너": "runners/audit993.py",
+    "생산자 산출물": "runners/out993_mut.json",
+    "소비자 끝 시각": "2026-08-17T15:00:21Z",
+    "생산자 끝 시각": "2026-08-17T14:57:58Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_audit.json",
+    "낸 러너": "runners/audit993.py",
+    "생산자 산출물": "runners/out993_order.json",
+    "소비자 끝 시각": "2026-08-17T15:00:21Z",
+    "생산자 끝 시각": "2026-08-17T14:57:49Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_audit.json",
+    "낸 러너": "runners/audit993.py",
+    "생산자 산출물": "runners/out993_paper.json",
+    "소비자 끝 시각": "2026-08-17T15:00:21Z",
+    "생산자 끝 시각": "2026-08-17T14:58:02Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_audit.json",
+    "낸 러너": "runners/audit993.py",
+    "생산자 산출물": "runners/out993_score.json",
+    "소비자 끝 시각": "2026-08-17T15:00:21Z",
+    "생산자 끝 시각": "2026-08-17T14:55:21Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_audit.json",
+    "낸 러너": "runners/audit993.py",
+    "생산자 산출물": "runners/out993_slots.json",
+    "소비자 끝 시각": "2026-08-17T15:00:21Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_audit.json",
+    "낸 러너": "runners/audit993.py",
+    "생산자 산출물": "runners/out993_wiring.json",
+    "소비자 끝 시각": "2026-08-17T15:00:21Z",
+    "생산자 끝 시각": "2026-08-17T14:57:38Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_docsha.json",
+    "낸 러너": "runners/note993_gen.py",
+    "생산자 산출물": "runners/fiveprime_993.json",
+    "소비자 끝 시각": "2026-08-17T14:59:43Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_docsha.json",
+    "낸 러너": "runners/note993_gen.py",
+    "생산자 산출물": "runners/out993_audit.json",
+    "소비자 끝 시각": "2026-08-17T14:59:43Z",
+    "생산자 끝 시각": "2026-08-17T15:00:21Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_docsha.json",
+    "낸 러너": "runners/note993_gen.py",
+    "생산자 산출물": "runners/out993_last.json",
+    "소비자 끝 시각": "2026-08-17T14:59:43Z",
+    "생산자 끝 시각": "2026-08-17T14:56:51Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_docsha.json",
+    "낸 러너": "runners/note993_gen.py",
+    "생산자 산출물": "runners/out993_ledger.json",
+    "소비자 끝 시각": "2026-08-17T14:59:43Z",
+    "생산자 끝 시각": "2026-08-17T14:57:59Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_docsha.json",
+    "낸 러너": "runners/note993_gen.py",
+    "생산자 산출물": "runners/out993_mut.json",
+    "소비자 끝 시각": "2026-08-17T14:59:43Z",
+    "생산자 끝 시각": "2026-08-17T14:57:58Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_docsha.json",
+    "낸 러너": "runners/note993_gen.py",
+    "생산자 산출물": "runners/out993_order.json",
+    "소비자 끝 시각": "2026-08-17T14:59:43Z",
+    "생산자 끝 시각": "2026-08-17T14:57:49Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_docsha.json",
+    "낸 러너": "runners/note993_gen.py",
+    "생산자 산출물": "runners/out993_paper.json",
+    "소비자 끝 시각": "2026-08-17T14:59:43Z",
+    "생산자 끝 시각": "2026-08-17T14:58:02Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_docsha.json",
+    "낸 러너": "runners/note993_gen.py",
+    "생산자 산출물": "runners/out993_score.json",
+    "소비자 끝 시각": "2026-08-17T14:59:43Z",
+    "생산자 끝 시각": "2026-08-17T14:55:21Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_docsha.json",
+    "낸 러너": "runners/note993_gen.py",
+    "생산자 산출물": "runners/out993_wiring.json",
+    "소비자 끝 시각": "2026-08-17T14:59:43Z",
+    "생산자 끝 시각": "2026-08-17T14:57:38Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_fix.json",
+    "낸 러너": "runners/fix993.py",
+    "생산자 산출물": "runners/out993_last.json",
+    "소비자 끝 시각": "2026-08-17T14:57:59Z",
+    "생산자 끝 시각": "2026-08-17T14:56:51Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_fix.json",
+    "낸 러너": "runners/fix993.py",
+    "생산자 산출물": "runners/out993_mut.json",
+    "소비자 끝 시각": "2026-08-17T14:57:59Z",
+    "생산자 끝 시각": "2026-08-17T14:57:58Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_fix.json",
+    "낸 러너": "runners/fix993.py",
+    "생산자 산출물": "runners/out993_order.json",
+    "소비자 끝 시각": "2026-08-17T14:57:59Z",
+    "생산자 끝 시각": "2026-08-17T14:57:49Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_fix.json",
+    "낸 러너": "runners/fix993.py",
+    "생산자 산출물": "runners/out993_score.json",
+    "소비자 끝 시각": "2026-08-17T14:57:59Z",
+    "생산자 끝 시각": "2026-08-17T14:55:21Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_fix.json",
+    "낸 러너": "runners/fix993.py",
+    "생산자 산출물": "runners/out993_wiring.json",
+    "소비자 끝 시각": "2026-08-17T14:57:59Z",
+    "생산자 끝 시각": "2026-08-17T14:57:38Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/fiveprime_993.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_audit.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T15:00:21Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_docsha.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_fix.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:57:59Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_ledger.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:57:59Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_mut.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:57:58Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_order.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:57:49Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_paper.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:58:02Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_score.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:55:21Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_slots.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_last.json",
+    "낸 러너": "runners/last993.py",
+    "생산자 산출물": "runners/out993_wiring.json",
+    "소비자 끝 시각": "2026-08-17T14:56:51Z",
+    "생산자 끝 시각": "2026-08-17T14:57:38Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_ledger.json",
+    "낸 러너": "runners/ledger993.py",
+    "생산자 산출물": "runners/fiveprime_993.json",
+    "소비자 끝 시각": "2026-08-17T14:57:59Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_ledger.json",
+    "낸 러너": "runners/ledger993.py",
+    "생산자 산출물": "runners/out993_audit.json",
+    "소비자 끝 시각": "2026-08-17T14:57:59Z",
+    "생산자 끝 시각": "2026-08-17T15:00:21Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_ledger.json",
+    "낸 러너": "runners/ledger993.py",
+    "생산자 산출물": "runners/out993_last.json",
+    "소비자 끝 시각": "2026-08-17T14:57:59Z",
+    "생산자 끝 시각": "2026-08-17T14:56:51Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_ledger.json",
+    "낸 러너": "runners/ledger993.py",
+    "생산자 산출물": "runners/out993_mut.json",
+    "소비자 끝 시각": "2026-08-17T14:57:59Z",
+    "생산자 끝 시각": "2026-08-17T14:57:58Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_ledger.json",
+    "낸 러너": "runners/ledger993.py",
+    "생산자 산출물": "runners/out993_order.json",
+    "소비자 끝 시각": "2026-08-17T14:57:59Z",
+    "생산자 끝 시각": "2026-08-17T14:57:49Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_ledger.json",
+    "낸 러너": "runners/ledger993.py",
+    "생산자 산출물": "runners/out993_paper.json",
+    "소비자 끝 시각": "2026-08-17T14:57:59Z",
+    "생산자 끝 시각": "2026-08-17T14:58:02Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_ledger.json",
+    "낸 러너": "runners/ledger993.py",
+    "생산자 산출물": "runners/out993_score.json",
+    "소비자 끝 시각": "2026-08-17T14:57:59Z",
+    "생산자 끝 시각": "2026-08-17T14:55:21Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_ledger.json",
+    "낸 러너": "runners/ledger993.py",
+    "생산자 산출물": "runners/out993_wiring.json",
+    "소비자 끝 시각": "2026-08-17T14:57:59Z",
+    "생산자 끝 시각": "2026-08-17T14:57:38Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_paper.json",
+    "낸 러너": "runners/paper993.py",
+    "생산자 산출물": "runners/out993_audit.json",
+    "소비자 끝 시각": "2026-08-17T14:58:02Z",
+    "생산자 끝 시각": "2026-08-17T15:00:21Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_paper.json",
+    "낸 러너": "runners/paper993.py",
+    "생산자 산출물": "runners/out993_last.json",
+    "소비자 끝 시각": "2026-08-17T14:58:02Z",
+    "생산자 끝 시각": "2026-08-17T14:56:51Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_paper.json",
+    "낸 러너": "runners/paper993.py",
+    "생산자 산출물": "runners/out993_mut.json",
+    "소비자 끝 시각": "2026-08-17T14:58:02Z",
+    "생산자 끝 시각": "2026-08-17T14:57:58Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_paper.json",
+    "낸 러너": "runners/paper993.py",
+    "생산자 산출물": "runners/out993_order.json",
+    "소비자 끝 시각": "2026-08-17T14:58:02Z",
+    "생산자 끝 시각": "2026-08-17T14:57:49Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_paper.json",
+    "낸 러너": "runners/paper993.py",
+    "생산자 산출물": "runners/out993_score.json",
+    "소비자 끝 시각": "2026-08-17T14:58:02Z",
+    "생산자 끝 시각": "2026-08-17T14:55:21Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_paper.json",
+    "낸 러너": "runners/paper993.py",
+    "생산자 산출물": "runners/out993_wiring.json",
+    "소비자 끝 시각": "2026-08-17T14:58:02Z",
+    "생산자 끝 시각": "2026-08-17T14:57:38Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/fiveprime_993.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_audit.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T15:00:21Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_docsha.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_fix.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:57:59Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_last.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:56:51Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_ledger.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:57:59Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_mut.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:57:58Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_order.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:57:49Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_paper.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:58:02Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_slots.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_score.json",
+    "낸 러너": "runners/score993.py",
+    "생산자 산출물": "runners/out993_wiring.json",
+    "소비자 끝 시각": "2026-08-17T14:55:21Z",
+    "생산자 끝 시각": "2026-08-17T14:57:38Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_slots.json",
+    "낸 러너": "runners/note993_gen.py",
+    "생산자 산출물": "runners/fiveprime_993.json",
+    "소비자 끝 시각": "2026-08-17T14:59:43Z",
+    "생산자 끝 시각": "2026-08-17T14:59:43Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_slots.json",
+    "낸 러너": "runners/note993_gen.py",
+    "생산자 산출물": "runners/out993_audit.json",
+    "소비자 끝 시각": "2026-08-17T14:59:43Z",
+    "생산자 끝 시각": "2026-08-17T15:00:21Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_slots.json",
+    "낸 러너": "runners/note993_gen.py",
+    "생산자 산출물": "runners/out993_last.json",
+    "소비자 끝 시각": "2026-08-17T14:59:43Z",
+    "생산자 끝 시각": "2026-08-17T14:56:51Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_slots.json",
+    "낸 러너": "runners/note993_gen.py",
+    "생산자 산출물": "runners/out993_ledger.json",
+    "소비자 끝 시각": "2026-08-17T14:59:43Z",
+    "생산자 끝 시각": "2026-08-17T14:57:59Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_slots.json",
+    "낸 러너": "runners/note993_gen.py",
+    "생산자 산출물": "runners/out993_mut.json",
+    "소비자 끝 시각": "2026-08-17T14:59:43Z",
+    "생산자 끝 시각": "2026-08-17T14:57:58Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_slots.json",
+    "낸 러너": "runners/note993_gen.py",
+    "생산자 산출물": "runners/out993_order.json",
+    "소비자 끝 시각": "2026-08-17T14:59:43Z",
+    "생산자 끝 시각": "2026-08-17T14:57:49Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out993_slots.json",
+    "낸 러너": "runners/note993_gen.py",
+    "생산자 산출물": "runners/out993_paper.json",
+    "소비자 끝 시각": "2026-08-17T14:59:43Z",
+    "생산자 끝 시각": "2026-08-17T14:58:02Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_slots.json",
+    "낸 러너": "runners/note993_gen.py",
+    "생산자 산출물": "runners/out993_score.json",
+    "소비자 끝 시각": "2026-08-17T14:59:43Z",
+    "생산자 끝 시각": "2026-08-17T14:55:21Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 9
+   },
+   {
+    "소비자 산출물": "runners/out993_slots.json",
+    "낸 러너": "runners/note993_gen.py",
+    "생산자 산출물": "runners/out993_wiring.json",
+    "소비자 끝 시각": "2026-08-17T14:59:43Z",
+    "생산자 끝 시각": "2026-08-17T14:57:38Z",
+    "🔴 앞서나": false,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   }
+  ],
+  "🔴 걸린 자리(= 비교를 «수행»한 회수)": 85
+ },
+ "🔴🔴🔴 소비자 도장이 «생산자보다 앞선» 자리 수": 27,
+ "🔴🔴🔴 위상 어긋남(소비자 < 생산자 · 고리 밖)": [
+  {
+   "소비자 산출물": "runners/out993_docsha.json",
+   "낸 러너": "runners/note993_gen.py",
+   "생산자 산출물": "runners/out993_audit.json",
+   "소비자 끝 시각": "2026-08-17T14:59:43Z",
+   "생산자 끝 시각": "2026-08-17T15:00:21Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": true,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+   "🔴 그 SCC 크기": 9
+  },
+  {
+   "소비자 산출물": "runners/out993_last.json",
+   "낸 러너": "runners/last993.py",
+   "생산자 산출물": "runners/fiveprime_993.json",
+   "소비자 끝 시각": "2026-08-17T14:56:51Z",
+   "생산자 끝 시각": "2026-08-17T14:59:43Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": false,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+   "🔴 그 SCC 크기": 0
+  },
+  {
+   "소비자 산출물": "runners/out993_last.json",
+   "낸 러너": "runners/last993.py",
+   "생산자 산출물": "runners/out993_audit.json",
+   "소비자 끝 시각": "2026-08-17T14:56:51Z",
+   "생산자 끝 시각": "2026-08-17T15:00:21Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": true,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+   "🔴 그 SCC 크기": 9
+  },
+  {
+   "소비자 산출물": "runners/out993_last.json",
+   "낸 러너": "runners/last993.py",
+   "생산자 산출물": "runners/out993_docsha.json",
+   "소비자 끝 시각": "2026-08-17T14:56:51Z",
+   "생산자 끝 시각": "2026-08-17T14:59:43Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": true,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+   "🔴 그 SCC 크기": 9
+  },
+  {
+   "소비자 산출물": "runners/out993_last.json",
+   "낸 러너": "runners/last993.py",
+   "생산자 산출물": "runners/out993_fix.json",
+   "소비자 끝 시각": "2026-08-17T14:56:51Z",
+   "생산자 끝 시각": "2026-08-17T14:57:59Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": true,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+   "🔴 그 SCC 크기": 9
+  },
+  {
+   "소비자 산출물": "runners/out993_last.json",
+   "낸 러너": "runners/last993.py",
+   "생산자 산출물": "runners/out993_ledger.json",
+   "소비자 끝 시각": "2026-08-17T14:56:51Z",
+   "생산자 끝 시각": "2026-08-17T14:57:59Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": true,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+   "🔴 그 SCC 크기": 9
+  },
+  {
+   "소비자 산출물": "runners/out993_last.json",
+   "낸 러너": "runners/last993.py",
+   "생산자 산출물": "runners/out993_mut.json",
+   "소비자 끝 시각": "2026-08-17T14:56:51Z",
+   "생산자 끝 시각": "2026-08-17T14:57:58Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": false,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+   "🔴 그 SCC 크기": 0
+  },
+  {
+   "소비자 산출물": "runners/out993_last.json",
+   "낸 러너": "runners/last993.py",
+   "생산자 산출물": "runners/out993_order.json",
+   "소비자 끝 시각": "2026-08-17T14:56:51Z",
+   "생산자 끝 시각": "2026-08-17T14:57:49Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": false,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+   "🔴 그 SCC 크기": 0
+  },
+  {
+   "소비자 산출물": "runners/out993_last.json",
+   "낸 러너": "runners/last993.py",
+   "생산자 산출물": "runners/out993_paper.json",
+   "소비자 끝 시각": "2026-08-17T14:56:51Z",
+   "생산자 끝 시각": "2026-08-17T14:58:02Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": true,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+   "🔴 그 SCC 크기": 9
+  },
+  {
+   "소비자 산출물": "runners/out993_last.json",
+   "낸 러너": "runners/last993.py",
+   "생산자 산출물": "runners/out993_slots.json",
+   "소비자 끝 시각": "2026-08-17T14:56:51Z",
+   "생산자 끝 시각": "2026-08-17T14:59:43Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": true,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+   "🔴 그 SCC 크기": 9
+  },
+  {
+   "소비자 산출물": "runners/out993_last.json",
+   "낸 러너": "runners/last993.py",
+   "생산자 산출물": "runners/out993_wiring.json",
+   "소비자 끝 시각": "2026-08-17T14:56:51Z",
+   "생산자 끝 시각": "2026-08-17T14:57:38Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": false,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+   "🔴 그 SCC 크기": 0
+  },
+  {
+   "소비자 산출물": "runners/out993_ledger.json",
+   "낸 러너": "runners/ledger993.py",
+   "생산자 산출물": "runners/fiveprime_993.json",
+   "소비자 끝 시각": "2026-08-17T14:57:59Z",
+   "생산자 끝 시각": "2026-08-17T14:59:43Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": false,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+   "🔴 그 SCC 크기": 0
+  },
+  {
+   "소비자 산출물": "runners/out993_ledger.json",
+   "낸 러너": "runners/ledger993.py",
+   "생산자 산출물": "runners/out993_audit.json",
+   "소비자 끝 시각": "2026-08-17T14:57:59Z",
+   "생산자 끝 시각": "2026-08-17T15:00:21Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": true,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+   "🔴 그 SCC 크기": 9
+  },
+  {
+   "소비자 산출물": "runners/out993_ledger.json",
+   "낸 러너": "runners/ledger993.py",
+   "생산자 산출물": "runners/out993_paper.json",
+   "소비자 끝 시각": "2026-08-17T14:57:59Z",
+   "생산자 끝 시각": "2026-08-17T14:58:02Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": true,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+   "🔴 그 SCC 크기": 9
+  },
+  {
+   "소비자 산출물": "runners/out993_paper.json",
+   "낸 러너": "runners/paper993.py",
+   "생산자 산출물": "runners/out993_audit.json",
+   "소비자 끝 시각": "2026-08-17T14:58:02Z",
+   "생산자 끝 시각": "2026-08-17T15:00:21Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": true,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+   "🔴 그 SCC 크기": 9
+  },
+  {
+   "소비자 산출물": "runners/out993_score.json",
+   "낸 러너": "runners/score993.py",
+   "생산자 산출물": "runners/fiveprime_993.json",
+   "소비자 끝 시각": "2026-08-17T14:55:21Z",
+   "생산자 끝 시각": "2026-08-17T14:59:43Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": false,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+   "🔴 그 SCC 크기": 0
+  },
+  {
+   "소비자 산출물": "runners/out993_score.json",
+   "낸 러너": "runners/score993.py",
+   "생산자 산출물": "runners/out993_audit.json",
+   "소비자 끝 시각": "2026-08-17T14:55:21Z",
+   "생산자 끝 시각": "2026-08-17T15:00:21Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": true,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+   "🔴 그 SCC 크기": 9
+  },
+  {
+   "소비자 산출물": "runners/out993_score.json",
+   "낸 러너": "runners/score993.py",
+   "생산자 산출물": "runners/out993_docsha.json",
+   "소비자 끝 시각": "2026-08-17T14:55:21Z",
+   "생산자 끝 시각": "2026-08-17T14:59:43Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": true,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+   "🔴 그 SCC 크기": 9
+  },
+  {
+   "소비자 산출물": "runners/out993_score.json",
+   "낸 러너": "runners/score993.py",
+   "생산자 산출물": "runners/out993_fix.json",
+   "소비자 끝 시각": "2026-08-17T14:55:21Z",
+   "생산자 끝 시각": "2026-08-17T14:57:59Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": true,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+   "🔴 그 SCC 크기": 9
+  },
+  {
+   "소비자 산출물": "runners/out993_score.json",
+   "낸 러너": "runners/score993.py",
+   "생산자 산출물": "runners/out993_last.json",
+   "소비자 끝 시각": "2026-08-17T14:55:21Z",
+   "생산자 끝 시각": "2026-08-17T14:56:51Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": true,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+   "🔴 그 SCC 크기": 9
+  },
+  {
+   "소비자 산출물": "runners/out993_score.json",
+   "낸 러너": "runners/score993.py",
+   "생산자 산출물": "runners/out993_ledger.json",
+   "소비자 끝 시각": "2026-08-17T14:55:21Z",
+   "생산자 끝 시각": "2026-08-17T14:57:59Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": true,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+   "🔴 그 SCC 크기": 9
+  },
+  {
+   "소비자 산출물": "runners/out993_score.json",
+   "낸 러너": "runners/score993.py",
+   "생산자 산출물": "runners/out993_mut.json",
+   "소비자 끝 시각": "2026-08-17T14:55:21Z",
+   "생산자 끝 시각": "2026-08-17T14:57:58Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": false,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+   "🔴 그 SCC 크기": 0
+  },
+  {
+   "소비자 산출물": "runners/out993_score.json",
+   "낸 러너": "runners/score993.py",
+   "생산자 산출물": "runners/out993_order.json",
+   "소비자 끝 시각": "2026-08-17T14:55:21Z",
+   "생산자 끝 시각": "2026-08-17T14:57:49Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": false,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+   "🔴 그 SCC 크기": 0
+  },
+  {
+   "소비자 산출물": "runners/out993_score.json",
+   "낸 러너": "runners/score993.py",
+   "생산자 산출물": "runners/out993_paper.json",
+   "소비자 끝 시각": "2026-08-17T14:55:21Z",
+   "생산자 끝 시각": "2026-08-17T14:58:02Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": true,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+   "🔴 그 SCC 크기": 9
+  },
+  {
+   "소비자 산출물": "runners/out993_score.json",
+   "낸 러너": "runners/score993.py",
+   "생산자 산출물": "runners/out993_slots.json",
+   "소비자 끝 시각": "2026-08-17T14:55:21Z",
+   "생산자 끝 시각": "2026-08-17T14:59:43Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": true,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+   "🔴 그 SCC 크기": 9
+  },
+  {
+   "소비자 산출물": "runners/out993_score.json",
+   "낸 러너": "runners/score993.py",
+   "생산자 산출물": "runners/out993_wiring.json",
+   "소비자 끝 시각": "2026-08-17T14:55:21Z",
+   "생산자 끝 시각": "2026-08-17T14:57:38Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": false,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+   "🔴 그 SCC 크기": 0
+  },
+  {
+   "소비자 산출물": "runners/out993_slots.json",
+   "낸 러너": "runners/note993_gen.py",
+   "생산자 산출물": "runners/out993_audit.json",
+   "소비자 끝 시각": "2026-08-17T14:59:43Z",
+   "생산자 끝 시각": "2026-08-17T15:00:21Z",
+   "🔴 앞서나": true,
+   "🔴 고리 안인가": true,
+   "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+   "🔴 그 SCC 크기": 9
+  }
+ ],
+ "🔴🔴 고리 «안»의 어긋남(= `F10` 이 수렴으로 푼다) 수": 0,
+ "🔴🔴🔴 §2 «면제 없는» 판 — 티처 #131 치-2 를 실측한다": {
+  "🔴 왜": "🔴🔴🔴 **`F09` 「992 `0` · 991 `7`」은 «SCC 면제»가 만든 수다.** 992 는 산출물 14 중 **7 개**가 «한» SCC 에 들어 어긋남을 «전부» 면제받았고 991 의 SCC 는 5 라 1 개만 면제됐다. 🔴 그리고 **992 의 판정문이 「991 의 고리 안 수」는 싣고 「992 «자신»의 고리 안 수」는 뺐다** --- 비교를 무력화하는 수 «하나»만 빠졌다",
+  "🔴🔴🔴 992 — 면제 «있는» 어긋남 수": 15,
+  "🔴🔴🔴 992 — 면제 «없는» 어긋남 수": 15,
+  "🔴🔴🔴 992 — 고리 «안» 어긋남 수": 0,
+  "🔴🔴🔴 991 — 면제 «있는» 어긋남 수": 14,
+  "🔴🔴🔴 991 — 면제 «없는» 어긋남 수": 14,
+  "🔴🔴🔴 991 — 고리 «안» 어긋남 수": 0,
+  "🔴🔴🔴 992 와 991 이 «같나»": false,
+  "🔴🔴🔴 면제가 「992 대 991」의 «비교를 뒤집나»": false,
+  "⚠⚠ 992 가 실제로 쓴 자(상한 «없음») — 992 어긋남": 0,
+  "⚠⚠ 992 가 실제로 쓴 자(상한 «없음») — 991 어긋남": 7,
+  "⚠⚠ 992 가 실제로 쓴 자(상한 «없음») — 992 고리 «안»": 8,
+  "⚠⚠ 992 가 실제로 쓴 자(상한 «없음») — 991 고리 «안»": 1,
+  "🔴🔴🔴 992 의 판정문이 실은 수를 «재현했나»(992 0 · 991 7)": true,
+  "🔴🔴🔴 992 의 판정문이 «뺀» 수 — 992 «자신»의 고리 안 어긋남": 8,
+  "🔴🔴🔴 992 의 판정문이 «실은» 수 — 991 의 고리 안 어긋남": 1,
+  "🔴🔴🔴 「992 0 · 991 7」은 «면제»가 만든 수인가": true,
+  "🔴🔴🔴 면제를 «끄면» 그 둘이 «같아지나»(티처 #131 의 「8 대 8」)": true,
+  "🔴🔴🔴 면제를 끈 두 수": [
+   8,
+   8
+  ],
+  "⚠ 992 의 자(이름 상수만 · 993 의 상한 1/3) ──": "아래 여섯 칸",
+  "⚠ 992 의 자(이름 상수만) — 992 면제 «있는»": 8,
+  "⚠ 992 의 자(이름 상수만) — 992 면제 «없는»": 8,
+  "⚠ 992 의 자(이름 상수만) — 992 고리 «안»": 0,
+  "⚠ 992 의 자(이름 상수만) — 991 면제 «있는»": 8,
+  "⚠ 992 의 자(이름 상수만) — 991 면제 «없는»": 8,
+  "⚠ 992 의 자(이름 상수만) — 991 고리 «안»": 0,
+  "🔴🔴🔴 992 의 자에서 «면제를 끄면» 992 와 991 이 «같나»": true,
+  "🔴🔴🔴 992 의 자에서 «면제를 켜면» 992 와 991 이 «갈리나»": false,
+  "🔴🔴🔴 곧 「992 대 991」의 차는 «면제»가 만든 것인가": false,
+  "🔴 992 의 SCC 면제 상한": 4,
+  "🔴 992 의 SCC 크기": {
+   "1": [
+    "runners/out992_audit.json",
+    "runners/out992_docsha.json",
+    "runners/out992_fix.json",
+    "runners/out992_last.json",
+    "runners/out992_ledger.json",
+    "runners/out992_paper.json",
+    "runners/out992_score.json",
+    "runners/out992_slots.json",
+    "runners/out992_table.json"
+   ]
+  },
+  "🔴 991 의 SCC 크기": {
+   "1": [
+    "runners/out991_audit.json",
+    "runners/out991_docsha.json",
+    "runners/out991_fix.json",
+    "runners/out991_last.json",
+    "runners/out991_ledger.json",
+    "runners/out991_score.json",
+    "runners/out991_slots.json",
+    "runners/out991_table.json"
+   ]
+  },
+  "🔴 992 전수": {
+   "무엇": "🔴🔴🔴 992 에 «같은 자»를 물린다(구판/신판 전후 · `조항 66-⑥`)",
+   "🔴🔴🔴 993 — 「읽는다」 간선의 자(글롭을 «펼쳤나»)": "🔴 993 판(글롭 «펼침»)",
+   "🔴 산출물 수": 14,
+   "🔴 러너 수": 10,
+   "🔴 러너별 «쓰는/읽는» 산출물(AST · 🔴 993 은 글롭을 «펼친다»)": {
+    "runners/audit992.py": {
+     "쓴다": [
+      "out992_audit.json"
+     ],
+     "⚠ 읽는다(992 판 · 이름 상수만)": [
+      "fiveprime_991.json",
+      "out991_slots.json",
+      "out992_mut.json",
+      "out992_slots.json"
+     ],
+     "🔴🔴🔴 읽는다(993 판 · 글롭을 «펼쳤다»)": [
+      "fiveprime_991.json",
+      "fiveprime_992.json",
+      "out991_audit.json",
+      "out991_docsha.json",
+      "out991_fix.json",
+      "out991_last.json",
+      "out991_ledger.json",
+      "out991_order.json",
+      "out991_progress.txt",
+      "out991_score.json",
+      "out991_slots.json",
+      "out991_table.json",
+      "out991_wiring.json",
+      "out992_docsha.json",
+      "out992_fix.json",
+      "out992_last.json",
+      "out992_ledger.json",
+      "out992_mut.json",
+      "out992_order.json",
+      "out992_paper.json",
+      "out992_progress.txt",
+      "out992_score.json",
+      "out992_slots.json",
+      "out992_table.json",
+      "out992_wiring.json"
+     ],
+     "🔴🔴🔴 글롭이 «되살린» 간선 수": 21,
+     "🔴🔴 992 판이 이 러너를 «원리상 못 봤나»(이름 상수 0)": false
+    },
+    "runners/fix992.py": {
+     "쓴다": [
+      "out992_fix.json"
+     ],
+     "⚠ 읽는다(992 판 · 이름 상수만)": [
+      "out991_audit.json",
+      "out991_fix.json",
+      "out992_audit.json",
+      "out992_mut.json",
+      "out992_order.json"
+     ],
+     "🔴🔴🔴 읽는다(993 판 · 글롭을 «펼쳤다»)": [
+      "out991_audit.json",
+      "out991_fix.json",
+      "out992_audit.json",
+      "out992_mut.json",
+      "out992_order.json"
+     ],
+     "🔴🔴🔴 글롭이 «되살린» 간선 수": 0,
+     "🔴🔴 992 판이 이 러너를 «원리상 못 봤나»(이름 상수 0)": false
+    },
+    "runners/last992.py": {
+     "쓴다": [
+      "out992_last.json"
+     ],
+     "⚠ 읽는다(992 판 · 이름 상수만)": [
+      "out991_audit.json",
+      "out991_fix.json"
+     ],
+     "🔴🔴🔴 읽는다(993 판 · 글롭을 «펼쳤다»)": [
+      "fiveprime_991.json",
+      "fiveprime_992.json",
+      "out991_audit.json",
+      "out991_docsha.json",
+      "out991_fix.json",
+      "out991_last.json",
+      "out991_ledger.json",
+      "out991_order.json",
+      "out991_progress.txt",
+      "out991_score.json",
+      "out991_slots.json",
+      "out991_table.json",
+      "out991_wiring.json",
+      "out992_audit.json",
+      "out992_docsha.json",
+      "out992_fix.json",
+      "out992_ledger.json",
+      "out992_mut.json",
+      "out992_order.json",
+      "out992_paper.json",
+      "out992_progress.txt",
+      "out992_score.json",
+      "out992_slots.json",
+      "out992_table.json",
+      "out992_wiring.json"
+     ],
+     "🔴🔴🔴 글롭이 «되살린» 간선 수": 23,
+     "🔴🔴 992 판이 이 러너를 «원리상 못 봤나»(이름 상수 0)": false
+    },
+    "runners/ledger992.py": {
+     "쓴다": [
+      "out992_ledger.json"
+     ],
+     "⚠ 읽는다(992 판 · 이름 상수만)": [
+      "fiveprime_992.json",
+      "out992_audit.json",
+      "out992_last.json",
+      "out992_mut.json",
+      "out992_order.json",
+      "out992_paper.json",
+      "out992_score.json",
+      "out992_wiring.json"
+     ],
+     "🔴🔴🔴 읽는다(993 판 · 글롭을 «펼쳤다»)": [
+      "fiveprime_992.json",
+      "out992_audit.json",
+      "out992_last.json",
+      "out992_mut.json",
+      "out992_order.json",
+      "out992_paper.json",
+      "out992_score.json",
+      "out992_wiring.json"
+     ],
+     "🔴🔴🔴 글롭이 «되살린» 간선 수": 0,
+     "🔴🔴 992 판이 이 러너를 «원리상 못 봤나»(이름 상수 0)": false
+    },
+    "runners/mut992.py": {
+     "쓴다": [
+      "out992_mut.json"
+     ],
+     "⚠ 읽는다(992 판 · 이름 상수만)": [],
+     "🔴🔴🔴 읽는다(993 판 · 글롭을 «펼쳤다»)": [],
+     "🔴🔴🔴 글롭이 «되살린» 간선 수": 0,
+     "🔴🔴 992 판이 이 러너를 «원리상 못 봤나»(이름 상수 0)": false
+    },
+    "runners/note992_gen.py": {
+     "쓴다": [
+      "out992_docsha.json",
+      "out992_slots.json",
+      "out992_table.json"
+     ],
+     "⚠ 읽는다(992 판 · 이름 상수만)": [
+      "fiveprime_992.json",
+      "out992_audit.json",
+      "out992_last.json",
+      "out992_ledger.json",
+      "out992_mut.json",
+      "out992_order.json",
+      "out992_paper.json",
+      "out992_score.json",
+      "out992_wiring.json"
+     ],
+     "🔴🔴🔴 읽는다(993 판 · 글롭을 «펼쳤다»)": [
+      "fiveprime_992.json",
+      "out992_audit.json",
+      "out992_last.json",
+      "out992_ledger.json",
+      "out992_mut.json",
+      "out992_order.json",
+      "out992_paper.json",
+      "out992_score.json",
+      "out992_wiring.json"
+     ],
+     "🔴🔴🔴 글롭이 «되살린» 간선 수": 0,
+     "🔴🔴 992 판이 이 러너를 «원리상 못 봤나»(이름 상수 0)": false
+    },
+    "runners/paper992.py": {
+     "쓴다": [
+      "out992_paper.json"
+     ],
+     "⚠ 읽는다(992 판 · 이름 상수만)": [
+      "out992_audit.json",
+      "out992_mut.json",
+      "out992_order.json",
+      "out992_score.json",
+      "out992_wiring.json"
+     ],
+     "🔴🔴🔴 읽는다(993 판 · 글롭을 «펼쳤다»)": [
+      "out992_audit.json",
+      "out992_mut.json",
+      "out992_order.json",
+      "out992_score.json",
+      "out992_wiring.json"
+     ],
+     "🔴🔴🔴 글롭이 «되살린» 간선 수": 0,
+     "🔴🔴 992 판이 이 러너를 «원리상 못 봤나»(이름 상수 0)": false
+    },
+    "runners/prose992.py": {
+     "쓴다": [],
+     "⚠ 읽는다(992 판 · 이름 상수만)": [
+      "out992_slots.json"
+     ],
+     "🔴🔴🔴 읽는다(993 판 · 글롭을 «펼쳤다»)": [
+      "out992_slots.json"
+     ],
+     "🔴🔴🔴 글롭이 «되살린» 간선 수": 0,
+     "🔴🔴 992 판이 이 러너를 «원리상 못 봤나»(이름 상수 0)": false
+    },
+    "runners/score992.py": {
+     "쓴다": [
+      "out992_score.json"
+     ],
+     "⚠ 읽는다(992 판 · 이름 상수만)": [
+      "fiveprime_992.json",
+      "out991_order.json",
+      "out992_audit.json",
+      "out992_docsha.json",
+      "out992_last.json",
+      "out992_mut.json",
+      "out992_order.json",
+      "out992_paper.json",
+      "out992_slots.json",
+      "out992_table.json",
+      "out992_wiring.json"
+     ],
+     "🔴🔴🔴 읽는다(993 판 · 글롭을 «펼쳤다»)": [
+      "fiveprime_992.json",
+      "out991_order.json",
+      "out992_audit.json",
+      "out992_docsha.json",
+      "out992_fix.json",
+      "out992_last.json",
+      "out992_ledger.json",
+      "out992_mut.json",
+      "out992_order.json",
+      "out992_paper.json",
+      "out992_progress.txt",
+      "out992_slots.json",
+      "out992_table.json",
+      "out992_wiring.json"
+     ],
+     "🔴🔴🔴 글롭이 «되살린» 간선 수": 3,
+     "🔴🔴 992 판이 이 러너를 «원리상 못 봤나»(이름 상수 0)": false
+    },
+    "runners/world992.py": {
+     "쓴다": [
+      "out992_order.json",
+      "out992_wiring.json"
+     ],
+     "⚠ 읽는다(992 판 · 이름 상수만)": [
+      "out992_progress.txt"
+     ],
+     "🔴🔴🔴 읽는다(993 판 · 글롭을 «펼쳤다»)": [
+      "out992_progress.txt"
+     ],
+     "🔴🔴🔴 글롭이 «되살린» 간선 수": 0,
+     "🔴🔴 992 판이 이 러너를 «원리상 못 봤나»(이름 상수 0)": false
+    }
+   },
+   "🔴🔴🔴 993 — 992 판이 «원리상 못 보던» 러너(이름 상수 0 · 글롭 입력)": "없음",
+   "🔴🔴🔴 993 — 글롭이 «되살린» 간선 수 합": 47,
+   "🔴 산출물별 끝 도장 시각": {
+    "runners/fiveprime_992.json": "2026-08-17T12:38:09Z",
+    "runners/out992_audit.json": "2026-08-17T12:59:12Z",
+    "runners/out992_docsha.json": "2026-08-17T12:58:36Z",
+    "runners/out992_fix.json": "2026-08-17T12:59:13Z",
+    "runners/out992_last.json": "2026-08-17T12:58:36Z",
+    "runners/out992_ledger.json": "2026-08-17T12:59:13Z",
+    "runners/out992_mut.json": "2026-08-17T12:57:20Z",
+    "runners/out992_order.json": "2026-08-17T12:57:11Z",
+    "runners/out992_paper.json": "2026-08-17T12:58:36Z",
+    "runners/out992_progress.txt": null,
+    "runners/out992_score.json": "2026-08-17T12:59:13Z",
+    "runners/out992_slots.json": "2026-08-17T12:58:36Z",
+    "runners/out992_table.json": null,
+    "runners/out992_wiring.json": "2026-08-17T12:57:00Z"
+   },
+   "🔴🔴 산출물 그래프의 «고리»(SCC · 크기 2 이상)": {
+    "1": [
+     "runners/out992_audit.json",
+     "runners/out992_docsha.json",
+     "runners/out992_fix.json",
+     "runners/out992_last.json",
+     "runners/out992_ledger.json",
+     "runners/out992_paper.json",
+     "runners/out992_score.json",
+     "runners/out992_slots.json",
+     "runners/out992_table.json"
+    ]
+   },
+   "🔴 견준 «생산자 → 소비자» 짝 수": 67,
+   "🔴🔴🔴 위상 어긋남(소비자 < 생산자 · 🔴 고리 «밖»)": [
+    {
+     "소비자 산출물": "runners/out992_audit.json",
+     "낸 러너": "runners/audit992.py",
+     "생산자 산출물": "runners/out992_fix.json",
+     "소비자 끝 시각": "2026-08-17T12:59:12Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_audit.json",
+     "낸 러너": "runners/audit992.py",
+     "생산자 산출물": "runners/out992_ledger.json",
+     "소비자 끝 시각": "2026-08-17T12:59:12Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_audit.json",
+     "낸 러너": "runners/audit992.py",
+     "생산자 산출물": "runners/out992_score.json",
+     "소비자 끝 시각": "2026-08-17T12:59:12Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_docsha.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_audit.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:12Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_docsha.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_ledger.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_docsha.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_score.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_last.json",
+     "낸 러너": "runners/last992.py",
+     "생산자 산출물": "runners/out992_audit.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:12Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_last.json",
+     "낸 러너": "runners/last992.py",
+     "생산자 산출물": "runners/out992_fix.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_last.json",
+     "낸 러너": "runners/last992.py",
+     "생산자 산출물": "runners/out992_ledger.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_last.json",
+     "낸 러너": "runners/last992.py",
+     "생산자 산출물": "runners/out992_score.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_paper.json",
+     "낸 러너": "runners/paper992.py",
+     "생산자 산출물": "runners/out992_audit.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:12Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_paper.json",
+     "낸 러너": "runners/paper992.py",
+     "생산자 산출물": "runners/out992_score.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_slots.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_audit.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:12Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_slots.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_ledger.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_slots.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_score.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    }
+   ],
+   "🔴🔴🔴 소비자 도장이 «생산자보다 앞선» 자리 수": 15,
+   "🔴🔴 고리 «안»의 어긋남(= `F10` 이 «수렴»으로 푼다)": "없음",
+   "🔴🔴 그 수(고리 안)": 0,
+   "🔴🔴🔴 993 — SCC 면제 상한(= 산출물 수 // 3)": 4,
+   "🔴 상한을 «걸었나»(`cap_div`)": 3,
+   "🔴🔴🔴 993 — 상한을 «넘은» SCC 의 크기": [
+    9
+   ],
+   "🔴🔴🔴 993 — 상한을 넘어 «면제를 못 받은» 어긋남 수": 15,
+   "🔴🔴🔴 993 — «면제 없는» 어긋남 수(SCC 면제를 «전부 끈» 판)": 15,
+   "🔴🔴🔴 993 — «면제 있는» 어긋남 수(= 위 「고리 밖」 수)": 15,
+   "🔴🔴🔴 993 — 면제가 «판정을 바꾸나»": false,
+   "🔴 «면제 없는» 어긋남 전량": [
+    {
+     "소비자 산출물": "runners/out992_audit.json",
+     "낸 러너": "runners/audit992.py",
+     "생산자 산출물": "runners/out992_fix.json",
+     "소비자 끝 시각": "2026-08-17T12:59:12Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_audit.json",
+     "낸 러너": "runners/audit992.py",
+     "생산자 산출물": "runners/out992_ledger.json",
+     "소비자 끝 시각": "2026-08-17T12:59:12Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_audit.json",
+     "낸 러너": "runners/audit992.py",
+     "생산자 산출물": "runners/out992_score.json",
+     "소비자 끝 시각": "2026-08-17T12:59:12Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_docsha.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_audit.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:12Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_docsha.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_ledger.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_docsha.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_score.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_last.json",
+     "낸 러너": "runners/last992.py",
+     "생산자 산출물": "runners/out992_audit.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:12Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_last.json",
+     "낸 러너": "runners/last992.py",
+     "생산자 산출물": "runners/out992_fix.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_last.json",
+     "낸 러너": "runners/last992.py",
+     "생산자 산출물": "runners/out992_ledger.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_last.json",
+     "낸 러너": "runners/last992.py",
+     "생산자 산출물": "runners/out992_score.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_paper.json",
+     "낸 러너": "runners/paper992.py",
+     "생산자 산출물": "runners/out992_audit.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:12Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_paper.json",
+     "낸 러너": "runners/paper992.py",
+     "생산자 산출물": "runners/out992_score.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_slots.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_audit.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:12Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_slots.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_ledger.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_slots.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_score.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    }
+   ],
+   "🔴 짝 전량": [
+    {
+     "소비자 산출물": "runners/out992_audit.json",
+     "낸 러너": "runners/audit992.py",
+     "생산자 산출물": "runners/fiveprime_992.json",
+     "소비자 끝 시각": "2026-08-17T12:59:12Z",
+     "생산자 끝 시각": "2026-08-17T12:38:09Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_audit.json",
+     "낸 러너": "runners/audit992.py",
+     "생산자 산출물": "runners/out992_docsha.json",
+     "소비자 끝 시각": "2026-08-17T12:59:12Z",
+     "생산자 끝 시각": "2026-08-17T12:58:36Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_audit.json",
+     "낸 러너": "runners/audit992.py",
+     "생산자 산출물": "runners/out992_fix.json",
+     "소비자 끝 시각": "2026-08-17T12:59:12Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_audit.json",
+     "낸 러너": "runners/audit992.py",
+     "생산자 산출물": "runners/out992_last.json",
+     "소비자 끝 시각": "2026-08-17T12:59:12Z",
+     "생산자 끝 시각": "2026-08-17T12:58:36Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_audit.json",
+     "낸 러너": "runners/audit992.py",
+     "생산자 산출물": "runners/out992_ledger.json",
+     "소비자 끝 시각": "2026-08-17T12:59:12Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_audit.json",
+     "낸 러너": "runners/audit992.py",
+     "생산자 산출물": "runners/out992_mut.json",
+     "소비자 끝 시각": "2026-08-17T12:59:12Z",
+     "생산자 끝 시각": "2026-08-17T12:57:20Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_audit.json",
+     "낸 러너": "runners/audit992.py",
+     "생산자 산출물": "runners/out992_order.json",
+     "소비자 끝 시각": "2026-08-17T12:59:12Z",
+     "생산자 끝 시각": "2026-08-17T12:57:11Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_audit.json",
+     "낸 러너": "runners/audit992.py",
+     "생산자 산출물": "runners/out992_paper.json",
+     "소비자 끝 시각": "2026-08-17T12:59:12Z",
+     "생산자 끝 시각": "2026-08-17T12:58:36Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_audit.json",
+     "낸 러너": "runners/audit992.py",
+     "생산자 산출물": "runners/out992_score.json",
+     "소비자 끝 시각": "2026-08-17T12:59:12Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_audit.json",
+     "낸 러너": "runners/audit992.py",
+     "생산자 산출물": "runners/out992_slots.json",
+     "소비자 끝 시각": "2026-08-17T12:59:12Z",
+     "생산자 끝 시각": "2026-08-17T12:58:36Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_audit.json",
+     "낸 러너": "runners/audit992.py",
+     "생산자 산출물": "runners/out992_wiring.json",
+     "소비자 끝 시각": "2026-08-17T12:59:12Z",
+     "생산자 끝 시각": "2026-08-17T12:57:00Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_docsha.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/fiveprime_992.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:38:09Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_docsha.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_audit.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:12Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_docsha.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_last.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:58:36Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_docsha.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_ledger.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_docsha.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_mut.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:57:20Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_docsha.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_order.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:57:11Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_docsha.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_paper.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:58:36Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_docsha.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_score.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_docsha.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_wiring.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:57:00Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_fix.json",
+     "낸 러너": "runners/fix992.py",
+     "생산자 산출물": "runners/out992_audit.json",
+     "소비자 끝 시각": "2026-08-17T12:59:13Z",
+     "생산자 끝 시각": "2026-08-17T12:59:12Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_fix.json",
+     "낸 러너": "runners/fix992.py",
+     "생산자 산출물": "runners/out992_mut.json",
+     "소비자 끝 시각": "2026-08-17T12:59:13Z",
+     "생산자 끝 시각": "2026-08-17T12:57:20Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_fix.json",
+     "낸 러너": "runners/fix992.py",
+     "생산자 산출물": "runners/out992_order.json",
+     "소비자 끝 시각": "2026-08-17T12:59:13Z",
+     "생산자 끝 시각": "2026-08-17T12:57:11Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_last.json",
+     "낸 러너": "runners/last992.py",
+     "생산자 산출물": "runners/fiveprime_992.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:38:09Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_last.json",
+     "낸 러너": "runners/last992.py",
+     "생산자 산출물": "runners/out992_audit.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:12Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_last.json",
+     "낸 러너": "runners/last992.py",
+     "생산자 산출물": "runners/out992_docsha.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:58:36Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_last.json",
+     "낸 러너": "runners/last992.py",
+     "생산자 산출물": "runners/out992_fix.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_last.json",
+     "낸 러너": "runners/last992.py",
+     "생산자 산출물": "runners/out992_ledger.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_last.json",
+     "낸 러너": "runners/last992.py",
+     "생산자 산출물": "runners/out992_mut.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:57:20Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_last.json",
+     "낸 러너": "runners/last992.py",
+     "생산자 산출물": "runners/out992_order.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:57:11Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_last.json",
+     "낸 러너": "runners/last992.py",
+     "생산자 산출물": "runners/out992_paper.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:58:36Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_last.json",
+     "낸 러너": "runners/last992.py",
+     "생산자 산출물": "runners/out992_score.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_last.json",
+     "낸 러너": "runners/last992.py",
+     "생산자 산출물": "runners/out992_slots.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:58:36Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_last.json",
+     "낸 러너": "runners/last992.py",
+     "생산자 산출물": "runners/out992_wiring.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:57:00Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_ledger.json",
+     "낸 러너": "runners/ledger992.py",
+     "생산자 산출물": "runners/fiveprime_992.json",
+     "소비자 끝 시각": "2026-08-17T12:59:13Z",
+     "생산자 끝 시각": "2026-08-17T12:38:09Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_ledger.json",
+     "낸 러너": "runners/ledger992.py",
+     "생산자 산출물": "runners/out992_audit.json",
+     "소비자 끝 시각": "2026-08-17T12:59:13Z",
+     "생산자 끝 시각": "2026-08-17T12:59:12Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_ledger.json",
+     "낸 러너": "runners/ledger992.py",
+     "생산자 산출물": "runners/out992_last.json",
+     "소비자 끝 시각": "2026-08-17T12:59:13Z",
+     "생산자 끝 시각": "2026-08-17T12:58:36Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_ledger.json",
+     "낸 러너": "runners/ledger992.py",
+     "생산자 산출물": "runners/out992_mut.json",
+     "소비자 끝 시각": "2026-08-17T12:59:13Z",
+     "생산자 끝 시각": "2026-08-17T12:57:20Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_ledger.json",
+     "낸 러너": "runners/ledger992.py",
+     "생산자 산출물": "runners/out992_order.json",
+     "소비자 끝 시각": "2026-08-17T12:59:13Z",
+     "생산자 끝 시각": "2026-08-17T12:57:11Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_ledger.json",
+     "낸 러너": "runners/ledger992.py",
+     "생산자 산출물": "runners/out992_paper.json",
+     "소비자 끝 시각": "2026-08-17T12:59:13Z",
+     "생산자 끝 시각": "2026-08-17T12:58:36Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_ledger.json",
+     "낸 러너": "runners/ledger992.py",
+     "생산자 산출물": "runners/out992_score.json",
+     "소비자 끝 시각": "2026-08-17T12:59:13Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_ledger.json",
+     "낸 러너": "runners/ledger992.py",
+     "생산자 산출물": "runners/out992_wiring.json",
+     "소비자 끝 시각": "2026-08-17T12:59:13Z",
+     "생산자 끝 시각": "2026-08-17T12:57:00Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_paper.json",
+     "낸 러너": "runners/paper992.py",
+     "생산자 산출물": "runners/out992_audit.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:12Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_paper.json",
+     "낸 러너": "runners/paper992.py",
+     "생산자 산출물": "runners/out992_mut.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:57:20Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_paper.json",
+     "낸 러너": "runners/paper992.py",
+     "생산자 산출물": "runners/out992_order.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:57:11Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_paper.json",
+     "낸 러너": "runners/paper992.py",
+     "생산자 산출물": "runners/out992_score.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_paper.json",
+     "낸 러너": "runners/paper992.py",
+     "생산자 산출물": "runners/out992_wiring.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:57:00Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_score.json",
+     "낸 러너": "runners/score992.py",
+     "생산자 산출물": "runners/fiveprime_992.json",
+     "소비자 끝 시각": "2026-08-17T12:59:13Z",
+     "생산자 끝 시각": "2026-08-17T12:38:09Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_score.json",
+     "낸 러너": "runners/score992.py",
+     "생산자 산출물": "runners/out992_audit.json",
+     "소비자 끝 시각": "2026-08-17T12:59:13Z",
+     "생산자 끝 시각": "2026-08-17T12:59:12Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_score.json",
+     "낸 러너": "runners/score992.py",
+     "생산자 산출물": "runners/out992_docsha.json",
+     "소비자 끝 시각": "2026-08-17T12:59:13Z",
+     "생산자 끝 시각": "2026-08-17T12:58:36Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_score.json",
+     "낸 러너": "runners/score992.py",
+     "생산자 산출물": "runners/out992_fix.json",
+     "소비자 끝 시각": "2026-08-17T12:59:13Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_score.json",
+     "낸 러너": "runners/score992.py",
+     "생산자 산출물": "runners/out992_last.json",
+     "소비자 끝 시각": "2026-08-17T12:59:13Z",
+     "생산자 끝 시각": "2026-08-17T12:58:36Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_score.json",
+     "낸 러너": "runners/score992.py",
+     "생산자 산출물": "runners/out992_ledger.json",
+     "소비자 끝 시각": "2026-08-17T12:59:13Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_score.json",
+     "낸 러너": "runners/score992.py",
+     "생산자 산출물": "runners/out992_mut.json",
+     "소비자 끝 시각": "2026-08-17T12:59:13Z",
+     "생산자 끝 시각": "2026-08-17T12:57:20Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_score.json",
+     "낸 러너": "runners/score992.py",
+     "생산자 산출물": "runners/out992_order.json",
+     "소비자 끝 시각": "2026-08-17T12:59:13Z",
+     "생산자 끝 시각": "2026-08-17T12:57:11Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_score.json",
+     "낸 러너": "runners/score992.py",
+     "생산자 산출물": "runners/out992_paper.json",
+     "소비자 끝 시각": "2026-08-17T12:59:13Z",
+     "생산자 끝 시각": "2026-08-17T12:58:36Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_score.json",
+     "낸 러너": "runners/score992.py",
+     "생산자 산출물": "runners/out992_slots.json",
+     "소비자 끝 시각": "2026-08-17T12:59:13Z",
+     "생산자 끝 시각": "2026-08-17T12:58:36Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_score.json",
+     "낸 러너": "runners/score992.py",
+     "생산자 산출물": "runners/out992_wiring.json",
+     "소비자 끝 시각": "2026-08-17T12:59:13Z",
+     "생산자 끝 시각": "2026-08-17T12:57:00Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_slots.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/fiveprime_992.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:38:09Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_slots.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_audit.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:12Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_slots.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_last.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:58:36Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_slots.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_ledger.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_slots.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_mut.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:57:20Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_slots.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_order.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:57:11Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    },
+    {
+     "소비자 산출물": "runners/out992_slots.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_paper.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:58:36Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_slots.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_score.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:59:13Z",
+     "🔴 앞서나": true,
+     "🔴 고리 안인가": true,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+     "🔴 그 SCC 크기": 9
+    },
+    {
+     "소비자 산출물": "runners/out992_slots.json",
+     "낸 러너": "runners/note992_gen.py",
+     "생산자 산출물": "runners/out992_wiring.json",
+     "소비자 끝 시각": "2026-08-17T12:58:36Z",
+     "생산자 끝 시각": "2026-08-17T12:57:00Z",
+     "🔴 앞서나": false,
+     "🔴 고리 안인가": false,
+     "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+     "🔴 그 SCC 크기": 0
+    }
+   ],
+   "🔴 걸린 자리(= 비교를 «수행»한 회수)": 84
+  }
+ },
+ "🔴🔴 구판/신판 전후 — 991 에 같은 자를 물리면": {
+  "🔴🔴🔴 991 의 위상 어긋남 수": 14,
+  "🔴 그 자리": [
+   {
+    "소비자 산출물": "runners/out991_audit.json",
+    "낸 러너": "runners/audit991.py",
+    "생산자 산출물": "runners/fiveprime_991.json",
+    "소비자 끝 시각": "2026-08-17T10:52:30Z",
+    "생산자 끝 시각": "2026-08-17T10:55:57Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out991_audit.json",
+    "낸 러너": "runners/audit991.py",
+    "생산자 산출물": "runners/out991_docsha.json",
+    "소비자 끝 시각": "2026-08-17T10:52:30Z",
+    "생산자 끝 시각": "2026-08-17T10:52:55Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 8
+   },
+   {
+    "소비자 산출물": "runners/out991_audit.json",
+    "낸 러너": "runners/audit991.py",
+    "생산자 산출물": "runners/out991_last.json",
+    "소비자 끝 시각": "2026-08-17T10:52:30Z",
+    "생산자 끝 시각": "2026-08-17T10:52:55Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 8
+   },
+   {
+    "소비자 산출물": "runners/out991_audit.json",
+    "낸 러너": "runners/audit991.py",
+    "생산자 산출물": "runners/out991_ledger.json",
+    "소비자 끝 시각": "2026-08-17T10:52:30Z",
+    "생산자 끝 시각": "2026-08-17T10:52:31Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 8
+   },
+   {
+    "소비자 산출물": "runners/out991_audit.json",
+    "낸 러너": "runners/audit991.py",
+    "생산자 산출물": "runners/out991_score.json",
+    "소비자 끝 시각": "2026-08-17T10:52:30Z",
+    "생산자 끝 시각": "2026-08-17T10:52:55Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 8
+   },
+   {
+    "소비자 산출물": "runners/out991_audit.json",
+    "낸 러너": "runners/audit991.py",
+    "생산자 산출물": "runners/out991_slots.json",
+    "소비자 끝 시각": "2026-08-17T10:52:30Z",
+    "생산자 끝 시각": "2026-08-17T10:52:55Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 8
+   },
+   {
+    "소비자 산출물": "runners/out991_docsha.json",
+    "낸 러너": "runners/note991_gen.py",
+    "생산자 산출물": "runners/fiveprime_991.json",
+    "소비자 끝 시각": "2026-08-17T10:52:55Z",
+    "생산자 끝 시각": "2026-08-17T10:55:57Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out991_fix.json",
+    "낸 러너": "runners/fix991.py",
+    "생산자 산출물": "runners/out991_audit.json",
+    "소비자 끝 시각": "2026-08-17T10:41:41Z",
+    "생산자 끝 시각": "2026-08-17T10:52:30Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 8
+   },
+   {
+    "소비자 산출물": "runners/out991_last.json",
+    "낸 러너": "runners/last991.py",
+    "생산자 산출물": "runners/fiveprime_991.json",
+    "소비자 끝 시각": "2026-08-17T10:52:55Z",
+    "생산자 끝 시각": "2026-08-17T10:55:57Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out991_ledger.json",
+    "낸 러너": "runners/ledger991.py",
+    "생산자 산출물": "runners/fiveprime_991.json",
+    "소비자 끝 시각": "2026-08-17T10:52:31Z",
+    "생산자 끝 시각": "2026-08-17T10:55:57Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out991_ledger.json",
+    "낸 러너": "runners/ledger991.py",
+    "생산자 산출물": "runners/out991_last.json",
+    "소비자 끝 시각": "2026-08-17T10:52:31Z",
+    "생산자 끝 시각": "2026-08-17T10:52:55Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 8
+   },
+   {
+    "소비자 산출물": "runners/out991_ledger.json",
+    "낸 러너": "runners/ledger991.py",
+    "생산자 산출물": "runners/out991_score.json",
+    "소비자 끝 시각": "2026-08-17T10:52:31Z",
+    "생산자 끝 시각": "2026-08-17T10:52:55Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": true,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": true,
+    "🔴 그 SCC 크기": 8
+   },
+   {
+    "소비자 산출물": "runners/out991_score.json",
+    "낸 러너": "runners/score991.py",
+    "생산자 산출물": "runners/fiveprime_991.json",
+    "소비자 끝 시각": "2026-08-17T10:52:55Z",
+    "생산자 끝 시각": "2026-08-17T10:55:57Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   },
+   {
+    "소비자 산출물": "runners/out991_slots.json",
+    "낸 러너": "runners/note991_gen.py",
+    "생산자 산출물": "runners/fiveprime_991.json",
+    "소비자 끝 시각": "2026-08-17T10:52:55Z",
+    "생산자 끝 시각": "2026-08-17T10:55:57Z",
+    "🔴 앞서나": true,
+    "🔴 고리 안인가": false,
+    "🔴🔴🔴 993 — 고리가 «상한»을 넘어 면제를 못 받나": false,
+    "🔴 그 SCC 크기": 0
+   }
+  ],
+  "🔴 991 의 고리 «안» 어긋남 수": 0,
+  "🔴 991 의 `F09` 가 낸 값": "🔴 **통과**(맨 마지막 러너 하나만 봤다)",
+  "🔴🔴🔴 구판/신판이 갈리나": true,
+  "🔴 이것이 이 자의 «검정력 증거»다": "🔴 **새 자는 991 의 실제 사고(`fix991` 이 `audit991` 보다 11 분 먼저 돌고 다시 안 돌았다)를 «잡는다».** 구판은 못 잡았다"
+ },
+ "🔴 산출물보다 «오래된» 문서(= 다시 안 찍었다)": [
+  {
+   "문서": "docs/판정_993.md",
+   "🔴 더 새 산출물": "runners/out993_audit.json"
+  },
+  {
+   "문서": "docs/card_993.md",
+   "🔴 더 새 산출물": "runners/out993_audit.json"
+  },
+  {
+   "문서": "docs/handoff_993.md",
+   "🔴 더 새 산출물": "runners/out993_audit.json"
+  },
+  {
+   "문서": "docs/pr_993.md",
+   "🔴 더 새 산출물": "runners/out993_audit.json"
+  }
+ ],
+ "🔴🔴🔴 §3 자기 자신 — 런타임에 «실제로 연» 산출물(`sys.addaudithook`)": {
+  "🔴 왜": "🔴 992 의 `F09` 는 «AST 문자열 상수»만 봤고 `last992.py` 는 입력을 «글롭»으로 찾아 상수가 «없다» --- 그래서 `rw_of(last992.py)` 의 「읽는다」에 992 산출물이 «하나도» 없었다. **자가 자기 출처를 못 댔다**(`조항 66`)",
+  "🔴🔴🔴 이 러너가 «실제로» 연 산출물": {
+   "runners/fiveprime_993.json": 6,
+   "runners/out993_audit.json": 6,
+   "runners/out993_docsha.json": 6,
+   "runners/out993_fix.json": 6,
+   "runners/out993_last.json": 6,
+   "runners/out993_ledger.json": 6,
+   "runners/out993_mut.json": 6,
+   "runners/out993_order.json": 6,
+   "runners/out993_paper.json": 6,
+   "runners/out993_progress.txt": 6,
+   "runners/out993_score.json": 6,
+   "runners/out993_slots.json": 6,
+   "runners/out993_table.json": 6,
+   "runners/out993_wiring.json": 6,
+   "runners/fiveprime_992.json": 12,
+   "runners/out992_audit.json": 12,
+   "runners/out992_docsha.json": 12,
+   "runners/out992_fix.json": 12,
+   "runners/out992_last.json": 12,
+   "runners/out992_ledger.json": 12,
+   "runners/out992_mut.json": 12,
+   "runners/out992_order.json": 12,
+   "runners/out992_paper.json": 12,
+   "runners/out992_progress.txt": 12,
+   "runners/out992_score.json": 12,
+   "runners/out992_slots.json": 12,
+   "runners/out992_table.json": 12,
+   "runners/out992_wiring.json": 12,
+   "runners/fiveprime_991.json": 12,
+   "runners/out991_audit.json": 12,
+   "runners/out991_docsha.json": 12,
+   "runners/out991_fix.json": 12,
+   "runners/out991_last.json": 12,
+   "runners/out991_ledger.json": 12,
+   "runners/out991_order.json": 12,
+   "runners/out991_progress.txt": 12,
+   "runners/out991_score.json": 12,
+   "runners/out991_slots.json": 12,
+   "runners/out991_table.json": 12,
+   "runners/out991_wiring.json": 12
+  },
+  "🔴 그 수": 40,
+  "🔴🔴🔴 AST(글롭 펼침)가 낸 「읽는다」와 «겹치나»": [
+   "runners/fiveprime_991.json",
+   "runners/fiveprime_992.json",
+   "runners/fiveprime_993.json",
+   "runners/out991_audit.json",
+   "runners/out991_docsha.json",
+   "runners/out991_fix.json",
+   "runners/out991_last.json",
+   "runners/out991_ledger.json",
+   "runners/out991_order.json",
+   "runners/out991_progress.txt",
+   "runners/out991_score.json",
+   "runners/out991_slots.json",
+   "runners/out991_table.json",
+   "runners/out991_wiring.json",
+   "runners/out992_audit.json",
+   "runners/out992_docsha.json",
+   "runners/out992_fix.json",
+   "runners/out992_last.json",
+   "runners/out992_ledger.json",
+   "runners/out992_mut.json",
+   "runners/out992_order.json",
+   "runners/out992_paper.json",
+   "runners/out992_progress.txt",
+   "runners/out992_score.json",
+   "runners/out992_slots.json",
+   "runners/out992_table.json",
+   "runners/out992_wiring.json",
+   "runners/out993_audit.json",
+   "runners/out993_docsha.json",
+   "runners/out993_fix.json",
+   "runners/out993_ledger.json",
+   "runners/out993_mut.json",
+   "runners/out993_order.json",
+   "runners/out993_paper.json",
+   "runners/out993_progress.txt",
+   "runners/out993_score.json",
+   "runners/out993_slots.json",
+   "runners/out993_table.json",
+   "runners/out993_wiring.json"
+  ],
+  "🔴🔴🔴 런타임에만 있고 AST 에 «없는» 산출물": "없음"
+ },
+ "🔴🔴🔴 고리 «안» 어긋남 수(🔴 993 — 판정문 «맨 위»에 의무 게재 · `조항 70-다` 개정)": 0,
+ "🔴🔴🔴 «면제 없는» 어긋남 수(993 자신)": 27,
+ "🔴🔴🔴 F09 반증됐나": true,
+ "🔴 걸린 자리(= 비교를 «수행»한 회수)": 453,
+ "통과": false,
+ "🔴 이 절의 통과가 뜻하는 것": "🔴 ① 어떤 러너도 자기 산출물보다 새롭지 않고 ② **어떤 소비자 산출물도 자기가 읽는 생산자 산출물보다 «먼저» 찍히지 않았다**",
+ "🔴 도장": {
+  "ref(부른 쪽이 준 40자 sha)": "b3a5a55e718c684b24289633ea807a4a188561d2",
+  "🔴 코드 sha256": {
+   "runners/audit993.py": "11e86b9f5999f29b357f6e6cf996ee851b6e44291f2280a6ca8066a42fd5e6bf",
+   "runners/fix993.py": "2adc0a36201ecefd06747ef446a4f06130e3607a1fe19bf881b06fe1caf0b756",
+   "runners/last993.py": "0f039d40774a1b93880eb7441ce9cc3c67dcbea0929d726b7ea4133105e5cd6c",
+   "runners/ledger993.py": "58063275ff03d892160353beaa009d172e0b941f8ce3f967c78b5282770268dd",
+   "runners/mut993.py": "b0799fe64d9d6e589bc7c27e808df77326a5c6d58fe673f4e1431108ae66d6d6",
+   "runners/note993_gen.py": "eb40c0e759840888f59c8b188d668d237ee2cf60af1dcb42aceee702af756ab1",
+   "runners/paper993.py": "d4904b3f7a443b24a4d78c61a0f8ca9c4c2b5171db154c5ee43345742de2282f",
+   "runners/prose993.py": "e06d5e0eab4c84f08542c035b4b503980e3005b163469500e82c255613b8e23f",
+   "runners/score993.py": "62941e30c3cb9c4077673b80fe2da4c2e9f3a91c2ceb43ef8456aefb430361f0",
+   "runners/world993.py": "6253073b09b8832d4b30f745fde9da1b48abb3e58da597ae4b29206f403ec13b"
+  },
+  "시작(UTC)": "2026-08-17T15:00:21Z",
+  "끝(UTC)": "2026-08-17T15:00:23Z"
+ }
+}
