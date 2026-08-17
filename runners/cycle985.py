@@ -239,7 +239,11 @@ def clause66_2(cs0, cs1):
     moved_narrow = [k for k in keys if cs0.get(k) != cs1.get(k)]
     missing = [r for r in RAN_ALL if r not in cs1]
     win = cycle_start()
-    csw = (win or {}).get("🔴 시작 code_stamp(파일별 sha256)") or {}
+    #: 🔴 **키를 사이클 도중에 고쳤다**(`⑤′` 절 3 이 도장을 절로 세지 않게) --- 그래서
+    #:  **옛 키도 읽는다.** 창을 다시 열면 「사이클 시작」이 뒤로 밀려 자가 약해지므로
+    #:  파일을 안 갈아엎고 읽는 쪽에서 받는다. 🔴 이 사실을 여기 적어 둔다(조항 66-③).
+    csw = ((win or {}).get("🔴 시작 code_stamp(파일별 sha256)")
+           or (win or {}).get("🔴 시작 code_stamp") or {})
     if win is None:
         moved_wide, wide_known = None, False
     else:
