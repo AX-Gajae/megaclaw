@@ -51,6 +51,7 @@ def git(*a):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--ref", required=True, help="🔴 가지 sha --- 원장 정본이 사는 곳")
+    ap.add_argument("--pr", default=None, help="🔴 PR 번호(생성 «뒤»에만 준다)")
     a = ap.parse_args()
 
     r = git("show", "%s:data/lab/denominator.json" % a.ref)
@@ -201,6 +202,8 @@ def main():
             ("🔴 그중 «중복 아닌» 키 수(전)", len(set(den))),
             ("🔴 중복 키 수(전)", n_before - len(set(den))),
         ])),
+        ("🔴 PR", ("#%s" % a.pr) if a.pr else "🔴 아직 안 만들었다(「없다」가 아니다 · 조항 59)"),
+        ("🔴 가지 끝 sha(이 항목을 쓸 때)", a.ref),
         ("🔴 최상위 통과", V(K10, "🔴🔴🔴 최상위 통과")),
         ("🔴 붉은 조각", V(K10, "🔴 붉은 조각")),
         ("🔴 붉은 조각 수", V(K10, "🔴 붉은 조각 수")),
