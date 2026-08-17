@@ -1501,8 +1501,18 @@ def d1_census() -> dict:
 REPAIR_TAG = "[수리]"
 #: §8 표의 레인 줄: `| R1 | 무엇 | 파일 |`
 PREREG_ROW = re.compile(r"^\|\s*\*{0,2}R(\d+)\*{0,2}\s*\|", re.M)
-#: §8 의 머리(다른 절의 표를 세지 않게 §8 안으로만 자른다).
-PREREG_SEC = re.compile(r"^##\s*8\.", re.M)
+#: 🔴🔴🔴 **988 `[수리] R2`** --- 수리 레인 절의 머리를 **「절 번호」가 아니라 「절 이름」**으로 찾는다.
+#:
+#: 🔴 **왜 (티처 #126 3순위 ⓑ).** 구판은 `^##\s*8\.` 로 **절 번호를 하드코딩**했다.
+#:  987 이 반증조건 17 을 위해 `## §8` 을 «신설»하면서 수리 레인이 `## 9.` 로 밀렸고,
+#:  그 순간 **절 8 의 하위 검사 셋(㉠ 예고 파일 · ㉡ 상한 · ㉢ 저장소 밖)이 동시에 죽었다.**
+#:  🔴 그중 ㉢ 「미신고 저장소 밖 수리 = true」는 **허위 경보**였다 ---
+#:  987 사전등록 `:326` 에 `> 저장소 밖 레인: 1` 이 **글자 그대로** 있었다.
+#: 🔴 **구판은 지우지 않는다**(조항 66-③ --- 전후를 둘 다 낸다).
+PREREG_SEC_OLD = re.compile(r"^##\s*8\.", re.M)
+#: 🔴 `##` 하나만 문다(`###` 은 «하위 절»이라 안 문다 --- 988 실측: 사전등록 §4-3 이
+#:  「수리 레인」을 제목에 담고 있어 `^##\s*.*수리 레인` 은 그 하위 절을 먼저 물었다).
+PREREG_SEC = re.compile(r"^##(?!#)\s*[^\n]*수리\s*레인", re.M)
 #: 🔴🔴 **956 R2** --- 개정된 `docs/루프.md` 레인 규칙 4 의 **상한**을 사전등록 §8 에서 읽는다.
 #:    「상한: N」 줄이 없으면 **「모른다」**다 --- **규칙 기본 1 을 조용히 넣지 않는다**(조항 59).
 PREREG_CAP = re.compile(r"^\s*[>*\-|\s]*상한\s*[:：]\s*(\d+)", re.M)
@@ -1527,14 +1537,18 @@ def prereg_expected(prereg: str, tree: str = "HEAD", known=None) -> dict:
     if st != "읽었다":
         return {"수": None, "🔴": "`%s` 를 **%s**(「0 개」가 아니다)" % (prereg, st), "상태": st}
     m = PREREG_SEC.search(txt)
+    m_old = PREREG_SEC_OLD.search(txt)
     if not m:
-        return {"수": None, "🔴": "`%s` 에서 `## 8.` 절을 못 찾았다" % prereg}
+        return {"수": None,
+                "🔴": "`%s` 에서 **「수리 레인」이라는 «이름»의 `##` 절**을 못 찾았다" % prereg,
+                "🔴🔴 988 R2 --- 구판(`^##\\s*8\\.`)이 찾았나": bool(m_old)}
     body = txt[m.end():]
     nxt = re.search(r"^##\s", body, re.M)
     body = body[:nxt.start()] if nxt else body
     ids = PREREG_ROW.findall(body)
     if not ids:
-        return {"수": None, "🔴": "`## 8.` 안에서 `| R<n> |` 줄을 하나도 못 찾았다"}
+        return {"수": None,
+                "🔴": "「수리 레인」 절 안에서 `| R<n> |` 줄을 하나도 못 찾았다"}
     # 🔴🔴 956 R2 --- 예고한 **파일**도 같이 읽는다(레인 줄의 마지막 칸).
     #    「커밋 제목 문자열이 아니라 실제 바뀐 파일을 세라」(티처 #94 C4) 의 자다.
     files = set()
@@ -1559,7 +1573,10 @@ def prereg_expected(prereg: str, tree: str = "HEAD", known=None) -> dict:
                             if not cap else "읽었다"),
             "🔴 저장소 밖 레인 신고(§8 의 「저장소 밖 레인: N」 줄)":
                 int(outside.group(1)) if outside else None,
-            "출처": "%s §8 표(`| R<n> |` 줄)" % prereg, "트리": tree}
+            "🔴🔴🔴 988 R2 --- 절을 「이름」으로 찾았다": m.group().strip(),
+            "🔴🔴 988 R2 --- 구판(`^##\\s*8\\.` · 절 「번호」)이 찾았나": bool(m_old),
+            "🔴 988 R2 --- 구판/신판이 갈리나(조항 66-③ 전후)": bool(not m_old),
+            "출처": "%s 의 「수리 레인」 절(`| R<n> |` 줄)" % prereg, "트리": tree}
 
 
 def repair_lanes(base, head, expected=None, prereg=None, mainref="main",

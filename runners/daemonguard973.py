@@ -135,10 +135,18 @@ def plant() -> dict:
         (d / "data/ingest/b.json").write_text("2\n", encoding="utf-8")
         PATHS = ["data/ingest", "data/state"]
         sh(["git", "add", "--"] + PATHS, d)
-        old_list = [x for x in sh(["git", "diff", "--cached", "--name-only"],
-                                  d)[1].split("\n") if x.strip()]
-        new_list = [x for x in sh(["git", "diff", "--cached", "--name-only", "--"]
-                                  + PATHS, d)[1].split("\n") if x.strip()]
+        # 🔴🔴🔴 **988 `[수리] R5`** --- `⑤′` 절 1-나 의 «순㉯»(막는 것이 아무것도 없는
+        #    날 것 git 호출) 두 자리다. 985·986·987 셋 다 미뤘다.
+        #    🔴 **`-c core.quotePath=false` + `-z` 로 고친다** --- 한글 경로가 8진
+        #    이스케이프로 어긋나던 자리이고(조항 62 · 노트 946), 여기서 재현하는 것은
+        #    「`-- PATHS` 를 안 물린 것」이지 「경로 이스케이프」가 아니므로
+        #    **이 고침은 재현 대상을 한 글자도 안 바꾼다.**
+        old_list = [x for x in sh(["git", "-c", "core.quotePath=false", "diff",
+                                   "--cached", "--name-only", "-z"],
+                                  d)[1].split("\0") if x.strip()]
+        new_list = [x for x in sh(["git", "-c", "core.quotePath=false", "diff",
+                                   "--cached", "--name-only", "-z", "--"]
+                                  + PATHS, d)[1].split("\0") if x.strip()]
         res["② 옛 판(`diff --cached --name-only`)이 커밋에 넘기는 목록"] = old_list
         res["② 새 판(같은 명령 + `-- PATHS`)이 넘기는 목록"] = new_list
         res["🔴🔴 ② 옛 판이 PATHS 밖을 끌어들이나"] = bool(
