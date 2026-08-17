@@ -1162,7 +1162,7 @@ def _stamp_of(d):
     return None
 
 
-def stamp_audit(tree="HEAD") -> dict:
+def stamp_audit(tree="HEAD", exempt=None) -> dict:
     """🔴 `git HEAD` 스탬프는 판정에 쓰지 않는다(v3.2 가 폐기). 도장 넷을 본다.
 
     🔴 **955 R5** --- 훑는 목록도 읽는 내용도 **커밋된 트리**에서 온다(`git ls-tree -r` +
@@ -1215,6 +1215,11 @@ def stamp_audit(tree="HEAD") -> dict:
     #: 고쳐 다시 내면서 구판을 `*_badstamp.json` 으로 남겼다 — 그 파일의 «존재 이유»가
     #: 「도장이 깨져 있었다」는 증거다. 🔴 **면제한 목록과 수를 나란히 낸다**(조항 59).
     evid = sorted(p for p in scan if "_badstamp" in p)
+    # 🔴🔴🔴 **991 `R1`** --- `--exempt-file` 로 «등기된» 사유가 있는 도장은 분모 «밖»이다.
+    #    🔴 면제는 숨기는 것이 아니라 **세는 것**이다(조항 59) --- 목록·수·사유를 나란히 낸다.
+    exempt = dict(exempt or {})
+    reg = sorted(p for p in scan if p in exempt and p not in evid)
+    evid = sorted(set(evid) | set(reg))
     verd, f5fail = {}, []
     for rel in scan:
         if rel in evid:
@@ -1269,8 +1274,12 @@ def stamp_audit(tree="HEAD") -> dict:
         "⚠ 시작 == 끝 이지만 1.5초 안에 끝난 산출물(병 아님)": short or "없음",
         "도장별": rows,
         # 🔴🔴 981 신설 --- 도장의 **판정**
-        "🔴 면제: 일부러 남긴 「깨진 도장」 증거물": evid or "없음",
+        "🔴 면제: 일부러 남긴 「깨진 도장」 증거물 + 991 R1 등기 사유": evid or "없음",
         "🔴 면제한 수": len(evid),
+        "🔴🔴🔴 991 R1 — `--exempt-file` 로 «등기된» 사유로 뺀 것": reg or "없음",
+        "🔴🔴 그 수": len(reg),
+        "🔴🔴 그 사유": {k: exempt[k] for k in reg} or "없음",
+        "🔴 `_badstamp` 로 뺀 것": sorted(p for p in evid if p not in reg) or "없음",
         "🔴🔴 도장 판정을 읽은 산출물 수(분모)": len(verd),
         "🔴🔴🔴 도장 판정이 실패인 산출물": f5fail or "없음",
         "🔴🔴 도장 판정이 실패인 산출물 수": len(f5fail),
@@ -1281,15 +1290,27 @@ def stamp_audit(tree="HEAD") -> dict:
             (not same) and (not bad) and (not f5fail),
         "🔴 구판과 신판이 갈리나": bool(bool((not same) and (not bad))
                                 != bool((not same) and (not bad) and (not f5fail))),
-        # 🔴🔴 **개정 잠금 조항(981 확장 · `docs/목표.md`)**: 「관문을 새로 쓰면 그 관문은
-        #    **다음 사이클부터** 문다. 쓴 사이클은 옛 관문으로도 같이 채점하고 둘 다 싣는다.」
-        #    🔴 그래서 981 의 `통과` 는 **구판**이고 신판은 나란히 실린다 --- 이것은
-        #    「규칙을 덜 적용」이 아니라 **981 이 자기 사전등록에 박아 놓은 잠금**이다.
-        "통과": (not same) and (not bad),
+        # 🔴🔴🔴 **991 `R1` --- `조항 3-나`(방향 대칭 · 982 신설)를 «이 절에» 집행한다.**
+        #    옛 문안은 「981 이 자기 사전등록에 박아 놓은 잠금」이라며 **구판**을 게재했다.
+        #    🔴 그러나 `조항 3-나` 원문은 이렇다: 「어느 판을 쓸지는 그 사이클이 «고르지 못한다».
+        #    조인다/푼다와 무관하게 «둘 다» 채점하고, `통과` 로 게재하는 값은 «더 엄한 쪽»이다.」
+        #    🔴🔴 **981 판은 「982 부터 문다」고 못 박았는데 990 까지 «여덟 사이클째» 안 물었다.**
+        #    🔴 그래서 `통과 = 구판 and 신판` 이다. 두 값은 위 두 칸에 «그대로» 남는다.
+        "통과": ((not same) and (not bad)) and (
+            (not same) and (not bad) and (not f5fail)),
+        "🔴🔴🔴 991 R1 — `조항 3-나` 집행": {
+            "옛 게재값(구판만)": (not same) and (not bad),
+            "새 게재값(구판 and 신판)": ((not same) and (not bad)
+                                   and (not f5fail)),
+            "🔴 더 엄한 쪽을 게재한다": True,
+            "🔴 무엇이 엄한가": "🔴 «통과를 더 적게 내는 판» --- 여기서는 신판(도장 «판정»을 읽는다)",
+            "🔴 몇 사이클째 안 물었나": "🔴 981 판이 「982 부터 문다」고 못 박았고 990 까지 여덟",
+        },
         "🔴 이 절의 `통과` 가 뜻하는 것":
-            "🔴 **구판 자**(① 시작==끝인데 긴 실행이 없다 ② 못 읽은 산출물이 없다). "
-            "🔴 981 이 신설한 「도장 판정 읽기」는 **개정 잠금 조항에 따라 982 부터 문다** --- "
-            "그 값은 위 신판 칸에 나란히 싣는다. 🔴 **지금 신판으로 재면 무는 산출물이 있다**",
+            "🔴🔴🔴 **엄한 판이다**(`조항 3-나`) --- 구판(① 시작==끝인데 긴 실행이 없다 "
+            "② 못 읽은 산출물이 없다) «그리고» 신판(도장의 «판정»을 읽는다: `F5 통과` · "
+            "40자 고정 sha · 기준 ref 가 0 이 아니다). "
+            "🔴 두 판의 값은 위 두 칸에 «나란히» 남는다 --- 991 `R1` 이 고쳤다",
         "⚠": ("도장 없음을 「실패」로 세지 않는다 --- 옛 산출물이 많다. **수를 드러내는 것**이 이 절의 일이다"),
     }
 
@@ -2089,7 +2110,7 @@ def main(argv=None):
                              _cons if isinstance(_cons, list) else [], ran,
                              exempt=exempt)
     res["3 판정 키 규약"] = keyaudit(a.keyaudit, ka, read_tree)
-    res["4 도장 확인"] = stamp_audit(read_tree)
+    res["4 도장 확인"] = stamp_audit(read_tree, exempt)
     res["5 quote901 무변"] = quote_regress(a.quote_ref, a.quote_now)
     res["5-나 무변 시험의 검정력(심어서 확인)"] = quote_power(a.quote_ref)
     res["6 D1 실측"] = d1_census()
