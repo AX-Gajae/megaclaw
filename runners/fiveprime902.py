@@ -69,6 +69,7 @@ v3.2 의 첫 정식 운용(커밋 `765c7e6f6`)에서 티처 #64 M3 가 센 것:
 """
 import argparse
 import ast
+import collections
 import datetime as dt
 import hashlib
 import json
@@ -152,6 +153,13 @@ SECTION_ROSTER = (
     "8 🔴 산문 주장 대 산출물 키(957 · 티처 #95 C1)",
     "9 🔴🔴 리터럴 `통과` 금지(983 R1 · AST)",
     "10 🔴🔴 치환표 손 전사 금지(983 R2 · AST)",
+    #: 🔴🔴🔴 **993 R3 신설** --- 「표를 고친 커밋은 문서를 «반드시» 다시 찍는다」.
+    #:  🔴 **왜 (티처 #131 2순위 ㉡).** 992 의 판정문 «2 슬롯»이 치환표와 어긋났다
+    #:  (`자기 자 걸린 자리 합 6,714` 대 표의 `6,706` · `최대 기여 절의 몫 0.3461` 대 `0.3466`).
+    #:  **마지막 커밋이 표를 고치고 문서를 «안 다시 찍었다».** 992 가 991 에게 «물은 바로 그 병»이다.
+    #:  🔴 992 의 `F10` 은 「문서 sha ↔ 문서 sha」만 봐서 이것을 «원리상» 못 봤다 ---
+    #:  `out99x_docsha.json` 에 «표 sha» 칸이 «없었다**.
+    "11 🔴🔴🔴 표를 고친 커밋은 문서를 다시 찍었나(993 R3 신설)",
 )
 
 #: 🔴 대상에서 **빼는** 것: 이 러너 자신의 산출물(자기 자신을 채점하는 순환)과 도장 파일.
@@ -362,7 +370,7 @@ def _daemon_paths():
     return re.findall(r"[\"']([^\"']+)[\"']", m.group(1)), None
 
 
-def gate_committed_tree(branch=None) -> dict:
+def gate_committed_tree(branch=None, read_tree=None) -> dict:
     """🔴🔴 **ⓞ 관문의 정본(980)** --- 작업 트리가 **가지의 커밋된 트리**와 같은가.
 
     ⑤′ 는 커밋된 트리를 검사한다. 그러니 물어야 할 것은 「작업 트리 = `HEAD`」가 아니라
@@ -424,8 +432,10 @@ def gate_committed_tree(branch=None) -> dict:
     live0 = [p for p in allp if not _exempt(p)]
     selfout = [p for p in live0 if is_self_out(p)]
     live = [p for p in live0 if not is_self_out(p)]
+    tree_chk = _tree_is_tip(branch, read_tree)     # 🔴 993 R3
     return {
-        "검사": "🔴🔴 ⓪ 관문(정본 · 980 · 🔴 982 R3 로 자기 산출물을 뺐다) --- "
+        "검사": "🔴🔴 ⓪ 관문(정본 · 980 · 🔴 982 R3 로 자기 산출물을 뺐다 · "
+              "🔴🔴🔴 993 R3 로 `--tree` 를 스스로 견준다) --- "
               "작업 트리가 **가지의 커밋된 트리**와 같은가",
         "🔴 견준 가지": branch,
         "🔴 가지 sha": _rev(branch),
@@ -444,13 +454,55 @@ def gate_committed_tree(branch=None) -> dict:
         "⚠ 구판(982 R3 앞) 분자 --- 자기 산출물을 안 뺐을 때": len(live0),
         "🔴🔴 분자: 면제 밖에서 갈린 경로": len(live),
         "🔴 그 경로": live[:40] or "없음",
+        # ── 🔴🔴🔴 993 R3 신설 --- **`--tree` 가 「가지 tip」인가** ────────────
+        #   🔴 **왜 (티처 #131 2순위 ㉠).** 992 의 `⑤′` 는 `--tree 61deb515a` 인데
+        #   가지 끝은 `783251e0a` 로 **두 커밋 뒤**였다. 그 뒤 두 커밋이
+        #   `out992_*` 전량 재생성 · `world992.py` 수정 · `docs/루프.md` v4.9 «신설»
+        #   (규약 개정 «자체»!) · 표 변경 · 문서 넷 변경을 담는다.
+        #   **`⑤′` 가 본 트리에 v4.9 규약도 최종 산출물도 최종 문서도 «없었다».**
+        #   🔴 그리고 **⓪ 관문이 「부른 쪽이 준 `--tree`」를 그대로 믿었다.**
+        #   993 부터 관문이 «스스로» 견준다.
         "🔴 왜 이 절이 정본인가": (
             "🔴 규칙 A 는 `checkout` 을 금지하므로 `HEAD` 는 `main` 이고 사이클 커밋은 "
             "가지에만 있다. 규칙 B 는 데몬을 재우지 말라 하므로 `data/ingest`·`data/state` 는 "
             "60 초마다 움직인다. **작업 트리 대 `HEAD`** 를 물으면 두 규칙이 서로를 막는다 "
             "--- 967 이 12 사이클 전에 물은 그 물음의 답이다"),
-        "통과": (rc == 0) and (not live),
+        "🔴🔴🔴 993 R3 --- `--tree` 가 「가지 tip」인가": tree_chk,
+        "통과": (rc == 0) and (not live) and bool(tree_chk.get("통과")),
     }
+
+
+def _tree_is_tip(branch, read_tree):
+    """🔴🔴🔴 993 R3 --- **부른 쪽이 준 `--tree` 를 그대로 믿지 않는다.**
+
+    `⑤′` 는 「이 사이클이 «실제로 남긴 것»」을 검사해야 한다. `--tree` 가 가지 끝보다
+    «뒤»에 있으면 그 뒤 커밋이 담은 것(규약 개정·최종 산출물·최종 문서)을 **원리상 못 본다**.
+    """
+    tip = _rev(branch)
+    got = _rev(read_tree) if read_tree else None
+    if not read_tree:
+        return {"통과": False, "🔴": "`--tree` 를 «안 줬다** --- 「모른다」다(0 이 아니다)",
+                "가지": branch, "가지 tip": tip}
+    ok = bool(tip and got and len(tip) == 40 and tip == got)
+    behind = None
+    if tip and got and not ok and len(tip) == 40 and len(got) == 40:
+        rc_, out_, _e = _git(["rev-list", "--count", "%s..%s" % (got, tip)])
+        behind = int(out_.strip()) if rc_ == 0 and out_.strip().isdigit() else None
+    return {
+        "통과": ok,
+        "🔴 가지": branch,
+        "🔴 가지 tip": tip,
+        "🔴 `--tree` 가 가리킨 커밋": got,
+        "🔴🔴🔴 `--tree` 가 가지 끝보다 «몇 커밋 뒤»인가": behind,
+        "🔴 명령": ["git rev-parse %s" % branch, "git rev-parse %s" % read_tree,
+                 "git rev-list --count <tree>..<tip>"],
+        "🔴 왜 이 검사인가": (
+            "🔴🔴🔴 **992 는 `--tree 61deb515a` 로 돌았고 가지 끝은 `783251e0a` 였다** "
+            "--- 그 뒤 «두» 커밋이 `docs/루프.md` v4.9 «신설**(규약 개정 자체)과 최종 산출물·"
+            "최종 문서를 담는다. **`⑤′` 가 본 트리에 그 규약도 그 산출물도 «없었다».** "
+            "🔴 사전등록 §4-1-4: 「`⑤′` 를 «가지 끝이 아닌» 트리에서 돌리면 실패」"),
+    }
+
 
 
 # ── 1 소비자 역참조 ─────────────────────────────────────────────────────
@@ -856,6 +908,81 @@ def gate_roster(tree) -> dict:
 #: 🔴 **951** --- 950 은 이 상수를 하드코딩했다. 매 사이클 자기 도장 파일을 가리켜야
 #: 하므로 CLI 로 받는다(기본은 이번 사이클 것).
 DOCSTAMP = "runners/out951_docstamp.json"
+
+
+def docsha_table_check(docsha: str = None, tree: str = "HEAD") -> dict:
+    """🔴🔴🔴 **993 R3 신설 — 「표를 고친 커밋은 문서를 «반드시» 다시 찍는다」.**
+
+    🔴 **왜 (티처 #131 2순위 ㉡).** 992 의 판정문 «2 슬롯»이 치환표와 어긋났다 ---
+    `자기 자 걸린 자리 합 6,714` 대 표의 `6,706` · `최대 기여 절의 몫 0.3461` 대 `0.3466`.
+    **가지의 «마지막» 커밋이 표를 고치고 문서를 안 다시 찍었다.**
+    🔴🔴 그리고 **992 의 `F10` 은 이것을 «원리상» 못 봤다** --- `out992_docsha.json` 은
+    「문서 경로 ↔ 문서 sha」만 갖고 **「표 sha」 칸이 «없었다».**
+
+    993 판: 생성기가 `out99x_docsha.json` 에 **「표 sha256」**을 «같이» 남기고,
+    이 절이 **커밋된 트리**에서 ① 표 sha ② 문서 sha 를 «다시 계산해» 견준다.
+    """
+    if not docsha:
+        return {"검사": "11 🔴🔴🔴 표 ↔ 문서 도장(993 R3)", "통과": False,
+                "🔴": "`--docsha` 를 «안 줬다** --- 「모른다」다(0 이 아니다 · 조항 59)"}
+    known, ls_err = tree_paths(tree)
+    st, txt = tree_text(docsha, tree, known)
+    if st != "읽었다":
+        return {"검사": "11 🔴🔴🔴 표 ↔ 문서 도장(993 R3)", "통과": False,
+                "🔴 도장 파일": docsha, "🔴 상태": st,
+                "🔴": "`%s` 를 **%s**(「깨끗함」이 «아니다»)" % (docsha, st),
+                "🔴 읽은 트리": {"기준": "커밋된 트리", "트리": tree, "커밋 sha": _rev(tree)}}
+    try:
+        d = json.loads(txt)
+    except Exception as e:                                          # noqa: BLE001
+        return {"검사": "11 🔴🔴🔴 표 ↔ 문서 도장(993 R3)", "통과": False,
+                "🔴": "JSON 이 아니다: %s" % str(e)[:200]}
+
+    def _tree_sha(rel):
+        st2, t2 = tree_text(rel, tree, known)
+        if st2 != "읽었다":
+            return None, st2
+        return hashlib.sha256(t2.encode("utf-8")).hexdigest(), st2
+
+    rows, bad = collections.OrderedDict(), []
+    # ── ① 표 sha ────────────────────────────────────────────────────
+    tpath = d.get("🔴🔴🔴 표 경로")
+    trec = d.get("🔴🔴🔴 표 sha256(993 R3 신설)")
+    tnow, tst = (_tree_sha(tpath) if tpath else (None, "경로가 «없다»"))
+    tbl = collections.OrderedDict([
+        ("🔴 표 경로", tpath or "🔴 «없다**(생성기가 안 남겼다)"),
+        ("🔴 도장이 적은 표 sha256", trec or "🔴 «없다**"),
+        ("🔴 지금 «커밋된 트리»의 표 sha256", tnow or "🔴 못 읽었다(%s)" % tst),
+        ("🔴🔴🔴 같은가", bool(trec and tnow and trec == tnow)),
+    ])
+    if not tbl["🔴🔴🔴 같은가"]:
+        bad.append("표(%s)" % (tpath or "경로 없음"))
+    # ── ② 문서 sha ───────────────────────────────────────────────────
+    for rel, rec in sorted((d.get("파일별") or {}).items()):
+        now, st2 = _tree_sha(rel)
+        ok = bool(now and rec and now == rec)
+        rows[rel] = {"도장이 적은 sha256": rec,
+                     "지금 «커밋된 트리»의 sha256": now or "🔴 못 읽었다(%s)" % st2,
+                     "🔴 같은가": ok}
+        if not ok:
+            bad.append(rel)
+    return {
+        "검사": "11 🔴🔴🔴 표를 고친 커밋은 문서를 다시 찍었나(993 R3 신설)",
+        "🔴 왜": ("🔴 992 의 판정문 «2 슬롯»이 치환표와 어긋난 채로 나갔다 --- 마지막 커밋이 "
+               "**표를 고치고 문서를 안 다시 찍었다**. 992 가 991 에게 «물은 바로 그 병»이다. "
+               "🔴 992 의 `F10` 은 「문서 sha ↔ 문서 sha」만 봐서 «원리상» 못 봤다"),
+        "🔴 도장 파일": docsha,
+        "🔴 읽은 트리(955 R5)": {"기준": "커밋된 트리", "트리": tree, "커밋 sha": _rev(tree)},
+        "🔴🔴🔴 표 sha 대조": tbl,
+        "🔴 문서별": rows,
+        "🔴 분모: 견준 자리(표 1 + 문서 %d)" % len(rows): 1 + len(rows),
+        "🔴🔴🔴 분자: 어긋난 자리": bad or "없음",
+        "🔴 그 수": len(bad),
+        "🔴 걸린 자리(= 이 절이 «비교»를 «수행»한 회수)": 1 + len(rows),
+        "통과": bool(rows and not bad),
+        "⚠ 한계(조항 61)": ("🔴 이 자는 **낡음**만 잡는다. 표의 «수가 옳은지»는 규칙 D 가 본다. "
+                       "그리고 «커밋된 트리»만 본다 --- 커밋 안 한 편집은 ⓪ 관문이 잡는다"),
+    }
 
 
 def doc_check(docstamp: str = None, tree: str = "HEAD") -> dict:
@@ -1721,13 +1848,33 @@ def repair_lanes(base, head, expected=None, prereg=None, mainref="main",
     #    `\bR\d+\b` 를 제목 **앞부분**에서만 찾는다(본문 인용의 `R5` 같은 것을 안 센다).
     lanes = set()
     untagged = []
+    lane_detail = []
     for _h, s in repairs:
         head_part = s.split("—")[0].split("---")[0]
-        found = re.findall(r"\bR(\d+)\b", head_part)
-        if found:
-            lanes.update("R%s" % i for i in found)
+        # 🔴🔴🔴 **993 R3 --- 「범위 표기」를 «펼친다».**
+        #   🔴 **왜 (티처 #131 3순위 ㉠).** 992 의 `[수리] R1~R5` «한 줄»이
+        #   `\bR(\d+)\b` 에 `{R1, R5}` 로 잡혀 **레인 «2»** 로 세어졌다.
+        #   992 는 이 붉음의 원인을 「레인 절을 §2 에 뒀는데 계수기는 §8 을 읽는다」로
+        #   자백했는데 **그것이 틀렸다** --- `PREREG_SEC` 는 «절 이름»으로 찾고
+        #   992 사전등록 §2 머리글에 「수리 레인」이 «있다».
+        rng_found = []
+        for a_, b_ in re.findall(r"\bR(\d+)\s*[~\-–—]\s*R?(\d+)\b", head_part):
+            lo_i, hi_i = int(a_), int(b_)
+            if lo_i <= hi_i and hi_i - lo_i <= 32:
+                rng_found.extend(range(lo_i, hi_i + 1))
+        found = [int(x) for x in re.findall(r"\bR(\d+)\b", head_part)]
+        allf = sorted(set(found) | set(rng_found))
+        if allf:
+            lanes.update("R%d" % i for i in allf)
         else:
             untagged.append(s)
+        lane_detail.append({
+            "제목": s,
+            "⚠ 992 판(`\\bR(\\d+)\\b` 만)": sorted("R%d" % i for i in set(found)) or "없음",
+            "🔴🔴🔴 993 판(범위 표기를 «펼쳤다»)": sorted("R%d" % i for i in allf) or "없음",
+            "🔴 범위 표기가 «되살린» 레인": sorted("R%d" % i for i in
+                                        (set(rng_found) - set(found))) or "없음",
+        })
     tags = {}
     for _h, s in subs:
         t = s.split("]")[0] + "]" if s.startswith("[") and "]" in s else "(표지 없음)"
@@ -1750,11 +1897,22 @@ def repair_lanes(base, head, expected=None, prereg=None, mainref="main",
                                  "바꾼 파일 수": len(fs)})
         repair_files |= {f for f in fs if not f.startswith(DATA_PREFIX)}
 
-    src = "--expected-repairs"
-    pre = prereg_expected(prereg, tree) if expected is None else None
-    exp = expected if expected is not None else (pre or {}).get("수")
-    if expected is None:
-        src = (pre or {}).get("출처") or "🔴 못 읽었다"
+    # 🔴🔴🔴 **993 R3 --- 사전등록을 «언제나» 기계로 긁는다.**
+    #   🔴 **왜 (티처 #131 3순위 ㉠).** 992 판은 `--expected-repairs` 가 주어지면
+    #   `prereg_expected` 를 **한 번도 안 불렀다** --- 그래서 산출물이 「사전등록 파싱:
+    #   안 했다」라 적었고, `cap`·`want_files`·`outside_declared` 가 «전부 None» 이
+    #   되어 **절 8 이 원리상 통과할 수 없었다**(통과 조건이 `cap is not None` 을 문다).
+    #   🔴 993 은 **기계가 읽은 값을 정본으로 쓰고**, 손으로 준 값은 «대조»로만 쓴다
+    #   (`F03` 이 이미 하는 일이다).
+    pre = prereg_expected(prereg, tree)
+    pre_n = (pre or {}).get("수")
+    if pre_n is not None:
+        exp = pre_n
+        src = (pre or {}).get("출처") or "사전등록(기계)"
+    else:
+        exp = expected
+        src = "--expected-repairs(🔴 사전등록을 못 읽어 «손으로 준 값»으로 갈음했다)"
+    hand_mismatch = bool(expected is not None and pre_n is not None and expected != pre_n)
     n = len(repairs)
 
     # 🔴 956 R2 --- 상한 · 예고 파일 · 저장소 밖 레인
@@ -1818,7 +1976,16 @@ def repair_lanes(base, head, expected=None, prereg=None, mainref="main",
                                 key=lambda x: int(x[1:])) or "없음",
         "🔴 안 예고했는데 연 레인": sorted(lanes - set((pre or {}).get("레인 번호", [])),
                                 key=lambda x: int(x[1:])) or "없음",
-        "사전등록 파싱": pre or "안 했다(`--expected-repairs` 를 받았다)",
+        "사전등록 파싱": pre or "🔴 못 했다",
+        # ── 🔴🔴🔴 993 R3 --- 손으로 준 값과 기계가 읽은 값을 «갈라» 낸다 ────────
+        "🔴🔴🔴 993 R3 — 기계가 사전등록에서 읽은 예고 레인 수": pre_n,
+        "🔴🔴🔴 993 R3 — 손으로 준 `--expected-repairs`": expected,
+        "🔴🔴🔴 993 R3 — 둘이 «갈리나**": hand_mismatch,
+        "🔴🔴🔴 993 R3 — 커밋 제목의 「범위 표기」를 «펼친» 내력": lane_detail or "없음",
+        "🔴🔴🔴 993 R3 — 범위 표기가 «되살린» 레인 수 합":
+            int(sum(len(x["🔴 범위 표기가 «되살린» 레인"])
+                    for x in lane_detail
+                    if isinstance(x["🔴 범위 표기가 «되살린» 레인"], list))),
         "🔴 센 레인 − 예고 레인": (len(lanes) - exp) if exp is not None else "🔴 모른다",
         "🔴 센 커밋 − 예고 레인(참고 --- 954 가 어긴 자리)":
             (n - exp) if exp is not None else "🔴 모른다",
@@ -2048,6 +2215,9 @@ def main(argv=None):
     ap.add_argument("--expected-repairs", type=int, default=None,
                     help="🔴 사전등록이 예고한 `[수리]` 레인 수. 안 주면 `--prereg` 에서 읽고, "
                          "그것도 없으면 **「모른다」**를 낸다(0 이 아니다)")
+    ap.add_argument("--docsha", default=None,
+                    help="🔴🔴🔴 993 R3 --- 절 11 이 읽을 「표 sha ↔ 문서 sha」 도장 "
+                         "(`runners/out99x_docsha.json`)")
     ap.add_argument("--prereg", default=None,
                     help="🔴 사전등록 파일(§8 표의 `| R<n> |` 줄을 센다 · 예: docs/prereg_955_D.md)")
     ap.add_argument("--repair-main", default="main",
@@ -2205,6 +2375,14 @@ def main(argv=None):
         except Exception as e:                                    # noqa: BLE001
             res[key] = {"🔴 예외": "%s: %s" % (type(e).__name__, e), "통과": False}
 
+    # 🔴🔴🔴 **993 R3 신설** --- 「표를 고친 커밋은 문서를 다시 찍었나」
+    try:
+        res["11 🔴🔴🔴 표를 고친 커밋은 문서를 다시 찍었나(993 R3 신설)"] = \
+            docsha_table_check(a.docsha, read_tree)
+    except Exception as e:                                        # noqa: BLE001
+        res["11 🔴🔴🔴 표를 고친 커밋은 문서를 다시 찍었나(993 R3 신설)"] = {
+            "🔴 예외": "%s: %s" % (type(e).__name__, e), "통과": False}
+
     # 🔴🔴🔴 **985 R3 (티처 #123 3순위 ②)** --- 분모를 **이름으로 박은 명부**로 센다.
     #   구판: `secs = {k: v for k, v in res.items() if … "통과" in v}` --- **동적**이라
     #   **어떤 절이든 `통과` 키를 빼면 분모에서 조용히 빠진다**(980 이 ⓪ 절에 실제로 그랬고,
@@ -2284,6 +2462,30 @@ def main(argv=None):
             "🔴🔴 **985 R3: 분모는 이제 `SECTION_ROSTER` 의 길이다** --- "
             "`통과` 키의 «유무»가 분모를 못 바꾼다"),
     }
+    # ── 🔴🔴🔴 993 R3 신설 — **「걸린 자리」 칸을 공유 하네스에 심는다** ──────────
+    #   🔴 **왜 (티처 #131 3순위 ㉡).** `F08`(미측정)이 `fiveprime_992.json` 에서 686 을
+    #   셌고 그 증가분은 **992 자신의 `R5` 가 `fiveprime902.py` 에 절·칸을 «더해서»** 생겼다.
+    #   ✅ 992 자신의 산출물 12 는 미측정 0 --- **자를 고치면 미측정이 «는다»**.
+    #   🔴 그 내력을 여기 «칸으로» 남긴다.
+    def _hits_of(v):
+        if not isinstance(v, dict):
+            return 0
+        for k_, x in v.items():
+            if "걸린 자리" in k_ and isinstance(x, int):
+                return x
+        return 0
+    hit_by_sec = collections.OrderedDict(
+        (k, _hits_of(secs.get(k))) for k in SECTION_ROSTER)
+    res["🔴🔴🔴 993 R3 — 절별 「걸린 자리」"] = hit_by_sec
+    res["🔴🔴🔴 993 R3 — 「걸린 자리」 합"] = int(sum(hit_by_sec.values()))
+    res["🔴🔴🔴 993 R3 — 「걸린 자리」 칸이 «없는» 절"] = \
+        [k for k, v in hit_by_sec.items() if not v] or "없음"
+    res["🔴🔴🔴 993 R3 — 그 수(= `F08` 이 「미측정」으로 셀 자리)"] = \
+        len([1 for v in hit_by_sec.values() if not v])
+    res["🔴 993 R3 — 분모 내력에 남기는 말"] = (
+        "🔴🔴 **자를 고치면 미측정이 «는다».** 992 의 `R5` 가 이 하네스에 절·칸을 더하자 "
+        "`F08` 의 미측정이 686 으로 늘었다. **그것은 «퇴보»가 아니라 «분모가 자란 것»이다** "
+        "--- 993 은 그 내력을 여기 칸으로 남기고, 자기 산출물의 미측정은 «따로» 센다")
     res["🔴 실패한 절"] = fail or "없음"
     #: 🔴🔴🔴 **992 `R5`** --- **표기를 한 방향으로 통일한다.** 991 은 같은 보고서에
     #: 「⑤′ 12/16」(통과 기준)과 「988 5/16 · 989 6/16 · 990 5/16」(실패 기준)을 나란히 썼다.
