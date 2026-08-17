@@ -38,7 +38,7 @@
   "--prose",
   "runners.prose988",
   "--stamp-ref",
-  "fc6b1a12eb247697d5eed3f132e247596090cb01",
+  "307514ad02beaead83bd5778dd676bfe4c5ce2ae",
   "--gates",
   "--out",
   "runners/fiveprime_988.json"
@@ -47,9 +47,9 @@
  "🔴 되짚은 기준(955 R5 · `docs/루프.md:148` v3.2)": {
   "기준": "🔴 **커밋된 트리**",
   "읽기·해싱 트리(절 3·4·7·8)": "note/988-registered-predicate",
-  "그 커밋 sha": "fc6b1a12eb247697d5eed3f132e247596090cb01",
+  "그 커밋 sha": "307514ad02beaead83bd5778dd676bfe4c5ce2ae",
   "역참조(grep) 트리(절 1·2)": "note/988-registered-predicate",
-  "머리(--head)": "note/988-registered-predicate = fc6b1a12eb247697d5eed3f132e247596090cb01",
+  "머리(--head)": "note/988-registered-predicate = 307514ad02beaead83bd5778dd676bfe4c5ce2ae",
   "취합 시작(--base)": "35fba59115b6dfa24043612f028299c7c7994e24 = 35fba59115b6dfa24043612f028299c7c7994e24",
   "⚠ 954 까지": "작업 트리를 되짚었다 --- 커밋 안 된 편집이 검사에 섞였다",
   "🔴 「커밋 안 됨」은 「없다」가 아니다": "절 3·4·7 이 그것을 **따로 센다**(조항 59)"
@@ -63,9 +63,10 @@
  "⓪ 관문(작업 트리 · 🔴 984 부터 절 분모 «밖» 진단)": {
   "검사": "⓪ 관문 --- 작업 트리가 비었나(⑤′ 는 커밋된 트리를 검사한다)",
   "git status --porcelain 종료": 0,
-  "더러운 경로 수": 30,
+  "더러운 경로 수": 31,
   "더러운 경로": [
    " M data/lab/denominator.json",
+   " M data/state/collect_log.jsonl",
    " M docs/card_987.md",
    " M docs/handoff_987.md",
    " M docs/pr_987.md",
@@ -100,14 +101,14 @@
   "🔴🔴 980 개정": "🔴 **이 절은 이제 진단이다.** 규칙 A(`checkout` 금지) 아래에서 `HEAD` 는 언제나 `main` 이고 사이클 커밋은 가지에만 있으므로 작업 트리가 `HEAD` 와 같을 수 없고, 규칙 B(데몬)가 60 초마다 `data/` 를 건드린다. 🔴 **판정은 `⓪ 관문(가지의 커밋된 트리)` 이 진다.**",
   "🔴🔴🔴 984 R1: 이 절을 분모 «밖» 진단으로 내렸다": "🔴 **`통과` 키를 뺐다 --- 리터럴 `True` 로 통과시키지 않는다.** 규칙 A(`checkout` 금지) + 규칙 B(데몬을 못 재운다) 아래서 이 절은 **원리상 통과 불가**다. 그 사실을 `prereg_984 §4-1` 에 «사전»에 등록하고 분모에서 뺐다. 🔴 **뺐다는 사실과 잰 날 것을 여기 그대로 싣는다**(조항 59)",
   "🔴 이 절이 잰 날 것": {
-   "더러운 경로 수": 30
+   "더러운 경로 수": 31
   }
  },
  "⓪ 관문(가지의 커밋된 트리 · 🔴 정본)": {
   "검사": "🔴🔴 ⓪ 관문(정본 · 980 · 🔴 982 R3 로 자기 산출물을 뺐다) --- 작업 트리가 **가지의 커밋된 트리**와 같은가",
   "🔴 견준 가지": "note/988-registered-predicate",
-  "🔴 가지 sha": "fc6b1a12eb247697d5eed3f132e247596090cb01",
-  "🔴 분모: 갈린 경로 전량": 9,
+  "🔴 가지 sha": "307514ad02beaead83bd5778dd676bfe4c5ce2ae",
+  "🔴 분모: 갈린 경로 전량": 8,
   "🔴 데몬(규칙 B) 면제 경로 수": 8,
   "🔴 면제 규칙의 출처": [
    "data/ingest",
@@ -126,12 +127,10 @@
    "data/state/popup_visitor_daily_log.jsonl",
    "runners/out941_steamrev.json"
   ],
-  "🔴🔴🔴 982 R3 --- 자기 산출물이라 이름으로 뺀 경로": [
-   "runners/fiveprime_988.json"
-  ],
-  "🔴 그 수": 1,
+  "🔴🔴🔴 982 R3 --- 자기 산출물이라 이름으로 뺀 경로": "없음",
+  "🔴 그 수": 0,
   "🔴 왜 빼나(982 R3)": "🔴 `*_fiveprime*.json` 은 **이 절이 도는 중에 이 러너가 쓰는 파일**이라 관문이 도는 순간 커밋돼 있을 수 없다 --- **원리상 못 지나가는 자리**다. 🔴 절 3·4 는 이미 `SELF_OUT_RE` 로 같은 것을 한다. 🔴 통과시키려고 **커밋하는** 길(939·980)이 아니라 **분모에서 이름으로 빼는** 길로 고친다 --- 빼는 것과 그 목록을 산출물이 적으므로 숨겨지지 않는다",
-  "⚠ 구판(982 R3 앞) 분자 --- 자기 산출물을 안 뺐을 때": 1,
+  "⚠ 구판(982 R3 앞) 분자 --- 자기 산출물을 안 뺐을 때": 0,
   "🔴🔴 분자: 면제 밖에서 갈린 경로": 0,
   "🔴 그 경로": "없음",
   "🔴 왜 이 절이 정본인가": "🔴 규칙 A 는 `checkout` 을 금지하므로 `HEAD` 는 `main` 이고 사이클 커밋은 가지에만 있다. 규칙 B 는 데몬을 재우지 말라 하므로 `data/ingest`·`data/state` 는 60 초마다 움직인다. **작업 트리 대 `HEAD`** 를 물으면 두 규칙이 서로를 막는다 --- 967 이 12 사이클 전에 물은 그 물음의 답이다",
@@ -5510,7 +5509,7 @@
    "죽은 숫자": false,
    "죽은 숫자(1 ULP 짝)": true,
    "죽은 숫자(논문)": true,
-   "_초": 59.6
+   "_초": 59.3
   },
   "🔴 실패한 절": [
    "죽은 숫자"
@@ -5586,7 +5585,7 @@
   "🔴 대상 고르기": {
    "🔴 왜 이 대상인가": "옛 하드코딩(`out899a_gates.json`)은 **고칠 수 없는 남의 파일**이라 초록이 도달 불가능했다. 자는 **자기 산출물**에 걸어야 자다",
    "🔴 어느 트리인가(955 R5)": "**커밋된 트리** `note/988-registered-predicate` --- 대상은 커밋된 것만이다",
-   "바뀐 경로(커밋+작업트리)": 30,
+   "바뀐 경로(커밋+작업트리)": 31,
    "그중 runners/out*.json": 8,
    "🔴 뺀 것(자기 채점 순환·도장)": {
     "🔴 뺀 수(분자) / 후보 수(분모)": "0 / 8",
@@ -5614,7 +5613,7 @@
   "🔴 읽은 트리(955 R5)": {
    "기준": "커밋된 트리(`git cat-file blob <tree>:<경로>`)",
    "트리": "note/988-registered-predicate",
-   "커밋 sha": "fc6b1a12eb247697d5eed3f132e247596090cb01",
+   "커밋 sha": "307514ad02beaead83bd5778dd676bfe4c5ce2ae",
    "그 트리의 경로 수(분모)": 77498,
    "🔴 `git ls-tree` 오류": "없음"
   },
@@ -5851,7 +5850,7 @@
   "🔴 훑은 트리(955 R5)": {
    "기준": "커밋된 트리(`git ls-tree -r <tree>` + `git cat-file blob`)",
    "트리": "note/988-registered-predicate",
-   "커밋 sha": "fc6b1a12eb247697d5eed3f132e247596090cb01",
+   "커밋 sha": "307514ad02beaead83bd5778dd676bfe4c5ce2ae",
    "🔴 `git ls-tree` 오류": "없음"
   },
   "🔴 훑은 산출물 수(분모)": 526,
@@ -9848,7 +9847,7 @@
     "🔴 분자/분모": "28 / 28",
     "🔴 40자 고정 sha 인가": true,
     "🔴 기준 ref 가 0000…0000 인가": false,
-    "🔴 기준 ref": "e9d8f978f8203c750cc545dfa58b00216c5ceeef",
+    "🔴 기준 ref": "fc6b1a12eb247697d5eed3f132e247596090cb01",
     "🔴🔴 판정 통과": true
    },
    "runners/out988_house.json": {
@@ -9864,7 +9863,7 @@
     "🔴 분자/분모": "28 / 28",
     "🔴 40자 고정 sha 인가": true,
     "🔴 기준 ref 가 0000…0000 인가": false,
-    "🔴 기준 ref": "e9d8f978f8203c750cc545dfa58b00216c5ceeef",
+    "🔴 기준 ref": "fc6b1a12eb247697d5eed3f132e247596090cb01",
     "🔴🔴 판정 통과": true
    },
    "runners/out988_score.json": {
@@ -9872,7 +9871,7 @@
     "🔴 분자/분모": "28 / 28",
     "🔴 40자 고정 sha 인가": true,
     "🔴 기준 ref 가 0000…0000 인가": false,
-    "🔴 기준 ref": "e9d8f978f8203c750cc545dfa58b00216c5ceeef",
+    "🔴 기준 ref": "fc6b1a12eb247697d5eed3f132e247596090cb01",
     "🔴🔴 판정 통과": true
    },
    "runners/out988_table.json": {
@@ -9880,7 +9879,7 @@
     "🔴 분자/분모": "28 / 28",
     "🔴 40자 고정 sha 인가": true,
     "🔴 기준 ref 가 0000…0000 인가": false,
-    "🔴 기준 ref": "e9d8f978f8203c750cc545dfa58b00216c5ceeef",
+    "🔴 기준 ref": "fc6b1a12eb247697d5eed3f132e247596090cb01",
     "🔴🔴 판정 통과": true
    },
    "runners/out988_window.json": {
@@ -10154,7 +10153,7 @@
   "🔴 읽은 트리(955 R5)": {
    "기준": "🔴 **커밋된 트리**(`git cat-file blob <tree>:<경로>` 를 해싱한다)",
    "트리": "note/988-registered-predicate",
-   "커밋 sha": "fc6b1a12eb247697d5eed3f132e247596090cb01",
+   "커밋 sha": "307514ad02beaead83bd5778dd676bfe4c5ce2ae",
    "🔴 `git ls-tree` 오류": "없음",
    "⚠ 954 까지": "작업 트리를 해싱했다 --- 커밋 안 된 편집이 이 절을 붉히거나 숨겼다"
   },
@@ -10211,9 +10210,9 @@
   "🔴 왜": "954 는 원장·노트·카드 **셋 다**에 「수리 레인 하나를 썼다」고 적고 실제로 `[수리]` 커밋을 **셋** 했다. 말로 적으면 또 어긋난다",
   "🔴 명령": [
    "git merge-base main note/988-registered-predicate",
-   "git log --format=%s 35fba5911..fc6b1a12e"
+   "git log --format=%s 35fba5911..307514ad0"
   ],
-  "🔴 범위": "35fba59115b6dfa24043612f028299c7c7994e24..fc6b1a12eb247697d5eed3f132e247596090cb01",
+  "🔴 범위": "35fba59115b6dfa24043612f028299c7c7994e24..307514ad02beaead83bd5778dd676bfe4c5ce2ae",
   "🔴 범위의 기준(base)": {
    "rev": "35fba59115b6dfa24043612f028299c7c7994e24",
    "왜": "`git merge-base main note/988-registered-predicate` --- 이 가지가 갈라진 자리",
@@ -10223,9 +10222,9 @@
   "🔴 트리": {
    "기준": "커밋된 트리",
    "머리": "note/988-registered-predicate",
-   "커밋 sha": "fc6b1a12eb247697d5eed3f132e247596090cb01"
+   "커밋 sha": "307514ad02beaead83bd5778dd676bfe4c5ce2ae"
   },
-  "🔴 이 범위의 커밋 수(분모)": 12,
+  "🔴 이 범위의 커밋 수(분모)": 13,
   "🔴 그중 `[수리]` 커밋 수(분자)": 5,
   "🔴 `[수리]` 커밋 제목": [
    "[수리] R5 — ⑤′ 절 1-나 의 「순㉯」 두 자리를 실제로 고친다 (985·986·987 이 미뤘다)",
@@ -10246,7 +10245,7 @@
    "[사전등록]": 1,
    "[수리]": 5,
    "[측정]": 1,
-   "[판정]": 2
+   "[판정]": 3
   },
   "🔴🔴 레인 표지(`R<n>`)로 센 레인": [
    "R1",
@@ -10372,8 +10371,8 @@
    "🔴 이 가지가 갈라진 뒤 바뀐 것": [
     {
      "파일": "/Users/ax/.claude/projects/-Users-ax-world-model/memory/project-lab-state.md",
-     "mtime(UTC)": "2026-08-17T05:31:30Z",
-     "sha256(다음 사이클의 대조 기준)": "1a6f7bab02c11fbdcaeff390a9f9058dae836ce532bc77aefac35e5f6370d1dc",
+     "mtime(UTC)": "2026-08-17T05:34:47Z",
+     "sha256(다음 사이클의 대조 기준)": "e48b36086faba1fc946a6a4832756d0b08357d21a9002f94dab96270f660e5f4",
      "🔴 이 가지가 갈라진 뒤에 바뀌었다": true
     }
    ],
@@ -10748,7 +10747,7 @@
   "3 판정 키 규약"
  ],
  "통과": false,
- "시각(UTC · 시작)": "2026-08-17T05:31:54+00:00",
+ "시각(UTC · 시작)": "2026-08-17T05:35:08+00:00",
  "🔴 코드 sha256(이게 자다)": {
   "runners/fiveprime902.py": "119be842e635cd813ecc5b88eea97fb6508d72350c0f822c4db269555d16dd9b",
   "runners/quote901.py": "1778c5659dcd3f8cc15e48d7c4760ba581ccdb809d7144b3376911f2882b3b30",
@@ -10757,22 +10756,22 @@
  },
  "🔴 입력 산출물 sha256": {
   "runners/out988_audit.json": "505f15acd4c266de5d97dd49beefd876c08bda807b4257a34b99fc63417e638e",
-  "runners/out988_certify.json": "9cfa0f175e6f260ed7f4415c17017b0313e9b96be6a7a63740b7f762b1a55184",
+  "runners/out988_certify.json": "bc6bf5e98075d7e1e6d9dc076ba73fc388a0eaf1c003bc03a6c0c0c289dbbd84",
   "runners/out988_house.json": "1f14f6b3646301f82e7bab722feeb1746c3189eb4c1fe8185557886af87198df",
-  "runners/out988_prose.json": "7b992206c6f7935008d58bdefca27ad97ae1e64fb3cdce75217cc5cbacc5dd53",
-  "runners/out988_score.json": "0054013206cdd344a1df1dbb01a818e498197e32ad7b1e41d318b5489e259337",
-  "runners/out988_table.json": "c1da7cb380fe4f0fb475ec5e4cd2397e6bb7fa55c262504c5283d1d554b04801",
+  "runners/out988_prose.json": "977523f3294e7c73a2edab739b467db5b89407e9998760f8e69903b85a9f69db",
+  "runners/out988_score.json": "ef5acced922fe06709382a545ca23d4d1e22ce1f0a9fd4d3b793a55023cbb5aa",
+  "runners/out988_table.json": "fed34549f6528355e7ec4b3252e3ee059ef607f49849586afaba1cf8afdee3c0",
   "runners/out988_window.json": "22f3d52f7f594dacc3692fe9934d374dd8686aa2c3f6837d2743e32b186fcb94",
   "runners/out941_wikidaily.json": "93a4d0d30be5c198c8318be1f9f85e52dc64a6cd770a36c635b79ff2f554ab5e",
   "runners/out941_steamrev.json": "915a9b4550ec836df4eff559c63ababca374abd20a6c7b5bcb6a85c0e16e4276",
   "runners/out941_robots.json": "bb4a19ac5201d14d157d39f6221ec9479bed5d3422a23d7b31d4ff2b3e166266"
  },
  "⚠ git HEAD(시작 시점 · 판정에 쓰지 마라)": "25cff300bdad1ec70ccd2d24acf12691bf0b05ab",
- "시각(UTC · 끝)": "2026-08-17T05:34:19+00:00",
- "초": 144.8,
+ "시각(UTC · 끝)": "2026-08-17T05:37:32+00:00",
+ "초": 144.7,
  "🔴 도장": {
-  "언제(시작)": "2026-08-17T05:34:19Z",
-  "언제(끝)": "2026-08-17T05:34:19Z",
+  "언제(시작)": "2026-08-17T05:37:32Z",
+  "언제(끝)": "2026-08-17T05:37:32Z",
   "시작 code_stamp 요약": "55ab0094d4b6754ab08270e193a8d7e6efdcbbb6f22fb49172fd204c6b3a7981",
   "끝 code_stamp 요약": "55ab0094d4b6754ab08270e193a8d7e6efdcbbb6f22fb49172fd204c6b3a7981",
   "🔴 시작=끝": true,
@@ -10783,7 +10782,7 @@
    "hplt_ko": "67de3062bad60e122c446fccb0b96d2c3a36c0ee2deafa40324a22dcad6c09a2"
   },
   "분모: 연 자료 파일": 3,
-  "🔴 F1 기준 ref(준 대로)": "fc6b1a12eb247697d5eed3f132e247596090cb01",
+  "🔴 F1 기준 ref(준 대로)": "307514ad02beaead83bd5778dd676bfe4c5ce2ae",
   "🔴 40자 고정 sha 인가": true,
   "🔴 기준 ref 가 0000…0000 인가": false,
   "러너별": {
