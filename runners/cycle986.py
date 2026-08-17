@@ -478,7 +478,21 @@ def stamp_window(ref):
         "🔴 시작 시각과 시작 `code_stamp` 은 한 바이트도 «안» 바꿨다 --- "
         "반증조건 12 의 분모(원장이 싣는 산출물 전량)를 «면제 없이» 채우기 위해서다")
     LG.write_stamped(str(p), d, ref, cs0, t0, RAN_ALL, DATA)
-    return {"창": WINDOW, "도장": "얹었다"}
+    #: 🔴 **도장도 «절»이다** --- `⑤′` 절 3(판정 키 규약)이 `통과` 키를 요구한다.
+    #:  `write()` 와 «같은» 봉인을 여기서도 돌린다(안 돌리면 이 파일만 규약 밖이 된다).
+    import collections as _c
+    raw = json.loads(p.read_text(encoding="utf-8"), object_pairs_hook=_c.OrderedDict)
+    audit = seal_sections(raw, SEAL_SKIP_DEFAULT)
+    KEY = "🔴🔴🔴 986 봉인 감사(무엇을 봉했고 무엇을 뺐나)"
+    raw[KEY] = audit
+    left = [k for k, v in raw.items()
+            if isinstance(v, dict) and "통과" not in v and k != KEY
+            and not any(w in k for w in ("sha256", "시각"))]
+    audit["🔴🔴 봉인 뒤에도 `통과` 가 없는 절"] = left or "없음"
+    audit["통과"] = bool(not left)
+    audit["🔴 이 절의 `통과`"] = "봉인 뒤에 `통과` 키가 없는 최상위 절이 0 인가"
+    p.write_text(json.dumps(raw, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    return {"창": WINDOW, "도장": "얹었다", "봉인 뒤 `통과` 없는 절": left or "없음"}
 
 
 if __name__ == "__main__":
