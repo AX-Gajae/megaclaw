@@ -2152,8 +2152,11 @@ def _changed_py(base, head):
 def ast_literal_gate(base, head, kind):
     """🔴🔴 `kind` = "판정" (리터럴 통과) 또는 "치환표" (손으로 친 수)."""
     if kind == "판정":
-        pat, fn, why = "runners/score*.py", literal_pass_hits, (
-            "🔴 채점기가 리터럴 `(\"통과\", True)` 로 자기를 통과시키는 자리")
+        # 🔴🔴 996 규약 감사 --- 분모가 `score*.py` 22 개뿐이라 995 의 리터럴이
+        #    `gamma995_champ.py:456` 에 있어 «통째로 밖»이었다. 「이 사이클이 건드린
+        #    `runners/*.py` 전량」으로 넓힌다. 조항을 «하나도» 안 늘리고 조항 78 을 살린다.
+        pat, fn, why = "runners/*.py", literal_pass_hits, (
+            "🔴 이 사이클 러너가 리터럴 `(\"통과\", True)` 로 자기를 통과시키는 자리")
     else:
         pat, fn, why = "runners/note*_gen.py", table_literal_hits, (
             "🔴 치환표 생성기가 `T[...] = <숫자 리터럴>` 로 손 전사하는 자리")
