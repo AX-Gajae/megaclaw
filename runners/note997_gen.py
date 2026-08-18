@@ -21,6 +21,7 @@ OUT = "runners/out997_docsha.json"
 SRC = ("runners/note997_gen.py", "runners/score997.py")
 INS = ("runners/out997_score.json", "runners/out997_probe.json",
        "runners/out997_mask.json", "runners/out997_gate.json",
+       "runners/out997_fiveprime.json",
        "docs/탐색/997.md", "docs/prereg_997_unsupervised_mde.md")
 
 
@@ -47,9 +48,10 @@ def fm(x):
         s = ("%.6f" % x).rstrip("0").rstrip(".")
         return s if s else "0"
     if isinstance(x, dict):
-        return " · ".join("%s %s" % (k, fm(v)) for k, v in x.items())
+        return (" · ".join("%s %s" % (k, fm(v)) for k, v in x.items())
+                if x else "없음")
     if isinstance(x, (list, tuple)):
-        return " · ".join(fm(v) for v in x)
+        return " · ".join(fm(v) for v in x) if x else "없음"
     return "—" if x is None else str(x)
 
 
@@ -58,6 +60,7 @@ def build():
     PR = _load("runners/out997_probe.json")
     MK = _load("runners/out997_mask.json")
     GA = _load("runners/out997_gate.json")
+    FP = _load("runners/out997_fiveprime.json")
     M = G(S, "①🔴🔴🔴 `MDE` 표 --- 997 의 «유일한 필수 산출»")
     N = G(S, "②🔴🔴 915 는 «못 잴 자»로 갔다 --- 설정 전량에서")
     PM = G(S, "③🔴🔴 순열 자의 «역단조» --- 효과가 클수록 힘을 잃는다")
@@ -232,7 +235,7 @@ def build():
         for k, v in node.items():
             if not k.startswith(pre):
                 continue
-            why = v["근거"].replace("\n", " ")
+            why = v["근거"].replace("\n", " ").replace("|", "\\|")
             out.append("| `%s` | %s | %s |" % (k, v["판정"], why))
         return "\n".join(out)
 
@@ -287,6 +290,23 @@ def build():
     PUT("mask_sha", G(GA, "산출물", "㉡ 라벨 0 개 자", "sha256"))
     PUT("gate_sha", sha("runners/out997_gate.json"))
     PUT("빌린자sha", G(GA, "빌린 자 sha256", "runners/delta996_common.py"))
+    G9 = G(FP, "9 🔴🔴 리터럴 `통과` 금지(983 R1 · AST)")
+    PUT("fp실패", FP["🔴🔴🔴 실패한 절 수"])
+    PUT("fp분모", FP["🔴 절 수(분모)"])
+    PUT("fp실패절", FP["🔴 실패한 절"])
+    PUT("fp절9분자", G9["🔴🔴🔴 이 사이클 파일의 리터럴 수(분자)"])
+    PUT("fp절9분모", G9["🔴 분모 수"])
+    PUT("fp절9파일", G9["🔴 분모 (이 사이클이 건드린 그 유형의 파일)"])
+    PUT("fp절9전수", G9["⚠ 저장소 전수(진단 · 얼어붙은 옛 파일 포함)"])
+    PUT("fp절9전수파일", G9["⚠ 전수 파일 수"])
+    PUT("fp산문분자", G(FP, "8 🔴 산문 주장 대 산출물 키(957 · 티처 #95 C1)", "분자: 통과한 주장"))
+    PUT("fp산문분모", G(FP, "8 🔴 산문 주장 대 산출물 키(957 · 티처 #95 C1)", "분모: 등록한 주장"))
+    PUT("fp영관문분자", G(FP, "⓪ 관문(가지의 커밋된 트리 · 🔴 정본)",
+                     "🔴🔴 분자: 면제 밖에서 갈린 경로"))
+    PUT("fp영관문경로", G(FP, "⓪ 관문(가지의 커밋된 트리 · 🔴 정본)", "🔴 그 경로"))
+    PUT("fp트리", G(FP, "⓪ 관문(가지의 커밋된 트리 · 🔴 정본)",
+                  "🔴🔴🔴 993 R3 --- `--tree` 가 「가지 tip」인가",
+                  "🔴🔴🔴 `--tree` 가 가지 끝보다 «몇 커밋 뒤»인가"))
     return S, T
 
 
@@ -623,7 +643,32 @@ $ grep -rlnE "sentencepiece|transformers|tokenizers|tiktoken|AutoTokenizer|GPT2T
 | 빌린 자 `delta996_common.py` | `{{빌린자sha}}` |
 | 걸린 초 (probe / mask) | {{probe초}} / {{mask초}} (스레드 {{스레드}}) |
 
-🔴 **`⑤′` 결과는 이 문서가 아니라 «원장»에 있다**(조항 75-다 재개정 · v4.16).
+### 12-나. 🔴 `⑤′` --- **커밋된** 주행 (최종 주행의 지문은 «원장»에 있다)
+
+**실패 {{fp실패}} / 분모 {{fp분모}}.** 실패한 절: {{fp실패절}}.
+
+| 절 | 값 |
+|---|---|
+| 🔴 절 9(AST 리터럴 `통과` 금지) · **이 사이클** 분자 / 분모 | **{{fp절9분자}} / {{fp절9분모}}** |
+| ⚠ 절 9 · 저장소 «전수» 진단(얼어붙은 옛 파일 포함) | {{fp절9전수}} / {{fp절9전수파일}} |
+| 절 8 산문 주장 대 산출물 키 | **{{fp산문분자}} / {{fp산문분모}}** |
+| ⓪ 관문 · 면제 밖에서 갈린 경로 | 🔴 **{{fp영관문분자}}** --- {{fp영관문경로}} |
+| `--tree` 가 가지 끝보다 몇 커밋 뒤인가 | **{{fp트리}}** |
+
+- 🔴 **절 9 가 본 이 사이클 파일 {{fp절9분모}}**: {{fp절9파일}}
+- 🔴 **⓪ 관문이 잡은 것은 «다른 팔»이 지금 작업 트리에 짓고 있는 `pretrain/` 패키지다**
+  (파일 시각 이 주행 중). **이 팔의 파일이 아니라서 커밋하지 «않았다»** ---
+  「관문을 통과시키려고 관문의 입력을 커밋하는 것」은 `docs/루프.md` ⑤′ 절이 금지한다.
+- 🔴 **나머지 실패는 만성이다**(996 도 같은 여섯 중 다섯에서 떨어졌다): 절 1 소비자 역참조 ·
+  절 1-나 날 것 git 13(`RAW_GIT_LANE_FROZEN` 등록값과 «일치») · 절 2 게이트(`죽은 숫자`) ·
+  절 3 판정 키 규약(절 67 «전부» 「모른다」 --- 데몬 산출물과 측정 산출물이 분모에 있어
+  이 팔이 «못 고친다») · 절 4 도장(옛 `out973_*` 셋) · 절 8 `[수리]` 레인 계수
+  (이 사이클은 `[수리]` 레인이 0 이라 **원리상 못 통과한다** --- 조항 78 ㉯).
+- 🔴 **`⑤′` 는 불통과다. 그런 채로 ⑥⑦ 을 진행하기로 정했고 그 결정과 이유를 «원장에»
+  1 급 항목으로 적었다**(`docs/루프.md` ⑤′ 순서 강제 절이 요구하는 그것이다).
+
+🔴 **최종(가지 끝) 주행의 지문(sha256 · `--tree` · 실패/분모)은 이 문서가 아니라 «원장»에
+있다**(조항 75-다 재개정 · v4.16).
 """
 
 
