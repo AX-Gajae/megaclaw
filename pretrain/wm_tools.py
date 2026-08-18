@@ -66,6 +66,9 @@ def wm_model_card(**_):
         "🔴 원리상 못 하는 것": ["인과 효과(「언급 «때문»」) 주장", "지식 질답",
                           "학습 도메인 밖 예측(아래 도메인 목록이 전부다)",
                           "2024-05 이후 정보장(LM 말뭉치 밖)"],
+        "방법 리더보드(도메인별 승자 — wm_council 이 이걸로 채택한다)":
+            (json.load(open(os.path.join(S.TROUT, "leaderboard.json"), encoding="utf-8"))
+             if os.path.exists(os.path.join(S.TROUT, "leaderboard.json")) else "아직 없다"),
         "⚠ 한계": CAVEAT}
 
 
@@ -166,6 +169,99 @@ def wm_surprisal(texts=None, **_):
             "⚠": "LM 스텝 %s — 완주 전이면 거친 자다. 시대별 모델이 서면 «언제부터 자연스러워졌나»가 된다" % S.LM_STEP}
 
 
+def wm_council(curve=None, domain=None, date=None, **_):
+    """하네스 «안» 연구 루프 — 방법 4 비교 → 검증 성적으로 채택."""
+    from pretrain import council
+    return council.ask(curve, domain, str(date))
+
+
+def wm_discourse(keyword=None, max_files=48, **_):
+    """여론 v0 — 실측 스트림(유튜브 폴링) 검색 + LM 자연스러움. 정보장 해석의 첫 판."""
+    import glob
+    files = sorted(glob.glob("/Users/ax/world_model/data/ingest/youtube_poll/*.json"))
+    files = files[-int(max_files):]
+    kw = str(keyword or "").strip()
+    if not kw:
+        return {"오류": "keyword 를 다오"}
+    hits, seen = [], set()
+    for fp in files:
+        try:
+            d = json.load(open(fp, encoding="utf-8"))
+        except Exception:
+            continue
+        for t in d.get("대상", []):
+            for v in t.get("영상", []):
+                blob = "%s %s %s" % (t.get("name", ""), v.get("제목", ""), v.get("채널", ""))
+                if kw in blob and v.get("id") not in seen:
+                    seen.add(v.get("id"))
+                    hits.append({"대상": t.get("name"), "제목": v.get("제목", "")[:80],
+                                 "채널": v.get("채널"), "게시일": v.get("게시일", "")[:10],
+                                 "조회수": v.get("조회수_읽은시점")})
+    hits.sort(key=lambda h: -float(str(h["조회수"] or "0").replace(",", "") or 0))
+    sur = S.q_surprisal("요즘 %s 이야기가 많다" % kw)
+    return {"키워드": kw, "훑은 폴링 파일": len(files),
+            "적중 영상": len(hits), "상위(조회수)": hits[:8],
+            "LM 자연스러움(nll — 낮을수록 흔한 화제)": sur,
+            "⚠": ("v0 다 — «수집된 스트림 검색 + LM 놀람도»까지. 시대별 모델(학습 큐에 "
+                 "걸려 있다)이 서면 「언제부터 화제가 됐나」 곡선이 되고, 페르소나 뱅크가 "
+                 "생기면 「누가 어떻게 반응할까」가 된다. 여론 «예측»이라 부르지 마라")}
+
+
+def wm_data_health(**_):
+    """하네스용 데이터 재검수 — 원천 신선도 · 학습 진행 · 말뭉치 무결성."""
+    import time
+    out = {"경고": []}
+    # ① 수집 데몬 원천별 최근 기록
+    try:
+        tail = open("/Users/ax/world_model/data/state/collect_log.jsonl",
+                    encoding="utf-8").readlines()[-300:]
+        last = {}
+        for ln in tail:
+            try:
+                r = json.loads(ln)
+                last[r.get("이름")] = r
+            except Exception:
+                pass
+        now = time.time()
+        src = {}
+        for name, r in sorted(last.items()):
+            ts = r.get("시각(UTC)", "")
+            try:
+                import datetime as dt
+                t = dt.datetime.fromisoformat(ts.replace("Z", "+00:00")).timestamp()
+                age_h = round((now - t) / 3600, 1)
+            except Exception:
+                age_h = None
+            src[name] = {"판정": r.get("판정"), "델타": r.get("델타"), "경과(시간)": age_h}
+            if age_h is not None and age_h > 12:
+                out["경고"].append("원천 %s 가 %.1f 시간째 조용하다" % (name, age_h))
+        out["수집 원천"] = src
+    except Exception as e:
+        out["수집 원천"] = {"오류": str(e)}
+    # ② 학습 진행
+    for name in ("tiny-v1", "tiny-b1", "tiny-b2", "tiny-xl"):
+        pp = os.path.join(S.CKPT_DIR, name, "progress.txt")
+        if os.path.exists(pp):
+            out.setdefault("학습", {})[name] = open(pp, encoding="utf-8").read().strip()
+    # ③ 말뭉치
+    for tag, d in (("tokens(0.88B)", os.path.join(S.ART_DIR, "tokens")),
+                   ("tokens_xl(확장)", os.path.join(S.ART_DIR, "tokens_xl"))):
+        idx = os.path.join(d, "index.json")
+        prog = os.path.join(d, "progress.txt")
+        if os.path.exists(idx):
+            i = json.load(open(idx, encoding="utf-8"))
+            out.setdefault("말뭉치", {})[tag] = {
+                "샤드": len(i["shards"]),
+                "토큰": sum(x["n_tokens"] for x in i["shards"])}
+        elif os.path.exists(prog):
+            out.setdefault("말뭉치", {})[tag] = {"진행": open(prog, encoding="utf-8").read().strip()}
+    import shutil
+    du = shutil.disk_usage("/Users/ax/wm_harvest")
+    out["디스크 여유(GiB)"] = round(du.free / 2 ** 30, 1)
+    out["판정"] = "🔴 경고 있음" if out["경고"] else "정상"
+    return out
+
+
 # ── manifest — 하네스 LLM 이 읽는 계약 ────────────────────────────────
 def _sch(props, req):
     return {"type": "object", "properties": props, "required": req,
@@ -208,6 +304,18 @@ MANIFEST = [
     {"name": "wm_entity", "fn": wm_entity,
      "description": "검증 개체(모형이 학습에서 못 본 실제 IP) 예측 대 실제 — 신뢰도 눈감정용",
      "inputSchema": _sch({"i": {"type": "integer", "minimum": 0}}, ["i"])},
+    {"name": "wm_council", "fn": wm_council,
+     "description": "🔴 하네스 안 연구 루프 — 방법 4(전이·사례·기후값·현상유지)를 «전부» 돌리고 도메인별 검증 성적으로 채택 + 불일치 폭. 예측형 질문의 «기본» 도구로 forecast 보다 먼저 써라",
+     "inputSchema": _sch({"curve": _CURVE, "domain": _DOM, "date": _DATE},
+                         ["curve", "domain", "date"])},
+    {"name": "wm_discourse", "fn": wm_discourse,
+     "description": "여론 v0 — 수집된 유튜브 폴링 스트림에서 키워드 실측 검색(적중 영상·조회수) + LM 자연스러움. «예측» 아님",
+     "inputSchema": _sch({"keyword": {"type": "string"},
+                          "max_files": {"type": "integer", "minimum": 1, "maximum": 461}},
+                         ["keyword"])},
+    {"name": "wm_data_health", "fn": wm_data_health,
+     "description": "데이터 파이프라인 재검수 — 원천 신선도(12h 문턱 경고)·학습 진행·말뭉치 무결성·디스크. 답하기 전에 데이터가 살아 있는지 확인",
+     "inputSchema": _sch({}, [])},
     {"name": "wm_surprisal", "fn": wm_surprisal,
      "description": "문장(들)의 LM 놀람도 — 「어느 표현이 한국 웹에서 자연스러운가」. 시대별 모델이 서면 개념 진입 시점 측정으로 확장",
      "inputSchema": _sch({"texts": {"type": "array", "items": {"type": "string"}}},

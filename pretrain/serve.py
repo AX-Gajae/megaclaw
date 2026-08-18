@@ -351,6 +351,9 @@ class H(BaseHTTPRequestHandler):
             elif self.path == "/api/report":
                 out = q_report(body.get("curve", ""), body.get("domain", ""),
                                body.get("date", "2024-01-15"))
+            elif self.path == "/api/tool":
+                from pretrain import wm_tools           # 지연 적재(순환 회피)
+                out = wm_tools.call(body.get("name"), body.get("args") or {})
             elif self.path == "/api/info":
                 out = {"lm_step": LM_STEP if LM else None, "lm_ckpt": LM_PATH,
                        "domains": DOMS or [], "val_n": len(DATA.va) if DATA is not None else 0}
