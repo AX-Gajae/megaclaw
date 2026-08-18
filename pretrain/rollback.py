@@ -69,6 +69,30 @@ EPOCHS = {
         # 스모크 ③ 은 「복원 manifest 첫 구성원 적재」로 대체하거나 건너뛴다)
         "model 백업 키": os.path.join(TROUT, "model_pre1002.pt"),
     },
+    "pre1004": {
+        "설명": "1004 홀드아웃 재학습 + 등각 보정 배포 «이전»(1002 앙상블 1201~1205 시대)로 복원",
+        "개명(비파괴 — 시대 표지 끄기)": [
+            os.path.join(TROUT, "conformal.json"),              # 필수 — 1004 보정층 시대 표지
+            os.path.join(TROUT, "ensemble_manifest.json"),      # 필수 — 1004 manifest (복원이 1002 판으로 갈아끼움)
+        ],
+        "복원(백업 → 정본 · 복사)": [
+            (os.path.join(TROUT, "ensemble_manifest_pre1004.json"), os.path.join(TROUT, "ensemble_manifest.json")),
+            (os.path.join(TROUT, "leaderboard_pre1004.json"), os.path.join(TROUT, "leaderboard.json")),
+            (os.path.join(TROUT, "report_pre1004.json"), os.path.join(TROUT, "report.json")),
+            (os.path.join(LODO, "results_pre1004.json"), os.path.join(LODO, "results.json")),
+        ],
+        "백업 기대 sha (조항 66)": {
+            os.path.join(TROUT, "ensemble_manifest_pre1004.json"): "af7cebd02e77af9c",
+            os.path.join(TROUT, "leaderboard_pre1004.json"): "332bda6caf87cee1",
+            os.path.join(TROUT, "report_pre1004.json"): "a8de5293852b5d9a",
+            os.path.join(LODO, "results_pre1004.json"): "5eb0c4a534606600",
+        },
+        "필수 개명": [os.path.join(TROUT, "conformal.json"),
+                   os.path.join(TROUT, "ensemble_manifest.json")],
+        # 모형 백업 = manifest 사본이 담당 — 구성원 pt(1201~1205)는 ensemble1002/ 에
+        # 바이트 무변으로 남는다. 스모크 ③ 은 복원 manifest 첫 구성원(1201)을 적재한다.
+        "model 백업 키": None,
+    },
 }
 
 # 소비자 4곳 — 전부 «manifest 있으면 앙상블 · 없으면 단일 model.pt» 하위호환 분기.
@@ -92,9 +116,14 @@ def sha16(path):
 def smoke(epoch, dry, log):
     """소비자 4곳 단일 분기 스모크 — 모형 «적재만» · 창구 무접촉 · 산출물 쓰기 0."""
     manifest = os.path.join(TROUT, "ensemble_manifest.json")
-    단일 = (not os.path.exists(manifest)) if not dry else True   # dry: 복원 «후» 상태를 가정
+    # 복원 «후» manifest 실재 여부는 시대가 정한다: 복원 목록에 manifest 가 있으면 실재(앙상블 분기)
+    restores_manifest = any(d == manifest
+                            for _b, d in EPOCHS[epoch]["복원(백업 → 정본 · 복사)"])
+    단일 = (not restores_manifest) if dry else (not os.path.exists(manifest))
     log("스모크① 분기 술어",
-        ("🔴 가정(드라이런 — 실측 아님): 복원 «후»엔 manifest 부재 → 소비자 4곳 전부 단일 분기"
+        ("🔴 가정(드라이런 — 실측 아님): 이 시대 복원 «후» manifest %s → 소비자 4곳 전부 %s 분기"
+         % ("실재(복원 목록에 있음)" if restores_manifest else "부재",
+            "단일" if 단일 else "앙상블")
          if dry else "manifest %s → 소비자 4곳 전부 %s 분기(실측)"
          % ("부재" if 단일 else "실재", "단일" if 단일 else "앙상블")))
     for rel, needles in CONSUMERS.items():
