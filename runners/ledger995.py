@@ -31,7 +31,7 @@ def G(o, *path):
     return o
 
 
-def entries(S, D, fp, pr, tip, tipdiff=None):
+def entries(S, D, fp, pr, tip, tipdiff=None, corr=None):
     W = S["🔴🔴🔴 세계 명제"]
     L = S["🔴🔴🔴 「도메인을 늘리면 검정력이 오른다」의 조건"]
     K = S["🔴🔴 조항 76 채점"]
@@ -208,6 +208,25 @@ def entries(S, D, fp, pr, tip, tipdiff=None):
                 ("통과", bool(fp["🔴🔴🔴 실패한 절 수"] <= 6)),
             ])
 
+    if corr:
+        E["🔴 노트 995 정정 1 — `⑤′` 잔여 경로 목록을 «예측»에서 «실측»으로 바로잡는다"] = \
+            collections.OrderedDict([
+                ("왜", "🔴 앞 항목(「노트 995 `⑤′` · 조항 75-다」)의 「남는 차이」 칸은 정비 팔이 "
+                      "커밋 «전»에 «예측»으로 적은 목록이었다. 실제 `git diff --name-only` 와 "
+                      "**두 이름이 어긋났다** --- 조항 3-나 대로 옛 칸을 «지우지 않고» 정정을 얹는다"),
+                ("🔴 옛 칸(예측)", "…out995_table.json 이 «있다» · ledger995.py 는 있고 "
+                              "note995_gen.py 가 «없다»"),
+                ("🔴 명령", "git -c core.quotePath=false diff --name-only "
+                          "116340fc44ec591272f86ddae6fef32b987a84ff <가지 끝>"),
+                ("🔴🔴 실측 목록", corr),
+                ("🔴 어긋난 이름", ["runners/out995_table.json(예측에만 있다 --- 슬롯 값이 안 바뀌어 "
+                                "표 파일이 그대로였다)",
+                                "runners/note995_gen.py(실측에만 있다 --- §9 문언을 고쳤다)"]),
+                ("🔴 교훈", "「무엇이 바뀔지」를 커밋 «전»에 손으로 적으면 틀린다. "
+                          "다음 사이클은 커밋 «뒤»에 기계로 재서 적는다"),
+                ("바꾼_때", "2026-08-18 · 노트 995 정비 팔"),
+                ("통과", bool(corr)),
+            ])
     if pr is not None:
         E["🔴 노트 995 — PR 번호와 가지 끝 sha"] = collections.OrderedDict([
             ("왜", "조항 70 · 규칙 A --- PR 은 «생성»만 하고 머지는 안 한다(`gh pr merge` 금지)"),
@@ -229,6 +248,8 @@ def main(argv=None):
     ap.add_argument("--fiveprime", default=None)
     ap.add_argument("--pr", type=int, default=None)
     ap.add_argument("--tip", default=None)
+    ap.add_argument("--tipdiff-corr", default=None,
+                    help="🔴 커밋 «뒤»에 기계로 «잰» 잔여 경로 목록(정정 항목이 된다)")
     ap.add_argument("--tipdiff", default=None,
                     help="🔴 push 된 가지 끝과 `--tree` 사이에 남는 경로 목록(쉼표로)")
     a = ap.parse_args(argv)
@@ -238,7 +259,8 @@ def main(argv=None):
     S, D = _load(a.score), _load(a.docsha)
     fp = _load(a.fiveprime) if a.fiveprime else None
     E = entries(S, D, fp, a.pr, a.tip,
-                [x for x in (a.tipdiff or "").split(",") if x])
+                [x for x in (a.tipdiff or "").split(",") if x],
+                [x for x in (getattr(a, "tipdiff_corr", None) or "").split(",") if x])
 
     dup = [k for k in E if k in den]
     if dup:
