@@ -61,6 +61,9 @@ if LM_PATH:
     LM_STEP = ck.get("step", 0)
 
 TR = DATA = DOMS = META = None
+TEXT_DIM, DOM_EMB, GLOB_EMB = 0, {}, None
+QWEN_SNAP = ("/Users/ax/.cache/huggingface/hub/models--Qwen--Qwen2.5-0.5B/"
+             "snapshots/060db6499f32faf8b98477b0a26969ef7d8b9987")
 tr_path = os.path.join(TROUT, "model.pt")
 if os.path.exists(tr_path):
     tck = torch.load(tr_path, map_location="cpu", weights_only=False)
@@ -70,6 +73,38 @@ if os.path.exists(tr_path):
     DATA = SAO(text_emb=tck.get("text_emb"))
     DOMS = json.load(open(os.path.join(TRI, "domains.json"), encoding="utf-8"))
     META = [json.loads(l) for l in open(os.path.join(TRI, "meta.jsonl"), encoding="utf-8")]
+    if DATA.E is not None:
+        # 텍스트 조건 모형 — 직접 입력엔 ⑴ 라이브 임베딩 ⑵ 없으면 도메인 평균으로 채운다
+        TEXT_DIM = DATA.E.shape[1]
+        for d_i, d_name in enumerate(DOMS):
+            ii = [i for i in DATA.tr if DATA.C[i][d_i] == 1.0]
+            if ii:
+                DOM_EMB[d_name] = DATA.E[ii].mean(axis=0)
+        GLOB_EMB = DATA.E[DATA.tr].mean(axis=0)
+        # OOD 자: 학습 임베딩끼리의 최근접 거리 분포(표본 512)를 기준으로 삼는다
+        _E_TR = DATA.E[DATA.tr]
+        _samp = _E_TR[np.random.default_rng(0).choice(len(_E_TR), size=min(512, len(_E_TR)), replace=False)]
+        _d = np.sqrt(((_samp[:, None, :] - _samp[None, :, :]) ** 2).sum(-1))
+        np.fill_diagonal(_d, np.inf)
+        REF_NN = float(np.median(_d.min(axis=1)))
+        E_TRAIN = _E_TR
+
+_QW = {}
+
+
+def _embed_text_live(text):
+    """기획서·소개문 «텍스트»를 임베딩 — 학습 때와 «같은» 설정을 미러링한다:
+    Qwen2.5-0.5B base · AutoModel 마지막 은닉층 · attention-mask 평균 · 96 토큰 · fp32."""
+    if "m" not in _QW:
+        from transformers import AutoModel, AutoTokenizer
+        _QW["t"] = AutoTokenizer.from_pretrained(QWEN_SNAP)
+        _QW["m"] = AutoModel.from_pretrained(QWEN_SNAP, dtype=torch.float32).eval()
+    enc = _QW["t"]([str(text)], truncation=True, max_length=96,
+                   return_tensors="pt", padding=True)
+    with torch.no_grad():
+        h = _QW["m"](**enc).last_hidden_state[0]         # (T, 896)
+    mask = enc["attention_mask"][0].unsqueeze(-1).float()
+    return ((h * mask).sum(0) / mask.sum()).numpy().astype(np.float32)
 
 
 # ── 질의 구현 ─────────────────────────────────────────────────────────
@@ -123,7 +158,7 @@ def q_entity(i):
     return out
 
 
-def q_custom(curve, domain, date):
+def q_custom(curve, domain, date, text=None):
     vals = [float(v) for v in str(curve).replace(",", " ").split() if v.strip()]
     if len(vals) == 1:
         vals = vals * 90
@@ -131,19 +166,14 @@ def q_custom(curve, domain, date):
         return {"오류": "곡선은 숫자 90 개(또는 평탄 가정용 1 개)여야 한다 — 지금 %d 개" % len(vals)}
     if domain not in DOMS:
         return {"오류": "도메인은 %s 중 하나" % DOMS}
-    s_log = np.log1p(np.asarray(vals, dtype=np.float64)).astype(np.float32)
-    base = float(s_log.mean())
-    sc = s_log - base
-    onehot = np.zeros(len(DOMS), dtype=np.float32)
-    onehot[DOMS.index(domain)] = 1.0
-    mth, day = float(date[5:7]), float(date[8:10])
-    doy = mth * 30.4 + day
-    cond = np.concatenate([onehot,
-                           [np.sin(2 * np.pi * doy / 365.0)],
-                           [np.cos(2 * np.pi * doy / 365.0)],
-                           [(float(date[:4]) + (mth - 0.5) / 12.0 - 2013.0) / 10.0],
-                           [base]]).astype(np.float32)
+    info = {}
+    sc, cond, base = _features_from_raw(vals, domain, date, text=text, info=info)
     out = _predict_quantiles(sc, cond, base)
+    out.update(info)
+    # 🔴 구간 붕괴 감지 — q95/q05 폭이 상식 밖으로 좁으면 그 자체가 경고다
+    w = out["누적"]["90일"]
+    if w["q95"] <= w["q05"] * 1.05:
+        out["🔴 구간 붕괴"] = "q05~q95 폭 5% 미만 — 과신 신호. 이 값 신뢰 금지"
     out.update({"도메인": domain, "기준일": date,
                 "직전 90일 일평균": round(float(np.mean(vals)), 1),
                 "⚠": "개체 분리 검증 MdAPE 8.5% · 90% 구간 실측 덮개율 59.6%(미보정) · "
@@ -151,7 +181,7 @@ def q_custom(curve, domain, date):
     return out
 
 
-def _features_from_raw(vals, domain, date):
+def _features_from_raw(vals, domain, date, text=None, info=None):
     s_log = np.log1p(np.asarray(vals, dtype=np.float64)).astype(np.float32)
     base = float(s_log.mean())
     sc = s_log - base
@@ -164,6 +194,28 @@ def _features_from_raw(vals, domain, date):
                            [np.cos(2 * np.pi * doy / 365.0)],
                            [(float(date[:4]) + (mth - 0.5) / 12.0 - 2013.0) / 10.0],
                            [base]]).astype(np.float32)
+    if TEXT_DIM:                                         # 텍스트 조건 모형과 차원 정합
+        if text:
+            emb = _embed_text_live(text)
+            # 🔴 OOD 자 — 학습 분포(웹 언급 문구)에서 얼마나 먼가
+            dmin = float(np.sqrt(((E_TRAIN - emb[None]) ** 2).sum(-1)).min())
+            ratio = dmin / max(REF_NN, 1e-9)
+            if info is not None:
+                info["텍스트 OOD 비율(1≈분포 안 · 3+ 경고 · 5+ 대체)"] = round(ratio, 2)
+            if ratio > 5.0:
+                emb = DOM_EMB.get(domain, GLOB_EMB)
+                if info is not None:
+                    info["텍스트 조건"] = ("🔴 극단 OOD — 텍스트를 «버리고» 도메인 평균으로 대체. "
+                                       "이 모형의 텍스트는 «웹 언급 문구» 분포로 학습됐다 — "
+                                       "기획서 문체는 아직 밖이다")
+            elif info is not None:
+                info["텍스트 조건"] = ("제공됨(라이브 임베딩)" if ratio <= 3.0 else
+                                   "⚠ OOD 경계(비율 %.1f) — 값을 신중히" % ratio)
+        else:
+            emb = DOM_EMB.get(domain, GLOB_EMB)          # 미제공 → 도메인 평균 대체
+            if info is not None:
+                info["텍스트 조건"] = "미제공 → 도메인 평균 임베딩 대체"
+        cond = np.concatenate([cond, emb]).astype(np.float32)
     return sc, cond, base
 
 
@@ -174,7 +226,7 @@ def _quant_curves(sc, cond, base):
     return q                                                   # (91,5) log 눈금
 
 
-def q_report(curve, domain, date):
+def q_report(curve, domain, date, text=None):
     """리스크 창 · 민감도 · 유사 사례 — ①③④ 의 «오늘 되는» 판."""
     vals = [float(v) for v in str(curve).replace(",", " ").split() if v.strip()]
     if len(vals) == 1:
@@ -183,7 +235,8 @@ def q_report(curve, domain, date):
         return {"오류": "곡선은 90 개(또는 1 개=평탄)"}
     if domain not in DOMS:
         return {"오류": "도메인은 %s 중" % DOMS}
-    sc, cond, base = _features_from_raw(vals, domain, date)
+    info_r = {}
+    sc, cond, base = _features_from_raw(vals, domain, date, text=text, info=info_r)
     q = _quant_curves(sc, cond, base)
     day50 = np.expm1(q[:, 2]); day05 = np.expm1(q[:, 0]); day95 = np.expm1(q[:, 4])
     now = float(np.mean(vals))
@@ -200,7 +253,7 @@ def q_report(curve, domain, date):
 
     # ── ④ 민감도: «어딜 바꾸면» 예측이 얼마나 움직이나 ────────────────
     def cum90(vv, dd, tt):
-        sc2, c2, b2 = _features_from_raw(vv, dd, tt)
+        sc2, c2, b2 = _features_from_raw(vv, dd, tt, text=text)
         qq = _quant_curves(sc2, c2, b2)
         return float(np.expm1(qq[:, 2]).sum())
     ref = float(day50.sum())
@@ -242,7 +295,7 @@ def q_report(curve, domain, date):
                       "실제 90일 누적": int(tc),
                       "현 수준 대비 배율": round(tc / max(now * 90.0, 1e-9), 2)})
 
-    return {"입력": {"도메인": domain, "기준일": date, "직전 90일 일평균": round(now, 1)},
+    return {"입력": dict({"도메인": domain, "기준일": date, "직전 90일 일평균": round(now, 1)}, **info_r),
             "예측(누적 90일)": {"q05": int(np.expm1(q[:, 0]).sum()),
                              "q50": int(ref), "q95": int(np.expm1(q[:, 4]).sum())},
             "③ 언제 — 리스크 창": risk,
@@ -285,14 +338,16 @@ PAGE = """<!doctype html><meta charset=utf-8>
 
 <h2>③′ 90일 예측 — 직접 입력</h2>
 <textarea id=c_c rows=2 placeholder="직전 90일 일별 값 90개(쉼표/공백 구분) — 숫자 하나면 평탄 가정">150</textarea>
+<textarea id=c_tx rows=2 placeholder="(선택) 기획서·소개 텍스트 — 넣으면 텍스트 조건 예측"></textarea>
 <div class=row><select id=c_d></select><input id=c_dt type=date value=2024-01-15></div>
-<button onclick="api('custom',{curve:v('c_c'),domain:v('c_d'),date:v('c_dt')},'c_o')">예측</button>
+<button onclick="api('custom',{curve:v('c_c'),domain:v('c_d'),date:v('c_dt'),text:v('c_tx')},'c_o')">예측</button>
 <pre id=c_o></pre>
 
 <h2>④ 리포트 — 리스크 창 · 민감도 · 유사 사례</h2>
 <textarea id=r_c rows=2 placeholder="직전 90일 곡선(90개 또는 1개)">150</textarea>
+<textarea id=r_tx rows=2 placeholder="(선택) 기획서·소개 텍스트"></textarea>
 <div class=row><select id=r_d></select><input id=r_dt type=date value=2024-01-15></div>
-<button onclick="api('report',{curve:v('r_c'),domain:v('r_d'),date:v('r_dt')},'r_o')">리포트</button>
+<button onclick="api('report',{curve:v('r_c'),domain:v('r_d'),date:v('r_dt'),text:v('r_tx')},'r_o')">리포트</button>
 <pre id=r_o></pre>
 
 <script>
@@ -347,10 +402,10 @@ class H(BaseHTTPRequestHandler):
                 out = q_entity(body.get("i", 0))
             elif self.path == "/api/custom":
                 out = q_custom(body.get("curve", ""), body.get("domain", ""),
-                               body.get("date", "2024-01-15"))
+                               body.get("date", "2024-01-15"), body.get("text"))
             elif self.path == "/api/report":
                 out = q_report(body.get("curve", ""), body.get("domain", ""),
-                               body.get("date", "2024-01-15"))
+                               body.get("date", "2024-01-15"), body.get("text"))
             elif self.path == "/api/tool":
                 from pretrain import wm_tools           # 지연 적재(순환 회피)
                 out = wm_tools.call(body.get("name"), body.get("args") or {})

@@ -19,8 +19,17 @@ import numpy as np
 
 import pretrain.serve as S          # 모형 적재·헬퍼 재사용(창구와 같은 체크포인트)
 
-CAVEAT = ("조건부 예측이지 인과가 아니다(「언제」= 크롤 시각) · 90% 구간 실측 덮개율 "
-          "59.6%(미보정 — 구간을 보수적으로 읽어라) · 개체 분리 검증 MdAPE 8.5%")
+def _caveat():
+    """성적을 «지금 배포된» report.json 에서 읽는다 — 숫자 하드코딩이 낡는 병 방지."""
+    try:
+        e = json.load(open(os.path.join(S.TROUT, "report.json"), encoding="utf-8"))["평가"]
+        return ("조건부 예측이지 인과가 아니다(「언제」= 크롤 시각) · 90% 구간 실측 덮개율 "
+                "%.1f%%(목표 90 — 모자란 만큼 보수적으로) · 개체 분리 검증 MdAPE %.1f%%"
+                % (e["90% 구간 덮개율(목표 0.90)"] * 100, e["누적90일 MdAPE"] * 100))
+    except Exception:
+        return "조건부 예측이지 인과가 아니다 · 성적표 read 실패 — wm_model_card 로 확인하라"
+
+CAVEAT = _caveat()
 
 
 def _parse_curve(curve):
@@ -39,8 +48,8 @@ def _parse_curve(curve):
     return vals
 
 
-def _forecast_full(vals, domain, date):
-    sc, cond, base = S._features_from_raw(vals, domain, date)
+def _forecast_full(vals, domain, date, text=None):
+    sc, cond, base = S._features_from_raw(vals, domain, date, text=text)
     q = S._quant_curves(sc, cond, base)                  # (91,5) log
     cum = np.expm1(q).cumsum(axis=0)
     def cell(t):
@@ -72,11 +81,13 @@ def wm_model_card(**_):
         "⚠ 한계": CAVEAT}
 
 
-def wm_forecast(curve=None, domain=None, date=None, **_):
+def wm_forecast(curve=None, domain=None, date=None, text=None, **_):
     vals = _parse_curve(curve)
     if domain not in S.DOMS:
         return {"오류": "도메인은 %s 중" % S.DOMS}
-    out = _forecast_full(vals, domain, str(date))
+    out = _forecast_full(vals, domain, str(date), text=text)
+    if S.TEXT_DIM:
+        out["텍스트 조건"] = "제공됨" if text else "미제공 → 도메인 평균 임베딩"
     out.update({"입력": {"도메인": domain, "기준일": date,
                        "직전 90일 일평균": round(float(np.mean(vals)), 1)},
                 "⚠": CAVEAT})
@@ -108,7 +119,8 @@ def wm_compare(base=None, variants=None, **_):
     domain, date = base["domain"], str(base["date"])
     if domain not in S.DOMS:
         return {"오류": "도메인은 %s 중" % S.DOMS}
-    b = _forecast_full(vals, domain, date)
+    btxt = base.get("text")
+    b = _forecast_full(vals, domain, date, text=btxt)
     ref = b["누적"]["90일"]["q50"]
     rows = []
     for v in (variants or []):
@@ -120,7 +132,7 @@ def wm_compare(base=None, variants=None, **_):
         if dom2 not in S.DOMS:
             rows.append({"이름": v.get("name", "?"), "오류": "도메인 %s 없음" % dom2})
             continue
-        f = _forecast_full(vals2, dom2, date2)
+        f = _forecast_full(vals2, dom2, date2, text=v.get("text", btxt))
         q50 = f["누적"]["90일"]["q50"]
         rows.append({"이름": v.get("name", "?"), "변환": {k: v[k] for k in v if k != "name"},
                      "누적90일": f["누적"]["90일"],
@@ -134,16 +146,16 @@ def wm_compare(base=None, variants=None, **_):
             "⚠": CAVEAT}
 
 
-def wm_risk(curve=None, domain=None, date=None, **_):
-    r = S.q_report(curve, domain, str(date))
+def wm_risk(curve=None, domain=None, date=None, text=None, **_):
+    r = S.q_report(curve, domain, str(date), text=text)
     if "오류" in r:
         return r
     return {"입력": r["입력"], "예측(누적 90일)": r["예측(누적 90일)"],
             "리스크": r["③ 언제 — 리스크 창"], "⚠": CAVEAT}
 
 
-def wm_similar(curve=None, domain=None, date=None, k=3, **_):
-    r = S.q_report(curve, domain, str(date))
+def wm_similar(curve=None, domain=None, date=None, k=3, text=None, **_):
+    r = S.q_report(curve, domain, str(date), text=text)
     if "오류" in r:
         return r
     return {"입력": r["입력"],
@@ -272,14 +284,15 @@ _CURVE = {"description": "직전 90일 일별 값 — 숫자 하나(평탄) · �
                     {"type": "array", "items": {"type": "number"}}]}
 _DOM = {"type": "string", "description": "도메인 (wm_model_card 의 목록이 전부)"}
 _DATE = {"type": "string", "description": "기준일 YYYY-MM-DD"}
+_TEXT = {"type": "string", "description": "(선택) 기획서·소개 텍스트 — 넣으면 텍스트 «조건» 예측(라이브 임베딩)"}
 
 MANIFEST = [
     {"name": "wm_model_card", "fn": wm_model_card,
      "description": "이 월드모델이 할 수 있는 일·도메인·검증 성적·원리상 못 하는 것. 🔴 낯선 질문이면 항상 먼저 불러라",
      "inputSchema": _sch({}, [])},
     {"name": "wm_forecast", "fn": wm_forecast,
-     "description": "앞 90일 상태 → 뒤 7/30/90일 누적 분포(q05~q95)와 일별 q50. 「얼마나 될까」의 직답",
-     "inputSchema": _sch({"curve": _CURVE, "domain": _DOM, "date": _DATE},
+     "description": "앞 90일 상태 → 뒤 7/30/90일 누적 분포(q05~q95)와 일별 q50. 「얼마나 될까」의 직답. 🔴 text 를 주면 «기획서 텍스트 조건» 예측",
+     "inputSchema": _sch({"curve": _CURVE, "domain": _DOM, "date": _DATE, "text": _TEXT},
                          ["curve", "domain", "date"])},
     {"name": "wm_compare", "fn": wm_compare,
      "description": "시나리오 비교(전략 결정용). 변환: curve_scale(초기 관심 배율) · date_shift_months(시점 이동) · trend_boost_last30_pct(막판 추세 %) · domain. 여러 개를 한 번에",
@@ -324,6 +337,9 @@ MANIFEST = [
 
 
 def call(name, args):
+    global CAVEAT
+    if "read 실패" in CAVEAT:
+        CAVEAT = _caveat()                               # 일시 경합 자기 회복
     for t in MANIFEST:
         if t["name"] == name:
             try:
