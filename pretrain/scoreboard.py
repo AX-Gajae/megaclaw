@@ -26,6 +26,13 @@ v2.1 이 v2 에서 고친 것 (사이클 1001 A부 · 티처 #137 ⑤ + v5.2 부
   · 판에 채점기 «자신»의 코드 sha 를 적는다 (조항 66 의 자기 출처 · v3.2 「코드 sha+끝 시각」)
   · 쓰는 seed «전부»를 판에 적는다 — ④ 군집 재표집은 BOOT_SEED+1 = 9991 (기재 누락이었다)
   · report 덮개율 대조를 «정확 키 목록»으로 (문자열 포함 탐색 폐지 — 취약 키 대조)
+
+v2.2 가 v2.1 에서 고친 것 (사이클 1002 배포 — 앙상블 manifest 하위호환 · 사전등록 1002 §6-3):
+  · 배포 정본이 앙상블이면(`ensemble_manifest.json` 존재) «직접 평가»는 구성원 5 를 적재해
+    분위수 텐서 산술 평균으로 평가한다 — 구성원 sha 를 manifest 와 실측 대조(조항 66)
+  · 「실물」 칸과 출처 사슬이 manifest 를 정본으로 대조한다 (리더보드→manifest ·
+    보고서→manifest · LODO 시대 표지 = 「배포 manifest(시대 표지)」)
+  · manifest 없으면 v2.1 과 동일 동작 (단일 model.pt — 하위호환 분기)
 """
 import os as _os, sys as _sys
 _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
@@ -47,6 +54,7 @@ SRC = {
     "보고서": os.path.join(ART, "transition", "report.json"),
 }
 MODEL_PT = os.path.join(ART, "transition", "model.pt")
+MANIFEST = os.path.join(ART, "transition", "ensemble_manifest.json")   # v2.2 — 있으면 앙상블 정본
 SAO_NPZ = os.path.join(ART, "triples", "sao.npz")
 DOMS_JSON = os.path.join(ART, "triples", "domains.json")
 
@@ -73,11 +81,14 @@ def _read_json(path):
 
 
 def _direct_eval():
-    """배포 model.pt 를 998 러너의 평가식으로 CPU 평가 — 개체별 APE·pers APE·덮개율.
+    """배포 정본(v2.2: manifest 앙상블 우선, 없으면 단일 model.pt)을 998 러너의 평가식으로
+    CPU 평가 — 개체별 APE·pers APE·덮개율. 앙상블은 구성원 분위수 텐서 산술 평균.
 
-    실패(파일 없음·차원 불일치)면 {"오류": …} 를 돌려준다 — 조항 59 대로 못 읽은 것은 못 읽었다."""
-    if not (os.path.exists(MODEL_PT) and os.path.exists(SAO_NPZ) and os.path.exists(DOMS_JSON)):
-        missing = [p for p in (MODEL_PT, SAO_NPZ, DOMS_JSON) if not os.path.exists(p)]
+    실패(파일 없음·sha 불일치·차원 불일치)면 {"오류": …} — 조항 59 대로 못 읽은 것은 못 읽었다."""
+    ens_mode = os.path.exists(MANIFEST)
+    정본 = MANIFEST if ens_mode else MODEL_PT
+    if not (os.path.exists(정본) and os.path.exists(SAO_NPZ) and os.path.exists(DOMS_JSON)):
+        missing = [p for p in (정본, SAO_NPZ, DOMS_JSON) if not os.path.exists(p)]
         return {"오류": "못 읽었다 — 없음: %s" % missing}
     import numpy as np
     import torch
@@ -100,26 +111,43 @@ def _direct_eval():
     onehot = np.zeros((len(S), n_dom), dtype=np.float32)
     onehot[np.arange(len(S)), dom_id] = 1.0
     cond = [onehot, sin, cos, year, base.astype(np.float32)]
-    ck = torch.load(MODEL_PT, map_location="cpu", weights_only=False)
-    text_emb = ck.get("text_emb")
+    if ens_mode:                                          # v2.2 — 앙상블 manifest 정본
+        man = json.load(open(MANIFEST, encoding="utf-8"))
+        text_emb = man.get("text_emb")
+        cks = []
+        for sd, info in sorted(man["구성원"].items()):
+            if not os.path.exists(info["경로"]):
+                return {"오류": "못 읽었다 — 앙상블 구성원 없음: %s" % info["경로"]}
+            got = _sha16(info["경로"])
+            if got != info["sha256"]:
+                return {"오류": "불일치 — 구성원 %s 기재 sha %s ≠ 실측 %s (조항 66)"
+                               % (info["경로"], info["sha256"], got)}
+            cks.append(torch.load(info["경로"], map_location="cpu", weights_only=False))
+    else:                                                 # 하위호환 — 단일 model.pt
+        cks = [torch.load(MODEL_PT, map_location="cpu", weights_only=False)]
+        text_emb = cks[0].get("text_emb")
     if text_emb:
         if not os.path.exists(text_emb):
-            return {"오류": "못 읽었다 — 체크포인트의 text_emb 경로가 없다: %s" % text_emb}
+            return {"오류": "못 읽었다 — 정본의 text_emb 경로가 없다: %s" % text_emb}
         E = np.load(text_emb)["E"].astype(np.float32)
         if len(E) != len(S):
             return {"오류": "불일치 — 텍스트 임베딩 행 수 %d ≠ sao %d" % (len(E), len(S))}
         cond.append(E)
     C = np.concatenate(cond, axis=1).astype(np.float32)
-    if Sc.shape[1] + C.shape[1] != ck["d_in"]:
-        return {"오류": "불일치 — 조건 차원 %d ≠ 체크포인트 d_in %d"
-                       % (Sc.shape[1] + C.shape[1], ck["d_in"])}
-    model = Transition(ck["d_in"], hidden=ck["hidden"])
-    model.load_state_dict(ck["model"])
-    model.eval()
+    for ck in cks:
+        if Sc.shape[1] + C.shape[1] != ck["d_in"]:
+            return {"오류": "불일치 — 조건 차원 %d ≠ 체크포인트 d_in %d"
+                           % (Sc.shape[1] + C.shape[1], ck["d_in"])}
     va = np.where(split == 1)[0]
+    preds = []
     with torch.no_grad():
         xe = torch.from_numpy(np.concatenate([Sc[va], C[va]], axis=1))
-        pred = model(xe).numpy()                          # (n,91,5) 잔차 눈금
+        for ck in cks:
+            model = Transition(ck["d_in"], hidden=ck["hidden"])
+            model.load_state_dict(ck["model"])
+            model.eval()
+            preds.append(model(xe).numpy())               # (n,91,5) 잔차 눈금
+    pred = np.mean(np.stack(preds), axis=0) if len(preds) > 1 else preds[0]
     b = base[va]
     cum_true = np.expm1(R[va] + b).sum(axis=1)
     cum_q50 = np.expm1(pred[..., 2] + b).sum(axis=1)
@@ -129,31 +157,40 @@ def _direct_eval():
     cover_ent = ((R[va] >= pred[..., 0]) & (R[va] <= pred[..., 4])).mean(axis=1)
     return {"domains": domains, "dom_va": dom_id[va], "ape_tr": ape_tr,
             "ape_pers": ape_pers, "cover_ent": cover_ent,
+            "정본": ("앙상블 manifest(구성원 %d · 분위수 텐서 산술 평균)" % len(cks)
+                   if ens_mode else "단일 model.pt"),
             "text_emb": text_emb, "n_va": int(len(va))}
 
 
 def build():
     _self = os.path.abspath(__file__)
-    판 = {"판": "파운데이션 판 v2 (루프 v5.0 제5장 + 5-가 보강 v5.1 · 티처 #136)",
+    ens_mode = os.path.exists(MANIFEST)                   # v2.2 — 배포 정본 판별
+    판 = {"판": "파운데이션 판 v2.2 (루프 v5.0 제5장 + 5-가 보강 v5.1 · 티처 #136 · "
+             "앙상블 manifest 하위호환 — 사전등록 1002 §6-3)",
           "잰 시각": time.strftime("%Y-%m-%dT%H:%M:%S"),
           "채점기 자신(조항 66 — 자기 출처 · v3.2)": {"코드": _self, "sha256": _sha16(_self)},
           "도메인 명부(상수 · 조항 59)": list(ROSTER),
           "원천": {k: _provenance(p) for k, p in SRC.items()},
-          "실물": {"model.pt": _provenance(MODEL_PT), "sao.npz": _provenance(SAO_NPZ)},
+          "실물": ({"ensemble_manifest.json": _provenance(MANIFEST),
+                  "sao.npz": _provenance(SAO_NPZ)} if ens_mode else
+                 {"model.pt": _provenance(MODEL_PT), "sao.npz": _provenance(SAO_NPZ)}),
           "붓스트랩": {"B": B_BOOT, "seed": BOOT_SEED,
                     "seed 전부(실사용 · 티처 #137 ⑤㉯)": {
                         "①② 도메인 재표집": BOOT_SEED,
                         "④ 군집 재표집(BOOT_SEED+1)": BOOT_SEED + 1},
                     "방식": "①② 도메인별 독립 개체 재표집 · ④ 개체 군집(개체 덮개율 평균) — "
-                          "개체별 값은 배포 model.pt 를 998 러너 평가식으로 CPU 직접 평가"}}
+                          "개체별 값은 배포 정본(manifest 앙상블 또는 단일 model.pt)을 "
+                          "998 러너 평가식으로 CPU 직접 평가"}}
     lb = _read_json(SRC["리더보드"])
     rep = _read_json(SRC["보고서"])
     lodo = _read_json(SRC["LODO"])
     ev = _direct_eval()
 
-    # ── 출처 사슬 (조항 66 · v5.1 5-가-2) ────────────────────────────
+    # ── 출처 사슬 (조항 66 · v5.1 5-가-2 · v2.2 — 정본 = manifest 또는 model.pt) ──
     사슬 = {}
-    실물_model = _sha16(MODEL_PT) if os.path.exists(MODEL_PT) else None
+    정본키 = "manifest" if ens_mode else "model.pt"
+    실물_model = (_sha16(MANIFEST) if ens_mode
+               else (_sha16(MODEL_PT) if os.path.exists(MODEL_PT) else None))
     실물_sao = _sha16(SAO_NPZ) if os.path.exists(SAO_NPZ) else None
     미기재, 어긋남 = [], []
 
@@ -171,16 +208,17 @@ def build():
     lb_src = (lb or {}).get("잰 소스 (조항 66)")
     rep_src = (rep or {}).get("잰 소스 (조항 66)")
     lodo_src = (lodo or {}).get("잰 소스 (조항 66)")
-    사슬["리더보드→model.pt"] = _대조("리더보드", lb_src, "model.pt", 실물_model)
+    사슬["리더보드→" + 정본키] = _대조("리더보드", lb_src, 정본키, 실물_model)
     사슬["리더보드→sao.npz"] = _대조("리더보드", lb_src, "sao.npz", 실물_sao)
-    사슬["보고서→model.pt"] = _대조("보고서", rep_src, "model.pt", 실물_model)
+    사슬["보고서→" + 정본키] = _대조("보고서", rep_src, 정본키, 실물_model)
     사슬["보고서→sao.npz"] = _대조("보고서", rep_src, "sao.npz", 실물_sao)
     사슬["LODO→sao.npz"] = _대조("LODO", lodo_src, "sao.npz", 실물_sao)
-    # ③ 의 「낡음」— LODO 가 주행 당시의 배포 model.pt sha 를 «시대 표지»로 남겼으면 그것으로 판정
-    if isinstance(lodo_src, dict) and "배포 model.pt(시대 표지)" in lodo_src:
+    # ③ 의 「낡음」— LODO 가 주행 당시의 배포 정본 sha 를 «시대 표지»로 남겼으면 그것으로 판정
+    시대키 = "배포 manifest(시대 표지)" if ens_mode else "배포 model.pt(시대 표지)"
+    if isinstance(lodo_src, dict) and 시대키 in lodo_src:
         사슬["LODO 시대 표지"] = ("일치(현 배포와 같은 시대)"
-                             if lodo_src["배포 model.pt(시대 표지)"] == 실물_model
-                             else "낡음 — LODO 주행 뒤 model.pt 가 바뀌었다")
+                             if lodo_src[시대키] == 실물_model
+                             else "낡음 — LODO 주행 뒤 배포 정본이 바뀌었다")
     else:
         사슬["LODO 시대 표지"] = "sha 미기재(재실측 전 낡은 산출물)"
 

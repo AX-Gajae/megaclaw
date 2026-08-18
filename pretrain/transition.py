@@ -109,6 +109,52 @@ def pinball(pred, target):
     return sum(losses) / len(QS)
 
 
+# ── 배포 정본 적재 — 앙상블 manifest 하위호환 (사이클 1002 배포 · 사전등록 1002 §6-3) ──
+MANIFEST = os.path.join(OUT, "ensemble_manifest.json")
+
+
+class QuantileEnsemble:
+    """분위수 텐서 (B,91,5) 산술 평균 앙상블 — Transition 과 같은 호출 계약."""
+
+    def __init__(self, members):
+        self.members = members
+
+    def eval(self):
+        for m in self.members:
+            m.eval()
+        return self
+
+    def train(self):
+        return self          # 평가 전용 — 배포 앙상블은 학습하지 않는다
+
+    def to(self, device):
+        for m in self.members:
+            m.to(device)
+        return self
+
+    def __call__(self, x):
+        return torch.stack([m(x) for m in self.members]).mean(dim=0)
+
+
+def load_ensemble(manifest_path=MANIFEST):
+    """manifest 를 읽어 구성원 5 를 적재 — 구성원 sha 실측 대조(조항 66 · 어긋나면 예외).
+    돌려주는 것: (QuantileEnsemble, manifest dict, {씨앗: sha16})."""
+    man = json.load(open(manifest_path, encoding="utf-8"))
+    members, shas = [], {}
+    for sd, info in sorted(man["구성원"].items()):
+        got = _sha16(info["경로"])
+        if got != info["sha256"]:
+            raise RuntimeError("🔴 앙상블 구성원 sha 불일치: %s 기재 %s ≠ 실측 %s"
+                               % (info["경로"], info["sha256"], got))
+        ck = torch.load(info["경로"], map_location="cpu", weights_only=False)
+        m = Transition(ck["d_in"], hidden=ck["hidden"])
+        m.load_state_dict(ck["model"])
+        m.eval()
+        members.append(m)
+        shas[sd] = got
+    return QuantileEnsemble(members), man, shas
+
+
 # ── 평가(기준선과 나란히) ─────────────────────────────────────────────
 def evaluate(model, data, device):
     model.eval()
@@ -182,22 +228,35 @@ def train(a):
 
 # ── 재평가 — 배포 model.pt 를 «학습 없이» 평가해 report.json 을 다시 찍는다 ──
 def evalcmd(a):
-    """배포가 model.pt 를 갈아끼우면 report.json 이 옛 모형을 가리킨다(티처 #136 ②-5).
-    이 명령이 «현 배포 모형»으로 report.json 을 다시 찍어 sha 사슬을 잇는다."""
+    """배포가 정본을 갈아끼우면 report.json 이 옛 모형을 가리킨다(티처 #136 ②-5).
+    이 명령이 «현 배포 정본»으로 report.json 을 다시 찍어 sha 사슬을 잇는다.
+    manifest 있으면 앙상블, 없으면 단일 model.pt — 하위호환(사전등록 1002 §6-3)."""
     torch.set_num_threads(4)
-    mp = os.path.join(OUT, "model.pt")
-    ck = torch.load(mp, map_location="cpu", weights_only=False)
-    data = SAO(text_emb=ck.get("text_emb"))
-    model = Transition(ck["d_in"], hidden=ck["hidden"])
-    model.load_state_dict(ck["model"])
+    if os.path.exists(MANIFEST):
+        model, man, shas = load_ensemble(MANIFEST)
+        data = SAO(text_emb=man.get("text_emb"))
+        mode = "재평가(앙상블 manifest · 구성원 %d · 학습 없음 — manifest-보고서 sha 사슬 유지)" % len(shas)
+        d_in = data.d_in
+        recipe = man.get("레시피", "미기재") + " · " + man.get("결합", "")
+        src = {"manifest": _sha16(MANIFEST), "구성원": shas,
+               "sao.npz": _sha16(os.path.join(TRI, "sao.npz"))}
+    else:
+        mp = os.path.join(OUT, "model.pt")
+        ck = torch.load(mp, map_location="cpu", weights_only=False)
+        data = SAO(text_emb=ck.get("text_emb"))
+        model = Transition(ck["d_in"], hidden=ck["hidden"])
+        model.load_state_dict(ck["model"])
+        mode = "재평가(배포 model.pt · 학습 없음 — 모형-보고서 sha 사슬 유지)"
+        d_in = ck["d_in"]
+        recipe = ck.get("레시피", "미기재(체크포인트에 없음)")
+        src = {"model.pt": _sha16(mp), "sao.npz": _sha16(os.path.join(TRI, "sao.npz"))}
     ev = evaluate(model, data, "cpu")
-    rep = {"모드": "재평가(배포 model.pt · 학습 없음 — 모형-보고서 sha 사슬 유지)",
+    rep = {"모드": mode,
            "표본": {"train": int(len(data.tr)), "val(개체 분리)": int(len(data.va))},
-           "d_in": ck["d_in"], "threads": torch.get_num_threads(),
-           "레시피": ck.get("레시피", "미기재(체크포인트에 없음)"),
+           "d_in": d_in, "threads": torch.get_num_threads(),
+           "레시피": recipe,
            "평가": ev,
-           "잰 소스 (조항 66)": {"model.pt": _sha16(mp),
-                             "sao.npz": _sha16(os.path.join(TRI, "sao.npz"))},
+           "잰 소스 (조항 66)": src,
            "🔴 정직": "「언제」가 크롤 시각이라(탐색 995) 이 수는 «조건부 예측»이다 — "
                     "「언급의 인과 효과」 주장은 이 자료로 못 세운다"}
     with open(os.path.join(OUT, "report.json"), "w", encoding="utf-8") as f:
@@ -207,10 +266,14 @@ def evalcmd(a):
 
 # ── 질의 시연 — 「이 개체, 90일 뒤?」 의 실제 모양 ────────────────────
 def demo(a):
-    ck = torch.load(os.path.join(OUT, "model.pt"), map_location="cpu", weights_only=False)
-    data = SAO(text_emb=ck.get("text_emb"))
-    model = Transition(ck["d_in"], hidden=ck["hidden"])
-    model.load_state_dict(ck["model"])
+    if os.path.exists(MANIFEST):
+        model, man, _ = load_ensemble(MANIFEST)
+        data = SAO(text_emb=man.get("text_emb"))
+    else:
+        ck = torch.load(os.path.join(OUT, "model.pt"), map_location="cpu", weights_only=False)
+        data = SAO(text_emb=ck.get("text_emb"))
+        model = Transition(ck["d_in"], hidden=ck["hidden"])
+        model.load_state_dict(ck["model"])
     model.eval()
     i = data.va[a.i % len(data.va)]
     meta = None

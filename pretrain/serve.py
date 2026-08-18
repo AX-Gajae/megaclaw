@@ -25,7 +25,7 @@ import torch.nn.functional as F
 
 from pretrain.config import ART_DIR, CKPT_DIR, TOKENIZER_DIR, ModelConfig
 from pretrain.model import GPT
-from pretrain.transition import Transition, SAO, TRI, OUT as TROUT
+from pretrain.transition import Transition, SAO, TRI, OUT as TROUT, MANIFEST, load_ensemble
 
 PORT = 8899
 LOCK = threading.Lock()
@@ -64,13 +64,21 @@ TR = DATA = DOMS = META = None
 TEXT_DIM, DOM_EMB, GLOB_EMB = 0, {}, None
 QWEN_SNAP = ("/Users/ax/.cache/huggingface/hub/models--Qwen--Qwen2.5-0.5B/"
              "snapshots/060db6499f32faf8b98477b0a26969ef7d8b9987")
+# 배포 정본 적재 — manifest 있으면 앙상블(사이클 1002 배포), 없으면 단일 model.pt (하위호환)
 tr_path = os.path.join(TROUT, "model.pt")
-if os.path.exists(tr_path):
+TR_SRC = None
+if os.path.exists(MANIFEST):
+    TR, _man, _shas = load_ensemble(MANIFEST)        # 구성원 sha 실측 대조(조항 66)
+    DATA = SAO(text_emb=_man.get("text_emb"))
+    TR_SRC = "앙상블 manifest(구성원 %d · 분위수 텐서 산술 평균)" % len(_shas)
+elif os.path.exists(tr_path):
     tck = torch.load(tr_path, map_location="cpu", weights_only=False)
     TR = Transition(tck["d_in"], hidden=tck["hidden"])
     TR.load_state_dict(tck["model"])
     TR.eval()
     DATA = SAO(text_emb=tck.get("text_emb"))
+    TR_SRC = "단일 model.pt"
+if DATA is not None:
     DOMS = json.load(open(os.path.join(TRI, "domains.json"), encoding="utf-8"))
     META = [json.loads(l) for l in open(os.path.join(TRI, "meta.jsonl"), encoding="utf-8")]
     if DATA.E is not None:
@@ -90,6 +98,20 @@ if os.path.exists(tr_path):
         E_TRAIN = _E_TR
 
 _QW = {}
+
+
+def _perf_note():
+    """성적을 «지금 배포된» report.json 에서 읽는다 — 숫자 하드코딩이 낡는 병 방지
+    (wm_tools._caveat 과 같은 원리 · 사이클 1002 수리: 리터럴 59.6%/8.5% 는 옛 시대 값이었다)."""
+    try:
+        e = json.load(open(os.path.join(TROUT, "report.json"), encoding="utf-8"))["평가"]
+        return ("개체 분리 검증 MdAPE %.1f%% · 90%% 구간 실측 덮개율 %.1f%%(목표 90 — 미달분은 보수적으로)"
+                % (e["누적90일 MdAPE"] * 100, e["90% 구간 덮개율(목표 0.90)"] * 100))
+    except Exception:
+        return "성적표(report.json) read 실패 — wm_model_card 로 확인하라"
+
+
+PERF_NOTE = _perf_note()
 
 
 def _embed_text_live(text):
@@ -176,8 +198,7 @@ def q_custom(curve, domain, date, text=None):
         out["🔴 구간 붕괴"] = "q05~q95 폭 5% 미만 — 과신 신호. 이 값 신뢰 금지"
     out.update({"도메인": domain, "기준일": date,
                 "직전 90일 일평균": round(float(np.mean(vals)), 1),
-                "⚠": "개체 분리 검증 MdAPE 8.5% · 90% 구간 실측 덮개율 59.6%(미보정) · "
-                     "조건부 예측이지 인과가 아니다"})
+                "⚠": PERF_NOTE + " · 조건부 예측이지 인과가 아니다"})
     return out
 
 
@@ -301,7 +322,7 @@ def q_report(curve, domain, date, text=None):
             "③ 언제 — 리스크 창": risk,
             "④ 어딜 — 민감도(전략 수정 후보)": sens,
             "① 근거 — 유사 사례(같은 도메인 · 학습 표본)": cases,
-            "⚠": "덮개율 59.6% 미보정 · 조건부 예측 · ⑤(여론)은 이 판이 아니다"}
+            "⚠": PERF_NOTE + " · 조건부 예측 · ⑤(여론)은 이 판이 아니다"}
 
 
 # ── HTML ──────────────────────────────────────────────────────────────
@@ -417,6 +438,7 @@ class H(BaseHTTPRequestHandler):
                 out = wm_tools.call(body.get("name"), body.get("args") or {})
             elif self.path == "/api/info":
                 out = {"lm_step": LM_STEP if LM else None, "lm_ckpt": LM_PATH,
+                       "transition 정본": TR_SRC,
                        "domains": DOMS or [], "val_n": len(DATA.va) if DATA is not None else 0}
             else:
                 return self._send(404, "{}")

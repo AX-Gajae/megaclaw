@@ -97,10 +97,17 @@ def build():
     overall = {k: round(float(np.median(
         [a for dom in per.values() for a in dom[k]])), 4)
         for k in ("transition", "knn", "climatology", "persistence")}
-    from pretrain.transition import _sha16                   # 조항 66 — 출처 사슬 (v5.1 5-가-2)
+    from pretrain.transition import _sha16, MANIFEST         # 조항 66 — 출처 사슬 (v5.1 5-가-2)
+    # transition 열은 serve 경유(S._quant_curves)라 정본이 앙상블이면 자동으로 앙상블 —
+    # 잰 소스도 같은 정본을 가리킨다 (manifest 있으면 manifest, 없으면 단일 model.pt · 1002 §6-3)
+    if os.path.exists(MANIFEST):
+        src = {"manifest": _sha16(MANIFEST),
+               "sao.npz": _sha16(os.path.join(S.TRI, "sao.npz"))}
+    else:
+        src = {"model.pt": _sha16(os.path.join(S.TROUT, "model.pt")),
+               "sao.npz": _sha16(os.path.join(S.TRI, "sao.npz"))}
     out = {"기준": "검증(개체 분리) 누적 90일 MdAPE — 낮을수록 좋다",
-           "잰 소스 (조항 66)": {"model.pt": _sha16(os.path.join(S.TROUT, "model.pt")),
-                             "sao.npz": _sha16(os.path.join(S.TRI, "sao.npz"))},
+           "잰 소스 (조항 66)": src,
            "전체": overall, "도메인별": board}
     with open(LB_PATH, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
