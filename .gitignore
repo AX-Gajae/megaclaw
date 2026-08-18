@@ -59,3 +59,6 @@ data/ingest/steam_reviews/*.jsonl.gz.part
 
 # 🔴 티처 #91 m6 — zip 을 풀면 games.json 이 918MB 다. 스테이지에 뜨면 안 된다
 data/ingest/steam_games/*.json
+
+# 996 안전 감사: 80.7MB 상태 파일 — 자라면 GitHub 100MB 에 걸린다 (이력 1 회뿐 · 디스크엔 남긴다)
+data/state/fandom_states.json

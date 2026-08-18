@@ -77,6 +77,9 @@ def main():
         torch.set_num_threads(a.threads)
 
     out = os.path.join(CKPT_DIR, a.name)
+    if a.resume == "none" and os.path.exists(os.path.join(out, "latest.pt")):
+        raise SystemExit("🔴 %s/latest.pt 가 이미 있다 — 이어 돌리려면 --resume auto, "
+                         "새로 하려면 다른 --name (조용한 덮어쓰기 금지 · 적대 검증)" % out)
     os.makedirs(out, exist_ok=True)
     metrics_path = os.path.join(out, "metrics.jsonl")
     progress_path = os.path.join(out, "progress.txt")
@@ -109,6 +112,13 @@ def main():
             print("재개: %s → step %d" % (path, start_step), flush=True)
         elif a.resume != "auto":
             raise SystemExit("🔴 재개 체크포인트가 없다: %s" % path)
+
+    if start_step >= a.steps:
+        # 🔴 적대 검증: 끝난 러닝을 재기동하면 루프가 0 회 돌아 UnboundLocalError 로
+        #    죽었다(크론·재기동 래퍼가 no-op 대신 실패). 조용히 성공으로 끝낸다.
+        print(json.dumps({"이미 끝남": start_step, "요청 steps": a.steps},
+                         ensure_ascii=False), flush=True)
+        return
 
     stop = {"now": False}
     signal.signal(signal.SIGTERM, lambda *_: stop.__setitem__("now", True))

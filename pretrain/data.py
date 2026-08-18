@@ -39,7 +39,7 @@ class Batcher:
                 continue
             if max_block is not None and sh["block"] > max_block:
                 continue
-            if sh["n_tokens"] <= self.seq + 1:
+            if sh["n_tokens"] < self.seq + 1:
                 continue                     # 창 하나도 못 뽑는 샤드는 뺀다
             p = os.path.join(base, sh["path"])
             mm = np.memmap(p, dtype=np.uint16, mode="r")
@@ -66,7 +66,7 @@ class Batcher:
         ys = np.empty((batch_size, self.seq), dtype=np.int64)
         for i, si in enumerate(sh_ids):
             mm = self.mms[si]
-            off = int(rng.integers(0, len(mm) - self.seq - 1))
+            off = int(rng.integers(0, len(mm) - self.seq))   # high 배타 — 마지막 창 포함
             win = np.asarray(mm[off:off + self.seq + 1], dtype=np.int64)
             xs[i] = win[:-1]
             ys[i] = win[1:]
@@ -76,11 +76,14 @@ class Batcher:
     def fixed_windows(self, max_windows_per_shard=None):
         """[(block, x, y)] 제너레이터 — 평가는 표집이 아니라 «고정 창»으로."""
         for sh, mm in zip(self.shards, self.mms):
-            n = (len(mm) - 1) // self.seq
-            if max_windows_per_shard is not None:
-                n = min(n, max_windows_per_shard)
-            for w in range(n):
-                off = w * self.seq
+            n_all = (len(mm) - 1) // self.seq
+            if max_windows_per_shard is not None and max_windows_per_shard < n_all:
+                # 🔴 적대 검증: 앞쪽 창만 뜨면 표본이 문서 앞부분으로 치우친다 — 고르게 편다
+                idxs = np.linspace(0, n_all - 1, max_windows_per_shard).astype(int)
+            else:
+                idxs = np.arange(n_all)
+            for w in idxs:
+                off = int(w) * self.seq
                 win = np.asarray(mm[off:off + self.seq + 1], dtype=np.int64)
                 yield sh["block"], torch.from_numpy(win[:-1]), torch.from_numpy(win[1:])
 

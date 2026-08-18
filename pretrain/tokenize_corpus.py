@@ -134,9 +134,9 @@ def main():
                 writers[d].add(split, list(e.ids) + [eot],
                                len(s.encode("utf-8", "ignore")))
         prog("파일 %d/%d" % (fi + 1, len(files)))
-        # 전 dump 가 상한에 닿았으면 조기 종료
-        if taken and all(v >= cap for v in taken.values()) and len(taken) >= 90:
-            break
+        # 🔴 적대 검증: 조기 종료는 «본 적 있는» dump 만 세므로 dump-major 배열에서
+        #    뒤에 처음 나오는 dump 를 유실할 수 있다(모의에서 96 중 6 유실).
+        #    선검사 덕에 전체 훑기가 싸다(실측 567 초) — 조기 종료를 없앤다.
 
     # ── index.json ────────────────────────────────────────────────────
     shards = []

@@ -43,7 +43,15 @@ def main():
     model.eval()
 
     val = Batcher(a.index, split="val", max_block=None, seq=cfg.seq_len)
-    per_block = {}                      # block → [sum_nll_tokens, n_tokens]
+    # 🔴 적대 검증: 샤드 «전체» bytes/token 을 창 표본 nll 에 곱하면 블록마다
+    #    부호가 다른 왜곡(실측 −0.37%~+0.66%)이 생긴다 — 이 도구의 목적이
+    #    블록 «간» 비교라 치명. 창의 토큰을 되돌려 «그 창의 바이트»로 잰다.
+    tokz = None
+    tk_path = val.index.get("tokenizer")
+    if tk_path and os.path.exists(tk_path):
+        from tokenizers import Tokenizer
+        tokz = Tokenizer.from_file(tk_path)
+    per_block = {}                      # block → [sum_nll, n_tokens, n_bytes(실측)]
     buf_x, buf_y, buf_b = [], [], []
 
     def flush():
@@ -58,9 +66,12 @@ def main():
                 logits.view(-1, logits.size(-1)).float(), y.reshape(-1),
                 reduction="none").view(y.shape)
         for i, b in enumerate(buf_b):
-            s = per_block.setdefault(b, [0.0, 0])
+            s = per_block.setdefault(b, [0.0, 0, 0])
             s[0] += float(nll[i].sum())
             s[1] += int(nll.shape[1])
+            if tokz is not None:
+                ids = [int(t) for t in y[i].tolist()]
+                s[2] += len(tokz.decode(ids).encode("utf-8", "ignore"))
         del buf_x[:], buf_y[:], buf_b[:]
 
     for block, x, y in val.fixed_windows(max_windows_per_shard=a.windows_per_shard):
@@ -73,14 +84,19 @@ def main():
 
     table = {}
     for b in sorted(per_block):
-        nll_tok = per_block[b][0] / max(1, per_block[b][1])
+        nll_sum, n_tok, n_byt = per_block[b]
+        nll_tok = nll_sum / max(1, n_tok)
         bpt = nll_tok / math.log(2)                      # bits per token
-        bpb = bpt / max(1e-9, val.bytes_per_token(b))    # bytes/token 로 나눈다
+        if n_byt > 0:
+            bpb = (nll_sum / math.log(2)) / n_byt        # 🔴 창 «실측» 바이트
+            src = "창 실측 바이트"
+        else:
+            bpb = bpt / max(1e-9, val.bytes_per_token(b))
+            src = "⚠ 샤드 평균 근사(토크나이저 없음)"
         table["블록 %d" % b] = {
-            "평가 토큰": per_block[b][1],
+            "평가 토큰": n_tok, "평가 바이트(실측)": n_byt,
             "nll/token": round(nll_tok, 4), "bits/token": round(bpt, 4),
-            "bytes/token": round(val.bytes_per_token(b), 4),
-            "bpb": round(bpb, 4)}
+            "bpb": round(bpb, 4), "bpb 출처": src}
     rep = {"ckpt": os.path.abspath(a.ckpt), "step": ck.get("step"),
            "device": device, "표": table}
     out = a.out or (a.ckpt + ".bpb.json")
