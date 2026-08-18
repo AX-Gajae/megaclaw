@@ -1,0 +1,43 @@
+{
+ "무엇": "노트 997 판정문 도장 --- 문서 sha256 과 «치환표» sha256 을 같이 남긴다",
+ "문서": "docs/판정_997.md",
+ "치환표": "runners/out997_table.json",
+ "🔴🔴🔴 표 경로": "runners/out997_table.json",
+ "🔴🔴🔴 표 sha256(993 R3 신설)": "b4355735d115b5b1052e0993b0162e9fce640a10def407f5bc0040e1e830cb35",
+ "파일별": {
+  "docs/판정_997.md": "5ce091c7c39e7cefab5553e6733a52a65fee2f84cd1750d063a715cca2fdd3e4"
+ },
+ "🔴 문서 sha256": "5ce091c7c39e7cefab5553e6733a52a65fee2f84cd1750d063a715cca2fdd3e4",
+ "🔴 치환표 sha256": "b4355735d115b5b1052e0993b0162e9fce640a10def407f5bc0040e1e830cb35",
+ "🔴 치환표 슬롯 수": 152,
+ "🔴🔴 규칙 D — §9 탐색 인용 대조(기계)": {
+  "🔴 왜 이 칸이 있나": "규칙 D --- §9 는 이 문서에서 «유일하게» 다른 문서(`docs/탐색/997.md`)의 수를 산문으로 옮긴 절이다. 슬롯이 아니므로 생성기가 «따로» 견줘야 한다",
+  "분모: §9 에 나오는 수 가짓수": 62,
+  "🔴 `파일:줄` 참조라 뺀 것": [
+   "145",
+   "232",
+   "7,11",
+   "72"
+  ],
+  "🔴🔴 탐색 문서에서 «글자 그대로» 못 찾은 수": "없음",
+  "🔴 그 수": 0,
+  "⚠ 자의 한계": "「글자 그대로 있나」만 본다 --- 맥락이 맞는지는 «안» 본다(조항 61)",
+  "통과": true
+ },
+ "🔴 안 채워진 슬롯": [],
+ "🔴 생성기 sha256": {
+  "runners/note997_gen.py": "f56d6260f3c19473b72a9c55c39818fc9fb527e1f8dc399c0efe6938502e6d34",
+  "runners/score997.py": "105161fa9312c98323d4f1d90db01ead6082b7aecb7dfc3a14af6ce08a4ba61c"
+ },
+ "🔴 입력 sha256": {
+  "runners/out997_score.json": "25020a6252ff01236defb7737ed58b0c654dba6228ec635d4b9875df4ba40c97",
+  "runners/out997_probe.json": "9db019087ff2440d0e7d2f28b9d4d16dd8536d9cc06877a47c3c4a2d97e8c154",
+  "runners/out997_mask.json": "b766c8a477ce6925349df883ff45b9a0a1d1578949afe448cd67505500a023dd",
+  "runners/out997_gate.json": "f0da238bf9d0a7441c3cdd5091276a07d3222a550987ff2df91721df6665361a",
+  "runners/out997_fiveprime.json": "118ed9ba0d6be5705ec55d7a48be6efe769879e48a4cf9538542e76564f27a67",
+  "docs/탐색/997.md": "497c681de0e1497ab917657b7d3d7b5b20abdc7492b10885a71b5e607a478567",
+  "docs/prereg_997_unsupervised_mde.md": "65ede00ed1944738f349d018330747940438677f375de049abf38833732fe2b4"
+ },
+ "언제(UTC)": "2026-08-18T07:43:49Z",
+ "통과": true
+}
