@@ -17,6 +17,7 @@
 import os as _os, sys as _sys
 _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
 import argparse
+import hashlib
 import json
 import math
 import os
@@ -26,6 +27,15 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+
+
+def _sha16(path):
+    """조항 66 — 산출물이 자기 출처(sha)를 대게 한다."""
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()[:16]
 
 ART = os.environ.get("WM_FOUNDATION_DIR", "/Users/ax/wm_harvest/foundation")
 TRI = os.path.join(ART, "triples")
@@ -134,6 +144,7 @@ def evaluate(model, data, device):
 # ── 학습 ──────────────────────────────────────────────────────────────
 def train(a):
     os.makedirs(OUT, exist_ok=True)
+    torch.set_num_threads(4)      # 🔴 v5.1 5-가-4 — 스레드 수가 다르면 같은 씨앗도 다른 값이 난다
     data = SAO(text_emb=a.text_emb or None)
     device = a.device if a.device != "auto" else "cpu"    # 0.9M MLP — CPU 가 충분
     torch.manual_seed(997)
@@ -157,8 +168,36 @@ def train(a):
                 "text_emb": a.text_emb or None}, os.path.join(OUT, "model.pt"))
     rep = {"표본": {"train": int(len(data.tr)), "val(개체 분리)": int(len(data.va))},
            "d_in": data.d_in, "params": n_par, "steps": a.steps,
+           "threads": torch.get_num_threads(),           # v5.1 5-가-4 — 재현성 기록
            "seconds": round(time.time() - t0, 1), "최종 pinball(train)": round(loss.item(), 5),
            "평가": ev,
+           "잰 소스 (조항 66)": {"model.pt": _sha16(os.path.join(OUT, "model.pt")),
+                             "sao.npz": _sha16(os.path.join(TRI, "sao.npz"))},
+           "🔴 정직": "「언제」가 크롤 시각이라(탐색 995) 이 수는 «조건부 예측»이다 — "
+                    "「언급의 인과 효과」 주장은 이 자료로 못 세운다"}
+    with open(os.path.join(OUT, "report.json"), "w", encoding="utf-8") as f:
+        json.dump(rep, f, ensure_ascii=False, indent=1)
+    print(json.dumps(rep, ensure_ascii=False))
+
+
+# ── 재평가 — 배포 model.pt 를 «학습 없이» 평가해 report.json 을 다시 찍는다 ──
+def evalcmd(a):
+    """배포가 model.pt 를 갈아끼우면 report.json 이 옛 모형을 가리킨다(티처 #136 ②-5).
+    이 명령이 «현 배포 모형»으로 report.json 을 다시 찍어 sha 사슬을 잇는다."""
+    torch.set_num_threads(4)
+    mp = os.path.join(OUT, "model.pt")
+    ck = torch.load(mp, map_location="cpu", weights_only=False)
+    data = SAO(text_emb=ck.get("text_emb"))
+    model = Transition(ck["d_in"], hidden=ck["hidden"])
+    model.load_state_dict(ck["model"])
+    ev = evaluate(model, data, "cpu")
+    rep = {"모드": "재평가(배포 model.pt · 학습 없음 — 모형-보고서 sha 사슬 유지)",
+           "표본": {"train": int(len(data.tr)), "val(개체 분리)": int(len(data.va))},
+           "d_in": ck["d_in"], "threads": torch.get_num_threads(),
+           "레시피": ck.get("레시피", "미기재(체크포인트에 없음)"),
+           "평가": ev,
+           "잰 소스 (조항 66)": {"model.pt": _sha16(mp),
+                             "sao.npz": _sha16(os.path.join(TRI, "sao.npz"))},
            "🔴 정직": "「언제」가 크롤 시각이라(탐색 995) 이 수는 «조건부 예측»이다 — "
                     "「언급의 인과 효과」 주장은 이 자료로 못 세운다"}
     with open(os.path.join(OUT, "report.json"), "w", encoding="utf-8") as f:
@@ -205,7 +244,8 @@ if __name__ == "__main__":
     tp.add_argument("--log-every", type=int, default=100)
     tp.add_argument("--device", default="auto")
     tp.add_argument("--text-emb", default="", help="npz(E=(N,d)) — LM 임베딩 자리")
+    sub.add_parser("eval")
     dp = sub.add_parser("demo")
     dp.add_argument("--i", type=int, default=0)
     a = ap.parse_args()
-    train(a) if a.cmd == "train" else demo(a)
+    {"train": train, "eval": evalcmd, "demo": demo}[a.cmd](a)
