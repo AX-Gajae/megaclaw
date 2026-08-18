@@ -19,6 +19,13 @@ v2 가 v1 에서 고친 것 (티처 #136 ②-1~②-5 · 5-가 보강 v5.1):
   · 출처 사슬 (조항 66) — leaderboard/report/LODO 에 «적힌» 모형 sha 를 실물 model.pt 와
     대조하고, 내 평가가 리더보드 칸을 재현하는지(평가 항등) 확인한다.
     어긋나면 판 전체를 「불일치」로 찍고 값을 적지 않는다.
+
+v2.1 이 v2 에서 고친 것 (사이클 1001 A부 · 티처 #137 ⑤ + v5.2 부칙 1 — 판 값 무변경 수리):
+  · 🔴 최약 도메인 칸 결측 시 ① 은 「불완전(결측: …)」 낙인과 함께만 적는다 — 남은 칸의
+    최약으로 «조용히» 갈리는 것(판이 좋아 보이는 방향의 무언 강등)을 금지 (v5.2 부칙 1)
+  · 판에 채점기 «자신»의 코드 sha 를 적는다 (조항 66 의 자기 출처 · v3.2 「코드 sha+끝 시각」)
+  · 쓰는 seed «전부»를 판에 적는다 — ④ 군집 재표집은 BOOT_SEED+1 = 9991 (기재 누락이었다)
+  · report 덮개율 대조를 «정확 키 목록»으로 (문자열 포함 탐색 폐지 — 취약 키 대조)
 """
 import os as _os, sys as _sys
 _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
@@ -126,12 +133,17 @@ def _direct_eval():
 
 
 def build():
+    _self = os.path.abspath(__file__)
     판 = {"판": "파운데이션 판 v2 (루프 v5.0 제5장 + 5-가 보강 v5.1 · 티처 #136)",
           "잰 시각": time.strftime("%Y-%m-%dT%H:%M:%S"),
+          "채점기 자신(조항 66 — 자기 출처 · v3.2)": {"코드": _self, "sha256": _sha16(_self)},
           "도메인 명부(상수 · 조항 59)": list(ROSTER),
           "원천": {k: _provenance(p) for k, p in SRC.items()},
           "실물": {"model.pt": _provenance(MODEL_PT), "sao.npz": _provenance(SAO_NPZ)},
           "붓스트랩": {"B": B_BOOT, "seed": BOOT_SEED,
+                    "seed 전부(실사용 · 티처 #137 ⑤㉯)": {
+                        "①② 도메인 재표집": BOOT_SEED,
+                        "④ 군집 재표집(BOOT_SEED+1)": BOOT_SEED + 1},
                     "방식": "①② 도메인별 독립 개체 재표집 · ④ 개체 군집(개체 덮개율 평균) — "
                           "개체별 값은 배포 model.pt 를 998 러너 평가식으로 CPU 직접 평가"}}
     lb = _read_json(SRC["리더보드"])
@@ -204,6 +216,7 @@ def build():
     if 불일치:
         for k in ("①최약 도메인", "②pers에 지는 도메인", "③LODO 제로샷", "④90% 덮개율"):
             판[k] = "🔴 불일치 — 값 안 적음 (출처 사슬을 먼저 고쳐라)"
+        판["끝 시각(v3.2)"] = time.strftime("%Y-%m-%dT%H:%M:%S")
         return 판
 
     # ── 붓스트랩 밑작업 (①②④ 공용 · 도메인별 독립 개체 재표집) ─────
@@ -245,7 +258,7 @@ def build():
         amax = np.argmax(스택, axis=0)
         p_argmax = {측정[i]: round(float((amax == i).mean()), 3)
                     for i in range(len(측정)) if (amax == i).any()}
-        판["①최약 도메인"] = {
+        칸1 = {
             "도메인": worst,
             "MdAPE": dom[worst]["transition"], "n_val": dom[worst]["n_val"],
             "SE": boot["cells"][worst]["SE"], "CI95": boot["cells"][worst]["CI95"],
@@ -254,6 +267,15 @@ def build():
                              리더보드=dom[d]["transition"])
                      for d in sorted(있는, key=lambda d: -dom[d]["transition"])},
             "못 읽었다": 없는 if 없는 else "없음(10/10)"}
+        if 없는:
+            # 🔴 v5.2 부칙 1 (티처 #137 ⑤) — 결측 낙인 의무. 최약 칸이 결측이면 ① 이
+            # 남은 칸의 최약으로 «조용히» 갈린다(판이 좋아 보이는 방향의 무언 강등) — 금지.
+            칸1 = dict({"낙인": "🔴 불완전(결측: %s) — 아래 값은 남은 %d/10 중 최약일 뿐, "
+                              "판 ① 헤드라인으로 못 쓴다 (v5.2 부칙 1)"
+                        % (", ".join(없는), len(있는))}, **칸1)
+            칸1["도메인"] = "불완전(결측: %s) — 남은 %d/10 중 최약 %s" % (
+                ", ".join(없는), len(있는), worst)
+        판["①최약 도메인"] = 칸1
         if 명부밖:
             판["①최약 도메인"]["명부 밖 도메인(조항 59 — 계수 안 함)"] = 명부밖
         지는 = sorted([d for d in 있는 if dom[d]["transition"] > dom[d]["persistence"]],
@@ -298,10 +320,18 @@ def build():
         cov_b = cov[idx].mean(axis=1)
         rep대조 = "못 읽었다 — report.json 없음"
         if rep:
+            # 정확 키 목록 대조 (티처 #137 ⑤㉰ — 문자열 «포함» 탐색은 취약해서 폐지)
+            REP_COVER_KEYS = ("90% 구간 덮개율(목표 0.90)", "90% 덮개율", "덮개율")
             평가 = rep.get("평가", rep)
-            rep값 = next((v for k, v in 평가.items() if "덮개" in k or "coverage" in k.lower()), None)
-            rep대조 = ("일치(%s)" % rep값 if rep값 is not None and abs(rep값 - 점) <= 1e-4
-                     else "어긋남 — report %s vs 직접 %s" % (rep값, 점))
+            rep값 = None
+            if isinstance(평가, dict):
+                rep값 = next((평가[k] for k in REP_COVER_KEYS if k in 평가), None)
+            if not isinstance(rep값, (int, float)):
+                rep대조 = ("못 읽었다 — report 평가에 덮개율 칸 없음(정확 키 탐색: %s)"
+                         % (list(REP_COVER_KEYS),))
+            else:
+                rep대조 = ("일치(%s)" % rep값 if abs(rep값 - 점) <= 1e-4
+                         else "어긋남 — report %s vs 직접 %s" % (rep값, 점))
         판["④90% 덮개율"] = {"직접 재계산": 점, "n(개체)": int(len(cov)),
                           "개체 군집 SE": round(float(cov_b.std(ddof=1)), 4),
                           "CI95": [round(float(np.percentile(cov_b, 2.5)), 4),
@@ -309,6 +339,7 @@ def build():
                           "report.json 대조": rep대조}
     else:
         판["④90% 덮개율"] = "못 읽었다 — 직접 평가 실패: %s" % ev.get("오류")
+    판["끝 시각(v3.2)"] = time.strftime("%Y-%m-%dT%H:%M:%S")
     return 판
 
 
