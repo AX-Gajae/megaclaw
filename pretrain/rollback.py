@@ -65,6 +65,9 @@ EPOCHS = {
             os.path.join(LODO, "results_pre1002.json"): "6dad46f03f40be43",
         },
         "필수 개명": [os.path.join(TROUT, "ensemble_manifest.json")],
+        # 티처 #140 ⑤ 주의 2 ㉮ — 스모크 ③ 이 쓸 모형 백업 키(없는 시대는 None →
+        # 스모크 ③ 은 「복원 manifest 첫 구성원 적재」로 대체하거나 건너뛴다)
+        "model 백업 키": os.path.join(TROUT, "model_pre1002.pt"),
     },
 }
 
@@ -90,18 +93,36 @@ def smoke(epoch, dry, log):
     """소비자 4곳 단일 분기 스모크 — 모형 «적재만» · 창구 무접촉 · 산출물 쓰기 0."""
     manifest = os.path.join(TROUT, "ensemble_manifest.json")
     단일 = (not os.path.exists(manifest)) if not dry else True   # dry: 복원 «후» 상태를 가정
-    log("스모크① 분기 술어", "manifest %s → 소비자 4곳 전부 %s 분기"
-        % ("부재" if 단일 else "실재", "단일" if 단일 else "앙상블"))
+    log("스모크① 분기 술어",
+        ("🔴 가정(드라이런 — 실측 아님): 복원 «후»엔 manifest 부재 → 소비자 4곳 전부 단일 분기"
+         if dry else "manifest %s → 소비자 4곳 전부 %s 분기(실측)"
+         % ("부재" if 단일 else "실재", "단일" if 단일 else "앙상블")))
     for rel, needles in CONSUMERS.items():
         src = open(os.path.join(REPO, rel), encoding="utf-8").read()
         has = all((n in src) for n in needles if n != "serve 경유")
         log("스모크② 분기 실재(%s)" % rel,
             "하위호환 분기 문자열 확인 %s" % ("✔" if (has or needles[0] == "serve 경유") else "🔴 없음"))
-    # 모형 적재만 — dry 는 백업 파일을, wet 은 복원된 model.pt 를 적재
-    mp = (dict(EPOCHS[epoch]["복원(백업 → 정본 · 복사)"])
-          [os.path.join(TROUT, "model_pre1002.pt")]
-          if not dry else os.path.join(TROUT, "model_pre1002.pt"))
-    # ↑ pre1002 항목의 model 경로 — 다른 시대를 더하면 여기 model 백업 키도 함께 등록하라
+    # 모형 적재만(스모크 ③) — 시대별 「model 백업 키」로 일반화 (티처 #140 ⑤ 주의 2 ㉮:
+    # 하드코딩 dict 조회는 model 백업 없는 시대(pre1003 형)에서 KeyError 로 죽는다).
+    ep = EPOCHS[epoch]
+    mkey = ep.get("model 백업 키")
+    if mkey is None:
+        mp = None
+        # model 백업이 없는 시대 — 복원 manifest 의 첫 구성원을 적재 대상으로 삼는다
+        man_bak = next((b for b, d in ep["복원(백업 → 정본 · 복사)"]
+                        if d.endswith("ensemble_manifest.json")), None)
+        if man_bak and os.path.exists(man_bak):
+            _man = json.load(open(man_bak, encoding="utf-8"))
+            _first = sorted(_man["구성원"].items())[0][1]["경로"]
+            if os.path.exists(_first):
+                mp = _first
+        if mp is None:
+            log("스모크③ 모형 적재만", "건너뜀 — 이 시대는 model 백업 키가 없고 "
+                "복원 manifest 구성원도 못 찾았다(파일 안전과 무관 · 로그만)")
+            log("스모크④ 창구 8899", "무접촉 — 재시작은 사용자 몫")
+            return
+    else:
+        mp = (mkey if dry else dict(ep["복원(백업 → 정본 · 복사)"]).get(mkey, mkey))
     import torch
     torch.set_num_threads(4)
     import sys
