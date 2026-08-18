@@ -12,6 +12,7 @@ import datetime as dt
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 
 ROOT = Path(os.environ.get("WM_ROOT", "/Users/ax/world_model"))
@@ -585,13 +586,16 @@ DOCT = r"""# 판정 · 노트 997 — **「비지도」를 ③ 으로 닫고 `MD
    **블록 3·4 = 0** · 경계를 걸치는 dump **0 / 96** · 두께 차 **98.9 배**.
 6. **토크나이저는 저장소에 «0 줄»인데 기계에 있다**(XLM-R 250,002 · Qwen3 151,665 ·
    `HF_HUB_OFFLINE=1`) · FineWeb2 전량 ≈ **53.6 G 토큰**(0.2338 tok/UTF8바이트 · 문서당 881).
-7. **HPLT × FineWeb2 url 중복 0.3207** --- 🔴 **갈래가 갈린다**: `cc*` 0.44~0.74 · `wide*` 0.05~0.14.
-   **973 이 쓴 다섯 중 넷이 `cc*`.**
+7. **HPLT × FineWeb2 url 중복 0.3207** --- 🔴 **갈래가 갈린다**: `cc*` 0.4378 ~ 0.7360 ·
+   `wide*` 0.0488 ~ 0.1378. **973 이 쓴 다섯 중 넷이 `cc*`.**
 8. **디스크 여유 287.0 GiB** · XLM-R uint32 토큰화 시 199.8 GiB(남는 87.2) ·
    **시기 색인만이면 0.0076 GiB(26,000 배 차)**.
 
 🔴 **이 절의 수는 «탐색 문서»에서 왔고 그 문서는 판정 대상이 «아니다»**(사전등록 §⓪-사).
 탐색 팔은 `git` 명령을 0 회 썼고 다른 팔 산출물을 0 개 열었다고 «스스로» 신고했다.
+🔴🔴 **그리고 이 절은 이 문서에서 «유일하게» 슬롯이 아니라 산문으로 옮긴 절이라, 생성기가
+옮긴 수를 탐색 문서와 «글자 그대로» 기계 대조한다**(규칙 D) --- 분모·못 찾은 수·뺀
+`파일:줄` 참조는 `runners/out997_docsha.json:🔴🔴 규칙 D — §9 탐색 인용 대조(기계)` 에 있다.
 
 ---
 
@@ -681,6 +685,25 @@ def main():
     with open(str(ROOT / TABLE), "w", encoding="utf-8") as f:
         json.dump(T, f, ensure_ascii=False, indent=1)
     left = [s.split("}}")[0] for s in doc.split("{{")[1:]]
+    # 🔴 규칙 D --- §9 는 «탐색 문서»의 수를 산문으로 옮긴 유일한 절이다.
+    #    옮긴 수가 그 문서에 «글자 그대로» 있는지 «기계»로 견준다(손 대조 금지).
+    src = (ROOT / "docs/탐색/997.md").read_text(encoding="utf-8")
+    sec = doc.split("## 9. ")[1].split("## 10. ")[0] if "## 9. " in doc else ""
+    toks = sorted(set(re.findall(r"[0-9][0-9,\.]*", sec)))
+    linerefs = set(re.findall(r"\.py:([0-9][0-9,]*)", sec))
+    miss = [t for t in toks
+            if t not in src and t.rstrip(".") not in src and t not in linerefs]
+    d9 = collections.OrderedDict([
+        ("🔴 왜 이 칸이 있나",
+         "규칙 D --- §9 는 이 문서에서 «유일하게» 다른 문서(`docs/탐색/997.md`)의 수를 "
+         "산문으로 옮긴 절이다. 슬롯이 아니므로 생성기가 «따로» 견줘야 한다"),
+        ("분모: §9 에 나오는 수 가짓수", len(toks)),
+        ("🔴 `파일:줄` 참조라 뺀 것", sorted(linerefs) or "없음"),
+        ("🔴🔴 탐색 문서에서 «글자 그대로» 못 찾은 수", miss or "없음"),
+        ("🔴 그 수", len(miss)),
+        ("⚠ 자의 한계",
+         "「글자 그대로 있나」만 본다 --- 맥락이 맞는지는 «안» 본다(조항 61)"),
+        ("통과", bool(not miss))])
     out = collections.OrderedDict([
         ("무엇", "노트 997 판정문 도장 --- 문서 sha256 과 «치환표» sha256 을 같이 남긴다"),
         ("문서", DOC), ("치환표", TABLE),
@@ -689,6 +712,7 @@ def main():
         ("파일별", collections.OrderedDict([(DOC, sha(DOC))])),
         ("🔴 문서 sha256", sha(DOC)), ("🔴 치환표 sha256", sha(TABLE)),
         ("🔴 치환표 슬롯 수", len(T)),
+        ("🔴🔴 규칙 D — §9 탐색 인용 대조(기계)", d9),
         ("🔴 안 채워진 슬롯", left),
         ("🔴 생성기 sha256", collections.OrderedDict((p, sha(p)) for p in SRC)),
         ("🔴 입력 sha256", collections.OrderedDict((p, sha(p)) for p in INS)),
