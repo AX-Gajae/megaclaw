@@ -151,6 +151,106 @@ def q_custom(curve, domain, date):
     return out
 
 
+def _features_from_raw(vals, domain, date):
+    s_log = np.log1p(np.asarray(vals, dtype=np.float64)).astype(np.float32)
+    base = float(s_log.mean())
+    sc = s_log - base
+    onehot = np.zeros(len(DOMS), dtype=np.float32)
+    onehot[DOMS.index(domain)] = 1.0
+    mth, day = float(date[5:7]), float(date[8:10])
+    doy = mth * 30.4 + day
+    cond = np.concatenate([onehot,
+                           [np.sin(2 * np.pi * doy / 365.0)],
+                           [np.cos(2 * np.pi * doy / 365.0)],
+                           [(float(date[:4]) + (mth - 0.5) / 12.0 - 2013.0) / 10.0],
+                           [base]]).astype(np.float32)
+    return sc, cond, base
+
+
+def _quant_curves(sc, cond, base):
+    x = torch.from_numpy(np.concatenate([sc, cond], axis=0)[None].astype(np.float32))
+    with LOCK, torch.no_grad():
+        q = TR(x).numpy()[0] + base
+    return q                                                   # (91,5) log 눈금
+
+
+def q_report(curve, domain, date):
+    """리스크 창 · 민감도 · 유사 사례 — ①③④ 의 «오늘 되는» 판."""
+    vals = [float(v) for v in str(curve).replace(",", " ").split() if v.strip()]
+    if len(vals) == 1:
+        vals = vals * 90
+    if len(vals) != 90:
+        return {"오류": "곡선은 90 개(또는 1 개=평탄)"}
+    if domain not in DOMS:
+        return {"오류": "도메인은 %s 중" % DOMS}
+    sc, cond, base = _features_from_raw(vals, domain, date)
+    q = _quant_curves(sc, cond, base)
+    day50 = np.expm1(q[:, 2]); day05 = np.expm1(q[:, 0]); day95 = np.expm1(q[:, 4])
+    now = float(np.mean(vals))
+
+    # ── ③ 리스크 창: «언제» 흔들리나 ──────────────────────────────────
+    under = np.where(day05 < 0.5 * now)[0]                    # 하방 분위가 현 수준 절반 밑
+    fog = np.log(np.maximum(day95, 1e-9) / np.maximum(day05, 1e-9))
+    fog_week = int(np.argmax([fog[i:i+7].mean() for i in range(0, 84, 7)]))
+    risk = {
+        "🔴 하방 위험이 열리는 첫 날": (int(under[0]) + 1) if len(under) else "90일 안 없음",
+        "하방 시나리오(q05)가 현 수준의 절반 밑인 날 수": int(len(under)),
+        "불확실성이 가장 큰 주": "%d~%d일째" % (fog_week * 7 + 1, fog_week * 7 + 7),
+        "뜻": "그 주가 모니터링·재판단 시점이다 — 예측이 거기서 제일 흐리다"}
+
+    # ── ④ 민감도: «어딜 바꾸면» 예측이 얼마나 움직이나 ────────────────
+    def cum90(vv, dd, tt):
+        sc2, c2, b2 = _features_from_raw(vv, dd, tt)
+        qq = _quant_curves(sc2, c2, b2)
+        return float(np.expm1(qq[:, 2]).sum())
+    ref = float(day50.sum())
+    def shift_date(months):
+        y, m, d = int(date[:4]), int(date[5:7]), int(date[8:10])
+        m2 = m + months
+        y2 = y + (m2 - 1) // 12
+        m2 = (m2 - 1) % 12 + 1
+        return "%04d-%02d-%02d" % (y2, m2, min(d, 28))
+    sens = {
+        "초기 관심 +20% (곡선×1.2)": round(cum90([v * 1.2 for v in vals], domain, date) / ref - 1, 3),
+        "초기 관심 −20%": round(cum90([v * 0.8 for v in vals], domain, date) / ref - 1, 3),
+        "시점 +1달": round(cum90(vals, domain, shift_date(1)) / ref - 1, 3),
+        "시점 +3달": round(cum90(vals, domain, shift_date(3)) / ref - 1, 3),
+        "막판 상승 추세(마지막 30일 +30%)":
+            round(cum90(vals[:60] + [v * 1.3 for v in vals[60:]], domain, date) / ref - 1, 3),
+        "🔴 라벨": "모형 «민감도»다 — 인과 검증 안 됨(노트 903: A급 개입 효과가 위약 한복판). "
+                  "「이 입력이 다르면 예측이 이렇게 다르다」까지만"}
+
+    # ── ① 유사 사례: 근거를 «실제 궤적»으로 ──────────────────────────
+    dom_idx = DOMS.index(domain)
+    pool = [i for i in DATA.tr if DATA.C[i][dom_idx] == 1.0] or list(DATA.tr)
+    P = DATA.Sc[pool]
+    dist = np.linalg.norm(P - sc[None], axis=1)
+    order = np.argsort(dist)                      # 같은 개체 반복을 걸러 «서로 다른» 사례 3 개
+    cases, seen_ent = [], set()
+    for j in order:
+        gi = pool[int(j)]
+        if META[gi]["개체"] in seen_ent:
+            continue
+        seen_ent.add(META[gi]["개체"])
+        if len(cases) >= 3:
+            break
+        m = META[gi]
+        tc = float(np.expm1(DATA.O[gi]).sum())
+        s90 = float(np.expm1(DATA.S[gi]).mean())
+        cases.append({"개체": m["개체"], "기준일": m["언제"],
+                      "당시 일평균": round(s90, 1),
+                      "실제 90일 누적": int(tc),
+                      "현 수준 대비 배율": round(tc / max(now * 90.0, 1e-9), 2)})
+
+    return {"입력": {"도메인": domain, "기준일": date, "직전 90일 일평균": round(now, 1)},
+            "예측(누적 90일)": {"q05": int(np.expm1(q[:, 0]).sum()),
+                             "q50": int(ref), "q95": int(np.expm1(q[:, 4]).sum())},
+            "③ 언제 — 리스크 창": risk,
+            "④ 어딜 — 민감도(전략 수정 후보)": sens,
+            "① 근거 — 유사 사례(같은 도메인 · 학습 표본)": cases,
+            "⚠": "덮개율 59.6% 미보정 · 조건부 예측 · ⑤(여론)은 이 판이 아니다"}
+
+
 # ── HTML ──────────────────────────────────────────────────────────────
 PAGE = """<!doctype html><meta charset=utf-8>
 <title>월드모델 창구</title>
@@ -189,6 +289,12 @@ PAGE = """<!doctype html><meta charset=utf-8>
 <button onclick="api('custom',{curve:v('c_c'),domain:v('c_d'),date:v('c_dt')},'c_o')">예측</button>
 <pre id=c_o></pre>
 
+<h2>④ 리포트 — 리스크 창 · 민감도 · 유사 사례</h2>
+<textarea id=r_c rows=2 placeholder="직전 90일 곡선(90개 또는 1개)">150</textarea>
+<div class=row><select id=r_d></select><input id=r_dt type=date value=2024-01-15></div>
+<button onclick="api('report',{curve:v('r_c'),domain:v('r_d'),date:v('r_dt')},'r_o')">리포트</button>
+<pre id=r_o></pre>
+
 <script>
 const v=id=>document.getElementById(id).value;
 async function api(ep,body,out){
@@ -206,7 +312,10 @@ fetch('/api/info').then(r=>r.json()).then(d=>{
  document.getElementById('lmstep').textContent='(체크포인트 스텝 '+d.lm_step+' — 완주 전 옹알이 단계)';
  const s=document.getElementById('c_d');
  d.domains.forEach(x=>{const o=document.createElement('option');o.textContent=x;s.appendChild(o);});
- s.value='팝업';});
+ s.value='팝업';
+ const s2=document.getElementById('r_d');
+ d.domains.forEach(x=>{const o=document.createElement('option');o.textContent=x;s2.appendChild(o);});
+ s2.value='팝업';});
 </script>"""
 
 
@@ -238,6 +347,9 @@ class H(BaseHTTPRequestHandler):
                 out = q_entity(body.get("i", 0))
             elif self.path == "/api/custom":
                 out = q_custom(body.get("curve", ""), body.get("domain", ""),
+                               body.get("date", "2024-01-15"))
+            elif self.path == "/api/report":
+                out = q_report(body.get("curve", ""), body.get("domain", ""),
                                body.get("date", "2024-01-15"))
             elif self.path == "/api/info":
                 out = {"lm_step": LM_STEP if LM else None, "lm_ckpt": LM_PATH,
