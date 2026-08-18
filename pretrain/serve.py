@@ -387,6 +387,12 @@ class H(BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path in ("/", "/index.html"):
             return self._send(200, PAGE, "text/html; charset=utf-8")
+        if self.path == "/api/manifest":                 # 외부 하네스(채팅 서버 등)용 도구 계약
+            from pretrain import wm_tools
+            return self._send(200, json.dumps(
+                [{"name": t["name"], "description": t["description"],
+                  "inputSchema": t["inputSchema"]} for t in wm_tools.MANIFEST],
+                ensure_ascii=False))
         return self._send(404, "{}")
 
     def do_POST(self):
