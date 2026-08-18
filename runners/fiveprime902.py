@@ -2093,6 +2093,11 @@ def _const_bool(n):
     return isinstance(n, ast.Constant) and isinstance(n.value, bool)
 
 
+def _const_true(n):
+    """🔴 `True` «만». 조기 실패 반환(`"통과": False`)은 병이 아니다 --- 티처 #135."""
+    return isinstance(n, ast.Constant) and n.value is True
+
+
 def _const_num(n):
     if isinstance(n, ast.Constant) and isinstance(n.value, (int, float)) \
             and not isinstance(n.value, bool):
@@ -2112,13 +2117,17 @@ def literal_pass_hits(src, path=""):
         if isinstance(n, ast.Tuple) and len(n.elts) == 2:
             k, v = n.elts
             ks_ = _const_str(k)
-            if ks_ is not None and "통과" in ks_ and _const_bool(v):
+            # 🔴 996 티처 #135 5-나 --- 「자기를 «통과»시키는 자리」를 찾는 자가
+            #    `_const_bool` 탓에 「자기를 «떨어뜨리는» 자리」(조기 실패 반환)까지
+            #    세고 있었다. fiveprime902 자신에서 24 건 중 23 건이 `False` 였다.
+            #    술어에서 `False` 를 «지운다». 절도 조항도 안 늘린다.
+            if ks_ is not None and "통과" in ks_ and _const_true(v):
                 hits.append({"파일": path, "줄": n.lineno, "꼴": "튜플",
                              "키": ks_, "값": v.value})
         if isinstance(n, ast.Dict):
             for k, v in zip(n.keys, n.values):
                 ks_ = _const_str(k) if k is not None else None
-                if ks_ is not None and "통과" in ks_ and _const_bool(v):
+                if ks_ is not None and "통과" in ks_ and _const_true(v):
                     hits.append({"파일": path, "줄": getattr(k, "lineno", None),
                                  "꼴": "사전", "키": ks_, "값": v.value})
     return hits
