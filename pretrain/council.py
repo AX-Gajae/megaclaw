@@ -97,7 +97,10 @@ def build():
     overall = {k: round(float(np.median(
         [a for dom in per.values() for a in dom[k]])), 4)
         for k in ("transition", "knn", "climatology", "persistence")}
+    from pretrain.transition import _sha16                   # 조항 66 — 출처 사슬 (v5.1 5-가-2)
     out = {"기준": "검증(개체 분리) 누적 90일 MdAPE — 낮을수록 좋다",
+           "잰 소스 (조항 66)": {"model.pt": _sha16(os.path.join(S.TROUT, "model.pt")),
+                             "sao.npz": _sha16(os.path.join(S.TRI, "sao.npz"))},
            "전체": overall, "도메인별": board}
     with open(LB_PATH, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
