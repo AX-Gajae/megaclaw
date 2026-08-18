@@ -21,6 +21,7 @@ from pathlib import Path
 ROOT = Path(os.environ.get("WM_ROOT", "/Users/ax/world_model"))
 DOC = "docs/판정_995.md"
 OUT = "runners/out995_docsha.json"
+TABLE = "runners/out995_table.json"
 SRC = ("runners/note995_gen.py", "runners/score995.py")
 INS = ("runners/out995_score.json", "runners/out995_nb.json",
        "runners/out995_power.json", "runners/out995_champ.json",
@@ -71,7 +72,7 @@ def build_table(S, A, B, C):
     def put(slot, src_name, obj, *path):
         T[slot] = collections.OrderedDict([
             ("값", G(obj, *path)), ("파일", src_name),
-            ("키 경로", " / ".join(str(x) for x in path))])
+            ("키 경로", [str(x) for x in path])])   # 🔴 «목록»으로 --- 키에 " / " 가 든다
         return T[slot]["값"]
 
     W = "🔴🔴🔴 세계 명제"
@@ -250,6 +251,8 @@ def render(S, A, B, C, T):
     w("**판정: %s.**" % V("세계명제_판정"))
     w("")
     w("**근거.** %s" % V("세계명제_근거"))
+    w("")
+    w("🔴 **그래서 새 정보가 있나.** %s" % V("팔B_확인_차"))
     w("")
     w("🔴 **정비 팔이 새로 찾은 교란 — 이것이 결정적이다.**")
     w("")
@@ -719,12 +722,16 @@ def main():
     body = "\n".join(md) + "\n"
     (ROOT / DOC).write_text(body, encoding="utf-8")
 
-    tbl = json.dumps(T, ensure_ascii=False, sort_keys=True).encode("utf-8")
+    # 🔴 993 R3 / 조항 73-사-다 --- 표를 «파일»로 낸다. 절 11 이 그 경로를 읽는다.
+    tbl_txt = json.dumps(T, ensure_ascii=False, indent=1, sort_keys=True) + "\n"
+    (ROOT / TABLE).write_text(tbl_txt, encoding="utf-8")
     res = collections.OrderedDict([
         ("무엇", "🔴 노트 995 문서 도장 --- 문서 sha256 + «치환표» sha256(조항 73-사-다)"),
         ("문서", DOC),
         ("🔴 문서 sha256", _sha_bytes(body.encode("utf-8"))),
-        ("🔴🔴 치환표 sha256", _sha_bytes(tbl)),
+        ("🔴🔴🔴 표 경로", TABLE),
+        ("🔴🔴🔴 표 sha256(993 R3 신설)", _sha_bytes(tbl_txt.encode("utf-8"))),
+        ("파일별", collections.OrderedDict([(DOC, _sha_bytes(body.encode("utf-8")))])),
         ("🔴 치환표 슬롯 수", len(T)),
         ("🔴 치환표", T),
         ("🔴 입력 sha256", collections.OrderedDict((p, _sha(p)) for p in INS)),
@@ -736,7 +743,8 @@ def main():
     ])
     with open(str(ROOT / OUT), "w", encoding="utf-8") as f:
         json.dump(res, f, ensure_ascii=False, indent=1)
-    sys.stdout.write("wrote %s (%d bytes) · %s\n" % (DOC, len(body.encode("utf-8")), OUT))
+    sys.stdout.write("wrote %s (%d bytes) · %s · %s\n"
+                     % (DOC, len(body.encode("utf-8")), OUT, TABLE))
     return 0
 
 
