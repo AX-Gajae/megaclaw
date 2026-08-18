@@ -1,0 +1,84 @@
+{
+ "설정": {
+  "steps": 3000,
+  "batch": 256,
+  "lr": 0.001,
+  "hidden": 512,
+  "seed": 997,
+  "text_emb": "text_emb_qwen05b.npz (0.5B 고정)",
+  "지평": "91일 누적 (배포 evaluate 와 동일)"
+ },
+ "도메인별": {
+  "게임": {
+   "n_eval(전체)": 402,
+   "n_train(9도메인)": 9128,
+   "persistence": 0.1235,
+   "A_zeroshot": 0.1491,
+   "B_zeroshot": 0.1361
+  },
+  "도서": {
+   "n_eval(전체)": 643,
+   "n_train(9도메인)": 8974,
+   "persistence": 0.1294,
+   "A_zeroshot": 0.167,
+   "B_zeroshot": 0.149
+  },
+  "만화": {
+   "n_eval(전체)": 495,
+   "n_train(9도메인)": 9036,
+   "persistence": 0.0792,
+   "A_zeroshot": 0.0643,
+   "B_zeroshot": 0.0635
+  },
+  "모바일": {
+   "n_eval(전체)": 724,
+   "n_train(9도메인)": 9052,
+   "persistence": 0.0966,
+   "A_zeroshot": 0.1019,
+   "B_zeroshot": 0.1058
+  },
+  "세계애니": {
+   "n_eval(전체)": 1081,
+   "n_train(9도메인)": 8490,
+   "persistence": 0.1316,
+   "A_zeroshot": 0.1002,
+   "B_zeroshot": 0.0954
+  },
+  "시장팝업": {
+   "n_eval(전체)": 2531,
+   "n_train(9도메인)": 7138,
+   "persistence": 0.1126,
+   "A_zeroshot": 0.1446,
+   "B_zeroshot": 0.1434
+  },
+  "아이돌": {
+   "n_eval(전체)": 251,
+   "n_train(9도메인)": 9332,
+   "persistence": 0.1816,
+   "A_zeroshot": 0.1369,
+   "B_zeroshot": 0.1281
+  },
+  "애니": {
+   "n_eval(전체)": 2474,
+   "n_train(9도메인)": 7351,
+   "persistence": 0.1222,
+   "A_zeroshot": 0.1157,
+   "B_zeroshot": 0.1108
+  },
+  "웹툰": {
+   "n_eval(전체)": 1191,
+   "n_train(9도메인)": 8394,
+   "persistence": 0.1987,
+   "A_zeroshot": 0.1754,
+   "B_zeroshot": 0.185
+  },
+  "팝업": {
+   "n_eval(전체)": 862,
+   "n_train(9도메인)": 8830,
+   "persistence": 0.1748,
+   "A_zeroshot": 0.1558,
+   "B_zeroshot": 0.1694
+  }
+ },
+ "총소요초": 844.0
+}
