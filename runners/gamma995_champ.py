@@ -202,21 +202,51 @@ def stage_champ():
     # ── §C1 🔴 정본 재현 (수리 마스크) ──────────────────────────
     tr_n, ho_n = MK.canon_masks_fixed(d0, doms, T_CANON)
     tr_o, ho_o = MK.canon_masks_old(d0, doms, T_CANON)
-    prog("정본 적합 시작(씨앗 0)")
-    f0, led0 = B94.fit(d0, tr_n, 0)
-    sc_n, dr_n = MK.score_gate(d0, f0, ho_n, doms, GATE_CANON, spearmanr)
-    sc_o, dr_o = MK.score_gate(d0, f0, ho_o, doms, GATE_CANON, spearmanr)
-    rho_n, rho_o = B94.pooled(sc_n), B94.pooled(sc_o)
-    prog("정본 씨앗 0 · 신판 %.12f · 구판 %.12f" % (rho_n, rho_o))
+    #: 🔴 `BOARD_RHO_FULL` 은 **12 씨앗 평균**이다(`ff753.RULER_SEEDS`).
+    #:   씨앗 «하나»와 견주면 씨앗 잡음이 그대로 차로 나온다 --- 설계 팔의 연기 시험이
+    #:   그 함정을 잡았다(씨앗 0 만 쓰면 차 +0.002764). **평균으로 견준다.**
+    prog("정본 적합 시작(씨앗 %d 개)" % len(SEEDS))
+    rn_l, ro_l, sc_n, sc_o, dr_n, led0 = [], [], None, None, None, None
+    percanon = collections.OrderedDict()
+    for s in SEEDS:
+        f0, led = B94.fit(d0, tr_n, s)
+        a, da = MK.score_gate(d0, f0, ho_n, doms, GATE_CANON, spearmanr)
+        b, _db = MK.score_gate(d0, f0, ho_o, doms, GATE_CANON, spearmanr)
+        rn_l.append(B94.pooled(a))
+        ro_l.append(B94.pooled(b))
+        for d, v in a.items():
+            percanon.setdefault(d, []).append(v["rho"])
+        if s == SEEDS[0]:
+            sc_n, sc_o, dr_n, led0 = a, b, da, led
+        prog("정본 씨앗 %s · 신판 %.12f · 구판 %.12f" % (s, rn_l[-1], ro_l[-1]))
+    rho_n, rho_o = float(np.mean(rn_l)), float(np.mean(ro_l))
     out["§C1 🔴 정본 재현(수리 마스크)"] = collections.OrderedDict([
-        ("씨앗", 0), ("T", T_CANON), ("게이트", GATE_CANON),
-        ("🔴 판 ρ(신판 · 수리 마스크)", repr(rho_n)),
-        ("판 ρ(구판 · 994 마스크)", repr(rho_o)),
-        ("🔴🔴 신판 − 구판", _r(rho_n - rho_o, 12)),
+        ("씨앗", list(SEEDS)), ("T", T_CANON), ("게이트", GATE_CANON),
+        ("🔴 판 ρ(신판 · 수리 마스크 · %d 씨앗 «평균»)" % len(SEEDS), repr(rho_n)),
+        ("판 ρ(구판 · 994 마스크 · 씨앗 평균)", repr(rho_o)),
+        ("씨앗별 신판 ρ", [_r(x, 12) for x in rn_l]),
+        ("씨앗별 구판 ρ", [_r(x, 12) for x in ro_l]),
+        ("씨앗 SD(신판)", _r(float(np.std(rn_l, ddof=1)), 8) if len(rn_l) > 1 else None),
+        ("씨앗 SE(신판)",
+         _r(float(np.std(rn_l, ddof=1) / np.sqrt(len(rn_l))), 8) if len(rn_l) > 1 else None),
+        ("🔴 씨앗 하나(첫 씨앗)로 견주면 얼마나 어긋나나",
+         _r(rn_l[0] - BOARD_RHO_FULL, 12)),
+        #: 🔴🔴 씨앗 0 «자신»의 정본 --- `beta994_common.BOARD_S0_FULL`
+        #:   (`runners/board898.py:112 EXPECT_S0["B(동률평균)"]`). **이게 더 날카롭다.**
+        ("🔴🔴 씨앗 0 정본 BOARD_S0_FULL", B94.BOARD_S0_FULL),
+        ("🔴🔴 씨앗 0 신판 − BOARD_S0_FULL", _r(rn_l[0] - B94.BOARD_S0_FULL, 15)),
+        ("🔴🔴 씨앗 0 구판 − BOARD_S0_FULL", _r(ro_l[0] - B94.BOARD_S0_FULL, 15)),
+        ("🔴🔴 통과: 반증조건 1-나 (수리 마스크 씨앗 0 이 BOARD_S0_FULL 을 1e-12 안에서 재현)",
+         bool(abs(rn_l[0] - B94.BOARD_S0_FULL) <= B94.TOL_S0)),
+        ("🔴 그리고 구판은 «못» 재현한다(그게 F01 이다)",
+         bool(abs(ro_l[0] - B94.BOARD_S0_FULL) > B94.TOL_S0)),
+        ("🔴🔴 신판 − 구판(씨앗 평균)", _r(rho_n - rho_o, 12)),
+        #: 🔴 994 는 이탈을 **씨앗 0** 에서 쟀다. 씨앗 평균으로 견주면 씨앗 잡음이 섞인다.
+        ("🔴🔴 신판 − 구판(씨앗 0 · 994 가 잰 자리)", _r(rn_l[0] - ro_l[0], 12)),
         ("🔴 사전등록에 박은 이탈 크기", F01_DEV),
-        ("🔴 |신판−구판 − 이탈| ", _r(abs((rho_n - rho_o) - F01_DEV), 12)),
-        ("🔴 통과: 반증조건 17 (|차 − 7.199316e-04| ≤ 1e-6)",
-         bool(abs(abs(rho_n - rho_o) - F01_DEV) <= 1e-6)),
+        ("🔴 |씨앗 0 차| − 이탈", _r(abs(rn_l[0] - ro_l[0]) - F01_DEV, 12)),
+        ("🔴 통과: 반증조건 17 (|씨앗 0 차| 가 7.199316e-04 와 1e-6 안)",
+         bool(abs(abs(rn_l[0] - ro_l[0]) - F01_DEV) <= 1e-6)),
         ("정본 BOARD_RHO_FULL", BOARD_RHO_FULL),
         ("🔴 신판 − 정본", _r(rho_n - BOARD_RHO_FULL, 12)),
         ("🔴 통과: 반증조건 1 (|신판 − 정본| ≤ 1e-6)",
@@ -224,7 +254,9 @@ def stage_champ():
         ("채점 행 합(신판)", int(sum(v["n"] for v in sc_n.values()))),
         ("채점 행 합(구판)", int(sum(v["n"] for v in sc_o.values()))),
         ("채점 도메인 수(신판)", len(sc_n)), ("채점 도메인 수(구판)", len(sc_o)),
-        ("도메인별 ρ(신판)", {k: _r(v["rho"]) for k, v in sorted(sc_n.items())}),
+        ("도메인별 ρ(신판 · 씨앗 평균)",
+         {k: _r(float(np.mean(v))) for k, v in sorted(percanon.items())}),
+        ("도메인별 ρ(신판 · 첫 씨앗)", {k: _r(v["rho"]) for k, v in sorted(sc_n.items())}),
         ("🔴 도메인별 ρ 차(신판 − 구판)",
          {k: _r(sc_n[k]["rho"] - sc_o[k]["rho"], 9)
           for k in sorted(set(sc_n) & set(sc_o))}),
@@ -244,14 +276,20 @@ def stage_champ():
             f, led = B94.fit(d0, tm, s)
             if si == 0:
                 ledgers["원점 %d" % k] = led
+            gmin = min(GATES)
             for blk in range(k, NBLOCK):
                 hm = {d: ho_blk[d][blk] for d in doms}
+                #: 🔴 `predict` 는 «한 번»만 돈다. 게이트는 그 뒤에 «거른다» ---
+                #: `score_gate(g)` 와 «정확히 같다»(둘 다 `n` 과 `n(유보 행 전량)`
+                #: 이 `g` 이상인가만 본다). 게이트마다 다시 예측하면 4 배 든다.
+                sc, dr = MK.score_gate(d0, f, hm, doms, gmin, spearmanr)
                 for g in GATES:
-                    sc, dr = MK.score_gate(d0, f, hm, doms, g, spearmanr)
                     key = ("원점 %d → 블록 %d (거리 %d)" % (k, blk, blk - k + 1), g)
                     cellrho.setdefault(key, collections.OrderedDict())
                     celln.setdefault(key, collections.OrderedDict())
                     for d, v in sc.items():
+                        if v["n"] < g or v["n(유보 행 전량)"] < g:
+                            continue
                         cellrho[key].setdefault(d, []).append(v["rho"])
                         celln[key][d] = v["n"]
             prog("원점 %d 씨앗 %d 끝 (%.1f 초)" % (k, s, time.time() - t1))
@@ -279,11 +317,13 @@ def stage_champ():
             headline["게이트 %d" % g] = {"🔴 못 돌았다": "칸이 없다", "칸": KB}
             continue
         com = sorted(set.intersection(*[set(pm[k]) for k in KB]))
-        per_by = {"원점 %d" % o: {d: pm[KB[i]][d] for d in com}
-                  for i, o in enumerate(ORIGINS)}
-        rows = seg_from(["원점 1", "원점 2", "원점 3", "원점 4"], per_by)
+        labels = ["원점 %d" % o for o in ORIGINS]
+        per_by = {labels[i]: {d: pm[KB[i]][d] for d in com}
+                  for i in range(len(ORIGINS))}
+        rows = seg_from(labels, per_by)
+        totkey = "%s→%s" % (labels[0], labels[-1])
         ncross = sum(1 for k, v in rows.items()
-                     if k != "원점 1→원점 4" and v.get("🔴🔴 2·SE 를 넘나"))
+                     if k != totkey and v.get("🔴🔴 2·SE 를 넘나"))
         headline["게이트 %d" % g] = collections.OrderedDict([
             ("공통 도메인", com), ("공통 도메인 수", len(com)),
             ("🔴 부호 규약", "「먼 원점 − 가까운 원점」 · 양수 = 원점이 가까울수록 좋다"),
@@ -294,9 +334,11 @@ def stage_champ():
              collections.OrderedDict(
                  [(k, cmp_expect(rows[kk], EXPECT_B[k]))
                   for k, kk in zip(EXPECT_B,
-                                   ["원점 1→원점 2", "원점 2→원점 3",
-                                    "원점 3→원점 4", "원점 1→원점 4"])])
-             if g == GATE_CANON else "게이트가 정본이 아니다 --- 대조 안 한다"),
+                                   ["%s→%s" % (labels[i], labels[i + 1])
+                                    for i in range(len(labels) - 1)] + [totkey])
+                  if kk in rows])
+             if (g == GATE_CANON and len(labels) == 4)
+             else "게이트가 정본이 아니거나 원점이 넷이 아니다 --- 대조 안 한다"),
         ])
     out["§C3 🔴🔴🔴 대비 ㉡ --- 채점 블록 4 고정 · 원점 이동"] = collections.OrderedDict([
         ("🔴 왜 이게 옳은 대비인가",
@@ -346,7 +388,8 @@ def stage_champ():
             ("변이체", why)])
 
     hb = headline.get("게이트 %d" % GATE_CANON, {})
-    tot_row = (hb.get("조각") or {}).get("원점 1→원점 4", {})
+    _tk = "원점 %d→원점 %d" % (ORIGINS[0], ORIGINS[-1])
+    tot_row = (hb.get("조각") or {}).get(_tk, {})
     ok15 = bool(tot_row.get("🔴🔴 2·SE 를 넘나")) and \
         int((tot_row.get("🔴 동부호 수") or "0/0").split("/")[0]) >= 10
     # 위약 --- 크기는 두고 부호만 무작위 (리터럴을 안 쓴다)
@@ -356,7 +399,7 @@ def stage_champ():
     plac_ok = None
     if all(k in pm20 for k in KB):
         com = sorted(set.intersection(*[set(pm20[k]) for k in KB]))
-        raw = {d: pm20[KB[3]][d] - pm20[KB[0]][d] for d in com}
+        raw = {d: pm20[KB[-1]][d] - pm20[KB[0]][d] for d in com}
         plac = {d: abs(v) * (1 if _rs.rand() < 0.5 else -1) for d, v in raw.items()}
         pc = cluster_se(plac)
         plac_ok = bool(pc.get("🔴🔴 2·SE 를 넘나")) and \
@@ -365,9 +408,9 @@ def stage_champ():
         probe("F01 정본 재현", abs(rho_n - BOARD_RHO_FULL) <= 1e-6,
               abs(rho_n - (BOARD_RHO_FULL + 0.01)) <= 1e-6,
               "정본을 0.01 옮겨 견준다"),
-        probe("F17 F01 이탈 크기 = 7.199316e-04",
-              abs(abs(rho_n - rho_o) - F01_DEV) <= 1e-6,
-              abs(abs(rho_n - rho_o) - 0.0) <= 1e-6,
+        probe("F17 F01 이탈 크기 = 7.199316e-04 (씨앗 0)",
+              abs(abs(rn_l[0] - ro_l[0]) - F01_DEV) <= 1e-6,
+              abs(abs(rn_l[0] - ro_l[0]) - 0.0) <= 1e-6,
               "🔴 이탈을 0.000e+00 으로 견준다 --- 조타수 지시문의 오독"),
         probe("F15 대비 ㉡ 이 선다", ok15, bool(plac_ok),
               "위약 --- 크기는 두고 부호만 무작위(RandomState(995))"),
@@ -391,8 +434,11 @@ def stage_champ():
 
     # ── 반증조건 모음 ──────────────────────────────────────────
     F = collections.OrderedDict()
-    F["🔴 반증조건 1 --- 수리 마스크로 정본 재현"] = repr(rho_n)
+    F["🔴 반증조건 1 --- 수리 마스크로 정본 재현(%d 씨앗 평균)" % len(SEEDS)] = repr(rho_n)
     F["통과: 반증조건 1"] = bool(abs(rho_n - BOARD_RHO_FULL) <= 1e-6)
+    F["🔴🔴 반증조건 1-나 --- 씨앗 0 이 BOARD_S0_FULL 을 1e-12 안에서 재현"] = \
+        _r(rn_l[0] - B94.BOARD_S0_FULL, 15)
+    F["통과: 반증조건 1-나"] = bool(abs(rn_l[0] - B94.BOARD_S0_FULL) <= B94.TOL_S0)
     F["🔴 반증조건 10 --- 게이트가 d 를 늘린다"] = dcounts
     F["통과: 반증조건 10"] = out["§C4 대비 ㉠ --- 원점 1 의 거리 조각 · 게이트 사다리"][
         "🔴 통과: 반증조건 10 (게이트 5 의 d > 게이트 20 의 d)"]
@@ -401,8 +447,8 @@ def stage_champ():
         ("동부호", tot_row.get("🔴 동부호 수")),
         ("t_clu", tot_row.get("t_clu"))])
     F["통과: 반증조건 15"] = bool(ok15)
-    F["🔴 반증조건 17 --- F01 이탈 크기"] = _r(rho_n - rho_o, 12)
-    F["통과: 반증조건 17"] = bool(abs(abs(rho_n - rho_o) - F01_DEV) <= 1e-6)
+    F["🔴 반증조건 17 --- F01 이탈 크기(씨앗 0)"] = _r(rn_l[0] - ro_l[0], 12)
+    F["통과: 반증조건 17"] = bool(abs(abs(rn_l[0] - ro_l[0]) - F01_DEV) <= 1e-6)
     F["🔴🔴 반증조건 13 --- 헤드라인 2 · 조각 분해표"] = \
         ["§C3 대비 ㉡ (게이트 %d 칸)" % len(GATES), "§C4 대비 ㉠ (게이트 %d 칸)" % len(GATES)]
     F["통과: 반증조건 13"] = True
