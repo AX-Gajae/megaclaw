@@ -31,7 +31,7 @@ def G(o, *path):
     return o
 
 
-def entries(S, D, fp, pr, tip):
+def entries(S, D, fp, pr, tip, tipdiff=None):
     W = S["🔴🔴🔴 세계 명제"]
     L = S["🔴🔴🔴 「도메인을 늘리면 검정력이 오른다」의 조건"]
     K = S["🔴🔴 조항 76 채점"]
@@ -198,8 +198,10 @@ def entries(S, D, fp, pr, tip):
                 ("🔴🔴🔴 조항 75-다 자신이 조항 78 ㉯ 다",
                  "`⑤′` 산출물이 가지에 커밋되는 한, 「`--tree` == 가지 끝」은 «자기 참조»라 "
                  "원리상 성립할 수 없다 --- 트리 해시를 담은 파일을 그 트리 «안»에 넣어야 한다. "
-                 "995 는 도달 가능한 최선(모든 내용 커밋 뒤에 돌리고, 남는 차이가 "
-                 "`runners/out995_fiveprime.json` 한 경로임)을 적는다"),
+                 "995 는 도달 가능한 최선을 한다 --- 내용 커밋이 다 끝난 뒤에 돌리고, "
+                 "그 뒤 «남는 차이의 경로 전량»을 아래 칸에 이름으로 적는다(「없다」로 안 적는다)"),
+                ("🔴🔴 그래서 남는 차이 --- push 된 가지 끝과 `--tree` 사이의 경로 «전량»",
+                 tipdiff or "🔴 안 쟀다(「없다」가 아니다 · 조항 59)"),
                 ("🔴 동결이라 안 고친 만성 절", "994 와 같은 자리 --- 절 8 `[수리]` 레인 계수는 "
                                         "동결 사이클을 원리상 통과시키지 못한다(사전등록 ㉯-1 로 «미리» 등기)"),
                 ("바꾼_때", "2026-08-18 · 노트 995"),
@@ -227,13 +229,16 @@ def main(argv=None):
     ap.add_argument("--fiveprime", default=None)
     ap.add_argument("--pr", type=int, default=None)
     ap.add_argument("--tip", default=None)
+    ap.add_argument("--tipdiff", default=None,
+                    help="🔴 push 된 가지 끝과 `--tree` 사이에 남는 경로 목록(쉼표로)")
     a = ap.parse_args(argv)
 
     den = _load(a.den)
     n0 = len(den)
     S, D = _load(a.score), _load(a.docsha)
     fp = _load(a.fiveprime) if a.fiveprime else None
-    E = entries(S, D, fp, a.pr, a.tip)
+    E = entries(S, D, fp, a.pr, a.tip,
+                [x for x in (a.tipdiff or "").split(",") if x])
 
     dup = [k for k in E if k in den]
     if dup:
