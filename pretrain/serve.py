@@ -25,7 +25,7 @@ import torch.nn.functional as F
 
 from pretrain.config import ART_DIR, CKPT_DIR, TOKENIZER_DIR, ModelConfig
 from pretrain.model import GPT
-from pretrain.transition import Transition, SAO, TRI, OUT as TROUT, MANIFEST, load_ensemble
+from pretrain.transition import Transition, SAO, TRI, OUT as TROUT, MANIFEST, load_ensemble, load_conformal, ConformalWrap
 
 PORT = 8899
 LOCK = threading.Lock()
@@ -71,6 +71,10 @@ if os.path.exists(MANIFEST):
     TR, _man, _shas = load_ensemble(MANIFEST)        # 구성원 sha 실측 대조(조항 66)
     DATA = SAO(text_emb=_man.get("text_emb"))
     TR_SRC = "앙상블 manifest(구성원 %d · 분위수 텐서 산술 평균)" % len(_shas)
+    _cf = load_conformal(MANIFEST)                   # 사이클 1004 — 유효 조건 sha 대조 포함
+    if _cf is not None:
+        TR = ConformalWrap(TR, _cf[0])
+        TR_SRC += " + 등각 보정(1004 · δ=%.4f · 무누수 홀드아웃 98 개체)" % _cf[0]
 elif os.path.exists(tr_path):
     tck = torch.load(tr_path, map_location="cpu", weights_only=False)
     TR = Transition(tck["d_in"], hidden=tck["hidden"])

@@ -136,6 +136,50 @@ class QuantileEnsemble:
         return torch.stack([m(x) for m in self.members]).mean(dim=0)
 
 
+CONFORMAL = os.path.join(OUT, "conformal.json")
+
+
+class ConformalWrap:
+    """등각 보정 래퍼(사이클 1004 배포) — q05−δ · q95+δ (q25/q50/q75 무접촉 · 잔차 log 눈금).
+    Transition/QuantileEnsemble 과 같은 호출 계약."""
+
+    def __init__(self, inner, delta):
+        self.inner, self.delta = inner, float(delta)
+
+    def eval(self):
+        self.inner.eval()
+        return self
+
+    def train(self):
+        return self          # 평가 전용
+
+    def to(self, device):
+        self.inner.to(device)
+        return self
+
+    def __call__(self, x):
+        q = self.inner(x)
+        d = torch.zeros_like(q)
+        d[..., 0] = -self.delta
+        d[..., 4] = self.delta
+        return q + d
+
+
+def load_conformal(manifest_path=MANIFEST, conformal_path=CONFORMAL):
+    """transition/conformal.json 있으면 (δ, 메타) — 🔴 유효 조건 manifest sha 실측 대조
+    (조항 66 · #140 ⑦-3 ㉰ — 보정 계수는 그 manifest 시대에만 유효 · 어긋나면 예외).
+    없으면 None (하위호환 — 사전등록 1004 §6-3)."""
+    if not os.path.exists(conformal_path):
+        return None
+    conf = json.load(open(conformal_path, encoding="utf-8"))
+    want = conf.get("유효 조건 manifest sha256/16")
+    got = _sha16(manifest_path)
+    if want != got:
+        raise RuntimeError("🔴 conformal 유효 조건 불일치: 기재 %s ≠ manifest 실측 %s"
+                           % (want, got))
+    return float(conf["δ(log)"]), conf
+
+
 def load_ensemble(manifest_path=MANIFEST):
     """manifest 를 읽어 구성원 5 를 적재 — 구성원 sha 실측 대조(조항 66 · 어긋나면 예외).
     돌려주는 것: (QuantileEnsemble, manifest dict, {씨앗: sha16})."""
@@ -240,6 +284,12 @@ def evalcmd(a):
         recipe = man.get("레시피", "미기재") + " · " + man.get("결합", "")
         src = {"manifest": _sha16(MANIFEST), "구성원": shas,
                "sao.npz": _sha16(os.path.join(TRI, "sao.npz"))}
+        cf = load_conformal(MANIFEST)                     # 사이클 1004 — 있으면 보정 적용
+        if cf is not None:
+            model = ConformalWrap(model, cf[0])
+            mode += " + 등각 보정(1004 · δ=%.4f · 무누수 홀드아웃)" % cf[0]
+            recipe += " · 등각 q05−δ/q95+δ"
+            src["conformal.json"] = _sha16(CONFORMAL)
     else:
         mp = os.path.join(OUT, "model.pt")
         ck = torch.load(mp, map_location="cpu", weights_only=False)
@@ -269,6 +319,9 @@ def demo(a):
     if os.path.exists(MANIFEST):
         model, man, _ = load_ensemble(MANIFEST)
         data = SAO(text_emb=man.get("text_emb"))
+        cf = load_conformal(MANIFEST)                     # 사이클 1004 — 있으면 보정 적용
+        if cf is not None:
+            model = ConformalWrap(model, cf[0])
     else:
         ck = torch.load(os.path.join(OUT, "model.pt"), map_location="cpu", weights_only=False)
         data = SAO(text_emb=ck.get("text_emb"))

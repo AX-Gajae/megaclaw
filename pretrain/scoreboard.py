@@ -33,6 +33,14 @@ v2.2 가 v2.1 에서 고친 것 (사이클 1002 배포 — 앙상블 manifest �
   · 「실물」 칸과 출처 사슬이 manifest 를 정본으로 대조한다 (리더보드→manifest ·
     보고서→manifest · LODO 시대 표지 = 「배포 manifest(시대 표지)」)
   · manifest 없으면 v2.1 과 동일 동작 (단일 model.pt — 하위호환 분기)
+
+v2.3 이 v2.2 에서 고친 것 (사이클 1004 배포 — 등각 보정 하위호환 · 사전등록 1004 §6-3):
+  · `transition/conformal.json` 있으면 «직접 평가»가 q05−δ/q95+δ 를 적용해 ④ 를 잰다 —
+    🔴 유효 조건 manifest sha 실측 대조(조항 66 · #140 ⑦-3 ㉰ — 어긋나면 「불일치」로 찍고
+    값 안 적음) · q50 무접촉이라 ①②③ 은 원리상 안 닿는다
+  · 「실물」 칸에 conformal.json 추가 · conformal 없으면 v2.2 와 동일 동작 (하위호환)
+  · ④ 에 개체 이름 클러스터 SE 병기(#140 ⑦-2 — 행 SE 6.6배 실측 · 「1,129 개체」 문언 금지:
+    행(개체창)이다 · 유일 개체 수 병기) — seed BOOT_SEED+2
 """
 import os as _os, sys as _sys
 _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
@@ -55,6 +63,7 @@ SRC = {
 }
 MODEL_PT = os.path.join(ART, "transition", "model.pt")
 MANIFEST = os.path.join(ART, "transition", "ensemble_manifest.json")   # v2.2 — 있으면 앙상블 정본
+CONFORMAL = os.path.join(ART, "transition", "conformal.json")          # v2.3 — 있으면 등각 보정
 SAO_NPZ = os.path.join(ART, "triples", "sao.npz")
 DOMS_JSON = os.path.join(ART, "triples", "domains.json")
 
@@ -148,6 +157,18 @@ def _direct_eval():
             model.eval()
             preds.append(model(xe).numpy())               # (n,91,5) 잔차 눈금
     pred = np.mean(np.stack(preds), axis=0) if len(preds) > 1 else preds[0]
+    conf_note = "없음(비보정)"
+    if ens_mode and os.path.exists(CONFORMAL):            # v2.3 — 등각 보정 분기
+        conf = json.load(open(CONFORMAL, encoding="utf-8"))
+        want = conf.get("유효 조건 manifest sha256/16")
+        got = _sha16(MANIFEST)
+        if want != got:
+            return {"오류": "불일치 — conformal 유효 조건 %s ≠ manifest 실측 %s (조항 66 — "
+                          "보정 계수는 그 manifest 시대에만 유효)" % (want, got)}
+        _delta = float(conf["δ(log)"])
+        pred[..., 0] -= _delta
+        pred[..., 4] += _delta
+        conf_note = "적용(δ=%.4f · q05−δ/q95+δ · q50 무접촉)" % _delta
     b = base[va]
     cum_true = np.expm1(R[va] + b).sum(axis=1)
     cum_q50 = np.expm1(pred[..., 2] + b).sum(axis=1)
@@ -155,8 +176,15 @@ def _direct_eval():
     ape_tr = np.abs(cum_q50 - cum_true) / np.maximum(cum_true, 1.0)
     ape_pers = np.abs(cum_pers - cum_true) / np.maximum(cum_true, 1.0)
     cover_ent = ((R[va] >= pred[..., 0]) & (R[va] <= pred[..., 4])).mean(axis=1)
+    # v2.3 — ④ 클러스터 SE 용 개체 이름 (행 = 개체창 · 유일 개체가 클러스터)
+    meta_path = os.path.join(ART, "triples", "meta.jsonl")
+    va_names = None
+    if os.path.exists(meta_path):
+        _meta = [json.loads(l) for l in open(meta_path, encoding="utf-8")]
+        va_names = [_meta[int(i)]["개체"] for i in va]
     return {"domains": domains, "dom_va": dom_id[va], "ape_tr": ape_tr,
-            "ape_pers": ape_pers, "cover_ent": cover_ent,
+            "ape_pers": ape_pers, "cover_ent": cover_ent, "va_names": va_names,
+            "보정(v2.3)": conf_note,
             "정본": ("앙상블 manifest(구성원 %d · 분위수 텐서 산술 평균)" % len(cks)
                    if ens_mode else "단일 model.pt"),
             "text_emb": text_emb, "n_va": int(len(va))}
@@ -165,19 +193,23 @@ def _direct_eval():
 def build():
     _self = os.path.abspath(__file__)
     ens_mode = os.path.exists(MANIFEST)                   # v2.2 — 배포 정본 판별
-    판 = {"판": "파운데이션 판 v2.2 (루프 v5.0 제5장 + 5-가 보강 v5.1 · 티처 #136 · "
-             "앙상블 manifest 하위호환 — 사전등록 1002 §6-3)",
+    판 = {"판": "파운데이션 판 v2.3 (루프 v5.0 제5장 + 5-가 보강 v5.1 · 티처 #136 · "
+             "앙상블 manifest + 등각 conformal 하위호환 — 사전등록 1002 §6-3 · 1004 §6-3 · "
+             "#140 ⑦-2 클러스터 SE 병기)",
           "잰 시각": time.strftime("%Y-%m-%dT%H:%M:%S"),
           "채점기 자신(조항 66 — 자기 출처 · v3.2)": {"코드": _self, "sha256": _sha16(_self)},
           "도메인 명부(상수 · 조항 59)": list(ROSTER),
           "원천": {k: _provenance(p) for k, p in SRC.items()},
           "실물": ({"ensemble_manifest.json": _provenance(MANIFEST),
+                  "conformal.json": (_provenance(CONFORMAL) if os.path.exists(CONFORMAL)
+                                     else {"상태": "없음(비보정 시대)"}),
                   "sao.npz": _provenance(SAO_NPZ)} if ens_mode else
                  {"model.pt": _provenance(MODEL_PT), "sao.npz": _provenance(SAO_NPZ)}),
           "붓스트랩": {"B": B_BOOT, "seed": BOOT_SEED,
                     "seed 전부(실사용 · 티처 #137 ⑤㉯)": {
                         "①② 도메인 재표집": BOOT_SEED,
-                        "④ 군집 재표집(BOOT_SEED+1)": BOOT_SEED + 1},
+                        "④ 군집 재표집(BOOT_SEED+1)": BOOT_SEED + 1,
+                        "④ 클러스터(개체 이름) 재표집(BOOT_SEED+2 · v2.3)": BOOT_SEED + 2},
                     "방식": "①② 도메인별 독립 개체 재표집 · ④ 개체 군집(개체 덮개율 평균) — "
                           "개체별 값은 배포 정본(manifest 앙상블 또는 단일 model.pt)을 "
                           "998 러너 평가식으로 CPU 직접 평가"}}
@@ -370,10 +402,29 @@ def build():
             else:
                 rep대조 = ("일치(%s)" % rep값 if abs(rep값 - 점) <= 1e-4
                          else "어긋남 — report %s vs 직접 %s" % (rep값, 점))
-        판["④90% 덮개율"] = {"직접 재계산": 점, "n(개체)": int(len(cov)),
-                          "개체 군집 SE": round(float(cov_b.std(ddof=1)), 4),
-                          "CI95": [round(float(np.percentile(cov_b, 2.5)), 4),
-                                   round(float(np.percentile(cov_b, 97.5)), 4)],
+        # v2.3 — 개체 이름 클러스터 SE 병기 (#140 ⑦-2 · 「n 개체」 아니라 「n 행·유일 개체」)
+        cl_se = "미계산(meta.jsonl 없음)"
+        n_uniq = None
+        if ev.get("va_names"):
+            names = ev["va_names"]
+            uniq = sorted(set(names))
+            n_uniq = len(uniq)
+            lut = {n: i for i, n in enumerate(uniq)}
+            ids = np.asarray([lut[n] for n in names])
+            groups = [np.where(ids == i)[0] for i in range(n_uniq)]
+            rng3 = np.random.default_rng(BOOT_SEED + 2)
+            reps = np.empty(B_BOOT)
+            for bi in range(B_BOOT):
+                gs = rng3.integers(0, n_uniq, size=n_uniq)
+                reps[bi] = cov[np.concatenate([groups[g] for g in gs])].mean()
+            cl_se = round(float(reps.std(ddof=1)), 4)
+        판["④90% 덮개율"] = {"직접 재계산": 점,
+                          "n(행 · 개체창)": int(len(cov)), "유일 개체": n_uniq,
+                          "행(개체창) SE": round(float(cov_b.std(ddof=1)), 4),
+                          "개체 이름 클러스터 SE(판정 눈금 · #140 ⑦-2)": cl_se,
+                          "CI95(행)": [round(float(np.percentile(cov_b, 2.5)), 4),
+                                     round(float(np.percentile(cov_b, 97.5)), 4)],
+                          "보정(v2.3)": ev.get("보정(v2.3)", "없음(비보정)"),
                           "report.json 대조": rep대조}
     else:
         판["④90% 덮개율"] = "못 읽었다 — 직접 평가 실패: %s" % ev.get("오류")
