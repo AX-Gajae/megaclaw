@@ -174,9 +174,17 @@ def cli_path() -> str | None:
 
 def _mcp_config() -> str:
     root = _Path(__file__).resolve().parent.parent
-    return json.dumps({"mcpServers": {MCP_SERVER: {
-        "command": sys.executable, "args": ["-m", "serve.mcp"],
-        "env": {"PYTHONPATH": str(root)}, "cwd": str(root)}}},
+    return json.dumps({"mcpServers": {
+        MCP_SERVER: {
+            "command": sys.executable, "args": ["-m", "serve.mcp"],
+            "env": {"PYTHONPATH": str(root)}, "cwd": str(root)},
+        # 사전학습 하네스(wm_*) --- 상시 창구(8899)로 위임하는 초경량 프록시.
+        # CLI 가 매 턴 MCP 를 새로 띄우므로 torch 를 여기서 적재하면 턴마다
+        # 수 초가 샌다. 프록시는 즉시 뜨고, 창구가 꺼져 있으면 도구가 비는
+        # 대신 켜는 법을 오류로 알린다.
+        "wm": {
+            "command": sys.executable, "args": ["-m", "pretrain.mcp_proxy"],
+            "env": {"PYTHONPATH": str(root)}, "cwd": str(root)}}},
         ensure_ascii=False)
 
 
@@ -203,7 +211,7 @@ def stream_cli(question: str, model: str | None = None,
            "--verbose",
            "--mcp-config", _mcp_config(), "--strict-mcp-config",
            "--append-system-prompt", capability.system_prompt(),
-           "--allowedTools", f"mcp__{MCP_SERVER}",
+           "--allowedTools", f"mcp__{MCP_SERVER},mcp__wm",
            "--permission-mode", "bypassPermissions"]
     if session:
         cmd += ["--resume", session]
