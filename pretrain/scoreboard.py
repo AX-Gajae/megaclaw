@@ -41,6 +41,15 @@ v2.3 이 v2.2 에서 고친 것 (사이클 1004 배포 — 등각 보정 하위�
   · 「실물」 칸에 conformal.json 추가 · conformal 없으면 v2.2 와 동일 동작 (하위호환)
   · ④ 에 개체 이름 클러스터 SE 병기(#140 ⑦-2 — 행 SE 6.6배 실측 · 「1,129 개체」 문언 금지:
     행(개체창)이다 · 유일 개체 수 병기) — seed BOOT_SEED+2
+
+v2.4 가 v2.3 에서 더한 것 (사이클 1008 자 수리 — 웹툰 val 확충 · 사전등록 docs/탐색/1008.md §0-2):
+  · `--valext <npz>` 인자 신설 — 🔴 **기본 호출(인자 없음)의 동작·값은 v2.3 과 완전 동일**
+    (1008 러너 G0 이 v2.3 기준선과의 값 항등을 기계 증명한다 · v5.2 부칙 1 규격)
+  · `--valext` 를 주면 판 JSON 에 「눈금 교체(조항 60 — 웹툰 val 확충 1008)」 절이 «추가»된다:
+    사건 기재(확장 npz sha·행·개체·명부) · 웹툰 구자/신자 전후 병기(MdAPE · 도메인 붓스트랩 SE ·
+    개체 클러스터 SE seed [1008,0]/[1008,1] · n행/n개체) · 신자 눈금의 판 넷 재채점
+    (①②④ 재계산 · ③ 은 구자 인용 + 「웹툰 칸은 구자 눈금」 낙인 — train 불변이라 LODO 무접촉) ·
+    성과 주장 금지 낙인. 기존 절(①~④·출처 사슬·평가 항등)은 구자 행에서만 — 한 글자도 안 변한다.
 """
 import os as _os, sys as _sys
 _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
@@ -89,9 +98,12 @@ def _read_json(path):
     return json.load(open(path, encoding="utf-8"))
 
 
-def _direct_eval():
+def _direct_eval(valext=None):
     """배포 정본(v2.2: manifest 앙상블 우선, 없으면 단일 model.pt)을 998 러너의 평가식으로
     CPU 평가 — 개체별 APE·pers APE·덮개율. 앙상블은 구성원 분위수 텐서 산술 평균.
+
+    v2.4: valext(웹툰 val 확장 npz) 를 주면 같은 정본·같은 평가식으로 확장 행을 «따로» 평가해
+    "ext" 키에 담는다 — 기본 경로 수치는 valext 유무와 무관하게 동일하다.
 
     실패(파일 없음·sha 불일치·차원 불일치)면 {"오류": …} — 조항 59 대로 못 읽은 것은 못 읽었다."""
     ens_mode = os.path.exists(MANIFEST)
@@ -149,15 +161,18 @@ def _direct_eval():
                            % (Sc.shape[1] + C.shape[1], ck["d_in"])}
     va = np.where(split == 1)[0]
     preds = []
+    models = []                                           # v2.4 — ext 재사용(수치 무영향)
     with torch.no_grad():
         xe = torch.from_numpy(np.concatenate([Sc[va], C[va]], axis=1))
         for ck in cks:
             model = Transition(ck["d_in"], hidden=ck["hidden"])
             model.load_state_dict(ck["model"])
             model.eval()
+            models.append(model)
             preds.append(model(xe).numpy())               # (n,91,5) 잔차 눈금
     pred = np.mean(np.stack(preds), axis=0) if len(preds) > 1 else preds[0]
     conf_note = "없음(비보정)"
+    _delta = None                                         # v2.4 — ext 에 같은 보정 적용용
     if ens_mode and os.path.exists(CONFORMAL):            # v2.3 — 등각 보정 분기
         conf = json.load(open(CONFORMAL, encoding="utf-8"))
         want = conf.get("유효 조건 manifest sha256/16")
@@ -169,6 +184,49 @@ def _direct_eval():
         pred[..., 0] -= _delta
         pred[..., 4] += _delta
         conf_note = "적용(δ=%.4f · q05−δ/q95+δ · q50 무접촉)" % _delta
+    ext = None                                            # v2.4 — 웹툰 val 확장(따로 평가)
+    if valext:
+        if not os.path.exists(valext):
+            return {"오류": "못 읽었다 — valext 없음: %s" % valext}
+        if not text_emb:
+            return {"오류": "불일치 — 정본에 text_emb 가 없어 valext 평가 불가"}
+        if "웹툰" not in domains:
+            return {"오류": "불일치 — domains.json 에 웹툰이 없다"}
+        ze = np.load(valext)
+        Se = np.log1p(ze["S"].astype(np.float64)).astype(np.float32)
+        Oe = np.log1p(ze["O"].astype(np.float64)).astype(np.float32)
+        base_e = Se.mean(axis=1, keepdims=True)
+        Sce = Se - base_e
+        Re = Oe - base_e
+        doy_e = ze["doy"].astype(np.float32)
+        sin_e = np.sin(2 * np.pi * doy_e / 365.0)[:, None].astype(np.float32)
+        cos_e = np.cos(2 * np.pi * doy_e / 365.0)[:, None].astype(np.float32)
+        year_e = ((ze["year"].astype(np.float32) - 2013.0) / 10.0)[:, None]
+        onehot_e = np.zeros((len(Se), n_dom), dtype=np.float32)
+        onehot_e[:, domains.index("웹툰")] = 1.0
+        Ce = np.concatenate([onehot_e, sin_e, cos_e, year_e,
+                             base_e.astype(np.float32),
+                             ze["E"].astype(np.float32)], axis=1)
+        if Sce.shape[1] + Ce.shape[1] != cks[0]["d_in"]:
+            return {"오류": "불일치 — valext 조건 차원 %d ≠ 체크포인트 d_in %d"
+                           % (Sce.shape[1] + Ce.shape[1], cks[0]["d_in"])}
+        preds_e = []
+        with torch.no_grad():
+            xe2 = torch.from_numpy(np.concatenate([Sce, Ce], axis=1))
+            for model in models:
+                preds_e.append(model(xe2).numpy())
+        pred_e = np.mean(np.stack(preds_e), axis=0) if len(preds_e) > 1 else preds_e[0]
+        if _delta is not None:
+            pred_e[..., 0] -= _delta
+            pred_e[..., 4] += _delta
+        cum_true_e = np.expm1(Re + base_e).sum(axis=1)
+        cum_q50_e = np.expm1(pred_e[..., 2] + base_e).sum(axis=1)
+        cum_pers_e = np.expm1(0 * Re + base_e).sum(axis=1)
+        ext = {"ape_tr": np.abs(cum_q50_e - cum_true_e) / np.maximum(cum_true_e, 1.0),
+               "ape_pers": np.abs(cum_pers_e - cum_true_e) / np.maximum(cum_true_e, 1.0),
+               "cover_ent": ((Re >= pred_e[..., 0]) & (Re <= pred_e[..., 4])).mean(axis=1),
+               "names": [str(x) for x in ze["names"].tolist()],
+               "n": int(len(Se)), "sha256": _sha16(valext), "경로": valext}
     b = base[va]
     cum_true = np.expm1(R[va] + b).sum(axis=1)
     cum_q50 = np.expm1(pred[..., 2] + b).sum(axis=1)
@@ -184,13 +242,143 @@ def _direct_eval():
         va_names = [_meta[int(i)]["개체"] for i in va]
     return {"domains": domains, "dom_va": dom_id[va], "ape_tr": ape_tr,
             "ape_pers": ape_pers, "cover_ent": cover_ent, "va_names": va_names,
+            "ext": ext,
             "보정(v2.3)": conf_note,
             "정본": ("앙상블 manifest(구성원 %d · 분위수 텐서 산술 평균)" % len(cks)
                    if ens_mode else "단일 model.pt"),
             "text_emb": text_emb, "n_va": int(len(va))}
 
 
-def build():
+def _ext_section(ev, lb, 판):
+    """v2.4 — 「눈금 교체(조항 60 — 웹툰 val 확충 1008)」 절. 기존 절은 안 건드린다."""
+    import numpy as np
+    ext = ev["ext"]
+    doms = ev["domains"]
+    wt = doms.index("웹툰")
+    m = ev["dom_va"] == wt
+    old_tr = ev["ape_tr"][m]
+    old_pe = ev["ape_pers"][m]
+    old_names = [n for n, k in zip(ev["va_names"], m) if k]
+    new_tr = np.concatenate([old_tr, ext["ape_tr"]])
+    new_pe = np.concatenate([old_pe, ext["ape_pers"]])
+    new_names = old_names + ext["names"]
+
+    def cl_se(vals, names, seed):
+        """개체 클러스터 붓스트랩 SE(중앙값) — B_BOOT · seed 는 사전등록 1008 §5."""
+        uniq = sorted(set(names))
+        lut = {n: i for i, n in enumerate(uniq)}
+        ids = np.asarray([lut[n] for n in names])
+        groups = [np.where(ids == i)[0] for i in range(len(uniq))]
+        rng = np.random.default_rng(seed)
+        reps = np.empty(B_BOOT)
+        for bi in range(B_BOOT):
+            gs = rng.integers(0, len(uniq), size=len(uniq))
+            reps[bi] = np.median(vals[np.concatenate([groups[g] for g in gs])])
+        return round(float(reps.std(ddof=1)), 4), len(uniq)
+
+    # 신자 눈금 재표집 — 판 정본 seed(9990) · ①② 루프 자구 그대로, 웹툰 행만 확장
+    rng = np.random.default_rng(BOOT_SEED)
+    tr_med, pers_med, cells = {}, {}, {}
+    for d in ROSTER:
+        if d not in doms:
+            continue
+        if d == "웹툰":
+            a_tr, a_pe = new_tr, new_pe
+        else:
+            mm = ev["dom_va"] == doms.index(d)
+            if not mm.any():
+                continue
+            a_tr, a_pe = ev["ape_tr"][mm], ev["ape_pers"][mm]
+        n_d = int(len(a_tr))
+        idx = rng.integers(0, n_d, size=(B_BOOT, n_d))
+        tr_med[d] = np.median(a_tr[idx], axis=1)
+        pers_med[d] = np.median(a_pe[idx], axis=1)
+        cells[d] = {"n_val": n_d, "MdAPE": round(float(np.median(a_tr)), 4),
+                    "SE": round(float(tr_med[d].std(ddof=1)), 4),
+                    "CI95": [round(float(np.percentile(tr_med[d], 2.5)), 4),
+                             round(float(np.percentile(tr_med[d], 97.5)), 4)]}
+    측정 = [d for d in ROSTER if d in tr_med]
+    스택 = np.stack([tr_med[d] for d in 측정])
+    amax = np.argmax(스택, axis=0)
+    p_argmax = {측정[i]: round(float((amax == i).mean()), 3)
+                for i in range(len(측정)) if (amax == i).any()}
+    worst = max(측정, key=lambda d: cells[d]["MdAPE"])
+    지는 = []
+    for d in 측정:
+        if d == "웹툰":
+            if cells[d]["MdAPE"] > round(float(np.median(new_pe)), 4):
+                지는.append(d)
+        else:
+            dd = (lb or {}).get("도메인별", {}).get(d)
+            if dd and dd["transition"] > dd["persistence"]:
+                지는.append(d)
+    cnt = np.zeros(B_BOOT, dtype=np.int64)
+    for d in 측정:
+        cnt += (tr_med[d] > pers_med[d]).astype(np.int64)
+    분포 = {int(k): round(float((cnt == k).mean()), 3) for k in np.unique(cnt)}
+    # ④ — 구 val 전 행 + 확장 행 (v2.3 자구 · seed BOOT_SEED+1 / +2)
+    cov_new = np.concatenate([ev["cover_ent"], ext["cover_ent"]])
+    rng2 = np.random.default_rng(BOOT_SEED + 1)
+    idxc = rng2.integers(0, len(cov_new), size=(B_BOOT, len(cov_new)))
+    cov_b = cov_new[idxc].mean(axis=1)
+    all_names = list(ev["va_names"]) + ext["names"]
+    uniq = sorted(set(all_names))
+    lut = {n: i for i, n in enumerate(uniq)}
+    ids = np.asarray([lut[n] for n in all_names])
+    groups = [np.where(ids == i)[0] for i in range(len(uniq))]
+    rng3 = np.random.default_rng(BOOT_SEED + 2)
+    reps = np.empty(B_BOOT)
+    for bi in range(B_BOOT):
+        gs = rng3.integers(0, len(uniq), size=len(uniq))
+        reps[bi] = cov_new[np.concatenate([groups[g] for g in gs])].mean()
+    old_cl, old_uniq = cl_se(old_tr, old_names, [1008, 0])
+    new_cl, new_uniq = cl_se(new_tr, new_names, [1008, 1])
+    구cell = 판["①최약 도메인"]["도메인별"]["웹툰"] if isinstance(판.get("①최약 도메인"), dict) else {}
+    roster_p = os.path.join(os.path.dirname(ext["경로"]), "val_ext_roster.json")
+    lodo구 = 판.get("③LODO 제로샷")
+    return {
+        "사건": {"무엇": "웹툰 val «전용» 개체 확충 — 자 교체(모형·train·배포물·기존 val 무접촉)",
+               "사전등록": "docs/탐색/1008.md (실측 전 커밋)",
+               "확장 npz": {"경로": ext["경로"], "sha256": ext["sha256"], "행": ext["n"],
+                          "개체": new_uniq - old_uniq},
+               "명부": {"경로": roster_p,
+                      "sha256": (_sha16(roster_p) if os.path.exists(roster_p) else "없음")},
+               "선정 규칙": "곡선 스냅숏의 웹툰 미노출 개체 전원(인기 비의존) × HPLT 언급 자 "
+                        "973 자구 × 창 181일 — 1008 §3"},
+        "웹툰 구자": {"MdAPE": 구cell.get("MdAPE"), "n행": int(len(old_tr)),
+                  "n개체": old_uniq, "도메인 붓스트랩 SE(판 ① 칸)": 구cell.get("SE"),
+                  "개체 클러스터 SE(seed [1008,0])": old_cl},
+        "웹툰 신자": {"MdAPE": cells["웹툰"]["MdAPE"], "n행": cells["웹툰"]["n_val"],
+                  "n개체": new_uniq,
+                  "도메인 붓스트랩 SE": cells["웹툰"]["SE"], "CI95": cells["웹툰"]["CI95"],
+                  "개체 클러스터 SE(seed [1008,1])": new_cl},
+        "판 넷 재채점(신자 눈금)": {
+            "①최약 도메인": {"도메인": worst, "MdAPE": cells[worst]["MdAPE"],
+                        "P(argmax·최약 정체)": dict(sorted(p_argmax.items(),
+                                                     key=lambda kv: -kv[1])),
+                        "도메인별(신자 재표집)": {d: cells[d] for d in
+                                          sorted(측정, key=lambda d: -cells[d]["MdAPE"])}},
+            "②pers에 지는 도메인": {"수": "%d/%d" % (len(지는), len(ROSTER)), "목록": 지는,
+                             "붓스트랩 분포 P(k)": 분포,
+                             "주의": "웹툰 외 9 도메인은 구자 리더보드 값(구자 행과 1e-4 "
+                                   "항등은 본편 절에서 확인)"},
+            "③LODO 제로샷": {"인용(구자)": lodo구,
+                         "낙인": "🔴 웹툰 칸은 구자 눈금 — train 불변(LODO 무접촉 · 1008 §4) · "
+                               "신자 재실측은 배포/재빌드 사이클 몫"},
+            "④90% 덮개율": {"직접 재계산": round(float(cov_new.mean()), 4),
+                        "n(행 · 개체창)": int(len(cov_new)), "유일 개체": len(uniq),
+                        "행(개체창) SE": round(float(cov_b.std(ddof=1)), 4),
+                        "개체 이름 클러스터 SE": round(float(reps.std(ddof=1)), 4),
+                        "CI95(행)": [round(float(np.percentile(cov_b, 2.5)), 4),
+                                   round(float(np.percentile(cov_b, 97.5)), 4)]}},
+        "평가 항등·출처 사슬": "구자 행에서만 — 확장 행은 어느 배포 산출물에도 없다(항등 대상이 "
+                       "아니라 새 눈금이다 · 1008 §0-3)",
+        "낙인": ["🔴 성과 주장 금지 — 이 절의 웹툰 값 변화는 개선도 악화도 아니라 눈금 교체다"
+               "(조항 60 · 1008 §0-4)",
+               "🔴 다음 사이클 웹툰 표적 금지(#142 ⑥-2 ㉰ · 온보딩.md §5-4 미러)"]}
+
+
+def build(valext=None):
     _self = os.path.abspath(__file__)
     ens_mode = os.path.exists(MANIFEST)                   # v2.2 — 배포 정본 판별
     판 = {"판": "파운데이션 판 v2.3 (루프 v5.0 제5장 + 5-가 보강 v5.1 · 티처 #136 · "
@@ -216,7 +404,7 @@ def build():
     lb = _read_json(SRC["리더보드"])
     rep = _read_json(SRC["보고서"])
     lodo = _read_json(SRC["LODO"])
-    ev = _direct_eval()
+    ev = _direct_eval(valext)
 
     # ── 출처 사슬 (조항 66 · v5.1 5-가-2 · v2.2 — 정본 = manifest 또는 model.pt) ──
     사슬 = {}
@@ -428,6 +616,9 @@ def build():
                           "report.json 대조": rep대조}
     else:
         판["④90% 덮개율"] = "못 읽었다 — 직접 평가 실패: %s" % ev.get("오류")
+    # ── v2.4 — 눈금 교체 병기 절(«추가»만 · --valext 없으면 v2.3 과 완전 동일) ──
+    if valext and isinstance(ev, dict) and "오류" not in ev and ev.get("ext"):
+        판["눈금 교체(조항 60 — 웹툰 val 확충 1008)"] = _ext_section(ev, lb, 판)
     판["끝 시각(v3.2)"] = time.strftime("%Y-%m-%dT%H:%M:%S")
     return 판
 
@@ -435,8 +626,10 @@ def build():
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=None, help="판 JSON 저장 경로 (사이클 산출물로 커밋할 것)")
+    ap.add_argument("--valext", default=None,
+                    help="v2.4 — 웹툰 val 확장 npz(1008 자 수리 · 있으면 눈금 교체 절을 «추가»)")
     a = ap.parse_args()
-    판 = build()
+    판 = build(a.valext)
     s = json.dumps(판, ensure_ascii=False, indent=1)
     print(s)
     if a.out:

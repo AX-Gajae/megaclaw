@@ -29,6 +29,17 @@ import numpy as np
 SRC = "/Users/ax/world_model/data/ingest/sao973_hplt/pairs.jsonl.gz"
 OUT_DIR = os.path.join(os.environ.get("WM_FOUNDATION_DIR",
                                       "/Users/ax/wm_harvest/foundation"), "triples")
+# 1008 자 수리(조항 60 · docs/탐색/1008.md §3) — val 확장 명부. 여기 적힌 개체는 재빌드 시
+# 해시 버킷과 무관하게 분할=val 로 강제한다(한 번 val 로 잰 개체가 train 으로 새는 것 금지).
+# 파일이 없으면 기존 동작 그대로.
+VAL_EXT_ROSTER = "/Users/ax/world_model/data/lab/val_ext_roster.json"
+
+
+def val_ext_entities():
+    if not os.path.exists(VAL_EXT_ROSTER):
+        return frozenset()
+    with open(VAL_EXT_ROSTER, encoding="utf-8") as f:
+        return frozenset(json.load(f).get("개체", []))
 
 
 def ent_bucket(ent):
@@ -37,6 +48,7 @@ def ent_bucket(ent):
 
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
+    val_ext = val_ext_entities()               # 1008 — 명부 개체는 val 강제
     seen = set()
     S, O, meta = [], [], []
     n_rows = n_dupe = n_bad = 0
@@ -62,7 +74,8 @@ def main():
                          if isinstance(v, str) and k not in ("개체", "언제")]
                 meta.append({"개체": a["개체"], "언제": a["언제"],
                              "도메인": r.get("도메인", "?"),
-                             "분할": "val" if ent_bucket(a["개체"]) == 0 else "train",
+                             "분할": ("val" if (ent_bucket(a["개체"]) == 0
+                                             or a["개체"] in val_ext) else "train"),
                              "텍스트": " · ".join(texts)[:2000]})
             except Exception:
                 n_bad += 1
@@ -84,6 +97,7 @@ def main():
     rep = {"원천 행": n_rows, "중복(같은 개체×날)": n_dupe, "버림": n_bad,
            "표본": int(len(S)), "train": int((split == 0).sum()),
            "val(개체 분리)": int((split == 1).sum()),
+           "val 확장 명부 개체(1008 강제)": len(val_ext),
            "도메인": {d: int((dom_id == i).sum()) for i, d in enumerate(doms)},
            "npz": os.path.join(OUT_DIR, "sao.npz")}
     with open(os.path.join(OUT_DIR, "report.json"), "w", encoding="utf-8") as f:
