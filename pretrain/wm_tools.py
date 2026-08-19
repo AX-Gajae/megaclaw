@@ -23,7 +23,7 @@ def _caveat():
     """성적을 «지금 배포된» report.json 에서 읽는다 — 숫자 하드코딩이 낡는 병 방지."""
     try:
         e = json.load(open(os.path.join(S.TROUT, "report.json"), encoding="utf-8"))["평가"]
-        return ("조건부 예측이지 인과가 아니다(「언제」= 크롤 시각) · 90% 구간 실측 덮개율 "
+        return ("조건부 예측이지 인과가 아니다(「언제」= 크롤 시각) · 90%% 구간 실측 덮개율 "
                 "%.1f%%(목표 90 — 모자란 만큼 보수적으로) · 개체 분리 검증 MdAPE %.1f%%"
                 % (e["90% 구간 덮개율(목표 0.90)"] * 100, e["누적90일 MdAPE"] * 100))
     except Exception:
@@ -219,6 +219,136 @@ def wm_discourse(keyword=None, max_files=48, **_):
                  "생기면 「누가 어떻게 반응할까」가 된다. 여론 «예측»이라 부르지 마라")}
 
 
+_CS = {}                                                 # wm_coldstart 색인 캐시
+
+
+def _cs_index():
+    """개체별 «최초 관측» 행 색인 + 조항 59 낙인 계수 — 배포 자료에서 직접 센다(하드코딩 금지)."""
+    if _CS:
+        return _CS
+    first = {}
+    for i, m in enumerate(S.META):
+        k = m["개체"]
+        if k not in first or m["언제"] < S.META[first[k]]["언제"]:
+            first[k] = i
+    Sr = np.expm1(S.DATA.S.astype(np.float64))           # (N,90) 원 눈금
+    Or = np.expm1(S.DATA.O.astype(np.float64))           # (N,91)
+    n_debut = 0
+    for k, i in first.items():
+        c = np.concatenate([Sr[i], Or[i]])
+        nz = np.where(c >= 1.0)[0]
+        if len(nz) and 7 <= int(nz[0]) <= 91:
+            n_debut += 1
+    tr_set = set(S.DATA.tr.tolist())
+    pool = {}
+    for k, i in sorted(first.items()):
+        if i in tr_set:
+            pool.setdefault(S.META[i]["도메인"], []).append((k, i))
+    _CS.update({"first": first, "pool": pool, "Or": Or, "Sr": Sr,
+                "데뷔급": n_debut, "개체": len(first)})
+    return _CS
+
+
+def _wq(vals, wts, q):
+    """가중 분위수(역CDF 계단 · 결정적) — 1007 러너와 같은 정의."""
+    v = np.asarray(vals, dtype=np.float64)
+    w = np.asarray(wts, dtype=np.float64)
+    if w.sum() <= 0:
+        w = np.ones_like(w)
+    o = np.argsort(v)
+    v, w = v[o], w[o]
+    cw = np.cumsum(w) / w.sum()
+    return float(v[min(int(np.searchsorted(cw, q, side="left")), len(v) - 1)])
+
+
+def _cs_score():
+    """1007 백테스트 성적 — «커밋된» out JSON 에서 읽는다(조항 81 · 숫자 하드코딩 방지)."""
+    try:
+        o = json.load(open(os.path.join(os.path.dirname(os.path.dirname(
+            os.path.abspath(__file__))), "runners", "out1007_coldstart.json"),
+            encoding="utf-8"))
+        g = o["판정 G1 (주대비 · 게이트)"]
+        return {"MdAPE(참조군 가중 K=12 · val 70)": g["MdAPE_M(참조군 가중 K=12)"],
+                "MdAPE(기후값)": g["MdAPE_B1(기후값)"],
+                "80% 구간 실측 덮개율(참조군)": o["관찰"]["80% 구간 실측 덮개율 — M(q10~q90)"],
+                "판정": "참조군 정본(G1 통과 · 여유 +%.3f)" % g["여유 (문턱 − Δ · >0 ⇔ 통과)"]}
+    except Exception:
+        return "성적표(out1007_coldstart.json) read 실패 — docs/탐색/1007.md 로 확인하라"
+
+
+def wm_coldstart(text=None, domain=None, k=12, platform=None, target=None, **_):
+    """신작 콜드스타트 — 참조군(reference-class) 답. 모든 수가 실측 곡선 유래 · 생성 0.
+    사전등록·채점: docs/탐색/1007.md (G1 통과 — 참조군 가중 분위수가 정본)."""
+    if not text or not str(text).strip():
+        return {"오류": "text(기획·소개 텍스트)를 다오 — 콜드스타트는 텍스트가 유일한 입력이다"}
+    if domain not in S.DOMS:
+        return {"오류": "도메인은 %s 중" % S.DOMS}
+    k = max(8, min(20, int(k)))
+    idx = _cs_index()
+    cand = idx["pool"].get(domain, [])
+    if len(cand) < 5:                                    # K_MIN=5 (사전등록 §5 ⓕ)
+        return {"오류": "참조군 빈약 — 도메인 %s 의 train 풀 %d < 하한 5" % (domain, len(cand)),
+                "풀": len(cand)}
+    out = {"입력": {"도메인": domain, "K": k, "텍스트": str(text)[:120]}}
+    if platform or target:
+        out["입력"]["🔴 미사용 입력"] = ("platform/target 은 이 자료에 없어 참조군 선택에 "
+                                    "안 썼다 — 라벨로만 동봉: %s" %
+                                    {"platform": platform, "target": target})
+    # ⓐ 라이브 임베딩(학습 미러) + OOD 자
+    if not S.TEXT_DIM:
+        return {"오류": "배포 모형에 텍스트 임베딩이 없다 — wm_model_card 로 확인하라"}
+    emb = S._embed_text_live(text).astype(np.float64)
+    dmin = float(np.sqrt(((S.E_TRAIN.astype(np.float64) - emb[None]) ** 2).sum(-1)).min())
+    ratio = dmin / max(S.REF_NN, 1e-9)
+    out["텍스트 OOD 비율(1≈분포 안 · 3+ 경고 · 5+ 유사도 신뢰 금지)"] = round(ratio, 2)
+    # ⓑ 같은 도메인 train 최초 행과 코사인 → top-K
+    rows_i = [i for _, i in cand]
+    P = S.DATA.E[rows_i].astype(np.float64)
+    Pn = P / np.maximum(np.linalg.norm(P, axis=1, keepdims=True), 1e-12)
+    qn = emb / max(float(np.linalg.norm(emb)), 1e-12)
+    sims = Pn @ qn
+    order = np.argsort(-sims)[:k]
+    w = np.maximum(sims[order], 0.0)
+    cum = np.stack([idx["Or"][rows_i[j]][:90].cumsum() for j in order])   # (K,90) 실측 누적
+    days = {"7일": 6, "30일": 29, "60일": 59, "90일": 89}
+    qs = {"q10": 0.10, "q25": 0.25, "q50": 0.50, "q75": 0.75, "q90": 0.90}
+    ref_q = {dn: {qk: int(_wq(cum[:, t], w, qv)) for qk, qv in qs.items()}
+             for dn, t in days.items()}
+    daily = np.stack([idx["Or"][rows_i[j]][:90] for j in order])
+    # ⓒ 참조군 명단 — 유사도·개체명·실측 출처
+    cases = []
+    for j in order:
+        gi = rows_i[j]
+        m = S.META[gi]
+        cases.append({"개체": m["개체"], "유사도(cos)": round(float(sims[j]), 4),
+                      "기준일(최초 관측)": m["언제"],
+                      "당시 일평균": round(float(idx["Sr"][gi].mean()), 1),
+                      "실측 90일 누적": int(idx["Or"][gi][:90].sum()),
+                      "출처": "위키 일별 조회 실측(크롤 스냅숏)"})
+    # 기후값 대조(§4 — 늘 동봉)
+    ally = np.array([idx["Or"][i][:90].sum() for _, i in cand])
+    clim = {qk: int(_wq(ally, np.ones_like(ally), qv)) for qk, qv in qs.items()}
+    out.update({
+        "정본 — 참조군 가중 분위수 곡선(누적 · 실측 유래)": ref_q,
+        "일별 q50(1·7·30·60·90일째)": [round(float(_wq(daily[:, t], w, 0.5)), 1)
+                                     for t in (0, 6, 29, 59, 89)],
+        "참조군(top-%d)" % k: cases,
+        "대조 — 도메인 기후값(train %d 개체 · 무가중)" % len(cand): {"누적 90일": clim},
+        "1007 백테스트 성적": _cs_score(),
+        "🔴 낙인(조항 59)": ("데뷔급 %d/%d — 이 곡선은 «최초 관측 정렬»(중간 진입)이지 "
+                         "데뷔 곡선이 아니다. 눈금은 위키 일별 조회수(모형의 자)다 — "
+                         "플랫폼 조회수·매출이 아니다" % (idx["데뷔급"], idx["개체"])),
+        "⚠": ("참조군 답이다 — 모형 점추정이 아니라 «유사 실작들의 실측 분포»다(거절 사다리 ② 층). "
+             "유사도는 웹 언급-문구 임베딩이라 기획서 문체와 거리가 있다(OOD 비율 참조). "
+             "🔴 1007 §7 사후 관찰: 백테스트 이득의 대부분은 «같은 작품 쌍둥이» 재식별에서 왔다 — "
+             "쌍둥이 제외 시 Δ −0.048 ± 0.062(기후값과 비김). 진짜 신작이면 이 분위수를 "
+             "기후값 대조 칸과 «같은 무게»로 읽어라. " + CAVEAT)})
+    if ratio > 5.0:
+        out["🔴 극단 OOD"] = ("텍스트가 학습 분포(웹 언급 문구) 밖 — 유사도 순위 신뢰 금지. "
+                          "이 응답에서는 «기후값 대조 칸»을 정본으로 읽어라")
+    return out
+
+
 def wm_data_health(**_):
     """하네스용 데이터 재검수 — 원천 신선도 · 학습 진행 · 말뭉치 무결성."""
     import time
@@ -321,6 +451,18 @@ MANIFEST = [
      "description": "🔴 하네스 안 연구 루프 — 방법 4(전이·사례·기후값·현상유지)를 «전부» 돌리고 도메인별 검증 성적으로 채택 + 불일치 폭. 예측형 질문의 «기본» 도구로 forecast 보다 먼저 써라",
      "inputSchema": _sch({"curve": _CURVE, "domain": _DOM, "date": _DATE},
                          ["curve", "domain", "date"])},
+    {"name": "wm_coldstart", "fn": wm_coldstart,
+     "description": ("🔴 신작 «콜드스타트»(연재·출시 전 — 직전 곡선 없음)의 기본 도구 — 기획 텍스트+도메인으로 "
+                     "유사 실작 K(8~20)개를 찾아 그들의 «실측» 90일 곡선 분위수(q10~q90)·명단·기후값 대조를 준다. "
+                     "모든 수가 실측 곡선 유래 · 생성 0 · 거절 사다리 ② 층. 곡선 없는 신작에 wm_forecast 에 0 을 "
+                     "넣지 말고 이걸 써라"),
+     "inputSchema": _sch({
+         "text": {"type": "string", "description": "기획·소개 텍스트(필수) — 콜드스타트의 유일한 조건"},
+         "domain": _DOM,
+         "k": {"type": "integer", "minimum": 8, "maximum": 20},
+         "platform": {"type": "string", "description": "(선택) 플랫폼 — 자료에 없어 라벨로만 동봉"},
+         "target": {"type": "string", "description": "(선택) 타깃 규모 — 자료에 없어 라벨로만 동봉"}},
+         ["text", "domain"])},
     {"name": "wm_discourse", "fn": wm_discourse,
      "description": "여론 v0 — 수집된 유튜브 폴링 스트림에서 키워드 실측 검색(적중 영상·조회수) + LM 자연스러움. «예측» 아님",
      "inputSchema": _sch({"keyword": {"type": "string"},
