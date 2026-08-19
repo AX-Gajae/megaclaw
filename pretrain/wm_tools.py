@@ -271,14 +271,30 @@ def _cs_score():
         return {"MdAPE(참조군 가중 K=12 · val 70)": g["MdAPE_M(참조군 가중 K=12)"],
                 "MdAPE(기후값)": g["MdAPE_B1(기후값)"],
                 "80% 구간 실측 덮개율(참조군)": o["관찰"]["80% 구간 실측 덮개율 — M(q10~q90)"],
-                "판정": "참조군 정본(G1 통과 · 여유 +%.3f)" % g["여유 (문턱 − Δ · >0 ⇔ 통과)"]}
+                "판정": ("채택 보류 — 기후값 정본(티처 #142 처분 재등록 · 1007 §11): "
+                       "G1 통과(여유 +%.3f)였으나 이득 대부분이 쌍둥이 재식별"
+                       % g["여유 (문턱 − Δ · >0 ⇔ 통과)"])}
     except Exception:
         return "성적표(out1007_coldstart.json) read 실패 — docs/탐색/1007.md 로 확인하라"
 
 
+def _twin_score():
+    """쌍둥이 제외 4수 — «커밋된» out1007_twin_supp.json 에서 읽는다(조항 81 · #142 ㉯ — 하드코딩 금지)."""
+    try:
+        o = json.load(open(os.path.join(os.path.dirname(os.path.dirname(
+            os.path.abspath(__file__))), "runners", "out1007_twin_supp.json"),
+            encoding="utf-8"))
+        g = o["4수 (6자리)"]
+        return ("Δ %+.4f ± SE %.4f(비유의) · 덮개율 %.4f — out1007_twin_supp.json 실측"
+                % (g["Δ′"], g["SE′"], g["덮개율′"]))
+    except Exception:
+        return "쌍둥이 제외 수치 read 실패(out1007_twin_supp.json) — docs/탐색/1007.md §7·§11 로 확인하라"
+
+
 def wm_coldstart(text=None, domain=None, k=12, platform=None, target=None, **_):
-    """신작 콜드스타트 — 참조군(reference-class) 답. 모든 수가 실측 곡선 유래 · 생성 0.
-    사전등록·채점: docs/탐색/1007.md (G1 통과 — 참조군 가중 분위수가 정본)."""
+    """신작 콜드스타트 — 거절 대신 실측 분포 답. 모든 수가 실측 곡선 유래 · 생성 0.
+    사전등록·채점: docs/탐색/1007.md (G1 통과 · §11 티처 #142 처분 재등록 —
+    정본 = 도메인 기후값 분위수 · 참조군 곡선은 참고 칸)."""
     if not text or not str(text).strip():
         return {"오류": "text(기획·소개 텍스트)를 다오 — 콜드스타트는 텍스트가 유일한 입력이다"}
     if domain not in S.DOMS:
@@ -325,27 +341,32 @@ def wm_coldstart(text=None, domain=None, k=12, platform=None, target=None, **_):
                       "당시 일평균": round(float(idx["Sr"][gi].mean()), 1),
                       "실측 90일 누적": int(idx["Or"][gi][:90].sum()),
                       "출처": "위키 일별 조회 실측(크롤 스냅숏)"})
-    # 기후값 대조(§4 — 늘 동봉)
-    ally = np.array([idx["Or"][i][:90].sum() for _, i in cand])
-    clim = {qk: int(_wq(ally, np.ones_like(ally), qv)) for qk, qv in qs.items()}
+    # 기후값 «정본»(§4 둘째 가지 · 티처 #142 처분 재등록 — 1007 §11) — 참조군과 같은 누적 격자
+    cum_all = np.stack([idx["Or"][i][:90].cumsum() for _, i in cand])
+    ones = np.ones(len(cand))
+    clim_q = {dn: {qk: int(_wq(cum_all[:, t], ones, qv)) for qk, qv in qs.items()}
+              for dn, t in days.items()}
     out.update({
-        "정본 — 참조군 가중 분위수 곡선(누적 · 실측 유래)": ref_q,
-        "일별 q50(1·7·30·60·90일째)": [round(float(_wq(daily[:, t], w, 0.5)), 1)
-                                     for t in (0, 6, 29, 59, 89)],
-        "참조군(top-%d)" % k: cases,
-        "대조 — 도메인 기후값(train %d 개체 · 무가중)" % len(cand): {"누적 90일": clim},
+        "정본 — 도메인 기후값 분위수(train %d 개체 · 무가중 · 누적 · 실측 유래)" % len(cand): clim_q,
+        "참고 — 참조군 가중 분위수 곡선(누적 · ⚠ 쌍둥이 재식별 — 1007 §7·§11)": ref_q,
+        "참고 — 일별 q50(1·7·30·60·90일째 · 참조군 가중)": [round(float(_wq(daily[:, t], w, 0.5)), 1)
+                                                for t in (0, 6, 29, 59, 89)],
+        "참조군(top-%d) — 유사 사례 명단(참고)" % k: cases,
         "1007 백테스트 성적": _cs_score(),
         "🔴 낙인(조항 59)": ("데뷔급 %d/%d — 이 곡선은 «최초 관측 정렬»(중간 진입)이지 "
                          "데뷔 곡선이 아니다. 눈금은 위키 일별 조회수(모형의 자)다 — "
                          "플랫폼 조회수·매출이 아니다" % (idx["데뷔급"], idx["개체"])),
         "⚠": ("참조군 답이다 — 모형 점추정이 아니라 «유사 실작들의 실측 분포»다(거절 사다리 ② 층). "
              "유사도는 웹 언급-문구 임베딩이라 기획서 문체와 거리가 있다(OOD 비율 참조). "
-             "🔴 1007 §7 사후 관찰: 백테스트 이득의 대부분은 «같은 작품 쌍둥이» 재식별에서 왔다 — "
-             "쌍둥이 제외 시 Δ −0.048 ± 0.062(기후값과 비김). 진짜 신작이면 이 분위수를 "
-             "기후값 대조 칸과 «같은 무게»로 읽어라. " + CAVEAT)})
+             "🔴 정본은 «기후값 칸»이다(티처 #142 처분 재등록 — «채택 보류(기후값 정본)» · 1007 §11): "
+             "G1 이득의 대부분은 «같은 작품 쌍둥이» 재식별이고, 쌍둥이 제외 시 "
+             + _twin_score() + " — 진짜 신작(정의상 쌍둥이 없음)의 추정은 기후값과 비긴다"
+             "(§4 사전 고정 그대로). 참조군 칸은 순위 없는 유사 사례 «참고»로 읽어라. "
+             "쌍둥이 필터 백테스트(#142 ⑥-1)가 «작품 분리»에서 참조군 우위를 다시 세우면 "
+             "재재등록한다. " + CAVEAT)})
     if ratio > 5.0:
         out["🔴 극단 OOD"] = ("텍스트가 학습 분포(웹 언급 문구) 밖 — 유사도 순위 신뢰 금지. "
-                          "이 응답에서는 «기후값 대조 칸»을 정본으로 읽어라")
+                          "참고(참조군) 칸은 명단으로도 걸러 읽고 «정본(기후값) 칸»만 수치로 읽어라")
     return out
 
 
@@ -453,9 +474,9 @@ MANIFEST = [
                          ["curve", "domain", "date"])},
     {"name": "wm_coldstart", "fn": wm_coldstart,
      "description": ("🔴 신작 «콜드스타트»(연재·출시 전 — 직전 곡선 없음)의 기본 도구 — 기획 텍스트+도메인으로 "
-                     "유사 실작 K(8~20)개를 찾아 그들의 «실측» 90일 곡선 분위수(q10~q90)·명단·기후값 대조를 준다. "
-                     "모든 수가 실측 곡선 유래 · 생성 0 · 거절 사다리 ② 층. 곡선 없는 신작에 wm_forecast 에 0 을 "
-                     "넣지 말고 이걸 써라"),
+                     "도메인 기후값 분위수(정본 — 1007 §11 티처 #142 처분)와 유사 실작 K(8~20)개의 «실측» 90일 "
+                     "곡선 분위수·명단(참고 — 쌍둥이 ⚠)을 준다. 모든 수가 실측 곡선 유래 · 생성 0 · 거절 사다리 "
+                     "② 층. 곡선 없는 신작에 wm_forecast 에 0 을 넣지 말고 이걸 써라"),
      "inputSchema": _sch({
          "text": {"type": "string", "description": "기획·소개 텍스트(필수) — 콜드스타트의 유일한 조건"},
          "domain": _DOM,
