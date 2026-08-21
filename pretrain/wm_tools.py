@@ -146,12 +146,69 @@ def wm_compare(base=None, variants=None, **_):
             "⚠": CAVEAT}
 
 
-def wm_risk(curve=None, domain=None, date=None, text=None, **_):
-    r = S.q_report(curve, domain, str(date), text=text)
+# ── 개체 해석(entity → 실측 상태) — 조용한 폴백 금지 ──────────────────
+def _entity_miss(name, pool, extra=None):
+    """정확 일치 실패의 «명시 오류» — 오답을 정답처럼 주지 않고 비슷한 후보를 준다."""
+    import difflib
+    uniq = sorted(set(pool))
+    q = str(name)
+    cand = [k for k in uniq if q and q in k]
+    cand += [k for k in difflib.get_close_matches(q, uniq, n=8, cutoff=0.5)
+             if k not in cand]
+    if not cand:                                         # 빈 후보도 폴백 못지않게 불친절 — 컷오프 완화 재시도
+        cand = difflib.get_close_matches(q, uniq, n=8, cutoff=0.3)
+    cand = cand[:8]
+    out = {"오류": "개체 없음 — 「%s」와 정확히 일치하는 개체 ID 가 없다(조용한 폴백 금지)" % q,
+           "비슷한 후보 %d개" % len(cand): cand}
+    if extra:
+        out.update(extra)
+    return out
+
+
+def _entity_state(name, domain=None):
+    """개체 ID → ((실측 90일 곡선·도메인·기준일·라벨), None) 또는 (None, 명시 오류).
+    같은 개체의 관측 행이 여럿이면 «최신 관측»을 쓴다 — 「지금 상태」 질문이므로."""
+    q = str(name)
+    rows = [i for i, m in enumerate(S.META) if m["개체"] == q]
+    if not rows:
+        return None, _entity_miss(q, (m["개체"] for m in S.META))
+    rows.sort(key=lambda i: S.META[i]["언제"])
+    gi = rows[-1]
+    m = S.META[gi]
+    vals = np.expm1(S.DATA.S[gi].astype(np.float64)).tolist()
+    used = {"개체": m["개체"], "도메인": m["도메인"], "기준일(최신 관측)": m["언제"],
+            "관측 행": len(rows)}
+    if domain is not None and domain != m["도메인"]:
+        used["⚠ 도메인 불일치"] = ("호출 domain=%s ≠ 개체 도메인 %s — 개체 도메인으로 계산"
+                               % (domain, m["도메인"]))
+    return (vals, m["도메인"], m["언제"], used), None
+
+
+def _curve_str(vals):
+    return " ".join("%.10g" % v for v in vals)
+
+
+def wm_risk(curve=None, domain=None, date=None, text=None, entity=None, **_):
+    used = None
+    if entity is not None:
+        st, err = _entity_state(entity, domain)
+        if err:
+            return err
+        vals, domain, date, used = st
+    else:
+        if curve is None:
+            return {"오류": "curve(직전 90일)나 entity(개체 ID) 중 하나는 필수다"}
+        if date is None:
+            return {"오류": "date(YYYY-MM-DD)가 없다 — entity 로 물으면 관측 기준일을 자동으로 쓴다"}
+        vals = _parse_curve(curve)
+    r = S.q_report(_curve_str(vals), domain, str(date), text=text)
     if "오류" in r:
         return r
-    return {"입력": r["입력"], "예측(누적 90일)": r["예측(누적 90일)"],
-            "리스크": r["③ 언제 — 리스크 창"], "⚠": CAVEAT}
+    out = {"입력": r["입력"], "예측(누적 90일)": r["예측(누적 90일)"],
+           "리스크": r["③ 언제 — 리스크 창"], "⚠": CAVEAT}
+    if used:
+        out["개체 입력(실측)"] = used
+    return out
 
 
 def wm_similar(curve=None, domain=None, date=None, k=3, text=None, **_):
@@ -164,8 +221,29 @@ def wm_similar(curve=None, domain=None, date=None, k=3, text=None, **_):
             "⚠": CAVEAT}
 
 
-def wm_entity(i=0, **_):
-    return S.q_entity(int(i))
+def wm_entity(i=None, name=None, **_):
+    if name is not None:
+        q = str(name)
+        va = S.DATA.va.tolist()
+        hits = [k for k, gi in enumerate(va) if S.META[gi]["개체"] == q]
+        if not hits:
+            if any(m["개체"] == q for m in S.META):
+                return {"오류": "「%s」는 자료에 있으나 검증(val) 분할 밖이다(조용한 폴백 금지)" % q,
+                        "대신": "wm_council/wm_risk 의 entity 인자로 물어라 — 실측 곡선 경로"}
+            return _entity_miss(q, (S.META[gi]["개체"] for gi in va))
+        hits.sort(key=lambda k: S.META[va[k]]["언제"])
+        out = S.q_entity(hits[0])
+        if len(hits) > 1:
+            out["동일 개체 val 행"] = {"수": len(hits), "선택": "최초 관측(언제 순)",
+                                  "i 후보": hits[:12]}
+        return out
+    if i is None:
+        return {"오류": "i(검증 인덱스)나 name(개체 ID) 중 하나는 필수다"}
+    i = int(i)
+    n = len(S.DATA.va)
+    if not 0 <= i < n:
+        return {"오류": "i 범위 밖 — 검증 인덱스는 0~%d (조용한 mod 폴백 금지)" % (n - 1)}
+    return S.q_entity(i)
 
 
 def wm_surprisal(texts=None, **_):
@@ -181,10 +259,25 @@ def wm_surprisal(texts=None, **_):
             "⚠": "LM 스텝 %s — 완주 전이면 거친 자다. 시대별 모델이 서면 «언제부터 자연스러워졌나»가 된다" % S.LM_STEP}
 
 
-def wm_council(curve=None, domain=None, date=None, **_):
-    """하네스 «안» 연구 루프 — 방법 4 비교 → 검증 성적으로 채택."""
+def wm_council(curve=None, domain=None, date=None, entity=None, **_):
+    """하네스 «안» 연구 루프 — 방법 4 비교 → 검증 성적으로 채택. entity 를 주면 실측 곡선으로."""
     from pretrain import council
-    return council.ask(curve, domain, str(date))
+    used = None
+    if entity is not None:
+        st, err = _entity_state(entity, domain)
+        if err:
+            return err
+        vals, domain, date, used = st
+    else:
+        if curve is None:
+            return {"오류": "curve(직전 90일)나 entity(개체 ID) 중 하나는 필수다"}
+        if date is None:
+            return {"오류": "date(YYYY-MM-DD)가 없다 — entity 로 물으면 관측 기준일을 자동으로 쓴다"}
+        vals = _parse_curve(curve)
+    out = council.ask(_curve_str(vals), domain, str(date))
+    if used and isinstance(out, dict):
+        out["개체 입력(실측)"] = used
+    return out
 
 
 def wm_discourse(keyword=None, max_files=48, **_):
@@ -320,9 +413,16 @@ def wm_coldstart(text=None, domain=None, k=12, platform=None, target=None, **_):
     # ⓑ 같은 도메인 train 최초 행과 코사인 → top-K
     rows_i = [i for _, i in cand]
     P = S.DATA.E[rows_i].astype(np.float64)
-    Pn = P / np.maximum(np.linalg.norm(P, axis=1, keepdims=True), 1e-12)
-    qn = emb / max(float(np.linalg.norm(emb)), 1e-12)
-    sims = Pn @ qn
+    # 🔴 0-노름 가드 — 노름 0 행은 나눗셈 없이 유사도 0 · 쿼리가 0-벡터/비유한이면 명시 오류
+    pn = np.linalg.norm(P, axis=1, keepdims=True)
+    Pn = np.divide(P, pn, out=np.zeros_like(P), where=pn > 0)
+    qnorm = float(np.linalg.norm(emb))
+    if not (np.isfinite(qnorm) and qnorm > 0.0):
+        return {"오류": "텍스트 임베딩이 0-노름/비유한 — 유사도 계산 불가(라이브 임베딩 점검)"}
+    qn = emb / qnorm
+    # matmul(@) 대신 einsum — macOS arm64 numpy 2.0(Accelerate gemv)이 «유한 입력»에도
+    # divide/overflow/invalid FPE 허위 경고 3종을 낸다(실측 · einsum 값차 ≤1.5e-15 · 경고 0)
+    sims = np.einsum("ij,j->i", Pn, qn)
     order = np.argsort(-sims)[:k]
     w = np.maximum(sims[order], 0.0)
     cum = np.stack([idx["Or"][rows_i[j]][:90].cumsum() for j in order])   # (K,90) 실측 누적
@@ -436,6 +536,7 @@ _CURVE = {"description": "직전 90일 일별 값 — 숫자 하나(평탄) · �
 _DOM = {"type": "string", "description": "도메인 (wm_model_card 의 목록이 전부)"}
 _DATE = {"type": "string", "description": "기준일 YYYY-MM-DD"}
 _TEXT = {"type": "string", "description": "(선택) 기획서·소개 텍스트 — 넣으면 텍스트 «조건» 예측(라이브 임베딩)"}
+_ENTITY = {"type": "string", "description": "개체 ID(정확 일치) — 주면 그 개체의 «최신 관측» 실측 90일 곡선·도메인·기준일로 계산(curve·date 불필요). 못 찾으면 비슷한 후보를 담은 명시 오류"}
 
 MANIFEST = [
     {"name": "wm_model_card", "fn": wm_model_card,
@@ -457,21 +558,24 @@ MANIFEST = [
              "trend_boost_last30_pct": {"type": "number"},
              "domain": _DOM}, ["name"])}}, ["base", "variants"])},
     {"name": "wm_risk", "fn": wm_risk,
-     "description": "「언제 흔들리나」— 하방(q05)이 열리는 첫 날 · 불확실성 최대 주(재판단 시점)",
-     "inputSchema": _sch({"curve": _CURVE, "domain": _DOM, "date": _DATE},
-                         ["curve", "domain", "date"])},
+     "description": "「언제 흔들리나」— 하방(q05)이 열리는 첫 날 · 불확실성 최대 주(재판단 시점). curve·domain·date 셋 «또는» entity 하나",
+     "inputSchema": _sch({"curve": _CURVE, "domain": _DOM, "date": _DATE,
+                          "entity": _ENTITY}, [])},
     {"name": "wm_similar", "fn": wm_similar,
      "description": "비슷한 상태였던 «실제» 과거 사례와 그 결과(성공·실패 모두) — 근거·진단 재료",
      "inputSchema": _sch({"curve": _CURVE, "domain": _DOM, "date": _DATE,
                           "k": {"type": "integer", "minimum": 1, "maximum": 10}},
                          ["curve", "domain", "date"])},
     {"name": "wm_entity", "fn": wm_entity,
-     "description": "검증 개체(모형이 학습에서 못 본 실제 IP) 예측 대 실제 — 신뢰도 눈감정용",
-     "inputSchema": _sch({"i": {"type": "integer", "minimum": 0}}, ["i"])},
+     "description": "검증 개체(모형이 학습에서 못 본 실제 IP) 예측 대 실제 — 신뢰도 눈감정용. i(검증 인덱스) 또는 name(개체 ID 정확 일치 — 실패 시 후보 제시 오류 · 조용한 폴백 없음)",
+     "inputSchema": _sch({"i": {"type": "integer", "minimum": 0},
+                          "name": {"type": "string",
+                                   "description": "개체 ID(정확 일치) — 못 찾으면 후보 제시 오류"}},
+                         [])},
     {"name": "wm_council", "fn": wm_council,
-     "description": "🔴 하네스 안 연구 루프 — 방법 4(전이·사례·기후값·현상유지)를 «전부» 돌리고 도메인별 검증 성적으로 채택 + 불일치 폭. 예측형 질문의 «기본» 도구로 forecast 보다 먼저 써라",
-     "inputSchema": _sch({"curve": _CURVE, "domain": _DOM, "date": _DATE},
-                         ["curve", "domain", "date"])},
+     "description": "🔴 하네스 안 연구 루프 — 방법 4(전이·사례·기후값·현상유지)를 «전부» 돌리고 도메인별 검증 성적으로 채택 + 불일치 폭. 예측형 질문의 «기본» 도구로 forecast 보다 먼저 써라. curve·domain·date 셋 «또는» entity 하나",
+     "inputSchema": _sch({"curve": _CURVE, "domain": _DOM, "date": _DATE,
+                          "entity": _ENTITY}, [])},
     {"name": "wm_coldstart", "fn": wm_coldstart,
      "description": ("🔴 신작 «콜드스타트»(연재·출시 전 — 직전 곡선 없음)의 기본 도구 — 기획 텍스트+도메인으로 "
                      "도메인 기후값 분위수(정본 — 1007 §11 티처 #142 처분)와 유사 실작 K(8~20)개의 «실측» 90일 "
