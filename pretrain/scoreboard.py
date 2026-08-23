@@ -50,6 +50,22 @@ v2.4 가 v2.3 에서 더한 것 (사이클 1008 자 수리 — 웹툰 val 확충
     개체 클러스터 SE seed [1008,0]/[1008,1] · n행/n개체) · 신자 눈금의 판 넷 재채점
     (①②④ 재계산 · ③ 은 구자 인용 + 「웹툰 칸은 구자 눈금」 낙인 — train 불변이라 LODO 무접촉) ·
     성과 주장 금지 낙인. 기존 절(①~④·출처 사슬·평가 항등)은 구자 행에서만 — 한 글자도 안 변한다.
+
+v3.0 이 v2.4 위에 세운 것 (사이클 1014 · 루프 v6.0 «제6장 — 결정기 판» · 사용자 지시
+`docs/아키텍처_결정기.md` b32e7eb5f §L5 · 사전등록 docs/탐색/1014.md):
+  · 기본 호출 = **결정기 판**: 자 A 「구간 점수(핀볼)」 판정 정본 신설 — 배포 정본(앙상블 +
+    등각)의 (n,91,5) 분위수 전 셀 핀볼 평균(`transition.pinball` 산식 항등 — --selftest ㉠) ·
+    개체 클러스터 붓스트랩 SE(B=10,000 · seed BOOT_SEED+4) · 행 SE(seed BOOT_SEED+3) ·
+    도메인별 핀볼(관찰) · MDE 스탬프(부칙 6 ㉮ — J_핀볼 미측정 동안 2×SE «하한» 낙인)
+  · ④ 덮개율 = 자 A 절의 «보조 관찰»로 강등(v6.0 ⓑ — 1004 실물: δ 상수 하나로 0.7696→0.9173 ·
+    폭 +79% 가 판에 없어 청구서 반쪽) · ①② = [관찰] 강등 낙인(v6.0 ⓒ — #144: ① 2SE 검출한계
+    상대 31.7% > 시도 최대 9.9% · ② 최빈 P=0.516) — 🔴 값·SE·분포 게재는 전부 존속(낙인만) ·
+    ③ 존속 + 「±1 이동의 SD 환산」(이항 근사 · 부칙 6 ㉲ 봉합) 병기
+  · 🔴 **`--v2` 플래그 = 구판 v2.4 파운데이션 판과 값 항등**(자기 sha·시각 칸 제외 전 칸 —
+    조항 60: 교체 사이클은 구판·신판 판 JSON 을 «둘 다» 산출·커밋한다) — v2 경로의 계산·자구는
+    한 글자도 안 변했고, v3 은 그 산출물의 «지위 재배치 + 자 A 추가»다(값 재계산 없음)
+  · `--selftest`: ㉠ 핀볼 행식 = transition.pinball 항등 ㉡ 「벌리면 커진다」 속성(보정된
+    구간을 벌리면 반드시 커진다) ㉢ G0 항등 게이트 방향 탐침(v5.3-2 · 「양쪽」) ㉣ MDE 산식
 """
 import os as _os, sys as _sys
 _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
@@ -234,6 +250,11 @@ def _direct_eval(valext=None):
     ape_tr = np.abs(cum_q50 - cum_true) / np.maximum(cum_true, 1.0)
     ape_pers = np.abs(cum_pers - cum_true) / np.maximum(cum_true, 1.0)
     cover_ent = ((R[va] >= pred[..., 0]) & (R[va] <= pred[..., 4])).mean(axis=1)
+    # v3 — 자 A 구간 점수(핀볼): 행별 = (91×5) 셀 평균. 전체 평균 = transition.pinball 값과
+    # 항등(등무게 · --selftest ㉠) · pred 는 등각 δ 적용 «후» = 배포 정본의 분위수 그대로.
+    _qs = np.array([0.05, 0.25, 0.50, 0.75, 0.95], dtype=np.float64)
+    _e = R[va][:, :, None].astype(np.float64) - pred.astype(np.float64)
+    pinball_row = np.maximum(_qs * _e, (_qs - 1.0) * _e).mean(axis=(1, 2))
     # v2.3 — ④ 클러스터 SE 용 개체 이름 (행 = 개체창 · 유일 개체가 클러스터)
     meta_path = os.path.join(ART, "triples", "meta.jsonl")
     va_names = None
@@ -242,6 +263,7 @@ def _direct_eval(valext=None):
         va_names = [_meta[int(i)]["개체"] for i in va]
     return {"domains": domains, "dom_va": dom_id[va], "ape_tr": ape_tr,
             "ape_pers": ape_pers, "cover_ent": cover_ent, "va_names": va_names,
+            "pinball_row": pinball_row,
             "ext": ext,
             "보정(v2.3)": conf_note,
             "정본": ("앙상블 manifest(구성원 %d · 분위수 텐서 산술 평균)" % len(cks)
@@ -378,7 +400,175 @@ def _ext_section(ev, lb, 판):
                "🔴 다음 사이클 웹툰 표적 금지(#142 ⑥-2 ㉰ · 온보딩.md §5-4 미러)"]}
 
 
-def build(valext=None):
+def _to_v3(판, ev):
+    """v6.0 제6장 — 결정기 판 재구성 (사전등록 docs/탐색/1014.md).
+
+    v2.4 산출물의 «지위 재배치 + 자 A 추가»다 — ①②③④ 딕셔너리·값·SE 는 v2.4 계산 결과
+    «그대로»(값 재계산 0). 조항 66: 출처 사슬 불일치·평가 실패로 v2 가 값을 안 적었으면
+    (④ 칸이 문자열) 자 A 도 값을 안 적는다 — 같은 판정을 그대로 문다."""
+    import numpy as np
+    from pretrain.mde_guard import mde_of
+    out = {"판": "결정기 판 v3.0 (루프 v6.0 제6장 · 사용자 지시 b32e7eb5f §L5 · "
+              "자 A 핀볼 판정 정본 · ④ 보조 관찰 · ①② [관찰] 강등 · ③ SD 병기 · "
+              "자 B/C/D 자리 · MDE 스탬프 — 계산 계보 v2.4 그대로 · --v2 로 구판 재현)"}
+    for k in ("잰 시각", "채점기 자신(조항 66 — 자기 출처 · v3.2)",
+              "도메인 명부(상수 · 조항 59)", "원천", "실물", "붓스트랩",
+              "출처 사슬 (조항 66)"):
+        if k in 판:
+            out[k] = 판[k]
+    if isinstance(out.get("붓스트랩"), dict):                 # seed 대장 — v3 사본에서만 확장
+        bs = dict(out["붓스트랩"])
+        seeds = dict(bs.get("seed 전부(실사용 · 티처 #137 ⑤㉯)", {}))
+        seeds["자A 행 재표집(BOOT_SEED+3 · v3)"] = BOOT_SEED + 3
+        seeds["자A 클러스터(개체 이름) 재표집(BOOT_SEED+4 · v3)"] = BOOT_SEED + 4
+        bs["seed 전부(실사용 · 티처 #137 ⑤㉯)"] = seeds
+        out["붓스트랩"] = bs
+    구4 = 판.get("④90% 덮개율")
+    자A키 = "자 A — 구간 점수(핀볼 · 판정 정본 · v6.0 ⓐ)"
+    if (isinstance(구4, dict) and isinstance(ev, dict) and "오류" not in ev
+            and ev.get("pinball_row") is not None):
+        pb = np.asarray(ev["pinball_row"], dtype=np.float64)
+        점 = round(float(pb.mean()), 5)
+        rng = np.random.default_rng(BOOT_SEED + 3)
+        idx = rng.integers(0, len(pb), size=(B_BOOT, len(pb)))
+        행SE = round(float(pb[idx].mean(axis=1).std(ddof=1)), 5)
+        cl_se, n_uniq = "미계산(meta.jsonl 없음)", None
+        if ev.get("va_names"):
+            names = ev["va_names"]
+            uniq = sorted(set(names))
+            n_uniq = len(uniq)
+            lut = {n: i for i, n in enumerate(uniq)}
+            ids = np.asarray([lut[n] for n in names])
+            groups = [np.where(ids == i)[0] for i in range(n_uniq)]
+            rng2 = np.random.default_rng(BOOT_SEED + 4)
+            reps = np.empty(B_BOOT)
+            for bi in range(B_BOOT):
+                gs = rng2.integers(0, n_uniq, size=n_uniq)
+                reps[bi] = pb[np.concatenate([groups[g] for g in gs])].mean()
+            cl_se = round(float(reps.std(ddof=1)), 5)
+        doms = ev["domains"]
+        dom_pb = {}
+        for d in ROSTER:
+            if d not in doms:
+                dom_pb[d] = "못 읽었다"
+                continue
+            m = ev["dom_va"] == doms.index(d)
+            dom_pb[d] = ({"핀볼 평균": round(float(pb[m].mean()), 5), "n행": int(m.sum())}
+                         if m.any() else "못 읽었다")
+        if isinstance(cl_se, float):
+            mde = {"산식": "2×max(SE_판정눈금, J) — 부칙 6 ㉮",
+                   "SE_판정눈금(개체 클러스터)": cl_se,
+                   "J(핀볼 재학습 지터)": "🔴 미측정 — 0 대입(하한) · 재학습 지터 사이클 몫",
+                   "MDE(하한 — J 미측정 낙인)": round(mde_of(cl_se, 0.0), 5),
+                   "출처": "이 판 자신 — 다음 [판정] 등록이 이 판 JSON sha 로 인용(부칙 6 ㉰)"}
+        else:
+            mde = "미계산 — 클러스터 SE 없음: %s" % cl_se
+        out[자A키] = {
+            "핀볼 평균(log 잔차 눈금 · 5분위×91지평 전 셀)": 점,
+            "부호": "낮을수록 좋다(악화=+) — 벌리면 커진다(1004 실물: δ 상수로 덮개율 "
+                  "0.7696→0.9173 · 폭 +79% 가 판에 없어 청구서 반쪽 · v6.0 ⓐ)",
+            "n(행 · 개체창)": int(len(pb)), "유일 개체": n_uniq,
+            "행 SE(참고 · seed BOOT_SEED+3)": 행SE,
+            "개체 이름 클러스터 SE(판정 눈금 · seed BOOT_SEED+4)": cl_se,
+            "보정": ev.get("보정(v2.3)"), "정본": ev.get("정본"),
+            "도메인별(관찰 — 표적 선정 참고 · 판정은 헤드라인만)": dom_pb,
+            "MDE 스탬프(부칙 6 · v6.0 ⓕ)": mde,
+            "보조 관찰 — ④ 90% 덮개율(v6.0 ⓑ 강등 · 단독 판정 금지)": 구4}
+    else:
+        사유 = 구4 if isinstance(구4, str) else (
+            "직접 평가 실패: %s" % (ev.get("오류") if isinstance(ev, dict) else ev))
+        out[자A키] = "값 안 적음 — %s" % 사유
+        out["보조 관찰 — ④ 90% 덮개율(v6.0 ⓑ)"] = 구4
+    관 = {"절 낙인": "v6.0 ⓒ·ⓓ — ①② 는 [관찰] 강등(판정 게이트 금지 · 값·SE·분포 게재 존속) · "
+               "③ 은 강등 아님(게재 위치 이동 · SD 병기 — 판정 사용은 LODO 재실측 등록 몫)"}
+    a1 = 판.get("①최약 도메인")
+    if isinstance(a1, dict):
+        a1 = dict({"낙인(v6.0 ⓒ)": "🔴 [관찰] 강등 — 2SE 검출한계 상대 31.7% > 시도 최대 "
+                              "9.9%(#144) · 상태 표시기로만"}, **a1)
+    관["①최약 도메인"] = a1
+    a2 = 판.get("②pers에 지는 도메인")
+    if isinstance(a2, dict):
+        a2 = dict({"낙인(v6.0 ⓒ)": "🔴 [관찰] 강등 — 정수 자 · 최빈 P=0.516(#144) · "
+                              "상태 표시기로만"}, **a2)
+    관["②pers에 지는 도메인"] = a2
+    a3 = 판.get("③LODO 제로샷")
+    if isinstance(a3, dict):
+        a3 = dict(a3)
+        sd키 = "±1 이동의 SD 환산(이항 근사 · 부칙 6 ㉲ · v6.0 ⓓ)"
+        try:
+            k = int(str(a3.get("승수")).split("/")[0])
+            mi = a3.get("못 읽었다")
+            n_meas = len(ROSTER) - (len(mi) if isinstance(mi, list) else 0)
+            p = k / float(n_meas)
+            if 0.0 < p < 1.0:
+                sd = (n_meas * p * (1.0 - p)) ** 0.5
+                a3[sd키] = {"SD(이항 · n=%d · p̂=%.2f)" % (n_meas, p): round(sd, 3),
+                          "±1 이동": "%.2f SD" % (1.0 / sd)}
+            else:
+                a3[sd키] = "퇴화(p̂=%g — 이항 SD 0) — 미판정" % p
+        except (ValueError, ZeroDivisionError, TypeError):
+            a3[sd키] = "못 계산 — 승수 칸을 못 읽었다"
+    관["③LODO 제로샷(존속 · SD 병기 · v6.0 ⓓ)"] = a3
+    out["관찰 절(v6.0 ⓒ·ⓓ — 값 게재 존속 · 낙인만)"] = 관
+    out["자 B·C·D — 자리 등록(v6.0 ⓔ · 정의는 루프.md 제6장 6-나)"] = {
+        "자 B 후회": "미측정 — U(사후 최선)−U(취한 것) · 전제 L4 액션 채널 + L2 원장 정본화",
+        "자 C 정책 가치": "미측정 — E[U|추천]−E[U|관행] · 오프폴리시(편향·겹침 신고 병기 의무) · "
+                    "전제 L3 · U 정본 = 일평균 방문자(제6장 6-가 · 측정 전 고정)",
+        "자 D 경보 적시성": "미측정 — 리드타임 정밀/재현(MAPE 아님) · 전제 L1 담론 장"}
+    if "눈금 교체(조항 60 — 웹툰 val 확충 1008)" in 판:
+        out["눈금 교체(조항 60 — 웹툰 val 확충 1008)"] = 판["눈금 교체(조항 60 — 웹툰 val 확충 1008)"]
+    return out
+
+
+def _selftest():
+    """v3 자기시험 — 통과 시 0, 실패 시 1 반환. 실측 자료 무접촉(합성만)."""
+    import numpy as np
+    import torch
+    from pretrain.transition import pinball
+    from pretrain.mde_guard import mde_of
+    rng = np.random.default_rng(1014)
+    n = 200
+    tgt = rng.normal(size=(n, 91)).astype(np.float32)
+    # ㉠ 핀볼 행식 항등 — 임의 (모형형 단조) 분위수에서 행평균의 평균 = transition.pinball
+    q50 = rng.normal(size=(n, 91, 1)).astype(np.float32)
+    g = (np.abs(rng.normal(size=(n, 91, 4))) + 1e-3).astype(np.float32)
+    pred = np.concatenate([q50 - g[..., :1] - g[..., 1:2], q50 - g[..., :1], q50,
+                           q50 + g[..., 2:3], q50 + g[..., 2:3] + g[..., 3:4]], axis=-1)
+    qs = np.array([0.05, 0.25, 0.50, 0.75, 0.95], dtype=np.float64)
+    e = tgt[:, :, None].astype(np.float64) - pred.astype(np.float64)
+    row = np.maximum(qs * e, (qs - 1.0) * e).mean(axis=(1, 2))
+    mine = float(row.mean())
+    ref = float(pinball(torch.from_numpy(pred), torch.from_numpy(tgt)))
+    ok1 = abs(mine - ref) < 1e-6
+    # ㉡ 「벌리면 커진다」 — 참 분위수에 앉힌(보정된) 구간을 벌리면 핀볼은 반드시 커진다
+    tq = np.array([-1.6449, -0.6745, 0.0, 0.6745, 1.6449], dtype=np.float64)
+    cal = np.broadcast_to(tq, (n, 91, 5)).copy()
+    e0 = tgt[:, :, None].astype(np.float64) - cal
+    base = float(np.maximum(qs * e0, (qs - 1.0) * e0).mean())
+    wide = cal.copy()
+    wide[..., 0] -= 0.5
+    wide[..., 4] += 0.5
+    e1 = tgt[:, :, None].astype(np.float64) - wide
+    wid = float(np.maximum(qs * e1, (qs - 1.0) * e1).mean())
+    ok2 = wid > base
+    # ㉢ 방향 탐침 (v5.3-2 · G0 값 항등 게이트 · 「양쪽」) — 합성 t>0
+    t = 0.01
+    gate = lambda d: abs(d) <= t                              # noqa: E731
+    ok3 = (not gate(+2 * t)) and (not gate(-2 * t)) and gate(0.0)
+    # ㉣ MDE 산식 (부칙 6 ㉮)
+    ok4 = abs(mde_of(0.02, 0.0) - 0.04) < 1e-12 and abs(mde_of(0.02, 0.05) - 0.10) < 1e-12
+    rows = [("㉠ 핀볼 행식 = transition.pinball (1e-6)", ok1, "내식 %.8f · 정본 %.8f" % (mine, ref)),
+            ("㉡ 벌리면 커진다(보정 구간 +0.5 벌림)", ok2, "기저 %.6f → 벌림 %.6f" % (base, wid)),
+            ("㉢ 방향 탐침 G0(양쪽 · ±2t 거짓 · 0 참)", ok3, "t=%.2g" % t),
+            ("㉣ mde_of 산식", ok4, "2×max(SE,J)")]
+    allok = all(r[1] for r in rows)
+    print(json.dumps({"자기시험(v3)": {r[0]: {"판정": "통과" if r[1] else "🔴 실패", "값": r[2]}
+                                  for r in rows},
+                      "전체": "통과" if allok else "🔴 실패"}, ensure_ascii=False, indent=1))
+    return 0 if allok else 1
+
+
+def build(valext=None, v3=False):
     _self = os.path.abspath(__file__)
     ens_mode = os.path.exists(MANIFEST)                   # v2.2 — 배포 정본 판별
     판 = {"판": "파운데이션 판 v2.3 (루프 v5.0 제5장 + 5-가 보강 v5.1 · 티처 #136 · "
@@ -474,6 +664,8 @@ def build(valext=None):
     if 불일치:
         for k in ("①최약 도메인", "②pers에 지는 도메인", "③LODO 제로샷", "④90% 덮개율"):
             판[k] = "🔴 불일치 — 값 안 적음 (출처 사슬을 먼저 고쳐라)"
+        if v3:
+            판 = _to_v3(판, ev)
         판["끝 시각(v3.2)"] = time.strftime("%Y-%m-%dT%H:%M:%S")
         return 판
 
@@ -619,6 +811,8 @@ def build(valext=None):
     # ── v2.4 — 눈금 교체 병기 절(«추가»만 · --valext 없으면 v2.3 과 완전 동일) ──
     if valext and isinstance(ev, dict) and "오류" not in ev and ev.get("ext"):
         판["눈금 교체(조항 60 — 웹툰 val 확충 1008)"] = _ext_section(ev, lb, 판)
+    if v3:
+        판 = _to_v3(판, ev)
     판["끝 시각(v3.2)"] = time.strftime("%Y-%m-%dT%H:%M:%S")
     return 판
 
@@ -628,8 +822,14 @@ def main():
     ap.add_argument("--out", default=None, help="판 JSON 저장 경로 (사이클 산출물로 커밋할 것)")
     ap.add_argument("--valext", default=None,
                     help="v2.4 — 웹툰 val 확장 npz(1008 자 수리 · 있으면 눈금 교체 절을 «추가»)")
+    ap.add_argument("--v2", action="store_true",
+                    help="구판 v2.4 파운데이션 판을 그대로 재현(값 항등 — 조항 60 전후 병기용)")
+    ap.add_argument("--selftest", action="store_true",
+                    help="v3 자기시험(합성만 · 실측 무접촉) — ㉠항등 ㉡벌림 ㉢방향 탐침 ㉣MDE")
     a = ap.parse_args()
-    판 = build(a.valext)
+    if a.selftest:
+        _sys.exit(_selftest())
+    판 = build(a.valext, v3=not a.v2)
     s = json.dumps(판, ensure_ascii=False, indent=1)
     print(s)
     if a.out:
