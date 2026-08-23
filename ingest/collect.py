@@ -152,7 +152,7 @@ class 못읽었다(Exception):
     """🔴 「0 행」과 「못 읽었다」를 가르는 예외 (조항 59 · 952 신설)."""
 
 
-def _gz_lines(d: Path) -> int:
+def _gz_lines(d: Path, recursive: bool = False) -> int:
     """디렉터리 안 `*.jsonl.gz` 의 줄 수 합.
 
     🔴 **952 자가 적발 --- 초판이 바로 이 모듈이 막으려는 병에 걸렸다.**
@@ -188,7 +188,9 @@ def _gz_lines(d: Path) -> int:
         return 0
     n = 0
     bad = []
-    for f in sorted(d.glob("*.jsonl.gz")):
+    # 🔴 1017 --- recursive 는 담론 수확물({원천}/{날짜}.jsonl.gz 켜켜이)용.
+    #    한 단 평평한 기존 원천들의 자는 한 글자도 안 변한다(기본값 False).
+    for f in sorted(d.rglob("*.jsonl.gz") if recursive else d.glob("*.jsonl.gz")):
         try:
             with gzip.open(f, "rt", encoding="utf-8") as fh:
                 n += sum(1 for _ in fh)
@@ -221,6 +223,11 @@ def _measure_fn(spec: dict | None):
     if k == "jsonl_gz행합":
         d = ROOT / spec["디렉터리"]
         return lambda: _gz_lines(d)
+    if k == "jsonl_gz행합_재귀":
+        # 🔴 1017 신설 --- 하위 디렉터리까지 센다. `디렉터리` 가 절대경로면
+        # pathlib 규칙상 `ROOT /` 가 무시되므로 저장소 밖(wm_harvest)도 잴 수 있다.
+        d = ROOT / spec["디렉터리"]
+        return lambda: _gz_lines(d, recursive=True)
     if k == "디렉터리관측":
         d = ROOT / spec["디렉터리"]
         fn = _COUNTERS[spec["세는이"]]
