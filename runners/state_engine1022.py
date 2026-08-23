@@ -183,6 +183,7 @@ def main():
             t0 = time.time()
             P, n_par, mods = SE.train_arm(arm, seed, feat, extra_b, seq_ctx)
             npar = n_par
+            preds[seed] = P
             np.savez_compressed(pth, P=P, n_par=n_par)
             import torch
             torch.save([md.state_dict() for md in mods],
