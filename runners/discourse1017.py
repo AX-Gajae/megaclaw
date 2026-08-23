@@ -23,6 +23,20 @@
   python3 -m runners.discourse1017                # 상시 1회전(등기부·데몬용 · 유한)
   python3 -m runners.discourse1017 --big          # 1차 대수확(전 개체 bing + 보드 다페이지)
   python3 -m runners.discourse1017 --only 원천    # 그 원천만
+  python3 -m runners.discourse1017 --fullspeed    # 🔴 전속 연속 루프(1023 · nohup 용)
+
+🔴 1023 인수(1017 팔 종료 — 이 파일의 소유는 1023 팔):
+  · politeness 를 «호스트별» 1.1초로 정정(1017 은 전역 직렬이었다 — 서로 다른 호스트는
+    병렬 가능이 규칙이라 규칙 안에서의 속도 회복이다) · 스레드 안전(잠금)
+  · 신규 원천(2026-08-24 재실측 runners/out1023_recon.json·out1023_recon2.json):
+    뉴스RSS +9사 12피드(일간스포츠·머니투데이·뉴시스3·노컷·스포츠동아2·게임메카·
+    게임톡·경향게임스·ZDNet) · 보드 +2(daum_news breakingnews — 섹션·페이지가 서버에서
+    안 갈리는 SPA 라 1페이지 회전 · dogdrip)
+  · 개체 명단: 1016 별칭(위키 해소 페이지명 238행 → 고유 페이지 139 + 괄호꼬리 제거형)
+    + 도메인 키워드 18→49
+  · --fullspeed: writer.pid 를 쥔 채 무한 회전(데몬 회차는 접힘 — 정상) ·
+    bing 전 명단 연속 회전 + 보드 300초·뉴스 600초 재폴링 · 정지는 state/stop_fullspeed ·
+    스레드 ≤3(+주) · load1>10 이면 그 사이클은 bing 만
 """
 import argparse
 import datetime as dt
@@ -32,6 +46,7 @@ import json
 import os
 import re
 import sys
+import threading
 import time
 import urllib.parse
 import urllib.request
@@ -75,6 +90,19 @@ FEEDS = {
             "https://news.sbs.co.kr/news/SectionRssFeed.do?sectionId=07&plink=RSSREADER",
             "https://news.sbs.co.kr/news/SectionRssFeed.do?sectionId=08&plink=RSSREADER",
             "https://news.sbs.co.kr/news/SectionRssFeed.do?sectionId=14&plink=RSSREADER"],
+    # ↓ 1023 증분(2026-08-24 실측 — out1023_recon.json 허용 판정만)
+    "isplus": ["https://isplus.com/rss"],
+    "mt": ["https://rss.mt.co.kr/mt_news.xml"],
+    "newsis": ["https://newsis.com/RSS/entertain.xml",
+               "https://newsis.com/RSS/sports.xml",
+               "https://newsis.com/RSS/culture.xml"],
+    "nocutnews": ["https://rss.nocutnews.co.kr/nocutnews.xml"],
+    "sportsdonga": ["https://rss.donga.com/sports.xml",
+                    "https://sports.donga.com/rss"],
+    "gamemeca": ["https://www.gamemeca.com/rss.php"],
+    "gametoc": ["https://www.gametoc.co.kr/rss/allArticle.xml"],
+    "khgames": ["https://www.khgames.co.kr/rss/allArticle.xml"],
+    "zdnetkr": ["https://feeds.feedburner.com/zdkorea"],
     "jtbc": ["https://news-ex.jtbc.co.kr/v1/get/rss/section/10",
              "https://news-ex.jtbc.co.kr/v1/get/rss/section/20",
              "https://news-ex.jtbc.co.kr/v1/get/rss/section/30",
@@ -99,29 +127,48 @@ BOARDS = {
     "ruliweb": ["https://bbs.ruliweb.com/best/hit",
                 "https://bbs.ruliweb.com/community/board/300143"],
     "instiz": ["https://www.instiz.net/pt", "https://www.instiz.net/name"],
+    # ↓ 1023 증분 — daum robots 404(=REP 제한없음) · 섹션·페이지가 서버에서 안 갈린다
+    #   (실측: base·entertain·page=2 가 같은 문서 — SPA) → 1페이지 회전 수집
+    "daum_news": ["https://news.daum.net/breakingnews"],
+    "dogdrip": ["https://www.dogdrip.net/dogdrip"],
 }
 
 KEYWORDS = ["웹툰", "웹소설", "팝업스토어", "팝업 스토어", "아이돌 데뷔", "콜라보",
             "굿즈", "IP 라이선스", "캐릭터 IP", "애니메이션 개봉", "단행본", "정주행",
-            "콘서트", "팬덤", "스토어 오픈", "네이버웹툰", "카카오웹툰", "카카오페이지"]
+            "콘서트", "팬덤", "스토어 오픈", "네이버웹툰", "카카오웹툰", "카카오페이지",
+            # ↓ 1023 확장(도메인 담론 30)
+            "웹툰 원작", "드라마화", "애니화", "영화화", "웹소설 원작", "코믹스",
+            "굿즈 완판", "오픈런", "팝업 오픈", "콜라보 카페", "컬래버레이션",
+            "케이팝", "K팝", "아이돌 컴백", "데뷔 무대", "쇼케이스", "팬미팅",
+            "팬사인회", "월드투어", "돔투어", "빌보드 차트", "음원차트",
+            "게임 출시", "신작 게임", "사전예약", "스팀 출시", "콘솔 출시",
+            "e스포츠", "서브컬처", "캐릭터 굿즈", "피규어"]
 
-_last_req = [0.0]
+_hl_master = threading.Lock()
+_host_lock = {}
+_host_last = {}
+_robots_lock = threading.Lock()
 _robots_cache = {}
 
 
-def _sleep_gap():
-    d = time.time() - _last_req[0]
-    if d < GAP:
-        time.sleep(GAP - d)
-    _last_req[0] = time.time()
+def _sleep_gap(host):
+    """호스트별 ≥GAP 초 — politeness 는 호스트별 · 서로 다른 호스트는 병렬(1023)."""
+    with _hl_master:
+        lk = _host_lock.setdefault(host, threading.Lock())
+    with lk:
+        d = time.time() - _host_last.get(host, 0.0)
+        if d < GAP:
+            time.sleep(GAP - d)
+        _host_last[host] = time.time()
 
 
 def _robots_ok(url):
     """URL 단위 robots 관문. 못 읽으면(404 제외) 그 호스트는 이번 주행 내내 막는다."""
     host = urllib.parse.urlparse(url).netloc
-    rp = _robots_cache.get(host)
+    with _robots_lock:
+        rp = _robots_cache.get(host)
     if rp is None:
-        _sleep_gap()
+        _sleep_gap(host)
         try:
             req = urllib.request.Request("https://%s/robots.txt" % host,
                                          headers={"User-Agent": UA})
@@ -136,7 +183,8 @@ def _robots_ok(url):
                 rp = "closed"        # 403 등 — 못 읽으면 안 간다
         except Exception:
             rp = "closed"
-        _robots_cache[host] = rp
+        with _robots_lock:
+            _robots_cache[host] = rp
     if rp == "open":
         return True
     if rp == "closed":
@@ -148,8 +196,9 @@ def fetch(url, tries=2):
     """(bytes|None, 사유|None). robots 불허·오류는 (None, 사유)."""
     if not _robots_ok(url):
         return None, "robots불허"
+    host = urllib.parse.urlparse(url).netloc
     for i in range(tries):
-        _sleep_gap()
+        _sleep_gap(host)
         try:
             req = urllib.request.Request(url, headers={"User-Agent": UA})
             with urllib.request.urlopen(req, timeout=30) as r:
@@ -189,7 +238,7 @@ def names_1017():
         except Exception:
             maps[pre] = {}
     names, src = {}, {"삼중쌍": 0, "idol": 0, "market": 0, "popup": 0, "원장1016": 0,
-                      "키워드": len(KEYWORDS), "이름못찾음": 0}
+                      "별칭1016": 0, "키워드": len(KEYWORDS), "이름못찾음": 0}
 
     def _add(nm, tag):
         nm = (nm or "").strip()
@@ -244,6 +293,15 @@ def names_1017():
             nm = w.get("ip_name") or w.get("brand")
             if nm and _add(nm, "원장1016"):
                 src["원장1016"] += 1
+            # 1023 — 1016 별칭 해소(위키 페이지명 238행 · 고유 139) + 괄호꼬리 제거형
+            wr = (r.get("source") or {}).get("wiki_resolution")
+            pg = wr.get("page") if isinstance(wr, dict) else (wr if isinstance(wr, str) else None)
+            if pg:
+                if _add(pg, "별칭1016"):
+                    src["별칭1016"] += 1
+                bare = re.sub(r"\s*\([^)]*\)\s*$", "", pg).strip()
+                if bare and bare != pg and _add(bare, "별칭1016"):
+                    src["별칭1016"] += 1
     else:
         for p in sorted((ROOT / "data/market_records").glob("MKT*.json")):
             try:
@@ -377,6 +435,37 @@ def parse_instiz(b, base):
     return out
 
 
+def parse_daum(b, base):
+    """breakingnews — 제목 있는 앵커만(실측 ~33/페치 · 목록 pub 은 null — L0)."""
+    s = b.decode("utf-8", "replace")
+    out, seen = [], set()
+    for m in re.finditer(r'<a[^>]+href="(https://v\.daum\.net/v/(\d+))"[^>]*>(.*?)</a>', s, re.S):
+        no = m.group(2)
+        if no in seen:
+            continue
+        title = _text(m.group(3))
+        if not title or len(title) < 4:
+            continue
+        seen.add(no)
+        out.append((m.group(1), title, None, None))
+    return out
+
+
+def parse_dogdrip(b, base):
+    s = b.decode("utf-8", "replace")
+    out, seen = [], set()
+    for m in re.finditer(r'<a[^>]+href="(?:https://www\.dogdrip\.net)?/(?:dogdrip/)?(\d{6,})"[^>]*>(.*?)</a>', s, re.S):
+        no = m.group(1)
+        if no in seen:
+            continue
+        title = _text(m.group(2))
+        if not title or len(title) < 3:
+            continue
+        seen.add(no)
+        out.append(("https://www.dogdrip.net/dogdrip/" + no, title, None, None))
+    return out
+
+
 # ── 저장·재개 ───────────────────────────────────────────────────────────────
 def _seen_path(top):
     return STATED / ("seen_%s.txt" % top)
@@ -495,7 +584,8 @@ def run_bing(names, agg, batch, big):
 
 
 _PARSERS = {"dcinside": parse_dcinside, "theqoo": parse_theqoo,
-            "ruliweb": parse_ruliweb, "instiz": parse_instiz}
+            "ruliweb": parse_ruliweb, "instiz": parse_instiz,
+            "daum_news": parse_daum, "dogdrip": parse_dogdrip}
 
 
 def _paged(src, url, page):
@@ -509,6 +599,8 @@ def _paged(src, url, page):
         return None   # 🔴 robots: /*view=·/*cate= 등 질의어 다수 Disallow — 2페이지부터 안 간다
     if src == "instiz":
         return url + "?page=%d" % page
+    # daum_news: 섹션·페이지가 서버에서 안 갈린다(1023 실측 — 같은 문서) → 1페이지만
+    # dogdrip: 1페이지만(회전 수집 — 목록 갱신이 빠르다)
     return None
 
 
@@ -545,30 +637,124 @@ def run_boards(names, agg, pages):
                 st["신규"] += store(src, docs, seen)
 
 
+# ── 전속 연속 루프(1023) ────────────────────────────────────────────────────
+def run_fullspeed():
+    """writer.pid 를 쥔 채 무한 회전 — 데몬 회차는 접힘(무성장·정상 · 1017 §3 규약).
+    사이클 = bing 전 명단 회전(주스레드) ∥ 보드 300초 재폴링 ∥ 뉴스 600초 재폴링.
+    스레드 ≤3(+주) · load1>10 이면 그 사이클은 bing 만 · robots 는 사이클마다 재확인.
+    정지: state/stop_fullspeed 를 만들면 사이클 경계에서 곱게 끝난다.
+    재개: 같은 명령(중복은 seen 이 접고 bing 은 커서가 잇는다)."""
+    stopp = STATED / "stop_fullspeed"
+    lockp = STATED / "writer.pid"
+    if stopp.exists():
+        stopp.unlink()
+    while True:                                  # until 폴링으로 잠금 인수
+        if lockp.exists():
+            try:
+                other = int(lockp.read_text().strip())
+                if other != os.getpid():
+                    os.kill(other, 0)
+                    print("fullspeed — 잠금 pid %d 가 살아 있다(20초 폴링)" % other,
+                          flush=True)
+                    time.sleep(20)
+                    continue
+            except (ValueError, ProcessLookupError, PermissionError):
+                pass
+        lockp.write_text(str(os.getpid()))
+        break
+    cyc = 0
+    try:
+        while not stopp.exists():
+            cyc += 1
+            t0 = time.time()
+            with _robots_lock:
+                _robots_cache.clear()            # 주행마다 robots 재확인(1017 규율)
+            names, nsrc = names_1017()
+            try:
+                l1 = os.getloadavg()[0]
+            except OSError:
+                l1 = 0.0
+            agg_n, agg_b, agg_g = {}, {}, {}
+            done = threading.Event()
+
+            def _poll(fn, args, every):
+                while True:
+                    try:
+                        fn(*args)
+                    except Exception as e:       # 한 원천의 사고가 사이클을 못 죽인다
+                        print("fullspeed 부스레드 오류:", type(e).__name__, flush=True)
+                    if done.wait(every):
+                        return
+
+            ths = []
+            if l1 <= 10:                         # CPU 여유 철칙 — 부하 높으면 bing 만
+                ths = [threading.Thread(target=_poll,
+                                        args=(run_news_rss, (names, agg_n), 600)),
+                       threading.Thread(target=_poll,
+                                        args=(run_boards, (names, agg_b, 1), 300))]
+                for t in ths:
+                    t.start()
+            try:
+                run_bing(names, agg_g, len(names), False)
+            finally:
+                done.set()
+            for t in ths:
+                t.join()
+            agg = {}
+            for a3 in (agg_n, agg_b, agg_g):
+                agg.update(a3)
+            rec = {"노트": 1023, "모드": "fullspeed", "사이클": cyc,
+                   "load1(시작)": round(l1, 2),
+                   "시각(끝)": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                   "초": round(time.time() - t0, 1),
+                   "명단": {"수": len(names), "출처": nsrc},
+                   "이번사이클": agg, "디스크총계": totals()}
+            (ROOT / "runners" / "out1023_fullspeed.json").write_text(
+                json.dumps(rec, ensure_ascii=False, indent=1), encoding="utf-8")
+            slim = {"모드": "fullspeed1023", "사이클": cyc, "시각(끝)": rec["시각(끝)"],
+                    "초": rec["초"],
+                    "신규합": sum(v.get("신규", 0) for v in agg.values())}
+            with open(OUTD / "run_log.jsonl", "a", encoding="utf-8") as f:
+                f.write(json.dumps(slim, ensure_ascii=False) + "\n")
+            print("fullspeed 사이클 %d — 신규합 %d · %.0f초" %
+                  (cyc, slim["신규합"], rec["초"]), flush=True)
+    finally:
+        try:
+            if int(lockp.read_text().strip()) == os.getpid():
+                lockp.unlink()
+        except (ValueError, OSError):
+            pass
+    return 0
+
+
 # ── 집계·주행 ───────────────────────────────────────────────────────────────
 def totals():
     """디스크 실측 — 원천별 행수·pub채움·기간(집계지 재계산이 자다)."""
     out = {}
-    for top in sorted(p.name for p in OUTD.iterdir() if p.is_dir() and p.name != "state"):
+    for top in sorted(p.name for p in OUTD.iterdir()
+                      if p.is_dir() and p.name not in ("state", "bodies")):
         n = pub = 0
         lo = hi = None
         match_n = 0
         for f in sorted((OUTD / top).glob("*.jsonl.gz")):
-            with gzip.open(f, "rt", encoding="utf-8") as fh:
-                for ln in fh:
-                    n += 1
-                    try:
-                        d = json.loads(ln)
-                    except Exception:
-                        continue
-                    p = d.get("published_at")
-                    if p:
-                        pub += 1
-                        day = p[:10]
-                        lo = day if lo is None or day < lo else lo
-                        hi = day if hi is None or day > hi else hi
-                    if d.get("매칭"):
-                        match_n += 1
+            try:
+                with gzip.open(f, "rt", encoding="utf-8") as fh:
+                    for ln in fh:
+                        n += 1
+                        try:
+                            d = json.loads(ln)
+                        except Exception:
+                            continue
+                        p = d.get("published_at")
+                        if p:
+                            pub += 1
+                            day = p[:10]
+                            lo = day if lo is None or day < lo else lo
+                            hi = day if hi is None or day > hi else hi
+                        if d.get("매칭"):
+                            match_n += 1
+            except (EOFError, OSError, gzip.BadGzipFile):
+                pass      # 쓰는 중인 gz 꼬리 — 다음 재기가 줍는다(1023)
         out[top] = {"행": n, "pub채움": pub,
                     "pub채움률": round(pub / n, 4) if n else None,
                     "기간": [lo, hi], "개체매칭행": match_n}
@@ -581,11 +767,14 @@ def main():
     ap.add_argument("--only", default=None)
     ap.add_argument("--bing-batch", type=int, default=150)
     ap.add_argument("--report", action="store_true")
+    ap.add_argument("--fullspeed", action="store_true")
     a = ap.parse_args()
     STATED.mkdir(parents=True, exist_ok=True)
     if a.report:
         print(json.dumps(totals(), ensure_ascii=False, indent=1))
         return 0
+    if a.fullspeed:
+        return run_fullspeed()
     # 🔴 단일 필자 잠금 --- 데몬 회차와 --big 대수확이 «같은 gz·seen 파일»에 동시에
     # 덧붙이면 gzip 멤버가 깨질 수 있다(952 의 「쓰는 중인 gz」 병 계열). 산 pid 가
     # 잠금을 쥐고 있으면 이번 주행을 접는다 --- 장부에는 무성장으로 보이고 그걸로 족하다.
