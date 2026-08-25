@@ -641,8 +641,22 @@ def cmd_tri(args):
         if c1 is None or c2 is None or c1 != c2:
             if (iid, arm, 3) not in R:
                 need.append((iid, arm, 3))
-    print(f"[tri] 3차 판독 필요 {len(need)}", flush=True)
+    # 🔴 등록 보정 (2026-08-25 11:2x · 방향 탐침 «후» · 실판독 «전» · §6 보정 1):
+    #   방향 탐침에서 판독기의 «갑» 위치 편향이 4/4 로 드러났다 → 정보가 없는 팔(특히 A층 ⓐ)은
+    #   회전 1·2 가 정본 좌표에서 «구조적으로» 불일치한다. 3차 판독 예산(90)이 모자랄 수 있으므로
+    #   배분 우선순위를 여기서 «먼저» 고정한다: 주대비 우선 — A층 ⓒ→ⓑ→ⓐ, B층 ⓒ→ⓑ→ⓐ (군 내 iid 오름차순).
+    #   예산 소진 후 미해소 항목은 «회전 1 정본 좌표»를 최종으로 쓴다(순서 동전이 씨앗 기반이고
+    #   정답과 독립이므로 편향 없는 동전과 동치) · 「3차 미실시」로 계수하고 민감도(제외 재계산) 병기.
+    PRIO = {("A", "c"): 0, ("A", "b"): 1, ("A", "a"): 2, ("B", "c"): 3, ("B", "b"): 4, ("B", "a"): 5}
+    need.sort(key=lambda t: (PRIO[(t[0][0], t[1])], t[0]))
     spent = sum(1 for _ in open(path)) + _probe_calls()
+    room = CALL_CAP - spent
+    skipped = need[room:]
+    need = need[:room]
+    print(f"[tri] 3차 필요 {len(need) + len(skipped)} · 예산 여유 {room} · 실시 {len(need)} · 미실시 {len(skipped)}", flush=True)
+    json.dump(dict(시각=now(), 필요=len(need) + len(skipped), 실시=len(need),
+                   미실시=[list(x) for x in skipped]),
+              open(os.path.join(OUT, "tri_budget.json"), "w"), ensure_ascii=False, indent=1)
     if need:
         _run_jobs(need, path, spent)
     print(f"[tri] 끝 {now()}")
@@ -668,6 +682,7 @@ def cmd_score(args):
         R[(r["iid"], r["arm"], r["pass_"])] = r
 
     fin, agree, tri_used, badparse, known_flags = {}, {}, 0, 0, {}
+    nofb = set()
     for iid in items:
         for arm in ARMS:
             c = []
@@ -695,7 +710,9 @@ def cmd_score(args):
                     votes = [x for x in c + [c3] if x]
                     fin[(iid, arm)] = max(set(votes), key=votes.count) if votes else None
                 else:
-                    fin[(iid, arm)] = None
+                    # §6 보정 1: 3차 미실시 → 회전 1 정본 좌표 (씨앗 동전 = 정답 독립)
+                    fin[(iid, arm)] = c[0] if c and c[0] else (c[1] if len(c) > 1 else None)
+                    nofb.add((iid, arm))
             # 확신도(1차 판독 정본)
     def conf_of(iid, arm):
         r = R.get((iid, arm, 1))
@@ -766,6 +783,10 @@ def cmd_score(args):
                오염=dict(자진신고_항목수=len(known_items),
                          민감도_제외후=[table_clean(A_doc, "A층 양측유문서(오염제외)"),
                                         table_clean(B_all, "B층 전량(오염제외)")]),
+               삼차미실시=dict(항목팔수=len(nofb),
+                               낙인="예산 소진 — 회전 1 정본 좌표로 대체(정답 독립 동전)",
+                               민감도_제외후=[table([i for i in A_all if (i, "c") not in nofb and (i, "b") not in nofb],
+                                                    "A층 3차미실시 제외")]),
                확신도상위_관찰=dict(
                    낙인="사후선택 — [관찰] 등급",
                    A층_c_conf4이상=len(hi(A_doc, "c")),
