@@ -70,9 +70,9 @@ MODEL = "sonnet"
 N_DOC = 8              # 사례당 정독 발췌 상한 (1031 승계)
 N_MAIN = 230           # 주표본 쌍 수 (틀이 작으면 min(230, |틀|) — §4 비상 규칙)
 N_A = 40               # ⓐ(정보 0) 소표본 쌍 수 — 편향 재확인 전용
-N_DUMMY = 12           # 영 대조 더미 항목 수 (양쪽 동일 — 위치 편향 실측)
-GROUP_CAP = 6          # IP그룹 중복 상한 (클러스터 SE 를 위해)
-RID_CAP = 4            # 개체(record) 중복 상한
+N_DUMMY = 24           # 영 대조 더미 항목 수 (양쪽 동일 — 위치 편향 실측) · §7-보 12→24
+GROUP_CAP = 12         # IP그룹 중복 상한 (§7-보 6→12 · 사유는 등록문)
+RID_CAP = 8            # 개체(record) 중복 상한 (§7-보 4→8)
 CALL_CAP = 1150        # 🔴 총 판독기 호출 상한 (사전등록 · 기계 강제)
 #   내역: 방향탐침 8 + 주표본 230×2팔×2회전 920 + ⓐ 40×2회전 80 + 더미 12 + 3차 ≤130 = 1150
 B_BOOT = 2000          # 클러스터 붓스트랩 복제
@@ -403,28 +403,31 @@ def cmd_build(args):
     idx = json.load(open(os.path.join(OUT, "docidx1033.json")))
     scout = json.load(open(os.path.join(OUT, "scout1033.json")))
 
-    frame = [p for p in plist if p["n_predoc_L"] >= 1 and p["n_predoc_R"] >= 1]
+    # ── 표본 틀 (§7-보 개정) — 「적어도 한쪽에 t0 이전 문서 ≥1건」 ────────────
+    def sym(p):
+        return p["n_predoc_L"] >= 1 and p["n_predoc_R"] >= 1
+
+    frame = [p for p in plist if p["n_predoc_L"] >= 1 or p["n_predoc_R"] >= 1]
     n_goal = min(N_MAIN, len(frame))
 
-    # ── 표본 추출 (씨앗 1033 · venue_type 비례 층화 · 그룹/개체 상한) ─────────
+    # ── 표본 추출 (씨앗 1033 · 1차 층화 = 문서 대칭성 · 2차 = venue_type 비례) ─
     def h(p):
         return hashlib.sha256(("%d|%s|%s" % (SEED, p["rid_L"], p["rid_R"])).encode()).hexdigest()
 
-    frame_sorted = sorted(frame, key=h)
     import collections
-    vt_cnt = collections.Counter(p["venue_type"] for p in frame_sorted)
-    target = {v: int(round(n_goal * c / float(len(frame_sorted)))) for v, c in vt_cnt.items()}
+    strA = sorted([p for p in frame if sym(p)], key=h)       # ㉮ 양측유문서 — 전량 우선
+    strB = sorted([p for p in frame if not sym(p)], key=h)   # ㉯ 비대칭
     gcnt, rcnt, vcnt = {}, {}, {}
     sample = []
 
-    def take(p, respect_stratum):
+    def take(p, target):
         if len(sample) >= n_goal:
             return False
         if gcnt.get(p["key_L"], 0) >= GROUP_CAP or gcnt.get(p["key_R"], 0) >= GROUP_CAP:
             return False
         if rcnt.get(p["rid_L"], 0) >= RID_CAP or rcnt.get(p["rid_R"], 0) >= RID_CAP:
             return False
-        if respect_stratum and vcnt.get(p["venue_type"], 0) >= target.get(p["venue_type"], 0):
+        if target is not None and vcnt.get(p["venue_type"], 0) >= target.get(p["venue_type"], 0):
             return False
         gcnt[p["key_L"]] = gcnt.get(p["key_L"], 0) + 1
         gcnt[p["key_R"]] = gcnt.get(p["key_R"], 0) + 1
@@ -434,11 +437,17 @@ def cmd_build(args):
         sample.append(p)
         return True
 
-    for p in frame_sorted:
-        take(p, True)
-    for p in frame_sorted:              # 층화 잔여분 — 등록 순서대로 메운다
+    for p in strA:
+        take(p, None)
+    n_sym = len(sample)
+    rest = n_goal - n_sym
+    vtB = collections.Counter(p["venue_type"] for p in strB)
+    tgt = {v: int(round(rest * c / float(len(strB)))) for v, c in vtB.items()} if strB else {}
+    for p in strB:
+        take(p, tgt)
+    for p in strB:                      # 층화 잔여분 — 등록 순서대로 메운다
         if p not in sample:
-            take(p, False)
+            take(p, None)
     sample.sort(key=lambda p: p["pid"])
 
     # ── 발췌 채취 + 봉인 ────────────────────────────────────────────────────
@@ -602,8 +611,11 @@ def cmd_build(args):
                     "IP그룹": len(set([p["key_L"] for p in sample]
                                      + [p["key_R"] for p in sample])),
                     "고유record": len(need), "양측유발췌": doc_both,
+                    "층 ㉮ 양측유문서": sum(1 for p in sample if sym(p)),
+                    "층 ㉯ 비대칭": sum(1 for p in sample if not sym(p)),
+                    "그룹최대사용": max(gcnt.values()) if gcnt else 0,
                     "그룹상한": GROUP_CAP, "record상한": RID_CAP,
-                    "층화": "venue_type 비례(틀 안 비중)", "씨앗": SEED,
+                    "층화": "1차 문서 대칭성(㉮ 전량 우선) · 2차 venue_type 비례", "씨앗": SEED,
                     "venue_type분포": dict(collections.Counter(p["venue_type"] for p in sample))},
             "팔": {"ⓐ 소표본": len(a_iids), "ⓑ": n, "ⓒ": n,
                   "ⓐ 사유": "1031 이 ⓐ(정보 0)를 47쌍에서 이미 쟀다(0.3191 · 우연 이하). "
@@ -921,6 +933,9 @@ def cmd_score(args):
     ALL = [i for i in items if items[i]["kind"] == "pair"]
     DOCSEL = [i for i in ALL if items[i]["L"]["docs"] and items[i]["R"]["docs"]]
     A_SUB = [i for i in ALL if i in a_iids]
+    # §7-보 사전 고정 분해 [관찰] m=2 — ㉮ 내용 신호 · ㉯ 존재 신호
+    SYM = [i for i in ALL if items[i]["meta"].get("sym")]
+    ASYM = [i for i in ALL if not items[i]["meta"].get("sym")]
 
     def table(sel, name, arms=("b", "c")):
         t = dict(표본=name, n=len(sel))
@@ -967,7 +982,9 @@ def cmd_score(args):
                부호서명=STAMP_SIGN, 인과화법=STAMP_CAUSAL, 확신도=STAMP_CONF,
                등록MDE=meta["MDE"],
                표=[table(ALL, "주표본 전량(ITT · 주대비)"),
-                   table(DOCSEL, "양측 채택발췌≥1 [부차·관찰]"),
+                   table(SYM, "층 ㉮ 양측유문서 = 「내용」 신호 [관찰·m=2]"),
+                   table(ASYM, "층 ㉯ 비대칭 = 「존재」 신호 [관찰·m=2]"),
+                   table(DOCSEL, "양측 채택발췌≥1(정규식 탈락 후) [부차·관찰]"),
                    table(A_SUB, "ⓐ 소표본(편향 재확인) [관찰]", arms=("a", "b", "c"))],
                영대조_위치편향=dict(더미=len(dz), 갑선택=z_gap,
                                     비율=round(z_gap / float(len(dz)), 4) if dz else None,
