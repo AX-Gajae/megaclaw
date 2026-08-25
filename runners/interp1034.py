@@ -504,6 +504,7 @@ def cmd_build(args):
 
     seal = dict(위약후보=0, 정규식탈락=0, 본문결측=0, t0이후=0, 채택=0,
                 값금칙_탈락발췌=0, 값금칙히트=0, 금칙히트=0,
+                본문sha_겹침_탈락=0, 겹침_관여항목=0,
                 공여자_부족_재추첨=0, 공여자_실패_사이드=0)
 
     def donor_order(pid, side, ban_rid, ban_key):
@@ -552,9 +553,17 @@ def cmd_build(args):
         return vs
 
     # 2단계 — 사이드마다 「k건을 채우는 첫 공여자」를 취한다
+    # 🔴 자 수리 1 (조항 66 · 판독 «전» · 결과 무접촉): 구판은 공여자 «개체»만 갈랐다. 그런데
+    #   부착이 다대다라 «다른 개체»의 문서가 진짜 발췌와 «같은 본문»(text_sha16 동일)일 수 있고,
+    #   구판 실행에서 실제로 11건이 걸려 §5-2 ⑤ 「발췌 sha 겹침 0」이 «측정 없이 중단»을 냈다.
+    #   신판은 그 문서를 «뽑는 자리»에서 떨어뜨린다 — 등록 규칙의 «강화»이지 완화가 아니다
+    #   (위약이 진짜 담론을 조금도 못 나르게 만든다). 탈락 수와 관여 항목 수를 게재한다.
     placebo, donor_pick = {}, {}
     for iid in SYM:
         vs0 = val_strings(iid)
+        real_sha = set(e["sha16"] for e in items33[iid]["L"]["docs"]) | \
+            set(e["sha16"] for e in items33[iid]["R"]["docs"])
+        hit0 = seal["본문sha_겹침_탈락"]
         used = set()
         for side in ("L", "R"):
             pl_ = plan[(iid, side)]
@@ -580,6 +589,9 @@ def cmd_build(args):
                     if any(v in hd for v in vs0):
                         seal["값금칙_탈락발췌"] += 1
                         continue
+                    if tsha in real_sha:          # 🔴 자 수리 1 — 진짜 발췌와 «같은 본문» 배제
+                        seal["본문sha_겹침_탈락"] += 1
+                        continue
                     outl.append(dict(pub=pub, head=hd, sha16=tsha,
                                      src=src.split("_")[1].split(".")[0]))
                     if len(outl) >= k:
@@ -596,6 +608,8 @@ def cmd_build(args):
             donor_pick[(iid, side)] = got[0]
             placebo[(iid, side)] = got[1]
             seal["채택"] += len(got[1])
+        if seal["본문sha_겹침_탈락"] > hit0:
+            seal["겹침_관여항목"] += 1
 
     # ── ⓓ 항목 조립 (cond 는 ⓑ·ⓒ 와 «글자 단위로» 같다 — 발췌만 위약으로 바꾼다) ──
     items, dmeta = [], {}
@@ -725,7 +739,8 @@ def cmd_build(args):
                                   % N_DOC,
                        "시간 절단": "pub < min(공여자 t0, 제시 사례 t0) — 두 조건 «모두»",
                        "제외": "진짜 두 개체(record) · 그 두 IP그룹 · 좌우 공여자 서로 다름"},
-            "위약 무관성 검사": {**chk, "판정": "6/6 통과 · 위반 0"},
+            "위약 무관성 검사": {**chk, "판정": "6/6 통과 · 위반 0",
+                             "자 수리 1": "구판(sha256 4ecec4dbf0c1f448…)은 공여자 «개체»만 갈랐고 본문 sha 겹침 11 로 «측정 없이 중단»했다. 신판은 진짜 발췌와 같은 본문(text_sha16)을 «뽑는 자리»에서 떨어뜨린다 — 규칙 강화 · 판독 0 상태에서 고쳤다(결과 무접촉)."},
             "형식 항등 검사": {"항목×문안": len(difflines),
                             "줄수 동일": sum(1 for d in difflines if d["줄수동일"]),
                             "발췌 «밖» 다른 줄": sum(d["발췌아닌_다른줄"] for d in difflines),
