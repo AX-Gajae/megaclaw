@@ -65,9 +65,12 @@ RESULT_RE = re.compile(
     r"(방문객|방문자|관람객|관객수|관객\s*수|입장객|누적\s*관람|누적\s*방문|동원|"
     r"매출|억\s*원|만\s*명|천\s*명|[0-9][0-9,\.]*\s*명|명\s*돌파|흥행\s*수익|"
     r"티켓\s*판매|일평균|하루\s*평균|조회수|페이지뷰)")
-# 자료 파일 전체에 대한 금칙 (원장 결과 칸 이름)
-FORBID = ("u_daily_visitors", "visitors_total", "sales_krw", "label_trust_grade",
-          "lnUbar", "\"d\":", "peak", "반응크기", "반응 크기")
+# 자료 파일 전체에 대한 금칙 (원장 «결과 칸 이름»)
+# 🔴 자 수리 1 (2026-08-25 · 조항 66 전후 공개): 구판 FORBID 는 과업 «문구»
+#   "반응 크기"·"peak" 를 포함해 B층 과업 라벨 자신과 충돌했다(히트 270 = 30쌍×3팔×3문안 —
+#   전부 자기 문구, 실제 결과 칸 히트 0). 신판은 충돌 문구를 빼고, 대신 **값 수준** 검사
+#   (FORBID_VALUES — 그 항목의 실제 결과 «숫자»가 자료에 있는가)를 넣어 «더 강하게» 만든다.
+FORBID = ("u_daily_visitors", "visitors_total", "sales_krw", "label_trust_grade", "lnUbar")
 
 STAMP_SIGN = "부호 서명: 쌍 비교 «정확도»는 높을수록 좋다. ⓒ 정확도가 «낮을수록» 나쁘다."
 STAMP_CAUSAL = ("인과 화법 금지 — 판독이 엮은 서사는 그 자체로 인과가 아니다(7-나 5). "
@@ -446,9 +449,51 @@ def cmd_build(args):
             else:
                 order[f"{it['iid']}|{p}"] = (r2.random() < 0.5)
 
+    # 값 수준 금칙 (자 수리 1) — 그 항목의 «실제 결과 숫자»가 자료에 나타나면 봉인 파손
+    def val_strings(it):
+        vs = set()
+        if it["layer"] == "A":
+            for rid in (it["meta"]["ra"], it["meta"]["rb"]):
+                Y = led[rid]["Y"]
+                for v in (Y.get("u_daily_visitors"), Y.get("visitors_total"), Y.get("sales_krw")):
+                    if v is None:
+                        continue
+                    n = int(round(float(v)))
+                    for t in (str(n), f"{n:,}", str(v)):
+                        if len(re.sub(r"\D", "", t)) >= 3:
+                            vs.add(t)
+            for a2 in A_raw:
+                if a2["iid"] == it["iid"]:
+                    vs.add(f"{a2['d_abs']:.3f}")
+        else:
+            for b2 in B_raw:
+                if b2["iid"] == it["iid"]:
+                    for e in (b2["e1"], b2["e2"]):
+                        vs.add(f"{e['peak']:.3f}")
+                        vs.add(f"{e['peak']:.4f}")
+        return vs
+
+    # 🔴 자 수리 2 (조항 66 전후 공개): 구판은 값 금칙을 «세기만» 했다(히트 9 — 전수 확인 결과
+    #   전부 우연한 부분문자열: 쇼핑 상세문 "503677"⊃"367" · "정가 4,000원" · 날짜 "07.25.2019"⊃"5.2019").
+    #   신판은 세는 데 그치지 않고 **그 발췌를 떨어뜨린 뒤 재검사**해 히트 0 을 요구한다.
+    seal["값금칙_탈락발췌"] = 0
+    for it in items:
+        vstr0 = val_strings(it)
+        for sd in (it["L"], it["R"]):
+            keep = []
+            for e in sd["docs"]:
+                if any(v in e["head"] for v in vstr0):
+                    seal["값금칙_탈락발췌"] += 1
+                    seal["채택"] -= 1
+                else:
+                    keep.append(e)
+            sd["docs"] = keep
+
     # 자료 파일 기록 + 금칙 검사
+    seal["값금칙히트"] = 0
     man = []
     for it in items:
+        vstr = val_strings(it)
         for arm in ARMS:
             for p in (1, 2, 3):
                 txt = render(it, arm, p, order[f"{it['iid']}|{p}"])
@@ -456,6 +501,9 @@ def cmd_build(args):
                 for f in FORBID:
                     if f.lower() in low:
                         seal["금칙히트"] += 1
+                for v in vstr:
+                    if v in txt:
+                        seal["값금칙히트"] += 1
                 fp = os.path.join(ITEMS, f"{it['iid']}_{arm}_p{p}.txt")
                 with open(fp, "w") as fh:
                     fh.write(txt)
