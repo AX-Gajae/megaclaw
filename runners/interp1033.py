@@ -934,11 +934,25 @@ def cmd_score(args):
     DOCSEL = [i for i in ALL if items[i]["L"]["docs"] and items[i]["R"]["docs"]]
     A_SUB = [i for i in ALL if i in a_iids]
     # §7-보 사전 고정 분해 [관찰] m=2 — ㉮ 내용 신호 · ㉯ 존재 신호
-    SYM = [i for i in ALL if items[i]["meta"].get("sym")]
-    ASYM = [i for i in ALL if not items[i]["meta"].get("sym")]
+    # 🔴 자 수리 1 (조항 66 전후 공개): 구판은 `sym` 을 build 의 item meta 에서 읽으려 했으나
+    #   그 필드를 넣는 패치가 «적용되지 않아» items.json 에 없었다 → SYM 이 빈 목록이 되어
+    #   ZeroDivisionError. 신판은 §7-보 ㉢ 의 층 정의(양측 t0 이전 문서 ≥1건)를 봉인 시점의
+    #   `pairs1033.json`(결과 무접촉 · 판독 전에 고정된 파일)에서 pid 로 되읽어 판정한다.
+    #   판독 자료·판독 산출은 한 글자도 바뀌지 않는다(자만 고쳤다).
+    _pl = {q["pid"]: q for q in json.load(open(os.path.join(OUT, "pairs1033.json")))}
+
+    def _sym(i):
+        q = _pl[iid2pid[i]]
+        return q["n_predoc_L"] >= 1 and q["n_predoc_R"] >= 1
+
+    SYM = [i for i in ALL if _sym(i)]
+    ASYM = [i for i in ALL if not _sym(i)]
 
     def table(sel, name, arms=("b", "c")):
         t = dict(표본=name, n=len(sel))
+        if not sel:                    # 조항 59 — 빈 층은 조용한 0 이 아니라 「분모 0」으로 적는다
+            t["낙인"] = "분모 0 — 미측정"
+            return t
         for arm in arms:
             ok, n, a = acc(sel, arm)
             t[arm] = dict(맞음=ok, n=n, 정확도=(round(a, 4) if a is not None else None),
@@ -1028,12 +1042,30 @@ def cmd_chain(args):
         c1, c2 = canon(r1, man[(iid, "c", 1)]), canon(r2, man[(iid, "c", 2)])
         if c1 and c1 == c2 and c1 == truth[iid]:
             ok_iids.append(iid)
-    links = []
+    # 🔴 자 수리 2 (조항 66 전후 공개): 구판은 판독기의 `reason` 원문을 «저장소 산출»에 그대로
+    #   실었다 — 그 문장에 IP·브랜드 실명이 들어 있어 위생(실명 금지)을 깬다. 신판은 저장소 산출에
+    #   **유형 라벨 + 문장 sha16** 만 싣고, 원문은 비커밋 디렉터리에만 남긴다(1031 §8-아 전례).
+    TYPES = (("담론/화제성", ("보도", "기사", "buzz", "버즈", "화제", "홍보", "언론", "매체",
+                              "노출", "문서")),
+             ("반복/차수", ("반복", "차수", "회차", "첫 회", "첫회", "재개최", "이력", "직전")),
+             ("기간/규모", ("기간", "규모", "평", "면적", "대형", "다점포")),
+             ("장소", ("서울", "지방", "도시", "몰", "백화점", "상권", "입지", "유동")),
+             ("무료/접근성", ("무료", "접근", "예약", "입장")),
+             ("시기/계절", ("계절", "시기", "주말", "공휴", "연말", "여름", "겨울")),
+             ("카테고리/IP", ("카테고리", "캐릭터", "IP", "콜라보", "브랜드")))
+
+    def rtype(txt):
+        got = [name for name, kws in TYPES if any(k in txt for k in kws)]
+        return got or ["기타"]
+
+    links, links_raw = [], []
     for iid in ok_iids[:K]:
         it = items[iid]
         win = truth[iid]
         docs = it[win]["docs"]
         r1 = R[(iid, "c", 1)]
+        links_raw.append(dict(링크id="L%02d" % len(links_raw), 항목=iid,
+                              기제문장=r1.get("reason", "")[:300]))
         links.append(dict(
             링크id="L%02d" % len(links), 항목=iid,
             선행사건="이긴 쪽 사례의 t0 이전 담론 %d건(발행일 %s ~ %s)"
@@ -1041,7 +1073,9 @@ def cmd_chain(args):
             후행결과="그 사례의 일평균 방문자가 조건 정합 상대보다 컸다",
             시간차="모든 근거 문서가 개최일 «이전»(기계 검사 통과 · t0이후 0)",
             근거문서sha=[d["sha16"] for d in docs],
-            기제문장=r1.get("reason", "")[:200],
+            기제유형=rtype(r1.get("reason", "")),
+            기제문장sha16=sha256_text(r1.get("reason", ""))[:16],
+            기제문장="(무명 규약 — 원문은 비커밋 chain1033.json)",
             반증조건="같은 장소유형·같은 무료입장·기간비≤1.5·연도차≤1 인 유사 개체 K개 중 "
                      "t0 이전 담론이 «없던» 쪽이 이긴 사례 비율이 0.5 와 다르지 않다면 이 링크는 반증된다",
             대조검사="미실측 — 다음 사이클 몫(등록)"))
@@ -1051,6 +1085,8 @@ def cmd_chain(args):
            "낙인": ["대조 검사 미실측 — 전부 「미검」이고 전부 「서사」다. 「인과 후보」 0개.",
                    STAMP_CAUSAL],
            "링크": links}
+    json.dump(dict(out, 링크원문=links_raw),
+              open(os.path.join(OUT, "chain1033.json"), "w"), ensure_ascii=False, indent=1)
     json.dump(out, open(os.path.join(REPO, "runners/out1033_chain.json"), "w"),
               ensure_ascii=False, indent=1)
     print(json.dumps({k: v for k, v in out.items() if k != "링크"}, ensure_ascii=False, indent=1))
