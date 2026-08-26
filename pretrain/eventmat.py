@@ -96,6 +96,7 @@ def build():
         os.path.join(ART, "event_ledger", "v1", "events_v1.jsonl.gz"), "rt", encoding="utf-8")]
     # 패널 (h64 용)
     ser = {}
+    ent_dom = {}
     for dom in DOMS:
         p = os.path.join(PANEL, "%s.jsonl.gz" % dom)
         if not os.path.exists(p):
@@ -104,6 +105,7 @@ def build():
             r = json.loads(line)
             ser.setdefault(r["문서"], {}).update(
                 dict(zip([str(x) for x in r["날짜"]], r["조회수"])))
+            ent_dom.setdefault(r["문서"], dom)
     # 원문 임베딩 (개체 단위 평균 · PCA32)
     tfx = os.path.join(ART, "textfix1036")
     rows = json.load(open(os.path.join(tfx, "row_docid.json"), encoding="utf-8"))
@@ -164,7 +166,8 @@ def build():
             TX[i] = v; MISS[i, 0] = 0.0
     V = np.hstack([TY, RO, H, TX, MISS])
     ents = np.array([k["ent"] for k in keep])
-    np.savez_compressed(os.path.join(OUT, "nodes.npz"), V=V, T=T, ents=ents,
+    doms = np.array([ent_dom.get(k["ent"], "?") for k in keep])
+    np.savez_compressed(os.path.join(OUT, "nodes.npz"), V=V, T=T, ents=ents, doms=doms,
                         TY=TY, H=H, RO=RO, TX=TX, MISS=MISS,
                         types=np.array([k["type"] for k in keep]))
     rep = {"사건 인스턴스(원장)": len(ev), "노드로 남은 것": n,
@@ -308,9 +311,194 @@ def train(steps=1500, d=64, lr=3e-3, neg=64):
     print("  → %s" % rep["🔴 판정"])
 
 
+
+# ── 히스토리 트리 + RoPE 인코더 (G1 을 넘었으므로) ────────────────────
+def _load_layer1():
+    import torch, torch.nn as nn
+    # torch 2.6+ 기본 weights_only=True 인데 mu/sd_ 가 numpy 라 막힌다.
+    # 이 체크포인트는 «우리가 방금 만든 것»이므로 안전하다.
+    ck = torch.load(os.path.join(OUT, "layer1.pt"), map_location="cpu", weights_only=False)
+
+    class Layer1(nn.Module):
+        def __init__(s_, din, d):
+            super().__init__()
+            s_.q = nn.Linear(din, d, bias=False)
+            s_.k = nn.Linear(din, d, bias=False)
+            s_.dt = nn.Sequential(nn.Linear(1, 16), nn.Tanh(), nn.Linear(16, 1))
+
+        def score(s_, vi, vj, dt):
+            base = (s_.q(vi) * s_.k(vj)).sum(-1) / (vi.shape[-1] ** 0.5)
+            return base + s_.dt(torch.log1p(dt).unsqueeze(-1)).squeeze(-1)
+    net = Layer1(ck["din"], ck["d"]); net.load_state_dict(ck["sd"]); net.eval()
+    return net, ck
+
+
+def tree(i0, depth=3, beam=4, horizon=400, n_analog=25):
+    """🔴 1층에 프로젝션해서 히스토리 트리를 뻗는다.
+
+    설계자 원안: 「인풋에 따라 벌어질 히스토리를 매트릭스의 첫번째 레이어에
+    프로젝션해서 계속 찾아내고, 상위 몇개를 RoPE 인코더에 넣는다」.
+
+    🔴 개념 (v0.3 에서 확정 — 세 번 고쳤다):
+      갈래 = «상태가 비슷했던 다른 개체»가 «실제로» 밟은 사건 사슬. 시뮬레이션이 아니다.
+      · v0   개체를 안 묶음      → 아무 데로나 뛴다(만화 → 한돈자조금)
+      · v0.1 개체를 묶음        → 정당이 만화의 유사 사례(h64 는 도메인을 모른다)
+      · v0.2 도메인 제약        → 갈래가 전부 한 개체(다양성 없음)
+      · v0.3 개체마다 «따로» 사슬을 뽑고 개체 간 순위 → 「여러 갈래」가 선다
+      전역 빔서치를 안 쓴다 — 갈래가 개체 안에 잠기므로 빔이 한 개체에 먹힌다.
+    """
+    import torch
+    z = np.load(os.path.join(OUT, "nodes.npz"), allow_pickle=True)
+    V, T, ents, types = z["V"], z["T"], z["ents"], z["types"]
+    doms = z["doms"] if "doms" in z.files else np.array(["?"] * len(ents))
+    net, ck = _load_layer1()
+    Vn = torch.tensor((V - ck["mu"]) / ck["sd_"], dtype=torch.float32)
+    Tt = torch.tensor(T, dtype=torch.float32)
+
+    # ① 유사 개체 — h64 상태 · 같은 도메인 · 뿌리 개체 제외(정답 보기 금지)
+    Hn = z["H"] - z["H"].mean(0)
+    Hn = Hn / np.maximum(np.linalg.norm(Hn, axis=1, keepdims=True), 1e-9)
+    sim = Hn @ Hn[i0]
+    sim[ents == ents[i0]] = -9
+    if doms[i0] != "?":
+        sim[doms != doms[i0]] = -9
+    seen = {}
+    for k in np.argsort(-sim):
+        if sim[k] <= -9:
+            break
+        e = ents[k]
+        if e not in seen:
+            seen[e] = (int(k), float(sim[k]))       # 그 개체의 «가장 닮은 시점»
+        if len(seen) >= n_analog:
+            break
+
+    # ② 개체마다 그 시점 «이후»의 실제 사슬을 뽑는다
+    out = []
+    for e, (anchor, sm) in seen.items():
+        ix = np.where(ents == e)[0]
+        ix = ix[np.argsort(T[ix])]
+        after = [int(k) for k in ix if T[k] > T[anchor] and T[k] <= T[anchor] + horizon]
+        if len(after) < 2:
+            continue
+        chain = [anchor] + after[:depth]
+        with torch.no_grad():
+            sc = 0.0
+            for a, b in zip(chain, chain[1:]):
+                sc += float(net.score(Vn[a].unsqueeze(0), Vn[b].unsqueeze(0),
+                                      (Tt[b] - Tt[a]).clamp(min=0).unsqueeze(0))[0])
+        out.append({"점수": round(sc / max(len(chain) - 1, 1), 3), "유사도": round(sm, 3),
+                    "개체": str(e),
+                    "단계": [{"유형": str(types[k]), "Δt(일)": int(T[k] - T[anchor])}
+                            for k in chain[1:]]})
+    out.sort(key=lambda x: -(x["점수"] + 4.0 * x["유사도"]))     # 사슬 그럴듯함 + 상태 닮음
+    return {"뿌리": {"유형": str(types[i0]), "개체": str(ents[i0]), "도메인": str(doms[i0])},
+            "🔴 갈래의 뜻": "«상태가 비슷했던 다른 개체»가 실제로 밟은 사슬 (시뮬레이션 아님)",
+            "유사 개체 풀": len(seen), "갈래": out[:beam]}
+
+
+def encode_history(steps=1200, d=48, lr=3e-3):
+    """🔴 히스토리 시퀀스 → RoPE 인코더 → NN → «단계별 숫자 변화».
+    표적은 기준 변수 계보를 따른다 — 여기서는 각 단계 «다음 30일 관심 변화»(log).
+    실제 궤적에서 뽑으므로 라벨이 정직하다."""
+    import torch, torch.nn as nn
+    z = np.load(os.path.join(OUT, "nodes.npz"), allow_pickle=True)
+    V, T, ents = z["V"], z["T"], z["ents"]
+    H = z["H"]
+    # 실제 개체별 사건 사슬(길이 3)을 학습 자료로 — 트리가 아니라 «진짜 일어난» 사슬
+    seqs = []
+    for e in np.unique(ents):
+        ix = np.where(ents == e)[0]; ix = ix[np.argsort(T[ix])]
+        for a in range(len(ix) - 2):
+            seqs.append(list(ix[a:a + 3]))
+    seqs = np.array(seqs)
+    rng = np.random.default_rng(SEED)
+    ue = np.unique(ents)
+    va_e = set(rng.choice(ue, max(1, len(ue) // 5), replace=False).tolist())
+    isva = np.array([ents[s[0]] in va_e for s in seqs])
+    # 표적: 각 단계에서 «그 개체의 h64 가 다음 단계까지 얼마나 움직였나» 의 크기
+    tgt = np.zeros((len(seqs), 2))
+    for k, s in enumerate(seqs):
+        for j in (0, 1):
+            tgt[k, j] = np.linalg.norm(H[s[j + 1]] - H[s[j]])
+    mu_t, sd_t = tgt[~isva].mean(), tgt[~isva].std() + 1e-8
+    tgtn = (tgt - mu_t) / sd_t
+    tr_nodes = np.unique(seqs[~isva].ravel())          # 🔴 train 사슬에 «든 노드»로만 통계
+    mu, sd = V[tr_nodes].mean(0), V[tr_nodes].std(0) + 1e-8
+    Vn = torch.tensor((V - mu) / sd, dtype=torch.float32)
+
+    class RopeEnc(nn.Module):
+        def __init__(s_, din, d):
+            super().__init__()
+            s_.inp = nn.Linear(din, d)
+            s_.att = nn.MultiheadAttention(d, 4, batch_first=True)
+            s_.out = nn.Sequential(nn.LayerNorm(d), nn.Linear(d, d), nn.GELU(), nn.Linear(d, 1))
+
+        def forward(s_, x, rel):
+            h = s_.inp(x)
+            # 🔴 RoPE: 상대 시각으로 회전 — 절대 시각이 사라지고 Δt 만 남는다
+            hd = h.shape[-1] // 2
+            ang = rel.unsqueeze(-1) / (ROPE_BASE ** (torch.arange(hd).float() / hd))
+            c, s2 = torch.cos(ang), torch.sin(ang)
+            h1, h2 = h[..., :hd], h[..., hd:]
+            h = torch.cat([h1 * c - h2 * s2, h1 * s2 + h2 * c], -1)
+            a, _ = s_.att(h, h, h, need_weights=False)
+            return s_.out(h + a).squeeze(-1)[:, :2]      # 단계 1,2 의 숫자 변화
+
+    net = RopeEnc(V.shape[1], d)
+    opt = torch.optim.AdamW(net.parameters(), lr=lr, weight_decay=0.01)
+    Xs = torch.tensor(seqs, dtype=torch.long)
+    Rel = torch.tensor(np.stack([T[s] - T[s][0] for s in seqs]), dtype=torch.float32)
+    Y = torch.tensor(tgtn, dtype=torch.float32)
+    tr = np.where(~isva)[0]; va = np.where(isva)[0]
+    print("사슬(길이3) %d · 개체 %d (val %d) · 파라미터 %d"
+          % (len(seqs), len(ue), len(va_e), sum(p.numel() for p in net.parameters())))
+    best = 9e9
+    for st in range(1, steps + 1):
+        b = rng.choice(tr, 128)
+        p = net(Vn[Xs[b]], Rel[b])
+        loss = nn.functional.l1_loss(p, Y[b])
+        opt.zero_grad(); loss.backward()
+        torch.nn.utils.clip_grad_norm_(net.parameters(), 1.0); opt.step()
+        if st % 300 == 0 or st == steps:
+            net.eval()
+            with torch.no_grad():
+                pv = net(Vn[Xs[va]], Rel[va])
+                vl = nn.functional.l1_loss(pv, Y[va]).item()
+                bl = Y[va].abs().mean().item()          # 기준선: 전부 «평균»
+            net.train()
+            print("  step %4d  train %.4f  val %.4f  (기준선 %.4f)" % (st, loss.item(), vl, bl))
+            if vl < best:
+                best = vl
+                torch.save({"sd": net.state_dict(), "d": d}, os.path.join(OUT, "ropeenc.pt"))
+    rep = {"판": "1044-나 히스토리 → RoPE 인코더 → 단계별 숫자",
+           "사슬": int(len(seqs)), "val": int(len(va)), "개체": int(len(ue)),
+           "표적": "각 단계의 내재상태 이동 크기 ‖Δh64‖ (z 정규화)",
+           "val L1": round(best, 4), "기준선(전부 평균)": round(bl, 4),
+           "개선": round(100 * (1 - best / bl), 1),
+           "판정": "✅ 기준선보다 낫다" if best < bl else "🔴 못 넘었다"}
+    json.dump(rep, open(os.path.join(OUT, "ropeenc.json"), "w"), ensure_ascii=False, indent=1)
+    print("\n  val L1 %.4f vs 기준선 %.4f → %s (%.1f%% 개선)"
+          % (best, bl, rep["판정"], rep["개선"]))
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["build", "train"])
+    ap.add_argument("cmd", choices=["build", "train", "tree", "rope"])
     ap.add_argument("--steps", type=int, default=1500)
+    ap.add_argument("--i", type=int, default=0)
     a = ap.parse_args()
-    build() if a.cmd == "build" else train(steps=a.steps)
+    if a.cmd == "build":
+        build()
+    elif a.cmd == "train":
+        train(steps=a.steps)
+    elif a.cmd == "rope":
+        encode_history(steps=a.steps)
+    else:
+        r = tree(a.i)
+        b = r["뿌리"]
+        print("뿌리: [%s] %s  (도메인 %s) · 유사 개체 풀 %d"
+              % (b["유형"], b["개체"], b["도메인"], r["유사 개체 풀"]))
+        print("🔴 %s\n" % r["🔴 갈래의 뜻"])
+        for g in r["갈래"]:
+            print("  [%s]  유사도 %.3f · 사슬점수 %.2f" % (g["개체"][:24], g["유사도"], g["점수"]))
+            print("     %s" % "  →  ".join("%s(+%d일)" % (x["유형"], x["Δt(일)"]) for x in g["단계"]))
