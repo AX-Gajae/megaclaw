@@ -229,6 +229,26 @@ def _llm(prompt, system, model="qwen3.6:35b-a3b", npred=380):
         return json.loads(r.read()).get("response", "").strip()
 
 
+
+REL_SYS = ("문서가 지정된 대상을 «실제로» 다루는지 판단한다. JSON 한 줄만. 설명 금지.\n"
+           '{"관련":true/false,"이유":"10자 이내"}\n'
+           "· 동음이의어를 조심하라 — 같은 이름의 «다른» 것이면 false.\n"
+           "  (예: 웹툰 「인피니티」 ↔ 자동차 인피니티 · 게임 「Stellaris」 ↔ 의료기기 Stellaris)\n"
+           "· 이름이 스쳐 지나가기만 하고 그 대상이 주제가 아니면 false.\n"
+           "· 확신 없으면 false. 🔴 틀린 문서를 넣는 것이 빠뜨리는 것보다 나쁘다.")
+
+
+def _relevant(name, dom, text):
+    """🔴 질의 시점 오염 필터. 전량 배치(30,428쌍=14시간) 대신 «보여줄 것만» 판별한다."""
+    try:
+        r = _llm("대상: %s (분야: %s)\n---\n%s" % (name, dom, (text or "")[:1200]),
+                 REL_SYS, npred=60)
+        j = json.loads(r[r.find("{"):r.rfind("}") + 1])
+        return bool(j.get("관련")), str(j.get("이유", ""))[:14]
+    except Exception as e:
+        return False, "판별실패"          # 🔴 실패는 «뺀다» (조항 59 — 모르면 안 쓴다)
+
+
 NAR_SYS = ("팝업·IP 분석가다. 아래는 «과거에 실제로 일어난» 사례들이다. 지어내지 마라.\n"
            "주어진 문서에 «있는 내용만» 쓴다. 없으면 「문서에 단서 없음」이라 적는다.\n"
            "출력 형식(마크다운, 300자 이내):\n"
@@ -243,15 +263,24 @@ def narrate(P, i, K=K_CANON, maxdoc=3, chars=700):
     idx = _doc_index()
     txt = _texts()
     days = P["days"]
-    have, blocks = 0, []
+    have, blocks, seen, kept, dropped = 0, [], 0, 0, []
     for j in nb:
-        name = str(P["names"][j]).split("|", 1)[1]
+        full = str(P["names"][j]); dom, name = full.split("|", 1)
         pool = idx.get(name, [])
         if not pool:
             continue
         have += 1
-        picked = [d for d, _ in pool[:maxdoc]]
-        body = "\n".join((txt.get(d, "") or "")[:chars] for d in picked)
+        keep = []
+        for d, _w in pool[:maxdoc]:
+            seen += 1
+            ok, why = _relevant(name, dom, txt.get(d, ""))
+            if ok:
+                keep.append(d); kept += 1
+            else:
+                dropped.append("%s:%s" % (name[:14], why))
+        if not keep:
+            continue
+        body = "\n".join((txt.get(d, "") or "")[:chars] for d in keep)
         blocks.append("### %s (%s) — 실제 최대배수 ×%.2f %s\n%s"
                       % (name, str(days[int(P["T0"][j]) + CTX]), float(P["peak"][j]),
                          "[3배 급등]" if P["y"][j] else "[급등 없음]", body))
@@ -259,7 +288,12 @@ def narrate(P, i, K=K_CANON, maxdoc=3, chars=700):
     out = {"질의": q["질의"], "요약": q["요약"],
            "🔴 서사 덮개": {"유사사례": K, "문서 있는 사례": have,
                         "비율": round(have / K, 3),
-                        "경고": "덮개가 낮다. 서사는 이 %d건에서만 나온 것이다" % have}}
+                        "오염필터": {"검사한 문서": seen, "통과": kept,
+                                 "버림": seen - kept,
+                                 "통과율": round(kept / max(seen, 1), 3),
+                                 "버린 예": dropped[:6]},
+                        "서사 낸 사례": len(blocks),
+                        "경고": "덮개가 낮다. 서사는 이 %d건에서만 나온 것이다" % len(blocks)}}
     if not blocks:
         out["서사"] = "🔴 문서가 있는 유사 사례가 0건 — 서사를 «만들지 않는다»(조항 59)"
         return out
@@ -269,9 +303,47 @@ def narrate(P, i, K=K_CANON, maxdoc=3, chars=700):
     return out
 
 
+def risk(P, i, K=K_CANON):
+    """🔴 위험 요소 — 급등한 이웃과 «안» 한 이웃이 무엇이 달랐나.
+    LLM 없이 궤적 통계만으로 낸다(오염 무관). 급등/비급등 두 무리의 사전 90일을 대조한다."""
+    nb, sim = neighbors(P, i, K)
+    up = nb[P["y"][nb] == 1]
+    dn = nb[P["y"][nb] == 0]
+    if len(up) < 3 or len(dn) < 3:
+        return {"🔴 못 낸다": "급등/비급등 어느 쪽이 3건 미만 (up=%d dn=%d)" % (len(up), len(dn))}
+    L = np.log1p(P["S"])
+    def feats(ix):
+        Z = (L[ix] - L[ix].mean(1, keepdims=True)) / (L[ix].std(1, keepdims=True) + 1e-9)
+        return {"수준(log 평균)": L[ix].mean(1), "변동성(log SD)": L[ix].std(1),
+                "최근7일 기울기": L[ix][:, -7:].mean(1) - L[ix][:, -30:].mean(1),
+                "직전30일 대 첫30일": L[ix][:, -30:].mean(1) - L[ix][:, :30].mean(1),
+                "고저 폭": L[ix].max(1) - L[ix].min(1),
+                "막바지 튐(Z 최대)": Z[:, -14:].max(1)}
+    fu, fd = feats(up), feats(dn)
+    me = L[[i]]
+    Zme = (me - me.mean()) / (me.std() + 1e-9)
+    mine = {"수준(log 평균)": float(me.mean()), "변동성(log SD)": float(me.std()),
+            "최근7일 기울기": float(me[:, -7:].mean() - me[:, -30:].mean()),
+            "직전30일 대 첫30일": float(me[:, -30:].mean() - me[:, :30].mean()),
+            "고저 폭": float(me.max() - me.min()),
+            "막바지 튐(Z 최대)": float(Zme[:, -14:].max())}
+    rows = []
+    for k in fu:
+        mu, md = float(np.median(fu[k])), float(np.median(fd[k]))
+        sd = float(np.std(np.r_[fu[k], fd[k]])) + 1e-9
+        d = (mu - md) / sd                      # 표준화 격차
+        pos = (mine[k] - md) / sd               # 내가 어느 쪽에 가까운가
+        rows.append({"축": k, "급등 무리": round(mu, 3), "비급등 무리": round(md, 3),
+                     "격차(SD)": round(d, 2), "질의 위치(SD)": round(pos, 2),
+                     "질의가 기운 쪽": "급등" if abs(mine[k] - mu) < abs(mine[k] - md) else "비급등"})
+    rows.sort(key=lambda r: -abs(r["격차(SD)"]))
+    return {"급등 이웃": int(len(up)), "비급등 이웃": int(len(dn)), "축": rows,
+            "🔴 안 주장": "인과 아님 · 무작위 배정 아님 · K=%d 의 이웃 안에서만" % K}
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["gate", "ask", "narrate"])
+    ap.add_argument("cmd", choices=["gate", "ask", "narrate", "risk"])
     ap.add_argument("--i", type=int, default=0)
     ap.add_argument("--k", type=int, default=K_CANON)
     a = ap.parse_args()
@@ -294,6 +366,22 @@ def main():
         json.dump(rep, open(os.path.join(ART, "story1043_gate.json"), "w"),
                   ensure_ascii=False, indent=1)
         print("\n→ %s/story1043_gate.json" % ART)
+    elif a.cmd == "risk":
+        q = ask(P, a.i, a.k)
+        r = risk(P, a.i, a.k)
+        print("\n질의: %s (%s)" % (q["질의"]["개체"], q["질의"]["시점"]))
+        s_ = q["요약"]
+        print("   %d건 중 %d건(%.0f%%) 급등 — 기저 %.0f%% 의 %.2f배"
+              % (s_["K"], s_["급등한 사례"], 100 * s_["비율"], 100 * s_["전체 기저율"], s_["배수"]))
+        if "🔴 못 낸다" in r:
+            print("\n[위험 요소] %s" % r["🔴 못 낸다"]); return
+        print("\n[위험 요소 — 급등 %d건 대 비급등 %d건이 «사전 90일»에서 뭐가 달랐나]"
+              % (r["급등 이웃"], r["비급등 이웃"]))
+        print("   %-20s %9s %9s %9s   %s" % ("축", "급등", "비급등", "격차SD", "질의가 기운 쪽"))
+        for x in r["축"]:
+            print("   %-20s %9.3f %9.3f %+9.2f   %s"
+                  % (x["축"], x["급등 무리"], x["비급등 무리"], x["격차(SD)"], x["질의가 기운 쪽"]))
+        print("\n   🔴 %s" % r["🔴 안 주장"])
     elif a.cmd == "narrate":
         r = narrate(P, a.i, a.k)
         print("\n질의: %s (%s)" % (r["질의"]["개체"], r["질의"]["시점"]))
@@ -302,7 +390,14 @@ def main():
         print("   %d건 중 %d건(%.0f%%)이 3배 급등 — 기저 %.0f%% 의 %.2f배"
               % (s_["K"], s_["급등한 사례"], 100 * s_["비율"], 100 * s_["전체 기저율"], s_["배수"]))
         c = r["🔴 서사 덮개"]
-        print("\n[서사 — 🔴 덮개 %d/%d = %.0f%%]" % (c["문서 있는 사례"], c["유사사례"], 100 * c["비율"]))
+        f = c["오염필터"]
+        print("\n[오염 필터 — 질의 시점]")
+        print("   문서 %d편 검사 → 통과 %d (%.0f%%) · 버림 %d"
+              % (f["검사한 문서"], f["통과"], 100 * f["통과율"], f["버림"]))
+        if f["버린 예"]:
+            print("   버린 예: %s" % " · ".join(f["버린 예"]))
+        print("\n[서사 — 🔴 사례 %d/%d · 문서 있는 사례 %d]"
+              % (c["서사 낸 사례"], c["유사사례"], c["문서 있는 사례"]))
         print(r["서사"])
         json.dump(r, open(os.path.join(ART, "story1043_ask.json"), "w"),
                   ensure_ascii=False, indent=1)
