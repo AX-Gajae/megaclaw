@@ -194,9 +194,84 @@ def ask(P, i, K=K_CANON):
                    "배수": round((hit / K) / max(float(P["y"].mean()), 1e-9), 2)}}
 
 
+
+# ── 서사 층 (게이트를 넘은 «뒤에만») ───────────────────────────────────
+DOC_SRC = "/Users/ax/world_model/data/ingest/sao973_hplt/pairs.jsonl.gz"
+TFX = os.path.join(ART, "textfix1036")
+
+
+def _doc_index():
+    """개체(위키문서) → [(문서id, 언제)]. 🔴 덮개가 낮다 — val 개체의 18.6% 뿐."""
+    from collections import defaultdict
+    idx = defaultdict(list)
+    for line in gzip.open(DOC_SRC, "rt", encoding="utf-8"):
+        a = json.loads(line)["a_액션"]
+        idx[a.get("문서", "")].append((a["문서id"], a["언제"]))
+    return idx
+
+
+def _texts():
+    t = {}
+    for line in gzip.open(os.path.join(TFX, "doc_text.jsonl.gz"), "rt", encoding="utf-8"):
+        d = json.loads(line)
+        t[d["문서id"]] = d["text"]
+    return t
+
+
+def _llm(prompt, system, model="qwen3.6:35b-a3b", npred=380):
+    import urllib.request
+    body = {"model": model, "prompt": prompt, "system": system, "stream": False,
+            "think": False, "options": {"temperature": 0.2, "num_predict": npred}}
+    req = urllib.request.Request("http://localhost:11434/api/generate",
+                                 data=json.dumps(body).encode(),
+                                 headers={"Content-Type": "application/json"})
+    with urllib.request.urlopen(req, timeout=600) as r:
+        return json.loads(r.read()).get("response", "").strip()
+
+
+NAR_SYS = ("팝업·IP 분석가다. 아래는 «과거에 실제로 일어난» 사례들이다. 지어내지 마라.\n"
+           "주어진 문서에 «있는 내용만» 쓴다. 없으면 「문서에 단서 없음」이라 적는다.\n"
+           "출력 형식(마크다운, 300자 이내):\n"
+           "**공통점** — 급등한 사례들이 공유한 것\n"
+           "**갈린 지점** — 급등한 쪽과 안 한 쪽이 달랐던 것\n"
+           "**조심할 것** — 위 둘에서 나오는 경고 한 줄\n"
+           "🔴 문서가 그 개체를 실제로 다루지 않을 수 있다. 의심되면 그렇게 적어라.")
+
+
+def narrate(P, i, K=K_CANON, maxdoc=3, chars=700):
+    nb, sim = neighbors(P, i, K)
+    idx = _doc_index()
+    txt = _texts()
+    days = P["days"]
+    have, blocks = 0, []
+    for j in nb:
+        name = str(P["names"][j]).split("|", 1)[1]
+        pool = idx.get(name, [])
+        if not pool:
+            continue
+        have += 1
+        picked = [d for d, _ in pool[:maxdoc]]
+        body = "\n".join((txt.get(d, "") or "")[:chars] for d in picked)
+        blocks.append("### %s (%s) — 실제 최대배수 ×%.2f %s\n%s"
+                      % (name, str(days[int(P["T0"][j]) + CTX]), float(P["peak"][j]),
+                         "[3배 급등]" if P["y"][j] else "[급등 없음]", body))
+    q = ask(P, i, K)
+    out = {"질의": q["질의"], "요약": q["요약"],
+           "🔴 서사 덮개": {"유사사례": K, "문서 있는 사례": have,
+                        "비율": round(have / K, 3),
+                        "경고": "덮개가 낮다. 서사는 이 %d건에서만 나온 것이다" % have}}
+    if not blocks:
+        out["서사"] = "🔴 문서가 있는 유사 사례가 0건 — 서사를 «만들지 않는다»(조항 59)"
+        return out
+    prompt = ("질의: %s (%s)\n유사 사례 %d건 중 문서가 있는 %d건:\n\n%s"
+              % (q["질의"]["개체"], q["질의"]["시점"], K, have, "\n\n".join(blocks[:6])))
+    out["서사"] = _llm(prompt, NAR_SYS)
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["gate", "ask"])
+    ap.add_argument("cmd", choices=["gate", "ask", "narrate"])
     ap.add_argument("--i", type=int, default=0)
     ap.add_argument("--k", type=int, default=K_CANON)
     a = ap.parse_args()
@@ -219,6 +294,18 @@ def main():
         json.dump(rep, open(os.path.join(ART, "story1043_gate.json"), "w"),
                   ensure_ascii=False, indent=1)
         print("\n→ %s/story1043_gate.json" % ART)
+    elif a.cmd == "narrate":
+        r = narrate(P, a.i, a.k)
+        print("\n질의: %s (%s)" % (r["질의"]["개체"], r["질의"]["시점"]))
+        s_ = r["요약"]
+        print("\n[수치 — 유사사례 «전부» 덮는다]")
+        print("   %d건 중 %d건(%.0f%%)이 3배 급등 — 기저 %.0f%% 의 %.2f배"
+              % (s_["K"], s_["급등한 사례"], 100 * s_["비율"], 100 * s_["전체 기저율"], s_["배수"]))
+        c = r["🔴 서사 덮개"]
+        print("\n[서사 — 🔴 덮개 %d/%d = %.0f%%]" % (c["문서 있는 사례"], c["유사사례"], 100 * c["비율"]))
+        print(r["서사"])
+        json.dump(r, open(os.path.join(ART, "story1043_ask.json"), "w"),
+                  ensure_ascii=False, indent=1)
     else:
         r = ask(P, a.i, a.k)
         print("\n질의: %s  (%s)" % (r["질의"]["개체"], r["질의"]["시점"]))
